@@ -42,7 +42,7 @@
   };
   Object.keys(X).forEach(function (l) { for (var k in X[l]) T[l][k] = X[l][k]; });
   var COL = ['#2f6b4a', '#c0662d', '#3b6fa8', '#8c5a9e', '#b08a1f', '#5f6b70'];
-  var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'eur', r: 10 }, D = null, FX = null, SKIP = 0;
+  var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'idx', r: 10 }, D = null, FX = null, SKIP = 0;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -172,6 +172,9 @@
     h += rg(t.unit, 'u', modes, ST.u) + rg(t.fFresh, 'f', [['fresh', t.fOnly], ['all', t.fAll + (hist.length ? ' (' + hist.length + ')' : '')]], ST.old ? 'all' : 'fresh') + rg(t.kLbl, 'k', [['all', t.kAll], ['exact', t.kExact], ['directional', t.kDir]], ST.k) + '<div class="di-movers-hint" style="margin-top:2px">' + esc(t.kHelp) + '</div></div>';
     if (!list.length) h += '<p class="di-movers-hint">' + esc(ST.k === 'exact' ? t.noKExact : ST.k === 'directional' ? t.noKDir : t.none) + '</p>';
     else {
+      // Niveles convertidos con series orientativas: aviso junto al grafico, no en una nota al pie (auditoria 8-oct-2026)
+      var DW = { es: 'Atención: hay series orientativas (distinta calidad, lugar, etapa comercial o fecha). Convertir moneda y unidad no las hace intercambiables; para comparar tendencias usa el índice base 100. El valor original de cada serie está en la tabla.', en: 'Note: some series are indicative (different quality, place, trading stage or date). Converting currency and unit does not make them interchangeable; to compare trends use the base-100 index. Each series’ original value is in the table.', fr: 'Attention : certaines séries sont indicatives (qualité, lieu, stade commercial ou date différents). Convertir devise et unité ne les rend pas interchangeables ; pour comparer les tendances, utilisez l’indice base 100. La valeur d’origine de chaque série est dans le tableau.', it: 'Attenzione: alcune serie sono indicative (qualità, luogo, fase commerciale o data diversi). Convertire valuta e unità non le rende intercambiabili; per confrontare le tendenze usa l’indice base 100. Il valore originale di ogni serie è nella tabella.' };
+      if ((ST.u === 'eur' || ST.u === 'usd') && list.some(function (s) { return s.comp !== 'exact'; })) h += '<div class="pt-note" role="note" style="margin:0 0 10px">' + esc(DW[lang()] || DW.es) + '</div>';
       h += '<div class="di-card" style="padding:12px 14px;margin-bottom:16px">' + (ST.u === 'orig' ? '<div class="di-movers-hint" style="margin:0 0 8px">' + esc(t.small) + '</div>' + smallMultiples(list, p, t) : (chartHtml(list, p, t) || '<p class="di-movers-hint">' + esc(t.none) + '</p>')) + '</div>';
       h += '<div class="di-card" style="padding:12px 14px;margin-bottom:16px">' + table(list, p, t) + '</div>';
       h += '<p style="margin:-8px 0 14px"><button type="button" id="cp-csv" class="di-compare-select" style="cursor:pointer">' + esc(t.csvBtn) + '</button> <span class="di-movers-hint">' + esc(t.csvNote) + '</span></p>';

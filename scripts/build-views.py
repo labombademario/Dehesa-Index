@@ -43,7 +43,9 @@ def load(rel): return json.loads((D / rel).read_text())      # estricto: si falt
 def home_summary():
     latest = load('latest.json')['observations']; cat = load('catalog.json')
     rows = sorted(latest, key=lambda o: str(o.get('observationDate')), reverse=True)[:4]
-    movers = [dict({k: v for k, v in o.items() if k != 'history'}, **({'market': market(o)} if market(o) else {})) for o in rows]
+    try: plabels = json.loads((D / 'observatory.json').read_text()).get('labels', {})   # nombres de producto en es/en/fr/it (los de js/data.js)
+    except Exception: plabels = {}
+    movers = [dict({k: v for k, v in o.items() if k != 'history'}, **({'market': market(o)} if market(o) else {}), **({'name': plabels[o['product']]} if o.get('product') in plabels else {})) for o in rows]
     cp = load('crop-progress.json')
     crops = []
     for c in cp['crops']:

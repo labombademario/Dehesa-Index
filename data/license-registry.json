@@ -2921,6 +2921,10 @@
     "FR": "franceagrimer"
    },
    "notes": "Leche de vaca mensual de Francia (recogida, grasa, proteina, precio al ganadero estandar y real) y precio del Comte (RNM), del Tableau de bord hebdomadaire du lait de FranceAgriMer (PDF); scripts/build-france-dairy.py. Los quesos de ZMB e ISMEA de la misma pagina son de terceros y no se usan. Decision del propietario 7-oct-2026: todo FranceAgriMer verde."
+  },
+  "data/label-gloss/": {
+   "sources": [],
+   "notes": "Glosario propio de Dehesa Index para traducir etiquetas de series (es/fr/it); escrito a mano, sin datos de terceros (auditoria 8-oct-2026)."
   }
  },
  "derived": [

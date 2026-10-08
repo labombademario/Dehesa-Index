@@ -337,7 +337,10 @@
   function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
-  window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
+  window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } }); };
+  // El glosario de etiquetas pesa ~8 KB comprimido y la ficha de pais esta en su limite de peso: se activa cuando se apruebe subir el presupuesto (LABELS_ON)
+  var LABELS_ON = false;
+  if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } });
   shell();
   var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
   /* Carga por catalogo (capa de datos unificada): manifiesto -> catalogo del pais -> trozo de la serie. Nunca se piden los *-stats.json. */

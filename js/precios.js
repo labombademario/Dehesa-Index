@@ -694,10 +694,10 @@
     var key = entry.nameKey;
     var stories = index[key] || [];
     var region = state.location || 'us';
-    if (!stories.length) return '<div class="di-related-news di-related-news-pending"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">Noticias relacionadas →</a></div><p>No hay cobertura editorial enlazada a este mercado todavía.</p></div>';
+    if (!stories.length) return '<div class="di-related-news di-related-news-pending"><div class="di-related-news-head"><span>' + esc(({ es: 'NOTICIAS', en: 'NEWS', fr: 'ACTUALITÉS', it: 'NOTIZIE' })[lang()] || 'NOTICIAS') + '</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">Noticias relacionadas →</a></div><p>No hay cobertura editorial enlazada a este mercado todavía.</p></div>';
     var lg = lang();
     var label = lg === 'es' ? 'Noticias relacionadas' : lg === 'fr' ? 'Actualités liées' : lg === 'it' ? 'Notizie correlate' : 'Related news';
-    return '<div class="di-related-news"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">Ver todas →</a></div>' +
+    return '<div class="di-related-news"><div class="di-related-news-head"><span>' + esc(({ es: 'NOTICIAS', en: 'NEWS', fr: 'ACTUALITÉS', it: 'NOTIZIE' })[lang()] || 'NOTICIAS') + '</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">' + esc(({ es: 'Ver todas', en: 'See all', fr: 'Tout voir', it: 'Vedi tutte' })[lang()] || 'Ver todas') + ' →</a></div>' +
       '<div class="di-related-news-title">' + esc(label) + '</div>' +
       stories.slice(0,2).map(function(n) {
         var h = n.headline[lg] || n.headline.es;
@@ -832,7 +832,7 @@
 
   function newsImpactLabels() {
     return {
-      es:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},
+      es:{input_cost:'COSTE DE INSUMOS',trade:'COMERCIO',weather:'CLIMA',supply:'OFERTA',energy:'ENERGÍA',policy:'POLÍTICA',market_impact:'IMPACTO EN EL MERCADO'},
       en:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},
       fr:{input_cost:'COÛTS DES INTRANTS',trade:'COMMERCE',weather:'CLIMAT',supply:'OFFRE',energy:'ÉNERGIE',policy:'POLITIQUE',market_impact:'IMPACT MARCHÉ'},
       it:{input_cost:'COSTI INPUT',trade:'COMMERCIO',weather:'METEO',supply:'OFFERTA',energy:'ENERGIA',policy:'POLITICA',market_impact:'IMPATTO MERCATO'}
@@ -922,7 +922,7 @@
     if (!selected.length) {
       root.innerHTML =
         '<div class="di-market-news-intel di-market-news-empty">' +
-          '<div class="di-market-news-copy"><span class="di-section-kicker">NEWS INTELLIGENCE</span>' +
+          '<div class="di-market-news-copy"><span class="di-section-kicker">' + esc(({ es: 'NOTICIAS', en: 'NEWS', fr: 'ACTUALITÉS', it: 'NOTIZIE' })[lang()] || 'NOTICIAS') + '</span>' +
           '<h2>' + esc(title) + '</h2>' +
           '<p>' + esc(lg === 'es' ? 'La cobertura editorial verificada se está actualizando.' : lg === 'fr' ? 'La couverture éditoriale vérifiée est en cours de mise à jour.' : lg === 'it' ? 'La copertura editoriale verificata è in aggiornamento.' : 'Verified editorial coverage is being updated.') + '</p></div>' +
           '<a class="di-market-news-link" href="noticias.html">' + esc(linkLabel) + '</a>' +
@@ -933,7 +933,7 @@
     root.innerHTML =
       '<div class="di-market-news-intel">' +
         '<div class="di-market-news-copy">' +
-          '<span class="di-section-kicker">NEWS INTELLIGENCE · ' + esc(regionLabel) + '</span>' +
+          '<span class="di-section-kicker">' + esc(({ es: 'NOTICIAS', en: 'NEWS', fr: 'ACTUALITÉS', it: 'NOTIZIE' })[lang()] || 'NOTICIAS') + ' · ' + esc(regionLabel) + '</span>' +
           '<h2>' + esc(title) + '</h2>' +
           '<p>' + (lg === 'es' ? 'Titulares recientes vinculados a este mercado y, cuando no hay cobertura local, a factores globales que pueden afectarlo.' :
                      lg === 'fr' ? 'Titres récents liés à ce marché et, en l’absence de couverture locale, aux facteurs mondiaux susceptibles de l’affecter.' :

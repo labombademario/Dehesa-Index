@@ -1257,7 +1257,7 @@
       it:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Impatto delle notizie sul mercato',intro:'Ogni notizia è collegata a un canale, a un mercato e, quando i dati sono compatibili, a una relazione osservata e al relativo segnale statistico.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELAZIONE OSSERVATA',none:'Nessuna relazione statistica regionale compatibile',watch:'TRANSMISSION WATCH',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
     };
     var t=labels[lang()]||labels.es;
-    var channelLabels={input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'};
+    var channelLabels=({es:{input_cost:'COSTE DE INSUMOS',trade:'COMERCIO',weather:'CLIMA',supply:'OFERTA',energy:'ENERGÍA',policy:'POLÍTICA',market_impact:'IMPACTO EN EL MERCADO'},en:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},fr:{input_cost:'COÛTS DES INTRANTS',trade:'COMMERCE',weather:'CLIMAT',supply:'OFFRE',energy:'ÉNERGIE',policy:'POLITIQUE',market_impact:'IMPACT MARCHÉ'},it:{input_cost:'COSTI INPUT',trade:'COMMERCIO',weather:'METEO',supply:'OFFERTA',energy:'ENERGIA',policy:'POLITICA',market_impact:'IMPATTO MERCATO'}})[lang()]||{};
     function productLabel(k){return Core.productName ? Core.productName(k) : k;}
     function alertFor(relId){return alerts.some(function(a){return a.relationship&&a.relationship.id===relId;});}
     function relFor(link){return link.relation&&rels[link.relation]&&rels[link.relation].status==='ready'?rels[link.relation]:null;}

@@ -333,7 +333,7 @@
     var dEl = document.getElementById('cal-disclaimer'), dSum = ({ es: 'Cómo se obtienen las fechas', en: 'How the dates are obtained', fr: 'D’où viennent les dates', it: 'Come si ottengono le date' })[lang] || 'How the dates are obtained';
     dEl.textContent = ''; var dd = document.createElement('details'), ds = document.createElement('summary'), dp = document.createElement('p');
     ds.textContent = dSum; ds.style.cssText = 'cursor:pointer;font-weight:600;min-height:32px'; dp.textContent = t.disclaimer; dp.style.margin = '8px 0 0';
-    if (window.innerWidth > 760) dd.open = true; dd.appendChild(ds); dd.appendChild(dp); dEl.appendChild(dd);
+    dd.appendChild(ds);   // metodologia plegada: primero los proximos eventos dd.appendChild(dp); dEl.appendChild(dd);
 
     var FILTER_OPTIONS = [
       { id: 'all', label: t.filterAll },
@@ -378,6 +378,22 @@
       return 0;
     });
 
+    // Hora local junto a la ET y fecha oficial frente a estimada (auditoria 8-oct-2026)
+    function etLocal(date, et) {
+      var m = /^(\d{1,2}):(\d{2})/.exec(et || ''); if (!m || !date) return '';
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (!tz || tz === 'America/New_York') return '';
+        var guess = Date.UTC(+date.slice(0, 4), +date.slice(5, 7) - 1, +date.slice(8, 10), +m[1] + 5, +m[2]);
+        var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(guess)).split(':');
+        var diff = ((+parts[0] % 24) * 60 + +parts[1]) - (+m[1] * 60 + +m[2]); var utc = guess - diff * 60000;
+        var loc = new Intl.DateTimeFormat(lang, { hour: '2-digit', minute: '2-digit' }).format(new Date(utc));
+        return ({ es: '{t} hora local', en: '{t} your time', fr: '{t} heure locale', it: '{t} ora locale' })[lang].replace('{t}', loc);
+      } catch (e) { return ''; }
+    }
+    var OFF = { es: ['fecha oficial', 'fecha estimada'], en: ['official date', 'estimated date'], fr: ['date officielle', 'date estimée'], it: ['data ufficiale', 'data stimata'] }[lang] || ['fecha oficial', 'fecha estimada'];
+    var next3 = sortedEvents.filter(function (ev) { return ev.hasDate; }).slice(0, 3);
+    var NX = { es: 'Próximas publicaciones', en: 'Next releases', fr: 'Prochaines publications', it: 'Prossime pubblicazioni' }[lang] || 'Próximas publicaciones';
+    var topHtml = next3.length ? '<section class="di-card" style="padding:12px 16px;margin:0 0 14px"><h2 style="font-size:17px;margin:0 0 6px">' + esc(NX) + '</h2><ol style="margin:0;padding-left:20px">' + next3.map(function (ev) { var tr = ev[lang] || ev.es, lt = etLocal(ev.nextDate, ev.timeEt); return '<li style="margin:3px 0"><b>' + esc(fmtDate(ev.nextDate, lang)) + (ev.timeEt ? ' · ' + esc(ev.timeEt) + (lt ? ' (' + esc(lt) + ')' : '') : '') + '</b> — ' + esc(tr.name) + ' <span class="di-movers-hint">· ' + esc(ev.patternDate ? OFF[1] : OFF[0]) + '</span></li>'; }).join('') + '</ol></section>' : '';
     var html;
     if (sortedEvents.length > 0) {
       html = '<div class="di-cal-list">' + sortedEvents.map(function (ev) {
@@ -386,7 +402,7 @@
         var freqLabel = FREQ_LABEL[ev.freq] || ev.freq;
         var dateHtml = '';
         if (ev.hasDate) {
-          var dateDisplay = ev.isToday ? (t.todayTag + ' · ' + fmtDate(ev.nextDate, lang)) : fmtDate(ev.nextDate, lang); if (ev.timeEt) dateDisplay += ' · ' + ev.timeEt;
+          var dateDisplay = ev.isToday ? (t.todayTag + ' · ' + fmtDate(ev.nextDate, lang)) : fmtDate(ev.nextDate, lang); if (ev.timeEt) { var lt0 = etLocal(ev.nextDate, ev.timeEt); dateDisplay += ' · ' + ev.timeEt + (lt0 ? ' (' + lt0 + ')' : ''); } dateDisplay += ' · ' + (ev.patternDate ? OFF[1] : OFF[0]);
           dateHtml = '<span class="di-cal-date' + (ev.isToday ? ' today' : '') + '">' + esc(dateDisplay) + '</span>';
         }
         var lastHtml = ev.lastDate ? '<div class="di-cal-last">' + esc(t.lastLabelText) + ' ' + esc(fmtDate(ev.lastDate, lang)) + '</div>' : '';
@@ -407,7 +423,7 @@
     } else {
       html = '<div class="di-news-empty">' + esc(t.noResultsHint) + '</div>';
     }
-    document.getElementById('cal-events').innerHTML = html;
+    document.getElementById('cal-events').innerHTML = topHtml + html;
 
     document.getElementById('cal-sources-title').textContent = t.sourcesTitle;
     document.getElementById('cal-sources-list').innerHTML = t.sources.map(function (s) {

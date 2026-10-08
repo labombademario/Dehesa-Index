@@ -182,7 +182,10 @@ window.DINews.feed().then(function () {
   // Titulares automáticos (scripts/update_news.py → data/views/news-feed.json): texto original, sin traducir.
   var FEED = window.DehesaNewsFeed || { generatedAt: null, items: [] };
   var CURATED_COUNT = NEWS_ITEMS.length;
+  var SEENH = {};   // misma noticia en dos versiones (mismo medio y mismo comienzo de titular): solo una (auditoria 8-oct-2026)
   (FEED.items || []).forEach(function(a) {
+    var hk = (a.s || '') + '|' + String(a.h || '').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '').slice(0, 60);
+    if (SEENH[hk]) return; SEENH[hk] = 1;
     var tr = { headline: a.h, summary: a.x || '' };
     NEWS_ITEMS.push({ id: a.id, source: a.s, url: a.u, date: a.d, region: a.r, country: a.c || '', lang: a.l, auto: true,
       products: a.p || [], topics: a.t || [], rel: a.v || 0, es: tr, en: tr, fr: tr, it: tr });

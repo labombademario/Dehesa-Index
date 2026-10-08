@@ -578,6 +578,8 @@
     });
   }
 
-  var API = { share: share, shareUrl: shareUrl, bindShare: bindShare, tl: tl, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country };
+  // Respaldo general (auditoria 8-oct-2026): si las reglas propias no traducen la etiqueta, el glosario comun (js/label-tl.js) lo intenta con la misma regla de todo o nada
+  function tlAll(label, lang) { var r = tl(label, lang); if (r === label && root.DILabelTl && root.DILabelTl.ready(lang)) return root.DILabelTl.tl(label, lang); return r; }
+  var API = { share: share, shareUrl: shareUrl, bindShare: bindShare, tl: tlAll, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.DIClear = API;
 })(typeof window !== 'undefined' ? window : globalThis);

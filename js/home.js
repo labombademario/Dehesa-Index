@@ -315,6 +315,7 @@
       var key = o.product;
       var label = (t.moversLabels && t.moversLabels[key]) || { name: productLabel(key), unit: o.unit || '', market: (o.region || '').toUpperCase() };
       var mkx = window.DehesaShared.marketLabel && window.DehesaShared.marketLabel(o, lang); if (mkx) label = { name: label.name, unit: label.unit, market: mkx };
+      if (o.name && !(t.moversLabels && t.moversLabels[key])) label.name = o.name[lang] || o.name.es || label.name;   // nunca el codigo interno (avena_pienso_ab)
       var status = o.status === 'verified' ? (o.comparability === 'not_comparable' ? 'not-comparable' : 'real') : 'pending';
       var statusLabel = status === 'real' ? (lang === 'es' ? 'DATO OFICIAL' : lang === 'fr' ? 'DONNÉE OFFICIELLE' : lang === 'it' ? 'DATO UFFICIALE' : 'OFFICIAL DATA') : status === 'not-comparable' ? (lang === 'es' ? 'NO COMPARABLE' : lang === 'fr' ? 'NON COMPARABLE' : lang === 'it' ? 'NON COMPARABILE' : 'NOT COMPARABLE') : (lang === 'es' ? 'PENDIENTE' : lang === 'fr' ? 'EN ATTENTE' : lang === 'it' ? 'IN ATTESA' : 'PENDING');
       return { name: label.name, market: label.market, source: o.sourceId || '—', sid: o.sourceId || '', pub: o.publicationDate || '', price: status === 'real' ? fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : '') : '—', status: status, statusLabel: statusLabel, date: o.observationDate ? window.DehesaShared.fmtDate(o.observationDate, lang) : '—', dateIso: o.observationDate || '' };

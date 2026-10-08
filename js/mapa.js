@@ -86,7 +86,8 @@
     return Object.keys(seen).sort(function (a, b) { return tr().names[a].localeCompare(tr().names[b]); });
   }
   function changeColor(c) { return c > 0 ? UP : c < 0 ? DOWN : FLAT; }
-  function changeWord(c, t) { return c > 0 ? t.up : c < 0 ? t.down : t.flat; }
+  // Flecha + palabra: el significado no depende solo del color (auditoria 8-oct-2026)
+  function changeWord(c, t) { return c > 0 ? '▲ ' + t.up : c < 0 ? '▼ ' + t.down : '■ ' + t.flat; }
 
   function paintMap(codesColors, markers) {
     if (MAP) { try { MAP.destroy(); } catch (e) {} MAP = null; }
@@ -128,7 +129,7 @@
       rows.map(function (r) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:10px 6px;font-weight:600">' + esc(r.scope) + '</td><td style="padding:10px 6px;text-align:right">' + esc(SYM[r.currency] || r.currency) + num(r.value, priceDecimals(r.value)) + ' / ' + esc(t.units[r.unit] || r.unit) + '</td><td style="padding:10px 6px;text-align:right;font-weight:600;color:' + changeColor(r.change) + '">' + sgn(r.change, 1, ' %') + '</td><td style="padding:10px 6px">' + esc(r.date) + '</td><td style="padding:10px 6px"><span class="di-movers-hint">' + (r.nc ? t.nc : t.real) + '</span></td></tr>'; }).join('') + '</table></div>';
     document.getElementById('mapa-controls').innerHTML = '<label style="font-size:13px">' + t.product + '<br><select id="mapa-sel-prod" class="di-compare-select">' + opts + '</select></label>';
     document.getElementById('mapa-sel-prod').onchange = function (e) { SEL.product = e.target.value; render(); };
-    document.getElementById('mapa-legend').innerHTML = legend([[UP, t.up], [DOWN, t.down], [FLAT, t.flat], ['#e6e2d6', t.noVerified]]);
+    document.getElementById('mapa-legend').innerHTML = legend([[UP, '▲ ' + t.up], [DOWN, '▼ ' + t.down], [FLAT, '■ ' + t.flat], ['#e6e2d6', t.noVerified]]);
     document.getElementById('mapa-table').innerHTML = rows.length ? table : '<p class="di-movers-hint">' + t.noData + '</p>';
     document.getElementById('mapa-note').textContent = t.priceNote;
     paintMap(colors, null);
@@ -317,7 +318,10 @@
   function shell() {
     var t = tr();
     var btn = function (k) { return '<button type="button" class="di-link-btn" data-layer="' + k + '" aria-pressed="' + (SEL.layer === k) + '" style="' + (SEL.layer === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:14px">' + (t.layers[k] || ct().layers[k]) + '</button>'; };
-    document.getElementById('mapa-body').innerHTML = '<div style="margin-bottom:12px">' + btn('price') + btn('precip') + btn('temp') + (SD ? btn('prod') + btn('exp') + btn('imp') + btn('stock') : '') + (CROPS && window.DEHESA_US_STATES ? btn('crops') : '') + (DROUGHT && window.DEHESA_US_STATES ? btn('drought') : '') + (ESR ? btn('buyers') : '') + (GATS ? btn('trade') : '') + '</div><div id="mapa-controls" style="margin-bottom:10px"></div><div id="mapa-legend"></div>' +
+    // Capas agrupadas por tema (auditoria 8-oct-2026): Precios, Clima, Produccion, Comercio
+    var GRP = { es: ['Precios', 'Clima', 'Producción', 'Comercio'], en: ['Prices', 'Weather', 'Production', 'Trade'], fr: ['Prix', 'Météo', 'Production', 'Commerce'], it: ['Prezzi', 'Meteo', 'Produzione', 'Commercio'] }[lang()] || ['Precios', 'Clima', 'Producción', 'Comercio'];
+    var row = function (lab, html) { return html ? '<div style="margin:0 0 6px;font-size:13px"><span style="display:inline-block;min-width:92px;color:var(--text-muted);font-weight:600">' + esc(lab) + '</span>' + html + '</div>' : ''; };
+    document.getElementById('mapa-body').innerHTML = '<div style="margin-bottom:12px">' + row(GRP[0], btn('price')) + row(GRP[1], btn('precip') + btn('temp') + (DROUGHT && window.DEHESA_US_STATES ? btn('drought') : '')) + row(GRP[2], (SD ? btn('prod') + btn('stock') : '') + (CROPS && window.DEHESA_US_STATES ? btn('crops') : '')) + row(GRP[3], (SD ? btn('exp') + btn('imp') : '') + (ESR ? btn('buyers') : '') + (GATS ? btn('trade') : '')) + '</div><div id="mapa-controls" style="margin-bottom:10px"></div><div id="mapa-legend"></div>' +
       '<div style="margin:0 0 6px;font-size:13px">' + (SEL.layer === 'crops' || SEL.layer === 'drought' ? [] : isWorld(SEL.layer) ? ['world', 'us', 'eu'] : ['all', 'world', 'us', 'eu']).map(function (v) { return '<button type="button" class="di-link-btn" data-view="' + v + '" aria-pressed="' + (SEL.view === v) + '" style="' + (SEL.view === v ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:12px">' + t.views[v] + '</button>'; }).join('') + '</div><div class="di-card" style="padding:8px"><div id="mapa-canvas" style="height:420px;width:100%"></div><p id="mapa-fallback" class="di-movers-hint" style="display:none;padding:12px"></p></div><p id="mapa-note" class="di-info-api-notice" style="margin:10px 0 6px"></p><div id="mapa-cite" style="margin:0 0 18px"></div><div id="mapa-table"></div>';
     Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-view]'), function (b) { b.onclick = function () { SEL.view = b.getAttribute('data-view'); shell(); render(); }; });
     Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-layer]'), function (b) { b.onclick = function () { SEL.layer = b.getAttribute('data-layer'); if (isWorld(SEL.layer) && SEL.view === 'all') SEL.view = 'world'; shell(); render(); }; });

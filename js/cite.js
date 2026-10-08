@@ -57,7 +57,7 @@
     if (o.pub) b += row(t.pub, esc(per(o.pub)));
     b += row(t.lic, link(e.licenseUrl, e.licenseName || e.licenseId || ''));
     if (e.attributionText) b += row(t.att, esc(clean(e.attributionText)));
-    b += '<div class="di-cite-s ' + (e.status === 'VERIFIED' ? 'ok' : 'pend') + '">' + esc(e.status === 'VERIFIED' ? t.ver + ' ' + (e.verifiedAt || '') : t.pend) + '</div>';
+    b += '<div class="di-cite-s ' + (e.status === 'VERIFIED' ? 'ok' : 'pend') + '">' + esc(e.status === 'VERIFIED' ? t.ver + ' ' + (e.verifiedAt ? (root.DehesaShared && root.DehesaShared.fmtDate ? root.DehesaShared.fmtDate(e.verifiedAt) : e.verifiedAt) : '') : t.pend) + '</div>';
     if (o.note) b += '<div class="di-cite-n">' + esc(o.note) + '</div>';
     b += '<div class="di-cite-a"><a href="legal.html#licencias">' + esc(t.all) + '</a></div>';
     return '<details class="di-cite" data-src="' + esc(id) + '"><summary><span class="di-cite-i" aria-hidden="true">ⓘ</span> ' + line + '</summary><div class="di-cite-b">' + b + '</div></details>';

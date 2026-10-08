@@ -727,8 +727,10 @@
   }
   function fmtChange(pct) {
     var sign = pct > 0 ? '+' : (pct < 0 ? '−' : '');
+    // Formato local (auditoria 8-oct-2026): coma decimal y espacio antes de % en es/fr/it; punto en ingles
+    var lg = (typeof window !== 'undefined' && window.DehesaShared && window.DehesaShared.getLang) ? window.DehesaShared.getLang() : 'es';
     var val = Math.abs(pct).toFixed(1);
-    return sign + val + '%';
+    return lg === 'en' ? sign + val + '%' : sign + val.replace('.', ',') + '\u00a0%';
   }
   function changeColor(pct, T) {
     if (pct > 0) return T.positive;

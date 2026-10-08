@@ -69,7 +69,7 @@
     return sec('alertas', t('alerts') + ' (' + EV.length + ')', t('alertsHint'), h + '</div>');
   }
   function secMine(l) {
-    if (!l.length) return sec('series', t('mine'), '', '<p class="pt-note">' + esc(t('empty')) + '</p>');
+    if (!l.length) return sec('series', t('mine'), '', '<p style="margin:0 0 10px"><button type="button" class="di-btn-gold" onclick="window.DehesaShared && window.DehesaShared.openSearch()">' + esc(({ es: 'Buscar un precio para seguir', en: 'Find a price to follow', fr: 'Chercher un prix à suivre', it: 'Cerca un prezzo da seguire' })[lang()] || 'Buscar un precio para seguir') + '</button></p><p class="pt-note">' + esc(t('empty')) + '</p>');
     var h = '<div class="ms-list">';
     l.forEach(function (it, i) {
       var x = rowOf(it), fo = x ? W.freshOf(it.c, it.s, x, CTX) : null, k = W.key(it.c, it.s);

@@ -165,6 +165,7 @@
   };
   function w(s) {
     var lg = lang(), r = W[s]; if (r) return r[LI[lg] || 0];
+    var gm = /^(.+?) - ([A-Z0-9]{2,6})$/.exec(s); if (gm && W[gm[1]]) return W[gm[1]][LI[lg] || 0] + ' (' + gm[2] + ')';   // variedad/calidad con codigo: «Malting barley - M2RP»
     if (lg === 'en') return FSTAGE[s] ? FSTAGE[s][1] : s;
     var X = FX[lg], st = lg === 'es' ? (FSTAGE[s] || [])[0] : X.stage[s];
     if (st) return st;
@@ -242,19 +243,31 @@
     var rangeBtns = '<div class="di-range-btns">' + ranges.map(function (x) { return '<button type="button" class="di-range-btn' + (x[0] === rk ? ' active' : '') + '" data-range="' + x[0] + '">' + (x[0] === 'max' ? esc(t.all) : x[0].toUpperCase()) + '</button>'; }).join('') + '</div>';
     var famNow = ''; meta.regions.forEach(function (r) { if (r.last[0] > famNow) famNow = r.last[0]; });
     var staleDays = freqM ? 100 : 35, nowMs = Date.parse(famNow + 'T00:00:00Z');
+    // Solo series vigentes por defecto; las historicas, aparte y con su fecha (auditoria 8-oct-2026)
+    var isOldR = function (r) { return (nowMs - Date.parse(r.last[0] + 'T00:00:00Z')) / 864e5 > staleDays; };
+    var curR = meta.regions.filter(function (r) { return !isOldR(r); }), oldR = meta.regions.filter(isOldR);
+    if (!curR.length) { curR = oldR; oldR = []; }   // todo historico: una sola tabla, cada fila con su fecha
+    var HT = { es: ['Series históricas', 'último dato', 'Buscar país'], en: ['Historical series', 'latest', 'Find country'], fr: ['Séries historiques', 'dernière donnée', 'Chercher un pays'], it: ['Serie storiche', 'ultimo dato', 'Cerca paese'] }[lang()] || ['Series históricas', 'último dato', 'Buscar país'];
+    var chipOf = function (r) {
+      var k = rkey(r), on = sel.indexOf(k) >= 0, ci = sel.indexOf(k);
+      return '<button type="button" class="di-region-btn' + (on ? ' active' : '') + '" data-reg="' + esc(k) + '" data-name="' + esc(rname(r).toLowerCase()) + '" style="' + (on ? 'background:' + COLORS[ci % COLORS.length] + ';border-color:' + COLORS[ci % COLORS.length] + ';' : '') + 'padding:5px 11px;font-size:12px">' + esc(rname(r)) + (isOldR(r) ? ' · ' + esc((freqM ? mfmt : dfmt)(r.last[0])) : '') + '</button>';
+    };
+    var chipsCur = curR.map(chipOf).join(''), chipsOld = oldR.map(chipOf).join('');
     var chips = meta.regions.map(function (r) {
       var k = rkey(r), on = sel.indexOf(k) >= 0, ci = sel.indexOf(k);
       return '<button type="button" class="di-region-btn' + (on ? ' active' : '') + '" data-reg="' + esc(k) + '" style="' + (on ? 'background:' + COLORS[ci % COLORS.length] + ';border-color:' + COLORS[ci % COLORS.length] + ';' : '') + 'padding:5px 11px;font-size:12px">' + esc(rname(r)) + '</button>';
     }).join('');
-    var rows = meta.regions.map(function (r) {
+    var rowOf = function (r) {
       var k = rkey(r), on = sel.indexOf(k) >= 0, old = (nowMs - Date.parse(r.last[0] + 'T00:00:00Z')) / 864e5 > staleDays;
       var f = freqM ? mfmt : dfmt;
       return '<tr data-reg="' + esc(k) + '" style="cursor:pointer;border-top:1px solid var(--border);' + (on ? 'background:var(--surface-2,rgba(0,0,0,.03))' : '') + '"><td style="padding:7px 10px;font-weight:600">' + esc(rname(r)) + '</td><td style="padding:7px 10px;text-align:right;font-variant-numeric:tabular-nums">' + nf(r.last[1], 2) + '</td><td style="padding:7px 10px;white-space:nowrap">' + esc(f(r.last[0])) + (old ? ' <span style="color:#a9491f;font-size:11.5px">· ' + esc(t.stale) + '</span>' : '') + '</td><td style="padding:7px 10px;text-align:right">' + delta(r.prev ? pct(r.last[1], r.prev[1]) : null) + '</td><td style="padding:7px 10px;text-align:right">' + delta(r.yoy ? pct(r.last[1], r.yoy[1]) : null) + '</td><td style="padding:7px 10px;white-space:nowrap;color:var(--text-muted)">' + esc(f(r.first)) + '</td></tr>';
-    }).join('');
+    };
+    var rows = curR.map(rowOf).join(''), rowsOld = oldR.map(rowOf).join('');
     var th = 'padding:7px 10px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:700';
     var tbl = '<div style="font-weight:700;font-size:14px;margin:18px 0 8px">' + esc(t.table) + ' <span style="font-weight:500;color:var(--text-muted);font-size:12.5px">· ' + esc(meta.unit) + '</span></div><div class="di-card" style="overflow-x:auto;padding:4px 0"><table style="border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px"><thead><tr><th style="' + th + '">' + esc(t.country) + '</th><th style="' + th + ';text-align:right">' + esc(t.last) + '</th><th style="' + th + '">' + esc(t.date) + '</th><th style="' + th + ';text-align:right">' + esc(t.vsPrev) + '</th><th style="' + th + ';text-align:right">' + esc(t.vsYear) + '</th><th style="' + th + '">' + esc(t.since) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+    if (rowsOld) { var tblOld = tbl.replace(rows, rowsOld); tbl += '<details style="margin:10px 0"><summary style="cursor:pointer;font-weight:600">' + esc(HT[0]) + ' (' + oldR.length + ')</summary>' + tblOld.replace(/<div style="font-weight:700;font-size:14px;margin:18px 0 8px">[\s\S]*?<\/div>/, '') + '</details>'; }
     var hasEU = meta.regions.some(function (r) { return r.c === 'EU'; });
-    return '<div style="font-weight:700;font-size:14px;margin:14px 0 4px">' + esc(t.regions) + ' <span style="font-weight:500;color:var(--text-muted);font-size:12.5px">· ' + esc(t.pickHint) + '</span></div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">' + chips + '</div>' +
+    return '<div style="font-weight:700;font-size:14px;margin:14px 0 4px">' + esc(t.regions) + ' <span style="font-weight:500;color:var(--text-muted);font-size:12.5px">· ' + esc(t.pickHint) + '</span></div>' + (meta.regions.length > 12 ? '<input type="search" class="di-compare-select" id="eu-cfilter" aria-label="' + esc(HT[2]) + '" placeholder="' + esc(HT[2]) + '" style="margin:0 0 8px;min-width:200px">' : '') + '<div id="eu-chips" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">' + chipsCur + '</div>' + (chipsOld ? '<details style="margin:0 0 12px"><summary style="cursor:pointer;font-size:13px">' + esc(HT[0]) + ' (' + oldR.length + ')</summary><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">' + chipsOld + '</div></details>' : '') +
       rangeBtns + chart + tbl +
       '<p style="margin:10px 0 0"><button type="button" class="di-range-btn" id="eu-csv">' + esc(t.csv) + '</button></p>' +
       (hasEU ? '<p class="di-movers-hint" style="margin-top:8px">' + esc(t.euNote) + '</p>' : '');
@@ -303,6 +316,7 @@
   function bind(d, meta) {
     var box = document.getElementById('eu-ser'); if (!box) return;
     Array.prototype.forEach.call(box.querySelectorAll('[data-reg]'), function (el) { el.onclick = function () { toggle(el.getAttribute('data-reg'), d, meta); }; });
+    var cf = box.querySelector('#eu-cfilter'); if (cf) cf.oninput = function () { var q = cf.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); Array.prototype.forEach.call(box.querySelectorAll('button[data-name]'), function (b2) { b2.style.display = !q || b2.getAttribute('data-name').normalize('NFD').replace(/[\u0300-\u036f]/g, '').indexOf(q) > -1 ? '' : 'none'; }); };
     Array.prototype.forEach.call(box.querySelectorAll('[data-range]'), function (el) { el.onclick = function () { ST.range = el.getAttribute('data-range'); box.innerHTML = renderChartAndTable(tr(), meta, d); bind(d, meta); }; });
     var csv = document.getElementById('eu-csv');
     if (csv) csv.onclick = function () {

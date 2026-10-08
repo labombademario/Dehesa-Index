@@ -664,7 +664,12 @@ def main():
     for x in rows:
         k = re.sub(r"[^a-z0-9]+", "", norm(x["headline"]["en"]))[:110]
         if k not in dedup or x["relevance"] > dedup[k]["relevance"]: dedup[k] = x
-    ordered = sorted(dedup.values(), key=lambda x: (x["date"], x["relevance"]), reverse=True)
+    # segunda pasada: mismo medio y mismo comienzo de titular = la misma noticia en dos versiones (auditoria 8-oct-2026)
+    d2 = {}
+    for x in dedup.values():
+        k2 = x["source"] + "|" + re.sub(r"[^a-z0-9]+", "", norm(x["headline"]["en"]))[:60]
+        if k2 not in d2 or (x["date"], x["relevance"]) > (d2[k2]["date"], d2[k2]["relevance"]): d2[k2] = x
+    ordered = sorted(d2.values(), key=lambda x: (x["date"], x["relevance"]), reverse=True)
     # limitar cuántas noticias aporta un mismo medio para no saturar
     per = {}; rows = []
     for x in ordered:

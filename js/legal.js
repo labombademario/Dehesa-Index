@@ -107,7 +107,7 @@
       var x = reg.sources[k], t = w[x.status] + ' · ' + w.lic + ': ' + x.licenseName + (x.status === 'VERIFIED' && x.verifiedAt ? ' (' + w.on + ' ' + x.verifiedAt + ')' : '') + '.';
       if (x.attributionText) t += ' ' + w.att + ': ' + x.attributionText;
       if (x.additionalRestrictions) t += ' ' + w.lim + ': ' + x.additionalRestrictions;
-      return { b: x.name + '.', t: t, u: x.licenseUrl, ul: x.licenseUrl.replace(/^https?:\/\//, '').slice(0, 60) };
+      return { b: x.name + '.', t: t, u: x.licenseUrl, ul: x.licenseUrl.replace(/^https?:\/\//, '').slice(0, 60), st: x.status };
     });
     return { ul: items, after: w.ev + ' ' + w.pend + ' ' + w.unused + unused.map(function (k) { return reg.sources[k].name.split(' (')[0]; }).join(', ') + '.' };
   }
@@ -119,4 +119,28 @@
     if (window.DehesaShared && window.DehesaShared.onLangChange) window.DehesaShared.onLangChange();
   });
   window.DehesaTextPage(STRINGS, 'informacion');
+  // Consulta de licencias (auditoria 8-oct-2026): buscador por fuente, filtro por estado y resumen antes de la lista.
+  // Citar una fuente no equivale a tener permiso para reutilizar sus datos: se dice explicitamente.
+  var LQ = { es: { q: 'Buscar una fuente', all: 'Todas', sum: '{v} con permiso verificado · {p} pendientes · {u} no usadas', cite: 'Citar una fuente (atribución) y tener permiso para reutilizar sus datos (licencia) son cosas distintas: la cita no resuelve por sí sola la licencia.' },
+    en: { q: 'Search a source', all: 'All', sum: '{v} with verified permission · {p} pending · {u} not used', cite: 'Citing a source (attribution) and being allowed to reuse its data (licence) are different things: a citation alone does not settle the licence.' },
+    fr: { q: 'Chercher une source', all: 'Toutes', sum: '{v} avec autorisation vérifiée · {p} en attente · {u} non utilisées', cite: 'Citer une source (attribution) et avoir le droit de réutiliser ses données (licence) sont deux choses distinctes : la citation seule ne règle pas la licence.' },
+    it: { q: 'Cerca una fonte', all: 'Tutte', sum: '{v} con permesso verificato · {p} in attesa · {u} non usate', cite: 'Citare una fonte (attribuzione) e avere il permesso di riusarne i dati (licenza) sono cose diverse: la citazione da sola non risolve la licenza.' } };
+  var REGL = null;
+  function enhance() {
+    var sec = document.getElementById('licencias'); if (!sec || !REGL || sec.querySelector('#lic-q')) return;
+    var lg = window.DehesaShared.getLang(), q = LQ[lg] || LQ.es, w = LS[lg] || LS.es, S0 = REGL.sources, ks = Object.keys(S0);
+    var nv = ks.filter(function (k) { return S0[k].used && S0[k].status === 'VERIFIED'; }).length, np = ks.filter(function (k) { return S0[k].used && S0[k].status !== 'VERIFIED'; }).length, nu = ks.filter(function (k) { return !S0[k].used; }).length;
+    var ul = sec.querySelector('ul'); if (!ul) return;
+    var items = (STRINGS[lg] || STRINGS.es).sections.filter(function (x) { return x.id === 'licencias'; })[0].ul || [];
+    Array.prototype.forEach.call(ul.children, function (li, i) { if (items[i]) li.setAttribute('data-st', items[i].st || ''); });
+    var box = document.createElement('div'); box.className = 'di-card'; box.style.cssText = 'padding:12px 14px;margin:8px 0 12px';
+    box.innerHTML = '<p style="margin:0 0 6px"><b>' + q.sum.replace('{v}', nv).replace('{p}', np).replace('{u}', nu) + '</b></p><p class="di-movers-hint" style="margin:0 0 8px">' + q.cite + '</p>' +
+      '<input type="search" id="lic-q" class="di-compare-select" aria-label="' + q.q + '" placeholder="' + q.q + '" style="min-width:220px;margin-right:8px"> <select id="lic-s" class="di-compare-select" aria-label="' + w.lic + '"><option value="">' + q.all + '</option><option value="VERIFIED">' + w.VERIFIED + '</option><option value="PENDING">' + w.PENDING + '</option></select>';
+    ul.parentNode.insertBefore(box, ul);
+    var go = function () { var t2 = (document.getElementById('lic-q').value || '').toLowerCase(), st = document.getElementById('lic-s').value; Array.prototype.forEach.call(ul.children, function (li) { var ok = (!t2 || li.textContent.toLowerCase().indexOf(t2) > -1) && (!st || li.getAttribute('data-st') === st || (st === 'PENDING' && li.getAttribute('data-st') !== 'VERIFIED')); li.style.display = ok ? '' : 'none'; }); };
+    document.getElementById('lic-q').oninput = go; document.getElementById('lic-s').onchange = go;
+  }
+  fetch('data/license-registry.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (reg) {
+    REGL = reg; var prevR = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevR) prevR.apply(this, arguments); enhance(); }; enhance();
+  }).catch(function () {});
 })();
