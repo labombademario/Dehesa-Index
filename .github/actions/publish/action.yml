@@ -6,7 +6,7 @@ inputs:
     required: false
     default: ''
   preset:
-    description: "'price-engine' anade las rutas que produce la accion price-engine (snapshots, latest, prices, history, catalog.json, quality, intelligence, normalized, cross-market, dehesa-index, alerts)"
+    description: "'price-engine' anade las rutas que produce la accion price-engine (snapshots, latest, prices, history, catalog.json, quality, intelligence, normalized, cross-market, dehesa-index, alerts, revisions)"
     required: false
     default: ''
   optional:
@@ -35,7 +35,7 @@ runs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         case "$PRESET" in
           '') ;;
-          price-engine) PATHS="$PATHS data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/dehesa-index-ca.json data/alerts.json" ;;
+          price-engine) PATHS="$PATHS data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/dehesa-index-ca.json data/alerts.json data/revisions.json" ;;
           *) echo "::error::preset desconocido: $PRESET"; exit 1 ;;
         esac
         git add -- $PATHS

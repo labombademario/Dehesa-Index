@@ -11,6 +11,9 @@ runs:
     - name: Construir indice de datos (latest, history, catalog)
       shell: bash
       run: node scripts/build-data-index.mjs
+    - name: Detectar revisiones de los precios principales (valor anterior y nuevo de periodos ya publicados)
+      shell: bash
+      run: python3 scripts/detect-revisions.py data/history.json || true
     - name: Construir CSV
       shell: bash
       run: node scripts/build-csv.mjs

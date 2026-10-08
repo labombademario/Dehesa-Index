@@ -2932,6 +2932,7 @@
   "alerts.json",
   "api.json",
   "catalog.json",
+  "corrections.json",
   "coverage-gaps.json",
   "coverage-overrides.json",
   "cross-market.json",

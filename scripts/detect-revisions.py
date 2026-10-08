@@ -9,6 +9,13 @@ def load_old(rel):
     try: return json.loads(subprocess.run(["git", "show", "HEAD:" + rel], cwd=ROOT, capture_output=True, check=True).stdout)
     except Exception: return None
 def idx(doc):
+    if isinstance(doc.get("observations"), list):   # data/history.json (precios principales): una fila por serie y fecha, id = <serie>:<fecha>
+        out = {}
+        for o in doc["observations"]:
+            sid = str(o.get("id", "")).split(":")[0]; k = "P/%s" % sid
+            if k not in out: out[k] = ({"id": sid, "label": "%s (%s)" % (o.get("product"), str(o.get("region", "")).upper()), "unit": "%s/%s" % (o.get("currency"), o.get("unit"))}, {})
+            if o.get("observationDate") and isinstance(o.get("value"), (int, float)): out[k][1][o["observationDate"]] = o["value"]
+        return out
     return {"%s/%s" % (cc, s["id"]): (s, dict((p[0], p[1]) for p in s.get("points", []))) for cc, c in doc.get("countries", {}).items() for s in c.get("series", [])}
 def main():
     now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -18,7 +25,7 @@ def main():
     for rel in sys.argv[1:]:
         try:
             cur = json.loads((ROOT / rel).read_text()); old = load_old(rel)
-            if not old or "countries" not in cur: continue
+            if not old or ("countries" not in cur and "observations" not in cur): continue
             o, c = idx(old), idx(cur)
             for k, (s, pts) in c.items():
                 if k not in o: continue

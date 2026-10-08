@@ -155,6 +155,7 @@
       pd('catalogo.html', L('Catálogo de datos', 'Data catalogue', 'Catalogue de données', 'Catalogo dei dati'), L('Más de 5.800 series por país, métrica y producto', 'Over 5,800 series by country, metric and product', 'Plus de 5 800 séries par pays, mesure et produit', 'Oltre 5.800 serie per paese, metrica e prodotto')),
       pd('metodologia.html', L('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), L('Cómo se verifican, fechan y convierten los datos', 'How data are verified, dated and converted', 'Comment les données sont vérifiées, datées et converties', 'Come i dati sono verificati, datati e convertiti')),
       pd('status.html', L('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati'), L('Última y próxima actualización de cada fuente', 'Last and next update of each source', 'Dernière et prochaine mise à jour de chaque source', 'Ultimo e prossimo aggiornamento di ogni fonte')),
+      pd('revisiones.html', L('Revisiones y correcciones', 'Revisions and corrections', 'Révisions et corrections', 'Revisioni e correzioni'), L('Qué cifras cambiaron, cuándo, por qué y qué llegó tarde', 'Which figures changed, when, why, and what arrived late', 'Quels chiffres ont changé, quand, pourquoi, et ce qui est arrivé en retard', 'Quali dati sono cambiati, quando, perché e cosa è arrivato in ritardo')),
       pd('observatorio.html', L('Observatorio de datos', 'Data observatory', 'Observatoire des données', 'Osservatorio dei dati'), L('Novedades, frescura, cobertura y próximas publicaciones', 'What’s new, freshness, coverage and upcoming releases', 'Nouveautés, fraîcheur, couverture et prochaines publications', 'Novità, freschezza, copertura e prossime pubblicazioni')),
       pd('informacion.html', L('Información', 'About', 'Informations', 'Informazioni'), L('Quiénes somos y de qué fuentes se nutre el panel', 'Who we are and which sources feed the dashboard', 'Qui nous sommes et quelles sources alimentent le tableau', 'Chi siamo e quali fonti alimentano il pannello'))
     ] }
@@ -171,7 +172,7 @@
       { label: G.production.label, items: prod },
       { label: G.trade.label, items: G.trade.items },
       { label: G.costs.label, items: G.costs.items.filter(function (i) { return i.file !== 'calculadora.html'; }).concat(G.countries.items.filter(function (i) { return !i.chip && i.file === 'pac.html'; })) },
-      { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items.concat([pd('legal.html', L('Licencias y avisos', 'Licences and notices', 'Licences et mentions', 'Licenze e avvisi'), L('De qué fuente es cada dato y con qué permiso se usa', 'Which source each figure comes from and under what permission', 'La source de chaque donnée et sous quelle autorisation', 'Da quale fonte viene ogni dato e con quale permesso'))]) }
+      { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items }
     ]) };
   })();
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }

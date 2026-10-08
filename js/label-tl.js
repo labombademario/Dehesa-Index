@@ -13,7 +13,7 @@
     var s = p.trim(); if (!s) return p;
     var k = s.toLowerCase();
     if (g.t[k] != null) return g.t[k];
-    if (g.keepSet[s] || PASS.test(s)) return s;
+    if (g.keepSet[s] || PASS.test(s) || /^\u00a7\d+\u00a7$/.test(s)) return s;
     var m, T = TPL[g.lang];
     if ((m = /^Domestic exports to (.+)$/.exec(s)) && g.t[m[1].toLowerCase()]) return T.dto.replace('{c}', g.t[m[1].toLowerCase()]);
     if ((m = /^Exports to (.+)$/i.exec(s)) && g.t[m[1].toLowerCase()]) return T.to.replace('{c}', g.t[m[1].toLowerCase()]);
@@ -23,17 +23,20 @@
   }
   function tl(label, lang) {
     var g = G[lang]; if (!g || !label) return label;
-    var bits = String(label).split(SPLIT), out = [];
+    // frases que contienen comas («farm, fishing and food»): se sustituyen enteras antes de partir la etiqueta
+    var src = String(label), held = [];
+    for (var q = 0; q < g.multi.length; q++) { var k0 = g.multi[q], at = src.toLowerCase().indexOf(k0); if (at > -1) { held.push(g.t[k0]); src = src.slice(0, at) + '\u00a7' + (held.length - 1) + '\u00a7' + src.slice(at + k0.length); } }
+    var bits = src.split(SPLIT), out = [];
     for (var i = 0; i < bits.length; i++) {
       if (i % 2) { out.push(bits[i]); continue; }   // separador
       if (!bits[i].trim()) { out.push(bits[i]); continue; }
       var r = part(bits[i], g); if (r == null) return label;   // una parte sin traduccion: etiqueta original
       out.push(r);
     }
-    var s = out.join('');
+    var s = out.join('').replace(/\u00a7(\d+)\u00a7/g, function (m, i) { return held[+i]; });
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
-  function use(lang, doc) { var ks = {}; (doc.keep || []).forEach(function (k) { ks[k] = 1; }); G[lang] = { lang: lang, t: doc.t || {}, keepSet: ks }; }
+  function use(lang, doc) { var ks = {}; (doc.keep || []).forEach(function (k) { ks[k] = 1; }); var t0 = doc.t || {}; G[lang] = { lang: lang, t: t0, keepSet: ks, multi: Object.keys(t0).filter(function (k) { return /[,:(]/.test(k); }).sort(function (a, b) { return b.length - a.length; }) }; }
   function load(lang) {
     if (lang === 'en' || G[lang]) return Promise.resolve(true);
     if (P[lang]) return P[lang];

@@ -226,7 +226,7 @@
     if (trust) {
       trust.value = region.price;
       trust.status = observation.status;
-      trust.obsId = observation.id || null; trust.obsSource = observation.sourceId || null;
+      trust.obsId = observation.id || null; trust.obsSource = observation.sourceId || null; trust.obsUnit = observation.unit || null; trust.obsCcy = observation.currency || null;
       trust.observationDate = observation.observationDate || null;
       trust.publicationDate = observation.publicationDate || null;
       trust.verifiedAt = observation.verifiedAt || null;
@@ -739,6 +739,13 @@
     var price = showValue ? built.price : '—';
     var unit = showValue ? built.unit : '';
     var change = showValue ? built.changeLabel : '';
+    // Conversion de moneda o unidad: el valor original siempre a la vista (idea 7, 8-oct-2026)
+    var rg = disp.region, conv = showValue && rg && (rg.currency !== disp.targetCcy || Math.abs((rg.kgPerUnit || 0) - (disp.targetKgPerUnit || 0)) > 1e-9);
+    var origTxt = '';
+    if (conv && observation && typeof observation.value === 'number') {
+      var ULo = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es, ou = ULo[observation.obsUnit] || observation.obsUnit || '';
+      origTxt = ({ es: 'Valor original: ', en: 'Original value: ', fr: 'Valeur d’origine : ', it: 'Valore originale: ' })[lang()] + D.fmtNumber(observation.value) + ' ' + (observation.obsCcy || rg.currency) + (ou ? '/' + ou : '') + ' · ' + ({ es: 'convertido con el tipo de cambio del día', en: 'converted at the day’s exchange rate', fr: 'converti au taux de change du jour', it: 'convertito al cambio del giorno' })[lang()];
+    }
     // Trazabilidad visible sin abrir el detalle: mercado exacto y fecha de observacion en formato local (auditoria 8-oct-2026)
     var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
     var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
@@ -761,11 +768,12 @@
         (disp.unverified ? '<div class="di-derived-note">' + esc(UNVERIFIED_NOTE[lang()] || UNVERIFIED_NOTE.es) + '</div>' : '') +
         (disp.derived ? '<div class="di-derived-note">' + esc(DERIVED_NOTE[lang()] || DERIVED_NOTE.es) + '</div>' : '') +
         (showValue ? productCiteHtml(entry, disp, observation) : '') +
+        (showValue && observation ? '<div style="margin:2px 0 4px">' + S.reportLink({ id: observation.obsId, label: productName(entry.nameKey) + (meta ? ' · ' + meta : ''), period: observation.observationDate, value: price + ' ' + unit }) + '</div>' : '') +
         '<div class="di-product-price-row">' +
           '<span class="di-product-price">' + esc(price) + '</span>' +
           '<span class="di-product-unit">' + esc(unit) + '</span>' +
           '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
-        '</div>' +
+        '</div>' + (origTxt ? '<div class="di-product-meta">' + esc(origTxt) + '</div>' : '') +
         (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>') +
         (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(state.location === 'ca' ? t.caGapNote : t.ukGapNote) + ' <a href="precios.html?region=eu&amp;product=' + encodeURIComponent(key) + '">' + esc(({ es: 'Ver en la vista de la UE', en: 'See it in the EU view', fr: 'Voir dans la vue UE', it: 'Vedi nella vista UE' })[lang()] || 'Ver en la vista de la UE') + '</a></div>' : '') +
         relatedNewsHtml(entry) +

@@ -273,6 +273,13 @@
   }
   function badge(cls, txt, title) { return '<span class="pt-badge ' + cls + '"' + (title ? ' title="' + esc(title) + '"' : '') + '>' + esc(txt) + '</span>'; }
   function freshBadge(o) { var f = fresh(o); return window.DIFreshness.dot(f, LANGS[li()], { obs: o.observationDate, freq: o.frequency, focus: true }); }
+  // Cuando se esperaba el dato siguiente y si va tarde, visible junto al valor (idea 6, 8-oct-2026)
+  function dueLine(o) {
+    var f = fresh(o); if (!f || !f.due || f.state === 'HISTORICAL' || f.state === 'DISCONTINUED' || f.state === 'PENDING') return '';
+    var late = f.state === 'DELAYED' || f.state === 'STALE', S4 = window.DehesaShared, d = S4 && S4.fmtDate ? S4.fmtDate(f.due, LANGS[li()]) : f.due;
+    var W = { es: ['Próximo dato esperado: {d}', 'Va tarde: se esperaba el {d}'], en: ['Next figure expected: {d}', 'Late: expected on {d}'], fr: ['Prochaine donnée attendue : {d}', 'En retard : attendue le {d}'], it: ['Prossimo dato atteso: {d}', 'In ritardo: atteso il {d}'] }[LANGS[li()]];
+    return '<div class="pt-sub"' + (late ? ' style="color:#a9491f"' : '') + '>' + esc((late ? W[1] : W[0]).replace('{d}', d)) + (late ? ' · <a href="revisiones.html">' + esc(({ es: 'retrasos', en: 'delays', fr: 'retards', it: 'ritardi' })[LANGS[li()]]) + '</a>' : '') + '</div>';
+  }
   function compBadge(o) { var c = o.comparability || 'directional'; return badge('pt-cp-' + c, t('cp_' + c)); }
   function spark(vals) {
     if (!vals || vals.length < 3) return '';
@@ -289,12 +296,12 @@
   // Tarjeta de mercado. En pantallas estrechas se lee como una fila (mercado, valor, cambio, fecha, estado, fuente) y el resto (comparabilidad, minigrafico, que mide) se abre al tocar.
   function cardHtml(o, isIndex) {
     var meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(o.methodology) + '</div></details>' : '';
-    var extra = (isIndex ? '' : compBadge(o)) + (isIndex ? '' : spark(o.spark)) + meas;
+    var S3 = window.DehesaShared, extra = (isIndex ? '' : compBadge(o)) + (isIndex ? '' : spark(o.spark)) + meas + (S3 && S3.reportLink ? '<div style="margin-top:6px">' + S3.reportLink({ id: o.id, label: (S3.marketLabel ? S3.marketLabel(o, LANGS[li()]) : '') || o.region, period: o.observationDate, value: o.value, unit: o.currency + '/' + o.unit }) + '</div>' : '');
     var S2 = window.DehesaShared, mk = S2 && S2.marketLabel ? S2.marketLabel(o, LANGS[li()]) : '';
     // Primero el mercado exacto (pais · plaza · etapa); la region amplia queda como fuente del conjunto de datos (auditoria 8-oct-2026)
     return '<div class="di-card pt-card"><div class="pt-k">' + esc(mk || reg(o.region)) + (isIndex && !mk ? ' · ' + esc(UL.index_2020_100) : '') + '</div>' + (mk && !isIndex ? '<div class="pt-sub" style="margin:0 0 4px">' + esc(({ es: 'Conjunto de datos: ', en: 'Dataset: ', fr: 'Jeu de données : ', it: 'Insieme di dati: ' })[LANGS[li()]] + reg(o.region)) + '</div>' : '') + idHtml(o) +
       '<div class="pt-v">' + (isIndex ? esc(nf(o.value, 1)) + ' <small>2020 = 100</small>' : esc(nf(o.value, Math.abs(o.value) >= 100 ? 0 : 2, o.unit === 'litro' ? 3 : 2)) + ' <small>' + esc(o.currency + '/' + (UL[o.unit] || o.unit)) + '</small>') + '</div>' +
-      '<div class="pt-sub">' + freshBadge(o) + ' ' + esc(t('asOf')) + ' ' + esc(dstr(o.observationDate)) + (typeof o.changePct === 'number' ? ' · ' + chg(o.changePct) + ' ' + esc(t('vsPrev')) : '') + '</div>' +
+      '<div class="pt-sub">' + freshBadge(o) + ' ' + esc(t('asOf')) + ' ' + esc(dstr(o.observationDate)) + (typeof o.changePct === 'number' ? ' · ' + chg(o.changePct) + ' ' + esc(t('vsPrev')) : '') + '</div>' + (isIndex ? '' : dueLine(o)) +
       (ci(o.sourceId, { period: o.observationDate, pub: o.publicationDate }) || '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(srcName(o.sourceId)) + '</div>') +
       (extra ? '<button type="button" class="pt-exp" data-exp="1" aria-expanded="false">' + esc(t('moreD')) + '</button><div class="pt-extra">' + extra + '</div>' : '') + '</div>';
   }

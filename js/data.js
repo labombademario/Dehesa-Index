@@ -737,11 +737,14 @@
     if (pct < 0) return T.negative;
     return T.neutral;
   }
+  function curLang() { return (typeof window !== 'undefined' && window.DehesaShared && window.DehesaShared.getLang) ? window.DehesaShared.getLang() : 'es'; }
+  // Cifras en formato local (auditoria 8-oct-2026): 264,1 en es/fr/it, 264.1 en ingles
   function fmtNumber(v) {
     var decimals = Math.abs(v) >= 100 ? 1 : (Math.abs(v) >= 10 ? 2 : 3);
-    return v.toFixed(decimals);
+    try { return v.toLocaleString(curLang(), { minimumFractionDigits: decimals, maximumFractionDigits: decimals }); } catch (e) { return v.toFixed(decimals); }
   }
   function fmtTotal(v) {
+    try { return v.toLocaleString(curLang(), { minimumFractionDigits: 2, maximumFractionDigits: 2 }); } catch (e) { /* formato fijo de respaldo */ }
     var fixed = Math.abs(v).toFixed(2);
     var parts = fixed.split('.');
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
