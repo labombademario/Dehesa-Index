@@ -1,0 +1,3 @@
+apro_cbs_cer series recibidas 73
+apro_cbs_oil series recibidas 55
+paises 16 series 103 descartadas {"short": 6, "old": 3, "other_geo": 16}

@@ -562,6 +562,14 @@ sources:
     data: [france-insee-stats.json]
     log: france-insee-log.txt
     message: Indices de precios agricolas de Francia (INSEE - IPPAP, IPAMPA)
+  - id: eu-stocks
+    name: Update EU cereal and oilseed closing stocks by country (Eurostat)
+    cron: ['50 7 * * 3']
+    script: scripts/update-eu-stocks.py
+    timeout: 15
+    data: [eu-stocks-stats.json]
+    log: eu-stocks-log.txt
+    message: Existencias de cierre de cereales y oleaginosas por pais (Eurostat, balances de cultivos)
   - id: fx-history
     name: Update historical exchange rates (ECB)
     cron: ['20 8 4 * *']

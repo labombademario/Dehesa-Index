@@ -2997,6 +2997,12 @@
     "FR": "insee"
    },
    "notes": "Indices mensuales de precios agricolas del INSEE (IPPAP: precios percibidos por el agricultor; IPAMPA: precios de los medios de produccion), base 2020=100, sin cambiar valores. Conjunto IPAGRI-BASE-2020 de la BDM; scripts/update-fr-insee.py."
+  },
+  "data/eu-stocks-stats.json": {
+   "bySourceGroupPrefix": {
+    "Eurostat": "eurostat"
+   },
+   "notes": "Existencias de cierre (STK_CL, miles de toneladas, anual) de los balances de cereales y oleaginosas de Eurostat (apro_cbs_cer, apro_cbs_oil), tal como las notifica cada Estado miembro; scripts/update-eu-stocks.py."
   }
  },
  "derived": [
