@@ -634,10 +634,10 @@
    "evidence": "Investigación del titular de Dehesa Index (4 oct 2026): todos los datos de FranceAgriMer son públicos y gratuitos siempre que se referencien. Coherente con el aviso legal del RNM (reutilización incluso comercial citando fuente) y con la Licence Ouverte 2.0 de data.gouv.fr; sustituye la duda previa sobre el pie «tous droits réservés» de VISIONet. Confianza media: la resolución viene de la investigación del titular, no de una carta de FranceAgriMer.",
    "used": true,
    "aliases": [],
-   "notes": "Decision del propietario (Mario) del 4 oct 2026: datos publicos y gratuitos citando la fuente. Auditoria externa (7 oct 2026) senala que la licencia debe comprobarse por conjunto/recurso. Con Licence Ouverte explicita en data.gouv.fr: cotizaciones de cereales francesas y datos vitivinicolas historicos (tableur). SIN licencia acreditada por recurso: PDF de vino NCO-VIN-CS usado en la web y el Excel de Cere'Obs (data.gouv declara LO 2.0 pero el fichero dice «tous droits reserves»). Pendiente: identificar la licencia de cada recurso o pedir confirmacion a FranceAgriMer.",
+   "notes": "Decision del propietario (Mario) del 4 oct 2026: datos publicos y gratuitos citando la fuente. Auditoria externa (7 oct 2026) senala que la licencia debe comprobarse por conjunto/recurso. Con Licence Ouverte explicita en data.gouv.fr: cotizaciones de cereales francesas y datos vitivinicolas historicos (tableur). SIN licencia acreditada por recurso: PDF de vino NCO-VIN-CS usado en la web y el Excel de Cere'Obs (data.gouv declara LO 2.0 pero el fichero dice «tous droits reserves»). Pendiente: identificar la licencia de cada recurso o pedir confirmacion a FranceAgriMer. Decision del propietario (Mario) del 7 oct 2026: todo lo de FranceAgriMer se da por valido (incluidos los PDF de bilans cerealiers usados en data/supply-balances/fr.json).",
    "short": "FranceAgriMer",
    "legalConfidence": "OWNER_ACCEPTED",
-   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio (Mario, 4 oct 2026). La licencia no esta acreditada por conjunto y recurso: el aviso legal de FranceAgriMer condiciona la Licence Ouverte a que el conjunto este identificado como tal."
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio (Mario, 4 oct 2026). La licencia no esta acreditada por conjunto y recurso: el aviso legal de FranceAgriMer condiciona la Licence Ouverte a que el conjunto este identificado como tal. Reconfirmado por el propietario el 7 oct 2026 para todos los recursos de FranceAgriMer."
   },
   "destatis": {
    "name": "Destatis (GENESIS-Online)",
@@ -2871,9 +2871,10 @@
   "data/supply-balances/": {
    "sources": [
     "statcan",
-    "eu_agrifood"
+    "eu_agrifood",
+    "franceagrimer"
    ],
-   "notes": "Balances oficiales de oferta y demanda por pais (scripts/build_supply_balances.py), un fichero por pais con el mismo formato. ca.json: Statistics Canada, tabla 32-10-0013-01 (oferta total, produccion, exportaciones, consumo interno y existencias finales por campaña agosto-julio), derivado de data/canada-stats.json sin cambiar ninguna cifra. eu.json: Comision Europea (DG AGRI), balance de cereales UE-27 (Cereals_bs_EUROPA_EU.xlsx, scripts/update-eu-balances.py); cifras tal como las publica la Comision, sin calculos propios salvo existencias/uso, que se rotula en la pagina. Licencia: Decision 2011/833/UE de reutilizacion (confirmada por el propietario)."
+   "notes": "Balances oficiales de oferta y demanda por pais (scripts/build_supply_balances.py), un fichero por pais con el mismo formato. ca.json: Statistics Canada, tabla 32-10-0013-01 (oferta total, produccion, exportaciones, consumo interno y existencias finales por campaña agosto-julio), derivado de data/canada-stats.json sin cambiar ninguna cifra. eu.json: Comision Europea (DG AGRI), balance de cereales UE-27 (Cereals_bs_EUROPA_EU.xlsx, scripts/update-eu-balances.py); cifras tal como las publica la Comision, sin calculos propios salvo existencias/uso, que se rotula en la pagina. Licencia: Decision 2011/833/UE de reutilizacion (confirmada por el propietario). fr.json: FranceAgriMer, Bilans cerealiers annuels (PDF de 16 sept 2026; trigo blando, cebada, maiz grano, trigo duro 2017/18-2026/27), leido por OCR con comprobacion de que cada balance cuadra; actualizacion manual (scripts/build_supply_balances.py fr)."
   }
  },
  "derived": [

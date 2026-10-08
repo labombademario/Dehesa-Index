@@ -7,6 +7,12 @@
   var P = window.DehesaPSD, LANGS = ['es', 'en', 'fr', 'it'], C1 = '#2a6f97', C2 = '#b8651b', C3 = '#2b7a78';
   function T4(es, en, fr, it) { return { es: es, en: en, fr: fr, it: it }; }
   var CC = {
+    FR: { file: 'data/supply-balances/fr.json', tab: T4('Francia (FranceAgriMer)', 'France (FranceAgriMer)', 'France (FranceAgriMer)', 'Francia (FranceAgriMer)'),
+      title: T4('Oferta y demanda de cereales en Francia', 'Cereals supply and demand in France', 'Offre et demande de céréales en France', 'Offerta e domanda di cereali in Francia'),
+      sub: T4('Balance de los cereales franceses por campaña (julio a junio): cosecha comercializada, usos, exportaciones y existencias. Datos de FranceAgriMer, con la campaña reciente provisional y la siguiente en previsión.',
+        'French cereal balance by marketing year (July to June): marketed crop, uses, exports and stocks. FranceAgriMer data, with the latest year provisional and the next one a forecast.',
+        'Bilan des céréales françaises par campagne (juillet à juin) : collecte, utilisations, exportations et stocks. Données de FranceAgriMer, la dernière campagne étant provisoire et la suivante en prévision.',
+        'Bilancio dei cereali francesi per campagna (da luglio a giugno): raccolto commercializzato, utilizzi, esportazioni e scorte. Dati di FranceAgriMer, con l’ultima campagna provvisoria e la successiva in previsione.') },
     EU: { file: 'data/supply-balances/eu.json', tab: T4('Unión Europea (Comisión Europea)', 'European Union (European Commission)', 'Union européenne (Commission européenne)', 'Unione europea (Commissione europea)'),
       title: T4('Oferta y demanda de cereales en la Unión Europea', 'Cereals supply and demand in the European Union', 'Offre et demande de céréales dans l’Union européenne', 'Offerta e domanda di cereali nell’Unione europea'),
       sub: T4('Balance de cereales de la UE-27 por campaña (julio a junio): producción, importaciones, usos, exportaciones y existencias. Datos de la Comisión Europea (DG AGRI), con estimaciones, previsiones y proyecciones.',
@@ -20,7 +26,7 @@
         'Bilan des cultures du Canada par campagne (août à juillet) : production, exportations, utilisation intérieure et stocks. Données de Statistique Canada, telles que publiées.',
         'Bilancio delle colture del Canada per campagna (da agosto a luglio): produzione, esportazioni, consumo interno e scorte. Dati di Statistics Canada, come pubblicati.') }
   };
-  var ORDER = ['EU', 'CA'];
+  var ORDER = ['EU', 'FR', 'CA'];
   var T = {
     es: { product: 'Producto', year: 'Campaña', item: 'Partida', kt: 'miles de toneladas', prev: 'Anterior', chg: 'Var.', vs: 'vs. campaña anterior', balance: 'Balance', cmp: 'Todos los productos', stu: 'Existencias sobre uso', stuOf: 'existencias finales ÷ ({0})', chart1: 'Producción, consumo y exportaciones', chart2: 'Existencias sobre uso', noProd: 'La fuente no publica este producto en esta campaña.', noData: 'Sin datos de oferta y demanda por ahora.', src: 'Fuente', table: 'tabla', blank: 'Un guion (—) significa que la fuente no publica esa cifra: no se calcula ni se estima.', pp: 'pp' },
     en: { product: 'Product', year: 'Crop year', item: 'Item', kt: 'thousand tonnes', prev: 'Previous', chg: 'Chg.', vs: 'vs. previous year', balance: 'Balance', cmp: 'All products', stu: 'Stocks-to-use', stuOf: 'ending stocks ÷ ({0})', chart1: 'Production, use and exports', chart2: 'Stocks-to-use', noProd: 'The source does not publish this product for this crop year.', noData: 'No supply and demand data yet.', src: 'Source', table: 'table', blank: 'A dash (—) means the source does not publish that figure: it is not calculated or estimated.', pp: 'pp' },
