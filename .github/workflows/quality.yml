@@ -256,7 +256,12 @@ jobs:
       - name: E2E + accesibilidad
         env:
           CHROMIUM: ''
-        run: node scripts/e2e.mjs --json e2e-report.json
+        run: |
+          set +e
+          node scripts/e2e.mjs --json e2e-report.json 2>&1 | tee e2e.log; s=${PIPESTATUS[0]}
+          # los fallos tambien como anotaciones: se leen en la API sin descargar el log
+          if [ $s -ne 0 ]; then grep -A8 -E '^FAIL|E2E FALLA' e2e.log | head -40 | while IFS= read -r l; do echo "::error::$l"; done; fi
+          exit $s
       - name: E2E de variantes (smoke - productos 3.0 representativos, comparador, 10 tipos de regla, monedas y unidades, estados de frescura, paginacion)
         env:
           CHROMIUM: ''
