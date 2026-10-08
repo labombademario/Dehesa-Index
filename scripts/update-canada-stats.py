@@ -551,10 +551,37 @@ def land_payments():
         put("ca-pay-%s" % slug(PAY[k]), "income", "Direct payments to agriculture producers: %s (annual)" % PAY[k], "CAD million", "annual", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0106"); n += 1
     log("tierra y pagos directos", n)
 
+# ───────── Fertilizantes: existencias (32-10-0036), producción (32-10-0037), envios por nutriente (32-10-0039) ─────────
+def _fert_col(rows):
+    for c in rows[0].keys():
+        if c.startswith("Fertilizer") or c.startswith("Nutrient"): return c
+    return None
+def fertilizer_more():
+    n = 0
+    for pid, per, kind, lab, grp in ((32100036, None, "inv", "Fertilizer inventories at end of quarter", "inputs_f"), (32100037, None, "prod", "Fertilizer production", "inputs_f"), (32100039, None, "ship", "Fertilizer shipments by nutrient", "inputs_f")):
+        try: rows = [r for r in load(pid) if r["GEO"] == "Canada"]
+        except Exception as e: log("fert", pid, "error", e); continue
+        if not rows: continue
+        col = _fert_col(rows)
+        if not col: log("fert", pid, "sin columna de producto", list(rows[0].keys())); continue
+        pers = sorted(set(r.get("Period", "") for r in rows)); log("fert", pid, col, pers[:6])
+        for per in pers:
+            if kind == "inv" and per not in ("June 30", "June", "Jun", "June 30th"): pass
+            sub = [r for r in rows if r.get("Period", "") == per]
+            by = series_of(sub, lambda r: r[col])
+            for k, pts in by.items():
+                nm = re.sub(r"\s+\d[\d\-\.]*.*$", "", k).strip()
+                pts = [(re.split(r"[/-]", p)[-1][:4] if "/" in p else p, v / 1e3) for p, v in pts]
+                if kind == "inv": continue
+                tag = slug(per) if per else "x"
+                put("ca-fert-%s-%s-%s" % (kind, slug(nm), tag), grp, "%s: %s (%s, annual)" % (lab, nm.lower(), per or "year"), "thousand t", "annual", pts, "StatCan %s" % pid); n += 1
+    log("fert_more", n)
+
+
 def main():
     import os
     only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
-    allf = (crops, potatoes, fruit, dairy_products, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners, grain_balance, beef, province_trade, food_balance, dairy_balance, retail_prices, eggs_annual, honey_maple, vegetables, greenhouse, value_per_head, butterfat_eggstock, hogs_more, milling, land_payments)
+    allf = (crops, potatoes, fruit, dairy_products, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners, grain_balance, beef, province_trade, food_balance, dairy_balance, retail_prices, eggs_annual, honey_maple, vegetables, greenhouse, value_per_head, butterfat_eggstock, hogs_more, milling, land_payments, fertilizer_more)
     if only:
         try:
             for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x
