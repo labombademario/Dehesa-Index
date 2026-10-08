@@ -391,10 +391,169 @@ def province_trade():
         ex = tr == "Domestic export"
         put("ca-tpr-%s-%s-%s" % ("exp" if ex else "imp", PROV_ES[g].lower(), slug(pa)), "partners", "%s %s: farm, fishing and food, %s (monthly)" % ("Domestic exports" if ex else "Imports", ("to " + pa) if ex and pa != "All countries" else "(all countries)", g), "CAD million", "monthly", pts, "StatCan 12-10-0175"); n += 1
     log("comercio por provincia", n)
+
+# ───────── 7. Ampliación (oct 2026): balances de alimentos, lácteos trimestrales, precios minoristas, huevos, miel, hortalizas, invernadero, valor por cabeza, mantequilla, porcino, tierra, pagos ─────────
+def qtr(p): return re.sub(r"-(\d\d)$", lambda m: "-Q%d" % ((int(m.group(1)) - 1) // 3 + 1), p)
+FOOD = [("Rice", "Rice"), ("Sugar refined", "Refined sugar"), ("Wines", "Wine"), ("Eggs", "Eggs"), ("Butter", "Butter"), ("Cheddar cheese", "Cheddar cheese"), ("Processed cheese", "Processed cheese"),
+        ("Specialty cheese", "Specialty cheese"), ("Mutton and lamb", "Mutton and lamb meat"), ("Oatmeal and rolled oats", "Oatmeal and rolled oats"), ("Rye flour", "Rye flour"),
+        ("Potatoes white fresh and processed", "Potatoes (white, fresh and processed)"), ("Honey", "Honey"), ("Beef and veal total", "Beef and veal"), ("Pork", "Pork"),
+        ("Chicken and stewing hen total", "Chicken meat"), ("Turkey", "Turkey meat"), ("Salad oils", "Salad oils"), ("Apples fresh", "Fresh apples"), ("Wheat flour", "Wheat flour")]
+FOOD_M = {"Production": ("production", "production", "prod"), "Imports": ("trade", "imports", "imp"), "Exports": ("trade", "exports", "exp"), "Ending stocks": ("stocks", "ending stocks", "stk")}
+def food_balance():
+    """32-10-0053: oferta y utilización de alimentos en Canadá (anual, toneladas; vino en kilolitros)."""
+    names = dict(FOOD); n = 0
+    rows = [r for r in load(32100053) if r["GEO"] == "Canada" and r["Commodity"] in names and r["Supply and disposition"] in FOOD_M]
+    by = series_of(rows, lambda r: (r["Commodity"], r["Supply and disposition"], r["UOM"]))
+    for (c, m, u), pts in by.items():
+        g, nm, tag = FOOD_M[m]
+        if u == "Kilolitres": pts, unit = [(p, v / 1e3) for p, v in pts], "million litres"
+        else: pts, unit = [(p, v / 1e3) for p, v in pts], "thousand t"
+        put("ca-food-%s-%s" % (slug(c), tag), g, "%s: %s (annual food balance)" % (names[c], nm), unit, "annual", pts, "StatCan 32-10-0053"); n += 1
+    log("balance de alimentos", n)
+DSD = {"Production": ("production", "production", "prod"), "Imports": ("trade", "imports", "imp"), "Ending stocks": ("stocks", "ending stocks", "stk")}
+def dairy_balance():
+    """32-10-0481: oferta y disposición trimestral de productos lácteos (toneladas)."""
+    n = 0
+    rows = [r for r in load(32100481) if r["GEO"] == "Canada" and r["Supply and disposition"] in DSD]
+    by = series_of(rows, lambda r: (r["Commodity"], r["Supply and disposition"]))
+    for (c, m), pts in by.items():
+        g, nm, tag = DSD[m]
+        put("ca-dsd-%s-%s" % (slug(c), tag), g, "%s: %s (quarterly)" % (re.sub(r",? total$", "", c), nm), "t", "quarterly", [(qtr(p), v) for p, v in pts], "StatCan 32-10-0481"); n += 1
+    log("balance lacteo trimestral", n)
+RETAIL = ["Beef stewing cuts, per kilogram", "Beef striploin cuts, per kilogram", "Ground beef, per kilogram", "Beef top sirloin cuts, per kilogram", "Pork loin cuts, per kilogram", "Pork shoulder cuts, per kilogram",
+          "Whole chicken, per kilogram", "Chicken breasts, per kilogram", "Bacon, 500 grams", "Milk, 1 litre", "Milk, 4 litres", "Butter, 454 grams", "Block cheese, 500 grams", "Yogurt, 500 grams", "Eggs, 1 dozen",
+          "Apples, per kilogram", "Oranges, per kilogram", "Bananas, per kilogram", "Potatoes, per kilogram", "Tomatoes, per kilogram", "Onions, per kilogram", "Carrots, 1.36 kilograms", "White sugar, 2 kilograms",
+          "White rice, 2 kilograms", "Brown rice, 900 grams", "Olive oil, 1 litre", "Dried lentils, 900 grams"]
+def retail_prices():
+    """18-10-0245: precios medios minoristas mensuales de productos seleccionados (Canadá, dólares canadienses)."""
+    n = 0
+    rows = load_filtered(18100245, lambda r: r["GEO"] == "Canada" and r["Products"].strip() in RETAIL)
+    by = series_of(rows, lambda r: r["Products"].strip())
+    for k, pts in by.items():
+        put("ca-retail-%s" % slug(k), "prices", "Retail price: %s (monthly)" % (k[0].lower() + k[1:]), "CAD", "monthly", pts, "StatCan 18-10-0245"); n += 1
+    log("precios minoristas", n)
+def eggs_annual():
+    n = 0
+    rows = [r for r in load(32100119) if r["GEO"] == "Canada"]
+    want = {"Production of eggs in shell": ("Eggs in shell: production (annual)", "million dozen", 1e-6, "production", "prod", "Dozens"), "Average number of layers": ("Laying hens: average number (annual)", "million", 1e-6, "production", "layers", "Layers"),
+            "Value of production of eggs in shell, total": ("Eggs in shell: value of production (annual)", "CAD million", 1e-6, "income", "value", "Dollars")}
+    by = series_of(rows, lambda r: re.sub(r"\s*\[[0-9]+\]\s*$", "", r["Production and disposition"]).strip() if re.sub(r"\s*\[[0-9]+\]\s*$", "", r["Production and disposition"]).strip() in want else None)
+    for k, pts in by.items():
+        lab, unit, f, g, tag, _u = want[k]
+        put("ca-eggann-%s" % tag, g, lab, unit, "annual", [(p, v * f) for p, v in pts], "StatCan 32-10-0119"); n += 1
+    log("huevos anual", n)
+def honey_maple():
+    n = 0
+    rows = [r for r in load(32100353) if r["GEO"] == "Canada"]
+    spec = {"Production of natural honey, total": ("Honey: production of natural honey (annual)", "thousand t", 0.45359237e-6, "production", "prod"), "Colonies": ("Honey: bee colonies (annual)", "thousand", 1e-3, "livestock", "colonies"),
+            "Value of natural honey, total": ("Honey: value of natural honey (annual)", "CAD million", 1e-6, "income", "value")}
+    by = series_of(rows, lambda r: re.sub(r"\s*\[[0-9]+\]\s*$", "", r["Estimates"]).strip() if re.sub(r"\s*\[[0-9]+\]\s*$", "", r["Estimates"]).strip() in spec else None)
+    for k, pts in by.items():
+        lab, unit, f, g, tag = spec[k]
+        put("ca-honey-%s" % tag, g, lab, unit, "annual", [(p, v * f) for p, v in pts], "StatCan 32-10-0353"); n += 1
+    rows = [r for r in load(32100354) if r["GEO"] == "Canada"]
+    by = series_of(rows, lambda r: re.sub(r"\s*\[[0-9]+\]\s*$", "", r["Maple products"]).strip() if r["UOM"] == "Gallons" or r["Maple products"].startswith("Gross value") else None)
+    for k, pts in by.items():
+        if k.startswith("Gross value"): put("ca-maple-value", "income", "Maple products: gross value (annual)", "CAD million", "annual", [(p, v * 1e-6) for p, v in pts], "StatCan 32-10-0354"); n += 1
+        else: put("ca-maple-%s" % slug(k), "production", "Maple products: %s, in syrup equivalent (annual)" % k.lower().replace("maple products expressed as syrup, total", "total").replace("production of ", ""), "million gallons", "annual", [(p, v * 1e-6) for p, v in pts], "StatCan 32-10-0354"); n += 1
+    log("miel y arce", n)
+VEG = {"Fresh tomatoes": "Tomatoes", "Fresh cucumbers and fresh gherkins (all varieties)": "Cucumbers", "Fresh dry onions": "Dry onions", "Fresh carrots": "Carrots", "Fresh cabbage": "Cabbage", "Fresh lettuce": "Lettuce",
+       "Fresh broccoli": "Broccoli", "Fresh cauliflowers": "Cauliflower", "Fresh celery": "Celery", "Fresh sweet corn": "Sweet corn", "Fresh peppers": "Peppers", "Fresh squash and zucchini": "Squash and zucchini", "Total fresh vegetables": "Total fresh vegetables"}
+def vegetables():
+    n = 0
+    rows = [r for r in load(32100365) if r["GEO"] == "Canada" and clean(r["Commodity"]) in VEG]
+    def key(r):
+        e, u = r["Estimates"], r["UOM"]
+        if e.startswith("Marketed production") and u == "Metric tonnes": return (clean(r["Commodity"]), "prod")
+        if e.startswith("Farm gate value") and u == "Dollars": return (clean(r["Commodity"]), "value")
+        if e.startswith("Area planted") and u == "Hectares": return (clean(r["Commodity"]), "area")
+    by = series_of(rows, key)
+    for (c, t), pts in by.items():
+        if t == "prod": put("ca-veg-%s-prod" % slug(VEG[c]), "production", "Vegetables: %s, marketed production (annual)" % VEG[c].lower(), "t", "annual", pts, "StatCan 32-10-0365")
+        elif t == "value": put("ca-veg-%s-value" % slug(VEG[c]), "income", "Vegetables: %s, farm gate value (annual)" % VEG[c].lower(), "CAD million", "annual", [(p, v * 1e-6) for p, v in pts], "StatCan 32-10-0365")
+        else: put("ca-veg-%s-area" % slug(VEG[c]), "crops", "Vegetables: %s, area planted (annual)" % VEG[c].lower(), "ha", "annual", pts, "StatCan 32-10-0365")
+        n += 1
+    log("hortalizas", n)
+def greenhouse():
+    n = 0
+    rows = [r for r in load(32100456) if r["GEO"] == "Canada" and clean(r["Commodity"]) in ("Fresh tomatoes", "Fresh cucumbers", "Fresh lettuce", "Fresh peppers")]
+    def key(r):
+        k, u = r["Production and value"], r["UOM"]
+        if k == "Production" and u == "Kilograms": return (clean(r["Commodity"]), "prod")
+        if k == "Average price" and u == "Dollars per kilogram": return (clean(r["Commodity"]), "price")
+        if k == "Farm gate value" and u == "Dollars": return (clean(r["Commodity"]), "value")
+    by = series_of(rows, key)
+    for (c, t), pts in by.items():
+        nm = c.replace("Fresh ", "").lower()
+        if t == "prod": put("ca-gh-%s-prod" % slug(nm), "production", "Greenhouse %s: production (annual)" % nm, "thousand t", "annual", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0456")
+        elif t == "price": put("ca-gh-%s-price" % slug(nm), "prices", "Greenhouse %s: average farm price (annual)" % nm, "CAD/kg", "annual", pts, "StatCan 32-10-0456")
+        else: put("ca-gh-%s-value" % slug(nm), "income", "Greenhouse %s: farm gate value (annual)" % nm, "CAD million", "annual", [(p, v * 1e-6) for p, v in pts], "StatCan 32-10-0456")
+        n += 1
+    log("invernadero", n)
+VPH = ["Slaughter steers", "Beef cows", "Dairy cows", "Beef heifers for slaughter", "Total calves", "Total pigs", "Sows and bred gilts", "Total lambs", "Lambs for slaughter", "Ewes", "Broilers", "Layers"]
+def value_per_head():
+    """32-10-0124: valor por cabeza de ganado a 1 de julio (dólares canadienses)."""
+    n = 0
+    rows = [r for r in load(32100124) if r["GEO"] == "Canada" and r["Livestock"] in VPH]
+    by = series_of(rows, lambda r: r["Livestock"])
+    for k, pts in by.items():
+        put("ca-vph-%s" % slug(k), "prices", "Value per head at 1 July: %s (annual)" % k.lower(), "CAD/head", "annual", pts, "StatCan 32-10-0124"); n += 1
+    log("valor por cabeza", n)
+def butterfat_eggstock():
+    n = 0
+    rows = [r for r in load(32100132) if r["GEO"] == "Canada"]
+    by = series_of(rows, lambda r: r["Dairy distribution"])
+    for k, pts in by.items():
+        put("ca-butterfat-%s" % slug(k), "milk", "Milk butterfat shipments: %s (monthly)" % k.lower().replace(", total", ""), "t", "monthly", pts, "StatCan 32-10-0132"); n += 1
+    rows = [r for r in load(32100123) if r["GEO"] == "Canada" and r["Commodity"] in ("Whole eggs, total", "Yolk, total", "Whites, total", "Edible dried eggs")]
+    by = series_of(rows, lambda r: r["Commodity"])
+    for k, pts in by.items():
+        put("ca-eggstock-%s" % slug(k), "stocks", "Frozen and dried egg stocks: %s (monthly)" % k.lower().replace(", total", ""), "t", "monthly", pts, "StatCan 32-10-0123"); n += 1
+    log("mantequilla (grasa) y huevo procesado", n)
+def hogs_more():
+    n = 0
+    def half(r): return "%s-%s" % (r["REF_DATE"][:4], "07" if "July" in (r.get("Survey date") or "") else "01")
+    rows = [r for r in load(32100201) if r["GEO"] == "Canada"]
+    by = {}
+    for r in rows:
+        v = num(r)
+        if v is not None: by.setdefault(r["Livestock"], []).append((half(r), v / 1e3))
+    for k, pts in by.items():
+        put("ca-hogs2-%s" % slug(k), "livestock", "Hogs: %s (half-year)" % k.lower(), "thousand head", "semiannual", pts, "StatCan 32-10-0201"); n += 1
+    rows = [r for r in load(32100151) if r["GEO"] == "Canada"]
+    by = {}
+    for r in rows:
+        v = num(r)
+        if v is not None: by.setdefault((r["Estimates"], r.get("Survey date") or ""), []).append((r["REF_DATE"][:4] + ("-07" if "July" in (r.get("Survey date") or "") else "-01"), v))
+    for (e, sd), pts in by.items():
+        t = "farms" if e.startswith("Number of farms") else "avg"
+        put("ca-cattlefarms-%s-%s" % (t, "jul" if "July" in sd else "jan"), "livestock", "Cattle and calves: %s (%s)" % ("farms reporting" if t == "farms" else "average herd per farm reporting", "1 July" if "July" in sd else "1 January"), "farms" if t == "farms" else "head per farm", "semiannual", pts, "StatCan 32-10-0151"); n += 1
+    log("porcino y explotaciones", n)
+def milling():
+    n = 0
+    rows = [r for r in load(32100131) if r["GEO"] == "Canada" and r["Milled wheat and wheat flour produced"] in ("Total wheat milled", "Total wheat flour produced", "Total millfeeds produced")]
+    for k, pts in series_of(rows, lambda r: r["Milled wheat and wheat flour produced"]).items():
+        put("ca-mill-%s" % slug(k), "production", "Wheat milling: %s (annual)" % k.lower().replace("total ", ""), "thousand t", "annual", [(p, v / 1e3) for p, v in pts], "StatCan 32-10-0131"); n += 1
+    rows = [r for r in load(32100479) if r["GEO"] == "Canada" and r["Milled wheat and wheat flour produced"] in ("Total wheat milled", "Total wheat flour produced")]
+    for k, pts in series_of(rows, lambda r: r["Milled wheat and wheat flour produced"]).items():
+        put("ca-millq-%s" % slug(k), "production", "Wheat milling: %s (quarterly)" % k.lower().replace("total ", ""), "t", "quarterly", [(qtr(p), v) for p, v in pts], "StatCan 32-10-0479"); n += 1
+    log("molienda de trigo", n)
+def land_payments():
+    n = 0
+    rows = [r for r in load(32100047) if r["GEO"] in ("Canada",) + tuple(PROV)]
+    for geo in ("Canada",) + tuple(PROV):
+        pts = [(r["REF_DATE"], num(r)) for r in rows if r["GEO"] == geo and num(r) is not None]
+        put("ca-land-%s" % slug(geo), "income", "Value per acre of farm land and buildings at 1 July: %s (annual)" % geo, "CAD/acre", "annual", pts, "StatCan 32-10-0047"); n += 1
+    PAY = {"Total direct payments, gross payments": "total gross", "Total direct payments, net payments": "total net", "AgriStability": "AgriStability", "AgriInvest": "AgriInvest", "Crop Insurance, gross payments": "crop insurance gross", "Livestock Insurance Programs, gross payments": "livestock insurance gross"}
+    rows = [r for r in load(32100106) if r["GEO"] == "Canada"]
+    for k, pts in series_of(rows, lambda r: r["Direct payments and rebates"] if r["Direct payments and rebates"] in PAY else None).items():
+        put("ca-pay-%s" % slug(PAY[k]), "income", "Direct payments to agriculture producers: %s (annual)" % PAY[k], "CAD million", "annual", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0106"); n += 1
+    log("tierra y pagos directos", n)
+
 def main():
     import os
     only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
-    allf = (crops, potatoes, fruit, dairy_products, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners, grain_balance, beef, province_trade)
+    allf = (crops, potatoes, fruit, dairy_products, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners, grain_balance, beef, province_trade, food_balance, dairy_balance, retail_prices, eggs_annual, honey_maple, vegetables, greenhouse, value_per_head, butterfat_eggstock, hogs_more, milling, land_payments)
     if only:
         try:
             for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x
