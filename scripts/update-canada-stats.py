@@ -558,23 +558,17 @@ def _fert_col(rows):
     return None
 def fertilizer_more():
     n = 0
-    for pid, per, kind, lab, grp in ((32100036, None, "inv", "Fertilizer inventories at end of quarter", "inputs_f"), (32100037, None, "prod", "Fertilizer production", "inputs_f"), (32100039, None, "ship", "Fertilizer shipments by nutrient", "inputs_f")):
+    # solo el año agrícola completo (julio-junio) y las existencias a 30 de junio; los acumulados parciales no se publican
+    for pid, per, kind, lab in ((32100036, "June", "inv", "Fertilizer inventories at 30 June"), (32100037, "July to June", "prod", "Fertilizer production (Jul-Jun year)"), (32100039, "July to June", "ship", "Fertilizer shipments by nutrient (Jul-Jun year)")):
         try: rows = [r for r in load(pid) if r["GEO"] == "Canada"]
         except Exception as e: log("fert", pid, "error", e); continue
-        if not rows: continue
-        col = _fert_col(rows)
-        if not col: log("fert", pid, "sin columna de producto", list(rows[0].keys())); continue
-        pers = sorted(set(r.get("Period", "") for r in rows)); log("fert", pid, col, pers[:6])
-        for per in pers:
-            if kind == "inv" and per not in ("June 30", "June", "Jun", "June 30th"): pass
-            sub = [r for r in rows if r.get("Period", "") == per]
-            by = series_of(sub, lambda r: r[col])
-            for k, pts in by.items():
-                nm = re.sub(r"\s+\d[\d\-\.]*.*$", "", k).strip()
-                pts = [(re.split(r"[/-]", p)[-1][:4] if "/" in p else p, v / 1e3) for p, v in pts]
-                if kind == "inv": continue
-                tag = slug(per) if per else "x"
-                put("ca-fert-%s-%s-%s" % (kind, slug(nm), tag), grp, "%s: %s (%s, annual)" % (lab, nm.lower(), per or "year"), "thousand t", "annual", pts, "StatCan %s" % pid); n += 1
+        col = _fert_col(rows) if rows else None
+        if not col: continue
+        by = series_of([r for r in rows if r.get("Period", "") == per], lambda r: r[col])
+        for k, pts in by.items():
+            nm = re.sub(r"\s+\d[\d\-\.]*.*$", "", k).strip()
+            pts = [(re.split(r"[/-]", p)[-1][:4], v / 1e3) for p, v in pts]
+            put("ca-fert-%s-%s" % (kind, slug(nm)), "inputs_f", "%s: %s" % (lab, nm.lower()), "thousand t", "annual", pts, "StatCan %s" % pid); n += 1
     log("fert_more", n)
 
 
