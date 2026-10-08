@@ -116,7 +116,7 @@
       (ST.fx && cur._fx ? '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(w[1]) + ' ' + nf(cur0.latest, dec(cur0.latest)) + ' ' + esc(cur0.unit) + (cur._fx.miss ? '. ' + esc(w[2]) : '') + '</div>' : '');
   }
 
-  /* Precios reales: el mismo dato deflactado con el IPC del país (data/cpi.json, se descarga solo al activarlo). Es aritmética nuestra: el valor publicado sigue siendo el original. */
+  /* Precios reales: deflactados con el IPC del pais (data/cpi.json, bajo demanda); el valor publicado no cambia */
   var RCPI = null, RCT = {
     es: ['Precios reales (ajustados por la inflación)', 'Deflactado con {src} ({base}) y expresado en precios de {ref}: valor × IPC de {ref} ÷ IPC del periodo. Es un cálculo nuestro, no un dato publicado; original:', '{n} puntos sin IPC disponible se omiten.', 'Desmarca la casilla para ver los valores publicados (nominales).', 'Sin IPC utilizable para esta serie (el país no lo tiene en la frecuencia que hace falta); se muestran los valores publicados.', 'precios de {ref}'],
     en: ['Real prices (inflation-adjusted)', 'Deflated with {src} ({base}) and expressed in {ref} prices: value × CPI of {ref} ÷ CPI of the period. This is our own calculation, not a published figure; original:', '{n} points without an available CPI are omitted.', 'Untick to see the published (nominal) values.', 'No usable CPI for this series (the country has none at the frequency needed); published values are shown.', '{ref} prices'],
@@ -219,7 +219,7 @@
     return list;
   }
   function pt(s) { return DISeries.series(s.cc, s.id).then(function (f) { s.points = f.points; }).catch(function () {}); }
-  /* Grupos del selector ordenados por la vista de sector (js/sector.js): primero los del sector elegido, luego los comunes y al final los del otro sector, en grupos con nombre. Con «Ambos», lista plana. */
+  /* Grupos del selector en el orden de la vista de sector (js/sector.js) */
   function groupOpts(groups, t) {
     var SEC = window.DehesaSector, lab = function (k) { return k === 'all' ? t.all : t[k]; }, one = function (k) { return '<option value="' + esc(k) + '"' + (k === ST.g ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; };
     if (!SEC || SEC.get() === 'all') return groups.map(one).join('');
@@ -227,7 +227,7 @@
     groups.forEach(function (g) { if (g !== 'all') by[SEC.ofGroup(g)].push(g); });
     return one('all') + [cur, 'common', oth].filter(function (k) { return by[k].length; }).map(function (k) { return '<optgroup label="' + esc(SEC.label(k)) + '">' + by[k].map(one).join('') + '</optgroup>'; }).join('');
   }
-  /* EE. UU.: totales nacionales de NASS y ERS (js/us-depth.js con los bloques de js/region-more.js); los scripts se bajan solo en la ficha de EE. UU. */
+  /* EE. UU.: totales NASS/ERS (js/us-depth.js), solo en esta ficha */
   function usDepth() {
     var el = document.getElementById('ps-us'); if (!el) return;
     var go = function () { if (window.DehesaUsDepth) window.DehesaUsDepth.render(el); };
@@ -243,7 +243,7 @@
     hide.forEach(function (el) { fold.appendChild(el); }); det.appendChild(fold);
   }
   function groupsOf(c) { return ['all'].concat(GROUPS.filter(function (g) { return c.series.some(function (s) { return s.group === g; }); })); }
-  /* Solo se descargan los puntos que se van a pintar: la serie elegida, sus comparables locales/nacionales y los KPI del perfil (cada uno en su trozo pequeño). */
+  /* Solo se descargan los trozos que se pintan */
   function prep() {
     var c = DATA.countries[ST.c], list = selectedList(c), cur0 = list.filter(function (s) { return s.id === ST.s; })[0], need = [];
     if (cur0) {
@@ -253,9 +253,9 @@
     if (window.DIProfile) { try { window.DIProfile.kpis(ST.c, c.series, groupsOf(c)).forEach(function (s) { need.push(s); }); } catch (e) {} }
     var seen = {}; return Promise.all(need.filter(function (s) { if (!s || s.points || seen[s.cc + s.id]) return false; seen[s.cc + s.id] = 1; return true; }).map(pt));
   }
-  /* Marco comun de pagina: migas + barra de secciones (cifras clave, comercio, grafico, detalle, fuentes). Nombres fijos en las 4 lenguas. */
+  /* Migas + barra de secciones */
   var FRL = { es: ['Cifras clave', 'Comercio', 'Gráfico y series', 'Detalle del país', 'Fuentes y metodología', 'Inicio', 'Países', 'Preguntas', 'Regiones'], en: ['Key numbers', 'Trade', 'Chart and series', 'Country detail', 'Sources and methodology', 'Home', 'Countries', 'Questions', 'Regions'], fr: ['Chiffres clés', 'Commerce', 'Graphique et séries', 'Détail du pays', 'Sources et méthodologie', 'Accueil', 'Pays', 'Questions', 'Régions'], it: ['Cifre chiave', 'Commercio', 'Grafico e serie', 'Dettaglio del paese', 'Fonti e metodologia', 'Home', 'Paesi', 'Domande', 'Regioni'] };
-  /* Marco comun: «Datos propios del pais» (mismo sitio y nombre en todas las fichas) y avisos cuando un pais aun no tiene una seccion estandar. */
+  /* Marco comun: «Datos propios del pais» y avisos de secciones que faltan */
   var OWN = { es: ['Datos propios del país', 'Todavía no hay bloques propios de este país; debajo están el perfil agrario y el comercio por producto y socio, iguales en todas las fichas.'], en: ['Country-specific data', 'No country-specific blocks yet; below are the farm profile and trade by product and partner, the same on every country page.'], fr: ['Données propres au pays', 'Pas encore de blocs propres à ce pays ; ci-dessous, le profil agricole et le commerce par produit et partenaire, identiques sur chaque fiche.'], it: ['Dati specifici del paese', 'Ancora nessun blocco specifico per questo paese; sotto trovi il profilo agricolo e il commercio per prodotto e partner, uguali in ogni scheda.'] };
   var TPN = { es: 'Todavía no hay comercio por producto y socio de este país en Dehesa Index.', en: 'Dehesa Index does not show trade by product and partner for this country yet.', fr: 'Dehesa Index n’affiche pas encore le commerce par produit et partenaire pour ce pays.', it: 'Dehesa Index non mostra ancora il commercio per prodotto e partner per questo paese.' };
   var SLOT = { reg: { es: 'Dehesa Index aún no tiene un mapa de regiones de este país.', en: 'Dehesa Index does not have a regions map for this country yet.', fr: 'Dehesa Index n’a pas encore de carte des régions pour ce pays.', it: 'Dehesa Index non ha ancora una mappa delle regioni per questo paese.' } };
@@ -338,8 +338,8 @@
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } }); };
-  // El glosario de etiquetas pesa ~8 KB comprimido y la ficha de pais esta en su limite de peso: se activa cuando se apruebe subir el presupuesto (LABELS_ON)
-  var LABELS_ON = false;
+  // Glosario de etiquetas: activo (presupuesto 530 KB gz, 8-oct-2026)
+  var LABELS_ON = true;
   if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } });
   shell();
   var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
@@ -356,7 +356,7 @@
       DATA.countries[cc] = { name: c.name, sources: c.sources || [], series: S };
     }).catch(function (e) { delete CAT[cc]; throw e; });
   }
-  /* Fuente y licencia salen del Registro global de licencias (data/license-registry.json) a traves del sourceId de cada serie */
+  /* Fuente y licencia: del registro de licencias via sourceId */
   function lreg(id) { return LREG && LREG.sources && LREG.sources[id]; }
   function srcLine(id, t) {
     var s = lreg(id), w = LP[lang()] || LP.es; if (!s) return esc(id);
