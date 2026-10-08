@@ -205,7 +205,7 @@ try:
     hdr = rows[0].keys()
     log.append("ABS slaughter cols: " + ",".join(hdr))
     item_col = "LSTOCK_SLAUGHT"
-    for code, id_, label in [("30", "au-cattle-slaught", "Cattle (excl. calves) slaughtered"), ("110", "au-pig-slaught", "Pigs slaughtered"), ("70", "au-sheep-slaught", "Sheep slaughtered"), ("80", "au-lamb-slaught", "Lambs slaughtered")]:
+    for code, id_, label in [("30", "au-cattle-slaught", "Cattle (excl. calves) slaughtered"), ("110", "au-pig-slaught", "Pigs slaughtered"), ("70", "au-sheep-slaught", "Sheep slaughtered"), ("80", "au-lamb-slaught", "Lambs slaughtered"), ("10", "au-steer-slaught", "Bulls, bullocks and steers slaughtered"), ("20", "au-cow-slaught", "Cows and heifers slaughtered"), ("60", "au-calf-slaught", "Calves slaughtered"), ("170", "au-chicken-slaught", "Chickens slaughtered")]:
         pts = []
         for r in rows:
             if r.get(item_col) == code and r.get("STATE") == "AUS" and r.get("TSEST") == "10" and r.get("OBS_VALUE") not in (None, ""):
@@ -217,7 +217,7 @@ except Exception as e:
     log.append("ERROR AU slaughter: " + str(e)[:200])
 try:  # ABS LSTOCK_MEAT: carne producida (toneladas), nacional, serie original, trimestral
     rows = abs_csv("LSTOCK_MEAT/all?startPeriod=1990&format=csvfilewithlabels")
-    for code, id_, label in [("171", "au-chicken-meat-prod", "Chicken meat produced"), ("1101", "au-pig-meat-prod", "Pig meat produced"), ("301", "au-beef-prod", "Beef produced")]:
+    for code, id_, label in [("171", "au-chicken-meat-prod", "Chicken meat produced"), ("1101", "au-pig-meat-prod", "Pig meat produced"), ("301", "au-beef-prod", "Beef produced"), ("601", "au-veal-prod", "Veal produced"), ("701", "au-mutton-prod", "Mutton produced"), ("801", "au-lamb-prod", "Lamb produced"), ("120", "au-redmeat-prod", "Total red meat produced")]:
         pts = []
         for r in rows:
             if r.get("LSTOCK_MEAT") == code and r.get("STATE") == "AUS" and r.get("TSEST") == "10" and r.get("OBS_VALUE") not in (None, "") and (r.get("UNIT_MEASURE") or "T") == "T":
