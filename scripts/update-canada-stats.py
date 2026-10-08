@@ -418,6 +418,7 @@ def dairy_balance():
     by = series_of(rows, lambda r: (r["Commodity"], r["Supply and disposition"]))
     for (c, m), pts in by.items():
         g, nm, tag = DSD[m]
+        if m == "Production" and c in ("Creamery butter", "Cheddar cheese, total"): continue   # ya vienen de 32-10-0482/0483 (ca-prod-*)
         put("ca-dsd-%s-%s" % (slug(c), tag), g, "%s: %s (quarterly)" % (re.sub(r",? total$", "", c), nm), "t", "quarterly", [(qtr(p), v) for p, v in pts], "StatCan 32-10-0481"); n += 1
     log("balance lacteo trimestral", n)
 RETAIL = ["Beef stewing cuts, per kilogram", "Beef striploin cuts, per kilogram", "Ground beef, per kilogram", "Beef top sirloin cuts, per kilogram", "Pork loin cuts, per kilogram", "Pork shoulder cuts, per kilogram",

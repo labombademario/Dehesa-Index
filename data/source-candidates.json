@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T17:31:05Z",
+ "generatedAt": "2026-10-08T17:52:16Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -3680,7 +3680,7 @@
    "country": "CA",
    "scope": "integrated",
    "institution": "Statistics Canada",
-   "dataset": "Ya integrada (495 series en el catalogo unificado)",
+   "dataset": "Ya integrada (707 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -3693,15 +3693,18 @@
     "maize",
     "milk",
     "oats",
+    "olive",
     "pigs",
     "potato",
     "poultry",
     "rapeseed",
+    "rice",
     "rye",
     "sheep",
     "soy",
     "sugar",
-    "wheat"
+    "wheat",
+    "wine"
    ],
    "productsConfirmed": true,
    "metrics": [
