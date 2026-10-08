@@ -2886,6 +2886,17 @@
     "franceagrimer"
    ],
    "notes": "Superficie, rendimiento y produccion por cultivo y region de Francia metropolitana, 2021-2026 (SSP/Agreste, difundido por FranceAgriMer); scripts/build-france-crops.py. Se omiten Cereales y Oleaginosas porque el CSV de origen repite las filas de sus componentes en lugar del total. Las regiones suman el total nacional del Excel."
+  },
+  "data/france-extras-stats.json": {
+   "byCountry": {
+    "FR": "franceagrimer"
+   }
+  },
+  "data/france-cereobs-cp.json": {
+   "sources": [
+    "franceagrimer"
+   ],
+   "notes": "Estado semanal de los cereales de paja (trigo blando, trigo duro, cebada de invierno y de primavera) de Cere'Obs, FranceAgriMer; scripts/build-france-cereobs-cp.py a partir del Excel historico. Licencia FranceAgriMer dada por valida por el propietario (7 oct 2026)."
   }
  },
  "derived": [

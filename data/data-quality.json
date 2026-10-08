@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T00:35:53Z",
+ "generatedAt": "2026-10-08T02:29:47Z",
  "summary": {
-  "files": 30,
+  "files": 32,
   "errors": 0,
   "warnings": 8
  },
@@ -51,6 +51,38 @@
     "lines": 0
    },
    "generatedAt": "2026-10-06T15:22:49Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "france-crops-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 57,
+    "points": 339,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T01:40:48Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "france-extras-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 28,
+    "points": 1588,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T02:23:16Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

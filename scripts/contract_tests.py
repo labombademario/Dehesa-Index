@@ -2768,6 +2768,17 @@ def france_vigieau(doc, errs, warns, stats):
     stats["france-vigieau departamentos"] = len(doc["departments"])
 
 
+def france_cereobs_cp(doc, errs, warns, stats):
+    """Francia (Cere'Obs, cereales de paja): los cuatro cultivos presentes y cada uno cumple las mismas reglas que el maiz (semanas crecientes, 0-100, clases de estado ~100)."""
+    ids = ("soft-wheat", "durum-wheat", "winter-barley", "spring-barley")
+    for c in ids:
+        if c not in doc["crops"]: errs.append("france-cereobs-cp: falta el cultivo %s" % c); return
+        sub = {"source": doc["source"], "fields": doc["fields"], "national": doc["crops"][c]["national"], "regions": doc["crops"][c]["regions"]}
+        e2 = []
+        france_cereobs(sub, e2, warns, stats)
+        if e2: errs.extend(["%s: %s" % (c, x) for x in e2]); return
+
+
 def france_cereobs(doc, errs, warns, stats):
     """Francia (Cere'Obs, maiz): semanas crecientes, porcentajes 0-100, estado (5 clases) suma ~100 cuando esta completo; regiones no vacias."""
     if doc["source"]["id"] != "franceagrimer": errs.append("france-cereobs: la fuente no es franceagrimer"); return

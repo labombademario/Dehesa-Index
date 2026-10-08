@@ -50,6 +50,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await page.selectOption('#eu-fr-water select[data-k="f"]', '4'); ok(tag + ' FR: filtro de crisis', (await frRows()) === crise);
   await page.click('#eu-fr-maize > summary'); await page.waitForSelector('#eu-fr-maize .de-t'); t = await txt('fr-maize'); ok(tag + ' FR: maíz', !BAD.test(t) && (await page.$$('#eu-fr-maize svg')).length >= 1 && /2026/.test(t));
   await page.selectOption('#eu-fr-maize select[data-k="r"]', Object.keys(FC.regions)[0]); t = await txt('fr-maize'); ok(tag + ' FR: región', !BAD.test(t));
+  await page.click('#eu-fr-cereals > summary'); await page.waitForSelector('#eu-fr-cereals .de-t, #eu-fr-cereals svg'); t = await txt('fr-cereals'); ok(tag + ' FR: Cere\'Obs trigo y cebada', !BAD.test(t) && (await page.$$('#eu-fr-cereals svg')).length >= 1 && /20(25|26)/.test(t));
   ok(tag + ': sin desborde horizontal', !(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)));
   ok(tag + ': sin errores de consola (' + errs.join(' | ') + ')', errs.length === 0);
   await ctx.close();

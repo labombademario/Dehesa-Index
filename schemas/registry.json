@@ -749,6 +749,12 @@
   "watch/index.json": [
    "watch-shards",
    []
+  ],
+  "france-cereobs-cp.json": [
+   "france-cereobs-cp",
+   [
+    "france_cereobs_cp"
+   ]
   ]
  },
  "globs": {

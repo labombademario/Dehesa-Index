@@ -65,7 +65,8 @@ def coverage(rows, now_ms):
     for r in rows:
         if r['group'] == 'rates': continue
         n += 1; b = pms(r.get('latestPeriod')); arch = r.get('fs') in FR.POLICY['archiveStates']  # historicas/discontinuadas: fuera del denominador de frescura
-        if not arch: act += 1; a = pms(r.get('first'))
+        a = pms(r.get('first'))  # igual que JS: la profundidad cuenta tambien las series historicas
+        if not arch: act += 1
         if (r['fs'] in FR.POLICY['okStates']) if r.get('fs') else (b is not None and (now_ms - b) / 864e5 <= MAXAGE.get(r.get('freq'), 80) * 1.5): fresh += 1
         if r.get('freq') in ('monthly', 'weekly', 'daily'): mo += 1
         if a is not None and b is not None: yrs.append((b - a) / (365.25 * 864e5))

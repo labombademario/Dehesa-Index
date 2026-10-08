@@ -7,7 +7,7 @@ Si no se da --file, busca la serie en todos los ficheros de estadisticas por pai
 import datetime, json, subprocess, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ["country-stats", "spain-stats", "france-stats", "france-crops-stats", "germany-stats", "belgium-stats", "austria-stats", "uk-stats", "portugal-stats", "portugal-eurostat-stats", "italy-eurostat-stats", "eurostat-depth-stats", "uk-trade-stats", "chile-stats", "argentina-stats", "poland-eurostat-stats", "abares-stats", "switzerland-foag-stats", "switzerland-meteo-stats", "poland-stats", "eu-gapfill-stats", "canada-stats", "us-stats", "australia-trade-stats", "eu-trade-stats", "interest-rates-stats"]
+FILES = ["country-stats", "spain-stats", "france-stats", "france-crops-stats", "france-extras-stats", "germany-stats", "belgium-stats", "austria-stats", "uk-stats", "portugal-stats", "portugal-eurostat-stats", "italy-eurostat-stats", "eurostat-depth-stats", "uk-trade-stats", "chile-stats", "argentina-stats", "poland-eurostat-stats", "abares-stats", "switzerland-foag-stats", "switzerland-meteo-stats", "poland-stats", "eu-gapfill-stats", "canada-stats", "us-stats", "australia-trade-stats", "eu-trade-stats", "interest-rates-stats"]
 def git(*a): return subprocess.run(["git"] + list(a), cwd=ROOT, capture_output=True, text=True)
 def find_series(doc, cc, sid):
     c = doc.get("countries", {}).get(cc)
