@@ -1,1 +1,1 @@
-{"schemaVersion":"1.0","id":"broken-brisures-camargue","family":"arroz","parts":["Broken","Brisures Camargue"],"unit":"€/t","freq":"weekly","regions":[{"c":"FR","d":[9668,9675,9682,9689,9696,9703,9710,9738,9745,9759,9766],"v":[510,510,510,510,510,510,510,510,510,510,510]}]}
+{"schemaVersion":"1.0","id":"broken-brisures-camargue","family":"arroz","parts":["Broken","Brisures Camargue"],"unit":"€/t","freq":"weekly","regions":[{"c":"FR","d":[9668,9675,9682,9689,9696,9703,9710,9738,9745,9759,9766,9773],"v":[510,510,510,510,510,510,510,510,510,510,510,510]}]}
