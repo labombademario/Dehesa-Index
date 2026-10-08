@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - "scripts/update_news.py"
+      - "scripts/news_*.py"
       - ".github/workflows/update-news.yml"
 
 permissions:

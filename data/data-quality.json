@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T21:27:51Z",
+ "generatedAt": "2026-10-08T23:28:15Z",
  "summary": {
-  "files": 39,
+  "files": 40,
   "errors": 0,
   "warnings": 13
  },
@@ -358,11 +358,11 @@
     "AR/ar-sagyp-soy-production: salto 1400000.0 -> 2500000.0 en 1977 (mediana previa 7.8e+04)"
    ],
    "stats": {
-    "series": 89,
-    "points": 15048,
+    "series": 177,
+    "points": 25119,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T18:29:15Z",
+   "generatedAt": "2026-10-08T22:32:43Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -531,6 +531,22 @@
    "generatedAt": "2026-10-08T20:09:12Z",
    "info": [],
    "nWarnings": 23,
+   "nErrors": 0
+  },
+  {
+   "file": "france-insee-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 221,
+    "points": 60390,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T21:50:29Z",
+   "info": [],
+   "nWarnings": 0,
    "nErrors": 0
   },
   {

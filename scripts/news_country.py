@@ -12,7 +12,7 @@ _G = {
  "PT": "APCOR;Agricultura e Mar;Agroportal;CAP Portugal;Confagri;Expresso;GPP;Jornal de Negócios;Lusa;Observador;Público;Vida Rural;Voz do Campo;Portugal Resident",
  "NL": "ANP;Agrarisch Dagblad;Boerderij;Foodagribusiness;NOS;NU.nl;Nieuwe Oogst;Wageningen University;DutchNews",
  "BE": "Agra Belgique;Belga;Boerenbond;De Standaard;De Tijd;Le Sillon Belge;Le Soir;Vilt;Landbouwleven;Brussels Times",
- "DK": "Bondebladet;Børsen;DR Penge;Danmarks Radio;Effektivt Landbrug;Food Supply DK;Landbrug & Fødevarer;Landbrugsavisen;Ritzau;SEGES;Danish Agriculture & Food Council",
+ "DK": "Børsen;DR Penge;Danmarks Radio;Effektivt Landbrug;Food Supply DK;Landbrug & Fødevarer;Landbrugsavisen;Ritzau;SEGES;Danish Agriculture & Food Council",
  "IE": "Agriland;Irish Farmers Journal",
  "AU": "AAP;ABARES;ABC Rural;Australian Financial Review;Australian Wool Innovation;Beef Central;Dairy News Australia;Farm Online;Farm Weekly;GRDC;Grain Central;Grain Growers;Meat & Livestock Australia;Queensland Country Life;Sheep Central;Stock & Land;The Land;The Weekly Times",
  "UA": "Latifundist;UkrAgroConsult",
@@ -36,10 +36,17 @@ for _c, _v in {
  'AU': 'aapnews.aap.com.au;countrynews.com.au',
  'UA': 'електронна зернова біржа України;Новини аграрного бізнесу',
  'IN': 'The Economic Times;Livemint;AgroSpectrum India;ChiniMandi',
- 'AR': 'bcr.com.ar',
+ 'AR': 'bcr.com.ar;Agrofy News;News Agrofy;TodoAgro;Clarín;Clarin.com;La Nación;Infobae;Ámbito;Bichos de Campo;Agrositio',
 }.items():
     for _s in _v.split(';'):
         SOURCE_COUNTRY[_s] = _c
+
+try:  # medios añadidos el 8-oct-2026 (cada fila de news_feeds_more.py lleva su país)
+    from news_feeds_more import COUNTRIES as _MORE
+    for _s, _c in _MORE.items():
+        SOURCE_COUNTRY.setdefault(_s, _c)
+except ImportError:
+    pass
 
 def country_of(source):
     return SOURCE_COUNTRY.get(source)

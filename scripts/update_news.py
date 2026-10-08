@@ -16,6 +16,7 @@ from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from news_country import country_of
+import news_feeds_more, news_lang_terms
 
 ROOT = Path(__file__).resolve().parents[1]; DATA = ROOT / "data"; VIEWS = DATA / "views"
 DATA.mkdir(exist_ok=True)
@@ -24,11 +25,17 @@ MAX_ITEMS = 600      # tope en news.json
 MAX_FEED = 450       # tope en js/news-feed.js (página Noticias)
 MAX_PER_FEED = 40    # máximo por feed antes de deduplicar
 MAX_PER_PUBLISHER = 14
+MIN_PER_COUNTRY = 8    # cupo mínimo reservado a cada país del medio
+MAX_PER_COUNTRY = 36   # noticias como máximo por país del medio (las sin país no cuentan)
 INDEX_PER_KEY = 25
 UA = "DehesaIndex-NewsBot/1.0 (+https://dehesaindex.com)"
 
 _HL = {"en": ("en-US", "US", "US:en"), "es": ("es", "ES", "ES:es"), "fr": ("fr", "FR", "FR:fr"),
-       "it": ("it", "IT", "IT:it"), "de": ("de", "DE", "DE:de"), "nl": ("nl", "NL", "NL:nl"), "da": ("da", "DK", "DK:da"), "pt": ("pt-PT", "PT", "PT:pt-150"), "es419": ("es-419", "AR", "AR:es-419")}
+       "it": ("it", "IT", "IT:it"), "de": ("de", "DE", "DE:de"), "nl": ("nl", "NL", "NL:nl"), "da": ("da", "DK", "DK:da"), "pt": ("pt-PT", "PT", "PT:pt-150"), "es419": ("es-419", "AR", "AR:es-419"),
+       "pl": ("pl", "PL", "PL:pl"), "sv": ("sv", "SE", "SE:sv"), "fi": ("fi", "FI", "FI:fi"), "cs": ("cs", "CZ", "CZ:cs"), "sk": ("sk", "SK", "SK:sk"),
+       "hu": ("hu", "HU", "HU:hu"), "ro": ("ro", "RO", "RO:ro"), "bg": ("bg", "BG", "BG:bg"), "el": ("el", "GR", "GR:el"), "hr": ("hr", "HR", "HR:hr"),
+       "sl": ("sl", "SI", "SI:sl"), "lt": ("lt", "LT", "LT:lt"), "lv": ("lv", "LV", "LV:lv"), "et": ("et", "EE", "EE:et"),
+       "engb": ("en-GB", "GB", "GB:en"), "enie": ("en-IE", "IE", "IE:en")}
 
 def google(q, lang="en", gl=None):
     hl, g, ceid = _HL[lang]
@@ -340,11 +347,14 @@ FEEDS = [
     F("", "eu", google("influenza aviaria peste suina africana lingua blu dermatite nodulare", "it"), "it", pub=True),
 ]
 
+# Medios añadidos el 8-oct-2026 para los países sin noticias o con pocas (scripts/news_feeds_more.py)
+FEEDS += news_feeds_more.build(F, google)
+
 # ─────────────────────────── clasificación multilingüe ───────────────────────────
 # Prefijo "it:" / "fr:" / "es:" / "en:" = el término solo cuenta si la noticia está en ese idioma.
 PRODUCTS = {
  "maiz": ["corn", "maize", "maiz", "maïs", "it:mais"],
- "trigo": ["wheat", "trigo", "ble", "blé", "frumento", "grano tenero", "grano duro", "durum"],
+ "trigo": ["wheat", "trigo", "fr:ble", "blé", "frumento", "grano tenero", "grano duro", "durum"],
  "soja": ["soybean", "soy", "soja", "soia"],
  "arroz": ["rice", "arroz", "riz", "riso", "paddy"],
  "cebada": ["barley", "cebada", "orge", "orzo", "malt"],
@@ -381,7 +391,7 @@ EXTRA_PRODUCTS = {
  "maiz": ["de:mais", "nl:mais", "milho", "majs"],
  "trigo": ["weizen", "tarwe", "hvede", "trigo mole", "trigo duro"],
  "soja": ["sojabohnen", "sojabonen", "sojabonner", "sojaschrot"],
- "arroz": ["de:reis", "rijst", "da:ris"],
+ "arroz": ["de:=reis", "rijst", "da:ris"],
  "cebada": ["gerste", "gerst", "cevada", "byg"],
  "colza": ["de:raps", "koolzaad", "rapsfro", "sonnenblume", "zonnebloem", "girassol", "solsikke"],
  "azucar": ["zucker", "suiker", "acucar", "sukker"],
@@ -409,10 +419,12 @@ EXTRA_TOPICS = {
  "sanidad": ["vogelgrippe", "schweinepest", "blauzungenkrankheit", "klauenseuche", "tierseuche", "vogelgriep", "varkenspest", "blauwtong", "klauwzeer", "febre aftosa", "lingua azul", "peste suina", "gripe das aves", "fugleinfluenza", "svinepest", "blåtunge", "mund- og klovsyge"],
  "ayudas": ["forderung", "beihilfe", "agrarförderung", "subsidie", "subsidies", "steun", "apoio", "apoios", "ajudas", "indemnizacoes", "tilskud", "støtte", "kompensation"],
 }
-_STAR = {'schaf', 'hagel', 'oogst', 'durre', 'forderung', 'prijs', 'meststof', 'olijfolie', 'erdgas', 'gerste', 'klauenseuche', 'hittegolf', 'varkenspest', 'kunstmest', 'rindfleisch', 'minister', 'blauwtong', 'koolzaad', 'klauwzeer', 'pluimvee', 'krachtvoer', 'sojabonen', 'droogte', 'notering', 'mejeri', 'vogelgriep', 'ernte', 'blauzungenkrankheit', 'subsidie', 'aardgas', 'ertrag', 'sukker', 'hitzewelle', 'zucker', 'udbytte', 'sojabohnen', 'vogelgrippe', 'tierseuche', 'prisen', 'hvede', 'milch', 'rapsfro', 'varken', 'melk', 'svin', 'futtermittel', 'rundvlees', 'schwein', 'dunger', 'oksekod', 'tarwe', 'trockenheit', 'svinekod', 'fugleinfluenza', 'tørke', 'regierung', 'weizen', 'mælk', 'sonnenblume', 'schapen', 'geflugel', 'svinepest', 'notierung', 'olivenol', 'preis', 'beihilfe', 'suiker', 'schweinepest', 'opbrengst', 'priser', 'zonnebloem'}
+_STAR = {'schaf', 'hagel', 'oogst', 'durre', 'forderung', 'prijs', 'meststof', 'olijfolie', 'erdgas', 'gerste', 'klauenseuche', 'hittegolf', 'varkenspest', 'kunstmest', 'rindfleisch', 'minister', 'blauwtong', 'koolzaad', 'klauwzeer', 'pluimvee', 'krachtvoer', 'sojabonen', 'droogte', 'notering', 'mejeri', 'vogelgriep', 'ernte', 'blauzungenkrankheit', 'subsidie', 'aardgas', 'ertrag', 'sukker', 'hitzewelle', 'zucker', 'udbytte', 'sojabohnen', 'vogelgrippe', 'tierseuche', 'prisen', 'hvede', 'milch', 'rapsfro', 'varken', 'melk', 'futtermittel', 'rundvlees', 'schwein', 'dunger', 'oksekod', 'tarwe', 'trockenheit', 'svinekod', 'fugleinfluenza', 'tørke', 'regierung', 'weizen', 'mælk', 'sonnenblume', 'schapen', 'geflugel', 'svinepest', 'notierung', 'olivenol', 'preis', 'beihilfe', 'suiker', 'schweinepest', 'opbrengst', 'priser', 'zonnebloem'}
 def _st(ts): return [("*" + t if t in _STAR else t) for t in ts]
 for _k, _v in EXTRA_PRODUCTS.items(): PRODUCTS[_k] = PRODUCTS[_k] + _st(_v)
 for _k, _v in EXTRA_TOPICS.items(): TOPICS[_k] = TOPICS[_k] + _st(_v)
+for _k, _v in news_lang_terms.PRODUCTS.items(): PRODUCTS[_k] = PRODUCTS[_k] + _v
+for _k, _v in news_lang_terms.TOPICS.items(): TOPICS[_k] = TOPICS[_k] + _v
 
 # Temas que por sí solos justifican una noticia de un medio agrario
 STRONG_TOPICS = {"sanidad", "oferta", "clima"}
@@ -440,12 +452,24 @@ def term_rx(t):
         _rx_cache[t] = re.compile(r"(?<![a-z0-9])" + core + suf + r"(?![a-z0-9])")
     return _rx_cache[t]
 
+# Idiomas añadidos el 8-oct-2026: solo cuentan sus propios términos (prefijados) y los internacionales largos.
+# Sin esto, términos sueltos de otros idiomas dan falsos positivos («hogy» = «hog», «atlaisvinimas» = «svin»).
+NEW_LANGS = {"pl", "sv", "fi", "cs", "sk", "hu", "ro", "bg", "el", "hr", "sl", "lt", "lv", "et"}
+
 def hit_count(text_n, text_raw, terms, lang):
     n = 0
     for t in terms:
         if ":" in t[:3]:
             lg, t = t.split(":", 1)
             if lg != lang: continue
+        elif lang in NEW_LANGS and (t.startswith("*") or len(t) < 6):
+            continue
+        if t.startswith("="):   # palabra exacta, sin sufijos («reis» no debe casar con «Reise»)
+            if re.search(r"(?<![a-z0-9])" + re.escape(t[1:]) + r"(?![a-z0-9])", text_n): n += 1
+            continue
+        if t == "*schaf":       # «Landwirtschaft» contiene «schaf»
+            if "schaf" in text_n.replace("wirtschaf", ""): n += 1
+            continue
         if t.startswith("*"):   # subcadena: compuestos tipo "Weizenpreise", "varkensprijs", "kornpriser"
             t = t[1:]
             if t in text_n or t in text_raw: n += 1
@@ -631,6 +655,26 @@ def fetch(feed):
     st["kept"] = len(rows)
     return rows, st
 
+def pick(rows, limit):
+    """Elige `limit` noticias (ya ordenadas por fecha y relevancia) repartidas entre países del medio:
+    primero hasta MIN_PER_COUNTRY por país, luego el resto por orden con un tope MAX_PER_COUNTRY. Las noticias sin país
+    (organismos internacionales, agencias globales) no tienen tope. Devuelve la lista otra vez ordenada."""
+    seen = {}; chosen = set()
+    for i, x in enumerate(rows):
+        cc = x.get("country")
+        if cc and seen.get(cc, 0) < MIN_PER_COUNTRY:
+            seen[cc] = seen.get(cc, 0) + 1; chosen.add(i)
+    cnt = dict(seen)
+    for i, x in enumerate(rows):
+        if len(chosen) >= limit: break
+        if i in chosen: continue
+        cc = x.get("country")
+        if cc:
+            if cnt.get(cc, 0) >= MAX_PER_COUNTRY: continue
+            cnt[cc] = cnt.get(cc, 0) + 1
+        chosen.add(i)
+    return [x for i, x in enumerate(rows) if i in chosen][:limit]
+
 def write_views(rows, now):
     VIEWS.mkdir(parents=True, exist_ok=True)
     # indice por producto/mercado (lo usa Precios): cada noticia una sola vez + lista de posiciones por clave. Titular unico (es/en/fr/it son identicos).
@@ -649,7 +693,7 @@ def write_views(rows, now):
                                                        ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # lista plana compacta (la usa Noticias y la ficha de producto)
     feed = [{"id": x["id"], "d": x["date"], "r": x["region"], "l": x["lang"], "s": x["source"], **({"c": x["country"]} if x.get("country") else {}), "h": x["headline"]["en"],
-             "x": x["description"][:220], "u": x["url"], "p": x["products"], "t": x["topics"], "v": x["relevance"]} for x in rows[:MAX_FEED]]
+             "x": x["description"][:220], "u": x["url"], "p": x["products"], "t": x["topics"], "v": x["relevance"]} for x in pick(rows, MAX_FEED)]
     (VIEWS / "news-feed.json").write_text(json.dumps({"generatedAt": now, "items": feed}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 def main():
@@ -675,7 +719,7 @@ def main():
     for x in ordered:
         per[x["source"]] = per.get(x["source"], 0) + 1
         if per[x["source"]] <= MAX_PER_PUBLISHER: rows.append(x)
-    rows = rows[:MAX_ITEMS]
+    rows = pick(rows, MAX_ITEMS)
     now = datetime.now(timezone.utc).isoformat()
     (DATA / "news.json").write_text(json.dumps({"generatedAt": now, "count": len(rows), "items": rows}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     write_views(rows, now)
