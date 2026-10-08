@@ -10,7 +10,7 @@ Formato común para todos los países (lo lee js/oferta-demanda-paises.js; lo va
 Aquí: la librería común (write) y Canadá (Statistics Canada 32-10-0013), derivada de data/canada-stats.json sin llamadas nuevas a la red.
 Uso: python3 scripts/build_supply_balances.py ca
      python3 scripts/build_supply_balances.py eu <Cereals_bs_EUROPA_EU.xlsx>   (lo descarga scripts/update-eu-balances.py)
-     python3 scripts/build_supply_balances.py fr <BIL-CER-cer_princ-camp-*.pdf>  (OCR; a mano, ver build_fr)
+     python3 scripts/build_supply_balances.py fr <BIL-CER-cer_princ-camp-*.pdf> [SCR-CER-historique_bilans_prev-*.xlsx]  (OCR + Excel histórico; a mano, ver build_fr)
 """
 import datetime, json, sys
 from pathlib import Path
@@ -249,6 +249,51 @@ FR_COLS[10] = 2026  # col. 9 = previsión de julio de 2026/27: se usa la de sept
 FR_REQ = ("beginStocks", "collecte", "totalSupply", "domestic", "exports", "totalUse", "endingStocks")
 
 
+FR_XLSX = [  # (id, hoja del Excel histórico, nombre)
+    ("wheat", "Blé tendre", T("Trigo blando", "Common wheat", "Blé tendre", "Frumento tenero")),
+    ("barley", "Orges", T("Cebada", "Barley", "Orge", "Orzo")),
+    ("maize", "Maïs", T("Maíz grano", "Grain maize", "Maïs grain", "Mais da granella")),
+    ("durum", "Blé dur", T("Trigo duro", "Durum wheat", "Blé dur", "Frumento duro")),
+    ("triticale", "Triticale", T("Triticale", "Triticale", "Triticale", "Triticale")),
+    ("oats", "Avoine", T("Avena", "Oats", "Avoine", "Avena")),
+    ("rye", "Seigle", T("Centeno", "Rye", "Seigle", "Segale")),
+    ("sorghum", "Sorgho", T("Sorgo", "Sorghum", "Sorgho", "Sorgo")),
+    ("buckwheat", "Sarrasin", T("Alforfón", "Buckwheat", "Sarrasin", "Grano saraceno")),
+]
+
+
+def _fr_xlsx_history(xlsx):
+    """Balances anuales 1996/97-... de FranceAgriMer en hoja de cálculo (texto, sin OCR): {producto: {año: {partida: valor}}}."""
+    import openpyxl, re, unicodedata
+    def norm(x): return "".join(c for c in unicodedata.normalize("NFD", str(x).lower()) if unicodedata.category(c) != "Mn").strip()
+    wb = openpyxl.load_workbook(xlsx, data_only=True)
+    out = {}
+    for pid, sheet, _n in FR_XLSX:
+        ws = wb[sheet]
+        hdr = None
+        for r in range(1, ws.max_row + 1):
+            n = sum(1 for c in range(1, ws.max_column + 1) if isinstance(ws.cell(r, c).value, str) and re.match(r"^\s*\d{4}/\d{2}\s*$", ws.cell(r, c).value))
+            if n >= 10: hdr = r  # la última cabecera es la del «Bilan de marché»
+        cols = {c: int(ws.cell(hdr, c).value.strip()[:4]) for c in range(1, ws.max_column + 1) if isinstance(ws.cell(hdr, c).value, str) and re.match(r"^\s*\d{4}/\d{2}\s*$", ws.cell(hdr, c).value)}
+        rows = {}
+        for r in range(hdr + 1, ws.max_row + 1):
+            lab = ws.cell(r, 1).value
+            if not isinstance(lab, str): continue
+            k = norm(lab)
+            for iid, rx, *_ in FR_ITEMS:
+                if iid not in rows and re.search(rx, k.replace("utilisations", "utilisations")):
+                    rows[iid] = r
+        camps = {}
+        for c, y in cols.items():
+            v = {}
+            for iid, r in rows.items():
+                x = ws.cell(r, c).value
+                if isinstance(x, (int, float)) and not isinstance(x, bool): v[iid] = round(float(x), 1)
+            camps[y] = v
+        out[pid] = camps
+    return out
+
+
 def _fr_candidates(pdf):
     import collections, re, sys
     sys.path.insert(0, str(ROOT / "scripts"))
@@ -270,7 +315,7 @@ def _fr_candidates(pdf):
     return cand
 
 
-def build_fr(pdf):
+def build_fr(pdf, xlsx=None):
     import itertools, datetime
     cand = _fr_candidates(pdf)
     camps, rejected = {}, []
@@ -293,6 +338,26 @@ def build_fr(pdf):
                 elif score == bscore and v != best: tie = True
             if best is None or tie: rejected.append((pid, year, "no cuadra" if best is None else "ambigua")); continue
             camps.setdefault(str(year), {"label": "%d/%02d" % (year, (year + 1) % 100), "v": {}})["v"][pid] = {k: float(x) for k, x in best.items() if x is not None}
+    if xlsx:
+        # El Excel histórico (texto) aporta 1996/97-2024/25 y 5 cereales más. Donde el PDF (más reciente, ya revisado) tiene la campaña, manda el PDF;
+        # además sirve de contraste independiente de la lectura por OCR.
+        hist = _fr_xlsx_history(xlsx)
+        n = nd = 0
+        for pid, cs in hist.items():
+            for y, v in sorted(cs.items()):
+                k = str(y)
+                if pid in camps.get(k, {}).get("v", {}):
+                    o = camps[k]["v"][pid]
+                    for it, val in o.items():
+                        if it in v:
+                            n += 1; nd += abs(v[it] - val) > max(3.0, 0.01 * abs(val))
+                    continue
+                if any(i not in v for i in ("beginStocks", "collecte", "totalSupply", "domestic", "exports", "totalUse", "endingStocks")): rejected.append((pid, y, "Excel: faltan partidas")); continue
+                tol = max(3.0, 0.003 * v["totalSupply"])
+                if abs(v["beginStocks"] + v["collecte"] + v.get("imports", 0) + v.get("adjustment", 0) - v["totalSupply"]) > tol or abs(v["domestic"] + v["exports"] - v["totalUse"]) > tol or abs(v["totalSupply"] - v["totalUse"] - v["endingStocks"]) > tol or min(v.values()) < 0:
+                    rejected.append((pid, y, "Excel: el balance no cuadra")); continue
+                camps.setdefault(k, {"label": "%d/%02d" % (y, (y + 1) % 100), "v": {}})["v"][pid] = v
+        print("contraste OCR vs Excel: %d cifras comparables, %d con diferencia > 1 %% (revisiones de la campaña 2024/25)" % (n, nd))
     for y, cmp_ in camps.items():
         nxt = camps.get(str(int(y) + 1))
         for pid, d in cmp_["v"].items():
@@ -305,19 +370,19 @@ def build_fr(pdf):
         "generatedAt": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "country": "FR",
         "sourceId": "franceagrimer",
-        "source": {"name": "FranceAgriMer — Bilans céréaliers annuels", "table": "Situation au 16 septembre 2026", "url": "https://www.franceagrimer.fr/"},
+        "source": {"name": "FranceAgriMer — Bilans céréaliers annuels", "table": "Bilans céréaliers annuels (PDF du 16 septembre 2026) et historique des bilans (Excel du 1er octobre 2025)", "url": "https://www.franceagrimer.fr/"},
         "unit": "kt",
         "note": T(
-            "Campaña de julio a junio. 2025/26 es provisional y 2026/27 es una previsión (septiembre de 2026); FranceAgriMer revisa los balances cada mes. «Cosecha comercializada» (collecte) es la parte de la producción que llega al mercado, y es menor que la producción total. Las exportaciones incluyen grano, harina y malta (en equivalente grano) a la UE y a países terceros. Cifras leídas del PDF oficial y publicadas solo si el balance de cada campaña cuadra; las que no cuadraron se omiten. Se actualiza a mano.",
-            "Marketing year July to June. 2025/26 is provisional and 2026/27 is a forecast (September 2026); FranceAgriMer revises the balances every month. “Marketed crop” (collecte) is the part of production that reaches the market, and is smaller than total production. Exports include grain, flour and malt (grain equivalent) to the EU and third countries. Figures read from the official PDF and published only when each year’s balance adds up; those that did not are omitted. Updated manually.",
-            "Campagne de juillet à juin. 2025/26 est provisoire et 2026/27 est une prévision (septembre 2026) ; FranceAgriMer révise les bilans chaque mois. La « collecte » est la part de la production qui arrive sur le marché, inférieure à la production totale. Les exportations comprennent grains, farine et malt (en équivalent grain) vers l’UE et les pays tiers. Chiffres lus dans le PDF officiel et publiés seulement si le bilan de chaque campagne est équilibré ; les autres sont omis. Mise à jour manuelle.",
-            "Campagna da luglio a giugno. Il 2025/26 è provvisorio e il 2026/27 è una previsione (settembre 2026); FranceAgriMer rivede i bilanci ogni mese. Il « collecte » è la parte della produzione che arriva sul mercato, inferiore alla produzione totale. Le esportazioni comprendono granella, farina e malto (in equivalente granella) verso UE e paesi terzi. Cifre lette dal PDF ufficiale e pubblicate solo se il bilancio di ogni campagna quadra; le altre sono omesse. Aggiornamento manuale."),
+            "Campaña de julio a junio. 2025/26 es provisional y 2026/27 es una previsión (septiembre de 2026); FranceAgriMer revisa los balances cada mes. «Cosecha comercializada» (collecte) es la parte de la producción que llega al mercado, y es menor que la producción total. Las exportaciones incluyen grano, harina y malta (en equivalente grano) a la UE y a países terceros. Cifras leídas del PDF oficial y publicadas solo si el balance de cada campaña cuadra; las que no cuadraron se omiten. Hasta 2016/17 y para triticale, avena, centeno, sorgo y alforfón (que el PDF no incluye), las cifras vienen del histórico de FranceAgriMer en hoja de cálculo, que llega a 2024/25; las campañas que no cuadran en esa fuente se omiten. Se actualiza a mano.",
+            "Marketing year July to June. 2025/26 is provisional and 2026/27 is a forecast (September 2026); FranceAgriMer revises the balances every month. “Marketed crop” (collecte) is the part of production that reaches the market, and is smaller than total production. Exports include grain, flour and malt (grain equivalent) to the EU and third countries. Figures read from the official PDF and published only when each year’s balance adds up; those that did not are omitted. Up to 2016/17, and for triticale, oats, rye, sorghum and buckwheat (not in the PDF), figures come from FranceAgriMer’s historical workbook, which runs to 2024/25; years that do not add up in that source are omitted. Updated manually.",
+            "Campagne de juillet à juin. 2025/26 est provisoire et 2026/27 est une prévision (septembre 2026) ; FranceAgriMer révise les bilans chaque mois. La « collecte » est la part de la production qui arrive sur le marché, inférieure à la production totale. Les exportations comprennent grains, farine et malt (en équivalent grain) vers l’UE et les pays tiers. Chiffres lus dans le PDF officiel et publiés seulement si le bilan de chaque campagne est équilibré ; les autres sont omis. Jusqu’en 2016/17, et pour le triticale, l’avoine, le seigle, le sorgho et le sarrasin (absents du PDF), les chiffres viennent de l’historique FranceAgriMer en tableur, qui va jusqu’à 2024/25 ; les campagnes qui ne s’équilibrent pas dans cette source sont omises. Mise à jour manuelle.",
+            "Campagna da luglio a giugno. Il 2025/26 è provvisorio e il 2026/27 è una previsione (settembre 2026); FranceAgriMer rivede i bilanci ogni mese. Il « collecte » è la parte della produzione che arriva sul mercato, inferiore alla produzione totale. Le esportazioni comprendono granella, farina e malto (in equivalente granella) verso UE e paesi terzi. Cifre lette dal PDF ufficiale e pubblicate solo se il bilancio di ogni campagna quadra; le altre sono omesse. Fino al 2016/17, e per triticale, avena, segale, sorgo e grano saraceno (assenti dal PDF), le cifre provengono dallo storico FranceAgriMer in foglio di calcolo, che arriva al 2024/25; le campagne che non quadrano in quella fonte sono omesse. Aggiornamento manuale."),
         "items": [{"id": i, "name": n, "sub": sub, "strong": strong} for i, _rx, n, sub, strong in FR_ITEMS if i in used],
         "cards": ["collecte", "domestic", "exports", "endingStocks"],
         "chart": ["collecte", "domestic", "exports"],
         "stocksToUse": {"num": "endingStocks", "den": ["domestic", "exports"]},
         "identity": {"total": "totalSupply", "minus": ["totalUse"], "equals": "endingStocks", "tolerancePct": 0.5},
-        "products": [{"id": p, "name": n} for p, _pg, n in FR_PAGES],
+        "products": [{"id": p, "name": n} for p, _pg, n in FR_PAGES] + ([{"id": p, "name": n} for p, _sh, n in FR_XLSX if p not in {q for q, *_ in FR_PAGES}] if xlsx else []),
         "campaigns": dict(sorted(camps.items())),
     }
     write("fr", doc)
@@ -330,8 +395,8 @@ if __name__ == "__main__":
         if len(a) < 2: raise SystemExit("uso: build_supply_balances.py eu <Cereals_bs_EUROPA_EU.xlsx>")
         build_eu(a[1])
     elif a[0] == "fr":
-        if len(a) < 2: raise SystemExit("uso: build_supply_balances.py fr <BIL-CER-cer_princ-camp-*.pdf>")
-        build_fr(a[1])
+        if len(a) < 2: raise SystemExit("uso: build_supply_balances.py fr <BIL-CER-cer_princ-camp-*.pdf> [SCR-CER-historique_bilans_prev-*.xlsx]")
+        build_fr(a[1], a[2] if len(a) > 2 else None)
     else:
         for w in a: {"ca": build_ca}[w]()
     print("supply-balances/%s.json escrito" % a[0])

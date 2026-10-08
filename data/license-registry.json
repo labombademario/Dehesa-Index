@@ -2875,6 +2875,17 @@
     "franceagrimer"
    ],
    "notes": "Balances oficiales de oferta y demanda por pais (scripts/build_supply_balances.py), un fichero por pais con el mismo formato. ca.json: Statistics Canada, tabla 32-10-0013-01 (oferta total, produccion, exportaciones, consumo interno y existencias finales por campaña agosto-julio), derivado de data/canada-stats.json sin cambiar ninguna cifra. eu.json: Comision Europea (DG AGRI), balance de cereales UE-27 (Cereals_bs_EUROPA_EU.xlsx, scripts/update-eu-balances.py); cifras tal como las publica la Comision, sin calculos propios salvo existencias/uso, que se rotula en la pagina. Licencia: Decision 2011/833/UE de reutilizacion (confirmada por el propietario). fr.json: FranceAgriMer, Bilans cerealiers annuels (PDF de 16 sept 2026; trigo blando, cebada, maiz grano, trigo duro 2017/18-2026/27), leido por OCR con comprobacion de que cada balance cuadra; actualizacion manual (scripts/build_supply_balances.py fr)."
+  },
+  "data/france-crops-stats.json": {
+   "byCountry": {
+    "FR": "franceagrimer"
+   }
+  },
+  "data/france-crops-regions.json": {
+   "sources": [
+    "franceagrimer"
+   ],
+   "notes": "Superficie, rendimiento y produccion por cultivo y region de Francia metropolitana, 2021-2026 (SSP/Agreste, difundido por FranceAgriMer); scripts/build-france-crops.py. Se omiten Cereales y Oleaginosas porque el CSV de origen repite las filas de sus componentes en lugar del total. Las regiones suman el total nacional del Excel."
   }
  },
  "derived": [

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T01:15:27Z",
+ "generatedAt": "2026-10-08T01:43:54Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2614,7 +2614,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (3167 series en el catalogo unificado)",
+   "dataset": "Ya integrada (3159 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -2790,7 +2790,7 @@
    "country": "FR",
    "scope": "integrated",
    "institution": "FranceAgriMer (VISIONet)",
-   "dataset": "Ya integrada (47 series en el catalogo unificado)",
+   "dataset": "Ya integrada (104 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -2799,6 +2799,7 @@
     "oats",
     "pigs",
     "rapeseed",
+    "rice",
     "rye",
     "sheep",
     "soy",
@@ -2806,7 +2807,8 @@
    ],
    "productsConfirmed": true,
    "metrics": [
-    "price"
+    "price",
+    "production"
    ],
    "frequency": "mixed",
    "access": {

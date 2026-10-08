@@ -21,6 +21,8 @@
   var SP = { bovino: 'Bovino|Cattle|Bovins|Bovini', ovino: 'Ovino|Sheep|Ovins|Ovini', caprino: 'Caprino|Goats|Caprins|Caprini', porcino: 'Porcino|Pigs|Porcins|Suini', equino: 'Equino|Horses|Équidés|Equini', aves: 'Aves (miles)|Poultry (thousands)|Volailles (milliers)|Pollame (migliaia)', conejos: 'Conejos (miles)|Rabbits (thousands)|Lapins (milliers)|Conigli (migliaia)' };
   var FR_CERE = { ARA: 'Auvergne-Rhône-Alpes', BFC: 'Bourgogne-Franche-Comté', BRE: 'Bretagne', CVL: 'Centre-Val de Loire', GES: 'Grand-Est', IDF: 'Ile-de-France', NAQ: 'Nouvelle-Aquitaine', OCC: 'Occitanie', PDL: 'Pays-de-la-Loire' };
   var VIG = { vigilance: 'Vigilancia|Vigilance|Vigilance|Vigilanza', alerte: 'Alerta|Alert|Alerte|Allerta', alerte_renforcee: 'Alerta reforzada|Heightened alert|Alerte renforcée|Allerta rafforzata', crise: 'Crisis|Crisis|Crise|Crisi', none: 'Sin restricción|No restriction|Pas de restriction|Nessuna restrizione' };
+  var FR_INSEE = { ARA: '84', BFC: '27', BRE: '53', CVL: '24', COR: '94', GES: '44', HDF: '32', IDF: '11', NOR: '28', NAQ: '75', OCC: '76', PDL: '52', PAC: '93' };
+  var FR_CROP = { 'soft-wheat': 'Trigo blando|Common wheat|Blé tendre|Frumento tenero', 'durum-wheat': 'Trigo duro|Durum wheat|Blé dur|Frumento duro', barley: 'Cebada|Barley|Orge|Orzo', 'maize-grain-seed': 'Maíz (grano y semilla)|Maize (grain and seed)|Maïs (grain et semence)|Mais (granella e seme)', oats: 'Avena|Oats|Avoine|Avena', rye: 'Centeno|Rye|Seigle|Segale', triticale: 'Triticale|Triticale|Triticale|Triticale', sorghum: 'Sorgo|Sorghum|Sorgho|Sorgo', rapeseed: 'Colza|Rapeseed|Colza|Colza', sunflower: 'Girasol|Sunflower|Tournesol|Girasole', soybeans: 'Soja|Soybeans|Soja|Soia', linseed: 'Lino oleaginoso|Oilseed flax|Lin oléagineux|Lino oleaginoso', 'protein-peas': 'Guisante proteaginoso|Protein peas|Pois protéagineux|Pisello proteico', 'faba-beans': 'Haba (féverole)|Faba beans|Féveroles|Fave', lentils: 'Lenteja|Lentils|Lentilles|Lenticchie' };
   var DE_CROP = { cereals: 'Cereales (con maíz grano)|Cereals (incl. grain maize)|Céréales (avec maïs grain)|Cereali (con mais da granella)', wheat: 'Trigo|Wheat|Blé|Frumento', rye: 'Centeno|Rye|Seigle|Segale', barley: 'Cebada|Barley|Orge|Orzo', oats: 'Avena|Oats|Avoine|Avena', triticale: 'Triticale|Triticale|Triticale|Triticale',
     maize: 'Maíz grano (con CCM)|Grain maize (incl. CCM)|Maïs grain (avec CCM)|Mais da granella (con CCM)', rapeseed: 'Colza y nabina|Rapeseed|Colza et navette|Colza e ravizzone', sunflower: 'Girasol|Sunflower|Tournesol|Girasole', sugarbeet: 'Remolacha azucarera|Sugar beet|Betterave sucrière|Barbabietola da zucchero', potato: 'Patata|Potatoes|Pommes de terre|Patate', silage: 'Maíz forrajero|Silage maize|Maïs fourrage|Mais da foraggio' };
   var DE_SP = { cattle: 'Vacuno|Cattle|Gros bovins|Bovini', calves: 'Terneros|Calves|Veaux|Vitelli', pigs: 'Porcino|Pigs|Porcins|Suini', sheep: 'Ovino|Sheep|Ovins|Ovini' };
@@ -51,6 +53,7 @@
       esmilk: 'Leche de vaca', esmilkSub: 'Entregas de leche de vaca a la industria en la comunidad (MAPA, INFOLAC), último mes publicado.', milkProd: 'Leche entregada (t)', fatP: 'Grasa (%)', protP: 'Proteína (%)', farmers: 'Ganaderos con entregas',
       vig: 'Restricciones de agua (sequía)', vigSub: 'Nivel de restricción vigente en cada departamento de la región (VigiEau). Es el nivel más alto entre agua superficial, subterránea y potable.', dept: 'Departamento', level: 'Nivel',
       cere: 'Estado del maíz grano', cereSub: 'Seguimiento semanal de FranceAgriMer (Céré’Obs) en la región: % de la superficie cosechada y por clase de estado.', wk: 'Semana', harvestP: 'Cosechado', condGood: 'Bueno o muy bueno', condFair: 'Medio', condPoor: 'Malo o muy malo',
+      frcrops: 'Cultivos de la región', frcropsSub: 'Superficie, rendimiento y producción por cultivo en la región. Estadística agraria de Francia metropolitana (SSP/Agreste) difundida por FranceAgriMer. El año más reciente es provisional.', shareFr: 'Peso en Francia', provW: 'provisional',
       deprod: 'Producción agrícola', deprodSub: 'Cosecha del último año publicado (Destatis). La producción de los últimos meses puede ser una estimación provisional de la fuente.', crop: 'Cultivo', yieldT: 'Rendimiento (dt/ha)', shareDe: 'Peso en Alemania',
       deland: 'Tierra agraria: precio y arrendamiento', delandSub: 'Precio medio de venta de tierra agraria por hectárea y renta de arrendamiento por hectárea (Destatis). Euros corrientes.', kindL: 'Tipo', priceHa: 'Precio de venta (EUR/ha)', salesN: 'Ventas', rentHa: 'Arrendamiento (EUR/ha)', lf: 'Superficie agraria', acker: 'Tierra de cultivo', gruen: 'Pastos permanentes', noLandPrice: 'Destatis no publica el precio de venta de este Land.',
       delive: 'Sacrificio y huevos', deliveSub: 'Sacrificio de animales de origen nacional en el Land (toneladas de peso canal) y producción de huevos en explotaciones con 3.000 o más plazas (Destatis), último año.', slT: 'Sacrificio (t)', eggsM: 'Huevos (miles)', hens: 'Gallinas ponedoras',
@@ -74,6 +77,7 @@
       esmilk: 'Cow’s milk', esmilkSub: 'Cow’s milk deliveries to dairies in the community (MAPA, INFOLAC), latest published month.', milkProd: 'Milk delivered (t)', fatP: 'Fat (%)', protP: 'Protein (%)', farmers: 'Farmers delivering',
       vig: 'Water restrictions (drought)', vigSub: 'Restriction level in force in each département of the region (VigiEau): the highest of surface water, groundwater and drinking water.', dept: 'Département', level: 'Level',
       cere: 'Grain maize condition', cereSub: 'FranceAgriMer weekly monitoring (Céré’Obs) in the region: % of area harvested and by condition class.', wk: 'Week', harvestP: 'Harvested', condGood: 'Good or very good', condFair: 'Fair', condPoor: 'Poor or very poor',
+      frcrops: 'Crops in the region', frcropsSub: 'Area, yield and production by crop in the region. Metropolitan France agricultural statistics (SSP/Agreste) published by FranceAgriMer. The most recent year is provisional.', shareFr: 'Share of France', provW: 'provisional',
       deprod: 'Crop production', deprodSub: 'Harvest of the latest published year (Destatis). The most recent year may be a provisional estimate from the source.', crop: 'Crop', yieldT: 'Yield (dt/ha)', shareDe: 'Share of Germany',
       deland: 'Farmland: price and rent', delandSub: 'Average sale price of farmland per hectare and rent per hectare (Destatis). Current euros.', kindL: 'Type', priceHa: 'Sale price (EUR/ha)', salesN: 'Sales', rentHa: 'Rent (EUR/ha)', lf: 'Agricultural land', acker: 'Arable land', gruen: 'Permanent grassland', noLandPrice: 'Destatis does not publish the sale price for this Land.',
       delive: 'Slaughter and eggs', deliveSub: 'Slaughter of domestic animals in the Land (tonnes carcass weight) and egg production on farms with 3,000 or more places (Destatis), latest year.', slT: 'Slaughter (t)', eggsM: 'Eggs (thousand)', hens: 'Laying hens',
@@ -97,6 +101,7 @@
       esmilk: 'Lait de vache', esmilkSub: 'Livraisons de lait de vache à l’industrie dans la communauté (MAPA, INFOLAC), dernier mois publié.', milkProd: 'Lait livré (t)', fatP: 'Matière grasse (%)', protP: 'Protéines (%)', farmers: 'Éleveurs livrant',
       vig: 'Restrictions d’eau (sécheresse)', vigSub: 'Niveau de restriction en vigueur dans chaque département de la région (VigiEau) : le plus élevé entre eaux superficielles, souterraines et potable.', dept: 'Département', level: 'Niveau',
       cere: 'État du maïs grain', cereSub: 'Suivi hebdomadaire de FranceAgriMer (Céré’Obs) dans la région : % de la surface récoltée et par classe d’état.', wk: 'Semaine', harvestP: 'Récolté', condGood: 'Bon ou très bon', condFair: 'Moyen', condPoor: 'Mauvais ou très mauvais',
+      frcrops: 'Cultures de la région', frcropsSub: 'Surface, rendement et production par culture dans la région. Statistique agricole de la France métropolitaine (SSP/Agreste) diffusée par FranceAgriMer. L’année la plus récente est provisoire.', shareFr: 'Part de la France', provW: 'provisoire',
       deprod: 'Production végétale', deprodSub: 'Récolte de la dernière année publiée (Destatis). L’année la plus récente peut être une estimation provisoire de la source.', crop: 'Culture', yieldT: 'Rendement (q/ha)', shareDe: 'Part de l’Allemagne',
       deland: 'Terres agricoles : prix et fermage', delandSub: 'Prix moyen de vente des terres agricoles par hectare et fermage par hectare (Destatis). Euros courants.', kindL: 'Type', priceHa: 'Prix de vente (EUR/ha)', salesN: 'Ventes', rentHa: 'Fermage (EUR/ha)', lf: 'Surface agricole', acker: 'Terres arables', gruen: 'Prairies permanentes', noLandPrice: 'Destatis ne publie pas le prix de vente de ce Land.',
       delive: 'Abattages et œufs', deliveSub: 'Abattages d’animaux d’origine nationale dans le Land (tonnes de poids carcasse) et production d’œufs dans les élevages de 3 000 places ou plus (Destatis), dernière année.', slT: 'Abattages (t)', eggsM: 'Œufs (milliers)', hens: 'Poules pondeuses',
@@ -120,6 +125,7 @@
       esmilk: 'Latte vaccino', esmilkSub: 'Consegne di latte vaccino all’industria nella comunità (MAPA, INFOLAC), ultimo mese pubblicato.', milkProd: 'Latte consegnato (t)', fatP: 'Grasso (%)', protP: 'Proteine (%)', farmers: 'Allevatori con consegne',
       vig: 'Restrizioni idriche (siccità)', vigSub: 'Livello di restrizione in vigore in ogni dipartimento della regione (VigiEau): il più alto tra acque superficiali, sotterranee e potabili.', dept: 'Dipartimento', level: 'Livello',
       cere: 'Stato del mais da granella', cereSub: 'Monitoraggio settimanale di FranceAgriMer (Céré’Obs) nella regione: % della superficie raccolta e per classe di stato.', wk: 'Settimana', harvestP: 'Raccolto', condGood: 'Buono o molto buono', condFair: 'Medio', condPoor: 'Scarso o molto scarso',
+      frcrops: 'Colture della regione', frcropsSub: 'Superficie, resa e produzione per coltura nella regione. Statistica agricola della Francia metropolitana (SSP/Agreste) diffusa da FranceAgriMer. L’anno più recente è provvisorio.', shareFr: 'Quota della Francia', provW: 'provvisorio',
       deprod: 'Produzione agricola', deprodSub: 'Raccolto dell’ultimo anno pubblicato (Destatis). L’anno più recente può essere una stima provvisoria della fonte.', crop: 'Coltura', yieldT: 'Resa (q/ha)', shareDe: 'Quota della Germania',
       deland: 'Terreni agricoli: prezzo e affitto', delandSub: 'Prezzo medio di vendita dei terreni agricoli per ettaro e canone d’affitto per ettaro (Destatis). Euro correnti.', kindL: 'Tipo', priceHa: 'Prezzo di vendita (EUR/ha)', salesN: 'Vendite', rentHa: 'Affitto (EUR/ha)', lf: 'Superficie agricola', acker: 'Seminativi', gruen: 'Prati permanenti', noLandPrice: 'Destatis non pubblica il prezzo di vendita di questo Land.',
       delive: 'Macellazioni e uova', deliveSub: 'Macellazioni di animali di origine nazionale nel Land (tonnellate di peso carcassa) e produzione di uova negli allevamenti con 3.000 o più posti (Destatis), ultimo anno.', slT: 'Macellazioni (t)', eggsM: 'Uova (migliaia)', hens: 'Galline ovaiole',
@@ -263,6 +269,23 @@
         var anyYa = rows.some(function (r) { return r[2] !== '—'; }); if (!anyYa) rows = rows.map(function (r) { return [r[0], r[1]]; });
         var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(mon(P[j])) + (natv ? ' · ' + esc(t.shareEs) + ': ' + share(R.production[j], natv) : '') + '</p>' + table(anyYa ? ['', mon(P[j]), t.sameMonth] : ['', mon(P[j])], rows, anyYa ? 420 : 300);
         return card(t.esmilk, t.esmilkSub, body, cite('mapa_es', P[j]));
+      });
+    }
+
+    /* ---- Francia: cultivos por región (SSP/Agreste vía FranceAgriMer) ---- */
+    function frCrops(x) {
+      var code = FR_INSEE[x.r]; if (!code) return Promise.resolve(null);
+      return get('data/france-crops-regions.json').then(function (d) {
+        var R = d && d.regions && d.regions[code]; if (!R) return null; var t = tt(), rows = [], yrAll = '';
+        Object.keys(FR_CROP).forEach(function (k) {
+          var c = R.c[k]; if (!c) return; var ys = Object.keys(c).sort(), y = ys[ys.length - 1], v = c[y]; if (!v || !v[2]) return;
+          var tot = 0; Object.keys(d.regions).forEach(function (rc) { var q = d.regions[rc].c[k]; if (q && q[y]) tot += q[y][2]; });
+          yrAll = yrAll > y ? yrAll : y;
+          rows.push([esc(L(FR_CROP[k])) + (y !== yrAll ? ' ' + faint(y) : ''), nf(v[0], 0), v[1] != null ? nf(v[1], 1) : '—', nf(v[2], 0), tot ? share(v[2], tot) : '—', v[2]]);
+        });
+        rows.sort(function (a, b) { return b[5] - a[5]; }); rows = rows.map(function (r) { return r.slice(0, 5); });
+        if (!rows.length) return null;
+        return card(t.frcrops, t.frcropsSub, '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(H.yearWord()) + ' ' + esc(yrAll) + ' (' + esc(t.provW) + ')</p>' + table([t.crop, t.areaHa, t.yieldT, t.prodT, t.shareFr], rows, 520), cite('franceagrimer', yrAll));
       });
     }
 
@@ -459,7 +482,7 @@
         US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('clim', clim)],
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
-        FR: [C('vig', frVig), C('cere', frCere), C('clim', clim)],
+        FR: [C('frcrops', frCrops), C('vig', frVig), C('cere', frCere), C('clim', clim)],
         DE: [C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('clim', clim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
         AT: [C('clim', clim)], IT: [C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]
