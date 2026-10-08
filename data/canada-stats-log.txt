@@ -1,11 +1,8 @@
-19:41:47 descargada 32100036 15 KB
-19:41:47 tabla 32100036 2160 filas
-19:41:47 fert 32100036 Fertilizer product type ['December', 'June', 'March', 'September']
-19:41:47 descargada 32100037 7 KB
-19:41:47 tabla 32100037 748 filas
-19:41:47 fert 32100037 Fertilizer product type ['July to December', 'July to June', 'July to March', 'July to September']
-19:41:48 descargada 32100039 21 KB
-19:41:48 tabla 32100039 3200 filas
-19:41:49 fert 32100039 Fertilizer nutrient content ['July to December', 'July to June', 'July to March', 'July to September']
-19:41:49 fert_more 56
-19:41:49 series 746
+19:45:23 descargada 32100036 15 KB
+19:45:23 tabla 32100036 2160 filas
+19:45:24 descargada 32100037 7 KB
+19:45:24 tabla 32100037 748 filas
+19:45:24 descargada 32100039 21 KB
+19:45:24 tabla 32100039 3200 filas
+19:45:24 fert_more 23
+19:45:24 series 713
