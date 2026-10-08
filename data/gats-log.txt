@@ -1,15 +1,13 @@
 unidades KG: 47
 socios: 67
 último mes con datos: 202608
-meses pendientes: 202601,202512,202511,202510,202509,202508,202507,202506,202505,202504,202503,202502,202501,202412,202411,202410,202409,202408
-mes 202601 listo; filas de interés 4276 ; peticiones usadas 134 ; exportaciones totales 9345 M USD
-mes 202512 listo; filas de interés 4297 ; peticiones usadas 268 ; exportaciones totales 8671 M USD
-mes 202511 listo; filas de interés 4358 ; peticiones usadas 402 ; exportaciones totales 8495 M USD
-mes 202510 listo; filas de interés 4423 ; peticiones usadas 536 ; exportaciones totales 8657 M USD
-mes 202509 listo; filas de interés 4230 ; peticiones usadas 670 ; exportaciones totales 8032 M USD
-mes 202508 listo; filas de interés 4255 ; peticiones usadas 804 ; exportaciones totales 7583 M USD
-mes 202507 listo; filas de interés 4404 ; peticiones usadas 938 ; exportaciones totales 7611 M USD
-mes 202506 listo; filas de interés 4196 ; peticiones usadas 1072 ; exportaciones totales 7402 M USD
-mes 202505 listo; filas de interés 4294 ; peticiones usadas 1206 ; exportaciones totales 7733 M USD
-mes 202504 listo; filas de interés 4316 ; peticiones usadas 1340 ; exportaciones totales 8200 M USD
-meses en el fichero: 26 ; parada: presupuesto de peticiones
+meses pendientes: 202503,202502,202501,202412,202411,202410,202409,202408
+mes 202503 listo; filas de interés 4486 ; peticiones usadas 134 ; exportaciones totales 9510 M USD
+mes 202502 listo; filas de interés 4302 ; peticiones usadas 268 ; exportaciones totales 7980 M USD
+mes 202501 listo; filas de interés 4299 ; peticiones usadas 402 ; exportaciones totales 8656 M USD
+mes 202412 listo; filas de interés 4381 ; peticiones usadas 536 ; exportaciones totales 9976 M USD
+mes 202411 listo; filas de interés 4427 ; peticiones usadas 670 ; exportaciones totales 10793 M USD
+mes 202410 listo; filas de interés 4346 ; peticiones usadas 804 ; exportaciones totales 10091 M USD
+mes 202409 listo; filas de interés 4343 ; peticiones usadas 938 ; exportaciones totales 7450 M USD
+mes 202408 listo; filas de interés 4378 ; peticiones usadas 1072 ; exportaciones totales 7317 M USD
+meses en el fichero: 26 ; parada: completo
