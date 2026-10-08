@@ -29,7 +29,7 @@
     try { window.localStorage.setItem('dehesaIndexTheme', mode); } catch (e) {}
   }
 
-  // Sin idioma guardado: el del navegador si es uno de los cuatro (si no, inglés). Ya no hay ventana de bienvenida: el selector de la cabecera siempre está visible.
+  // Sin idioma guardado: el del navegador si es uno de los cuatro; si no, ingles.
   function detectLang() {
     try {
       var L = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
@@ -72,15 +72,13 @@
     empresas: 'empresas.html', contacto: 'contacto.html'
   };
 
-  // Navegacion por tareas (igual en la web y en la app): Hoy, Precios, Paises, Produccion y clima, Comercio, Costes, Mi espacio y Datos. Blog, Empresas y Contacto viven en el pie (NAV_KEYS).
   // Hojas: { file, query?, hash?, label }. Ramas: { items: [...], label } (se despliegan dentro del menu).
   function L(es, en, fr, it) { return { es: es, en: en, fr: fr, it: it }; }
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
-  // Menu por tareas (auditoria 8-oct-2026): Buscar precios, Mi mercado, Comparar, Noticias y calendario, Mas herramientas.
-  // Los grupos antiguos (countries, production, trade, costs, data) siguen definidos para las migas de pan y el bloque Relacionado.
+  // Menu por tareas: Buscar precios, Mi mercado, Comparar, Noticias y calendario, Mas herramientas; los grupos antiguos quedan para migas y Relacionado.
   var NAV_ORDER = ['g:prices', 'g:mine', 'g:compare', 'g:today', 'g:more'];
-  // Cada hoja lleva una descripcion corta (d) que dice que hay y de donde (alcance): el menu es un panel con columnas, no acordeones.
+  // Cada hoja lleva una descripcion corta (d) de que hay y de donde.
   function pd(file, label, d, query) { var o = pg(file, label, query); o.d = d; return o; }
   function cd(c, es, en, fr, it) { var o = ctry(c, es, en, fr, it); o.chip = 1; return o; }
   var NAV_GROUPS = {
@@ -148,6 +146,7 @@
     ] },
     mine: { label: L('Mi espacio', 'My space', 'Mon espace', 'Il mio spazio'), items: [
       pd('mi-mercado.html', L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), L('Tu zona y tu producto: precio local, seguro, sequía y más', 'Your area and product: local price, insurance, drought and more', 'Votre zone et votre produit : prix local, assurance, sécheresse…', 'La tua zona e il tuo prodotto: prezzo locale, assicurazione, siccità…')),
+      pd('siembra.html', L('Qué sembrar', 'What to plant', 'Quoi semer', 'Cosa seminare'), L('Compara cultivos de tu región y reparte tu superficie', 'Compare crops in your area and split your land', 'Comparez les cultures de votre région et répartissez votre surface', 'Confronta le colture della tua zona e ripartisci la superficie')),
       pd('mi-explotacion.html', L('Mi explotación', 'My farm', 'Mon exploitation', 'La mia azienda'), L('Tus cultivos y costes: margen, equilibrio y qué ha cambiado', 'Your crops and costs: margin, break-even and what changed', 'Vos cultures et coûts : marge, équilibre et ce qui a changé', 'Le tue colture e costi: margine, pareggio e cosa è cambiato')),
       pd('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito'), L('Sigue productos y series con avisos, sin cuenta', 'Follow products and series with alerts, no account', 'Suivez produits et séries avec alertes, sans compte', 'Segui prodotti e serie con avvisi, senza account'))
     ] },
@@ -184,7 +183,7 @@
   }
   function branchActive(list) { return list.some(function (i) { return i.items ? branchActive(i.items) : leafActive(i); }); }
   function groupIsActive(g) { return branchActive(g.items); }
-  // Menú en panel: cada grupo se abre en un panel con columnas (las ramas son columnas con título, no acordeones) y los países como botones.
+  // Menu en panel: columnas con titulo (no acordeones) y paises como botones.
   function itemHtml(i) {
     var on = leafActive(i), d = i.d ? (i.d[lang] || i.d.es) : '';
     return '<a class="di-nav-item' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '"' + (on ? ' aria-current="page"' : '') + '><span class="di-nav-it">' + esc(i.label[lang] || i.label.es) + '</span>' + (d ? '<span class="di-nav-id">' + esc(d) + '</span>' : '') + '</a>';
@@ -655,7 +654,6 @@
       '</footer>';
   }
 
-  // La bienvenida de idioma y el tour guiado se retiraron (auditoria 8-oct-2026): interrumpian la primera visita. El idioma sale del navegador y se cambia en la cabecera.
 
 
   // ---------------------------------------------------------------------

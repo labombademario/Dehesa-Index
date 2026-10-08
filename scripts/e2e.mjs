@@ -35,6 +35,7 @@ const PAGES = [
   { n: 'brief', url: '/brief.html', crit: ['#brief-body'] },
   { n: 'precios-locales', url: '/precios-locales.html', crit: ['#pl-body'] },
   { n: 'mi-mercado', url: '/mi-mercado.html?c=US&r=KS&p=cattle', crit: ['#mm-body [data-mm-body="price"] .de-tile'] },
+  { n: 'siembra', url: '/siembra.html?c=FR&r=24', crit: ['#sw-body table tbody tr'] },
   { n: 'pac', url: '/pac.html', crit: ['#pac-body #pac-est .de-t, #pac-body #pac-eco .de-t'] },
   { n: 'noticias', url: '/noticias.html', crit: ['#nw-items'] },
   { n: 'mapa', url: '/mapa.html', crit: ['#mapa-body'] },

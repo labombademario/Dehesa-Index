@@ -2925,6 +2925,15 @@
   "data/label-gloss/": {
    "sources": [],
    "notes": "Glosario propio de Dehesa Index para traducir etiquetas de series (es/fr/it); escrito a mano, sin datos de terceros (auditoria 8-oct-2026)."
+  },
+  "data/sowing/": {
+   "sources": [
+    "usda_nass",
+    "usda_ers",
+    "usda_fas_psd",
+    "franceagrimer"
+   ],
+   "notes": "Comparador de siembra (Que sembrar): derivado de nass-crops.json, ers.json, ers-cost-reference.json, supply-demand.json, prices/history/us y los ficheros de FranceAgriMer ya publicados (build-sowing.py)."
   }
  },
  "derived": [
