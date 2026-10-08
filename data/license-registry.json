@@ -2934,6 +2934,24 @@
     "franceagrimer"
    ],
    "notes": "Comparador de siembra (Que sembrar): derivado de nass-crops.json, ers.json, ers-cost-reference.json, supply-demand.json, prices/history/us y los ficheros de FranceAgriMer ya publicados (build-sowing.py)."
+  },
+  "data/eurostat-eu-stats.json": {
+   "byCountry": {
+    "BG": "eurostat",
+    "EL": "eurostat",
+    "FI": "eurostat",
+    "HR": "eurostat",
+    "IE": "eurostat",
+    "LT": "eurostat",
+    "SK": "eurostat"
+   }
+  },
+  "data/eurostat-euw-stats.json": {
+   "byCountry": {
+    "DE": "eurostat",
+    "ES": "eurostat",
+    "NL": "eurostat"
+   }
   }
  },
  "derived": [

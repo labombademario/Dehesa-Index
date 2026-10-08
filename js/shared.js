@@ -112,6 +112,13 @@
       cd('AR', 'Argentina', 'Argentina', 'Argentine', 'Argentina'),
       cd('CL', 'Chile', 'Chile', 'Chili', 'Cile'),
       cd('PL', 'Polonia', 'Poland', 'Pologne', 'Polonia'),
+      cd('EL', 'Grecia', 'Greece', 'Grèce', 'Grecia'),
+      cd('IE', 'Irlanda', 'Ireland', 'Irlande', 'Irlanda'),
+      cd('FI', 'Finlandia', 'Finland', 'Finlande', 'Finlandia'),
+      cd('BG', 'Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'),
+      cd('HR', 'Croacia', 'Croatia', 'Croatie', 'Croazia'),
+      cd('LT', 'Lituania', 'Lithuania', 'Lituanie', 'Lituania'),
+      cd('SK', 'Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia'),
       cd('CH', 'Suiza', 'Switzerland', 'Suisse', 'Svizzera')
     ] },
     production: { label: L('Producción y clima', 'Production and weather', 'Production et météo', 'Produzione e meteo'), mega: 1, first: L('Cultivos y ganado', 'Crops and livestock', 'Cultures et élevage', 'Colture e allevamento'), items: [
@@ -191,7 +198,7 @@
     return '<a class="di-nav-chip' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(i.label[lang] || i.label.es) + '</a>';
   }
   var REGIONS = [{ k: 'SA', l: L('Sudamérica', 'South America', 'Amérique du Sud', 'Sud America') }, { k: 'NA', l: L('Norteamérica', 'North America', 'Amérique du Nord', 'Nord America') }, { k: 'EU', l: L('Europa', 'Europe', 'Europe', 'Europa') }, { k: 'OT', l: L('Otros', 'Others', 'Autres', 'Altri') }];
-  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU', PL: 'EU', CH: 'EU' };
+  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU', PL: 'EU', EL: 'EU', IE: 'EU', FI: 'EU', BG: 'EU', HR: 'EU', LT: 'EU', SK: 'EU', CH: 'EU' };
   function panelHtml(g) {
     var leaves = g.items.filter(function (i) { return !i.items && !i.chip; }), chips = g.items.filter(function (i) { return i.chip; }), cols = [];
     if (leaves.length) cols.push({ h: g.first, items: leaves });

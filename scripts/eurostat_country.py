@@ -43,6 +43,8 @@ def put(sid, group, label, unit, freq, pts, src, mult=1, note=None):
     if note: s['periodNote'] = note
     OUT[sid] = s; return True
 def clean(l): return re.sub(r'\s+', ' ', l).strip().replace(' - ', ', ')
+KEEP = re.compile(r'\b(wheat|barley|maize|rye|oats|rice|rape|sunflower|soya|soy|potato|sugar beet|grape|wine|olive|cereal|oilseed|cattle|bovine|calves|pig|sheep|goat|poultry|chicken|egg|milk|butter|cheese|meat|beef|pork|animals|crop|total|fertili|energy|fuel|feed|seed|plant protection|pesticide)s?\b', re.I)
+def keep(label): return not CFG.get('lite') or bool(KEEP.search(label))   # modo reducido (presupuesto de datos): solo los productos de la matriz y los totales
 NEC = re.compile(r'n\.e\.c|^other\b|, other\b', re.I)
 def crops():
     recs, labs = es('apro_cpsh1'); by = {}
@@ -51,7 +53,7 @@ def crops():
         if r['strucpro'] in M: by.setdefault((r['crops'], r['strucpro']), []).append((r['time'], v))
     n = 0
     for (c, sp), pts in by.items():
-        if NEC.search(clean(labs['crops'][c])): continue   # categorias residuales («n.e.c.», «Other ...»): no identifican un cultivo
+        if NEC.search(clean(labs['crops'][c])) or not keep(clean(labs['crops'][c])): continue   # categorias residuales («n.e.c.», «Other ...»): no identifican un cultivo
         k, txt, u, mu = M[sp]
         n += put(CFG['pfx'] + '-es-crop-%s-%s' % (c.lower(), k), 'crops', '%s: %s (Eurostat)' % (clean(labs['crops'][c]), txt), u, 'annual', pts, 'Eurostat apro_cpsh1 %s' % c, mu)
     log('cultivos', n, 'series')
@@ -104,7 +106,9 @@ def priceidx():
         if r['p_adj'] == 'NI': by.setdefault((r['am_item'], r['p_adj']), []).append((r['time'], v))   # solo nominal: el indice real (deflactado) duplica el numero de series sin dato nuevo
     n = 0; seen = set()
     for (a, p), pts in sorted(by.items()):
-        nm = clean(labs['am_item'][a]); key = (p, frozenset(re.findall(r'[a-z0-9]+', nm.lower())))
+        nm = clean(labs['am_item'][a])
+        if not keep(nm): continue
+        key = (p, frozenset(re.findall(r'[a-z0-9]+', nm.lower())))
         if key in seen: nm += ' (code %s)' % a  # Eurostat repite el nombre en un subnivel («Other fresh fruit» / «Other fresh fruit - other»): el codigo los distingue
         seen.add(key)
         n += put(CFG['pfx'] + '-es-pidx-%s-%s' % (a.lower(), p.lower()), 'idx_perc', 'Output price index, %s: %s (2020=100, Eurostat)' % ('nominal' if p == 'NI' else 'real (deflated)', nm), 'index 2020=100', 'quarterly', pts, 'Eurostat apri_pi_outq %s' % a)
@@ -117,13 +121,16 @@ def absprices():
         for c, pts in by.items():
             l = re.sub(r'\s+', ' ', labs[dim][c]).strip(); m = re.match(r'^(.*?)\s+-\s+prices\s+(.*)$', l)
             nm, un = (m.group(1), 'EUR ' + m.group(2)) if m else (l, 'EUR')
-            nm = nm.replace(' - ', ', '); n += put(CFG['pfx'] + '-es-%s-%s' % (tag, c), grp, nm + ' (producer price, Eurostat)', un, 'annual', pts, 'Eurostat ' + ds)
+            nm = nm.replace(' - ', ', ')
+            if not keep(nm): continue
+            n += put(CFG['pfx'] + '-es-%s-%s' % (tag, c), grp, nm + ' (producer price, Eurostat)', un, 'annual', pts, 'Eurostat ' + ds)
     log('precios absolutos', n, 'series')
 def accounts():
     recs, labs = es('aact_eaa01', unit='MIO_EUR', indic_agr='PRD_BP'); by = {}
     for r, v in recs: by.setdefault(r['am_item'], []).append((r['time'], v))
     n = 0
     for a, pts in by.items():
+        if not keep(re.sub(r'\(.*','',clean(labs['am_item'][a]))): continue
         n += put(CFG['pfx'] + '-es-eaa-%s' % a.lower(), 'income', '%s (EUR million, current prices, Eurostat)' % clean(labs['am_item'][a]), 'EUR million', 'annual', pts, 'Eurostat aact_eaa01 %s PRD_BP' % a)
     log('cuentas agrarias', n, 'series')
 def inputs():
@@ -132,7 +139,9 @@ def inputs():
         if r['p_adj'] == 'NI': by.setdefault(r['am_item'], []).append((r['time'], v))
     n = 0; seen = set()
     for a, pts in sorted(by.items()):
-        nm = clean(labs['am_item'][a]); key = frozenset(re.findall(r'[a-z0-9]+', nm.lower()))
+        nm = clean(labs['am_item'][a])
+        if not keep(nm): continue
+        key = frozenset(re.findall(r'[a-z0-9]+', nm.lower()))
         if key in seen: nm += ' (code %s)' % a
         seen.add(key)
         g = 'inputs_f' if re.search(r'fertili|nitrate|urea|phosphate|potash|ammonia|lime|compound', nm, re.I) and not re.search(r'feed', nm, re.I) else 'inputs_a' if re.search(r'feed|straw|hay|cake|meal|concentrate', nm, re.I) else 'inputs'
@@ -185,6 +194,15 @@ def main():
            'countries': {CFG['geo']: ctry}, 'log': LOG[-30:]}
     json.dump(doc, open('data/%s-eurostat-stats.json' % CFG['slug'], 'w'), ensure_ascii=False, separators=(',', ':'))
     open('data/%s-eurostat-log.txt' % CFG['slug'], 'w').write('\n'.join(LOG) + '\n'); log('series', len(OUT))
+def collect(cfg, minimum=15):
+    """Varios paises en una ejecucion (update-eurostat-eu.py): devuelve las series de un pais o None si salen menos de `minimum`."""
+    global CFG
+    CFG = cfg; OUT.clear()
+    for fn in (crops, herds, slaughter, slaughter_m, milk, priceidx, absprices, accounts, inputs, fertiliser, labour) + ((poultry,) if not cfg.get('lite') else ()) + (() if cfg.get('lite') else (organic,)):
+        try: fn()
+        except Exception as e: log('ERROR', cfg['geo'], fn.__name__, repr(e)[:300])
+    log(cfg['geo'], 'series', len(OUT))
+    return sorted(OUT.values(), key=lambda s: s['id']) if len(OUT) >= minimum else None
 def run(cfg):
     """cfg: geo (IT/PL), pfx (prefijo de los ids), slug (italy/poland: ficheros data/<slug>-eurostat-*), name, source (nombre de la fuente), extend (bool)."""
     global CFG
