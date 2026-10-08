@@ -889,6 +889,12 @@
    [
     "watch_index"
    ]
+  ],
+  "supply-balances/[a-z][a-z].json": [
+   "supply-balances",
+   [
+    "supply_balances"
+   ]
   ]
  },
  "derived": [

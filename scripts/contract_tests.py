@@ -2059,6 +2059,34 @@ def spain_balances(doc, errs, warns, stats):
     stats["spain-balances campañas"] = len(camps)
 
 
+def supply_balances(doc, errs, warns, stats):
+    """Balances oficiales por pais (data/supply-balances/*.json, formato comun de scripts/build_supply_balances.py).
+    Fuente con licencia VERIFIED; campañas = año de inicio con etiqueta AAAA/AA; valores numericos sin negativos; solo partidas y productos declarados;
+    si el pais declara `identity` (oferta total - salidas = existencias finales) debe cuadrar dentro de su tolerancia: si no cuadra es error, no se corrige ni se oculta."""
+    reg = json.loads((Path(__file__).resolve().parents[1] / "data" / "license-registry.json").read_text(encoding="utf-8"))["sources"]
+    if doc["sourceId"] not in reg or reg[doc["sourceId"]].get("status") != "VERIFIED": errs.append("supply-balances %s: fuente %s sin licencia VERIFIED" % (doc["country"], doc["sourceId"])); return
+    items = {i["id"] for i in doc["items"]}; prods = {p["id"] for p in doc["products"]}
+    for k in [doc["stocksToUse"]["num"]] + doc["stocksToUse"]["den"] + doc["cards"] + doc["chart"]:
+        if k not in items: errs.append("supply-balances %s: tarjetas, grafico o stocksToUse usan una partida no declarada (%s)" % (doc["country"], k)); return
+    idt = doc.get("identity"); n = 0; bad = []
+    for y, c in doc["campaigns"].items():
+        if not re.match(r"^\d{4}$", y): errs.append("supply-balances %s: campaña %r invalida" % (doc["country"], y)); return
+        if c.get("label") != "%s/%02d" % (y, (int(y) + 1) % 100): errs.append("supply-balances %s %s: etiqueta %r" % (doc["country"], y, c.get("label"))); return
+        for p, vals in c["v"].items():
+            if p not in prods: errs.append("supply-balances %s %s: producto %s no declarado" % (doc["country"], y, p)); return
+            for k, v in vals.items():
+                if k not in items: errs.append("supply-balances %s %s/%s: partida %s no declarada" % (doc["country"], y, p, k)); return
+                if not isinstance(v, (int, float)) or isinstance(v, bool) or v < 0: errs.append("supply-balances %s %s/%s/%s: valor %r" % (doc["country"], y, p, k, v)); return
+                n += 1
+            if idt and all(k in vals for k in [idt["total"], idt["equals"]] + idt["minus"]):
+                r = vals[idt["total"]] - sum(vals[k] for k in idt["minus"]) - vals[idt["equals"]]
+                if abs(r) > max(1.0, idt["tolerancePct"] / 100.0 * vals[idt["total"]]): bad.append("%s %s: descuadre %.1f kt sobre %.1f" % (y, p, r, vals[idt["total"]]))
+    errs.extend("supply-balances %s " % doc["country"] + b for b in bad[:5])
+    ys = sorted(doc["campaigns"])
+    if int(ys[-1]) < datetime.date.today().year - 3: warns.append("supply-balances %s: la ultima campaña es %s (datos viejos)" % (doc["country"], ys[-1]))
+    stats["supply-balances %s cifras" % doc["country"]] = n
+
+
 def _so_mod():
     import importlib.util as _u
     sp = _u.spec_from_file_location("update_spain_olive", str(Path(__file__).resolve().parent / "update-spain-olive.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m

@@ -21,7 +21,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await page.waitForSelector('#od-es table tbody tr', { timeout: 8000 }).catch(() => {});
   const m = await page.evaluate(() => { var e = document.getElementById('od-es'); var rows = [].map.call(e.querySelectorAll('table')[0].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())); return { txt: e.innerText, rows: rows, cmp: e.querySelectorAll('table')[1].querySelectorAll('tbody tr').length, svgs: e.querySelectorAll('svg').length, worldHidden: document.getElementById('od-body').hidden, tabs: document.querySelectorAll('[data-odtab]').length, over: document.documentElement.scrollWidth > innerWidth + 1 }; });
   const v = J.campaigns[Y].v.wheat_soft;
-  ok(tag + ' 2 pestañas y el mundo oculto', m.tabs === 2 && m.worldHidden);
+  ok(tag + ' pestañas (mundo, España y países) y el mundo oculto', m.tabs >= 2 && m.worldHidden);
   ok(tag + ' produccion trigo blando = JSON', m.rows.some(r => digits(r[1]) === String(v.production)));
   ok(tag + ' existencias finales = JSON', m.rows.some(r => digits(r[1]) === String(v.endingStocks)));
   ok(tag + ' 9 filas de cereales en la comparacion', m.cmp === 9);

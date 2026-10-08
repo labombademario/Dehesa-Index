@@ -409,4 +409,7 @@ def main():
            "log": LOG[-30:]}
     (ROOT / "data" / "canada-stats.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
     (ROOT / "data" / "canada-stats-log.txt").write_text("\n".join(LOG)); log("series", len(OUT))
+    # balances de oferta y demanda (pestaña Canadá de oferta-demanda.html): fichero pequeño derivado de las series grain balance
+    import subprocess
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "build_supply_balances.py"), "ca"], check=True)
 if __name__ == "__main__": main()

@@ -2867,6 +2867,12 @@
     "world_bank"
    ],
    "notes": "Vistas pequenas para la app movil (scripts/build-app-views.mjs): copian valores ya publicados en data/ y cada uno conserva su sourceId; noticias solo con titular, medio y enlace."
+  },
+  "data/supply-balances/": {
+   "sources": [
+    "statcan"
+   ],
+   "notes": "Balances oficiales de oferta y demanda por pais (scripts/build_supply_balances.py), un fichero por pais con el mismo formato. ca.json: Statistics Canada, tabla 32-10-0013-01 (oferta total, produccion, exportaciones, consumo interno y existencias finales por campaña agosto-julio), derivado de data/canada-stats.json sin cambiar ninguna cifra."
   }
  },
  "derived": [

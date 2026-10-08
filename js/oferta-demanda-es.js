@@ -133,10 +133,18 @@
     bindProd(); document.getElementById('od-es-c').onchange = function (e) { SEL.cer = e.target.value; render(); };
     document.getElementById('od-es-y').onchange = function (e) { SEL.y = e.target.value; render(); };
   }
+  function chip(k, label, on) { return '<button type="button" class="pt-chip" role="tab" data-odtab="' + k + '" aria-selected="' + on + '">' + esc(label) + '</button>'; }
   function tabs() {
-    var h = document.getElementById('od-tabs'); if (!h) return; var x = t();
-    h.innerHTML = '<div class="pt-tabs" role="tablist"><button type="button" class="pt-chip" role="tab" data-odtab="world" aria-selected="' + !ON + '">' + esc(x.world) + '</button><button type="button" class="pt-chip" role="tab" data-odtab="es" aria-selected="' + ON + '">' + esc(x.tab) + '</button></div>';
-    Array.prototype.forEach.call(h.querySelectorAll('[data-odtab]'), function (b) { b.onclick = function () { setTab(b.getAttribute('data-odtab') === 'es'); }; });
+    var h = document.getElementById('od-tabs'); if (!h) return; var x = t(), O2 = window.ODCountries, cc = O2 ? O2.current() : null;
+    h.innerHTML = '<div class="pt-tabs" role="tablist">' + chip('world', x.world, !ON && !cc) + chip('es', x.tab, ON) + (O2 ? O2.chips().map(function (c) { return chip(c.cc, c.label, cc === c.cc); }).join('') : '') + '</div>';
+    Array.prototype.forEach.call(h.querySelectorAll('[data-odtab]'), function (b) { b.onclick = function () { pick(b.getAttribute('data-odtab')); }; });
+  }
+  // Pestañas: mundo (USDA PSD), España (MAPA) y los balances por país de oferta-demanda-paises.js
+  function pick(k, noUrl) {
+    var O2 = window.ODCountries; if (O2) O2.hide(noUrl);
+    if (k === 'es') setTab(true, noUrl);
+    else if (k === 'world' || !O2 || !O2.has(k)) setTab(false, noUrl);
+    else { ON = false; var e2 = document.getElementById('od-es'); if (e2) e2.hidden = true; O2.show(k, noUrl); tabs(); }
   }
   function load() {
     if (D) return Promise.resolve(D);
@@ -153,5 +161,6 @@
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); tabs(); if (ON) { head(); render(); } };
   window.ODSpain = { active: function () { return ON; }, setTab: setTab };
-  tabs(); if ((new URLSearchParams(window.location.search).get('c') || '').toUpperCase() === 'ES') setTab(true, true);
+  tabs(); var q0 = (new URLSearchParams(window.location.search).get('c') || '').toUpperCase();
+  if (q0 === 'ES') setTab(true, true); else if (window.ODCountries && window.ODCountries.has(q0)) pick(q0, true);
 })();

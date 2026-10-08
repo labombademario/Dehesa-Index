@@ -283,7 +283,7 @@ sources:
     timeout: 30
     script_timeout: 20
     continue: true
-    data: [canada-stats.json]
+    data: [canada-stats.json, supply-balances/ca.json]
     log: canada-stats-log.txt
     message: Datos Canadá (Statistics Canada)
   - id: country-macro

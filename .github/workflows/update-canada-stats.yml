@@ -30,16 +30,16 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/canada-stats.json
+          files: data/canada-stats.json data/supply-balances/ca.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/canada-stats.json
+        run: python3 scripts/detect-revisions.py data/canada-stats.json data/supply-balances/ca.json
       - name: Publicar
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/canada-stats.json data/canada-stats-log.txt data/revisions.json
+          git add data/canada-stats.json data/supply-balances/ca.json data/canada-stats-log.txt data/revisions.json
           git diff --cached --quiet && exit 0
           git commit -qm "Datos Canadá (Statistics Canada)"
           for i in 1 2 3 4 5 6; do

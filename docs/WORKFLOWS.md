@@ -37,7 +37,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-canada-grain.yml | generado | semanal (3,4,5) | detect-revisions.py, gen-workflows.py, update-canada-grain.py | canada-grain.json, revisions.json | finish, validate-files |
 | update-canada-provinces-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-canada-provinces-macro.py | canada-provinces-macro-log.txt, canada-provinces-macro.json, revisions.json | finish, validate-files |
 | update-canada-provinces.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-canada-provinces.py | canada-provinces.json, revisions.json | finish, validate-files |
-| update-canada-stats.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-canada-stats.py | canada-stats-log.txt, canada-stats.json, revisions.json | finish, validate-files |
+| update-canada-stats.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-canada-stats.py | canada-stats-log.txt, canada-stats.json, revisions.json … | finish, validate-files |
 | update-canada.yml | a mano | semanal (1,4) | update-statcan-canada.py | - | price-engine, publish |
 | update-cap-dk.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-dk.py | cap/dk/amounts.json, cap/dk/watch.json, revisions.json | finish, validate-files |
 | update-cap-es.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-es.py | cap/es/amounts.json, cap/es/watch.json, revisions.json | finish, validate-files |

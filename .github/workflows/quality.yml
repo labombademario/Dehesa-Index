@@ -323,6 +323,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-od-es.mjs
+      - name: Oferta y demanda, pestañas de balances por país (cifras = los JSON, titulo propio, URL, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-od-countries.mjs
       - name: Etiquetas de USDA NASS traducidas a es/fr/it (todas las series del catalogo, sin palabras inglesas sueltas)
         run: node scripts/test-nass-labels.mjs
       - name: Fichas de pais con la misma estructura (secciones, orden y barra iguales en los 13 paises, 4 idiomas, 1280/390)
