@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T16:49:29Z",
+ "generatedAt": "2026-10-08T17:12:02Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1407,7 +1407,7 @@
    "country": "AU",
    "scope": "integrated",
    "institution": "Australian Bureau of Statistics (Data API)",
-   "dataset": "Ya integrada (92 series en el catalogo unificado)",
+   "dataset": "Ya integrada (100 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
