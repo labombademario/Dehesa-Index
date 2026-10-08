@@ -29,7 +29,6 @@
     try { window.localStorage.setItem('dehesaIndexTheme', mode); } catch (e) {}
   }
 
-  // Sin idioma guardado: el del navegador si es uno de los cuatro; si no, ingles.
   function detectLang() {
     try {
       var L = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
@@ -40,7 +39,6 @@
   var lang = readLang() || detectLang();
   var theme = readTheme();
 
-  // Densidad por tipo de pagina: compacta para mercados y tablas, ampliada para metodologia y observatorio, estandar para el resto.
   var DENSITY = { 'precios.html': 'compact', 'europa.html': 'compact', 'mercados.html': 'compact', 'precios-locales.html': 'compact', 'comparador.html': 'compact', 'catalogo.html': 'compact', 'calendario.html': 'compact', 'noticias.html': 'compact',
     'metodologia.html': 'expanded', 'observatorio.html': 'expanded', 'informacion.html': 'expanded', 'status.html': 'expanded', 'legal.html': 'expanded' };
   function applyThemeAttr() {
@@ -50,9 +48,6 @@
   }
   applyThemeAttr();
 
-  // ---------------------------------------------------------------------
-  // Traducciones: Nav, Footer, bienvenida de idioma y tour guiado.
-  // ---------------------------------------------------------------------
   var NAV_LABELS = {
     es: { search: 'Buscar', home: 'Inicio', precios: 'Precios', noticias: 'Noticias', calendario: 'Calendario', informacion: 'Información', blog: 'Blog', empresas: 'Empresas', contacto: 'Contacto', toDark: 'Cambiar a modo oscuro', toLight: 'Cambiar a modo claro', langSelect: 'Elegir idioma', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú' },
     en: { search: 'Search', home: 'Home', precios: 'Prices', noticias: 'News', calendario: 'Calendar', informacion: 'Information', blog: 'Blog', empresas: 'Business', contacto: 'Contact', toDark: 'Switch to dark mode', toLight: 'Switch to light mode', langSelect: 'Choose language', openMenu: 'Open menu', closeMenu: 'Close menu' },
@@ -72,13 +67,10 @@
     empresas: 'empresas.html', contacto: 'contacto.html'
   };
 
-  // Hojas: { file, query?, hash?, label }. Ramas: { items: [...], label } (se despliegan dentro del menu).
   function L(es, en, fr, it) { return { es: es, en: en, fr: fr, it: it }; }
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
-  // Menu por tareas: Buscar precios, Mi mercado, Comparar, Noticias y calendario, Mas herramientas; los grupos antiguos quedan para migas y Relacionado.
-  var NAV_ORDER = ['g:prices', 'g:mine', 'g:compare', 'g:today', 'g:more'];
-  // Cada hoja lleva una descripcion corta (d) de que hay y de donde.
+  var NAV_ORDER = ['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:today', 'g:more'];
   function pd(file, label, d, query) { var o = pg(file, label, query); o.d = d; return o; }
   function cd(c, es, en, fr, it) { var o = ctry(c, es, en, fr, it); o.chip = 1; return o; }
   var NAV_GROUPS = {
@@ -167,12 +159,19 @@
     G.mine.items = G.mine.items.concat(pick('costs', ['calculadora.html']));
     G.compare = { label: L('Comparar', 'Compare', 'Comparer', 'Confrontare'), items: pick('prices', ['comparador.html']).concat(pick('countries', ['perfiles.html']), pick('production', ['oferta-demanda.html']), G.prices.items.filter(function (i) { return i.items; })[0].items.filter(function (i) { return i.file === 'relaciones.html'; })) };
     var prod = G.production.items.filter(function (i) { return !i.items; }).concat(G.production.items.filter(function (i) { return i.items; })[0].items);
-    G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: G.countries.items.filter(function (i) { return i.chip; }).concat([
-      { label: G.production.label, items: prod },
-      { label: G.trade.label, items: G.trade.items },
-      { label: G.costs.label, items: G.costs.items.filter(function (i) { return i.file !== 'calculadora.html'; }).concat(G.countries.items.filter(function (i) { return !i.chip && i.file === 'pac.html'; })) },
+    var all = [].concat(G.countries.items, prod, G.trade.items, G.costs.items), one = function (f, q) { return all.filter(function (x) { return x.file === f && (x.query || '') === (q || ''); })[0]; };
+    G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: [
+      { label: L('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio'), items: prod.filter(function (i) { return /^(sequia|clima|mapa)\./.test(i.file); }).concat(one('aranceles.html')) },
       { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items }
-    ]) };
+    ] };
+    var dl = function (es, en, fr, it, items, cc) { return { label: L(es, en, fr, it), items: items, cc: cc }; };
+    G.countries.chipsFirst = 1;
+    G.countries.items = G.countries.items.filter(function (i) { return i.chip; }).concat([
+      dl('Datos de EE. UU.', 'US data', 'Données des É.-U.', 'Dati USA', [one('exportaciones.html'), one('insumos.html'), one('costes.html'), one('cultivos.html'), one('rendimientos.html'), one('ganaderia.html')], 'US'),
+      dl('Datos de Canadá', 'Canada data', 'Données du Canada', 'Dati Canada', [one('canada-granos.html')], 'CA'),
+      dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES')], 'ES'),
+      dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU')
+    ]);
   })();
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }
   function leafActive(i) {
@@ -183,7 +182,6 @@
   }
   function branchActive(list) { return list.some(function (i) { return i.items ? branchActive(i.items) : leafActive(i); }); }
   function groupIsActive(g) { return branchActive(g.items); }
-  // Menu en panel: columnas con titulo (no acordeones) y paises como botones.
   function itemHtml(i) {
     var on = leafActive(i), d = i.d ? (i.d[lang] || i.d.es) : '';
     return '<a class="di-nav-item' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '"' + (on ? ' aria-current="page"' : '') + '><span class="di-nav-it">' + esc(i.label[lang] || i.label.es) + '</span>' + (d ? '<span class="di-nav-id">' + esc(d) + '</span>' : '') + '</a>';
@@ -192,7 +190,6 @@
     var on = leafActive(i);
     return '<a class="di-nav-chip' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(i.label[lang] || i.label.es) + '</a>';
   }
-  /* Paises agrupados por region en el menu: Sur America, Norte America, Europa (UE y Reino Unido incluidos) y Otros */
   var REGIONS = [{ k: 'SA', l: L('Sudamérica', 'South America', 'Amérique du Sud', 'Sud America') }, { k: 'NA', l: L('Norteamérica', 'North America', 'Amérique du Nord', 'Nord America') }, { k: 'EU', l: L('Europa', 'Europe', 'Europe', 'Europa') }, { k: 'OT', l: L('Otros', 'Others', 'Autres', 'Altri') }];
   var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU', PL: 'EU', CH: 'EU' };
   function panelHtml(g) {
@@ -200,11 +197,11 @@
     if (leaves.length) cols.push({ h: g.first, items: leaves });
     g.items.forEach(function (i) { if (i.items) cols.push({ h: i.label, items: i.items }); });
     var h = cols.map(function (c) { return '<div class="di-nav-col">' + (c.h ? '<div class="di-nav-colh">' + esc(c.h[lang] || c.h.es) + '</div>' : '') + c.items.map(itemHtml).join('') + '</div>'; }).join('');
-    if (chips.length) h += '<div class="di-nav-regs">' + REGIONS.map(function (r) {
+    var ch = ''; if (chips.length) ch = '<div class="di-nav-regs' + (g.chipsFirst ? ' di-nav-regs-top' : '') + '">' + REGIONS.map(function (r) {
       var rc = chips.filter(function (i) { return (REG_OF[(i.query || '').slice(3)] || 'OT') === r.k; });
       return rc.length ? '<section class="di-nav-reg"><div class="di-nav-regh">' + esc(r.l[lang] || r.l.es) + '</div><div class="di-nav-chips">' + rc.map(chipHtml).join('') + '</div></section>' : '';
     }).join('') + '</div>';
-    return h;
+    return g.chipsFirst ? ch + h : h + ch;
   }
   var QUICK = { mm: L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), news: L('Noticias', 'News', 'Actualités', 'Notizie'), cal: L('Calendario', 'Calendar', 'Calendrier', 'Calendario') };
   function quickLink(file, key, cls) { var on = currentFile() === file; return '<a class="' + cls + (on ? ' active' : '') + '" href="' + sitePath(file) + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(QUICK[key][lang] || QUICK[key].es) + '</a>'; }
@@ -287,7 +284,6 @@
     });
   }
 
-  // Prefijo relativo a la raiz: sale de la propia ruta de este script (../../../js/shared.js -> ../../../), asi vale en cualquier profundidad (regiones, datos, productos).
   var SELF_PREFIX = (function () { try { var s = document.currentScript || document.querySelector('script[src*="js/shared.js"]'), m = s && /^(.*?)js\/shared\.js/.exec(s.getAttribute('src') || ''); return m ? m[1] : null; } catch (e) { return null; } })();
   function sitePrefix() {
     if (SELF_PREFIX !== null) return SELF_PREFIX;
@@ -297,7 +293,6 @@
   }
   function sitePath(path) { return sitePrefix() + path; }
 
-  /* Accesibilidad y movil: tablas con scope/data-label (tarjetas en pantallas estrechas) y foco visible */
   (function a11yTables() {
     function fix(root) {
       var ts = (root || document).querySelectorAll('table:not([data-a11y])');
@@ -315,12 +310,10 @@
         if (heads.length >= 3 && heads.length <= 8 && rows.length && !t.hasAttribute('data-no-cards')) t.classList.add('di-cards-m'); if (heads.length >= 4 && t.querySelector('thead') && !t.hasAttribute('data-no-rows')) t.classList.add('di-rows-m');
       }
     }
-    /* Filas de mercado en movil (<=560 px): tocar una fila despliega el resto de columnas (original, fecha, historico...). */
     if (!global.__diRowsM) { global.__diRowsM = 1;
       var tog = function (e) { if (!global.matchMedia || !global.matchMedia('(max-width:560px)').matches) return; var tr = e.target.closest ? e.target.closest('table.di-rows-m tbody tr') : null; if (!tr) return; if (e.type === 'keydown') { if (e.key !== 'Enter' && e.key !== ' ') return; if (e.target !== tr) return; } else if (e.target.closest('a,button,input,select,textarea,label')) return; if (e.type === 'keydown') e.preventDefault(); var o = tr.classList.toggle('open'); tr.setAttribute('aria-expanded', String(o)); };
       document.addEventListener('click', tog); document.addEventListener('keydown', tog);
     }
-    // Regiones con scroll horizontal: accesibles por teclado (WCAG 2.1.1) si no contienen nada enfocable.
     function scrollRegions() {
       var els = document.querySelectorAll('main *, .di-ticker, .di-chart-svg-wrap'), n = Math.min(els.length, 4000);
       for (var i = 0; i < n; i++) {
@@ -334,7 +327,6 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
   })();
 
-  /* Avisos de la lista de seguimiento: solo si hay reglas guardadas se carga watchlist.js y se muestra el aviso flotante */
   (function watchPill() {
     try {
       var raw = window.localStorage.getItem('di-watchlist-v1') || ''; if (raw.indexOf('"r":[{') < 0) return;
@@ -346,7 +338,6 @@
     } catch (e) {}
   })();
 
-  /* PWA: manifiesto y service worker (cache parcial; sin conexion se sirven las paginas ya vistas) */
   (function pwa() {
     try {
       if (!document.querySelector('link[rel="manifest"]')) { var l = document.createElement('link'); l.rel = 'manifest'; l.href = '/manifest.webmanifest'; document.head.appendChild(l); }
@@ -357,14 +348,7 @@
     } catch (e) {}
   })();
 
-  // ---------------------------------------------------------------------
-  // Nav
-  // ---------------------------------------------------------------------
-  // Buscador global: se carga solo la primera vez que se abre (js/search.js + data/search-index.json)
 
-  /* Marco comun de pagina (punto 3 de la mejora de interfaz): migas de pan + barra de secciones fija.
-     Orden estandar: titulo -> contexto -> cifras clave -> grafico principal -> acciones -> bloques de detalle -> fuentes y metodologia.
-     frame.crumbs(el, [[texto, href|null], ...]) ; frame.bar(host, titulo, [[id, texto], ...]) ; frame.fix(): altura de cabecera. */
   var FR = { spy: false, clk: false };
   function frHdr() { var h = document.querySelector('.di-header'), st = h && window.getComputedStyle(h).position === 'sticky'; document.documentElement.style.setProperty('--di-hdr', (st ? h.offsetHeight : 0) + 'px'); return st ? h.offsetHeight : 0; }
   function frCrumbs(el, items) {
@@ -384,7 +368,6 @@
     upd();
   }
 
-  /* Migas automaticas: <nav class="di-crumbs" data-crumb-group="markets|countries|intel|tools|data"> -> Inicio > grupo del menu > titulo de la pagina (h1). */
   function frAuto() {
     var navs = document.querySelectorAll('.di-crumbs[data-crumb-group]'); if (!navs.length) return;
     var HM = { es: 'Inicio', en: 'Home', fr: 'Accueil', it: 'Home' };
@@ -396,8 +379,6 @@
       draw(); if (h1 && window.MutationObserver && !n.getAttribute('data-obs')) { n.setAttribute('data-obs', '1'); new MutationObserver(draw).observe(h1, { childList: true, characterData: true, subtree: true }); }
     });
   }
-  /* Bloque «Relacionado» al final de cada pagina del menu: hermanas de la misma columna del menu (max. 4) y dos enlaces de otro tipo.
-     Sale del propio NAV_GROUPS (mismas etiquetas y descripciones), asi que no hay una segunda lista que mantener. */
   var REL_T = L('Relacionado', 'Related', 'Voir aussi', 'Correlati');
   var REL_X = { compare: ['precios.html', 'catalogo.html'], more: ['precios.html', 'mi-mercado.html'], today: ['precios.html', 'mi-seguimiento.html'], prices: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], production: ['precios.html', 'calendario.html'], trade: ['precios.html', 'oferta-demanda.html'], costs: ['mi-explotacion.html', 'precios.html'], mine: ['precios.html', 'brief.html'], data: ['catalogo.html', 'status.html'] };
   function findLeaf(file) {
@@ -453,13 +434,12 @@
       if (k.indexOf('g:') === 0) {
         var g = NAV_GROUPS[k.slice(2)], on = groupIsActive(g), gl = g.label[lang] || g.label.es;
         return '<div class="di-nav-group' + (g.mega ? ' di-nav-g-mega' : '') + '"><button type="button" class="di-nav-gbtn' + (on ? ' active' : '') + '" aria-haspopup="true" aria-expanded="false">' + esc(gl) + ' <span aria-hidden="true">▾</span></button>' +
-          '<div class="di-nav-menu' + (g.mega ? ' di-nav-mega' : '') + '" role="group" aria-label="' + esc(gl) + '"><div class="di-nav-cols">' + panelHtml(g) + '</div></div></div>';
+          '<div class="di-nav-menu' + (g.mega ? ' di-nav-mega' : '') + '" role="group" aria-label="' + esc(gl) + '"><div class="di-nav-cols' + (g.chipsFirst ? ' di-nav-cols-4' : '') + '">' + panelHtml(g) + '</div></div></div>';
       }
       var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '" role="button">' + esc(t[k]) + '</a>';
     }).join('');
 
-    // En pantallas estrechas el selector de idioma muestra bandera y codigo (ES, EN…) para que no se corte.
     var narrowMq = window.matchMedia ? window.matchMedia('(max-width: 700px)') : null;
     function langLabel(o, narrow) { return narrow ? o.label.split(' ')[0] + ' ' + o.code.toUpperCase() : o.label; }
     var langOptionsHtml = LANG_OPTIONS.map(function (o) {
@@ -522,7 +502,6 @@
     });
     document.addEventListener('click', closeGroups);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGroups(); });
-    // Altura de la cabecera fija para lo que se pega debajo (p. ej. pestanas de Precios en movil); 0 si la cabecera no es fija.
     var setHdr = function () { var h = root.querySelector('.di-header'); if (!h) return; var st = window.getComputedStyle(h).position; document.documentElement.style.setProperty('--di-hdr-h', (st === 'sticky' || st === 'fixed' ? h.offsetHeight : 0) + 'px'); };
     setHdr(); if (!root.getAttribute('data-hdr')) { root.setAttribute('data-hdr', '1'); window.addEventListener('resize', setHdr); }
     var toggleBtn = document.getElementById('di-mobile-toggle');
@@ -535,10 +514,6 @@
     });
   }
 
-  // ---------------------------------------------------------------------
-  // Contexto de navegación: conserva la relación entre módulos sin obligar
-  // al usuario a volver al principio de la página.
-  // ---------------------------------------------------------------------
   function renderContextBar(activePage) {
     var root = document.getElementById('di-nav-root');
     if (!root) return;
@@ -612,9 +587,6 @@
     if (back) back.addEventListener('click', function(){ window.history.back(); });
   }
 
-  // ---------------------------------------------------------------------
-  // Footer
-  // ---------------------------------------------------------------------
   function renderFooter() {
     var root = document.getElementById('di-footer-root');
     if (!root) return;
@@ -656,12 +628,6 @@
 
 
 
-  // ---------------------------------------------------------------------
-  // Setters compartidos: idioma y tema. Recargan la página para que todo
-  // el contenido (no solo Nav/Footer) se vuelva a pintar en el idioma o
-  // tema elegido -- cada página guarda su propio estado de UI (pestaña
-  // activa, filtros...) por separado si quiere sobrevivir a la recarga.
-  // ---------------------------------------------------------------------
   function setLang(code, opts) {
     if (LANGS.indexOf(code) === -1) return;
     writeLang(code);
@@ -681,14 +647,10 @@
     applyThemeAttr();
     renderNav(global.DehesaShared.activePage);
     renderContextBar(global.DehesaShared.activePage);
-    // Algunas páginas pintan colores dependientes del tema directamente en el
-    // HTML (p. ej. los SVG de las minigráficas) -- reutilizamos el mismo
-    // callback que el cambio de idioma para que esas páginas se repinten.
     if (typeof global.DehesaShared.onLangChange === 'function') global.DehesaShared.onLangChange(lang);
   }
 
 
-  // ── Tablas ordenables: clic en la cabecera (A-Z, mayor-menor, fecha), otro clic invierte, un tercero restaura ──
   var SORT_T = {
     es: { tip: 'Ordenar por esta columna', asc: 'ascendente', desc: 'descendente' },
     en: { tip: 'Sort by this column', asc: 'ascending', desc: 'descending' },
@@ -813,8 +775,6 @@
     renderRelated();
   }
 
-  // Mercado exacto (lugar y etapa comercial) de una observacion (auditoria 8-oct-2026). Viene en la propia fila (o.market = [es, en, fr, it],
-  // home-tape y home-summary) o de data/market-labels.json, que las paginas de precios cargan con loadMarkets(). Sin dato: cadena vacia, nunca una region inventada.
   var MKT = null, MKT_P = null;
   function loadMarkets() {
     if (MKT) return Promise.resolve(MKT);
@@ -831,7 +791,6 @@
     var r = R[src] || (/^defra/.test(src) || /_defra_/.test(id) ? R.defra : /eurostat/.test(src) || /_eurostat_/.test(id) ? R.eurostat : null);
     return r ? r[i] : '';
   }
-  // Fechas en formato local para las vistas publicas (la ISO queda para los detalles): 2026-09-27 -> 27 sept 2026; 2026-08 -> ago 2026; 2026-Q1 -> T1 2026.
   var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }, QW = { es: 'T', en: 'Q', fr: 'T', it: 'T' };
   function fmtDate(p, lg) {
     lg = lg || lang; var s = String(p == null ? '' : p), m;
@@ -844,8 +803,7 @@
   }
 
   global.DehesaShared = {
-    /* Suscripción del blog por correo. Se activa rellenando las dos cosas: action (https del formulario del servicio) y provider (nombre y país
-       del servicio que guarda los correos). Con ellas el blog muestra el formulario y el aviso legal añade el párrafo de privacidad. */
+    countryLinks: function (cc) { var r = []; NAV_GROUPS.countries.items.forEach(function (b) { if (b.cc === cc) b.items.forEach(function (i) { r.push({ href: sitePath(i.file) + (i.query || ''), file: i.file, label: i.label[lang] || i.label.es, d: i.d ? (i.d[lang] || i.d.es) : '' }); }); }); return r; },
     newsletter: { action: 'https://dehesaindex.substack.com/api/v1/free?nojs=true', provider: 'Substack (Substack Inc., Estados Unidos)' },
     LANGS: LANGS,
     getLang: function () { return lang; },

@@ -24,8 +24,8 @@
   try { var o = JSON.parse(window.localStorage.getItem('di-mi-mercado-v1') || 'null'); if (o && /^(US|CA|ES|DE|UK)$/.test(o.c) && o.r && o.p) saved = o; } catch (e) { saved = null; }
   function prompt() {
     var l = lang(), t = TX[l];
-    wrap.className = 'di-home-section'; box.innerHTML = '<div class="di-card" style="padding:14px 16px"><h2 style="font-size:20px;margin:0 0 4px">' + esc(t.h) + '</h2><p style="margin:0 0 8px">' + esc(t.p) + '</p><p style="margin:0"><a class="di-btn-gold" href="mi-mercado.html">' + esc(t.start) + '</a> ' +
-      EX.map(function (e) { return '<a class="di-src-tab" href="mi-mercado.html?c=' + e[0] + '&amp;r=' + e[1] + '&amp;p=' + e[2] + '">' + esc(e[3][l]) + '</a>'; }).join(' ') + '</p></div>';
+    wrap.className = 'di-home-section'; box.innerHTML = '<div class="di-card" style="padding:14px 16px"><h2 style="font-size:20px;margin:0 0 4px">' + esc(t.h) + '</h2><p style="margin:0 0 12px">' + esc(t.p) + '</p><div class="di-hmm-row"><a class="di-btn-gold" href="mi-mercado.html">' + esc(t.start) + '</a>' +
+      EX.map(function (e) { return '<a class="di-src-tab" href="mi-mercado.html?c=' + e[0] + '&amp;r=' + e[1] + '&amp;p=' + e[2] + '">' + esc(e[3][l]) + '</a>'; }).join('') + '</div></div>';
   }
   if (!saved) {
     prompt();
