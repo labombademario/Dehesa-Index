@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T03:29:07Z",
+ "generatedAt": "2026-10-08T04:09:43Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2790,7 +2790,7 @@
    "country": "FR",
    "scope": "integrated",
    "institution": "FranceAgriMer (VISIONet)",
-   "dataset": "Ya integrada (132 series en el catalogo unificado)",
+   "dataset": "Ya integrada (188 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -2809,7 +2809,8 @@
    "productsConfirmed": true,
    "metrics": [
     "price",
-    "production"
+    "production",
+    "stocks"
    ],
    "frequency": "mixed",
    "access": {
