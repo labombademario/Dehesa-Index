@@ -1,4 +1,4 @@
-Series: {'DK': 47, 'NL': 67, 'AU': 31}
+Series: {'DK': 46, 'NL': 67, 'AU': 89}
   dk-cattle-prod | Cattle: meat production (total) | 2026-07 10.0 | n= 379 | first 1995-01
   dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-07 40.0 | n= 379 | first 1995-01
   dk-pig-prod | Pigs: meat production (total) | 2026-07 162.9 | n= 379 | first 1995-01
@@ -18,7 +18,6 @@ Series: {'DK': 47, 'NL': 67, 'AU': 31}
   dk-area-wheat | Wheat: area (1.1 Common wheat) | 2025 474100.0 | n= 44 | first 1982
   dk-area-barley | Barley: area (1.2 Barley) | 2025 548372.0 | n= 44 | first 1982
   dk-area-rye | Rye: area (1.3 Rye) | 2025 110617.0 | n= 44 | first 1982
-  dk-area-oats | Oats: area (1.4 Oats) | 2025 81202.0 | n= 44 | first 1982
   dk-area-maize | Grain maize: area (1.6 Grain maize and corn-cob mix) | 2025 8479.0 | n= 17 | first 2009
   dk-area-rape | Rapeseed: area (4.1 Rape) | 2025 160711.0 | n= 44 | first 1982
   dk-area-potatoes | Potatoes: area (3.1 Potatoes) | 2025 72073.0 | n= 44 | first 1982
@@ -144,6 +143,65 @@ Series: {'DK': 47, 'NL': 67, 'AU': 31}
   au-xpi-live | Export price index: live animals | 2026-Q2 104.0 | n= 148 | first 1989-Q3
   au-xpi-sugar | Export price index: sugars | 2026-Q2 88.1 | n= 148 | first 1989-Q3
   au-xpi-wool | Export price index: wool and animal hair | 2026-Q2 112.7 | n= 148 | first 1989-Q3
+  au-cattle-slaught-nsw | Cattle (excl. calves) slaughtered - New South Wales | 2026-Q2 572.5 | n= 146 | first 1990-Q1
+  au-cattle-slaught-vic | Cattle (excl. calves) slaughtered - Victoria | 2026-Q2 587.0 | n= 146 | first 1990-Q1
+  au-cattle-slaught-qld | Cattle (excl. calves) slaughtered - Queensland | 2026-Q2 1083.0 | n= 146 | first 1990-Q1
+  au-cattle-slaught-sa | Cattle (excl. calves) slaughtered - South Australia | 2026-Q2 91.4 | n= 146 | first 1990-Q1
+  au-cattle-slaught-wa | Cattle (excl. calves) slaughtered - Western Australia | 2026-Q2 122.6 | n= 146 | first 1990-Q1
+  au-cattle-slaught-tas | Cattle (excl. calves) slaughtered - Tasmania | 2026-Q2 65.1 | n= 146 | first 1990-Q1
+  au-sheep-slaught-nsw | Sheep slaughtered - New South Wales | 2026-Q2 529.8 | n= 146 | first 1990-Q1
+  au-sheep-slaught-vic | Sheep slaughtered - Victoria | 2026-Q2 490.3 | n= 146 | first 1990-Q1
+  au-sheep-slaught-qld | Sheep slaughtered - Queensland | 2026-Q2 0.7 | n= 146 | first 1990-Q1
+  au-sheep-slaught-sa | Sheep slaughtered - South Australia | 2026-Q2 81.6 | n= 146 | first 1990-Q1
+  au-sheep-slaught-wa | Sheep slaughtered - Western Australia | 2026-Q2 185.4 | n= 146 | first 1990-Q1
+  au-sheep-slaught-tas | Sheep slaughtered - Tasmania | 2026-Q2 46.5 | n= 146 | first 1990-Q1
+  au-lamb-slaught-nsw | Lambs slaughtered - New South Wales | 2026-Q2 1328.2 | n= 146 | first 1990-Q1
+  au-lamb-slaught-vic | Lambs slaughtered - Victoria | 2026-Q2 2767.8 | n= 146 | first 1990-Q1
+  au-lamb-slaught-qld | Lambs slaughtered - Queensland | 2026-Q2 15.0 | n= 146 | first 1990-Q1
+  au-lamb-slaught-sa | Lambs slaughtered - South Australia | 2026-Q2 433.5 | n= 146 | first 1990-Q1
+  au-lamb-slaught-wa | Lambs slaughtered - Western Australia | 2026-Q2 652.2 | n= 146 | first 1990-Q1
+  au-lamb-slaught-tas | Lambs slaughtered - Tasmania | 2026-Q2 89.5 | n= 146 | first 1990-Q1
+  au-pig-slaught-nsw | Pigs slaughtered - New South Wales | 2026-Q2 224.3 | n= 146 | first 1990-Q1
+  au-pig-slaught-vic | Pigs slaughtered - Victoria | 2026-Q2 356.1 | n= 146 | first 1990-Q1
+  au-pig-slaught-qld | Pigs slaughtered - Queensland | 2026-Q2 376.7 | n= 146 | first 1990-Q1
+  au-pig-slaught-sa | Pigs slaughtered - South Australia | 2026-Q2 285.1 | n= 146 | first 1990-Q1
+  au-pig-slaught-wa | Pigs slaughtered - Western Australia | 2026-Q2 217.3 | n= 146 | first 1990-Q1
+  au-pig-slaught-tas | Pigs slaughtered - Tasmania | 2026-Q2 7.8 | n= 146 | first 1990-Q1
+  au-chicken-slaught-nsw | Chickens slaughtered - New South Wales | 2026-Q2 70904.5 | n= 146 | first 1990-Q1
+  au-chicken-slaught-vic | Chickens slaughtered - Victoria | 2026-Q2 40471.2 | n= 146 | first 1990-Q1
+  au-chicken-slaught-qld | Chickens slaughtered - Queensland | 2026-Q2 37106.8 | n= 146 | first 1990-Q1
+  au-chicken-slaught-sa | Chickens slaughtered - South Australia | 1997-Q2 7110.3 | n= 30 | first 1990-Q1
+  au-chicken-slaught-wa | Chickens slaughtered - Western Australia | 1997-Q2 8769.1 | n= 30 | first 1990-Q1
+  au-beef-prod-nsw | Beef produced - New South Wales | 2026-Q2 171257.0 | n= 146 | first 1990-Q1
+  au-beef-prod-vic | Beef produced - Victoria | 2026-Q2 171059.0 | n= 146 | first 1990-Q1
+  au-beef-prod-qld | Beef produced - Queensland | 2026-Q2 355529.0 | n= 146 | first 1990-Q1
+  au-beef-prod-sa | Beef produced - South Australia | 2026-Q2 30147.0 | n= 146 | first 1990-Q1
+  au-beef-prod-wa | Beef produced - Western Australia | 2026-Q2 34791.0 | n= 146 | first 1990-Q1
+  au-beef-prod-tas | Beef produced - Tasmania | 2026-Q2 17838.0 | n= 146 | first 1990-Q1
+  au-lamb-prod-nsw | Lamb produced - New South Wales | 2026-Q2 36715.0 | n= 146 | first 1990-Q1
+  au-lamb-prod-vic | Lamb produced - Victoria | 2026-Q2 73712.0 | n= 146 | first 1990-Q1
+  au-lamb-prod-qld | Lamb produced - Queensland | 2026-Q2 345.0 | n= 146 | first 1990-Q1
+  au-lamb-prod-sa | Lamb produced - South Australia | 2026-Q2 11986.0 | n= 146 | first 1990-Q1
+  au-lamb-prod-wa | Lamb produced - Western Australia | 2026-Q2 16065.0 | n= 146 | first 1990-Q1
+  au-lamb-prod-tas | Lamb produced - Tasmania | 2026-Q2 2171.0 | n= 146 | first 1990-Q1
+  au-mutton-prod-nsw | Mutton produced - New South Wales | 2026-Q2 14109.0 | n= 146 | first 1990-Q1
+  au-mutton-prod-vic | Mutton produced - Victoria | 2026-Q2 12147.0 | n= 146 | first 1990-Q1
+  au-mutton-prod-qld | Mutton produced - Queensland | 2026-Q2 18.0 | n= 146 | first 1990-Q1
+  au-mutton-prod-sa | Mutton produced - South Australia | 2026-Q2 2146.0 | n= 146 | first 1990-Q1
+  au-mutton-prod-wa | Mutton produced - Western Australia | 2026-Q2 4820.0 | n= 146 | first 1990-Q1
+  au-mutton-prod-tas | Mutton produced - Tasmania | 2026-Q2 965.0 | n= 146 | first 1990-Q1
+  au-pig-meat-prod-nsw | Pig meat produced - New South Wales | 2026-Q2 17298.0 | n= 146 | first 1990-Q1
+  au-pig-meat-prod-vic | Pig meat produced - Victoria | 2026-Q2 30317.0 | n= 146 | first 1990-Q1
+  au-pig-meat-prod-qld | Pig meat produced - Queensland | 2026-Q2 32753.0 | n= 146 | first 1990-Q1
+  au-pig-meat-prod-sa | Pig meat produced - South Australia | 2026-Q2 24347.0 | n= 146 | first 1990-Q1
+  au-pig-meat-prod-wa | Pig meat produced - Western Australia | 2026-Q2 17899.0 | n= 146 | first 1990-Q1
+  au-pig-meat-prod-tas | Pig meat produced - Tasmania | 2026-Q2 635.0 | n= 146 | first 1990-Q1
+  au-chicken-meat-prod-nsw | Chicken meat produced - New South Wales | 2026-Q2 162152.0 | n= 146 | first 1990-Q1
+  au-chicken-meat-prod-vic | Chicken meat produced - Victoria | 2026-Q2 76854.0 | n= 146 | first 1990-Q1
+  au-chicken-meat-prod-qld | Chicken meat produced - Queensland | 2026-Q2 69566.0 | n= 146 | first 1990-Q1
+  au-chicken-meat-prod-sa | Chicken meat produced - South Australia | 1997-Q2 10269.0 | n= 30 | first 1990-Q1
+  au-chicken-meat-prod-wa | Chicken meat produced - Western Australia | 1997-Q2 11052.0 | n= 30 | first 1990-Q1
+LOG ERROR dk-area-oats: Remote end closed connection without response
 LOG JORD1 sin partida para seed
 LOG JORD1 sin partida para pest
 LOG JORD1 sin partida para wages
@@ -151,3 +209,5 @@ LOG JORD1 sin partida para revenue
 LOG LPRIS38 insumos elegidos: 14
 LOG OMITIDA nl-butter-prod (menos de 3 puntos)
 LOG ABS slaughter cols: STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,LSTOCK_SLAUGHT,Livestock slaughtered,STATE,State,TSEST,Adjustment Type,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,UNIT_MULT,Unit of Multiplier,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
+LOG OMITIDA au-chicken-slaught-tas (menos de 3 puntos)
+LOG OMITIDA au-chicken-meat-prod-tas (menos de 3 puntos)
