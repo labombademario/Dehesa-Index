@@ -1,27 +1,22 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T15:29:00Z",
+ "generatedAt": "2026-10-08T16:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 92,
   "late": 2,
   "error": 7,
   "not_run": 3,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "unknown",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "cdb2b4ca",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/d4c23f13-97a2-42d9-9cc6-449d8979b576",
-   "completedAt": "2026-10-08T14:53:53Z"
-  },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-08T12:37:48.866239+00:00",
-  "repoGeneratedAt": "2026-10-08T12:37:48.866239+00:00"
+  "build": null,
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-08T15:33:09.857273+00:00"
  },
  "pipelines": [
   {
@@ -140,7 +135,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -172,7 +167,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -212,7 +207,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -248,7 +243,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -284,7 +279,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -316,7 +311,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -348,7 +343,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -380,7 +375,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -412,7 +407,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -436,7 +431,7 @@
    "crons": [
     "35 15 * * 1,4"
    ],
-   "nextRun": "2026-10-08T15:35:00Z",
+   "nextRun": "2026-10-12T15:35:00Z",
    "files": [
     {
      "path": "data/canada-stats.json",
@@ -444,27 +439,27 @@
      "series": 480,
      "points": 80829,
      "lines": 0,
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     },
     {
      "path": "data/supply-balances/ca.json",
-     "lastChange": "2026-10-08T00:20:06Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-07T00:10:28Z",
-    "durationSec": 124,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37550558889"
+    "event": "schedule",
+    "startedAt": "2026-10-08T15:51:27Z",
+    "durationSec": 213,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37804164943"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",
@@ -511,7 +506,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -547,7 +542,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -579,7 +574,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -615,7 +610,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -683,7 +678,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -719,7 +714,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -751,7 +746,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -783,7 +778,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -815,7 +810,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -899,7 +894,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1085,7 +1080,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": null,
@@ -1107,7 +1102,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1166,7 +1161,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1198,7 +1193,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1234,7 +1229,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1266,7 +1261,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1330,7 +1325,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1370,7 +1365,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1402,7 +1397,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1438,7 +1433,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1454,6 +1449,30 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-eurostat-eu.yml",
+   "name": "Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL)",
+   "crons": [
+    "10 18 * * 2,5"
+   ],
+   "nextRun": "2026-10-09T18:10:00Z",
+   "files": [
+    {
+     "path": "data/eurostat-eu-stats.json"
+    },
+    {
+     "path": "data/eurostat-euw-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-08T15:54:55Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 96.0
   },
   {
@@ -1522,7 +1541,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1554,7 +1573,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1590,7 +1609,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1622,7 +1641,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1705,7 +1724,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1729,7 +1748,7 @@
    "crons": [
     "30 15 * * 1,4"
    ],
-   "nextRun": "2026-10-08T15:30:00Z",
+   "nextRun": "2026-10-12T15:30:00Z",
    "files": [
     {
      "path": "data/germany-stats.json",
@@ -1737,28 +1756,28 @@
      "series": 265,
      "points": 63174,
      "lines": 0,
-     "lastChange": "2026-10-05T15:50:13Z"
+     "lastChange": "2026-10-08T15:51:52Z"
     },
     {
      "path": "data/germany-agri.json",
-     "lastChange": "2026-10-05T15:50:13Z"
+     "lastChange": "2026-10-08T15:51:52Z"
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-05T15:45:55Z",
-    "durationSec": 278,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37335451715"
+    "startedAt": "2026-10-08T15:46:24Z",
+    "durationSec": 351,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37803497163"
    },
    "recent": {
     "runs": 10,
-    "success": 7,
-    "failed": 3
+    "success": 8,
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 96.0
@@ -1781,7 +1800,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1817,7 +1836,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1877,7 +1896,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1918,7 +1937,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -1992,31 +2011,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-08T12:37:50Z"
+     "lastChange": "2026-10-08T15:33:10Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-08T12:37:50Z"
+     "lastChange": "2026-10-08T15:33:10Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-08T12:37:50Z"
+     "lastChange": "2026-10-08T15:33:10Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-08T12:37:50Z"
+     "lastChange": "2026-10-08T15:33:10Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-08T12:35:17Z",
-    "durationSec": 158,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37777934294"
+    "startedAt": "2026-10-08T15:30:17Z",
+    "durationSec": 178,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37801293990"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -2036,7 +2055,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2068,7 +2087,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2120,7 +2139,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2148,11 +2167,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:28Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-08T12:36:04Z"
+     "lastChange": "2026-10-08T15:31:28Z"
     },
     {
      "path": "data/series-registry.json",
@@ -2163,11 +2182,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/catalog"
@@ -2180,45 +2199,45 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-08T14:19:18Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/home-explore.json",
-     "lastChange": "2026-10-02T15:32:30Z"
+     "lastChange": "2026-10-08T15:31:43Z"
     },
     {
      "path": "data/cap/index.json",
@@ -2234,13 +2253,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-08T12:34:24Z",
-    "durationSec": 125,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37777828081"
+    "startedAt": "2026-10-08T15:29:29Z",
+    "durationSec": 189,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37801185507"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -2264,7 +2283,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2300,7 +2319,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2336,7 +2355,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2372,7 +2391,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2458,7 +2477,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2493,7 +2512,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2528,7 +2547,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2563,7 +2582,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2598,7 +2617,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2633,7 +2652,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2668,7 +2687,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2703,7 +2722,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2738,7 +2757,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2773,7 +2792,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2809,7 +2828,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2849,7 +2868,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": null,
@@ -2875,7 +2894,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": null,
@@ -2901,7 +2920,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2937,7 +2956,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -2977,7 +2996,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     },
     {
      "path": "data/source-status.json",
@@ -3035,7 +3054,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3070,7 +3089,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3103,7 +3122,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3135,7 +3154,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3163,26 +3182,26 @@
    "files": [
     {
      "path": "data/us-local/status.json",
-     "lastChange": "2026-10-07T15:42:33Z"
+     "lastChange": "2026-10-08T15:35:05Z"
     },
     {
      "path": "data/us-local"
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-07T15:41:43Z",
-    "durationSec": 61,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37646013619"
+    "startedAt": "2026-10-08T15:34:41Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37801907887"
    },
    "recent": {
-    "runs": 9,
-    "success": 5,
+    "runs": 10,
+    "success": 6,
     "failed": 4
    },
    "status": "ok",
@@ -3225,7 +3244,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3257,7 +3276,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3289,7 +3308,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3327,7 +3346,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3363,7 +3382,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3399,7 +3418,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3431,7 +3450,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
@@ -3527,7 +3546,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-07T00:12:14Z"
+     "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
    "last": {
