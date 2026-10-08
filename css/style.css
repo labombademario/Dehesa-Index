@@ -1968,3 +1968,13 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
   .di-hero-ctas { margin-top: 12px; }
 }
 .di-contact-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+/* Ficha de producto en movil: selector de producto y pista de desplazamiento en la barra de secciones */
+.pt-tabs-sel { display: none; }
+@media (max-width: 600px) {
+  .pt-tabs { display: none; }
+  .pt-tabs-sel { display: flex; align-items: center; gap: 8px; margin: 8px 0 4px; font-size: 14px; }
+  .pt-tabs-sel select { flex: 1; padding: 8px; font-size: 15px; border-radius: 8px; border: 1px solid var(--border, #ccc); background: var(--card-bg, #fff); color: inherit; }
+  .pt-ctx { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+}
+.pt-h3 { font-size: 15px; margin: 6px 0 8px; color: var(--text-muted, #556); font-weight: 600; }
+.cc-basic .cc-adv { display: none !important; }

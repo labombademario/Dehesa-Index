@@ -172,7 +172,8 @@
   readUrl();
   var body = document.getElementById('ob-body'); body.addEventListener('click', onClick); body.addEventListener('change', onChange);
   render();
-  fetch('data/observatory.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { DOC = d; return window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null; }).then(function () { render(); })
+  window.DIObsDoc = fetch('data/observatory.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  window.DIObsDoc.then(function (d) { DOC = d; return window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null; }).then(function () { render(); })
     .catch(function () { body.innerHTML = '<p class="pt-err">' + esc(t('err')) + '</p>'; });
   window.DIObservatory = { state: function () { return { F: F, doc: DOC }; } };
 })();

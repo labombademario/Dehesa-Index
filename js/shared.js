@@ -77,7 +77,9 @@
   function L(es, en, fr, it) { return { es: es, en: en, fr: fr, it: it }; }
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
-  var NAV_ORDER = ['g:today', 'g:prices', 'g:countries', 'g:production', 'g:trade', 'g:costs', 'g:mine', 'g:data'];
+  // Menu por tareas (auditoria 8-oct-2026): Buscar precios, Mi mercado, Comparar, Noticias y calendario, Mas herramientas.
+  // Los grupos antiguos (countries, production, trade, costs, data) siguen definidos para las migas de pan y el bloque Relacionado.
+  var NAV_ORDER = ['g:prices', 'g:mine', 'g:compare', 'g:today', 'g:more'];
   // Cada hoja lleva una descripcion corta (d) que dice que hay y de donde (alcance): el menu es un panel con columnas, no acordeones.
   function pd(file, label, d, query) { var o = pg(file, label, query); o.d = d; return o; }
   function cd(c, es, en, fr, it) { var o = ctry(c, es, en, fr, it); o.chip = 1; return o; }
@@ -157,6 +159,21 @@
       pd('informacion.html', L('Información', 'About', 'Informations', 'Informazioni'), L('Quiénes somos y de qué fuentes se nutre el panel', 'Who we are and which sources feed the dashboard', 'Qui nous sommes et quelles sources alimentent le tableau', 'Chi siamo e quali fonti alimentano il pannello'))
     ] }
   };
+  (function () {
+    var G = NAV_GROUPS, pick = function (g, files) { return G[g].items.filter(function (i) { return !i.items && files.indexOf(i.file) > -1; }); };
+    G.prices.label = L('Buscar precios', 'Find prices', 'Trouver un prix', 'Trova prezzi');
+    G.today.label = L('Noticias y calendario', 'News and calendar', 'Actualités et calendrier', 'Notizie e calendario');
+    G.mine.label = L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato');
+    G.mine.items = G.mine.items.concat(pick('costs', ['calculadora.html']));
+    G.compare = { label: L('Comparar', 'Compare', 'Comparer', 'Confrontare'), items: pick('prices', ['comparador.html']).concat(pick('countries', ['perfiles.html']), pick('production', ['oferta-demanda.html']), G.prices.items.filter(function (i) { return i.items; })[0].items.filter(function (i) { return i.file === 'relaciones.html'; })) };
+    var prod = G.production.items.filter(function (i) { return !i.items; }).concat(G.production.items.filter(function (i) { return i.items; })[0].items);
+    G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: G.countries.items.filter(function (i) { return i.chip; }).concat([
+      { label: G.production.label, items: prod },
+      { label: G.trade.label, items: G.trade.items },
+      { label: G.costs.label, items: G.costs.items.filter(function (i) { return i.file !== 'calculadora.html'; }).concat(G.countries.items.filter(function (i) { return !i.chip && i.file === 'pac.html'; })) },
+      { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items.concat([pd('legal.html', L('Licencias y avisos', 'Licences and notices', 'Licences et mentions', 'Licenze e avvisi'), L('De qué fuente es cada dato y con qué permiso se usa', 'Which source each figure comes from and under what permission', 'La source de chaque donnée et sous quelle autorisation', 'Da quale fonte viene ogni dato e con quale permesso'))]) }
+    ]) };
+  })();
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }
   function leafActive(i) {
     if (i.query === '?c=US' && currentFile() === 'precios-locales.html') return true; // perfil de EE. UU.: aquí vive el grano local
@@ -382,7 +399,7 @@
   /* Bloque «Relacionado» al final de cada pagina del menu: hermanas de la misma columna del menu (max. 4) y dos enlaces de otro tipo.
      Sale del propio NAV_GROUPS (mismas etiquetas y descripciones), asi que no hay una segunda lista que mantener. */
   var REL_T = L('Relacionado', 'Related', 'Voir aussi', 'Correlati');
-  var REL_X = { today: ['precios.html', 'mi-seguimiento.html'], prices: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], production: ['precios.html', 'calendario.html'], trade: ['precios.html', 'oferta-demanda.html'], costs: ['mi-explotacion.html', 'precios.html'], mine: ['precios.html', 'brief.html'], data: ['catalogo.html', 'status.html'] };
+  var REL_X = { compare: ['precios.html', 'catalogo.html'], more: ['precios.html', 'mi-mercado.html'], today: ['precios.html', 'mi-seguimiento.html'], prices: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], production: ['precios.html', 'calendario.html'], trade: ['precios.html', 'oferta-demanda.html'], costs: ['mi-explotacion.html', 'precios.html'], mine: ['precios.html', 'brief.html'], data: ['catalogo.html', 'status.html'] };
   function findLeaf(file) {
     var found = null;
     NAV_ORDER.forEach(function (k) { var g = NAV_GROUPS[k.slice(2)]; (function walk(list, col) { list.forEach(function (i) { if (i.items) walk(i.items, i.items); else if (!found && i.file === file && !i.chip && !i.hash) found = i; }); })(g.items, null); });

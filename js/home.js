@@ -307,6 +307,7 @@
 
     document.getElementById('home-movers-title').textContent = t.moversTitle;
     var ms = document.getElementById('home-more-sum'); if (ms) ms.textContent = t.moreData;
+    var ss = document.getElementById('home-seo-sum'); if (ss) ss.textContent = ({ es: 'Explorar todo Dehesa Index', en: 'Explore all of Dehesa Index', fr: 'Explorer tout Dehesa Index', it: 'Esplora tutto Dehesa Index' })[lang] || 'Explorar todo Dehesa Index';
     document.getElementById('home-movers-hint').textContent = t.moversHint;
     document.getElementById('home-movers-cta').textContent = t.moversCta;
 

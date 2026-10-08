@@ -220,7 +220,7 @@
   function inputHtml(id, val, ph, ex) { return '<input id="' + id + '" data-f="' + id.replace(/^cc-/, '') + '" type="text" inputmode="decimal" autocomplete="off" value="' + esc(val) + '" placeholder="' + esc(ph || '') + '"' + (ex || '') + '>'; }
   function seg(name, opts, cur) { return '<div class="pt-bar-ctl" role="radiogroup">' + opts.map(function (o) { return '<button type="button" class="pt-chip" role="radio" aria-checked="' + (o[0] === cur) + '" data-seg="' + name + '" data-v="' + esc(o[0]) + '">' + esc(o[1]) + '</button>'; }).join('') + '</div>'; }
   function caseTabs() {
-    return '<div class="pt-bar-ctl"><span class="pt-lbl">' + esc(t('case')) + '</span><span role="radiogroup" aria-label="' + esc(t('case')) + '" style="display:contents">' + ['A', 'B', 'C'].map(function (k) { return '<button type="button" class="pt-chip" role="radio" aria-checked="' + (S.cur === k) + '" data-case="' + k + '">' + esc(t('case')) + ' ' + k + '</button>'; }).join('') + '</span>' +
+    return '<div class="pt-bar-ctl cc-adv"><span class="pt-lbl">' + esc(t('case')) + '</span><span role="radiogroup" aria-label="' + esc(t('case')) + '" style="display:contents">' + ['A', 'B', 'C'].map(function (k) { return '<button type="button" class="pt-chip" role="radio" aria-checked="' + (S.cur === k) + '" data-case="' + k + '">' + esc(t('case')) + ' ' + k + '</button>'; }).join('') + '</span>' +
       ['A', 'B', 'C'].filter(function (k) { return k !== S.cur; }).map(function (k) { return '<button type="button" class="pt-chip" data-copy="' + k + '" title="' + esc(t('copyTo') + ' ' + k) + '">' + esc(t('copyTo')) + ' ' + k + '</button>'; }).join('') + '</div>';
   }
   function inputsHtml() {
@@ -297,13 +297,16 @@
       row(t('margin'), function (x) { return x.o.margin === undefined || x.o.margin === null ? '—' : esc(money(x.o.margin, x.c.cur)); }) +
       row(t('marginPct'), function (x) { return x.o.marginPct === undefined || x.o.marginPct === null ? '—' : esc(nf(x.o.marginPct, 1) + ' %'); }) + '</tbody></table></div><p class="pt-src">' + esc(t('compareHint')) + '</p>';
   }
-  function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
+  function sec(id, title, hint, body, adv) { return '<section class="pt-sec' + (adv ? ' cc-adv' : '') + '" id="' + id + '"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
   function shell() {
     document.getElementById('cc-h1').textContent = t('title'); document.getElementById('cc-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
-    document.getElementById('cc-body').innerHTML = '<div class="pt-wrap"><div class="pt-note">' + esc(t('privacy')) + '</div>' + caseTabs() + '<div id="cc-inputs">' + inputsHtml() + '</div>' +
+    var MD = { es: ['Modo básico', 'Opciones avanzadas (escenarios, impuestos, sensibilidad)'], en: ['Basic mode', 'Advanced options (scenarios, taxes, sensitivity)'], fr: ['Mode simple', 'Options avancées (scénarios, taxes, sensibilité)'], it: ['Modalità base', 'Opzioni avanzate (scenari, imposte, sensibilità)'] }[LANGS[li()]] || ['Modo básico', 'Opciones avanzadas'];
+    var adv = false; try { adv = window.localStorage.getItem('dehesaCalcAdv') === '1'; } catch (e) {}
+    // Modo basico por defecto (auditoria 8-oct-2026): cultivo, superficie, rendimiento, precio y costes -> margen. Lo avanzado, a un clic.
+    document.getElementById('cc-body').innerHTML = '<div class="pt-wrap' + (adv ? '' : ' cc-basic') + '"><div class="pt-bar-ctl" role="radiogroup"><button type="button" class="pt-chip" role="radio" data-ccmode="0" aria-checked="' + !adv + '">' + esc(MD[0]) + '</button><button type="button" class="pt-chip" role="radio" data-ccmode="1" aria-checked="' + adv + '">' + esc(MD[1]) + '</button></div><div class="pt-note">' + esc(t('privacy')) + '</div>' + caseTabs() + '<div id="cc-inputs">' + inputsHtml() + '</div>' +
       sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p>' + (window.DICite ? window.DICite.derived(['usda_ers','ecb'].concat((jur(C().tax.j) || {}).ids || []),{what:'calc'}) : '') + '<p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') +
-      sec('cc-sens-sec', t('sens'), t('sensHint'), '<div id="cc-sens">' + sensHtml() + '</div>') +
-      sec('cc-cmp-sec', t('compare'), '', '<div id="cc-cmp">' + compareHtml() + '</div>') + '</div>';
+      sec('cc-sens-sec', t('sens'), t('sensHint'), '<div id="cc-sens">' + sensHtml() + '</div>', 1) +
+      sec('cc-cmp-sec', t('compare'), '', '<div id="cc-cmp">' + compareHtml() + '</div>', 1) + '</div>';
     if (C().pSrc === 'dehesa') drawRef();
     drawErs(); drawEs();
   }
@@ -345,7 +348,7 @@
     } else if (jr.us) { x.rs = '0'; x.mode = 'norecover'; x.ro = String(jr.std); } else { x.mode = 'recover'; }
   }
   function taxHtml(c) {
-    var x = c.tax, d = TAXD && TAXD.v, jr = jur(x.j), L = li(), h = '<fieldset class="cc-fs"><legend>' + esc(t('taxTitle')) + '</legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('taxHint')) + '</p>';
+    var x = c.tax, d = TAXD && TAXD.v, jr = jur(x.j), L = li(), h = '<fieldset class="cc-fs cc-adv"><legend>' + esc(t('taxTitle')) + '</legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('taxHint')) + '</p>';
     var opts = '<option value="">' + esc(t('taxNone')) + '</option>';
     if (d && d.eu) opts += '<optgroup label="' + esc(t('taxGrpEu')) + '">' + Object.keys(d.eu.countries).map(function (k) { return [k, ctry(k)]; }).sort(function (a, b) { return a[1].localeCompare(b[1], lang()); }).map(function (a) { return '<option value="EU:' + a[0] + '"' + (x.j === 'EU:' + a[0] ? ' selected' : '') + '>' + esc(a[1]) + '</option>'; }).join('') + '</optgroup>';
     if (d && d.oth) { opts += '<optgroup label="' + esc(t('taxGrpOt')) + '"><option value="GB"' + (x.j === 'GB' ? ' selected' : '') + '>' + esc(REG.uk[L]) + '</option>';
@@ -410,7 +413,8 @@
   }
   function drawRef() {
     var c = C(), el = document.getElementById('cc-ref'); if (!el) return;
-    loadRef(c.crop).then(function (obs) {
+    var lm = window.DehesaShared && window.DehesaShared.loadMarkets ? window.DehesaShared.loadMarkets() : Promise.resolve();
+    Promise.all([loadRef(c.crop), lm]).then(function (pr) { var obs = pr[0];
       el = document.getElementById('cc-ref'); if (!el || C() !== c) return;
       var rows = obs.map(function (o) { var r = refPerT(o, c.crop, c.cur); return { o: o, r: r, key: o.region + '/' + o.product }; });
       var ok = rows.filter(function (x) { return x.r.value !== null; });
@@ -419,10 +423,13 @@
       var f = window.DIFreshness.evaluate(cur.o.observationDate, cur.o.frequency, cur.o.sourceId), st = f.state, lab = (window.DIFreshness.label[st] || {})[LANGS[li()]] || st;
       var sel = ok.length > 1 ? field('cc-inst', t('market'), '<select id="cc-inst" data-f="inst">' + ok.map(function (x) { return '<option value="' + esc(x.key) + '"' + (x.key === cur.key ? ' selected' : '') + '>' + esc(REG[x.o.region][li()]) + '</option>'; }).join('') + '</select>') : '';
       el.className = '';
-      el.innerHTML = sel + '<div class="di-card pt-card" style="margin-top:8px"><div class="pt-k">' + esc(t('refTitle')) + ' · ' + esc(REG[cur.o.region][li()]) + '</div><div class="pt-v">' + esc(money(cur.r.value, c.cur, 2)) + ' <small>/ t</small></div>' +
+      var Sh = window.DehesaShared, mk = Sh && Sh.marketLabel ? Sh.marketLabel(cur.o, LANGS[li()]) : '', farm = /productor|farmer|producteur|produttor/i.test(mk);
+      var FG = { es: 'No es un precio a pie de finca: es una cotización de mercado ({0}). Descuenta transporte y márgenes hasta tu explotación.', en: 'This is not a farm-gate price: it is a market quote ({0}). Deduct transport and margins back to your farm.', fr: 'Ce n’est pas un prix départ exploitation : c’est une cotation de marché ({0}). Déduisez transport et marges jusqu’à votre exploitation.', it: 'Non è un prezzo franco azienda: è una quotazione di mercato ({0}). Togli trasporto e margini fino alla tua azienda.' }[LANGS[li()]];
+      var CPL = { not_comparable: ['no comparable', 'not comparable', 'non comparable', 'non comparabile'], directional: ['orientativa', 'directional', 'indicative', 'indicativa'] };
+      el.innerHTML = sel + '<div class="di-card pt-card" style="margin-top:8px"><div class="pt-k">' + esc(t('refTitle')) + ' · ' + esc(mk || REG[cur.o.region][li()]) + '</div><div class="pt-v">' + esc(money(cur.r.value, c.cur, 2)) + ' <small>/ t</small></div>' +
         '<div class="pt-sub">' + esc(t('original')) + ': ' + esc(nf(cur.o.value, 2) + ' ' + cur.o.currency + '/' + (UL[cur.o.unit] || cur.o.unit)) + ' · ' + esc(t('asOf')) + ' ' + esc(dstr(cur.o.observationDate)) + '</div>' +
         '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(SRC[cur.o.sourceId] || cur.o.sourceId) + '</div>' +
-        '<div><span class="pt-badge pt-fs-' + st + '">' + esc(lab) + '</span><span class="pt-badge pt-cp-' + (cur.o.comparability || 'directional') + '">' + esc(cur.o.comparability === 'not_comparable' ? 'no comparable' : 'orientativa') + '</span></div>' +
+        '<div><span class="pt-badge pt-fs-' + st + '">' + esc(lab) + '</span><span class="pt-badge pt-cp-' + (cur.o.comparability || 'directional') + '">' + esc((cur.o.comparability === 'not_comparable' ? CPL.not_comparable : CPL.directional)[li()]) + '</span></div>' + (mk && !farm ? '<div class="pt-note">' + esc(FG.replace('{0}', mk)) + '</div>' : '') +
         (st === 'DELAYED' || st === 'STALE' ? '<div class="pt-note">' + esc(tf('stale', lab.toLowerCase())) + '</div>' : '') + (cur.o.comparability === 'not_comparable' ? '<div class="pt-note">' + esc(t('notComp')) + '</div>' : '') +
         '<div class="pt-sub">' + esc(t('useIt')) + ' (' + esc(money(cur.r.value, c.cur, 2)) + ' / t).</div></div><p class="pt-src">' + esc(t('refNote')) + '</p>';
       update();
@@ -491,6 +498,12 @@
   loadSaved();
   var q = new URLSearchParams(location.search); if (q.get('crop') && CROPS[q.get('crop')]) { C().crop = q.get('crop'); }
   var body = document.getElementById('cc-body');
+  body.addEventListener('click', function (e) {
+    var m = e.target.closest ? e.target.closest('[data-ccmode]') : null; if (!m) return;
+    var on = m.getAttribute('data-ccmode') === '1'; try { window.localStorage.setItem('dehesaCalcAdv', on ? '1' : '0'); } catch (x) {}
+    var w = body.querySelector('.pt-wrap'); if (w) w.classList.toggle('cc-basic', !on);
+    Array.prototype.forEach.call(body.querySelectorAll('[data-ccmode]'), function (b2) { b2.setAttribute('aria-checked', String(b2 === m)); });
+  });
   body.addEventListener('click', onClick); body.addEventListener('input', onInput); body.addEventListener('change', onChange);
   var go = function () { shell(); };
   var taxReady = function () { return loadTax().then(function (v) { TAXD.v = v; }, function () { /* sin impuestos: la calculadora sigue */ }); };

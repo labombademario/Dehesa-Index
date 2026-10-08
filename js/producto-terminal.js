@@ -259,7 +259,7 @@
   }
   function load(pid) {
     var m = META.products[pid], regs = regionsFor(pid);
-    return Promise.all([window.DIPrices.latest(regs), window.DIFreshness.ready(), J('fx-history.json').catch(function () { return null; }), J('products/' + pid + '.json').catch(function () { return null; }), (window.DICite ? window.DICite.load() : Promise.resolve(null))]).then(function (a) {
+    return Promise.all([window.DIPrices.latest(regs), window.DIFreshness.ready(), J('fx-history.json').catch(function () { return null; }), J('products/' + pid + '.json').catch(function () { return null; }), (window.DICite ? window.DICite.load() : Promise.resolve(null)), (window.DehesaShared && window.DehesaShared.loadMarkets ? window.DehesaShared.loadMarkets() : Promise.resolve(null))]).then(function (a) {
       window.DIUnits.setFx(a[2]);
       var by = {}; a[0].forEach(function (o) { by[o.region + '/' + o.product] = o; });
       var inst = [], idxs = [];
@@ -290,7 +290,9 @@
   function cardHtml(o, isIndex) {
     var meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(o.methodology) + '</div></details>' : '';
     var extra = (isIndex ? '' : compBadge(o)) + (isIndex ? '' : spark(o.spark)) + meas;
-    return '<div class="di-card pt-card"><div class="pt-k">' + esc(reg(o.region)) + (isIndex ? ' · ' + esc(UL.index_2020_100) : '') + '</div>' + idHtml(o) +
+    var S2 = window.DehesaShared, mk = S2 && S2.marketLabel ? S2.marketLabel(o, LANGS[li()]) : '';
+    // Primero el mercado exacto (pais · plaza · etapa); la region amplia queda como fuente del conjunto de datos (auditoria 8-oct-2026)
+    return '<div class="di-card pt-card"><div class="pt-k">' + esc(mk || reg(o.region)) + (isIndex && !mk ? ' · ' + esc(UL.index_2020_100) : '') + '</div>' + (mk && !isIndex ? '<div class="pt-sub" style="margin:0 0 4px">' + esc(({ es: 'Conjunto de datos: ', en: 'Dataset: ', fr: 'Jeu de données : ', it: 'Insieme di dati: ' })[LANGS[li()]] + reg(o.region)) + '</div>' : '') + idHtml(o) +
       '<div class="pt-v">' + (isIndex ? esc(nf(o.value, 1)) + ' <small>2020 = 100</small>' : esc(nf(o.value, Math.abs(o.value) >= 100 ? 0 : 2, o.unit === 'litro' ? 3 : 2)) + ' <small>' + esc(o.currency + '/' + (UL[o.unit] || o.unit)) + '</small>') + '</div>' +
       '<div class="pt-sub">' + freshBadge(o) + ' ' + esc(t('asOf')) + ' ' + esc(dstr(o.observationDate)) + (typeof o.changePct === 'number' ? ' · ' + chg(o.changePct) + ' ' + esc(t('vsPrev')) : '') + '</div>' +
       (ci(o.sourceId, { period: o.observationDate, pub: o.publicationDate }) || '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(srcName(o.sourceId)) + '</div>') +
@@ -310,7 +312,10 @@
   }
   function headHtml() {
     if (!CTX.inst.length && !CTX.idx.length) return '<div class="pt-note">' + esc(t('noPrice')) + '</div>';
-    return '<div class="pt-cards">' + CTX.inst.map(function (o) { return cardHtml(o, false); }).join('') + CTX.idx.map(function (o) { return cardHtml(o, true); }).join('') + '</div>' +
+    // Precios e indices por separado: un indice 2020=100 no es un precio (auditoria 8-oct-2026)
+    var IH = { es: ['Precios', 'Índices de precios (base 2020 = 100): miden la evolución, no son un precio'], en: ['Prices', 'Price indices (2020 = 100): they track change, they are not a price'], fr: ['Prix', 'Indices de prix (base 2020 = 100) : ils mesurent l’évolution, ce ne sont pas des prix'], it: ['Prezzi', 'Indici dei prezzi (base 2020 = 100): misurano l’andamento, non sono un prezzo'] }[LANGS[li()]];
+    return (CTX.inst.length && CTX.idx.length ? '<h3 class="pt-h3">' + esc(IH[0]) + '</h3>' : '') + '<div class="pt-cards">' + CTX.inst.map(function (o) { return cardHtml(o, false); }).join('') + '</div>' +
+      (CTX.idx.length ? '<h3 class="pt-h3" style="margin-top:18px">' + esc(IH[1]) + '</h3><div class="pt-cards">' + CTX.idx.map(function (o) { return cardHtml(o, true); }).join('') + '</div>' : '') +
       srcLine(CTX.inst.concat(CTX.idx).map(function (o) { return o.sourceId; }));
   }
   function srcLine(ids, extra) {
@@ -684,7 +689,9 @@
   function tabsHtml() {
     var groups = {}, order = [];
     Object.keys(META.products).forEach(function (k) { var g = META.products[k].group || 'otros'; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(k); });
-    return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + esc(nm(k)) + '</a>'; }).join('') + '</nav>';
+    return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + esc(nm(k)) + '</a>'; }).join('') + '</nav>' +
+      // Movil: un selector en vez de una segunda fila desplazable (auditoria 8-oct-2026)
+      '<label class="pt-tabs-sel"><span>' + esc(({ es: 'Producto', en: 'Product', fr: 'Produit', it: 'Prodotto' })[['es', 'en', 'fr', 'it'][li()]]) + '</span> <select onchange="if(this.value)location.href=\'producto.html?p=\'+this.value">' + Object.keys(META.products).map(function (k) { return '<option value="' + k + '"' + (k === ST.p ? ' selected' : '') + '>' + esc(nm(k)) + '</option>'; }).join('') + '</select></label>';
   }
   // Barra contextual fija bajo el menu: salta a cada bloque de ESTA ficha (solo los que existen para el producto).
   var CTXL = { head: ['Precio', 'Price', 'Prix', 'Prezzo'], alerts: ['Alertas', 'Alerts', 'Alertes', 'Avvisi'], changed: ['Cambios', 'Changes', 'Changements', 'Cambiamenti'], local: ['Ofertas locales', 'Local bids', 'Offres locales', 'Offerte locali'], prem: ['Prima', 'Premium', 'Prime', 'Premio'], compare: ['Países', 'Countries', 'Pays', 'Paesi'], hist: ['Histórico', 'History', 'Historique', 'Storico'], sd: ['Oferta y demanda', 'Supply & demand', 'Offre et demande', 'Offerta e domanda'], trade: ['Comercio', 'Trade', 'Commerce', 'Commercio'], tariffs: ['Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'], costs: ['Costes', 'Costs', 'Coûts', 'Costi'], rels: ['Relaciones', 'Relationships', 'Relations', 'Relazioni'], drivers: ['Factores', 'Factors', 'Facteurs', 'Fattori'], news: ['Noticias', 'News', 'Actualités', 'Notizie'] },

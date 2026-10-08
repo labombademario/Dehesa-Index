@@ -28,7 +28,7 @@
       gMk: 'Mercado', gSpec: 'Especificación', gBid: 'Oferta al contado', gBasis: 'Basis', gChg: 'Cambio', gDate: 'Fecha', gSeries: 'Gráfico de', gMore: 'Ver las {n} series', gOld: 'Ninguna cotización reciente en este estado; se muestran las últimas disponibles.', gShow: 'cotizaciones recientes',
       gNote: 'Oferta al contado (cash bid), no futuros. USDA publica regiones, terminales o estados, no elevadores concretos: la columna «Mercado» dice qué es cada uno. El basis es la diferencia con el contrato de referencia.',
       tREGION: 'región', tTERMINAL: 'terminal', tSTATE: 'estado', tCITY: 'ciudad', tELEVATOR: 'elevador', tEXPORT_MARKET: 'exportación',
-      insLast: 'Último año completo', indem: 'Indemnizaciones pagadas', prem: 'Prima total', farmerP: 'Prima neta del agricultor', ratio: 'Indemnizaciones por dólar de prima', pol: 'Pólizas con prima', y: 'Año', sub: 'Subsidio federal', prov: 'provisional',
+      insLast: 'Último año completo', indem: 'Indemnizaciones pagadas', prem: 'Prima total', farmerP: 'Prima neta del agricultor', ratio: 'Indemnizaciones por dólar de prima', pol: 'Pólizas con prima', y: 'Año', subs: 'Subsidio federal', prov: 'provisional',
       insNote: 'Seguro de cosechas federal (USDA RMA, Summary of Business), todos los cultivos del estado juntos. «Prima neta del agricultor» = prima total − subsidio, calculado por Dehesa Index. Un año de campaña puede cambiar mientras no esté completo: los años marcados como provisionales no se comparan con los completos. No es una predicción de lo que cobrarías: depende de tu póliza y tu cultivo.',
       insNo: 'No hay cifras de seguro para este estado.', natCol: 'Total EE. UU. (misma ratio)', vsNat: 'media de EE. UU.',
       drNow: 'Ahora', dr4: 'Hace 4 semanas', drY: 'Hace 1 año', d0: 'D0+ anormalmente seco', d1: 'D1+ sequía moderada o peor', d2: 'D2+ sequía severa o peor', d3: 'D3+ sequía extrema o peor', pp: 'pp', drWeek: 'Semana del', drChart: 'Superficie del estado en sequía (D1+ y D2+)', pctArea: '% de la superficie del estado',
@@ -67,7 +67,7 @@
       gMk: 'Market', gSpec: 'Specification', gBid: 'Cash bid', gBasis: 'Basis', gChg: 'Change', gDate: 'Date', gSeries: 'Chart of', gMore: 'See all {n} series', gOld: 'No recent quotes in this state; the latest available are shown.', gShow: 'recent quotes',
       gNote: 'Cash bid, not futures. USDA publishes regions, terminals or states, not individual elevators: the "Market" column says what each one is. Basis is the difference from the reference futures contract.',
       tREGION: 'region', tTERMINAL: 'terminal', tSTATE: 'state', tCITY: 'city', tELEVATOR: 'elevator', tEXPORT_MARKET: 'export',
-      insLast: 'Last complete year', indem: 'Indemnities paid', prem: 'Total premium', farmerP: 'Farmer-paid premium', ratio: 'Indemnity per premium dollar', pol: 'Policies earning premium', y: 'Year', sub: 'Federal subsidy', prov: 'provisional',
+      insLast: 'Last complete year', indem: 'Indemnities paid', prem: 'Total premium', farmerP: 'Farmer-paid premium', ratio: 'Indemnity per premium dollar', pol: 'Policies earning premium', y: 'Year', subs: 'Federal subsidy', prov: 'provisional',
       insNote: 'Federal crop insurance (USDA RMA, Summary of Business), all of the state\'s crops together. "Farmer-paid premium" = total premium − subsidy, calculated by Dehesa Index. A crop year can still change until complete: years marked provisional are not compared with complete ones. This does not predict what you would collect: it depends on your policy and crop.',
       insNo: 'No insurance figures for this state.', natCol: 'US total (same ratio)', vsNat: 'US average',
       drNow: 'Now', dr4: '4 weeks ago', drY: '1 year ago', d0: 'D0+ abnormally dry', d1: 'D1+ moderate drought or worse', d2: 'D2+ severe drought or worse', d3: 'D3+ extreme drought or worse', pp: 'pp', drWeek: 'Week of', drChart: 'Share of the state in drought (D1+ and D2+)', pctArea: '% of state area',
@@ -106,7 +106,7 @@
       gMk: 'Marché', gSpec: 'Spécification', gBid: 'Offre au comptant', gBasis: 'Base', gChg: 'Variation', gDate: 'Date', gSeries: 'Graphique de', gMore: 'Voir les {n} séries', gOld: 'Aucune cotation récente dans cet État ; les dernières disponibles sont affichées.', gShow: 'cotations récentes',
       gNote: 'Offre au comptant (cash bid), pas les contrats à terme. L\'USDA publie des régions, terminaux ou États, pas des silos précis : la colonne « Marché » indique de quoi il s\'agit. La base est l\'écart avec le contrat à terme de référence.',
       tREGION: 'région', tTERMINAL: 'terminal', tSTATE: 'État', tCITY: 'ville', tELEVATOR: 'silo', tEXPORT_MARKET: 'export',
-      insLast: 'Dernière année complète', indem: 'Indemnités versées', prem: 'Prime totale', farmerP: 'Prime nette payée par l\'agriculteur', ratio: 'Indemnités par dollar de prime', pol: 'Polices avec prime', y: 'Année', sub: 'Subvention fédérale', prov: 'provisoire',
+      insLast: 'Dernière année complète', indem: 'Indemnités versées', prem: 'Prime totale', farmerP: 'Prime nette payée par l\'agriculteur', ratio: 'Indemnités par dollar de prime', pol: 'Polices avec prime', y: 'Année', subs: 'Subvention fédérale', prov: 'provisoire',
       insNote: 'Assurance récolte fédérale (USDA RMA, Summary of Business), toutes les cultures de l\'État réunies. « Prime nette » = prime totale − subvention, calculée par Dehesa Index. Une campagne peut encore changer tant qu\'elle n\'est pas complète : les années provisoires ne sont pas comparées aux années complètes. Ce n\'est pas une prévision de ce que vous toucheriez : cela dépend de votre contrat et de votre culture.',
       insNo: 'Aucun chiffre d\'assurance pour cet État.', natCol: 'Total É.-U. (même ratio)', vsNat: 'moyenne É.-U.',
       drNow: 'Maintenant', dr4: 'Il y a 4 semaines', drY: 'Il y a 1 an', d0: 'D0+ anormalement sec', d1: 'D1+ sécheresse modérée ou pire', d2: 'D2+ sécheresse sévère ou pire', d3: 'D3+ sécheresse extrême ou pire', pp: 'pp', drWeek: 'Semaine du', drChart: 'Part de l\'État en sécheresse (D1+ et D2+)', pctArea: '% de la surface de l\'État',
@@ -145,7 +145,7 @@
       gMk: 'Mercato', gSpec: 'Specifica', gBid: 'Offerta a pronti', gBasis: 'Basis', gChg: 'Variazione', gDate: 'Data', gSeries: 'Grafico di', gMore: 'Vedi tutte le {n} serie', gOld: 'Nessuna quotazione recente in questo Stato; sono mostrate le ultime disponibili.', gShow: 'quotazioni recenti',
       gNote: 'Offerta a pronti (cash bid), non future. L\'USDA pubblica regioni, terminal o Stati, non singoli elevatori: la colonna «Mercato» dice di cosa si tratta. Il basis è la differenza dal contratto future di riferimento.',
       tREGION: 'regione', tTERMINAL: 'terminal', tSTATE: 'Stato', tCITY: 'città', tELEVATOR: 'elevatore', tEXPORT_MARKET: 'export',
-      insLast: 'Ultimo anno completo', indem: 'Indennizzi pagati', prem: 'Premio totale', farmerP: 'Premio netto pagato dall\'agricoltore', ratio: 'Indennizzi per dollaro di premio', pol: 'Polizze con premio', y: 'Anno', sub: 'Sussidio federale', prov: 'provvisorio',
+      insLast: 'Ultimo anno completo', indem: 'Indennizzi pagati', prem: 'Premio totale', farmerP: 'Premio netto pagato dall\'agricoltore', ratio: 'Indennizzi per dollaro di premio', pol: 'Polizze con premio', y: 'Anno', subs: 'Sussidio federale', prov: 'provvisorio',
       insNote: 'Assicurazione federale dei raccolti (USDA RMA, Summary of Business), tutte le colture dello Stato insieme. «Premio netto» = premio totale − sussidio, calcolato da Dehesa Index. Un anno può ancora cambiare finché non è completo: gli anni provvisori non si confrontano con quelli completi. Non è una previsione di quanto incasseresti: dipende dalla tua polizza e dalla tua coltura.',
       insNo: 'Nessuna cifra assicurativa per questo Stato.', natCol: 'Totale USA (stesso rapporto)', vsNat: 'media USA',
       drNow: 'Ora', dr4: '4 settimane fa', drY: '1 anno fa', d0: 'D0+ anormalmente secco', d1: 'D1+ siccità moderata o peggio', d2: 'D2+ siccità severa o peggio', d3: 'D3+ siccità estrema o peggio', pp: 'pp', drWeek: 'Settimana del', drChart: 'Quota dello Stato in siccità (D1+ e D2+)', pctArea: '% della superficie dello Stato',
@@ -313,6 +313,7 @@
       h += '<label>' + esc(t.placeES) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + provs.map(function (k) { return opt(k, ES_PROV[k], ST.r); }).join('') + '</select></label>';
       var gs = ES_IDX ? ES_GORDER.filter(function (k) { return ES_IDX.groups[k]; }) : [];
       h += '<label>' + esc(t.group) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + gs.map(function (k) { return opt(k, t.grp[k] || k, ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(({ es: 'Buscar cultivo', en: 'Find crop', fr: 'Chercher une culture', it: 'Cerca coltura' })[lang()] || 'Buscar cultivo') + '<br><input type="search" class="di-compare-select" data-mm-filter="mm-crop" autocomplete="off" style="min-width:150px"></label>';
       h += '<label>' + esc(t.crop) + '<br><select class="di-compare-select" data-mm="k" id="mm-crop">' + (ES_CROPS ? ES_CROPS : opt('', t.choose, '')) + '</select></label>';
     }
     return h + '</div>';
@@ -429,7 +430,7 @@
       if (!a) { putSec(tok, 'ins', note(t.insNo)); return; }
       var r = function (x) { return x && x[1] > 0 ? x[3] / x[1] : null; };
       var h = '<div class="de-tiles">' + tile(t.indem + ' · ' + ly, usdM(a[3]), esc(t.ratio) + ': <b>' + (r(a) == null ? '–' : nf(r(a), 2)) + '</b> · ' + esc(t.vsNat) + ' ' + (r(n) == null ? '–' : nf(r(n), 2))) +
-        tile(t.prem + ' · ' + ly, usdM(a[1]), esc(t.sub) + ': ' + usdM(a[2]) + ' (' + (a[1] > 0 ? nf(a[2] / a[1] * 100, 0) : '–') + ' %)') + tile(t.farmerP + ' · ' + ly, usdM(a[1] - a[2]), esc(t.pol) + ': ' + nf(a[4], 0)) + '</div>';
+        tile(t.prem + ' · ' + ly, usdM(a[1]), esc(t.subs) + ': ' + usdM(a[2]) + ' (' + (a[1] > 0 ? nf(a[2] / a[1] * 100, 0) : '–') + ' %)') + tile(t.farmerP + ' · ' + ly, usdM(a[1] - a[2]), esc(t.pol) + ': ' + nf(a[4], 0)) + '</div>';
       var yrs = d.cropYears.filter(function (y) { return s[String(y)]; }).slice(-6).reverse();
       h += '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.y) + '</th><th scope="col" class="r">' + esc(t.prem) + '</th><th scope="col" class="r">' + esc(t.indem) + '</th><th scope="col" class="r">' + esc(t.ratio) + '</th><th scope="col" class="r">' + esc(t.natCol) + '</th></tr></thead><tbody>' + yrs.map(function (y) {
         var x = s[String(y)], nn = d.national[String(y)], prov = y > d.latestCompleteYear;
@@ -748,9 +749,22 @@
   }
 
   /* ---------- pintado ---------- */
+  // Qué hay en cada país antes de elegir (auditoría 8-oct-2026): prometer solo lo disponible.
+  var AV = {
+    es: { h: 'Qué verás según el país', now: 'Disponible ahora', not: 'Todavía no', rows: [['EE. UU.', 'Precio local, margen por cultivo, próximos informes, seguro y sequía', '—'], ['Canadá', 'Precio, producción, seguro y sequía', '—'], ['Alemania', 'Producción por estado federado, precio y renta de la tierra', 'Precio local, seguro'], ['Reino Unido', 'Producción por región', 'Precio local, seguro, sequía'], ['España', 'Producción por provincia', 'Precio provincial, seguro, sequía local']] },
+    en: { h: 'What you will see by country', now: 'Available now', not: 'Not yet', rows: [['US', 'Local price, crop margin, upcoming reports, insurance and drought', '—'], ['Canada', 'Price, production, insurance and drought', '—'], ['Germany', 'Production by federal state, land price and rent', 'Local price, insurance'], ['United Kingdom', 'Production by region', 'Local price, insurance, drought'], ['Spain', 'Production by province', 'Provincial price, insurance, local drought']] },
+    fr: { h: 'Ce que vous verrez selon le pays', now: 'Disponible', not: 'Pas encore', rows: [['États-Unis', 'Prix local, marge par culture, prochains rapports, assurance et sécheresse', '—'], ['Canada', 'Prix, production, assurance et sécheresse', '—'], ['Allemagne', 'Production par Land, prix et fermage des terres', 'Prix local, assurance'], ['Royaume-Uni', 'Production par région', 'Prix local, assurance, sécheresse'], ['Espagne', 'Production par province', 'Prix provincial, assurance, sécheresse locale']] },
+    it: { h: 'Cosa vedrai secondo il paese', now: 'Disponibile', not: 'Non ancora', rows: [['Stati Uniti', 'Prezzo locale, margine per coltura, prossimi rapporti, assicurazione e siccità', '—'], ['Canada', 'Prezzo, produzione, assicurazione e siccità', '—'], ['Germania', 'Produzione per Land, prezzo e affitto dei terreni', 'Prezzo locale, assicurazione'], ['Regno Unito', 'Produzione per regione', 'Prezzo locale, assicurazione, siccità'], ['Spagna', 'Produzione per provincia', 'Prezzo provinciale, assicurazione, siccità locale']] }
+  };
+  function availability() {
+    var a = AV[lang()] || AV.es;
+    return '<details class="di-fold" style="margin:10px 0"><summary><b>' + esc(a.h) + '</b></summary><div class="di-table-wrap"><table class="di-table" style="font-size:13px"><thead><tr><th></th><th>' + esc(a.now) + '</th><th>' + esc(a.not) + '</th></tr></thead><tbody>' +
+      a.rows.map(function (r) { return '<tr><th scope="row">' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>'; }).join('') + '</tbody></table></div></details>';
+  }
+  var ACT = { es: ['Zona activa', 'Cambiar mi zona'], en: ['Active area', 'Change my area'], fr: ['Zone active', 'Changer de zone'], it: ['Zona attiva', 'Cambia zona'] };
   function examples() {
     var t = tr();
-    return '<p class="di-movers-hint">' + esc(t.intro) + '</p><p>' + [
+    return availability() + '<p class="di-movers-hint">' + esc(t.intro) + '</p><p>' + [
       ['US', 'KS', 'cattle', usName('KS') + ' · ' + prodName('cattle')], ['US', 'IA', 'corn', usName('IA') + ' · ' + prodName('corn')], ['CA', 'MB', 'cattle', caName('MB') + ' · ' + tc().cattle], ['CA', 'SK', 'canola-rapeseed', caName('SK') + ' · ' + tc().crops['canola-rapeseed']], ['ES', '47', 'cereales', 'Valladolid · ' + (t.grp.cereales)], ['DE', 'BY', 'wheat', deName('BY') + ' · ' + pick4(DE_CROPN, 'wheat')], ['UK', 'eastern', 'wheat', 'Eastern · ' + pick4(UK_CROPN, 'wheat')]
     ].map(function (e) { return '<button type="button" class="di-src-tab" data-mm-ex="' + e.slice(0, 3).join('|') + '">' + esc(e[3]) + '</button> '; }).join('') + '</p>';
   }
@@ -775,7 +789,8 @@
       h = compactHead();
     } else {
       document.getElementById('mm-h1').textContent = t.title; document.getElementById('mm-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
-      h = '<div data-mm-sel>' + selectors() + '</div>';
+      var ac = ACT[lang()] || ACT.es;
+      h = (ready ? '<p class="mm-active" style="margin:0 0 10px;font-size:15px"><b>' + esc(ac[0]) + ': ' + esc(placeName()) + ' · ' + esc(prodTitle()) + '</b> <a class="di-link-btn" href="#mm-sel" onclick="var e=document.querySelector(\'[data-mm-sel] select\');if(e){e.focus();}return false;">' + esc(ac[1]) + '</a></p>' : '') + '<div data-mm-sel id="mm-sel">' + selectors() + '</div>';
       if (!ready) { root.innerHTML = h + examples(); return; }
       h += '<p class="di-movers-hint">' + esc(t.saved) + ' <button type="button" class="di-src-tab" data-mm-reset="1">' + esc(t.reset) + '</button></p>';
     }
@@ -850,7 +865,7 @@
   function click(e) {
     var b = e.target.closest ? e.target.closest('[data-mm-cl],[data-mm-ex],[data-mm-reset],[data-mm-go]') : null; if (!b) return;
     if (b.hasAttribute('data-mm-cl')) { ST.cl = b.getAttribute('data-mm-cl'); draw(); refocus('[data-mm-cl="' + ST.cl + '"]'); }
-    else if (b.hasAttribute('data-mm-ex')) { var x = b.getAttribute('data-mm-ex').split('|'); ST.c = x[0]; ST.r = x[1]; ST.p = x[2]; ST.k = ''; save(); prepare().then(draw, draw); }
+    else if (b.hasAttribute('data-mm-ex')) { b.setAttribute('aria-busy', 'true'); b.textContent = ({ es: 'Cargando…', en: 'Loading…', fr: 'Chargement…', it: 'Caricamento…' })[lang()] || 'Cargando…'; var x = b.getAttribute('data-mm-ex').split('|'); ST.c = x[0]; ST.r = x[1]; ST.p = x[2]; ST.k = ''; save(); prepare().then(draw, draw); }
     else if (b.hasAttribute('data-mm-reset')) { clearSaved(); prepare().then(draw, draw); }
     else if (b.hasAttribute('data-mm-go')) { e.preventDefault(); ST.r = b.getAttribute('data-mm-go'); save(); draw(); }
   }
@@ -858,6 +873,12 @@
   readSaved();
   if (window.DehesaShared) { if (!COMPACT) window.DehesaShared.init('tools'); var prevL = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevL) prevL.apply(this, arguments); draw(); }; }
   root.addEventListener('change', change); root.addEventListener('click', click);
+  // Listas largas de cultivos: el filtro oculta las opciones que no contienen el texto (sin acentos)
+  root.addEventListener('input', function (e) {
+    var id = e.target && e.target.getAttribute && e.target.getAttribute('data-mm-filter'); if (!id) return;
+    var sel = document.getElementById(id); if (!sel) return; var q = String(e.target.value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    Array.prototype.forEach.call(sel.options, function (o) { if (!o.value) return; var tx = o.textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); o.hidden = !!q && tx.indexOf(q) < 0; });
+  });
   var first = function () { prepare().then(draw, draw); };
   (window.DICite ? window.DICite.load().then(first, first) : first());
 })();
