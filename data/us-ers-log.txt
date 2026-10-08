@@ -1,0 +1,33 @@
+ERS historical-monthly-price-spread-data-for-beef-pork-broilers 13080 filas
+ERS choice-beef-values-and-spreads-and-the-all-fresh-retail-value 547 filas
+ERS pork-values-and-spreads 504 filas
+ERS retail-prices-for-beef-pork-poultry-cuts-eggs-and-dairy-products 800 filas
+dairy saltada: Consumer Price Indexes
+dairy sin grupo: Domestic disappearance
+descartada us-ers-dairy-dairy-product-output-american-cheese-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-dairy-product-output-butter-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-dairy-product-output-other-than-american-cheese-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-dairy-product-output-dry-skim-milk-products-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-dairy-product-output-frozen-products-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-ending-stocks-all-products-milk-equivalent-milk-fat-basis-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-ending-stocks-all-products-milk-equivalent-skim-solids-basis-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-exports-all-products-milk-equivalent-milk-fat-basis-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-exports-all-products-milk-equivalent-skim-solids-basis-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-imports-all-products-milk-equivalent-milk-fat-basis-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-imports-all-products-milk-equivalent-skim-solids-basis-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-milk-prices-all-milk-at-average-milk-fat-test-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-milk-prices-classiiwhole-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-milk-prices-classiwhole-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-milk-production-production-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-milk-production-milk-cows-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-milk-production-milk-per-cow-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-oceania-export-prices-skim-milk-powder-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-oceania-export-prices-butter-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-wholesale-dairy-product-butter-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-wholesale-dairy-product-cheddar-cheese-40-pound-blocks-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-wholesale-dairy-product-cheddar-cheese-500-pound-barrels-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-wholesale-dairy-product-dry-whey-a: 2 puntos, ultimo 2025
+descartada us-ers-dairy-wholesale-dairy-product-nonfat-dry-milk-a: 2 puntos, ultimo 2025
+TTB vino 336 filas
+us-ers-stats.json series 96
+us-ttb-stats.json series 7

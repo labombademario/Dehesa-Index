@@ -2165,6 +2165,32 @@
    "legalConfidence": "PENDING",
    "legalConfidenceReason": "Uso comercial sujeto a permiso del titular; no se ingiere.",
    "short": "SwissImpex (Suiza)"
+  },
+  "ttb": {
+   "name": "Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics)",
+   "url": "https://www.ttb.gov/regulated-commodities/beverage-alcohol/wine/wine-statistics",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); TTB site copyright notice",
+   "licenseUrl": "https://www.ttb.gov/about-ttb/privacy-policy",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Alcohol and Tobacco Tax and Trade Bureau (TTB), wine statistics",
+   "additionalRestrictions": "La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresas).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-08",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Aviso legal de TTB (Privacy Policy and Legal Notice, apartado Copyright, leido 2026-10-08): los empleados federales no pueden reclamar copyright sobre el trabajo de la web; «You may copy text and images from our website freely», salvo sellos oficiales, nombres y simbolos. Las tablas de estadisticas de vino estan en esa web (CSV mensual y anual). Confianza media porque el aviso habla de la web en general y no de los ficheros de datos en concreto.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "TTB (EE. UU.)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Obra del Gobierno federal sin copyright; el aviso de la web permite copiar libremente, sin pagina de licencia especifica para datos."
   }
  },
  "files": {
@@ -2953,6 +2979,18 @@
     "NL": "eurostat",
     "DK": "eurostat"
    }
+  },
+  "data/us-ers-stats.json": {
+   "byCountry": {
+    "US": "usda_ers"
+   },
+   "notes": "Margenes de carne, precios minoristas (BLS via ERS), lacteos, leche y arroz del USDA ERS, sin cambiar valores. Los precios minoristas de cortes son del BLS (dominio publico) publicados por el ERS."
+  },
+  "data/us-ttb-stats.json": {
+   "byCountry": {
+    "US": "ttb"
+   },
+   "notes": "Produccion anual de vino (total y por tipo) y salidas para exportacion del TTB en galones, convertidas a millones de galones sin cambiar valores."
   }
  },
  "derived": [

@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 66 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 15283 series en el catalogo unificado.
+Resumen: 67 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 15385 series en el catalogo unificado.
 
-## VERIFIED (66)
+## VERIFIED (67)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -61,13 +61,14 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 705 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
+| `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |
 | `us_drought_monitor` | U.S. Drought Monitor (NDMC, USDA, NOAA) | US | CUSTOM | unclear/unclear | si | 0 | Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisa… |
 | `us_tariffs` | USITC Harmonized Tariff Schedule, CBP trade remedies, USTR | US | US-PD | si/si | no | 0 | The HTS is legally binding only in its official publication: label derived rates as informational. |
 | `usda_ams_agtransport` | USDA AMS Agricultural Transportation Open Data Platform (AgTransport) | US | US-PD | si/si | no | 0 | Only datasets whose AgTransport attribution is USDA/AMS are used; datasets attributed to the Surface Transportation Board, the Army Corps of… |
 | `usda_ams_fgis` | USDA AMS / Federal Grain Inspection Service, Export Grain Inspections | US | US-PD | si/si | no | 0 | Weekly metric tons by grain and destination aggregated from the yearly CSV (CY2025, CY2026). No USDA logo/name to imply endorsement. |
 | `usda_ams_lmr` | USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart | US | US-PD | si/si | no | 0 | Only AMS-produced reports are used (LM_XB403 boxed beef cutout, LM_PK602 pork cutout, LM_HG201 prior-day swine, LM_CT100 5-area slaughter ca… |
 | `usda_ams_mars` | USDA AMS Market News (MARS API) | US | US-PD | si/si | no | 2 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
-| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
+| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 95 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_esr` | USDA FAS — Export Sales Reporting (ESR) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 0 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
