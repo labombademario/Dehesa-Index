@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T16:02:44Z",
+ "generatedAt": "2026-10-08T16:49:29Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1556,17 +1556,21 @@
    "country": "AR",
    "scope": "integrated",
    "institution": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",
-   "dataset": "Ya integrada (54 series en el catalogo unificado)",
+   "dataset": "Ya integrada (89 series en el catalogo unificado)",
    "products": [
     "barley",
+    "cattle",
     "eggs",
     "fruit",
     "maize",
     "milk",
     "oats",
+    "pigs",
+    "poultry",
     "rapeseed",
     "rice",
     "rye",
+    "sheep",
     "soy",
     "sugar",
     "wheat"
@@ -2614,7 +2618,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (7194 series en el catalogo unificado)",
+   "dataset": "Ya integrada (7582 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -2732,17 +2736,19 @@
    "country": "CH",
    "scope": "integrated",
    "institution": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
-   "dataset": "Ya integrada (57 series en el catalogo unificado)",
+   "dataset": "Ya integrada (114 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
     "cattle",
     "cheese",
     "eggs",
+    "energy",
     "maize",
     "milk",
     "oats",
     "pigs",
+    "potato",
     "poultry",
     "rapeseed",
     "rye",
@@ -2753,7 +2759,8 @@
    "productsConfirmed": true,
    "metrics": [
     "price",
-    "production"
+    "production",
+    "trade"
    ],
    "frequency": "mixed",
    "access": {

@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 66 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 14528 series en el catalogo unificado.
+Resumen: 66 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 15008 series en el catalogo unificado.
 
 ## VERIFIED (66)
 
@@ -16,7 +16,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `abares` | Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences) | AU | CC-BY-4.0 | si/si | si | 58 | Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth C… |
 | `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 92 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
-| `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 54 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
+| `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 89 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 1 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
 | `bea` | U.S. Bureau of Economic Analysis | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
@@ -37,9 +37,9 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_oil_bulletin` | European Commission — Weekly Oil Bulletin (DG ENER) | EU | EU-REUSE-2011-833 | si/conditional | si | 1 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 7194 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 7582 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 645 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
-| `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 57 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
+| `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 114 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
 | `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 213 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
 | `gus_poland` | Statistics Poland (GUS) - Local Data Bank (BDL) | PL | GUS-COPYRIGHT-NOTICE | si/si | si | 183 | Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos. |
 | `hmrc_govuk` | HM Revenue & Customs - GOV.UK VAT guidance | GB | OGL-UK-3.0 | si/si | si | 0 | Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra. |
