@@ -71,8 +71,8 @@ def period(d):
 MILK_P = "Milk and dairy products"
 # (id, grupo, etiqueta EN, unidad, factor, cubo, filtro)  filtro: p=id producto o etiqueta EN exacta, cost=etiqueta de IVA, origin=etiqueta de origen
 S = []
-def spec(id, group, label, unit, cube, p, cost=None, origin="Switzerland", factor=1.0, cur=None):
-    S.append(dict(id=id, group=group, label=label, unit=unit, cube=cube, p=p, cost=cost, origin=origin, factor=factor, cur=cur))
+def spec(id, group, label, unit, cube, p, cost=None, origin="Switzerland", factor=1.0, cur=None, usrc=None):
+    S.append(dict(id=id, group=group, label=label, unit=unit, cube=cube, p=p, cost=cost, origin=origin, factor=factor, cur=cur, usrc=usrc))
 # Leche (mensual): precio al productor "valor realizado", ex-farm; FOAG lo publica con IVA incluido
 for pid, key, nm in (("product/271", "total", "Milk, all types"), ("product/272", "dairy-conv", "Milk delivered to dairies, conventional"), ("product/273", "organic", "Organic milk"),
                      ("product/280", "cheese-conv", "Cheese-making milk, conventional"), ("product/312", "ipsuisse", "IP Suisse meadow milk")):
@@ -115,6 +115,33 @@ for en, key, nm in (("Beef - All product groups - Supply", "beef", "Beef"), ("Po
                     ("Sheep - All product groups - Supply", "sheep", "Sheep meat"), ("Veal - All product groups - Supply", "veal", "Veal"), ("All types of meat - All product groups - Supply", "all", "All meat")):
     spec("ch-foag-meat-supply-%s" % key, "livestock", "%s: market supply, domestic production plus imports (FOAG)" % nm, "t", "MeatMeatProductsSausages/Production_Quantity_Year", en, factor=0.001, origin=None)
 
+# --- Ampliacion (8 oct): piensos compuestos, mas cereales, produccion anual, huevos, leche, proteaginosas, patata importada, otras carnes ---
+FEEDS = (("863", "laying-hens-rearing", "Laying hens rearing"), ("864", "laying-hens-1", "Laying hens, 1st phase"), ("865", "laying-hens-2", "Laying hens, 2nd phase"), ("866", "broilers", "Broiler chickens (integration)"),
+         ("867", "pigs-pre", "Fattening pigs, pre-fattening"), ("868", "pigs-finish", "Fattening pigs, finishing"), ("869", "sows-pregnant", "Pregnant sows"), ("870", "sows-lactating", "Lactating sows"),
+         ("871", "piglets", "Piglet rearing"), ("872", "beef-cattle", "Beef cattle"), ("873", "dairy-energy", "Dairy cattle energy feed"), ("874", "dairy-perf1", "Dairy cattle performance feed 1"),
+         ("875", "dairy-perf2", "Dairy cattle performance feed 2"), ("876", "dairy-protein", "Dairy cattle protein concentrate"))
+for pid, key, nm in FEEDS:
+    spec("ch-foag-compound-%s" % key, "prices", "Compound feed, %s, conventional: processing price (FOAG)" % nm, "CHF/100 kg", "Feed/WholesaleProcessing_Price_Month", "product/" + pid, origin=None)
+for pid, key, nm in (("956", "wheat2-conv", "Wheat II, conventional"), ("959", "wheat1-ip", "Wheat I, IP Suisse"), ("960", "wheat2-ip", "Wheat II, IP Suisse"), ("896", "rye-ip", "Rye, IP Suisse"), ("899", "rye-organic", "Rye, organic"),
+                     ("962", "spelt-ip", "Spelt, IP Suisse"), ("968", "spelt-organic", "Spelt, organic"), ("1", "wheat-europe", "Wheat, Europe, conventional (import reference)"), ("963", "wheat-organic-europe", "Wheat, organic, Europe (import reference)")):
+    spec("ch-foag-cereal-mill-%s" % key, "prices", "%s: franco-mill price (FOAG)" % nm, "CHF/100 kg", "BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Month", "product/" + pid, origin=None)
+for pid, key, nm in (("1410", "top-wheat", "Top wheat"), ("1407", "wheat-1", "Wheat class I"), ("1406", "biscuit-wheat", "Biscuit wheat"), ("1379", "rye", "Rye"), ("1376", "spelt", "Spelt"), ("1385", "food-oats", "Food oats"),
+                     ("1382", "food-barley", "Food barley"), ("1397", "durum", "Durum wheat"), ("1372", "buckwheat", "Buckwheat"), ("1371", "quinoa", "Quinoa"), ("1412", "emmer-einkorn", "Emmer and einkorn"),
+                     ("1393", "mixed-baking", "Mixed baking cereals"), ("1375", "wheat-organic", "Wheat, organic")):
+    spec("ch-foag-cereal-prod-%s" % key, "crops", "%s: production (FOAG)" % nm, "t", "BreadCerealsFlourBakedGoods/Production_Quantity_Year", "product/" + pid)
+for pid, key, nm in (("1317", "wheat", "Wheat for feed"), ("1323", "barley", "Feed barley"), ("1335", "maize", "Feed maize"), ("1329", "triticale", "Triticale"), ("1332", "mixed", "Mixed feed cereals")):
+    spec("ch-foag-feed-prod-%s" % key, "crops", "%s: production (FOAG)" % nm, "t", "Feed/Production_Quantity_Year", "product/" + pid)
+for pid, key, nm in (("1341", "peas", "Protein peas"), ("1366", "fava", "Fava beans"), ("1369", "lupins", "Lupins"), ("1347", "lentils", "Lentils")):
+    spec("ch-foag-protein-prod-%s" % key, "crops", "%s: production (FOAG)" % nm, "t", "ProteinCrops/Production_Quantity_Year", "product/" + pid)
+for pid, key, nm, org in (("237", "total", "Eggs, total domestic production", "Switzerland"), ("241", "table", "Domestic table eggs, total", "Switzerland"), ("143", "organic", "Organic shell eggs, domestic", "Switzerland"), ("85", "consumption", "Eggs, total consumption (domestic plus imports)", None)):
+    spec("ch-foag-egg-prod-%s" % key, "livestock", "%s (FOAG)" % nm, "million pieces", "Eggs/Production_Quantity_Year", "product/" + pid, origin=org)
+spec("ch-foag-milk-prod-year-total", "milk", "Milk, all types: marketed production, annual (FOAG)", "t", "MilkDairyProducts/Production_Quantity_Year", "product/271", factor=0.001, origin=None)
+spec("ch-foag-milk-prod-year-organic", "milk", "Organic milk: marketed production, annual (FOAG)", "t", "MilkDairyProducts/Production_Quantity_Year", "product/273", factor=0.001, origin=None)
+for pid, key, nm in (("1069", "processing", "Potatoes for processing"), ("996", "table", "Table potatoes"), ("1007", "frozen", "Frozen potato products")):
+    spec("ch-foag-potato-import-%s" % key, "trade", "%s: imports (FOAG)" % nm, "t", "FruitsVegetablesPotatoes/Import_Quantity_Month", "product/" + pid, origin=None, usrc="t")
+for en, key, nm in (("Rabbit - All product groups - Supply", "rabbit", "Rabbit meat"), ("Horse - All product groups - Supply", "horse", "Horse meat"), ("Goat - All product groups - Supply", "goat", "Goat meat")):
+    spec("ch-foag-meat-supply-%s" % key, "livestock", "%s: market supply, domestic production plus imports (FOAG)" % nm, "t", "MeatMeatProductsSausages/Production_Quantity_Year", en, factor=0.001, origin=None)
+
 def build_series(sp, diag):
     rs = rows(sp["cube"])
     keep = []
@@ -126,6 +153,7 @@ def build_series(sp, diag):
         if sp["origin"] and lab(r[IDX["po"]]) != sp["origin"]: continue
         if sp["cost"] and lab(r[IDX["cost"]]) != sp["cost"]: continue
         if sp["cur"] and lab(r[IDX["cur"]]) != sp["cur"]: continue
+        if sp.get("usrc") and lab(r[IDX["u"]]) != sp["usrc"]: continue
         keep.append(r)
     if not keep: return None, "sin filas"
     # una serie = un producto; si hay mas de una base (IVA / etapa) mezclada con fechas solapadas, se rechaza
