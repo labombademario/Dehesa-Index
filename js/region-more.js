@@ -289,6 +289,33 @@
       });
     }
 
+
+    /* ---- Francia: calidad tecnologica del trigo por region (blando) y cuenca (duro), encuesta de calidad de FranceAgriMer ---- */
+    var QCOL = { water: 'Humedad (%)|Moisture (%)|Humidité (%)|Umidità (%)', tw: 'Peso específico (kg/hl)|Test weight (kg/hl)|Poids spécifique (kg/hl)|Peso specifico (kg/hl)', protein: 'Proteína (%)|Protein (%)|Protéines (%)|Proteine (%)', w: 'Fuerza W|Strength W|Force W|Forza W', ie: 'Elasticidad IE|Elasticity IE|Élasticité IE|Elasticità IE', pl: 'P/L|P/L|P/L|P/L', gmf: 'GMF (%)|GMF (%)|GMF (%)|GMF (%)', vitr: 'Vitrosidad (%)|Vitreousness (%)|Vitrosité (%)|Vitrosità (%)' };
+    var QYEAR = 'Cosecha|Harvest|Récolte|Raccolto', QAVG = 'Media 2013-2024|Average 2013-2024|Moyenne 2013-2024|Media 2013-2024';
+    function qrows(v, fields) {
+      var ys = Object.keys(v).sort(), last = ys[ys.length - 1], hist = ys.filter(function (y) { return y < last; });
+      function row(lab, get_) { return [lab].concat(fields.map(function (f, i) { var q = get_(i); return q == null ? '—' : nf(q, f === 'pl' ? 2 : f === 'w' || f === 'ie' ? 0 : 1); })); }
+      var avg = function (i) { var a = hist.map(function (y) { return v[y][i]; }).filter(function (z) { return z != null; }); return a.length ? a.reduce(function (m, z) { return m + z; }, 0) / a.length : null; };
+      var prev = ys.length > 1 ? ys[ys.length - 2] : null;
+      var rows = [row(esc(last), function (i) { return v[last][i]; })];
+      if (prev) rows.push(row(esc(prev), function (i) { return v[prev][i]; }));
+      rows.push(row(esc(L(QAVG)), avg)); return { rows: rows, last: last };
+    }
+    function frQuality(x) {
+      var code = FR_INSEE[x.r]; if (!code) return Promise.resolve(null);
+      return get('data/france-quality-regions.json').then(function (d) {
+        var R = d && d.softWheat && d.softWheat.regions[code]; if (!R) return null; var f = d.softWheat.fields, q = qrows(R.v, f), hs = f.map(function (k) { return L(QCOL[k]); });
+        var out = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(L('Trigo blando, medias de la región a la entrada de los silos|Common wheat, regional averages at silo intake|Blé tendre, moyennes régionales à l’entrée des silos|Frumento tenero, medie regionali all’ingresso dei silos')) + '</p>' + table([L(QYEAR)].concat(hs), q.rows, 640);
+        if (['OCC', 'NAQ', 'PAC', 'CVL', 'PDL'].indexOf(x.r) > -1 && d.durum) {
+          var fd = d.durum.fields, hd = fd.map(function (k) { return L(QCOL[k]); }), rows = [];
+          Object.keys(d.durum.basins).forEach(function (b) { var B = d.durum.basins[b], ys = Object.keys(B.v).sort(), v = B.v[ys[ys.length - 1]]; rows.push([esc(B.name) + ' ' + faint(ys[ys.length - 1])].concat(fd.map(function (k, i) { return v[i] == null ? '—' : nf(v[i], 1); }))); });
+          out += '<p class="di-movers-hint" style="margin:14px 0 8px">' + esc(L('Trigo duro por cuenca de producción (las cuencas no coinciden con la región)|Durum wheat by production basin (basins do not match the region)|Blé dur par bassin de production (les bassins ne coïncident pas avec la région)|Grano duro per bacino di produzione (i bacini non coincidono con la regione)')) + '</p>' + table([L('Cuenca|Basin|Bassin|Bacino')].concat(hd), rows, 640);
+        }
+        return card(L('Calidad del trigo|Wheat quality|Qualité du blé|Qualità del grano'), L('Calidad tecnológica de la cosecha en la entrada de los silos de recogida (humedad, peso específico, proteína, fuerza panadera). Encuesta de FranceAgriMer; medias, no garantía de lote.|Technological quality of the harvest at collection-silo intake (moisture, test weight, protein, baking strength). FranceAgriMer survey; averages, not a batch guarantee.|Qualité technologique de la récolte à l’entrée des silos de collecte (humidité, poids spécifique, protéines, force boulangère). Enquête FranceAgriMer ; moyennes, pas une garantie de lot.|Qualità tecnologica del raccolto all’ingresso dei silos di raccolta (umidità, peso specifico, proteine, forza panificatoria). Indagine FranceAgriMer; medie, non una garanzia di lotto.'), out, cite('franceagrimer', q.last));
+      });
+    }
+
     /* ---- Francia ---- */
     function frVig(x) {
       return get('data/france-vigieau.json').then(function (d) {
@@ -482,7 +509,7 @@
         US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('clim', clim)],
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
-        FR: [C('frcrops', frCrops), C('vig', frVig), C('cere', frCere), C('clim', clim)],
+        FR: [C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', clim)],
         DE: [C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('clim', clim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
         AT: [C('clim', clim)], IT: [C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]

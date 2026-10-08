@@ -2897,6 +2897,12 @@
     "franceagrimer"
    ],
    "notes": "Estado semanal de los cereales de paja (trigo blando, trigo duro, cebada de invierno y de primavera) de Cere'Obs, FranceAgriMer; scripts/build-france-cereobs-cp.py a partir del Excel historico. Licencia FranceAgriMer dada por valida por el propietario (7 oct 2026)."
+  },
+  "data/france-quality-regions.json": {
+   "sources": [
+    "franceagrimer"
+   ],
+   "notes": "Calidad tecnologica del trigo blando por region (12 regiones, 2013-2025) y del trigo duro por cuenca (4 cuencas), encuesta de calidad a la entrada de silos de FranceAgriMer; scripts/build-france-quality-regions.py. No incluye micotoxinas (esas estan a nivel nacional en france-extras-stats.json). Corcega sin dato."
   }
  },
  "derived": [
