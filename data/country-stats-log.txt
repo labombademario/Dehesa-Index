@@ -1,4 +1,4 @@
-Series: {'DK': 46, 'NL': 67, 'AU': 23}
+Series: {'DK': 47, 'NL': 67, 'AU': 31}
   dk-cattle-prod | Cattle: meat production (total) | 2026-07 10.0 | n= 379 | first 1995-01
   dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-07 40.0 | n= 379 | first 1995-01
   dk-pig-prod | Pigs: meat production (total) | 2026-07 162.9 | n= 379 | first 1995-01
@@ -22,6 +22,7 @@ Series: {'DK': 46, 'NL': 67, 'AU': 23}
   dk-area-maize | Grain maize: area (1.6 Grain maize and corn-cob mix) | 2025 8479.0 | n= 17 | first 2009
   dk-area-rape | Rapeseed: area (4.1 Rape) | 2025 160711.0 | n= 44 | first 1982
   dk-area-potatoes | Potatoes: area (3.1 Potatoes) | 2025 72073.0 | n= 44 | first 1982
+  dk-area-sugarbeet | Sugar beet: area (3.2 Sugar beets) | 2025 31725.0 | n= 44 | first 1982
   dk-harvarea-winter-wheat | Winter wheat: harvested area | 2025 462.0 | n= 26 | first 2000
   dk-harvarea-winter-barley | Winter barley: harvested area | 2025 66.0 | n= 26 | first 2000
   dk-harvarea-winter-rape | Winter rapeseed: harvested area | 2025 160.0 | n= 26 | first 2000
@@ -116,9 +117,17 @@ Series: {'DK': 46, 'NL': 67, 'AU': 23}
   au-pig-slaught | Pigs slaughtered | 2026-Q2 1467.4 | n= 146 | first 1990-Q1
   au-sheep-slaught | Sheep slaughtered | 2026-Q2 1334.2 | n= 146 | first 1990-Q1
   au-lamb-slaught | Lambs slaughtered | 2026-Q2 5286.2 | n= 146 | first 1990-Q1
+  au-steer-slaught | Bulls, bullocks and steers slaughtered | 2026-Q2 1135.4 | n= 146 | first 1990-Q1
+  au-cow-slaught | Cows and heifers slaughtered | 2026-Q2 1386.2 | n= 146 | first 1990-Q1
+  au-calf-slaught | Calves slaughtered | 2026-Q2 106.6 | n= 146 | first 1990-Q1
+  au-chicken-slaught | Chickens slaughtered | 2026-Q2 200584.0 | n= 146 | first 1990-Q1
   au-chicken-meat-prod | Chicken meat produced | 2026-Q2 411509.0 | n= 146 | first 1990-Q1
   au-pig-meat-prod | Pig meat produced | 2026-Q2 123250.0 | n= 146 | first 1990-Q1
   au-beef-prod | Beef produced | 2026-Q2 780620.0 | n= 146 | first 1990-Q1
+  au-veal-prod | Veal produced | 2026-Q2 4385.0 | n= 146 | first 1990-Q1
+  au-mutton-prod | Mutton produced | 2026-Q2 34205.0 | n= 146 | first 1990-Q1
+  au-lamb-prod | Lamb produced | 2026-Q2 140995.0 | n= 146 | first 1990-Q1
+  au-redmeat-prod | Total red meat produced | 2026-Q2 1083455.0 | n= 146 | first 1990-Q1
   au-exp-wheat | Exports: wheat | 2026-08 635.356 | n= 374 | first 1995-07
   au-exp-barley | Exports: barley | 2026-08 229.806 | n= 374 | first 1995-07
   au-exp-maize | Exports: maize | 2026-08 1.375 | n= 374 | first 1995-07
@@ -135,7 +144,6 @@ Series: {'DK': 46, 'NL': 67, 'AU': 23}
   au-xpi-live | Export price index: live animals | 2026-Q2 104.0 | n= 148 | first 1989-Q3
   au-xpi-sugar | Export price index: sugars | 2026-Q2 88.1 | n= 148 | first 1989-Q3
   au-xpi-wool | Export price index: wool and animal hair | 2026-Q2 112.7 | n= 148 | first 1989-Q3
-LOG ERROR dk-area-sugarbeet: Remote end closed connection without response
 LOG JORD1 sin partida para seed
 LOG JORD1 sin partida para pest
 LOG JORD1 sin partida para wages
