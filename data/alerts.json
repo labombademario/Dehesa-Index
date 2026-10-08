@@ -1,11 +1,19 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-07T15:41:59.844Z",
+  "generatedAt": "2026-10-08T13:54:33.776Z",
   "status": "informational",
   "rules": [
     {
       "type": "stale_data",
       "product": "avena",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "azucar",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "severity": "watch",
