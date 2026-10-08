@@ -101,4 +101,20 @@ dk SJA {'gdp': 25, 'pop': 19, 'unemp': 19, 'gdppc': 18}
 dk SYD {'gdp': 25, 'pop': 19, 'unemp': 19, 'gdppc': 18}
 dk MID {'gdp': 25, 'pop': 19, 'unemp': 19, 'gdppc': 18}
 dk NJY {'gdp': 25, 'pop': 19, 'unemp': 19, 'gdppc': 18}
-escrito eu-regions-macro.json 143 KB
+pl MA {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl SL {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl WP {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl ZP {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl LB {'gdp': 25, 'pop': 26, 'unemp': 20, 'gdppc': 25}
+pl DS {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl OP {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl KP {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl WN {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl PM {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pl LD {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
+pl SK {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
+pl LU {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
+pl PK {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
+pl PD {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
+pl MZ {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
+escrito eu-regions-macro.json 163 KB
