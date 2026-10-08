@@ -2870,9 +2870,10 @@
   },
   "data/supply-balances/": {
    "sources": [
-    "statcan"
+    "statcan",
+    "eu_agrifood"
    ],
-   "notes": "Balances oficiales de oferta y demanda por pais (scripts/build_supply_balances.py), un fichero por pais con el mismo formato. ca.json: Statistics Canada, tabla 32-10-0013-01 (oferta total, produccion, exportaciones, consumo interno y existencias finales por campaña agosto-julio), derivado de data/canada-stats.json sin cambiar ninguna cifra."
+   "notes": "Balances oficiales de oferta y demanda por pais (scripts/build_supply_balances.py), un fichero por pais con el mismo formato. ca.json: Statistics Canada, tabla 32-10-0013-01 (oferta total, produccion, exportaciones, consumo interno y existencias finales por campaña agosto-julio), derivado de data/canada-stats.json sin cambiar ninguna cifra. eu.json: Comision Europea (DG AGRI), balance de cereales UE-27 (Cereals_bs_EUROPA_EU.xlsx, scripts/update-eu-balances.py); cifras tal como las publica la Comision, sin calculos propios salvo existencias/uso, que se rotula en la pagina. Licencia: Decision 2011/833/UE de reutilizacion (confirmada por el propietario)."
   }
  },
  "derived": [

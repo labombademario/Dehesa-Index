@@ -286,6 +286,15 @@ sources:
     data: [canada-stats.json, supply-balances/ca.json]
     log: canada-stats-log.txt
     message: Datos Canadá (Statistics Canada)
+  - id: eu-balances
+    name: Update EU cereal balance (European Commission, DG AGRI)
+    cron: ['20 9 * * 2,5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-eu-balances.py
+    timeout: 10
+    continue: true
+    data: [supply-balances/eu.json]
+    message: Balance de cereales de la UE (Comisión Europea)
   - id: country-macro
     name: Update country macro indicators
     cron: ['15 7 3 * *']

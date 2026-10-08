@@ -9,6 +9,7 @@ Formato común para todos los países (lo lee js/oferta-demanda-paises.js; lo va
 
 Aquí: la librería común (write) y Canadá (Statistics Canada 32-10-0013), derivada de data/canada-stats.json sin llamadas nuevas a la red.
 Uso: python3 scripts/build_supply_balances.py ca
+     python3 scripts/build_supply_balances.py eu <Cereals_bs_EUROPA_EU.xlsx>   (lo descarga scripts/update-eu-balances.py)
 """
 import datetime, json, sys
 from pathlib import Path
@@ -101,8 +102,129 @@ def build_ca():
     return doc
 
 
+# ---------------------------------------------------------------- Unión Europea
+# Comisión Europea (DG AGRI), «Cereals supply & demand» (Cereals_bs_EUROPA_EU.xlsx): una hoja por campaña (julio-junio),
+# productos en columnas y partidas en filas. Se localizan por el TEXTO de cabeceras y filas, no por posición: si la
+# Comisión cambia el libro de forma que no se reconoce, el script falla y se conserva el JSON anterior.
+EU_PRODUCTS = [  # (id, cabecera en el Excel, nombre)
+    ("wheat", "common wheat", T("Trigo blando", "Common wheat", "Blé tendre", "Frumento tenero")),
+    ("barley", "barley", T("Cebada", "Barley", "Orge", "Orzo")),
+    ("durum", "durum wheat", T("Trigo duro", "Durum wheat", "Blé dur", "Frumento duro")),
+    ("maize", "maize", T("Maíz", "Maize", "Maïs", "Mais")),
+    ("rye", "rye", T("Centeno", "Rye", "Seigle", "Segale")),
+    ("sorghum", "sorghum", T("Sorgo", "Sorghum", "Sorgho", "Sorgo")),
+    ("oats", "oats", T("Avena", "Oats", "Avoine", "Avena")),
+    ("triticale", "triticale", T("Triticale", "Triticale", "Triticale", "Triticale")),
+    ("total", "total cereals", T("Total cereales", "Total cereals", "Total céréales", "Totale cereali")),
+]
+EU_ITEMS = [  # (id, fila en el Excel, nombre, sangría, negrita)
+    ("beginStocks", "beginning stocks", T("Existencias iniciales", "Beginning stocks", "Stocks initiaux", "Scorte iniziali"), 0, False),
+    ("production", "usable production", T("Producción utilizable", "Usable production", "Production utilisable", "Produzione utilizzabile"), 0, False),
+    ("imports", "imports (from third countries)", T("Importaciones (países terceros)", "Imports (third countries)", "Importations (pays tiers)", "Importazioni (paesi terzi)"), 0, False),
+    ("totalSupply", "total supply", T("Oferta total", "Total supply", "Offre totale", "Offerta totale"), 0, True),
+    ("domestic", "total domestic use", T("Consumo interno", "Total domestic use", "Utilisation intérieure", "Consumo interno"), 0, True),
+    ("food", "human consumption", T("Consumo humano", "Human consumption", "Consommation humaine", "Consumo umano"), 1, False),
+    ("seed", "seed", T("Semilla", "Seed", "Semences", "Sementi"), 1, False),
+    ("industrial", "industrial uses", T("Usos industriales", "Industrial uses", "Usages industriels", "Usi industriali"), 1, False),
+    ("feed", "animal feed", T("Alimentación animal", "Animal feed", "Alimentation animale", "Alimentazione animale"), 1, False),
+    ("losses", "losses", T("Pérdidas", "Losses", "Pertes", "Perdite"), 1, False),
+    ("exports", "exports (to third countries)", T("Exportaciones (países terceros)", "Exports (third countries)", "Exportations (pays tiers)", "Esportazioni (paesi terzi)"), 0, False),
+    ("totalUse", "total use", T("Uso total", "Total use", "Utilisation totale", "Utilizzo totale"), 0, True),
+    ("endingStocks", "ending stocks", T("Existencias finales", "Ending stocks", "Stocks finaux", "Scorte finali"), 0, True),
+]
+
+
+def _close(a, b, pct, floor=5.0):
+    return abs(a - b) <= max(floor, pct / 100.0 * max(abs(a), abs(b)))
+
+
+def build_eu(xlsx):
+    import openpyxl, re
+    wb = openpyxl.load_workbook(xlsx, data_only=True)
+    pid_by_head = {h: p for p, h, _n in EU_PRODUCTS}
+    row_by_label = {l: i for i, l, _n, _s, _b in EU_ITEMS}
+    camps, updated = {}, None
+    for ws in wb.worksheets:
+        if not re.match(r"^\d{4}-\d{2}", ws.title): continue  # hojas de campaña: «2024-25 estimation», «2023-24»…
+        label = hdr = None
+        for r in range(1, 8):
+            for c in range(1, 8):
+                v = ws.cell(r, c).value
+                if isinstance(v, str):
+                    m = re.match(r"^(\d{4})/(\d{2})\b", v.strip())
+                    if m and label is None: label = (m.group(1), m.group(1) + "/" + m.group(2))
+                    m2 = re.search(r"last updated:\s*(\d{2})/(\d{2})/(\d{4})", v)
+                    if m2: updated = "%s-%s-%s" % (m2.group(3), m2.group(2), m2.group(1))
+        cols = {}
+        for r in range(1, 8):
+            found = {}
+            for c in range(1, ws.max_column + 1):
+                v = ws.cell(r, c).value
+                if isinstance(v, str) and v.strip().lower() in pid_by_head: found[pid_by_head[v.strip().lower()]] = c
+            if len(found) >= 6: cols, hdr = found, r; break
+        if not label or not hdr: raise SystemExit("hoja «%s»: no se reconoce campaña o cabecera" % ws.title)
+        if set(cols) != set(pid_by_head.values()): raise SystemExit("hoja «%s»: faltan productos %s" % (ws.title, sorted(set(pid_by_head.values()) - set(cols))))
+        rows = {}
+        for r in range(hdr + 1, ws.max_row + 1):
+            for c in (2, 3):
+                v = ws.cell(r, c).value
+                if isinstance(v, str):
+                    k = v.strip().rstrip("*").strip().lower()
+                    if k in row_by_label and row_by_label[k] not in rows: rows[row_by_label[k]] = r
+        if set(rows) != set(row_by_label.values()): raise SystemExit("hoja «%s»: faltan partidas %s" % (ws.title, sorted(set(row_by_label.values()) - set(rows))))
+        v = {}
+        for p, c in cols.items():
+            d = {}
+            for i, r in rows.items():
+                x = ws.cell(r, c).value
+                if isinstance(x, bool) or not isinstance(x, (int, float)): raise SystemExit("hoja «%s» %s/%s: valor no numérico %r" % (ws.title, p, i, x))
+                d[i] = round(float(x), 1)
+            v[p] = d
+        camps[label[0]] = {"label": label[1], "v": v}
+    if len(camps) < 3: raise SystemExit("solo %d campañas reconocidas" % len(camps))
+    # Cuadre interno de cada balance: si el libro cambia de significado, no se publica.
+    for y, c in camps.items():
+        for p, d in c["v"].items():
+            ctx = "%s/%s" % (c["label"], p)
+            assert _close(d["beginStocks"] + d["production"] + d["imports"], d["totalSupply"], 0.5), "oferta no cuadra " + ctx
+            assert _close(d["domestic"] + d["exports"], d["totalUse"], 0.5), "uso total no cuadra " + ctx
+            assert _close(d["food"] + d["seed"] + d["industrial"] + d["feed"] + d["losses"], d["domestic"], 1.0), "consumo interno no cuadra " + ctx
+            assert _close(d["totalSupply"] - d["totalUse"], d["endingStocks"], 0.5), "existencias finales no cuadran " + ctx
+            assert min(d.values()) >= 0, "valor negativo " + ctx
+        nxt = camps.get(str(int(y) + 1))
+        if nxt:
+            for p, d in c["v"].items():
+                assert _close(d["endingStocks"], nxt["v"][p]["beginStocks"], 0.5), "existencias finales ≠ iniciales siguientes %s/%s" % (c["label"], p)
+    doc = {
+        "schemaVersion": 1,
+        "generatedAt": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "country": "EU",
+        "sourceId": "eu_agrifood",
+        "source": {"name": "European Commission, DG AGRI — Cereals supply & demand", "table": "Cereals_bs_EUROPA_EU.xlsx" + ((" (last updated " + updated + ")") if updated else ""),
+                   "url": "https://agriculture.ec.europa.eu/data-and-analysis/markets/overviews/balance-sheets-sector_en"},
+        "unit": "kt",
+        "note": T(
+            "UE-27. Campaña de julio a junio: 2025/26 va de julio de 2025 a junio de 2026. Los balances de la Comisión mezclan estimación (campaña más reciente cerrada), previsión (campaña en curso) y proyección (campaña siguiente), y se revisan en cada actualización. Importaciones y exportaciones son solo con países terceros (no cuenta el comercio dentro de la UE). «Consumo interno» suma consumo humano, semilla, usos industriales, alimentación animal y pérdidas. El libro incluye las campañas más recientes, no una serie larga.",
+            "EU-27. Marketing year July to June: 2025/26 runs from July 2025 to June 2026. The Commission’s balance sheets mix estimates (latest closed year), forecasts (current year) and projections (next year), and are revised at each update. Imports and exports are with third countries only (intra-EU trade is not counted). “Total domestic use” adds human consumption, seed, industrial uses, animal feed and losses. The workbook covers the most recent years, not a long series.",
+            "UE-27. Campagne de juillet à juin : 2025/26 va de juillet 2025 à juin 2026. Les bilans de la Commission mêlent estimation (dernière campagne close), prévision (campagne en cours) et projection (campagne suivante), et sont révisés à chaque mise à jour. Importations et exportations concernent uniquement les pays tiers (hors commerce intra-UE). « Utilisation intérieure » additionne consommation humaine, semences, usages industriels, alimentation animale et pertes. Le classeur couvre les campagnes récentes, pas une longue série.",
+            "UE-27. Campagna da luglio a giugno: 2025/26 va da luglio 2025 a giugno 2026. I bilanci della Commissione mescolano stima (ultima campagna chiusa), previsione (campagna in corso) e proiezione (campagna successiva) e vengono rivisti a ogni aggiornamento. Importazioni ed esportazioni riguardano solo i paesi terzi (escluso il commercio intra-UE). «Consumo interno» somma consumo umano, sementi, usi industriali, alimentazione animale e perdite. La cartella include le campagne recenti, non una serie lunga."),
+        "items": [{"id": i, "name": n, "sub": sub, "strong": strong} for i, _l, n, sub, strong in EU_ITEMS],
+        "cards": ["production", "domestic", "exports", "endingStocks"],
+        "chart": ["production", "domestic", "exports"],
+        "stocksToUse": {"num": "endingStocks", "den": ["domestic", "exports"]},
+        "identity": {"total": "totalSupply", "minus": ["totalUse"], "equals": "endingStocks", "tolerancePct": 0.5},
+        "products": [{"id": p, "name": n} for p, _h, n in EU_PRODUCTS],
+        "campaigns": dict(sorted(camps.items())),
+    }
+    write("eu", doc)
+    return doc
+
+
 if __name__ == "__main__":
-    which = sys.argv[1:] or ["ca"]
-    for w in which:
-        {"ca": build_ca}[w]()
-        print("supply-balances/%s.json escrito" % w)
+    a = sys.argv[1:] or ["ca"]
+    if a[0] == "eu":
+        if len(a) < 2: raise SystemExit("uso: build_supply_balances.py eu <Cereals_bs_EUROPA_EU.xlsx>")
+        build_eu(a[1])
+    else:
+        for w in a: {"ca": build_ca}[w]()
+    print("supply-balances/%s.json escrito" % a[0])
