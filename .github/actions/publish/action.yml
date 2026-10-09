@@ -44,6 +44,8 @@ runs:
         git commit -qm "$MESSAGE"
         for i in 1 2 3 4 5 6; do
           git pull -q --rebase --autostash origin main && git push && exit 0
+          # Un rebase a medias hace fallar todos los reintentos siguientes: se aborta y se vuelve a intentar limpio
+          git rebase --abort 2>/dev/null || true
           sleep $((i * 5 + RANDOM % 10))
         done
         echo "::error::no se pudo publicar tras 6 intentos"; exit 1
