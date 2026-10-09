@@ -1,0 +1,59 @@
+NASS ALMONDS NATIONAL 200 application/json b'{"data":[{"end_code":"00","zip_5":"","load_time":"2026-05-12 12:00:00.000","source_desc":"SURVEY","state_alpha":"US","state_name":"US TOTAL","county_c'
+NASS PECANS NATIONAL 200 application/json b'{"data":[{"source_desc":"SURVEY","domain_desc":"TOTAL","short_desc":"PECANS - ACRES BEARING","week_ending":"","CV (%)":"","county_name":"","Value":"43'
+NASS WALNUTS NATIONAL 200 application/json b'{"data":[{"state_alpha":"US","sector_desc":"CROPS","country_code":"9000","Value":"380,000","county_code":"","class_desc":"ENGLISH","state_name":"US TO'
+NASS PISTACHIOS NATIONAL 200 application/json b'{"data":[{"state_ansi":"","asd_desc":"","asd_code":"","end_code":"00","country_name":"UNITED STATES","region_desc":"","watershed_code":"00000000","sou'
+NASS ORANGES NATIONAL 200 application/json b'{"data":[{"domain_desc":"TOTAL","short_desc":"ORANGES - ACRES BEARING","week_ending":"","source_desc":"SURVEY","reference_period_desc":"YEAR","region_'
+NASS GRAPEFRUIT NATIONAL 200 application/json b'{"data":[{"asd_desc":"","CV (%)":"","state_fips_code":"99","domaincat_desc":"NOT SPECIFIED","commodity_desc":"GRAPEFRUIT","reference_period_desc":"YEA'
+NASS LEMONS NATIONAL 200 application/json b'{"data":[{"asd_desc":"","zip_5":"","class_desc":"ALL CLASSES","freq_desc":"ANNUAL","statisticcat_desc":"AREA BEARING","watershed_desc":"","watershed_c'
+NASS APPLES NATIONAL 200 application/json b'{"data":[{"sector_desc":"CROPS","prodn_practice_desc":"ALL PRODUCTION PRACTICES","asd_code":"","end_code":"00","year":2025,"freq_desc":"ANNUAL","class'
+NASS PEACHES NATIONAL 200 application/json b'{"data":[{"week_ending":"","short_desc":"PEACHES - ACRES BEARING","domain_desc":"TOTAL","source_desc":"SURVEY","domaincat_desc":"NOT SPECIFIED","state'
+NASS STRAWBERRIES NATIONAL 200 application/json b'{"data":[{"group_desc":"FRUIT & TREE NUTS","state_alpha":"US","load_time":"2026-05-01 15:00:00.000","begin_code":"00","agg_level_desc":"NATIONAL","cou'
+NASS BLUEBERRIES NATIONAL 200 application/json b'{"data":[{"class_desc":"ALL CLASSES","county_code":"","begin_code":"01","state_name":"US TOTAL","sector_desc":"CROPS","state_alpha":"US","Value":"213,'
+NASS CRANBERRIES NATIONAL 200 application/json b'{"data":[{"week_ending":"","short_desc":"CRANBERRIES - ACRES HARVESTED","domain_desc":"TOTAL","source_desc":"SURVEY","domaincat_desc":"NOT SPECIFIED",'
+NASS TOMATOES NATIONAL 200 application/json b'{"data":[{"source_desc":"SURVEY","state_alpha":"US","state_name":"US TOTAL","county_code":"","end_code":"00","zip_5":"","load_time":"2026-02-12 15:00:'
+NASS ONIONS NATIONAL 200 application/json b'{"data":[{"Value":"40,592,000","statisticcat_desc":"STOCKS","congr_district_code":"","country_name":"UNITED STATES","group_desc":"VEGETABLES","domain_'
+NASS LETTUCE NATIONAL 200 application/json b'{"data":[{"class_desc":"HEAD","asd_code":"","county_name":"","region_desc":"","county_ansi":"","commodity_desc":"LETTUCE","domaincat_desc":"NOT SPECIF'
+NASS HONEY NATIONAL 200 application/json b'{"data":[{"sector_desc":"ANIMALS & PRODUCTS","begin_code":"00","year":2025,"watershed_desc":"","util_practice_desc":"ALL UTILIZATION PRACTICES","freq_'
+NASS TOBACCO NATIONAL 200 application/json b'{"data":[{"country_code":"9000","state_ansi":"","country_name":"UNITED STATES","group_desc":"FIELD CROPS","domain_desc":"TOTAL","congr_district_code":'
+NASS BEANS NATIONAL 200 application/json b'{"data":[{"CV (%)":"","state_fips_code":"99","asd_desc":"","county_name":"","region_desc":"","county_ansi":"","class_desc":"DRY EDIBLE, (EXCL CHICKPEA'
+NASS LENTILS NATIONAL 200 application/json b'{"data":[{"county_ansi":"","region_desc":"","county_name":"","asd_code":"","class_desc":"ALL CLASSES","location_desc":"US TOTAL","short_desc":"LENTILS'
+NASS PEAS NATIONAL 200 application/json b'{"data":[{"sector_desc":"CROPS","begin_code":"00","year":2026,"watershed_desc":"","util_practice_desc":"ALL UTILIZATION PRACTICES","freq_desc":"ANNUAL'
+NASS SUNFLOWER NATIONAL 200 application/json b'{"data":[{"short_desc":"SUNFLOWER - ACRES HARVESTED","week_ending":"","domain_desc":"TOTAL","source_desc":"SURVEY","domaincat_desc":"NOT SPECIFIED","s'
+NASS GOATS NATIONAL 200 application/json b'{"data":[{"freq_desc":"POINT IN TIME","class_desc":"ALL CLASSES","zip_5":"","asd_desc":"","watershed_code":"00000000","watershed_desc":"","statisticca'
+NASS WOOL NATIONAL 200 application/json b'{"data":[{"class_desc":"ALL CLASSES","county_code":"","state_name":"US TOTAL","begin_code":"00","sector_desc":"ANIMALS & PRODUCTS","state_alpha":"US",'
+NASS MOHAIR NATIONAL 200 application/json b'{"data":[{"zip_5":"","load_time":"2026-07-31 15:00:00.000","end_code":"00","county_code":"","source_desc":"SURVEY","state_name":"US TOTAL","state_alph'
+NASS MUSHROOMS NATIONAL 200 application/json b'{"data":[{"year":2027,"end_code":"06","prodn_practice_desc":"ALL PRODUCTION PRACTICES","sector_desc":"CROPS","asd_code":"","statisticcat_desc":"AREA F'
+NASS CATFISH NATIONAL ERR <HTTPError 400: 'Bad Request'> b''
+NASS TROUT NATIONAL ERR <HTTPError 400: 'Bad Request'> b''
+NASS TURKEYS NATIONAL 200 application/json b'{"data":[{"begin_code":"01","state_name":"US TOTAL","county_code":"","class_desc":"ALL CLASSES","Value":"25,523,000","country_code":"9000","state_alph'
+NASS BROILERS NATIONAL ERR <HTTPError 400: 'Bad Request'> b''
+NASS LABOR NATIONAL 200 application/json b'{"data":[{"end_code":"00","asd_code":"","state_ansi":"","asd_desc":"","year":2025,"county_ansi":"","util_practice_desc":"ALL UTILIZATION PRACTICES","c'
+NASS LABOR REGION : MULTI-STATE 200 application/json b'{"data":[{"zip_5":"","load_time":"2025-05-21 15:00:00.000","end_code":"01","county_code":"","state_name":"","state_alpha":"","source_desc":"SURVEY","w'
+NASS HEMP NATIONAL 200 application/json b'{"data":[{"sector_desc":"CROPS","prodn_practice_desc":"ALL PRODUCTION PRACTICES","asd_code":"","end_code":"00","year":2025,"zip_5":"","asd_desc":"","f'
+NASS ORGANIC NATIONAL ERR <HTTPError 400: 'Bad Request'> b''
+GET https://flag.dol.gov/wage-data/aewr ERR <HTTPError 404: 'Not Found'> 0
+GET https://www.dol.gov/agencies/eta/foreign-labor/performance 200 text/html; charset=UTF-8 381848
+    <!DOCTYPE html> <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http:
+GET https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/time-series/13/pcp/1/0/2024-2026.json 200 application/json 861
+    {"description":{"title":"Iowa Precipitation","units":"Inches"},"data":{"202401":{"value":1.82},"202402":{"value":0.21},"202403":{"value":2.6},"202404":{"value":4.22},"202405":{"value":7.55},"202406":{"value":5.42},"202407":{"value":5.05},"202408":{"value":3.09},"202409":{"value":0.69},"202410":{"value":1.77},"202411":{"value":3.29},"202412":{"value":1.34},"202501":{"value":0.29},"202502":{"value":0.44},"202503":{"value":2.66},"202504":{"value":3.3},"202505":{"value":2.65},"202506":{"value":5.87}
+GET https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/divisional/time-series/1301/pcp/1/0/2025-2026.json 200 application/json 595
+    {"description":{"title":"Iowa, Climate Division 1 Precipitation","units":"Inches"},"data":{"202501":{"value":0.05},"202502":{"value":0.26},"202503":{"value":2.56},"202504":{"value":2.57},"202505":{"value":2.19},"202506":{"value":6.07},"202507":{"value":8.44},"202508":{"value":3.29},"202509":{"value"
+GET https://wcc.sc.egov.usda.gov/awdbRestApi/services/v1/stations?stationTriplets=*:CO:SNTL&activeOnly=true 200 application/json 50878
+    [{"stationTriplet":"1344:CO:SNTL","stationId":"1344","stateCode":"CO","networkCode":"SNTL","name":"Alta Lakes","dcoCode":"CO","countyName":"San Miguel","huc":"140300030103","elevation":11290.00,"latitude":37.88929,"longitude":-107.84484,"dataTimeZone":-8.0,"shefId":"ALCC2","operator":"NRCS","beginDa
+GET https://wcc.sc.egov.usda.gov/awdbRestApi/services/v1/data?stationTriplets=713:CO:SNTL&elements=WTEQ&duration=DAILY&beginDate=2026-09-01&endDate=2026-1 200 application/json 1567
+    [{"stationTriplet":"713:CO:SNTL","data":[{"stationElement":{"elementCode":"WTEQ","ordinal":1,"durationName":"DAILY","dataPrecision":1,"storedUnitCode":"in","originalUnitCode":"in","beginDate":"1979-10-01 00:00","endDate":"2100-01-01 00:00","derivedData":false},"values":[{"date":"2026-09-01","value":
+GET https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks 200 text/html; charset=utf-8 72271
+     <!DOCTYPE html> <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#" class="no-js"> <head> <meta charset="utf-8" /> <meta name="description" content="Track HPAI detections in commercial and backyard flocks. Follow biosecurity practices to protect birds and prevent virus spread." /> <meta name="keywords" content="HPAI confirmations, highly pathogenic avian influenza, commercial flocks, backyard flocks" /> <link rel="canonical" href="https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks" /> <meta property="og:site_name"
+GET https://www.aphis.usda.gov/livestock-poultry-disease/cattle/ticks/screwworm 200 text/html; charset=utf-8 105684
+     <!DOCTYPE html> <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#" class="no-js"> <head> <meta charset="utf-8" /> <meta name="description" content="Get essential prevention guidance to protect livestock and other animals from New World screwworm, including early detection, management tips, and APHIS resources." /> <meta name="abstract" content="New World screwworm (NWS) disease is an infestation with the larvae of the NWS fly that lives off the flesh of living mammals and, less co
+GET https://www.aphis.usda.gov/sites/default/files/hpai-flocks.csv ERR <HTTPError 404: 'Not Found'> 0
+GET https://www.fsa.usda.gov/resources/programs/dairy-margin-coverage-program ERR <HTTPError 404: 'Not Found'> 0
+GET https://www.fsa.usda.gov/resources/farm-loans/farm-loan-interest-rates ERR <HTTPError 404: 'Not Found'> 0
+GET https://www.kansascityfed.org/agriculture/ag-credit-survey/ 200 text/html; charset=utf-8 655740
+    <!-- NON-CONFIDENTIAL // EXTERNAL --> <!-- NON-CONFIDENTIAL // EXTERNAL --> <!DOCTYPE html> <html class="no-js" lang="en"> <head> <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <title> Agricultural Credit Survey - Federal Reserve Bank of Kansas City </title> <meta na
+GET https://www.chicagofed.org/research/data/agletter ERR <HTTPError 404: 'Not Found'> 0
+GET https://www.ers.usda.gov/data-products/ag-and-food-statistics-charting-the-essentials/ 200 text/html; charset=utf-8 40257
+    <!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta charset="utf-8" /> <noscript><style>form.antibot > * { display: none !important; } form.antibot noscript { display: block !important; }</style
+GET https://www.nass.usda.gov/Publications/Todays_Reports/reports/ ERR <HTTPError 403: 'Forbidden'> 0
+GET https://www.ams.usda.gov/mnreports/ ERR URLError(TimeoutError('timed out')) 0
+done
