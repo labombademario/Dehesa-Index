@@ -18,7 +18,7 @@ jobs:
       - run: bash scripts/trust-fnmt.sh
       - run: pip install openpyxl
       - id: fetch
-        run: python3 scripts/update-spain-livestock.py
+        run: bash scripts/annotate-failure.sh python3 scripts/update-spain-livestock.py
         timeout-minutes: 20
         continue-on-error: true
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo

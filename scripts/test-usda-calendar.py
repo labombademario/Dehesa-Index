@@ -22,6 +22,14 @@ eq([(r["id"], r["date"], r["time"]) for r in h], [("cattle-on-feed", "2026-10-23
 _, off = C.parse_nass((F / "nass-calendar-2026-10.txt").read_text(), 2026, 11); eq(off, 19, "mes equivocado se descarta")
 y, t, d = C.parse_wasde((F / "wasde-page.txt").read_text())
 eq((y, t, len(d), d[9]), (2026, "12:00", 12, "2026-10-09"), "WASDE")
+# Pagina desde oct-2026: dos anos seguidos (texto real de usda.gov/wasde, 9-oct-2026). Antes se leian 24 fechas como un solo ano y fallaba.
+two = ("2026 WASDE Release Dates (12:00pm ET) In 2026 the WASDE report will be released on Jan. 12, Feb. 10, Mar. 10, Apr. 9, May 12, Jun. 11, Jul. 10, Aug. 12, Sep. 11, Oct. 9, Nov. 10, and Dec. 10. "
+       "2027 WASDE Release Dates (12:00pm ET) In 2027 the WASDE report will be released on Jan. 12, Feb. 10, Mar. 10, Apr. 9, May 12, Jun. 11, Jul. 9, Aug. 12, Sep. 10, Oct. 8, Nov. 10, and Dec. 10.")
+w2 = C.parse_wasde_all(two)
+eq([(a, b, len(c), c[9]) for a, b, c in w2], [(2026, "12:00", 12, "2026-10-09"), (2027, "12:00", 12, "2027-10-08")], "WASDE dos anos")
+m2 = C.merge([], {}, w2); eq(len([r for r in m2 if r["id"] == "wasde"]), 24, "merge de dos anos")
+try: C.parse_wasde_all(two.replace("Oct. 8, ", "")); bad.append("WASDE 2027 incompleto debia fallar")
+except ValueError: pass
 try: C.parse_wasde("In 2026 the WASDE report will be released on Jan. 12, Feb. 10."); bad.append("WASDE incompleto debia fallar")
 except ValueError: pass
 prev = [{"date": "2026-10-20", "agency": "NASS", "id": "old", "name": "Old"}, {"date": "2026-09-01", "agency": "NASS", "id": "sep", "name": "Sep"}]

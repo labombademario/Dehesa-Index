@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: fetch
-        run: python3 scripts/update-us-cash-bids.py --discover --backfill-days ${{ github.event.inputs.backfill_days || 0 }}
+        run: bash scripts/annotate-failure.sh python3 scripts/update-us-cash-bids.py --discover --backfill-days ${{ github.event.inputs.backfill_days || 0 }}
         env:
           USDA_MMN_API_KEY: ${{ secrets.USDA_MMN_API_KEY }}
           MARS_API_KEY: ${{ secrets.MARS_API_KEY }}

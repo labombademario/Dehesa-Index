@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: fetch
-        run: python3 scripts/update-country-macro.py
+        run: bash scripts/annotate-failure.sh python3 scripts/update-country-macro.py
         continue-on-error: true
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         if: always()

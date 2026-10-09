@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T23:22:00Z",
+ "generatedAt": "2026-10-09T23:31:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 105,
+  "ok": 108,
   "late": 2,
-  "error": 6,
+  "error": 3,
   "not_run": 2,
   "unknown": 0
  },
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "9ab81505",
+   "sha": "5a38e7c8",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/b1247f2c-b6c1-4b93-b632-8b8a1a535e7d",
-   "completedAt": "2026-10-09T22:59:47Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/da407e96-4857-471d-900c-f19774349bb1",
+   "completedAt": "2026-10-09T23:26:07Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -37,18 +37,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-09T21:46:34Z",
-    "durationSec": 24,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37995458804"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-09T23:25:40Z",
+    "durationSec": 79,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38004365775"
    },
    "recent": {
-    "runs": 6,
-    "success": 5,
+    "runs": 7,
+    "success": 6,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 144.0
   },
   {
@@ -1688,7 +1688,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1703,7 +1703,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1720,7 +1720,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/products"
@@ -1731,30 +1731,30 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-09T22:55:39Z"
+     "lastChange": "2026-10-09T23:25:28Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1889,14 +1889,14 @@
    "last": {
     "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-09T23:19:06Z",
-    "durationSec": 93,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38003808257"
+    "startedAt": "2026-10-09T23:25:39Z",
+    "durationSec": 23,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38004364020"
    },
    "recent": {
-    "runs": 6,
+    "runs": 7,
     "success": 4,
-    "failed": 2
+    "failed": 3
    },
    "status": "error",
    "expectedEveryHours": 168.0
@@ -2163,18 +2163,18 @@
    "nextRun": "2026-10-15T09:05:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-09T23:19:04Z",
-    "durationSec": 48,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38003806358"
+    "startedAt": "2026-10-09T23:25:36Z",
+    "durationSec": 217,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38004359998"
    },
    "recent": {
-    "runs": 3,
-    "success": 1,
+    "runs": 4,
+    "success": 2,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2186,18 +2186,18 @@
    "nextRun": "2026-10-15T08:55:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-08T09:05:01Z",
-    "durationSec": 1113,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37754179939"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-09T23:25:37Z",
+    "durationSec": 189,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38004362034"
    },
    "recent": {
-    "runs": 3,
-    "success": 1,
+    "runs": 4,
+    "success": 2,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2369,7 +2369,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-10-09T23:30:00Z",
+   "nextRun": "2026-10-12T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2384,7 +2384,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 62.8
+   "expectedEveryHours": 14.8
   },
   {
    "workflow": "update-us-climate.yml",

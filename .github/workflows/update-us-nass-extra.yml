@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: fetch
-        run: python3 scripts/update-nass-extra.py
+        run: bash scripts/annotate-failure.sh python3 scripts/update-nass-extra.py
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         timeout-minutes: 30

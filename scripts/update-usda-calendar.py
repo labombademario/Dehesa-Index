@@ -67,20 +67,32 @@ def parse_nass(raw, year, month):
         if r["date"][:7] == "%04d-%02d" % (year, month): ok.append(r)
         else: bad += 1
     return ok, bad
-def parse_wasde(raw):
-    """Fechas WASDE del ano (12 esperadas). Devuelve (year, time|None, [iso...]) o lanza ValueError."""
+def parse_wasde_all(raw):
+    """Todas las frases "In YYYY the WASDE report will be released on ..." de la pagina (desde oct-2026 trae el ano en curso y el siguiente).
+    Cada ano debe traer 12 fechas ascendentes; la hora sale del titulo "YYYY WASDE Release Dates (12:00pm ET)" de ese ano (o del titulo sin ano).
+    Devuelve [(year, time|None, [iso...]), ...] o lanza ValueError si un ano no cuadra."""
     t = re.sub(r"\s+", " ", " ".join(tokens(raw)))
-    my = re.search(r"In (\d{4}) the WASDE report will be released on (.+?)\.(?:\s+[A-Z]|$)", t)
-    if not my: raise ValueError("sin frase de fechas WASDE")
-    year = int(my.group(1)); seg = my.group(2) + "."
+    starts = [m for m in re.finditer(r"In (\d{4}) the WASDE report will be released on ", t)]
+    if not starts: raise ValueError("sin frase de fechas WASDE")
     out = []
-    for mm, dd in re.findall(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})\b", seg):
-        out.append(datetime.date(year, MONTHS[mm.lower()], int(dd)).isoformat())
-    if len(out) != 12 or out != sorted(set(out)): raise ValueError("WASDE: %d fechas (esperadas 12 ascendentes)" % len(out))
-    mt = re.search(r"WASDE Release Dates \((\d{1,2}):(\d{2})\s*([ap])m ET\)", t, re.I)
-    tm = None
-    if mt: tm = "%02d:%s" % (int(mt.group(1)) % 12 + (12 if mt.group(3).lower() == "p" else 0), mt.group(2))
-    return year, tm, out
+    for i, my in enumerate(starts):
+        end = starts[i + 1].start() if i + 1 < len(starts) else len(t)
+        seg = t[my.end():end]
+        cut = re.search(r"\b\d{4} WASDE Release Dates|\b\d{1,2}\.(?:\s+[A-Z]|$)", seg)   # fin de la frase: siguiente titulo de ano o punto final tras el dia
+        if cut: seg = seg[:cut.end()] if not cut.group(0).endswith("Dates") else seg[:cut.start()]
+        year = int(my.group(1)); ds = []
+        for mm, dd in re.findall(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})\b", seg):
+            ds.append(datetime.date(year, MONTHS[mm.lower()], int(dd)).isoformat())
+        if len(ds) != 12 or ds != sorted(set(ds)): raise ValueError("WASDE %d: %d fechas (esperadas 12 ascendentes)" % (year, len(ds)))
+        mt = re.search(r"(?:%d )?WASDE Release Dates \((\d{1,2}):(\d{2})\s*([ap])m ET\)" % year, t, re.I)
+        mt = re.search(r"%d WASDE Release Dates \((\d{1,2}):(\d{2})\s*([ap])m ET\)" % year, t, re.I) or mt
+        tm = "%02d:%s" % (int(mt.group(1)) % 12 + (12 if mt.group(3).lower() == "p" else 0), mt.group(2)) if mt else None
+        out.append((year, tm, ds))
+    if len({y for y, _, _ in out}) != len(out): raise ValueError("WASDE: ano repetido en la pagina")
+    return out
+def parse_wasde(raw):
+    """Compatibilidad: el primer ano de la pagina."""
+    return parse_wasde_all(raw)[0]
 def get(url, tries=3):
     last = None
     for i in range(tries):
@@ -89,14 +101,16 @@ def get(url, tries=3):
         except Exception as e: last = e; time.sleep(3 * (i + 1))
     raise RuntimeError(repr(last)[:160])
 def merge(prev, nass_months, wasde):
-    """nass_months: {(y,m): filas}; wasde: (year,time,fechas) o None. Sustituye solo lo leido; conserva el resto."""
+    """nass_months: {(y,m): filas}; wasde: (year,time,fechas), lista de esas tuplas, o None. Sustituye solo lo leido; conserva el resto."""
+    ws = [] if not wasde else ([wasde] if isinstance(wasde, tuple) else list(wasde))
     keep = [r for r in prev if not (r["agency"] == "NASS" and (int(r["date"][:4]), int(r["date"][5:7])) in nass_months)]
-    if wasde: keep = [r for r in keep if not (r["agency"] == "OCE" and r["date"][:4] == str(wasde[0]))]
+    years = {str(w[0]) for w in ws}
+    keep = [r for r in keep if not (r["agency"] == "OCE" and r["date"][:4] in years)]
     for rows in nass_months.values(): keep += rows
-    if wasde:
-        for d in wasde[2]:
+    for y, tm, ds in ws:
+        for d in ds:
             r = {"date": d, "agency": "OCE", "id": "wasde", "name": "WASDE"}
-            if wasde[1]: r["time"] = wasde[1]
+            if tm: r["time"] = tm
             keep.append(r)
     return sorted(keep, key=lambda r: (r["date"], r.get("time", ""), r["id"]))
 def main():
@@ -113,7 +127,7 @@ def main():
         except Exception as e: notes.append("NASS %d-%02d: %s" % (y, m, e)); print(notes[-1])
         m += 1
         if m > 12: y, m = y + 1, 1
-    try: wasde = parse_wasde(get(WASDE_URL)); print("WASDE %d: %d fechas" % (wasde[0], len(wasde[2])))
+    try: wasde = parse_wasde_all(get(WASDE_URL)); print("WASDE:", ", ".join("%d (%d fechas)" % (w[0], len(w[2])) for w in wasde))
     except Exception as e: notes.append("WASDE: %s" % e); print(notes[-1])
     if not got_nass and not wasde: print("ninguna fuente respondio: no se escribe nada"); return 1
     rel = merge(prev, got_nass, wasde)

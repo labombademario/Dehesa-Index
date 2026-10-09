@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: fetch
-        run: python3 scripts/update-us-county-yields.py ${{ github.event.inputs.full == 'true' && '--full' || '' }}
+        run: bash scripts/annotate-failure.sh python3 scripts/update-us-county-yields.py ${{ github.event.inputs.full == 'true' && '--full' || '' }}
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         timeout-minutes: 50

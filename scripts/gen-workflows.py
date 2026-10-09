@@ -38,7 +38,7 @@ def render(x, group="dehesa-data-writes"):
     L += ["    steps:", "      - uses: actions/checkout@v6"]
     for p in x.get("pre", []): L.append("      - run: " + p)
     cmd = (x.get("runner", "python3") + " " + x["script"] + (" " + x["args"] if x.get("args") else "")).strip()
-    L.append("      - id: fetch"); L.append("        run: " + cmd)
+    L.append("      - id: fetch"); L.append("        run: bash scripts/annotate-failure.sh " + cmd)   # si falla, las ultimas lineas quedan como anotacion legible por la API
     if x.get("env"):
         L.append("        env:"); L += ["          %s: %s" % (k, v) for k, v in x["env"].items()]
     if x.get("script_timeout"): L.append("        timeout-minutes: %d" % x["script_timeout"])

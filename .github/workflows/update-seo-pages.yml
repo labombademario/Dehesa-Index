@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: fetch
-        run: node scripts/build-seo-pages.mjs
+        run: bash scripts/annotate-failure.sh node scripts/build-seo-pages.mjs
         continue-on-error: true
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
