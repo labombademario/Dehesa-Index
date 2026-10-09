@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T16:07:17Z",
+ "generatedAt": "2026-10-09T18:29:39Z",
  "summary": {
   "files": 45,
   "errors": 0,
@@ -178,7 +178,7 @@
     "points": 9284,
     "lines": 0
    },
-   "generatedAt": "2026-10-07T02:30:55Z",
+   "generatedAt": "2026-10-09T16:39:11Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -217,7 +217,7 @@
     "points": 24356,
     "lines": 0
    },
-   "generatedAt": "2026-10-02T16:54:14Z",
+   "generatedAt": "2026-10-09T16:59:02Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -233,7 +233,7 @@
     "points": 10562,
     "lines": 0
    },
-   "generatedAt": "2026-10-02T17:01:43Z",
+   "generatedAt": "2026-10-09T17:03:59Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -275,7 +275,7 @@
     "points": 56120,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T17:45:22Z",
+   "generatedAt": "2026-10-09T17:41:52Z",
    "info": [],
    "nWarnings": 36,
    "nErrors": 0
@@ -299,7 +299,7 @@
     "points": 39656,
     "lines": 0
    },
-   "generatedAt": "2026-10-07T00:44:48Z",
+   "generatedAt": "2026-10-09T17:52:34Z",
    "info": [],
    "nWarnings": 7,
    "nErrors": 0
@@ -400,11 +400,11 @@
     "PL/pl-es-meatm-b7490-ths_t: salto 8910.0 -> 9330.0 en 2009-06 (mediana previa 30)"
    ],
    "stats": {
-    "series": 898,
-    "points": 33535,
+    "series": 899,
+    "points": 33544,
     "lines": 0
    },
-   "generatedAt": "2026-10-07T10:33:36Z",
+   "generatedAt": "2026-10-09T17:56:35Z",
    "info": [],
    "nWarnings": 40,
    "nErrors": 0
@@ -446,7 +446,7 @@
     "points": 186197,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T13:42:06Z",
+   "generatedAt": "2026-10-09T18:26:56Z",
    "info": [],
    "nWarnings": 185,
    "nErrors": 0
@@ -488,7 +488,7 @@
     "points": 158575,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T13:42:06Z",
+   "generatedAt": "2026-10-09T18:26:56Z",
    "info": [],
    "nWarnings": 59,
    "nErrors": 0
