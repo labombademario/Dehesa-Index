@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Date: Fri, 09 Oct 2026 23:46:20 GMT
+Server: MAPA
+Strict-Transport-Security: max-age=31536000
+content-type: application/octet-stream
+content-disposition: attachment; filename="687a7bb1-ddf2-4cdd-8525-05cec40c6734.csv"
+cache-control: private, max-age=0
+vary: Cookie
+X-Frame-Options: SAMEORIGIN
+Transfer-Encoding: chunked
+
