@@ -1,0 +1,14 @@
+estaciones {'AK': 78, 'AZ': 23, 'CA': 36, 'CO': 118, 'ID': 87, 'MT': 96, 'NM': 29, 'NV': 58, 'OR': 82, 'UT': 141, 'WA': 79, 'WY': 90}
+pocos datos AK pctmedian 0
+pocos datos AZ pctmedian 0
+pocos datos CA pctmedian 0
+pocos datos CO pctmedian 0
+pocos datos ID pctmedian 0
+pocos datos MT pctmedian 0
+pocos datos NM pctmedian 0
+pocos datos NV pctmedian 0
+pocos datos OR pctmedian 0
+pocos datos UT pctmedian 0
+pocos datos WA pctmedian 0
+pocos datos WY pctmedian 0
+series 12
