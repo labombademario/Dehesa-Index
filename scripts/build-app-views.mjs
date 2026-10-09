@@ -222,6 +222,32 @@ for (const c of countries) {
   for (const g of groups) for (const sr of g.series) profiles[c.code].sourceNames[sr.sourceId] = (REG[sr.sourceId].short || REG[sr.sourceId].name || sr.sourceId);
 }
 
+// 7) Mapas de pais: contornos de vendor/*.js (Natural Earth, dominio publico) + metricas regionales de data/views/region-metrics.json,
+// con los mismos nombres y paletas que la web. La app baja el mapa de un pais al abrirlo.
+const sandbox = { window: {}, document: {}, navigator: {}, console, fetch: () => Promise.reject(new Error('no fetch')) };
+vm.createContext(sandbox);
+for (const f of fs.readdirSync(path.join(ROOT, 'vendor')).filter(x => /\.js$/.test(x) && x !== 'es-provinces.js')) vm.runInContext(fs.readFileSync(path.join(ROOT, 'vendor', f), 'utf8'), sandbox);
+vm.runInContext(fs.readFileSync(path.join(ROOT, 'js', 'region-names.js'), 'utf8'), sandbox);
+vm.runInContext(fs.readFileSync(path.join(ROOT, 'js', 'region-metrics.js'), 'utf8'), sandbox);
+const MAPVAR = { US: 'DEHESA_US_STATES', CA: 'DEHESA_CA_PROVINCES', AU: 'DEHESA_AU_STATES', ES: 'DEHESA_ES_CCAA', FR: 'DEHESA_FR_REGIONS', IT: 'DEHESA_IT_REGIONS', DE: 'DEHESA_DE_LAENDER',
+  NL: 'DEHESA_NL_PROVINCES', AT: 'DEHESA_AT_LAENDER', BE: 'DEHESA_BE_PROVINCES', DK: 'DEHESA_DK_REGIONS', PL: 'DEHESA_PL_VOIVODESHIPS' };
+const RM = exists('data/views/region-metrics.json') ? read('data/views/region-metrics.json') : { countries: {} };
+const maps = {};
+for (const [cc, v] of Object.entries(MAPVAR)) {
+  const g = sandbox.window[v], names = sandbox.window.DehesaRegionNames[cc] || {};
+  if (!g || !g.states) continue;
+  const regions = g.states.map(st => { const a = (names[st.id] || '').split('|'); return a.length === 4 ? { id: st.id, name: t4(a[1], a[0], a[2], a[3]), d: st.d } : null; });
+  if (regions.some(r => !r)) throw new Error('app-views: faltan nombres de region en ' + cc);
+  const metrics = [];
+  for (const m of sandbox.window.DehesaRegionMetrics.list(cc)) {
+    const cv = ((RM.countries || {})[cc] || {})[m.id];
+    if (!cv || !cv.vals || !Object.keys(cv.vals).length) continue;
+    const vals = {}; for (const [k, x] of Object.entries(cv.vals)) if (typeof x === 'number' && isFinite(x) && regions.some(r => r.id === k)) vals[k] = Math.round(x * 1000) / 1000;
+    if (!Object.keys(vals).length) continue;
+    metrics.push({ id: m.id, label: t4(m.label[1], m.label[0], m.label[2], m.label[3]), unit: m.unit.trim(), dec: m.dec == null ? 0 : m.dec, ramp: m.ramp.join('') === sandbox.window.DehesaRegionMetrics.list('US')[0].ramp.join('') ? 'warm' : 'green', period: cv.period || null, vals });
+  }
+  maps[cc] = { country: cc, viewBox: g.viewBox, regions, metrics };
+}
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
 fs.mkdirSync(OUT, { recursive: true });
 const gen = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
@@ -257,7 +283,17 @@ for (const [cc, body] of Object.entries(profiles)) {
   if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
   manifest.countries[cc] = { hash, bytes: fs.statSync(p).size };
 }
+const mdir = path.join(OUT, 'map'); fs.mkdirSync(mdir, { recursive: true });
+manifest.maps = {};
+for (const [cc, body] of Object.entries(maps)) {
+  const content = JSON.stringify(body);
+  const hash = crypto.createHash('sha256').update(content).digest('hex').slice(0, 16);
+  const p = path.join(mdir, cc + '.json');
+  let prev = null; try { prev = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) {}
+  if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
+  manifest.maps[cc] = { hash, bytes: fs.statSync(p).size };
+}
 const mp = path.join(OUT, 'manifest.json');
 let prevM = null; try { prevM = JSON.parse(fs.readFileSync(mp, 'utf8')); } catch (e) {}
-if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files) || JSON.stringify(prevM.countries) !== JSON.stringify(manifest.countries)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
+if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files) || JSON.stringify(prevM.countries) !== JSON.stringify(manifest.countries) || JSON.stringify(prevM.maps) !== JSON.stringify(manifest.maps)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
 console.log('app-views:', prices.length, 'precios ·', cal.length, 'publicaciones ·', news.length, 'noticias ·', countries.length, 'paises ·', sections.filter(s => s.figure).length + '/' + sections.length, 'secciones con dato ·', Object.values(manifest.files).reduce((a, f) => a + f.bytes, 0), 'bytes');

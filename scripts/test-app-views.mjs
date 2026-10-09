@@ -81,6 +81,20 @@ for (const [cc, m] of Object.entries(PC)) {
   }
 }
 ok(LT.n === 0 || LT.ok / LT.n >= 0.9, 'country profiles: solo ' + LT.ok + '/' + LT.n + ' etiquetas traducidas (falta anadir a data/app/labels-i18n.json)');
+// Mapas de pais (data/app/v1/map/<CC>.json)
+const MP = man.maps || {};
+ok(Object.keys(MP).length >= 10, 'maps: menos de 10 paises');
+for (const [cc, m] of Object.entries(MP)) {
+  const d = load('map/' + cc + '.json');
+  ok(d.hash === m.hash && d.country === cc, 'map ' + cc + ': hash o codigo');
+  ok(/^0 0 [\d.]+ [\d.]+$/.test(d.viewBox), 'map ' + cc + ': viewBox');
+  ok(d.regions.length >= 4, 'map ' + cc + ': pocas regiones');
+  const ids = new Set(d.regions.map(r => r.id)); ok(ids.size === d.regions.length, 'map ' + cc + ': ids repetidos');
+  d.regions.forEach(r => { four(r.name, 'map ' + cc + ' ' + r.id); ok(/^M[\d. -]+/.test(r.d) && r.d.length > 20, 'map ' + cc + ' ' + r.id + ': contorno'); });
+  ok(d.metrics.length > 0, 'map ' + cc + ': sin metricas');
+  d.metrics.forEach(mt => { four(mt.label, 'map ' + cc + ' ' + mt.id); ok(['green', 'warm'].includes(mt.ramp), 'map ' + cc + ' ' + mt.id + ': paleta');
+    ok(Object.keys(mt.vals).length > 0 && Object.keys(mt.vals).every(k => ids.has(k) && typeof mt.vals[k] === 'number'), 'map ' + cc + ' ' + mt.id + ': valores o claves de region'); });
+}
 const bytes = Object.values(man.files).reduce((a, f) => a + f.bytes, 0);
 ok(bytes < 400 * 1024, 'app views: mas de 400 KB (' + bytes + ')');
 console.log(`app views: ${checks} comprobaciones, ${fails} fallos`);
