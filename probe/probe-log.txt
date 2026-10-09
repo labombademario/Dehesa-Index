@@ -1,0 +1,61 @@
+FILE wp.item 220683
+wp.item 01	110101	Grapefruits
+wp.item 01	110228	Grapes
+wp.item 01	1102281	Table grapes
+wp.item 01	1102282	Raisin grapes
+wp.item 01	1102283	Wine grapes
+wp.item 01	1102284	Juice grapes
+wp.item 01	2204	Rye
+wp.item 01	220415	Rye
+wp.item 02	1102	Bread (white, wheat, rye, etc.), including frozen
+wp.item 02	110201	Bread (white, wheat, rye, etc.), including frozen
+wp.item 02	11020114	Other variety breads (rye, unleavened, raisin, potato, self-rising, salt-free, canned, etc.)
+wp.item 02	6104	Wines, brandy, and brandy spirits
+wp.item 02	610441	Wines, brandy, and brandy spirits
+wp.item 02	6104411	Wines, white, red & rose grape, and other fruit, 14 percent or less alcohol
+wp.item 02	61044111	Wines, white grape, 14 percent or less alcohol content
+wp.item 02	61044112	Wines, red grape, 14 percent or less alcohol content
+wp.item 02	61044113	Wines, rose grape & other fruits & berries, 14 percent or less alcohol
+wp.item 02	6104412	Wines, dessert, effervescent, and wine coolers
+wp.item 02	6104413	Other wines, brandy, and brandy spirits
+wp.item 02	930115	Swine feed, supplements, concentrates, and premixes
+wp.item 02	930118	Poultry, exc. chicken and turkey, and livestock, exc. cattle and swine, feed
+wp.item 03	830321	Rope, cordage, and twine
+wp.item 03	8303213	Cordage and twine, hard fiber
+wp.item 03	8303214	Cordage and twine, soft fiber, excluding cotton
+FILE pc.product 248864
+pc.product 311119	311119B	Complete swine feed, supplements, concentrates, and premixes
+pc.product 311119	311119N	Poultry, exc. chicken and turkey, and livestock, exc. cattle and swine, feed
+pc.product 311812	3118121	Bread (white, wheat, rye, etc.), including frozen
+pc.product 311812	31181218	Other variety breads (rye, unleavened, raisin, potato, self-rising, salt-free, canned, etc.)
+pc.product 31213-	31213-	Wineries
+pc.product 312130	312130	Wineries
+pc.product 312130	3121300	Wines, brandy, and brandy spirits
+pc.product 312130	31213008	Wines, white, red, and rose grape, and other fruits, 14 percent or less alcohol
+pc.product 312130	3121300811	Wines, white grape, 14 percent or less alcohol content
+pc.product 312130	3121300821	Wines, red grape, 14 percent or less alcohol content
+pc.product 312130	3121300831	Wines, rose grape and other fruits and berries, 14 percent or less alcohol
+pc.product 312130	31213009	Wines, dessert, effervescent, and wine coolers
+pc.product 312130	3121300B	All other wines, brandy, and brandy spirits
+pc.product 314994	314994	Rope, twine, tire cord, and tire fabric mills
+pc.product 314994	3149944	Rope, cordage, and twine
+pc.product 314994	31499441	Cordage and twine, hard fiber
+pc.product 314994	31499443	Cordage and twine, soft fiber, excluding cotton
+pc.product 4248--	4248--	Beer, wine, and distilled alcoholic beverage merchant wholesalers
+pc.product 42480-	42480-	Beer, wine, and distilled alcoholic beverage merchant wholesalers
+pc.product 424800	424800	Beer, wine, and distilled alcoholic beverage merchant wholesalers
+pc.product 424800	42480011	Wholesaling of beer, wine, and distilled alcoholic beverages
+pc.product 4453--	4453--	Beer, wine, and liquor retailers
+pc.product 44532-	44532-	Beer, wine, and liquor retailers
+pc.product 445320	445320	Beer, wine, and liquor retailers
+pc.product 445320	445320A	Beer, wine, and liquor retailer services, in-store retailing
+pc.product 445320	445320A1	Retailing of beer, wine, and liquor
+FILE wp.series 985162
+wp.series WPS012204                     	01	2204	S	198200	PPI Commodity data for Farm products-Rye, seasonally adjusted		1975	M01	1989	M12
+wp.series WPU012204                     	01	2204	U	198200	PPI Commodity data for Farm products-Rye, not seasonally adjusted		1971	M01	2024	M08
+wp.series WPU01220415                   	01	220415	U	198200	PPI Commodity data for Farm products-Rye, not seasonally adjusted		1947	M01	2024	M08
+wp.series WPU021102                     	02	1102	U	200606	PPI Commodity data for Processed foods and feeds-Bread (white, wheat, rye, etc.), including frozen, not seasonally adjusted		2006	M06	2026	M08
+wp.series WPU02110201                   	02	110201	U	200606	PPI Commodity data for Processed foods and feeds-Bread (white, wheat, rye, etc.), including frozen, not seasonally adjusted		2006	M06	2026	M08
+wp.series WPU0211020114                 	02	11020114	U	201112	PPI Commodity data for Processed foods and feeds-Other variety breads (rye, unleavened, raisin, potato, self-rising, salt-free, canned, etc.), not s
+wp.series WPU11680131                   	11	680131	U	201112	PPI Commodity data for Machinery and equipment-Commercial cooking equipment incl. ranges, deep-fat fryers, etc. except electric, not seasonally adjust
+wp.series WPU11680132                   	11	680132	U	201112	PPI Commodity data for Machinery and equipment-Commercial electric cooking equipment, incl. ranges, deep-fat fryers, etc., not seasonally adjusted		20
