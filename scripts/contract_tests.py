@@ -978,7 +978,10 @@ def views_news_feed(doc, errs, warns, stats):
 def views_news_product(doc, errs, warns, stats):
     """Vista corta de la ficha de producto: debe ser un subconjunto exacto de news-feed.json (mismo id, fecha y titular) y no pasar de PRODUCT_TOP por clave."""
     stats["series"] = len(doc["items"]); seen = set(); per = {}
-    try: feed = {a["id"]: a for a in json.loads((D / "views/news-feed.json").read_text(encoding="utf-8"))["items"]}
+    try:
+        fd = json.loads((D / "views/news-feed.json").read_text(encoding="utf-8"))
+        # solo se exige el subconjunto cuando las dos vistas salen de la misma ejecucion (mismo generatedAt); otra ejecucion del bot de noticias puede haber renovado el feed antes
+        feed = {a["id"]: a for a in fd["items"]} if fd.get("generatedAt") == doc.get("generatedAt") else None
     except Exception: feed = None
     for a in doc["items"]:
         if a["id"] in seen: errs.append("noticia duplicada %s" % a["id"])

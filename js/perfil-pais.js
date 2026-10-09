@@ -209,7 +209,7 @@
     var list = function (title, rows, dict, unit, div) {
       if (rows.length < 3) return ''; // con menos de tres partidas no hay podio
       return '<div style="flex:1;min-width:240px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(unit) + ', ' + rows[0].y + '</span></div>' +
-        rows.slice(0, 6).map(function (r, n) { return '<div style="display:flex;gap:8px;align-items:baseline;font-size:13px;margin:5px 0"><span style="width:22px;flex:none" role="img" title="' + esc(n < 3 ? w[6][n] : '') + '" aria-label="' + esc(n < 3 ? w[6][n] : '') + '">' + (n < 3 ? MEDALS[n] : '') + '</span><span style="flex:1">' + esc(dict[r.k][i]) + '</span><b style="font-variant-numeric:tabular-nums">' + x.nf(r.v / div, r.v / div < 100 ? 1 : 0) + '</b></div>'; }).join('') + '</div>';
+        rows.slice(0, 6).map(function (r, n) { return '<div style="display:flex;gap:8px;align-items:baseline;font-size:13px;margin:5px 0"><span style="width:22px;flex:none"' + (n < 3 ? ' role="img" title="' + esc(w[6][n]) + '" aria-label="' + esc(w[6][n]) + '"' : ' aria-hidden="true"') + '>' + (n < 3 ? MEDALS[n] : '') + '</span><span style="flex:1">' + esc(dict[r.k][i]) + '</span><b style="font-variant-numeric:tabular-nums">' + x.nf(r.v / div, r.v / div < 100 ? 1 : 0) + '</b></div>'; }).join('') + '</div>';
     };
     var a = list(w[2], T.crops, TOPC, w[4], 1000), b = list(w[3], T.animals, TOPA, w[5], 1000);
     if (!a && !b) return '';
