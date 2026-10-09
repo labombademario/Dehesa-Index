@@ -1,3 +1,3 @@
-enlaces ['/documents/1/Q226-creditconditions.xlsx', '/documents/2/Q226-fixedinterestrates.xlsx', '/documents/3/Q226-variableinterestrates.xlsx', '/documents/4/Q226-landvalues.xlsx']
+enlaces ['/documents/7620/Q226-creditconditions.xlsx', '/documents/7621/Q226-fixedinterestrates.xlsx', '/documents/7622/Q226-variableinterestrates.xlsx', '/documents/7623/Q226-landvalues.xlsx']
 ficheros ['creditconditions', 'fixedinterestrates', 'landvalues', 'variableinterestrates']
 series 47
