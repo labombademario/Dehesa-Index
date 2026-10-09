@@ -61,6 +61,7 @@ for (const [k, list] of Object.entries(acc)) {
 <link rel="alternate" hreflang="${lang === 'es' ? 'en' : 'es'}" href="${alt}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(seoDesc(desc))}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">${socialMeta(lang)}
 <link rel="icon" href="${up}assets/icon-192.png">
+<link rel="stylesheet" href="${up}css/fonts.css">
 <link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
@@ -100,4 +101,8 @@ fs.writeFileSync('sitemap.xml', sm);
 console.log('paginas SEO', n);
 await import('./build-product-pages.mjs');  // paginas de producto (precios/<producto>/) con el ultimo precio real
 await import('./build-region-pages.mjs');  // paginas por region (regiones/<pais>/<region>/) con las cifras reales de data/
+await import('./build-home-pages.mjs');  // portadas /en/, /fr/, /it/ con hreflang a la portada
+await import('./build-blog-pages.mjs');  // blog semanal: pagina estatica por edicion APROBADA (hoy ninguna)
+await import('./build-crosslinks.mjs');  // enlaces internos entre tipos de pagina (datos, hubs de region, productos, portada)
+await import('./seo-gate.mjs');  // puerta de calidad: noindex y fuera del sitemap las landings con pocos datos
 await import('./sitemap-lastmod.mjs');  // lastmod solo cuando cambia el contenido de la pagina

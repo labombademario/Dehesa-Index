@@ -8,7 +8,7 @@ import crypto from 'node:crypto';
 const SITE = 'https://dehesaindex.com', MF = 'sitemap-lastmod.json';
 const today = new Date().toISOString().slice(0, 10);
 let man = {}; try { man = JSON.parse(fs.readFileSync(MF, 'utf8')); } catch (e) { /* primera vez */ }
-const MARK = /(  <!-- (seo-pages|product-pages|region-pages):start -->\n)([\s\S]*?)(\n  <!-- \2:end -->)/g;
+const MARK = /(  <!-- (seo-pages|product-pages|region-pages|blog-pages|home-pages):start -->\n)([\s\S]*?)(\n  <!-- \2:end -->)/g;
 let sm = fs.readFileSync('sitemap.xml', 'utf8'), n = 0, changed = 0, next = {};
 sm = sm.replace(MARK, (all, a, name, body, z) => {
   const out = body.split('\n').map(line => {

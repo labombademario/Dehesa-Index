@@ -4,6 +4,7 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { NOINDEX, pageQuality, isThinLeaf } from './lib_seo.mjs';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://dehesaindex.com';
 const errs = []; let checks = 0;
@@ -44,11 +45,21 @@ for (const u of locs) {
 }
 // toda landing local debe estar en el sitemap
 for (const dir of ['datos', 'precios']) {
-  const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/'), rel + ': landing fuera del sitemap'); } };
+  const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/') || (await readFile(path.join(root, rel), 'utf8')).includes(NOINDEX), rel + ': landing fuera del sitemap y sin noindex'); } };
   await walk(dir);
 }
 for (const dir of ['regiones', 'en/regions', 'fr/regions', 'it/regioni']) {
-  const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/'), rel + ': pagina de region fuera del sitemap'); } };
+  const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/') || (await readFile(path.join(root, rel), 'utf8')).includes(NOINDEX), rel + ': pagina de region fuera del sitemap y sin noindex'); } };
+  await walk(dir);
+}
+
+// puerta de calidad (scripts/seo-gate.mjs): toda hoja generada con pocos datos lleva noindex y no esta en el sitemap; toda hoja con datos suficientes, al reves
+let gated = 0;
+for (const dir of ['datos', 'precios', 'regiones', 'en/regions', 'fr/regions', 'it/regioni', 'en/prices', 'fr/prix', 'it/prezzi']) {
+  const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) { await walk(rel); continue; } if (e.name !== 'index.html') continue;
+    const h = await readFile(path.join(root, rel), 'utf8'), u = ORIGIN + '/' + d + '/', q = pageQuality(h); if (q.rows === 0) continue;   // los hubs (sin tabla) se evaluan por sus enlaces
+    const thin = isThinLeaf(q, u), no = h.includes(NOINDEX), inSm = locs.includes(u);
+    ok(thin === no, rel + ': ' + (thin ? 'pocos datos (' + q.rows + ' filas, ' + q.words + ' palabras) pero sin noindex' : 'con datos suficientes pero con noindex')); ok(!(thin && inSm), rel + ': pocos datos y en el sitemap'); if (thin) gated++; } };
   await walk(dir);
 }
 // privacidad: toda pagina del sitemap declara la politica de referrer (al salir a otro sitio solo se envia el origen) y security.txt vigente
@@ -58,6 +69,6 @@ const exp = (sec.match(/^Expires:\s*(\S+)/m) || [])[1];
 ok(/^Contact:\s*mailto:\S+@\S+/m.test(sec), 'security.txt: falta Contact');
 ok(exp && new Date(exp) > new Date(Date.now() + 30 * 864e5), 'security.txt: Expires caduca en menos de 30 dias (renovar)');
 ok(/\.well-known/.test(await readFile(path.join(root, '_config.yml'), 'utf8').catch(() => '')), '_config.yml: no incluye .well-known (GitHub Pages lo ignoraria)');
-console.log('SEO QA: ' + checks + ' comprobaciones, ' + locs.length + ' URLs');
+console.log('SEO QA: ' + checks + ' comprobaciones, ' + locs.length + ' URLs, ' + gated + ' landings con noindex por pocos datos');
 if (errs.length) { console.error(errs.slice(0, 40).join('\n') + (errs.length > 40 ? '\n... +' + (errs.length - 40) : '')); process.exit(1); }
 console.log('SEO QA OK');

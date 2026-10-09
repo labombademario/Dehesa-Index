@@ -110,7 +110,6 @@
   <url><loc>https://dehesaindex.com/datos/de-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-income/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-inputs-a/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/datos/de-inputs-f/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-meat-regions/</loc><lastmod>2026-10-09</lastmod></url>
@@ -187,7 +186,6 @@
   <url><loc>https://dehesaindex.com/datos/en/de-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-income/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-inputs-a/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/datos/en/de-inputs-f/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-meat-regions/</loc><lastmod>2026-10-09</lastmod></url>
@@ -236,7 +234,6 @@
   <url><loc>https://dehesaindex.com/datos/en/eu-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/eu-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/eu-production/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/datos/en/eu-rates/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/eu-trade/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-crops/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-idx-pag/</loc><lastmod>2026-10-09</lastmod></url>
@@ -277,7 +274,6 @@
   <url><loc>https://dehesaindex.com/datos/en/pt-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/pt-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/pt-milk/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/datos/en/pt-organic/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/pt-partners/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/pt-prices-lv/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/pt-prices/</loc><lastmod>2026-10-09</lastmod></url>
@@ -313,7 +309,6 @@
   <url><loc>https://dehesaindex.com/datos/eu-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/eu-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/eu-production/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/datos/eu-rates/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/eu-trade/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-crops/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-idx-pag/</loc><lastmod>2026-10-09</lastmod></url>
@@ -354,7 +349,6 @@
   <url><loc>https://dehesaindex.com/datos/pt-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/pt-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/pt-milk/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/datos/pt-organic/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/pt-partners/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/pt-prices-lv/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/pt-prices/</loc><lastmod>2026-10-09</lastmod></url>
@@ -478,7 +472,6 @@
   <!-- region-pages:start -->
   <url><loc>https://dehesaindex.com/en/regions/australia/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/en/regions/australia/new-south-wales/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/en/regions/australia/northern-territory/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/en/regions/australia/queensland/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/en/regions/australia/south-australia/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/en/regions/australia/tasmania/</loc><lastmod>2026-10-09</lastmod></url>
@@ -701,7 +694,6 @@
   <url><loc>https://dehesaindex.com/fr/regions/australie/nouvelle-galles-du-sud/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/australie/queensland/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/australie/tasmanie/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/fr/regions/australie/territoire-du-nord/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/australie/victoria/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/autriche/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/autriche/basse-autriche/</loc><lastmod>2026-10-09</lastmod></url>
@@ -732,13 +724,11 @@
   <url><loc>https://dehesaindex.com/fr/regions/canada/manitoba/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/nouveau-brunswick/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/nouvelle-ecosse/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/fr/regions/canada/nunavut/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/ontario/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/quebec/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/saskatchewan/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/terre-neuve-et-labrador/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/territoires-du-nord-ouest/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/fr/regions/canada/yukon/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/danemark/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/danemark/danemark-du-sud/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/fr/regions/danemark/jutland-central/</loc><lastmod>2026-10-09</lastmod></url>
@@ -886,7 +876,6 @@
   <url><loc>https://dehesaindex.com/it/regioni/australia/nuovo-galles-del-sud/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/queensland/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/tasmania/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/it/regioni/australia/territorio-del-nord/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/victoria/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/it/regioni/austria/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/it/regioni/austria/alta-austria/</loc><lastmod>2026-10-09</lastmod></url>
@@ -1105,7 +1094,6 @@
   <url><loc>https://dehesaindex.com/regiones/australia/nueva-gales-del-sur/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/regiones/australia/queensland/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/regiones/australia/tasmania/</loc><lastmod>2026-10-09</lastmod></url>
-  <url><loc>https://dehesaindex.com/regiones/australia/territorio-del-norte/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/regiones/australia/victoria/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/regiones/austria/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/regiones/austria/alta-austria/</loc><lastmod>2026-10-09</lastmod></url>
@@ -1285,4 +1273,11 @@
   <url><loc>https://dehesaindex.com/regiones/polonia/subcarpacia/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/regiones/polonia/varmia-y-masuria/</loc><lastmod>2026-10-09</lastmod></url>
   <!-- region-pages:end -->
+  <!-- blog-pages:start -->
+  <!-- blog-pages:end -->
+  <!-- home-pages:start -->
+  <url><loc>https://dehesaindex.com/en/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/fr/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/it/</loc><lastmod>2026-10-09</lastmod></url>
+  <!-- home-pages:end -->
 </urlset>
