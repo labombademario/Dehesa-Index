@@ -248,6 +248,42 @@ for (const [cc, v] of Object.entries(MAPVAR)) {
   }
   maps[cc] = { country: cc, viewBox: g.viewBox, regions, metrics };
 }
+// 8) Datos por region (paises UE con data/eu-regions-XX.json): cuentas agrarias, cultivos, ganado, leche y explotaciones de cada region,
+// con las mismas etiquetas que region.js. La app baja el fichero del pais al abrir una region.
+function braceLit(src, name) {
+  const m = new RegExp('\\bvar ' + name + ' = \\{').exec(src); if (!m) throw new Error('app-views: no encuentro ' + name + ' en region.js');
+  let i = m.index + m[0].length - 1, depth = 0, j = i;
+  for (; j < src.length; j++) { if (src[j] === '{') depth++; else if (src[j] === '}') { depth--; if (depth === 0) break; } }
+  return vm.runInNewContext('(' + src.slice(i, j + 1) + ')');
+}
+const rsrc = fs.readFileSync(path.join(ROOT, 'js', 'region.js'), 'utf8');
+const EL = braceLit(rsrc, 'EL'), EC = braceLit(rsrc, 'EC'), EAN = braceLit(rsrc, 'EAN');
+const lab4 = a => t4(a[1], a[0], a[2], a[3]);
+const lastPt = a => { for (let i = (a || []).length - 1; i >= 0; i--) if (a[i][1] != null) return a[i]; return null; };
+const regionData = {}, DICT = {};
+for (const cc of ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL']) {
+  const f = 'data/eu-regions-' + cc.toLowerCase() + '.json';
+  if (!exists(f) || !maps[cc]) continue;
+  const d = read(f), units = d.units || {}, out = {}; for (const k of Object.keys(DICT)) delete DICT[k];
+  for (const reg of maps[cc].regions) {
+    const b = (d.regions || {})[reg.id]; if (!b) continue;
+    const rec = { eaa: [], crops: [], animals: [], milk: null, farms: null };
+    for (const k of Object.keys(b.eaa || {})) { const l = lastPt(b.eaa[k]); if (!l || !EL[k] || !(l[1] > 0 || k !== 'AM180000')) continue;
+      DICT[k] = lab4(EL[k]); rec.eaa.push({ k, period: String(l[0]), value: l[1], points: b.eaa[k].filter(x => x[1] != null).slice(-10) }); }
+    if (b.eaa && b.eaa.AM180000 && !(lastPt(b.eaa.AM180000) && lastPt(b.eaa.AM180000)[1] > 0)) rec.eaa = [];  // produccion 0 = sin dato (Bruselas-Capital)
+    rec.eaa.sort((x, y) => (x.k === 'AM180000' ? -1 : y.k === 'AM180000' ? 1 : y.value - x.value));
+    rec.eaa = rec.eaa.slice(0, 12);
+    for (const k of Object.keys(b.crops || {})) { const c = b.crops[k], la = lastPt(c.area), lp = lastPt(c.prod); if (!EC[k] || (!la && !lp)) continue;
+      DICT[k] = lab4(EC[k]); rec.crops.push({ k, area: la ? { period: String(la[0]), value: la[1], points: c.area.filter(x => x[1] != null).slice(-10) } : null, prod: lp ? { period: String(lp[0]), value: lp[1] } : null }); }
+    rec.crops.sort((x, y) => (x.k === 'UAA' ? -1 : y.k === 'UAA' ? 1 : ((y.area && y.area.value) || 0) - ((x.area && x.area.value) || 0)));
+    rec.crops = rec.crops.slice(0, 16);
+    for (const k of Object.keys(b.animals || {})) { const l = lastPt(b.animals[k]); if (l && EAN[k]) DICT[k] = lab4(EAN[k]); rec.animals.push({ k, period: String(l[0]), value: l[1], points: b.animals[k].filter(x => x[1] != null).slice(-10) }); }
+    const lm = lastPt(b.milk); if (lm) rec.milk = { period: String(lm[0]), value: lm[1], points: b.milk.filter(x => x[1] != null).slice(-10) };
+    const ft = b.farms && b.farms.TOTAL; if (ft) { const ys = Object.keys(ft).sort(); const y = ys[ys.length - 1]; if (y) rec.farms = Object.assign({ period: y }, ft[y]); }
+    if (rec.eaa.length || rec.crops.length || rec.animals.length || rec.milk || rec.farms) out[reg.id] = rec;
+  }
+  if (Object.keys(out).length) regionData[cc] = { country: cc, units, source: d.source || null, labels: Object.assign({}, DICT), regions: out };
+}
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
 fs.mkdirSync(OUT, { recursive: true });
 const gen = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
@@ -293,7 +329,17 @@ for (const [cc, body] of Object.entries(maps)) {
   if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
   manifest.maps[cc] = { hash, bytes: fs.statSync(p).size };
 }
+const rdir = path.join(OUT, 'region'); fs.mkdirSync(rdir, { recursive: true });
+manifest.regionData = {};
+for (const [cc, body] of Object.entries(regionData)) {
+  const content = JSON.stringify(body);
+  const hash = crypto.createHash('sha256').update(content).digest('hex').slice(0, 16);
+  const p = path.join(rdir, cc + '.json');
+  let prev = null; try { prev = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) {}
+  if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
+  manifest.regionData[cc] = { hash, bytes: fs.statSync(p).size };
+}
 const mp = path.join(OUT, 'manifest.json');
 let prevM = null; try { prevM = JSON.parse(fs.readFileSync(mp, 'utf8')); } catch (e) {}
-if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files) || JSON.stringify(prevM.countries) !== JSON.stringify(manifest.countries) || JSON.stringify(prevM.maps) !== JSON.stringify(manifest.maps)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
+if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files) || JSON.stringify(prevM.countries) !== JSON.stringify(manifest.countries) || JSON.stringify(prevM.maps) !== JSON.stringify(manifest.maps) || JSON.stringify(prevM.regionData) !== JSON.stringify(manifest.regionData)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
 console.log('app-views:', prices.length, 'precios ·', cal.length, 'publicaciones ·', news.length, 'noticias ·', countries.length, 'paises ·', sections.filter(s => s.figure).length + '/' + sections.length, 'secciones con dato ·', Object.values(manifest.files).reduce((a, f) => a + f.bytes, 0), 'bytes');

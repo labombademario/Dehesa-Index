@@ -95,6 +95,18 @@ for (const [cc, m] of Object.entries(MP)) {
   d.metrics.forEach(mt => { four(mt.label, 'map ' + cc + ' ' + mt.id); ok(['green', 'warm'].includes(mt.ramp), 'map ' + cc + ' ' + mt.id + ': paleta');
     ok(Object.keys(mt.vals).length > 0 && Object.keys(mt.vals).every(k => ids.has(k) && typeof mt.vals[k] === 'number'), 'map ' + cc + ' ' + mt.id + ': valores o claves de region'); });
 }
+// Datos por region (data/app/v1/region/<CC>.json)
+for (const [cc, m] of Object.entries(man.regionData || {})) {
+  const d = load('region/' + cc + '.json'), mp = load('map/' + cc + '.json'), ids = new Set(mp.regions.map(r => r.id));
+  ok(d.hash === m.hash && d.country === cc, 'region ' + cc + ': hash o codigo');
+  ok(m.bytes < 250 * 1024, 'region ' + cc + ': fichero de mas de 250 KB (' + m.bytes + ')');
+  ok(Object.keys(d.regions).length >= 3 && Object.keys(d.regions).every(k => ids.has(k)), 'region ' + cc + ': claves que no son regiones del mapa');
+  for (const [rid, r] of Object.entries(d.regions)) {
+    for (const x of [...r.eaa, ...r.crops, ...r.animals]) four(d.labels[x.k], 'region ' + cc + ' ' + rid + ' ' + x.k);
+    for (const x of r.eaa) ok(typeof x.value === 'number' && /^\d{4}$/.test(x.period), 'region ' + cc + ' ' + rid + ' ' + x.k + ': valor o periodo');
+    if (rid === 'BRU') ok(!r.eaa.some(x => x.k === 'AM180000'), 'region BE BRU: produccion 0 debe quedar como sin dato');
+  }
+}
 const bytes = Object.values(man.files).reduce((a, f) => a + f.bytes, 0);
 ok(bytes < 400 * 1024, 'app views: mas de 400 KB (' + bytes + ')');
 console.log(`app views: ${checks} comprobaciones, ${fails} fallos`);
