@@ -1,23 +1,24 @@
-import csv, io, json, urllib.request, collections
+import json, urllib.request, urllib.parse
 from pathlib import Path
-O = Path('probe_es6'); O.mkdir(exist_ok=True)
+O = Path('probe_es7'); O.mkdir(exist_ok=True)
 UA = {'User-Agent': 'Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)'}
+E = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
 def get(u):
-    return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=180).read().decode('utf8', 'replace')
-API = 'https://servicio.mapa.gob.es/ckan/api/3/action/package_show?id='
-BASE = 'https://servicio.mapa.gob.es/ckan/datastore/dump/'
-out = {}
-for pkg in ('esmapaindicespreciosindicepercibido',):
-    d = json.loads(get(API + pkg))['result']
-    rid = [r['id'] for r in d['resources'] if r.get('datastore_active')][0]
-    rows = list(csv.DictReader(io.StringIO(get(BASE + rid))))
-    c = collections.OrderedDict()
-    for r in rows:
-        k = (r['categoria'], r['grupo'], r['subgrupo'], r['producto'])
-        e = c.setdefault(k, {'n': 0, 'first': '9999-99', 'last': '0000-00', 'bases': set(), 'nonnull': 0})
-        e['n'] += 1; p = '%s-%02d' % (r['anio'], int(r['mes'])); e['first'] = min(e['first'], p); e['last'] = max(e['last'], p); e['bases'].add(r['anio_base'])
-        if r['indice_mensual_producto'] not in ('', None, 'NA'): e['nonnull'] += 1
-    out[pkg] = [dict(zip(('categoria', 'grupo', 'subgrupo', 'producto'), k), n=v['n'], first=v['first'], last=v['last'], bases=sorted(v['bases']), nonnull=v['nonnull']) for k, v in c.items()]
-    (O / (pkg + '.csv')).write_text(''.join(l for l in io.StringIO(get(BASE + rid)).readlines()[:1] ) , encoding='utf8')
-(O / 'products.json').write_text(json.dumps(out, ensure_ascii=False, indent=0))
+    try: return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=180).read().decode('utf8', 'replace')
+    except Exception as e: return 'ERR %s' % e
+res = {}
+for ds, q in (('apri_pi_outq', 'geo=ES&unit=I20&p_adj=NI&lastTimePeriod=1'), ('apri_pi20_outa', 'geo=ES&lastTimePeriod=1'), ('apri_pi15_outa', 'geo=ES&lastTimePeriod=1'), ('apri_pi10_outa', 'geo=ES&lastTimePeriod=1'),
+              ('apri_pi_outm', 'geo=ES&lastTimePeriod=1')):
+    r = get(E + ds + '?format=JSON&lang=EN&' + q)
+    try:
+        j = json.loads(r); dim = 'am_item' if 'am_item' in j['dimension'] else [k for k in j['dimension'] if k not in ('freq', 'unit', 'geo', 'time', 'p_adj', 'currency')][0]
+        idx = j['dimension'][dim]['category']; ids, sizes = j['id'], j['size']
+        have = set()
+        for p in j['value']:
+            pos = int(p); d = []
+            for s in reversed(sizes): d.append(pos % s); pos //= s
+            d.reverse(); have.add(list(idx['index'])[d[ids.index(dim)]])
+        res[ds] = {k: idx['label'][k] for k in sorted(have)}
+    except Exception as e: res[ds] = 'ERR %s %s' % (e, r[:200])
+Path(O / 'pi.json').write_text(json.dumps(res, ensure_ascii=False, indent=1))
 print('ok')
