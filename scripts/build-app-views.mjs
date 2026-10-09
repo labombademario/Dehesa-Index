@@ -179,6 +179,47 @@ sec('observatorio', 'data', t4('Observatorio de datos', 'Data observatory', 'Obs
 sec('metodologia', 'data', t4('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), 'metodologia.html');
 sec('informacion', 'data', t4('Información', 'About', 'Informations', 'Informazioni'), 'informacion.html');
 
+// 6) Ficha de pais: indicadores del catalogo unificado de la web (data/catalog + data/series), una vista pequena por pais que la app baja al abrirlo.
+// Solo reordena y recorta lo ya publicado: ninguna cifra nueva, cada serie conserva su sourceId.
+const cdSrc = fs.readFileSync(path.join(ROOT, 'js', 'country-data.js'), 'utf8');
+const GL = JSON.parse(/var L = (\{.*?\});\n/s.exec(cdSrc)[1]);
+const GORDER = vm.runInNewContext(/var GROUPS = (\[.*?\]);/s.exec(cdSrc)[1]);
+const PER_GROUP = 8, MAX_POINTS = 24;
+const profiles = {};
+const catMan = exists('data/catalog/manifest.json') ? read('data/catalog/manifest.json') : { countries: {} };
+for (const c of countries) {
+  const me = catMan.countries[c.code];
+  if (!me || !me.summary || !exists('data/catalog/' + c.code + '.json')) continue;
+  const cat = read('data/catalog/' + c.code + '.json');
+  const byGroup = {};
+  for (const sr of cat.series) {
+    if (!GL.es[sr.group] || sr.group === 'countries' || sr.group === 'freq' || sr.latest == null || !sr.latestPeriod || !sr.file) continue;
+    if (!REG[canon(sr.sourceId)] || REG[canon(sr.sourceId)].status !== 'VERIFIED') continue;
+    (byGroup[sr.group] = byGroup[sr.group] || []).push(sr);
+  }
+  const cache = {};
+  const chunk = f => cache[f] || (cache[f] = exists('data/' + f) ? new Map((read('data/' + f).series || []).map(x => [x.id, x])) : new Map());
+  const groups = [];
+  const gids = GORDER.filter(g => byGroup[g]).concat(Object.keys(byGroup).filter(g => !GORDER.includes(g)));
+  for (const g of gids) {
+    const seen = new Set(), pick = [];
+    // lo mas reciente primero; a igual fecha, la serie con mas historia; sin repetir etiqueta
+    for (const sr of byGroup[g].sort((a, b) => (b.latestPeriod > a.latestPeriod ? 1 : b.latestPeriod < a.latestPeriod ? -1 : (b.n || 0) - (a.n || 0)))) {
+      if (seen.has(sr.label)) continue; seen.add(sr.label);
+      const full = chunk(sr.file).get(sr.id);
+      const pts = full && Array.isArray(full.points) ? full.points.filter(x => typeof x[1] === 'number').slice(-MAX_POINTS) : [];
+      pick.push({ id: sr.id, label: sr.label, unit: sr.unit, frequency: sr.freq, latest: sr.latest, period: sr.latestPeriod, changePct: typeof sr.changePct === 'number' ? Math.round(sr.changePct * 100) / 100 : null,
+        sourceId: canon(sr.sourceId), points: pts });
+      if (pick.length >= PER_GROUP) break;
+    }
+    if (pick.length) groups.push({ id: g, title: t4(GL.es[g], GL.en[g], GL.fr[g], GL.it[g]), total: byGroup[g].length, series: pick });
+  }
+  if (!groups.length) continue;
+  profiles[c.code] = { country: c.code, seriesTotal: me.n || cat.series.length, latestPeriod: me.summary.latestPeriod || null, firstPeriod: me.summary.first || null,
+    sources: (me.summary.sources || []).slice(0, 6), freq: t4(...['es', 'en', 'fr', 'it'].map(l => null)), groups };
+  delete profiles[c.code].freq;
+}
+
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
 fs.mkdirSync(OUT, { recursive: true });
 const gen = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
@@ -192,7 +233,17 @@ for (const [name, body] of Object.entries(files)) {
   if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
   manifest.files[name] = { hash, bytes: fs.statSync(p).size };
 }
+const cdir = path.join(OUT, 'country'); fs.mkdirSync(cdir, { recursive: true });
+manifest.countries = {};
+for (const [cc, body] of Object.entries(profiles)) {
+  const content = JSON.stringify(body);
+  const hash = crypto.createHash('sha256').update(content).digest('hex').slice(0, 16);
+  const p = path.join(cdir, cc + '.json');
+  let prev = null; try { prev = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) {}
+  if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
+  manifest.countries[cc] = { hash, bytes: fs.statSync(p).size };
+}
 const mp = path.join(OUT, 'manifest.json');
 let prevM = null; try { prevM = JSON.parse(fs.readFileSync(mp, 'utf8')); } catch (e) {}
-if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
+if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files) || JSON.stringify(prevM.countries) !== JSON.stringify(manifest.countries)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
 console.log('app-views:', prices.length, 'precios ·', cal.length, 'publicaciones ·', news.length, 'noticias ·', countries.length, 'paises ·', sections.filter(s => s.figure).length + '/' + sections.length, 'secciones con dato ·', Object.values(manifest.files).reduce((a, f) => a + f.bytes, 0), 'bytes');

@@ -47,6 +47,28 @@ const S = load('sections.json').sections;
 ok(S.length >= 15, 'sections: menos de 15');
 S.forEach(s => { four(s.name, 'section ' + s.id); ok(/^https:\/\/dehesaindex\.com\//.test(s.url), 'section ' + s.id + ': url');
   if (s.figure) { four(s.figure.label, 'section ' + s.id + '.label'); ok(s.figure.sourceId === 'dehesa' || (reg[s.figure.sourceId] && reg[s.figure.sourceId].status === 'VERIFIED'), 'section ' + s.id + ': fuente ' + s.figure.sourceId); } });
+// Fichas de pais (data/app/v1/country/<CC>.json): se bajan una a una al abrir el pais, no cuentan en el tope de arriba
+const PC = man.countries || {};
+ok(Object.keys(PC).length >= 10, 'country profiles: menos de 10');
+for (const [cc, m] of Object.entries(PC)) {
+  const d = load('country/' + cc + '.json');
+  ok(d.hash === m.hash && d.country === cc, 'country ' + cc + ': hash o codigo distinto del manifiesto');
+  ok(C.some(c => c.code === cc), 'country ' + cc + ': no esta en countries.json');
+  ok(m.bytes < 150 * 1024, 'country ' + cc + ': ficha de mas de 150 KB (' + m.bytes + ')');
+  ok(Array.isArray(d.groups) && d.groups.length > 0, 'country ' + cc + ': sin grupos');
+  const sid = new Set();
+  for (const g of d.groups) {
+    four(g.title, 'country ' + cc + ' grupo ' + g.id);
+    ok(g.series.length > 0 && g.series.length <= 8, 'country ' + cc + ' ' + g.id + ': numero de series');
+    for (const sr of g.series) {
+      ok(!sid.has(sr.id), 'country ' + cc + ': serie repetida ' + sr.id); sid.add(sr.id);
+      ok(sr.label && sr.unit && typeof sr.latest === 'number' && isFinite(sr.latest), 'country ' + cc + ' ' + sr.id + ': etiqueta, unidad o valor');
+      ok(typeof sr.period === 'string' && /^\d{4}/.test(sr.period), 'country ' + cc + ' ' + sr.id + ': periodo');
+      ok(reg[sr.sourceId] && reg[sr.sourceId].status === 'VERIFIED', 'country ' + cc + ' ' + sr.id + ': fuente ' + sr.sourceId);
+      ok(Array.isArray(sr.points) && sr.points.every(x => typeof x[0] === 'string' && typeof x[1] === 'number'), 'country ' + cc + ' ' + sr.id + ': puntos');
+    }
+  }
+}
 const bytes = Object.values(man.files).reduce((a, f) => a + f.bytes, 0);
 ok(bytes < 400 * 1024, 'app views: mas de 400 KB (' + bytes + ')');
 console.log(`app views: ${checks} comprobaciones, ${fails} fallos`);
