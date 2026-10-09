@@ -110,6 +110,9 @@ jobs:
       - name: Data publisher under simultaneous pushes (5 parallel clones, shared registries merged without losing entries, real conflict fails red; no network)
         run: python3 scripts/test-publish-data.py
 
+      - name: RECAN keeps published years when MAPA's resource carries only the latest one (real header, history preserved cell by cell, short dump refused; no network)
+        run: python3 scripts/test-recan.py
+
       - name: Watchdog for queue-cancelled data workflows (decision rules on fixtures; no network)
         run: python3 scripts/test-rerun-cancelled.py
 
