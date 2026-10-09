@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-09T22:40:37.744Z",
+  "generatedAt": "2026-10-09T23:26:50.473Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -7616,17 +7616,17 @@
       "product": "avena_pienso_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Avena forrajera, oferta de elevador (Alberta centro, entregado). Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
-      "value": 254,
+      "value": 250,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": -0.7231,
+      "changePct": -1.5748,
       "province": "Alberta",
       "history": [
         {
@@ -8028,9 +8028,14 @@
           "period": "10-02",
           "year": 2026,
           "value": 254
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 250
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_cereales_avena_ca",
@@ -17407,17 +17412,17 @@
       "product": "canola_elevador",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Canola, oferta de elevador (Alberta centro, entregado). Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
-      "value": 766.97,
+      "value": 773.63,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": -1.2654,
+      "changePct": 0.8684,
       "province": "Alberta",
       "history": [
         {
@@ -17864,26 +17869,31 @@
           "period": "10-02",
           "year": 2026,
           "value": 766.97
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 773.63
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_cereales_cebada_pienso_ab_ca",
       "product": "cebada_pienso_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Cebada forrajera, oferta de elevador (Alberta centro, entregado). Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
-      "value": 249.96,
+      "value": 250.72,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": -0.5134,
+      "changePct": 0.304,
       "province": "Alberta",
       "history": [
         {
@@ -18330,9 +18340,14 @@
           "period": "10-02",
           "year": 2026,
           "value": 249.96
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 250.72
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_cereales_cebada_ca",
@@ -29284,17 +29299,17 @@
       "product": "cerdo_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Cerdo, precio al contado de Alberta, índice 100, por kg de canal. Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
-      "value": 2.131,
+      "value": 2.109,
       "currency": "CAD",
       "unit": "kg",
       "frequency": "weekly",
-      "changePct": -0.699,
+      "changePct": -1.0324,
       "province": "Alberta",
       "history": [
         {
@@ -29711,9 +29726,14 @@
           "period": "10-02",
           "year": 2026,
           "value": 2.131
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 2.109
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_porcino_cerdo_ca",
@@ -85486,17 +85506,17 @@
       "product": "guisante_verde_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Guisante verde n.º 2 o mejor, oferta al contado (Alberta). Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
-      "value": 312.32,
+      "value": 339.88,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": -6.8508,
+      "changePct": 8.8243,
       "province": "Alberta",
       "history": [
         {
@@ -85943,9 +85963,14 @@
           "period": "10-02",
           "year": 2026,
           "value": 312.32
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 339.88
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_pienso_harina_soja_eu",
@@ -111587,17 +111612,17 @@
       "product": "lenteja_laird_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Lenteja Laird n.º 1, oferta al contado (Alberta). Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
       "value": 633.49,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": 5.2939,
+      "changePct": 0,
       "province": "Alberta",
       "history": [
         {
@@ -112044,9 +112069,14 @@
           "period": "10-02",
           "year": 2026,
           "value": 633.49
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 633.49
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_cereales_lenteja_ca",
@@ -130285,17 +130315,17 @@
       "product": "novillo_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Novillos, ventas directas de Alberta, precio medio en vivo. Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
-      "value": 298.35,
+      "value": 298.37,
       "currency": "CAD",
       "unit": "cwt",
       "frequency": "weekly",
-      "changePct": 1.6698,
+      "changePct": 0.0067,
       "province": "Alberta",
       "history": [
         {
@@ -130727,9 +130757,14 @@
           "period": "10-02",
           "year": 2026,
           "value": 298.35
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 298.37
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_aceite_oliva_eu",
@@ -172204,17 +172239,17 @@
       "product": "trigo_cwrs_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Trigo CWRS n.º 1/2, oferta media de elevador (Alberta). Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
-      "value": 321.39,
+      "value": 326.84,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": -0.8606,
+      "changePct": 1.6958,
       "province": "Alberta",
       "history": [
         {
@@ -172656,19 +172691,24 @@
           "period": "10-02",
           "year": 2026,
           "value": 321.39
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 326.84
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_cereales_trigo_pienso_ab_ca",
       "product": "trigo_pienso_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-04T02:50:23Z",
+      "verifiedAt": "2026-10-09T23:26:50Z",
       "comparability": "directional",
       "methodology": "Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta): Trigo forrajero, oferta de elevador (Alberta centro, entregado). Cifra tomada del informe semanal en PDF de la fecha indicada; las ofertas de elevador y de compradores son precios ofrecidos, no operaciones cerradas.",
       "value": 234.4,
@@ -173122,9 +173162,14 @@
           "period": "10-02",
           "year": 2026,
           "value": 234.4
+        },
+        {
+          "period": "10-09",
+          "year": 2026,
+          "value": 234.4
         }
       ],
-      "snapshotDate": "2026-10-04"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_cereales_trigo_ca",
