@@ -23,6 +23,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add probe/probe-log.txt probe/probe-kc.txt probe/*.xlsx data/us-nass-extra-stats.json data/us-nass-extra-log.txt data/us-climate-stats.json data/us-climate-log.txt
+          git add -A probe data
           git commit -qm "probe log" || exit 0
           git pull -q --rebase origin research/probe-usgaps && git push origin HEAD:research/probe-usgaps
