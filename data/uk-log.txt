@@ -1,14 +1,14 @@
 sacrificio: 26 series; publicado 2026-09-10
 FBI: 10 series; publicado 2026-09-08
 censo ganado: 7 series; publicado 2026-10-02
-cereales: 8 series; publicado 2026-01-20
+cereales: 8 series; publicado 2026-10-08
 omitida (sin datos recientes): uk-egg-price-barn 2005-Q4
 omitida (sin datos recientes): uk-egg-price-organic -
 huevos: 29 series; publicado 2026-07-30
 omitida (sin datos recientes): uk-poultry-meat-production-turkeys 2021-12
 omitida (sin datos recientes): uk-poultry-meat-production-ducks 2021-12
 aves: 12 series; publicado 2026-09-17
-cereales por región: 222 series; publicado 2026-01-20
+cereales por región: 222 series; publicado 2026-10-08
 omitida (sin datos recientes): prod-milk-powders
 leche: 12 series; publicado 2026-10-01
 lácteos: 21 series; publicado 2026-10-01
