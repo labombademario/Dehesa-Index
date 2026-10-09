@@ -586,6 +586,17 @@ sources:
     data: [spain-hicp-stats.json]
     log: spain-hicp-log.txt
     message: Índices de precios de consumo de mantequilla y queso en España (Eurostat, IPCA)
+  - id: spain-oilseeds
+    name: Update Spain annual oilseed balance sheets (MAPA)
+    cron: ['40 7 * * 4']
+    script: scripts/update-spain-oilseeds.py
+    pre: ['bash scripts/trust-fnmt.sh', 'sudo apt-get install -y -q poppler-utils >/dev/null']
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    data: [spain-oilseeds-stats.json]
+    log: spain-oilseeds-log.txt
+    message: Balances anuales de oleaginosas en España (MAPA)
   - id: fx-history
     name: Update historical exchange rates (ECB)
     cron: ['20 8 4 * *']

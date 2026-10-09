@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T19:45:10Z",
+ "generatedAt": "2026-10-09T19:51:35Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -3367,7 +3367,7 @@
    "country": "ES",
    "scope": "integrated",
    "institution": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
-   "dataset": "Ya integrada (242 series en el catalogo unificado)",
+   "dataset": "Ya integrada (269 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -3396,9 +3396,11 @@
     "input_price",
     "price",
     "price_index",
-    "stocks"
+    "production",
+    "stocks",
+    "trade"
    ],
-   "frequency": "monthly",
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,

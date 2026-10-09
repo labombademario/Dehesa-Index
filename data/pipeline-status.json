@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T19:32:00Z",
+ "generatedAt": "2026-10-09T19:49:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 103,
   "late": 2,
   "error": 5,
-  "not_run": 2,
-  "unknown": 2
+  "not_run": 4,
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "fb9d96e3",
-   "conclusion": "failure",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3cfbdf02-f9c6-4996-91ee-d7c239ed03d9",
-   "completedAt": "2026-10-09T18:34:45Z"
+   "sha": "3e0453cb",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3ed228e3-647d-4f29-94e8-04e2d8958102",
+   "completedAt": "2026-10-09T19:46:52Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -2268,7 +2268,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-09T18:30:54Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2276,18 +2276,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/catalog"
@@ -2300,7 +2300,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/products"
@@ -2311,30 +2311,30 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-09T18:31:20Z"
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2640,7 +2640,8 @@
    "nextRun": "2026-10-18T09:40:00Z",
    "files": [
     {
-     "path": "data/spain-hicp-stats.json"
+     "path": "data/spain-hicp-stats.json",
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/revisions.json",
@@ -2649,7 +2650,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 408.0
   },
   {
@@ -2723,6 +2724,27 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-spain-oilseeds.yml",
+   "name": "Update Spain annual oilseed balance sheets (MAPA)",
+   "crons": [
+    "40 7 * * 4"
+   ],
+   "nextRun": "2026-10-15T07:40:00Z",
+   "files": [
+    {
+     "path": "data/spain-oilseeds-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-09T17:52:36Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-spain-olive.yml",
    "name": "Update Spain olive sector balance and oil forecast (MAPA)",
    "crons": [
@@ -2766,7 +2788,8 @@
    "nextRun": "2026-10-13T09:35:00Z",
    "files": [
     {
-     "path": "data/spain-siega-stats.json"
+     "path": "data/spain-siega-stats.json",
+     "lastChange": "2026-10-09T19:45:55Z"
     },
     {
      "path": "data/revisions.json",
@@ -2775,7 +2798,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {

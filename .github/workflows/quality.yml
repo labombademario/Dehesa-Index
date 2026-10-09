@@ -107,6 +107,9 @@ jobs:
       - name: Spain monthly stocks (MAPA SIEGA public report, Power BI response decoder on real saved responses, kilotonne conversion, refusal of paginated/negative/duplicate data, unlabelled series dropped) and HICP butter/cheese parser; no network
         run: python3 scripts/test-spain-siega.py
 
+      - name: Spain annual oilseed balance sheets (MAPA PDF parser on real pdftotext extracts, both tables and row orders, identities, refusal of corrupted tables, link filter, series unit and grouping; no network)
+        run: python3 scripts/test-spain-oilseeds.py
+
       - name: Spain olive sector balance and oil forecast (MAPA PDF parser on real pdftotext extracts, both layouts, UE split, forecast by region sums to the national total; no network)
         run: python3 scripts/test-spain-olive.py
 

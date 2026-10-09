@@ -3198,6 +3198,12 @@
     "Eurostat": "eurostat"
    },
    "notes": "Indices de precios de consumo (IPCA/HICP, ECOICOP v2, 2025=100) de mantequilla y queso para Espana, tal como los publica Eurostat (prc_hicp_minr); scripts/update-spain-hicp.py."
+  },
+  "data/spain-oilseeds-stats.json": {
+   "byCountry": {
+    "ES": "mapa_es"
+   },
+   "notes": "Balances anuales de colza, soja y girasol y de sus tortas/harinas (importaciones, exportaciones, consumo interno, existencias finales y produccion utilizable) del PDF «Balance oleaginosas en España» del MAPA, en miles de toneladas sin otro cambio; la ultima campaña es estimacion del MAPA; scripts/update-spain-oilseeds.py."
   }
  },
  "derived": [
