@@ -1,0 +1,44 @@
+{
+ "n": 555,
+ "hits": {
+  "CP0111": "Cereals and cereal products (ND)",
+  "CP01111": "Cereals (ND)",
+  "CP01112": "Flour of cereals (ND)",
+  "CP01113": "Bread and bakery products (ND)",
+  "CP011131": "Bread",
+  "CP01114": "Breakfast cereals (ND)",
+  "CP01119": "Other milled cereal and grain products (ND)",
+  "CP0114": "Milk, other dairy products and eggs (ND)",
+  "CP01141": "Raw and whole milk (ND)",
+  "CP01142": "Skimmed milk (ND)",
+  "CP01143": "Other milk and cream (ND)",
+  "CP01144": "Non-animal milk (ND)",
+  "CP01145": "Cheese (ND)",
+  "CP01147": "Milk-based dessert and beverages (ND)",
+  "CP01148": "Eggs (ND)",
+  "CP01149": "Other dairy products (ND)",
+  "CP0115": "Oils and fats (ND)",
+  "CP01151": "Vegetable oils (ND)",
+  "CP011513": "Olive oil",
+  "CP01152": "Butter and other oils and fats derived from milk (ND)",
+  "CP01153": "Margarine and similar preparations (ND)",
+  "CP01159": "Other animal oils and fats (ND)",
+  "CP01184": "Nut purées, nut butters and nut pastes (ND)",
+  "AP": "Administered prices",
+  "AP_NRG": "Administered prices - energy",
+  "AP_X_NRG": "Administered prices excluding energy",
+  "AP_X_NRG_FOOD": "Administered prices excluding energy and food",
+  "AP_NRG_FOOD": "Administered prices - energy and food",
+  "APF": "Fully administered prices",
+  "APM": "Mainly administered prices",
+  "TOT_X_AP": "Overall index excluding administered prices",
+  "TOT_X_APF": "Overall index excluding fully administered prices",
+  "TOT_X_APM": "Overall index excluding mainly administered prices"
+ },
+ "time": [
+  "2026-09"
+ ],
+ "unit": {
+  "I25": "Index, 2025=100"
+ }
+}
