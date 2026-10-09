@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T13:48:52Z",
+ "generatedAt": "2026-10-09T14:48:50Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 104,
+  "total": 107,
   "byStatus": {
-   "ACTIVE": 74,
+   "ACTIVE": 77,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3323,6 +3323,45 @@
    ]
   },
   {
+   "sourceId": "kansas_city_fed",
+   "registryId": "kansas_city_fed",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District)",
+   "dataset": "Ya integrada (47 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "quarterly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "KCFED-OWNER-DECISION",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Federal Reserve Bank of Kansas City, Agricultural Credit Survey",
+   "lastChecked": "2026-10-09",
+   "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "mapa_es",
    "registryId": "mapa_es",
    "country": "ES",
@@ -3485,6 +3524,47 @@
    "derivatives": "yes",
    "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "noaa_ncei",
+   "registryId": "noaa_ncei",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv)",
+   "dataset": "Ya integrada (149 series en el catalogo unificado)",
+   "products": [
+    "rice"
+   ],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: NOAA National Centers for Environmental Information (NCEI), Climate at a Glance",
+   "lastChecked": "2026-10-09",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
@@ -4470,7 +4550,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "dataset": "Ya integrada (270 series en el catalogo unificado)",
+   "dataset": "Ya integrada (470 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -4513,6 +4593,47 @@
    "derivatives": "yes",
    "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_nrcs",
+   "registryId": "usda_nrcs",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API)",
+   "dataset": "Ya integrada (12 series en el catalogo unificado)",
+   "products": [
+    "rice"
+   ],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: USDA Natural Resources Conservation Service (NRCS), SNOTEL network",
+   "lastChecked": "2026-10-09",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
