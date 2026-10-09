@@ -1,0 +1,58 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - PAC Alemania: importes por unidad (Bundesanzeiger y GAPDZV)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "country",
+  "kind",
+  "years",
+  "lastActualYear",
+  "sources",
+  "documents",
+  "items",
+  "ecoAllocations",
+  "verifiedAt"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "country": {
+   "enum": [
+    "DE"
+   ]
+  },
+  "kind": {
+   "enum": [
+    "OFFICIAL_UNIT_AMOUNTS"
+   ]
+  },
+  "years": {
+   "type": "array",
+   "minItems": 4
+  },
+  "lastActualYear": {
+   "type": "integer"
+  },
+  "sources": {
+   "type": "array",
+   "minItems": 2
+  },
+  "documents": {
+   "type": "array",
+   "minItems": 7
+  },
+  "items": {
+   "type": "array",
+   "minItems": 15
+  },
+  "ecoAllocations": {
+   "type": "object"
+  },
+  "verifiedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  }
+ }
+}

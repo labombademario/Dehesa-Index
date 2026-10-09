@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T00:44:08Z",
+ "generatedAt": "2026-10-09T01:19:17Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 101,
+  "total": 103,
   "byStatus": {
-   "ACTIVE": 71,
+   "ACTIVE": 73,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1877,6 +1877,45 @@
    ]
   },
   {
+   "sourceId": "bundesanzeiger",
+   "registryId": "bundesanzeiger",
+   "country": "DE",
+   "scope": "integrated",
+   "institution": "Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Quelle: Bundesanzeiger, amtlicher Teil, Bekanntmachung der tatsächlichen Einheitsbeträge (BAnz AT 08.12.2023 B5, BAnz AT 29.11.2024 B3, BAnz AT 01.12.2025 B6). Auszug.",
+   "lastChecked": "2026-10-08",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "cbs_nl",
    "registryId": "cbs_nl",
    "country": "NL",
@@ -2839,6 +2878,45 @@
    "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
    "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "gesetze_im_internet",
+   "registryId": "gesetze_im_internet",
+   "country": "DE",
+   "scope": "integrated",
+   "institution": "Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3, 4, 6 und 7. Auszug.",
+   "lastChecked": "2026-10-08",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

@@ -2804,6 +2804,35 @@ def france_cereobs(doc, errs, warns, stats):
     stats["france-cereobs filas"] = n
 
 
+def cap_de_amounts(doc, errs, warns, stats):
+    """PAC Alemania: importes positivos con unidad, documentos declarados, tres campanas reales completas, razon real/planificado comun en las Oko-Regelungen y aviso si falta el importe real de 2026 pasado el 15-dic-2026."""
+    vd = _cap_date(doc["verifiedAt"])
+    if vd is None or vd > TODAY: errs.append("cap-de: verifiedAt invalido o en el futuro"); return
+    docs = {d["id"]: d for d in doc["documents"]}
+    for y in (2023, 2024, 2025):
+        if "BAnz-%d" % y not in docs: errs.append("cap-de: falta la Bekanntmachung de %d" % y); return
+    seen = set(); ratios = {}
+    for it in doc["items"]:
+        if it["id"] in seen: errs.append("cap-de: importe repetido %s" % it["id"]); return
+        seen.add(it["id"])
+        if it["unit"] not in ("EUR/ha", "EUR/head"): errs.append("cap-de %s: unidad invalida %r" % (it["id"], it["unit"])); return
+        for y, v in it["actual"].items():
+            if not _cap_num(v) or v <= 0: errs.append("cap-de %s: importe real %s invalido" % (it["id"], y)); return
+        if it["actual"].keys() != {"2023", "2024", "2025"}: errs.append("cap-de %s: faltan campanas reales" % it["id"]); return
+        if it["planned"]:
+            if it["plannedDoc"] not in docs: errs.append("cap-de %s: documento de importe planificado desconocido" % it["id"]); return
+            for y, v in it["planned"].items():
+                if not _cap_num(v) or v <= 0: errs.append("cap-de %s: importe planificado %s invalido" % (it["id"], y)); return
+            if it["group"] == "eco":
+                for y in ("2023", "2024", "2025"): ratios.setdefault(y, []).append(it["actual"][y] / it["planned"][y])
+    for y, rs in ratios.items():
+        if max(rs) - min(rs) > 0.0012: errs.append("cap-de: la razon real/planificado de las Oko-Regelungen de %s no es comun (%.4f-%.4f): revisar la transcripcion" % (y, min(rs), max(rs))); return
+    for k, d in doc["ecoAllocations"].items():
+        if any((not _cap_num(v)) or v <= 0 for v in d.values()): errs.append("cap-de: asignacion invalida en %s" % k); return
+    if TODAY >= datetime.date(2026, 12, 15) and doc["lastActualYear"] < 2026: warns.append("cap-de: debe de haberse publicado ya la Bekanntmachung de 2026: actualizar scripts/build-cap-de.py")
+    stats["cap-de importes"] = len(doc["items"])
+
+
 def cap_dk_amounts(doc, errs, warns, stats):
     """PAC Dinamarca: importes positivos con unidad, cada paragrafo de un decreto declarado, estado Valid, verificacion reciente (aviso a los 21 dias) y cambios con fechas ordenadas."""
     vd = _cap_date(doc["verifiedAt"])

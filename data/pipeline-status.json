@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T00:42:00Z",
+ "generatedAt": "2026-10-09T01:17:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
@@ -11,12 +11,17 @@
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "e3912d78",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c8aaf7a4-c62e-4c6b-a2ef-55e133e55387",
+   "completedAt": "2026-10-09T00:47:46Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
-  "repoGeneratedAt": "2026-10-08T23:30:18.885657+00:00"
+  "repoGeneratedAt": "2026-10-09T00:42:19.082648+00:00"
  },
  "pipelines": [
   {
@@ -1383,11 +1388,11 @@
      "series": 645,
      "points": 146421,
      "lines": 0,
-     "lastChange": "2026-10-07T10:51:52Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/eu-trade-products.json",
-     "lastChange": "2026-10-07T10:51:52Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/revisions.json",
@@ -2249,7 +2254,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-09T00:40:30Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2257,18 +2262,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-08T23:57:19Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/catalog"
@@ -2281,41 +2286,41 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-09T00:40:57Z"
+     "lastChange": "2026-10-09T00:46:50Z"
     },
     {
      "path": "data/home-explore.json",

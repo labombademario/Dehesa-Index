@@ -208,45 +208,6 @@
    }
   },
   {
-   "cc": "DE",
-   "name": "Alemania",
-   "scheme": null,
-   "legalAct": null,
-   "updatedAt": null,
-   "components": {
-    "strategicPlan": {
-     "state": "NOT_INGESTED",
-     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
-     "reasonCode": "SOURCE_UNREACHABLE"
-    },
-    "interventions": {
-     "state": "NOT_INGESTED",
-     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
-     "reasonCode": "SOURCE_UNREACHABLE"
-    },
-    "amounts": {
-     "state": "NOT_INGESTED",
-     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
-     "reasonCode": "SOURCE_UNREACHABLE"
-    },
-    "rules": {
-     "state": "NOT_INGESTED",
-     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
-     "reasonCode": "SOURCE_UNREACHABLE"
-    },
-    "importantDates": {
-     "state": "NOT_INGESTED",
-     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
-     "reasonCode": "SOURCE_UNREACHABLE"
-    },
-    "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
-     "reasonCode": "SOURCE_UNREACHABLE"
-    }
-   }
-  },
-  {
    "cc": "PT",
    "name": "Portugal",
    "scheme": null,
@@ -399,6 +360,58 @@
      "state": "NOT_INGESTED",
      "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
      "reasonCode": "NOT_ASSESSED"
+    }
+   }
+  },
+  {
+   "cc": "DE",
+   "name": "Alemania",
+   "scheme": "Direktzahlungen und Oko-Regelungen (Bundesanzeiger y GAPDZV)",
+   "legalAct": {
+    "title": "GAP-Direktzahlungen-Gesetz (GAPDZG) y GAP-Direktzahlungen-Verordnung (GAPDZV); Bekanntmachungen de los importes reales",
+    "ref": "GAPDZV Anlagen 3, 4, 6 y 7; BAnz AT 08.12.2023 B5, BAnz AT 29.11.2024 B3, BAnz AT 01.12.2025 B6",
+    "url": "https://www.gesetze-im-internet.de/gapdzv/",
+    "sourceId": "gesetze_im_internet"
+   },
+   "updatedAt": "2026-10-08",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el plan estrategico aleman no se ha leido: solo los importes por unidad",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "INGESTED",
+     "file": "de/amounts.json",
+     "count": 21,
+     "note": "Prima basica, redistributiva, jovenes, siete Oko-Regelungen y las dos ayudas asociadas, con su importe por unidad"
+    },
+    "amounts": {
+     "state": "INGESTED",
+     "file": "de/amounts.json",
+     "campaigns": [
+      2023,
+      2024,
+      2025,
+      2026
+     ],
+     "kind": "OFFICIAL_UNIT_AMOUNTS",
+     "note": "Importes reales 2023-2025 (Bekanntmachung del Bundesanzeiger) y planificados de las Oko-Regelungen y ayudas asociadas 2023-2026 (GAPDZV); el importe real de 2026 sale en noviembre-diciembre"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "las condiciones de cada Oko-Regelung estan en la GAPDZV Anlage 5: no se han leido",
+     "reasonCode": "NOT_READ"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "no se han leido los plazos de solicitud (los fijan los Lander)",
+     "reasonCode": "NOT_READ"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: ni gesetze-im-internet.de ni el Bundesanzeiger se leen desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre",
+     "reasonCode": "SOURCE_UNREACHABLE"
     }
    }
   }

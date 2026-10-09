@@ -47,6 +47,19 @@ def country_dk():
                 'rules': comp('PARTIAL', 'dk/amounts.json', count=len(a['thresholds']), note='Solo umbrales numericos (superficies minimas, agricultor activo); no hay catalogo de reglas'),
                 'importantDates': ni('los decretos daneses leidos no fijan un calendario estructurado', 'NOT_READ'),
                 'watch': comp('INGESTED', 'dk/watch.json', checkedAt=w['checkedAt'], reviewNeeded=len(w['reviewNeeded']))}}
+def country_de():
+    a = J('de/amounts.json')
+    if not a: return None
+    docs = {d['id']: d for d in a['documents']}
+    return {'cc': 'DE', 'name': 'Alemania', 'scheme': 'Direktzahlungen und Oko-Regelungen (Bundesanzeiger y GAPDZV)', 'legalAct': {'title': 'GAP-Direktzahlungen-Gesetz (GAPDZG) y GAP-Direktzahlungen-Verordnung (GAPDZV); Bekanntmachungen de los importes reales', 'ref': 'GAPDZV Anlagen 3, 4, 6 y 7; ' + ', '.join(docs['BAnz-%d' % y]['ref'] for y in (2023, 2024, 2025)), 'url': 'https://www.gesetze-im-internet.de/gapdzv/', 'sourceId': 'gesetze_im_internet'},
+            'updatedAt': a['verifiedAt'],
+            'components': {
+                'strategicPlan': ni('el plan estrategico aleman no se ha leido: solo los importes por unidad', 'NOT_READ'),
+                'interventions': comp('INGESTED', 'de/amounts.json', count=len(a['items']), note='Prima basica, redistributiva, jovenes, siete Oko-Regelungen y las dos ayudas asociadas, con su importe por unidad'),
+                'amounts': comp('INGESTED', 'de/amounts.json', campaigns=a['years'], kind=a['kind'], note='Importes reales 2023-2025 (Bekanntmachung del Bundesanzeiger) y planificados de las Oko-Regelungen y ayudas asociadas 2023-2026 (GAPDZV); el importe real de 2026 sale en noviembre-diciembre'),
+                'rules': ni('las condiciones de cada Oko-Regelung estan en la GAPDZV Anlage 5: no se han leido', 'NOT_READ'),
+                'importantDates': ni('no se han leido los plazos de solicitud (los fijan los Lander)', 'NOT_READ'),
+                'watch': ni('sin vigilancia automatica: ni gesetze-im-internet.de ni el Bundesanzeiger se leen desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre', 'SOURCE_UNREACHABLE')}}
 def country_eu():
     e = J('eu/allocations.json')
     if not e: return None
@@ -64,7 +77,6 @@ def blocked(cc, name, reason, code):
     return {'cc': cc, 'name': name, 'scheme': None, 'legalAct': None, 'updatedAt': None, 'components': {k: ni(reason, code) for k in COMPONENTS}}
 PENDING = [
     ('FR', 'Francia', 'los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia', 'SOURCE_UNREACHABLE'),
-    ('DE', 'Alemania', 'los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica', 'SOURCE_UNREACHABLE'),
     ('PT', 'Portugal', NO_SOURCE, 'NOT_ASSESSED'), ('NL', 'Paises Bajos', NO_SOURCE, 'NOT_ASSESSED'),
     ('BE', 'Belgica', NO_SOURCE, 'NOT_ASSESSED'), ('AT', 'Austria', NO_SOURCE, 'NOT_ASSESSED')]
 def next_occurrence(cal, today):
@@ -77,6 +89,7 @@ def next_occurrence(cal, today):
 def build(today):
     cs = [x for x in (country_es(), country_dk(), country_eu()) if x]
     cs += [blocked(cc, n, r, c) for cc, n, r, c in PENDING]
+    cs += [x for x in (country_de(),) if x]   # al final: las pruebas de contrato indexan los primeros paises
     rules, events, deadlines = J('es/rules.json'), [], []
     for cc, f in (('ES', 'es/watch.json'), ('DK', 'dk/watch.json')):
         w = J(f)

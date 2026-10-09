@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 67 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 16085 series en el catalogo unificado.
+Resumen: 69 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 16085 series en el catalogo unificado.
 
-## VERIFIED (67)
+## VERIFIED (69)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -22,6 +22,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
 | `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 25 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `boe_es` | Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada | ES | CUSTOM | si/si | si | 0 | No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legisla… |
+| `bundesanzeiger` | Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes | DE | CUSTOM | si/si | si | 0 | Only the amtlicher Teil (official notices of the Federal Government) is used, never the commercial parts of the Bundesanzeiger. The basis is… |
 | `cbs_nl` | Statistics Netherlands (CBS StatLine) | NL | CUSTOM | si/si | si | 67 | Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read. |
 | `census` | U.S. Census Bureau | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `cftc` | U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment) | US | US-PD | si/si | no | 0 | Acknowledgement of the CFTC requested. Contributed or licensed third-party materials on cftc.gov may be copyrighted; the Commitments of Trad… |
@@ -41,6 +42,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 708 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 114 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
 | `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 213 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
+| `gesetze_im_internet` | Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV | DE | CUSTOM | si/si | si | 0 | The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis … |
 | `gus_poland` | Statistics Poland (GUS) - Local Data Bank (BDL) | PL | GUS-COPYRIGHT-NOTICE | si/si | si | 183 | Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos. |
 | `hmrc_govuk` | HM Revenue & Customs - GOV.UK VAT guidance | GB | OGL-UK-3.0 | si/si | si | 0 | Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra. |
 | `hmrc_uktradeinfo` | HM Revenue & Customs - UK Trade Info (OTS, API OData) | GB | OGL-UK-3.0 | si/si | si | 15 | Third-party material and logos excluded. |

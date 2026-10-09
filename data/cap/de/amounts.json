@@ -1,0 +1,527 @@
+{
+ "schemaVersion": 1,
+ "country": "DE",
+ "kind": "OFFICIAL_UNIT_AMOUNTS",
+ "years": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "lastActualYear": 2025,
+ "sources": [
+  {
+   "id": "bundesanzeiger",
+   "name": "Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des BMEL/BMLEH",
+   "url": "https://www.bundesanzeiger.de/"
+  },
+  {
+   "id": "gesetze_im_internet",
+   "name": "Gesetze im Internet (BMJ/BfJ) — GAPDZG und GAPDZV",
+   "url": "https://www.gesetze-im-internet.de/gapdzv/"
+  }
+ ],
+ "documents": [
+  {
+   "id": "BAnz-2023",
+   "year": 2023,
+   "kind": "ACTUAL",
+   "ref": "BAnz AT 08.12.2023 B5",
+   "date": "2023-12-08",
+   "title": "Bekanntmachung der tatsächlichen Einheitsbeträge für die im Rahmen der Gemeinsamen Agrarpolitik finanzierten Direktzahlungen für das Antragsjahr 2023",
+   "issuer": "Bundesministerium für Ernährung und Landwirtschaft",
+   "url": "https://www.bundesanzeiger.de/"
+  },
+  {
+   "id": "BAnz-2024",
+   "year": 2024,
+   "kind": "ACTUAL",
+   "ref": "BAnz AT 29.11.2024 B3",
+   "date": "2024-11-21",
+   "title": "Bekanntmachung der tatsächlichen Einheitsbeträge für die im Rahmen der Gemeinsamen Agrarpolitik finanzierten Direktzahlungen für das Antragsjahr 2024",
+   "issuer": "Bundesministerium für Ernährung und Landwirtschaft",
+   "url": "https://www.bundesanzeiger.de/"
+  },
+  {
+   "id": "BAnz-2025",
+   "year": 2025,
+   "kind": "ACTUAL",
+   "ref": "BAnz AT 01.12.2025 B6",
+   "date": "2025-11-20",
+   "title": "Bekanntmachung der tatsächlichen Einheitsbeträge für die im Rahmen der Gemeinsamen Agrarpolitik finanzierten Direktzahlungen für das Antragsjahr 2025",
+   "issuer": "Bundesministerium für Landwirtschaft, Ernährung und Heimat",
+   "url": "https://www.bundesanzeiger.de/"
+  },
+  {
+   "id": "GAPDZV-A3",
+   "year": null,
+   "kind": "ALLOCATION",
+   "ref": "GAPDZV Anlage 3 (zu § 15 Absatz 2)",
+   "date": null,
+   "title": "Indikative Mittelzuweisungen in Euro für die Öko-Regelungen",
+   "issuer": "Bundesrepublik Deutschland",
+   "url": "https://www.gesetze-im-internet.de/gapdzv/anlage_3.html"
+  },
+  {
+   "id": "GAPDZV-A4",
+   "year": null,
+   "kind": "PLANNED",
+   "ref": "GAPDZV Anlage 4 (zu § 16 Absatz 1)",
+   "date": null,
+   "title": "Geplante Einheitsbeträge je Hektar für die Öko-Regelungen",
+   "issuer": "Bundesrepublik Deutschland",
+   "url": "https://www.gesetze-im-internet.de/gapdzv/anlage_4.html"
+  },
+  {
+   "id": "GAPDZV-A6",
+   "year": null,
+   "kind": "PLANNED",
+   "ref": "GAPDZV Anlage 6 (zu § 18 Absatz 1)",
+   "date": null,
+   "title": "Geplante Einheitsbeträge für die Zahlung für Mutterschafe und -ziegen",
+   "issuer": "Bundesrepublik Deutschland",
+   "url": "https://www.gesetze-im-internet.de/gapdzv/anlage_6.html"
+  },
+  {
+   "id": "GAPDZV-A7",
+   "year": null,
+   "kind": "PLANNED",
+   "ref": "GAPDZV Anlage 7 (zu § 20 Absatz 1)",
+   "date": null,
+   "title": "Geplante Einheitsbeträge für die Zahlung für Mutterkühe",
+   "issuer": "Bundesrepublik Deutschland",
+   "url": "https://www.gesetze-im-internet.de/gapdzv/anlage_7.html"
+  }
+ ],
+ "items": [
+  {
+   "id": "basic",
+   "group": "direct",
+   "code": "GAPDZG § 4",
+   "label": "Einkommensgrundstützung (Basisprämie)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 170.93,
+    "2024": 157.63,
+    "2025": 152.44
+   },
+   "planned": null,
+   "plannedDoc": null
+  },
+  {
+   "id": "redistributive-1",
+   "group": "direct",
+   "code": "GAPDZG § 8",
+   "label": "Umverteilungseinkommensstützung, Gruppe 1",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 76.28,
+    "2024": 72.36,
+    "2025": 68.05
+   },
+   "planned": null,
+   "plannedDoc": null
+  },
+  {
+   "id": "redistributive-2",
+   "group": "direct",
+   "code": "GAPDZG § 8",
+   "label": "Umverteilungseinkommensstützung, Gruppe 2",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 45.76,
+    "2024": 43.41,
+    "2025": 40.83
+   },
+   "planned": null,
+   "plannedDoc": null
+  },
+  {
+   "id": "young",
+   "group": "direct",
+   "code": "GAPDZG § 13",
+   "label": "Junglandwirte-Einkommensstützung",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 141.75,
+    "2024": 126.58,
+    "2025": 120.64
+   },
+   "planned": null,
+   "plannedDoc": null
+  },
+  {
+   "id": "eco-1a-1",
+   "group": "eco",
+   "code": "ÖR 1a, Stufe 1",
+   "label": "Nichtproduktive Flächen auf Ackerland (bis 1 % des Ackerlands)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 1690.0,
+    "2024": 1410.83,
+    "2025": 1300.0
+   },
+   "planned": {
+    "2023": 1300,
+    "2024": 1300,
+    "2025": 1300,
+    "2026": 1300
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-1a-2",
+   "group": "eco",
+   "code": "ÖR 1a, Stufe 2",
+   "label": "Nichtproduktive Flächen auf Ackerland (über 1 % bis 2 %)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 650.0,
+    "2024": 542.62,
+    "2025": 500.0
+   },
+   "planned": {
+    "2023": 500,
+    "2024": 500,
+    "2025": 500,
+    "2026": 500
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-1a-3",
+   "group": "eco",
+   "code": "ÖR 1a, Stufe 3",
+   "label": "Nichtproduktive Flächen auf Ackerland (über 2 %)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 390.0,
+    "2024": 325.57,
+    "2025": 300.0
+   },
+   "planned": {
+    "2023": 300,
+    "2024": 300,
+    "2025": 300,
+    "2026": 300
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-1b",
+   "group": "eco",
+   "code": "ÖR 1b",
+   "label": "Blühstreifen oder -flächen auf Ackerland",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 195.0,
+    "2024": 217.05,
+    "2025": 200.0
+   },
+   "planned": {
+    "2023": 150,
+    "2024": 200,
+    "2025": 200,
+    "2026": 200
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-1c",
+   "group": "eco",
+   "code": "ÖR 1c",
+   "label": "Blühstreifen oder -flächen in Dauerkulturen",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 195.0,
+    "2024": 217.05,
+    "2025": 200.0
+   },
+   "planned": {
+    "2023": 150,
+    "2024": 200,
+    "2025": 200,
+    "2026": 200
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-1d-1",
+   "group": "eco",
+   "code": "ÖR 1d, Stufe 1",
+   "label": "Altgrasstreifen oder -flächen in Dauergrünland (bis 1 %)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 1170.0,
+    "2024": 976.72,
+    "2025": 900.0
+   },
+   "planned": {
+    "2023": 900,
+    "2024": 900,
+    "2025": 900,
+    "2026": 1000
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-1d-2",
+   "group": "eco",
+   "code": "ÖR 1d, Stufe 2",
+   "label": "Altgrasstreifen oder -flächen in Dauergrünland (über 1 % bis 3 %)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 520.0,
+    "2024": 434.1,
+    "2025": 400.0
+   },
+   "planned": {
+    "2023": 400,
+    "2024": 400,
+    "2025": 400,
+    "2026": 450
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-1d-3",
+   "group": "eco",
+   "code": "ÖR 1d, Stufe 3",
+   "label": "Altgrasstreifen oder -flächen in Dauergrünland (über 3 %)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 260.0,
+    "2024": 217.05,
+    "2025": 200.0
+   },
+   "planned": {
+    "2023": 200,
+    "2024": 200,
+    "2025": 200,
+    "2026": 200
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-2",
+   "group": "eco",
+   "code": "ÖR 2",
+   "label": "Vielfältige Kulturen im Ackerbau (mindestens fünf Hauptfruchtarten, Leguminosen mindestens 10 %)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 58.5,
+    "2024": 65.11,
+    "2025": 60.0
+   },
+   "planned": {
+    "2023": 45,
+    "2024": 60,
+    "2025": 60,
+    "2026": 60
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-3",
+   "group": "eco",
+   "code": "ÖR 3",
+   "label": "Beibehaltung einer agroforstlichen Bewirtschaftungsweise",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 78.0,
+    "2024": 217.05,
+    "2025": 200.0
+   },
+   "planned": {
+    "2023": 60,
+    "2024": 200,
+    "2025": 200,
+    "2026": 600
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-4",
+   "group": "eco",
+   "code": "ÖR 4",
+   "label": "Extensivierung des gesamten Dauergrünlands des Betriebs",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 149.5,
+    "2024": 108.52,
+    "2025": 100.0
+   },
+   "planned": {
+    "2023": 115,
+    "2024": 100,
+    "2025": 100,
+    "2026": 100
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-5",
+   "group": "eco",
+   "code": "ÖR 5",
+   "label": "Ergebnisorientierte extensive Bewirtschaftung von Dauergrünland (mindestens vier Kennarten)",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 312.0,
+    "2024": 260.46,
+    "2025": 225.0
+   },
+   "planned": {
+    "2023": 240,
+    "2024": 240,
+    "2025": 225,
+    "2026": 210
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-6-1",
+   "group": "eco",
+   "code": "ÖR 6, Stufe 1",
+   "label": "Verzicht auf chemisch-synthetische Pflanzenschutzmittel, Stufe 1",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 169.0,
+    "2024": 162.78,
+    "2025": 150.0
+   },
+   "planned": {
+    "2023": 130,
+    "2024": 150,
+    "2025": 150,
+    "2026": 150
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-6-2",
+   "group": "eco",
+   "code": "ÖR 6, Stufe 2",
+   "label": "Verzicht auf chemisch-synthetische Pflanzenschutzmittel, Stufe 2",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 65.0,
+    "2024": 54.26,
+    "2025": 50.0
+   },
+   "planned": {
+    "2023": 50,
+    "2024": 50,
+    "2025": 50,
+    "2026": 50
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "eco-7",
+   "group": "eco",
+   "code": "ÖR 7",
+   "label": "Landbewirtschaftungsmethoden in Natura-2000-Gebieten",
+   "unit": "EUR/ha",
+   "actual": {
+    "2023": 52.0,
+    "2024": 43.41,
+    "2025": 40.0
+   },
+   "planned": {
+    "2023": 40,
+    "2024": 40,
+    "2025": 40,
+    "2026": 40
+   },
+   "plannedDoc": "GAPDZV-A4"
+  },
+  {
+   "id": "ewes-goats",
+   "group": "coupled",
+   "code": "GAPDZG § 22",
+   "label": "Zahlung für Mutterschafe und -ziegen",
+   "unit": "EUR/head",
+   "actual": {
+    "2023": 38.31,
+    "2024": 37.88,
+    "2025": 36.14
+   },
+   "planned": {
+    "2023": 34.83,
+    "2024": 34.44,
+    "2025": 39.0,
+    "2026": 37.89
+   },
+   "plannedDoc": "GAPDZV-A6"
+  },
+  {
+   "id": "suckler-cows",
+   "group": "coupled",
+   "code": "GAPDZG § 26",
+   "label": "Zahlung für Mutterkühe",
+   "unit": "EUR/head",
+   "actual": {
+    "2023": 85.72,
+    "2024": 84.76,
+    "2025": 89.37
+   },
+   "planned": {
+    "2023": 77.93,
+    "2024": 77.06,
+    "2025": 87.72,
+    "2026": 85.22
+   },
+   "plannedDoc": "GAPDZV-A7"
+  }
+ ],
+ "ecoAllocations": {
+  "ÖR 1": {
+   "2023": 326273710,
+   "2024": 336005670,
+   "2025": 330500464,
+   "2026": 268268869
+  },
+  "ÖR 2": {
+   "2023": 120315992,
+   "2024": 161510657,
+   "2025": 164333859,
+   "2026": 155822273
+  },
+  "ÖR 3": {
+   "2023": 1500000,
+   "2024": 1500000,
+   "2025": 1900000,
+   "2026": 2300000
+  },
+  "ÖR 4": {
+   "2023": 227479352,
+   "2024": 197808132,
+   "2025": 197808132,
+   "2026": 158246480
+  },
+  "ÖR 5": {
+   "2023": 153745143,
+   "2024": 153745143,
+   "2025": 144136071,
+   "2026": 267432276
+  },
+  "ÖR 6": {
+   "2023": 135754299,
+   "2024": 103192794,
+   "2025": 98124721,
+   "2026": 56468100
+  },
+  "ÖR 7": {
+   "2023": 52480464,
+   "2024": 52480464,
+   "2025": 52480464,
+   "2026": 52480464
+  }
+ },
+ "notes": [
+  "Importe reales: los fija cada año el ministerio en noviembre-diciembre; el de 2026 aún no se ha publicado.",
+  "Importes planificados de prima básica, redistributiva y jóvenes: no figuran en la ley (los calcula y publica el ministerio): no se muestran.",
+  "Transcritos de los textos oficiales; los importes reales de las Öko-Regelungen salen de multiplicar el planificado por un factor común de cada año (1,30 en 2023; 1,0852 en 2024; 1,00 en 2025)."
+ ],
+ "verifiedAt": "2026-10-08"
+}

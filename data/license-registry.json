@@ -2191,6 +2191,58 @@
    "short": "TTB (EE. UU.)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Obra del Gobierno federal sin copyright; el aviso de la web permite copiar libremente, sin pagina de licencia especifica para datos."
+  },
+  "gesetze_im_internet": {
+   "country": "DE",
+   "licenseId": "CUSTOM",
+   "licenseName": "Amtliche Werke are not protected by copyright (§ 5 Abs. 1 UrhG)",
+   "licenseUrl": "https://www.gesetze-im-internet.de/urhg/__5.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-08",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "name": "Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV",
+   "url": "https://www.gesetze-im-internet.de/",
+   "attributionText": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3, 4, 6 und 7. Auszug.",
+   "additionalRestrictions": "The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis is the statutory exclusion of laws and regulations from copyright. Our figures are extracts transcribed by hand, not the authentic text: always cite the annex. The site is not readable from GitHub runners, so there is no automated refresh.",
+   "evidence": "§ 5 Abs. 1 UrhG: Gesetze, Verordnungen, amtliche Erlasse und Bekanntmachungen sowie Entscheidungen und amtlich verfasste Leitsätze zu Entscheidungen genießen keinen urheberrechtlichen Schutz. GAPDZV Anlagen 3, 4, 6 und 7 are part of a Verordnung. The Impressum of gesetze-im-internet.de (read 2026-10-08 in a browser) does not state reuse terms, so confidence is medium.",
+   "short": "Gesetze im Internet (DE)"
+  },
+  "bundesanzeiger": {
+   "country": "DE",
+   "licenseId": "CUSTOM",
+   "licenseName": "Amtliche Werke are not protected by copyright (§ 5 Abs. 1 UrhG)",
+   "licenseUrl": "https://www.gesetze-im-internet.de/urhg/__5.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-08",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "name": "Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes",
+   "url": "https://www.bundesanzeiger.de/",
+   "attributionText": "Quelle: Bundesanzeiger, amtlicher Teil, Bekanntmachung der tatsächlichen Einheitsbeträge (BAnz AT 08.12.2023 B5, BAnz AT 29.11.2024 B3, BAnz AT 01.12.2025 B6). Auszug.",
+   "additionalRestrictions": "Only the amtlicher Teil (official notices of the Federal Government) is used, never the commercial parts of the Bundesanzeiger. The basis is the statutory exclusion of official notices from copyright; the site terms were not read in full. Figures are extracts transcribed by hand: cite the BAnz reference. Not readable from GitHub runners (session-based search), so there is no automated refresh.",
+   "evidence": "§ 5 Abs. 1 UrhG: amtliche Bekanntmachungen genießen keinen urheberrechtlichen Schutz. The three notices are Bekanntmachungen of the federal ministry published under § 32 GAPDZG in the Amtlicher Teil. Bundesanzeiger site terms not read in full, so confidence is medium.",
+   "short": "Bundesanzeiger (DE)"
   }
  },
  "files": {
@@ -2577,9 +2629,11 @@
   "data/cap/": {
    "sources": [
     "boe_es",
+    "bundesanzeiger",
+    "gesetze_im_internet",
     "retsinformation"
    ],
-   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización. PAC Dinamarca (scripts/update-cap-dk.py, data/cap/dk/): importes y umbrales de 2026 de las bekendtgørelser 1363 y 1381 leídos del XML de Retsinformation (extractos, no el texto auténtico; se cita número de decreto y fecha de versión)."
+   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización. PAC Dinamarca (scripts/update-cap-dk.py, data/cap/dk/): importes y umbrales de 2026 de las bekendtgørelser 1363 y 1381 leídos del XML de Retsinformation (extractos, no el texto auténtico; se cita número de decreto y fecha de versión). PAC Alemania (scripts/build-cap-de.py, data/cap/de/amounts.json): importes reales de 2023-2025 de las Bekanntmachungen del Bundesanzeiger y planificados de las Öko-Regelungen (2023-2026) de la GAPDZV, transcritos a mano de los textos oficiales; sin actualizacion automatica porque ninguna de las dos fuentes se lee desde GitHub."
   },
   "data/mb-markets/": {
    "sources": [

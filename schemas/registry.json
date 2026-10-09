@@ -610,6 +610,12 @@
     "cap_dk_watch"
    ]
   ],
+  "cap/de/amounts.json": [
+   "cap-de-amounts",
+   [
+    "cap_de_amounts"
+   ]
+  ],
   "cap/index.json": [
    "cap-index",
    [
