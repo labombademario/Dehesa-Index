@@ -1,0 +1,51 @@
+{
+ "cereales": {
+  "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+  "len": 138,
+  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "pdf_links": [],
+  "sub_links": []
+ },
+ "cultivos-herbaceos": {
+  "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/",
+  "len": 138,
+  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "pdf_links": [],
+  "sub_links": []
+ },
+ "oleaginosas": {
+  "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/oleaginosas/",
+  "len": 138,
+  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "pdf_links": [],
+  "sub_links": []
+ },
+ "arroz": {
+  "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+  "len": 138,
+  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "pdf_links": [],
+  "sub_links": []
+ },
+ "arroz2": {
+  "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+  "len": 138,
+  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "pdf_links": [],
+  "sub_links": []
+ },
+ "estadisticas-agrarias": {
+  "url": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/",
+  "len": 138,
+  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "pdf_links": [],
+  "sub_links": []
+ },
+ "industrias-lacteas": {
+  "url": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/economia/industrias-lacteas/",
+  "len": 138,
+  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "pdf_links": [],
+  "sub_links": []
+ }
+}

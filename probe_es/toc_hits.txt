@@ -1,0 +1,128 @@
+"            Consumer prices"	"ei_cp"	"folder"	" "	" "	" "	" "	
+"                Harmonised index of consumer prices - monthly data"	"ei_cphi_m"	"table"	"02.10.2026"	"02.10.2026"	"1996-01"	"2026-09"	1051086
+"            Housing price statistics"	"ei_hp"	"folder"	" "	" "	" "	" "	
+"                House price index (2025 = 100) - quarterly data"	"ei_hppi_q"	"table"	"01.10.2026"	"01.10.2026"	"2005-Q1"	"2026-Q2"	11752
+"                Service producer prices index - quarterly data"	"ei_isppi_q"	"table"	"07.10.2026"	"18.07.2026"	"1996-Q1"	"2026-Q2"	20046
+"                Service producer prices growth rates - quarterly data"	"ei_isppe_q"	"table"	"07.10.2026"	"18.07.2026"	"1996-Q1"	"2026-Q2"	27555
+"                        Gross domestic product (GDP) at market prices - quarterly data"	"tipsna15"	"table"	"09.10.2026"	"02.10.2026"	"1995-Q1"	"2026-Q2"	7560
+"                    Gross domestic product (GDP) at market prices - annual data"	"tipsna10"	"table"	"07.10.2026"	"08.09.2026"	"1995"	"2025"	2754
+"                    Gross domestic product at market prices"	"tec00001"	"table"	"09.10.2026"	"08.09.2026"	"2014"	"2025"	1035
+"                            Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region"	"ef_kvaareg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	225156
+"                            Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region"	"ef_kvecsleg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	291750
+"                            Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region"	"ef_kvftreg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	215199
+"                        Overview - farm livestock"	"reg_ef_ols"	"folder"	" "	" "	" "	" "	
+"                            Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region"	"ef_olsaareg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	594155
+"                            Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region"	"ef_olslsureg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	589321
+"                        Livestock"	"reg_ef_ls"	"folder"	" "	" "	" "	" "	
+"                            Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region"	"ef_ls_ovaareg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	761128
+"                            Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region"	"ef_ls_ovlsureg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	759761
+"                            Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region"	"ef_ls_ovesu"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	757142
+"                    Economic accounts for agriculture by NUTS 2 region - values at current prices"	"aact_eaa01_r"	"dataset"	"05.10.2026"	"05.10.2026"	"1980"	"2024"	2895132
+"                    Economic accounts for agriculture by NUTS 2 region - values at n-1 prices"	"aact_eaa02_r"	"dataset"	"06.10.2026"	"05.10.2026"	"1999"	"2024"	396780
+"                    Economic accounts for agriculture by NUTS 2 region - indices (volume, price, values)"	"aact_eaa05_r"	"dataset"	"06.10.2026"	"05.10.2026"	"1999"	"2024"	1032480
+"                    Production of cow's milk on farms by NUTS 2 region"	"agr_r_milkpr"	"dataset"	"01.12.2025"	"08.09.2025"	"1995"	"2024"	11599
+"                        Production of cow's milk on farms by NUTS 2 region"	"tgs00046"	"table"	"01.12.2025"	"08.09.2025"	"2013"	"2024"	3462
+"                    Gross domestic product (GDP) at current market prices by NUTS 2 region"	"nama_10r_2gdp"	"dataset"	"10.02.2026"	"10.02.2026"	"2000"	"2024"	75931
+"                    Gross domestic product (GDP) at current market prices by NUTS 3 region"	"nama_10r_3gdp"	"dataset"	"10.02.2026"	"10.02.2026"	"2000"	"2024"	296322
+"                    Gross value added at basic prices by NUTS 3 region"	"nama_10r_3gva"	"dataset"	"23.03.2026"	"10.02.2026"	"2000"	"2024"	1279670
+"                    Stock of vehicles by category and NUTS 2 region"	"tran_r_vehst"	"dataset"	"31.08.2026"	"31.08.2026"	"1990"	"2024"	140367
+"                    Stock of electric vehicles by category and NUTS 2 region"	"tran_r_elvehst"	"dataset"	"31.08.2026"	"31.08.2026"	"2005"	"2024"	15374
+"                    Gross domestic product (GDP) at current market prices by metropolitan region"	"met_10r_3gdp"	"dataset"	"28.02.2024"	"28.02.2024"	"2000"	"2022"	48109
+"                    Gross value added at basic prices by metropolitan region"	"met_10r_3gva"	"dataset"	"28.02.2024"	"28.02.2024"	"1995"	"2022"	170908
+"                    Gross domestic product (GDP) at current market prices by other typologies"	"urt_10r_3gdp"	"dataset"	"16.02.2026"	"16.02.2026"	"2000"	"2024"	34949
+"                    Gross value added at basic prices by other typologies"	"urt_10r_3gva"	"dataset"	"27.03.2026"	"27.03.2026"	"1995"	"2024"	185420
+"                    Gross domestic product (GDP) at current market prices by NUTS 3 region"	"nama_10r_3gdp"	"dataset"	"10.02.2026"	"10.02.2026"	"2000"	"2024"	296322
+"                    Gross value added at basic prices by NUTS 3 region"	"nama_10r_3gva"	"dataset"	"23.03.2026"	"10.02.2026"	"2000"	"2024"	1279670
+"                    Gross domestic product (GDP) at current market prices by other typologies"	"urt_10r_3gdp"	"dataset"	"16.02.2026"	"16.02.2026"	"2000"	"2024"	34949
+"                    Gross value added at basic prices by other typologies"	"urt_10r_3gva"	"dataset"	"27.03.2026"	"27.03.2026"	"1995"	"2024"	185420
+"                    Table grape vines - Area by age classes (area in ha)"	"orch_grapes1"	"dataset"	"27.03.2019"	"10.01.2024"	"2012"	"2017"	1223
+"                    Table grape vines - Area by density classes (area in ha)"	"orch_grapes2"	"dataset"	"27.03.2019"	"10.01.2024"	"2012"	"2017"	981
+"                Table grape vines - Area by age and density classes (area in ha)"	"orch_grapes3"	"dataset"	"27.03.2019"	"03.01.2024"	"2012"	"2017"	300
+"                            Gross domestic product at market prices - ENP-South countries"	"enps_nama_10_gdp"	"dataset"	"05.03.2026"	"05.03.2026"	"2005"	"2025"	480
+"                            Gross domestic product at market prices by expenditure - ENP-South countries"	"enps_nama_10_gdp_ea"	"dataset"	"05.03.2026"	"05.03.2026"	"2005"	"2024"	1314
+"                    Consumer price index"	"enps_cp"	"folder"	" "	" "	" "	" "	
+"                        Consumer price index - ENP-South countries"	"enps_cpi"	"dataset"	"05.03.2026"	"05.03.2026"	"2005"	"2025"	320
+"                        Livestock - ENP-South countries"	"enps_apro_mt_ls"	"dataset"	"05.03.2026"	"05.03.2026"	"2005"	"2024"	840
+"                        Stock of vehicles by category - ENP-South countries"	"enps_road_eqs_car"	"dataset"	"05.03.2026"	"05.03.2026"	"2005"	"2025"	636
+"                        Electricity and gas prices for households - ENP-South countries"	"enps_nrg_prchh"	"dataset"	"05.03.2026"	"05.03.2026"	"2005"	"2024"	96
+"                            Labour productivity in GDP (constant prices) per person employed - ENP-East countries"	"enpe_nama_10_lp"	"dataset"	"03.02.2026"	"03.02.2026"	"2005"	"2024"	112
+"                            Gross domestic product at market prices - ENP-East countries"	"enpe_nama_10_gdp"	"dataset"	"03.02.2026"	"15.04.2025"	"2005"	"2024"	457
+"                            Gross domestic product at market prices by expenditure - ENP-East countries"	"enpe_nama_10_gdp_ea"	"dataset"	"03.02.2026"	"03.02.2026"	"2005"	"2024"	936
+"                    Consumer price index"	"enpe_cp"	"folder"	" "	" "	" "	" "	
+"                        Consumer price index - ENP-East countries"	"enpe_cpi"	"dataset"	"03.02.2026"	"15.04.2025"	"2005"	"2024"	221
+"                        Domestic industrial production price index - ENP-East countries"	"enpe_sts_inppd"	"dataset"	"03.02.2026"	"03.02.2026"	"2010"	"2024"	48
+"                        Livestock - ENP-East countries"	"enpe_apro_mt_ls"	"dataset"	"03.02.2026"	"15.04.2025"	"2005"	"2024"	580
+"                        Electricity and gas prices for households - ENP-East countries"	"enpe_nrg_prchh"	"dataset"	"03.02.2026"	"03.02.2026"	"2005"	"2024"	144
+"                        Gross fixed capital formation at current prices"	"tipsna20"	"table"	"07.10.2026"	"08.09.2026"	"1995"	"2025"	2790
+"                        Gross domestic product (GDP) at market prices - annual data"	"tipsna10"	"table"	"07.10.2026"	"08.09.2026"	"1995"	"2025"	2754
+"                        Gross domestic product at market prices"	"tec00001"	"table"	"09.10.2026"	"08.09.2026"	"2014"	"2025"	1035
+"                        Gross domestic product at market prices"	"tec00001"	"table"	"09.10.2026"	"08.09.2026"	"2014"	"2025"	1035
+"                Capital formation and stocks"	"nama_10_nfa"	"folder"	" "	" "	" "	" "	
+"                    Capital stocks by industry (NACE Rev.2) and detailed asset type"	"nama_10_nfa_st"	"dataset"	"02.10.2026"	"08.09.2026"	"1975"	"2025"	8536395
+"                    Capital stocks by sector and detailed asset type"	"nama_10_nfa_bs"	"dataset"	"28.09.2026"	"08.09.2026"	"1975"	"2025"	113362
+"                        Gross domestic product (GDP) at current market prices by NUTS 2 region"	"nama_10r_2gdp"	"dataset"	"10.02.2026"	"10.02.2026"	"2000"	"2024"	75931
+"                        Gross domestic product (GDP) at current market prices by NUTS 3 region"	"nama_10r_3gdp"	"dataset"	"10.02.2026"	"10.02.2026"	"2000"	"2024"	296322
+"                        Gross value added at basic prices by NUTS 3 region"	"nama_10r_3gva"	"dataset"	"23.03.2026"	"10.02.2026"	"2000"	"2024"	1279670
+"                        Capital stock based productivity indicators by industry (NACE Rev.2)"	"nama_10_cp_a21"	"dataset"	"08.10.2026"	"26.06.2026"	"1975"	"2025"	403888
+"                        Gross domestic product, current prices"	"teina010"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	478
+"                        Final consumption expenditure of households and NPISH, current prices"	"teina020"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	478
+"                        External balance of goods and services, current prices"	"teina050"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	478
+"                        Gross value added - NACE Rev. 2: G-I - current prices"	"teina420_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: M_N - current prices"	"teina436_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: A - current prices"	"teina404_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: C - current prices"	"teina412_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: TOTAL - current prices"	"teina400_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: K - current prices"	"teina428_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: F - current prices"	"teina416_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: L - current prices"	"teina432_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: B-E - current prices"	"teina408_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: O-Q - current prices"	"teina440_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: R-U - current prices"	"teina444_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                        Gross value added - NACE Rev. 2: J - current prices"	"teina424_r2"	"table"	"09.10.2026"	"02.10.2026"	"2023-Q3"	"2026-Q2"	943
+"                    Supply, use and input-output tables - current prices"	"naio_10_cp"	"folder"	" "	" "	" "	" "	
+"                        Supply table at basic prices incl. transformation into purchasers' prices"	"naio_10_cp15"	"dataset"	"08.10.2026"	"30.09.2026"	"1990"	"2024"	5572537
+"                        Use table at purchasers' prices"	"naio_10_cp16"	"dataset"	"08.10.2026"	"04.06.2026"	"1990"	"2024"	6528722
+"                        Use table at basic prices"	"naio_10_cp1610"	"dataset"	"08.10.2026"	"30.09.2026"	"1990"	"2024"	13469578
+"                        Symmetric input-output table at basic prices (product by product)"	"naio_10_cp1700"	"dataset"	"30.09.2026"	"30.09.2026"	"1990"	"2024"	7482180
+"                        Symmetric input-output table at basic prices (industry by industry)"	"naio_10_cp1750"	"dataset"	"30.09.2026"	"30.09.2026"	"1990"	"2024"	5040892
+"                    Supply, use and input-output tables - previous year's prices"	"naio_10_pyp"	"folder"	" "	" "	" "	" "	
+"                        Supply table at basic prices incl. transformation into purchasers' prices (previous years prices)"	"naio_10_pyp15"	"dataset"	"01.10.2026"	"31.07.2026"	"1991"	"2024"	3716694
+"                        Use table at purchasers' prices (previous years prices)"	"naio_10_pyp16"	"dataset"	"01.10.2026"	"31.07.2026"	"1991"	"2024"	4363601
+"                        Use table at basic prices (previous years prices)"	"naio_10_pyp1610"	"dataset"	"29.09.2026"	"11.08.2026"	"1993"	"2024"	5766572
+"                        Table of trade and transport margins (previous years prices)"	"naio_10_pyp1620"	"dataset"	"29.09.2026"	"11.08.2026"	"1993"	"2024"	2014090
+"                        Table of taxes less subsidies on products (previous years prices)"	"naio_10_pyp1630"	"dataset"	"29.09.2026"	"11.08.2026"	"1993"	"2024"	2037552
+"                        Symmetric input-output table at basic prices (product by product) (previous years prices)"	"naio_10_pyp1700"	"dataset"	"04.03.2026"	"30.06.2025"	"2011"	"2022"	952410
+"                        Symmetric input-output table at basic prices (industry by industry) (previous years prices)"	"naio_10_pyp1750"	"dataset"	"29.09.2026"	"15.09.2026"	"2008"	"2024"	1471498
+"                    EU inter-country supply, use and input-output tables (FIGARO) - current prices"	"naio_10_fcp"	"folder"	" "	" "	" "	" "	
+"                        EU inter-country supply table at basic prices (2010-2013)"	"naio_10_fcp_s1"	"dataset"	"20.07.2026"	"20.07.2026"	"2010"	"2013"	819200
+"                        EU inter-country supply table at basic prices (2014-2017)"	"naio_10_fcp_s2"	"dataset"	"20.07.2026"	"20.07.2026"	"2014"	"2017"	819200
+"                        EU inter-country supply table at basic prices (2018-2021)"	"naio_10_fcp_s3"	"dataset"	"20.07.2026"	"20.07.2026"	"2018"	"2021"	819200
+"                        EU inter-country supply table at basic prices (2022 and onwards)"	"naio_10_fcp_s4"	"dataset"	"20.07.2026"	"20.07.2026"	"2022"	"2024"	614400
+"                        EU inter-country use table at basic prices (2010-2013)"	"naio_10_fcp_u1"	"dataset"	"18.07.2026"	"18.07.2026"	"2010"	"2013"	44242800
+"                        EU inter-country use table at basic prices (2014-2017)"	"naio_10_fcp_u2"	"dataset"	"18.07.2026"	"18.07.2026"	"2014"	"2017"	44242800
+"                        EU inter-country use table at basic prices (2018-2021)"	"naio_10_fcp_u3"	"dataset"	"18.07.2026"	"18.07.2026"	"2018"	"2021"	44242800
+"                        EU inter-country use table at basic prices (2022 and onwards)"	"naio_10_fcp_u4"	"dataset"	"20.07.2026"	"20.07.2026"	"2022"	"2024"	33182100
+"                        EU inter-country input-output table at basic prices, product by product (2010-2013)"	"naio_10_fcp_ip1"	"dataset"	"18.07.2026"	"18.07.2026"	"2010"	"2013"	44242800
+"                        EU inter-country input-output table at basic prices, product by product (2014-2017)"	"naio_10_fcp_ip2"	"dataset"	"18.07.2026"	"18.07.2026"	"2014"	"2017"	44242800
+"                        EU inter-country input-output table at basic prices, product by product (2018-2021)"	"naio_10_fcp_ip3"	"dataset"	"18.07.2026"	"18.07.2026"	"2018"	"2021"	44242800
+"                        EU inter-country input-output table at basic prices, product by product (2022 and onwards)"	"naio_10_fcp_ip4"	"dataset"	"20.07.2026"	"20.07.2026"	"2022"	"2024"	33182100
+"                        EU inter-country input-output table at basic prices, industry by industry (2010-2013)"	"naio_10_fcp_ii1"	"dataset"	"18.07.2026"	"18.07.2026"	"2010"	"2013"	44242800
+"                        EU inter-country input-output table at basic prices, industry by industry (2014-2017)"	"naio_10_fcp_ii2"	"dataset"	"18.07.2026"	"18.07.2026"	"2014"	"2017"	44242800
+"                        EU inter-country input-output table at basic prices, industry by industry (2018-2021)"	"naio_10_fcp_ii3"	"dataset"	"18.07.2026"	"18.07.2026"	"2018"	"2021"	44242800
+"                        EU inter-country input-output table at basic prices, industry by industry (2022 and onwards)"	"naio_10_fcp_ii4"	"dataset"	"20.07.2026"	"20.07.2026"	"2022"	"2024"	33182100
+"                Financial flows and stocks"	"nasa_10_f"	"folder"	" "	" "	" "	" "	
+"                Financial flows and stocks"	"nasq_10_f"	"folder"	" "	" "	" "	" "	
+"                Stock of general government debt security liabilities issued as 'green bonds' - one-off data collection, experimental statistics"	"gov_gb"	"dataset"	"07.07.2023"	"21.10.2024"	"2019"	"2022"	124
+"        Prices"	"prc"	"folder"	" "	" "	" "	" "	
+"            Harmonised index of consumer prices (HICP)"	"prc_hicp"	"folder"	" "	" "	" "	" "	
+"                Harmonised index of consumer prices (HICP) - ECOICOP ver.2"	"prc_hicp_ecoicop2"	"folder"	" "	" "	" "	" "	
+"                        Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change at constant tax rates, monthly data"	"prc_hicp_ct"	"dataset"	"17.09.2026"	"17.09.2026"	"2002-12"	"2026-08"	16883926
+"                        Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - contributions to euro area annual inflation"	"prc_hicp_ctr"	"dataset"	"17.09.2026"	"17.09.2026"	"2002-01"	"2026-08"	87140
+"                        Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - administered prices composition"	"prc_hicp_admp"	"dataset"	"17.07.2026"	"17.07.2026"	"2017"	"2026"	587319
+"                        Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - country weights"	"prc_hicp_cw"	"dataset"	"17.07.2026"	"25.02.2026"	"1996"	"2026"	3391
+"                        Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - item weights"	"prc_hicp_iw"	"dataset"	"17.09.2026"	"25.02.2026"	"1996"	"2026"	485376
+"                    Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"	"prc_hicp_minr"	"dataset"	"02.10.2026"	"02.10.2026"	"1996-01"	"2026-09"	22389206
+"                        Harmonised index of consumer prices - monthly data"	"ei_cphi_m"	"table"	"02.10.2026"	"02.10.2026"	"1996-01"	"2026-09"	1051086
+"                    Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data"	"prc_hicp_ainr"	"dataset"	"17.09.2026"	"17.07.2026"	"1996"	"2025"	735985
+"                    Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - first released data"	"prc_hicp_fpd"	"dataset"	"02.10.2026"	"02.10.2026"	"1996-01"	"2026-09"	22166461
+"                Harmonised index of consumer prices (HICP) - ECOICOP ver.1"	"prc_hicp_ecoicop1"	"folder"	" "	" "	" "	" "
