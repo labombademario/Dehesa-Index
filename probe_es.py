@@ -1,50 +1,42 @@
-import re, subprocess, json, urllib.request, urllib.parse, ssl, sys
+import re, subprocess, json, urllib.request, urllib.parse
 from pathlib import Path
-O = Path('probe_es'); O.mkdir(exist_ok=True)
+O = Path('probe_es2'); O.mkdir(exist_ok=True)
 UA = {'User-Agent': 'Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)'}
-def get(u, binary=False, t=90):
+def get(u, binary=False, t=120):
     try:
         with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r:
             b = r.read(); return b if binary else b.decode('utf8', 'replace')
     except Exception as e:
         return None if binary else 'ERR %s' % e
-def links(html, pat):
-    return sorted({urllib.parse.unquote(m) for m in re.findall(r'href="([^"]+)"', html) if re.search(pat, m, re.I)})
 S = 'https://www.mapa.gob.es'
-pages = {
- 'cereales': S + '/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales',
- 'cultivos-herbaceos': S + '/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/',
- 'oleaginosas': S + '/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/oleaginosas/',
- 'arroz': S + '/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz',
- 'arroz2': S + '/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/',
- 'estadisticas-agrarias': S + '/es/estadistica/temas/estadisticas-agrarias/',
- 'industrias-lacteas': S + '/es/estadistica/temas/estadisticas-agrarias/economia/industrias-lacteas/',
-}
-out = {}
+P = S + '/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/'
+pages = {'arroz-balances': P + 'arroz/balances-de-gestion-de-arroz', 'arroz-precios': P + 'arroz/evolucion-de-los-precios-del-arroz', 'leg-oleag': P + 'leguminosas-y-oleaginosas',
+         'existencias-siega': P + 'evolucion-existencias-siega/', 'arroz-info': P + 'arroz/informacion_general_sector-arroz'}
+info = {}
 for k, u in pages.items():
-    h = get(u); (O / (k + '.html')).write_text(h or '', encoding='utf8')
-    out[k] = {'url': u, 'len': len(h or ''), 'head': (h or '')[:120].replace('\n', ' '), 'pdf_links': links(h or '', r'\.pdf'), 'sub_links': links(h or '', r'(oleagin|arroz|balance|lacte|industri|existenc)')[:60]}
-(O / 'pages.json').write_text(json.dumps(out, ensure_ascii=False, indent=1))
-# PDF industrias lacteas mensual
-for name, u in {'ind-lacteas': 'https://mapa.gob.es/ca/estadistica/temas/estadisticas-agrarias/industrias_lacteas_mensual_noviembre_2023-octubre_2024_tcm34-694259.pdf',
-                'oleag-2425': 'https://servicio.mapama.gob.es/ca/agricultura/temas/producciones-agricolas/balancesoleaginosases_2024_25_tcm34-710037.pdf',
-                'arroz-1519': 'https://servicio.mapa.gob.es/ca/ganaderia/estadisticas/balancearroz2015-2019actsept2019_tcm34-426840.pdf',
-                'pizarra': 'https://servicio.mapa.gob.es/en/ganaderia/estadisticas/pizarrasectormarzo2025_tcm38-502265.pdf'}.items():
-    b = get(u, True)
+    h = get(u) or ''; (O / (k + '.html')).write_text(h, encoding='utf8')
+    ls = sorted({urllib.parse.unquote(m) for m in re.findall(r'href="([^"]+)"', h)})
+    info[k] = {'len': len(h), 'files': [l for l in ls if re.search(r'\.(pdf|xlsx?|csv|ods)', l, re.I)], 'subs': [l for l in ls if re.search(r'(oleagin|arroz|balance|existenc|precio)', l, re.I) and not re.search(r'\.(pdf|xlsx?)', l, re.I)][:40]}
+(O / 'pages.json').write_text(json.dumps(info, ensure_ascii=False, indent=1))
+def dl(name, u):
+    full = u if u.startswith('http') else S + u
+    b = get(full, True)
     if b:
-        (O / (name + '.pdf')).write_bytes(b)
-        subprocess.run(['pdftotext', '-layout', str(O / (name + '.pdf')), str(O / (name + '.txt'))])
+        (O / name).write_bytes(b)
+        if name.endswith('.pdf'): subprocess.run(['pdftotext', '-layout', str(O / name), str(O / (name + '.txt'))])
     else:
-        (O / (name + '.txt')).write_text('descarga fallida')
-# Eurostat
-E = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
-def es(ds, q):
-    r = get(E + ds + '?format=JSON&lang=EN&' + q); return r
-res = {}
-res['hicp_dims'] = (es('prc_hicp_midx', 'geo=ES&unit=I15&coicop=CP01147&coicop=CP01151&coicop=CP011&lastTimePeriod=2') or '')[:3000]
-res['hicp_ES_butter_cheese'] = (es('prc_hicp_midx', 'geo=ES&unit=I15&coicop=CP01147&coicop=CP01151&lastTimePeriod=3') or '')[:3500]
-(O / 'eurostat.json').write_text(json.dumps(res, ensure_ascii=False, indent=1))
-# catalogo Eurostat: tablas de existencias lacteas
-cat = get('https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en') or ''
-(O / 'toc_hits.txt').write_text('\n'.join(l for l in cat.split('\n') if re.search(r'stock|dairy|milk|butter|cheese|rice|oilseed|rape|soya', l, re.I))[:20000])
+        (O / (name + '.err')).write_text('fallo ' + full)
+for k in ('arroz-balances', 'leg-oleag', 'existencias-siega'):
+    fl = [f for f in info[k]['files'] if f.lower().endswith('.pdf')]
+    for i, f in enumerate(fl[-4:]): dl('%s-%d.pdf' % (k, i), f)
+dl('coyuntura.pdf', S + '/dam/mapa/contenido/estadisticas/temas/publicaciones/informe-semanal-de-coyuntura/2026/2026/informe-semanal-de-coyuntura-2026-s-24-11-1.pdf')
+# Eurostat HICP v2: codigos de mantequilla, queso, arroz, aceites
+E = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&geo=ES&unit=I25&lastTimePeriod=1'
+h = get(E) or ''
+try:
+    j = json.loads(h); lab = j['dimension']['coicop']['category']['label']
+    hits = {k: v for k, v in lab.items() if re.search(r'butter|cheese|rice|milk|oil|egg|dairy|margarine|bread|cereal', v, re.I)}
+    (O / 'hicp_codes.json').write_text(json.dumps({'n': len(lab), 'hits': hits, 'time': j['dimension']['time']['category']['index'], 'unit': j['dimension']['unit']['category']['label']}, ensure_ascii=False, indent=1))
+except Exception as e:
+    (O / 'hicp_codes.json').write_text('ERR %s %s' % (e, h[:500]))
 print('ok')
