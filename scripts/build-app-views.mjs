@@ -185,6 +185,8 @@ const cdSrc = fs.readFileSync(path.join(ROOT, 'js', 'country-data.js'), 'utf8');
 const GL = JSON.parse(/var L = (\{.*?\});\n/s.exec(cdSrc)[1]);
 const GORDER = vm.runInNewContext(/var GROUPS = (\[.*?\]);/s.exec(cdSrc)[1]);
 const PER_GROUP = 8, MAX_POINTS = 24;
+// Etiquetas de series en 4 idiomas (data/app/labels-i18n.json, traducidas a mano); si falta una, la app enseña la original
+const LABELS = exists('data/app/labels-i18n.json') ? read('data/app/labels-i18n.json') : {};
 const profiles = {};
 const catMan = exists('data/catalog/manifest.json') ? read('data/catalog/manifest.json') : { countries: {} };
 for (const c of countries) {
@@ -208,7 +210,7 @@ for (const c of countries) {
       if (seen.has(sr.label)) continue; seen.add(sr.label);
       const full = chunk(sr.file).get(sr.id);
       const pts = full && Array.isArray(full.points) ? full.points.filter(x => typeof x[1] === 'number').slice(-MAX_POINTS) : [];
-      pick.push({ id: sr.id, label: sr.label, unit: sr.unit, frequency: sr.freq, latest: sr.latest, period: sr.latestPeriod, changePct: typeof sr.changePct === 'number' ? Math.round(sr.changePct * 100) / 100 : null,
+      pick.push({ id: sr.id, label: sr.label, ...(LABELS[sr.label] ? { labelT: LABELS[sr.label] } : {}), unit: sr.unit, frequency: sr.freq, latest: sr.latest, period: sr.latestPeriod, changePct: typeof sr.changePct === 'number' ? Math.round(sr.changePct * 100) / 100 : null,
         sourceId: canon(sr.sourceId), file: sr.file, points: pts });
       if (pick.length >= PER_GROUP) break;
     }

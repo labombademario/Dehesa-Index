@@ -58,7 +58,7 @@ ok(S.length >= 15, 'sections: menos de 15');
 S.forEach(s => { four(s.name, 'section ' + s.id); ok(/^https:\/\/dehesaindex\.com\//.test(s.url), 'section ' + s.id + ': url');
   if (s.figure) { four(s.figure.label, 'section ' + s.id + '.label'); ok(s.figure.sourceId === 'dehesa' || (reg[s.figure.sourceId] && reg[s.figure.sourceId].status === 'VERIFIED'), 'section ' + s.id + ': fuente ' + s.figure.sourceId); } });
 // Fichas de pais (data/app/v1/country/<CC>.json): se bajan una a una al abrir el pais, no cuentan en el tope de arriba
-const PC = man.countries || {};
+const PC = man.countries || {}; const LT = { n: 0, ok: 0 };
 ok(Object.keys(PC).length >= 10, 'country profiles: menos de 10');
 for (const [cc, m] of Object.entries(PC)) {
   const d = load('country/' + cc + '.json');
@@ -73,12 +73,14 @@ for (const [cc, m] of Object.entries(PC)) {
     for (const sr of g.series) {
       ok(!sid.has(sr.id), 'country ' + cc + ': serie repetida ' + sr.id); sid.add(sr.id);
       ok(sr.label && sr.unit && typeof sr.latest === 'number' && isFinite(sr.latest), 'country ' + cc + ' ' + sr.id + ': etiqueta, unidad o valor');
+      if (sr.labelT) four(sr.labelT, 'country ' + cc + ' ' + sr.id + '.labelT'); LT.n++; if (sr.labelT) LT.ok++;
       ok(typeof sr.period === 'string' && /^\d{4}/.test(sr.period), 'country ' + cc + ' ' + sr.id + ': periodo');
       ok(reg[sr.sourceId] && reg[sr.sourceId].status === 'VERIFIED', 'country ' + cc + ' ' + sr.id + ': fuente ' + sr.sourceId);
       ok(Array.isArray(sr.points) && sr.points.every(x => typeof x[0] === 'string' && typeof x[1] === 'number'), 'country ' + cc + ' ' + sr.id + ': puntos');
     }
   }
 }
+ok(LT.n === 0 || LT.ok / LT.n >= 0.9, 'country profiles: solo ' + LT.ok + '/' + LT.n + ' etiquetas traducidas (falta anadir a data/app/labels-i18n.json)');
 const bytes = Object.values(man.files).reduce((a, f) => a + f.bytes, 0);
 ok(bytes < 400 * 1024, 'app views: mas de 400 KB (' + bytes + ')');
 console.log(`app views: ${checks} comprobaciones, ${fails} fallos`);
