@@ -60,6 +60,18 @@ def country_de():
                 'rules': comp('PARTIAL', 'de/amounts.json', count=len(a['conditions']), note='Resumen de las condiciones de las diez Oko-Regelungen (GAPDZV Anlage 5); no incluye listas ni metodos que fijan los Lander ni el resto de la normativa'),
                 'importantDates': ni('no se han leido los plazos de solicitud (los fijan los Lander)', 'NOT_READ'),
                 'watch': ni('sin vigilancia automatica: ni gesetze-im-internet.de ni el Bundesanzeiger se leen desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre', 'SOURCE_UNREACHABLE')}}
+def country_fr():
+    a = J('fr/amounts.json')
+    if not a: return None
+    return {'cc': 'FR', 'name': 'Francia', 'scheme': 'Arretes del Ministerio de Agricultura sobre los importes de la campana 2025 (Journal officiel)', 'legalAct': {'title': 'Arretes de 23 y 30 de septiembre de 2025, 24 de febrero de 2026 y sus modificaciones (25-nov-2025, 11-mar-2026, 5-jun-2026)', 'ref': 'JORF; NOR AGRT2524991A y siguientes', 'url': 'https://www.legifrance.gouv.fr/jorf/id/' + a['documents'][0]['jorfText'], 'sourceId': 'dila_jorf'},
+            'updatedAt': a['verifiedAt'],
+            'components': {
+                'strategicPlan': ni('el plan estrategico frances no se ha leido: solo los importes por unidad', 'NOT_READ'),
+                'interventions': comp('INGESTED', 'fr/amounts.json', count=len(a['items']), note='Ayuda redistributiva, jovenes, tasa de reduccion, ecorregimen, ayudas ovina, caprina y de Corse y ayudas acopladas vegetales, con su importe por unidad'),
+                'amounts': comp('INGESTED', 'fr/amounts.json', campaigns=[a['campaign']], kind=a['kind'], note='Campana 2025: importe de cada arrete y de sus modificaciones; falta el importe unitario de la ayuda de base y aun no hay arretes de la campana 2026'),
+                'rules': ni('no se han leido las condiciones de acceso a las ayudas (otros arretes del JORF)', 'NOT_READ'),
+                'importantDates': ni('no se han leido los plazos de solicitud', 'NOT_READ'),
+                'watch': ni('sin vigilancia automatica: la lectura del volcado de la DILA se hizo a mano una vez', 'NOT_BUILT')}}
 def country_eu():
     e = J('eu/allocations.json')
     if not e: return None
@@ -76,7 +88,6 @@ def country_eu():
 def blocked(cc, name, reason, code):
     return {'cc': cc, 'name': name, 'scheme': None, 'legalAct': None, 'updatedAt': None, 'components': {k: ni(reason, code) for k in COMPONENTS}}
 PENDING = [
-    ('FR', 'Francia', 'los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia', 'SOURCE_UNREACHABLE'),
     ('PT', 'Portugal', NO_SOURCE, 'NOT_ASSESSED'), ('NL', 'Paises Bajos', NO_SOURCE, 'NOT_ASSESSED'),
     ('BE', 'Belgica', NO_SOURCE, 'NOT_ASSESSED'), ('AT', 'Austria', NO_SOURCE, 'NOT_ASSESSED')]
 def next_occurrence(cal, today):
@@ -89,7 +100,7 @@ def next_occurrence(cal, today):
 def build(today):
     cs = [x for x in (country_es(), country_dk(), country_eu()) if x]
     cs += [blocked(cc, n, r, c) for cc, n, r, c in PENDING]
-    cs += [x for x in (country_de(),) if x]   # al final: las pruebas de contrato indexan los primeros paises
+    cs += [x for x in (country_de(), country_fr()) if x]   # al final: las pruebas de contrato indexan los primeros paises
     rules, events, deadlines = J('es/rules.json'), [], []
     for cc, f in (('ES', 'es/watch.json'), ('DK', 'dk/watch.json')):
         w = J(f)

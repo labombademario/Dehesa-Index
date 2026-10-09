@@ -1,0 +1,49 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - PAC Francia: importes unitarios (arr\u00eat\u00e9s del JORF)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "country",
+  "kind",
+  "campaign",
+  "sources",
+  "documents",
+  "items",
+  "verifiedAt"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "country": {
+   "enum": [
+    "FR"
+   ]
+  },
+  "kind": {
+   "enum": [
+    "OFFICIAL_UNIT_AMOUNTS"
+   ]
+  },
+  "campaign": {
+   "type": "integer"
+  },
+  "sources": {
+   "type": "array",
+   "minItems": 1
+  },
+  "documents": {
+   "type": "array",
+   "minItems": 15
+  },
+  "items": {
+   "type": "array",
+   "minItems": 25
+  },
+  "verifiedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  }
+ }
+}

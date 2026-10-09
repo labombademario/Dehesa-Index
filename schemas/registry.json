@@ -616,6 +616,12 @@
     "cap_de_amounts"
    ]
   ],
+  "cap/fr/amounts.json": [
+   "cap-fr-amounts",
+   [
+    "cap_fr_amounts"
+   ]
+  ],
   "cap/index.json": [
    "cap-index",
    [

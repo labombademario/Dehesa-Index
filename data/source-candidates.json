@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T01:33:17Z",
+ "generatedAt": "2026-10-09T02:20:18Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 103,
+  "total": 104,
   "byStatus": {
-   "ACTIVE": 73,
+   "ACTIVE": 74,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2234,6 +2234,45 @@
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "dila_jorf",
+   "registryId": "dila_jorf",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "DILA — Journal officiel de la République française (données ouvertes JORF)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : Journal officiel de la République française (DILA, données ouvertes JORF), arrêtés AGRT2524991A, AGRT2524997A, AGRT2525874A, AGRT2525877A, AGRT2531186A, AGRT2531189A, AGRT2531191A, AGRT2531193A, AGRT2604635A, AGRT2606117A, AGRT2614148A, AGRT2614150A, AGRT2614152A, AGRT2614157A, AGRT2614158A. Extraits.",
+   "lastChecked": "2026-10-08",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

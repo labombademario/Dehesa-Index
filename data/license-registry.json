@@ -2243,6 +2243,32 @@
    "additionalRestrictions": "Only the amtlicher Teil (official notices of the Federal Government) is used, never the commercial parts of the Bundesanzeiger. The basis is the statutory exclusion of official notices from copyright; the site terms were not read in full. Figures are extracts transcribed by hand: cite the BAnz reference. Not readable from GitHub runners (session-based search), so there is no automated refresh.",
    "evidence": "§ 5 Abs. 1 UrhG: amtliche Bekanntmachungen genießen keinen urheberrechtlichen Schutz. The three notices are Bekanntmachungen of the federal ministry published under § 32 GAPDZG in the Amtlicher Teil. Bundesanzeiger site terms not read in full, so confidence is medium.",
    "short": "Bundesanzeiger (DE)"
+  },
+  "dila_jorf": {
+   "country": "FR",
+   "licenseId": "CUSTOM",
+   "licenseName": "Réutilisation gratuite des bases de données juridiques de la DILA (Arrêté du 24 juin 2014); API sous Licence Ouverte 2.0",
+   "licenseUrl": "https://www.legifrance.gouv.fr/contenu/pied-de-page/open-data-et-api",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-08",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "name": "DILA — Journal officiel de la République française (données ouvertes JORF)",
+   "url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/",
+   "attributionText": "Source : Journal officiel de la République française (DILA, données ouvertes JORF), arrêtés AGRT2524991A, AGRT2524997A, AGRT2525874A, AGRT2525877A, AGRT2531186A, AGRT2531189A, AGRT2531191A, AGRT2531193A, AGRT2604635A, AGRT2606117A, AGRT2614148A, AGRT2614150A, AGRT2614152A, AGRT2614157A, AGRT2614158A. Extraits.",
+   "additionalRestrictions": "The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse under the Arrêté du 24 juin 2014 and that the API is under the Licence Ouverte 2.0. The rest of the usage conditions on that page (second bullet) was cut off and not read, so we cite the source and the arrêté reference as a precaution. Amounts are extracts transcribed by hand from the JORF article texts; the Journal officiel prevails. We read the DILA open-data archives, not the Légifrance site or the PISTE API, so there is no account or API key. There is no automated refresh.",
+   "evidence": "Légifrance «Open data et API»: «Les données de Légifrance sont mises à disposition pour une réutilisation gratuite comme disposé par l'Arrêté du 24 juin 2014». Texts come from echanges.dila.gouv.fr/OPENDATA/JORF/ (the free dump); official arrêtés are also public-domain legal acts. Medium confidence because the full conditions of reuse were not read.",
+   "short": "JORF / DILA (FR)"
   }
  },
  "files": {
@@ -2630,10 +2656,11 @@
    "sources": [
     "boe_es",
     "bundesanzeiger",
+    "dila_jorf",
     "gesetze_im_internet",
     "retsinformation"
    ],
-   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización. PAC Dinamarca (scripts/update-cap-dk.py, data/cap/dk/): importes y umbrales de 2026 de las bekendtgørelser 1363 y 1381 leídos del XML de Retsinformation (extractos, no el texto auténtico; se cita número de decreto y fecha de versión). PAC Alemania (scripts/build-cap-de.py, data/cap/de/amounts.json): importes reales de 2023-2025 de las Bekanntmachungen del Bundesanzeiger y planificados de las Öko-Regelungen (2023-2026) de la GAPDZV, transcritos a mano de los textos oficiales; sin actualizacion automatica porque ninguna de las dos fuentes se lee desde GitHub."
+   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización. PAC Dinamarca (scripts/update-cap-dk.py, data/cap/dk/): importes y umbrales de 2026 de las bekendtgørelser 1363 y 1381 leídos del XML de Retsinformation (extractos, no el texto auténtico; se cita número de decreto y fecha de versión). PAC Alemania (scripts/build-cap-de.py, data/cap/de/amounts.json): importes reales de 2023-2025 de las Bekanntmachungen del Bundesanzeiger y planificados de las Öko-Regelungen (2023-2026) de la GAPDZV, transcritos a mano de los textos oficiales; sin actualizacion automatica porque ninguna de las dos fuentes se lee desde GitHub. PAC Francia (scripts/build-cap-fr.py, data/cap/fr/amounts.json): importes unitarios de la campaña 2025 transcritos a mano de 15 arrêtés del Ministerio de Agricultura publicados en el Journal officiel (iniciales y modificativos de nov-2025, mar-2026 y jun-2026), leídos del volcado de datos abiertos de la DILA (reutilización gratuita, Arrêté du 24 juin 2014). Se cita la fuente y la referencia NOR; las condiciones completas de reutilización no se leyeron."
   },
   "data/mb-markets/": {
    "sources": [

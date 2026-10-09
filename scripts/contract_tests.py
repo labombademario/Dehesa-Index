@@ -2842,6 +2842,34 @@ def cap_de_amounts(doc, errs, warns, stats):
     stats["cap-de importes"] = len(doc["items"]); stats["cap-de condiciones"] = len(doc["conditions"])
 
 
+def cap_fr_amounts(doc, errs, warns, stats):
+    """PAC Francia: cada importe tiene una cadena de versiones con documentos conocidos y fechas ordenadas, el vigente es el ultimo, los NOR son unicos y hay un arrete inicial y uno modificativo."""
+    vd = _cap_date(doc["verifiedAt"])
+    if vd is None or vd > TODAY: errs.append("cap-fr: verifiedAt invalido o en el futuro"); return
+    docs = {}
+    for d in doc["documents"]:
+        pub = _cap_date(d["published"]); sig = _cap_date(d["signed"])
+        if pub is None or sig is None or pub > TODAY or sig > pub: errs.append("cap-fr %s: fechas invalidas" % d["id"]); return
+        if d["id"] in docs or not str(d["jorfText"]).startswith("JORFTEXT") or not str(d["nor"]).startswith("AGR"): errs.append("cap-fr %s: documento repetido o referencia invalida" % d["id"]); return
+        docs[d["id"]] = d
+    if len({d["nor"] for d in docs.values()}) != len(docs): errs.append("cap-fr: NOR repetido"); return
+    seen = set()
+    for it in doc["items"]:
+        if it["id"] in seen: errs.append("cap-fr: importe repetido %s" % it["id"]); return
+        seen.add(it["id"])
+        if it["unit"] not in ("EUR/ha", "EUR/head", "EUR", "PCT"): errs.append("cap-fr %s: unidad invalida %r" % (it["id"], it["unit"])); return
+        vs = it["versions"]
+        if not vs: errs.append("cap-fr %s: sin versiones" % it["id"]); return
+        last = None
+        for v in vs:
+            if v["doc"] not in docs: errs.append("cap-fr %s: documento desconocido %s" % (it["id"], v["doc"])); return
+            if not _cap_num(v["value"]) or v["value"] <= 0: errs.append("cap-fr %s: importe invalido" % it["id"]); return
+            if last and docs[v["doc"]]["published"] < last: errs.append("cap-fr %s: versiones desordenadas" % it["id"]); return
+            last = docs[v["doc"]]["published"]
+        if it["current"] != vs[-1]["value"] or it["currentDoc"] != vs[-1]["doc"]: errs.append("cap-fr %s: el importe vigente no es el de la ultima version" % it["id"]); return
+    stats["cap-fr importes"] = len(doc["items"]); stats["cap-fr arretes"] = len(docs)
+
+
 def cap_dk_amounts(doc, errs, warns, stats):
     """PAC Dinamarca: importes positivos con unidad, cada paragrafo de un decreto declarado, estado Valid, verificacion reciente (aviso a los 21 dias) y cambios con fechas ordenadas."""
     vd = _cap_date(doc["verifiedAt"])

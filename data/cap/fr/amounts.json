@@ -1,0 +1,751 @@
+{
+ "schemaVersion": 1,
+ "country": "FR",
+ "kind": "OFFICIAL_UNIT_AMOUNTS",
+ "campaign": 2025,
+ "sources": [
+  {
+   "id": "dila_jorf",
+   "name": "DILA — Journal officiel de la République française (données ouvertes JORF)",
+   "url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/"
+  }
+ ],
+ "documents": [
+  {
+   "id": "A1",
+   "published": "2025-10-01",
+   "signed": "2025-09-23",
+   "nor": "AGRT2524991A",
+   "jorfText": "JORFTEXT000052328766",
+   "title": "Arrêté du 23 septembre 2025 fixant les montants de l'aide redistributive complémentaire au revenu pour un développement durable, de l'aide complémentaire au revenu pour les jeunes agriculteurs et du taux de réduction des montants de l'aide de base au revenu pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052328766"
+  },
+  {
+   "id": "A2",
+   "published": "2025-10-01",
+   "signed": "2025-09-23",
+   "nor": "AGRT2524997A",
+   "jorfText": "JORFTEXT000052328776",
+   "title": "Arrêté du 23 septembre 2025 fixant les montants unitaires du programme volontaire pour le climat et le bien-être animal dit « écorégime » pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052328776"
+  },
+  {
+   "id": "A3",
+   "published": "2025-10-08",
+   "signed": "2025-09-30",
+   "nor": "AGRT2525874A",
+   "jorfText": "JORFTEXT000052372817",
+   "title": "Arrêté du 30 septembre 2025 relatif aux montants des aides ovines et de l'aide caprine dans les départements métropolitains hors Corse pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052372817"
+  },
+  {
+   "id": "A4",
+   "published": "2025-10-08",
+   "signed": "2025-09-30",
+   "nor": "AGRT2525877A",
+   "jorfText": "JORFTEXT000052372828",
+   "title": "Arrêté du 30 septembre 2025 relatif aux montants de l'aide aux petits ruminants en Corse pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052372828"
+  },
+  {
+   "id": "M1",
+   "published": "2025-11-28",
+   "signed": "2025-11-25",
+   "nor": "AGRT2531186A",
+   "jorfText": "JORFTEXT000052869147",
+   "title": "Arrêté du 25 novembre 2025 modifiant l'arrêté du 23 septembre 2025 (aide redistributive, aide jeunes agriculteurs, taux de réduction)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052869147"
+  },
+  {
+   "id": "M2",
+   "published": "2025-11-28",
+   "signed": "2025-11-25",
+   "nor": "AGRT2531189A",
+   "jorfText": "JORFTEXT000052869158",
+   "title": "Arrêté du 25 novembre 2025 modifiant l'arrêté du 23 septembre 2025 (écorégime)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052869158"
+  },
+  {
+   "id": "M3",
+   "published": "2025-11-28",
+   "signed": "2025-11-25",
+   "nor": "AGRT2531191A",
+   "jorfText": "JORFTEXT000052869177",
+   "title": "Arrêté du 25 novembre 2025 modifiant l'arrêté du 30 septembre 2025 (aide aux petits ruminants en Corse)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052869177"
+  },
+  {
+   "id": "M4",
+   "published": "2025-11-28",
+   "signed": "2025-11-25",
+   "nor": "AGRT2531193A",
+   "jorfText": "JORFTEXT000052869184",
+   "title": "Arrêté du 25 novembre 2025 modifiant l'arrêté du 30 septembre 2025 (aides ovines hors Corse)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052869184"
+  },
+  {
+   "id": "V1",
+   "published": "2026-02-28",
+   "signed": "2026-02-24",
+   "nor": "AGRT2604635A",
+   "jorfText": "JORFTEXT000053594055",
+   "title": "Arrêté du 24 février 2026 fixant les montants unitaires des aides couplées végétales pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053594055"
+  },
+  {
+   "id": "V2",
+   "published": "2026-03-13",
+   "signed": "2026-03-11",
+   "nor": "AGRT2606117A",
+   "jorfText": "JORFTEXT000053659009",
+   "title": "Arrêté du 11 mars 2026 modifiant l'arrêté du 24 février 2026 fixant les montants unitaires des aides couplées végétales pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053659009"
+  },
+  {
+   "id": "J1",
+   "published": "2026-06-12",
+   "signed": "2026-06-05",
+   "nor": "AGRT2614148A",
+   "jorfText": "JORFTEXT000054237656",
+   "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 23 septembre 2025 (aide redistributive, aide jeunes agriculteurs, taux de réduction)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237656"
+  },
+  {
+   "id": "J2",
+   "published": "2026-06-12",
+   "signed": "2026-06-05",
+   "nor": "AGRT2614150A",
+   "jorfText": "JORFTEXT000054237666",
+   "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 23 septembre 2025 (écorégime)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237666"
+  },
+  {
+   "id": "J3",
+   "published": "2026-06-12",
+   "signed": "2026-06-05",
+   "nor": "AGRT2614152A",
+   "jorfText": "JORFTEXT000054237685",
+   "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 24 février 2026 (aides couplées végétales)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237685"
+  },
+  {
+   "id": "J4",
+   "published": "2026-06-12",
+   "signed": "2026-06-05",
+   "nor": "AGRT2614157A",
+   "jorfText": "JORFTEXT000054237700",
+   "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 30 septembre 2025 (aides ovines et caprine hors Corse)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237700"
+  },
+  {
+   "id": "J5",
+   "published": "2026-06-12",
+   "signed": "2026-06-05",
+   "nor": "AGRT2614158A",
+   "jorfText": "JORFTEXT000054237709",
+   "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 30 septembre 2025 (aide aux petits ruminants en Corse)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237709"
+  }
+ ],
+ "items": [
+  {
+   "id": "redistributive",
+   "group": "direct",
+   "label": "Aide redistributive complémentaire au revenu pour un développement durable (CRISS)",
+   "unit": "EUR/ha",
+   "versions": [
+    {
+     "doc": "A1",
+     "value": 47.81
+    },
+    {
+     "doc": "M1",
+     "value": 48.58
+    },
+    {
+     "doc": "J1",
+     "value": 50.2
+    }
+   ],
+   "current": 50.2,
+   "currentDoc": "J1"
+  },
+  {
+   "id": "young",
+   "group": "direct",
+   "label": "Aide complémentaire au revenu pour les jeunes agriculteurs (montant forfaitaire)",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "A1",
+     "value": 3100
+    },
+    {
+     "doc": "M1",
+     "value": 4300
+    },
+    {
+     "doc": "J1",
+     "value": 4469
+    }
+   ],
+   "current": 4469,
+   "currentDoc": "J1"
+  },
+  {
+   "id": "reduction",
+   "group": "direct",
+   "label": "Taux de réduction (art. D. 614-67 du code rural)",
+   "unit": "PCT",
+   "versions": [
+    {
+     "doc": "A1",
+     "value": 2.9195
+    },
+    {
+     "doc": "J1",
+     "value": 3.8774
+    }
+   ],
+   "current": 3.8774,
+   "currentDoc": "J1"
+  },
+  {
+   "id": "eco-base",
+   "group": "eco",
+   "label": "Écorégime, niveau de base",
+   "unit": "EUR/ha",
+   "versions": [
+    {
+     "doc": "A2",
+     "value": 45.46
+    },
+    {
+     "doc": "M2",
+     "value": 46.34
+    },
+    {
+     "doc": "J2",
+     "value": 46.34
+    }
+   ],
+   "current": 46.34,
+   "currentDoc": "J2"
+  },
+  {
+   "id": "eco-upper",
+   "group": "eco",
+   "label": "Écorégime, niveau supérieur",
+   "unit": "EUR/ha",
+   "versions": [
+    {
+     "doc": "A2",
+     "value": 62.05
+    },
+    {
+     "doc": "M2",
+     "value": 63.39
+    },
+    {
+     "doc": "J2",
+     "value": 63.39
+    }
+   ],
+   "current": 63.39,
+   "currentDoc": "J2"
+  },
+  {
+   "id": "eco-bio",
+   "group": "eco",
+   "label": "Écorégime, niveau spécifique à l'agriculture biologique",
+   "unit": "EUR/ha",
+   "versions": [
+    {
+     "doc": "A2",
+     "value": 92.05
+    },
+    {
+     "doc": "M2",
+     "value": 93.39
+    },
+    {
+     "doc": "J2",
+     "value": 101.67
+    }
+   ],
+   "current": 101.67,
+   "currentDoc": "J2"
+  },
+  {
+   "id": "eco-hedge",
+   "group": "eco",
+   "label": "Écorégime, bonus haies",
+   "unit": "EUR/ha",
+   "versions": [
+    {
+     "doc": "A2",
+     "value": 20
+    },
+    {
+     "doc": "M2",
+     "value": 20
+    },
+    {
+     "doc": "J2",
+     "value": 20
+    }
+   ],
+   "current": 20,
+   "currentDoc": "J2"
+  },
+  {
+   "id": "sheep-base",
+   "group": "coupled-animal",
+   "label": "Aide ovine de base (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A3",
+     "value": 20
+    },
+    {
+     "doc": "M4",
+     "value": 21
+    },
+    {
+     "doc": "J4",
+     "value": 21.56
+    }
+   ],
+   "current": 21.56,
+   "currentDoc": "J4"
+  },
+  {
+   "id": "sheep-first500",
+   "group": "coupled-animal",
+   "label": "Majoration pour les 500 premières brebis primées (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A3",
+     "value": 2
+    },
+    {
+     "doc": "M4",
+     "value": 2
+    },
+    {
+     "doc": "J4",
+     "value": 2
+    }
+   ],
+   "current": 2,
+   "currentDoc": "J4"
+  },
+  {
+   "id": "sheep-new",
+   "group": "coupled-animal",
+   "label": "Aide ovine complémentaire, nouveaux producteurs (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A3",
+     "value": 6
+    },
+    {
+     "doc": "M4",
+     "value": 6
+    },
+    {
+     "doc": "J4",
+     "value": 6.57
+    }
+   ],
+   "current": 6.57,
+   "currentDoc": "J4"
+  },
+  {
+   "id": "goat",
+   "group": "coupled-animal",
+   "label": "Aide caprine (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A3",
+     "value": 14.24
+    },
+    {
+     "doc": "J4",
+     "value": 15.64
+    }
+   ],
+   "current": 15.64,
+   "currentDoc": "J4"
+  },
+  {
+   "id": "corse-ewe-base",
+   "group": "coupled-animal",
+   "label": "Corse, montant de base, femelles ovines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A4",
+     "value": 22.23
+    },
+    {
+     "doc": "M3",
+     "value": 23.41
+    },
+    {
+     "doc": "J5",
+     "value": 25.0
+    }
+   ],
+   "current": 25.0,
+   "currentDoc": "J5"
+  },
+  {
+   "id": "corse-goat-base",
+   "group": "coupled-animal",
+   "label": "Corse, montant de base, femelles caprines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A4",
+     "value": 15.43
+    },
+    {
+     "doc": "M3",
+     "value": 16.25
+    },
+    {
+     "doc": "J5",
+     "value": 17.36
+    }
+   ],
+   "current": 17.36,
+   "currentDoc": "J5"
+  },
+  {
+   "id": "corse-ewe-upper",
+   "group": "coupled-animal",
+   "label": "Corse, montant supérieur, femelles ovines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A4",
+     "value": 44.47
+    },
+    {
+     "doc": "M3",
+     "value": 46.82
+    },
+    {
+     "doc": "J5",
+     "value": 50.0
+    }
+   ],
+   "current": 50.0,
+   "currentDoc": "J5"
+  },
+  {
+   "id": "corse-goat-upper",
+   "group": "coupled-animal",
+   "label": "Corse, montant supérieur, femelles caprines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "A4",
+     "value": 30.88
+    },
+    {
+     "doc": "M3",
+     "value": 32.51
+    },
+    {
+     "doc": "J5",
+     "value": 34.72
+    }
+   ],
+   "current": 34.72,
+   "currentDoc": "J5"
+  },
+  {
+   "id": "pulses",
+   "group": "coupled-plant",
+   "label": "Légumineuses à graines et légumineuses fourragères déshydratées ou destinées à la production de semences",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 122.0
+    },
+    {
+     "doc": "J3",
+     "value": 138.04
+    }
+   ],
+   "current": 138.04,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "forage-mountain",
+   "group": "coupled-plant",
+   "label": "Légumineuses fourragères en zones de montagne",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 148.43
+    },
+    {
+     "doc": "J3",
+     "value": 154.0
+    }
+   ],
+   "current": 154.0,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "forage-plain",
+   "group": "coupled-plant",
+   "label": "Légumineuses fourragères hors zones de montagne",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 124.0
+    },
+    {
+     "doc": "J3",
+     "value": 141.01
+    }
+   ],
+   "current": 141.01,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "durum",
+   "group": "coupled-plant",
+   "label": "Blé dur",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 60.76
+    },
+    {
+     "doc": "J3",
+     "value": 69.88
+    }
+   ],
+   "current": 69.88,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "starch-potato",
+   "group": "coupled-plant",
+   "label": "Pommes de terre féculières",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 172.8
+    },
+    {
+     "doc": "J3",
+     "value": 224.64
+    }
+   ],
+   "current": 224.64,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "rice",
+   "group": "coupled-plant",
+   "label": "Riz",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 120.0
+    },
+    {
+     "doc": "J3",
+     "value": 143.0
+    }
+   ],
+   "current": 143.0,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "hops",
+   "group": "coupled-plant",
+   "label": "Houblon",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 440.0
+    },
+    {
+     "doc": "J3",
+     "value": 565.83
+    }
+   ],
+   "current": 565.83,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "hemp",
+   "group": "coupled-plant",
+   "label": "Chanvre",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V1",
+     "value": 67.0
+    },
+    {
+     "doc": "J3",
+     "value": 92.74
+    }
+   ],
+   "current": 92.74,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "grass-seed",
+   "group": "coupled-plant",
+   "label": "Semences de graminées prairiales",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V2",
+     "value": 43.83
+    },
+    {
+     "doc": "J3",
+     "value": 48.22
+    }
+   ],
+   "current": 48.22,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "plum",
+   "group": "coupled-plant",
+   "label": "Prunes d'Ente destinées à la transformation",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V2",
+     "value": 946.37
+    },
+    {
+     "doc": "J3",
+     "value": 1041.01
+    }
+   ],
+   "current": 1041.01,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "tomato",
+   "group": "coupled-plant",
+   "label": "Tomates destinées à la transformation",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V2",
+     "value": 950.0
+    },
+    {
+     "doc": "J3",
+     "value": 1205.38
+    }
+   ],
+   "current": 1205.38,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "cherry",
+   "group": "coupled-plant",
+   "label": "Cerises Bigarreau destinées à la transformation",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V2",
+     "value": 587.74
+    },
+    {
+     "doc": "J3",
+     "value": 646.52
+    }
+   ],
+   "current": 646.52,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "peach",
+   "group": "coupled-plant",
+   "label": "Pêches Pavie destinées à la transformation",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V2",
+     "value": 450.0
+    },
+    {
+     "doc": "J3",
+     "value": 560.85
+    }
+   ],
+   "current": 560.85,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "market-garden",
+   "group": "coupled-plant",
+   "label": "Maraîchage",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V2",
+     "value": 1581.94
+    },
+    {
+     "doc": "J3",
+     "value": 1740.34
+    }
+   ],
+   "current": 1740.34,
+   "currentDoc": "J3"
+  },
+  {
+   "id": "pear",
+   "group": "coupled-plant",
+   "label": "Poires Williams destinées à la transformation",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "V2",
+     "value": 950.0
+    },
+    {
+     "doc": "J3",
+     "value": 1295.04
+    }
+   ],
+   "current": 1295.04,
+   "currentDoc": "J3"
+  }
+ ],
+ "notes": [
+  "Importes de la campaña 2025 tal como los fijan los arrêtés del Ministerio de Agricultura y sus modificaciones; el vigente es el del último arrêté (5 de junio de 2026 en casi todos).",
+  "Las ayudas acopladas vegetales figuran en el texto oficial en «euros», sin indicar la unidad: no se completa.",
+  "No incluye el importe unitario de la ayuda de base (no se ha encontrado su arrêté) ni los arrêtés de la campaña 2026 (no aparecen en el volcado de la DILA hasta el 9 de octubre de 2026).",
+  "Textos leídos del volcado de datos abiertos de la DILA el 8-9 de octubre de 2026; la edición que manda es la del Journal officiel."
+ ],
+ "verifiedAt": "2026-10-08"
+}
