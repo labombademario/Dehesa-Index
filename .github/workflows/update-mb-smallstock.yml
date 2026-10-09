@@ -22,6 +22,7 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v6
+      - run: sudo apt-get update -q >/dev/null
       - run: sudo apt-get install -y -q poppler-utils >/dev/null
       - id: fetch
         run: python3 scripts/update-mb-smallstock.py ${{ github.event.inputs.backfill == 'true' && '--backfill' || '' }}

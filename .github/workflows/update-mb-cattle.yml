@@ -2,7 +2,7 @@
 name: Update Manitoba weekly auction cattle prices (Manitoba Agriculture)
 on:
   schedule:
-    - cron: '50 21 * * 5'
+    - cron: '30 22 * * 5'
     - cron: '10 14 * * 1'
   workflow_dispatch:
 permissions:
@@ -16,6 +16,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
+      - run: sudo apt-get update -q >/dev/null
       - run: sudo apt-get install -y -q poppler-utils >/dev/null
       - id: fetch
         run: python3 scripts/update-mb-cattle.py

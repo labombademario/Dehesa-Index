@@ -2,7 +2,7 @@
 name: Update US NASS extra products (tree nuts, citrus, berries, vegetables, pulses, honey, wool, goats, tobacco, mushrooms, hemp, turkeys)
 on:
   schedule:
-    - cron: '50 21 * * 5'
+    - cron: '20 21 * * 5'
   workflow_dispatch:
 permissions:
   contents: write
