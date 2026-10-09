@@ -188,6 +188,33 @@
     if (window.DIChChain) setTimeout(run, 0); else { var sc = d.createElement('script'); sc.src = 'js/ch-chain.js'; sc.onload = run; d.head.appendChild(sc); }
     return '<div id="ch-chain-box"></div>';
   }
+
+  /* ---------- Lo que más produce: tres medallas (oro, plata, bronce) con cultivos (toneladas) y ganado (cabezas) ----------
+     Solo cuenta series reales del catálogo del país (Eurostat), con códigos de cultivo que no se solapan entre sí (sin subtotales como «cereales»). */
+  var TOPC = { c1110: ['Common wheat', 'Trigo blando', 'Blé tendre', 'Frumento tenero'], c1120: ['Durum wheat', 'Trigo duro', 'Blé dur', 'Frumento duro'], c1210: ['Rye', 'Centeno', 'Seigle', 'Segale'], c1300: ['Barley', 'Cebada', 'Orge', 'Orzo'], c1410: ['Oats', 'Avena', 'Avoine', 'Avena'], c1500: ['Grain maize', 'Maíz grano', 'Maïs grain', 'Mais da granella'], c1600: ['Triticale', 'Triticale', 'Triticale', 'Triticale'], c1700: ['Sorghum', 'Sorgo', 'Sorgho', 'Sorgo'], c2000: ['Rice', 'Arroz', 'Riz', 'Riso'], i1110: ['Rapeseed', 'Colza', 'Colza', 'Colza'], i1120: ['Sunflower', 'Girasol', 'Tournesol', 'Girasole'], i1130: ['Soya', 'Soja', 'Soja', 'Soia'], r1000: ['Potatoes', 'Patata', 'Pomme de terre', 'Patata'], r2000: ['Sugar beet', 'Remolacha azucarera', 'Betterave sucrière', 'Barbabietola da zucchero'], o1000: ['Olives', 'Aceituna', 'Olives', 'Olive'], w1000: ['Grapes', 'Uva', 'Raisin', 'Uva'], f1110: ['Apples', 'Manzana', 'Pommes', 'Mele'], f1120: ['Pears', 'Pera', 'Poires', 'Pere'], t1000: ['Oranges', 'Naranja', 'Oranges', 'Arance'], v3100: ['Tomatoes', 'Tomate', 'Tomates', 'Pomodori'] };
+  var TOPA = { a2000: ['Cattle', 'Vacuno', 'Bovins', 'Bovini'], a3100: ['Pigs', 'Porcino', 'Porcins', 'Suini'], a4100: ['Sheep', 'Ovino', 'Ovins', 'Ovini'], a4200: ['Goats', 'Caprino', 'Caprins', 'Caprini'] };
+  var TOPW = { es: ['Lo que más produce', 'Cultivos por toneladas cosechadas y ganado por número de cabezas, último dato publicado (Eurostat). Las medallas marcan las tres primeras partidas de cada lista.', 'Cultivos', 'Ganado', 'mil t', 'mil cabezas', ['Oro', 'Plata', 'Bronce']], en: ['What it produces most', 'Crops by tonnes harvested and livestock by head count, latest published figure (Eurostat). Medals mark the top three items of each list.', 'Crops', 'Livestock', 'kt', 'thousand head', ['Gold', 'Silver', 'Bronze']], fr: ['Ce qu’il produit le plus', 'Cultures par tonnes récoltées et élevage par nombre de têtes, dernier chiffre publié (Eurostat). Les médailles marquent les trois premiers postes de chaque liste.', 'Cultures', 'Élevage', 'kt', 'milliers de têtes', ['Or', 'Argent', 'Bronze']], it: ['Cosa produce di più', 'Colture per tonnellate raccolte e allevamenti per numero di capi, ultimo dato pubblicato (Eurostat). Le medaglie segnano le prime tre voci di ogni elenco.', 'Colture', 'Allevamento', 'kt', 'migliaia di capi', ['Oro', 'Argento', 'Bronzo']] };
+  var TOPI = { es: 0, en: 1, fr: 2, it: 3 }, MEDALS = ['🥇', '🥈', '🥉'];
+  function topLists(S) {
+    var cr = [], an = {}, m;
+    S.forEach(function (s) {
+      if (s.unit === 't' && (m = /-crop-([a-z0-9_]+)-production$/.exec(s.id)) && TOPC[m[1]] && s.latest > 0) cr.push({ k: m[1], v: s.latest, y: +String(s.latestPeriod).slice(0, 4) });
+      else if (s.unit === 'head' && (m = /-herd-(a2000|a3100|a4100|a4200)-/.exec(s.id)) && s.latest > 0) { var y = +String(s.latestPeriod).slice(0, 4), o = an[m[1]]; if (!o || y > o.y || (y === o.y && /m11_m12/.test(s.id))) an[m[1]] = { k: m[1], v: s.latest, y: y }; }
+    });
+    var cut = function (l) { var mx = l.reduce(function (a, r) { return Math.max(a, r.y); }, 0); return l.filter(function (r) { return r.y >= mx - 2; }).sort(function (a, b) { return b.v - a.v; }); };
+    return { crops: cut(cr), animals: cut(Object.keys(an).map(function (k) { return an[k]; })) };
+  }
+  function topCard(x, S) {
+    var w = TOPW[x.lang] || TOPW.es, i = TOPI[x.lang] == null ? 1 : TOPI[x.lang], esc = x.esc, T = topLists(S);
+    var list = function (title, rows, dict, unit, div) {
+      if (rows.length < 3) return ''; // con menos de tres partidas no hay podio
+      return '<div style="flex:1;min-width:240px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(unit) + ', ' + rows[0].y + '</span></div>' +
+        rows.slice(0, 6).map(function (r, n) { return '<div style="display:flex;gap:8px;align-items:baseline;font-size:13px;margin:5px 0"><span style="width:22px;flex:none" role="img" title="' + esc(n < 3 ? w[6][n] : '') + '" aria-label="' + esc(n < 3 ? w[6][n] : '') + '">' + (n < 3 ? MEDALS[n] : '') + '</span><span style="flex:1">' + esc(dict[r.k][i]) + '</span><b style="font-variant-numeric:tabular-nums">' + x.nf(r.v / div, r.v / div < 100 ? 1 : 0) + '</b></div>'; }).join('') + '</div>';
+    };
+    var a = list(w[2], T.crops, TOPC, w[4], 1000), b = list(w[3], T.animals, TOPA, w[5], 1000);
+    if (!a && !b) return '';
+    return '<div id="pp-top" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(w[0].toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 10px">' + esc(w[1]) + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
+  }
   function html(cc, c, x) {
     var t = T[x.lang] || T.es, esc = x.esc, nf = x.nf, S = c.series, groups = {}, i;
     S.forEach(function (s) { (groups[s.group] = groups[s.group] || []).push(s); });
@@ -223,6 +250,7 @@
       });
       h += '</div>';
     }
+    h += topCard(x, S);
     // comercio: socios
     var pt = groups.partners || [];
     if (pt.length) {
