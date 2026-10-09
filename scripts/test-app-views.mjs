@@ -34,6 +34,16 @@ for (const p of P) {
   ok(p.points.every((x, i, a) => i === 0 || a[i - 1][0] < x[0]), p.id + ': puntos desordenados');
   if (p.yearAgo) ok(iso(p.yearAgo.date) && typeof p.yearAgo.value === 'number', p.id + ': yearAgo mal formado');
 }
+// Historico completo (data/app/v1/history/<id>.json): ordenado, sin fechas repetidas y consistente con el precio
+for (const p of P) {
+  const f = path.join(DIR, 'history', p.id.replace(/[^A-Za-z0-9_.-]/g, '_') + '.json');
+  if (!fs.existsSync(f)) continue;
+  const h = JSON.parse(fs.readFileSync(f, 'utf8'));
+  ok(h.id === p.id, 'history ' + p.id + ': id');
+  ok(h.points.length >= p.points.length, 'history ' + p.id + ': menos puntos que el grafico corto');
+  ok(h.points.every((x, i, a) => iso(x[0]) && typeof x[1] === 'number' && (i === 0 || a[i - 1][0] < x[0])), 'history ' + p.id + ': puntos mal formados o desordenados');
+  ok(p.points.length === 0 || h.points.at(-1)[0] === p.points.at(-1)[0], 'history ' + p.id + ': el ultimo punto no coincide');
+}
 const T = load('today.json');
 ok(!T.index || typeof T.index.value === 'number', 'today: indice');
 ok(Array.isArray(T.calendar) && T.calendar.every(e => /Z$/.test(e.at) && e.name), 'today: calendario sin hora UTC');

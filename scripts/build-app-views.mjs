@@ -68,17 +68,17 @@ function isoOf(h) {
 const dayNum = iso => Date.parse(iso.length === 7 ? iso + '-15' : iso) / 864e5;
 function history(region, product, freq) {
   const f = `data/prices/history/${region}/${product}.json`;
-  if (!exists(f)) return { points: [], yearAgo: null };
+  if (!exists(f)) return { points: [], all: [], yearAgo: null };
   const pts = read(f).history.map(h => [isoOf(h), h.value]).filter(x => x[0] && typeof x[1] === 'number');
-  if (!pts.length) return { points: [], yearAgo: null };
+  if (!pts.length) return { points: [], all: [], yearAgo: null };
   const last = pts.at(-1), target = dayNum(last[0]) - 365, tol = freq === 'weekly' ? 10 : 20;
   let best = null;
   for (const p of pts) { const dd = Math.abs(dayNum(p[0]) - target); if (dd <= tol && (!best || dd < best.dd)) best = { dd, p }; }
-  return { points: pts.slice(freq === 'weekly' ? -52 : -24), yearAgo: best ? { date: best.p[0], value: best.p[1] } : null };
+  return { points: pts.slice(freq === 'weekly' ? -52 : -24), all: pts, yearAgo: best ? { date: best.p[0], value: best.p[1] } : null };
 }
 
 // 1) Precios verificados de la capa ligera de la web
-const prices = [];
+const prices = [], HIST = {};
 for (const region of ['eu', 'us', 'uk', 'ca']) {
   const f = `data/prices/latest/${region}.json`;
   if (!exists(f)) continue;
@@ -92,7 +92,7 @@ for (const region of ['eu', 'us', 'uk', 'ca']) {
     prices.push({ id: o.id, product: o.product, region, name, place: place(o), unit: unit(o), currency: o.currency, value: o.value,
       changePct: typeof o.changePct === 'number' ? Math.round(o.changePct * 100) / 100 : null, date: o.observationDate, frequency: o.frequency,
       sourceId: canon(o.sourceId), sourceName: (REG[canon(o.sourceId)] || {}).short || (REG[canon(o.sourceId)] || {}).name || canon(o.sourceId), comparability: o.comparability || null, note: o.methodology ? { es: o.methodology } : null,
-      ...history(region, o.product, o.frequency) });
+      ...(() => { const h = history(region, o.product, o.frequency); HIST[o.id] = h.all; return { points: h.points, yearAgo: h.yearAgo }; })() });
   }
 }
 if (prices.length < 20) throw new Error('app-views: solo ' + prices.length + ' precios verificados; no se publica');
@@ -209,7 +209,7 @@ for (const c of countries) {
       const full = chunk(sr.file).get(sr.id);
       const pts = full && Array.isArray(full.points) ? full.points.filter(x => typeof x[1] === 'number').slice(-MAX_POINTS) : [];
       pick.push({ id: sr.id, label: sr.label, unit: sr.unit, frequency: sr.freq, latest: sr.latest, period: sr.latestPeriod, changePct: typeof sr.changePct === 'number' ? Math.round(sr.changePct * 100) / 100 : null,
-        sourceId: canon(sr.sourceId), points: pts });
+        sourceId: canon(sr.sourceId), file: sr.file, points: pts });
       if (pick.length >= PER_GROUP) break;
     }
     if (pick.length) groups.push({ id: g, title: t4(GL.es[g], GL.en[g], GL.fr[g], GL.it[g]), total: byGroup[g].length, series: pick });
@@ -233,6 +233,18 @@ for (const [name, body] of Object.entries(files)) {
   if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
   manifest.files[name] = { hash, bytes: fs.statSync(p).size };
 }
+// Historico completo por precio (la app lo baja al abrir un grafico para los rangos 6 meses ... maximo)
+const hdir = path.join(OUT, 'history'); fs.mkdirSync(hdir, { recursive: true });
+const keep = new Set();
+for (const pr of prices) {
+  const all = HIST[pr.id] || [];
+  if (all.length <= pr.points.length) continue;  // sin mas historia que la ya incluida
+  const f = pr.id.replace(/[^A-Za-z0-9_.-]/g, '_') + '.json'; keep.add(f);
+  const content = JSON.stringify({ schemaVersion: 1, id: pr.id, points: all }) + '\n';
+  const fp = path.join(hdir, f);
+  if (!fs.existsSync(fp) || fs.readFileSync(fp, 'utf8') !== content) fs.writeFileSync(fp, content);
+}
+for (const f of fs.readdirSync(hdir)) if (!keep.has(f)) fs.unlinkSync(path.join(hdir, f));
 const cdir = path.join(OUT, 'country'); fs.mkdirSync(cdir, { recursive: true });
 manifest.countries = {};
 for (const [cc, body] of Object.entries(profiles)) {
