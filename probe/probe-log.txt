@@ -1,0 +1,21 @@
+== mantequilla apro_mk_pobta
+2019 paises 24 faltan ['FI', 'LU', 'SI'] suma 1819.2
+2020 paises 23 faltan ['EE', 'FI', 'LU', 'SI'] suma 1850.3
+2021 paises 23 faltan ['EE', 'FI', 'LU', 'SI'] suma 1799.2
+2022 paises 23 faltan ['EE', 'FI', 'LU', 'NL'] suma 1664.7
+2023 paises 22 faltan ['EE', 'FI', 'LU', 'NL', 'SI'] suma 1723.2
+2024 paises 23 faltan ['FI', 'LU', 'NL', 'SI'] suma 1714.1
+== queso apro_mk_pobta
+2019 paises 24 faltan ['FI', 'LU', 'MT'] suma 9958.2
+2020 paises 24 faltan ['FI', 'LU', 'MT'] suma 10163.5
+2021 paises 24 faltan ['FI', 'LU', 'MT'] suma 10328.1
+2022 paises 24 faltan ['FI', 'LU', 'MT'] suma 10334.4
+2023 paises 23 faltan ['FI', 'LU', 'MT', 'SK'] suma 10440.7
+2024 paises 24 faltan ['FI', 'LU', 'MT'] suma 10716.8
+== huevos apro_ec_eggcon
+2020 paises 23 faltan ['AT', 'EL', 'IT', 'NL'] suma 74142.6
+2021 paises 21 faltan ['AT', 'CY', 'EE', 'EL', 'IT', 'NL'] suma 73745.4
+2022 paises 20 faltan ['AT', 'CY', 'EE', 'EL', 'IT', 'MT', 'NL'] suma 74980.1
+2023 paises 20 faltan ['AT', 'CY', 'EE', 'EL', 'IT', 'MT', 'NL'] suma 75891.2
+2024 paises 20 faltan ['AT', 'CY', 'EE', 'EL', 'IT', 'MT', 'NL'] suma 77123.5
+2025 paises 24 faltan ['CZ', 'EL', 'LU'] suma 101490.5
