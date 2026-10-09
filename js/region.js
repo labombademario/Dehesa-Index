@@ -340,6 +340,12 @@
   var EFT = { FT1: ['Field crops', 'Cultivos herbáceos', 'Grandes cultures', 'Seminativi'], FT2: ['Horticulture', 'Horticultura', 'Horticulture', 'Orticoltura'], FT3: ['Permanent crops', 'Cultivos permanentes', 'Cultures permanentes', 'Colture permanenti'], FT4: ['Grazing livestock', 'Herbívoros', 'Herbivores', 'Erbivori'], FT5: ['Granivores', 'Granívoros (porcino y aves)', 'Granivores', 'Granivori'], FT6: ['Mixed cropping', 'Policultivo', 'Polyculture', 'Policoltura'], FT7: ['Mixed livestock', 'Policría', 'Polyélevage', 'Poliallevamento'], FT8: ['Mixed crops and livestock', 'Cultivos y ganado mixtos', 'Polyculture-élevage', 'Colture e allevamento misti'], FT9: ['Non-classified', 'Sin clasificar', 'Non classées', 'Non classificate'] };
   LBL.deMeat = ['Slaughter prices by region (BLE)', 'Precios de sacrificio por región (BLE)', 'Prix d’abattage par région (BLE)', 'Prezzi di macellazione per regione (BLE)'];
   var EAA_COLS = [['AM180000'], ['AM260000'], ['AM320000'], ['AM370000']];
+  var PCOL = ['#2f6b4a', '#e08a3a', '#3a5f8a', '#b03a2e', '#7b5ea7', '#8a6d3b'];
+  function yrSeries(arr, name, color) { return arr && arr.length > 1 ? { name: name, color: color, pts: arr.map(function (p) { return { x: Date.UTC(p[0], 0, 1), y: p[1], l: String(p[0]) }; }) } : null; }
+  function twoViews(ser, pieHtml, unit, aria) { // líneas (evolución) + tarta (reparto del último año), con selector
+    var DC = window.DehesaChart, line = ser.length ? DC.render({ series: ser, xMode: 'time', yMin: 0, yTitle: unit, aria: aria, vFmt: function (v) { return nf(v, dec(v)); }, yFmt: function (v) { return nf(v, 0); }, xFmt: function (v) { return new Date(v).getUTCFullYear(); } }) : '';
+    return DC.switcher({ line: line, pie: pieHtml });
+  }
   function euData(cc) { return get('data/eu-regions-' + cc.toLowerCase() + '.json'); }
   function ycell(p, y) { for (var i = p.length - 1; i >= 0; i--) if (p[i][0] === y) return p[i][1]; return null; }
   function lastP(p) { return p && p.length ? p[p.length - 1] : null; }
@@ -381,7 +387,17 @@
         var dash = '<span style="color:var(--text-faint)">—</span>';
         return [esc(EC[r.k][li()]), r.av != null ? nf(r.av, dec(r.av)) : dash, r.pv != null ? nf(r.pv, dec(r.pv)) : dash, r.av > 0 && r.pv != null ? nf(r.pv / r.av, 1) : dash, r.av != null && r.tot ? sharePct(r.av, r.tot) : dash, String(r.y)];
       }), 640);
-      return card(t.ercrops, t.ercropsSub, head + tb, euNote(x.c));
+      var DC = window.DehesaChart, cv = function (k) { var r = rows.filter(function (q) { return q.k === k; })[0]; return r && r.av > 0 ? r.av : 0; }, uaaV = uaa && uaa.av > 0 ? uaa.av : 0, parts = [], used = 0;
+      ['C1110', 'C1120', 'C1200', 'C1300', 'C1500'].forEach(function (k) { used += cv(k); });
+      var oc = cv('C0000') - used; // el resto de cereales hasta el total de cereales
+      ['C1110', 'C1120', 'C1200', 'C1300', 'C1500', 'R1000', 'R2000', 'I1110', 'I1120', 'I1130', 'P0000', 'G3000', 'F0000', 'T0000', 'W1000', 'O1000', 'J0000'].forEach(function (k) { if (cv(k) > 0) parts.push({ name: EC[k][li()], v: cv(k) }); });
+      if (oc > 0.5) parts.push({ name: ({ es: 'Otros cereales', en: 'Other cereals', fr: 'Autres céréales', it: 'Altri cereali' })[lang()] || 'Otros cereales', v: oc });
+      var psum = parts.reduce(function (a, q) { return a + q.v; }, 0);
+      if (uaaV > psum * 1.001) parts.push({ name: ({ es: 'Resto de la superficie agraria', en: 'Rest of agricultural land', fr: 'Reste de la surface agricole', it: 'Resto della superficie agricola' })[lang()] || 'Resto', v: uaaV - psum, color: '#b8b2a2' });
+      var yrC = rows.length ? rows[0].y : '';
+      var pieC = uaaV > 0 ? DC.pie({ items: parts, unit: t.kha2, center: nf(uaaV, dec(uaaV)), centerLabel: EC.UAA[li()].split(' ').slice(0, 2).join(' ') + ' ' + yrC, aria: t.ercrops + ' ' + nm(C[x.c], x.r) }) : '';
+      var serC = rows.filter(function (r) { return ['ARA', 'C0000'].indexOf(r.k) < 0 && r.av > 0; }).slice(0, 5).map(function (r, i) { return yrSeries(c[r.k].area, EC[r.k][li()], PCOL[i % PCOL.length]); }).filter(Boolean);
+      return card(t.ercrops, t.ercropsSub, head + twoViews(serC, pieC, t.kha2, t.ercrops + ' ' + nm(C[x.c], x.r)) + tb, euNote(x.c));
     });
   }
   function euLive(x) {
@@ -393,6 +409,10 @@
       var m = lastP(b.milk);
       if (m) { var mp = ycell(b.milk, m[0] - 1), mt = countryTotal(D, function (r) { return r.milk; }, m[0]); body += '<p style="margin:10px 0 0"><b>' + nf(m[1], 0) + ' ' + esc(t.ktL) + '</b> ' + esc(t.milkL.toLowerCase()) + ' · ' + m[0] + (mp ? ' · ' + esc(pct((m[1] / mp - 1) * 100)) + ' ' + esc(t.eaYoy) : '') + (mt ? ' · ' + esc(t.ec) + ' ' + sharePct(m[1], mt) : '') + '</p>';
         if (b.milk.length > 3) body += window.DehesaChart.render({ series: [{ name: t.milkL, color: '#2f6b4a', pts: b.milk.map(function (p) { return { x: Date.UTC(p[0], 0, 1), y: p[1], l: String(p[0]) }; }) }], xMode: 'time', yMin: 0, yTitle: t.ktL, noLegend: true, aria: t.milkL + ' ' + nm(C[x.c], x.r), vFmt: function (v) { return nf(v, 0) + ' ' + t.ktL; }, yFmt: function (v) { return nf(v, 0); }, xFmt: function (v) { return new Date(v).getUTCFullYear(); } }); }
+      var DC = window.DehesaChart, aks = Object.keys(EAN).filter(function (k) { return k !== 'A2300F' && k !== 'A2300G' && an[k] && lastP(an[k]) && lastP(an[k])[1] > 0; });
+      var pieA = DC.pie({ items: aks.map(function (k) { return { name: EAN[k][li()], v: lastP(an[k])[1] }; }), unit: t.headsH.toLowerCase(), aria: t.erlive + ' ' + nm(C[x.c], x.r), centerLabel: t.yearL + ' ' + (aks.length ? lastP(an[aks[0]])[0] : '') });
+      var serA = aks.map(function (k, i) { return yrSeries(an[k], EAN[k][li()], PCOL[i % PCOL.length]); }).filter(Boolean);
+      if (pieA || serA.length) body = twoViews(serA, pieA, t.headsH, t.erlive + ' ' + nm(C[x.c], x.r)) + body;
       if (!body) return null;
       return card(t.erlive, t.erliveSub, body, euNote(x.c));
     });
@@ -406,6 +426,11 @@
       var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(t.yearL) + ' ' + y + '</p><div style="display:flex;gap:10px;flex-wrap:wrap">' + tile(t.holdings, nf(f.HLD, 0), '', chg) + (f.HA ? tile(t.uaaH, nf(f.HA / 1000, dec(f.HA / 1000)), t.kha2, '') + tile(t.avgSize, nf(f.HA / f.HLD, 1), t.haH, '') : '') + (f.AWU ? tile(t.awuH, nf(f.AWU, 0), '', '') : '') + (f.EUR ? tile(t.soH, nf(f.EUR / 1e6, 0), t.mEur, '') : '') + '</div>';
       var types = Object.keys(EFT).map(function (k) { var e = F[k] && F[k][y]; return e && e.HLD ? { k: k, e: e } : null; }).filter(Boolean).sort(function (p, q) { return q.e.HLD - p.e.HLD; });
       if (types.length) body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(t.typeH) + '</h3>' + table([t.typeH, t.holdings, '%', t.uaaH + ' (' + t.haH + ')', t.soH + ' (' + t.mEur + ')'], types.map(function (r) { return [esc(EFT[r.k][li()]), nf(r.e.HLD, 0), nf(r.e.HLD / f.HLD * 100, 0) + ' %', r.e.HA ? nf(r.e.HA, 0) : '', r.e.EUR ? nf(r.e.EUR / 1e6, 0) : '']; }), 560) + '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.stdOut) + '</p>';
+      if (types.length > 1) {
+        var DC = window.DehesaChart, serF = types.slice(0, 5).map(function (r, i) { var arr = ys.map(function (yy) { var e = F[r.k][yy]; return e && e.HLD ? [+yy, e.HLD] : null; }).filter(Boolean); return yrSeries(arr, EFT[r.k][li()], PCOL[i % PCOL.length]); }).filter(Boolean);
+        var pieF = DC.pie({ items: types.map(function (r) { return { name: EFT[r.k][li()], v: r.e.HLD }; }), unit: t.holdings.toLowerCase(), aria: t.typeH + ' ' + nm(C[x.c], x.r), center: nf(f.HLD, 0), centerLabel: t.holdings + ' ' + y });
+        body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(t.typeH) + '</h3>' + twoViews(serF, pieF, t.holdings, t.typeH + ' ' + nm(C[x.c], x.r));
+      }
       return card(t.erfarms, t.erfarmsSub, body, euNote(x.c));
     });
   }

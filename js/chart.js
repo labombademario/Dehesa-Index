@@ -237,6 +237,48 @@
   document.addEventListener('scroll', function () { if (cur) clear(); }, { passive: true, capture: true });
   document.addEventListener('pointerup', function (e) { if (e.pointerType === 'touch') setTimeout(clear, 1600); }, { passive: true });
 
+
+  /* ---------- tarta (anillo) y selector Líneas / Tarta ----------
+     pie({ items: [{ name, v, color? }], unit, aria, maxN, minShare })  -> HTML de un anillo con leyenda (porcentaje y valor). Los trozos pequeños se agrupan en «Otros».
+     switcher({ line, pie, lineLabel, pieLabel })                       -> dos vistas del mismo dato con botones; la tarta solo se ofrece si hay >= 2 partes de un total. */
+  var PIE_COL = ['#2f6b4a', '#e08a3a', '#3a5f8a', '#b03a2e', '#8a6d3b', '#6a8f5c', '#7b5ea7', '#c9a227', '#4f8f9a', '#9b9588'];
+  var VW = { es: ['Líneas', 'Tarta', 'Otros'], en: ['Lines', 'Pie', 'Other'], fr: ['Lignes', 'Camembert', 'Autres'], it: ['Linee', 'Torta', 'Altri'] };
+  function vw() { return VW[lang()] || VW.es; }
+  function pie(o) {
+    var items = (o.items || []).filter(function (i) { return i && isFinite(i.v) && i.v > 0; }).sort(function (a, b) { return b.v - a.v; });
+    if (items.length < 2) return '';
+    var tot = items.reduce(function (a, i) { return a + i.v; }, 0), maxN = o.maxN || 8, minS = o.minShare === undefined ? 0.03 : o.minShare, keep = [], rest = 0;
+    items.forEach(function (i, k) { if (k < maxN && (i.v / tot >= minS || k < 3)) keep.push(i); else rest += i.v; });
+    if (rest > 0) keep.push({ name: vw()[2], v: rest, color: '#b8b2a2' });
+    var cx = 90, cy = 90, R = 84, r = 50, a0 = -Math.PI / 2, paths = '', unit = o.unit ? ' ' + o.unit : '', rows = '';
+    keep.forEach(function (it, k) {
+      it.color = it.color || PIE_COL[k % PIE_COL.length];
+      var fr = it.v / tot, a1 = a0 + fr * 2 * Math.PI, big = fr > 0.5 ? 1 : 0, lab = it.name + ': ' + nf(fr * 100, fr < 0.1 ? 1 : 0) + ' % (' + nf(it.v, it.v < 100 ? 1 : 0) + unit + ')';
+      if (fr > 0.9995) paths += '<circle cx="' + cx + '" cy="' + cy + '" r="' + ((R + r) / 2) + '" fill="none" stroke="' + it.color + '" stroke-width="' + (R - r) + '"><title>' + esc(lab) + '</title></circle>';
+      else paths += '<path d="M' + (cx + R * Math.cos(a0)).toFixed(2) + ' ' + (cy + R * Math.sin(a0)).toFixed(2) + ' A' + R + ' ' + R + ' 0 ' + big + ' 1 ' + (cx + R * Math.cos(a1)).toFixed(2) + ' ' + (cy + R * Math.sin(a1)).toFixed(2) + ' L' + (cx + r * Math.cos(a1)).toFixed(2) + ' ' + (cy + r * Math.sin(a1)).toFixed(2) + ' A' + r + ' ' + r + ' 0 ' + big + ' 0 ' + (cx + r * Math.cos(a0)).toFixed(2) + ' ' + (cy + r * Math.sin(a0)).toFixed(2) + ' Z" fill="' + it.color + '" stroke="var(--surface,#fff)" stroke-width="1.5"><title>' + esc(lab) + '</title></path>';
+      rows += '<li style="display:flex;gap:8px;align-items:baseline;padding:2px 0"><span style="flex:none;width:10px;height:10px;border-radius:2px;background:' + it.color + ';align-self:center"></span><span style="flex:1">' + esc(it.name) + '</span><strong>' + nf(fr * 100, fr < 0.1 ? 1 : 0) + ' %</strong><span style="color:' + TXT + ';min-width:64px;text-align:right">' + nf(it.v, it.v < 100 ? 1 : 0) + esc(unit) + '</span></li>';
+      a0 = a1;
+    });
+    var aria = (o.aria ? o.aria + '. ' : '') + keep.map(function (i) { return i.name + ' ' + nf(i.v / tot * 100, 0) + ' %'; }).join(', ');
+    return '<div class="di-card di-ch" style="padding:12px 12px 10px"><div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:center">' +
+      '<svg viewBox="0 0 180 180" style="width:180px;height:180px;flex:none" role="img" aria-label="' + esc(aria) + '">' + paths + '<text x="90" y="86" text-anchor="middle" font-size="11" fill="' + TXT + '">' + esc(o.centerLabel || '') + '</text><text x="90" y="103" text-anchor="middle" font-size="14" font-weight="700" fill="var(--text,#222)">' + esc(o.center || '') + '</text></svg>' +
+      '<ul style="list-style:none;margin:0;padding:0;font-size:12.5px;flex:1;min-width:200px;max-width:380px">' + rows + '</ul></div></div>';
+  }
+  function switcher(o) {
+    if (!o.line) return o.pie || '';
+    if (!o.pie) return o.line;
+    var w = vw(), id = 'dhv' + Math.random().toString(36).slice(2, 8), b = function (v, lab, on) { return '<button type="button" role="tab" aria-selected="' + on + '" data-dhv="' + id + '" data-v="' + v + '" style="font:inherit;font-size:12.5px;padding:5px 12px;border:1px solid var(--border,#d9d3c3);background:' + (on ? 'var(--accent,#2f6b4a)' : 'var(--surface,#fff)') + ';color:' + (on ? '#fff' : 'var(--text,#222)') + ';cursor:pointer;' + (v === 'line' ? 'border-radius:8px 0 0 8px' : 'border-radius:0 8px 8px 0;margin-left:-1px') + '">' + esc(lab) + '</button>'; };
+    return '<div data-dhvw="' + id + '" style="margin-top:10px"><div role="tablist" style="display:flex;margin:0 0 6px 2px">' + b('line', o.lineLabel || w[0], 'true') + b('pie', o.pieLabel || w[1], 'false') + '</div>' +
+      '<div data-dhp="' + id + '-line">' + o.line + '</div><div data-dhp="' + id + '-pie" hidden>' + o.pie + '</div></div>';
+  }
+  document.addEventListener('click', function (e) {
+    var bt = e.target && e.target.closest ? e.target.closest('button[data-dhv]') : null; if (!bt) return;
+    var id = bt.getAttribute('data-dhv'), v = bt.getAttribute('data-v'), wrap = bt.closest('[data-dhvw]'); if (!wrap) return;
+    ['line', 'pie'].forEach(function (k) { var pn = wrap.querySelector('[data-dhp="' + id + '-' + k + '"]'); if (pn) { if (k === v) pn.removeAttribute('hidden'); else pn.setAttribute('hidden', ''); } });
+    Array.prototype.forEach.call(wrap.querySelectorAll('button[data-dhv]'), function (x) { var on = x === bt; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.style.background = on ? 'var(--accent,#2f6b4a)' : 'var(--surface,#fff)'; x.style.color = on ? '#fff' : 'var(--text,#222)'; });
+    clear();
+  });
+
   /* ---- precios reales: deflactar con el IPC del país (data/cpi.json). Solo aritmética sobre datos publicados; lo que no se puede deflactar se omite y se cuenta ---- */
   var CPIDOC = null, CPIP = null;
   var EUR_CC = { AT: 1, BE: 1, BG: 1, CY: 1, DE: 1, EE: 1, EL: 1, ES: 1, FI: 1, FR: 1, HR: 1, IE: 1, IT: 1, LT: 1, LU: 1, LV: 1, MT: 1, NL: 1, PT: 1, SI: 1, SK: 1, EU: 1, EA: 1 };
@@ -269,5 +311,5 @@
     points.forEach(function (p) { var d = p[1] == null ? null : at(p[0]); if (d && p[1] != null) out.push([p[0], p[1] * ref / d]); else miss++; });
     return out.length >= 2 ? { points: out, ref: refLabel, kind: kind, miss: miss, src: src.src, name: src.name, base: src.base } : null;
   }
-  window.DehesaChart = { real: { load: realLoad, can: realCan, curOf: curOfUnit, deflate: realDeflate }, render: render, attr: attr, fmtDate: fmtDate, fmtDateFull: fmtDateFull, fmtMonth: fmtMonth, histTs: histTs, clear: clear };
+  window.DehesaChart = { real: { load: realLoad, can: realCan, curOf: curOfUnit, deflate: realDeflate }, render: render, pie: pie, switcher: switcher, attr: attr, fmtDate: fmtDate, fmtDateFull: fmtDateFull, fmtMonth: fmtMonth, histTs: histTs, clear: clear };
 })();
