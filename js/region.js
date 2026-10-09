@@ -588,7 +588,7 @@
     document.title = (known ? nm(cfg, ST.r) + ' · ' + cfg.country[li()] : cfg.country[li()]) + ' | Dehesa Index';
     var side = '<div class="di-card" style="padding:12px 14px"><label style="font-size:13px;display:block;margin-bottom:8px">' + esc(cfg.kind[li()]) + '<br><select id="rg-sel" class="di-compare-select"><option value="">' + esc(t.pick) + '…</option>' + ids.map(function (i) { return '<option value="' + i + '"' + (i === ST.r ? ' selected' : '') + '>' + esc(nm(cfg, i)) + '</option>'; }).join('') + '</select></label>' + mapSvg(cfg, ST.r) + '</div>';
     if (!known) { root.innerHTML = side; bind(); return; }
-    root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start"><div style="flex:1 1 300px;max-width:420px;position:sticky;top:12px">' + side + '</div><div id="rg-main" style="flex:2 1 420px;min-width:0"><p class="di-movers-hint">' + esc(t.loading) + '</p></div></div>';
+    root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start"><div style="flex:1 1 300px;max-width:420px" class="rg-side">' + side + '</div><div id="rg-main" style="flex:2 1 420px;min-width:0"><p class="di-movers-hint">' + esc(t.loading) + '</p></div></div>';
     bind(); bindMetric(); var my = ++seq, x = { c: ST.c, r: ST.r };
     Promise.all(MODS[ST.c].map(function (m) { return m[1](x).catch(function () { return null; }); })).then(function (out) {
       if (my !== seq) return; var el = document.getElementById('rg-main'); if (!el) return; var miss = [];

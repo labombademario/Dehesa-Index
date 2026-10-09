@@ -1985,3 +1985,6 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
 .pt-h3 { font-size: 15px; margin: 6px 0 8px; color: var(--text-muted, #556); font-weight: 600; }
 .cc-basic .cc-adv { display: none !important; }
 .di-report { font-size: 12px; color: var(--text-muted, #556); text-decoration: underline; }
+
+/* Región: el mapa solo se queda fijo en pantallas anchas (en el móvil tapaba el resto de la ficha al bajar) */
+@media (min-width: 900px) { .rg-side { position: sticky; top: 12px; align-self: flex-start; max-height: calc(100vh - 24px); overflow-y: auto; } }
