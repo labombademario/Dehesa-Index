@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 70 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 16085 series en el catalogo unificado.
+Resumen: 73 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17679 series en el catalogo unificado.
 
-## VERIFIED (70)
+## VERIFIED (73)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -28,7 +28,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `cftc` | U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment) | US | US-PD | si/si | no | 0 | Acknowledgement of the CFTC requested. Contributed or licensed third-party materials on cftc.gov may be copyrighted; the Commitments of Trad… |
 | `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 698 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
-| `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 135 | Modifications must be marked as such. |
+| `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 133 | Modifications must be marked as such. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 45 | Disclose modifications; the Statistics Denmark logo cannot be used. |
 | `ecb` | European Central Bank (euro reference rates, ECB Data Portal) | EU | ESCB-REUSE | si/conditional | si | 2 | Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed … |
@@ -39,8 +39,8 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_oil_bulletin` | European Commission — Weekly Oil Bulletin (DG ENER) | EU | EU-REUSE-2011-833 | si/conditional | si | 1 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 7685 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
-| `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 708 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 7796 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 1785 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 114 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
 | `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 213 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
 | `gesetze_im_internet` | Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV | DE | CUSTOM | si/si | si | 0 | The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis … |
@@ -51,10 +51,12 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 547 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |
 | `insee` | Institut national de la statistique et des études économiques (INSEE) | FR | Etalab-2.0 | si/si | si | 221 | Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información. |
 | `irs_sales_tax` | U.S. Internal Revenue Service - Optional State Sales Tax Tables | US | US-PD | si/si | no | 0 | Only the state general sales tax rate is used; local rates are not included. Not tax advice. |
+| `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-OWNER-DECISION | si/si | si | 47 | No implied endorsement by the Federal Reserve. |
 | `mapa_es` | Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA) | ES | CUSTOM | si/si | si | 219 | Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but th… |
 | `mb_agri` | Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba) | CA | OpenMB-1.0 | si/si | si | 0 | No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights. |
 | `meteoswiss` | Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet | CH | CC-BY-4.0 | si/si | si | 18 | Source must read 'Source: MeteoSwiss'; MeteoSwiss warnings must not be altered; no implication of MeteoSwiss endorsement; avoid high-frequen… |
 | `nasa_power` | NASA POWER (Prediction Of Worldwide Energy Resources) | US | CC-BY-4.0 | si/si | si | 0 | Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees. |
+| `noaa_ncei` | NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv) | US | US-PD | si/si | si | 149 | No implied NOAA endorsement. |
 | `odepa_chile` | ODEPA (Chile) - Portal de datos abiertos | CL | CC-BY | si/si | si | 114 | Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas. |
 | `ons` | UK Office for National Statistics (consumer price index) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice… |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 1 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
@@ -76,7 +78,8 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 0 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
 | `usda_fsa` | USDA Farm Service Agency (ARC/PLC program data) | US | US-PD | si/si | no | 0 | Byline requested. Some FSA web materials are copyrighted and labelled as such; the ARC/PLC program data files are FSA's own publications. No… |
-| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 270 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
+| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 470 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
+| `usda_nrcs` | USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API) | US | US-PD | si/si | si | 12 | No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time. |
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
 | `vigieau` | VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau) | FR | LO-2.0 | si/si | si | 0 | LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indica… |

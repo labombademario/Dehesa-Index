@@ -779,7 +779,18 @@
     renderFooter();
     initTableSort();
     frAuto();
-    renderRelated();
+    renderRelatedStable();
+  }
+  // El bloque «Relacionado» va al final de <main>: si se inserta mientras la pagina aun carga datos, queda a media pantalla y se desplaza cuando llega el contenido (CLS ~0,5 medido).
+  // Se inserta cuando la altura de <main> deja de cambiar (dos lecturas seguidas iguales tras la carga) o, como tope, a los 6 s.
+  function renderRelatedStable() {
+    var host = document.querySelector('main') || document.querySelector('.di-page'); if (!host) return;
+    var t0 = Date.now(), last = -1, same = 0;
+    (function tick() {
+      var h = host.scrollHeight; same = h === last ? same + 1 : 0; last = h;
+      if ((document.readyState === 'complete' && same >= 2) || Date.now() - t0 > 6000) { renderRelated(); return; }
+      setTimeout(tick, 300);
+    })();
   }
 
   var MKT = null, MKT_P = null;

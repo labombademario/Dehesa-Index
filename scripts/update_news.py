@@ -695,6 +695,21 @@ def write_views(rows, now):
     feed = [{"id": x["id"], "d": x["date"], "r": x["region"], "l": x["lang"], "s": x["source"], **({"c": x["country"]} if x.get("country") else {}), "h": x["headline"]["en"],
              "x": x["description"][:220], "u": x["url"], "p": x["products"], "t": x["topics"], "v": x["relevance"]} for x in pick(rows, MAX_FEED)]
     (VIEWS / "news-feed.json").write_text(json.dumps({"generatedAt": now, "items": feed}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (VIEWS / "news-product.json").write_text(json.dumps(product_view(now, feed), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+PRODUCT_TOP = 8   # titulares por producto en la vista de la ficha (la ficha enseña 6; con 8 por clave el top-6 de cualquier union de claves siempre esta dentro)
+def product_view(now, feed):
+    """data/views/news-product.json: lo que necesita la ficha de producto (sin la descripcion ni el pais), solo los PRODUCT_TOP primeros por relevancia y fecha de cada clave de producto.
+    Mismo orden que usa la ficha (relevancia desc, fecha desc); el resultado es una lista plana sin repetidos con el mismo formato corto que news-feed.json."""
+    by = {}
+    for x in feed:
+        for k in x.get("p") or []: by.setdefault(k, []).append(x)
+    keep = {}
+    for k, lst in by.items():
+        lst.sort(key=lambda a: (-(a.get("v") or 0), [-ord(c) for c in a["d"]]))
+        for x in lst[:PRODUCT_TOP]: keep[x["id"]] = x
+    items = [{"id": x["id"], "d": x["d"], "s": x["s"], "h": x["h"], "u": x["u"], "p": x.get("p") or [], "v": x.get("v") or 0} for x in feed if x["id"] in keep]
+    return {"generatedAt": now, "perKey": PRODUCT_TOP, "items": items}
 
 def main():
     with ThreadPoolExecutor(max_workers=8) as ex:

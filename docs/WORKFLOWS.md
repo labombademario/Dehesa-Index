@@ -104,7 +104,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
-| update-news.yml | a mano | varias veces al dia | update_news.py | news-status.json, news.json, views/news-feed.json … | finish, validate-files |
+| update-news.yml | a mano | varias veces al dia | update_news.py | news-status.json, news.json, views/news-feed.json, views/news-product.json … | finish, validate-files |
 | update-weekly-blog.yml | a mano | 2 veces al dia | build-blog-editions.py, update-weekly-blog.py | blog, blog/editions/*.json, blog/weekly/*.json … | finish, validate-files |
 
 ## Otros

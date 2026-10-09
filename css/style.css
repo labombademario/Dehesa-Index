@@ -1372,7 +1372,7 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 
 /* ---------- Portada: titular a la izquierda y precios publicados a la derecha ---------- */
 .di-hero2 { padding: 40px 32px 44px; }
-.di-hero2 .di-hero-inner { max-width: 1200px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: center; text-align: left; }
+.di-hero2 .di-hero-inner { max-width: 1200px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: start; text-align: left; }  /* start (antes center): el panel de precios de la derecha crece al cargar y centraba el titular de nuevo (CLS 0,39 en escritorio) */
 .di-hero2 .di-hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .di-hero2 h1 { font-size: 42px; line-height: 1.12; letter-spacing: -.01em; max-width: 14em; }
 .di-hero2 .di-hero-sub { max-width: 34em; }
@@ -1691,6 +1691,12 @@ html[data-theme="dark"] .di-fd-wait { background: #E0B04A; }
 .pt-ctx a[aria-current="location"] { background: var(--accent); color: var(--accent-ink); }
 .pt-sec { scroll-margin-top: calc(var(--di-hdr, 60px) + 70px); }
 #di-nav-root { display: contents; }
+/* Hueco reservado para la cabecera hasta que shared.js la inserta: sin esto toda la pagina se desplazaba 61-69 px al pintarse el menu (CLS ~1,0 en movil).
+   :empty solo casa antes de la insercion; despues vuelve display: contents (la cabecera sticky necesita al padre transparente). Alturas = las medidas del menu en cada tramo. */
+#di-nav-root:empty { display: block; height: 61px; }
+@media (min-width: 600px) { #di-nav-root:empty { height: 65px; } }
+@media (min-width: 701px) and (max-width: 1099px) { #di-nav-root:empty { height: 69px; } }
+@media (min-width: 1100px) { #di-nav-root:empty { height: 61px; } }
 @media (min-width: 701px) and (max-width: 1099px) { .di-header { position: static; } }
 
 /* Tarjetas de mercado de la ficha: en movil son filas compactas y el detalle se abre al tocar */
@@ -1988,3 +1994,19 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
 
 /* Región: el mapa solo se queda fijo en pantallas anchas (en el móvil tapaba el resto de la ficha al bajar) */
 @media (min-width: 900px) { .rg-side { position: sticky; top: 12px; align-self: flex-start; max-height: calc(100vh - 24px); overflow-y: auto; } }
+/* Hueco del buscador de la portada hasta que home.js lo pinta (medido: 124 px en movil, 160 px desde 768); evita empujar los botones y el panel de precios. */
+#home-search-box:empty { min-height: 124px; }
+@media (min-width: 768px) { #home-search-box:empty { min-height: 160px; } }
+/* Panel de precios de la portada: home.js lo pinta con JS y mide 455 px (movil), 316 (600-960) y 937 (escritorio); reservar la altura evita que el contenido de debajo salte. */
+#home-stats:empty { min-height: 455px; }
+@media (min-width: 600px) { #home-stats:empty { min-height: 316px; } }
+@media (min-width: 961px) { #home-stats:empty { min-height: 937px; } }
+/* Noticias: aviso y bloque de contexto los rellena noticias.js; alturas medidas (es/fr) para que los filtros y titulares de debajo no salten. */
+#nw-disclaimer:empty { min-height: 69px; }
+#nw-intel:empty { min-height: 416px; }
+@media (min-width: 600px) { #nw-intel:empty { min-height: 320px; } }
+@media (min-width: 768px) { #nw-intel:empty { min-height: 268px; } }
+@media (min-width: 1100px) { #nw-intel:empty { min-height: 241px; } }
+/* Migas de pan y linea de actualizacion de Precios: se rellenan con JS tras pintar; altura de una linea medida para que el resto de la pagina no baje. */
+.di-crumbs:empty { min-height: 15px; }
+#pr-updated:empty { min-height: 14px; }

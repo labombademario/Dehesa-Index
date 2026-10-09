@@ -445,6 +445,8 @@ CASES = [
  ("views/news-index.json", "enlace no http", lambda d: d["stories"][0].__setitem__("url", "javascript:alert(1)")),
  ("views/news-feed.json", "noticia repetida", lambda d: d["items"].append(copy.deepcopy(d["items"][0]))),
  ("views/news-feed.json", "fecha invalida", lambda d: d["items"][0].__setitem__("d", "ayer")),
+ ("views/news-product.json", "noticia que no esta en el feed", lambda d: d["items"][0].__setitem__("id", "auto-inventada")),
+ ("views/news-product.json", "fecha invalida", lambda d: d["items"][0].__setitem__("d", "ayer")),
  ("prices/manifest.json", "total incoherente", lambda d: d["totals"].__setitem__("observations", 1)),
  ("prices/manifest.json", "producto sin historico", lambda d: next(iter(d["regions"].values()))["products"].append("no-existe")),
  ("prices/latest/us.json", "historico dentro de latest", lambda d: first(d).__setitem__("history", [1])),

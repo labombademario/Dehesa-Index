@@ -603,7 +603,7 @@
   }
 
   var NEWSKEY = { vacuno: ['vaca', 'ganado', 'vacuno'], soja: ['soja', 'harina_soja'], fertilizantes: ['urea', 'fertilizantes', 'dap', 'potasa', 'fertilizante'], urea: ['urea', 'fertilizantes', 'fertilizante'], diesel: ['diesel', 'petroleo', 'energia'], leche: ['leche', 'lacteos'], oliva: ['oliva'], huevos: ['huevos'], cerdo: ['cerdo'] };
-  function blkNews() { return window.DINews ? window.DINews.items() : Promise.resolve([]); }
+  function blkNews() { return window.DINews ? window.DINews.product() : Promise.resolve([]); }
   function htmlNews(items) {
     var keys = NEWSKEY[CTX.pid] || [CTX.pid], out = (items || []).filter(function (x) { return (x.products || []).some(function (p) { return keys.indexOf(p) > -1; }); }).sort(function (a, b) { return (b.relevance || 0) - (a.relevance || 0) || (a.date < b.date ? 1 : -1); }).slice(0, 6);
     if (!out.length) return '<div class="pt-note">' + esc(t('noNews')) + '</div>';

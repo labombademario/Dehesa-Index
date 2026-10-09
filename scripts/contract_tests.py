@@ -975,6 +975,22 @@ def views_news_feed(doc, errs, warns, stats):
         if not _date(a["d"]): errs.append("%s: fecha invalida %s" % (a["id"], a["d"]))
     if len(doc["items"]) < 20: warns.append("feed con solo %d titulares" % len(doc["items"]))
 
+def views_news_product(doc, errs, warns, stats):
+    """Vista corta de la ficha de producto: debe ser un subconjunto exacto de news-feed.json (mismo id, fecha y titular) y no pasar de PRODUCT_TOP por clave."""
+    stats["series"] = len(doc["items"]); seen = set(); per = {}
+    try: feed = {a["id"]: a for a in json.loads((D / "views/news-feed.json").read_text(encoding="utf-8"))["items"]}
+    except Exception: feed = None
+    for a in doc["items"]:
+        if a["id"] in seen: errs.append("noticia duplicada %s" % a["id"])
+        seen.add(a["id"])
+        if not _date(a["d"]): errs.append("%s: fecha invalida %s" % (a["id"], a["d"]))
+        if feed is not None:
+            f = feed.get(a["id"])
+            if not f: errs.append("%s: no esta en news-feed.json" % a["id"])
+            elif (f["d"], f["h"], f["u"]) != (a["d"], a["h"], a["u"]): errs.append("%s: difiere de news-feed.json" % a["id"])
+        for k in a.get("p") or []: per[k] = per.get(k, 0) + 1
+    if not doc["items"]: errs.append("vista de producto vacia")
+
 def prices_manifest(doc, errs, warns, stats):
     tot = 0
     for r, m in doc["regions"].items():

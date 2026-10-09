@@ -218,6 +218,12 @@
     "views_news_feed"
    ]
   ],
+  "views/news-product.json": [
+   "views-news-product",
+   [
+    "views_news_product"
+   ]
+  ],
   "prices/manifest.json": [
    "prices-manifest",
    [
@@ -933,6 +939,7 @@
   "views/home-summary.json",
   "views/news-index.json",
   "views/news-feed.json",
+  "views/news-product.json",
   "views/region-metrics.json",
   "prices/manifest.json",
   "freshness.json",
