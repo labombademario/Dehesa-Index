@@ -11,6 +11,9 @@ cands=[]
 for l in toc.splitlines():
     r=l.split('\t')
     if len(r)>1 and re.search(r'sold production|prodcom',r[0],re.I) or r[1].strip('"').lower().startswith(('ds-056','ds-059','ds-066')): cands.append((r[1].strip('"'),r[0].strip().strip('"')[:100],r[-3] if len(r)>3 else ''))
+ds=[l[:140] for l in toc.splitlines() if re.search(r'\tds[-_]',l,re.I)]
+log('ds lines',len(ds))
+for l in ds[:80]: log('DSL',l)
 log('n cands',len(cands)); log('toc lines',len(toc.splitlines()))
 for c in cands[:40]: log('CAND',*c)
 for code in [c[0] for c in cands][:8]:
