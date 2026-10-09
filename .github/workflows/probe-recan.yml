@@ -1,0 +1,20 @@
+name: probe-recan
+on: push
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
+      - run: |
+          set +e
+          U=https://servicio.mapa.gob.es/ckan
+          curl -sS "$U/api/3/action/package_show?id=esmaparecanredcontable" -o probe/package.json; echo rc=$?
+          curl -sS "$U/api/3/action/datastore_search?resource_id=687a7bb1-ddf2-4cdd-8525-05cec40c6734&limit=1" -o probe/ds1.json; echo rc=$?
+          curl -sS -D probe/dump-headers.out.txt "$U/datastore/dump/687a7bb1-ddf2-4cdd-8525-05cec40c6734" -o probe/dump.csv; echo rc=$?
+          wc -l probe/dump.csv > probe/dump-wc.out.txt; head -3 probe/dump.csv > probe/dump-head.out.txt; cut -d, -f1-6 probe/dump.csv | awk -F, 'NR>1{print $2}' | sort | uniq -c > probe/dump-col2.out.txt
+          rm -f probe/dump.csv
+          git config user.name probe; git config user.email probe@x
+          git add probe; git commit -qm "probe out"; git push origin HEAD:research/probe-recan-out -f
