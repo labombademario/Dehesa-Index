@@ -3186,6 +3186,18 @@
     "US": "usda_nrcs"
    },
    "notes": "Equivalente en agua de la nieve de la red SNOTEL por estado (media simple de estaciones), USDA NRCS."
+  },
+  "data/spain-siega-stats.json": {
+   "byCountry": {
+    "ES": "mapa_es"
+   },
+   "notes": "Existencias mensuales de arroz, cereales y oleaginosas declaradas por los operadores al SIEGA (Reglamento de Ejecucion (UE) 2022/791) y publicadas por el MAPA en su informe publico de Power BI, en miles de toneladas sin otro cambio; scripts/update-spain-siega.py."
+  },
+  "data/spain-hicp-stats.json": {
+   "bySourceGroupPrefix": {
+    "Eurostat": "eurostat"
+   },
+   "notes": "Indices de precios de consumo (IPCA/HICP, ECOICOP v2, 2025=100) de mantequilla y queso para Espana, tal como los publica Eurostat (prc_hicp_minr); scripts/update-spain-hicp.py."
   }
  },
  "derived": [

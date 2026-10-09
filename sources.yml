@@ -570,6 +570,22 @@ sources:
     data: [eu-stocks-stats.json]
     log: eu-stocks-log.txt
     message: Existencias de cierre de cereales y oleaginosas por pais (Eurostat, balances de cultivos)
+  - id: spain-siega
+    name: Update Spain monthly stocks of rice, cereals and oilseeds (MAPA SIEGA)
+    cron: ['35 9 * * 2']
+    script: scripts/update-spain-siega.py
+    timeout: 15
+    data: [spain-siega-stats.json]
+    log: spain-siega-log.txt
+    message: Existencias mensuales de arroz, cereales y oleaginosas en España (MAPA, SIEGA)
+  - id: spain-hicp
+    name: Update Spain consumer price indices for butter and cheese (Eurostat HICP)
+    cron: ['40 9 4,18 * *']
+    script: scripts/update-spain-hicp.py
+    timeout: 10
+    data: [spain-hicp-stats.json]
+    log: spain-hicp-log.txt
+    message: Índices de precios de consumo de mantequilla y queso en España (Eurostat, IPCA)
   - id: fx-history
     name: Update historical exchange rates (ECB)
     cron: ['20 8 4 * *']

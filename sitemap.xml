@@ -110,6 +110,7 @@
   <url><loc>https://dehesaindex.com/datos/de-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-income/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-inputs-a/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/de-inputs-f/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/de-meat-regions/</loc><lastmod>2026-10-09</lastmod></url>
@@ -186,6 +187,7 @@
   <url><loc>https://dehesaindex.com/datos/en/de-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-income/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-inputs-a/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/en/de-inputs-f/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-inputs/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/de-meat-regions/</loc><lastmod>2026-10-09</lastmod></url>
@@ -226,6 +228,7 @@
   <url><loc>https://dehesaindex.com/datos/en/es-prices-lv/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/es-prices/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/es-production/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/en/es-stocks/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/es-trade/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/eu-crops/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/eu-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
@@ -279,12 +282,14 @@
   <url><loc>https://dehesaindex.com/datos/en/pt-prices/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/pt-production/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/pt-trade/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/en/us-climate/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-crops/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-prices-paid/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-prices/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-production/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/en/us-rates/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-stocks/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/us-trade/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/es-crops/</loc><lastmod>2026-10-09</lastmod></url>
@@ -301,6 +306,7 @@
   <url><loc>https://dehesaindex.com/datos/es-prices-lv/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/es-prices/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/es-production/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/es-stocks/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/es-trade/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/eu-crops/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/eu-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
@@ -354,12 +360,14 @@
   <url><loc>https://dehesaindex.com/datos/pt-prices/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/pt-production/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/pt-trade/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/us-climate/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-crops/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-idx-perc/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-livestock/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-prices-paid/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-prices/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-production/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/us-rates/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-stocks/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/us-trade/</loc><lastmod>2026-10-09</lastmod></url>
   <!-- seo-pages:end -->

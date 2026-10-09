@@ -1,27 +1,27 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T18:29:00Z",
+ "generatedAt": "2026-10-09T19:32:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 103,
   "late": 2,
   "error": 5,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 2
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "9ac028ec",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/0399ca22-5402-41ad-a00d-afede2abc846",
-   "completedAt": "2026-10-09T18:28:08Z"
+   "sha": "fb9d96e3",
+   "conclusion": "failure",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3cfbdf02-f9c6-4996-91ee-d7c239ed03d9",
+   "completedAt": "2026-10-09T18:34:45Z"
   },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-09T16:01:30.500208+00:00",
-  "repoGeneratedAt": "2026-10-09T16:01:30.500208+00:00"
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-09T18:33:14.514658+00:00"
  },
  "pipelines": [
   {
@@ -2108,35 +2108,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-09T16:01:31Z"
+     "lastChange": "2026-10-09T18:33:15Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-09T16:01:31Z"
+     "lastChange": "2026-10-09T18:33:15Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-09T16:01:31Z"
+     "lastChange": "2026-10-09T18:33:15Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-09T16:01:31Z"
+     "lastChange": "2026-10-09T18:33:15Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-09T16:01:31Z"
+     "lastChange": "2026-10-09T18:33:15Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "push",
-    "startedAt": "2026-10-09T15:59:47Z",
-    "durationSec": 109,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37955839424"
+    "event": "schedule",
+    "startedAt": "2026-10-09T18:29:17Z",
+    "durationSec": 243,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37973616103"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -2268,11 +2268,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-09T16:09:24Z"
+     "lastChange": "2026-10-09T18:30:54Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-09T16:09:24Z"
+     "lastChange": "2026-10-09T18:30:54Z"
     },
     {
      "path": "data/series-registry.json",
@@ -2283,11 +2283,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-09T16:33:51Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/catalog"
@@ -2300,7 +2300,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/products"
@@ -2311,30 +2311,30 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-09T18:25:10Z"
+     "lastChange": "2026-10-09T18:31:20Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2353,14 +2353,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-09T16:06:33Z",
-    "durationSec": 202,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37956690379"
+    "event": "schedule",
+    "startedAt": "2026-10-09T18:28:54Z",
+    "durationSec": 150,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37973569987"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -2632,6 +2632,27 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-spain-hicp.yml",
+   "name": "Update Spain consumer price indices for butter and cheese (Eurostat HICP)",
+   "crons": [
+    "40 9 4,18 * *"
+   ],
+   "nextRun": "2026-10-18T09:40:00Z",
+   "files": [
+    {
+     "path": "data/spain-hicp-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-09T17:52:36Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 408.0
+  },
+  {
    "workflow": "update-spain-livestock.yml",
    "name": "Update Spain livestock headcounts by province (MAPA)",
    "crons": [
@@ -2734,6 +2755,27 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-spain-siega.yml",
+   "name": "Update Spain monthly stocks of rice, cereals and oilseeds (MAPA SIEGA)",
+   "crons": [
+    "35 9 * * 2"
+   ],
+   "nextRun": "2026-10-13T09:35:00Z",
+   "files": [
+    {
+     "path": "data/spain-siega-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-09T17:52:36Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {

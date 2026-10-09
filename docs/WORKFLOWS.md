@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-117 workflows (83 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+119 workflows (85 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -146,9 +146,11 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-recan.yml | a mano | semanal (4) | update-recan.py | recan-log.txt, recan.json | finish, validate-files |
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | revisions.json, spain-balances, spain-balances-log.txt … | finish, validate-files |
 | update-spain-crops.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-crops.py | revisions.json, spain-crops, spain-crops-log.txt … | finish, validate-files |
+| update-spain-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-spain-hicp.py | revisions.json, spain-hicp-log.txt, spain-hicp-stats.json | finish, validate-files |
 | update-spain-livestock.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-livestock.py | revisions.json, spain-livestock, spain-livestock-log.txt … | finish, validate-files |
 | update-spain-milk.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-milk.py | revisions.json, spain-milk, spain-milk-log.txt … | finish, validate-files |
 | update-spain-olive.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-olive.py | revisions.json, spain-balances, spain-balances/olive.json … | finish, validate-files |
+| update-spain-siega.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-spain-siega.py | revisions.json, spain-siega-log.txt, spain-siega-stats.json | finish, validate-files |
 | update-spain-slaughter-census.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-slaughter-census.py | revisions.json, spain-slaughter, spain-slaughter-census-log.txt … | finish, validate-files |
 | update-spain-slaughter.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-slaughter.py | revisions.json, spain-slaughter, spain-slaughter-log.txt … | finish, validate-files |
 | update-spain-wine-balance-historic.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-wine-balance-historic.py | revisions.json, spain-wine, spain-wine-balance-historic-log.txt … | finish, validate-files |
