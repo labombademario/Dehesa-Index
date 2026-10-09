@@ -3180,6 +3180,12 @@
     "US": "kansas_city_fed"
    },
    "notes": "Encuesta de credito agrario de la Fed de Kansas City: tipos de interes, valor de la tierra e indices de credito del Tenth District, sin cambiar valores."
+  },
+  "data/us-snotel-stats.json": {
+   "byCountry": {
+    "US": "usda_nrcs"
+   },
+   "notes": "Equivalente en agua de la nieve de la red SNOTEL por estado (media simple de estaciones), USDA NRCS."
   }
  },
  "derived": [

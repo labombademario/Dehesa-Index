@@ -3,7 +3,7 @@ import json, subprocess
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STATS = ['country-stats', 'spain-stats', 'france-stats', 'france-crops-stats', 'france-extras-stats', 'france-campaign-stats', 'france-rnm-stats', 'france-dairy-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'italy-eurostat-stats', 'eurostat-depth-stats', 'uk-trade-stats', 'chile-stats', 'argentina-stats', 'poland-eurostat-stats', 'eurostat-eu-stats', 'eurostat-euw-stats', 'us-ers-stats', 'france-insee-stats', 'eu-stocks-stats', 'us-ttb-stats', 'abares-stats', 'switzerland-foag-stats', 'switzerland-meteo-stats', 'poland-stats', 'eu-gapfill-stats',
-         'canada-stats', 'us-stats', 'eu-trade-stats', 'australia-trade-stats', 'interest-rates-stats', 'us-nass-extra-stats', 'us-climate-stats', 'us-kcfed-stats']
+         'canada-stats', 'us-stats', 'eu-trade-stats', 'australia-trade-stats', 'interest-rates-stats', 'us-nass-extra-stats', 'us-climate-stats', 'us-kcfed-stats', 'us-snotel-stats']
 def git_show(rev, path):
     try:
         return subprocess.run(['git', 'show', '%s:%s' % (rev, path)], cwd=ROOT, capture_output=True, check=True).stdout.decode('utf-8')
