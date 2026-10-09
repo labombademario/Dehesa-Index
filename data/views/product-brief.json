@@ -1,1 +1,1 @@
-{"schemaVersion":1,"generatedAt":"2026-10-09T12:33:55Z","newData":[]}
+{"schemaVersion":1,"generatedAt":"2026-10-09T13:48:47Z","newData":[{"k":"P/diesel/eu","kind":"INPUT","label":"diesel (EU)","unit":"EUR/litro","period":"2026-10-05","value":2.148526960199634,"changePct":-3.9361,"group":"product","sourceId":"eu_oil_bulletin"},{"k":"P/diesel/us","kind":"INPUT","label":"diesel (US)","unit":"USD/gal","period":"2026-10-05","value":6.199,"changePct":-2.8674,"group":"product","sourceId":"eia"}]}

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T12:34:00Z",
+ "generatedAt": "2026-10-09T13:48:52Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2195,7 +2195,7 @@
    "country": "DE",
    "scope": "integrated",
    "institution": "Destatis (GENESIS-Online)",
-   "dataset": "Ya integrada (135 series en el catalogo unificado)",
+   "dataset": "Ya integrada (133 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -2699,7 +2699,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (7685 series en el catalogo unificado)",
+   "dataset": "Ya integrada (7796 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -2769,13 +2769,14 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat — Comext international trade in goods",
-   "dataset": "Ya integrada (708 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1785 series en el catalogo unificado)",
    "products": [
     "eggs",
     "fertilizer",
     "fruit",
     "milk",
     "olive",
+    "sheep",
     "sugar",
     "wine"
    ],
