@@ -1,0 +1,3 @@
+ERROR: respuesta incompleta (el informe devolvio mas filas de las pedidas)
+
+rc=1
