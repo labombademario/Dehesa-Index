@@ -1,50 +1,148 @@
 {
  "cereales": {
   "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
-  "len": 138,
-  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
-  "pdf_links": [],
-  "sub_links": []
+  "len": 40555,
+  "head": "<!DOCTYPE html> <html xmlns=\"http://www.w3.org/1999/xhtml\" class=\"no-js\" lang=\"es\"> <head> <meta charset=\"utf-8\" /> <met",
+  "pdf_links": [
+   "/dam/mapa/contenido/agricultura/publicaciones/informeprospectivoagrivoltaica2023.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2016_17.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2017_18.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2018_19.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2019_20.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2020_21.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2021_22.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2022_23.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2023_24.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2024_25.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2025_26.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "https://www.aepd.es/sites/default/files/2020-07/guia-cookies.pdf"
+  ],
+  "sub_links": [
+   "/ca/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2016_17.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2017_18.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2018_19.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales/balances-cereales-de-espana-campanas/balancescerealeses_2019_20.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2020_21.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2021_22.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2022_23.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2023_24.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2024_25.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-mercado-de-cereales/balances-cereales-de-espana-campanas/1-balances-cereales-es_2025_26.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "/en/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/leguminosas-y-oleaginosas",
+   "/es/prensa/ultimas-noticias/detalle_noticias/luis-planas-subraya-que-la-industria-alimentaria-es-uno-de-los-motores-econ-micos-m-s-potentes-de-espa-a/903f3170-9226-4a5d-9d23-4f9f4b73e5ed",
+   "/eu/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "/fr/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "/gl/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "/va/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales",
+   "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega/"
+  ]
  },
  "cultivos-herbaceos": {
   "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/",
-  "len": 138,
-  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
-  "pdf_links": [],
-  "sub_links": []
+  "len": 38158,
+  "head": "<!DOCTYPE html> <html xmlns=\"http://www.w3.org/1999/xhtml\" class=\"no-js\" lang=\"es\"> <head> <meta charset=\"utf-8\" /> <met",
+  "pdf_links": [
+   "/dam/mapa/contenido/agricultura/publicaciones/informeprospectivoagrivoltaica2023.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "https://www.aepd.es/sites/default/files/2020-07/guia-cookies.pdf"
+  ],
+  "sub_links": [
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/leguminosas-y-oleaginosas",
+   "/es/prensa/ultimas-noticias/detalle_noticias/luis-planas-subraya-que-la-industria-alimentaria-es-uno-de-los-motores-econ-micos-m-s-potentes-de-espa-a/903f3170-9226-4a5d-9d23-4f9f4b73e5ed",
+   "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega/"
+  ]
  },
  "oleaginosas": {
   "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/oleaginosas/",
-  "len": 138,
-  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "len": 29,
+  "head": "ERR HTTP Error 404: Not Found",
   "pdf_links": [],
   "sub_links": []
  },
  "arroz": {
   "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
-  "len": 138,
-  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
-  "pdf_links": [],
-  "sub_links": []
+  "len": 45186,
+  "head": "<!DOCTYPE html> <html xmlns=\"http://www.w3.org/1999/xhtml\" class=\"no-js\" lang=\"es\"> <head> <meta charset=\"utf-8\" /> <met",
+  "pdf_links": [
+   "/dam/mapa/contenido/agricultura/publicaciones/informeprospectivoagrivoltaica2023.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "https://www.aepd.es/sites/default/files/2020-07/guia-cookies.pdf"
+  ],
+  "sub_links": [
+   "/ca/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "/en/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/balances-de-gestion-de-arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/evolucion-de-los-precios-del-arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/leguminosas-y-oleaginosas",
+   "/es/prensa/ultimas-noticias/detalle_noticias/luis-planas-subraya-que-la-industria-alimentaria-es-uno-de-los-motores-econ-micos-m-s-potentes-de-espa-a/903f3170-9226-4a5d-9d23-4f9f4b73e5ed",
+   "/eu/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "/fr/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "/gl/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "/va/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega/"
+  ]
  },
  "arroz2": {
   "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
-  "len": 138,
-  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
-  "pdf_links": [],
-  "sub_links": []
+  "len": 41484,
+  "head": "<!DOCTYPE html> <html xmlns=\"http://www.w3.org/1999/xhtml\" class=\"no-js\" lang=\"es\"> <head> <meta charset=\"utf-8\" /> <met",
+  "pdf_links": [
+   "/dam/mapa/contenido/agricultura/publicaciones/informeprospectivoagrivoltaica2023.pdf",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "https://www.aepd.es/sites/default/files/2020-07/guia-cookies.pdf"
+  ],
+  "sub_links": [
+   "/ca/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "/dam/mapa/contenido/agricultura/temas/producciones-agricolas/frutas-y-hortalizas/aceite-de-oliva-y-aceituna-de-mesa/balances/balanceestimacion2024-25_febrero25.pdf",
+   "/en/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/balances-de-gestion-de-arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/evolucion-de-los-precios-del-arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_general_sector-arroz",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/informacion_interes",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/normativa_basica",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/reuniones_sectoriales",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega",
+   "/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/leguminosas-y-oleaginosas",
+   "/es/prensa/ultimas-noticias/detalle_noticias/luis-planas-subraya-que-la-industria-alimentaria-es-uno-de-los-motores-econ-micos-m-s-potentes-de-espa-a/903f3170-9226-4a5d-9d23-4f9f4b73e5ed",
+   "/eu/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "/fr/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "/gl/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "/va/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/arroz/",
+   "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/evolucion-existencias-siega/"
+  ]
  },
  "estadisticas-agrarias": {
   "url": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/",
-  "len": 138,
-  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
-  "pdf_links": [],
+  "len": 32510,
+  "head": "<!DOCTYPE html> <html xmlns=\"http://www.w3.org/1999/xhtml\" class=\"no-js\" lang=\"es\"> <head> <meta charset=\"utf-8\" /> <met",
+  "pdf_links": [
+   "https://www.aepd.es/sites/default/files/2020-07/guia-cookies.pdf"
+  ],
   "sub_links": []
  },
  "industrias-lacteas": {
   "url": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/economia/industrias-lacteas/",
-  "len": 138,
-  "head": "ERR <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate ch",
+  "len": 29,
+  "head": "ERR HTTP Error 404: Not Found",
   "pdf_links": [],
   "sub_links": []
  }
