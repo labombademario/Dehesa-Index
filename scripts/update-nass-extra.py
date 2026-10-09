@@ -134,7 +134,8 @@ def build():
             ms = [p for p in pts if re.fullmatch(r'\d{4}-\d{2}', p[0])]
             pts = ms
             if len(ms) and freq_of(ms) == 'annual' and False: pass
-        if len(pts) < 5: continue
+        if len(pts) < 3 or (not annual and len(pts) < 12):
+            log('descartada', parts, metric, unit, 'pocos puntos', len(pts)); continue
         fq = freq_of([list(p) for p in pts])
         if not fq: log('descartada', parts, metric, 'periodicidad irregular'); continue
         if not annual and fq == 'annual':   # existencias a una fecha fija del anio: periodo = anio
@@ -142,7 +143,8 @@ def build():
             mon = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][int(pts[0][0][5:7])]
             pts = [(p[0][:4], p[1]) for p in pts]
         else: mon = None
-        if int(pts[-1][0][:4]) < cur - 3: continue
+        if int(pts[-1][0][:4]) < cur - 3:
+            log('descartada', parts, metric, 'sin dato desde', pts[-1][0]); continue
         pts = pts[-(30 if fq == 'annual' else 180):]
         u = unit
         mx = max(abs(p[1]) for p in pts)
@@ -162,7 +164,7 @@ def build():
 def main():
     if not KEY: print('falta NASS_API_KEY'); sys.exit(1)
     ser = build(); log('series', len(ser))
-    LOGF.write_text('\n'.join(LOG[-200:]) + '\n', encoding='utf-8')
+    LOGF.write_text('\n'.join(LOG[-600:]) + '\n', encoding='utf-8')
     if len(ser) < 60: log('demasiado pocas series; no se escribe'); sys.exit(1)
     src = {'name': 'USDA NASS - Quick Stats (national totals: tree nuts, citrus, berries, vegetables, pulses, honey, wool, goats, tobacco, mushrooms, hemp, turkeys)', 'url': 'https://quickstats.nass.usda.gov/', 'license': 'US Government work (public domain); cite USDA NASS'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'countries': {'US': {'name': 'United States', 'extend': True, 'source': src, 'series': ser}}, 'log': LOG[-30:]}
