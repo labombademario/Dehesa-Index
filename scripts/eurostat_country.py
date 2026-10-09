@@ -43,7 +43,7 @@ def put(sid, group, label, unit, freq, pts, src, mult=1, note=None):
     if note: s['periodNote'] = note
     OUT[sid] = s; return True
 def clean(l): return re.sub(r'\s+', ' ', l).strip().replace(' - ', ', ')
-KEEP = re.compile(r'\b(wheat|barley|maize|rye|oats|rice|rape|sunflower|soya|soy|potato|sugar beet|grape|wine|olive|cereal|oilseed|cattle|bovine|calves|pig|sheep|goat|poultry|chicken|egg|milk|butter|cheese|meat|beef|pork|animals|crop|total|fertili|energy|fuel|feed|seed|plant protection|pesticide)s?\b', re.I)
+KEEP = re.compile(r'\b(wheat|barley|maize|rye|oats|rice|rape|sunflower|soya|soy|potato|sugar beet|grape|wine|olive|cereal|oilseed|cattle|bovine|calves|pig|sheep|goat|poultry|chicken|egg|milk|butter|cheese|meat|beef|pork|animals|crop|total|fertili[sz]er|energy|fuel|feed|seed|plant protection|pesticide)s?\b', re.I)
 def keep(label): return not CFG.get('lite') or bool(KEEP.search(label))   # modo reducido (presupuesto de datos): solo los productos de la matriz y los totales
 NEC = re.compile(r'n\.e\.c|^other\b|, other\b', re.I)
 def crops():
@@ -100,6 +100,13 @@ def poultry():
     for (h, a), pts in by.items():
         n += put(CFG['pfx'] + '-es-poultry-%s-%s' % (h.lower(), a.lower()), 'production', '%s: %s (Eurostat)' % (clean(labs['animals'][a]), clean(labs['hatchitm'][h])), 'head', 'annual', pts, 'Eurostat apro_ec_poula', 1000)
     log('aves', n, 'series')
+def eggs():
+    recs, labs = es('apro_ec_eggcon'); by = {}
+    for r, v in recs:
+        if r['unit'] == 'MIO' and r['agriprod'] == 'D8210': by.setdefault(r['agriprod'], []).append((r['time'], v))
+    n = 0
+    for k, pts in by.items(): n += put(CFG['pfx'] + '-es-eggs-hens', 'production', "Hens' eggs for consumption: production (million, Eurostat)", 'million', 'annual', pts, 'Eurostat apro_ec_eggcon %s' % k, 1)
+    log('huevos', n, 'series')
 def priceidx():
     recs, labs = es('apri_pi_outq', unit='I20'); by = {}
     for r, v in recs:
@@ -182,7 +189,7 @@ def slaughter_m():
         n += put(CFG['pfx'] + '-es-meatm-%s-%s' % (m.lower(), u.lower()), 'production', '%s: slaughterings, monthly (%s, Eurostat)' % (clean(labs['meat'][m]), 'tonnes carcass weight' if u == 'THS_T' else 'head'), 't' if u == 'THS_T' else 'head', 'monthly', pts, 'Eurostat apro_mt_pwgtm %s' % m, 1000)
     log('sacrificio mensual', n, 'series')
 def main():
-    for fn in (crops, herds, slaughter, slaughter_m, milk, poultry, priceidx, absprices, accounts, inputs, fertiliser, labour, organic):
+    for fn in (crops, herds, slaughter, slaughter_m, milk, eggs, poultry, priceidx, absprices, accounts, inputs, fertiliser, labour, organic):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     if len(OUT) < 50:
@@ -198,7 +205,7 @@ def collect(cfg, minimum=15):
     """Varios paises en una ejecucion (update-eurostat-eu.py): devuelve las series de un pais o None si salen menos de `minimum`."""
     global CFG
     CFG = cfg; OUT.clear()
-    for fn in (crops, herds, slaughter, slaughter_m, milk, priceidx, absprices, accounts, inputs, fertiliser, labour) + ((poultry,) if not cfg.get('lite') else ()) + (() if cfg.get('lite') else (organic,)):
+    for fn in (crops, herds, slaughter, slaughter_m, milk, eggs, priceidx, absprices, accounts, inputs, fertiliser, labour) + ((poultry,) if not cfg.get('lite') else ()) + (() if cfg.get('lite') else (organic,)):
         try: fn()
         except Exception as e: log('ERROR', cfg['geo'], fn.__name__, repr(e)[:300])
     log(cfg['geo'], 'series', len(OUT))

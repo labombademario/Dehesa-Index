@@ -235,6 +235,54 @@
    "state": "NOT_APPLICABLE",
    "evidence": "eu-gapfill-stats.json#IE/rye",
    "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de centeno en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "DE",
+   "product": "olive",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DE/olive",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de olivo en DE en todos los años publicados."
+  },
+  {
+   "cc": "DE",
+   "product": "olive",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DE/olive",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de olivo en DE en todos los años publicados."
+  },
+  {
+   "cc": "DE",
+   "product": "olive",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DE/olive",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de olivo en DE en todos los años publicados."
+  },
+  {
+   "cc": "DE",
+   "product": "rice",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DE/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en DE en todos los años publicados."
+  },
+  {
+   "cc": "DE",
+   "product": "rice",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DE/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en DE en todos los años publicados."
+  },
+  {
+   "cc": "DE",
+   "product": "rice",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DE/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en DE en todos los años publicados."
   }
  ]
 }
