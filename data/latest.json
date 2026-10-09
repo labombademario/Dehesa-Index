@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-09T13:26:10.710Z",
+  "generatedAt": "2026-10-09T15:34:28.880Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -72509,7 +72509,7 @@
       "unit": "mmbtu",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-10-07T15:41:58Z",
+      "verifiedAt": "2026-10-09T15:34:28Z",
       "comparability": "directional",
       "changePct": 20.4169,
       "history": [
@@ -75319,23 +75319,23 @@
           "value": 25.42
         }
       ],
-      "snapshotDate": "2026-10-07"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_gas_natural_us",
       "product": "gas_natural",
       "region": "us",
       "sourceId": "eia",
-      "observationDate": "2026-09-25",
-      "publicationDate": "2026-09-25",
+      "observationDate": "2026-10-02",
+      "publicationDate": "2026-10-02",
       "status": "verified",
-      "verifiedAt": "2026-10-07T15:41:56.523Z",
+      "verifiedAt": "2026-10-09T15:33:46.211Z",
       "comparability": "directional",
-      "value": 3.02,
+      "value": 3.05,
       "currency": "USD",
       "unit": "mmbtu",
       "frequency": "weekly",
-      "changePct": 2.7211,
+      "changePct": 0.9934,
       "history": [
         {
           "period": "01-10",
@@ -83086,9 +83086,14 @@
           "period": "09-25",
           "year": 2026,
           "value": 3.02
+        },
+        {
+          "period": "10-02",
+          "year": 2026,
+          "value": 3.05
         }
       ],
-      "snapshotDate": "2026-10-07"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_cereales_guisante_seco_ca",
@@ -135941,16 +135946,16 @@
       "product": "petroleo_brent",
       "region": "eu",
       "sourceId": "eia",
-      "observationDate": "2026-09-25",
-      "publicationDate": "2026-09-25",
+      "observationDate": "2026-10-02",
+      "publicationDate": "2026-10-02",
       "status": "verified",
-      "verifiedAt": "2026-10-07T15:41:56.523Z",
+      "verifiedAt": "2026-10-09T15:33:46.211Z",
       "comparability": "directional",
-      "value": 117.08,
+      "value": 120.03,
       "currency": "USD",
       "unit": "barril",
       "frequency": "weekly",
-      "changePct": -5.6947,
+      "changePct": 2.5196,
       "history": [
         {
           "period": "05-15",
@@ -146226,25 +146231,30 @@
           "period": "09-25",
           "year": 2026,
           "value": 117.08
+        },
+        {
+          "period": "10-02",
+          "year": 2026,
+          "value": 120.03
         }
       ],
-      "snapshotDate": "2026-10-07"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_petroleo_wti_us",
       "product": "petroleo_wti",
       "region": "us",
       "sourceId": "eia",
-      "observationDate": "2026-09-25",
-      "publicationDate": "2026-09-25",
+      "observationDate": "2026-10-02",
+      "publicationDate": "2026-10-02",
       "status": "verified",
-      "verifiedAt": "2026-10-07T15:41:56.523Z",
+      "verifiedAt": "2026-10-09T15:33:46.211Z",
       "comparability": "directional",
-      "value": 93.57,
+      "value": 98.07,
       "currency": "USD",
       "unit": "barril",
       "frequency": "weekly",
-      "changePct": -9.6291,
+      "changePct": 4.8092,
       "history": [
         {
           "period": "01-03",
@@ -156875,9 +156885,14 @@
           "period": "09-25",
           "year": 2026,
           "value": 93.57
+        },
+        {
+          "period": "10-02",
+          "year": 2026,
+          "value": 98.07
         }
       ],
-      "snapshotDate": "2026-10-07"
+      "snapshotDate": "2026-10-09"
     },
     {
       "id": "di_avicultura_pollo_ca",

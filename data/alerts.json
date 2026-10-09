@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-09T13:26:12.196Z",
+  "generatedAt": "2026-10-09T15:34:30.429Z",
   "status": "informational",
   "rules": [
     {
@@ -68,9 +68,9 @@
       "product": "petroleo_wti",
       "region": "us",
       "sourceId": "eia",
-      "severity": "high",
-      "changePct": 15.51,
-      "observationDate": "2026-09-01"
+      "severity": "watch",
+      "changePct": 7.56,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -96,17 +96,8 @@
       "region": "eu",
       "sourceId": "eia",
       "severity": "high",
-      "changePct": 12.78,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "gas_natural",
-      "region": "us",
-      "sourceId": "eia",
-      "severity": "watch",
-      "changePct": 9.4,
-      "observationDate": "2026-09-01"
+      "changePct": 21.13,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
