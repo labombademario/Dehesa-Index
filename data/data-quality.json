@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T13:47:18Z",
+ "generatedAt": "2026-10-09T14:46:31Z",
  "summary": {
-  "files": 41,
+  "files": 45,
   "errors": 0,
-  "warnings": 13
+  "warnings": 14
  },
  "files": [
   {
@@ -682,6 +682,96 @@
    "generatedAt": "2026-10-09T13:36:06Z",
    "info": [],
    "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-nass-extra-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 201,
+    "points": 5830,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-09T14:40:08Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-climate-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 149,
+    "points": 29949,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-09T14:42:52Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-kcfed-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 47,
+    "points": 6293,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-09T14:38:29Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-snotel-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "US/us-snotel-az-swe: salto 0.01 -> 1.13 en 2010-11 (mediana previa 0.01)",
+    "US/us-snotel-az-swe: salto 1.13 -> 4.55 en 2010-12 (mediana previa 0.01)",
+    "US/us-snotel-az-swe: salto 0.62 -> 4.01 en 2011-12 (mediana previa 0.08)",
+    "US/us-snotel-az-swe: salto 4.01 -> 4.28 en 2012-01 (mediana previa 0.08)",
+    "US/us-snotel-az-swe: salto 4.28 -> 4.12 en 2012-02 (mediana previa 0.08)",
+    "US/us-snotel-az-swe: salto 1.5 -> 2.18 en 2015-01 (mediana previa 0.06)",
+    "US/us-snotel-az-swe: salto 2.18 -> 2.3 en 2015-02 (mediana previa 0.06)",
+    "US/us-snotel-az-swe: salto 2.87 -> 6.06 en 2016-01 (mediana previa 0.13)",
+    "US/us-snotel-az-swe: salto 2.62 -> 7.74 en 2017-01 (mediana previa 0.17)",
+    "US/us-snotel-az-swe: salto 7.74 -> 7.93 en 2017-02 (mediana previa 0.17)",
+    "US/us-snotel-az-swe: salto 1.02 -> 2.21 en 2018-12 (mediana previa 0.02)",
+    "US/us-snotel-az-swe: salto 2.21 -> 4.02 en 2019-01 (mediana previa 0.06)",
+    "US/us-snotel-az-swe: salto 4.02 -> 8.27 en 2019-02 (mediana previa 0.06)",
+    "US/us-snotel-az-swe: salto 8.27 -> 5.04 en 2019-03 (mediana previa 0.06)",
+    "US/us-snotel-az-swe: salto 0.46 -> 4.21 en 2021-01 (mediana previa 0.1)",
+    "US/us-snotel-az-swe: salto 4.21 -> 3.18 en 2021-02 (mediana previa 0.1)",
+    "US/us-snotel-az-swe: salto 0.16 -> 3.96 en 2021-12 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 3.96 -> 3.96 en 2022-01 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 3.96 -> 4.63 en 2022-02 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 4.63 -> 2.55 en 2022-03 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 0.4 -> 2.55 en 2022-12 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 2.55 -> 8.63 en 2023-01 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 8.63 -> 11.99 en 2023-02 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 11.99 -> 12.47 en 2023-03 (mediana previa 0.05)",
+    "US/us-snotel-az-swe: salto 12.47 -> 2.51 en 2023-04 (mediana previa 0.05)"
+   ],
+   "stats": {
+    "series": 12,
+    "points": 2412,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-09T14:37:36Z",
+   "info": [],
+   "nWarnings": 27,
    "nErrors": 0
   },
   {
