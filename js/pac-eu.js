@@ -17,6 +17,7 @@
       dp: 'Pagos directos', rd: 'Desarrollo rural (FEADER)', tot: 'Total', share: 'Cuota de la UE-27', ch: 'Variación 2023-2027', year: 'Año', country: 'País',
       dpH: 'Asignación para pagos directos', rdH: 'Ayuda de la Unión para desarrollo rural', y26: '{y}', calc: 'Cálculo de Dehesa Index sobre las cifras del reglamento',
       all27: 'Ver los 27 Estados miembros', tbl: 'Asignaciones por año (EUR, precios corrientes)', natH: 'Detalle nacional', esGo: 'Ver la herramienta de la PAC de España: importes por hectárea, calculadora, calendario y reglas',
+      deCondH: 'Condiciones de las Öko-Regelungen', deCondNote: 'Resumen de Dehesa Index de la GAPDZV Anlage 5, leída el 8 de octubre de 2026. Cada Land fija además sus propias listas y métodos (por ejemplo, las especies indicadoras de la ÖR 5). Vale el texto oficial.',
       deH: 'Importes por unidad en Alemania (Bundesanzeiger)', deEcoH: 'Öko-Regelungen: importe por hectárea', deAct: 'real', dePlan: 'planificado', perHa: '€/ha', perHead: '€/animal', deNote: 'Importes reales: los fija el ministerio federal tras cada campaña (Bekanntmachung del Bundesanzeiger). 2026 solo tiene el importe planificado de la GAPDZV; el real se publica en noviembre-diciembre. Los importes planificados de la prima básica, la redistributiva y jóvenes no figuran en la ley y no se muestran. Transcritos de los textos oficiales, sin actualización automática.', deName: 'Nombre oficial en alemán; ÖR = Öko-Regelung (ecorrégimen)', deItem: 'Concepto', deUnit: 'Unidad',
       dkH: 'Importes por hectárea de 2026 en Dinamarca (decretos daneses)', dkMore: 'Ver todos los importes y umbrales en la ficha de Dinamarca', natNone: 'Todavía no tenemos verificados los importes nacionales por hectárea de este país: no se rellenan con los de otro país.',
       csp: 'Plan estratégico de la PAC de este país (Comisión Europea)', note: 'Asignaciones fijadas en el reglamento (anexos V y XI), en euros a precios corrientes: no son pagos realizados ni importes por hectárea. Pueden cambiar con transferencias entre pilares y modificaciones del reglamento: se usa la versión consolidada {v}.',
@@ -26,6 +27,7 @@
       dp: 'Direct payments', rd: 'Rural development (EAFRD)', tot: 'Total', share: 'Share of EU-27', ch: 'Change 2023-2027', year: 'Year', country: 'Country',
       dpH: 'Allocation for direct payments', rdH: 'Union support for rural development', y26: '{y}', calc: 'Dehesa Index calculation on the Regulation’s figures',
       all27: 'See all 27 Member States', tbl: 'Allocations by year (EUR, current prices)', natH: 'National detail', esGo: 'Open Spain’s CAP tool: amounts per hectare, calculator, calendar and rules',
+      deCondH: 'Conditions of the Öko-Regelungen', deCondNote: 'Dehesa Index summary of GAPDZV annex 5, read on 8 October 2026. Each Land also sets its own lists and methods (for example the indicator species for ÖR 5). The official text prevails.',
       deH: 'Amounts per unit in Germany (Bundesanzeiger)', deEcoH: 'Öko-Regelungen (eco-schemes): amount per hectare', deAct: 'actual', dePlan: 'planned', perHa: '€/ha', perHead: '€/head', deNote: 'Actual amounts: set by the federal ministry after each campaign (Bekanntmachung in the Bundesanzeiger). 2026 only has the planned amount from the GAPDZV; the actual one is published in November-December. Planned amounts for the basic, redistributive and young-farmer payments are not in the law and are not shown. Transcribed from the official texts, no automatic refresh.', deName: 'Official German name; ÖR = Öko-Regelung (eco-scheme)', deItem: 'Item', deUnit: 'Unit',
       dkH: '2026 amounts per hectare in Denmark (Danish orders)', dkMore: 'See all amounts and thresholds in the Denmark profile', natNone: 'We have not yet verified this country’s national amounts per hectare: they are not filled in with another country’s.',
       csp: 'This country’s CAP Strategic Plan (European Commission)', note: 'Allocations set in the Regulation (annexes V and XI), in euros at current prices: not payments made and not amounts per hectare. They can change with transfers between pillars and amendments: the consolidated version {v} is used.',
@@ -35,6 +37,7 @@
       dp: 'Paiements directs', rd: 'Développement rural (Feader)', tot: 'Total', share: 'Part de l’UE-27', ch: 'Variation 2023-2027', year: 'Année', country: 'Pays',
       dpH: 'Dotation pour les paiements directs', rdH: 'Soutien de l’Union au développement rural', y26: '{y}', calc: 'Calcul de Dehesa Index sur les chiffres du règlement',
       all27: 'Voir les 27 États membres', tbl: 'Dotations par année (EUR, prix courants)', natH: 'Détail national', esGo: 'Ouvrir l’outil PAC de l’Espagne : montants à l’hectare, calculateur, calendrier et règles',
+      deCondH: 'Conditions des Öko-Regelungen', deCondNote: 'Résumé de Dehesa Index de l’annexe 5 de la GAPDZV, lue le 8 octobre 2026. Chaque Land fixe aussi ses propres listes et méthodes (par exemple les espèces indicatrices de l’ÖR 5). Le texte officiel fait foi.',
       deH: 'Montants unitaires en Allemagne (Bundesanzeiger)', deEcoH: 'Öko-Regelungen (écorégimes) : montant à l’hectare', deAct: 'réel', dePlan: 'prévu', perHa: '€/ha', perHead: '€/animal', deNote: 'Montants réels : fixés par le ministère fédéral après chaque campagne (Bekanntmachung au Bundesanzeiger). 2026 n’a que le montant prévu de la GAPDZV ; le réel est publié en novembre-décembre. Les montants prévus du paiement de base, redistributif et jeunes agriculteurs ne figurent pas dans la loi et ne sont pas affichés. Transcrits des textes officiels, sans mise à jour automatique.', deName: 'Nom officiel en allemand ; ÖR = Öko-Regelung (écorégime)', deItem: 'Poste', deUnit: 'Unité',
       dkH: 'Montants 2026 à l’hectare au Danemark (arrêtés danois)', dkMore: 'Voir tous les montants et seuils dans la fiche Danemark', natNone: 'Nous n’avons pas encore vérifié les montants nationaux à l’hectare de ce pays : ils ne sont pas complétés avec ceux d’un autre pays.',
       csp: 'Plan stratégique PAC de ce pays (Commission européenne)', note: 'Dotations fixées par le règlement (annexes V et XI), en euros courants : ni paiements effectués ni montants à l’hectare. Elles peuvent changer avec les transferts entre piliers et les modifications : version consolidée {v}.',
@@ -44,6 +47,7 @@
       dp: 'Pagamenti diretti', rd: 'Sviluppo rurale (FEASR)', tot: 'Totale', share: 'Quota dell’UE-27', ch: 'Variazione 2023-2027', year: 'Anno', country: 'Paese',
       dpH: 'Dotazione per i pagamenti diretti', rdH: 'Sostegno dell’Unione allo sviluppo rurale', y26: '{y}', calc: 'Calcolo di Dehesa Index sulle cifre del regolamento',
       all27: 'Vedi tutti i 27 Stati membri', tbl: 'Dotazioni per anno (EUR, prezzi correnti)', natH: 'Dettaglio nazionale', esGo: 'Apri lo strumento PAC della Spagna: importi per ettaro, calcolatore, calendario e regole',
+      deCondH: 'Condizioni delle Öko-Regelungen', deCondNote: 'Sintesi di Dehesa Index dell’allegato 5 della GAPDZV, letto l’8 ottobre 2026. Ogni Land fissa inoltre liste e metodi propri (per esempio le specie indicatrici dell’ÖR 5). Fa fede il testo ufficiale.',
       deH: 'Importi unitari in Germania (Bundesanzeiger)', deEcoH: 'Öko-Regelungen (ecoregimi): importo per ettaro', deAct: 'effettivo', dePlan: 'previsto', perHa: '€/ha', perHead: '€/capo', deNote: 'Importi effettivi: fissati dal ministero federale dopo ogni campagna (Bekanntmachung nel Bundesanzeiger). Il 2026 ha solo l’importo previsto della GAPDZV; quello effettivo esce a novembre-dicembre. Gli importi previsti del pagamento di base, redistributivo e giovani non sono nella legge e non vengono mostrati. Trascritti dai testi ufficiali, senza aggiornamento automatico.', deName: 'Nome ufficiale in tedesco; ÖR = Öko-Regelung (ecoregime)', deItem: 'Voce', deUnit: 'Unità',
       dkH: 'Importi 2026 per ettaro in Danimarca (decreti danesi)', dkMore: 'Vedi tutti gli importi e le soglie nella scheda Danimarca', natNone: 'Non abbiamo ancora verificato gli importi nazionali per ettaro di questo paese: non vengono riempiti con quelli di un altro paese.',
       csp: 'Piano strategico PAC di questo paese (Commissione europea)', note: 'Dotazioni fissate dal regolamento (allegati V e XI), in euro a prezzi correnti: non sono pagamenti effettuati né importi per ettaro. Possono cambiare con trasferimenti tra pilastri e modifiche: versione consolidata {v}.',
@@ -114,11 +118,18 @@
   function deTable(items, cols) {
     return '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t().deItem) + '</th>' + cols.map(function (y) { return '<th scope="col" class="r">' + y + '</th>'; }).join('') + '<th scope="col" class="r">' + esc(t().deUnit) + '</th></tr></thead><tbody>' + items.map(function (it) { return deRow(it, cols); }).join('') + '</tbody></table></div>';
   }
+  function deCond() {
+    var x = t(), L = lang(); if (!DE.conditions) return '';
+    return '<h3 class="pac-eu-h2">' + esc(x.deCondH) + '</h3><p class="di-movers-hint">' + esc(x.deCondNote) + '</p>' + DE.conditions.map(function (c) {
+      var pts = (c.text[L] || c.text.es || []);
+      return '<details class="pac-eu-all"><summary>' + esc(c.code) + ' · <span class="di-movers-hint">' + esc(c.ref) + '</span></summary><ul>' + pts.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul></details>';
+    }).join('');
+  }
   function deHtml() {
     var x = t(), main = DE.items.filter(function (i) { return i.group !== 'eco'; }), eco = DE.items.filter(function (i) { return i.group === 'eco'; });
     return '<p class="di-movers-hint"><b>' + esc(x.deH) + '</b> · ' + esc(x.deAct) + ' 2023-2025</p>' + deTable(main, ['2023', '2024', '2025']) +
       '<p class="di-movers-hint"><b>' + esc(x.deEcoH) + '</b> · ' + esc(x.deAct) + ' 2023-2025, 2026 ' + esc(x.dePlan) + '</p>' + deTable(eco, ['2023', '2024', '2025', '2026']) +
-      '<p class="di-movers-hint">' + esc(x.deNote) + ' ' + esc(x.deName) + '.</p>' + cite('bundesanzeiger', '2025') + cite('gesetze_im_internet', '2026');
+      deCond() + '<p class="di-movers-hint">' + esc(x.deNote) + ' ' + esc(x.deName) + '.</p>' + cite('bundesanzeiger', '2025') + cite('gesetze_im_internet', '2026');
   }
   function natHtml(c) {
     var x = t(), h = '<h2 class="pac-eu-h2">' + esc(x.natH) + '</h2>';

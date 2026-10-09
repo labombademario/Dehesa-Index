@@ -399,9 +399,10 @@
      "note": "Importes reales 2023-2025 (Bekanntmachung del Bundesanzeiger) y planificados de las Oko-Regelungen y ayudas asociadas 2023-2026 (GAPDZV); el importe real de 2026 sale en noviembre-diciembre"
     },
     "rules": {
-     "state": "NOT_INGESTED",
-     "reason": "las condiciones de cada Oko-Regelung estan en la GAPDZV Anlage 5: no se han leido",
-     "reasonCode": "NOT_READ"
+     "state": "PARTIAL",
+     "file": "de/amounts.json",
+     "count": 10,
+     "note": "Resumen de las condiciones de las diez Oko-Regelungen (GAPDZV Anlage 5); no incluye listas ni metodos que fijan los Lander ni el resto de la normativa"
     },
     "importantDates": {
      "state": "NOT_INGESTED",

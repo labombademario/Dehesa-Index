@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T01:19:17Z",
+ "generatedAt": "2026-10-09T01:33:17Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2913,7 +2913,7 @@
    "licenseId": "CUSTOM",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3, 4, 6 und 7. Auszug.",
+   "attribution": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3 bis 7. Auszug.",
    "lastChecked": "2026-10-08",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",

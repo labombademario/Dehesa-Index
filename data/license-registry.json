@@ -2213,9 +2213,9 @@
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
    "name": "Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV",
    "url": "https://www.gesetze-im-internet.de/",
-   "attributionText": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3, 4, 6 und 7. Auszug.",
+   "attributionText": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3 bis 7. Auszug.",
    "additionalRestrictions": "The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis is the statutory exclusion of laws and regulations from copyright. Our figures are extracts transcribed by hand, not the authentic text: always cite the annex. The site is not readable from GitHub runners, so there is no automated refresh.",
-   "evidence": "§ 5 Abs. 1 UrhG: Gesetze, Verordnungen, amtliche Erlasse und Bekanntmachungen sowie Entscheidungen und amtlich verfasste Leitsätze zu Entscheidungen genießen keinen urheberrechtlichen Schutz. GAPDZV Anlagen 3, 4, 6 und 7 are part of a Verordnung. The Impressum of gesetze-im-internet.de (read 2026-10-08 in a browser) does not state reuse terms, so confidence is medium.",
+   "evidence": "§ 5 Abs. 1 UrhG: Gesetze, Verordnungen, amtliche Erlasse und Bekanntmachungen sowie Entscheidungen und amtlich verfasste Leitsätze zu Entscheidungen genießen keinen urheberrechtlichen Schutz. GAPDZV Anlagen 3 bis 7 are part of a Verordnung. The Impressum of gesetze-im-internet.de (read 2026-10-08 in a browser) does not state reuse terms, so confidence is medium.",
    "short": "Gesetze im Internet (DE)"
   },
   "bundesanzeiger": {

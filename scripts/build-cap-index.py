@@ -57,7 +57,7 @@ def country_de():
                 'strategicPlan': ni('el plan estrategico aleman no se ha leido: solo los importes por unidad', 'NOT_READ'),
                 'interventions': comp('INGESTED', 'de/amounts.json', count=len(a['items']), note='Prima basica, redistributiva, jovenes, siete Oko-Regelungen y las dos ayudas asociadas, con su importe por unidad'),
                 'amounts': comp('INGESTED', 'de/amounts.json', campaigns=a['years'], kind=a['kind'], note='Importes reales 2023-2025 (Bekanntmachung del Bundesanzeiger) y planificados de las Oko-Regelungen y ayudas asociadas 2023-2026 (GAPDZV); el importe real de 2026 sale en noviembre-diciembre'),
-                'rules': ni('las condiciones de cada Oko-Regelung estan en la GAPDZV Anlage 5: no se han leido', 'NOT_READ'),
+                'rules': comp('PARTIAL', 'de/amounts.json', count=len(a['conditions']), note='Resumen de las condiciones de las diez Oko-Regelungen (GAPDZV Anlage 5); no incluye listas ni metodos que fijan los Lander ni el resto de la normativa'),
                 'importantDates': ni('no se han leido los plazos de solicitud (los fijan los Lander)', 'NOT_READ'),
                 'watch': ni('sin vigilancia automatica: ni gesetze-im-internet.de ni el Bundesanzeiger se leen desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre', 'SOURCE_UNREACHABLE')}}
 def country_eu():

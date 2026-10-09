@@ -2827,10 +2827,19 @@ def cap_de_amounts(doc, errs, warns, stats):
                 for y in ("2023", "2024", "2025"): ratios.setdefault(y, []).append(it["actual"][y] / it["planned"][y])
     for y, rs in ratios.items():
         if max(rs) - min(rs) > 0.0012: errs.append("cap-de: la razon real/planificado de las Oko-Regelungen de %s no es comun (%.4f-%.4f): revisar la transcripcion" % (y, min(rs), max(rs))); return
+    codes = {it["code"].split(",")[0] for it in doc["items"] if it["group"] == "eco"}
+    cc = [c["code"] for c in doc["conditions"]]
+    if set(cc) != {"\u00d6R " + k for k in ("1a", "1b", "1c", "1d", "2", "3", "4", "5", "6", "7")} or len(cc) != len(set(cc)): errs.append("cap-de: las condiciones no cubren cada Oko-Regelung una sola vez"); return
+    if codes != set(cc): errs.append("cap-de: las condiciones y los importes de las Oko-Regelungen no coinciden"); return
+    for c in doc["conditions"]:
+        if c["ref"].split(" Nr.")[0] != "GAPDZV Anlage 5" or "GAPDZV-A5" not in docs: errs.append("cap-de %s: condicion sin referencia a la Anlage 5" % c["code"]); return
+        for l in ("es", "en", "fr", "it"):
+            if not c["text"].get(l) or any(len(x.strip()) < 10 for x in c["text"][l]): errs.append("cap-de %s: texto vacio en %s" % (c["code"], l)); return
+        if len({len(c["text"][l]) for l in ("es", "en", "fr", "it")}) != 1: errs.append("cap-de %s: los idiomas tienen distinto numero de puntos" % c["code"]); return
     for k, d in doc["ecoAllocations"].items():
         if any((not _cap_num(v)) or v <= 0 for v in d.values()): errs.append("cap-de: asignacion invalida en %s" % k); return
     if TODAY >= datetime.date(2026, 12, 15) and doc["lastActualYear"] < 2026: warns.append("cap-de: debe de haberse publicado ya la Bekanntmachung de 2026: actualizar scripts/build-cap-de.py")
-    stats["cap-de importes"] = len(doc["items"])
+    stats["cap-de importes"] = len(doc["items"]); stats["cap-de condiciones"] = len(doc["conditions"])
 
 
 def cap_dk_amounts(doc, errs, warns, stats):

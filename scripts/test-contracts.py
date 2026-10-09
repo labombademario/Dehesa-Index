@@ -263,6 +263,8 @@ CASES = [
  ("cap/eu/allocations.json", "importe negativo", lambda d: d["directPayments"]["countries"]["ES"].__setitem__(0, -5)),
  ("cap/de/amounts.json", "importe real negativo", lambda d: d["items"][0]["actual"].__setitem__("2024", -1)),
  ("cap/de/amounts.json", "razon real/planificado rota (transcripcion)", lambda d: next(i for i in d["items"] if i["id"] == "eco-2")["actual"].__setitem__("2024", 90.0)),
+ ("cap/de/amounts.json", "condicion de una Oko-Regelung que falta", lambda d: d["conditions"].pop(3)),
+ ("cap/de/amounts.json", "idiomas con distinto numero de puntos", lambda d: d["conditions"][0]["text"]["fr"].pop()),
  ("cap/de/amounts.json", "falta la Bekanntmachung de 2024", lambda d: d.__setitem__("documents", [x for x in d["documents"] if x["id"] != "BAnz-2024"])),
  ("cap/dk/amounts.json", "importe negativo", lambda d: d["schemes"][0]["items"][0].__setitem__("amount", -3)),
  ("cap/dk/amounts.json", "decreto no vigente", lambda d: d["documents"][0].__setitem__("status", "Repealed")),
