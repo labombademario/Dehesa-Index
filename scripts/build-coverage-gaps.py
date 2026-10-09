@@ -46,6 +46,22 @@ FILE_SRC = {f[len('data/'):]: v['sources'][0] for f, v in CM.J('license-registry
 def add_ext(cc, p, m, f):
     _bc = (CM.J('license-registry.json')['files'].get('data/' + f) or {}).get('byCountry') or {}
     ext[(cc, p, m)].append({'sourceId': _bc.get(cc) or FILE_SRC.get(f, 'usda_nass'), 'file': f})
+# UE: precios del Agri-food Data Portal en data/eu/<familia>.json (fuera del catalogo unificado, VERIFIED EU-REUSE-2011-833). Se cuenta una celda solo si hay una serie con dato
+# de las ultimas 6 semanas (la frescura SI se mide aqui, a diferencia de los ficheros USDA); una serie parada desde hace meses no cuenta.
+EU_PORTAL = {'aceite': {'olive': 'price'}, 'fruta': {'fruit': 'price', 'potato': 'price'}}   # potato = series 'Ware potatoes' de la familia fruta
+def _eu_fresh(last):
+    try: return (datetime.datetime.now(datetime.timezone.utc).date() - datetime.date.fromisoformat(last[:10])).days <= 42
+    except Exception: return False
+for _fam, _map in EU_PORTAL.items():
+    _doc = CM.J('eu/%s.json' % _fam, {'series': []})
+    for _p, _m in _map.items():
+        _ok = False
+        for _s in _doc.get('series', []):
+            _nm = ' '.join(_s.get('parts') or []).lower()
+            if _p == 'potato' and not _nm.startswith('ware potatoes'): continue
+            if _p == 'fruit' and _nm.startswith('ware potatoes'): continue
+            if any(isinstance(r.get('last'), list) and _eu_fresh(str(r['last'][0])) for r in _s.get('regions', [])): _ok = True; break
+        if _ok: ext[('EU', _p, _m)].append({'sourceId': 'eu_agrifood', 'file': 'eu/%s.json' % _fam})
 for key in (CM.J('nass-crops.json', {'series': {}}).get('series') or {}):
     p = CM.NASS_CROP_PRODUCT.get(key.split(' - ')[0].split(',')[0].strip())
     if p: add_ext('US', p, 'stocks' if key.partition(' - ')[2].upper().startswith('STOCKS') else 'production', 'nass-crops.json')   # existencias trimestrales (avena) no son produccion
@@ -258,7 +274,7 @@ doc = {'schemaVersion': 1, 'generatedAt': NOW,
                   'metricOfGroup': CM.GROUP_METRIC, 'applicable': CM.APPLICABLE, 'kindOf': CM.KIND_OF, 'okStates': list(CM.OK_STATES),
                   'limits': ['Las etiquetas de producto son heuristicas: MISSING significa que no hay serie etiquetada, no que el dato no exista.',
                              'Una candidata solo rellena celdas si sus productos estan CONFIRMADOS por las notas (productsConfirmed).',
-                             'AVAILABLE_OUTSIDE_CATALOG solo comprueba que el fichero USDA contiene el producto y la metrica; no mide su frescura.',
+                             'AVAILABLE_OUTSIDE_CATALOG solo comprueba que el fichero USDA contiene el producto y la metrica; no mide su frescura. Excepcion UE: los precios del Agri-food Data Portal (data/eu/<familia>.json: aceite de oliva, fruta, patata) solo cuentan si alguna serie tiene dato de las ultimas 6 semanas; la celda es de precios por Estado miembro del portal, no un precio unico de la UE.',
                              'AVAILABLE_OUTSIDE_CATALOG se deduce de ficheros USDA reales con formato propio (supply-demand/PSD, gats, export-sales, nass-crops, nass-livestock, nass-prices, ams-grain-daily): se mapea solo lo que contienen. ERS, crop-progress y drought no tienen metrica equivalente en la matriz y se listan en notInMatrix.outsideCatalogNotMapped.',
                              'confidence (high/medium/low) mide cuanta evidencia hay de que un MISSING sea un hueco real; solo los MISSING con confidence=high deben usarse para priorizar fuentes nuevas. medium/low son no concluyentes (la metrica no esta ingerida en el pais, el producto no esta en su alcance, hay series sin etiquetar o ningun otro pais tiene el dato).',
                              'Las series de grupos sin celda de producto (renta, tipos de interes, ecologico, medio ambiente) y las series sin etiqueta de producto no entran en la matriz y se cuentan aparte.']},
