@@ -49,7 +49,7 @@ def decode(obj):
     d = obj["results"][0]["result"]["data"]
     names = [s["Name"] for s in d["descriptor"]["Select"]]
     ds = d["dsr"]["DS"][0]; vd = ds.get("ValueDicts", {}); rows = []; prev = None
-    if ds.get("IC") or any("RT" in ph for ph in ds["PH"]): raise ValueError("respuesta incompleta (el informe devolvio mas filas de las pedidas)")
+    if ds.get("RT") or any("RT" in ph for ph in ds["PH"]): raise ValueError("respuesta paginada (el informe devolvio un testigo de reinicio: hay mas filas de las pedidas)")   # «IC» solo dice que el resultado llego entero a su ventana; no indica truncado
     for ph in ds["PH"]:
         for dm in ph.values():
             for r in dm:
@@ -65,7 +65,8 @@ def decode(obj):
     return names, rows
 
 def col(entity, prop): return {"Column": {"Expression": {"SourceRef": {"Source": "t"}}, "Property": prop}, "Name": entity + "." + prop}
-def query_body(model, entity, props, where=None, top=5000):
+TOP = 20000   # filas maximas por consulta; cada consulta es de una sola serie (decenas de meses), asi que no se acerca
+def query_body(model, entity, props, where=None, top=TOP):
     sel = [col(entity, p) for p in props]
     q = {"Version": 2, "From": [{"Name": "t", "Entity": entity, "Type": 0}], "Select": sel}
     if where:
@@ -113,6 +114,7 @@ def build_series(net):
     for pc, mc in pairs:
         if (pc, mc) not in LABELS: skipped.append("%s_%s" % (pc, mc)); continue
         names, rows = decode(net.q("Valores Mensuales", ["COD_PRODUCTO", "COD_MODALIDAD", "Fecha", "Existencias Mensuales"], where=[("COD_PRODUCTO", pc), ("COD_MODALIDAD", mc)]))
+        if len(rows) >= TOP: raise ValueError("%s_%s: la respuesta alcanza el limite de filas (%d); podria estar truncada" % (pc, mc, TOP))
         E = "Valores Mensuales"; P = colv(names, rows, E, "COD_PRODUCTO"); M = colv(names, rows, E, "COD_MODALIDAD"); F = colv(names, rows, E, "Fecha"); V = colv(names, rows, E, "Existencias Mensuales")
         pts = {}
         for p_, m_, f, v in zip(P, M, F, V):
