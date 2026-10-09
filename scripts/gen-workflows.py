@@ -41,7 +41,7 @@ def render(x):
     pub_if = ["        if: always() && steps.qa.outcome != 'failure'" + (" && steps.fetch.outputs.source != 'unavailable'" if fs else "")] if qa else always
     L += ["      - name: Publicar"] + pub_if + ["        run: |", '          git config user.name "github-actions[bot]"', '          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
           "          git add " + adds, "          git diff --cached --quiet && exit 0", "          git commit -qm " + json.dumps(x["message"], ensure_ascii=False),
-          "          for i in 1 2 3 4 5 6; do", "            git pull -q --rebase --autostash && git push && exit 0", "            sleep $((i * 5 + RANDOM % 10))", "          done", "          echo '::error::no se pudo publicar tras 6 intentos'; exit 1"]
+          "          for i in 1 2 3 4 5 6; do", "            git pull -q --rebase --autostash && git push && exit 0", "            git rebase --abort 2>/dev/null || :", "            sleep $((i * 5 + RANDOM % 10))", "          done", "          echo '::error::no se pudo publicar tras 6 intentos'; exit 1"]
     if fs:
         L += ["      - name: Estado de la fuente (un corte del proveedor se registra como retraso, no como error de Dehesa Index)", "        if: always()", "        env:", "          REASON: ${{ steps.fetch.outputs.reason }}",
               "        run: python3 scripts/source-status.py ${{ steps.fetch.outputs.source == 'unavailable' && 'mark' || (steps.fetch.outcome == 'success' && 'clear' || 'none') }} update-%s.yml \"$REASON\"" % x["id"],
