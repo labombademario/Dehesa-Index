@@ -284,10 +284,19 @@ for (const cc of ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL']) {
   }
   if (Object.keys(out).length) regionData[cc] = { country: cc, units, source: d.source || null, labels: Object.assign({}, DICT), regions: out };
 }
+// 9) PAC: asignaciones por pais fijadas en el Reglamento (UE) 2021/2115 (anexos V y XI), con enlace al acto juridico
+let pac = null;
+if (exists('data/cap/eu/allocations.json')) {
+  const a = read('data/cap/eu/allocations.json');
+  const pick = o => Object.entries(o.countries).map(([cc, v]) => [cc, v]);
+  pac = { sourceId: 'eur_lex', sourceName: 'EUR-Lex', url: a.source.url, act: 'Reglamento (UE) 2021/2115', consolidated: a.source.consolidatedVersion, unit: 'EUR',
+    years: a.directPayments.years, direct: pick(a.directPayments), rural: pick(a.ruralDevelopment) };
+}
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
 fs.mkdirSync(OUT, { recursive: true });
 const gen = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
 const files = { 'prices.json': { prices }, 'today.json': todayDoc, 'news.json': { news }, 'countries.json': { countries }, 'sections.json': { sections } };
+if (pac) files['pac.json'] = { pac };
 const manifest = { schemaVersion: 1, generatedAt: gen, languages: LANGS, files: {} };
 for (const [name, body] of Object.entries(files)) {
   const content = JSON.stringify(body);

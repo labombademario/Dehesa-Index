@@ -107,6 +107,13 @@ for (const [cc, m] of Object.entries(man.regionData || {})) {
     if (rid === 'BRU') ok(!r.eaa.some(x => x.k === 'AM180000'), 'region BE BRU: produccion 0 debe quedar como sin dato');
   }
 }
+// PAC: asignaciones por pais (ceilings, no pagos)
+if (man.files['pac.json']) {
+  const k = load('pac.json').pac;
+  ok(reg[k.sourceId] && reg[k.sourceId].status === 'VERIFIED', 'pac: fuente');
+  ok(/^https:\/\//.test(k.url) && k.years.length >= 3, 'pac: url o anos');
+  for (const set of [k.direct, k.rural]) { ok(set.length >= 20, 'pac: pocos paises'); set.forEach(([cc, v]) => ok(/^[A-Z]{2}$/.test(cc) && v.length === k.years.length && v.every(x => typeof x === 'number' && x > 0), 'pac ' + cc + ': valores')); }
+}
 const bytes = Object.values(man.files).reduce((a, f) => a + f.bytes, 0);
 ok(bytes < 400 * 1024, 'app views: mas de 400 KB (' + bytes + ')');
 console.log(`app views: ${checks} comprobaciones, ${fails} fallos`);
