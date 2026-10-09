@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Comercio exterior agroalimentario de ES, FR, DE, BE, AT, PT, IT, DK, NL y PL (Eurostat Comext, DS-045409, CC BY 4.0).
+"""Comercio exterior agroalimentario de ES, FR, DE, BE, AT, PT, IT, DK, NL, PL y EL (Eurostat Comext, DS-045409, CC BY 4.0).
 Escribe data/eu-trade-stats.json (extend: añade series a cada país) y data/eu-trade-log.txt.
  - Mensual desde 2000: exportaciones, importaciones y balanza de total agroalimentario (cap. 01-24 del SA) y de capítulos clave; socio WORLD (incluye comercio intra-UE).
  - Anual por socio: ranking de destinos y orígenes del total agroalimentario, top 10 por país y flujo, con serie desde 2002.
@@ -14,13 +14,15 @@ def log(*a):
     s = " ".join(str(x) for x in a); LOG.append("%s %s" % (time.strftime("%H:%M:%S"), s)); print(s, flush=True)
     try: (ROOT / "data" / "eu-trade-log.txt").write_text("\n".join(LOG))
     except Exception: pass
-REP = {"PL": "Poland", "ES": "Spain", "FR": "France", "DE": "Germany", "BE": "Belgium", "AT": "Austria", "PT": "Portugal", "IT": "Italy", "DK": "Denmark", "NL": "Netherlands"}
+REP = {"PL": "Poland", "ES": "Spain", "FR": "France", "DE": "Germany", "BE": "Belgium", "AT": "Austria", "PT": "Portugal", "IT": "Italy", "DK": "Denmark", "NL": "Netherlands", "EL": "Greece"}
+COMEXT = {"EL": "GR"}   # codigo del sitio (Eurostat/UE) -> codigo de declarante en Comext
 CH = ["%02d" % i for i in range(1, 25)]
 KEY = {"01": "live animals", "02": "meat", "04": "dairy, eggs and honey", "07": "vegetables", "08": "fruit and nuts", "10": "cereals", "12": "oilseeds", "15": "fats and oils", "17": "sugar", "22": "beverages (incl. wine)", "23": "animal feed and food residues", "31": "fertilisers"}
 HS4 = {"1001": "wheat and meslin", "1002": "rye", "1003": "barley", "1004": "oats", "1005": "maize", "1006": "rice", "1201": "soya beans", "1205": "rape or colza seeds", "1701": "cane or beet sugar", "0701": "potatoes",
        "0201": "bovine meat, fresh or chilled", "0202": "bovine meat, frozen", "0203": "pig meat", "0204": "sheep and goat meat", "0207": "poultry meat", "0401": "milk and cream", "0405": "butter", "0406": "cheese and curd", "0407": "birds' eggs", "2204": "wine of fresh grapes"}   # solo producto x socio anual (top 6 socios); sin series mensuales para no engordar el indice global
 EXTRA = {"ES": {"1509": "olive oil"}, "PT": {"1509": "olive oil", "45": "cork"}, "IT": {"1509": "olive oil"}, "FR": {"1509": "olive oil"}}
 def get(params, tries=4):
+    if params.get("reporter") in COMEXT: params = dict(params, reporter=COMEXT[params["reporter"]])
     q = urllib.parse.urlencode(params, doseq=True) + "&format=JSON&lang=EN&indicators=VALUE_IN_EUROS"
     last = None
     for i in range(tries):

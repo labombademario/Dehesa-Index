@@ -38,6 +38,11 @@
    "class": "DERIVED",
    "note": "Matriz de cobertura generada por build-coverage-gaps.py; la leen constructores y pruebas, no el navegador."
   },
+  "data/eu-trade-products.json": {
+   "class": "RUNTIME",
+   "note": "comercio-socios.js (comercio por producto y socio); usa la vista por pais data/views/trade-products/<cc>.json y este fichero solo como respaldo.",
+   "via": {"file": "js/comercio-socios.js", "pattern": "eu-trade-products"}
+  },
   "data/eu-trade-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Estadisticas de comercio UE: alimentan el catalogo; el navegador lee las vistas por pais (data/views/trade-products/)."

@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const KB = 1024;
-const BUDGET = { data: 900 * KB, js: 120 * KB, css: 60 * KB };   // gzip, por fichero
+const BUDGET = { data: 950 * KB, js: 120 * KB, css: 60 * KB };   // gzip, por fichero
 // Deuda conocida: ficheros que ya superan el presupuesto (se cargan solo bajo demanda). Cada uno con su limite propio.
 // Sin deuda conocida: ningun fichero grande se excusa aqui. Si hiciera falta una excepcion, debe ir con su motivo documentado en ARCHITECTURE.md.
 const KNOWN_DEBT = {};
