@@ -95,7 +95,7 @@ def wine():
     put('DE', 'de-destatis-wine-vineyard-area', 'crops', 'Wine: vineyard area in yield (Destatis)', 'ha', ar, 'Destatis 41253-0001')
     # existencias de vino (41255-0001) no se ingieren: una sola serie de existencias haria creer al motor de cobertura que Alemania publica existencias de todo
 EVID = {}
-EV_CHECKS = [('DE', 'rice', r'^rice\b'), ('DK', 'wine', r'^grapes for wines?\b'), ('NL', 'wine', r'^grapes for wines?\b'), ('NL', 'soy', r'^soya')] + [(c, k, r) for c in ('FI', 'IE') for k, r in (('maize', r'^grain maize'), ('rice', r'^rice\b'), ('soy', r'^soya'), ('olive', r'^olives'))] + [('IE', 'rye', r'^rye'), ('IE', 'sugar', r'^sugar beet')]
+EV_CHECKS = [('DE', 'rice', r'^rice\b'), ('DK', 'wine', r'^grapes for wines?\b'), ('NL', 'wine', r'^grapes for wines?\b'), ('NL', 'soy', r'^soya')] + [(c, k, r) for c in ('FI', 'IE') for k, r in (('maize', r'^grain maize'), ('rice', r'^rice\b'), ('soy', r'^soya'), ('olive', r'^olives'))] + [('IE', 'rye', r'^rye'), ('IE', 'sugar', r'^sugar beet')] + [('DE', 'olive', r'^olives'), ('EL', 'soy', r'^soya'), ('EL', 'rapeseed', r'^rape')]
 def evidence():
     """Prueba para clasificar huecos como «no aplica» o «no significativo»: superficie y produccion que publica Eurostat (apro_cpsh1), o que no publica nada."""
     recs, labs = es('apro_cpsh1', sorted(set(c for c, _, _ in EV_CHECKS)))
