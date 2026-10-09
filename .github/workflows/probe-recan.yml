@@ -17,4 +17,4 @@ jobs:
           wc -l probe/dump.csv > probe/dump-wc.out.txt; head -3 probe/dump.csv > probe/dump-head.out.txt; cut -d, -f1-6 probe/dump.csv | awk -F, 'NR>1{print $2}' | sort | uniq -c > probe/dump-col2.out.txt
           rm -f probe/dump.csv
           git config user.name probe; git config user.email probe@x
-          git add probe; git commit -qm "probe out"; git push origin HEAD:research/probe-recan-out -f
+          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-recan-out -f
