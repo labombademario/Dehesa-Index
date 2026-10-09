@@ -513,8 +513,8 @@ sources:
     name: Update EU trade (Eurostat Comext)
     cron: ['40 9 16,18,22 * *']
     script: scripts/update-eu-trade.py
-    timeout: 45
-    script_timeout: 35
+    timeout: 80
+    script_timeout: 70
     continue: true
     data: [eu-trade-stats.json]
     extra: [eu-trade-products.json]
