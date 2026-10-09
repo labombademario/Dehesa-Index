@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v6
       - run: bash scripts/trust-fnmt.sh
       - run: |
-          set +e
+          set +e; mkdir -p probe
           U=https://servicio.mapa.gob.es/ckan
           curl -sS "$U/api/3/action/package_show?id=esmaparecanredcontable" -o probe/package.json; echo rc=$?
           curl -sS "$U/api/3/action/datastore_search?resource_id=687a7bb1-ddf2-4cdd-8525-05cec40c6734&limit=1" -o probe/ds1.json; echo rc=$?
