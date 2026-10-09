@@ -1,0 +1,19 @@
+name: Probe GEO (research)
+on:
+  push:
+    branches: ['research/probe-geo']
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 probe/probe_geo.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe/probe-log.txt
+          git commit -qm "probe log" || exit 0
+          git pull -q --rebase origin research/probe-geo && git push origin HEAD:research/probe-geo
