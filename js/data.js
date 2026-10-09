@@ -524,7 +524,7 @@
           eu: { price: 425.4, changePct: 2.1565, history: [386.98, 396.1, 399.52, 409.9, 394.24, 397.79, 403.61, 413.82, 410.77, 420.06, 416.42, 425.4], currency: 'EUR', kgPerUnit: 100 },
           quoteTypes: { eu: { type: 'referencia', market: 'Comisión Europea (mantequilla, agregado UE)' } } },
         { nameKey: 'leche_polvo', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: '100kg', metricKgPerUnit: 100,
-          us: { price: 2.12, changePct: 4.43, history: [1.635, 1.585, 1.51, 1.53, 1.575, 1.75, 1.76, 1.84, 1.87, 1.905, 2.03, 2.12], currency: 'USD', kgPerUnit: 0.453592 },
+          us: { price: 2.17, changePct: 2.36, history: [1.585, 1.51, 1.53, 1.575, 1.75, 1.76, 1.84, 1.87, 1.905, 2.03, 2.12, 2.17], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 311.02, changePct: 0.7417, history: [270.22, 273.78, 277.62, 280.68, 280.74, 289, 291.39, 301.62, 306.09, 308.19, 308.73, 311.02], currency: 'EUR', kgPerUnit: 100 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (leche desnatada en polvo, Este y Centro, calor bajo/medio, punto medio del rango)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche desnatada en polvo, agregado UE)' } } }
       ]
@@ -605,7 +605,7 @@
           footnoteKey: 'pienso',
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, broilers, peso vivo)' }, eu: { type: 'indice', market: 'Comisión Europea (índices regionales)' } } },
         { nameKey: 'harina_soja', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 364.06, changePct: -5.23, history: [323.9, 334.5, 318.9, 317.9, 313.7, 324, 344, 351.96, 351.8, 379.08, 384.14, 364.06], currency: 'USD', kgPerUnit: 907.185 },
+          us: { price: 361.13, changePct: -0.8, history: [334.5, 318.9, 317.9, 313.7, 324, 344, 351.96, 351.8, 379.08, 384.14, 364.06, 361.13], currency: 'USD', kgPerUnit: 907.185 },
           eu: { price: 424.84, changePct: 3.703, history: [364.81, 372.43, 384.13, 382.56, 374.51, 358.63, 375.86, 394.93, 399.88, 401.44, 409.67, 424.84], currency: 'EUR', kgPerUnit: 1000 },
           footnoteKey: 'harina_soja',
           uk: { price: 355.00, changePct: 5.65, history: [340, 343, 346, 349, 351, 353, 355], currency: 'GBP', kgPerUnit: 1000 },
@@ -1146,7 +1146,7 @@
     'pienso-harina_soja-us': {
       sourceId: 'usda_ams_mars', frequency: 'weekly',
       methodology: 'USDA AMS Market News (API MARS, informe 3511 «National Grain and Oilseed Processor Feedstuff Report», semanal): precio medio semanal de la harina de soja de 46,5-48 % de proteína en Iowa, FOB, cotización de venta (ask), en USD por tonelada. El informe solo indica «$ Per Ton»; se trata como tonelada corta (2.000 lb) porque el precio se expresa como base sobre el futuro de harina de soja de CBOT, que cotiza en toneladas cortas. Es un mercado regional, no un futuro ni la media nacional, y no es exactamente el mismo producto que la referencia europea (España, 40-50 % de proteína, salida de fábrica, EUR/t).',
-      comparability: 'directional', observationDate: '2026-10-02', publicationDate: '2026-10-02', status: 'verified', verifiedAt: '2026-10-05T12:50:54.792Z'
+      comparability: 'directional', observationDate: '2026-10-09', publicationDate: '2026-10-09', status: 'verified', verifiedAt: '2026-10-09T22:40:37.486Z'
     },
     'pienso-harina_soja-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -1181,7 +1181,7 @@
     'lacteos-leche_polvo-us': {
       sourceId: 'usda_ams_mars', frequency: 'weekly',
       methodology: 'USDA AMS Market News (API MARS, informe 1049 «Nonfat Dry Milk - East and Central U.S.», semanal): leche desnatada en polvo de calor bajo y medio, en USD por libra. El informe publica un rango semanal (mínimo y máximo) y el valor mostrado es el punto medio de ese rango, calculado por Dehesa Index. Es un mercado regional (Este y Centro de EE. UU.), no un futuro; el producto es equivalente en tipo al SMP europeo, pero no es idéntico.',
-      comparability: 'directional', observationDate: '2026-10-02', publicationDate: '2026-10-02', status: 'verified', verifiedAt: '2026-10-05T12:50:54.857Z'
+      comparability: 'directional', observationDate: '2026-10-09', publicationDate: '2026-10-09', status: 'verified', verifiedAt: '2026-10-09T22:40:37.552Z'
     },
     'lacteos-leche_polvo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
