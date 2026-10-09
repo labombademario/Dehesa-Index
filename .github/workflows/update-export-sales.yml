@@ -35,10 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/export-sales.json data/export-sales-log.txt
-          git diff --cached --quiet || git commit -m "chore: update export sales (USDA FAS ESR)"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          bash scripts/publish-data.sh "chore: update export sales (USDA FAS ESR)" data/export-sales.json data/export-sales-log.txt
       - name: Cierre (rojo si hubo datos invalidos)
         if: always()
         uses: ./.github/actions/finish

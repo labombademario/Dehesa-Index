@@ -4,12 +4,16 @@ import datetime, importlib.util
 from pathlib import Path
 sp = importlib.util.spec_from_file_location("rc", Path(__file__).resolve().parent / "rerun-cancelled.py"); rc = importlib.util.module_from_spec(sp); sp.loader.exec_module(rc)
 NOW = datetime.datetime(2026, 10, 9, 23, 0, tzinfo=datetime.timezone.utc)
-def run(i, wf, created, status="completed", concl="cancelled", event="schedule", actor="github-actions[bot]"):
-    return {"id": i, "path": ".github/workflows/%s" % wf, "created_at": created, "status": status, "conclusion": concl, "event": event, "actor": {"login": actor}}
+def run(i, wf, created, status="completed", concl="cancelled", event="schedule", actor="github-actions[bot]", attempt=1):
+    return {"id": i, "run_attempt": attempt, "path": ".github/workflows/%s" % wf, "created_at": created, "status": status, "conclusion": concl, "event": event, "actor": {"login": actor}}
 J = {1: 0, 2: 0, 3: 2, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0}
 jobs = lambda i: J[i]
 cases = [
-    ("cancelada de cola, reciente -> relanzar", [run(1, "update-a.yml", "2026-10-09T21:57:49Z")], ["update-a.yml"]),
+    ("cancelada de cola, reciente -> relanzar", [run(1, "update-a.yml", "2026-10-09T21:57:49Z")], [("dispatch", "update-a.yml")]),
+    ("fallo programado reciente, 1er intento -> reintentar", [run(20, "update-r.yml", "2026-10-09T21:00:00Z", concl="failure")], [("retry", "update-r.yml")]),
+    ("fallo ya reintentado -> no", [run(21, "update-r2.yml", "2026-10-09T21:00:00Z", concl="failure", attempt=2)], []),
+    ("fallo manual -> no", [run(22, "update-r3.yml", "2026-10-09T21:00:00Z", concl="failure", event="workflow_dispatch")], []),
+    ("fallo viejo -> no", [run(23, "update-r4.yml", "2026-10-09T10:00:00Z", concl="failure")], []),
     ("cancelada pero llego a tener jobs -> no", [run(3, "update-b.yml", "2026-10-09T21:57:49Z")], []),
     ("ultima ejecucion ya fue bien -> no", [run(5, "update-c.yml", "2026-10-09T22:30:00Z", concl="success"), run(4, "update-c.yml", "2026-10-09T21:57:49Z")], []),
     ("hay otra en cola/curso -> no", [run(6, "update-d.yml", "2026-10-09T22:30:00Z", status="queued", concl=None), run(7, "update-d.yml", "2026-10-09T21:57:49Z")], []),
@@ -20,7 +24,7 @@ cases = [
 for k in range(100, 103): J[k] = 1
 bad = 0
 for name, runs, want in cases:
-    got = [p.split("/")[-1] for p in rc.decide(runs, jobs, NOW)]
+    got = [(a, p.split("/")[-1]) for a, p, _ in rc.decide(runs, jobs, NOW)]
     ok = got == want; bad += not ok; print(("OK   " if ok else "FALLO"), name, got)
 many = [run(200 + k, "update-m%d.yml" % k, "2026-10-09T22:00:00Z") for k in range(9)]
 for k in range(9): J[200 + k] = 0

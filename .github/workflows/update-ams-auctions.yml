@@ -36,10 +36,7 @@ jobs:
           cp /tmp/ams-auc.out data/ams/_log_auctions.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ams data/search-index.json
-          git diff --cached --quiet || git commit -m "data: update USDA AMS auctions"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          bash scripts/publish-data.sh "data: update USDA AMS auctions" data/ams data/search-index.json
       - name: Cierre (rojo si hubo datos invalidos)
         if: always()
         uses: ./.github/actions/finish

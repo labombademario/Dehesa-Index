@@ -13,20 +13,15 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
       - run: python3 scripts/update-recan.py
       - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
         if: always()
         uses: ./.github/actions/validate-files
         with:
           files: data/recan.json
-      - run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/recan.json data/recan-log.txt
-          git diff --cached --quiet && exit 0
-          git commit -qm "Datos RECAN (MAPA)"
-          git pull -q --rebase
-          git push
+      - name: Publicar
+        run: bash scripts/publish-data.sh "Datos RECAN (MAPA)" data/recan.json data/recan-log.txt
       - name: Cierre (rojo si hubo datos invalidos)
         if: always()
         uses: ./.github/actions/finish

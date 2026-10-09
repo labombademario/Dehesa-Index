@@ -137,7 +137,7 @@ sources:
     name: Update Spain wine month by month and region (MAPA INFOVI monthly report)
     cron: ['55 8 * * 4']
     script: scripts/update-spain-wine-monthly.py
-    pre: ['pip install openpyxl xlrd']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
     timeout: 25
     script_timeout: 18
     continue: true
@@ -148,7 +148,7 @@ sources:
   - id: spain-wine-balance-historic
     name: Update Spain wine historical balances 2009/10-2015/16 (MAPA)
     cron: ['5 9 * * 4']
-    pre: ['pip install openpyxl xlrd']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
     script: scripts/update-spain-wine-balance-historic.py
     timeout: 25
     script_timeout: 18

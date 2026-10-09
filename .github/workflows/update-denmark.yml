@@ -28,10 +28,7 @@ jobs:
         run: |
           git config user.name "Dehesa Index Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/denmark-prices.json data/denmark-log.txt
-          git diff --cached --quiet || git commit -m "data: Dinamarca (Statistics Denmark, precios agrícolas)"
-          git pull --rebase origin main
-          git push
+          bash scripts/publish-data.sh "data: Dinamarca (Statistics Denmark, precios agrícolas)" data/denmark-prices.json data/denmark-log.txt
       - name: Cierre (rojo si hubo datos invalidos)
         if: always()
         uses: ./.github/actions/finish

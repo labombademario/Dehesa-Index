@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v6
       - id: fetch
         run: |
+          sudo apt-get update -q >/dev/null
           sudo apt-get install -y -qq mdbtools >/dev/null
           pip install openpyxl --break-system-packages -q
           python3 scripts/update-partner-tariffs.py

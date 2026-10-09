@@ -118,11 +118,11 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-crop-progress.yml | a mano | 2 veces/semana | update-crop-progress.mjs | crop-progress.json | finish, validate-files |
 | update-defra-milk.yml | a mano | semanal (5) | qa-site.mjs, update-defra-api-uk.py, update-defra-milk-uk.py | - | price-engine, publish |
 | update-denmark-depth.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-denmark-depth.py | denmark-depth.json | finish, validate-files |
-| update-denmark.yml | a mano | semanal (2,5) | update-dst-denmark.py | denmark-log.txt, denmark-prices.json | finish, validate-files |
-| update-drought.yml | a mano | 2 veces/semana | update-drought.mjs | drought-log.txt, drought.json | finish, validate-files |
+| update-denmark.yml | a mano | semanal (2,5) | update-dst-denmark.py | denmark-prices.json | finish, validate-files |
+| update-drought.yml | a mano | 2 veces/semana | update-drought.mjs | drought.json | finish, validate-files |
 | update-energy-markets.yml | a mano | semanal (3,5) | update-eia-energy-markets.mjs, update-worldbank-gas-eu.py | - | finish, price-engine, publish |
 | update-energy.yml | a mano | semanal (5) | sync-diesel-trust.mjs, update-ec-diesel-eu.py, update-eia-diesel-us.mjs | - | price-engine, publish |
-| update-export-sales.yml | a mano | 2 veces/semana | update-export-sales.mjs | export-sales-log.txt, export-sales.json | finish, validate-files |
+| update-export-sales.yml | a mano | 2 veces/semana | update-export-sales.mjs | export-sales.json | finish, validate-files |
 | update-france.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-france.py | france-stats.json | finish, validate-files |
 | update-fx-history.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fx-history.py | fx-history.json | finish, validate-files |
 | update-fx.yml | a mano | semanal (1-5) | update-fx.mjs | - | - |
@@ -139,7 +139,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-poland.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-poland.py | poland-stats.json | finish, validate-files |
 | update-portugal-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal-eurostat.py | portugal-eurostat-stats.json | finish, validate-files |
 | update-portugal.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal.py | portugal-stats.json | finish, validate-files |
-| update-recan.yml | a mano | semanal (4) | update-recan.py | recan-log.txt, recan.json | finish, validate-files |
+| update-recan.yml | a mano | semanal (4) | update-recan.py | recan.json | finish, validate-files |
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | spain-balances/cereals.json | finish, validate-files |
 | update-spain-crops.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-crops.py | spain-crops/index.json | finish, validate-files |
 | update-spain-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-spain-hicp.py | spain-hicp-stats.json | finish, validate-files |
@@ -173,11 +173,11 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
-| update-ams-auctions.yml | a mano | semanal (6) | build-search-index.mjs, update-ams.mjs | ams, search-index.json | finish, validate-files |
+| update-ams-auctions.yml | a mano | semanal (6) | build-search-index.mjs, update-ams.mjs | search-index.json | finish, validate-files |
 | update-ams.yml | a mano | 2 veces/semana | build-ams-daily.py, build-search-index.mjs, build-us-fertilizers.py | ams-grain-daily.json, search-index.json, us-fertilizers.json | finish, publish, validate-files |
-| update-ers.yml | a mano | semanal (1) | update-ers.mjs | ers-log.txt, ers.json | finish, validate-files |
+| update-ers.yml | a mano | semanal (1) | update-ers.mjs | ers.json | finish, validate-files |
 | update-nass-data.yml | a mano | semanal (1) | update-nass-us.mjs | - | price-engine, publish |
-| update-nass.yml | a mano | semanal (1) | update-nass.mjs | nass-*-log.txt, nass-*.json, nass-crops.json … | finish, validate-files |
+| update-nass.yml | a mano | semanal (1) | update-nass.mjs | nass-crops.json, nass-livestock.json, nass-prices.json … | finish, validate-files |
 | update-us-arcplc.yml | generado | mensual | detect-revisions.py, gen-workflows.py, source-status.py | us-arcplc/index.json, us-arcplc/national.json | finish, publish, validate-files |
 | update-us-cash-bids.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-cash-bids.py | us-cash-bids/ingestion-status.json, us-cash-bids/manifest.json, us-cash-bids/reports.json … | finish, validate-files |
 | update-us-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-climate.py | us-climate-stats.json | finish, validate-files |

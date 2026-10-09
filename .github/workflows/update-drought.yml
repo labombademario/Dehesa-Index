@@ -29,9 +29,7 @@ jobs:
         if: always()
         run: |
           git config user.name "github-actions"; git config user.email "actions@github.com"
-          git add data/drought.json data/drought-log.txt
-          git commit -m "data: monitor de sequía" || exit 0
-          git pull --rebase origin main; git push origin HEAD:main
+          bash scripts/publish-data.sh "data: monitor de sequía" data/drought.json data/drought-log.txt
       - name: Cierre (rojo si hubo datos invalidos)
         if: always()
         uses: ./.github/actions/finish

@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install pdftotext
-        run: sudo apt-get install -y poppler-utils >/dev/null
+        run: sudo apt-get update -q >/dev/null && sudo apt-get install -y poppler-utils >/dev/null
       - name: Update Alberta weekly market reviews
         run: python scripts/update-alberta-weekly.py
       - uses: ./.github/actions/price-engine
