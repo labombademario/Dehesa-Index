@@ -45,7 +45,7 @@ L = M.pdf_links(html)
 ok("enlaces: solo oleaginosas con campaña coherente (2025 y 2016), ni leguminosas ni 2021_23", sorted(L) == [2016, 2025])
 series = M.make_series(P)
 ids = [x["id"] for x in series]
-ok("27 series con ids unicos", len(series) == 27 and len(set(ids)) == 27)
+ok("18 series (colza y soja, 9 cada una) con ids unicos; el girasol se valida pero no se publica", len(series) == 18 and len(set(ids)) == 18 and not any("sunflower" in i for i in ids))
 ok("la produccion de semillas no se duplica", not any(i.startswith("es-oilseed-seed-") and "output" in i for i in ids))
 x = {i["id"]: i for i in series}["es-oilseed-seed-soybean-imports"]
 ok("serie anual en miles de t, periodo = año de inicio, latest = ultimo punto", x["frequency"] == "annual" and x["unit"] == "thousand t" and x["points"][-1] == ["2025", 3350.0] and x["latest"] == 3350.0 and x["points"][0][0] == "2016")

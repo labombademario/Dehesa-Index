@@ -6,7 +6,7 @@ Fuente: el informe publico de Power BI «Evolucion de existencias» que el MAPA 
 existencias cada mes (Reglamento de Ejecucion (UE) 2022/791) y el MAPA publica el agregado nacional desde la campaña 2022/23. El informe no tiene API documentada: se consulta el mismo
 extremo publico que usa el visor (`/public/reports/querydata`) con la clave del propio enlace publico. Si el visor cambia, el script falla en rojo y NO escribe nada: nunca se sustituye por una estimacion.
 Se publica cada serie tal cual la da el informe (toneladas -> miles de toneladas, sin coeficientes: el arroz queda en su modalidad —cascara, descascarillado, blanqueado— y los cereales
-en equivalente grano; las variedades indica/japonica el informe las da ya en equivalente de arroz blanqueado: suman lo mismo que las tres modalidades convertidas con los coeficientes del informe). Las combinaciones producto/modalidad que no estan en LABELS se descartan y se anotan en el log (no se inventa una etiqueta).
+en equivalente grano). Los aceites y las variedades de arroz (indica/japonica) del informe no se publican (ver SKIPPED). Las combinaciones producto/modalidad que no estan en LABELS ni en SKIPPED se descartan y se anotan en el log (no se inventa una etiqueta).
 Uso: update-spain-siega.py [--out DIR] [--fixture DIR]   (--fixture lee las respuestas guardadas q_*.json en vez de llamar a la red; solo pruebas)"""
 import argparse, base64, datetime, json, os, re, sys, time, urllib.request
 from pathlib import Path
@@ -18,18 +18,17 @@ HOSTS = ["https://wabi-west-europe-d-primary-api.analysis.windows.net"]   # extr
 # (producto, modalidad) -> (texto de la etiqueta, clave corta del id). Etiquetas en ingles como el resto del catalogo; «oil» y «meal» evitan la palabra «aceite» (el catalogo la etiqueta como oliva).
 LABELS = {
     ("AR", "CAS"): ("rice, paddy (in husk)", "rice-paddy"), ("AR", "DCA"): ("rice, husked (brown)", "rice-husked"), ("AR", "BLA"): ("rice, milled (whitened)", "rice-milled"),
-    ("AR", "IND"): ("rice, indica varieties (milled-rice equivalent)", "rice-indica"), ("AR", "JAP"): ("rice, japonica varieties (milled-rice equivalent)", "rice-japonica"),
     ("TB", "EGR"): ("common wheat, grain equivalent", "wheat-common"), ("TD", "EGR"): ("durum wheat, grain equivalent", "wheat-durum"),
     ("CB", "EGR"): ("barley, grain equivalent", "barley"), ("MZ", "EGR"): ("maize, grain equivalent", "maize"),
     ("CL", "GRA"): ("rapeseed, seed", "rapeseed-seed"), ("CL", "TOH"): ("rapeseed, meal and cake", "rapeseed-meal"),
-    ("CL", "ACC"): ("rapeseed oil, crude", "rapeseed-oil-crude"), ("CL", "ACR"): ("rapeseed oil, refined", "rapeseed-oil-refined"),
     ("SJ", "GRA"): ("soybeans, seed", "soybean-seed"), ("SJ", "TOH"): ("soybean meal and cake", "soybean-meal"),
-    ("SJ", "ACC"): ("soybean oil, crude", "soybean-oil-crude"), ("SJ", "ACR"): ("soybean oil, refined", "soybean-oil-refined"),
     ("GR", "GRA"): ("sunflower seed", "sunflower-seed"), ("GR", "TOH"): ("sunflower meal and cake", "sunflower-meal"),
-    ("GR", "ACC"): ("sunflower oil, crude", "sunflower-oil-crude"), ("GR", "ACR"): ("sunflower oil, refined", "sunflower-oil-refined"),
-    ("GR", "AOL"): ("sunflower oil, high-oleic", "sunflower-oil-oleic"), ("GR", "LIN"): ("sunflower oil, linoleic", "sunflower-oil-linoleic"),
 }
-MIN_SERIES = 15
+# El informe trae tambien aceites (crudo, refinado, alto oleico, linoleico) y el arroz por variedad (indica, japonica; ya en equivalente de arroz blanqueado). No se publican:
+# el presupuesto de datos de la ficha de España (scripts/page-budget.json) no admite cincuenta series mas, y las existencias de aceite no son el producto que sigue la web.
+# Se pueden añadir a LABELS si se amplia ese presupuesto. Se descartan sin avisar en el log; cualquier otra combinacion nueva si avisa.
+SKIPPED = {("AR", "IND"), ("AR", "JAP"), ("CL", "ACC"), ("CL", "ACR"), ("SJ", "ACC"), ("SJ", "ACR"), ("GR", "ACC"), ("GR", "ACR"), ("GR", "AOL"), ("GR", "LIN")}
+MIN_SERIES = 10
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -112,6 +111,7 @@ def build_series(net):
     pairs = sorted(set(zip(colv(n, dims, "Dim Dimensiones", "COD_PRODUCTO"), colv(n, dims, "Dim Dimensiones", "COD_MODALIDAD"))))
     out = []; skipped = []
     for pc, mc in pairs:
+        if (pc, mc) in SKIPPED: continue
         if (pc, mc) not in LABELS: skipped.append("%s_%s" % (pc, mc)); continue
         names, rows = decode(net.q("Valores Mensuales", ["COD_PRODUCTO", "COD_MODALIDAD", "Fecha", "Existencias Mensuales"], where=[("COD_PRODUCTO", pc), ("COD_MODALIDAD", mc)]))
         if len(rows) >= TOP: raise ValueError("%s_%s: la respuesta alcanza el limite de filas (%d); podria estar truncada" % (pc, mc, TOP))

@@ -6,7 +6,7 @@ Fuente: un PDF por campaña de comercialización (1 jul - 30 jun) en la pagina �
 girasol y el total (miles de t): semillas (superficie, rendimiento, produccion, existencias iniciales, importaciones, consumo interno, exportaciones, existencias finales) y tortas/harinas
 (produccion utilizable, existencias iniciales, importaciones, consumo, exportaciones, existencias finales). Se leen con `pdftotext -layout`; las columnas se asignan por el borde derecho de los numeros.
 Aqui se publican como series anuales (periodo = año en que empieza la campaña) las partidas que no estaban ya en el catalogo: importaciones, exportaciones, consumo interno y existencias finales
-de las semillas, y produccion utilizable, importaciones, exportaciones, consumo interno y existencias finales de las tortas/harinas, para colza, soja y girasol. La superficie, el rendimiento y la
+de las semillas, y produccion utilizable, importaciones, exportaciones, consumo interno y existencias finales de las tortas/harinas, para colza y soja (el girasol se lee y valida, pero no se publica por el presupuesto de datos de la ficha de España). La superficie, el rendimiento y la
 produccion de semillas ya vienen de las estadisticas de cultivos del MAPA y no se duplican. La ultima campaña es una estimacion del propio MAPA y las cifras se revisan: el PDF manda.
 Nada se estima ni se completa: si una tabla no cuadra (disponibilidades = existencias iniciales + produccion + importaciones; utilizaciones = consumo + exportaciones;
 existencias finales = disponibilidades - utilizaciones) en colza, soja o girasol no se escribe nada. La columna TOTAL del PDF no se publica (mezcla productos distintos).
@@ -29,6 +29,7 @@ SEED_SERIES = {"imports": ("trade", "imports"), "exports": ("trade", "exports"),
 MEAL_SERIES = {"production": ("production", "usable output"), "imports": ("trade", "imports"), "exports": ("trade", "exports"), "consumption": ("production", "domestic use"), "endingStocks": ("stocks", "closing stock")}
 CROP_TXT = {"rapeseed": ("rapeseed", "rapeseed meal and cake"), "soy": ("soybeans", "soybean meal and cake"), "sunflower": ("sunflower seed", "sunflower meal and cake")}
 KEYS = {"rapeseed": "rapeseed", "soy": "soybean", "sunflower": "sunflower"}
+PUBLISH = ("rapeseed", "soy")   # el girasol se lee y se valida igual, pero no se publica: el presupuesto de datos de la ficha de España (scripts/page-budget.json) no admite mas series
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -131,7 +132,7 @@ def validate(camps):
 def make_series(camps):
     out = []
     for tname, defs in (("seeds", SEED_SERIES), ("meals", MEAL_SERIES)):
-        for ci, cr in enumerate(CROPS[:-1]):
+        for cr in PUBLISH:
             for item, (grp, what) in defs.items():
                 pts = [[str(y), camps[y][tname][cr][item]] for y in sorted(camps) if camps[y][tname][cr][item] is not None]
                 if len(pts) < 3: continue
@@ -168,7 +169,7 @@ def main():
         for e in errs[:20]: log("ERROR de validacion:", e)
         log("no se escribe nada (%d errores)" % len(errs)); return 1
     series = make_series(camps)
-    if len(series) < 20: log("ERROR: solo %d series (se esperan 20 o mas); no se escribe nada" % len(series)); return 1
+    if len(series) < 16: log("ERROR: solo %d series (se esperan 16 o mas); no se escribe nada" % len(series)); return 1
     src = {"name": "MAPA — Balance de oleaginosas en España (Subdirección General de Cultivos Herbáceos e Industriales y Aceite de Oliva)", "url": PAGE, "license": "MAPA aviso legal: reuse without prior authorisation if the source is cited"}
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "countries": {"ES": {"name": "Spain", "extend": True, "source": src, "series": sorted(series, key=lambda s: s["id"])}}, "log": LOG[-30:]}
