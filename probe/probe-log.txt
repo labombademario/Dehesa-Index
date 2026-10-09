@@ -1,0 +1,896 @@
+== apri_ap_crpouta series 334
+   Euro / Soft wheat - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Durum wheat - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Euro / Rye - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Barley - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Feed barley - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Malting barley - prices per 100 kg | {'DE': '2024', 'FI': '2024'}
+   Euro / Oats - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Maize - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   Euro / Rice - prices per 100 kg | {'EL': '2024'}
+   Euro / Triticale - prices per 100 kg | {'DE': '2024'}
+   Euro / Rape - prices per 100 kg | {'DE': '2024', 'FI': '2024'}
+   Euro / Sunflowers - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   Euro / Soya - prices per 100 kg | {'DE': '2024'}
+   Euro / Dried beans - prices per 100 kg | {'EL': '2024'}
+   Euro / Raw tobacco: all varieties - prices pe | {'EL': '2024'}
+   Euro / Sugar beet: unit value - prices per 10 | {'DE': '2024', 'EL': '2024'}
+   Euro / Cotton (including seed) - prices per 1 | {'EL': '2024'}
+   Euro / Hops: all varieties - prices per 100 k | {'DE': '2024'}
+   Euro / Lentils - prices per 100 kg | {'EL': '2024'}
+   Euro / Chick peas - prices per 100 kg | {'EL': '2024'}
+   Euro / Cauliflowers: all qualities - prices p | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Tomatoes in the open: all qualities -  | {'DE': '2024', 'EL': '2024'}
+   Euro / Tomatoes under glass: all qualities -  | {'DE': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / White cabbage: all qualities - prices  | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Red cabbage: all qualities - prices pe | {'DE': '2024', 'FI': '2023'}
+   Euro / Savoy cabbage: all qualities - prices  | {'DE': '2024', 'FI': '2023', 'IE': '2024'}
+   Euro / Lettuce in the open: all qualities - p | {'DE': '2024', 'EL': '2024'}
+   Euro / Lettuce under glass: all qualities - p | {'DE': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Spinach - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   Euro / Cucumbers in the open: all qualities - | {'DE': '2024', 'EL': '2024', 'FI': '2023'}
+   Euro / Cucumbers under glass: all qualities - | {'DE': '2024', 'FI': '2024'}
+   Euro / Carrots: all qualities - prices per 10 | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Onions: all qualities - prices per 100 | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Green beans - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   Euro / Green beans: all qualities - prices pe | {'DE': '2024'}
+   Euro / Green peas: all qualities - prices per | {'DE': '2024', 'EL': '2024'}
+   Euro / Cultivated mushrooms: all qualities -  | {'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Euro / Chicory in the open - prices per 100 k | {'DE': '2024', 'EL': '2024'}
+   Euro / Leeks in the open - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Capsicum (under glass) - prices per 10 | {'DE': '2024'}
+   Euro / Beetroot - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2023'}
+   Euro / Garlic - prices per 100 kg | {'EL': '2024'}
+   Euro / Kohlrabi - prices per 100 kg | {'DE': '2024', 'FI': '2023'}
+   Euro / Radish - prices per 100 kg | {'DE': '2024'}
+   Euro / Brussels sprouts: all qualities - pric | {'DE': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Asparagus: all qualities - prices per  | {'DE': '2024', 'EL': '2024'}
+   Euro / Courgettes - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Celeriac: all qualities - prices per 1 | {'DE': '2024', 'EL': '2024'}
+   Euro / Melons - prices per 100 kg | {'EL': '2024'}
+   Euro / Water melons - prices per 100 kg | {'EL': '2024'}
+   Euro / Roses - prices per 100 items | {'EL': '2024'}
+   Euro / Carnations - prices per 100 items | {'EL': '2024'}
+   Euro / Gladioli - prices per 100 items | {'EL': '2024'}
+   Euro / Early potatoes - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Main crop potatoes - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Seed potatoes | {'EL': '2024'}
+   Euro / Dessert apples: all varieties - prices | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Dessert pears: all varieties - prices  | {'DE': '2024', 'EL': '2024'}
+   Euro / Peaches: all varieties - prices per 10 | {'DE': '2024', 'EL': '2024'}
+   Euro / Cherries: sweet cherries - prices per  | {'DE': '2024', 'EL': '2024'}
+   Euro / Cherries: sour cherries - prices per 1 | {'DE': '2024'}
+   Euro / Plums: all varieties  - prices per 100 | {'DE': '2024'}
+   Euro / Strawberries: all types of production  | {'DE': '2024', 'EL': '2024', 'FI': '2022'}
+   Euro / Strawberries in the open - prices per  | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Strawberries under glass - prices per  | {'DE': '2024'}
+   Euro / Walnuts - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   Euro / Hazelnuts - prices per 100 kg | {'EL': '2024'}
+   Euro / Almonds - prices per 100 kg | {'EL': '2024'}
+   Euro / Chestnuts - prices per 100 kg | {'EL': '2024'}
+   Euro / Dried fruit - prices per 100 Kg | {'EL': '2024'}
+   Euro / Apricots: all varieties - prices per 1 | {'DE': '2024', 'EL': '2024'}
+   Euro / Raspberries - prices per 100 kg | {'DE': '2024', 'FI': '2024'}
+   Euro / Blackcurrants - prices per 100 kg | {'DE': '2024', 'FI': '2023'}
+   Euro / Oranges: all varieties - prices per 10 | {'EL': '2024'}
+   Euro / Mandarins: all varieties - prices per  | {'EL': '2024'}
+   Euro / Lemons: all varieties - prices per 100 | {'EL': '2024'}
+   Euro / Fresh figs - prices per 100 kg | {'EL': '2024'}
+   Euro / Dessert grapes: all varieties - prices | {'DE': '2024', 'EL': '2024'}
+   Euro / Grapes for wine production - prices pe | {'EL': '2024'}
+   Euro / Table olives - prices per 100 kg | {'EL': '2024'}
+   Euro / Table wine - prices per 100 litres | {'DE': '2022'}
+   Euro / Other table wine - prices per 100 litr | {'DE': '2023', 'EL': '2024'}
+   Euro / Quality wine - prices per 100 litres | {'DE': '2023'}
+   Euro / Extra virgin olive oil - prices per 10 | {'EL': '2024'}
+   Euro / Lampante virgin olive oil - prices per | {'EL': '2024'}
+   Euro / Virgin olive oil - prices per 100 litr | {'EL': '2024'}
+   National currency / Soft wheat - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Durum wheat - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   National currency / Rye - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Barley - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Feed barley - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Malting barley - prices per 100 kg | {'DE': '2024', 'FI': '2024'}
+   National currency / Oats - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Maize - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   National currency / Rice - prices per 100 kg | {'EL': '2024'}
+   National currency / Triticale - prices per 100 kg | {'DE': '2024'}
+   National currency / Rape - prices per 100 kg | {'DE': '2024', 'FI': '2024'}
+   National currency / Sunflowers - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   National currency / Soya - prices per 100 kg | {'DE': '2024'}
+   National currency / Dried beans - prices per 100 kg | {'EL': '2024'}
+   National currency / Raw tobacco: all varieties - prices pe | {'EL': '2024'}
+   National currency / Sugar beet: unit value - prices per 10 | {'DE': '2024', 'EL': '2024'}
+   National currency / Cotton (including seed) - prices per 1 | {'EL': '2024'}
+   National currency / Hops: all varieties - prices per 100 k | {'DE': '2024'}
+   National currency / Lentils - prices per 100 kg | {'EL': '2024'}
+   National currency / Chick peas - prices per 100 kg | {'EL': '2024'}
+   National currency / Cauliflowers: all qualities - prices p | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Tomatoes in the open: all qualities -  | {'DE': '2024', 'EL': '2024'}
+   National currency / Tomatoes under glass: all qualities -  | {'DE': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / White cabbage: all qualities - prices  | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Red cabbage: all qualities - prices pe | {'DE': '2024', 'FI': '2023'}
+   National currency / Savoy cabbage: all qualities - prices  | {'DE': '2024', 'FI': '2023', 'IE': '2024'}
+   National currency / Lettuce in the open: all qualities - p | {'DE': '2024', 'EL': '2024'}
+   National currency / Lettuce under glass: all qualities - p | {'DE': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Spinach - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   National currency / Cucumbers in the open: all qualities - | {'DE': '2024', 'EL': '2024', 'FI': '2023'}
+   National currency / Cucumbers under glass: all qualities - | {'DE': '2024', 'FI': '2024'}
+   National currency / Carrots: all qualities - prices per 10 | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Onions: all qualities - prices per 100 | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Green beans - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   National currency / Green beans: all qualities - prices pe | {'DE': '2024'}
+   National currency / Green peas: all qualities - prices per | {'DE': '2024', 'EL': '2024'}
+   National currency / Cultivated mushrooms: all qualities -  | {'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   National currency / Chicory in the open - prices per 100 k | {'DE': '2024', 'EL': '2024'}
+   National currency / Leeks in the open - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Capsicum (under glass) - prices per 10 | {'DE': '2024'}
+   National currency / Beetroot - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2023'}
+   National currency / Garlic - prices per 100 kg | {'EL': '2024'}
+   National currency / Kohlrabi - prices per 100 kg | {'DE': '2024', 'FI': '2023'}
+   National currency / Radish - prices per 100 kg | {'DE': '2024'}
+   National currency / Brussels sprouts: all qualities - pric | {'DE': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Asparagus: all qualities - prices per  | {'DE': '2024', 'EL': '2024'}
+   National currency / Courgettes - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Celeriac: all qualities - prices per 1 | {'DE': '2024', 'EL': '2024'}
+   National currency / Melons - prices per 100 kg | {'EL': '2024'}
+   National currency / Water melons - prices per 100 kg | {'EL': '2024'}
+   National currency / Roses - prices per 100 items | {'EL': '2024'}
+   National currency / Carnations - prices per 100 items | {'EL': '2024'}
+   National currency / Gladioli - prices per 100 items | {'EL': '2024'}
+   National currency / Early potatoes - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Main crop potatoes - prices per 100 kg | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Seed potatoes | {'EL': '2024'}
+   National currency / Dessert apples: all varieties - prices | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Dessert pears: all varieties - prices  | {'DE': '2024', 'EL': '2024'}
+   National currency / Peaches: all varieties - prices per 10 | {'DE': '2024', 'EL': '2024'}
+   National currency / Cherries: sweet cherries - prices per  | {'DE': '2024', 'EL': '2024'}
+   National currency / Cherries: sour cherries - prices per 1 | {'DE': '2024'}
+   National currency / Plums: all varieties  - prices per 100 | {'DE': '2024'}
+   National currency / Strawberries: all types of production  | {'DE': '2024', 'EL': '2024', 'FI': '2022'}
+   National currency / Strawberries in the open - prices per  | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Strawberries under glass - prices per  | {'DE': '2024'}
+   National currency / Walnuts - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   National currency / Hazelnuts - prices per 100 kg | {'EL': '2024'}
+   National currency / Almonds - prices per 100 kg | {'EL': '2024'}
+   National currency / Chestnuts - prices per 100 kg | {'EL': '2024'}
+   National currency / Dried fruit - prices per 100 Kg | {'EL': '2024'}
+   National currency / Apricots: all varieties - prices per 1 | {'DE': '2024', 'EL': '2024'}
+   National currency / Raspberries - prices per 100 kg | {'DE': '2024', 'FI': '2024'}
+   National currency / Blackcurrants - prices per 100 kg | {'DE': '2024', 'FI': '2023'}
+   National currency / Oranges: all varieties - prices per 10 | {'EL': '2024'}
+   National currency / Mandarins: all varieties - prices per  | {'EL': '2024'}
+   National currency / Lemons: all varieties - prices per 100 | {'EL': '2024'}
+   National currency / Fresh figs - prices per 100 kg | {'EL': '2024'}
+   National currency / Dessert grapes: all varieties - prices | {'DE': '2024', 'EL': '2024'}
+   National currency / Grapes for wine production - prices pe | {'EL': '2024'}
+   National currency / Table olives - prices per 100 kg | {'EL': '2024'}
+   National currency / Table wine - prices per 100 litres | {'DE': '2022'}
+   National currency / Other table wine - prices per 100 litr | {'DE': '2023', 'EL': '2024'}
+   National currency / Quality wine - prices per 100 litres | {'DE': '2023'}
+   National currency / Extra virgin olive oil - prices per 10 | {'EL': '2024'}
+   National currency / Lampante virgin olive oil - prices per | {'EL': '2024'}
+   National currency / Virgin olive oil - prices per 100 litr | {'EL': '2024'}
+== apri_ap_anouta series 114
+   Euro / Young cattle - prices per 100 kg live  | {'IE': '2024'}
+   Euro / Young cattle (store) - prices per head | {'IE': '2024'}
+   Euro / Heifers - prices per 100 kg live weigh | {'DE': '2024', 'IE': '2024'}
+   Euro / Cows - prices per 100 kg live weight | {'DE': '2024', 'EL': '2024'}
+   Euro / Bullocks - prices per 100 kg live weig | {'DE': '2024', 'IE': '2024'}
+   Euro / Calves - prices per 100 kg live weight | {'DE': '2024', 'EL': '2024', 'IE': '2021'}
+   Euro / Calves (of a few days) - prices per he | {'DE': '2024', 'IE': '2023'}
+   Euro / Calves (of a few weeks) - prices per h | {'IE': '2024'}
+   Euro / Pigs (light) - prices per 100 kg live  | {'EL': '2024'}
+   Euro / Pigs (carcasses) (grade II) - prices p | {'DE': '2024', 'EL': '2024'}
+   Euro / Pigs (carcasses) (grade I) - prices pe | {'DE': '2024', 'FI': '2024'}
+   Euro / Piglets - prices per 100 kg live weigh | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Euro / Horses - prices per 100 kg live weight | {'DE': '2020'}
+   Euro / Sheep - prices per 100 kg live weight | {'DE': '2024', 'EL': '2024'}
+   Euro / Suckling lambs - prices per 100 kg liv | {'EL': '2024'}
+   Euro / Fattening lambs - prices per 100 kg li | {'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Euro / Goats - prices per 100 kg live weight | {'EL': '2024'}
+   Euro / Kids - prices per 100 kg live weight | {'EL': '2024'}
+   Euro / Chickens (live 1st choice) - prices pe | {'DE': '2024', 'EL': '2024'}
+   Euro / Broiling fowl (slaughtered) - prices p | {'DE': '2024'}
+   Euro / Ducks (slaughtered) - prices per 100 k | {'DE': '2024'}
+   Euro / Turkey (slaughtered) - prices per 100  | {'DE': '2024'}
+   Euro / Geese (slaughtered) - prices per 100 k | {'DE': '2024'}
+   Euro / Rabbits - prices per 100 kg live weigh | {'EL': '2024'}
+   Euro / Raw cows' milk 3.7% fat content - pric | {'DE': '2024', 'FI': '2023', 'IE': '2024'}
+   Euro / Raw cows' milk actual fat content - pr | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Whole cows' milk for human consumption | {'DE': '2023'}
+   Euro / Raw sheep milk - prices per 100 kg | {'EL': '2024'}
+   Euro / Raw goats' milk - prices per 100 kg | {'EL': '2024'}
+   Euro / Fresh eggs (whole country) - prices pe | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Euro / Raw wool - prices per 100 kg | {'DE': '2022', 'EL': '2024', 'IE': '2024'}
+   Euro / Honey - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+   National currency / Young cattle - prices per 100 kg live  | {'IE': '2024'}
+   National currency / Young cattle (store) - prices per head | {'IE': '2024'}
+   National currency / Heifers - prices per 100 kg live weigh | {'DE': '2024', 'IE': '2024'}
+   National currency / Cows - prices per 100 kg live weight | {'DE': '2024', 'EL': '2024'}
+   National currency / Bullocks - prices per 100 kg live weig | {'DE': '2024', 'IE': '2024'}
+   National currency / Calves - prices per 100 kg live weight | {'DE': '2024', 'EL': '2024', 'IE': '2021'}
+   National currency / Calves (of a few days) - prices per he | {'DE': '2024', 'IE': '2023'}
+   National currency / Calves (of a few weeks) - prices per h | {'IE': '2024'}
+   National currency / Pigs (light) - prices per 100 kg live  | {'EL': '2024'}
+   National currency / Pigs (carcasses) (grade II) - prices p | {'DE': '2024', 'EL': '2024'}
+   National currency / Pigs (carcasses) (grade I) - prices pe | {'DE': '2024', 'FI': '2024'}
+   National currency / Piglets - prices per 100 kg live weigh | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   National currency / Horses - prices per 100 kg live weight | {'DE': '2020'}
+   National currency / Sheep - prices per 100 kg live weight | {'DE': '2024', 'EL': '2024'}
+   National currency / Suckling lambs - prices per 100 kg liv | {'EL': '2024'}
+   National currency / Fattening lambs - prices per 100 kg li | {'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   National currency / Goats - prices per 100 kg live weight | {'EL': '2024'}
+   National currency / Kids - prices per 100 kg live weight | {'EL': '2024'}
+   National currency / Chickens (live 1st choice) - prices pe | {'DE': '2024', 'EL': '2024'}
+   National currency / Broiling fowl (slaughtered) - prices p | {'DE': '2024'}
+   National currency / Ducks (slaughtered) - prices per 100 k | {'DE': '2024'}
+   National currency / Turkey (slaughtered) - prices per 100  | {'DE': '2024'}
+   National currency / Geese (slaughtered) - prices per 100 k | {'DE': '2024'}
+   National currency / Rabbits - prices per 100 kg live weigh | {'EL': '2024'}
+   National currency / Raw cows' milk 3.7% fat content - pric | {'DE': '2024', 'FI': '2023', 'IE': '2024'}
+   National currency / Raw cows' milk actual fat content - pr | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Whole cows' milk for human consumption | {'DE': '2023'}
+   National currency / Raw sheep milk - prices per 100 kg | {'EL': '2024'}
+   National currency / Raw goats' milk - prices per 100 kg | {'EL': '2024'}
+   National currency / Fresh eggs (whole country) - prices pe | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   National currency / Raw wool - prices per 100 kg | {'DE': '2022', 'EL': '2024', 'IE': '2024'}
+   National currency / Honey - prices per 100 kg | {'DE': '2024', 'EL': '2024'}
+== apro_cpsh1 series 2441
+   Arable land / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other arable land crops n.e.c. / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cereals for the production of grain (i / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cereals for the production of grain (i / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cereals for the production of grain (i / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Cereals for the production of grain (i / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cereals (excluding rice) for the produ / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cereals (excluding rice) for the produ / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cereals (excluding rice) for the produ / EU standard humidity - percentage | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Wheat and spelt / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Wheat and spelt / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Wheat and spelt / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Wheat and spelt / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common wheat and spelt / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common wheat and spelt / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common wheat and spelt / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common wheat and spelt / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common winter wheat and spelt / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common winter wheat and spelt / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common winter wheat and spelt / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common winter wheat and spelt / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common spring wheat and spelt / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common spring wheat and spelt / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common spring wheat and spelt / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Common spring wheat and spelt / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'FI': '2026', 'IE': '2026'}
+   Durum wheat / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Durum wheat / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Durum wheat / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Durum wheat / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026'}
+   Rye and winter cereal mixtures (maslin / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rye and winter cereal mixtures (maslin / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rye and winter cereal mixtures (maslin / EU standard humidity - percentage | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rye and winter cereal mixtures (maslin / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Rye / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rye / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rye / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rye / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter cereal mixtures (maslin) / Area (sown/harvested/production) - tho | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Winter cereal mixtures (maslin) / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Winter cereal mixtures (maslin) / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter cereal mixtures (maslin) / Yield in EU standard humidity - tonnes | {'CH': '2024'}
+   Barley / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Barley / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Barley / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Barley / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter barley / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter barley / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter barley / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter barley / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2025', 'IE': '2026'}
+   Spring barley / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring barley / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring barley / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring barley / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'FI': '2026', 'IE': '2026'}
+   Oats and spring cereal mixtures (mixed / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Oats and spring cereal mixtures (mixed / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Oats and spring cereal mixtures (mixed / EU standard humidity - percentage | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Oats and spring cereal mixtures (mixed / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Oats / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Oats / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Oats / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Oats / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring cereal mixtures (mixed grain ot / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Spring cereal mixtures (mixed grain ot / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Spring cereal mixtures (mixed grain ot / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring cereal mixtures (mixed grain ot / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'FI': '2024'}
+   Grain maize and corn-cob-mix / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Grain maize and corn-cob-mix / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Grain maize and corn-cob-mix / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Grain maize and corn-cob-mix / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025'}
+   Triticale / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Triticale / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Triticale / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Triticale / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026'}
+   Sorghum / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Sorghum / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Sorghum / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Sorghum / Yield in EU standard humidity - tonnes | {'CH': '2026', 'EL': '2026'}
+   Other cereals n.e.c. (buckwheat, mille / Area (sown/harvested/production) - tho | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other cereals n.e.c. (buckwheat, mille / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other cereals n.e.c. (buckwheat, mille / EU standard humidity - percentage | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other cereals n.e.c. (buckwheat, mille / Yield in EU standard humidity - tonnes | {'CH': '2024', 'EL': '2024', 'FI': '2024'}
+   Pseudocereals / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Buckwheat / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Quinoa / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Other pseudocereals n.e.c. / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Other cereals n.e.c. (millet, canary s / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rice / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rice / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rice / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rice / Yield in EU standard humidity - tonnes | {'CH': '2026', 'EL': '2026'}
+   Rice Indica / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rice Indica / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rice Indica / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rice Indica / Yield in EU standard humidity - tonnes | {'EL': '2024'}
+   Rice Japonica / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rice Japonica / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rice Japonica / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rice Japonica / Yield in EU standard humidity - tonnes | {'CH': '2024', 'EL': '2024'}
+   Seeds and seedlings / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Fruits, berries and nuts (excluding ci / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fruits, berries and nuts (excluding ci / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fruits, berries and nuts (excluding ci / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Fruits from temperate climate zones / Area (sown/harvested/production) - tho | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fruits from temperate climate zones / Harvested production in EU standard hu | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Pome fruits / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Pome fruits / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Apples / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Apples / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Apples for fresh consumption / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Apples for fresh consumption / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Apples for processing / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Apples for processing / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Pears / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Pears / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Pears for fresh consumption / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Pears for fresh consumption / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Pears for processing / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Pears for processing / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other pome fruits n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other pome fruits n.e.c. / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Stone fruits / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Stone fruits / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Peaches / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Peaches / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Peaches and nectarines / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Peaches and nectarines / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Peaches and nectarines for processing / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Peaches and nectarines for processing / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Nectarines / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Nectarines / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Apricots / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Apricots / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Cherries / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Cherries / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sour cherries / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sour cherries / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sweet cherries / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sweet cherries / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Plums / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Plums / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other stone fruits n.e.c / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other stone fruits n.e.c / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fruits from subtropical and tropical c / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fruits from subtropical and tropical c / Harvested production in EU standard hu | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Figs / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Figs / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Kiwis / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Kiwis / Harvested production in EU standard hu | {'CH': '2021', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Avocados / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Avocados / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Bananas / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Bananas / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other fruits from subtropical and trop / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other fruits from subtropical and trop / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Berries (excluding strawberries) / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Berries (excluding strawberries) / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Currants / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Currants / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Blackcurrants / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Blackcurrants / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Red currants / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Red currants / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Raspberries / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Raspberries / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Blueberries / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Blueberries / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other berries n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other berries n.e.c. / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Nuts / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Nuts / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Walnuts / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Walnuts / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Hazelnuts / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Hazelnuts / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Almonds / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Almonds / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chestnuts / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chestnuts / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other nuts n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other nuts n.e.c. / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Plants harvested green from arable lan / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Plants harvested green from arable lan / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Plants harvested green from arable lan / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Plants harvested green from arable lan / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Plants harvested green from arable lan / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Temporary grasses and grazings / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Temporary grasses and grazings / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Temporary grasses and grazings / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Temporary grasses and grazings / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Leguminous plants harvested green / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Leguminous plants harvested green / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Leguminous plants harvested green / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Leguminous plants harvested green / Yield in EU standard humidity - tonnes | {'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Lucerne / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Lucerne / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Lucerne / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Lucerne / Yield in EU standard humidity - tonnes | {'DE': '2025', 'EL': '2025'}
+   Other leguminous plants harvested gree / Area (sown/harvested/production) - tho | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other leguminous plants harvested gree / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024'}
+   Other leguminous plants harvested gree / EU standard humidity - percentage | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other leguminous plants harvested gree / Yield in EU standard humidity - tonnes | {'FI': '2024'}
+   Legume grass mixtures / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Other leguminous plants harvested gree / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Green maize / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Green maize / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Green maize / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Green maize / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'IE': '2025'}
+   Other cereals harvested green (excludi / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other cereals harvested green (excludi / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other cereals harvested green (excludi / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Other cereals harvested green (excludi / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other plants harvested green from arab / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other plants harvested green from arab / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024'}
+   Other plants harvested green from arab / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Permanent crops for human consumption / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Permanent crops for human consumption / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other permanent crops for human consum / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other permanent crops for human consum / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other permanent crops for human consum / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Industrial crops / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Industrial crops / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024'}
+   Industrial crops / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Oilseeds / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Oilseeds / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2022'}
+   Oilseeds / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Oilseeds / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'FI': '2024', 'IE': '2022'}
+   Rape and turnip rape seeds / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rape and turnip rape seeds / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rape and turnip rape seeds / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rape and turnip rape seeds / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Rape, turnip rape, sunflower seeds and / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Rape, turnip rape, sunflower seeds and / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Rape, turnip rape, sunflower seeds and / EU standard humidity - percentage | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Rape, turnip rape, sunflower seeds and / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Winter rape and turnip rape seeds / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter rape and turnip rape seeds / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter rape and turnip rape seeds / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Winter rape and turnip rape seeds / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring rape and turnip rape seeds / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring rape and turnip rape seeds / Harvested production in EU standard hu | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring rape and turnip rape seeds / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Spring rape and turnip rape seeds / Yield in EU standard humidity - tonnes | {'CH': '2026', 'DE': '2026', 'FI': '2026', 'IE': '2026'}
+   Sunflower seed / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Sunflower seed / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sunflower seed / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Sunflower seed / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025'}
+   Soya / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Soya / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Soya / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Soya / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025'}
+   Linseed (oil flax) / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Linseed (oil flax) / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Linseed (oil flax) / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Linseed (oil flax) / Yield in EU standard humidity - tonnes | {'CH': '2024', 'EL': '2020', 'FI': '2024'}
+   Cotton seed / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cotton seed / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Cotton seed / Yield in EU standard humidity - tonnes | {'EL': '2020'}
+   Other oilseed crops n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other oilseed crops n.e.c. / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other oilseed crops n.e.c. / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Other oilseed crops n.e.c. / Yield in EU standard humidity - tonnes | {'CH': '2024', 'EL': '2024', 'FI': '2024'}
+   Fibre crops / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Fibre crops / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Fibre flax / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fibre flax / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fibre flax / Yield in EU standard humidity - tonnes | {'FI': '2025'}
+   Hemp / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Hemp / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Hemp / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025'}
+   Cotton fibre / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cotton fibre / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cotton fibre / Yield in EU standard humidity - tonnes | {'EL': '2024'}
+   Other fibre crops n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other fibre crops n.e.c. / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Tobacco / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2020', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Tobacco / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Tobacco / Yield in EU standard humidity - tonnes | {'CH': '2024', 'EL': '2024'}
+   Hops / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Hops / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Hops / Yield in EU standard humidity - tonnes | {'CH': '2024', 'DE': '2024'}
+   Aromatic, medicinal and culinary plant / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Aromatic, medicinal and culinary plant / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Aromatic, medicinal and culinary plant / Yield in EU standard humidity - tonnes | {'CH': '2024', 'EL': '2024', 'FI': '2024'}
+   Energy crops n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Energy crops n.e.c. / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Energy crops n.e.c. / Yield in EU standard humidity - tonnes | {'EL': '2024'}
+   Other industrial crops n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2023', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Permanent grassland / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Permanent grassland / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Permanent pastures and meadows, exclud / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Permanent rough grazings / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Kitchen gardens / Main area - thousand hectares | {'CH': '2024', 'DE': '2022', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Nurseries / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Flowers and ornamental plants (excludi / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Olives / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Olives / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Olives / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Olives for table use / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Olives for table use / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Olives for oil / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Olives for oil / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Dry pulses and protein crops for the p / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Dry pulses and protein crops for the p / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Dry pulses and protein crops for the p / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Dry pulses and protein crops for the p / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Field peas / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Field peas / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Field peas / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Field peas / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Broad and field beans / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Broad and field beans / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Broad and field beans / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Broad and field beans / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sweet lupins / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sweet lupins / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sweet lupins / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Sweet lupins / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025'}
+   Other dry pulses and protein crops n.e / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other dry pulses and protein crops n.e / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2023', 'IE': '2024'}
+   Other dry pulses and protein crops n.e / EU standard humidity - percentage | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2023', 'IE': '2024'}
+   Other dry pulses and protein crops n.e / Yield in EU standard humidity - tonnes | {'CH': '2024', 'EL': '2024'}
+   Lentils / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Lentils / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Lentils / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Lentils / Yield in EU standard humidity - tonnes | {'CH': '2025', 'EL': '2025'}
+   Chickpeas / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chickpeas / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chickpeas / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Chickpeas / Yield in EU standard humidity - tonnes | {'CH': '2025', 'EL': '2025'}
+   Vetches / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Vetches / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Vetches / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Vetches / Yield in EU standard humidity - tonnes | {'EL': '2025'}
+   Other dry pulses and protein crops n.e / EU standard humidity - percentage | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Permanent crops / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other permanent crops / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Fallow land / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Root crops / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Root crops / Harvested production in EU standard hu | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Root crops / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Potatoes (including seed potatoes) / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Potatoes (including seed potatoes) / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Potatoes (including seed potatoes) / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Potatoes (including seed potatoes) / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sugar beet (excluding seed) / Area (sown/harvested/production) - tho | {'CH': '2026', 'DE': '2026', 'EL': '2026', 'FI': '2026', 'IE': '2026'}
+   Sugar beet (excluding seed) / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Sugar beet (excluding seed) / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Sugar beet (excluding seed) / Yield in EU standard humidity - tonnes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025'}
+   Other root crops n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other root crops n.e.c. / Harvested production in EU standard hu | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2020'}
+   Other root crops n.e.c. / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other root crops n.e.c. / Yield in EU standard humidity - tonnes | {'CH': '2024'}
+   Strawberries / Area (sown/harvested/production) - tho | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Strawberries / Harvested production in EU standard hu | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Strawberries - under glass or high acc / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Strawberries - under glass or high acc / Harvested production in EU standard hu | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Citrus fruits / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Citrus fruits / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Citrus fruits / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Oranges / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Oranges / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Navel oranges / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Navel oranges / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   White oranges (blancas) / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   White oranges (blancas) / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Blood oranges (sanguines) / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Blood oranges (sanguines) / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Others oranges n.e.c / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Others oranges n.e.c / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Small citrus fruits / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Small citrus fruits / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Satsumas / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Satsumas / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Clementines / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Clementines / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other small citrus fruits and mandarin / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other small citrus fruits and mandarin / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Lemons and acid limes / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Lemons and acid limes / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Yellow lemons / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Yellow lemons / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Acid limes / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Acid limes / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Pomelos and grapefruits / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Pomelos and grapefruits / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other citrus fruits n.e.c. / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other citrus fruits n.e.c. / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Cultivated mushrooms / Area (sown/harvested/production) - tho | {'CH': '2022', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cultivated mushrooms / Harvested production in EU standard hu | {'CH': '2022', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Champignons / Area (sown/harvested/production) - tho | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Champignons / Harvested production in EU standard hu | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Other cultivated mushrooms n.e.c. / Area (sown/harvested/production) - tho | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other cultivated mushrooms n.e.c. / Harvested production in EU standard hu | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Utilised agricultural area / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Fresh vegetables (including melons) / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fresh vegetables (including melons) / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fresh vegetables (including melons) an / Area (sown/harvested/production) - tho | {'CH': '2024', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fresh vegetables (including melons) an / Harvested production in EU standard hu | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Fresh vegetables (including melons) an / Main area - thousand hectares | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Brassicas / Area (sown/harvested/production) - tho | {'CH': '2020', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+== apro_mt_lscatl series 230
+   May-June / Live bovine animals | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Bovine animals, less than 1 year old | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Bovine animals, less than 1 year old,  | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Bovine animals, less than 1 year old,  | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Bovine animals, 1 to less than 2 years | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Bovine animals, 2 years old or over | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Male calves, less than 1 year old, not | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Male bovine animals, 1 to less than 2  | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Male bovine animals, 2 years old or ov | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Female calves, less than 1 year old, n | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Heifers, 1 to less than 2 years old | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Heifers, 1 year old, for slaughter | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Heifers, 1 year old, not for slaughter | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Heifers, 2 years old or over | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Heifers, 2 years old or over, for slau | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Heifers, 2 years old or over, not for  | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Female bovine animals, 2 years old or  | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Cows | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Dairy cows | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Non dairy cows | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Buffaloes | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Breeding female buffaloes | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   May-June / Other buffaloes | {'CH': '2026', 'DE': '2026', 'EL': '2025', 'FI': '2026', 'IE': '2026'}
+   November - December / Live bovine animals | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Bovine animals, less than 1 year old | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Bovine animals, less than 1 year old,  | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Bovine animals, less than 1 year old,  | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Bovine animals, 1 to less than 2 years | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Bovine animals, 2 years old or over | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Male calves, less than 1 year old, not | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Male bovine animals, 1 to less than 2  | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Male bovine animals, 2 years old or ov | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Female calves, less than 1 year old, n | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Heifers, 1 to less than 2 years old | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Heifers, 1 year old, for slaughter | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Heifers, 1 year old, not for slaughter | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Heifers, 2 years old or over | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Heifers, 2 years old or over, for slau | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Heifers, 2 years old or over, not for  | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Female bovine animals, 2 years old or  | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Cows | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Dairy cows | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Non dairy cows | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Buffaloes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Breeding female buffaloes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   November - December / Other buffaloes | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+== apro_ec_eggcon series 3
+   Hens' eggs | {'DE': '2025', 'FI': '2025', 'IE': '2025'}
+== apro_ec_poula series 305
+   Chicks for use / Chicks of mixed meat-laying breeds | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of laying hen breeds (laying) | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of laying hen breeds (selection | {'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of meat broiler breeds (fatteni | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of meat broiler breeds (selecti | {'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Cockerels from sexing | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of duck (fattening) | {'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of turkey (fattening) | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Chicks for use / Chicks of Guinea fowls (fattening) | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of mixed meat-laying breeds | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of laying hen breeds (laying) | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of laying hen breeds (selection | {'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of meat broiler breeds (fatteni | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of meat broiler breeds (selecti | {'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of duck (fattening) | {'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of turkey (fattening) | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Eggs placed in incubation / Chicks of Guinea fowls (fattening) | {'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of mixed meat-laying breeds | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of laying hen breeds (laying) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of laying hen breeds (selection | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of meat broiler breeds (fatteni | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of meat broiler breeds (selecti | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Cockerels from sexing | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Exports / Chicks of duck (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of turkey (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports / Chicks of Guinea fowls (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of mixed meat-laying breeds | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of laying hen breeds (laying) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of laying hen breeds (selection | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of meat broiler breeds (fatteni | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of meat broiler breeds (selecti | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Cockerels from sexing | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Exports intra-EU / Chicks of duck (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of turkey (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports intra-EU / Chicks of Guinea fowls (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of mixed meat-laying breeds | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of laying hen breeds (laying) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of laying hen breeds (selection | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of meat broiler breeds (fatteni | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of meat broiler breeds (selecti | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Cockerels from sexing | {'DE': '2024', 'EL': '2024'}
+   Exports extra-EU / Chicks of duck (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of turkey (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Exports extra-EU / Chicks of Guinea fowls (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of mixed meat-laying breeds | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of laying hen breeds (laying) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of laying hen breeds (selection | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of meat broiler breeds (fatteni | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of meat broiler breeds (selecti | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Cockerels from sexing | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Imports / Chicks of duck (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of turkey (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports / Chicks of Guinea fowls (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of mixed meat-laying breeds | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of laying hen breeds (laying) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of laying hen breeds (selection | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of meat broiler breeds (fatteni | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of meat broiler breeds (selecti | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Cockerels from sexing | {'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Imports intra-EU / Chicks of duck (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of turkey (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports intra-EU / Chicks of Guinea fowls (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of mixed meat-laying breeds | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of laying hen breeds (laying) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of laying hen breeds (selection | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of meat broiler breeds (fatteni | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of meat broiler breeds (selecti | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Cockerels from sexing | {'DE': '2024'}
+   Imports extra-EU / Chicks of duck (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of goose (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of turkey (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Imports extra-EU / Chicks of Guinea fowls (fattening) | {'DE': '2024', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+== apro_mk_pobta series 362
+   Fresh products / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2022'}
+   Manufactured products / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024'}
+   Raw milk, total available on dairies   / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2021'}
+   Raw milk, other uses by dairies / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'IE': '2024'}
+   Raw cows' milk delivered to dairies / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Ewes' milk delivered to dairies / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Goats' milk delivered to dairies / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Buffalos' milk delivered to dairies / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Raw cream delivered to dairies / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Milk and cream in bulk - exports / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2020', 'IE': '2023'}
+   Milk and cream in bulk - exports intra / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2020', 'IE': '2023'}
+   Drinking milk / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Raw drinking milk / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Whole milk / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Imports of whole milk (including raw m / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2021'}
+   Imports (intra-EU) of whole milk (incl / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2021'}
+   Whole milk pasteurised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Whole milk sterilised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Whole milk uperised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Partly skimmed milk / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2021', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Partly skimmed milk pasteurised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Partly skimmed milk sterilised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Partly skimmed milk uperised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Skimmed milk / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Imports of skimmed milk / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Imports (intra-EU) of skimmed milk / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Skimmed milk - returned to the farm / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Skimmed milk pasteurised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Skimmed milk sterilised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Skimmed milk uperised / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Imports of cream (in milk equivalent) / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Imports (intra-EU) of cream (in milk e / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cream for direct consumption / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2022'}
+   Cream of fat content by weight not exc / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2020', 'IE': '2022'}
+   Cream of fat content by weight over 29 / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2020', 'IE': '2022'}
+   Powder products / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2023'}
+   Milk and cream powders, excluding skim / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'IE': '2024'}
+   Whole milk powder / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'IE': '2024'}
+   Partly skimmed milk powder / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Skimmed milk powder / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Cream milk powder / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Buttermilk powder / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2020'}
+   Other powder products / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2023'}
+   Concentrated milk / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Concentrated milk not sweetened / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Concentrated milk sweetened / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Acidified milk (yoghurts and other) / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Acidified milk with additives / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2023'}
+   Acidified milk without additives / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Buttermilk / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Whey / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2023'}
+   Whey (liquid) / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Whey (concentrated) / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2022', 'IE': '2024'}
+   Whey (in powder or in block) / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2023'}
+   Lactose (milk sugar) / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Lactalbumin / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Butter, incl. dehydrated butter and gh / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Butter / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Traditional butter / Products obtained (1 000 t) | {'CH': '2023', 'DE': '2021', 'EL': '2024', 'IE': '2023'}
+   Recombined butter / Products obtained (1 000 t) | {'CH': '2020', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Whey butter / Products obtained (1 000 t) | {'CH': '2020', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2023'}
+   Rendered butter and butteroil / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024'}
+   Other yellow fat dairy products / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024'}
+   Reduced-fat butter / Products obtained (1 000 t) | {'CH': '2020', 'DE': '2021', 'EL': '2024'}
+   Other yellow fat dairy products (witho / Products obtained (1 000 t) | {'CH': '2020', 'DE': '2021', 'EL': '2024', 'FI': '2024'}
+   Cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Soft cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2021', 'IE': '2023'}
+   Medium soft cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Medium hard cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2023'}
+   Hard cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2023'}
+   Extra hard cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Fresh cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2024'}
+   Cheese from cows'milk (pure) / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cheese from ewes milk (pure) / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Cheese from goats milk (pure) / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'IE': '2024'}
+   Others (cheese from buffalos'milk (pur / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Processed cheese / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024'}
+   Imports of other products / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Imports (intra-EU) of other products / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Drinks with a milk base / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2022'}
+   Other fresh products (milk-based desse / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2024', 'EL': '2024', 'IE': '2022'}
+   Caseins and caseinates / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'IE': '2023'}
+   Other manufactured milk products / Products obtained (1 000 t) | {'CH': '2024', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+   Other products collected from farm / Products obtained (1 000 t) | {'CH': '2024', 'DE': '2021', 'EL': '2024', 'FI': '2024', 'IE': '2024'}
+== apro_mt_pann series 528
+   Slaughterings / Bovine meat | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Calf and young cattley | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Calf | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Young cattle | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Adult cattle | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Bullock | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Bullock and bull | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Bull | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Cow | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Heifer | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Pigmeat | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Meat of sheep and goats | {'CH': '2025', 'DE': '2025', 'FI': '2025', 'IE': '2025', 'EL': '2024'}
+   Slaughterings / Sheepmeat | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Lamb | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Mutton | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2024'}
+   Slaughterings / Other sheep | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Goat meat | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Meat of horses, asses, mules or hinnie | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Poultry meat | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Chicken | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Duck | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025'}
+   Slaughterings / Turkey | {'CH': '2025', 'DE': '2025', 'EL': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Goose | {'CH': '2025', 'DE': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Ostriches | {'CH': '2025', 'DE': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings / Other poultry | {'CH': '2025', 'DE': '2025', 'FI': '2025', 'EL': '2023'}
+   Slaughterings / Meat of rabbits | {'CH': '2025', 'DE': '2025', 'FI': '2025', 'IE': '2025'}
+   Slaughterings, other than in slaughter / Bovine meat | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Calf and young cattley | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Calf | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Young cattle | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Adult cattle | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Bullock | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Bullock and bull | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Bull | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Cow | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Heifer | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Pigmeat | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Meat of sheep and goats | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Sheepmeat | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Lamb | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Mutton | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
+   Slaughterings, other than in slaughter / Goat meat | {'CH': '2023', 'DE': '2023', 'EL': '2023', 'FI': '2023', 'IE': '2023'}
