@@ -1,116 +1,82 @@
-candidatos 108
-CAND ef_kvaareg |                             Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region
-CAND ef_kvecsleg |                             Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region
-CAND ef_kvftreg |                             Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region
-CAND ef_olsaareg |                             Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region
-CAND ef_olslsureg |                             Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region
-CAND ef_ls_ovaareg |                             Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region
-CAND ef_ls_ovlsureg |                             Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region
-CAND ef_ls_ovesu |                             Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region
-CAND agr_r_milkpr |                     Production of cow's milk on farms by NUTS 2 region
-CAND ef_lus_orchpome |                         Pome fruits by age, density classes of trees and NUTS 2 region
-CAND ef_lus_orchstone |                         Stone fruits by age, density classes of trees and NUTS 2 region
-CAND ef_lus_orchcitrus |                         Citrus fruits by age, density classes of trees and NUTS 2 region
-CAND ef_lus_orcholives |                         Olives by age, density classes of trees and NUTS 2 region
-CAND ef_livestock |                 Farm livestock
-CAND ef_lsk_main |                     Main livestock indicators by NUTS 2 region
-CAND ef_lsk_goats |                     Goats by NUTS 2 region
-CAND ef_lsk_org |                     Organic animal farming by utilised agricultural area, livestock unit, economic size of the farm and NUTS 2 region
-CAND ef_mp_ms |                     Manure storage facilities by utilised agricultural area, size class of livestock, farm type and NUTS 2 region
-CAND ef_mp_digi |                     Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region
-CAND ef_mp_digilsk |                     Machinery for livestock management by age and training of manager, size classes of livestock and NUTS 2 region
-CAND ef_ah_bovine |                     Animal housing by type of bovine, utilised agricultural area, size classes of livestock units and NUTS 2 region
-CAND ef_ah_pigs |                     Animal housing by type of pigs, utilised agricultural area, size classes of livestock units and NUTS 2 region
-CAND ef_ah_poultry |                     Animal housing by type of poultry, utilised agricultural area, size classes of livestock units and NUTS 2 region
-CAND ef_ah_bovt |                     Outdoor access of bovine by type of animal housing, size classes of livestock units, farm type and NUTS 2 region
-CAND ef_ah_poult |                     Outdoor access of poultry by type of animal housing, size classes of livestock units, farm type and NUTS 2 region
-CAND ef_ah_pigt |                     Outdoor access of pigs by type of animal housing, size classes of livestock units, farm type and NUTS 2 region
-CAND ef_fsi_lsk |                     Livestock units by animal groups and size classes of livestock units
-CAND tag00124 |                         Agricultural holdings with livestock
-CAND ef_fsi_grds |                     Grazing livestock density
-CAND ef_fsi_lskds |                     Livestock density
-CAND ef_kvaareg |                         Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region
-CAND ef_kvecsleg |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region
-CAND ef_kvftaa |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and agricultural size of farm (UAA)
-CAND ef_kvage |                         Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA) and age of manager
-CAND ef_kvftecs |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and economic size of farm (SO in Euro)
-CAND ef_kvftreg |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region
-CAND ef_ols |                     Overview - farm livestock
-CAND ef_olslsuft |                         Livestock: number of farms and heads of animals by type of farming (2-digit)
-CAND ef_olsaareg |                         Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region
-CAND ef_olslsureg |                         Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region
-CAND ef_ogaaa |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by agricultural size of farm (UAA)
-CAND ef_ogaecs |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by economic size of farm (SO in Euro)
-CAND ef_ogaft |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by type of farming (1-digit)
-CAND ef_ogaage |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by age of holder
-CAND ef_ogadsexage |                         Other gainful activities directly related to the holding: number of farms, agricultural area, standard output (SO) and livestock (LSU) by age and sex of holder
-CAND ef_mpmanaa |                         Holder-manager relationship: area, livestock, labour force and standard output (SO) by agricultural size of farm (UAA) (2005-2013)
-CAND ef_mptrainecs |                         Agricultural training of farm managers: number of farms, agricultural area, labour force, standard output (SO) and livestock (LSU) by economic size of farm (SO in Euro) (2005-2013)
-CAND ef_ov_ls |                         Livestock summary
-CAND ef_ov_lssum |                             Livestock: number of farms and heads by size of farm (UAA) and LFA status
-CAND ef_ov_lsob00 |                             Livestock: number of farms and heads by size of farm (UAA) and objective zone 2000
-CAND ef_ov_lsob99 |                             Livestock: number of farms and heads by size of farm (UAA) and objective zone 1999
-CAND ef_ov_lsft |                             Livestock: number of farms, heads and LSU by type of farming (2-digit) and economic size of farm (ESU)
-CAND ef_lu_alpotat |                             Potatoes: number of farms and area by size of farm (UAA) and size of potato area
-CAND ef_lu_pcfruit |                             Fruit and berry plantations: number of farms and areas by size of farm (UAA) and size of fruit and berry plantation area
-CAND ef_lu_pcolive |                             Olive plantations: number of farms and areas by size of farm (UAA) and size of olive plantation area
-CAND ef_ls |                     Livestock
-CAND ef_ls_ov |                         Livestock overview
-CAND ef_ls_ovaareg |                             Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region
-CAND ef_ls_ovlsureg |                             Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region
-CAND ef_ls_ovesu |                             Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region
-CAND ef_ls_gz |                         Grazing livestock
-CAND ef_ls_gzcatllsu |                             Cattle: number of farms and heads by size of farm (UAA) and livestock units (LSU) of farm
-CAND ef_ls_gzdcow |                             Dairy cows: number of farms and heads by size of farm (UAA) and size of dairy herd
-CAND ef_ls_gzgoat |                             Goats: number of farms and heads by size of farm (UAA) and size of goat herd
-CAND tag00063 |                         Selling prices of main crop potatoes
-CAND tag00061 |                         Selling prices of oats
-CAND tag00071 |                         Selling prices of fresh eggs
-CAND tag00070 |                         Selling prices of raw cow's milk
-CAND apro_ec_eggcon |                     Production of eggs for consumption
-CAND apro_mk |                 Milk and milk products
-CAND apro_mk_strmk |                         Milk collection - distribution of enterprises by volume of annual collection
-CAND apro_mk_strcc |                         Milk collection - distribution of collection centres by volume of annual collection
-CAND apro_mk_strmt |                         Milk treated - distribution of enterprises by volume of annual production
-CAND apro_mk_strdm |                         Drinking milk - distribution of enterprises by volume of annual production
-CAND apro_mk_strpd |                         Powdered dairy products - distribution of enterprises by volume of annual production
-CAND apro_mk_strbt |                         Butter - distribution of enterprises by volume of annual production
-CAND apro_mk_strch |                         Cheese - distribution of enterprises by volume of annual production
-CAND apro_mk_fatprot |                     Fat contents and protein contents (cow's milk) - annual data
-CAND apro_mk_pobta |                     Milk collection (all milks) and dairy products obtained - annual data
-CAND tag00038 |                         Production of butter
-CAND tag00040 |                         Production of cheese
-CAND tag00037 |                         Collection of cow's milk
-CAND tag00039 |                         Production of milk powder
-CAND apro_mk_cola |                     Production of main cows' milk products - annual data
-CAND apro_mk_colm |                     Production of main cows' milk products - monthly data
-CAND apro_mk_farm |                     Production and utilization of milk on the farm - annual data
-CAND tag00041 |                         Production of milk on farms
-CAND agr_r_milkpr |                     Production of cow's milk on farms by NUTS 2 region
-CAND apro_mt |                 Livestock and meat
-CAND tag00045 |                             Production of sheepmeat and goat meat in slaughterhouses
-CAND apro_mt_pcatlhs |                         Production forecasts for bovines, sheep and goats - bi-annual data
-CAND apro_mt_ls |                     Livestock
-CAND tag00014 |                             Number of dairy cows
-CAND apro_mt_lsgoat |                         Goats population
-CAND apro_mt_lsavch_r |                         Average livestock population of chicken by NUTS 2 region
-CAND apro_ec_eggorg |                     Production of certified organic eggs for consumption
-CAND apro_mt_lsorg |                     Populations of certified organic livestock
-CAND apro_mt_lsavorg |                     Average populations of certified organic livestock
-CAND apro_ec_egghen |                         Production of eggs for consumption and number of laying hens (2013-2024)
-CAND apro_mt_lsequi |                         Livestock - Equidae - annual data (1960-1997)
-CAND apro_mt_strcatl |                         Cattles - total, dairy cow and other cows (1973-2007)
-CAND apro_mt_strgoat |                         Goats (1993-2007)
-CAND tag00053 |                             Oats and spring cereal mixtures by area, production and humidity
-CAND tag00122 |                             Olives by production
-CAND tag00049 |                             Rye and winter cereal mixtures by area, production and humidity
-CAND ef_mp_digi |                     Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region
-CAND tag00014 |                         Number of dairy cows
-CAND ef_olslsuft |                     Livestock: number of farms and heads of animals by type of farming (2-digit)
-DS apro_mk_pobta time 1960 2024 dims {'freq': 1, 'dairyprod': 86, 'milkitem': 5, 'geo': 1, 'time': 65} values 288
-DS apro_mk_colm time 1968-01 2026-08 dims {'freq': 1, 'milkitem': 3, 'dairyprod': 10, 'unit': 2, 'geo': 1, 'time': 704} values 193
-DS apro_ec_egghatch FAIL HTTP Error 404: Not Found
-DS apro_ec_poula time 1967 2025 dims {'freq': 1, 'hatchitm': 8, 'animals': 10, 'unit': 1, 'geo': 1, 'time': 59} values 0
-DS apro_mt_lscatl time 1959 2026 dims {'freq': 1, 'month': 2, 'animals': 23, 'unit': 1, 'geo': 1, 'time': 68} values 460
-DS apri_pi15_outa FAIL HTTP Error 404: Not Found
-DS apri_pi20_outa FAIL HTTP Error 404: Not Found
+DS apro_mk_pobta {'freq': 1, 'dairyprod': 0, 'milkitem': 0, 'geo': 1, 'time': 65}
+  DIM dairyprod {}
+  DIM milkitem {}
+DS apro_mk_pobta {'freq': 1, 'dairyprod': 86, 'milkitem': 5, 'geo': 1, 'time': 65}
+  DIM dairyprod {'D0110': 'Fresh products', 'D0120': 'Manufactured products', 'D0230D': 'Other milk products (than milk, cream, skimmed milk and buttermilk) delivered to dairies', 'D1100DU': 'Raw milk, total available on dairies  (=total used)', 'D1100DLD': 'Raw milk, differences and losses in dairies', 'D1100OUD': 'Raw milk, other uses by dairies', 'D1110D': "Raw cows' milk delivered to dairies", 'D1120D': "Ewes' milk delivered to dairies", 'D1130D': "Goats' milk delivered to dairies", 'D1140D': "Buffalos' milk delivered to dairies", 'D1200D': 'Raw cream delivered to dairies', 'D2000X': 'Milk and cream in bulk - exports', 'D2000Y': 'Milk and cream in bulk - exports intra-EU', 'D2100': 'Drinking milk', 'D2110': 'Raw drinking milk', 'D2120': 'Whole milk', 'D2120I': 'Imports of whole milk (including raw milk)', 'D2120J': 'Imports (intra-EU) of whole milk (including raw milk)', 'D2121': 'Whole milk pasteurised', 'D2122': 'Whole milk sterilised', 'D2123': 'Whole milk uperised', 'D2130': 'Partly skimmed milk', 'D2131': 'Partly skimmed milk pasteurised', 'D2132': 'Partly skimmed milk sterilised', 'D2133': 'Partly skimmed milk uperised', 'D2140': 'Skimmed milk', 'D2140RA': 'Skimmed milk - returned to the farm', 'D2140I': 'Imports of skimmed milk', 'D2140J': 'Imports (intra-EU) of skimmed milk', 'D2141': 'Skimmed milk pasteurised', 'D2142': 'Skimmed milk sterilised', 'D2143': 'Skimmed milk uperised', 'D2200V': 'Cream for direct consumption', 'D2201': 'Cream of fat content by weight not exceeding 29 %', 'D2202': 'Cream of fat content by weight over 29 %', 'D2200IME': 'Imports of cream (in milk equivalent)', 'D2200JME': 'Imports (intra-EU) of cream (in milk equivalent)', 'D3100': 'Powder products', 'D3100_X_3113': 'Milk and cream powders, excluding skimmed milk powders', 'D3111': 'Whole milk powder', 'D3112': 'Partly skimmed milk powder', 'D3113': 'Skimmed milk powder', 'D3120': 'Cream milk powder', 'D3130': 'Buttermilk powder', 'D3190': 'Other powder products', 'D3200': 'Concentrated milk', 'D3210': 'Concentrated milk not sweetened', 'D3220': 'Concentrated milk sweetened', 'D4100': 'Acidified milk (yoghurts and other)', 'D4110': 'Acidified milk with additives', 'D4120': 'Acidified milk without additives', 'D4200': 'Buttermilk', 'D5000': 'Whey', 'D5100': 'Whey (liquid)', 'D5200': 'Whey (concentrated)', 'D5300': 'Whey (in powder or in block)', 'D5400': 'Lactose (milk sugar)', 'D5500': 'Lactalbumin', 'D6000': 'Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads', 'D6100': 'Butter', 'D6110': 'Traditional butter', 'D6120': 'Recombined butter', 'D6130': 'Whey butter', 'D6200': 'Rendered butter and butteroil', 'D6900': 'Other yellow fat dairy products', 'D6910': 'Reduced-fat butter', 'D6990': 'Other yellow fat dairy products (without reduced-fat butter)', 'D7100': 'Cheese', 'D7111': 'Soft cheese', 'D7112': 'Medium soft cheese', 'D7113': 'Medium hard cheese', 'D7114': 'Hard cheese', 'D7115': 'Extra hard cheese', 'D7116': 'Fresh cheese', 'D7121': "Cheese from cows'milk (pure)", 'D7122': 'Cheese from ewes milk (pure)', 'D7123': 'Cheese from goats milk (pure)', 'D7129': "Others (cheese from buffalos'milk (pure) or mixed cheese)", 'D7200': 'Processed cheese', 'D9000I': 'Imports of other products', 'D9000J': 'Imports (intra-EU) of other products', 'D9100': 'Drinks with a milk base', 'D9200': 'Other fresh products (milk-based desserts, ice cream)', 'D9300': 'Caseins and caseinates', 'D9400': 'Other manufactured milk products', 'D9900A': 'Other products collected from farm'}
+  DIM milkitem {'FAT': 'Fat content (t)', 'USM': 'Utilization of skimmed milk and buttermilk (1 000 t)', 'UWM': 'Utilization of whole milk (1 000 t)', 'PRO': 'Products obtained (1 000 t)', 'PAT': 'Protein content (t)'}
+  S (('dairyprod', 'D0110'), ('milkitem', 'FAT')) n=1 2012 .. 2012 last 1467782.09
+  S (('dairyprod', 'D0110'), ('milkitem', 'PRO')) n=1 2004 .. 2004 last 38726.09
+  S (('dairyprod', 'D0110'), ('milkitem', 'UWM')) n=1 2006 .. 2006 last 35080.17
+  S (('dairyprod', 'D0120'), ('milkitem', 'PAT')) n=4 2018 .. 2021 last 5351493.18
+  S (('dairyprod', 'D0120'), ('milkitem', 'PRO')) n=1 2004 .. 2004 last 47928.66
+  S (('dairyprod', 'D1100DLD'), ('milkitem', 'FAT')) n=2 2018 .. 2021 last 49509.21
+  S (('dairyprod', 'D1100DLD'), ('milkitem', 'UWM')) n=1 2021 .. 2021 last -403.37
+  S (('dairyprod', 'D1100DU'), ('milkitem', 'FAT')) n=1 2018 .. 2018 last 6473635
+  S (('dairyprod', 'D1100DU'), ('milkitem', 'PAT')) n=5 2007 .. 2018 last 4956833
+  S (('dairyprod', 'D1100DU'), ('milkitem', 'PRO')) n=5 2003 .. 2021 last 155326.33
+  S (('dairyprod', 'D1100OUD'), ('milkitem', 'FAT')) n=4 2018 .. 2021 last 30059.2
+  S (('dairyprod', 'D1100OUD'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 1282.6
+  S (('dairyprod', 'D1100OUD'), ('milkitem', 'UWM')) n=2 2020 .. 2021 last 744.21
+  S (('dairyprod', 'D1110D'), ('milkitem', 'FAT')) n=8 2007 .. 2018 last 5724846
+  S (('dairyprod', 'D1110D'), ('milkitem', 'PAT')) n=8 2007 .. 2019 last 4971021
+  S (('dairyprod', 'D1110D'), ('milkitem', 'PRO')) n=12 2003 .. 2018 last 142258
+  S (('dairyprod', 'D1140D'), ('milkitem', 'FAT')) n=3 2022 .. 2024 last 16510.39
+  S (('dairyprod', 'D1140D'), ('milkitem', 'PRO')) n=1 2021 .. 2021 last 238.96
+  S (('dairyprod', 'D2000X'), ('milkitem', 'FAT')) n=3 2018 .. 2021 last 384643.4
+  S (('dairyprod', 'D2000X'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 5999.07
+  S (('dairyprod', 'D2000X'), ('milkitem', 'USM')) n=2 2018 .. 2021 last -3203.27
+  S (('dairyprod', 'D2000X'), ('milkitem', 'UWM')) n=2 2018 .. 2021 last 9286.35
+  S (('dairyprod', 'D2000Y'), ('milkitem', 'FAT')) n=4 2018 .. 2021 last 377550.01
+  S (('dairyprod', 'D2000Y'), ('milkitem', 'PRO')) n=5 2017 .. 2021 last 5852.94
+  S (('dairyprod', 'D2000Y'), ('milkitem', 'USM')) n=4 2018 .. 2021 last -3173.55
+  S (('dairyprod', 'D2000Y'), ('milkitem', 'UWM')) n=4 2018 .. 2021 last 9110.49
+  S (('dairyprod', 'D2100'), ('milkitem', 'PRO')) n=1 2004 .. 2004 last 26331.15
+  S (('dairyprod', 'D2110'), ('milkitem', 'PRO')) n=1 2021 .. 2021 last 1.69
+  S (('dairyprod', 'D2120'), ('milkitem', 'PAT')) n=4 2018 .. 2021 last 314612.12
+  S (('dairyprod', 'D2120'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 9471.47
+  S (('dairyprod', 'D2120I'), ('milkitem', 'FAT')) n=2 2019 .. 2020 last 205107.09
+  S (('dairyprod', 'D2120I'), ('milkitem', 'PRO')) n=2 2019 .. 2020 last 5300.28
+  S (('dairyprod', 'D2120J'), ('milkitem', 'FAT')) n=4 2018 .. 2021 last 210723.92
+  S (('dairyprod', 'D2120J'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 5187.37
+  S (('dairyprod', 'D2122'), ('milkitem', 'PRO')) n=1 2021 .. 2021 last 268.25
+  S (('dairyprod', 'D2131'), ('milkitem', 'PRO')) n=2 2019 .. 2020 last 3332.85
+  S (('dairyprod', 'D2140'), ('milkitem', 'PAT')) n=1 2021 .. 2021 last 69165.61
+  S (('dairyprod', 'D2140'), ('milkitem', 'PRO')) n=1 2018 .. 2018 last 1794
+  S (('dairyprod', 'D2140I'), ('milkitem', 'FAT')) n=3 2018 .. 2021 last 1959.54
+  S (('dairyprod', 'D2140I'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 779.11
+  S (('dairyprod', 'D2140J'), ('milkitem', 'FAT')) n=4 2018 .. 2021 last 1953.03
+  S (('dairyprod', 'D2140J'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 775.71
+  S (('dairyprod', 'D2140RA'), ('milkitem', 'FAT')) n=2 2018 .. 2019 last 524
+  S (('dairyprod', 'D2140RA'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 194.51
+  S (('dairyprod', 'D2140RA'), ('milkitem', 'USM')) n=4 2018 .. 2021 last 176.56
+  S (('dairyprod', 'D2141'), ('milkitem', 'PRO')) n=1 2021 .. 2021 last 697.23
+  S (('dairyprod', 'D2200IME'), ('milkitem', 'FAT')) n=3 2018 .. 2020 last 150828.34
+  S (('dairyprod', 'D2200IME'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 443.19
+  S (('dairyprod', 'D2200JME'), ('milkitem', 'FAT')) n=4 2018 .. 2021 last 151152.04
+  S (('dairyprod', 'D2200JME'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 428.29
+  S (('dairyprod', 'D2200V'), ('milkitem', 'PAT')) n=1 2018 .. 2018 last 60055
+  S (('dairyprod', 'D2202'), ('milkitem', 'PRO')) n=3 2018 .. 2021 last 1411.08
+  S (('dairyprod', 'D3100'), ('milkitem', 'FAT')) n=1 2018 .. 2018 last 192314
+  S (('dairyprod', 'D3100'), ('milkitem', 'PAT')) n=4 2018 .. 2021 last 679923.39
+  S (('dairyprod', 'D3100'), ('milkitem', 'PRO')) n=4 2004 .. 2021 last 2890.69
+  S (('dairyprod', 'D3100'), ('milkitem', 'USM')) n=1 2018 .. 2018 last 20463
+  S (('dairyprod', 'D3100'), ('milkitem', 'UWM')) n=2 2018 .. 2019 last 4486
+  S (('dairyprod', 'D3100_X_3113'), ('milkitem', 'PAT')) n=4 2018 .. 2021 last 158880.53
+  S (('dairyprod', 'D3100_X_3113'), ('milkitem', 'PRO')) n=4 2018 .. 2021 last 631.51
+  S (('dairyprod', 'D3100_X_3113'), ('milkitem', 'USM')) n=1 2020 .. 2020 last 1325.77
+DS apro_ec_eggcon {'freq': 1, 'agriprod': 1, 'unit': 1, 'geo': 0, 'time': 13}
+  DIM agriprod {'D8210': "Hens' eggs"}
+  DIM unit {'MIO': 'Million'}
+DS apro_ec_egghen {'freq': 1, 'operator': 6, 'agriprod': 2, 'unit': 2, 'geo': 0, 'time': 12}
+  DIM operator {'TOTAL': 'Total', 'PRD_AGRI_HM': 'Agricultural producers of eggs according to harmonised methodology', 'PRD_AGRI_HEN350-5000_HM': 'Agricultural producers of eggs with 350 to 5 000 laying hens according to harmonised methodology', 'PRD_AGRI_NHM': 'Agricultural producers of eggs outside harmonised methodology', 'PCK_EGG_PRD_AGRI': 'Packers receiving eggs from agricultural producers', 'OTH_EGG_PRD_AGRI': 'Other operators receiving eggs from agricultural producers'}
+  DIM agriprod {'A5110OH': 'Laying hens (producing eggs for consumption)', 'D8000H': 'Eggs for consumption'}
+  DIM unit {'THS': 'Thousand', 'MIO': 'Million'}
+DS tag00038 {'freq': 1, 'dairyprod': 1, 'milkitem': 1, 'geo': 1, 'time': 12}
+  DIM dairyprod {'D6000': 'Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads'}
+  DIM milkitem {'PRO': 'Products obtained (1 000 t)'}
+DS tag00040 {'freq': 1, 'milkitem': 1, 'dairyprod': 1, 'geo': 1, 'time': 12}
+  DIM milkitem {'PRO': 'Products obtained (1 000 t)'}
+  DIM dairyprod {'D7100': 'Cheese'}
+DS tag00071 {'freq': 1, 'currency': 1, 'prod_ani': 1, 'geo': 1, 'time': 12}
+  DIM currency {'EUR': 'Euro'}
+  DIM prod_ani {'12200000': 'Fresh eggs (whole country) - prices per 100 items'}
