@@ -1,0 +1,116 @@
+candidatos 108
+CAND ef_kvaareg |                             Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region
+CAND ef_kvecsleg |                             Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region
+CAND ef_kvftreg |                             Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region
+CAND ef_olsaareg |                             Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region
+CAND ef_olslsureg |                             Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region
+CAND ef_ls_ovaareg |                             Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region
+CAND ef_ls_ovlsureg |                             Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region
+CAND ef_ls_ovesu |                             Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region
+CAND agr_r_milkpr |                     Production of cow's milk on farms by NUTS 2 region
+CAND ef_lus_orchpome |                         Pome fruits by age, density classes of trees and NUTS 2 region
+CAND ef_lus_orchstone |                         Stone fruits by age, density classes of trees and NUTS 2 region
+CAND ef_lus_orchcitrus |                         Citrus fruits by age, density classes of trees and NUTS 2 region
+CAND ef_lus_orcholives |                         Olives by age, density classes of trees and NUTS 2 region
+CAND ef_livestock |                 Farm livestock
+CAND ef_lsk_main |                     Main livestock indicators by NUTS 2 region
+CAND ef_lsk_goats |                     Goats by NUTS 2 region
+CAND ef_lsk_org |                     Organic animal farming by utilised agricultural area, livestock unit, economic size of the farm and NUTS 2 region
+CAND ef_mp_ms |                     Manure storage facilities by utilised agricultural area, size class of livestock, farm type and NUTS 2 region
+CAND ef_mp_digi |                     Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region
+CAND ef_mp_digilsk |                     Machinery for livestock management by age and training of manager, size classes of livestock and NUTS 2 region
+CAND ef_ah_bovine |                     Animal housing by type of bovine, utilised agricultural area, size classes of livestock units and NUTS 2 region
+CAND ef_ah_pigs |                     Animal housing by type of pigs, utilised agricultural area, size classes of livestock units and NUTS 2 region
+CAND ef_ah_poultry |                     Animal housing by type of poultry, utilised agricultural area, size classes of livestock units and NUTS 2 region
+CAND ef_ah_bovt |                     Outdoor access of bovine by type of animal housing, size classes of livestock units, farm type and NUTS 2 region
+CAND ef_ah_poult |                     Outdoor access of poultry by type of animal housing, size classes of livestock units, farm type and NUTS 2 region
+CAND ef_ah_pigt |                     Outdoor access of pigs by type of animal housing, size classes of livestock units, farm type and NUTS 2 region
+CAND ef_fsi_lsk |                     Livestock units by animal groups and size classes of livestock units
+CAND tag00124 |                         Agricultural holdings with livestock
+CAND ef_fsi_grds |                     Grazing livestock density
+CAND ef_fsi_lskds |                     Livestock density
+CAND ef_kvaareg |                         Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region
+CAND ef_kvecsleg |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region
+CAND ef_kvftaa |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and agricultural size of farm (UAA)
+CAND ef_kvage |                         Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA) and age of manager
+CAND ef_kvftecs |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and economic size of farm (SO in Euro)
+CAND ef_kvftreg |                         Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region
+CAND ef_ols |                     Overview - farm livestock
+CAND ef_olslsuft |                         Livestock: number of farms and heads of animals by type of farming (2-digit)
+CAND ef_olsaareg |                         Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region
+CAND ef_olslsureg |                         Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region
+CAND ef_ogaaa |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by agricultural size of farm (UAA)
+CAND ef_ogaecs |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by economic size of farm (SO in Euro)
+CAND ef_ogaft |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by type of farming (1-digit)
+CAND ef_ogaage |                         Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by age of holder
+CAND ef_ogadsexage |                         Other gainful activities directly related to the holding: number of farms, agricultural area, standard output (SO) and livestock (LSU) by age and sex of holder
+CAND ef_mpmanaa |                         Holder-manager relationship: area, livestock, labour force and standard output (SO) by agricultural size of farm (UAA) (2005-2013)
+CAND ef_mptrainecs |                         Agricultural training of farm managers: number of farms, agricultural area, labour force, standard output (SO) and livestock (LSU) by economic size of farm (SO in Euro) (2005-2013)
+CAND ef_ov_ls |                         Livestock summary
+CAND ef_ov_lssum |                             Livestock: number of farms and heads by size of farm (UAA) and LFA status
+CAND ef_ov_lsob00 |                             Livestock: number of farms and heads by size of farm (UAA) and objective zone 2000
+CAND ef_ov_lsob99 |                             Livestock: number of farms and heads by size of farm (UAA) and objective zone 1999
+CAND ef_ov_lsft |                             Livestock: number of farms, heads and LSU by type of farming (2-digit) and economic size of farm (ESU)
+CAND ef_lu_alpotat |                             Potatoes: number of farms and area by size of farm (UAA) and size of potato area
+CAND ef_lu_pcfruit |                             Fruit and berry plantations: number of farms and areas by size of farm (UAA) and size of fruit and berry plantation area
+CAND ef_lu_pcolive |                             Olive plantations: number of farms and areas by size of farm (UAA) and size of olive plantation area
+CAND ef_ls |                     Livestock
+CAND ef_ls_ov |                         Livestock overview
+CAND ef_ls_ovaareg |                             Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region
+CAND ef_ls_ovlsureg |                             Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region
+CAND ef_ls_ovesu |                             Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region
+CAND ef_ls_gz |                         Grazing livestock
+CAND ef_ls_gzcatllsu |                             Cattle: number of farms and heads by size of farm (UAA) and livestock units (LSU) of farm
+CAND ef_ls_gzdcow |                             Dairy cows: number of farms and heads by size of farm (UAA) and size of dairy herd
+CAND ef_ls_gzgoat |                             Goats: number of farms and heads by size of farm (UAA) and size of goat herd
+CAND tag00063 |                         Selling prices of main crop potatoes
+CAND tag00061 |                         Selling prices of oats
+CAND tag00071 |                         Selling prices of fresh eggs
+CAND tag00070 |                         Selling prices of raw cow's milk
+CAND apro_ec_eggcon |                     Production of eggs for consumption
+CAND apro_mk |                 Milk and milk products
+CAND apro_mk_strmk |                         Milk collection - distribution of enterprises by volume of annual collection
+CAND apro_mk_strcc |                         Milk collection - distribution of collection centres by volume of annual collection
+CAND apro_mk_strmt |                         Milk treated - distribution of enterprises by volume of annual production
+CAND apro_mk_strdm |                         Drinking milk - distribution of enterprises by volume of annual production
+CAND apro_mk_strpd |                         Powdered dairy products - distribution of enterprises by volume of annual production
+CAND apro_mk_strbt |                         Butter - distribution of enterprises by volume of annual production
+CAND apro_mk_strch |                         Cheese - distribution of enterprises by volume of annual production
+CAND apro_mk_fatprot |                     Fat contents and protein contents (cow's milk) - annual data
+CAND apro_mk_pobta |                     Milk collection (all milks) and dairy products obtained - annual data
+CAND tag00038 |                         Production of butter
+CAND tag00040 |                         Production of cheese
+CAND tag00037 |                         Collection of cow's milk
+CAND tag00039 |                         Production of milk powder
+CAND apro_mk_cola |                     Production of main cows' milk products - annual data
+CAND apro_mk_colm |                     Production of main cows' milk products - monthly data
+CAND apro_mk_farm |                     Production and utilization of milk on the farm - annual data
+CAND tag00041 |                         Production of milk on farms
+CAND agr_r_milkpr |                     Production of cow's milk on farms by NUTS 2 region
+CAND apro_mt |                 Livestock and meat
+CAND tag00045 |                             Production of sheepmeat and goat meat in slaughterhouses
+CAND apro_mt_pcatlhs |                         Production forecasts for bovines, sheep and goats - bi-annual data
+CAND apro_mt_ls |                     Livestock
+CAND tag00014 |                             Number of dairy cows
+CAND apro_mt_lsgoat |                         Goats population
+CAND apro_mt_lsavch_r |                         Average livestock population of chicken by NUTS 2 region
+CAND apro_ec_eggorg |                     Production of certified organic eggs for consumption
+CAND apro_mt_lsorg |                     Populations of certified organic livestock
+CAND apro_mt_lsavorg |                     Average populations of certified organic livestock
+CAND apro_ec_egghen |                         Production of eggs for consumption and number of laying hens (2013-2024)
+CAND apro_mt_lsequi |                         Livestock - Equidae - annual data (1960-1997)
+CAND apro_mt_strcatl |                         Cattles - total, dairy cow and other cows (1973-2007)
+CAND apro_mt_strgoat |                         Goats (1993-2007)
+CAND tag00053 |                             Oats and spring cereal mixtures by area, production and humidity
+CAND tag00122 |                             Olives by production
+CAND tag00049 |                             Rye and winter cereal mixtures by area, production and humidity
+CAND ef_mp_digi |                     Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region
+CAND tag00014 |                         Number of dairy cows
+CAND ef_olslsuft |                     Livestock: number of farms and heads of animals by type of farming (2-digit)
+DS apro_mk_pobta time 1960 2024 dims {'freq': 1, 'dairyprod': 86, 'milkitem': 5, 'geo': 1, 'time': 65} values 288
+DS apro_mk_colm time 1968-01 2026-08 dims {'freq': 1, 'milkitem': 3, 'dairyprod': 10, 'unit': 2, 'geo': 1, 'time': 704} values 193
+DS apro_ec_egghatch FAIL HTTP Error 404: Not Found
+DS apro_ec_poula time 1967 2025 dims {'freq': 1, 'hatchitm': 8, 'animals': 10, 'unit': 1, 'geo': 1, 'time': 59} values 0
+DS apro_mt_lscatl time 1959 2026 dims {'freq': 1, 'month': 2, 'animals': 23, 'unit': 1, 'geo': 1, 'time': 68} values 460
+DS apri_pi15_outa FAIL HTTP Error 404: Not Found
+DS apri_pi20_outa FAIL HTTP Error 404: Not Found
