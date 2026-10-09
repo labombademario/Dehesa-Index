@@ -231,8 +231,13 @@
         l = l.sort(function (a, b) { return b.latest - a.latest; }).slice(0, 4);
         if (!l.length) return '';
         var tot = l.reduce(function (m, s) { return Math.max(m, s.latest); }, 0);
+        var nmOf = function (s) { var n0 = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); return (window.DIClear && window.DIClear._country(n0, x.lang)) || n0; };
+        var PL = { es: ['Barras', 'Tarta', 'Reparto entre los 4 principales'], en: ['Bars', 'Pie', 'Split among the top 4'], fr: ['Barres', 'Camembert', 'Répartition entre les 4 premiers'], it: ['Barre', 'Torta', 'Ripartizione tra i primi 4'] }[x.lang] || [];
+        var bars = l.map(function (s) { var nm = nmOf(s); return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('');
+        var pieH = window.DehesaChart && window.DehesaChart.pie ? window.DehesaChart.pie({ items: l.map(function (s) { return { name: nmOf(s), v: s.latest }; }), unit: l[0].unit, centerLabel: PL[2], maxN: 4, minShare: 0 }) : '';
+        var body = pieH && window.DehesaChart.switcher ? window.DehesaChart.switcher({ line: bars, pie: pieH, lineLabel: PL[0], pieLabel: PL[1] }) : bars;
         return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(l[0].unit) + ', ' + esc(x.plabel(l[0].latestPeriod, l[0].frequency)) + '</span></div>' +
-          l.map(function (s) { var nm = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); nm = (window.DIClear && window.DIClear._country(nm, x.lang)) || nm; return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('') + CITE(l[0]) + '</div>';
+          body + CITE(l[0]) + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
       if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
