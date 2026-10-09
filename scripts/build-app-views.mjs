@@ -216,8 +216,8 @@ for (const c of countries) {
   }
   if (!groups.length) continue;
   profiles[c.code] = { country: c.code, seriesTotal: me.n || cat.series.length, latestPeriod: me.summary.latestPeriod || null, firstPeriod: me.summary.first || null,
-    sources: (me.summary.sources || []).slice(0, 6), freq: t4(...['es', 'en', 'fr', 'it'].map(l => null)), groups };
-  delete profiles[c.code].freq;
+    sources: (me.summary.sources || []).slice(0, 6), sourceNames: {}, groups };
+  for (const g of groups) for (const sr of g.series) profiles[c.code].sourceNames[sr.sourceId] = (REG[sr.sourceId].short || REG[sr.sourceId].name || sr.sourceId);
 }
 
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
