@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "asOf": "2026-10-08",
+ "asOf": "2026-10-09",
  "contract": {
   "doc": "Contrato comun de la PAC por pais en data/cap/<CC>/. Cada componente declara INGESTED, PARTIAL o NOT_INGESTED (con razon). Un pais solo pasa a INGESTED con una fuente institucional oficial y licencia aprobada en el License Gate. Sin consejo juridico ni calculo de ayudas individuales.",
   "components": [
