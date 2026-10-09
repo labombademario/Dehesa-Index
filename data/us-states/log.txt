@@ -24,10 +24,10 @@ sl_turkey_lb STATE 1660 filas, 1007 puntos
 sl_turkey_lb NATIONAL 86 filas, 80 puntos
 sl_chick_all_hd NATIONAL 86 filas, 80 puntos
 sl_turkey_all_hd NATIONAL 86 filas, 80 puntos
-dw_cattle NATIONAL 437 filas, 80 puntos
-dw_hogs NATIONAL 437 filas, 80 puntos
-dw_sheep NATIONAL 437 filas, 80 puntos
-dw_calves NATIONAL 437 filas, 80 puntos
+dw_cattle NATIONAL 438 filas, 80 puntos
+dw_hogs NATIONAL 438 filas, 80 puntos
+dw_sheep NATIONAL 438 filas, 80 puntos
+dw_calves NATIONAL 438 filas, 80 puntos
 st_corn STATE 1188 filas, 432 puntos
 st_corn NATIONAL 27 filas, 27 puntos
 st_corn_on STATE 1134 filas, 432 puntos
@@ -95,7 +95,7 @@ pr_hay_other NATIONAL 86 filas, 80 puntos
 pr_cotton STATE 908 filas, 318 puntos
 pr_cotton NATIONAL 92 filas, 80 puntos
 pr_peanuts STATE 952 filas, 765 puntos
-pr_peanuts NATIONAL 444 filas, 80 puntos
+pr_peanuts NATIONAL 445 filas, 80 puntos
 pr_canola STATE 367 filas, 141 puntos
 pr_canola NATIONAL 86 filas, 80 puntos
 pr_milk STATE 2199 filas, 1920 puntos
