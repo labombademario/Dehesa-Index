@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T12:32:03Z",
+ "generatedAt": "2026-10-09T13:47:18Z",
  "summary": {
   "files": 41,
   "errors": 0,
@@ -442,11 +442,11 @@
     "BG/bg-es-meatm-b1000-ths_t: salto 620.0 -> 16360.0 en 2007-12 (mediana previa 570)"
    ],
    "stats": {
-    "series": 2815,
-    "points": 184283,
+    "series": 2891,
+    "points": 186197,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T16:46:01Z",
+   "generatedAt": "2026-10-09T13:42:06Z",
    "info": [],
    "nWarnings": 185,
    "nErrors": 0
@@ -484,11 +484,11 @@
     "NL/nl-es-meatm-b4110-ths_hd: salto 22610.0 -> 25370.0 en 1983-09 (mediana previa 760)"
    ],
    "stats": {
-    "series": 1741,
-    "points": 157128,
+    "series": 1794,
+    "points": 158575,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T16:46:01Z",
+   "generatedAt": "2026-10-09T13:42:06Z",
    "info": [],
    "nWarnings": 59,
    "nErrors": 0
@@ -679,7 +679,7 @@
     "points": 400,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T09:38:34Z",
+   "generatedAt": "2026-10-09T13:36:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -789,16 +789,35 @@
     "PL/eu-pl-trade-exp-cereals: salto 10.488 -> 5.657 en 2002-09 (mediana previa 0.21)",
     "PL/eu-pl-trade-exp-cereals: salto 5.657 -> 13.342 en 2002-10 (mediana previa 0.21)",
     "PL/eu-pl-trade-exp-cereals: salto 3.849 -> 9.441 en 2004-09 (mediana previa 0.348)",
-    "PL/eu-pl-trade-exp-cereals: salto 9.441 -> 11.892 en 2004-10 (mediana previa 0.348)"
+    "PL/eu-pl-trade-exp-cereals: salto 9.441 -> 11.892 en 2004-10 (mediana previa 0.348)",
+    "BG/eu-bg-trade-exp-cereals: salto 0.265 -> 19.567 en 2004-07 (mediana previa 0.549)",
+    "BG/eu-bg-trade-exp-cereals: salto 19.567 -> 30.943 en 2004-08 (mediana previa 0.549)",
+    "BG/eu-bg-trade-exp-cereals: salto 30.943 -> 19.242 en 2004-09 (mediana previa 0.549)",
+    "BG/eu-bg-trade-exp-cereals: salto 19.242 -> 19.541 en 2004-10 (mediana previa 0.549)",
+    "BG/eu-bg-trade-exp-cereals: salto 11.76 -> 16.226 en 2004-12 (mediana previa 0.549)",
+    "BG/eu-bg-trade-imp-sugar: salto 0.712 -> 45.534 en 2005-01 (mediana previa 1.44)",
+    "BG/eu-bg-trade-bal-sugar: salto 0.969 -> -44.183 en 2005-01 (mediana previa 0.969)",
+    "BG/eu-bg-tp-exp-dz: salto 22.265 -> 456.673 en 2022 (mediana previa 7.68)",
+    "BG/eu-bg-tp-exp-dz: salto 456.673 -> 456.949 en 2023 (mediana previa 9.4)",
+    "BG/eu-bg-tp-exp-dz: salto 456.949 -> 405.138 en 2024 (mediana previa 9.4)",
+    "BG/eu-bg-tp-exp-dz: salto 405.138 -> 530.695 en 2025 (mediana previa 11)",
+    "BG/eu-bg-tp-imp-ua: salto 95.627 -> 1106.216 en 2022 (mediana previa 21.1)",
+    "CY/eu-cy-trade-exp-live-animals: salto 0.052 -> 1.834 en 2014-01 (mediana previa 0.052)",
+    "CY/eu-cy-trade-exp-cereals: salto 0.0 -> 1.252 en 2008-09 (mediana previa 0.001)",
+    "CY/eu-cy-trade-exp-olive-oil: salto 0.075 -> 1.163 en 2002-03 (mediana previa 0.001)",
+    "CY/eu-cy-trade-exp-olive-oil: salto 0.051 -> 2.556 en 2003-07 (mediana previa 0.039)",
+    "CY/eu-cy-trade-exp-olive-oil: salto 0.002 -> 1.251 en 2004-06 (mediana previa 0.002)",
+    "CY/eu-cy-trade-bal-live-animals: salto -0.016 -> 1.819 en 2014-01 (mediana previa 0.026)",
+    "CY/eu-cy-trade-bal-olive-oil: salto 0.051 -> 2.547 en 2003-07 (mediana previa 0.039)"
    ],
    "stats": {
-    "series": 708,
-    "points": 160618,
+    "series": 1785,
+    "points": 404335,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T00:20:03Z",
+   "generatedAt": "2026-10-09T13:25:20Z",
    "info": [],
-   "nWarnings": 6,
+   "nWarnings": 86,
    "nErrors": 0
   },
   {
