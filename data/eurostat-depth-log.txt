@@ -6,7 +6,4 @@ aves 125 series
 precios absolutos 94 series
 indices de precios 300 series
 insumos 117 series
-lacteo UE butter = D6000 Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads (2 candidatos)
-lacteo UE cheese = D7100 Cheese (4 candidatos)
-lacteos UE 0 series
 comercio UE 22 series
