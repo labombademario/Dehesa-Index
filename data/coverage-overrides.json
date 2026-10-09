@@ -1,12 +1,240 @@
 {
  "schemaVersion": 1,
  "doc": "Huecos de cobertura que no son un MISSING normal. Cada entrada lleva su prueba; el motor (scripts/build-coverage-gaps.py) solo la aplica si la celda seria MISSING y si la prueba cumple la regla del estado. NOT_APPLICABLE: la fuente oficial publica 0 ha y 0 t en todos los anos. NOT_MATERIAL: superficie del ultimo ano < 1.000 ha y produccion < 5.000 t (umbral de Dehesa Index, documentado aqui). SOURCE_RESTRICTED: hay fuente, pero su licencia por defecto no permite uso comercial.",
- "rules": {"NOT_MATERIAL": {"maxAreaHa": 1000, "maxProdT": 5000}},
+ "rules": {
+  "NOT_MATERIAL": {
+   "maxAreaHa": 1000,
+   "maxProdT": 5000
+  }
+ },
  "entries": [
-  {"cc": "DE", "product": "rice", "metric": "production", "state": "NOT_APPLICABLE", "evidence": "eu-gapfill-stats.json#DE/rice", "reason": "Alemania no cultiva arroz: Eurostat (apro_cpsh1, C2000) publica 0 ha y 0 t en todos los años."},
-  {"cc": "DK", "product": "wine", "metric": "production", "state": "NOT_MATERIAL", "evidence": "eu-gapfill-stats.json#DK/wine", "reason": "Viñedo testimonial: Eurostat (apro_cpsh1, uva de vinificación) publica unas 220 ha y 180 t de uva en 2025."},
-  {"cc": "NL", "product": "wine", "metric": "production", "state": "NOT_MATERIAL", "evidence": "eu-gapfill-stats.json#NL/wine", "reason": "Viñedo testimonial: Eurostat (apro_cpsh1, uva de vinificación) publica unas 240 ha y 2.380 t de uva en 2025."},
-  {"cc": "NL", "product": "soy", "metric": "production", "state": "NOT_MATERIAL", "evidence": "eu-gapfill-stats.json#NL/soy", "reason": "Soja testimonial: Eurostat (apro_cpsh1) publica 180 ha en 2026 y 0 t en 2025 (máximo histórico 990 t)."},
-  {"cc": "AU", "product": "wine", "metric": "production", "state": "SOURCE_RESTRICTED", "evidence": {"url": "https://www.wineaustralia.com/copyright", "checked": "2026-10-05", "quote": "you may download and use that material for personal non-commercial use but you may not otherwise copy or change the material"}, "reason": "Wine Australia publica la producción, pero por defecto solo para uso personal no comercial; solo el material marcado CC BY 4.0 se puede reutilizar. Pendiente de identificar un informe con CC BY o pedir permiso."}
+  {
+   "cc": "DE",
+   "product": "rice",
+   "metric": "production",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DE/rice",
+   "reason": "Alemania no cultiva arroz: Eurostat (apro_cpsh1, C2000) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "DK",
+   "product": "wine",
+   "metric": "production",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#DK/wine",
+   "reason": "Viñedo testimonial: Eurostat (apro_cpsh1, uva de vinificación) publica unas 220 ha y 180 t de uva en 2025."
+  },
+  {
+   "cc": "NL",
+   "product": "wine",
+   "metric": "production",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/wine",
+   "reason": "Viñedo testimonial: Eurostat (apro_cpsh1, uva de vinificación) publica unas 240 ha y 2.380 t de uva en 2025."
+  },
+  {
+   "cc": "NL",
+   "product": "soy",
+   "metric": "production",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/soy",
+   "reason": "Soja testimonial: Eurostat (apro_cpsh1) publica 180 ha en 2026 y 0 t en 2025 (máximo histórico 990 t)."
+  },
+  {
+   "cc": "AU",
+   "product": "wine",
+   "metric": "production",
+   "state": "SOURCE_RESTRICTED",
+   "evidence": {
+    "url": "https://www.wineaustralia.com/copyright",
+    "checked": "2026-10-05",
+    "quote": "you may download and use that material for personal non-commercial use but you may not otherwise copy or change the material"
+   },
+   "reason": "Wine Australia publica la producción, pero por defecto solo para uso personal no comercial; solo el material marcado CC BY 4.0 se puede reutilizar. Pendiente de identificar un informe con CC BY o pedir permiso."
+  },
+  {
+   "cc": "FI",
+   "product": "maize",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/maize",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de maíz en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "maize",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/maize",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de maíz en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "maize",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/maize",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de maíz en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "rice",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "rice",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "rice",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "soy",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/soy",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de soja en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "soy",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/soy",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de soja en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "soy",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/soy",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de soja en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "olive",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/olive",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de olivo en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "FI",
+   "product": "olive",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#FI/olive",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de olivo en FI en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "maize",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/maize",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de maíz en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "maize",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/maize",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de maíz en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "rice",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "rice",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "rice",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/rice",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "soy",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/soy",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de soja en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "soy",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/soy",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de soja en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "olive",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/olive",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de olivo en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "olive",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/olive",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de olivo en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "rye",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/rye",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de centeno en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "rye",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/rye",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de centeno en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  },
+  {
+   "cc": "IE",
+   "product": "rye",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#IE/rye",
+   "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de centeno en IE en todos los años publicados; no hay mercado interior de producción que cubrir."
+  }
  ]
 }

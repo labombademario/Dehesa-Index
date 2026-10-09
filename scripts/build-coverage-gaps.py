@@ -195,7 +195,8 @@ for cc, name, etype, files in CM.entities():
     cnt = collections.Counter(cell['state'] for r in rows.values() for cell in r.values())
     tot = sum(cnt.values())
     countries[cc] = {'name': name, 'entityType': etype, 'cells': tot, 'byState': {s: cnt.get(s, 0) for s in STATES}, 'covered': cnt['AVAILABLE'] + cnt['AVAILABLE_OUTSIDE_CATALOG'],
-                     'coveredPct': round(100 * (cnt['AVAILABLE'] + cnt['AVAILABLE_OUTSIDE_CATALOG']) / tot, 1) if tot else 0}
+                     'applicable': tot - cnt['NOT_APPLICABLE'] - cnt['NOT_MATERIAL'],
+                     'coveredPct': round(100 * (cnt['AVAILABLE'] + cnt['AVAILABLE_OUTSIDE_CATALOG']) / (tot - cnt['NOT_APPLICABLE'] - cnt['NOT_MATERIAL']), 1) if tot - cnt['NOT_APPLICABLE'] - cnt['NOT_MATERIAL'] else 0}
 
 # ---- confianza de cada hueco (confidence): solo los MISSING 'high' sirven para priorizar fuentes nuevas
 # Evidencia por celda MISSING (todo sale del catalogo y de la propia matriz, nada se supone):
@@ -245,6 +246,9 @@ for e in OV.get('entries', []):
 for cc, rows in matrix.items():
     cnt = collections.Counter(cell['state'] for r in rows.values() for cell in r.values())
     countries[cc]['byState'] = {s: cnt.get(s, 0) for s in STATES}
+    ap = sum(cnt.values()) - cnt['NOT_APPLICABLE'] - cnt['NOT_MATERIAL']   # NA/NM con prueba oficial salen del denominador
+    countries[cc]['applicable'] = ap; countries[cc]['covered'] = cnt['AVAILABLE'] + cnt['AVAILABLE_OUTSIDE_CATALOG']
+    countries[cc]['coveredPct'] = round(100 * countries[cc]['covered'] / ap, 1) if ap else 0
 for cc, rows in matrix.items():
     mc = collections.Counter(cell['confidence'] for r in rows.values() for cell in r.values() if cell['state'] == 'MISSING')
     countries[cc]['missingByConfidence'] = {k: mc.get(k, 0) for k in ('high', 'medium', 'low')}
@@ -266,7 +270,7 @@ leverage.sort(key=lambda r: (order.get(r['ingestionStatus'], 9), not r['canStart
 stale_src = sorted(({'sourceId': k, 'staleSeries': v['series'], 'staleCells': len(v['cells']), 'countries': sorted(v['countries'])} for k, v in stale_by_source.items() if v['cells']),
                    key=lambda r: (-r['staleCells'], r['sourceId']))
 doc = {'schemaVersion': 1, 'generatedAt': NOW,
-       'method': {'doc': 'Matriz pais x producto x metrica sobre el catalogo unificado (data/catalog). Productos = etiquetas del catalogo (heuristica de palabras clave sobre las etiquetas de serie). Solo se cuentan metricas aplicables a cada tipo de producto. Orden y ranking: tecnicos, sin juicio de importancia de mercado.',
+       'method': {'doc': 'Matriz pais x producto x metrica sobre el catalogo unificado (data/catalog). Productos = etiquetas del catalogo (heuristica de palabras clave sobre las etiquetas de serie). Solo se cuentan metricas aplicables a cada tipo de producto. El porcentaje excluye de su denominador las celdas NOT_APPLICABLE y NOT_MATERIAL (productos que el pais no produce, con prueba oficial en data/coverage-overrides.json). Orden y ranking: tecnicos, sin juicio de importancia de mercado.',
                   'states': {'AVAILABLE': 'al menos una serie del catalogo con frescura LIVE/FRESH/EXPECTED_DELAY', 'STALE': 'hay series, ninguna al dia y alguna deberia seguir publicandose (STALE/DELAYED)', 'HISTORICAL_ONLY': 'todas las series de la celda son historicas o discontinuadas: hay historia pero no hay fuente viva en el catalogo; no es un pipeline retrasado',
                              'AVAILABLE_OUTSIDE_CATALOG': 'sin serie en el catalogo unificado, pero el dato existe en un fichero USDA propio (supply-demand/gats/export-sales); frescura no evaluada',
                              'SOURCE_AVAILABLE_NOT_INGESTED': 'candidata READY segun el License Gate (data/source-candidates.json) con producto y metrica confirmados',
