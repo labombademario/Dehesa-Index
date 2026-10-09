@@ -1,1 +1,1 @@
-2023 filas, 54 variables, 17 comunidades, 61 tipos, años 2014-2022
+2255 filas, 54 variables, 17 comunidades, 59 tipos, años 2014-2024 (leidos ahora: 2024; conservados del historico: 2014,2015,2016,2017,2018,2019,2020,2021,2022)
