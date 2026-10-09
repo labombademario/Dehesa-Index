@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-113 workflows (79 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+117 workflows (83 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -104,7 +104,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
-| update-news.yml | a mano | varias veces al dia | update_news.py | news-status.json, news.json, views/news-feed.json, views/news-product.json … | finish, validate-files |
+| update-news.yml | a mano | varias veces al dia | update_news.py | news-status.json, news.json, views/news-feed.json … | finish, validate-files |
 | update-weekly-blog.yml | a mano | 2 veces al dia | build-blog-editions.py, update-weekly-blog.py | blog, blog/editions/*.json, blog/weekly/*.json … | finish, validate-files |
 
 ## Otros
@@ -180,13 +180,17 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-nass.yml | a mano | semanal (1) | update-nass.mjs | nass-*-log.txt, nass-*.json, nass-crops.json … | finish, validate-files |
 | update-us-arcplc.yml | generado | mensual | detect-revisions.py, gen-workflows.py, source-status.py | revisions.json, us-arcplc, us-arcplc/index.json … | finish, publish, validate-files |
 | update-us-cash-bids.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-cash-bids.py | revisions.json, us-cash-bids, us-cash-bids/ingestion-status.json … | finish, validate-files |
+| update-us-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-climate.py | revisions.json, us-climate-log.txt, us-climate-stats.json | finish, validate-files |
 | update-us-county-yields.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-county-yields.py | revisions.json, us-county, us-county-yields-log.txt … | finish, validate-files |
 | update-us-dairy.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-dairy.py | revisions.json, us-dairy.json | finish, validate-files |
 | update-us-ers.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-us-ers.py | revisions.json, us-ers-log.txt, us-ers-stats.json … | finish, validate-files |
+| update-us-kcfed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-kc-fed-ag-credit.py | revisions.json, us-kcfed-log.txt, us-kcfed-stats.json | finish, validate-files |
 | update-us-lamb.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-lamb.py | revisions.json, us-lamb.json | finish, validate-files |
 | update-us-local-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-local-markets.py | revisions.json, us-local, us-local/status.json | finish, validate-files |
 | update-us-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-markets.py | revisions.json, us-markets/cot.json, us-markets/ethanol.json … | finish, validate-files |
+| update-us-nass-extra.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-nass-extra.py | revisions.json, us-nass-extra-log.txt, us-nass-extra-stats.json | finish, validate-files |
 | update-us-ppi.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ppi.py | revisions.json, us-ppi-log.txt, us-ppi.json | finish, validate-files |
+| update-us-snotel.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-snotel.py | revisions.json, us-snotel-log.txt, us-snotel-stats.json | finish, validate-files |
 | update-us-states-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-states-macro.py | revisions.json, us-states-macro-log.txt, us-states-macro.json | finish, validate-files |
 | update-us-states.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-states.py | revisions.json, us-states, us-states/index.json … | finish, validate-files |
 | update-us-stats.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-us-stats.py | revisions.json, us-stats-log.txt, us-stats.json | finish, validate-files |
