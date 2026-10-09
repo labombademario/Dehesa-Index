@@ -114,6 +114,13 @@ if (man.files['pac.json']) {
   ok(/^https:\/\//.test(k.url) && k.years.length >= 3, 'pac: url o anos');
   for (const set of [k.direct, k.rural]) { ok(set.length >= 20, 'pac: pocos paises'); set.forEach(([cc, v]) => ok(/^[A-Z]{2}$/.test(cc) && v.length === k.years.length && v.every(x => typeof x === 'number' && x > 0), 'pac ' + cc + ': valores')); }
 }
+// Indice de busqueda de series
+if (man.search) {
+  const d = load('search.json'); ok(d.hash === man.search.hash && d.rows.length === man.search.rows && d.rows.length > 5000, 'search: hash o filas');
+  ok(man.search.bytes < 4 * 1024 * 1024, 'search: fichero demasiado grande (' + man.search.bytes + ')');
+  const cats = new Set(C.map(c => c.code)); const seen = new Set();
+  d.rows.forEach(r => { ok(r.length === 5 && cats.has(r[0]) && r[1] && r[2], 'search: fila mal formada'); const k = r[0] + '/' + r[1]; ok(!seen.has(k), 'search: repetida ' + k); seen.add(k); });
+}
 // Resumen diario y semanal
 if (man.files['summary.json']) {
   const k = load('summary.json').summary;

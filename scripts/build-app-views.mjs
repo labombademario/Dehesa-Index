@@ -317,6 +317,17 @@ let summary = null;
   }
   if (daily || weekly) summary = { daily, weekly };
 }
+// 11) Indice de busqueda de series (todas las de fuentes VERIFIED con dato): [pais, id, etiqueta, grupo, traducciones]. Se descarga bajo demanda.
+const searchRows = [];
+for (const c of countries) {
+  if (!exists('data/catalog/' + c.code + '.json')) continue;
+  for (const sr of read('data/catalog/' + c.code + '.json').series) {
+    if (!sr.file || sr.latest == null || !sr.latestPeriod || !GL.es[sr.group] || sr.group === 'countries' || sr.group === 'freq') continue;
+    if (!REG[canon(sr.sourceId)] || REG[canon(sr.sourceId)].status !== 'VERIFIED') continue;
+    const tt = LABELS[sr.label];
+    searchRows.push([c.code, sr.id, sr.label, sr.group, tt ? LANGS.map(l => tt[l] || '').join('|') : '']);
+  }
+}
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
 fs.mkdirSync(OUT, { recursive: true });
 const gen = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
@@ -374,7 +385,13 @@ for (const [cc, body] of Object.entries(regionData)) {
   if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
   manifest.regionData[cc] = { hash, bytes: fs.statSync(p).size };
 }
+{
+  const body = { rows: searchRows }, content = JSON.stringify(body), hash = crypto.createHash('sha256').update(content).digest('hex').slice(0, 16), p = path.join(OUT, 'search.json');
+  let prev = null; try { prev = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) {}
+  if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
+  manifest.search = { hash, bytes: fs.statSync(p).size, rows: searchRows.length };
+}
 const mp = path.join(OUT, 'manifest.json');
 let prevM = null; try { prevM = JSON.parse(fs.readFileSync(mp, 'utf8')); } catch (e) {}
-if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files) || JSON.stringify(prevM.countries) !== JSON.stringify(manifest.countries) || JSON.stringify(prevM.maps) !== JSON.stringify(manifest.maps) || JSON.stringify(prevM.regionData) !== JSON.stringify(manifest.regionData)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
+if (!prevM || JSON.stringify(prevM.files) !== JSON.stringify(manifest.files) || JSON.stringify(prevM.countries) !== JSON.stringify(manifest.countries) || JSON.stringify(prevM.maps) !== JSON.stringify(manifest.maps) || JSON.stringify(prevM.regionData) !== JSON.stringify(manifest.regionData) || JSON.stringify(prevM.search) !== JSON.stringify(manifest.search)) fs.writeFileSync(mp, JSON.stringify(manifest) + '\n');
 console.log('app-views:', prices.length, 'precios ·', cal.length, 'publicaciones ·', news.length, 'noticias ·', countries.length, 'paises ·', sections.filter(s => s.figure).length + '/' + sections.length, 'secciones con dato ·', Object.values(manifest.files).reduce((a, f) => a + f.bytes, 0), 'bytes');
