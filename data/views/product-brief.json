@@ -1,1 +1,1 @@
-{"schemaVersion":1,"generatedAt":"2026-10-09T21:28:22Z","newData":[{"k":"P/petroleo_wti/us","kind":"INPUT","label":"petroleo_wti (US)","unit":"USD/barril","period":"2026-10-02","value":98.07,"changePct":4.8092,"group":"product","sourceId":"eia"}]}
+{"schemaVersion":1,"generatedAt":"2026-10-09T21:48:34Z","newData":[{"k":"P/petroleo_wti/us","kind":"INPUT","label":"petroleo_wti (US)","unit":"USD/barril","period":"2026-10-02","value":98.07,"changePct":4.8092,"group":"product","sourceId":"eia"}]}

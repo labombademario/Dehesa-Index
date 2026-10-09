@@ -1374,9 +1374,11 @@ def coverage_gaps(doc, errs, warns, stats):
             if m in (None, "other"): continue
             ok = sr.get("fs") in ("LIVE", "FRESH", "EXPECTED_DELAY")
             ing[m] += 1
-            if not [t for t in (sr.get("tags") or []) if t in CM.KIND_OF]: unt[m] += 1
-            for t in [t for t in (sr.get("tags") or []) if t in CM.KIND_OF]: trk[t] += 1
-            for t in sr.get("tags") or []:
+            tg = list(sr.get("tags") or [])
+            if m == "price_index" and CM.OILSEED_AGG.search(str(sr.get("label", ""))): tg = list(dict.fromkeys(tg + ["rapeseed", "soy"]))
+            if not [t for t in tg if t in CM.KIND_OF]: unt[m] += 1
+            for t in [t for t in tg if t in CM.KIND_OF]: trk[t] += 1
+            for t in tg:
                 if t in CM.KIND_OF:
                     for mt in CM.cell_metrics(t, m, sr):
                         cnt[(t, mt)][0] += 1; cnt[(t, mt)][1] += 1 if ok else 0; cnt[(t, mt)][2] += 1 if sr.get("fs") in ("HISTORICAL", "DISCONTINUED") else 0
