@@ -71,11 +71,12 @@
   function t() { return T[lang()] || T.es; }
   function L(o) { return o ? (o[lang()] || o.es) : ''; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return Number(v).toFixed(d); } }
+  var NFC = {}, DFC = {}, DAYC = {};
+  function nf(v, d) { try { var k = lang() + '|' + d, f = NFC[k] || (NFC[k] = new Intl.NumberFormat(lang(), { minimumFractionDigits: d, maximumFractionDigits: d })); return f.format(v); } catch (e) { return Number(v).toFixed(d); } }
   function sgn(v, d) { return (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), d); }
   function pctChg(a, b) { return a == null || b == null || !b ? null : (a / b - 1) * 100; }
   function chg(p, d) { if (p == null || !isFinite(p)) return '<span style="color:var(--text-faint)">—</span>'; return '<span style="font-weight:600">' + sgn(p, d == null ? 1 : d) + (d === 0 ? '' : ' %') + '</span>'; }
-  function day(s) { var q = String(s).split('-'); try { return new Date(Date.UTC(+q[0], +q[1] - 1, +q[2])).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return s; } }
+  function day(s) { var k = lang() + '|' + s; if (DAYC[k] !== undefined) return DAYC[k]; var q = String(s).split('-'), r; try { var f = DFC[lang()] || (DFC[lang()] = new Intl.DateTimeFormat(lang(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })); r = f.format(new Date(Date.UTC(+q[0], +q[1] - 1, +q[2]))); } catch (e) { r = s; } return (DAYC[k] = r); }
   function ts(s) { var q = String(s).split('-'); return Date.UTC(+q[0], +q[1] - 1, +q[2] || 1); }
   function cite(id, period) { return window.DICite && window.DICite.html ? '<div class="pp-cites" style="margin-top:10px">' + window.DICite.html(id, period ? { period: period } : {}) + '</div>' : ''; }
   function get(n) { if (!D[n]) D[n] = fetch('data/us-markets/' + n + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); return D[n]; }

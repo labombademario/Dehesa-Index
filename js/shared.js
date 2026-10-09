@@ -330,7 +330,7 @@
         e.setAttribute('tabindex', '0');
       }
     }
-    function run() { fix(document); scrollRegions(); try { new MutationObserver(function () { clearTimeout(run.t); run.t = setTimeout(function () { fix(document); scrollRegions(); }, 150); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
+    function run() { fix(document); scrollRegions(); try { new MutationObserver(function () { clearTimeout(run.t); run.t = setTimeout(function () { fix(document); (window.requestIdleCallback || function (f) { return setTimeout(f, 1); })(scrollRegions, { timeout: 1500 }); }, 150); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
   })();
 
