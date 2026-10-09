@@ -11,6 +11,7 @@ CRANBERRIES 583 filas 99 utiles
 PEACHES 1645 filas 104 utiles
 APPLES 1980 filas 104 utiles
 TOMATOES 1104 filas 10 utiles
+  rechazadas por dominio/practica [(('TOTAL', 'ALL PRODUCTION PRACTICES', 'FRESH MARKET'), 558), (('TOTAL', 'ALL PRODUCTION PRACTICES', 'PROCESSING'), 117), (('TOTAL', 'IN THE OPEN', 'ALL UTILIZATION PRACTICES'), 50)]
 ONIONS 2406 filas 204 utiles
 LETTUCE 1384 filas 383 utiles
 BEANS 5912 filas 136 utiles
@@ -20,9 +21,11 @@ HONEY 1727 filas 144 utiles
 WOOL 667 filas 137 utiles
 MOHAIR 660 filas 130 utiles
 GOATS 3605 filas 21 utiles
+  rechazadas por dominio/practica [(('TOTAL', 'ALL PRODUCTION PRACTICES', 'SLAUGHTER, COMMERCIAL'), 536)]
 TOBACCO 6556 filas 2057 utiles
 MUSHROOMS 1083 filas 201 utiles
-HEMP 633 filas 0 utiles
+HEMP 633 filas 10 utiles
+  rechazadas por dominio/practica []
 TURKEYS 24944 filas 434 utiles
 descartada ('APPLES',) production value sin dato desde 2003
 descartada ('BLUEBERRIES',) price received sin dato desde 2016
@@ -176,4 +179,4 @@ descartada ('TOBACCO', 'NON-CIGAR TYPES (CLASS 1-3)') price received sin dato de
 descartada ('TOBACCO', 'NON-CIGAR TYPES (CLASS 1-3)') price received sin dato desde 2005
 descartada ('TOBACCO', 'TYPE 42-44') price received sin dato desde 2004
 descartada ('WALNUTS', 'ENGLISH') yield short tons/acre pocos puntos 2
-series 190
+series 192
