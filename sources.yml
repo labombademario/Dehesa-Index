@@ -590,7 +590,7 @@ sources:
     name: Update Spain annual oilseed balance sheets (MAPA)
     cron: ['40 7 * * 4']
     script: scripts/update-spain-oilseeds.py
-    pre: ['bash scripts/trust-fnmt.sh', 'sudo apt-get install -y -q poppler-utils >/dev/null']
+    pre: ['bash scripts/trust-fnmt.sh', 'sudo apt-get update -q >/dev/null', 'sudo apt-get install -y -q poppler-utils >/dev/null']
     timeout: 20
     script_timeout: 12
     continue: true
