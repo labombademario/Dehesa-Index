@@ -17,5 +17,5 @@ jobs:
       - name: commit
         run: |
           git config user.name research && git config user.email r@x
-          git add probe_es3 && git commit -m "probe es out" || true
+          git add probe_es4 && git commit -m "probe es out" || true
           for i in 1 2 3 4 5; do git pull -q --rebase origin research/probe-es && git push -q && break; sleep 5; done
