@@ -114,6 +114,12 @@ if (man.files['pac.json']) {
   ok(/^https:\/\//.test(k.url) && k.years.length >= 3, 'pac: url o anos');
   for (const set of [k.direct, k.rural]) { ok(set.length >= 20, 'pac: pocos paises'); set.forEach(([cc, v]) => ok(/^[A-Z]{2}$/.test(cc) && v.length === k.years.length && v.every(x => typeof x === 'number' && x > 0), 'pac ' + cc + ': valores')); }
 }
+// Resumen diario y semanal
+if (man.files['summary.json']) {
+  const k = load('summary.json').summary;
+  if (k.daily) { ok(k.daily.movers.every(m => typeof m.changePct === 'number' && typeof m.value === 'number' && m.label), 'summary: movers'); ok(k.daily.revisions.every(r => typeof r.old === 'number' && typeof r.new === 'number'), 'summary: revisiones'); }
+  if (k.weekly) { ok(/^\d{4}-W\d{2}$/.test(k.weekly.week) && k.weekly.items > 0, 'summary: semana'); ok(k.weekly.top.every(x => /^https?:\/\//.test(x.url) && x.h && x.source), 'summary: titulares'); ok(k.weekly.top.every(x => !('text' in x)), 'summary: sin texto'); }
+}
 const bytes = Object.values(man.files).reduce((a, f) => a + f.bytes, 0);
 ok(bytes < 400 * 1024, 'app views: mas de 400 KB (' + bytes + ')');
 console.log(`app views: ${checks} comprobaciones, ${fails} fallos`);

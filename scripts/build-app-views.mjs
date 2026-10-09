@@ -292,11 +292,37 @@ if (exists('data/cap/eu/allocations.json')) {
   pac = { sourceId: 'eur_lex', sourceName: 'EUR-Lex', url: a.source.url, act: 'Reglamento (UE) 2021/2115', consolidated: a.source.consolidatedVersion, unit: 'EUR',
     years: a.directPayments.years, direct: pick(a.directPayments), rural: pick(a.ruralDevelopment) };
 }
+// 10) Resumen: lo que ha cambiado hoy (data/daily-brief.json) y la semana (data/blog/weekly/<semana>.json). Solo series de fuentes VERIFIED.
+let summary = null;
+{
+  const okSrc = id => REG[canon(id)] && REG[canon(id)].status === 'VERIFIED';
+  const catSeries = {};
+  const serOf = k => { const [cc, id] = String(k).split('/'); if (!cc || !id) return null; if (!catSeries[cc]) { catSeries[cc] = {}; if (exists('data/catalog/' + cc + '.json')) for (const x of read('data/catalog/' + cc + '.json').series) catSeries[cc][x.id] = x; } return catSeries[cc][id] || null; };
+  const tl = l => LABELS[l] || null;
+  const daily = brief ? {
+    at: brief.generatedAt, counts: { datasets: brief.counts.datasetsUpdated, periods: brief.counts.newPeriods, series: brief.counts.newSeries, revisions: brief.counts.revisions },
+    movers: (brief.movers || []).filter(m => okSrc(m.sourceId) && typeof m.changePct === 'number').slice(0, 8).map(m => ({ cc: String(m.k).split('/')[0], label: m.label, ...(tl(m.label) ? { labelT: tl(m.label) } : {}), unit: m.unit, period: m.period, value: m.value, changePct: m.changePct, prevPeriod: m.prevPeriod || null })),
+    revisions: (brief.revisions || []).filter(r => { const x = serOf(r.series); return x && okSrc(x.sourceId); }).slice(0, 6).map(r => ({ cc: String(r.series).split('/')[0], label: r.label, ...(tl(r.label) ? { labelT: tl(r.label) } : {}), unit: r.unit, period: r.period, old: r.old, new: r.new, pct: r.pct }))
+  } : null;
+  let weekly = null;
+  if (exists('data/blog/weekly/index.json')) {
+    const wk = read('data/blog/weekly/index.json').weeks || [];
+    const last = wk.filter(w => w.complete).slice(-1)[0] || wk.slice(-1)[0];
+    if (last && exists('data/blog/weekly/' + last.week + '.json')) {
+      const w = read('data/blog/weekly/' + last.week + '.json');
+      weekly = { week: w.week, from: w.from, to: w.to, items: w.totals.items, sources: w.totals.sources,
+        topics: Object.entries(w.totals.byTopic).sort((a, b) => b[1] - a[1]).slice(0, 6), regions: Object.entries(w.totals.byRegion).sort((a, b) => b[1] - a[1]),
+        top: (w.top || []).filter(x => /^https?:\/\//.test(x.url)).slice(0, 8).map(x => ({ h: x.h, source: x.source, url: x.url, date: x.date, region: x.region, topic: x.topic, lang: x.lang })) };
+    }
+  }
+  if (daily || weekly) summary = { daily, weekly };
+}
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
 fs.mkdirSync(OUT, { recursive: true });
 const gen = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
 const files = { 'prices.json': { prices }, 'today.json': todayDoc, 'news.json': { news }, 'countries.json': { countries }, 'sections.json': { sections } };
 if (pac) files['pac.json'] = { pac };
+if (summary) files['summary.json'] = { summary };
 const manifest = { schemaVersion: 1, generatedAt: gen, languages: LANGS, files: {} };
 for (const [name, body] of Object.entries(files)) {
   const content = JSON.stringify(body);
