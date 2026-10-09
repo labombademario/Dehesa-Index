@@ -609,6 +609,7 @@ sources:
     message: Tipos de cambio históricos (BCE)
   - id: seo-pages
     name: Rebuild SEO landing pages
+    group: heavy   # reescribe paginas de todo el sitio: va en el grupo de los workflows que construyen derivados
     cron: ['10 5 * * *']
     runner: node
     script: scripts/build-seo-pages.mjs

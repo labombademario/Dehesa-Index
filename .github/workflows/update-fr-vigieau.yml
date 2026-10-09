@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dehesa-data-writes
+  group: dehesa-fr-vigieau
   cancel-in-progress: false
 jobs:
   update:
@@ -23,18 +23,7 @@ jobs:
       - name: Detectar revisiones oficiales
         run: python3 scripts/detect-revisions.py data/france-vigieau.json
       - name: Publicar
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/france-vigieau.json data/revisions.json
-          git diff --cached --quiet && exit 0
-          git commit -qm "Datos Francia restricciones de agua por departamento (VigiEau)"
-          for i in 1 2 3 4 5 6; do
-            git pull -q --rebase --autostash && git push && exit 0
-            git rebase --abort 2>/dev/null || :
-            sleep $((i * 5 + RANDOM % 10))
-          done
-          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+        run: bash scripts/publish-data.sh "Datos Francia restricciones de agua por departamento (VigiEau)" data/france-vigieau.json data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

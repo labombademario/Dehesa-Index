@@ -1,0 +1,21 @@
+name: Watchdog - relanzar workflows de datos cancelados por la cola
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: dehesa-watchdog
+  cancel-in-progress: false
+jobs:
+  rerun:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Relanzar los workflows de datos cuya ultima ejecucion se cancelo en cola sin llegar a arrancar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/rerun-cancelled.py

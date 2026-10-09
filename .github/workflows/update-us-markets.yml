@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dehesa-data-writes
+  group: dehesa-us-markets
   cancel-in-progress: false
 jobs:
   update:
@@ -36,18 +36,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json data/us-markets/ethanol.json data/us-markets/inspections.json data/us-markets/lmr.json data/us-markets/log.txt data/revisions.json
-          git diff --cached --quiet && exit 0
-          git commit -qm "Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte y precios de referencia, FGIS, EIA)"
-          for i in 1 2 3 4 5 6; do
-            git pull -q --rebase --autostash && git push && exit 0
-            git rebase --abort 2>/dev/null || :
-            sleep $((i * 5 + RANDOM % 10))
-          done
-          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+        run: bash scripts/publish-data.sh "Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte y precios de referencia, FGIS, EIA)" data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json data/us-markets/ethanol.json data/us-markets/inspections.json data/us-markets/lmr.json data/us-markets/log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

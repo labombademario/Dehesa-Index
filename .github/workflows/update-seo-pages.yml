@@ -25,18 +25,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add datos precios regiones en fr it blog index.html blog.html sitemap.xml sitemap-lastmod.json
-          git diff --cached --quiet && exit 0
-          git commit -qm "Páginas SEO por país y categoría"
-          for i in 1 2 3 4 5 6; do
-            git pull -q --rebase --autostash && git push && exit 0
-            git rebase --abort 2>/dev/null || :
-            sleep $((i * 5 + RANDOM % 10))
-          done
-          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+        run: bash scripts/publish-data.sh "Páginas SEO por país y categoría" datos precios regiones en fr it blog index.html blog.html sitemap.xml sitemap-lastmod.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

@@ -55,7 +55,7 @@ Esquemas de datos: **3 → 49** (`schemas/*.schema.json` + `registry.json`), 307
 2. **Precios semanales UE de cereales** (`breadmaking-common-wheat-national-average`): 14 paises terminan en agosto-2026 y Espana en sep-2025, aunque la familia llega a 20-sep. Causa aguas arriba no verificada (probable cambio de campana/definicion). Frescura lo marca; no se rellena.
 3. **Catalogo y Producto aun pesados** (2,9 y 4,3 MB): se abordan en la ficha de producto 3.0 (carga perezosa) en la fase siguiente.
 4. **`normalized.json` (13,5 MB)** y duplicidad `history.csv`/`history.json`: recomendacion en `docs/REPO_GROWTH.md` (no se cambia el formato publicado sin decision).
-5. **Concurrencia**: el grupo `dehesa-data-writes` conserva una sola ejecucion en cola; disparos simultaneos cancelan las intermedias (documentado, cron espaciado).
+5. **Concurrencia** (resuelto 9 oct): grupos por conjunto de ficheros escritos + publicador con mezcla de registros comunes + vigilante que relanza lo cancelado en cola (ver ARCHITECTURE.md).
 6. **`detect-revisions` nunca falla** por diseno (informativo).
 7. **20 fuentes PENDING**: requieren confirmacion escrita de las instituciones (decision de Mario).
 8. **Tarjeta del indice de la Home**: comprobada visualmente tras los cambios (UE, 103,0; desplegable UE/EE. UU.); sin incidencias.

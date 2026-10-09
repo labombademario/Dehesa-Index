@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dehesa-data-writes
+  group: dehesa-spain-balances
   cancel-in-progress: false
 jobs:
   update:
@@ -37,18 +37,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/spain-balances/olive.json data/spain-olive-log.txt data/spain-balances data/revisions.json
-          git diff --cached --quiet && exit 0
-          git commit -qm "Datos balance del olivar y aforo de aceite de oliva de España (MAPA)"
-          for i in 1 2 3 4 5 6; do
-            git pull -q --rebase --autostash && git push && exit 0
-            git rebase --abort 2>/dev/null || :
-            sleep $((i * 5 + RANDOM % 10))
-          done
-          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+        run: bash scripts/publish-data.sh "Datos balance del olivar y aforo de aceite de oliva de España (MAPA)" data/spain-balances/olive.json data/spain-olive-log.txt data/spain-balances data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

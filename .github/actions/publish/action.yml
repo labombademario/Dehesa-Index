@@ -31,8 +31,6 @@ runs:
         MESSAGE: ${{ inputs.message }}
         AUTHOR: ${{ inputs.user }}
       run: |
-        git config user.name "$AUTHOR"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         case "$PRESET" in
           '') ;;
           price-engine) PATHS="$PATHS data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/dehesa-index-ca.json data/alerts.json data/revisions.json" ;;
@@ -40,12 +38,4 @@ runs:
         esac
         git add -- $PATHS
         for p in $OPTIONAL; do [ -e "$p" ] && git add -- "$p"; done
-        if git diff --cached --quiet; then echo "Sin cambios que publicar"; exit 0; fi
-        git commit -qm "$MESSAGE"
-        for i in 1 2 3 4 5 6; do
-          git pull -q --rebase --autostash origin main && git push && exit 0
-          # Un rebase a medias hace fallar todos los reintentos siguientes: se aborta y se vuelve a intentar limpio
-          git rebase --abort 2>/dev/null || true
-          sleep $((i * 5 + RANDOM % 10))
-        done
-        echo "::error::no se pudo publicar tras 6 intentos"; exit 1
+        PUBLISH_AUTHOR="$AUTHOR" bash scripts/publish-data.sh "$MESSAGE"

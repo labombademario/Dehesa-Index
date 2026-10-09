@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dehesa-data-writes
+  group: dehesa-us-arcplc
   cancel-in-progress: false
 jobs:
   update:
@@ -35,18 +35,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure' && steps.fetch.outputs.source != 'unavailable'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/us-arcplc/index.json data/us-arcplc/national.json data/us-arcplc/log.txt data/us-arcplc data/revisions.json
-          git diff --cached --quiet && exit 0
-          git commit -qm "Tasas ARC/PLC de EE. UU. (USDA FSA)"
-          for i in 1 2 3 4 5 6; do
-            git pull -q --rebase --autostash && git push && exit 0
-            git rebase --abort 2>/dev/null || :
-            sleep $((i * 5 + RANDOM % 10))
-          done
-          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+        run: bash scripts/publish-data.sh "Tasas ARC/PLC de EE. UU. (USDA FSA)" data/us-arcplc/index.json data/us-arcplc/national.json data/us-arcplc/log.txt data/us-arcplc data/revisions.json
       - name: Estado de la fuente (un corte del proveedor se registra como retraso, no como error de Dehesa Index)
         if: always()
         env:

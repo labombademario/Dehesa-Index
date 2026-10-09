@@ -8,7 +8,24 @@ from pathlib import Path
 import yaml
 ROOT = Path(__file__).resolve().parents[1]
 def q(s): return "'" + str(s).replace("'", "''") + "'"
-def render(x):
+def files_of(x): return {(f[1:] if f.startswith("!") else "data/" + f) for f in x["data"] + x.get("extra", [])} | ({"data/" + x["log"]} if x.get("log") else set())
+SHARED_OK = {"data/revisions.json"}   # registro comun: lo mezcla scripts/merge-shared.py al publicar, no obliga a serializar
+def groups(cfg):
+    """Grupo de concurrencia de cada workflow generado. Dos workflows que escriben el MISMO fichero comparten grupo (se serializan);
+    el resto tienen grupo propio, asi una ejecucion no cancela a otra distinta. `group: heavy` = el grupo comun de los que construyen derivados."""
+    src = cfg["sources"]; par = {x["id"]: x["id"] for x in src}
+    def find(a):
+        while par[a] != a: par[a] = par[par[a]]; a = par[a]
+        return a
+    owner = {}
+    for x in src:
+        for f in files_of(x) - SHARED_OK:
+            if f in owner: par[find(x["id"])] = find(owner[f])
+            else: owner[f] = x["id"]
+    members = {}
+    for x in src: members.setdefault(find(x["id"]), []).append(x["id"])
+    return {i: ("dehesa-data-writes" if next(y for y in src if y["id"] == i).get("group") == "heavy" else "dehesa-" + min(m)) for m in members.values() for i in m}
+def render(x, group="dehesa-data-writes"):
     L = ["# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.", "name: " + x["name"], "on:", "  schedule:"]
     L += ["    - cron: " + q(c) for c in x["cron"]]
     L += ["  workflow_dispatch:"]
@@ -16,7 +33,7 @@ def render(x):
         L.append("    inputs:")
         for k, v in x["dispatch_inputs"].items():
             L += ["      %s:" % k, "        description: " + q(v["description"]), "        required: " + ("true" if v.get("required") else "false"), "        default: " + q(v.get("default", ""))]
-    L += ["permissions:", "  contents: write", "concurrency:", "  group: dehesa-data-writes", "  cancel-in-progress: false", "jobs:", "  update:", "    runs-on: ubuntu-24.04"]
+    L += ["permissions:", "  contents: write", "concurrency:", "  group: " + group, "  cancel-in-progress: false", "jobs:", "  update:", "    runs-on: ubuntu-24.04"]
     if x.get("timeout"): L.append("    timeout-minutes: %d" % x["timeout"])
     L += ["    steps:", "      - uses: actions/checkout@v6"]
     for p in x.get("pre", []): L.append("      - run: " + p)
@@ -39,9 +56,7 @@ def render(x):
         L += ["      - id: qa", "        name: Control de calidad antes de publicar (si falla, no se publica)"] + always + ["        run: " + qa, "        continue-on-error: true"]
     adds = " ".join([(f[1:] if f.startswith("!") else "data/" + f) for f in x["data"] + x.get("extra", [])] + (["data/" + x["log"]] if x.get("log") else []) + (["data/revisions.json"] if vlist else []))
     pub_if = ["        if: always() && steps.qa.outcome != 'failure'" + (" && steps.fetch.outputs.source != 'unavailable'" if fs else "")] if qa else always
-    L += ["      - name: Publicar"] + pub_if + ["        run: |", '          git config user.name "github-actions[bot]"', '          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
-          "          git add " + adds, "          git diff --cached --quiet && exit 0", "          git commit -qm " + json.dumps(x["message"], ensure_ascii=False),
-          "          for i in 1 2 3 4 5 6; do", "            git pull -q --rebase --autostash && git push && exit 0", "            git rebase --abort 2>/dev/null || :", "            sleep $((i * 5 + RANDOM % 10))", "          done", "          echo '::error::no se pudo publicar tras 6 intentos'; exit 1"]
+    L += ["      - name: Publicar"] + pub_if + ["        run: bash scripts/publish-data.sh " + json.dumps(x["message"], ensure_ascii=False) + " " + adds]
     if fs:
         L += ["      - name: Estado de la fuente (un corte del proveedor se registra como retraso, no como error de Dehesa Index)", "        if: always()", "        env:", "          REASON: ${{ steps.fetch.outputs.reason }}",
               "        run: python3 scripts/source-status.py ${{ steps.fetch.outputs.source == 'unavailable' && 'mark' || (steps.fetch.outcome == 'success' && 'clear' || 'none') }} update-%s.yml \"$REASON\"" % x["id"],
@@ -50,9 +65,9 @@ def render(x):
         L += ["      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)", "        if: always()", "        uses: ./.github/actions/finish", "        with:", "          outcomes: ${{ steps.fetch.outcome }}" + (" ${{ steps.qa.outcome }}" if qa else "")]
     return "\n".join(L) + "\n"
 def main():
-    cfg = yaml.safe_load((ROOT / "sources.yml").read_text(encoding="utf-8")); bad = 0
+    cfg = yaml.safe_load((ROOT / "sources.yml").read_text(encoding="utf-8")); bad = 0; GR = groups(cfg)
     for x in cfg["sources"]:
-        out = ROOT / ".github" / "workflows" / ("update-%s.yml" % x["id"]); txt = render(x)
+        out = ROOT / ".github" / "workflows" / ("update-%s.yml" % x["id"]); txt = render(x, GR[x["id"]])
         yaml.safe_load(txt)
         if "--check" in sys.argv:
             if not out.exists() or out.read_text(encoding="utf-8") != txt: print("DESINCRONIZADO:", out.name); bad += 1

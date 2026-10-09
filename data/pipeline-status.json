@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-09T22:19:00Z",
+ "generatedAt": "2026-10-09T22:52:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 104,
+  "ok": 105,
   "late": 2,
-  "error": 7,
+  "error": 6,
   "not_run": 2,
   "unknown": 0
  },
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "3e5dc7ba",
+   "sha": "284d4c31",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/68afe193-746e-4d7a-964d-d19613eb26ad",
-   "completedAt": "2026-10-09T22:02:22Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/9f811352-e403-4fa2-9b9f-4ed04231a48a",
+   "completedAt": "2026-10-09T22:41:26Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -129,20 +129,7 @@
     "10 18 * * 4"
    ],
    "nextRun": "2026-10-15T18:10:00Z",
-   "files": [
-    {
-     "path": "data/argentina-stats.json",
-     "valid": "warning",
-     "series": 177,
-     "points": 25119,
-     "lines": 0,
-     "lastChange": "2026-10-08T22:47:56Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -165,16 +152,7 @@
     "35 11 5 * *"
    ],
    "nextRun": "2026-11-05T11:35:00Z",
-   "files": [
-    {
-     "path": "data/au-states.json",
-     "lastChange": "2026-10-05T11:51:19Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -197,24 +175,7 @@
     "25 11 5 * *"
    ],
    "nextRun": "2026-11-05T11:25:00Z",
-   "files": [
-    {
-     "path": "data/australia-trade-stats.json",
-     "valid": "ok",
-     "series": 69,
-     "points": 16316,
-     "lines": 0,
-     "lastChange": "2026-10-07T14:28:52Z"
-    },
-    {
-     "path": "data/au-trade-products.json",
-     "lastChange": "2026-10-07T14:28:52Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -237,20 +198,7 @@
     "25 16 * * 2,5"
    ],
    "nextRun": "2026-10-13T16:25:00Z",
-   "files": [
-    {
-     "path": "data/austria-stats.json",
-     "valid": "ok",
-     "series": 255,
-     "points": 9284,
-     "lines": 0,
-     "lastChange": "2026-10-09T16:39:12Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -273,20 +221,7 @@
     "45 15 * * 2,5"
    ],
    "nextRun": "2026-10-13T15:45:00Z",
-   "files": [
-    {
-     "path": "data/belgium-stats.json",
-     "valid": "ok",
-     "series": 123,
-     "points": 20876,
-     "lines": 0,
-     "lastChange": "2026-10-09T15:57:20Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -309,16 +244,7 @@
     "20 8 * * 2,4"
    ],
    "nextRun": "2026-10-13T08:20:00Z",
-   "files": [
-    {
-     "path": "data/canada-drought.json",
-     "lastChange": "2026-10-08T08:39:14Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -341,16 +267,7 @@
     "40 16 * * 3,4,5"
    ],
    "nextRun": "2026-10-14T16:40:00Z",
-   "files": [
-    {
-     "path": "data/canada-grain.json",
-     "lastChange": "2026-10-09T16:52:38Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -373,16 +290,7 @@
     "50 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:50:00Z",
-   "files": [
-    {
-     "path": "data/canada-provinces-macro.json",
-     "lastChange": "2026-10-08T08:02:42Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -405,16 +313,7 @@
     "50 15 * * 3"
    ],
    "nextRun": "2026-10-14T15:50:00Z",
-   "files": [
-    {
-     "path": "data/canada-provinces.json",
-     "lastChange": "2026-10-07T16:04:14Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -437,24 +336,7 @@
     "35 15 * * 1,4"
    ],
    "nextRun": "2026-10-12T15:35:00Z",
-   "files": [
-    {
-     "path": "data/canada-stats.json",
-     "valid": "warning",
-     "series": 713,
-     "points": 96648,
-     "lines": 0,
-     "lastChange": "2026-10-08T19:45:26Z"
-    },
-    {
-     "path": "data/supply-balances/ca.json",
-     "lastChange": "2026-10-08T19:45:26Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -500,20 +382,7 @@
     "20 7 * * 1"
    ],
    "nextRun": "2026-10-12T07:20:00Z",
-   "files": [
-    {
-     "path": "data/cap/dk/amounts.json",
-     "lastChange": "2026-10-05T07:36:00Z"
-    },
-    {
-     "path": "data/cap/dk/watch.json",
-     "lastChange": "2026-10-05T07:36:00Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -536,20 +405,7 @@
     "10 7 * * 1"
    ],
    "nextRun": "2026-10-12T07:10:00Z",
-   "files": [
-    {
-     "path": "data/cap/es/amounts.json",
-     "lastChange": "2026-10-05T07:24:46Z"
-    },
-    {
-     "path": "data/cap/es/watch.json",
-     "lastChange": "2026-10-05T07:24:46Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -572,26 +428,17 @@
     "50 21 * * 5"
    ],
    "nextRun": "2026-10-16T21:50:00Z",
-   "files": [
-    {
-     "path": "data/cattle-on-feed.json",
-     "lastChange": "2026-10-02T21:55:51Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-10-09T21:57:49Z",
-    "durationSec": 142,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37996534881"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-09T22:23:42Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37998970212"
    },
    "recent": {
-    "runs": 4,
-    "success": 2,
+    "runs": 5,
+    "success": 3,
     "failed": 1
    },
    "status": "ok",
@@ -604,20 +451,7 @@
     "20 18 * * 3"
    ],
    "nextRun": "2026-10-14T18:20:00Z",
-   "files": [
-    {
-     "path": "data/chile-stats.json",
-     "valid": "warning",
-     "series": 114,
-     "points": 4298,
-     "lines": 0,
-     "lastChange": "2026-10-07T18:45:59Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -672,20 +506,7 @@
     "15 7 3 * *"
    ],
    "nextRun": "2026-11-03T07:15:00Z",
-   "files": [
-    {
-     "path": "data/country-macro.json",
-     "valid": "ok",
-     "series": 0,
-     "points": 0,
-     "lines": 0,
-     "lastChange": "2026-10-06T14:46:15Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -719,7 +540,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
+     "lastChange": "2026-10-09T22:40:41Z"
     }
    ],
    "last": {
@@ -744,16 +565,7 @@
     "25 9 * * 3"
    ],
    "nextRun": "2026-10-14T09:25:00Z",
-   "files": [
-    {
-     "path": "data/cpi.json",
-     "lastChange": "2026-10-07T09:41:17Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -776,16 +588,7 @@
     "40 6 * * 3"
    ],
    "nextRun": "2026-10-14T06:40:00Z",
-   "files": [
-    {
-     "path": "data/crop-insurance-ca.json",
-     "lastChange": "2026-10-03T13:35:38Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "cancelled",
     "event": "schedule",
@@ -808,16 +611,7 @@
     "25 6 * * 2"
    ],
    "nextRun": "2026-10-13T06:25:00Z",
-   "files": [
-    {
-     "path": "data/crop-insurance.json",
-     "lastChange": "2026-10-06T06:44:34Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -892,16 +686,7 @@
     "20 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:20:00Z",
-   "files": [
-    {
-     "path": "data/denmark-depth.json",
-     "lastChange": "2026-10-08T07:34:39Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1078,16 +863,7 @@
     "20 9 * * 2,5"
    ],
    "nextRun": "2026-10-13T09:20:00Z",
-   "files": [
-    {
-     "path": "data/supply-balances/eu.json",
-     "lastChange": "2026-10-09T09:36:32Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1110,16 +886,7 @@
     "40 7 * * 1"
    ],
    "nextRun": "2026-10-12T07:40:00Z",
-   "files": [
-    {
-     "path": "data/cap/eu/allocations.json",
-     "lastChange": "2026-10-05T16:30:48Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -1169,16 +936,7 @@
     "40 7 * * *"
    ],
    "nextRun": "2026-10-10T07:40:00Z",
-   "files": [
-    {
-     "path": "data/eu-drought.json",
-     "lastChange": "2026-10-09T07:54:17Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1201,16 +959,7 @@
     "15 6 * * 3"
    ],
    "nextRun": "2026-10-14T06:15:00Z",
-   "files": [
-    {
-     "path": "data/eu-farm-economics.json",
-     "lastChange": "2026-10-03T02:09:55Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "cancelled",
     "event": "schedule",
@@ -1233,20 +982,7 @@
     "25 9 * * 4"
    ],
    "nextRun": "2026-10-15T09:25:00Z",
-   "files": [
-    {
-     "path": "data/eu-gapfill-stats.json",
-     "valid": "ok",
-     "series": 12,
-     "points": 400,
-     "lines": 0,
-     "lastChange": "2026-10-09T13:36:07Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -1269,16 +1005,7 @@
     "20 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:20:00Z",
-   "files": [
-    {
-     "path": "data/eu-regions-macro.json",
-     "lastChange": "2026-10-08T07:39:24Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1301,48 +1028,7 @@
     "40 6 * * 4"
    ],
    "nextRun": "2026-10-15T06:40:00Z",
-   "files": [
-    {
-     "path": "data/eu-regions-es.json",
-     "lastChange": "2026-10-03T02:23:37Z"
-    },
-    {
-     "path": "data/eu-regions-fr.json",
-     "lastChange": "2026-10-03T02:23:37Z"
-    },
-    {
-     "path": "data/eu-regions-it.json",
-     "lastChange": "2026-10-03T02:23:37Z"
-    },
-    {
-     "path": "data/eu-regions-de.json",
-     "lastChange": "2026-10-03T02:23:37Z"
-    },
-    {
-     "path": "data/eu-regions-nl.json",
-     "lastChange": "2026-10-03T02:23:37Z"
-    },
-    {
-     "path": "data/eu-regions-at.json",
-     "lastChange": "2026-10-03T02:23:37Z"
-    },
-    {
-     "path": "data/eu-regions-be.json",
-     "lastChange": "2026-10-05T14:17:46Z"
-    },
-    {
-     "path": "data/eu-regions-dk.json",
-     "lastChange": "2026-10-05T14:17:46Z"
-    },
-    {
-     "path": "data/eu-regions-pl.json",
-     "lastChange": "2026-10-07T12:28:54Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "cancelled",
     "event": "schedule",
@@ -1365,20 +1051,7 @@
     "50 7 * * 3"
    ],
    "nextRun": "2026-10-14T07:50:00Z",
-   "files": [
-    {
-     "path": "data/eu-stocks-stats.json",
-     "valid": "ok",
-     "series": 103,
-     "points": 798,
-     "lines": 0,
-     "lastChange": "2026-10-08T23:57:19Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": null,
    "recent": null,
    "status": "not_run",
@@ -1391,24 +1064,7 @@
     "40 9 16,18,22 * *"
    ],
    "nextRun": "2026-10-16T09:40:00Z",
-   "files": [
-    {
-     "path": "data/eu-trade-stats.json",
-     "valid": "warning",
-     "series": 1785,
-     "points": 404335,
-     "lines": 0,
-     "lastChange": "2026-10-09T13:25:45Z"
-    },
-    {
-     "path": "data/eu-trade-products.json",
-     "lastChange": "2026-10-09T13:25:45Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -1431,16 +1087,7 @@
     "10 5 2 * *"
    ],
    "nextRun": "2026-11-02T05:10:00Z",
-   "files": [
-    {
-     "path": "data/eu-vat.json",
-     "lastChange": "2026-10-02T05:21:29Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1463,20 +1110,7 @@
     "40 17 * * 2,5"
    ],
    "nextRun": "2026-10-13T17:40:00Z",
-   "files": [
-    {
-     "path": "data/eurostat-depth-stats.json",
-     "valid": "warning",
-     "series": 823,
-     "points": 39656,
-     "lines": 0,
-     "lastChange": "2026-10-09T17:52:36Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1499,28 +1133,7 @@
     "10 18 * * 2,5"
    ],
    "nextRun": "2026-10-13T18:10:00Z",
-   "files": [
-    {
-     "path": "data/eurostat-eu-stats.json",
-     "valid": "warning",
-     "series": 2891,
-     "points": 186197,
-     "lines": 0,
-     "lastChange": "2026-10-09T18:27:26Z"
-    },
-    {
-     "path": "data/eurostat-euw-stats.json",
-     "valid": "warning",
-     "series": 1794,
-     "points": 158575,
-     "lines": 0,
-     "lastChange": "2026-10-09T18:27:26Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1595,16 +1208,7 @@
     "30 14 * * 5"
    ],
    "nextRun": "2026-10-16T14:30:00Z",
-   "files": [
-    {
-     "path": "data/france-cereobs.json",
-     "lastChange": "2026-10-09T14:44:11Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1627,20 +1231,7 @@
     "30 7 * * 5"
    ],
    "nextRun": "2026-10-16T07:30:00Z",
-   "files": [
-    {
-     "path": "data/france-insee-stats.json",
-     "valid": "ok",
-     "series": 221,
-     "points": 60390,
-     "lines": 0,
-     "lastChange": "2026-10-09T07:43:51Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1663,16 +1254,7 @@
     "15 6 * * 1,3,5"
    ],
    "nextRun": "2026-10-12T06:15:00Z",
-   "files": [
-    {
-     "path": "data/france-vigieau.json",
-     "lastChange": "2026-10-09T06:36:14Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1695,20 +1277,7 @@
     "10 15 * * 2,5"
    ],
    "nextRun": "2026-10-13T15:10:00Z",
-   "files": [
-    {
-     "path": "data/france-stats.json",
-     "valid": "ok",
-     "series": 47,
-     "points": 29284,
-     "lines": 0,
-     "lastChange": "2026-10-09T15:23:10Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1731,16 +1300,7 @@
     "20 8 4 * *"
    ],
    "nextRun": "2026-11-04T08:20:00Z",
-   "files": [
-    {
-     "path": "data/fx-history.json",
-     "lastChange": "2026-10-07T18:56:10Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1814,16 +1374,7 @@
     "40 15 * * 3"
    ],
    "nextRun": "2026-10-14T15:40:00Z",
-   "files": [
-    {
-     "path": "data/germany-livestock.json",
-     "lastChange": "2026-10-07T15:56:18Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1846,24 +1397,7 @@
     "30 15 * * 1,4"
    ],
    "nextRun": "2026-10-12T15:30:00Z",
-   "files": [
-    {
-     "path": "data/germany-stats.json",
-     "valid": "ok",
-     "series": 265,
-     "points": 63174,
-     "lines": 0,
-     "lastChange": "2026-10-08T15:51:52Z"
-    },
-    {
-     "path": "data/germany-agri.json",
-     "lastChange": "2026-10-08T15:51:52Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1886,20 +1420,7 @@
     "45 6 * * 1-5"
    ],
    "nextRun": "2026-10-12T06:45:00Z",
-   "files": [
-    {
-     "path": "data/interest-rates-stats.json",
-     "valid": "ok",
-     "series": 5,
-     "points": 1196,
-     "lines": 0,
-     "lastChange": "2026-10-09T07:02:47Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1922,20 +1443,7 @@
     "25 17 * * 2,5"
    ],
    "nextRun": "2026-10-13T17:25:00Z",
-   "files": [
-    {
-     "path": "data/italy-eurostat-stats.json",
-     "valid": "warning",
-     "series": 954,
-     "points": 56120,
-     "lines": 0,
-     "lastChange": "2026-10-09T17:41:54Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -1958,18 +1466,18 @@
     "30 22 * * 5",
     "30 12 * * 1"
    ],
-   "nextRun": "2026-10-09T22:30:00Z",
+   "nextRun": "2026-10-12T12:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-05T12:50:35Z",
-    "durationSec": 31,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37312343816"
+    "startedAt": "2026-10-09T22:40:15Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38000459060"
    },
    "recent": {
-    "runs": 8,
-    "success": 4,
+    "runs": 9,
+    "success": 5,
     "failed": 4
    },
    "status": "ok",
@@ -1982,33 +1490,21 @@
     "30 22 * * 5",
     "10 14 * * 1"
    ],
-   "nextRun": "2026-10-09T22:30:00Z",
-   "files": [
-    {
-     "path": "data/mb-markets/cattle.json",
-     "lastChange": "2026-10-03T17:25:55Z"
-    },
-    {
-     "path": "data/mb-markets"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "nextRun": "2026-10-12T14:10:00Z",
+   "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-09T22:00:20Z",
-    "durationSec": 93,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37996771427"
+    "startedAt": "2026-10-09T22:38:16Z",
+    "durationSec": 61,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38000284676"
    },
    "recent": {
-    "runs": 3,
-    "success": 2,
+    "runs": 5,
+    "success": 4,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 104.3
   },
   {
@@ -2020,33 +1516,17 @@
     "20 14 * * 3"
    ],
    "nextRun": "2026-10-13T20:40:00Z",
-   "files": [
-    {
-     "path": "data/mb-markets/sheep-goat.json",
-     "lastChange": "2026-10-04T14:52:23Z"
-    },
-    {
-     "path": "data/mb-markets/hogs.json",
-     "lastChange": "2026-10-07T14:36:52Z"
-    },
-    {
-     "path": "data/mb-markets"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-07T14:35:56Z",
-    "durationSec": 61,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37638041724"
+    "startedAt": "2026-10-09T22:25:46Z",
+    "durationSec": 104,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37999160761"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -2149,16 +1629,7 @@
     "35 8 * * 3"
    ],
    "nextRun": "2026-10-14T08:35:00Z",
-   "files": [
-    {
-     "path": "data/netherlands-farm.json",
-     "lastChange": "2026-10-07T08:53:55Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2181,16 +1652,7 @@
     "40 8 * * 2,5"
    ],
    "nextRun": "2026-10-13T08:40:00Z",
-   "files": [
-    {
-     "path": "data/netherlands-markets.json",
-     "lastChange": "2026-10-09T08:52:45Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2240,7 +1702,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
+     "lastChange": "2026-10-09T22:40:41Z"
     }
    ],
    "last": {
@@ -2268,7 +1730,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2283,7 +1745,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2300,7 +1762,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/products"
@@ -2311,30 +1773,30 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-09T21:50:31Z"
+     "lastChange": "2026-10-09T22:23:38Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2373,20 +1835,7 @@
     "45 17 * * 2,5"
    ],
    "nextRun": "2026-10-13T17:45:00Z",
-   "files": [
-    {
-     "path": "data/poland-eurostat-stats.json",
-     "valid": "warning",
-     "series": 899,
-     "points": 33544,
-     "lines": 0,
-     "lastChange": "2026-10-09T17:56:36Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2409,20 +1858,7 @@
     "30 18 * * 2"
    ],
    "nextRun": "2026-10-13T18:30:00Z",
-   "files": [
-    {
-     "path": "data/poland-stats.json",
-     "valid": "warning",
-     "series": 184,
-     "points": 5943,
-     "lines": 0,
-     "lastChange": "2026-10-07T10:39:46Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -2445,20 +1881,7 @@
     "55 16 * * 2,5"
    ],
    "nextRun": "2026-10-13T16:55:00Z",
-   "files": [
-    {
-     "path": "data/portugal-eurostat-stats.json",
-     "valid": "ok",
-     "series": 223,
-     "points": 10562,
-     "lines": 0,
-     "lastChange": "2026-10-09T17:03:59Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2481,20 +1904,7 @@
     "40 16 * * 2,5"
    ],
    "nextRun": "2026-10-13T16:40:00Z",
-   "files": [
-    {
-     "path": "data/portugal-stats.json",
-     "valid": "ok",
-     "series": 547,
-     "points": 24356,
-     "lines": 0,
-     "lastChange": "2026-10-09T16:59:02Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2568,19 +1978,7 @@
     "35 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:35:00Z",
-   "files": [
-    {
-     "path": "data/spain-balances/cereals.json",
-     "lastChange": "2026-10-08T07:50:10Z"
-    },
-    {
-     "path": "data/spain-balances"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2603,19 +2001,7 @@
     "50 6 * * 4"
    ],
    "nextRun": "2026-10-15T06:50:00Z",
-   "files": [
-    {
-     "path": "data/spain-crops/index.json",
-     "lastChange": "2026-10-08T07:06:03Z"
-    },
-    {
-     "path": "data/spain-crops"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2638,20 +2024,7 @@
     "40 9 4,18 * *"
    ],
    "nextRun": "2026-10-18T09:40:00Z",
-   "files": [
-    {
-     "path": "data/spain-hicp-stats.json",
-     "valid": "ok",
-     "series": 2,
-     "points": 280,
-     "lines": 0,
-     "lastChange": "2026-10-09T20:05:50Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -2674,19 +2047,7 @@
     "20 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:20:00Z",
-   "files": [
-    {
-     "path": "data/spain-livestock/index.json",
-     "lastChange": "2026-10-08T07:37:34Z"
-    },
-    {
-     "path": "data/spain-livestock"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2709,19 +2070,7 @@
     "5 8 * * 4"
    ],
    "nextRun": "2026-10-15T08:05:00Z",
-   "files": [
-    {
-     "path": "data/spain-milk/infolac.json",
-     "lastChange": "2026-10-08T08:24:24Z"
-    },
-    {
-     "path": "data/spain-milk"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2744,20 +2093,7 @@
     "40 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:40:00Z",
-   "files": [
-    {
-     "path": "data/spain-oilseeds-stats.json",
-     "valid": "ok",
-     "series": 18,
-     "points": 180,
-     "lines": 0,
-     "lastChange": "2026-10-09T20:41:02Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -2780,19 +2116,7 @@
     "50 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:50:00Z",
-   "files": [
-    {
-     "path": "data/spain-balances/olive.json",
-     "lastChange": "2026-10-08T08:01:09Z"
-    },
-    {
-     "path": "data/spain-balances"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2815,20 +2139,7 @@
     "35 9 * * 2"
    ],
    "nextRun": "2026-10-13T09:35:00Z",
-   "files": [
-    {
-     "path": "data/spain-siega-stats.json",
-     "valid": "ok",
-     "series": 13,
-     "points": 579,
-     "lines": 0,
-     "lastChange": "2026-10-09T20:41:02Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -2851,19 +2162,7 @@
     "10 9 * * 4"
    ],
    "nextRun": "2026-10-15T09:10:00Z",
-   "files": [
-    {
-     "path": "data/spain-slaughter/census.json",
-     "lastChange": "2026-10-08T09:27:54Z"
-    },
-    {
-     "path": "data/spain-slaughter"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2886,19 +2185,7 @@
     "25 8 * * 4"
    ],
    "nextRun": "2026-10-15T08:25:00Z",
-   "files": [
-    {
-     "path": "data/spain-slaughter/slaughter.json",
-     "lastChange": "2026-10-08T08:43:00Z"
-    },
-    {
-     "path": "data/spain-slaughter"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -2921,19 +2208,7 @@
     "5 9 * * 4"
    ],
    "nextRun": "2026-10-15T09:05:00Z",
-   "files": [
-    {
-     "path": "data/spain-wine/balance-historic.json",
-     "lastChange": "2026-10-04T20:20:44Z"
-    },
-    {
-     "path": "data/spain-wine"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "failure",
     "event": "schedule",
@@ -2956,19 +2231,7 @@
     "55 8 * * 4"
    ],
    "nextRun": "2026-10-15T08:55:00Z",
-   "files": [
-    {
-     "path": "data/spain-wine/monthly.json",
-     "lastChange": "2026-10-04T20:29:15Z"
-    },
-    {
-     "path": "data/spain-wine"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "failure",
     "event": "schedule",
@@ -2991,19 +2254,7 @@
     "45 8 * * 4"
    ],
    "nextRun": "2026-10-15T08:45:00Z",
-   "files": [
-    {
-     "path": "data/spain-wine/infovi.json",
-     "lastChange": "2026-10-08T08:57:20Z"
-    },
-    {
-     "path": "data/spain-wine"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3026,20 +2277,7 @@
     "35 14 * * 2,5"
    ],
    "nextRun": "2026-10-13T14:35:00Z",
-   "files": [
-    {
-     "path": "data/spain-stats.json",
-     "valid": "ok",
-     "series": 219,
-     "points": 58767,
-     "lines": 0,
-     "lastChange": "2026-10-09T14:51:17Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3062,24 +2300,7 @@
     "20 6 * * 3"
    ],
    "nextRun": "2026-10-14T06:20:00Z",
-   "files": [
-    {
-     "path": "data/switzerland-foag-stats.json",
-     "valid": "warning",
-     "series": 114,
-     "points": 9334,
-     "lines": 0,
-     "lastChange": "2026-10-08T16:39:17Z"
-    },
-    {
-     "path": "data/ch-chain.json",
-     "lastChange": "2026-10-08T16:39:17Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -3102,20 +2323,7 @@
     "35 5 4 * *"
    ],
    "nextRun": "2026-11-04T05:35:00Z",
-   "files": [
-    {
-     "path": "data/switzerland-meteo-stats.json",
-     "valid": "ok",
-     "series": 18,
-     "points": 7722,
-     "lines": 0,
-     "lastChange": "2026-10-07T18:56:10Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": null,
    "recent": null,
    "status": "not_run",
@@ -3128,20 +2336,7 @@
     "20 9 * * 2,5"
    ],
    "nextRun": "2026-10-13T09:20:00Z",
-   "files": [
-    {
-     "path": "data/uk-stats.json",
-     "valid": "ok",
-     "series": 686,
-     "points": 47632,
-     "lines": 0,
-     "lastChange": "2026-10-09T09:35:46Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3164,20 +2359,7 @@
     "50 17 * * 3"
    ],
    "nextRun": "2026-10-14T17:50:00Z",
-   "files": [
-    {
-     "path": "data/uk-trade-stats.json",
-     "valid": "ok",
-     "series": 15,
-     "points": 375,
-     "lines": 0,
-     "lastChange": "2026-10-07T18:01:55Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3201,22 +2383,6 @@
    ],
    "nextRun": "2026-10-17T06:35:00Z",
    "files": [
-    {
-     "path": "data/us-arcplc/index.json"
-    },
-    {
-     "path": "data/us-arcplc/national.json"
-    },
-    {
-     "path": "data/us-arcplc/log.txt"
-    },
-    {
-     "path": "data/us-arcplc"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    },
     {
      "path": "data/source-status.json",
      "lastChange": "2026-10-06T05:09:51Z"
@@ -3251,31 +2417,7 @@
     "30 23 * * 1-5"
    ],
    "nextRun": "2026-10-09T23:30:00Z",
-   "files": [
-    {
-     "path": "data/us-cash-bids/manifest.json",
-     "lastChange": "2026-10-09T14:34:59Z"
-    },
-    {
-     "path": "data/us-cash-bids/reports.json",
-     "lastChange": "2026-10-09T14:34:59Z"
-    },
-    {
-     "path": "data/us-cash-bids/ingestion-status.json",
-     "lastChange": "2026-10-09T14:34:59Z"
-    },
-    {
-     "path": "data/us-cash-bids/revisions.json",
-     "lastChange": "2026-10-01T12:45:33Z"
-    },
-    {
-     "path": "data/us-cash-bids"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3298,20 +2440,7 @@
     "10 8 12 * *"
    ],
    "nextRun": "2026-10-12T08:10:00Z",
-   "files": [
-    {
-     "path": "data/us-climate-stats.json",
-     "valid": "ok",
-     "series": 149,
-     "points": 29949,
-     "lines": 0,
-     "lastChange": "2026-10-09T14:42:53Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -3334,19 +2463,7 @@
     "25 7 8 * *"
    ],
    "nextRun": "2026-11-08T07:25:00Z",
-   "files": [
-    {
-     "path": "data/us-county/status.json",
-     "lastChange": "2026-10-08T07:44:40Z"
-    },
-    {
-     "path": "data/us-county"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3370,16 +2487,7 @@
     "20 14 * * 4"
    ],
    "nextRun": "2026-10-14T20:20:00Z",
-   "files": [
-    {
-     "path": "data/us-dairy.json",
-     "lastChange": "2026-10-08T14:40:40Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3402,28 +2510,7 @@
     "40 14 * * 3"
    ],
    "nextRun": "2026-10-14T14:40:00Z",
-   "files": [
-    {
-     "path": "data/us-ers-stats.json",
-     "valid": "warning",
-     "series": 298,
-     "points": 46176,
-     "lines": 0,
-     "lastChange": "2026-10-08T20:09:50Z"
-    },
-    {
-     "path": "data/us-ttb-stats.json",
-     "valid": "ok",
-     "series": 7,
-     "points": 94,
-     "lines": 0,
-     "lastChange": "2026-10-08T20:09:50Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -3446,20 +2533,7 @@
     "20 9 15 2,5,8,11 *"
    ],
    "nextRun": "2026-11-15T09:20:00Z",
-   "files": [
-    {
-     "path": "data/us-kcfed-stats.json",
-     "valid": "ok",
-     "series": 47,
-     "points": 6293,
-     "lines": 0,
-     "lastChange": "2026-10-09T14:38:30Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -3482,16 +2556,7 @@
     "30 20 * * 1-5"
    ],
    "nextRun": "2026-10-12T20:30:00Z",
-   "files": [
-    {
-     "path": "data/us-lamb.json",
-     "lastChange": "2026-10-09T20:47:49Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3514,19 +2579,7 @@
     "20 15 * * 1-5"
    ],
    "nextRun": "2026-10-12T15:20:00Z",
-   "files": [
-    {
-     "path": "data/us-local/status.json",
-     "lastChange": "2026-10-09T15:33:08Z"
-    },
-    {
-     "path": "data/us-local"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3549,49 +2602,17 @@
     "10 22 * * 1-5"
    ],
    "nextRun": "2026-10-12T22:10:00Z",
-   "files": [
-    {
-     "path": "data/us-markets/cot.json",
-     "lastChange": "2026-10-08T22:27:19Z"
-    },
-    {
-     "path": "data/us-markets/transport.json",
-     "lastChange": "2026-10-08T22:27:19Z"
-    },
-    {
-     "path": "data/us-markets/fuel.json",
-     "lastChange": "2026-10-08T22:27:19Z"
-    },
-    {
-     "path": "data/us-markets/ethanol.json",
-     "lastChange": "2026-10-08T22:27:19Z"
-    },
-    {
-     "path": "data/us-markets/inspections.json",
-     "lastChange": "2026-10-08T22:27:19Z"
-    },
-    {
-     "path": "data/us-markets/lmr.json",
-     "lastChange": "2026-10-08T22:27:19Z"
-    },
-    {
-     "path": "data/us-markets/log.txt"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-08T22:25:45Z",
-    "durationSec": 116,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37853406205"
+    "startedAt": "2026-10-09T22:25:06Z",
+    "durationSec": 96,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37999098885"
    },
    "recent": {
-    "runs": 6,
-    "success": 6,
+    "runs": 7,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -3604,30 +2625,17 @@
     "20 21 * * 5"
    ],
    "nextRun": "2026-10-16T21:20:00Z",
-   "files": [
-    {
-     "path": "data/us-nass-extra-stats.json",
-     "valid": "ok",
-     "series": 201,
-     "points": 5830,
-     "lines": 0,
-     "lastChange": "2026-10-09T14:40:09Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-10-09T22:00:10Z",
-    "durationSec": 11,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37996753341"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-09T22:27:54Z",
+    "durationSec": 111,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37999354909"
    },
    "recent": {
-    "runs": 3,
-    "success": 1,
+    "runs": 6,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -3640,16 +2648,7 @@
     "20 14 * * 4"
    ],
    "nextRun": "2026-10-15T14:20:00Z",
-   "files": [
-    {
-     "path": "data/us-ppi.json",
-     "lastChange": "2026-10-07T13:25:48Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3672,20 +2671,7 @@
     "30 8 3 * *"
    ],
    "nextRun": "2026-11-03T08:30:00Z",
-   "files": [
-    {
-     "path": "data/us-snotel-stats.json",
-     "valid": "warning",
-     "series": 12,
-     "points": 2412,
-     "lines": 0,
-     "lastChange": "2026-10-09T14:37:54Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -3708,16 +2694,7 @@
     "40 7 * * 4"
    ],
    "nextRun": "2026-10-15T07:40:00Z",
-   "files": [
-    {
-     "path": "data/us-states-macro.json",
-     "lastChange": "2026-10-08T07:54:33Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3740,22 +2717,7 @@
     "40 21 * * 5"
    ],
    "nextRun": "2026-10-16T21:40:00Z",
-   "files": [
-    {
-     "path": "data/us-states/index.json",
-     "lastChange": "2026-10-09T22:01:13Z"
-    },
-    {
-     "path": "data/us-states/log.txt"
-    },
-    {
-     "path": "data/us-states"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3778,20 +2740,7 @@
     "30 2 * * *"
    ],
    "nextRun": "2026-10-10T02:30:00Z",
-   "files": [
-    {
-     "path": "data/us-stats.json",
-     "valid": "ok",
-     "series": 283,
-     "points": 18395,
-     "lines": 0,
-     "lastChange": "2026-10-09T02:46:36Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3814,20 +2763,7 @@
     "20 8 * * 2,5"
    ],
    "nextRun": "2026-10-13T08:20:00Z",
-   "files": [
-    {
-     "path": "data/us-tariffs.json",
-     "valid": "ok",
-     "series": 0,
-     "points": 0,
-     "lines": 2186,
-     "lastChange": "2026-10-09T08:34:55Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -3850,16 +2786,7 @@
     "40 6 * * 1-5"
    ],
    "nextRun": "2026-10-12T06:40:00Z",
-   "files": [
-    {
-     "path": "data/usda-calendar.json",
-     "lastChange": "2026-10-09T06:59:22Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "failure",
     "event": "schedule",
@@ -3946,16 +2873,7 @@
     "40 7 4 * *"
    ],
    "nextRun": "2026-11-04T07:40:00Z",
-   "files": [
-    {
-     "path": "data/worldbank-agri.json",
-     "lastChange": "2026-10-06T16:00:11Z"
-    },
-    {
-     "path": "data/revisions.json",
-     "lastChange": "2026-10-09T17:52:36Z"
-    }
-   ],
+   "files": [],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
