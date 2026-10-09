@@ -1,0 +1,438 @@
+{
+"esmapaindicespreciosindicepercibido": [
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "ACEITE DE OLIVA TOTAL",
+"subgrupo": "ACEITE DE OLIVA TOTAL",
+"producto": "ACEITE DE OLIVA TOTAL",
+"n": 636,
+"first": "1995-01",
+"last": "2026-08",
+"bases": [
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 636
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "CEREALES",
+"subgrupo": "CEREALES",
+"producto": "CEREALES",
+"n": 779,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 779
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "CULTIVOS FORRAJEROS",
+"subgrupo": "CULTIVOS FORRAJEROS",
+"producto": "CULTIVOS FORRAJEROS",
+"n": 778,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 778
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "CULTIVOS INDUSTRIALES",
+"subgrupo": "CULTIVOS INDUSTRIALES",
+"producto": "CULTIVOS INDUSTRIALES",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "FLORES Y PLANTAS ORNAMENTALES",
+"subgrupo": "FLORES Y PLANTAS ORNAMENTALES",
+"producto": "FLORES Y PLANTAS ORNAMENTALES",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "FRUTAS",
+"subgrupo": "CITRICOS",
+"producto": "CITRICOS",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "FRUTAS",
+"subgrupo": "FRUTAS FRESCAS NO CITRICAS",
+"producto": "FRUTAS FRESCAS NO CITRICAS",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "FRUTAS",
+"subgrupo": "FRUTAS SECAS",
+"producto": "FRUTAS SECAS",
+"n": 779,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 779
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "HORTALIZAS",
+"subgrupo": "HORTALIZAS",
+"producto": "HORTALIZAS",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "LEGUMINOSAS",
+"subgrupo": "LEGUMINOSAS CONSUMO HUMANO",
+"producto": "LEGUMINOSAS CONSUMO HUMANO",
+"n": 774,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 774
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "LEGUMINOSAS",
+"subgrupo": "LEGUMINOSAS PIENSO",
+"producto": "LEGUMINOSAS PIENSO",
+"n": 627,
+"first": "1995-01",
+"last": "2026-08",
+"bases": [
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 627
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "SEMILLAS",
+"subgrupo": "SEMILLAS",
+"producto": "SEMILLAS",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "TUBERCULOS",
+"subgrupo": "TUBERCULOS",
+"producto": "TUBERCULOS",
+"n": 636,
+"first": "1995-01",
+"last": "2026-08",
+"bases": [
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 636
+},
+{
+"categoria": "PRODUCTOS AGRICOLAS",
+"grupo": "VINO Y MOSTO",
+"subgrupo": "VINO Y MOSTO",
+"producto": "VINO Y MOSTO",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "GANADO PARA ABASTO",
+"subgrupo": "AVES PARA ABASTO",
+"producto": "AVES PARA ABASTO",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "GANADO PARA ABASTO",
+"subgrupo": "CAPRINO PARA ABASTO",
+"producto": "CAPRINO PARA ABASTO",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "GANADO PARA ABASTO",
+"subgrupo": "CONEJOS PARA ABASTO",
+"producto": "CONEJOS PARA ABASTO",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "GANADO PARA ABASTO",
+"subgrupo": "OVINO PARA ABASTO",
+"producto": "OVINO PARA ABASTO",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "GANADO PARA ABASTO",
+"subgrupo": "PORCINO PARA ABASTO",
+"producto": "PORCINO PARA ABASTO",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "GANADO PARA ABASTO",
+"subgrupo": "VACUNO PARA ABASTO",
+"producto": "VACUNO PARA ABASTO",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "PRODUCTOS GANADEROS",
+"subgrupo": "HUEVOS",
+"producto": "HUEVOS",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "PRODUCTOS GANADEROS",
+"subgrupo": "LANA",
+"producto": "LANA",
+"n": 776,
+"first": "1990-05",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 776
+},
+{
+"categoria": "PRODUCTOS ANIMALES",
+"grupo": "PRODUCTOS GANADEROS",
+"subgrupo": "LECHE",
+"producto": "LECHE",
+"n": 780,
+"first": "1990-01",
+"last": "2026-08",
+"bases": [
+"1990",
+"1995",
+"2000",
+"2005",
+"2010",
+"2015",
+"2020"
+],
+"nonnull": 780
+}
+]
+}
