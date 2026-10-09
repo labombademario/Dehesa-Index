@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-09T09:45:42.936Z",
+  "generatedAt": "2026-10-09T13:26:12.196Z",
   "status": "informational",
   "rules": [
     {
@@ -97,15 +97,6 @@
       "sourceId": "eia",
       "severity": "high",
       "changePct": 12.78,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel",
-      "region": "us",
-      "sourceId": "eia",
-      "severity": "high",
-      "changePct": 11.57,
       "observationDate": "2026-09-01"
     },
     {

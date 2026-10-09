@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-09T09:45:41.286Z",
-  "observationCount": 123,
+  "generatedAt": "2026-10-09T13:26:10.831Z",
+  "observationCount": 125,
   "products": [
     "arroz",
     "avena",
@@ -597,31 +597,31 @@
       "product": "diesel",
       "region": "eu",
       "sourceId": "eu_oil_bulletin",
-      "observationDate": "2026-09-28",
+      "observationDate": "2026-10-05",
       "unit": "litro",
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-10-02T12:50:57.678524Z",
+      "verifiedAt": "2026-10-09T13:26:10.362466Z",
       "comparability": "directional",
-      "points": 261,
+      "points": 262,
       "coverageStart": "2005-01-01",
-      "coverageEnd": "2026-09-01"
+      "coverageEnd": "2026-10-01"
     },
     {
       "product": "diesel",
       "region": "us",
       "sourceId": "eia",
-      "observationDate": "2026-09-28",
+      "observationDate": "2026-10-05",
       "unit": "gal",
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-10-02T12:50:54.992Z",
+      "verifiedAt": "2026-10-09T13:26:07.040Z",
       "comparability": "directional",
-      "points": 391,
+      "points": 392,
       "coverageStart": "1994-03-01",
-      "coverageEnd": "2026-09-01"
+      "coverageEnd": "2026-10-01"
     },
     {
       "product": "eurostat_cereals_output_index",
