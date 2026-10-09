@@ -96,11 +96,12 @@ def build():
     for c in COMMODITIES:
         try: rows = fetch(c)
         except Exception as e: log('ERROR', c, repr(e)[:200]); continue
-        keep = 0
+        keep = 0; rej = {}
         for r in rows:
             sd = r['short_desc']
             if c in ALLOW and not re.match(ALLOW[c], sd): continue
-            if r['domain_desc'] != 'TOTAL' or r['prodn_practice_desc'] not in ('ALL PRODUCTION PRACTICES', 'NOT SPECIFIED') or r['util_practice_desc'] not in ('ALL UTILIZATION PRACTICES', 'NOT SPECIFIED'): continue
+            if r['domain_desc'] != 'TOTAL' or (c != 'HEMP' and r['prodn_practice_desc'] not in ('ALL PRODUCTION PRACTICES', 'NOT SPECIFIED')) or r['util_practice_desc'] not in ('ALL UTILIZATION PRACTICES', 'NOT SPECIFIED'):
+                k = (r['domain_desc'], r['prodn_practice_desc'], r['util_practice_desc']); rej[k] = rej.get(k, 0) + 1; continue
             if r['freq_desc'] == 'WEEKLY': continue
             p = period(r); v = num(r['Value'])
             if not p or v is None: continue
@@ -120,6 +121,7 @@ def build():
             cand.setdefault(key, {'group': met[1], 'pts': {}, 'cls': set()})
             cand[key]['pts'][p[1]] = v; keep += 1
         log(c, len(rows), 'filas', keep, 'utiles'); time.sleep(0.3)
+        if c in ('GOATS', 'HEMP', 'TOMATOES'): log('  rechazadas por dominio/practica', sorted(rej.items(), key=lambda x: -x[1])[:6])
     # una unidad por (partes, medida, anual?)
     best = {}
     for k in cand:
@@ -164,7 +166,7 @@ def build():
 def main():
     if not KEY: print('falta NASS_API_KEY'); sys.exit(1)
     ser = build(); log('series', len(ser))
-    LOGF.write_text('\n'.join(LOG[-600:]) + '\n', encoding='utf-8')
+    LOGF.write_text('\n'.join(LOG[-200:]) + '\n', encoding='utf-8')
     if len(ser) < 60: log('demasiado pocas series; no se escribe'); sys.exit(1)
     src = {'name': 'USDA NASS - Quick Stats (national totals: tree nuts, citrus, berries, vegetables, pulses, honey, wool, goats, tobacco, mushrooms, hemp, turkeys)', 'url': 'https://quickstats.nass.usda.gov/', 'license': 'US Government work (public domain); cite USDA NASS'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'countries': {'US': {'name': 'United States', 'extend': True, 'source': src, 'series': ser}}, 'log': LOG[-30:]}
