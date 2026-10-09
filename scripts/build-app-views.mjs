@@ -112,9 +112,34 @@ function nyToUtc(date, time) {  // hora de Nueva York -> ISO UTC, con el horario
 }
 const today = new Date().toISOString().slice(0, 10);
 const cal = exists('data/usda-calendar.json') ? read('data/usda-calendar.json').releases.filter(r => r.date >= today).slice(0, 40).map(r => ({ id: r.id + '-' + r.date, name: r.name, agency: 'USDA ' + r.agency, at: nyToUtc(r.date, r.time) })) : [];
+// Nombre legible (4 idiomas) de un conjunto de datos a partir del nombre del fichero (data/france-campaign-stats.json)
+const TOK = { france: ['Francia', 'France', 'France', 'Francia'], us: ['EE. UU.', 'US', 'États-Unis', 'USA'], eu: ['UE', 'EU', 'UE', 'UE'], eurostat: ['Eurostat', 'Eurostat', 'Eurostat', 'Eurostat'], euw: ['zona euro', 'euro area', 'zone euro', 'area euro'],
+  canada: ['Canadá', 'Canada', 'Canada', 'Canada'], germany: ['Alemania', 'Germany', 'Allemagne', 'Germania'], uk: ['Reino Unido', 'UK', 'Royaume-Uni', 'Regno Unito'], spain: ['España', 'Spain', 'Espagne', 'Spagna'], italy: ['Italia', 'Italy', 'Italie', 'Italia'],
+  poland: ['Polonia', 'Poland', 'Pologne', 'Polonia'], netherlands: ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'], portugal: ['Portugal', 'Portugal', 'Portugal', 'Portogallo'], switzerland: ['Suiza', 'Switzerland', 'Suisse', 'Svizzera'],
+  denmark: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], belgium: ['Bélgica', 'Belgium', 'Belgique', 'Belgio'], austria: ['Austria', 'Austria', 'Autriche', 'Austria'], australia: ['Australia', 'Australia', 'Australie', 'Australia'], argentina: ['Argentina', 'Argentina', 'Argentine', 'Argentina'], chile: ['Chile', 'Chile', 'Chili', 'Cile'],
+  ers: ['USDA ERS', 'USDA ERS', 'USDA ERS', 'USDA ERS'], ttb: ['vino (TTB)', 'wine (TTB)', 'vin (TTB)', 'vino (TTB)'], nass: ['USDA NASS', 'USDA NASS', 'USDA NASS', 'USDA NASS'], insee: ['INSEE', 'INSEE', 'INSEE', 'INSEE'], rnm: ['precios de mercado (RNM)', 'market prices (RNM)', 'prix de marché (RNM)', 'prezzi di mercato (RNM)'],
+  campaign: ['campaña', 'campaign', 'campagne', 'campagna'], dairy: ['lácteos', 'dairy', 'laitier', 'latte'], stocks: ['existencias', 'stocks', 'stocks', 'scorte'], trade: ['comercio', 'trade', 'commerce', 'commercio'], tariffs: ['aranceles', 'tariffs', 'tarifs', 'dazi'],
+  macro: ['macroeconomía', 'macro', 'macroéconomie', 'macroeconomia'], crops: ['cultivos', 'crops', 'cultures', 'colture'], insurance: ['seguros', 'insurance', 'assurance', 'assicurazioni'], drought: ['sequía', 'drought', 'sécheresse', 'siccità'], climate: ['clima', 'climate', 'climat', 'clima'],
+  livestock: ['ganadería', 'livestock', 'élevage', 'zootecnia'], grain: ['cereales', 'grain', 'céréales', 'cereali'], prices: ['precios', 'prices', 'prix', 'prezzi'], regions: ['regiones', 'regions', 'régions', 'regioni'], cattle: ['bovino', 'cattle', 'bovins', 'bovini'], history: ['histórico', 'history', 'historique', 'storico'],
+  wages: ['salarios', 'wages', 'salaires', 'salari'], fertilizers: ['fertilizantes', 'fertilisers', 'engrais', 'fertilizzanti'], diesel: ['gasóleo', 'diesel', 'gazole', 'gasolio'], feed: ['piensos', 'feed', 'aliments', 'mangimi'], lamb: ['cordero', 'lamb', 'agneau', 'agnello'], cpi: ['IPC', 'CPI', 'IPC', 'IPC'],
+  depth: ['detalle', 'detail', 'détail', 'dettaglio'], states: ['estados', 'states', 'États', 'stati'], provinces: ['provincias', 'provinces', 'provinces', 'province'], energy: ['energía', 'energy', 'énergie', 'energia'], markets: ['mercados', 'markets', 'marchés', 'mercati'], economics: ['economía agraria', 'farm economics', 'économie agricole', 'economia agricola'],
+  wine: ['vino', 'wine', 'vin', 'vino'], milk: ['leche', 'milk', 'lait', 'latte'], meat: ['carne', 'meat', 'viande', 'carne'], eggs: ['huevos', 'eggs', 'œufs', 'uova'], fruit: ['fruta', 'fruit', 'fruits', 'frutta'], vegetables: ['hortalizas', 'vegetables', 'légumes', 'ortaggi'], production: ['producción', 'production', 'production', 'produzione'],
+  extras: ['otros datos', 'other data', 'autres données', 'altri dati'], water: ['agua', 'water', 'eau', 'acqua'], wheat: ['trigo', 'wheat', 'blé', 'grano'], corn: ['maíz', 'corn', 'maïs', 'mais'], pig: ['porcino', 'pigs', 'porcins', 'suini'], pork: ['porcino', 'pork', 'porc', 'suino'] };
+const SKIP_TOK = new Set(['stats', 'data', 'update']);
+function datasetName(file) {
+  const base = String(file || '').replace(/^data\//, '').replace(/\.json$/, '');
+  const parts = base.split('-').filter(x => x && !SKIP_TOK.has(x));
+  if (!parts.length) return null;
+  const o = {};
+  LANGS.forEach((l, i) => {
+    const w = parts.map(x => TOK[x] ? TOK[x][i] : x.length <= 3 ? x.toUpperCase() : x.charAt(0).toUpperCase() + x.slice(1));
+    o[l] = w.length > 1 ? w[0] + ': ' + w.slice(1).join(' ') : w[0];
+  });
+  return o;
+}
 const todayDoc = {
   index: idx ? { value: idx.value, period: idx.lastPeriod, changeMoMPct: idx.changeMoMPct, changeYoYPct: idx.changeYoYPct, base: idx.base } : null,
-  newDatasets: brief ? (brief.newDatasets || []).slice(0, 8).map(x => ({ file: x.file, name: x.name, series: x.series })) : [],
+  newDatasets: brief ? (brief.newDatasets || []).slice(0, 8).map(x => ({ file: x.file, name: x.name, ...(datasetName(x.file) ? { nameT: datasetName(x.file) } : {}), series: x.series })) : [],
   revisions: brief ? (brief.revisions || []).length : 0,
   calendar: cal
 };

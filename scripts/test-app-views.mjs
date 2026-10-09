@@ -47,6 +47,7 @@ for (const p of P) {
 const T = load('today.json');
 ok(!T.index || typeof T.index.value === 'number', 'today: indice');
 ok(Array.isArray(T.calendar) && T.calendar.every(e => /Z$/.test(e.at) && e.name), 'today: calendario sin hora UTC');
+(T.newDatasets || []).forEach(d => { if (d.nameT) four(d.nameT, 'today.newDatasets ' + d.file); });
 const N = load('news.json').news;
 ok(N.every(n => n.title && /^https?:\/\//.test(n.url) && n.source), 'news: titular, medio o enlace');
 ok(N.every(n => !('x' in n) && !('text' in n)), 'news: no se publica el texto de las noticias');
