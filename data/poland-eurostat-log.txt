@@ -3,6 +3,7 @@ censos 74 series
 carne 42 series
 sacrificio mensual 46 series
 leche 19 series
+huevos 1 series
 aves 71 series
 indices de precios 64 series
 precios absolutos 49 series
