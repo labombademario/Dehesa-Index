@@ -1,10 +1,10 @@
 ALMONDS 503 filas 53 utiles
-PECANS 1080 filas 102 utiles
-WALNUTS 459 filas 47 utiles
+PECANS 1086 filas 102 utiles
+WALNUTS 461 filas 47 utiles
 PISTACHIOS 458 filas 50 utiles
-ORANGES 5157 filas 1004 utiles
-GRAPEFRUIT 3378 filas 720 utiles
-LEMONS 3299 filas 731 utiles
+ORANGES 5169 filas 1004 utiles
+GRAPEFRUIT 3382 filas 720 utiles
+LEMONS 3303 filas 731 utiles
 STRAWBERRIES 2578 filas 182 utiles
 BLUEBERRIES 889 filas 178 utiles
 CRANBERRIES 583 filas 99 utiles
@@ -14,7 +14,7 @@ TOMATOES 1104 filas 367 utiles
   rechazadas por dominio/practica []
 ONIONS 2406 filas 204 utiles
 LETTUCE 1384 filas 383 utiles
-BEANS 5912 filas 136 utiles
+BEANS 5916 filas 136 utiles
 LENTILS 1270 filas 507 utiles
 PEAS 2904 filas 487 utiles
 HONEY 1727 filas 144 utiles
@@ -22,7 +22,7 @@ WOOL 667 filas 137 utiles
 MOHAIR 660 filas 130 utiles
 GOATS 3605 filas 289 utiles
   rechazadas por dominio/practica []
-TOBACCO 6556 filas 2057 utiles
+TOBACCO 6574 filas 2057 utiles
 MUSHROOMS 1083 filas 201 utiles
 HEMP 633 filas 10 utiles
   rechazadas por dominio/practica []
