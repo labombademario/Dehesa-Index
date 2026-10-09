@@ -10,7 +10,7 @@ const KB = 1024;
 const BUDGET = { data: 950 * KB, js: 120 * KB, css: 60 * KB };   // gzip, por fichero
 // Deuda conocida: ficheros que ya superan el presupuesto (se cargan solo bajo demanda). Cada uno con su limite propio.
 // Sin deuda conocida: ningun fichero grande se excusa aqui. Si hiciera falta una excepcion, debe ir con su motivo documentado en ARCHITECTURE.md.
-const KNOWN_DEBT = {};
+const KNOWN_DEBT = { 'data/eu-trade-stats.json': 2400 * KB };   // BUILD_ONLY (el navegador no lo pide; usa data/views/trade-products/<cc>.json): comercio Comext de los 27 Estados miembros, 9 oct 2026. Ver ARCHITECTURE.md
 // Presupuestos mas estrictos para los arboles que el navegador baja bajo demanda (gzip, por fichero).
 const DIR_BUDGET = [['data/series/', 200 * KB], ['data/catalog/', 175 * KB], ['data/prices/', 250 * KB], ['data/views/', 120 * KB], ['data/eu/', 120 * KB]];
 // Recorre TODO el arbol (data/catalog/**, data/series/**, data/eu/**...). Antes se saltaba los subdirectorios y no medía justo lo nuevo.

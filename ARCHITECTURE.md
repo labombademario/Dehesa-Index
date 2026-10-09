@@ -49,3 +49,7 @@ Pregunta que responde: ¿que pagan por mi grano en mi zona?
 - **Granularidad**: `locationType` = geografia que representa el precio (REGION, TERMINAL, EXPORT_MARKET, STATE, CITY solo por override explicito, ELEVATOR solo si el informe identifica un elevador). La UI lo explica en cada fila y el mapa colorea estados; no hay puntos sin coordenadas oficiales.
 - **Integraciones**: Smart Watchlist (`c='CB'`, reglas new/above/below/pct/basis), Daily Brief (`cashBids`: rango por grupo, nunca una variacion combinada; revisiones «USDA revised …»), Ficha de producto 3.0 (bloque «Mercados locales» en maiz, trigo y soja), Freshness Engine (diario / semanal), License Gate (ver DATA_SOURCES.md).
 - **Preparado, no construido**: «cerca de mi» (codigo postal/condado/coordenadas) y premio/descuento local frente a la referencia nacional (hoy no comparable: la referencia de Dehesa es el precio mensual recibido NASS).
+
+
+## Excepcion de presupuesto: data/eu-trade-stats.json
+Comercio exterior UE (Eurostat Comext) de los 27 Estados miembros en un solo fichero (~8 MB, ~2,1 MB gzip; limite propio 2400 KB gzip). Es BUILD_ONLY: alimenta el catalogo y las vistas por pais, el navegador no lo descarga. Si crece mas, partirlo por pais (data/eu-trade/<cc>.json) en lugar de subir el limite.
