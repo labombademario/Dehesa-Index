@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T23:28:15Z",
+ "generatedAt": "2026-10-09T00:39:27Z",
  "summary": {
-  "files": 40,
+  "files": 41,
   "errors": 0,
   "warnings": 13
  },
@@ -545,6 +545,22 @@
     "lines": 0
    },
    "generatedAt": "2026-10-08T21:50:29Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "eu-stocks-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 103,
+    "points": 798,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T23:44:58Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
