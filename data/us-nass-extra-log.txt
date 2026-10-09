@@ -1,0 +1,179 @@
+ALMONDS 503 filas 53 utiles
+PECANS 1080 filas 102 utiles
+WALNUTS 459 filas 47 utiles
+PISTACHIOS 458 filas 50 utiles
+ORANGES 5157 filas 1004 utiles
+GRAPEFRUIT 3378 filas 720 utiles
+LEMONS 3299 filas 731 utiles
+STRAWBERRIES 2578 filas 182 utiles
+BLUEBERRIES 889 filas 178 utiles
+CRANBERRIES 583 filas 99 utiles
+PEACHES 1645 filas 104 utiles
+APPLES 1980 filas 104 utiles
+TOMATOES 1104 filas 10 utiles
+ONIONS 2406 filas 204 utiles
+LETTUCE 1384 filas 383 utiles
+BEANS 5912 filas 136 utiles
+LENTILS 1270 filas 507 utiles
+PEAS 2904 filas 487 utiles
+HONEY 1727 filas 144 utiles
+WOOL 667 filas 137 utiles
+MOHAIR 660 filas 130 utiles
+GOATS 3605 filas 21 utiles
+TOBACCO 6556 filas 2057 utiles
+MUSHROOMS 1083 filas 201 utiles
+HEMP 633 filas 0 utiles
+TURKEYS 24944 filas 434 utiles
+descartada ('APPLES',) production value sin dato desde 2003
+descartada ('BLUEBERRIES',) price received sin dato desde 2016
+descartada ('BLUEBERRIES',) production value sin dato desde 2003
+descartada ('CRANBERRIES',) production value sin dato desde 2003
+descartada ('LENTILS',) stocks periodicidad irregular
+descartada ('LETTUCE', 'HEAD') price received sin dato desde 2022-08
+descartada ('MUSHROOMS',) production value sin dato desde 2003
+descartada ('ONIONS', 'DRY') price received sin dato desde 2005-12
+descartada ('ORANGES', 'MID & NAVEL', 'on tree equiv') price received USD/box pocos puntos 1
+descartada ('ORANGES', 'MID & NAVEL', 'phd equiv') price received USD/box pocos puntos 2
+descartada ('ORANGES', 'VALENCIA', 'on tree equiv') price received USD/box pocos puntos 2
+descartada ('ORANGES', 'VALENCIA', 'phd equiv') price received USD/box pocos puntos 2
+descartada ('PEACHES',) production value sin dato desde 2003
+descartada ('PEACHES', 'CLINGSTONE') price received sin dato desde 2005
+descartada ('PEACHES', 'CLINGSTONE') production short tons pocos puntos 1
+descartada ('PEACHES', 'FREESTONE') price received sin dato desde 2009
+descartada ('PEACHES', 'FREESTONE') production short tons pocos puntos 1
+descartada ('PEAS', 'DRY EDIBLE') stocks periodicidad irregular
+descartada ('PECANS', 'IMPROVED') area bearing  pocos puntos 2
+descartada ('PECANS', 'IMPROVED') yield lb/acre pocos puntos 2
+descartada ('PECANS', 'NATIVE & SEEDLING') yield lb/acre pocos puntos 2
+descartada ('PISTACHIOS',) production value sin dato desde 2003
+descartada ('PISTACHIOS',) yield short tons/acre pocos puntos 1
+descartada ('TOBACCO', 'AIR-CURED DARK (CLASS 3B)') price received sin dato desde 2005-02
+descartada ('TOBACCO', 'AIR-CURED DARK GREEN RIVER BELT (TYPE 36)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK GREEN RIVER BELT (TYPE 36)') price received sin dato desde 2005-02
+descartada ('TOBACCO', 'AIR-CURED DARK GREEN RIVER BELT (TYPE 36)') price received sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK GREEN RIVER BELT (TYPE 36)') production sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK GREEN RIVER BELT (TYPE 36)') production value sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK GREEN RIVER BELT (TYPE 36)') yield sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK KY-TN (TYPE 35-36)') price received sin dato desde 2005-02
+descartada ('TOBACCO', 'AIR-CURED DARK KY-TN (TYPE 35-36)') price received sin dato desde 2005
+descartada ('TOBACCO', 'AIR-CURED DARK ONE-SUCKER BELT (TYPE 35)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK ONE-SUCKER BELT (TYPE 35)') price received sin dato desde 2005-01
+descartada ('TOBACCO', 'AIR-CURED DARK ONE-SUCKER BELT (TYPE 35)') price received sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK ONE-SUCKER BELT (TYPE 35)') production sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK ONE-SUCKER BELT (TYPE 35)') production value sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK ONE-SUCKER BELT (TYPE 35)') yield sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK SUN-CURED BELT (TYPE 37)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK SUN-CURED BELT (TYPE 37)') price received sin dato desde 2005-01
+descartada ('TOBACCO', 'AIR-CURED DARK SUN-CURED BELT (TYPE 37)') price received sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK SUN-CURED BELT (TYPE 37)') production sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK SUN-CURED BELT (TYPE 37)') production value sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED DARK SUN-CURED BELT (TYPE 37)') yield sin dato desde 2004
+descartada ('TOBACCO', 'AIR-CURED LIGHT (CLASS 3A)') price received sin dato desde 2005-03
+descartada ('TOBACCO', 'AIR-CURED LIGHT BURLEY (TYPE 31)') price received sin dato desde 2005-03
+descartada ('TOBACCO', 'AIR-CURED LIGHT SOUTHERN MD BELT (TYPE 32)') price received USD/lb pocos puntos 10
+descartada ('TOBACCO', 'CIGAR BINDER (CLASS 5)') area harvested sin dato desde 2009
+descartada ('TOBACCO', 'CIGAR BINDER (CLASS 5)') price received sin dato desde 2007
+descartada ('TOBACCO', 'CIGAR BINDER (CLASS 5)') production sin dato desde 2009
+descartada ('TOBACCO', 'CIGAR BINDER (CLASS 5)') production value sin dato desde 2007
+descartada ('TOBACCO', 'CIGAR BINDER (CLASS 5)') yield sin dato desde 2009
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY (CLASS 5A)') area harvested sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY (CLASS 5A)') price received sin dato desde 2006
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY (CLASS 5A)') production sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY (CLASS 5A)') production value sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY (CLASS 5A)') yield sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY BROADLEAF (TYPE 51)') area harvested sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY BROADLEAF (TYPE 51)') price received sin dato desde 2012
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY BROADLEAF (TYPE 51)') production sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY BROADLEAF (TYPE 51)') production value sin dato desde 2011
+descartada ('TOBACCO', 'CIGAR BINDER CONN VALLEY BROADLEAF (TYPE 51)') yield sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR BINDER NORTHERN WISCONSIN (TYPE 55)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER NORTHERN WISCONSIN (TYPE 55)') price received sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER NORTHERN WISCONSIN (TYPE 55)') production sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER NORTHERN WISCONSIN (TYPE 55)') production value sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER NORTHERN WISCONSIN (TYPE 55)') yield sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER SOUTHERN WISCONSIN (TYPE 54)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER SOUTHERN WISCONSIN (TYPE 54)') price received sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER SOUTHERN WISCONSIN (TYPE 54)') production sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER SOUTHERN WISCONSIN (TYPE 54)') production value sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER SOUTHERN WISCONSIN (TYPE 54)') yield sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER WISCONSIN (CLASS 5B)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER WISCONSIN (CLASS 5B)') price received sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER WISCONSIN (CLASS 5B)') production sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER WISCONSIN (CLASS 5B)') production value sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR BINDER WISCONSIN (CLASS 5B)') yield sin dato desde 2004
+descartada ('TOBACCO', 'CIGAR FILLER (CLASS 4)') area harvested sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR FILLER (CLASS 4)') price received USD/lb pocos puntos 2
+descartada ('TOBACCO', 'CIGAR FILLER (CLASS 4)') production sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR FILLER (CLASS 4)') production value USD pocos puntos 2
+descartada ('TOBACCO', 'CIGAR FILLER (CLASS 4)') yield sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR TYPES', 'BINDER & WRAPPER (CLASS 5-6)') area harvested sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR TYPES', 'BINDER & WRAPPER (CLASS 5-6)') price received sin dato desde 2015
+descartada ('TOBACCO', 'CIGAR TYPES', 'BINDER & WRAPPER (CLASS 5-6)') production sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR TYPES', 'BINDER & WRAPPER (CLASS 5-6)') production value sin dato desde 2015
+descartada ('TOBACCO', 'CIGAR TYPES', 'BINDER & WRAPPER (CLASS 5-6)') yield sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR TYPES (CLASS 4-6)') area harvested sin dato desde 2021
+descartada ('TOBACCO', 'CIGAR TYPES (CLASS 4-6)') price received sin dato desde 2022
+descartada ('TOBACCO', 'CIGAR TYPES (CLASS 4-6)') production sin dato desde 2021
+descartada ('TOBACCO', 'CIGAR TYPES (CLASS 4-6)') production value sin dato desde 2022
+descartada ('TOBACCO', 'CIGAR TYPES (CLASS 4-6)') yield sin dato desde 2021
+descartada ('TOBACCO', 'CIGAR WRAPPER (CLASS 6)') area harvested sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR WRAPPER (CLASS 6)') price received sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR WRAPPER (CLASS 6)') production sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR WRAPPER (CLASS 6)') production value sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR WRAPPER (CLASS 6)') yield sin dato desde 2002
+descartada ('TOBACCO', 'CIGAR WRAPPER CONN VALLEY SHADE-GROWN (TYPE 61)') area harvested sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR WRAPPER CONN VALLEY SHADE-GROWN (TYPE 61)') price received sin dato desde 2006
+descartada ('TOBACCO', 'CIGAR WRAPPER CONN VALLEY SHADE-GROWN (TYPE 61)') production sin dato desde 2016
+descartada ('TOBACCO', 'CIGAR WRAPPER CONN VALLEY SHADE-GROWN (TYPE 61)') production value sin dato desde 2006
+descartada ('TOBACCO', 'CIGAR WRAPPER CONN VALLEY SHADE-GROWN (TYPE 61)') yield sin dato desde 2016
+descartada ('TOBACCO', 'FIRE-CURED (CLASS 2)') price received sin dato desde 2005-02
+descartada ('TOBACCO', 'FIRE-CURED EASTERN DISTRICT (TYPE 22)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED EASTERN DISTRICT (TYPE 22)') price received sin dato desde 2005-02
+descartada ('TOBACCO', 'FIRE-CURED EASTERN DISTRICT (TYPE 22)') price received sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED EASTERN DISTRICT (TYPE 22)') production sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED EASTERN DISTRICT (TYPE 22)') production value sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED EASTERN DISTRICT (TYPE 22)') yield sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED KY-TN (TYPE 22-23)') price received sin dato desde 2005-02
+descartada ('TOBACCO', 'FIRE-CURED KY-TN (TYPE 22-23)') price received sin dato desde 2005
+descartada ('TOBACCO', 'FIRE-CURED VA BELT (TYPE 21)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED VA BELT (TYPE 21)') price received sin dato desde 2005-01
+descartada ('TOBACCO', 'FIRE-CURED VA BELT (TYPE 21)') price received sin dato desde 2005
+descartada ('TOBACCO', 'FIRE-CURED VA BELT (TYPE 21)') production sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED VA BELT (TYPE 21)') production value sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED VA BELT (TYPE 21)') yield sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED WESTERN DISTRICT (TYPE 23)') area harvested sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED WESTERN DISTRICT (TYPE 23)') price received sin dato desde 2005-02
+descartada ('TOBACCO', 'FIRE-CURED WESTERN DISTRICT (TYPE 23)') price received sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED WESTERN DISTRICT (TYPE 23)') production sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED WESTERN DISTRICT (TYPE 23)') production value sin dato desde 2004
+descartada ('TOBACCO', 'FIRE-CURED WESTERN DISTRICT (TYPE 23)') yield sin dato desde 2004
+descartada ('TOBACCO', 'FLUE-CURED (CLASS 1)') price received sin dato desde 2004-11
+descartada ('TOBACCO', 'FLUE-CURED EAST NC BELT (TYPE 12)') area harvested sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED EAST NC BELT (TYPE 12)') price received USD/lb pocos puntos 4
+descartada ('TOBACCO', 'FLUE-CURED EAST NC BELT (TYPE 12)') price received sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED EAST NC BELT (TYPE 12)') production sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED EAST NC BELT (TYPE 12)') production value sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED EAST NC BELT (TYPE 12)') yield sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED GA-FLA BELT (TYPE 14)') area harvested sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED GA-FLA BELT (TYPE 14)') price received USD/lb pocos puntos 4
+descartada ('TOBACCO', 'FLUE-CURED GA-FLA BELT (TYPE 14)') price received sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED GA-FLA BELT (TYPE 14)') production sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED GA-FLA BELT (TYPE 14)') production value sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED GA-FLA BELT (TYPE 14)') yield sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED NC BORD & SC BELT (TYPE 13)') area harvested sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED NC BORD & SC BELT (TYPE 13)') price received USD/lb pocos puntos 4
+descartada ('TOBACCO', 'FLUE-CURED NC BORD & SC BELT (TYPE 13)') price received sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED NC BORD & SC BELT (TYPE 13)') production sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED NC BORD & SC BELT (TYPE 13)') production value sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED NC BORD & SC BELT (TYPE 13)') yield sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED OLD/MID BELTS (TYPE 11)') area harvested sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED OLD/MID BELTS (TYPE 11)') price received USD/lb pocos puntos 4
+descartada ('TOBACCO', 'FLUE-CURED OLD/MID BELTS (TYPE 11)') price received sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED OLD/MID BELTS (TYPE 11)') production sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED OLD/MID BELTS (TYPE 11)') production value sin dato desde 2005
+descartada ('TOBACCO', 'FLUE-CURED OLD/MID BELTS (TYPE 11)') yield sin dato desde 2005
+descartada ('TOBACCO', 'NON-CIGAR TYPES (CLASS 1-3)') price received sin dato desde 2005-03
+descartada ('TOBACCO', 'NON-CIGAR TYPES (CLASS 1-3)') price received sin dato desde 2005
+descartada ('TOBACCO', 'TYPE 42-44') price received sin dato desde 2004
+descartada ('WALNUTS', 'ENGLISH') yield short tons/acre pocos puntos 2
+series 190

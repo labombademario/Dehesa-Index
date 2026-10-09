@@ -2269,6 +2269,84 @@
    "additionalRestrictions": "The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse under the Arrêté du 24 juin 2014 and that the API is under the Licence Ouverte 2.0. The rest of the usage conditions on that page (second bullet) was cut off and not read, so we cite the source and the arrêté reference as a precaution. Amounts are extracts transcribed by hand from the JORF article texts; the Journal officiel prevails. We read the DILA open-data archives, not the Légifrance site or the PISTE API, so there is no account or API key. There is no automated refresh.",
    "evidence": "Légifrance «Open data et API»: «Les données de Légifrance sont mises à disposition pour une réutilisation gratuite comme disposé par l'Arrêté du 24 juin 2014». Texts come from echanges.dila.gouv.fr/OPENDATA/JORF/ (the free dump); official arrêtés are also public-domain legal acts. Medium confidence because the full conditions of reuse were not read.",
    "short": "JORF / DILA (FR)"
+  },
+  "noaa_ncei": {
+   "name": "NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv)",
+   "url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); NOAA NCEI asks for citation",
+   "licenseUrl": "https://www.ncei.noaa.gov/access/monitoring/dyk/data-access-terms",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: NOAA National Centers for Environmental Information (NCEI), Climate at a Glance",
+   "additionalRestrictions": "No implied NOAA endorsement.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-09",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "NOAA NCEI data are US Government works in the public domain; NCEI requests that NCEI be cited as the source.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "NOAA NCEI",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Obra del gobierno federal de EE. UU. (dominio publico) con peticion de cita."
+  },
+  "kansas_city_fed": {
+   "name": "Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District)",
+   "url": "https://www.kansascityfed.org/agriculture/ag-credit-survey/",
+   "country": "US",
+   "licenseId": "KCFED-OWNER-DECISION",
+   "licenseName": "Federal Reserve Bank of Kansas City: terms accepted by the site owner",
+   "licenseUrl": "https://www.kansascityfed.org/about-us/terms-of-use/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Federal Reserve Bank of Kansas City, Agricultural Credit Survey",
+   "additionalRestrictions": "No implied endorsement by the Federal Reserve.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-09",
+   "status": "VERIFIED",
+   "confidence": "low",
+   "evidence": "Marked VERIFIED by the site owner's decision (2026-10-09); the Bank's terms of use were not independently reviewed in this session.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "KC Fed",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "Verde por decision del propietario del sitio; los terminos de uso no se revisaron de forma independiente."
+  },
+  "usda_nrcs": {
+   "name": "USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API)",
+   "url": "https://www.nrcs.usda.gov/resources/data-and-reports/snow-and-water-interactive-map",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); NRCS asks for citation",
+   "licenseUrl": "https://www.nrcs.usda.gov/privacy-policy",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: USDA Natural Resources Conservation Service (NRCS), SNOTEL network",
+   "additionalRestrictions": "No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-09",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "USDA NRCS data are US Government works in the public domain; NRCS requests citation. SNOTEL data are provisional until reviewed.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "USDA NRCS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Obra del gobierno federal de EE. UU. (dominio publico) con peticion de cita."
   }
  },
  "files": {
@@ -3084,6 +3162,24 @@
     "Eurostat": "eurostat"
    },
    "notes": "Existencias de cierre (STK_CL, miles de toneladas, anual) de los balances de cereales y oleaginosas de Eurostat (apro_cbs_cer, apro_cbs_oil), tal como las notifica cada Estado miembro; scripts/update-eu-stocks.py."
+  },
+  "data/us-nass-extra-stats.json": {
+   "byCountry": {
+    "US": "usda_nass"
+   },
+   "notes": "Totales nacionales de USDA NASS Quick Stats (frutos secos, citricos, bayas, hortalizas, legumbres, miel, lana, cabras, tabaco, champinon, canamo, pavo), sin cambiar valores salvo escala a millones."
+  },
+  "data/us-climate-stats.json": {
+   "byCountry": {
+    "US": "noaa_ncei"
+   },
+   "notes": "Temperatura media, precipitacion e indice de sequia de Palmer mensuales por estado (NOAA NCEI nClimDiv), sin conversiones."
+  },
+  "data/us-kcfed-stats.json": {
+   "byCountry": {
+    "US": "kansas_city_fed"
+   },
+   "notes": "Encuesta de credito agrario de la Fed de Kansas City: tipos de interes, valor de la tierra e indices de credito del Tenth District, sin cambiar valores."
   }
  },
  "derived": [

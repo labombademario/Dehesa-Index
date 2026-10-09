@@ -766,6 +766,44 @@ sources:
     data: [eu-gapfill-stats.json]
     log: eu-gapfill-log.txt
     message: Datos huecos de cobertura (Eurostat, Destatis)
+  - id: us-nass-extra
+    name: Update US NASS extra products (tree nuts, citrus, berries, vegetables, pulses, honey, wool, goats, tobacco, mushrooms, hemp, turkeys)
+    cron: ['50 21 * * 5']
+    script: scripts/update-nass-extra.py
+    timeout: 40
+    script_timeout: 30
+    env: {NASS_API_KEY: '${{ secrets.NASS_API_KEY }}'}
+    data: [us-nass-extra-stats.json]
+    log: us-nass-extra-log.txt
+    message: Datos EEUU NASS (frutos secos, citricos, bayas, hortalizas, legumbres, miel, lana, cabras, tabaco, champinon, canamo, pavo)
+  - id: us-climate
+    name: Update US state climate (NOAA NCEI nClimDiv)
+    cron: ['10 8 12 * *']
+    script: scripts/update-us-climate.py
+    timeout: 20
+    script_timeout: 12
+    data: [us-climate-stats.json]
+    log: us-climate-log.txt
+    message: Datos EEUU clima por estado (NOAA NCEI)
+  - id: us-kcfed
+    name: Update US Kansas City Fed Agricultural Credit Survey (interest rates, farmland values)
+    cron: ['20 9 15 2,5,8,11 *']
+    script: scripts/update-kc-fed-ag-credit.py
+    pre: ['pip install openpyxl']
+    timeout: 15
+    script_timeout: 8
+    data: [us-kcfed-stats.json]
+    log: us-kcfed-log.txt
+    message: Datos EEUU credito agrario Fed de Kansas City (tipos de interes, valor de la tierra)
+  - id: us-snotel
+    name: Update US western snowpack (USDA NRCS SNOTEL, snow water equivalent by state)
+    cron: ['30 8 3 * *']
+    script: scripts/update-us-snotel.py
+    timeout: 20
+    script_timeout: 12
+    data: [us-snotel-stats.json]
+    log: us-snotel-log.txt
+    message: Datos EEUU nieve del Oeste por estado (SNOTEL, USDA NRCS)
   - id: eu-cap
     name: Update EU CAP allocations by Member State (Regulation 2021/2115, EUR-Lex)
     cron: ['40 7 * * 1']

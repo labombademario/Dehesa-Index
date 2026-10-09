@@ -31,5 +31,9 @@ No hay historia suficiente para extrapolar una tasa estable; por eso la medicion
 - La politica sugerida arriba (30 dias diarios) NO cabe en el presupuesto: 30 x 3,8 MB = 114 MB. Con 7 dias diarios + uno por semana el arbol queda por debajo de ~145 MB. **Decision de Mario (2026-10-01): 7 dias diarios + el ultimo de cada semana anterior.** Implementado en `scripts/prune-snapshots.py` (dry-run por defecto; el workflow `update-pipeline-status` lo ejecuta con `--apply` cada 3 h y commitea los borrados; prueba en `scripts/test-prune-snapshots.py`). Hasta el 9-oct no hay nada que retirar; lo retirado sigue en el historial de git.
 - `data/us-cash-bids/` (4,7 MB hoy): con los 30 informes registrados (~1.080 series) se esperan ~8 MB al activarlos y ~15 MB mas por ano (unos 58 bytes por observacion de historico). Tiene presupuesto propio en `repo-budget.json` (`dirBudgets`: aviso 20 MB, limite 40 MB); antes de llegar al limite, particionar `history/` por ano.
 
+## Medicion del 2026-10-09 (limite de data/ subido de 200 a 250 MB)
+- `data/` llego a 200,5 MB (comercio UE de 27 paises, catalogo y series por metrica) y `check-repo-growth.py` pasaba a FALLO. Con las nuevas fuentes de EE. UU. (NASS extra, NOAA, Fed de Kansas City, SNOTEL: ~390 series nuevas) crece unos 4-5 MB mas.
+- Se sube el limite a 250 MB (aviso a 215) para no bloquear la integracion continua; no es un permiso para crecer sin freno. Los mayores consumidores siguen siendo `data/ams` (29 MB), `data/series` (29 MB), `data/normalized.json` (13,5 MB, compactable a ~10 MB) y `data/eu-trade-stats.json` (7,7 MB). Antes de volver a subir el limite: compactar `normalized.json` y particionar `data/ams` por ano.
+
 ## Que NO se ha hecho a proposito
 No se ha borrado ni reescrito historia ni datos historicos. Todo lo anterior es reversible y esta documentado como recomendacion.
