@@ -112,3 +112,7 @@ OK ch-foag-potato-import-frozen 116 pts 2017-01..2026-08 FOAG: etapa Import; bas
 OK ch-foag-meat-supply-rabbit 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-meat-supply-horse 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-meat-supply-goat 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-milk-index-dairy 199 pts 2010-01..2026-07 FOAG: etapa Production, not further defined; base de IVA: NA.
+OK ch-foag-butter-cream-index 199 pts 2010-01..2026-07 FOAG: etapa Ex-processing/industry; base de IVA: excl. VAT.
+OK ch-foag-egg-import-table 27 pts 1999..2025 FOAG: etapa Import; base de IVA: NA.
+OK ch-foag-egg-import-processing 27 pts 1999..2025 FOAG: etapa Import; base de IVA: NA.
