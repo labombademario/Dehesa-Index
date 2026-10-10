@@ -1,0 +1,27 @@
+name: probe-ismea
+on: push
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          set +e; mkdir -p probe
+          UA="Mozilla/5.0 (compatible; DehesaIndexProbe/1.0; +https://dehesaindex.com)"
+          curl -sS -m 30 -o probe/ov.crt http://crt.sectigo.com/SectigoPublicServerAuthenticationCAOVR36.crt; echo "ov rc=$?" > probe/steps.out.txt
+          curl -sS -m 30 -o probe/dv.crt http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt; echo "dv rc=$?" >> probe/steps.out.txt
+          for f in ov dv; do (openssl x509 -inform DER -in probe/$f.crt -out probe/$f.pem 2>/dev/null || cp probe/$f.crt probe/$f.pem); openssl x509 -in probe/$f.pem -noout -subject -issuer -dates >> probe/steps.out.txt 2>&1; done
+          # verificacion: la hoja con el intermedio descargado debe llegar a una raiz del almacen del sistema
+          echo | openssl s_client -connect www.ismeamercati.it:443 -servername www.ismeamercati.it 2>/dev/null | openssl x509 > probe/leaf.pem
+          openssl verify -untrusted probe/ov.pem probe/leaf.pem >> probe/steps.out.txt 2>&1
+          cat /etc/ssl/certs/ca-certificates.crt probe/ov.pem probe/dv.pem > probe/bundle.pem
+          g() { curl -sS -L -m 40 -A "$UA" --cacert probe/bundle.pem -D "probe/$1.hdr.out.txt" "$2" -o "probe/$1.body"; echo "$1 rc=$? $(wc -c < probe/$1.body)" >> probe/steps.out.txt; head -c "${3:-8000}" "probe/$1.body" > "probe/$1.out.txt"; rm -f "probe/$1.body"; }
+          g robots https://www.ismeamercati.it/robots.txt 3000
+          g home https://www.ismeamercati.it/ 15000
+          g sitemap https://www.ismeamercati.it/sitemap.xml 8000
+          g ismea-home https://www.ismea.it/ 6000
+          rm -f probe/bundle.pem
+          git config user.name probe; git config user.email probe@x
+          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-ismea2-out -f
