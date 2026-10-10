@@ -135,10 +135,18 @@ except Exception as e:
 # existencias de cereales (KORN2: semestral, existencias a fin de semestre en almacenistas y en granjas, millones de kg)
 # y de colza (KORN: anual, «Stocks, ultimo», origen danes + importado, año natural). Se publican por separado, sin sumar ni estimar.
 for cid, key, label in [("H105", "wheat", "Wheat"), ("H130", "rye", "Rye"), ("H145", "barley", "Barley"), ("H146", "oats", "Oats (incl. cereal mixtures)"), ("H148", "maize", "Maize")]:
-    for ak, who, wl in [("K10", "trade", "at trade companies"), ("K20", "farms", "on farms")]:
-        add(dk, "dk-stock-%s-%s" % (key, who), "%s: stocks %s, end of half-year (KORN2)" % (label, wl), "million kg", "semiannual", lambda c=cid, a=ak: dst("KORN2", [("AFGRØDE", [c]), ("AK", [a])]), "stocks")
+    # almacenistas: fin de cada semestre (30-jun y 31-dic)
+    add(dk, "dk-stock-%s-trade" % key, "%s: stocks at trade companies, end of half-year (KORN2)" % label, "million kg", "semiannual", lambda c=cid: dst("KORN2", [("AFGRØDE", [c]), ("AK", ["K10"])]), "stocks")
+    # granjas: encuesta anual a 30 de junio (Statistics Denmark solo publica el primer semestre) -> serie anual fechada en junio
+    add(dk, "dk-stock-%s-farms" % key, "%s: stocks on farms at 30 June (annual survey, KORN2)" % label, "million kg", "annual", lambda c=cid: [(t[:4] + "-06", v) for t, v in dst("KORN2", [("AFGRØDE", [c]), ("AK", ["K20"])]) if t.endswith("H1")], "stocks")
+def dk_korn(cid):
+    """KORN, «Stocks, ultimo» (TYPE 0445), año natural: total danes + importado; si la tabla no lo da para ese cultivo, solo origen danes. Se registra cual se usa."""
+    for o in ("004", "005"):
+        pts = dst("KORN", [("AFGRØDE", [cid]), ("PERIODE", ["KAAR"]), ("OPRIND", [o]), ("TYPE", ["0445"])])
+        if len(pts) >= 3: log.append("KORN %s: origen %s" % (cid, o)); return pts
+    return []
 for cid, key, label in [("H205", "rapeseed", "Rape seeds"), ("H105", "wheat", "Wheat"), ("H145", "barley", "Barley")]:
-    add(dk, "dk-stock-%s-yearend" % key, "%s: stocks at year end, Danish and imported (KORN)" % label, "million kg", "annual", lambda c=cid: dst("KORN", [("AFGRØDE", [c]), ("PERIODE", ["KAAR"]), ("OPRIND", ["004"]), ("TYPE", ["0445"])]), "stocks")
+    add(dk, "dk-stock-%s-yearend" % key, "%s: stocks at year end (KORN)" % label, "million kg", "annual", lambda c=cid: dk_korn(c), "stocks")
 
 countries["DK"] = {"name": "Denmark", "source": {"name": "Statistics Denmark (StatBank)", "url": "https://www.statbank.dk/", "license": "CC BY 4.0"}, "series": dk}
 
