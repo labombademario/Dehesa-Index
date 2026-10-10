@@ -47,6 +47,7 @@ const PAGES = [
   { n: 'status', url: '/status.html', crit: [] },
   { n: 'metodologia', url: '/metodologia.html', crit: [] },
   { n: 'europa', url: '/europa.html', crit: ['#eu-sel'] },
+  { n: 'lonjas', url: '/lonjas.html', crit: ['#lj-body table'] },
   { n: 'sequia', url: '/sequia.html', crit: [] },
   { n: 'ganaderia', url: '/ganaderia.html', crit: [] },
   { n: 'exportaciones', url: '/exportaciones.html', crit: [] },

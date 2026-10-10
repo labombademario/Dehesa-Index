@@ -39,7 +39,7 @@
   var lang = readLang() || detectLang();
   var theme = readTheme();
 
-  var DENSITY = { 'precios.html': 'compact', 'europa.html': 'compact', 'mercados.html': 'compact', 'precios-locales.html': 'compact', 'comparador.html': 'compact', 'catalogo.html': 'compact', 'calendario.html': 'compact', 'noticias.html': 'compact',
+  var DENSITY = { 'precios.html': 'compact', 'europa.html': 'compact', 'lonjas.html': 'compact', 'mercados.html': 'compact', 'precios-locales.html': 'compact', 'comparador.html': 'compact', 'catalogo.html': 'compact', 'calendario.html': 'compact', 'noticias.html': 'compact',
     'metodologia.html': 'expanded', 'observatorio.html': 'expanded', 'informacion.html': 'expanded', 'status.html': 'expanded', 'legal.html': 'expanded' };
   function applyThemeAttr() {
     try { var f = window.location.pathname.split('/').pop() || 'index.html'; document.documentElement.setAttribute('data-density', DENSITY[f] || 'standard'); } catch (e) { /* sin densidad: estandar */ }
@@ -84,6 +84,7 @@
       pd('precios.html', L('Panel de precios', 'Price dashboard', 'Tableau des prix', 'Pannello dei prezzi'), L('Todos los productos en EE. UU., UE, Reino Unido y Canadá', 'Every product in the US, EU, UK and Canada', 'Tous les produits aux États-Unis, dans l’UE, au Royaume-Uni et au Canada', 'Tutti i prodotti in USA, UE, Regno Unito e Canada')),
       pd('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), L('Un producto a fondo: precio, países, histórico y comercio', 'One product in depth: price, countries, history and trade', 'Un produit en détail : prix, pays, historique et commerce', 'Un prodotto a fondo: prezzo, paesi, storico e commercio'), '?p=trigo'),
       pd('europa.html', L('Precios de la UE', 'EU prices', 'Prix de l’UE', 'Prezzi UE'), L('UE · cotizaciones país por país, con histórico', 'EU · country-by-country quotes, with history', 'UE · cotations pays par pays, avec historique', 'UE · quotazioni paese per paese, con storico')),
+      pd('lonjas.html', L('Lonjas y mercados de España', 'Spanish local markets', 'Marchés locaux d’Espagne', 'Mercati locali della Spagna'), L('Cereales, aceite y girasol por provincia o zona', 'Cereals, olive oil and sunflower by province or zone', 'Céréales, huile d’olive et tournesol par province ou zone', 'Cereali, olio d’oliva e girasole per provincia o zona')),
       { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa', 'Dehesa Index', 'Indice Dehesa', 'Indice Dehesa'), d: L('Índice de precios agrícolas de la UE, EE. UU. y Canadá', 'Farm price index for the EU, US and Canada', 'Indice des prix agricoles UE, États-Unis et Canada', 'Indice dei prezzi agricoli UE, USA e Canada') },
       pd('comparador.html', L('Comparador por producto y país', 'Product and country comparator', 'Comparateur par produit et pays', 'Confronto per prodotto e paese'), L('El precio de un producto en varios países, misma unidad', 'One product’s price across countries, same unit', 'Le prix d’un produit dans plusieurs pays, même unité', 'Il prezzo di un prodotto in più paesi, stessa unità')),
       { label: L('Mercados y relaciones', 'Markets and relationships', 'Marchés et relations', 'Mercati e relazioni'), items: [
