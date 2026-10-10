@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-09T23:26:51.389Z",
+  "generatedAt": "2026-10-10T03:41:36.410Z",
   "status": "informational",
   "rules": [
     {
@@ -101,21 +101,21 @@
     },
     {
       "type": "period_move",
-      "product": "huevos",
+      "product": "arroz",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "severity": "high",
-      "changePct": 11.72,
-      "observationDate": "2026-09-01"
+      "changePct": -25.97,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
-      "product": "leche_polvo",
+      "product": "huevos",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "severity": "watch",
-      "changePct": 9.05,
-      "observationDate": "2026-09-01"
+      "changePct": 7.94,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -134,24 +134,6 @@
       "severity": "high",
       "changePct": -10.99,
       "observationDate": "2026-07-01"
-    },
-    {
-      "type": "period_move",
-      "product": "cerdo",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "changePct": 5.6,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "cordero",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "changePct": 8.04,
-      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -179,6 +161,24 @@
       "severity": "watch",
       "changePct": 7.95,
       "observationDate": "2026-06-01"
+    },
+    {
+      "type": "period_move",
+      "product": "harina_soja",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 5.65,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "colza",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 9.64,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
