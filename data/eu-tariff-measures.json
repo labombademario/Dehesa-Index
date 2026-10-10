@@ -1,0 +1,120 @@
+{
+ "schemaVersion": 1,
+ "asOf": "2026-10-09",
+ "note": {
+  "es": "Capa manual y fechada. Estas medidas se añaden o modifican por reglamento y no están en la tabla base de tercer país (TARIC). Solo incluye hechos contrastados con fuentes oficiales de la UE; revisada en la fecha indicada. Confirma siempre en la fuente oficial.",
+  "en": "Manual, dated layer. These measures are added or changed by regulation and are not in the base third-country table (TARIC). It only lists facts checked against official EU sources; reviewed on the date shown. Always confirm with the official source.",
+  "fr": "Couche manuelle et datée. Ces mesures sont ajoutées ou modifiées par règlement et ne figurent pas dans le tableau de base des pays tiers (TARIC). Elle ne retient que des faits vérifiés auprès de sources officielles de l’UE ; révisée à la date indiquée. Vérifiez toujours la source officielle.",
+  "it": "Livello manuale e datato. Queste misure sono aggiunte o modificate per regolamento e non figurano nella tabella di base dei paesi terzi (TARIC). Contiene solo fatti verificati su fonti ufficiali dell’UE; rivisto alla data indicata. Verifica sempre la fonte ufficiale."
+ },
+ "items": [
+  {
+   "id": "ru-by-agri",
+   "status": "active",
+   "from": "2025-07-01",
+   "to": null,
+   "title": {
+    "es": "Rusia y Bielorrusia: +50 % a productos agrícolas",
+    "en": "Russia and Belarus: +50% on agricultural goods",
+    "fr": "Russie et Biélorussie : +50 % sur les produits agricoles",
+    "it": "Russia e Bielorussia: +50% sui prodotti agricoli"
+   },
+   "text": {
+    "es": "Derecho ad valorem del 50 % que se suma al arancel aduanero común, sobre los códigos NC del anexo I del Reglamento (UE) 2025/1227 (unos treinta capítulos).",
+    "en": "A 50% ad valorem duty applied on top of the Common Customs Tariff rate, on the CN codes in Annex I to Regulation (EU) 2025/1227 (around thirty chapters).",
+    "fr": "Droit ad valorem de 50 % qui s’ajoute au tarif douanier commun, sur les codes NC de l’annexe I du règlement (UE) 2025/1227 (une trentaine de chapitres).",
+    "it": "Dazio ad valorem del 50% che si aggiunge alla tariffa doganale comune, sui codici NC dell’allegato I del regolamento (UE) 2025/1227 (circa trenta capitoli)."
+   }
+  },
+  {
+   "id": "ru-by-fert",
+   "status": "active",
+   "from": "2025-07-01",
+   "to": null,
+   "title": {
+    "es": "Rusia y Bielorrusia: fertilizantes",
+    "en": "Russia and Belarus: fertilisers",
+    "fr": "Russie et Biélorussie : engrais",
+    "it": "Russia e Bielorussia: fertilizzanti"
+   },
+   "text": {
+    "es": "6,5 % ad valorem más una tasa por tonelada de 40-45 € en 2025-2026, que sube de forma gradual hasta 430 €/t en 2028. Afecta a las partidas 3102 y 3105 (anexo II).",
+    "en": "6.5% ad valorem plus a per-tonne levy of €40-45 in 2025-2026, rising in steps to €430/t in 2028. Covers headings 3102 and 3105 (Annex II).",
+    "fr": "6,5 % ad valorem, auquel s’ajoute une taxe par tonne de 40-45 € en 2025-2026, qui monte par paliers jusqu’à 430 €/t en 2028. Concerne les positions 3102 et 3105 (annexe II).",
+    "it": "6,5% ad valorem più un prelievo per tonnellata di 40-45 € nel 2025-2026, che sale gradualmente fino a 430 €/t nel 2028. Riguarda le voci 3102 e 3105 (allegato II)."
+   }
+  },
+  {
+   "id": "ua-dcfta",
+   "status": "active",
+   "from": "2025-10-29",
+   "to": null,
+   "title": {
+    "es": "Ucrania: acuerdo de libre comercio actualizado",
+    "en": "Ukraine: updated free trade agreement",
+    "fr": "Ukraine : accord de libre-échange actualisé",
+    "it": "Ucraina: accordo di libero scambio aggiornato"
+   },
+   "text": {
+    "es": "El texto actualizado del DCFTA entró en vigor el 29-10-2025. La UE gestiona cuotas arancelarias en los bienes agrícolas no liberalizados del todo (apéndices 1 y 2 del anexo I-A); los volúmenes no están en esta tabla.",
+    "en": "The updated DCFTA text entered into force on 29 Oct 2025. The EU runs tariff quotas on agricultural goods not fully liberalised (Appendices 1 and 2 to Annex I-A); volumes are not in this table.",
+    "fr": "Le texte actualisé de l’ALEAC est entré en vigueur le 29-10-2025. L’UE gère des contingents tarifaires pour les biens agricoles non entièrement libéralisés (appendices 1 et 2 de l’annexe I-A) ; les volumes ne figurent pas dans ce tableau.",
+    "it": "Il testo aggiornato dell’ALSAC è entrato in vigore il 29-10-2025. L’UE gestisce contingenti tariffari per i beni agricoli non del tutto liberalizzati (appendici 1 e 2 dell’allegato I-A); i volumi non sono in questa tabella."
+   }
+  },
+  {
+   "id": "mercosur-ita",
+   "status": "active",
+   "from": "2026-05-01",
+   "to": null,
+   "title": {
+    "es": "Mercosur: acuerdo comercial provisional",
+    "en": "Mercosur: interim trade agreement",
+    "fr": "Mercosur : accord commercial intérimaire",
+    "it": "Mercosur: accordo commerciale ad interim"
+   },
+   "text": {
+    "es": "Aplicación provisional desde el 01-05-2026, con aranceles suprimidos desde el primer día en ciertos productos. Carne de vacuno, aves, azúcar y etanol entran con contingente; hay seguimiento reforzado también en cerdo, arroz, miel, maíz y maíz dulce. Los tipos por producto no están en la tabla base.",
+    "en": "Provisionally applied since 1 May 2026, with tariffs removed on certain products from day one. Beef, poultry, sugar and ethanol are covered by tariff quotas; pork, rice, honey, maize and sweetcorn are under enhanced monitoring. Product-level rates are not in the base table.",
+    "fr": "Appliqué à titre provisoire depuis le 01-05-2026, avec suppression de droits sur certains produits dès le premier jour. Bœuf, volaille, sucre et éthanol relèvent de contingents ; porc, riz, miel, maïs et maïs doux font l’objet d’un suivi renforcé. Les taux par produit ne figurent pas dans le tableau de base.",
+    "it": "Applicato in via provvisoria dal 01-05-2026, con dazi eliminati su alcuni prodotti dal primo giorno. Manzo, pollame, zucchero ed etanolo sono soggetti a contingenti; suino, riso, miele, mais e mais dolce sono sotto monitoraggio rafforzato. Le aliquote per prodotto non sono nella tabella di base."
+   }
+  },
+  {
+   "id": "mercosur-safeguard",
+   "status": "active",
+   "from": "2026-03-05",
+   "to": null,
+   "title": {
+    "es": "Mercosur: cláusula de salvaguardia agrícola",
+    "en": "Mercosur: agricultural safeguard",
+    "fr": "Mercosur : sauvegarde agricole",
+    "it": "Mercosur: clausola di salvaguardia agricola"
+   },
+   "text": {
+    "es": "El Consejo adoptó el reglamento el 05-03-2026. Permite a la Comisión aplicar medidas, incluidos aranceles, si las importaciones agrícolas se disparan o los precios caen. Los Estados miembros pueden pedir que abra una investigación.",
+    "en": "The Council adopted the regulation on 5 Mar 2026. It lets the Commission apply measures, including tariffs, if agricultural imports surge or prices fall. Member states can ask it to open an investigation.",
+    "fr": "Le Conseil a adopté le règlement le 05-03-2026. Il permet à la Commission d’appliquer des mesures, y compris des droits, en cas de hausse brutale des importations agricoles ou de baisse des prix. Les États membres peuvent demander l’ouverture d’une enquête.",
+    "it": "Il Consiglio ha adottato il regolamento il 05-03-2026. Consente alla Commissione di applicare misure, anche dazi, in caso di aumento improvviso delle importazioni agricole o di calo dei prezzi. Gli Stati membri possono chiedere l’apertura di un’indagine."
+   }
+  }
+ ],
+ "sources": [
+  {
+   "name": "EUR-Lex — Regulation (EU) 2025/1227",
+   "url": "https://eur-lex.europa.eu/eli/reg/2025/1227/oj/eng"
+  },
+  {
+   "name": "Access2Markets — Russia and Belarus",
+   "url": "https://trade.ec.europa.eu/access-to-markets/en/news/eu-increases-tariff-duties-russian-and-belarusian-imports-agricultural-products-and-fertilizers"
+  },
+  {
+   "name": "Access2Markets — EU-Ukraine DCFTA",
+   "url": "https://trade.ec.europa.eu/access-to-markets/en/content/eu-ukraine-deep-and-comprehensive-free-trade-area"
+  },
+  {
+   "name": "Council of the EU — EU-Mercosur agreements",
+   "url": "https://www.consilium.europa.eu/en/policies/eu-MERCOSUR-agreements-explained/"
+  }
+ ]
+}

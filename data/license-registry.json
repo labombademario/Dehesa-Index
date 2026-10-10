@@ -2643,6 +2643,11 @@
     "us_tariffs"
    ]
   },
+  "data/eu-tariff-measures.json": {
+   "sources": [
+    "eur_lex"
+   ]
+  },
   "data/tariffs-eu.json": {
    "sources": [
     "eu_taric"

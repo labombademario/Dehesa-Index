@@ -92,6 +92,7 @@ DATASETS = {
     'data/drought.json': ('CLIMATE', 'US Drought Monitor'), 'data/climate.json': ('CLIMATE', 'Clima (Open-Meteo)'),
     'data/us-tariffs.json': ('TARIFF', 'Aranceles EE. UU.'), 'data/tariffs-eu.json': ('TARIFF', 'Aranceles UE'), 'data/tariffs-mx.json': ('TARIFF', 'Aranceles Mexico'), 'data/tariffs-ca.json': ('TARIFF', 'Aranceles Canada'),
     'data/us-tariff-measures.json': ('TARIFF', 'Medidas arancelarias EE. UU.'),
+    'data/eu-tariff-measures.json': ('TARIFF', 'Medidas arancelarias UE'),
     'data/country-macro.json': ('MACRO', 'Macro por pais'), 'data/cpi.json': ('MACRO', 'Indices de precios de consumo (precios reales)'), 'data/worldbank-agri.json': ('MACRO', 'Perfil agrario por pais (Banco Mundial)'), 'data/germany-agri.json': ('PRODUCTION', 'Alemania: produccion por Land, precios de la tierra y alquileres (Destatis)'), 'data/germany-livestock.json': ('PRODUCTION', 'Alemania: sacrificios, aves, huevos, censos ganaderos y fruta (Destatis)'), 'data/fx-history.json': ('MACRO', 'Tipos de cambio (BCE)'),
 }
 # grupo de una serie de *-stats.json -> tipo
