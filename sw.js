@@ -3,19 +3,23 @@
    - JS/CSS: red primero con revalidacion (cache:'no-cache'), cache como respaldo: asi un cambio publicado se ve en la siguiente carga, no en la segunda.
    - imagenes: stale-while-revalidate.
    - data/*.json: red primero (los datos deben ser frescos), cache como respaldo; solo se guardan respuestas < 1.5 MB. */
-var BUILD = '7b33f708ef'; // lo escribe scripts/stamp-sw.mjs (hash del codigo estructural)
+var BUILD = '1436cbc151'; // lo escribe scripts/stamp-sw.mjs (hash del codigo estructural)
 var V = 'di-' + BUILD, SHELL = ['/offline.html', '/css/style.css', '/js/shared.js', '/assets/icon-192.png'];
 var MAXDATA = 1500000, MAXENTRIES = 120;
 self.addEventListener('install', function (e) { e.waitUntil(caches.open(V).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); })); });
 self.addEventListener('activate', function (e) { e.waitUntil(caches.keys().then(function (ks) { return Promise.all(ks.filter(function (k) { return k !== V; }).map(function (k) { return caches.delete(k); })); }).then(function () { return self.clients.claim(); })); });
 function trim(c) { c.keys().then(function (ks) { if (ks.length > MAXENTRIES) c.delete(ks[0]); }); }
-function put(req, res) { if (!res || res.status !== 200) return res; var len = +res.headers.get('content-length') || 0; if (len > MAXDATA) return res; var cp = res.clone(); caches.open(V).then(function (c) { c.put(req, cp).then(function () { trim(c); }); }); return res; }
+function put(req, res) { if (!res || res.status !== 200 || res.redirected) return res; var len = +res.headers.get('content-length') || 0; if (len > MAXDATA) return res; var cp = res.clone(); caches.open(V).then(function (c) { c.put(req, cp).then(function () { trim(c); }); }); return res; }
+/* Safari rechaza una pagina servida por el service worker si esa respuesta vino de una redireccion del servidor
+   (p. ej. /precios -> /precios.html, o /datos/x -> /datos/x/): «Response served by service worker has redirections».
+   En navegacion se devuelve una redireccion limpia a la URL final y el navegador la pide de nuevo (sin redireccion). */
+function nav(req, res) { if (res && res.redirected && res.url) return Response.redirect(res.url, 302); return put(req, res); }
 self.addEventListener('fetch', function (e) {
   var r = e.request; if (r.method !== 'GET') return;
   var u = new URL(r.url); if (u.origin !== location.origin) return;
   var isData = /\/data\/.+\.json$/.test(u.pathname), isHtml = r.mode === 'navigate' || (r.headers.get('accept') || '').indexOf('text/html') >= 0;
   if (isHtml || isData) {
-    e.respondWith(fetch(r.url, { cache: 'no-cache' }).then(function (res) { return put(r, res); }).catch(function () { return caches.match(r).then(function (m) { return m || (isHtml ? caches.match('/offline.html') : new Response('{}', { status: 503, headers: { 'Content-Type': 'application/json' } })); }); }));
+    e.respondWith(fetch(r.url, { cache: 'no-cache' }).then(function (res) { return isHtml ? nav(r, res) : put(r, res); }).catch(function () { return caches.match(r).then(function (m) { if (m && m.redirected) return Response.redirect(m.url, 302); return m || (isHtml ? caches.match('/offline.html') : new Response('{}', { status: 503, headers: { 'Content-Type': 'application/json' } })); }); }));
     return;
   }
   if (/\.(js|css)$/.test(u.pathname)) {

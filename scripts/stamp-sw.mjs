@@ -16,8 +16,9 @@ for (let i = files.length - 1; i >= 0; i--) if (GENERATED.has(files[i])) files.s
 files.sort();
 const h = createHash('sha256');
 for (const f of files) { h.update(f + '\0'); h.update(await readFile(path.join(root, f))); }
-const build = h.digest('hex').slice(0, 10);
 const swPath = path.join(root, 'sw.js'); const sw = await readFile(swPath, 'utf8');
+h.update('sw.js\0'); h.update(sw.replace(/var BUILD = '[^']*';/, ''));   // el propio service worker (sin su linea de version): un cambio en su logica tambien renueva el cache
+const build = h.digest('hex').slice(0, 10);
 const re = /var BUILD = '[^']*';/;
 if (!re.test(sw)) { console.error("sw.js no tiene 'var BUILD = ...;'"); process.exit(1); }
 const cur = (re.exec(sw)[0].match(/'([^']*)'/) || [])[1];
