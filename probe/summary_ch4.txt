@@ -1,0 +1,39 @@
+PKG produzentenpreisindex-landwirtschaft | issued 2026-09-02T13:00:00+00:00 | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | Diese Tabelle präsentiert die die Entwicklung des Produzentenpreisindexes von landwirtschaftlichen Produkten, seit 1994.
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/fr/je-f-07.02.03.02.01
+   RES HTML terms_by Produzentenpreisindex Landwirtschaft https://www.bfs.admin.ch/asset/de/je-d-07.02.03.02.01
+   RES XLS terms_by Produzentenpreisindex Landwirtschaft https://dam-api.bfs.admin.ch/hub/api/dam/assets/36840036/master
+    get 200 18591
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/36840037/master
+PKG einkaufspreisindex-landwirtschaftlicher-produktionsmittel5 | issued 2026-09-02T13:00:00+00:00 | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | Diese Tabelle präsentiert die die Entwicklung des Einkaufspreisindexes von landwirtschaftlichen Produktionsmittel, seit 1994.
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/36840039/master
+    get 200 18378
+   RES HTML terms_by Einkaufspreisindex landwirtschaftlicher Produktionsmittel https://www.bfs.admin.ch/asset/de/je-d-07.02.03.02.02
+   RES XLS terms_by Einkaufspreisindex landwirtschaftlicher Produktionsmittel https://dam-api.bfs.admin.ch/hub/api/dam/assets/36840035/master
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/fr/je-f-07.02.03.02.02
+PKG aussenhandel-nach-waren5 | issued 2025-05-27T06:30:00+00:00 | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | Diese Tabelle wird in dieser Form nicht mehr aktualisiert. Ihre Daten sind nun in eine neue Tabelle integriert (siehe "Weiterführende Links" am Seitenende).
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/35927542/master
+    get 200 31915
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/35927556/master
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/35927552/master
+   RES XLS terms_by Aussenhandel nach Waren https://dam-api.bfs.admin.ch/hub/api/dam/assets/35927548/master
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/en/je-e-06.05.02
+   RES HTML terms_by Aussenhandel nach Waren https://www.bfs.admin.ch/asset/de/je-d-06.05.02
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/fr/je-f-06.05.02
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/it/je-i-06.05.02
+PKG aussenhandel-nach-ausgewahlten-warengruppen-cpa | issued 2026-06-02T06:30:00+00:00 | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | Diese Tabelle ersetzt die Tabellen "Aussenhandel nach Verwendungszweck" und "Aussenhandel nach Waren" (siehe "Weiterführende Links" am Seitenende). Sie enthält nun die neue CPA-Nomenklatur.
+   RES HTML terms_by Aussenhandel nach ausgewählten Warengruppen (CPA) https://www.bfs.admin.ch/asset/de/je-d-06.05.05
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/fr/je-f-06.05.05
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/36664817/master
+    get 200 43497
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/it/je-i-06.05.05
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/36664819/master
+   RES XLS terms_by Aussenhandel nach ausgewählten Warengruppen (CPA) https://dam-api.bfs.admin.ch/hub/api/dam/assets/36664820/master
+   RES XLS terms_by  https://dam-api.bfs.admin.ch/hub/api/dam/assets/36664818/master
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/en/je-e-06.05.05
+PKG produzenten-und-importpreisindex-produzentenpreisindex-ppi-total5 | issued 2026-09-14T06:30:00+00:00 | accrual http://publications.europa.eu/resource/authority/frequency/MONTHLY | Dieses Dataset präsentiert die jährlichen und monatlichen Zahlen des Produzentenpreisindexes (PPI) und seine Veränderung gegenüber dem Vormonat und dem Vorjahr, seit 1963.
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/it/su-q-05.04.03.01-ppi-ipp
+   RES XLS terms_by Produzenten- und Importpreisindex, Produzentenpreisindex (PPI), Total https://dam-api.bfs.admin.ch/hub/api/dam/assets/36853812/master
+    get 200 345826
+   RES HTML terms_by Produzenten- und Importpreisindex, Produzentenpreisindex (PPI), Total https://www.bfs.admin.ch/asset/de/su-q-05.04.03.01-ppi-ipp
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/fr/su-q-05.04.03.01-ppi-ipp
+   RES HTML terms_by  https://www.bfs.admin.ch/asset/en/su-q-05.04.03.01-ppi-ipp
