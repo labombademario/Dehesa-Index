@@ -17,6 +17,15 @@ def idx(doc):
             if o.get("observationDate") and isinstance(o.get("value"), (int, float)): out[k][1][o["observationDate"]] = o["value"]
         return out
     return {"%s/%s" % (cc, s["id"]): (s, dict((p[0], p[1]) for p in s.get("points", []))) for cc, c in doc.get("countries", {}).items() for s in c.get("series", [])}
+def rescaled(a, b):
+    """Correccion de unidad o escala (todos los periodos comunes cambian por el MISMO factor, p. ej. kg -> t): no es una revision oficial
+    de la fuente y llenaria el registro (tope 1500) expulsando las revisiones reales. Tambien si cambia la etiqueta de unidad."""
+    (sa, pa), (sb, pb) = a, b
+    com = [p for p in pb if isinstance(pa.get(p), (int, float)) and isinstance(pb.get(p), (int, float)) and pa[p] != 0 and pb[p] != 0]
+    if len(com) < 5: return False
+    rs = [pb[p] / pa[p] for p in com]
+    same = max(rs) - min(rs) <= 1e-6 * max(abs(r) for r in rs)
+    return (same and abs(rs[0] - 1) > 1e-9) or (sa.get("unit") != sb.get("unit") and sum(1 for p in com if pa[p] != pb[p]) >= 0.8 * len(com))
 def main():
     now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     try: doc = json.loads(OUT.read_text())
@@ -29,6 +38,7 @@ def main():
             o, c = idx(old), idx(cur)
             for k, (s, pts) in c.items():
                 if k not in o: continue
+                if rescaled(o[k], (s, pts)): print("cambio de escala o unidad en", k, "(no se registra como revision)"); continue
                 for per, v in pts.items():
                     ov = o[k][1].get(per)
                     if ov is None or v is None or isinstance(v, str): continue
