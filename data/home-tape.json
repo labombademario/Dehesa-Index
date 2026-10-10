@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T03:28:24Z",
+ "generatedAt": "2026-10-10T03:58:11Z",
  "sourceIds": [
   "eu_agrifood",
   "european_commission",
@@ -13,11 +13,11 @@
    "product": "trigo",
    "region": "eu",
    "sourceId": "eu_agrifood",
-   "observationDate": "2026-09-27",
-   "value": 264.1,
+   "observationDate": "2026-10-04",
+   "value": 266,
    "currency": "EUR",
    "unit": "tonelada",
-   "changePct": 0.5329,
+   "changePct": 0.7194,
    "market": [
     "España · Zaragoza · salida de silo",
     "Spain · Zaragoza · ex-silo",
@@ -64,11 +64,11 @@
    "product": "maiz",
    "region": "eu",
    "sourceId": "eu_agrifood",
-   "observationDate": "2026-09-27",
-   "value": 260,
+   "observationDate": "2026-10-04",
+   "value": 259,
    "currency": "EUR",
    "unit": "tonelada",
-   "changePct": 0.3861,
+   "changePct": -0.3846,
    "market": [
     "España · Zaragoza · salida de silo",
     "Spain · Zaragoza · ex-silo",

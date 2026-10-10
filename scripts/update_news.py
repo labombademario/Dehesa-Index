@@ -383,7 +383,7 @@ TOPICS = {
  "energia": ["oil", "diesel", "natural gas", "energy", "fuel", "crude", "gasoil", "gasoleo", "carburant", "gazole", "carburante", "gasolio", "energia", "energie"],
  "costes": ["input cost", "cost of", "costs", "inflation", "fertilizer", "coste", "costes", "inflacion", "cout", "couts", "inflation", "costo", "costi"],
  "politica": ["government", "policy", "minister", "commission", "regulation", "reform", "farm bill", "legislation", "gobierno", "ministerio", "ministro", "politica", "regulacion", "reforma", "ley", "gouvernement", "ministre", "reglement", "governo", "ministero", "regolamento", "legge"],
- "sanidad": ["avian flu", "avian influenza", "bird flu", "swine fever", "foot-and-mouth", "foot and mouth", "bluetongue", "lumpy skin", "disease", "outbreak", "quarantine", "gripe aviar", "peste porcina", "fiebre aftosa", "lengua azul", "dermatosis nodular", "brote", "sanitario", "grippe aviaire", "peste porcine", "fievre aphteuse", "fievre catarrhale", "dermatose nodulaire", "epizootie", "influenza aviaria", "peste suina", "afta epizootica", "lingua blu", "dermatite nodulare", "focolaio"],
+ "sanidad": ["crop pest", "pests", "pest outbreak", "plaga", "plagas", "gusano del tallo", "ravageur", "ravageurs", "parassiti", "avian flu", "avian influenza", "bird flu", "swine fever", "foot-and-mouth", "foot and mouth", "bluetongue", "lumpy skin", "disease", "outbreak", "quarantine", "gripe aviar", "peste porcina", "fiebre aftosa", "lengua azul", "dermatosis nodular", "brote", "sanitario", "grippe aviaire", "peste porcine", "fievre aphteuse", "fievre catarrhale", "dermatose nodulaire", "epizootie", "influenza aviaria", "peste suina", "afta epizootica", "lingua blu", "dermatite nodulare", "focolaio"],
  "ayudas": ["subsidy", "subsidies", "farm aid", "bailout", "compensation", "support package", "ayuda", "ayudas", "subvencion", "subvenciones", "indemnizacion", "aide", "aides", "subvention", "indemnisation", "aiuti", "sussidi", "contributi", "indennizz"],
 }
 # ── Términos en alemán (de), neerlandés (nl), danés (da) y portugués (pt). Con prefijo = solo cuenta en ese idioma ──
@@ -581,7 +581,11 @@ def build_market_links(products, topics, title, desc):
         for p in market_products[:4]: add(p, "market_impact")
     return sorted(links, key=lambda x: (CHANNEL_PRIORITY.index(x["channel"]) if x["channel"] in CHANNEL_PRIORITY else 99, x["market"]))
 
+# Anuncios de compraventa (maquinaria, semillas sueltas…) que mencionan un cultivo por casualidad: no son noticias de mercado.
+NOISE_RX = re.compile(r"(?:\bévjárat|\bevjarat|\bte koop\b|\bzu verkaufen\b|\bà vendre\b|\ba vendre\b|\bse vende\b|\bvendesi\b|\bfor sale\b|\bnas \d{3,4}\b|\b(?:19|20)\d\d-es\b|\btraktor\b.*\b(?:adapter|kombájn)\b|\bnapraforg[óo]\s+adapter\b)", re.I)
+
 def classify(title, desc, source_region, lang, general):
+    if NOISE_RX.search(unicodedata.normalize("NFC", title or "")): return None
     raw = f"{title} {desc}".lower(); text = norm(raw)
     hits = {p: hit_count(text, raw, terms, lang) for p, terms in PRODUCTS.items()}
     # Los términos genéricos solo cuentan si no hay nada más específico

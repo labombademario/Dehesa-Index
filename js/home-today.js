@@ -23,7 +23,7 @@
     if (!B || !B.counts) return col(t.ch, '<p class="di-today-note">' + esc(t.nodata) + '</p>', a('brief.html', t.all));
     var c = B.counts, rows = '<dl class="di-today-kv"><div><dt>' + esc(t.np) + '</dt><dd>' + esc(nf(c.newPeriods || 0, 0)) + '</dd></div><div><dt>' + esc(t.rv) + '</dt><dd>' + esc(nf(c.revisions || 0, 0)) + '</dd></div><div><dt>' + esc(t.st) + '</dt><dd>' + esc(nf(c.stale || 0, 0)) + '</dd></div></dl>';
     var mv = (B.movers || []).filter(function (x) { return typeof x.changePct === 'number'; }).sort(function (x, y) { return Math.abs(y.changePct) - Math.abs(x.changePct); }).slice(0, 3);
-    if (mv.length) rows += '<ul class="di-today-list" aria-label="' + esc(t.mv) + '">' + mv.map(function (x) { return '<li><span>' + esc(x.label) + '</span><b class="' + (x.changePct > 0 ? 'up' : 'dn') + '">' + (x.changePct > 0 ? '+' : '−') + esc(nf(Math.abs(x.changePct), 1)) + ' %</b></li>'; }).join('') + '</ul>';
+    if (mv.length) rows += '<ul class="di-today-list" aria-label="' + esc(t.mv) + '">' + mv.map(function (x) { return '<li><span' + (window.DILabel && window.DILabel.t(x.label).changed ? ' title="' + esc(x.label) + '"' : '') + '>' + esc(window.DILabel ? window.DILabel.t(x.label).text : x.label) + '</span><b class="' + (x.changePct > 0 ? 'up' : 'dn') + '">' + (x.changePct > 0 ? '+' : '−') + esc(nf(Math.abs(x.changePct), 1)) + ' %</b></li>'; }).join('') + '</ul>';
     return col(t.ch + ' · ' + t.win, rows, a('brief.html', t.all));
   }
   function coming(U, CAL, t) {

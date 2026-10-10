@@ -30,6 +30,15 @@ def worker(i, tmp, bare, errs, plain=False):
     if plain: (w / "data/shared-plain.json").write_text('{"w":%d}\n' % i); paths.append("data/shared-plain.json")
     env = dict(os.environ, PUBLISH_SLEEP_DIV="8", GIT_AUTHOR_NAME="t", GIT_COMMITTER_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_EMAIL="t@t")
     r = sh("bash", "scripts/publish-data.sh", "w%d" % i, *paths, cwd=w, check=False, env=env); errs[i] = r.returncode
+def worker_derived(i, tmp, bare, errs):
+    """Dos clones que parten del mismo estado reescriben un fichero DERIVADO (data/derived.txt = lista de data/own*.json): con PUBLISH_REGEN el
+    choque se resuelve regenerando sobre lo ultimo de origin/main, sin perder el own de nadie."""
+    w = tmp / ("w%d" % i)
+    (w / ("data/own%d.json" % i)).write_text('{"i":%d}\n' % i)
+    (w / "data/derived.txt").write_text("solo own%d\n" % i)
+    regen = "ls data/own*.json | sort > data/derived.txt"
+    env = dict(os.environ, PUBLISH_SLEEP_DIV="8", GIT_AUTHOR_NAME="t", GIT_COMMITTER_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_EMAIL="t@t", PUBLISH_DERIVED="data/derived.txt", PUBLISH_REGEN=regen)
+    r = sh("bash", "scripts/publish-data.sh", "d%d" % i, "data/own%d.json" % i, "data/derived.txt", cwd=w, check=False, env=env); errs[i] = r.returncode
 def main():
     tmp = Path(tempfile.mkdtemp()); N = 5
     try:
@@ -51,6 +60,13 @@ def main():
         b = threading.Thread(target=worker, args=(11, tmp, bare, errs2, True)); b.start(); b.join()
         assert errs2[10] == 0 and errs2[11] != 0, "el conflicto real debia fallar en rojo: %s" % errs2
         sh("git", "pull", "-q", cwd=chk); assert json.loads((chk / "data/shared-plain.json").read_text()) == {"w": 10}, "se pisaron datos"
+        errs3 = {}
+        for i in (20, 21): sh("git", "clone", "-q", str(bare), str(tmp / ("w%d" % i)))
+        worker_derived(20, tmp, bare, errs3)
+        worker_derived(21, tmp, bare, errs3)
+        assert errs3[20] == 0 and errs3[21] == 0, "el conflicto en un derivado debia resolverse regenerando: %s" % errs3
+        sh("git", "pull", "-q", cwd=chk); der = (chk / "data/derived.txt").read_text().split()
+        assert "data/own20.json" in der and "data/own21.json" in der, "derivado no regenerado: %s" % der
         print("test-publish-data OK: %d publicaciones simultaneas sin perdidas; conflicto real falla en rojo" % N)
     finally: shutil.rmtree(tmp, ignore_errors=True)
 main()

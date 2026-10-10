@@ -43,7 +43,7 @@
       no_us3: 'Seguro: solo el total del estado (todos los cultivos juntos), no por cultivo y estado.',
       no_us4: 'Sequía: porcentaje del estado, no de tu condado.',
       no_us5: 'Costes (fertilizante, diésel, pienso) y clima: solo cifras nacionales o mundiales, no por estado.',
-      no_es1: 'Precios por provincia o por lonja: todavía no incorporamos lonjas provinciales; los precios que seguimos son nacionales, europeos o mundiales.',
+      no_es1: 'Precios de lonjas provinciales independientes: no los incorporamos. Sí mostramos, cuando existen, los mercados identificados por provincia que publica la Comisión Europea (arriba); el resto de precios que seguimos son nacionales, europeos o mundiales.',
       no_es2: 'Seguro agrario (Agroseguro): solo cifras nacionales y pendientes de contraste; no por provincia.',
       no_es3: 'Sequía y clima por provincia: solo las páginas generales de clima y sequía; no una vista por provincia.',
       no_es4: 'Ganadería por provincia: no hay datos de censos ni de producción ganadera por provincia en esta página.',
@@ -82,7 +82,7 @@
       no_us3: 'Insurance: only the state total (all crops together), not by crop and state.',
       no_us4: 'Drought: share of the state, not of your county.',
       no_us5: 'Costs (fertiliser, diesel, feed) and weather: national or world figures only, not by state.',
-      no_es1: 'Prices by province or by auction hall: we do not yet include provincial markets; the prices we follow are national, European or world.',
+      no_es1: 'Prices from independent provincial auction halls: not included. Where they exist we do show the province-level markets the European Commission publishes (above); the other prices we follow are national, European or world.',
       no_es2: 'Crop insurance (Agroseguro): national figures only, still pending verification; not by province.',
       no_es3: 'Drought and weather by province: only the general weather and drought pages; no per-province view.',
       no_es4: 'Livestock by province: no census or livestock production data by province on this page.',
@@ -121,7 +121,7 @@
       no_us3: 'Assurance : seulement le total de l\'État (toutes cultures réunies), pas par culture et par État.',
       no_us4: 'Sécheresse : part de l\'État, pas de votre comté.',
       no_us5: 'Coûts (engrais, diesel, aliments) et météo : chiffres nationaux ou mondiaux seulement, pas par État.',
-      no_es1: 'Prix par province ou par lonja : nous n\'incluons pas encore les marchés provinciaux ; les prix suivis sont nationaux, européens ou mondiaux.',
+      no_es1: 'Prix de lonjas provinciales indépendantes : non inclus. Quand ils existent, nous montrons les marchés par province publiés par la Commission européenne (ci-dessus) ; les autres prix suivis sont nationaux, européens ou mondiaux.',
       no_es2: 'Assurance agricole (Agroseguro) : chiffres nationaux seulement, encore à vérifier ; pas par province.',
       no_es3: 'Sécheresse et météo par province : seulement les pages générales météo et sécheresse ; pas de vue par province.',
       no_es4: 'Élevage par province : pas de recensement ni de production animale par province sur cette page.',
@@ -160,7 +160,7 @@
       no_us3: 'Assicurazione: solo il totale dello Stato (tutte le colture insieme), non per coltura e Stato.',
       no_us4: 'Siccità: quota dello Stato, non della tua contea.',
       no_us5: 'Costi (fertilizzanti, gasolio, mangimi) e meteo: solo cifre nazionali o mondiali, non per Stato.',
-      no_es1: 'Prezzi per provincia o per borsa merci: non includiamo ancora i mercati provinciali; i prezzi che seguiamo sono nazionali, europei o mondiali.',
+      no_es1: 'Prezzi delle borse merci provinciali indipendenti: non inclusi. Dove esistono mostriamo i mercati per provincia pubblicati dalla Commissione europea (sopra); gli altri prezzi che seguiamo sono nazionali, europei o mondiali.',
       no_es2: 'Assicurazione agraria (Agroseguro): solo cifre nazionali, ancora da verificare; non per provincia.',
       no_es3: 'Siccità e meteo per provincia: solo le pagine generali su meteo e siccità; nessuna vista per provincia.',
       no_es4: 'Zootecnia per provincia: nessun censimento né produzione zootecnica per provincia in questa pagina.',
@@ -600,6 +600,82 @@
     });
   }
 
+
+  /* ---------- España: precio de mercado en tu provincia (portal agroalimentario de la Comisión Europea) ---------- */
+  var TESP = {
+    es: { title: 'Precio de mercado en tu provincia', prod: 'Producto', mk: 'Mercado', price: 'Precio', wk: '1 sem.', date: 'Fecha', all: 'Ver todos los mercados',
+      note: 'Precio semanal que la Comisión Europea publica para el mercado de {p}. No es una media de la provincia ni una lonja independiente: es una referencia cercana, en la etapa que indica el portal (salida de silo, almacén…).',
+      pickCrop: 'Elige un cultivo concreto (trigo, cebada, maíz, aceite…) para ver una referencia de mercado. «{c}» agrupa varios productos con precios distintos y no le asignamos uno.',
+      noMarket: 'La Comisión Europea no publica un mercado de {p} para este producto. Mercados con precio reciente: {l}.', noAny: 'La Comisión Europea no publica precios de mercado para este cultivo en España.', sun: 'Para el girasol el portal publica tres zonas (Centro, Norte, Sur), no provincias; consúltalas en la página de mercados.',
+      names: { 'milling-wheat': 'Trigo blando panificable', 'feed-wheat': 'Trigo pienso', 'durum-wheat': 'Trigo duro', 'feed-barley': 'Cebada pienso', 'malting-barley': 'Cebada cervecera', 'feed-maize': 'Maíz pienso', 'extra-virgin': 'Aceite de oliva virgen extra', 'virgin-olive': 'Aceite de oliva virgen', 'lampante': 'Aceite de oliva lampante' } },
+    en: { title: 'Market price in your province', prod: 'Product', mk: 'Market', price: 'Price', wk: '1 wk', date: 'Date', all: 'See all markets',
+      note: 'Weekly price the European Commission publishes for the {p} market. It is not a provincial average or an independent auction hall: it is a nearby reference, at the stage the portal states (ex-silo, warehouse…).',
+      pickCrop: 'Pick a specific crop (wheat, barley, maize, olive oil…) to see a market reference. “{c}” groups several products with different prices and we do not assign one.',
+      noMarket: 'The European Commission does not publish a {p} market for this product. Markets with a recent price: {l}.', noAny: 'The European Commission publishes no market prices for this crop in Spain.', sun: 'For sunflower the portal publishes three zones (Centre, North, South), not provinces; see them on the markets page.',
+      names: { 'milling-wheat': 'Milling wheat', 'feed-wheat': 'Feed wheat', 'durum-wheat': 'Durum wheat', 'feed-barley': 'Feed barley', 'malting-barley': 'Malting barley', 'feed-maize': 'Feed maize', 'extra-virgin': 'Extra virgin olive oil', 'virgin-olive': 'Virgin olive oil', 'lampante': 'Lampante olive oil' } },
+    fr: { title: 'Prix de marché dans votre province', prod: 'Produit', mk: 'Marché', price: 'Prix', wk: '1 sem.', date: 'Date', all: 'Voir tous les marchés',
+      note: 'Prix hebdomadaire que la Commission européenne publie pour le marché de {p}. Ce n’est ni une moyenne provinciale ni une lonja indépendante : c’est une référence proche, au stade indiqué par le portail (départ silo, entrepôt…).',
+      pickCrop: 'Choisissez une culture précise (blé, orge, maïs, huile d’olive…) pour voir une référence de marché. « {c} » regroupe plusieurs produits à prix différents et nous n’en attribuons aucun.',
+      noMarket: 'La Commission européenne ne publie pas de marché de {p} pour ce produit. Marchés avec un prix récent : {l}.', noAny: 'La Commission européenne ne publie pas de prix de marché pour cette culture en Espagne.', sun: 'Pour le tournesol le portail publie trois zones (Centre, Nord, Sud), pas des provinces ; voyez-les sur la page des marchés.',
+      names: { 'milling-wheat': 'Blé meunier', 'feed-wheat': 'Blé fourrager', 'durum-wheat': 'Blé dur', 'feed-barley': 'Orge fourragère', 'malting-barley': 'Orge de brasserie', 'feed-maize': 'Maïs fourrager', 'extra-virgin': 'Huile d’olive vierge extra', 'virgin-olive': 'Huile d’olive vierge', 'lampante': 'Huile d’olive lampante' } },
+    it: { title: 'Prezzo di mercato nella tua provincia', prod: 'Prodotto', mk: 'Mercato', price: 'Prezzo', wk: '1 sett.', date: 'Data', all: 'Vedi tutti i mercati',
+      note: 'Prezzo settimanale che la Commissione europea pubblica per il mercato di {p}. Non è una media provinciale né una borsa merci indipendente: è un riferimento vicino, nella fase indicata dal portale (franco silo, magazzino…).',
+      pickCrop: 'Scegli una coltura precisa (frumento, orzo, mais, olio d’oliva…) per vedere un riferimento di mercato. «{c}» raggruppa più prodotti con prezzi diversi e non ne assegniamo uno.',
+      noMarket: 'La Commissione europea non pubblica un mercato di {p} per questo prodotto. Mercati con un prezzo recente: {l}.', noAny: 'La Commissione europea non pubblica prezzi di mercato per questa coltura in Spagna.', sun: 'Per il girasole il portale pubblica tre zone (Centro, Nord, Sud), non province; vedile nella pagina dei mercati.',
+      names: { 'milling-wheat': 'Frumento tenero', 'feed-wheat': 'Frumento da foraggio', 'durum-wheat': 'Frumento duro', 'feed-barley': 'Orzo da foraggio', 'malting-barley': 'Orzo da birra', 'feed-maize': 'Mais da foraggio', 'extra-virgin': 'Olio extra vergine di oliva', 'virgin-olive': 'Olio vergine di oliva', 'lampante': 'Olio di oliva lampante' } }
+  };
+  var MFIX = { Lerida: 'Lleida', Leon: 'León', Cordoba: 'Córdoba', Jaen: 'Jaén', Malaga: 'Málaga', Cadiz: 'Cádiz', Avila: 'Ávila', Almeria: 'Almería' };
+  function mname(m) { var x = String(m).replace(/\s*\(ES\d+\)\s*$/i, ''); return MFIX[x] || x; }
+  function tesp() { return TESP[lang()] || TESP.es; }
+  function normM(m) { return String(m || '').replace(/\s*\(ES\d+\)\s*$/i, '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim().replace(/^lerida$/, 'lleida'); }
+  /* código MAPA del cultivo -> familia del portal y claves de producto (null = agrupación sin un precio propio) */
+  function espRule(code) {
+    var c = String(code || '');
+    if (/^CE11(0|2)/.test(c) && !/^CE112/.test(c)) return { f: 'cereales', k: ['milling-wheat', 'feed-wheat', 'durum-wheat'] };
+    if (/^CE112/.test(c)) return { f: 'cereales', k: ['durum-wheat'] };
+    if (/^CE111/.test(c)) return { f: 'cereales', k: ['milling-wheat', 'feed-wheat'] };
+    if (/^CE13/.test(c)) return { f: 'cereales', k: ['feed-barley', 'malting-barley'] };
+    if (/^CE15/.test(c)) return { f: 'cereales', k: ['feed-maize'] };
+    if (/^OL/.test(c) && c !== 'OL1000' && c !== 'OL1100' && !/^OL110/.test(c)) return { f: 'aceite', k: ['extra-virgin', 'virgin-olive', 'lampante'] };
+    if (c === 'IN1200') return { f: 'oleaginosas', sun: 1 };
+    return null;
+  }
+  function spainPrice(tok) {
+    var t = tesp(), code = ST.k, rule = espRule(code), prov = (ES_PROV && ES_PROV[ST.r]) || '', cname = '';
+    var crops = document.getElementById('mm-crop'); if (crops && crops.selectedOptions && crops.selectedOptions[0]) cname = crops.selectedOptions[0].textContent.trim();
+    var link = function (f) { return '<p class="di-movers-hint"><a href="lonjas.html?c=ES' + (f ? '&amp;f=' + f : '') + '">' + esc(t.all) + '</a></p>'; };
+    if (!ST.r || !code) return Promise.resolve(link('cereales'));
+    if (!rule) return Promise.resolve(note(fill(t.pickCrop, { c: cname || code })) + link('cereales'));
+    if (rule.sun) return Promise.resolve(note(t.sun) + link('oleaginosas'));
+    return get('data/eu/' + rule.f + '.json').then(function (d) {
+      if (tok !== TOK) return;
+      var want = normM(prov), rows = [], seen = {}, newest = '';
+      d.series.forEach(function (s) { s.regions.forEach(function (r) { if (r.c === 'ES' && r.m && r.last && r.last[0] > newest) newest = r.last[0]; }); });
+      var cur = function (r) { return days(r.last[0], newest) <= 28; };
+      var near = {};
+      d.series.forEach(function (s) {
+        var key = null; rule.k.forEach(function (k) { if (!key && s.id.indexOf(k) === 0) key = k; });
+        if (!key || /national-average/.test(s.id)) return;
+        s.regions.forEach(function (r) {
+          if (r.c !== 'ES' || !r.m || !r.last || !cur(r)) return;
+          if (normM(r.m) === want) rows.push({ k: key, sid: s.id, u: s.unit, r: r, f: rule.f });
+          else near[normM(r.m)] = mname(r.m);
+        });
+      });
+      if (!rows.length) {
+        var l = Object.keys(near).map(function (x) { return near[x]; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).sort();
+        return note(l.length ? fill(t.noMarket, { p: prov, l: l.join(', ') }) : t.noAny) + link(rule.f);
+      }
+      var order = rule.k; rows.sort(function (a, b) { return order.indexOf(a.k) - order.indexOf(b.k); });
+      var h = note(fill(t.note, { p: prov })) + '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.prod) + '</th><th scope="col">' + esc(t.mk) + '</th><th scope="col" class="r">' + esc(t.price) + '</th><th scope="col" class="r">' + esc(t.wk) + '</th><th scope="col" class="r">' + esc(t.date) + '</th></tr></thead><tbody>' +
+        rows.map(function (x) {
+          var r = x.r, wk = r.prev && Math.abs(days(r.prev[0], r.last[0]) - 7) <= 1 ? pct(r.last[1], r.prev[1]) : null;
+          return '<tr><td>' + esc(t.names[x.k] || x.k) + '</td><td>' + esc(mname(r.m)) + '</td><td class="r">' + nf(r.last[1], x.u === '€/t' ? 1 : 2) + ' ' + esc(x.u) + '</td><td class="r">' + pc(wk) + '</td><td class="r">' + esc(dt(r.last[0])) + '</td></tr>';
+        }).join('') + '</tbody></table></div>';
+      return h + link(rule.f) + cite('eu_agrifood', newest);
+    });
+  }
+
   /* ---------- Alemania y Reino Unido: producción por Land / región (Destatis, Defra) + tierra en Alemania ---------- */
   var DEF = null, UKD = null;
   var DE_CROPS = ['wheat', 'rye', 'barley', 'oats', 'triticale', 'maize', 'rapeseed', 'sunflower', 'sugarbeet', 'potato', 'silage', 'cereals'];
@@ -802,7 +878,7 @@
       h += sect('crop', te().sCropDE) + sect('land', te().sLand);
     } else if (ST.c === 'UK') {
       h += sect('crop', te().sCropUK);
-    } else h += sect('crop', t.sCrop);
+    } else h += sect('price', tesp().title) + sect('crop', t.sCrop);
     if (!COMPACT) h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
     root.innerHTML = h;
     var run = function (id, fn) { Promise.resolve().then(fn).catch(function () { failSec(tok, id); }); };
@@ -822,7 +898,7 @@
       run('crop', function () { return ukCrop(tok); });
       if (!COMPACT) run('missing', function () { return missingEU().then(function (x) { putSec(tok, 'missing', x); }); });
     } else {
-      run('crop', function () { return spainCrop(tok); });
+      run('price', function () { return spainPrice(tok).then(function (x) { if (x != null) putSec(tok, 'price', x); }); }); run('crop', function () { return spainCrop(tok); });
       if (!COMPACT) run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
     }
   }

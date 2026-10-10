@@ -1540,6 +1540,17 @@ def home_tape(doc, errs, warns, stats):
         if not o: errs.append("home-tape %s/%s: no existe en la capa de precios" % k); continue
         for f in ("id", "sourceId", "observationDate", "value", "currency", "unit", "changePct"):
             if o.get(f) != r.get(f): errs.append("home-tape %s/%s: %s no coincide con la observacion original (%r != %r)" % (k[0], k[1], f, r.get(f), o.get(f)))
+    # Coherencia entre superficies: la portada no puede ir por detras de la fuente cruda (caso real: la capa de precios se quedo en el 27-sep
+    # mientras data/eu/cereales.json y el comparador ya tenian el 4-oct del mismo mercado).
+    try:
+        eu = _j.load(open(_o.path.join(_o.path.dirname(_o.path.dirname(base)), "eu", "cereales.json")))
+        src = [r for s in eu["series"] if s["id"].startswith("milling-wheat-departure-from-silo") for r in s["regions"] if r.get("m") == "Zaragoza"]
+        row = next((r for r in doc["rows"] if r.get("id") == "di_cereales_trigo_eu"), None)
+        if src and row and src[0]["last"][0] > row["observationDate"]:
+            errs.append("home-tape: trigo UE en %s pero la fuente (data/eu/cereales.json, Zaragoza) ya tiene %s" % (row["observationDate"], src[0]["last"][0]))
+        if src and row and row["observationDate"] == src[0]["last"][0] and abs(row["value"] - src[0]["last"][1]) > 1e-6:
+            errs.append("home-tape: trigo UE %s distinto de la fuente %s en la misma fecha" % (row["value"], src[0]["last"][1]))
+    except (OSError, KeyError, ValueError, StopIteration): warns.append("home-tape: no se pudo cruzar el trigo UE con data/eu/cereales.json")
     if set(doc["sourceIds"]) != {r["sourceId"] for r in doc["rows"]}: errs.append("home-tape: sourceIds no coincide con las filas")
     stats["rows"] = len(doc["rows"])
 

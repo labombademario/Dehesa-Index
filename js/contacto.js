@@ -12,7 +12,7 @@
       "copy": "Copiar la dirección",
       "copied": "Dirección copiada",
       "subject": "Consulta desde Dehesa Index",
-      "note": "No hay formulario: escribir directamente es más rápido y no guardamos tus datos en ningún sitio."
+      "note": "No hay formulario en la web ni guardamos esta consulta aquí: tu mensaje se tramita por correo, y lo que nos escribas queda en nuestro buzón. Consulta la información de privacidad."
     },
     "en": {
       "title": "Contact | Dehesa Index",
@@ -23,7 +23,7 @@
       "copy": "Copy the address",
       "copied": "Address copied",
       "subject": "Enquiry from Dehesa Index",
-      "note": "There is no form: writing directly is faster and we do not store your details anywhere."
+      "note": "There is no form on the site and we do not store this enquiry here: your message is handled by email, and what you write stays in our mailbox. See the privacy information."
     },
     "fr": {
       "title": "Contact | Dehesa Index",
@@ -34,7 +34,7 @@
       "copy": "Copier l'adresse",
       "copied": "Adresse copiée",
       "subject": "Demande depuis Dehesa Index",
-      "note": "Il n'y a pas de formulaire : écrire directement est plus rapide et nous ne stockons vos données nulle part."
+      "note": "Il n'y a pas de formulaire sur le site et nous ne conservons pas cette demande ici : votre message est traité par courriel et ce que vous écrivez reste dans notre boîte. Voir les informations sur la vie privée."
     },
     "it": {
       "title": "Contatti | Dehesa Index",
@@ -45,7 +45,7 @@
       "copy": "Copia l'indirizzo",
       "copied": "Indirizzo copiato",
       "subject": "Richiesta da Dehesa Index",
-      "note": "Non c’è un modulo: scrivere direttamente è più rapido e non conserviamo i tuoi dati da nessuna parte."
+      "note": "Non c’è un modulo sul sito e non conserviamo qui questa richiesta: il tuo messaggio viene gestito via email e ciò che scrivi resta nella nostra casella. Vedi l’informativa sulla privacy."
     }
   };
 

@@ -8,6 +8,25 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import lib_cashbids as CB
 from lib_index import ROOT, STATS, git_show, rev_before, stats_series, products, DATASETS, KINDS, WORKFLOW_KINDS, kind_of, content_key, tree_key
 WINDOW_H = 24
+def _pdate(p):
+    """Periodo de la serie -> (fecha aproximada, intervalo normal en dias). YYYY-MM-DD, YYYY-MM, YYYY-Qn, YYYY; None si no se entiende."""
+    import re
+    p = str(p or ''); m = re.match(r'^(\d{4})-(\d{2})-(\d{2})', p)
+    if m: return datetime.date(int(m[1]), int(m[2]), int(m[3])), 10
+    m = re.match(r'^(\d{4})-(\d{2})$', p)
+    if m: return datetime.date(int(m[1]), int(m[2]), 15), 45
+    m = re.match(r'^(\d{4})-?Q([1-4])$', p)
+    if m: return datetime.date(int(m[1]), int(m[2]) * 3 - 1, 15), 120
+    m = re.match(r'^(\d{4})$', p)
+    if m: return datetime.date(int(m[1]), 7, 1), 400
+    return None
+def gap_days(p, prev):
+    """Dias entre el periodo y el anterior, y si el hueco supera el intervalo normal de ese tipo de serie (laguna larga)."""
+    a, b = _pdate(p), _pdate(prev)
+    if not a or not b: return None, False
+    d = (a[0] - b[0]).days
+    return d, d > a[1]
+
 def main():
     now = datetime.datetime.utcnow().replace(microsecond=0); since = now - datetime.timedelta(hours=WINDOW_H)
     iso = since.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -62,7 +81,20 @@ def main():
         if x.get('s'): r['sourceId'] = x['s']
         return r
     fresh = [x for x in new_data if not x.get('new')]
-    movers = sorted([x for x in fresh if isinstance(x['c'], (int, float)) and x['g'] != 'rates' and abs(x['c']) >= 2], key=lambda x: -abs(x['c']))[:12]
+    big = [x for x in fresh if isinstance(x['c'], (int, float)) and x['g'] != 'rates' and abs(x['c']) >= 2]
+    # Una variacion contra un dato de hace meses no es un movimiento de las ultimas 24 h (caso: indice belga de coles de Bruselas, agosto vs marzo): se separa.
+    for x in big: x['gap'], x['longGap'] = gap_days(x['p'], x.get('prevP'))
+    movers = sorted([x for x in big if not x['longGap']], key=lambda x: -abs(x['c']))[:12]
+    gap_movers = sorted([x for x in big if x['longGap']], key=lambda x: -abs(x['c']))[:12]
+    # Lo nuevo por pais (para «cambios en tu zona» segun el pais guardado en Mi mercado): hasta 6 por pais, sin lagunas largas y sin mezclar en el ranking global
+    by_cc = {}
+    for x in fresh:
+        cc = str(x['k']).split('/')[0]
+        if cc == 'P' or x['g'] == 'rates': continue
+        gd, lg = gap_days(x['p'], x.get('prevP'))
+        if lg: continue
+        by_cc.setdefault(cc, []).append(x)
+    by_country = {cc: [mk(x) | {'prevPeriod': x.get('prevP')} for x in sorted(v, key=lambda y: -abs(y['c'] if isinstance(y['c'], (int, float)) else 0))[:6]] for cc, v in sorted(by_cc.items())}
     # revisiones detectadas en la ventana
     revs = []
     try:
@@ -81,6 +113,7 @@ def main():
     doc = {'schemaVersion': 1, 'generatedAt': nowS, 'windowHours': WINDOW_H, 'since': iso,
            'counts': {'datasetsUpdated': len(updated), 'newPeriods': len(fresh), 'newSeries': len([x for x in new_data if x.get('new')]), 'newDatasets': len(new_ds), 'revisions': len(revs), 'stale': len(stale), 'staleNew': len([s for s in stale if s['isNew']]), 'upcoming': len(upcoming)},
            'datasets': sorted(updated, key=lambda x: -x['changed']), 'newDatasets': new_ds, 'movers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV')} for x in movers],
+           'byCountry': by_country, 'gapMovers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV'), 'gapDays': x.get('gap')} for x in gap_movers],
            'newData': [mk(x) for x in sorted(fresh, key=lambda x: -abs(x['c'] if isinstance(x['c'], (int, float)) else 0))[:150]],
            'cashBids': CB.brief_section(now, iso), 'revisions': revs[:30], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,
            'pipelinesCovered': {'total': len(ps.get('pipelines', [])), 'withKind': len([p for p in ps.get('pipelines', []) if WORKFLOW_KINDS.get(p['workflow'])]), 'internal': sorted(w for w, k in WORKFLOW_KINDS.items() if not k)}}

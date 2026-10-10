@@ -544,9 +544,9 @@
   function renderFavorites() {
     var t = ui();
     var root = document.getElementById('pr-favorites');
-    var html = '<h2 class="di-favorites-title">' + esc(t.favoritesTitle) + '</h2>';
+    var html = state.favorites.length ? '<h2 class="di-favorites-title">' + esc(t.favoritesTitle) + '</h2>' : '';
     if (!state.favorites.length) {
-      html += '<div class="di-favorites-empty">' + esc(t.favoritesEmptyHint) + '</div>';
+      html += '<div class="di-favorites-empty di-favorites-hint">' + esc(t.favoritesEmptyHint) + '</div>';   // sin favoritos: una línea, no un bloque con título
     } else {
       html += '<div class="di-favorites-grid">' + state.favorites.map(function (key) {
         var entry = PRODUCT_BY_KEY[key];

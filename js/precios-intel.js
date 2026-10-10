@@ -322,6 +322,7 @@
       (Core && Core.ensureAllHistory ? Core.ensureAllHistory() : Promise.resolve()).then(function(){ FULL_READY = true; render(); }, function(){ FULL_READY = true; render(); });
     });
   }
+  var INTEL_LOADING = false;
   function whenNear(el, fn) {
     if (!global.IntersectionObserver) { fn(); return; }
     var io = new IntersectionObserver(function(es){ if (es.some(function(e){ return e.isIntersecting; })) { io.disconnect(); fn(); } }, { rootMargin: '500px' });
@@ -1251,14 +1252,14 @@
     stories=stories.slice(0,5);
 
     var labels={
-      es:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Impacto de noticias en el mercado',intro:'Cada noticia se conecta con un canal, un mercado y, cuando existe evidencia compatible, una relación observada y su señal estadística.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELACIÓN OBSERVADA',none:(region==='eu'?'Sin relación estadística compatible':'Sin relación estadística regional disponible'),watch:'TRANSMISSION WATCH',context:'Contexto descriptivo · no es una predicción.',empty:'No hay noticias enlazadas para este mercado.'},
-      en:{kicker:'NEWS → MARKET INTELLIGENCE',title:'News market impact',intro:'Each story is linked to a channel, a market and, where compatible evidence exists, an observed relationship and its statistical signal.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'OBSERVED RELATIONSHIP',none:'No compatible regional statistical relationship',watch:'TRANSMISSION WATCH',context:'Descriptive context · not a forecast.',empty:'No linked news is available for this market.'},
-      fr:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Impact des nouvelles sur le marché',intro:'Chaque actualité est reliée à un canal, un marché et, lorsque les données le permettent, à une relation observée et à son signal statistique.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELATION OBSERVÉE',none:'Aucune relation statistique régionale compatible',watch:'TRANSMISSION WATCH',context:'Contexte descriptif · pas une prévision.',empty:'Aucune actualité liée à ce marché.'},
-      it:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Impatto delle notizie sul mercato',intro:'Ogni notizia è collegata a un canale, a un mercato e, quando i dati sono compatibili, a una relazione osservata e al relativo segnale statistico.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELAZIONE OSSERVATA',none:'Nessuna relazione statistica regionale compatibile',watch:'TRANSMISSION WATCH',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
+      es:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Noticias posiblemente relacionadas con el mercado',intro:'Cada noticia se asocia con un producto y un tema por palabras clave: es una asociación automática, no una demostración de impacto. Solo cuando existe una relación estadística observada se muestra su señal.',related:'NOTICIA POSIBLEMENTE RELACIONADA',product:'PRODUCTO',topic:'TEMA DETECTADO',rapeSun:'Colza y girasol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELACIÓN OBSERVADA',none:(region==='eu'?'Sin relación estadística compatible':'Sin relación estadística regional disponible'),watch:'TRANSMISSION WATCH',context:'Contexto descriptivo · no es una predicción.',empty:'No hay noticias enlazadas para este mercado.'},
+      en:{kicker:'NEWS → MARKET INTELLIGENCE',title:'News possibly related to the market',intro:'Each story is matched to a product and a topic by keywords: an automatic association, not proof of impact. A statistical signal is shown only where an observed relationship exists.',related:'POSSIBLY RELATED NEWS',product:'PRODUCT',topic:'DETECTED TOPIC',rapeSun:'Rapeseed and sunflower',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'OBSERVED RELATIONSHIP',none:'No compatible regional statistical relationship',watch:'TRANSMISSION WATCH',context:'Descriptive context · not a forecast.',empty:'No linked news is available for this market.'},
+      fr:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Actualités possiblement liées au marché',intro:'Chaque actualité est associée à un produit et à un thème par mots-clés : une association automatique, pas une preuve d\'impact. Un signal statistique n\'apparaît que lorsqu\'une relation observée existe.',related:'ACTUALITÉ POSSIBLEMENT LIÉE',product:'PRODUIT',topic:'THÈME DÉTECTÉ',rapeSun:'Colza et tournesol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELATION OBSERVÉE',none:'Aucune relation statistique régionale compatible',watch:'TRANSMISSION WATCH',context:'Contexte descriptif · pas une prévision.',empty:'Aucune actualité liée à ce marché.'},
+      it:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Notizie possibilmente collegate al mercato',intro:'Ogni notizia è associata a un prodotto e a un tema tramite parole chiave: un\'associazione automatica, non una prova di impatto. Un segnale statistico compare solo dove esiste una relazione osservata.',related:'NOTIZIA POSSIBILMENTE COLLEGATA',product:'PRODOTTO',topic:'TEMA RILEVATO',rapeSun:'Colza e girasole',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELAZIONE OSSERVATA',none:'Nessuna relazione statistica regionale compatibile',watch:'TRANSMISSION WATCH',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
     };
     var t=labels[lang()]||labels.es;
     var channelLabels=({es:{input_cost:'COSTE DE INSUMOS',trade:'COMERCIO',weather:'CLIMA',supply:'OFERTA',energy:'ENERGÍA',policy:'POLÍTICA',market_impact:'IMPACTO EN EL MERCADO'},en:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},fr:{input_cost:'COÛTS DES INTRANTS',trade:'COMMERCE',weather:'CLIMAT',supply:'OFFRE',energy:'ÉNERGIE',policy:'POLITIQUE',market_impact:'IMPACT MARCHÉ'},it:{input_cost:'COSTI INPUT',trade:'COMMERCIO',weather:'METEO',supply:'OFFERTA',energy:'ENERGIA',policy:'POLITICA',market_impact:'IMPATTO MERCATO'}})[lang()]||{};
-    function productLabel(k){return Core.productName ? Core.productName(k) : k;}
+    function productLabel(k){if(k==='colza'&&t.rapeSun) return t.rapeSun; return Core.productName ? Core.productName(k) : k;}
     function alertFor(relId){return alerts.some(function(a){return a.relationship&&a.relationship.id===relId;});}
     function relFor(link){return link.relation&&rels[link.relation]&&rels[link.relation].status==='ready'?rels[link.relation]:null;}
     function storyCard(n){
@@ -1271,6 +1272,20 @@
       var signal=r ? (corr>=0?'Δ + asociación':'Δ − asociación') : t.none;
       var signalClass=r ? (corr>=0?'positive':'negative') : 'neutral';
       var relationText=r ? r.label : t.none;
+      if(!r){
+        // Sin relación estadística observada: solo «posiblemente relacionada», sin canal→impacto→señal.
+        var topicNode=(link.channel&&link.channel!=='market_impact') ? '<span class="di-news-impact-arrow">→</span><div class="di-news-impact-node"><small>'+t.topic+'</small><strong>'+esc(channelLabels[link.channel]||'')+'</strong></div>' : '';
+        return '<article class="di-news-impact-card">'+
+          '<div class="di-news-impact-flow">'+
+            '<div class="di-news-impact-node news"><small>'+t.related+'</small><strong>'+esc(n.source)+'</strong><span>'+esc(n.date)+'</span></div>'+
+            '<span class="di-news-impact-arrow">→</span>'+
+            '<div class="di-news-impact-node"><small>'+t.product+'</small><strong>'+esc(productLabel(link.market))+'</strong></div>'+topicNode+
+            '<span class="di-news-impact-arrow">→</span>'+
+            '<div class="di-news-impact-node signal neutral"><small>'+t.signal+'</small><strong>'+esc(t.none)+'</strong></div>'+
+          '</div>'+
+          '<div class="di-news-impact-story"><a href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+esc((n.headline&& (n.headline[lang()]||n.headline.es))||'')+'</a><span>'+esc(t.context)+'</span></div>'+
+        '</article>';
+      }
       var lag=r ? String(r.lagPeriods)+' '+(r.frequency==='quarterly'?(r.lagPeriods===1?'trimestre':'trimestres'):(r.lagPeriods===1?'mes':'meses')) : '—';
       return '<article class="di-news-impact-card">'+
         '<div class="di-news-impact-flow">'+
@@ -1306,12 +1321,26 @@
     });
   }
 
+  // Gráficos SVG sin nombre: se les da role=img y una etiqueta con el título del bloque y el nombre del producto más cercano (el texto de la tarjeta ya incluye las cifras).
+  function labelSvgs(root) {
+    Array.prototype.forEach.call(root.querySelectorAll('svg'), function (sv) {
+      if (sv.getAttribute('role') || sv.getAttribute('aria-label') || sv.getAttribute('aria-hidden')) return;
+      var sec = sv.closest('.di-intel-section'), h = sec && sec.querySelector('h2'), card = sv.closest('.di-card, article, .di-map-cell, div[data-open]'), nm = card && card.querySelector('.di-product-name, strong, b');
+      var txt = [h ? h.textContent : '', nm && nm !== h ? nm.textContent : ''].filter(Boolean).join(' · ').replace(/\s+/g, ' ').trim();
+      if (!txt) { sv.setAttribute('aria-hidden', 'true'); return; }
+      sv.setAttribute('role', 'img'); sv.setAttribute('aria-label', txt);
+    });
+  }
+
   function render() {
     var root = document.getElementById('pr-intel');
     if (!root) return;
     if (!REAL_HISTORY_READY) {
-      root.innerHTML = '<div class="di-intel-section"><div class="di-intel-head"><h2>'+esc(X({es:'Inteligencia basada en histórico real',en:'Intelligence based on real history',fr:'Intelligence fondée sur l’historique réel',it:'Intelligence basata sullo storico reale'}))+'</h2><p>'+esc(X({es:'Cargando observaciones normalizadas. Las series sintéticas no se utilizan para estos cálculos.',en:'Loading normalised observations. Synthetic series are not used for these calculations.',fr:'Chargement des observations normalisées. Les séries synthétiques ne sont pas utilisées pour ces calculs.',it:'Caricamento delle osservazioni normalizzate. Le serie sintetiche non vengono usate per questi calcoli.'}))+'</p></div></div>';
-      if (!INTEL_WAIT) { INTEL_WAIT = true; whenNear(root, function(){ loadRealHistory(function(){ render(); }); }); }
+      root.innerHTML = '<div class="di-intel-section"><div class="di-intel-head"><h2>'+esc(X({es:'Inteligencia basada en histórico real',en:'Intelligence based on real history',fr:'Intelligence fondée sur l’historique réel',it:'Intelligence basata sullo storico reale'}))+'</h2><p>'+esc(X({es:'Cargando observaciones normalizadas. Las series sintéticas no se utilizan para estos cálculos.',en:'Loading normalised observations. Synthetic series are not used for these calculations.',fr:'Chargement des observations normalisées. Les séries synthétiques ne sont pas utilisées pour ces calculs.',it:'Caricamento delle osservazioni normalizzate. Le serie sintetiche non vengono usate per questi calcoli.'}))+'</p>'+
+        '<p><button type="button" class="di-link-btn" id="di-intel-load">'+esc(X({es:'Cargar el análisis ahora',en:'Load the analysis now',fr:'Charger l’analyse maintenant',it:'Carica ora l’analisi'}))+'</button></p></div></div>';
+      var loadNow = function(){ if (INTEL_LOADING) return; INTEL_LOADING = true; loadRealHistory(function(){ render(); }); };   // el botón evita depender de hacer scroll (teclado y lector de pantalla)
+      var lb = document.getElementById('di-intel-load'); if (lb) lb.addEventListener('click', loadNow);
+      if (!INTEL_WAIT) { INTEL_WAIT = true; whenNear(root, loadNow); }
       return;
     }
     var corrVolData = buildCorrAndVol();
@@ -1328,6 +1357,7 @@
       renderSpreadsHtml() +
       renderMarginHtml();
     wireOpenTargets(root);
+    labelSvgs(root);
     armFull(root);
     var seasonSelect = document.getElementById('di-season-select');
     if (seasonSelect) seasonSelect.addEventListener('change', function (e) {
