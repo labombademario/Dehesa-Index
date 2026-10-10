@@ -26,6 +26,7 @@ const dRows = dr.states.KS, dLast = dRows[dRows.length - 1];
 const hayRows = hay.latest.rows.filter(r => r[3] === 'Per Ton').sort((a, b) => (b[11] || 0) - (a[11] || 0));
 const cs = corn.series.filter(s => ['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED'].includes(s.freshness));
 const vc = es.campaigns['2024'].crops.find(c => c.c === 'CE0000'), v47 = vc.v['47'];
+const eucer = J('data/eu/cereales.json'), vB = (eucer.series.filter(x => /^feed-barley/.test(x.id)).map(x => x.regions.find(r => /Valladolid/.test(r.m))).filter(Boolean)[0] || { last: [0, 0] }).last[1];
 const rank = Object.keys(vc.v).map(p => vc.v[p][0]).filter(x => x > 0).sort((a, b) => b - a).indexOf(v47[0]) + 1;
 const cattleStates = status.reports.filter(r => r.kind === 'cattle' && r.latest).length;
 
@@ -100,7 +101,16 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': ES media de España = JSON', nrm(t).includes(nrm(f(vc.t[4] / vc.t[3], 2))));
   ok(tag + ': ES datos provisionales y fuente MAPA', /(provisional|provisoire|provvisori)/i.test(t) && (await page.evaluate(() => document.querySelector('[data-mm-body="crop"]').parentNode.innerHTML)).includes('mapa_es'));
   ok(tag + ': ES lista de lo que falta (5 puntos)', (await page.$$('[data-mm-body="missing"] li')).length === 5);
-  ok(tag + ': ES no inventa seguro ni precio provincial', (await page.$$('[data-mm-body="ins"], [data-mm-body="dr"], [data-mm-body="price"]')).length === 0);
+  ok(tag + ': ES no inventa seguro ni sequía', (await page.$$('[data-mm-body="ins"], [data-mm-body="dr"]')).length === 0);
+  // «TOTAL CEREALES» agrupa productos con precios distintos: la sección de precio pide un cultivo concreto y no muestra ninguna cifra
+  await page.waitForFunction(() => { const e = document.querySelector('[data-mm-body="price"]'); return e && !e.querySelector('.di-loading') && e.textContent.trim().length > 20; }, null, { timeout: 15000 }).catch(() => {});
+  const pT = await page.evaluate(() => { const e = document.querySelector('[data-mm-body="price"]'); return e ? e.innerText : ''; });
+  ok(tag + ': ES total cereales sin precio inventado', pT && !/€\/t|EUR\/t|\d+[.,]\d\s*€/.test(pT) && /lonjas\.html\?c=ES/.test(await page.evaluate(() => document.querySelector('[data-mm-body="price"]').parentNode.innerHTML)));
+  // Cebada en Valladolid: referencia del mercado de Valladolid = data/eu/cereales.json (pienso, último dato)
+  await page.goto(BASE + '/mi-mercado.html?c=ES&r=47&p=cereales&k=CE1300', { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => { const e = document.querySelector('[data-mm-body="price"]'); return e && /Valladolid/.test(e.textContent) && /\d/.test(e.textContent); }, null, { timeout: 15000 }).catch(() => {});
+  const pB = nrm(await page.evaluate(() => { const e = document.querySelector('[data-mm-body="price"]'); return e ? e.innerText : ''; }));
+  ok(tag + ': ES cebada Valladolid = JSON (' + vB + ')', pB.includes('Valladolid') && pB.includes(nrm(f(vB, 1))));
   await page.selectOption('[data-mm="k"]', 'CE1100'); await page.waitForTimeout(300);
   const wh = es.campaigns['2024'].crops.find(c => c.c === 'CE1100').v['47'];
   ok(tag + ': ES cambiar de cultivo (trigo) = JSON', nrm(await sec('crop')).includes(String(wh[0])));
