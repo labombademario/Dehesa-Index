@@ -76,8 +76,12 @@ OILSEED_AGG = _re.compile(r'oilseeds? and oleaginous', _re.I)   # Eurostat apri_
 # agregado de oleaginosas de Eurostat (decision de Mario, 9 oct). La etiqueta no nombra cada producto porque el INDEC no publica la cesta por producto.
 GROUP_INDEX_PRODUCT = {'ar-indec-ipp-cereals-oilseeds': ['wheat', 'maize', 'barley', 'oats', 'rye', 'rice', 'soy', 'rapeseed'], 'ar-indec-ipp-vegetables-pulses': ['potato'],
                        'ar-indec-ipp-pigs-farm': ['poultry', 'eggs'], 'ar-indec-ipp-dairy-products': ['butter', 'cheese']}
+# Series de un AGREGADO de productos que NO son ningun producto suelto: no rellenan celdas de cantidad (una existencia de «cebada, avena y maiz»
+# juntos no es la existencia de la cebada). La regla de los indices de grupo (9 oct) es solo para precios; esto queda pendiente de que Mario decida.
+AGGREGATE_NOT_PRODUCT = {'at-vb-coarse-grains-stocks'}
 def index_tags(s, m, tags):
     """Etiquetas de producto de una serie para la matriz, con los indices de GRUPO (oleaginosas de Eurostat, SIPM de Argentina) repartidos a sus productos."""
+    if s.get('id') in AGGREGATE_NOT_PRODUCT: return []
     if m != 'price_index': return list(tags)
     extra = (['rapeseed', 'soy'] if OILSEED_AGG.search(str(s.get('label', ''))) else []) + GROUP_INDEX_PRODUCT.get(s.get('id'), [])
     return list(dict.fromkeys(list(tags) + extra))

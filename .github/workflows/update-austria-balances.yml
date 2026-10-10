@@ -1,0 +1,34 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Austria (Statistik Austria supply balances)
+on:
+  schedule:
+    - cron: '35 7 3 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-austria-balances
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - run: pip install pdfplumber
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-austria-balances.py
+        timeout-minutes: 12
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/austria-balances-stats.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/austria-balances-stats.json
+      - name: Publicar
+        run: bash scripts/publish-data.sh "Datos Austria (Statistik Austria, balances de abastecimiento)" data/austria-balances-stats.json data/austria-balances-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

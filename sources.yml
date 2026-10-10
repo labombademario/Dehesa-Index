@@ -258,6 +258,16 @@ sources:
     data: [switzerland-foag-stats.json, ch-chain.json]
     log: switzerland-foag-log.txt
     message: Datos Suiza (FOAG, mercados agrarios)
+  - id: austria-balances
+    name: Update Austria (Statistik Austria supply balances)
+    cron: ['35 7 3 * *']
+    pre: ['pip install pdfplumber']
+    script: scripts/update-austria-balances.py
+    timeout: 20
+    script_timeout: 12
+    data: [austria-balances-stats.json]
+    log: austria-balances-log.txt
+    message: Datos Austria (Statistik Austria, balances de abastecimiento)
   - id: switzerland-bfs
     name: Update Switzerland (BFS agricultural accounts and price indices)
     cron: ['45 6 12 * *']

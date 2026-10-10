@@ -2427,6 +2427,32 @@
    "evidence": "Las paginas de estadisticas de Lecheria de magyp.gob.ar (leidas el 10-oct-2026 desde GitHub Actions) enlazan en su pie a https://www.argentina.gob.ar/terminos-y-condiciones. Esos Terminos dicen: 'El Administrador licencia todos sus contenidos bajo la licencia Creative Commons Atribucion 4.0 Internacional ... excepto cuando se declare lo contrario.' No hay ninguna declaracion en contrario en las paginas ni en los XLSX. La raiz magyp.gob.ar/sitio redirige a argentina.gob.ar/economia/agricultura, con la misma licencia. La misma Direccion publica conjuntos lacteos en datos.gob.ar con CC BY 4.0.",
    "short": "SAGyP Lecheria (Argentina)",
    "legalConfidenceReason": "Licencia CC BY 4.0 por remision del pie de la pagina a los Terminos de argentina.gob.ar; no esta repetida en la propia pagina."
+  },
+  "statistik_austria_vb": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "notes": "Existencias de cereales, oleaginosas, mantequilla y queso y produccion de huevos leidas de las tablas de los PDF anuales; cada columna usada cuadra la identidad del balance. La clave de la API de STATcube es de pago y no se usa.",
+   "name": "Austria - Statistik Austria, Versorgungsbilanzen (publicaciones PDF de balances de abastecimiento)",
+   "url": "https://www.statistik.at/statistiken/land-und-forstwirtschaft/landwirtschaftliche-bilanzen/versorgungsbilanzen",
+   "country": "AT",
+   "licenseId": "STATISTIK-AUSTRIA-REUSE",
+   "licenseName": "Statistik Austria: reproduccion, difusion y edicion permitidas citando «STATISTIK AUSTRIA» (impresum de la publicacion)",
+   "licenseUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+   "attributionText": "Quelle/Fuente: STATISTIK AUSTRIA, Versorgungsbilanzen. Valores extraidos de las tablas de la publicacion (extracto).",
+   "additionalRestrictions": "Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en cada PDF.",
+   "evidence": "Impresum de 'Versorgungsbilanzen für pflanzliche Produkte 2024/2025' (Statistik im Fokus 1.27, leido el 10-oct-2026): 'Bei richtiger Wiedergabe und mit korrekter Quellenangabe „STATISTIK AUSTRIA“ ist es gestattet, die Inhalte zu vervielfältigen, verbreiten, öffentlich zugänglich zu machen und sie zu bearbeiten. Bei auszugsweiser Verwendung ... ist an geeigneter Stelle ein Hinweis anzubringen, dass die verwendeten Inhalte bearbeitet wurden.' STATkompakt 2025: 'Eine Weiterverwendung ist bei Quellenangabe und korrekter Wiedergabe gestattet.' Sin clausula no comercial.",
+   "short": "Statistik Austria",
+   "legalConfidenceReason": "Permiso explicito de reutilizacion con cita en el impresum de cada publicacion."
   }
  },
  "files": {
@@ -3302,6 +3328,11 @@
     "Eurostat": "eurostat"
    },
    "notes": "scripts/update-ch-bfs.py: BFS Erlöspreisstatistik (cantidades y precios, sin el año de estimacion), indices de precios de Agristat/BFS y mantequilla y queso de Eurostat apro_mk_pobta."
+  },
+  "data/austria-balances-stats.json": {
+   "byCountry": {
+    "AT": "statistik_austria_vb"
+   }
   }
  },
  "derived": [
