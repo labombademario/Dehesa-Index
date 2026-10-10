@@ -855,7 +855,8 @@
   function newsImpactHtml(n) {
     var lg=lang(), labels=newsImpactLabels()[lg]||newsImpactLabels().es;
     var links=n.marketLinks||[];
-    var primary=n.impactChannel || (links[0]&&links[0].channel) || 'market_impact';
+    var primary=n.impactChannel || (links[0]&&links[0].channel);
+    if(!primary || primary==='market_impact') return '';   // una simple mención no demuestra efecto de mercado: sin etiqueta de impacto
     var badge='<span class="di-news-impact-badge di-news-impact-'+esc(primary)+'">'+esc(labels[primary]||labels.market_impact)+'</span>';
     var markets=[];
     links.forEach(function(l){ if(markets.indexOf(l.market)<0) markets.push(l.market); });

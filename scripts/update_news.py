@@ -357,7 +357,7 @@ PRODUCTS = {
  "trigo": ["wheat", "trigo", "fr:ble", "blé", "frumento", "grano tenero", "grano duro", "durum"],
  "soja": ["soybean", "soy", "soja", "soia"],
  "arroz": ["rice", "arroz", "riz", "riso", "paddy"],
- "cebada": ["barley", "cebada", "orge", "orzo", "malt"],
+ "cebada": ["barley", "cebada", "orge", "orzo", "=malt"],
  "colza": ["rapeseed", "canola", "colza", "sunflower", "girasol", "tournesol", "girasole"],
  "azucar": ["sugar", "sugarcane", "azucar", "sucre", "zucchero"],
  "leche": ["milk", "dairy", "butter", "cheese", "whey", "leche", "lacteo", "mantequilla", "queso", "lait", "laitier", "beurre", "fromage", "latte", "latticini", "burro", "formaggio"],
@@ -467,8 +467,8 @@ def hit_count(text_n, text_raw, terms, lang):
         if t.startswith("="):   # palabra exacta, sin sufijos («reis» no debe casar con «Reise»)
             if re.search(r"(?<![a-z0-9])" + re.escape(t[1:]) + r"(?![a-z0-9])", text_n): n += 1
             continue
-        if t == "*schaf":       # «Landwirtschaft» contiene «schaf»
-            if "schaf" in text_n.replace("wirtschaf", ""): n += 1
+        if t == "*schaf":       # oveja: «Schafe», «Mutterschaf», «Schafzucht»; NO -schaft («Landwirtschaft», «Präsidentschaft», «Gesellschaft») ni «schaffen»
+            if re.search(r"schaf(?![ft])", text_n): n += 1
             continue
         if t.startswith("*"):   # subcadena: compuestos tipo "Weizenpreise", "varkensprijs", "kornpriser"
             t = t[1:]
@@ -577,8 +577,7 @@ def build_market_links(products, topics, title, desc):
     if "energia" in topics and not energy: add("energia", "energy")
     if "politica" in topics or "ayudas" in topics:
         for p in market_products: add(p, "policy")
-    if not links:
-        for p in market_products[:4]: add(p, "market_impact")
+    # Sin canal comprobado (clima, oferta, comercio, costes, politica...) NO se inventa un «impacto en el mercado»: una simple mencion del producto no demuestra efecto.
     return sorted(links, key=lambda x: (CHANNEL_PRIORITY.index(x["channel"]) if x["channel"] in CHANNEL_PRIORITY else 99, x["market"]))
 
 # Anuncios de compraventa (maquinaria, semillas sueltas…) que mencionan un cultivo por casualidad: no son noticias de mercado.
@@ -653,7 +652,7 @@ def fetch(feed):
             "source": pub, "lang": feed["lang"], **({"country": cc} if (cc := country_of(pub)) else {}),
             "headline": {"en": title, "es": title, "fr": title, "it": title},
             "description": desc[:280], "url": x["link"], "relevance": score, "auto": True,
-            "impactChannel": links[0]["channel"] if links else "market_impact", "marketLinks": links})
+            "impactChannel": links[0]["channel"] if links else None, "marketLinks": links})
     rows.sort(key=lambda r: (r["date"], r["relevance"]), reverse=True)
     rows = rows[:MAX_PER_FEED]
     st["kept"] = len(rows)
@@ -754,6 +753,21 @@ if __name__ == "__main__":
             if c: x["country"] = c
             else: x.pop("country", None)
         (DATA / "news.json").write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); write_views(d["items"], d["generatedAt"])
+    elif "--reclassify" in sys.argv:  # vuelve a clasificar data/news.json con las reglas actuales (sin red): quita falsos positivos y los enlaces de mercado sin canal real
+        d = json.loads((DATA / "news.json").read_text(encoding="utf-8"))
+        gen = {f["source"] for f in FEEDS if f["general"]} - {f["source"] for f in FEEDS if not f["general"]}
+        out = []; dropped = 0
+        for x in d["items"]:
+            c = classify(x["headline"]["en"], x.get("description", ""), x["region"], x["lang"], x["source"] in gen)
+            if not c: dropped += 1; continue
+            products, topics, _reg, score = c
+            if x["source"] in TRUSTED: score = min(100, score + 8)
+            links = build_market_links(products, topics, x["headline"]["en"], x.get("description", ""))
+            x.update({"products": products, "topics": topics, "topic": topics[0] if topics else "", "relevance": score, "impactChannel": links[0]["channel"] if links else None, "marketLinks": links})
+            out.append(x)
+        d["items"] = out; d["count"] = len(out)
+        (DATA / "news.json").write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); write_views(out, d["generatedAt"])
+        print(f"[OK] reclasificadas {len(out)}, descartadas {dropped}")
     elif "--rebuild-views" in sys.argv:  # reconstruye las vistas desde data/news.json sin tocar la red
         d = json.loads((DATA / "news.json").read_text(encoding="utf-8")); write_views(d["items"], d["generatedAt"])
     else:

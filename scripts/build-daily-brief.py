@@ -27,6 +27,28 @@ def gap_days(p, prev):
     d = (a[0] - b[0]).days
     return d, d > a[1]
 
+_CAT = {}
+def _catalog(cc):
+    if cc not in _CAT:
+        try: _CAT[cc] = [x['id'] for x in json.loads((ROOT / 'data/catalog' / ('%s.json' % cc)).read_text())['series'] if x.get('group') == 'product']
+        except Exception: _CAT[cc] = []
+    return _CAT[cc]
+_PAGES = None
+def href_for(k):
+    """Destino REAL de una clave 'P/...' del resumen: ficha de producto si existe (data/product-metadata.json) o la serie en la ficha del pais (catalogo). None si no hay destino: no se enlaza a ciegas."""
+    global _PAGES
+    if _PAGES is None: _PAGES = set(json.loads((ROOT / 'data/product-metadata.json').read_text())['products'])
+    p = str(k).split('/')
+    if p[0] != 'P' or len(p) < 2: return None
+    if len(p) == 3 and p[1] in _PAGES: return 'producto.html?p=' + p[1]
+    if len(p) == 3: prod, reg = p[1], p[2]
+    elif p[1].startswith('di_') and '_' in p[1][3:]: prod, _, reg = p[1][3:].rpartition('_')
+    else: return None
+    cc = reg.upper(); ids = _catalog(cc)
+    ok = [i for i in ids if i == 'product:%s_%s' % (prod, reg) or i.endswith('_%s_%s' % (prod, reg))]
+    if len(ok) == 1: return 'paises.html?c=%s&s=%s' % (cc, ok[0])
+    return None
+
 def main():
     now = datetime.datetime.utcnow().replace(microsecond=0); since = now - datetime.timedelta(hours=WINDOW_H)
     iso = since.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -115,8 +137,16 @@ def main():
            'datasets': sorted(updated, key=lambda x: -x['changed']), 'newDatasets': new_ds, 'movers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV')} for x in movers],
            'byCountry': by_country, 'gapMovers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV'), 'gapDays': x.get('gap')} for x in gap_movers],
            'newData': [mk(x) for x in sorted(fresh, key=lambda x: -abs(x['c'] if isinstance(x['c'], (int, float)) else 0))[:150]],
-           'cashBids': CB.brief_section(now, iso), 'revisions': revs[:30], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,
+           'cashBids': CB.brief_section(now, iso), 'revisions': [r | {'kind': 'historical'} for r in revs[:30]], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,
            'pipelinesCovered': {'total': len(ps.get('pipelines', [])), 'withKind': len([p for p in ps.get('pipelines', []) if WORKFLOW_KINDS.get(p['workflow'])]), 'internal': sorted(w for w, k in WORKFLOW_KINDS.items() if not k)}}
+    # destino verificado de cada fila (la clave interna no siempre es una ficha de producto)
+    for sec in ('movers', 'gapMovers', 'newData'):
+        for x in doc[sec]:
+            h = href_for(x['k'])
+            if h: x['href'] = h
+    for r in doc['revisions']:
+        h = href_for(r['series'])
+        if h: r['href'] = h
     (ROOT / 'data/views').mkdir(exist_ok=True)
     def views():
         # la Home solo necesita las cifras y los mayores movimientos: vista pequena (el resumen completo crece con la actividad del dia y rompia el presupuesto de la portada)

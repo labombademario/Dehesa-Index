@@ -1248,6 +1248,8 @@
     // solo noticias del mercado elegido (las «globales» únicamente si de esa región no hay ninguna)
     var regional=stories.filter(function(n){return n.region===region;});
     stories=regional.length?regional:stories.filter(function(n){return n.region==='global';});
+    // solo noticias con un canal comprobado (clima, oferta, comercio, costes...): una mención del producto no es un impacto de mercado
+    stories=stories.filter(function(n){return (n.marketLinks||[]).some(function(l){return l.channel&&l.channel!=='market_impact';});});
     stories.sort(function(a,b){return String(a.date)<String(b.date)?1:-1;});
     stories=stories.slice(0,5);
 

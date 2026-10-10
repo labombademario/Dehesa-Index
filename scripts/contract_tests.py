@@ -585,6 +585,27 @@ def daily_brief(doc, errs, warns, stats):
         n = sum(1 for x in doc["coverage"] if x["kind"] == k)
         if v["datasets"] != n: errs.append("byKind.%s.datasets %d != %d en coverage" % (k, v["datasets"], n))
         if v["changed"] != sum(1 for x in doc["coverage"] if x["kind"] == k and x["status"] != "unchanged"): errs.append("byKind.%s.changed incoherente" % k)
+    # destinos de los enlaces: cada href y cada clave de serie debe existir (producto, serie del catalogo del pais); una clave P/ sin href no se enlaza
+    import urllib.parse as _up
+    _prods = set(json.loads((ROOT / "data/product-metadata.json").read_text())["products"]); _ids = {}
+    def _cat(cc):
+        if cc not in _ids:
+            _ids[cc] = set()
+            for f in ("data/catalog/%s.json" % cc, "data/catalog/eu/%s.json" % cc):
+                try: _ids[cc] |= {x["id"] for x in json.loads((ROOT / f).read_text())["series"]}
+                except Exception: pass
+        return _ids[cc]
+    for sec, key in (("movers", "k"), ("gapMovers", "k"), ("newData", "k"), ("revisions", "series")):
+        for x in doc[sec]:
+            h = x.get("href"); k = x[key]
+            if h:
+                u = _up.urlparse(h); q = _up.parse_qs(u.query)
+                if u.path == "producto.html" and q.get("p", [""])[0] not in _prods: errs.append("brief.%s: href %s no es una ficha de producto" % (sec, h)); break
+                if u.path == "paises.html" and q.get("s", [""])[0] not in _cat(q.get("c", [""])[0]): errs.append("brief.%s: href %s apunta a una serie que no existe" % (sec, h)); break
+            elif not k.startswith(("P/", "CB/")):
+                cc, _, sid = k.partition("/")
+                if sid not in _cat(cc): errs.append("brief.%s: la serie %s no existe en el catalogo (enlace roto)" % (sec, k)); break
+            elif k.startswith("P/"): errs.append("brief.%s: %s sin destino verificado" % (sec, k)); break
     pc = doc["pipelinesCovered"]
     if pc["withKind"] + len(pc["internal"]) != pc["total"]: errs.append("pipelinesCovered: withKind + internal != total (hay pipelines sin clasificar)")
     for lst in ("movers", "newData"):
