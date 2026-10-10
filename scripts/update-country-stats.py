@@ -22,6 +22,7 @@ def norm_period(p):
     if len(p) == 8 and p[4:6] == "MM": return p[:4] + "-" + p[6:]
     if len(p) == 8 and p[4:6] == "JJ": return p[:4]
     if len(p) == 6 and p[4] in ("Q", "K"): return p[:4] + "-Q" + p[5]
+    if len(p) == 6 and p[4] == "H": return p[:4] + "-S" + p[5]   # semestre (Statistics Denmark: 2025H2)
     return p
 
 def mk(id_, label, unit, freq, pts, group, note=None):
@@ -130,6 +131,14 @@ try:
     log.append("LPRIS38 insumos elegidos: " + str(n))
 except Exception as e:
     log.append("ERROR DK LPRIS38: " + str(e)[:160])
+
+# existencias de cereales (KORN2: semestral, existencias a fin de semestre en almacenistas y en granjas, millones de kg)
+# y de colza (KORN: anual, «Stocks, ultimo», origen danes + importado, año natural). Se publican por separado, sin sumar ni estimar.
+for cid, key, label in [("H105", "wheat", "Wheat"), ("H130", "rye", "Rye"), ("H145", "barley", "Barley"), ("H146", "oats", "Oats (incl. cereal mixtures)"), ("H148", "maize", "Maize")]:
+    for ak, who, wl in [("K10", "trade", "at trade companies"), ("K20", "farms", "on farms")]:
+        add(dk, "dk-stock-%s-%s" % (key, who), "%s: stocks %s, end of half-year (KORN2)" % (label, wl), "million kg", "semiannual", lambda c=cid, a=ak: dst("KORN2", [("AFGRØDE", [c]), ("AK", [a])]), "stocks")
+for cid, key, label in [("H205", "rapeseed", "Rape seeds"), ("H105", "wheat", "Wheat"), ("H145", "barley", "Barley")]:
+    add(dk, "dk-stock-%s-yearend" % key, "%s: stocks at year end, Danish and imported (KORN)" % label, "million kg", "annual", lambda c=cid: dst("KORN", [("AFGRØDE", [c]), ("PERIODE", ["KAAR"]), ("OPRIND", ["004"]), ("TYPE", ["0445"])]), "stocks")
 
 countries["DK"] = {"name": "Denmark", "source": {"name": "Statistics Denmark (StatBank)", "url": "https://www.statbank.dk/", "license": "CC BY 4.0"}, "series": dk}
 

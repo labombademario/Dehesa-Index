@@ -283,6 +283,270 @@
    "state": "NOT_APPLICABLE",
    "evidence": "eu-gapfill-stats.json#DE/rice",
    "reason": "Eurostat (apro_cpsh1) registra 0 ha y 0 t de arroz en DE en todos los años publicados."
+  },
+  {
+   "cc": "PL",
+   "product": "rice",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#PL/rice",
+   "reason": "Polonia no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "PL",
+   "product": "rice",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#PL/rice",
+   "reason": "Polonia no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "PL",
+   "product": "rice",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#PL/rice",
+   "reason": "Polonia no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "PL",
+   "product": "olive",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#PL/olive",
+   "reason": "Polonia no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "PL",
+   "product": "olive",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#PL/olive",
+   "reason": "Polonia no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "AT",
+   "product": "rice",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#AT/rice",
+   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "AT",
+   "product": "rice",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#AT/rice",
+   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "AT",
+   "product": "rice",
+   "metric": "production",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#AT/rice",
+   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "AT",
+   "product": "rice",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#AT/rice",
+   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "AT",
+   "product": "olive",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#AT/olive",
+   "reason": "Austria no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "AT",
+   "product": "olive",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#AT/olive",
+   "reason": "Austria no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "AT",
+   "product": "olive",
+   "metric": "production",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#AT/olive",
+   "reason": "Austria no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "NL",
+   "product": "rice",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#NL/rice",
+   "reason": "Países Bajos no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "NL",
+   "product": "rice",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#NL/rice",
+   "reason": "Países Bajos no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "NL",
+   "product": "rice",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#NL/rice",
+   "reason": "Países Bajos no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "NL",
+   "product": "olive",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#NL/olive",
+   "reason": "Países Bajos no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "NL",
+   "product": "olive",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#NL/olive",
+   "reason": "Países Bajos no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "DK",
+   "product": "rice",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DK/rice",
+   "reason": "Dinamarca no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "DK",
+   "product": "rice",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DK/rice",
+   "reason": "Dinamarca no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "DK",
+   "product": "rice",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DK/rice",
+   "reason": "Dinamarca no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "DK",
+   "product": "olive",
+   "metric": "price",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DK/olive",
+   "reason": "Dinamarca no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "DK",
+   "product": "olive",
+   "metric": "price_index",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DK/olive",
+   "reason": "Dinamarca no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "NL",
+   "product": "oats",
+   "metric": "price",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/oats",
+   "reason": "Países Bajos: avena testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
+  },
+  {
+   "cc": "NL",
+   "product": "oats",
+   "metric": "price_index",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/oats",
+   "reason": "Países Bajos: avena testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
+  },
+  {
+   "cc": "NL",
+   "product": "oats",
+   "metric": "stocks",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/oats",
+   "reason": "Países Bajos: avena testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
+  },
+  {
+   "cc": "NL",
+   "product": "rye",
+   "metric": "price",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/rye",
+   "reason": "Países Bajos: centeno testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
+  },
+  {
+   "cc": "NL",
+   "product": "rye",
+   "metric": "price_index",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/rye",
+   "reason": "Países Bajos: centeno testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
+  },
+  {
+   "cc": "NL",
+   "product": "rye",
+   "metric": "stocks",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/rye",
+   "reason": "Países Bajos: centeno testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
+  },
+  {
+   "cc": "DK",
+   "product": "soy",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#DK/soy",
+   "reason": "Dinamarca no cultiva soja: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "PT",
+   "product": "rapeseed",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#PT/rapeseed",
+   "reason": "Portugal no cultiva colza: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "PT",
+   "product": "soy",
+   "metric": "stocks",
+   "state": "NOT_APPLICABLE",
+   "evidence": "eu-gapfill-stats.json#PT/soy",
+   "reason": "Portugal no cultiva soja: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+  },
+  {
+   "cc": "NL",
+   "product": "soy",
+   "metric": "price_index",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/soy",
+   "reason": "Países Bajos: soja testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
+  },
+  {
+   "cc": "NL",
+   "product": "soy",
+   "metric": "stocks",
+   "state": "NOT_MATERIAL",
+   "evidence": "eu-gapfill-stats.json#NL/soy",
+   "reason": "Países Bajos: soja testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
   }
  ]
 }
