@@ -1,0 +1,122 @@
+METOD 200 3096926
+OCLA https://www.ocla.org.ar/ 200 106241 https://www.ocla.org.ar/
+OCLA https://www.ocla.org.ar/contents/news/terminos 404 800 https://www.ocla.org.ar/contents/news/terminos
+OCLA https://www.ocla.org.ar/contents/institucional 404 800 https://www.ocla.org.ar/contents/institucional
+OCLA xlsx 200 107923
+   SHEET OCLA | Series Mensuales 319
+       ['Mes', 'Precio $/litro Naciona', 'Precio/kg. de SU Nacio', 'Precio US$/litro Nacio', 'IPC - INDEC CoberNac', 'Leche, Productos Lácte', 'IPIM Nivel General - I', 'IPIM Lácteos - INDEC', 'DOLAR OFICIAL $/US$', 'PRODUCCION NACIONAL DE', 'Producción diaria por ', 'GRASA BUTIROSA   %', 'PROTEINA  %', 'UFC/ml      en miles']
+       ['2000-01-01 00:00:00', '1.0002', '889.3']
+       ['2000-02-01 00:00:00', '1.0004', '783.9']
+       ['2000-03-01 00:00:00', '0.999', '797.5']
+       ['2000-04-01 00:00:00', '0.999', '707.2']
+       ['2000-05-01 00:00:00', '0.9997', '722.7']
+       ['2026-04-01 00:00:00', '498.18', '6654.37', '0.3606204861362206', '11363.0904', '12375.6005', '15542.538628287235', '11982.466920933632', '1381.4523', '827.3', '3118', '0.0397', '0.0353', '95']
+       ['2026-05-01 00:00:00', '508.74', '6684.54', '0.36410424801171914', '11607.3937', '12815.591', '15931.967610138774', '12416.625410313654', '1397.2372', '915.58', '3351', '0.0402', '0.0361', '76']
+       ['2026-06-01 00:00:00', '518.16', '6894.36', '0.3572845053703', '11826.4103', '12861.9372', '16104.17403205355', '12636.827353089624', '1450.2728', '943.43', '3582', '0.0395', '0.035699999999999996', '83']
+   SHEET OCLA | Series Anuales 57
+       ['Año', 'PRODUCCION NACIONAL DE', 'PRODUCCION NACIONAL DE', 'VACAS cabezas totales', 'UNIDADES PRODUCTIVAS c', 'CONSUMO PER CÁPITA en ', 'EXPORTACIONES en miles', 'EXPORTACIONES en      ']
+       ['1970', '4073']
+       ['1971', '4680']
+       ['1972', '5238']
+       ['1973', '5064']
+       ['1974', '5133']
+       ['2023', '11326', '1588902', '10197', '192.8', '1337790.7088800003', '353947.109664']
+       ['2024', '10590', '1483587', '9407', '173.7', '1412723.40797', '382664.1151279999']
+       ['2025', '11617.6', '1497480', '9013', '185.3', '1690106.6', '425042']
+   SHEET OCLA | _xltb_storage_ 3
+       ['XL Toolbox Settings']
+       ['export_preset', '<?xml version="1.0" en']
+       ['export_path', 'C:\\Users\\Laptop\\Docume']
+       ['XL Toolbox Settings']
+       ['export_preset', '<?xml version="1.0" en']
+       ['export_path', 'C:\\Users\\Laptop\\Docume']
+MAGYP https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/ 200 118088 https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/
+   A /sitio/areas/ss_lecheria
+MAGYP https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/index.php 200 34687 https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/index.php
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPC001_PPC002_PPC006_PPC007.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPC001_PPC002_PPC006_PPC007_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV008_PPV009_PPV010_PPV014.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV008_PPV009_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV018.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV019.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV021_PPV022.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV021_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV022.xlsx
+   A /sitio/areas/ss_lecheria
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV022.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV021_nt.pdf
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV021_PPV022.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV021_nt.pdf
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV018.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV019.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003g1.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003g1.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003g2.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003g2.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV003_nt.pdf
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006g1.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006g1.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006g2.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006g2.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV006_nt.pdf
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV009g.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV008_PPV009_PPV010_PPV014.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPV008_PPV009_nt.pdf
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPC001G.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPC001M.jpg
+   A https://www.magyp.gob.ar//sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPC006M.jpg
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPC001_PPC002_PPC006_PPC007.xlsx
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/_archivos/PPC001_PPC002_PPC006_PPC007_nt.pdf
+MAGYP https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industria/index.php 404 800 https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industria/index.php
+MAGYP https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_comercio_exterior/index.php 404 800 https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_comercio_exterior/index.php
+MAGYP https://www.magyp.gob.ar/sitio/areas/ss_lecheria/ 200 33156 https://www.magyp.gob.ar/sitio/areas/ss_lecheria/
+   A /sitio/areas/ss_lecheria
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_01_primaria/index.php
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/index.php
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/index.php
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/index.php
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/index.php
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/index.php
+   A https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/index.php
+MAGYP https://www.magyp.gob.ar/sitio/ 200 46058 https://www.argentina.gob.ar/economia/agricultura
+   LIC rganismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Atribución 4.0 Internacional --> Scroll hacia arriba 
+MAGYP https://www.argentina.gob.ar/agricultura/alimentos-y-bioeconomia/lecheria 404 800 https://www.argentina.gob.ar/agricultura/alimentos-y-bioeconomia/lecheria
+MAGYP https://www.argentina.gob.ar/agricultura/lecheria/estadisticas 404 800 https://www.argentina.gob.ar/agricultura/lecheria/estadisticas
+INV https://www.argentina.gob.ar/inv/vinos/estadisticas 200 32051 https://www.argentina.gob.ar/inv/vinos/estadisticas
+   A /inv/vinos/estadisticas/existencias
+   A https://www.argentina.gob.ar/inv/vinos/estadisticas
+   A https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.argentina.gob.ar%2Finv%2Fvinos%2Festadisticas&amp;amp;title=Estad%C3%ADsticas+Vitivin%C3%ADcolas
+   A https://x.com/share?url=https%3A%2F%2Fwww.argentina.gob.ar%2Finv%2Fvinos%2Festadisticas&amp;amp;title=Estad%C3%ADsticas+Vitivin%C3%ADcolas
+   A https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.argentina.gob.ar%2Finv%2Fvinos%2Festadisticas
+   A https://web.whatsapp.com/send?text=https%3A%2F%2Fwww.argentina.gob.ar%2Finv%2Fvinos%2Festadisticas
+   A https://t.me/share/url?url=https%3A%2F%2Fwww.argentina.gob.ar%2Finv%2Fvinos%2Festadisticas
+   A /inv/vinos/estadisticas/existencias
+   A /inv/estadisticas-vitivinicolas/principales-datos-vitivinicolas
+   A /inv/vinos/estadisticas/superficie
+   A /inv/estadisticas-vitivinicolas/cosecha-y-elaboracion
+   A /inv/vinos/estadisticas/mercado-interno
+   A /inv/estadisticas-vitivinicolas/mercado-externo
+   A /inv/estadisticas-vitivinicolas/importaciones
+   A /inv/vinos/estadisticas/estadisticas-varias
+   A /inv/vinos/estadisticas/variedades-de-uva
+   A /inv/vinos/estadisticas/regiones-vitivinicolas
+INV https://www.argentina.gob.ar/inv/vinos 200 32247 https://www.argentina.gob.ar/inv/vinos
+   A /inv/elaboradores-caseros-y-artesanales
+INV https://www.argentina.gob.ar/inv/estadisticas 404 800 https://www.argentina.gob.ar/inv/estadisticas
+INV https://www.argentina.gob.ar/inv 200 44273 https://www.argentina.gob.ar/inv
+   A /inv/cosecha
+   A /inv/vinos/estadisticas
+   A /noticias/crecieron-las-exportaciones-vitivinicolas-en-septiembre-242-en-vinos-y-345-en-mosto
+   A /noticias/en-el-primer-semestre-de-2026-argentina-exporto-831628-hl-de-vino-varietal
+   A /noticias/informe-variedad-bonarda
+PKG INV inv-actividad-vitivinicola | INV - Actividad vitivinícola | 4
+PKG INV produccion-de-uvas | INV - Producción de uvas | 3
+PKG INV superficie-implantada-con-vinedos-republica-argentina | INV - Superficie implantada con viñedos | 6
+PKG INV inv-elaboracion-de-mostos-y-vino | INV - Elaboración de mostos y vino | 2
