@@ -156,7 +156,8 @@ def index_table(package, dev, table, spec, prefix, group, what):
         m = next(((k, en) for pats, k, en in spec if any(re.search(p, lab) for p in pats)), None)
         if not m: continue
         k, en = m
-        put("ch-bfs-%s-%s" % (prefix, k), group, "%s: %s (Dec 2020=100, annual mean; Agristat/BFS)" % (en, what), "index Dec 2020=100", "annual",
+        lab_ = ("Input price index (prices paid by farmers): %s (Dec 2020=100, annual mean; Agristat/BFS)" % en) if prefix == "inputidx" else ("%s: %s (Dec 2020=100, annual mean; Agristat/BFS)" % (en, what))
+        put("ch-bfs-%s-%s" % (prefix, k), group, lab_, "index Dec 2020=100", "annual",
             [(y, r[i]) for i, y in cols if i < len(r)], "BFS %s (Agristat)" % table)
         n += 1
     log(table, "series", n, "años", cols[0][1], "..", cols[-1][1], "de", url)

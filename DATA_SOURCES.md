@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 73 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17792 series en el catalogo unificado.
+Resumen: 74 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17885 series en el catalogo unificado.
 
-## VERIFIED (73)
+## VERIFIED (74)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -19,6 +19,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 177 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 1 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
 | `bea` | U.S. Bureau of Economic Analysis | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
+| `bfs_ch_open` | Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices | CH | OPENDATA-SWISS-TERMS-BY | si/si | si | 87 | Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each… |
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
 | `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 25 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `boe_es` | Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada | ES | CUSTOM | si/si | si | 0 | No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legisla… |
@@ -39,9 +40,9 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_oil_bulletin` | European Commission — Weekly Oil Bulletin (DG ENER) | EU | EU-REUSE-2011-833 | si/conditional | si | 1 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 7860 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 7862 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 1785 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
-| `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 114 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
+| `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 118 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
 | `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 213 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
 | `gesetze_im_internet` | Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV | DE | CUSTOM | si/si | si | 0 | The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis … |
 | `gus_poland` | Statistics Poland (GUS) - Local Data Bank (BDL) | PL | GUS-COPYRIGHT-NOTICE | si/si | si | 183 | Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos. |

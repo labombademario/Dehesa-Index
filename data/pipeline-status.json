@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T13:35:00Z",
+ "generatedAt": "2026-10-10T14:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 112,
+  "ok": 113,
   "late": 1,
   "error": 0,
   "not_run": 2,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "f1286051",
+   "sha": "1bc1782e",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/fbd11544-7d29-48de-bb5c-faaca8fd2470",
-   "completedAt": "2026-10-10T13:35:36Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/722c1007-3010-43b5-9d24-2cfc7e817065",
+   "completedAt": "2026-10-10T14:52:40Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -88,23 +88,23 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-10T03:22:53Z"
+     "lastChange": "2026-10-10T13:49:51Z"
     },
     {
      "path": "data/ams-grain-daily.json",
-     "lastChange": "2026-10-10T00:06:09Z"
+     "lastChange": "2026-10-10T13:49:51Z"
     },
     {
      "path": "data/us-fertilizers.json",
-     "lastChange": "2026-10-10T00:06:09Z"
+     "lastChange": "2026-10-10T13:49:51Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-09T23:52:27Z",
-    "durationSec": 829,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38006516947"
+    "startedAt": "2026-10-10T13:39:30Z",
+    "durationSec": 626,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38056561127"
    },
    "recent": {
     "runs": 10,
@@ -1688,7 +1688,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1696,14 +1696,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1720,7 +1720,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/products"
@@ -1731,30 +1731,30 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-10T13:18:15Z"
+     "lastChange": "2026-10-10T13:39:36Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2247,6 +2247,29 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-switzerland-bfs.yml",
+   "name": "Update Switzerland (BFS agricultural accounts and price indices)",
+   "crons": [
+    "45 6 12 * *"
+   ],
+   "nextRun": "2026-10-12T06:45:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-10T14:51:16Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38061263115"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-switzerland-foag.yml",
    "name": "Update Switzerland (FOAG market data)",
    "crons": [
@@ -2257,13 +2280,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-08T16:38:30Z",
-    "durationSec": 66,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37810379604"
+    "startedAt": "2026-10-10T14:47:03Z",
+    "durationSec": 67,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38060986311"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
