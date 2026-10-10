@@ -1,0 +1,33 @@
+name: probe-ismea
+on: push
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          set +e; mkdir -p probe
+          UA="Mozilla/5.0 (compatible; DehesaIndexProbe/1.0; +https://dehesaindex.com)"
+          curl -sS -m 30 -o /tmp/ov.crt http://crt.sectigo.com/SectigoPublicServerAuthenticationCAOVR36.crt
+          openssl x509 -inform DER -in /tmp/ov.crt -out /tmp/ov.pem 2>/dev/null || cp /tmp/ov.crt /tmp/ov.pem
+          cat /etc/ssl/certs/ca-certificates.crt /tmp/ov.pem > /tmp/bundle.pem
+          c() { curl -sS -L -m 40 -A "$UA" --cacert /tmp/bundle.pem "$@"; }
+          B=https://www.ismeamercati.it
+          i=0
+          for u in /flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/330 /prezzi-agroalimentari/origine/banca-dati /prezzi-agroalimentari/ingrosso/banca-dati /flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/2128 /robots.txt; do
+            i=$((i+1)); c "$B$u" -o /tmp/p$i.html -D probe/h$i.out.txt
+            python3 - $i "$u" <<'PY'
+          import re,sys,html
+          i,u=sys.argv[1],sys.argv[2]
+          raw=open('/tmp/p%s.html'%i,encoding='latin-1').read()
+          links=sorted(set(re.findall(r'href=["\']([^"\']*(?:xls|csv|json|api|download|pdf|dati-aperti|opendata|licen)[^"\']*)["\']',raw,re.I)))
+          t=re.sub(r'(?s)<(script|style).*?</\1>','',raw); t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(re.sub(r'\s+',' ',t))
+          k=t.find('Contenuto della pagina')
+          if k<0: k=0
+          open('probe/p%s.out.txt'%i,'w').write(u+'\n'+t[k:k+9000]+'\nLINKS:\n'+'\n'.join(links))
+          PY
+          done
+          git config user.name probe; git config user.email probe@x
+          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-ismea4-out -f
