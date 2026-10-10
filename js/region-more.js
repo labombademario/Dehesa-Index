@@ -504,35 +504,40 @@
     }
 
     /* ---- España: mercados (lonjas) por provincia de cada comunidad, del portal agroalimentario de la Comisión (data/eu/cereales.json y aceite.json) ---- */
-    var LJ_PROV = { AN: ['Cadiz', 'Cordoba', 'Granada', 'Jaen', 'Malaga', 'Sevilla'], AR: ['Huesca', 'Zaragoza'], CL: ['Burgos', 'Leon', 'Palencia', 'Segovia', 'Valladolid', 'Zamora'], CM: ['Albacete', 'Ciudad Real', 'Cuenca', 'Guadalajara', 'Toledo'], CT: ['Lleida', 'Tarragona'], EX: ['Badajoz'], NC: ['Navarra'] };
-    var LJ_NAME = { Cadiz: 'Cádiz', Cordoba: 'Córdoba', Jaen: 'Jaén', Malaga: 'Málaga', Leon: 'León', Lleida: 'Lleida' };
-    var LJ_SER = { cereales: [['feed-barley-departure', 'Cebada pienso|Feed barley|Orge fourragère|Orzo da foraggio'], ['feed-wheat-departure', 'Trigo pienso|Feed wheat|Blé fourrager|Frumento da foraggio'], ['milling-wheat-departure', 'Trigo blando panificable|Milling wheat|Blé tendre meunier|Frumento tenero panificabile'], ['durum-wheat-departure', 'Trigo duro|Durum wheat|Blé dur|Frumento duro'], ['feed-maize-departure', 'Maíz pienso|Feed maize|Maïs fourrager|Mais da foraggio'], ['malting-barley-departure', 'Cebada cervecera|Malting barley|Orge de brasserie|Orzo da birra']],
-      aceite: [['extra-virgin-olive-oil-up-to', 'Aceite de oliva virgen extra|Extra virgin olive oil|Huile d’olive vierge extra|Olio extra vergine di oliva'], ['virgin-olive-oil-up-to', 'Aceite de oliva virgen|Virgin olive oil|Huile d’olive vierge|Olio di oliva vergine'], ['lampante-olive-oil', 'Aceite de oliva lampante|Lampante olive oil|Huile d’olive lampante|Olio di oliva lampante'], ['refined-olive-oil-up-to', 'Aceite de oliva refinado|Refined olive oil|Huile d’olive raffinée|Olio di oliva raffinato']] };
-    var LJ_T = { es: ['Lonjas y mercados', 'Precio semanal de cereales y aceite de oliva en los mercados de las provincias de esta comunidad, tal como los publica la Comisión Europea (no se promedia). Solo los que tienen cotización reciente.', 'Producto', 'Provincia', 'Precio', '1 sem.', 'Fecha', 'Ver todos los mercados de España'],
-      en: ['Local markets', 'Weekly price of cereals and olive oil in the markets of this region’s provinces, as published by the European Commission (not averaged). Only those with a recent quote.', 'Product', 'Province', 'Price', '1 wk', 'Date', 'See all Spanish markets'],
-      fr: ['Marchés locaux', 'Prix hebdomadaire des céréales et de l’huile d’olive sur les marchés des provinces de cette région, tel que publié par la Commission européenne (sans moyenne). Seulement ceux avec une cotation récente.', 'Produit', 'Province', 'Prix', '1 sem.', 'Date', 'Voir tous les marchés d’Espagne'],
-      it: ['Mercati locali', 'Prezzo settimanale di cereali e olio d’oliva nei mercati delle province di questa regione, come pubblicato dalla Commissione europea (senza media). Solo quelli con quotazione recente.', 'Prodotto', 'Provincia', 'Prezzo', '1 sett.', 'Data', 'Vedi tutti i mercati della Spagna'] };
+    var LJ_PROV = { ES: { AN: ['Cadiz', 'Cordoba', 'Granada', 'Jaen', 'Malaga', 'Sevilla'], AR: ['Huesca', 'Zaragoza'], CL: ['Burgos', 'Leon', 'Palencia', 'Segovia', 'Valladolid', 'Zamora'], CM: ['Albacete', 'Ciudad Real', 'Cuenca', 'Guadalajara', 'Toledo'], CT: ['Lleida', 'Tarragona'], EX: ['Badajoz'], NC: ['Navarra'] },
+      IT: { PUG: ['Bari', 'Brindisi', 'Foggia', 'Lecce', 'Taranto'], CAL: ['Catanzaro', 'Cosenza', 'Gioia Tauro'], SIC: ['Palermo', 'Trapani'], CAM: ['Salerno'], LOM: ['Milano'], EMR: ['Bologna'], VEN: ['Treviso'] },
+      DE: { BY: ['Würzburg', 'München'], BW: ['Mannheim'], NW: ['Köln', 'Niederrhein'], HB: ['Bremen'], HH: ['Hamburg'], NI: ['Brake'], RP: ['Mainz'], SN: ['Riesa'] },
+      FR: { NAQ: ['Bordeaux'], GES: ['Le Mériot'], NOR: ['Rouen'], BRE: ['Brest', 'Lorient'], PDL: ['Montoir', 'Saint Nazaire'], OCC: ['Sète'] } };
+    var LJ_FAM = { ES: ['cereales', 'aceite'], IT: ['aceite', 'oleaginosas'], DE: ['oleaginosas'], FR: ['oleaginosas'] };
+    var LJ_NAME = { Cadiz: 'Cádiz', Cordoba: 'Córdoba', Jaen: 'Jaén', Malaga: 'Málaga', Leon: 'León' };
+    var LJ_TITLE = { 'feed-barley-departure': 'Cebada pienso|Feed barley|Orge fourragère|Orzo da foraggio', 'feed-wheat-departure': 'Trigo pienso|Feed wheat|Blé fourrager|Frumento da foraggio', 'milling-wheat-departure': 'Trigo blando panificable|Milling wheat|Blé tendre meunier|Frumento tenero panificabile', 'durum-wheat-departure': 'Trigo duro|Durum wheat|Blé dur|Frumento duro', 'feed-maize-departure': 'Maíz pienso|Feed maize|Maïs fourrager|Mais da foraggio', 'malting-barley-departure': 'Cebada cervecera|Malting barley|Orge de brasserie|Orzo da birra',
+      'extra-virgin-olive-oil-up-to': 'Aceite de oliva virgen extra|Extra virgin olive oil|Huile d’olive vierge extra|Olio extra vergine di oliva', 'virgin-olive-oil-up-to': 'Aceite de oliva virgen|Virgin olive oil|Huile d’olive vierge|Olio di oliva vergine', 'lampante-olive-oil': 'Aceite de oliva lampante|Lampante olive oil|Huile d’olive lampante|Olio di oliva lampante', 'refined-olive-oil-up-to': 'Aceite de oliva refinado|Refined olive oil|Huile d’olive raffinée|Olio di oliva raffinato', 'refined-olive-pomace': 'Aceite de orujo refinado|Refined olive-pomace oil|Huile de grignons raffinée|Olio di sansa raffinato' };
+    var LJ_WORD = { 'Soya beans': 'Soja en grano|Soya beans|Fèves de soja|Semi di soia', 'Soya meal': 'Harina de soja|Soya meal|Tourteau de soja|Farina di soia', 'Rapeseed': 'Colza|Rapeseed|Colza|Colza', 'Rapeseed meal': 'Harina de colza|Rapeseed meal|Tourteau de colza|Farina di colza', 'Sunflower seed': 'Girasol|Sunflower seed|Tournesol|Girasole', 'Sunflower seed meal': 'Harina de girasol|Sunflower seed meal|Tourteau de tournesol|Farina di girasole', 'Crude rape oil': 'Aceite de colza crudo|Crude rape oil|Huile de colza brute|Olio di colza greggio', 'Standard': 'Estándar|Standard|Standard|Standard', 'High-oleic': 'Alto oleico|High-oleic|Oléique|Alto oleico', '40-50% protein content': '40-50 % de proteína|40-50% protein content|40-50 % de protéines|40-50 % di proteine' };
+    var LJ_T = { es: ['Lonjas y mercados', 'Último precio semanal en los mercados de esta región, tal como lo publica la Comisión Europea (no se promedia). Solo los que tienen cotización reciente.', 'Producto', 'Mercado', 'Precio', '1 sem.', 'Fecha', 'Ver todos los mercados'],
+      en: ['Local markets', 'Latest weekly price in the markets of this region, as published by the European Commission (not averaged). Only those with a recent quote.', 'Product', 'Market', 'Price', '1 wk', 'Date', 'See all markets'],
+      fr: ['Marchés locaux', 'Dernier prix hebdomadaire sur les marchés de cette région, tel que publié par la Commission européenne (sans moyenne). Seulement ceux avec une cotation récente.', 'Produit', 'Marché', 'Prix', '1 sem.', 'Date', 'Voir tous les marchés'],
+      it: ['Mercati locali', 'Ultimo prezzo settimanale nei mercati di questa regione, come pubblicato dalla Commissione europea (senza media). Solo quelli con quotazione recente.', 'Prodotto', 'Mercato', 'Prezzo', '1 sett.', 'Data', 'Vedi tutti i mercati'] };
     function ljDay(s) { var q = s.split('-'); return Date.UTC(+q[0], +q[1] - 1, +q[2]) / 864e5; }
+    function ljTitle(id, parts) { for (var k in LJ_TITLE) if (id.indexOf(k) === 0) return L(LJ_TITLE[k]); return parts.map(function (w) { return LJ_WORD[w] ? L(LJ_WORD[w]) : w; }).join(' · '); }
     function esLonjas(x) {
-      var provs = LJ_PROV[x.r]; if (!provs) return Promise.resolve(null);
-      return Promise.all([get('data/eu/cereales.json'), get('data/eu/aceite.json')]).then(function (ds) {
+      var provs = (LJ_PROV[x.c] || {})[x.r], fams = LJ_FAM[x.c]; if (!provs || !fams) return Promise.resolve(null);
+      return Promise.all(fams.map(function (f) { return get('data/eu/' + f + '.json'); })).then(function (ds) {
         var rows = [], latest = '', T = LJ_T[H.lang()] || LJ_T.es;
-        ['cereales', 'aceite'].forEach(function (f, fi) {
+        fams.forEach(function (f, fi) {
           var d = ds[fi]; if (!d || !d.series) return;
-          LJ_SER[f].forEach(function (sp) {
-            var s = d.series.filter(function (z) { return z.id.indexOf(sp[0]) === 0; })[0]; if (!s) return;
-            var es = s.regions.filter(function (r) { return r.c === 'ES'; }), ref = ''; es.forEach(function (r) { if (r.last[0] > ref) ref = r.last[0]; });
+          d.series.forEach(function (s) {
+            var es = s.regions.filter(function (r) { return r.c === x.c; }), ref = ''; es.forEach(function (r) { if (r.last[0] > ref) ref = r.last[0]; });
             var by = {};
-            es.forEach(function (r) { if (!r.m) return; var n = r.m.replace(/\s*\(ES\d+\)/, '').replace(/\s+$/, ''); if (n === 'Lerida') n = 'Lleida'; if (provs.indexOf(n) < 0) return; if (!by[n] || r.last[0] > by[n].last[0]) by[n] = r; });
+            es.forEach(function (r) { if (!r.m) return; var n = r.m.replace(/\s*\([A-Z]{2}[A-Z0-9]{1,5}\)/, '').replace(/\s+$/, ''); if (n === 'Lerida') n = 'Lleida'; if (provs.indexOf(n) < 0) return; if (!by[n] || r.last[0] > by[n].last[0]) by[n] = r; });
             Object.keys(by).forEach(function (n) {
               var r = by[n]; if (ljDay(ref) - ljDay(r.last[0]) > 28) return;
               var w = r.prev && r.prev[1] && Math.abs(ljDay(r.last[0]) - ljDay(r.prev[0]) - 7) <= 6 ? (r.last[1] / r.prev[1] - 1) * 100 : null; if (r.last[0] > latest) latest = r.last[0];
-              rows.push([esc(L(sp[1])), esc(LJ_NAME[n] || n), nf(r.last[1], s.unit.indexOf('100') > 0 ? 2 : 1) + ' ' + faint(s.unit), w == null ? '—' : (w > 0.05 ? '+' : w < -0.05 ? '−' : '') + nf(Math.abs(w), 1) + ' %', esc(day(r.last[0]))]);
+              rows.push([esc(ljTitle(s.id, s.parts)), esc(LJ_NAME[n] || n), nf(r.last[1], s.unit.indexOf('100') > 0 ? 2 : 1) + ' ' + faint(s.unit), w == null ? '—' : (w > 0.05 ? '+' : w < -0.05 ? '−' : '') + nf(Math.abs(w), 1) + ' %', esc(day(r.last[0]))]);
             });
           });
         });
         if (!rows.length) return null;
-        return card(T[0], T[1], table([T[2], T[3], T[4], T[5], T[6]], rows, 560) + link('lonjas.html', T[7]), cite('eu_agrifood', latest));
+        return card(T[0], T[1], table([T[2], T[3], T[4], T[5], T[6]], rows, 560) + link('lonjas.html?c=' + x.c, T[7]), cite('eu_agrifood', latest));
       });
     }
     var C = function (k, fn) { return [k, fn]; };
@@ -542,10 +547,10 @@
         US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('clim', clim)],
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
-        FR: [C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', clim)],
-        DE: [C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('clim', clim)],
+        FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', clim)],
+        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('clim', clim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
-        AT: [C('clim', clim)], IT: [C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]
+        AT: [C('clim', clim)], IT: [C('eslonjas', esLonjas), C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
       optional: { eslonjas: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1 }
