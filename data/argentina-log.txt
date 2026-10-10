@@ -45,4 +45,6 @@ descartada ar-indec-retail-gba-aceite-mezcla ultimo 2016-11
 precios minoristas INDEC 89
 SIPM INDEC 13
 gasoil agro ok
-series 192
+Lecheria: fecha repetida en la cabecera de totales; se usa la del detalle (mismas columnas)
+lecheria ok
+series 222
