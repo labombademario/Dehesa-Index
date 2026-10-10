@@ -1,0 +1,23 @@
+name: Lanzador por calendario USDA (datos de EE. UU. tras cada publicacion oficial)
+on:
+  schedule:
+    # las publicaciones son a las 12:00, 15:00 y 16:00 de Nueva York (16:00-21:00 UTC); intentos a +40 min y +4 h
+    - cron: '5,20,35,50 16-23 * * *'
+    - cron: '5,20,35,50 0-1 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: dehesa-release-dispatch
+  cancel-in-progress: false
+jobs:
+  dispatch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Lanzar los workflows de los informes USDA publicados hace un rato
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/release-dispatch.py

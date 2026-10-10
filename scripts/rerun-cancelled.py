@@ -36,7 +36,7 @@ def gh(*a):
 def main():
     repo = os.environ["GITHUB_REPOSITORY"]; dry = "--dry-run" in sys.argv
     runs = []
-    for page in (1, 2, 3):
+    for page in (1, 2, 3, 4, 5):
         rc, out, err = gh("repos/%s/actions/runs?per_page=100&page=%d" % (repo, page))
         if rc: print("::error::no se pudo listar ejecuciones:", err[:200]); sys.exit(1)
         runs += json.loads(out)["workflow_runs"]
