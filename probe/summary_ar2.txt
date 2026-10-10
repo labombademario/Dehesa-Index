@@ -1,0 +1,333 @@
+
+=== PKG indice-de-precios-internos-al-por-mayor-ipim-dic-2015-100 | Creative Commons Attribution 4.0 | Índice de Precios Internos al por Mayor (IPIM). Dic-2015 = 100
+  RES CSV | Índice de Precios Internos al por Mayor (IPIM). Dic-2015 = 100 | https://infra.datos.gob.ar/catalog/sspm/dataset/448/distribution/448.1/download/indice-precios-internos-al-por-mayor.csv | 
+      > indice_tiempo,nivel_general
+      > 2015-12-01,100.0
+      > ...
+      > 2026-06-01,16104.17403205355
+      > 2026-07-01,16233.714947642535
+      > 2026-08-01,16580.328144082185
+
+=== PKG indice-de-precios-internos-basicos-del-productor-dic-2015-100 | Creative Commons Attribution 4.0 | Índice de Precios Internos Básicos del Productor. Dic-2015 = 100
+  RES CSV | Índice de Precios Internos Básicos del Productor. Dic-2015 = 100 | https://infra.datos.gob.ar/catalog/sspm/dataset/450/distribution/450.1/download/indice-precios-internos-basicos-del-productor.csv | 
+      > indice_tiempo,nivel_general
+      > 2015-12-01,100.0
+      > ...
+      > 2026-06-01,15758.610646944113
+      > 2026-07-01,15898.54376014664
+      > 2026-08-01,16258.50193387422
+
+=== PKG indice-de-precios-internos-basicos-al-por-mayor-dic-2015-100 | Creative Commons Attribution 4.0 | Índice de Precios Internos Básicos al por Mayor. Dic-2015 = 100
+  RES CSV | Índice de Precios Internos Básicos al por Mayor. Dic-2015 = 100 | https://infra.datos.gob.ar/catalog/sspm/dataset/449/distribution/449.1/download/indice-precios-internos-basicos-al-por-mayor.csv | 
+      > indice_tiempo,nivel_general
+      > 2015-12-01,100.0
+      > ...
+      > 2026-06-01,15611.250140919412
+      > 2026-07-01,15743.682505832936
+      > 2026-08-01,16101.735981737236
+
+=== PKG lacteos-exportaciones | CC-BY-4.0 | Lácteos - Exportaciones
+  RES CSV | Exportación anual de productos lácteos | https://datos.magyp.gob.ar/dataset/1e46b460-afdb-4ceb-8ced-75e668d0ffdf/resource/162d4ac7-f0ae-4817-988a-c540e1c586e0/download/lacteos-exportaciones-anual-dolares-1989-2009.csv | 2020-01-02
+      > fecha,leche_fluida,leche_polvo_entera,leche_polvo_descremada,leche_maternizada,leche_condensada,dulce_de_leche,queso_pasta_blanda,queso_pasta_semidura,queso_pasta_dura,queso_rallado,queso_fundido,otros_quesos,manteca,aceite_butirico,crema,yogur,otros_fermentados,caseina,caseinatos,suero,derivados_suero,lactosa,helados,otros_lacteos
+      > 1989,0,44201000,42896000,0,184000,193000,4159000,10075000,19915000,4059000,24000,0,10390000,0,0,0,0,2636000,34000,310000,0,0,0,0
+      > ...
+      > 2007,5429467,309370700,35603785,50882661,7,7922429,45550032,66457389,30055170,3649993,580873,4357548,27772081,20117504,1109503,4334184,1451430,33504182,160011,82803591,0,3048585,5618523,9895220
+      > 2008,15359318,385170859,55900829,152674947,0,10349105,52206489,50042975,64733481,3027371,549037,94851,48240912,31995339,646963,8396212,1580748,80681304,189803,87842733,0,2154991,9299707,7772070
+      > 2009,10915448.92,340821460,30449339.99,34869260.23,0,9562496.83,51725331.31,45656723.08,44809834.18,3992376.82,482261.72,0,26011094.68,7250459.68,552360.97,6744224.98,1517914.24,41324620,163056.08,57081830.18,0,1210173.85,4623452.97,36821052.85
+
+=== PKG lacteos-balanza-comercial | CC-BY-4.0 | Lácteos - Balanza comercial
+  RES CSV | Serie de Tiempo de Balanza comercial anual de productos lácteos | https://datos.magyp.gob.ar/dataset/9cecf504-6352-4dae-bacb-0a8bfead3e7c/resource/79d0e117-6f2e-4c7c-8a39-b4b0b71c5c74/download/lacteos-balanza-anual-dolares-1989-2009.csv | 2020-01-09
+      > indice_tiempo,leche_fluida,leche_polvo_entera,leche_polvo_descremada,leche_maternizada,leche_condensada,dulce_de_leche,queso_pasta_blanda,queso_pasta_semidura,queso_pasta_dura,queso_rallado,queso_fundido,otros_quesos,manteca,aceite_butirico,crema,yogur,otros_fermentados,caseina,caseinatos,suero,derivados_suero,lactosa,helados,otros_lacteos
+      > 1989,0,44201000,42896000,0,184000,193000,4019000,10075000,19915000,4059000,24000,0,10390000,0,0,0,0,2636000,-727000,-833000,0,0,0,0
+      > ...
+      > 2007,5389287.07,308145400,35603746,46591849.13,-1387373.5,7922429,43923752.6,65279347.79,29073730.29,2805489,-4926478.39,4067214.52,27761815,20117504,1109400,4334162.35,547764,32956927.03,-14014119.62,80239731.49,0,1185462.95,4620471.62,9805763
+      > 2008,15329812,385073282,55900455,149144841,-1935924,10326588,50912980,48710620,64696627,1977021,-8308850,80794,48235875,31995339,646504,8395784,435829,80672954,-15147349,84755612,0,-146467,8456334,7689466
+      > 2009,10915431.31,339643597.5,30449103.91,34869260.23,-1890561.05,9562484.33,50364441.77,45095262.94,44738142.52,3250287.26,-6918603.06,-12136.81,26004625.33,7250437.4,548474.96,6744184.6,568423.83,40957763.11,-7324406.54,55181275.44,0,-141913.34,3881212.44,36620691.81
+
+=== PKG precios-mayoristas-resolucion-1104-04 | CC-BY-4.0 | Precios Mayoristas - Resolución 1104/04
+  RES CSV | Precios Mayoristas Res 1104 desde Diciembre 2024 | http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/1259e17f-aee6-4858-9811-ba8efb7f4b9f/download/precios-mayoristas-res-1104-desde-diciembre-2024.csv | 2026-08-18
+      > fecha,periodo,operador,nro_inscripcion,bandera,fecha_de_ baja,CUIT,tipo_negocio,direccion,localidad,provincia,producto,canal_de_comercializacion,precio_sin_iimpuestos,precio_con_impuestos,volumen,precio_surtidor,NO Movimientos,Excentos,impuesto_combustible_líquidos,impuesto_dioxido_carbono,tasa_vial,tasa_municipal,ingresos_brutos,Iva
+      > 2024-12-31 00:00:00,2024/12,COMPAÑIA PETROLERA COPSA SA,5371,SIN EMPRESA BANDERA,,30-66604945-0,Distribuidor (con camiones),AV. ROQUE SAENZ PEÑA 846 5° OF. 503,Conjunto Zárate-Zarate Port - D. Dock - Campana,BUENOS AIRES,Gas Oil Grado 2,Agro,726.093,1030.62,11,0,NO,f,136.49,15.557,0,0,0,152.48
+      > ...
+      > 2026-07-31 00:00:00,2026/07,VICENTE VARACALLI E HIJOS S.A,9820,SIN EMPRESA BANDERA,,30-66605870-0,Comercializador (venta a granel mayorista),Colectora Ruta Nac. 2 (Parque Industrial Lezama),Dock Sud,BUENOS AIRES,Gas Oil Grado 2,Agro,1533.27,2129,50,0,NO,f,245.74,28.01,0,0,0,321.99
+      > 2026-07-31 00:00:00,2026/07,VICTORIO PODESTA Y CIA. S.A.,4505,SIN EMPRESA BANDERA,,30-53378967-2,Distribuidor (con camiones),CUBA 1833-5°,Avellaneda,BUENOS AIRES,Fuel oil,Otros sectores,920,1140,8404,0,NO,f,0,34,0,0,0,193
+      > 2026-07-31 00:00:00,2026/07,VICTORIO PODESTA Y CIA. S.A.,4505,SIN EMPRESA BANDERA,,30-53378967-2,Distribuidor (con camiones),CUBA 1833-5°,Avellaneda,BUENOS AIRES,Gas Oil Grado 2,Otros sectores,1599,2200,819,0,NO,f,237,27,0,0,0,335
+  RES CSV | Precios Mayoristas Res 1104 | http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/6872e948-43e8-42a7-820d-03f315831e35/download/precios-mayoristas-res-1104.csv | 2024-12-20
+      > anio,mes,operador,nro_inscripcion,bandera,fecha_de_baja,cuit,tipo_negocio,direccion,localidadbunker,provincia,producto,canal_de_comercializacion,precio_sin_impuestos,precio_con_impuestos,volumen,precio_surtidor,no_novimientos,exentos
+      > 2004,12,DISTRIBUCION INTELIGENTE ARGENTINA S.R.L.,8129,SIN EMPRESA BANDERA,18/2022/08,30-71182099-6,N/D,Hipólito Irigoyen y Benjamin Matienzo 0,N/D,N/D,N/D,N/D,0,0,0,0,SI,
+      > ...
+      > 2024,11,VICENTE VARACALLI E HIJOS S.A,9820,SIN EMPRESA BANDERA,,30-66605870-0,Comercializador (venta a granel mayorista),Colectora Ruta Nac. 2 (Parque Industrial Lezama),Dock Sud,BUENOS AIRES,Gas Oil Grado 2,Agro,899.591,1099,210,0,NO,f
+      > 2024,11,VICTORIO PODESTA Y CIA. S.A.,4505,SIN EMPRESA BANDERA,,30-53378967-2,Distribuidor (con camiones),CUBA 1833-5°,Avellaneda,BUENOS AIRES,Fuel oil,Otros sectores,470,568,3627,0,NO,f
+      > 2024,11,VICTORIO PODESTA Y CIA. S.A.,4505,SIN EMPRESA BANDERA,,30-53378967-2,Distribuidor (con camiones),CUBA 1833-5°,Avellaneda,BUENOS AIRES,Gas Oil Grado 2,Otros sectores,675,860,602,0,NO,f
+  RES CSV | Distribuidores mayoristas de combustibles líquidos (Res. 1104/04) | http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/1db7f27f-c23a-4873-8da2-cfe6be72f7e2/download/distribuidores-mayoristas-de-combustibles-lquidos-res-110404-.csv | 2026-08-25
+      > empresabandera,razonsocial,localidad,cuit,direccion,provincia,geojson
+      > YPF,YPF S.A.,CAPITAL FEDERAL,30-54668997-9,MACACHA GUEMES 515,CAPITAL FEDERAL,"{""type"":""Point"",""coordinates"":[-58.362115,-34.605286]}"
+      > ...
+      > BLANCA,VICENTE VARACALLI E HIJOS S.A,LEZAMA,30-66605870-0,Colectora Ruta Nac. 2 (Parque Industrial Lezama),BUENOS AIRES,"{""type"":""Point"",""coordinates"":[-57.897419,-35.871505]}"
+      > BLANCA,PRIALIS SRL,MACIEL,30-71692413-7,BV SARMIENTO 448,SANTA FE,"{""type"":""Point"",""coordinates"":[-60.888498,-32.45863]}"
+      > DAPSA S.A.,MINOD CARLOS LUIS,HOLMBERG,20-23664722-7,ruta 8 y Av BS AS 1349,CORDOBA,"{""type"":""Point"",""coordinates"":[-64.439479,-33.210295]}"
+  RES SHP | Distribuidores mayoristas de combustibles líquidos (Res. 1104/04) | http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/87da78b8-a814-4c30-93e5-25963be79864/download/distribuidores-mayoristas-de-combustibles-lquidos-res-110404-.zip | 2026-09-25
+
+=== PKG precios-fob-oficiales | Creative Commons Attribution 4.0 | Precios FOB oficiales
+  RES CSV | Precios FOB oficiales. Valores diarios | https://infra.datos.gob.ar/catalog/sspm/dataset/358/distribution/358.1/download/precios-fob-oficiales-valores-diarios.csv | 
+      > indice_tiempo,tortas_expellers_pellets_harina_soja_pellets_harina_extr,tortas_expellers_pellets_harina_soja_pellets_harinas_tortas,habas_soja_demas_granel_hasta_15_porciento_embolsado,habas_soja_demas_mas_15_porciento_embolsado,aceite_soja_granel,maiz_demas_grano_granel_hasta_15_porciento_embolsado,maiz_demas_grano_mas_15_porciento_embolsado,maiz_maiz_pisingallo_granel_hasta_15_porciento_embolsado
+      > 1993-01-04,189.0,189.0,217.0,237.0,422.0,118.0,138.0,0.0,0.0,0.0,0.0,123.0,0.0,423.0,0.0,105.0,130.0,550.0,220.0,245.0,0.0,135.0,160.0,320.0,300.0,0.0,0.0,195.0,89.0,109.0,0.0,430.0,300.0,460.0,410.0,112.0,108.0,95.0,110.0,210.0,0.0,230.0,545.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,420.0,0.0,350.0,242.0,0.0,0.0,0.0,250.0
+      > ...
+      > 2025-01-19,322.0,,414.0,434.0,1044.0,229.0,249.0,,,238.0,258.0,229.0,249.0,1080.0,570.0,213.0,238.0,,,,,230.0,255.0,,,,,355.0,205.0,225.0,,,,,,225.0,221.0,165.0,223.0,445.0,690.0,465.0,,,,,,,,,,,,,,1252.8,1600.0,
+      > 2025-01-20,322.0,,412.0,432.0,1044.0,229.0,249.0,,,238.0,258.0,229.0,249.0,1080.0,570.0,213.0,238.0,,,,,230.0,255.0,,,,,355.0,205.0,225.0,,,,,,225.0,221.0,165.0,223.0,445.0,690.0,465.0,,,,,,,,,,,,,,1252.8,1600.0,
+      > 2025-01-21,335.0,,420.0,440.0,1042.0,232.0,252.0,,,241.0,261.0,229.0,249.0,1080.0,570.0,213.0,238.0,,,,,230.0,255.0,,,,,355.0,205.0,225.0,,,,,,225.0,221.0,165.0,223.0,445.0,690.0,465.0,,,,,,,,,,,,,,1252.8,1600.0,
+
+=== PKG datos-comercio-exterior | CC-BY-4.0 | Comercio exterior - Consulta de datos
+  RES URL | Link de la herramienta | https://comex.indec.gov.ar/search | 
+
+=== PKG precios-mayoristas-frutas-hortalizas | CC-BY-4.0 | Frutas y hortalizas - Precios mayoristas
+  RES CSV | Precios mayoristas de frutas y hortalizas del Mercado Central de Buenos Aires | https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/6dce1e87-7988-4eaf-b0e1-b3abbb3964da/download/precios-fyh-mercadocentral-bsas-arg-2017-2c2018-.csv | 2019-01-17
+      > pais_id,pais,mercado,año,mes,producto,variedad,origen,precio_usd_kg,moneda_cod,moneda
+      > 32,Argentina,Mercado Central de Buenos Aires,2017,Enero,Anana,Perola,Brasil,1.22,USD,Dolares
+      > ...
+      > 32,Argentina,Mercado Central de Buenos Aires,2018,Agosto,Zanahoria,s/especificar,s/especificar,0.29,USD,Dolares
+      > 32,Argentina,Mercado Central de Buenos Aires,2018,Agosto,Zapallito,s/especificar,s/especificar,1.01,USD,Dolares
+      > 32,Argentina,Mercado Central de Buenos Aires,2018,Agosto,Zapallo,s/especificar,s/especificar,0.32,USD,Dolares
+  RES CSV | Precios mayoristas de frutas y hortalizas del Mercado de San Pablo | https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/f6393c63-6664-4340-ad25-915098a02aa3/download/precios-fyh-mercado-sanpablo-brasil-2017-2c2018-.csv | 2019-01-17
+      > pais_id,pais,mercado,año,mes,producto,variedad,origen,precio_usd_kg,moneda_cod,moneda
+      > 76,Brasil,Mercado Ceagesp de San Pablo,2017,Enero,Palta/Aguacate,Avocado,Brasil,3.53,USD,Dolares
+      > ...
+      > 76,Brasil,Mercado Ceagesp de San Pablo,2018,Agosto,Brócoli,s/especificar,Brasil,1.41,USD,Dolares
+      > 76,Brasil,Mercado Ceagesp de San Pablo,2018,Agosto,Coliflor,s/especificar,Brasil,1.24,USD,Dolares
+      > 76,Brasil,Mercado Ceagesp de San Pablo,2018,Agosto,Remolacha,s/especificar,Brasil,0.56,USD,Dolares
+  RES CSV | Precios mayoristas de frutas y hortalizas del Mercado Central de Asunción | https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/812813d9-d2c2-465d-a0ab-2b3e2c3ffb9f/download/precios-fyh-mercado-asuncion-paraguay-2017-2c2018-.csv | 2019-01-29
+      > pais_id,pais,mercado,año,mes,producto,variedad,origen,precio_usd_kg,moneda_cod,moneda
+      > 221,Paraguay,Mercado Central de Asunción,2017,Enero,Aguacate,s/especificar,Paraguay,0.3,USD,Dolares
+      > ...
+      > 221,Paraguay,Mercado Central de Asunción,2018,Agosto,Remolacha,s/especificar,Paraguay,0.56,USD,Dolares
+      > 221,Paraguay,Mercado Central de Asunción,2018,Agosto,Zanahoria,s/especificar,Paraguay,0.28,USD,Dolares
+      > 221,Paraguay,Mercado Central de Asunción,2018,Agosto,Zapallo,s/especificar,Paraguay,0.32,USD,Dolares
+  RES CSV | Precios mayoristas de frutas y hortalizas del Mercado Lo Valledor de Santiago de | https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/42e2bf41-2d45-411b-9e09-56f9f07958a9/download/precios-fyh-mercado-santiago-chile-2017-2c2018-.csv | 2019-01-16
+      > pais_id,pais,mercado,año,mes,producto,variedad,origen,precio_usd_kg,moneda_cod,moneda
+      > 208,Chile,Mercado Lo Valledor de Santiago,2017,Enero,Palta/Aguacate,Hass,Chile,2.09,USD,Dolares
+      > ...
+      > 208,Chile,Mercado Lo Valledor de Santiago,2018,Agosto,Pimiento,Cuatro Cascos Rojo,Chile,,USD,Dolares
+      > 208,Chile,Mercado Lo Valledor de Santiago,2018,Agosto,Tomate,Larga Vida,Chile,1.1,USD,Dolares
+      > 208,Chile,Mercado Lo Valledor de Santiago,2018,Agosto,Tomate,Semiduro,Chile,,USD,Dolares
+  RES CSV | Precios mayoristas de frutas y hortalizas del Mercado Modelo de Uruguay | https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/72067f03-0eb7-4e15-bba3-20df6b0e0b76/download/precios-fyh-mercado-uruguay-2017-2c2018-2.csv | 2019-01-22
+      > pais_id,pais,mercado,año,mes,producto,variedad,origen,precio_usd_kg,moneda_cod,moneda
+      > 225,Uruguay,Mercado Modelo de Uruguay,2017,Enero,Palta,Haas,s/especificar,4.95,USD,Dolares
+      > ...
+      > 225,Uruguay,Mercado Modelo de Uruguay,2018,Agosto,Frutilla,s/especificar,s/especificar,3.67,USD,Dolares
+      > 225,Uruguay,Mercado Modelo de Uruguay,2018,Agosto,Uva,s/especificar,s/especificar,4.77,USD,Dolares
+      > 225,Uruguay,Mercado Modelo de Uruguay,2018,Agosto,Kiwi,s/especificar,s/especificar,2.44,USD,Dolares
+
+=== PKG exportaciones-segun-el-nomenclador-comun-del-mercosur-ncm | Creative Commons Attribution 4.0 | Exportaciones según el Nomenclador Común del Mercosur (NCM)
+  RES CSV | Exportaciones según Nomenclador Común del Mercosur (NCM), a 2 dígitos. Datos anu | https://infra.datos.gob.ar/catalog/sspm/dataset/162/distribution/162.1/download/exportaciones-clasificadas-nomenclador-comun-mercosur-ncm-2-digitos-anual.csv | 
+      > indice_tiempo,x_animales_vivos,x_carne_despojos_comestibles,x_pescados_crustaceos_moluscos_demas_invertebrados,x_productos_lacteos_prod_comestibles_origen_animal_ncp,x_demas_productos_origen_animal_ncp,x_plantas_vivas_productos_floricultura,x_hortalizas_raices_tuberculos_alimenticios,x_frutas_frutos_comestibles_cortezas_agrios,x_cafe_te_yerba_mate_especias,x_cereales,x_productos_molineria_malta_al
+      > 1990-01-01,8.497391,563.782205,309.806783,155.94502899999998,9.700407000000002,0.062327999999999995,180.927119,225.260415,50.469348000000004,1374.1050609999998,65.46325,827.7176810000001,1.3812440000000001,0.624768,1151.260795,314.72584,150.937796,1.6701670000000002,15.568755,213.07324,17.661234,65.983679,1199.7676840000001,98.632578,11.978506000000001,18.380016,985.1684940000001,95.07309399999998
+      > ...
+      > 2022-01-01,27.767225579999998,4080.36192697,1791.82935521,1687.02417632,72.46498016,3.17137077,634.2451833999999,645.42528203,176.50107545000003,15547.67954896,763.8016299300001,4348.53695826,15.942459290000002,6.239802879999999,9151.73366353,84.67444389999999,216.37211527000002,80.52656042999999,254.26834042,811.22298112,192.09005735999997,946.43961276,13215.985352929998,325.22290293000003,97.827
+      > 2023-01-01,20.809734340000002,3160.0861390699997,1742.2036120400003,1366.06795871,62.62618682000001,3.39672625,545.95872568,617.33814847,165.91084972,8656.235783649998,702.70183986,2097.24819802,10.02923251,4.834009559999999,5825.968548070001,80.96270643,159.37518587999998,92.16430287000001,232.69528866000002,821.7655687600001,183.69823242,781.0278276800002,8988.79503446,277.43257749,111.4732447,4
+      > 2024-01-01,25.625207849999995,3445.01458365,1968.5831359300003,1463.5835729299997,66.16203062,4.41944734,593.5801320500001,729.07841082,184.35610973999997,10827.55986998,639.3982659899999,3181.51698077,11.959094030000001,6.005634289999999,8028.7792338200015,85.04789154,410.84088433000005,106.1530883,245.91855021,1065.38162294,207.69994317000004,879.7075601099999,11434.439567000001,321.9008407,118.
+  RES CSV | Exportaciones según Nomenclador Común del Mercosur (NCM), a 2 dígitos. Datos tri | https://infra.datos.gob.ar/catalog/sspm/dataset/162/distribution/162.2/download/exportaciones-clasificadas-nomenclador-comun-mercosur-ncm-2-digitos-trimestral.csv | 
+      > indice_tiempo,x_animales_vivos,x_carne_despojos_comestibles,x_pescados_crustaceos_moluscos_demas_invertebrados,x_leche_productos_lacteos_huevos_ave_miel,x_demas_productos_origen_animal_no_expresados_ncp,x_plantas_vivas_productos_floricultura,x_hortalizas_plantas_raices_tuberculos_alimenticios,x_frutas_frutos_comestibles_citricos_melones_sandias,x_cafe_te_yerba_mate_especias,x_cereales,x_productos_
+      > 1990-01-01,2.164837,108.766784,80.591343,24.326102999999996,2.3632050000000002,0.011623999999999999,26.737692,46.444091,13.958720999999999,544.5857209999999,10.671192999999999,54.788751000000005,0.201551,0.148656,331.824056,64.425854,4.399642,0.359896,2.240028,31.341136,4.4973149999999995,12.307804,293.209383,9.344304,3.4128559999999997,3.429113,118.89418099999999,26.790981,53.761933,3.95660299999
+      > ...
+      > 2024-04-01,8.933998540000001,775.82278305,432.57797616,314.62370029,15.171374240000002,2.8888835,128.2068675,226.39962311,42.59327667,2738.35818715,171.09051251,1576.5992393699999,3.3551125600000002,1.27981318,2036.17844358,19.023821650000002,58.41126678,22.08460711,58.42028656000001,238.60717945,49.05893085,191.49622503000003,3412.2465650900003,55.52465781,25.91558055,122.95534732,2096.86726486,1
+      > 2024-07-01,3.26745167,906.6428105800001,614.29761984,352.70788292000003,16.36173234,1.030065,127.88897221,206.03855962,40.97924432,2472.8050251199998,164.30711222000002,862.5017426400001,3.4542079,1.22349428,2152.60988697,20.946656240000003,165.66234493999997,29.46008498,65.15636726,309.70603473,56.66941494,278.18484409,2947.03058824,102.271468,34.37388413,147.11923135,2045.13191409,195.5440443,14
+      > 2024-10-01,6.30548615,905.4236513,402.29861034,426.79795815,18.627186870000003,0.334317,134.27336448,151.85354023000002,47.75324365,2158.58099905,150.53846819,465.44201141,3.20550132,2.67574117,2416.57606476,24.5811616,139.28053929,35.72038716,67.28063485000001,310.97833216,60.799102790000006,241.91837411,2791.5451547899997,99.99472144,31.06080558,162.5792816,2145.1009648199997,252.76748509,177.57
+  RES CSV | Exportaciones según Nomenclador Común del Mercosur (NCM), a 2 dígitos. Datos men | https://infra.datos.gob.ar/catalog/sspm/dataset/162/distribution/162.3/download/exportaciones-clasificadas-nomenclador-comun-mercosur-ncm-2-digitos-mensual.csv | 
+      > indice_tiempo,x_animales_vivos,x_carne_despojos_comestibles,x_pescados_crustaceos_moluscos_demas_invertebrados,x_leche_productos_lacteos_huevos_ave_miel,x_demas_productos_origen_animal_no_expresados_ncp,x_plantas_vivas_productos_floricultura,x_hortalizas_plantas_raices_tuberculos_alimenticios,x_frutas_frutos_comestibles_citricos_melones_sandias,x_cafe_te_yerba_mate_especias,x_cereales,x_productos_
+      > 1990-01-01,0.24992,34.589635,25.546969,5.631461,0.86285,0.00092,13.983461,6.084204,6.096989,180.351026,0.904446,11.563346,9e-05,0.008627,91.850858,23.599624,0.893012,0.023509,0.350211,7.79481,2.460692,1.774502,83.590969,2.883571,0.954795,2.72229,31.861993,9.153561,19.309552,1.143291,0.003078,5.173422,1.602486,0.663461,1.648378,0.124696,2.561599,1.641563,10.300479,4.860469,26.462535,1.798411,1.2250
+      > ...
+      > 2024-12-01,2.56850707,292.97132832,138.06169501,124.14324008,7.108528900000001,0.1190895,77.42967034,47.3685183,16.49713891,846.63827766,56.30673116000001,127.81576199,1.15065688,0.49923482,662.63010593,7.152572360000001,30.9622403,14.05648717,20.33446086,101.53753449,19.76690307,78.53234635,840.65884483,54.3422423,9.351549799999999,53.21538956,900.57386091,87.05607472,43.08975159000001,82.7498575
+      > 2025-01-01,2.99082611,262.01337425,116.69361182,108.17213914,5.52220833,0.1292805,58.10965094,29.11265917,10.04504359,1184.95112461,38.22644428,95.34597173,0.90675648,0.41224006,606.0968023400001,6.86855723,21.50158236,10.76713066,18.41445253,64.48466089,17.15828909,50.51100533,737.86300323,2.97091269,8.77991474,31.17222178,772.30159916,74.41060998,26.0375327,67.09000227,1.03551976,8.93055767,49.9
+      > 2025-02-01,1.34846457,284.33452169,217.42900796,129.03365412,6.47679058,0.0077797,52.74171708,52.51429268,14.5086016,1090.13818395,30.28235733,118.9328192,1.12131842,0.4897148199999999,628.33585539,6.18909017,20.79567913,6.96843961,21.67966905,79.08215458,18.23778577,58.43055319,593.5456850700001,6.00199937,8.30463702,54.33214439,723.5326786100001,88.97979841,29.46885951,90.72137396,2.7576181,11.4
+
+=== PKG importaciones-segun-el-nomenclador-comun-del-mercosur-ncm | Creative Commons Attribution 4.0 | Importaciones según el Nomenclador Común del Mercosur (NCM)
+  RES CSV | Importaciones según el Nomenclador Común del Mercosur (NCM), a 2 dígitos. Datos  | https://infra.datos.gob.ar/catalog/sspm/dataset/163/distribution/163.1/download/importaciones-clasificadas-nomenclador-comun-mercosur-ncm-2-digitos.csv | 
+      > indice_tiempo,m_animales_vivos,m_carne_despojos_comestibles,m_pescados_crustaceos_moluscos_demas_invertebrados,m_leche_productos_lacteos_huevos_ave_miel_natural,m_demas_productos_origen_animal_ncp,m_plantas_vivas_productos_floricultura,m_hortalizas_plantas_raices_tuberculos_alimenticios,m_frutas_frutos_comestibles,m_cafe_te_yerba_mate_especias,m_cereales,m_productos_molineria_malta_almidon,m_semil
+      > 1990-01-01,5.657030000000001,6.420743999999999,4.731343,2.682464,2.0211240000000004,0.7015629999999999,4.447545,32.314306,42.445057,4.5055689999999995,0.486716,18.125926000000003,6.603204000000001,0.439139,6.248181000000001,1.5128959999999998,1.949546,23.315366,0.786179,4.31358,7.156553,8.042328,3.497507,3.142416,29.918992000000003,144.094366,332.995602,160.390687,517.908021,42.292168999999994,27.
+      > ...
+      > 2022-01-01,26.75314695,154.65327789999998,97.09820124,36.71360353,41.35546342,5.688550179999999,39.60108521000001,493.23606673,232.13476164000002,47.92229816,33.928346170000005,2234.0780005499996,70.97208492,4.942318490000001,306.98687209,148.69742399999998,48.44310182,217.05485463000002,82.41578616,101.3929289,247.74070759999998,111.28370701,184.20787218,53.58870152,230.16273807,947.4757319,12783
+      > 2023-01-01,32.56415896,62.57982876,56.20413464000001,31.528441740000005,35.82707988,5.4484216299999995,40.39140036999999,461.27207612000007,195.70419255000002,86.60478735000001,36.47698996,5728.95192657,63.48266221000001,4.21280295,114.45177934,141.12765721,45.8477397,228.85982179999996,77.33480424,82.51000757999999,255.91064462,91.57004936000001,118.67907360999999,71.32955246,176.21822151,695.647
+      > 2024-01-01,33.91707968,83.38679651,41.75032393,24.625890389999995,31.988316999999995,6.082841539999999,78.73461438000001,463.69310472999996,215.99374731,56.5338292,24.43147465,3338.2010890600004,49.70831567,4.745036160000001,116.23782539000003,142.09688254,35.05243076,342.83814813,72.13589979,97.98166333,213.80135561,66.96617401,85.39401622000001,60.677517779999995,166.88938242999998,674.305685310
+  RES CSV | Importaciones según el Nomenclador Común del Mercosur (NCM), a 2 dígitos. Datos  | https://infra.datos.gob.ar/catalog/sspm/dataset/163/distribution/163.2/download/importaciones-clasificadas-nomenclador-comun-mercosur-ncm-2-digitos.csv | 
+      > indice_tiempo,m_animales_vivos,m_carne_despojos_comestibles,m_pescados_crustaceos_moluscos_demas_invertebrados,m_leche_productos_lacteos_huevos_ave_miel_natural,m_demas_productos_origen_animal_ncp,m_plantas_vivas_productos_floricultura,m_hortalizas_plantas_raices_tuberculos_alimenticios,m_frutas_frutos_comestibles,m_cafe_te_yerba_mate_especias,m_cereales,m_productos_molineria_malta_almidon,m_semil
+      > 1990-01-01,1.321443,0.025269,1.1430699999999998,0.260985,0.705825,0.087326,0.09118000000000001,2.713046,8.156507,0.007197,0.085279,6.067867,2.3313439999999996,0.12398600000000001,1.457312,0.061707,0.478914,3.8155840000000003,0.186154,0.314369,1.233132,1.110471,0.7718309999999999,0.18101899999999999,8.008977,32.975584,76.922938,30.652954,127.986961,10.582761999999999,7.383547,12.135582,2.298844,6.1
+      > ...
+      > 2024-04-01,10.51753482,8.647153379999999,8.22620544,6.1836897,8.82493236,0.5856153,11.30639897,82.38522282,54.28099509,11.49648914,7.00232188,1008.4477953400001,13.19793508,1.4596625699999999,25.78431348,27.66822947,7.24179013,76.73641814,16.523432460000002,21.86762751,53.98190992,17.46645809,21.290959190000002,16.43665934,41.87932508,206.15085628,1405.25068074,215.90179371,797.04244756,602.778246
+      > 2024-07-01,8.40205038,15.731620589999999,9.66150722,6.46285582,9.07374062,2.25782592,40.35187248,115.80457598,59.09053358,14.1105069,5.7169216899999995,936.07591426,12.72083733,1.37826202,33.86602866,34.48761737,8.68596013,91.42081552000002,16.50634007,24.178500030000002,55.63820409,18.08800683,22.5574671,12.495674919999999,48.92137553,135.99302365,1354.57486185,246.38804672000003,693.91391646,683
+      > 2024-10-01,7.74500594,49.624604520000005,14.94602663,6.08814047,8.01581895,1.2496001999999997,22.16649832,176.10929516,70.47864833,17.346995970000002,6.533964590000001,590.4760495400001,10.578674300000001,0.82691755,34.464684500000004,33.74522191,11.25993567,126.53544373999999,24.57896863,31.31093034,56.40538849000001,17.84173892,22.5333089,18.51432852,37.10859827,156.5809576,461.68570708000004,26
+  RES CSV | Importaciones según el Nomenclador Común del Mercosur (NCM), a 2 dígitos. Datos  | https://infra.datos.gob.ar/catalog/sspm/dataset/163/distribution/163.3/download/importaciones-clasificadas-nomenclador-comun-mercosur-ncm-2-digitos.csv | 
+      > indice_tiempo,m_animales_vivos,m_carne_despojos_comestibles,m_pescados_crustaceos_moluscos_demas_invertebrados,m_leche_productos_lacteos_huevos_ave_miel_natural,m_demas_productos_origen_animal_ncp,m_plantas_vivas_productos_floricultura,m_hortalizas_plantas_raices_tuberculos_alimenticios,m_frutas_frutos_comestibles,m_cafe_te_yerba_mate_especias,m_cereales,m_productos_molineria_malta_almidon,m_semil
+      > 1990-01-01,0.706297,0.0,0.48878,0.048687,0.502612,0.046661,0.020556,1.265382,3.518465,0.0,0.038147,3.632142,1.743719,0.034796,0.777982,0.027601,0.052081,1.433604,0.061098,0.156238,0.765921,0.132282,0.302141,0.149413,4.582692,20.432328,33.157468,6.890307,58.561064,4.901996,5.167414,5.336397,0.579114,1.995193,0.503808,0.102076,1.774492,26.182915,12.547968,6.630523,0.033847,0.070951,0.177189,3.435825
+      > ...
+      > 2024-12-01,1.73571432,23.37946767,5.49628412,1.73175703,2.66620579,0.25244488,3.74617813,62.35400287,17.72143216,5.9740643,1.87486742,58.72685652000001,3.98479286,0.35324126,11.67621669,11.56246097,3.97688677,41.51794979,8.34369179,11.03394943,21.26504466,7.143766479999999,8.53439686,7.21268503,9.065189210000002,49.76917087,173.06320672,109.24562749,189.41856766,248.48872308,39.09751263,47.0405973
+      > 2025-01-01,3.19675342,19.62211284,5.463029,3.84511102,1.76567194,0.59379267,2.47608858,67.45726256,19.44916833,4.12475925,2.10352459,42.69903856000001,4.50390801,0.44002285,12.74147674,15.9594754,4.37968371,44.83561648000001,7.36823121,18.12398055,23.73201622,7.32261598,8.54876147,4.51169533,16.08191974,66.83289106000001,184.98046872,122.77965525,239.84149002,269.59137687,61.78547297,50.04067749,3
+      > 2025-02-01,3.199730059999999,23.68957533,4.53548242,3.79295746,2.41042619,0.7050374100000001,1.92510031,53.9324713,24.41342699,4.27979064,2.18203442,318.86096321,4.462147900000001,0.36027264,11.52532249,19.51616118,3.45728491,39.03916459,6.02858349,8.823398939999999,23.17865342,6.99629727,5.09159868,5.94961899,12.78972926,41.49677083,208.82064859,48.81863501,208.91218527,228.94719517,39.4073268099
+
+=== PKG indices-de-valor-precio-y-cantidad-de-las-exportaciones-de-bienes | Creative Commons Attribution 4.0 | Índices de valor, precio y cantidad de las exportaciones de bienes
+  RES CSV | Índices de valor, precios y cantidad de las exportaciones de bienes. Valores anu | https://infra.datos.gob.ar/catalog/sspm/dataset/80/distribution/80.1/download/indices-valor-precios-cantidad-exportaciones-bienes-anual.csv | 
+      > indice_tiempo,ica_indice_valor_nivel_general,ica_indice_precio_nivel_general,ica_indice_cantidad_nivel_general,ica_indice_valor_nivel_productos_primarios,ica_indice_precio_nivel_productos_primarios,ica_indice_cantidad_nivel_productos_primarios,ica_indice_valor_nivel_agro,ica_indice_precio_nivel_agro,ica_indice_cantidad_nivel_agro,ica_indice_valor_nivel_industria,ica_indice_precio_nivel_industria,i
+      > 1990-01-01,35.7,87.9,40.7,46.3,92.2,50.2,40.5,89.5,45.2,35.0,93.3,37.5,15.9,61.2,26.1
+      > ...
+      > 2023-01-01,193.64924,193.512937,100.070436,210.728537,191.192451,110.218022,200.456307,205.782603,97.411688,215.06933,169.388707,126.967927,128.257468,246.14524,52.106418
+      > 2024-01-01,230.51776,182.26709599999998,126.472504,266.737214,172.33628399999998,154.777165,248.646716,183.764378,135.307353,229.346281,171.988162,133.35003899999998,157.208259,233.425089,67.348484
+      > 2025-01-01,251.943162,181.070293,139.14108099999999,323.292553,167.03158200000001,193.551752,255.426302,181.847094,140.462131,243.293795,183.758828,132.398425,179.58447999999999,206.977377,86.76527
+  RES CSV | Índices de valor, precios y cantidad de las exportaciones de bienes. Valores tri | https://infra.datos.gob.ar/catalog/sspm/dataset/80/distribution/80.2/download/indices-valor-precios-cantidad-exportaciones-bienes-trimestral.csv | 
+      > indice_tiempo,ica_indice_valor_exportaciones_nivel_general,ica_indice_precio_exportaciones_nivel_general,ica_indice_cantidad_exportaciones_nivel_general,ica_indice_valor_exportaciones_nivel_productos_primarios,ica_indice_precio_exportaciones_nivel_productos_primarios,ica_indice_cantidad_exportaciones_nivel_productos_primarios,ica_indice_valor_exportaciones_nivel_agro,ica_indice_precio_exportacione
+      > 1990-01-01,32.0,89.5,35.8,49.0,97.7,50.2,35.8,88.2,40.6,31.0,92.5,33.5,7.7,53.9,14.3
+      > ...
+      > 2025-10-01,272.766716,178.76487,152.584071,339.64763,159.911509,212.397239,267.244819,183.303663,145.793496,282.74195399999996,187.233385,151.010438,193.76257299999997,190.28087399999998,101.829768
+      > 2026-01-01,253.423055,192.055298,131.953171,360.708687,167.057786,215.918513,227.032768,194.002546,117.025664,253.316937,219.291624,115.516012,185.579653,199.013752,93.249663
+      > 2026-04-01,318.706093,206.593316,154.267378,376.68568700000003,174.190835,216.248855,303.5215,200.8453,151.122032,303.457364,211.18263,143.694282,307.456062,284.480284,108.076405
+
+=== PKG precios-de-biodiesel | CC-BY-4.0 | Precios de biodiesel
+  RES PHP | Biocombustibles - Precios de biodiesel  | https://glp.se.gob.ar/biocombustible/reporte_precios.php | 
+  RES CSV | Biocombustibles - Precios de biodiesel | http://datos.energia.gob.ar/dataset/30fcb906-5374-4790-aa89-368c0d3ef314/resource/b68507ca-f6ff-406f-85cf-2d706a2b993f/download/biocombustible-precios-de-biodiesel.csv | 2026-09-02
+      > anio,mes,quincena,grande,grande_no_integrada,mediana,chica,contingencia,alicuota_nominal,alicuota_efectiva
+      > 2020,10,,48533,,48533,48533,,,
+      > ...
+      > 2012,12,2,4387.22,,4763.06,5108.07,,,
+      > 2012,11,1,4661,,4661,4661,,,
+      > 2012,11,2,4565.34,,5182.53,5333.29,,,
+  RES XLS | Insumo para fórmula de cálculo de Biodiesel Res 83/18 | http://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/biocombustibles/insumos_formula_biodiesel.xlsx | 2023-02-07
+
+=== PKG precio-promedio-litro-leche-pagado-al-productor | CC-BY-4.0 | Lácteos - Precio promedio del litro de leche
+  RES CSV | Precio promedio del litro de leche - 2011 -2017 | https://datos.magyp.gob.ar/dataset/091cb5ae-fa89-4c5d-a9cf-cd846dc13301/resource/27f12956-ab54-4494-90a4-342a1190d81b/download/precio-promedio-del-litro-de-leche-2011-2017.csv | 2019-03-20
+      > pais_id,pais,año,mes,ccp,producto,precio_promedio_Kg,moneda_id
+      > 32,Argentina,2011,1,2211,Leche cruda,1.419 ,ARS
+      > ...
+      > 32,Argentina,2016,12,2211,Leche cruda,4.710 ,ARS
+      > 32,Argentina,2017,1,2211,Leche cruda,4.949 ,ARS
+      > 32,Argentina,2017,2,2211,Leche cruda,5.076 ,ARS
+  RES CSV | Serie de tiempo | https://datos.magyp.gob.ar/dataset/091cb5ae-fa89-4c5d-a9cf-cd846dc13301/resource/df8f7d09-797e-4e0b-9ad0-160f99edf2c0/download/serie-tiempo-precio-promedio-del-litro-de-leche-2011-2017.csv | 2019-05-03
+      > indice_tiempo,leche_cruda_precio_promedio_kg
+      > 2011-01,1.419
+      > ...
+      > 2016-12,4.71
+      > 2017-01,4.949
+      > 2017-02,5.076
+
+=== PKG indicadores-economicos-para-ganaderia-bovina | CC-BY-4.0 | Ganadería - Indicadores económicos bovinos
+  RES CSV | Indicadores económicos para ganadería bovina | https://datos.magyp.gob.ar/dataset/0ed0d23f-d295-4991-b80b-745b5080d0ea/resource/a28a3be0-f9a3-4f96-8094-53688135c5ad/download/indicadores-economicos-ganaderia-bovina.csv | 2019-10-09
+      > indice_tiempo,ternero($/kg),novillo($/kg),dolar($/U$S),IPIM,maiz($/ton),salario($/mes),vaca_conserva($/cab),vaquillona_preniada($/cab),novillo(kg)/maiz(t),novillo(kg)/ternero(kg),ternero(kg)/salario_mensual($),vaquillona(cab)/vacaconserva(cab),cria_csalado($/ha),invernada_subhumeda_alta_prod($/ha),feedlot($/cab)
+      > 2011-07,11.95,8.24,4.16,112.43,717.8,2210,1816,4750,87.11,1.45,184.94,2.62,724,984,256
+      > ...
+      > 2019-06,70.07,62.5,43.79,1166.35,6967.9,19101,13192,23511,111.49,1.12,272.6,1.78,4004,11033,-613
+      > 2019-07,67.2,62.37,42.54,1167.51,6293.3,19101,14244,25000,100.9,1.08,284.24,1.76,4032,14057,466
+      > 2019-08,79.38,66.8,52.73,1298.27,6648.8,23494,17896,34831,99.53,1.19,295.97,1.95,4674,10221,-1896
+  RES CSV | Márgenes brutos | https://datos.magyp.gob.ar/dataset/0ed0d23f-d295-4991-b80b-745b5080d0ea/resource/33942133-01d1-4977-94c2-1ea05f3fe59b/download/margenes-brutos.csv | 2019-03-18
+      > indice_tiempo,cria_csalado($/ha),invernada_subhumeda_alta_prod($/ha),feedlot($/cab)
+      > jul-11,724,984,256
+      > ...
+      > jun-19,4004,11033,-613
+      > jul-19,4032,14057,466
+      > ago-19,4674,10221,-1896
+  RES CSV | Precios para ganadería bovina | https://datos.magyp.gob.ar/dataset/0ed0d23f-d295-4991-b80b-745b5080d0ea/resource/881c8c87-0b59-4357-89e2-f8f8578a58a6/download/precios-para-ganaderia-bovina.csv | 2019-10-11
+      > indice_tiempo,ternero($/kg),novillo($/kg),dolar($/U$S),IPIM,maiz($/ton),salario($/mes),vaca_conserva($/cab),vaquillona_preniada($/cab)
+      > jul-11,11.95,8.24,4.16,112.43,717.8,2210,1816,4750
+      > ...
+      > jun-19,70.07,62.5,43.79,1166.35,6967.9,19101,13192,23511
+      > jul-19,67.2,62.37,42.54,1167.51,6293.3,19101,14244,25000
+      > ago-19,79.38,66.8,52.73,1298.27,6648.8,23494,17896,34831
+  RES CSV | Relaciones insumo-producto | https://datos.magyp.gob.ar/dataset/0ed0d23f-d295-4991-b80b-745b5080d0ea/resource/ef345c57-4045-4851-aeca-40ee3f83b8a0/download/relacion-insumo-producto.csv | 2019-10-11
+      > indice_tiempo,novillo(kg)/maiz(t),novillo(kg)/ternero(kg),ternero(kg)/salario_mensual($),vaquillona(cab)/vacaconserva(cab)
+      > jul-11,87.11,1.45,184.94,2.62
+      > ...
+      > jun-19,111.49,1.12,272.6,1.78
+      > jul-19,100.9,1.08,284.24,1.76
+      > ago-19,99.53,1.19,295.97,1.95
+  RES JPEG | Aspectos metodológicos | https://datos.magyp.gob.ar/dataset/0ed0d23f-d295-4991-b80b-745b5080d0ea/resource/d2f1b636-e9e5-46d6-85aa-7f73e210b645/download/aspectos-metodologicos-indicadores-economicos-ganaderia-bovina.jpg | 2019-05-07
+PKGFAIL molienda-granos 504
+PKGFAIL warrants-evolucion-certificados-vigentes-desagregados-por-productos 0
+PKG fertilizantes | emisiones-de-gases-de-efecto-invernadero-provenientes-del-agro | Producciones Sostenibles - Emisiones de GEI provenientes de la agricultura, ganadería y ot | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG fertilizantes | actividad-agricola | Actividad agrícola | subsecretaria-de-ambiente | Creative Commons Attribution 4.0 | res 9
+PKG vino | inv-elaboracion-de-mostos-y-vino | INV - Elaboración de mostos y vino | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 2
+PKG vino | inv-actividad-vitivinicola | INV - Actividad vitivinícola | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4
+PKG vino | produccion-de-uvas | INV - Producción de uvas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG vino | superficie-implantada-con-vinedos-republica-argentina | INV - Superficie implantada con viñedos | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 6
+PKG vitivinicola | inv-actividad-vitivinicola | INV - Actividad vitivinícola | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4
+PKG vitivinicola | superficie-implantada-con-vinedos-republica-argentina | INV - Superficie implantada con viñedos | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 6
+PKG vitivinicola | produccion-de-uvas | INV - Producción de uvas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG lacteos produccion | destino-produccion-leche | Lácteos - Destino de producción de leche | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4
+PKG lacteos produccion | produccion-leche-nivel-nacional | Lácteos - Producción de leche hasta 2016 | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG lacteos produccion | estimacion-variacion-interanual-e-intermensual-produccion-leche-cruda | Lácteos - Estimación de la producción de leche cruda | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 7
+PKG lacteos produccion | produccion-nacional-lactea-por-mes-y-por-anio | Lácteos - Producción nacional de leche por mes y por año | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 2
+PKG lacteos produccion | calidad-higienico-sanitaria-produccion-leche-cruda-nivel-nacional | Lácteos - Calidad higiénico sanitaria de la leche cruda a nivel nacional | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG lacteos produccion | calidad-higienico-sanitaria-de-la-produccion-de-leche-cruda-a-nivel-provincial | Lácteos - Calidad higiénico sanitaria de la leche cruda a nivel provincial | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 2
+PKG porcinos | senasa-movimientos-porcinos | SENASA - Movimientos porcinos | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1
+PKG porcinos | censo-ganaderia-cna-02 | Censo - Ganadería CNA 02 | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 6
+PKG porcinos | senasa-existencias-porcinas | SENASA - Existencias porcinas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 2
+PKG porcinos | emisiones-de-gases-de-efecto-invernadero-provenientes-del-agro | Producciones Sostenibles - Emisiones de GEI provenientes de la agricultura, ganadería y ot | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG porcinos | indicadores-sectoriales-y-provinciales | Indicadores Sectoriales y Provinciales | subsecretaria-de-programacion-microeconomica |  | res 42
+PKG porcinos | produccion-de-carne-aviar | Aves - Producción de carne aviar | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1
+PKG porcinos | consumo-de-carne-aviar | Aves - Consumo de carne aviar | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1
+PKG ovinos | senasa-movimientos-ovinos | SENASA - Movimientos ovinos | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1
+PKG ovinos | censo-ganaderia-cna-02 | Censo - Ganadería CNA 02 | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 6
+PKG ovinos | existencias-ovinas-nacionales-desde-1875-al-2017 | Ganadería - Existencias ovinas desde 1875 al 2017 | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG ovinos | indicadores-sectoriales-y-provinciales | Indicadores Sectoriales y Provinciales | subsecretaria-de-programacion-microeconomica |  | res 42
+PKG ovinos | emisiones-de-gases-de-efecto-invernadero-provenientes-del-agro | Producciones Sostenibles - Emisiones de GEI provenientes de la agricultura, ganadería y ot | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG papa produccion | estimaciones-agricolas | Agricultura - Estimaciones agrícolas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4
+PKG papa produccion | produccion-nacional-fiscalizada-por-especies-registrada-inase | INASE- Producción nacional de semilla fiscalizada | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4
+PKG papa produccion | produccion-nacional-fiscalizada-por-especies-ubicacion-registrada-inase | INASE - Producción de semillas por especies y ubicación | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG combustibles surtidor | precios-en-surtidor | Precios en Surtidor - Resolución 314/2016 | secretaria-de-energia | CC-BY-4.0 | res 3
+PKG precios en surtidor | precios-en-surtidor | Precios en Surtidor - Resolución 314/2016 | secretaria-de-energia | CC-BY-4.0 | res 3
+PKG precios en surtidor | precios-en-planta-res-s-e-606-2003 | Precios en planta (Res. S.E. 606/2003) | secretaria-de-energia | CC-BY-4.0 | res 2
+PKG precios en surtidor | costo-del-nivel-de-vida-en-la-capital-federal | Costo del Nivel de Vida en la Capital Federal. | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 2
+PKG precios en surtidor | precios-fob-oficiales | Precios FOB oficiales | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 1
+PKG precios en surtidor | precios-bioetanol | Precios de bioetanol | secretaria-de-energia | CC-BY-4.0 | res 2
+PKG precios en surtidor | precios-de-biodiesel | Precios de biodiesel | secretaria-de-energia | CC-BY-4.0 | res 3
+PKG precios en surtidor | precio-diario-internacional-azucar | Azúcar - Precio diario internacional | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 5
+PKG precios en surtidor | precios-claros-base-sepa | Precios Claros - Base SEPA | secretaria-de-industria-y-comercio | Creative Commons Attribution 4.0 | res 9
+PKG precios en surtidor | precios-de-comercio-exterior2 | Precios de Comercio Exterior | secretaria-de-energia | CC-BY-4.0 | res 2
+PKG precios en surtidor | precios-claros-sepa-mayorista | Precios Claros - SEPA Mayorista | secretaria-de-industria-y-comercio | Creative Commons Attribution 4.0 | res 9
+PKG precios en surtidor | producto-interno-bruto-a-precios-de-mercado-precios-corrientes-base-2004 | Producto Interno Bruto a Precios de Mercado. Precios corrientes. Base 2004 | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 2
+PKG precios en surtidor | producto-interno-bruto-a-precios-de-mercado-precios-corrientes-base-1993 | Producto Interno Bruto a Precios de Mercado. Precios corrientes. Base 1993 | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 2
+PKG precios en surtidor | producto-interno-bruto-a-precios-de-mercado-precios-constantes-base-2004 | Producto Interno Bruto a Precios de Mercado. Precios constantes. Base 2004 | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 2
+PKG precios en surtidor | precios-mayoristas-frutas-hortalizas | Frutas y hortalizas - Precios mayoristas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 5
+PKG precios en surtidor | precios-internacionales-de-minerales-del-siacam | Precios Internacionales de Minerales del SIACAM | secretaria-de-mineria | Creative Commons Attribution 4.0 | res 1
+PKG precios en surtidor | precios-eess-resolucion-1104-04 | Precios y volúmenes EESS - Resolución 1104/04 | secretaria-de-energia | CC-BY-4.0 | res 29
+PKG precios en surtidor | precio-promedio-litro-leche-pagado-al-productor | Lácteos - Precio promedio del litro de leche | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 2
+PKG precios en surtidor | producto-interno-bruto-a-precios-de-mercado-valor-agregado-bruto-a-precios-de-productor-ba-1993 | Producto Interno Bruto a precios de mercado - Valor Agregado Bruto a precios de productor. | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 2
+PKG precios en surtidor | precio-promedio-por-kg-solidos-utiles-pagados-al-productor | Lácteos - Precio promedio por kilo de sólidos útiles | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1
+PKG precios en surtidor | indice-de-precios-al-consumidor-nacional-ipc-base-diciembre-2016 | Índice de Precios al Consumidor Nacional (IPC). Base diciembre 2016. | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 12
+PKG precios en surtidor | indices-de-valor-precio-y-cantidad-de-las-importaciones-de-bienes | Índices de valor, precio y cantidad de las importaciones de bienes | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 2
+PKG precios en surtidor | indices-de-valor-precio-y-cantidad-de-las-exportaciones-de-bienes | Índices de valor, precio y cantidad de las exportaciones de bienes | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 2
+PKG precios en surtidor | indice-de-precios-implicitos-del-producto-interno-bruto-ipi-pib-base-1993-serie-discontinuada | Índice de Precios Implícitos del Producto Interno Bruto (IPI-PIB). Base 1993. (SERIE DISCO | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 4
+PKG precios en surtidor | mercado-liniers-sa-resumen-precios-cantidad-peso-promedio | Ganadería - Mercado de Liniers: precios, cantidad y peso promedio | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1
+PKG precios en surtidor | tabaco-evolucion-porcentual-de-ventas-de-cigarrillos-segun-precio | Tabaco - Evolución porcentual de ventas de cigarrillos según precio | secretaria-de-agricultura-ganaderia-y-pesca | ODbL-1.0 | res 1
+PKG precios en surtidor | anuario-importaciones-frutas | Frutas - Anuario de importaciones | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG precios en surtidor | canasta-basica-total-regiones-del-pais | Canasta básica total. Regiones del país | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 1
+PKG precios en surtidor | canasta-basica-alimentaria-regiones-del-pais | Canasta básica alimentaria. Regiones del país | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 1
+PKG precios en surtidor | canasta-basica-alimentaria-y-total-linea-de-indigencia-y-linea-de-pobreza-desde-1988 | Canasta básica alimentaria y total, línea de indigencia y línea de pobreza desde 1988 | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 3
+PKG precios en surtidor | canasta-basica-alimentaria-y-total-ciudad-de-buenos-aires | Canasta básica alimentaria y total. Ciudad de Buenos Aires | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 1
+PKG frutas produccion | producciones-de-los-nucleos-de-agricultura-familiar-naf | Agricultura Familiar - Producciones de los núcleos (NAF) | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 6
+PKG manzana pera | anuario-exportaciones-frutas | Frutas - Anuario de exportaciones | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3
+PKG manzana pera | indicadores-sectoriales-y-provinciales | Indicadores Sectoriales y Provinciales | subsecretaria-de-programacion-microeconomica |  | res 42
+PKG manzana pera | precios-mayoristas-frutas-hortalizas | Frutas y hortalizas - Precios mayoristas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 5
+INDEC link /ftp/cuadros/publicaciones/politica_difusion_indec.pdf
+INDEC https://www.indec.gob.ar/ftp/cuadros/economia/sh_sipm_2016.xls 200 37465
+INDEC https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipim_productos_2016.xls 200 37465
+ROBOTS apis full # As a condition of accessing this website, you agree to abide by the following
+# content signals:
+
+# (a)  If a content-signal = yes, you may collect content for the corresponding
+#      use.
+# (b)  If a content-signal = no, you may not collect content for the
+#      corresponding use.
+# (c)  If the website operator does not include a content signal for a
+#      corresponding use, the website operator neither grants nor restricts
+#      permission via content signal with respect to the corresponding use.
+
+# The content signals and their meanings are:
+
+# search:   building a search index and providing search results (e.g., returning
+#           hyperlinks and short excerpts from your website's contents). Search does not
+#           include providing AI-generated search summaries.
+# ai-input: inputting content into one or more AI models (e.g., retrieval
+#           augmented generation, grounding, or other real-time taking of content for
+#           generative AI search answers).
+# ai-train: training or fine-tuning AI models.
+
+# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF
+# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
+# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
+
