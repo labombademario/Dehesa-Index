@@ -1,0 +1,60 @@
+== www.ismeamercati.it
+depth=0 C = IT, ST = Roma, O = ISTITUTO DI SERVIZI PER IL MERCATO AGRICOLO ALIMENTARE - ISMEA, CN = ismeamercati.it
+verify error:num=20:unable to get local issuer certificate
+verify return:1
+depth=0 C = IT, ST = Roma, O = ISTITUTO DI SERVIZI PER IL MERCATO AGRICOLO ALIMENTARE - ISMEA, CN = ismeamercati.it
+verify error:num=21:unable to verify the first certificate
+verify return:1
+depth=0 C = IT, ST = Roma, O = ISTITUTO DI SERVIZI PER IL MERCATO AGRICOLO ALIMENTARE - ISMEA, CN = ismeamercati.it
+verify return:1
+---
+ 0 s:C = IT, ST = Roma, O = ISTITUTO DI SERVIZI PER IL MERCATO AGRICOLO ALIMENTARE - ISMEA, CN = ismeamercati.it
+   i:C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA OV R36
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+---
+subject=C = IT, ST = Roma, O = ISTITUTO DI SERVIZI PER IL MERCATO AGRICOLO ALIMENTARE - ISMEA, CN = ismeamercati.it
+issuer=C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA OV R36
+---
+---
+Verification error: unable to verify the first certificate
+---
+    Verify return code: 21 (unable to verify the first certificate)
+---
+subject=C = IT, ST = Roma, O = ISTITUTO DI SERVIZI PER IL MERCATO AGRICOLO ALIMENTARE - ISMEA, CN = ismeamercati.it
+issuer=C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA OV R36
+notBefore=Jun 17 00:00:00 2026 GMT
+notAfter=Jan  1 23:59:59 2027 GMT
+Authority Information Access: 
+    CA Issuers - URI:http://crt.sectigo.com/SectigoPublicServerAuthenticationCAOVR36.crt
+    OCSP - URI:http://ocsp.sectigo.com
+== www.ismea.it
+depth=0 CN = *.ismea.it
+verify error:num=20:unable to get local issuer certificate
+verify return:1
+depth=0 CN = *.ismea.it
+verify error:num=21:unable to verify the first certificate
+verify return:1
+depth=0 CN = *.ismea.it
+verify return:1
+---
+ 0 s:CN = *.ismea.it
+   i:C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA DV R36
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+---
+subject=CN = *.ismea.it
+issuer=C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA DV R36
+---
+---
+Verification error: unable to verify the first certificate
+---
+Verify return code: 21 (unable to verify the first certificate)
+---
+subject=CN = *.ismea.it
+issuer=C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA DV R36
+notBefore=Dec 17 00:00:00 2025 GMT
+notAfter=Jan  9 23:59:59 2027 GMT
+Authority Information Access: 
+    CA Issuers - URI:http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
+    OCSP - URI:http://ocsp.sectigo.com
