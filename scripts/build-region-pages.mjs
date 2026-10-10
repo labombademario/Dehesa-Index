@@ -140,6 +140,7 @@ const FACT = {
 };
 const factsOf = (c, r, lg, f) => (c === 'US' ? FACT.US(r, lg, f) : c === 'CA' ? FACT.CA(r, lg, f) : c === 'AU' ? FACT.AU(r, lg, f) : FACT.EU(r, lg, f, c));
 /* ---- paginas ---- */
+const STATIC = {};   // c -> region -> 'pais/slug' de la pagina estatica en espanol (el seo-gate quita las que quedan en noindex)
 const urlR = (lg, c, slug) => SITE + '/' + S[lg].root + '/' + CSLUG[c][LI[lg]] + '/' + (slug ? slug + '/' : '');
 const upOf = (lg, depth) => '../'.repeat((lg === 'es' ? 2 : 3) + depth);
 const head = (lg, title, desc, url, alts, ld, up) => `<!doctype html>
@@ -195,6 +196,7 @@ for (const c of CORDER) {
       const title = seoTitle(t.title(rn, cname, t.title(rn, cname, headT).length <= 62 ? headT : '')), top = F.B[0];   // titulo <= ~62 caracteres (Google recorta mas): la cifra destacada va en la descripcion
       const desc = (t.lead(rn, cname, F.head, t.kindS[c]) + ' ' + F.B.map(b => t.tbl[b.k]).join(', ') + '.').slice(0, 300);
       const alt = alts(l2 => urlR(l2, c, slugify(nm(c, r, l2))));
+      if (lg === 'es') (STATIC[c] = STATIC[c] || {})[r] = CSLUG[c][LI.es] + '/' + slugify(nm(c, r, 'es'));
       const ld = { '@context': 'https://schema.org', '@graph': [
         { '@type': 'Dataset', name: t.pageOf + ' ' + rn + ' (' + cname + ')', description: desc, url, inLanguage: lg, isAccessibleForFree: true, dateModified: lastDay, spatialCoverage: { '@type': 'Place', name: rn + ', ' + cname }, creator: { '@type': 'Organization', name: 'Dehesa Index', url: SITE }, isBasedOn: SRC[c].map(s => s[1]) },
         { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Dehesa Index', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: cname, item: urlR(lg, c) }, { '@type': 'ListItem', position: 3, name: rn, item: url }] }] };
@@ -227,4 +229,5 @@ let sm = read('sitemap.xml'); const A = '  <!-- region-pages:start -->', B = '  
 const block = A + '\n' + urls.sort().map(u => '  <url><loc>' + u + '</loc></url>').join('\n') + '\n' + B;
 if (sm.includes(A)) sm = sm.replace(new RegExp(A + '[\\s\\S]*?' + B), block); else sm = sm.replace('</urlset>', block + '\n</urlset>');
 fs.writeFileSync('sitemap.xml', sm);
+fs.writeFileSync('regiones/mapa-estaticas.js', '/* generado por scripts/build-region-pages.mjs (y filtrado por seo-gate.mjs): paginas de region estaticas e indexables; region.js las usa como canonical de region.html?c=&r= */\nwindow.DehesaRegionStatic = ' + JSON.stringify(STATIC) + ';\n');
 console.log('paginas de region', urls.length, JSON.stringify(summary));

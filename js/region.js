@@ -577,7 +577,7 @@
   }
   var seq = 0;
   // canonical y og:url propios por region (la pagina es una sola con ?c=&r=)
-  function setCanonical() { var u = 'https://dehesaindex.com/region.html' + (C[ST.c] && C[ST.c].names[ST.r] ? '?c=' + ST.c + '&r=' + ST.r : ''), c = document.querySelector('link[rel="canonical"]'), o = document.querySelector('meta[property="og:url"]'); if (c) c.setAttribute('href', u); if (o) o.setAttribute('content', u); }
+  function setCanonical() { var S = window.DehesaRegionStatic, st = S && S[ST.c] && S[ST.c][ST.r], u = st ? 'https://dehesaindex.com/regiones/' + st + '/' : 'https://dehesaindex.com/region.html' + (C[ST.c] && C[ST.c].names[ST.r] ? '?c=' + ST.c + '&r=' + ST.r : ''), c = document.querySelector('link[rel="canonical"]'), o = document.querySelector('meta[property="og:url"]'); if (c) c.setAttribute('href', u); if (o) o.setAttribute('content', u); }
   function render() {
     setCanonical();
     var root = document.getElementById('rg-body'), t = tt(), cfg = C[ST.c]; if (!root) return;

@@ -34,4 +34,9 @@ for (const [u, i] of info) {
 const drop = new Set(thin);
 sm = sm.replace(MARK, (all, a, name, body, z) => a + body.split('\n').filter(l => { const m = /<loc>([^<]+)<\/loc>/.exec(l); return !(m && drop.has(m[1])); }).join('\n') + z);
 fs.writeFileSync('sitemap.xml', sm);
+try {   // region.js apunta el canonical de region.html?c=&r= a la pagina estatica, solo si esa pagina sigue indexable
+  const rs = fs.readFileSync('regiones/mapa-estaticas.js', 'utf8'), m = /DehesaRegionStatic = (\{[\s\S]*?\});/.exec(rs);
+  if (m) { const o = JSON.parse(m[1]); for (const c of Object.keys(o)) { for (const r of Object.keys(o[c])) if (drop.has(SITE + '/regiones/' + o[c][r] + '/')) delete o[c][r]; if (!Object.keys(o[c]).length) delete o[c]; }
+    fs.writeFileSync('regiones/mapa-estaticas.js', rs.slice(0, m.index) + 'DehesaRegionStatic = ' + JSON.stringify(o) + ';\n'); }
+} catch (e) { /* sin mapa de regiones: nada que filtrar */ }
 console.log('puerta SEO: ' + ok.size + ' paginas indexables, ' + thin.length + ' con noindex y fuera del sitemap (hojas: menos de ' + GATE.minRows + ' filas de datos o ' + GATE.minWords + ' palabras; producto: menos de ' + GATE.product.minRows + ' o ' + GATE.product.minWords + ')');
