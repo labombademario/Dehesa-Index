@@ -2401,6 +2401,32 @@
    "evidence": "Politicas de difusion estadistica del INDEC (PDF, leido el 10-oct-2026 desde GitHub Actions), cap. XI 'Usabilidad de la informacion': 'Salvo contenidos especificamente indicados, todo el material publicado en el sitio web del INDEC posee la licencia Creative Commons (CC). Esto permite a los usuarios copiar, reutilizar o redistribuir el material en cualquier medio o formato, siempre que se acredite debidamente la obra, se cite la fuente primaria y se especifiquen cambios si los hubiere.' El pie de cada pagina del INDEC repite la licencia. No hay clausula no comercial ni de no derivados. El nivel general del IPIM coincide con la serie que la Subsecretaria de Programacion Macroeconomica republica en datos.gob.ar con CC BY 4.0.",
    "short": "INDEC (Argentina)",
    "legalConfidenceReason": "Licencia explicita en la politica de difusion oficial del INDEC y en el pie de su sitio."
+  },
+  "magyp_lecheria": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "medium",
+   "legalConfidence": "MEDIUM",
+   "notes": "Elaboracion y existencias mensuales de productos lacteos (relevamiento de industrias, Res. 7/2014 y 230/2016 SAGyP) y exportaciones por producto (datos INDEC elaborados por la Direccion). Confianza media: la licencia no esta escrita en la propia pagina, sino en los Terminos a los que remite su pie.",
+   "name": "Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar",
+   "url": "https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/",
+   "country": "AR",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (Terminos y condiciones de argentina.gob.ar)",
+   "licenseUrl": "https://www.argentina.gob.ar/terminos-y-condiciones",
+   "attributionText": "Fuente: Direccion Nacional de Lecheria, Secretaria de Agricultura, Ganaderia y Pesca (Argentina); exportaciones: INDEC. Licencia CC BY 4.0.",
+   "additionalRestrictions": "Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica esta fuente.",
+   "evidence": "Las paginas de estadisticas de Lecheria de magyp.gob.ar (leidas el 10-oct-2026 desde GitHub Actions) enlazan en su pie a https://www.argentina.gob.ar/terminos-y-condiciones. Esos Terminos dicen: 'El Administrador licencia todos sus contenidos bajo la licencia Creative Commons Atribucion 4.0 Internacional ... excepto cuando se declare lo contrario.' No hay ninguna declaracion en contrario en las paginas ni en los XLSX. La raiz magyp.gob.ar/sitio redirige a argentina.gob.ar/economia/agricultura, con la misma licencia. La misma Direccion publica conjuntos lacteos en datos.gob.ar con CC BY 4.0.",
+   "short": "SAGyP Lecheria (Argentina)",
+   "legalConfidenceReason": "Licencia CC BY 4.0 por remision del pie de la pagina a los Terminos de argentina.gob.ar; no esta repetida en la propia pagina."
   }
  },
  "files": {
@@ -3050,6 +3076,7 @@
   },
   "data/argentina-stats.json": {
    "bySourceGroupPrefix": {
+    "SAGyP Lecheria": "magyp_lecheria",
     "INDEC SIPM": "indec_ar",
     "INDEC": "argentina_datos_abiertos",
     "Precios FOB": "argentina_datos_abiertos",

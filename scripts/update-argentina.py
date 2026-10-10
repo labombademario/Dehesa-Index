@@ -7,6 +7,8 @@ Todos los conjuntos se descubren en tiempo de ejecucion con la API CKAN (package
   estimaciones-agricolas: suma de las estimaciones departamentales de colza, girasol, sorgo y mani (la serie no se publica ya agregada)
   precios-fob-oficiales (USD/t, diarios -> media mensual), indice-novillo-sio-carnes-insc, indicadores-economicos-para-ganaderia-bovina, mercado-liniers-sa-resumen-precios...
   indicadores-mensuales-sector-bovino, faena-aviar, produccion-de-carne-aviar, produccion-nacional-lactea-por-mes-y-por-anio,   exportaciones-fob-por-rubro (INDEC, Intercambio Comercial Argentino, millones de USD)
+  INDEC SIPM (series_sipm_dic2015.xls): indices de precios al productor (IPP) y mayoristas (IPIM) por grupo de productos; Secretaria de Energia (Res. 1104/04): gasoil al canal agro;
+  Direccion Nacional de Lecheria (magyp.gob.ar, CC BY 4.0 via Terminos de argentina.gob.ar): elaboracion, existencias y exportaciones de productos lacteos.
 Sin estimaciones: una serie con menos de 3 puntos o sin dato en los ultimos 3 anos se descarta y se anota en el log; los valores vacios no se rellenan."""
 import csv, datetime, io, json, re, sys, time, urllib.request
 from collections import defaultdict
@@ -308,8 +310,83 @@ def fuel():
            'Secretaria de Energia precios mayoristas', 'Mediana ponderada por volumen de los precios declarados por los distribuidores y comercializadores mayoristas (Res. 1104/04) para el canal "Agro"; sin estimaciones ni relleno.')
     log('gasoil agro ok')
 
+# ---------------- Direccion Nacional de Lecheria (SAGyP): elaboracion, existencias y exportaciones por producto ----------------
+# Ficheros XLSX de magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas. El pie de esas paginas remite a los Terminos y condiciones de
+# argentina.gob.ar, que licencian los contenidos con CC BY 4.0 "excepto cuando se declare lo contrario" (leido el 10 oct 2026); el
+# pipeline comprueba en cada ejecucion que el enlace sigue ahi y, si no, no publica nada de esta fuente.
+LECH = 'https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/'
+def _xlsx(url):
+    import openpyxl
+    return list(openpyxl.load_workbook(io.BytesIO(fetch(url, 120)), read_only=True, data_only=True).worksheets[0].iter_rows(values_only=True))
+def _lech_rows(rows):
+    """Tablas PI006/E016: cabecera con fechas (datetime) y filas con la etiqueta en la columna B. Solo el primer bloque (detalle por producto)."""
+    hdr = next(i for i, r in enumerate(rows) if sum(isinstance(x, datetime.datetime) for x in r) > 12)
+    cols = {j: x.strftime('%Y-%m') for j, x in enumerate(rows[hdr]) if isinstance(x, datetime.datetime)}
+    out = {}
+    for r in rows[hdr + 1:]:
+        if any(isinstance(x, datetime.datetime) for x in r): break   # segundo bloque (totales)
+        lab = str(r[1] or '').strip() if len(r) > 1 else ''
+        if lab: out[lab] = [(p, round(r[j], 3)) for j, p in cols.items() if j < len(r) and isinstance(r[j], (int, float))]
+    tot = {}   # segundo bloque: totales por grupo (LECHE FLUIDA, QUESOS...)
+    h2 = next((i for i in range(hdr + 1, len(rows)) if sum(isinstance(x, datetime.datetime) for x in rows[i]) > 12), None)
+    if h2 is not None:
+        cols2 = {j: x.strftime('%Y-%m') for j, x in enumerate(rows[h2]) if isinstance(x, datetime.datetime)}
+        if set(cols2) == set(cols) and len(set(cols2.values())) < len(cols2): log('Lecheria: fecha repetida en la cabecera de totales; se usa la del detalle (mismas columnas)'); cols2 = cols
+        if len(set(cols2.values())) < len(cols2): log('Lecheria: cabecera de totales con fechas repetidas; no se publican los totales'); cols2 = {}
+        for r in rows[h2 + 1:]:
+            lab = str(r[1] or '').strip() if len(r) > 1 else ''
+            if lab: tot[lab] = [(p, round(r[j], 3)) for j, p in cols2.items() if j < len(r) and isinstance(r[j], (int, float))]
+    return out, tot
+LECH_PROD = (('Manteca', 'butter', 'Butter'), ('Leche en polvo entera y semidescremada', 'wmp', 'Whole and semi-skimmed milk powder'), ('Leche en polvo descremada', 'smp', 'Skimmed milk powder'),
+             ('Quesos de baja humedad (pasta dura)', 'cheese-hard', 'Cheese, hard (low moisture)'), ('Quesos de mediana humedad (pasta semidura)', 'cheese-semihard', 'Cheese, semi-hard (medium moisture)'),
+             ('Quesos de alta humedad (pasta blanda)', 'cheese-soft', 'Cheese, soft (high moisture)'))
+LECH_TOT = (('QUESOS (toneladas)', 'cheese', 'Cheese (all types)', 't'), ('LECHE FLUIDA (miles de litros)', 'fluid-milk', 'Fluid milk products (refrigerated and shelf-stable)', 'thousand l'))
+LECH_EXP = (('Manteca', 'butter', 'Butter'), ('Queso de pasta dura', 'cheese-hard', 'Cheese, hard'), ('Queso de pasta semidura', 'cheese-semihard', 'Cheese, semi-hard'),
+            ('Queso de pasta blanda', 'cheese-soft', 'Cheese, soft'), ('Mozzarella', 'mozzarella', 'Mozzarella cheese'), ('Leche en polvo entera', 'wmp', 'Whole milk powder'), ('Leche en polvo descremada', 'smp', 'Skimmed milk powder'))
+def lecheria():
+    page = fetch(LECH + '_02_industrial/index.php', 60).decode('utf-8', 'replace')
+    if 'argentina.gob.ar/terminos-y-condiciones' not in page: raise RuntimeError('la pagina de Lecheria ya no remite a los Terminos de argentina.gob.ar (licencia CC BY 4.0): no se publica')
+    nt = 'Direccion Nacional de Lecheria (SAGyP), relevamiento de industrias lacteas (Res. 7/2014 y 230/2016 SAGyP); los ultimos meses pueden ser provisionales.'
+    sg = 'SAGyP Lecheria'
+    for f, what, wid in (('_02_industrial/_archivos/PI006.xlsx', 'production by dairy plants', 'production'), ('existencias/_archivos/E016.xlsx', 'stocks at dairy plants (end of month)', 'stocks')):
+        det, tot = _lech_rows(_xlsx(LECH + f))
+        grp = 'stocks' if wid == 'stocks' else 'production'
+        for lab, key, en in LECH_PROD:
+            if lab not in det: log('Lecheria sin fila', f, lab); continue
+            mk('ar-lecheria-%s-%s' % (key, wid), grp, '%s: %s, Argentina (SAGyP Lecheria)' % (en, what), 't', 'monthly', det[lab], sg, nt)
+        for lab, key, en, u in LECH_TOT:
+            if lab not in tot: log('Lecheria sin total', f, lab); continue
+            mk('ar-lecheria-%s-%s' % (key, wid), grp, '%s: %s, Argentina (SAGyP Lecheria)' % (en, what), u, 'monthly', tot[lab], sg, nt)
+    rows = _xlsx(LECH + '_05_externo/_archivos/ME003.xlsx')
+    blocks = []   # (fila de anos, fila de meses, unidad)
+    for i, r in enumerate(rows):
+        if len(r) > 2 and str(r[1] or '').strip() == 'Producto' and str(r[2] or '').strip().upper() == 'ENERO':
+            blocks.append((i - 1, i, str(rows[i + 1][1] or '').strip().upper()))
+    MESU = {'ENERO': 1, 'FEBRERO': 2, 'MARZO': 3, 'ABRIL': 4, 'MAYO': 5, 'JUNIO': 6, 'JULIO': 7, 'AGOSTO': 8, 'SEPTIEMBRE': 9, 'SETIEMBRE': 9, 'OCTUBRE': 10, 'NOVIEMBRE': 11, 'DICIEMBRE': 12}
+    for yr, mr, unit in blocks:
+        per, y = {}, None
+        for j in range(2, len(rows[mr])):
+            yv = rows[yr][j] if j < len(rows[yr]) else None
+            my = re.match(r'^\s*((?:19|20)\d\d)(?:\.0)?\s*$', str(yv)) if yv is not None else None
+            if my: y = int(my.group(1))
+            m = MESU.get(str(rows[mr][j] or '').strip().upper())
+            if y and m: per[j] = '%d-%02d' % (y, m)
+        u, uk = ('t', 'tonnes') if unit.startswith('TONELADAS') else ('thousand USD', 'value') if 'US' in unit else (None, None)
+        if not u: log('ME003 bloque sin unidad', unit); continue
+        lab2row = {}
+        for r in rows[mr + 2:]:
+            lab = str(r[1] or '').strip() if len(r) > 1 else ''
+            if lab == 'TOTAL': break
+            if lab: lab2row[lab] = r
+        for lab, key, en in LECH_EXP:
+            r = lab2row.get(lab)
+            if r is None: log('ME003 sin fila', lab); continue
+            mk('ar-lecheria-%s-exports-%s' % (key, uk), 'trade', '%s: exports, Argentina (%s; INDEC via SAGyP Lecheria)' % (en, 'quantity' if u == 't' else 'value'), u, 'monthly',
+               [(p, round(r[j], 3)) for j, p in per.items() if j < len(r) and isinstance(r[j], (int, float))], sg, 'Exportaciones por producto (fuente INDEC), elaboradas por la Direccion Nacional de Lecheria (SAGyP). Las celdas vacias del fichero no se rellenan.')
+    log('lecheria ok')
+
 def main():
-    for fn in (crops, fob, livestock, trade, minor_crops, slaughter, campaigns, ipc_prices, sipm, fuel):
+    for fn in (crops, fob, livestock, trade, minor_crops, slaughter, campaigns, ipc_prices, sipm, fuel, lecheria):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:200])
     log('series', len(OUT))
