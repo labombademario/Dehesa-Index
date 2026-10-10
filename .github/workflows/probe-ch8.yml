@@ -1,4 +1,4 @@
-name: probe-ch7
+name: probe-ch8
 on: push
 permissions:
   contents: write
@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v6
       - run: |
           set +e
-          python3 probe_ch4.py > probe-runch4.txt 2>&1; mkdir -p probe; cp probe-runch4.txt probe/
+          python3 probe_ch5.py > probe-runch5.txt 2>&1; mkdir -p probe; cp probe-runch5.txt probe/
           mkdir -p probe; cp probe-run.txt probe/
           git config user.name probe; git config user.email probe@x
-          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-ch7-out -f
+          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-ch8-out -f
