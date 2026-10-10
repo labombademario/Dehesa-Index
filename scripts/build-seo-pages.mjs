@@ -34,6 +34,39 @@ function licenseUrl(t) {
   if (/Licence Ouverte 2\.0/.test(t)) return 'https://www.etalab.gouv.fr/licence-ouverte-open-licence/';
   return null;
 }
+
+/* Lectura en prosa de cada ficha: frases que salen SOLO de las series de la tabla (direccion del ultimo cambio, mayor subida y caida,
+   variacion interanual cuando hay el mismo periodo un ano antes, maximos o minimos de la serie). Nada se estima. */
+const BT = {
+  es: { head: 'En pocas palabras', dir: (u, d, f, n) => 'En su último dato, ' + u + ' de las ' + n + ' series ' + (u === 1 ? 'sube' : 'suben') + ', ' + d + ' ' + (d === 1 ? 'baja' : 'bajan') + (f ? ' y ' + f + ' no ' + (f === 1 ? 'cambia' : 'cambian') : '') + ' respecto a la observación anterior.',
+    hiLo: (a, b) => (a ? 'La mayor subida es la de «' + a.l + '» (' + a.p + ', ' + a.d + ')' : '') + (a && b ? '; la mayor caída, ' : b ? 'La mayor caída es la de ' : '') + (b ? '«' + b.l + '» (' + b.p + ', ' + b.d + ')' : '') + '.',
+    yoy: (n, a, b) => 'Frente al mismo periodo del año anterior (' + n + ' series comparables), ' + (a ? 'sube más «' + a.l + '» (' + a.p + ')' : '') + (a && b ? ' y ' : '') + (b ? 'baja más «' + b.l + '» (' + b.p + ')' : '') + '.',
+    rec: (hi, lo) => (hi.length ? (hi.length === 1 ? '«' + hi[0].l + '» está en el máximo de toda su serie (desde ' + hi[0].f + ')' : hi.length + ' series están en el máximo de toda su serie') : '') + (hi.length && lo.length ? '; ' : '') + (lo.length ? (lo.length === 1 ? '«' + lo[0].l + '» está en su mínimo (desde ' + lo[0].f + ')' : lo.length + ' series están en su mínimo histórico') : '') + '.',
+    src: 'Calculado con las series de la tabla; cada una con su propia frecuencia y unidad.' },
+  en: { head: 'In brief', dir: (u, d, f, n) => 'In their latest reading, ' + u + ' of the ' + n + ' series rose, ' + d + ' fell' + (f ? ' and ' + f + ' were unchanged' : '') + ' against the previous observation.',
+    hiLo: (a, b) => (a ? 'The largest rise is “' + a.l + '” (' + a.p + ', ' + a.d + ')' : '') + (a && b ? '; the largest fall, ' : b ? 'The largest fall is ' : '') + (b ? '“' + b.l + '” (' + b.p + ', ' + b.d + ')' : '') + '.',
+    yoy: (n, a, b) => 'Against the same period a year earlier (' + n + ' comparable series), ' + (a ? '“' + a.l + '” rose most (' + a.p + ')' : '') + (a && b ? ' and ' : '') + (b ? '“' + b.l + '” fell most (' + b.p + ')' : '') + '.',
+    rec: (hi, lo) => (hi.length ? (hi.length === 1 ? '“' + hi[0].l + '” is at the highest level in its whole series (since ' + hi[0].f + ')' : hi.length + ' series are at the highest level in their whole history') : '') + (hi.length && lo.length ? '; ' : '') + (lo.length ? (lo.length === 1 ? '“' + lo[0].l + '” is at its lowest (since ' + lo[0].f + ')' : lo.length + ' series are at their lowest on record') : '') + '.',
+    src: 'Computed from the series in the table; each keeps its own frequency and unit.' }
+};
+function brief(top, lang) {
+  const t = BT[lang], o = [], pc = v => (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), lang) + ' %';
+  const ch = top.filter(s => s.changePct != null && isFinite(s.changePct));
+  if (ch.length >= 2) {
+    const u = ch.filter(s => s.changePct > 0).length, d = ch.filter(s => s.changePct < 0).length;
+    o.push(t.dir(u, d, ch.length - u - d, ch.length));
+    const mx = ch.reduce((m, s) => s.changePct > m.changePct ? s : m), mn = ch.reduce((m, s) => s.changePct < m.changePct ? s : m);
+    const A = mx.changePct > 0 ? { l: mx.label, p: pc(mx.changePct), d: plabel(mx.latestPeriod, lang) } : null, B = mn.changePct < 0 ? { l: mn.label, p: pc(mn.changePct), d: plabel(mn.latestPeriod, lang) } : null;
+    if (A || B) o.push(t.hiLo(A, B));
+  }
+  const yy = top.map(s => { const m = /^(\d{4})(.*)$/.exec(s.latestPeriod || ''); if (!m) return null; const pk = (+m[1] - 1) + m[2], p = (s.points || []).find(q => q[0] === pk); return p && p[1] ? { l: s.label, v: (s.latest / p[1] - 1) * 100 } : null; }).filter(z => z && isFinite(z.v));
+  if (yy.length >= 2) { const a = yy.reduce((m, z) => z.v > m.v ? z : m), b = yy.reduce((m, z) => z.v < m.v ? z : m); o.push(t.yoy(yy.length, a.v > 0 ? { l: a.l, p: pc(a.v) } : null, b.v < 0 ? { l: b.l, p: pc(b.v) } : null)); }
+  const hi = [], lo = [];
+  for (const s of top) { const P = (s.points || []).filter(q => q[1] != null); if (P.length < 24 || !s.latest) continue; const vs = P.map(q => q[1]), f = plabel(P[0][0].length === 4 ? P[0][0] + '-01' : P[0][0], lang).replace(/^(\d+ )?\S+ (?=\d{4}$)/, lang === 'es' ? '' : '');
+    if (s.latest >= Math.max(...vs) && s.latest > Math.min(...vs)) hi.push({ l: s.label, f: P[0][0].slice(0, 4) }); else if (s.latest <= Math.min(...vs) && s.latest < Math.max(...vs)) lo.push({ l: s.label, f: P[0][0].slice(0, 4) }); }
+  if (hi.length || lo.length) o.push(t.rec(hi, lo));
+  return o.map(x => x.replace(/^\./, '')).filter(x => x.length > 2);
+}
 function score(s) { return (s.points || []).length + (s.latestPeriod > '2025' ? 200 : 0); }
 let n = 0; const urls = [];
 for (const [k, list] of Object.entries(acc)) {
@@ -44,6 +77,7 @@ for (const [k, list] of Object.entries(acc)) {
     const top = list.slice().sort((a, b) => score(b) - score(a)).slice(0, 15);
     const last = list.reduce((m, s) => s.latestPeriod > m ? s.latestPeriod : m, ''), first = list.reduce((m, s) => { const p = s.points[0][0]; return !m || p < m ? p : m; }, '');
     const rows = top.map(s => '<tr><td>' + esc(s.label) + '</td><td style="text-align:right"><b>' + nf(s.latest, lang) + '</b></td><td>' + esc(plabel(s.latestPeriod, lang)) + '</td><td style="text-align:right">' + (s.changePct == null ? '–' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), lang) + ' %') + '</td><td>' + esc(s.unit) + '</td></tr>').join('\n');
+    const BR = brief(top, lang);
     const otherG = [...new Set(Object.keys(acc).filter(x => x.startsWith(cc + '|') && x !== k).map(x => x.split('|')[1]))].filter(x => GL[x] && acc[cc + '|' + x].length >= 2);
     const sameG = Object.keys(acc).filter(x => x.endsWith('|' + g) && x !== k && CN[x.split('|')[0]] && acc[x].length >= 2).map(x => x.split('|')[0]);
     const lk = (c2, g2) => (lang === 'es' ? '../' : '../') + c2.toLowerCase() + '-' + g2.replace(/_/g, '-') + '/';
@@ -70,7 +104,7 @@ for (const [k, list] of Object.entries(acc)) {
 <main class="di-page">
   <article class="di-main di-content-narrow">
     <div class="di-page-head"><h1>${esc(t.h1(cname, gname))}</h1><p>${esc(t.intro(cname, gname, list.length, plabel(last, lang), plabel(first.length === 4 ? first + '-01' : first, lang)))}</p></div>
-    <div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:620px;font-size:13.5px">
+${BR.length >= 2 ? '    <h2 style="font-size:17px;margin:18px 0 6px">' + esc(BT[lang].head) + '</h2>\n    <p>' + BR.map(esc).join(' ') + '</p>\n    <p class="di-movers-hint" style="margin:-4px 0 10px">' + esc(BT[lang].src) + '</p>\n' : ''}    <div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:620px;font-size:13.5px">
 <thead><tr>${t.th.map((h, i) => '<th scope="col" style="text-align:' + (i === 1 || i === 3 ? 'right' : 'left') + ';padding:8px 6px;font-size:11px">' + esc(h) + '</th>').join('')}</tr></thead>
 <tbody>
 ${rows}
