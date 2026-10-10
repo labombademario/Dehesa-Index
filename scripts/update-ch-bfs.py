@@ -75,11 +75,11 @@ PROD = [((r"^Weizen und Spelz", r"^Blé et épeautre"), "wheat", "Wheat and spel
         ((r"^Tafeläpfel", r"^Pommes de table"), "apples", "Table apples (fruit)"), ((r"^Tafelbirnen", r"^Poires de table"), "pears", "Table pears (fruit)"),
         ((r"^Pfirsiche", r"^Pêches"), "peaches", "Peaches (fruit)"), ((r"^Aprikosen", r"^Abricots"), "apricots", "Apricots (fruit)"),
         ((r"^Kirschen", r"^Cerises"), "cherries", "Cherries (fruit)"), ((r"^Erdbeeren", r"^Fraises"), "strawberries", "Strawberries (fruit)"),
-        ((r"^Trauben", r"^Raisins"), "grapes", "Wine grapes"), ((r"^Wein(e)? ", r"^Wein$", r"^Vins "), "wine", "Wine, total"),
+        ((r"^Trauben|^Weintrauben", r"^Raisins"), "grapes", "Wine grapes"), ((r"^Wein(e)? ", r"^Wein$", r"^Vins "), "wine", "Wine, total"),
         ((r"^Tafelwein|^Landwein", r"^Vin de table"), "wine-table", "Wine, table wine"), ((r"^Qualitätswein", r"^Vin de qualité"), "wine-quality", "Wine, quality wine"),
-        ((r"^Rindvieh", r"^Bovins"), "cattle", "Cattle (excluding calves), live weight"), ((r"^Kälber", r"^Veaux"), "calves", "Calves, live weight"),
+        ((r"^Rindvieh|^Rinder", r"^Bovins"), "cattle", "Cattle (excluding calves), live weight"), ((r"^Kälber", r"^Veaux"), "calves", "Calves, live weight"),
         ((r"^Schweine", r"^Porcins"), "pigs", "Pigs, live weight"), ((r"^Schafe und Ziegen", r"^Ovins et caprins"), "sheep-goats", "Sheep and goats, live weight"),
-        ((r"^Geflügel", r"^Volailles"), "poultry", "Poultry, live weight"), ((r"^Hühner|^Poulets", r"^Poulets"), "chickens", "Chickens (poultry), live weight"),
+        ((r"^Geflügel", r"^Volailles"), "poultry", "Poultry, live weight"), ((r"^Hühner|^Hähnchen|^Poulets", r"^Poulets"), "chickens", "Chickens (poultry), live weight"),
         ((r"^Milch", r"^Lait"), "milk", "Milk (incl. milk fed to calves)"), ((r"^Eier", r"^Oeufs|^Œufs"), "eggs", "Eggs"),
         ((r"^Rohwolle|^Wolle", r"^Laine"), "wool", "Raw wool"), ((r"^Honig", r"^Miel"), "honey", "Honey")]
 def match(label):
@@ -128,18 +128,18 @@ def erloes():
 PPI = [((r"^Landwirtschaftliche Produkte", r"^Produits agricoles"), "total", "Agricultural products, total"), ((r"^Getreide", r"^Céréales"), "cereals", "Cereals"),
        ((r"^Handelsgewächse", r"^Cultures industrielles|^Plantes industrielles"), "industrial", "Industrial crops"), ((r"^Futterpflanzen", r"^Plantes fourragères"), "forage", "Forage plants"),
        ((r"^Frischgemüse", r"^Légumes frais"), "vegetables", "Fresh vegetables"), ((r"^Kartoffeln", r"^Pommes de terre"), "potatoes", "Potatoes"),
-       ((r"^Obst", r"^Fruits"), "fruit", "Fruit"), ((r"^Rindvieh", r"^Bovins"), "cattle", "Cattle"), ((r"^Schweine", r"^Porcins"), "pigs", "Pigs"),
+       ((r"^Obst", r"^Fruits"), "fruit", "Fruit"), ((r"^Rindvieh|^Rinder", r"^Bovins"), "cattle", "Cattle"), ((r"^Schweine", r"^Porcins"), "pigs", "Pigs"),
        ((r"^Schafe", r"^Ovins"), "sheep", "Sheep"), ((r"^Geflügel", r"^Volailles"), "poultry", "Poultry"), ((r"^Rohmilch", r"^Lait cru"), "milk", "Raw milk"),
        ((r"^Eier", r"^Oeufs|^Œufs"), "eggs", "Eggs"), ((r"^Sonstige tierische", r"^Autres produits animaux"), "other-animal", "Other animal products")]
 EPI = [((r"^Landwirtschaftliche Produktionsmittel|^Produktionsmittel, total", r"^Agents de production agricole, total"), "total", "Agricultural inputs, total"),
-       ((r"^Saatgut", r"^Semences"), "seeds", "Seeds and planting stock"), ((r"^Energie", r"^Energie"), "energy", "Energy and lubricants"),
+       ((r"^Saatgut|^Saat- und Pflanzgut", r"^Semences"), "seeds", "Seeds and planting stock"), ((r"^Energie", r"^Energie"), "energy", "Energy and lubricants"),
        ((r"^Dünge", r"^Engrais"), "fertilisers", "Fertilisers and soil improvers"), ((r"^Pflanzenschutz", r"^Produits phytosanitaires"), "plant-protection", "Plant protection products"),
        ((r"^Tierarzt", r"^Vétérinaire"), "veterinary", "Veterinary expenses"), ((r"^Futtermittel", r"^Aliments pour animaux"), "feed", "Animal feedingstuffs"),
-       ((r"^Unterhalt der Maschinen", r"^Entretien des machines"), "machinery-maint", "Maintenance of machinery and equipment"),
-       ((r"^Unterhalt der Gebäude|^Unterhalt Gebäude", r"^Entretien des bâtiments"), "buildings-maint", "Maintenance of buildings"),
-       ((r"^Übrige Waren|^Andere Waren", r"^Autres biens et services"), "other", "Other goods and services"),
+       ((r"^Unterhalt der Maschinen|^Instandhaltung von Maschinen", r"^Entretien des machines"), "machinery-maint", "Maintenance of machinery and equipment"),
+       ((r"^Unterhalt der Gebäude|^Instandhaltung von Bauten", r"^Entretien des bâtiments"), "buildings-maint", "Maintenance of buildings"),
+       ((r"^Übrige Waren|^Sonstige Waren", r"^Autres biens et services"), "other", "Other goods and services"),
        ((r"^Investitionsgüter|^Ausrüstungsgüter", r"^Biens d'équipements"), "equipment", "Capital goods (machinery, equipment, vehicles)"),
-       ((r"^Bauten", r"^Constructions"), "buildings", "Buildings"), ((r"^Übrige Investitionen|^Andere Investitionen", r"^Autres investissements"), "other-invest", "Other investment")]
+       ((r"^Bauten", r"^Constructions"), "buildings", "Buildings"), ((r"^Übrige Investitionen|^Sonstige Investitionen", r"^Autres investissements"), "other-invest", "Other investment")]
 def index_table(package, dev, table, spec, prefix, group, what):
     b, url = ods_xlsx(package, dev)
     rows = next(iter(sheet_rows(b).values()))
