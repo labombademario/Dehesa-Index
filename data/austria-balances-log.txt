@@ -1,0 +1,25 @@
+PDF: 6 de productos vegetales, 6 de productos animales
+balance Getreide 2020/21 SB_1-27_Versorgungsbilanz-pflanzl_2020_21.pdf
+balance Ölsaaten 2020/21 SB_1-27_Versorgungsbilanz-pflanzl_2020_21.pdf
+balance Getreide 2023/24 SB_1-27_Versorgungsbilanzen-pflanzliche-Produkte-2023-24.pdf
+balance Ölsaaten 2023/24 SB_1-27_Versorgungsbilanzen-pflanzliche-Produkte-2023-24.pdf
+balance Getreide 2024/25 SB_1-27_Versorgungsbilanzen-pflanzliche-Produkte-2024-25.pdf
+balance Ölsaaten 2024/25 SB_1-27_Versorgungsbilanzen-pflanzliche-Produkte-2024-25.pdf
+balance Getreide 2019/20 Versorgungsbilanzen_fuer_pflanzliche_Produkte_2019_2020.pdf
+balance Ölsaaten 2019/20 Versorgungsbilanzen_fuer_pflanzliche_Produkte_2019_2020.pdf
+balance Getreide 2021/22 SB_1-27_Versorgungsbilanz-pflanzl_2021_22.pdf
+balance Ölsaaten 2021/22 SB_1-27_Versorgungsbilanz-pflanzl_2021_22.pdf
+balance Getreide 2022/23 SB_1-27_pflanzl_2022_23.pdf
+balance Ölsaaten 2022/23 SB_1-27_pflanzl_2022_23.pdf
+balance lacteos 2021 SB_1-26-Versorgungsbilanzen-tierische-Produkte2021.pdf
+balance lacteos 2024 SB_1-27_Versorgungsbilanzen-tierische-Produkte-2024.pdf
+huevos 2024 2025 STATkompakt_Versorgungsbilanzen-tierische-Produkte-2025.pdf
+balance lacteos 2025 STATkompakt_Versorgungsbilanzen-tierische-Produkte-2025.pdf
+balance lacteos 2020 Versorgungsbilanzen_fuer_tierische_Produkte_2020.pdf
+balance lacteos 2023 SB_1-26_Versorgungsbilanzen-tierische-Produkte-2023.pdf
+balance lacteos 2022 SB_1-26_tier_2022.pdf
+cambio de base sunflower 2022 25000 -> 12000 SB_1-27_pflanzl_2022_23.pdf : la serie empieza en 2022
+cambio de base rapeseed 2022 7500 -> 11000 SB_1-27_pflanzl_2022_23.pdf : la serie empieza en 2022
+cambio de base soy 2022 10000 -> 59000 SB_1-27_pflanzl_2022_23.pdf : la serie empieza en 2022
+cambio de base oilseeds 2022 47500 -> 87000 SB_1-27_pflanzl_2022_23.pdf : la serie empieza en 2022
+series 11
