@@ -1,0 +1,31 @@
+PAGE https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/index.php 200 https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/index.php
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/230000_2023/000001_Producci%C3%B3n de Huevos Industrializado 2023.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/230000_2023/000001_Producción de Huevos Industrializado 2023.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/230000_2023/000003_Importaciones  huevo industrializado 2023.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/230000_2023/000004_Precio Huevo Mayorista 2023.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/230000_2023/000005_Precio Huevo Minorista 2023.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/230000_2023/000006_Relaci%C3%B3n Maíz Huevo 2023.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/230000_2023/000006_Relación Maíz Huevo 2023.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/240000_2024/000004_Precio Huevo Mayorista 2024.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/240000_2024/000005_Precio Huevo Minorista 2024.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/240000_2024/000007_Importaciones Huevo Industrializado 2024.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/240000_2024/000007_Industrializaci%C3%B3n de Huevos 2024.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/240000_2024/000007_Industrialización de Huevos 2024.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/240000_2024/000008_Relaci%C3%B3n Maíz Huevo 2024.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/240000_2024/000008_Relación Maíz Huevo 2024.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Exportaciones Huevos y Ovoproductos.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Importaciones Huevo Industrializado.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Precio Huevo Mayorista.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Precio Huevo Minorista.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Producci%C3%B3n de huevo industrializado.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Producción de huevo industrializado.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Relaci%C3%B3n Maíz Huevo.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/250000_2025/000000_Relación Maíz Huevo.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/260000_2026/000000_Industrializaci%C3%B3n de Huevos.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/260000_2026/000000_Industrialización de Huevos.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/260000_2026/000000_Precio Huevo Mayorista.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/260000_2026/000000_Precio Huevo Minorista.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/260000_2026/000000_Relaci%C3%B3n Maíz Huevo.pdf
+   L https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/_archivos/260000_2026/000000_Relación Maíz Huevo.pdf
+PAGE https://www.magyp.gob.ar/sitio/areas/ovinos/ 404 https://www.magyp.gob.ar/sitio/areas/ovinos/
+PAGE https://www.magyp.gob.ar/sitio/areas/caprinos/ 200 https://www.magyp.gob.ar/sitio/areas/caprinos/
