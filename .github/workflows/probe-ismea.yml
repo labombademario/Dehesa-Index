@@ -1,0 +1,41 @@
+name: probe-ismea
+on: push
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          set +e; mkdir -p probe
+          UA="Mozilla/5.0 (compatible; DehesaIndexProbe/1.0; +https://dehesaindex.com)"
+          curl -sS -m 30 -o probe/ov.crt http://crt.sectigo.com/SectigoPublicServerAuthenticationCAOVR36.crt
+          openssl x509 -inform DER -in probe/ov.crt -out probe/ov.pem 2>/dev/null || cp probe/ov.crt probe/ov.pem
+          cat /etc/ssl/certs/ca-certificates.crt probe/ov.pem > /tmp/bundle.pem
+          c() { curl -sS -L -m 40 -A "$UA" --cacert /tmp/bundle.pem "$@"; }
+          c https://www.ismeamercati.it/ -o /tmp/home.html
+          python3 - <<'PY' > probe/links.out.txt
+          import re,html
+          t=open('/tmp/home.html',encoding='latin-1').read()
+          seen=set()
+          for m in re.finditer(r'href=["\']([^"\']+)["\'][^>]*>(.{0,120}?)</a>',t,re.S):
+              u=m.group(1); x=re.sub(r'<[^>]+>','',m.group(2)).strip()
+              if u in seen: continue
+              seen.add(u); print(u,'|',html.unescape(x)[:80])
+          PY
+          wc -l probe/links.out.txt > probe/n.out.txt
+          for u in $(grep -iE "prezzi|note-legali|legal|privacy|dati-aperti|open-data|termini|condizioni|licen|mercati-e-prezzi|servizi" probe/links.out.txt | awk -F' [|] ' '{print $1}' | grep -E '^https?://|^/' | sort -u | head -14); do
+            case "$u" in /*) u="https://www.ismeamercati.it$u";; esac
+            n=$(echo "$u" | tr -c 'a-zA-Z0-9' '_' | cut -c1-70)
+            c "$u" -o "/tmp/$n.html"; python3 - "$n" <<'PY'
+          import re,sys,html
+          n=sys.argv[1]
+          try: t=open('/tmp/%s.html'%n,encoding='latin-1').read()
+          except Exception as e: t=''
+          t=re.sub(r'(?s)<(script|style).*?</\1>','',t); t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(re.sub(r'\s+',' ',t))
+          open('probe/page-%s.out.txt'%n,'w').write(t[:5000])
+          PY
+          done
+          git config user.name probe; git config user.email probe@x
+          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-ismea3-out -f
