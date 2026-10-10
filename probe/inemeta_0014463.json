@@ -1,0 +1,1091 @@
+[ {
+  "IndicadorCod" : "0014463",
+  "IndicadorNome" : "Purchase prices index of agricultural production means (input) (Base - 2020) by Agricultural production purchasing means; Monthly - Statistics Portugal, Agriculture production price index (input)",
+  "Periodic" : "Monthly",
+  "PrimeiroPeriodo" : "January 2020",
+  "UltimoPeriodo" : "June 2026",
+  "UnidadeMedida" : "No applicable (-)",
+  "Potencia10" : "0",
+  "PrecisaoDecimal" : "2",
+  "Lingua" : "EN",
+  "DataUltimaAtualizacao" : "2026-08-17",
+  "DataExtracao" : "2026-10-10T13:57:27.882+01:00",
+  "Dimensoes" : {
+    "Descricao_Dim" : [ {
+      "dim_num" : "1",
+      "abrv" : "Data reference period (Month)",
+      "versao" : "XXXXX"
+    }, {
+      "dim_num" : "2",
+      "abrv" : "Geographic localization (Portugal)",
+      "versao" : "05361"
+    }, {
+      "dim_num" : "3",
+      "abrv" : "Agricultural production purchasing means",
+      "versao" : "00478"
+    } ],
+    "Categoria_Dim" : [ {
+      "Dim_Num1_S3A202001" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202001",
+        "categ_cod" : "S3A202001",
+        "categ_dsg" : "January 2020",
+        "categ_ord" : "20200101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202002" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202002",
+        "categ_cod" : "S3A202002",
+        "categ_dsg" : "February 2020",
+        "categ_ord" : "20200201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202003" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202003",
+        "categ_cod" : "S3A202003",
+        "categ_dsg" : "March 2020",
+        "categ_ord" : "20200301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202004" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202004",
+        "categ_cod" : "S3A202004",
+        "categ_dsg" : "April 2020",
+        "categ_ord" : "20200401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202005" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202005",
+        "categ_cod" : "S3A202005",
+        "categ_dsg" : "May 2020",
+        "categ_ord" : "20200501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202006" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202006",
+        "categ_cod" : "S3A202006",
+        "categ_dsg" : "June 2020",
+        "categ_ord" : "20200601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202007" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202007",
+        "categ_cod" : "S3A202007",
+        "categ_dsg" : "July 2020",
+        "categ_ord" : "20200701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202008" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202008",
+        "categ_cod" : "S3A202008",
+        "categ_dsg" : "August 2020",
+        "categ_ord" : "20200801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202009" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202009",
+        "categ_cod" : "S3A202009",
+        "categ_dsg" : "September 2020",
+        "categ_ord" : "20200901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202010" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202010",
+        "categ_cod" : "S3A202010",
+        "categ_dsg" : "October 2020",
+        "categ_ord" : "20201001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202011" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202011",
+        "categ_cod" : "S3A202011",
+        "categ_dsg" : "November 2020",
+        "categ_ord" : "20201101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202012" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202012",
+        "categ_cod" : "S3A202012",
+        "categ_dsg" : "December 2020",
+        "categ_ord" : "20201201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202101" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202101",
+        "categ_cod" : "S3A202101",
+        "categ_dsg" : "January 2021",
+        "categ_ord" : "20210101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202102" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202102",
+        "categ_cod" : "S3A202102",
+        "categ_dsg" : "February 2021",
+        "categ_ord" : "20210201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202103" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202103",
+        "categ_cod" : "S3A202103",
+        "categ_dsg" : "March 2021",
+        "categ_ord" : "20210301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202104" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202104",
+        "categ_cod" : "S3A202104",
+        "categ_dsg" : "April 2021",
+        "categ_ord" : "20210401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202105" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202105",
+        "categ_cod" : "S3A202105",
+        "categ_dsg" : "May 2021",
+        "categ_ord" : "20210501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202106" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202106",
+        "categ_cod" : "S3A202106",
+        "categ_dsg" : "June 2021",
+        "categ_ord" : "20210601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202107" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202107",
+        "categ_cod" : "S3A202107",
+        "categ_dsg" : "July 2021",
+        "categ_ord" : "20210701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202108" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202108",
+        "categ_cod" : "S3A202108",
+        "categ_dsg" : "August 2021",
+        "categ_ord" : "20210801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202109" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202109",
+        "categ_cod" : "S3A202109",
+        "categ_dsg" : "September 2021",
+        "categ_ord" : "20210901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202110" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202110",
+        "categ_cod" : "S3A202110",
+        "categ_dsg" : "October 2021",
+        "categ_ord" : "20211001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202111" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202111",
+        "categ_cod" : "S3A202111",
+        "categ_dsg" : "November 2021",
+        "categ_ord" : "20211101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202112" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202112",
+        "categ_cod" : "S3A202112",
+        "categ_dsg" : "December 2021",
+        "categ_ord" : "20211201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202201" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202201",
+        "categ_cod" : "S3A202201",
+        "categ_dsg" : "January 2022",
+        "categ_ord" : "20220101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202202" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202202",
+        "categ_cod" : "S3A202202",
+        "categ_dsg" : "February 2022",
+        "categ_ord" : "20220201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202203" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202203",
+        "categ_cod" : "S3A202203",
+        "categ_dsg" : "March 2022",
+        "categ_ord" : "20220301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202204" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202204",
+        "categ_cod" : "S3A202204",
+        "categ_dsg" : "April 2022",
+        "categ_ord" : "20220401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202205" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202205",
+        "categ_cod" : "S3A202205",
+        "categ_dsg" : "May 2022",
+        "categ_ord" : "20220501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202206" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202206",
+        "categ_cod" : "S3A202206",
+        "categ_dsg" : "June 2022",
+        "categ_ord" : "20220601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202207" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202207",
+        "categ_cod" : "S3A202207",
+        "categ_dsg" : "July 2022",
+        "categ_ord" : "20220701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202208" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202208",
+        "categ_cod" : "S3A202208",
+        "categ_dsg" : "August 2022",
+        "categ_ord" : "20220801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202209" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202209",
+        "categ_cod" : "S3A202209",
+        "categ_dsg" : "September 2022",
+        "categ_ord" : "20220901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202210" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202210",
+        "categ_cod" : "S3A202210",
+        "categ_dsg" : "October 2022",
+        "categ_ord" : "20221001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202211" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202211",
+        "categ_cod" : "S3A202211",
+        "categ_dsg" : "November 2022",
+        "categ_ord" : "20221101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202212" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202212",
+        "categ_cod" : "S3A202212",
+        "categ_dsg" : "December 2022",
+        "categ_ord" : "20221201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202301" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202301",
+        "categ_cod" : "S3A202301",
+        "categ_dsg" : "January 2023",
+        "categ_ord" : "20230101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202302" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202302",
+        "categ_cod" : "S3A202302",
+        "categ_dsg" : "February 2023",
+        "categ_ord" : "20230201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202303" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202303",
+        "categ_cod" : "S3A202303",
+        "categ_dsg" : "March 2023",
+        "categ_ord" : "20230301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202304" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202304",
+        "categ_cod" : "S3A202304",
+        "categ_dsg" : "April 2023",
+        "categ_ord" : "20230401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202305" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202305",
+        "categ_cod" : "S3A202305",
+        "categ_dsg" : "May 2023",
+        "categ_ord" : "20230501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202306" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202306",
+        "categ_cod" : "S3A202306",
+        "categ_dsg" : "June 2023",
+        "categ_ord" : "20230601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202307" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202307",
+        "categ_cod" : "S3A202307",
+        "categ_dsg" : "July 2023",
+        "categ_ord" : "20230701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202308" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202308",
+        "categ_cod" : "S3A202308",
+        "categ_dsg" : "August 2023",
+        "categ_ord" : "20230801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202309" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202309",
+        "categ_cod" : "S3A202309",
+        "categ_dsg" : "September 2023",
+        "categ_ord" : "20230901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202310" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202310",
+        "categ_cod" : "S3A202310",
+        "categ_dsg" : "October 2023",
+        "categ_ord" : "20231001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202311" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202311",
+        "categ_cod" : "S3A202311",
+        "categ_dsg" : "November 2023",
+        "categ_ord" : "20231101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202312" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202312",
+        "categ_cod" : "S3A202312",
+        "categ_dsg" : "December 2023",
+        "categ_ord" : "20231201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202401" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202401",
+        "categ_cod" : "S3A202401",
+        "categ_dsg" : "January 2024",
+        "categ_ord" : "20240101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202402" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202402",
+        "categ_cod" : "S3A202402",
+        "categ_dsg" : "February 2024",
+        "categ_ord" : "20240201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202403" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202403",
+        "categ_cod" : "S3A202403",
+        "categ_dsg" : "March 2024",
+        "categ_ord" : "20240301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202404" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202404",
+        "categ_cod" : "S3A202404",
+        "categ_dsg" : "April 2024",
+        "categ_ord" : "20240401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202405" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202405",
+        "categ_cod" : "S3A202405",
+        "categ_dsg" : "May 2024",
+        "categ_ord" : "20240501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202406" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202406",
+        "categ_cod" : "S3A202406",
+        "categ_dsg" : "June 2024",
+        "categ_ord" : "20240601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202407" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202407",
+        "categ_cod" : "S3A202407",
+        "categ_dsg" : "July 2024",
+        "categ_ord" : "20240701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202408" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202408",
+        "categ_cod" : "S3A202408",
+        "categ_dsg" : "August 2024",
+        "categ_ord" : "20240801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202409" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202409",
+        "categ_cod" : "S3A202409",
+        "categ_dsg" : "September 2024",
+        "categ_ord" : "20240901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202410" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202410",
+        "categ_cod" : "S3A202410",
+        "categ_dsg" : "October 2024",
+        "categ_ord" : "20241001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202411" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202411",
+        "categ_cod" : "S3A202411",
+        "categ_dsg" : "November 2024",
+        "categ_ord" : "20241101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202412" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202412",
+        "categ_cod" : "S3A202412",
+        "categ_dsg" : "December 2024",
+        "categ_ord" : "20241201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202501" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202501",
+        "categ_cod" : "S3A202501",
+        "categ_dsg" : "January 2025",
+        "categ_ord" : "20250101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202502" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202502",
+        "categ_cod" : "S3A202502",
+        "categ_dsg" : "February 2025",
+        "categ_ord" : "20250201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202503" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202503",
+        "categ_cod" : "S3A202503",
+        "categ_dsg" : "March 2025",
+        "categ_ord" : "20250301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202504" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202504",
+        "categ_cod" : "S3A202504",
+        "categ_dsg" : "April 2025",
+        "categ_ord" : "20250401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202505" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202505",
+        "categ_cod" : "S3A202505",
+        "categ_dsg" : "May 2025",
+        "categ_ord" : "20250501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202506" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202506",
+        "categ_cod" : "S3A202506",
+        "categ_dsg" : "June 2025",
+        "categ_ord" : "20250601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202507" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202507",
+        "categ_cod" : "S3A202507",
+        "categ_dsg" : "July 2025",
+        "categ_ord" : "20250701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202508" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202508",
+        "categ_cod" : "S3A202508",
+        "categ_dsg" : "August 2025",
+        "categ_ord" : "20250801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202509" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202509",
+        "categ_cod" : "S3A202509",
+        "categ_dsg" : "September 2025",
+        "categ_ord" : "20250901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202510" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202510",
+        "categ_cod" : "S3A202510",
+        "categ_dsg" : "October 2025",
+        "categ_ord" : "20251001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202511" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202511",
+        "categ_cod" : "S3A202511",
+        "categ_dsg" : "November 2025",
+        "categ_ord" : "20251101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202512" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202512",
+        "categ_cod" : "S3A202512",
+        "categ_dsg" : "December 2025",
+        "categ_ord" : "20251201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202601" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202601",
+        "categ_cod" : "S3A202601",
+        "categ_dsg" : "January 2026",
+        "categ_ord" : "20260101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202602" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202602",
+        "categ_cod" : "S3A202602",
+        "categ_dsg" : "February 2026",
+        "categ_ord" : "20260201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202603" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202603",
+        "categ_cod" : "S3A202603",
+        "categ_dsg" : "March 2026",
+        "categ_ord" : "20260301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202604" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202604",
+        "categ_cod" : "S3A202604",
+        "categ_dsg" : "April 2026",
+        "categ_ord" : "20260401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202605" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202605",
+        "categ_cod" : "S3A202605",
+        "categ_dsg" : "May 2026",
+        "categ_ord" : "20260501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202606" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202606",
+        "categ_cod" : "S3A202606",
+        "categ_dsg" : "June 2026",
+        "categ_ord" : "20260601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num2_PT" : [ {
+        "dim_num" : "2",
+        "cat_id" : "PT",
+        "categ_cod" : "PT",
+        "categ_dsg" : "Portugal",
+        "categ_ord" : "1",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num3_220000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "220000",
+        "categ_cod" : "220000",
+        "categ_dsg" : "Input total (input 1 + input 2)",
+        "categ_ord" : "10",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num3_200000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "200000",
+        "categ_cod" : "200000",
+        "categ_dsg" : "Goods and services currently consumed in agriculture (input 1)",
+        "categ_ord" : "20",
+        "categ_nivel" : "2"
+      } ],
+      "Dim_Num3_201000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "201000",
+        "categ_cod" : "201000",
+        "categ_dsg" : "Seeds and planting stock",
+        "categ_ord" : "30",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_202000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "202000",
+        "categ_cod" : "202000",
+        "categ_dsg" : "Energy; lubricants",
+        "categ_ord" : "40",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_202100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "202100",
+        "categ_cod" : "202100",
+        "categ_dsg" : "Electricity",
+        "categ_ord" : "50",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_202200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "202200",
+        "categ_cod" : "202200",
+        "categ_dsg" : "Fuels for heating",
+        "categ_ord" : "60",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_202300" : [ {
+        "dim_num" : "3",
+        "cat_id" : "202300",
+        "categ_cod" : "202300",
+        "categ_dsg" : "Motor fuels",
+        "categ_ord" : "70",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_202400" : [ {
+        "dim_num" : "3",
+        "cat_id" : "202400",
+        "categ_cod" : "202400",
+        "categ_dsg" : "Lubricants",
+        "categ_ord" : "80",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_203000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203000",
+        "categ_cod" : "203000",
+        "categ_dsg" : "Fertilisers and soil improvers",
+        "categ_ord" : "90",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_203100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203100",
+        "categ_cod" : "203100",
+        "categ_dsg" : "Straight fertilizers",
+        "categ_ord" : "100",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_203110" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203110",
+        "categ_cod" : "203110",
+        "categ_dsg" : "Nitrogenous fertilizers",
+        "categ_ord" : "110",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_203120" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203120",
+        "categ_cod" : "203120",
+        "categ_dsg" : "Phosphatic fertilizers",
+        "categ_ord" : "120",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_203130" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203130",
+        "categ_cod" : "203130",
+        "categ_dsg" : "Potassic fertilizers",
+        "categ_ord" : "130",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_203200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203200",
+        "categ_cod" : "203200",
+        "categ_dsg" : "Compound fertilizers",
+        "categ_ord" : "140",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_203210" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203210",
+        "categ_cod" : "203210",
+        "categ_dsg" : "NP fertilizers",
+        "categ_ord" : "150",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_203220" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203220",
+        "categ_cod" : "203220",
+        "categ_dsg" : "PK fertilizers",
+        "categ_ord" : "160",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_203230" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203230",
+        "categ_cod" : "203230",
+        "categ_dsg" : "NPK fertilizers",
+        "categ_ord" : "170",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_203900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "203900",
+        "categ_cod" : "203900",
+        "categ_dsg" : "Other fertilizers, soil improvers",
+        "categ_ord" : "180",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_204000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "204000",
+        "categ_cod" : "204000",
+        "categ_dsg" : "Plant protection products and pesticides",
+        "categ_ord" : "190",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_204100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "204100",
+        "categ_cod" : "204100",
+        "categ_dsg" : "Fungicides",
+        "categ_ord" : "200",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_204200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "204200",
+        "categ_cod" : "204200",
+        "categ_dsg" : "Insecticides",
+        "categ_ord" : "210",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_204300" : [ {
+        "dim_num" : "3",
+        "cat_id" : "204300",
+        "categ_cod" : "204300",
+        "categ_dsg" : "Herbicides",
+        "categ_ord" : "220",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_204900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "204900",
+        "categ_cod" : "204900",
+        "categ_dsg" : "Other plant protection products",
+        "categ_ord" : "230",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_205000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "205000",
+        "categ_cod" : "205000",
+        "categ_dsg" : "Veterinary expenses",
+        "categ_ord" : "240",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_206000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206000",
+        "categ_cod" : "206000",
+        "categ_dsg" : "Animal feedingstuffs",
+        "categ_ord" : "250",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_206100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206100",
+        "categ_cod" : "206100",
+        "categ_dsg" : "Straight feeding stuffs",
+        "categ_ord" : "260",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_206110" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206110",
+        "categ_cod" : "206110",
+        "categ_dsg" : "Cereals and milling by-products",
+        "categ_ord" : "270",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206120" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206120",
+        "categ_cod" : "206120",
+        "categ_dsg" : "Oilcakes",
+        "categ_ord" : "280",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206130" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206130",
+        "categ_cod" : "206130",
+        "categ_dsg" : "Products of animal origin",
+        "categ_ord" : "290",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206190" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206190",
+        "categ_cod" : "206190",
+        "categ_dsg" : "Other straight feeding stuffs",
+        "categ_ord" : "300",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206200",
+        "categ_cod" : "206200",
+        "categ_dsg" : "Compound feeding stuffs",
+        "categ_ord" : "310",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_206210" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206210",
+        "categ_cod" : "206210",
+        "categ_dsg" : "Compound feeding stuffs for calves",
+        "categ_ord" : "320",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206220" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206220",
+        "categ_cod" : "206220",
+        "categ_dsg" : "Compound feeding stuffs for cattle excluding calves",
+        "categ_ord" : "330",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206230" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206230",
+        "categ_cod" : "206230",
+        "categ_dsg" : "Compound feeding stuffs for pigs",
+        "categ_ord" : "340",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206240" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206240",
+        "categ_cod" : "206240",
+        "categ_dsg" : "Compound feeding stuffs for poultry",
+        "categ_ord" : "350",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_206290" : [ {
+        "dim_num" : "3",
+        "cat_id" : "206290",
+        "categ_cod" : "206290",
+        "categ_dsg" : "Other compound feeding stuffs",
+        "categ_ord" : "360",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_207000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "207000",
+        "categ_cod" : "207000",
+        "categ_dsg" : "Maintenance of materials",
+        "categ_ord" : "370",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_208000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "208000",
+        "categ_cod" : "208000",
+        "categ_dsg" : "Maintenance of buildings",
+        "categ_ord" : "380",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_209000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "209000",
+        "categ_cod" : "209000",
+        "categ_dsg" : "Other goods and services",
+        "categ_ord" : "390",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_210000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "210000",
+        "categ_cod" : "210000",
+        "categ_dsg" : "Goods and services contributing to agricultural investment (input 2)",
+        "categ_ord" : "400",
+        "categ_nivel" : "2"
+      } ],
+      "Dim_Num3_211000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211000",
+        "categ_cod" : "211000",
+        "categ_dsg" : "Materials",
+        "categ_ord" : "410",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_211100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211100",
+        "categ_cod" : "211100",
+        "categ_dsg" : "Machinery and other equipment",
+        "categ_ord" : "420",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_211110" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211110",
+        "categ_cod" : "211110",
+        "categ_dsg" : "Rotovators and other 2 wheel equipment",
+        "categ_ord" : "430",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_211120" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211120",
+        "categ_cod" : "211120",
+        "categ_dsg" : "Machinery and plant for cultivation",
+        "categ_ord" : "440",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_211130" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211130",
+        "categ_cod" : "211130",
+        "categ_dsg" : "Machinery and plant for harvesting",
+        "categ_ord" : "450",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_211140" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211140",
+        "categ_cod" : "211140",
+        "categ_dsg" : "Farm machinery and installations",
+        "categ_ord" : "460",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_211200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211200",
+        "categ_cod" : "211200",
+        "categ_dsg" : "Transport equipment",
+        "categ_ord" : "500",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_211210" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211210",
+        "categ_cod" : "211210",
+        "categ_dsg" : "Tractors",
+        "categ_ord" : "510",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_211290" : [ {
+        "dim_num" : "3",
+        "cat_id" : "211290",
+        "categ_cod" : "211290",
+        "categ_dsg" : "Other vehicles",
+        "categ_ord" : "520",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_212000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "212000",
+        "categ_cod" : "212000",
+        "categ_dsg" : "Buildings",
+        "categ_ord" : "530",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_212100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "212100",
+        "categ_cod" : "212100",
+        "categ_dsg" : "Farm buildings (non-residential)",
+        "categ_ord" : "540",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_212900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "212900",
+        "categ_cod" : "212900",
+        "categ_dsg" : "Other works except land improvements (other buildings, structures, etc.)",
+        "categ_ord" : "550",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_219000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "219000",
+        "categ_cod" : "219000",
+        "categ_dsg" : "Other",
+        "categ_ord" : "560",
+        "categ_nivel" : "3"
+      } ]
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

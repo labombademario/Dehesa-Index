@@ -1,0 +1,1411 @@
+[ {
+  "IndicadorCod" : "0014466",
+  "IndicadorNome" : "Producer prices index of agricultural products (output) (Base - 2020) by Agricultural product; Monthly - Statistics Portugal, Agriculture products price index (output)",
+  "Periodic" : "Monthly",
+  "PrimeiroPeriodo" : "January 2020",
+  "UltimoPeriodo" : "June 2026",
+  "UnidadeMedida" : "No applicable (-)",
+  "Potencia10" : "0",
+  "PrecisaoDecimal" : "2",
+  "Lingua" : "EN",
+  "DataUltimaAtualizacao" : "2026-08-17",
+  "DataExtracao" : "2026-10-10T13:57:17.746+01:00",
+  "Dimensoes" : {
+    "Descricao_Dim" : [ {
+      "dim_num" : "1",
+      "abrv" : "Data reference period (Month)",
+      "versao" : "XXXXX"
+    }, {
+      "dim_num" : "2",
+      "abrv" : "Geographic localization (Portugal)",
+      "versao" : "05361"
+    }, {
+      "dim_num" : "3",
+      "abrv" : "Agricultural product",
+      "versao" : "05582"
+    } ],
+    "Categoria_Dim" : [ {
+      "Dim_Num1_S3A202001" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202001",
+        "categ_cod" : "S3A202001",
+        "categ_dsg" : "January 2020",
+        "categ_ord" : "20200101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202002" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202002",
+        "categ_cod" : "S3A202002",
+        "categ_dsg" : "February 2020",
+        "categ_ord" : "20200201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202003" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202003",
+        "categ_cod" : "S3A202003",
+        "categ_dsg" : "March 2020",
+        "categ_ord" : "20200301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202004" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202004",
+        "categ_cod" : "S3A202004",
+        "categ_dsg" : "April 2020",
+        "categ_ord" : "20200401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202005" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202005",
+        "categ_cod" : "S3A202005",
+        "categ_dsg" : "May 2020",
+        "categ_ord" : "20200501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202006" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202006",
+        "categ_cod" : "S3A202006",
+        "categ_dsg" : "June 2020",
+        "categ_ord" : "20200601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202007" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202007",
+        "categ_cod" : "S3A202007",
+        "categ_dsg" : "July 2020",
+        "categ_ord" : "20200701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202008" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202008",
+        "categ_cod" : "S3A202008",
+        "categ_dsg" : "August 2020",
+        "categ_ord" : "20200801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202009" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202009",
+        "categ_cod" : "S3A202009",
+        "categ_dsg" : "September 2020",
+        "categ_ord" : "20200901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202010" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202010",
+        "categ_cod" : "S3A202010",
+        "categ_dsg" : "October 2020",
+        "categ_ord" : "20201001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202011" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202011",
+        "categ_cod" : "S3A202011",
+        "categ_dsg" : "November 2020",
+        "categ_ord" : "20201101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202012" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202012",
+        "categ_cod" : "S3A202012",
+        "categ_dsg" : "December 2020",
+        "categ_ord" : "20201201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202101" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202101",
+        "categ_cod" : "S3A202101",
+        "categ_dsg" : "January 2021",
+        "categ_ord" : "20210101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202102" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202102",
+        "categ_cod" : "S3A202102",
+        "categ_dsg" : "February 2021",
+        "categ_ord" : "20210201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202103" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202103",
+        "categ_cod" : "S3A202103",
+        "categ_dsg" : "March 2021",
+        "categ_ord" : "20210301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202104" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202104",
+        "categ_cod" : "S3A202104",
+        "categ_dsg" : "April 2021",
+        "categ_ord" : "20210401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202105" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202105",
+        "categ_cod" : "S3A202105",
+        "categ_dsg" : "May 2021",
+        "categ_ord" : "20210501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202106" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202106",
+        "categ_cod" : "S3A202106",
+        "categ_dsg" : "June 2021",
+        "categ_ord" : "20210601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202107" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202107",
+        "categ_cod" : "S3A202107",
+        "categ_dsg" : "July 2021",
+        "categ_ord" : "20210701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202108" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202108",
+        "categ_cod" : "S3A202108",
+        "categ_dsg" : "August 2021",
+        "categ_ord" : "20210801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202109" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202109",
+        "categ_cod" : "S3A202109",
+        "categ_dsg" : "September 2021",
+        "categ_ord" : "20210901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202110" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202110",
+        "categ_cod" : "S3A202110",
+        "categ_dsg" : "October 2021",
+        "categ_ord" : "20211001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202111" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202111",
+        "categ_cod" : "S3A202111",
+        "categ_dsg" : "November 2021",
+        "categ_ord" : "20211101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202112" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202112",
+        "categ_cod" : "S3A202112",
+        "categ_dsg" : "December 2021",
+        "categ_ord" : "20211201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202201" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202201",
+        "categ_cod" : "S3A202201",
+        "categ_dsg" : "January 2022",
+        "categ_ord" : "20220101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202202" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202202",
+        "categ_cod" : "S3A202202",
+        "categ_dsg" : "February 2022",
+        "categ_ord" : "20220201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202203" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202203",
+        "categ_cod" : "S3A202203",
+        "categ_dsg" : "March 2022",
+        "categ_ord" : "20220301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202204" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202204",
+        "categ_cod" : "S3A202204",
+        "categ_dsg" : "April 2022",
+        "categ_ord" : "20220401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202205" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202205",
+        "categ_cod" : "S3A202205",
+        "categ_dsg" : "May 2022",
+        "categ_ord" : "20220501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202206" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202206",
+        "categ_cod" : "S3A202206",
+        "categ_dsg" : "June 2022",
+        "categ_ord" : "20220601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202207" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202207",
+        "categ_cod" : "S3A202207",
+        "categ_dsg" : "July 2022",
+        "categ_ord" : "20220701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202208" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202208",
+        "categ_cod" : "S3A202208",
+        "categ_dsg" : "August 2022",
+        "categ_ord" : "20220801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202209" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202209",
+        "categ_cod" : "S3A202209",
+        "categ_dsg" : "September 2022",
+        "categ_ord" : "20220901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202210" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202210",
+        "categ_cod" : "S3A202210",
+        "categ_dsg" : "October 2022",
+        "categ_ord" : "20221001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202211" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202211",
+        "categ_cod" : "S3A202211",
+        "categ_dsg" : "November 2022",
+        "categ_ord" : "20221101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202212" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202212",
+        "categ_cod" : "S3A202212",
+        "categ_dsg" : "December 2022",
+        "categ_ord" : "20221201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202301" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202301",
+        "categ_cod" : "S3A202301",
+        "categ_dsg" : "January 2023",
+        "categ_ord" : "20230101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202302" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202302",
+        "categ_cod" : "S3A202302",
+        "categ_dsg" : "February 2023",
+        "categ_ord" : "20230201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202303" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202303",
+        "categ_cod" : "S3A202303",
+        "categ_dsg" : "March 2023",
+        "categ_ord" : "20230301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202304" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202304",
+        "categ_cod" : "S3A202304",
+        "categ_dsg" : "April 2023",
+        "categ_ord" : "20230401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202305" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202305",
+        "categ_cod" : "S3A202305",
+        "categ_dsg" : "May 2023",
+        "categ_ord" : "20230501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202306" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202306",
+        "categ_cod" : "S3A202306",
+        "categ_dsg" : "June 2023",
+        "categ_ord" : "20230601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202307" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202307",
+        "categ_cod" : "S3A202307",
+        "categ_dsg" : "July 2023",
+        "categ_ord" : "20230701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202308" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202308",
+        "categ_cod" : "S3A202308",
+        "categ_dsg" : "August 2023",
+        "categ_ord" : "20230801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202309" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202309",
+        "categ_cod" : "S3A202309",
+        "categ_dsg" : "September 2023",
+        "categ_ord" : "20230901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202310" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202310",
+        "categ_cod" : "S3A202310",
+        "categ_dsg" : "October 2023",
+        "categ_ord" : "20231001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202311" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202311",
+        "categ_cod" : "S3A202311",
+        "categ_dsg" : "November 2023",
+        "categ_ord" : "20231101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202312" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202312",
+        "categ_cod" : "S3A202312",
+        "categ_dsg" : "December 2023",
+        "categ_ord" : "20231201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202401" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202401",
+        "categ_cod" : "S3A202401",
+        "categ_dsg" : "January 2024",
+        "categ_ord" : "20240101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202402" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202402",
+        "categ_cod" : "S3A202402",
+        "categ_dsg" : "February 2024",
+        "categ_ord" : "20240201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202403" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202403",
+        "categ_cod" : "S3A202403",
+        "categ_dsg" : "March 2024",
+        "categ_ord" : "20240301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202404" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202404",
+        "categ_cod" : "S3A202404",
+        "categ_dsg" : "April 2024",
+        "categ_ord" : "20240401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202405" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202405",
+        "categ_cod" : "S3A202405",
+        "categ_dsg" : "May 2024",
+        "categ_ord" : "20240501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202406" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202406",
+        "categ_cod" : "S3A202406",
+        "categ_dsg" : "June 2024",
+        "categ_ord" : "20240601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202407" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202407",
+        "categ_cod" : "S3A202407",
+        "categ_dsg" : "July 2024",
+        "categ_ord" : "20240701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202408" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202408",
+        "categ_cod" : "S3A202408",
+        "categ_dsg" : "August 2024",
+        "categ_ord" : "20240801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202409" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202409",
+        "categ_cod" : "S3A202409",
+        "categ_dsg" : "September 2024",
+        "categ_ord" : "20240901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202410" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202410",
+        "categ_cod" : "S3A202410",
+        "categ_dsg" : "October 2024",
+        "categ_ord" : "20241001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202411" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202411",
+        "categ_cod" : "S3A202411",
+        "categ_dsg" : "November 2024",
+        "categ_ord" : "20241101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202412" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202412",
+        "categ_cod" : "S3A202412",
+        "categ_dsg" : "December 2024",
+        "categ_ord" : "20241201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202501" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202501",
+        "categ_cod" : "S3A202501",
+        "categ_dsg" : "January 2025",
+        "categ_ord" : "20250101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202502" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202502",
+        "categ_cod" : "S3A202502",
+        "categ_dsg" : "February 2025",
+        "categ_ord" : "20250201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202503" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202503",
+        "categ_cod" : "S3A202503",
+        "categ_dsg" : "March 2025",
+        "categ_ord" : "20250301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202504" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202504",
+        "categ_cod" : "S3A202504",
+        "categ_dsg" : "April 2025",
+        "categ_ord" : "20250401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202505" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202505",
+        "categ_cod" : "S3A202505",
+        "categ_dsg" : "May 2025",
+        "categ_ord" : "20250501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202506" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202506",
+        "categ_cod" : "S3A202506",
+        "categ_dsg" : "June 2025",
+        "categ_ord" : "20250601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202507" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202507",
+        "categ_cod" : "S3A202507",
+        "categ_dsg" : "July 2025",
+        "categ_ord" : "20250701",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202508" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202508",
+        "categ_cod" : "S3A202508",
+        "categ_dsg" : "August 2025",
+        "categ_ord" : "20250801",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202509" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202509",
+        "categ_cod" : "S3A202509",
+        "categ_dsg" : "September 2025",
+        "categ_ord" : "20250901",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202510" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202510",
+        "categ_cod" : "S3A202510",
+        "categ_dsg" : "October 2025",
+        "categ_ord" : "20251001",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202511" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202511",
+        "categ_cod" : "S3A202511",
+        "categ_dsg" : "November 2025",
+        "categ_ord" : "20251101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202512" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202512",
+        "categ_cod" : "S3A202512",
+        "categ_dsg" : "December 2025",
+        "categ_ord" : "20251201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202601" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202601",
+        "categ_cod" : "S3A202601",
+        "categ_dsg" : "January 2026",
+        "categ_ord" : "20260101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202602" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202602",
+        "categ_cod" : "S3A202602",
+        "categ_dsg" : "February 2026",
+        "categ_ord" : "20260201",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202603" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202603",
+        "categ_cod" : "S3A202603",
+        "categ_dsg" : "March 2026",
+        "categ_ord" : "20260301",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202604" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202604",
+        "categ_cod" : "S3A202604",
+        "categ_dsg" : "April 2026",
+        "categ_ord" : "20260401",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202605" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202605",
+        "categ_cod" : "S3A202605",
+        "categ_dsg" : "May 2026",
+        "categ_ord" : "20260501",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S3A202606" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S3A202606",
+        "categ_cod" : "S3A202606",
+        "categ_dsg" : "June 2026",
+        "categ_ord" : "20260601",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num2_PT" : [ {
+        "dim_num" : "2",
+        "cat_id" : "PT",
+        "categ_cod" : "PT",
+        "categ_dsg" : "Portugal",
+        "categ_ord" : "1",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num3_140000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "140000",
+        "categ_cod" : "140000",
+        "categ_dsg" : "Agricultural goods output (100000+130000), including fruits (060000) and vegetables (040000)",
+        "categ_ord" : "1",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num3_100000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "100000",
+        "categ_cod" : "100000",
+        "categ_dsg" : "Crop output (010000 to 090000), including fruits (060000) and vegetables (040000)",
+        "categ_ord" : "2",
+        "categ_nivel" : "2"
+      } ],
+      "Dim_Num3_010000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "010000",
+        "categ_cod" : "010000",
+        "categ_dsg" : "Cereals (including seeds)",
+        "categ_ord" : "3",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_011000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "011000",
+        "categ_cod" : "011000",
+        "categ_dsg" : "Wheat and spelt",
+        "categ_ord" : "4",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_011100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "011100",
+        "categ_cod" : "011100",
+        "categ_dsg" : "Soft wheat and spelt",
+        "categ_ord" : "5",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_011200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "011200",
+        "categ_cod" : "011200",
+        "categ_dsg" : "Durum wheat",
+        "categ_ord" : "6",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_012000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "012000",
+        "categ_cod" : "012000",
+        "categ_dsg" : "Rye and meslin",
+        "categ_ord" : "7",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_013000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "013000",
+        "categ_cod" : "013000",
+        "categ_dsg" : "Barley",
+        "categ_ord" : "8",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_013100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "013100",
+        "categ_cod" : "013100",
+        "categ_dsg" : "Feed barley",
+        "categ_ord" : "9",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_013200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "013200",
+        "categ_cod" : "013200",
+        "categ_dsg" : "Malting barley",
+        "categ_ord" : "10",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_014000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "014000",
+        "categ_cod" : "014000",
+        "categ_dsg" : "Oats and summer cereal mixtures",
+        "categ_ord" : "11",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_015000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "015000",
+        "categ_cod" : "015000",
+        "categ_dsg" : "Grain maize",
+        "categ_ord" : "12",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_016000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "016000",
+        "categ_cod" : "016000",
+        "categ_dsg" : "Rice",
+        "categ_ord" : "13",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_019000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "019000",
+        "categ_cod" : "019000",
+        "categ_dsg" : "Other cereals",
+        "categ_ord" : "14",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_020000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "020000",
+        "categ_cod" : "020000",
+        "categ_dsg" : "Industrial crops",
+        "categ_ord" : "15",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_021000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "021000",
+        "categ_cod" : "021000",
+        "categ_dsg" : "Oil seeds and oleaginous fruits (including seeds)",
+        "categ_ord" : "16",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_021100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "021100",
+        "categ_cod" : "021100",
+        "categ_dsg" : "Rape and turnip rape seed",
+        "categ_ord" : "17",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_021200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "021200",
+        "categ_cod" : "021200",
+        "categ_dsg" : "Sunflower",
+        "categ_ord" : "18",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_021300" : [ {
+        "dim_num" : "3",
+        "cat_id" : "021300",
+        "categ_cod" : "021300",
+        "categ_dsg" : "Soya",
+        "categ_ord" : "19",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_021900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "021900",
+        "categ_cod" : "021900",
+        "categ_dsg" : "Other oleaginous products",
+        "categ_ord" : "20",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_022000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "022000",
+        "categ_cod" : "022000",
+        "categ_dsg" : "Protein crops (including seeds)",
+        "categ_ord" : "21",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_023000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "023000",
+        "categ_cod" : "023000",
+        "categ_dsg" : "Raw tobacco",
+        "categ_ord" : "22",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_024000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "024000",
+        "categ_cod" : "024000",
+        "categ_dsg" : "Sugar beet",
+        "categ_ord" : "23",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_029000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "029000",
+        "categ_cod" : "029000",
+        "categ_dsg" : "Other industrial crops",
+        "categ_ord" : "24",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_029100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "029100",
+        "categ_cod" : "029100",
+        "categ_dsg" : "Fibre plants",
+        "categ_ord" : "25",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_029200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "029200",
+        "categ_cod" : "029200",
+        "categ_dsg" : "Hops",
+        "categ_ord" : "26",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_029900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "029900",
+        "categ_cod" : "029900",
+        "categ_dsg" : "Other industrial crops: others",
+        "categ_ord" : "27",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_030000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "030000",
+        "categ_cod" : "030000",
+        "categ_dsg" : "Forage plants",
+        "categ_ord" : "28",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_033000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "033000",
+        "categ_cod" : "033000",
+        "categ_dsg" : "Green maize",
+        "categ_ord" : "29",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_032000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "032000",
+        "categ_cod" : "032000",
+        "categ_dsg" : "Fodder root crops (including forage beet)",
+        "categ_ord" : "30",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_039000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "039000",
+        "categ_cod" : "039000",
+        "categ_dsg" : "Other forage plants",
+        "categ_ord" : "31",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_039100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "039100",
+        "categ_cod" : "039100",
+        "categ_dsg" : "Hay",
+        "categ_ord" : "32",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_039200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "039200",
+        "categ_cod" : "039200",
+        "categ_dsg" : "Straw",
+        "categ_ord" : "33",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_039300" : [ {
+        "dim_num" : "3",
+        "cat_id" : "039300",
+        "categ_cod" : "039300",
+        "categ_dsg" : "Silage",
+        "categ_ord" : "34",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_039900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "039900",
+        "categ_cod" : "039900",
+        "categ_dsg" : "Other forage plants: others",
+        "categ_ord" : "35",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_040000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "040000",
+        "categ_cod" : "040000",
+        "categ_dsg" : "Vegetables and horticultural products",
+        "categ_ord" : "36",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_041000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "041000",
+        "categ_cod" : "041000",
+        "categ_dsg" : "Fresh vegetables",
+        "categ_ord" : "37",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_041100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "041100",
+        "categ_cod" : "041100",
+        "categ_dsg" : "Cauliflower",
+        "categ_ord" : "38",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_041200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "041200",
+        "categ_cod" : "041200",
+        "categ_dsg" : "Tomatoes",
+        "categ_ord" : "39",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_041900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "041900",
+        "categ_cod" : "041900",
+        "categ_dsg" : "Other fresh vegetables",
+        "categ_ord" : "40",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_042000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "042000",
+        "categ_cod" : "042000",
+        "categ_dsg" : "Plants and flowers",
+        "categ_ord" : "51",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_050000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "050000",
+        "categ_cod" : "050000",
+        "categ_dsg" : "Potatoes (including seeds)",
+        "categ_ord" : "52",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_051000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "051000",
+        "categ_cod" : "051000",
+        "categ_dsg" : "Potatoes for consumption",
+        "categ_ord" : "53",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_051100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "051100",
+        "categ_cod" : "051100",
+        "categ_dsg" : "Early potatoes",
+        "categ_ord" : "54",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_051200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "051200",
+        "categ_cod" : "051200",
+        "categ_dsg" : "Main crop potatoes",
+        "categ_ord" : "55",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_052000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "052000",
+        "categ_cod" : "052000",
+        "categ_dsg" : "Seed potatoes",
+        "categ_ord" : "56",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_059000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "059000",
+        "categ_cod" : "059000",
+        "categ_dsg" : "Other potatoes",
+        "categ_ord" : "57",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_060000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "060000",
+        "categ_cod" : "060000",
+        "categ_dsg" : "Fruits",
+        "categ_ord" : "58",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_061000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "061000",
+        "categ_cod" : "061000",
+        "categ_dsg" : "Fresh fruit (excluding citrus fruit, tropical fruit, grapes and olives)",
+        "categ_ord" : "59",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_061100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "061100",
+        "categ_cod" : "061100",
+        "categ_dsg" : "Dessert apples",
+        "categ_ord" : "60",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_061200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "061200",
+        "categ_cod" : "061200",
+        "categ_dsg" : "Dessert pears",
+        "categ_ord" : "61",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_061300" : [ {
+        "dim_num" : "3",
+        "cat_id" : "061300",
+        "categ_cod" : "061300",
+        "categ_dsg" : "Peaches",
+        "categ_ord" : "62",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_061900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "061900",
+        "categ_cod" : "061900",
+        "categ_dsg" : "Other fresh fruit, nuts and dried fruit",
+        "categ_ord" : "63",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_062000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "062000",
+        "categ_cod" : "062000",
+        "categ_dsg" : "Citrus fruit",
+        "categ_ord" : "71",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_062100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "062100",
+        "categ_cod" : "062100",
+        "categ_dsg" : "Sweet oranges",
+        "categ_ord" : "72",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_062200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "062200",
+        "categ_cod" : "062200",
+        "categ_dsg" : "Mandarins",
+        "categ_ord" : "73",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_062300" : [ {
+        "dim_num" : "3",
+        "cat_id" : "062300",
+        "categ_cod" : "062300",
+        "categ_dsg" : "Lemons",
+        "categ_ord" : "74",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_062900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "062900",
+        "categ_cod" : "062900",
+        "categ_dsg" : "Other citrus fruits",
+        "categ_ord" : "75",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_063000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "063000",
+        "categ_cod" : "063000",
+        "categ_dsg" : "Fruits from subtropical and tropical climate zones",
+        "categ_ord" : "76",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_064000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "064000",
+        "categ_cod" : "064000",
+        "categ_dsg" : "Grapes",
+        "categ_ord" : "77",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_064100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "064100",
+        "categ_cod" : "064100",
+        "categ_dsg" : "Dessert grapes",
+        "categ_ord" : "78",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_064900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "064900",
+        "categ_cod" : "064900",
+        "categ_dsg" : "Other grapes, fresh",
+        "categ_ord" : "79",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_065000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "065000",
+        "categ_cod" : "065000",
+        "categ_dsg" : "Olives",
+        "categ_ord" : "80",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_065100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "065100",
+        "categ_cod" : "065100",
+        "categ_dsg" : "Table olives",
+        "categ_ord" : "81",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_065900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "065900",
+        "categ_cod" : "065900",
+        "categ_dsg" : "Other olives",
+        "categ_ord" : "82",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_070000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "070000",
+        "categ_cod" : "070000",
+        "categ_dsg" : "Wine",
+        "categ_ord" : "83",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_073000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "073000",
+        "categ_cod" : "073000",
+        "categ_dsg" : "PDO and PGI",
+        "categ_ord" : "84",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_073100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "073100",
+        "categ_cod" : "073100",
+        "categ_dsg" : "PDO",
+        "categ_ord" : "85",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_073200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "073200",
+        "categ_cod" : "073200",
+        "categ_dsg" : "PGI",
+        "categ_ord" : "86",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_078000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "078000",
+        "categ_cod" : "078000",
+        "categ_dsg" : "Other wines than PDO and PGI",
+        "categ_ord" : "87",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_080000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "080000",
+        "categ_cod" : "080000",
+        "categ_dsg" : "Olive oil",
+        "categ_ord" : "88",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_090000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "090000",
+        "categ_cod" : "090000",
+        "categ_dsg" : "Other crop products",
+        "categ_ord" : "89",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_091000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "091000",
+        "categ_cod" : "091000",
+        "categ_dsg" : "Vegetable materials used primarily for plaiting",
+        "categ_ord" : "90",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_092000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "092000",
+        "categ_cod" : "092000",
+        "categ_dsg" : "Seeds",
+        "categ_ord" : "91",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_099000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "099000",
+        "categ_cod" : "099000",
+        "categ_dsg" : "Other crop products: others",
+        "categ_ord" : "92",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_130000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "130000",
+        "categ_cod" : "130000",
+        "categ_dsg" : "Animal output (110000+120000)",
+        "categ_ord" : "93",
+        "categ_nivel" : "2"
+      } ],
+      "Dim_Num3_110000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "110000",
+        "categ_cod" : "110000",
+        "categ_dsg" : "Animals",
+        "categ_ord" : "94",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_111000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "111000",
+        "categ_cod" : "111000",
+        "categ_dsg" : "Cattle",
+        "categ_ord" : "95",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_111100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "111100",
+        "categ_cod" : "111100",
+        "categ_dsg" : "Cattle excluding calves",
+        "categ_ord" : "96",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_111200" : [ {
+        "dim_num" : "3",
+        "cat_id" : "111200",
+        "categ_cod" : "111200",
+        "categ_dsg" : "Calves",
+        "categ_ord" : "97",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_112000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "112000",
+        "categ_cod" : "112000",
+        "categ_dsg" : "Pigs",
+        "categ_ord" : "98",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_113000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "113000",
+        "categ_cod" : "113000",
+        "categ_dsg" : "Equines",
+        "categ_ord" : "99",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_114000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "114000",
+        "categ_cod" : "114000",
+        "categ_dsg" : "Sheep and goats",
+        "categ_ord" : "100",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_115000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "115000",
+        "categ_cod" : "115000",
+        "categ_dsg" : "Poultry",
+        "categ_ord" : "101",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_115100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "115100",
+        "categ_cod" : "115100",
+        "categ_dsg" : "Chickens",
+        "categ_ord" : "102",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_115900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "115900",
+        "categ_cod" : "115900",
+        "categ_dsg" : "Other poultry",
+        "categ_ord" : "103",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_119000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "119000",
+        "categ_cod" : "119000",
+        "categ_dsg" : "Other animals",
+        "categ_ord" : "104",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_120000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "120000",
+        "categ_cod" : "120000",
+        "categ_dsg" : "Animal products",
+        "categ_ord" : "105",
+        "categ_nivel" : "3"
+      } ],
+      "Dim_Num3_121000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "121000",
+        "categ_cod" : "121000",
+        "categ_dsg" : "Milk",
+        "categ_ord" : "106",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_121100" : [ {
+        "dim_num" : "3",
+        "cat_id" : "121100",
+        "categ_cod" : "121100",
+        "categ_dsg" : "Cows' milk",
+        "categ_ord" : "107",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_121900" : [ {
+        "dim_num" : "3",
+        "cat_id" : "121900",
+        "categ_cod" : "121900",
+        "categ_dsg" : "Other milk types",
+        "categ_ord" : "108",
+        "categ_nivel" : "5"
+      } ],
+      "Dim_Num3_122000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "122000",
+        "categ_cod" : "122000",
+        "categ_dsg" : "Eggs",
+        "categ_ord" : "109",
+        "categ_nivel" : "4"
+      } ],
+      "Dim_Num3_129000" : [ {
+        "dim_num" : "3",
+        "cat_id" : "129000",
+        "categ_cod" : "129000",
+        "categ_dsg" : "Other animal products",
+        "categ_ord" : "110",
+        "categ_nivel" : "4"
+      } ]
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]
