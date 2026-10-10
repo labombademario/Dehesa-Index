@@ -1,8 +1,6 @@
-19:45:23 descargada 32100036 15 KB
-19:45:23 tabla 32100036 2160 filas
-19:45:24 descargada 32100037 7 KB
-19:45:24 tabla 32100037 748 filas
-19:45:24 descargada 32100039 21 KB
-19:45:24 tabla 32100039 3200 filas
-19:45:24 fert_more 23
-19:45:24 series 713
+04:35:50 descargada 32100132 135 KB
+04:35:50 tabla 32100132 22296 filas
+04:35:51 descargada 32100123 53 KB
+04:35:51 tabla 32100123 9442 filas
+04:35:51 mantequilla (grasa) y huevo procesado 8
+04:35:51 series 713
