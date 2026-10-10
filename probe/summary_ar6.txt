@@ -1,0 +1,159 @@
+PKG aceite de oliva | produccion-estimada-aceite-soja-destinado-elaboracion-biodiesel | Soja - Producción de aceite para biodiesel | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1 | lastmod 2019-08-27
+PKG aceite de oliva | plantas-productoras-y-refinadoras-de-aceite-vegetal | Plantas Productoras y Refinadoras de Aceite Vegetal | secretaria-de-energia | CC-BY-4.0 | res 2 | lastmod 2023-06-07
+PKG aceite de oliva | girasol-con-destino-industria | Girasol - Destino industrial | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 5 | lastmod 2019-09-17
+PKG aceite de oliva | semillas-algodon-con-destino-industria | Algodón - semillas destino industrial | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4 | lastmod 2019-09-11
+PKG aceite de oliva | lino-con-destino-industria | Lino - Destino industrial | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4 | lastmod 2019-09-04
+PKG aceite de oliva | mani-con-destino-industria | Maní - Destino industrial | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4 | lastmod 2019-09-16
+PKG aceite de oliva | soja-con-destino-industria | Soja - destino industrial | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 6 | lastmod 2019-05-06
+PKG aceite de oliva | residuos-peligrosos | Residuos peligrosos | subsecretaria-de-ambiente | Creative Commons Attribution 4.0 | res 14 | lastmod 2025-12-31
+PKG olivo | olivo | Olivo | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 1 | lastmod 2021-03-22
+PKG olivo | indicadores-sectoriales-y-provinciales | Indicadores Sectoriales y Provinciales | subsecretaria-de-programacion-microeconomica |  | res 42 | lastmod 2026-06-08
+PKG colza | produccion-nacional-fiscalizada-por-especies-registrada-inase | INASE- Producción nacional de semilla fiscalizada | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4 | lastmod 2019-07-11
+PKG colza | produccion-nacional-fiscalizada-por-especies-ubicacion-registrada-inase | INASE - Producción de semillas por especies y ubicación | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3 | lastmod 2019-01-14
+PKG colza | estimaciones-agricolas | Agricultura - Estimaciones agrícolas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4 | lastmod 2026-03-05
+PKG avena | avena-con-destino-industria | Avena - Destino industrial | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 2 | lastmod 2019-09-17
+PKG avena | avena-siembra-cosecha-produccion-rendimiento | Avena - siembra, cosecha, producción, rendimiento | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 2 | lastmod 2026-08-13
+PKG avena | superficie-nacional-fiscalizada-por-especie-ubicacion-registrada-inase | INASE - Superficie fiscalizada de semillas por especie y ubicación | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3 | lastmod 2019-02-06
+PKG avena | produccion-nacional-fiscalizada-por-especies-registrada-inase | INASE- Producción nacional de semilla fiscalizada | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4 | lastmod 2019-07-11
+PKG avena | produccion-nacional-fiscalizada-por-especies-ubicacion-registrada-inase | INASE - Producción de semillas por especies y ubicación | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3 | lastmod 2019-01-14
+PKG avena | estimaciones-agricolas | Agricultura - Estimaciones agrícolas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 4 | lastmod 2026-03-05
+PKG precios agricolas | precios-mayoristas-frutas-hortalizas | Frutas y hortalizas - Precios mayoristas | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 5 | lastmod 2019-01-29
+PKG precios agricolas | anuario-importaciones-frutas | Frutas - Anuario de importaciones | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3 | lastmod 2019-02-08
+PKG precios agricolas | producto-interno-bruto-sectorial-1980-1990 | Producto Interno Bruto Sectorial 1980-1990 | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 11 | lastmod 
+PKG precios agricolas | cuentas-nacionales-1970-1980-base-1970 | Cuentas Nacionales 1970-1980. Base 1970 | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 20 | lastmod 
+PKG precios agricolas | producto-interno-bruto-sectorial-1970-1980 | Producto Interno Bruto Sectorial 1970-1980 | subsecretaria-de-programacion-macroeconomica | Creative Commons Attribution 4.0 | res 13 | lastmod 
+PKG precios agricolas | anuario-exportaciones-frutas | Frutas - Anuario de exportaciones | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3 | lastmod 2019-10-02
+PKG precios ganaderos | indicadores-economicos-para-ganaderia-bovina | Ganadería - Indicadores económicos bovinos | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 5 | lastmod 2019-10-11
+PKG hacienda precios | indice-novillo-sio-carnes-insc | SIO Carnes - Índice Novillo INSC | secretaria-de-agricultura-ganaderia-y-pesca | CC-BY-4.0 | res 3 | lastmod 2019-05-07
+MAGYP tail https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/index.php 200
+    ta técnica: Link Productos elaborados IMPORTANTE - NOTA TÉCNICA Las dos series de datos presentadas a continuación NO SON COMPARABLES dado que están elaboradas a partir de dos muestras distintas. La primera serie de datos (Nueva serie relevamiento coyuntural) surge del panel de industrias l&aacute;cteas establecido a partir del Relevamiento Coyuntural de la Resolución 230/16 e informaci&oacute;n hist&oacute;rica de la Resolución 7/14. La segunda es la muestra que se desarrolló del partir del convenio de cooperación que tuvo la entonces Secretaría de Agricultura, Ganadería, Pesca y Alimentos con la Fundación de Investigaciones Económicas (FIEL) y el Centro de la Industria Lechera (CIL). Nueva serie relevamiento coyuntural &#8226; Elaboraci&oacute;n de productos l&aacute;cteos (miles de litros y toneladas por a&ntilde;o 2015-2024) &#8250; Descargar: Excel &#8250; Nota técnica: Link &nbsp; &#8226; Utilización de la capacidad industrial instalada (% de la capacidad de recepción de leche cruda por mes 2017-2024) &#8250; Descargar: Excel Serie histórica &#8226; Elaboraci&oacute;n de productos l&aacute;cteos (miles de litros y toneladas por a&ntilde;o 1989-2016) &#8250; Ver: Gráfico &#8250; Descargar: Excel &#8250; Nota técnica: Link &#8226; Elaboraci&oacute;n de productos l&aacute;cteos (miles de litros y toneladas por mes 1989-2016) &#8250; Descargar: Excel 1 (1989-2006) | Excel 2 (2007-2016) &#8250; Nota técnica: Link Capacidad Instalada Utilización de la capacidad industrial instalada (% de la capacidad de recepción de leche cruda por mes 2024) &#8250; Descargar: Excel &nbsp; SUBIR .sub-footer { background-color: #242c4f; padding: 20px 0 40px 0; } .main-footer { padding: 50px 0 0 0; padding-top: 50px; margin-top: 10px; background: #f2f2f2 !important; } .main-footer h2 { font-size: 1.25em !important; } .main-footer { background: #fff; padding-top: 10px !important; border-top: solid 1px #ddd; } .main-footer h2 { font-size: 1.3em !important; font-weight: 700; font-family: 'Lora', serif; color:#000; } .main-footer ul.nav>li>a:hover { background: none; } .main-footer li a { display: block; font-size: 16px; padding: 6px 0; text-decoration: none !important; color: #333; } .border-top-amarillo { border-top: 3px solid #e7ba61; } --> Trámites Turnos Trámites a distancia Atención a la ciudadanía Acerca de la República Argentina Nuestro país Leyes argentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias --> 
+   H https://www.argentina.gob.ar/terminos-y-condiciones
+MAGYP tail https://www.magyp.gob.ar/sitio/areas/ss_lecheria/ 200
+    h: 767px) { #menuizq ul.nav li.dropdown:hover ul.dropdown-menu.submenu{ display: block; margin-left: 10px; margin-top: -36px; background-color:#FFF; font-weight: normal; } } Dirección Nacional de Lechería Institucional&nbsp; Estadísticas&nbsp; &nbsp;&nbsp;&nbsp;Producción Primaria &nbsp;&nbsp;&nbsp;Producción Industrial &nbsp;&nbsp;&nbsp;Existencias &nbsp;&nbsp;&nbsp;Precios &nbsp;&nbsp;&nbsp;Mercado Interno &nbsp;&nbsp;&nbsp;Mercado Externo &nbsp;&nbsp;&nbsp;Balance Lácteo &nbsp;&nbsp;&nbsp;Cuencas Convenios&nbsp; Buenas Prácticas Lecheras&nbsp; &nbsp;&nbsp;&nbsp;Nueva Guía &nbsp;&nbsp;&nbsp;Guía de Buenas Prácticas &nbsp;&nbsp;&nbsp;Curso online de Buenas Prácticas Industria Láctea&nbsp; &nbsp;&nbsp;&nbsp; Estado de situación &nbsp;&nbsp;&nbsp;Relevamiento y evaluación de la competitividad Catálogo de exportación&nbsp; Mercado Lácteo&nbsp; Precio Nacional&nbsp; Financiamiento&nbsp; Sistema Integrado de Gestión de la Lechería Argentina&nbsp; Contacto Paseo Colon 922 PISO 3 OFICINA 347 Correo Electrónico Atenci&oacute;n telef&oacute;nica gratuita 0800 333 MAGYP (62497) .panel-body { padding: 15px 20px; min-height: 104px; } Secretaría de Agricultura, Ganadería y Pesca Ganadería Lechería --> Dirección Nacional de Lechería Intervenir en la ejecución de políticas, planes, programas y recursos relacionados con los productores y la producción lechera, que procuren el equilibrio entre productividad, sostenibilidad y distribución territorial. Estadísticas Tablero de Control Producción Primaria Producción industrial Existencias Precios Mercado interno Mercado externo Balance lácteo SUBIR .sub-footer { background-color: #242c4f; padding: 20px 0 40px 0; } .main-footer { padding: 50px 0 0 0; padding-top: 50px; margin-top: 10px; background: #f2f2f2 !important; } .main-footer h2 { font-size: 1.25em !important; } .main-footer { background: #fff; padding-top: 10px !important; border-top: solid 1px #ddd; } .main-footer h2 { font-size: 1.3em !important; font-weight: 700; font-family: 'Lora', serif; color:#000; } .main-footer ul.nav>li>a:hover { background: none; } .main-footer li a { display: block; font-size: 16px; padding: 6px 0; text-decoration: none !important; color: #333; } .border-top-amarillo { border-top: 3px solid #e7ba61; } --> Trámites Turnos Trámites a distancia Atención a la ciudadanía Acerca de la República Argentina Nuestro país Leyes argentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias --> 
+   H https://www.argentina.gob.ar/terminos-y-condiciones
+INV hrefs https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/cosecha-y-elaboracion 200
+   H /
+   H /acerca
+   H /desregulacion/mapa-del-estado
+   H /economia
+   H /economia/agricultura
+   H /inv
+   H /inv/estadisticas-vitivinicolas/cosecha-y-elaboracion
+   H /inv/estadisticas-vitivinicolas/cosecha/anuarios
+   H /inv/estadisticas-vitivinicolas/cosecha/informes-especiales
+   H /inv/estadisticas-vitivinicolas/importaciones
+   H /inv/estadisticas-vitivinicolas/mercado-externo
+   H /inv/estadisticas-vitivinicolas/principales-datos-vitivinicolas
+   H /inv/vinos/estadisticas
+   H /inv/vinos/estadisticas/estadisticas-varias
+   H /inv/vinos/estadisticas/existencias
+   H /inv/vinos/estadisticas/mercado-interno
+   H /inv/vinos/estadisticas/regiones-vitivinicolas
+   H /inv/vinos/estadisticas/superficie
+   H /inv/vinos/estadisticas/superficie/informes-especiales
+   H /inv/vinos/estadisticas/variedades-de-uva
+   H /miargentina/mesadeayuda
+   H /normativa
+   H /organismos
+   H /pais
+   H /sugerencias
+   H /tad
+   H /terminos-y-condiciones
+   H /turnos
+   H http://www.w3.org/1999/xhtml/vocab
+   H https://creativecommons.org/licenses/by/4.0/deed.es
+   H https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap
+   H https://mi.argentina.gob.ar
+   H https://mi.argentina.gob.ar/
+   H https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/cosecha-y-elaboracion
+   H https://www.argentina.gob.ar/manifest.json
+   H https://www.argentina.gob.ar/node/109685
+   H https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico
+   H https://www.argentina.gob.ar/sites/default/files/argentina-fb.png
+   H https://www.argentina.gob.ar/sites/default/files/icon/icon-180x180.png
+   IFR <iframe title="Script GTM" aria-hidden="true" src="//www.googletagmanager.com/ns.html?id=GTM-P68ZXT" style="display:none;visibility:hidden;height:0;width:0">
+INV hrefs https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/mercado-externo 200
+   H /
+   H /acerca
+   H /desregulacion/mapa-del-estado
+   H /economia
+   H /economia/agricultura
+   H /inv
+   H /inv/estadisticas-vitivinicolas/consumo-capita
+   H /inv/estadisticas-vitivinicolas/cosecha-y-elaboracion
+   H /inv/estadisticas-vitivinicolas/importaciones
+   H /inv/estadisticas-vitivinicolas/mercado-externo
+   H /inv/estadisticas-vitivinicolas/mercado-externo/anuario
+   H /inv/estadisticas-vitivinicolas/mercado-externo/informes-especiales
+   H /inv/estadisticas-vitivinicolas/mercado-externo/informes-mensuales
+   H /inv/estadisticas-vitivinicolas/principales-datos-vitivinicolas
+   H /inv/vinos/estadisticas
+   H /inv/vinos/estadisticas/estadisticas-varias
+   H /inv/vinos/estadisticas/existencias
+   H /inv/vinos/estadisticas/mercado-interno
+   H /inv/vinos/estadisticas/regiones-vitivinicolas
+   H /inv/vinos/estadisticas/superficie
+   H /inv/vinos/estadisticas/variedades-de-uva
+   H /miargentina/mesadeayuda
+   H /normativa
+   H /organismos
+   H /pais
+   H /sugerencias
+   H /tad
+   H /terminos-y-condiciones
+   H /turnos
+   H http://www.w3.org/1999/xhtml/vocab
+   H https://creativecommons.org/licenses/by/4.0/deed.es
+   H https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap
+   H https://mi.argentina.gob.ar
+   H https://mi.argentina.gob.ar/
+   H https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/mercado-externo
+   H https://www.argentina.gob.ar/manifest.json
+   H https://www.argentina.gob.ar/node/109690
+   H https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico
+   H https://www.argentina.gob.ar/sites/default/files/argentina-fb.png
+   H https://www.argentina.gob.ar/sites/default/files/icon/icon-180x180.png
+   IFR <iframe title="Script GTM" aria-hidden="true" src="//www.googletagmanager.com/ns.html?id=GTM-P68ZXT" style="display:none;visibility:hidden;height:0;width:0">
+INV hrefs https://www.argentina.gob.ar/inv/vinos/estadisticas/existencias 200
+   H /
+   H /acerca
+   H /desregulacion/mapa-del-estado
+   H /economia
+   H /economia/agricultura
+   H /existencias-2024
+   H /inv
+   H /inv/estadisticas-vitivinicolas/cosecha-y-elaboracion
+   H /inv/estadisticas-vitivinicolas/importaciones
+   H /inv/estadisticas-vitivinicolas/mercado-externo
+   H /inv/estadisticas-vitivinicolas/principales-datos-vitivinicolas
+   H /inv/existencias-2022
+   H /inv/existencias-2023
+   H /inv/existencias-2025
+   H /inv/existencias-2026
+   H /inv/vinos/estadisticas
+   H /inv/vinos/estadisticas/estadisticas-varias
+   H /inv/vinos/estadisticas/existencias
+   H /inv/vinos/estadisticas/mercado-interno
+   H /inv/vinos/estadisticas/regiones-vitivinicolas
+   H /inv/vinos/estadisticas/superficie
+   H /inv/vinos/estadisticas/variedades-de-uva
+   H /miargentina/mesadeayuda
+   H /normativa
+   H /organismos
+   H /pais
+   H /sugerencias
+   H /tad
+   H /terminos-y-condiciones
+   H /turnos
+   H http://www.w3.org/1999/xhtml/vocab
+   H https://creativecommons.org/licenses/by/4.0/deed.es
+   H https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap
+   H https://mi.argentina.gob.ar
+   H https://mi.argentina.gob.ar/
+   H https://www.argentina.gob.ar/inv/vinos/estadisticas/existencias
+   H https://www.argentina.gob.ar/manifest.json
+   H https://www.argentina.gob.ar/node/131743
+   H https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico
+   H https://www.argentina.gob.ar/sites/default/files/argentina-fb.png
+   H https://www.argentina.gob.ar/sites/default/files/icon/icon-180x180.png
+   IFR <iframe title="Script GTM" aria-hidden="true" src="//www.googletagmanager.com/ns.html?id=GTM-P68ZXT" style="display:none;visibility:hidden;height:0;width:0">
