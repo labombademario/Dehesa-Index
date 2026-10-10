@@ -179,8 +179,19 @@ def organic():
         put('at-organic-fss-%s-%s' % (a.lower(), u.lower()), 'organic', ('Organic holdings: %s (farm structure survey)' if u == 'HLD' else 'Organic area: %s (farm structure survey)') % nm, 'holdings' if u == 'HLD' else 'ha', 'annual', pts, {'sourceGroup': 'Eurostat ef_lus_org'}, max_age=4)
     log('ecologico', len(OUT) - n0 + len(by), 'series')
 
+def eggs():
+    """Produccion de huevos de consumo y gallinas ponedoras (Eurostat apro_ec_egghen, anual). Una serie por producto y unidad, con la etiqueta de Eurostat."""
+    j = fetch('apro_ec_egghen'); recs, labs = records(j); by = {}
+    for r, v in recs: by.setdefault(tuple((d, r[d]) for d in sorted(r) if d not in ('time', 'geo', 'freq')), []).append((r['time'], v))
+    n = 0
+    for key, pts in by.items():
+        k = dict(key); name = ' / '.join(labs[d].get(c, c) for d, c in key if d != 'unit'); unit = labs.get('unit', {}).get(k.get('unit'), k.get('unit', ''))
+        sid = 'at-eggs-' + '-'.join(c.lower() for _, c in key)
+        put(sid, 'production', 'Eggs (Eurostat apro_ec_egghen): ' + name, unit, 'annual', pts, {'sourceGroup': 'Eurostat apro_ec_egghen'}); n += 1
+    log('apro_ec_egghen', n, 'series')
+
 def main():
-    for fn in (prices, quarterly, milk, slaughter, crops, herds, organic):
+    for fn in (prices, quarterly, milk, slaughter, crops, herds, organic, eggs):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e))
     if len(OUT) < 20:
