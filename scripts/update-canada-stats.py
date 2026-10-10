@@ -500,16 +500,24 @@ def value_per_head():
     for k, pts in by.items():
         put("ca-vph-%s" % slug(k), "prices", "Value per head at 1 July: %s (annual)" % k.lower(), "CAD/head", "annual", pts, "StatCan 32-10-0124"); n += 1
     log("valor por cabeza", n)
+def uom_tonnes(rows, keyfn):
+    """Agrupa por clave y unidad REAL de StatCan (columna UOM): kilogramos -> toneladas (/1000); toneladas tal cual; cualquier otra unidad
+    se publica con su propio nombre. Antes estas series iban rotuladas «t» a mano y StatCan las da en kilogramos (cifras 1000 veces altas)."""
+    K = {"kilograms": 0.001, "kilogram": 0.001, "tonnes": 1, "metric tonnes": 1}
+    out = {}
+    for (k, u), pts in series_of(rows, lambda r: (keyfn(r), r["UOM"]) if keyfn(r) is not None else None).items():
+        f = K.get(u.strip().lower())
+        out[k] = ("t", [(p, v * f) for p, v in pts]) if f is not None else (u.lower(), pts)
+        if f is None: log("unidad no prevista %s: %s" % (k, u))
+    return out
 def butterfat_eggstock():
     n = 0
     rows = [r for r in load(32100132) if r["GEO"] == "Canada"]
-    by = series_of(rows, lambda r: r["Dairy distribution"])
-    for k, pts in by.items():
-        put("ca-butterfat-%s" % slug(k), "milk", "Milk butterfat shipments: %s (monthly)" % k.lower().replace(", total", ""), "t", "monthly", pts, "StatCan 32-10-0132"); n += 1
+    for k, (u, pts) in uom_tonnes(rows, lambda r: r["Dairy distribution"]).items():
+        put("ca-butterfat-%s" % slug(k), "milk", "Milk butterfat shipments: %s (monthly)" % k.lower().replace(", total", ""), u, "monthly", pts, "StatCan 32-10-0132"); n += 1
     rows = [r for r in load(32100123) if r["GEO"] == "Canada" and r["Commodity"] in ("Whole eggs, total", "Yolk, total", "Whites, total", "Edible dried eggs")]
-    by = series_of(rows, lambda r: r["Commodity"])
-    for k, pts in by.items():
-        put("ca-eggstock-%s" % slug(k), "stocks", "Frozen and dried egg stocks: %s (monthly)" % k.lower().replace(", total", ""), "t", "monthly", pts, "StatCan 32-10-0123"); n += 1
+    for k, (u, pts) in uom_tonnes(rows, lambda r: r["Commodity"]).items():
+        put("ca-eggstock-%s" % slug(k), "stocks", "Frozen and dried egg stocks: %s (monthly)" % k.lower().replace(", total", ""), u, "monthly", pts, "StatCan 32-10-0123"); n += 1
     log("mantequilla (grasa) y huevo procesado", n)
 def hogs_more():
     n = 0
