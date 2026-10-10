@@ -1,0 +1,1447 @@
+FOAG cubes 49
+labels 3355
+CUBE BreadCerealsFlourBakedGoods/Consumption_Price_Month products 23
+    product/937 | Low-price flour, non-organic | n=21 | https://ld..https://ld
+    product/898 | Granulated sugar, non-organic | n=21 | https://ld..https://ld
+    product/908 | Brown flour, non-organic | n=21 | https://ld..https://ld
+    product/936 | White flour, non-organic | n=21 | https://ld..https://ld
+    product/949 | Brown bread 1kg, non-organic | n=21 | https://ld..https://ld
+    product/939 | Semi-white flour, non-organic | n=21 | https://ld..https://ld
+    product/941 | Braided bread flour, non-organic | n=21 | https://ld..https://ld
+    product/951 | Brown bread 500g, non-organic | n=21 | https://ld..https://ld
+    product/897 | Granulated sugar, organic | n=21 | https://ld..https://ld
+    product/971 | Semi-white bread, non-organic, average | n=21 | https://ld..https://ld
+    product/909 | Wholemeal flour, organic | n=21 | https://ld..https://ld
+    product/935 | White flour, organic | n=21 | https://ld..https://ld
+    product/953 | Brown bread 250g, non-organic | n=21 | https://ld..https://ld
+    product/910 | Wholemeal flour, non-organic | n=20 | https://ld..https://ld
+    product/900 | Cane sugar, organic | n=20 | https://ld..https://ld
+    product/940 | Braided bread flour, organic | n=20 | https://ld..https://ld
+    product/912 | Spelt flour | n=20 | https://ld..https://ld
+    product/911 | Spelt flour, organic | n=20 | https://ld..https://ld
+    product/938 | Semi-white flour, organic | n=17 | https://ld..https://ld
+    product/947 | Semi-white bread 250g, non-organic | n=14 | https://ld..https://ld
+    product/901 | Cane sugar, non-organic | n=8 | https://ld..https://ld
+    product/943 | Semi-white bread 1kg, non-organic | n=7 | https://ld..https://ld
+    product/952 | Brown bread 250g, organic | n=4 | https://ld..https://ld
+CUBE BreadCerealsFlourBakedGoods/Consumption_Price_Year products 31
+    product/942 | Semi-white bread 1kg, organic | n=5 | https://ld..https://ld
+    product/937 | Low-price flour, non-organic | n=5 | https://ld..https://ld
+    product/898 | Granulated sugar, non-organic | n=5 | https://ld..https://ld
+    product/936 | White flour, non-organic | n=5 | https://ld..https://ld
+    product/949 | Brown bread 1kg, non-organic | n=5 | https://ld..https://ld
+    product/908 | Brown flour, non-organic | n=5 | https://ld..https://ld
+    product/939 | Semi-white flour, non-organic | n=5 | https://ld..https://ld
+    product/941 | Braided bread flour, non-organic | n=5 | https://ld..https://ld
+    product/897 | Granulated sugar, organic | n=5 | https://ld..https://ld
+    product/951 | Brown bread 500g, non-organic | n=5 | https://ld..https://ld
+    product/948 | Brown bread 1kg, organic | n=5 | https://ld..https://ld
+    product/971 | Semi-white bread, non-organic, average | n=5 | https://ld..https://ld
+    product/907 | Brown flour, organic | n=5 | https://ld..https://ld
+    product/909 | Wholemeal flour, organic | n=5 | https://ld..https://ld
+    product/938 | Semi-white flour, organic | n=5 | https://ld..https://ld
+    product/935 | White flour, organic | n=5 | https://ld..https://ld
+    product/950 | Brown bread 500g, organic | n=5 | https://ld..https://ld
+    product/970 | Semi-white bread, organic, average | n=5 | https://ld..https://ld
+    product/947 | Semi-white bread 250g, non-organic | n=5 | https://ld..https://ld
+    product/953 | Brown bread 250g, non-organic | n=5 | https://ld..https://ld
+    product/946 | Semi-white bread 250g, organic | n=5 | https://ld..https://ld
+    product/952 | Brown bread 250g, organic | n=5 | https://ld..https://ld
+    product/943 | Semi-white bread 1kg, non-organic | n=4 | https://ld..https://ld
+    product/945 | Semi-white bread 500g, non-organic | n=4 | https://ld..https://ld
+    product/973 | Brown bread, non-organic, average | n=4 | https://ld..https://ld
+    product/910 | Wholemeal flour, non-organic | n=4 | https://ld..https://ld
+    product/900 | Cane sugar, organic | n=4 | https://ld..https://ld
+    product/940 | Braided bread flour, organic | n=4 | https://ld..https://ld
+    product/912 | Spelt flour | n=4 | https://ld..https://ld
+    product/911 | Spelt flour, organic | n=4 | https://ld..https://ld
+    product/901 | Cane sugar, non-organic | n=1 | https://ld..https://ld
+CUBE BreadCerealsFlourBakedGoods/Production_Price_Year products 28
+    product/915 | Spelt, organic, indicative prices | n=16 | https://ld..https://ld
+    product/914 | Rye, organic, indicative prices | n=16 | https://ld..https://ld
+    product/913 | Wheat, organic, indicative prices | n=15 | https://ld..https://ld
+    product/917 | Spelt, conv., indicative prices | n=15 | https://ld..https://ld
+    product/906 | Rye, conv., indicative prices | n=14 | https://ld..https://ld
+    product/904 | Wheat II, conv., indicative prices | n=14 | https://ld..https://ld
+    product/905 | Biscuit wheat, conv., indicative prices | n=14 | https://ld..https://ld
+    product/903 | Wheat I, conv., indicative prices | n=14 | https://ld..https://ld
+    product/902 | Top wheat, conv., indicative prices | n=14 | https://ld..https://ld
+    product/932 | Wheat, organic, CH | n=9 | https://ld..https://ld
+    product/916 | Spelt, organic, CH | n=9 | https://ld..https://ld
+    product/927 | Rye, conv., CH | n=9 | https://ld..https://ld
+    product/967 | Rye, IP, CH | n=9 | https://ld..https://ld
+    product/923 | Wheat II, conv., CH | n=9 | https://ld..https://ld
+    product/926 | Biscuit wheat, conv., CH | n=9 | https://ld..https://ld
+    product/930 | Wheat II, IP, CH | n=9 | https://ld..https://ld
+    product/929 | Wheat I, IP, CH | n=9 | https://ld..https://ld
+    product/924 | Wheat I, conv., CH | n=9 | https://ld..https://ld
+    product/925 | TopQ wheat, IP, CH | n=9 | https://ld..https://ld
+    product/928 | Top wheat, IP, CH | n=9 | https://ld..https://ld
+    product/921 | Top wheat, conv., CH | n=9 | https://ld..https://ld
+    product/934 | Spelt, conv., CH | n=9 | https://ld..https://ld
+    product/931 | Spelt, IP, CH | n=9 | https://ld..https://ld
+    product/933 | Rye, organic, CH | n=9 | https://ld..https://ld
+    product/920 | Wheat III, conv., indicative prices | n=6 | https://ld..https://ld
+    product/922 | Wheat III, conv., CH | n=4 | https://ld..https://ld
+    product/918 | Food oats, organic, indicative prices | n=4 | https://ld..https://ld
+    product/919 | Food oats, organic, indicative prices | n=1 | https://ld..https://ld
+CUBE BreadCerealsFlourBakedGoods/Production_Quantity_Year products 40
+    product/1393 | Mixed (baking cereals), total | n=11 | https://ld..https://ld
+    product/1407 | Wheat class I | n=11 | https://ld..https://ld
+    product/1412 | Emmer, einkorn, total | n=11 | https://ld..https://ld
+    product/1379 | Rye, total | n=11 | https://ld..https://ld
+    product/1376 | Spelt, total | n=11 | https://ld..https://ld
+    product/1406 | Biscuit Wheat | n=11 | https://ld..https://ld
+    product/1410 | Top Wheat | n=11 | https://ld..https://ld
+    product/1374 | Wheat, total | n=11 | https://ld..https://ld
+    product/1408 | Wheat class II | n=11 | https://ld..https://ld
+    product/1385 | Food oats, total | n=9 | https://ld..https://ld
+    product/1382 | Food barley, total | n=9 | https://ld..https://ld
+    product/1372 | Buckwheat, total | n=9 | https://ld..https://ld
+    product/1373 | Rice, total | n=9 | https://ld..https://ld
+    product/1388 | Food maize, total | n=9 | https://ld..https://ld
+    product/1371 | Quinoa, total | n=6 | https://ld..https://ld
+    product/1386 | Food oats, non-organic | n=5 | https://ld..https://ld
+    product/1404 | Rice, organic | n=5 | https://ld..https://ld
+    product/1405 | Rice, non-organic | n=5 | https://ld..https://ld
+    product/1381 | Rye, organic | n=5 | https://ld..https://ld
+    product/1383 | Food barley, non-organic | n=5 | https://ld..https://ld
+    product/1402 | Quinoa, organic | n=5 | https://ld..https://ld
+    product/1394 | Mixed (baking cereals), non-organic | n=5 | https://ld..https://ld
+    product/1377 | Spelt, non-organic | n=5 | https://ld..https://ld
+    product/1384 | Food barley, organic | n=5 | https://ld..https://ld
+    product/1398 | Buckwheat, organic | n=5 | https://ld..https://ld
+    product/1399 | Buckwheat, non-organic | n=5 | https://ld..https://ld
+    product/1387 | Food oats, organic | n=5 | https://ld..https://ld
+    product/1403 | Quinoa, non-organic | n=5 | https://ld..https://ld
+    product/1397 | Durum wheat, total | n=5 | https://ld..https://ld
+    product/1375 | Wheat, organic | n=5 | https://ld..https://ld
+    product/1392 | Emmer, einkorn, non-organic | n=5 | https://ld..https://ld
+    product/1411 | Mixed (baking cereals), organic | n=5 | https://ld..https://ld
+    product/1391 | Emmer, einkorn, organic | n=5 | https://ld..https://ld
+    product/1378 | Spelt, organic | n=5 | https://ld..https://ld
+    product/1380 | Rye, non-organic | n=5 | https://ld..https://ld
+    product/1395 | Durum wheat, organic | n=4 | https://ld..https://ld
+    product/1396 | Durum wheat, non-organic | n=4 | https://ld..https://ld
+    product/1409 | Wheat class III | n=3 | https://ld..https://ld
+    product/1390 | Food maize, organic | n=3 | https://ld..https://ld
+    product/1389 | Food maize, non-organic | n=3 | https://ld..https://ld
+CUBE BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Month products 17
+    product/964 | Wheat, organic, CH | n=117 | https://ld..https://ld
+    product/955 | Wheat I, conv., CH | n=112 | https://ld..https://ld
+    product/958 | Top wheat, IP, CH | n=109 | https://ld..https://ld
+    product/954 | Top wheat, conv., CH | n=108 | https://ld..https://ld
+    product/959 | Wheat I, IP, CH | n=101 | https://ld..https://ld
+    product/962 | Spelt, IP, CH | n=99 | https://ld..https://ld
+    product/956 | Wheat II, conv., CH | n=98 | https://ld..https://ld
+    product/963 | Wheat, organic, Europe | n=94 | https://ld..https://ld
+    product/974 | Industrial flour, conv., CH | n=89 | https://ld..https://ld
+    product/1 | Wheat, Europe, conv. | n=67 | https://ld..https://ld
+    product/968 | Spelt, bio, CH | n=59 | https://ld..https://ld
+    product/896 | Rye, IP, CH | n=41 | https://ld..https://ld
+    product/899 | Rye, organic, CH | n=15 | https://ld..https://ld
+    product/969 | Rye, conv., CH | n=13 | https://ld..https://ld
+    product/966 | Soft wheat flour, loose, conv. | n=12 | https://ld..https://ld
+    product/960 | Wheat II, IP, CH | n=7 | https://ld..https://ld
+    product/961 | Spelt, conv., CH | n=5 | https://ld..https://ld
+CUBE BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Year products 18
+    product/964 | Wheat, organic, CH | n=10 | https://ld..https://ld
+    product/962 | Spelt, IP, CH | n=10 | https://ld..https://ld
+    product/968 | Spelt, bio, CH | n=10 | https://ld..https://ld
+    product/969 | Rye, conv., CH | n=10 | https://ld..https://ld
+    product/1 | Wheat, Europe, conv. | n=10 | https://ld..https://ld
+    product/956 | Wheat II, conv., CH | n=10 | https://ld..https://ld
+    product/896 | Rye, IP, CH | n=10 | https://ld..https://ld
+    product/955 | Wheat I, conv., CH | n=10 | https://ld..https://ld
+    product/957 | Biscuit wheat, conv., CH | n=10 | https://ld..https://ld
+    product/954 | Top wheat, conv., CH | n=10 | https://ld..https://ld
+    product/960 | Wheat II, IP, CH | n=10 | https://ld..https://ld
+    product/959 | Wheat I, IP, CH | n=10 | https://ld..https://ld
+    product/958 | Top wheat, IP, CH | n=10 | https://ld..https://ld
+    product/963 | Wheat, organic, Europe | n=10 | https://ld..https://ld
+    product/961 | Spelt, conv., CH | n=9 | https://ld..https://ld
+    product/974 | Industrial flour, conv., CH | n=8 | https://ld..https://ld
+    product/899 | Rye, organic, CH | n=6 | https://ld..https://ld
+    product/966 | Soft wheat flour, loose, conv. | n=2 | https://ld..https://ld
+CUBE Eggs/Consumption_Price_Month products 23
+    product/201 | Organic, boiled eggs, CH | n=80 | https://ld..https://ld
+    product/219 | All forms of production, boiled eggs, CH + imports, weighted average | n=80 | https://ld..https://ld
+    product/202 | Free range, boiled eggs, CH | n=80 | https://ld..https://ld
+    product/204 | All forms of production, boiled eggs, CH, weighted average | n=80 | https://ld..https://ld
+    product/193 | Barn, raw eggs, imports | n=80 | https://ld..https://ld
+    product/217 | All forms of production, raw eggs, pack of 10, CH, weighted average | n=80 | https://ld..https://ld
+    product/218 | All forms of production, raw eggs, CH + imports, weighted average | n=80 | https://ld..https://ld
+    product/215 | Free range, pack of 10, raw eggs, CH | n=80 | https://ld..https://ld
+    product/142 | Free range, raw eggs, CH | n=80 | https://ld..https://ld
+    product/211 | Free range, pack of 6, raw eggs, CH | n=80 | https://ld..https://ld
+    product/163 | All forms of production, raw eggs, CH, weighted average | n=80 | https://ld..https://ld
+    product/213 | All forms of production, raw eggs, pack of 6, CH, weighted average | n=80 | https://ld..https://ld
+    product/214 | Organic, raw eggs, pack of 10, CH | n=80 | https://ld..https://ld
+    product/209 | All forms of production, raw eggs, pack of 4, CH, weighted average | n=80 | https://ld..https://ld
+    product/131 | Organic, raw eggs, CH | n=80 | https://ld..https://ld
+    product/210 | Organic, raw eggs, pack of 6, CH | n=80 | https://ld..https://ld
+    product/206 | Organic, raw eggs, pack of 4, CH | n=80 | https://ld..https://ld
+    product/216 | Barn, raw eggs, pack of 10, CH | n=79 | https://ld..https://ld
+    product/152 | Barn, raw eggs, CH | n=79 | https://ld..https://ld
+    product/207 | Free range, pack of 4, raw eggs, CH | n=79 | https://ld..https://ld
+    product/203 | Barn, boiled eggs, CH | n=72 | https://ld..https://ld
+    product/205 | Barn, boiled eggs, imports | n=36 | https://ld..https://ld
+    product/212 | Barn, raw eggs, pack of 6, CH | n=20 | https://ld..https://ld
+CUBE Eggs/Consumption_Price_Year products 29
+    product/995 | Barn, 53-63g, pack of 10, DE | n=15 | https://ld..https://ld
+    product/994 | Free range, 53-63g, pack of 10, DE | n=15 | https://ld..https://ld
+    product/186 | Barn, 53-63g, pack of 6 and 10, AT | n=15 | https://ld..https://ld
+    product/187 | Free range, 53-63g, pack of 6 and 10, AT | n=15 | https://ld..https://ld
+    product/185 | Organic, 53-63g, pack of 4 and 6, AT | n=13 | https://ld..https://ld
+    product/201 | Organic, boiled eggs, CH | n=6 | https://ld..https://ld
+    product/205 | Barn, boiled eggs, imports | n=6 | https://ld..https://ld
+    product/203 | Barn, boiled eggs, CH | n=6 | https://ld..https://ld
+    product/219 | All forms of production, boiled eggs, CH + imports, weighted average | n=6 | https://ld..https://ld
+    product/202 | Free range, boiled eggs, CH | n=6 | https://ld..https://ld
+    product/204 | All forms of production, boiled eggs, CH, weighted average | n=6 | https://ld..https://ld
+    product/193 | Barn, raw eggs, imports | n=6 | https://ld..https://ld
+    product/216 | Barn, raw eggs, pack of 10, CH | n=6 | https://ld..https://ld
+    product/152 | Barn, raw eggs, CH | n=6 | https://ld..https://ld
+    product/217 | All forms of production, raw eggs, pack of 10, CH, weighted average | n=6 | https://ld..https://ld
+    product/212 | Barn, raw eggs, pack of 6, CH | n=6 | https://ld..https://ld
+    product/218 | All forms of production, raw eggs, CH + imports, weighted average | n=6 | https://ld..https://ld
+    product/215 | Free range, pack of 10, raw eggs, CH | n=6 | https://ld..https://ld
+    product/142 | Free range, raw eggs, CH | n=6 | https://ld..https://ld
+    product/163 | All forms of production, raw eggs, CH, weighted average | n=6 | https://ld..https://ld
+    product/211 | Free range, pack of 6, raw eggs, CH | n=6 | https://ld..https://ld
+    product/207 | Free range, pack of 4, raw eggs, CH | n=6 | https://ld..https://ld
+    product/213 | All forms of production, raw eggs, pack of 6, CH, weighted average | n=6 | https://ld..https://ld
+    product/209 | All forms of production, raw eggs, pack of 4, CH, weighted average | n=6 | https://ld..https://ld
+    product/214 | Organic, raw eggs, pack of 10, CH | n=6 | https://ld..https://ld
+    product/131 | Organic, raw eggs, CH | n=6 | https://ld..https://ld
+    product/210 | Organic, raw eggs, pack of 6, CH | n=6 | https://ld..https://ld
+    product/206 | Organic, raw eggs, pack of 4, CH | n=6 | https://ld..https://ld
+    product/208 | Barn, raw eggs, pack of 4, CH | n=1 | https://ld..https://ld
+CUBE Eggs/Export_Quantity_Year products 4
+    product/267 | Total, re-export (inward processing traffic) | n=21 | https://ld..https://ld
+    product/265 | Liquid egg products, re-export (inward processing arrangements) | n=21 | https://ld..https://ld
+    product/266 | Dried egg products, re-export (inward processing arrangements) | n=9 | https://ld..https://ld
+    product/263 | Table eggs, re-export (inward processing traffic) | n=6 | https://ld..https://ld
+CUBE Eggs/GastronomyWholesale_Price_Year products 10
+    product/80 | Barn, boiled, imports | n=13 | https://ld..https://ld
+    product/77 | Barn, boiled, CH | n=13 | https://ld..https://ld
+    product/78 | Free range, boiled, CH | n=13 | https://ld..https://ld
+    product/75 | Barn, raw, imports | n=13 | https://ld..https://ld
+    product/72 | Barn, raw, CH | n=13 | https://ld..https://ld
+    product/73 | Free range, raw, CH | n=13 | https://ld..https://ld
+    product/74 | All forms of production, CH, weighted average | n=13 | https://ld..https://ld
+    product/79 | All forms of production, boiled eggs, CH, weighted average | n=13 | https://ld..https://ld
+    product/71 | Organic, raw, CH | n=13 | https://ld..https://ld
+    product/76 | Organic, boiled, CH | n=7 | https://ld..https://ld
+CUBE Eggs/Import_Price_Month products 2
+    product/70 | Eggs for processing | n=116 | https://ld..https://ld
+    product/81 | importsed consumption eggs | n=116 | https://ld..https://ld
+CUBE Eggs/Import_Price_Year products 2
+    product/70 | Eggs for processing | n=9 | https://ld..https://ld
+    product/81 | importsed consumption eggs | n=9 | https://ld..https://ld
+CUBE Eggs/Import_Quantity_Year products 56
+    product/253 | Liquid egg products, allocated/importsed quantity | n=27 | https://ld..https://ld
+    product/249 | Processing eggs, allocated/importsed quantity | n=27 | https://ld..https://ld
+    product/248 | Processing eggs, quota quantity | n=27 | https://ld..https://ld
+    product/247 | Table eggs, allocated/importsed quantity | n=27 | https://ld..https://ld
+    product/246 | Table eggs, quota quantity | n=27 | https://ld..https://ld
+    product/251 | Dried egg products, allocated/importsed quantity | n=27 | https://ld..https://ld
+    product/252 | Liquid egg products, quota quantity | n=27 | https://ld..https://ld
+    product/250 | Dried egg products, quota quantity | n=27 | https://ld..https://ld
+    product/262 | Total, imports (inward processing traffic) | n=26 | https://ld..https://ld
+    product/155 | Egg products, AT | n=26 | https://ld..https://ld
+    product/154 | Egg products, IT | n=26 | https://ld..https://ld
+    product/261 | Dried egg products, imports (inward processing arrangements) | n=26 | https://ld..https://ld
+    product/153 | Egg products, FR | n=26 | https://ld..https://ld
+    product/150 | Egg products, NL | n=26 | https://ld..https://ld
+    product/98 | Egg products liquid, imports (less exports and returned goods) | n=26 | https://ld..https://ld
+    product/260 | Liquid egg products, imports (inward processing arrangements) | n=26 | https://ld..https://ld
+    product/109 | Egg products dried, imports (less exports and returned goods) | n=26 | https://ld..https://ld
+    product/151 | Egg products, DE | n=26 | https://ld..https://ld
+    product/1434 | Egg products, imports | n=26 | https://ld..https://ld
+    product/135 | Processing eggs, IT | n=24 | https://ld..https://ld
+    product/167 | Hatching eggs, FR | n=24 | https://ld..https://ld
+    product/132 | Processing eggs, NL | n=24 | https://ld..https://ld
+    product/133 | Processing eggs, DE | n=24 | https://ld..https://ld
+    product/117 | Table eggs, NL | n=24 | https://ld..https://ld
+    product/240 | Processing eggs, imports (less exports and returned goods) | n=24 | https://ld..https://ld
+    product/118 | Table eggs, DE | n=24 | https://ld..https://ld
+    product/119 | Table eggs, FR | n=24 | https://ld..https://ld
+    product/239 | Table eggs, imports (less exports and returned goods) | n=24 | https://ld..https://ld
+    product/1431 | Table eggs, imports | n=24 | https://ld..https://ld
+    product/1314 | Imports (less exports and returned goods), total | n=24 | https://ld..https://ld
+    product/1428 | Table eggs and Egg products, imports | n=24 | https://ld..https://ld
+    product/165 | Hatching eggs, NL | n=23 | https://ld..https://ld
+    product/134 | Processing eggs, FR | n=23 | https://ld..https://ld
+    product/259 | Processing eggs, imports (inward processing traffic) | n=22 | https://ld..https://ld
+    product/120 | Table eggs, IT | n=21 | https://ld..https://ld
+    product/160 | Egg products, Latin America | n=21 | https://ld..https://ld
+    product/166 | Hatching eggs, DE | n=18 | https://ld..https://ld
+    product/124 | Table eggs, ES | n=14 | https://ld..https://ld
+    product/178 | Table eggs, Asia | n=13 | https://ld..https://ld
+    product/169 | Hatching eggs, AT | n=13 | https://ld..https://ld
+    product/258 | Table eggs, imports (inward processing arrangements) | n=12 | https://ld..https://ld
+    product/122 | Table eggs, AT | n=11 | https://ld..https://ld
+    product/180 | Egg products, Asia | n=11 | https://ld..https://ld
+    product/136 | Processing eggs, AT | n=11 | https://ld..https://ld
+    product/157 | Egg products, ES | n=10 | https://ld..https://ld
+    product/170 | Hatching eggs, UK | n=10 | https://ld..https://ld
+    product/138 | Processing eggs, ES | n=8 | https://ld..https://ld
+    product/156 | Egg products, UK | n=7 | https://ld..https://ld
+    product/181 | Hatching eggs, Asia | n=5 | https://ld..https://ld
+    product/158 | Egg products, Europe non-EU | n=4 | https://ld..https://ld
+    product/125 | Table eggs, Europe non-EU | n=2 | https://ld..https://ld
+    product/129 | Table eggs, Africa | n=1 | https://ld..https://ld
+    product/162 | Egg products, Africa | n=1 | https://ld..https://ld
+    product/123 | Table eggs, UK | n=1 | https://ld..https://ld
+    product/179 | Processing eggs, Asia | n=1 | https://ld..https://ld
+    product/137 | Processing eggs, UK | n=1 | https://ld..https://ld
+CUBE Eggs/Production_Contribution_Year products 6
+    product/254 | Campaign for processing eggs, funds used | n=25 | https://ld..https://ld
+    product/255 | Discount campaign, funds used | n=25 | https://ld..https://ld
+    product/104 | Funds used, total | n=25 | https://ld..https://ld
+    product/256 | Campaign for processing eggs, available funds | n=16 | https://ld..https://ld
+    product/103 | Total funds available | n=16 | https://ld..https://ld
+    product/257 | Discount campaign, available funds | n=16 | https://ld..https://ld
+CUBE Eggs/Production_Percentage_Year products 4
+    product/143 | Organic, shell eggs, CH | n=19 | https://ld..https://ld
+    product/145 | Free range, shell eggs, CH | n=10 | https://ld..https://ld
+    product/146 | Free range/barn, shell eggs, CH | n=10 | https://ld..https://ld
+    product/144 | Free range, shell eggs, CH | n=10 | https://ld..https://ld
+CUBE Eggs/Production_Price_Month products 32
+    product/220 | Organic, <50g | n=128 | https://ld..https://ld
+    product/226 | Free range, 50-53g | n=128 | https://ld..https://ld
+    product/231 | Barn, 50-53g | n=128 | https://ld..https://ld
+    product/223 | Organic, 2nd class | n=128 | https://ld..https://ld
+    product/221 | Organic, 50-53g | n=128 | https://ld..https://ld
+    product/234 | Barn, weighted average | n=128 | https://ld..https://ld
+    product/229 | Free range, weighted average | n=128 | https://ld..https://ld
+    product/232 | Barn, >53g | n=128 | https://ld..https://ld
+    product/227 | Free range, >53g | n=128 | https://ld..https://ld
+    product/235 | All forms of production, weighted average | n=128 | https://ld..https://ld
+    product/233 | Barn, 2nd Class | n=128 | https://ld..https://ld
+    product/230 | Barn, <50g | n=128 | https://ld..https://ld
+    product/228 | Free range, 2nd Class | n=128 | https://ld..https://ld
+    product/225 | Free range, <50g | n=128 | https://ld..https://ld
+    product/224 | Organic, weighted average | n=128 | https://ld..https://ld
+    product/222 | Organic, >53g | n=128 | https://ld..https://ld
+    product/236 | All forms of production CH + imports, weighted average | n=116 | https://ld..https://ld
+    product/991 | Barn, AT, simple average | n=110 | https://ld..https://ld
+    product/976 | Barn, DE, simple average | n=68 | https://ld..https://ld
+    product/988 | Barn, NL, simple average | n=68 | https://ld..https://ld
+    product/983 | Free range, FR, simple average | n=68 | https://ld..https://ld
+    product/992 | Free range, AT, simple average | n=68 | https://ld..https://ld
+    product/977 | Free range, DE, simple average | n=68 | https://ld..https://ld
+    product/984 | Organic, FR, simple average | n=68 | https://ld..https://ld
+    product/993 | Organic, AT, simple average | n=68 | https://ld..https://ld
+    product/989 | Free range, NL, simple average | n=63 | https://ld..https://ld
+    product/985 | Barn, IT, simple average | n=63 | https://ld..https://ld
+    product/990 | Organic, NL, simple average | n=63 | https://ld..https://ld
+    product/979 | Barn, ES, simple average | n=58 | https://ld..https://ld
+    product/978 | Organic, DE, simple average | n=57 | https://ld..https://ld
+    product/980 | Free range, ES, simple average | n=56 | https://ld..https://ld
+    product/981 | Organic, ES, simple average | n=32 | https://ld..https://ld
+CUBE Eggs/Production_Price_Year products 44
+    product/192 | Free range, 53-63g, AT | n=27 | https://ld..https://ld
+    product/194 | Free range, 63-73g, AT | n=27 | https://ld..https://ld
+    product/254 | Campaign for processing eggs, funds used | n=25 | https://ld..https://ld
+    product/199 | Free range, >73g | n=25 | https://ld..https://ld
+    product/182 | Average contribution paid | n=25 | https://ld..https://ld
+    product/255 | Discount campaign, funds used | n=25 | https://ld..https://ld
+    product/196 | Barn, 53-63g, AT | n=18 | https://ld..https://ld
+    product/200 | Free range, >73g | n=18 | https://ld..https://ld
+    product/197 | Barn, 63-73g, AT | n=18 | https://ld..https://ld
+    product/189 | Organic, 53-63g, AT | n=17 | https://ld..https://ld
+    product/190 | Organic, 63-73g, AT | n=17 | https://ld..https://ld
+    product/198 | Organic, >73g | n=17 | https://ld..https://ld
+    product/220 | Organic, <50g | n=10 | https://ld..https://ld
+    product/226 | Free range, 50-53g | n=10 | https://ld..https://ld
+    product/231 | Barn, 50-53g | n=10 | https://ld..https://ld
+    product/223 | Organic, 2nd class | n=10 | https://ld..https://ld
+    product/221 | Organic, 50-53g | n=10 | https://ld..https://ld
+    product/234 | Barn, weighted average | n=10 | https://ld..https://ld
+    product/229 | Free range, weighted average | n=10 | https://ld..https://ld
+    product/232 | Barn, >53g | n=10 | https://ld..https://ld
+    product/227 | Free range, >53g | n=10 | https://ld..https://ld
+    product/235 | All forms of production, weighted average | n=10 | https://ld..https://ld
+    product/233 | Barn, 2nd Class | n=10 | https://ld..https://ld
+    product/225 | Free range, <50g | n=10 | https://ld..https://ld
+    product/230 | Barn, <50g | n=10 | https://ld..https://ld
+    product/224 | Organic, weighted average | n=10 | https://ld..https://ld
+    product/222 | Organic, >53g | n=10 | https://ld..https://ld
+    product/228 | Free range, 2nd Class | n=10 | https://ld..https://ld
+    product/991 | Barn, AT, simple average | n=9 | https://ld..https://ld
+    product/236 | All forms of production CH + imports, weighted average | n=9 | https://ld..https://ld
+    product/989 | Free range, NL, simple average | n=5 | https://ld..https://ld
+    product/979 | Barn, ES, simple average | n=5 | https://ld..https://ld
+    product/976 | Barn, DE, simple average | n=5 | https://ld..https://ld
+    product/988 | Barn, NL, simple average | n=5 | https://ld..https://ld
+    product/983 | Free range, FR, simple average | n=5 | https://ld..https://ld
+    product/985 | Barn, IT, simple average | n=5 | https://ld..https://ld
+    product/990 | Organic, NL, simple average | n=5 | https://ld..https://ld
+    product/992 | Free range, AT, simple average | n=5 | https://ld..https://ld
+    product/977 | Free range, DE, simple average | n=5 | https://ld..https://ld
+    product/984 | Organic, FR, simple average | n=5 | https://ld..https://ld
+    product/993 | Organic, AT, simple average | n=5 | https://ld..https://ld
+    product/978 | Organic, DE, simple average | n=5 | https://ld..https://ld
+    product/980 | Free range, ES, simple average | n=4 | https://ld..https://ld
+    product/981 | Organic, ES, simple average | n=2 | https://ld..https://ld
+CUBE Eggs/Production_Quantity_Year products 20
+    product/115 | Table eggs and egg products, USA | n=26 | https://ld..https://ld
+    product/1432 | Egg products, CH + imports | n=26 | https://ld..https://ld
+    product/254 | Campaign for processing eggs, funds used | n=25 | https://ld..https://ld
+    product/255 | Discount campaign, funds used | n=25 | https://ld..https://ld
+    product/237 | Total domestic production | n=25 | https://ld..https://ld
+    product/1427 | Table eggs and Egg products, CH | n=25 | https://ld..https://ld
+    product/1429 | Table eggs, CH + imports | n=24 | https://ld..https://ld
+    product/85 | Total consumption | n=24 | https://ld..https://ld
+    product/1426 | Table eggs and Egg products, CH + imports | n=24 | https://ld..https://ld
+    product/114 | Table eggs and egg products, EU | n=20 | https://ld..https://ld
+    product/143 | Organic, shell eggs, CH | n=19 | https://ld..https://ld
+    product/112 | Table eggs and egg products, DE | n=19 | https://ld..https://ld
+    product/113 | Table eggs and egg products, AT | n=18 | https://ld..https://ld
+    product/116 | Egg products, SGP | n=18 | https://ld..https://ld
+    product/1430 | Table eggs, CH | n=10 | https://ld..https://ld
+    product/241 | Domestic table eggs, total | n=10 | https://ld..https://ld
+    product/145 | Free range, shell eggs, CH | n=10 | https://ld..https://ld
+    product/105 | Total, table eggs, CH + imports | n=10 | https://ld..https://ld
+    product/146 | Free range/barn, shell eggs, CH | n=10 | https://ld..https://ld
+    product/144 | Free range, shell eggs, CH | n=10 | https://ld..https://ld
+CUBE Eggs/WholesaleProcessing_Quantity_Year products 5
+    product/107 | Barn, processing eggs, CH | n=10 | https://ld..https://ld
+    product/1433 | Egg products, CH | n=10 | https://ld..https://ld
+    product/238 | Total, processing eggs, CH | n=10 | https://ld..https://ld
+    product/108 | Free range/organic, processing eggs, CH | n=10 | https://ld..https://ld
+    product/110 | Processing eggs, CH + imports | n=10 | https://ld..https://ld
+CUBE Feed/Production_Price_Year products 31
+    product/893 | Feed oats, organic | n=16 | https://ld..https://ld
+    product/890 | Protein peas, organic, indicative prices | n=16 | https://ld..https://ld
+    product/887 | Field beans, organic, indicative prices | n=16 | https://ld..https://ld
+    product/882 | Feed wheat, organic, indicative prices | n=16 | https://ld..https://ld
+    product/895 | Feed maize, organic, indicative prices | n=16 | https://ld..https://ld
+    product/892 | Feed barley, organic, indicative prices | n=15 | https://ld..https://ld
+    product/834 | Feed oats, conv., CH | n=9 | https://ld..https://ld
+    product/894 | Feed oats, conv., indicative prices | n=9 | https://ld..https://ld
+    product/841 | Feed rye, conv., CH | n=9 | https://ld..https://ld
+    product/840 | Field beans, conv., CH | n=9 | https://ld..https://ld
+    product/835 | Triticale, conv., CH | n=9 | https://ld..https://ld
+    product/832 | Feed barley, conv., CH | n=9 | https://ld..https://ld
+    product/879 | Field beans, conv., indicative prices | n=9 | https://ld..https://ld
+    product/891 | Feed barley, conv., indicative prices | n=9 | https://ld..https://ld
+    product/839 | Protein peas, conv., CH | n=9 | https://ld..https://ld
+    product/880 | Feed maize, conv., indicative prices | n=9 | https://ld..https://ld
+    product/883 | Feed wheat, conv., indicative prices | n=9 | https://ld..https://ld
+    product/829 | Feed wheat, conv., CH | n=9 | https://ld..https://ld
+    product/836 | Feed maize, conv., CH | n=9 | https://ld..https://ld
+    product/889 | Protein peas, conv. | n=9 | https://ld..https://ld
+    product/885 | Lupins, conv., indicative prices | n=9 | https://ld..https://ld
+    product/877 | Soybeans, conv., CH | n=9 | https://ld..https://ld
+    product/833 | Feed barley, organic, CH | n=9 | https://ld..https://ld
+    product/838 | Feed maize, organic, CH | n=9 | https://ld..https://ld
+    product/830 | Feed wheat, organic, CH | n=9 | https://ld..https://ld
+    product/884 | White lupins, organic, indicative prices | n=6 | https://ld..https://ld
+    product/881 | Feed rye, organic, indicative prices | n=4 | https://ld..https://ld
+    product/842 | White lupins, conv., CH | n=4 | https://ld..https://ld
+    product/878 | Soybeans, conv., CH | n=3 | https://ld..https://ld
+    product/828 | Triticale, organic, CH | n=1 | https://ld..https://ld
+    product/837 | Protein peas, organic, CH | n=1 | https://ld..https://ld
+CUBE Feed/Production_Quantity_Year products 18
+    product/1320 | Bread wheat, unsuitable for baking | n=20 | https://ld..https://ld
+    product/1317 | Wheat for feed purposes, total | n=11 | https://ld..https://ld
+    product/1332 | Mixed feed cereals, total | n=11 | https://ld..https://ld
+    product/1323 | Feed Barley, total | n=11 | https://ld..https://ld
+    product/1335 | Feed maize, total | n=11 | https://ld..https://ld
+    product/1329 | Triticale, total | n=11 | https://ld..https://ld
+    product/1321 | Feed wheat | n=11 | https://ld..https://ld
+    product/1319 | Bread wheat downgraded | n=6 | https://ld..https://ld
+    product/1325 | Feed Barley, non-organic | n=5 | https://ld..https://ld
+    product/1330 | Triticale, organic | n=5 | https://ld..https://ld
+    product/1337 | Feed maize, non-organic | n=5 | https://ld..https://ld
+    product/1336 | Feed maize, organic | n=5 | https://ld..https://ld
+    product/1322 | Wheat for feed purposes, non-organic | n=5 | https://ld..https://ld
+    product/1333 | Mixed feed cereals, organic | n=5 | https://ld..https://ld
+    product/1331 | Triticale, non-organic | n=5 | https://ld..https://ld
+    product/1324 | Feed barley, organic | n=5 | https://ld..https://ld
+    product/1318 | Wheat for feed purposes, organic | n=5 | https://ld..https://ld
+    product/1334 | Mixed feed cereals, non-organic | n=5 | https://ld..https://ld
+CUBE Feed/WholesaleProcessing_Price_Month products 33
+    product/849 | Wheat bran, conv. | n=156 | https://ld..https://ld
+    product/850 | Rapeseed meal, conv. | n=156 | https://ld..https://ld
+    product/851 | Rapeseed cake, conv. | n=156 | https://ld..https://ld
+    product/845 | Feed barley, conv. | n=156 | https://ld..https://ld
+    product/844 | Feed wheat, conv. | n=156 | https://ld..https://ld
+    product/846 | Feed maize, conv. | n=156 | https://ld..https://ld
+    product/852 | Soybean meal, conv. | n=156 | https://ld..https://ld
+    product/847 | Feed oats, conv. | n=108 | https://ld..https://ld
+    product/848 | Triticale, conv. | n=108 | https://ld..https://ld
+    product/853 | Laying hens rearing, organic | n=30 | https://ld..https://ld
+    product/858 | Lactating sows, organic | n=30 | https://ld..https://ld
+    product/855 | Fattening pigs pre-fattening, organic | n=30 | https://ld..https://ld
+    product/856 | Fattening pigs finishing, organic | n=30 | https://ld..https://ld
+    product/862 | Laying hens, organic | n=30 | https://ld..https://ld
+    product/860 | Dairy cattle energy feed, organic | n=30 | https://ld..https://ld
+    product/859 | Piglet rearing, organic | n=30 | https://ld..https://ld
+    product/854 | Broiler chickens (integration), organic | n=30 | https://ld..https://ld
+    product/861 | Dairy cattle performance feed, organic | n=30 | https://ld..https://ld
+    product/869 | Pregnant sows, conv. | n=30 | https://ld..https://ld
+    product/868 | Fattening pigs finishing, conv. | n=30 | https://ld..https://ld
+    product/867 | Fattening pigs pre-fattening, conv. | n=30 | https://ld..https://ld
+    product/866 | Broiler chickens (integration), conv. | n=30 | https://ld..https://ld
+    product/874 | Dairy cattle performance feed 1, conv. | n=30 | https://ld..https://ld
+    product/863 | Laying hens rearing, conv. | n=30 | https://ld..https://ld
+    product/873 | Dairy cattle energy feed, conv. | n=30 | https://ld..https://ld
+    product/865 | Laying hens 2nd phase, conv. | n=30 | https://ld..https://ld
+    product/870 | Lactating sows, conv. | n=30 | https://ld..https://ld
+    product/864 | Laying hens 1st phase, conv. | n=30 | https://ld..https://ld
+    product/875 | Dairy cattle performance feed 2, conv. | n=30 | https://ld..https://ld
+    product/872 | Beef cattle, conv. | n=30 | https://ld..https://ld
+    product/876 | Dairy cattle protein concentrate, conv. | n=30 | https://ld..https://ld
+    product/871 | Piglet rearing, conv. | n=30 | https://ld..https://ld
+    product/857 | Pregnant sows, organic | n=30 | https://ld..https://ld
+CUBE Feed/WholesaleProcessing_Price_Year products 33
+    product/849 | Wheat bran, conv. | n=13 | https://ld..https://ld
+    product/850 | Rapeseed meal, conv. | n=13 | https://ld..https://ld
+    product/851 | Rapeseed cake, conv. | n=13 | https://ld..https://ld
+    product/845 | Feed barley, conv. | n=13 | https://ld..https://ld
+    product/846 | Feed maize, conv. | n=13 | https://ld..https://ld
+    product/844 | Feed wheat, conv. | n=13 | https://ld..https://ld
+    product/852 | Soybean meal, conv. | n=13 | https://ld..https://ld
+    product/847 | Feed oats, conv. | n=9 | https://ld..https://ld
+    product/848 | Triticale, conv. | n=9 | https://ld..https://ld
+    product/853 | Laying hens rearing, organic | n=2 | https://ld..https://ld
+    product/858 | Lactating sows, organic | n=2 | https://ld..https://ld
+    product/862 | Laying hens, organic | n=2 | https://ld..https://ld
+    product/860 | Dairy cattle energy feed, organic | n=2 | https://ld..https://ld
+    product/854 | Broiler chickens (integration), organic | n=2 | https://ld..https://ld
+    product/859 | Piglet rearing, organic | n=2 | https://ld..https://ld
+    product/861 | Dairy cattle performance feed, organic | n=2 | https://ld..https://ld
+    product/869 | Pregnant sows, conv. | n=2 | https://ld..https://ld
+    product/868 | Fattening pigs finishing, conv. | n=2 | https://ld..https://ld
+    product/866 | Broiler chickens (integration), conv. | n=2 | https://ld..https://ld
+    product/867 | Fattening pigs pre-fattening, conv. | n=2 | https://ld..https://ld
+    product/874 | Dairy cattle performance feed 1, conv. | n=2 | https://ld..https://ld
+    product/863 | Laying hens rearing, conv. | n=2 | https://ld..https://ld
+    product/873 | Dairy cattle energy feed, conv. | n=2 | https://ld..https://ld
+    product/865 | Laying hens 2nd phase, conv. | n=2 | https://ld..https://ld
+    product/870 | Lactating sows, conv. | n=2 | https://ld..https://ld
+    product/864 | Laying hens 1st phase, conv. | n=2 | https://ld..https://ld
+    product/875 | Dairy cattle performance feed 2, conv. | n=2 | https://ld..https://ld
+    product/872 | Beef cattle, conv. | n=2 | https://ld..https://ld
+    product/876 | Dairy cattle protein concentrate, conv. | n=2 | https://ld..https://ld
+    product/871 | Piglet rearing, conv. | n=2 | https://ld..https://ld
+    product/857 | Pregnant sows, organic | n=2 | https://ld..https://ld
+    product/856 | Fattening pigs finishing, organic | n=2 | https://ld..https://ld
+    product/855 | Fattening pigs pre-fattening, organic | n=2 | https://ld..https://ld
+CUBE FruitsVegetablesPotatoes/Consumption_Price_Month products 213
+    product/1024 | ? | n=992 | https://ld..https://ld
+    product/1253 | ? | n=992 | https://ld..https://ld
+    product/1025 | ? | n=992 | https://ld..https://ld
+    product/1028 | ? | n=992 | https://ld..https://ld
+    product/1021 | ? | n=992 | https://ld..https://ld
+    product/1273 | ? | n=992 | https://ld..https://ld
+    product/1283 | ? | n=992 | https://ld..https://ld
+    product/1026 | ? | n=992 | https://ld..https://ld
+    product/1030 | ? | n=992 | https://ld..https://ld
+    product/1020 | ? | n=992 | https://ld..https://ld
+    product/1279 | ? | n=992 | https://ld..https://ld
+    product/1258 | ? | n=992 | https://ld..https://ld
+    product/1019 | ? | n=992 | https://ld..https://ld
+    product/1000 | ? | n=992 | https://ld..https://ld
+    product/1013 | ? | n=992 | https://ld..https://ld
+    product/1008 | ? | n=992 | https://ld..https://ld
+    product/1009 | ? | n=992 | https://ld..https://ld
+    product/1001 | ? | n=992 | https://ld..https://ld
+    product/1264 | ? | n=992 | https://ld..https://ld
+    product/1277 | ? | n=992 | https://ld..https://ld
+    product/1287 | ? | n=992 | https://ld..https://ld
+    product/1280 | ? | n=992 | https://ld..https://ld
+    product/1272 | ? | n=992 | https://ld..https://ld
+    product/1261 | ? | n=992 | https://ld..https://ld
+    product/1265 | ? | n=992 | https://ld..https://ld
+    product/1011 | ? | n=992 | https://ld..https://ld
+    product/1245 | ? | n=992 | https://ld..https://ld
+    product/1259 | ? | n=992 | https://ld..https://ld
+    product/1015 | ? | n=992 | https://ld..https://ld
+    product/1003 | ? | n=992 | https://ld..https://ld
+    product/1061 | ? | n=992 | https://ld..https://ld
+    product/1070 | ? | n=992 | https://ld..https://ld
+    product/1014 | ? | n=992 | https://ld..https://ld
+    product/1282 | ? | n=992 | https://ld..https://ld
+    product/1288 | ? | n=992 | https://ld..https://ld
+    product/1263 | ? | n=992 | https://ld..https://ld
+    product/1281 | ? | n=992 | https://ld..https://ld
+    product/1290 | ? | n=992 | https://ld..https://ld
+    product/1012 | ? | n=991 | https://ld..https://ld
+    product/1267 | ? | n=990 | https://ld..https://ld
+    product/1107 | ? | n=988 | https://ld..https://ld
+    product/1129 | ? | n=988 | https://ld..https://ld
+    product/1121 | ? | n=988 | https://ld..https://ld
+    product/1076 | ? | n=988 | https://ld..https://ld
+    product/1109 | ? | n=988 | https://ld..https://ld
+    product/1073 | ? | n=987 | https://ld..https://ld
+    product/1289 | ? | n=984 | https://ld..https://ld
+    product/1078 | ? | n=984 | https://ld..https://ld
+    product/1010 | ? | n=983 | https://ld..https://ld
+    product/1067 | ? | n=983 | https://ld..https://ld
+    product/1086 | ? | n=980 | https://ld..https://ld
+    product/1124 | ? | n=980 | https://ld..https://ld
+    product/1141 | ? | n=980 | https://ld..https://ld
+    product/1132 | ? | n=973 | https://ld..https://ld
+    product/1057 | ? | n=970 | https://ld..https://ld
+    product/1027 | ? | n=969 | https://ld..https://ld
+    product/1122 | ? | n=967 | https://ld..https://ld
+    product/1111 | ? | n=967 | https://ld..https://ld
+    product/1095 | ? | n=963 | https://ld..https://ld
+    product/1130 | ? | n=963 | https://ld..https://ld
+    product/1106 | ? | n=949 | https://ld..https://ld
+    product/1017 | ? | n=947 | https://ld..https://ld
+    product/1071 | ? | n=941 | https://ld..https://ld
+    product/1059 | ? | n=932 | https://ld..https://ld
+    product/1165 | ? | n=923 | https://ld..https://ld
+    product/1270 | ? | n=920 | https://ld..https://ld
+    product/1050 | ? | n=919 | https://ld..https://ld
+    product/1131 | ? | n=894 | https://ld..https://ld
+    product/1115 | ? | n=893 | https://ld..https://ld
+    product/1152 | ? | n=886 | https://ld..https://ld
+    product/1136 | ? | n=866 | https://ld..https://ld
+    product/1083 | ? | n=865 | https://ld..https://ld
+    product/1091 | ? | n=865 | https://ld..https://ld
+    product/1064 | ? | n=863 | https://ld..https://ld
+    product/1072 | ? | n=853 | https://ld..https://ld
+    product/1138 | ? | n=851 | https://ld..https://ld
+    product/1262 | ? | n=843 | https://ld..https://ld
+    product/1108 | ? | n=837 | https://ld..https://ld
+    product/1134 | ? | n=829 | https://ld..https://ld
+    product/1082 | ? | n=828 | https://ld..https://ld
+CUBE FruitsVegetablesPotatoes/Consumption_Price_Year products 213
+    product/1064 | ? | n=80 | https://ld..https://ld
+    product/1024 | ? | n=80 | https://ld..https://ld
+    product/1081 | ? | n=80 | https://ld..https://ld
+    product/1253 | ? | n=80 | https://ld..https://ld
+    product/1107 | ? | n=80 | https://ld..https://ld
+    product/1136 | ? | n=80 | https://ld..https://ld
+    product/1152 | ? | n=80 | https://ld..https://ld
+    product/1173 | ? | n=80 | https://ld..https://ld
+    product/1143 | ? | n=80 | https://ld..https://ld
+    product/1165 | ? | n=80 | https://ld..https://ld
+    product/1028 | ? | n=80 | https://ld..https://ld
+    product/1025 | ? | n=80 | https://ld..https://ld
+    product/1030 | ? | n=80 | https://ld..https://ld
+    product/1273 | ? | n=80 | https://ld..https://ld
+    product/1021 | ? | n=80 | https://ld..https://ld
+    product/1289 | ? | n=80 | https://ld..https://ld
+    product/1283 | ? | n=80 | https://ld..https://ld
+    product/1026 | ? | n=80 | https://ld..https://ld
+    product/1279 | ? | n=80 | https://ld..https://ld
+    product/1258 | ? | n=80 | https://ld..https://ld
+    product/1019 | ? | n=80 | https://ld..https://ld
+    product/1020 | ? | n=80 | https://ld..https://ld
+    product/1086 | ? | n=80 | https://ld..https://ld
+    product/1000 | ? | n=80 | https://ld..https://ld
+    product/1013 | ? | n=80 | https://ld..https://ld
+    product/1275 | ? | n=80 | https://ld..https://ld
+    product/1082 | ? | n=80 | https://ld..https://ld
+    product/1215 | ? | n=80 | https://ld..https://ld
+    product/1006 | ? | n=80 | https://ld..https://ld
+    product/1238 | ? | n=80 | https://ld..https://ld
+    product/1004 | ? | n=80 | https://ld..https://ld
+    product/1008 | ? | n=80 | https://ld..https://ld
+    product/1270 | ? | n=80 | https://ld..https://ld
+    product/1271 | ? | n=80 | https://ld..https://ld
+    product/1264 | ? | n=80 | https://ld..https://ld
+    product/1278 | ? | n=80 | https://ld..https://ld
+    product/1001 | ? | n=80 | https://ld..https://ld
+    product/1005 | ? | n=80 | https://ld..https://ld
+    product/1277 | ? | n=80 | https://ld..https://ld
+    product/1262 | ? | n=80 | https://ld..https://ld
+    product/1088 | ? | n=80 | https://ld..https://ld
+    product/1077 | ? | n=80 | https://ld..https://ld
+    product/1027 | ? | n=80 | https://ld..https://ld
+    product/1268 | ? | n=80 | https://ld..https://ld
+    product/1078 | ? | n=80 | https://ld..https://ld
+    product/1280 | ? | n=80 | https://ld..https://ld
+    product/1083 | ? | n=80 | https://ld..https://ld
+    product/1022 | ? | n=80 | https://ld..https://ld
+    product/1122 | ? | n=80 | https://ld..https://ld
+    product/1108 | ? | n=80 | https://ld..https://ld
+    product/1061 | ? | n=80 | https://ld..https://ld
+    product/1070 | ? | n=80 | https://ld..https://ld
+    product/1015 | ? | n=80 | https://ld..https://ld
+    product/1265 | ? | n=80 | https://ld..https://ld
+    product/1129 | ? | n=80 | https://ld..https://ld
+    product/1084 | ? | n=80 | https://ld..https://ld
+    product/1057 | ? | n=80 | https://ld..https://ld
+    product/1287 | ? | n=80 | https://ld..https://ld
+    product/1138 | ? | n=80 | https://ld..https://ld
+    product/1272 | ? | n=80 | https://ld..https://ld
+    product/1011 | ? | n=80 | https://ld..https://ld
+    product/1245 | ? | n=80 | https://ld..https://ld
+    product/1050 | ? | n=80 | https://ld..https://ld
+    product/1124 | ? | n=80 | https://ld..https://ld
+    product/1014 | ? | n=80 | https://ld..https://ld
+    product/1039 | ? | n=80 | https://ld..https://ld
+    product/1286 | ? | n=80 | https://ld..https://ld
+    product/1288 | ? | n=80 | https://ld..https://ld
+    product/1259 | ? | n=80 | https://ld..https://ld
+    product/1290 | ? | n=80 | https://ld..https://ld
+    product/1261 | ? | n=80 | https://ld..https://ld
+    product/1117 | ? | n=80 | https://ld..https://ld
+    product/1018 | ? | n=80 | https://ld..https://ld
+    product/1017 | ? | n=80 | https://ld..https://ld
+    product/1003 | ? | n=80 | https://ld..https://ld
+    product/1282 | ? | n=80 | https://ld..https://ld
+    product/1263 | ? | n=80 | https://ld..https://ld
+    product/1010 | ? | n=80 | https://ld..https://ld
+    product/1056 | ? | n=80 | https://ld..https://ld
+    product/1012 | ? | n=80 | https://ld..https://ld
+CUBE FruitsVegetablesPotatoes/Import_Price_Month products 6
+    product/1023 | Crisps | n=116 | https://ld..https://ld
+    product/1016 | Canned potatoes (mashed potatoes, gratin, rösti, etc.) | n=116 | https://ld..https://ld
+    product/1007 | Frozen potato products (French fries, croquettes, pommes duchesse, etc.) | n=116 | https://ld..https://ld
+    product/996 | Table potatoes, without further specification | n=113 | https://ld..https://ld
+    product/1257 | Semi-finished products (dried potatoes, flakes, potato flour, semolina, etc.) | n=107 | https://ld..https://ld
+    product/1069 | Potatoes for transformation | n=80 | https://ld..https://ld
+CUBE FruitsVegetablesPotatoes/Import_Price_Year products 6
+    product/996 | Table potatoes, without further specification | n=9 | https://ld..https://ld
+    product/1023 | Crisps | n=9 | https://ld..https://ld
+    product/1257 | Semi-finished products (dried potatoes, flakes, potato flour, semolina, etc.) | n=9 | https://ld..https://ld
+    product/1007 | Frozen potato products (French fries, croquettes, pommes duchesse, etc.) | n=9 | https://ld..https://ld
+    product/1016 | Canned potatoes (mashed potatoes, gratin, rösti, etc.) | n=9 | https://ld..https://ld
+    product/1069 | Potatoes for transformation | n=4 | https://ld..https://ld
+CUBE FruitsVegetablesPotatoes/Import_Quantity_Month products 6
+    product/1016 | Canned potatoes (mashed potatoes, gratin, rösti, etc.) | n=232 | https://ld..https://ld
+    product/1023 | Crisps | n=232 | https://ld..https://ld
+    product/1007 | Frozen potato products (French fries, croquettes, pommes duchesse, etc.) | n=232 | https://ld..https://ld
+    product/996 | Table potatoes, without further specification | n=228 | https://ld..https://ld
+    product/1257 | Semi-finished products (dried potatoes, flakes, potato flour, semolina, etc.) | n=222 | https://ld..https://ld
+    product/1069 | Potatoes for transformation | n=216 | https://ld..https://ld
+CUBE FruitsVegetablesPotatoes/Import_Quantity_Year products 6
+    product/1023 | Crisps | n=18 | https://ld..https://ld
+    product/1016 | Canned potatoes (mashed potatoes, gratin, rösti, etc.) | n=18 | https://ld..https://ld
+    product/996 | Table potatoes, without further specification | n=18 | https://ld..https://ld
+    product/1257 | Semi-finished products (dried potatoes, flakes, potato flour, semolina, etc.) | n=18 | https://ld..https://ld
+    product/1007 | Frozen potato products (French fries, croquettes, pommes duchesse, etc.) | n=18 | https://ld..https://ld
+    product/1069 | Potatoes for transformation | n=8 | https://ld..https://ld
+CUBE MeatMeatProductsSausages/Production_Price_Month products 6
+    product/824 | Cow | n=2 | https://ld..https://ld
+    product/823 | Bovines | n=2 | https://ld..https://ld
+    product/826 | Bull | n=2 | https://ld..https://ld
+    product/827 | Ox | n=2 | https://ld..https://ld
+    product/821 | Calf | n=2 | https://ld..https://ld
+    product/825 | Lamb | n=2 | https://ld..https://ld
+CUBE MeatMeatProductsSausages/Production_Quantity_Year products 10
+    product/481 | Beef - All product groups - Supply | n=9 | https://ld..https://ld
+    product/559 | Pork - All product groups - Supply | n=9 | https://ld..https://ld
+    product/339 | All types of meat - All product groups - Supply | n=9 | https://ld..https://ld
+    product/408 | Rabbit - All product groups - Supply | n=9 | https://ld..https://ld
+    product/523 | Sheep - All product groups - Supply | n=9 | https://ld..https://ld
+    product/528 | Poultry - All product groups - Supply | n=9 | https://ld..https://ld
+    product/446 | Horse - All product groups - Supply | n=9 | https://ld..https://ld
+    product/359 | Veal - All product groups - Supply | n=9 | https://ld..https://ld
+    product/603 | Game - All product groups - Supply | n=9 | https://ld..https://ld
+    product/635 | Goat - All product groups - Supply | n=9 | https://ld..https://ld
+CUBE MilkDairyProducts/Consumption_Price_Month products 35
+    product/283 | ? | n=568 | https://ld..https://ld
+    product/268 | ? | n=568 | https://ld..https://ld
+    product/269 | ? | n=568 | https://ld..https://ld
+    product/292 | ? | n=568 | https://ld..https://ld
+    product/295 | ? | n=568 | https://ld..https://ld
+    product/311 | ? | n=568 | https://ld..https://ld
+    product/328 | ? | n=568 | https://ld..https://ld
+    product/287 | ? | n=568 | https://ld..https://ld
+    product/296 | ? | n=512 | https://ld..https://ld
+    product/68 | ? | n=474 | https://ld..https://ld
+    product/270 | ? | n=334 | https://ld..https://ld
+    product/322 | ? | n=320 | https://ld..https://ld
+    product/326 | ? | n=320 | https://ld..https://ld
+    product/293 | ? | n=320 | https://ld..https://ld
+    product/318 | ? | n=320 | https://ld..https://ld
+    product/321 | ? | n=320 | https://ld..https://ld
+    product/320 | ? | n=320 | https://ld..https://ld
+    product/331 | ? | n=320 | https://ld..https://ld
+    product/324 | ? | n=320 | https://ld..https://ld
+    product/285 | ? | n=320 | https://ld..https://ld
+    product/284 | ? | n=320 | https://ld..https://ld
+    product/69 | ? | n=312 | https://ld..https://ld
+    product/317 | ? | n=278 | https://ld..https://ld
+    product/325 | ? | n=264 | https://ld..https://ld
+    product/316 | ? | n=264 | https://ld..https://ld
+    product/330 | ? | n=264 | https://ld..https://ld
+    product/323 | ? | n=264 | https://ld..https://ld
+    product/319 | ? | n=264 | https://ld..https://ld
+    product/286 | ? | n=264 | https://ld..https://ld
+    product/329 | ? | n=264 | https://ld..https://ld
+    product/327 | ? | n=264 | https://ld..https://ld
+    product/332 | ? | n=248 | https://ld..https://ld
+    product/294 | ? | n=248 | https://ld..https://ld
+    product/297 | ? | n=248 | https://ld..https://ld
+    product/301 | ? | n=213 | https://ld..https://ld
+CUBE MilkDairyProducts/Consumption_Price_Year products 35
+    product/283 | ? | n=46 | https://ld..https://ld
+    product/268 | ? | n=46 | https://ld..https://ld
+    product/269 | ? | n=46 | https://ld..https://ld
+    product/292 | ? | n=46 | https://ld..https://ld
+    product/295 | ? | n=46 | https://ld..https://ld
+    product/311 | ? | n=46 | https://ld..https://ld
+    product/328 | ? | n=46 | https://ld..https://ld
+    product/287 | ? | n=46 | https://ld..https://ld
+    product/296 | ? | n=41 | https://ld..https://ld
+    product/68 | ? | n=39 | https://ld..https://ld
+    product/270 | ? | n=26 | https://ld..https://ld
+    product/322 | ? | n=26 | https://ld..https://ld
+    product/326 | ? | n=26 | https://ld..https://ld
+    product/318 | ? | n=26 | https://ld..https://ld
+    product/321 | ? | n=26 | https://ld..https://ld
+    product/331 | ? | n=26 | https://ld..https://ld
+    product/293 | ? | n=26 | https://ld..https://ld
+    product/320 | ? | n=26 | https://ld..https://ld
+    product/324 | ? | n=26 | https://ld..https://ld
+    product/69 | ? | n=26 | https://ld..https://ld
+    product/285 | ? | n=26 | https://ld..https://ld
+    product/284 | ? | n=26 | https://ld..https://ld
+    product/325 | ? | n=21 | https://ld..https://ld
+    product/316 | ? | n=21 | https://ld..https://ld
+    product/323 | ? | n=21 | https://ld..https://ld
+    product/330 | ? | n=21 | https://ld..https://ld
+    product/286 | ? | n=21 | https://ld..https://ld
+    product/319 | ? | n=21 | https://ld..https://ld
+    product/329 | ? | n=21 | https://ld..https://ld
+    product/327 | ? | n=21 | https://ld..https://ld
+    product/317 | ? | n=21 | https://ld..https://ld
+    product/294 | ? | n=20 | https://ld..https://ld
+    product/332 | ? | n=20 | https://ld..https://ld
+    product/297 | ? | n=20 | https://ld..https://ld
+    product/301 | ? | n=17 | https://ld..https://ld
+CUBE MilkDairyProducts/GastronomyWholesale_Price_Year products 15
+    product/336 | ? | n=5 | https://ld..https://ld
+    product/270 | ? | n=5 | https://ld..https://ld
+    product/268 | ? | n=5 | https://ld..https://ld
+    product/269 | ? | n=5 | https://ld..https://ld
+    product/292 | ? | n=5 | https://ld..https://ld
+    product/293 | ? | n=5 | https://ld..https://ld
+    product/334 | ? | n=5 | https://ld..https://ld
+    product/328 | ? | n=5 | https://ld..https://ld
+    product/294 | ? | n=5 | https://ld..https://ld
+    product/333 | ? | n=5 | https://ld..https://ld
+    product/297 | ? | n=5 | https://ld..https://ld
+    product/323 | ? | n=5 | https://ld..https://ld
+    product/287 | ? | n=5 | https://ld..https://ld
+    product/335 | ? | n=5 | https://ld..https://ld
+    product/311 | ? | n=5 | https://ld..https://ld
+CUBE MilkDairyProducts/Production_Index_Month products 1
+    product/281 | ? | n=199 | https://ld..https://ld
+CUBE MilkDairyProducts/Production_Index_Year products 1
+    product/281 | ? | n=16 | https://ld..https://ld
+CUBE MilkDairyProducts/Production_Price_Month products 21
+    product/271 | ? | n=2296 | https://ld..https://ld
+    product/272 | ? | n=1968 | https://ld..https://ld
+    product/280 | ? | n=1640 | https://ld..https://ld
+    product/274 | ? | n=1634 | https://ld..https://ld
+    product/273 | ? | n=1312 | https://ld..https://ld
+    product/275 | ? | n=724 | https://ld..https://ld
+    product/302 | ? | n=329 | https://ld..https://ld
+    product/313 | ? | n=318 | https://ld..https://ld
+    product/309 | ? | n=317 | https://ld..https://ld
+    product/310 | ? | n=317 | https://ld..https://ld
+    product/299 | ? | n=317 | https://ld..https://ld
+    product/308 | ? | n=248 | https://ld..https://ld
+    product/298 | ? | n=234 | https://ld..https://ld
+    product/303 | ? | n=209 | https://ld..https://ld
+    product/278 | ? | n=198 | https://ld..https://ld
+    product/276 | ? | n=198 | https://ld..https://ld
+    product/300 | ? | n=197 | https://ld..https://ld
+    product/279 | ? | n=176 | https://ld..https://ld
+    product/277 | ? | n=176 | https://ld..https://ld
+    product/337 | ? | n=54 | https://ld..https://ld
+    product/312 | ? | n=54 | https://ld..https://ld
+CUBE MilkDairyProducts/Production_Price_Year products 25
+    product/271 | ? | n=182 | https://ld..https://ld
+    product/272 | ? | n=156 | https://ld..https://ld
+    product/280 | ? | n=130 | https://ld..https://ld
+    product/274 | ? | n=130 | https://ld..https://ld
+    product/273 | ? | n=104 | https://ld..https://ld
+    product/275 | ? | n=58 | https://ld..https://ld
+    product/302 | ? | n=27 | https://ld..https://ld
+    product/309 | ? | n=26 | https://ld..https://ld
+    product/310 | ? | n=26 | https://ld..https://ld
+    product/299 | ? | n=26 | https://ld..https://ld
+    product/313 | ? | n=26 | https://ld..https://ld
+    product/308 | ? | n=20 | https://ld..https://ld
+    product/298 | ? | n=19 | https://ld..https://ld
+    product/305 | ? | n=18 | https://ld..https://ld
+    product/307 | ? | n=18 | https://ld..https://ld
+    product/304 | ? | n=18 | https://ld..https://ld
+    product/306 | ? | n=18 | https://ld..https://ld
+    product/303 | ? | n=17 | https://ld..https://ld
+    product/300 | ? | n=16 | https://ld..https://ld
+    product/278 | ? | n=16 | https://ld..https://ld
+    product/276 | ? | n=16 | https://ld..https://ld
+    product/279 | ? | n=14 | https://ld..https://ld
+    product/277 | ? | n=14 | https://ld..https://ld
+    product/312 | ? | n=3 | https://ld..https://ld
+    product/337 | ? | n=2 | https://ld..https://ld
+CUBE MilkDairyProducts/Production_Quantity_Month products 5
+    product/271 | ? | n=317 | https://ld..https://ld
+    product/273 | ? | n=197 | https://ld..https://ld
+    product/277 | ? | n=149 | https://ld..https://ld
+    product/279 | ? | n=149 | https://ld..https://ld
+    product/337 | ? | n=71 | https://ld..https://ld
+CUBE MilkDairyProducts/Production_Quantity_Year products 5
+    product/271 | ? | n=26 | https://ld..https://ld
+    product/273 | ? | n=16 | https://ld..https://ld
+    product/277 | ? | n=12 | https://ld..https://ld
+    product/279 | ? | n=12 | https://ld..https://ld
+    product/337 | ? | n=4 | https://ld..https://ld
+CUBE MilkDairyProducts/WholesaleProcessing_Index_Month products 1
+    product/282 | ? | n=199 | https://ld..https://ld
+CUBE MilkDairyProducts/WholesaleProcessing_Index_Year products 1
+    product/282 | ? | n=16 | https://ld..https://ld
+CUBE MilkDairyProducts/WholesaleProcessing_Price_Month products 5
+    product/290 | ? | n=366 | https://ld..https://ld
+    product/315 | ? | n=318 | https://ld..https://ld
+    product/288 | ? | n=227 | https://ld..https://ld
+    product/289 | ? | n=212 | https://ld..https://ld
+    product/291 | ? | n=212 | https://ld..https://ld
+CUBE MilkDairyProducts/WholesaleProcessing_Price_Year products 5
+    product/290 | ? | n=30 | https://ld..https://ld
+    product/315 | ? | n=26 | https://ld..https://ld
+    product/288 | ? | n=18 | https://ld..https://ld
+    product/289 | ? | n=17 | https://ld..https://ld
+    product/291 | ? | n=17 | https://ld..https://ld
+CUBE Oilseeds/Consumption_Price_Month products 5
+    product/1306 | Rapeseed oil, organic, import | n=20 | https://ld..https://ld
+    product/1299 | Rapeseed oil, non-organic, CH | n=20 | https://ld..https://ld
+    product/1309 | Sunflower oil, non-organic, import | n=20 | https://ld..https://ld
+    product/1300 | Sunflower oil, non-organic, CH | n=20 | https://ld..https://ld
+    product/1308 | Sunflower oil, organic, import | n=18 | https://ld..https://ld
+CUBE Oilseeds/Consumption_Price_Year products 7
+    product/1306 | Rapeseed oil, organic, import | n=6 | https://ld..https://ld
+    product/1299 | Rapeseed oil, non-organic, CH | n=6 | https://ld..https://ld
+    product/1308 | Sunflower oil, organic, import | n=6 | https://ld..https://ld
+    product/1302 | Sunflower oil, organic, CH | n=6 | https://ld..https://ld
+    product/1309 | Sunflower oil, non-organic, import | n=6 | https://ld..https://ld
+    product/1300 | Sunflower oil, non-organic, CH | n=6 | https://ld..https://ld
+    product/1307 | Rapeseed oil, non-organic, import | n=4 | https://ld..https://ld
+CUBE Oilseeds/Production_Price_Year products 11
+    product/1304 | Sunflower, conv., CH | n=10 | https://ld..https://ld
+    product/1313 | Sunflower, organic, CH | n=10 | https://ld..https://ld
+    product/1312 | Rapeseed, HOLL, IP, CH | n=9 | https://ld..https://ld
+    product/1303 | Rapeseed, HOLL, conv., CH | n=9 | https://ld..https://ld
+    product/1311 | Rapeseed, IP, CH | n=9 | https://ld..https://ld
+    product/1294 | Rapeseed, conv., CH | n=9 | https://ld..https://ld
+    product/1297 | Rapeseed, organic, CH | n=9 | https://ld..https://ld
+    product/1305 | Sunflower, HO, non-organic, CH | n=9 | https://ld..https://ld
+    product/1310 | Rapeseed, HOLL, bio, CH | n=1 | https://ld..https://ld
+    product/1296 | Sunflower, HO, bio, CH | n=1 | https://ld..https://ld
+    product/1295 | Sunflower, IP, CH | n=1 | https://ld..https://ld
+CUBE Oilseeds/Production_Quantity_Year products 12
+    product/1417 | Rapeseed, HOLL, (incl. organic) | n=11 | https://ld..https://ld
+    product/1414 | Rapeseed, total | n=11 | https://ld..https://ld
+    product/1421 | Sunflower, HO, (incl. organic) | n=11 | https://ld..https://ld
+    product/1420 | Sunflower, non-organic | n=11 | https://ld..https://ld
+    product/1418 | Sunflower, total | n=11 | https://ld..https://ld
+    product/1419 | Sunflower, organic | n=11 | https://ld..https://ld
+    product/1422 | Soybeans, total | n=11 | https://ld..https://ld
+    product/1415 | Rapeseed, organic | n=5 | https://ld..https://ld
+    product/1416 | Rapeseed, non-organic | n=5 | https://ld..https://ld
+    product/1425 | Soybeans, for human consumption, organic | n=5 | https://ld..https://ld
+    product/1423 | Soybeans, organic | n=5 | https://ld..https://ld
+    product/1424 | Soybeans, non-organic | n=5 | https://ld..https://ld
+CUBE ProteinCrops/Production_Quantity_Year products 30
+    product/1369 | Lupins, total | n=11 | https://ld..https://ld
+    product/1341 | Protein peas, total | n=11 | https://ld..https://ld
+    product/1366 | Fava beans, total | n=11 | https://ld..https://ld
+    product/1347 | Lentils, total | n=9 | https://ld..https://ld
+    product/1344 | Mix with cereals, total | n=9 | https://ld..https://ld
+    product/1370 | Lupins, organic | n=5 | https://ld..https://ld
+    product/1349 | Lentils, non-organic | n=5 | https://ld..https://ld
+    product/1342 | Lupins, non-organic | n=5 | https://ld..https://ld
+    product/1348 | Lentils, organic | n=5 | https://ld..https://ld
+    product/1367 | Fava beans, organic | n=5 | https://ld..https://ld
+    product/1352 | Protein peas, organic | n=5 | https://ld..https://ld
+    product/1368 | Fava beans, non-organic | n=5 | https://ld..https://ld
+    product/1346 | Mix with cereals, non-organic | n=5 | https://ld..https://ld
+    product/1345 | Mix with cereals, organic | n=5 | https://ld..https://ld
+    product/1360 | Protein peas, non-organic | n=5 | https://ld..https://ld
+    product/1364 | Lupins for food purposes, non-organic | n=2 | https://ld..https://ld
+    product/1363 | Lupins for food purposes, organic | n=2 | https://ld..https://ld
+    product/1343 | Lupins for food purposes, total | n=2 | https://ld..https://ld
+    product/1351 | Lentils with cereals/camelina, organic | n=2 | https://ld..https://ld
+    product/1357 | Fava beans for food purposes, total | n=2 | https://ld..https://ld
+    product/1350 | Lentils with cereals/camelina, total | n=2 | https://ld..https://ld
+    product/1361 | Protein peas for food purposes, organic | n=2 | https://ld..https://ld
+    product/1354 | Chickpeas, total | n=2 | https://ld..https://ld
+    product/1353 | Lentils with cereals/camelina, non-organic | n=2 | https://ld..https://ld
+    product/1362 | Protein peas for food purposes, non-organic | n=2 | https://ld..https://ld
+    product/1365 | Protein peas for food purposes, total | n=2 | https://ld..https://ld
+    product/1356 | Chickpeas, non-organic | n=2 | https://ld..https://ld
+    product/1355 | Chickpeas, organic | n=2 | https://ld..https://ld
+    product/1358 | Fava beans for food purposes, organic | n=1 | https://ld..https://ld
+    product/1359 | Fava beans for food purposes, non-organic | n=1 | https://ld..https://ld
+LINDAS https://lindas.admin.ch/agroscope/cube | https://agriculture.ld.admin.ch/agroscope/BLW_t_01/1 | None
+LINDAS https://lindas.admin.ch/elcom/electricityprice | https://energy.ld.admin.ch/elcom/electricityprice-swiss | Median electricity tariff for Switzerland
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Consumption_Price_Month | Market figures milk and dairy products - Monthly consumer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Index_Year | Market figures milk and dairy products - Annual index (production)
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Consumption_Price_Year | Market figures milk and dairy products - Annual consumer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Index_Month | Market figures milk and dairy products - Monthly index (production)
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Price_Month | Market figures milk and dairy products - Monthly producer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Price_Year | Market figures milk and dairy products - Annual producer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Quantity_Month | Market figures milk and dairy products - Monthly production quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Index_Month | Market figures milk and dairy products - Monthly price indices (wholesale/processing)
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Index_Year | Market figures milk and dairy products - Annual price indices (wholesale/processing)
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Quantity_Year | Market figures milk and dairy products - Annual production quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Price_Month | Market figures milk and dairy products - Monthly wholesale/processing prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Price_Year | Market figures milk and dairy products - Annual wholesale/processing prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Consumption_Price_Month | Market figures eggs - Monthly consumer prices 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Import_Price_Month | Market figures eggs - Monthly import prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Consumption_Price_Year | Market figures eggs - Annual consumer prices 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Import_Price_Year | Market figures eggs - Annual import prices 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Contribution_Year | Market figures eggs - Annual funds available and contributions
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/GastronomyWholesale_Price_Year | Market figures eggs - Annual  catering wholesale prices 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Import_Quantity_Year | Market figures eggs - Annual import quantities 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Price_Month | Market figures eggs - Monthly producer prices 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Price_Year | Market figures eggs - Annual producer prices 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Quantity_Year | Market figures eggs - Annual production quantitites 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/WholesaleProcessing_Quantity_Year | Market figures eggs - Annual wholesale/processing quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Export_Quantity_Year | Market figures eggs - Annual export quantities 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Percentage_Year | Market figures eggs - Annual market structure (production)
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MeatMeatProductsSausages/Production_Quantity_Year | Market figures meat, meat products, and sausages - Annual production quantitites 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Consumption_Price_Month | Market figures for bread cereals - Monthly consumer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Consumption_Price_Year | Market figures for bread cereals - Annual consumer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Production_Price_Year | Market figures for bread cereals - Annual gross producer prices, reference prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Production_Quantity_Year | Market figures for bread cereals - Annual production quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Year | Market figures for bread cereals - Annual processing prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Month | Market figures for bread cereals - Monthly processing prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Feed/WholesaleProcessing_Price_Year | Market figures for feedstuffs - Annual processing prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Feed/WholesaleProcessing_Price_Month | Market figures for feedstuffs - Monthly processing prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Feed/Production_Quantity_Year | Market figures for feedstuffs - Annual production quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Feed/Production_Price_Year | Market figures for feedstuffs - Annual gross producer prices, reference prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Consumption_Price_Year | Market figures for oilseeds - Annual consumer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Consumption_Price_Month | Market figures for oilseeds - Monthly consumer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Production_Quantity_Year | Market figures for oilseeds - Annual production quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Production_Price_Year | Market figures for oilseeds - Annual processing prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/ProteinCrops/Production_Quantity_Year | Market figures for protein crops - Annual production quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Consumption_Price_Year | Market figures fruit, vegetables, and potatoes - Annual consumer prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Consumption_Price_Month | Market figures fruit, vegetables, and potatoes - Monthly consumer prices
+LINDAS https://lindas.admin.ch/foen/cube | https://environment.ld.admin.ch/foen/holzfluss/2 | Wood flow model in Switzerland
+LINDAS https://lindas.admin.ch/foen/cube | https://environment.ld.admin.ch/foen/holzfluss/3 | Wood flow model in Switzerland
+LINDAS https://lindas.admin.ch/foen/cube | https://environment.ld.admin.ch/foen/holzfluss/1 | Wood flow model in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/animaldisease | https://agriculture.ld.admin.ch/fsvo/animal-disease | None
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/fleko/1 | meat control
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/fleko_mergedCattle/1 | meat control
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/Fleko_ProYearSpecies/1 | Meat inspection per year and animal species
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/Fleko_ProYearSpecies/2 | Meat inspection per year and animal species
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/Fleko_ProYearSpecies/3 | Meat inspection per year and animal species
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/fleko_ProYearSpeciesCanton/1 | meat inspection by canton and species over time
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/fleko_ProYearSpeciesCanton/2 | meat inspection by canton and species over time
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/fleko_ProYearSpeciesCanton/3 | meat inspection by canton and species over time
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_ProYear_TypeOfSlaughter/1 | Number of slaughterings by type of slaughter
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_ProYear_TypeOfSlaughter/2 | Number of slaughterings by type of slaughter
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/2 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_inspection_ProCanton_TypeOfSlaughter/1 | Meat inspection per type of Slaughter and Canton
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_inspection_ProCanton_TypeOfSlaughter/2 | Meat inspection per type of Slaughter and Canton
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_inspection_ProCanton_TypeOfSlaughter/3 | Meat inspection per type of Slaughter and Canton
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/3 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/4 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/5 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/6 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/6 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/7 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/8 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/9 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/10 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_ProYear_TypeOfSlaughter/3 | Number of slaughterings by type of slaughter
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_inspection_ProCanton_TypeOfSlaughter/4 | Meat inspection per type of Slaughter and Canton
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/7 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/11 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/12 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_inspection_ProCanton_TypeOfSlaughter/5 | Meat inspection per type of Slaughter and Canton
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/8 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/9 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/10 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/13 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/11 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/14 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/14 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/15 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/16 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/17 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/18 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/19 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/20 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/21 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/12 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/22 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/23 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_inspection_ProCanton_TypeOfSlaughter/6 | Meat inspection per type of Slaughter and Canton
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/24 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/1 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/1 | Bovine viral diarrhea: Number of establishments by color
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/2 | Bovine viral diarrhea: Number of establishments by color
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/3 | Bovine viral diarrhea: Number of establishments by color
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/4 | Bovine viral diarrhea: Number of establishments by risk
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/5 | Bovine viral diarrhea - Weekly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/6 | Bovine viral diarrhea - Weekly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/7 | Bovine viral diarrhea - Weekly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/8 | Bovine viral diarrhea - Weekly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/9 | Bovine viral diarrhea - Weekly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/10 | Bovine viral diarrhea - Weekly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/11 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/12 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/13 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/1 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/2 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/3 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/4 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/BT_entwicklung/5 | Development of Bluetongue cases in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_diff_green_per_week/2 | Bovine viral diarrhea - Weekly variation of establishments with negligible risk
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_diff_green_per_week/3 | Bovine viral diarrhea - Weekly variation of establishments with negligible risk
+LINDAS https://lindas.admin.ch/fsvo/rabies | https://agriculture.ld.admin.ch/foen/rabies | None
+LINDAS https://lindas.admin.ch/sfoe/cube | https://energy.ld.admin.ch/sfoe/bfe_ogd115_gest_bilanz/6 | Switzerland energy balance
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/2 | Overview of radio programme services in Switzerland
+LINDAS https://lindas.admin.ch/sfa/cube | https://culture.ld.admin.ch/sfa/stapfer-enquete-1799/4 | The Stapfer-Enquête: schooling in Switzerland 1799 (RDF)
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_reach_switzerland/1 | None
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_user_age_switzerland/1 | None
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/7 | Use of radio programmes in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/3 | None
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/1 | Overview of radio programme services in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/1 | Use of radio programmes in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/2 | Use of radio programmes in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/3 | Use of radio programmes in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/4 | Use of radio programmes in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/5 | Use of radio programmes in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/6 | Use of radio programmes in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/1 | None
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/2 | None
+LINDAS https://lindas.admin.ch/sfa/cube | https://culture.ld.admin.ch/sfa/stapfer-enquete-1799/3 | The Stapfer-Enquête: schooling in Switzerland 1799 (RDF)
+LINDAS https://lindas.admin.ch/sfa/cube | https://culture.ld.admin.ch/sfa/stapfer-enquete-1799/1/ | The Stapfer-Enquête: schooling in Switzerland 1799
+LINDAS https://lindas.admin.ch/sfa/cube | https://culture.ld.admin.ch/sfa/stapfer-enquete-1799/2 | The Stapfer-Enquête: schooling in Switzerland 1799 (RDF)
+LINDAS https://lindas.admin.ch/sfoe/cube | https://energy.ld.admin.ch/sfoe/bfe_ogd115_gest_bilanz/2 | Switzerland energy balance
+LINDAS https://lindas.admin.ch/sfoe/cube | https://energy.ld.admin.ch/sfoe/bfe_ogd115_gest_bilanz/1 | Switzerland energy balance
+LINDAS https://lindas.admin.ch/sfoe/cube | https://energy.ld.admin.ch/sfoe/bfe_ogd115_gest_bilanz/3 | Switzerland energy balance
+LINDAS https://lindas.admin.ch/sfoe/cube | https://energy.ld.admin.ch/sfoe/bfe_ogd115_gest_bilanz/4 | Switzerland energy balance
+LINDAS https://lindas.admin.ch/sfoe/cube | https://energy.ld.admin.ch/sfoe/bfe_ogd115_gest_bilanz/5 | Switzerland energy balance
+LINDAS https://lindas.admin.ch/foca/cube | https://transport.ld.admin.ch/foca/Passenger_statistics/2 | Passenger on aerodromes and mountain landing sites
+LINDAS https://lindas.admin.ch/foca/cube | https://transport.ld.admin.ch/foca/Passenger_statistics/1 | Passenger on aerodromes and mountain landing sites
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/25 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/3 | Overview of radio programme services in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/1 | Overview of television programme services in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/26 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/3 | Overview of television programme services in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/2 | Overview of television programme services in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/4 | Overview of radio programme services in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/4 | Overview of television programme services in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/27 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/28 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/5 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/5 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/6 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/6 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/3 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/4 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/5 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/7 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/7 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/6 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/8 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/8 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/7 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/8 | Radio consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/4 | TV consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/9 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/9 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/8 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/10 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/9 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/10 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/9 | Radio consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/10 | Radio consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/5 | TV consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/11 | Radio consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/12 | Radio consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/11 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/10 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/12 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/6 | TV consumption in Switzerland
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Quantity_Year | Market figures fruit, vegetables, and potatoes - Annual import quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Quantity_Month | Market figures fruit, vegetables, and potatoes - Monthly import quantities
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Price_Year | Market figures fruit, vegetables, and potatoes - Annual import prices 
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Price_Month | Market figures fruit, vegetables, and potatoes - Monthly import prices
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/GastronomyWholesale_Price_Year | Market figures for milk and dairy products – Annual catering wholesale prices
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/11 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/7 | TV consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_overview/13 | Overview of radio stations in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_programs_switzerland/12 | Overview of TV channels in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/print_media_offerings/11 | Overview of print media offerings in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/radio_usage_switzerland/13 | Radio consumption in Switzerland
+LINDAS https://lindas.admin.ch/ofcom/cube | https://communication.ld.admin.ch/ofcom/tv_usage_switzerland/8 | TV consumption in Switzerland
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/29 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/foca/cube | https://transport.ld.admin.ch/foca/Passenger_statistics/3 | Passenger on aerodromes and mountain landing sites
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_Inspection_Stats/13 | Meat Inspection statistics
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/meat_inspection_ProCanton_TypeOfSlaughter/7 | Meat inspection per type of Slaughter and Canton
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/30 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/fsvo/cube | https://health.ld.admin.ch/fsvo/bvd_entwicklung/31 | Bovine viral diarrhea - Monthly variation of establishments
+LINDAS https://lindas.admin.ch/foag/agricultural-market-data | https://agriculture.ld.admin.ch/foag/cube/MeatMeatProductsSausages/Production_Price_Month | Market figures meat, meat products, and sausages - Monthly producer prices
+ODS bundesamt-fur-landwirtschaft-blw count 122 start 0
+    bundesamt-fur-landwi | marktzahlen-fleisch-fleischwaren-und-wurstwaren-monatliche-produzentenpreise | Market figures meat, meat products, and sausages - Monthly producer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-und-milchprodukte-jahrliche-gastrogrosshandelspreise | Market figures for milk and dairy products – Annual catering wholesale prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-fruchte-gemuse-und-kartoffeln-monatliche-importpreise | Market figures fruit, vegetables, and potatoes - Monthly import prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-fruchte-gemuse-und-kartoffeln-jahrliche-importpreise | Market figures fruit, vegetables, and potatoes - Annual import prices  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-fruchte-gemuse-und-kartoffeln-monatliche-importmenge | Market figures fruit, vegetables, and potatoes - Monthly import quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-fruchte-gemuse-und-kartoffeln-jahrliche-importmenge | Market figures fruit, vegetables, and potatoes - Annual import quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-fruchte-gemuse-und-kartoffeln-monatliche-konsumentenpreise | Market figures fruit, vegetables, and potatoes - Monthly consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-fruchte-gemuse-und-kartoffeln-jahrliche-konsumentenpreise | Market figures fruit, vegetables, and potatoes - Annual consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eiweisspflanzen-jahrliche-produktionsmengen | Market figures for protein crops - Annual production quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-olsaaten-jahrliche-verarbeitungspreise | Market figures for oilseeds - Annual processing prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-olsaaten-jahrliche-produktionsmengen | Market figures for oilseeds - Annual production quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-olsaaten-monatliche-konsumentenpreise | Market figures for oilseeds - Monthly consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-olsaaten-jahrliche-konsumentenpreise | Market figures for oilseeds - Annual consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-futtermittel-jahrliche-bruttoproduzentenpreise-richtpreise | Market figures for feedstuffs - Annual gross producer prices, reference prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-futtermittel-jahrliche-produktionsmengen | Market figures for feedstuffs - Annual production quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-futtermittel-monatliche-verarbeitungspreise | Market figures for feedstuffs - Monthly processing prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-futtermittel-jahrliche-verarbeitungspreise | Market figures for feedstuffs - Annual processing prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-brotgetreide-monatliche-verarbeitungspreise | Market figures for bread cereals - Monthly processing prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-brotgetreide-jahrliche-verarbeitungspreise | Market figures for bread cereals - Annual processing prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-brotgetreide-jahrliche-produktionsmengen | Market figures for bread cereals - Annual production quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-brotgetreide-jahrliche-bruttoproduzentenpreise-richtpreise | Market figures for bread cereals - Annual gross producer prices, reference prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-brotgetreide-jahrliche-konsumentenpreise | Market figures for bread cereals - Annual consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-brotgetreide-monatliche-konsumentenpreise | Market figures for bread cereals - Monthly consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-fleisch-fleischwaren-und-wurstwaren-jahrliche-produktionsmengen | Market figures meat, meat products, and sausages - Annual production quantitites  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-jahrliche-marktstruktur-produktion | Market figures eggs - Annual market structure (production) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-jahrliche-exportmengen | Market figures eggs - Annual export quantities  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-8 | Market figures eggs - Annual wholesale/processing quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-3 | Market figures eggs - Annual production quantitites  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-4 | Market figures eggs - Annual producer prices  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-7 | Market figures eggs - Monthly producer prices  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-9 | Market figures eggs - Annual import quantities  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-1 | Market figures eggs - Annual  catering wholesale prices  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-10 | Market figures eggs - Annual funds available and contributions | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-2 | Market figures eggs - Annual import prices  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-5 | Market figures eggs - Annual consumer prices  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier | Market figures eggs - Monthly import prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-eier-6 | Market figures eggs - Monthly consumer prices  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-5 | Market figures milk and dairy products - Annual wholesale/processing prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-8 | Market figures milk and dairy products - Monthly wholesale/processing prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-6 | Market figures milk and dairy products - Annual production quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-3 | Market figures milk and dairy products - Annual price indices (wholesale/processing) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-1 | Market figures milk and dairy products - Monthly price indices (wholesale/processing) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-2 | Market figures milk and dairy products - Monthly production quantities | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-10 | Market figures milk and dairy products - Annual producer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte | Market figures milk and dairy products - Monthly producer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-4 | Market figures milk and dairy products - Monthly index (production) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-11 | Market figures milk and dairy products - Annual consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-7 | Market figures milk and dairy products - Annual index (production) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | marktzahlen-milch-undmilchprodukte-9 | Market figures milk and dairy products - Monthly consumer prices | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['SPARQL'] | 2026-10-09
+    bundesamt-fur-landwi | pflanzensorten-in-der-schweiz | Plant varieties in Switzerland | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['JSON'] | 2026-10-01
+    bundesamt-fur-landwi | dataset-der-direktzahlungskultur-bzw-hauptkulturen | Dataset of the Direct payment crops or main crops | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XML'] | 2024-09-09
+    bundesamt-fur-landwi | rebflachen-in-hanglagen | Viticulture on slopes | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2013-01-01
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-ubersicht | Climate suitability map for agriculture - Overview | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | hanglagen | Hillsides and slopes | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2013-01-01
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-wasserspeichervermogen | Digital soil suitability map of Switzerland - Water storage capacity | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2012-07-01
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-niederschlage | Climate suitability map for agriculture - Precipitation | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | bergprodukte | Mountain products | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | gewasseranschlusskarte-anschlusswahrscheinlichkeit | Water connection map, probability of connection | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-kulturland | Climate suitability map for agriculture - Cultivated land | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | landwirtschaftliche-nutzungsflachen-schweiz | Landwirtschaftliche Nutzungsflächen Schweiz | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['', 'API', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | hanglagen-abschwemmung | Hanglagen Abschwemmung | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-kulturland | Digital soil suitability map of Switzerland - Cultivated land | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2000-12-31
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-getreidebau | Climate suitability map for agriculture - Cereal crops | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-kornermais | Climate suitability map for agriculture - Maize | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-sommer-zwischenfruchtbau | Climate suitability map for agriculture - Summer catch crops | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-konditoreiware | Register of designations of origin (PDO) and geographical indications (PGI) - confectionery | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2009-12-16
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-nahrstoffspeichervermogen | Digital soil suitability map of Switzerland - Nutrient storage capacity | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2012-07-01
+    bundesamt-fur-landwi | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-spirituosen | Register of designations of origin (PDO) and geographical indications (PGI) - spirits | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2009-12-16
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-kartoffeln | Climate suitability map for agriculture - Potatoes | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | alpprodukte | Alpine products | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-pflanzliche-produkte | Register of designations of origin (PDO) and geographical indications (PGI) - products of plant origin | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2009-12-16
+    bundesamt-fur-landwi | regionen-der-marktbeobachtung-milch-und-milchprodukte | Regionen der Marktbeobachtung Milch und Milchprodukte | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | fliesswegkarte-zum-erosionsrisiko | Flow-path map for erosion risk | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-kase | Register of designations of origin (PDO) and geographical indications (PGI) - cheese | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2009-12-16
+    bundesamt-fur-landwi | gewasseranschlusskarte-direkt-und-indirekt-anschlusswahrscheinlichkeit | Water connection map, direct and indirect, probability of connection | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-fleischware | Register of designations of origin (PDO) and geographical indications (PGI) - meat products | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2011-12-14
+    bundesamt-fur-landwi | landwirtschaftliche-zonengrenzen-der-schweiz | Boundaries of agricultural zones in Switzerland | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS'] | 2018-12-14
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-skelettgehalt | Digital soil suitability map of Switzerland - Stone content | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2012-07-01
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-wasserdurchlassigkeit | Digital soil suitability map of Switzerland - Permeability | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2012-07-01
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-vernassung | Digital soil suitability map of Switzerland - Waterlogging | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2012-07-01
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-grundigkeit | Digital soil suitability map of Switzerland - Root penetration depth | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2012-07-01
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-futterbau | Climate suitability map for agriculture - Forage crops | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | bewasserungsbedurftigkeit | Demand for irrigation | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | klimaeignungskarte-fur-die-landwirtschaft-spezialkulturen | Climate suitability map for agriculture - Special crops | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2007-06-28
+    bundesamt-fur-landwi | feldblockkarte-zum-erosionsrisiko | Field block map for erosion risk | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | erosionsrisikokarte-der-schweiz-mittlerer-bodenabtrag-in-tonnen-hajahr | Erosion risk map for arable land, with average soil erosion in tonnes /(ha*year) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | __ | Erosion risk map for arable land – qualitative classification | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS'] | 2026-09-15
+    bundesamt-fur-landwi | digitale-bodeneignungskarte-der-schweiz-kulturtyp | Digital soil suitability map of Switzerland - Crop type | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS'] | 2000-12-31
+    bundesamt-fur-landwi | produzentenpreise-konventionell-200204-2015 | Produzentenpreise konventionell 2002/04-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | landwirtschaftsbetriebe-1990-2015 | Landwirtschaftsbetriebe 1990-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | verwertung-der-ernte-im-pflanzenbau-199092-2015 | Verwertung der Ernte im Pflanzenbau 1990/92-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ubergangsbeitrag-2014-2015 | Übergangsbeitrag 2014-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | investitionskredite-nach-massnahmenkategorien-1999-2015 | Investitionskredite nach Massnahmenkategorien 1999-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | an-die-kantone-ausbezahlte-beitrage-1999-2015 | An die Kantone ausbezahlte Beiträge 1999-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ressourceneffizienzbeitrage-2014-2015 | Ressourceneffizienzbeiträge 2014-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | produktionssystembeitrage-2014-2015 | Produktionssystembeiträge 2014-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | biodiversitatsbeitrage-2014-2015 | Biodiversitätsbeiträge 2014-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | versorgungssicherheitsbeitrage-2014-2015 | Versorgungssicherheitsbeiträge 2014-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ubersicht-direktzahlungen-alle-arten-nach-kantonen-2015 | Übersicht Direktzahlungen alle Arten nach Kantonen 2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | selbstversorgungsgrad-2007-2014 | Selbstversorgungsgrad 2007-2014 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | produzentenpreise-bio-200204-2015 | Produzentenpreise Bio 2002/04-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | produktion-milchprodukte-199092-2015 | Produktion Milchprodukte 1990/92-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | produktion-199092-2015 | Produktion 1990/92-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | pro-kopf-konsum-199092-2015 | Pro-Kopf-Konsum 1990/92-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | nutztierhalter-und-nutztierbestande-200002-2015 | Nutztierhalter und Nutztierbestände 2000/02-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | landwirtschaftliche-nutzflache-nach-nutzungsarten-199092-2015 | Landwirtschaftliche Nutzfläche nach Nutzungsarten 1990/92-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | landwirtschaftliche-nutzflache-1990-2015 | Landwirtschaftliche Nutzfläche 1990-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | landwirtschaftliche-gesamtrechnung-200002-2016 | Landwirtschaftliche Gesamtrechnung 2000/02-2016 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | landschaftsqualitatsbeitrage-2014-2015 | Landschaftsqualitätsbeiträge 2014-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | kulturlandschaftsbeitrage-2014-2015 | Kulturlandschaftsbeiträge 2014-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | konsumentenpreise-bio-200204-2015 | Konsumentenpreise Bio 2002/04-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | grossvieheinheiten-1990-2015 | Grossvieheinheiten 1990-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | erzeugung-landwirtschaftliche-wirtschaftsbereich-20002-2016 | Erzeugung landwirtschaftliche Wirtschaftsbereich 2000/02-2016 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | beschaeftigte-in-der-landwirtschaft-1990-2015 | Beschaeftigte in der Landwirtschaft 1990-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | konsumentenpreise-konventionell-200204-2015 | Konsumentenpreise konventionell 2002/04-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | aussenhandel-199092-2015 | Aussenhandel 1990/92-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ausgaben-viehwirtschaft-1999-2015 | Ausgaben Viehwirtschaft 1999-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ausgaben-tierzucht-1999-2015 | Ausgaben Tierzucht 1999-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ausgaben-milchwirtschaft-1999-2015 | Ausgaben Milchwirtschaft 1999-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ausgaben-bund-landwirtschaft-und-ernahrung-2004-2015 | Ausgaben Bund Landwirtschaft und Ernährung 2004-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | agrarumweltindikatoren-und-kennzahlen-auf-nationaler-ebene-1990-2015 | Agrarumweltindikatoren und -kennzahlen auf nationaler Ebene 1990-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+    bundesamt-fur-landwi | ausgaben-pflanzenbau-1999-2015 | Ausgaben Pflanzenbau 1999-2015 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['XLS'] | 2025-03-18
+ODS bundesamt-fur-statistik-bfs count 3372 start 0
+    bundesamt-fur-statis | landwirtschaftsbetriebe-bodenbedeckung-im-winter-und-bodenbearbeitung-nach-kanton | Landwirtschaftsbetriebe: Bodenbedeckung im Winter und Bodenbearbeitung nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-bodenbedeckung-im-winter-und-bodenbearbeitung-nach-region | Landwirtschaftsbetriebe: Bodenbedeckung im Winter und Bodenbearbeitung nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-motorisierte-fahrzeuge-nicht-motorisierte-maschinen-und-hofeinrichtunge | Landwirtschaftsbetriebe: Motorisierte Fahrzeuge, nicht motorisierte Maschinen und Hofeinrichtungen nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | auf-den-landwirtschaftsbetrieben-lebende-familienmitglieder-nach-typ-der-beteiligung-und-s-2013 | Auf den Landwirtschaftsbetrieben lebende Familienmitglieder nach Typ der Beteiligung und sozialer Absicherung, | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-bodenbedeckung-im-winter-und-bodenbearbeitung-nach-grossenklasse-ln | Landwirtschaftsbetriebe: Bodenbedeckung im Winter und Bodenbearbeitung nach Grössenklasse LN | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-motorisierte-fahrzeuge-nicht-motorisierte-maschinen-und-hofeinrichtunge-2 | Landwirtschaftsbetriebe: Motorisierte Fahrzeuge, nicht motorisierte Maschinen und Hofeinrichtungen nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-motorisierte-fahrzeuge-nicht-motorisierte-maschinen-und-hofeinrichtunge-1 | Landwirtschaftsbetriebe: Motorisierte Fahrzeuge, nicht motorisierte Maschinen und Hofeinrichtungen nach Grösse | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | produzentenpreisindizes-fur-dienstleistungen-sppi | Services Producer Price Indices (SPPI) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaft-und-ernahrung1-1 | Agriculture and food | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | schweizerischer-wohnimmobilienpreisindex-4q-2019-100 | Swiss residential property price index (Q4 2019 = 100) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | schweizerischer-wohnimmobilienpreisindex-impi | Swiss residential property price index (IMPI) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | schweizerischer-wohnimmobilienpreisindex | Schweizerischer Wohnimmobilienpreisindex | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | harmonisierter-verbraucherpreisindex-hvpi-im-internationalen-vergleich3 | Harmonisierter Verbraucherpreisindex (HVPI) im internationalen Vergleich | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | produzenten-und-importpreisindex1 | Produzenten- und Importpreisindex | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | schweizerischer-baupreisindex-entwicklung-der-baupreise-multibasen-indexwerte-pro-grossregion-u3-1 | Schweizerischer Baupreisindex - Entwicklung der Baupreise (Multibasen) Indexwerte pro Grossregion und pro Obje | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaft-und-ernahrung1 | Agriculture and food | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-jahresarbeitsstunden-der-beschaftigten-personen-nach-kanton1 | Landwirtschaftsbetriebe: Jahresarbeitsstunden der beschäftigten Personen nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-benutzte-digitalisierung-grunde-risiken-und-vorgesehene-nutzung-nach-gr | Landwirtschaftsbetriebe: Benutzte Digitalisierung, Gründe, Risiken und vorgesehene Nutzung nach Grössenklasse  | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-dauer-der-beschaftigung-von-familienfremden-arbeitskraften-nach-kanton | Landwirtschaftsbetriebe: Dauer der Beschäftigung von familienfremden Arbeitskräften nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-innerbetriebliche-diversifikation-und-anteil-am-gesamtumsatz-nach-gross1 | Landwirtschaftsbetriebe: Innerbetriebliche Diversifikation und Anteil am Gesamtumsatz nach Grössenklasse LN | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-anzahl-tierplatze-betriebe-und-tiere-nach-stallsystem-und-region | Landwirtschaftsbetriebe: Anzahl Tierplätze, Betriebe und Tiere nach Stallsystem und Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-anzahl-tierplatze-betriebe-und-tiere-nach-stallsystem-und-kanton | Landwirtschaftsbetriebe: Anzahl Tierplätze, Betriebe und Tiere nach Stallsystem und Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-innerbetriebliche-diversifikation-und-anteil-am-gesamtumsatz-nach-kanto1 | Landwirtschaftsbetriebe: Innerbetriebliche Diversifikation und Anteil am Gesamtumsatz nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-benutzte-digitalisierung-grunde-risiken-und-vorgesehene-nutzung-nach-ka | Landwirtschaftsbetriebe: Benutzte Digitalisierung, Gründe, Risiken und vorgesehene Nutzung nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-dauer-der-beschaftigung-von-familienfremden-arbeitskraften-nach-grossen | Landwirtschaftsbetriebe: Dauer der Beschäftigung von familienfremden Arbeitskräften nach Grössenklasse LN | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-beschaftige-personen-und-wochenarbeitsstunden-nach-kanton1 | Landwirtschaftsbetriebe: Beschäftige Personen und Wochenarbeitsstunden nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-innerbetriebliche-diversifikation-und-anteil-am-gesamtumsatz-nach-regio1 | Landwirtschaftsbetriebe: Innerbetriebliche Diversifikation und Anteil am Gesamtumsatz nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-jahresarbeitstunden-der-beschaftigten-personen-nach-grossenklasse-ln1 | Landwirtschaftsbetriebe: Jahresarbeitstunden  der beschäftigten Personen nach Grössenklasse LN | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-beschaftige-personen-und-wochenarbeitsstunden-nach-grossenklasse-ln1 | Landwirtschaftsbetriebe: Beschäftige Personen und Wochenarbeitsstunden nach Grössenklasse LN | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-beschaftige-personen-und-wochenarbeitsstunden-nach-region1 | Landwirtschaftsbetriebe: Beschäftige Personen und Wochenarbeitsstunden nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-anzahl-tierplatze-betriebe-und-tiere-nach-stallsystem-und-grossenklasse | Landwirtschaftsbetriebe: Anzahl Tierplätze, Betriebe und Tiere nach Stallsystem und Grössenklasse LN | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-benutzte-digitalisierung-grunde-risiken-und-vorgesehene-nutzung-nach-re | Landwirtschaftsbetriebe: Benutzte Digitalisierung, Gründe, Risiken und vorgesehene Nutzung nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-jahresarbeitstunden-der-beschaftigten-personen-nach-region1 | Landwirtschaftsbetriebe: Jahresarbeitstunden  der beschäftigten Personen nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-dauer-der-beschaftigung-von-familienfremden-arbeitskraften-nach-region | Landwirtschaftsbetriebe: Dauer der Beschäftigung von familienfremden Arbeitskräften nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | mitarbeit-und-soziale-absicherung-in-der-schweizer-landwirtschaft-2020 | Mitarbeit und soziale Absicherung in der Schweizer Landwirtschaft 2020 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaft-und-ernahrung2 | Agriculture and food | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-bewasserung-im-freiland-im-kalenderjahr-nach-kanton1 | Landwirtschaftsbetriebe: Bewässerung im Freiland im Kalenderjahr nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | gibt-es-eine-typische-bauerngemeinde | Gibt es eine typische Bauerngemeinde? | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-betriebsfuhrung-ausbildung-eigentumsverhaltnisse-und-weiterfuhrung-nach1-1 | Landwirtschaftsbetriebe: Betriebsführung, Ausbildung, Eigentumsverhältnisse und Weiterführung nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-betriebsfuhrung-ausbildung-eigentumsverhaltnisse-und-weiterfuhrung-nach1 | Landwirtschaftsbetriebe: Betriebsführung, Ausbildung, Eigentumsverhältnisse und Weiterführung nach Grössenklas | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-bewasserung-im-freiland-im-kalenderjahr-nach-region1 | Landwirtschaftsbetriebe: Bewässerung im Freiland im Kalenderjahr nach Region | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-betriebsfuhrung-ausbildung-eigentumsverhaltnisse-und-weiterfuhrung-nach1-2 | Landwirtschaftsbetriebe: Betriebsführung, Ausbildung, Eigentumsverhältnisse und Weiterführung nach Kanton | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-bewasserung-im-freiland-im-kalenderjahr-nach-grossenklasse-ln1 | Landwirtschaftsbetriebe: Bewässerung im Freiland im Kalenderjahr nach Grössenklasse LN | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+ODS bundesamt-fur-statistik-bfs count 3372 start 1000
+    bundesamt-fur-statis | waldflache-und-holzernte-nach-kantonen4-1 | Waldfläche und Holzernte nach Kantonen | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaft-und-ernahrung3 | Agriculture and food | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | holzernte-nach-eigentumertyp-und-kantonen5-1 | Holzernte nach Eigentümertyp und Kantonen | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | holzernte-nach-kantonen5-1 | Holzernte nach Kantonen | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | subventionen-in-der-landwirtschaft-im-europaischen-vergleich3 | Subventionen in der Landwirtschaft im europäischen Vergleich | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaft | Agriculture | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftliche-kennzahlen-im-internationalen-vergleich2 | Landwirtschaftliche Kennzahlen im internationalen Vergleich | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftliche-nutzflache-ln-pro-betrieb-in-hektaren | Landwirtschaftliche Nutzfläche (LN) pro Betrieb (in Hektaren) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftliche-nutzflache-ln-nach-kulturart-in-hektaren | Landwirtschaftliche Nutzfläche (LN) nach Kulturart (in Hektaren) | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe-nach-betriebswirtschaftlicher-ausrichtung | Landwirtschaftsbetriebe, nach betriebswirtschaftlicher Ausrichtung | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftsbetriebe | Landwirtschaftsbetriebe | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | beschaftigte-in-landwirtschaftsbetrieben | Beschäftigte in Landwirtschaftsbetrieben | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaft1 | Agriculture | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'PDF'] | 2026-10-09
+    bundesamt-fur-statis | regionale-landwirtschaftliche-gesamtrechnung-pro-kanton-und-pro-landwirtschaftliche-region-von-4 | Regionale Landwirtschaftliche Gesamtrechnung, pro Kanton und pro landwirtschaftliche Region: von der Produktio | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftliche-gesamtrechnung-produktionswert-der-landwirtschaft-historische-zeitreihen4 | Landwirtschaftliche Gesamtrechnung: Produktionswert der Landwirtschaft: historische Zeitreihen | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftliche-gesamtrechnung-kontensequenz-vom-produktionswert-zum-einkommen-historische-4 | Landwirtschaftliche Gesamtrechnung: Kontensequenz, vom Produktionswert zum Einkommen: historische Zeitreihen | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | landwirtschaftliche-gesamtrechnung-lgr-nach-bereich-des-agrarsektors-und-kontoposten4 | Landwirtschaftliche Gesamtrechnung (LGR) nach Bereich des Agrarsektors und Kontoposten | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | die-landwirtschaftliche-gesamtrechnung-arbeitsproduktivitat4 | Die Landwirtschaftliche Gesamtrechnung : Arbeitsproduktivität | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | volumen-der-landwirtschaftlichen-gesamtproduktion-indizes-19901004 | Volumen der landwirtschaftlichen Gesamtproduktion. Indizes, 1990=100 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | gesamtproduktion-der-landwirtschaft-indizes-20101004 | Gesamtproduktion der Landwirtschaft. Indizes, 2010=100 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | regionale-landwirtschaftliche-gesamtrechnung-r-lgr-nach-kanton-und-kontoposten4 | Regionale Landwirtschaftliche Gesamtrechnung (R-LGR) nach Kanton und Kontoposten | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'SERVICE'] | 2026-10-09
+    bundesamt-fur-statis | gesamtproduktion-der-landwirtschaft-zu-laufenden-preisen4 | Gesamtproduktion der Landwirtschaft. Zu laufenden Preisen | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | die-landwirtschaftliche-gesamtrechnung-kontensequenz4 | Die Landwirtschaftliche Gesamtrechnung: Kontensequenz | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | vorleistungen-und-abschreibungen-der-schweizerischen-landwirtschaft4 | Vorleistungen und Abschreibungen der schweizerischen Landwirtschaft | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | regionale-landwirtschaftliche-gesamtrechnung-pro-grossregion-und-kanton-nuts-von-der-produktion4 | Regionale Landwirtschaftliche Gesamtrechnung, pro Grossregion und Kanton (NUTS): von der Produktion zum Einkom | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | vermogensbildung-und-vermogensbilanz-der-landwirtschaft-indizes-20101004 | Vermögensbildung und Vermögensbilanz der Landwirtschaft. Indizes, 2010=100 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | produktionswert-von-biologischer-und-konventioneller-landwirtschaft3 | Produktionswert von biologischer und konventioneller Landwirtschaft | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | regionale-landwirtschaftliche-gesamtrechnung-pro-grossregion-und-kanton-nuts-die-gesamtprodukti4 | Regionale Landwirtschaftliche Gesamtrechnung, pro Grossregion und Kanton (NUTS): die Gesamtproduktion | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | regionale-landwirtschaftliche-gesamtrechnung-pro-kanton-und-pro-landwirtschaftliche-region-die-4 | Regionale Landwirtschaftliche Gesamtrechnung, pro Kanton und pro landwirtschaftliche Region: die Gesamtprodukt | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | vorleistungen-und-abschreibungen-der-schweizerischen-landwirtschaft-indizes-20101004 | Vorleistungen und Abschreibungen der schweizerischen Landwirtschaft. Indizes, 2010=100 | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | erlospreisstatistik-mengen-und-preise-zur-produktion-der-landwirtschaft2 | Erlöspreisstatistik: Mengen und Preise zur Produktion der Landwirtschaft | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+    bundesamt-fur-statis | buchhaltungsergebnisse-der-landwirtschaftlichen-betriebe4 | Buchhaltungsergebnisse der landwirtschaftlichen Betriebe | None | ['https://opendata.swiss/terms-of-use#terms_by'] | ['HTML', 'XLS'] | 2026-10-09
+ODS bundesamt-fur-zoll-und-grenzsicherheit-bazg count 0 start 0
+ODS agroscope count 17 start 0
+    agroscope | datenreihe-za-aui | SAEDN Data Series | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['XLS'] | 2025-11-04
+    agroscope | kostenkatalog | Cost Catalogue | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['PDF'] | 2026-09-10
+    agroscope | herstellung-sortenreinen-edelbraenden | Production and Tasting of Single-Variety Fruit Spirits | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['CSV', 'XLS'] | 2025-03-18
+    agroscope | landwirtschaftliche-einkommensstatistik | Agricultural Income Statistics | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['PDF'] | 2025-03-18
+    agroscope | landwirtschaftliche-betriebszweigergebnisse | Agricultural Production-Branch Results | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['PDF', 'XLS'] | 2025-03-18
+    agroscope | giftpflanzen-phytotoxin-datenbank | Toxic Plants – Phytotoxin (TPPT) Database | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['XLS', 'ZIP'] | 2025-10-23
+    agroscope | alte-apfelsorten-ciderproduktion | NUVOG – Old Apple Varieties for Cider Production | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['CSV', 'XLS'] | 2025-03-18
+    agroscope | labourscope | LabourScope - Application for calculating the working-time requirement of activities in agriculture and in the | None | [''] | ['SERVICE'] | 2025-02-25
+    agroscope | fm-stationierungsliste-2022-avenches | FM Stationierungsliste 2022 - Avenches | None | [''] | ['PDF'] | 2022-05-11
+    agroscope | fm-hengskategorisierung-2022 | FM Hengskategorisierung 2022 | None | [''] | ['PDF'] | 2022-11-22
+    agroscope | fm-stationierungsliste-2022-extern | FM Stationierungsliste 2022 - extern | None | [''] | ['PDF'] | 2022-11-22
+    agroscope | agrometeo | Agrometeo | None | [''] | ['SERVICE'] | 2024-12-20
+    agroscope | zuchthengste | Zuchthengste | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['SERVICE'] | 2022-11-22
+    agroscope | za-bh-typologie-2015-rechner | ZA BH Typologie 2015 Rechner | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['XLS'] | 2022-11-22
+    agroscope | alte-apfelsorten-saftproduktion | BEVOG - Alte Apfelsorten für die Saftproduktion | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['SERVICE'] | 2025-03-18
+    agroscope | liste-stations-de-monte | Deckstationen | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['SERVICE'] | 2025-03-18
+    agroscope | fm-gefriersamen-esel-2022 | FM Gefriersamen & Esel 2022 | None | ['https://opendata.swiss/terms-of-use#terms_by_ask'] | ['PDF'] | 2022-11-22
+EUROSTAT apri_pi_outq values 0 time ['2000-Q1'] ['2026-Q1', '2026-Q2'] dims ['freq', 'am_item', 'p_adj', 'unit', 'geo', 'time']
+EUROSTAT apri_pi_outa values 0 time ['1994'] ['2024', '2025'] dims ['freq', 'am_item', 'p_adj', 'unit', 'geo', 'time']
+EUROSTAT apro_cpsh1 values 0 time ['2000'] ['2025', '2026'] dims ['freq', 'crops', 'strucpro', 'geo', 'time']
+    crop C2000 Rice
+    crop C2100 Rice Indica
+    crop C2200 Rice Japonica
+    crop R2000 Sugar beet (excluding seed)
+    crop I1110 Rape and turnip rape seeds
+    crop I1130 Soya
+    crop W1000 Grapes
+    crop W1100 Grapes for wines
+    crop W1110 Grapes for wines with protected designation of origin (PDO)
+    crop W1120 Grapes for wines with protected geographical indication (PGI)
+    crop W1190 Grapes for other wines n.e.c. (without PDO/PGI)
+    crop W1200 Grapes for table use
+    crop W1300 Grapes for raisins
+    crop W1900 Grapes for other purposes n.e.c.
+    crop O1000 Olives
+    crop O1100 Olives for table use
+    crop O1910 Olives for oil
+EUROSTAT aact_eaa01 400 b'{ "error": [{"status": 400,"id": 150,"label": "INVALID_QUERY_DIMENSION: Query is invalid as per its structure\'s definition. Dimension \\"INDIC_AG\\" is not define'
+EUROSTAT apri_ap_crpouta values 0 time ['2000'] ['2023', '2024'] dims ['freq', 'currency', 'prod_veg', 'geo', 'time']
+EUROSTAT apro_mk_pobta values 1681 time ['1960'] ['2023', '2024'] dims ['freq', 'dairyprod', 'milkitem', 'geo', 'time']
+EUROSTAT apro_mt_pann values 1235 time ['1950'] ['2024', '2025'] dims ['freq', 'meatitem', 'meat', 'unit', 'geo', 'time']
+EUROSTAT apro_cbs_cer values 0 time ['2016'] ['2023', '2024'] dims ['freq', 'crops', 'stk_flow', 'unit', 'geo', 'time']
+WEB https://www.agristat.ch/de/ 200 62149
+WEB https://www.sbv-usp.ch/de/publikationen/statistiken 404 2000
+WEB https://www.tsm-gmbh.ch/de/milchstatistik 0 51
+WEB https://www.proviande.ch/de/marktinformationen 200 89140
+    file https://www.proviande.ch/sites/proviande/files/2026-03/36_Entwicklung%20Produzentenpreise%202016-2025_DF_1.xlsx
+WEB https://www.swissgranum.ch/ 200 637461
+WEB https://www.blw.admin.ch/de/marktbeobachtung 200 201124
+     �nnte Sie auch interessieren","Zum Online-Shop","Sprache","Erscheinungsdatum","Kategorie","Format","Nutzungsbedingungen","Bestellnummer","Ausgaben dieser Publikationsreihe","Adresse für Rückfragen","Vielen Dank für I
+     66,"translationPages":2967,"contactDataInformation":2968},{"aboutHeadline":2940,"description":2941,"copyright":219},"Über uns","Das Bundesamt für Landwirtschaft BLW setzt sich dafür ein, dass die Landwirtsc
+WEB https://www.agrarbericht.ch/de 200 206556
+WEB https://www.bfs.admin.ch/bfs/de/home/statistiken/land-forstwirtschaft.html 200 3464467
+WEB https://www.bfs.admin.ch/bfs/de/home/dienstleistungen/ogd/nutzungsbedingungen.html 404 2000
+WEB https://opendata.swiss/en/terms-of-use 200 24706
+      opendata.swiss Toggle navigation Data Organizations Showcases Dashboard Handbook More 🆕 opendata.swiss next Getting started Frequently Asked Questions (FAQ) Terms of use What&#39;s opendata.swiss?
+      The OGD community Press and media About us The portal History of the portal &quot;opendata.swiss next&quot;: the future portal Contact Home Terms of use Terms of use The terms of use for dat
+     asets of the federal authorities on opendata.swiss are determined by the existing legal framework. If there is a statutory requirement to cite t
+     s permitted. All data owners use the same symbols. Table of contents The 4 terms of use Usage model Licences versus terms of use The 4 terms of use Open use You may use this dataset for non-commercial purpos
+     es. You may use this dataset for commercial purposes. You are recommended to provide the source (author, title and link to the dataset). Open u
+     se. Must provide the source. You may use this dataset for non-commercial purposes. You may use this dataset for commercial purposes. You must provide the source (author, ti
