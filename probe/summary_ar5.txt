@@ -1,0 +1,551 @@
+
+#### PAGE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/index.php 200 35257
+   TXT ﻿ Secretaría de Agricultura, Ganadería y Pesca --> .gs-title b { background:#FFFF99!important } .gsc-control-cse .gsc-table-result b { background:#FFFF99!important } @media (max-width: 960px) { .navba
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI001.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI001_PI002_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI002.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI003.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI003_PI0041_PI0042_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0041.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0042.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI006.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI006_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI007.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI007_PI0081_PI0082_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0081.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0082.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI009.xlsx
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI001.xlsx 200 14880
+   SHEET PI001.xlsx | PPI001 23
+       ['Destino de la producci']
+       ['1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994']
+       ['Leche no procesada por', '487.8', '478.8', '488.745', '485.64', '531.45', '517.5', '463.04685314685315', '444.77786713286713', '476.12727272727267', '559.9727622377623', '577.4479020979021', '594.275034965035']
+       ['Leche a Leches Fluidas', '1084', '1064', '1086.1', '1079.2', '1181', '1150', '1076.8531468531469', '1034.367132867133', '1107.2727272727273', '1302.2622377622379', '1342.9020979020981', '1382.0349650349651']
+       ['Leche a Productos', '4125', '3798', '4387', '4156.1', '4477.4', '4393.5', '4980.1', '4614', '4353.5', '4728.3', '5082', '5800.9']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI002.xlsx 200 28550
+   SHEET PI002.xlsx | PI002 37
+       ['Destino de la producci']
+       ['Destino de la producci']
+       ['1983', '1984', '1985']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI003.xlsx 200 24486
+   SHEET PI003.xlsx | PI003 39
+       ['Elaboración de product']
+       ['1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999']
+       ['Leche Informal', 'miles de litros', '477651.4256700001', '458992.7689655173', '491286.87931034475', '577882.33875', '595862.022413793', '613338.7499999999', '590788.1799999999', '605606.7680609998', '642131.7407279998', '660041.1031280002', '677764.2022129999']
+       ['Leche Pasteurizada', 'miles de litros', '981407.2534999999', '974479.9310344829', '1014005.6206896553', '1158523.2845', '1148159.8275862068', '1132210', '1067826', '1070680.6128', '1088283.7968000001', '1042282.6895999999', '938991.1782999999']
+       ['Leche Esterilizada', 'miles de litros', '74143.41649999999', '40976', '58618', '100289.00099999999', '143478', '196162', '277006', '306311.01930000004', '374044.3329', '465032.47709999996', '614025.9371000001']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0041.xlsx 200 1408628
+   SHEET PI0041.xlsx | Hoja1 37
+       ['Elaboración de product']
+       ['1989']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre']
+       ['Leche informal', 'miles de litros', '40651.59843', '38312.45046000001', '43875.90441', '40516.55864999999', '38201.45886', '34630.304130000004', '33963.4296', '38166.77398500001', '39923.21605500001', '42461.68644000002', '43498.532969999986']
+       ['Leche pasteurizada', 'miles de litros', '80586.0678', '75340.687', '87887.87630000002', '80913.9041', '77308.7325', '71213.44380000001', '71769.4295', '82119.3962', '84190.21170000001', '88616.51560000001', '90556.8132']
+       ['Fuente: Subsecretaría ']
+       ['* Datos provisorios el']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0042.xlsx 200 56606
+   SHEET PI0042.xlsx | Hoja1 42
+       ['Elaboración de product']
+       ['2007']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre']
+       ['Leche informal', 'miles de litros', '65390.129369', '56541.03290600001', '61927.60162599999', '55863.894662999985', '67467.76862499997', '62135.82633099999', '60088.17957499999', '66373.63985999997', '58453.73426699999', '61654.045129000006', '56257.27930299999']
+       ['Leche pasteurizada ent', 'miles de litros', '77405.0469', '74337.5658', '79982.4272', '68112.2925', '78877.49279999999', '74609.5184', '71219.4534', '76870.57949999999', '67475.0524', '73936.93920000001', '70170.48359999999']
+       ['* Datos provisorios el']
+       ['estadisticaslecheria@m']
+   SHEET PI0042.xlsx | Hoja2 0
+   SHEET PI0042.xlsx | Hoja3 0
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI006.xlsx 200 60368
+   SHEET PI006.xlsx | PI006 47
+       ['Elaboración de product']
+       ['ELABORACIÓN DE PRODUCT', '2015-01-01 00:00:00', '2015-02-01 00:00:00', '2015-03-01 00:00:00', '2015-04-01 00:00:00', '2015-05-01 00:00:00', '2015-06-01 00:00:00', '2015-07-01 00:00:00', '2015-08-01 00:00:00', '2015-09-01 00:00:00', '2015-10-01 00:00:00', '2015-11-01 00:00:00', '2015-12-01 00:00:00']
+       ['LECHE FLUIDA (miles de']
+       ['Leches no refrigeradas', '32817.981', '30879.43', '32774.716', '35833.009', '43882.455', '43247.392', '46752.158', '43718.936', '46399.274', '47541.051', '43833.617', '41907.714']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI007.xlsx 200 24234
+   SHEET PI007.xlsx | PI007 32
+       ['Destino de la producci']
+       ['1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000']
+       ['Leche no procesada por', 'millones de litros', '492.39128126205', '472.1168305862069', '507.41117643103456', '599.3577622732499', '632.9108605344827', '632.3908094999999', '622.3738794499999', '634.76085531144', '659.5313664658598', '660.0411031280001', '677.764202213', '691.3964790814878']
+       ['Leche pasteurizada', 'millones de litros', '1011.3568363180002', '1002.2946924137931', '1047.1062620689654', '1201.7005027475002', '1219.2588389655175', '1165.92856', '1124.9463400000002', '1122.0139483070002', '1117.8801236280003', '1074.1664495640002', '966.190186387', '948.5951306940002']
+       ['Leche esterilizada', 'millones de litros', '76.750496137', '42.17336', '60.53468', '104.13876672750001', '152.48407999999998', '203.19359', '291.58906499999995', '321.10451118599997', '383.95690174300006', '479.18117361', '632.1026049210001', '694.4330991118601']
+       ['** Debido a un error d']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0081.xlsx 200 1167441
+   SHEET PI0081.xlsx | Hoja1 31
+       ['Destino de la producci']
+       ['1989']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre']
+       ['Leche informal', 'millones de litros', '42.6841783515', '40.228072983000004', '46.508458674600014', '41.73205540950001', '40.111531803000005', '35.669213253900004', '34.30306389599999', '39.69344494439999', '40.322448215550004', '42.88630330439999', '44.3685036294']
+       ['Leche pasteurizada', 'millones de litros', '84.61537119', '79.10772135', '93.16114887800002', '83.34132122300001', '81.174169125', '73.349847114', '72.48712379499999', '85.404172048', '85.03211381700002', '89.50268075600002', '92.367949464']
+       ['Fuente: Subsecretaría ']
+       ['* Datos provisorios el']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI0082.xlsx 200 44122
+   SHEET PI0082.xlsx | Hoja1 36
+       ['Destino de la producci']
+       ['2008']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre']
+       ['Leche no procesada por', 'millones de litros', '66.573901911', '59.24278392299998', '58.49080426599999', '67.57867701999997', '71.911047506', '59.44309679999997', '63.95606337300001', '63.039757109', '58.42171767099999', '61.785222477000005', '59.04472910499997']
+       ['Leche pasteurizada ent', 'millones de litros', '72.663690156', '73.00525405799999', '71.2347678', '75.63878431199998', '77.105098752', '69.621768108', '73.75902144', '75.71904260800001', '75.965492096', '78.89027203200001', '78.037766226']
+       ['* Datos provisorios el']
+       ['** Debido a un error d']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_02_industrial/_archivos/PI009.xlsx 200 127793
+   SHEET PI009.xlsx | PPI009 113
+       ['Utilización de la capa']
+       ['Capacidad de recibo ut', 'Fuente: Dirección Naci']
+       ['Mes', '%', '* Datos elaborados en ']
+       ['2017-07-01 00:00:00', '0.44963072432423506', 'estadisticaslecheria@m']
+       ['2026-03-01 00:00:00', '0.423']
+       ['2026-04-01 00:00:00', '0.394']
+       ['2026-05-01 00:00:00', '0.456']
+
+#### PAGE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/index.php 200 28956
+   TXT ﻿ Secretaría de Agricultura, Ganadería y Pesca --> .gs-title b { background:#FFFF99!important } .gsc-control-cse .gsc-table-result b { background:#FFFF99!important } @media (max-width: 960px) { .navba
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E005.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E006.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E009 a E005_E006_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E009 a E016_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E009.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E010.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E011.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E012.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E013.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E014.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E015.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E016.xlsx
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E005.xlsx 200 17897
+   SHEET E005.xlsx | PI005 29
+       ['Existencias de product']
+       ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+       ['1998', '1019507.4119130766', '952595.1608074802', '801451.79696189', '707675.5842477209', '633713.2672908363', '592442.0426642261', '666443.571948514', '756342.9748936472', '885508.2332369419', '1021578.1488275275', '1193810.361701566', '1257645.3446391912']
+       ['1999', '1204051.476438148', '1185927.4035712394', '1025769.763813504', '1003112.5867408707', '835897.8096321377', '799367.1839284876', '809816.495634366', '862687.6120587981', '934211.6078172061', '1032230.9648206712', '1045179.547323115', '1019500.4283458284']
+       ['2000', '976361.8632424915', '929313.2462389652', '772585.0366970787', '733913.4635903848', '628096.0853677334', '603828.3998572873', '634712.8868290427', '667385.4992252146', '829780.4189958473', '879860.4157229546', '947319.4731201715', '942782.4244116719']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E006.xlsx 200 18139
+   SHEET E006.xlsx | PI006 32
+       ['Variación de las exist']
+       ['Diferencia con diciemb']
+       ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+       ['1998', '1019507.4119130766', '952595.1608074802', '801451.79696189', '707675.5842477209', '633713.2672908363', '592442.0426642261', '666443.571948514', '756342.9748936472', '885508.2332369419', '1021578.1488275275', '1193810.361701566', '1257645.3446391912']
+       ['1999', '-53593.868201043224', '-71717.94106795173', '-231875.58082568715', '-254532.75789832044', '-421747.5350070535', '-458278.1607107036', '-447828.8490048252', '-394957.7325803931', '-323433.7368219851', '-225414.37981851993', '-212465.79731607612', '-238144.91629336274']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E009.xlsx 200 14760
+   SHEET E009.xlsx | E009 17
+       ['Existencias de leche e']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2013', '22.056449', '15.803368', '17.070104', '16.708096', '18.641556', '18.732897', '20.047162', '21.934839', '22.688878', '27.155139', '24.445692', '22.480263']
+       ['2014', '24.184552', '24.639278', '21.782788', '20.165275', '20.567531', '20.337351', '24.045509', '23.401151', '24.099597', '28.334905', '31.648735', '38.298801']
+       ['2015', '43.780698', '41.065828', '34.991614', '32.419955', '32.407197', '34.893986', '44.211216', '47.498865', '52.526749', '50.893818', '60.760397', '66.08570158559834']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E010.xlsx 200 14922
+   SHEET E010.xlsx | E010 16
+       ['Existencias de leche e']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2013', '7.243551', '7.908193', '7.877207', '7.84794', '8.756365', '6.617561', '7.952193', '8.831572', '6.686434', '7.666595', '6.861863', '6.516674']
+       ['2014', '6.437961', '4.784834', '6.324069', '6.494206', '6.194904', '5.655297', '5.072315', '7.836666', '11.223389', '12.446225', '13.331775', '14.460077']
+       ['2015', '13.914255', '14.511727', '13.218391', '11.439912', '9.292007', '8.565134', '8.562317', '8.060078', '9.005276', '11.622654', '11.681827', '14.92349998']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E011.xlsx 200 15118
+   SHEET E011.xlsx | PI011 18
+       ['Existencias de manteca']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2013', '5.002478', '3.924553', '3.694912', '3.182564', '3.686868', '3.676373', '2.962671', '3.414266', '3.59521', '3.962184', '4.663454', '5.050817']
+       ['2014', '5.466486', '4.976201', '4.520458', '3.736336', '3.831572', '3.867924', '3.445518', '3.788453', '3.842131', '3.728216', '4.7475', '6.042822']
+       ['2015', '5.404837', '5.559546', '4.136541', '2.875753', '3.403495', '3.016465', '2.902715', '3.5506', '3.950205', '4.67026', '4.31478', '5.5786802299444584']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E012.xlsx 200 14969
+   SHEET E012.xlsx | PI012 17
+       ['Existencias de quesos ']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2013', '16.01735', '15.87366', '15.661539', '15.716167', '15.5155', '16.144753', '16.427506', '16.469952', '15.978987', '15.155455', '16.295726', '16.244533']
+       ['2014', '16.692451', '16.132153', '16.099605', '15.960527', '15.999146', '16.610107', '15.783321', '16.109763', '15.651474', '15.715617', '16.353628', '17.89275']
+       ['2015', '16.775219', '17.159887', '16.903394', '16.252481', '16.015526', '16.262216', '16.186203', '15.584003', '15.614632', '16.918759', '17.586968', '19.690220423589277']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E013.xlsx 200 14929
+   SHEET E013.xlsx | PI013 17
+       ['Existencias de quesos ']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2013', '11.452985', '10.811171', '11.052982', '11.518768', '12.169204', '12.650586', '13.874565', '14.421866', '14.240345', '13.690358', '14.721683', '14.892494']
+       ['2014', '13.718565', '11.999621', '13.542744', '14.47424', '15.11294', '14.694355', '15.789399', '17.195202', '16.797399', '14.902173', '15.592386', '15.683084']
+       ['2015', '15.904564', '16.625215', '15.88805', '14.900905', '15.561896', '16.264932', '16.608073', '17.78192', '18.906654', '19.197508', '18.53', '16.533209575369618']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E014.xlsx 200 14979
+   SHEET E014.xlsx | PI014 17
+       ['Existencias de leches ']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2013', '27.133833', '25.15453', '23.376166', '21.159811', '18.03268', '18.746244', '21.73954', '21.677228', '22.452985', '25.26181', '24.737068', '22.060502']
+       ['2014', '17.128427', '17.637427', '17.500256', '19.326834', '20.78371', '20.786718', '25.118711', '28.873477', '27.034429', '26.998544', '24.985923', '28.661633']
+       ['2015', '22.500427', '19.879792', '17.523094', '16.820681', '21.411358', '19.591063', '22.959335', '21.877974', '21.408095', '23.936868', '25.965586', '33.096114889999996']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E015.xlsx 200 14941
+   SHEET E015.xlsx | E015 17
+       ['Existencias de dulce d']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2013', '3.168473', '2.895605', '3.11792', '3.473077', '4.028555', '3.763224', '3.848853', '4.01538', '4.0058', '4.111074', '4.27198', '5.095912']
+       ['2014', '4.337487', '3.063249', '4.10141', '4.465487', '4.774907', '4.651795', '4.658007', '5.057407', '5.079714', '5.153835', '5.171185', '4.805697']
+       ['2015', '4.209993', '4.161809', '4.508904', '5.316684', '4.60097', '4.409083', '4.978516', '4.441126', '4.472144', '4.45734', '4.659807', '5.62619970509932']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/existencias/_archivos/E016.xlsx 200 55792
+   SHEET E016.xlsx | E016 38
+       ['Existencias de product']
+       ['EXISTENCIAS DE PRODUCT', '2015-01-01 00:00:00', '2015-02-01 00:00:00', '2015-03-01 00:00:00', '2015-04-01 00:00:00', '2015-05-01 00:00:00', '2015-06-01 00:00:00', '2015-07-01 00:00:00', '2015-08-01 00:00:00', '2015-09-01 00:00:00', '2015-10-01 00:00:00', '2015-11-01 00:00:00', '2015-12-01 00:00:00']
+       ['LECHE FLUIDA (miles de']
+       ['Leches no refrigeradas', '22500.427', '19879.792', '17523.094', '16820.681', '21411.358', '19591.063', '22959.335', '21877.974', '21408.095', '23936.868', '25965.586', '33096.11489']
+       ['Leches refrigeradas', '4782.12', '4514.797', '8644.246', '7091.722', '3845.773', '4742.391', '6482.878', '7702.123', '7887.063', '8948.006', '8021.542', '7129.494']
+
+#### PAGE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/index.php 200 38108
+   TXT ﻿ Secretaría de Agricultura, Ganadería y Pesca --> .gs-title b { background:#FFFF99!important } .gsc-control-cse .gsc-table-result b { background:#FFFF99!important } @media (max-width: 960px) { .navba
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME001.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME002.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME003.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME004.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME006.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME007.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME008.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME009.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME010.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME011.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME012.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME013.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME014.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME015.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME099.xlsx
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME001.xlsx 200 11022
+   SHEET ME001.xlsx | ME001 36
+       ['Exportaciones lácteas ']
+       ['Año', 'Miles de USD', 'Toneladas']
+       ['2024', '1412817.9733599997', '382692.716738']
+       ['2023', '1337790.7088800003', '353947.109664']
+       ['2022', '1675972.18657', '412468.00865800004']
+       ['2021', '1342602.6511999997', '395266.90623']
+       ['2020', '1141263.6406500002', '373484.131758']
+       ['1993', '78645', '29472']
+       ['1992', '15302', '4979']
+       ['1991', '65409', '32607']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME002.xlsx 200 34508
+   SHEET ME002.xlsx | ME002 59
+       ['Exportaciones lácteas ']
+       ['Producto', '2024', '2023', '2022', '2021', '2020', '2019', '2018']
+       ['Miles de USD', 'Toneladas', 'Miles de USD', 'Toneladas', 'Miles de USD', 'Toneladas', 'Miles de USD', 'Toneladas', 'Miles de USD', 'Toneladas', 'Miles de USD', 'Toneladas', 'Miles de USD']
+       ['Aceite butírico', '33019.66239999999', '5268.782', '26790.89959', '5126.6784', '36160.36674', '6018.0614000000005', '32189.810049999996', '6227.7287400000005', '15601.553500000002', '3257.768', '19388.16688', '3442.5060000000003', '14731.94329']
+       ['Caseina', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+       ['Caseinatos', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+       ['Crema', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME003.xlsx 200 266709
+   SHEET ME003.xlsx | ME003 101
+       ['Exportaciones lácteas ']
+       ['1991']
+       ['Producto', 'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE']
+       ['MILES DE US$']
+       ['Aceite butírico']
+   SHEET ME003.xlsx | Hoja1 428
+       ['mes']
+       ['50619.419526']
+       ['50094.45884545455']
+       ['49354.300964999995']
+       ['49029.478359999994']
+       ['48007.97062']
+       ['45692.145924000004']
+       ['234.09']
+       ['192.25']
+       ['183.54']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME004.xlsx 200 398483
+   SHEET ME004.xlsx | ME004 131
+       ['Exportaciones lácteas ']
+       ['1991']
+       ['País ', 'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE']
+       ['MILES DE USD']
+       ['Angola']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME006.xlsx 200 10980
+   SHEET ME006.xlsx | ME006 35
+       ['Importaciones lácteas ']
+       ['Año', 'Miles de USD', 'Toneladas']
+       ['1991', '70503.2', '43402.7']
+       ['1992', '124449', '68127.1']
+       ['1993', '59087', '26814.7']
+       ['1994', '67923.3', '36104.6']
+       ['1995', '49561.2', '23539.4']
+       ['2021', '55336.79308000001', '13912.289080000002']
+       ['2022', '79701.53820999998', '16884.479470539998']
+       ['2023', '67172.73746999998', '13621.081121']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME007.xlsx 200 25795
+   SHEET ME007.xlsx | Hoja1 105
+       ['Importaciones lácteas ']
+       ['PRODUCTO (Miles de U$S', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011']
+       ['Leche Fluida (1)', '254', '2646', '38', '5948', '6427', '787', '62', '40', '30', '5', '0', '6.0502199999999995']
+       ['Leche en Polvo Entera', '342', '966', '8', '1908', '1175', '7093', '582', '1225', '98', '1178', '1487.97855', '0.00509']
+       ['Leche en Polvo Descrem', '51', '126', '0', '2331', '11', '57', '61', '0', '0', '0', '0.07507', '1.9528499999999998']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME008.xlsx 200 21626
+   SHEET ME008.xlsx | ME008 28
+       ['Importaciones lácteas ']
+       ['1991', '1992', '1993', '1994', '1995', '1996', '1997']
+       ['MES', 'TONELADAS', 'US$', 'TONELADAS', 'US$', 'TONELADAS', 'US$', 'TONELADAS', 'US$', 'TONELADAS', 'US$', 'TONELADAS', 'US$', 'TONELADAS']
+       ['Enero', '456.7', '663.8', '2177.7', '3416.8', '911.8', '2222.9', '2214.7', '4056.1', '2175', '4313', '1216.2', '2598.1', '3523.4']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME009.xlsx 200 232165
+   SHEET ME009.xlsx | ME009 80
+       ['Importaciones lácteas ']
+       ['Producto', '2002-01-01 00:00:00', '2002-02-01 00:00:00', '2002-03-01 00:00:00', '2002-04-01 00:00:00', '2002-05-01 00:00:00', '2002-06-01 00:00:00', '2002-07-01 00:00:00', '2002-08-01 00:00:00', '2002-09-01 00:00:00', '2002-10-01 00:00:00', '2002-11-01 00:00:00', '2002-12-01 00:00:00']
+       ['MILES DE US$ FOB']
+       ['Aceite butírico', '590.697']
+       ['Caseina', '65.903', '93.078', '0.543', '73.731', '18.553', '14.088', '33.66']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME010.xlsx 200 13825
+   SHEET ME010.xlsx | ME010 47
+       ['Balanza comercial (ton']
+       ['AÑO', 'EXPORTACIÓN', 'IMPORTACIÓN', 'RESULTADO BALANZA COME']
+       ['1991', '32607', '-43403', '-10796']
+       ['1992', '4979', '-68127', '-63148']
+       ['1993', '29472', '-26815', '2657']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME011.xlsx 200 13720
+   SHEET ME011.xlsx | PPC002 40
+       ['Balanza comercial (mil']
+       ['AÑO', 'EXPORTACIÓN', 'IMPORTACIÓN', 'RESULTADO BALANZA COME']
+       ['1991', '65409', '-70503', '-5094']
+       ['1992', '15302', '-124449', '-109147']
+       ['1993', '78645', '-59087', '19558']
+       ['Elaborados por la Dire']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME012.xlsx 200 16199
+   SHEET ME012.xlsx | ME012 39
+       ['Balanza comercial por ']
+       ['PRODUCTO', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012']
+       ['Leche Fuida (1)', '2190', '-166', '1006', '-3178', '-3178', '938', '1615', '923', '2234', '2154', '1727', '1375', '497']
+       ['Leche en Polvo Entera', '96497', '82428', '135369', '98938', '176127', '156309', '209088', '99789', '101385', '143569', '127083', '201940', '202199']
+       ['Leche en Polvo Descrem', '21819', '18923', '21502', '12522', '17437', '16663', '24028', '11605', '14996', '13300', '19654', '17787', '13129']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME013.xlsx 200 16397
+   SHEET ME013.xlsx | Hoja1 41
+       ['Balanza comercial por ']
+       ['PRODUCTO', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012']
+       ['Leche Fuida (1)', '6798', '-716', '2427', '-5739', '-122', '4053', '6062', '5389', '15330', '10910', '11109', '10683', '3730']
+       ['Leche en Polvo Entera', '184964', '168210', '193913', '177465', '360951', '357859', '465498', '308145', '385073', '339644', '452008', '843162', '758699']
+       ['Leche en Polvo Descrem', '41417', '40039', '30066', '18746', '33254', '35425', '51373', '35604', '55900', '30449', '62879', '68954', '49589']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME014.xlsx 200 17963
+   SHEET ME014.xlsx | ME014 47
+       ['Balanza comercial (ton']
+       ['AÑO', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['1991', '2187.4', '4253.8', '5068.3', '4208.7', '2441.1', '436', '-7942.8', '-7135.6', '-4033.9', '-3749.2', '-3973.1', '-2556.5']
+       ['1992', '-1506.6', '-521.7', '-5299.3', '-5644.3', '-8363.3', '-10758.3', '-11018.8', '-7059.1', '-3137.9', '-4668.5', '-1851.6', '-3319.2']
+       ['1993', '2344.5', '2768.9', '638.2', '374.8', '-1559', '209', '-77.4', '-1673.8', '346', '-570', '-569.4', '425.4']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_05_externo/_archivos/ME015.xlsx 200 18535
+   SHEET ME015.xlsx | ME015 47
+       ['Balanza comercial (mil']
+       ['AÑO', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['1991', '4802.3', '6861.2', '8485.4', '6873.5', '4667.5', '1535.5', '-10699.3', '-10810.8', '-4591.6', '-3831.8', '-4919.3', '-3466.9']
+       ['1992', '-1647.3', '-433.8', '-8978', '-10369.6', '-15388', '-18675.7', '-20925', '-13029.3', '-5481.4', '-7498.2', '-1990.4', '-4730.4']
+       ['1993', '5386.8', '6472.3', '2904.1', '1498.7', '-2064.2', '1927.4', '873.5', '-2178.1', '2307.2', '-141.3', '289.1', '2282.2']
+
+#### PAGE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/index.php 200 33424
+   TXT ﻿ Secretaría de Agricultura, Ganadería y Pesca --> .gs-title b { background:#FFFF99!important } .gsc-control-cse .gsc-table-result b { background:#FFFF99!important } @media (max-width: 960px) { .navba
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI001.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI002.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI003.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI004.xlsx
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI001.xlsx 200 58144
+   SHEET MI001.xlsx | MI001 87
+       ['Ventas internas (miles']
+       ['VENTAS INTERNAS', '2015-01-01 00:00:00', '2015-02-01 00:00:00', '2015-03-01 00:00:00', '2015-04-01 00:00:00', '2015-05-01 00:00:00', '2015-06-01 00:00:00', '2015-07-01 00:00:00', '2015-08-01 00:00:00', '2015-09-01 00:00:00', '2015-10-01 00:00:00', '2015-11-01 00:00:00', '2015-12-01 00:00:00']
+       ['LECHE FLUIDA (miles de']
+       ['Leches no refrigeradas', '32022.926', '32232.718', '34541.737', '38714.889', '38677.197', '46089.368', '42309.299', '43017.473', '42029.706', '42398.028', '39341.955', '40805.638']
+       ['Leches refrigeradas', '81104.667', '73765.986', '76566.71', '79944.437', '79156.428', '78473.51', '85201.228', '85537.417', '82636.852', '83221.302', '75319.656', '74706.623']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI002.xlsx 200 18935
+   SHEET MI002.xlsx | MI002 51
+       ['Consumo total y per cá']
+       ['CONSUMO TOTAL', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011']
+       ['LECHE FLUIDA (miles de']
+       ['Leche pasteurizada', '923662.81281', '911451.1655799997', '870839.3933258213', '972933.9950808192', '1076693.41037', '1171117.6398086003', '1220930.8823499999', '1253603.5199260002', '1209767.20414', '1165156.67754', '1181959.5061735003', '1148328.9481760003']
+       ['Leche esterilizada', '701229.3446916001', '686477.52707', '524841.3718699999', '418048.6753', '442593.48665999994', '396925.2935456001', '414114.41561', '390118.69722400006', '383000.89074', '512007.62014', '475330.6817714999', '516839.2520713999']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI003.xlsx 200 102373
+   SHEET MI003.xlsx | MI003 51
+       ['Consumo total y per cá']
+       ['2000']
+       ['CONSUMO TOTAL', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['LECHE FLUIDA (miles de']
+       ['Leche pasteurizada', '67426.79198000002', '69800.57746', '81747.49906', '72709.04259999999', '78689.223', '78560.41977', '80609.55399999999', '80206.21860000001', '76312.90410000001', '76946.64126', '78470.71048', '82183.2305']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_04_interno/_archivos/MI004.xlsx 200 11314
+   SHEET MI004.xlsx | MI004 36
+       ['Consumo per cápita (li']
+       ['']
+       ['Año', 'Consumo per cápita']
+       ['1990', '144.4940126984159']
+       ['1991', '165.20264257865503']
+       ['1992', '194.03872287379355']
+       ['* Datos provisorios el']
+       ['estadisticaslecheria@m']
+
+#### PAGE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/index.php 200 26700
+   TXT ﻿ Secretaría de Agricultura, Ganadería y Pesca --> .gs-title b { background:#FFFF99!important } .gsc-control-cse .gsc-table-result b { background:#FFFF99!important } @media (max-width: 960px) { .navba
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL001.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL002.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL003.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL004.xlsx
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL001.xlsx 200 15744
+   SHEET BL001.xlsx | BL001 169
+       ['Balance lácteo naciona']
+       ['AÑO', 'PRODUCCIÓN', 'EXPORTACIÓN', 'IMPORTACIÓN', 'CONSUMO INTERNO', 'EXISTENCIAS']
+       ['1981', '5092', '111', '144.5', '-', '-']
+       ['1982', '5487', '340.1', '10.4', '-', '-']
+       ['1983', '5696.8', '378.8', '13.5', '-', '-']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL002.xlsx 200 12166
+   SHEET BL002.xlsx | BL002 134
+       ['Balance lácteo naciona']
+       ['AÑO', 'PRODUCCIÓN', 'EXPORTACIÓN', 'IMPORTACIÓN', 'CONSUMO INTERNO', 'EXISTENCIAS']
+       ['2016**', '9895.349624208153', '1646.9707339105803', '11.088706090799999', '8573.992158852994', '-314.52456246462305']
+       ['Fuente: Subsecretaría ']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL003.xlsx 200 12485
+   SHEET BL003.xlsx | BL001 141
+       ['Balance lácteo naciona']
+       ['AÑO', 'PRODUCCIÓN', 'EXPORTACIÓN', 'IMPORTACIÓN', 'CONSUMO INTERNO', 'EXISTENCIAS']
+       ['2015', '12061', '2242', '33', '9420', '432']
+       ['2016', '10292', '2051', '44', '8724', '-439']
+       ['2017', '10098', '1610', '42', '8596', '-66']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/balance/_archivos/BL004.xlsx 200 13082
+   SHEET BL004.xlsx | BL001 92
+       ['Balance lácteo naciona']
+       ['AÑO', 'PRODUCCIÓN', 'EXPORTACIÓN', 'IMPORTACIÓN', 'CONSUMO INTERNO', 'EXISTENCIAS']
+       ['Ene-Ago 2026', '7514.974831515035', '2086.15426202702', '117.91980670571', '5774.665042157801', '-227.924665964077']
+       ['Ene-Ago 2025', '7193.041014455013', '1780.0551389252498', '77.25109465188001', '5540.762820323613', '-50.52585014196974']
+
+#### PAGE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/index.php 200 29444
+   TXT ﻿ Secretaría de Agricultura, Ganadería y Pesca --> .gs-title b { background:#FFFF99!important } .gsc-control-cse .gsc-table-result b { background:#FFFF99!important } @media (max-width: 960px) { .navba
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR0006_a_PR012.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR001.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR001_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR002.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR002_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR004.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR005.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR006 a PR012_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR026.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR0261.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR0261_nt.pdf
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR0262.xlsx
+   L https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR026_nt.pdf
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR0006_a_PR012.xlsx 200 37630
+   SHEET PR0006_a_PR012.xlsx | PR012 216
+       ['Precios promedios de e']
+       ['Fuente: Dirección Naci']
+       ['estadisticaslecheria@m']
+       ['Fecha', 'Leche en Polvo Entera ', 'Leche en Polvo Entera ', 'Leche en Polvo Descrem', ' Mozzarella (Posición:', 'Quesos de Pasta Semidu', 'Quesos de Pasta Dura (', 'Suero (Posición: 0404.']
+       ['2010-01-01 00:00:00', '3196.6410314408504', '3371.2990926502107', '3041.1230388109', '3144.2618912269068', '3065.7644011360744', '5115.490091080108', '1617.8088852399196']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR001.xlsx 200 15825
+   SHEET PR001.xlsx | PR001 25
+       ['PRECIO POR LITRO - Pan']
+       ['($ por litro por mes n']
+       ['Año', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2011', '1.42', '1.49', '1.54', '1.57', '1.54', '1.54', '1.51', '1.5', '1.5', '1.48', '1.48', '1.47']
+       ['2012', '1.5', '1.53', '1.57', '1.59', '1.59', '1.58', '1.58', '1.56', '1.54', '1.55', '1.58', '1.63']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR002.xlsx 200 15339
+   SHEET PR002.xlsx | Hoja1 25
+       ['PRECIO POR KILOGRAMO D']
+       ['($ por KG por mes naci']
+       ['Mes', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['2011', '11.58', '12.06', '12.34', '12.44', '12.19', '12.19', '12.01', '11.93', '21.45', '21.43', '21.74', '21.89']
+       ['2012', '22.25', '22.29', '22.28', '22.21', '21.95', '21.94', '22.08', '21.98', '22.14', '22.42', '23.39', '24.23']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR004.xlsx 200 14004
+   SHEET PR004.xlsx | PR004 39
+       ['Precios mayoristas de ']
+       ['1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008']
+       ['LECHE FLUIDA (litros)']
+       ['Leche pasteurizada ent', '0.49', '0.5', '0.51', '0.51', '0.5066666666666666', '0.7391666666666666', '0.8774999999999998', '0.8708333333333332', '0.9', '0.93', '1.08', '1.22']
+       ['Leche esterilizada ent', '0.68', '0.67', '0.65', '0.65', '0.6550000000000001', '0.9366666666666665', '1.1691666666666667', '1.1608333333333334', '1.24', '1.3', '1.44', '1.74']
+       ['Fuente: Precios Mayori']
+       ['Elaborado: Subsecretar']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR005.xlsx 200 39757
+   SHEET PR005.xlsx | PR005 40
+       ['Precios mayoristas de ']
+       ['1997']
+       ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+       ['LECHE FLUIDA (litros)']
+       ['Leche pasteurizada ent', '0.48', '0.48', '0.49', '0.49', '0.49', '0.5', '0.5', '0.49', '0.48', '0.48', '0.48', '0.48']
+       ['Fuente: Precios Mayori']
+       ['Elaborado: Subsecretar']
+       ['estadisticaslecheria@m']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR026.xlsx 200 26573
+   SHEET PR026.xlsx | Hoja1 126
+       ['PRECIO POR LITRO  - Pa']
+       ['($ por litro por mes n']
+       ['Precio promedio pagado']
+       ['Fuente: Dirección Naci']
+       ['estadisticaslecheria@m']
+       ['2026-06-01 00:00:00', '518.16', '540.3813342200376', '507.29855777165136', '518.2346766749683', '504.82803778532406', '536.0350999258136', '521.2353417587738', '513.3897589089524', '488.8257507730815']
+       ['2026-07-01 00:00:00', '527.47', '550.7324938969888', '517.692953457102', '521.743476791667', '509.4979333464485', '561.4174702616367', '525.2769573586004', '521.7619286452903', '495.6015556674576']
+       ['2026-08-01 00:00:00', '535.12', '558.2938672824633', '524.0700899937764', '534.1563859601443', '522.7739279680137', '571.842600594861', '530.9683547282183', '529.5900136559969', '504.72864740699674']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR0261.xlsx 200 26629
+   SHEET PR0261.xlsx | Hoja1 124
+       ['PRECIO POR KILO DE SÓL']
+       ['($ por kilogramo nacio']
+       ['Precio promedio pagado']
+       ['Fuente: Dirección Naci']
+       ['estadisticaslecheria@m']
+       ['2026-06-01 00:00:00', '6894.36', '7094.919712879236', '6762.163900630658', '7001.014141278431', '6518.1925913570885', '7442.693264442701', '6824.673825517138', '6865.644767641444', '6588.245105564748']
+       ['2026-07-01 00:00:00', '7064.67', '7294.531249043645', '6926.031806922266', '7119.004102780058', '6600.168853616335', '7764.889205041088', '6962.450705901925', '7043.991801686808', '6780.877267761406']
+       ['2026-08-01 00:00:00', '7269.15', '7503.457435112729', '7111.551659086473', '7386.064042743544', '6906.598276202185', '7938.362125535558', '7053.67145459358', '7250.857263654309', '7015.323842471953']
+  >> FILE https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/_03_precios/_archivos/PR0262.xlsx 200 45672
+   SHEET PR0262.xlsx | Proteína 125
+       ['PRECIO BÁSICO DE KILOG']
+       ['($ por kilogramo nacio']
+       ['Precio promedio pagado']
+       ['Fuente: Dirección Naci']
+       ['estadisticaslecheria@m']
+       ['2026-06-01 00:00:00', '4929.483484101216', '4657.6610079060565', '5141.80173712229', '4840.99368835144', '4162.794069816241', '3957.0031917265155', '4580.000000000001', '4993.440985778258', '4691.408736678274']
+       ['2026-07-01 00:00:00', '4898.027557951995', '4688.48191439633', '5166.6439460309875', '4834.375956236209', '4236.754004508421', '4062.667004546645', '4626.000000000001', '4825.21061965218', '4576.415787534455']
+       ['2026-08-01 00:00:00', '4956.313584638483', '4706.208641766693', '5200.910443871754', '4905.945409939395', '4364.932145718088', '4238.4187120498655', '4760.000000000001', '4938.458124329061', '4525.8149058009485']
+   SHEET PR0262.xlsx | Grasa Butirosa 126
+       ['PRECIO BÁSICO DE KILOG']
+       ['($ por kilogramo nacio']
+       ['Precio promedio pagado']
+       ['Fuente: Dirección Naci']
+       ['estadisticaslecheria@m']
+       ['2026-07-01 00:00:00', '3275.8290168772246', '3177.8594275697305', '3301.4042509087926', '4195.050299104298', '3508.5063367990647', '3585.810428705015', '4171', '3158.6231568527137', '3137.972449348511']
+       ['2026-08-01 00:00:00', '3345.7713832835825', '3219.0525798763265', '3358.5519281785846', '4256.1100508807785', '3793.8152819770394', '3663.6946910157685', '4290', '3262.7968012449587', '3323.4612683131413']
+
+#### PAGE https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/cosecha-y-elaboracion 200 32766
+   LIC gentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Atribución 4.0 Internacional --> Scroll hacia arriba 
+   TXT  COSECHA Y ELABORACIÓN | Argentina.gob.ar @import url("https://www.argentina.gob.ar/modules/system/system.base.css?tmnj8n"); @import url("https://www.argentina.gob.ar/profiles/argentinagobar/modules/a
+
+#### PAGE https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/mercado-externo 200 32968
+   LIC gentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Atribución 4.0 Internacional --> Scroll hacia arriba 
+   TXT  MERCADO EXTERNO | Argentina.gob.ar @import url("https://www.argentina.gob.ar/modules/system/system.base.css?tmnj8n"); @import url("https://www.argentina.gob.ar/profiles/argentinagobar/modules/argenti
+
+#### PAGE https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/importaciones 200 43137
+   LIC gentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Atribución 4.0 Internacional --> Scroll hacia arriba 
+   TXT  IMPORTACIONES | Argentina.gob.ar @import url("https://www.argentina.gob.ar/modules/system/system.base.css?tmnj8n"); @import url("https://www.argentina.gob.ar/profiles/argentinagobar/modules/argentina
+   L https://www.argentina.gob.ar/sites/default/files/2018/09/anuario_importaciones_2025.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/09/importaciones_de_vino_ano_2023.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/09/importaciones_de_vino_ano_2024.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/09/importaciones_de_vino_enero-mayo_2024.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2008.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2009.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2010.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2011.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2012.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2013.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2014.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2015.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2016.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_argentina_de_vinos_y_mostos_2017.pdf
+   L https://www.argentina.gob.ar/sites/default/files/importaciones_de_vinos_ano_2018.pdf
+
+#### PAGE https://www.argentina.gob.ar/inv/vinos/estadisticas/existencias 200 32464
+   LIC gentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Atribución 4.0 Internacional --> Scroll hacia arriba 
+   TXT  EXISTENCIAS | Argentina.gob.ar @import url("https://www.argentina.gob.ar/modules/system/system.base.css?tmnj8n"); @import url("https://www.argentina.gob.ar/profiles/argentinagobar/modules/argentinago
+
+#### PAGE https://www.argentina.gob.ar/inv/estadisticas-vitivinicolas/principales-datos-vitivinicolas 200 34044
+   LIC gentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Atribución 4.0 Internacional --> Scroll hacia arriba 
+   TXT  PRINCIPALES DATOS VITIVINÍCOLAS | Argentina.gob.ar @import url("https://www.argentina.gob.ar/modules/system/system.base.css?tmnj8n"); @import url("https://www.argentina.gob.ar/profiles/argentinagobar
+
+#### PAGE https://www.argentina.gob.ar/inv/vinos/estadisticas/estadisticas-varias 200 40959
+   LIC gentinas Organismos Mapa del Estado Acerca de Argentina.gob.ar Acerca de este sitio Términos y condiciones Sugerencias Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Atribución 4.0 Internacional --> Scroll hacia arriba 
+   TXT  INFORMES ESPECIALES Y ESTADÍSTICAS VARIAS | Argentina.gob.ar @import url("https://www.argentina.gob.ar/modules/system/system.base.css?tmnj8n"); @import url("https://www.argentina.gob.ar/profiles/arge
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/argentina_-_chile.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/informe_especial_var._blancas_y_vino_blanco.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/informe_especial_vino_rosado_2026.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/malbec_historia_y_presente.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/productos_organicos_vitivinicolas_1.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/variedades_ace.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/variedades_blancas_y_vinos_blancos.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/vino_espumoso.pdf
+   L https://www.argentina.gob.ar/sites/default/files/2018/12/vinos_con_denominacion_de_origen_0.pdf
+   L https://www.argentina.gob.ar/sites/default/files/estadisticas_varias_2018.pdf
