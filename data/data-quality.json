@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T18:27:50Z",
+ "generatedAt": "2026-10-10T21:24:38Z",
  "summary": {
-  "files": 49,
+  "files": 50,
   "errors": 0,
   "warnings": 14
  },
@@ -712,6 +712,22 @@
     "lines": 0
    },
    "generatedAt": "2026-10-10T14:58:13Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "austria-balances-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 11,
+    "points": 60,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-10T19:36:07Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
