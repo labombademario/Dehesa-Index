@@ -1822,6 +1822,8 @@ html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t 
 .di-nav-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
 .di-nav-mega{left:50%;transform:translateX(-50%);top:calc(100% - 2px);width:min(980px,calc(100vw - 32px));max-width:none;padding:16px 18px}
 .di-nav-mega::before{display:none}
+/* 10-oct: el panel de Países mide ~850 px; en pantallas más bajas se cortaba sin poder llegar al final. Se limita a la ventana y se desplaza dentro. */
+.di-nav-mega{max-height:calc(100vh - 130px);max-height:calc(100dvh - 130px);overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
 .di-nav-g-mega>.di-nav-gbtn{position:relative}
 .di-nav-g-mega>.di-nav-gbtn::after{content:"";position:absolute;left:-6px;right:-6px;top:100%;height:28px}
 .di-nav-cols{display:flex;flex-direction:column;gap:2px;width:100%}
@@ -1842,6 +1844,7 @@ html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t 
 .di-nav-mega .di-nav-regs-top{grid-column:1/-1;display:grid;grid-template-columns:minmax(150px,.7fr) minmax(150px,.7fr) 2.6fr;gap:2px 22px;padding:0 0 10px;margin-bottom:6px;border-bottom:1px solid var(--border)}
 .di-nav-regs-top .di-nav-reg:nth-child(3){grid-row:span 2}
 .di-nav-mega .di-nav-chips{grid-column:auto;align-content:start;padding-top:6px}
+.di-nav-mega .di-nav-regs-top .di-nav-chips{grid-template-columns:repeat(auto-fill,minmax(128px,1fr))}
 a.di-nav-chip{display:flex;align-items:center;min-height:40px;padding:6px 12px;border:1px solid var(--border-strong);border-radius:8px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;background:var(--surface)}
 a.di-nav-chip:hover,a.di-nav-chip:focus-visible{border-color:var(--accent);color:var(--accent)}
 a.di-nav-chip.active{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}

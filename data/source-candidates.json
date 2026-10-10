@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T18:36:15Z",
+ "generatedAt": "2026-10-10T19:39:12Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 110,
+  "total": 111,
   "byStatus": {
-   "ACTIVE": 80,
+   "ACTIVE": 81,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -4159,6 +4159,59 @@
    "derivatives": "yes",
    "attribution": "Datenquelle: Statistik Austria — data.statistik.gv.at",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "statistik_austria_vb",
+   "registryId": "statistik_austria_vb",
+   "country": "AT",
+   "scope": "integrated",
+   "institution": "Austria - Statistik Austria, Versorgungsbilanzen (publicaciones PDF de balances de abastecimiento)",
+   "dataset": "Ya integrada (11 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cheese",
+    "eggs",
+    "maize",
+    "oats",
+    "rapeseed",
+    "rye",
+    "soy",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "production",
+    "stocks"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "STATISTIK-AUSTRIA-REUSE",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Quelle/Fuente: STATISTIK AUSTRIA, Versorgungsbilanzen. Valores extraidos de las tablas de la publicacion (extracto).",
+   "lastChecked": "2026-10-10",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",

@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-123 workflows (87 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+124 workflows (88 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -22,6 +22,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | update-au-states.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-au-states.py | au-states.json | finish, validate-files |
 | update-au-trade.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-au-trade.py | au-trade-products.json, australia-trade-stats.json | finish, validate-files |
+| update-austria-balances.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-austria-balances.py | austria-balances-stats.json | finish, validate-files |
 | update-austria.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-austria.py | austria-stats.json | finish, validate-files |
 
 ## CA
