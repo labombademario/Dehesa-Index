@@ -29,7 +29,7 @@ vacas lecheras nacional filas 0 usadas 0
 ovino SHEEP, INCL LAMBS - INVENTORY filas 96 usadas 7
 ovino SHEEP, EWES, BREEDING, GE 1 YEAR - INVENTORY filas 6 usadas 6
 ovino SHEEP - LAMB CROP, MEASURED IN HEAD filas 5 usadas 0
-cordero y cordero adulto producción filas 454 usadas 68
+cordero y cordero adulto producción filas 455 usadas 68
 huevos producción filas 1057 usadas 68
 BUTTER producción filas 78 usadas 68
 CHEESE producción filas 1862 usadas 68
