@@ -1,0 +1,24 @@
+AREAS 404 https://www.magyp.gob.ar/sitio/areas/
+OK https://www.magyp.gob.ar/sitio/areas/aves/ 26235
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-fortalecimiento-productivo-y-sustentable-para-pequenos-y-medianos
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-ganaderia-y-produccion-animal
+   H https://www.argentina.gob.ar/jefatura/mapa-del-estado
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/
+OK https://www.magyp.gob.ar/sitio/areas/aves/estadistica/ 51345
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-fortalecimiento-productivo-y-sustentable-para-pequenos-y-medianos
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-ganaderia-y-produccion-animal
+   H https://www.argentina.gob.ar/jefatura/mapa-del-estado
+OK https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/ 44395
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-fortalecimiento-productivo-y-sustentable-para-pequenos-y-medianos
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-ganaderia-y-produccion-animal
+   H https://www.argentina.gob.ar/jefatura/mapa-del-estado
+OK https://www.magyp.gob.ar/sitio/areas/bovinos/ 24005
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-fortalecimiento-productivo-y-sustentable-para-pequenos-y-medianos
+   H https://www.argentina.gob.ar/agricultura/subsecretaria-de-ganaderia-y-produccion-animal
+   H https://www.argentina.gob.ar/jefatura/mapa-del-estado
+OK https://www.magyp.gob.ar/sitio/areas/ss_mercados_agropecuarios/ 92
+Traceback (most recent call last):
+  File "/home/runner/work/Dehesa-Index/Dehesa-Index/probe_ar9.py", line 64, in <module>
+    ic=[i for i,h in enumerate(hd) if h.startswith('cultivo')][0]; ia=[i for i,h in enumerate(hd) if h.startswith('anio')][0]
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
