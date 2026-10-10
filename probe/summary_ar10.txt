@@ -1,0 +1,600 @@
+PAGE https://www.magyp.gob.ar/sitio/areas/aves/estadistica/ 200 https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php#collapse0adb18d14c5b39fa56f83c1691987b31
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php#collapse0e4db93a213040a9e0fc6a11e3556fb5
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php#collapse9d5bbdd303aea373322314d9d4c24736
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php#collapsecaea7b62717d76fe6f41a81a23fedb02
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php#collapsece8c11f8b964f0d0ca985a53d872180a
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php#collapsee096e2e3eaa3eb68b35f09e98287c5c0
+   H https://www.magyp.gob.ar/sitio/_css/bootstrap.css?2
+   H https://www.magyp.gob.ar/sitio/_css/buscador.css?D
+   H https://www.magyp.gob.ar/sitio/_css/carousel.css?234
+   H https://www.magyp.gob.ar/sitio/_css/estructura.css?A
+   H https://www.magyp.gob.ar/sitio/_css/header.css?0
+   H https://www.magyp.gob.ar/sitio/_css/internas.css?1
+   H https://www.magyp.gob.ar/sitio/_css/offcanvas.css?5
+   H https://www.magyp.gob.ar/sitio/_css/social.css?23040
+   H https://www.magyp.gob.ar/sitio/_img/logo_magyp.svg?7
+   H https://www.magyp.gob.ar/sitio/areas/aves
+   H https://www.magyp.gob.ar/sitio/areas/aves/encuesta/
+   H https://www.magyp.gob.ar/sitio/areas/aves/enfermedades/
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/huevos/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/tablero/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/indice/
+   H https://www.magyp.gob.ar/sitio/areas/aves/informes/
+   H https://www.magyp.gob.ar/sitio/areas/aves/informes/boletines/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/informes/otros/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/renavi/
+   H https://www.magyp.gob.ar/sitio/areas/prensa/
+   H https://www.magyp.gob.ar/sitio/index.php
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/index.php?accion=imp
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000001_Faena de Aves 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000002_Faena Provincial 2022 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000003_Exportaciones Comestibles 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000004_Importaciones 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000005_Consumo Aparente 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000006_Indicadores de  Oferta y Demanda 2016-2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000007_Precio Pollo Mayorista 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000008_Precio Pollo Minorista 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000009_Relaci%C3%B3n asado pollo 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000009_Relación asado pollo 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/230000_2023/000011_RENAVI (Diciembre 2023).pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000001_Faena de aves 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000002_Faena Provincial 2023-2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000003_Exportaciones Comestibles 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000004_Importaciones 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000005_Consumo Aparente 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000006_Indicadores de Oferta y Demanda 2016-2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000006_Indicadores de Oferta y Demanda 2016-2024.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000007_Precio Pollo Mayorista 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000008_Precio Pollo Minorista 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000008_Relaci%C3%B3n Asado-Pollo 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000008_Relaci%C3%B3n Maíz-Pollo 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000008_Relación Asado-Pollo 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000008_Relación Maíz-Pollo 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000009_Poultry Production, Consumption and Trade 2016-2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000009_Poultry Production, Consumption and Trade 2016-2024.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000010_RENAVI 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/240000_2024/000011_Tablero consumo per capita de carnes 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Consumo Aparente.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Exportaciones Comestibles.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Faena Avícola.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Faena Provincial 2024-2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Importaciones Comestibles.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Indicadores Sector Avícola Metodología de Cálculo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Indicadores de Oferta y Demanda 2016-2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Indicadores de Oferta y Demanda 2016-2025.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Poultry Production, Consumption and Trade 2016-2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Poultry Production, Consumption and Trade 2016-2025.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Precio Pollo Mayorista.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Precio Pollo Minorista.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Relaci%C3%B3n Asado-Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Relaci%C3%B3n Maíz-Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Relación Asado-Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Relación Maíz-Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000000_Tablero consumo per capita de carnes 2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/250000_2025/000002_RENAVI (Diciembre 2025).pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Consumo Aparente.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Exportaciones Comestibles.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Faena Avícola 2026.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Faena Provincial 2025-2026.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Indicadores de Oferta y Demanda 2016-2026.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Indicadores de Oferta y Demanda 2016-2026.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Poultry Production, Consumption and Trade 2016-2026.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Poultry Production, Consumption and Trade 2016-2026.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Precio Pollo Mayorista.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Precio Pollo Minorista.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_RENAVI (Agosto 2026).pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Relaci%C3%B3n Asado Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Relaci%C3%B3n Maíz Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Relación Asado Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Relación Maíz Pollo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000008_Indicadores Actuales/260000_2026/000000_Tablero Consumo per capita de carnes 2026.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000009_Indicadores Hist%C3%B3ricos/000010_Indicadores Historicos 2000-2015.pdf
+   H https://www.magyp.gob.ar/sitio/areas/aves/estadistica/carne/_archivos/000009_Indicadores Históricos/000010_Indicadores Historicos 2000-2015.pdf
+   H https://www.argentina.gob.ar/acerca
+   H https://www.argentina.gob.ar/agricultura/alimentos-y-bioeconomia
+   H https://www.argentina.gob.ar/agricultura/mercados-agropecuarios
+   H https://www.argentina.gob.ar/miargentina/mesadeayuda
+   H https://www.argentina.gob.ar/normativa
+   H https://www.argentina.gob.ar/organismos
+   H https://www.argentina.gob.ar/pais
+   H https://www.argentina.gob.ar/sugerencias
+   H https://www.argentina.gob.ar/terminos-y-condiciones
+   H https://www.argentina.gob.ar/turnos
+PAGE https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/ 200 https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/#collapse07caf47b173cdbe89031014a1083087e
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/#collapse499dd82b24a1cedbe2c09c02ba61acdb
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/#collapse6e18c8b5afd73329edf6f53093945d58
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/#collapse8ce1f0f3f0b81678c100b681119133ed
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/#collapsee792afaf3dd3b6fb51b412ebc3e9db25
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/#collapsef8bb4222dc7b749d68363bba69d30051
+   H https://www.magyp.gob.ar/sitio/_css/bootstrap.css?2
+   H https://www.magyp.gob.ar/sitio/_css/buscador.css?D
+   H https://www.magyp.gob.ar/sitio/_css/carousel.css?234
+   H https://www.magyp.gob.ar/sitio/_css/estructura.css?A
+   H https://www.magyp.gob.ar/sitio/_css/header.css?0
+   H https://www.magyp.gob.ar/sitio/_css/internas.css?1
+   H https://www.magyp.gob.ar/sitio/_css/offcanvas.css?5
+   H https://www.magyp.gob.ar/sitio/_css/social.css?23040
+   H https://www.magyp.gob.ar/sitio/_img/logo_magyp.svg?7
+   H https://www.magyp.gob.ar/sitio/areas/porcinos
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/Notificación de enfermedades/
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/informacion_interes/
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/informes/
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/semana_de_lucha_contra_la_triquinosis/
+   H https://www.magyp.gob.ar/sitio/areas/prensa/
+   H https://www.magyp.gob.ar/sitio/index.php
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/?accion=imp
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Boletín Porcino/220000_Boletin Mensual 2022.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Boletín Porcino/230000_Boletin Mensual 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Boletín Porcino/241200_Boletin Mensual 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Boletín Porcino/251200_Boletín Mensual 2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Boletín Porcino/260901_Boletin Mensual 2026 (Septiembre).pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/171200_Tablero porcino 2017.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/181200_Tablero Porcino 2018.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/190000_Tablero Porcino 2019.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/202012_Tablero Porcino 2020.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/211200_Tablero Porcino 2021.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/221200_Tablero Porcino 2022.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/231200-Tablero Porcino 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/241200_Tablero Porcino 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/251200_Tablero Porcino 2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000000_Tablero de Control Sectorial Porcino/260800_Tablero Porcino 2026 (Agosto).pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/110000-Anuario 2011.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/120000-Anuario 2012.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/130000-Anuario 2013.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/140000-Anuario 2014.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/150000-Anuario 2015.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/160000-Anuario 2016.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/170000-Anuario 2017.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/180000-Anuario 2018.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/190000-Anuario 2019.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/200000_Anuario 2020.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/210000_Anuario 2021.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/220000_Anuario 2022.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/230000_Anuario 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/240000_Anuario 2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000005-Anuario/250000_Anuario 2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evoluci%C3%B3n de los Indicadores/000000_Evolucion Anual Indicadores.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evoluci%C3%B3n de los Indicadores/000000_Evolucion Anual Indicadores.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evoluci%C3%B3n de los Indicadores/000000_Evolucion Mensual Indicadores.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evoluci%C3%B3n de los Indicadores/000000_Evolucion Mensual Indicadores.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evolución de los Indicadores/000000_Evolucion Anual Indicadores.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evolución de los Indicadores/000000_Evolucion Anual Indicadores.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evolución de los Indicadores/000000_Evolucion Mensual Indicadores.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000007_Evolución de los Indicadores/000000_Evolucion Mensual Indicadores.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000008_Metodología de Cálculo/000000_Indicadores Sector Porcino Metodología de Cálculo.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/230000_Existencias Porcinas 2023.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/230000_Existencias Porcinas 2023.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/230000_Existencias Porcinas por Departamento al 31-03-2023.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/240000_Existencias Porcinas al 31-03-2024.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/240000_Existencias Porcinas al 31-03-2024.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/240000_Existencias Porcinas por Departamento al 31-03-2024.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/250000_Existencias Porcinas al 31-03-2025.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/250000_Existencias Porcinas al 31-03-2025.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/250000_Existencias Porcinas por Departamento al 31-03-2025.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/260000_Existencias Porcinas al 31-03-2026.pdf
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/260000_Existencias Porcinas al 31-03-2026.xlsx
+   H https://www.magyp.gob.ar/sitio/areas/porcinos/estadistica/_archivos/000009_Stocks/260000_Existencias Porcinas por Departamento al 31-03-2026.xlsx
+   H https://www.argentina.gob.ar/acerca
+   H https://www.argentina.gob.ar/agricultura/alimentos-y-bioeconomia
+   H https://www.argentina.gob.ar/agricultura/mercados-agropecuarios
+   H https://www.argentina.gob.ar/miargentina/mesadeayuda
+   H https://www.argentina.gob.ar/normativa
+   H https://www.argentina.gob.ar/organismos
+   H https://www.argentina.gob.ar/pais
+   H https://www.argentina.gob.ar/sugerencias
+   H https://www.argentina.gob.ar/terminos-y-condiciones
+   H https://www.argentina.gob.ar/turnos
+PAGE https://www.magyp.gob.ar/sitio/areas/ovinos/estadistica/ 404 https://www.magyp.gob.ar/sitio/areas/ovinos/estadistica/
+   H data:image/svg+xml, %3Csvg version=
+PAGE https://www.magyp.gob.ar/sitio/areas/ovinos/ 404 https://www.magyp.gob.ar/sitio/areas/ovinos/
+   H data:image/svg+xml, %3Csvg version=
+RES CSV https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv
+HEAD ['cultivo', 'anio', 'campania', 'provincia', 'provincia_id', 'departamento', 'departamento_id', 'superficie_sembrada_ha', 'superficie_cosechada_ha', 'produccion_tm', 'rendimiento_kgxha']
+   CULT ajo 1997
+   CULT algodón 2024
+   CULT alpiste 2024
+   CULT arroz 2024
+   CULT arveja 2024
+   CULT avena 2024
+   CULT banana 1997
+   CULT caña de azúcar 2004
+   CULT cebada cervecera 2015
+   CULT cebada forrajera 2015
+   CULT cebada total 2024
+   CULT cebolla total 1997
+   CULT centeno 2024
+   CULT colza 2024
+   CULT cártamo 2024
+   CULT garbanzo 2024
+   CULT girasol 2024
+   CULT jojoba 2007
+   CULT lenteja 2024
+   CULT limón 1996
+   CULT lino 2024
+   CULT mandarina 1996
+   CULT maní 2024
+   CULT maíz 2024
+   CULT mijo 2024
+   CULT naranja 1996
+   CULT papa total 1997
+   CULT pomelo 1996
+   CULT poroto alubia 2024
+   CULT poroto negro 2024
+   CULT poroto otros 2024
+   CULT poroto total 2024
+   CULT soja 1ra 2024
+   CULT soja 2da 2024
+   CULT soja total 2024
+   CULT sorgo 2024
+   CULT trigo candeal 2024
+   CULT trigo total 2024
+   CULT tung 2009
+   CULT té 2024
+   CULT yerba mate 2024
+PDF https://www.argentina.gob.ar/sites/default/files/2018/10/comercializacion_mercado_externo_agosto_2026.pdf 200 2915528
+  pages 29
+  ---page 0
+1 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+COMERCIALIZACIÓN  
+DE VINOS Y MOSTOS  
+MERCADO EXTERNO 
+       
+ 
+ 
+AGOSTO 2026 
+Datos Provisorios 
+ 
+NOTA: Los datos del presente anticipo son de carácter provisorio y pueden sufrir modificaciones por 
+declaraciones juradas efectuadas fuera de término o por rectificativas que presenten los inscriptos. 
+Los datos definitivos se publicarán en el anuario correspondiente 
+ELABORADO POR COORDINACIÓN DE PROMOCIÓN Y ASUNTOS TÉCNICOS 
+ 
+
+  ---page 1
+ 
+2 
+ 
+COMERCIALIZACIÓN DE VINOS Y MOSTOS 
+ MERCADO EXTERNO – AGOSTO 2026 
+ Datos Provisorios 
+ÍNDICE 
+ 
+1. RESUMEN EXPORTACIONES DE VINOS Y MOSTOS – AGOSTO 2026 ....................................... 3 
+2. COMPARATIVO MENSUAL VINOS Y MOSTOS AGOSTO 2025/AGOSTO 2026 .......................... 4 
+2.1. VINO-VOLUMEN: POR TIPO, COLOR Y MODALIDAD DE ENVÍO (hl) ................................ ................. 4 
+2.2. VINO-VALOR FOB: POR TIPO Y MODALIDAD DE ENVÍO (miles de dólares) ................................ ...... 4 
+2.3. VINO FRACCIONADO-VOLUMEN: POR TIPO DE ENVASE (hl) ................................ ..........................  4 
+2.4. MOSTO CONCENTRADO-VOLUMEN y VALOR FOB (toneladas y miles de dólares) ...........................  4 
+3. COMPARATIVO ACUMULADO VINOS Y MOSTOS ENE-AGO 2025/ ENE-AGO 2026 .................. 5 
+3.1. VINO-VOLUMEN: POR TIPO, COLOR Y MODALIDAD DE ENVÍO (hl) ................................ ................. 5 
+3.2. VINO-VALOR FOB y PRECIO MEDIO: POR TIPO y MODALIDAD DE ENVÍO (miles de dólares) ............ 5 
+3.3. VINO FRACCIONADO-VOLUMEN: POR TIPO DE ENVASE (hl) ................................ ..........................  5 
+3.4. MOSTO CONCENTRADO-VOLUMEN, VALOR FOB y PRECIO MEDIO ................................ ................ 5 
+3.5. TOTAL VALOR FOB ACUMULADO VINOS Y MOSTOS (miles de dólares) ................................ .......... 5 
+4. CUADROS Y GRÁFICOS MERCADO EXTERNO DE VINOS Y MOSTOS ........................................ 5 
+ 
+  
+  ---page 2
+ 
+3 
+ 
+COMERCIALIZACIÓN DE VINOS Y MOSTOS 
+ MERCADO EXTERNO – AGOSTO 2026 
+ Datos Provisorios 
+1. RESUMEN EXPORTACIONES DE VINOS Y MOSTOS – AGOSTO 2026 
+ 
+VINOS Y MOSTOS MENSUAL (VOLUMEN): AGOSTO 2025 / AGOSTO 2026 
+ 
+- VINO TOTAL:          -27,8% 
+Vino color:                -29,4% 
+Vino blanco:            -19,1% 
+ 
+- Vino Fraccionado:       -10,8% 
+Vino color:         -11,6% 
+Vino blanco:          -6,9% 
+ 
+  - Vino Granel:                -75,1% 
+Vino color:          -74,3% 
+Vino blanco:   -82,4% 
+ 
+               
+ -  MOSTO CONCENTRADO:       -29,5% 
+ 
+ 
+VINOS Y MOSTOS ACUMULADO (VOLUMEN): ENE-AGO 2025 / ENE-AGO 2026 
+ 
+- VINO TOTAL:               0,6% 
+Vino color:                 -4,5% 
+Vino blanco:              27,5% 
+  
+- Vino Fraccionado:        -6,8% 
+Vino color:             -7,7% 
+Vino blanco:         -2,1% 
+ 
+  - Vino Granel:                25,8% 
+Vino color:      5,9% 
+Vino blanco:       156,8% 
+ 
+               
+ -  MOSTO CONCENTRADO:         17,9% 
+ 
+VINOS MENSUAL (VOLUMEN): JULIO 2026 / AGOSTO 2026 
+ 
+- VINO TOTAL:                 9,7% 
+ 
+ 
+BASE DE DATOS AL DÍA 01/09/2026 
+Fuente: Sistema SIM-INV  
+  ---page 3
+ 
+4 
+ 
+COMERCIALIZACIÓN DE VINOS Y MOSTOS 
+ MERCADO EXTERNO – AGOSTO 2026 
+ Datos Provisorios 
+2. COMPARATIVO MENSUAL VINOS Y MOSTOS AGOSTO 2025/AGOSTO 2026 
+2.1. VINO-VOLUMEN: POR TIPO, COLOR Y MODALIDAD DE ENVÍO (hl)   
+ 
+2.2. VINO-VALOR FOB: POR TIPO Y MODALIDAD DE ENVÍO (miles de dólares) 
+ 
+2.3. VINO FRACCIONADO-VOLUMEN: POR TIPO DE ENVASE (hl)   
+ 
+2.4. MOSTO CONCENTRADO-VOLUMEN y VALOR FOB (toneladas y miles de dólares) 
+ 
+2025 2026 Var. % 25/26 Part % s/total 2025 2026 Var. % 25/26 Part % s/total 2025 2026 Var. % 25/26 Part % s/total
+Sin Mención Varietal 15.578     13.569     -12,9 12,3          4.200       480           -88,6 4,3            19.778     14.049     -29,0 11,5          
+Blanco 1.814       2.675       47,5 19,7          1.750       -            -           -            3.564       2.675       -24,9 19,0          
+Color 13.764     10.895     -20,8 80,3          2.450       480           -80,4 100,0       16.214     11.375     -29,8 81,0          
+Varietal 103.624   91.860     -11,4 82,9          40.647     10.685     -73,7 95,7          144.271   102.545   -28,9 84,1          
+Blanco 16.790     13.898     -17,2 15,1          2.460       740           -69,9 6,9            19.250     14.638     -24,0 14,3          
+Color 86.834     77.962     -10,2 84,9          38.187     9.945       -74,0 93,1          125.021   87.907     -29,7 85,7          
+Espumoso 4.874       5.218       7,1 4,7            -            -            -           -            4.874       5.218       7,1 4,3            
+Blanco 3.230       3.742       15,9 71,7          -            -            -           -            3.230       3.742       15,9 71,7          
+Color 1.644       1.476       -10,2 28,3          -            -            -           -            1.644       1.476       -10,2 28,3          
+Otros Vinos* 26             95             268,4 0,09          -            -            -            -            26             95             268,4 0,1            
+Blanco -            6                -            5,9            -            -            -            -            -            6                -            5,9            
+Color 26             89             246,5 94,1          -            -            -            -            26             89             246,5 94,1          
+Total Blanco 21.834     20.320     -6,9 18,3          4.210       740           -82,4 6,6            26.044     21.060     -19,1 17,3          
+Total Color 102.267   90.422  
+  ---page 4
+ 
+5 
+ 
+COMERCIALIZACIÓN DE VINOS Y MOSTOS 
+ MERCADO EXTERNO – AGOSTO 2026 
+ Datos Provisorios 
+3. COMPARATIVO ACUMULADO VINOS Y MOSTOS ENE-AGO 2025/ ENE-AGO 2026 
+3.1. VINO-VOLUMEN: POR TIPO, COLOR Y MODALIDAD DE ENVÍO (hl)   
+ 
+3.2. VINO-VALOR FOB y PRECIO MEDIO: POR TIPO y MODALIDAD DE ENVÍO (miles de dólares) 
+ 
+3.3. VINO FRACCIONADO-VOLUMEN: POR TIPO DE ENVASE (hl)  
+ 
+3.4. MOSTO CONCENTRADO-VOLUMEN, VALOR FOB y PRECIO MEDIO 
+ 
+3.5. TOTAL VALOR FOB ACUMULADO VINOS Y MOSTOS (miles de dólares) 
+ 
+ 
+ 
+4. CUADROS Y GRÁFICOS MERCADO EXTERNO DE VINOS Y MOSTOS  
+PRODUCTO 2025 2026 Var. % 25/26
+VINOS 434.358     400.359     -7,8 
+MOSTOS (concentrado y sulfitado) 83.921       90.121       7,4
+TOTAL ENE-AGO        518.279   490.481     -5,4 
+2025 2026 Var. % 25/26 Part % s/total 2026 2025 2026 Var. % 25/26 Part % s/total 2026 2025 2026 Var. % 25/26 Part % s/total 2026
+Sin Mención Varietal 114.676         100.696         -12,2 11,2             26.510           96.280           263,2 26,9             141.186         196.976         39,5 15,7           
+Blanco 21.189           20.960           -1,1 20,8             17.170           74.310           332,8          77,2             38.359           95.270           148,4 48,4           
+Color 93.487           79.737           -14,7 79,2             9.340             21.970           135,2 22,8             102.828         101.707         -1,1 51,6           
+Varietal 816.776         758.704         -7,1 84,4             258.227         261.877         1,4 73,1             1.075.003     1.020.581     -5,1 81,2           
+Blanco 122.942         115.672         -5,9 15,2             20.399           22.160           8,6 8,5               143.341         137.832         -3,8 13,5           
+Color 693.834         643.032         -7,3 84,8             237.828         239.717         0,8 91,5             931.662         882.749         -5,3 86,5           
+Espumoso 32.659           39.310           20,4 4,4               -                  -              -               32.659           39.310           20,4 3,1              
+Blanco 20.313           24.417           20,2 62,1             -                  -                  -              -               20.313           24.417           20,2 62,1           
+Color 12.346           14.893           20,6 37,9             -                  -                  -              -               12.346           14.893           20,6 37,9           
+Otros  Vinos* 156                
+PDF https://www.argentina.gob.ar/sites/default/files/2018/10/anuario_cosecha_y_elaboracion_2025.pdf 200 7595775
+  pages 83
+  ---page 0
+ 
+ 
+0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+INFORME ANUAL DE 
+COSECHA Y ELABORACIÓN 2025 
+(Base de datos congelada al 01/09/25) 
+ 
+ 
+ 
+ 
+ 
+ 
+MENDOZA, ARGENTINA – Noviembre 2025 
+Informe elaborado por  
+Coordinación de Promoción y Asuntos Técnicos 
+INSTITUTO NACIONAL DE VITIVINICULTURA 
+ 
+                                      Av. San Martín 430 / Ciudad (CP M5500AAR) / Mendoza / Argentina 
+www.argentina.gob.ar 
+
+  ---page 1
+ 
+ 
+INFORME ANUAL  
+COSECHA Y ELABORACIÓN 2025 
+ ARGENTINA  
+ 
+ 
+AREA VALLE DE UCO 
+ PROVINCIA MENDOZA – ÁREA VALLE DE UCO 
+1 
+ÍNDICE 
+ 
+1. INTRODUCCIÓN ............................................................................................................................................................................... 2 
+2. RESUMEN COSECHA Y ELABORACIÓN 2025 Y SU VARIACIÓN RESPECTO A 2024………….…………………………………………………….……………2 
+3. PRINCIPALES DATOS DE COSECHA 2025 – TOTAL PAÍS ...................................................................................................................... 3 
+3.1. PRODUCCIÓN INGRESADA A ESTABLECIMIENTOS ELABORADORES DE VINO Y/O MOSTO ......................................................... 5 
+3.2. PRODUCCIÓN INGRESADA A ESTABLECIMIENTOS QUE PRODUCEN UVA PARA CONSUMO EN FRESCO...................................... 5 
+3.3. PRODUCCIÓN INGRESADA A ESTABLECIMIENTOS QUE PRODUCEN PASAS ................................................................................ 6 
+4. PRINCIPALES DATOS DE ELABORACIÓN 2025 - TOTAL PAÍS……………………………………………………………………………………………………………..6 
+5. CUADROS Y GRÁFICOS COSECHA Y ELABORACIÓN 2025 - POR PROVINCIAS Y DEPARTAMENTOS ..................................................... 7 
+1- PRODUCCIÓN TOTAL DE UVA POR VARIEDAD, APTITUD Y COLOR SEGÚN ORIGEN DEL VIÑEDO..…………………………….…..……..7 
+2- PRODUCCIÓN TOTAL DE UVA POR DESTINO SEGÚN ORIGEN DEL VIÑEDO…………..…………………………….………………………………27  
+3- UVA INGRESADA A ESTABLECIMIENTOS ELABORADORES DE VINO Y MOSTO POR LUGAR DE DE.STINO…….……..………..…….31 
+4- UVA DESTINADA A ELABORACIÓN DE VINO Y MOSTO POR ORIGEN DEL VIÑEDO Y LUGAR DE DESTINO……………….....……….38 
+5- UVA DESTINADA A ELABORACIÓN DE VINO Y MOSTO POR VARIEDAD Y LUGAR DE DESTINO..…………….…...…………..……..….45 
+6- UVA ORGÁNICA DESTINADA A LA ELABORACIÓN DE VINO Y MOSTO POR VARIEDAD Y ORIGEN DEL VIÑEDO….………………..63 
+7- UVA DESTINADA A ELABORACIÓN DE VINO Y MOSTO - MECANIZACIÓN DE COSECHA POR ORIGEN DEL VIÑEDO……………...71 
+8- ELABORACIÓN DE VINO, MOSTO Y JUGO DE UVA – POR PROVINCIA Y DEPARTAMENTO……………………..……………….…….…….75 
+  
+ 
+  ---page 2
+ 
+ 
+ 
+INFORME ANUAL  
+COSECHA Y ELABORACIÓN 2025 
+ ARGENTINA  
+ 
+ 
+AREA VALLE DE UCO 
+ PROVINCIA MENDOZA – ÁREA VALLE DE UCO 
+2 
+1. INTRODUCCIÓN  
+Este informe presenta los datos estadísticos de la cosecha de uva y elaboración de vinos y mostos del año 
+2025. En la primera parte se analizan los principales datos a nivel país y su evolución en los últimos años. 
+En la segunda parte se incorporan cuadros y gráficos de datos estadísticos de distintas variables, a nivel país, 
+provincias y departamentos para cada provincia. 
+ 
+2. RESUMEN COSECHA Y ELABORACIÓN 2025 Y SU VARIACIÓN RESPECTO A 2024 
+ 
+        
+ 
+Producción de uvas (quintales)
+POR COLOR 2024 2025 Var. % 24/25 Part. % s/total 2025
+Tintas 9.740.661            10.392.280         6,7 52,2
+Rosadas 5.898.087            6.017.407            2,0 30,2
+Blancas 3.550.992            3.498.649            -1,5 17,6
+TOTAL PRODUCCIÓN 19.189.740          19.908.335         3,7 100,0
+POR DESTINO 2024 2025 Var. % 24/25 Part. % s/total 2025
+ELABORACIÓN 18.798.000          19.501.785         3,7 98,0
+Tintas 9.738.219            10.390.846         6,7 53,3
+Rosadas 5.651.335            5.750.749            1,8 29,5
+Blancas 3.408.445            3.360.190            -1,4 17,2
+CONSUMO EN FRESCO Y/O PASAS 391.740                406.550               3,8 2,0
+TOTAL PRODUCCIÓN 19.189.740          19.908.335         3,7 100,0
+Elaboración de vinos, mostos y jugos (hectolitros)
+POR PRODUCTO 2024 2025 Var. % 24/25 Part. % s/total 2025
+TOTAL VINOS 10.868.843          10.771.719         -0,9 72,6
+VINO TINTO 7.403.722            7.841.032            5,9 72,8
+VINO BLANCO 3.101.977            2.533.815            -18,3 23,5
+VINO ROSADO 363.143                396.872               9,3 3,7
+MOSTOS 3.380.231            4.058.417            20,1 27,4
+JUGO DE UVA 1.421                     795                        -44,1 0,01
+TOTAL ELABORACIÓN 14.250.495 14.830.931 4,1 100,0
+Fuente: Instituto Nacional de Vitivinicultura
+
+  ---page 3
+ 
+ 
+ 
+INFORME ANUAL  
+COSECHA Y ELABORACIÓN 2025 
+ ARGENTINA  
+ 
+ 
+AREA VALLE DE UCO 
+ PROVINCIA MENDOZA – ÁREA VALLE DE UCO 
+3 
+ 
+3. PRINCIPALES DATOS DE COSECHA 
+La cosecha de uvas de Argentina en el año 2025 alcanzó los 19.908.335 quintales, un 3,7% mayor a la del año 
+anterior ( +718.595 qq). Si se comparan los datos con el promedio de los últimos 10 años, la cosecha 2025 
+muestra una disminución del 2,4%. 
+ 
+ 
+ 
+El 52,2% de lo cosechado corresponde a variedades tintas, el 30,2% a rosadas y el 17,6% a blancas. Respecto al 
+año 2024, las variedades tintas aumentaron un 6,7% y las rosadas un 2%, mientras que las blancas  
+disminuyeron un 1,5%.  
+Según los datos ingresados al organismo, se destinaron a bodegas y/o fábricas de mosto 19.501.785 qq (98%) y 
+a secaderos de pasas y establecimientos productores de uva en fresco 406.550  qq (2%).  
+El 74,3% del total de uva se cosechó en Mendoza, el 19,9% en San Juan y el restante 5,8% en 15 provincias. 
+ 
+
+  ---page 4
+ 
+4 
+ 
+INFORME ANUAL  
+COSECHA Y ELABORACIÓN 2025 
+ ARGENTINA  
+ 
+ 
+AREA VALLE DE UCO 
+ PROVINCIA MENDOZA – ÁREA VALLE DE UCO 
+Las variedades con mayor producción en el año 2025 fueron: Malbec (22,4%) y Cereza (17%). En tercer lugar se 
+ubica Bonarda (9,4%) y en cuarto lugar Criolla Grande (8,7%). 
+ 
+ 
+En 2025 se cosecharon 744.277 qq de uva orgánica  en 9 provincias, lo cual representa el 3,7% del total 
+cosechado.  
+Las provincias con mayor proporción de uva orgánica sobre el total fueron Chubut (73,2%), San Luis (45,3%), La 
+Rioja (19%) y Río Negro (8,5%). 
+Del total de uva cosechada en 2025, el 22,1% se cosechó en forma mecánica (4.309.802 qq).  
+En términos relativos, la participación de la mecanización de esta labor sobre el total provincial es mayor en las 
+provincias de La Pampa (95%), Neuquén (83,4%) y Salta (37,2%). En Mendoza y San Juan la cosecha mecánica 
+representó el 22,9% y 18% del total provincial, respectivamente. 
+PROVINCIA COSECHA MECÁNICA  TOTAL PRODUCCIÓN DE UVA  Part % cosecha mecánica 
+MENDOZA 3.381.609   14.785.023             22,9                 
+SAN JUAN 647.681      3.605.148               18,0                 
+SALTA 103.074      277.153                  37,2                 
+LA RIOJA 89.530        566.144                  15,8                 
+NEUQUEN 57.456        68.925                     83,4                 
+LA PAMPA 19.279        20.287                     95,0                 
+RIO NEGRO 6.224           43.472                     14,3                 
+CATAMARCA 4.950           117.077                  4,2                   
+BUENOS AIRES -                   4.184                       -                   
+CORDOBA -                   4.080                       -                   
+JUJUY -                   3.920                       -                   
+TUCUMAN -                   2.145                       -                   
+CHUBUT -                   1.860                       -                   
+ENTRE RIOS -                   1.292                       -                   
+SAN LUIS -                   1.066                       -                   
+SANTA CRUZ -                   6                              -                   
+SANTA FE -                   3                              -                   
+TOTAL UVA 4.309.802   19.501.785             22,1                 
+PRODUCCIÓN DE UVA DESTINO ELABORACIÓN - AÑO 2025
+POR TIPO DE COSECHA - EN QUINTALES
+PROVINCIA UVA ORGÁNICA  UVA NO ORGÁNICA  TOTAL PRODUCC
