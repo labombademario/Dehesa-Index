@@ -1,0 +1,411 @@
+MKPOBTA D0110 Fresh products | FAT Fat content (t) | 2024 41486.07
+MKPOBTA D0110 Fresh products | PRO Products obtained (1 000 t) | 2024 759.14
+MKPOBTA D0110 Fresh products | UWM Utilization of whole milk (1 000 t) | 2024 1037.15
+MKPOBTA D0120 Manufactured products | FAT Fat content (t) | 2024 92656.51
+MKPOBTA D0120 Manufactured products | PRO Products obtained (1 000 t) | 2024 286.97
+MKPOBTA D0120 Manufactured products | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D0120 Manufactured products | UWM Utilization of whole milk (1 000 t) | 2024 2315.68
+MKPOBTA D1100DLD Raw milk, differences and losses in dairies | FAT Fat content (t) | 2024 5546.32
+MKPOBTA D1100DLD Raw milk, differences and losses in dairies | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D1100DLD Raw milk, differences and losses in dairies | UWM Utilization of whole milk (1 000 t) | 2024 138.66
+MKPOBTA D1100DU Raw milk, total available on dairies  (=total used) | FAT Fat content (t) | 2024 139922.23
+MKPOBTA D1100DU Raw milk, total available on dairies  (=total used) | PAT Protein content (t) | 2023 107111.38
+MKPOBTA D1100DU Raw milk, total available on dairies  (=total used) | PRO Products obtained (1 000 t) | 2024 3353.75
+MKPOBTA D1100OUD Raw milk, other uses by dairies | FAT Fat content (t) | 2024 0.0
+MKPOBTA D1100OUD Raw milk, other uses by dairies | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D1100OUD Raw milk, other uses by dairies | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D1100OUD Raw milk, other uses by dairies | UWM Utilization of whole milk (1 000 t) | 2024 0.0
+MKPOBTA D1110D Raw cows' milk delivered to dairies | FAT Fat content (t) | 2024 136625.68
+MKPOBTA D1110D Raw cows' milk delivered to dairies | PAT Protein content (t) | 2024 111348.71
+MKPOBTA D1110D Raw cows' milk delivered to dairies | PRO Products obtained (1 000 t) | 2024 3304.82
+MKPOBTA D1120D Ewes' milk delivered to dairies | FAT Fat content (t) | 2024 305.3
+MKPOBTA D1120D Ewes' milk delivered to dairies | PRO Products obtained (1 000 t) | 2024 4.3
+MKPOBTA D1130D Goats' milk delivered to dairies | FAT Fat content (t) | 2024 364.8
+MKPOBTA D1130D Goats' milk delivered to dairies | PRO Products obtained (1 000 t) | 2024 11.4
+MKPOBTA D1140D Buffalos' milk delivered to dairies | FAT Fat content (t) | 2024 80.0
+MKPOBTA D1140D Buffalos' milk delivered to dairies | PRO Products obtained (1 000 t) | 2024 1.0
+MKPOBTA D1200D Raw cream delivered to dairies | FAT Fat content (t) | 2024 0.0
+MKPOBTA D1200D Raw cream delivered to dairies | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D2000X Milk and cream in bulk - exports | FAT Fat content (t) | 2020 0.0
+MKPOBTA D2000X Milk and cream in bulk - exports | PRO Products obtained (1 000 t) | 2024 2.23
+MKPOBTA D2000X Milk and cream in bulk - exports | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D2000X Milk and cream in bulk - exports | UWM Utilization of whole milk (1 000 t) | 2024 5.83
+MKPOBTA D2000Y Milk and cream in bulk - exports intra-EU | FAT Fat content (t) | 2020 0.0
+MKPOBTA D2000Y Milk and cream in bulk - exports intra-EU | PRO Products obtained (1 000 t) | 2024 1.65
+MKPOBTA D2000Y Milk and cream in bulk - exports intra-EU | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D2000Y Milk and cream in bulk - exports intra-EU | UWM Utilization of whole milk (1 000 t) | 2024 5.32
+MKPOBTA D2100 Drinking milk | FAT Fat content (t) | 2024 11970.36
+MKPOBTA D2100 Drinking milk | PAT Protein content (t) | 2016 13464.0
+MKPOBTA D2100 Drinking milk | PRO Products obtained (1 000 t) | 2024 405.63
+MKPOBTA D2100 Drinking milk | UWM Utilization of whole milk (1 000 t) | 2024 299.26
+MKPOBTA D2110 Raw drinking milk | PRO Products obtained (1 000 t) | 2024 4.71
+MKPOBTA D2120 Whole milk | PAT Protein content (t) | 2016 8846.0
+MKPOBTA D2120 Whole milk | PRO Products obtained (1 000 t) | 2024 227.43
+MKPOBTA D2120I Imports of whole milk (including raw milk) | FAT Fat content (t) | 2024 1088.49
+MKPOBTA D2120I Imports of whole milk (including raw milk) | PRO Products obtained (1 000 t) | 2024 31.1
+MKPOBTA D2120J Imports (intra-EU) of whole milk (including raw milk) | FAT Fat content (t) | 2024 1088.49
+MKPOBTA D2120J Imports (intra-EU) of whole milk (including raw milk) | PRO Products obtained (1 000 t) | 2024 31.1
+MKPOBTA D2121 Whole milk pasteurised | PRO Products obtained (1 000 t) | 2024 70.89
+MKPOBTA D2122 Whole milk sterilised | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D2123 Whole milk uperised | PRO Products obtained (1 000 t) | 2024 156.54
+MKPOBTA D2130 Partly skimmed milk | PAT Protein content (t) | 2016 4371.0
+MKPOBTA D2130 Partly skimmed milk | PRO Products obtained (1 000 t) | 2024 163.53
+MKPOBTA D2131 Partly skimmed milk pasteurised | PRO Products obtained (1 000 t) | 2024 50.31
+MKPOBTA D2132 Partly skimmed milk sterilised | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D2133 Partly skimmed milk uperised | PRO Products obtained (1 000 t) | 2024 113.22
+MKPOBTA D2140 Skimmed milk | PAT Protein content (t) | 2016 33.0
+MKPOBTA D2140 Skimmed milk | PRO Products obtained (1 000 t) | 2024 9.97
+MKPOBTA D2140I Imports of skimmed milk | FAT Fat content (t) | 2024 15.52
+MKPOBTA D2140I Imports of skimmed milk | PRO Products obtained (1 000 t) | 2024 3.1
+MKPOBTA D2140J Imports (intra-EU) of skimmed milk | FAT Fat content (t) | 2024 15.51
+MKPOBTA D2140J Imports (intra-EU) of skimmed milk | PRO Products obtained (1 000 t) | 2024 3.1
+MKPOBTA D2140RA Skimmed milk - returned to the farm | FAT Fat content (t) | 2024 0.0
+MKPOBTA D2140RA Skimmed milk - returned to the farm | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D2140RA Skimmed milk - returned to the farm | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D2141 Skimmed milk pasteurised | PRO Products obtained (1 000 t) | 2024 3.1
+MKPOBTA D2142 Skimmed milk sterilised | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D2143 Skimmed milk uperised | PRO Products obtained (1 000 t) | 2024 6.87
+MKPOBTA D2200IME Imports of cream (in milk equivalent) | FAT Fat content (t) | 2023 531.56
+MKPOBTA D2200IME Imports of cream (in milk equivalent) | PRO Products obtained (1 000 t) | 2024 1.13
+MKPOBTA D2200JME Imports (intra-EU) of cream (in milk equivalent) | FAT Fat content (t) | 2020 18.0
+MKPOBTA D2200JME Imports (intra-EU) of cream (in milk equivalent) | PRO Products obtained (1 000 t) | 2024 1.13
+MKPOBTA D2200V Cream for direct consumption | FAT Fat content (t) | 2024 21609.18
+MKPOBTA D2200V Cream for direct consumption | PAT Protein content (t) | 2016 21618.0
+MKPOBTA D2200V Cream for direct consumption | PRO Products obtained (1 000 t) | 2024 82.81
+MKPOBTA D2200V Cream for direct consumption | UWM Utilization of whole milk (1 000 t) | 2024 540.23
+MKPOBTA D2201 Cream of fat content by weight not exceeding 29 % | PRO Products obtained (1 000 t) | 2024 44.04
+MKPOBTA D2202 Cream of fat content by weight over 29 % | PRO Products obtained (1 000 t) | 2024 38.77
+MKPOBTA D3100 Powder products | FAT Fat content (t) | 2024 5671.01
+MKPOBTA D3100 Powder products | PRO Products obtained (1 000 t) | 2024 73.39
+MKPOBTA D3100 Powder products | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2012 0.0
+MKPOBTA D3100 Powder products | UWM Utilization of whole milk (1 000 t) | 2024 141.78
+MKPOBTA D3100_X_3113 Milk and cream powders, excluding skimmed milk powders | FAT Fat content (t) | 2024 4389.27
+MKPOBTA D3100_X_3113 Milk and cream powders, excluding skimmed milk powders | PAT Protein content (t) | 2016 4637.0
+MKPOBTA D3100_X_3113 Milk and cream powders, excluding skimmed milk powders | PRO Products obtained (1 000 t) | 2024 17.85
+MKPOBTA D3100_X_3113 Milk and cream powders, excluding skimmed milk powders | UWM Utilization of whole milk (1 000 t) | 2024 109.73
+MKPOBTA D3111 Whole milk powder | PAT Protein content (t) | 2016 3769.0
+MKPOBTA D3111 Whole milk powder | PRO Products obtained (1 000 t) | 2024 12.03
+MKPOBTA D3112 Partly skimmed milk powder | PAT Protein content (t) | 2016 660.0
+MKPOBTA D3112 Partly skimmed milk powder | PRO Products obtained (1 000 t) | 2024 5.32
+MKPOBTA D3113 Skimmed milk powder | FAT Fat content (t) | 2024 121.63
+MKPOBTA D3113 Skimmed milk powder | PAT Protein content (t) | 2016 139.0
+MKPOBTA D3113 Skimmed milk powder | PRO Products obtained (1 000 t) | 2024 22.11
+MKPOBTA D3113 Skimmed milk powder | UWM Utilization of whole milk (1 000 t) | 2024 3.04
+MKPOBTA D3120 Cream milk powder | PAT Protein content (t) | 2016 208.0
+MKPOBTA D3120 Cream milk powder | PRO Products obtained (1 000 t) | 2024 0.5
+MKPOBTA D3130 Buttermilk powder | FAT Fat content (t) | 2024 9.52
+MKPOBTA D3130 Buttermilk powder | PAT Protein content (t) | 2016 18.0
+MKPOBTA D3130 Buttermilk powder | PRO Products obtained (1 000 t) | 2024 0.11
+MKPOBTA D3130 Buttermilk powder | UWM Utilization of whole milk (1 000 t) | 2024 0.24
+MKPOBTA D3190 Other powder products | FAT Fat content (t) | 2024 1150.6
+MKPOBTA D3190 Other powder products | PRO Products obtained (1 000 t) | 2024 33.31
+MKPOBTA D3190 Other powder products | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2012 0.0
+MKPOBTA D3190 Other powder products | UWM Utilization of whole milk (1 000 t) | 2024 28.76
+MKPOBTA D3200 Concentrated milk | FAT Fat content (t) | 2024 264.93
+MKPOBTA D3200 Concentrated milk | PAT Protein content (t) | 2016 311.0
+MKPOBTA D3200 Concentrated milk | PRO Products obtained (1 000 t) | 2024 2.07
+MKPOBTA D3200 Concentrated milk | UWM Utilization of whole milk (1 000 t) | 2024 6.62
+MKPOBTA D3210 Concentrated milk not sweetened | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D3220 Concentrated milk sweetened | PRO Products obtained (1 000 t) | 2024 2.07
+MKPOBTA D4100 Acidified milk (yoghurts and other) | FAT Fat content (t) | 2024 5124.67
+MKPOBTA D4100 Acidified milk (yoghurts and other) | PRO Products obtained (1 000 t) | 2024 150.2
+MKPOBTA D4100 Acidified milk (yoghurts and other) | UWM Utilization of whole milk (1 000 t) | 2024 128.12
+MKPOBTA D4110 Acidified milk with additives | PRO Products obtained (1 000 t) | 2024 150.2
+MKPOBTA D4120 Acidified milk without additives | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D4200 Buttermilk | FAT Fat content (t) | 2024 5.13
+MKPOBTA D4200 Buttermilk | PAT Protein content (t) | 2016 5.0
+MKPOBTA D4200 Buttermilk | PRO Products obtained (1 000 t) | 2024 1.71
+MKPOBTA D4200 Buttermilk | UWM Utilization of whole milk (1 000 t) | 2024 0.13
+MKPOBTA D5000 Whey | FAT Fat content (t) | 2024 29.19
+MKPOBTA D5000 Whey | PAT Protein content (t) | 2014 23.0
+MKPOBTA D5000 Whey | PRO Products obtained (1 000 t) | 2024 1.68
+MKPOBTA D5100 Whey (liquid) | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D5200 Whey (concentrated) | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D5300 Whey (in powder or in block) | PRO Products obtained (1 000 t) | 2024 1.68
+MKPOBTA D5400 Lactose (milk sugar) | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D5500 Lactalbumin | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D6000 Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads | FAT Fat content (t) | 2024 38024.33
+MKPOBTA D6000 Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads | PAT Protein content (t) | 2016 40543.0
+MKPOBTA D6000 Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads | PRO Products obtained (1 000 t) | 2024 45.64
+MKPOBTA D6000 Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D6000 Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads | UWM Utilization of whole milk (1 000 t) | 2024 950.61
+MKPOBTA D6100 Butter | FAT Fat content (t) | 2024 34692.56
+MKPOBTA D6100 Butter | PRO Products obtained (1 000 t) | 2024 42.31
+MKPOBTA D6100 Butter | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D6100 Butter | UWM Utilization of whole milk (1 000 t) | 2024 867.31
+MKPOBTA D6110 Traditional butter | FAT Fat content (t) | 2023 34516.26
+MKPOBTA D6110 Traditional butter | PRO Products obtained (1 000 t) | 2023 42.09
+MKPOBTA D6120 Recombined butter | FAT Fat content (t) | 2020 0.0
+MKPOBTA D6120 Recombined butter | PRO Products obtained (1 000 t) | 2020 0.0
+MKPOBTA D6120 Recombined butter | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D6120 Recombined butter | UWM Utilization of whole milk (1 000 t) | 2020 0.0
+MKPOBTA D6130 Whey butter | FAT Fat content (t) | 2020 1217.7
+MKPOBTA D6130 Whey butter | PRO Products obtained (1 000 t) | 2020 1.49
+MKPOBTA D6130 Whey butter | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D6130 Whey butter | UWM Utilization of whole milk (1 000 t) | 2020 0.0
+MKPOBTA D6200 Rendered butter and butteroil | FAT Fat content (t) | 2024 3331.77
+MKPOBTA D6200 Rendered butter and butteroil | PRO Products obtained (1 000 t) | 2024 3.34
+MKPOBTA D6200 Rendered butter and butteroil | UWM Utilization of whole milk (1 000 t) | 2024 83.29
+MKPOBTA D6900 Other yellow fat dairy products | FAT Fat content (t) | 2024 0.0
+MKPOBTA D6900 Other yellow fat dairy products | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D6900 Other yellow fat dairy products | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D6900 Other yellow fat dairy products | UWM Utilization of whole milk (1 000 t) | 2024 0.0
+MKPOBTA D6910 Reduced-fat butter | FAT Fat content (t) | 2020 0.0
+MKPOBTA D6910 Reduced-fat butter | PRO Products obtained (1 000 t) | 2020 0.0
+MKPOBTA D6910 Reduced-fat butter | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D6910 Reduced-fat butter | UWM Utilization of whole milk (1 000 t) | 2020 0.0
+MKPOBTA D6990 Other yellow fat dairy products (without reduced-fat butter) | FAT Fat content (t) | 2020 0.0
+MKPOBTA D6990 Other yellow fat dairy products (without reduced-fat butter) | PRO Products obtained (1 000 t) | 2020 0.0
+MKPOBTA D6990 Other yellow fat dairy products (without reduced-fat butter) | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D6990 Other yellow fat dairy products (without reduced-fat butter) | UWM Utilization of whole milk (1 000 t) | 2020 0.0
+MKPOBTA D7100 Cheese | FAT Fat content (t) | 2024 48667.06
+MKPOBTA D7100 Cheese | PRO Products obtained (1 000 t) | 2024 205.04
+MKPOBTA D7100 Cheese | UWM Utilization of whole milk (1 000 t) | 2024 1216.68
+MKPOBTA D7111 Soft cheese | PRO Products obtained (1 000 t) | 2024 6.25
+MKPOBTA D7112 Medium soft cheese | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D7113 Medium hard cheese | PRO Products obtained (1 000 t) | 2024 74.34
+MKPOBTA D7114 Hard cheese | PRO Products obtained (1 000 t) | 2024 59.68
+MKPOBTA D7115 Extra hard cheese | PRO Products obtained (1 000 t) | 2024 1.68
+MKPOBTA D7116 Fresh cheese | PRO Products obtained (1 000 t) | 2024 63.1
+MKPOBTA D7121 Cheese from cows'milk (pure) | FAT Fat content (t) | 2024 48344.73
+MKPOBTA D7121 Cheese from cows'milk (pure) | PAT Protein content (t) | 2015 48378.0
+MKPOBTA D7121 Cheese from cows'milk (pure) | PRO Products obtained (1 000 t) | 2024 203.95
+MKPOBTA D7121 Cheese from cows'milk (pure) | UWM Utilization of whole milk (1 000 t) | 2024 1208.62
+MKPOBTA D7122 Cheese from ewes milk (pure) | PRO Products obtained (1 000 t) | 2024 0.31
+MKPOBTA D7123 Cheese from goats milk (pure) | PRO Products obtained (1 000 t) | 2024 0.73
+MKPOBTA D7129 Others (cheese from buffalos'milk (pure) or mixed cheese) | PRO Products obtained (1 000 t) | 2024 0.05
+MKPOBTA D7200 Processed cheese | PRO Products obtained (1 000 t) | 2024 4.78
+MKPOBTA D9000I Imports of other products | FAT Fat content (t) | 2012 0.0
+MKPOBTA D9000I Imports of other products | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D9000J Imports (intra-EU) of other products | FAT Fat content (t) | 2012 0.0
+MKPOBTA D9000J Imports (intra-EU) of other products | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D9100 Drinks with a milk base | FAT Fat content (t) | 2024 1802.76
+MKPOBTA D9100 Drinks with a milk base | PRO Products obtained (1 000 t) | 2024 99.76
+MKPOBTA D9100 Drinks with a milk base | UWM Utilization of whole milk (1 000 t) | 2024 45.07
+MKPOBTA D9200 Other fresh products (milk-based desserts, ice cream) | FAT Fat content (t) | 2024 973.97
+MKPOBTA D9200 Other fresh products (milk-based desserts, ice cream) | PRO Products obtained (1 000 t) | 2024 19.03
+MKPOBTA D9200 Other fresh products (milk-based desserts, ice cream) | UWM Utilization of whole milk (1 000 t) | 2024 24.35
+MKPOBTA D9300 Caseins and caseinates | FAT Fat content (t) | 2024 0.0
+MKPOBTA D9300 Caseins and caseinates | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D9300 Caseins and caseinates | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D9300 Caseins and caseinates | UWM Utilization of whole milk (1 000 t) | 2024 0.0
+MKPOBTA D9400 Other manufactured milk products | FAT Fat content (t) | 2024 0.0
+MKPOBTA D9400 Other manufactured milk products | PRO Products obtained (1 000 t) | 2024 0.0
+MKPOBTA D9400 Other manufactured milk products | USM Utilization of skimmed milk and buttermilk (1 000 t) | 2020 0.0
+MKPOBTA D9400 Other manufactured milk products | UWM Utilization of whole milk (1 000 t) | 2024 0.0
+MKPOBTA D9900A Other products collected from farm | FAT Fat content (t) | 2012 0.0
+MKPOBTA D9900A Other products collected from farm | PRO Products obtained (1 000 t) | 2024 0.0
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | produzentenpreisindex-landwirtschaft | Produzentenpreisindex Landwirtschaft | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | immobilien-stadt-bern | 2015-monitoring-landwirtschaft | 2015 Monitoring Landwirtschaft | ['terms_by'] | ['CSV']
+ODS Preisindizes Landwirtschaft | immobilien-stadt-bern | _2556 | 2016 Monitoring Landwirtschaft | ['terms_by'] | ['CSV']
+ODS Preisindizes Landwirtschaft | immobilien-stadt-bern | 2016-nachhaltigkeitsrosette-landwirtschaft | 2016 Nachhaltigkeitsrosette Landwirtschaft | ['terms_by'] | ['CSV']
+ODS Preisindizes Landwirtschaft | immobilien-stadt-bern | 2015-nachhaltigkeitsrosette-landwirtschaft | 2015 Nachhaltigkeitsrosette Landwirtschaft | ['terms_by'] | ['CSV']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | stickstoffbilanz-der-landwirtschaft5 | Stickstoffbilanz der Landwirtschaft | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | phosphorbilanz-der-landwirtschaft5 | Phosphorbilanz der Landwirtschaft | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | statistisches-amt-kanton-zuerich | geb-vol-landwirtschaft-anteil | Geb.Vol. Landwirtschaft: Anteil [%] | ['terms_by'] | ['CSV']
+ODS Preisindizes Landwirtschaft | statistisches-amt-kanton-zuerich | geb-vol-landwirtschaft-zunahme | Geb.Vol. Landwirtschaft: Zunahme [%] | ['terms_by'] | ['CSV']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-landwirtschaft-blw | beschaeftigte-in-der-landwirtschaft-1990-2015 | Beschaeftigte in der Landwirtschaft 1990-2015 | ['terms_by'] | ['XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | gesamtproduktion-der-landwirtschaft-indizes-20101004 | Gesamtproduktion der Landwirtschaft. Indizes, 2010=100 | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | produktionswert-von-biologischer-und-konventioneller-landwirtschaft3 | Produktionswert von biologischer und konventioneller Landwirtschaft | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | gesamtproduktion-der-landwirtschaft-zu-laufenden-preisen4 | Gesamtproduktion der Landwirtschaft. Zu laufenden Preisen | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | vorleistungen-und-abschreibungen-der-schweizerischen-landwirtschaft4 | Vorleistungen und Abschreibungen der schweizerischen Landwirtschaft | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | subventionen-in-der-landwirtschaft-im-europaischen-vergleich3 | Subventionen in der Landwirtschaft im europäischen Vergleich | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaftliche-gesamtrechnung-produktionswert-der-landwirtschaft-historische-zeitreihen4 | Landwirtschaftliche Gesamtrechnung: Produktionswert der Landwirtschaft: historische Zeitreihen | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | bundesausgaben-fur-die-landwirtschaft-und-die-ernahrung5 | Bundesausgaben für die Landwirtschaft und die Ernährung | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-landwirtschaft-blw | ausgaben-bund-landwirtschaft-und-ernahrung-2004-2015 | Ausgaben Bund Landwirtschaft und Ernährung 2004-2015 | ['terms_by'] | ['XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | vermogensbildung-und-vermogensbilanz-der-landwirtschaft-indizes-20101004 | Vermögensbildung und Vermögensbilanz der Landwirtschaft. Indizes, 2010=100 | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | erlospreisstatistik-mengen-und-preise-zur-produktion-der-landwirtschaft2 | Erlöspreisstatistik: Mengen und Preise zur Produktion der Landwirtschaft | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | mitarbeit-und-soziale-absicherung-in-der-schweizer-landwirtschaft-2020 | Mitarbeit und soziale Absicherung in der Schweizer Landwirtschaft 2020 | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | vorleistungen-und-abschreibungen-der-schweizerischen-landwirtschaft-indizes-20101004 | Vorleistungen und Abschreibungen der schweizerischen Landwirtschaft. Indizes, 2010=100 | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | standeskanzlei-graubuenden | volksinitiative-fur-ernahrungs-souveranitat-die-landwirtschaft-betrifft-uns-alle | Volksinitiative «Für Ernährungs souveränität. Die Landwirtschaft betrifft uns alle» | ['terms_by'] | ['CSV', 'JSON']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | branchenkonten-des-primarsektors-branche-landwirtschaft-kontensequenz-aus-perspektive-der-arbei5 | Branchenkonten des Primärsektors, Branche Landwirtschaft: Kontensequenz aus Perspektive der Arbeitsstätten | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | branchenkonten-des-primarsektors-branche-landwirtschaft-kontensequenz-aus-perspektive-der-unter5 | Branchenkonten des Primärsektors, Branche Landwirtschaft: Kontensequenz aus Perspektive der Unternehmen | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindizes Landwirtschaft | staatskanzlei-zug | volksinitiative-vom-30-marz-2016-fur-ernahrungssouveranitat-die-landwirtschaft-betrifft-uns-all | Volksinitiative vom 30. März 2016 «Für Ernährungssouveränität. Die Landwirtschaft betrifft uns alle» | ['terms_by'] | ['CSV', 'JSON']
+ODS Preisindizes Landwirtschaft | kanton-basel-landschaft | volksinitiative-vom-30-marz-2016-fur-ernahrungssouveranitat-die-landwirtschaft-betrifft-uns-all1 | Volksinitiative vom 30. März 2016 «Für Ernährungssouveränität. Die Landwirtschaft betrifft uns alle» | ['terms_by'] | ['CSV', 'JSON']
+ODS Preisindizes Landwirtschaft | kanton-basel-landschaft | bundesbeschluss-vom-17-juni-2005-uber-die-volksinitiative-fur-lebensmittel-aus-gentechnikfreier | Bundesbeschluss vom 17. Juni 2005 über die Volksinitiative "für Lebensmittel aus gentechnikfreier Landwirtscha | ['terms_by'] | ['CSV', 'JSON']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaft2 | Landwirtschaft | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaft | Landwirtschaft | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaft1 | Landwirtschaft | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | amt-geoinformation-sz | quarantaneorganismen-landwirtschaft-maiswurzelbohrer | Maiswurzelbohrer | ['terms_by'] | ['WFS', 'WMS']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaft-und-ernahrung1 | Landwirtschaft und Ernährung | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaft-und-ernahrung1-1 | Landwirtschaft und Ernährung | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaft-und-ernahrung2 | Landwirtschaft und Ernährung | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | landwirtschaft-und-ernahrung3 | Landwirtschaft und Ernährung | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | bundesamt-fur-statistik-bfs | schweizerischer-wohnimmobilienpreisindex | Schweizerischer Wohnimmobilienpreisindex | ['terms_by'] | ['HTML', 'PDF']
+ODS Preisindizes Landwirtschaft | kanton-zug | betriebe-und-nutzflache-im-vergleich | Landwirtschaftliche Betriebe | ['terms_by'] | ['CSV', 'JSON']
+ODS Preisindizes Landwirtschaft | kanton-zug | nutztierbestand | Nutztierbestand | ['terms_by'] | ['CSV', 'JSON']
+ODS Preisindizes Landwirtschaft | buwd-lawa | landschaftstypen | Landschaftstypen | ['terms_open'] | ['']
+ODS Produzentenpreisindex | bundesamt-fur-statistik-bfs | produzenten-und-importpreisindex-produzentenpreisindex-ppi-total5 | Produzenten- und Importpreisindex, Produzentenpreisindex (PPI), Total | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | regionale-landwirtschaftliche-gesamtrechnung-pro-kanton-und-pro-landwirtschaftliche-region-von-4 | Regionale Landwirtschaftliche Gesamtrechnung, pro Kanton und pro landwirtschaftliche Region: von der Produktio | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | regionale-landwirtschaftliche-gesamtrechnung-pro-grossregion-und-kanton-nuts-von-der-produktion4 | Regionale Landwirtschaftliche Gesamtrechnung, pro Grossregion und Kanton (NUTS): von der Produktion zum Einkom | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | geoinformation-kanton-zuerich | landwirtschaftliche-nutzungseignung | Landwirtschaftliche Nutzungseignung | ['terms_open'] | ['SERVICE']
+ODS Preisindex landwirtschaftlicher Produkte | geoinformation-kanton-uri | landwirtschaftlicher-naturschutz | Landwirtschaftlicher Naturschutz | ['terms_open'] | ['WFS', 'WMS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-landwirtschaft-blw | produktion-199092-2015 | Produktion 1990/92-2015 | ['terms_by'] | ['XLS']
+ODS Preisindex landwirtschaftlicher Produkte | kanton-zug | landwirtschaftliche-nutzflache2 | Landwirtschaftliche Nutzfläche | ['terms_by'] | ['CSV', 'JSON']
+ODS Preisindex landwirtschaftlicher Produkte | agis_service_center | landwirtschaftliche-nutzungsflachen1 | Landwirtschaftliche Nutzungsflächen | ['terms_open'] | ['', 'WMS']
+ODS Preisindex landwirtschaftlicher Produkte | buwd-lawa | landwirtschaftliche-bewirtschaftung | Landwirtschaftliche Bewirtschaftung | ['terms_open'] | ['']
+ODS Preisindex landwirtschaftlicher Produkte | amt-fuer-geoinformation-des-kantons-bern | landwirtschaftliche-eignungskarte | Landwirtschaftliche Eignungskarte | ['terms_open'] | ['GPKG', 'HTML', 'OCTET', 'PARQUET', 'TIFF']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-landwirtschaft-blw | produktion-milchprodukte-199092-2015 | Produktion Milchprodukte 1990/92-2015 | ['terms_by'] | ['XLS']
+ODS Preisindex landwirtschaftlicher Produkte | amt-fuer-geoinformation-des-kantons-bern | landwirtschaftliche-kulturen | Landwirtschaftliche Kulturen | ['terms_open'] | ['GPKG', 'HTML', 'OCTET', 'PARQUET']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | einkaufspreisindex-landwirtschaftlicher-produktionsmittel5 | Einkaufspreisindex landwirtschaftlicher Produktionsmittel | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | agis_service_center | produktion-solarstrom-pro-gemeinde | Produktion Solarstrom pro Gemeinde | ['terms_open'] | ['']
+ODS Preisindex landwirtschaftlicher Produkte | geoinformation-kanton-zuerich | landwirtschaftliche-kulturflachen-aktuell | Landwirtschaftliche Kulturflächen (aktuell) | ['terms_open'] | ['SERVICE']
+ODS Preisindex landwirtschaftlicher Produkte | geoinformation-kanton-zuerich | landwirtschaftliche-kulturflachen-archiv | Landwirtschaftliche Kulturflächen (Archiv) | ['terms_open'] | ['SERVICE']
+ODS Preisindex landwirtschaftlicher Produkte | statistisches-amt-kanton-zuerich | landwirtschaftliche-nutzflache-ha | Landwirtschaftliche Nutzfläche [ha] | ['terms_by'] | ['CSV']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | produktion-von-schweizer-kinofilmen4 | Produktion von Schweizer Kinofilmen | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | pramienentwicklung-in-der-krankenzusatzversicherung-nach-produkt1-2 | Prämienentwicklung in der Krankenzusatzversicherung nach Produkt | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | pramienentwicklung-in-der-krankenzusatzversicherung-nach-produkt1-1 | Prämienentwicklung in der Krankenzusatzversicherung nach Produkt | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | pramienentwicklung-in-der-krankenzusatzversicherung-nach-produkt1 | Prämienentwicklung in der Krankenzusatzversicherung nach Produkt | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-landwirtschaft-blw | landwirtschaftliche-nutzungsflachen-schweiz | Landwirtschaftliche Nutzungsflächen Schweiz | ['terms_by'] | ['', 'API', 'SERVICE', 'WMS', 'WMTS']
+ODS Preisindex landwirtschaftlicher Produkte | amt-fuer-geoinformation-des-kantons-bern | landwirtschaftliche-kulturen-provisorisch | Landwirtschaftliche Kulturen (provisorisch) | ['terms_open'] | ['GPKG', 'HTML', 'OCTET', 'PARQUET']
+ODS Preisindex landwirtschaftlicher Produkte | geoinformation-kanton-zuerich | wms-landwirtschaftliche-nutzungseignungskarte-ogd | WMS Landwirtschaftliche Nutzungseignungskarte (OGD) | ['terms_open'] | ['WMS']
+ODS Preisindex landwirtschaftlicher Produkte | geoinformation_kanton_freiburg | daten-landwirtschaftlicher-boden-fribo | Daten landwirtschaftlicher Böden (FRIBO) | ['terms_open'] | ['', 'HTML', 'SERVICE', 'WMS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | die-landwirtschaftliche-gesamtrechnung-kontensequenz4 | Die Landwirtschaftliche Gesamtrechnung: Kontensequenz | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | die-landwirtschaftliche-gesamtrechnung-arbeitsproduktivitat4 | Die Landwirtschaftliche Gesamtrechnung : Arbeitsproduktivität | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-landwirtschaft-blw | landwirtschaftliche-nutzflache-1990-2015 | Landwirtschaftliche Nutzfläche 1990-2015 | ['terms_by'] | ['XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | landwirtschaftliche-nutzflache-ohne-sommerungsweiden8 | Landwirtschaftliche Nutzfläche ohne Sömmerungsweiden | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | landwirtschaftliche-betriebe-und-landwirtschaftliche-nutzflache-ln-auf-klassifizierungsebene-3- | Landwirtschaftliche Betriebe und Landwirtschaftliche Nutzfläche (LN) auf Klassifizierungsebene 3 nach Kanton | ['terms_by'] | ['HTML', 'SERVICE']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | regionale-landwirtschaftliche-gesamtrechnung-pro-kanton-und-pro-landwirtschaftliche-region-die-4 | Regionale Landwirtschaftliche Gesamtrechnung, pro Kanton und pro landwirtschaftliche Region: die Gesamtprodukt | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | kanton-thurgau | landwirtschaftliche-direktzahlungen-des-kantons-thurgau | Landwirtschaftliche Direktzahlungen des Kantons Thurgau | ['terms_by'] | ['CSV', 'JSON', 'JSON-LD', 'N3', 'PARQUET', 'RDF Turtle', 'RDF XML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | kanton-thurgau | landwirtschaftliche-tierbestande-im-kanton-thurgau1 | Landwirtschaftliche Tierbestände im Kanton Thurgau | ['terms_open'] | ['CSV', 'JSON', 'JSON-LD', 'N3', 'PARQUET', 'RDF Turtle', 'RDF XML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | zusatzversicherung-krankenversicherungspramien-nach-produkt-veranderungsraten-und-indizes6-4 | Zusatzversicherung: Krankenversicherungsprämien nach Produkt, Veränderungsraten und Indizes | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | zusatzversicherung-krankenversicherungspramien-nach-produkt-veranderungsraten-und-indizes6-3 | Zusatzversicherung: Krankenversicherungsprämien nach Produkt, Veränderungsraten und Indizes | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | zusatzversicherung-krankenversicherungspramien-nach-produkt-veranderungsraten-und-indizes6-2 | Zusatzversicherung: Krankenversicherungsprämien nach Produkt, Veränderungsraten und Indizes | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | zusatzversicherung-krankenversicherungspramien-nach-produkt-veranderungsraten-und-indizes6-1 | Zusatzversicherung: Krankenversicherungsprämien nach Produkt, Veränderungsraten und Indizes | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | bundesamt-fur-statistik-bfs | zusatzversicherung-krankenversicherungspramien-nach-produkt-veranderungsraten-und-indizes6 | Zusatzversicherung: Krankenversicherungsprämien nach Produkt, Veränderungsraten und Indizes | ['terms_by'] | ['HTML', 'XLS']
+ODS Preisindex landwirtschaftlicher Produkte | amt-fuer-raumentwicklung-und-geoinformation-areg-kanton-st-gallen | perimeter-landwirtschaftliche-nutzflache-und-sommerungsflachen | Perimeter Landwirtschaftliche Nutzfläche und Sömmerungsflächen | ['terms_open'] | ['HTML']
+ODS Vorräte | bundesamt-fur-statistik-bfs | bilanz-des-stehenden-holzvorrates5 | Bilanz des stehenden Holzvorrates | ['terms_by'] | ['HTML', 'XLS']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-standortsgute | LFI: Themen nach Standortgüte | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-exposition-8-klassen | LFI: Themen nach Exposition (9 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-waldtyp-und-entwicklungsstufe | LFI: Themen nach Waldtyp (17 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-baumart-56-klassen | LFI: Themen nach Baumart (56 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-durchmesser-starkeklasse | LFI: Themen nach Brusthöhendurchmesser (Stärkeklassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-durchmesser-10-cm-klassen | LFI: Themen nach Brusthöhendurchmesser (10 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-waldtyp | LFI: Themen nach Waldtyp (12 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-baumart-5-klassen | LFI: Themen nach Baumart (5 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-mischungsgrad | LFI: Themen nach Mischungsgrad (terrestrisch) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-hauptbaumart | LFI: Themen nach Hauptbaumart | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-entwicklungsstufe | LFI: Themen nach Entwicklungsstufe | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-eigentum-offentlich-privat | LFI: Themen nach Eigentum (2 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-hoch-oder-tieflagen-nais | LFI: Themen nach Hochlagen/Tieflagen | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-nais-vegetationshohenstufen-6-klassen | LFI: Themen nach NaiS-Vegetationshöhenstufen (6 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-nais-vegetationshohenstufen-10-klassen | LFI: Themen nach NaiS-Vegetationshöhenstufen (10 Klassen) | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Vorräte | bundesamt-fur-umwelt-bafu | lfi-themen-nach-nadel-und-laubholz | LFI: Themen nach Nadelholz, Laubholz | ['terms_by'] | ['HTML', 'SPARQL']
+ODS Aussenhandel Landwirtschaft | bundesamt-fur-landwirtschaft-blw | aussenhandel-199092-2015 | Aussenhandel 1990/92-2015 | ['terms_by'] | ['XLS']
+ODS Aussenhandel Landwirtschaft | bundesamt-fur-energie-bfe | schweizerische-elektrizitatsstatistik-aussenhandel-der-schweiz | Schweizerische Elektrizitätsstatistik: Aussenhandel der Schweiz mit Elektrizität nach Ländern [vertraglich, ha | ['terms_by'] | ['SERVICE']
+ODS Aussenhandel Landwirtschaft | kanton-zug | aussenhandelsstatistik | Aussenhandelsstatistik | ['terms_by'] | ['CSV', 'JSON']
+ODS Aussenhandel Landwirtschaft | bundesamt-fur-statistik-bfs | aussenhandel-nach-ausgewahlten-warengruppen-cpa | Aussenhandel nach ausgewählten Warengruppen (CPA) | ['terms_by'] | ['HTML', 'XLS']
+ODS Aussenhandel Landwirtschaft | eidgenoessische_zollverwaltung_ezv | waren-indizes-des-aussenhandels-nach-cpa | Waren: Indizes des Aussenhandels nach CPA | ['terms_by_ask'] | ['CSV', 'JSON']
+ODS Aussenhandel Landwirtschaft | bundesamt-fur-statistik-bfs | aussenhandel-nach-waren5 | Aussenhandel nach Waren | ['terms_by'] | ['HTML', 'XLS']
+ODS Ein- und Ausfuhr | schweizerische-bundesbahnen-sbb | passagierfrequenz1 | Ein- und Aussteigende an Bahnhöfen | ['terms_by'] | ['CSV', 'GPX', 'JSON', 'JSON-LD', 'KML', 'N3', 'OCTET', 'PARQUET', 'RDF Turtle', 'RDF XML', 'TXT', 'XLS', 'ZIP']
+ODS Ein- und Ausfuhr | bundesamt-fur-energie-bfe | schweizerische-elektrizitatsstatistik-aussenhandel-der-schweiz-mit-elektrizitat-nach-landern | Schweizerische Elektrizitätsstatistik: Physikalische Einfuhr und Ausfuhr der Schweiz von Elektrizität nach Län | ['terms_by'] | ['SERVICE']
+ODS Ein- und Ausfuhr | kanton-basel-stadt | ein-und-ausfahrten-offentlicher-parkhauser-basel | Ein- und Ausfahrten öffentlicher Parkhäuser Basel | ['http://www.opendefinition.org/licenses/cc-by/'] | ['CSV', 'JSON', 'JSON-LD', 'N3', 'PARQUET', 'RDF Turtle', 'RDF XML', 'XLS']
+ODS Ein- und Ausfuhr | buwd-vif | nationalstrassen-mit-ein-und-ausfahrten-up10nbsp | Nationalstrassen mit Ein- und Ausfahrten, UP10&nbsp; | ['terms_open'] | ['']
+ODS Ein- und Ausfuhr | bundesamt-fur-statistik-bfs | ausfuhr-nach-handelspartnern-lander4 | Ausfuhr nach Handelspartnern (Länder) | ['terms_by'] | ['HTML', 'XLS']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | kantonale-volksinitiative-fur-eine-naturvertragliche-undethische-jagd | Kantonale Volksinitiative «Für eine naturverträgliche und ethische Jagd» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-eine-sichere-und-nachhaltige-altersvorsorge-renteninitiative | Volksinitiative «Für eine sichere und nachhaltige Altersvorsorge (Renteninitiative)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-eine-nachhaltige-und-ressourceneffiziente-wirtschaft-grune-wirtschaft | Volksinitiative «Für eine nachhaltige und ressourceneffiziente Wirtschaft (Grüne Wirtschaft)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | volksinitiative-fur-eine-soziale-klimapolitik-steuerlich-gerecht-finanziert-initiative-fur-eine2 | Volksinitiative «Für eine soziale Klimapolitik – steuerlich gerecht finanziert (Initiative für eine Zukunft)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | volksinitiative-fur-eine-soziale-klimapolitik-steuerlich-gerecht-finanziert-initiative-fur-eine | Volksinitiative «Für eine soziale Klimapolitik – steuerlich gerecht finanziert (Initiative für eine Zukunft)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | bundesbeschluss-uber-eine-neue-finanzordnung | Bundesbeschluss über eine neue Finanzordnung | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-eine-offentliche-krankenkasse | Volksinitiative "Für eine öffentliche Krankenkasse" | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | volksinitiative-fur-eine-gerechte-energie-und-klimapolitik-investieren-fur-wohlstand-arbeit-und | Volksinitiative «Für eine gerechte Energie- und Klimapolitik: Investieren für Wohlstand, Arbeit  und Umwelt (K | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | volksinitiative-fur-eine-gerechte-energie-und-klimapolitik-investieren-fur-wohlstand-arbeit-und1 | Volksinitiative «Für eine gerechte Energie- und Klimapolitik: Investieren für Wohlstand, Arbeit und Umwelt (Kl | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | volksinitiative-vom-16-juli-2021-fur-eine-sichere-und-nachhaltige-altersvorsorge-renteninitiati | Volksinitiative vom 16. Juli 2021 «Für eine sichere und nachhaltige Altersvorsorge (Renteninitiative)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | volksinitiative-vom-16-juli-2021-fur-eine-sichere-und-nachhaltige-altersvorsorge-renteninitiati1 | Volksinitiative vom 16. Juli 2021 «Für eine sichere und nachhaltige Altersvorsorge (Renteninitiative)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | erganzungswahl-fur-ein-mitglied-des-verwaltungsgerichts | Ergänzungswahl für ein Mitglied des Verwaltungsgerichts | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | erganzungswahl-fur-ein-mitglied-des-verwaltungsgerichts1-1 | Ergänzungswahl für ein Mitglied des Verwaltungsgerichts | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | erganzungswahl-fur-ein-mitglied-des-verwaltungsgerichts1 | Ergänzungswahl für ein Mitglied des Verwaltungsgerichts | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-ein-bedingungsloses-grundeinkommen | Volksinitiative «Für ein bedingungsloses Grundeinkommen» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | formulierte-verfassungsinitiative-fur-eine-faire-partnerschaft | Formulierte Verfassungsinitiative für eine faire Partnerschaft | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-eine-soziale-klimapolitik-steuerlich-gerecht-finanziert-initiative-fur-eine1 | Volksinitiative «Für eine soziale Klimapolitik - steuerlich gerecht finanziert (Initiative für eine Zukunft) | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | bundesamt-fur-statistik-bfs | gibt-es-eine-typische-bauerngemeinde | Gibt es eine typische Bauerngemeinde? | ['terms_by'] | ['HTML', 'PDF']
+ODS Ein- und Ausfuhr | statistisches-amt-kanton-zuerich | echtzeitdaten-am-abstimmungstag-des-kantons-zurich-kommunale-und-regionale-vorlagen | Echtzeitdaten am Wahl- und Abstimmungstag – kommunale und regionale Sachgeschäfte und Wahlen | ['terms_by', 'terms_open'] | ['JSON']
+ODS Ein- und Ausfuhr | stadt-zurich | zurich-2040-ein-raumliches-konzept-fur-die-wachsende-stadt | Zürich 2040 ein räumliches Konzept für die wachsende Stadt | ['terms_open'] | ['TIFF', 'WMS', 'WMTS']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | volksinitiative-vom-6-september-2012-fur-eine-nachhaltige-und-ressourceneffiziente-wirtschaft-g | Volksinitiative vom 6. September 2012 «Für eine nachhaltige und ressourceneffiziente Wirtschaft (Grüne Wirtsch | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | volksinitiative-vom-6-september-2012-fur-eine-nachhaltige-und-ressourceneffiziente-wirtschaft-g1 | Volksinitiative vom 6. September 2012 «Für eine nachhaltige und ressourceneffiziente Wirtschaft (Grüne Wirtsch | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-eine-faire-verkehrsfinanzierung | Volksinitiative «Für eine faire Verkehrsfinanzierung» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-ein-besseres-leben-im-alter-initiative-fur-eine-13-ahv-rente | Volksinitiative «Für ein besseres Leben im Alter (Initiative für eine 13. AHV-Rente)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | bundesbeschluss-uber-die-schaffung-eines-fonds-fur-die-nationalstrassen-und-den-agglomerationsv1 | Bundesbeschluss über die Schaffung eines Fonds für die Nationalstrassen und den Agglomerationsverkehr (NAF) | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-eine-gerechte-energie-und-klimapolitik-investieren-fur-wohlstand-arbeit-und2 | Volksinitiative «Für eine gerechte Energie- und Klimapolitik: Investieren für Wohlstand, Arbeit und Umwelt (Kl | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | volksinitiative-vom-28-mai-2021-fur-ein-besseres-leben-im-alter-initiative-fur-eine-13-ahv-rent1 | Volksinitiative vom 28. Mai 2021 «Für ein besseres Leben im Alter (Initiative für eine 13. AHV-Rente)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | volksinitiative-vom-28-mai-2021-fur-ein-besseres-leben-im-alter-initiative-fur-eine-13-ahv-rent | Volksinitiative vom 28. Mai 2021 «Für ein besseres Leben im Alter (Initiative für eine 13. AHV-Rente)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | envidat | ch-kleinstwasserkraftwerke-ein-schweizweiter-datensatz-zu-kleinstwasserkraftwerken | CH-Kleinstwasserkraftwerke - ein schweizweiter Datensatz zu Kleinstwasserkraftwerken | ['http://www.opendefinition.org/licenses/cc-by-sa'] | ['PDF', 'XLS', 'ZIP', 'svg+xml']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-ahvplus-fur-eine-starke-ahv | Volksinitiative «AHVplus: für eine starke AHV» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | volksinitiative-fur-eine-massvolle-zuwanderung-begrenzungsinitiative | Volksinitiative «Für eine massvolle Zuwanderung (Begrenzungsinitiative)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | standeskanzlei-graubuenden | bundesbeschluss-uber-die-schaffung-eines-fonds-fur-die-nationalstrassen-und-den-agglomerationsv | Bundesbeschluss über die Schaffung eines Fonds für die Nationalstrassen und den Agglomerationsverkehr (NAF) | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | volksinitiative-fur-ein-steuerlich-begunstigtes-bausparen-zum-erwerb-von-selbst-genutztem-wohne | Volksinitiative «Für ein steuerlich begünstigtes Bausparen zum Erwerb von selbst genutztem Wohneigentum und zu | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | staatskanzlei-zug | verfassungsinitiative-fur-ein-sicheres-direktes-und-durchgehendes-veloverkehrsnetz-im-kanton-zu | Verfassungsinitiative für ein sicheres, direktes und durchgehendes Veloverkehrsnetz im Kanton Zug bis 2030 (Zu | ['terms_by'] | ['CSV', 'JSON']
+ODS Ein- und Ausfuhr | kanton-basel-landschaft | volksinitiative-fur-eine-engagierte-schweiz-service-citoyen-initiative2 | Volksinitiative «Für eine engagierte Schweiz (Service-citoyen-Initiative)» | ['terms_by'] | ['CSV', 'JSON']
+ODS Tierbestand | bundesamt-fur-statistik-bfs | tierbestande-der-landwirtschaftsbetriebe | Tierbestände der Landwirtschaftsbetriebe | ['terms_by'] | ['HTML', 'XLS']
+ODS Tierbestand | bundesamt-fur-statistik-bfs | betriebe-und-tierbestande-nach-zone | Betriebe und Tierbestände nach Zone | ['terms_by'] | ['HTML', 'XLS']
+ODS Tierbestand | bundesamt-fur-statistik-bfs | tierbestande-der-landwirtschaftsbetriebe-nach-kanton | Tierbestände der Landwirtschaftsbetriebe, nach Kanton | ['terms_by'] | ['HTML', 'XLS']
+ODS Tierbestand | agroscope | datenreihe-za-aui | Datenreihe ZA-AUI | ['terms_by_ask'] | ['XLS']
+ODS Tierbestand | kanton-thurgau | biberreviere | Biberreviere | ['terms_open'] | ['', 'HTML', 'WFS', 'WMS']
+ODS Tierbestand | kanton-basel-stadt | anzahl-registrierte-hundebesitzer-seit-2018 | Anzahl registrierter Hundebesitzer seit 2018 | ['http://www.opendefinition.org/licenses/cc-by/'] | ['CSV', 'JSON', 'JSON-LD', 'N3', 'PARQUET', 'RDF Turtle', 'RDF XML', 'XLS']
+ODS Tierbestand | identitas | ziegen-sommerungen | Ziegen - Sömmerungen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | schafe-sommerungen | Schafe - Sömmerungen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | equiden-sommerungen | Equiden - Sömmerungen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | rinder-sommerungen | Rinder - Sömmerungen | ['terms_by'] | ['CSV']
+ODS Tierbestand | kanton-basel-stadt | hundenamen-im-kanton-basel-stadt-seit-2008 | Hundenamen im Kanton Basel-Stadt seit 2008 | ['http://www.opendefinition.org/licenses/cc-by/'] | ['CSV', 'JSON', 'JSON-LD', 'N3', 'PARQUET', 'RDF Turtle', 'RDF XML', 'XLS']
+ODS Tierbestand | identitas | ziegen-sommerungen-nach-geschlecht | Ziegen - Sömmerungen nach Geschlecht | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | ziegen-sommerungen-nach-kantonen | Ziegen - Sömmerungen nach Kantonen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | ziegen-sommerungen-nach-alter | Ziegen - Sömmerungen nach Alter | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | schafe-sommerungen-nach-geschlecht | Schafe - Sömmerungen nach Geschlecht | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | schafe-sommerungen-nach-kantonen | Schafe - Sömmerungen nach Kantonen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | schafe-sommerungen-nach-alter | Schafe - Sömmerungen nach Alter | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | equiden-sommerungen-nach-geschlecht | Equiden - Sömmerungen nach Geschlecht | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | equiden-sommerungen-nach-kantonen | Equiden - Sömmerungen nach Kantonen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | equiden-sommerungen-nach-alter | Equiden - Sömmerungen nach Alter | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | rinder-sommerungen-nach-geschlecht | Rinder - Sömmerungen nach Geschlecht | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | rinder-sommerungen-nach-kantonen | Rinder - Sömmerungen nach Kantonen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | rinder-sommerungen-nach-alter | Rinder - Sömmerungen nach Alter | ['terms_by'] | ['CSV']
+ODS Tierbestand | kanton-basel-stadt | hundebestand-im-kanton-basel-stadt-seit-1970 | Hundebestand im Kanton Basel-Stadt seit 1970 | ['http://www.opendefinition.org/licenses/cc-by/'] | ['CSV', 'JSON', 'JSON-LD', 'N3', 'PARQUET', 'RDF Turtle', 'RDF XML', 'XLS']
+ODS Tierbestand | identitas | ziegen-sommerungen-nach-nutzungsart | Ziegen - Sömmerungen nach Nutzungsart | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | schafe-sommerungen-nach-nutzungsart | Schafe - Sömmerungen nach Nutzungsart | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | equiden-sommerungen-nach-equidentypen | Equiden - Sömmerungen nach Equidentypen | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | equiden-sommerungen-nach-verwendungs-zweck | Equiden - Sömmerungen nach Verwendungs-zweck | ['terms_by'] | ['CSV']
+ODS Tierbestand | identitas | rinder-sommerungen-nach-nutzungsart | Rinder - Sömmerungen nach Nutzungsart | ['terms_by'] | ['CSV']
+ODS Tierbestand | kanton-basel-stadt | registrierte-hunde-nach-postleitzahl-und-verschiedenen-merkmalen-seit-2008 | Registrierte Hunde nach Postleitzahl und verschiedenen Merkmalen seit 2008 | ['http://www.opendefinition.org/licenses/cc-by/'] | ['CSV', 'JSON', 'JSON-LD', 'N3', 'PARQUET', 'RDF Turtle', 'RDF XML', 'XLS']
+ODS Milchproduktion | bundesamt-fur-landwirtschaft-blw | regionen-der-marktbeobachtung-milch-und-milchprodukte | Regionen der Marktbeobachtung Milch und Milchprodukte | ['terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS']
+ODS Milchproduktion | bundesamt-fur-statistik-bfs | verwertung-der-gemolkenen-kuhmilch5 | Verwertung der gemolkenen Kuhmilch | ['terms_by'] | ['HTML', 'XLS']
+ODS Milchproduktion | amt-fuer-statistik-fl | milchproduktion-nach-gemeinde-seit-2020 |  Milchproduktion nach Gemeinde seit 2020 | ['terms_by'] | ['HTML', 'JSON']
+ODS Milchproduktion | bundesamt-fur-lebensmittelsicherheit-und-veterinaerwesen-blv | lumpy-skin-krankheit-lsd |  Lumpy-Skin-Krankheit (Dermatitis nodularis) | [''] | ['KML']
+ODS Butter Käse | bundesamt-fur-lebensmittelsicherheit-und-veterinaerwesen-blv | pfas-analysen-in-milch-und-milchprodukten | PFAS-Analysen in Milch und Milchprodukten | [''] | ['CSV']
+ODS Butter Käse | bundesamt-fur-landwirtschaft-blw | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-kase | Register Ursprungsbezeichnungen (GUB) und geografische Angaben (GGA) Käse | ['terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS']
+ODS Butter Käse | geoinformation_kanton_freiburg | eaux-souterraines-publiques |  | [] | []
+ODS Butter Käse | amt-fuer-geoinformation-des-kantons-bern | kataster-der-belasteten-standorte-kbs1 | Kataster der belasteten Standorte (KBS) | ['terms_open'] | ['GPKG', 'HTML', 'OCTET', 'PARQUET']
+ODS Butter Käse | geoinformation_kanton_freiburg | cadastre-cantonal-des-infrastructures-deau-potable-et-de-defense-incendie-sav2002p_o_captage |  | ['terms_open'] | ['', 'HTML', 'SERVICE', 'WMS']
+ODS Butter Käse | geoinformation_kanton_freiburg | espace-reserve-aux-eaux-ere |  | ['terms_open'] | ['', 'HTML']
+ODS Butter Käse | bundesamt-fur-landwirtschaft-blw | alpprodukte | Alpprodukte | ['terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS']
+ODS Butter Käse | bundesamt-fur-landwirtschaft-blw | bergprodukte | Bergprodukte | ['terms_by'] | ['HTML', 'SERVICE', 'WMS', 'WMTS']
+ODS Butter Käse | geoinformation_kanton_freiburg | districts-francs-federaux-fr |  | ['terms_open'] | ['', 'HTML', 'SERVICE', 'WMS']
+ODS Butter Käse | envidat | alpine3d-climate-data | Alpine3D Climate Data | ['http://www.opendefinition.org/licenses/cc-by/'] | ['']
+ODS Butter Käse | bundesamt-fur-landwirtschaft-blw | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-spirituosen | Register Ursprungsbezeichnungen (GUB) und geografische Angaben (GGA) Spirituosen | ['terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS']
+ODS Butter Käse | bundesamt-fur-landwirtschaft-blw | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-konditoreiware | Register Ursprungsbezeichnungen (GUB) und geografische Angaben (GGA) Konditoreiware | ['terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS']
+ODS Butter Käse | bundesamt-fur-landwirtschaft-blw | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-pflanzliche-produkte | Register Ursprungsbezeichnungen (GUB) und geografische Angaben (GGA) Pflanzliche Produkte | ['terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS']
+ODS Butter Käse | bundesamt-fur-landwirtschaft-blw | register-ursprungsbezeichnungen-gub-und-geografische-angaben-gga-fleischware | Register Ursprungsbezeichnungen (GUB) und geografische Angaben (GGA) Fleischware | ['terms_by'] | ['API', 'HTML', 'SERVICE', 'WMS', 'WMTS']
+BFS page https://www.bfs.admin.ch/bfs/de/home/statistiken/preise/produzentenpreise-importpreise.assetdetail.html 400 2000
+BFS page https://www.bfs.admin.ch/bfs/de/home/statistiken/preise/produzentenpreise-importpreise/ppi.html 404 2000
+BFS page https://www.bfs.admin.ch/bfs/de/home/statistiken/preise/produzentenpreise-importpreise.html 200 3466398
+     /asset/de/su-b-05.04-kbob
+    t Produzenten- und Importpreise
+FOAG label 277 {'n': 'Segment A'}
+FOAG label 277 {'n': 'Segment A'}
+FOAG label 277 {'n': 'Segmento A'}
+FOAG label 279 {'n': 'Segment B'}
+FOAG label 279 {'n': 'Segment B'}
+FOAG label 279 {'n': 'Segmento B'}
+FOAG label 337 {'n': 'Segment C'}
+FOAG label 337 {'n': 'Segment C'}
+FOAG label 337 {'n': 'Segmento C'}
+FOAG label 281 {'n': 'Indice dei prezzi del latte di latteria'}
+FOAG label 281 {'n': 'Indice du prix du lait de centrale'}
+FOAG label 281 {'n': 'Molkereimilchpreisindex'}
+FOAG label 282 {'n': 'Indice dei prezzi della panna per la fabbricazione di burro'}
+FOAG label 282 {'n': 'Indice du prix de la crème pour la production de beurre'}
+FOAG label 282 {'n': 'Rahmpreisindex für Butterherstellung'}
+FOAG idx MilkDairyProducts/Production_Index_Month [{'d': 'https://ld.admin.ch/time/month/2026-07', 'v': '106.41'}, {'d': 'https://ld.admin.ch/time/month/2026-06', 'v': '106.24'}, {'d': 'https://ld.admin.ch/time/month/2026-05', 'v': '106.27'}, {'d': 'https://ld.admin.ch/time/month/2026-04', 'v': '107.3'}]
+   preds ['http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'https://cube.link/observedBy', 'https://agriculture.ld.admin.ch/foag/dimension/data-source', 'https://agriculture.ld.admin.ch/foag/dimension/foreign-trade', 'https://agriculture.ld.admin.ch/foag/dimension/key-indicator-type', 'https://agriculture.ld.admin.ch/foag/dimension/market', 'https://agriculture.ld.admin.ch/foag/dimension/product', 'https://agriculture.ld.admin.ch/foag/dimension/product-group', 'https://agriculture.ld.admin.ch/foag/dimension/production-system', 'https://agriculture.ld.admin.ch/foag/dimension/product-origin', 'https://agriculture.ld.admin.ch/foag/dimension/product-properties', 'https://agriculture.ld.admin.ch/foag/dimension/product-subgroup', 'https://agriculture.ld.admin.ch/foag/dimension/sales-region', 'https://agriculture.ld.admin.ch/foag/dimension/unit', 'https://agriculture.ld.admin.ch/foag/dimension/usage', 'https://agriculture.ld.admin.ch/foag/dimension/value-chain-detail', 'https://agriculture.ld.admin.ch/foag/dimension/value-chain', 'https://agriculture.ld.admin.ch/foag/dimension/date', 'https://agriculture.ld.admin.ch/foag/dimension/cost-component', 'https://agriculture.ld.admin.ch/foag/dimension/currency', 'https://agriculture.ld.admin.ch/foag/dimension/data-method', 'https://agriculture.ld.admin.ch/foag/measure/index']
+FOAG idx MilkDairyProducts/WholesaleProcessing_Index_Month [{'d': 'https://ld.admin.ch/time/month/2026-07', 'v': '106.62'}, {'d': 'https://ld.admin.ch/time/month/2026-06', 'v': '103.45'}, {'d': 'https://ld.admin.ch/time/month/2026-05', 'v': '103.54'}, {'d': 'https://ld.admin.ch/time/month/2026-04', 'v': '104.84'}]
+   preds ['http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'https://cube.link/observedBy', 'https://agriculture.ld.admin.ch/foag/dimension/data-source', 'https://agriculture.ld.admin.ch/foag/dimension/foreign-trade', 'https://agriculture.ld.admin.ch/foag/dimension/key-indicator-type', 'https://agriculture.ld.admin.ch/foag/dimension/market', 'https://agriculture.ld.admin.ch/foag/dimension/product', 'https://agriculture.ld.admin.ch/foag/dimension/product-group', 'https://agriculture.ld.admin.ch/foag/dimension/production-system', 'https://agriculture.ld.admin.ch/foag/dimension/product-origin', 'https://agriculture.ld.admin.ch/foag/dimension/product-properties', 'https://agriculture.ld.admin.ch/foag/dimension/product-subgroup', 'https://agriculture.ld.admin.ch/foag/dimension/sales-region', 'https://agriculture.ld.admin.ch/foag/dimension/unit', 'https://agriculture.ld.admin.ch/foag/dimension/usage', 'https://agriculture.ld.admin.ch/foag/dimension/value-chain-detail', 'https://agriculture.ld.admin.ch/foag/dimension/value-chain', 'https://agriculture.ld.admin.ch/foag/dimension/date', 'https://agriculture.ld.admin.ch/foag/dimension/cost-component', 'https://agriculture.ld.admin.ch/foag/dimension/currency', 'https://agriculture.ld.admin.ch/foag/dimension/data-method', 'https://agriculture.ld.admin.ch/foag/measure/index']
