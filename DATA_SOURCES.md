@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 73 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17779 series en el catalogo unificado.
+Resumen: 73 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17792 series en el catalogo unificado.
 
 ## VERIFIED (73)
 
@@ -30,7 +30,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 698 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 133 | Modifications must be marked as such. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |
-| `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 45 | Disclose modifications; the Statistics Denmark logo cannot be used. |
+| `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 58 | Disclose modifications; the Statistics Denmark logo cannot be used. |
 | `ecb` | European Central Bank (euro reference rates, ECB Data Portal) | EU | ESCB-REUSE | si/conditional | si | 2 | Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed … |
 | `edo_cdi` | European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS) | EU | CC-BY-4.0 | si/si | si | 0 | Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission… |
 | `eia` | U.S. Energy Information Administration (Open Data API) | US | US-PD | si/conditional | si | 4 | Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API k… |

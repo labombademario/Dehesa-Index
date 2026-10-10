@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T13:13:00Z",
+ "generatedAt": "2026-10-10T13:35:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 112,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "17fb0f8f",
+   "sha": "f1286051",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5d0d0603-ccc2-41bc-9803-91c3c4515c93",
-   "completedAt": "2026-10-10T13:10:28Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/fbd11544-7d29-48de-bb5c-faaca8fd2470",
+   "completedAt": "2026-10-10T13:35:36Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -81,7 +81,7 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-10-10T13:30:00Z",
+   "nextRun": "2026-10-12T23:45:00Z",
    "files": [
     {
      "path": "data/ams"
@@ -193,15 +193,15 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-09T16:38:47Z",
-    "durationSec": 48,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37960606896"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-10T13:23:33Z",
+    "durationSec": 25,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38055534239"
    },
    "recent": {
-    "runs": 7,
-    "success": 7,
-    "failed": 0
+    "runs": 10,
+    "success": 9,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 96.0
@@ -519,7 +519,7 @@
      "series": 202,
      "points": 20984,
      "lines": 0,
-     "lastChange": "2026-10-08T17:26:59Z"
+     "lastChange": "2026-10-10T13:34:48Z"
     },
     {
      "path": "data/revisions.json",
@@ -529,14 +529,14 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-08T17:22:52Z",
-    "durationSec": 253,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37816102014"
+    "startedAt": "2026-10-10T13:30:06Z",
+    "durationSec": 288,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38055946994"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 0
+    "success": 8,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -949,13 +949,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-09T13:35:39Z",
-    "durationSec": 51,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37937948798"
+    "startedAt": "2026-10-10T13:19:45Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38055293445"
    },
    "recent": {
-    "runs": 6,
-    "success": 4,
+    "runs": 8,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -1688,7 +1688,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-10T12:30:54Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1696,18 +1696,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-10T01:36:48Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-10T06:32:42Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/catalog"
@@ -1720,7 +1720,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/products"
@@ -1731,30 +1731,30 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-10T12:31:14Z"
+     "lastChange": "2026-10-10T13:18:15Z"
     },
     {
      "path": "data/home-explore.json",

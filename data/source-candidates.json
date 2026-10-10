@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T13:15:19Z",
+ "generatedAt": "2026-10-10T13:37:02Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2294,7 +2294,7 @@
    "country": "DK",
    "scope": "integrated",
    "institution": "Statistics Denmark (StatBank)",
-   "dataset": "Ya integrada (45 series en el catalogo unificado)",
+   "dataset": "Ya integrada (58 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -2305,6 +2305,7 @@
     "fertilizer",
     "maize",
     "milk",
+    "oats",
     "pigs",
     "potato",
     "poultry",
@@ -2316,7 +2317,8 @@
    "metrics": [
     "input_price",
     "price",
-    "production"
+    "production",
+    "stocks"
    ],
    "frequency": "mixed",
    "access": {
