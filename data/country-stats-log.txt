@@ -47,17 +47,17 @@ Series: {'DK': 59, 'NL': 67, 'AU': 89}
   dk-input-1530 | Lime and marl (DKK per 100 kg) | 2023 141.0 | n= 4 | first 2020
   dk-input-1590 | Compound feed for calves, low protein content (DKK per 100 kg) | 2025 227.0 | n= 6 | first 2020
   dk-stock-wheat-trade | Wheat: stocks at trade companies, end of half-year (KORN2) | 2025-S2 757.4 | n= 52 | first 2000-S1
-  dk-stock-wheat-farms | Wheat: stocks on farms, end of half-year (KORN2) | 2025-S1 415.3 | n= 26 | first 2000-S1
+  dk-stock-wheat-farms | Wheat: stocks on farms at 30 June (annual survey, KORN2) | 2025-06 415.3 | n= 26 | first 2000-06
   dk-stock-rye-trade | Rye: stocks at trade companies, end of half-year (KORN2) | 2025-S2 264.6 | n= 52 | first 2000-S1
-  dk-stock-rye-farms | Rye: stocks on farms, end of half-year (KORN2) | 2025-S1 36.4 | n= 26 | first 2000-S1
+  dk-stock-rye-farms | Rye: stocks on farms at 30 June (annual survey, KORN2) | 2025-06 36.4 | n= 26 | first 2000-06
   dk-stock-barley-trade | Barley: stocks at trade companies, end of half-year (KORN2) | 2025-S2 1386.7 | n= 52 | first 2000-S1
-  dk-stock-barley-farms | Barley: stocks on farms, end of half-year (KORN2) | 2025-S1 319.6 | n= 26 | first 2000-S1
+  dk-stock-barley-farms | Barley: stocks on farms at 30 June (annual survey, KORN2) | 2025-06 319.6 | n= 26 | first 2000-06
   dk-stock-oats-trade | Oats (incl. cereal mixtures): stocks at trade companies, end of half-year (KORN2) | 2025-S2 201.8 | n= 52 | first 2000-S1
-  dk-stock-oats-farms | Oats (incl. cereal mixtures): stocks on farms, end of half-year (KORN2) | 2025-S1 32.9 | n= 26 | first 2000-S1
+  dk-stock-oats-farms | Oats (incl. cereal mixtures): stocks on farms at 30 June (annual survey, KORN2) | 2025-06 32.9 | n= 26 | first 2000-06
   dk-stock-maize-trade | Maize: stocks at trade companies, end of half-year (KORN2) | 2025-S2 25.4 | n= 52 | first 2000-S1
-  dk-stock-maize-farms | Maize: stocks on farms, end of half-year (KORN2) | 2025-S1 20.4 | n= 12 | first 2014-S1
-  dk-stock-wheat-yearend | Wheat: stocks at year end, Danish and imported (KORN) | 2025 2751.0 | n= 31 | first 1995
-  dk-stock-barley-yearend | Barley: stocks at year end, Danish and imported (KORN) | 2025 3076.0 | n= 31 | first 1995
+  dk-stock-maize-farms | Maize: stocks on farms at 30 June (annual survey, KORN2) | 2025-06 20.4 | n= 12 | first 2014-06
+  dk-stock-wheat-yearend | Wheat: stocks at year end (KORN) | 2025 2751.0 | n= 31 | first 1995
+  dk-stock-barley-yearend | Barley: stocks at year end (KORN) | 2025 3076.0 | n= 31 | first 1995
   nl-milk-supply | Milk supply to dairy factories | 2026-07 1194774.0 | n= 379 | first 1995-01
   nl-cheese-prod | Cheese production (dairy factories) | 2026-07 78431.0 | n= 379 | first 1995-01
   nl-wheat-prod | Wheat: production | 2026 1069291.0 | n= 33 | first 1994
@@ -221,6 +221,8 @@ LOG JORD1 sin partida para revenue
 LOG LPRIS38 insumos elegidos: 14
 LOG OMITIDA dk-stock-rapeseed-yearend (menos de 3 puntos)
 LOG VACIA dk-stock-rapeseed-yearend
+LOG KORN H105: origen 004
+LOG KORN H145: origen 004
 LOG OMITIDA nl-butter-prod (menos de 3 puntos)
 LOG ABS slaughter cols: STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,LSTOCK_SLAUGHT,Livestock slaughtered,STATE,State,TSEST,Adjustment Type,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,UNIT_MULT,Unit of Multiplier,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
 LOG OMITIDA au-chicken-slaught-tas (menos de 3 puntos)
