@@ -26,6 +26,11 @@
    "class": "DERIVED",
    "note": "Registro de series generado por build-series-registry.py; lo leen build-data-catalog, check-catalog y las pruebas. El navegador usa data/catalog/*."
   },
+  "data/catalog/US.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de EE. UU. (sin puntos): la ficha del pais los pide por DISeries.country('US'); unos 40 KB comprimidos.",
+   "via": {"file": "js/series-store.js", "pattern": "e.catalog"}
+  },
   "data/catalog/IT.json": {
    "class": "RUNTIME",
    "note": "Metadatos de las series de Italia (sin puntos): la ficha del pais los pide por DISeries.country('IT'); unos 40 KB comprimidos.",

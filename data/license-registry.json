@@ -3262,6 +3262,14 @@
    },
    "notes": "Margenes de carne, precios minoristas (BLS via ERS), lacteos, leche y arroz del USDA ERS, sin cambiar valores. Los precios minoristas de cortes son del BLS (dominio publico) publicados por el ERS."
   },
+  "data/us-weekly-stats.json": {
+    "bySourceGroupPrefix": {
+      "USDA AMS Market News": "usda_ams_mars",
+      "USDA AMS Grain Inspection": "usda_ams_fgis",
+      "USDA FAS Export Sales": "usda_fas_esr",
+      "EIA": "eia"
+    }
+  },
   "data/us-ttb-stats.json": {
    "byCountry": {
     "US": "ttb"

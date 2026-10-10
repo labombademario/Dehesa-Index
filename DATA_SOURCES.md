@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 77 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17941 series en el catalogo unificado.
+Resumen: 77 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17973 series en el catalogo unificado.
 
 ## VERIFIED (77)
 
@@ -34,7 +34,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 58 | Disclose modifications; the Statistics Denmark logo cannot be used. |
 | `ecb` | European Central Bank (euro reference rates, ECB Data Portal) | EU | ESCB-REUSE | si/conditional | si | 2 | Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed … |
 | `edo_cdi` | European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS) | EU | CC-BY-4.0 | si/si | si | 0 | Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission… |
-| `eia` | U.S. Energy Information Administration (Open Data API) | US | US-PD | si/conditional | si | 4 | Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API k… |
+| `eia` | U.S. Energy Information Administration (Open Data API) | US | US-PD | si/conditional | si | 8 | Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API k… |
 | `enesa` | Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario | ES | CUSTOM | si/si | si | 0 | Citar el informe como 'Informe de Contratación del Seguro Agrario nº NN ENESA'. Tablas con 'Fuente Agroseguro. Elaboración ENESA': solo se c… |
 | `eu_agrifood` | European Commission — Agri-food Data Portal (DG AGRI) | EU | EU-REUSE-2011-833 | si/conditional | si | 3108 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_oil_bulletin` | European Commission — Weekly Oil Bulletin (DG ENER) | EU | EU-REUSE-2011-833 | si/conditional | si | 1 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
@@ -74,11 +74,11 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `us_drought_monitor` | U.S. Drought Monitor (NDMC, USDA, NOAA) | US | CUSTOM | unclear/unclear | si | 0 | Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisa… |
 | `us_tariffs` | USITC Harmonized Tariff Schedule, CBP trade remedies, USTR | US | US-PD | si/si | no | 0 | The HTS is legally binding only in its official publication: label derived rates as informational. |
 | `usda_ams_agtransport` | USDA AMS Agricultural Transportation Open Data Platform (AgTransport) | US | US-PD | si/si | no | 0 | Only datasets whose AgTransport attribution is USDA/AMS are used; datasets attributed to the Surface Transportation Board, the Army Corps of… |
-| `usda_ams_fgis` | USDA AMS / Federal Grain Inspection Service, Export Grain Inspections | US | US-PD | si/si | no | 0 | Weekly metric tons by grain and destination aggregated from the yearly CSV (CY2025, CY2026). No USDA logo/name to imply endorsement. |
+| `usda_ams_fgis` | USDA AMS / Federal Grain Inspection Service, Export Grain Inspections | US | US-PD | si/si | no | 4 | Weekly metric tons by grain and destination aggregated from the yearly CSV (CY2025, CY2026). No USDA logo/name to imply endorsement. |
 | `usda_ams_lmr` | USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart | US | US-PD | si/si | no | 0 | Only AMS-produced reports are used (LM_XB403 boxed beef cutout, LM_PK602 pork cutout, LM_HG201 prior-day swine, LM_CT100 5-area slaughter ca… |
-| `usda_ams_mars` | USDA AMS Market News (MARS API) | US | US-PD | si/si | no | 2 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
+| `usda_ams_mars` | USDA AMS Market News (MARS API) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 297 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
-| `usda_fas_esr` | USDA FAS — Export Sales Reporting (ESR) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
+| `usda_fas_esr` | USDA FAS — Export Sales Reporting (ESR) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 0 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
 | `usda_fsa` | USDA Farm Service Agency (ARC/PLC program data) | US | US-PD | si/si | no | 0 | Byline requested. Some FSA web materials are copyrighted and labelled as such; the ARC/PLC program data files are FSA's own publications. No… |

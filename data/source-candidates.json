@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T21:25:54Z",
+ "generatedAt": "2026-10-10T22:48:20Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2497,13 +2497,15 @@
    "country": "US",
    "scope": "integrated",
    "institution": "U.S. Energy Information Administration (Open Data API)",
-   "dataset": "Ya integrada (4 series en el catalogo unificado)",
+   "dataset": "Ya integrada (8 series en el catalogo unificado)",
    "products": [
     "energy"
    ],
    "productsConfirmed": true,
    "metrics": [
-    "price"
+    "price",
+    "production",
+    "stocks"
    ],
    "frequency": "weekly",
    "access": {
@@ -4435,11 +4437,17 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA AMS / Federal Grain Inspection Service, Export Grain Inspections",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (4 series en el catalogo unificado)",
+   "products": [
+    "maize",
+    "soy",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "trade"
+   ],
+   "frequency": "weekly",
    "access": {
     "api": null,
     "csv": null,
@@ -4513,16 +4521,21 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA AMS Market News (MARS API)",
-   "dataset": "Ya integrada (2 series en el catalogo unificado)",
+   "dataset": "Ya integrada (13 series en el catalogo unificado)",
    "products": [
+    "butter",
+    "cheese",
+    "fertilizer",
     "milk",
+    "sheep",
     "soy"
    ],
    "productsConfirmed": true,
    "metrics": [
+    "input_price",
     "price"
    ],
-   "frequency": "weekly",
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
@@ -4616,11 +4629,20 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA FAS — Export Sales Reporting (ESR)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (13 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "pigs",
+    "rice",
+    "soy",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "trade"
+   ],
+   "frequency": "weekly",
    "access": {
     "api": null,
     "csv": null,
