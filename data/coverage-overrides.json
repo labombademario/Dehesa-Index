@@ -328,33 +328,33 @@
    "cc": "AT",
    "product": "rice",
    "metric": "price",
-   "state": "NOT_APPLICABLE",
+   "state": "NOT_MATERIAL",
    "evidence": "eu-gapfill-stats.json#AT/rice",
-   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+   "reason": "Austria: arroz testimonial según Eurostat (apro_cpsh1): unas 160 ha y 330 t en 2026, por debajo del umbral de 1.000 ha y 5.000 t."
   },
   {
    "cc": "AT",
    "product": "rice",
    "metric": "price_index",
-   "state": "NOT_APPLICABLE",
+   "state": "NOT_MATERIAL",
    "evidence": "eu-gapfill-stats.json#AT/rice",
-   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+   "reason": "Austria: arroz testimonial según Eurostat (apro_cpsh1): unas 160 ha y 330 t en 2026, por debajo del umbral de 1.000 ha y 5.000 t."
   },
   {
    "cc": "AT",
    "product": "rice",
    "metric": "production",
-   "state": "NOT_APPLICABLE",
+   "state": "NOT_MATERIAL",
    "evidence": "eu-gapfill-stats.json#AT/rice",
-   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+   "reason": "Austria: arroz testimonial según Eurostat (apro_cpsh1): unas 160 ha y 330 t en 2026, por debajo del umbral de 1.000 ha y 5.000 t."
   },
   {
    "cc": "AT",
    "product": "rice",
    "metric": "stocks",
-   "state": "NOT_APPLICABLE",
+   "state": "NOT_MATERIAL",
    "evidence": "eu-gapfill-stats.json#AT/rice",
-   "reason": "Austria no cultiva arroz: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
+   "reason": "Austria: arroz testimonial según Eurostat (apro_cpsh1): unas 160 ha y 330 t en 2026, por debajo del umbral de 1.000 ha y 5.000 t."
   },
   {
    "cc": "AT",
@@ -459,54 +459,6 @@
    "state": "NOT_APPLICABLE",
    "evidence": "eu-gapfill-stats.json#DK/olive",
    "reason": "Dinamarca no cultiva aceituna/aceite: Eurostat (apro_cpsh1) publica 0 ha y 0 t en todos los años."
-  },
-  {
-   "cc": "NL",
-   "product": "oats",
-   "metric": "price",
-   "state": "NOT_MATERIAL",
-   "evidence": "eu-gapfill-stats.json#NL/oats",
-   "reason": "Países Bajos: avena testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
-  },
-  {
-   "cc": "NL",
-   "product": "oats",
-   "metric": "price_index",
-   "state": "NOT_MATERIAL",
-   "evidence": "eu-gapfill-stats.json#NL/oats",
-   "reason": "Países Bajos: avena testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
-  },
-  {
-   "cc": "NL",
-   "product": "oats",
-   "metric": "stocks",
-   "state": "NOT_MATERIAL",
-   "evidence": "eu-gapfill-stats.json#NL/oats",
-   "reason": "Países Bajos: avena testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
-  },
-  {
-   "cc": "NL",
-   "product": "rye",
-   "metric": "price",
-   "state": "NOT_MATERIAL",
-   "evidence": "eu-gapfill-stats.json#NL/rye",
-   "reason": "Países Bajos: centeno testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
-  },
-  {
-   "cc": "NL",
-   "product": "rye",
-   "metric": "price_index",
-   "state": "NOT_MATERIAL",
-   "evidence": "eu-gapfill-stats.json#NL/rye",
-   "reason": "Países Bajos: centeno testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
-  },
-  {
-   "cc": "NL",
-   "product": "rye",
-   "metric": "stocks",
-   "state": "NOT_MATERIAL",
-   "evidence": "eu-gapfill-stats.json#NL/rye",
-   "reason": "Países Bajos: centeno testimonial según Eurostat (apro_cpsh1), por debajo del umbral de 1.000 ha y 5.000 t."
   },
   {
    "cc": "DK",
