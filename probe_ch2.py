@@ -8,7 +8,7 @@ def get(u,t=150,data=None,hdr=None):
         with urllib.request.urlopen(urllib.request.Request(u,data=data,headers=h),timeout=t) as r: return r.status,r.read(),r.geturl()
     except urllib.error.HTTPError as e: return e.code,e.read()[:2000],u
     except Exception as e: return 0,repr(e).encode()[:300],u
-import subprocess; subprocess.run(['pip','install','-q','openpyxl','xlrd'],check=False)
+import subprocess, sys; subprocess.run([sys.executable,'-m','pip','install','--break-system-packages','--user','-q','openpyxl','xlrd'],check=False); import site, importlib; sys.path.append(site.getusersitepackages()); importlib.invalidate_caches()
 import openpyxl
 try: import xlrd
 except Exception: xlrd=None
