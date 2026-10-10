@@ -774,7 +774,7 @@
           '<span class="di-product-unit">' + esc(unit) + '</span>' +
           '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
         '</div>' + (origTxt ? '<div class="di-product-meta">' + esc(origTxt) + '</div>' : '') +
-        (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>') +
+        (showValue ? '<svg class="di-product-spark di-spark-link" data-action="spark-history" data-key="' + key + '" role="button" tabindex="0" aria-label="' + esc(t.historyButtonTitle) + '" viewBox="0 0 120 36" preserveAspectRatio="none"><title>' + esc(t.historyButtonTitle) + '</title><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>') +
         (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(state.location === 'ca' ? t.caGapNote : t.ukGapNote) + ' <a href="precios.html?region=eu&amp;product=' + encodeURIComponent(key) + '">' + esc(({ es: 'Ver en la vista de la UE', en: 'See it in the EU view', fr: 'Voir dans la vue UE', it: 'Vedi nella vista UE' })[lang()] || 'Ver en la vista de la UE') + '</a></div>' : '') +
         relatedNewsHtml(entry) +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
@@ -1012,6 +1012,12 @@
     var historyBtns = root.querySelectorAll('[data-action="history"]');
     Array.prototype.forEach.call(historyBtns, function (btn) {
       btn.addEventListener('click', function () { openHistory(btn.getAttribute('data-key')); });
+    });
+    // El minigrafico de la tarjeta tambien abre el historico ampliado (como el boton 📈): raton, teclado (Intro/Espacio) y tactil
+    var sparks = root.querySelectorAll('[data-action="spark-history"]');
+    Array.prototype.forEach.call(sparks, function (sp) {
+      sp.addEventListener('click', function (ev) { ev.stopPropagation(); openHistory(sp.getAttribute('data-key')); });
+      sp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); ev.stopPropagation(); openHistory(sp.getAttribute('data-key')); } });
     });
     var alertBtns = root.querySelectorAll('[data-action="alert"]');
     Array.prototype.forEach.call(alertBtns, function (btn) {

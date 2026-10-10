@@ -292,6 +292,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-seguro.mjs
+      - name: Card sparkline opens the full history chart (mouse and keyboard, rows and cards view, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-spark-history.mjs
       - name: Alemania, ganadería y fruta (cifras de Destatis, selectores, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
