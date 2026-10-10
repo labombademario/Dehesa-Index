@@ -78,7 +78,7 @@ GROUP_INDEX_PRODUCT = {'ar-indec-ipp-cereals-oilseeds': ['wheat', 'maize', 'barl
                        'ar-indec-ipp-pigs-farm': ['poultry', 'eggs'], 'ar-indec-ipp-dairy-products': ['butter', 'cheese']}
 # Series de un AGREGADO de productos que NO son ningun producto suelto: no rellenan celdas de cantidad (una existencia de «cebada, avena y maiz»
 # juntos no es la existencia de la cebada). La regla de los indices de grupo (9 oct) es solo para precios; esto queda pendiente de que Mario decida.
-AGGREGATE_NOT_PRODUCT = {'at-vb-coarse-grains-stocks'}
+AGGREGATE_NOT_PRODUCT = set()   # 10-oct: Mario decidio que el agregado cebada+avena+maiz de Austria cuente para las tres celdas (como los indices de grupo)
 def index_tags(s, m, tags):
     """Etiquetas de producto de una serie para la matriz, con los indices de GRUPO (oleaginosas de Eurostat, SIPM de Argentina) repartidos a sus productos."""
     if s.get('id') in AGGREGATE_NOT_PRODUCT: return []
