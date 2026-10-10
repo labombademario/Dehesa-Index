@@ -6,3 +6,5 @@ sacrificio 58 series
 cultivos 39 series
 censo 7 series
 ecologico 5 series
+apri_pi_outq 47 series
+apri_pi_inq 14 series
