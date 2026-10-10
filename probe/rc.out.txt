@@ -1,0 +1,36 @@
+robots-www.economia-sniim.gob.mx rc=0
+184
+robots-www.magyp.gob.ar rc=0
+89
+robots-datos.gob.ar rc=0
+123
+robots-datos.odepa.gob.cl rc=0
+123
+robots-www.odepa.gob.cl rc=0
+181
+robots-www.ismeamercati.it rc=60
+robots-www.ismea.it rc=60
+ar-search1 rc=0
+2341
+ar-search2 rc=0
+11449
+ar-search3 rc=0
+212
+ar-search4 rc=0
+212
+ar-sio rc=0
+16557
+cl-home rc=0
+17609
+cl-search rc=0
+75272
+cl-search2 rc=0
+218
+cl-precios rc=0
+90394
+mx-home rc=0
+96733
+mx-pec rc=0
+85357
+it-home rc=60
+it-open rc=60

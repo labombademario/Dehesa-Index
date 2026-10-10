@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Date: Sat, 10 Oct 2026 03:00:43 GMT
+Server: ODEPA
+x-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://connect.facebook.net https://stackpath.bootstrapcdn.com https://platform.twitter.com https://www.youtube.com https://www.instagram.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.odepa.gob.cl https://stackpath.bootstrapcdn.com https://use.fontawesome.com https://www.gstatic.com; img-src 'self' data: https://www.odepa.gob.cl https://www.google-analytics.com https://www.facebook.com https://www.google.cl https://i.ytimg.com https://www.googletagmanager.com https://secure.gravatar.com https://www.solwininfotech.com https://support.brainstormforce.com https://ps.w.org https://lh3.googleusercontent.com https://s3.us-west-2.amazonaws.com https://s.w.org; font-src 'self' data: https://fonts.gstatic.com https://stackpath.bootstrapcdn.com https://use.fontawesome.com https://www.odepa.gob.cl; connect-src 'self' https://api.odepa.gob.cl https://www.google-analytics.com https://www.googletagmanager.com https://www.odepa.gob.cl https://analytics.google.com https://stats.g.doubleclick.net https://www.facebook.com https://www.google.com https://www.google.cl/ads/ https://yoast.com https://stackpath.bootstrapcdn.com; worker-src 'self' blob:; media-src 'self'; frame-src 'self' https://www.google.com https://www.youtube.com https://vimeo.com https://platform.twitter.com https://apps.odepa.gob.cl https://aplicativos.odepa.gob.cl https://www.instagram.com https://td.doubleclick.net https://app.powerbi.com/; frame-ancestors 'self' https://www.google.com; object-src 'none'; base-uri 'self';
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Thu, 04 Dec 2025 20:44:18 GMT
+ETag: "b5-6452664910efe"
+Accept-Ranges: bytes
+Content-Length: 181
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Permissions-Policy: geolocation=(self), fullscreen=(self)
+Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+Pragma: no-cache
+Content-Type: text/plain; charset=UTF-8
+

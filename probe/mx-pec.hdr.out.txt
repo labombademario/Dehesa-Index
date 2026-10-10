@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+date: Sat, 10 Oct 2026 03:00:50 GMT
+server: Microsoft-IIS/6.0
+microsoftofficewebserver: 5.0_Pub
+x-powered-by: ASP.NET
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+content-security-policy: frame-ancestors 'self' http://10.100.20.108:2001
+x-xss-protection: 1;mode=block
+referrer-policy: same-origin
+feature-policy: sync-xhr
+x-aspnet-version: 2.0.50727
+set-cookie: ASP.NET_SessionId=ichnj3aqooau45qugyvpz545; path=/; HttpOnly
+cache-control: private
+content-type: text/html; charset=utf-8
+content-length: 85357
+

@@ -1,0 +1,33 @@
+HTTP/1.1 302 Object moved
+date: Sat, 10 Oct 2026 03:00:49 GMT
+server: Microsoft-IIS/6.0
+microsoftofficewebserver: 5.0_Pub
+x-powered-by: ASP.NET
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+content-security-policy: frame-ancestors 'self'
+x-xss-protection: 1;mode=block
+referrer-policy: same-origin
+feature-policy: sync-xhr
+location: http://www.economia-sniim.gob.mx/nuevo/mapa.asp?br=Mozilla/5.0%20(compatible;%20DehesaIndexProbe/1.0;%20+https://dehesaindex.com)
+content-length: 250
+content-type: text/html
+set-cookie: ASPSESSIONIDCQDBQSSC=KAEOEDKAGLMINFGJBEPNEJJH; path=/
+cache-control: private
+
+HTTP/1.1 200 OK
+date: Sat, 10 Oct 2026 03:00:50 GMT
+server: Microsoft-IIS/6.0
+microsoftofficewebserver: 5.0_Pub
+x-powered-by: ASP.NET
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+content-security-policy: frame-ancestors 'self' http://10.100.20.108:2001
+x-xss-protection: 1;mode=block
+referrer-policy: same-origin
+feature-policy: sync-xhr
+content-length: 96733
+content-type: text/html
+set-cookie: ASPSESSIONIDAQCCRSTD=EEBDILMANALBKMGODPOEIMMN; path=/
+cache-control: private
+

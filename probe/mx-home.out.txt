@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Mapa del Sitio SNIIM Secretaria de Economia Sistema Nacional de Informacion e Integracion de Mercados Precios del día, precios históricos, series, tortilla, pan, leche</title>
+<meta name="FORMATTER" content="Microsoft FrontPage 2.0">
+<LINK REL=StyleSheet HREF="/estilo.css" type="text/css">
+</HEAD>
+
+<body background="#FFFFFF"  text="#000000" link="#003399"
+vlink="#663366" alink="#8888AA" topmargin="8" leftmargin="7">
+
+
+
+
+
+<table width="600" align=center border="0" cellpadding="2" cellspacing="1" bordercolor="#CCCCCC">
+    <tr> 
+      <td width="500" align="center"><font color="228833"><b>Mapa del Sitio Web del SNIIM<br>Secretaría de Economía</b></font></td>
+    </tr>
+
+    <tr> 
+      <td bgcolor="ff0000" align=center>&nbsp;<a href="/"><font color="ffffff" size="2"><b> HOME Página Principal del <br>Sistema Nacional de Información e Integración de Mercados (SNIIM)</b></font></a></td>
+    </tr>
+    <tr> 
+      <td><font size="3"><b>&nbsp;</b></font></td>
+    </tr>
+
+    <tr> 
+      <td bgcolor="228833"><font size=4 color="ffffff"><b>&nbsp;&nbsp;Mercados Nacionales:</b></font></td>
+    </tr>
+    <tr valign="top"> 
+      <td height="22" bgcolor="88aaff"><span ><font size="3">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<b>Precios de Mercado:</b></font></span></td>
+    </tr>
+    <tr> 
+      <td bgcolor="ff0000">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<font color="ffffff"><b> Mercados Agrícolas</b></font></td>
+    </tr>
+    <tr> 
+      <td class=MenuSAGR>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFrutasYHortalizas.aspx?SubOpcion=4"> Frutas y hortalizas</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFlores.aspx?SubOpcion=5|0"> Flores</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaGranos.aspx?SubOpcion=6|0"> Granos básicos</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaAzucar.aspx?SubOpcion=7|0"> Azúcar</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaAceites.aspx?SubOpcion=8|0"> Aceites comestibles</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaInsumos.aspx?SubOpcion=9|0"> Insumos agrícolas</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaVolumenesIngreso.aspx?SubOpcion=10|0"> Volúmenes de ingreso</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/Nuevo/Home.aspx?opcion=Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaAndenSubasta.aspx?SubOpcion=11|0"> Andén de subasta (precio/ton)</a><br> </td>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFrutasYHortalizas.aspx?SubOpcion=4|0"> Frutas y hortalizas</a><br> 
+
+    </tr>
+
+    <tr> 
+      <td bgcolor="ffcc00">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<font color="ffffff"><b> Mercados Pecuarios</b></font></td>
+    </tr>
+    <tr> 
+      <td class=MenuSPEC>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/MenPec.asp?var=Bov"> Bovinos</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/MenPec.asp?var=Bec"> Becerros</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/MenPec.asp?var=Por"> Porcinos</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/MenPec.asp?var=Cap"> Caprinos</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/MenPec.asp?var=Ovi"> Ovinos</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/MenAve.asp"> Aves (pollo y huevo)</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/SelAli.asp"> Alimentos balanceados</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-Pecuarios-Nacionales/SelIng.asp"> Ingredientes para la formulación de raciones</a><br> </td>
+    </tr>
+
+    <tr> 
+      <td bgcolor="222288">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<font color="ffffff"><b> Mercados Pesqueros</b></font></td>
+    </tr>
+    <tr> 
+      <td class=MenuSPES> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/lvini1.asp"> La Nueva Viga</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/comp-ini.asp"> Complemento de La Nueva Viga</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/men-ini1.asp"> Menudeo</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/ori-ini1.asp"> Origen</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/dest-ini1.asp"> Destino</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/enlata.asp"> Enlatados</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/vol-ini.asp"> Volúmen</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="/SNIIM-PESCA/menu-cuaresma02.asp"> Cuaresma</a><br> </td>
+    </tr>
+
+    <tr valign="top"> 
+      <td height="22" bgcolor="88aaff"><span ><font size="3">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<b>
+
+</b></font></span></td>
+    </tr>
+
+    <tr valign="top"> 
+      <td height="22" bgcolor="88aaff"><span ><font size="3">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<b>Anuarios estadísticos:</b></font></span></td>
+    </tr>
+    <tr> 
+      <td bgcolor="ff0000">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<font color="ffffff"><b> Mercados Agrícolas</b></font></td>
+    </tr>
+    <tr> 
+      <td class=MenuSAGR>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/SNIIM-AN/estadisticas/e_fyhAnuarioa.asp?"> Frutas y hortalizas</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/SNIIM-AN/estadisticas/e_anuariosflor.asp?"> Flores</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/SNIIM-AN/estadisticas/e_anuariosgran.asp?"> Granos básicos</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/SNIIM-AN/estadisticas/e_aceAnuario.asp?"> Aceites comestibles</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a target="_top" href="http://www.economia-sniim.gob.mx/SNIIM-AN/estadisticas/e_anuariosinsu.asp?"> Insumos agrícolas</a><br>
+    </tr>
+
+    <tr> 
+      <td bgcolor="ffcc00">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<font color="ffffff"><b> Mercados Pecuarios</b></font></td>
+    </tr>
+    <tr> 
+      <td bgcolor="ffccaa">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<font color="black"><b> Ganado en pie:</b></font></td>
+    </tr>
+    <tr> 
+      <td class=MenuSPEC>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.economia-sniim.gob.mx/SNIIM-pecuarios-nacionales/estadisticas/e_Ganpie1.asp?"> Novillo</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.economia-sniim.gob.mx/SNIIM-pecuarios-nacionales/estadisticas/e_Ganpie1a.asp?"> Novillona</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.economia-sniim.gob.mx/SNIIM-pecuarios-nacionales/estadisticas/e_Ganpie1b.asp?"> Vaca</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.economia-sniim.gob.mx/SNIIM-pecuarios-nacionales/estadisticas/e_Ganpie1c.asp?"> Toro</a><br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.economia-sniim.gob.mx/SNIIM-pecuarios-nacionales/estadisticas/e_Ganpie1d.asp

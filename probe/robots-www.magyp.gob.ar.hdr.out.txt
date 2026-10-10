@@ -1,0 +1,15 @@
+HTTP/2 200 
+date: Sat, 10 Oct 2026 03:00:41 GMT
+content-type: text/plain; charset=UTF-8
+content-length: 89
+last-modified: Tue, 03 Oct 2017 10:55:11 GMT
+etag: "59-55aa2533901c0"
+accept-ranges: bytes
+vary: Accept-Encoding
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+referrer-policy: no-referrer-when-downgrade
+x-dns-prefetch-control: off
+x-content-type-options: nosniff
+alt-svc: h3=":443"; ma=86400
+

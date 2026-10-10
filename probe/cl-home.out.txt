@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="es" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es"  > <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+      <meta name="csrf_field_name" content="_csrf_token" />
+      <meta name="_csrf_token" content="Ijc0ZWNjMjgzZjg4YWVlNzQxYjk2MDYxMTA5NTcyMWViMTU5MGE4ODki.asmqXw.PDD9HjiX7CQyLyb8l8DxxDyXu24" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Portal de Datos Abiertos de ODEPA. Accede a datasets públicos del sector agrícola, información oficial y herramientas para análisis y transparencia." />
+
+      <link rel="canonical" href="https://datos.odepa.gob.cl/" />
+
+      <meta property="og:locale" content="es_CL" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="ODEPA | Portal de Datos Abiertos" />
+      <meta property="og:description" content="Explora el Portal de Datos Abiertos de ODEPA con acceso a datasets agrícolas e información pública." />
+      <meta property="og:url" content="https://datos.odepa.gob.cl/" />
+      <meta property="og:site_name" content="Portal de Datos Abiertos ODEPA" />
+
+      <meta property="og:image" content="https://datos.odepa.gob.cl/base/images/ckan-logo.png" />
+      <meta property="og:image:secure_url" content="https://datos.odepa.gob.cl/base/images/ckan-logo.png" />
+      <meta property="og:image:type" content="image/png" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@odepa" />
+      <meta name="twitter:title" content="ODEPA | Portal de Datos Abiertos" />
+      <meta name="twitter:description" content="Datos abiertos agrícolas de ODEPA para análisis y transparencia." />
+      <meta name="twitter:image" content="https://datos.odepa.gob.cl/base/images/ckan-logo.png" />
+    
+
+
+    
+    <title>ODEPA - Portal de Datos Abiertos - ODEPA portal de datos abiertos</title>
+
+    
+    <link rel="shortcut icon" href="/base/images/ckan.ico" />
+    
+  
+      
+      
+      
+    
+  
+
+
+    
+      
+      
+    
+
+    
+    <link href="/webassets/base/2a7cb7f2_main.css" rel="stylesheet"/>
+<link href="/webassets/ckanext-activity/8dd77216_activity.css" rel="stylesheet"/>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-90M1V1TWF3"></script>
+
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){
+       dataLayer.push(arguments);
+     }
+  
+     gtag('js', new Date());
+  
+     gtag('consent','default',{
+       analytics_storage:'granted',
+       ad_storage:'denied',
+       functionality_storage:'granted',
+       security_storage:'granted'
+     });
+  
+     gtag('config','G-90M1V1TWF3',{
+       anonymize_ip:true,
+  
+       allow_google_signals:false,
+       allow_ad_personalization_signals:false,
+  
+       transport_type:'beacon',
+  
+       cookie_flags:'SameSite=Strict;Secure',
+  
+       send_page_view:true,
+  
+       page_title:document.title,
+       page_location:window.location.href
+     });
+  
+     function isBot(){
+       var botPattern = /bot|crawler|spider|crawling/i;
+       return botPattern.test(navigator.userAgent);
+     }
+  
+     document.addEventListener("DOMContentLoaded", function(){
+       if(isBot()){
+         return;
+       }
+  
+       if(window.location.pathname.includes("/dataset/")){
+         gtag('event','dataset_view',{
+           dataset_id:window.location.pathname,
+           dataset_url:window.location.href,
+           platform:'ckan'
+         });
+       }
+  
+       var params = new URLSearchParams(window.location.search);
+       if(params.get("q")){
+         gtag('event','search',{
+           search_term:params.get("q"),
+           platform:'ckan'
+         });
+       }
+     });
+  
+     document.addEventListener("click",function(event){
+       if(isBot()) return;
+       var link = event.target.closest("a");
+       if(!link) return;
+       if(link.href && link.href.match(/\.(csv|json|xml|xlsx|zip|pdf)$/i)){
+         gtag('event','dataset_download',{
+           file_url:link.href,
+           file_type:link.href.split('.').pop(),
+           platform:'ckan'
+         });
+       }
+     });
+  
+     (function(){
+       if(isBot()) return;
+       var originalFetch = window.fetch;
+       window.fetch = function(){
+         var url = arguments[0];
+         if(typeof url === "string" && url.includes("/api/")){
+           gtag('event','api_request',{
+             api_endpoint:url,
+             platform:'ckan'
+           });
+         }
+         return originalFetch.apply(this,arguments);
+       };
+     })();
+   </script>
+
+  </head>
+
+  
+  <body data-site-root="https://datos.odepa.gob.cl/" data-locale-root="https://datos.odepa.gob.cl/" >
+
+    
+    <div class="visually-hidden-focusable"><a href="#content">Saltar al contenido principal</a></div>
+  
+
+  
+    
+
+
+
+<!-- Aquí puedes agregar un mensaje o un bloque alternativo cuando el usuario no esté logueado -->
+
+
+
+
+<header class="masthead">
+  <div class="container">
+      
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <hgroup class="header-image navbar-left">
+
+        
+        
+        <a class="logo" href="/">
+          <img src="/base/images/ckan-logo.png" alt="ODEPA portal de datos abiertos"
+            title="ODEPA portal de datos abiertos" />
+        </a>
+        
+        
+
+      </hgroup>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation-toggle"
+        aria-controls="main-navigation-toggle" aria-expanded="false" aria-label="Activar/Desactivar navegación">
+        <span class="fa fa-bars text-white"></span>
+      </button>
+
+      <div class="main-navbar collapse navbar-collapse" id="main-navigation-toggle">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+          
+          
+          
+
+          <li><a href="/dataset/">Conjuntos de datos</a></li>
+          <!-- Botón desplegable "Acerca de" -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-decoration-none" href="#" id="acercaDeDropdown" role="button"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Acerca de
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="acercaDeDropdown">
+              <li>
+                <a class="dropdown-item" href="/about">
+                  Acerca de datos abiertos de ODEPA
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/pfrecuentes">
+                  Preguntas frecuentes
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Agregar "Organizaciones" y "Grupos" solo si el usuario está autenticado -->
+          
+
+          
+          <li class="nav-item login-cabecera">
+            <a class="nav-link" href="/user/login">Iniciar Sesión</a>
+          </li>
+          
+          
+
+          
+        </ul>
+
+        
+        
+        <form class="d-flex site-search" action="/dataset/" method="get">
+          <label class="d-none" for="field-sitewide-search">Buscar conjuntos de datos...</label>
+          <input id="field-sitewide-search" class="form-control me-2" type="text" name="q"
+            placeholder="Búsqueda"
+            aria-label="Buscar conjuntos de datos..." />
+          <button class="btn" type="submit" aria-label="Enviar"><i class="fa fa-search"></i></button>
+        </form>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+  
+<div class="homepage">
+  <div id="content" class="container">
+    
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+  </div>
+  
+  <div role="main">
+    <div class="main 
