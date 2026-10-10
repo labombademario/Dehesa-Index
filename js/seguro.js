@@ -2,7 +2,8 @@
    Datos: data/crop-insurance.json (EE. UU., USDA RMA, sumado por Dehesa Index a partir de los ficheros públicos de la RMA) y
    data/crop-insurance-ca.json (Canadá, Statistics Canada: indemnizaciones y gasto de las explotaciones, por provincia; copiado sin transformar) y
    data/insurance-es.json (España, cuatro cifras curadas a mano y PENDIENTES de contraste). Nada se escribe a mano aquí salvo etiquetas:
-   cada cifra de las tarjetas de EE. UU. y Canadá sale del JSON y lleva su cita. DehesaSeguro.render(contenedor). */
+   cada cifra de las tarjetas de EE. UU. y Canadá sale del JSON y lleva su cita. DehesaSeguro.render(contenedor, { region: 'us'|'ca'|'eu'|'uk', euCountry }):
+   cada ubicación muestra solo el seguro de su zona. */
 (function (root) {
   'use strict';
   var S = root.DehesaShared, esc = S.esc;
@@ -131,26 +132,44 @@
       '<div class="di-info-scope-note" style="margin-top:6px">' + esc(h.src) + ' <a href="' + esc(N.meta.url) + '" rel="noopener" target="_blank">' + esc(h.link) + '</a></div>' +
       cite('enesa', String(N.annual[N.annual.length - 1].year));
   }
-  function render(el) {
-    var t = tx(), D = null, E = null, C = null, N = null;
+  // Mensajes por ubicacion: cada vista muestra SOLO el seguro de su zona (EE. UU. -> RMA; Canada -> StatCan; Europa -> Espana; Reino Unido -> sin datos)
+  var TR = {
+    es: { uk: 'No tenemos datos del seguro agrario del Reino Unido. Hay cifras oficiales de Estados Unidos y de Canadá, y de España en la vista de Europa.', euOnly: 'En la Unión Europea solo tenemos datos del seguro agrario de España.', none: 'No se han podido cargar los datos del seguro agrario de esta zona.' },
+    en: { uk: 'We have no crop insurance data for the United Kingdom. There are official figures for the United States and Canada, and for Spain in the Europe view.', euOnly: 'In the European Union we only have crop insurance data for Spain.', none: 'The crop insurance data for this area could not be loaded.' },
+    fr: { uk: 'Nous n’avons pas de données d’assurance agricole pour le Royaume-Uni. Il y a des chiffres officiels pour les États-Unis et le Canada, et pour l’Espagne dans la vue Europe.', euOnly: 'Dans l’Union européenne, nous n’avons des données d’assurance agricole que pour l’Espagne.', none: 'Les données d’assurance agricole de cette zone n’ont pas pu être chargées.' },
+    it: { uk: 'Non abbiamo dati sull’assicurazione agricola del Regno Unito. Ci sono cifre ufficiali per gli Stati Uniti e il Canada, e per la Spagna nella vista Europa.', euOnly: 'Nell’Unione europea abbiamo dati sull’assicurazione agricola solo per la Spagna.', none: 'Non è stato possibile caricare i dati sull’assicurazione agricola di questa zona.' }
+  };
+  function tr() { return TR[lang()] || TR.es; }
+  function note(msg) { return '<div class="di-info-scope-note">' + esc(msg) + '</div>'; }
+  function render(el, opts) {
+    var t = tx(), D = null, E = null, C = null, N = null, reg = (opts && opts.region) || 'us', euc = (opts && opts.euCountry) || 'es';
+    if (reg === 'uk') { el.innerHTML = note(tr().uk); return; }
     el.innerHTML = '<div class="di-info-scope-note">…</div>';
     function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
-    Promise.all([get('data/crop-insurance.json'), get('data/insurance-es.json').catch(function () { return null; }), get('data/crop-insurance-ca.json').catch(function () { return null; }), get('data/enesa-contratacion.json').catch(function () { return null; }), root.DICite ? root.DICite.load() : null]).then(function (a) {
-      D = a[0]; E = a[1]; C = a[2]; N = a[3]; paint(String(D.latestCompleteYear), C ? String(C.latestYear) : null);
-    }, function () { el.innerHTML = '<div class="di-info-scope-note">' + esc(t.err) + '</div>'; });
+    var want = reg === 'us' ? [get('data/crop-insurance.json'), null, null, null] : reg === 'ca' ? [null, null, get('data/crop-insurance-ca.json'), null]
+      : [null, get('data/insurance-es.json').catch(function () { return null; }), null, get('data/enesa-contratacion.json').catch(function () { return null; })];
+    Promise.all(want.concat([root.DICite ? root.DICite.load() : null])).then(function (a) {
+      D = a[0]; E = a[1]; C = a[2]; N = a[3];
+      if (reg === 'eu' && !E && !N) { el.innerHTML = note(tr().none); return; }
+      paint(D ? String(D.latestCompleteYear) : null, C ? String(C.latestYear) : null);
+    }, function () { el.innerHTML = note(reg === 'us' ? t.err : reg === 'ca' ? tc().err : tr().none); });
     function paint(y, cy) {
-      t = tx(); var c = tc();
-      var opts = D.cropYears.slice().reverse().map(function (yy) { return '<option value="' + yy + '"' + (String(yy) === y ? ' selected' : '') + '>' + yy + (+yy >= D.provisionalFrom ? ' *' : '') + '</option>'; }).join('');
-      var copts = C ? C.years.slice().reverse().map(function (yy) { return '<option value="' + yy + '"' + (String(yy) === cy ? ' selected' : '') + '>' + yy + '</option>'; }).join('') : '';
-      el.innerHTML = '<div class="di-badge di-badge-green di-info-badge">' + esc(t.badgeUs) + '</div>' +
-        '<div style="margin:0 0 16px"><label class="di-field-hint" for="sg-year">' + esc(t.year) + ' </label><select id="sg-year" class="di-eu-country-select">' + opts + '</select></div>' +
-        '<div class="di-info-grid">' + usKpi(D, y) + (C ? caKpi(C, C.latestYear) : '') + (E ? esCard(E) : '') + '</div>' +
-        '<div class="di-info-scope-note">' + esc(t.scope) + '</div>' + details(D, y) +
-        '<div class="di-info-scope-note" style="margin-top:14px">' + esc(t.note) + '</div>' +
-        (C ? '<div class="di-badge di-badge-green di-info-badge" style="margin-top:28px">' + esc(c.badge) + '</div>' +
+      t = tx(); var c = tc(), h = '';
+      if (reg === 'us') {
+        var opts = D.cropYears.slice().reverse().map(function (yy) { return '<option value="' + yy + '"' + (String(yy) === y ? ' selected' : '') + '>' + yy + (+yy >= D.provisionalFrom ? ' *' : '') + '</option>'; }).join('');
+        h = '<div class="di-badge di-badge-green di-info-badge">' + esc(t.badgeUs) + '</div>' +
+          '<div style="margin:0 0 16px"><label class="di-field-hint" for="sg-year">' + esc(t.year) + ' </label><select id="sg-year" class="di-eu-country-select">' + opts + '</select></div>' +
+          '<div class="di-info-grid">' + usKpi(D, y) + '</div>' + details(D, y) +
+          '<div class="di-info-scope-note" style="margin-top:14px">' + esc(t.note) + '</div>';
+      } else if (reg === 'ca') {
+        var copts = C.years.slice().reverse().map(function (yy) { return '<option value="' + yy + '"' + (String(yy) === cy ? ' selected' : '') + '>' + yy + '</option>'; }).join('');
+        h = '<div class="di-badge di-badge-green di-info-badge">' + esc(c.badge) + '</div>' +
           '<div style="margin:0 0 16px"><label class="di-field-hint" for="sg-ca-year">' + esc(c.yearL) + ' </label><select id="sg-ca-year" class="di-eu-country-select">' + copts + '</select></div>' +
-          caDetails(C, cy) + '<div class="di-info-scope-note" style="margin-top:14px">' + esc(c.note) + '</div>' : '') +
-        (N ? enesaHist(N) : '');
+          '<div class="di-info-grid">' + caKpi(C, cy) + '</div>' + caDetails(C, cy) + '<div class="di-info-scope-note" style="margin-top:14px">' + esc(c.note) + '</div>';
+      } else {
+        h = (euc !== 'es' ? note(tr().euOnly) : '') + (E ? '<div class="di-info-grid">' + esCard(E) + '</div>' : '') + (N ? enesaHist(N) : '');
+      }
+      el.innerHTML = h;
       var sel = el.querySelector('#sg-year'); if (sel) sel.addEventListener('change', function () { paint(sel.value, cy); });
       var csel = el.querySelector('#sg-ca-year'); if (csel) csel.addEventListener('change', function () { paint(y, csel.value); });
     }

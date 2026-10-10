@@ -801,11 +801,13 @@
     return '<div class="di-card di-info-card"><div class="di-info-card-title">' + esc(title) + '</div><div class="di-info-stat-list">' + rows + '</div></div>';
   }
 
-  function infoSourcesHtml(catId) {
+  function infoSourcesHtml(catId, only) {
     var t = ui();
     var cat = (D.CATS[lang()] || D.CATS.es)[catId];
     if (!cat) return '';
-    var links = D.withSeps(cat.sources).map(function (s) {
+    var srcs = only ? cat.sources.filter(function (s) { return only.indexOf(s.name) > -1; }) : cat.sources;
+    if (!srcs.length) return '';
+    var links = D.withSeps(srcs).map(function (s) {
       return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' + s.sep;
     }).join('');
     return '<div class="di-field-hint di-info-sources">' + esc(t.fuenteLabel) + ' ' + links + '</div>';
@@ -967,8 +969,9 @@
     if (INFO_CATS[state.activeTab]) {
       if (state.activeTab === 'seguro' && global.DehesaSeguro) {
         // Seguro agrario: cifras de data/crop-insurance.json (USDA RMA) y data/insurance-es.json; ver js/seguro.js
-        root.innerHTML = '<div id="pr-seguro"></div>' + infoSourcesHtml('seguro');
-        global.DehesaSeguro.render(document.getElementById('pr-seguro'));
+        // cada ubicacion solo ve el seguro de su zona; la linea de fuentes, igual (Canada cita StatCan en sus tarjetas)
+        root.innerHTML = '<div id="pr-seguro"></div>' + infoSourcesHtml('seguro', ({ us: ['USDA RMA'], eu: ['Agroseguro'] })[state.location || 'us'] || []);
+        global.DehesaSeguro.render(document.getElementById('pr-seguro'), { region: state.location || 'us', euCountry: state.euCountry });
         return;
       }
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
