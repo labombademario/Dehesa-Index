@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 75 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17900 series en el catalogo unificado.
+Resumen: 76 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 17930 series en el catalogo unificado.
 
-## VERIFIED (75)
+## VERIFIED (76)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -54,6 +54,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `insee` | Institut national de la statistique et des études économiques (INSEE) | FR | Etalab-2.0 | si/si | si | 221 | Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información. |
 | `irs_sales_tax` | U.S. Internal Revenue Service - Optional State Sales Tax Tables | US | US-PD | si/si | no | 0 | Only the state general sales tax rate is used; local rates are not included. Not tax advice. |
 | `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-OWNER-DECISION | si/si | si | 47 | No implied endorsement by the Federal Reserve. |
+| `magyp_lecheria` | Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar | AR | CC-BY-4.0 | si/si | si | 30 | Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica est… |
 | `mapa_es` | Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA) | ES | CUSTOM | si/si | si | 250 | Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but th… |
 | `mb_agri` | Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba) | CA | OpenMB-1.0 | si/si | si | 0 | No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights. |
 | `meteoswiss` | Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet | CH | CC-BY-4.0 | si/si | si | 18 | Source must read 'Source: MeteoSwiss'; MeteoSwiss warnings must not be altered; no implication of MeteoSwiss endorsement; avoid high-frequen… |
