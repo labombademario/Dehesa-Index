@@ -1,0 +1,15 @@
+HTTP/1.1 301 Moved Permanently
+Date: Sat, 10 Oct 2026 03:15:30 GMT
+Set-Cookie: PHPSESSID=4sae9vgj3ck7cc1u8c26vj671v; path=/; secure; HttpOnly; SameSite=Strict
+Set-Cookie: fxs=6ac9add2a77845.93292680%3A41877; expires=Sun, 10-Oct-2027 09:04:42 GMT; Max-Age=31556952; path=/; secure; HttpOnly
+X-Frame-Options: SAMEORIGIN
+Location: https://www.ismea.it/istituto-di-servizi-per-il-mercato-agricolo-alimentare
+Content-Length: 0
+Content-Type: text/html; charset=UTF-8
+X-FRAME-OPTIONS: SAMEORIGIN
+
+HTTP/1.1 404 Not Found
+Cache-Control: no-store, no-cache, must-revalidate
+Connection: Close
+Content-Type: text/html
+

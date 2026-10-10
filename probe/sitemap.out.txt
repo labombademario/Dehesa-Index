@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+		http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+
+<url>
+	<loc>https://www.ismeamercati.it/osservatori-rrn/strumenti-utilita</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>1</priority>
+<xhtml:link rel="alternate" hreflang="it" href="https://www.ismeamercati.it/osservatori-rrn/strumenti-utilita" />
+</url>
+
+<url>
+	<loc>https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027</loc>
+<lastmod>2026-04-30</lastmod>
+<priority>0.8</priority>
+<xhtml:link rel="alternate" hreflang="it" href="https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027" />
+</url>
+
+<url>
+	<loc>https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027/riparti-per-intervento</loc>
+<lastmod>2026-04-30</lastmod>
+<priority>0.75</priority>
+<xhtml:link rel="alternate" hreflang="it" href="https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027/riparti-per-intervento" />
+</url>
+
+<url>
+	<loc>https://www.ismeamercati.it/osservatori-rrn/strumenti-utilita</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>1</priority>
+<xhtml:link rel="alternate" hreflang="it" href="https://www.ismeamercati.it/osservatori-rrn/strumenti-utilita" />
+</url>
+
+<url>
+	<loc>https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027</loc>
+<lastmod>2026-04-30</lastmod>
+<priority>0.8</priority>
+<xhtml:link rel="alternate" hreflang="it" href="https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027" />
+</url>
+
+<url>
+	<loc>https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027/riparti-per-intervento</loc>
+<lastmod>2026-04-30</lastmod>
+<priority>0.75</priority>
+<xhtml:link rel="alternate" hreflang="it" href="https://www.ismeamercati.it/osservatori-rrn/programmazione-sviluppo-rurale-2023-2027/riparti-per-intervento" />
+</url></urlset>

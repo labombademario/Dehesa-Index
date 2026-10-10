@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Sat, 10 Oct 2026 03:15:29 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+X-Powered-By: PHP/7.3.33
+Set-Cookie: PHPSESSID=230edfq6fp91d2a6icm13rof1c; path=/; secure; HttpOnly; SameSite=Strict
+Set-Cookie: fxs=6ac9add1a19867.46846770%3A16561; expires=Sun, 10-Oct-2027 09:04:41 GMT; Max-Age=31556952; path=/; secure; HttpOnly
+Content-Length: 2149
+Content-Type: text/xml;charset=UTF-8
+

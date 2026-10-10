@@ -1,0 +1,28 @@
+HTTP/1.1 301 Moved Permanently
+Date: Sat, 10 Oct 2026 03:15:28 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+X-Powered-By: PHP/7.3.33
+Set-Cookie: PHPSESSID=l7eekkvnrs35ai8dtc6e1lieth; path=/; secure; HttpOnly; SameSite=Strict
+Set-Cookie: fxs=6ac9add012da11.17388540%3A02055; expires=Sun, 10-Oct-2027 09:04:40 GMT; Max-Age=31556952; path=/; secure; HttpOnly
+X-Frame-Options: SAMEORIGIN
+Location: https://www.ismeamercati.it/analisi-e-studio-filiere-agroalimentari
+Content-Length: 0
+Content-Type: text/html; charset=UTF-8
+
+HTTP/1.1 200 OK
+Date: Sat, 10 Oct 2026 03:15:28 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+X-Powered-By: FlexCMP Application Server [v. 7.8.13 - 2022.09.02 17.13 (2022.09.13 11.18)] (c) 2000-2022 Deda Digital s.r.l. - Bologna, Italy - www.flexcmp.com - www.deda.digital
+Set-Cookie: PHPSESSID=fmh39d1b5up9rgb53cec72grmf; path=/; secure; HttpOnly; SameSite=Strict
+Set-Cookie: fxs=6ac9add034a820.89547122%3A12826; expires=Sun, 10-Oct-2027 09:04:40 GMT; Max-Age=31556952; path=/; secure; HttpOnly
+X-Flex-Tag: BLOB:ID=1
+X-Flex-Lang: IT
+X-Flex-Lastmod: 1787553563
+X-Flex-Classification: 10000
+X-Flex-Community: -1
+X-Flex-Evstart: 1306792800
+X-Flex-Evend: 1306878900
+X-Flex-Tags: 
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=ISO-8859-1
+
