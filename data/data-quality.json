@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T12:29:55Z",
+ "generatedAt": "2026-10-10T15:24:57Z",
  "summary": {
-  "files": 48,
+  "files": 49,
   "errors": 0,
   "warnings": 14
  },
@@ -14,11 +14,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 202,
-    "points": 20984,
+    "series": 215,
+    "points": 21466,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T17:26:58Z",
+   "generatedAt": "2026-10-10T13:34:47Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -178,7 +178,7 @@
     "points": 9284,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T16:39:11Z",
+   "generatedAt": "2026-10-10T13:23:54Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -229,11 +229,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 223,
-    "points": 10562,
+    "series": 284,
+    "points": 11966,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T17:03:59Z",
+   "generatedAt": "2026-10-10T13:09:41Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -667,13 +667,29 @@
     "CH/ch-foag-potato-import-table: salto 4780.58 -> 5174.56 en 2020-05 (mediana previa 174)"
    ],
    "stats": {
-    "series": 114,
-    "points": 9334,
+    "series": 118,
+    "points": 9786,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T16:39:16Z",
+   "generatedAt": "2026-10-10T14:48:04Z",
    "info": [],
    "nWarnings": 4,
+   "nErrors": 0
+  },
+  {
+   "file": "switzerland-bfs-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 89,
+    "points": 3182,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-10T14:58:13Z",
+   "info": [],
+   "nWarnings": 0,
    "nErrors": 0
   },
   {
@@ -727,7 +743,7 @@
     "points": 400,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T13:36:06Z",
+   "generatedAt": "2026-10-10T13:20:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -953,7 +969,7 @@
     "points": 404335,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T13:25:20Z",
+   "generatedAt": "2026-10-10T12:57:05Z",
    "info": [],
    "nWarnings": 86,
    "nErrors": 0
