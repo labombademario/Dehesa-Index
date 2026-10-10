@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Date: Sat, 10 Oct 2026 03:19:16 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.33
+X-Powered-By: FlexCMP Application Server [v. 7.8.13 - 2022.09.02 17.13 (2022.09.13 11.18)] (c) 2000-2022 Deda Digital s.r.l. - Bologna, Italy - www.flexcmp.com - www.deda.digital
+Set-Cookie: PHPSESSID=kkb3n0iunatd9ni9d37f39kpfe; path=/; secure; HttpOnly; SameSite=Strict
+Set-Cookie: fxs=6ac9aeb4ba4de6.75864940%3A15835; expires=Sun, 10-Oct-2027 09:08:28 GMT; Max-Age=31556952; path=/; secure; HttpOnly
+X-Flex-Tag: BLOB:ID=2128
+X-Flex-Lang: IT
+X-Flex-Lastmod: 1657138793
+X-Flex-Classification: 10000,19200
+X-Flex-Community: -1
+X-Flex-Evstart: 1358290800
+X-Flex-Evend: 1358376900
+X-Flex-Tags: 
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=ISO-8859-1
+
