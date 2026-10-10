@@ -44,86 +44,128 @@
   function nf(v, d) { if (v == null) return '–'; try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function chn(c) { var x = CH[c]; return x ? (lang() === 'es' ? x[0] : x[1]) : c; }
   function dt(s) { if (!s) return ''; try { var p = s.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return s; } }
+  var T2 = {
+    es: { kLines: 'Líneas arancelarias', kAvg: 'Arancel medio', kFree: 'Sin arancel', kPref: 'Con preferencia', kMeas: 'Medidas vigentes', kAvgSub: 'ad valorem, media simple', shortcuts: 'Atajos',
+      chips: [['Vacuno', 'beef|bovine|bovino'], ['Cerdo', 'swine|pig|porcino'], ['Trigo', 'wheat|trigo'], ['Leche y queso', 'milk|cheese|leche|queso'], ['Aceite de oliva', 'olive oil|aceite de oliva'], ['Azúcar', 'sugar|azúcar|azucar'], ['Fertilizantes', 'fertili|abonos']],
+      prompt: 'Busca un producto o elige un capítulo para ver los códigos y su arancel.', clear: 'Borrar filtros', byChap: 'Arancel medio por capítulo', byChapSub: 'Media simple de las líneas con tipo porcentual. Pulsa un capítulo para ver el detalle.', viewProducts: 'Ver productos', specDom: 'Domina el arancel específico: la media se queda corta', noPct: 'sin tipo %', cmpHint: 'Arancel medio por capítulo en los cuatro mercados. La barra es proporcional dentro de esta tabla.', moreCnt: 'más', quota: 'Con cuota', col2: 'Columna 2', unit: 'Unidad', allMeasures: 'ver detalle', measCount: 'medidas vigentes' },
+    en: { kLines: 'Tariff lines', kAvg: 'Average tariff', kFree: 'Duty-free', kPref: 'With preference', kMeas: 'Measures in force', kAvgSub: 'ad valorem, simple average', shortcuts: 'Shortcuts',
+      chips: [['Beef', 'beef|bovine|bovino'], ['Pork', 'swine|pig|porcino'], ['Wheat', 'wheat|trigo'], ['Milk and cheese', 'milk|cheese|leche|queso'], ['Olive oil', 'olive oil|aceite de oliva'], ['Sugar', 'sugar|azúcar|azucar'], ['Fertilisers', 'fertili|abonos']],
+      prompt: 'Search for a product or pick a chapter to see codes and their tariff.', clear: 'Clear filters', byChap: 'Average tariff by chapter', byChapSub: 'Simple average of lines with a percentage rate. Tap a chapter for details.', viewProducts: 'View products', specDom: 'Specific duties dominate: the average understates the cost', noPct: 'no % rate', cmpHint: 'Average tariff by chapter across the four markets. Bars are scaled within this table.', moreCnt: 'more', quota: 'With quota', col2: 'Column 2', unit: 'Unit', allMeasures: 'details', measCount: 'measures in force' },
+    fr: { kLines: 'Lignes tarifaires', kAvg: 'Droit moyen', kFree: 'En franchise', kPref: 'Avec préférence', kMeas: 'Mesures en vigueur', kAvgSub: 'ad valorem, moyenne simple', shortcuts: 'Raccourcis',
+      chips: [['Bœuf', 'beef|bovine|bovino'], ['Porc', 'swine|pig|porcino'], ['Blé', 'wheat|trigo'], ['Lait et fromage', 'milk|cheese|leche|queso'], ['Huile d’olive', 'olive oil|aceite de oliva'], ['Sucre', 'sugar|azúcar|azucar'], ['Engrais', 'fertili|abonos']],
+      prompt: 'Cherchez un produit ou choisissez un chapitre pour voir les codes et leur droit.', clear: 'Effacer les filtres', byChap: 'Droit moyen par chapitre', byChapSub: 'Moyenne simple des lignes à taux en pourcentage. Touchez un chapitre pour le détail.', viewProducts: 'Voir les produits', specDom: 'Les droits spécifiques dominent : la moyenne sous-estime le coût', noPct: 'sans taux %', cmpHint: 'Droit moyen par chapitre dans les quatre marchés. Les barres sont proportionnelles dans ce tableau.', moreCnt: 'de plus', quota: 'Avec contingent', col2: 'Colonne 2', unit: 'Unité', allMeasures: 'détail', measCount: 'mesures en vigueur' },
+    it: { kLines: 'Linee tariffarie', kAvg: 'Dazio medio', kFree: 'Esenti', kPref: 'Con preferenza', kMeas: 'Misure in vigore', kAvgSub: 'ad valorem, media semplice', shortcuts: 'Scorciatoie',
+      chips: [['Manzo', 'beef|bovine|bovino'], ['Suino', 'swine|pig|porcino'], ['Grano', 'wheat|trigo'], ['Latte e formaggio', 'milk|cheese|leche|queso'], ['Olio d’oliva', 'olive oil|aceite de oliva'], ['Zucchero', 'sugar|azúcar|azucar'], ['Fertilizzanti', 'fertili|abonos']],
+      prompt: 'Cerca un prodotto o scegli un capitolo per vedere i codici e il dazio.', clear: 'Cancella i filtri', byChap: 'Dazio medio per capitolo', byChapSub: 'Media semplice delle linee con aliquota percentuale. Tocca un capitolo per il dettaglio.', viewProducts: 'Vedi i prodotti', specDom: 'Prevalgono i dazi specifici: la media sottostima il costo', noPct: 'senza aliquota %', cmpHint: 'Dazio medio per capitolo nei quattro mercati. Le barre sono proporzionali all’interno di questa tabella.', moreCnt: 'altri', quota: 'Con contingente', col2: 'Colonna 2', unit: 'Unità', allMeasures: 'dettaglio', measCount: 'misure in vigore' }
+  };
+  Object.keys(T2).forEach(function (l) { Object.keys(T2[l]).forEach(function (k) { T[l][k] = T2[l][k]; }); });
   var COL = { active: '#17703f', ended: '#8a8a8a', expired: '#8a8a8a', pending: '#8f5f12' };
+  var MCOL = { us: '#2f6f9f', eu: '#b07a12', ca: '#b24a3a', mx: '#3e7d50' };
+  var BAR = 'height:8px;border-radius:4px;background:var(--border)', FILL = 'display:block;height:100%;border-radius:4px;';
   function sel(id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; }
+  function active() { return ST.q.trim() !== '' || ST.c !== 'all' || ST.r !== 'all'; }
   function filtered() {
-    var q = ST.q.trim().toLowerCase();
+    var qs = ST.q.trim().toLowerCase().split('|').filter(Boolean);
     return D.lines.filter(function (l) {
       if (ST.c !== 'all' && l.c !== ST.c) return false;
       if (ST.r !== 'all' && l.r !== ST.r) return false;
-      if (q && (l.h + ' ' + l.d).toLowerCase().indexOf(q) < 0 && (D.headings[l.hd] || '').toLowerCase().indexOf(q) < 0) return false;
+      if (qs.length) { var hay = (l.h + ' ' + l.d + ' ' + (D.headings[l.hd] || '')).toLowerCase(); if (!qs.some(function (x) { return hay.indexOf(x) >= 0; })) return false; }
       return true;
     });
   }
+  function card(l, t) {
+    var parts = l.d.split(' › '), title = parts.pop(), parent = parts.join(' › ');
+    var sp = l.sp ? (l.sp.indexOf(';') >= 0 ? l.sp.split(/;\s*/) : [l.sp]) : [], chips = sp.slice(0, 3).map(function (s) { return '<span style="display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:999px;background:var(--bg-soft,rgba(0,0,0,.05));font-size:11.5px;color:var(--text-muted)">' + esc(s) + '</span>'; }).join('');
+    if (sp.length > 3) chips += '<details style="display:inline"><summary style="display:inline;cursor:pointer;font-size:11.5px;color:var(--text-muted)">+' + (sp.length - 3) + ' ' + t.moreCnt + '</summary><div>' + sp.slice(3).map(function (s) { return '<span style="display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:999px;background:var(--bg-soft,rgba(0,0,0,.05));font-size:11.5px;color:var(--text-muted)">' + esc(s) + '</span>'; }).join('') + '</div></details>';
+    var g = l.g || '–', big = g.length > 14 ? 'font-size:15px' : 'font-size:24px';
+    var meta = [l.o && l.o !== l.g ? t.col2 + ': ' + l.o : '', l.u ? t.unit + ': ' + l.u : ''].filter(Boolean).join(' · ');
+    return '<div class="di-card" style="padding:14px 16px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><span style="font-size:12px;color:var(--text-faint);font-variant-numeric:tabular-nums">' + esc(l.h) + '</span>' + (l.q ? '<span style="font-size:11px;font-weight:700;color:#8f5f12">' + esc(t.quota) + '</span>' : '') + '</div>' +
+      '<div style="font-weight:600;line-height:1.3">' + esc(title) + '</div>' + (parent ? '<div style="font-size:12px;color:var(--text-faint);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden" title="' + esc(parent) + '">' + esc(parent) + '</div>' : '') +
+      '<div style="' + big + ';font-weight:700;margin-top:2px;line-height:1.15">' + esc(g) + '</div>' + (chips ? '<div>' + chips + '</div>' : '') + (meta ? '<div style="font-size:12px;color:var(--text-muted)">' + esc(meta) + '</div>' : '') + '</div>';
+  }
   function rows() {
-    var t = tt(), f = filtered(), shown = f.slice(0, ST.n);
+    var t = tt();
+    if (!active()) return '<p class="di-movers-hint" style="margin:10px 0">' + t.prompt + '</p>';
+    var f = filtered(), shown = f.slice(0, ST.n);
     var h = '<div class="di-movers-hint" id="ar-count" style="margin:8px 0">' + f.length.toLocaleString(lang()) + ' ' + t.results + '</div>';
     if (!f.length) return h + '<p class="di-movers-hint">' + t.none + '</p>';
-    var th = 'padding:8px 6px';
-    h += '<div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:760px;font-size:13px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left">' +
-      '<th style="' + th + '">' + t.code.toUpperCase() + '</th><th style="' + th + '">' + t.desc.toUpperCase() + '</th><th style="' + th + '">' + t.general.toUpperCase() + '</th><th style="' + th + '">' + t.special.toUpperCase() + '</th><th style="' + th + '">' + t.col2.toUpperCase() + '</th><th style="' + th + '">' + t.unit.toUpperCase() + '</th></tr></thead><tbody>';
-    shown.forEach(function (l) {
-      h += '<tr style="border-top:1px solid var(--border);vertical-align:top"><td style="' + th + ';white-space:nowrap;font-variant-numeric:tabular-nums">' + esc(l.h) + '</td><td style="' + th + '">' + esc(l.d) + '</td><td style="' + th + ';font-weight:600">' + esc(l.g || '–') + '</td><td style="' + th + ';font-size:12px;color:var(--text-muted)">' + esc(l.sp || '–') + '</td><td style="' + th + '">' + esc(l.o || '–') + '</td><td style="' + th + '">' + esc(l.u || '–') + '</td></tr>';
-    });
-    h += '</tbody></table></div>';
-    if (f.length > shown.length) h += '<p style="margin-top:10px"><button type="button" id="ar-more" class="di-btn">' + t.more + '</button></p>';
+    h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px">' + shown.map(function (l) { return card(l, t); }).join('') + '</div>';
+    if (f.length > shown.length) h += '<p style="margin-top:12px"><button type="button" id="ar-more" class="di-tab-btn" style="border-color:var(--border)">' + t.more + '</button></p>';
     return h;
+  }
+  function totals() {
+    var n = 0, free = 0, fta = 0, sum = 0, adv = 0;
+    Object.keys(D.chapters).forEach(function (c) { var s = D.chapters[c]; n += s.n; free += s.free; fta += s.fta; sum += s.sumadv || 0; adv += s.adv || 0; });
+    return { n: n, free: n ? free * 100 / n : null, fta: n ? fta * 100 / n : null, avg: adv ? sum / adv : null };
+  }
+  function kpi(v, label, sub) { return '<div class="di-card" style="padding:14px 16px"><div style="font-size:28px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums">' + v + '</div><div style="font-size:13px;font-weight:600;margin-top:4px">' + esc(label) + '</div>' + (sub ? '<div style="font-size:11.5px;color:var(--text-faint)">' + esc(sub) + '</div>' : '') + '</div>'; }
+  function measuresHtml(M, t) {
+    var act = M.items.filter(function (i) { return i.status === 'active'; }).length;
+    var h = '<h2 style="margin:26px 0 4px;font-size:18px">' + t.measures + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + esc(M.note[lang()] || M.note.es) + ' ' + t.asof + ': ' + dt(M.asOf) + '.</p><div class="di-card" style="padding:4px 16px">';
+    M.items.forEach(function (i, ix) {
+      var span = (i.from ? t.since + ' ' + dt(i.from) : '') + (i.from && i.to ? ' · ' : '') + (i.to ? t.until + ' ' + dt(i.to) : '');
+      h += '<details style="' + (ix ? 'border-top:1px solid var(--border);' : '') + 'padding:10px 0"><summary style="cursor:pointer;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:' + COL[i.status] + ';flex:none"></span><span style="font-weight:600;flex:1;min-width:200px">' + esc(i.title[lang()] || i.title.es) + '</span><span style="font-size:12px;font-weight:600;color:' + COL[i.status] + '">' + esc(t.status[i.status]) + '</span><span style="font-size:12px;color:var(--text-faint)">' + esc(span) + '</span></summary><p style="font-size:13px;color:var(--text-muted);margin:8px 0 0 20px">' + esc(i.text[lang()] || i.text.es) + '</p></details>';
+    });
+    return h + '</div><p class="di-movers-hint">' + t.sources + ': ' + M.sources.map(function (s) { return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>'; }).join(' · ') + '</p>';
+  }
+  function chaptersHtml(t) {
+    var cs = Object.keys(D.chapters), mx = 0;
+    cs.forEach(function (c) { var a = D.chapters[c].avgadv; if (a != null && a > mx) mx = a; });
+    cs.sort(function (a, b) { var x = D.chapters[a].avgadv, y = D.chapters[b].avgadv; return (y == null ? -1 : y) - (x == null ? -1 : x); });
+    var h = '<h2 style="margin:26px 0 4px;font-size:18px">' + t.byChap + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + t.byChapSub + '</p><div class="di-card" style="padding:4px 16px">';
+    cs.forEach(function (c, ix) {
+      var s = D.chapters[c], pf = s.n ? s.free * 100 / s.n : 0, pt = s.n ? s.fta * 100 / s.n : 0, w = s.avgadv != null && mx ? Math.max(2, s.avgadv * 100 / mx) : 0, spec = s.n && (s.spec + s.comp) * 2 > s.n;
+      h += '<details style="' + (ix ? 'border-top:1px solid var(--border);' : '') + 'padding:9px 0"><summary style="cursor:pointer;display:grid;grid-template-columns:minmax(120px,210px) 1fr 70px;gap:12px;align-items:center"><span style="font-size:13.5px">' + c + ' · ' + esc(chn(c)) + '</span><span style="' + BAR + '"><span style="' + FILL + 'width:' + w + '%;background:var(--accent)"></span></span><span style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">' + (s.avgadv == null ? '<span style="font-weight:400;color:var(--text-faint);font-size:12px">' + t.noPct + '</span>' : nf(s.avgadv, 1) + ' %') + '</span></summary>' +
+        '<div style="margin:8px 0 2px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:12.5px;color:var(--text-muted)"><span>' + t.lines + ': <b>' + s.n + '</b></span><span>' + t.max + ': <b>' + (s.maxadv ? nf(s.maxadv, 1) + ' %' : '–') + '</b></span><span>' + t.free + ': <b>' + nf(pf, 0) + ' %</b></span><span>' + t.fta + ': <b>' + nf(pt, 0) + ' %</b></span>' + (s.trq ? '<span>TRQ: <b>' + s.trq + '</b></span>' : '') + '<a href="#ar-explorer" data-ch="' + c + '">' + t.viewProducts + '</a></div>' + (spec ? '<p style="font-size:12px;color:#8f5f12;margin:6px 0 0">' + t.specDom + '</p>' : '') + '</details>';
+    });
+    return h + '</div>';
   }
   function build() {
     var root = document.getElementById('aranceles-body'); if (!root || !D) return;
-    var t = tt(), h = '';
-    var mk = '<div class="di-tabs-bar" role="tablist" aria-label="' + esc(t.market) + '" style="margin-top:4px">' + Object.keys(t.markets).map(function (k) { return '<button type="button" role="tab" class="di-tab-btn' + (k === ST.k ? ' active' : '') + '" aria-selected="' + (k === ST.k) + '" data-mk="' + k + '">' + esc(t.markets[k]) + '</button>'; }).join('') + '</div><p class="di-movers-hint" style="margin:0 0 6px">' + esc(t.intro[ST.k] || '') + '</p>';
-    h += mk;
-    var M = MS[ST.k];
-    if (M) {
-      h += '<h2 style="margin:18px 0 6px;font-size:18px">' + t.measures + '</h2><p class="di-movers-hint">' + esc((M.note[lang()] || M.note.es)) + ' ' + t.asof + ': ' + dt(M.asOf) + '.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:10px 0 6px">';
-      M.items.forEach(function (i) {
-        var span = (i.from ? t.since + ' ' + dt(i.from) : '') + (i.from && i.to ? ' · ' : '') + (i.to ? t.until + ' ' + dt(i.to) : '');
-        h += '<div class="di-card" style="padding:14px 16px;border-left:4px solid ' + COL[i.status] + '"><div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:' + COL[i.status] + '">' + esc(t.status[i.status].toUpperCase()) + '</div><div style="font-weight:600;margin:4px 0">' + esc(i.title[lang()] || i.title.es) + '</div><div style="font-size:13px;color:var(--text-muted)">' + esc(i.text[lang()] || i.text.es) + '</div><div style="font-size:12px;color:var(--text-faint);margin-top:6px">' + esc(span) + '</div></div>';
-      });
-      h += '</div><p class="di-movers-hint">' + t.sources + ': ' + M.sources.map(function (s) { return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>'; }).join(' · ') + '</p>';
-    }
-    h += '<h2 style="margin:26px 0 8px;font-size:18px">' + t.chapters + '</h2><div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:620px;font-size:13.5px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.chapter.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.lines.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.avg.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.max.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.free.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.fta.toUpperCase() + '</th></tr></thead><tbody>';
-    Object.keys(D.chapters).sort().forEach(function (c) {
-      var s = D.chapters[c], pf = s.n ? s.free * 100 / s.n : null, pt = s.n ? s.fta * 100 / s.n : null;
-      h += '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px"><a href="#ar-explorer" data-ch="' + c + '">' + c + ' · ' + esc(chn(c)) + '</a></td><td style="padding:8px 6px;text-align:right">' + s.n + '</td><td style="padding:8px 6px;text-align:right">' + (s.avgadv == null ? '–' : nf(s.avgadv, 1) + ' %') + '</td><td style="padding:8px 6px;text-align:right">' + (s.maxadv ? nf(s.maxadv, 1) + ' %' : '–') + '</td><td style="padding:8px 6px;text-align:right">' + nf(pf, 0) + ' %</td><td style="padding:8px 6px;text-align:right">' + nf(pt, 0) + ' %</td></tr>';
-    });
-    h += '</tbody></table></div>';
+    var t = tt(), h = '', K = totals(), M = MS[ST.k], nAct = M ? M.items.filter(function (i) { return i.status === 'active'; }).length : null;
+    h += '<div class="di-tabs-bar" role="tablist" aria-label="' + esc(t.market) + '" style="margin-top:4px">' + Object.keys(t.markets).map(function (k) { return '<button type="button" role="tab" class="di-tab-btn' + (k === ST.k ? ' active' : '') + '" aria-selected="' + (k === ST.k) + '" data-mk="' + k + '">' + esc(t.markets[k]) + '</button>'; }).join('') + '</div><p class="di-movers-hint" style="margin:0 0 12px">' + esc(t.intro[ST.k] || '') + '</p>';
+    h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">' + kpi(K.n.toLocaleString(lang()), t.kLines) + kpi(K.avg == null ? '–' : nf(K.avg, 1) + ' %', t.kAvg, t.kAvgSub) + kpi(nf(K.free, 0) + ' %', t.kFree) + kpi(nf(K.fta, 0) + ' %', t.kPref) + (nAct != null ? kpi(String(nAct), t.kMeas) : '') + '</div>';
     var co = '<option value="all">' + t.all + '</option>' + Object.keys(D.chapters).sort().map(function (c) { return '<option value="' + c + '"' + (ST.c === c ? ' selected' : '') + '>' + c + ' · ' + esc(chn(c)) + '</option>'; }).join('');
     var ro = '<option value="all">' + t.all + '</option>' + Object.keys(t.types).map(function (k) { return '<option value="' + k + '"' + (ST.r === k ? ' selected' : '') + '>' + esc(t.types[k]) + '</option>'; }).join('');
-    h += '<details id="ar-cmp" style="margin-top:18px"' + (ST.cmp ? ' open' : '') + '><summary style="cursor:pointer;font-weight:600;font-size:15px">' + t.cmp + '</summary><p class="di-movers-hint">' + t.cmpSub + '</p><div id="ar-cmp-body"></div></details>';
-    h += '<h2 id="ar-explorer" style="margin:26px 0 8px;font-size:18px">' + t.search + '</h2><div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px"><label style="font-size:13px;flex:2;min-width:220px">' + t.search + '<br><input id="ar-q" type="search" class="di-compare-select" value="' + esc(ST.q) + '" placeholder="beef, 0201, cheese…"></label>' + sel('ar-c', t.chapter, co) + sel('ar-r', t.rtype, ro) + '</div><div id="ar-rows">' + rows() + '</div>';
+    h += '<h2 id="ar-explorer" style="margin:26px 0 8px;font-size:18px">' + t.search + '</h2><input id="ar-q" type="search" class="di-compare-select" style="width:100%;font-size:16px;padding:12px 14px" value="' + esc(ST.q) + '" placeholder="beef, 0201, cheese…" aria-label="' + esc(t.search) + '">' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0" aria-label="' + esc(t.shortcuts) + '">' + t.chips.map(function (c) { return '<button type="button" class="di-tab-btn" style="border-color:var(--border)" data-q="' + esc(c[1]) + '">' + esc(c[0]) + '</button>'; }).join('') + '</div>' +
+      '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px;align-items:flex-end">' + sel('ar-c', t.chapter, co) + sel('ar-r', t.rtype, ro) + '<button type="button" id="ar-clear" class="di-tab-btn" style="border-color:var(--border)">' + t.clear + '</button></div><div id="ar-rows">' + rows() + '</div>';
+    h += chaptersHtml(t);
+    if (M) h += measuresHtml(M, t);
+    h += '<h2 style="margin:26px 0 4px;font-size:18px">' + t.cmp + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + t.cmpHint + ' ' + t.cmpSub + '</p><div id="ar-cmp-body"></div>';
     h += '<p class="di-movers-hint" style="margin-top:14px">' + (ST.k === 'us' ? t.note : esc(D.note || '') + ' ' + t.noteGen) + '</p><p class="di-movers-hint">' + t.src + ': <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener">' + esc(D.source.name) + '</a> · ' + t.lic + ': ' + esc(D.source.license) + ' · ' + t.rel + ': ' + esc(D.release && D.release.title || '') + ' · ' + t.upd + ': ' + esc((D.generatedAt || '').slice(0, 10)) + '</p>';
     root.innerHTML = h;
-    bind();
+    bind(); renderCmp();
   }
   function sync() { try { var u = new URLSearchParams(); if (ST.k !== 'us') u.set('m', ST.k); if (ST.c !== 'all') u.set('ch', ST.c); if (ST.q) u.set('q', ST.q); if (ST.r !== 'all') u.set('r', ST.r); var qs = u.toString(); history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '')); } catch (e) {} }
   function refresh() { sync(); var r = document.getElementById('ar-rows'); if (r) { r.innerHTML = rows(); bindMore(); } }
   function bindMore() { var b = document.getElementById('ar-more'); if (b) b.onclick = function () { ST.n += 200; refresh(); }; }
-  function cmpCell(x) {
-    if (!x) return '–';
-    var a = x.avgadv == null ? (x.free === x.n ? '0 %' : '–') : nf(x.avgadv, 1) + ' %';
-    return '<span style="font-variant-numeric:tabular-nums">' + a + '</span> <span style="font-size:11px;color:var(--text-faint)">(' + nf(x.n ? x.free * 100 / x.n : 0, 0) + ' % ' + (lang() === 'es' ? 'libre' : lang() === 'fr' ? 'libre' : lang() === 'it' ? 'libero' : 'free') + (x.trq ? ' · TRQ ' + x.trq : '') + ')</span>';
-  }
   function renderCmp() {
     var box = document.getElementById('ar-cmp-body'); if (!box) return;
     var ks = ['us', 'eu', 'ca', 'mx'], t = tt();
     Promise.all(ks.map(loadMkt)).then(function (ds) {
-      var th = 'padding:8px 6px;text-align:right', h = '<div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:640px;font-size:13px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)"><th style="padding:8px 6px;text-align:left">' + t.chapter.toUpperCase() + '</th>' + ks.map(function (k) { return '<th style="' + th + '">' + esc(t.markets[k]).toUpperCase() + '</th>'; }).join('') + '</tr></thead><tbody>';
-      Object.keys(CH).sort().forEach(function (c) {
-        h += '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + c + ' · ' + esc(chn(c)) + '</td>' + ks.map(function (k, i) { var d = ds[i]; return '<td style="' + th + '">' + cmpCell(d && d.chapters[c]) + '</td>'; }).join('') + '</tr>';
+      var mx = 0; ds.forEach(function (d) { if (d) Object.keys(d.chapters).forEach(function (c) { var a = d.chapters[c].avgadv; if (a != null && a > mx) mx = a; }); });
+      var leg = ks.map(function (k) { return '<span style="display:inline-flex;align-items:center;gap:6px;margin-right:14px"><span aria-hidden="true" style="width:10px;height:10px;border-radius:2px;background:' + MCOL[k] + '"></span>' + esc(t.markets[k]) + '</span>'; }).join('');
+      var g = 'display:grid;grid-template-columns:minmax(130px,1.2fr) repeat(4,minmax(70px,1fr));gap:10px;align-items:center';
+      var h = '<div style="font-size:12.5px;margin-bottom:8px">' + leg + '</div><div class="di-card" style="padding:6px 16px;overflow-x:auto"><div style="min-width:560px">';
+      Object.keys(CH).sort().forEach(function (c, ix) {
+        h += '<div style="' + g + ';padding:8px 0;' + (ix ? 'border-top:1px solid var(--border)' : '') + '"><span style="font-size:13px">' + c + ' · ' + esc(chn(c)) + '</span>' + ks.map(function (k, i) {
+          var x = ds[i] && ds[i].chapters[c], a = x ? x.avgadv : null, w = a != null && mx ? Math.max(2, a * 100 / mx) : 0;
+          return '<span><span style="font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums">' + (!x ? '–' : a == null ? (x.free === x.n ? '0 %' : '–') : nf(a, 1) + ' %') + '</span><span style="' + BAR + ';display:block;margin-top:3px"><span style="' + FILL + 'width:' + (x && a == null && x.free === x.n ? 0 : w) + '%;background:' + MCOL[k] + '"></span></span></span>';
+        }).join('') + '</div>';
       });
-      box.innerHTML = h + '</tbody></table></div>';
+      box.innerHTML = h + '</div></div>';
     });
   }
   function bind() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-mk]'), function (b) { b.onclick = function () { setMkt(b.getAttribute('data-mk')); }; });
-    var cm = document.getElementById('ar-cmp'); if (cm) { cm.ontoggle = function () { ST.cmp = cm.open; if (cm.open) renderCmp(); }; if (cm.open) renderCmp(); }
     var q = document.getElementById('ar-q'), tm;
     if (q) q.oninput = function () { clearTimeout(tm); tm = setTimeout(function () { ST.q = q.value; ST.n = 100; refresh(); }, 180); };
     var c = document.getElementById('ar-c'); if (c) c.onchange = function () { ST.c = c.value; ST.n = 100; refresh(); };
     var r = document.getElementById('ar-r'); if (r) r.onchange = function () { ST.r = r.value; ST.n = 100; refresh(); };
-    Array.prototype.forEach.call(document.querySelectorAll('[data-ch]'), function (a) { a.onclick = function (e) { e.preventDefault(); ST.c = a.getAttribute('data-ch'); ST.n = 100; build(); var x = document.getElementById('ar-explorer'); if (x && x.scrollIntoView) x.scrollIntoView(); }; });
+    var cl = document.getElementById('ar-clear'); if (cl) cl.onclick = function () { ST.q = ''; ST.c = 'all'; ST.r = 'all'; ST.n = 100; sync(); build(); };
+    Array.prototype.forEach.call(document.querySelectorAll('[data-q]'), function (b) { b.onclick = function () { ST.q = b.getAttribute('data-q'); ST.n = 100; build(); sync(); var x = document.getElementById('ar-rows'); if (x && x.scrollIntoView) x.scrollIntoView({ block: 'nearest' }); }; });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ch]'), function (a) { a.onclick = function (e) { e.preventDefault(); ST.c = a.getAttribute('data-ch'); ST.n = 100; build(); sync(); var x = document.getElementById('ar-explorer'); if (x && x.scrollIntoView) x.scrollIntoView(); }; });
     bindMore();
   }
   function shell() { var t = tt(), h = document.getElementById('ar-h1'), s = document.getElementById('ar-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
