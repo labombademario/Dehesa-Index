@@ -1,0 +1,16 @@
+name: probe-5c
+on: push
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          set +e
+          python3 probe.py > probe-run.txt 2>&1
+          mkdir -p probe; cp probe-run.txt probe/
+          git config user.name probe; git config user.email probe@x
+          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-5c-out -f
