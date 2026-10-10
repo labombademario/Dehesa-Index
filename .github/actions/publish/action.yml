@@ -33,7 +33,9 @@ runs:
       run: |
         case "$PRESET" in
           '') ;;
-          price-engine) PATHS="$PATHS data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/dehesa-index-ca.json data/alerts.json data/revisions.json" ;;
+          price-engine) export PUBLISH_REGEN="bash scripts/regen-price-engine.sh"
+            export PUBLISH_DERIVED="data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/dehesa-index-ca.json data/alerts.json"
+            PATHS="$PATHS data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/dehesa-index-ca.json data/alerts.json data/revisions.json" ;;
           *) echo "::error::preset desconocido: $PRESET"; exit 1 ;;
         esac
         git add -- $PATHS
