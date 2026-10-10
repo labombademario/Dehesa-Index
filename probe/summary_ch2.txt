@@ -1,0 +1,415 @@
+PKG erlospreisstatistik-mengen-und-preise-zur-produktion-der-landwirtschaft2 | issued 2025-11-18T07:30:00+00:00 | modified None | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | 
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/de/je-d-07.04.02.12
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210423/master
+    get 200 48654 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210423/master
+    SHEET Mengen 64 42
+       ['Erlöspreisstatistik: Mengen und Preise zur Produktion der Landwirtschaft, Mengen', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['in 1000 Tonnen 1) 7)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Produkt', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Getreide 4)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Weizen und Spelz', 533.089, 477.012, 447.518, 547.503, 635.738, 551.644, 583.34, 534.281, 573.469, 566.357, 612.071, 665.279, 583.726]
+       ['Roggen und Wintermenggetreide', 19.273, 18.372, 17.704, 17.615, 20.648, 16.835, 24.522, 27.442, 40.927, 29.786, 41.136, 43.863, 23.95]
+       ['Gerste', 260.916, 223.056, 233.687, 290.431, 347.49, 332.672, 344.655, 347.718, 367.17, 283.84, 293.789, 322.106, 303.722]
+       ['Hafer und Sommermenggetreide', 49.623, 28.669, 36.472, 46.299, 58.215, 53.013, 54.523, 50.791, 52.815, 50.28, 42.749, 44.595, 45.164]
+       ['Körnermais', 152.486, 168.495, 139.412, 232.011, 247.895, 225.82, 220.421, 186.643, 186.892, 249.398, 218.129, 196.493, 187.699]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    SHEET Preise 65 42
+       ['Erlöspreisstatistik: Mengen und Preise zur Produktion der Landwirtschaft, Erlöspreise', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Zu laufenden Herstellungspreisen, in Franken pro Tonne 1) 7) 8)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Produkt', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Getreide 4)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Weizen und Spelz', 1070.7167882848828, 1050.9131134646507, 1055.0118831644759, 1050.9485592042417, 1044.2799572465387, 991.1300923784181, 967.294996057188, 970.987100682974, 920.0115501971337, 894.5401607819804, 820.8479329559297, 675.4740648814287, 745.4666706625782]
+       ['Roggen und Wintermenggetreide', 1008.9732766045764, 1030.243939690834, 1004.2006461816537, 1055.1071518592112, 1041.2558334947694, 1006.4779120879123, 959.37727795449, 966.7317076014868, 876.8362012852151, 867.0112844960719, 723.588456041695, 553.434083846244, 557.1934209108923]
+       ['Gerste', 967.7980824366584, 1078.5664790823062, 1037.9833823337704, 1026.7331877709187, 983.7782611498017, 916.7932494999887, 926.7110946167536, 849.497355443204, 797.0831546834276, 746.6170421150877, 702.534215522701, 591.416113043282, 613.0696065257525]
+       ['Hafer und Sommermenggetreide', 978.447806922268, 1084.2812000217534, 1048.9705854225624, 1036.0599930758483, 1020.1031185942712, 943.0653912181559, 921.2705447441667, 903.6307018487389, 801.5305036226755, 739.1984447926774, 667.8342060931969, 607.997484997785, 592.7735373373189]
+       ['Körnermais', 787.294449722709, 820.1909563590083, 826.542125102174, 799.8437119636052, 790.8380774430473, 745.7517818857312, 757.1927420287958, 675.6385874101894, 628.7648650557541, 593.1405494831554, 515.1998111667866, 448.41568895584066, 450.2760550136122]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/fr/je-f-07.04.02.12
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210427/master
+    get 200 49007 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210427/master
+    SHEET Quantités 64 43
+       ["Statistique des valeurs unitaires: quantités et prix de la production de l'agriculture, quantités", None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['en 1000 tonnes 1) 7)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Produit', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Céréales 4)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Blé et épeautre', 533.089, 477.012, 447.518, 547.503, 635.738, 551.644, 583.34, 534.281, 573.469, 566.357, 612.071, 665.279, 583.726]
+       ['Seigle et méteil', 19.273, 18.372, 17.704, 17.615, 20.648, 16.835, 24.522, 27.442, 40.927, 29.786, 41.136, 43.863, 23.95]
+       ['Orge', 260.916, 223.056, 233.687, 290.431, 347.49, 332.672, 344.655, 347.718, 367.17, 283.84, 293.789, 322.106, 303.722]
+       ["Avoine et mélange de céréales d'été", 49.623, 28.669, 36.472, 46.299, 58.215, 53.013, 54.523, 50.791, 52.815, 50.28, 42.749, 44.595, 45.164]
+       ['Maïs (grains)', 152.486, 168.495, 139.412, 232.011, 247.895, 225.82, 220.421, 186.643, 186.892, 249.398, 218.129, 196.493, 187.699]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    SHEET Prix 65 43
+       ["Statistique des valeurs unitaires: quantités et prix de la production de l'agriculture, prix unitaires", None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['aux prix de base, en francs par tonne 1) 7) 8)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Produit', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Céréales 4)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Blé et épeautre', 1070.7167882848828, 1050.9131134646507, 1055.0118831644759, 1050.9485592042417, 1044.2799572465387, 991.1300923784181, 967.294996057188, 970.987100682974, 920.0115501971337, 894.5401607819804, 820.8479329559297, 675.4740648814287, 745.4666706625782]
+       ['Seigle et méteil', 1008.9732766045764, 1030.243939690834, 1004.2006461816537, 1055.1071518592112, 1041.2558334947694, 1006.4779120879123, 959.37727795449, 966.7317076014868, 876.8362012852151, 867.0112844960719, 723.588456041695, 553.434083846244, 557.1934209108923]
+       ['Orge', 967.7980824366584, 1078.5664790823062, 1037.9833823337704, 1026.7331877709187, 983.7782611498017, 916.7932494999887, 926.7110946167536, 849.497355443204, 797.0831546834276, 746.6170421150877, 702.534215522701, 591.416113043282, 613.0696065257525]
+       ["Avoine et mélange de céréales d'été", 978.447806922268, 1084.2812000217534, 1048.9705854225624, 1036.0599930758483, 1020.1031185942712, 943.0653912181559, 921.2705447441667, 903.6307018487389, 801.5305036226755, 739.1984447926774, 667.8342060931969, 607.997484997785, 592.7735373373189]
+       ['Maïs (grains)', 787.294449722709, 820.1909563590083, 826.542125102174, 799.8437119636052, 790.8380774430473, 745.7517818857312, 757.1927420287958, 675.6385874101894, 628.7648650557541, 593.1405494831554, 515.1998111667866, 448.41568895584066, 450.2760550136122]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+PKG produzenten-und-importpreisindex1 | issued 2021-02-23T07:30:00+00:00 | modified None | accrual  | 
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/it/983-2100
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/fr/982-2100
+   RES PDF https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/15824812/master
+   RES PDF https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/15824811/master
+   RES PDF https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/15824813/master
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/de/981-2100
+PKG gesamtproduktion-der-landwirtschaft-zu-laufenden-preisen4 | issued 2025-11-18T07:30:00+00:00 | modified None | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | 
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/fr/je-f-07.04.02.02
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210390/master
+    get 200 114444 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210390/master
+    SHEET Valeur 94 42
+       ['Production totale de l’agriculture', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Aux prix de base courants, en milliers de francs   5)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Activités, produits', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de la branche agricole', 14203935.526799219, 13770191.193777222, 14207259.453434112, 15247356.855466451, 15511036.5295186, 14977663.05961215, 14936639.601976933, 14941399.951113764, 14687016.458569199, 13320503.042494118, 12657662.27854227, 12097087.927809065, 12514667.814803923]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production agricole', 13760346.6065644, 13309408.436540842, 13742225.59120129, 14732311.109664023, 14990148.746802535, 14402055.40443668, 14353231.879966626, 14316856.555741431, 14164404.943046277, 12789776.046159009, 12083589.907860009, 11529445.940496603, 11929806.629865035]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de biens agricoles', 13398664.374688538, 12951283.940211928, 13378152.191364378, 14336810.989243004, 14576684.891773565, 13986895.109732192, 13921796.828100212, 13874642.943382483, 13681562.520615717, 12313180.411958862, 11617478.374955362, 11060783.216664854, 11454207.466743395]
+       ['Plantes et produits végétaux', 5810929.844704539, 5471789.706523927, 5626651.061356379, 6416471.000794119, 6570757.8522397615, 5772059.93187969, 5722425.800968012, 6260312.321131683, 6114703.127276275, 5209060.341799257, 4905197.816757716, 5055298.947072375, 5467466.151175059]
+       ['Céréales 3)', 1015821.2979703639, 943569.4008463831, 921452.8390349648, 1181465.6457219883, 1345880.8108512277, 1138662.8420939432, 1166058.3802568812, 1043821.6306241512, 1040855.6868676305, 953253.0592261234, 904492.0880225258, 803940.2351087668, 775455.1039182883]
+    SHEET Variation nominale 76 42
+       ['Production totale de l’agriculture', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ["Variation en % par rapport à l'année précédente, aux prix de base courants   5)", None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Activités, produits', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de la branche agricole', '…', -3.053691226657789, 3.1740173648017422, 7.320886941224492, 1.7293467749960556, -3.438670709667943, -0.2738975865055862, 0.03187028182832492, -1.7025412168663823, -9.304227444218482, -4.976094084715119, -4.428735246661714, 3.4519042060933947]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production agricole', '…', -3.277084385421205, 3.2519638774639557, 7.204695570538827, 1.7501506397687803, -3.923198844116195, -0.33900386506646196, -0.25342950305126216, -1.0648399814693732, -9.704812185294905, -5.52148947526786, -4.585921663916715, 3.4725058900027923]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de biens agricoles', '...', -3.3389927679788607, 3.2959531512322413, 7.16585358101579, 1.6731329073846275, -4.0461173882836965, -0.4654233918340046, -0.3387054508836962, -1.3916064258709833, -10.001650809949107, -5.650059641194062, -4.791876002029969, 3.5569293997714664]
+       ['Plantes et produits végétaux', '...', -5.8362456137664065, 2.830177385066774, 14.03712316305152, 2.404543734812288, -12.155339434519275, -0.8599032494022383, 9.399624195610919, -2.3259094177123374, -14.810903597873054, -5.833346229515633, 3.060042345323265, 8.153171719772953]
+       ['Céréales 3)', '...', -7.112658227223813, -2.3439252896055853, 28.217700968758663, 13.916203634407506, -15.396457627345594, 2.4059394186042886, -10.482901345454199, -0.284142775882817, -8.416404766460946, -5.115217908997122, -11.116941125885756, -3.543190146046709]
+    SHEET Variation réelle 76 42
+       ['Production totale de l’agriculture', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ["Variation en % par rapport à l'année précédente, aux prix de base de l'année précédente   5)", None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Activités, produits', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de la branche agricole', '…', -2.15367474128352, 0.4399617762658985, 5.691638511492457, 4.219377505131969, -5.834151511533368, 0.38590017511399394, 1.7998786376314382, -0.7785619288650778, -4.297826521592181, 2.6498246289618783, 0.5129446219027788, -0.12040595176540851]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production agricole', '…', -2.3843828995521807, 0.47134142047787025, 5.618837038308631, 4.361778921041879, -6.446217831703541, 0.25659435330268004, 1.5005284472504041, -0.12037529528606185, -4.4998679005445785, 2.4858364560435735, 0.7380855206694252, -0.23158915360952434]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de biens agricoles', '...', -2.5351471179796, 0.5039390561285157, 5.6057361531186585, 4.507380283025855, -6.43466448117544, 0.24215059177750525, 1.406909052184562, -0.2885685642631592, -4.598315194007097, 2.6479717532193874, 0.8694039743429569, -0.20735517715141757]
+       ['Plantes et produits végétaux', '...', -5.263064141826474, 0.5678536406111515, 16.199193428691512, 7.422516088913657, -12.552982875945403, -1.9526800609349255, 4.694023753074036, -0.18341057458252905, -5.840145083863586, 2.87974335972187, 4.983597525004607, -0.058465239457758625]
+       ['Céréales 3)', '...', -9.858839213279213, -1.276109433333737, 29.632577338213125, 16.619296219363253, -10.237312163839949, 3.3907751292938904, -6.924035897384736, 6.338234690875844, -4.2999671358211415, 3.8532594376207907, 6.711214183420678, -9.669173673258205]
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210384/master
+    get 200 113683 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210384/master
+    SHEET Wert 75 42
+       ['Gesamtproduktion der Landwirtschaft ', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Zu laufenden Herstellungspreisen, in 1000 Franken   5)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Tätigkeit, Produkt', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung des landwirtschaftlichen Wirtschaftsbereichs', 14203935.526799219, 13770191.193777222, 14207259.453434112, 15247356.855466451, 15511036.5295186, 14977663.05961215, 14936639.601976933, 14941399.951113764, 14687016.458569199, 13320503.042494118, 12657662.27854227, 12097087.927809065, 12514667.814803923]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Landwirtschaftliche Erzeugung', 13760346.6065644, 13309408.436540842, 13742225.59120129, 14732311.109664023, 14990148.746802535, 14402055.40443668, 14353231.879966626, 14316856.555741431, 14164404.943046277, 12789776.046159009, 12083589.907860009, 11529445.940496603, 11929806.629865035]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung landwirtschaftlicher Güter', 13398664.374688538, 12951283.940211928, 13378152.191364378, 14336810.989243004, 14576684.891773565, 13986895.109732192, 13921796.828100212, 13874642.943382483, 13681562.520615717, 12313180.411958862, 11617478.374955362, 11060783.216664854, 11454207.466743395]
+       ['Pflanzliche Erzeugung', 5810929.844704539, 5471789.706523927, 5626651.061356379, 6416471.000794119, 6570757.8522397615, 5772059.93187969, 5722425.800968012, 6260312.321131683, 6114703.127276275, 5209060.341799257, 4905197.816757716, 5055298.947072375, 5467466.151175059]
+       ['Getreide 3)', 1015821.2979703639, 943569.4008463831, 921452.8390349648, 1181465.6457219883, 1345880.8108512277, 1138662.8420939432, 1166058.3802568812, 1043821.6306241512, 1040855.6868676305, 953253.0592261234, 904492.0880225258, 803940.2351087668, 775455.1039182883]
+    SHEET Nominale Veränd. 76 42
+       ['Gesamtproduktion der Landwirtschaft ', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Veränderung gegenüber dem Vorjahr in %, zu laufenden Herstellungspreisen   5)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Tätigkeit, Produkt', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung des landwirtschaftlichen Wirtschaftsbereichs', '…', -3.053691226657789, 3.1740173648017422, 7.320886941224492, 1.7293467749960556, -3.438670709667943, -0.2738975865055862, 0.03187028182832492, -1.7025412168663823, -9.304227444218482, -4.976094084715119, -4.428735246661714, 3.4519042060933947]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Landwirtschaftliche Erzeugung', '…', -3.277084385421205, 3.2519638774639557, 7.204695570538827, 1.7501506397687803, -3.923198844116195, -0.33900386506646196, -0.25342950305126216, -1.0648399814693732, -9.704812185294905, -5.52148947526786, -4.585921663916715, 3.4725058900027923]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung landwirtschaftlicher Güter', '...', -3.3389927679788607, 3.2959531512322413, 7.16585358101579, 1.6731329073846275, -4.0461173882836965, -0.4654233918340046, -0.3387054508836962, -1.3916064258709833, -10.001650809949107, -5.650059641194062, -4.791876002029969, 3.5569293997714664]
+       ['Pflanzliche Erzeugung', '...', -5.8362456137664065, 2.830177385066774, 14.03712316305152, 2.404543734812288, -12.155339434519275, -0.8599032494022383, 9.399624195610919, -2.3259094177123374, -14.810903597873054, -5.833346229515633, 3.060042345323265, 8.153171719772953]
+       ['Getreide 3)', '...', -7.112658227223813, -2.3439252896055853, 28.217700968758663, 13.916203634407506, -15.396457627345594, 2.4059394186042886, -10.482901345454199, -0.284142775882817, -8.416404766460946, -5.115217908997122, -11.116941125885756, -3.543190146046709]
+    SHEET Reale Veränd. 76 42
+       ['Gesamtproduktion der Landwirtschaft ', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Veränderung gegenüber dem Vorjahr in %, zu Herstellungspreisen des Vorjahres   5)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Tätigkeit, Produkt', 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung des landwirtschaftlichen Wirtschaftsbereichs', '…', -2.15367474128352, 0.4399617762658985, 5.691638511492457, 4.219377505131969, -5.834151511533368, 0.38590017511399394, 1.7998786376314382, -0.7785619288650778, -4.297826521592181, 2.6498246289618783, 0.5129446219027788, -0.12040595176540851]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Landwirtschaftliche Erzeugung', '…', -2.3843828995521807, 0.47134142047787025, 5.618837038308631, 4.361778921041879, -6.446217831703541, 0.25659435330268004, 1.5005284472504041, -0.12037529528606185, -4.4998679005445785, 2.4858364560435735, 0.7380855206694252, -0.23158915360952434]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung landwirtschaftlicher Güter', '...', -2.5351471179796, 0.5039390561285157, 5.6057361531186585, 4.507380283025855, -6.43466448117544, 0.24215059177750525, 1.406909052184562, -0.2885685642631592, -4.598315194007097, 2.6479717532193874, 0.8694039743429569, -0.20735517715141757]
+       ['Pflanzliche Erzeugung', '...', -5.263064141826474, 0.5678536406111515, 16.199193428691512, 7.422516088913657, -12.552982875945403, -1.9526800609349255, 4.694023753074036, -0.18341057458252905, -5.840145083863586, 2.87974335972187, 4.983597525004607, -0.058465239457758625]
+       ['Getreide 3)', '...', -9.858839213279213, -1.276109433333737, 29.632577338213125, 16.619296219363253, -10.237312163839949, 3.3907751292938904, -6.924035897384736, 6.338234690875844, -4.2999671358211415, 3.8532594376207907, 6.711214183420678, -9.669173673258205]
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/de/je-d-07.04.02.02
+PKG volumen-der-landwirtschaftlichen-gesamtproduktion-indizes-19901004 | issued 2025-11-18T07:30:00+00:00 | modified None | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | Dieses Dataset präsentiert die jährlichen Zahlen des Volumens der landwirtschaftlichen Gesamtproduktion (Index auf der Basis 1990=100) nach Erzeugnis, seit 1990.
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/fr/je-f-07.04.02.01
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210382/master
+    get 200 28748 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210382/master
+    SHEET T7.4.2.1 51 37
+       ['Volume de la production agricole totale', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Indice 1990 = 100   6)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de la branche agricole 1) (selon CEA)', 100, 100.37269292906468, 101.88734626926875, 101.08357849875067, 96.48901657246718, 98.94571422412643, 98.96162989182355, 98.70424456512987, 98.76911402641161, 97.43343665413494, 98.58490014921063, 96.07859355906182, 97.96005342664813]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production agricole', 100, 100.24281264432926, 101.4353295335781, 101.33178306780061, 96.51056552049074, 98.79949184735322, 98.99760995611598, 98.6498819098755, 98.86556850673601, 97.00965204379048, 98.47103636550473, 96.34697384171076, 97.78253519511706]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Production de biens agricoles', 100, 100.22795432260571, 101.32089250923086, 101.05309769902577, 96.14334657089076, 98.55283512978185, 98.83692063473839, 98.50228949822136, 98.66709443877323, 96.84904036440847, 98.05416324931228, 95.88913302556496, 97.3974503886317]
+       ['Production végétale', 100, 98.01093433956062, 102.2088031604328, 101.94784425776659, 95.6976231389885, 98.1323140160918, 102.13321157288003, 101.87625033000916, 99.77061081537795, 96.13986693426739, 101.12642580081173, 93.81698271465436, 96.91190521062498]
+       ['Céréales', 100, 103.39077512929389, 96.21492787694876, 102.25276825063803, 97.88484486945576, 101.28408068439587, 107.75834975778183, 97.2995954837471, 101.10266959313255, 83.28084852125106, 94.88547170554918, 87.47185593576239, 88.6497251355115]
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210388/master
+    get 200 28873 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210388/master
+    SHEET T7.4.2.1 51 39
+       ['Volumen der landwirtschaftlichen Gesamtproduktion', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Index 1990 = 100   6)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung der Branche Landwirtschaft 1)  (gemäss LGR)', 100, 100.37269292906468, 101.88734626926875, 101.08357849875067, 96.48901657246718, 98.94571422412643, 98.96162989182355, 98.70424456512987, 98.76911402641161, 97.43343665413494, 98.58490014921063, 96.07859355906182, 97.96005342664813]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Landwirtschaftliche Erzeugung', 100, 100.24281264432926, 101.4353295335781, 101.33178306780061, 96.51056552049074, 98.79949184735322, 98.99760995611598, 98.6498819098755, 98.86556850673601, 97.00965204379048, 98.47103636550473, 96.34697384171076, 97.78253519511706]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Erzeugung landwirtschaftlicher Güter', 100, 100.22795432260571, 101.32089250923086, 101.05309769902577, 96.14334657089076, 98.55283512978185, 98.83692063473839, 98.50228949822136, 98.66709443877323, 96.84904036440847, 98.05416324931228, 95.88913302556496, 97.3974503886317]
+       ['Pflanzliche Erzeugung', 100, 98.01093433956062, 102.2088031604328, 101.94784425776659, 95.6976231389885, 98.1323140160918, 102.13321157288003, 101.87625033000916, 99.77061081537795, 96.13986693426739, 101.12642580081173, 93.81698271465436, 96.91190521062498]
+       ['Getreide', 100, 103.39077512929389, 96.21492787694876, 102.25276825063803, 97.88484486945576, 101.28408068439587, 107.75834975778183, 97.2995954837471, 101.10266959313255, 83.28084852125106, 94.88547170554918, 87.47185593576239, 88.6497251355115]
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/de/je-d-07.04.02.01
+PKG landwirtschaftliche-gesamtrechnung-produktionswert-der-landwirtschaft-historische-zeitreihen4 | issued 2025-11-18T07:30:00+00:00 | modified None | accrual http://publications.europa.eu/resource/authority/frequency/ANNUAL | 
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210404/master
+    get 200 71923 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210404/master
+    SHEET T7.4.2.8 251 20
+       ["Comptes économiques de l'agriculture: Valeur de production de l'agriculture, séries historiques", None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['A prix courants, en millions de francs', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Année1', 'Production totale, indices', None, None, 'Production totale', None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, 'Total', 'Production végétale', None, None, None, None, None, 'Production animale', None, None]
+       [None, 'Indice de volume', 'Indice des prix (implicite)', 'Indice de valeur', None, 'Total', 'Céréales', 'Cultures maraîchères et horticoles, plantations', 'Fruits et vins', 'Plantes fourragères (maïs fourrager, betteraves fourragères et herbages)', 'Pommes de terre, betteraves sucrières, oléagineux, autres productions végétales', 'Total', 'Bovins', 'Lait (de vache)']
+       [None, '2010=100', '2010=100', '2010=100', 'Millions CHF', 'Millions CHF', 'Millions CHF', 'Millions CHF', 'Millions CHF', 'Millions CHF', 'Millions CHF', 'Millions CHF', 'Millions CHF', 'Millions CHF']
+       [None, None, None, None, 'à prix courants', 'à prix courants', 'à prix courants', 'à prix courants', 'à prix courants', 'à prix courants', 'à prix courants', 'à prix courants', 'à prix courants', 'à prix courants']
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Résultats annuels', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [1848, 26.937884739703595, 16.336738025600294, 4.400771659563536, 471.5295328008788, 350.0072960974906, 92.01728015491305, 70.09608782801314, 33.76136045727583, 114.67793531939222, 39.454632337896406, 114.3602372085709, 24.30500396489926, 74.27919500920083]
+   RES XLS https://opendata.swiss/terms-of-use#terms_by https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210409/master
+    get 200 71927 https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210409/master
+    SHEET T7.4.2.8 251 20
+       ['Landwirtschaftliche Gesamtrechnung: Produktionswert der Landwirtschaft: historische Zeitreihen', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Zu laufenden Preisen, in Millionen Franken', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Jahr1', 'Gesamtproduktionswert, Indizes', None, None, 'Gesamtproduktionswert', None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, 'Total', 'Pflanzliche Erzeugung', None, None, None, None, None, 'Tierische Erzeugung', None, None]
+       [None, 'Volumen-index', 'Preisindex (implizit)', 'Wertindex', None, 'Total', 'Getreide', 'Erzeugnisse des Gemüse- und Garten-baues', 'Obst und Weine', 'Futter-pflanzen (Futtermais, Futterhack-früchte, Raufutter (Gras, Heu))', 'Kartoffeln, Zucker-rüben, Ölsaaten und Ölfrüchte, sonstige pflanzliche Erzeugnisse', 'Total', 'Rinder', 'Kuhmilch']
+       [None, '2010=100', '2010=100', '2010=100', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF', 'Millionen CHF']
+       [None, None, None, None, 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen', 'zu laufenden Preisen']
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       ['Jährliche Resultate', None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+       [1848, 26.937884739703595, 16.336738025600294, 4.400771659563536, 471.5295328008788, 350.0072960974906, 92.01728015491305, 70.09608782801314, 33.76136045727583, 114.67793531939222, 39.454632337896406, 114.3602372085709, 24.30500396489926, 74.27919500920083]
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/de/je-d-07.04.02.08
+   RES HTML https://opendata.swiss/terms-of-use#terms_by https://www.bfs.admin.ch/asset/fr/je-f-07.04.02.08
+PXWEB Produzentenpreis Landwirtschaft 200 b'[{"dbid":"px-x-0304010000_101","text":"px-x-0304010000_101"},{"dbid":"px-x-0304010000_111","text":"px-x-0304010000_111"},{"dbid":"px-x-0304010000_112","text":"px-x-0304010000_112"},{"dbid":"px-x-0304010000_121","text":"px-x-0304010000_121"},{"dbid":"px-x-0602050000_101","text":"px-x-0602050000_101"},{"dbid":"px-x-0602050000_102","text":"px-x-0602050000_102"},{"dbid":"px-x-0602050000_103","text":"px-x-0602050000_103"},{"dbid":"px-x-0602050000_104","text":"px-x-0602050000_104"},{"dbid":"px-x-0602050000_105","text":"px-x-0602050000_105"},{"dbid":"px-x-0602050000_106","text":"px-x-0602050000_106"}'
+PXWEB landwirtschaftliche Produzentenpreise 200 b'[{"dbid":"px-x-0304010000_101","text":"px-x-0304010000_101"},{"dbid":"px-x-0304010000_111","text":"px-x-0304010000_111"},{"dbid":"px-x-0304010000_112","text":"px-x-0304010000_112"},{"dbid":"px-x-0304010000_121","text":"px-x-0304010000_121"},{"dbid":"px-x-0602050000_101","text":"px-x-0602050000_101"},{"dbid":"px-x-0602050000_102","text":"px-x-0602050000_102"},{"dbid":"px-x-0602050000_103","text":"px-x-0602050000_103"},{"dbid":"px-x-0602050000_104","text":"px-x-0602050000_104"},{"dbid":"px-x-0602050000_105","text":"px-x-0602050000_105"},{"dbid":"px-x-0602050000_106","text":"px-x-0602050000_106"}'
+PXWEB Erlöspreis 200 b'[{"dbid":"px-x-0304010000_101","text":"px-x-0304010000_101"},{"dbid":"px-x-0304010000_111","text":"px-x-0304010000_111"},{"dbid":"px-x-0304010000_112","text":"px-x-0304010000_112"},{"dbid":"px-x-0304010000_121","text":"px-x-0304010000_121"},{"dbid":"px-x-0602050000_101","text":"px-x-0602050000_101"},{"dbid":"px-x-0602050000_102","text":"px-x-0602050000_102"},{"dbid":"px-x-0602050000_103","text":"px-x-0602050000_103"},{"dbid":"px-x-0602050000_104","text":"px-x-0602050000_104"},{"dbid":"px-x-0602050000_105","text":"px-x-0602050000_105"},{"dbid":"px-x-0602050000_106","text":"px-x-0602050000_106"}'
+PXWEB Preisindex landwirtschaftlicher 200 b'[{"dbid":"px-x-0304010000_101","text":"px-x-0304010000_101"},{"dbid":"px-x-0304010000_111","text":"px-x-0304010000_111"},{"dbid":"px-x-0304010000_112","text":"px-x-0304010000_112"},{"dbid":"px-x-0304010000_121","text":"px-x-0304010000_121"},{"dbid":"px-x-0602050000_101","text":"px-x-0602050000_101"},{"dbid":"px-x-0602050000_102","text":"px-x-0602050000_102"},{"dbid":"px-x-0602050000_103","text":"px-x-0602050000_103"},{"dbid":"px-x-0602050000_104","text":"px-x-0602050000_104"},{"dbid":"px-x-0602050000_105","text":"px-x-0602050000_105"},{"dbid":"px-x-0602050000_106","text":"px-x-0602050000_106"}'
+PXWEB ppi meta 400 b'Bad Request'
+TRADE Aussenhandel | bundesamt-fur-landwirtschaft-blw | aussenhandel-199092-2015 | Aussenhandel 1990/92-2015 | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Aussenhandel | bundesamt-fur-energie-bfe | schweizerische-elektrizitatsstatistik-aussenhandel-der-schweiz | Schweizerische Elektrizitätsstatistik: Aussenhandel der Schweiz mit Elektrizität nach Ländern [vertr | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Aussenhandel | kanton-zug | aussenhandelsstatistik | Aussenhandelsstatistik | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Aussenhandel | bundesamt-fur-statistik-bfs | aussenhandel-nach-ausgewahlten-warengruppen-cpa | Foreign trade by selected commodity groups (CPA) | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-indizes-des-aussenhandels-nach-cpa | Goods: Foreign trade index according to CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | bundesamt-fur-statistik-bfs | aussenhandel-nach-waren5 | Foreign trade by goods | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Aussenhandel | bundesamt-fur-statistik-bfs | aussenhandel-nach-verwendungszweck5 | Foreign trade by broad economic categories | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-warenart | Goods: Foreign trade - Metadata - Nature of Goods | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-ctci | Goods: Foreign trade - Metadata - SITC | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-warenart-land | Goods: Foreign trade by nature of goods / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-verwendungszweck-land | Goods: Foreign trade by broad economic category / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-zollertrag-nach-cpa | Goods: Foreign trade - Customs revenue by CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-goldimporte-nach-landern | Goods: Foreign trade - Gold imports by country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-zollertrag-nach-tarifnummer | Goods: Foreign trade - Customs revenue by tariff number | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-land | Goods: Foreign trade by tariff number / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-verkehrstrager | Goods: Foreign trade by tariff number / modes of transport | ['https://opendata.swiss/terms-of-use#terms_by', 'https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-tarifnummern | Goods: Foreign trade - Metadata - Tariff numbers / Statistical keys | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-cpa6-land | Goods: Foreign trade by CPA6 / country | ['https://opendata.swiss/terms-of-use#terms_ask', 'https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-ctci5-land | Goods: Foreign trade by CTCI5 / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-saisonbereinigte-daten-nach-landern | Goods: Foreign trade - Seasonally adjusted data by country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-nst4-verkehrstrager | Goods: Foreign trade by NST4 / Modes of transport | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-saisonbereinigte-daten-nach-cpa | Goods: Foreign trade - Seasonally adjusted data by CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-verwendungszweck | Goods: Foreign trade - Metadata - Broad economic categories | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-ruckwaren-und-lohnveredelungsverkehr | Goods: Foreign trade by tariff number / Goods returns and processing | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-diverses | Goods : Foreign trade - Metadata - Various | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-cpa | Goods: Foreign trade - Metadata - CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-nst-2007 | Goods: Foreign trade - Metadata - NST 2007 | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-lander-und-landergruppen | Goods: Foreign trade - Metadata - Countries and country groups | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-transitdaten-durch-die-schweiz | Goods: Foreign trade - Transit data for Switzerland | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Aussenhandel | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-konkordanzliste-cpa6-tn8 | Goods: Foreign trade - Metadata - Concordance list CPA6 / TN8 | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | identitas | hunde-importe-exporte | Dogs - Exports & Imports | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | bundesamt-fur-energie-bfe | energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-gas | energiedashboard.ch: Daily import and export flows (Gas) | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | bundesamt-fur-energie-bfe | energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-strom | energiedashboard.ch: Daily import and export flows (Electricity) | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | identitas | katzen-importe | Cats - Imports | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | statistisches-amt-kanton-zuerich | warenimporte-und-exporte-im-kanton-zurich | Warenimporte und -exporte im Kanton Zürich | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-warenart-land | Goods: Foreign trade by nature of goods / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-verwendungszweck-land | Goods: Foreign trade by broad economic category / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-land | Goods: Foreign trade by tariff number / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-cpa6-land | Goods: Foreign trade by CPA6 / country | ['https://opendata.swiss/terms-of-use#terms_ask', 'https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | bundesamt-fur-statistik-bfs | anzahl-unternehmen-beschaftigte-und-gesamtwert-der-importe-und-exporte-von-unternehmensgruppen-3-2 | Anzahl Unternehmen, Beschäftigte und Gesamtwert der Importe und Exporte von Unternehmensgruppen nach | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | bundesamt-fur-statistik-bfs | anzahl-unternehmen-beschaftigte-und-gesamtwert-der-importe-und-exporte-von-unternehmensgruppen-3-1 | Anzahl Unternehmen, Beschäftigte und Gesamtwert der Importe und Exporte von Unternehmensgruppen nach | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | bundesamt-fur-statistik-bfs | anzahl-unternehmen-beschaftigte-und-gesamtwert-der-importe-und-exporte-von-unternehmensgruppen-2 | Anzahl Unternehmen, Beschäftigte und Gesamtwert der Importe und Exporte von Unternehmensgruppen nach | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-verkehrstrager | Goods: Foreign trade by tariff number / modes of transport | ['https://opendata.swiss/terms-of-use#terms_by', 'https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | identitas | equiden-exporte | Equids -  Exports | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | bundesamt-fur-statistik-bfs | umsatz-waren-und-materialaufwand-nach-wirtschaftsabteilungen-hochgerechnet5 | Umsatz, Waren- und Materialaufwand nach Wirtschaftsabteilungen (hochgerechnet) | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-ruckwaren-und-lohnveredelungsverkehr | Goods: Foreign trade by tariff number / Goods returns and processing | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-ctci5-land | Goods: Foreign trade by CTCI5 / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-indizes-des-aussenhandels-nach-cpa | Goods: Foreign trade index according to CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-saisonbereinigte-daten-nach-landern | Goods: Foreign trade - Seasonally adjusted data by country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | amt-fuer-geoinformation-des-kantons-bern | gruda-av-export | GRUDA AV Export | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Import Export Waren | identitas | hunde-exporte-nach-rassen | Dogs - Exports by breed | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | identitas | hunde-exporte-nach-landern | Dogs - Exports by country | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | identitas | equiden-exporte-nach-geschlecht | Equids - Exports by sex | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | identitas | equiden-exporte-nach-rassen | Equids - Exports by breed | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | identitas | equiden-exporte-nach-landern | Equids - Exports to countries | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-saisonbereinigte-daten-nach-cpa | Goods: Foreign trade - Seasonally adjusted data by CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE Import Export Waren | identitas | equiden-exporte-nach-kantonen | Equids - Exports by canton | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | identitas | equiden-exporte-nach-equidentypen | Equids - Exports by equid types | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | bundesamt-fur-statistik-bfs | exporte-von-sonderabfallen-nach-landern3 | Exporte von Sonderabfällen nach Ländern | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Import Export Waren | bundesamt-fur-statistik-bfs | ausfuhr-nach-handelspartnern-lander4 | Exports by trading partners (countries) | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio | swissTLMRegio | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swissaltiregio | swissALTIRegio | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swissbedrock | swissBEDROCK | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-umwelt-bafu | schadstofffreisetzungs-und-transferregister-der-schweiz-swissprtr | Swiss Pollutant Release and Transfer Register (SwissPRTR) | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swissbathy3d-bathymetrische-daten-von-schweizer-seen | swissBATHY3D, Bathymetric data of Swiss lakes | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | schweizerische-nationalbibliothek-nb | schweizer-isil-verzeichnis | Swiss ISIL Directory | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | schweizerische-nationalbibliothek-nb | schweizer-buch-2001 | Swiss Book (2001 - ) | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio-buildings | swissTLMRegio Buildings | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio-hohenkoten | swissTLMRegio "Miscellaneous" | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio-names | swissTLMRegio Names | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | openglam | swiss-glam-inventory | Swiss GLAM Inventory | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio-hydrography | swissTLMRegio Hydrography | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio-landcover | swissTLMRegio Landcover | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio-miscellaneous | swissTLMRegio Miscellaneous | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-meteorologie-und-klimatologie-meteoschweiz | schweizer-temperaturmittel | Swiss temperature mean | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | openglam | swiss-photography-metadata | Swiss Photography Metadata | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | openglam | swiss-theatre-metadata | Swiss Theatre Metadata | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | staatssekretariat-fuer-migration-sem | erwerb-schweizer-burgerrecht | Acquisition of Swiss citizenship | ['https://opendata.swiss/terms-of-use#terms_by_ask', 'https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | schweizerische-nationalbibliothek-nb | bibliographie-der-schweizergeschichte-1975 | Bibliography on Swiss History (1975 - ) | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisssurface3d-die-klassifizierte-punktwolke-der-schweiz | swissSURFACE3D | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlmregio-schutzgebiete | swissTLMRegio Protected Areas | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-statistik-bfs | swisscovid-app-monitoring | SwissCovid App Monitoring | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlm-map-farbig | swissTLM-Map (color) | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlm-map-grau | swissTLM-Map (grey) | ['https://opendata.swiss/terms-of-use#terms_open']
+TRADE Swiss-Impex | bundesamt-fur-statistik-bfs | schweizerische-lohnstrukturerhebung | Swiss Earnings Structure Survey | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swissboundaries3d | swissBOUNDARIES3D | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swissalti3d | swissALTI3D | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-statistik-bfs | anzahl-pflanzungen-in-der-schweiz5 | Number of plantations in Swiss forest | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-statistik-bfs | schweizer-tourismusstatistik-2024 | Swiss tourism statistics 2024 | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE Swiss-Impex | bundesamt-fur-landestopografie-swisstopo | swisstlm3d | swissTLM3D | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE foreign trade | bundesamt-fur-statistik-bfs | aussenhandel-nach-waren5 | Foreign trade by goods | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE foreign trade | bundesamt-fur-statistik-bfs | aussenhandel-nach-verwendungszweck5 | Foreign trade by broad economic categories | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-ctci | Goods: Foreign trade - Metadata - SITC | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-cpa | Goods: Foreign trade - Metadata - CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-diverses | Goods : Foreign trade - Metadata - Various | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | bundesamt-fur-statistik-bfs | aussenhandel-nach-ausgewahlten-warengruppen-cpa | Foreign trade by selected commodity groups (CPA) | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-indizes-des-aussenhandels-nach-cpa | Goods: Foreign trade index according to CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-ctci5-land | Goods: Foreign trade by CTCI5 / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-warenart | Goods: Foreign trade - Metadata - Nature of Goods | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-nst-2007 | Goods: Foreign trade - Metadata - NST 2007 | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-warenart-land | Goods: Foreign trade by nature of goods / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-zollertrag-nach-cpa | Goods: Foreign trade - Customs revenue by CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-land | Goods: Foreign trade by tariff number / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-goldimporte-nach-landern | Goods: Foreign trade - Gold imports by country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-transitdaten-durch-die-schweiz | Goods: Foreign trade - Transit data for Switzerland | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-cpa6-land | Goods: Foreign trade by CPA6 / country | ['https://opendata.swiss/terms-of-use#terms_ask', 'https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-lander-und-landergruppen | Goods: Foreign trade - Metadata - Countries and country groups | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-verwendungszweck | Goods: Foreign trade - Metadata - Broad economic categories | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-verwendungszweck-land | Goods: Foreign trade by broad economic category / country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-zollertrag-nach-tarifnummer | Goods: Foreign trade - Customs revenue by tariff number | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-verkehrstrager | Goods: Foreign trade by tariff number / modes of transport | ['https://opendata.swiss/terms-of-use#terms_by', 'https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-saisonbereinigte-daten-nach-landern | Goods: Foreign trade - Seasonally adjusted data by country | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-saisonbereinigte-daten-nach-cpa | Goods: Foreign trade - Seasonally adjusted data by CPA | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-nst4-verkehrstrager | Goods: Foreign trade by NST4 / Modes of transport | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-tarifnummern | Goods: Foreign trade - Metadata - Tariff numbers / Statistical keys | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-nach-tarifnummer-ruckwaren-und-lohnveredelungsverkehr | Goods: Foreign trade by tariff number / Goods returns and processing | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-konkordanzliste-cpa6-tn8 | Goods: Foreign trade - Metadata - Concordance list CPA6 / TN8 | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | eidgenoessische_zollverwaltung_ezv | waren-aussenhandel-stammdaten-konkordanzliste-nst-2007-tn8 | Goods: Foreign trade - Metadata - Concordance table NST 2007 / TN8 | ['https://opendata.swiss/terms-of-use#terms_by_ask']
+TRADE foreign trade | amt-fuer-statistik-fl | warenhandel-nach-richtung-seit-1995 |  Trade in goods by traffic direction since 1995 | ['https://opendata.swiss/terms-of-use#terms_by']
+TRADE foreign trade | amt-fuer-statistik-fl | warenhandel-nach-warenart-und-richtung-seit-1995-1 |  Trade in goods by nature of goods and traffic direction since 1995 | ['https://opendata.swiss/terms-of-use#terms_by']
+AGROSCOPE {'p': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'o': 'http://rdfs.org/ns/void#Dataset'}
+AGROSCOPE {'p': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'o': 'http://www.w3.org/ns/dcat#Dataset'}
+AGROSCOPE {'p': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'o': 'http://schema.org/Dataset'}
+AGROSCOPE {'p': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'o': 'https://cube.link/Cube'}
+AGROSCOPE {'p': 'http://purl.org/dc/terms/identifier', 'o': 'BLW_t_01'}
+AGROSCOPE {'p': 'http://purl.org/dc/terms/issued', 'o': '2024-10-07'}
+AGROSCOPE {'p': 'http://purl.org/dc/terms/title', 'o': 'Landwirtschaftliche Nutzfläche nach Nutzungsarten '}
+AGROSCOPE {'p': 'http://rdfs.org/ns/void#sparqlEndpoint', 'o': 'https://agriculture.ld.admin.ch/query'}
+AGROSCOPE {'p': 'http://schema.org/name', 'o': 'Landwirtschaftliche Nutzfläche nach Nutzungsarten '}
+AGROSCOPE {'p': 'http://schema.org/contactPoint', 'o': 'genid-b6e190ffca0942d28032a27ec4f91539277075-583F5D4A1F1121B73468F0DAA96F1D83'}
+AGROSCOPE {'p': 'http://schema.org/dateCreated', 'o': '2024-10-07'}
+AGROSCOPE {'p': 'http://schema.org/datePublished', 'o': '2024-10-07T09:38:26.117Z'}
+AGROSCOPE {'p': 'http://schema.org/dateModified', 'o': '2024-10-07T09:38:26.117Z'}
+AGROSCOPE {'p': 'http://schema.org/workExample', 'o': 'https://ld.admin.ch/application/visualize'}
+AGROSCOPE {'p': 'http://schema.org/workExample', 'o': 'genid-b6e190ffca0942d28032a27ec4f91539277075-E455646BD9D7823055A9945B8378B0AD'}
+AGROSCOPE {'p': 'http://schema.org/workExample', 'o': 'genid-b6e190ffca0942d28032a27ec4f91539277075-3F3E9D3421D138671A17DDD6F6ECFEAC'}
+AGROSCOPE {'p': 'http://schema.org/creativeWorkStatus', 'o': 'https://ld.admin.ch/vocabulary/CreativeWorkStatus/Draft'}
+AGROSCOPE {'p': 'http://schema.org/actionApplication', 'o': 'genid-b6e190ffca0942d28032a27ec4f91539277075-ADCCBF5AEFEA8E47F96E7C44F9F76DA7'}
+AGROSCOPE {'p': 'http://schema.org/actionApplication', 'o': 'genid-b6e190ffca0942d28032a27ec4f91539277075-F8D613F15076EF01AC9E4794BD1A3F24'}
+AGROSCOPE {'p': 'http://schema.org/error', 'o': 'https://cube-creator.lindas.admin.ch/cube-project/blwargarberichttest1-pxyeqolga8/dataset#missing-values-error'}
+AGROSCOPE {'p': 'http://schema.org/version', 'o': '1'}
+AGROSCOPE {'p': 'http://purl.org/dc/terms/modified', 'o': '2024-10-07T09:38:26.117Z'}
+AGROSCOPE {'p': 'https://cube.link/observationSet', 'o': 'https://agriculture.ld.admin.ch/agroscope/BLW_t_01/1/observation/'}
+AGROSCOPE {'p': 'https://cube.link/observationConstraint', 'o': 'https://agriculture.ld.admin.ch/agroscope/BLW_t_01/1/shape/'}
+AGROSCOPE {'p': 'http://www.w3.org/ns/dcat#accessURL', 'o': 'https://agriculture.ld.admin.ch/sparql'}
+AGROSCOPE {'p': 'http://www.w3.org/ns/dcat#contactPoint', 'o': 'genid-b6e190ffca0942d28032a27ec4f91539277075-ABD1D3080518EF23A2C2E23F3BC596F3'}
+AGROSCOPE {'p': 'http://www.w3.org/ns/dcat#theme', 'o': 'https://register.ld.admin.ch/opendataswiss/category/agri'}
+FOAG label 277 {'n': 'Segment A'}
+FOAG label 277 {'n': 'Segment A'}
+FOAG label 277 {'n': 'Segmento A'}
+FOAG label 279 {'n': 'Segment B'}
+FOAG label 279 {'n': 'Segment B'}
+FOAG label 279 {'n': 'Segmento B'}
+FOAG label 337 {'n': 'Segment C'}
+FOAG label 337 {'n': 'Segment C'}
+FOAG label 337 {'n': 'Segmento C'}
+FOAG label 281 {'n': 'Indice dei prezzi del latte di latteria'}
+FOAG label 281 {'n': 'Indice du prix du lait de centrale'}
+FOAG label 281 {'n': 'Molkereimilchpreisindex'}
+FOAG label 282 {'n': 'Indice dei prezzi della panna per la fabbricazione di burro'}
+FOAG label 282 {'n': 'Indice du prix de la crème pour la production de beurre'}
+FOAG label 282 {'n': 'Rahmpreisindex für Butterherstellung'}
+FOAG label 271 {'n': 'Lait CH, total'}
+FOAG label 271 {'n': 'Latte CH, totale'}
+FOAG label 271 {'n': 'Milch CH, total'}
