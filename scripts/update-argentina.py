@@ -274,7 +274,8 @@ def sipm():
         per, y = {}, None
         for c in range(2, sh.ncols):
             yv = sh.cell_value(hy, c)
-            if isinstance(yv, float) and yv > 1900: y = int(yv)
+            my = re.match(r'^\s*((?:19|20)\d\d)(?:\.0)?\s*$', str(yv))   # el ano viene como numero o como texto ('2017')
+            if my: y = int(my.group(1))
             m = MES.get(re.sub(r'[^a-z]', '', str(sh.cell_value(hy + 1, c)).lower())[:3])
             if y and m: per[c] = '%d-%02d' % (y, m)
         def cod(v): return (str(int(v)) if isinstance(v, float) and v == int(v) else str(v)).strip()
