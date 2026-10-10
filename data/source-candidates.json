@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T15:26:07Z",
+ "generatedAt": "2026-10-10T16:43:20Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 108,
+  "total": 109,
   "byStatus": {
-   "ACTIVE": 78,
+   "ACTIVE": 79,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1556,13 +1556,14 @@
    "country": "AR",
    "scope": "integrated",
    "institution": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",
-   "dataset": "Ya integrada (177 series en el catalogo unificado)",
+   "dataset": "Ya integrada (179 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
     "cattle",
     "cheese",
     "eggs",
+    "energy",
     "fruit",
     "maize",
     "milk",
@@ -1581,6 +1582,7 @@
    ],
    "productsConfirmed": true,
    "metrics": [
+    "input_price",
     "price",
     "production",
     "trade"
@@ -3168,6 +3170,56 @@
    "derivatives": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 (HM Revenue & Customs, UK Trade Info).",
    "lastChecked": "2026-10-06",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "indec_ar",
+   "registryId": "indec_ar",
+   "country": "AR",
+   "scope": "integrated",
+   "institution": "Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP)",
+   "dataset": "Ya integrada (13 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "milk",
+    "pigs",
+    "sugar",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price_index"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-INDEC",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: INDEC, Sistema de Indices de Precios Mayoristas (SIPM). Indices reproducidos sin cambios salvo el formato.",
+   "lastChecked": "2026-10-10",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
