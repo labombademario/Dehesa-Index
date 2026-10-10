@@ -137,8 +137,8 @@ except Exception as e:
 for cid, key, label in [("H105", "wheat", "Wheat"), ("H130", "rye", "Rye"), ("H145", "barley", "Barley"), ("H146", "oats", "Oats (incl. cereal mixtures)"), ("H148", "maize", "Maize")]:
     # almacenistas: fin de cada semestre (30-jun y 31-dic)
     add(dk, "dk-stock-%s-trade" % key, "%s: stocks at trade companies, end of half-year (KORN2)" % label, "million kg", "semiannual", lambda c=cid: dst("KORN2", [("AFGRØDE", [c]), ("AK", ["K10"])]), "stocks")
-    # granjas: encuesta anual a 30 de junio (Statistics Denmark solo publica el primer semestre) -> serie anual fechada en junio
-    add(dk, "dk-stock-%s-farms" % key, "%s: stocks on farms at 30 June (annual survey, KORN2)" % label, "million kg", "annual", lambda c=cid: [(t[:4] + "-06", v) for t, v in dst("KORN2", [("AFGRØDE", [c]), ("AK", ["K20"])]) if t.endswith("H1")], "stocks")
+    # granjas: encuesta anual a 30 de junio (Statistics Denmark solo publica el primer semestre) -> serie anual (el año es el del 30 de junio; la etiqueta lo dice)
+    add(dk, "dk-stock-%s-farms" % key, "%s: stocks on farms at 30 June (annual survey, KORN2)" % label, "million kg", "annual", lambda c=cid: [(t[:4], v) for t, v in dst("KORN2", [("AFGRØDE", [c]), ("AK", ["K20"])]) if t.endswith("H1")], "stocks")
 def dk_korn(cid):
     """KORN, «Stocks, ultimo» (TYPE 0445), año natural: total danes + importado; si la tabla no lo da para ese cultivo, solo origen danes. Se registra cual se usa."""
     for o in ("004", "005"):
