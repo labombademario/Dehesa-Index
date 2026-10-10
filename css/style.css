@@ -1893,7 +1893,8 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
   .di-precios-head .di-updated{font-size:11.5px}
   #pr-location-bar.di-location-bar{flex-wrap:wrap;gap:6px;margin:10px 0}
   #pr-location-bar .di-location-label{display:none}
-  #pr-location-bar .di-location-btn{padding:6px 10px;font-size:13px;min-height:40px;flex:1 1 40%}
+  #pr-location-bar .di-location-btn{padding:4px 10px;font-size:13px;min-height:38px;flex:1 1 40%}
+  #pr-search-wrap.di-search-wrap{margin:8px 0}
   #pr-location-bar .di-eu-country-select{min-height:40px;flex:1 1 100%}
   #pr-location-bar .di-fx-label{flex-basis:100%;font-size:11.5px;white-space:normal;line-height:1.35}
   #pr-favorites.is-empty{display:none}

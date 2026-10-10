@@ -123,6 +123,12 @@
     if(!isFinite(last.value)||!isFinite(prev.value)||prev.value===0) return null;
     return {product:product,date:last.date,value:last.value,changePct:((last.value-prev.value)/prev.value)*100,frequency:last.frequency};
   }
+  // meses completos entre el periodo del dato y hoy (YYYY, YYYY-MM, YYYY-Qn o YYYY-MM-DD); null si no se entiende
+  function ageMonths(d) {
+    var m=/^(\d{4})(?:-(?:Q([1-4])|(\d{2})))?/.exec(String(d||'')); if(!m) return null;
+    var mo=m[2]?(+m[2])*3:(m[3]?+m[3]:12), now=new Date();
+    return (now.getFullYear()-(+m[1]))*12+(now.getMonth()+1-mo);
+  }
   function buildTransmissionAlerts() {
     buildRelationshipEngine();
     var rels=RELATIONSHIP_RESULTS.filter(function(r){return r.region===activeRegion();}), byId={};
@@ -134,7 +140,7 @@
       TRANSMISSION_ALERTS.push({
         id:def.id,label:def.label[lang()]||def.label.es,status:'watch',
         severity:Math.abs(shock.changePct)>=10?'elevated':'watch',
-        shock:shock,relationship:rel,channel:def.channel,affected:def.affected,
+        shock:shock,ageMonths:ageMonths(shock.date),relationship:rel,channel:def.channel,affected:def.affected,
         direction:(shock.changePct>0?'positive':'negative')===rel.direction?'aligned':'opposed',
         message:(function(){var q=rel.frequency==='quarterly',n=rel.lagPeriods===1,lab=(def.label[lang()]||def.label.es),u={es:q?(n?'trimestre':'trimestres'):(n?'mes':'meses'),en:q?(n?'quarter':'quarters'):(n?'month':'months'),fr:q?(n?'trimestre':'trimestres'):'mois',it:q?(n?'trimestre':'trimestri'):(n?'mese':'mesi')};return X({es:lab+' supera el umbral de '+def.threshold+'% en el último periodo. La relación histórica compatible tiene un lag de '+rel.lagPeriods+' '+u.es+' y confianza '+rel.confidence+'. Esto activa una alerta de transmisión observada, no una predicción.',en:lab+' exceeds the '+def.threshold+'% threshold in the latest period. The compatible historical relationship has a lag of '+rel.lagPeriods+' '+u.en+' and '+rel.confidence+' confidence. This triggers an observed transmission alert, not a forecast.',fr:lab+' dépasse le seuil de '+def.threshold+' % sur la dernière période. La relation historique compatible a un décalage de '+rel.lagPeriods+' '+u.fr+' et une confiance '+rel.confidence+'. Cela déclenche une alerte de transmission observée, pas une prévision.',it:lab+' supera la soglia del '+def.threshold+'% nell’ultimo periodo. La relazione storica compatibile ha un ritardo di '+rel.lagPeriods+' '+u.it+' e confidenza '+rel.confidence+'. Questo attiva un’allerta di trasmissione osservata, non una previsione.'});})()
       });
@@ -1192,6 +1198,7 @@
       return '<article class="di-rel-card di-transmission-card">'+
         '<div class="di-rel-top"><span>⚠ '+esc(a.label)+'</span><b class="di-rel-confidence '+esc(a.relationship.confidence)+'">'+esc(a.severity.toUpperCase())+'</b></div>'+
         '<div class="di-rel-series">'+esc(X({es:'Shock',en:'Shock',fr:'Choc',it:'Shock'}))+': <strong>'+esc(a.shock.changePct.toFixed(1))+'%</strong> · '+esc(a.shock.date)+'</div>'+
+        (a.ageMonths!=null&&a.ageMonths>=3?'<div class="di-rel-note" style="color:var(--warning,#b45309);font-weight:600">⏳ '+esc(X({es:'Señal de hace '+a.ageMonths+' meses (dato de '+a.shock.date+'): no es de hoy.',en:'Signal from '+a.ageMonths+' months ago (data for '+a.shock.date+'): not current.',fr:'Signal d’il y a '+a.ageMonths+' mois (donnée de '+a.shock.date+') : pas actuel.',it:'Segnale di '+a.ageMonths+' mesi fa (dato di '+a.shock.date+'): non attuale.'}))+'</div>':'')+
         '<div class="di-rel-metrics"><div><small>'+esc(X({es:'Canal',en:'Channel',fr:'Canal',it:'Canale'}))+'</small><strong>'+esc(X({es:'Coste de insumos',en:'Input cost',fr:'Coût des intrants',it:'Costo degli input'}))+'</strong></div><div><small>'+esc(X({es:'Rezago',en:'Lag',fr:'Décalage',it:'Ritardo'}))+'</small><strong>'+esc(String(a.relationship.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>'+esc(X({es:'Confianza',en:'Confidence',fr:'Confiance',it:'Confidenza'}))+'</small><strong>'+esc(a.relationship.confidence.toUpperCase())+'</strong></div></div>'+
         '<p class="di-rel-note">'+esc(a.message)+'</p>'+
       '</article>';
