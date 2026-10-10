@@ -124,8 +124,23 @@ def organic():
         put('pt-es-organic-%s' % c.lower(), 'organic', 'Organic area (converted + in conversion): %s' % keep[c], 'ha', 'annual', pts, {'sourceGroup': 'Eurostat org_cropar'})
     log('ecologico', len(by), 'series')
 
+OUT_EXTRA = ('AM021100', 'AM021200', 'AM021300', 'AM065000', 'AM080000')   # colza, girasol, soja, aceituna y aceite de oliva (nivel de producto de la matriz)
+def quarterly():
+    """Indices trimestrales de precios agrarios (Eurostat apri_pi_outq / apri_pi_inq), base 2020=100, nominal; mismo criterio que Austria.
+    Complementan al INE (pt-out-*/pt-in-*, mensual): Eurostat publica antes el trimestre para varios productos. Nada se combina ni se recalcula."""
+    for ds, tag, group, what in (('apri_pi_outq', 'out', 'idx_perc', 'output price index'), ('apri_pi_inq', 'in', 'idx_pag', 'input price index')):
+        j = fetch(ds, p_adj='NI', unit='I20'); recs, labs = records(j); by = {}
+        for r, v in recs:
+            c = r['am_item'] if 'am_item' in r else r.get('agrprod') or ''
+            if c.endswith('000') or c in OUT_EXTRA: by.setdefault(c, []).append((r['time'], v))
+        n = 0
+        for c, pts in by.items():
+            name = re.sub(r'\s*\(Input \d\)$', '', labs['am_item'][c])
+            put('pt-es-q-%s-%s' % (tag, c.lower()), group, '%s: %s (Eurostat)' % (name, what), 'index (2020=100)', 'quarterly', pts, {'sourceGroup': 'Eurostat ' + ds}); n += 1
+        log(ds, n, 'series')
+
 def main():
-    for fn in (prices, milk, slaughter, crops, herds, organic):
+    for fn in (prices, milk, slaughter, crops, herds, organic, quarterly):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e))
     if len(OUT) < 20:
