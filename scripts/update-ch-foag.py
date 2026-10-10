@@ -142,6 +142,12 @@ for pid, key, nm in (("1069", "processing", "Potatoes for processing"), ("996", 
 for en, key, nm in (("Rabbit - All product groups - Supply", "rabbit", "Rabbit meat"), ("Horse - All product groups - Supply", "horse", "Horse meat"), ("Goat - All product groups - Supply", "goat", "Goat meat")):
     spec("ch-foag-meat-supply-%s" % key, "livestock", "%s: market supply, domestic production plus imports (FOAG)" % nm, "t", "MeatMeatProductsSausages/Production_Quantity_Year", en, factor=0.001, origin=None)
 
+# 10-oct-2026: indices de precio de leche de central y de nata para mantequilla (mensual) e importaciones de huevos (anual). La unidad se toma del cubo.
+spec("ch-foag-milk-index-dairy", "idx_perc", "Dairy milk price index (Molkereimilchpreisindex, FOAG)", None, "MilkDairyProducts/Production_Index_Month", "product/281", origin=None)
+spec("ch-foag-butter-cream-index", "idx_perc", "Price index of cream for butter-making (Rahmpreisindex fuer Butterherstellung, FOAG)", None, "MilkDairyProducts/WholesaleProcessing_Index_Month", "product/282", origin=None)
+for pid, key, nm in (("247", "table", "Table eggs"), ("249", "processing", "Eggs for processing")):
+    spec("ch-foag-egg-import-%s" % key, "trade", "%s: imports, allocated/imported quantity (FOAG)" % nm, None, "Eggs/Import_Quantity_Year", "product/" + pid, origin=None)
+
 def build_series(sp, diag):
     rs = rows(sp["cube"])
     keep = []
@@ -190,7 +196,7 @@ for sp in S:
     note = "FOAG: etapa %s; base de IVA: %s." % (" / ".join(sp["_vcd"]), sp["_cost"])
     if sp["factor"] == 0.001: note += " Convertido de kg a toneladas."
     if sp["unit"] == "CHF/100 kg" and "Milk" in sp["label"]: note += " FOAG publica centimos/kg (1 centimo/kg = 1 CHF/100 kg)."
-    series.append({"id": sp["id"], "group": sp["group"], "label": sp["label"], "unit": sp["unit"], "frequency": freq, "latestPeriod": pts[-1][0], "latest": pts[-1][1],
+    series.append({"id": sp["id"], "group": sp["group"], "label": sp["label"], "unit": sp["unit"] or sp["_unitsrc"][0] or "as published by FOAG", "frequency": freq, "latestPeriod": pts[-1][0], "latest": pts[-1][1],
                    "changePct": round((pts[-1][1] - prev) / prev * 100, 1) if prev else None, "points": [[p, v] for p, v in pts], "sourceGroup": "FOAG Marktzahlen", "periodNote": note,
                    "reference": {"source": "FOAG/BLW (Federal Office for Agriculture)", "dataset": sp["cube"].split("/")[0] + " - " + sp["cube"].split("/")[1], "licence": "opendata.swiss: Open use. Must provide the source.", "original": "https://opendata.swiss/en/organization/bundesamt-fur-landwirtschaft-blw"}})
     say("OK %s %d pts %s..%s %s" % (sp["id"], len(pts), pts[0][0], pts[-1][0], note))

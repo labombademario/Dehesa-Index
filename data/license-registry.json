@@ -2135,7 +2135,7 @@
    "evidence": "Agricultural datasets of the FSO on opendata.swiss are marked 'Use for commercial purposes requires permission of the data owner'. Not ingested.",
    "used": false,
    "aliases": [],
-   "notes": "Not used. Permission from the data owner would be needed before any ingestion.",
+   "notes": "Not used. Permission from the data owner would be needed before any ingestion. 10-oct-2026: three FSO agricultural datasets on opendata.swiss are marked terms_by and are used under bfs_ch_open; the rest still needs a dataset-by-dataset check.",
    "legalConfidence": "PENDING",
    "legalConfidenceReason": "Uso comercial sujeto a permiso del titular; no se ingiere.",
    "short": "BFS (Suiza)"
@@ -2347,6 +2347,34 @@
    "short": "USDA NRCS",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Obra del gobierno federal de EE. UU. (dominio publico) con peticion de cita."
+  },
+  "bfs_ch_open": {
+   "name": "Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices",
+   "url": "https://opendata.swiss/en/organization/bundesamt-fur-statistik-bfs",
+   "country": "CH",
+   "licenseId": "OPENDATA-SWISS-TERMS-BY",
+   "licenseName": "opendata.swiss: Open use. Must provide the source (terms_by)",
+   "licenseUrl": "https://opendata.swiss/en/terms-of-use#terms_by",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Swiss Federal Statistical Office (FSO/BFS); price indices: Agristat (Swiss Farmers' Union) / FSO. Dataset title and link.",
+   "additionalRestrictions": "Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each run and stops otherwise). The BFS 'Schätzung' (estimate) year is never published.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "opendata.swiss package_show (10-oct-2026): erlospreisstatistik-mengen-und-preise-zur-produktion-der-landwirtschaft2, produzentenpreisindex-landwirtschaft and einkaufspreisindex-landwirtschaftlicher-produktionsmittel5: every resource rights = https://opendata.swiss/terms-of-use#terms_by ('You may use this dataset for commercial purposes. You must provide the source').",
+   "used": true,
+   "aliases": [
+    "bfs_ch_open"
+   ],
+   "notes": "Separate from bfs_ch (other FSO agricultural datasets, still PENDING until checked one by one).",
+   "short": "BFS (Suiza)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Condiciones explicitas de opendata.swiss en cada recurso: uso comercial permitido citando la fuente."
   }
  },
  "files": {
@@ -3209,6 +3237,13 @@
     "ES": "mapa_es"
    },
    "notes": "Balances anuales de colza, soja y girasol y de sus tortas/harinas (importaciones, exportaciones, consumo interno, existencias finales y produccion utilizable) del PDF «Balance oleaginosas en España» del MAPA, en miles de toneladas sin otro cambio; la ultima campaña es estimacion del MAPA; scripts/update-spain-oilseeds.py."
+  },
+  "data/switzerland-bfs-stats.json": {
+   "bySourceGroupPrefix": {
+    "BFS": "bfs_ch_open",
+    "Eurostat": "eurostat"
+   },
+   "notes": "scripts/update-ch-bfs.py: BFS Erlöspreisstatistik (cantidades y precios, sin el año de estimacion), indices de precios de Agristat/BFS y mantequilla y queso de Eurostat apro_mk_pobta."
   }
  },
  "derived": [

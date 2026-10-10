@@ -257,6 +257,16 @@ sources:
     data: [switzerland-foag-stats.json, ch-chain.json]
     log: switzerland-foag-log.txt
     message: Datos Suiza (FOAG, mercados agrarios)
+  - id: switzerland-bfs
+    name: Update Switzerland (BFS agricultural accounts and price indices)
+    cron: ['45 6 12 * *']
+    pre: ['pip install openpyxl']
+    script: scripts/update-ch-bfs.py
+    timeout: 20
+    script_timeout: 12
+    data: [switzerland-bfs-stats.json]
+    log: switzerland-bfs-log.txt
+    message: Datos Suiza (BFS, cuentas e indices de precios agrarios)
   - id: switzerland-meteo
     name: Update Switzerland (MeteoSwiss climate)
     cron: ['35 5 4 * *']
