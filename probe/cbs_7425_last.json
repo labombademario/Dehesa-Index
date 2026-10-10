@@ -1,0 +1,11 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/7425zuiv/$metadata#Cbs.OData.WebAPI.TypedDataSet","value":[
+    {
+      "ID":0,"Perioden":"1995MM01","Hoeveelheid_1":911676,"Vetgehalte_2":4.58,"Eiwitgehalte_3":3.54,"Boter_4":null,"Fabriekskaas_5":58071,"MelkpoederTotaal_6":null,"NietMagerMelkpoeder_7":null,"MagerMelkpoeder_8":null,"GecondenseerdeMelk_9":null,"Weipoeder_10":null
+    },{
+      "ID":1,"Perioden":"1995MM02","Hoeveelheid_1":837617,"Vetgehalte_2":4.52,"Eiwitgehalte_3":3.48,"Boter_4":null,"Fabriekskaas_5":53419,"MelkpoederTotaal_6":null,"NietMagerMelkpoeder_7":null,"MagerMelkpoeder_8":null,"GecondenseerdeMelk_9":null,"Weipoeder_10":null
+    },{
+      "ID":2,"Perioden":"1995MM03","Hoeveelheid_1":940083,"Vetgehalte_2":4.51,"Eiwitgehalte_3":3.46,"Boter_4":null,"Fabriekskaas_5":59799,"MelkpoederTotaal_6":null,"NietMagerMelkpoeder_7":null,"MagerMelkpoeder_8":null,"GecondenseerdeMelk_9":null,"Weipoeder_10":null
+    }
+  ]
+}

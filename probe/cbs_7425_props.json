@@ -1,0 +1,33 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/7425zuiv/$metadata#Cbs.OData.WebAPI.DataProperties","value":[
+    {
+      "odata.type":"Cbs.OData.TimeDimension","ID":0,"Position":0,"ParentID":null,"Type":"TimeDimension","Key":"Perioden","Title":"Perioden","Description":"Lijst van jaren en maanden.","ReleasePolicy":true
+    },{
+      "odata.type":"Cbs.OData.TopicGroup","ID":1,"Position":null,"ParentID":null,"Type":"TopicGroup","Key":"","Title":"Melkaanvoer","Description":"Door de zuivelfabrieken ontvangen onbewerkte koemelk."
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":2,"Position":1,"ParentID":1,"Type":"Topic","Key":"Hoeveelheid_1","Title":"Hoeveelheid","Description":"1000 kg=971 liter.","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":3,"Position":2,"ParentID":1,"Type":"Topic","Key":"Vetgehalte_2","Title":"Vetgehalte","Description":"Gehalte aan vetten in de onbewerkte melk.","Datatype":"Float","Unit":"%","Decimals":2,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":4,"Position":3,"ParentID":1,"Type":"Topic","Key":"Eiwitgehalte_3","Title":"Eiwitgehalte","Description":"Gehalte aan eiwitten (voornamelijk case\u00efne) in de onbewerkte melk.\r\nCase\u00efne, ook wel kaasstof genoemd, is een belangrijk melkeiwit dat\r\ngebruikt wordt bij de bereiding van kaas.","Datatype":"Float","Unit":"%","Decimals":2,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.TopicGroup","ID":5,"Position":null,"ParentID":null,"Type":"TopicGroup","Key":"","Title":"Zuivelproductie","Description":"Verwerking van onbewerkte melk tot zuivelproducten als boter,\r\nfabriekskaas, melkpoeder, gecondenseerde melk en weipoeder door\r\nNederlandse zuivelfabrieken.\r\nNB. De voorlopige en nader voorlopige cijfers zijn exclusief, de\r\ndefinitieve cijfers inclusief producten van kleine zuivelfabrieken."
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":6,"Position":4,"ParentID":5,"Type":"Topic","Key":"Boter_4","Title":"Boter","Description":"Roomboter.","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":7,"Position":5,"ParentID":5,"Type":"Topic","Key":"Fabriekskaas_5","Title":"Fabriekskaas","Description":"Kaas van koemelk","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.TopicGroup","ID":8,"Position":null,"ParentID":5,"Type":"TopicGroup","Key":"","Title":"Melkpoeder","Description":"Er zijn vier types melkpoeder: room in poedervorm, volle melkpoeder,\r\npoeder van halfvolle melk en magere melkpoeder. Magere melkpoeder wordt\r\nverkregen uit ontroomde melk en tot poeder verwerkt en is inclusief\r\nkarnemelkpoeder."
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":9,"Position":6,"ParentID":8,"Type":"Topic","Key":"MelkpoederTotaal_6","Title":"Melkpoeder, totaal","Description":"Er zijn vier types melkpoeder: room in poedervorm, volle melkpoeder,\r\npoeder van halfvolle melk en magere melkpoeder. Magere melkpoeder wordt\r\nverkregen uit ontroomde melk en tot poeder verwerkt en is inclusief\r\nkarnemelkpoeder.","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":10,"Position":7,"ParentID":8,"Type":"Topic","Key":"NietMagerMelkpoeder_7","Title":"Niet-mager melkpoeder","Description":"Melkpoeder met 1,5% of meer vet.","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":11,"Position":8,"ParentID":8,"Type":"Topic","Key":"MagerMelkpoeder_8","Title":"Mager melkpoeder","Description":"Melkpoeder met minder dan 1,5% vet.","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":12,"Position":9,"ParentID":5,"Type":"Topic","Key":"GecondenseerdeMelk_9","Title":"Gecondenseerde melk","Description":"Ingedikte of geconcentreerde melk door de gedeeltelijke onttrekking\r\nvan water, met of zonder toegevoegde suiker.\r\nKoffiemelk is gecondenseerde melk zonder toegevoegde suiker.","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":13,"Position":10,"ParentID":5,"Type":"Topic","Key":"Weipoeder_10","Title":"Weipoeder","Description":"Weipoeder (in de vorm van poeder, bloem of brokken) is een bijproduct\r\nvan de kaasbereiding. Weipoeder is niet verder verwerkt en is\r\nexclusief suikerarm en/of ontzout weipoeder. Cijfers over weipoeder zijn\r\nalleen per jaar bekend.","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    }
+  ]
+}

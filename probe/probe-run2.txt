@@ -1,0 +1,337 @@
+DST info KORN2 200
+    Stock and turnover of cereals | unit m kg | updated 2026-05-19T08:00:00
+    var AFGRØDE crop | [('H95', 'CEREALS TOTAL'), ('H105', 'Wheat'), ('H130', 'Rye'), ('H145', 'Barley'), ('H146', 'Oat incl. cereals'), ('H147', 'Triticale'), ('H148', 'Maize'), ('H149', 'Peas, dry')] ... n=8
+    var AK agents | [('K10', 'Stock ultimo, at trade companies'), ('K20', 'Stock ultimo, at farms'), ('K30', 'Received quantities from farms at trade companies '), ('K40', 'Purchased quantities from farms at trade companies ')] ... n=4
+    var Tid time | [('2000H1', '2000H1'), ('2000H2', '2000H2'), ('2001H1', '2001H1'), ('2001H2', '2001H2'), ('2002H1', '2002H1'), ('2002H2', '2002H2'), ('2003H1', '2003H1'), ('2003H2', '2003H2'), ('2004H1', '2004H1'), ('2004H2', '2004H2'), ('2005H1', '2005H1'), ('2005H2', '2005H2'), ('2006H1', '2006H1'), ('2006H2', '2006H2'), ('2007H1', '2007H1'), ('2007H2', '2007H2'), ('2008H1', '2008H1'), ('2008H2', '2008H2'), ('2009H1', '2009H1'), ('2009H2', '2009H2'), ('2010H1', '2010H1'), ('2010H2', '2010H2'), ('2011H1', '2011H1'), ('2011H2', '2011H2'), ('2012H1', '2012H1'), ('2012H2', '2012H2'), ('2013H1', '2013H1'), ('2013H2', '2013H2'), ('2014H1', '2014H1'), ('2014H2', '2014H2'), ('2015H1', '2015H1'), ('2015H2', '2015H2'), ('2016H1', '2016H1'), ('2016H2', '2016H2'), ('2017H1', '2017H1'), ('2017H2', '2017H2'), ('2018H1', '2018H1'), ('2018H2', '2018H2'), ('2019H1', '2019H1'), ('2019H2', '2019H2')] ... n=52
+DST info ANI303 200
+    Livestock products ex producer | unit Index | updated 2026-09-25T08:00:00
+    var VAREGR commodity group | [('ANATUR', 'Natural milk'), ('AOKO', 'Organic milk'), ('AKVAEG', 'Cattle'), ('ASVIN', 'Pigs'), ('AFAAR', 'Sheep')] ... n=5
+    var INDEKSTYPE index type | [('15', 'Quantity indices 2015=100'), ('25', 'Price indices 2015=100')] ... n=2
+    var Tid time | [('2015M01', '2015M01'), ('2015M02', '2015M02'), ('2015M03', '2015M03'), ('2015M04', '2015M04'), ('2015M05', '2015M05'), ('2015M06', '2015M06'), ('2015M07', '2015M07'), ('2015M08', '2015M08'), ('2015M09', '2015M09'), ('2015M10', '2015M10'), ('2015M11', '2015M11'), ('2015M12', '2015M12'), ('2016M01', '2016M01'), ('2016M02', '2016M02'), ('2016M03', '2016M03'), ('2016M04', '2016M04'), ('2016M05', '2016M05'), ('2016M06', '2016M06'), ('2016M07', '2016M07'), ('2016M08', '2016M08'), ('2016M09', '2016M09'), ('2016M10', '2016M10'), ('2016M11', '2016M11'), ('2016M12', '2016M12'), ('2017M01', '2017M01'), ('2017M02', '2017M02'), ('2017M03', '2017M03'), ('2017M04', '2017M04'), ('2017M05', '2017M05'), ('2017M06', '2017M06'), ('2017M07', '2017M07'), ('2017M08', '2017M08'), ('2017M09', '2017M09'), ('2017M10', '2017M10'), ('2017M11', '2017M11'), ('2017M12', '2017M12'), ('2018M01', '2018M01'), ('2018M02', '2018M02'), ('2018M03', '2018M03'), ('2018M04', '2018M04')] ... n=139
+DST info ANI302 200
+    Livestock products ex producer | unit - | updated 2026-09-04T08:00:00
+    var VAREGR commodity group | [('ANATUR', 'Natural milk'), ('AOKO', 'Organic milk'), ('AKONSUM', 'Eggs for human consumption'), ('AKVAEG', 'Cattle'), ('ASVIN', 'Pigs'), ('AFJER', 'Poultry'), ('AFAAR', 'Sheep')] ... n=7
+    var INDEKSTYPE index type | [('15', 'Quantity indices 2015=100'), ('25', 'Price indices 2015=100')] ... n=2
+    var Tid time | [('2015K1', '2015Q1'), ('2015K2', '2015Q2'), ('2015K3', '2015Q3'), ('2015K4', '2015Q4'), ('2016K1', '2016Q1'), ('2016K2', '2016Q2'), ('2016K3', '2016Q3'), ('2016K4', '2016Q4'), ('2017K1', '2017Q1'), ('2017K2', '2017Q2'), ('2017K3', '2017Q3'), ('2017K4', '2017Q4'), ('2018K1', '2018Q1'), ('2018K2', '2018Q2'), ('2018K3', '2018Q3'), ('2018K4', '2018Q4'), ('2019K1', '2019Q1'), ('2019K2', '2019Q2'), ('2019K3', '2019Q3'), ('2019K4', '2019Q4'), ('2020K1', '2020Q1'), ('2020K2', '2020Q2'), ('2020K3', '2020Q3'), ('2020K4', '2020Q4'), ('2021K1', '2021Q1'), ('2021K2', '2021Q2'), ('2021K3', '2021Q3'), ('2021K4', '2021Q4'), ('2022K1', '2022Q1'), ('2022K2', '2022Q2'), ('2022K3', '2022Q3'), ('2022K4', '2022Q4'), ('2023K1', '2023Q1'), ('2023K2', '2023Q2'), ('2023K3', '2023Q3'), ('2023K4', '2023Q4'), ('2024K1', '2024Q1'), ('2024K2', '2024Q2'), ('2024K3', '2024Q3'), ('2024K4', '2024Q4')] ... n=46
+DST info ANI11 200
+    Livestock products ex producer | unit - | updated 2026-09-04T08:00:00
+    var INDEKSTYPE index type | [('01', 'Sales value, total (m DKK)'), ('15', 'Quantity indices 2015=100'), ('25', 'Price indices 2015=100')] ... n=3
+    var Tid time | [('2015K1', '2015Q1'), ('2015K2', '2015Q2'), ('2015K3', '2015Q3'), ('2015K4', '2015Q4'), ('2016K1', '2016Q1'), ('2016K2', '2016Q2'), ('2016K3', '2016Q3'), ('2016K4', '2016Q4'), ('2017K1', '2017Q1'), ('2017K2', '2017Q2'), ('2017K3', '2017Q3'), ('2017K4', '2017Q4'), ('2018K1', '2018Q1'), ('2018K2', '2018Q2'), ('2018K3', '2018Q3'), ('2018K4', '2018Q4'), ('2019K1', '2019Q1'), ('2019K2', '2019Q2'), ('2019K3', '2019Q3'), ('2019K4', '2019Q4'), ('2020K1', '2020Q1'), ('2020K2', '2020Q2'), ('2020K3', '2020Q3'), ('2020K4', '2020Q4'), ('2021K1', '2021Q1'), ('2021K2', '2021Q2'), ('2021K3', '2021Q3'), ('2021K4', '2021Q4'), ('2022K1', '2022Q1'), ('2022K2', '2022Q2'), ('2022K3', '2022Q3'), ('2022K4', '2022Q4'), ('2023K1', '2023Q1'), ('2023K2', '2023Q2'), ('2023K3', '2023Q3'), ('2023K4', '2023Q4'), ('2024K1', '2024Q1'), ('2024K2', '2024Q2'), ('2024K3', '2024Q3'), ('2024K4', '2024Q4')] ... n=46
+DST info LPRIS22 200
+    Price indices for agricultural sale and purchase | unit - | updated 2026-08-18T08:00:00
+    var PRODUKT product | [('0000', 'Terms of trade, agriculture'), ('0005', 'Agricultural products, total (1+2+3+4)'), ('0008', 'Horticultural products, total (1+2)'), ('0010', 'Agricultural products (1+3+4)'), ('0012', '1. Horticultural products, agriculture'), ('0015', '1.1. Cereals, total'), ('0020', '1.1.1. Wheat and spelt'), ('0025', '1.1.2. Rye and meslin'), ('0030', '1.1.3. Barley'), ('0035', '1.1.4. Oats and summer cereal mixtures '), ('0040', '1.1.5. Triticale'), ('0045', '1.2.  Industrial crops, total'), ('0050', '1.2.1.Rape and turnip rape seed, conventional   '), ('0055', '1.2.2. Fodder peas, conventionals'), ('0060', '1.2.3 Sugar beet '), ('0065', '1.3. Forage crops, total'), ('0070', '1.3.1. Fodder maize '), ('0075', '1.3.2. Grasses'), ('0080', '1.3.3. Straw'), ('0165', '1.4. Potatoes, total'), ('0170', '1.4.1. Potatoes for consumption '), ('0152', '1.5. Christmas trees and branches'), ('0220', '1.6. Other crops products, total'), ('0225', '1.6.1. Seeds for sale'), ('0088', '2. Greenhouse vegetables'), ('0090', '2.1. Fresh vegetables , total'), ('0092', '2.1.1. Greenhouse vegetables, total'), ('0100', '2.1.1.1. Tomatoes, conventional '), ('0120', '2.1.1.2.Cucumbers, conventional  '), ('0124', '2.1.2. Other greenhouse vegetables'), ('0125', '2.1.2.1. Herbs'), ('0121', '2.1.3. Vegetables grown in the open, total'), ('0126', '2.1.3.1. Carrots, conventional'), ('0127', '2.1.3.2. Carrots, organic'), ('0128', '2.1.3.3. Leeks, conventional'), ('0129', '2.1.3.4. Leeks, organic'), ('0130', '2.1.3.5. Onions, conventional  '), ('0131', '2.1.3.6. Onions, organic'), ('0132', '2.1.3.7. Cabbage, conventional'), ('0134', '2.1.3.8. Salad, open air')] ... n=120
+    var TAL unit | [('178', 'Index (2020=100)'), ('210', 'Percentage change compared to previous quarter'), ('310', 'Percentage change compared to same quarter the year before')] ... n=3
+    var Tid time | [('2020K1', '2020Q1'), ('2020K2', '2020Q2'), ('2020K3', '2020Q3'), ('2020K4', '2020Q4'), ('2021K1', '2021Q1'), ('2021K2', '2021Q2'), ('2021K3', '2021Q3'), ('2021K4', '2021Q4'), ('2022K1', '2022Q1'), ('2022K2', '2022Q2'), ('2022K3', '2022Q3'), ('2022K4', '2022Q4'), ('2023K1', '2023Q1'), ('2023K2', '2023Q2'), ('2023K3', '2023Q3'), ('2023K4', '2023Q4'), ('2024K1', '2024Q1'), ('2024K2', '2024Q2'), ('2024K3', '2024Q3'), ('2024K4', '2024Q4'), ('2025K1', '2025Q1'), ('2025K2', '2025Q2'), ('2025K3', '2025Q3'), ('2025K4', '2025Q4'), ('2026K1', '2026Q1'), ('2026K2', '2026Q2')] ... n=26
+DST info LPRIS10 200
+    Prices on selected agricultural output | unit - | updated 2026-09-15T08:00:00
+    var PRODUKT product | [('1000', 'Soft wheat (DKK per 100 kg)'), ('1005', 'Rye (DKK per 100 kg)'), ('1010', 'Barley (DKK per 100 kg)'), ('1011', 'Malting barley (DKK per 100 kg)'), ('1015', 'Oats (DKK per 100 kg)'), ('1020', 'Triticale (DKK per 100 kg)'), ('1025', 'Rape (DKK per 100 kg)'), ('1030', 'Dried peas (DKK per 100 kg)'), ('1170', 'Potatoes for consumption (DKK per 100 kg)'), ('1245', 'Young bulls, O-quality, slaugthered (DKK per 100 kg)'), ('1250', 'Bullocks O-quality, slauthered (DKK per 100 kg)'), ('1255', 'Young cattle O-quality, 261-340 kg, slaughtered (DKK per 100 kg)'), ('1260', 'Cattle, P+quality, 221-240 kg, slaughtered (DKK per 100 kg)'), ('1265', 'Beef, weighted settlement price (DKK per 100 kg)'), ('1270', 'Calving cows, alive, settlement price (DKK per head)'), ('1275', 'Heifers, alive, settlement price (DKK per head)'), ('1280', 'Pigs carcasses, settlement price (DKK per 100 kg)'), ('1285', 'Sows carcasses, settlement pr (DKK per 100 kg)'), ('1290', 'Pigs carcasses, weighted settlement price (DKK per 100 kg)'), ('1295', 'Piglets, alive, 7 kg, settlement price (DKK per head)'), ('1300', 'Piglets, alive, 30 kg, settlement price (DKK per head)'), ('1305', 'Gilts, alive, settlement price (DKK per 100 heads) (2005-2017)'), ('1310', 'Pigs for breeding, alive, 22 weeks, settlement price (DKK per head) (2005-2017)'), ('1315', 'Broiling fowl, slaughtered, settlement price (DKK per 100 kg)'), ('1320', 'Raw cows milk actual fat content-prices (per 100 kg)'), ('1325', 'Raw cows milk, 4.2 pct. fat and 3.4 pct. protein (DKK per 100 kg)'), ('1360', 'Mink (DKK per hide)')] ... n=27
+    var ENHED unit | [('320', 'Current prices'), ('200', 'Percentage change compared to previous month (per cent)'), ('300', 'Percentage change compared to same month the year before (per cent)')] ... n=3
+    var Tid time | [('2005M01', '2005M01'), ('2005M02', '2005M02'), ('2005M03', '2005M03'), ('2005M04', '2005M04'), ('2005M05', '2005M05'), ('2005M06', '2005M06'), ('2005M07', '2005M07'), ('2005M08', '2005M08'), ('2005M09', '2005M09'), ('2005M10', '2005M10'), ('2005M11', '2005M11'), ('2005M12', '2005M12'), ('2006M01', '2006M01'), ('2006M02', '2006M02'), ('2006M03', '2006M03'), ('2006M04', '2006M04'), ('2006M05', '2006M05'), ('2006M06', '2006M06'), ('2006M07', '2006M07'), ('2006M08', '2006M08'), ('2006M09', '2006M09'), ('2006M10', '2006M10'), ('2006M11', '2006M11'), ('2006M12', '2006M12'), ('2007M01', '2007M01'), ('2007M02', '2007M02'), ('2007M03', '2007M03'), ('2007M04', '2007M04'), ('2007M05', '2007M05'), ('2007M06', '2007M06'), ('2007M07', '2007M07'), ('2007M08', '2007M08'), ('2007M09', '2007M09'), ('2007M10', '2007M10'), ('2007M11', '2007M11'), ('2007M12', '2007M12'), ('2008M01', '2008M01'), ('2008M02', '2008M02'), ('2008M03', '2008M03'), ('2008M04', '2008M04')] ... n=259
+DST info KORN 200
+    The utilization of cereals | unit m kg | updated 2026-09-11T08:00:00
+    var AFGRØDE crop | [('A6', 'CEREALS, TOTAL'), ('H105', 'Wheat'), ('H130', 'Rye'), ('H140', 'Triticale'), ('H145', 'Barley'), ('H172', 'Oats'), ('H615', 'Maize'), ('H204', 'OILSEED, TOTAL'), ('H205', 'Rape seeds')] ... n=9
+    var PERIODE period | [('KAAR', 'Calendar year'), ('DAAR', 'Working year (1/7 - 30/6)')] ... n=2
+    var OPRIND origin | [('004', 'Total danish and imported'), ('005', 'Produced in DK'), ('010', 'Import')] ... n=3
+    var TYPE type | [('0410', 'Production less waste'), ('0415', 'Imports'), ('0420', 'Stocks, primo'), ('0425', 'Seeds for sowing'), ('0430', 'Exports'), ('0435', 'Grinding for flour, groats etc.'), ('0440', 'For manufacturing'), ('0445', 'Stocks,  ultimo'), ('0450', 'Used for feeding')] ... n=9
+    var Tid time | [('1995', '1995'), ('1996', '1996'), ('1997', '1997'), ('1998', '1998'), ('1999', '1999'), ('2000', '2000'), ('2001', '2001'), ('2002', '2002'), ('2003', '2003'), ('2004', '2004'), ('2005', '2005'), ('2006', '2006'), ('2007', '2007'), ('2008', '2008'), ('2009', '2009'), ('2010', '2010'), ('2011', '2011'), ('2012', '2012'), ('2013', '2013'), ('2014', '2014'), ('2015', '2015'), ('2016', '2016'), ('2017', '2017'), ('2018', '2018'), ('2019', '2019'), ('2020', '2020'), ('2021', '2021'), ('2022', '2022'), ('2023', '2023'), ('2024', '2024'), ('2025', '2025')] ... n=31
+DST KORN2 data 400 b'{"errorTypeCode":"EXTRACT-NOTALLOWED","message":"Values must be selected for variable: AK"}'
+CBS 7425zuiv props 200
+    Perioden | Perioden | None
+     | Melkaanvoer | None
+    Hoeveelheid_1 | Hoeveelheid | 1 000 kg
+    Vetgehalte_2 | Vetgehalte | %
+    Eiwitgehalte_3 | Eiwitgehalte | %
+     | Zuivelproductie | None
+    Boter_4 | Boter | 1 000 kg
+    Fabriekskaas_5 | Fabriekskaas | 1 000 kg
+     | Melkpoeder | None
+    MelkpoederTotaal_6 | Melkpoeder, totaal | 1 000 kg
+    NietMagerMelkpoeder_7 | Niet-mager melkpoeder | 1 000 kg
+    MagerMelkpoeder_8 | Mager melkpoeder | 1 000 kg
+    GecondenseerdeMelk_9 | Gecondenseerde melk | 1 000 kg
+    Weipoeder_10 | Weipoeder | 1 000 kg
+CBS 7425zuiv last 200 b'{\r\n  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/7425zuiv/$metadata#Cbs.OData.WebAPI.TypedDataSet","value":[\r\n    {\r\n      "ID":0,"Perioden":"1995MM01","Hoeveelheid_1":911676,"Vetgehalte_2":4.58,"Eiwitgehalte_3":3.54,"Boter_4":null,"Fabriekskaas_5":58071,"MelkpoederTotaal_6":null,"NietMagerMelkpoeder_7":null,"MagerMelkpoeder_8":null,"GecondenseerdeMelk_9":null,"Weipoeder_10":null\r\n    },{\r\n      "ID":1,"Perioden":"1995MM02","Hoeveelheid_1":837617,"Vetgehalte_2":4.52,"Eiwitgehalte_3":3.48,"Boter_4":null,"Fabriekskaas_5":53419,"MelkpoederTotaal_6":null,"NietMagerMelkpoeder_7":null,"MagerMelkpoeder_8":null,"GecondenseerdeMelk_9":null,"Weipoeder_10":null\r\n    },{\r\n      "ID":2,"Perioden":"1995MM03","Hoeveelheid_1":940083,"Vetgehalte_2":4.51,"Eiwitgehalte_3":3.46,"Boter_4":null,"Fabriekskaas_5":59799,"MelkpoederTotaal_6":null,"NietMagerMelkpoeder_7":null,"MagerMelkpoeder_8":null,"GecondenseerdeMelk_9":null,"Weipoeder_10":null\r\n    }\r\n  ]\r\n}'
+CBS 86125NED props 200
+    LandbouwInOutputGoederenDiensten | Landbouw in-output goederen diensten | Dimension
+    Perioden | Perioden | TimeDimension
+    LandbouwprijsindexLPI_1 | Landbouwprijsindex (LPI) | Topic
+    KwartaalmutatieLandbouwindexLPI_2 | Kwartaalmutatie landbouwindex (LPI) | Topic
+    JaarmutatieLandbouwindexLPI_3 | Jaarmutatie landbouwindex (LPI) | Topic
+STATAT https://www.statistik.at/statistiken/land-und-forstwirtschaft/landwirtschaftliche-bilanzen/versorgungsbilanzen 200 197816
+STATAT https://www.statistik.at/statistiken/land-und-forstwirtschaft/landwirtschaftliche-bilanzen 200 89226
+STATAT https://www.statistik.at/statistiken/land-und-forstwirtschaft/preise-und-preisindizes 404 3000
+AMA preise 200 24547
+    /media/0oxncvgl/120_erzeugerpreise-fuer-getreide-und-oelsaaten-ab-2004_jaehrliche-aktualisierung.pdf
+    /media/35ojapcr/120_erzeugerpreise-fuer-getreide-und-oelsaaten-ab_2017_niederoesterreich.pdf
+    /media/aykhutds/bio_erzeugerpreise_2024_2025_1.pdf
+    /media/suzg2hm2/100_boersenotierungen-getreide-wien_wels-ab-1996_monatliche-aktualisierung.pdf
+    /media/wxnbavzk/110_boersenot_oelsaaten__wien_ab_2005_monatliche_aktualisier.pdf
+    /media/x0cn3w42/getreidepreise_2026.xlsx
+INE busca existências 0 b"URLError(TimeoutError(110, 'Connection timed out'))"
+INE busca balanço de aprovisionamento 0 b"URLError(TimeoutError(110, 'Connection timed out'))"
+INE busca manteiga 0 b"URLError(TimeoutError(110, 'Connection timed out'))"
+INE busca queijo 0 b"URLError(TimeoutError(110, 'Connection timed out'))"
+EUROSTAT apro_ec_egghen geo=AT 200 3639
+   dims ['freq', 'operator', 'agriprod', 'unit', 'geo', 'time'] times ['2021', '2022', '2023', '2024']
+EUROSTAT apro_ec_eggpcm geo=AT 404 b'{ "error": [{"status": 404,"id": 100,"label": "ERR_NOT_FOUND_4: APRO_EC_EGGPCM (DATA_FLOW:ALL,1.0) is not available for dissemination."}]}'
+   ESTAT flow EF_AH_BOVINE "Animal housing by type of bovine, utilised agricultural area, size classes of livestock units and NUTS 2 region"
+   ESTAT flow EF_AH_PIGS "Animal housing by type of pigs, utilised agricultural area, size classes of livestock units and NUTS 2 region"
+   ESTAT flow EF_AH_POULTRY "Animal housing by type of poultry, utilised agricultural area, size classes of livestock units and NUTS 2 region"
+   ESTAT flow EF_KVAAREG "Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holdin
+   ESTAT flow EF_KVAGE "Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA) and age of manager"
+   ESTAT flow EF_KVFTAA "Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and agricultural size of farm (UAA
+   ESTAT flow EF_LSK_ORG "Organic animal farming by utilised agricultural area, livestock unit, economic size of the farm and NUTS 2 region"
+   ESTAT flow TAG00124 "Agricultural holdings with livestock"
+   ESTAT flow EF_MPMANAA "Holder-manager relationship: area, livestock, labour force and standard output (SO) by agricultural size of farm (UAA) (2005-2013)"
+   ESTAT flow EF_MPTRAINECS "Agricultural training of farm managers: number of farms, agricultural area, labour force, standard output (SO) and livestock (LSU) by econo
+   ESTAT flow EF_MP_MS "Manure storage facilities by utilised agricultural area, size class of livestock, farm type and NUTS 2 region"
+   ESTAT flow EF_OGAAA "Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by 
+   ESTAT flow EF_OGAAGE "Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by 
+   ESTAT flow EF_OGADSEXAGE "Other gainful activities directly related to the holding: number of farms, agricultural area, standard output (SO) and livestock (LSU) by a
+   ESTAT flow EF_OGAECS "Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by 
+   ESTAT flow EF_OGAFT "Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by 
+   ESTAT flow EF_OLSAAREG "Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region"
+   ESTAT flow ENPE_APRO_MT_LS "Livestock - ENP-East countries"
+   ESTAT flow ENPS_APRO_MT_LS "Livestock - ENP-South countries"
+   ESTAT flow APRO_MK_STRBT "Butter - distribution of enterprises by volume of annual production"
+   ESTAT flow APRO_MK_STRCH "Cheese - distribution of enterprises by volume of annual production"
+   ESTAT flow APRO_MT_LSAVCH_R "Average livestock population of chicken by NUTS 2 region"
+   ESTAT flow APRO_MT_LSAVORG "Average populations of certified organic livestock"
+   ESTAT flow APRO_MT_LSEQUI "Livestock - Equidae - annual data (1960-1997)"
+   ESTAT flow APRO_MT_LSORG "Populations of certified organic livestock"
+FAO 5 csv 612915
+   PSD ('Austria', 'Animal Numbers, Cattle') 1992
+   PSD ('Austria', 'Animal Numbers, Swine') 1992
+   PSD ('Austria', 'Apples, Fresh') 1999
+   PSD ('Austria', 'Cherries (Sweet&Sour), Fresh') 2026
+   PSD ('Austria', 'Cotton') 2026
+   PSD ('Austria', 'Dairy, Butter') 1996
+   PSD ('Austria', 'Dairy, Cheese') 1996
+   PSD ('Austria', 'Dairy, Milk, Fluid') 1996
+   PSD ('Austria', 'Dairy, Milk, Nonfat Dry') 1996
+   PSD ('Austria', 'Meal, Copra') 1981
+   PSD ('Austria', 'Meal, Fish') 1990
+   PSD ('Austria', 'Meal, Rapeseed') 1990
+   PSD ('Austria', 'Meal, Soybean') 1990
+   PSD ('Austria', 'Meal, Sunflowerseed') 1990
+   PSD ('Austria', 'Meat, Beef and Veal') 1992
+   PSD ('Austria', 'Meat, Swine') 1992
+   PSD ('Austria', 'Oil, Coconut') 1990
+   PSD ('Austria', 'Oil, Cottonseed') 1976
+   PSD ('Austria', 'Oil, Palm') 1990
+   PSD ('Austria', 'Oil, Rapeseed') 1990
+   PSD ('Austria', 'Oil, Soybean') 1990
+   PSD ('Austria', 'Oil, Sunflowerseed') 1990
+   PSD ('Austria', 'Oilseed, Peanut') 1990
+   PSD ('Austria', 'Oilseed, Rapeseed') 1990
+   PSD ('Austria', 'Oilseed, Soybean') 1990
+   PSD ('Austria', 'Oilseed, Sunflowerseed') 1990
+   PSD ('Austria', 'Peaches & Nectarines, Fresh') 1996
+   PSD ('Austria', 'Pears, Fresh') 1999
+   PSD ('Austria', 'Poultry, Meat, Broiler') 1996
+   PSD ('Austria', 'Sugar, Centrifugal') 1994
+   PSD ('Denmark', 'Animal Numbers, Cattle') 1992
+   PSD ('Denmark', 'Animal Numbers, Swine') 1992
+   PSD ('Denmark', 'Apples, Fresh') 1999
+   PSD ('Denmark', 'Cotton') 2026
+   PSD ('Denmark', 'Dairy, Butter') 1996
+   PSD ('Denmark', 'Dairy, Cheese') 1996
+   PSD ('Denmark', 'Dairy, Dry Whole Milk Powder') 1996
+   PSD ('Denmark', 'Dairy, Milk, Fluid') 1996
+   PSD ('Denmark', 'Dairy, Milk, Nonfat Dry') 1996
+   PSD ('Denmark', 'Meal, Copra') 1990
+   PSD ('Denmark', 'Meal, Cottonseed') 1990
+   PSD ('Denmark', 'Meal, Fish') 1990
+   PSD ('Denmark', 'Meal, Palm Kernel') 1990
+   PSD ('Denmark', 'Meal, Rapeseed') 1990
+   PSD ('Denmark', 'Meal, Soybean') 1990
+   PSD ('Denmark', 'Meal, Sunflowerseed') 1990
+   PSD ('Denmark', 'Meat, Beef and Veal') 1992
+   PSD ('Denmark', 'Meat, Swine') 1992
+   PSD ('Denmark', 'Oil, Coconut') 1990
+   PSD ('Denmark', 'Oil, Palm') 1990
+   PSD ('Denmark', 'Oil, Palm Kernel') 1990
+   PSD ('Denmark', 'Oil, Rapeseed') 1990
+   PSD ('Denmark', 'Oil, Soybean') 1990
+   PSD ('Denmark', 'Oil, Sunflowerseed') 1990
+   PSD ('Denmark', 'Oilseed, Copra') 1990
+   PSD ('Denmark', 'Oilseed, Cottonseed') 1980
+   PSD ('Denmark', 'Oilseed, Palm Kernel') 1983
+   PSD ('Denmark', 'Oilseed, Rapeseed') 1990
+   PSD ('Denmark', 'Oilseed, Soybean') 1990
+   PSD ('Denmark', 'Oilseed, Sunflowerseed') 1990
+   PSD ('Denmark', 'Pears, Fresh') 1999
+   PSD ('Denmark', 'Poultry, Meat, Broiler') 1996
+   PSD ('Denmark', 'Sugar, Centrifugal') 1971
+   PSD ('European Union', 'Almonds, Shelled Basis') 2025
+   PSD ('European Union', 'Animal Numbers, Cattle') 2027
+   PSD ('European Union', 'Animal Numbers, Swine') 2027
+   PSD ('European Union', 'Apples, Fresh') 2025
+   PSD ('European Union', 'Barley') 2026
+   PSD ('European Union', 'Cherries (Sweet&Sour), Fresh') 2026
+   PSD ('European Union', 'Coffee, Green') 2026
+   PSD ('European Union', 'Corn') 2026
+   PSD ('European Union', 'Dairy, Butter') 2026
+   PSD ('European Union', 'Dairy, Cheese') 2026
+   PSD ('European Union', 'Dairy, Dry Whole Milk Powder') 2026
+   PSD ('European Union', 'Dairy, Milk, Fluid') 2026
+   PSD ('European Union', 'Dairy, Milk, Nonfat Dry') 2026
+   PSD ('European Union', 'Grapefruit, Fresh') 2025
+   PSD ('European Union', 'Grapes, Fresh Table') 2025
+   PSD ('European Union', 'Lemons/Limes, Fresh') 2025
+   PSD ('European Union', 'Meal, Copra') 2026
+   PSD ('European Union', 'Meal, Cottonseed') 2026
+   PSD ('European Union', 'Meal, Fish') 2025
+   PSD ('European Union', 'Meal, Palm Kernel') 2026
+   PSD ('European Union', 'Meal, Peanut') 2026
+   PSD ('European Union', 'Meal, Rapeseed') 2026
+   PSD ('European Union', 'Meal, Soybean') 2026
+   PSD ('European Union', 'Meal, Sunflowerseed') 2026
+   PSD ('European Union', 'Meat, Beef and Veal') 2027
+   PSD ('European Union', 'Meat, Chicken') 2027
+   PSD ('European Union', 'Meat, Swine') 2027
+   PSD ('European Union', 'Mixed Grain') 2026
+   PSD ('European Union', 'Oats') 2026
+   PSD ('European Union', 'Oil, Coconut') 2026
+   PSD ('European Union', 'Oil, Cottonseed') 2026
+   PSD ('European Union', 'Oil, Olive') 2026
+   PSD ('European Union', 'Oil, Palm') 2026
+   PSD ('European Union', 'Oil, Palm Kernel') 2026
+   PSD ('European Union', 'Oil, Peanut') 2026
+   PSD ('European Union', 'Oil, Rapeseed') 2026
+   PSD ('European Union', 'Oil, Soybean') 2026
+   PSD ('European Union', 'Oil, Sunflowerseed') 2026
+   PSD ('European Union', 'Oilseed, Copra') 2026
+   PSD ('European Union', 'Oilseed, Cottonseed') 2026
+   PSD ('European Union', 'Oilseed, Palm Kernel') 2026
+   PSD ('European Union', 'Oilseed, Peanut') 2026
+   PSD ('European Union', 'Oilseed, Rapeseed') 2026
+   PSD ('European Union', 'Oilseed, Soybean') 2026
+   PSD ('European Union', 'Oilseed, Sunflowerseed') 2026
+   PSD ('European Union', 'Orange Juice') 2025
+   PSD ('European Union', 'Oranges, Fresh') 2025
+   PSD ('European Union', 'Peaches & Nectarines, Fresh') 2026
+   PSD ('European Union', 'Pears, Fresh') 2025
+   PSD ('European Union', 'Pistachios, Inshell Basis') 2025
+   PSD ('European Union', 'Poultry, Meat, Broiler') 2016
+   PSD ('European Union', 'Rice, Milled') 2026
+   PSD ('European Union', 'Rye') 2026
+   PSD ('European Union', 'Sorghum') 2026
+   PSD ('European Union', 'Sugar, Centrifugal') 2026
+   PSD ('European Union', 'Tangerines/Mandarins, Fresh') 2025
+   PSD ('European Union', 'Walnuts, Inshell Basis') 2025
+   PSD ('European Union', 'Wheat') 2026
+   PSD ('Netherlands', 'Animal Numbers, Cattle') 1992
+   PSD ('Netherlands', 'Animal Numbers, Swine') 1992
+   PSD ('Netherlands', 'Apples, Fresh') 2003
+   PSD ('Netherlands', 'Cherries (Sweet&Sour), Fresh') 2026
+   PSD ('Netherlands', 'Cotton') 2026
+   PSD ('Netherlands', 'Dairy, Butter') 1996
+   PSD ('Netherlands', 'Dairy, Cheese') 1996
+   PSD ('Netherlands', 'Dairy, Dry Whole Milk Powder') 1996
+   PSD ('Netherlands', 'Dairy, Milk, Fluid') 1996
+   PSD ('Netherlands', 'Dairy, Milk, Nonfat Dry') 1996
+   PSD ('Netherlands', 'Grapefruit, Fresh') 1992
+   PSD ('Netherlands', 'Grapes, Fresh Table') 1992
+   PSD ('Netherlands', 'Lemons/Limes, Fresh') 1992
+   PSD ('Netherlands', 'Meal, Copra') 1990
+   PSD ('Netherlands', 'Meal, Cottonseed') 1990
+   PSD ('Netherlands', 'Meal, Fish') 1990
+   PSD ('Netherlands', 'Meal, Palm Kernel') 1990
+   PSD ('Netherlands', 'Meal, Peanut') 1990
+   PSD ('Netherlands', 'Meal, Rapeseed') 1990
+   PSD ('Netherlands', 'Meal, Soybean') 1990
+   PSD ('Netherlands', 'Meal, Sunflowerseed') 1990
+   PSD ('Netherlands', 'Meat, Beef and Veal') 1992
+   PSD ('Netherlands', 'Meat, Swine') 1992
+   PSD ('Netherlands', 'Oil, Coconut') 1990
+   PSD ('Netherlands', 'Oil, Cottonseed') 1990
+   PSD ('Netherlands', 'Oil, Olive') 1990
+   PSD ('Netherlands', 'Oil, Palm') 1990
+   PSD ('Netherlands', 'Oil, Palm Kernel') 1990
+   PSD ('Netherlands', 'Oil, Peanut') 1990
+   PSD ('Netherlands', 'Oil, Rapeseed') 1990
+   PSD ('Netherlands', 'Oil, Soybean') 1990
+   PSD ('Netherlands', 'Oil, Sunflowerseed') 1990
+   PSD ('Netherlands', 'Oilseed, Copra') 1985
+   PSD ('Netherlands', 'Oilseed, Peanut') 1990
+   PSD ('Netherlands', 'Oilseed, Rapeseed') 1990
+   PSD ('Netherlands', 'Oilseed, Soybean') 1990
+   PSD ('Netherlands', 'Oilseed, Sunflowerseed') 1990
+   PSD ('Netherlands', 'Orange Juice') 1993
+   PSD ('Netherlands', 'Oranges, Fresh') 1992
+   PSD ('Netherlands', 'Peaches & Nectarines, Fresh') 2026
+   PSD ('Netherlands', 'Pears, Fresh') 2003
+   PSD ('Netherlands', 'Poultry, Meat, Broiler') 1996
+   PSD ('Netherlands', 'Sugar, Centrifugal') 1976
+   PSD ('Netherlands', 'Tangerines/Mandarins, Fresh') 1992
+   PSD ('Poland', 'Animal Numbers, Cattle') 1998
+   PSD ('Poland', 'Animal Numbers, Swine') 1998
+   PSD ('Poland', 'Apples, Fresh') 2008
+   PSD ('Poland', 'Barley') 1998
+   PSD ('Poland', 'Cherries (Sweet&Sour), Fresh') 2026
+   PSD ('Poland', 'Corn') 1998
+   PSD ('Poland', 'Cotton') 2026
+   PSD ('Poland', 'Dairy, Butter') 1998
+   PSD ('Poland', 'Dairy, Cheese') 1998
+   PSD ('Poland', 'Dairy, Dry Whole Milk Powder') 1998
+   PSD ('Poland', 'Dairy, Milk, Fluid') 1998
+   PSD ('Poland', 'Dairy, Milk, Nonfat Dry') 1998
+   PSD ('Poland', 'Meal, Copra') 1988
+   PSD ('Poland', 'Meal, Fish') 1998
+   PSD ('Poland', 'Meal, Palm Kernel') 1990
+   PSD ('Poland', 'Meal, Rapeseed') 1998
+   PSD ('Poland', 'Meal, Soybean') 1998
+   PSD ('Poland', 'Meat, Beef and Veal') 1998
+   PSD ('Poland', 'Meat, Swine') 1998
+   PSD ('Poland', 'Mixed Grain') 1998
+   PSD ('Poland', 'Oats') 1998
+   PSD ('Poland', 'Oil, Coconut') 1998
+   PSD ('Poland', 'Oil, Cottonseed') 1976
+   PSD ('Poland', 'Oil, Palm') 1998
+   PSD ('Poland', 'Oil, Palm Kernel') 1988
+   PSD ('Poland', 'Oil, Rapeseed') 1998
+   PSD ('Poland', 'Oil, Soybean') 1998
+   PSD ('Poland', 'Oil, Sunflowerseed') 1998
+   PSD ('Poland', 'Oilseed, Cottonseed') 1971
+   PSD ('Poland', 'Oilseed, Rapeseed') 1998
+   PSD ('Poland', 'Oilseed, Soybean') 1998
+   PSD ('Poland', 'Oilseed, Sunflowerseed') 1985
+   PSD ('Poland', 'Peaches & Nectarines, Fresh') 2026
+   PSD ('Poland', 'Poultry, Meat, Broiler') 1998
+   PSD ('Poland', 'Rice, Milled') 1998
+   PSD ('Poland', 'Rye') 1998
+   PSD ('Poland', 'Sorghum') 1995
+   PSD ('Poland', 'Sugar, Centrifugal') 2003
+   PSD ('Poland', 'Wheat') 1998
+   PSD ('Portugal', 'Almonds, Shelled Basis') 1992
+   PSD ('Portugal', 'Animal Numbers, Cattle') 1992
+   PSD ('Portugal', 'Animal Numbers, Swine') 1992
+   PSD ('Portugal', 'Cotton') 2026
+   PSD ('Portugal', 'Dairy, Butter') 1996
+   PSD ('Portugal', 'Dairy, Cheese') 1996
+   PSD ('Portugal', 'Dairy, Dry Whole Milk Powder') 1996
+   PSD ('Portugal', 'Dairy, Milk, Fluid') 1996
+   PSD ('Portugal', 'Dairy, Milk, Nonfat Dry') 1996
+   PSD ('Portugal', 'Meal, Copra') 1990
+   PSD ('Portugal', 'Meal, Fish') 1990
+   PSD ('Portugal', 'Meal, Palm Kernel') 1990
+   PSD ('Portugal', 'Meal, Peanut') 1990
+   PSD ('Portugal', 'Meal, Soybean') 1990
+   PSD ('Portugal', 'Meal, Sunflowerseed') 1990
+   PSD ('Portugal', 'Meat, Beef and Veal') 1992
+   PSD ('Portugal', 'Meat, Swine') 1992
+   PSD ('Portugal', 'Oil, Coconut') 1990
+   PSD ('Portugal', 'Oil, Olive') 1990
+   PSD ('Portugal', 'Oil, Palm') 1990
+   PSD ('Portugal', 'Oil, Palm Kernel') 1990
+   PSD ('Portugal', 'Oil, Soybean') 1990
+   PSD ('Portugal', 'Oil, Sunflowerseed') 1990
+   PSD ('Portugal', 'Oilseed, Copra') 1990
+   PSD ('Portugal', 'Oilseed, Palm Kernel') 1990
+   PSD ('Portugal', 'Oilseed, Peanut') 1990
+   PSD ('Portugal', 'Oilseed, Soybean') 1990
+   PSD ('Portugal', 'Oilseed, Sunflowerseed') 1990
+   PSD ('Portugal', 'Peaches & Nectarines, Fresh') 2026
+   PSD ('Portugal', 'Poultry, Meat, Broiler') 1996
+   PSD ('Portugal', 'Sugar, Centrifugal') 1983
