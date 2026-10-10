@@ -1,0 +1,18 @@
+name: probe-ismea
+on: push
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          set +e; mkdir -p probe
+          for h in www.ismeamercati.it www.ismea.it; do
+            echo "== $h" >> probe/tls.out.txt
+            echo | openssl s_client -connect $h:443 -servername $h -showcerts 2>&1 | grep -E "^(depth|verify|Verification|subject|issuer| [0-9] s:|   i:|---)|Verify return|error" >> probe/tls.out.txt
+            echo | openssl s_client -connect $h:443 -servername $h 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext authorityInfoAccess 2>&1 >> probe/tls.out.txt
+          done
+          git config user.name probe; git config user.email probe@x
+          git add -f probe; git commit -qm "probe out"; git push origin HEAD:research/probe-ismea-out -f
