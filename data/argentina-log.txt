@@ -41,4 +41,8 @@ faena ok
 descartada ar-sspm-barley-feed-area ultimo 2006
 descartada ar-sspm-barley-feed-production ultimo 2006
 campanas ok
-series 89
+descartada ar-indec-retail-gba-aceite-mezcla ultimo 2016-11
+precios minoristas INDEC 89
+SIPM INDEC 13
+gasoil agro ok
+series 192
