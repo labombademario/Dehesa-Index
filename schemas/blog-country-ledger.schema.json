@@ -1,0 +1,63 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - registro de llegada de datos por pais (ultimo periodo de cada serie y dia en que se vio)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "country",
+  "since",
+  "updatedAt",
+  "series"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "country": {
+   "type": "string",
+   "enum": [
+    "ES",
+    "FR",
+    "IT",
+    "DE",
+    "US"
+   ]
+  },
+  "since": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d\\d-\\d\\d$"
+  },
+  "updatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d\\d-\\d\\d$"
+  },
+  "series": {
+   "type": "object",
+   "minProperties": 1,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "p",
+     "v",
+     "seen",
+     "new"
+    ],
+    "properties": {
+     "p": {
+      "type": "string",
+      "minLength": 4
+     },
+     "v": {
+      "type": "number"
+     },
+     "new": {
+      "type": "boolean"
+     }
+    }
+   }
+  }
+ }
+}

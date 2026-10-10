@@ -3098,6 +3098,40 @@ def blog_weekly_index(doc, errs, warns, stats):
     stats["blog-weekly semanas"] = len(ws)
 
 
+def blog_country_week(doc, errs, warns, stats):
+    """«La semana en...» (build-country-weeks.py): semana lunes-domingo, cobertura dentro de la semana, cada dato destacado llego esa semana y despues
+    del inicio de la cobertura, los totales cuadran con los bloques, los movimientos van de mayor a menor y sin estimaciones (valor y cambio numericos)."""
+    try: lo, hi = _wk_bounds(doc["week"])
+    except Exception: errs.append("blog-country-week: semana invalida %r" % doc.get("week")); return
+    w = "%s %s" % (doc["country"], doc["week"])
+    if (doc["from"], doc["to"]) != (lo, hi): errs.append("blog-country-week %s: from/to no son lunes-domingo" % w); return
+    cov = doc["coverage"]["from"]
+    if not (lo <= cov <= hi): errs.append("blog-country-week %s: cobertura fuera de la semana" % w); return
+    t = doc["totals"]
+    if sum(t["byBlock"].values()) != t["updates"]: errs.append("blog-country-week %s: los bloques no suman el total" % w); return
+    for r in doc["movers"] + doc["releases"]:
+        if not (cov <= r["seen"] <= hi): errs.append("blog-country-week %s: %s llego fuera de la semana (%s)" % (w, r["id"], r["seen"])); return
+    if any(r["block"] != "precios" or r["changePct"] is None for r in doc["movers"]): errs.append("blog-country-week %s: movimiento que no es un precio o sin cambio" % w); return
+    ch = [abs(r["changePct"]) for r in doc["movers"]]
+    if ch != sorted(ch, reverse=True): errs.append("blog-country-week %s: movimientos desordenados" % w); return
+    if any(not (lo <= n["date"] <= hi) for n in doc["news"]): errs.append("blog-country-week %s: titular fuera de la semana" % w); return
+    if len(doc["news"]) > t["news"]: errs.append("blog-country-week %s: mas titulares que noticias contadas" % w); return
+    stats["semana %s" % doc["country"]] = t["updates"]
+
+
+def blog_country_index(doc, errs, warns, stats):
+    """Indice de «La semana en...»: por pais, semanas de la mas nueva a la mas antigua, sin repetir, lunes-domingo, y su fichero existe."""
+    for cc, rows in doc["countries"].items():
+        ws = [r["week"] for r in rows]
+        if ws != sorted(set(ws), reverse=True): errs.append("blog-country-index %s: semanas desordenadas o repetidas" % cc); return
+        for r in rows:
+            try: lo, hi = _wk_bounds(r["week"])
+            except Exception: errs.append("blog-country-index %s: semana invalida %r" % (cc, r["week"])); return
+            if (r["from"], r["to"]) != (lo, hi): errs.append("blog-country-index %s %s: fechas incoherentes" % (cc, r["week"])); return
+            if not (ROOT / "data" / "blog" / "countries" / cc / (r["week"] + ".json")).exists(): errs.append("blog-country-index %s %s: falta el fichero de la semana" % (cc, r["week"])); return
+    stats["semanas por pais"] = sum(len(v) for v in doc["countries"].values())
+
+
 def blog_edition(doc, errs, warns, stats):
     """Edicion del blog semanal (archivo editorial unico, derivado del resumen): nace DRAFT sin revisor; APPROVED/PUBLISHED exigen revisor y fecha; Substack solo distribuye (nada
     publicado mientras sea DRAFT); canonica en dehesaindex.com; 4 idiomas con titulo, extracto, Markdown limpio y newsletter mas corta; cada fuente es un titular del resumen de esa semana."""

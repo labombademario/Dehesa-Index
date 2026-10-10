@@ -126,6 +126,7 @@ const PAGES = [
   ['calendario.html', tri('Calendario', 'Calendar', 'Calendrier', 'Calendario'), 'calendario calendar calendrier informes fechas publicacion wasde'],
   ['informacion.html', tri('Información y fuentes', 'Information and sources', 'Informations et sources', 'Informazioni e fonti'), 'informacion información fuentes sources quienes somos about acerca'],
   ['blog.html', tri('Blog', 'Blog', 'Blog', 'Blog'), 'blog notas analisis análisis articulos'],
+  ['semana.html', tri('La semana en cada país', 'The week in each country', 'La semaine dans chaque pays', 'La settimana in ogni paese'), 'semana resumen semanal pais españa francia italia alemania eeuu week weekly'],
   ['empresas.html', tri('Empresas', 'Business', 'Entreprises', 'Aziende'), 'empresas business companies profesionales datos api'],
   ['contacto.html', tri('Contacto', 'Contact', 'Contact', 'Contatti'), 'contacto contact contatti email correo escribir'],
   ['metodologia.html', tri('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), 'metodologia methodology méthodologie como se calcula how calculated fuentes verificacion'],

@@ -33,11 +33,13 @@ def slim(x):
     if not t or not x.get("url") or not re.match(r"^\d{4}-\d\d-\d\d$", x.get("date", "")): return None
     o = {"id": x["id"], "date": x["date"], "region": x.get("region") or "global", "topic": x.get("topic") or "", "topics": x.get("topics") or [],
          "products": x.get("products") or [], "source": x.get("source") or "", "lang": lang, "h": t[:300], "url": x["url"], "rel": int(x.get("relevance") or 0)}
+    if re.match(r"^[A-Z]{2}$", x.get("country") or ""): o["country"] = x["country"]   # pais del medio (para «La semana en...», build-country-weeks.py)
     return o
 
 KEEP_REL = 54   # relevancia a partir de la cual se guarda el registro completo (el resto solo cuenta: id, fecha, region, tema, productos, medio)
 FULL_REGIONS = ("us", "ca", "uk")  # estas regiones tienen pocas noticias: se guardan todas completas para poder destacar titulares de ellas
-def keep_full(i): return i["rel"] >= KEEP_REL or i["region"] in FULL_REGIONS
+COUNTRY_FULL = ("ES", "FR", "IT", "DE", "US")  # medios de los paises con «La semana en...»: se guardan completos para poder enlazar sus titulares
+def keep_full(i): return i["rel"] >= KEEP_REL or i["region"] in FULL_REGIONS or i.get("country") in COUNTRY_FULL
 def lite(i): return [i["id"], i["date"], i["region"], i["topic"], i["products"], i["source"]]
 def unlite(r): return {"id": r[0], "date": r[1], "region": r[2], "topic": r[3], "products": r[4], "source": r[5]}
 
@@ -57,7 +59,7 @@ def archive(doc):
         for r in rows:
             if keep_full(r):
                 o = full.get(r["id"])
-                if o is None or r["rel"] > o["rel"]: full[r["id"]] = r
+                if o is None or r["rel"] > o["rel"] or (r.get("country") and not o.get("country")): full[r["id"]] = r
                 rest.pop(r["id"], None)
             elif r["id"] not in full and r["id"] not in rest: rest[r["id"]] = lite(r)
         cov = max(mon.isoformat(), snap)

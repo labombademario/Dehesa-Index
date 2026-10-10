@@ -7,7 +7,7 @@ import path from 'node:path';
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('--base', 'http://localhost:8123'), ONLY = (arg('--only', '') || '').split(',').filter(Boolean), SHOTS = arg('--shots', null), STRICT = process.argv.includes('--strict');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
-const PAGES = [['index', '/'], ['precios', '/precios.html'], ['producto', '/producto.html'], ['paises', '/paises.html?c=ES'], ['comparador', '/comparador.html'], ['calculadora', '/calculadora.html'],
+const PAGES = [['index', '/'], ['precios', '/precios.html'], ['semana', '/semana.html?c=ES'], ['producto', '/producto.html'], ['paises', '/paises.html?c=ES'], ['comparador', '/comparador.html'], ['calculadora', '/calculadora.html'],
   ['mi-seguimiento', '/mi-seguimiento.html'], ['mi-explotacion', '/mi-explotacion.html'], ['brief', '/brief.html'], ['precios-locales', '/precios-locales.html'], ['lonjas', '/lonjas.html'], ['mi-mercado', '/mi-mercado.html?c=US&r=KS&p=cattle'], ['observatorio', '/observatorio.html'], ['pac', '/pac.html'], ['siembra', '/siembra.html?c=US&r=IA']];
 const VPS = [375, 390, 430, 768, 1280];
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());

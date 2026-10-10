@@ -1,0 +1,64 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - indice de «La semana en...» por pais",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "countries",
+  "generatedAt"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "countries": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "required": [
+      "week",
+      "from",
+      "to",
+      "complete",
+      "updates",
+      "news"
+     ],
+     "properties": {
+      "week": {
+       "type": "string",
+       "pattern": "^\\d{4}-W\\d\\d$"
+      },
+      "from": {
+       "type": "string",
+       "pattern": "^\\d{4}-\\d\\d-\\d\\d$"
+      },
+      "to": {
+       "type": "string",
+       "pattern": "^\\d{4}-\\d\\d-\\d\\d$"
+      },
+      "complete": {
+       "type": "boolean"
+      },
+      "updates": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "news": {
+       "type": "integer",
+       "minimum": 0
+      }
+     }
+    }
+   }
+  }
+ }
+}

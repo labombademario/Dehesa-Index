@@ -773,6 +773,12 @@
    [
     "france_cereobs_cp"
    ]
+  ],
+  "blog/countries/index.json": [
+   "blog-country-index",
+   [
+    "blog_country_index"
+   ]
   ]
  },
  "globs": {
@@ -919,6 +925,16 @@
    [
     "supply_balances"
    ]
+  ],
+  "blog/countries/??/20*.json": [
+   "blog-country-week",
+   [
+    "blog_country_week"
+   ]
+  ],
+  "blog/countries/ledger/*.json": [
+   "blog-country-ledger",
+   []
   ]
  },
  "derived": [

@@ -25,6 +25,7 @@ const PAGES = [
   { n: 'producto', url: '/producto.html', crit: ['#pr-body'] },
   { n: 'paises', url: '/paises.html?c=ES', crit: ['#paises-body'] },
   { n: 'perfiles', url: '/perfiles.html', crit: ['#perfiles-body'] },
+  { n: 'semana', url: '/semana.html?c=ES', crit: ['#sw-root details'] },
   { n: 'comparador', url: '/comparador.html', crit: ['#cmp-body'] },
   { n: 'calculadora', url: '/calculadora.html', crit: ['#cc-body'] },
   { n: 'mi-explotacion', url: '/mi-explotacion.html', crit: ['#fx-body .fx-line'] },
