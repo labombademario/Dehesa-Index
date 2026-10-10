@@ -1,0 +1,808 @@
+SIPM 200 1060864 b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1'
+
+### SHEET Índice 7 1
+  H 0 ['SISTEMA DE INDICES DE PRECIOS MAYORISTAS']
+  H 1 ['']
+  H 2 ['Índice']
+  H 3 ['']
+  H 4 ['Cuadro 1. Índice de Precios Internos al ']
+  H 5 ['Cuadro 2. Índice de Precios Internos Bás']
+  H 6 ['Cuadro 3. Índice de Precios Básicos del ']
+  R 0 SISTEMA DE INDICES DE PRECIOS MAYORISTAS (SIPM)
+  R 2 Índice
+  R 4 Cuadro 1. Índice de Precios Internos al por Mayor (IPIM), ba
+  R 5 Cuadro 2. Índice de Precios Internos Básicos al por Mayor (I
+  R 6 Cuadro 3. Índice de Precios Básicos del Productor (IPP), bas
+  LASTROW ['Cuadro 3. Índice de ']
+  LASTCOLS ['SISTEMA DE INDICES D', '', 'Índice', '', 'Cuadro 1. Índice de ', 'Cuadro 2. Índice de ', 'Cuadro 3. Índice de ']
+
+### SHEET IPIM 155 131
+  H 0 ['SISTEMA DE INDICES DE PRECIOS MAYORISTAS', '', '', '', '', '', '', '']
+  H 1 ['Índice de Precios Internos al por Mayor ', '', '', '', '', '', '', '']
+  H 2 ['', '', '', '', '', '', '', '']
+  H 3 ['Código', 'Descripción', '2015.0', '2016.0', '', '', '', '']
+  H 4 ['', '', 'Dic', 'Ene', 'Feb', 'Mar', 'Abr', 'May']
+  H 5 ['', '', 'Número índice', '', '', '', '', '']
+  H 6 ['', '', '', '', '', '', '', '']
+  H 7 ['NG', 'Nivel general', '100.0', '108.78717907264219', '114.17088428630503', '117.00064795567658', '118.81257592587166', '123.09935363533172']
+  H 8 ['', '', '', '', '', '', '', '']
+  H 9 ['N', 'Productos nacionales', '100.0', '108.0986418490554', '113.15850386946602', '116.21910709194755', '118.3127688611672', '123.01902531578152']
+  H 10 ['', '', '', '', '', '', '', '']
+  H 11 ['1.0', 'Primarios', '100.0', '109.22178107352131', '114.72663147724357', '117.64736984626894', '118.20034923591591', '120.30055308755169']
+  R 0 SISTEMA DE INDICES DE PRECIOS MAYORISTAS (SIPM)
+  R 1 Índice de Precios Internos al por Mayor (IPIM), base año 199
+  R 3 Código | Descripción | 2015.0 | 2016.0
+  R 4 Dic | Ene
+  R 5 Número índice
+  R 7 NG | Nivel general | 100.0 | 108.78717907264219
+  R 9 N | Productos nacionales | 100.0 | 108.0986418490554
+  R 11 1.0 | Primarios | 100.0 | 109.22178107352131
+  R 13 A |  Productos agropecuarios | 100.0 | 102.55410419205293
+  R 14 011 |  Agrícolas | 100.0 | 117.96485790818818
+  R 15 0111 |  Cereales y oleaginosas | 100.0 | 113.75705349740785
+  R 16 0112 |  Hortalizas y legumbres | 100.0 | 109.60990606329119
+  R 17 0113 |  Frutas | 100.0 | 138.76662159775498
+  R 18 012 |  Ganaderos | 100.0 | 96.9028321258066
+  R 19 0121 |  Ganado vacuno y leche | 100.0 | 96.1492935818583
+  R 20 0122 |  Ganado porcino y productos de granja | 100.0 | 102.10387987996239
+  R 21 B |  Productos pesqueros | 100.0 | 112.51446109959966
+  R 22 C |  Productos minerales | 100.0 | 115.72792005248762
+  R 23 11.0 |  Petróleo crudo y gas natural | 100.0 | 116.46162303684777
+  R 24 14.0 |  Productos minerales no metalíferos | 100.0 | 104.72645616588248
+  R 26 2.0 | Industria Manufacturera y Energía Eléctrica | 100.0 | 107.72969086550523
+  R 28 D |  Productos manufacturados | 100.0 | 107.80434850506313
+  R 29 15.0 |  Alimentos y bebidas | 100.0 | 103.894454715925
+  R 30 151.0 |  Productos de carnes, pescados, frutas, legumbres, hortaliza | 100.0 | 101.25268372316913
+  R 31 1511.0 |  Productos cárnicos | 100.0 | 97.24303300553863
+  R 32 1512.0 |  Conservas de pescados | 100.0 | 106.8132497653455
+  R 33 1513.0 |  Conservas de frutas, hortalizas y legumbres | 100.0 | 103.91032768844433
+  R 34 1514.0 |  Aceites y grasas vegetales | 100.0 | 129.7954671609212
+  R 35 152.0 |  Productos lácteos | 100.0 | 104.79012136397256
+  R 36 153.0 |  Productos de molinería, almidones y alimentos balanceados | 100.0 | 105.41220665909479
+  R 37 1531.0 |  Harinas | 100.0 | 100.69033920492465
+  R 38 1532.0 |  Productos derivados del almidón | 100.0 | 108.25172419600423
+  R 39 1533.0 |  Alimentos balanceados | 100.0 | 118.56497037638204
+  R 40 154.0 |  Otros productos alimenticios | 100.0 | 105.98797461599234
+  R 41 1541.0 |  Productos de panadería | 100.0 | 102.44980055825468
+  R 42 1542.0 |  Azúcar | 100.0 | 106.54492885789237
+  R 43 1543.0 |  Productos de chocolate y golosinas | 100.0 | 111.23003887795248
+  R 44 1544.0 |  Productos farináceos | 100.0 | 103.61090883617076
+  R 45 1549.0 |  Otros productos alimenticios n.c.e.p. | 100.0 | 110.15934069893511
+  R 46 155.0 |  Alcohol etílico y bebidas | 100.0 | 103.10418452012327
+  R 47 1551.0 |  Alcohol etílico y bebidas alcohólicas destiladas | 100.0 | 101.78454423209014
+  R 48 1552.0 |  Vinos y sidra | 100.0 | 102.78180650872872
+  R 49 1553.0 |  Cervezas | 100.0 | 113.25180644413012
+  R 50 1554.0 |  Bebidas no alcohólicas | 100.0 | 100.48019976640315
+  R 51 16.0 |  Tabaco | 100.0 | 99.47791042609303
+  R 52 17.0 |  Productos textiles | 100.0 | 111.972538373399
+  R 53 171.0 |  Materias primas textiles | 100.0 | 115.44577285415261
+  R 54 172.0 |  Otros productos textiles | 100.0 | 113.2068534293244
+  R 55 173.0 |  Tejidos y artículos de punto | 100.0 | 103.45315135221868
+  R 56 18.0 |  Prendas de materiales textiles | 100.0 | 103.63287963750449
+  R 57 19.0 |  Cuero, artículos de marroquinería y calzado | 100.0 | 105.26474323865087
+  R 58 191.0 |  Cueros, valijas y artículos de marroquinería | 100.0 | 105.76771768950744
+  R 59 1911.0 |  Cueros curtidos | 100.0 | 106.87930682697018
+  R 60 1912.0 |  Valijas y artículos de marroquinería | 100.0 | 103.01048542560875
+  R 61 192.0 |  Calzado | 100.0 | 104.95292347105054
+  R 62 20.0 |  Madera y productos de madera excepto muebles | 100.0 | 109.79955812228872
+  R 63 201.0 |  Maderas aserradas | 100.0 | 109.56689814019005
+  R 64 202.0 |  Productos de madera | 100.0 | 110.02666968774322
+  R 65 2021.0 |  Tableros y paneles de madera | 100.0 | 115.14719691306836
+  R 66 2022.0 |  Carpintería de madera | 100.0 | 107.48743841028667
+  R 67 21.0 |  Papel y productos de papel | 100.0 | 108.4426928873491
+  R 68 2101.0 |  Papeles | 100.0 | 106.58638548587459
+  R 69 2102.0 |  Envases de papel y cartón | 100.0 | 123.22711605698804
+  R 70 2109.0 |  Otros artículos de papel y cartón | 100.0 | 103.64850296292198
+  R 71 22.0 |  Impresiones y reproducción de grabaciones | 100.0 | 107.1525747437494
+  R 72 221.0 |  Diarios y revistas | 100.0 | 110.84163795182857
+  R 73 222.0 |  Artículos de librería | 100.0 | 102.80268912221456
+  R 74 23.0 |  Productos refinados del petróleo | 100.0 | 105.85362542532289
+  R 75 24.0 |  Sustancias y productos químicos | 100.0 | 112.22413119934484
+  R 76 241.0 |  Sustancias químicas básicas | 100.0 | 121.01622165174908
+  R 77 2411.0 |  Sustancias químicas básicas | 100.0 | 129.50275358023546
+  R 78 2412.0 |  Abonos y fertilizantes | 100.0 | 110.74957467491413
+  R 79 2413.0 |  Sustancias plásticas y elastómeros | 100.0 | 112.80917351664085
+  R 80 242.0 |  Otros productos químicos | 100.0 | 108.90297670917697
+  R 81 2421.0 |  Insecticidas y plaguicidas | 100.0 | 111.06484336795252
+  R 82 2422.0 |  Pinturas, barnices, enduídos y tintas de imprenta | 100.0 | 114.14165485229759
+  R 83 2423.0 |  Productos farmacéuticos y veterinarios | 100.0 | 104.59849622336405
+  R 84 2424.0 |  Jabones y detergentes | 100.0 | 110.21239923994722
+  R 85 2429.0 |  Otros productos químicos | 100.0 | 111.3941199954015
+  R 86 243.0 |  Fibras manufacturadas | 100.0 | 109.01992914204696
+  R 87 25.0 |  Productos de caucho y plástico | 100.0 | 115.39600851673693
+  R 88 251.0 |  Productos de caucho | 100.0 | 113.8094513346252
+  R 89 2511.0 |  Cubiertas de caucho | 100.0 | 115.38161917473629
+  R 90 2519.0 |  Otros productos de caucho | 100.0 | 112.4773784042237
+  R 91 252.0 |  Productos de plástico | 100.0 | 115.97583009361858
+  R 92 26.0 |  Productos de minerales no metálicos | 100.0 | 106.77090707137096
+  R 93 261.0 |  Vidrio y productos de vidrio | 100.0 | 112.08146188760333
+  R 94 269.0 |  Otros productos de minerales no metálicos | 100.0 | 105.81810712586979
+  R 95 2691.0 |  Productos de cerámica no refractaria para uso no estructura | 100.0 | 106.77201725505172
+  R 96 2692.0 |  Productos de cerámica refractaria | 100.0 | 95.23546509499629
+  R 97 2693.0 |  Productos de arcilla y cerámica no refractaria para uso est | 100.0 | 100.69444774934497
+  R 98 2694.0 |  Cemento y cal | 100.0 | 104.42577955554988
+  R 99 2695.0 |  Artículos de hormigón, de cemento y de yeso | 100.0 | 107.1337320094242
+  R 100 2699.0 |  Otros artículos de minerales no metalíferos n.c.e.p. | 100.0 | 117.15218567980187
+  R 101 27.0 |  Productos metálicos básicos | 100.0 | 108.48670311581816
+  R 102 271.0 |  Productos de minerales ferrosos en formas básicas | 100.0 | 108.87357548924761
+  R 103 272.0 |  Productos de minerales no ferrosos en formas básicas | 100.0 | 121.27673536521017
+  R 104 273.0 |  Productos de fundición | 100.0 | 106.07788923066654
+  R 105 28.0 |  Productos metálicos excepto máquinas y equipos | 100.0 | 108.70738832139368
+  R 106 281.0 |  Productos metálicos estructurales, recipientes y generadore | 100.0 | 112.59332209556223
+  R 107 2811.0 |  Productos metálicos para uso estructural | 100.0 | 112.92725167898652
+  R 108 2813.0 |  Generadores de vapor | 100.0 | 104.13255510392891
+  R 109 289.0 |  Otros productos metálicos excepto máquinas, equipos y muebl | 100.0 | 106.93769542022736
+  R 110 2893.0 |  Herramientas de mano y artículos de ferretería | 100.0 | 107.12292440091531
+  R 111 2899.0 |  Otros productos metálicos n.c.e.p. | 100.0 | 106.9129859929291
+  R 112 29.0 |  Máquinas y equipos | 100.0 | 111.16699735069437
+  R 113 291.0 |  Máquinas de uso general | 100.0 | 108.93158205785892
+  R 114 2911.0 |  Motores a explosión excepto para automotores | 100.0 | 126.2889685405858
+  R 115 2912.0 |  Bombas y compresores | 100.0 | 114.78029183453937
+  R 116 2913.0 |  Rodamientos | 100.0 | 100.0
+  R 117 2915.0 |  Equipos de elevación y manipulación | 100.0 | 104.90631815057709
+  R 118 2919.0 |  Otra maquinaria de uso general | 100.0 | 102.89531966722983
+  R 119 292.0 |  Máquinas de uso especial | 100.0 | 117.13369846481972
+  R 120 2921.0 |  Máquinas agrícolas | 100.0 | 119.08814234904656
+  R 121 2922.0 |  Máquinas herramientas | 100.0 | 130.91866867696862
+  R 122 2924.0 |  Máquinas para la industria extractiva y obras de construcci | 100.0 | 110.85344411546576
+  R 123 2925.0 |  Máquinas para la elaboración o procesamiento de alimentos y | 100.0 | 105.8896036024572
+  R 124 2926.0 |  Máquinas para lavaderos industriales | 100.0 | 105.30771920929271
+  R 125 2927.0 |  Armas y municiones | 100.0 | 126.39382376045494
+  R 126 293.0 |  Otros aparatos de uso doméstico | 100.0 | 106.4856548591483
+  R 127 31.0 |  Máquinas y aparatos eléctricos | 100.0 | 115.11757039712884
+  R 128 311.0 |  Motores, generadores y transformadores eléctricos | 100.0 | 125.47277260068115
+  R 129 312.0 |  Aparatos de distribución y control eléctrico | 100.0 | 119.6850266322477
+  R 130 313.0 |  Conductores eléctricos | 100.0 | 110.51090634616094
+  R 131 314.0 |  Acumuladores eléctricos | 100.0 | 111.21333454817722
+  R 132 315.0 |  Equipos de iluminación | 100.0 | 133.48885041241164
+  R 133 319.0 |  Otros equipos eléctricos | 100.0 | 105.67054481543761
+  R 134 32.0 |  Equipos y aparatos de radio y televisión | 100.0 | 101.91997660777375
+  R 135 33.0 |  Equipos para medicina e instrumentos de medición | 100.0 | 117.97159706301814
+  R 136 3311.0 |  Equipos para medicina | 100.0 | 113.43883773319203
+  R 137 3312.0 |  Instrumentos de medición de servicios domiciliarios | 100.0 | 129.3292062615598
+  R 138 34.0 |  Vehículos automotores, carrocerías y repuestos | 100.0 | 110.50824557722217
+  R 139 341.0 |  Vehículos automotores | 100.0 | 113.60321877828146
+  R 140 342.0 |  Carrocerías y remolques | 100.0 | 104.35715747339884
+  R 141 343.0 |  Repuestos para automotores | 100.0 | 104.68127038067291
+  R 142 35.0 |  Otros medios de transporte | 100.0 | 100.2656028542522
+  R 143 3591.0 |  Motocicletas | 100.0 | 100.0
+  R 144 3599.0 |  Otros medios de transporte | 100.0 | 107.0559899979241
+  R 145 36.0 |  Muebles y otros productos industriales | 100.0 | 107.66105953074572
+  R 146 361.0 |  Muebles y colchones | 100.0 | 107.39197605662855
+  R 147 369.0 |  Otros productos manufacturados | 100.0 | 109.15327817893395
+  R 148 E |  Energía eléctrica | 100.0 | 100.94870779994613
+  R 150 I | Productos importados | 100.0 | 117.40896700065267
+  R 152 * Dato provisorio.
+  R 154 Fuente: INDEC, Dirección Nacional de Estadísticas de Precios
+  LASTROW ['Fuente: INDEC, Direc', '', '', '', '', '', '', '', '', '']
+  LASTCOLS ['', '', '', '', 'Ago*', '', '', '16580.328144082185']
+
+### SHEET IPIB 155 131
+  H 0 ['SISTEMA DE INDICES DE PRECIOS MAYORISTAS', '', '', '', '', '', '', '']
+  H 1 ['Índice de Precios Internos Básicos al po', '', '', '', '', '', '', '']
+  H 2 ['', '', '', '', '', '', '', '']
+  H 3 ['Código', 'Descripción', '2015.0', '2016.0', '', '', '', '']
+  H 4 ['', '', 'Dic', 'Ene', 'Feb', 'Mar', 'Abr', 'May']
+  H 5 ['', '', 'Número índice', '', '', '', '', '']
+  H 6 ['', '', '', '', '', '', '', '']
+  H 7 ['NG', 'Nivel general', '100.0', '109.01190453958323', '114.55178790732718', '117.25250483491111', '119.14289506439408', '121.82439220051313']
+  H 8 ['', '', '', '', '', '', '', '']
+  H 9 ['N', 'Productos nacionales', '100.0', '108.35403678025716', '113.5737571195419', '116.4927777751265', '118.67036753059958', '121.64171774369647']
+  H 10 ['', '', '', '', '', '', '', '']
+  H 11 ['1.0', 'Primarios', '100.0', '109.12741478829737', '115.28914439054091', '117.70402896573223', '119.08557591839713', '122.78110645455001']
+  R 0 SISTEMA DE INDICES DE PRECIOS MAYORISTAS (SIPM)
+  R 1 Índice de Precios Internos Básicos al por Mayor (IPIB), base
+  R 3 Código | Descripción | 2015.0 | 2016.0
+  R 4 Dic | Ene
+  R 5 Número índice
+  R 7 NG | Nivel general | 100.0 | 109.01190453958323
+  R 9 N | Productos nacionales | 100.0 | 108.35403678025716
+  R 11 1.0 | Primarios | 100.0 | 109.12741478829737
+  R 13 A |  Productos agropecuarios | 100.0 | 104.28347471507264
+  R 14 011 |  Agrícolas | 100.0 | 113.5852829336208
+  R 15 0111 |  Cereales y oleaginosas | 100.0 | 111.02394162916636
+  R 16 0112 |  Hortalizas y legumbres | 100.0 | 109.60612658135727
+  R 17 0113 |  Frutas | 100.0 | 138.74850318076486
+  R 18 012 |  Ganaderos | 100.0 | 96.75574500671611
+  R 19 0121 |  Ganado vacuno y leche | 100.0 | 96.02710066149695
+  R 20 0122 |  Ganado porcino y productos de granja | 100.0 | 102.10360580331475
+  R 21 B |  Productos pesqueros | 100.0 | 112.50099018165125
+  R 22 C |  Productos minerales | 100.0 | 115.72951671512443
+  R 23 11.0 |  Petróleo crudo y gas natural | 100.0 | 116.46347287119896
+  R 24 14.0 |  Productos minerales no metalíferos | 100.0 | 104.72649530982554
+  R 26 2.0 | Industria Manufacturera y Energía Eléctrica | 100.0 | 108.03730354124086
+  R 28 D |  Productos manufacturados | 100.0 | 108.11461917361116
+  R 29 15.0 |  Alimentos y bebidas | 100.0 | 103.80581060105514
+  R 30 151.0 |  Productos de carnes, pescados, frutas, legumbres, hortaliza | 100.0 | 101.11153929233274
+  R 31 1511.0 |  Productos cárnicos | 100.0 | 97.2419861798972
+  R 32 1512.0 |  Conservas de pescados | 100.0 | 106.81334394604136
+  R 33 1513.0 |  Conservas de frutas, hortalizas y legumbres | 100.0 | 103.91087933383712
+  R 34 1514.0 |  Aceites y grasas vegetales | 100.0 | 129.7957001692976
+  R 35 152.0 |  Productos lácteos | 100.0 | 104.79012645298556
+  R 36 153.0 |  Productos de molinería, almidones y alimentos balanceados | 100.0 | 105.21200087632934
+  R 37 1531.0 |  Harinas | 100.0 | 100.64263185675699
+  R 38 1532.0 |  Productos derivados del almidón | 100.0 | 108.30261790812419
+  R 39 1533.0 |  Alimentos balanceados | 100.0 | 118.5648056079178
+  R 40 154.0 |  Otros productos alimenticios | 100.0 | 105.98838497909848
+  R 41 1541.0 |  Productos de panadería | 100.0 | 102.44957936620551
+  R 42 1542.0 |  Azúcar | 100.0 | 106.54536638514233
+  R 43 1543.0 |  Productos de chocolate y golosinas | 100.0 | 111.23042165496703
+  R 44 1544.0 |  Productos farináceos | 100.0 | 103.61108037931832
+  R 45 1549.0 |  Otros productos alimenticios n.c.e.p. | 100.0 | 110.15926747189484
+  R 46 155.0 |  Alcohol etílico y bebidas | 100.0 | 103.01516303611339
+  R 47 1551.0 |  Alcohol etílico y bebidas alcohólicas destiladas | 100.0 | 101.79170220387867
+  R 48 1552.0 |  Vinos y sidra | 100.0 | 102.79766222278522
+  R 49 1553.0 |  Cervezas | 100.0 | 113.25196552435285
+  R 50 1554.0 |  Bebidas no alcohólicas | 100.0 | 100.399335689907
+  R 51 16.0 |  Tabaco | 100.0 | 99.5396632477992
+  R 52 17.0 |  Productos textiles | 100.0 | 111.97274348842805
+  R 53 171.0 |  Materias primas textiles | 100.0 | 115.44593283629263
+  R 54 172.0 |  Otros productos textiles | 100.0 | 113.20682407126792
+  R 55 173.0 |  Tejidos y artículos de punto | 100.0 | 103.45314468426132
+  R 56 18.0 |  Prendas de materiales textiles | 100.0 | 103.63288737967093
+  R 57 19.0 |  Cuero, artículos de marroquinería y calzado | 100.0 | 105.2648018282894
+  R 58 191.0 |  Cueros, valijas y artículos de marroquinería | 100.0 | 105.76774226800485
+  R 59 1911.0 |  Cueros curtidos | 100.0 | 106.87934097167795
+  R 60 1912.0 |  Valijas y artículos de marroquinería | 100.0 | 103.01048736178198
+  R 61 192.0 |  Calzado | 100.0 | 104.9530056380182
+  R 62 20.0 |  Madera y productos de madera excepto muebles | 100.0 | 109.79947619948196
+  R 63 201.0 |  Maderas aserradas | 100.0 | 109.56689814019033
+  R 64 202.0 |  Productos de madera | 100.0 | 110.0264906680343
+  R 65 2021.0 |  Tableros y paneles de madera | 100.0 | 115.14703660602035
+  R 66 2022.0 |  Carpintería de madera | 100.0 | 107.48744480010173
+  R 67 21.0 |  Papel y productos de papel | 100.0 | 108.4434327520261
+  R 68 2101.0 |  Papeles | 100.0 | 106.58657240023368
+  R 69 2102.0 |  Envases de papel y cartón | 100.0 | 123.22701887499193
+  R 70 2109.0 |  Otros artículos de papel y cartón | 100.0 | 103.64843299427122
+  R 71 22.0 |  Impresiones y reproducción de grabaciones | 100.0 | 107.33304869447929
+  R 72 221.0 |  Diarios y revistas | 100.0 | 110.8416379518286
+  R 73 222.0 |  Artículos de librería | 100.0 | 102.80233472821654
+  R 74 23.0 |  Productos refinados del petróleo | 100.0 | 106.24150994162449
+  R 75 24.0 |  Sustancias y productos químicos | 100.0 | 112.22969526680741
+  R 76 241.0 |  Sustancias químicas básicas | 100.0 | 120.98629555253551
+  R 77 2411.0 |  Sustancias químicas básicas | 100.0 | 129.50308039044688
+  R 78 2412.0 |  Abonos y fertilizantes | 100.0 | 110.74957436151583
+  R 79 2413.0 |  Sustancias plásticas y elastómeros | 100.0 | 112.80979333888406
+  R 80 242.0 |  Otros productos químicos | 100.0 | 108.89023094410429
+  R 81 2421.0 |  Insecticidas y plaguicidas | 100.0 | 111.06399196502767
+  R 82 2422.0 |  Pinturas, barnices, enduídos y tintas de imprenta | 100.0 | 114.14156921818814
+  R 83 2423.0 |  Productos farmacéuticos y veterinarios | 100.0 | 104.5989393551477
+  R 84 2424.0 |  Jabones y detergentes | 100.0 | 110.21113944239775
+  R 85 2429.0 |  Otros productos químicos | 100.0 | 111.39420786380786
+  R 86 243.0 |  Fibras manufacturadas | 100.0 | 109.01944748129976
+  R 87 25.0 |  Productos de caucho y plástico | 100.0 | 115.39573525497026
+  R 88 251.0 |  Productos de caucho | 100.0 | 113.8031938682438
+  R 89 2511.0 |  Cubiertas de caucho | 100.0 | 115.3816211491424
+  R 90 2519.0 |  Otros productos de caucho | 100.0 | 112.47734689997833
+  R 91 252.0 |  Productos de plástico | 100.0 | 115.97542103700084
+  R 92 26.0 |  Productos de minerales no metálicos | 100.0 | 106.77038520767614
+  R 93 261.0 |  Vidrio y productos de vidrio | 100.0 | 112.08140769739721
+  R 94 269.0 |  Otros productos de minerales no metálicos | 100.0 | 105.81749007443068
+  R 95 2691.0 |  Productos de cerámica no refractaria para uso no estructura | 100.0 | 106.77203726747027
+  R 96 2692.0 |  Productos de cerámica refractaria | 100.0 | 95.23573845772553
+  R 97 2693.0 |  Productos de arcilla y cerámica no refractaria para uso est | 100.0 | 100.69443975265536
+  R 98 2694.0 |  Cemento y cal | 100.0 | 104.42579159691418
+  R 99 2695.0 |  Artículos de hormigón, de cemento y de yeso | 100.0 | 107.13148588054307
+  R 100 2699.0 |  Otros artículos de minerales no metalíferos n.c.e.p. | 100.0 | 117.15237243303778
+  R 101 27.0 |  Productos metálicos básicos | 100.0 | 108.4868282906432
+  R 102 271.0 |  Productos de minerales ferrosos en formas básicas | 100.0 | 108.87389915911967
+  R 103 272.0 |  Productos de minerales no ferrosos en formas básicas | 100.0 | 121.27643968353962
+  R 104 273.0 |  Productos de fundición | 100.0 | 106.07787336013061
+  R 105 28.0 |  Productos metálicos excepto máquinas y equipos | 100.0 | 108.6974617880873
+  R 106 281.0 |  Productos metálicos estructurales, recipientes y generadore | 100.0 | 112.5636641297229
+  R 107 2811.0 |  Productos metálicos para uso estructural | 100.0 | 112.92725332290354
+  R 108 2813.0 |  Generadores de vapor | 100.0 | 104.13255510392929
+  R 109 289.0 |  Otros productos metálicos excepto máquinas, equipos y muebl | 100.0 | 106.93235086398536
+  R 110 2893.0 |  Herramientas de mano y artículos de ferretería | 100.0 | 107.11936511404703
+  R 111 2899.0 |  Otros productos metálicos n.c.e.p. | 100.0 | 106.90739952248332
+  R 112 29.0 |  Máquinas y equipos | 100.0 | 111.29360236164294
+  R 113 291.0 |  Máquinas de uso general | 100.0 | 109.08806637078649
+  R 114 2911.0 |  Motores a explosión excepto para automotores | 100.0 | 126.28896854058635
+  R 115 2912.0 |  Bombas y compresores | 100.0 | 114.69716206845133
+  R 116 2913.0 |  Rodamientos | 100.0 | 100.0
+  R 117 2915.0 |  Equipos de elevación y manipulación | 100.0 | 104.6318534641841
+  R 118 2919.0 |  Otra maquinaria de uso general | 100.0 | 102.94175729530694
+  R 119 292.0 |  Máquinas de uso especial | 100.0 | 117.07367471091545
+  R 120 2921.0 |  Máquinas agrícolas | 100.0 | 119.1103034733955
+  R 121 2922.0 |  Máquinas herramientas | 100.0 | 131.4278141699376
+  R 122 2924.0 |  Máquinas para la industria extractiva y obras de construcci | 100.0 | 110.65102048336225
+  R 123 2925.0 |  Máquinas para la elaboración o procesamiento de alimentos y | 100.0 | 105.84038263160984
+  R 124 2926.0 |  Máquinas para lavaderos industriales | 100.0 | 105.3077192252348
+  R 125 2927.0 |  Armas y municiones | 100.0 | 126.36838266656356
+  R 126 293.0 |  Otros aparatos de uso doméstico | 100.0 | 106.5010057362735
+  R 127 31.0 |  Máquinas y aparatos eléctricos | 100.0 | 115.25882683851904
+  R 128 311.0 |  Motores, generadores y transformadores eléctricos | 100.0 | 125.45929174944348
+  R 129 312.0 |  Aparatos de distribución y control eléctrico | 100.0 | 119.24629029351411
+  R 130 313.0 |  Conductores eléctricos | 100.0 | 110.51065074624931
+  R 131 314.0 |  Acumuladores eléctricos | 100.0 | 111.21333402193541
+  R 132 315.0 |  Equipos de iluminación | 100.0 | 133.4888694679258
+  R 133 319.0 |  Otros equipos eléctricos | 100.0 | 105.98240779955306
+  R 134 32.0 |  Equipos y aparatos de radio y televisión | 100.0 | 101.99970476799696
+  R 135 33.0 |  Equipos para medicina e instrumentos de medición | 100.0 | 117.83742612448596
+  R 136 3311.0 |  Equipos para medicina | 100.0 | 113.59069873357599
+  R 137 3312.0 |  Instrumentos de medición de servicios domiciliarios | 100.0 | 129.3292151384363
+  R 138 34.0 |  Vehículos automotores, carrocerías y repuestos | 100.0 | 110.82314201938559
+  R 139 341.0 |  Vehículos automotores | 100.0 | 113.99589222074205
+  R 140 342.0 |  Carrocerías y remolques | 100.0 | 104.35715747339869
+  R 141 343.0 |  Repuestos para automotores | 100.0 | 104.68128025538618
+  R 142 35.0 |  Otros medios de transporte | 100.0 | 100.26560276395817
+  R 143 3591.0 |  Motocicletas | 100.0 | 100.0
+  R 144 3599.0 |  Otros medios de transporte | 100.0 | 107.05598864178032
+  R 145 36.0 |  Muebles y otros productos industriales | 100.0 | 107.66145534435965
+  R 146 361.0 |  Muebles y colchones | 100.0 | 107.39211765269421
+  R 147 369.0 |  Otros productos manufacturados | 100.0 | 109.15446982154857
+  R 148 E |  Energía eléctrica | 100.0 | 100.94870652710945
+  R 150 I | Productos importados | 100.0 | 117.32495714991174
+  R 152 * Dato provisorio.
+  R 154 Fuente: INDEC, Dirección Nacional de Estadísticas de Precios
+  LASTROW ['Fuente: INDEC, Direc', '', '', '', '', '', '', '', '', '']
+  LASTCOLS ['', '', '', '', 'Ago*', '', '', '16101.735981737236']
+
+### SHEET IPP 153 131
+  H 0 ['SISTEMA DE INDICES DE PRECIOS MAYORISTAS', '', '', '', '', '', '', '']
+  H 1 ['Índice de Precios Básicos del Productor ', '', '', '', '', '', '', '']
+  H 2 ['', '', '', '', '', '', '', '']
+  H 3 ['Código', 'Descripción', '2015.0', '2016.0', '', '', '', '']
+  H 4 ['', '', 'Dic', 'Ene', 'Feb', 'Mar', 'Abr', 'May']
+  H 5 ['', '', 'Número índice', '', '', '', '', '']
+  H 6 ['', '', '', '', '', '', '', '']
+  H 7 ['NG', 'Nivel general', '100.0', '109.10494620714626', '114.57440926480469', '117.42553294389825', '119.51423520831388', '122.67387386683416']
+  H 8 ['', '', '', '', '', '', '', '']
+  H 9 ['N', 'Productos nacionales', '100.0', '109.10494620714626', '114.57440926480469', '117.42553294389825', '119.51423520831388', '122.67387386683416']
+  H 10 ['', '', '', '', '', '', '', '']
+  H 11 ['1.0', 'Primarios', '100.0', '110.05171098397683', '116.7983218925156', '119.17321898787938', '120.14780323384082', '123.88857272670184']
+  R 0 SISTEMA DE INDICES DE PRECIOS MAYORISTAS (SIPM)
+  R 1 Índice de Precios Básicos del Productor (IPP), base año 1993
+  R 3 Código | Descripción | 2015.0 | 2016.0
+  R 4 Dic | Ene
+  R 5 Número índice
+  R 7 NG | Nivel general | 100.0 | 109.10494620714626
+  R 9 N | Productos nacionales | 100.0 | 109.10494620714626
+  R 11 1.0 | Primarios | 100.0 | 110.05171098397683
+  R 13 A |  Productos agropecuarios | 100.0 | 106.10351737472045
+  R 14 011 |  Agrícolas | 100.0 | 114.12673967393026
+  R 15 0111 |  Cereales y oleaginosas | 100.0 | 111.02394162916636
+  R 16 0112 |  Hortalizas y legumbres | 100.0 | 109.60612658135727
+  R 17 0113 |  Frutas | 100.0 | 138.74850318076486
+  R 18 012 |  Ganaderos | 100.0 | 96.76594229197168
+  R 19 0121 |  Ganado vacuno y leche | 100.0 | 96.02710066149695
+  R 20 0122 |  Ganado porcino y productos de granja | 100.0 | 102.10360580331475
+  R 21 B |  Productos pesqueros | 100.0 | 112.50099018165125
+  R 22 C |  Productos minerales | 100.0 | 115.79807437037488
+  R 23 11.0 |  Petróleo crudo y gas natural | 100.0 | 116.46347287119896
+  R 24 14.0 |  Productos minerales no metalíferos | 100.0 | 104.72649530982554
+  R 26 2.0 | Industria Manufacturera y Energía Eléctrica | 100.0 | 108.71062397976698
+  R 28 D |  Productos manufacturados | 100.0 | 108.78603811208278
+  R 29 15.0 |  Alimentos y bebidas | 100.0 | 106.58933477126718
+  R 30 151.0 |  Productos de carnes, pescados, frutas, legumbres, hortaliza | 100.0 | 109.4472349857761
+  R 31 1511.0 |  Productos cárnicos | 100.0 | 97.2419861798972
+  R 32 1512.0 |  Conservas de pescados | 100.0 | 106.81334394604136
+  R 33 1513.0 |  Conservas de frutas, hortalizas y legumbres | 100.0 | 103.91087933383712
+  R 34 1514.0 |  Aceites y grasas vegetales | 100.0 | 129.7957001692976
+  R 35 152.0 |  Productos lácteos | 100.0 | 104.79012645298556
+  R 36 153.0 |  Productos de molinería, almidones y alimentos balanceados | 100.0 | 105.02448207023014
+  R 37 1531.0 |  Harinas | 100.0 | 100.64263185675699
+  R 38 1532.0 |  Productos derivados del almidón | 100.0 | 108.30261790812419
+  R 39 1533.0 |  Alimentos balanceados | 100.0 | 118.5648056079178
+  R 40 154.0 |  Otros productos alimenticios | 100.0 | 106.034372333045
+  R 41 1541.0 |  Productos de panadería | 100.0 | 102.44957936620551
+  R 42 1542.0 |  Azúcar | 100.0 | 106.54536638514233
+  R 43 1543.0 |  Productos de chocolate y golosinas | 100.0 | 111.23042165496703
+  R 44 1544.0 |  Productos farináceos | 100.0 | 103.61108037931832
+  R 45 1549.0 |  Otros productos alimenticios n.c.e.p. | 100.0 | 110.15926747189484
+  R 46 155.0 |  Alcohol etílico y bebidas | 100.0 | 103.0547816431984
+  R 47 1551.0 |  Alcohol etílico y bebidas alcohólicas destiladas | 100.0 | 101.79170220387867
+  R 48 1552.0 |  Vinos y sidra | 100.0 | 102.79766222278522
+  R 49 1553.0 |  Cervezas | 100.0 | 113.25196552435285
+  R 50 1554.0 |  Bebidas no alcohólicas | 100.0 | 100.399335689907
+  R 51 16.0 |  Tabaco | 100.0 | 99.5396632477992
+  R 52 17.0 |  Productos textiles | 100.0 | 112.19622492923469
+  R 53 171.0 |  Materias primas textiles | 100.0 | 115.44593283629263
+  R 54 172.0 |  Otros productos textiles | 100.0 | 113.20682407126792
+  R 55 173.0 |  Tejidos y artículos de punto | 100.0 | 103.45314468426132
+  R 56 18.0 |  Prendas de materiales textiles | 100.0 | 103.63288737967093
+  R 57 19.0 |  Cuero, artículos de marroquinería y calzado | 100.0 | 105.66452106053481
+  R 58 191.0 |  Cueros, valijas y artículos de marroquinería | 100.0 | 106.15047622490022
+  R 59 1911.0 |  Cueros curtidos | 100.0 | 106.87934097167795
+  R 60 1912.0 |  Valijas y artículos de marroquinería | 100.0 | 103.01048736178198
+  R 61 192.0 |  Calzado | 100.0 | 104.9530056380182
+  R 62 20.0 |  Madera y productos de madera excepto muebles | 100.0 | 109.85115479903125
+  R 63 201.0 |  Maderas aserradas | 100.0 | 109.56689814019033
+  R 64 202.0 |  Productos de madera | 100.0 | 110.1282285204937
+  R 65 2021.0 |  Tableros y paneles de madera | 100.0 | 115.14703660602035
+  R 66 2022.0 |  Carpintería de madera | 100.0 | 107.48744480010173
+  R 67 21.0 |  Papel y productos de papel | 100.0 | 108.3875097110447
+  R 68 2101.0 |  Papeles | 100.0 | 106.58657240023368
+  R 69 2102.0 |  Envases de papel y cartón | 100.0 | 123.22701887499193
+  R 70 2109.0 |  Otros artículos de papel y cartón | 100.0 | 103.64843299427122
+  R 71 22.0 |  Impresiones y reproducción de grabaciones | 100.0 | 107.36014375530002
+  R 72 221.0 |  Diarios y revistas | 100.0 | 110.8416379518286
+  R 73 222.0 |  Artículos de librería | 100.0 | 102.80233472821654
+  R 74 23.0 |  Productos refinados del petróleo | 100.0 | 106.24150994162449
+  R 75 24.0 |  Sustancias y productos químicos | 100.0 | 112.97782039283413
+  R 76 241.0 |  Sustancias químicas básicas | 100.0 | 122.0140439395707
+  R 77 2411.0 |  Sustancias químicas básicas | 100.0 | 129.50308039044688
+  R 78 2412.0 |  Abonos y fertilizantes | 100.0 | 110.74957436151583
+  R 79 2413.0 |  Sustancias plásticas y elastómeros | 100.0 | 112.80979333888406
+  R 80 242.0 |  Otros productos químicos | 100.0 | 108.94766219815068
+  R 81 2421.0 |  Insecticidas y plaguicidas | 100.0 | 111.06399196502767
+  R 82 2422.0 |  Pinturas, barnices, enduídos y tintas de imprenta | 100.0 | 114.14156921818814
+  R 83 2423.0 |  Productos farmacéuticos y veterinarios | 100.0 | 104.5989393551477
+  R 84 2424.0 |  Jabones y detergentes | 100.0 | 110.21113944239775
+  R 85 2429.0 |  Otros productos químicos | 100.0 | 111.39420786380786
+  R 86 243.0 |  Fibras manufacturadas | 100.0 | 109.01944748129976
+  R 87 25.0 |  Productos de caucho y plástico | 100.0 | 115.39022068962058
+  R 88 251.0 |  Productos de caucho | 100.0 | 113.8479248214412
+  R 89 2511.0 |  Cubiertas de caucho | 100.0 | 115.3816211491424
+  R 90 2519.0 |  Otros productos de caucho | 100.0 | 112.47734689997833
+  R 91 252.0 |  Productos de plástico | 100.0 | 115.97542103700084
+  R 92 26.0 |  Productos de minerales no metálicos | 100.0 | 106.810098254202
+  R 93 261.0 |  Vidrio y productos de vidrio | 100.0 | 112.08140769739721
+  R 94 269.0 |  Otros productos de minerales no metálicos | 100.0 | 105.80848099514941
+  R 95 2691.0 |  Productos de cerámica no refractaria para uso no estructura | 100.0 | 106.77203726747027
+  R 96 2692.0 |  Productos de cerámica refractaria | 100.0 | 95.23573845772553
+  R 97 2693.0 |  Productos de arcilla y cerámica no refractaria para uso est | 100.0 | 100.69443975265536
+  R 98 2694.0 |  Cemento y cal | 100.0 | 104.42579159691418
+  R 99 2695.0 |  Artículos de hormigón, de cemento y de yeso | 100.0 | 107.13148588054307
+  R 100 2699.0 |  Otros artículos de minerales no metalíferos n.c.e.p. | 100.0 | 117.15237243303778
+  R 101 27.0 |  Productos metálicos básicos | 100.0 | 109.17470760056116
+  R 102 271.0 |  Productos de minerales ferrosos en formas básicas | 100.0 | 108.87389915911967
+  R 103 272.0 |  Productos de minerales no ferrosos en formas básicas | 100.0 | 121.27643968353962
+  R 104 273.0 |  Productos de fundición | 100.0 | 106.07787336013061
+  R 105 28.0 |  Productos metálicos excepto máquinas y equipos | 100.0 | 108.63706643451833
+  R 106 281.0 |  Productos metálicos estructurales, recipientes y generadore | 100.0 | 112.53955742520259
+  R 107 2811.0 |  Productos metálicos para uso estructural | 100.0 | 112.92725332290354
+  R 108 2813.0 |  Generadores de vapor | 100.0 | 104.13255510392929
+  R 109 289.0 |  Otros productos metálicos excepto máquinas, equipos y muebl | 100.0 | 106.93885958468319
+  R 110 2893.0 |  Herramientas de mano y artículos de ferretería | 100.0 | 107.11936511404703
+  R 111 2899.0 |  Otros productos metálicos n.c.e.p. | 100.0 | 106.90739952248332
+  R 112 29.0 |  Máquinas y equipos | 100.0 | 111.1602620806901
+  R 113 291.0 |  Máquinas de uso general | 100.0 | 108.70521276694072
+  R 114 2911.0 |  Motores a explosión excepto para automotores | 100.0 | 126.28896854058635
+  R 115 2912.0 |  Bombas y compresores | 100.0 | 114.69716206845133
+  R 116 2913.0 |  Rodamientos | 100.0 | 100.0
+  R 117 2915.0 |  Equipos de elevación y manipulación | 100.0 | 104.6318534641841
+  R 118 2919.0 |  Otra maquinaria de uso general | 100.0 | 102.94175729530694
+  R 119 292.0 |  Máquinas de uso especial | 100.0 | 116.9802769766196
+  R 120 2921.0 |  Máquinas agrícolas | 100.0 | 119.1103034733955
+  R 121 2922.0 |  Máquinas herramientas | 100.0 | 131.4278141699376
+  R 122 2924.0 |  Máquinas para la industria extractiva y obras de construcci | 100.0 | 110.65102048336225
+  R 123 2925.0 |  Máquinas para la elaboración o procesamiento de alimentos y | 100.0 | 105.84038263160984
+  R 124 2926.0 |  Máquinas para lavaderos industriales | 100.0 | 105.3077192252348
+  R 125 2927.0 |  Armas y municiones | 100.0 | 126.36838266656356
+  R 126 293.0 |  Otros aparatos de uso doméstico | 100.0 | 106.5010057362735
+  R 127 31.0 |  Máquinas y aparatos eléctricos | 100.0 | 115.3474141611513
+  R 128 311.0 |  Motores, generadores y transformadores eléctricos | 100.0 | 125.45929174944348
+  R 129 312.0 |  Aparatos de distribución y control eléctrico | 100.0 | 119.24629029351411
+  R 130 313.0 |  Conductores eléctricos | 100.0 | 110.51065074624931
+  R 131 314.0 |  Acumuladores eléctricos | 100.0 | 111.21333402193541
+  R 132 315.0 |  Equipos de iluminación | 100.0 | 133.4888694679258
+  R 133 319.0 |  Otros equipos eléctricos | 100.0 | 105.98240779955306
+  R 134 32.0 |  Equipos y aparatos de radio y televisión | 100.0 | 101.99970476799696
+  R 135 33.0 |  Equipos para medicina e instrumentos de medición | 100.0 | 118.00404214574667
+  R 136 3311.0 |  Equipos para medicina | 100.0 | 113.59069873357599
+  R 137 3312.0 |  Instrumentos de medición de servicios domiciliarios | 100.0 | 129.3292151384363
+  R 138 34.0 |  Vehículos automotores, carrocerías y repuestos | 100.0 | 110.64524553481169
+  R 139 341.0 |  Vehículos automotores | 100.0 | 113.99589222074205
+  R 140 342.0 |  Carrocerías y remolques | 100.0 | 104.35715747339869
+  R 141 343.0 |  Repuestos para automotores | 100.0 | 104.68128025538618
+  R 142 35.0 |  Otros medios de transporte | 100.0 | 100.26568669971114
+  R 143 3591.0 |  Motocicletas | 100.0 | 100.0
+  R 144 3599.0 |  Otros medios de transporte | 100.0 | 107.05598864178032
+  R 145 36.0 |  Muebles y otros productos industriales | 100.0 | 107.70492747658113
+  R 146 361.0 |  Muebles y colchones | 100.0 | 107.39211765269421
+  R 147 369.0 |  Otros productos manufacturados | 100.0 | 109.15446982154857
+  R 148 E |  Energía eléctrica | 100.0 | 100.94870652710945
+  R 150 * Dato provisorio.
+  R 152 Fuente: INDEC, Dirección Nacional de Estadísticas de Precios
+  LASTROW ['Fuente: INDEC, Direc', '', '', '', '', '', '', '', '', '']
+  LASTCOLS ['', '', '', '', 'Ago*', '', '', '16258.50193387422']
+POLPDF 200 367117
+   POL a de Buenos Aires, Argentina. El horario de atención al público es de 9:30 a 16:00. También pueden solicitarse al teléfono (54-11) 5031-4632 Correo electrónico: ces@indec.gob.ar Sitio web: www.indec.gob.ar Twitter: @INDECArgentina Facebook: /INDECArgentina Instagram: @indecargentina Calendario anual anticipado de informes: www.indec.gob.ar/indec/web/Calendario-Fecha-0 Esta publicación utiliza una licencia Creative Commons. Se permite su reproducción con atribución de la fuente. ISBN 978-950-896-527-1 3 Políticas de difusión estadística Índice Nota preliminar 4 I. Introducción 5 II. Adhesión a recomendaciones internacionales 5 III. Misiones y funciones de la DNDC 7 IV. Públicos, soportes y contenidos de difusión 9 V. Canales de comunicación y acceso a la información pública 12 VI. La política del I
+   POL les, cuando se lo considera relevante para sus objetivos de difusión, se comparte o replica determinada información de interés publicada previamente por otros organismos públicos o privados, nacionales o internacionales, lo que no implica reconocimiento de ningún tipo. Los comentarios generados por los visitantes en las redes sociales son de dominio público. Sin embargo, se moderan para evitar la reproducción de contenidos con len - guaje ofensivo, abusivo o amenazante, ataques personales de cualquier tipo contra una persona o grupo, temas no pertinentes, publicidades o datos personales. El INDEC 14 INDEC puede recibir y contestar comentarios, sugerencias y consultas a través de mensajes privados o comentarios en publicaciones en redes sociales, pero debe advertir que estos canales no están conceb
+   POL directamente a la Oficina de Prensa Institu- cional. Además, se envían a los suscriptores gacetillas de prensa, fe de erratas, actua- lizaciones metodológicas, aclaraciones sobre el buen uso de la información estadística y contenido multimedial. Este material complementario es público y accesible desde el sitio web (secciones “Gacetillas de prensa” y “Multimedia”), de libre disponibilidad para su reproducción inmediata, con mención de la fuente. Para presentaciones de nuevos informes o actualizaciones metodológicas sustantivas, la DC realiza convocatorias a conferencias de prensa o reuniones sectoriales, en las que se coordinan exposiciones con los equipos técnicos para la comprensión cabal de la información que se difundirá por primera vez. La finalidad de los canales de comunicación con la prens
+   POL ntarias. Paralelamente, las métricas anuales resultantes constituyen el basamento de la planifi- cación estratégica para la ampliación de audiencias y alfabetización estadística. XI. Usabilidad de la información El uso del sitio web del INDEC es de carácter libre y gratuito para los usuarios. Salvo contenidos específicamente indicados, todo el material publicado en el sitio web del INDEC posee la licencia Creative Commons (CC). Esto permite a los usuarios copiar, reutilizar o redistribuir el material en cualquier medio o formato, siempre que se acre - dite debidamente la obra, se cite la fuente primaria y se especifiquen cambios si los hubiere. La autoría de todas las publicaciones producidas por el INDEC corresponde a la ins - titución, en su carácter editor de las obras. Los ISSN e ISBN se regis
+   POL liberada, por descuido o por desconocimiento) se emitirá un comunicado oficial que clarifique el uso correcto de los datos publicados. Se advierte que las series estadísticas publicadas con posterioridad a enero de 2007 y hasta diciembre de 2015 deben ser consideradas con reservas, excepto las que ya hayan sido revisadas en 2016 y su difusión lo consigne expresamente. El INDEC, en el marco de las atribuciones conferidas por los decretos 181/2015 y 55/2016, dispuso las investigaciones requeridas para establecer la regularidad de procedimientos de obten- ción de datos, su procesamiento, elaboración de indicadores y difusión. XII. Anexos A. Secreto estadístico La ley n° 17.622, del año 1968, rige la creación y funcionamiento del INDEC, y dispone la obligatoriedad de proporcionar los datos que requier
+   POL individualización o deducción de los valores individuales. B. Datos abiertos y estadísticas oficiales5 Los datos abiertos son aquellos que cualquier persona puede utilizar, reutilizar y redis- tribuir libremente para cualquier propósito. Los criterios usados para su definición incluyen: • Disponibilidad: los datos deben estar disponibles en su totalidad a un costo no ma- yor al costo razonable de reproducción. Los datos también deben estar disponibles en formatos convenientes y editables. • Reutilización y redistribución: el proveedor de los datos debe permitir la reutilización y la redistribución de los datos, incluyendo su vinculación con otros conjuntos de datos. • Acceso equitativo: todos deben poder usar, reutilizar y redistribuir los datos. Siguiendo los criterios mencionados, todos los dato
+
+=== PKG inv-elaboracion-de-mostos-y-vino | CC-BY-4.0 | INV - Elaboración de mostos y vino | Elaboración de mostos y vinos en la República Argentina. Datos del Instituto Nacional de Vitivinicultura (INV) que muestran los mismos por provincia, departamento y localidad.
+  RES CSV | Elaboración de mostos y vinos 2025 | https://datos.magyp.gob.ar/dataset/f3b52a18-a717-426b-a4c4-029bd2c2a546/resource/02d02872-b37e-47a2-a7eb-ef593ad07db1/download/inv-elaboracion-mosto-vinos-2025.csv | 2026-03-26
+      > anio,provincia,provincia_id,departamento,departamento_id,localidad,localidad_id,tipo_establecimiento,tipo_producto,codigo_producto,color,litros
+      > 2025,Buenos Aires,06,Balcarce,06063,Balcarce,06063010,bodega,vino,vino tinto,tinto,12000
+      > 2025,Buenos Aires,06,Balcarce,06063,Balcarce,06063010,bodega,mosto,mosto virgen de uva blanco,blanco,50
+      > ...
+      > 2025,Tucumán,90,Tafí del Valle,90098,Colalao del Valle,90098020,bodega,vino,vino regional tinto,tinto,20700
+      > 2025,Tucumán,90,Tafí del Valle,90098,Colalao del Valle,90098020,bodega,vino,vino rosado,rosado,225
+      > 2025,Tucumán,90,Tafí del Valle,90098,El Bañado,90098A12,bodega,vino,vino regional tinto,tinto,5960
+      > 2025,Tucumán,90,Tafí del Valle,90098,El Bañado,90098A12,bodega,vino,vino regional blanco,blanco,3500
+  RES PDF | Anuario de cosecha y elaboración 2025 | https://datos.magyp.gob.ar/dataset/f3b52a18-a717-426b-a4c4-029bd2c2a546/resource/beb31504-876d-4bf2-8d3c-55c58ccf775f/download/inv-anuario_cosecha_uvas_elaboracion_mosto_vinos_2025.pdf | 2026-03-26
+
+=== PKG inv-actividad-vitivinicola | CC-BY-4.0 | INV - Actividad vitivinícola | Anuarios, informes y datos de la actividad vitivinícola a cargo del Instituto Nacional de Vitivinicultura (INV).
+  RES CSV | Establecimientos vinculados a la actividad vitivinícola | https://datos.magyp.gob.ar/dataset/94cd4864-1739-4e5e-b65f-034486afa407/resource/16e20ac2-e396-4a30-ba71-45e1cb10c284/download/establecimientos-nivel-departamental-vinculados-actividad-vitivinicola-acuerdo-al-inv.csv | 2025-07-18
+      > pais_id,nompais_id,codprovincia,provincia,departamento_id,partido_nom,link,cant_bodegas,cant_vinedos,cant_fabrica,sag
+      > 32,ARGENTINA,66,SALTA,35,CERRILLOS,66035,0,0,0,Instituto Nacional de Vitivinicultura
+      > 32,ARGENTINA,66,SALTA,42,CHICOANA,66042,0,0,0,Instituto Nacional de Vitivinicultura
+      > ...
+      > 32,ARGENTINA,94,TIERRA DEL FUEGO,14,USHUAIA,94014,0,0,0,Instituto Nacional de Vitivinicultura
+      > 32,ARGENTINA,6,BUENOS AIRES,749,SAN FERNANDO (ISLAS),6749,0,0,0,Instituto Nacional de Vitivinicultura
+      > 32,ARGENTINA,6,BUENOS AIRES,749,SAN FERNANDO,6749,0,0,0,Instituto Nacional de Vitivinicultura
+      > 32,ARGENTINA,6,BUENOS AIRES,217,CHASCOMUS,6217,0,0,0,Instituto Nacional de Vitivinicultura
+  RES CSV | Mercado interno 2024 | https://datos.magyp.gob.ar/dataset/94cd4864-1739-4e5e-b65f-034486afa407/resource/90f42554-1305-4c2e-9a2d-ea12b07b82e9/download/inv-mercado-interno-2024.csv | 2025-07-18
+      > anio,mes,provincia_id,provincia_nombre,departamento_id,departamento_nombre,localidad_id,localidad_nombre,establecimiento,producto,grupo,envase,i_geografica,variedad_1,variedad_2,variedad_3,anio_elaboracion,tipo,consumo
+      > 2024,1,06,Buenos Aires,06028,Almirante Brown,06028010,Burzaco,planta de fraccionamiento,vino varietal tinto,varietal,lata,-,Malbec,-,-,2021,fraccionado,719
+      > 2024,1,06,Buenos Aires,06063,Balcarce,06063010,Balcarce,bodega,vino varietal blanco,varietal,botella,Balcarce,Riesling,-,-,2022,fraccionado,2
+      > ...
+      > 2024,9,90,Tucumán,90098,Tafí del Valle,90098020,Colalao del Valle,bodega,vino varietal blanco,varietal,botella,Valles Calchaquies,Torrontes Riojano,-,-,2024,fraccionado,1008
+      > 2024,9,90,Tucumán,90098,Tafí del Valle,90098A12,El Bañado,bodega,vino varietal tinto,varietal,botella,Valles Calchaquies,Malbec,-,-,2022,fraccionado,573
+      > 2024,9,90,Tucumán,90098,Tafí del Valle,90098A12,El Bañado,bodega,vino varietal endulzado blanco,varietal,botella,Valles Calchaquies,Torrontes Riojano,-,-,2023,fraccionado,275
+      > 2024,9,90,Tucumán,90098,Tafí del Valle,90098A12,El Bañado,bodega,vino varietal tinto,varietal,botella,Valles Calchaquies,Tannat,Malbec,-,2022,fraccionado,53
+  RES PDF | Mercado Externo 2024 | https://datos.magyp.gob.ar/dataset/94cd4864-1739-4e5e-b65f-034486afa407/resource/a71c4540-8b98-48c1-88e6-728b371a69f3/download/inv-mercado-externo-2025-04abr.pdf | 2025-12-16
+  RES CSV | Exportaciones 2025 - Enero a Abril | https://datos.magyp.gob.ar/dataset/94cd4864-1739-4e5e-b65f-034486afa407/resource/be779a10-42a3-4e0a-9d1a-7df1486b69c3/download/inv-exportanciones-2025-ene-abr.csv | 2025-12-15
+      > anio,mes,pais,producto,color,anio_elaboracion,variedad_1,variedad_2,variedad_3,litros_exportados,hl_exportados,modalidad_envio,envase,cantidad_envases,valor_fob_litros,valor_fob_miles,provincia_depositario,departamento_depositario,provincia_exportador,departamento_exportador
+      > 2025,Ene,Dinamarca,vino varietal blanco,blanco,2024,Sauvignon Blanc,sin variedad,sin variedad,9,0.09,fraccionado,botella,12,0,0,Mendoza,Tupungato,Mendoza,Tupungato
+      > 2025,Ene,Dinamarca,vino varietal tinto,tinto,2023,Malbec,sin variedad,sin variedad,9,0.09,fraccionado,botella,12,0,0,Mendoza,Tupungato,Mendoza,Tupungato
+      > ...
+      > 2025,Abr,Colombia,vino varietal tinto,tinto,2021,Cabernet Sauvignon,Malbec,Cabernet Franc,11,0.11,fraccionado,botella,15,2508.9999,2.509,Mendoza,Lujan de Cuyo,Mendoza,Lujan de Cuyo
+      > 2025,Feb,Mexico,vino varietal tinto,tinto,2021,Cabernet Sauvignon,Malbec,Cabernet Franc,9,0.09,fraccionado,botella,12,2208.9996,2.209,Mendoza,Lujan de Cuyo,Mendoza,Lujan de Cuyo
+      > 2025,Feb,Mexico,vino varietal tinto,tinto,2021,Malbec,sin variedad,sin variedad,9,0.09,fraccionado,botella,12,2208.9996,2.209,Mendoza,Lujan de Cuyo,Mendoza,Lujan de Cuyo
+      > 2025,Abr,Australia,vino varietal tinto,tinto,2021,Cabernet Franc,sin variedad,sin variedad,1,0.01,fraccionado,botella,1,300,0.3,Mendoza,Lujan de Cuyo,Mendoza,Lujan de Cuyo
+
+=== PKG destino-produccion-leche | CC-BY-4.0 | Lácteos - Destino de producción de leche | Destino de la leche cruda a producto se presenta con distinto nivel de apertura para los siguientes periodos: de 1983 a 1988 el mínimo nivel de apertura (a leche fluida, informal y productos), de 1989 y 2007 mayor nivel de apertura (pero sin distinguir entre descremada, semi descremada y entera para
+  RES CSV | Destinos de producción de leche - 1983-1988 | https://datos.magyp.gob.ar/dataset/bec553ed-dda5-4107-b14d-417d3c97207a/resource/62fb3853-aa0e-4787-8d04-19b6ac5fea3b/download/destino-produccion-leche-1983-1988.csv | 2019-01-31
+      > pais_id,pais,año,mes,ccp_origen,producto_origen,ccp_destino,producto_destino,uni_med_id,uni_med,cantidad_por_millon
+      > 32,Argentina,1983,1,2211,Leche cruda,,Productos,l,Litros,416
+      > 32,Argentina,1983,2,2211,Leche cruda,,Productos,l,Litros,365
+      > ...
+      > 32,Argentina,1988,9,2211,Leche cruda,2211,Leche informal,l,Litros,42.3
+      > 32,Argentina,1988,10,2211,Leche cruda,2211,Leche informal,l,Litros,42.8
+      > 32,Argentina,1988,11,2211,Leche cruda,2211,Leche informal,l,Litros,42.3
+      > 32,Argentina,1988,12,2211,Leche cruda,2211,Leche informal,l,Litros,43.2
+  RES CSV | Destino de producción de la leche - 1989-2007 | https://datos.magyp.gob.ar/dataset/bec553ed-dda5-4107-b14d-417d3c97207a/resource/e36825ea-4252-4d20-9abf-55b62960bb19/download/destino-produccion-leche-1989-2007.csv | 2019-01-31
+      > pais_id,pais,año,mes,ccp_origen,producto_origen,ccp_destino,producto_destino,uni_med_id,uni_med,cantidad_por_millon
+      > 32,Argentina,1993,6,2211,Leche cruda,22241,Manteca,l,Litros,0
+      > 32,Argentina,1992,6,2211,Leche cruda,22241,Manteca,l,Litros,0
+      > ...
+      > 32,Argentina,2005,12,2211,Leche cruda,22211,Leche en polvo entera ,l,Litros,225.81
+      > 32,Argentina,2005,10,2211,Leche cruda,22211,Leche en polvo entera ,l,Litros,226.6
+      > 32,Argentina,2004,10,2211,Leche cruda,22211,Leche en polvo entera ,l,Litros,227.59
+      > 32,Argentina,2004,11,2211,Leche cruda,22211,Leche en polvo entera ,l,Litros,236.64
+  RES CSV | Destino de producción de la leche - 2008-2016 | https://datos.magyp.gob.ar/dataset/bec553ed-dda5-4107-b14d-417d3c97207a/resource/37d21f23-982e-43f9-b3aa-65006473c10d/download/destino-produccion-leche-2008-2016.csv | 2019-01-30
+      > pais_id,pais,año,mes,ccp_origen,producto_origen,ccp_destino,producto_destino,uni_med_id,uni_med,cantidad_por_millon
+      > 32,Argentina,2008,1,2211,Leche cruda,2211,Leche informal,l,Litros,66.57
+      > 32,Argentina,2008,1,2211,Leche cruda,22110,Leche pasteurizada entera,l,Litros,72.66
+      > ...
+      > 32,Argentina,2016,12,2211,Leche cruda,22222,Dulce de leche,l,Litros,18.29
+      > 32,Argentina,2016,12,2211,Leche cruda,22222,Leche condensada,l,Litros,0.59
+      > 32,Argentina,2016,12,2211,Leche cruda,22230,Yogur ,l,Litros,33.97
+      > 32,Argentina,2016,12,2211,Leche cruda,22290,Postres lacteos y flanes,l,Litros,2.08
+  RES CSV | Serie de Tiempo | https://datos.magyp.gob.ar/dataset/bec553ed-dda5-4107-b14d-417d3c97207a/resource/f7c928d6-2cb0-4426-acf2-a11c242c813a/download/serie_tiempo-destino-de-produccion-de-la-leche-1983-2016.csv | 2019-05-17
+      > indice_tiempo,leche_cruda_destinada_a_leche_fluida,leche_cruda_destinada_a_leche_informal,leche_cruda_destinada_a_productos,leche_cruda_destinada_a_dulce_de_leche,leche_cruda_destinada_a_leche_chocolatada,leche_cruda_destinada_a_leche_condesada,leche_cruda_destinada_a_leche_en_polvo_descremada,leche_cruda_destinada_a_leche_en_polvo_entera,leche_cruda_destinada_a_leche_esterilizada,leche_cruda_destinada_a_leche_esteri
+      > 1983-01,90.00,40.50,416.00,,,,,,,,,,,,,,,,,,,
+      > 1983-02,83.00,37.40,365.00,,,,,,,,,,,,,,,,,,,
+      > ...
+      > 2016-09,,61.31,,20.51,6.86,1.21,62.63,108.34,,5.54,33.24,16.62,,0.25,52.78,34.25,43.66,2.04,144.87,97.51,196.82,19.38
+      > 2016-10,,62.11,,16.53,4.47,1.12,49.83,103.49,,5.86,35.17,17.58,,0.35,53.45,34.60,46.70,3.53,157.57,72.61,194.09,31.67
+      > 2016-11,,58.29,,14.92,7.49,1.33,52.34,70.51,,5.20,31.17,15.59,,1.66,49.21,31.85,48.88,3.44,158.23,95.68,161.96,34.55
+      > 2016-12,,51.01,,18.29,8.05,0.59,48.57,89.80,,4.09,24.56,12.28,,0.13,45.72,29.59,45.06,2.08,133.18,100.06,170.36,33.97
+
+=== PKG estimacion-variacion-interanual-e-intermensual-produccion-leche-cruda | CC-BY-4.0 | Lácteos - Estimación de la producción de leche cruda | Estimación de la variación interanual e intermensual de la producción nacional y provincial, porcentual, a tambo constante y por estrato productivo (enero 2015 - actualidad). Se obtiene mensualmente del volumen de venta de leche cruda a nivel de tambo individual a través de un relevamiento móvil de
+  RES CSV | Estimación de la variación interanual nacional (tbo cte) | https://datos.magyp.gob.ar/dataset/36371415-5ded-451c-914d-d1c4c7b0bf17/resource/2d5e292c-cd1b-42b0-b502-4fba8a8300e1/download/estimacion-variacion-interanual-nacional-tbo-cte.csv | 2019-01-14
+      > pais_id,pais,año,mes,CCP,producto,uni_med_id,cantidad
+      > 032,Argentina,2015,Enero,02211,Leche cruda,%,-1.9
+      > 032,Argentina,2015,Febrero,02211,Leche cruda,%,-1.7
+      > ...
+      > 032,Argentina,2017,Junio,02211,Leche cruda,%,4.0
+      > 032,Argentina,2017,Julio,02211,Leche cruda,%,2.8
+      > 032,Argentina,2017,Agosto,02211,Leche cruda,%,-2.4
+      > 032,Argentina,2017,Septiembre,02211,Leche cruda,%,-1.8
+  RES CSV | Estimación de la variación interanual por estrato (tbo cte) | https://datos.magyp.gob.ar/dataset/36371415-5ded-451c-914d-d1c4c7b0bf17/resource/80ed49e0-8f5d-4924-8300-75584a249369/download/estimacion-variacion-interanual-estrato-tbo-cte.csv | 2019-01-14
+      > pais_id,pais,año,mes,CCP,producto,Estrato_productivo,uni_med_id,cantidad
+      > 032,Argentina,2015,Enero,02211,Leche cruda,Menos de 2000,%,-3
+      > 032,Argentina,2015,Febrero,02211,Leche cruda,Menos de 2000,%,-4
+      > ...
+      > 032,Argentina,2017,Junio,02211,Leche cruda,Más de 6000,%,12
+      > 032,Argentina,2017,Julio,02211,Leche cruda,Más de 6000,%,11
+      > 032,Argentina,2017,Agosto,02211,Leche cruda,Más de 6000,%,8
+      > 032,Argentina,2017,Septiembre,02211,Leche cruda,Más de 6000,%,5
+  RES CSV | Estimación de la variación interanual por provincia (tbo cte) | https://datos.magyp.gob.ar/dataset/36371415-5ded-451c-914d-d1c4c7b0bf17/resource/ad6d40d7-17db-4455-8596-71ca23dc64ca/download/estimacion-variacion-interanual-provincia-tbo-cte.csv | 2019-01-14
+      > pais_id,pais,provincia_id,provincia,año,mes,CCP,producto,uni_med_id,cantidad
+      > 032,Argentina,6,Buenos Aires,2015,Enero,02211,Leche cruda,%,-1
+      > 032,Argentina,6,Buenos Aires,2015,Febrero,02211,Leche cruda,%,2
+      > ...
+      > 032,Argentina,86,Santiago del Estero,2017,Junio,02211,Leche cruda,%,-7
+      > 032,Argentina,86,Santiago del Estero,2017,Julio,02211,Leche cruda,%,-13
+      > 032,Argentina,86,Santiago del Estero,2017,Agosto,02211,Leche cruda,%,-21
+      > 032,Argentina,86,Santiago del Estero,2017,Septiembre,02211,Leche cruda,%,-17
+  RES CSV | Estimación de la variación intermensual nacional (tbo cte) | https://datos.magyp.gob.ar/dataset/36371415-5ded-451c-914d-d1c4c7b0bf17/resource/40c29e4f-c246-47b3-a0ae-80a56569e556/download/estimacion-variacion-intermensual-nacional-tbo-cte.csv | 2019-01-14
+      > pais_id,pais,año,mes,CCP,producto,uni_med_id,cantidad
+      > 032,Argentina,2015,Enero,02211,Leche cruda,%,-9.8
+      > 032,Argentina,2015,Febrero,02211,Leche cruda,%,-7.0
+      > ...
+      > 032,Argentina,2017,Junio,02211,Leche cruda,%,7.3
+      > 032,Argentina,2017,Julio,02211,Leche cruda,%,5.3
+      > 032,Argentina,2017,Agosto,02211,Leche cruda,%,6.5
+      > 032,Argentina,2017,Septiembre,02211,Leche cruda,%,6.9
+  RES CSV | Estimación de la variación intermensual por estrato (tbo cte) | https://datos.magyp.gob.ar/dataset/36371415-5ded-451c-914d-d1c4c7b0bf17/resource/0933b5fc-942b-49bd-a285-081862be88df/download/estimacion-variacion-intermensual-estrato-tbo-cte.csv | 2019-01-14
+      > pais_id,pais,año,mes,CCP,producto,Estrato_productivo,uni_med_id,cantidad
+      > 032,Argentina,2015,Enero,02211,Leche cruda,Menos de 2000,%,-9
+      > 032,Argentina,2015,Febrero,02211,Leche cruda,Menos de 2000,%,-7
+      > ...
+      > 032,Argentina,2017,Junio,02211,Leche cruda,Más de 6000,%,8
+      > 032,Argentina,2017,Julio,02211,Leche cruda,Más de 6000,%,7
+      > 032,Argentina,2017,Agosto,02211,Leche cruda,Más de 6000,%,9
+      > 032,Argentina,2017,Septiembre,02211,Leche cruda,Más de 6000,%,6
+  RES CSV | Estimación de la variación intermensual por provincia (tbo cte) | https://datos.magyp.gob.ar/dataset/36371415-5ded-451c-914d-d1c4c7b0bf17/resource/b884d0fa-390a-481d-afda-9f6be398a766/download/estimacion-variacion-intermensual-provincia-tbo-cte.csv | 2019-01-14
+      > pais_id,pais,provincia_id,provincia,año,mes,CCP,producto,uni_med_id,cantidad
+      > 032,Argentina,6,Buenos Aires,2015,Enero,02211,Leche cruda,%,-6
+      > 032,Argentina,6,Buenos Aires,2015,Febrero,02211,Leche cruda,%,-5
+      > ...
+      > 032,Argentina,86,Santiago del Estero,2017,Junio,02211,Leche cruda,%,11
+      > 032,Argentina,86,Santiago del Estero,2017,Julio,02211,Leche cruda,%,3
+      > 032,Argentina,86,Santiago del Estero,2017,Agosto,02211,Leche cruda,%,15
+      > 032,Argentina,86,Santiago del Estero,2017,Septiembre,02211,Leche cruda,%,17
+  RES CSV | Estimación de la variación interanual e intermensual de la producción de leche cruda ( Ref | https://datos.magyp.gob.ar/dataset/36371415-5ded-451c-914d-d1c4c7b0bf17/resource/3fab4618-1267-4045-92e0-89a8cf26648e/download/referencias.csv | 2019-01-22
+      > pais_id;código de país
+      > pais;país de origen
+      > año;año correspondiente
+      > ...
+      > producto;producto correspondiente
+      > Estrato_productivo;Clasificación de medio productivo
+      > uni_med_id;unidad de medida
+      > cantidad;cantidad de producto por unidad de medida
+
+=== PKG precios-en-surtidor | CC-BY-4.0 | Precios en Surtidor - Resolución 314/2016 | Datos del Sistema en línea de información de precios de combustibles en surtidor, a través del cual los titulares de bocas de expendio de combustibles líquidos inscriptos en el registro creado por la resolución n° 1.102/2004 presentan la información relativa a precios de comercialización minorista d
+  RES CSV | Precios vigentes en surtidor - Resolución 314/2016 | http://datos.energia.gob.ar/dataset/1c181390-5045-475e-94dc-410429be4b17/resource/80ac25de-a44a-4445-9215-090cf55cfda5/download/precios-en-surtidor-resolucin-3142016.csv | 2026-10-09
+      > indice_tiempo,idempresa,cuit,empresa,direccion,localidad,provincia,region,idproducto,producto,idtipohorario,tipohorario,precio,fecha_vigencia,idempresabandera,empresabandera,latitud,longitud,geojson
+      > 2026-09,1376,33-64337382-9,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,PAMPEANA,19,Gas Oil Grado 2,2,Diurno,2354,2026-09-24 11:13:00,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}"
+      > 2026-09,1376,33-64337382-9,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,PAMPEANA,19,Gas Oil Grado 2,3,Nocturno,2354,2026-09-24 11:13:00,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}"
+      > ...
+      > 2025-08,4097,30-70795820-7,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,PAMPEANA,3,Nafta (premium) de más de 95 Ron,2,Diurno,1757,2025-08-02 09:00:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}"
+      > 2025-08,4097,30-70795820-7,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,PAMPEANA,3,Nafta (premium) de más de 95 Ron,3,Nocturno,1757,2025-08-02 09:00:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}"
+      > 2026-09,4097,30-70795820-7,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,PAMPEANA,2,Nafta (súper) entre 92 y 95 Ron,2,Diurno,2187,2026-09-22 10:45:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}"
+      > 2026-09,4097,30-70795820-7,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,PAMPEANA,2,Nafta (súper) entre 92 y 95 Ron,3,Nocturno,2187,2026-09-22 10:45:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}"
+  RES CSV | Precios históricos | http://datos.energia.gob.ar/dataset/1c181390-5045-475e-94dc-410429be4b17/resource/f8dda0d5-2a9f-4d34-b79b-4e63de3995df/download/precios-historicos.csv | 2026-10-07
+      > idempresa,empresa,direccion,localidad,provincia,idproducto,producto,idtipohorario,tipohorario,precio,fecha_vigencia,idempresabandera,empresabandera,latitud,longitud,geojson,anio,mes
+      > 1376,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,19,Gas Oil Grado 2,2,Diurno,985,01/04/2024 10:11,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}",2024,4
+      > 1376,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,19,Gas Oil Grado 2,3,Nocturno,985,01/04/2024 10:11,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}",2024,4
+      > ...
+      > 4097,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,2,Nafta (súper) entre 92 y 95 Ron,2,Diurno,1643,30/10/2025 09:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}",2025,10
+      > 4097,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,2,Nafta (súper) entre 92 y 95 Ron,3,Nocturno,1643,30/10/2025 09:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}",2025,10
+      > 4097,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,2,Nafta (súper) entre 92 y 95 Ron,2,Diurno,261.30,31/07/2023 22:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}",2023,7
+      > 4097,ZUSICO S.A.,TALCAHUANO 1198,MAR DEL PLATA,BUENOS AIRES,2,Nafta (súper) entre 92 y 95 Ron,3,Nocturno,261.3,31/07/2023 22:00,28,PUMA,-38.031169,-57.575518,"{""type"":""Point"",""coordinates"":[-57.575518,-38.031169]}",2023,7
+  RES HTML | Aplicaciones | https://preciosensurtidor.energia.gob.ar/ | 2023-06-02
+
+=== PKG anuario-exportaciones-frutas | CC-BY-4.0 | Frutas - Anuario de exportaciones | Exportaciones argentinas por país de destino de: arándanos, ciruelas, duraznos, limones, mandarinas, manzanas, naranjas, peras, pomelos y uvas. Expresado en dólares y por toneladas desde el año 2013 hasta 2017, según datos de INDEC.
+  RES CSV | Exportaciones de frutas del año 2013 al 2017 | https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/8540cc11-24da-4fd6-9bf7-bd29430b3937/download/exportaciones-de-frutas-del-anio-2013-al-2017.csv | 2019-07-10
+      > paisorigen_id,pais_origen,producto,paisdestino_id,pais_destino,año,unimed_cod,unidad_medida,totales_tn,moneda_cod,moneda,totales_usd
+      > 32,Argentina,Arandano,212,Estados Unidos,2013,tn,Toneladas,7352,USD,Dolares,49637.14
+      > 32,Argentina,Arandano,426,Reino Unido,2013,tn,Toneladas,2080,USD,Dolares,15151.5
+      > ...
+      > 32,Argentina,Uva,438,Alemania,2017,tn,Toneladas,377,USD,Dolares,460.05
+      > 32,Argentina,Uva,202,Bolivia,2017,tn,Toneladas,365,USD,Dolares,186.04
+      > 32,Argentina,Uva,221,Paraguay,2017,tn,Toneladas,189,USD,Dolares,68.05
+      > 32,Argentina,Uva,,Otros,2017,tn,Toneladas,165,USD,Dolares,260.89
+  RES CSV | Exportaciones de frutas desde el año 2013 al 2017 en toneladas | https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/d6a47033-1f54-43d8-a001-0e5ad43b2eef/download/exportaciones-de-frutas-desde-el-anio-2013-al-2017-en-toneladas.csv | 2019-10-02
+      > paisorigen_id,pais_origen,producto,paisdestino_id,pais_destino,año,unimed_cod,unidad_medida,totales
+      > 32,Argentina,Arandano,212,Estados Unidos,2013,tn,Toneladas,7352
+      > 32,Argentina,Arandano,426,Reino Unido,2013,tn,Toneladas,2080
+      > ...
+      > 32,Argentina,Uva,438,Alemania,2017,tn,Toneladas,377
+      > 32,Argentina,Uva,202,Bolivia,2017,tn,Toneladas,365
+      > 32,Argentina,Uva,221,Paraguay,2017,tn,Toneladas,189
+      > 32,Argentina,Uva,,Otros,2017,tn,Toneladas,165
+  RES CSV | Exportaciones de frutas desde el año 2013 al 2017 expresadas en dolares | https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/13a7d3b6-2326-4da0-8600-06c56fd6c436/download/exportaciones-de-frutas-del-anio-2013-al-2017-expresadas-en-usd.csv | 2019-10-02
+      > paisorigen_id,pais_origen,producto,paisdestino_id,pais_destino,año,moneda_cod,moneda,totales
+      > 32,Argentina,Arandano,212,Estados Unidos,2013,USD,Dolares,49637.14
+      > 32,Argentina,Arandano,426,Reino Unido,2013,USD,Dolares,15151.5
+      > ...
+      > 32,Argentina,Uva,438,Alemania,2017,USD,Dolares,460.05
+      > 32,Argentina,Uva,202,Bolivia,2017,USD,Dolares,186.04
+      > 32,Argentina,Uva,221,Paraguay,2017,USD,Dolares,68.05
+      > 32,Argentina,Uva,,Otros,2017,USD,Dolares,260.89
+
+=== PKG molienda-granos | CC-BY-4.0 | Granos - Molienda | Serie de molienda por cultivo y año de la República Argentina. Los valores de molienda se expresan en toneladas.
+  RES CSV | Molienda de granos | https://datos.magyp.gob.ar/dataset/c0d9a055-7c21-4616-840b-f70410996489/resource/b3d4cfd1-97bd-4590-9797-a347f863c23c/download/molienda-de-granos-a-diciembre-2017.csv | 2019-01-22
+      > pais_id,nom_pais,año,uni_med_id,nom_unimed,lino,girasol,maní,trigo candeal,trigo pan,maiz,sorgo granifero,soja,arroz
+      > 32,Argentina,1950,t,tonelada,441132,902363,37036,,2789548,148374,,,81798
+      > 32,Argentina,1951,t,tonelada,467156,858608,36477,,2731664,161254,,,109642
+      > ...
+      > 32,Argentina,2014,t,tonelada,3559,2216591,167362,268320,5502068,4436943,133748,37936186,946981
+      > 32,Argentina,2015,t,tonelada,2961,2630706,204836,263551,5599442,5516354,54700,40940319,777961
+      > 32,Argentina,2016,t,tonelada,3480,2745570,194338,275172,5447197,5228332,81497,8670493,1087554
+      > 32,Argentina,2017,t,tonelada,7201,3155237,209151,285620,5634055,5617646,126291,8065602,931169
+  RES CSV | Serie de tiempo | https://datos.magyp.gob.ar/dataset/c0d9a055-7c21-4616-840b-f70410996489/resource/1c3fb8f1-065c-4b2b-8b25-c32b1a14a241/download/molienda_granos.csv | 2019-05-06
+      > indice_tiempo,molienda_lino,molienda_sorgo_granifero,molienda_girasol,molienda_mani,molienda_trigo_pan,molienda_arroz,molienda_maiz,molienda_soja,molienda_trigo_candeal
+      > 1950,441132,,902363,37036,2789548,81798,148374,,
+      > 1951,467156,,858608,36477,2731664,109642,161254,,
+      > ...
+      > 2014,3559,133748,2216591,167362,5502068,946981,4436943,37936186,268320
+      > 2015,2961,54700,2630706,204836,5599442,777961,5516354,40940319,263551
+      > 2016,3480,81497,2745570,194338,5447197,1087554,5228332,8670493,275172
+      > 2017,7201,126291,3155237,209151,5634055,931169,5617646,8065602,285620
+
+=== PKG precios-de-comercio-exterior2 | CC-BY-4.0 | Precios de Comercio Exterior | Detalle de Importaciones/Exportaciones en USD, miles de m3 y Tn por empresa y país de destino.
+  RES ZIP | Precios de Comercio Exterior | http://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/tablas_dinamicas/dowstream/individuales/TD_comercio_exterior.zip | 2021-09-29
+  RES ZIP | Precios Comercio exterior 2010 - 2019 | http://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/tablas_dinamicas/dowstream/individuales/TD_comercio_exterior_2010_2019.zip | 2021-09-29
+
+=== PKG actividad-agricola | Creative Commons Attribution 4.0 | Actividad agrícola | Muestra el uso de la tierra, el consumo de fertilizantes, la superficie cultivada con cultivos y la superficie orgánica cosechada
+  RES CSV | Consumo aparente de fertilizantes | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=556 | 2022-12-30
+      > "año";"consumo_aparente_en_miles_de_tn"
+      > 
+      > "1996";"1650"
+      > ...
+      > 
+      > "2023";"4583"
+      > 
+      > "2024";"4936"
+  RES CSV | Superficie tratada con agroquímicos y fertilizantes | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=557 | 2022-01-06
+      > "agroquímico_o_fertilizante";"campaña";"unidad";"cereales";"oleaginosas";"legumbres";"frutales";"forrajeras_anuales";"forrajeras_perennes"
+      > 
+      > "Abonos Orgánicos";"2017-2018";"Hectáreas";"153050";"160508";"3355";"122891";"93228";"73538"
+      > ...
+      > 
+      > "Insecticidas";"2017-2018";"Hectáreas";"3297569";"9026310";"219618";"267189";"394458";"632865"
+      > 
+      > "Nematicidas";"2017-2018";"Hectáreas";"-";"-";"-";"3741";"-";"-"
+  RES CSV | Participación porcentual para los principales cultivos en el uso de la superficie agrícola | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=558 | 2023-08-15
+      > "campaña";"avena";"cebada_cervecera";"maíz";"sorgo";"trigo";"girasol";"soja";"algodón";"otros"
+      > 
+      > "1995-96";"8.0";"1.00";"14.7";"2.9";"21.9";"14.7";"25.9";"4.4";"6.6"
+      > ...
+      > 
+      > "2022-23";"3.4";"3.4";"24.4";"1.7";"13.7";"5.7";"37.0";"1.2";"3.1"
+      > 
+      > "2023-24";"3.5";"3.5";"26.2";"2.0";"14.0";"4.4";"39.1";"1.5";"3.0"
+  RES CSV | Superficie cultivada total en relación al cultivo de Soja | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=559 | 2023-08-15
+      > "campaña";"superficie_sembrada_total_en_miles_de_ha";"superficie_sembrada_soja_en_miles_de_ha"
+      > 
+      > "1969-70";"20736";"30"
+      > ...
+      > 
+      > "2023-24";"42388";"16564"
+      > 
+      > "2024-25";"43780";"17995"
+  RES CSV | Superficie de bosques cultivados. Año 2024 | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=560 | 2023-08-15
+      > "provincia";"total";"pinos";"eucaliptos";"Álamos_y_sauces";"nativas";"varias_especies";"no_identificado"
+      > 
+      > "Total por grupo de especies";"1264747";"757375";"344686";"73080";"37692";"27161";"24753"
+      > ...
+      > 
+      > "Tierra del Fuego";"2";"1";"S/R ";"S/R ";"S/R ";"1";"S/R "
+      > 
+      > "Tucumán ";"3659";"1949";"682";"74";"595";"51";"308"
+  RES CSV | Superficie destinada a la producción de cereales y oleaginosas | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=561 | 2023-08-15
+      > "campaña";"unidad";"cereales";"oleaginosas"
+      > 
+      > "1995-96";"miles de hectáreas";"12007";"10867"
+      > ...
+      > 
+      > "2022-23";"miles de hectáreas";"21726";"18495"
+      > 
+      > "2023-24";"miles de hectáreas";"22052";"18889"
+  RES CSV | Superficie orgánica cosechada | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=562 | 2023-08-18
+      > "año";"hectáreas_cosechadas"
+      > 
+      > "1995";"12162"
+      > ...
+      > 
+      > "2023";"96483"
+      > 
+      > "2024";"86061"
+  RES CSV | Uso de la tierra | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=563 | 2022-05-13
+      > "provincia";"año";"total";"superficie_implantada";"superficie_destinada_a_otros_usos";"sin_discriminar_condición_ni_uso"
+      > 
+      > "Total del país";"2018";"154811826.8";"31899871.3";"115109310.2";"7802645.2"
+      > ...
+      > 
+      > "Tierra del Fuego";"2018";"1072127.7";"78.1";"1072036.8";"12.7"
+      > 
+      > "Tucumán";"2018";"1056307.5";"494449.1";"439950.9";"121907.4"
+  RES CSV | Uso de la tierra. Superficie implantada en las explotaciones agropecuarias, según período  | https://ciam.ambiente.gob.ar/dt_csv.php?dt_id=564 | 2022-05-13
+      > "superficie_implantada";"año";"millones_de_hectáreas"
+      > 
+      > "Total";"1988";"33.11"
+      > ...
+      > 
+      > "Primera ocupación";"2018";"31.95"
+      > 
+      > "Segunda ocupación";"2018";"4.20"
