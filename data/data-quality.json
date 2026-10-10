@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T15:24:57Z",
+ "generatedAt": "2026-10-10T18:27:50Z",
  "summary": {
   "files": 49,
   "errors": 0,
@@ -355,16 +355,40 @@
    "status": "warning",
    "errors": [],
    "warnings": [
-    "AR/ar-sagyp-soy-production: salto 1400000.0 -> 2500000.0 en 1977 (mediana previa 7.8e+04)"
+    "AR/ar-lecheria-butter-exports-tonnes: salto 122.136 -> 584.62 en 1994-11 (mediana previa 10.7)",
+    "AR/ar-lecheria-butter-exports-tonnes: salto 31.755 -> 512.585 en 1995-01 (mediana previa 12.3)",
+    "AR/ar-lecheria-butter-exports-value: salto 215.618 -> 1158.94 en 1994-11 (mediana previa 32.5)",
+    "AR/ar-lecheria-butter-exports-value: salto 37.375 -> 1084.325 en 1995-01 (mediana previa 37.4)",
+    "AR/ar-lecheria-butter-exports-value: salto 1084.325 -> 1501.298 en 1995-02 (mediana previa 42)",
+    "AR/ar-lecheria-cheese-semihard-exports-tonnes: salto 948.202 -> 2621.954 en 1994-11 (mediana previa 51.5)",
+    "AR/ar-lecheria-cheese-semihard-exports-value: salto 2923.262 -> 7931.847 en 1994-11 (mediana previa 197)",
+    "AR/ar-lecheria-smp-exports-tonnes: salto 24.24 -> 1650 en 1993-01 (mediana previa 15.1)",
+    "AR/ar-lecheria-smp-exports-tonnes: salto 1650 -> 1805.47 en 1993-02 (mediana previa 18.2)",
+    "AR/ar-lecheria-smp-exports-tonnes: salto 100 -> 1330.24 en 1993-05 (mediana previa 24.2)",
+    "AR/ar-lecheria-smp-exports-tonnes: salto 1330.24 -> 833.47 en 1993-06 (mediana previa 25)",
+    "AR/ar-lecheria-smp-exports-value: salto 64.78 -> 2517.98 en 1993-01 (mediana previa 42.3)",
+    "AR/ar-lecheria-smp-exports-value: salto 2517.98 -> 2892.93 en 1993-02 (mediana previa 44)",
+    "AR/ar-lecheria-smp-exports-value: salto 213.64 -> 2176.41 en 1993-05 (mediana previa 63.8)",
+    "AR/ar-lecheria-smp-exports-value: salto 2176.41 -> 1624.87 en 1993-06 (mediana previa 64.8)",
+    "AR/ar-lecheria-wmp-exports-tonnes: salto 209.217 -> 4051.367 en 1997-01 (mediana previa 117)",
+    "AR/ar-lecheria-wmp-exports-tonnes: salto 4051.367 -> 4279.693 en 1997-02 (mediana previa 127)",
+    "AR/ar-lecheria-wmp-exports-tonnes: salto 4279.693 -> 3850.805 en 1997-03 (mediana previa 127)",
+    "AR/ar-lecheria-wmp-exports-tonnes: salto 3850.805 -> 5781.747 en 1997-04 (mediana previa 127)",
+    "AR/ar-lecheria-wmp-exports-tonnes: salto 3151.975 -> 7294.802 en 1997-06 (mediana previa 209)",
+    "AR/ar-lecheria-wmp-exports-value: salto 469.514 -> 9157.743 en 1997-01 (mediana previa 265)",
+    "AR/ar-lecheria-wmp-exports-value: salto 9157.743 -> 9833.244 en 1997-02 (mediana previa 311)",
+    "AR/ar-lecheria-wmp-exports-value: salto 9833.244 -> 8861.464 en 1997-03 (mediana previa 311)",
+    "AR/ar-lecheria-wmp-exports-value: salto 8861.464 -> 13845.341 en 1997-04 (mediana previa 311)",
+    "AR/ar-lecheria-wmp-exports-value: salto 8206.934 -> 15706.055 en 1997-06 (mediana previa 470)"
    ],
    "stats": {
-    "series": 177,
-    "points": 25119,
+    "series": 222,
+    "points": 34444,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T22:32:43Z",
+   "generatedAt": "2026-10-10T16:51:48Z",
    "info": [],
-   "nWarnings": 1,
+   "nWarnings": 26,
    "nErrors": 0
   },
   {
