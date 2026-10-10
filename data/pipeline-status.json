@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T02:48:00Z",
+ "generatedAt": "2026-10-10T02:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 111,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "692c7416",
+   "sha": "95120f2f",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c605f271-b7a7-4c00-877d-06c42e8d6491",
-   "completedAt": "2026-10-10T02:31:26Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/8307ad29-2db0-464a-8941-094fdd8a9cda",
+   "completedAt": "2026-10-10T02:53:15Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -88,7 +88,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-10T00:06:09Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1688,7 +1688,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1703,7 +1703,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1720,7 +1720,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/products"
@@ -1731,30 +1731,30 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-10T02:30:43Z"
+     "lastChange": "2026-10-10T02:52:26Z"
     },
     {
      "path": "data/home-explore.json",
