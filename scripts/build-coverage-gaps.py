@@ -159,7 +159,7 @@ for cc, name, etype, files in CM.entities():
         if m is None: unmapped[s['group']] += 1; continue
         if m == 'other': other[s['group']] += 1; continue
         tags = [t for t in (s.get('tags') or []) if t in CM.KIND_OF]
-        if m == 'price_index' and CM.OILSEED_AGG.search(str(s.get('label', ''))): tags = list(dict.fromkeys(tags + ['rapeseed', 'soy']))   # indice de GRUPO de oleaginosas: cuenta para colza y soja (decision de Mario, 9 oct; igual que Canada)
+        tags = [t for t in CM.index_tags(s, m, tags) if t in CM.KIND_OF]   # indices de GRUPO (oleaginosas de Eurostat, SIPM de Argentina): cuentan para los productos del grupo (decision de Mario, 9 oct; igual que Canada)
         ing[m] += 1
         if not tags: untagged[s['group']] += 1; unt[m] += 1; continue
         for t in tags:

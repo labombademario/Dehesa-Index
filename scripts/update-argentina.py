@@ -250,8 +250,65 @@ def ipc_prices():
         mk('ar-indec-retail-gba-%s' % key.replace('_', '-'), 'prices', '%s: retail price, Greater Buenos Aires (INDEC average price survey)' % RET_GBA_ONLY[key], 'ARS (INDEC reference unit)', 'monthly', pts, 'INDEC precios medios minoristas'); n += 1
     log('precios minoristas INDEC', n)
 
+# ---------------- INDEC SIPM: indices de precios mayoristas por grupo de productos ----------------
+# Fichero oficial del INDEC (series desde dic-2015 = 100). Licencia: politica de difusion del INDEC, cap. XI (todo el material del sitio
+# "posee la licencia Creative Commons (CC)": copiar, reutilizar o redistribuir en cualquier medio o formato acreditando la obra, citando la
+# fuente primaria e indicando cambios; leido el 10 oct 2026). Son indices de GRUPO: el INDEC no publica la cesta por producto.
+SIPM_URL = 'https://www.indec.gob.ar/ftp/cuadros/economia/series_sipm_dic2015.xls'
+SIPM = (('IPP', '0111', 'cereals-oilseeds', 'cereals and oilseeds', 'idx_perc'), ('IPP', '0112', 'vegetables-pulses', 'vegetables and pulses', 'idx_perc'),
+        ('IPP', '0113', 'fruit', 'fruit', 'idx_perc'), ('IPP', '0121', 'cattle-milk', 'cattle and milk', 'idx_perc'),
+        ('IPP', '0122', 'pigs-farm', 'pigs and farm products', 'idx_perc'), ('IPP', 'A', 'agricultural', 'agricultural products (total)', 'idx_perc'),
+        ('IPP', '1511', 'meat-products', 'meat products', 'idx_perc'), ('IPP', '152', 'dairy-products', 'dairy products', 'idx_perc'),
+        ('IPP', '1542', 'sugar', 'sugar', 'idx_perc'), ('IPP', '1552', 'wine', 'wines and cider', 'idx_perc'),
+        ('IPIM', '2412', 'fertilisers', 'fertilisers', 'idx_pag'), ('IPIM', '23', 'refined-petroleum', 'refined petroleum products (fuels)', 'idx_pag'),
+        ('IPIM', 'E', 'electricity', 'electric energy', 'idx_pag'))
+SIPM_NAME = {'IPP': ('ipp', 'Producer price index (INDEC IPP, basic prices, domestic products)'), 'IPIM': ('ipim', 'Wholesale price index (INDEC IPIM, domestic and imported products)')}
+MES = {'ene': 1, 'feb': 2, 'mar': 3, 'abr': 4, 'may': 5, 'jun': 6, 'jul': 7, 'ago': 8, 'sep': 9, 'set': 9, 'oct': 10, 'nov': 11, 'dic': 12}
+def sipm():
+    import xlrd
+    wb = xlrd.open_workbook(file_contents=fetch(SIPM_URL, 180))
+    n = 0
+    for sheet, code, key, en, grp in SIPM:
+        sh = wb.sheet_by_name(sheet)
+        hy = next(r for r in range(sh.nrows) if str(sh.cell_value(r, 0)).strip() == 'C\u00f3digo')   # fila de anos; la siguiente, meses
+        per, y = {}, None
+        for c in range(2, sh.ncols):
+            yv = sh.cell_value(hy, c)
+            if isinstance(yv, float) and yv > 1900: y = int(yv)
+            m = MES.get(re.sub(r'[^a-z]', '', str(sh.cell_value(hy + 1, c)).lower())[:3])
+            if y and m: per[c] = '%d-%02d' % (y, m)
+        def cod(v): return (str(int(v)) if isinstance(v, float) and v == int(v) else str(v)).strip()
+        row = next((r for r in range(hy + 2, sh.nrows) if cod(sh.cell_value(r, 0)) == code), None)
+        if row is None: log('SIPM sin fila', sheet, code); continue
+        desc = str(sh.cell_value(row, 1)).strip()
+        pts = [(p, round(sh.cell_value(row, c), 3)) for c, p in per.items() if isinstance(sh.cell_value(row, c), float)]
+        pid, pname = SIPM_NAME[sheet]
+        mk('ar-indec-%s-%s' % (pid, key), grp, '%s: %s (Dec 2015 = 100)' % (pname, en), 'index (Dec 2015=100)', 'monthly', pts, 'INDEC SIPM',
+           'INDEC, Sistema de Indices de Precios Mayoristas, %s, codigo %s "%s". Indice de grupo (el INDEC no publica la cesta por producto); el ultimo mes es provisional segun el INDEC.' % (sheet, code, desc)); n += 1
+    log('SIPM INDEC', n)
+# ---------------- Secretaria de Energia: gasoil al canal agro (Res. 1104/04) ----------------
+def fuel():
+    pkg = package('precios-mayoristas-resolucion-1104-04')
+    head, rows = table(csv_url(pkg, lambda nm, u: 'desde-diciembre-2024' in u))
+    ip, ic, iv, ipr, ipc, iper = col(head, r'^producto$'), col(head, r'^canal'), col(head, r'^volumen$'), col(head, r'^precio_sin_i'), col(head, r'^precio_con_i'), col(head, r'^periodo$')
+    for pcol, key, what in ((ipr, 'excl-taxes', 'excluding taxes'), (ipc, 'incl-taxes', 'including taxes')):
+        acc = defaultdict(list)
+        for r in rows:
+            if len(r) <= max(ip, ic, iv, pcol, iper) or r[ip].strip() != 'Gas Oil Grado 2' or r[ic].strip().lower() != 'agro': continue
+            v, w = num(r[pcol]), num(r[iv])
+            if v and w and v > 0 and w > 0: acc[r[iper].strip().replace('/', '-')[:7]].append((v, w))
+        pts = []
+        for per, xs in acc.items():
+            xs.sort(); tot = sum(w for _, w in xs); c = 0
+            for v, w in xs:
+                c += w
+                if c >= tot / 2: pts.append((per, round(v, 2))); break
+        mk('ar-energia-diesel-agro-%s' % key, 'inputs', 'Diesel (gas oil grade 2): wholesale price to the agricultural channel, %s, Argentina (Secretaria de Energia, Res. 1104/04)' % what, 'ARS/l', 'monthly', pts,
+           'Secretaria de Energia precios mayoristas', 'Mediana ponderada por volumen de los precios declarados por los distribuidores y comercializadores mayoristas (Res. 1104/04) para el canal "Agro"; sin estimaciones ni relleno.')
+    log('gasoil agro ok')
+
 def main():
-    for fn in (crops, fob, livestock, trade, minor_crops, slaughter, campaigns, ipc_prices):
+    for fn in (crops, fob, livestock, trade, minor_crops, slaughter, campaigns, ipc_prices, sipm, fuel):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:200])
     log('series', len(OUT))

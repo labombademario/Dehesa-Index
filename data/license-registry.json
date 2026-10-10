@@ -2032,7 +2032,7 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
    "attributionText": "Fuente: Secretaria de Agricultura, Ganaderia y Pesca / Ministerio de Economia / INDEC, Argentina (datos.gob.ar), licencia CC BY 4.0.",
    "additionalRestrictions": "Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan.",
-   "evidence": "La API CKAN de datos.gob.ar (package_show, leida el 2026-10-06 desde GitHub Actions) devuelve license_id CC-BY-4.0 para los conjuntos de cultivos, ganaderia, comercio y 'Creative Commons Attribution 4.0' para los de Programacion Macroeconomica (FOB oficiales, exportaciones por rubro).",
+   "evidence": "La API CKAN de datos.gob.ar (package_show, leida el 2026-10-06 desde GitHub Actions) devuelve license_id CC-BY-4.0 para los conjuntos de cultivos, ganaderia, comercio y 'Creative Commons Attribution 4.0' para los de Programacion Macroeconomica (FOB oficiales, exportaciones por rubro). 10-oct-2026: 'precios-mayoristas-resolucion-1104-04' (Secretaria de Energia, publicado en datos.energia.gob.ar) tambien declara CC-BY-4.0 en package_show; el pipeline comprueba el license_id en cada ejecucion.",
    "short": "Argentina",
    "legalConfidenceReason": "Licencia explicita en los metadatos oficiales de cada conjunto."
   },
@@ -2375,6 +2375,32 @@
    "short": "BFS (Suiza)",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Condiciones explicitas de opendata.swiss en cada recurso: uso comercial permitido citando la fuente."
+  },
+  "indec_ar": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "notes": "Indices de precios mayoristas y al productor por grupo de productos (dic-2015=100), del fichero oficial series_sipm_dic2015.xls. Son indices de GRUPO: el INDEC no publica la cesta por producto.",
+   "name": "Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP)",
+   "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-32",
+   "country": "AR",
+   "licenseId": "CC-BY-INDEC",
+   "licenseName": "INDEC: Creative Commons, reutilizacion con atribucion (Politicas de difusion estadistica, cap. XI)",
+   "licenseUrl": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/politica_difusion_indec.pdf",
+   "attributionText": "Fuente: INDEC, Sistema de Indices de Precios Mayoristas (SIPM). Indices reproducidos sin cambios salvo el formato.",
+   "additionalRestrictions": "Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios si los hubiere. El ultimo mes es provisional segun el INDEC.",
+   "evidence": "Politicas de difusion estadistica del INDEC (PDF, leido el 10-oct-2026 desde GitHub Actions), cap. XI 'Usabilidad de la informacion': 'Salvo contenidos especificamente indicados, todo el material publicado en el sitio web del INDEC posee la licencia Creative Commons (CC). Esto permite a los usuarios copiar, reutilizar o redistribuir el material en cualquier medio o formato, siempre que se acredite debidamente la obra, se cite la fuente primaria y se especifiquen cambios si los hubiere.' El pie de cada pagina del INDEC repite la licencia. No hay clausula no comercial ni de no derivados. El nivel general del IPIM coincide con la serie que la Subsecretaria de Programacion Macroeconomica republica en datos.gob.ar con CC BY 4.0.",
+   "short": "INDEC (Argentina)",
+   "legalConfidenceReason": "Licencia explicita en la politica de difusion oficial del INDEC y en el pie de su sitio."
   }
  },
  "files": {
@@ -3023,8 +3049,13 @@
    }
   },
   "data/argentina-stats.json": {
-   "byCountry": {
-    "AR": "argentina_datos_abiertos"
+   "bySourceGroupPrefix": {
+    "INDEC SIPM": "indec_ar",
+    "INDEC": "argentina_datos_abiertos",
+    "Precios FOB": "argentina_datos_abiertos",
+    "SAGyP": "argentina_datos_abiertos",
+    "SSPM": "argentina_datos_abiertos",
+    "Secretaria de Energia": "argentina_datos_abiertos"
    }
   },
   "data/poland-eurostat-stats.json": {

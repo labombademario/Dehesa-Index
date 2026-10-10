@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
+      - run: pip install xlrd
       - id: fetch
         run: bash scripts/annotate-failure.sh python3 scripts/update-argentina.py
         timeout-minutes: 20

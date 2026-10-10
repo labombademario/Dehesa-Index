@@ -1375,7 +1375,7 @@ def coverage_gaps(doc, errs, warns, stats):
             ok = sr.get("fs") in ("LIVE", "FRESH", "EXPECTED_DELAY")
             ing[m] += 1
             tg = list(sr.get("tags") or [])
-            if m == "price_index" and CM.OILSEED_AGG.search(str(sr.get("label", ""))): tg = list(dict.fromkeys(tg + ["rapeseed", "soy"]))
+            tg = CM.index_tags(sr, m, tg)
             if not [t for t in tg if t in CM.KIND_OF]: unt[m] += 1
             for t in [t for t in tg if t in CM.KIND_OF]: trk[t] += 1
             for t in tg:

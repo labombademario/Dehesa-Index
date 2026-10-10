@@ -242,6 +242,7 @@ sources:
   - id: argentina
     name: Update Argentina (datos abiertos)
     cron: ['10 18 * * 4']
+    pre: ['pip install xlrd']
     script: scripts/update-argentina.py
     timeout: 30
     script_timeout: 20

@@ -72,6 +72,15 @@ NASS_RECEIVED_PRICE_PRODUCT = {'RYE': 'rye', 'POTATOES': 'potato', 'SUGARBEETS':
 # Canada: indices de precios agrarios (StatCan 32-10-0098) por grupo de productos; cuentan como price_index de los productos que el grupo contiene (indice de GRUPO, no del producto suelto)
 import re as _re
 OILSEED_AGG = _re.compile(r'oilseeds? and oleaginous', _re.I)   # Eurostat apri_pi: «Oilseeds and oleaginous fruit» (indice de grupo; colza y soja no se publican por separado en algunos paises)
+# Argentina: INDEC SIPM (update-argentina.py, sipm()) publica indices de GRUPO; cuentan como price_index de los productos que el grupo nombra, igual que Canada y el
+# agregado de oleaginosas de Eurostat (decision de Mario, 9 oct). La etiqueta no nombra cada producto porque el INDEC no publica la cesta por producto.
+GROUP_INDEX_PRODUCT = {'ar-indec-ipp-cereals-oilseeds': ['wheat', 'maize', 'barley', 'oats', 'rye', 'rice', 'soy', 'rapeseed'], 'ar-indec-ipp-vegetables-pulses': ['potato'],
+                       'ar-indec-ipp-pigs-farm': ['poultry', 'eggs'], 'ar-indec-ipp-dairy-products': ['butter', 'cheese']}
+def index_tags(s, m, tags):
+    """Etiquetas de producto de una serie para la matriz, con los indices de GRUPO (oleaginosas de Eurostat, SIPM de Argentina) repartidos a sus productos."""
+    if m != 'price_index': return list(tags)
+    extra = (['rapeseed', 'soy'] if OILSEED_AGG.search(str(s.get('label', ''))) else []) + GROUP_INDEX_PRODUCT.get(s.get('id'), [])
+    return list(dict.fromkeys(list(tags) + extra))
 CA_FPPI_PRODUCT = {'ca-fppi-grains': ['wheat', 'barley', 'oats', 'rye', 'maize'], 'ca-fppi-oilseeds': ['soy', 'rapeseed']}
 NASS_PRICES_PRODUCT = (('FERTILIZER', 'fertilizer'), ('FUELS', 'energy'), ('ENERGY', 'energy'))  # nass-prices.json: indices de precios pagados (price_index)
 DE_AGRI_PRODUCT = {'wheat': 'wheat', 'rye': 'rye', 'barley': 'barley', 'oats': 'oats', 'maize': 'maize', 'rapeseed': 'rapeseed', 'potato': 'potato', 'sugarbeet': 'sugar'}   # germany-agri.json: produccion nacional/Land de Destatis (cereals, triticale, sunflower y silage no son producto de la matriz)
