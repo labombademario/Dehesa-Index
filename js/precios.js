@@ -321,7 +321,7 @@
   }
 
   // Emoji solo para productos inconfundibles; decorativo (aria-hidden), sin emoji = sin icono
-  var PRODUCT_EMOJI = { maiz: '🌽', trigo: '🌾', trigo_pienso_ab: '🌾', trigo_cwrs_ab: '🌾', vaca: '🐄', novillo_ab: '🐄', cerdo: '🐖', cerdo_ab: '🐖', pollo: '🐔', huevos: '🥚', leche: '🥛', mantequilla: '🧈', oliva: '🫒', cordero: '🐑', cabra: '🐐' };
+  var PRODUCT_EMOJI = { maiz: '🌽', trigo: '🌾', trigo_pienso_ab: '🌾', trigo_cwrs_ab: '🌾', vaca: '🐄', novillo_ab: '🐄', cerdo: '🐖', cerdo_ab: '🐖', pollo: '🐔', huevos: '🥚', leche: '🥛', mantequilla: '🧈', oliva: '🫒', cordero: '🐑', cabra: '🐐', gas_natural: '🔥', petroleo_brent: '🛢️', petroleo_wti: '🛢️', diesel: '⛽' };
   function productEmoji(nameKey) { return PRODUCT_EMOJI[nameKey] ? '<span class="di-emoji" aria-hidden="true">' + PRODUCT_EMOJI[nameKey] + '</span> ' : ''; }
   function productName(nameKey) { return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
   function catLabel(catId) { var c = (D.CATS[lang()] || D.CATS.es)[catId]; return c ? c.label : catId; }
