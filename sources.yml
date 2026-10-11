@@ -278,6 +278,15 @@ sources:
     data: [switzerland-bfs-stats.json]
     log: switzerland-bfs-log.txt
     message: Datos Suiza (BFS, cuentas e indices de precios agrarios)
+  - id: sweden-sjv
+    name: Update Sweden (Jordbruksverket producer prices, A-index and farm stocks)
+    cron: ['20 7 14 * *']
+    script: scripts/update-se-sjv.py
+    timeout: 20
+    script_timeout: 12
+    data: [sweden-sjv-stats.json]
+    log: sweden-sjv-log.txt
+    message: Datos Suecia (Jordbruksverket, precios al productor y existencias)
   - id: switzerland-meteo
     name: Update Switzerland (MeteoSwiss climate)
     cron: ['35 5 4 * *']

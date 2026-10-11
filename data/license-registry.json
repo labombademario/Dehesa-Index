@@ -2348,6 +2348,34 @@
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Obra del gobierno federal de EE. UU. (dominio publico) con peticion de cita."
   },
+  "sjv_se": {
+   "name": "Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks)",
+   "url": "https://statistik.jordbruksverket.se/",
+   "country": "SE",
+   "licenseId": "CC0-1.0-OR-CC-BY",
+   "licenseName": "Jordbruksverket open data policy: CC0 (preferred) or CC BY; usable without restrictions",
+   "licenseUrl": "http://www.jordbruksverket.se/oppnadata.4.10e2eedd15919993ebd3f1ab.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Jordbruksverket (Swedish Board of Agriculture), statistics database.",
+   "additionalRestrictions": "The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is given anyway so the CC BY case is also met.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-11",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "jordbruksverket.se/oppnadata (11-oct-2026): open data can be used without restrictions, licences CC0 (preferred) or CC BY; statistik.jordbruksverket.se user guide: database free to use, open data with an API for every table.",
+   "used": true,
+   "aliases": [
+    "sjv_se"
+   ],
+   "notes": "Tables used: JO1001L2 (producer prices, monthly), JO1001AM20 (A-index 2020=100, monthly), JO0611L01 (farm stocks of cereals and rapeseed, June and September; the December forecast is not published). Statistics Sweden (SCB) uses CC0 but its agricultural tables stop in 2007 except JO0601, which duplicates Eurostat.",
+   "short": "Jordbruksverket (Suecia)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Politica de datos abiertos de Jordbruksverket (CC0 o CC BY, sin restricciones) y base estadistica ofrecida como datos abiertos con API; no hay licencia explicita por tabla."
+  },
   "bfs_ch_open": {
    "name": "Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices",
    "url": "https://opendata.swiss/en/organization/bundesamt-fur-statistik-bfs",
@@ -3330,6 +3358,12 @@
     "ES": "mapa_es"
    },
    "notes": "Balances anuales de colza, soja y girasol y de sus tortas/harinas (importaciones, exportaciones, consumo interno, existencias finales y produccion utilizable) del PDF «Balance oleaginosas en España» del MAPA, en miles de toneladas sin otro cambio; la ultima campaña es estimacion del MAPA; scripts/update-spain-oilseeds.py."
+  },
+  "data/sweden-sjv-stats.json": {
+   "bySourceGroupPrefix": {
+    "Jordbruksverket": "sjv_se"
+   },
+   "notes": "scripts/update-se-sjv.py: Jordbruksverket, precios de liquidacion al productor, A-index (2020=100) y existencias de cereales y colza en la explotacion (junio y septiembre; el pronostico de diciembre no se publica)."
   },
   "data/switzerland-bfs-stats.json": {
    "bySourceGroupPrefix": {
