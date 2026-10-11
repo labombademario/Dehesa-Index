@@ -27,7 +27,7 @@ const hubs = { es: {}, en: {}, fr: {}, it: {} };
 for (const [cc, slug] of Object.entries(HUB_ES)) { const f = 'regiones/' + slug + '/index.html'; if (!fs.existsSync(f)) continue; const al = alts(read(f)); for (const l of ['es', 'en', 'fr', 'it']) { const d = (al[l] || '').replace(/index\.html$/, ''); if (d && fs.existsSync(d + 'index.html')) hubs[l][cc] = { dir: d, name: right(h1(d + 'index.html')) }; } }
 const prices = { es: [], en: [], fr: [], it: [] };
 for (const slug of TOP_PRICES_ES) { const f = 'precios/' + slug + '/index.html'; if (!fs.existsSync(f)) continue; const al = alts(read(f)); for (const l of ['es', 'en', 'fr', 'it']) { const d = (al[l] || '').replace(/index\.html$/, ''); if (d && fs.existsSync(d + 'index.html')) prices[l].push({ dir: d, name: left(h1(d + 'index.html')) }); } }
-const rel = (from, to) => { const up = '../'.repeat(from.replace(/\/$/, '').split('/').length); return up + to; };
+const rel = (from, to) => { if (!from.replace(/\/$/, '')) return to; const up = '../'.repeat(from.replace(/\/$/, '').split('/').length); return up + to; };
 const li = (from, arr) => arr.map(x => '<a href="' + rel(from, x.dir) + '">' + esc(x.name) + '</a>').join(' · ');
 const block = (title, from, arr) => arr.length ? '<h2 style="font-size:17px;margin-top:22px">' + esc(title) + '</h2>\n    <p>' + li(from, arr) + '</p>\n    ' : '';
 function put(file, html) { let h = read(file); const b = A + html + B; const n = h.includes(A) ? h.replace(new RegExp(A + '[\\s\\S]*?' + B), b) : h.replace('</article>', b + '\n  </article>'); if (n !== h) fs.writeFileSync(file, n); }

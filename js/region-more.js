@@ -5,6 +5,7 @@
    region.js llama a window.DehesaRegionMore(H) con sus utilidades y recibe { T: textos por idioma, mods: bloques por país }. */
 (function () {
   'use strict';
+  function locName(l) { var g = (window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'); return (l && l.names && l.names[g]) || (l && l.name) || ''; }   // nombre del punto de clima en el idioma de la pagina
   var IX = { es: 0, en: 1, fr: 2, it: 3 };   // los textos «a|b|c|d» de este fichero van en el orden es|en|fr|it
   // Punto de clima (NASA POWER, data/climate.json) que cae dentro de cada región. El Valle del Po (45,0 N 10,5 E) queda en la frontera Lombardía/Emilia-Romaña y no se asigna.
   var CLIM = { US: { IA: 'us-iowa', IL: 'us-illinois', KS: 'us-kansas', ND: 'us-north-dakota', NE: 'us-nebraska', MN: 'us-minnesota', IN: 'us-indiana', OH: 'us-ohio', SD: 'us-south-dakota', MO: 'us-missouri', TX: 'us-texas', OK: 'us-oklahoma', CO: 'us-colorado', MT: 'us-montana', WA: 'us-washington', CA: 'us-california', AR: 'us-arkansas', MS: 'us-mississippi', GA: 'us-georgia', WI: 'us-wisconsin', NC: 'us-north-carolina' }, ES: { AR: 'eu-aragon', CL: 'eu-castilla-leon' }, FR: { CVL: 'eu-beauce' }, DE: { ST: 'eu-saxony-anhalt' },
@@ -166,7 +167,7 @@
         var t = tt(), locs = (d && d.locations || []).filter(function (l) { return ids.indexOf(l.id) >= 0 && l.months && l.months.length; }); if (!locs.length) return null;
         var body = locs.map(function (l) {
           var rows = l.months.slice(-6).reverse().map(function (m) { return [esc(mon(m.period)), nf(m.precipMm, 1), (m.precipAnomalyPct > 0 ? '+' : m.precipAnomalyPct < 0 ? '−' : '') + nf(Math.abs(m.precipAnomalyPct), 0) + ' %', nf(m.tempC, 1), (m.tempAnomalyC > 0 ? '+' : m.tempAnomalyC < 0 ? '−' : '') + nf(Math.abs(m.tempAnomalyC), 1) + ' °C']; });
-          return '<h3 style="margin:10px 0 4px;font-size:14px">' + esc(t.climPt) + ': ' + esc(l.name) + ' ' + faint(nf(l.lat, 1) + '°, ' + nf(l.lon, 1) + '°') + '</h3>' + table([t.mMonth, t.precip, t.precipA, t.temp, t.tempA], rows, 480);
+          return '<h3 style="margin:10px 0 4px;font-size:14px">' + esc(t.climPt) + ': ' + esc(locName(l)) + ' ' + faint(nf(l.lat, 1) + '°, ' + nf(l.lon, 1) + '°') + '</h3>' + table([t.mMonth, t.precip, t.precipA, t.temp, t.tempA], rows, 480);
         }).join('');
         return card(t.clim, t.climSub, body + link('clima.html', t.climMore), cite('nasa_power', d.lastPeriod || ''));
       });

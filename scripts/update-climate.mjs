@@ -61,6 +61,8 @@ const LOCATIONS=[
  {id:'eu-belgium-hesbaye',name:'Hesbaye (Lieja, Bélgica)',region:'eu',country:'BE',lat:50.65,lon:5.1,crops:['trigo','remolacha','patata']},
  {id:'eu-belgium-flanders',name:'Flandes Occidental (Roeselare, Bélgica)',region:'eu',country:'BE',lat:50.95,lon:3.1,crops:['patata','cerdo','maiz']}
 ];
+// nombres de cada punto en en/fr/it (el campo name es el espanol); los usan clima, mapa y region-more
+const NAMES=JSON.parse(await readFile(path.join(root,'scripts','ref','climate-names.json'),'utf8'));
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const round=(n,d=1)=>Number(n.toFixed(d));
 async function getJson(url){for(let i=0;i<3;i++){try{const r=await fetch(url);if(r.ok)return await r.json();console.error('HTTP',r.status,url)}catch(e){console.error(e.message)}await new Promise(r=>setTimeout(r,2000*(i+1)))}return null}
@@ -89,7 +91,7 @@ for(const loc of LOCATIONS){
  const hp=[],ht=[];
  for(let y=HIST_START;y<=year;y++)for(let mi=0;mi<12;mi++){const k=y+String(mi+1).padStart(2,'0');const p=P[k],t=T[k];const ok=typeof p==='number'&&p>-990&&typeof t==='number'&&t>-990;hp.push(ok?round(p,2):null);ht.push(ok?round(t,2):null)}
  hist.push({id:loc.id,precipMmDay:hp,tempC:ht,baselinePrecipMmDay:MON.map(k=>round(CP[k],2)),baselineTempC:MON.map(k=>round(CT[k],2))});
- out.push({id:loc.id,name:loc.name,region:loc.region,country:loc.country,lat:loc.lat,lon:loc.lon,crops:loc.crops,months:months.slice(-12)});
+ out.push({id:loc.id,name:loc.name,...(NAMES[loc.id]?{names:{en:NAMES[loc.id][0],fr:NAMES[loc.id][1],it:NAMES[loc.id][2]}}:{}),region:loc.region,country:loc.country,lat:loc.lat,lon:loc.lon,crops:loc.crops,months:months.slice(-12)});
 }
 if(out.length<8){console.error('Demasiados puntos sin datos ('+missing.length+'); no se sobrescribe data/climate.json');process.exit(1)}
 const lastPeriod=out.map(l=>l.months[l.months.length-1].period).sort().pop();

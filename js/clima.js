@@ -1,6 +1,7 @@
 /* Dehesa Index — Clima agrícola. Lee data/climate.json (NASA POWER). Sin datos, no pinta nada. */
 (function () {
   'use strict';
+  function locName(l) { var g = lang(); return (l && l.names && l.names[g]) || (l && l.name) || ''; }   // nombre del punto de clima en el idioma de la pagina
   var WET = '#2a6f97', DRY = '#b8651b', HOT = '#b4341f', COOL = '#2b7a78';
   var T = {
     es: { showRegions: 'Regiones a mostrar', allR: 'Todas', noneR: 'Ninguna', mapTitle: 'Mapa', mapHint: 'Cada punto es una región productora. Pulsa uno para ir a su fila.', mapFail: 'No se pudo cargar el mapa; los datos están en las tablas.', normal: 'normal', views: { world: 'Mundo', us: 'EE. UU.', eu: 'Europa' }, noRegion: 'Elige al menos una región para ver sus datos.', collapseHint: 'Pulsa el título de una región para plegarla o desplegarla.', mapAria: 'Mapa del clima por región productora', mapLink: 'Ver en el mapa', histTitle: 'Histórico desde 1981', histSub: 'Cómo ha sido cada año frente a la media 2001-2020, para la región y la época que elijas.', selRegion: 'Región', selPeriod: 'Época', periods: { year: 'Año completo (ene-dic)', season: 'Campaña (mar-ago)', seasonS: 'Campaña hemisferio sur (abr-oct)', summer: 'Verano (jun-ago)' }, histPrecip: 'Lluvia acumulada vs. normal', histTemp: 'Temperatura media vs. normal', rankP: 'Lluvia: puesto {r} de {n} años (1 = el más seco)', rankT: 'Temperatura: puesto {r} de {n} años (1 = el más cálido)', yearWord: 'Año', histNote: 'Solo años con todos los meses de la época cerrados y con dato válido. Como la media es 2001-2020, los años de ese periodo se reparten alrededor de cero por construcción. Los meses más recientes los calcula NASA con un flujo de procesamiento distinto (GEOS-IT) que puede revisarse después: léelos con cautela.', tableView: 'Ver datos en tabla', title: 'Clima agrícola', sub: 'Cuánto se ha desviado la lluvia y la temperatura de lo normal en regiones productoras. Es contexto: no predice cosechas ni precios.',
@@ -91,7 +92,7 @@
     var markers = locs.map(function (l) {
       var m = last(l), v = isP ? m.precipAnomalyPct : m.tempAnomalyC;
       var line = isP ? sgn(v, 0, ' %') + ' (' + num(m.precipMm, 0) + ' ' + t.mm + ')' : sgn(v, 1, ' °C') + ' (' + num(m.tempC, 1) + ' °C)';
-      return { name: l.name, coords: [l.lat, l.lon], style: { initial: { fill: inClass(v, classes) } }, html: '<strong>' + esc(l.name) + '</strong><br>' + esc(m.period) + ': ' + line, id: l.id, reg: l.region };
+      return { name: locName(l), coords: [l.lat, l.lon], style: { initial: { fill: inClass(v, classes) } }, html: '<strong>' + esc(locName(l)) + '</strong><br>' + esc(m.period) + ': ' + line, id: l.id, reg: l.region };
     });
     try {
       MAP = new window.jsVectorMap({ selector: '#clima-map', map: 'world', backgroundColor: 'transparent', zoomButtons: true, zoomOnScroll: false, showTooltip: true,
@@ -132,7 +133,7 @@
         '<div style="display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(170px,1.3fr) minmax(170px,1.3fr) 100px;gap:14px;padding:8px 0;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);border-bottom:1px solid var(--border);min-width:640px"><span></span><span>' + t.precip.toUpperCase() + '</span><span>' + t.temp.toUpperCase() + '</span><span>' + t.trend.toUpperCase() + '</span></div>' +
         rows.map(function (l) {
           var m = last(l);
-          return '<div id="clima-row-' + l.id + '" class="clima-row" style="display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(170px,1.3fr) minmax(170px,1.3fr) 100px;gap:14px;padding:12px 0;align-items:center;border-bottom:1px solid var(--border);min-width:640px"><div><div style="font-weight:600;font-size:14px">' + l.name + '</div><div class="di-movers-hint">' + cropsText(l, t) + '</div></div>' +
+          return '<div id="clima-row-' + l.id + '" class="clima-row" style="display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(170px,1.3fr) minmax(170px,1.3fr) 100px;gap:14px;padding:12px 0;align-items:center;border-bottom:1px solid var(--border);min-width:640px"><div><div style="font-weight:600;font-size:14px">' + locName(l) + '</div><div class="di-movers-hint">' + cropsText(l, t) + '</div></div>' +
             '<div>' + bar(m.precipAnomalyPct, 100, WET, DRY, sgn(m.precipAnomalyPct, 0, ' %')) + '<div class="di-movers-hint">' + num(m.precipMm, 0) + ' ' + t.mm + ' (' + num(m.precipBaselineMm, 0) + ' ' + t.mm + ')</div></div>' +
             '<div>' + bar(m.tempAnomalyC, 5, HOT, COOL, sgn(m.tempAnomalyC, 1, ' °C')) + '<div class="di-movers-hint">' + num(m.tempC, 1) + ' °C (' + num(m.tempBaselineC, 1) + ' °C)</div></div>' +
             '<div>' + spark(l.months) + '</div></div>';
@@ -195,7 +196,7 @@
     SEL.loc = loc.id;
     var rows = yearly(loc, SEL.period, HIST.start); if (rows.length < 5) { el.innerHTML = ''; return; }
     var meta = DATA.locations.filter(function (l) { return l.id === loc.id; })[0] || { name: loc.id };
-    var opt = HIST.locations.map(function (l) { var m = DATA.locations.filter(function (d) { return d.id === l.id; })[0]; return '<option value="' + l.id + '"' + (l.id === loc.id ? ' selected' : '') + '>' + (m ? m.name : l.id) + '</option>'; }).join('');
+    var opt = HIST.locations.map(function (l) { var m = DATA.locations.filter(function (d) { return d.id === l.id; })[0]; return '<option value="' + l.id + '"' + (l.id === loc.id ? ' selected' : '') + '>' + (m ? locName(m) : l.id) + '</option>'; }).join('');
     var PPs = periodsFor(loc.id), south = /^au-/.test(loc.id); var per = Object.keys(PPs).map(function (k) { return '<option value="' + k + '"' + (k === SEL.period ? ' selected' : '') + '>' + (south && k === 'season' ? t.periods.seasonS : t.periods[k]) + '</option>'; }).join('');
     var cur = rows[rows.length - 1], N = rows.length;
     var tbl = '<table style="border-collapse:collapse;font-size:13px;width:100%;max-width:520px"><tr><th style="text-align:left;padding:4px 8px">' + t.yearWord + '</th><th style="text-align:right;padding:4px 8px">mm</th><th style="text-align:right;padding:4px 8px">%</th><th style="text-align:right;padding:4px 8px">°C</th><th style="text-align:right;padding:4px 8px">Δ °C</th></tr>' +
@@ -219,7 +220,7 @@
     var el = document.getElementById('home-clima'); if (!el || !DATA) return;
     var t = T[lang()] || T.es;
     var dry = pick(function (m) { return m.precipAnomalyPct; }, 1), wet = pick(function (m) { return m.precipAnomalyPct; }, -1), hot = pick(function (m) { return m.tempAnomalyC; }, -1);
-    function cell(label, l, txt, color) { return '<div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + label.toUpperCase() + '</div><div style="font-weight:600;margin:4px 0 2px">' + l.name + '</div><div style="font-size:22px;font-weight:700;color:' + color + '">' + txt + '</div></div>'; }
+    function cell(label, l, txt, color) { return '<div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + label.toUpperCase() + '</div><div style="font-weight:600;margin:4px 0 2px">' + locName(l) + '</div><div style="font-size:22px;font-weight:700;color:' + color + '">' + txt + '</div></div>'; }
     el.innerHTML = '<div class="di-movers-head-row"><h2>' + t.teaserTitle + '</h2><span class="di-movers-hint">' + t.teaserHint + ' (' + DATA.lastPeriod + ')</span></div>' +
       '<div class="di-card" style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">' +
       cell(t.driest, dry, sgn(last(dry).precipAnomalyPct, 0, ' %'), DRY) + cell(t.wettest, wet, sgn(last(wet).precipAnomalyPct, 0, ' %'), WET) + cell(t.hottest, hot, sgn(last(hot).tempAnomalyC, 1, ' °C'), HOT) + '</div>' +

@@ -340,9 +340,11 @@
       { id: 'us', label: t.filterUs },
       { id: 'eu', label: t.filterEu }
     ];
+    var CROPL = { trigo: ['Trigo', 'Wheat', 'Blé', 'Frumento'], maiz: ['Maíz', 'Corn', 'Maïs', 'Mais'], arroz: ['Arroz', 'Rice', 'Riz', 'Riso'], cebada: ['Cebada', 'Barley', 'Orge', 'Orzo'], soja: ['Soja', 'Soybeans', 'Soja', 'Soia'], leche: ['Leche', 'Milk', 'Lait', 'Latte'], fertilizantes: ['Fertilizantes', 'Fertilisers', 'Engrais', 'Fertilizzanti'], diesel: ['Diésel', 'Diesel', 'Gazole', 'Gasolio'] };
+    function cropL(c) { var r = CROPL[c]; return r ? r[{ es: 0, en: 1, fr: 2, it: 3 }[lang] || 0] : c; }
     var cropLabels = {trigo:'Trigo',maiz:'Maíz',arroz:'Arroz',cebada:'Cebada',soja:'Soja',leche:'Leche',fertilizantes:'Fertilizantes',diesel:'Diésel'};
     var filtersHtml = '<div class="di-cal-filter-row"><div class="di-cal-filter-label">' + esc(t.filterType) + '</div><select data-cal-filter="type" aria-label="' + esc(t.filterType) + '"><option value="all">' + esc(t.allTypes) + '</option><option value="publication">' + esc(t.typePublication) + '</option><option value="harvest">' + esc(t.typeHarvest) + '</option></select>' +
-      '<div class="di-cal-filter-label">' + esc(t.filterCrop) + '</div><select data-cal-filter="crop" aria-label="' + esc(t.filterCrop) + '"><option value="all">' + esc(t.allCrops) + '</option>' + Object.keys(cropLabels).map(function(k){return '<option value="'+k+'">'+esc(cropLabels[k])+'</option>';}).join('') + '</select>' +
+      '<div class="di-cal-filter-label">' + esc(t.filterCrop) + '</div><select data-cal-filter="crop" aria-label="' + esc(t.filterCrop) + '"><option value="all">' + esc(t.allCrops) + '</option>' + Object.keys(cropLabels).map(function(k){return '<option value="'+k+'">'+esc(cropL(k))+'</option>';}).join('') + '</select>' +
       '<div class="di-cal-filter-label">' + esc(t.filterImpact) + '</div><select data-cal-filter="impact" aria-label="' + esc(t.filterImpact) + '"><option value="all">' + esc(t.allImpacts) + '</option>' + Object.keys(t.impactLabels).map(function(k){return '<option value="'+k+'">'+esc(t.impactLabels[k])+'</option>';}).join('') + '</select></div>';
     document.getElementById('cal-filters').innerHTML =
       FILTER_OPTIONS.map(function (opt) { var active = state.filter === opt.id ? ' active' : ''; return '<button type="button" class="di-location-btn di-news-filter-btn' + active + '" data-filter="' + opt.id + '">' + esc(opt.label) + '</button>'; }).join('') + filtersHtml;
@@ -365,10 +367,10 @@
         (watchEvents.length ? '<div class="di-cal-watch-grid">' + watchEvents.map(function(ev){
           var pr=priorityFor(ev), tr=ev[lang]||ev.es;
           var map={trigo:'trigo',maiz:'maiz',leche:'leche',fertilizantes:'urea',diesel:'diesel',arroz:'arroz'};
-          var pLinks=(ev.crops||[]).slice(0,4).map(function(p){return '<a href="' + (map[p] ? 'precios.html?product=' + encodeURIComponent(map[p]) + '&region=' + encodeURIComponent(ev.market) : 'precios.html?region=' + encodeURIComponent(ev.market)) + '">' + esc(p) + '</a>';}).join('');
-          var newsLinks=(ev.crops||[]).slice(0,2).map(function(p){return '<a href="noticias.html?product=' + encodeURIComponent(p) + '&region=' + ev.market + '">' + esc(({es:'Noticias',en:'News',fr:'Actualités',it:'Notizie'})[lang] || 'News') + ': ' + esc(({trigo:'Trigo',maiz:'Maíz',arroz:'Arroz',cebada:'Cebada',soja:'Soja',leche:'Leche',fertilizantes:'Fertilizantes',diesel:'Diésel'})[p] || p) + '</a>';}).join('');
+          var pLinks=(ev.crops||[]).slice(0,4).map(function(p){return '<a href="' + (map[p] ? 'precios.html?product=' + encodeURIComponent(map[p]) + '&region=' + encodeURIComponent(ev.market) : 'precios.html?region=' + encodeURIComponent(ev.market)) + '">' + esc(cropL(p)) + '</a>';}).join('');
+          var newsLinks=(ev.crops||[]).slice(0,2).map(function(p){return '<a href="noticias.html?product=' + encodeURIComponent(p) + '&region=' + ev.market + '">' + esc(({es:'Noticias',en:'News',fr:'Actualités',it:'Notizie'})[lang] || 'News') + ': ' + esc(cropL(p)) + '</a>';}).join('');
           return '<article class="di-cal-watch-card priority-' + pr + '"><div class="di-cal-watch-top"><span class="di-cal-priority">' + esc(priorityLabels[pr][lang]) + '</span><span>' + esc(fmtDate(ev.nextDate,lang)) + '</span></div><h3>' + esc(tr.name) + '</h3><p>' + esc(tr.desc) + '</p><div class="di-cal-watch-crops">' + pLinks + '</div><div class="di-cal-watch-links">' + newsLinks + '</div></article>';
-        }).join('') + '</div>' : '<div class="di-cal-watch-empty">' + esc(lang==='es'?'No hay publicaciones fechadas dentro de los próximos 7 días con los filtros actuales.':'No dated publications fall within the next 7 days under the current filters.') + '</div>') + '</section>';
+        }).join('') + '</div>' : '<div class="di-cal-watch-empty">' + esc(({es:'No hay publicaciones fechadas dentro de los próximos 7 días con los filtros actuales.',fr:'Aucune publication datée dans les 7 prochains jours avec les filtres actuels.',it:'Nessuna pubblicazione con data nei prossimi 7 giorni con i filtri attuali.'})[lang]||'No dated publications fall within the next 7 days under the current filters.') + '</div>') + '</section>';
     }
 
     var sortedEvents = filteredEvents.slice().sort(function (a, b) {
@@ -413,7 +415,7 @@
             dateHtml +
           '</div>' +
           '<div class="di-cal-name">' + esc(tr.name) + '</div>' +
-          '<div class="di-cal-tags"><span class="di-cal-tag">' + esc(ev.type === 'harvest' ? t.typeHarvest : t.typePublication) + '</span>' + (ev.crops || []).slice(0,4).map(function(c){ return '<span class="di-cal-tag crop">' + esc(c) + '</span>'; }).join('') + '<span class="di-cal-tag impact">' + esc((t.impactLabels || {})[ev.impact] || ev.impact) + '</span></div>' +
+          '<div class="di-cal-tags"><span class="di-cal-tag">' + esc(ev.type === 'harvest' ? t.typeHarvest : t.typePublication) + '</span>' + (ev.crops || []).slice(0,4).map(function(c){ return '<span class="di-cal-tag crop">' + esc(cropL(c)) + '</span>'; }).join('') + '<span class="di-cal-tag impact">' + esc((t.impactLabels || {})[ev.impact] || ev.impact) + '</span></div>' +
           '<p class="di-cal-desc">' + esc(tr.desc) + '</p>' +
           '<div class="di-cal-impact"><strong>' + esc(t.relevance) + '</strong> ' + esc((t.impactLabels || {})[ev.impact] || ev.impact) + '</div>' +
           lastHtml + noDateHtml +

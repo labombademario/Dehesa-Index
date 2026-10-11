@@ -641,6 +641,7 @@ def fetch(feed):
                 m = re.search(r"\s-\s([^-]{2,60})$", title)
                 if m: pub = m.group(1).strip(); title = title[: m.start()].rstrip()
         if not pub or len(title) < 28: continue   # páginas índice tipo "News - Dairy Herd"
+        if not re.match(r"^https?://", (x.get("link") or "").strip(), re.I): continue   # solo enlaces web: un feed no puede colar javascript: ni data: en la pagina
         c = classify(title, desc, feed["region"], feed["lang"], feed["general"])
         if not c: continue
         products, topics, reg, score = c

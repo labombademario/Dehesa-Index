@@ -29,7 +29,7 @@
   function attrJson(o) { return esc(JSON.stringify(o)); }
 
   /* ---------- gráfica completa ---------- */
-  var SUMW = { es: ['de', 'a', 'mín.', 'máx.'], en: ['from', 'to', 'min', 'max'], fr: ['de', 'à', 'min.', 'max.'], de: ['von', 'bis', 'Min.', 'Max.'] };
+  var SUMW = { es: ['de', 'a', 'mín.', 'máx.'], en: ['from', 'to', 'min', 'max'], fr: ['de', 'à', 'min.', 'max.'], it: ['da', 'a', 'min.', 'max.'] };
   function summaryText(S, time, vFmt) { // resumen textual para lectores de pantalla: primer y ultimo punto, minimo y maximo por serie
     var w = SUMW[lang()] || SUMW.es;
     return S.slice(0, 6).map(function (s) {
@@ -56,6 +56,10 @@
     if (xmin === xmax) { xmin -= 1; xmax += 1; }
     var x = function (v) { return L + (W - L - R) * (v - xmin) / (xmax - xmin); }, y = function (v) { return Tp + (H - Tp - Bt) * (1 - (v - lo) / (hi - lo)); };
     var yd = decimals(step), yFmt = o.yFmt || function (v) { return nf(v, yd); }, vFmt = o.vFmt || function (v) { return nf(v, Math.max(yd, Math.abs(v) < 100 ? 2 : 1)); };
+    // margen izquierdo segun la etiqueta mas larga del eje y (cifras de 8+ digitos se cortaban o pisaban el titulo del eje)
+    (function () { var w = 0, q; for (q = lo; q <= hi + step / 1000; q += step) w = Math.max(w, String(yFmt(q)).length); L = Math.max(L, Math.round(w * 6.7 + (o.yTitle ? 30 : 12))); })();
+    // serie anual (todos los puntos a 1 de enero): marcas del eje x en anos enteros y etiqueta solo con el ano
+    var annual = time && !o.xFmt && S.every(function (s) { return s.pts.every(function (p) { var d = new Date(p.x); return d.getUTCMonth() === 0 && d.getUTCDate() === 1; }); });
     var g = '', k, v;
     for (v = lo; v <= hi + step / 1000; v += step) {
       g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v).toFixed(1) + '" y2="' + y(v).toFixed(1) + '" stroke="' + GRID + '"/>' +
@@ -65,10 +69,11 @@
     // eje x
     var nt = Math.max(2, Math.min(6, Math.floor((W - L - R) / 100))), span = xmax - xmin, xt = [], i;
     var labelsIdx = o.xLabels;
-    if (time) { for (i = 0; i < nt; i++) xt.push(xmin + span * i / (nt - 1)); }
+    if (annual) { var y0 = new Date(xmin).getUTCFullYear(), y1 = new Date(xmax).getUTCFullYear(), ys = Math.max(1, Math.ceil((y1 - y0) / (nt - 1))); for (i = y0; i <= y1; i += ys) xt.push(Date.UTC(i, 0, 1)); if (xt[xt.length - 1] !== Date.UTC(y1, 0, 1) && y1 - new Date(xt[xt.length - 1]).getUTCFullYear() >= ys / 2) xt.push(Date.UTC(y1, 0, 1)); else if (xt[xt.length - 1] !== Date.UTC(y1, 0, 1)) xt[xt.length - 1] = Date.UTC(y1, 0, 1); }
+    else if (time) { for (i = 0; i < nt; i++) xt.push(xmin + span * i / (nt - 1)); }
     else { for (i = 0; i < nt; i++) xt.push(Math.round(xmin + span * i / (nt - 1))); }
     xt.forEach(function (t, j) {
-      var lab = time ? (o.xFmt ? o.xFmt(t, span) : fmtDate(t, span)) : (labelsIdx && labelsIdx[t] !== undefined ? labelsIdx[t] : (o.xFmt ? o.xFmt(t) : String(t)));
+      var lab = time ? (o.xFmt ? o.xFmt(t, span) : annual ? String(new Date(t).getUTCFullYear()) : fmtDate(t, span)) : (labelsIdx && labelsIdx[t] !== undefined ? labelsIdx[t] : (o.xFmt ? o.xFmt(t) : String(t)));
       g += '<line x1="' + x(t).toFixed(1) + '" x2="' + x(t).toFixed(1) + '" y1="' + (H - Bt) + '" y2="' + (H - Bt + 4) + '" stroke="' + GRID + '"/><text x="' + x(t).toFixed(1) + '" y="' + (H - Bt + 17) + '" font-size="' + FONT + '" text-anchor="' + (j === 0 ? 'start' : j === xt.length - 1 ? 'end' : 'middle') + '" fill="' + TXT + '">' + esc(lab) + '</text>';
     });
     if (o.xTitle) g += '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 6) + '" font-size="' + FONT + '" text-anchor="middle" fill="' + TXT + '" font-weight="600">' + esc(o.xTitle) + '</text>';
@@ -76,15 +81,22 @@
     // series
     var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: [], m: o.measurePp ? 'pp' : 'pct' };
     S.forEach(function (s) {
-      var d = '', pen = false, pts = [];
+      var d = '', pen = false, pts = [], dots = '', run = 0, lastX = null, lastXY = null;
+      // Hueco en la serie (anos o meses sin dato publicado): la linea se corta en vez de unir los extremos con una recta enganosa.
+      // Se considera hueco un salto de tiempo mayor que 3 veces la separacion habitual entre puntos (mediana).
+      var gapMax = Infinity;
+      if (time) { var dx = [], prevX = null; s.pts.forEach(function (p) { if (p.y === null || p.y === undefined || !isFinite(p.y)) return; if (prevX !== null) dx.push(p.x - prevX); prevX = p.x; }); if (dx.length >= 3) { dx.sort(function (a, b) { return a - b; }); gapMax = Math.max(dx[Math.floor(dx.length / 2)] * 3.01, 8 * 86400000); } }
       s.pts.forEach(function (p, idx) {
-        if (p.y === null || p.y === undefined || !isFinite(p.y)) { pen = false; return; }
+        if (p.y === null || p.y === undefined || !isFinite(p.y)) { if (run === 1 && lastXY) dots += lastXY; pen = false; run = 0; return; }
         var px = x(p.x), py = y(p.y);
-        d += (pen ? 'L' : 'M') + px.toFixed(1) + ' ' + py.toFixed(1) + ' '; pen = true;
-        var lab = p.l || (time ? fmtDateFull(p.x) : (labelsIdx && labelsIdx[p.x] !== undefined ? labelsIdx[p.x] : String(p.x)));
+        if (pen && lastX !== null && p.x - lastX > gapMax) { if (run === 1 && lastXY) dots += lastXY; pen = false; run = 0; }
+        d += (pen ? 'L' : 'M') + px.toFixed(1) + ' ' + py.toFixed(1) + ' '; pen = true; run++; lastX = p.x;
+        lastXY = '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="2.6" fill="' + s.color + '"/>';
+        var lab = p.l || (time ? (annual ? String(new Date(p.x).getUTCFullYear()) : fmtDateFull(p.x)) : (labelsIdx && labelsIdx[p.x] !== undefined ? labelsIdx[p.x] : String(p.x)));
         pts.push([+px.toFixed(1), +py.toFixed(1), (o.vFmtS && o.vFmtS[s.name] ? o.vFmtS[s.name](p.y, p) : vFmt(p.y)), lab, p.y]);
       });
-      g += '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"' + (s.dash ? ' stroke-dasharray="6 4"' : '') + '/>';
+      if (run === 1 && lastXY) dots += lastXY;
+      g += dots + '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"' + (s.dash ? ' stroke-dasharray="6 4"' : '') + '/>';
       spec.s.push({ n: s.name, c: s.color, p: pts });
     });
     var leg = !o.noLegend && (S.length > 1 || o.legend) ? '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;margin:6px 0 0 4px">' + S.map(function (s) { return '<span><span style="display:inline-block;width:14px;height:3px;background:' + s.color + ';vertical-align:middle;margin-right:6px' + (s.dash ? ';opacity:.7' : '') + '"></span>' + esc(s.name) + '</span>'; }).join('') + '</div>' : '';

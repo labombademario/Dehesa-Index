@@ -13,6 +13,7 @@ from lib_index import ROOT, STATS, product_label
 import freshness as FR
 SHARD_MAX = 160_000  # trozos pequenos: un perfil de pais solo baja los que contienen sus cifras clave y la serie elegida
 from lib_tags import TAGS, tags
+EU_FAM = {'aceite': 'Olive oil', 'arroz': 'Rice', 'azucar': 'Sugar', 'cereales': 'Cereals', 'cerdo': 'Pigmeat', 'fertilizantes': 'Fertilisers', 'fruta': 'Fruit and vegetables', 'huevos': 'Eggs', 'lacteos': 'Dairy products', 'leche': 'Milk', 'oleaginosas': 'Oilseeds', 'ovino': 'Sheep meat', 'pollo': 'Poultry meat', 'vacuno': 'Beef', 'vino': 'Wine'}
 ISO_EN = {'AR': 'Argentina', 'CH': 'Switzerland', 'CL': 'Chile', 'AT': 'Austria', 'AU': 'Australia', 'BE': 'Belgium', 'BG': 'Bulgaria', 'CA': 'Canada', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DE': 'Germany', 'DK': 'Denmark', 'EE': 'Estonia', 'EL': 'Greece', 'ES': 'Spain', 'FI': 'Finland',
           'FR': 'France', 'HR': 'Croatia', 'HU': 'Hungary', 'IE': 'Ireland', 'IT': 'Italy', 'LT': 'Lithuania', 'LU': 'Luxembourg', 'LV': 'Latvia', 'MT': 'Malta', 'NL': 'Netherlands', 'PL': 'Poland', 'PT': 'Portugal',
           'RO': 'Romania', 'SE': 'Sweden', 'SI': 'Slovenia', 'SK': 'Slovakia', 'UK': 'United Kingdom', 'US': 'United States'}
@@ -126,7 +127,7 @@ def main():
             for rg in se.get('regions', []):
                 cc = rg['c']; seen[cc] = seen.get(cc, 0) + 1
                 names.setdefault(cc, ISO_EN.get(cc) or SPECIAL.get(cc, cc)); last, prev = rg.get('last') or [None, None], rg.get('prev') or [None, None]
-                lab = '%s: %s' % (fam['id'].capitalize(), ' · '.join(se.get('parts', [se['id']])))
+                lab = '%s: %s' % (EU_FAM.get(fam['id'], fam['id'].capitalize()), ' · '.join(se.get('parts', [se['id']])))   # grupo en ingles, como el resto de la etiqueta (la traducen label-tl.js y el glosario)
                 if rg.get('m'): lab += ' (%s)' % rg['m']
                 sid = 'eu:%s:%s' % (fam['id'], se['id']) + ('' if seen[cc] == 1 else '#%d' % seen[cc])
                 ch = round((last[1] - prev[1]) / prev[1] * 100, 2) if last[1] is not None and prev[1] else None

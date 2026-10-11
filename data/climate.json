@@ -386,6 +386,11 @@
     {
       "id": "us-north-dakota",
       "name": "North Dakota",
+      "names": {
+        "en": "North Dakota",
+        "fr": "Dakota du Nord",
+        "it": "Dakota del Nord"
+      },
       "region": "us",
       "country": "US",
       "lat": 47.5,
@@ -507,6 +512,11 @@
     {
       "id": "us-nebraska",
       "name": "Nebraska (Platte central)",
+      "names": {
+        "en": "Nebraska (central Platte)",
+        "fr": "Nebraska (Platte central)",
+        "it": "Nebraska (Platte centrale)"
+      },
       "region": "us",
       "country": "US",
       "lat": 40.8,
@@ -629,6 +639,11 @@
     {
       "id": "us-minnesota",
       "name": "Minnesota (suroeste)",
+      "names": {
+        "en": "Minnesota (southwest)",
+        "fr": "Minnesota (sud-ouest)",
+        "it": "Minnesota (sud-ovest)"
+      },
       "region": "us",
       "country": "US",
       "lat": 44.2,
@@ -751,6 +766,11 @@
     {
       "id": "us-indiana",
       "name": "Indiana (centro)",
+      "names": {
+        "en": "Indiana (central)",
+        "fr": "Indiana (centre)",
+        "it": "Indiana (centro)"
+      },
       "region": "us",
       "country": "US",
       "lat": 40.2,
@@ -873,6 +893,11 @@
     {
       "id": "us-ohio",
       "name": "Ohio (noroeste)",
+      "names": {
+        "en": "Ohio (northwest)",
+        "fr": "Ohio (nord-ouest)",
+        "it": "Ohio (nord-ovest)"
+      },
       "region": "us",
       "country": "US",
       "lat": 40.9,
@@ -995,6 +1020,11 @@
     {
       "id": "us-south-dakota",
       "name": "South Dakota (este)",
+      "names": {
+        "en": "South Dakota (east)",
+        "fr": "Dakota du Sud (est)",
+        "it": "Dakota del Sud (est)"
+      },
       "region": "us",
       "country": "US",
       "lat": 44.3,
@@ -1118,6 +1148,11 @@
     {
       "id": "us-missouri",
       "name": "Missouri (norte)",
+      "names": {
+        "en": "Missouri (north)",
+        "fr": "Missouri (nord)",
+        "it": "Missouri (nord)"
+      },
       "region": "us",
       "country": "US",
       "lat": 39.6,
@@ -1241,6 +1276,11 @@
     {
       "id": "us-texas",
       "name": "Texas (Panhandle)",
+      "names": {
+        "en": "Texas (Panhandle)",
+        "fr": "Texas (Panhandle)",
+        "it": "Texas (Panhandle)"
+      },
       "region": "us",
       "country": "US",
       "lat": 35.2,
@@ -1364,6 +1404,11 @@
     {
       "id": "us-oklahoma",
       "name": "Oklahoma (oeste)",
+      "names": {
+        "en": "Oklahoma (west)",
+        "fr": "Oklahoma (ouest)",
+        "it": "Oklahoma (ovest)"
+      },
       "region": "us",
       "country": "US",
       "lat": 36,
@@ -1486,6 +1531,11 @@
     {
       "id": "us-colorado",
       "name": "Colorado (noreste)",
+      "names": {
+        "en": "Colorado (northeast)",
+        "fr": "Colorado (nord-est)",
+        "it": "Colorado (nord-est)"
+      },
       "region": "us",
       "country": "US",
       "lat": 40.4,
@@ -1608,6 +1658,11 @@
     {
       "id": "us-montana",
       "name": "Montana (centro-norte)",
+      "names": {
+        "en": "Montana (north-central)",
+        "fr": "Montana (centre-nord)",
+        "it": "Montana (centro-nord)"
+      },
       "region": "us",
       "country": "US",
       "lat": 48.3,
@@ -1729,6 +1784,11 @@
     {
       "id": "us-washington",
       "name": "Washington (Palouse)",
+      "names": {
+        "en": "Washington (Palouse)",
+        "fr": "Washington (Palouse)",
+        "it": "Washington (Palouse)"
+      },
       "region": "us",
       "country": "US",
       "lat": 46.9,
@@ -1850,6 +1910,11 @@
     {
       "id": "us-california",
       "name": "California (valle de San Joaquín)",
+      "names": {
+        "en": "California (San Joaquin Valley)",
+        "fr": "Californie (vallée de San Joaquin)",
+        "it": "California (valle di San Joaquin)"
+      },
       "region": "us",
       "country": "US",
       "lat": 36.5,
@@ -1972,6 +2037,11 @@
     {
       "id": "us-arkansas",
       "name": "Arkansas (Delta)",
+      "names": {
+        "en": "Arkansas (Delta)",
+        "fr": "Arkansas (Delta)",
+        "it": "Arkansas (Delta)"
+      },
       "region": "us",
       "country": "US",
       "lat": 35,
@@ -2094,6 +2164,11 @@
     {
       "id": "us-mississippi",
       "name": "Mississippi (Delta)",
+      "names": {
+        "en": "Mississippi (Delta)",
+        "fr": "Mississippi (Delta)",
+        "it": "Mississippi (Delta)"
+      },
       "region": "us",
       "country": "US",
       "lat": 33.5,
@@ -2216,6 +2291,11 @@
     {
       "id": "us-georgia",
       "name": "Georgia (sur)",
+      "names": {
+        "en": "Georgia (south)",
+        "fr": "Géorgie (sud)",
+        "it": "Georgia (sud)"
+      },
       "region": "us",
       "country": "US",
       "lat": 31.5,
@@ -2338,6 +2418,11 @@
     {
       "id": "us-wisconsin",
       "name": "Wisconsin (centro)",
+      "names": {
+        "en": "Wisconsin (central)",
+        "fr": "Wisconsin (centre)",
+        "it": "Wisconsin (centro)"
+      },
       "region": "us",
       "country": "US",
       "lat": 44.5,
@@ -2460,6 +2545,11 @@
     {
       "id": "us-north-carolina",
       "name": "North Carolina (este)",
+      "names": {
+        "en": "North Carolina (east)",
+        "fr": "Caroline du Nord (est)",
+        "it": "Carolina del Nord (est)"
+      },
       "region": "us",
       "country": "US",
       "lat": 35.5,
@@ -2582,6 +2672,11 @@
     {
       "id": "eu-aragon",
       "name": "Aragón (Zaragoza)",
+      "names": {
+        "en": "Aragon (Zaragoza)",
+        "fr": "Aragon (Saragosse)",
+        "it": "Aragona (Saragozza)"
+      },
       "region": "eu",
       "country": "ES",
       "lat": 41.65,
@@ -2704,6 +2799,11 @@
     {
       "id": "eu-castilla-leon",
       "name": "Castilla y León (Valladolid)",
+      "names": {
+        "en": "Castile and León (Valladolid)",
+        "fr": "Castille-et-León (Valladolid)",
+        "it": "Castiglia e León (Valladolid)"
+      },
       "region": "eu",
       "country": "ES",
       "lat": 41.65,
@@ -2826,6 +2926,11 @@
     {
       "id": "eu-beauce",
       "name": "Beauce (Francia)",
+      "names": {
+        "en": "Beauce (France)",
+        "fr": "Beauce (France)",
+        "it": "Beauce (Francia)"
+      },
       "region": "eu",
       "country": "FR",
       "lat": 48.3,
@@ -2947,6 +3052,11 @@
     {
       "id": "eu-saxony-anhalt",
       "name": "Sajonia-Anhalt (Alemania)",
+      "names": {
+        "en": "Saxony-Anhalt (Germany)",
+        "fr": "Saxe-Anhalt (Allemagne)",
+        "it": "Sassonia-Anhalt (Germania)"
+      },
       "region": "eu",
       "country": "DE",
       "lat": 52,
@@ -3068,6 +3178,11 @@
     {
       "id": "eu-po-valley",
       "name": "Valle del Po (Italia)",
+      "names": {
+        "en": "Po Valley (Italy)",
+        "fr": "Plaine du Pô (Italie)",
+        "it": "Pianura Padana (Italia)"
+      },
       "region": "eu",
       "country": "IT",
       "lat": 45,
@@ -3190,6 +3305,11 @@
     {
       "id": "eu-poland",
       "name": "Cuyavia (Polonia)",
+      "names": {
+        "en": "Kuyavia (Poland)",
+        "fr": "Cujavie (Pologne)",
+        "it": "Cuiavia (Polonia)"
+      },
       "region": "eu",
       "country": "PL",
       "lat": 52.7,
@@ -3312,6 +3432,11 @@
     {
       "id": "uk-lincolnshire",
       "name": "Lincolnshire (Reino Unido)",
+      "names": {
+        "en": "Lincolnshire (United Kingdom)",
+        "fr": "Lincolnshire (Royaume-Uni)",
+        "it": "Lincolnshire (Regno Unito)"
+      },
       "region": "uk",
       "country": "GB",
       "lat": 53.1,
@@ -3433,6 +3558,11 @@
     {
       "id": "uk-east-anglia",
       "name": "East Anglia (Reino Unido)",
+      "names": {
+        "en": "East Anglia (United Kingdom)",
+        "fr": "East Anglia (Royaume-Uni)",
+        "it": "East Anglia (Regno Unito)"
+      },
       "region": "uk",
       "country": "GB",
       "lat": 52.5,
@@ -3555,6 +3685,11 @@
     {
       "id": "ca-saskatchewan-south",
       "name": "Saskatchewan sur (Regina)",
+      "names": {
+        "en": "Southern Saskatchewan (Regina)",
+        "fr": "Saskatchewan sud (Regina)",
+        "it": "Saskatchewan meridionale (Regina)"
+      },
       "region": "ca",
       "country": "CA",
       "lat": 50.4,
@@ -3678,6 +3813,11 @@
     {
       "id": "ca-saskatchewan-north",
       "name": "Saskatchewan centro (Saskatoon)",
+      "names": {
+        "en": "Central Saskatchewan (Saskatoon)",
+        "fr": "Saskatchewan centre (Saskatoon)",
+        "it": "Saskatchewan centrale (Saskatoon)"
+      },
       "region": "ca",
       "country": "CA",
       "lat": 52.1,
@@ -3800,6 +3940,11 @@
     {
       "id": "ca-alberta-south",
       "name": "Alberta sur (Lethbridge)",
+      "names": {
+        "en": "Southern Alberta (Lethbridge)",
+        "fr": "Alberta sud (Lethbridge)",
+        "it": "Alberta meridionale (Lethbridge)"
+      },
       "region": "ca",
       "country": "CA",
       "lat": 49.7,
@@ -3922,6 +4067,11 @@
     {
       "id": "ca-alberta-peace",
       "name": "Alberta Peace River",
+      "names": {
+        "en": "Alberta Peace River",
+        "fr": "Alberta, rivière de la Paix",
+        "it": "Alberta, Peace River"
+      },
       "region": "ca",
       "country": "CA",
       "lat": 56.2,
@@ -4044,6 +4194,11 @@
     {
       "id": "ca-manitoba",
       "name": "Manitoba (Winnipeg)",
+      "names": {
+        "en": "Manitoba (Winnipeg)",
+        "fr": "Manitoba (Winnipeg)",
+        "it": "Manitoba (Winnipeg)"
+      },
       "region": "ca",
       "country": "CA",
       "lat": 49.9,
@@ -4167,6 +4322,11 @@
     {
       "id": "ca-ontario",
       "name": "Ontario sur (London)",
+      "names": {
+        "en": "Southern Ontario (London)",
+        "fr": "Ontario sud (London)",
+        "it": "Ontario meridionale (London)"
+      },
       "region": "ca",
       "country": "CA",
       "lat": 43,
@@ -4289,6 +4449,11 @@
     {
       "id": "ca-quebec",
       "name": "Quebec (Montérégie)",
+      "names": {
+        "en": "Quebec (Montérégie)",
+        "fr": "Québec (Montérégie)",
+        "it": "Québec (Montérégie)"
+      },
       "region": "ca",
       "country": "CA",
       "lat": 45.5,
@@ -4411,6 +4576,11 @@
     {
       "id": "eu-netherlands-flevoland",
       "name": "Flevoland (Países Bajos)",
+      "names": {
+        "en": "Flevoland (Netherlands)",
+        "fr": "Flevoland (Pays-Bas)",
+        "it": "Flevoland (Paesi Bassi)"
+      },
       "region": "eu",
       "country": "NL",
       "lat": 52.5,
@@ -4534,6 +4704,11 @@
     {
       "id": "eu-netherlands-groningen",
       "name": "Groningen (Países Bajos)",
+      "names": {
+        "en": "Groningen (Netherlands)",
+        "fr": "Groningue (Pays-Bas)",
+        "it": "Groninga (Paesi Bassi)"
+      },
       "region": "eu",
       "country": "NL",
       "lat": 53.2,
@@ -4657,6 +4832,11 @@
     {
       "id": "eu-netherlands-brabant",
       "name": "Brabante Septentrional (Países Bajos)",
+      "names": {
+        "en": "North Brabant (Netherlands)",
+        "fr": "Brabant-Septentrional (Pays-Bas)",
+        "it": "Brabante Settentrionale (Paesi Bassi)"
+      },
       "region": "eu",
       "country": "NL",
       "lat": 51.5,
@@ -4780,6 +4960,11 @@
     {
       "id": "au-wheatbelt-wa",
       "name": "Wheatbelt, Australia Occidental (Northam)",
+      "names": {
+        "en": "Wheatbelt, Western Australia (Northam)",
+        "fr": "Wheatbelt, Australie-Occidentale (Northam)",
+        "it": "Wheatbelt, Australia Occidentale (Northam)"
+      },
       "region": "au",
       "country": "AU",
       "lat": -31.65,
@@ -4903,6 +5088,11 @@
     {
       "id": "au-sa-mallee",
       "name": "Australia Meridional (Mid North, Clare)",
+      "names": {
+        "en": "South Australia (Mid North, Clare)",
+        "fr": "Australie-Méridionale (Mid North, Clare)",
+        "it": "Australia Meridionale (Mid North, Clare)"
+      },
       "region": "au",
       "country": "AU",
       "lat": -33.8,
@@ -5025,6 +5215,11 @@
     {
       "id": "au-vic-wimmera",
       "name": "Wimmera, Victoria (Horsham)",
+      "names": {
+        "en": "Wimmera, Victoria (Horsham)",
+        "fr": "Wimmera, Victoria (Horsham)",
+        "it": "Wimmera, Victoria (Horsham)"
+      },
       "region": "au",
       "country": "AU",
       "lat": -36.7,
@@ -5148,6 +5343,11 @@
     {
       "id": "au-nsw-central-west",
       "name": "Nueva Gales del Sur centro-oeste (Dubbo)",
+      "names": {
+        "en": "Central West New South Wales (Dubbo)",
+        "fr": "Nouvelle-Galles du Sud centre-ouest (Dubbo)",
+        "it": "Nuovo Galles del Sud centro-ovest (Dubbo)"
+      },
       "region": "au",
       "country": "AU",
       "lat": -32.25,
@@ -5271,6 +5471,11 @@
     {
       "id": "au-nsw-north",
       "name": "Nueva Gales del Sur norte (Moree)",
+      "names": {
+        "en": "Northern New South Wales (Moree)",
+        "fr": "Nouvelle-Galles du Sud nord (Moree)",
+        "it": "Nuovo Galles del Sud settentrionale (Moree)"
+      },
       "region": "au",
       "country": "AU",
       "lat": -29.45,
@@ -5394,6 +5599,11 @@
     {
       "id": "au-qld-darling-downs",
       "name": "Darling Downs, Queensland (Toowoomba)",
+      "names": {
+        "en": "Darling Downs, Queensland (Toowoomba)",
+        "fr": "Darling Downs, Queensland (Toowoomba)",
+        "it": "Darling Downs, Queensland (Toowoomba)"
+      },
       "region": "au",
       "country": "AU",
       "lat": -27.56,
@@ -5517,6 +5727,11 @@
     {
       "id": "au-qld-central",
       "name": "Queensland central (Rockhampton)",
+      "names": {
+        "en": "Central Queensland (Rockhampton)",
+        "fr": "Queensland centre (Rockhampton)",
+        "it": "Queensland centrale (Rockhampton)"
+      },
       "region": "au",
       "country": "AU",
       "lat": -23.4,
@@ -5638,6 +5853,11 @@
     {
       "id": "eu-denmark-jutland",
       "name": "Jutlandia (Dinamarca)",
+      "names": {
+        "en": "Jutland (Denmark)",
+        "fr": "Jutland (Danemark)",
+        "it": "Jutland (Danimarca)"
+      },
       "region": "eu",
       "country": "DK",
       "lat": 56.2,
@@ -5762,6 +5982,11 @@
     {
       "id": "eu-denmark-zealand",
       "name": "Selandia (Dinamarca)",
+      "names": {
+        "en": "Zealand (Denmark)",
+        "fr": "Seeland (Danemark)",
+        "it": "Selandia (Danimarca)"
+      },
       "region": "eu",
       "country": "DK",
       "lat": 55.4,
@@ -5885,6 +6110,11 @@
     {
       "id": "eu-austria-marchfeld",
       "name": "Marchfeld, Baja Austria (Austria)",
+      "names": {
+        "en": "Marchfeld, Lower Austria (Austria)",
+        "fr": "Marchfeld, Basse-Autriche (Autriche)",
+        "it": "Marchfeld, Bassa Austria (Austria)"
+      },
       "region": "eu",
       "country": "AT",
       "lat": 48.3,
@@ -6008,6 +6238,11 @@
     {
       "id": "eu-austria-upper",
       "name": "Alta Austria (Wels)",
+      "names": {
+        "en": "Upper Austria (Wels)",
+        "fr": "Haute-Autriche (Wels)",
+        "it": "Alta Austria (Wels)"
+      },
       "region": "eu",
       "country": "AT",
       "lat": 48.15,
@@ -6131,6 +6366,11 @@
     {
       "id": "eu-portugal-alentejo",
       "name": "Alentejo (Beja) · montado",
+      "names": {
+        "en": "Alentejo (Beja) · montado",
+        "fr": "Alentejo (Beja) · montado",
+        "it": "Alentejo (Beja) · montado"
+      },
       "region": "eu",
       "country": "PT",
       "lat": 38,
@@ -6254,6 +6494,11 @@
     {
       "id": "eu-portugal-ribatejo",
       "name": "Ribatejo (Santarém)",
+      "names": {
+        "en": "Ribatejo (Santarém)",
+        "fr": "Ribatejo (Santarém)",
+        "it": "Ribatejo (Santarém)"
+      },
       "region": "eu",
       "country": "PT",
       "lat": 39.2,
@@ -6377,6 +6622,11 @@
     {
       "id": "eu-belgium-hesbaye",
       "name": "Hesbaye (Lieja, Bélgica)",
+      "names": {
+        "en": "Hesbaye (Liège, Belgium)",
+        "fr": "Hesbaye (Liège, Belgique)",
+        "it": "Hesbaye (Liegi, Belgio)"
+      },
       "region": "eu",
       "country": "BE",
       "lat": 50.65,
@@ -6500,6 +6750,11 @@
     {
       "id": "eu-belgium-flanders",
       "name": "Flandes Occidental (Roeselare, Bélgica)",
+      "names": {
+        "en": "West Flanders (Roeselare, Belgium)",
+        "fr": "Flandre-Occidentale (Roulers, Belgique)",
+        "it": "Fiandre Occidentali (Roeselare, Belgio)"
+      },
       "region": "eu",
       "country": "BE",
       "lat": 50.95,

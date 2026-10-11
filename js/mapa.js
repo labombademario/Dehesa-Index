@@ -2,6 +2,7 @@
    Solo pinta lo que tiene dato verificado; cada valor va en su moneda y unidad (no se convierten monedas en el mapa). */
 (function () {
   'use strict';
+  function locName(l) { var g = lang(); return (l && l.names && l.names[g]) || (l && l.name) || ''; }   // nombre del punto de clima en el idioma de la pagina
   var EU27 = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'];
   // Ámbito geográfico real de cada serie UE (según su metodología en data/latest.json).
   var EU_SPAIN = { arroz: 1, cebada: 1, colza: 1, cerdo: 1, cordero: 1, harina_soja: 1, huevos: 1, leche: 1, maiz: 1, oliva: 1, pollo: 1, trigo: 1, vaca: 1 };
@@ -142,11 +143,11 @@
     var markers = locs.map(function (l) {
       var m = l.months[l.months.length - 1], v = isP ? m.precipAnomalyPct : m.tempAnomalyC;
       var line = isP ? sgn(v, 0, ' %') + ' (' + num(m.precipMm, 0) + ' ' + t.mm + ')' : sgn(v, 1, ' °C') + ' (' + num(m.tempC, 1) + ' °C)';
-      return { name: l.name, coords: [l.lat, l.lon], style: { initial: { fill: inClass(v, classes) } }, html: '<strong>' + esc(l.name) + '</strong><br>' + esc(m.period) + ': ' + line + '<br>' + t.vsNormal, v: v, m: m, l: l };
+      return { name: locName(l), coords: [l.lat, l.lon], style: { initial: { fill: inClass(v, classes) } }, html: '<strong>' + esc(locName(l)) + '</strong><br>' + esc(m.period) + ': ' + line + '<br>' + t.vsNormal, v: v, m: m, l: l };
     });
     var rows = markers.slice().sort(function (a, b) { return isP ? a.v - b.v : b.v - a.v; });
     var table = '<div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:480px;font-size:14px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:10px 6px">' + t.region.toUpperCase() + ' (' + esc(last) + ')</th><th style="padding:10px 6px;text-align:right">' + (isP ? t.layers.precip : t.layers.temp).toUpperCase() + ' ' + t.vsNormal.toUpperCase() + '</th></tr>' +
-      rows.map(function (r) { var c = inClass(r.v, classes); return '<tr style="border-top:1px solid var(--border)"><td style="padding:10px 6px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:' + c + ';margin-right:8px;border:1px solid rgba(0,0,0,.15)"></span><b>' + esc(r.l.name) + '</b></td><td style="padding:10px 6px;text-align:right;font-weight:600">' + (isP ? sgn(r.v, 0, ' %') : sgn(r.v, 1, ' °C')) + '</td></tr>'; }).join('') + '</table></div>';
+      rows.map(function (r) { var c = inClass(r.v, classes); return '<tr style="border-top:1px solid var(--border)"><td style="padding:10px 6px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:' + c + ';margin-right:8px;border:1px solid rgba(0,0,0,.15)"></span><b>' + esc(locName(r.l)) + '</b></td><td style="padding:10px 6px;text-align:right;font-weight:600">' + (isP ? sgn(r.v, 0, ' %') : sgn(r.v, 1, ' °C')) + '</td></tr>'; }).join('') + '</table></div>';
     document.getElementById('mapa-controls').innerHTML = '';
     var lg = isP ? [[classes[0][2], '< −40 % ' + t.dry], [classes[1][2], '−40 … −15 %'], [classes[2][2], t.normal], [classes[3][2], '+15 … +40 %'], [classes[4][2], '> +40 % ' + t.wet]] : [[classes[0][2], '< −1,5 °C ' + t.cool], [classes[1][2], '−1,5 … −0,5 °C'], [classes[2][2], t.normal], [classes[3][2], '+0,5 … +1,5 °C'], [classes[4][2], '> +1,5 °C ' + t.hot]];
     document.getElementById('mapa-legend').innerHTML = legend(lg);
