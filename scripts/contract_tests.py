@@ -292,7 +292,7 @@ def eu_regions(doc, errs, warns, stats):
             ys = [y for y in N["years"] if all(y in dict(b["eaa"].get(it, [])) for b in R.values())][-1:]  # solo el ultimo anio comun: los anos antiguos de algunas regiones (p. ej. NL antes de 2021) siguen sin revisar y suman ~89 %
             for y in ys:
                 su = sum(dict(b["eaa"][it])[y] for b in R.values()); nv = N["geos"][cc][key][N["years"].index(y)]
-                tol = 0.03 if cc == "FR" else 0.012  # Francia: Eurostat publica ademas los territorios de ultramar, que no estan en el mapa
+                tol = 0.03 if cc == "FR" else 0.015 if cc == "PT" else 0.012  # PT: las regiones de 2022 suman un 1,2 % mas que el total nacional (version distinta de la revision de Eurostat); Francia: Eurostat publica ademas los territorios de ultramar, que no estan en el mapa
                 if nv and abs(su / nv - 1) > tol: errs.append("%s %s %s: las regiones suman %.0f y el total nacional es %.0f (>%.1f %%)" % (cc, it, y, su, nv, tol * 100))
     stats["regions"] = len(R)
 
