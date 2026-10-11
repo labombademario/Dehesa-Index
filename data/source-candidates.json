@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T13:30:11Z",
+ "generatedAt": "2026-10-11T13:59:25Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 115,
+  "total": 116,
   "byStatus": {
-   "ACTIVE": 85,
+   "ACTIVE": 86,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3140,6 +3140,45 @@
    "derivatives": "yes",
    "attribution": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3 bis 7. Auszug.",
    "lastChecked": "2026-10-08",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "gisco_nuts",
+   "registryId": "gisco_nuts",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "Eurostat GISCO — NUTS 2021 administrative boundaries (© EuroGeographics)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EC-REUSE-EUROGEOGRAPHICS",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Administrative boundaries: © EuroGeographics, © UN-FAO, © Turkstat; source: Eurostat GISCO",
+   "lastChecked": "2026-10-11",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

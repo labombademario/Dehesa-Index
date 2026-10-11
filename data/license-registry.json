@@ -2565,6 +2565,32 @@
    "short": "CSU (Chequia)",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Cada conjunto declara las condiciones de uso de datos.gov.cz: sin obra protegida, sin base de datos protegida, sin derecho sui generis."
+  },
+  "gisco_nuts": {
+   "name": "Eurostat GISCO — NUTS 2021 administrative boundaries (© EuroGeographics)",
+   "url": "https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics",
+   "country": "EU",
+   "licenseId": "EC-REUSE-EUROGEOGRAPHICS",
+   "licenseName": "European Commission reuse policy; © EuroGeographics for the administrative boundaries",
+   "licenseUrl": "https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Administrative boundaries: © EuroGeographics, © UN-FAO, © Turkstat; source: Eurostat GISCO",
+   "additionalRestrictions": "The administrative boundaries are free to use for any purpose with the attribution above (GISCO statistical units terms). We simplify the polygons.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-11",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "JRC Data Catalogue entry afa8a5ee-5473-439a-b062-ffdaedc38b2d lists Creative Commons Attribution 4.0 International with access conditions 'No limitations' for the NetCDF/GeoTIFF downloads; the dataset folder's copyright.txt states the dataset is licensed under CC BY 4.0 and reuse is allowed provided credit is given and changes are indicated (read 2026-10-01); the NetCDF header repeats it.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "EDO · CDI",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Condiciones de GISCO leidas de su pagina de unidades territoriales: uso libre con la atribucion © EuroGeographics. Confianza media: no se ha leido el texto legal completo."
   }
  },
  "files": {
@@ -3504,6 +3530,13 @@
    "sources": [
     "statcan"
    ]
+  },
+  "data/eu-drought-regions/": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "CDI por region NUTS 2 (update-eu-drought.py): la rejilla del EDO agregada a los poligonos NUTS 2 de GISCO."
   }
  },
  "derived": [
