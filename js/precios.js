@@ -308,6 +308,8 @@
         var changed = false;
         // forEach y no some(): some() se detiene en la primera observación aplicada y el resto nunca se superponía
         observations.forEach(function (o) { if (applyPublishedObservation(o)) changed = true; });
+        ukIdxObs = observations.filter(function (o) { return o && o.region === 'uk' && o.currency === 'INDEX' && o.status === 'verified' && UK_IDX[o.product]; });
+        if (ukIdxObs.length && state.location === 'uk') changed = true;
         pricesDone();
         if (!changed) return;
         if (D.validateDataTrustRegistry) D.DATA_TRUST_HEALTH = D.validateDataTrustRegistry(D.DATA_TRUST);
@@ -580,6 +582,7 @@
   }
   function catHasData(catId) {
     if (INFO_CATS[catId]) return true;
+    if (ukIdxList(catId).length) return true;
     var list = productsInCat(catId);
     return !trustReady() || !list.length || list.some(entryHasData);
   }
@@ -967,6 +970,67 @@
       '</div>';
   }
 
+  // ---------------------------------------------------------------------
+  // Reino Unido: índices de precios agrarios de Defra (OGL v3.0), base 2020=100.
+  // Defra no publica £/tonelada ni £/cabeza (eso es AHDB, bloqueado por licencia), así que
+  // las pestañas del Reino Unido muestran el índice, con la etiqueta de que NO es un precio.
+  // ---------------------------------------------------------------------
+  var UK_IDX = {
+    defra_wheat_output_index: ['cereales', 'out', { es: 'Trigo', en: 'Wheat', fr: 'Blé', it: 'Frumento' }],
+    defra_barley_output_index: ['cereales', 'out', { es: 'Cebada', en: 'Barley', fr: 'Orge', it: 'Orzo' }],
+    defra_oilseed_rape_output_index: ['cereales', 'out', { es: 'Colza', en: 'Oilseed rape', fr: 'Colza', it: 'Colza' }],
+    defra_milk_output_index: ['lacteos', 'out', { es: 'Leche', en: 'Milk', fr: 'Lait', it: 'Latte' }],
+    defra_cattle_output_index: ['ganado', 'out', { es: 'Vacuno y terneros', en: 'Cattle and calves', fr: 'Bovins et veaux', it: 'Bovini e vitelli' }],
+    defra_pigs_output_index: ['porcino', 'out', { es: 'Cerdos', en: 'Pigs', fr: 'Porcs', it: 'Suini' }],
+    defra_sheep_output_index: ['ovino', 'out', { es: 'Ovino y corderos', en: 'Sheep and lambs', fr: 'Ovins et agneaux', it: 'Ovini e agnelli' }],
+    defra_eggs_output_index: ['avicultura', 'out', { es: 'Huevos', en: 'Eggs', fr: 'Œufs', it: 'Uova' }],
+    defra_feed_input_index: ['pienso', 'in', { es: 'Piensos', en: 'Feed', fr: 'Aliments du bétail', it: 'Mangimi' }],
+    defra_fertiliser_input_index: ['fertilizantes', 'in', { es: 'Fertilizantes y enmiendas', en: 'Fertilisers and soil improvers', fr: 'Engrais et amendements', it: 'Fertilizzanti e ammendanti' }],
+    defra_energy_input_index: ['energia', 'in', { es: 'Energía y lubricantes', en: 'Energy and lubricants', fr: 'Énergie et lubrifiants', it: 'Energia e lubrificanti' }]
+  };
+  var UK_IDX_TXT = {
+    es: { tag: 'Índice de precios agrarios, 2020=100, no es £/tonelada', out: 'precios percibidos por el agricultor', inn: 'precios pagados por el agricultor', idx: 'índice', asof: 'dato de ', badge: 'ÍNDICE',
+          note: '<strong>Reino Unido: aquí hay índices, no precios.</strong> Los precios de mercado en libras (cereales, vacuno, cerdo, cordero…) los publica AHDB, cuyas condiciones prohíben usarlos sin licencia, así que no los mostramos. Defra sí publica índices de precios agrarios (base 2020=100) y esos son los que ves marcados como «ÍNDICE». El resto de datos del Reino Unido (sacrificio, huevos, leche, rentas de las explotaciones) está en su perfil.',
+          link: 'Ver el perfil del Reino Unido' },
+    en: { tag: 'Agricultural price index, 2020=100, not £/tonne', out: 'prices received by farmers', inn: 'prices paid by farmers', idx: 'index', asof: 'as of ', badge: 'INDEX',
+          note: '<strong>United Kingdom: these are indices, not prices.</strong> Market prices in pounds (cereals, beef, pork, lamb…) are published by AHDB, whose terms prohibit use without a licence, so we do not show them. Defra does publish agricultural price indices (2020=100) and those are the cards marked “INDEX”. The rest of the UK data (slaughter, eggs, milk, farm incomes) is in its profile.',
+          link: 'See the United Kingdom profile' },
+    fr: { tag: 'Indice des prix agricoles, 2020=100, pas des £/tonne', out: 'prix reçus par les agriculteurs', inn: 'prix payés par les agriculteurs', idx: 'indice', asof: 'donnée de ', badge: 'INDICE',
+          note: '<strong>Royaume-Uni : ce sont des indices, pas des prix.</strong> Les prix de marché en livres (céréales, bœuf, porc, agneau…) sont publiés par l’AHDB, dont les conditions interdisent l’usage sans licence ; nous ne les affichons donc pas. Defra publie bien des indices de prix agricoles (base 2020=100) : ce sont les cartes marquées « INDICE ». Le reste des données britanniques (abattages, œufs, lait, revenus agricoles) figure dans son profil.',
+          link: 'Voir le profil du Royaume-Uni' },
+    it: { tag: 'Indice dei prezzi agricoli, 2020=100, non è £/tonnellata', out: 'prezzi ricevuti dagli agricoltori', inn: 'prezzi pagati dagli agricoltori', idx: 'indice', asof: 'dato di ', badge: 'INDICE',
+          note: '<strong>Regno Unito: qui ci sono indici, non prezzi.</strong> I prezzi di mercato in sterline (cereali, bovino, suino, agnello…) li pubblica AHDB, le cui condizioni vietano l’uso senza licenza, quindi non li mostriamo. Defra pubblica invece indici dei prezzi agricoli (base 2020=100): sono le schede contrassegnate «INDICE». Il resto dei dati britannici (macellazione, uova, latte, redditi agricoli) è nel suo profilo.',
+          link: 'Vedi il profilo del Regno Unito' }
+  };
+  var ukIdxObs = [];
+  function ukIdxList(catId) {
+    if (state.location !== 'uk') return [];
+    return ukIdxObs.filter(function (o) { return UK_IDX[o.product] && UK_IDX[o.product][0] === catId; });
+  }
+  function ukIdxCardHtml(o) {
+    var lg = lang(), X = UK_IDX_TXT[lg] || UK_IDX_TXT.es, d = UK_IDX[o.product];
+    var nf = function (v, n) { try { return Number(v).toLocaleString(({ es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' })[lg] || 'es-ES', { minimumFractionDigits: n, maximumFractionDigits: n }); } catch (e) { return String(v); } };
+    var pct = typeof o.changePct === 'number' ? (o.changePct > 0 ? '+' : o.changePct < 0 ? '−' : '') + nf(Math.abs(o.changePct), 1) + ' %' : '';
+    var col = typeof o.changePct === 'number' && o.changePct !== 0 ? (o.changePct > 0 ? 'var(--positive, #1b6b3a)' : 'var(--negative, #b3261e)') : 'var(--text-faint)';
+    var sp = (o.spark || []).filter(function (v) { return typeof v === 'number'; });
+    var svg = sp.length > 1 ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none" aria-hidden="true"><path d="' + D.spark(sp) + '" stroke="' + col + '" fill="none" stroke-width="2"/></svg>' : '';
+    var od = o.observationDate ? S.fmtDate(o.observationDate, lg) : '';
+    var meta = [({ es: 'Reino Unido', en: 'United Kingdom', fr: 'Royaume-Uni', it: 'Regno Unito' })[lg], 'Defra', d[1] === 'out' ? X.out : X.inn, od ? X.asof + od : ''].filter(Boolean).join(' · ');
+    return '<div class="di-card di-product-card di-product-state-index" data-key="uk-idx:' + esc(o.product) + '">' +
+      '<div class="di-product-head"><div><h3 class="di-product-name">' + esc(d[2][lg] || d[2].es) + ' · ' + esc(X.idx) + '</h3>' +
+      '<span class="di-product-state di-product-state-badge verified" title="' + esc(X.tag) + '">' + esc(X.badge) + '</span>' +
+      '<div class="di-product-meta">' + esc(meta) + '</div></div></div>' +
+      '<div class="di-product-price-row"><span class="di-product-price">' + esc(nf(o.value, 1)) + '</span>' +
+      '<span class="di-product-unit">' + esc(({ es: 'índice 2020=100', en: 'index 2020=100', fr: 'indice 2020=100', it: 'indice 2020=100' })[lg]) + '</span>' +
+      '<span class="di-product-change" style="color:' + col + ';">' + esc(pct) + '</span></div>' +
+      svg + '<div class="di-product-footnote">' + esc(X.tag) + '</div></div>';
+  }
+  function ukNoticeHtml() {
+    if (state.location !== 'uk') return '';
+    var X = UK_IDX_TXT[lang()] || UK_IDX_TXT.es;
+    return '<div class="di-derived-note di-uk-notice" role="note" style="margin:0 0 14px">' + X.note + ' <a href="paises.html?c=UK">' + esc(X.link) + '</a></div>';
+  }
+
   function renderCategory() {
     renderMarketNewsIntel();
     var root = document.getElementById('pr-category');
@@ -983,7 +1047,8 @@
     }
     var all = productsInCat(state.activeTab), t = ui();
     var entries = all.filter(entryHasData), missing = all.filter(function (e) { return entries.indexOf(e) < 0 && !!resolveDisplay(e, state.location, state.euCountry).region; }); // un producto que no existe en este mercado (p. ej. novillos de Alberta en la UE) no cuenta como "sin datos"
-    root.innerHTML = (entries.length ? viewBar() + '<div class="di-product-grid' + (viewMode() === 'rows' ? ' di-rows' : '') + '">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>' : '<p class="di-movers-hint">' + esc(t.noDataHereAll) + '</p>') +
+    var idxCards = ukIdxList(state.activeTab).map(ukIdxCardHtml);
+    root.innerHTML = ukNoticeHtml() + (entries.length || idxCards.length ? viewBar() + '<div class="di-product-grid' + (viewMode() === 'rows' ? ' di-rows' : '') + '">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + idxCards.join('') + '</div>' : '<p class="di-movers-hint">' + esc(t.noDataHereAll) + '</p>') +
       (missing.length ? '<details class="di-nodata-list" style="margin-top:14px"><summary style="cursor:pointer;font-size:13px;color:var(--text-faint)">' + esc(t.noDataHere) + ' (' + missing.length + ')</summary><p class="di-movers-hint" style="margin-top:6px">' + missing.map(function (e) { return esc(productName(e.nameKey)); }).join(' · ') + '</p></details>' : '');
     wireCardEvents(root);
   }
