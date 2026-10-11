@@ -1,0 +1,45 @@
+UK paises 263
+UK 0201-0202 ok
+UK 0203 ok
+UK 0207 ok
+UK 0204 ok
+UK 04 ok
+UK 0406 ok
+UK 1001 ok
+UK 1003 ok
+UK 1005 ok
+UK 12 ok
+UK 17 ok
+UK 07 ok
+UK 08 ok
+UK 2204 ok
+UK 31 ok
+UK 01 ok
+UK sin cambios
+CL Exportaciones 2021 ok 12 meses
+CL Exportaciones 2022 ok 12 meses
+CL Exportaciones 2023 ok 12 meses
+CL Exportaciones 2024 ok 12 meses
+CL Exportaciones 2025 ok 12 meses
+CL Importaciones 2021 ok 12 meses
+CL Importaciones 2022 ok 12 meses
+CL Importaciones 2023 ok 12 meses
+CL Importaciones 2024 ok 12 meses
+CL Importaciones 2025 ok 12 meses
+CL pais sin traducir: Otros (país desconocido) 11.52
+CL pais sin traducir: Origen o destino no precisado 11.42
+CL pais sin traducir: Eslovenia 11.35
+CL pais sin traducir: Túnez 9.99
+CL pais sin traducir: Jamaica 9.89
+CL pais sin traducir: Bahrein 9.65
+CL pais sin traducir: Kenya 8.44
+CL pais sin traducir: República Eslovaca 8.25
+CL pais sin traducir: Islandia 7.52
+CL pais sin traducir: Cambodia 7.28
+CL pais sin traducir: Uzbekistán 6.85
+CL pais sin traducir: Tanzania 5.89
+CL pais sin traducir: Malta 5.62
+CL pais sin traducir: Martinica 5.49
+CL pais sin traducir: Rep. Eslovaca 5.16
+CL escrito 16 productos 2021 - 2025
+CA escrito 1 productos 2021 - 2025
