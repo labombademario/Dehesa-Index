@@ -320,6 +320,9 @@
       });
   }
 
+  // Emoji solo para productos inconfundibles; decorativo (aria-hidden), sin emoji = sin icono
+  var PRODUCT_EMOJI = { maiz: '🌽', trigo: '🌾', trigo_pienso_ab: '🌾', trigo_cwrs_ab: '🌾', vaca: '🐄', novillo_ab: '🐄', cerdo: '🐖', cerdo_ab: '🐖', pollo: '🐔', huevos: '🥚', leche: '🥛', mantequilla: '🧈', oliva: '🫒', cordero: '🐑', cabra: '🐐' };
+  function productEmoji(nameKey) { return PRODUCT_EMOJI[nameKey] ? '<span class="di-emoji" aria-hidden="true">' + PRODUCT_EMOJI[nameKey] + '</span> ' : ''; }
   function productName(nameKey) { return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
   function catLabel(catId) { var c = (D.CATS[lang()] || D.CATS.es)[catId]; return c ? c.label : catId; }
   function productsInCat(catId) {
@@ -430,7 +433,7 @@
       var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
       return (
         '<span class="di-ticker-item">' +
-          '<span class="di-ticker-name">' + esc(productName(entry.nameKey)) + '</span>' +
+          '<span class="di-ticker-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</span>' +
           '<span class="di-ticker-price">' + esc(built.price) + esc(built.unit) + '</span>' +
           '<span style="color:' + built.changeColor + ';font-weight:700;">' + esc(built.changeLabel) + '</span>' +
         '</span>'
@@ -754,7 +757,7 @@
     return (
       '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +
-          '<div><h3 class="di-product-name">' + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + '</div>' +
+          '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + '</div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' : '') +

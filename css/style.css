@@ -2019,3 +2019,5 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
 /* Migas de pan y linea de actualizacion de Precios: se rellenan con JS tras pintar; altura de una linea medida para que el resto de la pagina no baje. */
 .di-crumbs:empty { min-height: 15px; }
 #pr-updated:empty { min-height: 14px; }
+
+.di-emoji{font-size:.9em;margin-right:.1em;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;font-style:normal}
