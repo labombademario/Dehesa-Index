@@ -154,3 +154,55 @@ indices de precios de insumos 18 series
 fertilizantes 2 series
 empleo agrario 3 series
 SE series 429
+cultivos 114 series
+censos 68 series
+carne 43 series
+sacrificio mensual 44 series
+leche 22 series
+huevos 1 series
+indices de precios 36 series
+precios absolutos 22 series
+cuentas agrarias 50 series
+indices de precios de insumos 19 series
+fertilizantes 2 series
+empleo agrario 3 series
+CZ series 424
+cultivos 108 series
+censos 37 series
+carne 36 series
+sacrificio mensual 40 series
+leche 19 series
+huevos 1 series
+indices de precios 27 series
+precios absolutos 7 series
+cuentas agrarias 58 series
+indices de precios de insumos 19 series
+fertilizantes 2 series
+empleo agrario 3 series
+EE series 357
+cultivos 112 series
+censos 84 series
+carne 46 series
+sacrificio mensual 46 series
+leche 20 series
+huevos 1 series
+indices de precios 42 series
+precios absolutos 21 series
+cuentas agrarias 54 series
+indices de precios de insumos 23 series
+fertilizantes 2 series
+empleo agrario 3 series
+HU series 454
+cultivos 109 series
+censos 45 series
+carne 46 series
+sacrificio mensual 46 series
+leche 16 series
+huevos 1 series
+indices de precios 37 series
+precios absolutos 19 series
+cuentas agrarias 46 series
+indices de precios de insumos 14 series
+fertilizantes 2 series
+empleo agrario 3 series
+LV series 384
