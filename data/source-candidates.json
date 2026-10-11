@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T18:30:21Z",
+ "generatedAt": "2026-10-11T18:35:08Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -4489,7 +4489,7 @@
    "registryId": "statistik_austria_vb",
    "country": "AT",
    "scope": "integrated",
-   "institution": "Austria - Statistik Austria, Versorgungsbilanzen (publicaciones PDF de balances de abastecimiento)",
+   "institution": "Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications)",
    "dataset": "Ya integrada (11 series en el catalogo unificado)",
    "products": [
     "barley",
