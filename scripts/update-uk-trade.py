@@ -36,6 +36,52 @@ def monthly(lo, hi, y0, y1):
             if r.get('nm') is not None: out[(r['MonthId'], r['FlowTypeId'])] = r['nm']
         u = j.get('@odata.nextLink')
     return out
+# Socios comerciales: total agroalimentario (capitulos HS 01-24) por pais y flujo, valor en libras (OTS, Value), anual completo desde 2000.
+AGRI = (1000000, 25000000)
+FIX = {'Eire': 'Ireland', 'Irish Republic': 'Ireland', 'Republic of Ireland': 'Ireland', 'USA': 'United States', 'United States of America': 'United States'}
+SKIP = ('unallocated', 'stores', 'provisions', 'confidential', 'not allocated', 'eu ', 'non-eu', 'non eu', 'extra', 'miscellaneous', 'unknown', 'undefined')
+def partners(year):
+    ctry = {}
+    u = BASE + 'Country?$select=CountryId,CountryName,CountryCodeAlpha&$top=1000'
+    while u:
+        j = get(u)
+        for r in j['value']: ctry[r['CountryId']] = (str(r.get('CountryCodeAlpha') or '').strip(), str(r.get('CountryName') or '').strip())
+        u = j.get('@odata.nextLink')
+    per = {'imp': defaultdict(dict), 'exp': defaultdict(dict)}
+    for y in range(2000, year):
+        q = 'OTS?$apply=filter(CommodityId ge %d and CommodityId lt %d and MonthId ge %d01 and MonthId le %d12)/groupby((CountryId,FlowTypeId),aggregate(Value with sum as v))' % (AGRI[0], AGRI[1], y, y)
+        u = BASE + urllib.parse.quote(q, safe="/?$=&',()"); got = 0
+        while u:
+            j = get(u)
+            for r in j.get('value', []):
+                if r.get('v') is None: continue
+                tag = 'imp' if r['FlowTypeId'] in (1, 3) else 'exp' if r['FlowTypeId'] in (2, 4) else None
+                if not tag: continue
+                d = per[tag][r['CountryId']]; d[y] = d.get(y, 0) + r['v'] / 1e6; got += 1
+            u = j.get('@odata.nextLink')
+        if not got: raise RuntimeError('sin datos de socios en %d' % y)
+    n = 0
+    for tag, word, wd in (('imp', 'Imports from', 'imports'), ('exp', 'Exports to', 'exports')):
+        tot = defaultdict(float)
+        for cid, d in per[tag].items():
+            for y, v in d.items(): tot[y] += v
+        pts = [[str(y), round(v, 3)] for y, v in sorted(tot.items())]
+        if len(pts) >= 3 and int(pts[-1][0]) == year - 1:
+            OUT['uk-hmrc-trade-agrifood-%s' % tag] = dict(id='uk-hmrc-trade-agrifood-%s' % tag, group='trade', label='Agri-food (HS 01-24): UK %s, world, value (HMRC)' % wd, unit='GBP million', frequency='annual', latestPeriod=pts[-1][0],
+                latest=pts[-1][1], changePct=round((pts[-1][1] / pts[-2][1] - 1) * 100, 2) if pts[-2][1] else None, points=pts, sourceGroup='HMRC UK Trade Info OTS agrifood'); n += 1
+        cand = []
+        for cid, d in per[tag].items():
+            code, name = ctry.get(cid, ('', ''))
+            name = FIX.get(name, name)
+            if not name or len(code) != 2 or any(k in name.lower() for k in SKIP) or not d.get(year - 1): continue
+            cand.append((d[year - 1], code.lower(), name, d))
+        for v, code, name, d in sorted(cand, reverse=True)[:10]:
+            sid = 'uk-tp-%s-%s' % (tag, code)
+            pts = [[str(y), round(x, 3)] for y, x in sorted(d.items())]
+            if len(pts) < 3: continue
+            OUT[sid] = dict(id=sid, group='partners', label='%s %s: agri-food, HS 01-24 (annual)' % (word, name), unit='GBP million (value)', frequency='annual', latestPeriod=pts[-1][0], latest=pts[-1][1],
+                changePct=round((pts[-1][1] / pts[-2][1] - 1) * 100, 2) if pts[-2][1] else None, points=pts, sourceGroup='HMRC UK Trade Info OTS partners'); n += 1
+    log('socios', n)
 def main():
     year = datetime.date.today().year; n = 0
     for key, nm, lo, hi in HS:
@@ -57,6 +103,8 @@ def main():
             OUT['uk-hmrc-trade-%s-%s' % (key, tag)] = dict(id='uk-hmrc-trade-%s-%s' % (key, tag), group='trade', label='%s: UK %s, world, net mass (HMRC)' % (nm, word), unit='t', frequency='annual', latestPeriod=last[0],
                 latest=last[1], changePct=round((last[1] / prev[1] - 1) * 100, 2) if prev[1] else None, points=pts, sourceGroup='HMRC UK Trade Info OTS %s' % key); n += 1
         log(key, 'ok')
+    try: partners(year)
+    except Exception as e: log('ERROR socios', repr(e)[:200])
     log('series', n)
     if n < 8:
         log('demasiado pocas series (%d); no se escribe nada' % n); open('data/uk-trade-log.txt', 'w').write('\n'.join(LOG) + '\n'); sys.exit(1)
