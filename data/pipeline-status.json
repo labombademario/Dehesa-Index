@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T02:23:00Z",
+ "generatedAt": "2026-10-11T02:50:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 114,
   "late": 1,
   "error": 1,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "ea19dd77",
+   "sha": "2e04c140",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/4f3892c8-f49f-439d-8805-5ba33fff5e0e",
-   "completedAt": "2026-10-11T02:14:44Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c2d369d0-bbf6-47d0-9038-d591fea1f19e",
+   "completedAt": "2026-10-11T02:33:18Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -228,6 +228,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-baltics-national.yml",
+   "name": "Update Latvia and Estonia (national statistics offices, prices, stocks, crops and milk)",
+   "crons": [
+    "40 7 3,16 * *"
+   ],
+   "nextRun": "2026-10-16T07:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 432.0
   },
   {
    "workflow": "update-belgium.yml",
@@ -1711,7 +1724,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1719,6 +1732,10 @@
     },
     {
      "path": "data/us-weekly-stats.json",
+     "valid": "ok",
+     "series": 32,
+     "points": 4411,
+     "lines": 0,
      "lastChange": "2026-10-11T00:36:38Z"
     },
     {
@@ -1730,7 +1747,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1747,7 +1764,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/products"
@@ -1758,15 +1775,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1774,18 +1791,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-11T02:13:57Z"
+     "lastChange": "2026-10-11T02:32:32Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2769,18 +2786,18 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-10-11T02:30:00Z",
+   "nextRun": "2026-10-12T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-10T02:46:41Z",
-    "durationSec": 19,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38018200349"
+    "startedAt": "2026-10-11T02:46:42Z",
+    "durationSec": 18,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38106243156"
    },
    "recent": {
-    "runs": 7,
-    "success": 6,
+    "runs": 8,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",

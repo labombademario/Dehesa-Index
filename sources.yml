@@ -287,6 +287,15 @@ sources:
     data: [sweden-sjv-stats.json]
     log: sweden-sjv-log.txt
     message: Datos Suecia (Jordbruksverket, precios al productor y existencias)
+  - id: baltics-national
+    name: Update Latvia and Estonia (national statistics offices, prices, stocks, crops and milk)
+    cron: ['40 7 3,16 * *']
+    script: scripts/update-np-baltic.py
+    timeout: 20
+    script_timeout: 12
+    data: [baltics-national-stats.json]
+    log: baltics-national-log.txt
+    message: Datos Letonia y Estonia (oficinas nacionales de estadistica, precios y existencias)
   - id: switzerland-meteo
     name: Update Switzerland (MeteoSwiss climate)
     cron: ['35 5 4 * *']

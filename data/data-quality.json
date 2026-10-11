@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-10T21:24:38Z",
+ "generatedAt": "2026-10-11T02:50:28Z",
  "summary": {
-  "files": 50,
+  "files": 54,
   "errors": 0,
-  "warnings": 14
+  "warnings": 16
  },
  "files": [
   {
@@ -470,7 +470,7 @@
     "points": 186197,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T18:26:56Z",
+   "generatedAt": "2026-10-11T01:47:25Z",
    "info": [],
    "nWarnings": 185,
    "nErrors": 0
@@ -508,13 +508,54 @@
     "NL/nl-es-meatm-b4110-ths_hd: salto 22610.0 -> 25370.0 en 1983-09 (mediana previa 760)"
    ],
    "stats": {
-    "series": 1794,
-    "points": 158575,
+    "series": 2223,
+    "points": 188327,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T18:26:56Z",
+   "generatedAt": "2026-10-11T01:47:25Z",
    "info": [],
-   "nWarnings": 59,
+   "nWarnings": 68,
+   "nErrors": 0
+  },
+  {
+   "file": "eurostat-eu2-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "CZ/cz-es-meatm-b7490-ths_hd: salto 2030.0 -> 5920.0 en 2022-11 (mediana previa 160)",
+    "CZ/cz-es-meatm-b7490-ths_hd: salto 3040.0 -> 5230.0 en 2023-11 (mediana previa 170)",
+    "EE/ee-es-crop-c1310-production: salto 21680.0 -> 88540.0 en 2019 (mediana previa 2.9e+03)",
+    "EE/ee-es-crop-c1310-production: salto 88540.0 -> 123090.0 en 2020 (mediana previa 3.4e+03)",
+    "EE/ee-es-crop-c1310-production: salto 123090.0 -> 125290.0 en 2021 (mediana previa 4.8e+03)",
+    "EE/ee-es-crop-c1310-production: salto 125290.0 -> 165970.0 en 2022 (mediana previa 5.1e+03)",
+    "EE/ee-es-eaa-am032000: salto 0.21 -> 3.88 en 2022 (mediana previa 0.08)",
+    "HU/hu-es-herd-a2400-m11_m12: salto 2000 -> 3000 en 2010 (mediana previa 100)",
+    "HU/hu-es-milk-m-d3100_x_3113: salto 0 -> 420.0 en 2008-03 (mediana previa 10)",
+    "HU/hu-es-milk-m-d3100_x_3113: salto 420.0 -> 270.0 en 2008-04 (mediana previa 10)",
+    "LV/lv-es-eaa-am022000: salto 6.8 -> 21.85 en 2015 (mediana previa 0.74)",
+    "LV/lv-es-eaa-am022000: salto 21.85 -> 27.24 en 2016 (mediana previa 1.03)",
+    "LV/lv-es-meat-slaught-b7300-ths_hd: salto 2220.0 -> 1940.0 en 2022 (mediana previa 10)",
+    "LV/lv-es-meat-slaught-b7300-ths_hd: salto 1940.0 -> 1670.0 en 2023 (mediana previa 10)",
+    "LV/lv-es-meat-slaught-b7300-ths_hd: salto 1670.0 -> 1620.0 en 2024 (mediana previa 10)",
+    "LV/lv-es-meat-slaught-b7300-ths_hd: salto 1620.0 -> 1540.0 en 2025 (mediana previa 10)",
+    "LV/lv-es-meat-slaught-b7490-ths_hd: salto 11880.0 -> 47550.0 en 2017 (mediana previa 520)",
+    "LV/lv-es-meat-slaught-b7490-ths_hd: salto 47550.0 -> 40010.0 en 2018 (mediana previa 520)",
+    "LV/lv-es-meatm-b7490-ths_hd: salto 0 -> 9800.0 en 2015-08 (mediana previa 20)",
+    "LV/lv-es-meatm-b7490-ths_hd: salto 9800.0 -> 1900.0 en 2015-09 (mediana previa 30)",
+    "LV/lv-es-meatm-b7490-ths_hd: salto 0 -> 5030.0 en 2016-01 (mediana previa 30)",
+    "LV/lv-es-meatm-b7490-ths_hd: salto 0 -> 1540.0 en 2016-07 (mediana previa 50)",
+    "LV/lv-es-meatm-b7490-ths_hd: salto 980.0 -> 4000 en 2016-10 (mediana previa 50)",
+    "LV/lv-es-meatm-b7490-ths_hd: salto 260.0 -> 1470.0 en 2017-01 (mediana previa 50)"
+   ],
+   "stats": {
+    "series": 1619,
+    "points": 88507,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-11T01:47:25Z",
+   "info": [],
+   "nWarnings": 24,
    "nErrors": 0
   },
   {
@@ -717,6 +758,41 @@
    "nErrors": 0
   },
   {
+   "file": "sweden-sjv-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 38,
+    "points": 3997,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-11T01:20:41Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "baltics-national-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "EE/ee-stat-production-peas: salto 5900.0 -> 12800.0 en 1996 (mediana previa 300)",
+    "EE/ee-stat-production-peas: salto 12800.0 -> 11400.0 en 1997 (mediana previa 300)"
+   ],
+   "stats": {
+    "series": 93,
+    "points": 5079,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-11T02:44:32Z",
+   "info": [],
+   "nWarnings": 2,
+   "nErrors": 0
+  },
+  {
    "file": "austria-balances-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -728,6 +804,22 @@
     "lines": 0
    },
    "generatedAt": "2026-10-10T19:36:07Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-weekly-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 32,
+    "points": 4411,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-11T00:16:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

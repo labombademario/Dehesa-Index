@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T02:24:24Z",
+ "generatedAt": "2026-10-11T02:51:50Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 112,
+  "total": 114,
   "byStatus": {
-   "ACTIVE": 82,
+   "ACTIVE": 84,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2191,6 +2191,62 @@
    ]
   },
   {
+   "sourceId": "csp_lv",
+   "registryId": "csp_lv",
+   "country": "LV",
+   "scope": "integrated",
+   "institution": "Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk)",
+   "dataset": "Ya integrada (51 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production",
+    "stocks"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: CSP Latvia (Central Statistical Bureau of Latvia), official statistics portal.",
+   "lastChecked": "2026-10-10",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "defra",
    "registryId": "defra",
    "country": "UK",
@@ -4069,6 +4125,62 @@
     "data/license-registry.json"
    ],
    "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "stat_ee",
+   "registryId": "stat_ee",
+   "country": "EE",
+   "scope": "integrated",
+   "institution": "Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy)",
+   "dataset": "Ya integrada (42 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cattle",
+    "cheese",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production",
+    "stocks"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-SA-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Statistics Estonia, statistical database.",
+   "lastChecked": "2026-10-10",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
   },
   {
    "sourceId": "statbel",

@@ -2481,6 +2481,62 @@
    "evidence": "Impresum de 'Versorgungsbilanzen für pflanzliche Produkte 2024/2025' (Statistik im Fokus 1.27, leido el 10-oct-2026): 'Bei richtiger Wiedergabe und mit korrekter Quellenangabe „STATISTIK AUSTRIA“ ist es gestattet, die Inhalte zu vervielfältigen, verbreiten, öffentlich zugänglich zu machen und sie zu bearbeiten. Bei auszugsweiser Verwendung ... ist an geeigneter Stelle ein Hinweis anzubringen, dass die verwendeten Inhalte bearbeitet wurden.' STATkompakt 2025: 'Eine Weiterverwendung ist bei Quellenangabe und korrekter Wiedergabe gestattet.' Sin clausula no comercial.",
    "short": "Statistik Austria",
    "legalConfidenceReason": "Permiso explicito de reutilizacion con cita en el impresum de cada publicacion."
+  },
+  "csp_lv": {
+   "name": "Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk)",
+   "url": "https://data.stat.gov.lv/",
+   "country": "LV",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (CC BY 4.0), as stated in the portal's licence and copyright notice",
+   "licenseUrl": "https://stat.gov.lv/en/terms",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: CSP Latvia (Central Statistical Bureau of Latvia), official statistics portal.",
+   "additionalRestrictions": "",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "stat.gov.lv/en/about-osp (10-oct-2026), section «Licence and copyright notice»: all statistics published on the official statistics portal may be used under the CC BY 4.0 licence.",
+   "used": true,
+   "aliases": [
+    "csp_lv"
+   ],
+   "notes": "Tables used: LAC020c, LAC020m (purchase prices), LAB010, LAB020 (closing stocks), LAG020 (area, production, yield), LAL050m (milk deliveries). The preliminary yield of the current year, published in another unit, is not mixed into the series.",
+   "short": "CSP (Letonia)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Aviso de licencia del portal oficial: CC BY 4.0 para todas las estadisticas publicadas."
+  },
+  "stat_ee": {
+   "name": "Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy)",
+   "url": "https://andmed.stat.ee/",
+   "country": "EE",
+   "licenseId": "CC-BY-SA-4.0",
+   "licenseName": "Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0), as stated in the statistical database",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Statistics Estonia, statistical database.",
+   "additionalRestrictions": "ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with attribution and no alteration.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "andmed.stat.ee/en/stat (10-oct-2026), page footer: Statistics Estonia's open data can be shared under Creative Commons CC BY-SA 4.0.",
+   "used": true,
+   "aliases": [
+    "stat_ee"
+   ],
+   "notes": "Tables used: PM0281 (crops), PM20 and PM31 (balances, final stocks), PM18 and PM192 (monthly purchase prices), PM47 (dairy production). ShareAlike is the open point to decide if the dataset is ever redistributed as a whole.",
+   "short": "Statistics Estonia",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Pie de pagina de la base: datos abiertos bajo CC BY-SA 4.0; la clausula de compartir igual afecta a la redistribucion de la base completa."
   }
  },
  "files": {
@@ -3303,12 +3359,12 @@
    "notes": "Margenes de carne, precios minoristas (BLS via ERS), lacteos, leche y arroz del USDA ERS, sin cambiar valores. Los precios minoristas de cortes son del BLS (dominio publico) publicados por el ERS."
   },
   "data/us-weekly-stats.json": {
-    "bySourceGroupPrefix": {
-      "USDA AMS Market News": "usda_ams_mars",
-      "USDA AMS Grain Inspection": "usda_ams_fgis",
-      "USDA FAS Export Sales": "usda_fas_esr",
-      "EIA": "eia"
-    }
+   "bySourceGroupPrefix": {
+    "USDA AMS Market News": "usda_ams_mars",
+    "USDA AMS Grain Inspection": "usda_ams_fgis",
+    "USDA FAS Export Sales": "usda_fas_esr",
+    "EIA": "eia"
+   }
   },
   "data/us-ttb-stats.json": {
    "byCountry": {
@@ -3387,10 +3443,17 @@
    "byCountry": {
     "AT": "statistik_austria_vb"
    }
+  },
+  "data/baltics-national-stats.json": {
+   "bySourceGroupPrefix": {
+    "CSP Latvia": "csp_lv",
+    "Statistics Estonia": "stat_ee"
+   },
+   "notes": "scripts/update-np-baltic.py: Letonia (CSP) y Estonia (Statistics Estonia), precios de compra, existencias, cultivos y leche."
   }
  },
  "derived": [
-    "product-labels.json",
+  "product-labels.json",
   "alberta-weekly-debug.json",
   "alerts.json",
   "api.json",
