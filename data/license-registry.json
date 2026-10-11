@@ -3484,6 +3484,11 @@
     "CSU Czechia": "csu_cz"
    },
    "notes": "scripts/update-cz-csu.py: datos abiertos del CSU, precios, insumos, indices, cosecha y superficie."
+  },
+  "data/us-trade-products.json": {
+   "sources": [
+    "usda_fas_gats"
+   ]
   }
  },
  "derived": [

@@ -65,7 +65,7 @@ def home_summary():
             'markets': {'total': len(ams['reports']), 'families': {f: sum(1 for r in ams['reports'] if r['fam'] == f) for f in sorted({r['fam'] for r in ams['reports']})}}}
 def trade_products():
     """data/views/trade-products/<CC>.json: el bloque de socios comerciales de un perfil de pais solo baja su propio pais (mismo esquema que el fichero completo, un solo reporter)."""
-    for src in ('eu-trade-products.json', 'au-trade-products.json'):
+    for src in ('eu-trade-products.json', 'au-trade-products.json', 'us-trade-products.json'):
         try: d = load(src)
         except Exception: continue
         for cc, rep in (d.get('reporters') or {}).items():
