@@ -50,5 +50,9 @@
     else { var c = rest.indexOf(', '); if (c < 0) return null; var a = pick(ITEM, rest.slice(0, c), i), r = pick(REG, rest.slice(c + 2), i); if (a == null || r == null) return null; out = a + ' · ' + r; }
     return kind + ': ' + out + (unit ? ' (' + unit + ')' : '');
   }
-  g.DILabel = { t: function (label) { var lg = lang(), x = lg === 'en' ? null : tr(label, lg); return { text: x || label, orig: label, changed: !!x }; } };
+  // Si el patron «Tipo: producto» no encaja, se prueba el glosario general (label-tl.js) cuando esta cargado: nombres de producto, regiones, fuentes.
+  function viaGloss(label, lg) { var T = g.DILabelTl; if (!T || !T.ready(lg)) return null; var y = T.tl(label, lg); return y !== label ? y : null; }
+  // carga el glosario del idioma actual y llama a cb (volver a pintar) cuando llega
+  function ensure(cb) { var T = g.DILabelTl, lg = lang(); if (!T || lg === 'en' || T.ready(lg)) return; T.load(lg).then(function (ok) { if (ok && cb) cb(); }); }
+  g.DILabel = { t: function (label) { var lg = lang(), x = lg === 'en' ? null : (tr(label, lg) || viaGloss(label, lg)); return { text: x || label, orig: label, changed: !!x }; }, ensure: ensure };
 })(window);

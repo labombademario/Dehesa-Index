@@ -3344,6 +3344,7 @@
   }
  },
  "derived": [
+    "product-labels.json",
   "alberta-weekly-debug.json",
   "alerts.json",
   "api.json",

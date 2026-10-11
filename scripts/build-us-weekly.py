@@ -45,18 +45,20 @@ add('us-wk-lamb-carcass-cutout', 'prices_lv', 'Lamb carcass cutout, gross, Unite
     'National Estimated Lamb Carcass Cutout (LM_XL502): valor bruto, media ponderada movil de 5 dias, USD por 100 libras.')
 # ---- fertilizantes: informe de costes de produccion de Illinois (cada dos semanas). Solo Illinois (el informe con mas historia y todos los productos).
 fert = jl('us-fertilizers.json')
-FN = {'amoniaco': 'Anhydrous ammonia', 'urea': 'Urea', 'dap': 'DAP', 'map': 'MAP', 'potasa': 'Potash', 'uan': 'UAN solution'}
+FNAME = {'Anhydrous Ammonia': 'Anhydrous ammonia', 'Urea (46-0-0)': 'Urea 46-0-0', 'DAP (Diammonium Phosphate 18-46-0)': 'DAP 18-46-0', 'MAP (Monoammonium Phosphate 11-52-0)': 'MAP 11-52-0',
+         'Potash (White 0-0-62)': 'Potash 0-0-62', 'Liquid Nitrogen (28-0-0)': 'UAN 28-0-0', 'Liquid Nitrogen (32-0-0)': 'UAN 32-0-0'}   # nombres sin parentesis ni comas: asi el glosario los traduce enteros
+FN = {'amoniaco', 'urea', 'dap', 'map', 'potasa', 'uan'}
 seen = set()
 for p in fert['products']:
     for st in p['states']:
-        if st['state'] != 'Illinois' or p['id'] not in FN: continue
+        if st['state'] != 'Illinois' or p['id'] not in FN or st['spec'] not in FNAME: continue
         k = (p['id'], st['spec'])
         if k in seen: continue
         seen.add(k)
         pts = [list(h) for h in st['hist']]
         if st.get('date') and st.get('avg') is not None: pts.append([st['date'], st['avg']])
         slug = re.sub(r'[^a-z0-9]+', '-', ('%s-%s' % (p['id'], st['spec'])).lower()).strip('-')[:40]
-        add('us-wk-fert-il-' + slug, 'inputs', '%s (%s): retail price, Illinois (USDA AMS)' % (FN[p['id']], st['spec']), 'USD/short ton', 'weekly', pts, AMS,
+        add('us-wk-fert-il-' + slug, 'inputs', '%s: retail price, Illinois (USDA AMS)' % FNAME[st['spec']], 'USD/short ton', 'weekly', pts, AMS,
             'Illinois Production Cost Report: media de los precios minoristas declarados; el informe sale cada dos semanas (no cada semana).')
 # ---- inspecciones de exportacion de grano (FGIS)
 FG = 'USDA AMS Grain Inspection (FGIS)'
@@ -67,14 +69,16 @@ for k, v in insp['series'].items():
 # ---- ventas netas de exportacion (FAS ESR): la fuente solo trae la campana en curso; el historial se conserva de ejecuciones anteriores
 ESR = 'USDA FAS Export Sales Reporting'
 es = jl('export-sales.json')
+ESRN = {'Wheat - HRW': 'Wheat HRW', 'Wheat - SRW': 'Wheat SRW', 'Wheat - HRS': 'Wheat HRS', 'Wheat - White': 'Wheat White', 'Wheat - Durum': 'Durum wheat',
+        'Fresh, Chilled, or Frozen Muscle Cuts of Beef': 'Beef muscle cuts', 'Fresh, Chilled, or Frozen Muscle Cuts of Pork': 'Pork muscle cuts'}
 for c in es['commodities']:
-    add('us-wk-esr-net-sales-%s' % c['code'], 'trade', 'Export net sales: %s, United States (USDA FAS, weekly)' % c['name'], 't', 'weekly', [[w['w'], w.get('net')] for w in c.get('weekly', [])], ESR,
+    add('us-wk-esr-net-sales-%s' % c['code'], 'trade', 'Export net sales: %s, United States (USDA FAS, weekly)' % ESRN.get(c['name'], c['name']), 't', 'weekly', [[w['w'], w.get('net')] for w in c.get('weekly', [])], ESR,
         'Ventas netas de la semana (nuevas ventas menos cancelaciones), toneladas métricas, de la campana de comercializacion en curso en cada fecha.')
 # ---- etanol (EIA, semanal)
 EIA = 'EIA'
 eth = jl('us-markets/ethanol.json')['series']
-EN = {'prod_NUS': ('production', 'Fuel ethanol production, United States (EIA, weekly)', 'kb/d'), 'prod_R20': ('production', 'Fuel ethanol production, Midwest (PADD 2) (EIA, weekly)', 'kb/d'),
-      'stocks_NUS': ('stocks', 'Fuel ethanol stocks, United States (EIA, weekly)', 'kbbl'), 'stocks_R20': ('stocks', 'Fuel ethanol stocks, Midwest (PADD 2) (EIA, weekly)', 'kbbl')}
+EN = {'prod_NUS': ('production', 'Fuel ethanol production, United States (EIA, weekly)', 'kb/d'), 'prod_R20': ('production', 'Fuel ethanol production, Midwest (EIA, weekly)', 'kb/d'),
+      'stocks_NUS': ('stocks', 'Fuel ethanol stocks, United States (EIA, weekly)', 'kbbl'), 'stocks_R20': ('stocks', 'Fuel ethanol stocks, Midwest (EIA, weekly)', 'kbbl')}
 for k, (g, lab, u) in EN.items():
     if k in eth: add('us-wk-ethanol-' + k.lower(), g, lab, u, 'weekly', eth[k]['points'], EIA, 'Cifras semanales de la EIA (miles de barriles por día / miles de barriles); revisables por la fuente.')
 

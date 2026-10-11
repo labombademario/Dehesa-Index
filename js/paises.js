@@ -150,7 +150,7 @@
     PS.pipelines.forEach(function (x) { (x.files || []).forEach(function (y) { if (y.path === f && !p) { p = x; e = y; } }); }); if (!p) return '';
     return '<p class="di-movers-hint">' + v[0] + ': ' + v[1] + ' <code>' + esc(f) + '</code>' + (e.lastChange ? ' · ' + v[2] + ' ' + esc(dshort(e.lastChange)) : '') + (p.last ? ' · ' + v[4] + ' ' + esc(dshort(p.last.startedAt)) : '') + (p.nextRun ? ' · ' + v[3] + ' ' + esc(dshort(p.nextRun)) : '') + ' · <a href="status.html">status</a></p>';
   }
-  var REV = [], RV = { es: ['Revisiones oficiales detectadas', 'antes', 'ahora', 'detectado'], en: ['Official revisions detected', 'was', 'now', 'detected'], fr: ['Révisions officielles détectées', 'avant', 'maintenant', 'détecté'], it: ['Revisioni ufficiali rilevate', 'prima', 'ora', 'rilevato'] };
+  var REV = [], RV = { es: ['Cambios históricos detectados', 'antes', 'ahora', 'detectado'], en: ['Historical changes detected', 'was', 'now', 'detected'], fr: ['Changements d’historique détectés', 'avant', 'maintenant', 'détecté'], it: ['Cambi nello storico rilevati', 'prima', 'ora', 'rilevato'] };
   function revBox(cur) { return '<div id="ps-rev">' + revBoxIn(cur) + '</div>'; }
   function revBoxIn(cur) {
     var r = REV.filter(function (x) { return x.series === ST.c + '/' + cur.id; }).slice(0, 5); if (!r.length) return '';

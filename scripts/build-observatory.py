@@ -99,7 +99,7 @@ def main():
     obs.sort(key=lambda x: (x['region'], x['product']))
     # ---- revisiones
     rv = J('revisions.json', {'revisions': []})['revisions']; brief = J('daily-brief.json')
-    revisions = {'count': len(rv), 'items': rv[:50], 'windowHours': brief.get('windowHours'), 'note': 'Revisiones oficiales detectadas por la fuente (data/revisions.json). Ninguna registrada no significa que la fuente no revise: solo que no se ha detectado un cambio de un valor ya publicado.'}
+    revisions = {'count': len(rv), 'items': rv[:50], 'windowHours': brief.get('windowHours'), 'note': 'Cambios detectados en periodos ya publicados (data/revisions.json): pueden ser revisiones de la fuente, correcciones o reajustes del historico; la fuente no los confirma. Ninguna registrada no significa que la fuente no revise: solo que no se ha detectado un cambio de un valor ya publicado.'}
     # ---- frescura
     cat = fr['catalog']; freshness = {'latest': {'total': fr['latest']['total'], 'byState': fr['latest']['byState']}, 'catalog': {'total': cat['total'], 'byState': cat['byState'], 'bySource': cat['bySource'], 'lateTotal': cat.get('lateTotal')}}
     # ---- calidad

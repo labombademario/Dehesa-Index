@@ -48,12 +48,19 @@ def stats_series(doc, name=None):
             out['%s/%s' % (cc, s['id'])] = {'l': s.get('label', ''), 'u': s.get('unit', ''), 'f': s.get('frequency', ''), 'g': s.get('group', ''),
                                             'p': s.get('latestPeriod'), 'v': s.get('latest'), 'c': s.get('changePct'), 's': canon_source(s.get('sourceId')) if s.get('sourceId') else stats_source(name, cc, s)}
     return out
+_PL = None
+def product_label(key, source=None):
+    """Nombre INGLES del producto (data/product-labels.json): el glosario de etiquetas (data/label-gloss) lo traduce en el navegador. Sin entrada se devuelve la clave tal cual (el test lo detecta)."""
+    global _PL
+    if _PL is None: _PL = json.loads((ROOT / 'data/product-labels.json').read_text(encoding='utf-8'))
+    n = (_PL['labels'].get(key) or {}).get('en') or key.replace('_', ' ').capitalize()
+    return n if source is None else '%s \u00b7 %s' % (n, _PL['sources'].get(source, source))
 def products(doc):
     """{'P/producto/region': ...} de data/latest.json (solo observaciones verificadas)."""
     out = {}
     for o in (doc.get('observations') or []):
         if o.get('status') != 'verified' or o.get('value') is None: continue
-        out['P/%s/%s' % (o['product'], o['region'])] = {'l': '%s (%s)' % (o['product'], o['region'].upper()), 'u': ((o.get('currency') or '') + '/' + (o.get('unit') or '')).strip('/'), 'f': o.get('frequency', ''),
+        out['P/%s/%s' % (o['product'], o['region'])] = {'l': '%s \u00b7 %s' % (product_label(o['product']), o['region'].upper()), 'u': ((o.get('currency') or '') + '/' + (o.get('unit') or '')).strip('/'), 'f': o.get('frequency', ''),
                                                        'g': 'product', 'p': o.get('observationDate'), 'v': o.get('value'), 'c': o.get('changePct'), 's': canon_source(o.get('sourceId'))}
     return out
 def load_all(loader, strict=False):

@@ -9,7 +9,7 @@ Solo reescribe los ficheros que cambian."""
 import datetime, hashlib, json, re, shutil, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib_index import ROOT, STATS
+from lib_index import ROOT, STATS, product_label
 import freshness as FR
 SHARD_MAX = 160_000  # trozos pequenos: un perfil de pais solo baja los que contienen sus cifras clave y la serie elegida
 from lib_tags import TAGS, tags
@@ -111,7 +111,7 @@ def main():
             if k and h.get('value') is not None: pts.append([k, h['value']])
         if not pts: continue
         names.setdefault(cc, ISO_EN.get(cc) or SPECIAL.get(cc, cc))
-        sr = {'id': 'product:' + o['id'].replace('di_', '', 1), 'group': 'product', 'label': '%s · %s' % (o['product'].replace('_', ' ').capitalize(), o.get('sourceId', '')), 'unit': '%s/%s' % (o.get('currency', ''), o.get('unit', '')), 'frequency': o.get('frequency', ''),
+        sr = {'id': 'product:' + o['id'].replace('di_', '', 1), 'group': 'product', 'label': product_label(o['product'], o.get('sourceId', '')), 'unit': '%s/%s' % (o.get('currency', ''), o.get('unit', '')), 'frequency': o.get('frequency', ''),
               'latestPeriod': pts[-1][0], 'latest': o.get('value'), 'changePct': o.get('changePct'), 'points': pts, '_sid': o['sourceId']}
         by_c.setdefault(cc, []).append(('latest', sr, None)); nprod += 1
     # --- catalogo Agri-food UE (data/eu): solo metadatos, apuntan a los ficheros que ya existen (formato 'eu-regions')
@@ -155,7 +155,7 @@ def main():
                 for n, s, r in ch:
                     pts = s.get('points', [])
                     cat.append({'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'freq': s.get('frequency', ''), 'group': g, 'latestPeriod': s.get('latestPeriod'), 'latest': s.get('latest'), 'changePct': s.get('changePct'),
-                                'first': pts[0][0] if pts else None, 'n': len(pts), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', ''), g), 'source': n + '.json', 'file': rel,
+                                'first': pts[0][0] if pts else None, 'n': len(pts), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', '').split(' \u00b7 ')[0] if n == 'latest' else s.get('label', ''), g), 'source': n + '.json', 'file': rel,
                                 'sourceId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[0], 'licenseId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[1]})
             gs = [x for x in cat if x['group'] == g]
             mg[g] = {'n': len(gs), 'files': files, 'latestPeriod': max([x['latestPeriod'] for x in gs if x['latestPeriod']] or [None]), 'tags': sorted({t for x in gs for t in x['tags']})}

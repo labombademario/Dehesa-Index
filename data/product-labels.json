@@ -1,0 +1,343 @@
+{
+ "schemaVersion": 1,
+ "note": "Nombre de cada producto del motor de precios (data/latest.json) en es/en/fr/it y nombre corto de cada fuente. El catalogo y el resumen diario usan el nombre ingles + fuente; el glosario de etiquetas (data/label-gloss) lo traduce. Mantener alineado con build-observatory.py (EXTRA).",
+ "labels": {
+  "arroz": {
+   "es": "Arroz",
+   "en": "Rice",
+   "fr": "Riz",
+   "it": "Riso"
+  },
+  "avena": {
+   "es": "Avena",
+   "en": "Oats",
+   "fr": "Avoine",
+   "it": "Avena"
+  },
+  "avena_pienso_ab": {
+   "es": "Avena forrajera (Alberta)",
+   "en": "Feed oats (Alberta)",
+   "fr": "Avoine fourragère (Alberta)",
+   "it": "Avena da foraggio (Alberta)"
+  },
+  "azucar": {
+   "es": "Azúcar",
+   "en": "Sugar",
+   "fr": "Sucre",
+   "it": "Zucchero"
+  },
+  "canola_elevador": {
+   "es": "Canola en elevador (Alberta)",
+   "en": "Canola at elevator (Alberta)",
+   "fr": "Canola à l’élévateur (Alberta)",
+   "it": "Canola in elevatore (Alberta)"
+  },
+  "cebada": {
+   "es": "Cebada",
+   "en": "Barley",
+   "fr": "Orge",
+   "it": "Orzo"
+  },
+  "cebada_pienso_ab": {
+   "es": "Cebada forrajera (Alberta)",
+   "en": "Feed barley (Alberta)",
+   "fr": "Orge fourragère (Alberta)",
+   "it": "Orzo da foraggio (Alberta)"
+  },
+  "centeno": {
+   "es": "Centeno",
+   "en": "Rye",
+   "fr": "Seigle",
+   "it": "Segale"
+  },
+  "cerdo": {
+   "es": "Cerdo",
+   "en": "Pigs",
+   "fr": "Porc",
+   "it": "Suini"
+  },
+  "cerdo_ab": {
+   "es": "Cerdo (Alberta)",
+   "en": "Hogs (Alberta)",
+   "fr": "Porcs (Alberta)",
+   "it": "Suini (Alberta)"
+  },
+  "colza": {
+   "es": "Colza",
+   "en": "Rapeseed",
+   "fr": "Colza",
+   "it": "Colza"
+  },
+  "cordero": {
+   "es": "Cordero",
+   "en": "Lamb",
+   "fr": "Agneau",
+   "it": "Agnello"
+  },
+  "dap": {
+   "es": "Fosfato diamónico (DAP)",
+   "en": "Diammonium phosphate (DAP)",
+   "fr": "Phosphate diammonique (DAP)",
+   "it": "Fosfato biammonico (DAP)"
+  },
+  "defra_barley_output_index": {
+   "es": "Índice DEFRA: cebada (producción)",
+   "en": "DEFRA index: barley (output)",
+   "fr": "Indice DEFRA : orge (production)",
+   "it": "Indice DEFRA: orzo (produzione)"
+  },
+  "defra_cattle_output_index": {
+   "es": "Índice DEFRA: bovino (producción)",
+   "en": "DEFRA index: cattle (output)",
+   "fr": "Indice DEFRA : bovins (production)",
+   "it": "Indice DEFRA: bovini (produzione)"
+  },
+  "defra_eggs_output_index": {
+   "es": "Índice DEFRA: huevos (producción)",
+   "en": "DEFRA index: eggs (output)",
+   "fr": "Indice DEFRA : œufs (production)",
+   "it": "Indice DEFRA: uova (produzione)"
+  },
+  "defra_energy_input_index": {
+   "es": "Índice DEFRA: energía (insumos)",
+   "en": "DEFRA index: energy (inputs)",
+   "fr": "Indice DEFRA : énergie (intrants)",
+   "it": "Indice DEFRA: energia (input)"
+  },
+  "defra_feed_input_index": {
+   "es": "Índice DEFRA: pienso (insumos)",
+   "en": "DEFRA index: feed (inputs)",
+   "fr": "Indice DEFRA : aliments (intrants)",
+   "it": "Indice DEFRA: mangimi (input)"
+  },
+  "defra_fertiliser_input_index": {
+   "es": "Índice DEFRA: fertilizantes (insumos)",
+   "en": "DEFRA index: fertilisers (inputs)",
+   "fr": "Indice DEFRA : engrais (intrants)",
+   "it": "Indice DEFRA: fertilizzanti (input)"
+  },
+  "defra_milk_output_index": {
+   "es": "Índice DEFRA: leche (producción)",
+   "en": "DEFRA index: milk (output)",
+   "fr": "Indice DEFRA : lait (production)",
+   "it": "Indice DEFRA: latte (produzione)"
+  },
+  "defra_oilseed_rape_output_index": {
+   "es": "Índice DEFRA: colza (producción)",
+   "en": "DEFRA index: oilseed rape (output)",
+   "fr": "Indice DEFRA : colza (production)",
+   "it": "Indice DEFRA: colza (produzione)"
+  },
+  "defra_pigs_output_index": {
+   "es": "Índice DEFRA: cerdo (producción)",
+   "en": "DEFRA index: pigs (output)",
+   "fr": "Indice DEFRA : porcs (production)",
+   "it": "Indice DEFRA: suini (produzione)"
+  },
+  "defra_sheep_output_index": {
+   "es": "Índice DEFRA: ovino (producción)",
+   "en": "DEFRA index: sheep (output)",
+   "fr": "Indice DEFRA : ovins (production)",
+   "it": "Indice DEFRA: ovini (produzione)"
+  },
+  "defra_wheat_output_index": {
+   "es": "Índice DEFRA: trigo (producción)",
+   "en": "DEFRA index: wheat (output)",
+   "fr": "Indice DEFRA : blé (production)",
+   "it": "Indice DEFRA: frumento (produzione)"
+  },
+  "diesel": {
+   "es": "Diésel",
+   "en": "Diesel",
+   "fr": "Gazole",
+   "it": "Gasolio"
+  },
+  "eurostat_cereals_output_index": {
+   "es": "Índice Eurostat: precios de cereales (producción)",
+   "en": "Eurostat index: cereal output prices",
+   "fr": "Indice Eurostat : prix des céréales (production)",
+   "it": "Indice Eurostat: prezzi dei cereali (produzione)"
+  },
+  "eurostat_energy_input_index": {
+   "es": "Índice Eurostat: energía (insumos)",
+   "en": "Eurostat index: energy (inputs)",
+   "fr": "Indice Eurostat : énergie (intrants)",
+   "it": "Indice Eurostat: energia (input)"
+  },
+  "eurostat_fertiliser_input_index": {
+   "es": "Índice Eurostat: fertilizantes (insumos)",
+   "en": "Eurostat index: fertilisers (inputs)",
+   "fr": "Indice Eurostat : engrais (intrants)",
+   "it": "Indice Eurostat: fertilizzanti (input)"
+  },
+  "eurostat_milk_output_index": {
+   "es": "Índice Eurostat: leche (producción)",
+   "en": "Eurostat index: milk (output)",
+   "fr": "Indice Eurostat : lait (production)",
+   "it": "Indice Eurostat: latte (produzione)"
+  },
+  "gas_natural": {
+   "es": "Gas natural",
+   "en": "Natural gas",
+   "fr": "Gaz naturel",
+   "it": "Gas naturale"
+  },
+  "guisante_seco": {
+   "es": "Guisante seco",
+   "en": "Dry peas",
+   "fr": "Pois secs",
+   "it": "Piselli secchi"
+  },
+  "guisante_verde_ab": {
+   "es": "Guisante verde (Alberta)",
+   "en": "Green peas (Alberta)",
+   "fr": "Pois verts (Alberta)",
+   "it": "Piselli verdi (Alberta)"
+  },
+  "harina_soja": {
+   "es": "Harina de soja",
+   "en": "Soybean meal",
+   "fr": "Tourteau de soja",
+   "it": "Farina di soia"
+  },
+  "huevos": {
+   "es": "Huevos",
+   "en": "Eggs",
+   "fr": "Œufs",
+   "it": "Uova"
+  },
+  "leche": {
+   "es": "Leche",
+   "en": "Milk",
+   "fr": "Lait",
+   "it": "Latte"
+  },
+  "leche_polvo": {
+   "es": "Leche en polvo",
+   "en": "Milk powder",
+   "fr": "Lait en poudre",
+   "it": "Latte in polvere"
+  },
+  "lenteja": {
+   "es": "Lenteja",
+   "en": "Lentils",
+   "fr": "Lentilles",
+   "it": "Lenticchie"
+  },
+  "lenteja_laird_ab": {
+   "es": "Lenteja Laird (Alberta)",
+   "en": "Laird lentils (Alberta)",
+   "fr": "Lentilles Laird (Alberta)",
+   "it": "Lenticchie Laird (Alberta)"
+  },
+  "lino": {
+   "es": "Lino",
+   "en": "Flax",
+   "fr": "Lin",
+   "it": "Lino"
+  },
+  "maiz": {
+   "es": "Maíz",
+   "en": "Maize (corn)",
+   "fr": "Maïs",
+   "it": "Mais"
+  },
+  "mantequilla": {
+   "es": "Mantequilla",
+   "en": "Butter",
+   "fr": "Beurre",
+   "it": "Burro"
+  },
+  "novillo_ab": {
+   "es": "Novillo (Alberta)",
+   "en": "Steers (Alberta)",
+   "fr": "Bouvillons (Alberta)",
+   "it": "Manzi (Alberta)"
+  },
+  "oliva": {
+   "es": "Aceite de oliva",
+   "en": "Olive oil",
+   "fr": "Huile d’olive",
+   "it": "Olio d’oliva"
+  },
+  "petroleo_brent": {
+   "es": "Petróleo Brent",
+   "en": "Brent crude",
+   "fr": "Pétrole Brent",
+   "it": "Petrolio Brent"
+  },
+  "petroleo_wti": {
+   "es": "Petróleo WTI",
+   "en": "WTI crude",
+   "fr": "Pétrole WTI",
+   "it": "Petrolio WTI"
+  },
+  "pollo": {
+   "es": "Pollo",
+   "en": "Chicken",
+   "fr": "Poulet",
+   "it": "Pollo"
+  },
+  "potasa": {
+   "es": "Potasa",
+   "en": "Potash",
+   "fr": "Potasse",
+   "it": "Potassa"
+  },
+  "soja_grano": {
+   "es": "Soja (grano)",
+   "en": "Soybeans",
+   "fr": "Soja (grain)",
+   "it": "Soia (granella)"
+  },
+  "sorgo": {
+   "es": "Sorgo",
+   "en": "Sorghum",
+   "fr": "Sorgho",
+   "it": "Sorgo"
+  },
+  "trigo": {
+   "es": "Trigo",
+   "en": "Wheat",
+   "fr": "Blé",
+   "it": "Frumento"
+  },
+  "trigo_cwrs_ab": {
+   "es": "Trigo CWRS (Alberta)",
+   "en": "CWRS wheat (Alberta)",
+   "fr": "Blé CWRS (Alberta)",
+   "it": "Frumento CWRS (Alberta)"
+  },
+  "trigo_pienso_ab": {
+   "es": "Trigo forrajero (Alberta)",
+   "en": "Feed wheat (Alberta)",
+   "fr": "Blé fourrager (Alberta)",
+   "it": "Frumento da foraggio (Alberta)"
+  },
+  "urea": {
+   "es": "Urea",
+   "en": "Urea",
+   "fr": "Urée",
+   "it": "Urea"
+  },
+  "vaca": {
+   "es": "Vacuno",
+   "en": "Beef cattle",
+   "fr": "Bovins",
+   "it": "Bovini"
+  }
+ },
+ "sources": {
+  "alberta_ag": "Alberta Agriculture",
+  "defra": "DEFRA",
+  "eia": "EIA",
+  "eu_agrifood": "EU Agri-food Portal",
+  "eu_oil_bulletin": "EU Oil Bulletin",
+  "european_commission": "European Commission",
+  "eurostat": "Eurostat",
+  "statcan": "Statistics Canada",
+  "usda_ams_mars": "USDA AMS",
+  "usda_nass": "USDA NASS",
+  "world_bank": "World Bank"
+ }
+}
