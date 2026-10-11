@@ -206,12 +206,12 @@ sources:
     log: italy-eurostat-log.txt
     message: Datos Italia (Eurostat)
   - id: eurostat-eu
-    name: Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL DK SE)
+    name: Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL DK SE CZ EE HU LV)
     cron: ['10 18 * * 2,5']
     script: scripts/update-eurostat-eu.py
     timeout: 60
     script_timeout: 50
-    data: [eurostat-eu-stats.json, eurostat-euw-stats.json]
+    data: [eurostat-eu-stats.json, eurostat-euw-stats.json, eurostat-eu2-stats.json]
     log: eurostat-eu-log.txt
     message: Datos Eurostat de los estados de la UE (modo reducido)
   - id: eurostat-depth

@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL DK SE)
+name: Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL DK SE CZ EE HU LV)
 on:
   schedule:
     - cron: '10 18 * * 2,5'
@@ -21,11 +21,11 @@ jobs:
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         uses: ./.github/actions/validate-files
         with:
-          files: data/eurostat-eu-stats.json data/eurostat-euw-stats.json
+          files: data/eurostat-eu-stats.json data/eurostat-euw-stats.json data/eurostat-eu2-stats.json
       - name: Detectar revisiones oficiales
-        run: python3 scripts/detect-revisions.py data/eurostat-eu-stats.json data/eurostat-euw-stats.json
+        run: python3 scripts/detect-revisions.py data/eurostat-eu-stats.json data/eurostat-euw-stats.json data/eurostat-eu2-stats.json
       - name: Publicar
-        run: bash scripts/publish-data.sh "Datos Eurostat de los estados de la UE (modo reducido)" data/eurostat-eu-stats.json data/eurostat-euw-stats.json data/eurostat-eu-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Datos Eurostat de los estados de la UE (modo reducido)" data/eurostat-eu-stats.json data/eurostat-euw-stats.json data/eurostat-eu2-stats.json data/eurostat-eu-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

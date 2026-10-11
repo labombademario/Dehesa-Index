@@ -3276,6 +3276,14 @@
     "SK": "eurostat"
    }
   },
+  "data/eurostat-eu2-stats.json": {
+   "byCountry": {
+    "CZ": "eurostat",
+    "EE": "eurostat",
+    "HU": "eurostat",
+    "LV": "eurostat"
+   }
+  },
   "data/eurostat-euw-stats.json": {
    "byCountry": {
     "DE": "eurostat",
