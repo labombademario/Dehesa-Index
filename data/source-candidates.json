@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T03:29:17Z",
+ "generatedAt": "2026-10-11T03:42:40Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 114,
+  "total": 115,
   "byStatus": {
-   "ACTIVE": 84,
+   "ACTIVE": 85,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2228,6 +2228,65 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source: CSP Latvia (Central Statistical Bureau of Latvia), official statistics portal.",
+   "lastChecked": "2026-10-10",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "csu_cz",
+   "registryId": "csu_cz",
+   "country": "CZ",
+   "scope": "integrated",
+   "institution": "Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area)",
+   "dataset": "Ya integrada (75 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "fertilizer",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "rapeseed",
+    "rye",
+    "soy",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price",
+    "price_index",
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CZ-OPENDATA-FREE",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Czech Statistical Office (CSU), open data DataStat.",
    "lastChecked": "2026-10-10",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
