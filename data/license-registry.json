@@ -3568,6 +3568,13 @@
    "sources": [
     "miteco_embalses"
    ]
+  },
+  "data/eu-drought-ind/": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "Anomalia de humedad del suelo y SPI-3 por pais y region NUTS 2 (update-eu-drought-indicators.py): rejilla del EDO agregada a poligonos."
   }
  },
  "derived": [

@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-129 workflows (93 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+130 workflows (94 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -70,6 +70,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-balances.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eu-balances.py | supply-balances/eu.json | finish, validate-files |
 | update-eu-cap.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-eu-cap.py | cap/eu/allocations.json | finish, validate-files |
 | update-eu-catalog.yml | a mano | semanal (4) | update-eu-catalog.mjs | eu | - |
+| update-eu-drought-ind.yml | generado | semanal (2) | gen-workflows.py, update-eu-drought-indicators.py | - | finish |
 | update-eu-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-eu-drought.py | eu-drought.json | finish, validate-files |
 | update-eu-farm-economics.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-farm-economics.py | eu-farm-economics.json | finish, validate-files |
 | update-eu-gapfill.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eu-gapfill.py | eu-gapfill-stats.json | finish, validate-files |

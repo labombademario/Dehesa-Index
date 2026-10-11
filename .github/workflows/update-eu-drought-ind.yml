@@ -1,0 +1,30 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update EU soil moisture and SPI-3 (EDO)
+on:
+  schedule:
+    - cron: '20 8 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-eu-drought-ind
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 -m pip install --quiet numpy netCDF4 shapely
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-eu-drought-indicators.py
+        timeout-minutes: 32
+        continue-on-error: true
+      - name: Publicar
+        if: always()
+        run: bash scripts/publish-data.sh "Humedad del suelo y SPI-3 Europa (EDO)" data/eu-drought-ind
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

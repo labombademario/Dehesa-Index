@@ -474,6 +474,17 @@ sources:
     data: [eu-drought.json]
     extra: ['!data/eu-drought-regions']
     message: Datos sequia Europa (EDO CDI)
+  - id: eu-drought-ind
+    name: Update EU soil moisture and SPI-3 (EDO)
+    cron: ['20 8 * * 2']
+    pre: ['python3 -m pip install --quiet numpy netCDF4 shapely']
+    script: scripts/update-eu-drought-indicators.py
+    timeout: 40
+    script_timeout: 32
+    continue: true
+    data: []
+    extra: ['!data/eu-drought-ind']
+    message: Humedad del suelo y SPI-3 Europa (EDO)
   - id: embalses
     name: Update Spain reservoirs (MITECO)
     cron: ['30 9 * * 3,4']

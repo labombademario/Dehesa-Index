@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T14:05:00Z",
+ "generatedAt": "2026-10-11T14:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 118,
   "late": 1,
   "error": 0,
-  "not_run": 2,
+  "not_run": 3,
   "unknown": 1
  },
  "global": "late",
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "97fdc433",
+   "sha": "66ad00c9",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/590e6198-65bb-4072-9540-16475fa2afc1",
-   "completedAt": "2026-10-11T14:03:46Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/432db039-02f2-41ab-8c33-de78292adfab",
+   "completedAt": "2026-10-11T14:11:42Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -806,7 +806,7 @@
    "files": [],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 144.0
   },
   {
@@ -972,6 +972,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-eu-drought-ind.yml",
+   "name": "Update EU soil moisture and SPI-3 (EDO)",
+   "crons": [
+    "20 8 * * 2"
+   ],
+   "nextRun": "2026-10-13T08:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
@@ -1770,7 +1783,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1793,7 +1806,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1810,7 +1823,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/products"
@@ -1821,15 +1834,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1837,18 +1850,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-11T14:02:59Z"
+     "lastChange": "2026-10-11T14:10:42Z"
     },
     {
      "path": "data/home-explore.json",

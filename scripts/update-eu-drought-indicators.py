@@ -42,7 +42,7 @@ def process(key):
     import netCDF4
     base, rx, var, stride = IND[key]; today = datetime.date.today(); dates = []; series = {}; Z = None; w = None
     for y, name in years_files(base, rx, today):
-        p = Path("/tmp/%s_%d.nc" % (key, y)); p.write_bytes(get(base + name))
+        p = Path("/tmp/%s_%d.nc" % (key, y)); p.write_bytes(get(name))
         d = netCDF4.Dataset(str(p)); v = d.variables[var]
         lon = np.asarray(d.variables["lon"][:], float)[::stride]; lat = np.asarray(d.variables["lat"][:], float)[::stride]
         if Z is None:
