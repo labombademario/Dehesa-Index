@@ -472,6 +472,7 @@ sources:
     script_timeout: 15
     continue: true
     data: [eu-drought.json]
+    extra: ['!data/eu-drought-regions']
     message: Datos sequia Europa (EDO CDI)
   - id: eu-regions
     name: Update regional farm data (Eurostat NUTS 2)

@@ -6,6 +6,7 @@ Valores: 0 sin sequia, 1 vigilancia (deficit de precipitacion), 2 aviso (+ defic
 4 recuperacion completa, 5 recuperacion temporal de la humedad, 6 recuperacion temporal de la vegetacion, 7 sin dato en el dominio, 8 fuera del dominio.
 Por pais (poligonos Natural Earth, dominio publico, scripts/ref/ne-countries-eu.json) y para la UE-27: % de la superficie con dato (valores 0-6) en cada clase 1-6,
 ponderado por cos(latitud) (los pixeles en grados no tienen el mismo area). El CDI cubre todo el territorio, no solo la tierra cultivada: es superficie total del pais.
+Ademas, por region NUTS 2 (GISCO NUTS 2021, (c) EuroGeographics; scripts/ref/nuts2-eu.geojson) se escribe data/eu-drought-regions/<PAIS>.json con las mismas 6 clases y decadas.
 Se guardan los ultimos 3 anos de decadas para comparar la misma decada con el ano anterior. Si algo falla (descarga, formato, dominio) el fichero anterior se conserva.
 Uso: python3 scripts/update-eu-drought.py [--nc a.nc b.nc ...] [--out ruta]"""
 import datetime, json, re, sys, urllib.request
@@ -14,6 +15,8 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "eu-drought.json"
 REF = ROOT / "scripts" / "ref" / "ne-countries-eu.json"
+REF2 = ROOT / "scripts" / "ref" / "nuts2-eu.geojson"   # regiones NUTS 2 (GISCO, (c) EuroGeographics), simplificadas
+REGDIR = ROOT / "data" / "eu-drought-regions"
 BASE = "https://drought.emergency.copernicus.eu/data/Drought_Observatories_datasets/EDO_Combined_Drought_Indicator/ver4-1-1/"
 H = {"User-Agent": "Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)"}
 EU27 = "AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE".split()
@@ -46,6 +49,30 @@ def masks(lon, lat):
         if sel.any(): m[sel] = shapely.contains_xy(g, X[sel], Y[sel])
         out[f["properties"]["iso2"]] = m; names[f["properties"]["iso2"]] = f["properties"]["name"]
     return out, names
+def region_masks(lon, lat):
+    """{id: (nombre, pais, (y0, y1, x0, x1), submascara)}: cada region solo guarda su caja, no la malla entera."""
+    import shapely
+    out = {}
+    for f in json.loads(REF2.read_text())["features"]:
+        g = shapely.from_geojson(json.dumps(f["geometry"])); x0, y0, x1, y1 = g.bounds
+        xi = np.where((lon >= x0) & (lon <= x1))[0]; yi = np.where((lat >= y0) & (lat <= y1))[0]
+        if not len(xi) or not len(yi): continue
+        X, Y = np.meshgrid(lon[xi[0]:xi[-1] + 1], lat[yi[0]:yi[-1] + 1]); m = shapely.contains_xy(g, X, Y)
+        if m.any(): out[f["properties"]["id"]] = (f["properties"]["name"], f["properties"]["cc"], (yi[0], yi[-1] + 1, xi[0], xi[-1] + 1), m)
+    return out
+def write_regions(rm, imgs, w1, periods, asof):
+    import shutil
+    tmp = REGDIR.with_name("eu-drought-regions.tmp"); shutil.rmtree(tmp, ignore_errors=True); tmp.mkdir(parents=True)
+    by = {}
+    for rid, (name, cc, (y0, y1, x0, x1), m) in rm.items():
+        w = w1[y0:y1, x0:x1]; rows = []; cov = None
+        for img in imgs:
+            s, cv = shares(img[y0:y1, x0:x1], m, w); rows.append(s); cov = cv
+        if all(r is None for r in rows) or any(r is None for r in rows): continue   # region fuera del dominio del CDI
+        by.setdefault(cc, {})[rid] = {"name": name, "coverage": cov, "v": rows}
+    for cc, regs in by.items():
+        (tmp / (cc + ".json")).write_text(json.dumps({"schemaVersion": 1, "asOf": asof, "periods": len(periods), "regions": regs}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return tmp, by
 def shares(img, m, w):
     """% de superficie (ponderada) por clase 1..6 sobre los pixeles con dato (0..6) del pais; mas la cobertura con dato."""
     ok = m & (img <= 6); tot = float((w * ok).sum()); full = float((w * m).sum())
@@ -79,11 +106,16 @@ def main():
             if all(r is None for r in rows): continue
             if any(r is None for r in rows): raise ValueError("%s: periodos sin datos" % c)
             res[c] = {"name": names[c], "coverage": cov, "v": rows}
+        regtmp, regby = write_regions(region_masks(lon, lat), imgs, w1, periods, periods[-1].isoformat())
+        if len(regby) < 10: raise ValueError("regiones NUTS 2: solo %d paises con datos" % len(regby))
     except Exception as e: print("FALLO:", e); return 1
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "source": {"name": "European Drought Observatory (EDO), Combined Drought Indicator v4.1 - (c) European Commission, JRC", "url": "https://drought.emergency.copernicus.eu/", "license": "CC BY 4.0"},
            "unit": "% de la superficie con dato (ponderada por cos latitud)", "grid": "0.0417 deg (EPSG:4326)", "asOf": periods[-1].isoformat(),
            "classes": ["watch", "warning", "alert", "recovery", "smRecovery", "vegRecovery"], "periods": [p.isoformat() for p in periods], "countries": res}
+    import shutil
+    if outp == OUT: shutil.rmtree(REGDIR, ignore_errors=True); regtmp.rename(REGDIR)
+    else: shutil.rmtree(regtmp, ignore_errors=True)
     outp.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    print("escrito", outp.name, len(res), "ambitos,", len(periods), "decadas, ultima", doc["asOf"]); return 0
+    print("escrito", outp.name, len(res), "ambitos,", sum(len(v) for v in regby.values()), "regiones,", len(periods), "decadas, ultima", doc["asOf"]); return 0
 if __name__ == "__main__": sys.exit(main())

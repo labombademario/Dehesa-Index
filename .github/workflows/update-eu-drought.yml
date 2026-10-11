@@ -30,7 +30,7 @@ jobs:
         run: python3 scripts/detect-revisions.py data/eu-drought.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Datos sequia Europa (EDO CDI)" data/eu-drought.json data/revisions.json
+        run: bash scripts/publish-data.sh "Datos sequia Europa (EDO CDI)" data/eu-drought.json data/eu-drought-regions data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
