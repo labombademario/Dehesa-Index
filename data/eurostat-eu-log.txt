@@ -141,3 +141,16 @@ indices de precios de insumos 22 series
 fertilizantes 2 series
 empleo agrario 3 series
 DK series 435
+cultivos 110 series
+censos 84 series
+carne 48 series
+sacrificio mensual 46 series
+leche 20 series
+huevos 1 series
+indices de precios 25 series
+precios absolutos 14 series
+cuentas agrarias 58 series
+indices de precios de insumos 18 series
+fertilizantes 2 series
+empleo agrario 3 series
+SE series 429
