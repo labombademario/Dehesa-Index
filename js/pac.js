@@ -222,6 +222,31 @@
   function opt(v, label, cur) { return '<option value="' + esc(v) + '"' + (String(v) === String(cur) ? ' selected' : '') + '>' + esc(label) + '</option>'; }
   function idx() { return DATA.amounts.campaigns.indexOf(ST.y); }
   function ecoRow(id) { var a = DATA.amounts.ecoschemes; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i]; return null; }
+  /* Textos en español que no vienen de la interfaz: las explicaciones de rules.json se traducen a mano (rules.json → i18n) y las modificaciones que lista el BOE
+     (relación y detalle) siguen un patrón fijo que se traduce por reglas; lo que no encaja se deja tal cual, en español. Solo es auténtico el texto del BOE. */
+  function ruleTr(r) { var l = lang(), x = DATA.rules.i18n && DATA.rules.i18n.rules && DATA.rules.i18n.rules[r.id]; return l !== 'es' && x && x[l] ? x[l] : ''; }
+  var AMR = { 'SE DICTA EN RELACIÓN': { en: 'Issued in connection with', fr: 'Pris en relation avec', it: 'Emanato in relazione a' }, 'SE AÑADE': { en: 'Adds', fr: 'Ajoute', it: 'Aggiunge' }, 'CORRECCIÓN de errores': { en: 'Correction of errors', fr: 'Rectificatif', it: 'Rettifica di errori' }, 'SE MODIFICA': { en: 'Amends', fr: 'Modifie', it: 'Modifica' }, 'SE CORRIGEN errores': { en: 'Corrects errors', fr: 'Corrige des erreurs', it: 'Corregge errori' }, 'SE DEROGA': { en: 'Repeals', fr: 'Abroge', it: 'Abroga' } };
+  function amRel(x) { var l = lang(); return l !== 'es' && AMR[x] ? AMR[x][l] : x; }
+  var TRN = { en: 'Translated by Dehesa Index from the Spanish. Only the text published in the BOE is authentic; the Spanish original is shown on hover and in the Spanish version.', fr: 'Traduit par Dehesa Index à partir de l’espagnol. Seul le texte publié au BOE fait foi ; l’original espagnol s’affiche au survol et dans la version espagnole.', it: 'Tradotto da Dehesa Index dallo spagnolo. È autentico solo il testo pubblicato nel BOE; l’originale spagnolo compare al passaggio del mouse e nella versione spagnola.' };
+  function trNote() { return lang() !== 'es' && TRN[lang()] ? note(TRN[lang()]) : ''; }
+  var MES = 'enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre';
+  var MN = { en: 'January February March April May June July August September October November December'.split(' '), fr: 'janvier février mars avril mai juin juillet août septembre octobre novembre décembre'.split(' '), it: 'gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre'.split(' ') };
+  var AMW = { en: { rdl: 'Royal Decree-law', rd: 'Royal Decree', of: 'of', d: 'certain provisions', eff: 'with effect from', tu: 'the single transitional provision', tn: 'transitional provision', ren: 'and the single one is renumbered as', art: 'art.', ann: 'the indicated part of Annex', bn: 'in BOE no.', inrd: 'in', by: 'by', and: 'and', pac: 'on basic income support for sustainability entitlements of the Common Agricultural Policy:' },
+    fr: { rdl: 'décret-loi royal', rd: 'décret royal', of: 'du', d: 'certaines dispositions', eff: 'avec effet au', tu: 'la disposition transitoire unique', tn: 'la disposition transitoire', ren: 'et l’unique est renumérotée en', art: 'art.', ann: 'la partie indiquée de l’annexe', bn: 'au BOE n°', inrd: 'dans le', by: 'par', and: 'et', pac: 'relatif aux droits à l’aide de base au revenu pour la durabilité de la Politique agricole commune :' },
+    it: { rdl: 'regio decreto-legge', rd: 'regio decreto', of: 'del', d: 'determinate disposizioni', eff: 'con effetto dal', tu: 'la disposizione transitoria unica', tn: 'la disposizione transitoria', ren: 'e l’unica è rinumerata come', art: 'art.', ann: 'la parte indicata dell’allegato', bn: 'nel BOE n.', inrd: 'nel', by: 'con', and: 'e', pac: 'sui diritti al sostegno di base al reddito per la sostenibilità della Politica agricola comune:' } };
+  function amTxt(x) {
+    var l = lang(); if (l === 'es' || !AMW[l]) return x; var w = AMW[l], m = MN[l];
+    function dd(n) { return l === 'fr' && n === '1' ? '1er' : l === 'it' && n === '1' ? '1°' : n; }
+    var y = String(x);
+    y = y.replace(/Real Decreto-ley/g, w.rdl).replace(/Real Decreto/g, w.rd);
+    y = y.replace(new RegExp('\\bde (\\d{1,2}) de (' + MES + ')(?: de (\\d{4}))?', 'g'), function (_, d, mo, yy) { return w.of + ' ' + dd(d) + ' ' + m[MES.split('|').indexOf(mo)] + (yy ? ' ' + yy : ''); });
+    y = y.replace(new RegExp('\\b(\\d{1,2}) de (' + MES + ')(?: de (\\d{4}))?', 'g'), function (_, d, mo, yy) { return dd(d) + ' ' + m[MES.split('|').indexOf(mo)] + (yy ? ' ' + yy : ''); });
+    y = y.replace('sobre derechos de ayuda básica a la renta para la sostenibilidad de la Política Agrícola Común:', w.pac).replace('determinados preceptos', w.d).replace('con efectos desde el', w.eff).replace('la disposición transitoria única', w.tu)
+      .replace('y se renumera la única como', w.ren).replace(/la disposición transitoria (\d)/, w.tn + ' $1').replace(/\bel art\. /, w.art + ' ').replace('lo indicado del anexo', w.ann).replace(/\ben BOE núm\. /, w.bn + ' ').replace(/\ben el (?=Real|royal|décret|regio)/i, w.inrd + ' ');
+    y = y.replace(/\bpor (?=Royal|décret|regio)/g, w.by + ' ').replace(/ y,/, ' ' + w.and + ',');
+    if (l === 'it') y = y.replace(/\bdel (8|11)\b/g, 'dell\'$1');
+    return y.replace(/ ,/g, ',').replace(/^[,\s]+/, '').replace(/\s+/g, ' ').trim();
+  }
   function ruleById(id) { var a = DATA.rules.rules; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i]; return null; }
   function ecoLabel(e) { var t = tr(); return t.prac[e.practice] + ' · ' + t.surf[e.surfaceType] + (e.territory !== 'peninsula' ? ' · ' + t.terr[e.territory] : ''); }
   function hasBonus(e) { return BONUS_PRACTICES.indexOf(e.practice) >= 0; }
@@ -391,9 +416,9 @@
     return h + '</tbody></table></div>' + cite('boe_es', DATA.amounts.source.consolidatedAt.slice(0, 10));
   }
   function rulesHtml() {
-    var t = tr(), h = note(t.rulesNote);
+    var t = tr(), h = note(t.rulesNote) + trNote();
     DATA.rules.rules.forEach(function (r) {
-      h += '<details style="margin:6px 0"><summary style="cursor:pointer;font-weight:600">' + esc(t.rt[r.id] || r.id) + '</summary><p style="margin:6px 0 2px">' + esc(r.text) + '</p><p class="di-movers-hint">' + esc(t.legal) + ': ' + esc(r.legalBasis) + '</p></details>';
+      h += '<details style="margin:6px 0"><summary style="cursor:pointer;font-weight:600">' + esc(t.rt[r.id] || r.id) + '</summary><p style="margin:6px 0 2px"' + (lang() !== 'es' && !ruleTr(r) ? ' lang="es"' : '') + '>' + esc(ruleTr(r) || r.text) + '</p><p class="di-movers-hint">' + esc(t.legal) + ': ' + esc(r.legalBasis) + '</p></details>';
     });
     return h + cite('boe_es', DATA.amounts.source.consolidatedAt.slice(0, 10));
   }
@@ -410,8 +435,8 @@
     var t = tr(), W = DATA.watch, A = DATA.amounts, h = '', L = W.current.legal;
     h += W.reviewNeeded.length ? '<p role="status" style="font-weight:600;color:#a33">' + esc(fill(t.trackBad, { l: W.reviewNeeded.join('; ') })) + '</p>' : '<p role="status" style="font-weight:600;color:#2f6b4a">' + esc(fill(t.trackOk, { v: dt(DATA.rules.verifiedAt) })) + '</p>';
     h += note(fill(t.trackChk, { c: dt(W.checkedAt), u: dt(L.consolidatedAt) }));
-    h += '<h3 style="font-size:15px;margin:10px 0 2px">' + esc(t.trackAmend) + '</h3><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th>' + esc(t.tId) + '</th><th>' + esc(t.tRel) + '</th><th>' + esc(t.tTxt) + '</th></tr></thead><tbody>';
-    L.amendments.forEach(function (a) { h += '<tr><td><a href="' + BOE + 'buscar/doc.php?id=' + encodeURIComponent(a.id) + '" target="_blank" rel="noopener noreferrer">' + esc(a.id) + '</a></td><td>' + esc(a.relation) + '</td><td>' + esc(a.text) + '</td></tr>'; });
+    h += '<h3 style="font-size:15px;margin:10px 0 2px">' + esc(t.trackAmend) + '</h3>' + trNote() + '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th>' + esc(t.tId) + '</th><th>' + esc(t.tRel) + '</th><th>' + esc(t.tTxt) + '</th></tr></thead><tbody>';
+    L.amendments.forEach(function (a) { h += '<tr><td><a href="' + BOE + 'buscar/doc.php?id=' + encodeURIComponent(a.id) + '" target="_blank" rel="noopener noreferrer">' + esc(a.id) + '</a></td><td' + (lang() !== 'es' ? ' title="' + esc(a.relation) + '"' : '') + '>' + esc(amRel(a.relation)) + '</td><td' + (lang() !== 'es' ? ' title="' + esc(a.text) + '"' : '') + '>' + esc(amTxt(a.text)) + '</td></tr>'; });
     h += '</tbody></table></div><h3 style="font-size:15px;margin:10px 0 2px">' + esc(t.trackLog) + '</h3>';
     h += A.changes.length ? '<ul class="di-movers-hint" style="margin-left:18px">' + A.changes.map(function (c) { return '<li>' + esc(dt(c.detectedAt)) + ': ' + esc(c.summary) + '</li>'; }).join('') + '</ul>' : note(fill(t.trackNone, { v: dt(A.verifiedAt) }));
     if (A.discrepancies.length) h += note(fill(t.trackDiscr, { n: A.discrepancies.length }));

@@ -1,22 +1,27 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T18:33:00Z",
+ "generatedAt": "2026-10-11T20:15:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 123,
   "late": 1,
   "error": 0,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "late",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "b06a950a",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/665c2149-c894-4cac-b736-75f40c344914",
+   "completedAt": "2026-10-11T18:44:10Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
-  "repoGeneratedAt": "2026-10-11T18:32:16.891968+00:00"
+  "repoGeneratedAt": "2026-10-11T18:43:32.002519+00:00"
  },
  "pipelines": [
   {
@@ -1680,6 +1685,19 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-news-translations.yml",
+   "name": "Translate Dehesa news headlines",
+   "crons": [
+    "47 */3 * * *"
+   ],
+   "nextRun": "2026-10-11T21:47:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 3.0
+  },
+  {
    "workflow": "update-news.yml",
    "name": "Update Dehesa agricultural news",
    "crons": [
@@ -1689,31 +1707,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-11T18:32:17Z"
+     "lastChange": "2026-10-11T18:43:32Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-11T18:32:17Z"
+     "lastChange": "2026-10-11T18:43:32Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-11T18:32:17Z"
+     "lastChange": "2026-10-11T18:43:32Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-11T18:32:17Z"
+     "lastChange": "2026-10-11T18:43:32Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-11T18:32:17Z"
+     "lastChange": "2026-10-11T18:43:32Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-11T18:28:34Z",
-    "durationSec": 227,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38163962984"
+    "event": "push",
+    "startedAt": "2026-10-11T18:41:10Z",
+    "durationSec": 147,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38164850118"
    },
    "recent": {
     "runs": 10,
@@ -1831,7 +1849,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-11T18:30:02Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1854,11 +1872,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/catalog"
@@ -1871,7 +1889,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/products"
@@ -1882,34 +1900,34 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-11T03:41:06Z"
+     "lastChange": "2026-10-11T18:33:25Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-11T18:30:36Z"
+     "lastChange": "2026-10-11T18:41:06Z"
     },
     {
      "path": "data/home-explore.json",

@@ -424,6 +424,32 @@
    "verifiedAt": "2026-10-06",
    "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/egg-statistics",
    "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "BE/be-eus-poultry-imp-a5130p",
+   "file": "eurostat-depth-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Importaciones de pollitos de pollo de engorde en Bélgica (cabezas, anual): 3,2 millones en 2024 y 151 mil en 2025 (−95 %), tras 13,7 millones en 2021.",
+   "hypothesis": "Posible año incompleto: Eurostat (apro_ec_poula) publica 151,21 mil cabezas sin marca de calidad, mientras que el resto de flujos belgas de 2025 son de año completo y suben (exportaciones 49,0 millones, huevos puestos a incubar 417,8 millones); Países Bajos y Francia no caen. No se ha podido comprobar con el declarante, así que sigue siendo una hipótesis.",
+   "nextAction": "Releer la serie tras la próxima revisión de Eurostat (apro_ec_poula, geo=BE, hatchitm=IMP, animals=A5130P); si el valor de 2025 cambia, es una revisión; si no, consultar al instituto estadístico belga (Statbel) por la cobertura de las importaciones intra-UE de 2025.",
+   "since": "2026-10-11",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_ec_poula",
+    "filters": {
+     "geo": "BE",
+     "hatchitm": "IMP",
+     "animals": "A5130P",
+     "unit": "THS"
+    },
+    "periods": [
+     "2021",
+     "2022",
+     "2023",
+     "2024",
+     "2025"
+    ]
+   }
   }
  ]
 }

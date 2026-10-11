@@ -3,7 +3,7 @@
 proximas observaciones ESPERADAS (por la politica de frescura, no un calendario oficial de publicaciones), cambios de cobertura, calidad y salud de pipelines.
 Todo se DERIVA de ficheros ya validados (prices/latest + history, freshness, catalog/manifest, revisions, data-anomalies, data-quality, pipeline-status, daily-brief).
 No inventa nada: si una ventana no tiene series con dato comparable queda vacia y se dice. Las instantaneas de cobertura se acumulan en el propio fichero (maximo 60)."""
-import calendar, datetime, json, sys
+import calendar, datetime, json, os, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import freshness as FR
@@ -103,9 +103,14 @@ def main():
     # ---- frescura
     cat = fr['catalog']; freshness = {'latest': {'total': fr['latest']['total'], 'byState': fr['latest']['byState']}, 'catalog': {'total': cat['total'], 'byState': cat['byState'], 'bySource': cat['bySource'], 'lateTotal': cat.get('lateTotal')}}
     # ---- calidad
+    # traducciones a mano de «detected» (scripts/ref/anomaly-i18n.json); solo valen mientras el texto en español no cambie
+    _ai = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ref', 'anomaly-i18n.json')))['items']
+    def _anom_i18n(a):
+        t = _ai.get(a['series'])
+        return {'i18n': {l: t[l] for l in ('en', 'fr', 'it')}} if t and t['es'] == a['detected'] else {}
     an = J('data-anomalies.json', {'anomalies': []})['anomalies']; dq = J('data-quality.json', {}).get('summary', {})
     quality = {'files': dq.get('files'), 'errors': dq.get('errors'), 'warnings': dq.get('warnings'),
-               'anomalies': [{'series': a['series'], 'status': a['status'], 'detected': a['detected'][:220], 'since': a.get('since')} for a in an],
+               'anomalies': [dict({'series': a['series'], 'status': a['status'], 'detected': a['detected'][:220], 'since': a.get('since')}, **_anom_i18n(a)) for a in an],
                'unexplained': sum(1 for a in an if a['status'] == 'UNEXPLAINED_ANOMALY'), 'verified': sum(1 for a in an if a['status'] == 'KNOWN_VERIFIED_ANOMALY')}
     # ---- pipelines
     ps = J('pipeline-status.json'); bad = [{'workflow': p['workflow'], 'name': p['name'].replace('Dehesa Data — ', ''), 'status': p['status'], 'last': (p.get('last') or {}).get('conclusion'), 'lastAt': (p.get('last') or {}).get('startedAt'), 'url': (p.get('last') or {}).get('url')}

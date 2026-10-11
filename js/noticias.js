@@ -1,5 +1,5 @@
 /* Dehesa Index — página de Noticias. Los titulares automaticos se cargan de data/views/news-feed.json (DINews) antes de pintar. */
-window.DINews.feed().then(function () {
+window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'); }).then(function (TRX) {
   'use strict';
 
   var MONTHS = {
@@ -179,16 +179,17 @@ window.DINews.feed().then(function () {
     item.topics = tags.topics;
   });
 
-  // Titulares automáticos (scripts/update_news.py → data/views/news-feed.json): texto original, sin traducir.
+  // Titulares automáticos (scripts/update_news.py → data/views/news-feed.json): texto original; si hay traducción automática al idioma de la página (news-tr-<idioma>.json) se enseña marcada y con el original debajo.
+  var PAGE_LANG = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es';
   var FEED = window.DehesaNewsFeed || { generatedAt: null, items: [] };
   var CURATED_COUNT = NEWS_ITEMS.length;
   var SEENH = {};   // misma noticia en dos versiones (mismo medio y mismo comienzo de titular): solo una (auditoria 8-oct-2026)
   (FEED.items || []).forEach(function(a) {
     var hk = (a.s || '') + '|' + String(a.h || '').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '').slice(0, 60);
     if (SEENH[hk]) return; SEENH[hk] = 1;
-    var tr = { headline: a.h, summary: a.x || '' };
-    NEWS_ITEMS.push({ id: a.id, source: a.s, url: a.u, date: a.d, region: a.r, country: a.c || '', lang: a.l, auto: true,
-      products: a.p || [], topics: a.t || [], rel: a.v || 0, es: tr, en: tr, fr: tr, it: tr });
+    var tr = { headline: a.h, summary: a.x || '' }, m = TRX && TRX[a.id] && a.l !== PAGE_LANG ? { headline: TRX[a.id][0], summary: TRX[a.id][1] || '', mt: true, orig: tr } : tr, it = { id: a.id, source: a.s, url: a.u, date: a.d, region: a.r, country: a.c || '', lang: a.l, auto: true,
+      products: a.p || [], topics: a.t || [], rel: a.v || 0, es: tr, en: tr, fr: tr, it: tr };
+    it[PAGE_LANG] = m; NEWS_ITEMS.push(it);
   });
   NEWS_ITEMS.sort(function(a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : (b.rel || 100) - (a.rel || 100); });
   if (FEED.generatedAt) UPDATED_ISO = FEED.generatedAt.slice(0, 10);
@@ -197,10 +198,10 @@ window.DINews.feed().then(function () {
   var STRINGS = {
     es: {
       title: 'Noticias | Dehesa Index', h1: 'Noticias',
-      origLang: 'Titular en idioma original', showMore: 'Mostrar {n} más',
+      mtShort: 'traducido', mtBadgeTitle: 'Traducción automática desde {l}: puede contener errores', mtOrig: 'Original ({l}):', origLang: 'Titular en idioma original', showMore: 'Mostrar {n} más',
       sub: '',
       badge: 'TITULARES REALES', updatedLabel: 'Actualizado',
-      disclaimer: 'Titulares enlazados a su fuente original, actualizados periódicamente (no en directo) y en su idioma original.',
+      disclaimer: 'Titulares enlazados a su fuente original, actualizados periódicamente (no en directo). Los de otros idiomas se muestran traducidos automáticamente (Argos Translate, CC BY 4.0) y marcados como tales, con el titular original debajo; la fuente solo publica el original.',
       readMore: 'Leer en la fuente',
       filterAll: 'Todas', filterGlobal: 'Global', filterEuropa: 'Europa', filterAmerica: 'América',
       regionLabel: 'Región', countryLabel: 'País del medio', productLabel: 'Producto / mercado', topicLabel: 'Tema',
@@ -224,10 +225,10 @@ window.DINews.feed().then(function () {
     },
     en: {
       title: 'News | Dehesa Index', h1: 'News',
-      origLang: 'Headline in its original language', showMore: 'Show {n} more',
+      mtShort: 'translated', mtBadgeTitle: 'Machine translation from {l}: it may contain errors', mtOrig: 'Original ({l}):', origLang: 'Headline in its original language', showMore: 'Show {n} more',
       sub: '',
       badge: 'REAL HEADLINES', updatedLabel: 'Updated',
-      disclaimer: 'Headlines linked to their original source, refreshed periodically (not live) and shown in their original language.',
+      disclaimer: 'Headlines linked to their original source, refreshed periodically (not live). Those in other languages are machine-translated (Argos Translate, CC BY 4.0) and marked as such, with the original headline below; the publisher only publishes the original.',
       readMore: 'Read at the source',
       filterAll: 'All', filterGlobal: 'Global', filterEuropa: 'Europe', filterAmerica: 'Americas',
       regionLabel: 'Region', countryLabel: 'Outlet country', productLabel: 'Product / market', topicLabel: 'Theme',
@@ -251,10 +252,10 @@ window.DINews.feed().then(function () {
     },
     fr: {
       title: 'Actualités | Dehesa Index', h1: 'Actualités',
-      origLang: 'Titre dans sa langue d\'origine', showMore: 'Afficher {n} de plus',
+      mtShort: 'traduit', mtBadgeTitle: 'Traduction automatique depuis {l} : elle peut contenir des erreurs', mtOrig: 'Original ({l}) :', origLang: 'Titre dans sa langue d\'origine', showMore: 'Afficher {n} de plus',
       sub: '',
       badge: 'TITRES RÉELS', updatedLabel: 'Mis à jour',
-      disclaimer: "Titres liés à leur source d'origine, actualisés périodiquement (pas en direct) et dans leur langue d'origine.",
+      disclaimer: "Titres liés à leur source d'origine, actualisés périodiquement (pas en direct). Ceux dans d'autres langues sont traduits automatiquement (Argos Translate, CC BY 4.0) et signalés comme tels, avec le titre original en dessous ; l'éditeur ne publie que l'original.",
       readMore: 'Lire la source',
       filterAll: 'Toutes', filterGlobal: 'Mondial', filterEuropa: 'Europe', filterAmerica: 'Amériques',
       regionLabel: 'Région', countryLabel: 'Pays du média', productLabel: 'Produit / marché', topicLabel: 'Thème',
@@ -278,10 +279,10 @@ window.DINews.feed().then(function () {
     },
     it: {
       title: 'Notizie | Dehesa Index', h1: 'Notizie',
-      origLang: 'Titolo nella lingua originale', showMore: 'Mostra altre {n}',
+      mtShort: 'tradotto', mtBadgeTitle: 'Traduzione automatica da {l}: può contenere errori', mtOrig: 'Originale ({l}):', origLang: 'Titolo nella lingua originale', showMore: 'Mostra altre {n}',
       sub: '',
       badge: 'TITOLI REALI', updatedLabel: 'Aggiornato',
-      disclaimer: 'Titoli collegati alla fonte originale, aggiornati periodicamente (non in tempo reale) e nella lingua originale.',
+      disclaimer: 'Titoli collegati alla fonte originale, aggiornati periodicamente (non in tempo reale). Quelli in altre lingue sono tradotti automaticamente (Argos Translate, CC BY 4.0) e segnalati come tali, con il titolo originale sotto; la testata pubblica solo l\'originale.',
       readMore: 'Leggi alla fonte',
       filterAll: 'Tutte', filterGlobal: 'Globale', filterEuropa: 'Europa', filterAmerica: 'Americhe',
       regionLabel: 'Regione', countryLabel: 'Paese della testata', productLabel: 'Prodotto / mercato', topicLabel: 'Tema',
@@ -470,12 +471,13 @@ window.DINews.feed().then(function () {
         var tr = item[lang] || item.es;
         var marketTags = item.products.map(function(p){ return '<span class="di-news-tag product">' + esc((PRODUCT_LABELS[lang] || PRODUCT_LABELS.es)[p] || p) + '</span>'; }).join('');
         var topicTags = item.topics.map(function(topic){ return '<span class="di-news-tag topic">' + esc((TOPIC_LABELS[lang] || TOPIC_LABELS.es)[topic] || topic) + '</span>'; }).join('');
-        var langBadge = item.lang && item.lang !== lang ? '<span class="di-news-lang" title="' + esc(t.origLang) + '">' + esc(item.lang.toUpperCase()) + '</span>' : '';
+        var langBadge = item.lang && item.lang !== lang ? '<span class="di-news-lang" title="' + esc(tr.mt ? t.mtBadgeTitle.replace('{l}', item.lang.toUpperCase()) : t.origLang) + '">' + esc(item.lang.toUpperCase()) + (tr.mt ? ' → ' + esc(t.mtShort) : '') + '</span>' : '';
         var pid = priceProduct(item);
         var summary = tr.summary ? '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' : '';
+        var origLine = tr.mt ? '<p class="di-news-orig" lang="' + esc(item.lang) + '"><span>' + esc(t.mtOrig.replace('{l}', item.lang.toUpperCase())) + '</span> ' + esc(tr.orig.headline) + '</p>' : '';
         return '<article class="di-card di-news-item">' +
           '<div class="di-news-item-meta"><span class="di-news-item-source">' + esc(item.source) + '</span><span>·</span><span>' + esc(fmtNewsDate(item.date, lang)) + '</span>' + langBadge + '</div>' +
-          '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' + summary +
+          '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' + summary + origLine +
           '<div class="di-news-tags">' + marketTags + topicTags + '</div>' +
           '<a class="di-news-item-readmore" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.readMore) + ' →</a>' +
           (pid ? '<a class="di-news-item-price-link" href="' + productPriceUrl(pid) + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a>' : '') + '</article>';

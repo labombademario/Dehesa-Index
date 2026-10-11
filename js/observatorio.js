@@ -146,7 +146,7 @@
   }
   function secQ() {
     var q = DOC.quality, h = '<div class="pt-cards"><div class="di-card pt-card"><div class="pt-k">' + esc(t('qFiles')) + '</div><div class="pt-v">' + (q.files === null || q.files === undefined ? '—' : q.files) + '</div></div><div class="di-card pt-card"><div class="pt-k">' + esc(t('qErr')) + ' / ' + esc(t('qWarn')) + '</div><div class="pt-v">' + (q.errors === null || q.errors === undefined ? '—' : q.errors) + ' / ' + (q.warnings === null || q.warnings === undefined ? '—' : q.warnings) + '</div></div><div class="di-card pt-card"><div class="pt-k">' + esc(t('qUnexp')) + '</div><div class="pt-v">' + q.unexplained + ' <small>· ' + q.verified + ' ' + esc(t('qVer')) + '</small></div></div></div>';
-    if (q.anomalies.length) h += '<ul class="pt-list">' + q.anomalies.map(function (a) { return '<li><span class="pt-badge ' + (a.status === 'UNEXPLAINED_ANOMALY' ? 'pt-fs-DELAYED' : 'pt-fs-LIVE') + '">' + esc(t('an_' + a.status)) + '</span> <strong>' + esc(a.series) + '</strong> — ' + esc(a.detected) + '</li>'; }).join('') + '</ul>';
+    if (q.anomalies.length) h += '<ul class="pt-list">' + q.anomalies.map(function (a) { return '<li><span class="pt-badge ' + (a.status === 'UNEXPLAINED_ANOMALY' ? 'pt-fs-DELAYED' : 'pt-fs-LIVE') + '">' + esc(t('an_' + a.status)) + '</span> <strong>' + esc(a.series) + '</strong> — ' + (lang() !== 'es' && a.i18n && a.i18n[lang()] ? '<span title="' + esc(a.detected) + '">' + esc(a.i18n[lang()]) + '</span>' : lang() !== 'es' ? '<span lang="es">' + esc(a.detected) + '</span>' : esc(a.detected)) + '</li>'; }).join('') + '</ul>';
     return sec('quality', t('quality'), t('qHint'), h);
   }
   function secPipes() {

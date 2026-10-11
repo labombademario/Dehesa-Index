@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-131 workflows (95 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+132 workflows (95 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -103,6 +103,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-news-translations.yml | a mano | varias veces al dia | translate_news.py | - | - |
 | update-news.yml | a mano | varias veces al dia | update_news.py | news-status.json, news.json, views/news-feed.json … | finish, validate-files |
 | update-weekly-blog.yml | a mano | 2 veces al dia | build-blog-editions.py, build-country-weeks.py, update-weekly-blog.py | blog, blog/countries/*/20*.json, blog/countries/index.json … | finish, validate-files |
 

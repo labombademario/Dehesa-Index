@@ -39,6 +39,7 @@
       return (s.name ? s.name + ': ' : '') + w[0] + ' ' + xl(a) + ' (' + vFmt(a.y) + ') ' + w[1] + ' ' + xl(z) + ' (' + vFmt(z.y) + '); ' + w[2] + ' ' + vFmt(mn.y) + ', ' + w[3] + ' ' + vFmt(mx.y);
     }).filter(Boolean).join('. ');
   }
+  var GAPW = { es: ['Hueco en la serie: sin dato publicado entre', 'y', 'Los valores de antes y de después pueden no ser comparables (cambio de cobertura o definición de la fuente).'], en: ['Gap in the series: no published data between', 'and', 'Values before and after may not be comparable (change in the source’s coverage or definition).'], fr: ['Rupture dans la série : aucune donnée publiée entre', 'et', 'Les valeurs avant et après peuvent ne pas être comparables (changement de couverture ou de définition de la source).'], it: ['Interruzione nella serie: nessun dato pubblicato tra', 'e', 'I valori prima e dopo potrebbero non essere confrontabili (cambio di copertura o di definizione della fonte).'] };
   function render(o) {
     var S = (o.series || []).filter(function (s) { return s.pts && s.pts.length; });
     if (!S.length) return '';
@@ -79,7 +80,7 @@
     if (o.xTitle) g += '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 6) + '" font-size="' + FONT + '" text-anchor="middle" fill="' + TXT + '" font-weight="600">' + esc(o.xTitle) + '</text>';
     if (o.yTitle) g += '<text transform="translate(13 ' + ((Tp + H - Bt) / 2) + ') rotate(-90)" font-size="' + FONT + '" text-anchor="middle" fill="' + TXT + '" font-weight="600">' + esc(o.yTitle) + '</text>';
     // series
-    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: [], m: o.measurePp ? 'pp' : 'pct' };
+    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: [], m: o.measurePp ? 'pp' : 'pct' }, breaks = [];
     S.forEach(function (s) {
       var d = '', pen = false, pts = [], dots = '', run = 0, lastX = null, lastXY = null;
       // Hueco en la serie (anos o meses sin dato publicado): la linea se corta en vez de unir los extremos con una recta enganosa.
@@ -89,7 +90,7 @@
       s.pts.forEach(function (p, idx) {
         if (p.y === null || p.y === undefined || !isFinite(p.y)) { if (run === 1 && lastXY) dots += lastXY; pen = false; run = 0; return; }
         var px = x(p.x), py = y(p.y);
-        if (pen && lastX !== null && p.x - lastX > gapMax) { if (run === 1 && lastXY) dots += lastXY; pen = false; run = 0; }
+        if (pen && lastX !== null && p.x - lastX > gapMax) { if (run === 1 && lastXY) dots += lastXY; pen = false; run = 0; if (breaks.length < 2) breaks.push([lastX, p.x]); }
         d += (pen ? 'L' : 'M') + px.toFixed(1) + ' ' + py.toFixed(1) + ' '; pen = true; run++; lastX = p.x;
         lastXY = '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="2.6" fill="' + s.color + '"/>';
         var lab = p.l || (time ? (annual ? String(new Date(p.x).getUTCFullYear()) : fmtDateFull(p.x)) : (labelsIdx && labelsIdx[p.x] !== undefined ? labelsIdx[p.x] : String(p.x)));
@@ -100,7 +101,9 @@
       spec.s.push({ n: s.name, c: s.color, p: pts });
     });
     var leg = !o.noLegend && (S.length > 1 || o.legend) ? '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;margin:6px 0 0 4px">' + S.map(function (s) { return '<span><span style="display:inline-block;width:14px;height:3px;background:' + s.color + ';vertical-align:middle;margin-right:6px' + (s.dash ? ';opacity:.7' : '') + '"></span>' + esc(s.name) + '</span>'; }).join('') + '</div>' : '';
-    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img" tabindex="0" aria-label="' + esc((o.aria ? o.aria + '. ' : '') + summaryText(S, time, vFmt)) + '" data-dh="' + attrJson(spec) + '">' + g + '</svg>' + leg + '</div>';
+    var gapNote = '';
+    if (breaks.length && time) { var bl = function (t) { return annual ? String(new Date(t).getUTCFullYear()) : fmtMonth(t); }, gw = GAPW[lang()] || GAPW.es; gapNote = '<div style="margin:6px 0 0 4px;font-size:11.5px;color:var(--text-faint,#7a7466)">' + esc(gw[0] + ' ' + bl(breaks[0][0]) + ' ' + gw[1] + ' ' + bl(breaks[0][1]) + '.' + (annual ? ' ' + gw[2] : '')) + '</div>'; }
+    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img" tabindex="0" aria-label="' + esc((o.aria ? o.aria + '. ' : '') + summaryText(S, time, vFmt)) + '" data-dh="' + attrJson(spec) + '">' + g + '</svg>' + leg + gapNote + '</div>';
   }
 
   /* ---------- atributo para gráficas ya existentes ----------

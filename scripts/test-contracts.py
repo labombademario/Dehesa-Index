@@ -521,6 +521,7 @@ CASES = [
  ("cap/es/rules.json", "umbral minimo incoherente", lambda d: next(r for r in d["rules"] if r["id"] == "min-payment")["values"].__setitem__("maxRaisedEur", 100)),
  ("cap/es/rules.json", "jovenes con 0 hectareas", lambda d: next(r for r in d["rules"] if r["id"] == "young-farmers")["values"].__setitem__("maxHa", 0)),
  ("cap/es/rules.json", "fuente que no es el BOE", lambda d: d["source"].__setitem__("id", "mapa_es")),
+ ("cap/es/rules.json", "traduccion de una regla inexistente", lambda d: d["i18n"]["rules"].__setitem__("no-existe", {"en": "x"})),
  ("cap/es/rules.json", "regla sin base legal", lambda d: d["rules"][2].__setitem__("legalBasis", "")),
 ]
 bad = 0

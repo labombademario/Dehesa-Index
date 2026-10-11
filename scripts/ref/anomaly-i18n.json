@@ -1,0 +1,83 @@
+{
+ "note": "Traducciones de Dehesa Index del campo «detected» de data/data-anomalies.json (clave: serie). Se aplica solo si el texto en español no ha cambiado (campo es).",
+ "items": {
+  "AT/at-slaughter-ths_hd-b4110": {
+   "es": "Sacrificios de cordero (miles de cabezas): 0 de 1995 a 2007 y 243,34 en 2008; el aviso salta en 2013 porque la mediana de los 12 puntos previos aun arrastra ceros.",
+   "en": "Lamb slaughterings (thousand head): 0 from 1995 to 2007 and 243.34 in 2008; the alert fires in 2013 because the median of the previous 12 points still carries zeros.",
+   "fr": "Abattages d'agneaux (milliers de têtes) : 0 de 1995 à 2007 puis 243,34 en 2008 ; l'alerte se déclenche en 2013 car la médiane des 12 points précédents traîne encore des zéros.",
+   "it": "Macellazioni di agnelli (migliaia di capi): 0 dal 1995 al 2007 e 243,34 nel 2008; l'avviso scatta nel 2013 perché la mediana dei 12 punti precedenti contiene ancora zeri."
+  },
+  "CA/ca-trade-imp-wheat": {
+   "es": "Importaciones mensuales de trigo (CAD millones): 0,0-0,1 durante 1995 y 2,8 en enero de 1996; base minuscula, el salto relativo es x28.",
+   "en": "Monthly wheat imports (CAD million): 0.0-0.1 throughout 1995 and 2.8 in January 1996; tiny base, the relative jump is x28.",
+   "fr": "Importations mensuelles de blé (millions de CAD) : 0,0-0,1 pendant 1995 et 2,8 en janvier 1996 ; base minuscule, le saut relatif est de x28.",
+   "it": "Importazioni mensili di frumento (milioni di CAD): 0,0-0,1 per tutto il 1995 e 2,8 a gennaio 1996; base minuscola, il salto relativo è x28."
+  },
+  "AU/au-imp-wheat": {
+   "es": "Importaciones de trigo (A$ millones): 0,001-0,03 hasta 2002 y 8,944 en enero de 2003, 17,755 en abril de 2003.",
+   "en": "Wheat imports (A$ million): 0.001-0.03 until 2002 and 8.944 in January 2003, 17.755 in April 2003.",
+   "fr": "Importations de blé (millions d'A$) : 0,001-0,03 jusqu'en 2002, puis 8,944 en janvier 2003 et 17,755 en avril 2003.",
+   "it": "Importazioni di frumento (milioni di A$): 0,001-0,03 fino al 2002 e 8,944 a gennaio 2003, 17,755 ad aprile 2003."
+  },
+  "AU/au-imp-maize": {
+   "es": "Importaciones de maiz (A$ millones): 0,002 en diciembre de 2002 y 10,36 en enero de 2003 (un solo mes); febrero de 2003 vuelve a 0,001.",
+   "en": "Maize imports (A$ million): 0.002 in December 2002 and 10.36 in January 2003 (a single month); February 2003 is back to 0.001.",
+   "fr": "Importations de maïs (millions d'A$) : 0,002 en décembre 2002 et 10,36 en janvier 2003 (un seul mois) ; février 2003 revient à 0,001.",
+   "it": "Importazioni di mais (milioni di A$): 0,002 a dicembre 2002 e 10,36 a gennaio 2003 (un solo mese); febbraio 2003 torna a 0,001."
+  },
+  "CA/ca-meat-cattle-live-imports": {
+   "es": "Importaciones de ganado vacuno vivo (miles de cabezas, anual): 4,4 a 2,7 en 1958 (mediana previa 0,1) y 64,0 a 208,5 en 1973 (mediana previa 7,7).",
+   "en": "Live cattle imports (thousand head, annual): 4.4 to 2.7 in 1958 (previous median 0.1) and 64.0 to 208.5 in 1973 (previous median 7.7).",
+   "fr": "Importations de bovins vivants (milliers de têtes, annuel) : de 4,4 à 2,7 en 1958 (médiane précédente 0,1) et de 64,0 à 208,5 en 1973 (médiane précédente 7,7).",
+   "it": "Importazioni di bovini vivi (migliaia di capi, annuale): da 4,4 a 2,7 nel 1958 (mediana precedente 0,1) e da 64,0 a 208,5 nel 1973 (mediana precedente 7,7)."
+  },
+  "CA/ca-meat-calves-live-exports": {
+   "es": "Exportaciones de terneros vivos (miles de cabezas, anual): 81,6 a 197,5 en 1958 (mediana previa 4).",
+   "en": "Live calf exports (thousand head, annual): 81.6 to 197.5 in 1958 (previous median 4).",
+   "fr": "Exportations de veaux vivants (milliers de têtes, annuel) : de 81,6 à 197,5 en 1958 (médiane précédente 4).",
+   "it": "Esportazioni di vitelli vivi (migliaia di capi, annuale): da 81,6 a 197,5 nel 1958 (mediana precedente 4)."
+  },
+  "CA/ca-tpr-exp-pe-japan": {
+   "es": "Exportaciones nacionales de la Isla del Principe Eduardo a Japon (millones de CAD, mensual): 0,183 a 1,279 en 2020-09 y 1,279 a 1,096 en 2020-10 (mediana previa 0,011).",
+   "en": "Domestic exports from Prince Edward Island to Japan (CAD million, monthly): 0.183 to 1.279 in 2020-09 and 1.279 to 1.096 in 2020-10 (previous median 0.011).",
+   "fr": "Exportations nationales de l'Île-du-Prince-Édouard vers le Japon (millions de CAD, mensuel) : de 0,183 à 1,279 en 2020-09 et de 1,279 à 1,096 en 2020-10 (médiane précédente 0,011).",
+   "it": "Esportazioni nazionali dell'Isola del Principe Edoardo verso il Giappone (milioni di CAD, mensile): da 0,183 a 1,279 nel 2020-09 e da 1,279 a 1,096 nel 2020-10 (mediana precedente 0,011)."
+  },
+  "CA/ca-tpr-exp-qc-china": {
+   "es": "Exportaciones nacionales de Quebec a China (millones de CAD, mensual): 90,635 a 172,837 en 2018-11 (mediana previa 3,93).",
+   "en": "Domestic exports from Quebec to China (CAD million, monthly): 90.635 to 172.837 in 2018-11 (previous median 3.93).",
+   "fr": "Exportations nationales du Québec vers la Chine (millions de CAD, mensuel) : de 90,635 à 172,837 en 2018-11 (médiane précédente 3,93).",
+   "it": "Esportazioni nazionali del Québec verso la Cina (milioni di CAD, mensile): da 90,635 a 172,837 nel 2018-11 (mediana precedente 3,93)."
+  },
+  "UK/uk-egg-exports-eu": {
+   "es": "Salto mensual muy superior a la mediana de los 12 meses previos en 2019-12 (aviso de validate-data).",
+   "en": "Monthly jump far above the median of the previous 12 months in 2019-12 (validate-data alert).",
+   "fr": "Saut mensuel très supérieur à la médiane des 12 mois précédents en 2019-12 (alerte de validate-data).",
+   "it": "Salto mensile molto superiore alla mediana dei 12 mesi precedenti nel 2019-12 (avviso di validate-data)."
+  },
+  "UK/uk-egg-exports-shell": {
+   "es": "Salto mensual muy superior a la mediana de los 12 meses previos en 2019-12 (aviso de validate-data).",
+   "en": "Monthly jump far above the median of the previous 12 months in 2019-12 (validate-data alert).",
+   "fr": "Saut mensuel très supérieur à la médiane des 12 mois précédents en 2019-12 (alerte de validate-data).",
+   "it": "Salto mensile molto superiore alla mediana dei 12 mesi precedenti nel 2019-12 (avviso di validate-data)."
+  },
+  "UK/uk-egg-exports-total": {
+   "es": "Salto mensual muy superior a la mediana de los 12 meses previos en 2019-12 y 2016-12 (aviso de validate-data).",
+   "en": "Monthly jump far above the median of the previous 12 months in 2019-12 and 2016-12 (validate-data alert).",
+   "fr": "Saut mensuel très supérieur à la médiane des 12 mois précédents en 2019-12 et 2016-12 (alerte de validate-data).",
+   "it": "Salto mensile molto superiore alla mediana dei 12 mesi precedenti nel 2019-12 e nel 2016-12 (avviso di validate-data)."
+  },
+  "UK/uk-egg-exports-products": {
+   "es": "Salto mensual muy superior a la mediana de los 12 meses previos en 2016-12 (aviso de validate-data).",
+   "en": "Monthly jump far above the median of the previous 12 months in 2016-12 (validate-data alert).",
+   "fr": "Saut mensuel très supérieur à la médiane des 12 mois précédents en 2016-12 (alerte de validate-data).",
+   "it": "Salto mensile molto superiore alla mediana dei 12 mesi precedenti nel 2016-12 (avviso di validate-data)."
+  },
+  "BE/be-eus-poultry-imp-a5130p": {
+   "es": "Importaciones de pollitos de pollo de engorde en Bélgica (cabezas, anual): 3,2 millones en 2024 y 151 mil en 2025 (−95 %), tras 13,7 millones en 2021.",
+   "en": "Broiler chick imports in Belgium (head, annual): 3.2 million in 2024 and 151 thousand in 2025 (−95 %), after 13.7 million in 2021.",
+   "fr": "Importations de poussins de poulets de chair en Belgique (têtes, annuel) : 3,2 millions en 2024 et 151 mille en 2025 (−95 %), après 13,7 millions en 2021.",
+   "it": "Importazioni di pulcini da carne in Belgio (capi, annuale): 3,2 milioni nel 2024 e 151 mila nel 2025 (−95 %), dopo i 13,7 milioni del 2021."
+  }
+ }
+}

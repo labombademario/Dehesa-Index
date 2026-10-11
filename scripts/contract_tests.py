@@ -2635,6 +2635,12 @@ def cap_es_rules(doc, errs, warns, stats):
     if t["maxEur"] <= tiers[-1]["fromEur"]: errs.append("cap-es rules: el maximo de la ayuda basica debe superar el inicio del ultimo tramo"); return
     y = byid["young-farmers"]["values"]
     if not (1 <= y["maxHa"] <= 1000 and 1 <= y["years"] <= 10 and 0 <= y["womenBonus"] <= 0.5): errs.append("cap-es rules: valores de jóvenes fuera de rango"); return
+    tr = (doc.get("i18n") or {}).get("rules") or {}
+    for r in doc["rules"]:
+        for l in ("en", "fr", "it"):
+            if not (tr.get(r["id"]) or {}).get(l): warns.append("cap-es rules: la regla %s no tiene traduccion al %s (se mostrara en español)" % (r["id"], l))
+    for k in tr:
+        if k not in byid: errs.append("cap-es rules: traduccion de una regla que no existe (%s)" % k); return
     stats["cap-es reglas"] = len(doc["rules"]); stats["cap-es hitos"] = len(doc["calendar"])
 
 
