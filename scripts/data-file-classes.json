@@ -74,7 +74,7 @@
   },
   "data/eurostat-euw-stats.json": {
    "class": "BUILD_ONLY",
-   "note": "Series de Eurostat de DE, ES y NL (modo reducido): alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
+   "note": "Series de Eurostat de DE, ES, NL, DK y SE (modo reducido): alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
   },
   "data/italy-eurostat-stats.json": {
    "class": "BUILD_ONLY",

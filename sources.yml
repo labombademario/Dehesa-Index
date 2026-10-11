@@ -206,7 +206,7 @@ sources:
     log: italy-eurostat-log.txt
     message: Datos Italia (Eurostat)
   - id: eurostat-eu
-    name: Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL)
+    name: Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL DK SE)
     cron: ['10 18 * * 2,5']
     script: scripts/update-eurostat-eu.py
     timeout: 60
