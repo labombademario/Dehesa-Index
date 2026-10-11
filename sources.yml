@@ -548,6 +548,16 @@ sources:
     extra: [au-trade-products.json]
     log: australia-trade-log.txt
     message: Datos comercio Australia (ABS)
+  - id: trade-partners
+    name: Update trade by product and partner (UK, CL, CA)
+    cron: ['15 11 6 * *']
+    script: scripts/update-trade-partners.py
+    timeout: 45
+    script_timeout: 35
+    continue: true
+    data: [uk-trade-products.json, cl-trade-products.json, ca-trade-products.json]
+    log: trade-partners-log.txt
+    message: Comercio por producto y socio (HMRC, ODEPA, Statistics Canada)
   - id: au-states
     name: Update Australia by state (ABS)
     cron: ['35 11 5 * *']

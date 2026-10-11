@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-127 workflows (91 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+128 workflows (92 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -162,6 +162,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-switzerland-bfs.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ch-bfs.py | switzerland-bfs-stats.json | finish, validate-files |
 | update-switzerland-foag.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-ch-foag.py | ch-chain.json, switzerland-foag-stats.json | finish, validate-files |
 | update-switzerland-meteo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ch-meteo.py | switzerland-meteo-stats.json | finish, validate-files |
+| update-trade-partners.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-trade-partners.py | ca-trade-products.json, cl-trade-products.json, uk-trade-products.json | finish, validate-files |
 | update-usda-calendar.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-usda-calendar.py | usda-calendar.json | finish, validate-files |
 | update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json | finish, validate-files |
 | update-worldbank-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-agri.py | worldbank-agri.json | finish, validate-files |

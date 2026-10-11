@@ -3489,6 +3489,21 @@
    "sources": [
     "usda_fas_gats"
    ]
+  },
+  "data/uk-trade-products.json": {
+   "sources": [
+    "hmrc_uktradeinfo"
+   ]
+  },
+  "data/cl-trade-products.json": {
+   "sources": [
+    "odepa_chile"
+   ]
+  },
+  "data/ca-trade-products.json": {
+   "sources": [
+    "statcan"
+   ]
   }
  },
  "derived": [
