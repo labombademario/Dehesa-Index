@@ -66,7 +66,7 @@ const L = {
     th: ['Marché', 'Prix', 'Unité', 'Période', 'Variation', 'Source'], cta: 'Voir le graphique et l’historique →', news: n => 'Actualités : ' + n, cal: n => 'Calendrier des rapports : ' + n,
     note: 'Les prix de marchés différents ne sont pas directement comparables : l’unité, la devise, le stade de la chaîne et la qualité du produit changent. Chiffres tels que publiés par chaque source, sans conversion.', meth: 'Méthodologie', gen: 'Page générée le', what: '',
     faqH: 'Questions fréquentes', q: (de, m) => 'Quel est le prix ' + de + ' en ' + m + ' ?', a: (v, per, ch, fr) => v + ', donnée de ' + per + (ch ? ', variation de ' + ch + ' par rapport à la donnée précédente' : '') + '. Fréquence de la source : ' + fr + '.',
-    freq: { weekly: 'hebdomadaire', daily: 'quotidienne', monthly: 'mensuelle' }, regQ: { eu: 'l’Union européenne', us: 'aux États-Unis', ca: 'au Canada', uk: 'au Royaume-Uni' }, others: 'Autres prix', prices: 'Prix', dsName: (de, rs) => 'Prix ' + de + ' : ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
+    qq: (de, m) => 'Quel est le prix ' + de + ' au quintal (' + m + ') ?', qa: (v, per) => v + ' (1 quintal = 100 kg, soit le prix à la tonne divisé par 10), donnée de ' + per + '.', freq: { weekly: 'hebdomadaire', daily: 'quotidienne', monthly: 'mensuelle' }, regQ: { eu: 'l’Union européenne', us: 'aux États-Unis', ca: 'au Canada', uk: 'au Royaume-Uni' }, others: 'Autres prix', prices: 'Prix', dsName: (de, rs) => 'Prix ' + de + ' : ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
   it: { code: 'it', root: 'it/prezzi', up: '../../../', locale: 'it-IT',
     reg: { us: 'Stati Uniti', eu: 'Unione europea', ca: 'Canada', uk: 'Regno Unito' }, regShort: { eu: 'UE', us: 'USA' }, mon: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'],
     unit: { cwt: '/cwt (100 libbre)', bushel: '/bushel', tonelada: '/tonnellata', '100kg': '/100 kg', litro: '/litro', gal: '/gallone', mmbtu: '/MMBtu', docena: '/dozzina', lb: '/libbra', ton_corta: '/tonnellata corta', barril: '/barile', kg: '/kg' },
@@ -76,7 +76,7 @@ const L = {
     th: ['Mercato', 'Prezzo', 'Unità', 'Periodo', 'Variazione', 'Fonte'], cta: 'Vedi grafico e storico →', news: n => 'Notizie: ' + n, cal: n => 'Calendario dei rapporti: ' + n,
     note: 'I prezzi di mercati diversi non sono direttamente confrontabili: cambiano unità, valuta, punto della filiera e qualità del prodotto. Cifre come le pubblica ogni fonte, senza conversione.', meth: 'Metodologia', gen: 'Pagina generata il', what: '',
     faqH: 'Domande frequenti', q: (de, m) => 'Qual è il prezzo ' + de + ' in ' + m + '?', a: (v, per, ch, fr) => v + ', dato di ' + per + (ch ? ', variazione di ' + ch + ' rispetto al dato precedente' : '') + '. Frequenza della fonte: ' + fr + '.',
-    freq: { weekly: 'settimanale', daily: 'giornaliera', monthly: 'mensile' }, regQ: { eu: 'l’Unione europea', us: 'negli Stati Uniti', ca: 'in Canada', uk: 'nel Regno Unito' }, others: 'Altri prezzi', prices: 'Prezzi', dsName: (de, rs) => 'Prezzo ' + de + ': ' + rs, home: 'precios.html', metodo: 'metodologia.html' }
+    qq: (de, m) => 'Qual è il prezzo ' + de + ' al quintale (' + m + ')?', qa: (v, per) => v + ' (1 quintale = 100 kg, cioè il prezzo alla tonnellata diviso per 10), dato di ' + per + '.', freq: { weekly: 'settimanale', daily: 'giornaliera', monthly: 'mensile' }, regQ: { eu: 'l’Unione europea', us: 'negli Stati Uniti', ca: 'in Canada', uk: 'nel Regno Unito' }, others: 'Altri prezzi', prices: 'Prezzi', dsName: (de, rs) => 'Prezzo ' + de + ': ' + rs, home: 'precios.html', metodo: 'metodologia.html' }
 };
 const CUR = { USD: 'USD', EUR: 'EUR', CAD: 'CAD', GBP: 'GBP' };
 const TOPIC = { urea: 'fertilizantes', dap: 'fertilizantes', potasa: 'fertilizantes' };
@@ -87,6 +87,7 @@ for (const r of ['us', 'eu', 'ca', 'uk']) {
   let d; try { d = JSON.parse(read('data/prices/latest/' + r + '.json')); } catch (e) { continue; }
   for (const o of d.observations || []) if (P[o.product] && o.currency !== 'INDEX' && typeof o.value === 'number') (byProd[o.product] = byProd[o.product] || []).push({ r, ...o });
 }
+const QUINTAL = new Set(['arroz', 'avena', 'cebada', 'centeno', 'colza', 'maiz', 'trigo']);
 const ORDER = ['us', 'eu', 'ca', 'uk'];
 const keys = Object.keys(byProd).sort();
 const urlOf = (lg, k) => SITE + '/' + L[lg].root + '/' + (lg === 'es' ? k : P[k].s[['en', 'fr', 'it'].indexOf(lg)]) + '/';
@@ -109,6 +110,8 @@ for (const lg of Object.keys(L)) {
       return '<tr><th scope="row" style="text-align:left;padding:8px 6px">' + esc(rg(o)) + '</th><td style="text-align:right;padding:8px 6px"><b>' + esc(nf(o.value)) + '</b></td><td style="padding:8px 6px">' + esc(CUR[o.currency] + un(o)) + '</td><td style="padding:8px 6px">' + esc(per(o.observationDate)) + '</td><td style="text-align:right;padding:8px 6px">' + esc(pct(o.changePct)) + '</td><td style="padding:8px 6px">' + (s.url ? '<a href="' + esc(s.url) + '" rel="noopener">' + esc(s.short || s.name || o.sourceId) + '</a>' : esc(o.sourceId)) + '</td></tr>'; }).join('\n');
     const meth = lg === 'es' ? obs.filter(o => o.methodology).map(o => '<li><b>' + esc(rg(o)) + ':</b> ' + esc(o.methodology) + '</li>').join('\n') : '';
     const faq = obs.map(o => '<h3 style="font-size:15px;margin:14px 0 4px">' + esc(T.q(de, T.regQ[o.r])) + '</h3><p>' + esc(T.a(nf(o.value) + ' ' + CUR[o.currency] + un(o), per(o.observationDate), o.changePct != null ? pct(o.changePct) : '', T.freq[o.frequency] || o.frequency || '')) + '</p>').join('\n');
+    // fr/it: los cereales y oleaginosas se cotizan al quintal (1 q = 100 kg): respuesta directa, conversion exacta
+    const qFaq = T.qq && QUINTAL.has(p) ? obs.filter(o => o.unit === 'tonelada' && o.currency === 'EUR').map(o => '<h3 style="font-size:15px;margin:14px 0 4px">' + esc(T.qq(de, T.reg[o.r])) + '</h3><p>' + esc(T.qa(nf(o.value / 10) + ' ' + CUR[o.currency] + (lg === 'fr' ? '/quintal' : '/quintale'), per(o.observationDate))) + '</p>').join('\n') : '';
     const others = keys.filter(x => x !== p).map(x => '<a href="../' + (lg === 'es' ? x : P[x].s[['en', 'fr', 'it'].indexOf(lg)]) + '/">' + esc(P[x][lg][0]) + '</a>').join(' · ');
     const alts = Object.keys(L).map(l2 => '<link rel="alternate" hreflang="' + l2 + '" href="' + urlOf(l2, p) + '">').join('\n') + '\n<link rel="alternate" hreflang="x-default" href="' + urlOf('en', p) + '">';
     const topic = TOPIC[p] || p;
@@ -150,6 +153,7 @@ ${rows}
 ${meth ? '    <h2 style="font-size:17px;margin-top:22px">' + esc(T.what) + '</h2>\n    <ul>' + meth + '</ul>' : ''}
     <h2 style="font-size:17px;margin-top:22px">${esc(T.faqH)}</h2>
 ${faq}
+${qFaq}
     <h2 style="font-size:17px;margin-top:22px">${esc(T.others)}</h2>
     <p>${others}</p>
   </article>
