@@ -32,7 +32,7 @@ import math
 from shapely.ops import unary_union
 from shapely.affinity import translate
 adm = json.loads((ROOT / "scripts" / "ref" / "ne-admin1-4c.json").read_text(encoding="utf-8")); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-au.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-nlat.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-bedkpt.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-pl.json").read_text(encoding="utf-8")))
-def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0):
+def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0, shifts=None):
     byreg = {}
     for f in feats:
         r = f["properties"][key]
@@ -42,6 +42,7 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0)
     c = math.cos(math.radians(lat)); out = {}
     for r, gs in byreg.items():
         g = unary_union([x.buffer(0.004, join_style=2) for x in gs]).buffer(-0.004, join_style=2)  # cierra las rendijas entre unidades vecinas antes de disolver
+        if shifts and r in shifts: g = translate(g, xoff=shifts[r][0], yoff=shifts[r][1])  # islas lejanas acercadas al continente (solo para que quepan en el mapa)
         if canarias and r in ("Canary Is.", "Las Palmas", "Santa Cruz de Tenerife"): g = translate(g, xoff=9.0, yoff=6.0)
         g = transform(lambda x, y, z=None: ([v * c for v in x], list(y)) if hasattr(x, "__iter__") else (x * c, y), g)
         out[codes[r]] = (r, g.simplify(tol * c, preserve_topology=True))
@@ -57,7 +58,7 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0)
         return "".join(o)
     items = [{"id": i, "name": n, "d": p2(g)} for i, (n, g) in sorted(out.items())]
     js = "/* Contornos de " + label + " a partir de Natural Earth 1:10m (dominio publico); unidades administrativas disueltas por region. Generado por scripts/build-region-maps.py. */\nwindow." + var + " = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
-    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions", "PL": "pl-voivodeships"}[cc]
+    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions", "PL": "pl-voivodeships", "PT": "pt-regions", "CH": "ch-regions", "IE": "ie-regions"}[cc]
     (ROOT / "vendor" / (fn + ".js")).write_text(js, encoding="utf-8"); print("vendor/%s.js" % fn, len(js), "bytes", len(items), "regiones, viewBox", "0 0 %d %s" % (W2, H2))
 ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
 FR_CODES = {"Auvergne-Rhône-Alpes": "ARA", "Bourgogne-Franche-Comté": "BFC", "Bretagne": "BRE", "Centre-Val de Loire": "CVL", "Corse": "COR", "Grand Est": "GES", "Hauts-de-France": "HDF", "Normandie": "NOR", "Nouvelle-Aquitaine": "NAQ", "Occitanie": "OCC", "Pays de la Loire": "PDL", "Provence-Alpes-Côte-d'Azur": "PAC", "Île-de-France": "IDF"}
@@ -82,3 +83,11 @@ europe_map("BE", adm["BEL"], BE_CODES, "name", "DEHESA_BE_PROVINCES", "las provi
 europe_map("DK", adm["DNK"], DK_CODES, "name", "DEHESA_DK_REGIONS", "las regiones de Dinamarca (sin Groenlandia ni las Feroe)", 0.006)
 PL_CODES = {"Lower Silesian": "DS", "Kuyavian-Pomeranian": "KP", "Lublin": "LU", "Lubusz": "LB", "Łódź": "LD", "Lesser Poland": "MA", "Masovian": "MZ", "Opole": "OP", "Subcarpathian": "PK", "Podlachian": "PD", "Pomeranian": "PM", "Silesian": "SL", "Świętokrzyskie": "SK", "Warmian-Masurian": "WN", "Greater Poland": "WP", "West Pomeranian": "ZP"}
 europe_map("PL", adm["POL"], PL_CODES, "name", "DEHESA_PL_VOIVODESHIPS", "las 16 voivodias de Polonia", 0.006)
+
+# ---------- Portugal, Suiza e Irlanda: regiones NUTS 2 de Eurostat (GISCO, scripts/ref/nuts2-eu.geojson), las mismas en que Eurostat publica los datos ----------
+_n2 = json.loads((ROOT / "scripts" / "ref" / "nuts2-eu.geojson").read_text(encoding="utf-8"))
+def _nuts(cc):
+    return [{"properties": {"name": f["properties"]["id"]}, "geometry": f["geometry"]} for f in _n2["features"] if f["properties"]["cc"] == cc]
+europe_map("PT", _nuts("PT"), {"PT11": "NOR", "PT15": "ALG", "PT16": "CEN", "PT17": "LIS", "PT18": "ALE", "PT20": "AZO", "PT30": "MAD"}, "name", "DEHESA_PT_REGIONS", "las 7 regiones NUTS 2 de Portugal (Azores y Madeira acercadas al continente para que quepan)", 0.006, shifts={"PT20": (14.0, -4.0), "PT30": (5.0, -3.0)})
+europe_map("CH", _nuts("CH"), {"CH01": "LEM", "CH02": "MIT", "CH03": "NWS", "CH04": "ZUR", "CH05": "OST", "CH06": "ZEN", "CH07": "TIC"}, "name", "DEHESA_CH_REGIONS", "las 7 grandes regiones (NUTS 2) de Suiza", 0.004)
+europe_map("IE", _nuts("IE"), {"IE04": "NW", "IE05": "SO", "IE06": "EM"}, "name", "DEHESA_IE_REGIONS", "las 3 regiones NUTS 2 de Irlanda", 0.004)

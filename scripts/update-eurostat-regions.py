@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Datos agrarios por region (Espana, Francia, Italia, Alemania, Paises Bajos, Austria, Belgica, Dinamarca y Polonia) desde Eurostat, para las paginas de region.
-Salida: data/eu-regions-es.json, -fr.json, -it.json, -de.json, -nl.json, -at.json, -be.json, -dk.json, -pl.json (una region por comunidad, region, provincia o Land).
+Salida: data/eu-regions-es.json, -fr.json, -it.json, -de.json, -nl.json, -at.json, -be.json, -dk.json, -pl.json, -pt.json, -ie.json, -ch.json (una region por comunidad, region, provincia o Land).
 Datasets (todos por region NUTS, reutilizacion con cita de la fuente):
   aact_eaa01_r  cuentas economicas de la agricultura (millones EUR, precios corrientes)
   apro_cpshr    cultivos: superficie y produccion
@@ -28,10 +28,16 @@ DK = {"HOV": ("DK01", ["DK01"]), "SJA": ("DK02", ["DK02"]), "SYD": ("DK03", ["DK
 # Polonia: 16 voivodias. Mazowieckie = PL9 (NUTS 1), que Eurostat parte en dos NUTS 2 (PL91 Warszawski stoleczny y PL92 Mazowiecki regionalny): se usa PL9 o, si falta, la suma de ambos.
 PL = {"MA": ("PL21", ["PL21"]), "SL": ("PL22", ["PL22"]), "WP": ("PL41", ["PL41"]), "ZP": ("PL42", ["PL42"]), "LB": ("PL43", ["PL43"]), "DS": ("PL51", ["PL51"]), "OP": ("PL52", ["PL52"]), "KP": ("PL61", ["PL61"]),
       "WN": ("PL62", ["PL62"]), "PM": ("PL63", ["PL63"]), "LD": ("PL71", ["PL71"]), "SK": ("PL72", ["PL72"]), "LU": ("PL81", ["PL81"]), "PK": ("PL82", ["PL82"]), "PD": ("PL84", ["PL84"]), "MZ": ("PL9", ["PL91", "PL92"])}
+# Portugal (7 regiones NUTS 2, Azores y Madeira incluidas), Irlanda (3 regiones NUTS 2: la division NUTS 2021) y Suiza (7 grandes regiones, NUTS 2).
+# Irlanda y Suiza: Eurostat no publica todos los cuadros por region para ellas; se escribe lo que haya y lo que falte queda como hueco (nunca se rellena).
+PT = {"NOR": ("PT11", ["PT11"]), "ALG": ("PT15", ["PT15"]), "CEN": ("PT16", ["PT16"]), "LIS": ("PT17", ["PT17"]), "ALE": ("PT18", ["PT18"]), "AZO": ("PT20", ["PT20"]), "MAD": ("PT30", ["PT30"])}
+IE = {"NW": ("IE04", ["IE04"]), "SO": ("IE05", ["IE05"]), "EM": ("IE06", ["IE06"])}
+CH = {"LEM": ("CH01", ["CH01"]), "MIT": ("CH02", ["CH02"]), "NWS": ("CH03", ["CH03"]), "ZUR": ("CH04", ["CH04"]), "OST": ("CH05", ["CH05"]), "ZEN": ("CH06", ["CH06"]), "TIC": ("CH07", ["CH07"])}
+MIN_OK = {"ie": 0.0, "ch": 0.0}  # fraccion minima de regiones con datos completos; en el resto 0,9
 # Puntos de la fuente descartados por error evidente. Gelderland y Flevoland (NL) tienen la produccion de patata de 2022 intercambiada en Eurostat
 # (807 y 255 mil t frente a ~260 y ~790 en los demas anios; la suma de ambas es normal): rendimiento de 128 y 14 t/ha. Se descarta la produccion de ese anio, no se corrige.
 EXCLUDE = {("NL", "GE", "R1000", 2022), ("NL", "FL", "R1000", 2022)}
-COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT, "be": BE, "dk": DK, "pl": PL}
+COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT, "be": BE, "dk": DK, "pl": PL, "pt": PT, "ie": IE, "ch": CH}
 EAA = ["AM180000", "AM160000", "AM100000", "AM110000", "AM120000", "AM010000", "AM020000", "AM030000", "AM040000", "AM050000", "AM060000", "AM064000", "AM065000", "AM070000", "AM080000", "AM111000", "AM112000", "AM114000", "AM115000", "AM121000", "AM122000",
        "AM200000", "AM206000", "AM203000", "AM202000", "AM260000", "AM280000", "AM310000", "AM320000", "AM330000", "AM370000"]
 CROPS = ["UAA", "ARA", "J0000", "C0000", "C1110", "C1120", "C1200", "C1300", "C1400", "C1500", "R1000", "R2000", "I1110", "I1120", "I1130", "P0000", "G3000", "F0000", "T0000", "W1000", "O1000"]
@@ -140,7 +146,8 @@ def main():
         try:
             out = build(cc, reg)
             ok = sum(1 for v in out.values() if v.get("eaa") and v.get("crops") and v.get("animals"))
-            if ok < len(reg) * 0.9: raise ValueError("%s: solo %d de %d regiones con datos completos" % (cc.upper(), ok, len(reg)))
+            if not any(v.get("eaa") or v.get("crops") or v.get("animals") or v.get("milk") or v.get("farms") for v in out.values()): print("SIN DATOS", cc, "(Eurostat no publica nada por region para este pais; no se escribe fichero)"); LOG.append("sin datos " + cc); continue
+            if ok < len(reg) * MIN_OK.get(cc, 0.9): raise ValueError("%s: solo %d de %d regiones con datos completos" % (cc.upper(), ok, len(reg)))
         except Exception as e:
             print("FALLO", cc, repr(e)); rc = 1; continue
         doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "country": cc.upper(),
