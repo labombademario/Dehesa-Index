@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T18:28:48Z",
+ "generatedAt": "2026-10-11T21:26:03Z",
  "summary": {
   "files": 55,
   "errors": 0,
@@ -292,7 +292,8 @@
     "BE/be-eus-poultry-imp-a5231p: salto 226000 -> 464000 en 1999 (mediana previa 1.4e+04)",
     "BE/be-eus-poultry-imp_ieu-a5231p: salto 98000 -> 180000 en 1995 (mediana previa 5e+03)",
     "BE/be-eus-poultry-imp_ieu-a5231p: salto 180000 -> 171000 en 1996 (mediana previa 5e+03)",
-    "BE/be-eus-poultry-imp_ieu-a5231p: salto 226000 -> 464000 en 1999 (mediana previa 1.4e+04)"
+    "BE/be-eus-poultry-imp_ieu-a5231p: salto 226000 -> 464000 en 1999 (mediana previa 1.4e+04)",
+    "BE/be-eus-poultry-imp-a5130p: anomalia registrada que ya no se detecta (cerrarla en data/data-anomalies.json)"
    ],
    "stats": {
     "series": 823,
@@ -301,7 +302,7 @@
    },
    "generatedAt": "2026-10-09T17:52:34Z",
    "info": [],
-   "nWarnings": 7,
+   "nWarnings": 8,
    "nErrors": 0
   },
   {

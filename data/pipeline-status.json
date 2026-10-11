@@ -1,26 +1,26 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T20:15:00Z",
+ "generatedAt": "2026-10-11T21:26:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 123,
   "late": 1,
-  "error": 0,
+  "error": 1,
   "not_run": 0,
-  "unknown": 1
+  "unknown": 0
  },
- "global": "late",
+ "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "b06a950a",
+   "sha": "d27b20c7",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/665c2149-c894-4cac-b736-75f40c344914",
-   "completedAt": "2026-10-11T18:44:10Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/56e93693-c60b-4346-af69-619462fd8799",
+   "completedAt": "2026-10-11T20:26:39Z"
   },
-  "lagHours": null,
-  "prodGeneratedAt": null,
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-11T18:43:32.002519+00:00",
   "repoGeneratedAt": "2026-10-11T18:43:32.002519+00:00"
  },
  "pipelines": [
@@ -1692,9 +1692,19 @@
    ],
    "nextRun": "2026-10-11T21:47:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-11T20:20:13Z",
+    "durationSec": 425,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38171772920"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "error",
    "expectedEveryHours": 3.0
   },
   {
@@ -1703,7 +1713,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-11T21:17:00Z",
+   "nextRun": "2026-10-12T00:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -1734,8 +1744,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38164850118"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -1845,11 +1855,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-11T21:10:00Z",
+   "nextRun": "2026-10-12T00:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1872,7 +1882,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1889,7 +1899,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/products"
@@ -1900,15 +1910,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1916,18 +1926,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-11T18:41:06Z"
+     "lastChange": "2026-10-11T20:20:04Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1952,8 +1962,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38163921016"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "ok",
