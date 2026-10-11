@@ -474,6 +474,16 @@ sources:
     data: [eu-drought.json]
     extra: ['!data/eu-drought-regions']
     message: Datos sequia Europa (EDO CDI)
+  - id: embalses
+    name: Update Spain reservoirs (MITECO)
+    cron: ['30 9 * * 3,4']
+    pre: ['sudo apt-get update -qq && sudo apt-get install -y -qq mdbtools']
+    script: scripts/update-embalses.py
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    data: [spain-reservoirs.json]
+    message: Datos embalses de Espana (MITECO)
   - id: eu-regions
     name: Update regional farm data (Eurostat NUTS 2)
     cron: ['40 6 * * 4']

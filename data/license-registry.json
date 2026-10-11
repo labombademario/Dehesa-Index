@@ -2591,6 +2591,32 @@
    "short": "EDO · CDI",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Condiciones de GISCO leidas de su pagina de unidades territoriales: uso libre con la atribucion © EuroGeographics. Confianza media: no se ha leido el texto legal completo."
+  },
+  "miteco_embalses": {
+   "name": "MITECO — Boletín Hidrológico (BD-Embalses)",
+   "url": "https://www.miteco.gob.es/es/agua/temas/evaluacion-de-los-recursos-hidricos/boletin-hidrologico.html",
+   "country": "ES",
+   "licenseId": "ES-LEY-37-2007",
+   "licenseName": "Aviso legal del MITECO (reutilización libre citando la fuente, Ley 37/2007)",
+   "licenseUrl": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), Boletín Hidrológico",
+   "additionalRestrictions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha de actualización. Datos provisionales sin validar.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-11",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Aviso legal de la web del MITECO (apartado de reutilización), leído desde Actions el 11 oct 2026; tabla T_Datos Embalses 1988-2026 de BD-Embalses.mdb.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "EDO · CDI",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Aviso legal del MITECO leído el 11 oct 2026 desde GitHub Actions: la información puede utilizarse sin autorización expresa citando la fuente (Ley 37/2007, RD 1495/2011). No hay licencia Creative Commons específica del conjunto; confianza media."
   }
  },
  "files": {
@@ -3537,6 +3563,11 @@
     "gisco_nuts"
    ],
    "notes": "CDI por region NUTS 2 (update-eu-drought.py): la rejilla del EDO agregada a los poligonos NUTS 2 de GISCO."
+  },
+  "data/spain-reservoirs.json": {
+   "sources": [
+    "miteco_embalses"
+   ]
   }
  },
  "derived": [
