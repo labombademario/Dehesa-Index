@@ -255,7 +255,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'vendor')).filter(x => /\.js$/.te
 vm.runInContext(fs.readFileSync(path.join(ROOT, 'js', 'region-names.js'), 'utf8'), sandbox);
 vm.runInContext(fs.readFileSync(path.join(ROOT, 'js', 'region-metrics.js'), 'utf8'), sandbox);
 const MAPVAR = { US: 'DEHESA_US_STATES', CA: 'DEHESA_CA_PROVINCES', AU: 'DEHESA_AU_STATES', ES: 'DEHESA_ES_CCAA', FR: 'DEHESA_FR_REGIONS', IT: 'DEHESA_IT_REGIONS', DE: 'DEHESA_DE_LAENDER',
-  NL: 'DEHESA_NL_PROVINCES', AT: 'DEHESA_AT_LAENDER', BE: 'DEHESA_BE_PROVINCES', DK: 'DEHESA_DK_REGIONS', PL: 'DEHESA_PL_VOIVODESHIPS' };
+  NL: 'DEHESA_NL_PROVINCES', AT: 'DEHESA_AT_LAENDER', BE: 'DEHESA_BE_PROVINCES', DK: 'DEHESA_DK_REGIONS', PL: 'DEHESA_PL_VOIVODESHIPS', PT: 'DEHESA_PT_REGIONS', CH: 'DEHESA_CH_REGIONS', IE: 'DEHESA_IE_REGIONS' };
 const RM = exists('data/views/region-metrics.json') ? read('data/views/region-metrics.json') : { countries: {} };
 const maps = {};
 for (const [cc, v] of Object.entries(MAPVAR)) {
@@ -286,7 +286,7 @@ const EL = braceLit(rsrc, 'EL'), EC = braceLit(rsrc, 'EC'), EAN = braceLit(rsrc,
 const lab4 = a => t4(a[1], a[0], a[2], a[3]);
 const lastPt = a => { for (let i = (a || []).length - 1; i >= 0; i--) if (a[i][1] != null) return a[i]; return null; };
 const regionData = {}, DICT = {};
-for (const cc of ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL']) {
+for (const cc of ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE']) {
   const f = 'data/eu-regions-' + cc.toLowerCase() + '.json';
   if (!exists(f) || !maps[cc]) continue;
   const d = read(f), units = d.units || {}, out = {}; for (const k of Object.keys(DICT)) delete DICT[k];
