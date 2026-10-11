@@ -117,4 +117,22 @@ pl LU {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pl PK {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pl PD {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pl MZ {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
-escrito eu-regions-macro.json 163 KB
+pt NOR {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+pt ALG {'gdp': 25, 'pop': 26, 'unemp': 24, 'gdppc': 25}
+pt CEN {'pop': 24, 'unemp': 19}
+pt LIS {'pop': 24, 'unemp': 19}
+pt ALE {'pop': 24, 'unemp': 19}
+pt AZO {'gdp': 25, 'pop': 26, 'unemp': 19, 'gdppc': 25}
+pt MAD {'gdp': 25, 'pop': 26, 'unemp': 21, 'gdppc': 25}
+FALLO pt ValueError('PT: solo 4 de 7 regiones con PIB y poblacion')
+ie NW {'gdp': 25, 'pop': 14, 'unemp': 14, 'gdppc': 13}
+ie SO {'gdp': 25, 'pop': 14, 'unemp': 14, 'gdppc': 13}
+ie EM {'gdp': 25, 'pop': 14, 'unemp': 14, 'gdppc': 13}
+ch LEM {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
+ch MIT {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
+ch NWS {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
+ch ZUR {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
+ch OST {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
+ch ZEN {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
+ch TIC {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
+escrito eu-regions-macro.json 174 KB
