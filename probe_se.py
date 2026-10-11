@@ -14,5 +14,6 @@ for lang in ('en',):
     walk('https://api.scb.se/OV0104/v1/doris/%s/ssd' % lang, '/JO', 3, 'scb')
 for u in ('https://statistik.sjv.se/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas',):
     walk(u, '', 3, 'sjv')
+os.makedirs('probe_se', exist_ok=True)
 json.dump(out, open('probe_se/tree.json', 'w'), ensure_ascii=False, indent=0)
 print({k: len(v) for k, v in out.items()})
