@@ -3394,6 +3394,7 @@
   "catalog.json",
   "corrections.json",
   "coverage-gaps.json",
+  "country-pending.json",
   "coverage-overrides.json",
   "cross-market.json",
   "daily-brief.json",

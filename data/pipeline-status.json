@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T01:31:00Z",
+ "generatedAt": "2026-10-11T02:08:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 114,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "e8e2a6d4",
+   "sha": "80af9d90",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e0fc5ac2-386c-44ad-bd5c-46aece8f93f0",
-   "completedAt": "2026-10-11T01:21:45Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5f133959-19af-46f0-b4c6-6868bc6a2810",
+   "completedAt": "2026-10-11T01:48:25Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -1114,7 +1114,7 @@
   },
   {
    "workflow": "update-eurostat-eu.yml",
-   "name": "Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL DK SE)",
+   "name": "Update Eurostat euro-area members (BG EL FI HR IE LT SK, plus ES DE NL DK SE CZ EE HU LV)",
    "crons": [
     "10 18 * * 2,5"
    ],
@@ -1123,13 +1123,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-11T00:40:29Z",
-    "durationSec": 121,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38099230318"
+    "startedAt": "2026-10-11T01:44:00Z",
+    "durationSec": 224,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38102813834"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -1711,7 +1711,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1723,14 +1723,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1747,7 +1747,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/products"
@@ -1758,30 +1758,33 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
+    },
+    {
+     "path": "data/country-pending.json"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-11T00:51:50Z"
+     "lastChange": "2026-10-11T01:37:08Z"
     },
     {
      "path": "data/home-explore.json",

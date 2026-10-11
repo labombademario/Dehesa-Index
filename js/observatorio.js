@@ -1,6 +1,6 @@
 /* Dehesa Index — Observatorio de datos. ES5.
    Lee data/observatory.json (scripts/build-observatory.py, derivado de ficheros ya validados). No calcula ni inventa nada en el navegador salvo filtrar y ordenar.
-   Filtros por pais (region del mercado), producto, fuente y tipo de dato; estado en la URL: ?c=&p=&s=&t=&w= y ancla de seccion (#new, #moves, #revisions, #freshness, #upcoming, #coverage, #quality, #pipelines). */
+   Filtros por pais (region del mercado), producto, fuente y tipo de dato; estado en la URL: ?c=&p=&s=&t=&w= y ancla de seccion (#new, #moves, #revisions, #freshness, #upcoming, #coverage, #countries, #quality, #pipelines). */
 (function () {
   'use strict';
   var LANGS = ['es', 'en', 'fr', 'it'];
@@ -40,11 +40,22 @@
     freq_daily: ['diaria', 'daily', 'quotidienne', 'giornaliera'], freq_weekly: ['semanal', 'weekly', 'hebdomadaire', 'settimanale'], freq_monthly: ['mensual', 'monthly', 'mensuelle', 'mensile'], freq_quarterly: ['trimestral', 'quarterly', 'trimestrielle', 'trimestrale'], freq_annual: ['anual', 'annual', 'annuelle', 'annuale'],
     fs_LIVE: ['RECIÉN PUBLICADO', 'JUST RELEASED', 'TOUT JUSTE PUBLIÉ', 'APPENA PUBBLICATO'], fs_FRESH: ['AL DÍA', 'FRESH', 'À JOUR', 'AGGIORNATO'], fs_EXPECTED_DELAY: ['RETRASO HABITUAL', 'EXPECTED DELAY', 'RETARD HABITUEL', 'RITARDO ABITUALE'], fs_DELAYED: ['RETRASADO', 'DELAYED', 'EN RETARD', 'IN RITARDO'], fs_STALE: ['DESACTUALIZADO', 'STALE', 'OBSOLÈTE', 'OBSOLETO'], fs_HISTORICAL: ['HISTÓRICA', 'HISTORICAL', 'HISTORIQUE', 'STORICA'], fs_DISCONTINUED: ['DISCONTINUADA', 'DISCONTINUED', 'ARRÊTÉE', 'INTERROTTA'], fs_PENDING: ['PENDIENTE', 'PENDING', 'EN ATTENTE', 'IN SOSPESO'],
     an_UNEXPLAINED_ANOMALY: ['Sin explicar', 'Unexplained', 'Non expliquée', 'Non spiegata'], an_KNOWN_VERIFIED_ANOMALY: ['Verificada', 'Verified', 'Vérifiée', 'Verificata'],
+    ctry: ['Países: qué falta por llegar', 'Countries: what is still to arrive', 'Pays : ce qui reste à arriver', 'Paesi: cosa deve ancora arrivare'],
+    ctryTab: ['Países', 'Countries', 'Pays', 'Paesi'],
+    ctryHint: ['la cobertura de hoy, hasta dónde subiría si llega lo que se espera y de qué fuente. Las fechas son estimaciones: casi ninguna fuente publica calendario', 'today’s coverage, how far it would rise if what is expected arrives, and from which source. Dates are estimates: almost no source publishes a calendar', 'la couverture actuelle, jusqu’où elle monterait si ce qui est attendu arrive, et de quelle source. Les dates sont des estimations : presque aucune source ne publie de calendrier', 'la copertura di oggi, fin dove salirebbe se arriva ciò che è atteso e da quale fonte. Le date sono stime: quasi nessuna fonte pubblica un calendario'],
+    cCov: ['Cobertura', 'Coverage', 'Couverture', 'Copertura'], cMax: ['Hasta', 'Up to', 'Jusqu’à', 'Fino a'], cWait: ['Qué se espera', 'What is expected', 'Ce qui est attendu', 'Cosa è atteso'],
+    cCountry: ['País', 'Country', 'Pays', 'Paese'],
+    ctryWait: ['{0} series · {1} · último dato {2} · esperado desde {3} ({4} d de retraso)', '{0} series · {1} · latest {2} · expected since {3} ({4} d late)', '{0} séries · {1} · dernière donnée {2} · attendu depuis {3} ({4} j de retard)', '{0} serie · {1} · ultimo dato {2} · atteso dal {3} ({4} g di ritardo)'],
+    ctryLong: ['más de 4 meses tarde: puede que la fecha estimada no encaje con esta fuente, o que ya no se publique', 'over 4 months late: the estimated date may not fit this source, or it may no longer be published', 'plus de 4 mois de retard : la date estimée ne convient peut-être pas à cette source, ou elle n’est plus publiée', 'oltre 4 mesi di ritardo: la data stimata potrebbe non adattarsi a questa fonte, o potrebbe non essere più pubblicata'],
+    ctryNext: ['Próximo dato esperado', 'Next data expected', 'Prochaine donnée attendue', 'Prossimo dato atteso'], ctryNone: ['Nada pendiente: todo lo que debía llegar ha llegado.', 'Nothing pending: everything due has arrived.', 'Rien en attente : tout ce qui était dû est arrivé.', 'Niente in sospeso: è arrivato tutto ciò che era dovuto.'],
+    ctryNote: ['«Hasta» = cobertura si pasaran a cubiertas las celdas hoy retrasadas (producto × métrica). Es un techo, no una promesa: lo muy retrasado puede no volver.', '“Up to” = coverage if today’s delayed cells (product × metric) became covered. It is a ceiling, not a promise: what is very late may not come back.', '« Jusqu’à » = couverture si les cellules aujourd’hui en retard (produit × métrique) devenaient couvertes. C’est un plafond, pas une promesse : ce qui est très en retard peut ne pas revenir.', '«Fino a» = copertura se le celle oggi in ritardo (prodotto × metrica) diventassero coperte. È un tetto, non una promessa: ciò che è molto in ritardo potrebbe non tornare.'],
+    ctryErr: ['No se pudo cargar data/country-pending.json.', 'Could not load data/country-pending.json.', 'Impossible de charger data/country-pending.json.', 'Impossibile caricare data/country-pending.json.'],
+    series_n: ['series', 'series', 'séries', 'serie'],
     err404: ['—', '—', '—', '—'], link: ['Ver ficha', 'Open page', 'Voir la fiche', 'Apri scheda']
   };
   function t(k) { var a = TX[k]; if (!a) return k; var v = a[li()]; return v === undefined ? a[0] : v; }
   function tf(k, x) { return t(k).replace('{0}', x); }
-  var STEP = 20, LIM = { new: STEP, moves: STEP, late: STEP, up: STEP };  // render perezoso: 20 iniciales + 'Mostrar 20 mas'; los filtros se aplican a TODO el conjunto antes de paginar
+  var STEP = 20, LIM = { new: STEP, moves: STEP, late: STEP, up: STEP, ctry: STEP };  // render perezoso: 20 iniciales + 'Mostrar 20 mas'; los filtros se aplican a TODO el conjunto antes de paginar
   function pager(key, total) { var n = LIM[key]; return total > n ? '<p class="pt-sub" aria-live="polite">' + esc(t('showing').replace('{0}', n).replace('{1}', total)) + ' <button type="button" class="pt-chip" data-more="' + key + '">' + esc(t('more')) + '</button></p>' : ''; }
   function esc(s) { return String(s === null || s === undefined ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
@@ -144,6 +155,29 @@
     else h += '<h3 class="rl-h">' + esc(t('attention')) + '</h3><ul class="pt-list">' + p.attention.map(function (x) { return '<li><span class="pt-badge ' + (x.status === 'error' ? 'pt-fs-STALE' : 'pt-fs-DELAYED') + '">' + esc(t(x.status)) + '</span> ' + (x.url ? '<a href="' + esc(x.url) + '" rel="noopener">' + esc(x.name) + '</a>' : esc(x.name)) + (x.lastAt ? ' <span class="pt-sub">· ' + esc(dstr(x.lastAt)) + '</span>' : '') + '</li>'; }).join('') + '</ul>';
     return sec('pipelines', t('pipelines'), '', h);
   }
+  var PEND = null, PSRC = { eurostat_comext: 'Eurostat · Comext', sjv_se: 'Jordbruksverket', ble: 'BLE', statbel: 'Statbel', eurostat: 'Eurostat' };
+  function psrc(id) { return PSRC[id] || SRC[id] || String(id || '—').replace(/_/g, ' '); }
+  var CDN = {};
+  function ctryName(c, d) {
+    var L2 = lang();
+    if (c === 'EU') return { es: 'Unión Europea', en: 'European Union', fr: 'Union européenne', it: 'Unione europea' }[L2];
+    try { CDN[L2] = CDN[L2] || new Intl.DisplayNames([L2], { type: 'region' }); var iso = c === 'EL' ? 'GR' : c === 'UK' ? 'GB' : c, n = CDN[L2].of(iso); return n && n !== iso ? n : d; } catch (e) { return d; }
+  }
+  function secCtry() {
+    if (!PEND) return sec('countries', t('ctry'), t('ctryHint'), '<p class="pt-sub">…</p>');
+    if (PEND === 'err') return sec('countries', t('ctry'), '', '<p class="pt-err">' + esc(t('ctryErr')) + '</p>');
+    var all = PEND.countries, l = all.slice(0, LIM.ctry);
+    var h = '<p class="pt-sub">' + esc(t('ctryNote')) + '</p>' + table([[t('cCountry')], [t('cCov'), 1], [t('cMax'), 1], [t('cWait')]], l.map(function (c) {
+      var w = c.waiting.map(function (x) {
+        var long = x.daysLate > 120;
+        return '<li>' + esc(psrc(x.sourceId)) + ' — ' + esc(t('ctryWait').replace('{0}', x.n).replace('{1}', t('freq_' + x.frequency)).replace('{2}', x.latestPeriod).replace('{3}', dstr(x.expectedSinceMedian)).replace('{4}', x.daysLate)) + (long ? ' <span class="pt-badge pt-fs-STALE">' + esc(t('ctryLong')) + '</span>' : '') + '</li>';
+      }).join('');
+      var up = c.upcoming.length ? '<p class="pt-sub">' + esc(t('ctryNext')) + ': ' + c.upcoming.slice(0, 3).map(function (u) { return esc(psrc(u.sourceId)) + ' ' + esc(dstr(u.expectedNext)); }).join(' · ') + '</p>' : '';
+      return '<tr>' + td(t('cCountry'), '<strong>' + esc(ctryName(c.code, c.name)) + '</strong>') + td(t('cCov'), nf(c.pct, 0) + ' %', true) + td(t('cMax'), c.potentialPct > c.pct ? '<strong>' + nf(c.potentialPct, 0) + ' %</strong>' : '—', true) + td(t('cWait'), (w ? '<ul class="pt-list">' + w + '</ul>' : '<span class="pt-sub">' + esc(t('ctryNone')) + '</span>') + up) + '</tr>';
+    }));
+    h += pager('ctry', all.length);
+    return sec('countries', t('ctry'), t('ctryHint'), h);
+  }
   function render(keep) {
     var body = document.getElementById('ob-body'); if (!body) return;
     document.getElementById('ob-h1').textContent = t('title'); document.getElementById('ob-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
@@ -151,12 +185,12 @@
     var obs = DOC.observations.filter(ok), any = F.c || F.p || F.s || F.t;
     var h = '<p class="pt-sub">' + esc(t('updated')) + ' ' + esc(DOC.generatedAt.replace('T', ' ').replace('Z', ' UTC')) + '</p>';
     h += '<div class="rl-filters">' + filters() + '</div><p class="pt-sub" aria-live="polite">' + obs.length + ' ' + esc(t('shown')) + ' ' + DOC.observations.length + ' ' + esc(t('priceLayer')) + (any ? ' · <button type="button" class="pt-chip" data-reset="1">' + esc(t('reset')) + '</button>' : '') + '</p>';
-    h += '<nav class="pt-tabs" aria-label="' + esc(t('title')) + '">' + [['new', 'newObs'], ['moves', 'moves'], ['revisions', 'revisions'], ['freshness', 'freshness'], ['upcoming', 'upcoming'], ['coverage', 'coverage'], ['quality', 'quality'], ['pipelines', 'pipelines']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
-    h += secNew(obs) + secMoves(obs) + secRev() + secFresh(obs) + secUp(obs) + secCov() + secQ() + secPipes();
+    h += '<nav class="pt-tabs" aria-label="' + esc(t('title')) + '">' + [['new', 'newObs'], ['moves', 'moves'], ['revisions', 'revisions'], ['freshness', 'freshness'], ['upcoming', 'upcoming'], ['coverage', 'coverage'], ['countries', 'ctryTab'], ['quality', 'quality'], ['pipelines', 'pipelines']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
+    h += secNew(obs) + secMoves(obs) + secRev() + secFresh(obs) + secUp(obs) + secCov() + secCtry() + secQ() + secPipes();
     body.innerHTML = h;
     if (!keep && location.hash && /^#[a-z]+$/.test(location.hash)) { var el = document.getElementById(location.hash.slice(1)); if (el && el.scrollIntoView) el.scrollIntoView(); }
   }
-  function resetLim() { LIM = { new: STEP, moves: STEP, late: STEP, up: STEP }; }
+  function resetLim() { LIM = { new: STEP, moves: STEP, late: STEP, up: STEP, ctry: STEP }; }
   function onClick(e) {
     var mb = e.target.closest ? e.target.closest('button[data-more]') : null;
     if (mb) { var key = mb.getAttribute('data-more'); LIM[key] += STEP; render(true); var nb = document.querySelector('button[data-more="' + key + '"]'); if (nb && nb.focus) nb.focus({ preventScroll: true }); return; }
@@ -175,5 +209,6 @@
   window.DIObsDoc = fetch('data/observatory.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   window.DIObsDoc.then(function (d) { DOC = d; return window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null; }).then(function () { render(); })
     .catch(function () { body.innerHTML = '<p class="pt-err">' + esc(t('err')) + '</p>'; });
+  fetch('data/country-pending.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { PEND = d; render(true); }).catch(function () { PEND = 'err'; render(true); });
   window.DIObservatory = { state: function () { return { F: F, doc: DOC }; } };
 })();
