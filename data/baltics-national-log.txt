@@ -1,0 +1,14 @@
+LAC020c 7 series
+LAC020m 3 series
+LAB010 6 series
+LAB020 1 series
+LAG020 33 series
+LAL050m 1 series
+PM0281 27 series
+PM18 2 series
+PM192 3 series
+PM47 4 series
+PM20 5 series
+PM31 1 series
+OK 93 series, 5087 puntos
+rendimiento: se descarta el dato preliminar del año en curso cuando la CSP lo publica en otra unidad
