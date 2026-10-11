@@ -681,6 +681,19 @@
    "expectedEveryHours": 152.0
   },
   {
+   "workflow": "update-czechia-csu.yml",
+   "name": "Update Czechia (CSU open data, prices, inputs, harvest and sown area)",
+   "crons": [
+    "50 7 4,17 * *"
+   ],
+   "nextRun": "2026-10-17T07:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 432.0
+  },
+  {
    "workflow": "update-defra-milk.yml",
    "name": "Dehesa Data — Defra UK milk and price indices",
    "crons": [

@@ -296,6 +296,15 @@ sources:
     data: [baltics-national-stats.json]
     log: baltics-national-log.txt
     message: Datos Letonia y Estonia (oficinas nacionales de estadistica, precios y existencias)
+  - id: czechia-csu
+    name: Update Czechia (CSU open data, prices, inputs, harvest and sown area)
+    cron: ['50 7 4,17 * *']
+    script: scripts/update-cz-csu.py
+    timeout: 20
+    script_timeout: 12
+    data: [czechia-csu-stats.json]
+    log: czechia-csu-log.txt
+    message: Datos Chequia (CSU, datos abiertos de precios, insumos, cosecha y superficie)
   - id: switzerland-meteo
     name: Update Switzerland (MeteoSwiss climate)
     cron: ['35 5 4 * *']

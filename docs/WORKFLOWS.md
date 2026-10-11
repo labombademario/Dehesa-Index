@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-126 workflows (90 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+127 workflows (91 generados desde `sources.yml`, 36 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -119,6 +119,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-crop-insurance-ca.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-crop-insurance-ca.py | crop-insurance-ca.json | finish, validate-files |
 | update-crop-insurance.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-crop-insurance.py | crop-insurance.json | finish, validate-files |
 | update-crop-progress.yml | a mano | 2 veces/semana | update-crop-progress.mjs | crop-progress.json | finish, validate-files |
+| update-czechia-csu.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-cz-csu.py | czechia-csu-stats.json | finish, validate-files |
 | update-defra-milk.yml | a mano | semanal (5) | qa-site.mjs, update-defra-api-uk.py, update-defra-milk-uk.py | - | price-engine, publish |
 | update-denmark-depth.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-denmark-depth.py | denmark-depth.json | finish, validate-files |
 | update-denmark.yml | a mano | semanal (2,5) | update-dst-denmark.py | denmark-prices.json | finish, validate-files |

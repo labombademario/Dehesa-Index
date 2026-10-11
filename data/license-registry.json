@@ -2537,6 +2537,34 @@
    "short": "Statistics Estonia",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Pie de pagina de la base: datos abiertos bajo CC BY-SA 4.0; la clausula de compartir igual afecta a la redistribucion de la base completa."
+  },
+  "csu_cz": {
+   "name": "Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area)",
+   "url": "https://data.csu.gov.cz/opendata/",
+   "country": "CZ",
+   "licenseId": "CZ-OPENDATA-FREE",
+   "licenseName": "data.gov.cz terms of use declared per dataset: no copyright work, no protected database, no sui generis database right, no personal data",
+   "licenseUrl": "https://data.gov.cz/podmínky-užití/neobsahuje-autorská-díla/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Czech Statistical Office (CSU), open data DataStat.",
+   "additionalRestrictions": "None declared. Credit is given anyway.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "data.csu.gov.cz/opendata/sady/CEN0203B, CEN0203E, CEN02031, ZEM03A, ZEM03C (10-oct-2026): each distribution declares the data.gov.cz usage conditions «neobsahuje autorská díla», «není autorskoprávně chráněnou databází», «není chráněna zvláštním právem pořizovatele databáze», «neobsahuje osobní údaje».",
+   "used": true,
+   "aliases": [
+    "csu_cz"
+   ],
+   "notes": "Datasets used: CEN0203B (prices, monthly), CEN0203E (input prices, quarterly), CEN02031 (price indices, base 2020=100), ZEM03A (harvest and yield), ZEM03C (sown area at 31 May). Cumulative (K) and moving-average periods are not published.",
+   "short": "CSU (Chequia)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Cada conjunto declara las condiciones de uso de datos.gov.cz: sin obra protegida, sin base de datos protegida, sin derecho sui generis."
   }
  },
  "files": {
@@ -3450,6 +3478,12 @@
     "Statistics Estonia": "stat_ee"
    },
    "notes": "scripts/update-np-baltic.py: Letonia (CSP) y Estonia (Statistics Estonia), precios de compra, existencias, cultivos y leche."
+  },
+  "data/czechia-csu-stats.json": {
+   "bySourceGroupPrefix": {
+    "CSU Czechia": "csu_cz"
+   },
+   "notes": "scripts/update-cz-csu.py: datos abiertos del CSU, precios, insumos, indices, cosecha y superficie."
   }
  },
  "derived": [
