@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T21:46:00Z",
+ "generatedAt": "2026-10-11T23:23:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 123,
+  "ok": 124,
   "late": 1,
-  "error": 1,
+  "error": 0,
   "not_run": 0,
   "unknown": 0
  },
- "global": "error",
+ "global": "late",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "57293bc6",
+   "sha": "c288b9ab",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/676b333c-a644-44d9-ae05-23cf535ddf74",
-   "completedAt": "2026-10-11T21:30:27Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/b866e45c-4b46-49fb-8d34-03219089c8bf",
+   "completedAt": "2026-10-11T23:23:34Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -1690,21 +1690,21 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-11T21:47:00Z",
+   "nextRun": "2026-10-12T00:47:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-11T20:20:13Z",
-    "durationSec": 425,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38171772920"
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-10-11T21:55:50Z",
+    "durationSec": 171,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38178364808"
    },
    "recent": {
-    "runs": 2,
-    "success": 1,
+    "runs": 3,
+    "success": 2,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 3.0
   },
   {
@@ -1859,7 +1859,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-11T21:26:51Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1882,11 +1882,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/catalog"
@@ -1899,7 +1899,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/products"
@@ -1910,15 +1910,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1926,18 +1926,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-11T21:27:25Z"
+     "lastChange": "2026-10-11T21:51:15Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2577,14 +2577,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-07T18:00:10Z",
-    "durationSec": 127,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37663435045"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-11T23:17:39Z",
+    "durationSec": 314,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38183735594"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 3,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",

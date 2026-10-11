@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T21:48:17Z",
+ "generatedAt": "2026-10-11T23:25:29Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -3300,7 +3300,7 @@
    "country": "GB",
    "scope": "integrated",
    "institution": "HM Revenue & Customs - UK Trade Info (OTS, API OData)",
-   "dataset": "Ya integrada (15 series en el catalogo unificado)",
+   "dataset": "Ya integrada (37 series en el catalogo unificado)",
    "products": [
     "fertilizer",
     "maize",
