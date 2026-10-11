@@ -3575,6 +3575,12 @@
     "gisco_nuts"
    ],
    "notes": "Anomalia de humedad del suelo y SPI-3 por pais y region NUTS 2 (update-eu-drought-indicators.py): rejilla del EDO agregada a poligonos."
+  },
+  "data/eu-climate.json": {
+   "sources": [
+    "nasa_power"
+   ],
+   "notes": "Temperatura y lluvia mensual por pais frente a 1991-2020 (update-eu-climate.py): rejilla MERRA-2 de NASA POWER promediada por pais."
   }
  },
  "derived": [

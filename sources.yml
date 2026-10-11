@@ -485,6 +485,16 @@ sources:
     data: []
     extra: ['!data/eu-drought-ind']
     message: Humedad del suelo y SPI-3 Europa (EDO)
+  - id: eu-climate
+    name: Update EU monthly temperature and rainfall (NASA POWER)
+    cron: ['0 10 5,20 * *']
+    pre: ['python3 -m pip install --quiet numpy shapely']
+    script: scripts/update-eu-climate.py
+    timeout: 30
+    script_timeout: 24
+    continue: true
+    data: [eu-climate.json]
+    message: Temperatura y lluvia mensual Europa (NASA POWER)
   - id: embalses
     name: Update Spain reservoirs (MITECO)
     cron: ['30 9 * * 3,4']
