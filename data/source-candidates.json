@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-11T00:47:32Z",
+ "generatedAt": "2026-10-11T01:32:57Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 111,
+  "total": 112,
   "byStatus": {
-   "ACTIVE": 81,
+   "ACTIVE": 82,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3958,6 +3958,62 @@
    "derivatives": "yes",
    "attribution": "Bron: RVO (Rijksdienst voor Ondernemend Nederland), marktinformatie statistieken",
    "lastChecked": "2026-10-03",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "sjv_se",
+   "registryId": "sjv_se",
+   "country": "SE",
+   "scope": "integrated",
+   "institution": "Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks)",
+   "dataset": "Ya integrada (38 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "price_index",
+    "stocks"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC0-1.0-OR-CC-BY",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Jordbruksverket (Swedish Board of Agriculture), statistics database.",
+   "lastChecked": "2026-10-10",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
