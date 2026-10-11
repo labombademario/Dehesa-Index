@@ -52,7 +52,8 @@ def main():
         try:
             out = build(cc, reg)
             ok = sum(1 for v in out.values() if v.get("gdp") and v.get("pop"))
-            if ok < len(reg) * 0.8: raise ValueError("%s: solo %d de %d regiones con PIB y poblacion" % (cc.upper(), ok, len(reg)))
+            if ok < len(reg) * {"pt": 0.5}.get(cc, 0.8):  # PT: el PIB de Centro, Lisboa y Alentejo cambia de codigo NUTS en 2024 y Eurostat no lo publica con los codigos antiguos; esas tres quedan sin PIB (hueco)
+               raise ValueError("%s: solo %d de %d regiones con PIB y poblacion" % (cc.upper(), ok, len(reg)))
             res[cc.upper()] = out
         except Exception as e:
             print("FALLO", cc, repr(e)); LOG.append("FALLO %s %r" % (cc, e)); rc = 1
