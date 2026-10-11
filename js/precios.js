@@ -979,7 +979,7 @@
       return;
     }
     var all = productsInCat(state.activeTab), t = ui();
-    var entries = all.filter(entryHasData), missing = all.filter(function (e) { return entries.indexOf(e) < 0; });
+    var entries = all.filter(entryHasData), missing = all.filter(function (e) { return entries.indexOf(e) < 0 && !!resolveDisplay(e, state.location, state.euCountry).region; }); // un producto que no existe en este mercado (p. ej. novillos de Alberta en la UE) no cuenta como "sin datos"
     root.innerHTML = (entries.length ? viewBar() + '<div class="di-product-grid' + (viewMode() === 'rows' ? ' di-rows' : '') + '">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>' : '<p class="di-movers-hint">' + esc(t.noDataHereAll) + '</p>') +
       (missing.length ? '<details class="di-nodata-list" style="margin-top:14px"><summary style="cursor:pointer;font-size:13px;color:var(--text-faint)">' + esc(t.noDataHere) + ' (' + missing.length + ')</summary><p class="di-movers-hint" style="margin-top:6px">' + missing.map(function (e) { return esc(productName(e.nameKey)); }).join(' · ') + '</p></details>' : '');
     wireCardEvents(root);
