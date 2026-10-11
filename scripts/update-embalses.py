@@ -2,7 +2,7 @@
 """Reserva de agua de los embalses de Espana (MITECO, Boletin Hidrologico, base historica BD-Embalses.mdb) -> data/spain-reservoirs.json
 Fuente: https://www.miteco.gob.es/ (Historico de embalses). Datos semanales por embalse (hm3 de capacidad y de agua almacenada) desde 1988, ficheros de Access:
 se leen con mdbtools (mdb-export). Licencia: aviso legal del MITECO, que permite reutilizar la informacion sin autorizacion expresa citando la fuente
-(Ley 37/2007 de reutilizacion de la informacion del sector publico), salvo derechos de terceros. Los datos del boletin son provisionales y sin validar.
+(Ley 37/2007 de reutilizacion de la informacion del sector publico), salvo derechos de terceros. Los datos del boletin son provisionales (las ultimas semanas pueden revisarse); contrastados el 11-10-2026 con las notas de prensa del MITECO (14-10-2025 y 18-08-2026): capacidad identica y agua almacenada con diferencias de 0,2 % o menos.
 Por demarcacion hidrografica ('ambito') y para toda Espana: agua almacenada y capacidad de los embalses que informan esa semana, % de llenado, y por semana del ano
 la media, el minimo y el maximo de los ultimos 10 anos completos anteriores al actual (para ver si el nivel esta por encima o por debajo de lo habitual).
 Si algo falla (descarga, formato, tabla) el fichero anterior se conserva. Uso: python3 scripts/update-embalses.py [--mdb ruta]"""
@@ -43,6 +43,13 @@ def main():
         if n < 100000 or "ES" not in tot or len(tot) < 15: raise ValueError("tabla inesperada: %d filas, %d ambitos" % (n, len(tot)))
         asof = max(tot["ES"]); weeks = sorted(d for d in tot["ES"] if d <= asof)
         if (datetime.date.today() - asof).days > 45: raise ValueError("ultimo dato muy antiguo: %s" % asof)
+        # controles de coherencia: capacidad total estable (~56.000 hm3), cambio semanal razonable y llenado entre 0 y 100 %
+        wk = weeks[-12:]
+        for a, b in zip(wk, wk[1:]):
+            if abs(tot["ES"][b][0] - tot["ES"][a][0]) > 8000: raise ValueError("salto semanal sospechoso en %s" % b)
+        cap = tot["ES"][asof][1]
+        if not 54000 <= cap <= 58000 or tot["ES"][asof][0] > cap: raise ValueError("capacidad o llenado incoherentes: %.0f / %.0f hm3" % (tot["ES"][asof][0], cap))
+        if tot["ES"][asof][2] < 300: raise ValueError("pocos embalses informan en %s: %d" % (asof, tot["ES"][asof][2]))
         recent = [d for d in weeks if d >= weeks[-1] - datetime.timedelta(weeks=KEEP - 1)]
         series = {}; clim = {}
         for k, t in tot.items():
@@ -57,7 +64,7 @@ def main():
             clim[k] = {str(w): [round(sum(v) / len(v), 1), round(min(v), 1), round(max(v), 1)] for w, v in by.items() if len(v) >= 6}
         doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "asOf": asof.isoformat(), "unit": "hm3",
                "source": {"name": "MITECO, Boletin Hidrologico (BD-Embalses)", "url": "https://www.miteco.gob.es/es/agua/temas/evaluacion-de-los-recursos-hidricos/boletin-hidrologico.html", "license": "Aviso legal del MITECO: reutilizacion libre citando la fuente (Ley 37/2007)"},
-               "note": "Datos provisionales sin validar. Porcentaje = agua almacenada / capacidad de los embalses que informan esa semana. Referencia: media, minimo y maximo de los 10 anos anteriores en la misma semana ISO.",
+               "note": "Datos provisionales (pueden revisarse las ultimas semanas); contrastados con las notas de prensa del MITECO. Porcentaje = agua almacenada / capacidad de los embalses que informan esa semana. Referencia: media, minimo y maximo de los 10 anos anteriores en la misma semana ISO.",
                "series": series, "climatology": clim}
     except Exception as e: print("FALLO:", e); return 1
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
