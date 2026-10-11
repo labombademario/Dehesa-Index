@@ -3261,9 +3261,12 @@
     "usda_nass",
     "usda_ers",
     "usda_fas_psd",
-    "franceagrimer"
+    "franceagrimer",
+    "statcan",
+    "eurostat",
+    "mapa_es"
    ],
-   "notes": "Comparador de siembra (Que sembrar): derivado de nass-crops.json, ers.json, ers-cost-reference.json, supply-demand.json, prices/history/us y los ficheros de FranceAgriMer ya publicados (build-sowing.py)."
+   "notes": "Comparador de siembra (Que sembrar): derivado de nass-crops.json, ers.json, ers-cost-reference.json, supply-demand.json, prices/history/us, ficheros de FranceAgriMer, canada-provinces.json, canada-stats.json, prices/history/ca, eu-regions-es.json, eurostat y precios y balances de MAPA ya publicados (build-sowing.py)."
   },
   "data/eurostat-eu-stats.json": {
    "byCountry": {

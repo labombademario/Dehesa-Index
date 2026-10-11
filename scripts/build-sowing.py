@@ -121,6 +121,114 @@ def fr():
     (OUT / "fr.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
     return len(crops), len(regions)
 
+
+# ---------------- Canada ----------------
+CAP = {"NL": N4("Terranova y Labrador", "Newfoundland and Labrador", "Terre-Neuve-et-Labrador", "Terranova e Labrador"), "PE": N4("Isla del Príncipe Eduardo", "Prince Edward Island", "Île-du-Prince-Édouard", "Isola del Principe Edoardo"),
+       "NS": N4("Nueva Escocia", "Nova Scotia", "Nouvelle-Écosse", "Nuova Scozia"), "NB": N4("Nuevo Brunswick", "New Brunswick", "Nouveau-Brunswick", "Nuovo Brunswick"), "QC": N4("Quebec", "Quebec", "Québec", "Québec"),
+       "ON": N4("Ontario", "Ontario", "Ontario", "Ontario"), "MB": N4("Manitoba", "Manitoba", "Manitoba", "Manitoba"), "SK": N4("Saskatchewan", "Saskatchewan", "Saskatchewan", "Saskatchewan"),
+       "AB": N4("Alberta", "Alberta", "Alberta", "Alberta"), "BC": N4("Columbia Británica", "British Columbia", "Colombie-Britannique", "Columbia Britannica")}
+# clave StatCan (canada-provinces.json), nombre, fichero de precio nacional mensual (data/prices/history/ca), etiqueta del balance de granos
+CA = [("wheat-all", N4("Trigo (total)", "Wheat (all)", "Blé (total)", "Frumento (totale)"), "trigo", "Wheat (all)"), ("barley", N4("Cebada", "Barley", "Orge", "Orzo"), "cebada", "Barley"),
+      ("oats", N4("Avena", "Oats", "Avoine", "Avena"), "avena", "Oats"), ("canola-rapeseed", N4("Canola (colza)", "Canola (rapeseed)", "Canola (colza)", "Canola (colza)"), "colza", "Canola"),
+      ("soybeans", N4("Soja", "Soybeans", "Soja", "Soia"), "soja_grano", "Soybeans"), ("corn-for-grain", N4("Maíz grano", "Grain corn", "Maïs grain", "Mais da granella"), "maiz", None),
+      ("flaxseed", N4("Lino", "Flaxseed", "Lin", "Lino"), "lino", "Flaxseed"), ("peas-dry", N4("Guisante seco", "Dry peas", "Pois secs", "Piselli secchi"), "guisante_seco", "Dry peas"),
+      ("lentils", N4("Lenteja", "Lentils", "Lentilles", "Lenticchie"), "lenteja", "Lentils")]
+def ca():
+    prov = load("canada-provinces.json")["provinces"]; ser = {x["label"]: x for x in load("canada-stats.json")["countries"]["CA"]["series"]}
+    crops, regions = {}, {}
+    for cid, nm, pf, bal in CA:
+        pp = D / "prices/history/ca" / (pf + ".json")
+        if not pp.exists(): continue
+        h = load("prices/history/ca/" + pf + ".json")["history"]
+        by = {}
+        for r in h: by.setdefault(r["year"], []).append(r["value"])
+        hist = {str(y): round(statistics.mean(v), 2) for y, v in sorted(by.items()) if len(v) >= 10}   # solo años con al menos 10 meses publicados
+        last12 = h[-12:]
+        if len(last12) < 12 or not hist: continue
+        cur = {"value": round(statistics.mean(x["value"] for x in last12), 2), "kind": "avg12m", "from": "%d-%s" % (last12[0]["year"], last12[0]["period"]), "to": "%d-%s" % (last12[-1]["year"], last12[-1]["period"]), "sourceId": "statcan"}
+        stocks = None
+        if bal:
+            g = lambda k: {p[0]: p[1] for p in ser.get("Grain balance %s: %s (crop year Aug-Jul)" % (bal, k), {}).get("points", [])}
+            e, d, x = g("ending stocks"), g("domestic disappearance"), g("exports")
+            r = [(y, e[y] / (d[y] + x[y])) for y in sorted(e) if y in d and y in x and d[y] + x[y] > 0]
+            if len(r) >= 6: stocks = {"ratio": round(r[-1][1], 4), "year": r[-1][0], "avg5": round(statistics.mean(v for _, v in r[-6:-1]), 4), "sourceId": "statcan"}
+        crops[cid] = {"name": nm, "yieldUnit": "t/ha", "priceUnit": "CAD/t", "areaUnit": "ha", "revUnit": "CAD/ha", "price": {"current": cur, "hist": hist}, "costs": None, "stocks": stocks}
+    for code, P in prov.items():
+        if code not in CAP: continue
+        rr = {"name": CAP[code]["en"], "names": CAP[code], "crops": {}}
+        for cid in crops:
+            c = P["crops"].get(cid)
+            if not c or not c.get("yield") or not c.get("area"): continue
+            yld = {str(y): round(v / 1000, 3) for y, v in c["yield"] if v}
+            area = {str(y): round(v * 1000) for y, v in c["area"] if v}
+            ph = crops[cid]["price"]["hist"]
+            rr["crops"][cid] = {"yield": yld, "area": area, "rev": {y: round(yld[y] * ph[y], 1) for y in yld if y in ph}}
+        if rr["crops"]: regions[code] = rr
+    doc = {"schemaVersion": 1, "generatedAt": NOW, "country": "CA", "areaUnit": "ha", "currency": "CAD",
+           "note": "Rendimiento y superficie sembrada por provincia (Statistics Canada, tabla 32-10-0359; el año en curso es una estimacion provisional), precio al productor = media anual de los precios mensuales nacionales (Statistics Canada, 32-10-0077; solo años con 10 o mas meses), ingreso por ha = rendimiento x precio medio de ese año. No hay costes de cultivo ni precios por provincia en Dehesa para Canada. Existencias = existencias finales / (consumo interior + exportaciones) del balance de granos (Statistics Canada).",
+           "crops": crops, "regions": regions}
+    (OUT / "ca.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
+    return len(crops), len(regions)
+
+# ---------------- España (por comunidad autonoma) ----------------
+ESR = {"GA": N4("Galicia", "Galicia", "Galice", "Galizia"), "AS": N4("Asturias", "Asturias", "Asturies", "Asturie"), "CB": N4("Cantabria", "Cantabria", "Cantabrie", "Cantabria"), "PV": N4("País Vasco", "Basque Country", "Pays basque", "Paesi Baschi"),
+       "NC": N4("Navarra", "Navarre", "Navarre", "Navarra"), "RI": N4("La Rioja", "La Rioja", "La Rioja", "La Rioja"), "AR": N4("Aragón", "Aragon", "Aragon", "Aragona"), "MD": N4("Madrid", "Madrid", "Madrid", "Madrid"),
+       "CL": N4("Castilla y León", "Castile and León", "Castille-et-León", "Castiglia e León"), "CM": N4("Castilla-La Mancha", "Castilla-La Mancha", "Castille-La Manche", "Castiglia-La Mancia"), "EX": N4("Extremadura", "Extremadura", "Estrémadure", "Estremadura"),
+       "CT": N4("Cataluña", "Catalonia", "Catalogne", "Catalogna"), "VC": N4("Comunitat Valenciana", "Valencian Community", "Communauté valencienne", "Comunità Valenciana"), "IB": N4("Illes Balears", "Balearic Islands", "Îles Baléares", "Isole Baleari"),
+       "AN": N4("Andalucía", "Andalusia", "Andalousie", "Andalusia"), "MC": N4("Región de Murcia", "Murcia", "Murcie", "Murcia"), "CN": N4("Canarias", "Canary Islands", "Canaries", "Canarie")}
+# codigo Eurostat de cultivo, nombre, id Eurostat de precio anual (EUR/100 kg), id MAPA de precio mensual percibido (o None), clave del balance de cereales MAPA (o None)
+ESC = [("C1110", N4("Trigo blando", "Soft wheat", "Blé tendre", "Grano tenero"), "es-es-crop-01110000", "es-perc-trigo", "wheat_soft"), ("C1120", N4("Trigo duro", "Durum wheat", "Blé dur", "Grano duro"), "es-es-crop-01120000", None, "wheat_durum"),
+       ("C1200", N4("Centeno", "Rye", "Seigle", "Segale"), "es-es-crop-01200000", "es-perc-centeno", "rye"), ("C1300", N4("Cebada", "Barley", "Orge", "Orzo"), "es-es-crop-01300000", "es-perc-cebada", "barley"),
+       ("C1500", N4("Maíz grano", "Grain maize", "Maïs grain", "Mais da granella"), "es-es-crop-01500000", "es-perc-maiz", "maize"), ("I1110", N4("Colza", "Rapeseed", "Colza", "Colza"), "es-es-crop-02110000", None, None),
+       ("I1120", N4("Girasol", "Sunflower", "Tournesol", "Girasole"), "es-es-crop-02120000", "es-perc-girasol", None), ("R1000", N4("Patata", "Potatoes", "Pommes de terre", "Patate"), "es-es-crop-05120000", "es-perc-patata", None),
+       ("R2000", N4("Remolacha azucarera", "Sugar beet", "Betterave sucrière", "Barbabietola da zucchero"), "es-es-crop-02400000", "es-perc-remolacha-azucarera", None)]
+def es():
+    reg = load("eu-regions-es.json")["regions"]; ser = {}
+    for f in ("eurostat-euw-stats.json", "spain-stats.json"):
+        for x in load(f)["countries"]["ES"]["series"]: ser[x["id"]] = x
+    bal = load("spain-balances/cereals.json")
+    today_ym = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m"); crops = {}
+    for cid, nm, eid, mid, bk in ESC:
+        e = ser.get(eid)
+        if not e: continue
+        k100 = 1 if "1000 kg" in (e.get("unit") or "") else 10   # remolacha: Eurostat ya da EUR/1000 kg; el resto EUR/100 kg
+        hist = {p[0]: round(p[1] * k100, 2) for p in e["points"]}   # -> EUR/t
+        cur = None
+        m = ser.get(mid) if mid else None
+        if m and len(m["points"]) >= 12:
+            ym = lambda per: int(per[:4]) * 12 + int(per[5:7]); lastm = ym(m["points"][-1][0])
+            win = [pt for pt in m["points"] if lastm - 11 <= ym(pt[0]) <= lastm]   # ultimos 12 MESES (no 12 puntos: la serie tiene huecos); se exigen al menos 9
+            y, mo = int(today_ym[:4]), int(today_ym[5:])
+            if len(win) >= 9 and (y * 12 + mo) - lastm <= 8: cur = {"value": round(statistics.mean(v for _, v in win) * 10, 2), "kind": "avg12m", "from": win[0][0], "to": win[-1][0], "sourceId": "mapa_es"}
+        if not cur:
+            yy = max(hist); cur = {"value": hist[yy], "kind": "implied", "from": yy, "to": yy, "sourceId": "eurostat"}
+        stocks = None
+        if bk:
+            r = []
+            for y in sorted(bal["campaigns"], key=int):
+                v = bal["campaigns"][y]["v"].get(bk) or {}
+                if v.get("endingStocks") is not None and v.get("totalUse"): r.append((y, v["endingStocks"] / v["totalUse"]))
+            if len(r) >= 6: stocks = {"ratio": round(r[-1][1], 4), "year": r[-1][0], "avg5": round(statistics.mean(x[1] for x in r[-6:-1]), 4), "sourceId": "mapa_es"}
+        crops[cid] = {"name": nm, "yieldUnit": "t/ha", "priceUnit": "EUR/t", "areaUnit": "ha", "revUnit": "EUR/ha", "price": {"current": cur, "hist": hist}, "costs": None, "stocks": stocks}
+    regions = {}
+    for code, R in reg.items():
+        if code not in ESR: continue
+        rr = {"name": ESR[code]["es"], "names": ESR[code], "crops": {}}
+        for cid in crops:
+            c = R["crops"].get(cid)
+            if not c or not c.get("area") or not c.get("prod"): continue
+            a = {str(y): v for y, v in c["area"]}; pr = {str(y): v for y, v in c["prod"]}
+            yld = {y: round(pr[y] / a[y], 3) for y in a if y in pr and a[y] > 0 and pr[y] > 0}
+            area = {y: round(a[y] * 1000) for y in a if a[y] > 0}
+            ph = crops[cid]["price"]["hist"]
+            if len(yld) >= 3: rr["crops"][cid] = {"yield": yld, "area": area, "rev": {y: round(yld[y] * ph[y], 1) for y in yld if y in ph}}
+        if rr["crops"]: regions[code] = rr
+    doc = {"schemaVersion": 1, "generatedAt": NOW, "country": "ES", "areaUnit": "ha", "currency": "EUR",
+           "note": "Rendimiento (produccion / superficie) y superficie por comunidad autonoma (Eurostat, apro_cpshr), precio al productor por año (Eurostat, apro_cp_crop: precio nacional) y precio actual = media de 12 meses del precio percibido (MAPA) cuando esta al dia; existencias = existencias finales / consumo total del balance de cereales del MAPA. Ingreso por ha = rendimiento x precio nacional de ese año. No hay costes de cultivo publicados en Dehesa para España.",
+           "crops": crops, "regions": regions}
+    (OUT / "es.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
+    return len(crops), len(regions)
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    print("us", us()); print("fr", fr())
+    print("us", us()); print("fr", fr()); print("ca", ca()); print("es", es())
