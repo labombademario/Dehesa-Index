@@ -1,0 +1,749 @@
+{
+"scb": [
+[
+"/JO/JO0106",
+"Holdings and holders in agriculture",
+"l"
+],
+[
+"/JO/JO0106/ForetagStorlekK",
+"Agricultural enterprises by municipality and size class. Year 1981, 1985, 1989-2000, 2003 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0106/ForetagStorlekL",
+"Agricultural enterprises by county/country and size class. Year 1981 -2000, 2003, 2005, 2007 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0106/ForetagFormL",
+"Agricultural enterprises by county/country and juridical form. Year 1981-2000, 2003, 2005 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0106/ForetagareAlder8195",
+"Agricultural enterprise farmers by county/country and age. Year 1981-1995 1981 - 1995",
+"t"
+],
+[
+"/JO/JO0106/ForetagareAlder96",
+"Agricultural enterprise farmers by county/country and age. Year 1996-2003 1996 - 2007",
+"t"
+],
+[
+"/JO/JO0103",
+"Farm animals in June",
+"l"
+],
+[
+"/JO/JO0103/HusdjurK",
+"Livestock by municipality and type of animal. Year 1981, 1985, 1989-1995, 1999, 2003 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0103/HusdjurL",
+"Livestock by county/country and type of animal. Year 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0104",
+"Use of agricultural land",
+"l"
+],
+[
+"/JO/JO0104/AkerArealGrodaK",
+"Use of arable land by municipality and crop. Year 1981, 1985, 1989–1995, 1999–2007 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0104/AkerArealGrodaL",
+"Use of arable land by county/country and crop. Year 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0104/AgoslagArealK",
+"Type of land area by municipality. Year 1981, 1985, 1989-1999 1981 - 1999",
+"t"
+],
+[
+"/JO/JO0104/AgoslagArealL",
+"Type of land area by county/country. Year 1981-1999, 2003- 1981 - 2007",
+"t"
+],
+[
+"/JO/JO0601",
+"Production of cereals, dried pulses and oilseeds",
+"l"
+],
+[
+"/JO/JO0601/SkordarL2",
+"Yield per hectar and total production in regions/country for different crops. Yearly data 1965 - 2025",
+"t"
+]
+],
+"sjv": [
+[
+"/Animalieproduktion",
+"Animalieproduktion",
+"l"
+],
+[
+"/Animalieproduktion/Mejeriproduktion",
+"Mejeriproduktion",
+"l"
+],
+[
+"/Animalieproduktion/Mejeriproduktion/JO0604A1.px",
+"Mejeriproduktion. År 1995-2025",
+"t"
+],
+[
+"/Animalieproduktion/Mejeriproduktion/JO0604A2.px",
+"Mejeriproduktion. Månad 1995-2026",
+"t"
+],
+[
+"/Animalieproduktion/Slakt",
+"Slakt",
+"l"
+],
+[
+"/Animalieproduktion/Slakt/JO0604A3.px",
+"Slakt av större lantbruksdjur vid slakteri. År 1995-2025",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604A4.px",
+"Slakt av större lantbruksdjur vid slakteri. Månad 1995-2026",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604A5.px",
+"Slakt av fjäderfä vid slakteri. År 1995-2025",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604A6.px",
+"Slakt av fjäderfä vid slakteri. Kvartal 1995-2014",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604A9.px",
+"Slakt av fjäderfä vid slakteri. Månad 2015-2026",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604B1.px",
+"Slakt av större lantbruksdjur efter län. År 2016-2025",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604B2.px",
+"Slakt av större lantbruksdjur efter produktionsområde. År 2016-2025",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604B3.px",
+"Slakt av större lantbruksdjur efter storleksgrupp. År 2016-2025",
+"t"
+],
+[
+"/Animalieproduktion/Slakt/JO0604C1.px",
+"Slakt av större lantbruksdjur efter besättningsstorlek. År 2017-2025",
+"t"
+],
+[
+"/Animalieproduktion/Agg",
+"Ägg",
+"l"
+],
+[
+"/Animalieproduktion/Agg/JO0604A7.px",
+"Partihandelns invägning av ägg. År 1995-2025",
+"t"
+],
+[
+"/Animalieproduktion/Agg/JO0604A8.px",
+"Partihandelns invägning av ägg. Månad 1995-2026",
+"t"
+],
+[
+"/Arealer",
+"Arealer",
+"l"
+],
+[
+"/Arealer/1 Riket län kommun",
+"Riket/ län/ kommun ",
+"l"
+],
+[
+"/Arealer/2 Produktionsområde storleksindelning",
+"Produktionsområde/ storleksindelning",
+"l"
+],
+[
+"/Arealer/3 Ägoslagsareal riket län kommun",
+"Ägoslagsareal",
+"l"
+],
+[
+"/Arealer/Bevattning och dranering",
+"Bevattning och dränering",
+"l"
+],
+[
+"/Arealer/Hostsadda arealer",
+"Höstsådda arealer",
+"l"
+],
+[
+"/Arealer/Preliminar arealstatistik",
+"Preliminära arealer",
+"l"
+],
+[
+"/Djurhälsa",
+"Djurhälsa",
+"l"
+],
+[
+"/Ekologisk produktion",
+"Ekologisk produktion",
+"l"
+],
+[
+"/Jordbruksforetag",
+"Företag och företagare",
+"l"
+],
+[
+"/Jordbruksforetag/Heltidsjordbruket i Sverige",
+"Heltidsjordbruket i Sverige",
+"l"
+],
+[
+"/Jordbruksforetag/Jordbruksforetag och jordbruksforetagare",
+"Jordbruksföretag och jordbruksföretagare",
+"l"
+],
+[
+"/Jordbruksforetag/Kombinationsverksamhet",
+"Jordbruksföretagens kombinationsverksamheter",
+"l"
+],
+[
+"/Jordbruksforetag/Kombinationsverksamhet/JO0108K01.px",
+"Antal företag med kombinationsverksamhet efter län och typ av verksamhet. År 2007-2023",
+"t"
+],
+[
+"/Jordbruksforetag/Kombinationsverksamhet/JO0108K02.px",
+"Antal företag med kombinationsverksamhet efter produktionsområde och typ av verksamhet. År 2007-2023",
+"t"
+],
+[
+"/Jordbruksforetag/Kombinationsverksamhet/JO0108K03.px",
+"Antal företag med kombinationsverksamhet efter storleksgrupp och typ av verksamhet. År 2007-2023",
+"t"
+],
+[
+"/Jordbruksforetag/Kombinationsverksamhet/JO0108K05.px",
+"Antal företag med kombinationsverksamhet efter driftsinriktning och typ av verksamhet. År 2007-2023",
+"t"
+],
+[
+"/Jordbruksforetag/Kombinationsverksamhet/JO0108K06.px",
+"Antal företag med kombinationsverksamhet efter andel av företagets omsättning och typ av verksamhet. År 2007-2023",
+"t"
+],
+[
+"/Jordbruksforetag/Svensk Typologi",
+"Svensk Typologi",
+"l"
+],
+[
+"/Jordbruksforetag/Jämför Lantbruksregistret med Företagsregistret och Registerbaserad arbetsmarknadsstatistik",
+"Jämför Lantbruksregistret med Företagsregistret och Registerbaserad arbetsmarknadsstatistik",
+"l"
+],
+[
+"/Jordbrukets ekonomi",
+"Jordbrukets ekonomi",
+"l"
+],
+[
+"/Konsumtion av livsmedel",
+"Konsumtion av livsmedel",
+"l"
+],
+[
+"/Lantbrukets djur",
+"Lantbrukets djur",
+"l"
+],
+[
+"/Priser och prisindex",
+"Priser och prisindex",
+"l"
+],
+[
+"/Skordar",
+"Skörd av jordbruksväxter",
+"l"
+],
+[
+"/Skordar/JO0601J01.px",
+"Hektar- och totalskörd efter län och gröda. År 1965-2025",
+"t"
+],
+[
+"/Skordar/JO0601J02.px",
+"Hektar- och totalskörd efter produktionsområde och gröda. År 1965-2025",
+"t"
+],
+[
+"/Skordar/JO0601K01.px",
+"Arealfördelning av slåtter- och betesvall efter län och typ av vall. År 2003-2025",
+"t"
+],
+[
+"/Skordar/JO0601K02.px",
+"Arealfördelning av slåtter- och betesvall efter produktionsområde och typ av vall. År 2002-2025",
+"t"
+],
+[
+"/Skordar/JO0601L01.px",
+"Obärgade arealer av grödarealer efter län och gröda. År 2002-2025",
+"t"
+],
+[
+"/Skordar/JO0601L02.px",
+"Obärgade arealer av grödarealer efter produktionsområde och gröda. År 2002-2025",
+"t"
+],
+[
+"/Skordar/JO0601M01.px",
+"Areal skördad som grönfoder av slutlig grödareal efter län och gröda. År 2002-2025",
+"t"
+],
+[
+"/Skordar/JO0601M02.px",
+"Areal skördad som grönfoder av slutlig grödareal efter produktionsområde och gröda. År 2002-2025",
+"t"
+],
+[
+"/Skordar/Ekologisk skord",
+"Ekologisk skörd",
+"l"
+],
+[
+"/Skordar/Normskord",
+"Normskörd",
+"l"
+],
+[
+"/Skordar/Normskord/JO0602A01.px",
+"Normskörd efter län, gröda och typ av normskörd. År 2003–2026",
+"t"
+],
+[
+"/Skordar/Normskord/JO0602A02.px",
+"Normskörd efter produktionsområde, gröda och typ av normskörd. År 2003–2026",
+"t"
+],
+[
+"/Skordar/Normskord/JO0602A03.px",
+"Normskörd efter skördeområde och gröda. År 2003-2026",
+"t"
+],
+[
+"/Skordar/Viltskador",
+"Viltskador",
+"l"
+],
+[
+"/Skordar/Viltskador/JO0601V01.px",
+"Företag och grödareal med viltskador efter län och gröda. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Viltskador/JO0601V02.px",
+"Företag och grödareal med viltskador efter produktionsområde och gröda. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Viltskador/JO0601V03.px",
+"Viltskador i lantbruksgrödor efter län, gröda och djurslag. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Viltskador/JO0601V04.px",
+"Viltskador i lantbruksgrödor efter produktionsområde, gröda och djurslag. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Viltskador/JO0601V11.px",
+"Antal företag som odlar spannmål, trindsäd och oljeväxter där förekomsten av vilt påverkar val av gröda efter län och djurslag. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Viltskador/JO0601V12.px",
+"Antal företag som odlar spannmål, trindsäd och oljeväxter där förekomsten av vilt påverkar val av gröda efter produktionsområde och djurslag. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Viltskador/JO0601V13.px",
+"Andel företag som odlar spannmål, trindsäd och oljeväxter med viltskadad areal efter län och typ av odling. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Viltskador/JO0601V14.px",
+"Andel företag som odlar spannmål, trindsäd och oljeväxter med viltskadad areal efter produktionsområde och typ av odling. År 2014, 2020 och 2023",
+"t"
+],
+[
+"/Skordar/Preliminar skord",
+"Preliminär skörd",
+"l"
+],
+[
+"/Skordar/Skordeprognos",
+"Skördeprognos",
+"l"
+],
+[
+"/Skordar/Skordeprognos/JO0605P01.px",
+"Skördeprognos efter gröda. År 2001-2026",
+"t"
+],
+[
+"/Skordar/Lagerhallning",
+"Lagerhållning",
+"l"
+],
+[
+"/Skordar/Lagerhallning/JO0611L01.px",
+"Lagerhållning av spannmål och raps efter gröda. År 2021-2025",
+"t"
+],
+[
+"/Skordar/Lagerhallning/JO0611L02.px",
+"Lagerhållning av spannmål och raps efter produktionsområde. År 2021-2025",
+"t"
+],
+[
+"/Sysselsattning",
+"Sysselsättning och utbildning",
+"l"
+],
+[
+"/Sysselsattning/JO1101Q01.px",
+"Sysselsättning i jordbruket efter län, företagsform, företagsroll och kön. År 2003-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q02.px",
+"Sysselsättning i jordbruket efter produktionsområde, företagsform, företagsroll och kön. År 2003-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q03.px",
+"Sysselsättning i jordbruket efter storleksgrupp, företagsform, företagsroll och kön. År 2003-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q04.px",
+"Sysselsättning i jordbruket efter driftsinriktning, företagsform, företagsroll och kön. År 2020-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q11.px",
+"Sysselsättning i jordbruket efter ålder, företagsform, företagsroll, och kön. År 2003-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q12.px",
+"Sysselsättning i jordbruket efter arbetstid, företagsform, företagsroll, och kön. År 2003-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q21.px",
+"Sysselsättning utanför jordbruket för enskilda företag efter företagsroll. År 2016-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q31.px",
+"Driftsledarens utbildningsnivå efter jordbruksföretagets driftsinriktning. År 2010-2023",
+"t"
+],
+[
+"/Sysselsattning/JO1101Q32.px",
+"Driftsledarens utbildningsnivå efter driftsledarens kön och ålder. År 2013-2023",
+"t"
+],
+[
+"/Tradgardsodling",
+"Trädgårdsodling",
+"l"
+],
+[
+"/Tradgardsodling/Oversikt",
+"Översikt",
+"l"
+],
+[
+"/Tradgardsodling/Oversikt/JO0102L01.px",
+"Översikt trädgårdsodling efter odlingsform och odlingsinriktning. År 1971-2023",
+"t"
+],
+[
+"/Tradgardsodling/Oversikt/JO0102L02.px",
+"Översikt trädgårdsodling efter län och odlingsform. År 1971-2023",
+"t"
+],
+[
+"/Tradgardsodling/Oversikt/JO0102L11.px",
+"Översikt trädgårdsodling efter odlingsform och företagets storlek. År 2002-2023",
+"t"
+],
+[
+"/Tradgardsodling/Odling",
+"Odling",
+"l"
+],
+[
+"/Tradgardsodling/Odling/Atbara vaxter",
+"Ätbara växter",
+"l"
+],
+[
+"/Tradgardsodling/Odling/Prydnadsvaxter",
+"Prydnadsväxter",
+"l"
+],
+[
+"/Tradgardsodling/Odling/Prydnadsvaxter/JO0102T01.px",
+"Plantskoleväxter (ej skogsplantor) efter gröda och odlingsform. År 1971-2023",
+"t"
+],
+[
+"/Tradgardsodling/Odling/Prydnadsvaxter/JO0102T12.px",
+"Snittblommor efter gröda och odlingsform. År 1971-2023",
+"t"
+],
+[
+"/Tradgardsodling/Odling/Prydnadsvaxter/JO0102T21.px",
+"Lökblommor i kruka efter län och gröda. År 1999-2023",
+"t"
+],
+[
+"/Tradgardsodling/Odling/Prydnadsvaxter/JO0102T31.px",
+"Kruk- och utplanteringsväxter (exkl. lökväxter) efter län och gröda. År 1971-2023",
+"t"
+],
+[
+"/Tradgardsodling/Sysselsattning",
+"Sysselsättning",
+"l"
+],
+[
+"/Tradgardsodling/Sysselsattning/JO0102U21.px",
+"Sysselsättning i trädgårdsproduktionen efter län, arbetstid och företagsanknytning. År 1987-2023",
+"t"
+],
+[
+"/Tradgardsodling/Sysselsattning/JO0102U31.px",
+"Antal företagare och driftsledare i trädgårdsproduktion efter åldersfördelning. År 2008-2023",
+"t"
+],
+[
+"/Tradgardsodling/Varde",
+"Värde",
+"l"
+],
+[
+"/Tradgardsodling/Varde/JO0102N01.px",
+"Summeringar. Värde, miljoner kr. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N02.px",
+"Köksväxter (friland). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N03.px",
+"Frukt (friland). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N04.px",
+"Bär (friland). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N05.px",
+"Plantskoleväxter (friland). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N06.px",
+"Köksväxter och bär (växthus). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N07.px",
+"Snittblommor (växthus). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N08.px",
+"Lökblommor i kruka (växthus). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Varde/JO0102N09.px",
+"Kruk- och utplanteringsväxter (växthus). Skördad kvantitet och värde. År 1999-2020",
+"t"
+],
+[
+"/Tradgardsodling/Vaxthusinformation",
+"Växthusinformation",
+"l"
+],
+[
+"/Tradgardsodling/Vaxthusinformation/JO0102S11.px",
+"Växthusproduktionens användning av energi efter län och energikälla. År 1987-2023",
+"t"
+],
+[
+"/Tradgardsodling/Vaxthusinformation/JO0102S12.px",
+"Växthusproduktionens användning av energi efter växthusföretagens storlek och energikälla. År 2002-2023",
+"t"
+],
+[
+"/Tradgardsodling/Vaxthusinformation/JO0102S21.px",
+"Antal företag och växthusyta med växthusinventarier efter län. År 1987-2023",
+"t"
+],
+[
+"/Tradgardsodling/Vaxthusinformation/JO0102S22.px",
+"Antal företag och växthusyta med växthusinventarier efter växthusföretagens storlek. År 2005-2023",
+"t"
+],
+[
+"/Tradgardsodling/Vaxthusinformation/JO0102S31.px",
+"Växthusens åldersfördelning och uppvärmning efter län. År 1971-2023",
+"t"
+],
+[
+"/Tradgardsodling/Vaxthusinformation/JO0102S32.px",
+"Växthusens åldersfördelning och uppvärmning efter växthusföretagens storlek. År 1971-2023",
+"t"
+],
+[
+"/Tradgardsodling/Vaxthusinformation/JO0102S41.px",
+"Användning av växtskyddsmedel i växthus efter växthusföretagens storlek och odlingsinriktning. År 2020, 2023",
+"t"
+],
+[
+"/Vattenbruk",
+"Vattenbruk",
+"l"
+],
+[
+"/Vattenbruk/JO1201V01.px",
+"Antal företag och verksamheter samt produktion och produktionsvärde efter ändamål och inriktning. År 2020-2025",
+"t"
+],
+[
+"/Vattenbruk/JO1201V02.px",
+"Antal företag, produktion och produktionsvärde i vattenbruket efter metod och inriktning. År 2020-2025",
+"t"
+],
+[
+"/Vattenbruk/JO1201V03.px",
+"Antal företag, verksamheter och anläggningar med installationer samt installationernas volym eller längd. År 2020-2024",
+"t"
+],
+[
+"/Vattenbruk/JO1201V04.px",
+"Antal företag och sysselsättning efter inriktning. År 2020-2024",
+"t"
+],
+[
+"/Vattenbruk/Aldre statistik",
+"Äldre statistik om vattenbruk, uppdateras inte",
+"l"
+],
+[
+"/Aldre statistik",
+"Äldre statistik, långa tidsserier 1866-",
+"l"
+]
+],
+"sjv:/Arealer/1 Riket län kommun": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Arealer/1 Riket län kommun' (found at least ' ')"
+},
+"sjv:/Arealer/2 Produktionsområde storleksindelning": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Arealer/2 Produktionsområde storleksindelning' (found at least ' ')"
+},
+"sjv:/Arealer/3 Ägoslagsareal riket län kommun": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Arealer/3 Ägoslagsareal riket län kommun' (found at least ' ')"
+},
+"sjv:/Arealer/Bevattning och dranering": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Arealer/Bevattning och dranering' (found at least ' ')"
+},
+"sjv:/Arealer/Hostsadda arealer": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Arealer/Hostsadda arealer' (found at least ' ')"
+},
+"sjv:/Arealer/Preliminar arealstatistik": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Arealer/Preliminar arealstatistik' (found at least ' ')"
+},
+"sjv:/Djurhälsa": {
+"error": "'ascii' codec can't encode character '\\xe4' in position 62: ordinal not in range(128)"
+},
+"sjv:/Ekologisk produktion": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Ekologisk produktion' (found at least ' ')"
+},
+"sjv:/Jordbruksforetag/Heltidsjordbruket i Sverige": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Jordbruksforetag/Heltidsjordbruket i Sverige' (found at least ' ')"
+},
+"sjv:/Jordbruksforetag/Jordbruksforetag och jordbruksforetagare": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Jordbruksforetag/Jordbruksforetag och jordbruksforetagare' (found at least ' ')"
+},
+"sjv:/Jordbruksforetag/Svensk Typologi": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Jordbruksforetag/Svensk Typologi' (found at least ' ')"
+},
+"sjv:/Jordbruksforetag/Jämför Lantbruksregistret med Företagsregistret och Registerbaserad arbetsmarknadsstatistik": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Jordbruksforetag/Jämför Lantbruksregistret med Företagsregistret och Registerbaserad arbetsmarknadsstatistik' (found at least ' ')"
+},
+"sjv:/Jordbrukets ekonomi": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Jordbrukets ekonomi' (found at least ' ')"
+},
+"sjv:/Konsumtion av livsmedel": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Konsumtion av livsmedel' (found at least ' ')"
+},
+"sjv:/Lantbrukets djur": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Lantbrukets djur' (found at least ' ')"
+},
+"sjv:/Priser och prisindex": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Priser och prisindex' (found at least ' ')"
+},
+"sjv:/Skordar/Ekologisk skord": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Skordar/Ekologisk skord' (found at least ' ')"
+},
+"sjv:/Skordar/Preliminar skord": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Skordar/Preliminar skord' (found at least ' ')"
+},
+"sjv:/Tradgardsodling/Odling/Atbara vaxter": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Tradgardsodling/Odling/Atbara vaxter' (found at least ' ')"
+},
+"sjv:/Vattenbruk/Aldre statistik": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Vattenbruk/Aldre statistik' (found at least ' ')"
+},
+"sjv:/Aldre statistik": {
+"error": "URL can't contain control characters. '/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/Aldre statistik' (found at least ' ')"
+}
+}
