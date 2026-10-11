@@ -30,7 +30,7 @@ M = {'es': L('España', 'Spain', 'Espagne', 'Spagna'), 'ca': L('Canadá', 'Canad
      'usx': L('EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'), 'uk': L('Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito'), 'eu27': L('UE-27', 'EU-27', 'UE-27', 'UE-27'), 'eu': L('UE (agregado de la Comisión)', 'EU (Commission aggregate)', 'UE (agrégat de la Commission)', 'UE (aggregato della Commissione)'),
      'ee': L('Europa del Este', 'Eastern Europe', 'Europe de l’Est', 'Europa orientale'), 'eumk': L('Varios mercados de la UE', 'Several EU markets', 'Plusieurs marchés de l’UE', 'Diversi mercati UE'),
      'eucons': L('UE (media ponderada)', 'EU (weighted average)', 'UE (moyenne pondérée)', 'UE (media ponderata)')}
-LOC = {k: L(*v) for k, v in {'zgz': ('Zaragoza', 'Zaragoza', 'Saragosse', 'Saragozza'), 'lleida': ('Lleida', 'Lleida', 'Lérida', 'Lleida'), 'iowa': ('Iowa', 'Iowa', 'Iowa', 'Iowa'),
+LOC = {k: L(*v) for k, v in {'zgz': ('Zaragoza (precio regional)', 'Zaragoza (regional price)', 'Saragosse (prix régional)', 'Saragozza (prezzo regionale)'), 'lleida': ('Lleida', 'Lleida', 'Lérida', 'Lleida'), 'iowa': ('Iowa', 'Iowa', 'Iowa', 'Iowa'),
        'sk': ('Saskatchewan', 'Saskatchewan', 'Saskatchewan', 'Saskatchewan'), 'on': ('Ontario', 'Ontario', 'Ontario', 'Ontario'), 'ab': ('Alberta', 'Alberta', 'Alberta', 'Alberta'), 'qc': ('Quebec', 'Quebec', 'Québec', 'Québec')}.items()}
 # Concepto de producto (que mercancia es): dos instrumentos de CONCEPTO distinto (urea frente a fertilizante fosfatado agregado, harina frente a grano de soja) nunca se restan
 CONCEPT = {'di_cereales_trigo_eu': 'wheat', 'di_trigo_us': 'wheat', 'di_cereales_trigo_ca': 'wheat', 'di_defra_wheat_output_index': 'wheat', 'di_eurostat_cereals_output_index': 'cereals',
