@@ -7,4 +7,5 @@ descartada rye exp 6 puntos
 rye ok
 soy ok
 wine ok
+socios 22
 series 15
