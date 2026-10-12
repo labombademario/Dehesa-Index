@@ -5,9 +5,9 @@
    "week": "2026-W41",
    "from": "2026-10-05",
    "to": "2026-10-11",
-   "complete": false,
-   "items": 1412,
-   "sources": 371,
+   "complete": true,
+   "items": 1451,
+   "sources": 379,
    "coverageFrom": "2026-10-05"
   },
   {
@@ -15,10 +15,10 @@
    "from": "2026-09-28",
    "to": "2026-10-04",
    "complete": true,
-   "items": 2318,
+   "items": 2319,
    "sources": 616,
    "coverageFrom": "2026-09-29"
   }
  ],
- "generatedAt": "2026-10-11T23:59:01Z"
+ "generatedAt": "2026-10-12T07:08:02Z"
 }
