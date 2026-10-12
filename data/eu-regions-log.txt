@@ -148,3 +148,17 @@ ch OST {'eaa': 31, 'crops': 20, 'animals': 4, 'farms': 10}
 ch ZEN {'eaa': 31, 'crops': 20, 'animals': 4, 'farms': 10}
 ch TIC {'eaa': 31, 'crops': 20, 'animals': 4, 'farms': 9}
 escrito eu-regions-ch.json 123 KB
+el ATT {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 19, 'farms': 10}
+el NAE {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 19, 'farms': 10}
+el SAE {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 19, 'farms': 10}
+el KRI {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 19, 'farms': 10}
+el EMT {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el KMA {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el DMA {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el IPE {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el THS {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el ION {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el WGR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el CGR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+el PEL {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 16, 'farms': 10}
+escrito eu-regions-el.json 315 KB
