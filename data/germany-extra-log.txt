@@ -1,0 +1,13 @@
+41253-0002 4410 filas
+ERROR 41244-0001 no probe
+41261-0001 140 filas
+41261-0010 2240 filas
+41261-0003 2400 filas
+41271-0001 98 filas
+41271-0010 928 filas
+41141-0005 250 filas
+41321-0003 13260 filas
+41362-0001 168 filas
+41363-0001 780 filas
+descartada de-timber-harvest-land-hb 0
+series 90

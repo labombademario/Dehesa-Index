@@ -329,6 +329,16 @@ sources:
     data: [austria-balances-stats.json]
     log: austria-balances-log.txt
     message: Datos Austria (Statistik Austria, balances de abastecimiento)
+  - id: germany-extra
+    name: Update Germany wine, timber, farm structure, hatcheries and aquaculture (Destatis)
+    cron: ['50 15 * * 2']
+    script: scripts/update-germany-destatis-extra.py
+    env: {GENESIS_TOKEN: '${{ secrets.GENESIS_TOKEN }}'}
+    timeout: 20
+    script_timeout: 15
+    data: [germany-extra-stats.json]
+    log: germany-extra-log.txt
+    message: Datos Alemania vino, madera, estructura, incubadoras y acuicultura (Destatis)
   - id: switzerland-bfs
     name: Update Switzerland (BFS agricultural accounts and price indices)
     cron: ['45 6 12 * *']

@@ -3835,6 +3835,12 @@
     "usbr_rise"
    ],
    "notes": "Media 1990-2020 del agua almacenada por día del año (ventana de 7 días) de cada embalse de Reclamation; cálculo de Dehesa Index con la serie diaria de RISE."
+  },
+  "data/germany-extra-stats.json": {
+   "byCountry": {
+    "DE": "destatis"
+   },
+   "notes": "Destatis GENESIS-Online (dl-de/by-2.0): vendimia por region vitivinicola (41253, 41244), cortas de madera por especie, Land y causa de daño (41261), explotaciones y SAU nacional y por Land (41271), explotaciones ecologicas (41141), incubadoras mensual (41321), acuicultura (41362) y precios del pescado de acuicultura (41363). scripts/update-germany-destatis-extra.py."
   }
  },
  "derived": [
