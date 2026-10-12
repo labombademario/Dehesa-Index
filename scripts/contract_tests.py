@@ -3285,6 +3285,43 @@ def us_reservoirs(doc, errs, warns, stats):
     for must in ("Mead (Hoover Dam)", "Powell (Glen Canyon Dam)", "Shasta"):
         if must not in names: errs.append("embalses US: falta %s" % must)
     stats["embalses"] = len(doc["items"])
+# Italia: gasoleo (MASE) y por region (MIMIT)
+def it_fuel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today().isoformat(); prev = None
+    for d, a, h in doc["weekly"]:
+        if d > today: errs.append("gasolio IT: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("gasolio IT: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.6 < a < 3.5: errs.append("gasolio IT %s: %s" % (d, a))
+        if h is not None and not 0.4 < h < 3.5: errs.append("riscaldamento IT %s: %s" % (d, h))
+    S = doc["stations"]
+    if S["n"] < 8000: errs.append("gasolio IT: solo %d gasolineras" % S["n"])
+    for k, v in S["regions"].items():
+        if not (0.9 < v[0] < 3.5 and v[1] >= 1): errs.append("gasolio IT %s: %s" % (k, v))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=21)).isoformat(): warns.append("gasolio IT: ultima semana %s" % doc["asOf"])
+    stats["semanas"] = len(doc["weekly"]); stats["regiones"] = len(S["regions"])
+# Italia: emisiones de la agricultura (Eurostat)
+def it_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI IT: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (18000 < a < 60000 and 250000 < t < 650000): errs.append("GEI IT %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI IT %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+# Italia: severidad hidrica por distrito (ISPRA)
+def it_water_severity(doc, errs, warns, stats):
+    import datetime as _dt
+    regs = []
+    for k, d in doc["districts"].items():
+        if d["level"] not in doc["levels"]: errs.append("severita IT %s: nivel %s" % (k, d["level"]))
+        regs += d["regions"]
+    if len(regs) != 20 or len(set(regs)) != 20: errs.append("severita IT: las regiones del mapa no son 20 distintas")
+    if doc.get("asOf") and doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=120)).isoformat(): warns.append("severita IT: ISPRA no actualiza desde %s" % doc["asOf"])
+    stats["distritos"] = len(doc["districts"])
 # Alemania: gasoleo, fioul y Agrardiesel
 def de_diesel(doc, errs, warns, stats):
     import datetime as _dt

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T16:27:24Z",
+ "generatedAt": "2026-10-12T17:13:12Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 133,
+  "total": 136,
   "byStatus": {
-   "ACTIVE": 103,
+   "ACTIVE": 106,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3871,6 +3871,45 @@
    ]
   },
   {
+   "sourceId": "ispra",
+   "registryId": "ispra",
+   "country": "IT",
+   "scope": "integrated",
+   "institution": "ISPRA — Stato di severità idrica a scala nazionale",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fonte: ISPRA, stato di severità idrica (Osservatori distrettuali permanenti)",
+   "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "it_regioni_dop",
    "registryId": "it_regioni_dop",
    "country": "IT",
@@ -4103,6 +4142,45 @@
    ]
   },
   {
+   "sourceId": "mase_dgsaie",
+   "registryId": "mase_dgsaie",
+   "country": "IT",
+   "scope": "integrated",
+   "institution": "Ministero dell'Ambiente e della Sicurezza Energetica (DGSAIE) — Prezzi medi settimanali dei carburanti",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fonte: MASE, prezzi medi settimanali dei carburanti",
+   "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "mb_agri",
    "registryId": "mb_agri",
    "country": "CA",
@@ -4163,6 +4241,45 @@
    "derivatives": "yes",
    "attribution": "Source: MeteoSwiss | Dataset: Automatic weather stations (ogd-smn), monthly | Licence: CC BY 4.0 | Original: https://opendata.swiss/en/dataset/automatische-wetterstationen-aktuelle-messwerte",
    "lastChecked": "2026-10-07",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "mimit_carburanti",
+   "registryId": "mimit_carburanti",
+   "country": "IT",
+   "scope": "integrated",
+   "institution": "Ministero delle Imprese e del Made in Italy — Osservaprezzi carburanti (open data)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "IODL-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fonte: MIMIT, Osservaprezzi carburanti",
+   "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",

@@ -61,6 +61,13 @@
       }
       h += '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' ' + esc(t.edo) + (cc === 'ES' ? ' · MITECO, Boletín Hidrológico' : '') + ' · <a href="sequia.html?zona=eu">' + esc(t.all) + '</a></p></section>';
       el.innerHTML = h; bindChart(el, v.map(inD), labels, lg, t);
+      if (cc === 'IT') {   // severidad hidrica por distrito (ISPRA, js/it-severity.js), a peticion
+        var ibox = document.createElement('div'); ibox.style.marginTop = '14px'; el.appendChild(ibox);
+        var igo = function () { if (global.DIItSeverity) global.DIItSeverity.mount(ibox, lg.slice(0, 2)); };
+        var ijs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+        var imod = function () { if (global.DIItSeverity) igo(); else ijs('js/it-severity.js?v=20261013', igo); };
+        if (global.DIFrDeptMap) imod(); else ijs('js/fr-dept-map.js?v=20261015', imod);
+      }
       if (cc === 'DE') {   // humedad del suelo por Land (DWD, js/de-soil.js, con el ayudante de mapas js/fr-dept-map.js), a peticion
         var dbox = document.createElement('div'); dbox.style.marginTop = '14px'; el.appendChild(dbox);
         var dgo = function () { if (global.DIDeSoil) global.DIDeSoil.mount(dbox, lg.slice(0, 2)); };

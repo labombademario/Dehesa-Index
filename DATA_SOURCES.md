@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 99 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
+Resumen: 102 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
 
-## VERIFIED (99)
+## VERIFIED (102)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -63,13 +63,16 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 547 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |
 | `insee` | Institut national de la statistique et des études économiques (INSEE) | FR | Etalab-2.0 | si/si | si | 221 | Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información. |
 | `irs_sales_tax` | U.S. Internal Revenue Service - Optional State Sales Tax Tables | US | US-PD | si/si | no | 0 | Only the state general sales tax rate is used; local rates are not included. Not tax advice. |
+| `ispra` | ISPRA — Stato di severità idrica a scala nazionale | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `it_regioni_dop` | Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana) | IT | CC-BY-4.0/CC0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-OWNER-DECISION | si/si | si | 47 | No implied endorsement by the Federal Reserve. |
 | `magyp_estimaciones` | Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas | AR | CC-BY-4.0 | si/si | si | 0 |  |
 | `magyp_lecheria` | Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar | AR | CC-BY-4.0 | si/si | si | 30 | Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica est… |
 | `mapa_es` | Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA) | ES | CUSTOM | si/si | si | 250 | Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but th… |
+| `mase_dgsaie` | Ministero dell'Ambiente e della Sicurezza Energetica (DGSAIE) — Prezzi medi settimanali dei carburanti | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `mb_agri` | Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba) | CA | OpenMB-1.0 | si/si | si | 0 | No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights. |
 | `meteoswiss` | Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet | CH | CC-BY-4.0 | si/si | si | 18 | Source must read 'Source: MeteoSwiss'; MeteoSwiss warnings must not be altered; no implication of MeteoSwiss endorsement; avoid high-frequen… |
+| `mimit_carburanti` | Ministero delle Imprese e del Made in Italy — Osservaprezzi carburanti (open data) | IT | IODL-2.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `miteco_carburantes` | MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |
 | `miteco_embalses` | MITECO — Boletín Hidrológico (BD-Embalses) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha de actualización. Datos provisionales sin valid… |
 | `miteco_inventario_gei` | MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |

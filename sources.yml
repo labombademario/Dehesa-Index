@@ -672,6 +672,34 @@ sources:
     continue: true
     data: [de-soil-moisture.json]
     message: Humedad del suelo en Alemania (DWD)
+  - id: it-fuel
+    name: Update Italy diesel prices (MASE weekly, MIMIT stations)
+    cron: ['45 12 * * 2,5']
+    script: scripts/update-it-fuel.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [it-fuel.json]
+    message: Gasolio en Italia (MASE, MIMIT)
+  - id: it-ghg-agri
+    name: Update Italy agricultural greenhouse gas emissions (Eurostat env_air_gge)
+    cron: ['5 8 4 * *']
+    script: scripts/update-eu-ghg-agri.py
+    args: IT it
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [it-ghg-agri.json]
+    message: Emisiones de la agricultura italiana (Eurostat)
+  - id: it-water-severity
+    name: Update Italy water severity by river basin district (ISPRA)
+    cron: ['25 9 * * 1,4']
+    script: scripts/update-it-severity.py
+    timeout: 10
+    script_timeout: 5
+    continue: true
+    data: [it-water-severity.json]
+    message: Severidad hidrica en Italia (ISPRA)
   - id: es-drought-ute
     name: Update Spain drought and water scarcity by unit (MITECO monthly report)
     cron: ['10 8 2,9,16,23 * *']

@@ -928,6 +928,24 @@
     "de_soil_moisture"
    ]
   ],
+  "it-fuel.json": [
+   "it-fuel",
+   [
+    "it_fuel"
+   ]
+  ],
+  "it-ghg-agri.json": [
+   "it-ghg-agri",
+   [
+    "it_ghg_agri"
+   ]
+  ],
+  "it-water-severity.json": [
+   "it-water-severity",
+   [
+    "it_water_severity"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

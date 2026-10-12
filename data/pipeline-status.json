@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T16:25:00Z",
+ "generatedAt": "2026-10-12T17:11:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 133,
+  "ok": 136,
   "late": 1,
   "error": 4,
   "not_run": 2,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "dca252c8",
+   "sha": "3d50ca22",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/fc035faf-b8bf-4013-a052-a877a8b0751d",
-   "completedAt": "2026-10-12T15:53:55Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/44ba8a98-a42c-4b6d-87b2-7caf751e8246",
+   "completedAt": "2026-10-12T16:33:06Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-12T15:33:15.867872+00:00",
-  "checkedAt": "2026-10-12T16:25:00Z"
+  "checkedAt": "2026-10-12T17:11:00Z"
  },
  "pipelines": [
   {
@@ -725,9 +725,19 @@
    ],
    "nextRun": "2026-10-13T12:35:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T16:30:55Z",
+    "durationSec": 25,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38277926839"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -738,9 +748,19 @@
    ],
    "nextRun": "2026-11-04T07:55:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T16:30:57Z",
+    "durationSec": 23,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38277929590"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
@@ -751,9 +771,19 @@
    ],
    "nextRun": "2026-10-13T10:20:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T16:30:58Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38277931738"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 504.0
   },
   {
@@ -1665,19 +1695,19 @@
    "crons": [
     "0 17 * * 1-5"
    ],
-   "nextRun": "2026-10-12T17:00:00Z",
+   "nextRun": "2026-10-13T17:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-09T17:04:40Z",
-    "durationSec": 39,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37963687000"
+    "startedAt": "2026-10-12T17:04:24Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38281775638"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 24.0
@@ -1814,6 +1844,45 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-it-fuel.yml",
+   "name": "Update Italy diesel prices (MASE weekly, MIMIT stations)",
+   "crons": [
+    "45 12 * * 2,5"
+   ],
+   "nextRun": "2026-10-13T12:45:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-it-ghg-agri.yml",
+   "name": "Update Italy agricultural greenhouse gas emissions (Eurostat env_air_gge)",
+   "crons": [
+    "5 8 4 * *"
+   ],
+   "nextRun": "2026-11-04T08:05:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-it-water-severity.yml",
+   "name": "Update Italy water severity by river basin district (ISPRA)",
+   "crons": [
+    "25 9 * * 1,4"
+   ],
+   "nextRun": "2026-10-15T09:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 96.0
   },
   {
    "workflow": "update-italy-eurostat.yml",
@@ -2132,7 +2201,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-12T15:30:40Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2148,18 +2217,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-12T08:03:20Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/catalog"
@@ -2172,7 +2241,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/products"
@@ -2183,34 +2252,34 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-12T00:25:11Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-12T15:31:02Z"
+     "lastChange": "2026-10-12T16:30:26Z"
     },
     {
      "path": "data/home-explore.json",

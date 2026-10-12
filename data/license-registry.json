@@ -3035,6 +3035,84 @@
    "short": "Zoll",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: dato legal sin derecho de autor."
+  },
+  "mase_dgsaie": {
+   "name": "Ministero dell'Ambiente e della Sicurezza Energetica (DGSAIE) — Prezzi medi settimanali dei carburanti",
+   "url": "https://sisen.mase.gov.it/dgsaie/prezzi-settimanali-carburanti",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (note legali del MASE)",
+   "licenseUrl": "https://www.mase.gov.it/pagina/note-legali",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fonte: MASE, prezzi medi settimanali dei carburanti",
+   "additionalRestrictions": "Citar la fuente y, si es posible, el enlace a la página original.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Note legali del MASE, leídas el 12 oct 2026: «Salvo ove diversamente indicato, i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0».",
+   "used": true,
+   "aliases": [],
+   "notes": "Gasóleo de automoción y de calefacción con impuestos, semanal desde 2005.",
+   "short": "MASE",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: Note legali del MASE, leídas el 12 oct 2026: «Salvo ove diversamente indicato, i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0»."
+  },
+  "mimit_carburanti": {
+   "name": "Ministero delle Imprese e del Made in Italy — Osservaprezzi carburanti (open data)",
+   "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+   "country": "IT",
+   "licenseId": "IODL-2.0",
+   "licenseName": "Italian Open Data License 2.0",
+   "licenseUrl": "https://www.dati.gov.it/iodl/2.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fonte: MIMIT, Osservaprezzi carburanti",
+   "additionalRestrictions": "Citar la fuente y, si es posible, el enlace a la página original.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Ficha del conjunto en mimit.gov.it, leída el 12 oct 2026: «Licenza: IODL 2.0».",
+   "used": true,
+   "aliases": [],
+   "notes": "Medianas del gasóleo por región: cálculo de Dehesa Index.",
+   "short": "MIMIT",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: Ficha del conjunto en mimit.gov.it, leída el 12 oct 2026: «Licenza: IODL 2.0»."
+  },
+  "ispra": {
+   "name": "ISPRA — Stato di severità idrica a scala nazionale",
+   "url": "https://www.isprambiente.gov.it/pre_meteo/idro/SeverIdrica.html",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (note legali di ISPRA)",
+   "licenseUrl": "https://www.isprambiente.gov.it/it/note-legali",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fonte: ISPRA, stato di severità idrica (Osservatori distrettuali permanenti)",
+   "additionalRestrictions": "Citar la fuente y, si es posible, el enlace a la página original.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Note legali de ISPRA, leídas el 12 oct 2026: «i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0».",
+   "used": true,
+   "aliases": [],
+   "notes": "Nivel de severidad por distrito tal como lo publica ISPRA; el coloreado por regiones es una aproximación de Dehesa Index.",
+   "short": "ISPRA",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: Note legali de ISPRA, leídas el 12 oct 2026: «i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0»."
   }
  },
  "files": {
@@ -4169,6 +4247,25 @@
     "dwd_cdc"
    ],
    "notes": "Humedad del suelo media por Land y mes desde 1991 y media 1991-2020 (rejilla DWD de 1 km). scripts/update-de-soil-moisture.py."
+  },
+  "data/it-fuel.json": {
+   "sources": [
+    "mase_dgsaie",
+    "mimit_carburanti"
+   ],
+   "notes": "Gasóleo semanal desde 2005 (MASE) y mediana del gasóleo por región en las gasolineras (MIMIT). scripts/update-it-fuel.py."
+  },
+  "data/it-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura italiana por categoría, ganado y gas, 1990-último año (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/it-water-severity.json": {
+   "sources": [
+    "ispra"
+   ],
+   "notes": "Severidad hídrica de los siete distritos hidrográficos e histórico de cambios. scripts/update-it-severity.py."
   }
  },
  "derived": [
