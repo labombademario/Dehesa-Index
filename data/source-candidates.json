@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T07:15:04Z",
+ "generatedAt": "2026-10-12T07:30:47Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2374,7 +2374,7 @@
    "country": "DE",
    "scope": "integrated",
    "institution": "Destatis (GENESIS-Online)",
-   "dataset": "Ya integrada (223 series en el catalogo unificado)",
+   "dataset": "Ya integrada (224 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",

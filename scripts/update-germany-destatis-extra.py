@@ -87,7 +87,7 @@ def main():
         regs = sorted({labels(r).get(3) for r in R} - {"Insgesamt", None})
         for g in regs:
             slug = re.sub(r"[^a-z]+", "-", g.lower().replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")).strip("-")
-            add("de-wine-must-" + slug, "production", "Wine must harvest, %s wine region, Germany" % g, "hl", "annual", _region(R, "Erntemenge an Weinmost", "Insgesamt", g), WN)
+            add("de-wine-must-" + slug, "production", "Wine must harvest, %s, Germany" % g, "hl", "annual", _region(R, "Erntemenge an Weinmost", "Insgesamt", g), WN)
     if "41244-0001" in T:
         R = T["41244-0001"]; pts = {}
         for r in R:
@@ -95,10 +95,10 @@ def main():
             if r["value_variable_label"].strip() == "Erntemenge an Weinmost" and "Insgesamt" in L.values():
                 v = num(r["value"]); p = period(r)
                 if v is not None and p: pts[p] = v
-        add("de-wine-must-estimate", "production", "Wine must harvest, first estimate of the year, Germany", "hl", "annual", pts, "Primera estimacion de Destatis (41244), se publica antes de cerrar la vendimia y se revisa despues; la cifra definitiva es la de de-wine-must-total.")
+        add("de-wine-must-estimate", "production", "Wine must harvest, first estimate, Germany", "hl", "annual", pts, "Primera estimacion de Destatis (41244), se publica antes de cerrar la vendimia y se revisa despues; la cifra definitiva es la de de-wine-must-total.")
     HN = "Cortas de madera de Destatis (41261), en miles de m3 sin corteza; incluye todas las propiedades (estado, municipios y privados)."
-    SP = {"Insgesamt": ("total", "all species"), "Fichte, Tanne, Douglasie und sonstiges Nadelholz": ("spruce", "spruce, fir, Douglas fir and other conifers"), "Kiefer und Lärche": ("pine", "pine and larch"),
-          "Buche und sonstiges Laubholz": ("beech", "beech and other broadleaves"), "Eiche und Roteiche": ("oak", "oak and red oak")}
+    SP = {"Insgesamt": ("total", "all species"), "Fichte, Tanne, Douglasie und sonstiges Nadelholz": ("spruce", "spruce and other conifers"), "Kiefer und Lärche": ("pine", "pine and larch"),
+          "Buche und sonstiges Laubholz": ("beech", "beech and other broadleaves"), "Eiche und Roteiche": ("oak", "oak")}
     if "41261-0001" in T:
         for de, (k, en) in SP.items(): add("de-timber-harvest-" + k, "production", "Timber harvest, %s, Germany" % en, "1000 m3", "annual", pick(T["41261-0001"], "Holzeinschlag", a=de), HN)
     if "41261-0010" in T:
@@ -138,8 +138,8 @@ def main():
         add("de-organic-uaa", "organic", "Farmland of organic farms, Germany", "ha", "annual", org("LF in Betrieben mit ökologischem Landbau"), ON)
     if "41321-0003" in T:
         R = T["41321-0003"]; BN = "Estadistica de incubadoras de Destatis (41321): pollitos nacidos y huevos incubados en las incubadoras con capacidad de al menos 1.000 huevos, mensual."
-        for de, k, en in (("Insgesamt", "total", "all poultry"), ("Hühnerküken, Mastrassen zum Gebrauch", "broiler", "broiler chicks for use"), ("Hühnerküken, Legerassen zum Gebrauch", "layer", "laying-hen chicks for use"),
-                          ("Truthühnerküken zum Gebrauch", "turkey", "turkey poults for use"), ("Entenküken zum Gebrauch", "duck", "ducklings for use"), ("Gänseküken zum Gebrauch", "goose", "goslings for use")):
+        for de, k, en in (("Insgesamt", "total", "all poultry"), ("Hühnerküken, Mastrassen zum Gebrauch", "broiler", "broiler chicks"), ("Hühnerküken, Legerassen zum Gebrauch", "layer", "laying-hen chicks"),
+                          ("Truthühnerküken zum Gebrauch", "turkey", "turkey poults"), ("Entenküken zum Gebrauch", "duck", "ducklings"), ("Gänseküken zum Gebrauch", "goose", "goslings")):
             pts = {}
             for r in R:
                 L = labels(r)
@@ -161,7 +161,7 @@ def main():
                 for r in T["41363-0001"]:
                     L = labels(r)
                     if L.get(3) == sp and L.get(2) == ch: pts[r["time"].strip()] = num(r["value"])
-                add("de-fishprice-%s-%s" % (k, kc), "prices", "Aquaculture %s price, %s, Germany" % (en, enc), "EUR/kg", "annual", pts, PN)
+                add("de-fishprice-%s-%s" % (k, kc), "prices", "Aquaculture price, %s, %s, Germany" % (en, enc), "EUR/kg", "annual", pts, PN)
     log("series", len(SER))
     if len(SER) < 40: log("demasiado pocas series; no se escribe"); LOGF.write_text("\n".join(LOG) + "\n"); return 1
     src = {"name": "Statistisches Bundesamt (Destatis), GENESIS-Online", "url": "https://www-genesis.destatis.de/", "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0"}
