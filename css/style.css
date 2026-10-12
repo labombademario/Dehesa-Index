@@ -2091,3 +2091,5 @@ html[data-theme="dark"] .wp-card{--wp-w:#E3B04B;--wp-r:#E07A8C}
 .wp-sw{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
 .wp-sw-w{background:var(--wp-w)}.wp-sw-r{background:var(--wp-r)}
 .wp-unit{margin-left:auto;color:var(--text-muted)}
+
+.rl-node .rl-ctry { display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px; }

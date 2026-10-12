@@ -50,6 +50,8 @@
     var q = new URLSearchParams(); for (var k in F) if (F[k]) q.set(k, F[k]);
     var s = q.toString(); try { history.replaceState(null, '', location.pathname + (s ? '?' + s : '')); } catch (e) {}
   }
+  var FLG = { us: '🇺🇸', eu: '🇪🇺', uk: '🇬🇧', ca: '🇨🇦', es: '🇪🇸', fr: '🇫🇷', de: '🇩🇪', it: '🇮🇹', au: '🇦🇺' };
+  function flagName(r) { return (FLG[r] ? FLG[r] + ' ' : '') + regionName(r); }
   function regionName(r) { return DOC.regions[r] ? L(DOC.regions[r]) : r.toUpperCase(); }
   function sidesOf(x) { return [x.input, x.market]; }
   function matches(x) {
@@ -66,10 +68,10 @@
   function filters() {
     var rels = DOC.relationships, chs = uniq(rels.map(function (x) { return x.channel; })), regs = uniq([].concat.apply([], rels.map(function (x) { return [x.input.region, x.market.region]; }))).sort();
     var prods = uniq([].concat.apply([], rels.map(function (x) { return sidesOf(x).map(function (s) { return PAGE[s.product] || s.product; }); }))).sort();
-    var h = '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fCh')) + '"><span class="pt-lbl">' + esc(t('fCh')) + '</span>' + chip('ch', '', t('all'), !F.ch) + chs.map(function (c) { return chip('ch', c, t('ch_' + c), F.ch === c); }).join('') + '</div>';
+    var h = '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fReg')) + '"><span class="pt-lbl">' + esc(t('fReg')) + '</span>' + chip('r', '', t('all'), !F.r) + regs.map(function (r) { return chip('r', r, flagName(r), F.r === r); }).join('') + '</div>';
+    h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fCh')) + '"><span class="pt-lbl">' + esc(t('fCh')) + '</span>' + chip('ch', '', t('all'), !F.ch) + chs.map(function (c) { return chip('ch', c, t('ch_' + c), F.ch === c); }).join('') + '</div>';
     h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fSt')) + '"><span class="pt-lbl">' + esc(t('fSt')) + '</span>' + chip('st', '', t('all'), !F.st) + ['OBSERVED_RELATIONSHIP', 'WEAK_OR_UNSTABLE', 'INSUFFICIENT_DATA'].map(function (s) { return chip('st', s, t('stl_' + s), F.st === s); }).join('') + '</div>';
     h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fConf')) + '"><span class="pt-lbl">' + esc(t('fConf')) + '</span>' + chip('c', '', t('all'), !F.c) + ['HIGH', 'MEDIUM', 'LOW'].map(function (s) { return chip('c', s, t('conf_' + s), F.c === s); }).join('') + '</div>';
-    h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fReg')) + '"><span class="pt-lbl">' + esc(t('fReg')) + '</span>' + chip('r', '', t('all'), !F.r) + regs.map(function (r) { return chip('r', r, regionName(r), F.r === r); }).join('') + '</div>';
     h += '<div class="rl-prod"><label for="rl-p" class="pt-lbl">' + esc(t('fProd')) + '</label> <select id="rl-p" data-f="p"><option value="">' + esc(t('all')) + '</option>' + prods.map(function (p) { return '<option value="' + esc(p) + '"' + (F.p === p ? ' selected' : '') + '>' + esc(prodLabel(p)) + '</option>'; }).join('') + '</select></div>';
     return h;
   }
@@ -83,9 +85,9 @@
     return esc(m.period) + ' · ' + (c === null ? '—' : '<span class="' + cls + '">' + (c > 0 ? '+' : '') + nf(c, 1) + ' %</span>');
   }
   function side(kind, s, fresh) {
-    var pg = PAGE[s.product], name = esc(L(s.label)) + ' <span class="pt-sub">(' + esc(regionName(s.region)) + ')</span>';
+    var pg = PAGE[s.product], name = esc(L(s.label));
     var nm = pg ? '<a href="producto.html?p=' + pg + '">' + name + '</a>' : name;
-    return '<div class="rl-node rl-' + kind + '"><span class="pt-k">' + esc(t(kind.toUpperCase())) + '</span><strong>' + nm + '</strong><span class="pt-sub">' + (ci(s.sourceId) || esc(s.sourceId || '')) + (s.unit ? ' · ' + esc((s.currency || '') + '/' + s.unit) : '') + '</span><span class="pt-badge pt-fs-' + esc(fresh) + '">' + esc(fresh) + '</span></div>';
+    return '<div class="rl-node rl-' + kind + '"><span class="rl-ctry">' + esc(flagName(s.region)) + '</span><span class="pt-k">' + esc(t(kind.toUpperCase())) + '</span><strong>' + nm + '</strong><span class="pt-sub">' + (ci(s.sourceId) || esc(s.sourceId || '')) + (s.unit ? ' · ' + esc((s.currency || '') + '/' + s.unit) : '') + '</span><span class="pt-badge pt-fs-' + esc(fresh) + '">' + esc(fresh) + '</span></div>';
   }
   function lagUnit(x, n) { return n + ' ' + (x.frequency === 'monthly' ? t('mon') : x.frequency === 'annual' ? t('yr') : t('qtr')); }
   function profile(x) {
