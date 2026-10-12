@@ -3501,6 +3501,74 @@ def ie_drought(doc, errs, warns, stats):
     if doc["asOf"] != P[-1]: errs.append("sequia IE: asOf %s y ultima decada %s" % (doc["asOf"], P[-1]))
     if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=40)).isoformat(): warns.append("sequia IE: ultimo dato %s" % doc["asOf"])
     stats["decadas"] = len(P)
+def nl_diesel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today(); prev = None
+    for d, t, n, h in doc["weekly"]:
+        if d > today.isoformat(): errs.append("diesel NL: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("diesel NL: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.3 < t < 3.5: errs.append("diesel NL %s: %s" % (d, t))
+        if n is not None and n >= t: errs.append("diesel NL %s: sin impuestos >= con impuestos" % d)
+    prev = None
+    for d, dsl, pet in doc["pump"]:
+        if d > today.isoformat(): errs.append("surtidor NL: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("surtidor NL: dias desordenados en %s" % d); return
+        prev = d
+        if not (0.5 < dsl < 3.5 and 0.5 < pet < 3.5): errs.append("surtidor NL %s: %s %s" % (d, dsl, pet))
+    prev = None
+    for y, v in doc["farm"]:
+        if prev and y <= prev: errs.append("gasoleo agrario NL: anos desordenados en %s" % y); return
+        prev = y
+        if not 0.2 < v < 2.5: errs.append("gasoleo agrario NL %s: %s" % (y, v))
+    if doc["weekly"][-1][0] < (today - _dt.timedelta(days=21)).isoformat(): warns.append("diesel NL: ultima semana %s" % doc["weekly"][-1][0])
+    if doc["pump"][-1][0] < (today - _dt.timedelta(days=21)).isoformat(): warns.append("surtidor NL: ultimo dia %s" % doc["pump"][-1][0])
+    stats["semanas"] = len(doc["weekly"]); stats["dias"] = len(doc["pump"]); stats["anosAgrario"] = len(doc["farm"])
+def nl_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI NL: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (8000 < a < 30000 and 100000 < t < 350000): errs.append("GEI NL %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI NL %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+def nl_nitrates(doc, errs, warns, stats):
+    for g in ("leaching", "ditch"):
+        for k, rows in doc[g].items():
+            prev = None
+            for r in rows:
+                if len(r) != 5 or (prev and r[0] <= prev): errs.append("nitratos NL %s %s: fila %s" % (g, k, r)); return
+                prev = r[0]
+                if not (0 <= r[1] < 400 and (r[2] is None or 0 <= r[2] < 400) and (r[3] is None or 0 <= r[3] < 800)): errs.append("nitratos NL %s %s %s: %s" % (g, k, r[0], r[1:]))
+    for k in ("zand", "klei", "veen", "loess"):
+        if k not in doc["leaching"]: errs.append("nitratos NL: falta lixiviado de %s" % k)
+    for key, hi in (("groundwater", 100), ("nBalance", 600)):
+        for y, v in doc[key]:
+            if not 0 < v < hi: errs.append("nitratos NL %s %s: %s" % (key, y, v))
+    if doc["leaching"]["zand"][-1][0] < __import__("datetime").date.today().year - 3: warns.append("nitratos NL: ultimo ano del LMM %s" % doc["leaching"]["zand"][-1][0])
+    stats["ultimoLMM"] = doc["leaching"]["zand"][-1][0]
+def nl_drought(doc, errs, warns, stats):
+    import datetime as _dt
+    C = doc["counties"]; P = doc["periods"]
+    if len(C) != 40 or not all(k.startswith("NL") for k in C): errs.append("sequia NL: %d regiones" % len(C)); return
+    if P != sorted(set(P)): errs.append("sequia NL: decadas desordenadas")
+    for k, c in C.items():
+        if len(c["v"]) != len(P): errs.append("sequia NL %s: %d filas y %d decadas" % (k, len(c["v"]), len(P))); continue
+        for i, v in enumerate(c["v"]):
+            if len(v) != 6 or any(not 0 <= x <= 100.5 for x in v) or sum(v) > 100.5: errs.append("sequia NL %s %s: %s" % (k, P[i], v)); break
+        if c.get("coverage", 0) < 80: errs.append("sequia NL %s: cobertura %s %%" % (k, c.get("coverage")))
+    if doc["asOf"] != P[-1]: errs.append("sequia NL: asOf %s y ultima decada %s" % (doc["asOf"], P[-1]))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=40)).isoformat(): warns.append("sequia NL: ultimo dato %s" % doc["asOf"])
+    D = doc.get("deficit")
+    if D:
+        n = D["days"]
+        if not all(len(D[k]) == n for k in ("prev", "med", "p10", "p90")) or not 0 < len(D["cur"]) <= n: errs.append("deficit NL: longitudes de curvas")
+        if any(v is not None and not -150 < v < 500 for k in ("cur", "prev", "med") for v in D[k]): errs.append("deficit NL: valores fuera de rango")
+        if D["asOf"] < (_dt.date.today() - _dt.timedelta(days=10)).isoformat() and _dt.date.today().month in (4, 5, 6, 7, 8, 9, 10): warns.append("deficit NL: ultimo dia %s" % D["asOf"])
+        stats["deficitHasta"] = D["asOf"]
+    stats["decadas"] = len(P)
 # Italia: gasoleo (MASE) y por region (MIMIT)
 def it_fuel(doc, errs, warns, stats):
     import datetime as _dt

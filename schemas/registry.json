@@ -1048,6 +1048,30 @@
     "ie_drought"
    ]
   ],
+  "nl-diesel.json": [
+   "nl-diesel",
+   [
+    "nl_diesel"
+   ]
+  ],
+  "nl-ghg-agri.json": [
+   "nl-ghg-agri",
+   [
+    "nl_ghg_agri"
+   ]
+  ],
+  "nl-nitrates.json": [
+   "nl-nitrates",
+   [
+    "nl_nitrates"
+   ]
+  ],
+  "nl-drought.json": [
+   "nl-drought",
+   [
+    "nl_drought"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

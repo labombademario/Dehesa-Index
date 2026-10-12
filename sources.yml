@@ -867,6 +867,45 @@ sources:
     continue: true
     data: [ie-drought.json]
     message: Sequia por region en Irlanda (EDO)
+  - id: nl-diesel
+    name: Update Netherlands diesel (EU Weekly Oil Bulletin), CBS pump prices and farm diesel purchase price
+    cron: ['30 7 * * 2,5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-nl-diesel.py
+    timeout: 30
+    script_timeout: 25
+    continue: true
+    data: [nl-diesel.json]
+    message: Gasoleo en Paises Bajos (Boletin Petrolero UE, CBS, precio de compra agrario)
+  - id: nl-ghg-agri
+    name: Update Netherlands agricultural greenhouse gas emissions (Eurostat env_air_gge)
+    cron: ['45 8 4 * *']
+    script: scripts/update-eu-ghg-agri.py
+    args: NL nl
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [nl-ghg-agri.json]
+    message: Emisiones de la agricultura neerlandesa (Eurostat)
+  - id: nl-nitrates
+    name: Update Netherlands nitrate in leaching water and ditches (RIVM LMM) and groundwater (Eurostat)
+    cron: ['55 8 7 * *']
+    script: scripts/update-nl-nitrates.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [nl-nitrates.json]
+    message: Nitratos en el agua de explotaciones agrarias de Paises Bajos (RIVM, Eurostat)
+  - id: nl-drought
+    name: Update Netherlands drought by COROP region (EDO) and KNMI precipitation deficit
+    cron: ['10 8 * * *']
+    pre: ['python3 -m pip install --quiet numpy netCDF4 shapely']
+    script: scripts/update-nl-drought.py
+    timeout: 40
+    script_timeout: 35
+    continue: true
+    data: [nl-drought.json]
+    message: Sequia por region y deficit de precipitacion en Paises Bajos (EDO, KNMI)
   - id: es-drought-ute
     name: Update Spain drought and water scarcity by unit (MITECO monthly report)
     cron: ['10 8 2,9,16,23 * *']

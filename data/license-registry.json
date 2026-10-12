@@ -3373,6 +3373,58 @@
    "short": "EPA Irlanda",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: CC-BY-4.0 en data.gov.ie y CSO."
+  },
+  "rivm_lmm": {
+   "name": "RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit",
+   "url": "https://www.rivm.nl/landelijk-meetnet-effecten-mestbeleid/datatool-waterkwaliteit",
+   "country": "NL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "RIVM, Landelijk Meetnet effecten Mestbeleid (CC BY 4.0)",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "data.overheid.nl lista el conjunto «Landelijk Meetnet effecten Mestbeleid (LMM) - geaggregeerde dataset» (43141) con licencia CC BY 4.0. El CSV de la datatool (Datatool_bestand_*.csv) es el mismo LMM agregado; la página de la datatool no repite la licencia.",
+   "used": true,
+   "aliases": [],
+   "notes": "El nombre del CSV cambia con cada versión; el script lo busca en la página de la datatool. Solo nitrato (mg/l) de todas las explotaciones por región de suelo.",
+   "short": "RIVM LMM",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia CC BY 4.0 en el catálogo de datos abiertos para el conjunto agregado; el fichero descargado no lleva la licencia dentro."
+  },
+  "knmi_daggegevens": {
+   "name": "KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación)",
+   "url": "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens",
+   "country": "NL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (KNMI Data Platform)",
+   "licenseUrl": "https://dataplatform.knmi.nl/about",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "KNMI, daggegevens; cálculo de Dehesa Index",
+   "additionalRestrictions": "Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "El KNMI Data Platform dice que todos sus datos son de uso libre y sus conjuntos llevan «Creative Commons Attribution 4.0 [Open Data]» (p. ej. seismische-stations-1). La página de daggegevens.knmi.nl, que es la que se consulta, no repite la licencia.",
+   "used": true,
+   "aliases": [],
+   "notes": "Se piden EV24 y RH de 13 estaciones; una petición por año para no pasar el límite de filas del KNMI.",
+   "short": "KNMI",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Política abierta del KNMI y CC BY 4.0 en sus conjuntos; la página de daggegevens no la nombra."
   }
  },
  "files": {
@@ -4637,6 +4689,35 @@
     "gisco_nuts"
    ],
    "notes": "Indicador Combinado de Sequía del EDO calculado para las 8 regiones irlandesas (NUTS 3 de GISCO). scripts/update-ie-drought.py."
+  },
+  "data/nl-diesel.json": {
+   "sources": [
+    "eu_oil_bulletin",
+    "cbs_nl",
+    "eurostat"
+   ],
+   "notes": "Gasóleo semanal (Weekly Oil Bulletin), precio diario en surtidor (CBS 80416ned) y precio de compra agrario del gasóleo (Eurostat apri_ap_ina y CBS 86337NED). No hay precio abierto del rode diesel. scripts/update-nl-diesel.py."
+  },
+  "data/nl-nitrates.json": {
+   "sources": [
+    "rivm_lmm",
+    "eurostat"
+   ],
+   "notes": "Nitrato en agua de lixiviación y zanjas de explotaciones (RIVM LMM), nitrato en aguas subterráneas (Eurostat sdg_06_40) y balance de nitrógeno (aei_pr_gnb). scripts/update-nl-nitrates.py."
+  },
+  "data/nl-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura neerlandesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/nl-drought.json": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts",
+    "knmi_daggegevens"
+   ],
+   "notes": "Indicador Combinado de Sequía del EDO por las 40 regiones COROP (NUTS 3 de GISCO) y déficit de precipitación calculado con los datos diarios del KNMI. scripts/update-nl-drought.py."
   }
  },
  "derived": [
