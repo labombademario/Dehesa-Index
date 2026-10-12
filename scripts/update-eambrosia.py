@@ -12,7 +12,8 @@ Region (solo Francia): el INAO publica en data.gouv.fr (Licence Ouverte 2.0) las
   Comuna (codigo INSEE) -> departamento -> region (scripts/ref/fr-dep-region.json). Una denominacion lleva todas las regiones donde tiene comunas.
   Cruce por nombre normalizado: igual; o area «<nombre> ou ...»; o, si no, la union de sus subdenominaciones «<nombre> <algo>» (p. ej. Alsace).
   Lo que no cruza se queda sin region (nunca se asigna a mano). Ultramar no esta en el mapa.
-Uso: python3 scripts/update-eambrosia.py [--from fichero.json] [--fr-ao fichero.csv] [--fr-ig fichero.csv]"""
+Region (Italia): listados abiertos de Umbria, Puglia, Trento, Bolzano, Lombardia y Toscana (IT_SRC); cobertura parcial, el resto sin region.
+Uso: python3 scripts/update-eambrosia.py [--from fichero.json] [--fr-ao fichero.csv] [--fr-ig fichero.csv] [--no-it]"""
 import csv, datetime, gzip, io, json, re, sys, unicodedata, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,6 +89,63 @@ def fr_regions(args):
             for a in sub: out |= aires[a]
         return sorted(out)
     return find
+
+# Italia: no hay listado nacional abierto con region. Se usan los listados abiertos de las regiones que los publican; una denominacion
+# que aparece en el listado de una region tiene zona de produccion en esa region. Las regiones sin listado quedan sin asignar.
+IT_SRC = [
+    ('UMB', 'csv;', 'https://dati.regione.umbria.it/dataset/aed77732-8c61-4c0c-9cde-0eecd465e211/resource/609b6986-4cf1-4833-bec2-31eefbb2bb44/download/vinidocgdocigtumbriatabellaumbria.csv', 'Vini DOCG/DOC/IGT', 'Regione Umbria (CC BY 4.0)'),
+    ('UMB', 'csv;', 'https://dati.regione.umbria.it/dataset/772bd8e6-a1a2-4474-9214-4d3b49ba40eb/resource/636438e0-d59e-4374-ac4e-5f25381cebed/download/dopigpumbria.csv', 'Denominazione', 'Regione Umbria (CC BY 4.0)'),
+    ('PUG', 'csv;', 'https://dati.puglia.it/ckan/dataset/44eef2dc-55f5-4b4d-92f0-bec6c59c4570/resource/90db6c2f-427e-4007-ae36-a6e916860c49/download/dataset-_2025_prodotti-vitivinicoli.csv', 'DENOMINAZIONE', 'Regione Puglia (CC BY 4.0)'),
+    ('TAA', 'csv,', 'https://dati.trentino.it/dataset/22eea137-9fc3-4222-a716-bac22cc2039a/resource/fe507a10-4c49-4b18-8bf6-6705198cfd42/download/prodottiprotetti.csv', 'Nome', 'Provincia autonoma di Trento (CC0)'),
+    ('TAA', 'wfs', 'https://geoservices6.civis.bz.it/geoserver/p_bz-Agriculture/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=p_bz-Agriculture:DOCAndIGTZones&outputFormat=application/json', 'NAME_IT,NAME_DE', 'Provincia autonoma di Bolzano (CC0)'),
+    ('LOM', 'csv,', 'https://www.dati.lombardia.it/api/views/gp6s-ezv4/rows.csv?accessType=DOWNLOAD', 'DENOMINAZIONE', 'Regione Lombardia (CC0)'),
+    ('TOS', 'dbfzip', 'https://www502.regione.toscana.it/geoscopio/download/tematici/zone_prod_vini/zone_prod_vini.zip', 'NOM_ZON,NOM_SZO', 'Regione Toscana (CC BY 4.0)'),
+]
+IT_PRE = re.compile(r'^(docg|doc|igt|igp|dop|stg)\s+')
+def it_variants(name):
+    n = IT_PRE.sub('', IT_PRE.sub('', norm(name))); out = {n}
+    for sep in (' e ', ' o ', ' oder ', ' ed '):
+        if sep in n:
+            for q in n.split(sep):
+                q = IT_PRE.sub('', q.strip())
+                if len(q) > 3: out.add(q)
+    return out
+def dbf_rows(b, enc='utf-8'):
+    import struct
+    n, hl, rl = struct.unpack('<xxxxIHH', b[:12]); fields = []; i = 32
+    while b[i] != 0x0D:
+        fields.append((b[i:i + 11].split(b'\0')[0].decode('ascii'), b[i + 16])); i += 32
+    out = []
+    for r in range(n):
+        o = hl + r * rl + 1; row = {}
+        for nm, ln in fields: row[nm] = b[o:o + ln].decode(enc, 'replace').strip(); o += ln
+        out.append(row)
+    return out
+def it_regions():
+    import zipfile
+    idx = {}; used = []
+    for reg, kind, url, cols, label in IT_SRC:
+        try:
+            b = fetch(url); names = []
+            if kind.startswith('csv'):
+                for r in csv.DictReader(io.StringIO(text(b)), delimiter=kind[3]):
+                    v = (r.get(cols) or '').strip()
+                    if v: names.append(v)
+            elif kind == 'wfs':
+                for f in json.loads(b).get('features', []):
+                    for c in cols.split(','): names.append(str(f['properties'].get(c) or ''))
+            elif kind == 'dbfzip':
+                z = zipfile.ZipFile(io.BytesIO(b))
+                for nm in z.namelist():
+                    if nm.lower().endswith('.dbf') and ('nom_zon' in nm.lower() or nm.lower().startswith('sz_')):
+                        for r in dbf_rows(z.read(nm)):
+                            for c in cols.split(','):
+                                if r.get(c): names.append(r[c])
+            for n in names:
+                for v in it_variants(n): idx.setdefault(v, set()).add(reg)
+            used.append(label); log('Italia', reg, len(names), 'nombres de', label)
+        except Exception as e: log('Italia: fuente no disponible', label, repr(e)[:160])
+    return idx, sorted(set(used))
 def main():
     rows = load(sys.argv[1:])
     if not isinstance(rows, list) or len(rows) < 2000: log('respuesta inesperada', type(rows).__name__, len(rows) if hasattr(rows, '__len__') else ''); return 1
@@ -115,6 +173,16 @@ def main():
                     else: miss += 1; nomatch.append(e['n'][0])
             log('Francia: region asignada a', hit, 'denominaciones; sin region', miss, '(%s)' % ', '.join(nomatch[:40]))
         except Exception as e: log('Francia sin regiones (INAO no disponible):', repr(e)[:200])
+    it_used = []
+    if 'IT' in out and '--no-it' not in sys.argv:
+        idx, it_used = it_regions(); hit = 0
+        for k in ('wine', 'cheese'):
+            for e in out['IT'][k]:
+                rs = set()
+                for n in e['n'] + (e.get('tr') or []):
+                    for v in it_variants(n): rs |= idx.get(v, set())
+                if rs: e['r'] = sorted(rs); hit += 1
+        log('Italia: region asignada a', hit, 'de', len(out['IT']['wine']) + len(out['IT']['cheese']), 'denominaciones')
     now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     src = {'name': 'Comisión Europea, eAmbrosia (registro de indicaciones geográficas de la UE)', 'url': WEB, 'api': API, 'license': 'CC BY 4.0 (aviso legal de los sitios de la Comisión Europea); © Unión Europea'}
     d = ROOT / 'data' / 'gi'; d.mkdir(parents=True, exist_ok=True)
@@ -122,6 +190,7 @@ def main():
     for c, v in sorted(out.items()):
         for k in v: v[k].sort(key=lambda e: e['n'][0].lower())
         doc = {'schemaVersion': 1, 'generatedAt': now, 'country': c, 'source': src, 'wine': v['wine'], 'cheese': v['cheese']}
+        if c == 'IT' and it_used: doc['regionSource'] = {'name': 'Listados abiertos de las regiones: ' + ', '.join(it_used), 'url': 'https://www.dati.gov.it/', 'license': 'CC BY 4.0 / CC0 según la región', 'partial': True}
         if c == 'FR': doc['regionSource'] = {'name': 'INAO, aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr)', 'url': 'https://www.data.gouv.fr/datasets/aires-geographiques-des-aoc-aop', 'license': 'Licence Ouverte / Open Licence 2.0 (Etalab)'}
         (d / ('%s.json' % c)).write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
         idx[c] = {'wine': len(v['wine']), 'cheese': len(v['cheese']),
