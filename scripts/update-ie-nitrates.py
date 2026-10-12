@@ -35,7 +35,7 @@ def main():
             print("AVISO %s:" % code, e)
             if old.get(key): doc[key] = old[key]
     if "groundwater" not in doc or "rivers" not in doc: print("FALLO"); return 0 if OUT.exists() else 1
-    doc["asOf"] = doc["groundwater"][-1][0]
+    doc["asOf"] = doc["groundwater"][-1][0] + "-12-31"   # el indicador es anual: asOf = fin del ultimo ano evaluado
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     g = doc["groundwater"][-1]; r = doc["rivers"][-1]
     print("ie-nitrates.json: aguas subterraneas %s: %s%% de puntos >= 50 mg/l (%d años); rios %s: %s%% en estado bueno o alto" % (g[0], g[6], len(doc["groundwater"]), r[0], round(r[1] + r[2], 1)))
