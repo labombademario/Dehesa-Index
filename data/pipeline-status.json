@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T02:02:00Z",
+ "generatedAt": "2026-10-12T02:43:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 125,
   "late": 1,
   "error": 0,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "late",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "c9849974",
+   "sha": "cdcaaf05",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/8c01d763-71bd-4130-8ee1-f10e515e9932",
-   "completedAt": "2026-10-12T01:59:50Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/760fba54-2c0f-45a0-bae5-7a3cde051771",
+   "completedAt": "2026-10-12T02:12:54Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -1543,6 +1543,19 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-inao-geo.yml",
+   "name": "Update French designation areas and categories (INAO)",
+   "crons": [
+    "20 5 2 * *"
+   ],
+   "nextRun": "2026-11-02T05:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-interest-rates.yml",
    "name": "Update interest rates",
    "crons": [
@@ -1882,7 +1895,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1905,7 +1918,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1922,7 +1935,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/products"
@@ -1933,15 +1946,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1949,18 +1962,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-12T01:44:21Z"
+     "lastChange": "2026-10-12T02:09:08Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2977,7 +2990,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-10-12T02:30:00Z",
+   "nextRun": "2026-10-13T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",

@@ -1,0 +1,79 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Zona de produccion de las denominaciones francesas (INAO, poligonos simplificados)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "country",
+  "source",
+  "viewBox",
+  "areas"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "country": {
+   "type": "string",
+   "enum": [
+    "FR"
+   ]
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "minLength": 1
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https://"
+    },
+    "license": {
+     "type": "string",
+     "minLength": 1
+    }
+   }
+  },
+  "viewBox": {
+   "type": "string",
+   "pattern": "^0 0 \\d+ [\\d.]+$"
+  },
+  "areas": {
+   "type": "object",
+   "minProperties": 300,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "b",
+     "d"
+    ],
+    "properties": {
+     "b": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+       "type": "number"
+      }
+     },
+     "d": {
+      "type": "string",
+      "pattern": "^M"
+     }
+    }
+   }
+  }
+ }
+}

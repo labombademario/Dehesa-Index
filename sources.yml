@@ -232,6 +232,17 @@ sources:
     data: [gi/index.json, gi-log.txt]
     extra: ['!data/gi']
     message: Denominaciones de origen de vinos y quesos (eAmbrosia, Comisión Europea)
+  - id: inao-geo
+    name: Update French designation areas and categories (INAO)
+    cron: ['20 5 2 * *']
+    pre: ['python3 -m pip install --quiet pyshp pyproj shapely']
+    script: scripts/update-inao-geo.py
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/gi/FR-geo.json data/gi/FR-inao.json
+    data: [gi/FR-geo.json, gi/FR-inao.json]
+    message: Zona y categoría de las denominaciones francesas (INAO)
   - id: uk-trade
     name: Update UK trade (HMRC)
     cron: ['50 17 * * 3']

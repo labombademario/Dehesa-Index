@@ -809,6 +809,18 @@
    [
     "gi_index"
    ]
+  ],
+  "gi/FR-geo.json": [
+   "gi-fr-geo",
+   [
+    "gi_fr_geo"
+   ]
+  ],
+  "gi/FR-inao.json": [
+   "gi-fr-inao",
+   [
+    "gi_fr_inao"
+   ]
   ]
  },
  "globs": {

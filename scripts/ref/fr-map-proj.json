@@ -1,0 +1,1 @@
+{"c": 0.6873615812216195, "mnx": -3.5280908988174917, "mxy": 51.087541, "k": 89.11791435226715, "W": 900, "H": 866.4, "note": "Proyeccion de vendor/fr-regions.js (build-region-maps.py europe_map FR): x=(lon*c-mnx)*k, y=(mxy-lat)*k"}

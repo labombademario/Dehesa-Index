@@ -290,7 +290,7 @@
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-gi'; tr.parentNode.insertBefore(el, tr.nextSibling);
     var go = function () { if (window.DIGI && ST.c === cc) window.DIGI.mount(el, cc, lang()); };
-    if (window.DIGI) go(); else { var sc = document.createElement('script'); sc.src = 'js/denominaciones.js?v=20261012'; sc.onload = go; document.head.appendChild(sc); }
+    if (window.DIGI) go(); else { var sc = document.createElement('script'); sc.src = 'js/denominaciones.js?v=20261013'; sc.onload = go; document.head.appendChild(sc); }
   }
   function render() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;

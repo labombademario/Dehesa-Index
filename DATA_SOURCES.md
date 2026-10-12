@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 86 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20249 series en el catalogo unificado.
+Resumen: 87 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20249 series en el catalogo unificado.
 
-## VERIFIED (86)
+## VERIFIED (87)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -53,6 +53,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `hmrc_govuk` | HM Revenue & Customs - GOV.UK VAT guidance | GB | OGL-UK-3.0 | si/si | si | 0 | Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra. |
 | `hmrc_uktradeinfo` | HM Revenue & Customs - UK Trade Info (OTS, API OData) | GB | OGL-UK-3.0 | si/si | si | 37 | Third-party material and logos excluded. |
 | `inao_aires` | INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
+| `inao_siqo` | INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `indec_ar` | Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP) | AR | CC-BY-INDEC | si/si | si | 13 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios si los hubiere. El ultimo mes es provisional segun el INDEC. |
 | `ine_es` | Instituto Nacional de Estadística (España) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web de… |
 | `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 547 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |

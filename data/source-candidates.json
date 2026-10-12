@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T02:04:37Z",
+ "generatedAt": "2026-10-12T02:44:52Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 120,
+  "total": 121,
   "byStatus": {
-   "ACTIVE": 90,
+   "ACTIVE": 91,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3404,6 +3404,45 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "INAO, aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr), Licence Ouverte 2.0.",
+   "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "inao_siqo",
+   "registryId": "inao_siqo",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "ETALAB-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "INAO, delimitación de las áreas geográficas de los SIQO y referencial de productos SIQO (data.gouv.fr), Licence Ouverte 2.0.",
    "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",

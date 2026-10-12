@@ -14,7 +14,9 @@
   function mount(el, cc, lg) {
     if (!el) return;
     var t = T[lg] || T.es;
-    fetch('data/gi/' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
+    var pre = cc === 'FR' ? new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'js/gi-zone.js?v=20261013'; sc.onload = function () { window.GIZ.info().then(ok); }; sc.onerror = function () { ok(null); }; document.head.appendChild(sc); }) : Promise.resolve(null);
+    Promise.all([fetch('data/gi/' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), pre]).then(function (rr) {
+      var d = rr[0], inao = rr[1], zset = {}; if (inao && inao.z) inao.z.forEach(function (f) { zset[f] = 1; });
       if (!d || (!d.wine.length && !d.cheese.length)) { el.innerHTML = ''; return; }
       var st = { k: d.wine.length ? 'wine' : 'cheese', ty: 'all', q: '', open: false, r: '' };
       var hasR = d.wine.concat(d.cheese).some(function (e) { return e.r && e.r.length; });
@@ -25,6 +27,8 @@
         var items = shown.map(function (e) {
           return '<li class="di-gi-item"><span class="di-gi-name">' + esc(e.n.join(' / ')) + '</span> <span class="di-gi-tag di-gi-' + esc(e.t) + '">' + esc(t[e.t] || e.t) + '</span>' +
             (e.y ? ' <span class="di-gi-year">' + esc(t.since) + ' ' + e.y + '</span>' : '') +
+            (inao && inao.e && inao.e[e.f] ? ' <span class="di-gi-year">· ' + esc(inao.e[e.f].map(function (i) { return window.GIZ.cat(inao.cats[i], lg); }).join(', ')) + '</span>' : '') +
+            (zset[e.f] ? window.GIZ.btn(e.f, lg) : '') +
             (e.u ? ' <a class="di-gi-link" href="' + esc(e.u) + '" target="_blank" rel="noopener noreferrer">' + esc(t.legal) + '</a>' : '') + '</li>';
         }).join('');
         return '<ul class="di-gi-list">' + (items || '<li class="di-movers-hint">' + esc(t.none) + '</li>') + '</ul>' +

@@ -2697,6 +2697,32 @@
    "notes": "Solo se usa para asignar región a las denominaciones italianas.",
    "short": "Regiones IT",
    "legalConfidenceReason": "Licencia explícita en cada ficha del portal nacional."
+  },
+  "inao_siqo": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "additionalRestrictions": "Logos y marcas excluidos.",
+   "name": "INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr)",
+   "url": "https://www.data.gouv.fr/datasets/delimitation-des-aires-geographiques-des-siqo",
+   "country": "FR",
+   "licenseId": "ETALAB-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "attributionText": "INAO, delimitación de las áreas geográficas de los SIQO y referencial de productos SIQO (data.gouv.fr), Licence Ouverte 2.0.",
+   "evidence": "Las fichas de los conjuntos en data.gouv.fr (API, leídas el 2026-10-12) declaran licencia lov2 (Licence Ouverte 2.0), publicadas por el INAO.",
+   "notes": "Polígonos simplificados para dibujar la zona de cada denominación francesa y categoría del producto (data/gi/FR-geo.json, FR-inao.json).",
+   "short": "INAO SIQO",
+   "legalConfidenceReason": "Licencia declarada en el portal nacional de datos abiertos."
   }
  },
  "files": {
@@ -3686,6 +3712,7 @@
    "sources": [
     "ec_eambrosia",
     "inao_aires",
+    "inao_siqo",
     "it_regioni_dop"
    ]
   }

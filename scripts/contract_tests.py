@@ -3212,6 +3212,27 @@ def gi_country(doc, errs, warns, stats):
             if e.get("u") and not str(e["u"]).startswith("http"): errs.append("%s %s: enlace no valido" % (doc["country"], e["id"]))
             if any(f in e for f in ("email", "phone", "producerGroupEmail", "producerGroupPhone")): errs.append("%s %s: datos de contacto publicados" % (doc["country"], e["id"]))
     stats["wine"] = len(doc["wine"]); stats["cheese"] = len(doc["cheese"])
+# Zona y categoria de las denominaciones francesas (INAO): scripts/update-inao-geo.py
+def _gi_fr_ids():
+    d = load("gi/FR.json"); return {e["f"] for k in ("wine", "cheese") for e in d[k]}
+def gi_fr_geo(doc, errs, warns, stats):
+    ids = _gi_fr_ids(); W, H = [float(x) for x in doc["viewBox"].split()[2:]]
+    for f, a in doc["areas"].items():
+        if f not in ids: errs.append("FR-geo: %s no es una denominacion de FR.json" % f); return
+        x, y, w, h = a["b"]
+        if w <= 0 or h <= 0 or x < -40 or y < -40 or x + w > W + 40 or y + h > H + 40: errs.append("FR-geo %s: caja fuera del mapa %s" % (f, a["b"])); return
+        if not a["d"].count("M") or len(a["d"]) < 40: errs.append("FR-geo %s: trazado vacio" % f); return
+    if len(doc["areas"]) < 0.85 * len(ids): errs.append("FR-geo: solo %d zonas de %d denominaciones" % (len(doc["areas"]), len(ids)))
+    stats["areas"] = len(doc["areas"])
+def gi_fr_inao(doc, errs, warns, stats):
+    ids = _gi_fr_ids(); n = len(doc["cats"])
+    if len(set(doc["cats"])) != n: errs.append("FR-inao: categorias repetidas")
+    for f, ix in doc["e"].items():
+        if f not in ids: errs.append("FR-inao: %s no es una denominacion de FR.json" % f); return
+        if any(i >= n for i in ix): errs.append("FR-inao %s: indice de categoria fuera de rango" % f); return
+    if any(f not in ids for f in doc["z"]) or doc["z"] != sorted(set(doc["z"])): errs.append("FR-inao: lista de zonas invalida")
+    if set(doc["z"]) != set(load("gi/FR-geo.json")["areas"]): errs.append("FR-inao: la lista de zonas no coincide con FR-geo.json")
+    stats["cats"] = n; stats["zones"] = len(doc["z"])
 def gi_index(doc, errs, warns, stats):
     C = doc["countries"]
     for cc in ("ES", "FR", "IT", "PT", "EL", "DE"):

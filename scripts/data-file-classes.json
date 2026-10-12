@@ -6,6 +6,10 @@
   "ARCHIVE": "historico o instantaneas; no se sirve al navegador"
  },
  "files": {
+  "data/gi/FR-geo.json": {
+   "class": "RUNTIME",
+   "note": "Zonas de produccion de las denominaciones francesas (INAO), poligonos simplificados. El navegador lo descarga solo al pulsar «Ver zona» (270 KB gz)."
+  },
   "data/normalized.json": {
    "class": "BUILD_ONLY",
    "note": "Serie normalizada de precios (JSON con sangria). Solo la leen constructores, pruebas y las acciones price-engine/publish; el navegador usa data/prices/*. Candidato a compactar (docs/REPO_GROWTH.md)."
