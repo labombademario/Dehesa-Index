@@ -3200,3 +3200,22 @@ def cap_eu_allocations(doc, errs, warns, stats):
         s = sum(v[k] for v in rd["countries"].values())
         if s != rd["totalEU27"][k]: errs.append("cap-eu: anexo XI, la suma de paises (%d) no coincide con el total EU-27 (%d) en %s" % (s, rd["totalEU27"][k], rd["years"][k])); return
     stats["series"] = len(dp["countries"]) + len(rd["countries"])
+
+# Denominaciones de origen (eAmbrosia): scripts/update-eambrosia.py
+def gi_country(doc, errs, warns, stats):
+    seen = set()
+    for k in ("wine", "cheese"):
+        for e in doc[k]:
+            if e["id"] in seen: errs.append("%s %s: %s repetida" % (doc["country"], k, e["id"])); return
+            seen.add(e["id"])
+            if e.get("y") is not None and not (1900 <= e["y"] <= 2100): errs.append("%s %s: año de protección no plausible (%s)" % (doc["country"], e["id"], e["y"]))
+            if e.get("u") and not str(e["u"]).startswith("http"): errs.append("%s %s: enlace no valido" % (doc["country"], e["id"]))
+            if any(f in e for f in ("email", "phone", "producerGroupEmail", "producerGroupPhone")): errs.append("%s %s: datos de contacto publicados" % (doc["country"], e["id"]))
+    stats["wine"] = len(doc["wine"]); stats["cheese"] = len(doc["cheese"])
+def gi_index(doc, errs, warns, stats):
+    C = doc["countries"]
+    for cc in ("ES", "FR", "IT", "PT", "EL", "DE"):
+        if cc not in C or C[cc]["wine"] < 10: errs.append("gi: %s sin vinos o con muy pocos" % cc)
+    tot = sum(v["wine"] + v["cheese"] for v in C.values())
+    if tot < 1500: errs.append("gi: solo %d denominaciones" % tot)
+    stats["countries"] = len(C); stats["total"] = tot

@@ -221,6 +221,17 @@ sources:
     data: [eurostat-depth-stats.json]
     log: eurostat-depth-log.txt
     message: Datos Eurostat ES, FR, DK, NL, BE, DE y UE-27 (profundidad)
+  - id: eambrosia
+    name: Update protected designations of origin, wine and cheese (eAmbrosia)
+    cron: ['35 5 * * 1']
+    script: scripts/update-eambrosia.py
+    timeout: 20
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/gi)
+    data: [gi/index.json, gi-log.txt]
+    extra: ['!data/gi']
+    message: Denominaciones de origen de vinos y quesos (eAmbrosia, Comisión Europea)
   - id: uk-trade
     name: Update UK trade (HMRC)
     cron: ['50 17 * * 3']

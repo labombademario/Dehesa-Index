@@ -2617,6 +2617,34 @@
    "short": "EDO · CDI",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Aviso legal del MITECO leído el 11 oct 2026 desde GitHub Actions: la información puede utilizarse sin autorización expresa citando la fuente (Ley 37/2007, RD 1495/2011). No hay licencia Creative Commons específica del conjunto; confianza media."
+  },
+  "ec_eambrosia": {
+   "name": "Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE)",
+   "url": "https://webgate.ec.europa.eu/eambrosia-api/",
+   "country": "EU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (aviso legal de los sitios de la Comisión Europea)",
+   "licenseUrl": "https://commission.europa.eu/legal-notice_en",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "© Unión Europea, eAmbrosia (registro de indicaciones geográficas de la UE), CC BY 4.0.",
+   "additionalRestrictions": "No se publican los datos de contacto de los consejos reguladores. Logos y marcas excluidos.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-11",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "El aviso legal de los sitios de la Comisión (leído el 2026-10-11) licencia el contenido de la UE en sus webs bajo CC BY 4.0 salvo indicación en contra; la API pública de eAmbrosia (sin clave) no trae un aviso propio.",
+   "used": true,
+   "aliases": [
+    "eambrosia"
+   ],
+   "notes": "API pública: lista completa en una llamada.",
+   "short": "eAmbrosia (CE)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia general de los sitios de la Comisión; la API no tiene aviso propio."
   }
  },
  "files": {
@@ -3601,6 +3629,11 @@
     "nasa_power"
    ],
    "notes": "Temperatura y lluvia mensual por pais frente a 1991-2020 (update-eu-climate.py): rejilla MERRA-2 de NASA POWER promediada por pais."
+  },
+  "data/gi/": {
+   "sources": [
+    "ec_eambrosia"
+   ]
   }
  },
  "derived": [

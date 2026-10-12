@@ -803,6 +803,12 @@
    [
     "blog_country_index"
    ]
+  ],
+  "gi/index.json": [
+   "gi-index",
+   [
+    "gi_index"
+   ]
   ]
  },
  "globs": {
@@ -959,6 +965,12 @@
   "blog/countries/ledger/*.json": [
    "blog-country-ledger",
    []
+  ],
+  "gi/[A-Z][A-Z].json": [
+   "gi-country",
+   [
+    "gi_country"
+   ]
   ]
  },
  "derived": [
