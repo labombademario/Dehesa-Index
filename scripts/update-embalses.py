@@ -31,7 +31,13 @@ def main():
         if args[:1] == ["--mdb"]: mdb = Path(args[1])
         else:
             mdb = Path("/tmp/BD-Embalses.mdb")
-            with urllib.request.urlopen(urllib.request.Request(URL, headers=H), timeout=900) as r: z = zipfile.ZipFile(io.BytesIO(r.read()))
+            z = None
+            for i in range(4):   # la descarga (~40 MB) se corta a veces (IncompleteRead): se reintenta
+                try:
+                    with urllib.request.urlopen(urllib.request.Request(URL, headers=H), timeout=900) as r: z = zipfile.ZipFile(io.BytesIO(r.read())); break
+                except Exception as e:
+                    print("reintento descarga", i + 1, repr(e)[:120]); __import__("time").sleep(20 * (i + 1))
+            if z is None: raise RuntimeError("descarga de BD-Embalses fallida tras 4 intentos")
             z.extract("BD-Embalses.mdb", "/tmp")
         tot = defaultdict(lambda: defaultdict(lambda: [0.0, 0.0, 0]))   # ambito -> semana -> [almacenado, capacidad, n]
         names = {}; n = 0; per = defaultdict(dict)   # (demarcacion, embalse) -> fecha -> (almacenada, capacidad, hidroelectrico)

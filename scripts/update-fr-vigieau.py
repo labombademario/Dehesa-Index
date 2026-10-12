@@ -110,7 +110,14 @@ def build(outdir, today):
             "source": {"id": "vigieau", "name": "VigiEau (Ministere de la Transition ecologique), restrictions d'usage de l'eau", "url": "https://vigieau.gouv.fr/", "license": "Licence Ouverte 2.0 (data.gouv.fr)", "asOf": asof},
             "levels": LEVELS, "departments": sorted(deps, key=lambda x: x["code"]), "counts": counts, "history": hist,
             "notes": {"history": "Historial propio: un recuento por dia de ejecucion desde que arranco la tuberia; la API publica solo el estado vigente.", "level": "Nivel maximo vigente en el departamento entre sus zonas de restriccion (sup=aguas superficiales, sou=subterraneas, aep=agua potable).", "farm": "farm.departments[codigo]: z=zonas con arrete vigente; irr y wat = zonas por trato del riego y del abrevado [sin restriccion, con condiciones u horarios, prohibido]. Clasificacion automatica del texto del arrete: solo orientativa, manda el arrete. farm.guide = guia nacional por nivel."}}
-    if fm: out["farm"] = dict(fm, asOf=today)
+    if fm:
+        # el fichero de arretes y la API del mapa no siempre son la misma foto: un departamento que la API da sin restricciones
+        # no puede llevar zonas con arrete (se quita de los usos agrarios y se anota; no se inventa un nivel)
+        lv = {d["code"]: d["level"] for d in deps}
+        fd = {k: v for k, v in fm.get("departments", {}).items() if lv.get(k) is not None}
+        drop = sorted(set(fm.get("departments", {})) - set(fd))
+        if drop: log("usos agrarios: departamentos sin restricciones en la API y con arretes en el fichero, se omiten:", ", ".join(drop))
+        out["farm"] = dict(fm, departments=fd, asOf=today)
     return out
 def main():
     args = sys.argv[1:]; outdir = ROOT / "data"
