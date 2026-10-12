@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T01:11:00Z",
+ "generatedAt": "2026-10-12T01:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 125,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "40113356",
+   "sha": "03024b5a",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/99a0bf1e-40b8-4bf0-9b85-95e76442d33c",
-   "completedAt": "2026-10-12T01:08:10Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/42e4773d-fb1e-467c-9ba9-9604efcf843b",
+   "completedAt": "2026-10-12T01:22:21Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -807,14 +807,14 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-12T01:07:30Z",
-    "durationSec": 33,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38190661321"
+    "startedAt": "2026-10-12T01:18:14Z",
+    "durationSec": 204,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38191363527"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
-    "failed": 0
+    "runs": 3,
+    "success": 2,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -1882,7 +1882,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1905,7 +1905,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1922,7 +1922,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/products"
@@ -1933,15 +1933,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1949,18 +1949,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-12T01:05:46Z"
+     "lastChange": "2026-10-12T01:18:11Z"
     },
     {
      "path": "data/home-explore.json",

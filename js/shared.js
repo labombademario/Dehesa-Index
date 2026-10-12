@@ -668,7 +668,7 @@
   };
   var MONTHS = { ene: 1, jan: 1, janv: 1, gen: 1, feb: 2, fev: 2, 'févr': 2, mar: 3, abr: 4, apr: 4, avr: 4, may: 5, mai: 5, mag: 5, jun: 6, juin: 6, giu: 6, jul: 7, juil: 7, lug: 7, ago: 8, aug: 8, 'août': 8, set: 9, sep: 9, sept: 9, oct: 10, ott: 10, nov: 11, dic: 12, dec: 12, 'déc': 12 };
   var sortState = {}, sortBusy = false;
-  function cellText(c) { return (c.getAttribute('data-sort') || c.textContent || '').replace(/\s+/g, ' ').trim(); }
+  function cellText(c) { var v = (c.getAttribute('data-sort') || c.textContent || '').replace(/\s+/g, ' ').trim(); try { v = v.replace(new RegExp('^[^\\p{L}\\p{N}+\\-\\u2212.,]+', 'u'), ''); } catch (e) { } return v; } /* sin medallas ni iconos delante */
   function parseDate(s) {
     var m;
     if ((m = /^(\d{4})-(\d{2})(?:-(\d{2}))?(?!\d)/.exec(s))) return +m[1] * 10000 + +m[2] * 100 + (m[3] ? +m[3] : 0);
@@ -737,7 +737,7 @@
       th.classList.add('di-sortable'); th.setAttribute('tabindex', '0'); th.setAttribute('role', 'button');
       if (!th.getAttribute('title')) th.setAttribute('title', t.tip);
       if (j === col && dir) { ind.textContent = dir === 'asc' ? ' ▲' : ' ▼'; th.setAttribute('aria-sort', dir === 'asc' ? 'ascending' : 'descending'); }
-      else { ind.textContent = ''; th.removeAttribute('aria-sort'); }
+      else { ind.textContent = ' ↕'; th.removeAttribute('aria-sort'); } /* se ve que la columna se puede ordenar */
     }
     tb.setAttribute('data-sort-ready', '1');
   }
@@ -766,7 +766,7 @@
   }
   function initTableSort() {
     var css = document.createElement('style');
-    css.textContent = 'th.di-sortable{cursor:pointer;user-select:none;-webkit-user-select:none}th.di-sortable:hover{color:var(--text-primary,inherit)}th.di-sortable:focus-visible{outline:2px solid var(--accent,#2f6b4a);outline-offset:-2px}.di-sort-ind{font-size:9px;white-space:nowrap}';
+    css.textContent = 'th.di-sortable{cursor:pointer;user-select:none;-webkit-user-select:none}th.di-sortable:hover{color:var(--text-primary,inherit)}th.di-sortable:focus-visible{outline:2px solid var(--accent,#2f6b4a);outline-offset:-2px}.di-sort-ind{font-size:10px;white-space:nowrap;opacity:.55}th[aria-sort] .di-sort-ind{opacity:1}';
     document.head.appendChild(css);
     document.addEventListener('click', onSortClick); document.addEventListener('keydown', onSortClick);
     var timer = null;
@@ -842,3 +842,4 @@
     onLangChange: null // páginas pueden sobrescribir esto para re-renderizar su contenido sin recargar
   };
 })(window);
+
