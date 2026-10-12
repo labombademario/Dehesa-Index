@@ -520,6 +520,17 @@
       return PT.mount(wanted, { legacy: { has: !!CFG[wanted], loaded: function () { return LEGACY_LOADED; }, load: loadLegacy, render: function () { render(); } } });
     }
     if (CFG[wanted]) SEL.p = wanted;
+    else if (q.get('p')) {
+      // Clave que no es una ficha (p. ej. una serie antigua «di_lacteos_leche_polvo_eu»): si nombra una ficha existente se abre esa;
+      // si no, se lleva al catálogo con su nombre, nunca a la ficha de trigo por defecto (auditoría 12-oct-2026).
+      var parts = String(wanted).replace(/^di_/, '').split('_'), hit = null;
+      for (var i = 0; i < parts.length && !hit; i++) for (var j = parts.length; j > i; j--) { var k = parts.slice(i, j).join('_'); if (CFG[k] || PT.has(k)) { hit = k; break; } }
+      var rest = parts.filter(function (x) { return !/^(eu|us|uk|ca|es|fr|de|it|lacteos|cereales|carnes|oleaginosas|insumos|energia|fertilizantes)$/.test(x); });
+      if (hit && rest.join('_') === hit) { window.location.replace('producto.html?p=' + encodeURIComponent(hit)); return; }
+      var m = /^di_([a-z]+)_([a-z0-9_]+)_(eu|us|uk|ca)$/.exec(String(wanted));
+      if (m) { window.location.replace('precios.html?product=' + encodeURIComponent(m[1] + ':' + m[2]) + '&region=' + m[3]); return; }   // serie de la tabla de precios: su tarjeta
+      window.location.replace('catalogo.html?q=' + encodeURIComponent(rest.join(' ') || wanted)); return;
+    }
     return loadLegacy().then(render);
   });
 })();

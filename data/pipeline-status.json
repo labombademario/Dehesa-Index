@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T04:19:00Z",
+ "generatedAt": "2026-10-12T04:44:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 125,
@@ -14,14 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "c307abea",
+   "sha": "b3a89df8",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/917ad84c-2c85-4978-b9a3-4dd7ebddc0df",
-   "completedAt": "2026-10-12T04:20:19Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/6288ed64-91eb-4faf-8aa1-2bb29cd6bd16",
+   "completedAt": "2026-10-12T04:26:18Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
-  "repoGeneratedAt": "2026-10-12T03:34:10.452506+00:00"
+  "repoGeneratedAt": "2026-10-12T03:34:10.452506+00:00",
+  "checkedAt": "2026-10-12T04:44:00Z"
  },
  "pipelines": [
   {
@@ -1895,7 +1896,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1918,7 +1919,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1935,7 +1936,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/products"
@@ -1946,15 +1947,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1962,18 +1963,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-12T03:50:51Z"
+     "lastChange": "2026-10-12T04:25:33Z"
     },
     {
      "path": "data/home-explore.json",

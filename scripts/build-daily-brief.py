@@ -53,7 +53,7 @@ def main():
     now = datetime.datetime.utcnow().replace(microsecond=0); since = now - datetime.timedelta(hours=WINDOW_H)
     iso = since.strftime('%Y-%m-%dT%H:%M:%SZ')
     files = ['data/%s.json' % n for n in STATS] + ['data/latest.json']
-    updated, new_data, new_ds = [], [], []
+    updated, new_data, new_ds = [], [], []; file_kinds = {}
     names = {}
     ps = json.loads((ROOT / 'data/pipeline-status.json').read_text())  # estricto: sin estado de pipelines no hay brief
     for p in ps.get('pipelines', []):
@@ -69,14 +69,15 @@ def main():
         try: od = json.loads(old_t)
         except Exception: continue
         os_ = products(od) if f.endswith('latest.json') else stats_series(od, f)
-        changed = 0
+        changed = 0; ckinds = set()
+        file_kinds[f] = {kind_of(v.get('g', ''), k) for k, v in cs.items()}
         for k, v in cs.items():
             o = os_.get(k)
-            if o is None: changed += 1; new_data.append(dict(k=k, new=True, **v)); continue
+            if o is None: changed += 1; ckinds.add(kind_of(v.get('g', ''), k)); new_data.append(dict(k=k, new=True, **v)); continue
             if v['p'] != o['p'] and v['p'] is not None:
-                changed += 1; new_data.append(dict(k=k, prevP=o['p'], prevV=o['v'], **v))
-            elif v['v'] != o['v']: changed += 1
-        if changed: updated.append({'file': f, 'name': names.get(f, f), 'changed': changed})
+                changed += 1; ckinds.add(kind_of(v.get('g', ''), k)); new_data.append(dict(k=k, prevP=o['p'], prevV=o['v'], **v))
+            elif v['v'] != o['v']: changed += 1; ckinds.add(kind_of(v.get('g', ''), k))
+        if changed: updated.append({'file': f, 'name': names.get(f, f), 'changed': changed, 'kinds': sorted(ckinds)})
     fresh = [x for x in new_data if not x.get('new')]
     # --- cobertura completa: cada dataset de DATASETS (y los *-stats.json ya leidos serie a serie) con su tipo y si cambio de CONTENIDO en la ventana
     unknown = sorted(p['workflow'] for p in ps.get('pipelines', []) if p['workflow'] not in WORKFLOW_KINDS)
@@ -92,10 +93,24 @@ def main():
             now_k = content_key(cur_p.read_text()); old_t = git_show(rev, path) if rev else None; old_k = content_key(old_t) if old_t else None
         cover.append({'file': path, 'name': label, 'kind': kind, 'status': 'new' if old_k is None else ('changed' if old_k != now_k else 'unchanged')})
     # las series de *-stats.json y de latest.json se clasifican por su grupo
+    # Un solo universo para todas las cifras del brief (auditoria 12-oct-2026: «1 dataset actualizado» frente a «4 de produccion con cambios»
+    # parecian contradictorios porque contaban ficheros distintos). Los ficheros vigilados serie a serie entran tambien en la cobertura,
+    # una fila por tipo de dato que contienen (un mismo fichero puede tener precios y produccion).
+    upd = {u['file']: u for u in updated}
+    have = {c['file'] for c in cover}
+    for f, ks in sorted(file_kinds.items()):
+        if f in have: continue
+        for k in sorted(ks):
+            if k not in KINDS: continue
+            st = 'changed' if f in upd and k in upd[f]['kinds'] else 'unchanged'
+            cover.append({'file': f, 'name': names.get(f, f), 'kind': k, 'status': st, 'series': True})
     by_kind = {k: {'datasets': 0, 'changed': 0, 'newPeriods': 0} for k in KINDS}
     for c in cover:
         by_kind[c['kind']]['datasets'] += 1
         if c['status'] != 'unchanged': by_kind[c['kind']]['changed'] += 1
+    # la lista de datasets con cambios incluye tambien los ficheros cuyo contenido cambio aunque no se lean serie a serie
+    for c in cover:
+        if c['status'] != 'unchanged' and c['file'] not in upd: upd[c['file']] = 1; updated.append({'file': c['file'], 'name': c['name'], 'changed': None, 'kinds': [c['kind']]})
     for x in fresh: by_kind[kind_of(x['g'], x['k'])]['newPeriods'] += 1
     def mk(x):
         r = {'k': x['k'], 'kind': kind_of(x['g'], x['k']), 'label': x['l'], 'unit': x['u'], 'period': x['p'], 'value': x['v'], 'changePct': x['c'], 'group': x['g']}
@@ -134,7 +149,7 @@ def main():
     upcoming = sorted([{'workflow': p['workflow'], 'name': p.get('name', '').replace('Dehesa Data — ', ''), 'nextRun': p['nextRun']} for p in ps.get('pipelines', []) if p.get('nextRun') and nowS <= p['nextRun'] <= horizon], key=lambda x: x['nextRun'])[:15]
     doc = {'schemaVersion': 1, 'generatedAt': nowS, 'windowHours': WINDOW_H, 'since': iso,
            'counts': {'datasetsUpdated': len(updated), 'newPeriods': len(fresh), 'newSeries': len([x for x in new_data if x.get('new')]), 'newDatasets': len(new_ds), 'revisions': len(revs), 'stale': len(stale), 'staleNew': len([s for s in stale if s['isNew']]), 'upcoming': len(upcoming)},
-           'datasets': sorted(updated, key=lambda x: -x['changed']), 'newDatasets': new_ds, 'movers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV')} for x in movers],
+           'datasets': sorted(updated, key=lambda x: -(x['changed'] or 0)), 'newDatasets': new_ds, 'movers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV')} for x in movers],
            'byCountry': by_country, 'gapMovers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV'), 'gapDays': x.get('gap')} for x in gap_movers],
            'newData': [mk(x) for x in sorted(fresh, key=lambda x: -abs(x['c'] if isinstance(x['c'], (int, float)) else 0))[:150]],
            'cashBids': CB.brief_section(now, iso), 'revisions': [r | {'kind': 'historical'} for r in revs[:30]], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,

@@ -6,7 +6,7 @@
   var CLS = ['#f3efe4', '#f1d9a0', '#e3b25a', '#cf7f36', '#a9491f', '#6e2410'];
   var ST = { AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', DC: 'District of Columbia', FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming' };
   var T = {
-    es: { title: 'Monitor de sequía de EE. UU.', sub: 'Qué parte de cada estado está en sequía, semana a semana. Datos del U.S. Drought Monitor (Universidad de Nebraska-Lincoln, USDA y NOAA); se actualizan los jueves con el mapa válido al martes anterior.',
+    es: { page: 'Monitor de sequía', pageSub: 'Sequía por zona: Europa por país y región, Estados Unidos por estado y Canadá por provincia. Elige la zona; por defecto se abre la de tu mercado.', tabs: ['Europa', 'Estados Unidos', 'Canadá'], zone: 'Zona', title: 'Monitor de sequía de EE. UU.', sub: 'Qué parte de cada estado está en sequía, semana a semana. Datos del U.S. Drought Monitor (Universidad de Nebraska-Lincoln, USDA y NOAA); se actualizan los jueves con el mapa válido al martes anterior.',
       metric: 'Categoría', region: 'Zona', conus: 'EE. UU. continental', week: 'Semana al', of: 'de la superficie',
       m: ['D0 o peor · Anormalmente seco', 'D1 o peor · Sequía moderada', 'D2 o peor · Sequía severa', 'D3 o peor · Sequía extrema', 'D4 · Sequía excepcional'],
       ms: ['Anormalmente seco (D0+)', 'Sequía (D1+)', 'Sequía severa (D2+)', 'Sequía extrema (D3+)', 'Sequía excepcional (D4)'],
@@ -16,7 +16,7 @@
       legendNone: 'Sin sequía en esa categoría', tip: 'de la superficie en', pick: 'Pulsa un estado para ver su evolución.',
       note: 'Fuente: U.S. Drought Monitor, elaborado por el National Drought Mitigation Center (Universidad de Nebraska-Lincoln) con USDA y NOAA. Las categorías son acumuladas: D1 incluye D2, D3 y D4. “pp” son puntos porcentuales. El mapa es una valoración semanal que combina índices, medidas de campo y criterio de expertos; no es un pronóstico.',
       src: 'Fuente: U.S. Drought Monitor (datos públicos)' },
-    en: { title: 'U.S. Drought Monitor', sub: 'How much of each state is in drought, week by week. Data from the U.S. Drought Monitor (University of Nebraska-Lincoln, USDA and NOAA); updated on Thursdays with the map valid the previous Tuesday.',
+    en: { page: 'Drought monitor', pageSub: 'Drought by area: Europe by country and region, the United States by state and Canada by province. Pick an area; your market opens by default.', tabs: ['Europe', 'United States', 'Canada'], zone: 'Area', title: 'U.S. Drought Monitor', sub: 'How much of each state is in drought, week by week. Data from the U.S. Drought Monitor (University of Nebraska-Lincoln, USDA and NOAA); updated on Thursdays with the map valid the previous Tuesday.',
       metric: 'Category', region: 'Area', conus: 'Contiguous U.S.', week: 'Week of', of: 'of the area',
       m: ['D0 or worse · Abnormally dry', 'D1 or worse · Moderate drought', 'D2 or worse · Severe drought', 'D3 or worse · Extreme drought', 'D4 · Exceptional drought'],
       ms: ['Abnormally dry (D0+)', 'Drought (D1+)', 'Severe drought (D2+)', 'Extreme drought (D3+)', 'Exceptional drought (D4)'],
@@ -26,7 +26,7 @@
       legendNone: 'None in that category', tip: 'of the area in', pick: 'Click a state to see its trend.',
       note: 'Source: U.S. Drought Monitor, produced by the National Drought Mitigation Center (University of Nebraska-Lincoln) with USDA and NOAA. Categories are cumulative: D1 includes D2, D3 and D4. “pp” means percentage points. The map is a weekly assessment combining indices, field measurements and expert judgement; it is not a forecast.',
       src: 'Source: U.S. Drought Monitor (public data)' },
-    fr: { title: 'Moniteur de sécheresse américain', sub: 'Quelle part de chaque État est en sécheresse, semaine après semaine. Données du U.S. Drought Monitor (Université du Nebraska-Lincoln, USDA et NOAA) ; mises à jour le jeudi avec la carte valable le mardi précédent.',
+    fr: { page: 'Moniteur de sécheresse', pageSub: 'Sécheresse par zone : l’Europe par pays et région, les États-Unis par État et le Canada par province. Choisissez une zone ; celle de votre marché s’ouvre par défaut.', tabs: ['Europe', 'États-Unis', 'Canada'], zone: 'Zone', title: 'Moniteur de sécheresse américain', sub: 'Quelle part de chaque État est en sécheresse, semaine après semaine. Données du U.S. Drought Monitor (Université du Nebraska-Lincoln, USDA et NOAA) ; mises à jour le jeudi avec la carte valable le mardi précédent.',
       metric: 'Catégorie', region: 'Zone', conus: 'États-Unis continentaux', week: 'Semaine du', of: 'de la surface',
       m: ['D0 ou pire · Anormalement sec', 'D1 ou pire · Sécheresse modérée', 'D2 ou pire · Sécheresse sévère', 'D3 ou pire · Sécheresse extrême', 'D4 · Sécheresse exceptionnelle'],
       ms: ['Anormalement sec (D0+)', 'Sécheresse (D1+)', 'Sécheresse sévère (D2+)', 'Sécheresse extrême (D3+)', 'Sécheresse exceptionnelle (D4)'],
@@ -36,7 +36,7 @@
       legendNone: 'Aucune dans cette catégorie', tip: 'de la surface en', pick: 'Cliquez sur un État pour voir son évolution.',
       note: 'Source : U.S. Drought Monitor, produit par le National Drought Mitigation Center (Université du Nebraska-Lincoln) avec l’USDA et la NOAA. Les catégories sont cumulatives : D1 inclut D2, D3 et D4. « pt » = points de pourcentage. La carte est une évaluation hebdomadaire combinant indices, mesures de terrain et expertise ; ce n’est pas une prévision.',
       src: 'Source : U.S. Drought Monitor (données publiques)' },
-    it: { title: 'Monitor della siccità negli USA', sub: 'Quanta parte di ogni Stato è in siccità, settimana per settimana. Dati dell’U.S. Drought Monitor (Università del Nebraska-Lincoln, USDA e NOAA); aggiornati il giovedì con la mappa valida il martedì precedente.',
+    it: { page: 'Monitor della siccità', pageSub: 'Siccità per area: Europa per paese e regione, Stati Uniti per Stato e Canada per provincia. Scegli l’area; per impostazione predefinita si apre quella del tuo mercato.', tabs: ['Europa', 'Stati Uniti', 'Canada'], zone: 'Area', title: 'Monitor della siccità negli USA', sub: 'Quanta parte di ogni Stato è in siccità, settimana per settimana. Dati dell’U.S. Drought Monitor (Università del Nebraska-Lincoln, USDA e NOAA); aggiornati il giovedì con la mappa valida il martedì precedente.',
       metric: 'Categoria', region: 'Area', conus: 'USA continentali', week: 'Settimana del', of: 'della superficie',
       m: ['D0 o peggio · Anormalmente secco', 'D1 o peggio · Siccità moderata', 'D2 o peggio · Siccità severa', 'D3 o peggio · Siccità estrema', 'D4 · Siccità eccezionale'],
       ms: ['Anormalmente secco (D0+)', 'Siccità (D1+)', 'Siccità severa (D2+)', 'Siccità estrema (D3+)', 'Siccità eccezionale (D4)'],
@@ -73,10 +73,34 @@
   function card(label, value, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(label).toUpperCase() + '</div><div style="font-size:24px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + value + '</div><div style="font-size:12.5px">' + sub + '</div></div>'; }
   function rname(r, t) { return r === 'CONUS' ? t.conus : (ST[r] || r); }
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
-    function render() {
+    // Zonas de la pagina: cada una con sus secciones. Por defecto, la del mercado guardado (Europa salvo EE. UU. o Canada).
+  var ZONES = { eu: ['eusq', 'eucl', 'embsq'], us: ['sq-body'], ca: ['casq'] }, ZORD = ['eu', 'us', 'ca'];
+  function zoneDefault() {
+    var q = new URLSearchParams(window.location.search), z = (q.get('zona') || '').toLowerCase();
+    if (ZONES[z]) return z;
+    if (q.get('state')) return 'us';
+    var loc = ''; try { loc = localStorage.getItem('dehesaIndexLocation') || ''; } catch (e) {}
+    return loc === 'us' ? 'us' : loc === 'ca' ? 'ca' : 'eu';
+  }
+  var ZONE = zoneDefault();
+  function tabs() {
+    var t = tr(), bar = document.getElementById('sq-tabs');
+    document.getElementById('pg-h1').textContent = t.page; document.getElementById('pg-sub').textContent = t.pageSub;
+    if (bar) {
+      bar.setAttribute('aria-label', t.zone);
+      bar.innerHTML = ZORD.map(function (z, i) { return '<button type="button" class="di-tab-btn' + (z === ZONE ? ' active' : '') + '" data-zone="' + z + '" aria-pressed="' + (z === ZONE) + '">' + esc(t.tabs[i]) + '</button>'; }).join('');
+      Array.prototype.forEach.call(bar.querySelectorAll('[data-zone]'), function (b) {
+        b.onclick = function () {
+          ZONE = b.getAttribute('data-zone'); tabs();
+          try { var u = new URL(window.location.href); u.searchParams.set('zona', ZONE); history.replaceState(null, '', u.pathname + u.search + u.hash); } catch (e) {}
+        };
+      });
+    }
+    ZORD.forEach(function (z) { ZONES[z].forEach(function (id) { var el = document.getElementById(id); if (el) el.style.display = z === ZONE ? '' : 'none'; }); });
+  }
+  function render() {
     var t = tr(), root = document.getElementById('sq-body');
-    document.title = t.title + ' | Dehesa Index';
-    document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
+    document.title = t.page + ' | Dehesa Index'; tabs();
     if (!D) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var m = SEL.metric, rows = series(SEL.region), last = at(rows, 0), pw = at(rows, 1), py = at(rows, 52);
     var cur = val(last, m);
@@ -101,7 +125,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     var th = function (x, r) { return '<th style="padding:10px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x).toUpperCase() + '</th>'; };
     var table = '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table style="border-collapse:collapse;width:100%;min-width:480px;font-size:14px"><tr>' + th(t.state) + '<th></th>' + th(t.now, 1) + th(t.dWeek, 1) + th(t.dYear, 1) + '</tr>' +
       list.map(function (r) { return '<tr data-row="' + r.s + '" style="border-top:1px solid var(--border);cursor:pointer' + (r.s === SEL.region ? ';background:rgba(29,81,120,.06)' : '') + '"><td style="padding:9px 6px;font-weight:600;white-space:nowrap">' + esc(ST[r.s] || r.s) + '</td><td style="padding:9px 6px;width:30%"><div style="height:8px;border-radius:2px 4px 4px 2px;background:' + CLS[Math.max(1, cls(r.v))] + ';width:' + Math.min(100, r.v).toFixed(1) + '%"></div></td><td style="padding:9px 6px;text-align:right;white-space:nowrap">' + nf(r.v, 1) + ' %</td><td style="padding:9px 6px;text-align:right">' + delta(r.dw, t) + '</td><td style="padding:9px 6px;text-align:right">' + delta(r.dy, t) + '</td></tr>'; }).join('') + '</table></div>';
-    root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.metric) + '<br><select id="sq-sel-m" class="di-compare-select">' + mopts + '</select></label><label style="font-size:13px">' + esc(t.region) + '<br><select id="sq-sel-r" class="di-compare-select">' + ropts + '</select></label></div>' +
+    root.innerHTML = '<h2 class="cof-h2">' + esc(t.title) + '</h2><p class="cof-sub">' + esc(t.sub) + '</p><div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.metric) + '<br><select id="sq-sel-m" class="di-compare-select">' + mopts + '</select></label><label style="font-size:13px">' + esc(t.region) + '<br><select id="sq-sel-r" class="di-compare-select">' + ropts + '</select></label></div>' +
       '<div style="margin-top:8px;font-size:13px;color:var(--text-faint)">' + esc(t.week) + ' ' + esc(last[0]) + '</div>' + cards +
       '<div class="di-card" style="padding:8px;position:relative"><div id="sq-map">' + svg + '</div><div id="sq-tip" style="display:none;position:absolute;pointer-events:none;background:var(--surface,#fff);border:1px solid var(--border);border-radius:6px;padding:6px 9px;font-size:12.5px;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap"></div></div>' +
       '<div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin:8px 0">' + lg + '</div><p class="di-movers-hint">' + esc(t.pick) + '</p>' + chart + table +

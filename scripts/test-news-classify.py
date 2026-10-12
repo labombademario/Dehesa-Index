@@ -15,6 +15,13 @@ CASES = [
  ("Wheat exports fall as tariffs hit Black Sea trade", "en", False, {"products": ["trigo"], "channel": "trade"}),
  ("Drought cuts corn yields in Illinois", "en", False, {"products": ["maiz"], "channel": "weather"}),
 ]
+# Auditoria del 12-oct-2026: una noticia de agricultores que no cobran el grano salia como «POLITICA · COLZA» porque la colza y la politica
+# solo aparecian en la entradilla. Sin producto y canal en el titular no hay etiqueta. (titular, entradilla, idioma, mercados prohibidos)
+NO_LINK = [
+ ("Farmers still waiting to be paid for grain delivered to collapsed trader", "Growers of wheat and rapeseed say the government must step in with emergency support.", "en", ["colza"]),
+ ("Agricultores denuncian que siguen sin cobrar el grano entregado", "La colza y el girasol también se vieron afectados; piden ayudas al Gobierno.", "es", ["colza"]),
+ ("Fertiliser prices climb again ahead of spring", "", "en", ["maiz", "trigo", "cebada", "arroz"]),
+]
 def main():
     fails = 0
     for title, lang, general, exp in CASES:
@@ -31,5 +38,11 @@ def main():
             if t in topics: print("FALLO: tema indebido", t, "en", title, topics); fails += 1
         if "channel" in exp and (not links or links[0]["channel"] != exp["channel"]):
             print("FALLO: canal", links[0]["channel"] if links else None, "!=", exp["channel"], "en", title); fails += 1
-    print("test-news-classify: %d casos, %d fallos" % (len(CASES), fails)); return 1 if fails else 0
+    for title, desc, lang, banned in NO_LINK:
+        c = u.classify(title, desc, "eu", lang, False)
+        if c is None: continue
+        links = u.build_market_links(c[0], c[1], title, desc, lang)
+        bad = [l for l in links if l["market"] in banned]
+        if bad: print("FALLO: etiqueta sin sustento en el titular", bad, "en", title); fails += 1
+    print("test-news-classify: %d casos, %d fallos" % (len(CASES) + len(NO_LINK), fails)); return 1 if fails else 0
 sys.exit(main())

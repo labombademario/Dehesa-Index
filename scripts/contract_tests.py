@@ -576,6 +576,8 @@ def watch_index(doc, errs, warns, stats):
 def daily_brief(doc, errs, warns, stats):
     c = doc["counts"]
     if c["datasetsUpdated"] != len(doc["datasets"]): errs.append("counts.datasetsUpdated != len(datasets)")
+    _chg = {x["file"] for x in doc["coverage"] if x["status"] != "unchanged"}
+    if c["datasetsUpdated"] != len(_chg): errs.append("counts.datasetsUpdated (%d) != datasets con cambios en la cobertura por tipo (%d): las dos cifras deben contar lo mismo" % (c["datasetsUpdated"], len(_chg)))
     if c["newDatasets"] != len(doc["newDatasets"]): errs.append("counts.newDatasets != len(newDatasets)")
     if c["revisions"] != len(doc["revisions"]) and len(doc["revisions"]) < 30: errs.append("counts.revisions != len(revisions)")
     if c["stale"] != len(doc["stale"]): errs.append("counts.stale != len(stale)")

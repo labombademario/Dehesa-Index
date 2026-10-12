@@ -550,34 +550,40 @@ def parse(raw):
 CHANNEL_PRIORITY = ["input_cost", "trade", "weather", "supply", "energy", "policy", "market_impact"]
 NON_MARKET = ("costes", "pac", "energia", "diesel", "ganado", "pienso")
 
-def build_market_links(products, topics, title, desc):
-    text = norm(f"{title} {desc}")
+def build_market_links(products, topics, title, desc, lang="en"):
+    """Enlaces noticia -> mercado. Solo se etiqueta lo que el TITULAR sostiene: el producto tiene que nombrarse en el titular y el canal
+    (clima, oferta, comercio, costes, politica...) tambien. La entradilla sirve para decidir si la noticia entra, no para atribuirle un efecto."""
+    raw_t = (title or "").lower(); text = norm(raw_t)
+    tprod = [p for p in products if p in PRODUCTS and hit_count(text, raw_t, PRODUCTS[p], lang)]
+    ttop = [x for x in topics if x in TOPICS and hit_count(text, raw_t, TOPICS[x], lang)]
     links = []
     def add(market, channel, relation=None):
         key = (market, channel, relation or "")
         if any((x["market"], x["channel"], x.get("relation") or "") == key for x in links): return
         links.append({"market": market, "channel": channel, "relation": relation, "direction": "uncertain"})
-    market_products = [p for p in products if p not in NON_MARKET]
-    if "clima" in topics:
+    market_products = [p for p in tprod if p not in NON_MARKET]
+    if "clima" in ttop:
         for p in market_products: add(p, "weather")
-    if "oferta" in topics:
+    if "oferta" in ttop:
         for p in market_products: add(p, "supply")
-    if "comercio" in topics:
+    if "comercio" in ttop:
         for p in market_products: add(p, "trade")
-    if "sanidad" in topics:
+    if "sanidad" in ttop:
         for p in market_products: add(p, "supply")
-    fert = any(k in text for k in ("fertiliz", "urea", "nitrogen", "potash", "engrais", "abono", "concime"))
-    energy = any(k in text for k in ("diesel", "energy", "oil", "crude", "fuel", "natural gas", "gasoleo", "gazole", "gasolio"))
-    if fert or "fertilizantes" in products:
-        for p in ("maiz", "trigo", "cebada", "arroz"): add(p, "input_cost", "fertilizer-cereals")
-        if "leche" in products: add("leche", "input_cost", "fertilizer-milk")
-    if energy or any(p in products for p in ("energia", "diesel")):
-        for p in ("maiz", "trigo", "cebada", "arroz"): add(p, "input_cost", "energy-cereals")
-        if "leche" in products: add("leche", "input_cost", "energy-milk")
-    if "energia" in topics and not energy: add("energia", "energy")
-    if "politica" in topics or "ayudas" in topics:
+    fert = any(k in text for k in ("fertiliz", "urea", "nitrogen", "potash", "engrais", "abono", "concime")) or "fertilizantes" in tprod
+    energy = any(re.search(r"(?<![a-z])" + k + r"(?![a-z])", text) for k in ("diesel", "energy", "oil", "crude", "fuel", "natural gas", "gasoleo", "gazole", "gasolio")) or any(p in tprod for p in ("energia", "diesel"))
+    cereals = [p for p in ("maiz", "trigo", "cebada", "arroz") if p in tprod]
+    if fert:
+        for p in cereals: add(p, "input_cost", "fertilizer-cereals")
+        if "leche" in tprod: add("leche", "input_cost", "fertilizer-milk")
+        if not cereals and "leche" not in tprod: add("fertilizantes", "input_cost")
+    if energy:
+        for p in cereals: add(p, "input_cost", "energy-cereals")
+        if "leche" in tprod: add("leche", "input_cost", "energy-milk")
+    if "energia" in ttop and not energy: add("energia", "energy")
+    if "politica" in ttop or "ayudas" in ttop:
         for p in market_products: add(p, "policy")
-    # Sin canal comprobado (clima, oferta, comercio, costes, politica...) NO se inventa un «impacto en el mercado»: una simple mencion del producto no demuestra efecto.
+    # Sin producto y canal en el titular no hay etiqueta: una mencion en la entradilla no demuestra efecto en ese mercado.
     return sorted(links, key=lambda x: (CHANNEL_PRIORITY.index(x["channel"]) if x["channel"] in CHANNEL_PRIORITY else 99, x["market"]))
 
 # Anuncios de compraventa (maquinaria, semillas sueltas…) que mencionan un cultivo por casualidad: no son noticias de mercado.
@@ -646,7 +652,7 @@ def fetch(feed):
         if not c: continue
         products, topics, reg, score = c
         if pub in TRUSTED or feed["source"] in TRUSTED: score = min(100, score + 8)
-        links = build_market_links(products, topics, title, desc)
+        links = build_market_links(products, topics, title, desc, feed["lang"])
         rows.append({
             "id": "auto-" + hashlib.sha1((pub + title + x["link"]).encode()).hexdigest()[:10],
             "date": d, "region": reg, "topic": topics[0] if topics else "", "topics": topics, "products": products,
@@ -763,7 +769,7 @@ if __name__ == "__main__":
             if not c: dropped += 1; continue
             products, topics, _reg, score = c
             if x["source"] in TRUSTED: score = min(100, score + 8)
-            links = build_market_links(products, topics, x["headline"]["en"], x.get("description", ""))
+            links = build_market_links(products, topics, x["headline"]["en"], x.get("description", ""), x["lang"])
             x.update({"products": products, "topics": topics, "topic": topics[0] if topics else "", "relevance": score, "impactChannel": links[0]["channel"] if links else None, "marketLinks": links})
             out.append(x)
         d["items"] = out; d["count"] = len(out)

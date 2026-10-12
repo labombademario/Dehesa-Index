@@ -93,6 +93,14 @@ def check_deploy():
     b = out["build"]
     if (b and b["conclusion"] == "failure") or (out["lagHours"] is not None and out["lagHours"] > 6): out["status"] = "error"
     elif (b and b["conclusion"] == "success") or out["lagHours"] is not None: out["status"] = "ok"
+    if out["status"] != "unknown": out["checkedAt"] = iso(NOW); return out
+    # Sin red (p. ej. al regenerar derivados fuera de GitHub Actions) no se pisa la ultima comprobacion buena: se conserva tal cual,
+    # con su fecha (checkedAt), y la pagina de salud dice cuando se comprobo. No se inventa un estado nuevo.
+    try:
+        prev = json.loads((ROOT / "data" / "pipeline-status.json").read_text()).get("deploy") or {}
+        if prev.get("status") in ("ok", "error"):
+            prev.setdefault("checkedAt", (prev.get("build") or {}).get("completedAt")); return prev
+    except Exception: pass
     return out
 def iso(d): return d.strftime("%Y-%m-%dT%H:%M:%SZ") if d else None
 def pdate(s): return datetime.datetime.strptime(s[:19], "%Y-%m-%dT%H:%M:%S") if s else None
