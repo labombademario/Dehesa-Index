@@ -3285,6 +3285,60 @@ def us_reservoirs(doc, errs, warns, stats):
     for must in ("Mead (Hoover Dam)", "Powell (Glen Canyon Dam)", "Shasta"):
         if must not in names: errs.append("embalses US: falta %s" % must)
     stats["embalses"] = len(doc["items"])
+# Francia: GNR, gazole y fioul (DGEC) y gazole por departamento
+def fr_gnr(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today().isoformat(); prev = None
+    for r in doc["weekly"]:
+        d, g, gh, a, f = r
+        if d > today: errs.append("GNR: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("GNR: semanas desordenadas en %s" % d); return
+        prev = d
+        if g is None or not 0.4 < g < 3.0: errs.append("GNR %s: %s fuera de lo plausible" % (d, g))
+        elif gh is not None and gh >= g: errs.append("GNR %s: el precio sin impuestos (%s) no puede superar al de con impuestos (%s)" % (d, gh, g))
+        if a is not None and g is not None and g >= a: errs.append("GNR %s: mas caro que el gazole de carretera" % d)
+    S = doc["stations"]
+    if S["n"] < 5000: errs.append("GNR: solo %d gasolineras" % S["n"])
+    for k, v in S["departments"].items():
+        if not (0.9 < v[0] < 3.5 and v[1] >= 1): errs.append("gazole %s: %s" % (k, v))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=21)).isoformat(): warns.append("GNR: ultima semana %s" % doc["asOf"])
+    stats["semanas"] = len(doc["weekly"]); stats["departamentos"] = len(S["departments"])
+# Francia: emisiones de la agricultura (Eurostat)
+def fr_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI FR: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (40000 < a < 110000 and 250000 < t < 700000): errs.append("GEI FR %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI FR %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+# Francia: rios sin agua (ONDE)
+def fr_onde(doc, errs, warns, stats):
+    import datetime as _dt
+    prev = None
+    for m in doc["months"]:
+        if prev and m["month"] <= prev: errs.append("ONDE: meses desordenados en %s" % m["month"]); return
+        prev = m["month"]
+        if [sum(v[i] for v in m["departments"].values()) for i in range(3)] != m["total"]: errs.append("ONDE %s: los departamentos no suman el total" % m["month"])
+        if not 5 <= int(m["month"][5:]) <= 10: errs.append("ONDE: mes fuera de la temporada %s" % m["month"])
+    big = [m for m in doc["months"] if sum(m["total"]) >= 1500]
+    if len(big) < 40: errs.append("ONDE: solo %d campanas completas" % len(big))
+    stats["meses"] = len(doc["months"]); stats["ultimo"] = doc["asOf"]
+# Francia: nitratos en aguas subterraneas
+def fr_nitrates(doc, errs, warns, stats):
+    prev = None
+    for y in doc["years"]:
+        if prev and y["year"] != prev + 1: errs.append("nitratos FR: falta algun ano antes de %d" % y["year"])
+        prev = y["year"]
+        if y["points"] < 1500: errs.append("nitratos FR %d: solo %d puntos" % (y["year"], y["points"]))
+        if not (2 < (y["median"] or 0) < 60): errs.append("nitratos FR %d: mediana %s" % (y["year"], y["median"]))
+        if not 0 <= y["over50"] <= y["over25"] <= 100: errs.append("nitratos FR %d: porcentajes incoherentes" % y["year"])
+        for k, v in y["departments"].items():
+            if not (v[0] >= 1 and 0 <= v[3] <= v[2] <= 100): errs.append("nitratos FR %d/%s: %s" % (y["year"], k, v)); break
+    if prev and prev < __import__("datetime").date.today().year - 2: warns.append("nitratos FR: ultimo ano %d" % prev)
+    stats["anos"] = len(doc["years"])
 # Espana: gasoleo B (agricola) en gasolineras por provincia (MITECO)
 def es_gasoleo_b(doc, errs, warns, stats):
     import datetime as _dt

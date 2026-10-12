@@ -886,6 +886,30 @@
     "ar_provinces"
    ]
   ],
+  "fr-gnr.json": [
+   "fr-gnr",
+   [
+    "fr_gnr"
+   ]
+  ],
+  "fr-ghg-agri.json": [
+   "fr-ghg-agri",
+   [
+    "fr_ghg_agri"
+   ]
+  ],
+  "fr-onde.json": [
+   "fr-onde",
+   [
+    "fr_onde"
+   ]
+  ],
+  "fr-nitrates.json": [
+   "fr-nitrates",
+   [
+    "fr_nitrates"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

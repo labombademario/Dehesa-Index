@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-143 workflows (106 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+147 workflows (110 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -98,7 +98,11 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
 | update-fr-cereobs.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-cereobs.py | france-cereobs.json | finish, validate-files |
+| update-fr-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | fr-ghg-agri.json | finish, validate-files |
+| update-fr-gnr.yml | generado | semanal (1,3,5) | detect-revisions.py, gen-workflows.py, update-fr-gnr.py | fr-gnr.json | finish, validate-files |
 | update-fr-insee.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-insee.py | france-insee-stats.json | finish, validate-files |
+| update-fr-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fr-nitrates.py | fr-nitrates.json | finish, validate-files |
+| update-fr-onde.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-onde.py | fr-onde.json | finish, validate-files |
 | update-fr-vigieau.yml | generado | semanal (1,3,5) | detect-revisions.py, gen-workflows.py, update-fr-vigieau.py | france-vigieau.json | finish, validate-files |
 
 ## NL

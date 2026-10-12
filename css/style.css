@@ -2122,12 +2122,20 @@ html[data-theme="dark"] .ute-card{--ute-n:#6CC08E;--ute-p:#E5C65A;--ute-a:#F0A35
 .ute-hist span{display:flex;flex-direction:column;align-items:center;gap:3px}
 .ute-hist i{display:block;width:16px;background:var(--ute-a);border-radius:2px 2px 0 0}
 .ute-hist small{font-size:10.5px;color:var(--text-muted);white-space:nowrap}
+/* Barras por ano (js/fr-onde.js, js/fr-nitrates.js) */
+.on-bars{display:flex;align-items:flex-end;gap:5px;overflow-x:auto;min-height:118px;max-width:640px;padding-top:4px}
+.on-bars span{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:24px}
+.on-bars b{font-size:10.5px;font-weight:600;color:var(--text-muted)}
+.on-bars i{display:block;width:16px;background:var(--gb2);border-radius:2px 2px 0 0}
+.on-bars i.on-cur{background:var(--gb4)}
+.on-bars small{font-size:10.5px;color:var(--text-muted)}
 /* Gasoleo B por provincia (js/es-gasoleo-b.js): rampa de un solo tono, de claro a oscuro */
 #in-es-gb{margin-top:18px}
 .gb-card{max-width:760px;--gb0:#F6E3D5;--gb1:#EDBFA0;--gb2:#DD9268;--gb3:#BF5F38;--gb4:#8A361C;--gbx:#E9E6E1}
 html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3:#D07D4D;--gb4:#F3AC7C;--gbx:#2A2D2B}
 .gb-sub{margin-top:14px}
-.gb-map{display:block;width:100%;max-width:560px;height:auto;margin:2px 0 6px}
+.gb-map,.di-card svg.gb-map{display:block;width:100%;max-width:560px;height:auto;margin:2px 0 6px}
+.di-card svg.fr-dmap{max-width:520px}
 .gb-prov{stroke:var(--surface);stroke-width:.8;vector-effect:non-scaling-stroke;cursor:pointer;outline:none}
 .gb-prov:hover,.gb-prov:focus-visible,.gb-prov.gb-on{stroke:var(--text);stroke-width:2}
 .gb-c0{fill:var(--gb0);background:var(--gb0)}.gb-c1{fill:var(--gb1);background:var(--gb1)}.gb-c2{fill:var(--gb2);background:var(--gb2)}.gb-c3{fill:var(--gb3);background:var(--gb3)}.gb-c4{fill:var(--gb4);background:var(--gb4)}.gb-cx{fill:var(--gbx);background:var(--gbx)}

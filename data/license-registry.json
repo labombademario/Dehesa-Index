@@ -2879,6 +2879,110 @@
    "short": "MITECO · Sequía",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Aviso legal del MITECO leído el 11 oct 2026 desde GitHub Actions: la información puede utilizarse sin autorización expresa citando la fuente (Ley 37/2007, RD 1495/2011). No hay licencia Creative Commons específica del conjunto; confianza media."
+  },
+  "dgec_prix_petroliers": {
+   "name": "Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers",
+   "url": "https://www.ecologie.gouv.fr/politiques-publiques/prix-produits-petroliers",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte Etalab 2.0 (mentions légales de ecologie.gouv.fr)",
+   "licenseUrl": "https://www.ecologie.gouv.fr/mentions-legales",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Ministère de la Transition écologique (DGEC), prix des produits pétroliers",
+   "additionalRestrictions": "Mencionar la fuente y la fecha de la última actualización.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Mentions légales de ecologie.gouv.fr, leídas el 12 oct 2026: «les contenus de ce site sont proposés sous licence ouverte Etalab 2.0» salvo propiedad intelectual de terceros.",
+   "used": true,
+   "aliases": [],
+   "notes": "Precios medios nacionales semanales del GNR, gazole y fioul doméstico (Excel «Prix HTT et TTC depuis janvier 2020»).",
+   "short": "DGEC",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: Mentions légales de ecologie.gouv.fr, leídas el 12 oct 2026: «les contenus de ce site sont proposés sous licence ouverte Etalab 2.0» salvo propiedad intelectual de terceros."
+  },
+  "prix_carburants_fr": {
+   "name": "Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers)",
+   "url": "https://www.data.gouv.fr/datasets/prix-des-carburants-en-france-flux-instantane-v2-amelioree",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (data.gouv.fr)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : prix-carburants.gouv.fr (Ministères économiques et financiers)",
+   "additionalRestrictions": "Mencionar la fuente y la fecha de la última actualización.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Ficha de data.gouv.fr del conjunto «Prix des carburants en France - Flux instantané - v2», licencia lov2, leída por su API el 12 oct 2026.",
+   "used": true,
+   "aliases": [],
+   "notes": "Medianas del gazole por departamento: cálculo de Dehesa Index.",
+   "short": "Prix des carburants",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: Ficha de data.gouv.fr del conjunto «Prix des carburants en France - Flux instantané - v2», licencia lov2, leída por su API el 12 oct 2026."
+  },
+  "hubeau_onde": {
+   "name": "OFB — Observatoire national des étiages (ONDE), vía Hub'Eau",
+   "url": "https://onde.eaufrance.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (datos públicos del sistema de información sobre el agua)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : OFB, Observatoire national des étiages (ONDE), via Hub'Eau",
+   "additionalRestrictions": "Mencionar la fuente y la fecha de la última actualización.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Datos públicos del sistema de información sobre el agua (SIE) difundidos por Hub'Eau; la difusión del SIE se rige por la Licence Ouverte. No se leyó una página de condiciones propia de Hub'Eau (su URL antigua da 404); confianza media.",
+   "used": true,
+   "aliases": [],
+   "notes": "Recuentos por departamento y mes: cálculo de Dehesa Index.",
+   "short": "OFB · ONDE",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "VERIFIED: Datos públicos del sistema de información sobre el agua (SIE) difundidos por Hub'Eau; la difusión del SIE se rige por la Licence Ouverte. No se leyó una página de condiciones propia de Hub'Eau (su URL antigua da 404); confianza media."
+  },
+  "hubeau_ades": {
+   "name": "ADES (BRGM) — Qualité des eaux souterraines, vía Hub'Eau",
+   "url": "https://ades.eaufrance.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (datos públicos del sistema de información sobre el agua)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : ADES (BRGM), via Hub'Eau",
+   "additionalRestrictions": "Mencionar la fuente y la fecha de la última actualización.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Conjunto «qualité des eaux souterraines France entière (ADES)» del Ministère de la Transition écologique en data.gouv.fr con licencia fr-lo (Licence Ouverte), leído por su API el 12 oct 2026; Hub'Eau difunde esos mismos datos.",
+   "used": true,
+   "aliases": [],
+   "notes": "Medias por punto y año, medianas y porcentajes por departamento: cálculo de Dehesa Index.",
+   "short": "ADES · BRGM",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: Conjunto «qualité des eaux souterraines France entière (ADES)» del Ministère de la Transition écologique en data.gouv.fr con licencia fr-lo (Licence Ouverte), leído por su API el 12 oct 2026; Hub'Eau difunde esos mismos datos."
   }
  },
  "files": {
@@ -3969,6 +4073,31 @@
     "miteco_sequia"
    ],
    "notes": "Indicadores de sequía prolongada (UTS) y escasez (UTE) del último mes por demarcación intercomunitaria. scripts/update-es-drought-ute.py."
+  },
+  "data/fr-gnr.json": {
+   "sources": [
+    "dgec_prix_petroliers",
+    "prix_carburants_fr"
+   ],
+   "notes": "GNR, gazole y fioul semanales desde 2020 (DGEC) y mediana del gazole por departamento (flujo de gasolineras). scripts/update-fr-gnr.py."
+  },
+  "data/fr-onde.json": {
+   "sources": [
+    "hubeau_onde"
+   ],
+   "notes": "Puntos de río con corriente, sin corriente o secos por departamento y mes, desde 2012. scripts/update-fr-onde.py."
+  },
+  "data/fr-nitrates.json": {
+   "sources": [
+    "hubeau_ades"
+   ],
+   "notes": "Nitratos en aguas subterráneas por departamento y año desde 2015. scripts/update-fr-nitrates.py."
+  },
+  "data/fr-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura francesa por categoría, ganado y gas, 1990-último año (Eurostat env_air_gge, inventario nacional). scripts/update-eu-ghg-agri.py."
   }
  },
  "derived": [

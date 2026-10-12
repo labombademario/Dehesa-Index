@@ -604,6 +604,44 @@ sources:
     continue: true
     data: [es-ghg-agri.json]
     message: Emisiones de la agricultura espanola (MITECO)
+  - id: fr-gnr
+    name: Update France non-road diesel (GNR) and fuel prices (DGEC, carburants)
+    cron: ['25 12 * * 1,3,5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-fr-gnr.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [fr-gnr.json]
+    message: Gazole non routier y carburantes en Francia (DGEC)
+  - id: fr-ghg-agri
+    name: Update France agricultural greenhouse gas emissions (Eurostat env_air_gge)
+    cron: ['50 7 4 * *']
+    script: scripts/update-eu-ghg-agri.py
+    args: FR fr
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [fr-ghg-agri.json]
+    message: Emisiones de la agricultura francesa (Eurostat)
+  - id: fr-onde
+    name: Update France dry rivers (ONDE, Hub'Eau)
+    cron: ['40 9 * * 2']
+    script: scripts/update-fr-onde.py
+    timeout: 40
+    script_timeout: 35
+    continue: true
+    data: [fr-onde.json]
+    message: Rios sin agua en Francia (ONDE)
+  - id: fr-nitrates
+    name: Update France groundwater nitrates by department (ADES, Hub'Eau)
+    cron: ['15 10 6 * *']
+    script: scripts/update-fr-nitrates.py
+    timeout: 45
+    script_timeout: 40
+    continue: true
+    data: [fr-nitrates.json]
+    message: Nitratos en aguas subterraneas de Francia (ADES)
   - id: es-drought-ute
     name: Update Spain drought and water scarcity by unit (MITECO monthly report)
     cron: ['10 8 2,9,16,23 * *']
