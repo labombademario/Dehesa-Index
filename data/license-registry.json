@@ -3728,6 +3728,12 @@
     "eurostat"
    ],
    "notes": "Cortas anuales de madera en rollo (miles de m3 sin corteza) de Eurostat, conjunto for_remov (Joint Forest Sector Questionnaire): total, coníferas, frondosas, trozas, trituración, otros industriales y leña. Los años marcados como estimados lo son en la fuente."
+  },
+  "data/wood-prices-de.json": {
+   "sources": [
+    "destatis"
+   ],
+   "notes": "Indice de precios de productor (2015=100) de los productos de la corta de los bosques estatales alemanes (Staatsforsten), mensual desde 1968: madera en rollo total, trozas, madera industrial, leña y trozas de abeto, pino, haya, roble y douglasia. Destatis GENESIS-Online, tabla 61231-0002, Datenlizenz Deutschland – Namensnennung 2.0. Es un indice, no un precio en euros por m3. Los meses sin dato quedan vacios. scripts/update-wood-prices-de.py (necesita GENESIS_TOKEN)."
   }
  },
  "derived": [

@@ -3246,6 +3246,20 @@ def wood_removals(doc, errs, warns, stats):
         if not t or t[-1] is None and t[-2] is None: errs.append("madera %s: sin total reciente" % cc)
         if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
     stats["paises"] = len(doc["countries"])
+# Indice de precios de la madera de los bosques estatales alemanes (Destatis 61231-0002)
+def wood_prices_de(doc, errs, warns, stats):
+    import datetime as _dt
+    ms = doc["months"]; n = len(ms)
+    if ms != sorted(set(ms)): errs.append("madera DE: meses no ascendentes"); return
+    for k, v in doc["series"].items():
+        if len(v) != n: errs.append("madera DE %s: longitud %d distinta de los meses (%d)" % (k, len(v), n)); return
+        for i, x in enumerate(v):
+            if x is not None and not 10 <= x <= 400: errs.append("madera DE %s %s: indice fuera de rango (%s)" % (k, ms[i], x))
+    t = doc["series"].get("total")
+    if not t or t[-1] is None: errs.append("madera DE: el total no llega al ultimo mes")
+    if doc["last"] != ms[-1]: errs.append("madera DE: last no coincide con el ultimo mes")
+    if ms[-1] < (_dt.date.today() - _dt.timedelta(days=120)).strftime("%Y-%m"): warns.append("madera DE: ultimo mes %s, con retraso" % ms[-1])
+    stats["meses"] = n
 # Zona y categoria de las denominaciones francesas (INAO): scripts/update-inao-geo.py
 def _gi_fr_ids():
     d = load("gi/FR.json"); return {e["f"] for k in ("wine", "cheese") for e in d[k]}

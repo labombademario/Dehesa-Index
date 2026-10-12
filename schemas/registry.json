@@ -828,6 +828,12 @@
     "wine_prices"
    ]
   ],
+  "wood-prices-de.json": [
+   "wood-prices-de",
+   [
+    "wood_prices_de"
+   ]
+  ],
   "wood-removals.json": [
    "wood-removals",
    [

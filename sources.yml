@@ -153,6 +153,16 @@ sources:
     continue: true
     data: [wood-removals.json]
     message: Cortas de madera en rollo (Eurostat)
+  - id: wood-prices-de
+    name: Update Germany state-forest timber price index (Destatis 61231)
+    cron: ['25 7 * * 3']
+    script: scripts/update-wood-prices-de.py
+    env: {GENESIS_TOKEN: '${{ secrets.GENESIS_TOKEN }}'}
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [wood-prices-de.json]
+    message: Indice de precios de la madera alemana (Destatis)
   - id: spain-wine-monthly
     name: Update Spain wine month by month and region (MAPA INFOVI monthly report)
     cron: ['55 8 * * 4']
