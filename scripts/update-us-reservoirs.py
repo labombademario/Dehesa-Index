@@ -29,7 +29,10 @@ def rise(loc, after, before=None, n=500):
     out = {}
     for x in json.loads(get(RISE + "?" + urllib.parse.urlencode(q), 240)).get("data", []):
         a = x.get("attributes") or {}; v = a.get("result"); d = (a.get("dateTime") or "")[:10]
-        if isinstance(v, (int, float)) and v >= 0 and d: out.setdefault(d, float(v))
+        ra = a.get("resultAttributes") or {}
+        if ra.get("resultType") not in (None, "observed") or a.get("modelRunId"): continue   # solo observado: fuera previsiones y modelos
+        if not d or d > TODAY.isoformat(): continue   # ninguna fecha futura (hay series con 2099-12-31 de relleno)
+        if isinstance(v, (int, float)) and v >= 0: out.setdefault(d, float(v))
     return out
 def normals(loc):
     s = rise(loc, "1990-09-30", "2020-10-01", 15000); by = {}
@@ -53,7 +56,11 @@ def main():
     rebuild = (TODAY - datetime.date.fromisoformat(N["generatedAt"][:10])).days > 365
     after = (TODAY - datetime.timedelta(days=380)).isoformat()
     def one(r):
-        loc = r["source_uri"].rstrip("/").split("/")[-1]
+        # el identificador fiable es wwdh_fid (= locationId de la consulta de datos); source_uri tiene alguna errata (Mead: 3154 en vez de 3514)
+        loc = (r.get("wwdh_fid") or "").strip() if r.get("wwdh_collection") == "rise-edr" else ""
+        if not loc.isdigit():
+            import re as _re
+            m = _re.search(r"locationId=(\d+)", r.get("source_api_url") or ""); loc = m.group(1) if m else r["source_uri"].rstrip("/").split("/")[-1]
         try: s = rise(loc, after)
         except Exception as e: return r, loc, None, None, str(e)[:120]
         nm = N["items"].get(loc)

@@ -15,7 +15,9 @@
     if (!el) return;
     var t = T[lg] || T.es;
     var pre = cc === 'FR' ? new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'js/gi-zone.js?v=20261013'; sc.onload = function () { window.GIZ.info().then(ok); }; sc.onerror = function () { ok(null); }; document.head.appendChild(sc); }) : Promise.resolve(null);
-    Promise.all([fetch('data/gi/' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), pre]).then(function (rr) {
+    // primero el indice: solo se pide el fichero del pais si existe (sin 404 para AR, AU, CA, CH, CL, EU, FI...)
+    var IDX = window.__giIdx || (window.__giIdx = fetch('data/gi/index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }));
+    Promise.all([IDX.then(function (ix) { if (ix && ix.countries && !ix.countries[cc]) return null; return fetch('data/gi/' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }), pre]).then(function (rr) {
       var d = rr[0], inao = rr[1], zset = {}; if (inao && inao.z) inao.z.forEach(function (f) { zset[f] = 1; });
       if (!d || (!d.wine.length && !d.cheese.length)) { el.innerHTML = ''; return; }
       var st = { k: d.wine.length ? 'wine' : 'cheese', ty: 'all', q: '', open: false, r: '' };

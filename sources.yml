@@ -163,6 +163,15 @@ sources:
     continue: true
     data: [wood-prices-de.json]
     message: Indice de precios de la madera alemana (Destatis)
+  - id: us-reservoirs
+    name: Update western US reservoirs (Bureau of Reclamation RISE)
+    cron: ['15 14 * * 1,4']
+    script: scripts/update-us-reservoirs.py
+    timeout: 45
+    script_timeout: 40
+    continue: true
+    data: [us-reservoirs.json, us-reservoirs-normals.json]
+    message: Embalses del oeste de EE. UU. (Reclamation)
   - id: spain-wine-monthly
     name: Update Spain wine month by month and region (MAPA INFOVI monthly report)
     cron: ['55 8 * * 4']

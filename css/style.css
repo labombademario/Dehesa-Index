@@ -2100,3 +2100,4 @@ html[data-theme="dark"] .wp-card{--wp-w:#E3B04B;--wp-r:#E07A8C}
 .wr-wrap .wr-card{max-width:760px}
 .wd-sels{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .wd-sels .wp-sel{margin:0}
+#licencias a,#licencias td,#licencias li{overflow-wrap:anywhere}

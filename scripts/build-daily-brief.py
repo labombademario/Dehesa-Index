@@ -77,7 +77,14 @@ def main():
             if v['p'] != o['p'] and v['p'] is not None:
                 changed += 1; ckinds.add(kind_of(v.get('g', ''), k)); new_data.append(dict(k=k, prevP=o['p'], prevV=o['v'], **v))
             elif v['v'] != o['v']: changed += 1; ckinds.add(kind_of(v.get('g', ''), k))
-        if changed: updated.append({'file': f, 'name': names.get(f, f), 'changed': changed, 'kinds': sorted(ckinds)})
+        if changed:
+            nm = names.get(f)
+            if not nm:   # fichero sin pipeline con nombre: el nombre de su fuente y su pais, nunca la ruta
+                try:
+                    c0 = next(iter((cur.get('countries') or {}).values())); s0 = c0.get('source') or {}
+                    nm = ((s0.get('name') if isinstance(s0, dict) else str(s0)) or '') + (' — ' + c0['name'] if c0.get('name') else '')
+                except Exception: nm = ''
+            updated.append({'file': f, 'name': nm or f.rsplit('/', 1)[-1].replace('.json', ''), 'changed': changed, 'kinds': sorted(ckinds)})
     fresh = [x for x in new_data if not x.get('new')]
     # --- cobertura completa: cada dataset de DATASETS (y los *-stats.json ya leidos serie a serie) con su tipo y si cambio de CONTENIDO en la ventana
     unknown = sorted(p['workflow'] for p in ps.get('pipelines', []) if p['workflow'] not in WORKFLOW_KINDS)

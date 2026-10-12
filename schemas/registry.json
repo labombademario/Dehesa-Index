@@ -870,6 +870,16 @@
     "spain_reservoirs_points"
    ]
   ],
+  "us-reservoirs.json": [
+   "us-reservoirs",
+   [
+    "us_reservoirs"
+   ]
+  ],
+  "us-reservoirs-normals.json": [
+   "us-reservoirs-normals",
+   []
+  ],
   "wood-prices-de.json": [
    "wood-prices-de",
    [

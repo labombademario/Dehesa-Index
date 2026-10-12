@@ -2749,6 +2749,32 @@
    "short": "Wikidata",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: licencia CC0 explícita de Wikidata para los datos estructurados."
+  },
+  "usbr_rise": {
+   "name": "U.S. Bureau of Reclamation — RISE (Reclamation Information Sharing Environment)",
+   "url": "https://data.usbr.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "Public domain (U.S. federal government work)",
+   "licenseUrl": "https://www.usbr.gov/main/disclaimer.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Bureau of Reclamation (RISE)",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Datos del gobierno federal de EE. UU. (17 U.S.C. 105): dominio público; Reclamation los publica en data.usbr.gov con aviso de datos provisionales.",
+   "used": true,
+   "aliases": [],
+   "notes": "Lista y ubicación de los embalses: Western Water Data Hub (Internet of Water), colección teacup-edr, que reúne datos de Reclamation.",
+   "short": "Reclamation",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: obra del gobierno federal de EE. UU. (dominio público)."
   }
  },
  "files": {
@@ -3797,6 +3823,18 @@
     "wikidata"
    ],
    "notes": "Cada embalse del Boletín Hidrológico en su última semana (capacidad, agua almacenada, % hace un año) con su ubicación de Wikidata (CC0) cuando el emparejamiento por nombre es seguro (scripts/ref/embalses-coords.json, scripts/build-embalses-coords.py). Los embalses sin ubicación verificada no tienen punto."
+  },
+  "data/us-reservoirs.json": {
+   "sources": [
+    "usbr_rise"
+   ],
+   "notes": "Agua almacenada en ~180 embalses del Bureau of Reclamation (dato diario de RISE), capacidad y ubicación de la lista teacup del Western Water Data Hub, % hace un año y % de la media 1990-2020 de ese día (cálculo de Dehesa Index). scripts/update-us-reservoirs.py."
+  },
+  "data/us-reservoirs-normals.json": {
+   "sources": [
+    "usbr_rise"
+   ],
+   "notes": "Media 1990-2020 del agua almacenada por día del año (ventana de 7 días) de cada embalse de Reclamation; cálculo de Dehesa Index con la serie diaria de RISE."
   }
  },
  "derived": [

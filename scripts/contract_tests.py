@@ -3254,6 +3254,23 @@ def wood_removals(doc, errs, warns, stats):
         if not t or t[-1] is None and t[-2] is None: errs.append("madera %s: sin total reciente" % cc)
         if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
     stats["paises"] = len(doc["countries"])
+# Embalses del oeste de EE. UU. (Reclamation, RISE)
+def us_reservoirs(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today().isoformat(); seen = set()
+    for x in doc["items"]:
+        nm, sh, st, rg, cap, ct, sto, d, py, pn, lat, lon, rid = x
+        if rid in seen: errs.append("embalses US: repetido %s" % nm); return
+        seen.add(rid)
+        if d > today or d > doc["asOf"]: errs.append("embalses US %s: fecha futura %s" % (nm, d)); return
+        if not (cap > 0 and sto >= 0 and sto <= cap * 1.6): errs.append("embalses US %s: agua %s fuera de lo plausible para capacidad %s" % (nm, sto, cap))
+        if lat is not None and not (25 <= lat <= 49.5 and -125 <= lon <= -93): errs.append("embalses US %s: punto fuera del oeste de EE. UU. (%s, %s)" % (nm, lat, lon))
+        if pn is not None and not 0 <= pn <= 600: errs.append("embalses US %s: %% de la media fuera de rango (%s)" % (nm, pn))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=14)).isoformat(): warns.append("embalses US: ultimo dato %s" % doc["asOf"])
+    names = {x[1] for x in doc["items"]}
+    for must in ("Mead (Hoover Dam)", "Powell (Glen Canyon Dam)", "Shasta"):
+        if must not in names: errs.append("embalses US: falta %s" % must)
+    stats["embalses"] = len(doc["items"])
 # Embalses de Espana uno a uno (MITECO) con ubicacion de Wikidata
 def spain_reservoirs_points(doc, errs, warns, stats):
     seen = set(); pts = 0; cap = 0.0

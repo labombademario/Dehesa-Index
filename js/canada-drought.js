@@ -61,7 +61,7 @@
     var root = document.getElementById('casq'); if (!root) return; var t = tt();
     if (!D || !D.provinces) { root.innerHTML = ''; return; }
     var last = D.periods.length - 1, ly = idxYear(last), codes = Object.keys(D.provinces).sort(function (a, b) { return D.provinces[b].v[last][1] - D.provinces[a].v[last][1]; });
-    var legend = t.cls.map(function (n, i) { return '<span style="margin-right:12px;white-space:nowrap"><span style="color:' + COL[i] + '">■</span> D' + i + ' ' + esc(n) + '</span>'; }).join('');
+    var legend = t.cls.map(function (n, i) { return '<span style="margin-right:12px;white-space:nowrap"><span style="color:' + COL[i] + '">■</span> D' + i + ' ' + esc(n) + '</span>'; }).join(' ');
     var rows = codes.map(function (c) {
       var r = D.provinces[c].v[last], pm = last > 0 ? D.provinces[c].v[last - 1] : null, yr = ly >= 0 ? D.provinces[c].v[ly] : null;
       var bar = [r[1] - r[2], r[2] - r[3], r[3] - r[4], r[4]].map(function (v, i) { return v > 0 ? '<span style="display:inline-block;height:12px;width:' + Math.min(100, v).toFixed(1) + '%;background:' + COL[i + 1] + '"></span>' : ''; }).join('');

@@ -5,6 +5,7 @@
    periodos de entrega ni tipos de comprador); el basis solo se muestra si USDA lo publica; no se inventan coordenadas (el mapa colorea estados, sin puntos). */
 (function () {
   'use strict';
+  function stName(k) { var n = M.states[k] && M.states[k].name; if (k === 'XG') { var L = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return { en: 'Gulf of Mexico (export)', fr: 'Golfe du Mexique (exportation)', it: 'Golfo del Messico (esportazione)' }[L] || n; } return n; }
   var BASE = 'data/us-cash-bids/', SRC = 'usda_ams_mars', VIEW = 'https://mymarketnews.ams.usda.gov/viewReport/';
   var T = {
     es: { title: 'Precios locales de grano en EE. UU.', sub: 'Qué pagan los compradores por maíz, soja, trigo y otros granos en cada estado, según los informes diarios de USDA AMS (Market News). Precios al contado (cash bids), no futuros.',
@@ -216,18 +217,18 @@
       var st = zipState(z); if (!st) { say(t.zipNone); return; }
       if (!M.states[st]) { say(t.zipNoState.replace('{0}', st)); return; }
       if (!M.states[st].commodities[ST.c]) ST.c = M.states[st].commodities.corn ? 'corn' : Object.keys(M.states[st].commodities)[0];
-      ZMSG = t.zipOk.replace('{0}', M.states[st].name); ST.s = st; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load();
+      ZMSG = t.zipOk.replace('{0}', stName(st)); ST.s = st; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load();
     }).catch(function () { say(t.zipNone); });
   }
   function controls(doc, R) {
-    var t = tt(), st = Object.keys(M.states).sort(function (a, b) { return M.states[a].name.localeCompare(M.states[b].name); });
+    var t = tt(), st = Object.keys(M.states).sort(function (a, b) { return stName(a).localeCompare(stName(b)); });
     var coms = Object.keys(M.states[ST.s].commodities).sort(function (a, b) { return cname(a).localeCompare(cname(b)); });
     var sp_ = R.specs.filter(function (x) { return x.act > 0 || x.key === ST.spec; });
     var cur = specFor(R), buyers = {}, markets = {};
     R.list.filter(function (s) { return specKey(s) === cur; }).forEach(function (s) { if (ACTIVE[fresh(s)] || ST.inactive) { buyers[s.deliveryPoint || ''] = 1; if (!ST.buyer || (s.deliveryPoint || '') === ST.buyer) markets[s.locationName || ''] = 1; } });
     var lab = function (id, txt, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + esc(txt) + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
     return '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:0 0 12px">' +
-      lab('pl-s', t.state, st.map(function (k) { return opt(k, M.states[k].name, k === ST.s); }).join('')) +
+      lab('pl-s', t.state, st.map(function (k) { return opt(k, stName(k), k === ST.s); }).join('')) +
       lab('pl-c', t.commodity, coms.map(function (k) { return opt(k, cname(k), k === ST.c); }).join('')) +
       (sp_.length > 1 ? lab('pl-spec', t.spec, sp_.map(function (x) { return opt(x.key, specLabel(x.s) + ' (' + Object.keys(x.mk).length + ')', x.key === cur); }).join('')) : '') +
       (Object.keys(buyers).length > 1 ? lab('pl-buyer', t.buyer, opt('', t.allBuyers, !ST.buyer) + Object.keys(buyers).sort().map(function (b) { return opt(b, b || '—', b === ST.buyer); }).join('')) : '') +
@@ -239,7 +240,7 @@
     var has = {}; Object.keys(M.states).forEach(function (k) { if (M.states[k].commodities[ST.c]) has[k] = 1; });
     var svg = '<svg viewBox="' + window.DEHESA_US_STATES.viewBox + '" style="width:100%;max-width:560px;height:auto;display:block" role="group" aria-label="' + esc(t.mapTitle) + '">' + window.DEHESA_US_STATES.states.map(function (s) {
       var on = has[s.id], sel = s.id === ST.s;
-      return '<path data-st="' + s.id + '" d="' + s.d + '" fill="' + (on ? (sel ? '#1f5a30' : '#7fb48d') : '#e6e2d6') + '" stroke="' + (sel ? '#111' : '#fff') + '" stroke-width="' + (sel ? 1.8 : 0.8) + '" stroke-linejoin="round"' + (on ? ' style="cursor:pointer" tabindex="0" role="button" data-equiv="pl-s" aria-label="' + esc(M.states[s.id].name) + '"' : '') + '></path>';
+      return '<path data-st="' + s.id + '" d="' + s.d + '" fill="' + (on ? (sel ? '#1f5a30' : '#7fb48d') : '#e6e2d6') + '" stroke="' + (sel ? '#111' : '#fff') + '" stroke-width="' + (sel ? 1.8 : 0.8) + '" stroke-linejoin="round"' + (on ? ' style="cursor:pointer" tabindex="0" role="button" data-equiv="pl-s" aria-label="' + esc(stName(s.id)) + '"' : '') + '></path>';
     }).join('') + '</svg>';
     return svg + '<div class="di-movers-hint" style="margin-top:6px"><span style="display:inline-block;width:10px;height:10px;background:#7fb48d;border-radius:2px"></span> ' + esc(t.mapLegend) + ' &nbsp; <span style="display:inline-block;width:10px;height:10px;background:#e6e2d6;border-radius:2px"></span> ' + esc(t.mapNone) + ' · ' + esc(t.clickState) + '</div><p class="di-movers-hint">' + esc(t.mapNote) + '</p>';
   }
@@ -267,7 +268,7 @@
     var c0 = shown[0], h = '';
     if (M.run && M.run.status !== 'OK') h += '<p class="di-info-api-notice" role="status">' + esc(t['run' + M.run.status] || '') + '</p>';
     h += controls(doc, R);
-    h += '<h2 style="font-size:18px;margin:6px 0 2px">' + esc(M.states[ST.s].name) + ' · ' + esc(cname(ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(specLabel(c0 || { commodity: ST.c, unit: '' })) + ' · USDA AMS</p>';
+    h += '<h2 style="font-size:18px;margin:6px 0 2px">' + esc(stName(ST.s)) + ' · ' + esc(cname(ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(specLabel(c0 || { commodity: ST.c, unit: '' })) + ' · USDA AMS</p>';
     if (shown.length) { var ls = {}; shown.forEach(function (s) { ls[s.locationType] = s; }); h += '<details class="di-card pl-what" style="padding:8px 14px;margin-bottom:12px;font-size:13px"><summary style="cursor:pointer;font-weight:600">' + esc(t.whatIs) + '</summary><div style="margin-top:6px">' + Object.keys(ls).map(function (k) { return '<div>• ' + esc(represents(ls[k])) + '</div>'; }).join('') + '<div class="di-movers-hint" style="margin-top:4px">' + esc(t.notComparable) + '</div></div></details>'; }
     // Terminos tecnicos explicados junto al dato, sin quitar el nombre original (auditoria 8-oct-2026)
     var GL = { es: ['Qué significan los términos', [['Precio al contado (cash bid)', 'lo que un comprador concreto (elevador, planta, terminal) ofrece por el grano entregado hoy o en el periodo indicado.'], ['Basis', 'diferencia entre ese precio al contado y el futuro de referencia de Chicago; negativo = por debajo del futuro.'], ['Mes de contrato', 'el vencimiento del futuro con el que USDA calcula el basis (p. ej. dic. para maíz nuevo).']]],

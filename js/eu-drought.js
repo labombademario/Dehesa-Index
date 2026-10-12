@@ -89,7 +89,7 @@
     var root = document.getElementById('eusq'); if (!root || !D || !D.countries) return;
     var t = T[lang()] || T.es, last = D.periods.length - 1, codes = Object.keys(D.countries).filter(function (c) { return c !== 'EU27'; });
     codes.sort(function (a, b) { return dr(D.countries[b].v[last]) - dr(D.countries[a].v[last]); }); codes.unshift('EU27');
-    var legend = t.cls.map(function (n, i) { return '<span style="margin-right:12px;white-space:nowrap" title="' + esc(t.cd[i]) + '"><span style="color:' + COL[i] + '">■</span> ' + esc(n) + '</span>'; }).join('');
+    var legend = t.cls.map(function (n, i) { return '<span style="margin-right:12px;white-space:nowrap" title="' + esc(t.cd[i]) + '"><span style="color:' + COL[i] + '">■</span> ' + esc(n) + '</span>'; }).join(' ');
     var rows = codes.map(function (c) {
       var d = D.countries[c], r = d.v[last], ly = sameLast(d), bar = r.map(function (v, i) { return v > 0 ? '<span style="display:inline-block;height:12px;width:' + v.toFixed(1) + '%;background:' + COL[i] + '"></span>' : ''; }).join('');
       return '<tr data-c="' + c + '" style="cursor:pointer' + (c === SEL ? ';background:rgba(29,81,120,.06)' : '') + '"><th scope="row"><button type="button" class="eusq-b" data-c="' + c + '" style="all:unset;cursor:pointer;font-weight:' + (c === 'EU27' ? 700 : 600) + '">' + esc(cname(c, d)) + '</button></th><td class="cof-n"><strong>' + esc(nf(dr(r), 1)) + ' %</strong></td><td class="cof-b" style="width:34%"><div style="display:flex;background:var(--border);border-radius:3px;overflow:hidden" role="img" aria-label="' + esc(r.map(function (v, i) { return t.cls[i] + ' ' + nf(v, 1) + ' %'; }).join(', ')) + '">' + bar + '</div></td><td class="cof-n">' + (ly ? esc(nf(dr(ly), 1)) + ' %' : '—') + '</td></tr>';
