@@ -3232,6 +3232,20 @@ def wine_prices(doc, errs, warns, stats):
             if not 15 <= v <= 400: errs.append("vino FR %s %s: valor fuera de rango (%s)" % (k, ym, v))
         if k not in ("red.aop", "white.aop") and p < (_dt.date.today() - _dt.timedelta(days=150)).strftime("%Y-%m"): warns.append("vino FR %s: ultimo mes %s, con retraso" % (k, p))
     stats["weeksES"] = len(ws); stats["seriesFR"] = len(doc["fr"]["series"])
+# Cortas de madera en rollo (Eurostat for_remov)
+def wood_removals(doc, errs, warns, stats):
+    import datetime as _dt
+    n = len(doc["years"])
+    if doc["years"] != sorted(doc["years"]): errs.append("madera: años no ascendentes"); return
+    for cc, c in doc["countries"].items():
+        for k, v in c["series"].items():
+            if len(v) != n: errs.append("madera %s %s: longitud %d distinta de los años (%d)" % (cc, k, len(v), n)); return
+            for i, x in enumerate(v):
+                if x is not None and not 0 <= x <= 300000: errs.append("madera %s %s %s: valor fuera de rango (%s)" % (cc, k, doc["years"][i], x))
+        t = c["series"].get("TOTAL.RW"); 
+        if not t or t[-1] is None and t[-2] is None: errs.append("madera %s: sin total reciente" % cc)
+        if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
+    stats["paises"] = len(doc["countries"])
 # Zona y categoria de las denominaciones francesas (INAO): scripts/update-inao-geo.py
 def _gi_fr_ids():
     d = load("gi/FR.json"); return {e["f"] for k in ("wine", "cheese") for e in d[k]}

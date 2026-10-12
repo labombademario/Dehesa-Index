@@ -2093,3 +2093,8 @@ html[data-theme="dark"] .wp-card{--wp-w:#E3B04B;--wp-r:#E07A8C}
 .wp-unit{margin-left:auto;color:var(--text-muted)}
 
 .rl-node .rl-ctry { display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+
+.wp-line-t{stroke:var(--text)}.wp-dot-t{fill:var(--text);stroke:var(--surface);stroke-width:2}.wp-sw-t{background:var(--text)}
+.wp-hist{font-size:12px;color:var(--text-muted);margin:8px 0 2px}
+.wr-wrap{margin-top:16px}
+.wr-wrap .wr-card{max-width:760px}

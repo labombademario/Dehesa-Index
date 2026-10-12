@@ -897,6 +897,7 @@
     return (
       '<div class="di-badge di-badge-green di-info-badge">' + esc(mad.badge) + '</div>' + notice +
       '<div class="di-info-grid di-info-grid-3">' + order.map(function (k) { return cards[k]; }).join('') + '</div>' +
+      '<div id="pr-wood" class="wr-wrap"></div>' +
       '<div class="di-info-scope-note" id="pr-madera-note">' + esc(mad.scopeNote) + '</div>' +
       infoSourcesHtml('madera')
     );
@@ -1099,6 +1100,7 @@
         return;
       }
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
+      if (state.activeTab === 'madera' && global.DehesaWood) global.DehesaWood.render(document.getElementById('pr-wood'));
       if (state.activeTab === 'vino' && global.DehesaWine) { root.innerHTML = '<div id="pr-vino">' + root.innerHTML + '</div>'; global.DehesaWine.render(document.getElementById('pr-vino')); }
       return;
     }

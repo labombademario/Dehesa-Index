@@ -827,6 +827,12 @@
    [
     "wine_prices"
    ]
+  ],
+  "wood-removals.json": [
+   "wood-removals",
+   [
+    "wood_removals"
+   ]
   ]
  },
  "globs": {

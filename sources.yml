@@ -144,6 +144,15 @@ sources:
     data: [wine-prices.json]
     log: wine-prices-log.txt
     message: Precio del vino a granel (MAPA, FranceAgriMer)
+  - id: wood-removals
+    name: Update roundwood removals (Eurostat for_remov)
+    cron: ['20 7 * * 3']
+    script: scripts/update-wood-removals.py
+    timeout: 15
+    script_timeout: 8
+    continue: true
+    data: [wood-removals.json]
+    message: Cortas de madera en rollo (Eurostat)
   - id: spain-wine-monthly
     name: Update Spain wine month by month and region (MAPA INFOVI monthly report)
     cron: ['55 8 * * 4']
