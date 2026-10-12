@@ -988,6 +988,24 @@
     "be_nitrates"
    ]
   ],
+  "at-diesel.json": [
+   "at-diesel",
+   [
+    "at_diesel"
+   ]
+  ],
+  "at-ghg-agri.json": [
+   "at-ghg-agri",
+   [
+    "at_ghg_agri"
+   ]
+  ],
+  "at-drought.json": [
+   "at-drought",
+   [
+    "at_drought"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

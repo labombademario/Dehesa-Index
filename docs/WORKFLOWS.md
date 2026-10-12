@@ -2,12 +2,12 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-160 workflows (123 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+163 workflows (126 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
-- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
 
@@ -17,6 +17,14 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | update-argentina-provinces.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-argentina-provinces.py | ar-provinces.json | finish, validate-files |
 | update-argentina.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-argentina.py | argentina-stats.json | finish, validate-files |
+
+## AT
+
+| Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
+|---|---|---|---|---|---|
+| update-at-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-at-diesel.py | at-diesel.json | finish, validate-files |
+| update-at-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-at-drought.py | at-drought.json | finish, validate-files |
+| update-at-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | at-ghg-agri.json | finish, validate-files |
 
 ## AU
 

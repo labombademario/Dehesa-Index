@@ -1,0 +1,67 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Austria: gasoleo, fioul y devolucion Agrardiesel",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "asOf",
+  "unit",
+  "vat",
+  "weekly",
+  "refund",
+  "farmCostNet",
+  "farmCostFlat"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ]
+  },
+  "asOf": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "unit": {
+   "type": "string",
+   "pattern": "^EUR/l$"
+  },
+  "vat": {
+   "type": "number"
+  },
+  "weekly": {
+   "type": "array",
+   "minItems": 500,
+   "items": {
+    "type": "array",
+    "minItems": 4,
+    "maxItems": 4
+   }
+  },
+  "refund": {
+   "type": "object",
+   "required": [
+    "eurPerLitre",
+    "year"
+   ]
+  },
+  "farmCostNet": {
+   "type": "number"
+  },
+  "farmCostFlat": {
+   "type": "number"
+  }
+ }
+}

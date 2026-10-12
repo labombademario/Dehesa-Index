@@ -1,22 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T19:35:00Z",
+ "generatedAt": "2026-10-12T20:21:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 142,
+  "ok": 146,
   "late": 1,
   "error": 4,
   "not_run": 2,
-  "unknown": 4
+  "unknown": 3
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "ce1f0230",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/30f1be99-bf93-4437-89e4-17085c8e4f79",
+   "completedAt": "2026-10-12T19:40:59Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
-  "repoGeneratedAt": "2026-10-12T18:35:41.146587+00:00"
+  "repoGeneratedAt": "2026-10-12T18:35:41.146587+00:00",
+  "checkedAt": "2026-10-12T20:21:00Z"
  },
  "pipelines": [
   {
@@ -146,6 +152,45 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-at-diesel.yml",
+   "name": "Update Austria diesel and Agrardiesel refund (EU Weekly Oil Bulletin)",
+   "crons": [
+    "45 12 * * 2"
+   ],
+   "nextRun": "2026-10-13T12:45:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-at-drought.yml",
+   "name": "Update Austria drought (GeoSphere WINFORE SPEI) and groundwater status (BMLUK)",
+   "crons": [
+    "50 7 * * *"
+   ],
+   "nextRun": "2026-10-13T07:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-at-ghg-agri.yml",
+   "name": "Update Austria agricultural greenhouse gas emissions (Eurostat env_air_gge)",
+   "crons": [
+    "25 8 4 * *"
+   ],
+   "nextRun": "2026-11-04T08:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-au-states.yml",
    "name": "Update Australia by state (ABS)",
    "crons": [
@@ -268,9 +313,19 @@
    ],
    "nextRun": "2026-10-13T09:20:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T19:40:57Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38299256158"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
@@ -281,9 +336,19 @@
    ],
    "nextRun": "2026-10-13T07:40:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T19:41:00Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38299261368"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
@@ -294,9 +359,19 @@
    ],
    "nextRun": "2026-11-04T08:20:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T19:40:58Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38299258492"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
@@ -307,9 +382,19 @@
    ],
    "nextRun": "2026-11-10T08:50:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T19:41:01Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38299263982"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
@@ -2085,7 +2170,7 @@
    "crons": [
     "20 20 * * 1"
    ],
-   "nextRun": "2026-10-12T20:20:00Z",
+   "nextRun": "2026-10-19T20:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2277,7 +2362,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-12T18:33:23Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2300,11 +2385,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/catalog"
@@ -2317,7 +2402,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/products"
@@ -2328,15 +2413,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/country-pending.json",
@@ -2344,18 +2429,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-12T18:33:54Z"
+     "lastChange": "2026-10-12T19:40:21Z"
     },
     {
      "path": "data/home-explore.json",

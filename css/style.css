@@ -2170,3 +2170,8 @@ html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3
 .bn-bar{fill:var(--wp-r)}.bn-bar.bn-last{fill:var(--text)}
 .bn-goal{stroke:var(--text-muted);stroke-width:1.5;stroke-dasharray:5 4}
 .bn-sw{background:var(--wp-r)}.bn-sw-g{background:none;border-top:2px dashed var(--text-muted);height:0;margin-top:5px}
+/* Austria: sequia (js/at-drought.js) */
+.at-g0{background:var(--gb4);color:#fff}.at-g1{background:var(--gb2);color:var(--text)}.at-g2{background:var(--gbx);color:var(--text)}.at-g3{background:#4a86c8;color:#fff}.at-g4{background:#24558f;color:#fff}
+.be-stk-b span.at-g0,.be-stk-b span.at-g1,.be-stk-b span.at-g2,.be-stk-b span.at-g3,.be-stk-b span.at-g4{border-right:2px solid var(--surface)}
+.wp-grid.at-zero{stroke:var(--text-muted);stroke-width:1}
+.at-dryband{fill:var(--gb1);opacity:.35}

@@ -3217,6 +3217,84 @@
    "short": "VMM",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "VERIFIED por la licencia general de los datos de la VMM; las dos capas de waterinfo no tienen ficha individual."
+  },
+  "geosphere_austria": {
+   "name": "GeoSphere Austria — Data Hub (WINFORE v2, SPEI)",
+   "url": "https://data.hub.geosphere.at/dataset/winfore-v2-1d-1km",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (datos accesibles sin registro)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Datenquelle: GeoSphere Austria – WINFORE (CC BY 4.0)",
+   "additionalRestrictions": "Citar la fuente e indicar los cambios.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Documentación de la Dataset API de GeoSphere (dataset.api.hub.geosphere.at/v1/docs): los datos accesibles sin credenciales están bajo «Creative Commons Attribution 4.0».",
+   "used": true,
+   "aliases": [],
+   "notes": "SPEI30 y SPEI90 diarios en rejilla de 1 km; Dehesa Index promedia por Land.",
+   "short": "GeoSphere Austria",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: licencia publicada en la documentación de la API."
+  },
+  "bmluk_hydrographie": {
+   "name": "BMLUK — Grundwasser Aktuell Österreich (hydrographischer Dienst, gis.lfrz.gv.at)",
+   "url": "https://www.data.gv.at/",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (ficha de data.gv.at)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Datenquelle: BMLUK, Grundwasser Aktuell Österreich",
+   "additionalRestrictions": "Citar la fuente.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Ficha «Grundwasser Aktuell Österreich» en data.gv.at: las tres distribuciones (WMS, WFS, OGC API Features) con licencia https://creativecommons.org/licenses/by/4.0/.",
+   "used": true,
+   "aliases": [],
+   "notes": "La clase de nivel es el color del mapa oficial (farbcode); su interpretación (muy bajo, bajo, normal, alto) es de Dehesa Index y cuadra con el informe mensual del BMLUK.",
+   "short": "BMLUK",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: licencia en data.gv.at."
+  },
+  "ama_agrardiesel": {
+   "name": "AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG",
+   "url": "https://www.ama.at/media/h04ohvo1/infoblatt_agrardieselrueckverguetung_2026-2027.pdf",
+   "country": "AT",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Dato legal y administrativo (tipo de devolución y litros a tanto alzado); § 7 UrhG austriaco: las leyes y actos oficiales no tienen derechos de autor",
+   "licenseUrl": "https://www.ris.bka.gv.at/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "AMA, Infoblatt Agrardieselrückvergütung 2026 und 2027; § 7 MinStG",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Infoblatt de la AMA (estado 10-7-2026): «voraussichtlich rund 15,5 Cent/Liter», litros por hectárea (110 tierra arable, 310 cultivos permanentes, 145 prados de 2+ cortes…); § 7 MinStG: 0,07 €/l para 2023-2025.",
+   "used": true,
+   "aliases": [],
+   "notes": "Se actualiza a mano en scripts/ref/at-agrardiesel.json; el tipo de 2026 es provisional.",
+   "short": "AMA",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: dato legal."
   }
  },
  "files": {
@@ -4414,6 +4492,26 @@
     "vmm_waterinfo"
    ],
    "notes": "Nitrato en aguas superficiales de zonas agrícolas de Flandes (red MAP), por año de invierno desde 2002-2003 (VMM). scripts/update-be-nitrates.py."
+  },
+  "data/at-diesel.json": {
+   "sources": [
+    "eu_oil_bulletin",
+    "ama_agrardiesel"
+   ],
+   "notes": "Gasóleo y fioul de Austria semanales desde 2005 (Weekly Oil Bulletin) y devolución Agrardiesel (tipo provisional de 2026). scripts/update-at-diesel.py."
+  },
+  "data/at-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura austriaca por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/at-drought.json": {
+   "sources": [
+    "geosphere_austria",
+    "bmluk_hydrographie"
+   ],
+   "notes": "SPEI30 y SPEI90 por Land e histórico (GeoSphere WINFORE) y clases de nivel de las aguas subterráneas (BMLUK). scripts/update-at-drought.py."
   }
  },
  "derived": [

@@ -3369,6 +3369,40 @@ def be_nitrates(doc, errs, warns, stats):
         if not 0 <= p <= 100: errs.append("nitratos BE %s: %s %%" % (y, p))
         if m is not None and not 5 < m < 60: errs.append("nitratos BE %s: media %s mg/l" % (y, m))
     stats["anos"] = len(doc["series"])
+# Austria: gasoleo (Boletin Petrolero), devolucion Agrardiesel, SPEI y aguas subterraneas
+def at_diesel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today(); prev = None
+    for d, t, n, h in doc["weekly"]:
+        if d > today.isoformat(): errs.append("diesel AT: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("diesel AT: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.5 < t < 3.5: errs.append("diesel AT %s: %s" % (d, t))
+        if n is not None and n >= t: errs.append("diesel AT %s: sin impuestos >= con impuestos" % d)
+    R = doc["refund"]
+    if not 0 < R["eurPerLitre"] < 0.6: errs.append("Agrardiesel AT: devolucion %s" % R["eurPerLitre"])
+    if R.get("provisional"): warns.append("Agrardiesel AT: el tipo de %d es provisional; revisar scripts/ref/at-agrardiesel.json" % R["year"])
+    if not 0.3 < doc["farmCostNet"] < doc["farmCostFlat"]: errs.append("diesel AT: costes incoherentes")
+    stats["semanas"] = len(doc["weekly"])
+def at_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI AT: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (5000 < a < 12000 and 50000 < t < 110000): errs.append("GEI AT %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI AT %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+def at_drought(doc, errs, warns, stats):
+    import datetime as _dt
+    if sorted(doc["lands"]) != ["B", "K", "NO", "OO", "S", "ST", "T", "V", "W"]: errs.append("sequia AT: Lander %s" % sorted(doc["lands"]))
+    for k, v in list(doc["lands"].items()) + [("AT", doc["austria"])]:
+        for s in ("spei30", "spei90"):
+            x = v.get(s)
+            if not x or not -4 < x["mean"] < 4 or not (100 >= x["dry"] >= x["veryDry"] >= x["extreme"] >= 0): errs.append("sequia AT %s %s: %s" % (k, s, x))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=5)).isoformat(): warns.append("sequia AT: ultimo dato %s" % doc["asOf"])
+    stats["dias"] = len(doc["history"])
 # Italia: gasoleo (MASE) y por region (MIMIT)
 def it_fuel(doc, errs, warns, stats):
     import datetime as _dt

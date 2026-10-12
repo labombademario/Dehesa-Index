@@ -68,6 +68,13 @@
         var pmod = function () { if (global.DIPlDrought) pgo(); else pjs('js/pl-drought.js?v=20261013', pgo); };
         if (global.DIFrDeptMap) pmod(); else pjs('js/fr-dept-map.js?v=20261015', pmod);
       }
+      if (cc === 'AT') {   // SPEI de GeoSphere Austria y aguas subterraneas (js/at-drought.js), a peticion
+        var abox = document.createElement('div'); abox.style.marginTop = '14px'; el.appendChild(abox);
+        var ago = function () { if (global.DIAtDrought) global.DIAtDrought.mount(abox, lg.slice(0, 2)); };
+        var ajs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+        var amod = function () { if (global.DIAtDrought) ago(); else ajs('js/at-drought.js?v=20261013', ago); };
+        if (global.DIFrDeptMap) amod(); else ajs('js/fr-dept-map.js?v=20261015', amod);
+      }
       if (cc === 'BE') {   // prohibiciones de captar agua y SPI-3 en Flandes (VMM, js/be-drought.js), a peticion
         var bbox = document.createElement('div'); bbox.style.marginTop = '14px'; el.appendChild(bbox);
         var bgo = function () { if (global.DIBeDrought) global.DIBeDrought.mount(bbox, lg.slice(0, 2)); };

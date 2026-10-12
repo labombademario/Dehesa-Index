@@ -768,6 +768,36 @@ sources:
     continue: true
     data: [be-nitrates.json]
     message: Nitrato en aguas de zonas agricolas de Flandes (VMM)
+  - id: at-diesel
+    name: Update Austria diesel and Agrardiesel refund (EU Weekly Oil Bulletin)
+    cron: ['45 12 * * 2']
+    pre: ['pip install openpyxl']
+    script: scripts/update-at-diesel.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [at-diesel.json]
+    message: Gasoleo y devolucion Agrardiesel en Austria (Boletin Petrolero UE)
+  - id: at-ghg-agri
+    name: Update Austria agricultural greenhouse gas emissions (Eurostat env_air_gge)
+    cron: ['25 8 4 * *']
+    script: scripts/update-eu-ghg-agri.py
+    args: AT at
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [at-ghg-agri.json]
+    message: Emisiones de la agricultura austriaca (Eurostat)
+  - id: at-drought
+    name: Update Austria drought (GeoSphere WINFORE SPEI) and groundwater status (BMLUK)
+    cron: ['50 7 * * *']
+    pre: ['pip install netCDF4 numpy shapely']
+    script: scripts/update-at-drought.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    data: [at-drought.json]
+    message: Sequia (SPEI) y aguas subterraneas en Austria (GeoSphere, BMLUK)
   - id: es-drought-ute
     name: Update Spain drought and water scarcity by unit (MITECO monthly report)
     cron: ['10 8 2,9,16,23 * *']

@@ -1,0 +1,8 @@
+{
+ "note": "Agrardieselrückvergütung de Austria. Se actualiza a mano cuando cambie la normativa o la AMA publique el tipo definitivo.",
+ "years": {
+  "2025": {"eurPerLitre": 0.07, "provisional": false, "basis": "§ 7 MinStG (Temporäre Agrardieselvergütung), periodo III: año 2025", "url": "https://www.jusline.at/gesetz/minstg/paragraf/7", "paid": "diciembre de 2025"},
+  "2026": {"eurPerLitre": 0.155, "provisional": true, "basis": "NEHG-Entlastungsmaßnahmenverordnung für die Land- und Forstwirtschaft (en preparación); AMA, Infoblatt Agrardieselrückvergütung 2026 und 2027 (estado 10-7-2026): «voraussichtlich rund 15,5 Cent/Liter»", "url": "https://www.ama.at/media/h04ohvo1/infoblatt_agrardieselrueckverguetung_2026-2027.pdf", "paid": "previsto en diciembre de 2026, con el pago principal de la AMA", "capEurMillion": 50,
+           "litresPerHa": {"arable": 110, "permanentCrops": 310, "meadows2plus": 145, "meadows1pasture": 61, "alpine": 19, "forest": 12}, "extraLitresPerHa": {"rootVegetablesGarden": 85, "fieldForage": 63}}
+ }
+}
