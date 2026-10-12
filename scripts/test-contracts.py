@@ -339,6 +339,7 @@ CASES = [
  ("eu-regions-pt.json", "falta una region", lambda d: d["regions"].pop("AZO")),
  ("eu-regions-ch.json", "falta una region", lambda d: d["regions"].pop("TIC")),
  ("eu-regions-ie.json", "falta una region", lambda d: d["regions"].pop("EM")),
+ ("eu-regions-el.json", "falta una region", lambda d: d["regions"].pop("CGR")),
  ("eu-regions-de.json", "vacas mas que vacuno total", lambda d: d["regions"]["NI"]["animals"]["A2300F"].__setitem__(-1, [d["regions"]["NI"]["animals"]["A2300F"][-1][0], 99999.0])),
  ("eu-regions-it.json", "rendimiento no plausible", lambda d: d["regions"]["LOM"]["crops"]["C1500"]["prod"].__setitem__(-1, [d["regions"]["LOM"]["crops"]["C1500"]["prod"][-1][0], 9999999.0])),
  ("eu-regions-es.json", "anios desordenados", lambda d: d["regions"]["CL"]["eaa"]["AM160000"].reverse()),

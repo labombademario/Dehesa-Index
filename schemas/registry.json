@@ -442,6 +442,12 @@
     "eu_regions"
    ]
   ],
+  "eu-regions-el.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
   "eu-regions-ch.json": [
    "eu-regions",
    [

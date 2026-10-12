@@ -33,11 +33,12 @@ PL = {"MA": ("PL21", ["PL21"]), "SL": ("PL22", ["PL22"]), "WP": ("PL41", ["PL41"
 PT = {"NOR": ("PT11", ["PT11"]), "ALG": ("PT15", ["PT15"]), "CEN": ("PT16", ["PT16"]), "LIS": ("PT17", ["PT17"]), "ALE": ("PT18", ["PT18"]), "AZO": ("PT20", ["PT20"]), "MAD": ("PT30", ["PT30"])}
 IE = {"NW": ("IE04", ["IE04"]), "SO": ("IE05", ["IE05"]), "EM": ("IE06", ["IE06"])}
 CH = {"LEM": ("CH01", ["CH01"]), "MIT": ("CH02", ["CH02"]), "NWS": ("CH03", ["CH03"]), "ZUR": ("CH04", ["CH04"]), "OST": ("CH05", ["CH05"]), "ZEN": ("CH06", ["CH06"]), "TIC": ("CH07", ["CH07"])}
+EL = {"ATT": ("EL30", ["EL30"]), "NAE": ("EL41", ["EL41"]), "SAE": ("EL42", ["EL42"]), "KRI": ("EL43", ["EL43"]), "EMT": ("EL51", ["EL51"]), "KMA": ("EL52", ["EL52"]), "DMA": ("EL53", ["EL53"]), "IPE": ("EL54", ["EL54"]), "THS": ("EL61", ["EL61"]), "ION": ("EL62", ["EL62"]), "WGR": ("EL63", ["EL63"]), "CGR": ("EL64", ["EL64"]), "PEL": ("EL65", ["EL65"])}
 MIN_OK = {"ie": 0.0, "ch": 0.0}  # fraccion minima de regiones con datos completos; en el resto 0,9
 # Puntos de la fuente descartados por error evidente. Gelderland y Flevoland (NL) tienen la produccion de patata de 2022 intercambiada en Eurostat
 # (807 y 255 mil t frente a ~260 y ~790 en los demas anios; la suma de ambas es normal): rendimiento de 128 y 14 t/ha. Se descarta la produccion de ese anio, no se corrige.
 EXCLUDE = {("NL", "GE", "R1000", 2022), ("NL", "FL", "R1000", 2022)}
-COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT, "be": BE, "dk": DK, "pl": PL, "pt": PT, "ie": IE, "ch": CH}
+COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT, "be": BE, "dk": DK, "pl": PL, "pt": PT, "ie": IE, "ch": CH, "el": EL}
 EAA = ["AM180000", "AM160000", "AM100000", "AM110000", "AM120000", "AM010000", "AM020000", "AM030000", "AM040000", "AM050000", "AM060000", "AM064000", "AM065000", "AM070000", "AM080000", "AM111000", "AM112000", "AM114000", "AM115000", "AM121000", "AM122000",
        "AM200000", "AM206000", "AM203000", "AM202000", "AM260000", "AM280000", "AM310000", "AM320000", "AM330000", "AM370000"]
 CROPS = ["UAA", "ARA", "J0000", "C0000", "C1110", "C1120", "C1200", "C1300", "C1400", "C1500", "R1000", "R2000", "I1110", "I1120", "I1130", "P0000", "G3000", "F0000", "T0000", "W1000", "O1000"]
