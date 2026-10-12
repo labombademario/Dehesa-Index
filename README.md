@@ -31,7 +31,7 @@ Countries with profiles: Spain, France, Germany, Belgium, Austria, Portugal, Den
 - `scripts/update-*.py|js` fetch and normalise one source each and write to `data/`; most workflows are generated from `sources.yml`. Figures:
 <!-- status:start (generado por scripts/build-readme-status.py; no editar) -->
 - 130 data pipelines (`update-*.yml`, 129 source scripts `scripts/update-*`) plus 137 workflows in total in `.github/workflows/`; the pipeline-status report tracks 130 of them.
-- 162 JSON schemas in `schemas/`; licence registry: 105 sources, 171 data files.
+- 162 JSON schemas in `schemas/`; licence registry: 105 sources, 177 data files.
 - Catalogue: 44 entities (34 countries, 7 aggregates, 3 regions) and more than 20000 series.
 - Live pipeline state (OK, late, error, not run) and coverage gaps are not copied here: see [`status.html`](https://dehesaindex.com/status.html), built from `data/pipeline-status.json` and `data/coverage-gaps.json`.
 <!-- status:end -->

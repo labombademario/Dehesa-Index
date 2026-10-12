@@ -249,16 +249,22 @@ def eu_drought(doc, errs, warns, stats):
         if sum(eu[:3]) < min(sum(es[:3]), 100) * 0.05 and sum(es[:3]) > 90: warns.append("UE-27 sin sequia aunque Espana este casi toda en sequia")
     stats["countries"] = len(doc["countries"])
 
-_EUREG = {"ES": 17, "FR": 13, "IT": 20, "DE": 16, "NL": 12, "AT": 9, "BE": 11, "DK": 5, "PL": 16, "PT": 7, "CH": 7, "IE": 3, "EL": 13}
+_EUREG = {"ES": 17, "FR": 13, "IT": 20, "DE": 16, "NL": 12, "AT": 9, "BE": 11, "DK": 5, "PL": 16, "PT": 7, "CH": 7, "IE": 3, "EL": 13, "FI": 5, "BG": 6, "HR": 4, "LT": 2, "SK": 4, "UK": 12}
 def eu_regions(doc, errs, warns, stats):
     cc = doc["country"]; R = doc["regions"]
     if cc not in _EUREG: errs.append("pais no previsto: %s" % cc); return
     if len(R) != _EUREG[cc]: errs.append("%s: %d regiones, se esperaban %d" % (cc, len(R), _EUREG[cc])); return
+    # Reino Unido: Eurostat no tiene cuentas ni censo agrario por region tras el Brexit. Bulgaria: las cuentas regionales que publica Eurostat no cuadran
+    # con el total nacional (doblan el valor, como si fueran leva) y no se publican. En ambos casos el bloque falta a proposito.
+    _skip = {"UK": ("eaa", "farms"), "BG": ("eaa",)}.get(cc, ())
     for r, b in R.items():
         for k in ("eaa", "crops", "animals", "farms"):
+            if k in _skip:
+                if b.get(k): errs.append("%s %s: %s deberia faltar (fuente no fiable o inexistente)" % (cc, r, k))
+                continue
             if not b.get(k): errs.append("%s %s: falta %s" % (cc, r, k))
         if errs: return
-        for it, p in list(b["eaa"].items()) + list(b["animals"].items()) + [("milk", b.get("milk", []))]:
+        for it, p in list(b.get("eaa", {}).items()) + list(b["animals"].items()) + [("milk", b.get("milk", []))]:
             ys = [x[0] for x in p]
             if ys != sorted(set(ys)): errs.append("%s %s %s: anios desordenados o repetidos" % (cc, r, it))
             if any(not _num(x[1]) for x in p): errs.append("%s %s %s: valor no numerico" % (cc, r, it))
@@ -273,7 +279,7 @@ def eu_regions(doc, errs, warns, stats):
                 a = dict(c["area"])
                 for y, v in c["prod"][-4:]:
                     if a.get(y, 0) > 0.05 and v / a[y] > (90 if cr == "R1000" else 20): errs.append("%s %s %s %s: rendimiento %.1f t/ha no plausible" % (cc, r, cr, y, v / a[y]))
-        e = {k: dict(v) for k, v in b["eaa"].items()}
+        e = {k: dict(v) for k, v in b.get("eaa", {}).items()}
         for y in sorted(e.get("AM160000", {}))[-3:]:
             parts = sum(e[k].get(y, 0) for k in ("AM100000", "AM110000", "AM120000"))
             if parts > e["AM160000"][y] * 1.005 + 0.5: errs.append("%s %s %s: cultivos + animales + productos animales (%.0f) > produccion agraria (%.0f)" % (cc, r, y, parts, e["AM160000"][y]))
@@ -281,13 +287,13 @@ def eu_regions(doc, errs, warns, stats):
         for y, v in b["animals"]["A2000"][-3:]:
             cows = an.get("A2300F", {}).get(y, 0) + an.get("A2300G", {}).get(y, 0)
             if cows > v * 1.005 + 0.05: errs.append("%s %s %s: vacas (%.1f) > vacuno total (%.1f)" % (cc, r, y, cows, v))
-        for y, f in b["farms"]["TOTAL"].items():
+        for y, f in b.get("farms", {}).get("TOTAL", {}).items():
             tipos = sum(b["farms"][t].get(y, {}).get("HLD", 0) for t in b["farms"] if t != "TOTAL")
             if f.get("HLD") and abs(tipos - f["HLD"]) > 0.01 * f["HLD"] + 15: errs.append("%s %s %s: explotaciones por tipo (%.0f) != total (%.0f)" % (cc, r, y, tipos, f["HLD"]))
     # las regiones suman el total nacional publicado por Eurostat (misma tabla de cuentas, otro fichero)
     try: N = load("eu-farm-economics.json")
     except Exception: N = None
-    if N and cc in N["geos"]:
+    if N and cc in N["geos"] and "eaa" not in _skip:
         for key, it in (("ic", "AM200000"), ("gva", "AM260000"), ("output", "AM180000")):
             ys = [y for y in N["years"] if all(y in dict(b["eaa"].get(it, [])) for b in R.values())][-1:]  # solo el ultimo anio comun: los anos antiguos de algunas regiones (p. ej. NL antes de 2021) siguen sin revisar y suman ~89 %
             for y in ys:

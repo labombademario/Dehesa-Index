@@ -448,6 +448,42 @@
     "eu_regions"
    ]
   ],
+  "eu-regions-fi.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-bg.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-hr.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-lt.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-sk.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-uk.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
   "eu-regions-ch.json": [
    "eu-regions",
    [

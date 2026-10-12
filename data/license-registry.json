@@ -3300,6 +3300,36 @@
     "eurostat"
    ]
   },
+  "data/eu-regions-fi.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-bg.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-hr.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-lt.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-sk.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-uk.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
   "data/au-states.json": {
    "sources": [
     "abs"

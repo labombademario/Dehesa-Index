@@ -23,13 +23,13 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-be.json data/eu-regions-dk.json data/eu-regions-pl.json data/eu-regions-pt.json data/eu-regions-ie.json data/eu-regions-ch.json data/eu-regions-el.json
+          files: data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-be.json data/eu-regions-dk.json data/eu-regions-pl.json data/eu-regions-pt.json data/eu-regions-ie.json data/eu-regions-ch.json data/eu-regions-el.json data/eu-regions-fi.json data/eu-regions-bg.json data/eu-regions-hr.json data/eu-regions-lt.json data/eu-regions-sk.json data/eu-regions-uk.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-be.json data/eu-regions-dk.json data/eu-regions-pl.json data/eu-regions-pt.json data/eu-regions-ie.json data/eu-regions-ch.json data/eu-regions-el.json
+        run: python3 scripts/detect-revisions.py data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-be.json data/eu-regions-dk.json data/eu-regions-pl.json data/eu-regions-pt.json data/eu-regions-ie.json data/eu-regions-ch.json data/eu-regions-el.json data/eu-regions-fi.json data/eu-regions-bg.json data/eu-regions-hr.json data/eu-regions-lt.json data/eu-regions-sk.json data/eu-regions-uk.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Datos agrarios por region (Eurostat)" data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-be.json data/eu-regions-dk.json data/eu-regions-pl.json data/eu-regions-pt.json data/eu-regions-ie.json data/eu-regions-ch.json data/eu-regions-el.json data/eu-regions-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Datos agrarios por region (Eurostat)" data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-be.json data/eu-regions-dk.json data/eu-regions-pl.json data/eu-regions-pt.json data/eu-regions-ie.json data/eu-regions-ch.json data/eu-regions-el.json data/eu-regions-fi.json data/eu-regions-bg.json data/eu-regions-hr.json data/eu-regions-lt.json data/eu-regions-sk.json data/eu-regions-uk.json data/eu-regions-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
