@@ -3295,6 +3295,32 @@
    "short": "AMA",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: dato legal."
+  },
+  "vlada_hr": {
+   "name": "Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo",
+   "url": "https://vlada.gov.hr/vijesti",
+   "country": "HR",
+   "licenseId": "HR-VLADA-REUSE",
+   "licenseName": "Condiciones de uso de vlada.gov.hr: los contenidos pueden reproducirse sin permiso especial citando la fuente",
+   "licenseUrl": "https://vlada.gov.hr/uvjeti-koristenja/11852",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Vlada Republike Hrvatske, vlada.gov.hr — notas sobre los precios máximos de los derivados del petróleo",
+   "additionalRestrictions": "Se aconseja revisar los avisos de derechos de autor de documentos concretos; se usan solo cifras de precios de la nota de prensa.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "vlada.gov.hr/uvjeti-koristenja: «Sadržaji s ovih stranica mogu se prenositi bez posebne dozvole uz navođenje izvora»: la reutilización es libre citando la fuente. Las notas de cada lunes («Nove cijene iznosit će: … EUR/l za plavi dizel») fijan el precio máximo de la semana; el decreto (NN) solo contiene la fórmula y las primas.",
+   "used": true,
+   "aliases": [],
+   "notes": "El decreto semanal (Uredba, Narodne novine) solo trae la fórmula y las primas; las cifras finales salen en la nota de prensa. Se leen con el buscador de la web; las semanas que no devuelve quedan como hueco.",
+   "short": "Vlada RH",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de uso publicadas."
   }
  },
  "files": {
@@ -4512,6 +4538,26 @@
     "bmluk_hydrographie"
    ],
    "notes": "SPEI30 y SPEI90 por Land e histórico (GeoSphere WINFORE) y clases de nivel de las aguas subterráneas (BMLUK). scripts/update-at-drought.py."
+  },
+  "data/hr-diesel.json": {
+   "sources": [
+    "vlada_hr",
+    "eu_oil_bulletin"
+   ],
+   "notes": "Precios máximos oficiales del gasóleo, del gasóleo azul (plavi dizel) y de la gasolina (notas de la Vlada) y gasóleo semanal de Croacia (Weekly Oil Bulletin). scripts/update-hr-diesel.py."
+  },
+  "data/hr-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura croata por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/hr-drought.json": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "Indicador Combinado de Sequía del EDO calculado para las 21 provincias croatas (NUTS 3 de GISCO). scripts/update-hr-drought.py."
   }
  },
  "derived": [

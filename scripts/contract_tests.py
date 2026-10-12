@@ -3403,6 +3403,49 @@ def at_drought(doc, errs, warns, stats):
             if not x or not -4 < x["mean"] < 4 or not (100 >= x["dry"] >= x["veryDry"] >= x["extreme"] >= 0): errs.append("sequia AT %s %s: %s" % (k, s, x))
     if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=5)).isoformat(): warns.append("sequia AT: ultimo dato %s" % doc["asOf"])
     stats["dias"] = len(doc["history"])
+def hr_diesel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today(); prev = None
+    for d, t, n, h in doc["weekly"]:
+        if d > today.isoformat(): errs.append("diesel HR: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("diesel HR: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.3 < t < 3.5: errs.append("diesel HR %s: %s" % (d, t))
+        if n is not None and n >= t: errs.append("diesel HR %s: sin impuestos >= con impuestos" % d)
+    prev = None; lim = (today + _dt.timedelta(days=4)).isoformat()
+    for d, pet, dsl, blue, ndsl, nblue in doc["official"]:
+        if d > lim: errs.append("gasoleo azul HR: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("gasoleo azul HR: fechas desordenadas en %s" % d); return
+        prev = d
+        if not (0.3 < blue < dsl < 3.5 and (pet is None or 0.5 < pet < 3.5)): errs.append("precios oficiales HR %s: %s %s %s" % (d, pet, dsl, blue))
+        if ndsl is not None and ndsl < dsl - 0.001: errs.append("HR %s: precio sin medidas (%s) menor que con medidas (%s)" % (d, ndsl, dsl))
+    last = doc["official"][-1][0]
+    if last < (today - _dt.timedelta(days=21)).isoformat(): warns.append("gasoleo azul HR: ultimo precio oficial %s" % last)
+    if doc["weekly"][-1][0] < (today - _dt.timedelta(days=21)).isoformat(): warns.append("diesel HR: ultima semana %s" % doc["weekly"][-1][0])
+    stats["semanas"] = len(doc["weekly"]); stats["oficiales"] = len(doc["official"])
+def hr_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI HR: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (1000 < a < 5000 and 15000 < t < 50000): errs.append("GEI HR %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI HR %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+def hr_drought(doc, errs, warns, stats):
+    import datetime as _dt
+    C = doc["counties"]; P = doc["periods"]
+    if len(C) != 21 or not all(k.startswith("HR") for k in C): errs.append("sequia HR: %d provincias" % len(C)); return
+    if P != sorted(set(P)): errs.append("sequia HR: decadas desordenadas")
+    for k, c in C.items():
+        if len(c["v"]) != len(P): errs.append("sequia HR %s: %d filas y %d decadas" % (k, len(c["v"]), len(P))); continue
+        for i, v in enumerate(c["v"]):
+            if len(v) != 6 or any(not 0 <= x <= 100.5 for x in v) or sum(v) > 100.5: errs.append("sequia HR %s %s: %s" % (k, P[i], v)); break
+        if c.get("coverage", 0) < 80: errs.append("sequia HR %s: cobertura %s %%" % (k, c.get("coverage")))
+    if doc["asOf"] != P[-1]: errs.append("sequia HR: asOf %s y ultima decada %s" % (doc["asOf"], P[-1]))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=40)).isoformat(): warns.append("sequia HR: ultimo dato %s" % doc["asOf"])
+    stats["decadas"] = len(P)
 # Italia: gasoleo (MASE) y por region (MIMIT)
 def it_fuel(doc, errs, warns, stats):
     import datetime as _dt

@@ -1006,6 +1006,24 @@
     "at_drought"
    ]
   ],
+  "hr-diesel.json": [
+   "hr-diesel",
+   [
+    "hr_diesel"
+   ]
+  ],
+  "hr-ghg-agri.json": [
+   "hr-ghg-agri",
+   [
+    "hr_ghg_agri"
+   ]
+  ],
+  "hr-drought.json": [
+   "hr-drought",
+   [
+    "hr_drought"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

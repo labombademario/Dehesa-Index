@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T20:30:17Z",
+ "generatedAt": "2026-10-12T21:42:04Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 143,
+  "total": 144,
   "byStatus": {
-   "ACTIVE": 113,
+   "ACTIVE": 114,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -6201,6 +6201,45 @@
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "vlada_hr",
+   "registryId": "vlada_hr",
+   "country": "HR",
+   "scope": "integrated",
+   "institution": "Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "HR-VLADA-REUSE",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Vlada Republike Hrvatske, vlada.gov.hr — notas sobre los precios máximos de los derivados del petróleo",
+   "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

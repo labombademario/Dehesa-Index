@@ -2,12 +2,12 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-163 workflows (126 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+166 workflows (129 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
-- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
 
@@ -186,6 +186,9 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-germany-extra.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-germany-destatis-extra.py | germany-extra-stats.json | finish, validate-files |
 | update-germany-livestock.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-germany-livestock.py | germany-livestock.json | finish, validate-files |
 | update-germany.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-germany.py | germany-agri.json, germany-stats.json | finish, validate-files |
+| update-hr-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-hr-diesel.py | hr-diesel.json | finish, validate-files |
+| update-hr-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-hr-drought.py | hr-drought.json | finish, validate-files |
+| update-hr-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | hr-ghg-agri.json | finish, validate-files |
 | update-inao-geo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-inao-geo.py | gi/FR-geo.json, gi/FR-inao.json | finish, validate-files |
 | update-interest-rates.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-interest-rates.py | interest-rates-stats.json | finish, validate-files |
 | update-italy-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-italy-eurostat.py | italy-eurostat-stats.json | finish, validate-files |
