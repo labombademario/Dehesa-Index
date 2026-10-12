@@ -61,12 +61,19 @@
       }
       h += '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' ' + esc(t.edo) + (cc === 'ES' ? ' · MITECO, Boletín Hidrológico' : '') + ' · <a href="sequia.html?zona=eu">' + esc(t.all) + '</a></p></section>';
       el.innerHTML = h; bindChart(el, v.map(inD), labels, lg, t);
+      if (cc === 'DE') {   // humedad del suelo por Land (DWD, js/de-soil.js, con el ayudante de mapas js/fr-dept-map.js), a peticion
+        var dbox = document.createElement('div'); dbox.style.marginTop = '14px'; el.appendChild(dbox);
+        var dgo = function () { if (global.DIDeSoil) global.DIDeSoil.mount(dbox, lg.slice(0, 2)); };
+        var djs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+        var dmod = function () { if (global.DIDeSoil) dgo(); else djs('js/de-soil.js?v=20261014', dgo); };
+        if (global.DIFrDeptMap) dmod(); else djs('js/fr-dept-map.js?v=20261015', dmod);
+      }
       if (cc === 'FR') {   // rios sin agua (ONDE, js/fr-onde.js, con el mapa de departamentos js/fr-dept-map.js), a peticion
         var fbox = document.createElement('div'); fbox.style.marginTop = '14px'; el.appendChild(fbox);
         var fgo = function () { if (global.DIFrOnde) global.DIFrOnde.mount(fbox, lg.slice(0, 2)); };
         var fjs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
         var fmod = function () { if (global.DIFrOnde) fgo(); else fjs('js/fr-onde.js?v=20261012', fgo); };
-        if (global.DIFrDeptMap) fmod(); else fjs('js/fr-dept-map.js?v=20261013', fmod);
+        if (global.DIFrDeptMap) fmod(); else fjs('js/fr-dept-map.js?v=20261015', fmod);
       }
       if (cc === 'ES') {   // escasez y sequia prolongada por unidad territorial (js/es-drought-ute.js, se carga a peticion)
         var box = document.createElement('div'); box.style.marginTop = '14px'; el.appendChild(box);

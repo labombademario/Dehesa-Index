@@ -3285,6 +3285,47 @@ def us_reservoirs(doc, errs, warns, stats):
     for must in ("Mead (Hoover Dam)", "Powell (Glen Canyon Dam)", "Shasta"):
         if must not in names: errs.append("embalses US: falta %s" % must)
     stats["embalses"] = len(doc["items"])
+# Alemania: gasoleo, fioul y Agrardiesel
+def de_diesel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today().isoformat(); prev = None
+    for d, t, n, h in doc["weekly"]:
+        if d > today: errs.append("diesel DE: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("diesel DE: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.6 < t < 3.5: errs.append("diesel DE %s: %s" % (d, t))
+        if n is not None and n >= t: errs.append("diesel DE %s: sin impuestos (%s) >= con impuestos (%s)" % (d, n, t))
+    A = doc.get("agrardiesel")
+    if A and not 0 < A["eurPerLitre"] < 0.5: errs.append("Agrardiesel: devolucion %s EUR/l fuera de lo plausible" % A["eurPerLitre"])
+    if not A: warns.append("Agrardiesel: sin importe de devolucion")
+    if doc.get("farmCost") is not None and not 0.3 < doc["farmCost"] < doc["weekly"][-1][1]: errs.append("diesel DE: coste de explotacion %s incoherente" % doc["farmCost"])
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=21)).isoformat(): warns.append("diesel DE: ultima semana %s" % doc["asOf"])
+    stats["semanas"] = len(doc["weekly"])
+# Alemania: emisiones de la agricultura (Eurostat)
+def de_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI DE: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (35000 < a < 110000 and 450000 < t < 1400000): errs.append("GEI DE %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI DE %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+# Alemania: humedad del suelo por Land (DWD)
+def de_soil_moisture(doc, errs, warns, stats):
+    import datetime as _dt
+    ms = doc["months"]; n = len(ms)
+    for a, b in zip(ms, ms[1:]):
+        if b <= a: errs.append("suelo DE: meses desordenados en %s" % b); return
+    if set(doc["regions"]) != set(doc["values"]) or set(doc["regions"]) != set(doc["clim"]) or "DE" not in doc["regions"]: errs.append("suelo DE: regiones incoherentes"); return
+    for k in doc["regions"]:
+        if len(doc["values"][k]) != n: errs.append("suelo DE %s: %d valores para %d meses" % (k, len(doc["values"][k]), n)); continue
+        if any(v is not None and not 0 <= v <= 130 for v in doc["values"][k]): errs.append("suelo DE %s: valores fuera de 0-130 %% nFK" % k)
+        if len(doc["clim"][k]) != 12: errs.append("suelo DE %s: climatologia sin 12 meses" % k)
+    last = _dt.date.fromisoformat(doc["asOf"] + "-01")
+    if (_dt.date.today() - last).days > 75: warns.append("suelo DE: ultimo mes %s" % doc["asOf"])
+    stats["meses"] = n
 # Francia: GNR, gazole y fioul (DGEC) y gazole por departamento
 def fr_gnr(doc, errs, warns, stats):
     import datetime as _dt

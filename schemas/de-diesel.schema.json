@@ -1,0 +1,71 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Alemania: gasoleo, fioul y devolucion Agrardiesel",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "asOf",
+  "unit",
+  "source",
+  "fields",
+  "weekly",
+  "vat"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ]
+  },
+  "asOf": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "unit": {
+   "type": "string",
+   "enum": [
+    "EUR/l"
+   ]
+  },
+  "fields": {
+   "type": "array",
+   "minItems": 4,
+   "maxItems": 4
+  },
+  "weekly": {
+   "type": "array",
+   "minItems": 500,
+   "items": {
+    "type": "array",
+    "minItems": 4,
+    "maxItems": 4
+   }
+  },
+  "vat": {
+   "type": "number"
+  },
+  "agrardiesel": {
+   "type": [
+    "object",
+    "null"
+   ]
+  },
+  "farmCost": {
+   "type": [
+    "number",
+    "null"
+   ]
+  }
+ }
+}

@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 97 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
+Resumen: 99 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
 
-## VERIFIED (97)
+## VERIFIED (99)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -35,6 +35,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `dgec_prix_petroliers` | Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 58 | Disclose modifications; the Statistics Denmark logo cannot be used. |
+| `dwd_cdc` | Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de) | DE | CC-BY-4.0 | si/si | si | 0 |  |
 | `ec_eambrosia` | Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE) | EU | CC-BY-4.0 | si/si | si | 0 | No se publican los datos de contacto de los consejos reguladores. Logos y marcas excluidos. |
 | `ecb` | European Central Bank (euro reference rates, ECB Data Portal) | EU | ESCB-REUSE | si/conditional | si | 2 | Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed … |
 | `edo_cdi` | European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS) | EU | CC-BY-4.0 | si/si | si | 0 | Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission… |
@@ -109,6 +110,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `wikidata` | Wikidata | INT | CC0-1.0 | si/si | no | 0 |  |
 | `world_bank` | World Bank — Commodity Price Data (Pink Sheet) | INT | CC-BY-4.0 | si/si | si | 2 | No endorsement; no World Bank names or logos without written consent. |
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
+| `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
 ## PENDING (9)
 

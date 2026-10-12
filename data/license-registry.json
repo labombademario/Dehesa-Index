@@ -2983,6 +2983,58 @@
    "short": "ADES · BRGM",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: Conjunto «qualité des eaux souterraines France entière (ADES)» del Ministère de la Transition écologique en data.gouv.fr con licencia fr-lo (Licence Ouverte), leído por su API el 12 oct 2026; Hub'Eau difunde esos mismos datos."
+  },
+  "dwd_cdc": {
+   "name": "Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de)",
+   "url": "https://opendata.dwd.de/climate_environment/CDC/",
+   "country": "DE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.txt",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Datenbasis: Deutscher Wetterdienst",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Terms_of_use.txt del Climate Data Center (mayo 2024), leído el 12 oct 2026: «The Creative Commons BY 4.0 - Licence \"CC BY 4.0\" apply».",
+   "used": true,
+   "aliases": [],
+   "notes": "Medias por Land de la rejilla de humedad del suelo: cálculo de Dehesa Index.",
+   "short": "DWD",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de uso del CDC del DWD (CC BY 4.0)."
+  },
+  "zoll_agrardiesel": {
+   "name": "Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel)",
+   "url": "https://www.zoll.de/DE/Fachthemen/Steuern/Verbrauchsteuern/Energie/Steuerbeguenstigung/Steuerentlastung/Betriebe-Land-Forstwirtschaft/betriebe-land-forstwirtschaft_node.html",
+   "country": "DE",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Dato legal (importe de una devolución fijada por ley, § 57 EnergieStG; § 5 UrhG: las leyes y actos oficiales no tienen derecho de autor)",
+   "licenseUrl": "https://www.gesetze-im-internet.de/urhg/__5.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Quelle: Zoll, Agrardieselentlastung (§ 57 EnergieStG)",
+   "additionalRestrictions": "Solo se reproduce el importe por litro, citando la página de la aduana.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Página de la aduana leída el 12 oct 2026: «Für Gasöl ist ein Entlastungssatz in Höhe von 0,21480 Euro je Liter vorgesehen.» Es un importe fijado por ley.",
+   "used": true,
+   "aliases": [],
+   "notes": "El coste aproximado para la explotación (precio sin IVA menos la devolución) lo calcula Dehesa Index.",
+   "short": "Zoll",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: dato legal sin derecho de autor."
   }
  },
  "files": {
@@ -4098,6 +4150,25 @@
     "eurostat"
    ],
    "notes": "Emisiones de la agricultura francesa por categoría, ganado y gas, 1990-último año (Eurostat env_air_gge, inventario nacional). scripts/update-eu-ghg-agri.py."
+  },
+  "data/de-diesel.json": {
+   "sources": [
+    "eu_oil_bulletin",
+    "zoll_agrardiesel"
+   ],
+   "notes": "Gasóleo con y sin impuestos y fioul de Alemania, semanales desde 2005 (Weekly Oil Bulletin), y devolución Agrardiesel por litro. scripts/update-de-diesel.py."
+  },
+  "data/de-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura alemana por categoría, ganado y gas, 1990-último año (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/de-soil-moisture.json": {
+   "sources": [
+    "dwd_cdc"
+   ],
+   "notes": "Humedad del suelo media por Land y mes desde 1991 y media 1991-2020 (rejilla DWD de 1 km). scripts/update-de-soil-moisture.py."
   }
  },
  "derived": [

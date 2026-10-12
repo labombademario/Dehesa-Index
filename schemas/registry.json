@@ -910,6 +910,24 @@
     "fr_nitrates"
    ]
   ],
+  "de-diesel.json": [
+   "de-diesel",
+   [
+    "de_diesel"
+   ]
+  ],
+  "de-ghg-agri.json": [
+   "de-ghg-agri",
+   [
+    "de_ghg_agri"
+   ]
+  ],
+  "de-soil-moisture.json": [
+   "de-soil-moisture",
+   [
+    "de_soil_moisture"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [
