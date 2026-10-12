@@ -2,12 +2,12 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-153 workflows (116 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+156 workflows (119 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
-- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-it-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
 
@@ -208,6 +208,14 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-worldbank-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-agri.py | worldbank-agri.json | finish, validate-files |
 | update-worldbank-urea.yml | a mano | mensual | qa-navigation.mjs, update-worldbank-urea-eu.py | - | price-engine, publish |
 | watchdog-cancelled-runs.yml | a mano | varias veces al dia | rerun-cancelled.py | - | - |
+
+## PL
+
+| Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
+|---|---|---|---|---|---|
+| update-pl-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-pl-diesel.py | pl-diesel.json | finish, validate-files |
+| update-pl-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | pl-ghg-agri.json | finish, validate-files |
+| update-pl-hydro-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-pl-hydro-drought.py | pl-hydro-drought.json | finish, validate-files |
 
 ## UK
 

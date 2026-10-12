@@ -1,0 +1,6 @@
+{
+ "note": "Zwrot podatku akcyzowego zawartego w cenie oleju napędowego wykorzystywanego do produkcji rolnej. Se actualiza a mano cada año con el reglamento del Consejo de Ministros (el contrato avisa si el año ya no es el actual). Límites: ustawa o zwrocie podatku akcyzowego (110 l por ha de tierra agrícola; 40 l por unidad de ganado bovino; 4 l por cerdo).",
+ "years": {
+  "2026": {"zlPerLitre": 1.48, "litresPerHa": 110, "litresPerLU": 40, "litresPerPig": 4, "act": "Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. (Dz. U. 2025 poz. 1875)", "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20250001875"}
+ }
+}

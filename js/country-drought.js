@@ -61,6 +61,13 @@
       }
       h += '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' ' + esc(t.edo) + (cc === 'ES' ? ' · MITECO, Boletín Hidrológico' : '') + ' · <a href="sequia.html?zona=eu">' + esc(t.all) + '</a></p></section>';
       el.innerHTML = h; bindChart(el, v.map(inD), labels, lg, t);
+      if (cc === 'PL') {   // avisos de sequia hidrologica del IMGW (js/pl-drought.js), a peticion
+        var pbox = document.createElement('div'); pbox.style.marginTop = '14px'; el.appendChild(pbox);
+        var pgo = function () { if (global.DIPlDrought) global.DIPlDrought.mount(pbox, lg.slice(0, 2)); };
+        var pjs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+        var pmod = function () { if (global.DIPlDrought) pgo(); else pjs('js/pl-drought.js?v=20261013', pgo); };
+        if (global.DIFrDeptMap) pmod(); else pjs('js/fr-dept-map.js?v=20261015', pmod);
+      }
       if (cc === 'IT') {   // severidad hidrica por distrito (ISPRA, js/it-severity.js), a peticion
         var ibox = document.createElement('div'); ibox.style.marginTop = '14px'; el.appendChild(ibox);
         var igo = function () { if (global.DIItSeverity) global.DIItSeverity.mount(ibox, lg.slice(0, 2)); };

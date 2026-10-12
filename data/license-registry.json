@@ -3113,6 +3113,58 @@
    "short": "ISPRA",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: Note legali de ISPRA, leídas el 12 oct 2026: «i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0»."
+  },
+  "imgw_pib": {
+   "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne)",
+   "url": "https://danepubliczne.imgw.pl/",
+   "country": "PL",
+   "licenseId": "PL-PSI-IMGW",
+   "licenseName": "Reutilización libre y gratuita citando la fuente (Regulamin udostępniania danych IMGW-PIB; ustawa o otwartych danych)",
+   "licenseUrl": "https://danepubliczne.imgw.pl/docs/regulamin_udostepniania_danych.pdf",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy (dane przetworzone przez Dehesa Index)",
+   "additionalRestrictions": "Citar la fuente con la frase del reglamento e indicar que los datos se han procesado.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Portal danepubliczne.imgw.pl leído el 12 oct 2026: «Każdemu przysługuje prawo do ponownego wykorzystania informacji sektora publicznego»; el reglamento exige citar «Źródłem pochodzenia danych jest IMGW-PIB» y señalar el procesamiento; uso gratuito.",
+   "used": true,
+   "aliases": [],
+   "notes": "Recuentos por voivodato e histórico diario: cálculo de Dehesa Index.",
+   "short": "IMGW-PIB",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: reglamento de datos del IMGW-PIB (reutilización libre con cita)."
+  },
+  "pl_akcyza_rm": {
+   "name": "Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej)",
+   "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20250001875",
+   "country": "PL",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Acto normativo (art. 4 de la ley polaca de derechos de autor: los actos normativos no son objeto de derecho de autor)",
+   "licenseUrl": "https://isap.sejm.gov.pl/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. (Dz. U. 2025 poz. 1875)",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Texto del reglamento (29-dic-2025, Dz. U. 2025 poz. 1875), § 1: «ustala się w wysokości 1,48 zł na 1 litr oleju»; límites de 110 l/ha y 40 l por unidad de ganado bovino confirmados en avisos municipales (162,80 zł/ha y 59,20 zł/UGM).",
+   "used": true,
+   "aliases": [],
+   "notes": "Se actualiza a mano cada año en scripts/ref/pl-akcyza.json.",
+   "short": "Rada Ministrów",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: dato legal."
   }
  },
  "files": {
@@ -4266,6 +4318,25 @@
     "ispra"
    ],
    "notes": "Severidad hídrica de los siete distritos hidrográficos e histórico de cambios. scripts/update-it-severity.py."
+  },
+  "data/pl-diesel.json": {
+   "sources": [
+    "eu_oil_bulletin",
+    "pl_akcyza_rm"
+   ],
+   "notes": "Gasóleo y fioul de Polonia semanales desde 2005 (Weekly Oil Bulletin, en euros y zloty) y devolución anual de akcyza. scripts/update-pl-diesel.py."
+  },
+  "data/pl-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura polaca por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/pl-hydro-drought.json": {
+   "sources": [
+    "imgw_pib"
+   ],
+   "notes": "Avisos de sequía hidrológica vigentes del IMGW-PIB por voivodato e histórico diario propio. scripts/update-pl-hydro-drought.py."
   }
  },
  "derived": [

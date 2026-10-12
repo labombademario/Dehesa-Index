@@ -3285,6 +3285,43 @@ def us_reservoirs(doc, errs, warns, stats):
     for must in ("Mead (Hoover Dam)", "Powell (Glen Canyon Dam)", "Shasta"):
         if must not in names: errs.append("embalses US: falta %s" % must)
     stats["embalses"] = len(doc["items"])
+# Polonia: gasoleo y devolucion de akcyza
+def pl_diesel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today(); prev = None
+    for d, t, n, h, fx in doc["weekly"]:
+        if d > today.isoformat(): errs.append("diesel PL: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("diesel PL: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.4 < t < 3.0: errs.append("diesel PL %s: %s" % (d, t))
+        if not 2.5 < fx < 7.0: errs.append("diesel PL %s: cambio %s zl/EUR" % (d, fx))
+        if n is not None and n >= t: errs.append("diesel PL %s: sin impuestos >= con impuestos" % d)
+    R = doc["refund"]
+    if not 0.5 < R["zlPerLitre"] < 3: errs.append("akcyza PL: devolucion %s zl/l" % R["zlPerLitre"])
+    if R["year"] < today.year: warns.append("akcyza PL: la devolucion es de %d; actualizar scripts/ref/pl-akcyza.json con el reglamento de %d" % (R["year"], today.year))
+    if not 1 < doc["farmCostPLN"] < doc["dieselPLN"]: errs.append("diesel PL: coste de explotacion %s incoherente" % doc["farmCostPLN"])
+    stats["semanas"] = len(doc["weekly"])
+# Polonia: emisiones de la agricultura (Eurostat)
+def pl_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI PL: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (20000 < a < 70000 and 250000 < t < 650000): errs.append("GEI PL %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI PL %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+# Polonia: avisos de sequia hidrologica (IMGW-PIB)
+def pl_hydro_drought(doc, errs, warns, stats):
+    import datetime as _dt
+    if len(doc["voivodeships"]) != 16: errs.append("sequia PL: %d voivodatos" % len(doc["voivodeships"]))
+    tot = sum(v["warnings"] for v in doc["voivodeships"].values())
+    if doc["warnings"] and tot < len(doc["warnings"]): errs.append("sequia PL: los voivodatos suman menos avisos que la lista")
+    for w in doc["warnings"]:
+        if not w["areas"]: errs.append("sequia PL: aviso sin zonas"); break
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=4)).isoformat(): warns.append("sequia PL: ultimo dato %s" % doc["asOf"])
+    stats["avisos"] = len(doc["warnings"])
 # Italia: gasoleo (MASE) y por region (MIMIT)
 def it_fuel(doc, errs, warns, stats):
     import datetime as _dt

@@ -2125,6 +2125,9 @@ html[data-theme="dark"] .ute-card{--ute-n:#6CC08E;--ute-p:#E5C65A;--ute-a:#F0A35
 /* Humedad del suelo de Alemania (js/de-soil.js): banda minimo-maximo 1991-2020 */
 .ds-band{fill:var(--border);opacity:.55}
 .ds-card .wp-chart,.gb-card .wp-chart{max-width:640px}
+/* Avisos de sequia de Polonia (js/pl-drought.js) */
+.pl-wlist{margin:6px 0 8px;padding-left:18px;max-width:760px;font-size:13px}
+.pl-wlist li{margin:0 0 8px}
 /* Barras por ano (js/fr-onde.js, js/fr-nitrates.js) */
 .on-bars{display:flex;align-items:flex-end;gap:5px;overflow-x:auto;min-height:118px;max-width:640px;padding-top:4px}
 .on-bars span{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:24px}
@@ -2154,3 +2157,6 @@ html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3
 .wd-sels{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .wd-sels .wp-sel{margin:0}
 #licencias a,#licencias td,#licencias li{overflow-wrap:anywhere}
+
+.pl-wdet>summary{cursor:pointer}
+.pl-wdet .pl-wlist{max-height:420px;overflow-y:auto}

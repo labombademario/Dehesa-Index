@@ -946,6 +946,24 @@
     "it_water_severity"
    ]
   ],
+  "pl-diesel.json": [
+   "pl-diesel",
+   [
+    "pl_diesel"
+   ]
+  ],
+  "pl-ghg-agri.json": [
+   "pl-ghg-agri",
+   [
+    "pl_ghg_agri"
+   ]
+  ],
+  "pl-hydro-drought.json": [
+   "pl-hydro-drought",
+   [
+    "pl_hydro_drought"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

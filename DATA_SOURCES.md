@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 102 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
+Resumen: 104 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
 
-## VERIFIED (102)
+## VERIFIED (104)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -56,6 +56,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `hmrc_uktradeinfo` | HM Revenue & Customs - UK Trade Info (OTS, API OData) | GB | OGL-UK-3.0 | si/si | si | 37 | Third-party material and logos excluded. |
 | `hubeau_ades` | ADES (BRGM) — Qualité des eaux souterraines, vía Hub'Eau | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `hubeau_onde` | OFB — Observatoire national des étiages (ONDE), vía Hub'Eau | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
+| `imgw_pib` | IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne) | PL | PL-PSI-IMGW | si/si | si | 0 | Citar la fuente con la frase del reglamento e indicar que los datos se han procesado. |
 | `inao_aires` | INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `inao_siqo` | INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `indec_ar` | Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP) | AR | CC-BY-INDEC | si/si | si | 13 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios si los hubiere. El ultimo mes es provisional segun el INDEC. |
@@ -81,6 +82,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `noaa_ncei` | NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv) | US | US-PD | si/si | si | 149 | No implied NOAA endorsement. |
 | `odepa_chile` | ODEPA (Chile) - Portal de datos abiertos | CL | CC-BY | si/si | si | 114 | Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas. |
 | `ons` | UK Office for National Statistics (consumer price index) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice… |
+| `pl_akcyza_rm` | Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej) | PL | PUBLIC-LAW | si/si | si | 0 |  |
 | `prix_carburants_fr` | Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers) | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 1 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |

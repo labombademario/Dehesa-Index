@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T17:13:12Z",
+ "generatedAt": "2026-10-12T17:43:52Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 136,
+  "total": 138,
   "byStatus": {
-   "ACTIVE": 106,
+   "ACTIVE": 108,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3541,6 +3541,45 @@
    ]
   },
   {
+   "sourceId": "imgw_pib",
+   "registryId": "imgw_pib",
+   "country": "PL",
+   "scope": "integrated",
+   "institution": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PL-PSI-IMGW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy (dane przetworzone przez Dehesa Index)",
+   "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "inao_aires",
    "registryId": "inao_aires",
    "country": "FR",
@@ -4620,6 +4659,45 @@
    "derivatives": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
    "lastChecked": "2026-10-04",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "pl_akcyza_rm",
+   "registryId": "pl_akcyza_rm",
+   "country": "PL",
+   "scope": "integrated",
+   "institution": "Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. (Dz. U. 2025 poz. 1875)",
+   "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
