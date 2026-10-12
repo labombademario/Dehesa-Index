@@ -726,13 +726,56 @@
     return Q.html(c.sourceId, { period: observation && observation.observationDate, pub: observation && observation.publicationDate });
   }
 
+  // ---------------------------------------------------------------------
+  // Lonjas de España (maíz, trigo y cebada): la tarjeta muestra por defecto la lonja de referencia (Zaragoza; Lleida en cebada)
+  // y deja elegir otra de las que publica el Agri-food Data Portal (data/views/lonjas.json, salida de silo, EUR/t).
+  // ---------------------------------------------------------------------
+  var LONJAS = null, LONJA_DEF = { maiz: 'Zaragoza', trigo: 'Zaragoza', cebada: 'Lleida' };
+  var LONJA_T = { es: ['Lonja', 'por defecto', 'España', 'lonja', 'salida de silo'], en: ['Market', 'default', 'Spain', 'market', 'ex-silo'], fr: ['Marché', 'par défaut', 'Espagne', 'marché', 'départ silo'], it: ['Borsa merci', 'predefinita', 'Spagna', 'borsa', 'franco silo'] };
+  var lonjaSel = (function () { try { return JSON.parse(readLS('dehesaLonja') || '{}') || {}; } catch (e) { return {}; } })();
+  function loadLonjas() {
+    if (LONJAS || typeof global.fetch !== 'function') return;
+    LONJAS = {};
+    global.fetch('data/views/lonjas.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.countries) { LONJAS = d; if (state.location === 'eu') renderAll(); } }).catch(function () {});
+  }
+  function lonjaList(entry) {
+    if (state.location !== 'eu' || (state.euCountry && state.euCountry !== 'es') || !LONJA_DEF[entry.nameKey]) return null;
+    var L = LONJAS && LONJAS.countries && LONJAS.countries.ES && LONJAS.countries.ES[entry.nameKey];
+    return L && L.length > 1 ? L : null;
+  }
+  function lonjaPick(entry) {
+    var L = lonjaList(entry), m = L && lonjaSel[entry.nameKey]; if (!m || m === LONJA_DEF[entry.nameKey]) return null;
+    for (var i = 0; i < L.length; i++) if (L[i].m === m) return L[i];
+    return null;
+  }
+  function lonjaRegion(x) {
+    var p = x.p, last = p[p.length - 1][1], prev = p.length > 1 ? p[p.length - 2][1] : null;
+    return { price: last, changePct: prev ? Math.round((last / prev - 1) * 1e6) / 1e4 : 0, history: p.slice(-12).map(function (q) { return q[1]; }), currency: 'EUR', kgPerUnit: 1000 };
+  }
+  function lonjaSelectHtml(entry) {
+    var L = lonjaList(entry); if (!L) return '';
+    var X = LONJA_T[lang()] || LONJA_T.es, def = LONJA_DEF[entry.nameKey], cur = (lonjaPick(entry) || {}).m || def;
+    return '<label class="di-lonja" style="display:inline-flex;gap:6px;align-items:center;font-size:12.5px;margin:4px 0 2px;color:var(--text-muted)">' + esc(X[0]) +
+      ' <select class="di-lonja-sel di-compare-select" data-lonja="' + esc(entry.nameKey) + '" style="padding:2px 6px;font-size:12.5px;width:auto">' +
+      '<option value="' + esc(def) + '"' + (cur === def ? ' selected' : '') + '>' + esc(def) + ' (' + esc(X[1]) + ')</option>' +
+      L.filter(function (x) { return x.m !== def; }).map(function (x) { return '<option value="' + esc(x.m) + '"' + (cur === x.m ? ' selected' : '') + '>' + esc(x.m) + '</option>'; }).join('') +
+      '</select></label>';
+  }
+  if (global.document) global.document.addEventListener('change', function (ev) {
+    var el = ev.target; if (!el || !el.classList || !el.classList.contains('di-lonja-sel')) return;
+    lonjaSel[el.getAttribute('data-lonja')] = el.value; writeLS('dehesaLonja', JSON.stringify(lonjaSel)); renderAll();
+  });
+
   function productCardHtml(entry, opts) {
     opts = opts || {};
     var t = ui();
     var key = entry.catId + ':' + entry.nameKey;
     var disp = resolveDisplay(entry, state.location, state.euCountry);
+    var lonja = lonjaPick(entry), observation0 = disp.ukGap ? null : trustObservationFor(entry, disp);
+    var disp0 = disp;
+    if (lonja) { var d2 = {}; for (var kk in disp) d2[kk] = disp[kk]; d2.region = lonjaRegion(lonja); d2.derived = false; disp = d2; }
     var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
-    var observation = disp.ukGap ? null : trustObservationFor(entry, disp);
+    var observation = observation0;
     var dataState = productDataState(observation, disp);
     var stateLabel = (dataState.label[lang()] || dataState.label.es);
     var fav = isFavorite(key);
@@ -755,22 +798,23 @@
     // Trazabilidad visible sin abrir el detalle: mercado exacto y fecha de observacion en formato local (auditoria 8-oct-2026)
     var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
     var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
+    if (lonja && showValue) { var LX = LONJA_T[lang()] || LONJA_T.es; mk = LX[2] + ' · ' + lonja.m + ' (' + LX[3] + ') · ' + LX[4]; od = S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
     var meta = [est, mk, od ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') + od : ''].filter(Boolean).join(' · ');
     return (
       '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +
-          '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + '</div>' +
+          '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + (showValue ? lonjaSelectHtml(entry) : '') + '</div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
-            (showValue ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' : '') +
-            (showValue ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈</button>' : '') +
-            (showValue ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔</button>' : '') +
+            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' : '') +
+            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈</button>' : '') +
+            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔</button>' : '') +
             '<button type="button" class="di-fav-star' + (fav ? ' active' : '') + '" data-action="fav" data-key="' + key + '" title="' + esc(fav ? t.favRemoveTitle : t.favAddTitle) + '">★</button>' +
           '</div>' +
         '</div>' +
         (showValue ? quoteBadgeHtml(disp.quoteType) : '') +
-        (global.DehesaDataTrust && !disp.ukGap ? global.DehesaDataTrust.render(entry, disp) : '') +
+        (global.DehesaDataTrust && !disp.ukGap && !lonja ? global.DehesaDataTrust.render(entry, disp0) : '') + (lonja ? '<div class="di-product-meta" style="margin-top:6px">' + esc(({ es: 'Fuente: Comisión Europea, Agri-food Data Portal, precio semanal de la lonja de ', en: 'Source: European Commission, Agri-food Data Portal, weekly price at the market of ', fr: 'Source : Commission européenne, Agri-food Data Portal, prix hebdomadaire du marché de ', it: 'Fonte: Commissione europea, Agri-food Data Portal, prezzo settimanale della borsa di ' })[lang()] + lonja.m + ' (EUR/t, ' + (LONJA_T[lang()] || LONJA_T.es)[4] + ').') + '</div>' : '') +
         (disp.unverified ? '<div class="di-derived-note">' + esc(UNVERIFIED_NOTE[lang()] || UNVERIFIED_NOTE.es) + '</div>' : '') +
         (disp.derived ? '<div class="di-derived-note">' + esc(DERIVED_NOTE[lang()] || DERIVED_NOTE.es) + '</div>' : '') +
         (showValue ? productCiteHtml(entry, disp, observation) : '') +
@@ -780,7 +824,7 @@
           '<span class="di-product-unit">' + esc(unit) + '</span>' +
           '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
         '</div>' + (origTxt ? '<div class="di-product-meta">' + esc(origTxt) + '</div>' : '') +
-        (showValue ? '<svg class="di-product-spark di-spark-link" data-action="spark-history" data-key="' + key + '" role="button" tabindex="0" aria-label="' + esc(t.historyButtonTitle) + '" viewBox="0 0 120 36" preserveAspectRatio="none"><title>' + esc(t.historyButtonTitle) + '</title><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>') +
+        (showValue && lonja ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none" aria-hidden="true"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '') + (showValue && !lonja ? '<svg class="di-product-spark di-spark-link" data-action="spark-history" data-key="' + key + '" role="button" tabindex="0" aria-label="' + esc(t.historyButtonTitle) + '" viewBox="0 0 120 36" preserveAspectRatio="none"><title>' + esc(t.historyButtonTitle) + '</title><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : (showValue ? '' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>')) +
         (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(state.location === 'ca' ? t.caGapNote : t.ukGapNote) + ' <a href="precios.html?region=eu&amp;product=' + encodeURIComponent(key) + '">' + esc(({ es: 'Ver en la vista de la UE', en: 'See it in the EU view', fr: 'Voir dans la vue UE', it: 'Vedi nella vista UE' })[lang()] || 'Ver en la vista de la UE') + '</a></div>' : '') +
         relatedNewsHtml(entry) +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
@@ -1686,6 +1730,7 @@
   }
 
   function renderAll() {
+    if (state.location === 'eu') loadLonjas();
     renderHead();
     var healthEl = document.getElementById('pr-data-health');
     if (healthEl && global.DehesaDataTrust) healthEl.innerHTML = global.DehesaDataTrust.renderHealth();

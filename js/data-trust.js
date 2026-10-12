@@ -55,6 +55,23 @@
     return'review';
   }
   function compLabel(v,t){return v==='conditional'?t.conditional:v==='directional'?t.directional:v==='direct'?t.direct:t.review;}
+
+  /* Ventana de procedencia y metodología: se abre con el botón de cada tarjeta, se cierra con ×, Esc o clic fuera; el foco vuelve al botón */
+  var CLOSE={es:'Cerrar',en:'Close',fr:'Fermer',it:'Chiudi'},KICK={es:'Procedencia y metodología',en:'Provenance and methodology',fr:'Provenance et méthodologie',it:'Provenienza e metodologia'};
+  function openTrust(btn){
+    var box=btn.closest('.di-data-trust'),tpl=box&&box.querySelector('template.di-dt-body');if(!tpl)return;
+    var lang=S.getLang?S.getLang():'es',t=I18N[lang]||I18N.es;
+    var card=btn.closest('.di-product-card'),h=card&&card.querySelector('.di-product-name'),title=h?h.textContent.replace(/^[^\p{L}]+/u,'').trim():'';
+    var ov=document.createElement('div');ov.className='di-dt-overlay';
+    ov.innerHTML='<div class="di-dt-modal" role="dialog" aria-modal="true" aria-labelledby="di-dt-h"><div class="di-dt-head"><div><span class="di-dt-kicker">'+esc(KICK[lang]||KICK.es)+'</span><h2 id="di-dt-h">'+esc(title)+'</h2></div><button type="button" class="di-dt-close" aria-label="'+esc(CLOSE[lang]||CLOSE.es)+'">×</button></div><div class="di-dt-content"></div></div>';
+    ov.querySelector('.di-dt-content').appendChild(tpl.content.cloneNode(true));
+    var close=function(){document.removeEventListener('keydown',key);if(ov.parentNode)ov.parentNode.removeChild(ov);document.body.style.overflow='';try{btn.focus();}catch(e){}};
+    var key=function(e){if(e.key==='Escape')close();};
+    ov.addEventListener('click',function(e){if(e.target===ov||(e.target.closest&&e.target.closest('.di-dt-close')))close();});
+    document.addEventListener('keydown',key);document.body.appendChild(ov);document.body.style.overflow='hidden';
+    ov.querySelector('.di-dt-close').focus();
+  }
+  if(document&&document.addEventListener)document.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('.di-dt-open'):null;if(b){e.preventDefault();openTrust(b);}});
   function render(entry,disp){
     if(!entry||!disp||!disp.quoteType||disp.unverified)return'';
     var lang=S.getLang?S.getLang():'es',t=I18N[lang]||I18N.es;
@@ -96,24 +113,21 @@
       ? '<a href="'+esc(observation.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(observation.source)+'</a>'
       : esc(observation.source||'—');
 
-    return '<details class="di-data-trust di-data-trust-'+statusClass+'">'+
-      '<summary><span class="di-data-trust-dot"></span>'+esc(t.summary)+'<span class="di-data-trust-id">'+esc(observation.id)+'</span></summary>'+
-      '<div class="di-data-trust-body">'+
-        '<div class="di-data-trust-grid">'+
-          '<div><span class="di-data-trust-label">'+esc(t.status)+'</span><strong class="di-data-trust-'+statusClass+'">'+esc(statusLabel)+'</strong></div>'+
-          '<div><span class="di-data-trust-label">'+esc(t.source)+'</span><strong>'+sourceHtml+'</strong></div>'+
-          '<div><span class="di-data-trust-label">'+esc(t.market)+'</span><strong>'+esc(observation.market||'—')+'</strong></div>'+
-          '<div><span class="di-data-trust-label">'+esc(t.type)+'</span><strong>'+esc(typeDef?typeDef.label:(observation.quoteType||'—'))+'</strong></div>'+
-          '<div><span class="di-data-trust-label">'+esc(t.frequency)+'</span><strong>'+esc(frequency)+'</strong></div>'+
-          '<div><span class="di-data-trust-label">'+esc(t.observation)+'</span><strong>'+esc(observationDate)+'</strong></div>'+
-          (detectedPub
-            ? '<div><span class="di-data-trust-label">'+esc(t.detected)+'</span><strong>'+esc(publicationDate)+'</strong></div>'+
-              '<div><span class="di-data-trust-label">'+esc(t.officialPub)+'</span><strong>'+esc(t.notAvailable)+'</strong></div>'
-            : '<div><span class="di-data-trust-label">'+esc(t.publication)+'</span><strong>'+esc(publicationDate)+'</strong></div>')+
-          '<div><span class="di-data-trust-label">'+esc(t.comparability)+'</span><strong>'+esc(compLabel)+'</strong></div>'+
-        '</div>'+
-        '<div class="di-data-trust-note"><b>'+esc(t.note)+':</b> '+esc(observation.methodology||t.compareNote)+'</div>'+
-      '</div></details>';
+    var fd=function(v){return /^\d{4}-\d{2}/.test(String(v))&&S.fmtDate?S.fmtDate(v,lang):v;};
+    var row=function(l,v,html){return '<div class="di-dt-row"><dt>'+esc(l)+'</dt><dd>'+(html?v:esc(v))+'</dd></div>';};
+    var body='<dl class="di-dt-list">'+
+      row(t.status,'<span class="di-dt-status di-data-trust-'+statusClass+'">'+esc(statusLabel)+'</span>',true)+
+      row(t.source,sourceHtml,true)+
+      row(t.market,observation.market||'—')+
+      row(t.type,typeDef?typeDef.label:(observation.quoteType||'—'))+
+      row(t.frequency,frequency)+
+      row(t.observation,fd(observationDate))+
+      (detectedPub?row(t.detected,fd(publicationDate))+row(t.officialPub,t.notAvailable):row(t.publication,fd(publicationDate)))+
+      row(t.comparability,compLabel)+
+      '</dl><div class="di-dt-note"><b>'+esc(t.note)+'</b><p>'+esc(observation.methodology||t.compareNote)+'</p></div><p class="di-dt-id">ID: '+esc(observation.id)+'</p>';
+    return '<div class="di-data-trust di-data-trust-'+statusClass+'">'+
+      '<button type="button" class="di-dt-open" aria-haspopup="dialog"><span class="di-data-trust-dot"></span>'+esc(t.summary)+'</button>'+
+      '<template class="di-dt-body">'+body+'</template></div>';
   }
 
   function renderHealth(){

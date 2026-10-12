@@ -149,9 +149,35 @@ def region_metrics():
                 if u2: vp[k] = p[1] / u2 * 1000; pp = max(pp, str(p[0]))
         put(cc, 'output', vo, po, f); put(cc, 'uaa', vu, pu, f); put(cc, 'perha', vp, pp, f)
     return {'schemaVersion': 1, 'generatedAt': now(), 'note': 'Valor por region para colorear los mapas de las fichas de pais; derivado de los ficheros de data/ indicados en source.', 'countries': C}
+# Lonjas (mercados) de cereales por pais del Agri-food Data Portal (precio salida de silo, EUR/t): para elegir otra lonja en la tarjeta de Precios.
+# Solo mercados con dato en las ultimas 10 semanas respecto al ultimo dato del producto (los parados no se ofrecen). Ultimos 26 puntos semanales para el minigrafico.
+LONJA_FILES = {'maiz': 'eu/cereales/feed-maize-departure-from-silo-after-some-storage-on-truck-or-other-tr.json',
+               'trigo': 'eu/cereales/milling-wheat-departure-from-silo-after-some-storage-on-truck-or-other.json',
+               'cebada': 'eu/cereales/feed-barley-departure-from-silo-after-some-storage-on-truck-or-other-t.json'}
+LONJA_NAME = {'Lerida': 'Lleida', 'Leon': 'León', 'Cordoba': 'Córdoba', 'Cadiz': 'Cádiz', 'Avila': 'Ávila', 'Caceres': 'Cáceres', 'Jaen': 'Jaén', 'Malaga': 'Málaga', 'Almeria': 'Almería'}
+def lonjas():
+    E = datetime.date(2000, 1, 1); out = {}
+    for prod, rel in LONJA_FILES.items():
+        try: j = load(rel)
+        except Exception: continue
+        rs = [r for r in j.get('regions', []) if r.get('d') and r.get('v') and r.get('m')]
+        if not rs: continue
+        for cc in sorted({r['c'] for r in rs}):
+            R = [r for r in rs if r['c'] == cc]; top = max(r['d'][-1] for r in R); L = []
+            for r in R:
+                if r['d'][-1] < top - 70: continue
+                pts = [[(E + datetime.timedelta(days=d)).isoformat(), v] for d, v in zip(r['d'], r['v']) if v is not None][-26:]
+                if len(pts) < 2: continue
+                nm = LONJA_NAME.get(r['m'], r['m'])
+                if any(x['m'] == nm for x in L): continue  # mismo mercado con dos grafias en la fuente: se queda el mas reciente (lista ordenada abajo)
+                L.append({'m': nm, 'src': r['m'], 'p': pts})
+            if L: out.setdefault(cc, {})[prod] = sorted(L, key=lambda x: x['m'])
+    return {'schemaVersion': 1, 'generatedAt': now(), 'unit': 'EUR/t', 'stage': 'Departure from silo - after some storage - on truck or other transport means',
+            'source': {'name': 'Comisión Europea, Agri-food Data Portal', 'url': 'https://agridata.ec.europa.eu/', 'license': 'Commission Decision 2011/833/EU'}, 'countries': out}
 def main():
     write('home-summary.json', home_summary())
     write('eu-preview.json', eu_preview())
     write('region-metrics.json', region_metrics())
+    write('lonjas.json', lonjas())
     trade_products()
 main()
