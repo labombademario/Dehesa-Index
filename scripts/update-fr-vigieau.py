@@ -113,8 +113,8 @@ def build(outdir, today):
     if fm:
         # el fichero de arretes y la API del mapa no siempre son la misma foto: un departamento que la API da sin restricciones
         # no puede llevar zonas con arrete (se quita de los usos agrarios y se anota; no se inventa un nivel)
-        lv = {d["code"]: d["level"] for d in deps}
-        fd = {k: v for k, v in fm.get("departments", {}).items() if lv.get(k) is not None}
+        lvl = {d["code"]: d["level"] for d in deps}
+        fd = {k: v for k, v in fm.get("departments", {}).items() if lvl.get(k) is not None}
         drop = sorted(set(fm.get("departments", {})) - set(fd))
         if drop: log("usos agrarios: departamentos sin restricciones en la API y con arretes en el fichero, se omiten:", ", ".join(drop))
         out["farm"] = dict(fm, departments=fd, asOf=today)
