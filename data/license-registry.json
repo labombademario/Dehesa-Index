@@ -3148,6 +3148,26 @@
     "eurostat"
    ]
   },
+  "data/eu-regions-pt.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-ie.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-ch.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-el.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
   "data/au-states.json": {
    "sources": [
     "abs"

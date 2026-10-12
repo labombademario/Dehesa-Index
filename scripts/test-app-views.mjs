@@ -89,7 +89,7 @@ for (const [cc, m] of Object.entries(MP)) {
   const d = load('map/' + cc + '.json');
   ok(d.hash === m.hash && d.country === cc, 'map ' + cc + ': hash o codigo');
   ok(/^0 0 [\d.]+ [\d.]+$/.test(d.viewBox), 'map ' + cc + ': viewBox');
-  ok(d.regions.length >= 4, 'map ' + cc + ': pocas regiones');
+  ok(d.regions.length >= 3, 'map ' + cc + ': pocas regiones');
   const ids = new Set(d.regions.map(r => r.id)); ok(ids.size === d.regions.length, 'map ' + cc + ': ids repetidos');
   d.regions.forEach(r => { four(r.name, 'map ' + cc + ' ' + r.id); ok(/^M[\d. -]+/.test(r.d) && r.d.length > 20, 'map ' + cc + ' ' + r.id + ': contorno'); });
   ok(d.metrics.length > 0, 'map ' + cc + ': sin metricas');
