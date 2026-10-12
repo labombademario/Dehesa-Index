@@ -2645,6 +2645,58 @@
    "short": "eAmbrosia (CE)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia general de los sitios de la Comisión; la API no tiene aviso propio."
+  },
+  "inao_aires": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "additionalRestrictions": "Logos y marcas excluidos.",
+   "name": "INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr)",
+   "url": "https://www.data.gouv.fr/datasets/aires-geographiques-des-aoc-aop",
+   "country": "FR",
+   "licenseId": "ETALAB-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "attributionText": "INAO, aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr), Licence Ouverte 2.0.",
+   "evidence": "La ficha del conjunto en data.gouv.fr (API, leída el 2026-10-11) declara licencia fr-lo (Licence Ouverte), publicada por el INAO.",
+   "notes": "Solo se usa para asignar región a las denominaciones francesas.",
+   "short": "INAO",
+   "legalConfidenceReason": "Licencia declarada en el portal nacional de datos abiertos."
+  },
+  "it_regioni_dop": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "additionalRestrictions": "Logos y marcas excluidos.",
+   "name": "Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana)",
+   "url": "https://www.dati.gov.it/",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0/CC0",
+   "licenseName": "CC BY 4.0 (Umbria, Puglia, Toscana) y CC0 1.0 (Trento, Bolzano, Lombardia)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "attributionText": "Regione Umbria, Regione Puglia, Regione Toscana (CC BY 4.0); Provincia autonoma di Trento, Provincia autonoma di Bolzano, Regione Lombardia (CC0).",
+   "evidence": "Licencias declaradas en las fichas de dati.gov.it (API CKAN, leída el 2026-10-12) y en el zip de la Regione Toscana (licenza_ccby_40.pdf).",
+   "notes": "Solo se usa para asignar región a las denominaciones italianas.",
+   "short": "Regiones IT",
+   "legalConfidenceReason": "Licencia explícita en cada ficha del portal nacional."
   }
  },
  "files": {
@@ -3632,7 +3684,9 @@
   },
   "data/gi/": {
    "sources": [
-    "ec_eambrosia"
+    "ec_eambrosia",
+    "inao_aires",
+    "it_regioni_dop"
    ]
   }
  },
