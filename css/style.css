@@ -2197,3 +2197,11 @@ html[data-theme="dark"] .ie-n5{background:#FFD9C2;color:#1b1b1b}
 .nl-band{fill:var(--wp-w);opacity:.16;stroke:none}
 .nl-bsw{display:inline-block;width:14px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle;background:var(--wp-w);opacity:.35}
 .nl-all{margin:10px 0 0}.nl-all summary{cursor:pointer;font-size:13px;color:var(--text-muted);padding:4px 0}
+
+/* Escala de lectura de los indices de sequia y escasez (js/es-drought-ute.js) */
+.ute-scale{max-width:640px;margin:14px 0 4px;padding:10px 12px;border:1px solid var(--border);border-radius:8px}
+.ute-scale-t{font-size:13px;font-weight:600;margin-bottom:2px}
+.ute-scale .ute-bar{margin:6px 0 2px}
+.ute-ticks{position:relative;height:14px;font-size:11px;color:var(--text-muted)}
+.ute-ticks span{position:absolute;top:0;transform:translateX(-50%)}.ute-ticks span:first-child{transform:none}.ute-ticks span:last-child{transform:none}
+.ute-ends{display:flex;justify-content:space-between;gap:12px;font-size:12px;margin:2px 0 8px}
