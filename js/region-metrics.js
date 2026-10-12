@@ -32,6 +32,10 @@
   ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'UK'].forEach(function (c) { M[c] = EU; });
   // Reino Unido y Bulgaria: sin cuentas economicas regionales publicables (ver scripts/update-eurostat-regions.py): solo superficie
   M.UK = M.BG = EU.filter(function (m) { return m.id === 'uaa'; });
+  M.AR = [
+    { id: 'soja', ramp: G, unit: ' kt', label: ['Soybean production, latest season (thousand t)', 'Producción de soja, última campaña (miles de t)', 'Production de soja, dernière campagne (milliers de t)', 'Produzione di soia, ultima campagna (migliaia di t)'], dec: 0 },
+    { id: 'maiz', ramp: G, unit: ' kt', label: ['Maize production, latest season (thousand t)', 'Producción de maíz, última campaña (miles de t)', 'Production de maïs, dernière campagne (milliers de t)', 'Produzione di mais, ultima campagna (migliaia di t)'], dec: 0 },
+    { id: 'trigo', ramp: G, unit: ' kt', label: ['Wheat production, latest season (thousand t)', 'Producción de trigo, última campaña (miles de t)', 'Production de blé, dernière campagne (milliers de t)', 'Produzione di frumento, ultima campagna (migliaia di t)'], dec: 0 }];
   // vista precalculada (scripts/build-views.py -> data/views/region-metrics.json, ~7 KB): el mapa no baja el fichero regional entero; si falta, se calcula aquí
   function compute(cc, id) {
     return get('data/views/region-metrics.json').then(function (V) { var m = V && V.countries && V.countries[cc] && V.countries[cc][id]; return m && m.vals ? { vals: m.vals, period: m.period } : computeFull(cc, id); });
@@ -44,6 +48,7 @@
     if (cc === 'US' && id === 'tax') return get('data/other-tax.json').then(function (d) { var S = d && d.us && d.us.states; if (!S) return null; Object.keys(S).forEach(function (k) { v[k] = S[k].noStateSalesTax ? 0 : S[k].rate; }); return { vals: v, period: d.reviewedAt || '' }; });
     if (cc === 'CA' && id === 'drought') return get('data/canada-drought.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { var r = d.provinces[k].v[d.periods.length - 1]; if (r) v[k] = r[1]; }); return { vals: v, period: d.asOf }; });
     if (cc === 'CA' && id === 'receipts') return get('data/canada-provinces.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { if (k === 'CA') return; var o = d.provinces[k].receipts && d.provinces[k].receipts['total-farm-cash-receipts'], p = o && last(o.pts); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }); return { vals: v, period: per }; });
+    if (cc === 'AR') return get('data/ar-provinces.json').then(function (d) { if (!d || !d.provinces) return null; var c = d.lastCampaign; Object.keys(d.provinces).forEach(function (k) { var q = d.provinces[k][id] && d.provinces[k][id][c]; if (q && q[2] > 0) v[k] = q[2] / 1000; }); return { vals: v, period: c }; });
     if (cc === 'AU') return get('data/au-states.json').then(function (d) { if (!d || !d.states) return null; Object.keys(d.states).forEach(function (k) { var p = d.states[k][id] && last(d.states[k][id]); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }); return { vals: v, period: per }; });
     var f = EU_FILE[cc] || cc.toLowerCase();
     return get('data/eu-regions-' + f + '.json').then(function (d) { if (!d || !d.regions) return null;

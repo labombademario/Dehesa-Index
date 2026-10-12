@@ -339,6 +339,15 @@ sources:
     data: [germany-extra-stats.json]
     log: germany-extra-log.txt
     message: Datos Alemania vino, madera, estructura, incubadoras y acuicultura (Destatis)
+  - id: argentina-provinces
+    name: Update Argentina crops by province (MAGyP crop estimates)
+    cron: ['10 11 8 * *']
+    script: scripts/update-argentina-provinces.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [ar-provinces.json]
+    message: Cultivos de Argentina por provincia (MAGyP)
   - id: switzerland-bfs
     name: Update Switzerland (BFS agricultural accounts and price indices)
     cron: ['45 6 12 * *']

@@ -135,6 +135,11 @@ def region_metrics():
             p = _last(x.get(mid))
             if p: v[k] = p[1]; per = max(per, str(p[0]))
         put('AU', mid, v, per, 'au-states.json')
+    d = load('ar-provinces.json')
+    if d and d.get('provinces'):
+        c = d['lastCampaign']
+        for crop in ('soja', 'maiz', 'trigo'):
+            put('AR', crop, {k: v[crop][c][2] / 1000 for k, v in d['provinces'].items() if v.get(crop, {}).get(c) and v[crop][c][2] > 0}, c, 'ar-provinces.json')
     for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'UK'):
         f = 'eu-regions-%s.json' % cc.lower(); d = load(f); vo = {}; vu = {}; vp = {}; po = pu = pp = ''
         for k, b in (d.get('regions') or {}).items():

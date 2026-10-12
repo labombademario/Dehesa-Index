@@ -2775,6 +2775,32 @@
    "short": "Reclamation",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: obra del gobierno federal de EE. UU. (dominio público)."
+  },
+  "magyp_estimaciones": {
+   "name": "Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas",
+   "url": "https://datos.magyp.gob.ar/dataset/estimaciones-agricolas",
+   "country": "AR",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Ministerio de Agricultura, Ganadería y Pesca, Estimaciones agrícolas",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "La ficha del conjunto en datos.magyp.gob.ar (API CKAN, leída el 12 oct 2026) declara la licencia CC-BY-4.0.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "MAGyP",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: licencia CC BY 4.0 declarada en la ficha del conjunto."
   }
  },
  "files": {
@@ -3841,6 +3867,12 @@
     "DE": "destatis"
    },
    "notes": "Destatis GENESIS-Online (dl-de/by-2.0): vendimia por region vitivinicola (41253, 41244), cortas de madera por especie, Land y causa de daño (41261), explotaciones y SAU nacional y por Land (41271), explotaciones ecologicas (41141), incubadoras mensual (41321), acuicultura (41362) y precios del pescado de acuicultura (41363). scripts/update-germany-destatis-extra.py."
+  },
+  "data/ar-provinces.json": {
+   "sources": [
+    "magyp_estimaciones"
+   ],
+   "notes": "Superficie sembrada y cosechada, producción y rendimiento por provincia y campaña de los principales cultivos extensivos, sumando los departamentos de Estimaciones agrícolas (MAGyP, CC BY 4.0); rendimiento calculado por Dehesa Index."
   }
  },
  "derived": [

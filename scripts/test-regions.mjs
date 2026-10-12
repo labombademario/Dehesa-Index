@@ -32,7 +32,7 @@ ok('pagina de region: titulo de hasta 65 caracteres, cifra real en la descripcio
 // enlaces a las paginas estaticas: el JS (DehesaRegionUrls) y el generador usan las mismas direcciones y cada una existe
 { const w2 = {}; vm.runInNewContext(fs.readFileSync('js/region-names.js', 'utf8'), { window: w2 }); const U = w2.DehesaRegionUrls; let bad = [], n = 0;
   for (const c of Object.keys(w2.DehesaRegionNames)) for (const r of Object.keys(w2.DehesaRegionNames[c])) for (const lg of ['es', 'en', 'fr', 'it']) { const u = U.page(c, r, lg), hub = U.hub(c, lg); n++;
-    if (!fs.existsSync('.' + hub + 'index.html')) bad.push(hub); if (!(c === 'AU' && r === 'ACT') && !fs.existsSync('.' + u + 'index.html')) bad.push(u); }
+    if (!fs.existsSync('.' + hub + 'index.html')) bad.push(hub); if (u && !(c === 'AU' && r === 'ACT') && !fs.existsSync('.' + u + 'index.html')) bad.push(u); }
   ok('enlaces a paginas estaticas de region: ' + n + ' combinaciones, todas existen', bad.length === 0); if (bad.length) console.log(bad.slice(0, 5)); }
 ok('region-metrics.js: cada metrica lee un fichero que existe', fs.existsSync('js/region-metrics.js') && ['data/drought.json', 'data/cattle-on-feed.json', 'data/other-tax.json', 'data/canada-drought.json', 'data/canada-provinces.json', 'data/au-states.json'].every(f => fs.existsSync(f)));
 const src = fs.readFileSync('js/region.js', 'utf8');

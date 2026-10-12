@@ -3254,6 +3254,20 @@ def wood_removals(doc, errs, warns, stats):
         if not t or t[-1] is None and t[-2] is None: errs.append("madera %s: sin total reciente" % cc)
         if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
     stats["paises"] = len(doc["countries"])
+# Argentina: cultivos por provincia (MAGyP)
+def ar_provinces(doc, errs, warns, stats):
+    cs = doc["campaigns"]
+    if cs != sorted(cs) or doc["lastCampaign"] != cs[-1]: errs.append("ar-provinces: campañas desordenadas o lastCampaign incoherente"); return
+    for p, crops in doc["provinces"].items():
+        if p not in "ABCDEFGHJKLMNPQRSTUVWXYZ" or len(p) != 1: errs.append("ar-provinces: provincia %r no es un codigo ISO" % p); return
+        for c, ss in crops.items():
+            for camp, v in ss.items():
+                s, h, q, y = v
+                if camp not in cs or s < 0 or h < 0 or q < 0 or h > s * 1.02 + 5: errs.append("ar-provinces %s %s %s: valores incoherentes %s" % (p, c, camp, v)); return
+                if y is not None and not (100 <= y <= 15000): errs.append("ar-provinces %s %s %s: rendimiento %s kg/ha fuera de rango" % (p, c, camp, y)); return
+    soy = doc["national"].get("soja", {}).get(doc["lastCampaign"])
+    if not soy or not (2e7 <= soy[2] <= 7e7): errs.append("ar-provinces: produccion nacional de soja implausible (%s)" % (soy and soy[2]))
+    stats["provincias"] = len(doc["provinces"])
 # Embalses del oeste de EE. UU. (Reclamation, RISE)
 def us_reservoirs(doc, errs, warns, stats):
     import datetime as _dt

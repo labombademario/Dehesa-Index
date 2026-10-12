@@ -880,6 +880,12 @@
    "us-reservoirs-normals",
    []
   ],
+  "ar-provinces.json": [
+   "ar-provinces",
+   [
+    "ar_provinces"
+   ]
+  ],
   "wood-prices-de.json": [
    "wood-prices-de",
    [
