@@ -3321,6 +3321,58 @@
    "short": "Vlada RH",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: condiciones de uso publicadas."
+  },
+  "cso_ie": {
+   "name": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05)",
+   "url": "https://data.cso.ie/",
+   "country": "IE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Central Statistics Office, Ireland (CC BY 4.0)",
+   "additionalRestrictions": "El logotipo del CSO tiene límites de uso propios; Dehesa Index no lo usa.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Política de derechos de autor del CSO (cso.ie/en/aboutus/whoweare/copyrightpolicy): las estadísticas del CSO se pueden usar libremente bajo CC BY 4.0, citando al CSO. Las tablas FPM01 y AHM05 llevan 'Central Statistics Office, Ireland' como titular en su metadato JSON-stat.",
+   "used": true,
+   "aliases": [],
+   "notes": "API PxStat (ws.cso.ie), sin clave. FPM01 trae millones de litros despachados por tipo de combustible (datos de Revenue); AHM05 los índices de precios agrarios, base 2020=100.",
+   "short": "CSO",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: política de copyright del CSO (CC BY 4.0)."
+  },
+  "epa_ie": {
+   "name": "Environmental Protection Agency (EPA) Irlanda — indicadores ambientales EIIA13 y EIIA14, publicados por el CSO",
+   "url": "https://data.gov.ie/dataset/eiia14-ireland-nitrates-in-groundwater",
+   "country": "IE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Environmental Protection Agency (EPA), Ireland, vía Central Statistics Office (CC BY 4.0)",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "data.gov.ie lista el conjunto EIIA14 (nitratos en aguas subterráneas) de la EPA con licencia CC-BY-4.0; el portal de datos abiertos de la EPA (data.epa.ie, WFD Open Data) enlaza también la CC BY 4.0. Las tablas del CSO llevan 'Environmental Protection Agency' como titular y el CSO publica bajo CC BY 4.0.",
+   "used": true,
+   "aliases": [],
+   "notes": "Solo el resumen nacional (porcentaje de puntos por tramo de nitrato y de tramos de río por estado). La API WFD de la EPA (wfdapi.edenireland.ie) no se usa.",
+   "short": "EPA Irlanda",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: CC-BY-4.0 en data.gov.ie y CSO."
   }
  },
  "files": {
@@ -4558,6 +4610,33 @@
     "gisco_nuts"
    ],
    "notes": "Indicador Combinado de Sequía del EDO calculado para las 21 provincias croatas (NUTS 3 de GISCO). scripts/update-hr-drought.py."
+  },
+  "data/ie-diesel.json": {
+   "sources": [
+    "eu_oil_bulletin",
+    "cso_ie"
+   ],
+   "notes": "Gasóleo de automoción semanal de Irlanda (Weekly Oil Bulletin), gasóleo marcado despachado (CSO FPM01) e índice de precios de combustibles agrarios (CSO AHM05). No existe precio oficial abierto del gasóleo marcado. scripts/update-ie-diesel.py."
+  },
+  "data/ie-nitrates.json": {
+   "sources": [
+    "epa_ie",
+    "cso_ie"
+   ],
+   "notes": "Nitratos en aguas subterráneas (EIIA14) y estado ecológico de los ríos (EIIA13), resumen nacional de la EPA publicado por el CSO. scripts/update-ie-nitrates.py."
+  },
+  "data/ie-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura irlandesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/ie-drought.json": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "Indicador Combinado de Sequía del EDO calculado para las 8 regiones irlandesas (NUTS 3 de GISCO). scripts/update-ie-drought.py."
   }
  },
  "derived": [

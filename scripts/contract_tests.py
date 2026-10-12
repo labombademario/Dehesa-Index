@@ -3446,6 +3446,61 @@ def hr_drought(doc, errs, warns, stats):
     if doc["asOf"] != P[-1]: errs.append("sequia HR: asOf %s y ultima decada %s" % (doc["asOf"], P[-1]))
     if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=40)).isoformat(): warns.append("sequia HR: ultimo dato %s" % doc["asOf"])
     stats["decadas"] = len(P)
+def ie_diesel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today(); prev = None
+    for d, t, n, h in doc["weekly"]:
+        if d > today.isoformat(): errs.append("diesel IE: fecha futura %s" % d); return
+        if prev and d <= prev: errs.append("diesel IE: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.3 < t < 3.5: errs.append("diesel IE %s: %s" % (d, t))
+        if n is not None and n >= t: errs.append("diesel IE %s: sin impuestos >= con impuestos" % d)
+    prev = None
+    for r in doc["clearance"]:
+        if prev and r[0] <= prev: errs.append("despachos IE: meses desordenados en %s" % r[0]); return
+        prev = r[0]
+        if not all(0 < x < 1000 for x in r[1:]): errs.append("despachos IE %s: %s" % (r[0], r[1:]))
+    prev = None
+    for r in doc["prices"]:
+        if prev and r[0] <= prev: errs.append("indices IE: meses desordenados en %s" % r[0]); return
+        prev = r[0]
+        if not all(30 < x < 300 for x in r[1:]): errs.append("indices IE %s: %s" % (r[0], r[1:]))
+    if doc["weekly"][-1][0] < (today - _dt.timedelta(days=21)).isoformat(): warns.append("diesel IE: ultima semana %s" % doc["weekly"][-1][0])
+    if doc["clearance"][-1][0] < (today - _dt.timedelta(days=150)).isoformat()[:7]: warns.append("despachos IE: ultimo mes %s" % doc["clearance"][-1][0])
+    stats["semanas"] = len(doc["weekly"]); stats["meses"] = len(doc["clearance"])
+def ie_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI IE: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (10000 < a < 30000 and 40000 < t < 90000): errs.append("GEI IE %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI IE %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+def ie_nitrates(doc, errs, warns, stats):
+    for key, w in (("groundwater", 6), ("rivers", 5)):
+        prev = None
+        for r in doc[key]:
+            if prev and r[0] <= prev: errs.append("nitratos IE %s: periodos desordenados en %s" % (key, r[0])); return
+            prev = r[0]
+            if len(r) != w + 1 or any(not 0 <= x <= 100 for x in r[1:]) or abs(sum(r[1:]) - 100) > 2: errs.append("nitratos IE %s %s: %s" % (key, r[0], r[1:]))
+    g = doc["groundwater"][-1]
+    if int(g[0]) < 2020: warns.append("nitratos IE: ultimo ano %s" % g[0])
+    stats["anos"] = len(doc["groundwater"]); stats["ultimo"] = g[0]
+def ie_drought(doc, errs, warns, stats):
+    import datetime as _dt
+    C = doc["counties"]; P = doc["periods"]
+    if len(C) != 8 or not all(k.startswith("IE") for k in C): errs.append("sequia IE: %d regiones" % len(C)); return
+    if P != sorted(set(P)): errs.append("sequia IE: decadas desordenadas")
+    for k, c in C.items():
+        if len(c["v"]) != len(P): errs.append("sequia IE %s: %d filas y %d decadas" % (k, len(c["v"]), len(P))); continue
+        for i, v in enumerate(c["v"]):
+            if len(v) != 6 or any(not 0 <= x <= 100.5 for x in v) or sum(v) > 100.5: errs.append("sequia IE %s %s: %s" % (k, P[i], v)); break
+        if c.get("coverage", 0) < 80: errs.append("sequia IE %s: cobertura %s %%" % (k, c.get("coverage")))
+    if doc["asOf"] != P[-1]: errs.append("sequia IE: asOf %s y ultima decada %s" % (doc["asOf"], P[-1]))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=40)).isoformat(): warns.append("sequia IE: ultimo dato %s" % doc["asOf"])
+    stats["decadas"] = len(P)
 # Italia: gasoleo (MASE) y por region (MIMIT)
 def it_fuel(doc, errs, warns, stats):
     import datetime as _dt

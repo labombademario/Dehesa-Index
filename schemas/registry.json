@@ -1024,6 +1024,30 @@
     "hr_drought"
    ]
   ],
+  "ie-diesel.json": [
+   "ie-diesel",
+   [
+    "ie_diesel"
+   ]
+  ],
+  "ie-ghg-agri.json": [
+   "ie-ghg-agri",
+   [
+    "ie_ghg_agri"
+   ]
+  ],
+  "ie-nitrates.json": [
+   "ie-nitrates",
+   [
+    "ie_nitrates"
+   ]
+  ],
+  "ie-drought.json": [
+   "ie-drought",
+   [
+    "ie_drought"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

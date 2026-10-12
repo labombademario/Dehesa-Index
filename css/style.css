@@ -2181,3 +2181,10 @@ html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3
 .hr-dot-t{fill:var(--text)}
 .hr-dot-r{fill:var(--wp-r)}
 .hr-dash{stroke-dasharray:5 4}
+
+/* Irlanda: nitratos en aguas subterraneas (6 tramos) y estado de los rios (5 clases), js/ie-nitrates.js */
+.ie-n0{background:var(--gb0);color:var(--text)}.ie-n1{background:var(--gb1);color:var(--text)}.ie-n2{background:var(--gb2);color:var(--text)}.ie-n3{background:var(--gb3);color:#fff}.ie-n4{background:var(--gb4);color:#fff}.ie-n5{background:#4a1a0e;color:#fff}
+html[data-theme="dark"] .ie-n5{background:#FFD9C2;color:#1b1b1b}
+.ie-r0{background:#24558f;color:#fff}.ie-r1{background:#4a86c8;color:#fff}.ie-r2{background:var(--gbx);color:var(--text)}.ie-r3{background:var(--gb2);color:var(--text)}.ie-r4{background:var(--gb4);color:#fff}
+.be-stk-b span[class^="ie-"]{border-right:2px solid var(--surface)}
+.be-stk-b span[class^="ie-"]:last-child{border-right:0}
