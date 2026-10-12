@@ -28,7 +28,7 @@
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048",
     "sourceId": "boe_es"
    },
-   "updatedAt": "2026-10-05",
+   "updatedAt": "2026-10-12",
    "components": {
     "strategicPlan": {
      "state": "INGESTED",
@@ -69,7 +69,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "es/watch.json",
-     "checkedAt": "2026-10-05",
+     "checkedAt": "2026-10-12",
      "reviewNeeded": 0
     }
    }
@@ -84,7 +84,7 @@
     "url": "https://www.retsinformation.dk/eli/lta/2025/1363",
     "sourceId": "retsinformation"
    },
-   "updatedAt": "2026-10-05",
+   "updatedAt": "2026-10-12",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -119,7 +119,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "dk/watch.json",
-     "checkedAt": "2026-10-05",
+     "checkedAt": "2026-10-12",
      "reviewNeeded": 0
     }
    }
@@ -134,7 +134,7 @@
     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02021R2115-20260818",
     "sourceId": "eur_lex"
    },
-   "updatedAt": "2026-10-05",
+   "updatedAt": "2026-10-12",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
