@@ -1,0 +1,94 @@
+/* Dehesa Index — Sequía de un país dentro de su ficha (paises.html): solo ese país. ES5.
+   Europa: Indicador Combinado de Sequía del Observatorio Europeo de la Sequía (data/eu-drought.json y data/eu-drought-regions/{cc}.json);
+   España añade los embalses (data/spain-reservoirs.json); EE. UU.: U.S. Drought Monitor (data/drought.json); Canadá: Canadian Drought Monitor.
+   La página completa sigue en sequia.html. Si un país no tiene datos de sequía, no se dibuja nada. */
+(function (global) {
+  'use strict';
+  var EU_ALIAS = { UK: 'GB', EL: 'GR' };   // la ficha usa UK y EL; el fichero del EDO, GB y GR
+  var COL = ['#e0b84a', '#e08a3a', '#b03a2e', '#6aa6c8', '#8ec3a7', '#a8b86a'];
+  var T = {
+    es: { h: 'Sequía en {c}', inD: 'Superficie en sequía agrícola', ly: 'Misma década del año pasado', dec: 'Década del {d}', cls: ['Vigilancia', 'Aviso', 'Alerta', 'Recuperación', 'Recup. temporal de humedad', 'Recup. temporal de vegetación'], hist: 'Superficie en sequía (vigilancia, aviso o alerta), década a década', reg: 'Por región', regC: 'Región', all: 'Ver el monitor de sequía completo', src: 'Fuente:', edo: 'Observatorio Europeo de la Sequía (JRC), Indicador Combinado de Sequía', note: 'Porcentaje de la superficie del país en vigilancia, aviso o alerta según el Indicador Combinado de Sequía. Se actualiza cada diez días.', emb: 'Embalses', embT: 'Agua embalsada en España', embAvg: 'Frente a la media de 10 años', lyW: 'Misma semana del año pasado', usT: 'EE. UU. continental en sequía (D1 o peor)', usW: 'Semana al {d}', caT: 'Superficie agrícola en sequía (D1 o peor) por provincia', caM: 'Mes de {d}', pp: 'pp', hover: 'Pasa el cursor o toca el gráfico para ver cada década.' },
+    en: { h: 'Drought in {c}', inD: 'Area in agricultural drought', ly: 'Same dekad last year', dec: 'Dekad of {d}', cls: ['Watch', 'Warning', 'Alert', 'Recovery', 'Temporary soil-moisture recovery', 'Temporary vegetation recovery'], hist: 'Area in drought (watch, warning or alert), dekad by dekad', reg: 'By region', regC: 'Region', all: 'Open the full drought monitor', src: 'Source:', edo: 'European Drought Observatory (JRC), Combined Drought Indicator', note: 'Share of the country’s area under watch, warning or alert according to the Combined Drought Indicator. Updated every ten days.', emb: 'Reservoirs', embT: 'Water stored in Spain’s reservoirs', embAvg: 'Vs 10-year average', lyW: 'Same week last year', usT: 'Contiguous U.S. in drought (D1 or worse)', usW: 'Week of {d}', caT: 'Agricultural area in drought (D1 or worse) by province', caM: 'Month of {d}', pp: 'pp', hover: 'Hover or tap the chart to read each dekad.' },
+    fr: { h: 'Sécheresse : {c}', inD: 'Surface en sécheresse agricole', ly: 'Même décade l’an dernier', dec: 'Décade du {d}', cls: ['Vigilance', 'Avertissement', 'Alerte', 'Rétablissement', 'Rétablissement temporaire de l’humidité', 'Rétablissement temporaire de la végétation'], hist: 'Surface en sécheresse (vigilance, avertissement ou alerte), décade par décade', reg: 'Par région', regC: 'Région', all: 'Ouvrir le moniteur de sécheresse complet', src: 'Source :', edo: 'Observatoire européen de la sécheresse (JRC), indicateur combiné de sécheresse', note: 'Part de la surface du pays en vigilance, avertissement ou alerte selon l’indicateur combiné de sécheresse. Mis à jour tous les dix jours.', emb: 'Retenues', embT: 'Eau stockée dans les retenues espagnoles', embAvg: 'Par rapport à la moyenne sur 10 ans', lyW: 'Même semaine l’an dernier', usT: 'États-Unis continentaux en sécheresse (D1 ou pire)', usW: 'Semaine du {d}', caT: 'Surface agricole en sécheresse (D1 ou pire) par province', caM: 'Mois de {d}', pp: 'pt', hover: 'Survolez ou touchez le graphique pour lire chaque décade.' },
+    it: { h: 'Siccità in {c}', inD: 'Superficie in siccità agricola', ly: 'Stessa decade dell’anno scorso', dec: 'Decade del {d}', cls: ['Attenzione', 'Allerta', 'Allarme', 'Recupero', 'Recupero temporaneo dell’umidità', 'Recupero temporaneo della vegetazione'], hist: 'Superficie in siccità (attenzione, allerta o allarme), decade per decade', reg: 'Per regione', regC: 'Regione', all: 'Apri il monitor della siccità completo', src: 'Fonte:', edo: 'Osservatorio europeo sulla siccità (JRC), indicatore combinato di siccità', note: 'Quota della superficie del paese in attenzione, allerta o allarme secondo l’indicatore combinato di siccità. Aggiornato ogni dieci giorni.', emb: 'Invasi', embT: 'Acqua negli invasi della Spagna', embAvg: 'Rispetto alla media di 10 anni', lyW: 'Stessa settimana dell’anno scorso', usT: 'Stati Uniti continentali in siccità (D1 o peggio)', usW: 'Settimana del {d}', caT: 'Superficie agricola in siccità (D1 o peggio) per provincia', caM: 'Mese di {d}', pp: 'pp', hover: 'Passa il cursore o tocca il grafico per leggere ogni decade.' }
+  };
+  var CACHE = {};
+  function get(u) { return CACHE[u] || (CACHE[u] = fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function nf(v, d, lg) { if (v == null || !isFinite(v)) return '—'; try { return v.toLocaleString(lg, { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
+  function sg(v, lg) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1, lg); }
+  function day(iso, lg) { var p = String(iso).split('-'); try { return new Date(Date.UTC(+p[0], +p[1] - 1, +(p[2] || 1))).toLocaleDateString(lg, p[2] ? { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' } : { month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return iso; } }
+  function inD(r) { return r ? r[0] + r[1] + r[2] : null; }
+  function row(l, v) { return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + l + '</span><span class="di-info-stat-value">' + v + '</span></div>'; }
+  function bar(r, t) {
+    var s = '', i; for (i = 0; i < r.length; i++) if (r[i] > 0) s += '<span title="' + esc(t.cls[i] + ': ' + r[i] + ' %') + '" style="display:inline-block;height:100%;width:' + r[i] + '%;background:' + COL[i] + '"></span>';
+    return '<div style="display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--border);min-width:120px">' + s + '</div>';
+  }
+  function legend(t) { return '<div class="cof-note" style="display:flex;flex-wrap:wrap;gap:4px 14px;margin:6px 0">' + t.cls.map(function (c, i) { return '<span><i style="display:inline-block;width:10px;height:10px;border-radius:2px;background:' + COL[i] + ';margin-right:5px;vertical-align:-1px"></i>' + esc(c) + '</span>'; }).join('') + '</div>'; }
+  function chart(vals, labels, lg, t) {
+    var n = vals.length, W = 640, H = 170, L = 36, R = 10, Tp = 10, B = 22; if (n < 4) return '';
+    var X = function (i) { return L + i * (W - L - R) / (n - 1); }, Y = function (v) { return Tp + (100 - v) * (H - Tp - B) / 100; };
+    var g = [0, 25, 50, 75, 100].map(function (v) { return '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v) + '" y2="' + Y(v) + '" stroke="var(--border)"/><text x="' + (L - 5) + '" y="' + (Y(v) + 4) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + v + '</text>'; }).join('');
+    var xt = '', d = '', pen = false;
+    labels.forEach(function (l, i) { if (l.slice(5) === '01-01') xt += '<text x="' + X(i).toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle" font-size="11" fill="var(--text-faint)">' + l.slice(0, 4) + '</text>'; });
+    vals.forEach(function (v, i) { if (v == null) { pen = false; return; } d += (pen ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(v).toFixed(1); pen = true; });
+    return '<div class="cd-chart"><div class="cof-note cd-ro" aria-live="polite" style="margin:4px 0">' + esc(t.hover) + '</div><svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(t.hist) + '" style="width:100%;height:auto;max-width:720px" data-n="' + n + '">' + g + xt + '<path d="' + d + '" fill="none" stroke="#b03a2e" stroke-width="2"/><line class="cd-x" x1="0" x2="0" y1="' + Tp + '" y2="' + (H - B) + '" stroke="var(--text-muted)" style="display:none"/></svg></div>';
+  }
+  function bindChart(el, vals, labels, lg, t) {
+    var svg = el.querySelector('.cd-chart svg'); if (!svg) return; var ro = el.querySelector('.cd-ro'), cr = svg.querySelector('.cd-x'), n = vals.length;
+    function at(ev) { var r = svg.getBoundingClientRect(), cx = ev.touches ? ev.touches[0].clientX : ev.clientX, vx = (cx - r.left) / r.width * 640, i = Math.max(0, Math.min(n - 1, Math.round((vx - 36) / (594) * (n - 1)))), px = 36 + i * 594 / (n - 1);
+      cr.setAttribute('x1', px); cr.setAttribute('x2', px); cr.style.display = ''; ro.innerHTML = '<b>' + esc(day(labels[i], lg)) + '</b> · ' + nf(vals[i], 1, lg) + ' %'; }
+    svg.addEventListener('mousemove', at); svg.addEventListener('touchstart', at, { passive: true });
+    svg.addEventListener('mouseleave', function () { cr.style.display = 'none'; ro.textContent = t.hover; });
+  }
+  function europe(el, cc, name, lg, t) {
+    var k = EU_ALIAS[cc] || cc;
+    return Promise.all([get('data/eu-drought.json'), get('data/eu-drought-regions/' + cc + '.json'), cc === 'ES' ? get('data/spain-reservoirs.json') : Promise.resolve(null)]).then(function (a) {
+      var D = a[0], R = a[1], E = a[2], c = D && D.countries && D.countries[k]; if (!c || !c.v || !c.v.length) return false;
+      var v = c.v, n = v.length, last = v[n - 1], prev = n > 36 ? v[n - 37] : null, labels = D.periods.slice(-n);
+      var h = '<section class="di-card ps-rm" id="ps-drought"><h2 class="ps-rm-h">' + esc(t.h.replace('{c}', name)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.note) + ' ' + esc(t.dec.replace('{d}', day(D.asOf, lg))) + '.</p>' +
+        '<div class="di-info-stat-list" style="max-width:640px">' + row(esc(t.inD), '<b>' + nf(inD(last), 1, lg) + ' %</b>') + row(esc(t.ly), prev ? nf(inD(prev), 1, lg) + ' % (' + sg(inD(last) - inD(prev), lg) + ' ' + t.pp + ')' : '—') + '</div>' +
+        '<div style="max-width:640px;margin:10px 0 0">' + bar(last, t) + '</div>' + legend(t) +
+        chart(v.map(inD), labels, lg, t);
+      if (R && R.regions && Object.keys(R.regions).length > 1) {
+        var rs = Object.keys(R.regions).map(function (id) { var x = R.regions[id], l = x.v[x.v.length - 1], p = x.v.length > 36 ? x.v[x.v.length - 37] : null; return { n: x.name, l: l, d: inD(l), p: p ? inD(p) : null }; }).filter(function (x) { return x.l; }).sort(function (a, b) { return b.d - a.d; });
+        h += '<h3 style="margin:14px 0 6px;font-size:15px">' + esc(t.reg) + '</h3><div style="overflow-x:auto"><table class="cof-tbl" style="min-width:420px"><thead><tr><th scope="col">' + esc(t.regC) + '</th><th scope="col" class="cof-n">' + esc(t.inD) + '</th><th scope="col"></th><th scope="col" class="cof-n">' + esc(t.ly) + '</th></tr></thead><tbody>' +
+          rs.map(function (x) { return '<tr><th scope="row">' + esc(x.n) + '</th><td class="cof-n"><b>' + nf(x.d, 1, lg) + ' %</b></td><td style="width:40%">' + bar(x.l, t) + '</td><td class="cof-n">' + (x.p == null ? '—' : nf(x.p, 1, lg) + ' %') + '</td></tr>'; }).join('') + '</tbody></table></div>';
+      }
+      if (E && E.series && E.series.ES) {
+        var s = E.series.ES, i = s.dates.length - 1, pc = 100 * s.stored[i] / s.capacity[i], wk = (function (iso) { var p = iso.split('-'), d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])), q = d.getUTCDay() || 7; d.setUTCDate(d.getUTCDate() + 4 - q); var y0 = new Date(Date.UTC(d.getUTCFullYear(), 0, 1)); return Math.ceil(((d - y0) / 86400000 + 1) / 7); })(s.dates[i]), cl = E.climatology && E.climatology.ES && E.climatology.ES[String(wk)];
+        h += '<h3 style="margin:14px 0 6px;font-size:15px">' + esc(t.emb) + '</h3><div class="di-info-stat-list" style="max-width:640px">' + row(esc(t.embT) + ' · ' + esc(day(s.dates[i], lg)), '<b>' + nf(pc, 1, lg) + ' %</b> (' + nf(s.stored[i], 0, lg) + ' / ' + nf(s.capacity[i], 0, lg) + ' hm³)') + (cl ? row(esc(t.embAvg), sg(pc - cl[0], lg) + ' ' + t.pp) : '') + '</div>';
+      }
+      h += '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' ' + esc(t.edo) + (cc === 'ES' ? ' · MITECO, Boletín Hidrológico' : '') + ' · <a href="sequia.html?zona=eu">' + esc(t.all) + '</a></p></section>';
+      el.innerHTML = h; bindChart(el, v.map(inD), labels, lg, t); return true;
+    });
+  }
+  function us(el, name, lg, t) {
+    return get('data/drought.json').then(function (D) {
+      var r = D && D.us && D.us.conus; if (!r || !r.length) return false;
+      var l = r[r.length - 1], y = r.length > 52 ? r[r.length - 53] : null, w = r.slice(-104);
+      el.innerHTML = '<section class="di-card ps-rm" id="ps-drought"><h2 class="ps-rm-h">' + esc(t.h.replace('{c}', name)) + '</h2><div class="di-info-stat-list" style="max-width:640px">' + row(esc(t.usT) + ' · ' + esc(t.usW.replace('{d}', day(l[0], lg))), '<b>' + nf(l[2], 1, lg) + ' %</b>') + row(esc(t.lyW), y ? nf(y[2], 1, lg) + ' % (' + sg(l[2] - y[2], lg) + ' ' + t.pp + ')' : '—') + '</div>' +
+        chart(w.map(function (x) { return x[2]; }), w.map(function (x) { return x[0]; }), lg, t).replace(esc(t.hist), esc(t.usT)) + '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' U.S. Drought Monitor (NDMC, USDA, NOAA) · <a href="sequia.html?zona=us">' + esc(t.all) + '</a></p></section>';
+      bindChart(el, w.map(function (x) { return x[2]; }), w.map(function (x) { return x[0]; }), lg, t); return true;
+    });
+  }
+  function ca(el, name, lg, t) {
+    return get('data/canada-drought.json').then(function (D) {
+      if (!D || !D.provinces) return false;
+      var rs = Object.keys(D.provinces).map(function (k) { var p = D.provinces[k], l = p.v[p.v.length - 1]; return { n: p.name, d: l ? l[1] : null }; }).filter(function (x) { return x.d != null; }).sort(function (a, b) { return b.d - a.d; });
+      if (!rs.length) return false;
+      el.innerHTML = '<section class="di-card ps-rm" id="ps-drought"><h2 class="ps-rm-h">' + esc(t.h.replace('{c}', name)) + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + esc(t.caT) + ' · ' + esc(t.caM.replace('{d}', day(String(D.asOf).slice(0, 7), lg))) + '</p><div class="di-info-stat-list" style="max-width:640px">' +
+        rs.map(function (x) { return row(esc(x.n), '<b>' + nf(x.d, 1, lg) + ' %</b>'); }).join('') + '</div><p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' Canadian Drought Monitor (AAFC) · <a href="sequia.html?zona=ca">' + esc(t.all) + '</a></p></section>';
+      return true;
+    });
+  }
+  // Devuelve una promesa: true si se ha dibujado algo (la barra de secciones solo enlaza «Sequía» entonces).
+  function mount(el, cc, name, lg) {
+    var t = T[lg] || T.es; if (!el) return Promise.resolve(false);
+    if (cc === 'US') return us(el, name, lg, t);
+    if (cc === 'CA') return ca(el, name, lg, t);
+    if (cc === 'EU' || cc === 'AU' || cc === 'AR' || cc === 'CL') return Promise.resolve(false);
+    return europe(el, cc, name, lg, t);
+  }
+  global.DIDroughtCountry = { mount: mount };
+})(window);

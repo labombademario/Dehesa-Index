@@ -128,7 +128,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-denmark.yml | a mano | semanal (2,5) | update-dst-denmark.py | denmark-prices.json | finish, validate-files |
 | update-drought.yml | a mano | 2 veces/semana | update-drought.mjs | drought.json | finish, validate-files |
 | update-eambrosia.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-eambrosia.py | gi/index.json | finish, validate-files |
-| update-embalses.yml | generado | semanal (3,4) | detect-revisions.py, gen-workflows.py, update-embalses.py | spain-reservoirs.json | finish, validate-files |
+| update-embalses.yml | generado | semanal (3,4) | detect-revisions.py, gen-workflows.py, update-embalses.py | spain-reservoirs-points.json, spain-reservoirs.json | finish, validate-files |
 | update-energy-markets.yml | a mano | semanal (3,5) | update-eia-energy-markets.mjs, update-worldbank-gas-eu.py | - | finish, price-engine, publish |
 | update-energy.yml | a mano | semanal (5) | sync-diesel-trust.mjs, update-ec-diesel-eu.py, update-eia-diesel-us.mjs | - | price-engine, publish |
 | update-export-sales.yml | a mano | 2 veces/semana | update-export-sales.mjs | export-sales.json | finish, validate-files |

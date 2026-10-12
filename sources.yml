@@ -555,7 +555,7 @@ sources:
     timeout: 25
     script_timeout: 18
     continue: true
-    data: [spain-reservoirs.json]
+    data: [spain-reservoirs.json, spain-reservoirs-points.json]
     message: Datos embalses de Espana (MITECO)
   - id: eu-regions
     name: Update regional farm data (Eurostat NUTS 2)

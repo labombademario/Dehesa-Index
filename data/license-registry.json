@@ -2614,7 +2614,7 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "EDO · CDI",
+   "short": "MITECO",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Aviso legal del MITECO leído el 11 oct 2026 desde GitHub Actions: la información puede utilizarse sin autorización expresa citando la fuente (Ley 37/2007, RD 1495/2011). No hay licencia Creative Commons específica del conjunto; confianza media."
   },
@@ -2723,6 +2723,32 @@
    "notes": "Polígonos simplificados para dibujar la zona de cada denominación francesa y categoría del producto (data/gi/FR-geo.json, FR-inao.json).",
    "short": "INAO SIQO",
    "legalConfidenceReason": "Licencia declarada en el portal nacional de datos abiertos."
+  },
+  "wikidata": {
+   "name": "Wikidata",
+   "url": "https://www.wikidata.org/",
+   "country": "INT",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons CC0 1.0 (dominio público)",
+   "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Ubicación de los embalses: Wikidata (CC0)",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Wikidata publica sus datos estructurados bajo CC0 (Wikidata:Licensing). Solo se usan las coordenadas (P625) de embalses y presas de España.",
+   "used": true,
+   "aliases": [],
+   "notes": "Solo para situar los embalses en el mapa; los datos de agua son del MITECO.",
+   "short": "Wikidata",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: licencia CC0 explícita de Wikidata para los datos estructurados."
   }
  },
  "files": {
@@ -3734,6 +3760,13 @@
     "destatis"
    ],
    "notes": "Indice de precios de productor (2015=100) de los productos de la corta de los bosques estatales alemanes (Staatsforsten), mensual desde 1968: madera en rollo total, trozas, madera industrial, leña y trozas de abeto, pino, haya, roble y douglasia. Destatis GENESIS-Online, tabla 61231-0002, Datenlizenz Deutschland – Namensnennung 2.0. Es un indice, no un precio en euros por m3. Los meses sin dato quedan vacios. scripts/update-wood-prices-de.py (necesita GENESIS_TOKEN)."
+  },
+  "data/spain-reservoirs-points.json": {
+   "sources": [
+    "miteco_embalses",
+    "wikidata"
+   ],
+   "notes": "Cada embalse del Boletín Hidrológico en su última semana (capacidad, agua almacenada, % hace un año) con su ubicación de Wikidata (CC0) cuando el emparejamiento por nombre es seguro (scripts/ref/embalses-coords.json, scripts/build-embalses-coords.py). Los embalses sin ubicación verificada no tienen punto."
   }
  },
  "derived": [

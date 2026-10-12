@@ -11,6 +11,7 @@ from collections import defaultdict
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "spain-reservoirs.json"
+OUT_P = ROOT / "data" / "spain-reservoirs-points.json"   # cada embalse en su ultima semana, con su punto para el mapa (scripts/ref/embalses-coords.json)
 URL = "https://www.miteco.gob.es/content/dam/miteco/es/agua/temas/evaluacion-de-los-recursos-hidricos/boletin-hidrologico/Historico-de-embalses/BD-Embalses.zip"
 TABLE = "T_Datos Embalses 1988-2026"
 H = {"User-Agent": "Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)"}
@@ -33,11 +34,12 @@ def main():
             with urllib.request.urlopen(urllib.request.Request(URL, headers=H), timeout=900) as r: z = zipfile.ZipFile(io.BytesIO(r.read()))
             z.extract("BD-Embalses.mdb", "/tmp")
         tot = defaultdict(lambda: defaultdict(lambda: [0.0, 0.0, 0]))   # ambito -> semana -> [almacenado, capacidad, n]
-        names = {}; n = 0
+        names = {}; n = 0; per = defaultdict(dict)   # (demarcacion, embalse) -> fecha -> (almacenada, capacidad, hidroelectrico)
         for r in rows(mdb):
             a, c = num(r["AGUA_ACTUAL"]), num(r["AGUA_TOTAL"])
             if a is None or c is None or c <= 0 or a < 0: continue
             d = day(r["FECHA"]); amb = r["AMBITO_NOMBRE"].strip(); n += 1
+            if d.year >= datetime.date.today().year - 2: per[(amb, r["EMBALSE_NOMBRE"].strip())][d] = (a, c, r.get("ELECTRICO_FLAG", "") == "1")
             for k in (amb, "ES"):
                 t = tot[k][d]; t[0] += a; t[1] += c; t[2] += 1
         if n < 100000 or "ES" not in tot or len(tot) < 15: raise ValueError("tabla inesperada: %d filas, %d ambitos" % (n, len(tot)))
@@ -66,7 +68,24 @@ def main():
                "source": {"name": "MITECO, Boletin Hidrologico (BD-Embalses)", "url": "https://www.miteco.gob.es/es/agua/temas/evaluacion-de-los-recursos-hidricos/boletin-hidrologico.html", "license": "Aviso legal del MITECO: reutilizacion libre citando la fuente (Ley 37/2007)"},
                "note": "Datos provisionales (pueden revisarse las ultimas semanas); contrastados con las notas de prensa del MITECO. Porcentaje = agua almacenada / capacidad de los embalses que informan esa semana. Referencia: media, minimo y maximo de los 10 anos anteriores en la misma semana ISO.",
                "series": series, "climatology": clim}
+        # Embalse a embalse en la ultima semana, con el mismo embalse hace un ano (semana mas cercana, +-3 dias) y su punto si se conoce
+        try: coords = json.loads((ROOT / "scripts" / "ref" / "embalses-coords.json").read_text(encoding="utf-8"))["items"]
+        except Exception: coords = {}
+        items = []; ago = asof - datetime.timedelta(days=364)
+        for (amb, nm), ser in sorted(per.items()):
+            if asof not in ser: continue
+            a, c, el = ser[asof]
+            py = min((dd for dd in ser if abs((dd - ago).days) <= 3), key=lambda dd: abs((dd - ago).days), default=None)
+            pa = round(100.0 * ser[py][0] / ser[py][1], 1) if py and ser[py][1] > 0 else None
+            pt = coords.get("%s|%s" % (amb, nm))
+            items.append([nm, amb, round(c, 1), round(a, 1), pa, pt[0] if pt else None, pt[1] if pt else None, pt[2] if pt else None, 1 if el else 0])
+        if len(items) < 300: raise ValueError("solo %d embalses en la ultima semana" % len(items))
+        pdoc = {"schemaVersion": 1, "generatedAt": doc["generatedAt"], "asOf": asof.isoformat(), "unit": "hm3", "source": doc["source"],
+                "coordsSource": {"name": "Wikidata (ubicacion de cada embalse)", "url": "https://www.wikidata.org/", "license": "CC0 1.0 (dominio publico)"},
+                "fields": ["name", "basin", "capacity", "stored", "pctYearAgo", "lat", "lon", "wikidata", "hydro"], "items": items}
     except Exception as e: print("FALLO:", e); return 1
+    OUT_P.write_text(json.dumps(pdoc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print("escrito", OUT_P.name, len(items), "embalses,", sum(1 for x in items if x[5] is not None), "con punto")
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print("escrito", OUT.name, len(series), "ambitos, ultima semana", asof); return 0
 if __name__ == "__main__": sys.exit(main())

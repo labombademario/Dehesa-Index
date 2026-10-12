@@ -828,6 +828,12 @@
     "wine_prices"
    ]
   ],
+  "spain-reservoirs-points.json": [
+   "spain-reservoirs-points",
+   [
+    "spain_reservoirs_points"
+   ]
+  ],
   "wood-prices-de.json": [
    "wood-prices-de",
    [

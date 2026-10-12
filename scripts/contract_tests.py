@@ -3248,6 +3248,27 @@ def wood_removals(doc, errs, warns, stats):
         if not t or t[-1] is None and t[-2] is None: errs.append("madera %s: sin total reciente" % cc)
         if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
     stats["paises"] = len(doc["countries"])
+# Embalses de Espana uno a uno (MITECO) con ubicacion de Wikidata
+def spain_reservoirs_points(doc, errs, warns, stats):
+    seen = set(); pts = 0; cap = 0.0
+    for x in doc["items"]:
+        nm, amb, c, a, py, lat, lon, q, h = x
+        if (amb, nm) in seen: errs.append("embalses: repetido %s|%s" % (amb, nm)); return
+        seen.add((amb, nm))
+        if not (isinstance(c, (int, float)) and c > 0 and isinstance(a, (int, float)) and 0 <= a <= c * 1.05): errs.append("embalses %s: capacidad o agua incoherentes (%s / %s)" % (nm, a, c)); return
+        if py is not None and not 0 <= py <= 105: errs.append("embalses %s: %% hace un ano fuera de rango" % nm)
+        if lat is not None:
+            pts += 1
+            if not (35.8 <= lat <= 43.9 and -9.4 <= lon <= 4.4): errs.append("embalses %s: punto fuera de la Espana peninsular y Baleares (%s, %s)" % (nm, lat, lon))
+            if not (isinstance(q, str) and q.startswith("Q")): errs.append("embalses %s: punto sin elemento de Wikidata" % nm)
+        cap += c
+    if not 54000 <= cap <= 58000: errs.append("embalses: capacidad total %.0f hm3 fuera de lo esperado" % cap)
+    try:
+        es = load("spain-reservoirs.json")
+        if es["asOf"] != doc["asOf"]: errs.append("embalses: la semana (%s) no coincide con spain-reservoirs.json (%s)" % (doc["asOf"], es["asOf"]))
+    except Exception: pass
+    if pts < 0.6 * len(doc["items"]): warns.append("embalses: solo %d de %d con punto" % (pts, len(doc["items"])))
+    stats["embalses"] = len(doc["items"]); stats["conPunto"] = pts
 # Indice de precios de la madera de los bosques estatales alemanes (Destatis 61231-0002)
 def wood_prices_de(doc, errs, warns, stats):
     import datetime as _dt

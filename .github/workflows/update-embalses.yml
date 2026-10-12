@@ -24,13 +24,13 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/spain-reservoirs.json
+          files: data/spain-reservoirs.json data/spain-reservoirs-points.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/spain-reservoirs.json
+        run: python3 scripts/detect-revisions.py data/spain-reservoirs.json data/spain-reservoirs-points.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Datos embalses de Espana (MITECO)" data/spain-reservoirs.json data/revisions.json
+        run: bash scripts/publish-data.sh "Datos embalses de Espana (MITECO)" data/spain-reservoirs.json data/spain-reservoirs-points.json data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
