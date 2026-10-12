@@ -134,4 +134,17 @@ ch ZUR {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
 ch OST {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
 ch ZEN {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
 ch TIC {'gdp': 15, 'pop': 26, 'unemp': 25, 'gdppc': 15}
-escrito eu-regions-macro.json 181 KB
+el ATT {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+el NAE {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+el SAE {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+el KRI {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+el EMT {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el KMA {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el DMA {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el IPE {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el THS {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el ION {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el WGR {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el CGR {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+el PEL {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
+escrito eu-regions-macro.json 199 KB
