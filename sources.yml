@@ -729,6 +729,45 @@ sources:
     continue: true
     data: [pl-hydro-drought.json]
     message: Avisos de sequia hidrologica en Polonia (IMGW-PIB)
+  - id: be-diesel
+    name: Update Belgium farm diesel official maximum price (FPS Economy) and EU Weekly Oil Bulletin
+    cron: ['20 9 * * 1-5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-be-diesel.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [be-diesel.json]
+    message: Gasoleo agricola en Belgica (tarifa oficial del SPF Economia)
+  - id: be-ghg-agri
+    name: Update Belgium agricultural greenhouse gas emissions (Eurostat env_air_gge)
+    cron: ['20 8 4 * *']
+    script: scripts/update-eu-ghg-agri.py
+    args: BE be
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [be-ghg-agri.json]
+    message: Emisiones de la agricultura belga (Eurostat)
+  - id: be-drought
+    name: Update Flanders water abstraction bans and drought status (VMM waterinfo)
+    cron: ['40 7 * * *']
+    pre: ['pip install shapely']
+    script: scripts/update-be-drought.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [be-drought.json]
+    message: Prohibiciones de captar agua y sequia en Flandes (VMM)
+  - id: be-nitrates
+    name: Update Flanders nitrate in farmland surface water (VMM MAP network)
+    cron: ['50 8 10 * *']
+    script: scripts/update-be-nitrates.py
+    timeout: 10
+    script_timeout: 5
+    continue: true
+    data: [be-nitrates.json]
+    message: Nitrato en aguas de zonas agricolas de Flandes (VMM)
   - id: es-drought-ute
     name: Update Spain drought and water scarcity by unit (MITECO monthly report)
     cron: ['10 8 2,9,16,23 * *']

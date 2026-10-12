@@ -297,11 +297,11 @@
   }
   /* Emisiones del campo en España (js/es-ghg-agri.js, MITECO): solo en la ficha de España, debajo de la sequía */
   function ghgUp() {
-    if (['ES', 'FR', 'DE', 'IT', 'PL'].indexOf(ST.c) < 0) return;
+    if (['ES', 'FR', 'DE', 'IT', 'PL', 'BE'].indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-ghg-slot'; var after = document.getElementById('pp-drought-slot') || tr; after.parentNode.insertBefore(el, after.nextSibling);
     var go = function () { if (window.DIEsGHG && ST.c === cc) window.DIEsGHG.mount(el, lang(), cc); };
-    if (window.DIEsGHG) go(); else { var sc = document.createElement('script'); sc.src = 'js/es-ghg-agri.js?v=20261016'; sc.onload = go; document.head.appendChild(sc); }
+    if (window.DIEsGHG) go(); else { var sc = document.createElement('script'); sc.src = 'js/es-ghg-agri.js?v=20261017'; sc.onload = go; document.head.appendChild(sc); }
   }
   /* Francia: gasóleo no de carretera (js/fr-gnr.js) y nitratos en las aguas subterráneas (js/fr-nitrates.js), con el mapa de departamentos compartido */
   function frUp() {
@@ -343,6 +343,17 @@
     var el = document.createElement('div'); el.id = 'pp-pl-diesel'; after.parentNode.insertBefore(el, after.nextSibling);
     var go = function () { if (window.DIPlDiesel && ST.c === cc) window.DIPlDiesel.mount(el, lang()); };
     if (window.DIPlDiesel) go(); else { var sc = document.createElement('script'); sc.src = 'js/pl-diesel.js?v=20261013'; sc.onload = go; document.head.appendChild(sc); }
+  }
+  /* Belgica: gasoleo agricola (js/be-diesel.js) y nitratos en Flandes (js/be-nitrates.js) */
+  function beUp() {
+    if (ST.c !== 'BE') return;
+    var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
+    var after = document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;
+    var el = document.createElement('div'); el.id = 'pp-be-diesel'; after.parentNode.insertBefore(el, after.nextSibling);
+    var el2 = document.createElement('div'); el2.id = 'pp-be-nitrates'; el.parentNode.insertBefore(el2, el.nextSibling);
+    var go = function () { if (ST.c !== cc) return; if (window.DIBeDiesel) window.DIBeDiesel.mount(el, lang()); if (window.DIBeNitrates) window.DIBeNitrates.mount(el2, lang()); };
+    var n = 0, done = function () { if (++n === 2) go(); }, js = function (src) { var sc = document.createElement('script'); sc.src = src; sc.onload = done; sc.onerror = done; document.head.appendChild(sc); };
+    if (window.DIBeDiesel && window.DIBeNitrates) go(); else { js('js/be-diesel.js?v=20261013'); js('js/be-nitrates.js?v=20261013'); }
   }
   function giUp() {
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
@@ -391,7 +402,7 @@
     ((window.DehesaShared.countryLinks && window.DehesaShared.countryLinks(ST.c)) || []).forEach(function (l) { if (own.indexOf(l.file) < 0) own += '<a class="di-card" href="' + l.href + '" style="display:block;padding:14px 18px;margin-top:14px;text-decoration:none;color:inherit"><b>' + esc(l.label) + ' →</b><div class="di-movers-hint" style="margin:4px 0 0">' + esc(l.d) + '</div></a>'; });
     html += '<div id="ps-detail"><h3 id="ps-own" class="ps-own-h">' + esc(OWN[lang()] ? OWN[lang()][0] : OWN.es[0]) + '</h3>' + own + '<div id="ps-ownnote"></div>'; if (REGMAP[ST.c] && !window.DIProfile) html += '<div id="ps-regmap"></div>';
     if (ST.c === 'PT') html += foldBox('ps-ifap', 'ifap'); html += (ST.c === 'DE' ? '<div id="ps-de"></div>' : '') + (ST.c === 'CA' ? '<div id="ps-mb"></div>' : '') + (ST.c === 'US' ? '<div id="ps-us"></div>' : '') + (ST.c === 'ES' ? '<div id="ps-es"></div>' : '') + (/^(DK|NL|FR)$/.test(ST.c) ? '<div id="ps-eu"></div>' : '') + '<div id="ps-agri"></div>' + foldBox('ps-tp', 'tp') + '</div>' + srcHtml;
-    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(); frUp(); deUp(); itUp(); plUp(); sectorUp(); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
+    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(); frUp(); deUp(); itUp(); plUp(); beUp(); sectorUp(); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
     var ub = root.querySelector('[data-unusual]'); if (ub) ub.onclick = function () { ub.disabled = true; ub.textContent = ub.getAttribute('data-busy'); Promise.all(c.series.filter(function (x) { return !x.points && x.n >= 24; }).map(pt)).then(function () { build(); }); };
     if (ST.c === 'DE') { var den = document.getElementById('ps-de'), mdf = function () { if (window.DEFarm && den) window.DEFarm.mount(den, lang()); }; if (window.DEFarm) mdf(); else { var dsc = document.createElement('script'); dsc.src = 'js/de-agri.js?v=20261003'; dsc.onload = mdf; document.head.appendChild(dsc); } }
     if (ST.c === 'CA') { var mbn = document.getElementById('ps-mb'); if (mbn) { /* Manitoba (vacuno, ovino y caprino, porcino): cabeceras aqui, modulos (js/mb-cattle.js, js/mb-smallstock.js) solo al abrir */

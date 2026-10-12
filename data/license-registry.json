@@ -3165,6 +3165,58 @@
    "short": "Rada Ministrów",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: dato legal."
+  },
+  "spf_economie_energie": {
+   "name": "SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos)",
+   "url": "https://economie.fgov.be/fr/themes/energie/prix-de-lenergie/prix-maximum-des-produits/tarif-officiel-des-produits",
+   "country": "BE",
+   "licenseId": "BE-FPS-ECONOMY-REUSE",
+   "licenseName": "Condiciones de uso del SPF Economía: reutilización libre, también comercial, recomendando citar fuente y fecha",
+   "licenseUrl": "https://economie.fgov.be/nl/gebruiksvoorwaarden",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "SPF Economie, DG Energie — tarif officiel des produits pétroliers (via be.STAT, Statbel)",
+   "additionalRestrictions": "Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "economie.fgov.be/nl/gebruiksvoorwaarden: la información puede reutilizarse «voor privé-, verenigings-, wetenschappelijke en commerciële doeleinden»; se recomienda mencionar fuente y fecha. Los precios máximos se publican cada día laborable y se difunden en be.STAT (vista «Officieel tarief van de aardolieproducten in euro, laatste 365 wijzigingen»).",
+   "used": true,
+   "aliases": [],
+   "notes": "Leído desde be.STAT (Statbel); los precios los produce la DG Energía, no Statbel, así que se rige por las condiciones del SPF Economía.",
+   "short": "SPF Economie",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de uso publicadas."
+  },
+  "vmm_waterinfo": {
+   "name": "Vlaamse Milieumaatschappij (VMM) — waterinfo.be y feiten & cijfers",
+   "url": "https://waterinfo.vlaanderen.be/",
+   "country": "BE",
+   "licenseId": "VL-MODELLICENTIE-GRATIS-HERGEBRUIK-1.0",
+   "licenseName": "Modellicentie voor gratis hergebruik v1.0 (Gobierno flamenco): reutilización libre para cualquier fin citando la fuente",
+   "licenseUrl": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Bron: Vlaamse Milieumaatschappij (VMM), waterinfo.be",
+   "additionalRestrictions": "Citar la fuente.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Catálogo metadata.vlaanderen.be: los conjuntos de la VMM de waterinfo (p. ej. «Meetreeksen - neerslag») y los indicadores «Nitraat in oppervlaktewater in landbouwgebied» y «Nutriënten in oppervlaktewater» figuran con la «Modellicentie voor gratis hergebruik». Las capas captatieverboden y droogtestatus se sirven sin autenticación en inspirepub.waterinfo.be; no tienen ficha propia en el catálogo, así que se les aplica la licencia general de la VMM para waterinfo.",
+   "used": true,
+   "aliases": [],
+   "notes": "Valonia (SPW) no publica equivalentes abiertos de prohibiciones de captación, SPI ni nitrato medido.",
+   "short": "VMM",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "VERIFIED por la licencia general de los datos de la VMM; las dos capas de waterinfo no tienen ficha individual."
   }
  },
  "files": {
@@ -4337,6 +4389,31 @@
     "imgw_pib"
    ],
    "notes": "Avisos de sequía hidrológica vigentes del IMGW-PIB por voivodato e histórico diario propio. scripts/update-pl-hydro-drought.py."
+  },
+  "data/be-diesel.json": {
+   "sources": [
+    "spf_economie_energie",
+    "eu_oil_bulletin"
+   ],
+   "notes": "Precio máximo oficial diario del gasóleo agrícola, de automoción y de calefacción en Bélgica (SPF Economía vía be.STAT, histórico propio desde oct-2025) y gasóleo/fioul semanales desde 2005 (Weekly Oil Bulletin). scripts/update-be-diesel.py."
+  },
+  "data/be-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura belga por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/be-drought.json": {
+   "sources": [
+    "vmm_waterinfo"
+   ],
+   "notes": "Zonas con prohibición de captar agua por provincia flamenca y reparto de la superficie de Flandes por clase de SPI-3/SPEI-3 (VMM). scripts/update-be-drought.py."
+  },
+  "data/be-nitrates.json": {
+   "sources": [
+    "vmm_waterinfo"
+   ],
+   "notes": "Nitrato en aguas superficiales de zonas agrícolas de Flandes (red MAP), por año de invierno desde 2002-2003 (VMM). scripts/update-be-nitrates.py."
   }
  },
  "derived": [

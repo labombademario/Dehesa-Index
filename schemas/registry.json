@@ -964,6 +964,30 @@
     "pl_hydro_drought"
    ]
   ],
+  "be-diesel.json": [
+   "be-diesel",
+   [
+    "be_diesel"
+   ]
+  ],
+  "be-ghg-agri.json": [
+   "be-ghg-agri",
+   [
+    "be_ghg_agri"
+   ]
+  ],
+  "be-drought.json": [
+   "be-drought",
+   [
+    "be_drought"
+   ]
+  ],
+  "be-nitrates.json": [
+   "be-nitrates",
+   [
+    "be_nitrates"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [

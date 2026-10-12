@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 104 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
+Resumen: 106 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20340 series en el catalogo unificado.
 
-## VERIFIED (104)
+## VERIFIED (106)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -88,6 +88,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
 | `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 38 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
+| `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
 | `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 123 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
 | `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 728 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
@@ -112,6 +113,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
 | `vigieau` | VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau) | FR | LO-2.0 | si/si | si | 0 | LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indica… |
+| `vmm_waterinfo` | Vlaamse Milieumaatschappij (VMM) — waterinfo.be y feiten & cijfers | BE | VL-MODELLICENTIE-GRATIS-HERGEBRUIK-1.0 | si/si | si | 0 | Citar la fuente. |
 | `wikidata` | Wikidata | INT | CC0-1.0 | si/si | no | 0 |  |
 | `world_bank` | World Bank — Commodity Price Data (Pink Sheet) | INT | CC-BY-4.0 | si/si | si | 2 | No endorsement; no World Bank names or logos without written consent. |
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |

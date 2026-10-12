@@ -3322,6 +3322,53 @@ def pl_hydro_drought(doc, errs, warns, stats):
         if not w["areas"]: errs.append("sequia PL: aviso sin zonas"); break
     if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=4)).isoformat(): warns.append("sequia PL: ultimo dato %s" % doc["asOf"])
     stats["avisos"] = len(doc["warnings"])
+# Belgica: gasoleo agricola (tarifa oficial del SPF Economia) y Boletin Petrolero
+def be_diesel(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today(); prev = None
+    for r in doc["daily"]:
+        if r[0] > (today + _dt.timedelta(days=4)).isoformat(): errs.append("diesel BE: fecha futura %s" % r[0]); return   # la tarifa se publica la vispera
+        if prev and r[0] <= prev: errs.append("diesel BE: dias desordenados en %s" % r[0]); return
+        prev = r[0]
+        if not 0.3 < r[1] < 3.0: errs.append("diesel BE %s: agricola %s" % (r[0], r[1]))
+        if r[3] is not None and r[3] <= r[1]: errs.append("diesel BE %s: el agricola no es mas barato que el de automocion" % r[0])
+    prev = None
+    for d, t, n, h in doc["weekly"]:
+        if prev and d <= prev: errs.append("diesel BE: semanas desordenadas en %s" % d); return
+        prev = d
+        if not 0.5 < t < 3.5: errs.append("diesel BE semanal %s: %s" % (d, t))
+        if n is not None and n >= t: errs.append("diesel BE %s: sin impuestos >= con impuestos" % d)
+    if doc["asOf"] < (today - _dt.timedelta(days=7)).isoformat(): warns.append("diesel BE: ultimo dia %s" % doc["asOf"])
+    stats["dias"] = len(doc["daily"]); stats["semanas"] = len(doc["weekly"])
+def be_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI BE: anos no consecutivos desde 1990"); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (5000 < a < 15000 and 70000 < t < 180000): errs.append("GEI BE %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        for k in ("byCategory", "byGas"):
+            c = sum(v[i] for v in doc[k].values())
+            if abs(c - a) > 2: errs.append("GEI BE %d: %s suma %.0f y la agricultura %.0f" % (ys[i], k, c, a))
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+def be_drought(doc, errs, warns, stats):
+    import datetime as _dt
+    P = doc["provinces"]
+    if sorted(P) != ["VAN", "VBR", "VLI", "VOV", "VWV"]: errs.append("sequia BE: provincias %s" % sorted(P))
+    for k, v in P.items():
+        if v["banned"] > v["zones"] or v["bannedKm2"] > v["areaKm2"] + 0.1: errs.append("sequia BE %s: mas prohibido que total" % k)
+    for k, v in doc["indices"].items():
+        s = sum(v["shares"].values())
+        if abs(s - 100) > 0.6: errs.append("sequia BE %s: las clases suman %.1f %%" % (k, s))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=4)).isoformat(): warns.append("sequia BE: ultimo dato %s" % doc["asOf"])
+    stats["prohibidas"] = sum(v["banned"] for v in P.values())
+def be_nitrates(doc, errs, warns, stats):
+    prev = None
+    for y, m, p in doc["series"]:
+        if prev and y <= prev: errs.append("nitratos BE: anos desordenados en %s" % y); return
+        prev = y
+        if not 0 <= p <= 100: errs.append("nitratos BE %s: %s %%" % (y, p))
+        if m is not None and not 5 < m < 60: errs.append("nitratos BE %s: media %s mg/l" % (y, m))
+    stats["anos"] = len(doc["series"])
 # Italia: gasoleo (MASE) y por region (MIMIT)
 def it_fuel(doc, errs, warns, stats):
     import datetime as _dt

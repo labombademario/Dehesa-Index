@@ -2160,3 +2160,13 @@ html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3
 
 .pl-wdet>summary{cursor:pointer}
 .pl-wdet .pl-wlist{max-height:420px;overflow-y:auto}
+/* Belgica: sequia en Flandes (js/be-drought.js) y nitratos (js/be-nitrates.js) */
+.be-stk{display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:4px 12px;align-items:center;max-width:760px;margin:6px 0;font-size:13px}
+.be-stk-b{display:flex;height:22px;border-radius:4px;overflow:hidden;background:var(--gbx)}
+.be-stk-b span{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;white-space:nowrap;border-right:2px solid var(--surface)}
+.be-stk-b span:last-child{border-right:0}
+.be-s0{background:var(--gb0);color:var(--text)}.be-s1{background:var(--gb2);color:var(--text)}.be-s2{background:var(--gb3);color:#fff}.be-s3{background:var(--gb4);color:#fff}
+@media (max-width:560px){.be-stk{grid-template-columns:1fr}}
+.bn-bar{fill:var(--wp-r)}.bn-bar.bn-last{fill:var(--text)}
+.bn-goal{stroke:var(--text-muted);stroke-width:1.5;stroke-dasharray:5 4}
+.bn-sw{background:var(--wp-r)}.bn-sw-g{background:none;border-top:2px dashed var(--text-muted);height:0;margin-top:5px}
