@@ -3425,6 +3425,32 @@
    "short": "KNMI",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Política abierta del KNMI y CC BY 4.0 en sus conjuntos; la página de daggegevens no la nombra."
+  },
+  "miteco_rbd": {
+   "name": "MITECO — Demarcaciones hidrográficas (límites reportados a la UE; capa WISE WFD 2022 de la Agencia Europea de Medio Ambiente)",
+   "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_RiverBasinDistrict_WM/MapServer",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (MITECO, ficha IDEE 95b8abce); aviso legal de la AEMA: reutilización citando la fuente",
+   "licenseUrl": "https://www.idee.es/csw-codsi-idee/srv/api/records/95b8abce-2083-40b3-bd6b-83a7d8a72307",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Demarcaciones hidrográficas: MITECO, vía Agencia Europea de Medio Ambiente (CC BY 4.0)",
+   "additionalRestrictions": "Se usa solo como fondo cartográfico (vendor/es-basins.js), simplificado y recortado con la costa. El servidor de descargas del MITECO falla la verificación TLS, por eso se toma la misma capa del servicio público de la AEMA.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Ficha IDEE 95b8abce-2083-40b3-bd6b-83a7d8a72307 (Demarcaciones hidrográficas, MITECO-DGA): licencia CC BY 4.0, 'Nombrar a la fuente: Ministerio para la Transición Ecológica y el Reto Demográfico', sin limitaciones al acceso público. Servicio de la AEMA WFD2022_RiverBasinDistrict_WM: inspireIdNamespace https://www.miteco.gob.es/, '© European Environment Agency'; aviso legal de la AEMA: reutilización libre citando la fuente. Ficha de la versión pública WISE WFD en el catálogo de la AEMA: 'no limitations to public access'.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "MITECO · demarcaciones",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia CC BY 4.0 leída en la ficha oficial del MITECO; la copia se toma de la AEMA, cuyo informe técnico con las condiciones de uso no se ha podido leer."
   }
  },
  "files": {

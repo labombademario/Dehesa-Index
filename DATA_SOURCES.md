@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 114 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20337 series en el catalogo unificado.
+Resumen: 115 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20337 series en el catalogo unificado.
 
-## VERIFIED (114)
+## VERIFIED (115)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -83,6 +83,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `miteco_carburantes` | MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |
 | `miteco_embalses` | MITECO — Boletín Hidrológico (BD-Embalses) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha de actualización. Datos provisionales sin valid… |
 | `miteco_inventario_gei` | MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |
+| `miteco_rbd` | MITECO — Demarcaciones hidrográficas (límites reportados a la UE; capa WISE WFD 2022 de la Agencia Europea de Medio Ambiente) | ES | CC-BY-4.0 | si/si | si | 0 | Se usa solo como fondo cartográfico (vendor/es-basins.js), simplificado y recortado con la costa. El servidor de descargas del MITECO falla … |
 | `miteco_sequia` | MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe. |
 | `nasa_power` | NASA POWER (Prediction Of Worldwide Energy Resources) | US | CC-BY-4.0 | si/si | si | 0 | Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees. |
 | `noaa_ncei` | NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv) | US | US-PD | si/si | si | 149 | No implied NOAA endorsement. |
