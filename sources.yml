@@ -133,6 +133,17 @@ sources:
     data: [spain-wine/infovi.json, spain-wine-log.txt]
     extra: ['!data/spain-wine']
     message: Datos vino de España por campaña y comunidad (MAPA INFOVI)
+  - id: wine-prices
+    name: Update bulk wine prices (MAPA weekly bulletin, FranceAgriMer)
+    cron: ['40 9 * * 4']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install pdfplumber xlrd']
+    script: scripts/update-wine-prices.py
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    data: [wine-prices.json]
+    log: wine-prices-log.txt
+    message: Precio del vino a granel (MAPA, FranceAgriMer)
   - id: spain-wine-monthly
     name: Update Spain wine month by month and region (MAPA INFOVI monthly report)
     cron: ['55 8 * * 4']

@@ -821,6 +821,12 @@
    [
     "gi_fr_inao"
    ]
+  ],
+  "wine-prices.json": [
+   "wine-prices",
+   [
+    "wine_prices"
+   ]
   ]
  },
  "globs": {

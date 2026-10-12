@@ -3212,6 +3212,26 @@ def gi_country(doc, errs, warns, stats):
             if e.get("u") and not str(e["u"]).startswith("http"): errs.append("%s %s: enlace no valido" % (doc["country"], e["id"]))
             if any(f in e for f in ("email", "phone", "producerGroupEmail", "producerGroupPhone")): errs.append("%s %s: datos de contacto publicados" % (doc["country"], e["id"]))
     stats["wine"] = len(doc["wine"]); stats["cheese"] = len(doc["cheese"])
+# Precio del vino a granel: el script de actualizacion del vino
+def wine_prices(doc, errs, warns, stats):
+    import datetime as _dt
+    ws = doc["es"]["weeks"]; prev = None
+    for w in ws:
+        a = _dt.date.fromisoformat(w["from"]); b = _dt.date.fromisoformat(w["to"])
+        if (b - a).days != 6 or a.weekday() != 0: errs.append("vino ES %s: la semana no va de lunes a domingo" % w["week"]); return
+        if prev is not None and w["to"] <= prev: errs.append("vino ES: semanas no ascendentes en %s" % w["week"]); return
+        prev = w["to"]
+        for c in ("white", "red"):
+            if not 20 <= w[c] <= 120: errs.append("vino ES %s: %s fuera de rango plausible (%s)" % (w["week"], c, w[c]))
+    if (_dt.date.today() - _dt.date.fromisoformat(ws[-1]["to"])).days > 70: warns.append("vino ES: el ultimo boletin tiene mas de 70 dias (%s)" % ws[-1]["week"])
+    for k, pts in doc["fr"]["series"].items():
+        p = None
+        for ym, v in pts:
+            if p is not None and ym <= p: errs.append("vino FR %s: meses no ascendentes en %s" % (k, ym)); return
+            p = ym
+            if not 15 <= v <= 400: errs.append("vino FR %s %s: valor fuera de rango (%s)" % (k, ym, v))
+        if k not in ("red.aop", "white.aop") and p < (_dt.date.today() - _dt.timedelta(days=150)).strftime("%Y-%m"): warns.append("vino FR %s: ultimo mes %s, con retraso" % (k, p))
+    stats["weeksES"] = len(ws); stats["seriesFR"] = len(doc["fr"]["series"])
 # Zona y categoria de las denominaciones francesas (INAO): scripts/update-inao-geo.py
 def _gi_fr_ids():
     d = load("gi/FR.json"); return {e["f"] for k in ("wine", "cheese") for e in d[k]}

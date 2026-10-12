@@ -61,7 +61,7 @@
   function openTrust(btn){
     var box=btn.closest('.di-data-trust'),tpl=box&&box.querySelector('template.di-dt-body');if(!tpl)return;
     var lang=S.getLang?S.getLang():'es',t=I18N[lang]||I18N.es;
-    var card=btn.closest('.di-product-card'),h=card&&card.querySelector('.di-product-name'),title=h?h.textContent.replace(/^[^\p{L}]+/u,'').trim():'';
+    var card=btn.closest('.di-product-card,.di-info-card'),h=card&&card.querySelector('.di-product-name,.di-info-card-title'),title=h?h.textContent.replace(/^[^\p{L}]+/u,'').trim():'';
     var ov=document.createElement('div');ov.className='di-dt-overlay';
     ov.innerHTML='<div class="di-dt-modal" role="dialog" aria-modal="true" aria-labelledby="di-dt-h"><div class="di-dt-head"><div><span class="di-dt-kicker">'+esc(KICK[lang]||KICK.es)+'</span><h2 id="di-dt-h">'+esc(title)+'</h2></div><button type="button" class="di-dt-close" aria-label="'+esc(CLOSE[lang]||CLOSE.es)+'">×</button></div><div class="di-dt-content"></div></div>';
     ov.querySelector('.di-dt-content').appendChild(tpl.content.cloneNode(true));
@@ -163,5 +163,39 @@
     '</section>';
   }
 
-  global.DehesaDataTrust={render:render,frequencyFor:frequencyFor,comparability:comparability ,renderHealth:renderHealth};
+  /* Procedencia y metodología de las pestañas informativas (Madera y Vino a granel): cifras puntuales de un organismo oficial, con su fecha.
+     Mientras una cifra no tenga canalización automática se dice con claridad; el botón abre la misma ventana que el resto de tarjetas. */
+  var FQ={monthly:{es:'Mensual',en:'Monthly',fr:'Mensuelle',it:'Mensile'},daily:{es:'Diaria',en:'Daily',fr:'Quotidienne',it:'Giornaliera'},weekly:{es:'Semanal',en:'Weekly',fr:'Hebdomadaire',it:'Settimanale'},quarterly:{es:'Trimestral',en:'Quarterly',fr:'Trimestrielle',it:'Trimestrale'},annual:{es:'Anual',en:'Annual',fr:'Annuelle',it:'Annuale'}};
+  var ST={es:'Cifra puntual de la fecha indicada; no se actualiza sola',en:'One-off figure for the date shown; not updated automatically',fr:'Chiffre ponctuel à la date indiquée ; non mis à jour automatiquement',it:'Cifra puntuale alla data indicata; non si aggiorna da sola'};
+  var CP={es:'No directamente comparable',en:'Not directly comparable',fr:'Pas directement comparable',it:'Non direttamente comparabile'};
+  function L(a){return{es:a[0],en:a[1],fr:a[2],it:a[3]};}
+  var INFO={
+    'madera-us':{src:'CME Group',url:'https://www.cmegroup.com/markets/agriculture/lumber-and-softs/lumber/quotes.html',fq:'daily',
+      mk:L(['Futuro de madera aserrada de construcción (framing lumber), contrato de vencimiento más próximo','Framing lumber futures, nearest expiry contract','Contrat à terme de bois d’œuvre de construction (framing lumber), échéance la plus proche','Future sul legname da costruzione (framing lumber), scadenza più vicina']),
+      ty:L(['Futuro cotizado (mercado de derivados)','Exchange-traded future','Contrat à terme coté','Future quotato']),ob:L(['25 sep 2026','25 Sep 2026','25 sept. 2026','25 set 2026']),
+      me:L(['Precio por 1.000 pies tabla (unos 2,36 m³) de madera aserrada, ya cortada. Es la referencia diaria de la construcción en Norteamérica. La cifra de la tarjeta se copió del sitio de CME en esa fecha; CME licencia sus cotizaciones y no las redistribuimos, por eso no guardamos un histórico propio.','Price per 1,000 board feet (about 2.36 m³) of sawn lumber. It is the daily benchmark for North American construction. The figure was copied from the CME site on that date; CME licenses its quotes and we do not redistribute them, so we keep no history of our own.','Prix pour 1 000 pieds-planche (environ 2,36 m³) de bois scié. C’est la référence quotidienne de la construction en Amérique du Nord. Le chiffre a été relevé sur le site du CME à cette date ; le CME concède ses cotations sous licence et nous ne les redistribuons pas, nous ne conservons donc pas d’historique propre.','Prezzo per 1.000 piedi tavola (circa 2,36 m³) di legname segato. È il riferimento giornaliero dell’edilizia nordamericana. La cifra è stata copiata dal sito del CME a quella data; il CME concede le sue quotazioni in licenza e noi non le ridistribuiamo, perciò non conserviamo uno storico proprio.'])},
+    'madera-uk':{src:'Forest Research (Reino Unido)',url:'https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/timber-statistics/timber-price-indices/',fq:'quarterly',
+      mk:L(['Índice de precios de venta en pie de coníferas','Standing sales price index, conifers','Indice des prix de vente sur pied, résineux','Indice dei prezzi di vendita in piedi, conifere']),
+      ty:L(['Índice oficial de precios medios','Official average price index','Indice officiel de prix moyens','Indice ufficiale dei prezzi medi']),ob:L(['Primer trimestre de 2026 (marzo)','Q1 2026 (March)','1er trimestre 2026 (mars)','1° trimestre 2026 (marzo)']),
+      me:L(['Precio de la madera sin talar, todavía en el bosque (no aserrada), en libras por metro cúbico. La variación es frente al mismo trimestre del año anterior.','Price of standing timber, still in the forest (not sawn), in pounds per cubic metre. The change is against the same quarter a year earlier.','Prix du bois sur pied, encore en forêt (non scié), en livres par mètre cube. La variation est mesurée par rapport au même trimestre un an plus tôt.','Prezzo del legname in piedi, ancora nel bosco (non segato), in sterline per metro cubo. La variazione è rispetto allo stesso trimestre dell’anno prima.'])},
+    'madera-fr':{src:'France Bois Forêt / ONF',url:'https://franceboisforet.fr/2026/05/26/prix-de-vente-des-bois-sur-pied-en-foret-privee-indicateur-2026/',fq:'annual',
+      mk:L(['Precio medio de venta de madera en pie en bosque privado, por especie','Average standing timber sale price in private forests, by species','Prix moyen de vente des bois sur pied en forêt privée, par essence','Prezzo medio di vendita del legname in piedi nei boschi privati, per specie']),
+      ty:L(['Media anual de ventas observadas','Annual average of observed sales','Moyenne annuelle des ventes observées','Media annuale delle vendite osservate']),ob:L(['Campaña 2025 (indicador publicado en mayo de 2026)','2025 campaign (indicator published May 2026)','Campagne 2025 (indicateur publié en mai 2026)','Campagna 2025 (indicatore pubblicato a maggio 2026)']),
+      me:L(['Media de las ventas de madera en pie en bosques privados franceses, en euros por metro cúbico. Sale una vez al año, por lo que no hay serie corta que dibujar. La variación es frente a 2024.','Average of standing timber sales in French private forests, in euros per cubic metre. Published once a year, so there is no short series to plot. The change is against 2024.','Moyenne des ventes de bois sur pied en forêt privée française, en euros par mètre cube. Publiée une fois par an : pas de série courte à tracer. La variation est mesurée par rapport à 2024.','Media delle vendite di legname in piedi nei boschi privati francesi, in euro per metro cubo. Esce una volta l’anno, quindi non c’è una serie breve da disegnare. La variazione è rispetto al 2024.'])}
+  };
+  function info(id,lang0){
+    var lang=lang0||(S.getLang?S.getLang():'es'),t=I18N[lang]||I18N.es,c=typeof id==='object'?id:INFO[id];if(!c)return'';
+    var pick=function(v){return typeof v==='string'?v:(v[lang]||v.es);};
+    var OFF={es:'Dato oficial, leído automáticamente',en:'Official data, read automatically',fr:'Donnée officielle, lue automatiquement',it:'Dato ufficiale, letto automaticamente'};
+    var row=function(l,v,h){return '<div class="di-dt-row"><dt>'+esc(l)+'</dt><dd>'+(h?v:esc(v))+'</dd></div>';};
+    var body='<dl class="di-dt-list">'+
+      row(t.status,'<span class="di-dt-status di-data-trust-verified">'+esc(c.st==='official'?(OFF[lang]||OFF.es):(ST[lang]||ST.es))+'</span>',true)+
+      row(t.source,'<a href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer">'+esc(c.src)+'</a>',true)+
+      row(t.market,pick(c.mk))+row(t.type,pick(c.ty))+
+      row(t.frequency,(FQ[c.fq]||{})[lang]||'—')+row(t.observation,pick(c.ob))+row(t.comparability,CP[lang]||CP.es)+
+      '</dl><div class="di-dt-note"><b>'+esc(t.note)+'</b><p>'+esc(pick(c.me))+'</p></div>';
+    return '<div class="di-data-trust di-data-trust-verified"><button type="button" class="di-dt-open" aria-haspopup="dialog"><span class="di-data-trust-dot"></span>'+esc(t.summary)+'</button><template class="di-dt-body">'+body+'</template></div>';
+  }
+
+  global.DehesaDataTrust={info:info,render:render,frequencyFor:frequencyFor,comparability:comparability ,renderHealth:renderHealth};
 })(window);

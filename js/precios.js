@@ -844,11 +844,11 @@
   // favoritos, histórico, calculadora ni alertas. Ver js/seguro.js (seguro), D.WINE/
   // D.WOOD en js/data.js.
   // ---------------------------------------------------------------------
-  function infoStatsCardHtml(title, stats) {
+  function infoStatsCardHtml(title, stats, trustId) {
     var rows = stats.map(function (s) {
       return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(s.label) + '</span><span class="di-info-stat-value">' + esc(s.value) + '</span></div>';
     }).join('');
-    return '<div class="di-card di-info-card"><div class="di-info-card-title">' + esc(title) + '</div><div class="di-info-stat-list">' + rows + '</div></div>';
+    return '<div class="di-card di-info-card"><div class="di-info-card-title">' + esc(title) + '</div><div class="di-info-stat-list">' + rows + '</div>' + (trustId && global.DehesaDataTrust && global.DehesaDataTrust.info ? global.DehesaDataTrust.info(trustId, lang()) : '') + '</div>';
   }
 
   function infoSourcesHtml(catId, only) {
@@ -876,16 +876,28 @@
         infoSourcesHtml('vino')
       );
     }
-    // madera
+    // madera: primero el mercado mas cercano a la ubicacion del usuario; si su pais no tiene precio nacional se avisa arriba
     var mad = D.WOOD[lang()] || D.WOOD.es;
+    var loc = state.location || 'us', cn = state.euCountry || 'es';
+    var home = loc === 'uk' ? 'uk' : loc === 'eu' ? 'fr' : 'us';
+    var own = loc === 'us' || loc === 'uk' || (loc === 'eu' && cn === 'fr');
+    var cards = { us: infoStatsCardHtml(mad.usTitle, mad.usStats, 'madera-us'), uk: infoStatsCardHtml(mad.ukTitle, mad.ukStats, 'madera-uk'), fr: infoStatsCardHtml(mad.frTitle, mad.frStats, 'madera-fr') };
+    var order = [home].concat(['us', 'uk', 'fr'].filter(function (k) { return k !== home; }));
+    var place = loc === 'ca' ? { es: 'Canadá', en: 'Canada', fr: 'le Canada', it: 'il Canada' } : loc === 'eu' ? { es: { es: 'España', de: 'Alemania', it: 'Italia' }[cn] || 'tu país', en: { es: 'Spain', de: 'Germany', it: 'Italy' }[cn] || 'your country', fr: { es: 'l’Espagne', de: 'l’Allemagne', it: 'l’Italie' }[cn] || 'votre pays', it: { es: 'la Spagna', de: 'la Germania', it: 'l’Italia' }[cn] || 'il tuo paese' } : null;
+    var nearest = { us: { es: 'EE. UU.', en: 'the US', fr: 'les États-Unis', it: 'gli USA' }, fr: { es: 'Francia', en: 'France', fr: 'la France', it: 'la Francia' } }[home];
+    var NT = {
+      es: function (p, n) { return p.es + ' no tiene un precio nacional de madera que podamos citar; por eso va primero ' + n.es + ', el mercado con dato oficial más cercano.'; },
+      en: function (p, n) { return p.en + ' has no national timber price we can cite, so ' + n.en + ', the nearest market with an official figure, comes first.'; },
+      fr: function (p, n) { return 'Il n’existe pas pour ' + p.fr + ' de prix national du bois que nous puissions citer ; nous plaçons donc en premier ' + n.fr + ', le marché le plus proche disposant d’un chiffre officiel.'; },
+      it: function (p, n) { return 'Per ' + p.it + ' non c’è un prezzo nazionale del legno citabile; per questo viene per primo ' + n.it + ', il mercato più vicino con un dato ufficiale.'; }
+    };
+    var NL = { es: 'Ver por qué faltan otros países', en: 'See why other countries are missing', fr: 'Voir pourquoi d’autres pays manquent', it: 'Perché mancano altri paesi' };
+    var notice = '';
+    if (!own && place) { var pl = typeof place.es === 'string' ? place : null; notice = '<div class="di-info-scope-note" style="margin-bottom:10px">' + esc(NT[lang()](pl, nearest)) + ' <a href="#pr-madera-note">' + esc(NL[lang()]) + '</a></div>'; }
     return (
-      '<div class="di-badge di-badge-green di-info-badge">' + esc(mad.badge) + '</div>' +
-      '<div class="di-info-grid di-info-grid-3">' +
-        infoStatsCardHtml(mad.usTitle, mad.usStats) +
-        infoStatsCardHtml(mad.ukTitle, mad.ukStats) +
-        infoStatsCardHtml(mad.frTitle, mad.frStats) +
-      '</div>' +
-      '<div class="di-info-scope-note">' + esc(mad.scopeNote) + '</div>' +
+      '<div class="di-badge di-badge-green di-info-badge">' + esc(mad.badge) + '</div>' + notice +
+      '<div class="di-info-grid di-info-grid-3">' + order.map(function (k) { return cards[k]; }).join('') + '</div>' +
+      '<div class="di-info-scope-note" id="pr-madera-note">' + esc(mad.scopeNote) + '</div>' +
       infoSourcesHtml('madera')
     );
   }
@@ -1087,6 +1099,7 @@
         return;
       }
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
+      if (state.activeTab === 'vino' && global.DehesaWine) { root.innerHTML = '<div id="pr-vino">' + root.innerHTML + '</div>'; global.DehesaWine.render(document.getElementById('pr-vino')); }
       return;
     }
     var all = productsInCat(state.activeTab), t = ui();

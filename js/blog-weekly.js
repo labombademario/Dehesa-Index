@@ -56,6 +56,13 @@
   function bars(pairs, max, label) {
     return pairs.map(function (p) { var w = max ? Math.max(2, Math.round(p[1] / max * 100)) : 0; return '<div style="display:flex;align-items:center;gap:8px;margin:3px 0;font-size:14px"><span style="flex:0 0 150px">' + esc(label(p[0])) + '</span><span style="flex:1 1 auto;background:var(--border,#E6E0CF);border-radius:3px;height:10px"><span style="display:block;width:' + w + '%;height:10px;background:var(--accent,#2f6b4a);border-radius:3px"></span></span><span style="flex:0 0 52px;text-align:right;font-variant-numeric:tabular-nums">' + esc(nf(p[1])) + '</span></div>'; }).join('');
   }
+  var ALL = { es: 'Todas las regiones', en: 'All regions', fr: 'Toutes les régions', it: 'Tutte le regioni' };
+  function regSel() { try { return localStorage.getItem('dehesaBlogRegion') || 'all'; } catch (e) { return 'all'; } }
+  document.addEventListener('change', function (ev) {
+    var el = ev.target; if (!el || !el.classList || !el.classList.contains('bl-reg-sel')) return;
+    try { localStorage.setItem('dehesaBlogRegion', el.value); } catch (e) {}
+    Array.prototype.forEach.call(document.querySelectorAll('details[data-wk][open]'), function (d) { fillWeek(d.getAttribute('data-wk')); });
+  });
   function body(w) {
     var l = lg(), t = T[l], tt = w.totals, th = sorted(tt.byTopic), rg = sorted(tt.byRegion), pr = sorted(tt.byProduct).slice(0, 8), dy = Object.keys(tt.byDay).sort().map(function (d) { return [d, tt.byDay[d]]; });
     var intro = th.length ? fill(th.length > 1 ? t.intro : t.intro1, { n: nf(tt.items), m: nf(tt.sources), t1: (TOP[l][th[0][0]] || th[0][0]).toLowerCase(), n1: nf(th[0][1]), t2: th[1] ? (TOP[l][th[1][0]] || th[1][0]).toLowerCase() : '', n2: th[1] ? nf(th[1][1]) : '', r1: REG[rg[0][0]] ? REG[rg[0][0]][l] : rg[0][0], p1: Math.round(rg[0][1] / tt.items * 100) }) : '';
@@ -63,7 +70,9 @@
     if (!w.complete) h += '<p class="di-movers-hint">' + esc(t.now) + '</p>';
     if (w.coverage.from > w.from) h += '<p class="di-movers-hint">' + esc(fill(t.cov, { d: dfmt(w.coverage.from, { day: 'numeric', month: 'long', timeZone: 'UTC' }) })) + '</p>';
     h += '<h3 style="font-size:16px;margin:14px 0 2px">' + esc(t.top) + '</h3>' + list(w.top, t);
-    h += '<h3 style="font-size:16px;margin:14px 0 2px">' + esc(t.reg) + '</h3>' + rg.filter(function (r) { return w.byRegion[r[0]]; }).map(function (r) { return '<h4 style="font-size:14px;margin:10px 0 0">' + esc(REG[r[0]] ? REG[r[0]][l] : r[0]) + ' <span class="di-movers-hint">' + esc(nf(r[1])) + ' ' + esc(t.news) + '</span></h4>' + list(w.byRegion[r[0]], t); }).join('');
+    var RS = regSel(); if (RS !== 'all' && !w.byRegion[RS]) RS = 'all';
+    var ropts = rg.filter(function (r) { return w.byRegion[r[0]]; });
+    h += '<h3 style="font-size:16px;margin:14px 0 2px">' + esc(t.reg) + ' <select class="bl-reg-sel di-compare-select" aria-label="' + esc(t.reg) + '" style="font-size:13px;font-weight:400;padding:2px 6px;width:auto;margin-left:8px"><option value="all">' + esc(ALL[l]) + '</option>' + ropts.map(function (r) { return '<option value="' + esc(r[0]) + '"' + (RS === r[0] ? ' selected' : '') + '>' + esc(REG[r[0]] ? REG[r[0]][l] : r[0]) + '</option>'; }).join('') + '</select></h3>' + ropts.filter(function (r) { return RS === 'all' || r[0] === RS; }).map(function (r) { return '<h4 style="font-size:14px;margin:10px 0 0">' + esc(REG[r[0]] ? REG[r[0]][l] : r[0]) + ' <span class="di-movers-hint">' + esc(nf(r[1])) + ' ' + esc(t.news) + '</span></h4>' + list(w.byRegion[r[0]], t); }).join('');
     h += '<h3 style="font-size:16px;margin:14px 0 4px">' + esc(t.themes) + '</h3>' + bars(th, th.length ? th[0][1] : 0, function (k) { return TOP[l][k] || k; });
     h += '<h3 style="font-size:16px;margin:14px 0 4px">' + esc(t.prods) + '</h3>' + '<p style="margin:0;line-height:1.9">' + pr.map(function (p) { return '<a class="di-src-tab" href="noticias.html?product=' + encodeURIComponent(p[0]) + '" title="' + esc(t.see) + '">' + esc(PRD[l][p[0]] || p[0]) + ' · ' + esc(nf(p[1])) + '</a>'; }).join(' ') + '</p>';
     h += '<h3 style="font-size:16px;margin:14px 0 4px">' + esc(t.days) + '</h3>' + bars(dy, Math.max.apply(null, dy.map(function (d) { return d[1]; })), function (d) { return dfmt(d, { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }); }) + (w.complete ? '' : '<p class="di-movers-hint">' + esc(t.partialDay) + '</p>');
