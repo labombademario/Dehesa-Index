@@ -2,12 +2,12 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-170 workflows (133 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+174 workflows (137 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
-- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-nl-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
 
@@ -153,6 +153,10 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
 | update-nl-cbs.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-nl-cbs.py | netherlands-farm.json | finish, validate-files |
+| update-nl-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-nl-diesel.py | nl-diesel.json | finish, validate-files |
+| update-nl-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-nl-drought.py | nl-drought.json | finish, validate-files |
+| update-nl-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | nl-ghg-agri.json | finish, validate-files |
+| update-nl-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-nl-nitrates.py | nl-nitrates.json | finish, validate-files |
 | update-nl-rvo.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-nl-rvo.py | netherlands-markets.json | finish, validate-files |
 
 ## Noticias y blog

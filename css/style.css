@@ -2188,3 +2188,12 @@ html[data-theme="dark"] .ie-n5{background:#FFD9C2;color:#1b1b1b}
 .ie-r0{background:#24558f;color:#fff}.ie-r1{background:#4a86c8;color:#fff}.ie-r2{background:var(--gbx);color:var(--text)}.ie-r3{background:var(--gb2);color:var(--text)}.ie-r4{background:var(--gb4);color:#fff}
 .be-stk-b span[class^="ie-"]{border-right:2px solid var(--surface)}
 .be-stk-b span[class^="ie-"]:last-child{border-right:0}
+
+/* Paises Bajos: diesel, nitratos y sequia (js/nl-*.js) */
+.wp-card{--wp-b:#24558f}html[data-theme="dark"] .wp-card{--wp-b:#6fa8e6}
+.wp-line-b{stroke:var(--wp-b)}.wp-sw-b{background:var(--wp-b)}
+.nl-dash{stroke-dasharray:5 4}
+.nl-lim{stroke:var(--text-muted);stroke-width:1.2;stroke-dasharray:4 3}
+.nl-band{fill:var(--wp-w);opacity:.16;stroke:none}
+.nl-bsw{display:inline-block;width:14px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle;background:var(--wp-w);opacity:.35}
+.nl-all{margin:10px 0 0}.nl-all summary{cursor:pointer;font-size:13px;color:var(--text-muted);padding:4px 0}

@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 112 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20337 series en el catalogo unificado.
+Resumen: 114 VERIFIED, 9 PENDING, 4 RESTRICTED, 4 BLOCKED; 20337 series en el catalogo unificado.
 
-## VERIFIED (112)
+## VERIFIED (114)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -72,6 +72,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ispra` | ISPRA — Stato di severità idrica a scala nazionale | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `it_regioni_dop` | Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana) | IT | CC-BY-4.0/CC0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-OWNER-DECISION | si/si | si | 47 | No implied endorsement by the Federal Reserve. |
+| `knmi_daggegevens` | KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación) | NL | CC-BY-4.0 | si/si | si | 0 | Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI. |
 | `magyp_estimaciones` | Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas | AR | CC-BY-4.0 | si/si | si | 0 |  |
 | `magyp_lecheria` | Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar | AR | CC-BY-4.0 | si/si | si | 30 | Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica est… |
 | `mapa_es` | Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA) | ES | CUSTOM | si/si | si | 250 | Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but th… |
@@ -91,6 +92,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `prix_carburants_fr` | Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers) | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 1 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
+| `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
 | `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 38 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |

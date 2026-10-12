@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T22:27:00Z",
+ "generatedAt": "2026-10-12T22:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 156,
+  "ok": 160,
   "late": 1,
   "error": 4,
   "not_run": 2,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "db2fa739",
+   "sha": "2f7b18fb",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/8fca6f16-7da0-4348-a160-f4738c79b7d6",
-   "completedAt": "2026-10-12T22:27:27Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/ea40f3f4-2ef2-4699-94d1-783f68b53320",
+   "completedAt": "2026-10-12T22:51:48Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-12T21:30:46.934708+00:00",
-  "checkedAt": "2026-10-12T22:27:00Z"
+  "checkedAt": "2026-10-12T22:53:00Z"
  },
  "pipelines": [
   {
@@ -2469,6 +2469,98 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-nl-diesel.yml",
+   "name": "Update Netherlands diesel (EU Weekly Oil Bulletin), CBS pump prices and farm diesel purchase price",
+   "crons": [
+    "30 7 * * 2,5"
+   ],
+   "nextRun": "2026-10-13T07:30:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T22:48:37Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38318754422"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-nl-drought.yml",
+   "name": "Update Netherlands drought by COROP region (EDO) and KNMI precipitation deficit",
+   "crons": [
+    "10 8 * * *"
+   ],
+   "nextRun": "2026-10-13T08:10:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T22:48:41Z",
+    "durationSec": 84,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38318760570"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-nl-ghg-agri.yml",
+   "name": "Update Netherlands agricultural greenhouse gas emissions (Eurostat env_air_gge)",
+   "crons": [
+    "45 8 4 * *"
+   ],
+   "nextRun": "2026-11-04T08:45:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T22:48:38Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38318756339"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-nl-nitrates.yml",
+   "name": "Update Netherlands nitrate in leaching water and ditches (RIVM LMM) and groundwater (Eurostat)",
+   "crons": [
+    "55 8 7 * *"
+   ],
+   "nextRun": "2026-11-07T08:55:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-12T22:48:40Z",
+    "durationSec": 27,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38318758322"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-nl-rvo.yml",
    "name": "Update Netherlands pig and cattle prices and pig slaughter (RVO)",
    "crons": [
@@ -2553,7 +2645,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2576,7 +2668,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2593,7 +2685,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/products"
@@ -2604,15 +2696,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/country-pending.json",
@@ -2620,18 +2712,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-12T22:02:57Z"
+     "lastChange": "2026-10-12T22:34:28Z"
     },
     {
      "path": "data/home-explore.json",
