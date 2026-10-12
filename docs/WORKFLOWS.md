@@ -2,12 +2,12 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-166 workflows (129 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+170 workflows (133 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
-- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-pl-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
 
@@ -130,6 +130,15 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-fr-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fr-nitrates.py | fr-nitrates.json | finish, validate-files |
 | update-fr-onde.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-onde.py | fr-onde.json | finish, validate-files |
 | update-fr-vigieau.yml | generado | semanal (1,3,5) | detect-revisions.py, gen-workflows.py, update-fr-vigieau.py | france-vigieau.json | finish, validate-files |
+
+## IE
+
+| Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
+|---|---|---|---|---|---|
+| update-ie-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-ie-diesel.py | ie-diesel.json | finish, validate-files |
+| update-ie-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-ie-drought.py | ie-drought.json | finish, validate-files |
+| update-ie-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | ie-ghg-agri.json | finish, validate-files |
+| update-ie-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ie-nitrates.py | ie-nitrates.json | finish, validate-files |
 
 ## IT
 
