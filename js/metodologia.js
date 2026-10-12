@@ -65,7 +65,7 @@
           { t: 'Las fuentes pueden revisar sus datos o cambiar sus definiciones; reflejamos la última versión publicada.' },
           { t: 'Nada de esto es asesoramiento financiero ni de inversión.' }
         ] },
-        { h: 'Datos abiertos y correcciones', p: ['Los archivos con los que se construye el panel están publicados en la carpeta de datos del sitio (JSON y CSV), con la fuente y la metodología de cada serie. Si ves un error o una definición mejorable, escríbenos a hola@dehesaindex.com.'] }
+        { h: 'Datos abiertos y correcciones', p: ['Los archivos con los que se construye el panel están publicados en la carpeta de datos del sitio (JSON y CSV), con la fuente y la metodología de cada serie. Si ves un error o una definición mejorable, escríbenos a dehesaindex@gmail.com.'] }
       ],
       links: [{ href: 'clima.html', t: 'Clima agrícola' }, { href: 'data/', t: 'Datos abiertos' }, { href: 'legal.html', t: 'Aviso legal y privacidad' }, { href: 'informacion.html', t: 'Información' }]
     },
@@ -132,7 +132,7 @@
           { t: 'Sources may revise their data or change definitions; we show the latest published version.' },
           { t: 'Nothing here is financial or investment advice.' }
         ] },
-        { h: 'Open data and corrections', p: ['The files behind the dashboard are published in the site’s data folder (JSON and CSV), with the source and methodology of each series. If you spot an error or a definition that could be better, write to hola@dehesaindex.com.'] }
+        { h: 'Open data and corrections', p: ['The files behind the dashboard are published in the site’s data folder (JSON and CSV), with the source and methodology of each series. If you spot an error or a definition that could be better, write to dehesaindex@gmail.com.'] }
       ],
       links: [{ href: 'clima.html', t: 'Agricultural climate' }, { href: 'data/', t: 'Open data' }, { href: 'legal.html', t: 'Legal notice & privacy' }, { href: 'informacion.html', t: 'Information' }]
     },
@@ -199,7 +199,7 @@
           { t: 'Les sources peuvent réviser leurs données ou changer leurs définitions ; nous affichons la dernière version publiée.' },
           { t: 'Rien ici ne constitue un conseil financier ou d’investissement.' }
         ] },
-        { h: 'Données ouvertes et corrections', p: ['Les fichiers à partir desquels le tableau de bord est construit sont publiés dans le dossier de données du site (JSON et CSV), avec la source et la méthodologie de chaque série. Si vous repérez une erreur ou une définition perfectible, écrivez à hola@dehesaindex.com.'] }
+        { h: 'Données ouvertes et corrections', p: ['Les fichiers à partir desquels le tableau de bord est construit sont publiés dans le dossier de données du site (JSON et CSV), avec la source et la méthodologie de chaque série. Si vous repérez une erreur ou une définition perfectible, écrivez à dehesaindex@gmail.com.'] }
       ],
       links: [{ href: 'clima.html', t: 'Climat agricole' }, { href: 'data/', t: 'Données ouvertes' }, { href: 'legal.html', t: 'Mentions légales et confidentialité' }, { href: 'informacion.html', t: 'Informations' }]
     },
@@ -266,7 +266,7 @@
           { t: 'Le fonti possono rivedere i dati o cambiare le definizioni; mostriamo l’ultima versione pubblicata.' },
           { t: 'Nulla qui costituisce consulenza finanziaria o di investimento.' }
         ] },
-        { h: 'Dati aperti e correzioni', p: ['I file con cui è costruito il pannello sono pubblicati nella cartella dei dati del sito (JSON e CSV), con la fonte e la metodologia di ogni serie. Se noti un errore o una definizione migliorabile, scrivi a hola@dehesaindex.com.'] }
+        { h: 'Dati aperti e correzioni', p: ['I file con cui è costruito il pannello sono pubblicati nella cartella dei dati del sito (JSON e CSV), con la fonte e la metodologia di ogni serie. Se noti un errore o una definizione migliorabile, scrivi a dehesaindex@gmail.com.'] }
       ],
       links: [{ href: 'clima.html', t: 'Clima agricolo' }, { href: 'data/', t: 'Dati aperti' }, { href: 'legal.html', t: 'Note legali e privacy' }, { href: 'informacion.html', t: 'Informazioni' }]
     }

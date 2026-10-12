@@ -56,11 +56,11 @@
     document.getElementById('ct-h1').textContent = t.h1;
     document.getElementById('ct-sub').textContent = t.sub;
     document.getElementById('ct-email-label').textContent = t.emailLabel;
-    var w = document.getElementById('ct-write'); w.textContent = t.write; w.setAttribute('href', 'mailto:hola@dehesaindex.com?subject=' + encodeURIComponent(t.subject));
+    var w = document.getElementById('ct-write'); w.textContent = t.write; w.setAttribute('href', 'mailto:dehesaindex@gmail.com?subject=' + encodeURIComponent(t.subject));
     var c = document.getElementById('ct-copy'); c.textContent = t.copy;
     c.onclick = function () {
       var done = function () { document.getElementById('ct-copied').textContent = t.copied; };
-      try { navigator.clipboard.writeText('hola@dehesaindex.com').then(done, function () {}); } catch (e) { /* sin portapapeles: el enlace de correo sigue funcionando */ }
+      try { navigator.clipboard.writeText('dehesaindex@gmail.com').then(done, function () {}); } catch (e) { /* sin portapapeles: el enlace de correo sigue funcionando */ }
     };
     document.getElementById('ct-note').textContent = t.note;
   }

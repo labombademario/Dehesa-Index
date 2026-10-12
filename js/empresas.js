@@ -36,7 +36,7 @@
       ],
       ctaTitle: 'Avísanos de tu interés',
       ctaBody: 'Todavía no hay backend construido ni fecha de lanzamiento fija — este proyecto está priorizando qué construir según quién lo pide. Escríbenos contándonos qué datos necesitarías y te avisamos en cuanto la API esté lista, con prioridad para quien ya se haya puesto en contacto.',
-      ctaButton: 'Escribir a hola@dehesaindex.com',
+      ctaButton: 'Escribir a dehesaindex@gmail.com',
       ctaSubject: 'Interes%20en%20la%20API%20de%20Dehesa%20Index',
       ctaNote: 'Sin formularios ni registros falsos: un correo real, a una dirección real, que leemos nosotros.'
     },
@@ -73,7 +73,7 @@
       ],
       ctaTitle: "Let us know you're interested",
       ctaBody: "There's no backend built yet and no fixed launch date — this project is prioritizing what to build based on who asks for it. Tell us what data you'd need and we'll let you know as soon as the API is ready, with priority for whoever reached out first.",
-      ctaButton: 'Email hola@dehesaindex.com',
+      ctaButton: 'Email dehesaindex@gmail.com',
       ctaSubject: 'Interest%20in%20the%20Dehesa%20Index%20API',
       ctaNote: 'No forms or fake sign-ups: a real email, to a real address, that we read ourselves.'
     },
@@ -110,7 +110,7 @@
       ],
       ctaTitle: 'Dites-nous que vous êtes intéressé',
       ctaBody: "Il n'y a pas encore de backend construit ni de date de lancement fixe — ce projet priorise ce qu'il construit selon qui le demande. Dites-nous quelles données vous seraient utiles et nous vous préviendrons dès que l'API sera prête, en priorité pour ceux qui nous auront déjà contactés.",
-      ctaButton: 'Écrire à hola@dehesaindex.com',
+      ctaButton: 'Écrire à dehesaindex@gmail.com',
       ctaSubject: 'Interet%20pour%20l%27API%20Dehesa%20Index',
       ctaNote: 'Pas de formulaire ni de fausse inscription : un vrai e-mail, à une vraie adresse, que nous lisons nous-mêmes.'
     },
@@ -147,7 +147,7 @@
       ],
       ctaTitle: 'Facci sapere il tuo interesse',
       ctaBody: "Non esiste ancora un backend costruito né una data di lancio fissa — questo progetto sta dando priorità a cosa costruire in base a chi lo richiede. Scrivici quali dati ti servirebbero e ti avviseremo non appena l'API sarà pronta, con priorità per chi ci ha già contattato.",
-      ctaButton: 'Scrivi a hola@dehesaindex.com',
+      ctaButton: 'Scrivi a dehesaindex@gmail.com',
       ctaSubject: 'Interesse%20per%20l%27API%20di%20Dehesa%20Index',
       ctaNote: 'Nessun modulo o falsa iscrizione: una vera email, a un indirizzo vero, che leggiamo di persona.'
     }
@@ -185,7 +185,7 @@
     document.getElementById('em-cta-body').textContent = t.ctaBody;
     var ctaBtn = document.getElementById('em-cta-button');
     ctaBtn.textContent = t.ctaButton + ' ↗';
-    ctaBtn.setAttribute('href', 'mailto:hola@dehesaindex.com?subject=' + t.ctaSubject);
+    ctaBtn.setAttribute('href', 'mailto:dehesaindex@gmail.com?subject=' + t.ctaSubject);
     document.getElementById('em-cta-note').textContent = t.ctaNote;
   }
 
