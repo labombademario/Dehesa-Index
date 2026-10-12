@@ -60,7 +60,13 @@
         h += '<h3 style="margin:14px 0 6px;font-size:15px">' + esc(t.emb) + '</h3><div class="di-info-stat-list" style="max-width:640px">' + row(esc(t.embT) + ' · ' + esc(day(s.dates[i], lg)), '<b>' + nf(pc, 1, lg) + ' %</b> (' + nf(s.stored[i], 0, lg) + ' / ' + nf(s.capacity[i], 0, lg) + ' hm³)') + (cl ? row(esc(t.embAvg), sg(pc - cl[0], lg) + ' ' + t.pp) : '') + '</div>';
       }
       h += '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' ' + esc(t.edo) + (cc === 'ES' ? ' · MITECO, Boletín Hidrológico' : '') + ' · <a href="sequia.html?zona=eu">' + esc(t.all) + '</a></p></section>';
-      el.innerHTML = h; bindChart(el, v.map(inD), labels, lg, t); return true;
+      el.innerHTML = h; bindChart(el, v.map(inD), labels, lg, t);
+      if (cc === 'ES') {   // escasez y sequia prolongada por unidad territorial (js/es-drought-ute.js, se carga a peticion)
+        var box = document.createElement('div'); box.style.marginTop = '14px'; el.appendChild(box);
+        var go = function () { if (global.DIEsDroughtUTE) global.DIEsDroughtUTE.mount(box, lg.slice(0, 2)); };
+        if (global.DIEsDroughtUTE) go(); else { var sc = document.createElement('script'); sc.src = 'js/es-drought-ute.js?v=20261012'; sc.onload = go; document.head.appendChild(sc); }
+      }
+      return true;
     });
   }
   function us(el, name, lg, t) {

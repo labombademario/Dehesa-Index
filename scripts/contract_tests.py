@@ -3285,6 +3285,60 @@ def us_reservoirs(doc, errs, warns, stats):
     for must in ("Mead (Hoover Dam)", "Powell (Glen Canyon Dam)", "Shasta"):
         if must not in names: errs.append("embalses US: falta %s" % must)
     stats["embalses"] = len(doc["items"])
+# Espana: gasoleo B (agricola) en gasolineras por provincia (MITECO)
+def es_gasoleo_b(doc, errs, warns, stats):
+    import datetime as _dt
+    L = doc["latest"]; today = _dt.date.today().isoformat()
+    if not (0.6 < L["b"] < 3.0): errs.append("gasoleo B: mediana nacional %s fuera de lo plausible" % L["b"])
+    if L["a"] and L["b"] >= L["a"]: errs.append("gasoleo B: no puede ser mas caro que el A (%s >= %s)" % (L["b"], L["a"]))
+    if L["nb"] < 1000: errs.append("gasoleo B: solo %d estaciones" % L["nb"])
+    for p, v in L["provinces"].items():
+        if not (len(p) == 2 and "01" <= p <= "52"): errs.append("gasoleo B: provincia %s" % p); return
+        if not (0.6 < v[0] < 3.0 and v[1] >= 1): errs.append("gasoleo B %s: mediana %s con %s estaciones" % (p, v[0], v[1]))
+    rows = doc["history"]["rows"]; prev = None
+    for r in rows:
+        if r[0] > today: errs.append("gasoleo B: fecha futura %s" % r[0]); return
+        if prev and r[0] <= prev: errs.append("gasoleo B: historico desordenado en %s" % r[0]); return
+        if r[1] is not None and not 0.3 < r[1] < 3.0: errs.append("gasoleo B %s: %s" % (r[0], r[1]))
+        prev = r[0]
+    if L["date"] < (_dt.date.today() - _dt.timedelta(days=4)).isoformat(): warns.append("gasoleo B: ultimo dato %s" % L["date"])
+    if doc["history"].get("pending"): warns.append("gasoleo B: faltan %d puntos del historico por reconstruir" % doc["history"]["pending"])
+    stats["provincias"] = len(L["provinces"]); stats["historico"] = len(rows)
+# Espana: emisiones GEI de la agricultura (MITECO)
+def es_ghg_agri(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys)
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 1990: errs.append("GEI: anos no consecutivos desde 1990"); return
+    for k in ("agriculture", "national", "machinery"):
+        if len(doc[k]) != n: errs.append("GEI: %s con %d valores para %d anos" % (k, len(doc[k]), n)); return
+    for i in range(n):
+        a = doc["agriculture"][i]; t = doc["national"][i]
+        if not (20000 < a < 70000 and 150000 < t < 600000): errs.append("GEI %d: agricultura %s / total %s fuera de lo plausible" % (ys[i], a, t))
+        c = sum(v[i] for v in doc["byCategory"].values())
+        if abs(c - a) > 2: errs.append("GEI %d: las categorias (%.0f) no suman la agricultura (%.0f)" % (ys[i], c, a))
+        g = sum(v[i] for v in doc["byGas"].values())
+        if abs(g - a) > 2: errs.append("GEI %d: los gases (%.0f) no suman la agricultura (%.0f)" % (ys[i], g, a))
+    if ys[-1] < __import__("datetime").date.today().year - 4: warns.append("GEI: ultimo ano %d" % ys[-1])
+    stats["anos"] = n; stats["ultimo"] = ys[-1]
+# Espana: sequia prolongada y escasez por unidad territorial (MITECO)
+def es_drought_ute(doc, errs, warns, stats):
+    import datetime as _dt
+    th = doc["thresholds"]["scarcity"]; nu = ns = 0
+    def scen(v): return "normal" if v >= th["normal"] else "prealert" if v >= th["prealert"] else "alert" if v >= th["alert"] else "emergency"
+    for dm, d in doc["demarcations"].items():
+        for r in d["ute"]:
+            nu += 1
+            if not 0 <= r["value"] <= 1: errs.append("escasez %s/%s: indicador %s" % (dm, r["name"], r["value"]))
+            elif r["state"] != scen(r["value"]): errs.append("escasez %s/%s: escenario %s no casa con %s" % (dm, r["name"], r["state"], r["value"]))
+            if len(r["series"]) != len(r["months"]): errs.append("escasez %s/%s: meses y valores no casan" % (dm, r["name"]))
+        for r in d["uts"]:
+            ns += 1
+            if not 0 <= r["value"] <= 1: errs.append("sequia %s/%s: indicador %s" % (dm, r["name"], r["value"]))
+            elif (r["value"] < doc["thresholds"]["drought"]) != (r["state"] == "drought"): errs.append("sequia %s/%s: estado %s no casa con %s" % (dm, r["name"], r["state"], r["value"]))
+    for must in ("Duero", "Tajo", "Guadiana", "Guadalquivir", "Ebro", "Júcar", "Segura"):
+        if must not in doc["demarcations"]: errs.append("sequia/escasez: falta la demarcacion %s" % must)
+    if nu < 80 or ns < 80: errs.append("sequia/escasez: solo %d UTE y %d UTS" % (nu, ns))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=75)).isoformat(): warns.append("sequia/escasez: ultimo informe a %s" % doc["asOf"])
+    stats["ute"] = nu; stats["uts"] = ns
 # Embalses de Espana uno a uno (MITECO) con ubicacion de Wikidata
 def spain_reservoirs_points(doc, errs, warns, stats):
     seen = set(); pts = 0; cap = 0.0

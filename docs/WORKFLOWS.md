@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-140 workflows (103 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+143 workflows (106 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -62,6 +62,14 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | update-pipeline-status.yml | a mano | varias veces al dia | alert-issue.py, build-app-views.mjs, build-cap-index.py | app, cap/index.json, catalog … | - |
 | update-seo-pages.yml | generado | diaria | build-seo-pages.mjs, gen-workflows.py, qa-seo.mjs | - | finish |
+
+## ES
+
+| Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
+|---|---|---|---|---|---|
+| update-es-drought-ute.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-drought-ute.py | es-drought-ute.json | finish, validate-files |
+| update-es-gasoleo-b.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-es-gasoleo-b.py | es-gasoleo-b.json | finish, validate-files |
+| update-es-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-ghg-agri.py | es-ghg-agri.json | finish, validate-files |
 
 ## EU
 

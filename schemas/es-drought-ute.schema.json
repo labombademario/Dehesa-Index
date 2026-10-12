@@ -1,0 +1,46 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Espana: sequia prolongada y escasez por unidad territorial (MITECO, Observatorio Nacional de la Sequia)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "asOf",
+  "source",
+  "thresholds",
+  "demarcations",
+  "history"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ]
+  },
+  "asOf": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "thresholds": {
+   "type": "object"
+  },
+  "demarcations": {
+   "type": "object",
+   "minProperties": 8
+  },
+  "history": {
+   "type": "array",
+   "minItems": 1
+  }
+ }
+}

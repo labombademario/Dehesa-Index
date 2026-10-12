@@ -2801,6 +2801,84 @@
    "short": "MAGyP",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: licencia CC BY 4.0 declarada en la ficha del conjunto."
+  },
+  "miteco_carburantes": {
+   "name": "MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras)",
+   "url": "https://geoportalgasolineras.es/",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (declared in the MITECO open data catalogue)",
+   "licenseUrl": "https://catalogo.datosabiertos.miteco.gob.es/catalogo/dataset/214e0895-b3aa-4662-8ebe-18134c21fb45",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), precios de carburantes (Geoportal de Gasolineras)",
+   "additionalRestrictions": "Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Catálogo de datos abiertos del MITECO, conjunto «Precio de carburantes en las gasolineras españolas», license_id CC-BY-4.0, leído por su API el 12 oct 2026; datos del servicio REST PreciosCarburantes.",
+   "used": true,
+   "aliases": [],
+   "notes": "Precio de venta al público que comunica cada estación (con impuestos). Medianas por provincia: cálculo de Dehesa Index.",
+   "short": "MITECO · Gasolineras",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: el catálogo de datos abiertos del MITECO (CKAN) declara CC BY 4.0 para el conjunto."
+  },
+  "miteco_inventario_gei": {
+   "name": "MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero",
+   "url": "https://catalogo.datosabiertos.miteco.gob.es/catalogo/dataset/c1f5ae00-18d5-478d-aab1-685ae5506857",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (declared in the MITECO open data catalogue)",
+   "licenseUrl": "https://catalogo.datosabiertos.miteco.gob.es/catalogo/dataset/c1f5ae00-18d5-478d-aab1-685ae5506857",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: MITECO, Inventario Nacional de Emisiones de gases de efecto invernadero",
+   "additionalRestrictions": "Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Catálogo de datos abiertos del MITECO (y datos.gob.es), conjunto «Emisiones nacionales de gases de efecto invernadero (GEI)», CC BY 4.0, leído el 12 oct 2026.",
+   "used": true,
+   "aliases": [],
+   "notes": "Agregados por categoría y especie: sumas de Dehesa Index sobre las filas de nivel más bajo del inventario.",
+   "short": "MITECO · Inventario GEI",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: el catálogo de datos abiertos del MITECO (CKAN) declara CC BY 4.0 para el conjunto."
+  },
+  "miteco_sequia": {
+   "name": "MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez)",
+   "url": "https://www.miteco.gob.es/es/agua/temas/observatorio-nacional-de-la-sequia/informes-mapas-seguimiento.html",
+   "country": "ES",
+   "licenseId": "ES-LEY-37-2007",
+   "licenseName": "MITECO legal notice (free reuse with attribution, Spanish Law 37/2007)",
+   "licenseUrl": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: MITECO, Observatorio Nacional de la Sequía, informe de la situación de sequía y escasez",
+   "additionalRestrictions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Aviso legal de la web del MITECO (reutilización citando la fuente, Ley 37/2007), el mismo que cubre el Boletín Hidrológico; anexo 3 del informe de septiembre de 2026 (datos a 31/8/2026).",
+   "used": true,
+   "aliases": [],
+   "notes": "Escenarios (normalidad, prealerta, alerta, emergencia) asignados por Dehesa Index con los umbrales generales de los planes especiales de sequía a partir del indicador publicado.",
+   "short": "MITECO · Sequía",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Aviso legal del MITECO leído el 11 oct 2026 desde GitHub Actions: la información puede utilizarse sin autorización expresa citando la fuente (Ley 37/2007, RD 1495/2011). No hay licencia Creative Commons específica del conjunto; confianza media."
   }
  },
  "files": {
@@ -3873,6 +3951,24 @@
     "magyp_estimaciones"
    ],
    "notes": "Superficie sembrada y cosechada, producción y rendimiento por provincia y campaña de los principales cultivos extensivos, sumando los departamentos de Estimaciones agrícolas (MAGyP, CC BY 4.0); rendimiento calculado por Dehesa Index."
+  },
+  "data/es-gasoleo-b.json": {
+   "sources": [
+    "miteco_carburantes"
+   ],
+   "notes": "Mediana por provincia y nacional del gasóleo B y del gasóleo A en las estaciones de servicio; histórico mensual desde 2007, semanal desde 2023 y diario después. scripts/update-es-gasoleo-b.py."
+  },
+  "data/es-ghg-agri.json": {
+   "sources": [
+    "miteco_inventario_gei"
+   ],
+   "notes": "Emisiones de la agricultura (sector 3 del IPCC) por categoría, especie y gas, y del combustible de la maquinaria agraria y forestal, 1990-último año. scripts/update-es-ghg-agri.py."
+  },
+  "data/es-drought-ute.json": {
+   "sources": [
+    "miteco_sequia"
+   ],
+   "notes": "Indicadores de sequía prolongada (UTS) y escasez (UTE) del último mes por demarcación intercomunitaria. scripts/update-es-drought-ute.py."
   }
  },
  "derived": [

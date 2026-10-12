@@ -218,7 +218,7 @@
       cordero: 'EE. UU. cotiza en vivo y Europa en canal — misma unidad de peso, pero no la misma base de medición.',
       azucar: 'El precio de EE. UU. es estructuralmente más alto por su sistema de cuotas de importación, no por una anomalía puntual del mercado.',
       aceite: 'La oferta de EE. UU. (California) es mucho menor y no existe un índice público tan frecuente como en la UE — cifra orientativa. Los precios europeos han sido muy volátiles tras la sequía de 2023-2024. Alemania y Francia no tienen cotización nacional de aceite de oliva (no son países productores): al elegirlos se muestra la referencia europea.',
-      diesel: 'El precio mostrado es el del diésel de carretera (on-highway), la referencia pública más completa y frecuente. El gasóleo agrícola sin impuestos ("gasóleo B") suele ser más barato, pero no se publica de forma tan sistemática por región.'
+      diesel: 'El precio mostrado es el del diésel de carretera (on-highway), la referencia pública más completa y frecuente. El gasóleo agrícola, con un impuesto reducido, suele ser más barato; en la mayoría de países no se publica de forma sistemática por región. En España sí: el precio del gasóleo B por provincia está en Insumos, pestaña España.'
     },
     en: {
       vaca: 'The U.S. quotes live weight, while Europe and the U.K. quote carcass (deadweight) — same unit of weight, but not the same measurement basis.',
@@ -229,7 +229,7 @@
       cordero: 'The U.S. quotes live weight while Europe quotes carcass weight — same unit of weight, but not the same measurement basis.',
       azucar: 'The U.S. price is structurally higher due to its import quota system, not a one-off market anomaly.',
       aceite: "U.S. supply (California) is much smaller and lacks a public index as frequent as the EU's — an indicative figure only. European prices have been highly volatile since the 2023–2024 drought. Germany and France have no national olive oil quotation (they are not producing countries): selecting them shows the European reference instead.",
-      diesel: 'The price shown is on-highway (retail) diesel, the most complete and frequent public benchmark. Untaxed farm/dyed diesel is typically cheaper, but is not published as consistently by region.'
+      diesel: 'The price shown is on-highway (retail) diesel, the most complete and frequent public benchmark. Farm (dyed, lower-duty) diesel is typically cheaper; most countries do not publish it consistently by region. Spain does: farm diesel (gasóleo B) by province is under Inputs, Spain tab.'
     },
     fr: {
       vaca: "Les États-Unis cotent en poids vif ; l'Europe et le Royaume-Uni, en poids carcasse — même unité de poids, mais pas la même base de mesure.",
@@ -240,7 +240,7 @@
       cordero: "Les États-Unis cotent en poids vif et l'Europe en poids carcasse — même unité de poids, mais pas la même base de mesure.",
       azucar: "Le prix américain est structurellement plus élevé en raison de son système de quotas d'importation, et non d'une anomalie ponctuelle du marché.",
       aceite: "L'offre américaine (Californie) est bien plus faible et il n'existe pas d'indice public aussi fréquent qu'en UE — chiffre indicatif. Les prix européens ont été très volatils depuis la sécheresse de 2023-2024. L'Allemagne et la France n'ont pas de cotation nationale pour l'huile d'olive (ce ne sont pas des pays producteurs) : en les sélectionnant, c'est la référence européenne qui s'affiche.",
-      diesel: "Le prix indiqué est celui du gazole routier (à la pompe), la référence publique la plus complète et la plus fréquente. Le gazole agricole détaxé est généralement moins cher, mais n'est pas publié aussi systématiquement par région."
+      diesel: "Le prix indiqué est celui du gazole routier (à la pompe), la référence publique la plus complète et la plus fréquente. Le gazole agricole, à fiscalité réduite, est généralement moins cher ; la plupart des pays ne le publient pas systématiquement par région. L'Espagne, si : le gasóleo B par province se trouve dans Intrants, onglet Espagne."
     },
     it: {
       vaca: 'Gli Stati Uniti quotano a peso vivo, mentre l\'Europa e il Regno Unito quotano a peso morto — stessa unità di peso, ma non la stessa base di misurazione.',
@@ -251,7 +251,7 @@
       cordero: 'Gli Stati Uniti quotano a peso vivo mentre l\'Europa quota a peso morto — stessa unità di peso, ma non la stessa base di misurazione.',
       azucar: 'Il prezzo statunitense è strutturalmente più alto a causa del suo sistema di quote di importazione, non per un\'anomalia puntuale del mercato.',
       aceite: 'L\'offerta statunitense (California) è molto minore e non esiste un indice pubblico frequente come nell\'UE — cifra indicativa. I prezzi europei sono stati molto volatili dopo la siccità del 2023-2024. Germania e Francia non hanno una quotazione nazionale dell\'olio d\'oliva (non sono paesi produttori): selezionandole viene mostrato il riferimento europeo.',
-      diesel: 'Il prezzo mostrato è quello del gasolio stradale (alla pompa), il riferimento pubblico più completo e frequente. Il gasolio agricolo agevolato è generalmente più economico, ma non viene pubblicato in modo altrettanto sistematico per regione.'
+      diesel: 'Il prezzo mostrato è quello del gasolio stradale (alla pompa), il riferimento pubblico più completo e frequente. Il gasolio agricolo, ad accisa ridotta, è generalmente più economico; la maggior parte dei paesi non lo pubblica in modo sistematico per regione. La Spagna sì: il gasóleo B per provincia è in Input, scheda Spagna.'
     }
   };
 

@@ -2098,6 +2098,48 @@ html[data-theme="dark"] .wp-card{--wp-w:#E3B04B;--wp-r:#E07A8C}
 .wp-hist{font-size:12px;color:var(--text-muted);margin:8px 0 2px}
 .wr-wrap{margin-top:16px}
 .wr-wrap .wr-card{max-width:760px}
+/* Emisiones del campo en Espana (js/es-ghg-agri.js): barras horizontales con etiqueta y valor */
+.gh-bars{max-width:640px;margin:4px 0 6px}
+.gh-chart{max-width:640px}
+.gh-row{display:grid;grid-template-columns:minmax(120px,1.4fr) 1fr auto;gap:10px;align-items:center;font-size:13px;padding:3px 0}
+.gh-b{display:block;height:10px;background:var(--border);border-radius:5px;overflow:hidden}
+.gh-b i{display:block;height:100%;background:var(--wp-w);border-radius:5px}
+.gh-v{white-space:nowrap;text-align:right}.gh-v small{color:var(--text-muted)}
+@media (max-width:520px){.gh-row{grid-template-columns:1fr auto}.gh-b{grid-column:1/-1;order:3}}
+/* Escasez y sequia por unidad territorial en Espana (js/es-drought-ute.js): colores de estado, siempre con su nombre al lado */
+.ute-card{--ute-n:#2F7D4F;--ute-p:#C9A227;--ute-a:#D9822B;--ute-e:#B3261E}
+html[data-theme="dark"] .ute-card{--ute-n:#6CC08E;--ute-p:#E5C65A;--ute-a:#F0A35E;--ute-e:#F2867E}
+.ute-bar{display:flex;height:14px;border-radius:4px;overflow:hidden;max-width:640px;margin:10px 0 6px;gap:2px}
+.ute-bar span{display:block}
+.ute-bar .ute-normal{background:var(--ute-n)}.ute-bar .ute-prealert{background:var(--ute-p)}.ute-bar .ute-alert{background:var(--ute-a)}.ute-bar .ute-emergency{background:var(--ute-e)}
+.ute-leg{font-size:12.5px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+.ute-chip{display:inline-block;font-size:11.5px;line-height:1.5;padding:0 7px;border-radius:9px;border:1px solid currentColor;white-space:nowrap}
+.ute-chip.ute-normal{color:var(--ute-n)}.ute-chip.ute-prealert{color:var(--ute-p)}.ute-chip.ute-alert{color:var(--ute-a)}.ute-chip.ute-emergency{color:var(--ute-e)}
+.ute-sub>td{padding-top:0;border-top:0}
+.ute-sub summary{cursor:pointer;font-size:12.5px;color:var(--text-muted)}
+.ute-in{margin-top:6px;font-size:13px}
+.ute-hist{display:flex;align-items:flex-end;gap:6px;overflow-x:auto;min-height:60px}
+.ute-hist span{display:flex;flex-direction:column;align-items:center;gap:3px}
+.ute-hist i{display:block;width:16px;background:var(--ute-a);border-radius:2px 2px 0 0}
+.ute-hist small{font-size:10.5px;color:var(--text-muted);white-space:nowrap}
+/* Gasoleo B por provincia (js/es-gasoleo-b.js): rampa de un solo tono, de claro a oscuro */
+#in-es-gb{margin-top:18px}
+.gb-card{max-width:760px;--gb0:#F6E3D5;--gb1:#EDBFA0;--gb2:#DD9268;--gb3:#BF5F38;--gb4:#8A361C;--gbx:#E9E6E1}
+html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3:#D07D4D;--gb4:#F3AC7C;--gbx:#2A2D2B}
+.gb-sub{margin-top:14px}
+.gb-map{display:block;width:100%;max-width:560px;height:auto;margin:2px 0 6px}
+.gb-prov{stroke:var(--surface);stroke-width:.8;vector-effect:non-scaling-stroke;cursor:pointer;outline:none}
+.gb-prov:hover,.gb-prov:focus-visible,.gb-prov.gb-on{stroke:var(--text);stroke-width:2}
+.gb-c0{fill:var(--gb0);background:var(--gb0)}.gb-c1{fill:var(--gb1);background:var(--gb1)}.gb-c2{fill:var(--gb2);background:var(--gb2)}.gb-c3{fill:var(--gb3);background:var(--gb3)}.gb-c4{fill:var(--gb4);background:var(--gb4)}.gb-cx{fill:var(--gbx);background:var(--gbx)}
+.gb-key{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.gb-leg{margin-bottom:10px}
+.gb-rank{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 20px;font-size:13px}
+.gb-rank ol{margin:4px 0 8px;padding-left:20px}
+.gb-rh{font-size:12.5px;color:var(--text-muted)}
+.gb-n{color:var(--text-muted);font-size:12px}
+.gb-all{margin:4px 0 6px;font-size:13px}
+.gb-all summary{cursor:pointer;color:var(--accent,#1E3328)}
+.gb-tw{overflow-x:auto;max-height:420px;overflow-y:auto;margin-top:6px}
 .wd-sels{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .wd-sels .wp-sel{margin:0}
 #licencias a,#licencias td,#licencias li{overflow-wrap:anywhere}

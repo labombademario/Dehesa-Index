@@ -1,0 +1,78 @@
+/* Dehesa Index — España: emisiones de gases de efecto invernadero de la agricultura (MITECO, Inventario Nacional de Emisiones), 1990-último año.
+   data/es-ghg-agri.json (scripts/update-es-ghg-agri.py). Bloque de la ficha de España (js/paises.js lo carga a petición). ES5. */
+(function (global) {
+  'use strict';
+  var T = {
+    es: { h: 'Emisiones de gases de efecto invernadero del campo en España', last: 'Agricultura en {y}', share: 'Parte del total de España', v90: 'Frente a 1990', v05: 'Frente a 2005', mach: 'Gasóleo y energía de la maquinaria e instalaciones agrarias y forestales, aparte', cat: 'De dónde salen (año {y})', sp: 'Por tipo de ganado: digestión y estiércol (año {y})', gas: 'Por gas (año {y})', chart: 'Evolución desde 1990', lA: 'Agricultura', lM: 'Maquinaria e instalaciones (energía)', hover: 'Pasa el cursor o toca el gráfico para ver cada año.', mt: 'Mt CO₂ eq.', of: 'del total',
+      c: { enteric: 'Digestión del ganado (fermentación entérica)', manure: 'Gestión del estiércol', soils: 'Suelos agrícolas (abonos, purines, residuos)', rice: 'Cultivo de arroz', urea: 'Urea', liming: 'Encalado', burning: 'Quema de rastrojos', otherC: 'Otros fertilizantes con carbono' },
+      s: { beef: 'Vacuno de carne y otro vacuno', dairy: 'Vacuno de leche', pigs: 'Porcino', sheep: 'Ovino', goats: 'Caprino', poultry: 'Aves', other: 'Otros (equino, conejos…)' },
+      g: { CH4: 'Metano (CH₄)', N2O: 'Óxido nitroso (N₂O)', CO2: 'Dióxido de carbono (CO₂)' },
+      note: 'Cifras del Inventario Nacional en millones de toneladas de CO₂ equivalente: el metano y el óxido nitroso se convierten a CO₂ según su poder de calentamiento. «Agricultura» es el sector agrario del inventario (ganado, estiércol, suelos, arroz, abonos); el gasóleo de tractores y el combustible de granjas e invernaderos se cuentan aparte, en la energía, junto con la silvicultura. El total de España no incluye el uso de la tierra ni los bosques. Las sumas por categoría y por tipo de ganado son de Dehesa Index.', src: 'Fuente:', srcN: 'MITECO, Inventario Nacional de Emisiones' },
+    en: { h: 'Greenhouse gas emissions from farming in Spain', last: 'Agriculture in {y}', share: 'Share of Spain’s total', v90: 'Versus 1990', v05: 'Versus 2005', mach: 'Fuel and energy of farm and forestry machinery and buildings, counted separately', cat: 'Where they come from ({y})', sp: 'By livestock: digestion and manure ({y})', gas: 'By gas ({y})', chart: 'Since 1990', lA: 'Agriculture', lM: 'Machinery and buildings (energy)', hover: 'Hover or tap the chart to read each year.', mt: 'Mt CO₂-eq', of: 'of total',
+      c: { enteric: 'Livestock digestion (enteric fermentation)', manure: 'Manure management', soils: 'Agricultural soils (fertiliser, slurry, residues)', rice: 'Rice cultivation', urea: 'Urea', liming: 'Liming', burning: 'Field burning of residues', otherC: 'Other carbon-containing fertilisers' },
+      s: { beef: 'Beef and other cattle', dairy: 'Dairy cattle', pigs: 'Pigs', sheep: 'Sheep', goats: 'Goats', poultry: 'Poultry', other: 'Other (horses, rabbits…)' },
+      g: { CH4: 'Methane (CH₄)', N2O: 'Nitrous oxide (N₂O)', CO2: 'Carbon dioxide (CO₂)' },
+      note: 'National inventory figures in million tonnes of CO₂ equivalent: methane and nitrous oxide are converted to CO₂ by their warming potential. “Agriculture” is the inventory’s farming sector (livestock, manure, soils, rice, fertiliser); tractor diesel and the fuel used by farms and greenhouses are counted separately, under energy, together with forestry. Spain’s total excludes land use and forests. Totals by category and by livestock are summed by Dehesa Index.', src: 'Source:', srcN: 'MITECO, National Emissions Inventory' },
+    fr: { h: 'Émissions de gaz à effet de serre de l’agriculture en Espagne', last: 'Agriculture en {y}', share: 'Part du total espagnol', v90: 'Par rapport à 1990', v05: 'Par rapport à 2005', mach: 'Carburant et énergie des machines et bâtiments agricoles et forestiers, à part', cat: 'D’où elles viennent ({y})', sp: 'Par type de bétail : digestion et effluents ({y})', gas: 'Par gaz ({y})', chart: 'Depuis 1990', lA: 'Agriculture', lM: 'Machines et bâtiments (énergie)', hover: 'Survolez ou touchez le graphique pour lire chaque année.', mt: 'Mt CO₂ éq.', of: 'du total',
+      c: { enteric: 'Digestion du bétail (fermentation entérique)', manure: 'Gestion des effluents', soils: 'Sols agricoles (engrais, lisier, résidus)', rice: 'Riziculture', urea: 'Urée', liming: 'Chaulage', burning: 'Brûlage des résidus', otherC: 'Autres engrais carbonés' },
+      s: { beef: 'Bovins à viande et autres', dairy: 'Bovins laitiers', pigs: 'Porcins', sheep: 'Ovins', goats: 'Caprins', poultry: 'Volailles', other: 'Autres (équins, lapins…)' },
+      g: { CH4: 'Méthane (CH₄)', N2O: 'Protoxyde d’azote (N₂O)', CO2: 'Dioxyde de carbone (CO₂)' },
+      note: 'Chiffres de l’inventaire national en millions de tonnes d’équivalent CO₂ : le méthane et le protoxyde d’azote sont convertis en CO₂ selon leur pouvoir de réchauffement. « Agriculture » est le secteur agricole de l’inventaire (bétail, effluents, sols, riz, engrais) ; le gazole des tracteurs et le combustible des fermes et serres sont comptés à part, dans l’énergie, avec la sylviculture. Le total espagnol exclut l’utilisation des terres et les forêts. Les sommes par catégorie et par bétail sont de Dehesa Index.', src: 'Source :', srcN: 'MITECO, Inventaire national des émissions' },
+    it: { h: 'Emissioni di gas serra dell’agricoltura in Spagna', last: 'Agricoltura nel {y}', share: 'Quota del totale spagnolo', v90: 'Rispetto al 1990', v05: 'Rispetto al 2005', mach: 'Carburante ed energia di macchine ed edifici agricoli e forestali, a parte', cat: 'Da dove vengono ({y})', sp: 'Per tipo di bestiame: digestione e reflui ({y})', gas: 'Per gas ({y})', chart: 'Dal 1990', lA: 'Agricoltura', lM: 'Macchine ed edifici (energia)', hover: 'Passa il cursore o tocca il grafico per leggere ogni anno.', mt: 'Mt CO₂ eq.', of: 'del totale',
+      c: { enteric: 'Digestione del bestiame (fermentazione enterica)', manure: 'Gestione dei reflui', soils: 'Suoli agricoli (concimi, liquami, residui)', rice: 'Coltivazione del riso', urea: 'Urea', liming: 'Calcitazione', burning: 'Bruciatura dei residui', otherC: 'Altri fertilizzanti con carbonio' },
+      s: { beef: 'Bovini da carne e altri', dairy: 'Bovini da latte', pigs: 'Suini', sheep: 'Ovini', goats: 'Caprini', poultry: 'Avicoli', other: 'Altri (equini, conigli…)' },
+      g: { CH4: 'Metano (CH₄)', N2O: 'Protossido di azoto (N₂O)', CO2: 'Anidride carbonica (CO₂)' },
+      note: 'Dati dell’inventario nazionale in milioni di tonnellate di CO₂ equivalente: metano e protossido di azoto sono convertiti in CO₂ secondo il loro potere riscaldante. «Agricoltura» è il settore agricolo dell’inventario (bestiame, reflui, suoli, riso, concimi); il gasolio dei trattori e il combustibile di aziende e serre sono contati a parte, nell’energia, insieme alla silvicoltura. Il totale spagnolo esclude l’uso del suolo e le foreste. Le somme per categoria e per bestiame sono di Dehesa Index.', src: 'Fonte:', srcN: 'MITECO, Inventario nazionale delle emissioni' }
+  };
+  var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' };
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function mt(v, lg, d) { return (v / 1000).toLocaleString(LOC[lg], { minimumFractionDigits: d == null ? 1 : d, maximumFractionDigits: d == null ? 1 : d }); }
+  function pc(v, lg) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toLocaleString(LOC[lg], { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %'; }
+  function row(l, v) { return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(l) + '</span><span class="di-info-stat-value">' + v + '</span></div>'; }
+  function bars(obj, labels, i, lg, t) {
+    var ks = Object.keys(obj).filter(function (k) { return obj[k][i] > 0.5; }).sort(function (a, b) { return obj[b][i] - obj[a][i]; }), mx = ks.length ? obj[ks[0]][i] : 1, tot = 0;
+    ks.forEach(function (k) { tot += obj[k][i]; });
+    return '<div class="gh-bars">' + ks.map(function (k) { var v = obj[k][i]; return '<div class="gh-row"><span class="gh-l">' + esc(labels[k] || k) + '</span><span class="gh-b"><i style="width:' + (100 * v / mx).toFixed(1) + '%"></i></span><span class="gh-v"><b>' + mt(v, lg, v < 1000 ? 2 : 1) + '</b> <small>' + (100 * v / tot).toLocaleString(LOC[lg], { maximumFractionDigits: 0 }) + ' %</small></span></div>'; }).join('') + '</div>';
+  }
+  function chart(D, lg, t) {
+    var ys = D.years, A = D.agriculture, M = D.machinery, n = ys.length, W = 560, H = 200, L = 34, R = 8, Tp = 10, B = 22, hi = 0, i;
+    for (i = 0; i < n; i++) hi = Math.max(hi, A[i], M[i]); hi = Math.ceil(hi / 10000) * 10000;
+    var X = function (k) { return L + k * (W - L - R) / (n - 1); }, Y = function (v) { return Tp + (hi - v) / hi * (H - Tp - B); }, g = '', xt = '';
+    for (var v = 0; v <= hi; v += 10000) g += '<line class="wp-grid" x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v).toFixed(1) + '" y2="' + Y(v).toFixed(1) + '"/><text class="wp-tick" x="' + (L - 5) + '" y="' + (Y(v) + 3.5).toFixed(1) + '" text-anchor="end">' + v / 1000 + '</text>';
+    for (i = 0; i < n; i++) if (ys[i] % 5 === 0) xt += '<text class="wp-tick" x="' + X(i).toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle">' + ys[i] + '</text>';
+    function p(s) { return s.map(function (x, k) { return (k ? 'L' : 'M') + X(k).toFixed(1) + ' ' + Y(x).toFixed(1); }).join(''); }
+    return '<div class="di-info-card-title gb-sub">' + esc(t.chart) + '</div><div class="wp-chart gh-chart"><div class="wp-readout" aria-live="polite">' + esc(t.hover) + '</div><svg viewBox="0 0 ' + W + ' ' + H + '" class="wp-svg" role="img" aria-label="' + esc(t.chart) + '">' + g + xt +
+      '<path class="wp-line wp-line-w" d="' + p(A) + '"/><path class="wp-line wp-line-t" d="' + p(M) + '"/><line class="wp-cross" x1="0" x2="0" y1="' + Tp + '" y2="' + (H - B) + '" style="display:none"/></svg>' +
+      '<div class="wp-legend"><span><i class="wp-sw wp-sw-w"></i>' + esc(t.lA) + '</span><span><i class="wp-sw wp-sw-t"></i>' + esc(t.lM) + '</span><span class="wp-unit">' + esc(t.mt) + '</span></div></div>';
+  }
+  function bind(el, D, lg, t) {
+    var box = el.querySelector('.gh-chart'); if (!box) return;
+    var svg = box.querySelector('svg'), ro = box.querySelector('.wp-readout'), cr = box.querySelector('.wp-cross'), n = D.years.length;
+    function at(ev) {
+      var r = svg.getBoundingClientRect(), cx = ev.touches ? ev.touches[0].clientX : ev.clientX, vx = (cx - r.left) / r.width * 560, k = Math.max(0, Math.min(n - 1, Math.round((vx - 34) / (518) * (n - 1)))), px = 34 + k * 518 / (n - 1);
+      cr.setAttribute('x1', px); cr.setAttribute('x2', px); cr.style.display = '';
+      ro.innerHTML = '<b>' + D.years[k] + '</b> · ' + esc(t.lA) + ' <b>' + mt(D.agriculture[k], lg) + '</b> · ' + esc(t.lM) + ' ' + mt(D.machinery[k], lg) + ' ' + esc(t.mt);
+    }
+    svg.addEventListener('mousemove', at); svg.addEventListener('touchstart', at, { passive: true }); svg.addEventListener('touchmove', at, { passive: true });
+    svg.addEventListener('mouseleave', function () { cr.style.display = 'none'; ro.textContent = t.hover; });
+  }
+  var CACHE = null;
+  function load() { return CACHE || (CACHE = fetch('data/es-ghg-agri.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function mount(el, lg) {
+    if (!el) return Promise.resolve(false);
+    lg = T[lg] ? lg : 'es';
+    return load().then(function (D) {
+      if (!D || !D.years) return false;
+      var t = T[lg], i = D.years.length - 1, y = D.years[i], A = D.agriculture, i05 = D.years.indexOf(2005);
+      el.innerHTML = '<section class="di-card ps-rm wp-card" id="ps-ghg"><h2 class="ps-rm-h">' + esc(t.h) + '</h2><div class="di-info-stat-list" style="max-width:640px">' +
+        row(t.last.replace('{y}', y), '<b>' + mt(A[i], lg) + '</b> ' + esc(t.mt)) + row(t.share, (100 * A[i] / D.national[i]).toLocaleString(LOC[lg], { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' % ' + esc(t.of)) +
+        row(t.v90, pc((A[i] / A[0] - 1) * 100, lg)) + (i05 >= 0 ? row(t.v05, pc((A[i] / A[i05] - 1) * 100, lg)) : '') + row(t.mach, mt(D.machinery[i], lg) + ' ' + esc(t.mt)) + '</div>' +
+        '<div class="di-info-card-title gb-sub">' + esc(t.cat.replace('{y}', y)) + '</div>' + bars(D.byCategory, t.c, i, lg, t) +
+        '<div class="di-info-card-title gb-sub">' + esc(t.sp.replace('{y}', y)) + '</div>' + bars(D.bySpecies, t.s, i, lg, t) +
+        '<div class="di-info-card-title gb-sub">' + esc(t.gas.replace('{y}', y)) + '</div>' + bars(D.byGas, t.g, i, lg, t) + chart(D, lg, t) +
+        '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcN) + '</a> (CC BY 4.0)</p></section>';
+      bind(el, D, lg, t); return true;
+    });
+  }
+  global.DIEsGHG = { mount: mount };
+})(window);

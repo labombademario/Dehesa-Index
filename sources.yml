@@ -585,6 +585,35 @@ sources:
     continue: true
     data: [spain-reservoirs.json, spain-reservoirs-points.json]
     message: Datos embalses de Espana (MITECO)
+  - id: es-gasoleo-b
+    name: Update Spain farm diesel prices (MITECO, gasoleo B)
+    cron: ['20 11 * * *']
+    script: scripts/update-es-gasoleo-b.py
+    env: {BACKFILL_MIN: '25'}
+    timeout: 40
+    script_timeout: 35
+    continue: true
+    data: [es-gasoleo-b.json]
+    message: Precio del gasoleo agricola en Espana (MITECO)
+  - id: es-ghg-agri
+    name: Update Spain agricultural greenhouse gas emissions (MITECO inventory)
+    cron: ['35 7 3 * *']
+    script: scripts/update-es-ghg-agri.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [es-ghg-agri.json]
+    message: Emisiones de la agricultura espanola (MITECO)
+  - id: es-drought-ute
+    name: Update Spain drought and water scarcity by unit (MITECO monthly report)
+    cron: ['10 8 2,9,16,23 * *']
+    pre: ['sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils']
+    script: scripts/update-es-drought-ute.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [es-drought-ute.json]
+    message: Sequia y escasez en Espana por unidad territorial (MITECO)
   - id: eu-regions
     name: Update regional farm data (Eurostat NUTS 2)
     cron: ['40 6 * * 4']

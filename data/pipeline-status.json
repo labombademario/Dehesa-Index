@@ -1,28 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T12:48:00Z",
+ "generatedAt": "2026-10-12T13:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 128,
+  "ok": 127,
   "late": 1,
-  "error": 2,
+  "error": 3,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 3
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "746189ef",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/6e5613dd-f52b-4098-b63f-0fa199180eb1",
-   "completedAt": "2026-10-12T10:05:40Z"
+   "sha": "5402045d",
+   "conclusion": "failure",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5e3b30b3-b520-4603-9736-927be9eed5c5",
+   "completedAt": "2026-10-12T12:55:06Z"
   },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-12T09:35:35.011465+00:00",
-  "repoGeneratedAt": "2026-10-12T09:35:35.011465+00:00",
-  "checkedAt": "2026-10-12T12:48:00Z"
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-12T12:52:11.315632+00:00",
+  "checkedAt": "2026-10-12T13:34:00Z"
  },
  "pipelines": [
   {
@@ -926,6 +926,45 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-es-drought-ute.yml",
+   "name": "Update Spain drought and water scarcity by unit (MITECO monthly report)",
+   "crons": [
+    "10 8 2,9,16,23 * *"
+   ],
+   "nextRun": "2026-10-16T08:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 240.0
+  },
+  {
+   "workflow": "update-es-gasoleo-b.yml",
+   "name": "Update Spain farm diesel prices (MITECO, gasoleo B)",
+   "crons": [
+    "20 11 * * *"
+   ],
+   "nextRun": "2026-10-13T11:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-es-ghg-agri.yml",
+   "name": "Update Spain agricultural greenhouse gas emissions (MITECO inventory)",
+   "crons": [
+    "35 7 3 * *"
+   ],
+   "nextRun": "2026-11-03T07:35:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-eu-agrifood.yml",
    "name": "Dehesa Data — EU Agri-food Data Portal",
    "crons": [
@@ -1648,18 +1687,18 @@
    "nextRun": "2026-10-16T22:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-09T22:40:15Z",
-    "durationSec": 32,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38000459060"
+    "startedAt": "2026-10-12T13:10:14Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38253811941"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 5,
-    "failed": 4
+    "failed": 5
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 106.0
   },
   {
@@ -1768,13 +1807,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-12T10:00:45Z",
-    "durationSec": 145,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38233590094"
+    "startedAt": "2026-10-12T13:18:32Z",
+    "durationSec": 135,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38254776217"
    },
    "recent": {
-    "runs": 7,
-    "success": 6,
+    "runs": 8,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
@@ -1790,31 +1829,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-12T09:35:36Z"
+     "lastChange": "2026-10-12T12:52:12Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-12T09:35:36Z"
+     "lastChange": "2026-10-12T12:52:12Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-12T09:35:36Z"
+     "lastChange": "2026-10-12T12:52:12Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-12T09:35:36Z"
+     "lastChange": "2026-10-12T12:52:12Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-12T09:35:36Z"
+     "lastChange": "2026-10-12T12:52:12Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-12T09:32:24Z",
-    "durationSec": 196,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38230546116"
+    "startedAt": "2026-10-12T12:49:16Z",
+    "durationSec": 180,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38251448863"
    },
    "recent": {
     "runs": 10,
@@ -1932,11 +1971,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-12T09:33:15Z"
+     "lastChange": "2026-10-12T12:49:43Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-12T09:33:15Z"
+     "lastChange": "2026-10-12T12:49:43Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -1955,7 +1994,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1972,7 +2011,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/products"
@@ -1983,15 +2022,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/country-pending.json",
@@ -1999,18 +2038,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-12T09:33:49Z"
+     "lastChange": "2026-10-12T12:50:19Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2030,13 +2069,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-12T09:31:28Z",
-    "durationSec": 144,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38230444139"
+    "startedAt": "2026-10-12T12:47:14Z",
+    "durationSec": 191,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38251228939"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",

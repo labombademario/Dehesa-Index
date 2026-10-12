@@ -886,6 +886,24 @@
     "ar_provinces"
    ]
   ],
+  "es-gasoleo-b.json": [
+   "es-gasoleo-b",
+   [
+    "es_gasoleo_b"
+   ]
+  ],
+  "es-ghg-agri.json": [
+   "es-ghg-agri",
+   [
+    "es_ghg_agri"
+   ]
+  ],
+  "es-drought-ute.json": [
+   "es-drought-ute",
+   [
+    "es_drought_ute"
+   ]
+  ],
   "wood-prices-de.json": [
    "wood-prices-de",
    [

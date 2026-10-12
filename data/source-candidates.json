@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-12T12:50:03Z",
+ "generatedAt": "2026-10-12T13:37:22Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 124,
+  "total": 127,
   "byStatus": {
-   "ACTIVE": 94,
+   "ACTIVE": 97,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -4025,6 +4025,45 @@
    ]
   },
   {
+   "sourceId": "miteco_carburantes",
+   "registryId": "miteco_carburantes",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), precios de carburantes (Geoportal de Gasolineras)",
+   "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "miteco_embalses",
    "registryId": "miteco_embalses",
    "country": "ES",
@@ -4046,6 +4085,84 @@
    "derivatives": "yes",
    "attribution": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), Boletín Hidrológico",
    "lastChecked": "2026-10-11",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "miteco_inventario_gei",
+   "registryId": "miteco_inventario_gei",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: MITECO, Inventario Nacional de Emisiones de gases de efecto invernadero",
+   "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "miteco_sequia",
+   "registryId": "miteco_sequia",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "ES-LEY-37-2007",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: MITECO, Observatorio Nacional de la Sequía, informe de la situación de sequía y escasez",
+   "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
