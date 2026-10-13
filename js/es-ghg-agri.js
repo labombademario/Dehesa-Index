@@ -69,7 +69,7 @@
   function mount(el, lg, cc, name) {
     if (!el) return Promise.resolve(false);
     lg = T[lg] ? lg : 'es'; cc = (cc || 'ES').toUpperCase();
-    var NM = { ES: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, FR: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' }, DE: { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' }, IT: { es: 'Italia', en: 'Italy', fr: 'Italie', it: 'Italia' }, PL: { es: 'Polonia', en: 'Poland', fr: 'Pologne', it: 'Polonia' }, BE: { es: 'Bélgica', en: 'Belgium', fr: 'Belgique', it: 'Belgio' }, AT: { es: 'Austria', en: 'Austria', fr: 'Autriche', it: 'Austria' }, HR: { es: 'Croacia', en: 'Croatia', fr: 'Croatie', it: 'Croazia' }, NL: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' }, IE: { es: 'Irlanda', en: 'Ireland', fr: 'Irlande', it: 'Irlanda' } };
+    var NM = { ES: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, FR: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' }, DE: { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' }, IT: { es: 'Italia', en: 'Italy', fr: 'Italie', it: 'Italia' }, PL: { es: 'Polonia', en: 'Poland', fr: 'Pologne', it: 'Polonia' }, BE: { es: 'Bélgica', en: 'Belgium', fr: 'Belgique', it: 'Belgio' }, AT: { es: 'Austria', en: 'Austria', fr: 'Autriche', it: 'Austria' }, HR: { es: 'Croacia', en: 'Croatia', fr: 'Croatie', it: 'Croazia' }, NL: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' }, IE: { es: 'Irlanda', en: 'Ireland', fr: 'Irlande', it: 'Irlanda' }, PT: { es: 'Portugal', en: 'Portugal', fr: 'Portugal', it: 'Portogallo' } };
     name = (NM[cc] && NM[cc][lg]) || name || cc;
     return load(cc).then(function (D) {
       if (!D || !D.years) return false;

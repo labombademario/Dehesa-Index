@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Paquete por país para la app móvil -> data/app/v1/env/<CC>.json y data/app/v1/env/index.json (12-oct-2026).
-Gasóleo agrícola, emisiones agrarias, sequía y nitratos de los 10 países que tienen el «paquete equivalente al MITECO» en la web
-(ES FR DE IT PL BE AT HR IE NL). No descarga nada: lee los ficheros que ya publican sus pipelines y los pasa a un formato común
+Gasóleo agrícola, emisiones agrarias, sequía y nitratos de los 11 países que tienen el «paquete equivalente al MITECO» en la web
+(ES FR DE IT PL BE AT HR IE NL PT). No descarga nada: lee los ficheros que ya publican sus pipelines y los pasa a un formato común
 de bloques que la app pinta con una sola pantalla:
   block = {id, title{es,en,fr,it}, asOf, stats[{label, value, unit, dec, sub?}], charts[{label, unit, series[{label, points[[fecha, v]]}]}],
            bars[{title, unit, dec, items[{label, value, sub?}]}], note, source{name, url}, link?}
@@ -164,6 +164,15 @@ def diesel_NL():
         [wob_chart(d), chart(L('Precio de compra del gasóleo por las explotaciones (anual)', 'Price farms pay for diesel (annual)', 'Prix du gazole payé par les exploitations (annuel)', 'Prezzo del gasolio pagato dalle aziende (annuale)'), EUR_L, [(L('Explotaciones', 'Farms', 'Exploitations', 'Aziende'), [[str(q[0]), q[1]] for q in d['farm']])])], [],
         L('No hay precio abierto del gasóleo rojo agrícola en los Países Bajos: se muestran el de surtidor y el precio anual de compra de las explotaciones (Eurostat y CBS).', 'There is no open price for agricultural red diesel in the Netherlands: pump diesel and the annual price farms pay (Eurostat, CBS) are shown.', 'Pas de prix ouvert du gazole rouge aux Pays-Bas : prix à la pompe et prix annuel payé par les exploitations.', 'Nessun prezzo aperto del gasolio rosso nei Paesi Bassi: prezzo alla pompa e prezzo annuo pagato dalle aziende.'), src(d))
 
+def diesel_PT():
+    d = J('pt-diesel')
+    if not d: return None
+    f = d['farm'][-1]
+    return block('diesel', T_DIESEL, d.get('asOf'), wob_stats(d) + [
+        stat(L('Precio que pagan las explotaciones, {d} (sin IVA deducible)', 'Price farms pay, {d} (excl. deductible VAT)', 'Prix payé par les exploitations, {d} (hors TVA)', 'Prezzo pagato dalle aziende, {d} (senza IVA)'), f[1], EUR_L, 3, sub={'d': str(f[0])})],
+        [wob_chart(d), chart(L('Precio de compra del gasóleo por las explotaciones (anual)', 'Price farms pay for diesel (annual)', 'Prix du gazole payé par les exploitations (annuel)', 'Prezzo del gasolio pagato dalle aziende (annuale)'), EUR_L, [(L('Explotaciones', 'Farms', 'Exploitations', 'Aziende'), [[str(q[0]), q[1]] for q in d['farm']])])], [],
+        L('El precio del gasóleo agrícola portugués (DGEG) no se puede reutilizar: sus términos prohíben el uso comercial. Se muestran el de surtidor y el precio anual de compra de las explotaciones (Eurostat).', 'The price of Portuguese farm diesel (DGEG) cannot be reused: its terms forbid commercial use. Pump diesel and the annual price farms pay (Eurostat) are shown.', 'Le prix du gazole agricole portugais (DGEG) ne peut pas être réutilisé : ses conditions interdisent l’usage commercial. Prix à la pompe et prix annuel payé par les exploitations (Eurostat).', 'Il prezzo del gasolio agricolo portoghese (DGEG) non è riutilizzabile: le sue condizioni vietano l’uso commerciale. Prezzo alla pompa e prezzo annuo pagato dalle aziende (Eurostat).'), src(d))
+
 # ---------------- emisiones ----------------
 CAT = {'enteric': L('Digestión del ganado', 'Livestock digestion', 'Digestion du bétail', 'Digestione del bestiame'), 'manure': L('Estiércol', 'Manure', 'Effluents', 'Letame'), 'soils': L('Suelos agrícolas (abonos)', 'Farm soils (fertilisers)', 'Sols agricoles (engrais)', 'Suoli agricoli (concimi)'),
        'rice': L('Arroz', 'Rice', 'Riz', 'Riso'), 'liming': L('Encalado', 'Liming', 'Chaulage', 'Calcitazione'), 'urea': L('Urea', 'Urea', 'Urée', 'Urea'), 'burning': L('Quema de rastrojos', 'Residue burning', 'Brûlage des résidus', 'Bruciatura dei residui'), 'otherC': L('Otros', 'Other', 'Autres', 'Altro')}
@@ -306,6 +315,15 @@ def nit_NL():
         [chart(L('Nitrato en el agua bajo las explotaciones (media)', 'Nitrate in water below farms (mean)', 'Nitrate sous les exploitations (moyenne)', 'Nitrato sotto le aziende (media)'), 'mg/l', [(nm[k], [[str(q[0]), q[1]] for q in Z[k]]) for k in ('zand', 'klei', 'veen') if k in Z])],
         [bars(L('Por tipo de suelo, último año', 'By soil type, latest year', 'Par type de sol, dernière année', 'Per tipo di suolo, ultimo anno'), 'mg/l', 1, [(nm[k], Z[k][-1][1], None) for k in Z])],
         L('Red LMM del RIVM: muestra de explotaciones agrarias. 50 mg/l es el límite de la Directiva de Nitratos.', 'RIVM LMM network: a sample of farms. 50 mg/l is the Nitrates Directive limit.', 'Réseau LMM du RIVM : échantillon d’exploitations. 50 mg/l est la limite de la directive.', 'Rete LMM del RIVM: campione di aziende. 50 mg/l è il limite della direttiva.'), src(d, 'RIVM, LMM'))
+def nit_PT():
+    d = J('pt-nitrates')
+    if not d: return None
+    G = d['groundwater']; B = d['nBalance']; g = G[-1]; b = B[-1]
+    return block('nitrates', T_NIT, str(max(g[0], b[0])), [stat(L('Nitrato en aguas subterráneas, media nacional {d}', 'Nitrate in groundwater, national mean {d}', 'Nitrate dans les eaux souterraines, moyenne nationale {d}', 'Nitrato nelle acque sotterranee, media nazionale {d}'), g[1], 'mg/l', 1, sub={'d': str(g[0])}),
+        stat(L('Balance de nitrógeno por hectárea agraria, {d}', 'Nitrogen balance per hectare of farmland, {d}', 'Bilan d’azote par hectare agricole, {d}', 'Bilancio dell’azoto per ettaro agricolo, {d}'), b[1], 'kg N/ha', 0, sub={'d': str(b[0])})],
+        [chart(L('Nitrato en aguas subterráneas (media nacional)', 'Nitrate in groundwater (national mean)', 'Nitrate dans les eaux souterraines (moyenne nationale)', 'Nitrato nelle acque sotterranee (media nazionale)'), 'mg/l', [(same('mg/l'), [[str(q[0]), q[1]] for q in G])]),
+         chart(L('Balance bruto de nitrógeno', 'Gross nitrogen balance', 'Bilan brut d’azote', 'Bilancio lordo dell’azoto'), 'kg N/ha', [(same('kg N/ha'), [[str(q[0]), q[1]] for q in B])])], [],
+        L('Solo medias nacionales de Eurostat: Portugal no tiene datos de nitratos por región con licencia abierta. 50 mg/l es el límite de la Directiva de Nitratos.', 'National means from Eurostat only: Portugal has no regional nitrate data under an open licence. 50 mg/l is the Nitrates Directive limit.', 'Moyennes nationales d’Eurostat seulement : le Portugal n’a pas de données régionales sur les nitrates sous licence ouverte. 50 mg/l est la limite de la directive.', 'Solo medie nazionali di Eurostat: il Portogallo non ha dati regionali sui nitrati con licenza aperta. 50 mg/l è il limite della direttiva.'), src(d, 'Eurostat'))
 def missing(id_, title):
     return {'id': id_, 'title': title, 'missing': True, 'note': L('No hay datos abiertos de este tema para este país en Dehesa Index.', 'Dehesa Index has no open data on this topic for this country.', 'Dehesa Index n’a pas de données ouvertes sur ce sujet pour ce pays.', 'Dehesa Index non ha dati aperti su questo tema per questo paese.')}
 
@@ -314,6 +332,7 @@ PLAN = {
     'IT': [diesel_IT, lambda: ghg('IT'), drought_IT, None], 'PL': [diesel_PL, lambda: ghg('PL'), drought_PL, None], 'BE': [diesel_BE, lambda: ghg('BE'), drought_BE, nit_BE],
     'AT': [diesel_AT, lambda: ghg('AT'), drought_AT, None], 'HR': [diesel_HR, lambda: ghg('HR'), lambda: edo('HR'), None], 'IE': [diesel_IE, lambda: ghg('IE'), lambda: edo('IE'), nit_IE],
     'NL': [diesel_NL, lambda: ghg('NL'), lambda: edo('NL'), nit_NL],
+    'PT': [diesel_PT, lambda: ghg('PT'), lambda: edo('PT'), nit_PT],
 }
 TITLES = [('diesel', T_DIESEL), ('ghg', T_GHG), ('drought', T_DRY), ('nitrates', T_NIT)]
 def main():

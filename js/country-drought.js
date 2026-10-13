@@ -96,6 +96,13 @@
         var nmod = function () { if (global.DINlDrought) ngo(); else njs('js/nl-drought.js?v=0', ngo); };
         if (global.DIFrDeptMap) nmod(); else njs('js/fr-dept-map.js?v=20261015', nmod);
       }
+      if (cc === 'PT') {   // sequia por region NUTS 3 del continente (EDO calculado para 23 regiones, js/pt-drought.js), a peticion
+        var tbox = document.createElement('div'); tbox.style.marginTop = '14px'; el.appendChild(tbox);
+        var tgo = function () { if (global.DIPtDrought) global.DIPtDrought.mount(tbox, lg.slice(0, 2)); };
+        var tjs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+        var tmod = function () { if (global.DIPtDrought) tgo(); else tjs('js/pt-drought.js?v=0', tgo); };
+        if (global.DIFrDeptMap) tmod(); else tjs('js/fr-dept-map.js?v=20261015', tmod);
+      }
       if (cc === 'BE') {   // prohibiciones de captar agua y SPI-3 en Flandes (VMM, js/be-drought.js), a peticion
         var bbox = document.createElement('div'); bbox.style.marginTop = '14px'; el.appendChild(bbox);
         var bgo = function () { if (global.DIBeDrought) global.DIBeDrought.mount(bbox, lg.slice(0, 2)); };

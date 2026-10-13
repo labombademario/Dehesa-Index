@@ -4795,6 +4795,32 @@
    ],
    "notes": "Indicador Combinado de Sequía del EDO por las 40 regiones COROP (NUTS 3 de GISCO) y déficit de precipitación calculado con los datos diarios del KNMI. scripts/update-nl-drought.py."
   },
+  "data/pt-diesel.json": {
+   "sources": [
+    "eu_oil_bulletin",
+    "eurostat"
+   ],
+   "notes": "Gasóleo semanal de Portugal (Weekly Oil Bulletin) y precio de compra agrario del gasóleo (Eurostat apri_ap_ina). El precio del gasóleo colorido e marcado de la DGEG no se usa: sus términos prohíben el uso comercial. scripts/update-pt-diesel.py."
+  },
+  "data/pt-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura portuguesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/pt-nitrates.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Nitrato en aguas subterráneas (Eurostat sdg_06_40) y balance de nitrógeno (aei_pr_gnb), medias nacionales. Los datos por estación de la APA no se usan: sin licencia declarada. scripts/update-pt-nitrates.py."
+  },
+  "data/pt-drought.json": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "Indicador Combinado de Sequía del EDO calculado para las 23 regiones NUTS 3 de Portugal continental (GISCO). scripts/update-pt-drought.py."
+  },
   "data/fv-products.json": {
    "sources": [
     "eu_agrifood",

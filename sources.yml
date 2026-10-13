@@ -906,6 +906,45 @@ sources:
     continue: true
     data: [nl-drought.json]
     message: Sequia por region y deficit de precipitacion en Paises Bajos (EDO, KNMI)
+  - id: pt-diesel
+    name: Update Portugal diesel (EU Weekly Oil Bulletin) and farm diesel purchase price (Eurostat)
+    cron: ['40 7 * * 2,5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-pt-diesel.py
+    timeout: 30
+    script_timeout: 25
+    continue: true
+    data: [pt-diesel.json]
+    message: Gasoleo en Portugal (Boletin Petrolero UE, precio de compra agrario de Eurostat)
+  - id: pt-ghg-agri
+    name: Update Portugal agricultural greenhouse gas emissions (Eurostat env_air_gge)
+    cron: ['50 8 4 * *']
+    script: scripts/update-eu-ghg-agri.py
+    args: PT pt
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [pt-ghg-agri.json]
+    message: Emisiones de la agricultura portuguesa (Eurostat)
+  - id: pt-nitrates
+    name: Update Portugal nitrate in groundwater and nitrogen balance (Eurostat)
+    cron: ['5 9 7 * *']
+    script: scripts/update-pt-nitrates.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [pt-nitrates.json]
+    message: Nitratos en aguas subterraneas y balance de nitrogeno en Portugal (Eurostat)
+  - id: pt-drought
+    name: Update Portugal drought by NUTS 3 region (EDO Combined Drought Indicator)
+    cron: ['20 8 * * *']
+    pre: ['python3 -m pip install --quiet numpy netCDF4 shapely']
+    script: scripts/update-pt-drought.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    data: [pt-drought.json]
+    message: Sequia por region en Portugal (EDO)
   - id: es-drought-ute
     name: Update Spain drought and water scarcity by unit (MITECO monthly report)
     cron: ['10 8 2,9,16,23 * *']
