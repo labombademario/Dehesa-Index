@@ -58,7 +58,8 @@ def active_entries():
             a = cat[s.get('sourceId')]; a['n'] += 1; a['freq'].add(s.get('freq'))
             m = CM.GROUP_METRIC.get(s['group'])
             if m and m != 'other': a['metrics'].add(m)
-            for t in s.get('tags') or []: a['tags'].add(t)
+            for t in s.get('tags') or []:
+                if t in CM.KIND_OF: a['tags'].add(t)   # etiquetas fuera del vocabulario de cobertura (p. ej. tomato, solo para el buscador del catalogo) no cuentan aqui
     out = []
     for k, r in S.items():
         if not r.get('used'): continue

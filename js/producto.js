@@ -496,11 +496,11 @@
   }
   function get(file) { return fetch(file).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   window.DehesaShared.init('informacion');
-  var TERM = false, LEGACY_LOADED = false, PT = window.DIProductTerminal;
+  var TERM = false, VEG = false, LEGACY_LOADED = false, PT = window.DIProductTerminal;
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () {
     if (prevCb) prevCb.apply(this, arguments);
-    if (TERM) { PT.relang(); } else render();
+    if (VEG) { mountVeg(); } else if (TERM) { PT.relang(); } else render();
   };
   var q = new URLSearchParams(window.location.search);
   var wanted = q.get('p') || 'trigo';
@@ -513,6 +513,14 @@
       D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9]; D.ams = r[10];
       LEGACY_LOADED = true;
     });
+  }
+  // Hortalizas con ficha propia (js/producto-hortaliza.js, a petición): no pasan por la terminal ni por la ficha clásica
+  var VEGS = { tomate: 1 };
+  function mountVeg() { return window.DIVeg.mount(document.getElementById('pr-body'), wanted, window.DehesaShared.getLang()); }
+  if (VEGS[wanted]) {
+    VEG = true;
+    var vs = document.createElement('script'); vs.src = 'js/producto-hortaliza.js?v=0'; vs.onload = mountVeg; document.head.appendChild(vs);
+    return;
   }
   PT.ready().then(function () { return true; }, function () { return false; }).then(function (ok) {
     if (ok && PT.has(wanted)) {
