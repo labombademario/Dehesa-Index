@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T06:36:54Z",
+ "generatedAt": "2026-10-13T09:31:27Z",
  "summary": {
   "files": 56,
   "errors": 0,
@@ -174,8 +174,8 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 255,
-    "points": 9284,
+    "series": 254,
+    "points": 9260,
     "lines": 0
    },
    "generatedAt": "2026-10-10T13:23:54Z",
@@ -230,7 +230,7 @@
    "warnings": [],
    "stats": {
     "series": 284,
-    "points": 11966,
+    "points": 11936,
     "lines": 0
    },
    "generatedAt": "2026-10-10T13:09:41Z",
@@ -296,8 +296,8 @@
     "BE/be-eus-poultry-imp-a5130p: anomalia registrada que ya no se detecta (cerrarla en data/data-anomalies.json)"
    ],
    "stats": {
-    "series": 823,
-    "points": 39656,
+    "series": 821,
+    "points": 39544,
     "lines": 0
    },
    "generatedAt": "2026-10-09T17:52:34Z",
@@ -426,7 +426,7 @@
    ],
    "stats": {
     "series": 899,
-    "points": 33544,
+    "points": 33490,
     "lines": 0
    },
    "generatedAt": "2026-10-09T17:56:35Z",
@@ -468,7 +468,7 @@
    ],
    "stats": {
     "series": 2891,
-    "points": 186197,
+    "points": 186196,
     "lines": 0
    },
    "generatedAt": "2026-10-11T01:47:25Z",
@@ -510,7 +510,7 @@
    ],
    "stats": {
     "series": 2223,
-    "points": 188327,
+    "points": 188285,
     "lines": 0
    },
    "generatedAt": "2026-10-11T01:47:25Z",
@@ -785,7 +785,7 @@
    ],
    "stats": {
     "series": 93,
-    "points": 5079,
+    "points": 5068,
     "lines": 0
    },
    "generatedAt": "2026-10-11T02:44:32Z",
@@ -1150,7 +1150,7 @@
     "points": 1196,
     "lines": 0
    },
-   "generatedAt": "2026-10-12T07:08:59Z",
+   "generatedAt": "2026-10-13T07:08:12Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1166,7 +1166,7 @@
     "points": 0,
     "lines": 2186
    },
-   "generatedAt": "2026-10-09T08:34:54Z",
+   "generatedAt": "2026-10-13T08:38:27Z",
    "nWarnings": 0,
    "nErrors": 0
   },

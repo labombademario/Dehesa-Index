@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T09:11:00Z",
+ "generatedAt": "2026-10-13T09:31:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 160,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "0b884106",
+   "sha": "5c916517",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/8778cbc7-7c13-4fb5-ad00-47b02bbab719",
-   "completedAt": "2026-10-13T09:04:00Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e6cc2ba0-9c5a-477c-a75e-7386c415a918",
+   "completedAt": "2026-10-13T09:16:50Z"
   },
-  "lagHours": null,
-  "prodGeneratedAt": null,
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-13T06:40:07.969130+00:00",
   "repoGeneratedAt": "2026-10-13T06:40:07.969130+00:00",
-  "checkedAt": "2026-10-13T09:11:00Z"
+  "checkedAt": "2026-10-13T09:31:00Z"
  },
  "pipelines": [
   {
@@ -341,7 +341,7 @@
    "crons": [
     "20 9 * * 1-5"
    ],
-   "nextRun": "2026-10-13T09:20:00Z",
+   "nextRun": "2026-10-14T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -356,7 +356,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-be-drought.yml",
@@ -1253,7 +1253,7 @@
    "crons": [
     "20 9 * * 2,5"
    ],
-   "nextRun": "2026-10-13T09:20:00Z",
+   "nextRun": "2026-10-16T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2407,7 +2407,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-13T09:17:00Z",
+   "nextRun": "2026-10-13T12:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -2438,8 +2438,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38357678521"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -2645,7 +2645,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2668,7 +2668,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2685,7 +2685,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/products"
@@ -2696,15 +2696,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/country-pending.json",
@@ -2712,18 +2712,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -2731,7 +2731,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-13T09:02:49Z"
+     "lastChange": "2026-10-13T09:15:50Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2756,8 +2756,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38357619108"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -3413,7 +3413,7 @@
    "crons": [
     "20 9 * * 2,5"
    ],
-   "nextRun": "2026-10-13T09:20:00Z",
+   "nextRun": "2026-10-16T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
