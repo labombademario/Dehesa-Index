@@ -85,7 +85,7 @@ try:
 except ImportError:
     print("aviso: pandas/odfpy no instalados, se omiten las pruebas de Defra")
 # update-austria.py: records() propaga la marca de Eurostat y slaughter() no publica 'no aplicable'/'confidencial' como 0
-src = (ROOT / "scripts/update-austria.py").read_text(); assert src.rstrip().endswith("\nmain()"); ns = {}; exec(src.rstrip()[:-len("main()")], ns)
+src = (ROOT / "scripts/update-austria.py").read_text(); assert src.rstrip().endswith("\nmain()"); ns = {"__file__": str(ROOT / "scripts/update-austria.py")}; exec(src.rstrip()[:-len("main()")], ns)
 j = {"id": ["meat", "unit", "time"], "size": [1, 1, 4], "dimension": {"meat": {"category": {"index": {"B4110": 0}, "label": {"B4110": "Lamb"}}}, "unit": {"category": {"index": {"THS_HD": 0}}}, "time": {"category": {"index": {"2006": 0, "2007": 1, "2008": 2, "2009": 3}}}}, "value": {"0": 0, "1": 0, "2": 243.3, "3": 231.1}, "status": {"0": "z", "1": "c"}}
 recs, _ = ns["records"](j)
 T("records() propaga la marca de calidad", [r["_s"] for r, v in recs] == ["z", "c", None, None])

@@ -2115,7 +2115,8 @@ html[data-theme="dark"] .ute-card{--ute-n:#6CC08E;--ute-p:#E5C65A;--ute-a:#F0A35
 .ute-bar .ute-normal{background:var(--ute-n)}.ute-bar .ute-prealert{background:var(--ute-p)}.ute-bar .ute-alert{background:var(--ute-a)}.ute-bar .ute-emergency{background:var(--ute-e)}
 .ute-leg{font-size:12.5px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
 .ute-chip{display:inline-block;font-size:11.5px;line-height:1.5;padding:0 7px;border-radius:9px;border:1px solid currentColor;white-space:nowrap}
-.ute-chip.ute-normal{color:var(--ute-n)}.ute-chip.ute-prealert{color:var(--ute-p)}.ute-chip.ute-alert{color:var(--ute-a)}.ute-chip.ute-emergency{color:var(--ute-e)}
+.ute-chip.ute-normal{color:#276A43}.ute-chip.ute-prealert{color:#6F5600}.ute-chip.ute-alert{color:#9A4700}.ute-chip.ute-emergency{color:var(--ute-e)}
+html[data-theme="dark"] .ute-chip.ute-normal{color:var(--ute-n)}html[data-theme="dark"] .ute-chip.ute-prealert{color:var(--ute-p)}html[data-theme="dark"] .ute-chip.ute-alert{color:var(--ute-a)}
 .ute-sub>td{padding-top:0;border-top:0}
 .ute-sub summary{cursor:pointer;font-size:12.5px;color:var(--text-muted)}
 .ute-in{margin-top:6px;font-size:13px}
