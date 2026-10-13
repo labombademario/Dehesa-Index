@@ -16,7 +16,7 @@
   function html(M, o) {
     var vals = [], k; for (k in o.values) if (o.values.hasOwnProperty(k) && o.values[k] != null) vals.push(o.values[k]);
     var cuts = o.cuts || quantiles(vals), names = {};
-    var paths = M.states.map(function (s) { names[s.id] = s.name; var v = o.values[s.id]; return '<path class="gb-prov ' + cls(v, cuts) + '" data-id="' + s.id + '" tabindex="0" aria-label="' + esc(s.name + ': ' + (v == null ? o.none : o.fmt(v))) + '" d="' + s.d + '"/>'; }).join('');
+    var paths = M.states.map(function (s) { names[s.id] = s.name; var v = o.values[s.id]; return '<path role="img" class="gb-prov ' + cls(v, cuts) + '" data-id="' + s.id + '" tabindex="0" aria-label="' + esc(s.name + ': ' + (v == null ? o.none : o.fmt(v))) + '" d="' + s.d + '"/>'; }).join('');
     var lo = vals.length ? Math.min.apply(null, vals) : 0, hi = vals.length ? Math.max.apply(null, vals) : 0;
     if (o.cuts) { lo = Math.min(lo, 0); hi = Math.max(hi, cuts[cuts.length - 1]); }   // tramos fijos: el primero empieza en 0
     var leg = '<div class="wp-legend gb-leg">' + [0, 1, 2, 3, 4].map(function (i) { var a = i ? cuts[i - 1] : lo, b = i < 4 ? cuts[i] : hi; return '<span><i class="gb-key gb-c' + i + '"></i>' + esc(o.labels ? o.labels[i] : o.fmt(a, true) + '–' + o.fmt(b, true)) + '</span>'; }).join('') + '<span><i class="gb-key gb-cx"></i>' + esc(o.none) + '</span></div>';
