@@ -85,7 +85,9 @@ def main(day_html=None, m12_html=None):
     fr['series'] = [s for s in fr['series'] if s['id'] not in ids] + out
     d['generatedAt'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     FILE.write_text(json.dumps(d, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
-    for s in out: print(s['id'], s['latestPeriod'], s['latest'], len(s['points']))
+    LOG = [' '.join(str(x) for x in (s['id'], s['latestPeriod'], s['latest'], len(s['points']))) for s in out]
+    print('\n'.join(LOG))
+    (ROOT / 'data' / 'france-rnm-potato-log.txt').write_text('\n'.join(LOG) + '\n', encoding='utf-8')
 if __name__ == '__main__':
     if len(sys.argv) == 3: main(Path(sys.argv[1]).read_text(encoding='utf-8'), Path(sys.argv[2]).read_text(encoding='utf-8'))   # prueba con HTML guardado
     else: main()
