@@ -38,7 +38,10 @@
     var k; for (k in S) if (S.hasOwnProperty(k) && (S[k].aliases || []).indexOf(id) >= 0) return S[k];
     return null;
   }
-  function shortName(e) { return e.short || String(e.name || '').split(' (')[0]; }
+  // Los nombres cortos del registro están en español: «MAPA (España)», «Comisión Europea · Agri-food»… Se traducen las palabras genéricas.
+  var SHW = { 'España': ['Spain', 'Espagne', 'Spagna'], 'Alemania': ['Germany', 'Allemagne', 'Germania'], 'Francia': ['France', 'France', 'Francia'], 'Reino Unido': ['UK', 'Royaume-Uni', 'Regno Unito'], 'Comisión Europea': ['European Commission', 'Commission européenne', 'Commissione europea'], 'Banco Mundial': ['World Bank', 'Banque mondiale', 'Banca Mondiale'], 'exportaciones': ['exports', 'exportations', 'esportazioni'] };
+  function trShort(n) { var i = { en: 0, fr: 1, it: 2 }[lang()]; if (i == null) return n; for (var w in SHW) if (SHW.hasOwnProperty(w)) n = n.split(w).join(SHW[w][i]); return n; }
+  function shortName(e) { return trShort(e.short || String(e.name || '').split(' (')[0]); }
   function load(url) {
     if (P) return P;
     if (REG) { P = Promise.resolve(REG); return P; }

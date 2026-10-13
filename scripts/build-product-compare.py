@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / 'data'
 sys.path.insert(0, str(ROOT / 'scripts'))
 import freshness as FR
+import lib_markets as LM
 NOW = FR.today_ord()
 FROM = '2008-01'
 META = json.loads((D / 'product-metadata.json').read_text())  # productos y series UE configuradas: data/product-metadata.json (no en el codigo)
@@ -23,6 +24,16 @@ def monthly(pairs):
     for ym, v in pairs:
         if ym >= FROM and v is not None: acc[ym].append(v)
     return [[k, round(sum(v) / len(v), 3)] for k, v in sorted(acc.items())]
+def despike(pts):
+    """Quita picos aislados (un mes que se aleja más de un 35 % de dos vecinos que coinciden entre sí: p. ej. leche de Croacia 7,41 €/100 kg
+    entre 49 y 52): son errores de carga del país, no precios. Misma regla que scripts/build-app-eu-countries.py."""
+    out = []
+    for i, p in enumerate(pts):
+        if 0 < i < len(pts) - 1:
+            a, b, c = pts[i - 1][1], p[1], pts[i + 1][1]
+            if a and c and abs(a / c - 1) < 0.15 and abs(b / ((a + c) / 2) - 1) > 0.35: continue
+        out.append(p)
+    return out
 def main():
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'), 'products': {}}
     latest = json.loads((D / 'latest.json').read_text())['observations']
@@ -83,10 +94,16 @@ def main():
             pts = monthly(raw)
             if len(pts) < 6: continue
             same = o['frequency'] == 'monthly'
-            series.append({'c': o['region'].upper(), 'iid': o['id'], 'cur': o['currency'], 'unit': '%s/%s' % (o['currency'], un), 'kg': kg, 'freq': o['frequency'], 'src': {'us': 'USDA NASS', 'ca': 'Statistics Canada', 'uk': 'Defra'}[o['region']], 'sourceId': o['sourceId'],
+            # Canadá: StatCan publica por provincia; la serie lleva su provincia (Saskatchewan, Ontario…) para no rotularla como todo Canadá
+            prov = (LM.market(o) or [''])[0].split(' · ')[0] if o['region'] == 'ca' else ''
+            series.append({**({'m': prov} if prov and prov not in ('Canadá',) else {}), 'c': o['region'].upper(), 'iid': o['id'], 'cur': o['currency'], 'unit': '%s/%s' % (o['currency'], un), 'kg': kg, 'freq': o['frequency'], 'src': {'us': 'USDA NASS', 'ca': 'Statistics Canada', 'uk': 'Defra'}[o['region']], 'sourceId': o['sourceId'],
                            'latest': [o['observationDate'], o['value']], 'points': pts, 'comp': o.get('comparability', 'directional'),
                            'aggregation': {'points': 'monthly_value' if same else 'monthly_mean', 'of': o['frequency'], 'lastMonthObs': 1 if same else None, 'latest': 'last_quote'},
                            'fs': FR.evaluate(o['observationDate'], o['frequency'], o['sourceId'], NOW)['state']})
+        for s_ in series:
+            s_['points'] = despike(s_['points'])
+            for a in s_.get('alts') or []:
+                if a.get('points'): a['points'] = despike(a['points'])
         doc['products'][pid] = {'label': cfg['label'], 'per': cfg['per'], 'series': sorted(series, key=lambda s: s['c'])}
     path = D / 'product-compare.json'
     new = json.dumps(doc['products'], ensure_ascii=False, separators=(',', ':'))

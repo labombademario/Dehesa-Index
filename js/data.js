@@ -146,68 +146,68 @@
       cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       ganado: { label: 'Ganado', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
-      porcino: { label: 'Porcino', sources: [{ name: 'USDA NASS (cerdo)', url: SRC_URL.nass }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Porcino', sources: [{ name: 'USDA NASS (cerdo)', url: SRC_URL.nass }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Ovino', sources: [{ name: 'USDA AMS (cordero)', url: SRC_URL.usdaLamb }, { name: 'Comisión Europea (ovino)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Avicultura', sources: [{ name: 'USDA NASS (huevo)', url: SRC_URL.nass }, { name: 'USDA NASS (aves)', url: SRC_URL.nass }, { name: 'Comisión Europea (pollo)', url: SRC_URL.ecPoultry }, { name: 'Comisión Europea (huevo)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Pienso', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'índices regionales UE', url: SRC_URL.ecPrices }, { name: 'Comisión Europea (oleaginosas)', url: SRC_URL.ecPrices }] },
-      fertilizantes: { label: 'Fertilizantes', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'referencia internacional (Banco Mundial)', url: SRC_URL.worldBank }] },
+      fertilizantes: { label: 'Fertilizantes', sources: [{ name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'referencia internacional (Banco Mundial)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Azúcar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Comisión Europea', url: SRC_URL.ecSugar }] },
       aceite: { label: 'Aceite de oliva', sources: [{ name: 'Comisión Europea', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Frutas y hortalizas', sources: [{ name: 'Comisión Europea', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energía', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Seguro agrario', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
-      vino: { label: 'Vino a granel', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      vino: { label: 'Vino a granel', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Madera', sources: [{ name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }] }
     },
     en: {
       cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       ganado: { label: 'Livestock', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
-      porcino: { label: 'Pork', sources: [{ name: 'USDA NASS (pork)', url: SRC_URL.nass }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Pork', sources: [{ name: 'USDA NASS (pork)', url: SRC_URL.nass }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Sheep & Lamb', sources: [{ name: 'USDA AMS (lamb)', url: SRC_URL.usdaLamb }, { name: 'European Commission (sheep)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Poultry & Eggs', sources: [{ name: 'USDA NASS (eggs)', url: SRC_URL.nass }, { name: 'USDA NASS (poultry)', url: SRC_URL.nass }, { name: 'European Commission (poultry)', url: SRC_URL.ecPoultry }, { name: 'European Commission (eggs)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Feed', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'EU regional indices', url: SRC_URL.ecPrices }, { name: 'European Commission (oilseeds)', url: SRC_URL.ecPrices }] },
-      fertilizantes: { label: 'Fertilizer', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'international reference (World Bank)', url: SRC_URL.worldBank }] },
+      fertilizantes: { label: 'Fertilizer', sources: [{ name: 'European Commission (Agri-food)', url: SRC_URL.ecPrices }, { name: 'international reference (World Bank)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sugar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'European Commission', url: SRC_URL.ecSugar }] },
       aceite: { label: 'Olive Oil', sources: [{ name: 'European Commission', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Fruit and vegetables', sources: [{ name: 'European Commission', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energy', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Weekly Oil Bulletin (EC)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Crop insurance', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
-      vino: { label: 'Bulk wine', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      vino: { label: 'Bulk wine', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Timber', sources: [{ name: 'Forest Research (UK)', url: SRC_URL.forestResearchTimber }] }
     },
     fr: {
       cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       ganado: { label: 'Bétail', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
-      porcino: { label: 'Porc', sources: [{ name: 'USDA NASS (porc)', url: SRC_URL.nass }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Porc', sources: [{ name: 'USDA NASS (porc)', url: SRC_URL.nass }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Ovins', sources: [{ name: 'USDA AMS (agneau)', url: SRC_URL.usdaLamb }, { name: 'Commission européenne (ovins)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Volaille et œufs', sources: [{ name: 'USDA NASS (œufs)', url: SRC_URL.nass }, { name: 'USDA NASS (volaille)', url: SRC_URL.nass }, { name: 'Commission européenne (volaille)', url: SRC_URL.ecPoultry }, { name: 'Commission européenne (œufs)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Aliments', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indices régionaux UE', url: SRC_URL.ecPrices }, { name: 'Commission européenne (oléagineux)', url: SRC_URL.ecPrices }] },
-      fertilizantes: { label: 'Engrais', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'référence internationale (Banque mondiale)', url: SRC_URL.worldBank }] },
+      fertilizantes: { label: 'Engrais', sources: [{ name: 'Commission européenne (Agri-food)', url: SRC_URL.ecPrices }, { name: 'référence internationale (Banque mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sucre', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commission européenne', url: SRC_URL.ecSugar }] },
       aceite: { label: "Huile d'olive", sources: [{ name: 'Commission européenne', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Fruits et légumes', sources: [{ name: 'Commission européenne', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Énergie', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bulletin pétrolier hebdomadaire (CE)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Assurance agricole', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
-      vino: { label: 'Vin en vrac', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      vino: { label: 'Vin en vrac', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Bois', sources: [{ name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }] }
     },
     it: {
       cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       ganado: { label: 'Bestiame', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
-      porcino: { label: 'Suini', sources: [{ name: 'USDA NASS (suino)', url: SRC_URL.nass }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Suini', sources: [{ name: 'USDA NASS (suino)', url: SRC_URL.nass }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Ovini', sources: [{ name: 'USDA AMS (agnello)', url: SRC_URL.usdaLamb }, { name: 'Commissione europea (ovini)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Avicoltura', sources: [{ name: 'USDA NASS (uova)', url: SRC_URL.nass }, { name: 'USDA NASS (pollame)', url: SRC_URL.nass }, { name: 'Commissione europea (pollame)', url: SRC_URL.ecPoultry }, { name: 'Commissione europea (uova)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Mangimi', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indici regionali UE', url: SRC_URL.ecPrices }, { name: 'Commissione europea (semi oleosi)', url: SRC_URL.ecPrices }] },
-      fertilizantes: { label: 'Fertilizzanti', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'riferimento internazionale (Banca Mondiale)', url: SRC_URL.worldBank }] },
+      fertilizantes: { label: 'Fertilizzanti', sources: [{ name: 'Commissione europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'riferimento internazionale (Banca Mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Zucchero', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commissione europea', url: SRC_URL.ecSugar }] },
       aceite: { label: "Olio d'oliva", sources: [{ name: 'Commissione europea', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Frutta e verdura', sources: [{ name: 'Commissione europea', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energia', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bollettino Petrolifero Settimanale (CE)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Assicurazione agricola', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
-      vino: { label: 'Vino sfuso', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      vino: { label: 'Vino sfuso', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Legname', sources: [{ name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }] }
     }
   };
@@ -497,17 +497,17 @@
           us: { price: 489, changePct: 0.6, history: [470, 475, 480, 478, 482, 486, 489], currency: 'USD', kgPerUnit: 907.185 },
           eu: { price: 407.5, changePct: 4.4872, history: [394.4,409.3,392.5,415.4,472.0,725.6,856.9,770.5,453.1,400.0,390.0,407.5], currency: 'USD', kgPerUnit: 1000},
           uk: { price: 476.00, changePct: 0.5, history: [465, 468, 470, 472, 474, 475, 476], currency: 'GBP', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'indice', market: 'DTN Fertilizer Index' }, eu: { type: 'referencia', market: 'Banco Mundial' }, uk: { type: 'indice', market: 'AHDB (urea granulada 46% N, cotización media GB)' } } },
+          quoteTypes: { us: { type: 'indice', market: 'Sin fuente verificada' }, eu: { type: 'referencia', market: 'Banco Mundial' }, uk: { type: 'indice', market: 'AHDB (urea granulada 46% N, cotización media GB)' } } },
         { nameKey: 'dap', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 735, changePct: 0.7, history: [710, 715, 720, 722, 725, 730, 735], currency: 'USD', kgPerUnit: 907.185 },
           eu: { price: 742, changePct: 0.406, history: [611, 606, 607, 604, 606, 663, 700, 717, 729, 736, 739, 742], currency: 'EUR', kgPerUnit: 1000 },
           uk: { price: 794.00, changePct: 0.4, history: [780, 783, 786, 789, 791, 792, 794], currency: 'GBP', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'indice', market: 'DTN Fertilizer Index' }, eu: { type: 'indice', market: 'Comisión Europea (fósforo, precio agregado por nutriente)' }, uk: { type: 'indice', market: 'AHDB (DAP, cotización media GB)' } } },
+          quoteTypes: { us: { type: 'indice', market: 'Sin fuente verificada' }, eu: { type: 'indice', market: 'Comisión Europea (fósforo, precio agregado por nutriente)' }, uk: { type: 'indice', market: 'AHDB (DAP, cotización media GB)' } } },
         { nameKey: 'potasa', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 480, changePct: 0.4, history: [460, 465, 470, 472, 475, 478, 480], currency: 'USD', kgPerUnit: 907.185 },
           eu: { price: 363, changePct: -0.2747, history: [366, 363, 360, 360, 357, 359, 368, 370, 368, 366, 364, 363], currency: 'EUR', kgPerUnit: 1000 },
           uk: { price: 367.00, changePct: 0.3, history: [358, 360, 362, 363, 364, 366, 367], currency: 'GBP', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'indice', market: 'DTN Fertilizer Index' }, eu: { type: 'indice', market: 'Comisión Europea (potasio, precio agregado por nutriente)' }, uk: { type: 'indice', market: 'AHDB (MOP/potasa, cotización media GB)' } } }
+          quoteTypes: { us: { type: 'indice', market: 'Sin fuente verificada' }, eu: { type: 'indice', market: 'Comisión Europea (potasio, precio agregado por nutriente)' }, uk: { type: 'indice', market: 'AHDB (MOP/potasa, cotización media GB)' } } }
       ]
     },
     {
@@ -618,7 +618,7 @@
   function curLang() { return (typeof window !== 'undefined' && window.DehesaShared && window.DehesaShared.getLang) ? window.DehesaShared.getLang() : 'es'; }
   // Cifras en formato local (auditoria 8-oct-2026): 264,1 en es/fr/it, 264.1 en ingles
   function fmtNumber(v) {
-    var decimals = Math.abs(v) >= 100 ? 1 : (Math.abs(v) >= 10 ? 2 : 3);
+    var decimals = Math.abs(v) >= 100 ? 1 : (Math.abs(v) >= 1 ? 2 : 3);   // «4,450 $/bushel» se leía como miles: 2 decimales desde 1
     try { return v.toLocaleString(curLang(), { minimumFractionDigits: decimals, maximumFractionDigits: decimals }); } catch (e) { return v.toFixed(decimals); }
   }
   function fmtTotal(v) {
@@ -723,7 +723,7 @@
     },
     'cereales-trigo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
-      methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada país (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercialización no son idénticas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
+      methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-10-04', publicationDate: '2026-10-10',
       status: 'verified', verifiedAt: '2026-10-10T03:41:18.629Z'
     },

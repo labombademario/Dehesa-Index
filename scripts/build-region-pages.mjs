@@ -8,6 +8,10 @@
 import fs from 'node:fs';
 import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
 import vm from 'node:vm';
+import { createHash as __ch } from 'node:crypto';
+import { readFileSync as __rf } from 'node:fs';
+// ?v= de shared.js = hash de su contenido (como scripts/stamp-assets.mjs): sin él, estas páginas servían un shared.js viejo de la caché
+const SHARED_V = (() => { try { return __ch('sha256').update(__rf(new URL('../js/shared.js', import.meta.url))).digest('hex').slice(0, 8); } catch (e) { return 'x'; } })();
 const read = f => fs.readFileSync(f, 'utf8');
 const SITE = 'https://dehesaindex.com';
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -109,7 +113,7 @@ const FACT = {
     const t = S[lg], B = [], X = {}, d = D.eu[c], b = d && d.regions && d.regions[r]; if (!b) return { head: null, B, X };
     let head = null; const o = b.eaa || {};
     if (o.AM180000 && lastOf(o.AM180000)[1] > 0) {   // Bruselas-Capital: Eurostat da 0 en todas las partidas de 2023; no es un dato
-      const y = lastOf(o.AM180000)[0], g = it => o[it] ? atY(o[it], y) : null, yoy = it => { const a = g(it), p = o[it] ? atY(o[it], y - 1) : null; return a != null && p ? (a / p - 1) * 100 : null; };
+      const y = lastOf(o.AM180000)[0], g = it => o[it] ? atY(o[it], y) : null, yoy = it => { const a = g(it), p = o[it] ? atY(o[it], y - 1) : null; return a != null && p > 0 && a >= 0 ? (a / p - 1) * 100 : null; };   // con base negativa o cero el % no tiene sentido (renta que pasa de pérdidas a beneficios)
       const row = it => { const v = g(it); return v == null ? null : [EL[it][LI[lg]], f.nf(v) + ' ' + t.eur, yoy(it) == null ? '–' : f.pct(yoy(it))]; };
       X.out = { v: g('AM180000'), y, yoy: yoy('AM180000') }; X.m = X.out.v;
       head = EL.AM180000[LI[lg]].toLowerCase() + ' ' + f.nf(g('AM180000')) + ' ' + t.eur + ' (' + y + ')';
@@ -253,7 +257,7 @@ const foot = (lg, up) => `  </article>
 </main>
 <div id="di-footer-root"></div>
 <script>try{if(!localStorage.getItem('dehesaIndexLang'))localStorage.setItem('dehesaIndexLang','${lg}')}catch(e){}</script>
-<script src="${up}js/shared.js?v=20260929-context-fix"></script>
+<script src="${up}js/shared.js?v=${SHARED_V}"></script>
 <script>if(window.DehesaShared&&window.DehesaShared.init)window.DehesaShared.init('informacion');</script>
 </body>
 </html>

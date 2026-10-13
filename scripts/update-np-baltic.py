@@ -6,6 +6,9 @@ Estonia: balances de cereales y patata (existencias finales), superficie/producc
 Cada valor es el publicado por la fuente: sin estimaciones, sin relleno y sin conversiones. Si una tabla o un valor ya no existe, el script falla con un mensaje claro y no escribe nada.
 Uso: python3 scripts/update-np-baltic.py"""
 import datetime, json, re, sys, time, urllib.request
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from lib_breaks import clean as _clean_breaks   # rupturas de serie (cambios de unidad): ver scripts/lib_breaks.py
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / 'data' / 'baltics-national-stats.json'; LOG = ROOT / 'data' / 'baltics-national-log.txt'
 UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Content-Type': 'application/json'}
@@ -201,6 +204,7 @@ if OUT.exists():
         if o == nn: print('sin cambios'); sys.exit(0)
     except SystemExit: raise
     except Exception: pass
+doc = _clean_breaks(doc)
 OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 LOG.write_text('\n'.join(log) + '\n', encoding='utf-8')
 print('OK %d series, %d puntos' % (n, sum(len(s['points']) for v in series.values() for s in v)))

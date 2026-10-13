@@ -4,6 +4,9 @@ Cultivos, censos de ganado, sacrificio, leche, aves, indices de precios, precios
 Se omiten las series cortas (<3 puntos) o paradas (ultimo dato anterior a año-3). Unidades: miles de t / ha se convierten x1000 exacto.
 Uso: from eurostat_country import run; run({geo, pfx, slug, name, source, extend}). Portugal tiene otra estructura y queda aparte."""
 import datetime, json, re, sys, urllib.request, urllib.parse
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from lib_breaks import clean as _clean_breaks   # rupturas de serie (cambios de unidad): ver scripts/lib_breaks.py
 API = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
 UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)'}
 LOG = []
@@ -199,6 +202,7 @@ def main():
     if CFG.get('extend'): ctry = {'name': CFG['name'], 'extend': True, 'source': src, 'series': ctry['series']}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
            'countries': {CFG['geo']: ctry}, 'log': LOG[-30:]}
+    doc = _clean_breaks(doc)
     json.dump(doc, open('data/%s-eurostat-stats.json' % CFG['slug'], 'w'), ensure_ascii=False, separators=(',', ':'))
     open('data/%s-eurostat-log.txt' % CFG['slug'], 'w').write('\n'.join(LOG) + '\n'); log('series', len(OUT))
 def collect(cfg, minimum=15):

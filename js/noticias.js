@@ -407,6 +407,7 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
   }
 
   function render() {
+    var fc = document.querySelector('.di-news-controls'); if (fc) fc.setAttribute('aria-label', ({ es: 'Filtros de noticias', en: 'News filters', fr: 'Filtres des actualités', it: 'Filtri delle notizie' })[(window.DehesaShared && window.DehesaShared.getLang && window.DehesaShared.getLang()) || 'es'] || 'Filtros de noticias');
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;

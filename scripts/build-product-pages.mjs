@@ -5,6 +5,10 @@
    Se ejecuta al final de scripts/build-seo-pages.mjs (workflow "Rebuild SEO landing pages") y reescribe el bloque marcado de sitemap.xml. */
 import fs from 'node:fs';
 import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
+import { createHash as __ch } from 'node:crypto';
+import { readFileSync as __rf } from 'node:fs';
+// ?v= de shared.js = hash de su contenido (como scripts/stamp-assets.mjs): sin él, estas páginas servían un shared.js viejo de la caché
+const SHARED_V = (() => { try { return __ch('sha256').update(__rf(new URL('../js/shared.js', import.meta.url))).digest('hex').slice(0, 8); } catch (e) { return 'x'; } })();
 const read = f => fs.readFileSync(f, 'utf8');
 const SITE = 'https://dehesaindex.com';
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -82,10 +86,18 @@ const CUR = { USD: 'USD', EUR: 'EUR', CAD: 'CAD', GBP: 'GBP' };
 const TOPIC = { urea: 'fertilizantes', dap: 'fertilizantes', potasa: 'fertilizantes' };
 const US = { cwt: '/cwt', bushel: '/bu', tonelada: '/t', '100kg': '/100 kg', litro: '/l', gal: '/gal', mmbtu: '/MMBtu', docena: '/docena', lb: '/lb', ton_corta: '/t corta', barril: '/barril', kg: '/kg' };
 let cite = {}; try { cite = JSON.parse(read('data/views/license-cite.json')).sources || {}; } catch (e) { /* sin vista de citas: se usa el id */ }
+// Alias de fuentes (p. ej. european_commission -> eu_agrifood): se cita con el nombre registrado, no con el id interno
+try { const reg = JSON.parse(read('data/license-registry.json')).sources || {}; for (const k in reg) for (const a of (reg[k].aliases || [])) if (!cite[a] && cite[k]) cite[a] = cite[k]; } catch (e) { /* */ }
+// Lugar real de cada precio en los cuatro idiomas (Zaragoza (España), Saskatchewan (Canadá), Mercado mundial…): el mismo que usa la app.
+// La región de la web («eu», «ca») NO es el lugar: muchos precios «eu» son de España y los de Canadá son de una provincia.
+let PLACE = {}; try { for (const x of JSON.parse(read('data/app/v1/prices.json')).prices || []) PLACE[x.id] = x.place; } catch (e) { /* */ }
+// Datos viejos para su frecuencia (data/freshness.json, STALE): se rotulan y no cuentan como «hoy»
+let STALE = new Set(); try { for (const x of JSON.parse(read('data/freshness.json')).latest.observations || []) if (x.state === 'STALE') STALE.add(x.id); } catch (e) { /* */ }
+const STALE_T = { es: 'sin actualizar', en: 'not updated', fr: 'non mis à jour', it: 'non aggiornato' };
 const byProd = {};
 for (const r of ['us', 'eu', 'ca', 'uk']) {
   let d; try { d = JSON.parse(read('data/prices/latest/' + r + '.json')); } catch (e) { continue; }
-  for (const o of d.observations || []) if (P[o.product] && o.currency !== 'INDEX' && typeof o.value === 'number') (byProd[o.product] = byProd[o.product] || []).push({ r, ...o });
+  for (const o of d.observations || []) if (P[o.product] && o.currency !== 'INDEX' && typeof o.value === 'number' && !(r === 'eu' && (o.product === 'dap' || o.product === 'potasa')) /* «DAP/potasa» UE = agregado por nutriente, no es DAP ni MOP */) (byProd[o.product] = byProd[o.product] || []).push({ r, ...o });
 }
 const QUINTAL = new Set(['arroz', 'avena', 'cebada', 'centeno', 'colza', 'maiz', 'trigo']);
 const ORDER = ['us', 'eu', 'ca', 'uk'];
@@ -99,19 +111,21 @@ for (const lg of Object.keys(L)) {
   const pct = v => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toLocaleString(T.locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %';
   for (const p of keys) {
     const obs = byProd[p].sort((a, b) => ORDER.indexOf(a.r) - ORDER.indexOf(b.r)), [name, de] = P[p][lg];
-    const url = urlOf(lg, p), up = T.up, rg = o => T.reg[o.r], un = o => T.unit[o.unit] || '/' + o.unit;
+    const url = urlOf(lg, p), up = T.up, rg = o => (PLACE[o.id] && PLACE[o.id][lg]) || T.reg[o.r], un = o => T.unit[o.unit] || '/' + o.unit;
     const line = o => nf(o.value) + ' ' + CUR[o.currency] + ((T.unitS && T.unitS[o.unit]) || US[o.unit] || '/' + o.unit);
-    const head = obs.slice(0, 2).map(o => (T.regShort[o.r] || T.reg[o.r]) + ' ' + line(o)).join(' · ');
-    const head1 = obs.slice(0, 1).map(o => (T.regShort[o.r] || T.reg[o.r]) + ' ' + line(o)).join(' · ');
+    const fresh = obs.filter(o => !STALE.has(o.id)).concat(obs.filter(o => STALE.has(o.id)));   // en el título, primero los datos al día
+    const rgs = o => { const r0 = rg(o); return (r0 === T.reg[o.r] || /^(EE\. UU\.|US|États-Unis|Stati Uniti)$/.test(r0)) ? (T.regShort[o.r] || r0) : r0; };   // en el título, abreviatura de país si el lugar es el país entero
+    const head = fresh.slice(0, 2).map(o => rgs(o) + ' ' + line(o)).join(' · ');
+    const head1 = fresh.slice(0, 1).map(o => rgs(o) + ' ' + line(o)).join(' · ');
     const title = seoTitle(T.title(de, T.title(de, head).length <= 62 ? head : head1));   // <= ~62 caracteres: si dos mercados no caben, solo el primero (el resto va en la descripcion)
     const latest = obs.reduce((m, o) => o.observationDate > m ? o.observationDate : m, '');
     const desc = (T.descIntro(de) + obs.map(o => rg(o) + ' ' + line(o) + ' (' + per(o.observationDate) + (o.changePct != null ? ', ' + pct(o.changePct) : '') + ')').join('; ') + T.descEnd).slice(0, 300);
     const rows = obs.map(o => { const s = cite[o.sourceId] || {};
-      return '<tr><th scope="row" style="text-align:left;padding:8px 6px">' + esc(rg(o)) + '</th><td style="text-align:right;padding:8px 6px"><b>' + esc(nf(o.value)) + '</b></td><td style="padding:8px 6px">' + esc(CUR[o.currency] + un(o)) + '</td><td style="padding:8px 6px">' + esc(per(o.observationDate)) + '</td><td style="text-align:right;padding:8px 6px">' + esc(pct(o.changePct)) + '</td><td style="padding:8px 6px">' + (s.url ? '<a href="' + esc(s.url) + '" rel="noopener">' + esc(s.short || s.name || o.sourceId) + '</a>' : esc(o.sourceId)) + '</td></tr>'; }).join('\n');
+      return '<tr><th scope="row" style="text-align:left;padding:8px 6px">' + esc(rg(o)) + '</th><td style="text-align:right;padding:8px 6px"><b>' + esc(nf(o.value)) + '</b></td><td style="padding:8px 6px">' + esc(CUR[o.currency] + un(o)) + '</td><td style="padding:8px 6px">' + esc(per(o.observationDate) + (STALE.has(o.id) ? ' (' + STALE_T[lg] + ')' : '')) + '</td><td style="text-align:right;padding:8px 6px">' + esc(pct(o.changePct)) + '</td><td style="padding:8px 6px">' + (s.url ? '<a href="' + esc(s.url) + '" rel="noopener">' + esc(s.short || s.name || o.sourceId) + '</a>' : esc(o.sourceId)) + '</td></tr>'; }).join('\n');
     const meth = lg === 'es' ? obs.filter(o => o.methodology).map(o => '<li><b>' + esc(rg(o)) + ':</b> ' + esc(o.methodology) + '</li>').join('\n') : '';
-    const faq = obs.map(o => '<h3 style="font-size:15px;margin:14px 0 4px">' + esc(T.q(de, T.regQ[o.r])) + '</h3><p>' + esc(T.a(nf(o.value) + ' ' + CUR[o.currency] + un(o), per(o.observationDate), o.changePct != null ? pct(o.changePct) : '', T.freq[o.frequency] || o.frequency || '')) + '</p>').join('\n');
+    const faq = obs.map(o => '<h3 style="font-size:15px;margin:14px 0 4px">' + esc(T.q(de, (PLACE[o.id] && PLACE[o.id][lg]) || T.regQ[o.r])) + '</h3><p>' + esc(T.a(nf(o.value) + ' ' + CUR[o.currency] + un(o), per(o.observationDate), o.changePct != null ? pct(o.changePct) : '', T.freq[o.frequency] || o.frequency || '')) + '</p>').join('\n');
     // fr/it: los cereales y oleaginosas se cotizan al quintal (1 q = 100 kg): respuesta directa, conversion exacta
-    const qFaq = T.qq && QUINTAL.has(p) ? obs.filter(o => o.unit === 'tonelada' && o.currency === 'EUR').map(o => '<h3 style="font-size:15px;margin:14px 0 4px">' + esc(T.qq(de, T.reg[o.r])) + '</h3><p>' + esc(T.qa(nf(o.value / 10) + ' ' + CUR[o.currency] + (lg === 'fr' ? '/quintal' : '/quintale'), per(o.observationDate))) + '</p>').join('\n') : '';
+    const qFaq = T.qq && QUINTAL.has(p) ? obs.filter(o => o.unit === 'tonelada' && o.currency === 'EUR').map(o => '<h3 style="font-size:15px;margin:14px 0 4px">' + esc(T.qq(de, rg(o))) + '</h3><p>' + esc(T.qa(nf(o.value / 10) + ' ' + CUR[o.currency] + (lg === 'fr' ? '/quintal' : '/quintale'), per(o.observationDate))) + '</p>').join('\n') : '';
     const others = keys.filter(x => x !== p).map(x => '<a href="../' + (lg === 'es' ? x : P[x].s[['en', 'fr', 'it'].indexOf(lg)]) + '/">' + esc(P[x][lg][0]) + '</a>').join(' · ');
     const alts = Object.keys(L).map(l2 => '<link rel="alternate" hreflang="' + l2 + '" href="' + urlOf(l2, p) + '">').join('\n') + '\n<link rel="alternate" hreflang="x-default" href="' + urlOf('en', p) + '">';
     const topic = TOPIC[p] || p;
@@ -160,7 +174,7 @@ ${qFaq}
 </main>
 <div id="di-footer-root"></div>
 <script>try{if(!localStorage.getItem('dehesaIndexLang'))localStorage.setItem('dehesaIndexLang','${lg}')}catch(e){}</script>
-<script src="${up}js/shared.js?v=20260929-context-fix"></script>
+<script src="${up}js/shared.js?v=${SHARED_V}"></script>
 <script>if(window.DehesaShared&&window.DehesaShared.init)window.DehesaShared.init('informacion');</script>
 </body>
 </html>

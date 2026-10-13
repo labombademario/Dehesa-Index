@@ -171,10 +171,10 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     document.getElementById('ex-body').innerHTML = '<div style="margin-bottom:14px">' + (ESR ? tab('esr', t.tabEsr) : '') + (GATS ? tab('gats', t.tabGats) : '') + '</div>' + (SEL.tab === 'esr' ? renderEsr(t) : renderGats(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>' + (SEL.tab === 'esr' ? ci('usda_fas_esr') : ci('usda_fas_gats'));
     var q = function (s) { return document.getElementById('ex-body').querySelectorAll(s); };
     Array.prototype.forEach.call(q('[data-tab]'), function (b) { b.onclick = function () { SEL.tab = b.getAttribute('data-tab'); render(); }; });
-    var e = document.getElementById('ex-sel-code'); if (e) e.onchange = function () { SEL.code = parseInt(e.value, 10); render(); };
-    e = document.getElementById('ex-sel-flow'); if (e) e.onchange = function () { SEL.flow = e.value; render(); };
-    e = document.getElementById('ex-sel-group'); if (e) e.onchange = function () { SEL.group = e.value; render(); };
-    e = document.getElementById('ex-sel-period'); if (e) e.onchange = function () { SEL.period = e.value; render(); };
+    var e = document.getElementById('ex-sel-code'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.code = parseInt(el.value, 10); render(); };
+    e = document.getElementById('ex-sel-flow'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.flow = el.value; render(); };
+    e = document.getElementById('ex-sel-group'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.group = el.value; render(); };
+    e = document.getElementById('ex-sel-period'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.period = el.value; render(); };
   }
   window.__exUsRender = function () { render(); };
   window.DehesaShared.init('informacion');

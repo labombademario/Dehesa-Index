@@ -325,6 +325,12 @@
    "Alberta · elevator bid",
    "Alberta · offre de silo",
    "Alberta · offerta di elevatore"
+  ],
+  "di_lacteos_leche_uk": [
+   "Reino Unido · precio medio pagado al productor",
+   "UK · average farmgate price",
+   "Royaume-Uni · prix moyen payé au producteur",
+   "Regno Unito · prezzo medio pagato al produttore"
   ]
  },
  "rules": {

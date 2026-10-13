@@ -5,6 +5,14 @@
 (function () {
   'use strict';
   var LANGS = ['es', 'en', 'fr', 'it'];
+  // Estado de frescura y unidad en el idioma de la página (antes salía «LIVE» y «EUR/tonelada» en todos)
+  var FS = { LIVE: ['RECIÉN PUBLICADO', 'JUST RELEASED', 'TOUT JUSTE PUBLIÉ', 'APPENA PUBBLICATO'], FRESH: ['AL DÍA', 'FRESH', 'À JOUR', 'AGGIORNATO'], EXPECTED_DELAY: ['RETRASO HABITUAL', 'EXPECTED DELAY', 'RETARD HABITUEL', 'RITARDO ABITUALE'], DELAYED: ['RETRASADO', 'DELAYED', 'EN RETARD', 'IN RITARDO'], STALE: ['DESACTUALIZADO', 'STALE', 'OBSOLÈTE', 'OBSOLETO'], HISTORICAL: ['HISTÓRICA', 'HISTORICAL', 'HISTORIQUE', 'STORICA'], PENDING: ['PENDIENTE', 'PENDING', 'EN ATTENTE', 'IN SOSPESO'] };
+  function unitTxt(s) {
+    var UM = { tonelada: ['tonelada', 'tonne', 'tonne', 'tonnellata'], litro: ['litro', 'litre', 'litre', 'litro'], '100kg': ['100 kg', '100 kg', '100 kg', '100 kg'], gal: ['galón', 'gallon', 'gallon', 'gallone'], bushel: ['bushel', 'bushel', 'boisseau', 'bushel'], cwt: ['cwt', 'cwt', 'cwt', 'cwt'], kg: ['kg', 'kg', 'kg', 'kg'], docena: ['docena', 'dozen', 'douzaine', 'dozzina'], barril: ['barril', 'barrel', 'baril', 'barile'], mmbtu: ['MMBtu', 'MMBtu', 'MMBtu', 'MMBtu'] };
+    var u = UM[s.unit] ? UM[s.unit][{ es: 0, en: 1, fr: 2, it: 3 }[lang()] || 0] : null;
+    if (s.currency === 'INDEX') return ({ es: 'índice', en: 'index', fr: 'indice', it: 'indice' })[lang()] + (/2020/.test(s.unit) ? ' 2020=100' : '');
+    return (s.currency || '') + '/' + (u || s.unit);
+  }
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function li() { var i = LANGS.indexOf(lang()); return i < 0 ? 0 : i; }
   var TX = {
@@ -87,7 +95,7 @@
   function side(kind, s, fresh) {
     var pg = PAGE[s.product], name = esc(L(s.label));
     var nm = pg ? '<a href="producto.html?p=' + pg + '">' + name + '</a>' : name;
-    return '<div class="rl-node rl-' + kind + '"><span class="rl-ctry">' + esc(flagName(s.region)) + '</span><span class="pt-k">' + esc(t(kind.toUpperCase())) + '</span><strong>' + nm + '</strong><span class="pt-sub">' + (ci(s.sourceId) || esc(s.sourceId || '')) + (s.unit ? ' · ' + esc((s.currency || '') + '/' + s.unit) : '') + '</span><span class="pt-badge pt-fs-' + esc(fresh) + '">' + esc(fresh) + '</span></div>';
+    return '<div class="rl-node rl-' + kind + '"><span class="rl-ctry">' + esc(flagName(s.region)) + '</span><span class="pt-k">' + esc(t(kind.toUpperCase())) + '</span><strong>' + nm + '</strong><span class="pt-sub">' + (ci(s.sourceId) || esc(s.sourceId || '')) + (s.unit ? ' · ' + esc(unitTxt(s)) : '') + '</span><span class="pt-badge pt-fs-' + esc(fresh) + '">' + esc(FS[fresh] ? FS[fresh][{ es: 0, en: 1, fr: 2, it: 3 }[lang()] || 0] : fresh) + '</span></div>';
   }
   function lagUnit(x, n) { return n + ' ' + (x.frequency === 'monthly' ? t('mon') : x.frequency === 'annual' ? t('yr') : t('qtr')); }
   function profile(x) {

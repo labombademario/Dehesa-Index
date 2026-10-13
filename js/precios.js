@@ -328,7 +328,9 @@
   // Emoji solo para productos inconfundibles; decorativo (aria-hidden), sin emoji = sin icono
   var PRODUCT_EMOJI = { maiz: '🌽', trigo: '🌾', trigo_pienso_ab: '🌾', trigo_cwrs_ab: '🌾', vaca: '🐄', novillo_ab: '🐄', cerdo: '🐖', cerdo_ab: '🐖', pollo: '🐔', huevos: '🥚', leche: '🥛', mantequilla: '🧈', oliva: '🫒', cordero: '🐑', cabra: '🐐', gas_natural: '🔥', petroleo_brent: '🛢️', petroleo_wti: '🛢️', diesel: '⛽' };
   function productEmoji(nameKey) { return PRODUCT_EMOJI[nameKey] ? '<span class="di-emoji" aria-hidden="true">' + PRODUCT_EMOJI[nameKey] + '</span> ' : ''; }
-  function productName(nameKey) { return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
+  // En la UE la Comisión no publica DAP ni MOP sino un precio agregado por nutriente: con ubicación Europa se nombra así
+  var EU_FERT = { dap: { es: 'Abonos fosfatados (P), agregado UE', en: 'Phosphate fertilisers (P), EU aggregate', fr: 'Engrais phosphatés (P), agrégat UE', it: 'Fertilizzanti fosfatici (P), aggregato UE' }, potasa: { es: 'Abonos potásicos (K), agregado UE', en: 'Potash fertilisers (K), EU aggregate', fr: 'Engrais potassiques (K), agrégat UE', it: 'Fertilizzanti potassici (K), aggregato UE' } };
+  function productName(nameKey) { if (EU_FERT[nameKey] && state.location === 'eu') return EU_FERT[nameKey][lang()] || EU_FERT[nameKey].es; return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
   function catLabel(catId) { var c = (D.CATS[lang()] || D.CATS.es)[catId]; return c ? c.label : catId; }
   function productsInCat(catId) {
     return PRODUCTS.filter(function (e) { return e.catId === catId; });
@@ -669,7 +671,9 @@
       var qt = p.quoteTypes && p.quoteTypes[s.code];
       var qtLabel = qt && (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type] ? (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type].label : '—';
       var sym = D.CCY_SYMBOL[s.ccy] || s.ccy;
-      rows.push('<tr><td>' + esc(s.regionLabel) + (qt && qt.market ? ' — ' + esc(qt.market) : '') + '</td><td>' + esc(qtLabel) + '</td><td>' + sym + D.fmtNumber(s.region.price) + '/' + esc(s.unit) + '</td></tr>');
+      // Canadá: StatCan publica por provincia; se nombra la provincia real (Saskatchewan, Ontario…), no «provincia de referencia»
+      var mkl = s.code === 'ca' && global.DehesaShared && global.DehesaShared.marketLabel ? global.DehesaShared.marketLabel({ id: 'di_' + entry.catId + '_' + entry.nameKey + '_ca', sourceId: 'statcan' }, lang()) : '';
+      rows.push('<tr><td>' + esc(s.regionLabel) + (mkl ? ' — ' + esc(mkl) : qt && qt.market ? ' — ' + esc(qt.market) : '') + '</td><td>' + esc(qtLabel) + '</td><td>' + sym + D.fmtNumber(s.region.price) + '/' + esc(s.unit) + '</td></tr>');
     }
     var sourcesHtml = '';
     var cat = (D.CATS[lang()] || D.CATS.es)[entry.catId];
@@ -845,7 +849,7 @@
     if (disp.cty && showValue && observation && observation.ctyLabel) mk = (observation.ctyLabel[lang()] || observation.ctyLabel.es) + ' · ' + (({ es: 'media nacional', en: 'national average', fr: 'moyenne nationale', it: 'media nazionale' })[lang()]);
     if (lonja && showValue) { var LX = LONJA_T[lang()] || LONJA_T.es; mk = LX[2] + ' · ' + lonja.m + ' (' + LX[3] + ') · ' + LX[4]; od = S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
-    var meta = [est, mk, od ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') + od : ''].filter(Boolean).join(' · ');
+    var meta = [est, mk, od ? (/^\d/.test(od) ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') : (({ es: 'dato de ', en: 'as of ', fr: 'donnée de ', it: 'dato di ' })[lang()] || '')) + od : ''].filter(Boolean).join(' · ');
     return (
       '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +

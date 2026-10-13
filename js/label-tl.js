@@ -3,7 +3,7 @@
    fuentes o nombres propios; si falta una sola parte se deja la etiqueta original en inglés. Nunca se traduce a ojo. */
 (function (root) {
   'use strict';
-  var G = {}, P = {};
+  var G = {}, P = {}, M = null, MP = null;   // M: etiquetas en español del MAPA -> {en, fr, it} (data/label-gloss/mapa-es.json)
   var SPLIT = /(\s*[:,()·;]\s*|\s+[-–]\s+)/;
   var PASS = /^([A-Z0-9][A-Z0-9 \/&.\-+]*|[\d=.,%\s\-–\/]+|HS [\d\-]+|\d{4}(-\d{2})?(\/\d{2,4})?|[A-Z][a-z]?\d*)$/;
   var TPL = { es: { to: 'exportaciones a {c}', dto: 'exportaciones nacionales a {c}', from: 'importaciones desde {c}', cexp: 'exportaciones de {c}', cimp: 'importaciones de {c}' },
@@ -22,6 +22,7 @@
     return null;
   }
   function tl(label, lang) {
+    if (M && label && M[label] && M[label][lang]) return M[label][lang];
     var g = G[lang]; if (!g || !label) return label;
     // frases que contienen comas («farm, fishing and food»): se sustituyen enteras antes de partir la etiqueta
     var src = String(label), held = [];
@@ -37,12 +38,17 @@
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
   function use(lang, doc) { var ks = {}; (doc.keep || []).forEach(function (k) { ks[k] = 1; }); var t0 = doc.t || {}; G[lang] = { lang: lang, t: t0, keepSet: ks, multi: Object.keys(t0).filter(function (k) { return /[,:(]/.test(k); }).sort(function (a, b) { return b.length - a.length; }) }; }
+  function loadM(sp) {
+    if (M || MP) return MP || Promise.resolve(true);
+    return MP = fetch(sp('data/label-gloss/mapa-es.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { M = (d && d.t) || {}; return true; }).catch(function () { M = {}; return false; });
+  }
   function load(lang) {
+    var sp = root.DehesaShared && root.DehesaShared.sitePath ? root.DehesaShared.sitePath : function (u) { return u; };
+    if (lang !== 'es' && typeof fetch === 'function' && !M) return loadM(sp).then(function () { return load(lang); });
     if (lang === 'en' || G[lang]) return Promise.resolve(true);
     if (P[lang]) return P[lang];
-    var sp = root.DehesaShared && root.DehesaShared.sitePath ? root.DehesaShared.sitePath : function (u) { return u; };
     return P[lang] = fetch(sp('data/label-gloss/' + lang + '.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d) use(lang, d); return !!d; }).catch(function () { P[lang] = null; return false; });
   }
-  var API = { tl: tl, load: load, use: use, _part: function (p, lang) { return G[lang] ? part(p, G[lang]) : null; }, ready: function (lang) { return lang === 'en' || !!G[lang]; } };
+  var API = { tl: tl, load: load, use: use, _part: function (p, lang) { return G[lang] ? part(p, G[lang]) : null; }, ready: function (lang) { var inB = typeof window !== 'undefined'; return (lang === 'en' || !!G[lang]) && (!inB || lang === 'es' || !!M); } };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.DILabelTl = API;
 })(typeof window !== 'undefined' ? window : globalThis);

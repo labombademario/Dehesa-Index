@@ -108,9 +108,19 @@
     });
     return sec('moves', t('moves'), t('movesHint'), ctl + table([[t('cProd')], [t('cMkt')], [t('cFrom')], [t('cDays'), 1], [t('cChg'), 1], [t('cVal'), 1], [t('cFresh')], [t('cSrc')]], rows) + pager('moves', l.length) + '<p class="pt-sub">' + l.length + ' / ' + obs.length + '</p>');
   }
+  // Una revisión en una línea legible (antes se veía el JSON crudo): serie, periodo, antes -> después y variación
+  function revLine(x) {
+    var lab = x.label || x.series || x.id || '', L0 = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es';
+    if (x.label && window.DILabelTl && window.DILabelTl.ready(L0)) lab = window.DILabelTl.tl(x.label, L0);
+    var per = x.period || '', a = x.old != null ? x.old : x.before, b = x.new != null ? x.new : x.after;
+    var nf = function (v) { return typeof v === 'number' ? v.toLocaleString(LANGC(), { maximumFractionDigits: 2 }) : String(v == null ? '–' : v); };
+    var pc = typeof a === 'number' && typeof b === 'number' && a ? ' (' + (b >= a ? '+' : '') + ((b / a - 1) * 100).toLocaleString(LANGC(), { maximumFractionDigits: 1 }) + ' %)' : '';
+    return lab + (per ? ' · ' + per : '') + ': ' + nf(a) + ' → ' + nf(b) + pc;
+  }
+  function LANGC() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }[l] || 'es-ES'; }
   function secRev() {
     var r = DOC.revisions, b = '<p><strong>' + esc(tf('revCount', r.count)) + '</strong></p><p class="pt-sub">' + esc(tf('revNote')) + '</p>';
-    if (r.items.length) b += '<ul class="pt-list">' + r.items.slice(0, 20).map(function (x) { return '<li>' + esc(typeof x === 'string' ? x : JSON.stringify(x)) + '</li>'; }).join('') + '</ul>';
+    if (r.items.length) b += '<ul class="pt-list">' + r.items.slice(0, 20).map(function (x) { return '<li>' + esc(typeof x === 'string' ? x : revLine(x)) + '</li>'; }).join('') + '</ul>';
     return sec('revisions', t('revisions'), '', b);
   }
   function bars(by, total) {
@@ -201,7 +211,9 @@
   }
   function onChange(e) { var el = e.target, f = el.getAttribute && el.getAttribute('data-f'); if (f && el.tagName === 'SELECT') { resetLim(); F[f] = el.value; writeUrl(); render(); } }
   var prevCb = window.DehesaShared.onLangChange;
-  window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };
+  function loadTl() { var L0 = window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; if (window.DILabelTl) window.DILabelTl.load(L0).then(function (ok) { if (ok && DOC) render(); }); }
+  window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); loadTl(); };
+  loadTl();
   window.DehesaShared.init('informacion');
   readUrl();
   var body = document.getElementById('ob-body'); body.addEventListener('click', onClick); body.addEventListener('change', onChange);

@@ -119,7 +119,7 @@ export const PRODUCTS = {
       it: r => r.productName === 'Milling wheat' && r.marketName === 'Bologna'
     },
     market: 'Comisión Europea (trigo panificable, mercado de Zaragoza, salida de silo)',
-    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada país (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercialización no son idénticas.' + NOTE_PUB
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext.' + NOTE_PUB
   },
   dap: {
     catId: 'fertilizantes', id: 'di_fertilizantes_dap_eu', sourceId: 'eu_agrifood', frequency: 'monthly',

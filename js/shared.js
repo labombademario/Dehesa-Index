@@ -651,6 +651,13 @@
       if (typeof global.DehesaShared.onLangChange === 'function') global.DehesaShared.onLangChange(code);
       return;
     }
+    // Páginas estáticas con versión en cada idioma (precios/maiz/, en/prices/corn/, regiones/…): se va a la versión de ese idioma.
+    // Recargar la misma URL no sirve: el contenido está escrito en su idioma y la página vuelve a fijarlo al cargar.
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + code + '"]');
+    if (alt && alt.href && alt.href.replace(/[#?].*$/, '') !== window.location.href.replace(/[#?].*$/, '')) {
+      var here = window.location.origin, target = alt.href.replace(/^https:\/\/dehesaindex\.com/, here);   // en local o en vista previa, la misma ruta en este servidor
+      window.location.href = target; return;
+    }
     window.location.reload();
   }
   function toggleTheme() {
@@ -811,7 +818,9 @@
     if (!MKT) return '';
     var m = MKT.byId[o.id]; if (m) return m[i];
     var src = String(o.sourceId || ''), id = String(o.id || ''), R = MKT.rules;
-    var r = R[src] || (/^defra/.test(src) || /_defra_/.test(id) ? R.defra : /eurostat/.test(src) || /_eurostat_/.test(id) ? R.eurostat : null);
+    var isDefra = /^defra/.test(src) || /_defra_/.test(id);
+    if (isDefra && o.currency && o.currency !== 'INDEX') return '';   // «índice 2020=100» solo para índices: la leche del Reino Unido es un precio
+    var r = R[src] || (isDefra ? R.defra : /eurostat/.test(src) || /_eurostat_/.test(id) ? R.eurostat : null);
     return r ? r[i] : '';
   }
   var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }, QW = { es: 'T', en: 'Q', fr: 'T', it: 'T' };

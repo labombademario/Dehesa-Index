@@ -5,6 +5,9 @@ Solo los productos de la matriz de cobertura (cereales, oleaginosas, patata, rem
 Cultivos, censos de ganado, sacrificio, leche, aves, indices de precios, precios absolutos y cuentas agrarias. Solo lo que Eurostat publica; ninguna serie se completa ni se estima.
 Se omiten las series cortas (<3 puntos) o paradas (ultimo dato anterior a año-3). Unidades: miles de t / ha se convierten x1000 exacto."""
 import datetime, json, re, sys, urllib.request, urllib.parse
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from lib_breaks import clean as _clean_breaks   # rupturas de serie (cambios de unidad): ver scripts/lib_breaks.py
 API = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
 UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)'}
 LOG = []
@@ -185,6 +188,7 @@ def main():
     src = {'name': 'Eurostat (official national data via Eurostat)', 'url': 'https://ec.europa.eu/eurostat/web/agriculture', 'license': 'Eurostat reuse policy (Decision 2011/833/EU); cite source'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
            'countries': {cc: {'name': NAMES[cc], 'extend': True, 'source': src, 'series': sorted(v, key=lambda s: s['id'])} for cc, v in sorted(by.items())}, 'log': LOG[-30:]}
+    doc = _clean_breaks(doc)
     json.dump(doc, open('data/eurostat-depth-stats.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     open('data/eurostat-depth-log.txt', 'w').write('\n'.join(LOG) + '\n'); log('series', len(OUT), {c: len(v) for c, v in by.items()})
 main()

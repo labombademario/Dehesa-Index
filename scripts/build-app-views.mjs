@@ -86,6 +86,8 @@ function history(region, product, freq) {
 
 // 1) Precios verificados de la capa ligera de la web
 const prices = [], HIST = {};
+// Datos viejos para su frecuencia (data/freshness.json): la app los rotula «Último dato: …»
+const STALE = new Set(); try { for (const x of read('data/freshness.json').latest.observations || []) if (x.state === 'STALE') STALE.add(x.id); } catch (e) { /* sin frescura: nada se marca */ }
 for (const region of ['eu', 'us', 'uk', 'ca']) {
   const f = `data/prices/latest/${region}.json`;
   if (!exists(f)) continue;
@@ -96,10 +98,13 @@ for (const region of ['eu', 'us', 'uk', 'ca']) {
     if (!ok) continue;  // sin nombre en los cuatro idiomas no se muestra
     // El Boletin Petrolero y la EIA miden el gasoleo de automocion en surtidor, con impuestos, no el gasoleo agricola
     if (o.product === 'diesel') Object.assign(name, t4('Gasóleo de automoción (surtidor)', 'Road diesel (pump price)', 'Gazole routier (prix à la pompe)', 'Gasolio per autotrazione (alla pompa)'));
+    // Fertilizantes de la UE: la Comisión publica un precio AGREGADO por nutriente, no DAP ni MOP (lo dice su propia nota)
+    if (region === 'eu' && o.product === 'dap') Object.assign(name, t4('Abonos fosfatados (P), agregado UE', 'Phosphate fertilisers (P), EU aggregate', 'Engrais phosphatés (P), agrégat UE', 'Fertilizzanti fosfatici (P), aggregato UE'));
+    if (region === 'eu' && o.product === 'potasa') Object.assign(name, t4('Abonos potásicos (K), agregado UE', 'Potash fertilisers (K), EU aggregate', 'Engrais potassiques (K), agrégat UE', 'Fertilizzanti potassici (K), aggregato UE'));
     // Gas natural: en EE. UU. es Henry Hub y en Europa el TTF; cada fila con el suyo, no los dos nombres juntos
     if (o.product === 'gas_natural') Object.assign(name, region === 'us' ? t4('Gas natural (Henry Hub)', 'Natural gas (Henry Hub)', 'Gaz naturel (Henry Hub)', 'Gas naturale (Henry Hub)') : t4('Gas natural (TTF)', 'Natural gas (TTF)', 'Gaz naturel (TTF)', 'Gas naturale (TTF)'));
     prices.push({ id: o.id, product: o.product, region, name, place: place(o), unit: unit(o), currency: o.currency, value: o.value,
-      changePct: typeof o.changePct === 'number' ? Math.round(o.changePct * 100) / 100 : null, date: o.observationDate, frequency: o.frequency,
+      changePct: typeof o.changePct === 'number' ? Math.round(o.changePct * 100) / 100 : null, date: o.observationDate, frequency: o.frequency, stale: STALE.has(o.id) || undefined,
       sourceId: canon(o.sourceId), sourceName: (REG[canon(o.sourceId)] || {}).short || (REG[canon(o.sourceId)] || {}).name || canon(o.sourceId), comparability: o.comparability || null, note: o.methodology ? { es: o.methodology } : null,
       ...(() => { const h = history(region, o.product, o.frequency); HIST[o.id] = h.all; return { points: h.points, yearAgo: h.yearAgo }; })() });
   }

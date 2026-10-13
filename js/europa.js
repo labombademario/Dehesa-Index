@@ -217,9 +217,21 @@
   }
   function dayIso(n) { return new Date(Date.UTC(2000, 0, 1) + n * 864e5).toISOString().slice(0, 10); }
 
+  // Picos aislados (un dato que se aleja más de un 35 % de dos vecinos que coinciden entre sí, p. ej. leche de Croacia 7,41 entre 49 y 52):
+  // son errores de carga del país; no se dibujan. Misma regla que los scripts de la app y del comparador.
+  function despike(r) {
+    if (r._clean) return r;
+    var d = [], v = [], n = r.d.length;
+    for (var i = 0; i < n; i++) {
+      if (i > 0 && i < n - 1) { var a = r.v[i - 1], b = r.v[i], c = r.v[i + 1]; if (a && c && Math.abs(a / c - 1) < 0.15 && Math.abs(b / ((a + c) / 2) - 1) > 0.35) continue; }
+      d.push(r.d[i]); v.push(r.v[i]);
+    }
+    r.d = d; r.v = v; r._clean = true; return r;
+  }
+
   function renderChartAndTable(t, meta, d) {
     var freqM = meta.freq === 'monthly', byKey = {};
-    d.regions.forEach(function (r) { byKey[rkey(r)] = r; });
+    d.regions.forEach(function (r) { despike(r); byKey[rkey(r)] = r; });
     var ranges = rangesFor(d), rk = ST.range;
     var valid = ranges.map(function (x) { return x[0]; });
     if (valid.indexOf(rk) < 0) rk = valid.indexOf('2y') >= 0 ? '2y' : 'max';

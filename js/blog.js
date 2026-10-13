@@ -7,7 +7,6 @@
   var SRC = {
     farmprogress: 'https://www.farmprogress.com/marketing/usda-forecasts-smallest-us-winter-wheat-crop-since-1965-as-drought-devastates-key-growing-regions-in-the-plains',
     riotimes: 'https://www.riotimesonline.com/grains-soy-corn-latam-monday-september-21-2026/',
-    dtn: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/09/23/fertilizer-prices-rise-six-eight',
     moncloa: 'https://www.moncloa.com/2026/09/26/contratos-leche-vacuno-revision-alza-precios-3438213/'
   };
 
@@ -39,13 +38,6 @@
           sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
         },
         {
-          category: CAT.es.fertilizantes, dateLabel: '23 sep 2026',
-          title: 'Potasa de Bielorrusia: mucho ruido, poco movimiento (todavía)',
-          para1: 'En la semana del 14 al 18 de septiembre, seis de los ocho fertilizantes que sigue DTN subieron de precio en EE. UU. y solo dos bajaron, aunque ningún movimiento superó el 5% que DTN considera "significativo". La urea cerró en 659 $/tonelada (ligeramente por debajo del mes anterior, pero un 6% por encima de hace un año) y el DAP en 925 $/tonelada (un 2% por encima de hace un año); el anhidro fue el que más subió interanualmente, un 22%.',
-          para2: 'La atención del mercado está puesta en una posible importación de potasa desde Bielorrusia, planteada por la administración Trump — pero el analista Josh Linville lo resume así: "necesitamos ayuda con fósforo y nitrógeno", no con potasa, que no es hoy el nutriente más escaso. Además, la ruta logística tendría que pasar por Lituania, Letonia, Polonia y Ucrania, con las complicaciones que eso implica. Por ahora, más un titular que un cambio real de precios.',
-          sources: [{ label: 'DTN Progressive Farmer', url: SRC.dtn }]
-        },
-        {
           category: CAT.es.lacteos, dateLabel: '26 sep 2026',
           title: 'España: los ganaderos piden subir el precio de la leche antes de octubre',
           para1: 'Unión de Uniones, una de las principales organizaciones agrarias españolas, ha pedido a los ganaderos de vacuno de leche que exijan una subida de precio al renovar sus contratos, con la mayoría de las renovaciones concentradas en los primeros días de octubre — el momento clave de negociación del año para el sector. La petición se apoya en la Ley de la Cadena Alimentaria, que prohíbe vender por debajo del coste de producción; la organización pide que el precio en origen cubra ese coste, que incluye desde el pienso hasta la energía y la mano de obra.',
@@ -66,13 +58,6 @@
           para1: 'The U.S. winter wheat harvest for 2026-27 came in at 1.048 billion bushels — 25% below the previous year and the smallest since 1965, according to the USDA. Drought hit western Kansas, eastern Colorado and the Panhandle hard: Kansas yields fell to 37 bushels per acre, down from 51 in 2025, and the hardest-hit variety (hard red winter wheat) dropped 36%. The USDA projects the average farm price will rise to $6.50/bushel in 2026-27, up $1.50 from the year before — though U.S. exports are expected to fall 15%, since the higher price itself makes American wheat less competitive against other exporters.',
           para2: "Day to day, though, the market doesn't move in a straight line: on September 18, wheat, corn and soybeans all closed lower (wheat -1.45%, corn -0.66%, soybeans -1.04%) after the USDA cut its Kansas corn forecast by 39 million bushels with no fresh Chinese buying to offset it — a reminder that in grains, the long-run fundamental (a short crop) and the day's move (a lack of buyers) can pull in opposite directions.",
           sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
-        },
-        {
-          category: CAT.en.fertilizantes, dateLabel: 'Sep 23, 2026',
-          title: 'Belarusian potash: plenty of noise, not much movement (yet)',
-          para1: 'In the week of September 14-18, six of the eight fertilizers DTN tracks rose in the U.S. and only two fell, though no move topped the 5% DTN considers "significant." Urea closed at $659/ton (slightly below the prior month, but 6% above a year ago) and DAP at $925/ton (2% above a year ago); anhydrous posted the largest year-over-year gain, up 22%.',
-          para2: 'Markets are watching a possible potash import deal with Belarus, floated by the Trump administration — but analyst Josh Linville put it plainly: "We need help on phosphate and nitrogen," not potash, which isn’t today’s scarce nutrient. The shipping route would also have to run through Lithuania, Latvia, Poland and Ukraine, with all the complications that implies. For now, more of a headline than an actual price shift.',
-          sources: [{ label: 'DTN Progressive Farmer', url: SRC.dtn }]
         },
         {
           category: CAT.en.lacteos, dateLabel: 'Sep 26, 2026',
@@ -97,13 +82,6 @@
           sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
         },
         {
-          category: CAT.fr.fertilizantes, dateLabel: '23 sept. 2026',
-          title: 'Potasse biélorusse : beaucoup de bruit, peu de mouvement (pour l’instant)',
-          para1: "Durant la semaine du 14 au 18 septembre, six des huit engrais suivis par DTN ont vu leur prix augmenter aux États-Unis, et seulement deux ont baissé — sans qu'aucun mouvement ne dépasse les 5 % que DTN juge \"significatifs\". L'urée a clôturé à 659 $/tonne (légèrement en dessous du mois précédent, mais 6 % au-dessus d'il y a un an) et le DAP à 925 $/tonne (2 % au-dessus d'il y a un an) ; l'ammoniac anhydre a affiché la plus forte hausse sur un an, à 22 %.",
-          para2: "Les marchés surveillent un possible accord d'importation de potasse avec la Biélorussie, évoqué par l'administration Trump — mais l'analyste Josh Linville résume ainsi la situation : \"Nous avons besoin d'aide sur le phosphate et l'azote\", pas sur la potasse, qui n'est pas aujourd'hui le nutriment le plus rare. La route d'acheminement devrait en plus passer par la Lituanie, la Lettonie, la Pologne et l'Ukraine, avec toutes les complications que cela suppose. Pour l'instant, plus un effet d'annonce qu'un vrai mouvement de prix.",
-          sources: [{ label: 'DTN Progressive Farmer', url: SRC.dtn }]
-        },
-        {
           category: CAT.fr.lacteos, dateLabel: '26 sept. 2026',
           title: 'Espagne : les éleveurs laitiers réclament une hausse du prix du lait avant octobre',
           para1: "Unión de Uniones, l'une des principales organisations agricoles espagnoles, a appelé les éleveurs laitiers à exiger une hausse de prix lors du renouvellement de leurs contrats, dont la plupart arrivent à échéance dans les premiers jours d'octobre — le moment de négociation clé de l'année pour la filière. La demande s'appuie sur la loi espagnole de la chaîne alimentaire, qui interdit de vendre en dessous du coût de production ; l'organisation demande que le prix départ ferme couvre ce coût, de l'alimentation animale à l'énergie en passant par la main-d'œuvre.",
@@ -124,13 +102,6 @@
           para1: "Il raccolto di grano invernale statunitense 2026-27 si è fermato a 1,048 miliardi di bushel — il 25% in meno rispetto all'anno precedente e il più basso dal 1965, secondo l'USDA. La siccità ha colpito duramente il Kansas occidentale, il Colorado orientale e il Panhandle: in Kansas la resa è scesa a 37 bushel per acro, da 51 nel 2025, e la varietà più colpita (grano rosso invernale duro) è calata del 36%. L'USDA prevede che il prezzo medio all'origine salga a 6,50 $/bushel nella campagna 2026-27, 1,50 $ in più rispetto all'anno precedente — anche se le esportazioni statunitensi dovrebbero calare del 15%, perché il rincaro stesso rende il grano americano meno competitivo rispetto agli altri paesi esportatori.",
           para2: "Nel breve termine, però, il mercato non sale in linea retta: il 18 settembre grano, mais e soia hanno chiuso tutti in ribasso (grano -1,45%, mais -0,66%, soia -1,04%) dopo che l'USDA ha tagliato la previsione sul mais del Kansas di 39 milioni di bushel senza nuovi acquisti cinesi a compensare — un promemoria che, nei cereali, il fondamentale di lungo periodo (un raccolto scarso) e il movimento del giorno (la mancanza di acquirenti) possono tirare in direzioni opposte.",
           sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
-        },
-        {
-          category: CAT.it.fertilizantes, dateLabel: '23 set 2026',
-          title: 'Potassa bielorussa: tanto rumore, pochi movimenti (per ora)',
-          para1: "Nella settimana dal 14 al 18 settembre, sei degli otto fertilizzanti monitorati da DTN sono saliti di prezzo negli Stati Uniti, e solo due sono scesi, anche se nessun movimento ha superato il 5% che DTN considera \"significativo\". L'urea ha chiuso a 659 $/tonnellata (leggermente sotto il mese precedente, ma il 6% sopra rispetto a un anno fa) e il DAP a 925 $/tonnellata (2% sopra rispetto a un anno fa); l'anidro ha registrato il maggior aumento su base annua, +22%.",
-          para2: "I mercati guardano a un possibile accordo di importazione di potassa dalla Bielorussia, ipotizzato dall'amministrazione Trump — ma l'analista Josh Linville lo dice chiaramente: \"Ci serve aiuto su fosforo e azoto\", non sulla potassa, che oggi non è il nutriente più scarso. La rotta di trasporto dovrebbe inoltre passare per Lituania, Lettonia, Polonia e Ucraina, con tutte le complicazioni che questo comporta. Per ora, più un titolo che un vero cambiamento di prezzo.",
-          sources: [{ label: 'DTN Progressive Farmer', url: SRC.dtn }]
         },
         {
           category: CAT.it.lacteos, dateLabel: '26 set 2026',

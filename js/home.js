@@ -38,8 +38,7 @@
       moversLabels: {
         trigo: { name: 'Trigo', unit: 'tonelada', market: 'España · Zaragoza · salida de silo (datos de la Comisión Europea)' },
         maiz: { name: 'Maíz', unit: 'bushel', market: 'EE. UU. · USDA NASS' },
-        leche: { name: 'Leche', unit: 'cwt', market: 'EE. UU. · USDA NASS' },
-        urea: { name: 'Urea', unit: 'ton corta', market: 'EE. UU. · DTN Fertilizer Index' }
+        leche: { name: 'Leche', unit: 'cwt', market: 'EE. UU. · USDA NASS' }
       },
       stats: [
         { value: '11', label: 'categorías de producto' },
@@ -72,8 +71,7 @@
       moversLabels: {
         trigo: { name: 'Wheat', unit: 'tonne', market: 'Spain · Zaragoza · ex-silo (European Commission data)' },
         maiz: { name: 'Corn', unit: 'bushel', market: 'U.S. · USDA NASS' },
-        leche: { name: 'Milk', unit: 'cwt', market: 'U.S. · USDA NASS' },
-        urea: { name: 'Urea', unit: 'short ton', market: 'U.S. · DTN Fertilizer Index' }
+        leche: { name: 'Milk', unit: 'cwt', market: 'U.S. · USDA NASS' }
       },
       stats: [
         { value: '11', label: 'product categories' },
@@ -106,8 +104,7 @@
       moversLabels: {
         trigo: { name: 'Blé', unit: 'tonne', market: 'Espagne · Saragosse · départ silo (données de la Commission européenne)' },
         maiz: { name: 'Maïs', unit: 'bushel', market: 'États-Unis · USDA NASS' },
-        leche: { name: 'Lait', unit: 'cwt', market: 'États-Unis · USDA NASS' },
-        urea: { name: 'Urée', unit: 'tonne courte', market: 'États-Unis · DTN Fertilizer Index' }
+        leche: { name: 'Lait', unit: 'cwt', market: 'États-Unis · USDA NASS' }
       },
       stats: [
         { value: '11', label: 'catégories de produits' },
@@ -140,8 +137,7 @@
       moversLabels: {
         trigo: { name: 'Grano', unit: 'tonnellata', market: 'Spagna · Saragozza · franco silo (dati della Commissione europea)' },
         maiz: { name: 'Mais', unit: 'bushel', market: 'Stati Uniti · USDA NASS' },
-        leche: { name: 'Latte', unit: 'cwt', market: 'Stati Uniti · USDA NASS' },
-        urea: { name: 'Urea', unit: 'tonnellata corta', market: 'Stati Uniti · DTN Fertilizer Index' }
+        leche: { name: 'Latte', unit: 'cwt', market: 'Stati Uniti · USDA NASS' }
       },
       stats: [
         { value: '11', label: 'categorie di prodotto' },
@@ -328,7 +324,7 @@
     var movers = rowsR.slice(0, 4).map(function(o) {
       var key = o.product;
       var label = (t.moversLabels && t.moversLabels[key]) || { name: productLabel(key), unit: o.unit || '', market: (o.region || '').toUpperCase() };
-      var mkx = window.DehesaShared.marketLabel && window.DehesaShared.marketLabel(o, lang); if (mkx) label = { name: label.name, unit: label.unit, market: mkx };
+      var mkx = window.DehesaShared.marketLabel && window.DehesaShared.marketLabel(o, lang); label = { name: label.name, unit: label.unit, market: mkx || (RN[o.region] ? RN[o.region][1][lang] || RN[o.region][1].es : (o.region || '').toUpperCase()) };   // nunca el mercado fijo del texto (podía ser de otra región)
       if (o.name && !(t.moversLabels && t.moversLabels[key])) label.name = o.name[lang] || o.name.es || label.name;   // nunca el codigo interno (avena_pienso_ab)
       var status = o.status === 'verified' ? (o.comparability === 'not_comparable' ? 'not-comparable' : 'real') : 'pending';
       var statusLabel = status === 'real' ? (lang === 'es' ? 'DATO OFICIAL' : lang === 'fr' ? 'DONNÉE OFFICIELLE' : lang === 'it' ? 'DATO UFFICIALE' : 'OFFICIAL DATA') : status === 'not-comparable' ? (lang === 'es' ? 'NO COMPARABLE' : lang === 'fr' ? 'NON COMPARABLE' : lang === 'it' ? 'NON COMPARABILE' : 'NOT COMPARABLE') : (lang === 'es' ? 'PENDIENTE' : lang === 'fr' ? 'EN ATTENTE' : lang === 'it' ? 'IN ATTESA' : 'PENDING');

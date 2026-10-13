@@ -148,9 +148,9 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     root.innerHTML = '<div style="margin-bottom:14px">' + tabHtml + '</div>' + (SEL.tab === 'food' ? renderFood(t) : SEL.tab === 'costs' ? renderCosts(t) : renderIncome(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>' + ci('usda_ers');
     Array.prototype.forEach.call(root.querySelectorAll('[data-tab]'), function (b) { b.onclick = function () { SEL.tab = b.getAttribute('data-tab'); render(); }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-fpo]'), function (b) { b.onclick = function () { SEL.fpo = b.getAttribute('data-fpo'); render(); }; });
-    var e = document.getElementById('cs-prod'); if (e) e.onchange = function () { SEL.prod = e.value; SEL.year = null; SEL.region = 'U.S. total'; render(); };
-    e = document.getElementById('cs-reg'); if (e) e.onchange = function () { SEL.region = e.value; render(); };
-    e = document.getElementById('cs-year'); if (e) e.onchange = function () { SEL.year = parseInt(e.value, 10); render(); };
+    var e = document.getElementById('cs-prod'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.prod = el.value; SEL.year = null; SEL.region = 'U.S. total'; render(); };
+    e = document.getElementById('cs-reg'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.region = el.value; render(); };
+    e = document.getElementById('cs-year'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.year = parseInt(el.value, 10); render(); };
   }
   window.__csUsRender = function () { render(); };
   window.DehesaShared.init('informacion');

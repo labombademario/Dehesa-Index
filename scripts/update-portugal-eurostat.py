@@ -3,6 +3,9 @@
 El INE solo publica índices de precios agrarios; Eurostat (geo=PT, datos oficiales portugueses, política de reutilización con cita de la fuente) aporta precios absolutos anuales, leche mensual y más. Complementa a update-portugal.py.
 """
 import datetime, json, re, sys, urllib.request, urllib.parse
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from lib_breaks import clean as _clean_breaks   # rupturas de serie (cambios de unidad): ver scripts/lib_breaks.py
 API = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
 LOG = []
 def log(*a):
@@ -148,6 +151,7 @@ def main():
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
            'countries': {'PT': {'name': 'Portugal', 'extend': True, 'source': {'name': 'Eurostat (official Portuguese data: INE)', 'url': 'https://ec.europa.eu/eurostat/web/agriculture', 'license': 'Eurostat reuse policy (CC BY 4.0); cite source'}, 'series': list(OUT.values())}},
            'log': LOG[-30:]}
+    doc = _clean_breaks(doc)
     json.dump(doc, open('data/portugal-eurostat-stats.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     open('data/portugal-eurostat-log.txt', 'w').write('\n'.join(LOG)); log('series', len(OUT))
 main()

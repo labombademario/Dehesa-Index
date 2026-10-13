@@ -5,6 +5,10 @@
    Tambien reescribe el bloque marcado de sitemap.xml. */
 import fs from 'node:fs';
 import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
+import { createHash as __ch } from 'node:crypto';
+import { readFileSync as __rf } from 'node:fs';
+// ?v= de shared.js = hash de su contenido (como scripts/stamp-assets.mjs): sin él, estas páginas servían un shared.js viejo de la caché
+const SHARED_V = (() => { try { return __ch('sha256').update(__rf(new URL('../js/shared.js', import.meta.url))).digest('hex').slice(0, 8); } catch (e) { return 'x'; } })();
 const read = f => fs.readFileSync(f, 'utf8');
 const SITE = 'https://dehesaindex.com';
 const FILES = ['country-stats', 'spain-stats', 'france-stats', 'france-crops-stats', 'france-extras-stats', 'france-campaign-stats', 'france-rnm-stats', 'france-dairy-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'italy-eurostat-stats', 'eurostat-depth-stats', 'uk-trade-stats', 'chile-stats', 'argentina-stats', 'poland-eurostat-stats', 'eurostat-eu-stats', 'eurostat-euw-stats', 'eurostat-eu2-stats', 'us-ers-stats', 'france-insee-stats', 'eu-stocks-stats', 'spain-siega-stats', 'spain-hicp-stats', 'spain-oilseeds-stats', 'us-ttb-stats', 'abares-stats', 'switzerland-foag-stats', 'switzerland-bfs-stats', 'sweden-sjv-stats', 'baltics-national-stats', 'czechia-csu-stats', 'austria-balances-stats', 'germany-extra-stats', 'us-weekly-stats', 'switzerland-meteo-stats', 'poland-stats', 'eu-gapfill-stats', 'us-nass-extra-stats', 'us-climate-stats', 'us-kcfed-stats', 'us-snotel-stats', 'canada-stats', 'us-stats', 'australia-trade-stats', 'eu-trade-stats', 'interest-rates-stats'];
@@ -119,7 +123,7 @@ ${rows}
   </article>
 </main>
 <div id="di-footer-root"></div>
-<script src="${up}js/shared.js?v=20260929-context-fix"></script>
+<script src="${up}js/shared.js?v=${SHARED_V}"></script>
 <script>if(window.DehesaShared&&window.DehesaShared.init)window.DehesaShared.init('informacion');</script>
 </body>
 </html>

@@ -465,7 +465,7 @@
   function plain(inp) {
     var lang = inp.lang, t = PR[lang] || PR.es, out = [], k = (inp.kpis || []).filter(function (s) { return s && s.latest != null && s.latestPeriod; });
     var lead = k.filter(function (s) { return /^(prices|quotes|milk|prices_lv|prices_fv|idx_perc)$/.test(s.group); })[0] || k[0], second = k.filter(function (s) { return s !== lead && s.unit !== (lead && lead.unit); })[0];
-    var clean = function (l) { return tl(String(l).replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''), lang); };
+    var clean = function (l) { return tlAll(String(l).replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''), lang); };
     var done = {};
     [lead, second].forEach(function (s) {
       if (!s) return;

@@ -9,7 +9,10 @@ def market(o):
     if _M is None: _M = json.loads(_P.read_text())
     if o.get('id') in _M['byId']: return _M['byId'][o['id']]
     src, oid = str(o.get('sourceId') or ''), str(o.get('id') or '')
+    # la regla «defra» dice «índice 2020=100»: solo vale para índices (la leche del Reino Unido es un precio)
+    isdefra = src.startswith('defra') or '_defra_' in oid
+    if isdefra and o.get('currency') != 'INDEX': return None
     if src in _M['rules']: return _M['rules'][src]
-    if src.startswith('defra') or '_defra_' in oid: return _M['rules']['defra']
+    if isdefra: return _M['rules']['defra']
     if 'eurostat' in src or '_eurostat_' in oid: return _M['rules']['eurostat']
     return None
