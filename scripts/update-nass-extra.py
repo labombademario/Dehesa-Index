@@ -16,11 +16,16 @@ def log(*a):
 # commodity_desc -> (prefijo de short_desc permitido (regex), estadisticas)
 COMMODITIES = [
     'ALMONDS', 'PECANS', 'WALNUTS', 'PISTACHIOS', 'ORANGES', 'GRAPEFRUIT', 'LEMONS', 'STRAWBERRIES', 'BLUEBERRIES', 'CRANBERRIES', 'PEACHES', 'APPLES',
-    'TOMATOES', 'ONIONS', 'LETTUCE', 'BEANS', 'LENTILS', 'PEAS', 'HONEY', 'WOOL', 'MOHAIR', 'GOATS', 'TOBACCO', 'MUSHROOMS', 'HEMP', 'TURKEYS']
+    'TOMATOES', 'ONIONS', 'LETTUCE', 'BEANS', 'LENTILS', 'PEAS', 'HONEY', 'WOOL', 'MOHAIR', 'GOATS', 'TOBACCO', 'MUSHROOMS', 'HEMP', 'TURKEYS',
+    'AG LAND', 'RENT', 'FARM OPERATIONS', 'CHICKENS', 'EGGS']
 ALLOW = {  # solo estas filas de cada commodity (el resto de variantes de NASS no aporta o duplica)
     'BEANS': r'^BEANS, DRY EDIBLE, \(EXCL CHICKPEAS\) - ', 'PEAS': r'^PEAS, DRY EDIBLE(, (ON|OFF) FARM)? - ', 'ONIONS': r'^ONIONS, DRY(, FRESH MARKET)? - ',
     'TURKEYS': r'^TURKEYS - (PRICE RECEIVED|PRODUCTION)', 'LETTUCE': r'^LETTUCE, (HEAD|ROMAINE|LEAF)(, FRESH MARKET)? - ', 'TOMATOES': r'^TOMATOES(, (FRESH MARKET|PROCESSING|IN THE OPEN))? - ',
-    'GOATS': r'^GOATS(, SLAUGHTER, COMMERCIAL)? - ', 'HEMP': r'^HEMP, INDUSTRIAL(, IN THE OPEN)? - '}
+    'GOATS': r'^GOATS(, SLAUGHTER, COMMERCIAL)? - ', 'HEMP': r'^HEMP, INDUSTRIAL(, IN THE OPEN)? - ',
+    'AG LAND': r'^AG LAND, (CROPLAND|PASTURELAND|INCL BUILDINGS) - ASSET VALUE, MEASURED IN \$ / ACRE$', 'RENT': r'^RENT, CASH, (CROPLAND|PASTURELAND)(, (IRRIGATED|NON-IRRIGATED))? - EXPENSE, MEASURED IN \$ / ACRE$',
+    'FARM OPERATIONS': r'^FARM OPERATIONS - (NUMBER OF OPERATIONS|ACRES OPERATED|AREA OPERATED, MEASURED IN ACRES / OPERATION)$',
+    'CHICKENS': r'^(CHICKENS, BROILERS - (PRICE RECEIVED, MEASURED IN \$ / LB|PRODUCTION, MEASURED IN (HEAD|LB)|PLACEMENTS, MEASURED IN HEAD)|CHICKENS, CHICKS, BROILER TYPE - HATCHED, MEASURED IN HEAD)$',
+    'EGGS': r'^EGGS - (PRICE RECEIVED, MEASURED IN \$ / DOZEN|PRODUCTION, MEASURED IN (DOZEN|EGGS))$'}
 EXTRA_PROD = {'TOMATOES': ('IN THE OPEN',)}   # practicas que SI se aceptan (se anaden como calificativo)
 EXTRA_UTIL = {'TOMATOES': ('FRESH MARKET', 'PROCESSING'), 'GOATS': ('SLAUGHTER, COMMERCIAL',)}
 BAD = re.compile(r'PARITY|10 YEAR AVG|ADJUSTED BASE|PCT OF|PCT |PERCENT|PROGRESS|ECONOMIC|FORECAST|GROUP ITEM|SALES, MEASURED IN PCT', re.I)
@@ -65,7 +70,7 @@ def freq_of(pts):
     g = statistics.median([b - a for a, b in zip(ms, ms[1:])])
     return {1: 'monthly', 12: 'annual'}.get(g)
 UNIT = {'LB': 'lb', 'TONS': 'short tons', 'CWT': 'cwt', 'BOXES': 'boxes', 'BARRELS': 'barrels', 'HEAD': 'head', 'ACRES': 'acres', '$': 'USD', 'BOX': 'box', 'BARREL': 'barrel',
-        'TON': 'short ton', 'ACRE': 'acre', 'COLONY': 'colony', 'EGGS': 'eggs', 'POUNDS': 'lb', 'NUMBER': 'number', 'BU': 'bushels'}
+        'TON': 'short ton', 'ACRE': 'acre', 'COLONY': 'colony', 'EGGS': 'eggs', 'POUNDS': 'lb', 'NUMBER': 'number', 'BU': 'bushels', 'DOZEN': 'dozen', 'OPERATION': 'operation'}
 def unit_of(mi):
     """'$ / LB' -> 'USD/lb'; 'LB / ACRE' -> 'lb/acre'; 'TONS' -> 'short tons'. Qualifier tras coma ('$ / BOX, ON TREE EQUIV') se devuelve aparte."""
     q = ''
@@ -83,13 +88,19 @@ def metric_of(sc, sd, unit):
         if unit and '/' in unit: return ('yield', 'crops')
         return ('production', 'crops')
     if sc == 'YIELD': return ('yield', 'crops')
+    if sc == 'ASSET VALUE' and unit == 'USD/acre': return ('asset value', 'inputs')
+    if sc == 'EXPENSE' and unit == 'USD/acre': return ('cash rent', 'inputs')
+    if sc == 'OPERATIONS' and unit == 'operations': return ('number of operations', 'production')
+    if sc in ('ACRES OPERATED', 'AREA OPERATED'): return ('acres operated' if unit == 'acres' else 'average size', 'production')
+    if sc == 'PLACEMENTS' and unit == 'head': return ('placements', 'production')
+    if sc == 'HATCHED' and unit == 'head': return ('hatched', 'production')
     if sc in ('AREA BEARING', 'AREA HARVESTED', 'AREA PLANTED'): return (sc.lower(), 'crops')
     if sc == 'STOCKS': return ('cold storage stocks' if 'COLD STORAGE' in sd else 'stocks', 'stocks')
     if sc == 'INVENTORY' and unit in ('head', None): return ('inventory', 'livestock')
     if sc == 'SLAUGHTERED' and unit == 'head': return ('slaughtered', 'livestock')
     if sc in ('SHORN', 'CLIPPED') and unit == 'head': return (sc.lower(), 'livestock')
     return None
-PREF = ['short tons', 'lb', 'cwt', 'boxes', 'barrels', 'head', 'acres']   # una sola unidad por (producto, medida): la primera de esta lista
+PREF = ['short tons', 'lb', 'cwt', 'boxes', 'barrels', 'head', 'acres', 'dozen']   # una sola unidad por (producto, medida): la primera de esta lista
 def nice(s):
     s = s.strip().lower(); s = re.sub(r'\bexcl\b', 'excluding', s)
     return s[:1].upper() + s[1:]
@@ -116,7 +127,8 @@ def build():
             mm = re.match(r'^([A-Z ,&\-\(\)/0-9]+?)(?:, MEASURED IN (.+))?$', tail)
             if not mm: continue
             unit, q = unit_of(mm.group(2) or '')
-            if not unit and not mm.group(2) and r['statisticcat_desc'] in ('AREA BEARING', 'AREA HARVESTED', 'AREA PLANTED'): unit = 'acres'
+            if not unit and not mm.group(2) and r['statisticcat_desc'] in ('AREA BEARING', 'AREA HARVESTED', 'AREA PLANTED', 'ACRES OPERATED'): unit = 'acres'
+            if not unit and not mm.group(2) and r['statisticcat_desc'] == 'OPERATIONS': unit = 'operations'
             if mm.group(2) and not unit: continue
             sc = r['statisticcat_desc']; met = metric_of(sc, sd, unit)
             if not met: continue
@@ -159,7 +171,7 @@ def build():
         pts = pts[-(30 if fq == 'annual' else 180):]
         u = unit
         mx = max(abs(p[1]) for p in pts)
-        if u in ('lb', 'short tons', 'cwt', 'boxes', 'barrels', 'head', 'acres', 'USD', 'eggs') and mx >= 1e8: pts = [(p[0], round(p[1] / 1e6, 6)) for p in pts]; u = 'million ' + u
+        if u in ('lb', 'short tons', 'cwt', 'boxes', 'barrels', 'head', 'acres', 'USD', 'eggs', 'dozen') and mx >= 1e8: pts = [(p[0], round(p[1] / 1e6, 6)) for p in pts]; u = 'million ' + u
         label = ', '.join([nice(parts[0])] + [x.lower() for x in parts[1:]]) + ': ' + metric
         labels.setdefault(label, []).append((fq, metric, parts, u, pts, d['group'], mon))
     for label, lst in sorted(labels.items()):
@@ -177,7 +189,7 @@ def main():
     ser = build(); log('series', len(ser))
     LOGF.write_text('\n'.join(LOG[-200:]) + '\n', encoding='utf-8')
     if len(ser) < 60: log('demasiado pocas series; no se escribe'); sys.exit(1)
-    src = {'name': 'USDA NASS - Quick Stats (national totals: tree nuts, citrus, berries, vegetables, pulses, honey, wool, goats, tobacco, mushrooms, hemp, turkeys)', 'url': 'https://quickstats.nass.usda.gov/', 'license': 'US Government work (public domain); cite USDA NASS'}
+    src = {'name': 'USDA NASS - Quick Stats (national totals: tree nuts, citrus, berries, vegetables, pulses, honey, wool, goats, tobacco, mushrooms, hemp, turkeys, farmland values and cash rents, farm numbers and size, broilers and eggs)', 'url': 'https://quickstats.nass.usda.gov/', 'license': 'US Government work (public domain); cite USDA NASS'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'countries': {'US': {'name': 'United States', 'extend': True, 'source': src, 'series': ser}}, 'log': LOG[-30:]}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 main()
