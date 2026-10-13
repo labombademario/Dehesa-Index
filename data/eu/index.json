@@ -1,15 +1,15 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-10-13T06:17:57.909Z",
+ "generatedAt": "2026-10-13T10:41:08.746Z",
  "families": [
   {
    "id": "cereales",
    "endpoint": "cereal",
    "freq": "weekly",
-   "series": 22,
-   "points": 77069,
-   "latest": "2026-10-04"
+   "series": 91,
+   "points": 187407,
+   "latest": "2026-10-11"
   },
   {
    "id": "oleaginosas",
