@@ -4,7 +4,7 @@
 La tabla solo trae provincias (no hay total nacional): para cada producto se elige una provincia de
 referencia según una lista de preferencia fija y se exige dato reciente y suficiente historia.
 Escribe observaciones region 'ca' en data/snapshots/<fecha>.json y un informe en data/canada-coverage.json."""
-import csv, io, json, re, sys, urllib.request, zipfile
+import sys, csv, io, json, re, sys, urllib.request, zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -37,10 +37,24 @@ SPEC = {
 CAT = {"soja_grano": "cereales", "lenteja": "cereales", "guisante_seco": "cereales", "lino": "cereales", "trigo": "cereales", "cebada": "cereales", "avena": "cereales", "colza": "cereales", "maiz": "cereales", "centeno": "cereales",
        "leche": "lacteos", "vaca": "ganado", "cerdo": "porcino", "cordero": "ovino", "pollo": "avicultura", "huevos": "avicultura"}
 
-def call(path, body=None):
-    req = urllib.request.Request(WDS + path, data=None if body is None else json.dumps(body).encode(), headers=UA)
-    with urllib.request.urlopen(req, timeout=120) as r:
-        return json.loads(r.read())
+def call(path, body=None, tries=4):
+    """Llamada al WDS de Statistics Canada con reintentos; si sigue sin devolver JSON se dice que respondio el servicio (estado, tipo y comienzo)."""
+    import time
+    last = None
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(WDS + path, data=None if body is None else json.dumps(body).encode(), headers=dict(UA, **{"Accept": "application/json"}))
+            with urllib.request.urlopen(req, timeout=120) as r:
+                raw = r.read()
+                try:
+                    return json.loads(raw)
+                except ValueError:
+                    last = "respuesta no JSON (HTTP %s, %s, %d bytes): %r" % (r.status, r.headers.get("Content-Type"), len(raw), raw[:120])
+        except Exception as e:
+            last = "%s: %s" % (type(e).__name__, e)
+        time.sleep(5 * (i + 1))
+    print("ERROR: StatCan WDS %s sin respuesta util tras %d intentos: %s" % (path.split("/")[0], tries, last))
+    sys.exit(1)
 
 now = datetime.now(timezone.utc)
 verified_at = now.isoformat(timespec="seconds").replace("+00:00", "Z")
