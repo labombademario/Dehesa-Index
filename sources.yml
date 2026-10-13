@@ -1136,6 +1136,14 @@ sources:
     data: [spain-hicp-stats.json]
     log: spain-hicp-log.txt
     message: Índices de precios de consumo de mantequilla y queso en España (Eurostat, IPCA)
+  - id: france-hicp
+    name: Update France consumer price indices for butter, cheese and olive oil (Eurostat HICP)
+    cron: ['50 9 4,18 * *']
+    script: scripts/update-france-hicp.py
+    timeout: 10
+    data: [france-hicp-stats.json]
+    log: france-hicp-log.txt
+    message: Índices de precios de consumo de mantequilla, queso y aceite de oliva en Francia (Eurostat, IPCA)
   - id: spain-oilseeds
     name: Update Spain annual oilseed balance sheets (MAPA)
     cron: ['40 7 * * 4']

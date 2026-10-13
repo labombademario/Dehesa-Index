@@ -153,6 +153,14 @@ def dairy_eu():
         pts = [(r['time'], v) for r, v in recs if r['dairyprod'] == code]
         n += put('eu-eus-dairy-%s-production' % tag, 'production', '%s: production by dairies, EU-27 (Eurostat)' % tag.capitalize(), 't', 'annual', pts, 'Eurostat apro_mk_pobta %s' % code, 1000)
     log('lacteos UE', n, 'series')
+def eggs():
+    """Huevos de gallina para consumo (apro_ec_eggcon, millones): Francia no los tenia con fuente nacional; ES, DE, NL... ya los publican por su lado."""
+    recs, labs = es('apro_ec_eggcon', geos=['FR']); by = {}
+    for r, v in recs:
+        if r['unit'] == 'MIO' and r['agriprod'] == 'D8210': by.setdefault(r['geo'], []).append((r['time'], v))
+    n = 0
+    for g, pts in by.items(): n += put(sid(g, 'eggs', 'hens'), 'production', "Hens' eggs for consumption: production (million, Eurostat)", 'million', 'annual', pts, 'Eurostat apro_ec_eggcon D8210', 1)
+    log('huevos', n, 'series')
 COMEXT = 'https://ec.europa.eu/eurostat/api/comext/dissemination/statistics/1.0/data/ds-045409'
 # (codigo SA, nombre; sin las palabras milk/dairy/cream en butter y cheese, para que la etiqueta no cuente tambien como leche)
 TRADE_HS = (('0405', 'Butter and spreads'), ('0406', 'Cheese and curd'), ('0407', "Birds' eggs in shell"), ('31', 'Fertilisers'), ('08', 'Edible fruit and nuts'), ('1004', 'Oats'), ('0701', 'Potatoes, fresh or chilled'),
@@ -174,7 +182,7 @@ def trade_eu():
             n += put('eu-eus-trade-%s-%s' % (hs, fl[0]), 'trade', '%s (HS %s): extra-EU-27 %s, quantity (Eurostat Comext)' % (nm, hs, fl), 't', 'annual', pts, 'Eurostat Comext ds-045409 %s' % hs, 0.1)
     log('comercio UE', n, 'series')
 def main():
-    for fn in (crops, herds, slaughter, milk, poultry, absprices, priceidx, inputs, trade_eu):   # dairy_eu (apro_mk_pobta UE-27) no se usa: la fuente solo llega a 2018-2021 para mantequilla y queso
+    for fn in (crops, herds, slaughter, milk, poultry, eggs, absprices, priceidx, inputs, trade_eu):   # dairy_eu (apro_mk_pobta UE-27) no se usa: la fuente solo llega a 2018-2021 para mantequilla y queso
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     for k in [k for k in OUT if k.split('-')[0].upper() in NAT and OUT[k]['group'] in ('crops', 'livestock', 'production', 'milk')]: del OUT[k]   # ES y DK ya publican su produccion con fuente nacional (MAPA, Statistics Denmark): aqui solo lo que les falta (indices de precios de produccion e insumos)
