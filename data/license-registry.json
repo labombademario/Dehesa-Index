@@ -4779,7 +4779,8 @@
     "cgc",
     "eu_taric",
     "cbsa_tariff",
-    "us_tariffs"
+    "us_tariffs",
+    "mapa_es"
    ],
    "notes": "Secciones de la web para la app (scripts/build-app-sections.py): copian valores ya publicados en data/ (seguro, cultivos, oferta y demanda, clima, gasóleo y fertilizantes, cuentas agrarias, grano de Canadá, ganadería y lácteos de EE. UU., exportaciones de EE. UU., aranceles) con su fuente en cada bloque."
   }

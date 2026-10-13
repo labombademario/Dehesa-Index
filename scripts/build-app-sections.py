@@ -286,12 +286,90 @@ def aranceles():
             source={'name': d['source']['name'], 'url': d['source']['url']}))
     return {'id': 'aranceles', 'title': t4('Aranceles agrarios|Farm tariffs|Droits de douane agricoles|Dazi agricoli'), 'emoji': '🛃', 'blocks': out}
 
+
+CCAA = {'andalucia': 'Andalucía', 'aragon': 'Aragón', 'asturias': 'Asturias', 'baleares': 'Illes Balears', 'canarias': 'Canarias', 'cantabria': 'Cantabria', 'castilla_la_mancha': 'Castilla-La Mancha', 'castilla_leon': 'Castilla y León', 'castilla_y_leon': 'Castilla y León', 'cataluna': 'Cataluña', 'extremadura': 'Extremadura', 'galicia': 'Galicia', 'madrid': 'Madrid', 'murcia': 'Región de Murcia', 'navarra': 'Navarra', 'pais_vasco': 'País Vasco', 'rioja': 'La Rioja', 'la_rioja': 'La Rioja', 'valencia': 'Comunitat Valenciana', 'comunidad_valenciana': 'Comunitat Valenciana', 'clm': 'Castilla-La Mancha', 'cyl': 'Castilla y León', 'larioja': 'La Rioja', 'paisvasco': 'País Vasco', 'valenciana': 'Comunitat Valenciana'}
+def ccaa(k): n = CCAA.get(k, k.replace('_', ' ').title()); return {l: n for l in L4}
+def lastidx(arr):
+    for i in range(len(arr) - 1, -1, -1):
+        if arr[i] is not None: return i
+    return None
+def ganaderia_es():
+    out = []
+    m = j('spain-milk/infolac.json')
+    if m:
+        P = m['periods']; n = m['national']; i = lastidx(n['price']); iy = i - 12 if i is not None and i >= 12 else None
+        def v(k, ix): return n[k][ix] if ix is not None and n[k][ix] is not None else None
+        prod = sorted(((ccaa(k), (c.get('production') or [None] * len(P))[i]) for k, c in m['ccaa'].items()), key=lambda x: -(x[1] or 0))
+        out.append(block('leche-es', 'ES', 'España: leche de vaca (INFOLAC)|Spain: cow’s milk (INFOLAC)|Espagne : lait de vache (INFOLAC)|Spagna: latte vaccino (INFOLAC)', asOf=P[i],
+            stats=[stat('Precio medio al ganadero|Average farm-gate price|Prix moyen payé à l’éleveur|Prezzo medio all’allevatore', v('price', i), '€/l', 3, {'d': '%+.1f %% vs año anterior' % pct(v('price', i), v('price', iy))} if v('price', iy) else None),
+                   stat('Entregas del mes|Monthly deliveries|Livraisons du mois|Consegne del mese', (v('deliveries', i) or 0) / 1000 if v('deliveries', i) else None, 'miles de t|thousand t|milliers de t|migliaia di t', 1, {'d': '%+.1f %% vs año anterior' % pct(v('deliveries', i), v('deliveries', iy))} if v('deliveries', iy) else None),
+                   stat('Ganaderos que entregan|Farmers delivering|Éleveurs livreurs|Allevatori che consegnano', v('farmers', i), '', 0, {'d': '%+.1f %% vs año anterior' % pct(v('farmers', i), v('farmers', iy))} if v('farmers', iy) else None),
+                   stat('Grasa|Fat|Matière grasse|Grasso', v('fat', i), '%', 2), stat('Proteína|Protein|Protéine|Proteine', v('protein', i), '%', 2)],
+            charts=[chart('Precio al ganadero|Farm-gate price|Prix à l’éleveur|Prezzo all’allevatore', '€/l', [('Precio|Price|Prix|Prezzo', [[p, x] for p, x in zip(P, n['price']) if x is not None])]),
+                    chart('Entregas mensuales|Monthly deliveries|Livraisons mensuelles|Consegne mensili', 't', [('Entregas|Deliveries|Livraisons|Consegne', [[p, x] for p, x in zip(P, n['deliveries']) if x is not None])])],
+            bars=[bars('Producción por comunidad, ' + P[i] + '|Production by region, ' + P[i] + '|Production par région, ' + P[i] + '|Produzione per regione, ' + P[i], 't', [(l, x) for l, x in prod if x], 0)],
+            source={'name': 'MAPA / FEGA, INFOLAC', 'url': 'https://www.fega.gob.es/es/datos-abiertos/consulta-de-datos/infolac'}))
+    s = j('spain-slaughter/slaughter.json')
+    if s:
+        P = s['periods']; N = s['national']
+        SP = {'bovino': 'Vacuno|Cattle|Bovins|Bovini', 'ovino': 'Ovino|Sheep|Ovins|Ovini', 'caprino': 'Caprino|Goats|Caprins|Caprini', 'porcino': 'Porcino|Pigs|Porcins|Suini', 'equino': 'Equino|Horses|Équidés|Equini', 'aves': 'Aves|Poultry|Volailles|Pollame', 'conejos': 'Conejo|Rabbits|Lapins|Conigli'}
+        i = lastidx(N['porcino']['carcass']); iy = i - 12 if i is not None and i >= 12 else None
+        out.append(block('sacrificio-es', 'ES', 'España: sacrificio en matadero|Spain: slaughter|Espagne : abattages|Spagna: macellazione', asOf=P[i],
+            stats=[stat(SP[k] + ' (t de canal)|' + SP[k].split('|')[1] + ' (t carcass)|' + SP[k].split('|')[2] + ' (t carcasse)|' + SP[k].split('|')[3] + ' (t carcassa)', N[k]['carcass'][i], 't', 0, {'d': '%+.1f %% vs año anterior' % pct(N[k]['carcass'][i], N[k]['carcass'][iy])} if iy is not None and N[k]['carcass'][iy] else None) for k in ('porcino', 'bovino', 'aves', 'ovino', 'caprino', 'conejos') if k in N and N[k]['carcass'][i] is not None],
+            charts=[chart('Toneladas de canal al mes|Tonnes of carcass per month|Tonnes de carcasse par mois|Tonnellate di carcassa al mese', 't', [(SP[k], [[p, x] for p, x in zip(P, N[k]['carcass']) if x is not None]) for k in ('porcino', 'bovino', 'aves', 'ovino') if k in N])],
+            source={'name': 'MAPA, encuesta de sacrificio de ganado', 'url': s['source']['url']}))
+    return {'id': 'ganaderia-es', 'title': t4('Leche y sacrificio (España)|Milk and slaughter (Spain)|Lait et abattages (Espagne)|Latte e macellazione (Spagna)'), 'emoji': '🥛', 'blocks': out}
+
+def balances_es():
+    out = []
+    c = j('spain-balances/cereals.json')
+    CN = {'wheat_soft': 'Trigo blando|Soft wheat|Blé tendre|Frumento tenero', 'wheat_durum': 'Trigo duro|Durum wheat|Blé dur|Frumento duro', 'barley': 'Cebada|Barley|Orge|Orzo', 'maize': 'Maíz|Maize|Maïs|Mais', 'rye': 'Centeno|Rye|Seigle|Segale', 'oats': 'Avena|Oats|Avoine|Avena', 'sorghum': 'Sorgo|Sorghum|Sorgho|Sorgo', 'triticale': 'Triticale|Triticale|Triticale|Triticale', 'total': 'Total cereales|All cereals|Total céréales|Totale cereali'}
+    if c:
+        ks = sorted(c['campaigns']); y = ks[-1]; cp = c['campaigns'][y]; v = cp['v']['total']; vp = c['campaigns'][ks[-2]]['v']['total'] if len(ks) > 1 else {}
+        st = cp.get('status') or ''
+        def sb(k): return {'d': '%+.1f %% vs %s' % (pct(v.get(k), vp.get(k)), c['campaigns'][ks[-2]]['label'])} if v.get(k) and vp.get(k) else None
+        out.append(block('cereales-es', 'ES', 'España: balance de cereales|Spain: cereal balance|Espagne : bilan céréalier|Spagna: bilancio dei cereali', asOf=cp['label'] + (' (' + st + ')' if st else ''),
+            stats=[stat('Producción|Production|Production|Produzione', v.get('production'), 'miles de t|thousand t|milliers de t|migliaia di t', 0, sb('production')),
+                   stat('Importaciones|Imports|Importations|Importazioni', v.get('imports'), 'miles de t|thousand t|milliers de t|migliaia di t', 0, sb('imports')),
+                   stat('Consumo total|Total consumption|Consommation totale|Consumo totale', v.get('consumption'), 'miles de t|thousand t|milliers de t|migliaia di t', 0),
+                   stat('De ello, piensos|Of which feed|Dont aliments du bétail|Di cui mangimi', v.get('feed'), 'miles de t|thousand t|milliers de t|migliaia di t', 0),
+                   stat('Existencias finales|Ending stocks|Stocks finaux|Scorte finali', v.get('endingStocks'), 'miles de t|thousand t|milliers de t|migliaia di t', 0)],
+            charts=[chart('Producción e importaciones por campaña|Production and imports by season|Production et importations par campagne|Produzione e importazioni per campagna', 'miles de t|thousand t|milliers de t|migliaia di t',
+                          [('Producción|Production|Production|Produzione', [[k, c['campaigns'][k]['v']['total'].get('production')] for k in ks if c['campaigns'][k]['v']['total'].get('production') is not None]),
+                           ('Importaciones|Imports|Importations|Importazioni', [[k, c['campaigns'][k]['v']['total'].get('imports')] for k in ks if c['campaigns'][k]['v']['total'].get('imports') is not None])])],
+            bars=[bars('Producción por cereal, ' + cp['label'] + '|Production by cereal, ' + cp['label'] + '|Production par céréale, ' + cp['label'] + '|Produzione per cereale, ' + cp['label'], 'miles de t|thousand t|milliers de t|migliaia di t', sorted([(CN[k], cp['v'][k].get('production')) for k in c['cereals'] if k != 'total' and cp['v'].get(k, {}).get('production')], key=lambda x: -x[1]), 0)],
+            note=t4('Campaña de comercialización del 1 de julio al 30 de junio. Las últimas campañas son estimaciones del MAPA.|Marketing year 1 July to 30 June. Latest seasons are MAPA estimates.|Campagne du 1er juillet au 30 juin. Les dernières campagnes sont des estimations du MAPA.|Campagna dal 1° luglio al 30 giugno. Le ultime campagne sono stime del MAPA.'),
+            source={'name': 'MAPA, balances de cereales', 'url': c['source']['url']}))
+    o = j('spain-balances/olive.json')
+    if o:
+        ks = sorted(o['campaigns']); y = ks[-1]; cp = o['campaigns'][y]; v = cp['v']['oil']
+        out.append(block('aceite-es', 'ES', 'España: balance del aceite de oliva|Spain: olive oil balance|Espagne : bilan de l’huile d’olive|Spagna: bilancio dell’olio d’oliva', asOf=cp['label'] + ' (' + (cp.get('status') or '') + ')',
+            stats=[stat('Producción|Production|Production|Produzione', v.get('production'), 'miles de t|thousand t|milliers de t|migliaia di t', 0), stat('Exportaciones|Exports|Exportations|Esportazioni', v.get('exports'), 'miles de t|thousand t|milliers de t|migliaia di t', 0),
+                   stat('Consumo interior|Domestic use|Consommation intérieure|Consumo interno', v.get('domestic'), 'miles de t|thousand t|milliers de t|migliaia di t', 0), stat('Existencias finales|Ending stocks|Stocks finaux|Scorte finali', v.get('endingStocks'), 'miles de t|thousand t|milliers de t|migliaia di t', 0)],
+            charts=[chart('Producción y exportaciones por campaña|Production and exports by season|Production et exportations par campagne|Produzione ed esportazioni per campagna', 'miles de t|thousand t|milliers de t|migliaia di t',
+                          [('Producción|Production|Production|Produzione', [[k, o['campaigns'][k]['v']['oil'].get('production')] for k in ks if o['campaigns'][k]['v']['oil'].get('production') is not None]),
+                           ('Exportaciones|Exports|Exportations|Esportazioni', [[k, o['campaigns'][k]['v']['oil'].get('exports')] for k in ks if o['campaigns'][k]['v']['oil'].get('exports') is not None])])],
+            note=t4('Campaña del 1 de octubre al 30 de septiembre.|Season from 1 October to 30 September.|Campagne du 1er octobre au 30 septembre.|Campagna dal 1° ottobre al 30 settembre.'),
+            source={'name': 'MAPA, balance del aceite de oliva', 'url': o['source']['url']}))
+    w = j('spain-wine/monthly.json')
+    if w:
+        M = w['months']; N = w['national']; i = lastidx(N['stockEnd'])
+        out.append(block('vino-es', 'ES', 'España: existencias y salidas de vino|Spain: wine stocks and shipments|Espagne : stocks et sorties de vin|Spagna: scorte e uscite di vino', asOf=M[i],
+            stats=[stat('Existencias a final de mes|Stocks at month end|Stocks en fin de mois|Scorte a fine mese', N['stockEnd'][i] / 1e6, 'millones de hl|million hl|millions d’hl|milioni di hl', 2),
+                   stat('Salidas al mercado interior|Domestic shipments|Sorties marché intérieur|Uscite mercato interno', (N['exitsDomestic'][i] or 0) / 1e6, 'millones de hl|million hl|millions d’hl|milioni di hl', 2),
+                   stat('Salidas a la UE|Shipments to the EU|Sorties vers l’UE|Uscite verso l’UE', (N['exitsEU'][i] or 0) / 1e6, 'millones de hl|million hl|millions d’hl|milioni di hl', 2),
+                   stat('Salidas fuera de la UE|Shipments outside the EU|Sorties hors UE|Uscite fuori UE', (N['exitsThird'][i] or 0) / 1e6, 'millones de hl|million hl|millions d’hl|milioni di hl', 2)],
+            charts=[chart('Existencias de vino|Wine stocks|Stocks de vin|Scorte di vino', 'millones de hl|million hl|millions d’hl|milioni di hl', [('Existencias|Stocks|Stocks|Scorte', [[p, round(x / 1e6, 2)] for p, x in zip(M, N['stockEnd']) if x is not None])])],
+            bars=[bars('Existencias por comunidad, ' + M[i] + '|Stocks by region, ' + M[i] + '|Stocks par région, ' + M[i] + '|Scorte per regione, ' + M[i], 'millones de hl|million hl|millions d’hl|milioni di hl', sorted([(ccaa(k), (cc_['stockEnd'][i] or 0) / 1e6) for k, cc_ in w['ccaa'].items() if cc_['stockEnd'][i]], key=lambda x: -x[1]), 2)],
+            source={'name': 'MAPA, INFOVI', 'url': w['source']['url']}))
+    return {'id': 'balances-es', 'title': t4('Cosecha, existencias y comercio (España)|Harvest, stocks and trade (Spain)|Récolte, stocks et commerce (Espagne)|Raccolto, scorte e commercio (Spagna)'), 'emoji': '🇪🇸', 'blocks': out}
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     gen = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     idx = {}
     keep = {'index.json'}
-    for fn in (seguro, cultivos, oferta, clima, insumos, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
+    for fn in (ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
         try: doc = fn()
         except Exception as e: print('ERROR en', fn.__name__, repr(e)); raise
         if not doc or not doc['blocks']: print('sin datos:', fn.__name__); continue
