@@ -311,7 +311,14 @@
     document.getElementById('home-movers-hint').textContent = t.moversHint;
     document.getElementById('home-movers-cta').textContent = t.moversCta;
 
-    var movers = HOME_DATA.rows.slice(0, 4).map(function(o) {
+    /* Panel por mercado: el que el usuario eligió (mismo ajuste que «Tu ubicación» en Precios) o el que corresponde a su zona horaria */
+    var reg = homeRegion(lang), RN = { eu: ['🇪🇺', { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }], us: ['🇺🇸', { es: 'EE. UU.', en: 'US', fr: 'États-Unis', it: 'USA' }], uk: ['🇬🇧', { es: 'Reino Unido', en: 'UK', fr: 'Royaume-Uni', it: 'Regno Unito' }], ca: ['🇨🇦', { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' }] };
+    var tb = document.getElementById('home-movers-table'), chips = document.getElementById('home-movers-reg');
+    if (tb && !chips) { chips = document.createElement('div'); chips.id = 'home-movers-reg'; chips.className = 'di-home-reg'; chips.setAttribute('role', 'radiogroup'); tb.parentNode.insertBefore(chips, tb);
+      chips.addEventListener('click', function (e) { var b = e.target.closest ? e.target.closest('[data-reg]') : null; if (!b) return; try { localStorage.setItem('dehesaIndexLocation', b.getAttribute('data-reg')); } catch (er) {} render(); }); }
+    if (chips) { chips.setAttribute('aria-label', ({ es: 'Mercado', en: 'Market', fr: 'Marché', it: 'Mercato' })[lang] || 'Mercado'); chips.innerHTML = ['eu', 'us', 'uk', 'ca'].map(function (r) { var on = r === reg; return '<button type="button" role="radio" aria-checked="' + on + '" data-reg="' + r + '" class="di-home-reg-b' + (on ? ' on' : '') + '"><span aria-hidden="true">' + RN[r][0] + '</span> ' + esc(RN[r][1][lang] || RN[r][1].es) + '</button>'; }).join(''); }
+    var rowsR = (HOME_DATA.by && HOME_DATA.by[reg]) || HOME_DATA.rows;
+    var movers = rowsR.slice(0, 4).map(function(o) {
       var key = o.product;
       var label = (t.moversLabels && t.moversLabels[key]) || { name: productLabel(key), unit: o.unit || '', market: (o.region || '').toUpperCase() };
       var mkx = window.DehesaShared.marketLabel && window.DehesaShared.marketLabel(o, lang); if (mkx) label = { name: label.name, unit: label.unit, market: mkx };
@@ -343,11 +350,21 @@
     document.getElementById('home-cta-button').textContent = t.ctaButton;
   }
 
+  function homeRegion(lang) {
+    var v = null; try { v = localStorage.getItem('dehesaIndexLocation'); } catch (e) {}
+    if (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca') return v;
+    var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    if (/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|Regina|St_Johns|Moncton|Whitehorse|Yellowknife|Iqaluit)$/.test(tz)) return 'ca';
+    if (/^Europe\/(London|Belfast|Guernsey|Jersey|Isle_of_Man)$/.test(tz)) return 'uk';
+    if (/^Europe\//.test(tz) || /^Atlantic\/(Canary|Madeira|Azores)$/.test(tz)) return 'eu';
+    if (/^(America|Pacific\/Honolulu)/.test(tz)) return 'us';
+    return lang === 'en' ? 'us' : 'eu';
+  }
   // Una sola peticion pequena (data/views/home-summary.json, ~45 KB) alimenta toda la Home; ya no se baja latest.json (3,7 MB) ni los datasets completos de cada tarjeta.
   function loadHomeData() {
     var citeP = window.DICite ? window.DICite.load() : Promise.resolve(null);
     Promise.all([window.DIHome.summary(), citeP]).then(function(r) { return r[0]; }).then(function(s) {
-      HOME_DATA.rows = s.movers || [];
+      HOME_DATA.rows = s.movers || []; HOME_DATA.by = s.moversBy || null;
       HOME_DATA.stats = s.stats;
       HOME_DATA.loaded = true; HOME_DATA.status = 'live';
       render();

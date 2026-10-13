@@ -2295,3 +2295,12 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 @media (max-width:480px){.mm-cc{grid-template-columns:repeat(3,1fr);gap:8px}.mm-cc-b{padding:10px 4px;font-size:12.5px}.mm-cc-f{font-size:28px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mm-cc-b.on{background:#1f3527;color:#e3f0e5}}
 :root[data-theme="dark"] .mm-cc-b.on{background:#1f3527;color:#e3f0e5}
+
+/* Portada: elegir mercado del panel */
+.di-home-reg{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.di-home-reg-b{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:var(--surface,#fff);color:var(--text);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.di-home-reg-b span{font-size:17px;line-height:1}
+.di-home-reg-b.on{border-color:#2f6b3a;background:#e3f0e5;color:#1E3328}
+.di-home-reg-b:focus-visible{outline:2px solid #2f6b3a;outline-offset:2px}
+:root[data-theme="dark"] .di-home-reg-b.on{background:#1f3527;color:#e3f0e5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .di-home-reg-b.on{background:#1f3527;color:#e3f0e5}}

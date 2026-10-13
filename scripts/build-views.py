@@ -42,10 +42,25 @@ HOME_PSD = ['trigo', 'maiz', 'soja', 'azucar']                 # js/oferta-deman
 def load(rel): return json.loads((D / rel).read_text())      # estricto: si falta una fuente, falla
 def home_summary():
     latest = load('latest.json')['observations']; cat = load('catalog.json')
-    rows = sorted(latest, key=lambda o: str(o.get('observationDate')), reverse=True)[:4]
     try: plabels = json.loads((D / 'observatory.json').read_text()).get('labels', {})   # nombres de producto en es/en/fr/it (los de js/data.js)
     except Exception: plabels = {}
-    movers = [dict({k: v for k, v in o.items() if k != 'history'}, **({'market': market(o)} if market(o) else {}), **({'name': plabels[o['product']]} if o.get('product') in plabels else {})) for o in rows]
+    slim = lambda o: dict({k: v for k, v in o.items() if k != 'history'}, **({'market': market(o)} if market(o) else {}), **({'name': plabels[o['product']]} if o.get('product') in plabels else {}))
+    # Panel de la portada POR MERCADO (antes: las 4 observaciones mas recientes de cualquier pais, y salian 4 precios de Alberta a todo el mundo).
+    # Por cada mercado, los productos de referencia en este orden si tienen dato verificado de los ultimos 6 meses; si faltan, los mas recientes.
+    PRI = ['trigo', 'trigo_cwrs_ab', 'maiz', 'leche', 'vaca', 'novillo_ab', 'cerdo', 'cerdo_ab', 'cebada', 'canola_elevador', 'colza', 'soja_grano', 'huevos', 'pollo',
+           'defra_wheat_output_index', 'defra_milk_output_index', 'defra_cattle_output_index', 'defra_pigs_output_index', 'defra_barley_output_index']
+    lim = (datetime.date.today() - datetime.timedelta(days=183)).isoformat()
+    by_region = {}
+    for reg in ('us', 'eu', 'uk', 'ca'):
+        rs = [o for o in latest if o.get('region') == reg and o.get('status') == 'verified']
+        fresh = {o['product']: o for o in rs if str(o.get('observationDate')) >= lim[:len(str(o.get('observationDate')))]}
+        GRP = {'trigo_cwrs_ab': 'trigo', 'novillo_ab': 'vaca', 'cerdo_ab': 'cerdo', 'canola_elevador': 'colza'}   # un solo producto de cada familia
+        pick, seen = [], set()
+        for p in PRI:
+            if p in fresh and GRP.get(p, p) not in seen and len(pick) < 4: pick.append(fresh[p]); seen.add(GRP.get(p, p))
+        if len(pick) < 4: pick += [o for o in sorted(rs, key=lambda o: str(o.get('observationDate')), reverse=True) if o not in pick][:4 - len(pick)]
+        by_region[reg] = [slim(o) for o in pick]
+    movers = by_region['eu']
     cp = load('crop-progress.json')
     crops = []
     for c in cp['crops']:
@@ -60,7 +75,7 @@ def home_summary():
     ams = load('ams/index.json')
     return {'schemaVersion': 1, 'generatedAt': now(),
             'stats': {'observations': len(latest), 'products': len(cat['products']), 'sources': len(cat['sources']), 'catalogObservations': cat.get('observationCount')},
-            'movers': movers, 'cropProgress': {'lastWeekEnding': cp.get('lastWeekEnding'), 'crops': crops},
+            'movers': movers, 'moversBy': by_region, 'cropProgress': {'lastWeekEnding': cp.get('lastWeekEnding'), 'crops': crops},
             'supplyDemand': {'commodities': comm}, 'climate': {'lastPeriod': cl['lastPeriod'], 'locations': locs},
             'markets': {'total': len(ams['reports']), 'families': {f: sum(1 for r in ams['reports'] if r['fam'] == f) for f in sorted({r['fam'] for r in ams['reports']})}}}
 def trade_products():

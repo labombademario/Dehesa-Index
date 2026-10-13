@@ -4757,6 +4757,13 @@
     "miteco_rbd"
    ],
    "notes": "Contornos de las demarcaciones hidrográficas (MITECO vía AEMA, recortados con la costa de Natural Earth) y ríos de Natural Earth, para el mapa de sequía de la app (build-es-basins-map.py)."
+  },
+  "data/fv-farm.json": {
+   "sources": [
+    "insee",
+    "eurostat"
+   ],
+   "notes": "Lo que cobra el agricultor por fruta, hortaliza y fruto seco fuera de España: IPPAP del INSEE (Francia, mensual, 2020=100) y Eurostat apri_pi_outq / apri_ap_crpouta (resto de la UE), ya publicados en data/france-insee-stats.json y data/*-stats.json (build-fv-farm.py). Nunca datos de otro país."
   }
  },
  "derived": [
