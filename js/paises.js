@@ -480,7 +480,7 @@
     var wb = document.getElementById('ps-watch'); if (wb && cur) wb.onclick = function () { DIWatch.toggle(ST.c, cur.id); build(); };
     if (wb && cur && DIWatch.editor) { // avisos locales de esta serie (desplegable bajo el titulo del grafico)
       var card = wb.parentNode.parentNode, det = document.createElement('details'), sm = document.createElement('summary'), rl = (DIWatch.rl[lang()] || DIWatch.rl.es), nr = DIWatch.rules(ST.c, cur.id).length;
-      det.style.cssText = 'margin:6px 0 8px'; if (nr) det.open = true; sm.style.cssText = 'cursor:pointer;font-size:12.5px;color:var(--text-faint)'; sm.textContent = '🔔 ' + rl.rules + (nr ? ' (' + nr + ')' : '');
+      det.style.cssText = 'margin:6px 0 8px'; if (nr) det.open = true; sm.style.cssText = 'cursor:pointer;font-size:12.5px;color:var(--text-faint);display:block;min-height:24px;line-height:24px'; sm.textContent = '🔔 ' + rl.rules + (nr ? ' (' + nr + ')' : '');
       det.appendChild(sm); var box = document.createElement('div'); box.style.marginTop = '6px'; box.innerHTML = DIWatch.editor(ST.c, cur.id, lang()); det.appendChild(box);
       var after = wb.parentNode; after.parentNode.insertBefore(det, after.nextSibling); DIWatch.bindEditor(box, build);
     }
