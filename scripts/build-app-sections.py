@@ -371,12 +371,86 @@ def balances_es():
             source={'name': 'MAPA, INFOVI', 'url': w['source']['url']}))
     return {'id': 'balances-es', 'title': t4('Cosecha, existencias y comercio (España)|Harvest, stocks and trade (Spain)|Récolte, stocks et commerce (Espagne)|Raccolto, scorte e commercio (Spagna)'), 'emoji': '🇪🇸', 'blocks': out}
 
+MON3 = {m: i + 1 for i, m in enumerate('JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC'.split())}
+def hist_monthly(h):
+    """[{period, year, value}] -> {YYYY-MM: último valor del mes}; acepta MM-DD, MM, M, JAN y Qn (trimestres: se descartan)."""
+    out = {}
+    for r in h:
+        p, y, v = str(r.get('period')), r.get('year'), r.get('value')
+        if v is None or y is None: continue
+        if p.upper() in MON3: m = MON3[p.upper()]
+        elif len(p) == 5 and p[2] == '-': m = int(p[:2])
+        elif p.isdigit() and 1 <= int(p) <= 12: m = int(p)
+        else: continue
+        out['%04d-%02d' % (int(y), m)] = v
+    return out
+def pts_monthly(pts):
+    out = {}
+    for d_, v in pts:
+        if v is not None: out[str(d_)[:7]] = v
+    return out
+def analyse(series):
+    """series: {nombre T4 (clave es): (T4, {YYYY-MM: valor})} -> (momentum 3m, volatilidad anual, siguiente mes típico)"""
+    import statistics
+    mom, vol, nxt = [], [], []
+    today = datetime.date.today(); nm = today.month % 12 + 1
+    for key, (lab, m) in series.items():
+        ks = sorted(m)
+        if len(ks) < 13: continue
+        last = ks[-1]; ly, lm = int(last[:4]), int(last[5:7])
+        if (today.year - ly) * 12 + today.month - lm > 4: continue   # sin dato reciente: fuera
+        y3, m3 = (ly, lm - 3) if lm > 3 else (ly - 1, lm + 9)
+        k3 = '%04d-%02d' % (y3, m3)
+        if k3 in m and m[k3]: mom.append((lab, (m[last] / m[k3] - 1) * 100))
+        rets = []
+        win = [k for k in ks if k >= '%04d-%02d' % (ly - 5, lm)]
+        for a, b in zip(win, win[1:]):
+            ya, ma = int(a[:4]), int(a[5:7]); yb, mb = int(b[:4]), int(b[5:7])
+            if (yb - ya) * 12 + mb - ma == 1 and m[a]: rets.append(m[b] / m[a] - 1)
+        # serie con saltos de más del 50 % en un mes: casi siempre un dato erróneo o un mercado muy estrecho; no entra en el ranking
+        if len(rets) >= 18 and max(abs(r_) for r_ in rets) <= 0.5: vol.append((lab, statistics.pstdev(rets) * (12 ** 0.5) * 100))
+        cm = today.month; ch = []
+        for y in range(ly - 10, ly + 1):
+            a = '%04d-%02d' % (y, cm); b = '%04d-%02d' % (y + (1 if cm == 12 else 0), nm)
+            if a in m and b in m and m[a]: ch.append((m[b] / m[a] - 1) * 100)
+        if len(ch) >= 5: nxt.append((lab, sum(ch) / len(ch)))
+    return mom, vol, nxt
+MNAME = [t4('enero|January|janvier|gennaio'), t4('febrero|February|février|febbraio'), t4('marzo|March|mars|marzo'), t4('abril|April|avril|aprile'), t4('mayo|May|mai|maggio'), t4('junio|June|juin|giugno'), t4('julio|July|juillet|luglio'), t4('agosto|August|août|agosto'), t4('septiembre|September|septembre|settembre'), t4('octubre|October|octobre|ottobre'), t4('noviembre|November|novembre|novembre'), t4('diciembre|December|décembre|dicembre')]
+def analisis():
+    names = {}
+    ap = j('app/v1/prices.json')
+    for p_ in (ap or {}).get('prices', []): names[(p_['region'], p_['product'])] = p_['name']
+    groups = {}
+    for f in sorted((D / 'prices' / 'history').glob('*/*.json')):
+        try: d = json.loads(f.read_text())
+        except Exception: continue
+        reg = d.get('region'); prod = d.get('product')
+        if (reg, prod) not in names or str(prod).startswith(('eurostat_', 'defra_')): continue
+        if reg == 'eu' and prod in ('diesel', 'gas_natural', 'petroleo_brent', 'urea'): pass
+        groups.setdefault(reg, {})[prod] = (names[(reg, prod)], hist_monthly(d.get('history') or []))
+    for f in sorted((D / 'app' / 'v1' / 'eu').glob('[A-Z][A-Z].json')):
+        d = json.loads(f.read_text())
+        groups['eu-' + d['country']] = {p_['product']: (p_['name'], pts_monthly(p_['points'])) for p_ in d['prices']}
+    REG = {'us': 'US', 'eu': 'ES', 'ca': 'CA', 'uk': 'UK'}
+    today = datetime.date.today(); nm = MNAME[today.month % 12]; cm = MNAME[today.month - 1]
+    out = []
+    for reg, ser in sorted(groups.items()):
+        cc = REG.get(reg) or reg.split('-', 1)[1]
+        mom, vol, nxt = analyse(ser)
+        if not (mom or vol or nxt): continue
+        out.append(block('an-' + cc, cc, 'Análisis del mercado|Market analysis|Analyse du marché|Analisi di mercato', asOf=today.isoformat()[:7],
+            bars=[bars('Variación en los últimos 3 meses (%)|Change over the last 3 months (%)|Variation sur 3 mois (%)|Variazione negli ultimi 3 mesi (%)', '%', sorted(mom, key=lambda x: -x[1]), 1),
+                  bars('Volatilidad anual (5 años, %)|Annual volatility (5 years, %)|Volatilité annuelle (5 ans, %)|Volatilità annua (5 anni, %)', '%', sorted(vol, key=lambda x: -x[1]), 1),
+                  {'title': {l: ('De %s a %s, cómo suele moverse el precio (%%)' % (cm['es'], nm['es'])) if l == 'es' else ('From %s to %s, typical price move (%%)' % (cm['en'], nm['en'])) if l == 'en' else ('De %s à %s, évolution habituelle du prix (%%)' % (cm['fr'], nm['fr'])) if l == 'fr' else ('Da %s a %s, andamento tipico del prezzo (%%)' % (cm['it'], nm['it'])) for l in L4}, 'unit': '%', 'dec': 1, 'items': [{'label': l, 'value': round(v, 2)} for l, v in sorted(nxt, key=lambda x: -x[1])]}],
+            note=t4('Calculado por Dehesa Index con el histórico mensual de cada precio de este mercado (último dato de cada mes). La volatilidad es la desviación típica de las variaciones mensuales, anualizada; las series con algún salto de más del 50 % en un mes no entran (suelen ser datos erróneos o mercados muy pequeños). El movimiento del próximo mes es la media de los últimos 10 años: no es una previsión.|Calculated by Dehesa Index from each price’s monthly history in this market (last value of each month). Volatility is the standard deviation of monthly changes, annualised; series with any one-month jump above 50% are left out (usually data errors or very thin markets). Next month’s move is the 10-year average: not a forecast.|Calculé par Dehesa Index à partir de l’historique mensuel de chaque prix de ce marché. La volatilité est l’écart type des variations mensuelles, annualisé ; les séries avec un saut de plus de 50 % en un mois sont exclues. Le mouvement du mois suivant est la moyenne sur 10 ans : ce n’est pas une prévision.|Calcolato da Dehesa Index dallo storico mensile di ogni prezzo di questo mercato. La volatilità è la deviazione standard delle variazioni mensili, annualizzata; le serie con un salto di oltre il 50% in un mese sono escluse. Il movimento del mese successivo è la media degli ultimi 10 anni: non è una previsione.')))
+    return {'id': 'analisis', 'title': t4('Análisis del mercado|Market analysis|Analyse du marché|Analisi di mercato'), 'emoji': '📈', 'blocks': out}
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     gen = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     idx = {}
     keep = {'index.json'}
-    for fn in (ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
+    for fn in (analisis, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
         try: doc = fn()
         except Exception as e: print('ERROR en', fn.__name__, repr(e)); raise
         if not doc or not doc['blocks']: print('sin datos:', fn.__name__); continue
