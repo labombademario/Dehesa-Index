@@ -1,2 +1,2 @@
-escrito sheep-goat.json 61 ventas; 2 informes leidos
+sin cambios en sheep-goat.json
 sin cambios en hogs.json
