@@ -38,7 +38,7 @@ check(/var NAV_ORDER = \['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:to
   for (const f of ['mercados.html','exportaciones.html','oferta-demanda.html','cultivos.html','rendimientos.html','ganaderia.html','sequia.html','insumos.html','costes.html','europa.html','producto.html','mapa.html','clima.html','paises.html','aranceles.html','perfiles.html']) check(groupFiles.includes(f), 'submenu links ' + f);
 }
 check(shared.includes('window.history.back()'), 'context back action exists');
-check(shared.includes("sitePath('assets/logo-nav.png')"), 'footer logo uses nested-page-safe path');
+check(shared.includes("sitePath('assets/logo-nav.webp')"), 'footer logo uses nested-page-safe path');
 check(shared.includes('backButton + siblingLinks'), 'context bar renders the defined sibling links');
 check(!shared.includes('siblingHref') && !shared.includes('siblingLabel'), 'context bar has no stale undefined link variables');
 check(news.includes('window.history.pushState'), 'news filters create browser history entries');
