@@ -1,20 +1,3 @@
-es GA {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es AS {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es CB {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es PV {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es NC {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es RI {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es AR {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es MD {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es CL {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es CM {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es EX {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es CT {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es VC {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es IB {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es AN {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es MC {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-es CN {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 fr IDF {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 fr CVL {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 fr BFC {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
@@ -147,4 +130,71 @@ el ION {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
 el WGR {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
 el CGR {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
 el PEL {'gdp': 25, 'pop': 25, 'unemp': 26, 'gdppc': 24}
-escrito eu-regions-macro.json 199 KB
+fi FI19 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+fi FI1B {'gdp': 25, 'pop': 26, 'unemp': 21, 'gdppc': 25}
+fi FI1C {'gdp': 25, 'pop': 26, 'unemp': 21, 'gdppc': 25}
+fi FI1D {'gdp': 25, 'pop': 26, 'unemp': 21, 'gdppc': 25}
+fi FI20 {'gdp': 25, 'pop': 26, 'gdppc': 25}
+bg BG31 {'gdp': 25, 'pop': 26, 'unemp': 23, 'gdppc': 25}
+bg BG32 {'gdp': 25, 'pop': 26, 'unemp': 23, 'gdppc': 25}
+bg BG33 {'gdp': 25, 'pop': 26, 'unemp': 23, 'gdppc': 25}
+bg BG34 {'gdp': 25, 'pop': 26, 'unemp': 23, 'gdppc': 25}
+bg BG41 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+bg BG42 {'gdp': 25, 'pop': 26, 'unemp': 23, 'gdppc': 25}
+hr HR02 {'gdp': 25, 'pop': 13, 'unemp': 10, 'gdppc': 12}
+hr HR03 {'gdp': 25, 'pop': 25, 'unemp': 19, 'gdppc': 24}
+hr HR05 {'gdp': 25, 'pop': 13, 'unemp': 10, 'gdppc': 12}
+hr HR06 {'gdp': 25, 'pop': 13, 'unemp': 10, 'gdppc': 12}
+lt LT01 {'gdp': 25, 'pop': 25, 'unemp': 13, 'gdppc': 24}
+lt LT02 {'gdp': 25, 'pop': 25, 'unemp': 13, 'gdppc': 24}
+sk SK01 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+sk SK02 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+sk SK03 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+sk SK04 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ01 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ02 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ03 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ04 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ05 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ06 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ07 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+cz CZ08 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+hu HU11 {'gdp': 25, 'pop': 25, 'unemp': 13, 'gdppc': 24}
+hu HU12 {'gdp': 25, 'pop': 25, 'unemp': 13, 'gdppc': 24}
+hu HU21 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+hu HU22 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+hu HU23 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+hu HU31 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+hu HU32 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+hu HU33 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO11 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO12 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO21 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO22 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO31 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO32 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO41 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+ro RO42 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE11 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE12 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE21 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE22 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE23 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE31 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE32 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+se SE33 {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
+si SI03 {'gdp': 25, 'pop': 18, 'unemp': 16, 'gdppc': 17}
+si SI04 {'gdp': 25, 'pop': 18, 'unemp': 16, 'gdppc': 17}
+uk UKC {'pop': 20, 'unemp': 20}
+uk UKD {'pop': 20, 'unemp': 20}
+uk UKE {'pop': 20, 'unemp': 20}
+uk UKF {'pop': 20, 'unemp': 20}
+uk UKG {'pop': 20, 'unemp': 20}
+uk UKH {'pop': 20, 'unemp': 20}
+uk UKI {'pop': 20, 'unemp': 20}
+uk UKJ {'pop': 20, 'unemp': 20}
+uk UKK {'pop': 20, 'unemp': 20}
+uk UKL {'pop': 20, 'unemp': 20}
+uk UKM {'pop': 20, 'unemp': 20}
+uk UKN {'pop': 19, 'unemp': 20}
+escrito eu-regions-macro.json 280 KB
