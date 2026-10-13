@@ -97,7 +97,7 @@ def cultivos():
             source={'name': 'USDA NASS, Crop Progress', 'url': cp['source']['url']}))
     return {'id': 'cultivos', 'title': t4('Estado de los cultivos (EE. UU.)|Crop condition (US)|État des cultures (États-Unis)|Stato delle colture (USA)'), 'emoji': '🌾', 'blocks': out}
 
-PSD = {'trigo': 'Trigo|Wheat|Blé|Frumento', 'maiz': 'Maíz|Corn|Maïs|Mais', 'soja': 'Soja|Soybeans|Soja|Soia', 'arroz': 'Arroz|Rice|Riz|Riso', 'cebada': 'Cebada|Barley|Orge|Orzo', 'azucar': 'Azúcar|Sugar|Sucre|Zucchero', 'algodon': 'Algodón|Cotton|Coton|Cotone', 'colza': 'Colza|Rapeseed|Colza|Colza', 'girasol': 'Girasol|Sunflower|Tournesol|Girasole', 'harina_soja': 'Harina de soja|Soybean meal|Tourteau de soja|Farina di soia', 'aceite_soja': 'Aceite de soja|Soybean oil|Huile de soja|Olio di soia', 'aceite_palma': 'Aceite de palma|Palm oil|Huile de palme|Olio di palma', 'avena': 'Avena|Oats|Avoine|Avena', 'sorgo': 'Sorgo|Sorghum|Sorgho|Sorgo', 'cafe': 'Café|Coffee|Café|Caffè'}
+PSD = {'trigo': 'Trigo|Wheat|Blé|Frumento', 'maiz': 'Maíz|Corn|Maïs|Mais', 'soja': 'Soja|Soybeans|Soja|Soia', 'arroz': 'Arroz|Rice|Riz|Riso', 'cebada': 'Cebada|Barley|Orge|Orzo', 'azucar': 'Azúcar|Sugar|Sucre|Zucchero', 'algodon': 'Algodón|Cotton|Coton|Cotone', 'colza': 'Colza|Rapeseed|Colza|Colza', 'girasol': 'Girasol|Sunflower|Tournesol|Girasole', 'harina_soja': 'Harina de soja|Soybean meal|Tourteau de soja|Farina di soia', 'aceite_soja': 'Aceite de soja|Soybean oil|Huile de soja|Olio di soia', 'aceite_palma': 'Aceite de palma|Palm oil|Huile de palme|Olio di palma', 'avena': 'Avena|Oats|Avoine|Avena', 'sorgo': 'Sorgo|Sorghum|Sorgho|Sorgo', 'cafe': 'Café|Coffee|Café|Caffè', 'oliva': 'Aceite de oliva|Olive oil|Huile d’olive|Olio d’oliva', 'cerdo': 'Carne de cerdo|Pork|Viande porcine|Carne suina', 'vacuno': 'Carne de vacuno|Beef and veal|Viande bovine|Carne bovina', 'pollo': 'Carne de pollo|Chicken meat|Viande de poulet|Carne di pollo', 'leche': 'Leche|Milk|Lait|Latte'}
 CNAME = {'CN': 'China|China|Chine|Cina', 'EU': 'Unión Europea|European Union|Union européenne|Unione europea', 'IN': 'India|India|Inde|India', 'RU': 'Rusia|Russia|Russie|Russia', 'US': 'EE. UU.|United States|États-Unis|Stati Uniti', 'CA': 'Canadá|Canada|Canada|Canada', 'AU': 'Australia|Australia|Australie|Australia', 'PK': 'Pakistán|Pakistan|Pakistan|Pakistan', 'UA': 'Ucrania|Ukraine|Ukraine|Ucraina', 'TR': 'Turquía|Turkey|Turquie|Turchia', 'AR': 'Argentina|Argentina|Argentine|Argentina', 'IR': 'Irán|Iran|Iran|Iran', 'BR': 'Brasil|Brazil|Brésil|Brasile', 'ID': 'Indonesia|Indonesia|Indonésie|Indonesia', 'MY': 'Malasia|Malaysia|Malaisie|Malesia', 'TH': 'Tailandia|Thailand|Thaïlande|Thailandia', 'VN': 'Vietnam|Vietnam|Viêt Nam|Vietnam', 'MX': 'México|Mexico|Mexique|Messico', 'EG': 'Egipto|Egypt|Égypte|Egitto', 'KZ': 'Kazajistán|Kazakhstan|Kazakhstan|Kazakistan', 'BD': 'Bangladés|Bangladesh|Bangladesh|Bangladesh', 'JP': 'Japón|Japan|Japon|Giappone', 'PH': 'Filipinas|Philippines|Philippines|Filippine', 'NG': 'Nigeria|Nigeria|Nigeria|Nigeria', 'GB': 'Reino Unido|United Kingdom|Royaume-Uni|Regno Unito', 'ZA': 'Sudáfrica|South Africa|Afrique du Sud|Sudafrica', 'PY': 'Paraguay', 'MA': 'Marruecos|Morocco|Maroc|Marocco', 'DZ': 'Argelia|Algeria|Algérie|Algeria', 'ET': 'Etiopía|Ethiopia|Éthiopie|Etiopia', 'KR': 'Corea del Sur|South Korea|Corée du Sud|Corea del Sud', 'SA': 'Arabia Saudí|Saudi Arabia|Arabie saoudite|Arabia Saudita', 'CO': 'Colombia', 'PE': 'Perú|Peru|Pérou|Perù', 'MM': 'Myanmar', 'UZ': 'Uzbekistán|Uzbekistan|Ouzbékistan|Uzbekistan', 'NZ': 'Nueva Zelanda|New Zealand|Nouvelle-Zélande|Nuova Zelanda'}
 def oferta():
     sd = j('supply-demand.json')
@@ -105,8 +105,8 @@ def oferta():
     out = []; K = 1000.0
     for c in sd['commodities']:
         ys = sorted(c['world'], key=int); y = ys[-1]; yp = ys[-2] if len(ys) > 1 else None; w = c['world'][y]; wp = c['world'].get(yp, {}) if yp else {}
-        unit = 'Mt' if c['unit'] == '1000 MT' else c['unit']
-        div = K if c['unit'] == '1000 MT' else 1
+        unit = 'Mt' if c['unit'].startswith('1000 MT') else c['unit']
+        div = K if c['unit'].startswith('1000 MT') else 1
         su = (w.get('endingStocks') or 0) / w['consumption'] * 100 if w.get('consumption') else None
         sup = (wp.get('endingStocks') or 0) / wp['consumption'] * 100 if wp.get('consumption') else None
         def sv(k): return w.get(k) / div if w.get(k) is not None else None
@@ -244,7 +244,7 @@ def ganaderia_us():
             source={'name': 'USDA AMS, NDPSR', 'url': ud['source']['url']}))
     return {'id': 'ganaderia-us', 'title': t4('Ganadería y lácteos (EE. UU.)|Livestock and dairy (US)|Élevage et lait (États-Unis)|Allevamento e latte (USA)'), 'emoji': '🐄', 'blocks': out}
 
-ESN = {'All Wheat': 'Trigo|Wheat|Blé|Frumento', 'Corn': 'Maíz|Corn|Maïs|Mais', 'Soybeans': 'Soja|Soybeans|Soja|Soia', 'Soybean Cake & Meal': 'Harina de soja|Soybean meal|Tourteau de soja|Farina di soia', 'Soybean Oil': 'Aceite de soja|Soybean oil|Huile de soja|Olio di soia', 'Sorghum': 'Sorgo|Sorghum|Sorgho|Sorgo', 'Barley': 'Cebada|Barley|Orge|Orzo', 'All Upland Cotton': 'Algodón|Cotton|Coton|Cotone', 'Beef': 'Vacuno|Beef|Bœuf|Bovino', 'Pork': 'Porcino|Pork|Porc|Suino', 'Rice': 'Arroz|Rice|Riz|Riso'}
+ESN = {'All Wheat': 'Trigo|Wheat|Blé|Frumento', 'Corn': 'Maíz|Corn|Maïs|Mais', 'Soybeans': 'Soja|Soybeans|Soja|Soia', 'Soybean Cake & Meal': 'Harina de soja|Soybean meal|Tourteau de soja|Farina di soia', 'Soybean Oil': 'Aceite de soja|Soybean oil|Huile de soja|Olio di soia', 'Sorghum': 'Sorgo|Sorghum|Sorgho|Sorgo', 'Barley': 'Cebada|Barley|Orge|Orzo', 'All Upland Cotton': 'Algodón|Cotton|Coton|Cotone', 'Beef': 'Vacuno|Beef|Bœuf|Bovino', 'Pork': 'Porcino|Pork|Porc|Suino', 'Rice': 'Arroz|Rice|Riz|Riso', 'All Rice': 'Arroz|Rice|Riz|Riso', 'Wheat - HRW': 'Trigo duro rojo de invierno (HRW)|Hard red winter wheat|Blé roux d’hiver (HRW)|Frumento rosso invernale (HRW)', 'Wheat - SRW': 'Trigo blando rojo de invierno (SRW)|Soft red winter wheat|Blé tendre rouge d’hiver (SRW)|Frumento tenero rosso invernale (SRW)', 'Wheat - HRS': 'Trigo duro rojo de primavera (HRS)|Hard red spring wheat|Blé roux de printemps (HRS)|Frumento rosso primaverile (HRS)', 'Wheat - White': 'Trigo blanco|White wheat|Blé blanc|Frumento bianco', 'Wheat - Durum': 'Trigo duro (durum)|Durum wheat|Blé dur|Frumento duro', 'Soybean cake & meal': 'Harina de soja|Soybean meal|Tourteau de soja|Farina di soia', 'Fresh, Chilled, or Frozen Muscle Cuts of Beef': 'Carne de vacuno|Beef|Viande bovine|Carne bovina', 'Fresh, Chilled, or Frozen Muscle Cuts of Pork': 'Carne de cerdo|Pork|Viande porcine|Carne suina'}
 def exportaciones_us():
     es = j('export-sales.json')
     if not es: return None
@@ -263,6 +263,13 @@ def exportaciones_us():
             source={'name': 'USDA FAS, Export Sales', 'url': 'https://apps.fas.usda.gov/export-sales/esrd1.html'}))
     return {'id': 'exportaciones-us', 'title': t4('Exportaciones de EE. UU. (semanales)|US export sales (weekly)|Ventes à l’export des États-Unis|Vendite all’export degli USA'), 'emoji': '📦', 'blocks': out}
 
+import re
+def _rel(d):
+    n = (d.get('release') or {}).get('name') or ''
+    m = re.search(r'(\d{4})-(\d{2})', n)
+    if m: return m.group(1) + '-' + m.group(2)
+    m = re.search(r'(\d{4})HTSRev(\d+)', n)
+    return ('HTS ' + m.group(1) + ' rev. ' + m.group(2)) if m else (d.get('generatedAt') or '')[:10]
 def aranceles():
     out = []
     CH = {'01': 'Animales vivos|Live animals|Animaux vivants|Animali vivi', '02': 'Carne|Meat|Viande|Carne', '04': 'Lácteos, huevos y miel|Dairy, eggs and honey|Lait, œufs et miel|Latte, uova e miele', '07': 'Hortalizas|Vegetables|Légumes|Ortaggi', '08': 'Frutas y frutos secos|Fruit and nuts|Fruits|Frutta', '10': 'Cereales|Cereals|Céréales|Cereali', '11': 'Harinas y malta|Flours and malt|Farines et malt|Farine e malto', '12': 'Semillas oleaginosas|Oilseeds|Graines oléagineuses|Semi oleosi', '15': 'Grasas y aceites|Fats and oils|Graisses et huiles|Grassi e oli', '17': 'Azúcar|Sugar|Sucre|Zucchero', '22': 'Bebidas y vino|Beverages and wine|Boissons et vin|Bevande e vino', '23': 'Piensos y residuos|Feed and residues|Aliments et résidus|Mangimi e residui'}
@@ -272,7 +279,7 @@ def aranceles():
         ch = d['chapters']
         items = [(CH[k], ch[k].get('avgadv')) for k in CH if k in ch and ch[k].get('avgadv') is not None]
         free = [(CH[k], ch[k]['free'] / ch[k]['n'] * 100) for k in CH if k in ch and ch[k].get('n')]
-        out.append(block('tar-' + cc, 'EU' if cc == 'EU' else cc, 'Aranceles de importación: ' + nm.split('|')[0] + '|Import tariffs: ' + nm.split('|')[1] + '|Droits de douane : ' + nm.split('|')[2] + '|Dazi all’importazione: ' + nm.split('|')[3], asOf=(d.get('release') or {}).get('name'),
+        out.append(block('tar-' + cc, 'EU' if cc == 'EU' else cc, 'Aranceles de importación: ' + nm.split('|')[0] + '|Import tariffs: ' + nm.split('|')[1] + '|Droits de douane : ' + nm.split('|')[2] + '|Dazi all’importazione: ' + nm.split('|')[3], asOf=_rel(d),
             bars=[bars('Arancel medio ad valorem por capítulo (%)|Average ad valorem duty by chapter (%)|Droit ad valorem moyen par chapitre (%)|Dazio ad valorem medio per capitolo (%)', '%', sorted(items, key=lambda x: -x[1]), 1),
                   bars('Partidas libres de arancel (%)|Duty-free lines (%)|Lignes en franchise (%)|Linee esenti da dazio (%)', '%', sorted(free, key=lambda x: -x[1]), 0)],
             note=t4('Arancel de nación más favorecida (terceros países). Muchos productos pagan además derechos específicos (€ por tonelada) que no entran en la media ad valorem.|Most-favoured-nation duty. Many products also pay specific duties (per tonne) not included in the ad valorem average.|Droit de la nation la plus favorisée. Beaucoup de produits paient aussi des droits spécifiques (par tonne) non inclus dans la moyenne.|Dazio della nazione più favorita. Molti prodotti pagano anche dazi specifici (per tonnellata) non inclusi nella media.'),
