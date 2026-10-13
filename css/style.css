@@ -2167,7 +2167,7 @@ html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3
 .be-stk-b{display:flex;height:22px;border-radius:4px;overflow:hidden;background:var(--gbx)}
 .be-stk-b span{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;white-space:nowrap;border-right:2px solid var(--surface)}
 .be-stk-b span:last-child{border-right:0}
-.be-s0{background:var(--gb0);color:var(--text)}.be-s1{background:var(--gb2);color:var(--text)}.be-s2{background:var(--gb3);color:#111}.be-s3{background:var(--gb4);color:#fff}
+.be-s0{background:var(--gb0);color:var(--text)}.be-s1{background:var(--gb2);color:var(--text)}.be-s2{background:var(--gb3);color:#000}.be-s3{background:var(--gb4);color:#fff}
 html[data-theme="dark"] .be-s2,html[data-theme="dark"] .be-s3{color:#111}
 @media (max-width:560px){.be-stk{grid-template-columns:1fr}}
 .bn-bar{fill:var(--wp-r)}.bn-bar.bn-last{fill:var(--text)}
