@@ -1060,6 +1060,16 @@ sources:
     extra: [eu-trade-products.json]
     log: eu-trade-log.txt
     message: Datos comercio exterior UE (Eurostat Comext)
+  - id: eu-trade-extra
+    name: Update EU extra-EU agri-food trade by partner (Eurostat Comext)
+    cron: ['50 9 17 * *']
+    script: scripts/update-eu-trade-extra.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [eu-extra-trade-stats.json]
+    log: eu-extra-trade-log.txt
+    message: Comercio agroalimentario extra-UE por socio (Eurostat Comext)
   - id: interest-rates
     name: Update interest rates
     cron: ['45 6 * * 1-5']
