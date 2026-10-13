@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-13T22:52:17.539Z",
+  "generatedAt": "2026-10-13T22:55:12.796Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -8042,17 +8042,17 @@
       "product": "avena",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Oats, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 227.84,
+      "value": 226.93,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": 0.2905,
+      "changePct": -0.3994,
       "province": "Saskatchewan",
       "history": [
         {
@@ -10549,9 +10549,14 @@
           "period": "07",
           "year": 2026,
           "value": 227.84
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 226.93
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_avena_eu",
@@ -18354,17 +18359,17 @@
       "product": "cebada",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Alberta, Barley, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 282.14,
+      "value": 267.26,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": -0.7213,
+      "changePct": -5.274,
       "province": "Alberta",
       "history": [
         {
@@ -20861,9 +20866,14 @@
           "period": "07",
           "year": 2026,
           "value": 282.14
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 267.26
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_cebada_eu",
@@ -29745,17 +29755,17 @@
       "product": "cerdo",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Hogs, publicado en CAD per hundredweight. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 118.37,
+      "value": 119.98,
       "currency": "CAD",
       "unit": "cwt",
       "frequency": "monthly",
-      "changePct": 3.1547,
+      "changePct": 1.3601,
       "province": "Ontario",
       "history": [
         {
@@ -32252,9 +32262,14 @@
           "period": "07",
           "year": 2026,
           "value": 118.37
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 119.98
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_porcino_cerdo_eu",
@@ -38295,17 +38310,17 @@
       "product": "colza",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Canola (including rapeseed), publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 731.13,
+      "value": 779.58,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": 3.0908,
+      "changePct": 6.6267,
       "province": "Saskatchewan",
       "history": [
         {
@@ -40802,9 +40817,14 @@
           "period": "07",
           "year": 2026,
           "value": 731.13
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 779.58
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_colza_eu",
@@ -43410,17 +43430,17 @@
       "product": "cordero",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Lambs, publicado en CAD per hundredweight. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 363.8,
+      "value": 335.95,
       "currency": "CAD",
       "unit": "cwt",
       "frequency": "monthly",
-      "changePct": -10.1706,
+      "changePct": -7.6553,
       "province": "Ontario",
       "history": [
         {
@@ -45917,9 +45937,14 @@
           "period": "07",
           "year": 2026,
           "value": 363.8
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 335.95
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_ovino_cordero_eu",
@@ -83145,17 +83170,17 @@
       "product": "guisante_seco",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Dry peas, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 296.07,
+      "value": 291.02,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": -10.2301,
+      "changePct": -1.7057,
       "province": "Saskatchewan",
       "history": [
         {
@@ -85522,9 +85547,14 @@
           "period": "07",
           "year": 2026,
           "value": 296.07
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 291.02
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_guisante_verde_ab_ca",
@@ -88042,10 +88072,10 @@
       "product": "huevos",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Eggs in shell, publicado en CAD per dozen. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 2.19,
@@ -90549,9 +90579,14 @@
           "period": "07",
           "year": 2026,
           "value": 2.19
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 2.19
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_avicultura_huevos_eu",
@@ -102267,17 +102302,17 @@
       "product": "leche",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Quebec, Unprocessed milk from bovine, publicado en CAD per kilolitre; expresado en CAD/100 kg con una densidad de 1,03 kg/l (estándar de la leche de vaca). Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 87.1388,
+      "value": 87.667,
       "currency": "CAD",
       "unit": "100kg",
       "frequency": "monthly",
-      "changePct": -1.5284,
+      "changePct": 0.6062,
       "province": "Quebec",
       "history": [
         {
@@ -104079,9 +104114,14 @@
           "period": "07",
           "year": 2026,
           "value": 87.1388
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 87.667
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_leche_eu",
@@ -112113,17 +112153,17 @@
       "product": "lenteja",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Lentils, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 525.08,
+      "value": 518.91,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": -6.2324,
+      "changePct": -1.9166,
       "province": "Saskatchewan",
       "history": [
         {
@@ -114499,27 +114539,32 @@
         {
           "period": "07",
           "year": 2026,
-          "value": 525.08
+          "value": 529.05
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 518.91
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_lino_ca",
       "product": "lino",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Flaxseed, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 650.36,
+      "value": 648.61,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": -2.6407,
+      "changePct": -0.2691,
       "province": "Saskatchewan",
       "history": [
         {
@@ -117016,26 +117061,31 @@
           "period": "07",
           "year": 2026,
           "value": 650.36
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 648.61
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_maiz_ca",
       "product": "maiz",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Corn for grain, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 261.78,
+      "value": 267.26,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": -0.8709,
+      "changePct": 2.1949,
       "province": "Ontario",
       "history": [
         {
@@ -119531,10 +119581,15 @@
         {
           "period": "07",
           "year": 2026,
-          "value": 261.78
+          "value": 261.52
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 267.26
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_maiz_eu",
@@ -156974,17 +157029,17 @@
       "product": "pollo",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Chickens for meat, publicado en CAD per kilogram. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 2.77,
       "currency": "CAD",
       "unit": "kg",
       "frequency": "monthly",
-      "changePct": -0.7168,
+      "changePct": 0,
       "province": "Ontario",
       "history": [
         {
@@ -159481,9 +159536,14 @@
           "period": "07",
           "year": 2026,
           "value": 2.77
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 2.77
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_avicultura_pollo_eu",
@@ -167364,17 +167424,17 @@
       "product": "soja_grano",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Soybeans, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 611.45,
+      "value": 634.52,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": 3.2297,
+      "changePct": 4.3945,
       "province": "Ontario",
       "history": [
         {
@@ -169450,10 +169510,15 @@
         {
           "period": "07",
           "year": 2026,
-          "value": 611.45
+          "value": 607.81
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 634.52
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_sorgo_us",
@@ -173216,17 +173281,17 @@
       "product": "trigo",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Wheat (except durum wheat), publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 298,
+      "value": 302.26,
       "currency": "CAD",
       "unit": "tonelada",
       "frequency": "monthly",
-      "changePct": 2.9574,
+      "changePct": 1.4295,
       "province": "Saskatchewan",
       "history": [
         {
@@ -174068,9 +174133,14 @@
           "period": "07",
           "year": 2026,
           "value": 298
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 302.26
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_trigo_eu",
@@ -181994,17 +182064,17 @@
       "product": "vaca",
       "region": "ca",
       "sourceId": "statcan",
-      "observationDate": "2026-07",
-      "publicationDate": "2026-09-10",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-09",
       "status": "verified",
-      "verifiedAt": "2026-10-08T13:54:28Z",
+      "verifiedAt": "2026-10-13T22:55:10Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Alberta, Steers for slaughter, publicado en CAD per hundredweight. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
-      "value": 340.59,
+      "value": 311.45,
       "currency": "CAD",
       "unit": "cwt",
       "frequency": "monthly",
-      "changePct": -3.3211,
+      "changePct": -8.5557,
       "province": "Alberta",
       "history": [
         {
@@ -184081,9 +184151,14 @@
           "period": "07",
           "year": 2026,
           "value": 340.59
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 311.45
         }
       ],
-      "snapshotDate": "2026-10-08"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_ganado_vaca_eu",

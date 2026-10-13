@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-13T22:52:18.988Z",
+  "generatedAt": "2026-10-13T22:55:14.355Z",
   "status": "informational",
   "rules": [
     {
@@ -56,12 +56,30 @@
     },
     {
       "type": "period_move",
+      "product": "cebada",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": -5.27,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "colza",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": 6.63,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
       "product": "cordero",
       "region": "ca",
       "sourceId": "statcan",
-      "severity": "high",
-      "changePct": -10.17,
-      "observationDate": "2026-07-01"
+      "severity": "watch",
+      "changePct": -7.66,
+      "observationDate": "2026-08-01"
     },
     {
       "type": "period_move",
@@ -74,30 +92,21 @@
     },
     {
       "type": "period_move",
-      "product": "guisante_seco",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": -10.23,
-      "observationDate": "2026-07-01"
-    },
-    {
-      "type": "period_move",
-      "product": "lenteja",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "watch",
-      "changePct": -6.23,
-      "observationDate": "2026-07-01"
-    },
-    {
-      "type": "period_move",
       "product": "petroleo_brent",
       "region": "eu",
       "sourceId": "eia",
       "severity": "high",
       "changePct": 21.13,
       "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "vaca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": -8.56,
+      "observationDate": "2026-08-01"
     },
     {
       "type": "period_move",

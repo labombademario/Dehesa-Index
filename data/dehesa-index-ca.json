@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-13T22:52:18.919Z",
+  "generatedAt": "2026-10-13T22:55:14.283Z",
   "region": "ca",
   "base": {
     "period": "2024-10",
     "value": 100
   },
-  "lastPeriod": "2026-07",
-  "value": 108.13,
-  "changeMoMPct": -1.38,
-  "changeYoYPct": 0.71,
+  "lastPeriod": "2026-08",
+  "value": 106.46,
+  "changeMoMPct": -1.54,
+  "changeYoYPct": 2.28,
   "weights": {
     "cereales": 38.46,
     "ganaderia": 38.46,
@@ -19,7 +19,7 @@
     {
       "id": "cereales",
       "weightPct": 38.46,
-      "value": 105.21,
+      "value": 104.63,
       "members": [
         "trigo",
         "maiz",
@@ -30,7 +30,7 @@
     {
       "id": "ganaderia",
       "weightPct": 38.46,
-      "value": 118.32,
+      "value": 114.21,
       "members": [
         "cerdo",
         "vaca",
@@ -42,7 +42,7 @@
     {
       "id": "lacteos",
       "weightPct": 23.08,
-      "value": 96,
+      "value": 96.58,
       "members": [
         "leche"
       ]
@@ -384,11 +384,20 @@
     },
     {
       "period": "2026-07",
-      "value": 108.13,
+      "value": 108.12,
       "groups": {
-        "cereales": 105.21,
+        "cereales": 105.19,
         "ganaderia": 118.32,
         "lacteos": 96
+      }
+    },
+    {
+      "period": "2026-08",
+      "value": 106.46,
+      "groups": {
+        "cereales": 104.63,
+        "ganaderia": 114.21,
+        "lacteos": 96.58
       }
     }
   ],

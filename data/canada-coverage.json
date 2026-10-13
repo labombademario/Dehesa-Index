@@ -1,32 +1,32 @@
 {
- "generatedAt": "2026-10-08T13:54:28Z",
+ "generatedAt": "2026-10-13T22:55:10Z",
  "table": 32100077,
- "tableMax": "2026-07",
- "publicationDate": "2026-09-10",
+ "tableMax": "2026-08",
+ "publicationDate": "2026-10-09",
  "products": {
   "trigo": {
    "statcanProduct": "Wheat (except durum wheat)",
    "candidates": {
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 168,
+     "last": "2026-08",
+     "points": 169,
      "last36m": 36
     },
     "Alberta": {
-     "last": "2026-07",
-     "points": 168,
+     "last": "2026-08",
+     "points": 169,
      "last36m": 36
     },
     "Manitoba": {
-     "last": "2026-07",
-     "points": 168,
+     "last": "2026-08",
+     "points": 169,
      "last36m": 36
     }
    },
    "result": {
     "province": "Saskatchewan",
-    "last": "2026-07",
-    "value": 298.0,
+    "last": "2026-08",
+    "value": 302.26,
     "unit": "tonelada"
    }
   },
@@ -34,25 +34,25 @@
    "statcanProduct": "Barley",
    "candidates": {
     "Alberta": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Manitoba": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     }
    },
    "result": {
     "province": "Alberta",
-    "last": "2026-07",
-    "value": 282.14,
+    "last": "2026-08",
+    "value": 267.26,
     "unit": "tonelada"
    }
   },
@@ -60,25 +60,25 @@
    "statcanProduct": "Oats",
    "candidates": {
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Manitoba": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Alberta": {
-     "last": "2026-07",
-     "points": 468,
+     "last": "2026-08",
+     "points": 469,
      "last36m": 36
     }
    },
    "result": {
     "province": "Saskatchewan",
-    "last": "2026-07",
-    "value": 227.84,
+    "last": "2026-08",
+    "value": 226.93,
     "unit": "tonelada"
    }
   },
@@ -86,25 +86,25 @@
    "statcanProduct": "Canola (including rapeseed)",
    "candidates": {
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Alberta": {
-     "last": "2026-07",
-     "points": 498,
+     "last": "2026-08",
+     "points": 499,
      "last36m": 36
     },
     "Manitoba": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     }
    },
    "result": {
     "province": "Saskatchewan",
-    "last": "2026-07",
-    "value": 731.13,
+    "last": "2026-08",
+    "value": 779.58,
     "unit": "tonelada"
    }
   },
@@ -112,20 +112,20 @@
    "statcanProduct": "Corn for grain",
    "candidates": {
     "Ontario": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Quebec": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     }
    },
    "result": {
     "province": "Ontario",
-    "last": "2026-07",
-    "value": 261.78,
+    "last": "2026-08",
+    "value": 267.26,
     "unit": "tonelada"
    }
   },
@@ -133,19 +133,19 @@
    "statcanProduct": "Rye",
    "candidates": {
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 430,
-     "last36m": 15
+     "last": "2026-08",
+     "points": 431,
+     "last36m": 16
     },
     "Alberta": {
      "last": "2026-07",
      "points": 392,
-     "last36m": 14
+     "last36m": 13
     },
     "Manitoba": {
      "last": "2025-12",
      "points": 417,
-     "last36m": 7
+     "last36m": 6
     }
    },
    "result": "SIN DATO: ninguna provincia cumple (último dato <= 3 meses y >= 24 meses de los últimos 36)"
@@ -154,25 +154,25 @@
    "statcanProduct": "Soybeans",
    "candidates": {
     "Ontario": {
-     "last": "2026-07",
-     "points": 415,
+     "last": "2026-08",
+     "points": 416,
      "last36m": 36
     },
     "Quebec": {
-     "last": "2026-07",
-     "points": 415,
+     "last": "2026-08",
+     "points": 416,
      "last36m": 36
     },
     "Manitoba": {
-     "last": "2026-07",
-     "points": 198,
+     "last": "2026-08",
+     "points": 199,
      "last36m": 36
     }
    },
    "result": {
     "province": "Ontario",
-    "last": "2026-07",
-    "value": 611.45,
+    "last": "2026-08",
+    "value": 634.52,
     "unit": "tonelada"
    }
   },
@@ -180,20 +180,20 @@
    "statcanProduct": "Lentils",
    "candidates": {
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 475,
+     "last": "2026-08",
+     "points": 476,
      "last36m": 36
     },
     "Alberta": {
-     "last": "2026-07",
-     "points": 441,
+     "last": "2026-08",
+     "points": 442,
      "last36m": 35
     }
    },
    "result": {
     "province": "Saskatchewan",
-    "last": "2026-07",
-    "value": 525.08,
+    "last": "2026-08",
+    "value": 518.91,
     "unit": "tonelada"
    }
   },
@@ -201,25 +201,25 @@
    "statcanProduct": "Dry peas",
    "candidates": {
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 473,
-     "last36m": 36
-    },
-    "Alberta": {
-     "last": "2026-07",
+     "last": "2026-08",
      "points": 474,
      "last36m": 36
     },
+    "Alberta": {
+     "last": "2026-08",
+     "points": 475,
+     "last36m": 36
+    },
     "Manitoba": {
-     "last": "2026-07",
-     "points": 454,
+     "last": "2026-08",
+     "points": 455,
      "last36m": 35
     }
    },
    "result": {
     "province": "Saskatchewan",
-    "last": "2026-07",
-    "value": 296.07,
+    "last": "2026-08",
+    "value": 291.02,
     "unit": "tonelada"
    }
   },
@@ -227,8 +227,8 @@
    "statcanProduct": "Flaxseed",
    "candidates": {
     "Saskatchewan": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Manitoba": {
@@ -239,8 +239,8 @@
    },
    "result": {
     "province": "Saskatchewan",
-    "last": "2026-07",
-    "value": 650.36,
+    "last": "2026-08",
+    "value": 648.61,
     "unit": "tonelada"
    }
   },
@@ -248,20 +248,20 @@
    "statcanProduct": "Unprocessed milk from bovine",
    "candidates": {
     "Quebec": {
-     "last": "2026-07",
-     "points": 360,
+     "last": "2026-08",
+     "points": 361,
      "last36m": 36
     },
     "Ontario": {
-     "last": "2026-07",
-     "points": 360,
+     "last": "2026-08",
+     "points": 361,
      "last36m": 36
     }
    },
    "result": {
     "province": "Quebec",
-    "last": "2026-07",
-    "value": 87.1388,
+    "last": "2026-08",
+    "value": 87.667,
     "unit": "100kg"
    }
   },
@@ -269,20 +269,20 @@
    "statcanProduct": "Steers for slaughter",
    "candidates": {
     "Alberta": {
-     "last": "2026-07",
-     "points": 415,
+     "last": "2026-08",
+     "points": 416,
      "last36m": 36
     },
     "Ontario": {
-     "last": "2026-07",
-     "points": 415,
+     "last": "2026-08",
+     "points": 416,
      "last36m": 36
     }
    },
    "result": {
     "province": "Alberta",
-    "last": "2026-07",
-    "value": 340.59,
+    "last": "2026-08",
+    "value": 311.45,
     "unit": "cwt"
    }
   },
@@ -290,25 +290,25 @@
    "statcanProduct": "Hogs",
    "candidates": {
     "Ontario": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Quebec": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Manitoba": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     }
    },
    "result": {
     "province": "Ontario",
-    "last": "2026-07",
-    "value": 118.37,
+    "last": "2026-08",
+    "value": 119.98,
     "unit": "cwt"
    }
   },
@@ -316,25 +316,25 @@
    "statcanProduct": "Lambs",
    "candidates": {
     "Ontario": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Quebec": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Alberta": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     }
    },
    "result": {
     "province": "Ontario",
-    "last": "2026-07",
-    "value": 363.8,
+    "last": "2026-08",
+    "value": 335.95,
     "unit": "cwt"
    }
   },
@@ -342,19 +342,19 @@
    "statcanProduct": "Chickens for meat",
    "candidates": {
     "Ontario": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Quebec": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     }
    },
    "result": {
     "province": "Ontario",
-    "last": "2026-07",
+    "last": "2026-08",
     "value": 2.77,
     "unit": "kg"
    }
@@ -363,19 +363,19 @@
    "statcanProduct": "Eggs in shell",
    "candidates": {
     "Ontario": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     },
     "Quebec": {
-     "last": "2026-07",
-     "points": 499,
+     "last": "2026-08",
+     "points": 500,
      "last36m": 36
     }
    },
    "result": {
     "province": "Ontario",
-    "last": "2026-07",
+    "last": "2026-08",
     "value": 2.19,
     "unit": "docena"
    }
