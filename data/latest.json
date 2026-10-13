@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-10T21:45:53.311Z",
+  "generatedAt": "2026-10-13T22:46:08.066Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -174082,7 +174082,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-10T03:41:18.629Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada país (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercialización no son idénticas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 266,
       "currency": "EUR",
       "unit": "tonelada",
@@ -179178,7 +179178,7 @@
       "unit": "tonelada",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-10-03T18:18:43Z",
+      "verifiedAt": "2026-10-13T22:46:07Z",
       "comparability": "not_comparable",
       "history": [
         {
@@ -181987,7 +181987,7 @@
           "value": 407.5
         }
       ],
-      "snapshotDate": "2026-10-03"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_ganado_vaca_ca",
