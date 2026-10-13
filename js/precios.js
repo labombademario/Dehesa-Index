@@ -580,7 +580,9 @@
     var obs = trustObservationFor(entry, disp);
     return !!obs && obs.status === 'verified';
   }
+  var EU_ONLY = { hortalizas: true, vino: true, madera: true }; // solo hay datos de países europeos: con ubicación EE. UU., Reino Unido o Canadá no se enseñan
   function catHasData(catId) {
+    if (EU_ONLY[catId]) return state.location === 'eu';
     if (INFO_CATS[catId]) return true;
     if (ukIdxList(catId).length) return true;
     var list = productsInCat(catId);

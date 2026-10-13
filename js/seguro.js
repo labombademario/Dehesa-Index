@@ -51,6 +51,18 @@
   function tc() { return TC[lang()] || TC.es; }
   function grp(n) { var sep = lang() === 'en' ? ',' : (lang() === 'fr' ? ' ' : '.'); return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, sep); }
   function dec(x, d) { var s = Number(x).toFixed(d); return lang() === 'en' ? s : s.replace('.', ','); }
+  /* Causas de pérdida de la RMA traducidas (la clave original sigue en el título de la fila); las pólizas de área (ARPI/SCO/ECO/STAX...) se agrupan en una sola etiqueta */
+  var CAUSE = { 'Drought': ['Sequía', 'Drought', 'Sécheresse', 'Siccità'], 'Excess Moisture/Precipitation/Rain': ['Exceso de humedad o lluvia', 'Excess moisture or rain', 'Excès d’humidité ou de pluie', 'Eccesso di umidità o pioggia'],
+    'Heat': ['Calor', 'Heat', 'Chaleur', 'Caldo'], 'Hail': ['Granizo', 'Hail', 'Grêle', 'Grandine'], 'Freeze': ['Helada', 'Freeze', 'Gel', 'Gelo'], 'Frost': ['Escarcha', 'Frost', 'Gelée', 'Brina'],
+    'Wind/Excess Wind': ['Viento', 'Wind', 'Vent', 'Vento'], 'Hot Wind': ['Viento cálido', 'Hot wind', 'Vent chaud', 'Vento caldo'], 'Decline in Price': ['Caída del precio', 'Decline in price', 'Baisse du prix', 'Calo del prezzo'],
+    'Cold Wet Weather': ['Tiempo frío y húmedo', 'Cold wet weather', 'Temps froid et humide', 'Tempo freddo e umido'], 'Cold Winter': ['Invierno frío', 'Cold winter', 'Hiver froid', 'Inverno freddo'],
+    'Failure of Irrigation Supply': ['Fallo del riego', 'Failure of irrigation supply', 'Défaut d’irrigation', 'Mancanza d’irrigazione'], 'Hurricane/Tropical Depression': ['Huracán o depresión tropical', 'Hurricane or tropical depression', 'Ouragan ou dépression tropicale', 'Uragano o depressione tropicale'],
+    'Hurricane': ['Huracán', 'Hurricane', 'Ouragan', 'Uragano'], 'Tropical Storm': ['Tormenta tropical', 'Tropical storm', 'Tempête tropicale', 'Tempesta tropicale'], 'Tropical Depression': ['Depresión tropical', 'Tropical depression', 'Dépression tropicale', 'Depressione tropicale'],
+    'Flood': ['Inundación', 'Flood', 'Inondation', 'Alluvione'], 'Plant Disease': ['Enfermedad de la planta', 'Plant disease', 'Maladie des plantes', 'Malattia delle piante'], 'Insects': ['Insectos', 'Insects', 'Insectes', 'Insetti'],
+    'Fire': ['Incendio', 'Fire', 'Incendie', 'Incendio'], 'Wildlife': ['Fauna silvestre', 'Wildlife', 'Faune sauvage', 'Fauna selvatica'], 'Mycotoxin': ['Micotoxinas', 'Mycotoxin', 'Mycotoxines', 'Micotossine'],
+    'Other (Snow, Lightning, Etc.)': ['Otras (nieve, rayos…)', 'Other (snow, lightning…)', 'Autres (neige, foudre…)', 'Altre (neve, fulmini…)'], 'All Other Causes': ['Otras causas', 'All other causes', 'Autres causes', 'Altre cause'] };
+  var AREA = ['Pólizas de área (rendimiento o ingreso del condado)', 'Area plans (county yield or revenue)', 'Contrats de zone (rendement ou revenu du comté)', 'Polizze d’area (resa o ricavo della contea)'];
+  function causeName(k) { var i = { es: 0, en: 1, fr: 2, it: 3 }[lang()] || 0; if (/^ARPI\//.test(k)) return AREA[i]; return CAUSE[k] ? CAUSE[k][i] : k; }
   function mus(v) { return lang() === 'en' ? '$' + grp(v / 1e6) + ' M' : grp(v / 1e6) + ' M$'; }
   function mil(v, unit) { return dec(v / 1e6, 1) + ' ' + unit; }
   function pct(a, b) { return b ? dec(100 * a / b, 0) + ' %' : '—'; }
@@ -102,8 +114,11 @@
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.cr) + '</h3>' + tbl([t.cropC, t.liab, t.prem, t.ind, t.lr],
       topBy(cr, y, 10, 0).map(function (k) { var v = cr[k][y]; return [esc(k), mus(v[0]), mus(v[1]), mus(v[3]), lr(v)]; }), 'us-crops');
     var ci = D.causeIndemnity, ks = Object.keys(ci).filter(function (k) { return ci[k][y]; }).sort(function (a, b) { return ci[b][y] - ci[a][y]; }), tot = D.national[y][F.ind], mx = ks.length ? ci[ks[0]][y] : 1;
-    h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.ca) + '</h3>' + tbl([t.causeC, t.ind, ''],
-      ks.slice(0, 8).map(function (k) { return [esc(k), mus(ci[k][y]), '<span style="display:inline-block;height:8px;border-radius:4px;background:var(--accent);width:' + Math.max(2, Math.round(80 * ci[k][y] / mx)) + 'px;vertical-align:middle" title="' + esc(pct(ci[k][y], tot)) + '"></span> ' + esc(pct(ci[k][y], tot))]; }), 'us-causes');
+    var PIEC = { es: 'Total {y}', en: 'Total {y}', fr: 'Total {y}', it: 'Totale {y}' }, pv = {};
+    ks.forEach(function (k) { var n = causeName(k); pv[n] = (pv[n] || 0) + ci[k][y] / 1e6; });
+    var pieH = window.DehesaChart && window.DehesaChart.pie ? window.DehesaChart.pie({ items: Object.keys(pv).map(function (n) { return { name: n, v: pv[n] }; }), unit: 'M$', maxN: 7, minShare: 0.02, centerLabel: (PIEC[lang()] || PIEC.es).replace('{y}', y), center: mus(tot), aria: t.ca }) : '';
+    h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.ca) + '</h3>' + (pieH ? '<div style="margin:0 0 12px">' + pieH + '</div>' : '') + tbl([t.causeC, t.ind, ''],
+      ks.slice(0, 8).map(function (k) { return ['<span title="' + esc(k) + '">' + esc(causeName(k)) + '</span>', mus(ci[k][y]), '<span style="display:inline-block;height:8px;border-radius:4px;background:var(--accent);width:' + Math.max(2, Math.round(80 * ci[k][y] / mx)) + 'px;vertical-align:middle" title="' + esc(pct(ci[k][y], tot)) + '"></span> ' + esc(pct(ci[k][y], tot))]; }), 'us-causes');
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.tr) + '</h3>' + tbl([t.yearC, t.liab, t.prem, t.sub, t.ind, t.lr],
       D.cropYears.slice().reverse().map(function (yy) { var v = D.national[yy]; return [esc(yy + (+yy >= D.provisionalFrom ? ' *' : '')), mus(v[0]), mus(v[1]), mus(v[2]), mus(v[3]), lr(v)]; }), 'us-trend');
     h += '<div class="di-info-scope-note" style="margin-top:6px">* ' + esc(t.prov) + '</div>';

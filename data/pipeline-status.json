@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T02:04:00Z",
+ "generatedAt": "2026-10-13T02:14:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 159,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "7132972d",
+   "sha": "5800dcef",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/b267b40d-2bdb-40e2-8472-d59b47adc06f",
-   "completedAt": "2026-10-13T01:57:35Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/349f15ee-5541-4ea1-909f-6a0ac1fcfec2",
+   "completedAt": "2026-10-13T02:10:17Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-13T00:44:22.766433+00:00",
-  "checkedAt": "2026-10-13T02:04:00Z"
+  "checkedAt": "2026-10-13T02:14:00Z"
  },
  "pipelines": [
   {
@@ -2645,7 +2645,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2668,11 +2668,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-13T01:14:30Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/catalog"
@@ -2685,7 +2685,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/products"
@@ -2696,15 +2696,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/country-pending.json",
@@ -2712,22 +2712,22 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-13T01:56:50Z"
+     "lastChange": "2026-10-13T02:09:23Z"
     },
     {
      "path": "data/home-explore.json",

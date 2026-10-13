@@ -15,7 +15,7 @@
     'National weighted average of all types and varieties': ['media nacional', 'national average', 'moyenne nationale', 'media nazionale'], 'National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification': ['media nacional', 'national average', 'moyenne nationale', 'media nazionale'],
     'Smooth varieties': ['lisos', 'smooth', 'lisses', 'lisci'], 'White': ['blanco', 'white', 'blanc', 'bianco'], 'Violet': ['morado', 'purple', 'violet', 'viola'], 'Spring': ['tierno', 'spring', 'nouveau', 'fresco'], 'Iceberg': ['iceberg', 'iceberg', 'iceberg', 'iceberg'], 'Navel': ['Navel', 'Navel', 'Navel', 'Navel'], 'Navelinas': ['Navelina', 'Navelina', 'Navelina', 'Navelina'], 'Valencia late': ['Valencia late', 'Valencia late', 'Valencia late', 'Valencia late'], 'Yellow flesh': ['carne amarilla', 'yellow flesh', 'chair jaune', 'polpa gialla'], 'White flesh': ['carne blanca', 'white flesh', 'chair blanche', 'polpa bianca'], 'Flat': ['plano (paraguayo)', 'flat', 'plate', 'piatta'], 'Closed': ['cerrado', 'closed', 'fermé', 'chiuso'], 'Hass': ['Hass', 'Hass', 'Hass', 'Hass'], 'Galia': ['Galia', 'Galia', 'Galia', 'Galia'], 'Conference': ['Conferencia', 'Conference', 'Conférence', 'Conference'], 'Blanquilla': ['Blanquilla', 'Blanquilla', 'Blanquilla', 'Blanquilla'], 'Golden delicious': ['Golden', 'Golden', 'Golden', 'Golden'], 'Gala': ['Gala', 'Gala', 'Gala', 'Gala'], 'Fuji': ['Fuji', 'Fuji', 'Fuji', 'Fuji'], 'Granny smith': ['Granny Smith', 'Granny Smith', 'Granny Smith', 'Granny Smith'] };
   var T = {
-    es: { sub: 'Precio de cada semana en origen, lo que cobra el agricultor y dónde se cultiva en España, con datos oficiales.', ctry: 'País',
+    es: { subX: 'Precio de cada semana en origen en {c} y comparación con otros países, con datos oficiales.', sub: 'Precio de cada semana en origen, lo que cobra el agricultor y dónde se cultiva en España, con datos oficiales.', ctry: 'País',
       now: 'Precio de esta semana', nowWk: '{p} en {c} ({v}, {s}), semana del {d}', perKg: '€/kg', w1: 'Semana anterior', y1: 'Hace un año', last: 'Último dato publicado: {d}. Es un producto de temporada o el país publica poco; fuera de temporada no hay cotización.',
       nowHow: 'Salida de almacén: lo que cobra el almacén o la cooperativa al vender el producto ya clasificado y envasado, sin IVA. En finca: lo que recibe el agricultor antes de esa preparación. Compra del minorista: lo que paga la tienda. Lo publica cada semana la Comisión Europea con datos de cada país.',
       chE: 'Precio semanal en {c} por tipo', from: 'Desde', all: 'Todo', hover: 'Pasa el cursor por la gráfica.',
@@ -25,7 +25,7 @@
       crop: 'Dónde se cultiva en España (campaña {y})', area: 'Superficie', prod: 'Producción', yld: 'Rendimiento medio', prev: 'Campaña anterior', fresh: 'Para consumo en fresco', ind: 'Para industria (tomate frito, concentrado, zumo)', glass: 'Del tomate de mesa, en invernadero', top: 'Las provincias que más producen', share: 'del total', prov: 'provisional', provNote: 'Datos de la campaña {y} provisionales del MAPA.',
       all2: 'Todas las frutas y hortalizas', allTxt: 'Ver los precios de todas las frutas, hortalizas y frutos secos', cat: 'Buscar más series en el catálogo',
       src: 'Fuentes:', sEU: 'Comisión Europea, portal de datos agroalimentarios', sMAPA: 'MAPA, precios percibidos', sCrop: 'MAPA, superficies y producciones anuales de cultivos', t1000: 'mil t', t: 't', ha: 'ha', none: 'No hay datos de este producto.' },
-    en: { sub: 'Weekly price at origin, what farmers get and where it is grown in Spain, from official data.', ctry: 'Country',
+    en: { subX: 'Weekly price at origin in {c} and how it compares with other countries, from official data.', sub: 'Weekly price at origin, what farmers get and where it is grown in Spain, from official data.', ctry: 'Country',
       now: 'This week’s price', nowWk: '{p} in {c} ({v}, {s}), week of {d}', perKg: '€/kg', w1: 'Previous week', y1: 'A year ago', last: 'Latest figure published: {d}. It is a seasonal product or the country reports rarely; there is no quote out of season.',
       nowHow: 'Packing-house price: what the packing house or co-op gets when selling the produce graded and packed, before VAT. Farm-gate: what the grower receives before that preparation. Retailer buying price: what the shop pays. The European Commission publishes them every week with data from each country.',
       chE: 'Weekly price in {c} by type', from: 'From', all: 'All', hover: 'Hover over the chart.',
@@ -35,7 +35,7 @@
       crop: 'Where it is grown in Spain ({y} season)', area: 'Area', prod: 'Production', yld: 'Average yield', prev: 'Previous season', fresh: 'For fresh consumption', ind: 'For processing (sauce, paste, juice)', glass: 'Of fresh tomatoes, grown under glass or plastic', top: 'The provinces that produce the most', share: 'of total', prov: 'provisional', provNote: 'MAPA figures for the {y} season are provisional.',
       all2: 'All fruit and vegetables', allTxt: 'See prices for all fruit, vegetables and nuts', cat: 'Find more series in the catalogue',
       src: 'Sources:', sEU: 'European Commission, agri-food data portal', sMAPA: 'MAPA, prices received', sCrop: 'MAPA, annual crop areas and production', t1000: 'thousand t', t: 't', ha: 'ha', none: 'No data for this product.' },
-    fr: { sub: 'Prix hebdomadaire à l’origine, ce que touche l’agriculteur et où on le cultive en Espagne, avec des données officielles.', ctry: 'Pays',
+    fr: { subX: 'Prix hebdomadaire à l’origine en {c} et comparaison avec d’autres pays, avec des données officielles.', sub: 'Prix hebdomadaire à l’origine, ce que touche l’agriculteur et où on le cultive en Espagne, avec des données officielles.', ctry: 'Pays',
       now: 'Prix de cette semaine', nowWk: '{p} en {c} ({v}, {s}), semaine du {d}', perKg: '€/kg', w1: 'Semaine précédente', y1: 'Il y a un an', last: 'Dernière donnée publiée : {d}. C’est un produit de saison ou le pays publie peu ; hors saison il n’y a pas de cotation.',
       nowHow: 'Sortie de station : ce que touche la station ou la coopérative en vendant le produit trié et emballé, hors TVA. À la ferme : ce que reçoit le producteur avant cette préparation. Achat du détaillant : ce que paie le magasin. La Commission européenne les publie chaque semaine avec les données de chaque pays.',
       chE: 'Prix hebdomadaire en {c} par type', from: 'Depuis', all: 'Tout', hover: 'Survolez le graphique.',
@@ -45,7 +45,7 @@
       crop: 'Où on le cultive en Espagne (campagne {y})', area: 'Surface', prod: 'Production', yld: 'Rendement moyen', prev: 'Campagne précédente', fresh: 'Pour le marché du frais', ind: 'Pour l’industrie (sauce, concentré, jus)', glass: 'De la tomate de table, sous serre', top: 'Les provinces qui produisent le plus', share: 'du total', prov: 'provisoire', provNote: 'Les données du MAPA pour la campagne {y} sont provisoires.',
       all2: 'Tous les fruits et légumes', allTxt: 'Voir les prix de tous les fruits, légumes et fruits à coque', cat: 'Chercher d’autres séries dans le catalogue',
       src: 'Sources :', sEU: 'Commission européenne, portail de données agroalimentaires', sMAPA: 'MAPA, prix perçus', sCrop: 'MAPA, surfaces et productions annuelles', t1000: 'milliers de t', t: 't', ha: 'ha', none: 'Pas de données pour ce produit.' },
-    it: { sub: 'Prezzo settimanale all’origine, quanto incassa l’agricoltore e dove si coltiva in Spagna, con dati ufficiali.', ctry: 'Paese',
+    it: { subX: 'Prezzo settimanale all’origine in {c} e confronto con altri paesi, con dati ufficiali.', sub: 'Prezzo settimanale all’origine, quanto incassa l’agricoltore e dove si coltiva in Spagna, con dati ufficiali.', ctry: 'Paese',
       now: 'Prezzo di questa settimana', nowWk: '{p} in {c} ({v}, {s}), settimana del {d}', perKg: '€/kg', w1: 'Settimana precedente', y1: 'Un anno fa', last: 'Ultimo dato pubblicato: {d}. È un prodotto stagionale o il paese pubblica poco; fuori stagione non c’è quotazione.',
       nowHow: 'Uscita magazzino: quanto incassa il centro di confezionamento o la cooperativa vendendo il prodotto selezionato e confezionato, IVA esclusa. In azienda: quanto riceve il produttore prima di questa preparazione. Acquisto del dettagliante: quanto paga il negozio. La Commissione europea li pubblica ogni settimana con i dati di ogni paese.',
       chE: 'Prezzo settimanale in {c} per tipo', from: 'Dal', all: 'Tutto', hover: 'Passa il cursore sul grafico.',
@@ -120,8 +120,8 @@
       // series del país elegido: la de referencia y hasta dos tipos más con la misma fase de venta
       var ref = cc && lat[cc], want = [];
       if (ref) { want.push(ref.series); EU.series.forEach(function (s) { if (s.stage === ref.stage && s.id !== ref.series && want.length < 6) want.push(s.id); }); }
-      var cropsF = P.crops ? 'data/spain-crops/crops-' + P.crops.group + '.json' : null;
-      return Promise.all(want.map(function (id) { return file('data/eu/fruta/' + id + '.json'); }).concat([P.perc ? file(P.perc.file) : null, cropsF ? file(cropsF) : null])).then(function (a) {
+      var isES = cc === 'ES', cropsF = isES && P.crops ? 'data/spain-crops/crops-' + P.crops.group + '.json' : null;
+      return Promise.all(want.map(function (id) { return file('data/eu/fruta/' + id + '.json'); }).concat([isES && P.perc ? file(P.perc.file) : null, cropsF ? file(cropsF) : null])).then(function (a) {
         var t = T[lg], F = mk(lg), nm = P.name[lg] || P.name.es, h = '', binds = [], cN = cc ? cname(cc, lg) : '';
         var docs = a.slice(0, want.length), pf = a[want.length], CR = a[want.length + 1];
         // 1) precio semanal y comparación entre países
@@ -149,7 +149,7 @@
           h += '</section>';
         } else h += '<section class="di-card ps-rm vg-card"><p class="di-movers-hint" style="margin:0">' + esc(t.noEu) + '</p></section>';
         // 2) precio percibido (MAPA) y estacionalidad
-        var perc = pf && pf.series && P.perc ? pf.series.filter(function (s) { return s.id === P.perc.id; })[0] : null;
+        var perc = isES && pf && pf.series && P.perc ? pf.series.filter(function (s) { return s.id === P.perc.id; })[0] : null;
         if (perc && perc.points && perc.points.length > 24) {
           var PP = perc.points.map(function (q2) { return [q2[0] + '-15', q2[1] / 100]; }), lp = PP[PP.length - 1], ly = near(PP, (+lp[0].slice(0, 4) - 1) + lp[0].slice(4), 5);
           var lastY = +lp[0].slice(0, 4), ya = lastY - 10, yb = lastY - 1, acc = [], m;
@@ -165,7 +165,7 @@
           binds.push([pc, true]);
         }
         // 3) dónde se cultiva (MAPA, por provincia)
-        if (CR && CR.campaigns && P.crops) {
+        if (isES && CR && CR.campaigns && P.crops) {
           var camps = Object.keys(CR.campaigns).sort(), cy = camps[camps.length - 1], cp = camps.length > 1 ? camps[camps.length - 2] : null, ex = P.crops.extra || {};
           var find = function (camp, code) { return camp && code && CR.campaigns[camp] ? CR.campaigns[camp].crops.filter(function (q2) { return q2.c === code; })[0] : null; };
           var tot = find(cy, P.crops.code), totP = find(cp, P.crops.code), fr = find(cy, ex.fresh), ind = find(cy, ex.ind), gl = find(cy, ex.glass);
@@ -182,9 +182,9 @@
           }
         }
         h += '<section class="di-card ps-rm vg-card"><p style="margin:0 0 6px"><a href="precios.html?tab=hortalizas">' + esc(t.allTxt) + '</a> · <a href="catalogo.html?q=' + encodeURIComponent(P.name.es) + '">' + esc(t.cat) + '</a></p>' +
-          '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' <a href="https://agridata.ec.europa.eu/" target="_blank" rel="noopener noreferrer">' + esc(t.sEU) + '</a>' + (P.perc ? '; <a href="https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido" target="_blank" rel="noopener noreferrer">' + esc(t.sMAPA) + '</a>' : '') + (P.crops ? '; <a href="https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/" target="_blank" rel="noopener noreferrer">' + esc(t.sCrop) + '</a>' : '') + '</p></section>';
+          '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' <a href="https://agridata.ec.europa.eu/" target="_blank" rel="noopener noreferrer">' + esc(t.sEU) + '</a>' + (isES && P.perc ? '; <a href="https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido" target="_blank" rel="noopener noreferrer">' + esc(t.sMAPA) + '</a>' : '') + (isES && P.crops ? '; <a href="https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/" target="_blank" rel="noopener noreferrer">' + esc(t.sCrop) + '</a>' : '') + '</p></section>';
         el.innerHTML = h;
-        var h1 = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h1) h1.textContent = (P.emoji ? P.emoji + ' ' : '') + nm; if (sb) sb.textContent = t.sub; document.title = nm + ' | Dehesa Index';
+        var h1 = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h1) h1.textContent = (P.emoji ? P.emoji + ' ' : '') + nm; if (sb) sb.textContent = isES ? t.sub : (t.subX || t.sub).replace('{c}', cN); document.title = nm + ' | Dehesa Index';
         binds.forEach(function (b) { bind(el, b[0], t, F, b[1]); });
         if (!el.getAttribute('data-vg')) {
           el.setAttribute('data-vg', '1');

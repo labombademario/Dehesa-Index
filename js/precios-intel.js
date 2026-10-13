@@ -319,14 +319,21 @@
   function fullPendingHtml(title, id) {
     return '<div class="di-intel-section di-intel-pending" id="'+id+'" data-intel-full="1"><div class="di-intel-head"><h2>'+esc(title)+'</h2><p>…</p></div></div>';
   }
+  /* Cada render() sustituye los nodos: el observador se vuelve a enganchar al bloque nuevo (antes se quedaba mirando el nodo viejo,
+     que ya no estaba en la página, y correlaciones, volatilidad y estacionalidad se quedaban en «…» para siempre). */
+  var FULL_IO = null;
   function armFull(root) {
     if (FULL_READY || FULL_WAIT) return;
     var el = root.querySelector('[data-intel-full]'); if (!el) return;
-    FULL_WAIT = true;
-    whenNear(el, function(){
+    if (FULL_IO) { try { FULL_IO.disconnect(); } catch (e) {} FULL_IO = null; }
+    var go = function(){
+      if (FULL_WAIT) return; FULL_WAIT = true; if (FULL_IO) { try { FULL_IO.disconnect(); } catch (e) {} FULL_IO = null; }
       var Core = core();
       (Core && Core.ensureAllHistory ? Core.ensureAllHistory() : Promise.resolve()).then(function(){ FULL_READY = true; render(); }, function(){ FULL_READY = true; render(); });
-    });
+    };
+    if (!global.IntersectionObserver) { go(); return; }
+    FULL_IO = new IntersectionObserver(function(es){ if (es.some(function(e){ return e.isIntersecting; })) go(); }, { rootMargin: '500px' });
+    FULL_IO.observe(el);
   }
   var INTEL_LOADING = false;
   function whenNear(el, fn) {
