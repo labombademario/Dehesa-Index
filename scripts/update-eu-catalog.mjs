@@ -166,6 +166,8 @@ export function buildFamily(rows, fam, today) {
     out.push({ id, parts: s.parts, unit: s.unit, unitLabel: UNIT_LABEL[s.unit] || s.unit, regions });
   }
   out.sort((a, b) => b.regions.reduce((x, r) => x + r.pts.length, 0) - a.regions.reduce((x, r) => x + r.pts.length, 0));
+  // Se guarda también en el índice de la familia (los registros de Actions no se pueden leer desde fuera): solo combinaciones fuera de España
+  out.droppedRecent = [...dropped].filter(([k]) => !k.startsWith('ES |')).slice(0, 120).map(([k, n]) => k + ' ×' + n);
   if (dropped.size) console.log('[keep] filas recientes descartadas (' + dropped.size + ' combinaciones):\n  ' + [...dropped].slice(0, 80).map(([k, n]) => k + ' ×' + n).join('\n  '));
   return out;
 }
@@ -202,7 +204,7 @@ async function writeFamily(id, fam, built, generatedAt) {
   for (const f of await readdir(dir)) if (!keepFiles.has(f)) await rm(path.join(dir, f));
   await writeFile(path.join(OUT, id + '.json'), JSON.stringify({
     schemaVersion: '1.0', family: id, endpoint: fam.endpoint, freq: fam.freq, source: 'eu_agrifood', generatedAt,
-    epoch: '2000-01-01', series: list
+    epoch: '2000-01-01', series: list, droppedRecent: built.droppedRecent && built.droppedRecent.length ? built.droppedRecent : undefined
   }) + '\n', 'utf8');
   return { id, endpoint: fam.endpoint, freq: fam.freq, series: list.length, points: built.reduce((x, s) => x + s.regions.reduce((y, r) => y + r.pts.length, 0), 0), latest: list.reduce((m, s) => (s.latest > m ? s.latest : m), '') };
 }
