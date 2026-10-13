@@ -26,6 +26,14 @@ def stat(label, value, unit='', dec=1, sub=None):
     return s
 def chart(label, unit, series): return {'label': t4(label), 'unit': t4(unit) if '|' in unit else unit, 'series': [{'label': t4(l) if isinstance(l, str) else l, 'points': p} for l, p in series if len(p) > 1]}
 def bars(title, unit, items, dec=1): return {'title': t4(title), 'unit': t4(unit) if '|' in unit else unit, 'dec': dec, 'items': [{'label': t4(l) if isinstance(l, str) else l, 'value': rnd(v, 4)} for l, v in items if v is not None]}
+
+def chg(p, vs=None):
+    """Variación en los cuatro idiomas: vs=None -> frente a hace un año; vs=texto -> frente a ese periodo."""
+    if p is None: return None
+    a = abs(p); sign = '+' if p > 0 else '−' if p < 0 else ''
+    es = sign + ('%.1f' % a).replace('.', ',') + ' %'; en = sign + '%.1f%%' % a; it = es; fr = sign + ('%.1f' % a).replace('.', ',') + ' %'
+    if vs is None: return {'d': {'es': es + ' frente a hace un año', 'en': en + ' vs a year earlier', 'fr': fr + ' sur un an', 'it': it + ' rispetto a un anno prima'}}
+    return {'d': {'es': es + ' frente a ' + vs, 'en': en + ' vs ' + vs, 'fr': fr + ' par rapport à ' + vs, 'it': it + ' rispetto a ' + vs}}
 def pct(a, b): return None if a is None or not b else (a / b - 1) * 100
 
 US_STATES = {'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland', 'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont', 'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming'}
@@ -92,7 +100,7 @@ def cultivos():
         st = sorted(((US_STATES.get(s, s), (v[-1]['g'] + v[-1]['e'])) for s, v in c['states'].items() if v), key=lambda x: -x[1])
         out.append(block(c['id'], 'US', {l: name[l] for l in L4}, asOf=cur[-1][0],
             stats=[stat('Bueno o excelente|Good or excellent|Bon ou excellent|Buono o eccellente', ge, '%', 0), stat('Malo o muy malo|Poor or very poor|Mauvais ou très mauvais|Scarso o molto scarso', cur[-1][1] + cur[-1][2], '%', 0)],
-            charts=[chart('% bueno o excelente, semana a semana|% good or excellent, week by week|% bon ou excellent, semaine par semaine|% buono o eccellente, settimana per settimana', '%', [(ss[-1], series(cur, ss[-1])), (ss[-2] + ' (' + t4('misma semana|same week|même semaine|stessa settimana')['es'] + ')', prevshift)] if prev else [(ss[-1], series(cur, ss[-1]))])],
+            charts=[chart('% bueno o excelente, semana a semana|% good or excellent, week by week|% bon ou excellent, semaine par semaine|% buono o eccellente, settimana per settimana', '%', [(ss[-1], series(cur, ss[-1])), ('|'.join(ss[-2] + ' (' + x + ')' for x in 'misma semana|same week|même semaine|stessa settimana'.split('|')), prevshift)] if prev else [(ss[-1], series(cur, ss[-1]))])],
             bars=[bars('Por estado: % bueno o excelente|By state: % good or excellent|Par État : % bon ou excellent|Per stato: % buono o eccellente', '%', st, 0)] if st else None,
             source={'name': 'USDA NASS, Crop Progress', 'url': cp['source']['url']}))
     return {'id': 'cultivos', 'title': t4('Estado de los cultivos (EE. UU.)|Crop condition (US)|État des cultures (États-Unis)|Stato delle colture (USA)'), 'emoji': '🌾', 'blocks': out}
@@ -110,18 +118,17 @@ def oferta():
         su = (w.get('endingStocks') or 0) / w['consumption'] * 100 if w.get('consumption') else None
         sup = (wp.get('endingStocks') or 0) / wp['consumption'] * 100 if wp.get('consumption') else None
         def sv(k): return w.get(k) / div if w.get(k) is not None else None
-        def sb(k): return {'d': '%+.1f %%' % pct(w.get(k), wp.get(k))} if w.get(k) and wp.get(k) else None
         prods = sorted(((CNAME.get(v.get('iso'), n), v['years'].get(y, {}).get('production')) for n, v in c['countries'].items()), key=lambda x: -(x[1] or 0))[:10]
         out.append(block(c['id'], 'WORLD', t4(PSD.get(c['id'], c['psdName'])), asOf=str(y) + '/' + str(int(y) + 1)[-2:],
             stats=[stat('Producción mundial|World production|Production mondiale|Produzione mondiale', sv('production'), unit, 1),
                    stat('Consumo|Consumption|Consommation|Consumo', sv('consumption'), unit, 1),
                    stat('Existencias finales|Ending stocks|Stocks de fin de campagne|Scorte finali', sv('endingStocks'), unit, 1),
-                   stat('Existencias / consumo|Stocks-to-use|Stocks / consommation|Scorte / consumo', su, '%', 1, {'d': '%.1f %% %s' % (sup, yp)} if sup is not None else None)],
+                   stat('Existencias / consumo|Stocks-to-use|Stocks / consommation|Scorte / consumo', su, '%', 1, {'d': {l: ('%.1f %% · ' % sup).replace('.', ',' if l != 'en' else '.') + yp + '/' + str(int(yp) + 1)[-2:] for l in L4}} if sup is not None else None)],
             charts=[chart('Producción, consumo y existencias por campaña|Production, consumption and stocks by marketing year|Production, consommation et stocks par campagne|Produzione, consumo e scorte per campagna', unit,
                           [('Producción|Production|Production|Produzione', [[yy, round(c['world'][yy]['production'] / div, 1)] for yy in ys if c['world'][yy].get('production')]),
                            ('Consumo|Consumption|Consommation|Consumo', [[yy, round(c['world'][yy]['consumption'] / div, 1)] for yy in ys if c['world'][yy].get('consumption')]),
                            ('Existencias finales|Ending stocks|Stocks finaux|Scorte finali', [[yy, round(c['world'][yy]['endingStocks'] / div, 1)] for yy in ys if c['world'][yy].get('endingStocks') is not None])])],
-            bars=[bars('Mayores productores ' + str(y) + '/' + str(int(y) + 1)[-2:] + '|Largest producers|Principaux producteurs|Maggiori produttori', unit, [(l if isinstance(l, str) and '|' in l else (t4(l) if isinstance(l, str) else l), (v or 0) / div) for l, v in prods if v], 1)],
+            bars=[bars('|'.join(x + ' ' + str(y) + '/' + str(int(y) + 1)[-2:] for x in 'Mayores productores|Largest producers|Principaux producteurs|Maggiori produttori'.split('|')), unit, [(l if isinstance(l, str) and '|' in l else (t4(l) if isinstance(l, str) else l), (v or 0) / div) for l, v in prods if v], 1)],
             note=t4('Campaña de comercialización según USDA (publicado en ' + c.get('publishedMonth', '') + ').|Marketing year as defined by USDA (published ' + c.get('publishedMonth', '') + ').|Campagne de commercialisation selon l’USDA (publié en ' + c.get('publishedMonth', '') + ').|Campagna di commercializzazione secondo l’USDA (pubblicato a ' + c.get('publishedMonth', '') + ').'),
             source={'name': 'USDA FAS, PSD Online', 'url': sd['source']['url']}))
     return {'id': 'oferta', 'title': t4('Oferta y demanda mundial|World supply and demand|Offre et demande mondiales|Domanda e offerta mondiale'), 'emoji': '🌍', 'blocks': out}
@@ -168,7 +175,7 @@ def insumos():
             avg = sum(s['avg'] for s in ss) / len(ss)
             items.append((t4(FN.get(p['id'], p['id'])), avg))
             s0 = max(ss, key=lambda s: len(s.get('hist') or []))
-            if s0.get('hist'): chs.append((t4(FN.get(p['id'], p['id']))['es'] + ' · ' + s0['state'], s0['hist']))
+            if s0.get('hist'): chs.append(('|'.join(x + ' · ' + s0['state'] for x in FN.get(p['id'], p['id']).split('|')), s0['hist']))
         out.append(block('fertilizantes', 'US', 'EE. UU.: fertilizantes en el mercado minorista|US: retail fertiliser prices|États-Unis : prix de détail des engrais|USA: prezzi al dettaglio dei fertilizzanti', asOf=f['asOf'],
             bars=[bars('Precio medio de los estados que informan|Average of reporting states|Moyenne des États déclarants|Media degli stati che riportano', 'USD/short ton', items, 0)],
             charts=[{'label': t4('Evolución en el estado con más historia|History in the state with the longest record|Évolution dans l’État avec le plus d’historique|Andamento nello stato con più storico'), 'unit': 'USD/short ton', 'series': [{'label': t4(l), 'points': p} for l, p in chs[:6] if len(p) > 1]}],
@@ -196,7 +203,7 @@ def cuentas():
         stats = []
         for k in ('output', 'ic', 'gva', 'entrep'):
             v = at(k)
-            if v is not None: stats.append(stat(EUK[k] + ' ' + str(y) if k == 'output' else EUK[k], v, 'M€', 0, {'d': '%+.1f %%' % pct(v, atp(k))} if atp(k) else None))
+            if v is not None: stats.append(stat('|'.join(x + ' ' + str(y) for x in EUK[k].split('|')) if k == 'output' else EUK[k], v, 'M€', 0, chg(pct(v, atp(k))) if atp(k) else None))
         inp = [(EUK[k], at(k)) for k in ('feed', 'energy', 'fert', 'ppp', 'vet') if at(k) is not None]
         ch = [(EUK[k], [[str(yy), round(v, 1)] for yy, v in zip(ys, g.get(k) or []) if v is not None]) for k in ('output', 'ic', 'entrep')]
         out.append(block('eaa-' + code, code, 'Cuentas del sector agrario|Agricultural accounts|Comptes de l’agriculture|Conti del settore agricolo', asOf=str(y), stats=stats,
@@ -230,7 +237,7 @@ def ganaderia_us():
     if cof and cof['reports']:
         r = cof['reports'][-1]; n = r['national']; c = n['current']; ya = n['yearAgo']
         out.append(block('cof', 'US', 'EE. UU.: ganado en cebadero|US: cattle on feed|États-Unis : bovins à l’engraissement|USA: bovini all’ingrasso', asOf=r['inventoryDate'],
-            stats=[stat('En cebadero a final de mes|On feed at month end|En engraissement en fin de mois|All’ingrasso a fine mese', c['onFeedEnd'], 'miles de cabezas|thousand head|milliers de têtes|migliaia di capi', 0, {'d': '%d %% vs año anterior' % n['pctYearAgo']['onFeedEnd']}),
+            stats=[stat('En cebadero a final de mes|On feed at month end|En engraissement en fin de mois|All’ingrasso a fine mese', c['onFeedEnd'], 'miles de cabezas|thousand head|milliers de têtes|migliaia di capi', 0, chg(n['pctYearAgo']['onFeedEnd'] - 100)),
                    stat('Entradas del mes|Placed in the month|Entrées du mois|Ingressi del mese', c['placed'], 'miles de cabezas|thousand head|milliers de têtes|migliaia di capi', 0),
                    stat('Salidas a matadero|Marketed|Sorties vers l’abattoir|Uscite al macello', c['marketed'], 'miles de cabezas|thousand head|milliers de têtes|migliaia di capi', 0)],
             charts=[chart('En cebadero (1 de cada mes)|On feed (1st of each month)|En engraissement (1er de chaque mois)|All’ingrasso (1° di ogni mese)', 'miles de cabezas|thousand head|milliers de têtes|migliaia di capi', [('Total|Total|Total|Totale', [[x['inventoryDate'], x['national']['current']['onFeedStart']] for x in cof['reports']])])],
@@ -255,7 +262,7 @@ def exportaciones_us():
         tops = sorted(((x['n'].title(), (x.get('acc') or 0) + (x.get('out') or 0)) for x in c.get('countries', []) if x.get('n') and 'UNKNOWN' not in x['n']), key=lambda x: -x[1])[:10]
         commit = (tt.get('acc') or 0) + (tt.get('out') or 0); commit_p = (pv.get('acc') or 0) + (pv.get('out') or 0)
         out.append(block('esr-' + str(c['code']), 'US', name, asOf=c['weekEnding'],
-            stats=[stat('Ventas comprometidas en la campaña ' + c['my'] + '|Committed sales, marketing year ' + c['my'] + '|Ventes engagées, campagne ' + c['my'] + '|Vendite impegnate, campagna ' + c['my'], commit / 1000, 'kt', 0, {'d': '%+.0f %% vs año anterior' % pct(commit, commit_p)} if commit_p else None),
+            stats=[stat('Ventas comprometidas en la campaña ' + c['my'] + '|Committed sales, marketing year ' + c['my'] + '|Ventes engagées, campagne ' + c['my'] + '|Vendite impegnate, campagna ' + c['my'], commit / 1000, 'kt', 0, chg(pct(commit, commit_p)) if commit_p else None),
                    stat('Ya embarcado|Already shipped|Déjà expédié|Già spedito', (tt.get('acc') or 0) / 1000, 'kt', 0),
                    stat('Ventas netas de la semana|Net sales this week|Ventes nettes de la semaine|Vendite nette della settimana', (tt.get('net') or 0) / 1000, 'kt', 1)],
             charts=[chart('Embarques acumulados|Cumulative exports|Exportations cumulées|Esportazioni cumulate', 'kt', [(c['my'], [[w['w'], round((w.get('acc') or 0) / 1000, 1)] for w in c.get('weekly', [])])])],
@@ -301,9 +308,9 @@ def ganaderia_es():
         def v(k, ix): return n[k][ix] if ix is not None and n[k][ix] is not None else None
         prod = sorted(((ccaa(k), (c.get('production') or [None] * len(P))[i]) for k, c in m['ccaa'].items()), key=lambda x: -(x[1] or 0))
         out.append(block('leche-es', 'ES', 'España: leche de vaca (INFOLAC)|Spain: cow’s milk (INFOLAC)|Espagne : lait de vache (INFOLAC)|Spagna: latte vaccino (INFOLAC)', asOf=P[i],
-            stats=[stat('Precio medio al ganadero|Average farm-gate price|Prix moyen payé à l’éleveur|Prezzo medio all’allevatore', v('price', i), '€/l', 3, {'d': '%+.1f %% vs año anterior' % pct(v('price', i), v('price', iy))} if v('price', iy) else None),
-                   stat('Entregas del mes|Monthly deliveries|Livraisons du mois|Consegne del mese', (v('deliveries', i) or 0) / 1000 if v('deliveries', i) else None, 'miles de t|thousand t|milliers de t|migliaia di t', 1, {'d': '%+.1f %% vs año anterior' % pct(v('deliveries', i), v('deliveries', iy))} if v('deliveries', iy) else None),
-                   stat('Ganaderos que entregan|Farmers delivering|Éleveurs livreurs|Allevatori che consegnano', v('farmers', i), '', 0, {'d': '%+.1f %% vs año anterior' % pct(v('farmers', i), v('farmers', iy))} if v('farmers', iy) else None),
+            stats=[stat('Precio medio al ganadero|Average farm-gate price|Prix moyen payé à l’éleveur|Prezzo medio all’allevatore', v('price', i), '€/l', 3, chg(pct(v('price', i), v('price', iy))) if v('price', iy) else None),
+                   stat('Entregas del mes|Monthly deliveries|Livraisons du mois|Consegne del mese', (v('deliveries', i) or 0) / 1000 if v('deliveries', i) else None, 'miles de t|thousand t|milliers de t|migliaia di t', 1, chg(pct(v('deliveries', i), v('deliveries', iy))) if v('deliveries', iy) else None),
+                   stat('Ganaderos que entregan|Farmers delivering|Éleveurs livreurs|Allevatori che consegnano', v('farmers', i), '', 0, chg(pct(v('farmers', i), v('farmers', iy))) if v('farmers', iy) else None),
                    stat('Grasa|Fat|Matière grasse|Grasso', v('fat', i), '%', 2), stat('Proteína|Protein|Protéine|Proteine', v('protein', i), '%', 2)],
             charts=[chart('Precio al ganadero|Farm-gate price|Prix à l’éleveur|Prezzo all’allevatore', '€/l', [('Precio|Price|Prix|Prezzo', [[p, x] for p, x in zip(P, n['price']) if x is not None])]),
                     chart('Entregas mensuales|Monthly deliveries|Livraisons mensuelles|Consegne mensili', 't', [('Entregas|Deliveries|Livraisons|Consegne', [[p, x] for p, x in zip(P, n['deliveries']) if x is not None])])],
@@ -315,7 +322,7 @@ def ganaderia_es():
         SP = {'bovino': 'Vacuno|Cattle|Bovins|Bovini', 'ovino': 'Ovino|Sheep|Ovins|Ovini', 'caprino': 'Caprino|Goats|Caprins|Caprini', 'porcino': 'Porcino|Pigs|Porcins|Suini', 'equino': 'Equino|Horses|Équidés|Equini', 'aves': 'Aves|Poultry|Volailles|Pollame', 'conejos': 'Conejo|Rabbits|Lapins|Conigli'}
         i = lastidx(N['porcino']['carcass']); iy = i - 12 if i is not None and i >= 12 else None
         out.append(block('sacrificio-es', 'ES', 'España: sacrificio en matadero|Spain: slaughter|Espagne : abattages|Spagna: macellazione', asOf=P[i],
-            stats=[stat(SP[k] + ' (t de canal)|' + SP[k].split('|')[1] + ' (t carcass)|' + SP[k].split('|')[2] + ' (t carcasse)|' + SP[k].split('|')[3] + ' (t carcassa)', N[k]['carcass'][i], 't', 0, {'d': '%+.1f %% vs año anterior' % pct(N[k]['carcass'][i], N[k]['carcass'][iy])} if iy is not None and N[k]['carcass'][iy] else None) for k in ('porcino', 'bovino', 'aves', 'ovino', 'caprino', 'conejos') if k in N and N[k]['carcass'][i] is not None],
+            stats=[stat(SP[k] + ' (t de canal)|' + SP[k].split('|')[1] + ' (t carcass)|' + SP[k].split('|')[2] + ' (t carcasse)|' + SP[k].split('|')[3] + ' (t carcassa)', N[k]['carcass'][i], 't', 0, chg(pct(N[k]['carcass'][i], N[k]['carcass'][iy])) if iy is not None and N[k]['carcass'][iy] else None) for k in ('porcino', 'bovino', 'aves', 'ovino', 'caprino', 'conejos') if k in N and N[k]['carcass'][i] is not None],
             charts=[chart('Toneladas de canal al mes|Tonnes of carcass per month|Tonnes de carcasse par mois|Tonnellate di carcassa al mese', 't', [(SP[k], [[p, x] for p, x in zip(P, N[k]['carcass']) if x is not None]) for k in ('porcino', 'bovino', 'aves', 'ovino') if k in N])],
             source={'name': 'MAPA, encuesta de sacrificio de ganado', 'url': s['source']['url']}))
     return {'id': 'ganaderia-es', 'title': t4('Leche y sacrificio (España)|Milk and slaughter (Spain)|Lait et abattages (Espagne)|Latte e macellazione (Spagna)'), 'emoji': '🥛', 'blocks': out}
@@ -327,7 +334,7 @@ def balances_es():
     if c:
         ks = sorted(c['campaigns']); y = ks[-1]; cp = c['campaigns'][y]; v = cp['v']['total']; vp = c['campaigns'][ks[-2]]['v']['total'] if len(ks) > 1 else {}
         st = cp.get('status') or ''
-        def sb(k): return {'d': '%+.1f %% vs %s' % (pct(v.get(k), vp.get(k)), c['campaigns'][ks[-2]]['label'])} if v.get(k) and vp.get(k) else None
+        def sb(k): return chg(pct(v.get(k), vp.get(k)), c['campaigns'][ks[-2]]['label']) if v.get(k) and vp.get(k) else None
         out.append(block('cereales-es', 'ES', 'España: balance de cereales|Spain: cereal balance|Espagne : bilan céréalier|Spagna: bilancio dei cereali', asOf=cp['label'] + (' (' + st + ')' if st else ''),
             stats=[stat('Producción|Production|Production|Produzione', v.get('production'), 'miles de t|thousand t|milliers de t|migliaia di t', 0, sb('production')),
                    stat('Importaciones|Imports|Importations|Importazioni', v.get('imports'), 'miles de t|thousand t|milliers de t|migliaia di t', 0, sb('imports')),
