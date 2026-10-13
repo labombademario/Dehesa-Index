@@ -52,6 +52,8 @@ jobs:
       # 2) Datos derivados: construir TODO, validar TODO y solo entonces commitear. Sin "|| true".
       - name: Series semanales de EE. UU. (lacteos, cordero, fertilizantes, exportaciones, etanol; desde ficheros ya publicados, sin red)
         run: python3 scripts/build-us-weekly.py
+      - name: Socios comerciales de EE. UU. (derivado de GATS, sin red)
+        run: python3 scripts/build-us-trade-partners.py
       - name: Registro de series
         run: python3 scripts/build-series-registry.py
       - name: Indice de series para la lista de seguimiento

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T15:40:52Z",
+ "generatedAt": "2026-10-13T15:55:57Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -6076,11 +6076,13 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA FAS — Global Agricultural Trade System (GATS)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "dataset": "Ya integrada (16 series en el catalogo unificado)",
    "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "productsConfirmed": true,
+   "metrics": [
+    "trade"
+   ],
+   "frequency": "monthly",
    "access": {
     "api": null,
     "csv": null,

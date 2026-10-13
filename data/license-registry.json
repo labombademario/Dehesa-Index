@@ -4482,6 +4482,12 @@
     "usda_fas_gats"
    ]
   },
+  "data/us-trade-partners-stats.json": {
+   "byCountry": {
+    "US": "usda_fas_gats"
+   },
+   "notes": "Derivado de data/gats.json: suma de 12 meses de los productos seleccionados por socio principal; no es el total agroalimentario."
+  },
   "data/uk-trade-products.json": {
    "sources": [
     "hmrc_uktradeinfo"
