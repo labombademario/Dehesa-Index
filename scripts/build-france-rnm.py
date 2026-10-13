@@ -44,6 +44,8 @@ def main(paths):
         last, prev = pts[-1][1], pts[-2][1]
         series.append({"id": "fr-rnm-" + sid, "group": "prices_lv", "label": lab, "unit": unit, "frequency": "weekly", "latestPeriod": pts[-1][0], "latest": last,
                        "changePct": round((last - prev) / prev * 100, 2), "points": pts, "sourceGroup": "FranceAgriMer – RNM (Réseau des Nouvelles des Marchés)"})
+    try: series += [x for x in json.loads((ROOT / "data" / "france-rnm-stats.json").read_text(encoding="utf-8"))["countries"]["FR"]["series"] if x["id"].startswith("fr-rnm-potato")]   # la patata la mantiene scripts/update-france-rnm-potato.py
+    except Exception: pass
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "countries": {"FR": {"name": "France", "source": {"name": "FranceAgriMer – RNM", "url": "https://rnm.franceagrimer.fr/", "license": "Licence Ouverte 2.0"}, "series": series}}, "log": []}
     (ROOT / "data" / "france-rnm-stats.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

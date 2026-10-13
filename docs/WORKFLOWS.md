@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-181 workflows (143 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+182 workflows (144 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -194,6 +194,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-energy.yml | a mano | semanal (5) | sync-diesel-trust.mjs, update-ec-diesel-eu.py, update-eia-diesel-us.mjs | - | price-engine, publish |
 | update-export-sales.yml | a mano | 2 veces/semana | update-export-sales.mjs | export-sales.json | finish, validate-files |
 | update-france-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-france-hicp.py | france-hicp-stats.json | finish, validate-files |
+| update-france-rnm-potato.yml | generado | semanal (4,5) | detect-revisions.py, gen-workflows.py, update-france-rnm-potato.py | france-rnm-stats.json | finish, validate-files |
 | update-france.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-france.py | france-stats.json | finish, validate-files |
 | update-fx-history.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fx-history.py | fx-history.json | finish, validate-files |
 | update-fx.yml | a mano | semanal (1-5) | update-fx.mjs | - | - |

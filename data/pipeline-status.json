@@ -1,28 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T19:32:00Z",
+ "generatedAt": "2026-10-13T20:17:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 163,
   "late": 1,
   "error": 8,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "6b6e4dba",
+   "sha": "96777d54",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/307ff84c-9a19-4858-af25-3dd6eab8f6d1",
-   "completedAt": "2026-10-13T19:25:56Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/72ce16e1-4975-4227-813d-7648ac8d5e25",
+   "completedAt": "2026-10-13T20:14:08Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
-  "repoGeneratedAt": "2026-10-13T18:38:30.450643+00:00",
-  "checkedAt": "2026-10-13T19:32:00Z"
+  "repoGeneratedAt": "2026-10-13T19:40:39.340783+00:00",
+  "checkedAt": "2026-10-13T20:17:00Z"
  },
  "pipelines": [
   {
@@ -1851,6 +1851,19 @@
    "expectedEveryHours": 408.0
   },
   {
+   "workflow": "update-france-rnm-potato.yml",
+   "name": "Update France consumer potato price at shipping point (FranceAgriMer RNM)",
+   "crons": [
+    "20 14 * * 4,5"
+   ],
+   "nextRun": "2026-10-15T14:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 144.0
+  },
+  {
    "workflow": "update-france.yml",
    "name": "Update France (FranceAgriMer)",
    "crons": [
@@ -2457,31 +2470,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-13T18:38:32Z"
+     "lastChange": "2026-10-13T19:40:39Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-13T18:38:32Z"
+     "lastChange": "2026-10-13T19:40:39Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-13T18:38:32Z"
+     "lastChange": "2026-10-13T19:40:39Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-13T18:38:32Z"
+     "lastChange": "2026-10-13T19:40:39Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-13T18:38:32Z"
+     "lastChange": "2026-10-13T19:40:39Z"
     }
    ],
    "last": {
-    "conclusion": "cancelled",
-    "event": "push",
-    "startedAt": "2026-10-13T19:16:55Z",
-    "durationSec": 2,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38453591931"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-13T19:38:51Z",
+    "durationSec": 116,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38456489796"
    },
    "recent": {
     "runs": 10,
@@ -2691,7 +2704,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2707,14 +2720,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-13T16:53:29Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2731,7 +2744,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/products"
@@ -2742,34 +2755,34 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -2777,7 +2790,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-13T19:09:58Z"
+     "lastChange": "2026-10-13T19:42:03Z"
     },
     {
      "path": "data/home-explore.json",

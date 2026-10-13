@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T18:35:10Z",
+ "generatedAt": "2026-10-13T20:17:33Z",
  "summary": {
-  "files": 59,
+  "files": 60,
   "errors": 0,
   "warnings": 16
  },
@@ -110,11 +110,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 11,
-    "points": 1004,
+    "series": 13,
+    "points": 1016,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T04:57:48Z",
+   "generatedAt": "2026-10-13T20:16:58Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -296,11 +296,11 @@
     "BE/be-eus-poultry-imp-a5130p: anomalia registrada que ya no se detecta (cerrarla en data/data-anomalies.json)"
    ],
    "stats": {
-    "series": 821,
-    "points": 39544,
+    "series": 822,
+    "points": 39556,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T17:54:23Z",
+   "generatedAt": "2026-10-13T19:03:35Z",
    "info": [],
    "nWarnings": 8,
    "nErrors": 0
@@ -664,6 +664,22 @@
    "nErrors": 0
   },
   {
+   "file": "france-hicp-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 3,
+    "points": 420,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-13T19:03:03Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
    "file": "spain-oilseeds-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -920,11 +936,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 201,
-    "points": 5830,
+    "series": 219,
+    "points": 6854,
     "lines": 0
    },
-   "generatedAt": "2026-10-09T22:56:27Z",
+   "generatedAt": "2026-10-13T19:25:14Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

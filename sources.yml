@@ -1144,6 +1144,14 @@ sources:
     data: [france-hicp-stats.json]
     log: france-hicp-log.txt
     message: Índices de precios de consumo de mantequilla, queso y aceite de oliva en Francia (Eurostat, IPCA)
+  - id: france-rnm-potato
+    name: Update France consumer potato price at shipping point (FranceAgriMer RNM)
+    cron: ['20 14 * * 4,5']
+    script: scripts/update-france-rnm-potato.py
+    timeout: 20
+    data: [france-rnm-stats.json]
+    log: france-rnm-potato-log.txt
+    message: Precio de la patata de consumo en expedición en Francia (FranceAgriMer, RNM)
   - id: spain-oilseeds
     name: Update Spain annual oilseed balance sheets (MAPA)
     cron: ['40 7 * * 4']
