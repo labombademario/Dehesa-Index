@@ -5938,5 +5938,659 @@
 "es": "Índice: Electricidad",
 "fr": "Indice : électricité",
 "it": "Indice: elettricità"
+},
+"Exports to Greece: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Greece: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Grecia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Grèce : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Grecia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Türkiye: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Türkiye: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Turquía: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Turquie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Turchia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Algeria: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Algeria: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Argelia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Algérie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Algeria: agroalimentare, SA 01-24 (annuale)"
+},
+"Producer price: barley (feed), Czechia (CSU)": {
+"en": "Producer price: barley (feed), Czechia (CSU)",
+"es": "Precio al productor: cebada forrajera, Chequia (CSU)",
+"fr": "Prix à la production : orge fourragère, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: orzo da foraggio, Cechia (CSU)"
+},
+"Producer price: barley (malting), Czechia (CSU)": {
+"en": "Producer price: barley (malting), Czechia (CSU)",
+"es": "Precio al productor: cebada cervecera, Chequia (CSU)",
+"fr": "Prix à la production : orge de brasserie, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: orzo da malto, Cechia (CSU)"
+},
+"Producer price: maize, Czechia (CSU)": {
+"en": "Producer price: maize, Czechia (CSU)",
+"es": "Precio al productor: maíz, Chequia (CSU)",
+"fr": "Prix à la production : maïs, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: mais, Cechia (CSU)"
+},
+"Producer price: cow milk, Czechia (CSU)": {
+"en": "Producer price: cow milk, Czechia (CSU)",
+"es": "Precio al productor: leche de vaca, Chequia (CSU)",
+"fr": "Prix à la production : lait de vache, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: latte di vacca, Cechia (CSU)"
+},
+"Producer price: oats (feed), Czechia (CSU)": {
+"en": "Producer price: oats (feed), Czechia (CSU)",
+"es": "Precio al productor: avena forrajera, Chequia (CSU)",
+"fr": "Prix à la production : avoine fourragère, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: avena da foraggio, Cechia (CSU)"
+},
+"Producer price: rapeseed, Czechia (CSU)": {
+"en": "Producer price: rapeseed, Czechia (CSU)",
+"es": "Precio al productor: colza, Chequia (CSU)",
+"fr": "Prix à la production : colza, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: colza, Cechia (CSU)"
+},
+"Producer price: wheat (feed), Czechia (CSU)": {
+"en": "Producer price: wheat (feed), Czechia (CSU)",
+"es": "Precio al productor: trigo forrajero, Chequia (CSU)",
+"fr": "Prix à la production : blé fourrager, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: frumento da foraggio, Cechia (CSU)"
+},
+"Producer price: wheat (milling), Czechia (CSU)": {
+"en": "Producer price: wheat (milling), Czechia (CSU)",
+"es": "Precio al productor: trigo panificable, Chequia (CSU)",
+"fr": "Prix à la production : blé meunier, Tchéquie (CSU)",
+"it": "Prezzo alla produzione: frumento da molitura, Cechia (CSU)"
+},
+"Producer price: slaughter bulls (live weight), Czechia (CSU)": {
+"en": "Producer price: slaughter bulls (live weight), Czechia (CSU)",
+"es": "Precio al productor: toros de sacrificio (peso vivo), Chequia (CSU)",
+"fr": "Prix à la production : taureaux d’abattage (poids vif), Tchéquie (CSU)",
+"it": "Prezzo alla produzione: tori da macello (peso vivo), Cechia (CSU)"
+},
+"Producer price: slaughter cows (live weight), Czechia (CSU)": {
+"en": "Producer price: slaughter cows (live weight), Czechia (CSU)",
+"es": "Precio al productor: vacas de sacrificio (peso vivo), Chequia (CSU)",
+"fr": "Prix à la production : vaches d’abattage (poids vif), Tchéquie (CSU)",
+"it": "Prezzo alla produzione: vacche da macello (peso vivo), Cechia (CSU)"
+},
+"Producer price: slaughter pigs (live weight), Czechia (CSU)": {
+"en": "Producer price: slaughter pigs (live weight), Czechia (CSU)",
+"es": "Precio al productor: cerdos de sacrificio (peso vivo), Chequia (CSU)",
+"fr": "Prix à la production : porcs d’abattage (poids vif), Tchéquie (CSU)",
+"it": "Prezzo alla produzione: suini da macello (peso vivo), Cechia (CSU)"
+},
+"Input price: spring barley seed, Czechia (CSU)": {
+"en": "Input price: spring barley seed, Czechia (CSU)",
+"es": "Precio de insumo: semilla de cebada de primavera, Chequia (CSU)",
+"fr": "Prix d’intrant : semence d’orge de printemps, Tchéquie (CSU)",
+"it": "Prezzo di input: seme di orzo primaverile, Cechia (CSU)"
+},
+"Input price: ammonium sulphate 21%, Czechia (CSU)": {
+"en": "Input price: ammonium sulphate 21%, Czechia (CSU)",
+"es": "Precio de insumo: sulfato amónico 21 %, Chequia (CSU)",
+"fr": "Prix d’intrant : sulfate d’ammonium 21 %, Tchéquie (CSU)",
+"it": "Prezzo di input: solfato ammonico 21 %, Cechia (CSU)"
+},
+"Input price: calcium ammonium nitrate 27%, Czechia (CSU)": {
+"en": "Input price: calcium ammonium nitrate 27%, Czechia (CSU)",
+"es": "Precio de insumo: nitrato amónico cálcico 27 %, Chequia (CSU)",
+"fr": "Prix d’intrant : nitrate d’ammonium calcique 27 %, Tchéquie (CSU)",
+"it": "Prezzo di input: nitrato ammonico calcico 27 %, Cechia (CSU)"
+},
+"Input price: UAN (DAM 390), Czechia (CSU)": {
+"en": "Input price: UAN (DAM 390), Czechia (CSU)",
+"es": "Precio de insumo: UAN (DAM 390), Chequia (CSU)",
+"fr": "Prix d’intrant : UAN (DAM 390), Tchéquie (CSU)",
+"it": "Prezzo di input: UAN (DAM 390), Cechia (CSU)"
+},
+"Input price: ammophos (MAP), Czechia (CSU)": {
+"en": "Input price: ammophos (MAP), Czechia (CSU)",
+"es": "Precio de insumo: amofós (MAP), Chequia (CSU)",
+"fr": "Prix d’intrant : ammophos (MAP), Tchéquie (CSU)",
+"it": "Prezzo di input: ammofos (MAP), Cechia (CSU)"
+},
+"Input price: NPK 15-15-15, Czechia (CSU)": {
+"en": "Input price: NPK 15-15-15, Czechia (CSU)",
+"es": "Precio de insumo: NPK 15-15-15, Chequia (CSU)",
+"fr": "Prix d’intrant : NPK 15-15-15, Tchéquie (CSU)",
+"it": "Prezzo di input: NPK 15-15-15, Cechia (CSU)"
+},
+"Input price: potassium salt 60%, Czechia (CSU)": {
+"en": "Input price: potassium salt 60%, Czechia (CSU)",
+"es": "Precio de insumo: sal potásica 60 %, Chequia (CSU)",
+"fr": "Prix d’intrant : sel de potassium 60 %, Tchéquie (CSU)",
+"it": "Prezzo di input: sale potassico 60 %, Cechia (CSU)"
+},
+"Input price: urea, Czechia (CSU)": {
+"en": "Input price: urea, Czechia (CSU)",
+"es": "Precio de insumo: urea, Chequia (CSU)",
+"fr": "Prix d’intrant : urée, Tchéquie (CSU)",
+"it": "Prezzo di input: urea, Cechia (CSU)"
+},
+"Exports to Slovakia: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Slovakia: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Eslovaquia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Slovaquie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Slovacchia: agroalimentare, SA 01-24 (annuale)"
+},
+"Yield: cereals, Estonia (Statistics Estonia)": {
+"en": "Yield: cereals, Estonia (Statistics Estonia)",
+"es": "Rendimiento: cereales, Estonia (Statistics Estonia)",
+"fr": "Rendement : céréales, Estonie (Statistics Estonia)",
+"it": "Resa: cereali, Estonia (Statistics Estonia)"
+},
+"Yield: oats, Estonia (Statistics Estonia)": {
+"en": "Yield: oats, Estonia (Statistics Estonia)",
+"es": "Rendimiento: avena, Estonia (Statistics Estonia)",
+"fr": "Rendement : avoine, Estonie (Statistics Estonia)",
+"it": "Resa: avena, Estonia (Statistics Estonia)"
+},
+"Yield: potatoes, Estonia (Statistics Estonia)": {
+"en": "Yield: potatoes, Estonia (Statistics Estonia)",
+"es": "Rendimiento: patata, Estonia (Statistics Estonia)",
+"fr": "Rendement : pommes de terre, Estonie (Statistics Estonia)",
+"it": "Resa: patate, Estonia (Statistics Estonia)"
+},
+"Yield: rapeseed, Estonia (Statistics Estonia)": {
+"en": "Yield: rapeseed, Estonia (Statistics Estonia)",
+"es": "Rendimiento: colza, Estonia (Statistics Estonia)",
+"fr": "Rendement : colza, Estonie (Statistics Estonia)",
+"it": "Resa: colza, Estonia (Statistics Estonia)"
+},
+"Yield: rye, Estonia (Statistics Estonia)": {
+"en": "Yield: rye, Estonia (Statistics Estonia)",
+"es": "Rendimiento: centeno, Estonia (Statistics Estonia)",
+"fr": "Rendement : seigle, Estonie (Statistics Estonia)",
+"it": "Resa: segale, Estonia (Statistics Estonia)"
+},
+"Yield: wheat, Estonia (Statistics Estonia)": {
+"en": "Yield: wheat, Estonia (Statistics Estonia)",
+"es": "Rendimiento: trigo, Estonia (Statistics Estonia)",
+"fr": "Rendement : blé, Estonie (Statistics Estonia)",
+"it": "Resa: frumento, Estonia (Statistics Estonia)"
+},
+"Yield: peas, Estonia (Statistics Estonia)": {
+"en": "Yield: peas, Estonia (Statistics Estonia)",
+"es": "Rendimiento: guisantes, Estonia (Statistics Estonia)",
+"fr": "Rendement : pois, Estonie (Statistics Estonia)",
+"it": "Resa: piselli, Estonia (Statistics Estonia)"
+},
+"Oats: cultivated area (Eurostat)": {
+"en": "Oats: cultivated area (Eurostat)",
+"es": "Avena: superficie cultivada (Eurostat)",
+"fr": "Avoine : surface cultivée (Eurostat)",
+"it": "Avena: superficie coltivata (Eurostat)"
+},
+"Producer price: milk, Estonia (Statistics Estonia)": {
+"en": "Producer price: milk, Estonia (Statistics Estonia)",
+"es": "Precio al productor: leche, Estonia (Statistics Estonia)",
+"fr": "Prix à la production : lait, Estonie (Statistics Estonia)",
+"it": "Prezzo alla produzione: latte, Estonia (Statistics Estonia)"
+},
+"Milk deliveries to dairies, Estonia (Statistics Estonia)": {
+"en": "Milk deliveries to dairies, Estonia (Statistics Estonia)",
+"es": "Entregas de leche a las industrias lácteas, Estonia (Statistics Estonia)",
+"fr": "Livraisons de lait aux laiteries, Estonie (Statistics Estonia)",
+"it": "Consegne di latte ai caseifici, Estonia (Statistics Estonia)"
+},
+"Producer price: bovine meat, Estonia (Statistics Estonia)": {
+"en": "Producer price: bovine meat, Estonia (Statistics Estonia)",
+"es": "Precio al productor: carne de vacuno, Estonia (Statistics Estonia)",
+"fr": "Prix à la production : viande bovine, Estonie (Statistics Estonia)",
+"it": "Prezzo alla produzione: carne bovina, Estonia (Statistics Estonia)"
+},
+"Producer price: pork, Estonia (Statistics Estonia)": {
+"en": "Producer price: pork, Estonia (Statistics Estonia)",
+"es": "Precio al productor: carne de cerdo, Estonia (Statistics Estonia)",
+"fr": "Prix à la production : viande de porc, Estonie (Statistics Estonia)",
+"it": "Prezzo alla produzione: carne di maiale, Estonia (Statistics Estonia)"
+},
+"Producer price: sheep and goat meat, Estonia (Statistics Estonia)": {
+"en": "Producer price: sheep and goat meat, Estonia (Statistics Estonia)",
+"es": "Precio al productor: carne de ovino y caprino, Estonia (Statistics Estonia)",
+"fr": "Prix à la production : viande ovine et caprine, Estonie (Statistics Estonia)",
+"it": "Prezzo alla produzione: carne ovina e caprina, Estonia (Statistics Estonia)"
+},
+"Input price index (prices paid by farmers), nominal: Other fertilisers, soil improvers (2020=100, Eurostat)": {
+"en": "Input price index (prices paid by farmers), nominal: Other fertilisers, soil improvers (2020=100, Eurostat)",
+"es": "Índice de precios de insumos (precios pagados por los agricultores), nominal: otros abonos y enmiendas del suelo (2020=100, Eurostat)",
+"fr": "Indice des prix des intrants (prix payés par les agriculteurs), nominal : autres engrais et amendements (2020=100, Eurostat)",
+"it": "Indice dei prezzi degli input (prezzi pagati dagli agricoltori), nominale: altri concimi e ammendanti (2020=100, Eurostat)"
+},
+"Stocks: barley, Estonia (Statistics Estonia)": {
+"en": "Stocks: barley, Estonia (Statistics Estonia)",
+"es": "Existencias: cebada, Estonia (Statistics Estonia)",
+"fr": "Stocks : orge, Estonie (Statistics Estonia)",
+"it": "Scorte: orzo, Estonia (Statistics Estonia)"
+},
+"Stocks: rye, Estonia (Statistics Estonia)": {
+"en": "Stocks: rye, Estonia (Statistics Estonia)",
+"es": "Existencias: centeno, Estonia (Statistics Estonia)",
+"fr": "Stocks : seigle, Estonie (Statistics Estonia)",
+"it": "Scorte: segale, Estonia (Statistics Estonia)"
+},
+"Stocks: wheat, Estonia (Statistics Estonia)": {
+"en": "Stocks: wheat, Estonia (Statistics Estonia)",
+"es": "Existencias: trigo, Estonia (Statistics Estonia)",
+"fr": "Stocks : blé, Estonie (Statistics Estonia)",
+"it": "Scorte: frumento, Estonia (Statistics Estonia)"
+},
+"Exports to Latvia: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Latvia: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Letonia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Lettonie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Lettonia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Finland: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Finland: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Finlandia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Finlande : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Finlandia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Lithuania: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Lithuania: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Lituania: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Lituanie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Lituania: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Belarus: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Belarus: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Bielorrusia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Biélorussie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Bielorussia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Estonia: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Estonia: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Estonia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Estonie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Estonia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Denmark: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Denmark: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Dinamarca: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Danemark : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Danimarca: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Slovenia: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Slovenia: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Eslovenia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Slovénie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Slovenia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Bosnia and Herzegovina: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Bosnia and Herzegovina: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Bosnia y Herzegovina: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Bosnie-Herzégovine : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Bosnia ed Erzegovina: agroalimentare, SA 01-24 (annuale)"
+},
+"Piglets, live weight of under 20 kg (May-June, Eurostat)": {
+"en": "Piglets, live weight of under 20 kg (May-June, Eurostat)",
+"es": "Lechones, peso vivo inferior a 20 kg (mayo-junio, Eurostat)",
+"fr": "Porcelets, poids vif inférieur à 20 kg (mai-juin, Eurostat)",
+"it": "Lattonzoli, peso vivo inferiore a 20 kg (maggio-giugno, Eurostat)"
+},
+"Sows covered for the first time (May-June, Eurostat)": {
+"en": "Sows covered for the first time (May-June, Eurostat)",
+"es": "Cerdas cubiertas por primera vez (mayo-junio, Eurostat)",
+"fr": "Truies saillies pour la première fois (mai-juin, Eurostat)",
+"it": "Scrofe montate per la prima volta (maggio-giugno, Eurostat)"
+},
+"Pigs, from 20 kg to less than 50 kg (May-June, Eurostat)": {
+"en": "Pigs, from 20 kg to less than 50 kg (May-June, Eurostat)",
+"es": "Cerdos de 20 kg a menos de 50 kg (mayo-junio, Eurostat)",
+"fr": "Porcs de 20 kg à moins de 50 kg (mai-juin, Eurostat)",
+"it": "Suini da 20 kg a meno di 50 kg (maggio-giugno, Eurostat)"
+},
+"Fattening pigs, from 50 kg to less than 80 kg (May-June, Eurostat)": {
+"en": "Fattening pigs, from 50 kg to less than 80 kg (May-June, Eurostat)",
+"es": "Cerdos de cebo de 50 kg a menos de 80 kg (mayo-junio, Eurostat)",
+"fr": "Porcs à l’engrais de 50 kg à moins de 80 kg (mai-juin, Eurostat)",
+"it": "Suini da ingrasso da 50 kg a meno di 80 kg (maggio-giugno, Eurostat)"
+},
+"Fattening pigs, from 80 kg to less than 110 kg (May-June, Eurostat)": {
+"en": "Fattening pigs, from 80 kg to less than 110 kg (May-June, Eurostat)",
+"es": "Cerdos de cebo de 80 kg a menos de 110 kg (mayo-junio, Eurostat)",
+"fr": "Porcs à l’engrais de 80 kg à moins de 110 kg (mai-juin, Eurostat)",
+"it": "Suini da ingrasso da 80 kg a meno di 110 kg (maggio-giugno, Eurostat)"
+},
+"Fattening pigs, live weight 110 kg or over (May-June, Eurostat)": {
+"en": "Fattening pigs, live weight 110 kg or over (May-June, Eurostat)",
+"es": "Cerdos de cebo, peso vivo de 110 kg o más (mayo-junio, Eurostat)",
+"fr": "Porcs à l’engrais, poids vif de 110 kg ou plus (mai-juin, Eurostat)",
+"it": "Suini da ingrasso, peso vivo di 110 kg o più (maggio-giugno, Eurostat)"
+},
+"Exports: fats and oils (monthly)": {
+"en": "Exports: fats and oils (monthly)",
+"es": "Exportaciones: grasas y aceites (mensual)",
+"fr": "Exportations : graisses et huiles (mensuel)",
+"it": "Esportazioni: grassi e oli (mensile)"
+},
+"Common spring wheat and spelt: yield, EU standard humidity (Eurostat)": {
+"en": "Common spring wheat and spelt: yield, EU standard humidity (Eurostat)",
+"es": "Trigo blando de primavera y espelta: rendimiento, humedad estándar UE (Eurostat)",
+"fr": "Blé tendre de printemps et épeautre : rendement, humidité standard UE (Eurostat)",
+"it": "Frumento tenero primaverile e farro: resa, umidità standard UE (Eurostat)"
+},
+"Piglets, live weight of under 20 kg (November, December, Eurostat)": {
+"en": "Piglets, live weight of under 20 kg (November, December, Eurostat)",
+"es": "Lechones, peso vivo inferior a 20 kg (noviembre-diciembre, Eurostat)",
+"fr": "Porcelets, poids vif inférieur à 20 kg (novembre-décembre, Eurostat)",
+"it": "Lattonzoli, peso vivo inferiore a 20 kg (novembre-dicembre, Eurostat)"
+},
+"Producer price: barley, Latvia (CSP)": {
+"en": "Producer price: barley, Latvia (CSP)",
+"es": "Precio al productor: cebada, Letonia (CSP)",
+"fr": "Prix à la production : orge, Lettonie (CSP)",
+"it": "Prezzo alla produzione: orzo, Lettonia (CSP)"
+},
+"Producer price: oats, Latvia (CSP)": {
+"en": "Producer price: oats, Latvia (CSP)",
+"es": "Precio al productor: avena, Letonia (CSP)",
+"fr": "Prix à la production : avoine, Lettonie (CSP)",
+"it": "Prezzo alla produzione: avena, Lettonia (CSP)"
+},
+"Producer price: rye, Latvia (CSP)": {
+"en": "Producer price: rye, Latvia (CSP)",
+"es": "Precio al productor: centeno, Letonia (CSP)",
+"fr": "Prix à la production : seigle, Lettonie (CSP)",
+"it": "Prezzo alla produzione: segale, Lettonia (CSP)"
+},
+"Producer price: wheat, Latvia (CSP)": {
+"en": "Producer price: wheat, Latvia (CSP)",
+"es": "Precio al productor: trigo, Letonia (CSP)",
+"fr": "Prix à la production : blé, Lettonie (CSP)",
+"it": "Prezzo alla produzione: frumento, Lettonia (CSP)"
+},
+"Producer price: triticale, Latvia (CSP)": {
+"en": "Producer price: triticale, Latvia (CSP)",
+"es": "Precio al productor: triticale, Letonia (CSP)",
+"fr": "Prix à la production : triticale, Lettonie (CSP)",
+"it": "Prezzo alla produzione: triticale, Lettonia (CSP)"
+},
+"Producer price: pulses, Latvia (CSP)": {
+"en": "Producer price: pulses, Latvia (CSP)",
+"es": "Precio al productor: legumbres, Letonia (CSP)",
+"fr": "Prix à la production : légumineuses, Lettonie (CSP)",
+"it": "Prezzo alla produzione: legumi, Lettonia (CSP)"
+},
+"Producer price: rapeseed, Latvia (CSP)": {
+"en": "Producer price: rapeseed, Latvia (CSP)",
+"es": "Precio al productor: colza, Letonia (CSP)",
+"fr": "Prix à la production : colza, Lettonie (CSP)",
+"it": "Prezzo alla produzione: colza, Lettonia (CSP)"
+},
+"Producer price: milk, Latvia (CSP)": {
+"en": "Producer price: milk, Latvia (CSP)",
+"es": "Precio al productor: leche, Letonia (CSP)",
+"fr": "Prix à la production : lait, Lettonie (CSP)",
+"it": "Prezzo alla produzione: latte, Lettonia (CSP)"
+},
+"Milk deliveries to dairies, Latvia (CSP)": {
+"en": "Milk deliveries to dairies, Latvia (CSP)",
+"es": "Entregas de leche a las industrias lácteas, Letonia (CSP)",
+"fr": "Livraisons de lait aux laiteries, Lettonie (CSP)",
+"it": "Consegne di latte ai caseifici, Lettonia (CSP)"
+},
+"Producer price: bovine meat, Latvia (CSP)": {
+"en": "Producer price: bovine meat, Latvia (CSP)",
+"es": "Precio al productor: carne de vacuno, Letonia (CSP)",
+"fr": "Prix à la production : viande bovine, Lettonie (CSP)",
+"it": "Prezzo alla produzione: carne bovina, Lettonia (CSP)"
+},
+"Producer price: pork, Latvia (CSP)": {
+"en": "Producer price: pork, Latvia (CSP)",
+"es": "Precio al productor: carne de cerdo, Letonia (CSP)",
+"fr": "Prix à la production : viande de porc, Lettonie (CSP)",
+"it": "Prezzo alla produzione: carne di maiale, Lettonia (CSP)"
+},
+"Stocks: barley, Latvia (CSP)": {
+"en": "Stocks: barley, Latvia (CSP)",
+"es": "Existencias: cebada, Letonia (CSP)",
+"fr": "Stocks : orge, Lettonie (CSP)",
+"it": "Scorte: orzo, Lettonia (CSP)"
+},
+"Stocks: cereals, Latvia (CSP)": {
+"en": "Stocks: cereals, Latvia (CSP)",
+"es": "Existencias: cereales, Letonia (CSP)",
+"fr": "Stocks : céréales, Lettonie (CSP)",
+"it": "Scorte: cereali, Lettonia (CSP)"
+},
+"Stocks: common wheat, Latvia (CSP)": {
+"en": "Stocks: common wheat, Latvia (CSP)",
+"es": "Existencias: trigo blando, Letonia (CSP)",
+"fr": "Stocks : blé tendre, Lettonie (CSP)",
+"it": "Scorte: frumento tenero, Lettonia (CSP)"
+},
+"Stocks: maize, Latvia (CSP)": {
+"en": "Stocks: maize, Latvia (CSP)",
+"es": "Existencias: maíz, Letonia (CSP)",
+"fr": "Stocks : maïs, Lettonie (CSP)",
+"it": "Scorte: mais, Lettonia (CSP)"
+},
+"Stocks: oats, Latvia (CSP)": {
+"en": "Stocks: oats, Latvia (CSP)",
+"es": "Existencias: avena, Letonia (CSP)",
+"fr": "Stocks : avoine, Lettonie (CSP)",
+"it": "Scorte: avena, Lettonia (CSP)"
+},
+"Stocks: rapeseed, Latvia (CSP)": {
+"en": "Stocks: rapeseed, Latvia (CSP)",
+"es": "Existencias: colza, Letonia (CSP)",
+"fr": "Stocks : colza, Lettonie (CSP)",
+"it": "Scorte: colza, Lettonia (CSP)"
+},
+"Stocks: rye, Latvia (CSP)": {
+"en": "Stocks: rye, Latvia (CSP)",
+"es": "Existencias: centeno, Letonia (CSP)",
+"fr": "Stocks : seigle, Lettonie (CSP)",
+"it": "Scorte: segale, Lettonia (CSP)"
+},
+"Exports to Russian Federation: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Russian Federation: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Rusia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Russie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Russia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Japan: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Japan: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Japón: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Japon : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Giappone: agroalimentare, SA 01-24 (annuale)"
+},
+"Producer price: barley, Sweden (Jordbruksverket)": {
+"en": "Producer price: barley, Sweden (Jordbruksverket)",
+"es": "Precio al productor: cebada, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : orge, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: orzo, Svezia (Jordbruksverket)"
+},
+"Producer price: class A eggs, Sweden (Jordbruksverket)": {
+"en": "Producer price: class A eggs, Sweden (Jordbruksverket)",
+"es": "Precio al productor: huevos de clase A, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : œufs de classe A, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: uova di categoria A, Svezia (Jordbruksverket)"
+},
+"Producer price: feed oats, Sweden (Jordbruksverket)": {
+"en": "Producer price: feed oats, Sweden (Jordbruksverket)",
+"es": "Precio al productor: avena forrajera, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : avoine fourragère, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: avena da foraggio, Svezia (Jordbruksverket)"
+},
+"Producer price: milk 4.2% fat, Sweden (Jordbruksverket)": {
+"en": "Producer price: milk 4.2% fat, Sweden (Jordbruksverket)",
+"es": "Precio al productor: leche con 4,2 % de grasa, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : lait à 4,2 % de matière grasse, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: latte al 4,2 % di grassi, Svezia (Jordbruksverket)"
+},
+"Producer price: rapeseed, Sweden (Jordbruksverket)": {
+"en": "Producer price: rapeseed, Sweden (Jordbruksverket)",
+"es": "Precio al productor: colza, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : colza, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: colza, Svezia (Jordbruksverket)"
+},
+"Producer price: rye, Sweden (Jordbruksverket)": {
+"en": "Producer price: rye, Sweden (Jordbruksverket)",
+"es": "Precio al productor: centeno, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : seigle, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: segale, Svezia (Jordbruksverket)"
+},
+"Producer price: ware potatoes, Sweden (Jordbruksverket)": {
+"en": "Producer price: ware potatoes, Sweden (Jordbruksverket)",
+"es": "Precio al productor: patata de consumo, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : pommes de terre de consommation, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: patate da consumo, Svezia (Jordbruksverket)"
+},
+"Producer price: wheat, Sweden (Jordbruksverket)": {
+"en": "Producer price: wheat, Sweden (Jordbruksverket)",
+"es": "Precio al productor: trigo, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : blé, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: frumento, Svezia (Jordbruksverket)"
+},
+"Producer price: cows, Sweden (Jordbruksverket)": {
+"en": "Producer price: cows, Sweden (Jordbruksverket)",
+"es": "Precio al productor: vacas, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : vaches, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: vacche, Svezia (Jordbruksverket)"
+},
+"Producer price: lamb, Sweden (Jordbruksverket)": {
+"en": "Producer price: lamb, Sweden (Jordbruksverket)",
+"es": "Precio al productor: cordero, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : agneau, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: agnello, Svezia (Jordbruksverket)"
+},
+"Producer price: piglets, Sweden (Jordbruksverket)": {
+"en": "Producer price: piglets, Sweden (Jordbruksverket)",
+"es": "Precio al productor: lechones, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : porcelets, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: lattonzoli, Svezia (Jordbruksverket)"
+},
+"Producer price: sheep, Sweden (Jordbruksverket)": {
+"en": "Producer price: sheep, Sweden (Jordbruksverket)",
+"es": "Precio al productor: ovejas, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : moutons, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: pecore, Svezia (Jordbruksverket)"
+},
+"Producer price: slaughter pigs, Sweden (Jordbruksverket)": {
+"en": "Producer price: slaughter pigs, Sweden (Jordbruksverket)",
+"es": "Precio al productor: cerdos de sacrificio, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : porcs d’abattage, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: suini da macello, Svezia (Jordbruksverket)"
+},
+"Producer price: young bulls, Sweden (Jordbruksverket)": {
+"en": "Producer price: young bulls, Sweden (Jordbruksverket)",
+"es": "Precio al productor: toros jóvenes, Suecia (Jordbruksverket)",
+"fr": "Prix à la production : jeunes taureaux, Suède (Jordbruksverket)",
+"it": "Prezzo alla produzione: giovani tori, Svezia (Jordbruksverket)"
+},
+"Farm stocks: cereals, total, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: cereals, total, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: cereales, total, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : céréales, total, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: cereali, totale, Svezia (Jordbruksverket)"
+},
+"Farm stocks: oats, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: oats, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: avena, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : avoine, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: avena, Svezia (Jordbruksverket)"
+},
+"Farm stocks: spring barley, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: spring barley, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: cebada de primavera, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : orge de printemps, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: orzo primaverile, Svezia (Jordbruksverket)"
+},
+"Farm stocks: spring wheat, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: spring wheat, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: trigo de primavera, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : blé de printemps, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: frumento primaverile, Svezia (Jordbruksverket)"
+},
+"Farm stocks: winter wheat, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: winter wheat, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: trigo de invierno, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : blé d’hiver, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: frumento invernale, Svezia (Jordbruksverket)"
+},
+"Farm stocks: winter barley, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: winter barley, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: cebada de invierno, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : orge d’hiver, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: orzo invernale, Svezia (Jordbruksverket)"
+},
+"Farm stocks: winter rapeseed, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: winter rapeseed, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: colza de invierno, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : colza d’hiver, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: colza invernale, Svezia (Jordbruksverket)"
+},
+"Farm stocks: rye, Sweden (Jordbruksverket)": {
+"en": "Farm stocks: rye, Sweden (Jordbruksverket)",
+"es": "Existencias en explotación: centeno, Suecia (Jordbruksverket)",
+"fr": "Stocks à la ferme : seigle, Suède (Jordbruksverket)",
+"it": "Scorte in azienda: segale, Svezia (Jordbruksverket)"
+},
+"Exports to Croatia: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Croatia: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Croacia: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Croatie : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Croazia: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Ireland: agri-food, HS 01-24 (annual)": {
+"en": "Exports to Ireland: agri-food, HS 01-24 (annual)",
+"es": "Exportaciones a Irlanda: agroalimentario, SA 01-24 (anual)",
+"fr": "Exportations vers Irlande : agroalimentaire, SH 01-24 (annuel)",
+"it": "Esportazioni verso Irlanda: agroalimentare, SA 01-24 (annuale)"
+},
+"Exports to Mexico: selected agri-food products (12-month total)": {
+"en": "Exports to Mexico: selected agri-food products (12-month total)",
+"es": "Exportaciones a México: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Mexique : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Messico: prodotti agroalimentari selezionati (totale su 12 mesi)"
+},
+"Exports to Japan: selected agri-food products (12-month total)": {
+"en": "Exports to Japan: selected agri-food products (12-month total)",
+"es": "Exportaciones a Japón: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Japon : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Giappone: prodotti agroalimentari selezionati (totale su 12 mesi)"
+},
+"Exports to China: selected agri-food products (12-month total)": {
+"en": "Exports to China: selected agri-food products (12-month total)",
+"es": "Exportaciones a China: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Chine : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Cina: prodotti agroalimentari selezionati (totale su 12 mesi)"
+},
+"Exports to Korea, South: selected agri-food products (12-month total)": {
+"en": "Exports to Korea, South: selected agri-food products (12-month total)",
+"es": "Exportaciones a Corea del Sur: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Corée du Sud : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Corea del Sud: prodotti agroalimentari selezionati (totale su 12 mesi)"
+},
+"Exports to Canada: selected agri-food products (12-month total)": {
+"en": "Exports to Canada: selected agri-food products (12-month total)",
+"es": "Exportaciones a Canadá: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Canada : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Canada: prodotti agroalimentari selezionati (totale su 12 mesi)"
+},
+"Exports to Colombia: selected agri-food products (12-month total)": {
+"en": "Exports to Colombia: selected agri-food products (12-month total)",
+"es": "Exportaciones a Colombia: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Colombie : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Colombia: prodotti agroalimentari selezionati (totale su 12 mesi)"
+},
+"Exports to Taiwan: selected agri-food products (12-month total)": {
+"en": "Exports to Taiwan: selected agri-food products (12-month total)",
+"es": "Exportaciones a Taiwán: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Taïwan : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Taiwan: prodotti agroalimentari selezionati (totale su 12 mesi)"
+},
+"Exports to Indonesia: selected agri-food products (12-month total)": {
+"en": "Exports to Indonesia: selected agri-food products (12-month total)",
+"es": "Exportaciones a Indonesia: productos agroalimentarios seleccionados (total de 12 meses)",
+"fr": "Exportations vers Indonésie : produits agroalimentaires sélectionnés (total sur 12 mois)",
+"it": "Esportazioni verso Indonesia: prodotti agroalimentari selezionati (totale su 12 mesi)"
 }
 }

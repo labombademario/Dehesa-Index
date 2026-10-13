@@ -122,6 +122,13 @@
       cd('HR', 'Croacia', 'Croatia', 'Croatie', 'Croazia'),
       cd('LT', 'Lituania', 'Lithuania', 'Lituanie', 'Lituania'),
       cd('SK', 'Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia'),
+      cd('CZ', 'Chequia', 'Czechia', 'Tchéquie', 'Cechia'),
+      cd('EE', 'Estonia', 'Estonia', 'Estonie', 'Estonia'),
+      cd('HU', 'Hungría', 'Hungary', 'Hongrie', 'Ungheria'),
+      cd('LV', 'Letonia', 'Latvia', 'Lettonie', 'Lettonia'),
+      cd('RO', 'Rumanía', 'Romania', 'Roumanie', 'Romania'),
+      cd('SE', 'Suecia', 'Sweden', 'Suède', 'Svezia'),
+      cd('SI', 'Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'),
       cd('CH', 'Suiza', 'Switzerland', 'Suisse', 'Svizzera')
     ] },
     production: { label: L('Producción y clima', 'Production and weather', 'Production et météo', 'Produzione e meteo'), mega: 1, first: L('Cultivos y ganado', 'Crops and livestock', 'Cultures et élevage', 'Colture e allevamento'), items: [
