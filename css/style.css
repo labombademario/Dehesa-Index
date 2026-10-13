@@ -2282,3 +2282,16 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 .vg-hrow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:8px 16px}
 .vg-csel{display:flex;flex-direction:column;gap:3px;font-size:12.5px;color:var(--text-muted)}
 .fv-emo{display:inline-block;width:1.4em;margin-right:4px;text-align:center;text-decoration:none}
+
+/* Mi mercado: país con tarjetas y bandera */
+.mm-cc-wrap{margin:4px 0 18px}
+.mm-cc-q{font-family:'Source Serif 4',Georgia,serif;font-size:20px;font-weight:600;color:var(--text);margin:0 0 10px}
+.mm-cc{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px;max-width:760px}
+.mm-cc-b{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px 12px;border:1.5px solid var(--border);border-radius:12px;background:var(--surface,#fff);color:var(--text);font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .15s,background .15s}
+.mm-cc-b:hover{border-color:var(--text-faint)}
+.mm-cc-b:focus-visible{outline:2px solid var(--accent,#2f6b3a);outline-offset:2px}
+.mm-cc-b.on{border-color:#2f6b3a;background:#e3f0e5;color:#1E3328;box-shadow:inset 0 0 0 1px #2f6b3a}
+.mm-cc-f{font-size:34px;line-height:1}
+@media (max-width:480px){.mm-cc{grid-template-columns:repeat(3,1fr);gap:8px}.mm-cc-b{padding:10px 4px;font-size:12.5px}.mm-cc-f{font-size:28px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mm-cc-b.on{background:#1f3527;color:#e3f0e5}}
+:root[data-theme="dark"] .mm-cc-b.on{background:#1f3527;color:#e3f0e5}

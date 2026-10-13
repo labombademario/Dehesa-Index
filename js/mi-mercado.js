@@ -292,8 +292,15 @@
   function usPlaces() { var N = window.DehesaRegionNames && window.DehesaRegionNames.US || {}; return Object.keys(N).sort(function (a, b) { return usName(a).localeCompare(usName(b), lang()); }); }
   function opt(v, l, cur) { return '<option value="' + esc(v) + '"' + (String(v) === String(cur) ? ' selected' : '') + '>' + esc(l) + '</option>'; }
   function selectors() {
-    var t = tr(), h = '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
-    h += '<label>' + esc(t.country) + '<br><select class="di-compare-select" data-mm="c">' + opt('', t.choose, ST.c) + opt('US', t.us, ST.c) + opt('CA', tc().ca, ST.c) + opt('ES', t.es, ST.c) + opt('DE', TEU[lang()].de, ST.c) + opt('UK', TEU[lang()].uk, ST.c) + '</select></label>';
+    var t = tr(), h = '';
+    /* País: tarjetas con bandera (antes un desplegable); debajo, los filtros de ese país */
+    var CC = [['US', '🇺🇸', t.us], ['CA', '🇨🇦', tc().ca], ['ES', '🇪🇸', t.es], ['DE', '🇩🇪', TEU[lang()].de], ['UK', '🇬🇧', TEU[lang()].uk]];
+    var PQ = { es: '¿Dónde está tu explotación?', en: 'Where is your farm?', fr: 'Où se trouve votre exploitation ?', it: 'Dove si trova la tua azienda?' };
+    h += '<div class="mm-cc-wrap"><div class="mm-cc-q" id="mm-cc-q">' + esc(PQ[lang()] || PQ.es) + '</div><div class="mm-cc" role="radiogroup" aria-labelledby="mm-cc-q">' + CC.map(function (c) {
+      var on = ST.c === c[0];
+      return '<button type="button" role="radio" aria-checked="' + on + '" class="mm-cc-b' + (on ? ' on' : '') + '" data-mm-cc="' + c[0] + '"><span class="mm-cc-f" aria-hidden="true">' + c[1] + '</span><span class="mm-cc-n">' + esc(c[2]) + '</span></button>';
+    }).join('') + '</div></div>';
+    h += '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
     if (ST.c === 'US') {
       h += '<label>' + esc(t.place) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
       h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + US_PROD.map(function (k) { return opt(k, prodName(k), ST.p); }).join('') + '</select></label>';
@@ -939,6 +946,8 @@
     save(); prepare().then(function () { draw(); refocus(f); }, function () { draw(); });
   }
   function click(e) {
+    var cb = e.target.closest ? e.target.closest('[data-mm-cc]') : null;
+    if (cb) { var nc = cb.getAttribute('data-mm-cc'); if (nc !== ST.c) { ST.c = nc; ST.r = ''; ST.p = ''; ST.k = ''; save(); prepare().then(function () { draw(); refocus('[data-mm-cc="' + nc + '"]'); }, function () { draw(); }); } return; }
     var b = e.target.closest ? e.target.closest('[data-mm-cl],[data-mm-ex],[data-mm-reset],[data-mm-go]') : null; if (!b) return;
     if (b.hasAttribute('data-mm-cl')) { ST.cl = b.getAttribute('data-mm-cl'); draw(); refocus('[data-mm-cl="' + ST.cl + '"]'); }
     else if (b.hasAttribute('data-mm-ex')) { b.setAttribute('aria-busy', 'true'); b.textContent = ({ es: 'Cargando…', en: 'Loading…', fr: 'Chargement…', it: 'Caricamento…' })[lang()] || 'Cargando…'; var x = b.getAttribute('data-mm-ex').split('|'); ST.c = x[0]; ST.r = x[1]; ST.p = x[2]; ST.k = ''; save(); prepare().then(draw, draw); }
