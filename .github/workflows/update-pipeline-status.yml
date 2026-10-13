@@ -114,6 +114,8 @@ jobs:
         run: node scripts/build-blog-posts.mjs
       - name: Paquete por pais para la app (gasoleo, emisiones, sequia y nitratos, data/app/v1/env)
         run: python3 scripts/build-app-env.py
+      - name: Comercio por producto de cada pais para la app (data/app/v1/trade)
+        run: node scripts/build-app-trade.mjs
       - name: Comprobar coherencia de lo construido (catalogo estricto, contratos de los derivados)
         run: |
           python3 scripts/check-catalog.py --strict
