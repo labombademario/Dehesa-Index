@@ -3,6 +3,7 @@ censos 62 series
 carne 148 series
 leche 114 series
 aves 125 series
+huevos 1 series
 precios absolutos 94 series
 indices de precios 300 series
 insumos 117 series
