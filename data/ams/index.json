@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0",
- "generatedAt": "2026-10-10T15:36:40.638Z",
+ "generatedAt": "2026-10-13T00:05:18.760Z",
  "source": "USDA AMS Market News (MARS API)",
  "reports": [
   {
@@ -503,9 +503,9 @@
    "title": "Montana Weekly Livestock Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-03",
-   "series": 651,
-   "kb": 307
+   "lastDate": "2026-10-10",
+   "series": 656,
+   "kb": 311
   },
   {
    "id": 1781,
@@ -540,8 +540,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 895,
-   "kb": 499
+   "series": 888,
+   "kb": 498
   },
   {
    "id": 1785,
@@ -737,9 +737,9 @@
    "title": "Missouri Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-03",
-   "series": 766,
-   "kb": 458
+   "lastDate": "2026-10-10",
+   "series": 769,
+   "kb": 462
   },
   {
    "id": 1823,
@@ -819,8 +819,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-10",
-   "series": 474,
-   "kb": 343
+   "series": 469,
+   "kb": 341
   },
   {
    "id": 1832,
@@ -836,9 +836,9 @@
    "title": "Missouri Weekly Sheep/Goat Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-03",
-   "series": 256,
-   "kb": 86
+   "lastDate": "2026-10-10",
+   "series": 258,
+   "kb": 87
   },
   {
    "id": 1837,
@@ -854,8 +854,8 @@
    "title": "Missouri (Northeast) Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-03",
-   "series": 260,
+   "lastDate": "2026-10-10",
+   "series": 257,
    "kb": 147
   },
   {
@@ -864,7 +864,7 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-10",
-   "series": 257,
+   "series": 254,
    "kb": 174
   },
   {
@@ -891,7 +891,7 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-10",
-   "series": 488,
+   "series": 487,
    "kb": 253
   },
   {
@@ -900,8 +900,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-10",
-   "series": 274,
-   "kb": 121
+   "series": 273,
+   "kb": 120
   },
   {
    "id": 1848,
@@ -981,8 +981,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 149,
-   "kb": 54
+   "series": 148,
+   "kb": 53
   },
   {
    "id": 1865,
@@ -1098,7 +1098,7 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 204,
+   "series": 200,
    "kb": 123
   },
   {
@@ -1629,8 +1629,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 137,
-   "kb": 132
+   "series": 133,
+   "kb": 131
   },
   {
    "id": 2014,
@@ -1782,8 +1782,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 348,
-   "kb": 136
+   "series": 344,
+   "kb": 135
   },
   {
    "id": 2041,
@@ -1791,8 +1791,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-10",
-   "series": 320,
-   "kb": 180
+   "series": 317,
+   "kb": 179
   },
   {
    "id": 2046,
@@ -1881,8 +1881,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 357,
-   "kb": 246
+   "series": 354,
+   "kb": 245
   },
   {
    "id": 2057,
@@ -2061,8 +2061,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-07",
-   "series": 532,
-   "kb": 324
+   "series": 530,
+   "kb": 321
   },
   {
    "id": 2084,
@@ -2115,8 +2115,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 434,
-   "kb": 215
+   "series": 424,
+   "kb": 213
   },
   {
    "id": 2092,
@@ -2196,8 +2196,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 115,
-   "kb": 66
+   "series": 113,
+   "kb": 65
   },
   {
    "id": 2110,
@@ -2673,8 +2673,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-03",
-   "series": 752,
-   "kb": 472
+   "series": 740,
+   "kb": 470
   },
   {
    "id": 2194,
@@ -2944,7 +2944,7 @@
    "freq": "w",
    "lastDate": "2026-10-06",
    "series": 46,
-   "kb": 26
+   "kb": 25
   },
   {
    "id": 2277,
@@ -2953,7 +2953,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 325,
-   "kb": 250
+   "kb": 238
   },
   {
    "id": 2278,
@@ -2962,7 +2962,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 513,
-   "kb": 405
+   "kb": 384
   },
   {
    "id": 2279,
@@ -2971,7 +2971,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 145,
-   "kb": 108
+   "kb": 103
   },
   {
    "id": 2280,
@@ -2980,7 +2980,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 15,
-   "kb": 13
+   "kb": 12
   },
   {
    "id": 2281,
@@ -2989,7 +2989,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 163,
-   "kb": 118
+   "kb": 113
   },
   {
    "id": 2282,
@@ -2998,7 +2998,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 295,
-   "kb": 209
+   "kb": 201
   },
   {
    "id": 2283,
@@ -3016,7 +3016,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 5,
-   "kb": 5
+   "kb": 4
   },
   {
    "id": 2285,
@@ -3025,7 +3025,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 261,
-   "kb": 191
+   "kb": 181
   },
   {
    "id": 2286,
@@ -3034,7 +3034,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 400,
-   "kb": 331
+   "kb": 313
   },
   {
    "id": 2287,
@@ -3043,7 +3043,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 80,
-   "kb": 61
+   "kb": 58
   },
   {
    "id": 2288,
@@ -3052,7 +3052,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 11,
-   "kb": 10
+   "kb": 9
   },
   {
    "id": 2290,
@@ -3061,7 +3061,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 406,
-   "kb": 281
+   "kb": 269
   },
   {
    "id": 2291,
@@ -3070,7 +3070,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 534,
-   "kb": 424
+   "kb": 403
   },
   {
    "id": 2292,
@@ -3079,7 +3079,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 104,
-   "kb": 86
+   "kb": 81
   },
   {
    "id": 2293,
@@ -3088,33 +3088,33 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 11,
-   "kb": 10
+   "kb": 9
   },
   {
    "id": 2294,
    "title": "Columbia Terminal Market Fruit Prices (CA_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-09",
-   "series": 149,
-   "kb": 91
+   "lastDate": "2026-10-12",
+   "series": 155,
+   "kb": 93
   },
   {
    "id": 2295,
    "title": "Columbia Terminal Market Vegetables Prices (CA_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-09",
-   "series": 297,
-   "kb": 192
+   "lastDate": "2026-10-12",
+   "series": 312,
+   "kb": 196
   },
   {
    "id": 2296,
    "title": "Columbia Terminal Market Onions and Potatoes Prices (CA_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-09",
-   "series": 58,
+   "lastDate": "2026-10-12",
+   "series": 60,
    "kb": 37
   },
   {
@@ -3122,7 +3122,7 @@
    "title": "Columbia Terminal Market Nuts Prices (CA_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 11,
    "kb": 7
   },
@@ -3133,7 +3133,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 296,
-   "kb": 233
+   "kb": 221
   },
   {
    "id": 2303,
@@ -3142,7 +3142,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 506,
-   "kb": 424
+   "kb": 402
   },
   {
    "id": 2304,
@@ -3151,7 +3151,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 73,
-   "kb": 61
+   "kb": 59
   },
   {
    "id": 2305,
@@ -3169,7 +3169,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 248,
-   "kb": 177
+   "kb": 169
   },
   {
    "id": 2307,
@@ -3178,7 +3178,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 314,
-   "kb": 262
+   "kb": 248
   },
   {
    "id": 2308,
@@ -3187,7 +3187,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 50,
-   "kb": 38
+   "kb": 36
   },
   {
    "id": 2309,
@@ -3205,7 +3205,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 122,
-   "kb": 86
+   "kb": 82
   },
   {
    "id": 2311,
@@ -3214,7 +3214,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 237,
-   "kb": 182
+   "kb": 173
   },
   {
    "id": 2312,
@@ -3223,7 +3223,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 29,
-   "kb": 23
+   "kb": 22
   },
   {
    "id": 2313,
@@ -3240,8 +3240,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-09",
-   "series": 604,
-   "kb": 310
+   "series": 603,
+   "kb": 300
   },
   {
    "id": 2315,
@@ -3250,7 +3250,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 390,
-   "kb": 283
+   "kb": 271
   },
   {
    "id": 2316,
@@ -3259,7 +3259,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 83,
-   "kb": 51
+   "kb": 49
   },
   {
    "id": 2317,
@@ -3268,7 +3268,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 19,
-   "kb": 16
+   "kb": 15
   },
   {
    "id": 2318,
@@ -3276,8 +3276,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-09",
-   "series": 422,
-   "kb": 216
+   "series": 419,
+   "kb": 207
   },
   {
    "id": 2319,
@@ -3286,7 +3286,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 405,
-   "kb": 272
+   "kb": 260
   },
   {
    "id": 2320,
@@ -3295,7 +3295,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 82,
-   "kb": 61
+   "kb": 58
   },
   {
    "id": 2321,
@@ -3304,7 +3304,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 6,
-   "kb": 5
+   "kb": 4
   },
   {
    "id": 2383,
@@ -3376,7 +3376,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 80,
-   "kb": 41
+   "kb": 40
   },
   {
    "id": 2394,
@@ -3394,7 +3394,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 64,
-   "kb": 35
+   "kb": 33
   },
   {
    "id": 2396,
@@ -3421,7 +3421,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 14,
-   "kb": 12
+   "kb": 11
   },
   {
    "id": 2401,
@@ -3439,7 +3439,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 73,
-   "kb": 62
+   "kb": 59
   },
   {
    "id": 2403,
@@ -3447,8 +3447,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-09",
-   "series": 159,
-   "kb": 104
+   "series": 157,
+   "kb": 100
   },
   {
    "id": 2405,
@@ -3484,7 +3484,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 108,
-   "kb": 104
+   "kb": 92
   },
   {
    "id": 2528,
@@ -3501,8 +3501,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-02",
-   "series": 92,
-   "kb": 38
+   "series": 89,
+   "kb": 37
   },
   {
    "id": 2708,
@@ -3519,8 +3519,8 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 315,
-   "kb": 39
+   "series": 312,
+   "kb": 38
   },
   {
    "id": 2710,
@@ -3528,8 +3528,8 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 1154,
-   "kb": 211
+   "series": 1135,
+   "kb": 209
   },
   {
    "id": 2711,
@@ -3573,8 +3573,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 1602,
-   "kb": 1646
+   "series": 1594,
+   "kb": 1645
   },
   {
    "id": 2757,
@@ -3591,8 +3591,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-02",
-   "series": 104,
-   "kb": 19
+   "series": 95,
+   "kb": 18
   },
   {
    "id": 2770,
@@ -3610,16 +3610,16 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 52,
-   "kb": 157
+   "kb": 154
   },
   {
    "id": 2787,
    "title": "South Carolina Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
-   "series": 62,
-   "kb": 85
+   "lastDate": "2026-10-12",
+   "series": 66,
+   "kb": 84
   },
   {
    "id": 2807,
@@ -3636,7 +3636,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 36,
+   "series": 35,
    "kb": 5
   },
   {
@@ -3653,9 +3653,9 @@
    "title": "By-Product Drop Value (Steers) (Cattle) (NW_LS441 / 447)",
    "fam": "meat",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 32,
-   "kb": 89
+   "kb": 87
   },
   {
    "id": 2830,
@@ -3698,7 +3698,7 @@
    "title": "USDA Tallow & Protein Report (NW_LS442)",
    "fam": "meat",
    "freq": "d",
-   "lastDate": "2026-10-07",
+   "lastDate": "2026-10-12",
    "series": 13,
    "kb": 4
   },
@@ -3707,16 +3707,16 @@
    "title": "Weekly Pork & Beef Variety Meat Report (NW_LS905)",
    "fam": "meat",
    "freq": "w",
-   "lastDate": "2026-10-02",
-   "series": 55,
-   "kb": 59
+   "lastDate": "2026-10-09",
+   "series": 56,
+   "kb": 60
   },
   {
    "id": 2839,
    "title": "Weekly Tallow & Protein Report (NW_LS906)",
    "fam": "meat",
    "freq": "w",
-   "lastDate": "2026-10-02",
+   "lastDate": "2026-10-09",
    "series": 16,
    "kb": 15
   },
@@ -3761,7 +3761,7 @@
    "title": "Iowa Daily Cash Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 15,
    "kb": 49
   },
@@ -3772,7 +3772,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 50,
-   "kb": 95
+   "kb": 93
   },
   {
    "id": 2863,
@@ -3798,7 +3798,7 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 1851,
+   "series": 1848,
    "kb": 2020
   },
   {
@@ -3807,8 +3807,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-09-25",
-   "series": 569,
-   "kb": 197
+   "series": 525,
+   "kb": 185
   },
   {
    "id": 2886,
@@ -3817,7 +3817,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 50,
-   "kb": 150
+   "kb": 147
   },
   {
    "id": 2887,
@@ -3825,8 +3825,8 @@
    "fam": "oilseed",
    "freq": "d",
    "lastDate": "2026-10-09",
-   "series": 96,
-   "kb": 144
+   "series": 95,
+   "kb": 141
   },
   {
    "id": 2892,
@@ -3835,7 +3835,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 90,
-   "kb": 163
+   "kb": 159
   },
   {
    "id": 2895,
@@ -3888,7 +3888,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 329,
+   "series": 323,
    "kb": 51
   },
   {
@@ -3907,7 +3907,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 50,
-   "kb": 93
+   "kb": 91
   },
   {
    "id": 2914,
@@ -3950,9 +3950,9 @@
    "title": "Mississippi Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-08",
+   "lastDate": "2026-10-09",
    "series": 31,
-   "kb": 42
+   "kb": 41
   },
   {
    "id": 2929,
@@ -3968,9 +3968,9 @@
    "title": "Missouri Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 33,
-   "kb": 101
+   "kb": 100
   },
   {
    "id": 2935,
@@ -3987,8 +3987,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-09-25",
-   "series": 156,
-   "kb": 46
+   "series": 147,
+   "kb": 43
   },
   {
    "id": 2940,
@@ -4006,7 +4006,7 @@
    "freq": "d",
    "lastDate": "2026-10-08",
    "series": 78,
-   "kb": 115
+   "kb": 112
   },
   {
    "id": 3043,
@@ -4015,16 +4015,16 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 18,
-   "kb": 44
+   "kb": 43
   },
   {
    "id": 3046,
    "title": "Minneapolis Daily Grain Report",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 54,
-   "kb": 58
+   "kb": 57
   },
   {
    "id": 3049,
@@ -4050,7 +4050,7 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-02",
-   "series": 98,
+   "series": 96,
    "kb": 18
   },
   {
@@ -4068,8 +4068,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-02",
-   "series": 158,
-   "kb": 31
+   "series": 149,
+   "kb": 30
   },
   {
    "id": 3059,
@@ -4077,7 +4077,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 117,
+   "series": 113,
    "kb": 18
   },
   {
@@ -4096,7 +4096,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 120,
-   "kb": 151
+   "kb": 148
   },
   {
    "id": 3090,
@@ -4114,7 +4114,7 @@
    "freq": "d",
    "lastDate": "2026-10-06",
    "series": 25,
-   "kb": 15
+   "kb": 14
   },
   {
    "id": 3095,
@@ -4122,8 +4122,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-02",
-   "series": 115,
-   "kb": 32
+   "series": 110,
+   "kb": 31
   },
   {
    "id": 3096,
@@ -4131,7 +4131,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 105,
+   "series": 103,
    "kb": 17
   },
   {
@@ -4149,7 +4149,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 316,
+   "series": 314,
    "kb": 48
   },
   {
@@ -4157,9 +4157,9 @@
    "title": "Oklahoma Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 63,
-   "kb": 160
+   "kb": 159
   },
   {
    "id": 3102,
@@ -4184,16 +4184,16 @@
    "title": "Louisiana and Texas Export Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 59,
-   "kb": 69
+   "kb": 68
   },
   {
    "id": 3148,
    "title": "Portland Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 41,
    "kb": 77
   },
@@ -4204,7 +4204,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 158,
-   "kb": 224
+   "kb": 219
   },
   {
    "id": 3159,
@@ -4230,8 +4230,8 @@
    "fam": "grain",
    "freq": "d",
    "lastDate": "2026-10-09",
-   "series": 50,
-   "kb": 94
+   "series": 49,
+   "kb": 92
   },
   {
    "id": 3183,
@@ -4258,16 +4258,16 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 23,
-   "kb": 65
+   "kb": 64
   },
   {
    "id": 3192,
    "title": "Illinois Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-12",
    "series": 95,
-   "kb": 168
+   "kb": 166
   },
   {
    "id": 3195,
@@ -4285,7 +4285,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 17,
-   "kb": 52
+   "kb": 51
   },
   {
    "id": 3225,
@@ -4294,7 +4294,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 24,
-   "kb": 74
+   "kb": 72
   },
   {
    "id": 3228,
@@ -4302,8 +4302,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 3753,
-   "kb": 2873
+   "series": 3736,
+   "kb": 2870
   },
   {
    "id": 3229,
@@ -4311,8 +4311,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 360,
-   "kb": 172
+   "series": 354,
+   "kb": 171
   },
   {
    "id": 3236,
@@ -4320,8 +4320,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-02",
-   "series": 110,
-   "kb": 23
+   "series": 103,
+   "kb": 22
   },
   {
    "id": 3237,
@@ -4329,7 +4329,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 63,
+   "series": 61,
    "kb": 10
   },
   {
@@ -4446,7 +4446,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-09-25",
-   "series": 30,
+   "series": 29,
    "kb": 3
   },
   {
@@ -4465,7 +4465,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 103,
-   "kb": 194
+   "kb": 190
   },
   {
    "id": 3484,
@@ -4528,7 +4528,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 12,
-   "kb": 37
+   "kb": 36
   },
   {
    "id": 3618,
@@ -4607,7 +4607,7 @@
    "title": "Weekly Major Packer Hide Report",
    "fam": "meat",
    "freq": "w",
-   "lastDate": "2026-10-02",
+   "lastDate": "2026-10-09",
    "series": 18,
    "kb": 15
   },
@@ -4635,8 +4635,8 @@
    "fam": "poultry",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 115,
-   "kb": 83
+   "series": 110,
+   "kb": 81
   },
   {
    "id": 3648,
@@ -4670,7 +4670,7 @@
    "title": "Arthur Sale Barn Hay Auction - Arthur, IL (Monday)",
    "fam": "hay",
    "freq": "w",
-   "lastDate": "2026-10-05",
+   "lastDate": "2026-10-12",
    "series": 118,
    "kb": 36
   },
@@ -4915,7 +4915,7 @@
    "freq": "d",
    "lastDate": "2026-10-09",
    "series": 17,
-   "kb": 48
+   "kb": 47
   },
   {
    "id": 3879,
@@ -4995,8 +4995,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-09-04",
-   "series": 124,
-   "kb": 18
+   "series": 97,
+   "kb": 15
   },
   {
    "id": 3906,
@@ -5030,7 +5030,7 @@
    "title": "Asheville, NC Terminal Market Fruit Prices (AS_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-08",
+   "lastDate": "2026-10-12",
    "series": 65,
    "kb": 29
   },
@@ -5039,16 +5039,16 @@
    "title": "Asheville, NC Terminal Market Vegetables Prices (AS_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-08",
-   "series": 77,
-   "kb": 31
+   "lastDate": "2026-10-12",
+   "series": 78,
+   "kb": 32
   },
   {
    "id": 3915,
    "title": "Asheville, NC Terminal Market Onions and Potatoes Prices (AS_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-08",
+   "lastDate": "2026-10-12",
    "series": 19,
    "kb": 8
   },
