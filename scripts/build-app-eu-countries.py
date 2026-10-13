@@ -39,6 +39,30 @@ SRC = 'Comisión Europea · Agri-food'
 
 def t4(s): return dict(zip(L4, s.split('|')))
 
+# Cereales: desde 2026/27 la Comisión ya no publica la media nacional, solo mercados concretos (13-oct-2026, decisión de Mario: «todos los mercados dentro del país»).
+# Si la media nacional está caducada, la lista del país enseña UN mercado real de ese país (el más reciente de la variedad que toca) y lo rotula con su nombre.
+# Nunca se calcula una media ni se usa un mercado de otro país. Los demás mercados siguen en Lonjas.
+CER = {'trigo': ('trigo', ('pan',)), 'trigo_duro': ('trigo_duro', None), 'maiz': ('maiz', ('pienso', '')), 'cebada': ('cebada', ('pienso', ''))}
+STG_PREF = {'silo': 0, 'first': 0, 'farm': 0, 'gate': 0, 'unl': 1, 'port': 1, 'rport': 1, 'fob': 2, 'cif': 2}
+def lj_label(kind, k):
+    return LJ['labels'][kind].get(k) or ['', '', '', '']
+MK_NOTE = ('Comisión Europea, portal de datos agroalimentarios: mercado de %s (%s), %s. Desde 2026/27 la Comisión ya no publica la media nacional; en Lonjas están todos los mercados del país.',
+           'European Commission agri-food data portal: %s market (%s), %s. From 2026/27 the Commission no longer publishes a national average; every market in the country is in Lonjas.',
+           'Portail de données agroalimentaires de la Commission européenne : marché de %s (%s), %s. Depuis 2026/27 la Commission ne publie plus de moyenne nationale ; tous les marchés du pays sont dans Lonjas.',
+           'Portale dati agroalimentari della Commissione europea: mercato di %s (%s), %s. Dal 2026/27 la Commissione non pubblica più la media nazionale; tutti i mercati del paese sono in Lonjas.')
+def mk_note(cc, mk):
+    return {k: MK_NOTE[i] % (mk['m'], t4(NAMES[cc])[k], lj_label('st', mk.get('st', ''))[i]) for i, k in enumerate(L4)}
+def best_market(cc, pid, today):
+    key, var = CER[pid]
+    c = (LJ['countries'].get(cc) or {}).get(key) or []
+    cand = [m for m in c if m.get('p') and (var is None or m.get('var', '') in var)]
+    cand = [m for m in cand if (today - datetime.date.fromisoformat(m['p'][-1][0])).days <= MAX_AGE]
+    if not cand: return None
+    two = (today - datetime.timedelta(days=2 * 366)).isoformat()
+    def score(m):
+        return (m['p'][-1][0], -STG_PREF.get(m.get('st', ''), 1), len([x for x in m['p'] if x[0] >= two]))
+    return max(cand, key=score)
+
 STALE = {'weekly': 21, 'monthly': 62}   # dias: mas viejo que esto, la app lo rotula como «último dato de …» (fin de campaña, retraso del país)
 
 def despike(pts):
@@ -62,6 +86,8 @@ def erratic(pts, spikes):
     return med > 0.07 or spikes >= 5
 
 def main():
+    global LJ
+    LJ = json.loads((D / 'views' / 'lonjas.json').read_text())
     today = datetime.date.today()
     fams, files, out, dropped = {}, {}, {}, []
     for pid, fam, sids, nm, un, _div in P:
@@ -86,14 +112,25 @@ def main():
                 if erratic([p for p in pts if p[0] >= two], nsp): dropped.append('%s_%s/%s' % (cc, pid, sid)); continue
                 if not pts: continue
                 age = (today - last).days; fq = files[key].get('freq') or fams[fam].get('freq') or 'weekly'
+                mk = None
+                if fam == 'cereales' and pid in CER and age > STALE.get(fq, 120):
+                    mk = best_market(cc, pid, today)
+                    if mk and mk['p'][-1][0] > r['last'][0]:
+                        pts = [list(x) for x in mk['p'] if x[0] >= cut]
+                        _, nsp = despike([p for p in pts if p[0] >= two]); pts, _ = despike(pts)
+                        if erratic([p for p in pts if p[0] >= two], nsp): dropped.append('%s_%s/%s' % (cc, pid, mk['m'])); mk = None
+                        else:
+                            pr = pts[-2] if len(pts) > 1 else None
+                            r = dict(r, last=pts[-1], prev=pr, yoy=None); last = datetime.date.fromisoformat(pts[-1][0]); age = (today - last).days
+                    else: mk = None
                 ya = r.get('yoy')
                 prev = r.get('prev')
                 ch = round((r['last'][1] / prev[1] - 1) * 100, 2) if prev and prev[1] else None
                 out.setdefault(cc, []).append({
-                    'id': 'eu_%s_%s' % (cc.lower(), pid), 'product': pid, 'region': 'eu', 'cc': cc, 'name': t4(nm), 'place': t4(NAMES[cc]), 'unit': t4(un),
+                    'id': 'eu_%s_%s' % (cc.lower(), pid), 'product': pid, 'region': 'eu', 'cc': cc, 'name': t4(nm), 'place': ({k: '%s · %s' % (v, mk['m']) for k, v in t4(NAMES[cc]).items()} if mk else t4(NAMES[cc])), 'unit': t4(un),
                     'currency': 'EUR', 'value': r['last'][1], 'changePct': ch, 'date': r['last'][0], 'frequency': fq, 'stale': age > STALE.get(fq, 120),
                     'sourceId': 'eu_agrifood', 'sourceName': SRC, 'comparability': 'directional',
-                    'note': {'es': 'Comisión Europea, portal de datos agroalimentarios: media nacional de %s (%s). Es el dato de este país, no el de otro.' % (t4(NAMES[cc])['es'], ' · '.join(files[key].get('parts') or [sid]))},
+                    'note': (mk_note(cc, mk) if mk else {'es': 'Comisión Europea, portal de datos agroalimentarios: media nacional de %s (%s). Es el dato de este país, no el de otro.' % (t4(NAMES[cc])['es'], ' · '.join(files[key].get('parts') or [sid]))}),
                     'points': pts, 'yearAgo': {'date': ya[0], 'value': ya[1]} if ya else None})
                 break
     OUT.mkdir(parents=True, exist_ok=True)
