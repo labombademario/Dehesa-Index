@@ -713,12 +713,12 @@
   }
  },
  {
-  "q": "producción de plátano en Alemania",
+  "q": "producción de quinoa en Alemania",
   "lang": "es",
   "expect": null
  },
  {
-  "q": "existencias de plátano",
+  "q": "existencias de quinoa",
   "lang": "es",
   "expect": null
  },
