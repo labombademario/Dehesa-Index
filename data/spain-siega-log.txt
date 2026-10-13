@@ -1,1 +1,1 @@
-OK: 23 series; ultimo mes 2026-07; actualizacion del modelo del MAPA: 2026-10-08T02:21:54.883
+OK: 13 series; ultimo mes 2026-07; actualizacion del modelo del MAPA: 2026-10-11T02:16:36.443
