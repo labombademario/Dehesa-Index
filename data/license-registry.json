@@ -2607,7 +2607,7 @@
    "additionalRestrictions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha de actualización. Datos provisionales sin validar.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-10-11",
+   "verifiedAt": "2026-10-12",
    "status": "VERIFIED",
    "confidence": "high",
    "evidence": "Aviso legal de la web del MITECO (apartado de reutilización), leído desde Actions el 11 oct 2026; tabla T_Datos Embalses 1988-2026 de BD-Embalses.mdb.",
@@ -2615,8 +2615,8 @@
    "aliases": [],
    "notes": null,
    "short": "MITECO",
-   "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Aviso legal del MITECO leído el 11 oct 2026 desde GitHub Actions: la información puede utilizarse sin autorización expresa citando la fuente (Ley 37/2007, RD 1495/2011). No hay licencia Creative Commons específica del conjunto; confianza media."
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Decisión del responsable del sitio (Mario, 12-oct-2026): los datos del MITECO son de uso libre y se usan con confianza alta. Base: reutilización libre de la información del sector público (Ley 37/2007) citando al MITECO."
   },
   "ec_eambrosia": {
    "name": "Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE)",
@@ -2877,8 +2877,8 @@
    "aliases": [],
    "notes": "Escenarios (normalidad, prealerta, alerta, emergencia) asignados por Dehesa Index con los umbrales generales de los planes especiales de sequía a partir del indicador publicado.",
    "short": "MITECO · Sequía",
-   "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Aviso legal del MITECO leído el 11 oct 2026 desde GitHub Actions: la información puede utilizarse sin autorización expresa citando la fuente (Ley 37/2007, RD 1495/2011). No hay licencia Creative Commons específica del conjunto; confianza media."
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Decisión del responsable del sitio (Mario, 12-oct-2026): los datos del MITECO son de uso libre y se usan con confianza alta. Base: reutilización libre de la información del sector público (Ley 37/2007) citando al MITECO."
   },
   "dgec_prix_petroliers": {
    "name": "Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers",
@@ -3443,14 +3443,14 @@
    "thirdPartyNote": null,
    "verifiedAt": "2026-10-12",
    "status": "VERIFIED",
-   "confidence": "medium",
+   "confidence": "high",
    "evidence": "Ficha IDEE 95b8abce-2083-40b3-bd6b-83a7d8a72307 (Demarcaciones hidrográficas, MITECO-DGA): licencia CC BY 4.0, 'Nombrar a la fuente: Ministerio para la Transición Ecológica y el Reto Demográfico', sin limitaciones al acceso público. Servicio de la AEMA WFD2022_RiverBasinDistrict_WM: inspireIdNamespace https://www.miteco.gob.es/, '© European Environment Agency'; aviso legal de la AEMA: reutilización libre citando la fuente. Ficha de la versión pública WISE WFD en el catálogo de la AEMA: 'no limitations to public access'.",
    "used": true,
    "aliases": [],
    "notes": null,
    "short": "MITECO · demarcaciones",
-   "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Licencia CC BY 4.0 leída en la ficha oficial del MITECO; la copia se toma de la AEMA, cuyo informe técnico con las condiciones de uso no se ha podido leer."
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Decisión del responsable del sitio (Mario, 12-oct-2026): los datos del MITECO son de uso libre y se usan con confianza alta. Base: CC BY 4.0 citando al MITECO."
   }
  },
  "files": {

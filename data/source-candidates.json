@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T00:22:14Z",
+ "generatedAt": "2026-10-13T00:27:58Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -4630,9 +4630,9 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), Boletín Hidrológico",
-   "lastChecked": "2026-10-11",
+   "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
-   "legalConfidence": "MEDIUM",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
@@ -4710,7 +4710,7 @@
    "attribution": "Demarcaciones hidrográficas: MITECO, vía Agencia Europea de Medio Ambiente (CC BY 4.0)",
    "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
-   "legalConfidence": "MEDIUM",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
@@ -4749,7 +4749,7 @@
    "attribution": "Fuente: MITECO, Observatorio Nacional de la Sequía, informe de la situación de sequía y escasez",
    "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
-   "legalConfidence": "MEDIUM",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
