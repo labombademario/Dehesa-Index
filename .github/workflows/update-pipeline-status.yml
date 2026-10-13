@@ -98,6 +98,8 @@ jobs:
         run: python3 scripts/build-fv-products.py
       - name: Vistas de datos para la app movil (data/app/v1)
         run: node scripts/build-app-views.mjs && node scripts/test-app-views.mjs
+      - name: Paquete por pais para la app (gasoleo, emisiones, sequia y nitratos, data/app/v1/env)
+        run: python3 scripts/build-app-env.py
       - name: Comprobar coherencia de lo construido (catalogo estricto, contratos de los derivados)
         run: |
           python3 scripts/check-catalog.py --strict

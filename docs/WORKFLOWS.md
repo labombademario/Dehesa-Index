@@ -86,7 +86,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
-| update-pipeline-status.yml | a mano | varias veces al dia | alert-issue.py, build-app-views.mjs, build-cap-index.py | app, cap/index.json, catalog … | - |
+| update-pipeline-status.yml | a mano | varias veces al dia | alert-issue.py, build-app-env.py, build-app-views.mjs | app, cap/index.json, catalog … | - |
 | update-seo-pages.yml | generado | diaria | build-seo-pages.mjs, gen-workflows.py, qa-seo.mjs | - | finish |
 
 ## ES
