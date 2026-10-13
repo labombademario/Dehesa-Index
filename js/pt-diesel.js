@@ -83,7 +83,7 @@
           row(t.eu.replace('{d}', day(x[0], lg)), '<b>' + eur(x[1], lg) + '</b> ' + esc(t.tax) + ' · ' + eur(x[2], lg) + ' ' + esc(t.notax)) + row(t.w, back(1)) + row(t.m, back(4)) + row(t.y, back(52)) +
           row(t.fa.replace('{y}', f[0]), '<b>' + eur(f[1], lg) + '</b> (' + esc(t.fa2) + ')') + (fp ? row(t.fay + ' · ' + fp[0], eur(fp[1], lg) + pct((f[1] / fp[1] - 1) * 100, lg)) : '') + '</div>' +
           ec.html + bars(F, t, lg) +
-          '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(d.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcA) + '</a>; <a href="' + esc(d.source.wobUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcB) + '</a>; <a href="' + esc(d.source.farmUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcC) + '</a></p></section>';
+          '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(d.source.wobUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcB) + '</a>; <a href="' + esc(d.source.farmUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcC) + '</a></p></section>';
         bind(el, ec, lg, t);
         if (focus) { var q = el.querySelector(focus); if (q) q.focus(); }
       }
