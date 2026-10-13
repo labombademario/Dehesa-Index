@@ -185,4 +185,4 @@ descartada ('TOBACCO', 'NON-CIGAR TYPES (CLASS 1-3)') price received sin dato de
 descartada ('TOBACCO', 'TYPE 42-44') price received sin dato desde 2004
 descartada ('TOMATOES', 'FRESH MARKET') price received sin dato desde 2022-08
 descartada ('WALNUTS', 'ENGLISH') yield short tons/acre pocos puntos 2
-series 218
+series 219
