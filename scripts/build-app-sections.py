@@ -431,6 +431,14 @@ def analisis():
     for f in sorted((D / 'app' / 'v1' / 'eu').glob('[A-Z][A-Z].json')):
         d = json.loads(f.read_text())
         groups['eu-' + d['country']] = {p_['product']: (p_['name'], pts_monthly(p_['points'])) for p_ in d['prices']}
+    # región «eu» de la web: unos precios son de España y otros de toda la UE (market-labels); se separan para no mezclar
+    lab = (j('market-labels.json') or {}).get('byId', {}); obs = {(o['region'], o['product']): o['id'] for o in (j('latest.json') or {}).get('observations', [])}
+    if 'eu' in groups:
+        es_, eu_ = {}, {}
+        for prod, v in groups['eu'].items():
+            l0 = (lab.get(obs.get(('eu', prod)), [''])[0] or '')
+            (es_ if l0.startswith('España') else eu_)[prod] = v
+        groups['eu'] = es_; groups['eu-EU'] = eu_
     REG = {'us': 'US', 'eu': 'ES', 'ca': 'CA', 'uk': 'UK'}
     today = datetime.date.today(); nm = MNAME[today.month % 12]; cm = MNAME[today.month - 1]
     out = []
