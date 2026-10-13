@@ -4764,6 +4764,24 @@
     "eurostat"
    ],
    "notes": "Lo que cobra el agricultor por fruta, hortaliza y fruto seco fuera de España: IPPAP del INSEE (Francia, mensual, 2020=100) y Eurostat apri_pi_outq / apri_ap_crpouta (resto de la UE), ya publicados en data/france-insee-stats.json y data/*-stats.json (build-fv-farm.py). Nunca datos de otro país."
+  },
+  "data/app/v1/sec/": {
+   "sources": [
+    "usda_rma",
+    "statcan",
+    "usda_nass",
+    "usda_fas_psd",
+    "usda_fas_esr",
+    "nasa_power",
+    "miteco_carburantes",
+    "usda_ams_mars",
+    "eurostat",
+    "cgc",
+    "eu_taric",
+    "cbsa_tariff",
+    "us_tariffs"
+   ],
+   "notes": "Secciones de la web para la app (scripts/build-app-sections.py): copian valores ya publicados en data/ (seguro, cultivos, oferta y demanda, clima, gasóleo y fertilizantes, cuentas agrarias, grano de Canadá, ganadería y lácteos de EE. UU., exportaciones de EE. UU., aranceles) con su fuente en cada bloque."
   }
  },
  "derived": [
