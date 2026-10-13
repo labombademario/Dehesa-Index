@@ -29,6 +29,7 @@ const vc = es.campaigns['2024'].crops.find(c => c.c === 'CE0000'), v47 = vc.v['4
 const eucer = J('data/eu/cereales.json'), vB = (eucer.series.filter(x => /^feed-barley/.test(x.id)).map(x => x.regions.find(r => /Valladolid/.test(r.m))).filter(Boolean)[0] || { last: [0, 0] }).last[1];
 const rank = Object.keys(vc.v).map(p => vc.v[p][0]).filter(x => x > 0).sort((a, b) => b - a).indexOf(v47[0]) + 1;
 const cattleStates = status.reports.filter(r => r.kind === 'cattle' && r.latest).length;
+const cattleSet = new Set(status.reports.filter(r => r.kind === 'cattle' && r.latest).map(r => r.state || r.code || r.id)), NOCAT = ['LA', 'AZ', 'OR', 'WA', 'ID', 'NV', 'MD', 'WV'].find(c => !cattleSet.has(c));   // un estado sin informe de ganado (Alabama lo tuvo hasta que USDA AMS lo publico)
 
 for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, serviceWorkers: 'block' });
@@ -40,7 +41,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const ready = async id => page.waitForFunction(i => { const n = document.querySelector('[data-mm-body="' + i + '"]'); return n && !/…$/.test(n.innerText.trim()) && n.innerText.length > 30; }, id, { timeout: 12000 });
 
   // vacío: sin elección no hay datos y se ofrecen ejemplos
-  await page.goto(BASE + '/mi-mercado.html', { waitUntil: 'networkidle' }); await page.waitForSelector('#mm-body [data-mm="c"]');
+  await page.goto(BASE + '/mi-mercado.html', { waitUntil: 'networkidle' }); await page.waitForSelector('#mm-body [data-mm-cc]');
   ok(tag + ': sin elección no hay tarjetas', (await page.$$('[data-mm-sec]')).length === 0 && (await page.$$('[data-mm-ex]')).length === 7);
 
   // Kansas · ganado (por URL)
@@ -80,9 +81,9 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   // estado sin dato: se dice y no se inventa
   await page.selectOption('[data-mm="r"]', 'AL'); await page.selectOption('[data-mm="p"]', 'wheat'); await ready('price'); t = await sec('price');
   ok(tag + ': trigo en Alabama: sin cifras, lista de estados con dato', (await page.$$('[data-mm-body="price"] .de-tile')).length === 0 && (await page.$$('[data-mm-body="price"] a[data-mm-go]')).length >= 5);
-  await page.selectOption('[data-mm="p"]', 'cattle'); await ready('price');
-  ok(tag + ': ganado en Alabama: sin cifras y con {n} estados', (await page.$$('[data-mm-body="price"] .de-tile')).length === 0 && (await page.$$('[data-mm-body="price"] a[data-mm-go]')).length === cattleStates);
-  ok(tag + ': seguro y sequía de Alabama sí están', (await page.$$('[data-mm-body="ins"] .de-tile')).length >= 3 && (await page.$$('[data-mm-body="dr"] .de-tile')).length === 3);
+  await page.selectOption('[data-mm="r"]', NOCAT); await page.selectOption('[data-mm="p"]', 'cattle'); await ready('price');
+  ok(tag + ': ganado en ' + NOCAT + ': sin cifras y con {n} estados', (await page.$$('[data-mm-body="price"] .de-tile')).length === 0 && (await page.$$('[data-mm-body="price"] a[data-mm-go]')).length === cattleStates);
+  ok(tag + ': seguro y sequía de ' + NOCAT + ' sí están', (await page.$$('[data-mm-body="ins"] .de-tile')).length >= 3 && (await page.$$('[data-mm-body="dr"] .de-tile')).length === 3);
   // los enlaces de estados con dato cambian de estado
   await page.click('[data-mm-body="price"] a[data-mm-go="KS"]'); await ready('price');
   ok(tag + ': enlace a un estado con dato lo selecciona', (await page.$$('[data-mm-body="price"] .de-tile')).length >= 4 && /r=KS/.test(page.url()));
