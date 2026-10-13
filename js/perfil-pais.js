@@ -210,9 +210,11 @@
   var PRODT = { es: ['Por producto', 'Principales productos exportados', 'Principales productos importados', 'millones de', '12 meses hasta', 'Suma de los productos que seguimos (no el total agroalimentario). ', 'Incluye el comercio dentro de la UE. ', 'En Países Bajos y Bélgica una parte importante es tránsito y reexportación. '], en: ['By product', 'Top exported products', 'Top imported products', 'million', '12 months to', 'Sum of the products we track (not total agri-food trade). ', 'Includes trade within the EU. ', 'In the Netherlands and Belgium a large share is transit and re-exports. '], fr: ['Par produit', 'Principaux produits exportés', 'Principaux produits importés', 'millions de', '12 mois glissants à', 'Somme des produits que nous suivons (pas le total agroalimentaire). ', 'Inclut le commerce intra-UE. ', 'Aux Pays-Bas et en Belgique, une part importante est du transit et de la réexportation. '], it: ['Per prodotto', 'Principali prodotti esportati', 'Principali prodotti importati', 'milioni di', '12 mesi a', 'Somma dei prodotti che seguiamo (non il totale agroalimentare). ', 'Include il commercio intra-UE. ', 'Nei Paesi Bassi e in Belgio una quota importante è transito e riesportazione. '] };
   function tradeProducts(x, cc) {
     var T = PRODT[x.lang] || PRODT.es, esc = x.esc, nf = x.nf;
-    fetch('data/views/trade-products/' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      var el = document.getElementById('pp-trade-prod'), pr = d && d.reporters && d.reporters[cc]; if (!el || !pr) return;
-      var i = d.years.length - 1, ys = String(d.years[i]), per = /^LTM/.test(ys) ? T[4] + ' ' + ys.replace(/^LTM\s*/, '') : ys, keys = Object.keys(pr).filter(function (k) { return k !== '0'; });
+    var get = function (u) { return fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
+    /* 1) fichero por producto y socio del pais; 2) si no sirve (Canada: un solo agregado), el de totales por producto (Canada, Argentina) */
+    var draw = function (d, meta) {
+      var el = document.getElementById('pp-trade-prod'), pr = d && d.reporters && d.reporters[cc]; if (!el || !pr) return false;
+      var years = meta.years, i = years.length - 1, ys = String(years[i]), per = /^LTM/.test(ys) ? T[4] + ' ' + ys.replace(/^LTM\s*/, '') : ys, keys = Object.keys(pr).filter(function (k) { return k !== '0'; });
       keys = keys.filter(function (k) { return !keys.some(function (j) { return j.length < k.length && k.indexOf(j) === 0; }); }); /* sin doble conteo: un subcapitulo no se suma a su capitulo */
       var lab = function (k) { var p = pr[k], L = window.DITradePartners && window.DITradePartners.label; return ((p.nm && p.nm[x.lang]) || (L && L(k, x.lang)) || p.name.charAt(0).toUpperCase() + p.name.slice(1)).replace(/\s*\(HS \d+\)$/, ''); };
       var col = function (flow, title) {
@@ -220,12 +222,17 @@
         if (l.length < 3) return '';
         return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + '</div>' + l.map(function (r) { return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(r.n) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(r.v, 0) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(r.v / l[0].v * 100)) + '%"></div></div>'; }).join('') + '</div>';
       };
-      var a = col('exp', T[1]), b = col('imp', T[2]); if (!a && !b) return;
-      var cur = String(d.unit || '').replace(/\s*million$/i, ''), eu = /^EUR/.test(d.unit || '');
-      var unit = cur ? T[3] + ' ' + cur : '';
-      el.innerHTML = '<div style="border-top:1px solid var(--border);margin:16px 0 12px"></div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:8px">' + esc(T[0].toUpperCase()) + ' <span style="font-weight:500">· ' + esc(unit) + ', ' + esc(per) + '</span></div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div><div class="di-movers-hint" style="margin:8px 0 0">' + esc(T[5] + (eu ? T[6] + (/^(NL|BE)$/.test(cc) ? T[7] : '') : '') + ((d.source && d.source.name) || '')) + '</div>';
+      var a = col('exp', T[1]), b = col('imp', T[2]); if (!a && !b) return false;
+      var cur = String(meta.unit || '').replace(/\s*million$/i, ''), eu = /^EUR/.test(meta.unit || ''), unit = cur ? T[3] + ' ' + cur : '';
+      var note = meta.note ? (meta.note[x.lang] || meta.note.es) + ' ' : T[5] + (eu ? T[6] + (/^(NL|BE)$/.test(cc) ? T[7] : '') : '');
+      el.innerHTML = '<div style="border-top:1px solid var(--border);margin:16px 0 12px"></div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:8px">' + esc(T[0].toUpperCase()) + ' <span style="font-weight:500">· ' + esc(unit) + ', ' + esc(per) + '</span></div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div><div class="di-movers-hint" style="margin:8px 0 0">' + esc(note + ((meta.source && meta.source.name) || '')) + '</div>';
       var nt = document.getElementById('pp-notrade'); if (nt) nt.style.display = 'none';
-    }).catch(function () {});
+      return true;
+    };
+    get('data/views/trade-products/' + cc + '.json').then(function (d) {
+      if (d && draw(d, { years: d.years, unit: d.unit, source: d.source })) return;
+      return get('data/trade-sections.json').then(function (t) { if (t && t.meta && t.meta[cc]) draw(t, t.meta[cc]); });
+    });
   }
   function topLists(S, cc) {
     var cr = [], an = {}, m;

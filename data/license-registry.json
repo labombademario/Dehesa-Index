@@ -4540,6 +4540,13 @@
     "statcan"
    ]
   },
+  "data/trade-sections.json": {
+   "byCountry": {
+    "CA": "statcan",
+    "AR": "indec_ar"
+   },
+   "notes": "Derivado de data/canada-stats.json (Statistics Canada) y data/argentina-stats.json (INDEC): suma de 12 meses por grupo de producto, total mundial sin socios; Argentina solo exportaciones."
+  },
   "data/eu-drought-regions/": {
    "sources": [
     "edo_cdi",
