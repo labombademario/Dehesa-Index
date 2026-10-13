@@ -514,14 +514,13 @@
       LEGACY_LOADED = true;
     });
   }
-  // Hortalizas con ficha propia (js/producto-hortaliza.js, a petición): no pasan por la terminal ni por la ficha clásica
-  var VEGS = { tomate: 1 };
+  // Frutas, hortalizas y frutos secos con ficha propia (js/producto-hortaliza.js + data/fv-products.json, a petición): no pasan por la terminal ni por la ficha clásica
   function mountVeg() { return window.DIVeg.mount(document.getElementById('pr-body'), wanted, window.DehesaShared.getLang()); }
-  if (VEGS[wanted]) {
-    VEG = true;
-    var vs = document.createElement('script'); vs.src = 'js/producto-hortaliza.js?v=0'; vs.onload = mountVeg; document.head.appendChild(vs);
-    return;
-  }
+  var vegCheck = CFG[wanted] || !q.get('p') ? Promise.resolve(false) : new Promise(function (ok) {
+    var vs = document.createElement('script'); vs.src = 'js/producto-hortaliza.js?v=0'; vs.onload = function () { window.DIVeg.has(wanted).then(ok, function () { ok(false); }); }; vs.onerror = function () { ok(false); }; document.head.appendChild(vs);
+  });
+  vegCheck.then(function (isVeg) {
+  if (isVeg) { VEG = true; mountVeg(); return; }
   PT.ready().then(function () { return true; }, function () { return false; }).then(function (ok) {
     if (ok && PT.has(wanted)) {
       TERM = true; SEL.p = wanted; setCanonical();
@@ -540,5 +539,6 @@
       window.location.replace('catalogo.html?q=' + encodeURIComponent(rest.join(' ') || wanted)); return;
     }
     return loadLegacy().then(render);
+  });
   });
 })();

@@ -84,6 +84,7 @@
     prices: { label: L('Precios', 'Prices', 'Prix', 'Prezzi'), mega: 1, first: L('Precios', 'Prices', 'Prix', 'Prezzi'), items: [
       pd('precios.html', L('Panel de precios', 'Price dashboard', 'Tableau des prix', 'Pannello dei prezzi'), L('Todos los productos en EE. UU., UE, Reino Unido y Canadá', 'Every product in the US, EU, UK and Canada', 'Tous les produits aux États-Unis, dans l’UE, au Royaume-Uni et au Canada', 'Tutti i prodotti in USA, UE, Regno Unito e Canada')),
       pd('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), L('Un producto a fondo: precio, países, histórico y comercio', 'One product in depth: price, countries, history and trade', 'Un produit en détail : prix, pays, historique et commerce', 'Un prodotto a fondo: prezzo, paesi, storico e commercio'), '?p=trigo'),
+      pd('precios.html', L('Frutas y hortalizas', 'Fruit and vegetables', 'Fruits et légumes', 'Frutta e verdura'), L('52 productos: precio semanal por país y lo que cobra el agricultor', '52 products: weekly price by country and what farmers get', '52 produits : prix hebdomadaire par pays et prix agricole', '52 prodotti: prezzo settimanale per paese e prezzo agricolo'), '?tab=hortalizas'),
       pd('europa.html', L('Precios de la UE', 'EU prices', 'Prix de l’UE', 'Prezzi UE'), L('UE · cotizaciones país por país, con histórico', 'EU · country-by-country quotes, with history', 'UE · cotations pays par pays, avec historique', 'UE · quotazioni paese per paese, con storico')),
       pd('lonjas.html', L('Lonjas y mercados locales', 'Local markets', 'Marchés locaux', 'Mercati locali'), L('Cereales, aceite y oleaginosas por mercado en seis países', 'Cereals, olive oil and oilseeds by market in six countries', 'Céréales, huile d’olive et oléagineux par marché, six pays', 'Cereali, olio d’oliva e semi oleosi per mercato, sei paesi')),
       { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa', 'Dehesa Index', 'Indice Dehesa', 'Indice Dehesa'), d: L('Índice de precios agrícolas de la UE, EE. UU. y Canadá', 'Farm price index for the EU, US and Canada', 'Indice des prix agricoles UE, États-Unis et Canada', 'Indice dei prezzi agricoli UE, USA e Canada') },
@@ -186,6 +187,8 @@
   function leafActive(i) {
     if (i.query === '?c=US' && currentFile() === 'precios-locales.html') return true; // perfil de EE. UU.: aquí vive el grano local
     if (i.noActive || i.file !== currentFile()) return false;
+    if (i.query && i.query.indexOf('?tab=') === 0) return new URLSearchParams(window.location.search).get('tab') === i.query.slice(5);
+    if (!i.query && i.file === 'precios.html' && new URLSearchParams(window.location.search).get('tab') === 'hortalizas') return false;
     if (i.query && i.query.indexOf('?c=') === 0) { var c = (new URLSearchParams(window.location.search).get('c') || 'ES').toUpperCase(); return c === i.query.slice(3); }
     return true;
   }

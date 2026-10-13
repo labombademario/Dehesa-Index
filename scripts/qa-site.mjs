@@ -22,7 +22,7 @@ check('context back uses history.back',shared.includes('window.history.back()'))
 const prices=await read('js/precios.js');
 check('price URL sync uses pushState',prices.includes('history.pushState'));
 check('price URL restores popstate',prices.includes("addEventListener('popstate', restorePriceUrl)"));
-check('price category ids are canonical',prices.includes("['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera']"));
+check('price category ids are canonical',prices.includes("['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','hortalizas','energia','seguro','vino','madera']"));
 check('prices consume verified published observations from the light layer (DIPrices)',prices.includes("global.DIPrices.latest()"));
 check('prices never download data/latest.json or data/history.json at entry',!/fetch\('data\/(latest|history)\.json'/.test(prices) && !/fetch\('data\/(latest|history)\.json'/.test(await read('js/precios-intel.js')));
 check('news come from data/views (no 600 KB blocking script)',!/news-(index|feed)\.js/.test((await read('precios.html'))+(await read('noticias.html'))));

@@ -4744,6 +4744,13 @@
     "knmi_daggegevens"
    ],
    "notes": "Indicador Combinado de Sequía del EDO por las 40 regiones COROP (NUTS 3 de GISCO) y déficit de precipitación calculado con los datos diarios del KNMI. scripts/update-nl-drought.py."
+  },
+  "data/fv-products.json": {
+   "sources": [
+    "eu_agrifood",
+    "mapa_es"
+   ],
+   "notes": "Frutas, hortalizas y frutos secos (pestaña de precios.html y fichas de producto): derivado de data/eu/fruta.json (Comisión Europea), data/series/ES/*.json (precios percibidos del MAPA) y data/spain-crops/ (MAPA) ya publicados (build-fv-products.py)."
   }
  },
  "derived": [

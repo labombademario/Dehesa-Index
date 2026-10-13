@@ -53,11 +53,11 @@
   // ---------------------------------------------------------------------
   // Estado
   // ---------------------------------------------------------------------
-  var CAT_ORDER = ['cereales', 'lacteos', 'ganado', 'porcino', 'ovino', 'avicultura', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia', 'seguro', 'vino', 'madera'];
+  var CAT_ORDER = ['cereales', 'lacteos', 'ganado', 'porcino', 'ovino', 'avicultura', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'hortalizas', 'energia', 'seguro', 'vino', 'madera'];
   // Categorías informativas propias: no son "productos" con precio diario/
   // semanal (sin favoritos/histórico/calculadora/alertas) -- estadísticas
   // oficiales reales anuales o de campaña, ver renderInfoCategoryHtml().
-  var INFO_CATS = { seguro: true, vino: true, madera: true };
+  var INFO_CATS = { seguro: true, vino: true, madera: true, hortalizas: true };
 
   var state = {
     location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca') ? v : null; })(),
@@ -1100,6 +1100,13 @@
         global.DehesaSeguro.render(document.getElementById('pr-seguro'), { region: state.location || 'us', euCountry: state.euCountry });
         return;
       }
+      if (state.activeTab === 'hortalizas') {
+        // Frutas, hortalizas y frutos secos: precio semanal por país (Comisión Europea) y precio percibido (MAPA); ver js/precios-fv.js y data/fv-products.json
+        root.innerHTML = '<div id="pr-fv"></div>';
+        var fvGo = function () { global.DehesaFV.render(document.getElementById('pr-fv'), { location: state.location, euCountry: state.euCountry, lang: lang() }); };
+        if (global.DehesaFV) fvGo(); else { var fs = document.createElement('script'); fs.src = 'js/precios-fv.js?v=0'; fs.onload = fvGo; document.head.appendChild(fs); }
+        return;
+      }
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
       if (state.activeTab === 'madera' && global.DehesaWoodDE) global.DehesaWoodDE.render(document.getElementById('pr-wood-de'));
       if (state.activeTab === 'madera' && global.DehesaWood) global.DehesaWood.render(document.getElementById('pr-wood'));
@@ -1651,7 +1658,7 @@
 
   function restorePriceUrl() {
     var qs = new URLSearchParams(window.location.search);
-    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera'];
+    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','hortalizas','energia','seguro','vino','madera'];
     var tab = qs.get('tab');
     var productKey = queryProductKey();
     var region = qs.get('region');
@@ -1779,7 +1786,7 @@
     var qs = new URLSearchParams(window.location.search);
     var requestedTab = qs.get('tab');
     var requestedRegion = qs.get('region');
-    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera'];
+    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','hortalizas','energia','seguro','vino','madera'];
     if (validTabs.indexOf(requestedTab) !== -1) state.activeTab = requestedTab;
     if (deepKey && PRODUCT_BY_KEY[deepKey]) {
       state.activeTab = PRODUCT_BY_KEY[deepKey].catId;

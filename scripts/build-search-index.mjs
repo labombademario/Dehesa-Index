@@ -42,8 +42,19 @@ for (const cat of D.RAW) for (const p of cat.products) {
   const key = cat.id + ':' + p.nameKey; seen.add(key);
   add({ t: 'product', u: 'precios.html?tab=' + cat.id + '&product=' + encodeURIComponent(key), n: Object.fromEntries(L.map(l => [l, D.NAMES[l][p.nameKey]])), s: Object.fromEntries(L.map(l => [l, catLabel(l, cat.id)])), k: SYN[p.nameKey] || '' });
 }
-// Hortalizas con ficha propia (js/producto-hortaliza.js): precio en origen UE, precio percibido y cosecha del MAPA
-add({ t: 'product', u: 'producto.html?p=tomate', n: tri('Tomate', 'Tomato', 'Tomate', 'Pomodoro'), s: tri('Precio en origen, precio al agricultor y cosecha por provincia', 'Price at origin, farm price and harvest by province', 'Prix à l’origine, prix agricole et récolte par province', 'Prezzo all’origine, prezzo agricolo e raccolto per provincia'), k: 'tomate tomates tomato tomatoes pomodoro pomodori tomate cherry rama ensalada industria invernadero almeria hortaliza hortalizas verdura verduras vegetables legumes ortaggi' });
+// Frutas, hortalizas y frutos secos con ficha propia (data/fv-products.json, js/producto-hortaliza.js) y su pestaña en precios.html
+{
+  const FV = JSON.parse(read('data/fv-products.json'));
+  const GL = { veg: tri('Hortaliza', 'Vegetable', 'Légume', 'Ortaggio'), fruit: tri('Fruta', 'Fruit', 'Fruit', 'Frutta'), nut: tri('Fruto seco', 'Nut', 'Fruit à coque', 'Frutta secca') };
+  const SUBT = tri('precio semanal por país, lo que cobra el agricultor y dónde se cultiva', 'weekly price by country, what farmers get and where it is grown', 'prix hebdomadaire par pays, prix agricole et lieux de culture', 'prezzo settimanale per paese, prezzo agricolo e dove si coltiva');
+  const deacc = x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  for (const p of FV.products) {
+    const nm = Object.fromEntries(L.map(l => [l, p.name[l] || p.name.es]));
+    const kw = [...new Set(L.map(l => p.name[l]).concat(L.map(l => deacc(p.name[l] || ''))).concat(L.map(l => (p.name[l] || '') + 's')))].join(' ').toLowerCase() + ' frutas hortalizas verduras fruit vegetables precio price';
+    add({ t: 'product', u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + SUBT[l]])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') });
+  }
+  add({ t: 'category', u: 'precios.html?tab=hortalizas', n: tri('Frutas y hortalizas', 'Fruit and vegetables', 'Fruits et légumes', 'Frutta e verdura'), s: tri(FV.products.length + ' productos: precio semanal por país', FV.products.length + ' products: weekly price by country', FV.products.length + ' produits : prix hebdomadaire par pays', FV.products.length + ' prodotti: prezzo settimanale per paese'), k: 'frutas hortalizas verduras fruta fruit vegetables legumes ortaggi frutta verdura precios prices' });
+}
 add({ t: 'product', u: 'precios.html?tab=energia&product=' + encodeURIComponent('energia:diesel'), n: Object.fromEntries(L.map(l => [l, D.NAMES[l].diesel || 'Diesel'])), s: Object.fromEntries(L.map(l => [l, catLabel(l, 'energia')])), k: SYN.diesel });
 for (const [id, kw] of [['seguro', 'insurance agroseguro assurance seguro agrario'], ['vino', 'wine vin vino granel'], ['madera', 'wood timber lumber bois legno'], ['energia', 'energy energia energía combustible']]) {
   add({ t: 'category', u: 'precios.html?tab=' + id, n: Object.fromEntries(L.map(l => [l, catLabel(l, id)])), s: tri('Precios', 'Prices', 'Prix', 'Prezzi'), k: kw });
