@@ -35,7 +35,8 @@ def parse(txt):
         name = re.sub(r"\s+", " ", name).strip()
         d = {"uts": [], "ute": [], "global": {}}
         sec = None; months = None
-        for ln in body.splitlines():
+        lines = body.splitlines()
+        for i, ln in enumerate(lines):
             if re.search(r"Indicadores de sequ[ií]a prolongada", ln): sec = "uts"; continue
             if re.search(r"Indicadores y escenarios de escasez", ln): sec = "ute"; continue
             if re.search(r"Indicadores globales", ln): sec = "global"; continue
@@ -43,12 +44,20 @@ def parse(txt):
                 months = re.findall(r"\b(OCT|NOV|DIC|ENE|FEB|MAR|ABR|MAY|JUN|JUL|AGO|SEP)\b", ln)   # los del plan vigente son los ultimos
                 continue
             if sec in ("uts", "ute"):
-                mm = re.search(r"(ES\d{3}_\d+[A-Z]?)\s+(.+?)\s+((?:" + FL + r"\s*)+)$", ln)
+                mm = re.search(r"(ES\d{3}_\d+[A-Z]?)\s+(.*?)\s*((?:" + FL + r"\s*)+)$", ln)
                 if not mm or not months: continue
                 vals = [float(x) for x in re.findall(FL, mm.group(3))]
                 if len(vals) > len(months): continue
                 v = vals[-1]
-                row = {"code": mm.group(1), "name": re.sub(r"\s+", " ", mm.group(2)).strip(), "value": v, "months": months[-len(vals):], "series": vals}
+                name = re.sub(r"\s+", " ", mm.group(2)).strip()
+                if not name:
+                    # nombre largo: el PDF lo parte en la linea de encima y la de debajo, en la columna del codigo (p. ej. «Cuencas afluentes al Ebro desde el Leza / hasta el Huecha»)
+                    col = mm.start(1); bits = []
+                    for j in (i - 1, i + 1):
+                        seg = lines[j][col:].strip() if 0 <= j < len(lines) and len(lines[j]) > col else ""
+                        if seg and not re.search(r"ES\d{3}_\d", seg) and not re.search(FL + r"\s*$", seg): bits.append(re.sub(r"\s+", " ", seg))
+                    name = re.sub(r"-\s+", "-", " ".join(bits)) or mm.group(1)   # «Noguera- / Ribagorzana» -> «Noguera-Ribagorzana»
+                row = {"code": mm.group(1), "name": name, "value": v, "months": months[-len(vals):], "series": vals}
                 row["state"] = ("drought" if v < 0.3 else "none") if sec == "uts" else scenario(v)
                 d[sec].append(row)
             elif sec == "global":

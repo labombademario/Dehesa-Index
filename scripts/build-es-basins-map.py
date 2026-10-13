@@ -5,7 +5,7 @@
   Se recortan con la costa (Natural Earth 1:10m, dominio publico) para quitar las aguas costeras. Se dibujan la peninsula y Baleares;
   Canarias, Ceuta y Melilla no caben a esta escala.
 - Rios: Natural Earth 1:10m (rivers_lake_centerlines y rivers_europe, dominio publico), recortados al territorio espanol (scripts/ref/es-rivers.json).
-Uso: python3 scripts/build-es-basins-map.py"""
+Tambien escribe data/es-basins.json (lo lee la app movil). Uso: python3 scripts/build-es-basins-map.py"""
 import json, math
 from pathlib import Path
 from shapely.geometry import shape, MultiPolygon, Polygon, LineString, MultiLineString
@@ -46,5 +46,6 @@ doc = {'viewBox': '0 0 %d %s' % (W, H), 'basins': basins, 'rivers': rivers}
 js = ('/* Demarcaciones hidrograficas de Espana (AEMA, WISE WFD 2022, limites del MITECO; CC BY 4.0) y rios principales (Natural Earth 1:10m, dominio publico).\n'
       '   Peninsula y Baleares. Generado por scripts/build-es-basins-map.py. */\nwindow.DEHESA_ES_BASINS = ' + json.dumps(doc, ensure_ascii=False, separators=(',', ':')) + ';\n')
 (ROOT / 'vendor' / 'es-basins.js').write_text(js, encoding='utf-8')
+(ROOT / 'data' / 'es-basins.json').write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')   # la misma geometria para la app movil
 print('vendor/es-basins.js', len(js), 'bytes', doc['viewBox'], len(basins), 'demarcaciones', len(rivers), 'tramos de rio')
 print([(b['id'], b['name']) for b in basins])

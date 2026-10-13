@@ -4751,6 +4751,12 @@
     "mapa_es"
    ],
    "notes": "Frutas, hortalizas y frutos secos (pestaña de precios.html y fichas de producto): derivado de data/eu/fruta.json (Comisión Europea), data/series/ES/*.json (precios percibidos del MAPA) y data/spain-crops/ (MAPA) ya publicados (build-fv-products.py)."
+  },
+  "data/es-basins.json": {
+   "sources": [
+    "miteco_rbd"
+   ],
+   "notes": "Contornos de las demarcaciones hidrográficas (MITECO vía AEMA, recortados con la costa de Natural Earth) y ríos de Natural Earth, para el mapa de sequía de la app (build-es-basins-map.py)."
   }
  },
  "derived": [
