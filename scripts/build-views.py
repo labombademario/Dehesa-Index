@@ -4,7 +4,7 @@
   eu-preview.json   tarjetas de la vista previa de la UE de perfiles.html (media UE publicada por la Comision; sin recalcular)
   region-metrics.json  el valor por region con el que se colorea el mapa de regiones de cada ficha de pais (js/region-metrics.js): asi el mapa no baja el fichero regional entero (hasta ~350 KB)
 Se regenera junto con el catalogo (update-pipeline-status.yml) y es estricto: si una fuente falta, falla en lugar de publicar una vista incompleta."""
-import datetime, json, sys
+import datetime, json, re, sys
 import sys as _s
 from pathlib import Path as _P
 _s.path.insert(0, str(_P(__file__).resolve().parent))
@@ -171,28 +171,54 @@ def region_metrics():
     return {'schemaVersion': 1, 'generatedAt': now(), 'note': 'Valor por region para colorear los mapas de las fichas de pais; derivado de los ficheros de data/ indicados en source.', 'countries': C}
 # Lonjas (mercados) de cereales por pais del Agri-food Data Portal (precio salida de silo, EUR/t): para elegir otra lonja en la tarjeta de Precios.
 # Solo mercados con dato en las ultimas 10 semanas respecto al ultimo dato del producto (los parados no se ofrecen). Ultimos 26 puntos semanales para el minigrafico.
-LONJA_FILES = {'maiz': 'eu/cereales/feed-maize-departure-from-silo-after-some-storage-on-truck-or-other-tr.json',
-               'trigo': 'eu/cereales/milling-wheat-departure-from-silo-after-some-storage-on-truck-or-other.json',
-               'cebada': 'eu/cereales/feed-barley-departure-from-silo-after-some-storage-on-truck-or-other-t.json'}
-LONJA_NAME = {'Lerida': 'Lleida', 'Leon': 'León', 'Cordoba': 'Córdoba', 'Cadiz': 'Cádiz', 'Avila': 'Ávila', 'Caceres': 'Cáceres', 'Jaen': 'Jaén', 'Malaga': 'Málaga', 'Almeria': 'Almería'}
+# Mercados de cereales de cada país (Comisión Europea, Agri-food Data Portal). Desde 2026/27 la Comisión ya no publica la media
+# nacional: solo mercados concretos, cada uno en su fase comercial. Se guardan todos (13-oct-2026, decisión de Mario), con su nombre,
+# su variedad y su fase; nunca se mezclan ni se promedian. España conserva su lonja por defecto (salida de silo).
+LONJA_PROD = {'trigo': {'Milling wheat': 'pan', 'Feed wheat': 'pienso'}, 'maiz': {'Feed maize': 'pienso'}, 'cebada': {'Feed barley': 'pienso', 'Malting barley': 'malta'},
+              'avena': {'Feed oats': 'pienso', 'Milling oats': 'moli'}, 'centeno': {'Milling rye': 'pan', 'Feed rye': 'pienso'}, 'trigo_duro': {'Durum wheat': ''}}
+LONJA_STAGE = [('Departure from silo', 'silo'), ('Deliver to first customer', 'first'), ('Departure from farm', 'farm'), ('Price at farm gate', 'gate'),
+               ('Delivered to port', 'port'), ('Shipped to the place', 'unl'), ('Free On Board', 'fob'), ('Cost, Insurance and Freight', 'cif'), ('Rendu Port', 'rport')]
+LONJA_NAME = {'Lerida': 'Lleida', 'Leon': 'León', 'Cordoba': 'Córdoba', 'Cadiz': 'Cádiz', 'Avila': 'Ávila', 'Caceres': 'Cáceres', 'Jaen': 'Jaén', 'Malaga': 'Málaga', 'Almeria': 'Almería', 'Kobenhavn': 'København'}
+LONJA_T = {'var': {'pan': ['panificable', 'milling', 'meunier', 'panificabile'], 'pienso': ['pienso', 'feed', 'fourrager', 'foraggero'], 'malta': ['cervecera', 'malting', 'brassicole', 'da malto'], 'moli': ['molinera', 'milling', 'meunière', 'da molitura'], '': ['', '', '', '']},
+           'st': {'silo': ['salida de silo', 'ex-silo', 'départ silo', 'franco silo'], 'first': ['entregado al primer comprador', 'delivered to first buyer', 'livré au premier acheteur', 'consegnato al primo acquirente'],
+                  'farm': ['salida de explotación', 'ex-farm', 'départ exploitation', 'franco azienda'], 'gate': ['precio en explotación', 'farm-gate price', 'prix à la ferme', 'prezzo in azienda'],
+                  'port': ['entregado en puerto', 'delivered to port', 'rendu port', 'reso al porto'], 'unl': ['descargado en puerto', 'unloaded at port', 'déchargé au port', 'scaricato in porto'],
+                  'fob': ['FOB', 'FOB', 'FOB', 'FOB'], 'cif': ['CIF', 'CIF', 'CIF', 'CIF'], 'rport': ['rendu puerto', 'delivered port', 'rendu port', 'reso porto']}}
 def lonjas():
     E = datetime.date(2000, 1, 1); out = {}
-    for prod, rel in LONJA_FILES.items():
-        try: j = load(rel)
+    fam = load('eu/cereales.json')
+    for s in fam.get('series', []):
+        parts = s.get('parts') or []
+        if len(parts) < 2: continue
+        prod = next((k for k, m in LONJA_PROD.items() if parts[0] in m), None)
+        st = next((code for pre, code in LONJA_STAGE if parts[1].startswith(pre)), None)
+        if not prod or not st: continue
+        var = LONJA_PROD[prod][parts[0]]
+        if not any(r.get('m') for r in s.get('regions', [])): continue
+        try: j = load('eu/cereales/' + s['id'] + '.json')
         except Exception: continue
-        rs = [r for r in j.get('regions', []) if r.get('d') and r.get('v') and r.get('m')]
-        if not rs: continue
-        for cc in sorted({r['c'] for r in rs}):
-            R = [r for r in rs if r['c'] == cc]; top = max(r['d'][-1] for r in R); L = []
-            for r in R:
-                if r['d'][-1] < top - 70: continue
-                pts = [[(E + datetime.timedelta(days=d)).isoformat(), v] for d, v in zip(r['d'], r['v']) if v is not None][-26:]
-                if len(pts) < 2: continue
-                nm = LONJA_NAME.get(r['m'], r['m'])
-                if any(x['m'] == nm for x in L): continue  # mismo mercado con dos grafias en la fuente: se queda el mas reciente (lista ordenada abajo)
-                L.append({'m': nm, 'src': r['m'], 'p': pts})
-            if L: out.setdefault(cc, {})[prod] = sorted(L, key=lambda x: x['m'])
-    return {'schemaVersion': 1, 'generatedAt': now(), 'unit': 'EUR/t', 'stage': 'Departure from silo - after some storage - on truck or other transport means',
+        for r in j.get('regions', []):
+            m = r.get('m') or ''
+            if not m or re.search(r'national|average', m, re.I) or not r.get('d'): continue
+            pts = [[(E + datetime.timedelta(days=d)).isoformat(), v] for d, v in zip(r['d'], r['v']) if v is not None][-26:]
+            if len(pts) < 2: continue
+            out.setdefault(r['c'], {}).setdefault(prod, []).append({'m': LONJA_NAME.get(m, m), 'src': m, 'var': var, 'st': st, 'p': pts})
+    # un mercado que no publica desde hace más de 70 días (respecto al dato más reciente de toda la UE) no entra: no es un precio actual
+    gtop = max((x['p'][-1][0] for v in out.values() for L in v.values() for x in L), default='2000-01-01')
+    for cc in list(out):
+        for prod in list(out[cc]):
+            L = out[cc][prod]
+            cut = (datetime.date.fromisoformat(gtop) - datetime.timedelta(days=70)).isoformat()
+            seen, keep = set(), []
+            for x in sorted(L, key=lambda x: (x['m'], x['var'], x['st'], x['p'][-1][0]), reverse=False):
+                if x['p'][-1][0] < cut: continue   # mercado que dejó de publicar
+                k = (x['m'], x['var'], x['st'])
+                if k in seen: keep = [y for y in keep if (y['m'], y['var'], y['st']) != k]   # misma lonja con dos grafías: la más reciente
+                seen.add(k); keep.append(x)
+            if keep: out[cc][prod] = sorted(keep, key=lambda x: (x['m'], x['var'], x['st']))
+            else: del out[cc][prod]
+        if not out[cc]: del out[cc]
+    return {'schemaVersion': 2, 'generatedAt': now(), 'unit': 'EUR/t', 'labels': LONJA_T,
             'source': {'name': 'Comisión Europea, Agri-food Data Portal', 'url': 'https://agridata.ec.europa.eu/', 'license': 'Commission Decision 2011/833/EU'}, 'countries': out}
 def main():
     write('home-summary.json', home_summary())

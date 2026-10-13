@@ -613,7 +613,7 @@
     if (!trustReady()) return true;
     var key = entry.catId + ':' + entry.nameKey;
     var disp = resolveDisplay(entry, state.location, state.euCountry);
-    if (!disp.region) return false;
+    if (!disp.region) return !!lonjaList(entry);   // país sin media nacional pero con mercados de la Comisión
     var obs = trustObservationFor(entry, disp), ver = !!obs && obs.status === 'verified';
     if (state.deepLinkProduct === key) return ver;   // un enlace directo tampoco enseña un valor de muestra sin verificar
     if ((state.location === 'uk' || state.location === 'ca') && disp.ukGap) return false;
@@ -778,23 +778,53 @@
   // Lonjas de España (maíz, trigo y cebada): la tarjeta muestra por defecto la lonja de referencia (Zaragoza; Lleida en cebada)
   // y deja elegir otra de las que publica el Agri-food Data Portal (data/views/lonjas.json, salida de silo, EUR/t).
   // ---------------------------------------------------------------------
+  // Mercados de cereales de cada país de la UE (data/views/lonjas.json; Comisión Europea). Desde 2026/27 la Comisión ya no publica la
+  // media nacional de cereales, solo mercados concretos: la tarjeta deja elegir cualquiera de ellos, cada uno con su nombre, su variedad y su
+  // fase comercial, sin promediar ni mezclar. España: por defecto su lonja de referencia (Zaragoza; Lleida en cebada). Otro país: su media
+  // nacional mientras esté al día; si está parada o no existe, su primer mercado activo.
   var LONJAS = null, LONJA_DEF = { maiz: 'Zaragoza', trigo: 'Zaragoza', cebada: 'Lleida' };
-  var LONJA_T = { es: ['Lonja', 'por defecto', 'España', 'lonja', 'salida de silo'], en: ['Market', 'default', 'Spain', 'market', 'ex-silo'], fr: ['Marché', 'par défaut', 'Espagne', 'marché', 'départ silo'], it: ['Borsa merci', 'predefinita', 'Spagna', 'borsa', 'franco silo'] };
+  var LONJA_VAR = { trigo: 'pan', maiz: 'pienso', cebada: 'pienso', avena: 'pienso', centeno: 'pan' };
+  var LONJA_T = { es: ['Mercado', 'por defecto', 'España', 'lonja', 'salida de silo', 'Media nacional', 'hasta'], en: ['Market', 'default', 'Spain', 'market', 'ex-silo', 'National average', 'until'], fr: ['Marché', 'par défaut', 'Espagne', 'marché', 'départ silo', 'Moyenne nationale', 'jusqu’au'], it: ['Mercato', 'predefinito', 'Spagna', 'borsa', 'franco silo', 'Media nazionale', 'fino al'] };
   var lonjaSel = (function () { try { return JSON.parse(readLS('dehesaLonja') || '{}') || {}; } catch (e) { return {}; } })();
   function loadLonjas() {
     if (LONJAS || typeof global.fetch !== 'function') return;
     LONJAS = {};
     global.fetch('data/views/lonjas.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.countries) { LONJAS = d; if (state.location === 'eu') renderAll(); } }).catch(function () {});
   }
+  function lonjaCC() { return String(state.euCountry || 'es').toUpperCase(); }
+  function lonjaKey(x) { return x.m + '|' + (x['var'] || '') + '|' + (x.st || ''); }
   function lonjaList(entry) {
-    if (state.location !== 'eu' || (state.euCountry && state.euCountry !== 'es') || !LONJA_DEF[entry.nameKey]) return null;
-    var L = LONJAS && LONJAS.countries && LONJAS.countries.ES && LONJAS.countries.ES[entry.nameKey];
-    return L && L.length > 1 ? L : null;
+    if (state.location !== 'eu' || !LONJA_VAR[entry.nameKey]) return null;
+    var cc = lonjaCC(), L = LONJAS && LONJAS.countries && LONJAS.countries[cc] && LONJAS.countries[cc][entry.nameKey];
+    if (!L || !L.length) return null;
+    return cc === 'ES' ? (L.length > 1 ? L : null) : L;
   }
+  function lonjaLabel(x) {
+    var li = { es: 0, en: 1, fr: 2, it: 3 }[lang()] || 0, LB = (LONJAS && LONJAS.labels) || { 'var': {}, st: {} };
+    var v = LB['var'][x['var']] ? LB['var'][x['var']][li] : '', st = LB.st[x.st] ? LB.st[x.st][li] : '';
+    return [x.m, v, st].filter(Boolean).join(' · ');
+  }
+  // media nacional del país elegido, si existe y está al día
+  function nationalFresh(entry) {
+    var cc = lonjaCC(); if (cc === 'ES') return true;
+    var P = CTRY[cc] && CTRY[cc][entry.nameKey]; return !!(P && !P.stale);
+  }
+  function lonjaDefault(entry, L) {
+    var cc = lonjaCC();
+    if (cc === 'ES') { var d = LONJA_DEF[entry.nameKey]; for (var i = 0; i < L.length; i++) if (L[i].m === d && L[i]['var'] === LONJA_VAR[entry.nameKey] && L[i].st === 'silo') return L[i]; return null; }
+    if (nationalFresh(entry)) return null;   // la media nacional sigue publicándose: va primero
+    var pref = L.filter(function (x) { return x['var'] === LONJA_VAR[entry.nameKey]; }); if (!pref.length) pref = L;
+    var top = pref.reduce(function (m, x) { return x.p[x.p.length - 1][0] > m ? x.p[x.p.length - 1][0] : m; }, '');
+    return pref.filter(function (x) { return x.p[x.p.length - 1][0] >= top; })[0] || pref[0];
+  }
+  // mercado que enseña la tarjeta (null = el dato de siempre: lonja por defecto en España o media nacional del país)
   function lonjaPick(entry) {
-    var L = lonjaList(entry), m = L && lonjaSel[entry.nameKey]; if (!m || m === LONJA_DEF[entry.nameKey]) return null;
-    for (var i = 0; i < L.length; i++) if (L[i].m === m) return L[i];
-    return null;
+    var L = lonjaList(entry); if (!L) return null;
+    var cc = lonjaCC(), sel = lonjaSel[cc === 'ES' ? entry.nameKey : cc + ':' + entry.nameKey];
+    if (sel === 'nat' && cc !== 'ES' && CTRY[cc] && CTRY[cc][entry.nameKey]) return null;
+    if (sel) for (var i = 0; i < L.length; i++) if (lonjaKey(L[i]) === sel || (sel.indexOf('|') < 0 && L[i].m === sel && L[i]['var'] === LONJA_VAR[entry.nameKey])) return cc === 'ES' && L[i] === lonjaDefault(entry, L) ? null : L[i];
+    var d = lonjaDefault(entry, L);
+    return cc === 'ES' ? null : d;
   }
   function lonjaRegion(x) {
     var p = x.p, last = p[p.length - 1][1], prev = p.length > 1 ? p[p.length - 2][1] : null;
@@ -802,12 +832,18 @@
   }
   function lonjaSelectHtml(entry) {
     var L = lonjaList(entry); if (!L) return '';
-    var X = LONJA_T[lang()] || LONJA_T.es, def = LONJA_DEF[entry.nameKey], cur = (lonjaPick(entry) || {}).m || def;
-    return '<label class="di-lonja" style="display:inline-flex;gap:6px;align-items:center;font-size:12.5px;margin:4px 0 2px;color:var(--text-muted)">' + esc(X[0]) +
-      ' <select class="di-lonja-sel di-compare-select" data-lonja="' + esc(entry.nameKey) + '" style="padding:2px 6px;font-size:12.5px;width:auto">' +
-      '<option value="' + esc(def) + '"' + (cur === def ? ' selected' : '') + '>' + esc(def) + ' (' + esc(X[1]) + ')</option>' +
-      L.filter(function (x) { return x.m !== def; }).map(function (x) { return '<option value="' + esc(x.m) + '"' + (cur === x.m ? ' selected' : '') + '>' + esc(x.m) + '</option>'; }).join('') +
-      '</select></label>';
+    var X = LONJA_T[lang()] || LONJA_T.es, cc = lonjaCC(), cur = lonjaPick(entry), opts = '';
+    if (cc === 'ES') {
+      var def = lonjaDefault(entry, L);
+      opts = (def ? '<option value="' + esc(lonjaKey(def)) + '"' + (!cur ? ' selected' : '') + '>' + esc(lonjaLabel(def)) + ' (' + esc(X[1]) + ')</option>' : '') +
+        L.filter(function (x) { return x !== def; }).map(function (x) { return '<option value="' + esc(lonjaKey(x)) + '"' + (cur === x ? ' selected' : '') + '>' + esc(lonjaLabel(x)) + '</option>'; }).join('');
+    } else {
+      var P = CTRY[cc] && CTRY[cc][entry.nameKey];
+      if (P) opts += '<option value="nat"' + (!cur ? ' selected' : '') + '>' + esc(X[5]) + (P.stale ? ' (' + esc(X[6]) + ' ' + esc(S.fmtDate(P.date, lang())) + ')' : '') + '</option>';
+      opts += L.map(function (x) { return '<option value="' + esc(lonjaKey(x)) + '"' + (cur === x ? ' selected' : '') + '>' + esc(lonjaLabel(x)) + '</option>'; }).join('');
+    }
+    return '<label class="di-lonja" style="display:inline-flex;gap:6px;align-items:center;font-size:12.5px;margin:4px 0 2px;color:var(--text-muted);max-width:100%">' + esc(X[0]) +
+      ' <select class="di-lonja-sel di-compare-select" data-lonja="' + esc(cc === 'ES' ? entry.nameKey : cc + ':' + entry.nameKey) + '" style="padding:2px 6px;font-size:12.5px;width:auto;max-width:100%">' + opts + '</select></label>';
   }
   if (global.document) global.document.addEventListener('change', function (ev) {
     var el = ev.target; if (!el || !el.classList || !el.classList.contains('di-lonja-sel')) return;
@@ -821,7 +857,11 @@
     var disp = resolveDisplay(entry, state.location, state.euCountry);
     var lonja = lonjaPick(entry), observation0 = disp.ukGap ? null : trustObservationFor(entry, disp);
     var disp0 = disp;
-    if (lonja) { var d2 = {}; for (var kk in disp) d2[kk] = disp[kk]; d2.region = lonjaRegion(lonja); d2.derived = false; disp = d2; }
+    if (lonja) {
+      var d2 = {}; for (var kk in disp) d2[kk] = disp[kk]; d2.region = lonjaRegion(lonja); d2.derived = false; disp = d2;
+      // país sin media nacional (o parada): el mercado es una observación oficial de la Comisión, con su propia fecha
+      { var b0 = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-eu']; observation0 = {}; if (b0) for (var k0 in b0) observation0[k0] = b0[k0]; observation0.status = 'verified'; observation0.value = lonja.p[lonja.p.length - 1][1]; observation0.observationDate = lonja.p[lonja.p.length - 1][0]; }
+    }
     var built = disp.region ? D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T()) : { price: '—', unit: '', changeLabel: '', changeColor: 'var(--text-faint)', sparkPath: '', sparkColor: 'var(--text-faint)' };
     var observation = disp.region ? observation0 : null;
     var dataState = productDataState(observation, disp);
@@ -847,7 +887,7 @@
     var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
     var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
     if (disp.cty && showValue && observation && observation.ctyLabel) mk = (observation.ctyLabel[lang()] || observation.ctyLabel.es) + ' · ' + (({ es: 'media nacional', en: 'national average', fr: 'moyenne nationale', it: 'media nazionale' })[lang()]);
-    if (lonja && showValue) { var LX = LONJA_T[lang()] || LONJA_T.es; mk = LX[2] + ' · ' + lonja.m + ' (' + LX[3] + ') · ' + LX[4]; od = S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); }
+    if (lonja && showValue) { mk = (lonjaCC() === 'ES' ? (LONJA_T[lang()] || LONJA_T.es)[2] : (ccName(lonjaCC().toLowerCase()) || lonjaCC())) + ' · ' + lonjaLabel(lonja); od = S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
     var meta = [est, mk, od ? (/^\d/.test(od) ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') : (({ es: 'dato de ', en: 'as of ', fr: 'donnée de ', it: 'dato di ' })[lang()] || '')) + od : ''].filter(Boolean).join(' · ');
     return (
