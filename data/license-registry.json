@@ -3717,6 +3717,12 @@
     "usda_nass"
    ]
   },
+  "data/us-crop-progress/": {
+   "sources": [
+    "usda_nass"
+   ],
+   "notes": "Valoración y avance semanal de los cultivos por estado (NASS Crop Progress, Quick Stats, nivel estado) con la media de 5 años. scripts/update-us-crop-progress-states.mjs."
+  },
   "data/nass-prices.json": {
    "sources": [
     "usda_nass"

@@ -1,0 +1,40 @@
+name: Dehesa Data — Crop Progress by state (NASS)
+
+on:
+  schedule:
+    - cron: '40 21 * * 1'   # el informe sale los lunes por la tarde (hora de EE. UU.)
+    - cron: '40 13 * * 2'   # segunda oportunidad por retrasos y festivos
+  workflow_dispatch: {}
+
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-us-crop-progress-states:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Update crop progress by state
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/update-us-crop-progress-states.mjs
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/us-crop-progress/*.json
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bash scripts/publish-data.sh "chore: update crop progress by state (NASS)" data/us-crop-progress
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

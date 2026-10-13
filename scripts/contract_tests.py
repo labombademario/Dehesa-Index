@@ -1840,6 +1840,30 @@ def _ul_series(tag, pts, errs, width):
     return True
 
 
+def us_crop_progress_index(doc, errs, warns, stats):
+    import datetime as _dt
+    if doc["lastWeekEnding"] > (_dt.date.today() + _dt.timedelta(days=7)).isoformat(): errs.append("crop progress estados: semana futura %s" % doc["lastWeekEnding"])
+    if doc["lastWeekEnding"] < (_dt.date.today() - _dt.timedelta(days=120)).isoformat(): warns.append("crop progress estados: ultima semana %s" % doc["lastWeekEnding"])
+    stats["estados"] = len(doc["states"])
+def us_crop_progress_state(doc, errs, warns, stats):
+    import re as _re
+    n = 0
+    for crop, c in doc["crops"].items():
+        for y, rows in c.get("condition", {}).items():
+            prev = None
+            for r in rows:
+                if len(r) != 6 or not _re.match(r"^\d{4}-\d{2}-\d{2}$", r[0]) or (prev and r[0] <= prev): errs.append("crop progress %s %s %s: fila %s" % (doc["state"], crop, y, r)); return
+                prev = r[0]; n += 1
+                if any(not 0 <= x <= 100 for x in r[1:]) or abs(sum(r[1:]) - 100) > 3: errs.append("crop progress %s %s %s %s: %s" % (doc["state"], crop, y, r[0], r[1:]))
+        for grp in ("progress", "avg"):
+            for y, st in c.get(grp, {}).items():
+                for k, rows in st.items():
+                    prev = None
+                    for w, v in rows:
+                        if prev and w <= prev: errs.append("crop progress %s %s %s %s: semanas desordenadas" % (doc["state"], crop, grp, k)); return
+                        prev = w
+                        if not 0 <= v <= 100: errs.append("crop progress %s %s %s %s %s: %s" % (doc["state"], crop, grp, k, w, v))
+    stats["valoraciones"] = n
 def us_local_cattle(doc, errs, warns, stats):
     """Ganado en subasta (resumen semanal USDA AMS): informe del registro, fecha no futura, filas con cabezas > 0 y precio minimo <= medio <= maximo en un rango plausible
     por unidad, tramos de peso ordenados, historial = Clase|tramo con fechas crecientes, precio y peso plausibles, y la ultima semana del historial coincide con las filas de referencia."""

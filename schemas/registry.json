@@ -1096,6 +1096,12 @@
     "pt_drought"
    ]
   ],
+  "us-crop-progress/index.json": [
+   "us-crop-progress-index",
+   [
+    "us_crop_progress_index"
+   ]
+  ],
   "es-gasoleo-b.json": [
    "es-gasoleo-b",
    [
@@ -1204,6 +1210,12 @@
    "us-cash-bids-shard",
    [
     "us_cashbids_shard"
+   ]
+  ],
+  "us-crop-progress/*.json": [
+   "us-crop-progress-state",
+   [
+    "us_crop_progress_state"
    ]
   ],
   "us-local/cattle-*.json": [
