@@ -56,7 +56,7 @@ def main():
                 if key not in files: files[key] = json.loads((D / 'eu' / fam / (sid + '.json')).read_text())
                 fr = next((x for x in files[key]['regions'] if x['c'] == cc and not x.get('m')), None)
                 pts = [[(EPOCH + datetime.timedelta(days=dd)).isoformat(), v] for dd, v in zip(fr['d'], fr['v'])] if fr else []
-                cut = (last - datetime.timedelta(days=372)).isoformat()
+                cut = (last - datetime.timedelta(days=5 * 366)).isoformat()   # 5 años: la web los usa en el histórico ampliado
                 pts = [p for p in pts if p[0] >= cut]
                 ya = r.get('yoy')
                 prev = r.get('prev')

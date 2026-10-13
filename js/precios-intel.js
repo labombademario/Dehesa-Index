@@ -1051,21 +1051,17 @@
     if (dkRaw) {
       rows.push({ flag: '🇩🇰', mapCode: 'DK', label: RG.dk || 'Denmark', built: D.buildRegion(dkRaw, RG.dk || 'Denmark', 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
     }
-    // Mismo criterio que el resto del panel: si el producto no tiene
-    // countryFactors (o un país concreto no publica cotización propia), no
-    // se inventa nada -- ese país simplemente no aparece en la lista ni en
-    // el mapa.
-    var noCountryData = !product.countryFactors;
-    var MAP_CODE_BY_COUNTRY = { es: 'ES', fr: 'FR', de: 'DE', it: 'IT' };
-    if (product.countryFactors) {
-      LG_COUNTRY_ORDER.forEach(function (c) {
-        var factor = product.countryFactors[c];
-        if (factor == null) return;
-        var raw = D.deriveCountryRaw(product.eu, factor);
-        var label = ER[D.COUNTRY_ER_KEY[c]];
-        rows.push({ flag: D.COUNTRY_FLAG[c], mapCode: MAP_CODE_BY_COUNTRY[c], label: label, built: D.buildRegion(raw, label, 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
-      });
-    }
+    // Países de la UE: solo el precio REAL de cada país (media nacional de la Comisión; España, el de la propia tarjeta).
+    // Nada de «España × factor»: si un país no publica el producto, no aparece ni en la lista ni en el mapa.
+    var MAP_CODE_BY_COUNTRY = { es: 'ES', fr: 'FR', de: 'DE', it: 'IT' }, nCty = 0;
+    LG_COUNTRY_ORDER.forEach(function (c) {
+      var raw = c === 'es' ? product.eu : (Core.countryRegion ? Core.countryRegion(entry, c) : null);
+      if (!raw) { if (c !== 'es' && Core.loadCountry) Core.loadCountry(c).then(function () { if (Core.countryRegion && Core.countryRegion(entry, c)) render(); }); return; }
+      nCty++;
+      var label = ER[D.COUNTRY_ER_KEY[c]];
+      rows.push({ flag: D.COUNTRY_FLAG[c], mapCode: MAP_CODE_BY_COUNTRY[c], label: label, built: D.buildRegion(raw, label, 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+    });
+    var noCountryData = nCty === 0;
     return { rows: rows, noCountryData: noCountryData };
   }
 

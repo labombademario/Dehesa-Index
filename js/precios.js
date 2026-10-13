@@ -59,9 +59,12 @@
   // oficiales reales anuales o de campaña, ver renderInfoCategoryHtml().
   var INFO_CATS = { seguro: true, vino: true, madera: true, hortalizas: true };
 
+  var EU_CC = ['es', 'at', 'be', 'bg', 'cy', 'cz', 'de', 'dk', 'ee', 'el', 'fi', 'fr', 'hr', 'hu', 'ie', 'it', 'lt', 'lv', 'nl', 'pl', 'pt', 'ro', 'se', 'si', 'sk'];
+  function ccFlag(c) { var i = c === 'el' ? 'GR' : c.toUpperCase(); return String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)); }
+  function ccName(c) { try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(c === 'el' ? 'GR' : c.toUpperCase()); } catch (e) { return c.toUpperCase(); } }
   var state = {
     location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca') ? v : null; })(),
-    euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return (v === 'es' || v === 'de' || v === 'fr' || v === 'it') ? v : 'es'; })(),
+    euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return EU_CC.indexOf(v) >= 0 ? v : 'es'; })(),
     activeTab: 'cereales',
     favorites: readFavorites(),
     searchQuery: '',
@@ -344,6 +347,36 @@
 
   // Devuelve { region, targetCcy, targetKgPerUnit, targetUnitLabel, quoteType, ukGap }
   // para el producto `entry` en la ubicación `loc` (y país `country` si loc==='eu').
+  // Precio REAL de cada país de la UE (13-oct-2026, a petición de Mario): media nacional de la Comisión Europea para ese país
+  // (data/app/v1/eu/<CC>.json, scripts/build-app-eu-countries.py). Sustituye a los countryFactors (precio de España × un factor fijo),
+  // que mostraban en Alemania, Francia o Italia un dato que en realidad era de España. Si el país no tiene el producto, no se muestra.
+  var SPAIN_ONLY = { arroz: 1, cebada: 1, cerdo: 1, colza: 1, cordero: 1, harina_soja: 1, huevos: 1, leche: 1, maiz: 1, oliva: 1, pollo: 1, trigo: 1, vaca: 1 };
+  var CTRY = {}, CTRY_P = {}, CTRY_REG = {};
+  function loadCountry(cc) {
+    cc = String(cc || '').toUpperCase(); if (!cc || cc === 'ES' || CTRY[cc] || CTRY_P[cc]) return CTRY_P[cc] || Promise.resolve();
+    var url = global.DehesaShared && global.DehesaShared.sitePath ? global.DehesaShared.sitePath('data/app/v1/eu/' + cc + '.json') : 'data/app/v1/eu/' + cc + '.json';
+    return CTRY_P[cc] = fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      var m = {}; ((d && d.prices) || []).forEach(function (q) { m[q.product] = q; }); CTRY[cc] = m; if (state.euCountry && state.euCountry.toUpperCase() === cc) renderAll();
+    }).catch(function () { CTRY[cc] = {}; });
+  }
+  function countryRegion(entry, country) {
+    var cc = String(country || '').toUpperCase(), P = CTRY[cc] && CTRY[cc][entry.nameKey]; if (!P) return null;
+    var key = entry.catId + '-' + entry.nameKey + '-eu-' + cc.toLowerCase();
+    if (CTRY_REG[key]) return CTRY_REG[key];
+    var div = entry.nameKey === 'pollo' ? 100 : 1;   // la Comisión da el pollo en EUR/100 kg; la tarjeta de España lo lleva en EUR/kg
+    var pts = (P.points || []).map(function (q) { return { ts: Date.parse(q[0] + 'T00:00:00Z'), value: q[1] / div }; }).filter(function (q) { return isFinite(q.ts) && isFinite(q.value); });
+    var reg = { price: P.value / div, changePct: P.changePct, history: pts.slice(-12).map(function (q) { return q.value; }), histPts: pts.length >= 2 ? pts : null, histFull: true, histDone: true,
+      histGran: P.frequency === 'monthly' ? 'month' : 'day', currency: 'EUR', kgPerUnit: entry.product.eu ? entry.product.eu.kgPerUnit : 1000 };
+    var base = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-eu'];
+    if (D.DATA_TRUST && base) {
+      var tr = {}; for (var k in base) tr[k] = base[k];
+      tr.value = reg.price; tr.status = 'verified'; tr.obsId = P.id; tr.obsSource = 'eu_agrifood'; tr.obsCcy = 'EUR'; tr.observationDate = P.date; tr.publicationDate = null;
+      tr.methodology = P.note && P.note.es || tr.methodology; tr.frequency = P.frequency || tr.frequency; tr.ctyLabel = P.place;
+      D.DATA_TRUST[key] = tr;
+    }
+    var lm = LIVE_OBSERVATION_MAP[entry.nameKey + ':eu']; if (lm) LIVE_OBSERVATION_MAP[entry.nameKey + ':eu-' + cc.toLowerCase()] = lm;
+    return CTRY_REG[key] = reg;
+  }
   function resolveDisplay(entry, loc, country) {
     var p = entry.product;
     var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
@@ -356,8 +389,10 @@
         var dr = dieselCountryRegion(country);
         if (dr && dr.observed) region = dr;
         else if (dr) unverified = true;
-      } else if (p.countryFactors && country !== 'es' && p.countryFactors[country] != null && p.countryFactors[country] !== 1) {
-        region = D.deriveCountryRaw(p.eu, p.countryFactors[country]); derived = true;
+      } else if (country && country !== 'es' && SPAIN_ONLY[p.nameKey]) {
+        var cr = countryRegion(entry, country);
+        if (!cr) loadCountry(country);
+        return { region: cr, regionCode: cr ? 'eu-' + country : 'eu', cty: cr ? country : null, targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false, derived: false, unverified: false };
       }
       return { region: region, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false, derived: derived, unverified: unverified };
     }
@@ -508,12 +543,8 @@
       '<button type="button" class="di-location-btn' + (state.location === 'uk' ? ' active' : '') + '" data-loc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>' +
       '<button type="button" class="di-location-btn' + (state.location === 'ca' ? ' active' : '') + '" data-loc="ca">🇨🇦 ' + esc(t.locationCaLabel) + '</button>';
     if (state.location === 'eu') {
-      var countries = [
-        { code: 'es', flag: D.COUNTRY_FLAG.es, label: D.REGION[lang()].eu + ' — España' },
-        { code: 'de', flag: D.COUNTRY_FLAG.de, label: 'Deutschland' },
-        { code: 'fr', flag: D.COUNTRY_FLAG.fr, label: 'France' },
-        { code: 'it', flag: D.COUNTRY_FLAG.it, label: 'Italia' }
-      ];
+      // todos los países de la UE con precios propios en la Comisión (antes solo España, Alemania, Francia e Italia)
+      var countries = EU_CC.map(function (c) { return { code: c, flag: ccFlag(c), label: ccName(c) }; });
       html += '<select class="di-eu-country-select" id="pr-eu-country" aria-label="' + ({ es: 'País de la UE', en: 'EU country', fr: 'Pays de l’UE', it: 'Paese UE' }[lang()] || 'EU country') + '">' + countries.map(function (c) {
         return '<option value="' + c.code + '"' + (c.code === state.euCountry ? ' selected' : '') + '>' + c.flag + ' ' + esc(c.label) + '</option>';
       }).join('') + '</select>';
@@ -776,8 +807,8 @@
     var lonja = lonjaPick(entry), observation0 = disp.ukGap ? null : trustObservationFor(entry, disp);
     var disp0 = disp;
     if (lonja) { var d2 = {}; for (var kk in disp) d2[kk] = disp[kk]; d2.region = lonjaRegion(lonja); d2.derived = false; disp = d2; }
-    var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
-    var observation = observation0;
+    var built = disp.region ? D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T()) : { price: '—', unit: '', changeLabel: '', changeColor: 'var(--text-faint)', sparkPath: '', sparkColor: 'var(--text-faint)' };
+    var observation = disp.region ? observation0 : null;
     var dataState = productDataState(observation, disp);
     var stateLabel = (dataState.label[lang()] || dataState.label.es);
     var fav = isFavorite(key);
@@ -800,6 +831,7 @@
     // Trazabilidad visible sin abrir el detalle: mercado exacto y fecha de observacion en formato local (auditoria 8-oct-2026)
     var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
     var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
+    if (disp.cty && showValue && observation && observation.ctyLabel) mk = (observation.ctyLabel[lang()] || observation.ctyLabel.es) + ' · ' + (({ es: 'media nacional', en: 'national average', fr: 'moyenne nationale', it: 'media nazionale' })[lang()]);
     if (lonja && showValue) { var LX = LONJA_T[lang()] || LONJA_T.es; mk = LX[2] + ' · ' + lonja.m + ' (' + LX[3] + ') · ' + LX[4]; od = S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
     var meta = [est, mk, od ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') + od : ''].filter(Boolean).join(' · ');
@@ -1745,6 +1777,7 @@
     sel.addEventListener('change', function (e) {
       state.euCountry = e.target.value;
       writeLS('dehesaIndexEuCountry', state.euCountry);
+      loadCountry(state.euCountry);
       renderAll();
     });
   }
@@ -1848,17 +1881,18 @@
     mapInfo: function (entry, loc) {
       loc = loc || state.location;
       var disp = resolveDisplay(entry, loc, state.euCountry);
-      if (disp.ukGap || disp.regionCode !== loc) return null;
+      if (disp.ukGap || !disp.region || String(disp.regionCode).split('-')[0] !== loc) return null;
       var obs = trustObservationFor(entry, disp);
       if (!obs || obs.status !== 'verified' || disp.derived || disp.unverified) return null;
       var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
-      var base = entry.product[disp.regionCode];
+      var base = disp.cty ? disp.region : entry.product[disp.regionCode];
       return { price: built.price, unit: built.unit, kg: disp.targetKgPerUnit, ccy: disp.targetCcy, date: obs.observationDate || null, pts: base && base.histPts ? base.histPts : null, full: !!(base && base.histFull) };
     },
     getLocation: function () { return state.location; },
     openHistory: function (key) { openHistory(key); },
     ensureHistory: ensureHistory,
     ensureAllHistory: ensureAllHistory,
+    countryRegion: countryRegion, loadCountry: loadCountry,
     pricesReady: PRICES_DONE
   };
 })(window);
