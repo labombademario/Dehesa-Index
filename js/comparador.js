@@ -42,13 +42,15 @@
   };
   Object.keys(X).forEach(function (l) { for (var k in X[l]) T[l][k] = X[l][k]; });
   var COL = ['#2f6b4a', '#c0662d', '#3b6fa8', '#8c5a9e', '#b08a1f', '#5f6b70'];
-  var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'idx', r: 10 }, D = null, FX = null, SKIP = 0;
+  var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'idx', r: 10, m: {} }, D = null, FX = null, SKIP = 0;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { if (typeof v !== 'number' || !isFinite(v)) return '–'; var dd = d != null ? d : (Math.abs(v) >= 1000 ? 0 : Math.abs(v) >= 100 ? 1 : 2); try { return v.toLocaleString(lang(), { minimumFractionDigits: dd, maximumFractionDigits: dd }); } catch (e) { return v.toFixed(dd); } }
   function iso(c) { return c === 'EL' ? 'GR' : c === 'UK' ? 'GB' : c; }
   function flag(c) { if (c === 'EU') return '🇪🇺'; if (window.DIAgg && DIAgg.flag(c)) return DIAgg.flag(c); var i = iso(c); if (!/^[A-Z]{2}$/.test(i)) return ''; return String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)); }
+  var MKT_ALT = { es: 'Lonja provincial elegida (salida de silo)', en: 'Chosen provincial market (ex-silo)', fr: 'Marché provincial choisi (départ silo)', it: 'Piazza provinciale scelta (franco silo)' };
+  var MKTL = { es: ['Lonja', 'Media nacional', 'hasta'], en: ['Market', 'National average', 'until'], fr: ['Marché', 'Moyenne nationale', 'jusqu’en'], it: ['Piazza', 'Media nazionale', 'fino al'] };
   var MKT_GRADE = { es: 'Mercado de referencia (el país no publica media nacional)', en: 'Reference market (no national average published)', fr: 'Marché de référence (pas de moyenne nationale publiée)', it: 'Mercato di riferimento (nessuna media nazionale pubblicata)' };
   function lbl(s) { return cname(s.c) + (s.m ? ' · ' + s.m : ''); }  // mercado de referencia cuando el pais no publica media nacional
   function cname(c) { if (c === 'EU') return tt().eu; var ag = window.DIAgg && DIAgg.label(c, lang()); if (ag) return ag; try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(iso(c)) || c; } catch (e) { return c; } }
@@ -64,7 +66,9 @@
   var OLD_DAYS = 180;
   function refDate(p) { return p.series.reduce(function (a, s) { return s.latest[0] > a ? s.latest[0] : a; }, ''); }
   function isOld(s, p) { if (s.fs) return OKST.indexOf(s.fs) < 0; return (Date.parse(refDate(p)) - Date.parse(s.latest[0])) / 864e5 > OLD_DAYS; }
-  function sel() { var p = D.products[ST.p]; return ST.c.map(function (c) { return p.series.filter(function (s) { return s.c === c; })[0]; }).filter(function (s) { return s && (ST.old || !isOld(s, p)) && (ST.k === 'all' || s.comp === ST.k); }); }
+  /* Pais con varios mercados (España: lonjas provinciales del portal UE): por defecto la serie del pais; ST.m[c] elige otra */
+  function pick(p, c) { var b = p.series.filter(function (s) { return s.c === c; })[0], w = ST.m[c]; if (!b || !b.alts || !w || w === (b.m || '')) return b; var a = b.alts.filter(function (x) { return x.m === w; })[0]; if (a) a.alt = true; return a || b; }
+  function sel() { var p = D.products[ST.p]; return ST.c.map(function (c) { return pick(p, c); }).filter(function (s) { return s && (ST.old || !isOld(s, p)) && (ST.k === 'all' || s.comp === ST.k); }); }
   function chartHtml(list, p, t) {
     var mode = ST.u, per = p.per, ser = [], vf = {}, i = 0; SKIP = 0;
     var base = null;
@@ -105,7 +109,7 @@
   function ident(s) {
     var I = window.DIIdentity; if (!I || !I.data()) return null;
     if (s.iid) return I.get(s.iid);
-    var e = I.comparator(ST.p); return e ? { kind: 'price', concept: e.concept, product: e.product, form: e.form, grade: s.m ? MKT_GRADE : e.grade, stage: s.m ? 'silo_exit' : e.stage, market: { es: lbl(s), en: lbl(s), fr: lbl(s), it: lbl(s) }, location: null } : null;
+    var e = I.comparator(ST.p); return e ? { kind: 'price', concept: e.concept, product: e.product, form: e.form, grade: s.alt ? MKT_ALT : s.m ? MKT_GRADE : e.grade, stage: s.m ? 'silo_exit' : e.stage, market: { es: lbl(s), en: lbl(s), fr: lbl(s), it: lbl(s) }, location: null } : null;
   }
   function identLine(s) { var e = ident(s); return e ? '<div class="pt-ident">' + esc(window.DIIdentity.line(e, lang())) + '</div>' : ''; }
   function mixNote(list, t) {
@@ -159,10 +163,15 @@
     codes.sort(function (a, b) { var x = orderPref.indexOf(a), y = orderPref.indexOf(b); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y) || (a < b ? -1 : 1); });
     var h = '<div class="di-card" style="padding:14px 16px;margin-bottom:16px"><div style="display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin-bottom:10px"><label style="font-size:13px">' + esc(t.prod) + '<br><select id="cp-p" class="di-compare-select">' + Object.keys(D.products).map(function (k) { return '<option value="' + k + '"' + (k === ST.p ? ' selected' : '') + '>' + esc(D.products[k].label[lang()] || k) + '</option>'; }).join('') + '</select></label>' +
       '<label style="font-size:13px">' + esc(t.range) + '<br><select id="cp-r" class="di-compare-select">' + t.yrs.map(function (y, i) { return '<option value="' + i + '"' + (i === (ST.r_i != null ? ST.r_i : 3) ? ' selected' : '') + '>' + esc(y) + '</option>'; }).join('') + '</select></label></div>';
-    var byC = {}; p.series.forEach(function (s) { byC[s.c] = s; });
+    var byC = {}; p.series.forEach(function (s) { byC[s.c] = pick(p, s.c); });
     var fresh = codes.filter(function (c) { return !isOld(byC[c], p); }), hist = codes.filter(function (c) { return isOld(byC[c], p); });
     var chip = function (c) { var on = ST.c.indexOf(c) > -1, o = isOld(byC[c], p); return '<button type="button" data-c="' + c + '" aria-pressed="' + on + '" style="' + chipStyle(on) + (o ? ';opacity:.8' : '') + '">' + flag(c) + ' ' + esc(byC[c] ? lbl(byC[c]) : cname(c)) + (o ? ' <span style="font-size:11px;color:var(--text-faint)">· ' + esc(byC[c].latest[0].slice(0, 4)) + '</span>' : '') + '</button>'; };
-    h += '<div style="font-size:13px;margin-bottom:4px">' + esc(t.countries) + '</div><div role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '<span style="' + chipStyle(false) + ';cursor:default;border-style:dashed;color:var(--text-muted)" title="' + esc(t.au) + '">🇦🇺 ' + esc(cname('AU')) + ' · ' + esc(t.noprice) + '</span></div>';
+    h += '<div style="font-size:13px;margin-bottom:4px">' + esc(t.countries) + '</div><div role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '</div>';
+    /* selector de mercado para los paises marcados que tienen varios (p. ej. lonjas de España) */
+    var ML = MKTL[lang()] || MKTL.es;
+    ST.c.forEach(function (c) { var b = p.series.filter(function (s) { return s.c === c; })[0]; if (!b || !b.alts) return; var cur = (byC[c] && byC[c].m) || '';
+      var op = function (x, dflt) { var v = dflt ? (x.m || '') : x.m, nm = x.m || ML[1], old = isOld(x, p); return '<option value="' + esc(v) + '"' + (v === cur ? ' selected' : '') + '>' + esc(nm + (old ? ' (' + ML[2] + ' ' + x.latest[0].slice(0, 4) + ')' : '')) + '</option>'; };
+      h += '<label style="display:inline-flex;align-items:center;gap:8px;font-size:13px;margin:2px 0 8px">' + '<span style="white-space:nowrap">' + flag(c) + ' ' + esc(ML[0] + ' (' + cname(c) + ')') + '</span> <select data-mk="' + c + '" class="di-compare-select">' + op(b, true) + b.alts.map(function (x) { return op(x, false); }).join('') + '</select></label> '; });
     if (hist.length) {
       if (ST.old) h += '<div style="font-size:12px;color:var(--text-faint);margin-bottom:2px">' + esc(t.oldL) + '</div><div role="group" aria-label="' + esc(t.oldL) + '">' + hist.map(chip).join('') + '</div>';
       else if (ST.c.some(function (c) { return byC[c] && isOld(byC[c], p); })) h += '<div class="di-movers-hint" style="margin:0 0 6px">' + ST.c.filter(function (c) { return byC[c] && isOld(byC[c], p); }).map(function (c) { return flag(c) + ' ' + cname(c); }).join(', ') + ' — ' + esc(t.hiddenOld) + '. ' + esc(t.oldNote) + '</div>';
@@ -179,9 +188,9 @@
       h += '<div class="di-card" style="padding:12px 14px;margin-bottom:16px">' + table(list, p, t) + '</div>';
       h += '<p style="margin:-8px 0 14px"><button type="button" id="cp-csv" class="di-compare-select" style="cursor:pointer">' + esc(t.csvBtn) + '</button> <span class="di-movers-hint">' + esc(t.csvNote) + '</span></p>';
     }
-    h += '<p class="di-movers-hint">' + (ST.u === 'idx' ? esc(t.baseNote) + ' ' : '') + esc(t.fxNote) + ' ' + esc(t.fxMiss) + (SKIP ? ' <strong>' + SKIP + ' ' + esc(t.skipN) + '.</strong>' : '') + ' <a href="metodologia.html" style="color:inherit">' + esc(t.meth) + '</a></p><p class="di-movers-hint">' + esc(t.au) + '</p>';
+    h += '<p class="di-movers-hint">' + (ST.u === 'idx' ? esc(t.baseNote) + ' ' : '') + esc(t.fxNote) + ' ' + esc(t.fxMiss) + (SKIP ? ' <strong>' + SKIP + ' ' + esc(t.skipN) + '.</strong>' : '') + ' <a href="metodologia.html" style="color:inherit">' + esc(t.meth) + '</a></p>';
     root.innerHTML = h; bind(root, p);
-    try { var q = new URLSearchParams(); q.set('p', ST.p); q.set('c', ST.c.join(',')); q.set('u', ST.u); q.set('r', ST.r_i != null ? ST.r_i : 3); if (ST.old) q.set('f', 'all'); if (ST.k !== 'all') q.set('k', ST.k); history.replaceState(null, '', '?' + q.toString()); } catch (e) {}
+    try { var q = new URLSearchParams(); q.set('p', ST.p); q.set('c', ST.c.join(',')); q.set('u', ST.u); q.set('r', ST.r_i != null ? ST.r_i : 3); if (ST.old) q.set('f', 'all'); if (ST.k !== 'all') q.set('k', ST.k); var mk = Object.keys(ST.m).filter(function (c) { return ST.m[c]; }).map(function (c) { return c + ':' + ST.m[c]; }); if (mk.length) q.set('m', mk.join(',')); history.replaceState(null, '', '?' + q.toString()); } catch (e) {}
   }
   function bind(root, p) {
     root.querySelector('#cp-p').onchange = function (e) { ST.p = e.target.value; var codes = D.products[ST.p].series.map(function (s) { return s.c; }); var keep = ST.c.filter(function (c) { return codes.indexOf(c) > -1; }); ST.c = keep.length ? keep : ['ES', 'FR', 'DE', 'CA', 'US'].filter(function (c) { return codes.indexOf(c) > -1; }); render(); };
@@ -190,12 +199,13 @@
     var cb = root.querySelector('#cp-csv'); if (cb) cb.onclick = function () { downloadCsv(sel(), p); };
     root.querySelector('#cp-r').onchange = function (e) { ST.r_i = +e.target.value; render(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-c]'), function (b) { b.onclick = function () { var c = b.getAttribute('data-c'), i = ST.c.indexOf(c); if (i > -1) ST.c.splice(i, 1); else if (ST.c.length < 6) ST.c.push(c); render(); }; });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-mk]'), function (m) { m.onchange = function () { ST.m[m.getAttribute('data-mk')] = m.value; render(); var n = root.querySelector('[data-mk="' + m.getAttribute('data-mk') + '"]'); if (n) { try { n.focus({ preventScroll: true }); } catch (e) {} } }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-u]'), function (b) { b.onclick = function () { ST.u = b.getAttribute('data-u'); render(); }; });
   }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
-  var q = new URLSearchParams(location.search); if (q.get('h') === '1' || q.get('f') === 'all') ST.old = true; if (/^(exact|directional)$/.test(q.get('k') || '')) ST.k = q.get('k'); if (q.get('p')) ST.p = q.get('p'); if (q.get('c')) ST.c = q.get('c').toUpperCase().split(',').slice(0, 6); if (/^(orig|eur|usd|idx)$/.test(q.get('u') || '')) ST.u = q.get('u'); if (q.get('r') != null && /^[0-4]$/.test(q.get('r'))) ST.r_i = +q.get('r');
+  var q = new URLSearchParams(location.search); if (q.get('h') === '1' || q.get('f') === 'all') ST.old = true; if (/^(exact|directional)$/.test(q.get('k') || '')) ST.k = q.get('k'); if (q.get('p')) ST.p = q.get('p'); if (q.get('c')) ST.c = q.get('c').toUpperCase().split(',').slice(0, 6); if (/^(orig|eur|usd|idx)$/.test(q.get('u') || '')) ST.u = q.get('u'); (q.get('m') || '').split(',').forEach(function (x) { var i = x.indexOf(':'); if (i > 0) ST.m[x.slice(0, i).toUpperCase()] = x.slice(i + 1); }); if (q.get('r') != null && /^[0-4]$/.test(q.get('r'))) ST.r_i = +q.get('r');
   Promise.all([fetch('data/product-compare.json').then(function (r) { return r.json(); }), fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), (window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null), (window.DICite ? window.DICite.load() : null)]).then(function (a) {
     D = a[0]; FX = a[1]; window.DIUnits.setFx(FX);
     if (!D.products[ST.p]) ST.p = 'trigo'; render();

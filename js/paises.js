@@ -464,8 +464,8 @@
     if (psAll && psBody) { var fillAll = function () { if (psAll.open && !psBody.firstChild) psBody.innerHTML = allTbl(); }; psAll.addEventListener('toggle', fillAll); fillAll(); }
     var psS = document.getElementById('ps-s');
     if (psS && psS.options.length < list.length) { var fullS = function () { if (psS.options.length >= list.length) return; psS.innerHTML = list.map(optLabS).join(''); psS.value = ST.s; ['focus', 'pointerdown', 'touchstart', 'keydown', 'mouseenter'].forEach(function (ev) { psS.removeEventListener(ev, fullS); }); }; ['focus', 'pointerdown', 'touchstart', 'keydown', 'mouseenter'].forEach(function (ev) { psS.addEventListener(ev, fullS, { passive: true }); }); }
-    var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
-    var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; if (ST.fx) ST.real = false; build(); };
+    var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; var t0 = el.getBoundingClientRect().top; build(); holdAt(id, t0); var n = document.getElementById(id); if (n) { try { n.focus({ preventScroll: true }); } catch (er) {} } }; };
+    var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; if (ST.fx) ST.real = false; var t0 = fb.getBoundingClientRect().top; build(); holdAt('ps-fx', t0); };
     var rb = document.getElementById('ps-real'); if (rb) rb.onchange = function () { ST.real = rb.checked; if (ST.real) { ST.fx = false; if (!RCPI) { window.DehesaChart.real.load().then(function (d) { RCPI = d || false; build(); }); return; } } build(); };
     var wb = document.getElementById('ps-watch'); if (wb && cur) wb.onclick = function () { DIWatch.toggle(ST.c, cur.id); build(); };
     if (wb && cur && DIWatch.editor) { // avisos locales de esta serie (desplegable bajo el titulo del grafico)
@@ -476,6 +476,14 @@
     }
     Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } build(); var e = document.getElementById('ps-explorer'); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
         try { var qq = new URLSearchParams(window.location.search); qq.set('c', ST.c); ['g', 's', 'r'].forEach(function (k) { var v = ST[k]; if (v && v !== 'all' && !(k === 'r' && v === 'max')) qq.set(k, v); else qq.delete(k); }); history.replaceState(null, '', '?' + qq.toString() + window.location.hash); } catch (e) {} bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
+  }
+  /* Al cambiar un desplegable la ficha se repinta y los bloques de arriba se recargan: se mantiene el control en el mismo sitio de la pantalla
+     durante un segundo (hasta que la página termina de colocarse), salvo que el usuario se ponga a desplazarse. */
+  function holdAt(id, top) {
+    var stop = false, end = Date.now() + 1200, quit = function () { stop = true; };
+    ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { window.addEventListener(ev, quit, { passive: true, once: true }); });
+    var fix = function () { if (stop) return; var e = document.getElementById(id); if (e) { var d = e.getBoundingClientRect().top - top; if (Math.abs(d) > 1) window.scrollBy(0, d); } if (Date.now() < end) (window.requestAnimationFrame || setTimeout)(fix); };
+    fix();
   }
   function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
   window.DehesaShared.init('informacion');

@@ -45,17 +45,32 @@ def main():
                         print('compare %s %s: media nacional parada en %s; se usa el mercado %s' % (pid, c, (EPOCH + datetime.timedelta(days=r['d'][-1])).isoformat(), fb[2]))
                         r = dict(mr, _m=fb[2], _basis=mf.get('parts'))
                 regions.append(r)
-            for r in regions:
-                c = r['c']
+            def mk(r, ff):
                 raw = [((EPOCH + datetime.timedelta(days=d)).isoformat(), v) for d, v in zip(r['d'], r['v'])]
                 pts = monthly([(x[:7], v) for x, v in raw])
-                if len(pts) < 6: continue
-                u = f['unit']; kg = 1000.0 if u == '€/t' else 100.0
+                if len(pts) < 6: return None
+                u = ff['unit']; kg = 1000.0 if u == '€/t' else 100.0
                 n_last = sum(1 for x, _ in raw if x[:7] == pts[-1][0])
-                series.append({'c': c, 'cur': 'EUR', 'unit': u, 'kg': kg, 'freq': f['freq'], 'src': 'EU Agri-food Data Portal', 'sourceId': 'eu_agrifood', 'latest': [raw[-1][0], raw[-1][1]], 'points': pts, 'comp': 'directional',
-                               'aggregation': {'points': 'monthly_mean', 'of': f['freq'], 'lastMonthObs': n_last, 'latest': 'last_quote'}, 'fs': FR.evaluate(raw[-1][0], f['freq'], 'eu_agrifood', NOW)['state']})
+                o = {'c': r['c'], 'cur': 'EUR', 'unit': u, 'kg': kg, 'freq': ff['freq'], 'src': 'EU Agri-food Data Portal', 'sourceId': 'eu_agrifood', 'latest': [raw[-1][0], raw[-1][1]], 'points': pts, 'comp': 'directional',
+                     'aggregation': {'points': 'monthly_mean', 'of': ff['freq'], 'lastMonthObs': n_last, 'latest': 'last_quote'}, 'fs': FR.evaluate(raw[-1][0], ff['freq'], 'eu_agrifood', NOW)['state']}
                 if r.get('_m'):
-                    series[-1]['m'] = r['_m']; series[-1]['basis'] = ' - '.join(r['_basis'] or [])
+                    o['m'] = r['_m']; o['basis'] = ' - '.join(r['_basis'] or [])
+                return o
+            for r in regions:
+                c = r['c']; o = mk(r, f)
+                if not o: continue
+                series.append(o)
+                fb = cfg['fb'].get(c)
+                if fb:
+                    # el resto de mercados del pais (mismo portal, misma fase comercial): el comparador deja elegir entre ellos
+                    mf = json.loads((D / 'eu' / fb[0] / (fb[1] + '.json')).read_text())
+                    if mf['unit'] != f['unit']: continue
+                    alts = []
+                    for x in mf['regions']:
+                        if x['c'] != c or not x.get('m') or not x.get('d') or x['m'] == o.get('m'): continue
+                        a = mk(dict(x, _m=x['m'], _basis=mf.get('parts')), mf)
+                        if a: alts.append(a)
+                    if alts: o['alts'] = sorted(alts, key=lambda a: (-int(a['latest'][0][:4]), a['m']))
         for o in latest:
             if o['product'] != pid or o['region'] not in ('us', 'ca', 'uk') or o.get('status') != 'verified': continue
             if o['region'] == 'uk' and any(s['c'] == 'UK' for s in series): continue
