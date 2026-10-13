@@ -148,7 +148,8 @@
       arcCrop: 'Coltura', arcN: 'contee', arcPay: 'con pagamento', arcMax: 'tasso massimo', arcRate: 'Tasso ARC-CO', arcBm: 'Ricavo di riferimento', arcAct: 'Ricavo effettivo', arcGuar: 'Ricavo garantito', perBase: 'USD per acro di base', plcT: 'PLC: tasso nazionale di pagamento per unità', plcRate: 'Tasso PLC', plcRef: 'Prezzo di riferimento effettivo', plcMya: 'Prezzo medio di campagna', unitL: 'Unità', flagP: 'previsto', flagF: 'definitivo', county2: 'Contea', arcType: { Irrigated: 'irriguo', Nonirrigated: 'non irriguo', 'Non-Irrigated': 'non irriguo' }, arcNone: 'La FSA non ha ancora pubblicato i tassi per questa campagna.' }
   };
   Object.keys(T2).forEach(function (l) { var x = T[l]; if (!x) return; Object.keys(T2[l]).forEach(function (k) { x[k] = T2[l][k]; }); });
-  Object.keys(T).forEach(function (l) { var x = T[l]; x.usprices = x.usPr; x.usstocks = x.usSt; x.usslaughter = x.usSl; x.usdairy = x.usDa; x.usland = x.usLand; x.usincome = x.usIn; x.uscensus = x.usCe; });   // títulos de los bloques para el índice
+  Object.keys(T).forEach(function (l) { var x = T[l]; x.usprices = x.usPr; x.usstocks = x.usSt; x.usslaughter = x.usSl; x.usdairy = x.usDa; x.usland = x.usLand; x.usincome = x.usIn; x.uscensus = x.usCe; });
+  (function () { var N = { es: 'Estado de los cultivos', en: 'Crop condition', fr: 'État des cultures', it: 'Stato delle colture' }; Object.keys(N).forEach(function (l) { if (T[l]) T[l].uscprog = N[l]; }); })();   // títulos de los bloques para el índice
   window.DehesaRegionMore = function (H) {
     var get = H.get, card = H.card, cite = H.cite, table = H.table, nf = H.nf, esc = H.esc, tt = H.tt, day = H.day, pct = H.pct, dec = H.dec;
     function L(s) { var p = String(s).split('|'), i = IX[H.lang()]; return p[i == null ? 0 : i] || p[0]; }
@@ -541,11 +542,31 @@
         return card(T[0], T[1], table([T[2], T[3], T[4], T[5], T[6]], rows, 560) + link('lonjas.html?c=' + x.c, T[7]), cite('eu_agrifood', latest));
       });
     }
+    /* ---- EE. UU.: estado semanal de los cultivos en el estado (NASS Crop Progress, data/us-crop-progress/<ST>.json) ---- */
+    var CPN = { corn: 'Maíz|Corn|Maïs|Mais', soybeans: 'Soja|Soybeans|Soja|Soia', wheat_winter: 'Trigo de invierno|Winter wheat|Blé d’hiver|Frumento invernale', wheat_spring: 'Trigo de primavera|Spring wheat|Blé de printemps|Frumento primaverile', cotton: 'Algodón|Cotton|Coton|Cotone', sorghum: 'Sorgo|Sorghum|Sorgho|Sorgo', barley: 'Cebada|Barley|Orge|Orzo', rice: 'Arroz|Rice|Riz|Riso', oats: 'Avena|Oats|Avoine|Avena', peanuts: 'Cacahuete|Peanuts|Arachides|Arachidi' };
+    function cpAt(rows, we, tol) { var t = Date.parse(we), best = null, bd = 1e12; (rows || []).forEach(function (r) { var d = Math.abs(Date.parse(r[0]) - t); if (d < bd) { bd = d; best = r; } }); return best && bd <= tol * 864e5 ? best : null; }
+    function usCropProg(x) {
+      return get('data/us-crop-progress/' + x.r + '.json').then(function (d) {
+        if (!d || !d.crops) return null; var rows = [], latest = '', cutoff = new Date(Date.now() - 200 * 864e5).toISOString().slice(0, 10);
+        Object.keys(d.crops).forEach(function (k) {
+          var c = d.crops[k], ys = Object.keys(c.condition || {}).concat(Object.keys(c.progress || {})).sort(), Y = ys[ys.length - 1]; if (!Y) return;
+          var cr = c.condition && c.condition[Y], l = cr && cr[cr.length - 1], pr = cr && cr[cr.length - 2], ly = l && c.condition[String(+Y - 1)] ? cpAt(c.condition[String(+Y - 1)], new Date(Date.parse(l[0]) - 364 * 864e5).toISOString().slice(0, 10), 4) : null;
+          var stage = function (name) { var a = c.progress && c.progress[Y] && c.progress[Y][name]; if (!a || !a.length) return null; var q = a[a.length - 1], av = c.avg && c.avg[Y] && c.avg[Y][name], m = av ? cpAt(av, q[0], 0) : null; return { w: q[0], v: q[1], avg: m ? m[1] : null }; };
+          var pl = stage('planted'), hv = stage('harvested'), w = l ? l[0] : (hv ? hv.w : pl ? pl.w : ''); if (!w || w < cutoff) return;
+          var ge = l ? l[4] + l[5] : null, gp = pr ? pr[4] + pr[5] : null, gl = ly ? ly[4] + ly[5] : null; latest = latest > w ? latest : w;
+          var cell = function (o) { return o ? nf(o.v, 0) + ' %' + (o.avg != null ? ' ' + faint('(' + L('media|avg|moy.|media') + ' ' + nf(o.avg, 0) + ')') : '') : '—'; };
+          rows.push({ s: ge == null ? -1 : ge, r: [esc(L(CPN[k] || k)), esc(day(w)), ge == null ? '—' : '<b>' + nf(ge, 0) + ' %</b>', ge != null && gp != null ? (ge - gp > 0 ? '+' : ge - gp < 0 ? '−' : '') + nf(Math.abs(ge - gp), 0) + ' ' + L('pp|pp|pts|pp') : '—', gl != null ? nf(gl, 0) + ' %' : '—', cell(pl), cell(hv)] });
+        });
+        if (!rows.length) return null; rows.sort(function (a, b) { return b.s - a.s; });
+        return card(L('Estado de los cultivos|Crop condition|État des cultures|Stato delle colture'), L('Valoración semanal en el estado: % de la superficie en estado bueno o excelente, cambio frente a la semana anterior y mismo momento del año pasado, y avance de siembra y cosecha frente a la media de 5 años (USDA NASS, Crop Progress). Solo aparecen los cultivos que el NASS sigue en este estado.|Weekly state rating: % of acreage rated good or excellent, change from the previous week and from the same time last year, and planting and harvest progress against the 5-year average (USDA NASS, Crop Progress). Only the crops NASS tracks in this state appear.|Évaluation hebdomadaire dans l’État : % de la surface jugée bonne ou excellente, variation sur la semaine précédente et sur la même période l’an dernier, et avancement des semis et récoltes par rapport à la moyenne de 5 ans (USDA NASS, Crop Progress). Seules figurent les cultures suivies par le NASS dans cet État.|Valutazione settimanale nello Stato: % della superficie in condizioni buone o eccellenti, variazione sulla settimana precedente e sullo stesso periodo dell’anno scorso, e avanzamento di semine e raccolta rispetto alla media di 5 anni (USDA NASS, Crop Progress). Compaiono solo le colture seguite dal NASS in questo Stato.'),
+          table([L('Cultivo|Crop|Culture|Coltura'), L('Semana|Week ending|Semaine|Settimana'), L('Bueno o excelente|Good or excellent|Bon ou excellent|Buono o eccellente'), L('Frente a la semana anterior|vs previous week|vs semaine précédente|vs settimana precedente'), L('Año pasado|Last year|Année dernière|Anno scorso'), L('Sembrado|Planted|Semé|Seminato'), L('Cosechado|Harvested|Récolté|Raccolto')], rows.map(function (q) { return q.r; }), 720), cite('usda_nass', latest));
+      });
+    }
     var C = function (k, fn) { return [k, fn]; };
     return {
       T: T, us: { usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
       mods: {
-        US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('clim', clim)],
+        US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('uscprog', usCropProg), C('clim', clim)],
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', clim)],
@@ -554,7 +575,7 @@
         AT: [C('clim', clim)], IT: [C('eslonjas', esLonjas), C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
-      optional: { eslonjas: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1 }
+      optional: { eslonjas: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1, uscprog: 1 }
     };
   };
 })();

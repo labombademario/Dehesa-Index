@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-178 workflows (141 generados desde `sources.yml`, 37 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+179 workflows (141 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -279,6 +279,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-cash-bids.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-cash-bids.py | us-cash-bids/ingestion-status.json, us-cash-bids/manifest.json, us-cash-bids/reports.json … | finish, validate-files |
 | update-us-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-climate.py | us-climate-stats.json | finish, validate-files |
 | update-us-county-yields.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-county-yields.py | us-county/status.json | finish, validate-files |
+| update-us-crop-progress-states.yml | a mano | 2 veces/semana | update-us-crop-progress-states.mjs | us-crop-progress/*.json | finish, validate-files |
 | update-us-dairy.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-dairy.py | us-dairy.json | finish, validate-files |
 | update-us-ers.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-us-ers.py | us-ers-stats.json, us-ttb-stats.json | finish, validate-files |
 | update-us-kcfed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-kc-fed-ag-credit.py | us-kcfed-stats.json | finish, validate-files |

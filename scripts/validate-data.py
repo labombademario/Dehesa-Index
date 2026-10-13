@@ -153,6 +153,7 @@ def contract_targets(derived_only=False):
         if True:
             for f in sorted(DATA.glob(pat)):
                 if f.name in ("manifest.json",): continue
+                if str(f.relative_to(DATA)) in REG["files"]: continue
                 out.append((f, str(f.relative_to(DATA)), sch, tests))
     return out
 def validate_contract(path, rel, sch, tests):
