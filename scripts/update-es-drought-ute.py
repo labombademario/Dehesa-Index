@@ -49,15 +49,15 @@ def parse(txt):
                 vals = [float(x) for x in re.findall(FL, mm.group(3))]
                 if len(vals) > len(months): continue
                 v = vals[-1]
-                name = re.sub(r"\s+", " ", mm.group(2)).strip()
-                if not name:
+                uname = re.sub(r"\s+", " ", mm.group(2)).strip()
+                if not uname:
                     # nombre largo: el PDF lo parte en la linea de encima y la de debajo, en la columna del codigo (p. ej. «Cuencas afluentes al Ebro desde el Leza / hasta el Huecha»)
                     col = mm.start(1); bits = []
                     for j in (i - 1, i + 1):
                         seg = lines[j][col:].strip() if 0 <= j < len(lines) and len(lines[j]) > col else ""
                         if seg and not re.search(r"ES\d{3}_\d", seg) and not re.search(FL + r"\s*$", seg): bits.append(re.sub(r"\s+", " ", seg))
-                    name = re.sub(r"-\s+", "-", " ".join(bits)) or mm.group(1)   # «Noguera- / Ribagorzana» -> «Noguera-Ribagorzana»
-                row = {"code": mm.group(1), "name": name, "value": v, "months": months[-len(vals):], "series": vals}
+                    uname = re.sub(r"-\s+", "-", " ".join(bits)) or mm.group(1)   # «Noguera- / Ribagorzana» -> «Noguera-Ribagorzana»
+                row = {"code": mm.group(1), "name": uname, "value": v, "months": months[-len(vals):], "series": vals}
                 row["state"] = ("drought" if v < 0.3 else "none") if sec == "uts" else scenario(v)
                 d[sec].append(row)
             elif sec == "global":
