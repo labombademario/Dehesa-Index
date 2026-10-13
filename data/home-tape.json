@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T21:38:41Z",
+ "generatedAt": "2026-10-13T23:28:02Z",
  "sourceIds": [
   "eu_agrifood",
   "european_commission",
@@ -47,11 +47,11 @@
    "product": "trigo",
    "region": "ca",
    "sourceId": "statcan",
-   "observationDate": "2026-07",
-   "value": 298,
+   "observationDate": "2026-08",
+   "value": 302.26,
    "currency": "CAD",
    "unit": "tonelada",
-   "changePct": 2.9574,
+   "changePct": 1.4295,
    "market": [
     "Saskatchewan · precio pagado al productor",
     "Saskatchewan · price paid to farmers",
@@ -98,11 +98,11 @@
    "product": "maiz",
    "region": "ca",
    "sourceId": "statcan",
-   "observationDate": "2026-07",
-   "value": 261.78,
+   "observationDate": "2026-08",
+   "value": 267.26,
    "currency": "CAD",
    "unit": "tonelada",
-   "changePct": -0.8709,
+   "changePct": 2.1949,
    "market": [
     "Ontario · precio pagado al productor",
     "Ontario · price paid to farmers",

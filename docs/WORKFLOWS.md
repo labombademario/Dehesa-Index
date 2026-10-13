@@ -242,7 +242,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-wood-prices-de.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-prices-de.py | wood-prices-de.json | finish, validate-files |
 | update-wood-removals.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-removals.py | wood-removals.json | finish, validate-files |
 | update-worldbank-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-agri.py | worldbank-agri.json | finish, validate-files |
-| update-worldbank-urea.yml | a mano | mensual | qa-navigation.mjs, update-worldbank-urea-eu.py | - | price-engine, publish |
+| update-worldbank-urea.yml | a mano | diaria | qa-navigation.mjs, update-worldbank-urea-eu.py | - | price-engine, publish |
 | watchdog-cancelled-runs.yml | a mano | varias veces al dia | rerun-cancelled.py | - | - |
 
 ## PL
