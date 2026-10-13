@@ -1266,7 +1266,7 @@ def relationships(doc, errs, warns, stats):
                     _, loc, kind = k.split("/")
                     ser.append(RE.climate_series(json.loads((D / "climate-history.json").read_text(encoding="utf-8")), loc, kind)); continue
                 if side == "input" and k.startswith("S/"):
-                    st = next((x for x in json.loads((D / "series" / "CA" / "stocks.json").read_text(encoding="utf-8"))["series"] if x["id"] == k[2:]), None)
+                    st = next((x for f in sorted((D / "series" / "CA").glob("stocks*.json")) for x in json.loads(f.read_text(encoding="utf-8"))["series"] if x["id"] == k[2:]), None)   # el grupo puede ir en varios trozos
                     ser.append({int(a): b for a, b in st["points"] if isinstance(b, (int, float))} if st else None); continue
                 fh = D / "prices" / "history" / r[side]["region"] / (r[side]["product"] + ".json")
                 if not fh.exists(): errs.append("%s: falta el historico de %s" % (rid, k)); bad = True; break

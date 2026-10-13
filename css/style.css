@@ -2305,3 +2305,8 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 .di-home-reg-b:focus-visible{outline:2px solid #2f6b3a;outline-offset:2px}
 :root[data-theme="dark"] .di-home-reg-b.on{background:#1f3527;color:#e3f0e5}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .di-home-reg-b.on{background:#1f3527;color:#e3f0e5}}
+
+/* Rendimiento (13-oct-2026): las secciones de abajo no se maquetan hasta acercarse a la pantalla (la maqueta era el mayor coste de CPU en móvil).
+   contain-intrinsic-size reserva un alto aproximado para que la barra de desplazamiento no salte. */
+#home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot{content-visibility:auto;contain-intrinsic-size:auto 700px}
+@media print{#home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot{content-visibility:visible}}

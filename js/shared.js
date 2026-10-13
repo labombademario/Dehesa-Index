@@ -470,7 +470,7 @@
     root.innerHTML =
       '<header class="di-header">' +
         '<div class="di-header-inner">' +
-          '<a class="di-nav-logo" href="' + sitePath('index.html') + '"><img src="' + sitePath('assets/logo-nav.png') + '" width="116" height="100" alt="Dehesa Index"></a>' +
+          '<a class="di-nav-logo" href="' + sitePath('index.html') + '"><img src="' + sitePath('assets/logo-nav.webp') + '" width="116" height="100" alt="Dehesa Index"></a>' +
           '<nav class="di-nav-links">' + linksHtml + '</nav>' +
           '<div class="di-nav-side">' +
             quickLink('mi-mercado.html', 'mm', 'di-nav-cta di-nav-cta-d') +
@@ -618,7 +618,7 @@
       '<footer class="di-footer">' +
         '<div class="di-footer-grid">' +
           '<div data-nosnippet>' +
-            '<img src="' + sitePath('assets/logo-nav.png') + '" width="116" height="100" alt="Dehesa Index">' +
+            '<img src="' + sitePath('assets/logo-nav.webp') + '" width="116" height="100" alt="Dehesa Index">' +
             '<p>' + esc(t.blurb) + '</p>' +
           '</div>' +
           '<div>' +

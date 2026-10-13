@@ -156,7 +156,7 @@
   }
   function chipStyle(on) { return 'display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;padding:4px 11px;border:1px solid ' + (on ? '#2f6b3a' : 'var(--border)') + ';border-radius:999px;background:' + (on ? '#e3f0e5' : 'transparent') + ';color:' + (on ? '#1E3328' : 'inherit') + ';font:inherit;font-size:13px;cursor:pointer'; }
   function render() {
-    var root = document.getElementById('cmp-body'); if (!root || !D) return; var t = tt(), p = D.products[ST.p];
+    var root = document.getElementById('cmp-body'); if (!root || !D || !D.products[ST.p] || !D.products[ST.p].series) return; var t = tt(), p = D.products[ST.p];
     var h1 = document.getElementById('cp-h1'), sb = document.getElementById('cp-sub'); if (h1) h1.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     var list = sel(), codes = p.series.map(function (s) { return s.c; });
     var orderPref = ['ES', 'FR', 'DE', 'IT', 'NL', 'PL', 'DK', 'IE', 'UK', 'EU', 'CA', 'US'];
@@ -193,7 +193,7 @@
     try { var q = new URLSearchParams(); q.set('p', ST.p); q.set('c', ST.c.join(',')); q.set('u', ST.u); q.set('r', ST.r_i != null ? ST.r_i : 3); if (ST.old) q.set('f', 'all'); if (ST.k !== 'all') q.set('k', ST.k); var mk = Object.keys(ST.m).filter(function (c) { return ST.m[c]; }).map(function (c) { return c + ':' + ST.m[c]; }); if (mk.length) q.set('m', mk.join(',')); history.replaceState(null, '', '?' + q.toString()); } catch (e) {}
   }
   function bind(root, p) {
-    root.querySelector('#cp-p').onchange = function (e) { ST.p = e.target.value; var codes = D.products[ST.p].series.map(function (s) { return s.c; }); var keep = ST.c.filter(function (c) { return codes.indexOf(c) > -1; }); ST.c = keep.length ? keep : ['ES', 'FR', 'DE', 'CA', 'US'].filter(function (c) { return codes.indexOf(c) > -1; }); render(); };
+    root.querySelector('#cp-p').onchange = function (e) { ST.p = e.target.value; if (window.__cmpLoad(ST.p)) return; var codes = D.products[ST.p].series.map(function (s) { return s.c; }); var keep = ST.c.filter(function (c) { return codes.indexOf(c) > -1; }); ST.c = keep.length ? keep : ['ES', 'FR', 'DE', 'CA', 'US'].filter(function (c) { return codes.indexOf(c) > -1; }); render(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-f]'), function (b) { b.onclick = function () { ST.old = b.getAttribute('data-f') === 'all'; render(); }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-k]'), function (b) { b.onclick = function () { ST.k = b.getAttribute('data-k'); render(); }; });
     var cb = root.querySelector('#cp-csv'); if (cb) cb.onclick = function () { downloadCsv(sel(), p); };
@@ -206,7 +206,11 @@
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
   var q = new URLSearchParams(location.search); if (q.get('h') === '1' || q.get('f') === 'all') ST.old = true; if (/^(exact|directional)$/.test(q.get('k') || '')) ST.k = q.get('k'); if (q.get('p')) ST.p = q.get('p'); if (q.get('c')) ST.c = q.get('c').toUpperCase().split(',').slice(0, 6); if (/^(orig|eur|usd|idx)$/.test(q.get('u') || '')) ST.u = q.get('u'); (q.get('m') || '').split(',').forEach(function (x) { var i = x.indexOf(':'); if (i > 0) ST.m[x.slice(0, i).toUpperCase()] = x.slice(i + 1); }); if (q.get('r') != null && /^[0-4]$/.test(q.get('r'))) ST.r_i = +q.get('r');
-  Promise.all([fetch('data/product-compare.json').then(function (r) { return r.json(); }), fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), (window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null), (window.DICite ? window.DICite.load() : null)]).then(function (a) {
+  // Un fichero por producto (data/views/compare/<p>.json) y un índice ligero: solo se baja lo que se mira
+  var PC = {};
+  function loadP(k) { return PC[k] || (PC[k] = fetch('data/views/compare/' + k + '.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (x) { D.products[k] = x; return x; })); }
+  window.__cmpLoad = function (k) { if (D && D.products[k] && !D.products[k].series) { loadP(k).then(function () { var codes = D.products[k].series.map(function (s) { return s.c; }); var keep = ST.c.filter(function (c) { return codes.indexOf(c) > -1; }); ST.c = keep.length ? keep : ['ES', 'FR', 'DE', 'CA', 'US'].filter(function (c) { return codes.indexOf(c) > -1; }); render(); }); return true; } return false; };
+  Promise.all([fetch('data/views/compare/index.json').then(function (r) { return r.json(); }).then(function (ix) { var d = { products: ix.products }; if (!d.products[ST.p]) ST.p = 'trigo'; D = d; return loadP(ST.p).then(function () { return d; }); }), fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), (window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null), (window.DICite ? window.DICite.load() : null)]).then(function (a) {
     D = a[0]; FX = a[1]; window.DIUnits.setFx(FX);
     if (!D.products[ST.p]) ST.p = 'trigo'; render();
   }).catch(function () { var r = document.getElementById('cmp-body'); if (r) r.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });

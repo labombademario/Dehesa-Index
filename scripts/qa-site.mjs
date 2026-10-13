@@ -15,7 +15,7 @@ for(const product of ['trigo','maiz','leche','urea','diesel']){
  check(product+' landing -> calendar',c.includes('calendario.html?crop='));
 }
 const shared=await read('js/shared.js');
-check('nested footer logo uses sitePath',shared.includes("sitePath('assets/logo-nav.png')"));
+check('nested footer logo uses sitePath',shared.includes("sitePath('assets/logo-nav.webp')"));
 check('context bar exists',shared.includes('function renderContextBar'));
 check('context back uses history.back',shared.includes('window.history.back()'));
 

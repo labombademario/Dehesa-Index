@@ -44,7 +44,7 @@ STOCKN = {'ca-gb-canola-ending-stocks': L4('Existencias finales de colza (campa�
           'ca-gb-barley-ending-stocks': L4('Existencias finales de cebada (campaña ago-jul)', 'Barley ending stocks (Aug–Jul crop year)', 'Stocks finaux d’orge (campagne août-juil.)', 'Scorte finali di orzo (campagna ago-lug)'),
           'ca-gb-oats-ending-stocks': L4('Existencias finales de avena (campaña ago-jul)', 'Oats ending stocks (Aug–Jul crop year)', 'Stocks finaux d’avoine (campagne août-juil.)', 'Scorte finali di avena (campagna ago-lug)')}
 CLIM = json.loads((D / 'climate-history.json').read_text())
-STOCKS = {x['id']: x for x in json.loads((D / 'series' / 'CA' / 'stocks.json').read_text())['series']}
+STOCKS = {x['id']: x for f in sorted((D / 'series' / 'CA').glob('stocks*.json')) for x in json.loads(f.read_text())['series']}   # el grupo puede venir en varios trozos (stocks.json, stocks-2.json…)
 
 CH = {'fertilizer': L4('coste del fertilizante', 'fertiliser cost', 'coût des engrais', 'costo dei fertilizzanti'), 'energy': L4('coste de la energía', 'energy cost', 'coût de l’énergie', 'costo dell’energia'),
       'feed': L4('coste del pienso', 'feed cost', 'coût de l’alimentation animale', 'costo dei mangimi'), 'weather': L4('clima del mes', 'monthly weather', 'météo du mois', 'meteo del mese'), 'stocks': L4('existencias finales de la campaña', 'end-of-crop-year stocks', 'stocks de fin de campagne', 'scorte di fine campagna'),

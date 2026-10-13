@@ -45,7 +45,7 @@ for (const e of ok) for (const lang of LANGS) {
 ${alts}
 <link rel="alternate" hreflang="x-default" href="${SITE}/en/blog/${e.week}/">
 <meta property="og:type" content="article"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">${socialMeta(lang)}
-<link rel="icon" href="${up}assets/icon-192.png">
+<link rel="icon" href="${up}assets/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="${up}assets/icon-192.png">
 <link rel="stylesheet" href="${up}css/fonts.css">
 <link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>

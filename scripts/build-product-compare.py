@@ -105,6 +105,14 @@ def main():
             for a in s_.get('alts') or []:
                 if a.get('points'): a['points'] = despike(a['points'])
         doc['products'][pid] = {'label': cfg['label'], 'per': cfg['per'], 'series': sorted(series, key=lambda s: s['c'])}
+    # Vista para el navegador (optimización 13-oct-2026): un fichero por producto + índice. comparador.html solo baja el producto
+    # que se mira (antes, 426 KB con los seis productos). data/product-compare.json sigue completo para pruebas y otros scripts.
+    vd = D / 'views' / 'compare'; vd.mkdir(parents=True, exist_ok=True)
+    idx = {'schemaVersion': 1, 'products': {k: {'label': v['label'], 'per': v['per'], 'n': len(v['series'])} for k, v in doc['products'].items()}}
+    (vd / 'index.json').write_text(json.dumps(idx, ensure_ascii=False, separators=(',', ':')))
+    for k, v in doc['products'].items(): (vd / (k + '.json')).write_text(json.dumps(v, ensure_ascii=False, separators=(',', ':')))
+    for f in vd.glob('*.json'):
+        if f.stem != 'index' and f.stem not in doc['products']: f.unlink()
     path = D / 'product-compare.json'
     new = json.dumps(doc['products'], ensure_ascii=False, separators=(',', ':'))
     try:

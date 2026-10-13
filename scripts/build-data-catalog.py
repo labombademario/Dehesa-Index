@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib_index import ROOT, STATS, product_label
 import freshness as FR
-SHARD_MAX = 160_000  # trozos pequenos: un perfil de pais solo baja los que contienen sus cifras clave y la serie elegida
+SHARD_MAX = 60_000  # trozos pequenos (13-oct-2026: antes 160 KB): un perfil de pais baja solo los trozos de sus cifras clave; con 160 KB la ficha de Espana bajaba 4 trozos enteros (~170 KB comprimidos)
 from lib_tags import TAGS, tags
 EU_FAM = {'aceite': 'Olive oil', 'arroz': 'Rice', 'azucar': 'Sugar', 'cereales': 'Cereals', 'cerdo': 'Pigmeat', 'fertilizantes': 'Fertilisers', 'fruta': 'Fruit and vegetables', 'huevos': 'Eggs', 'lacteos': 'Dairy products', 'leche': 'Milk', 'oleaginosas': 'Oilseeds', 'ovino': 'Sheep meat', 'pollo': 'Poultry meat', 'vacuno': 'Beef', 'vino': 'Wine'}
 ISO_EN = {'AR': 'Argentina', 'CH': 'Switzerland', 'CL': 'Chile', 'AT': 'Austria', 'AU': 'Australia', 'BE': 'Belgium', 'BG': 'Bulgaria', 'CA': 'Canada', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DE': 'Germany', 'DK': 'Denmark', 'EE': 'Estonia', 'EL': 'Greece', 'ES': 'Spain', 'FI': 'Finland',

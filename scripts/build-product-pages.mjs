@@ -143,7 +143,7 @@ for (const lg of Object.keys(L)) {
 <link rel="canonical" href="${url}">
 ${alts}
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(seoDesc(desc))}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">${socialMeta(lg)}
-<link rel="icon" href="${up}assets/icon-192.png">
+<link rel="icon" href="${up}assets/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="${up}assets/icon-192.png">
 <link rel="stylesheet" href="${up}css/fonts.css">
 <link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>

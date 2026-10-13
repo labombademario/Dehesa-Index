@@ -1860,11 +1860,15 @@
     if (S.loadMarkets) S.loadMarkets().then(function (m) { if (m) renderAll(); });
     loadPublishedPrices();
     loadDieselCountries();
-    if (global.DINews) global.DINews.index().then(function (idx) {
-      if (!idx || !Object.keys(idx).length) return;
-      renderAll();
-      document.dispatchEvent(new CustomEvent('dehesa:news-ready'));
-    });
+    // Noticias (67 KB comprimidos): después de los precios, cuando el navegador esté libre. Antes competían con los datos de la primera pantalla.
+    var loadNews = function () {
+      if (global.DINews) global.DINews.index().then(function (idx) {
+        if (!idx || !Object.keys(idx).length) return;
+        renderAll();
+        document.dispatchEvent(new CustomEvent('dehesa:news-ready'));
+      });
+    };
+    PRICES_DONE.then(function () { if (global.requestIdleCallback) global.requestIdleCallback(loadNews, { timeout: 2500 }); else setTimeout(loadNews, 600); });
     S.onLangChange = function () { renderAll(); };
     maybeShowLocationWelcomeWhenFree();
   }

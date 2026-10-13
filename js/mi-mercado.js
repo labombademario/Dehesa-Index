@@ -708,7 +708,10 @@
   function ukRegions() { return UKD ? Object.keys(UKD.reg).filter(function (k) { return k !== 'united-kingdom'; }).sort(function (a, b) { return ukRegName(a).localeCompare(ukRegName(b), lang()); }) : []; }
   function atY(a, y) { if (a) for (var i = 0; i < a.length; i++) if (String(a[i][0]) === String(y)) return a[i][1]; return null; }
   function loadUK() {
-    return get('data/series/UK/crops_regions.json').then(function (d) {
+    // el grupo puede estar en varios trozos (crops_regions.json, crops_regions-2.json…): se bajan todos los que existan
+    var all = [];
+    function part(i) { return get('data/series/UK/crops_regions' + (i > 1 ? '-' + i : '') + '.json').then(function (d) { if (!d || !d.series) return; all = all.concat(d.series); return i < 8 ? part(i + 1) : null; }, function () { return null; }); }
+    return part(1).then(function () { if (!all.length) throw new Error('sin datos'); return { series: all }; }).then(function (d) {
       var ix = {}, reg = {}; d.series.forEach(function (s) { ix[s.id] = s.points; var m = /^uk-reg-(areas|yields|production)-(.+)$/.exec(s.id); if (!m) return; var nm = s.label.split(', ').slice(1).join(', ').replace(/ \([^)]*\)$/, ''), slug = null; UK_CROPS.forEach(function (c) { if (m[2].indexOf(c + '-') === 0 && (!slug || c.length > slug.length)) slug = c; }); if (slug) reg[m[2].slice(slug.length + 1)] = nm; });
       UKD = { ix: ix, reg: reg };
     });
