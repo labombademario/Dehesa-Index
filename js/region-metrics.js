@@ -29,7 +29,7 @@
     { id: 'output', ramp: G, unit: ' M EUR', label: ['Agricultural industry output (M EUR)', 'Producción de la rama agraria (M EUR)', 'Production de la branche agricole (M EUR)', 'Produzione del ramo agricolo (M EUR)'], dec: 0 },
     { id: 'uaa', ramp: G, unit: ' kha', label: ['Utilised agricultural area (thousand ha)', 'Superficie agraria útil (miles de ha)', 'Surface agricole utilisée (milliers d’ha)', 'Superficie agricola utilizzata (migliaia di ha)'], dec: 0 },
     { id: 'perha', ramp: G, unit: ' EUR/ha', label: ['Output per hectare of farmland (EUR/ha)', 'Producción por hectárea de superficie agraria (EUR/ha)', 'Production par hectare de surface agricole (EUR/ha)', 'Produzione per ettaro di superficie agricola (EUR/ha)'], dec: 0 }];
-  ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'UK'].forEach(function (c) { M[c] = EU; });
+  ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'HU', 'RO', 'SE', 'SI', 'UK'].forEach(function (c) { M[c] = EU; });
   // Reino Unido y Bulgaria: sin cuentas economicas regionales publicables (ver scripts/update-eurostat-regions.py): solo superficie
   M.UK = M.BG = EU.filter(function (m) { return m.id === 'uaa'; });
   M.AR = [

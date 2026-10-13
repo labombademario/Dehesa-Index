@@ -89,7 +89,7 @@ for (const [cc, m] of Object.entries(MP)) {
   const d = load('map/' + cc + '.json');
   ok(d.hash === m.hash && d.country === cc, 'map ' + cc + ': hash o codigo');
   ok(/^0 0 [\d.]+ [\d.]+$/.test(d.viewBox), 'map ' + cc + ': viewBox');
-  ok(d.regions.length >= (cc === 'LT' ? 2 : 3), 'map ' + cc + ': pocas regiones');   // Lituania: 2 regiones NUTS 2
+  ok(d.regions.length >= (cc === 'LT' || cc === 'SI' ? 2 : 3), 'map ' + cc + ': pocas regiones');   // Lituania: 2 regiones NUTS 2
   const ids = new Set(d.regions.map(r => r.id)); ok(ids.size === d.regions.length, 'map ' + cc + ': ids repetidos');
   d.regions.forEach(r => { four(r.name, 'map ' + cc + ' ' + r.id); ok(/^M[\d. -]+/.test(r.d) && r.d.length > 20, 'map ' + cc + ' ' + r.id + ': contorno'); });
   ok(d.metrics.length > 0, 'map ' + cc + ': sin metricas');
@@ -101,7 +101,7 @@ for (const [cc, m] of Object.entries(man.regionData || {})) {
   const d = load('region/' + cc + '.json'), mp = load('map/' + cc + '.json'), ids = new Set(mp.regions.map(r => r.id));
   ok(d.hash === m.hash && d.country === cc, 'region ' + cc + ': hash o codigo');
   ok(m.bytes < 250 * 1024, 'region ' + cc + ': fichero de mas de 250 KB (' + m.bytes + ')');
-  ok(Object.keys(d.regions).length >= (cc === 'LT' ? 2 : 3) && Object.keys(d.regions).every(k => ids.has(k)), 'region ' + cc + ': claves que no son regiones del mapa');
+  ok(Object.keys(d.regions).length >= (cc === 'LT' || cc === 'SI' ? 2 : 3) && Object.keys(d.regions).every(k => ids.has(k)), 'region ' + cc + ': claves que no son regiones del mapa');
   for (const [rid, r] of Object.entries(d.regions)) {
     for (const x of [...r.eaa, ...r.crops, ...r.animals]) four(d.labels[x.k], 'region ' + cc + ' ' + rid + ' ' + x.k);
     for (const x of r.eaa) ok(typeof x.value === 'number' && /^\d{4}$/.test(x.period), 'region ' + cc + ' ' + rid + ' ' + x.k + ': valor o periodo');

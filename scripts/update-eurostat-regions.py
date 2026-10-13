@@ -40,14 +40,20 @@ BG = {k: (k, [k]) for k in ("BG31", "BG32", "BG33", "BG34", "BG41", "BG42")}
 HR = {k: (k, [k]) for k in ("HR02", "HR03", "HR05", "HR06")}
 LT = {k: (k, [k]) for k in ("LT01", "LT02")}
 SK = {k: (k, [k]) for k in ("SK01", "SK02", "SK03", "SK04")}
+# Chequia (8), Hungria (8), Rumania (8), Suecia (8) y Eslovenia (2): regiones NUTS 2 (division 2021). Estonia y Letonia son una sola region NUTS 2: no tienen mapa.
+CZ = {k: (k, [k]) for k in ("CZ01", "CZ02", "CZ03", "CZ04", "CZ05", "CZ06", "CZ07", "CZ08")}
+HU = {k: (k, [k]) for k in ("HU11", "HU12", "HU21", "HU22", "HU23", "HU31", "HU32", "HU33")}
+RO = {k: (k, [k]) for k in ("RO11", "RO12", "RO21", "RO22", "RO31", "RO32", "RO41", "RO42")}
+SE = {k: (k, [k]) for k in ("SE11", "SE12", "SE21", "SE22", "SE23", "SE31", "SE32", "SE33")}
+SI = {k: (k, [k]) for k in ("SI03", "SI04")}
 # Reino Unido: las 12 regiones NUTS 1 (9 de Inglaterra, Gales, Escocia, Irlanda del Norte). Eurostat dejo de recibir datos del Reino Unido tras el Brexit:
 # lo que hay llega como mucho a 2019-2020 y la pagina lo dice; no se rellena nada.
 UK = {k: (k, [k]) for k in ("UKC", "UKD", "UKE", "UKF", "UKG", "UKH", "UKI", "UKJ", "UKK", "UKL", "UKM", "UKN")}   # solo el codigo NUTS 1 (con sus NUTS 2 la consulta excede el limite de la API)
-MIN_OK = {"ie": 0.0, "ch": 0.0, "uk": 0.0, "lt": 0.0, "fi": 0.0, "hr": 0.0, "bg": 0.0, "sk": 0.0}  # fraccion minima de regiones con datos completos; en el resto 0,9
+MIN_OK = {"ie": 0.0, "ch": 0.0, "uk": 0.0, "lt": 0.0, "fi": 0.0, "hr": 0.0, "bg": 0.0, "sk": 0.0, "cz": 0.0, "hu": 0.0, "ro": 0.0, "se": 0.0, "si": 0.0}  # fraccion minima de regiones con datos completos; en el resto 0,9
 # Puntos de la fuente descartados por error evidente. Gelderland y Flevoland (NL) tienen la produccion de patata de 2022 intercambiada en Eurostat
 # (807 y 255 mil t frente a ~260 y ~790 en los demas anios; la suma de ambas es normal): rendimiento de 128 y 14 t/ha. Se descarta la produccion de ese anio, no se corrige.
 EXCLUDE = {("NL", "GE", "R1000", 2022), ("NL", "FL", "R1000", 2022)}
-COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT, "be": BE, "dk": DK, "pl": PL, "pt": PT, "ie": IE, "ch": CH, "el": EL, "fi": FI, "bg": BG, "hr": HR, "lt": LT, "sk": SK, "uk": UK}
+COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT, "be": BE, "dk": DK, "pl": PL, "pt": PT, "ie": IE, "ch": CH, "el": EL, "fi": FI, "bg": BG, "hr": HR, "lt": LT, "sk": SK, "cz": CZ, "hu": HU, "ro": RO, "se": SE, "si": SI, "uk": UK}
 EAA = ["AM180000", "AM160000", "AM100000", "AM110000", "AM120000", "AM010000", "AM020000", "AM030000", "AM040000", "AM050000", "AM060000", "AM064000", "AM065000", "AM070000", "AM080000", "AM111000", "AM112000", "AM114000", "AM115000", "AM121000", "AM122000",
        "AM200000", "AM206000", "AM203000", "AM202000", "AM260000", "AM280000", "AM310000", "AM320000", "AM330000", "AM370000"]
 CROPS = ["UAA", "ARA", "J0000", "C0000", "C1110", "C1120", "C1200", "C1300", "C1400", "C1500", "R1000", "R2000", "I1110", "I1120", "I1130", "P0000", "G3000", "F0000", "T0000", "W1000", "O1000"]

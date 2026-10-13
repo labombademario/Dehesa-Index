@@ -58,7 +58,7 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0,
         return "".join(o)
     items = [{"id": i, "name": n, "d": p2(g)} for i, (n, g) in sorted(out.items())]
     js = "/* Contornos de " + label + " a partir de Natural Earth 1:10m (dominio publico); unidades administrativas disueltas por region. Generado por scripts/build-region-maps.py. */\nwindow." + var + " = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
-    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions", "PL": "pl-voivodeships", "PT": "pt-regions", "CH": "ch-regions", "IE": "ie-regions", "EL": "el-regions", "FI": "fi-regions", "BG": "bg-regions", "HR": "hr-regions", "LT": "lt-regions", "SK": "sk-regions", "UK": "uk-regions", "AR": "ar-provinces"}[cc]
+    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions", "PL": "pl-voivodeships", "PT": "pt-regions", "CH": "ch-regions", "IE": "ie-regions", "EL": "el-regions", "FI": "fi-regions", "BG": "bg-regions", "HR": "hr-regions", "LT": "lt-regions", "SK": "sk-regions", "CZ": "cz-regions", "HU": "hu-regions", "RO": "ro-regions", "SE": "se-regions", "SI": "si-regions", "UK": "uk-regions", "AR": "ar-provinces"}[cc]
     (ROOT / "vendor" / (fn + ".js")).write_text(js, encoding="utf-8"); print("vendor/%s.js" % fn, len(js), "bytes", len(items), "regiones, viewBox", "0 0 %d %s" % (W2, H2))
 ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
 FR_CODES = {"Auvergne-Rhône-Alpes": "ARA", "Bourgogne-Franche-Comté": "BFC", "Bretagne": "BRE", "Centre-Val de Loire": "CVL", "Corse": "COR", "Grand Est": "GES", "Hauts-de-France": "HDF", "Normandie": "NOR", "Nouvelle-Aquitaine": "NAQ", "Occitanie": "OCC", "Pays de la Loire": "PDL", "Provence-Alpes-Côte-d'Azur": "PAC", "Île-de-France": "IDF"}
@@ -100,6 +100,11 @@ europe_map("BG", _nuts("BG"), _ident("BG"), "name", "DEHESA_BG_REGIONS", "las 6 
 europe_map("HR", _nuts("HR"), _ident("HR"), "name", "DEHESA_HR_REGIONS", "las 4 regiones NUTS 2 de Croacia", 0.004)
 europe_map("LT", _nuts("LT"), _ident("LT"), "name", "DEHESA_LT_REGIONS", "las 2 regiones NUTS 2 de Lituania", 0.005)
 europe_map("SK", _nuts("SK"), _ident("SK"), "name", "DEHESA_SK_REGIONS", "las 4 regiones NUTS 2 de Eslovaquia", 0.004)
+europe_map("CZ", _nuts("CZ"), _ident("CZ"), "name", "DEHESA_CZ_REGIONS", "las 8 regiones NUTS 2 de Chequia", 0.004)
+europe_map("HU", _nuts("HU"), _ident("HU"), "name", "DEHESA_HU_REGIONS", "las 8 regiones NUTS 2 de Hungria", 0.004)
+europe_map("RO", _nuts("RO"), _ident("RO"), "name", "DEHESA_RO_REGIONS", "las 8 regiones NUTS 2 de Rumania", 0.005)
+europe_map("SE", _nuts("SE"), _ident("SE"), "name", "DEHESA_SE_REGIONS", "las 8 regiones NUTS 2 de Suecia", 0.01)
+europe_map("SI", _nuts("SI"), _ident("SI"), "name", "DEHESA_SI_REGIONS", "las 2 regiones NUTS 2 de Eslovenia", 0.003)
 _uk = [{"properties": {"name": f["properties"]["name"][:3]}, "geometry": f["geometry"]} for f in _nuts("UK")]
 europe_map("UK", _uk, {k: k for k in ("UKC", "UKD", "UKE", "UKF", "UKG", "UKH", "UKI", "UKJ", "UKK", "UKL", "UKM", "UKN")}, "name", "DEHESA_UK_REGIONS", "las 12 regiones NUTS 1 del Reino Unido", 0.008)
 

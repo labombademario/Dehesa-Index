@@ -4083,6 +4083,31 @@
     "eurostat"
    ]
   },
+  "data/eu-regions-cz.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-hu.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-ro.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-se.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-si.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
   "data/eu-regions-uk.json": {
    "sources": [
     "eurostat"

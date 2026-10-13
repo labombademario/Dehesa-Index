@@ -155,7 +155,7 @@ def region_metrics():
         c = d['lastCampaign']
         for crop in ('soja', 'maiz', 'trigo'):
             put('AR', crop, {k: v[crop][c][2] / 1000 for k, v in d['provinces'].items() if v.get(crop, {}).get(c) and v[crop][c][2] > 0}, c, 'ar-provinces.json')
-    for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'UK'):
+    for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'HU', 'RO', 'SE', 'SI', 'UK'):
         f = 'eu-regions-%s.json' % cc.lower(); d = load(f); vo = {}; vu = {}; vp = {}; po = pu = pp = ''
         for k, b in (d.get('regions') or {}).items():
             o = (b.get('eaa') or {}).get('AM180000'); ua = ((b.get('crops') or {}).get('UAA') or {}).get('area')
