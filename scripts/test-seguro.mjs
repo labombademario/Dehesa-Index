@@ -41,7 +41,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': estados: 10 filas y el primero es el mayor capital asegurado', (tb['us-states'] || []).length === 10 && (tb['us-states'][0][0] || '').startsWith(top(D.states, 0)[0] + ' ·'));
   ok(tag + ': cultivos: 10 filas y el primero es el mayor capital asegurado', (tb['us-crops'] || []).length === 10 && (tb['us-crops'][0][0] || '') === top(D.crops, 0)[0]);
   const ck = Object.keys(D.causeIndemnity).filter(k => D.causeIndemnity[k][y]);
-  ok(tag + ': causas: ' + Math.min(8, ck.length) + ' filas, la primera es la mayor indemnizacion', (tb['us-causes'] || []).length === Math.min(8, ck.length) && (tb['us-causes'][0][0] || '') === ck.sort((a, b) => D.causeIndemnity[b][y] - D.causeIndemnity[a][y])[0]);
+  ok(tag + ': causas: ' + Math.min(8, ck.length) + ' filas, la primera es la mayor indemnizacion', (tb['us-causes'] || []).length === Math.min(8, ck.length) && (tb['us-causes'][0][1] || '').includes(grp(D.causeIndemnity[ck.sort((a, b) => D.causeIndemnity[b][y] - D.causeIndemnity[a][y])[0]][y] / 1e6, sep)));   // el nombre sale traducido: se compara la cifra de la primera fila con el maximo
   ok(tag + ': serie anual de EE. UU.: ' + D.cropYears.length + ' filas, la primera es el ultimo año', (tb['us-trend'] || []).length === D.cropYears.length && (tb['us-trend'][0][0] || '').startsWith(String(D.cropYears[D.cropYears.length - 1])));
   ok(tag + ': EE. UU. con cita', await page.evaluate(() => document.querySelectorAll('#pr-category .di-cite').length >= 1));
   if (w === 390) ok(tag + ' us: sin desborde horizontal', await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1));
