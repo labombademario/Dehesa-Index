@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-13T22:55:12.796Z",
+  "generatedAt": "2026-10-13T22:57:52.651Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -4800,7 +4800,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:07.855Z",
+      "verifiedAt": "2026-10-13T22:57:45.311Z",
       "comparability": "directional",
       "value": 12.8,
       "currency": "USD",
@@ -7609,7 +7609,7 @@
           "value": 12.8
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_avena_pienso_ab_ca",
@@ -13381,7 +13381,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:12.336Z",
+      "verifiedAt": "2026-10-13T22:57:47.011Z",
       "comparability": "directional",
       "value": 3.02,
       "currency": "USD",
@@ -16190,7 +16190,7 @@
           "value": 3.02
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_azucar_azucar_eu",
@@ -23693,7 +23693,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:10.429Z",
+      "verifiedAt": "2026-10-13T22:57:46.235Z",
       "comparability": "directional",
       "value": 5.55,
       "currency": "USD",
@@ -26502,7 +26502,7 @@
           "value": 5.55
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_centeno_eu",
@@ -35494,7 +35494,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:25.280Z",
+      "verifiedAt": "2026-10-13T22:57:50.786Z",
       "comparability": "not_comparable",
       "value": 70.5,
       "currency": "USD",
@@ -38303,7 +38303,7 @@
           "value": 70.5
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_colza_ca",
@@ -42274,7 +42274,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:15.214Z",
+      "verifiedAt": "2026-10-13T22:57:47.622Z",
       "comparability": "directional",
       "value": 25.7,
       "currency": "USD",
@@ -43423,7 +43423,7 @@
           "value": 25.7
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_ovino_cordero_ca",
@@ -94971,7 +94971,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:22.970Z",
+      "verifiedAt": "2026-10-13T22:57:49.957Z",
       "comparability": "directional",
       "value": 0.77,
       "currency": "USD",
@@ -96525,7 +96525,7 @@
           "value": 0.77
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_lacteos_leche_polvo_eu",
@@ -108866,7 +108866,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:20.013Z",
+      "verifiedAt": "2026-10-13T22:57:49.227Z",
       "comparability": "directional",
       "value": 19.8,
       "currency": "USD",
@@ -111675,7 +111675,7 @@
           "value": 19.8
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_lenteja_laird_ab_ca",
@@ -122359,7 +122359,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:05.278Z",
+      "verifiedAt": "2026-10-13T22:57:44.529Z",
       "comparability": "directional",
       "value": 4.45,
       "currency": "USD",
@@ -125168,7 +125168,7 @@
           "value": 4.45
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_lacteos_mantequilla_eu",
@@ -164783,7 +164783,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:30.013Z",
+      "verifiedAt": "2026-10-13T22:57:52.387Z",
       "comparability": "not_comparable",
       "value": 0.65,
       "currency": "USD",
@@ -166932,7 +166932,7 @@
           "value": 0.65
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_fertilizantes_potasa_eu",
@@ -169528,7 +169528,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:17.688Z",
+      "verifiedAt": "2026-10-13T22:57:48.322Z",
       "comparability": "directional",
       "value": 7.7,
       "currency": "USD",
@@ -172337,7 +172337,7 @@
           "value": 7.7
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_cereales_trigo_cwrs_ab_ca",
@@ -176425,7 +176425,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:02.906Z",
+      "verifiedAt": "2026-10-13T22:57:43.587Z",
       "comparability": "directional",
       "value": 6.23,
       "currency": "USD",
@@ -179234,7 +179234,7 @@
           "value": 6.23
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     },
     {
       "id": "di_fertilizantes_urea_eu",
@@ -189398,7 +189398,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-10-05T12:16:28.413Z",
+      "verifiedAt": "2026-10-13T22:57:51.800Z",
       "comparability": "not_comparable",
       "value": 234,
       "currency": "USD",
@@ -192207,7 +192207,7 @@
           "value": 234
         }
       ],
-      "snapshotDate": "2026-10-05"
+      "snapshotDate": "2026-10-13"
     }
   ]
 }
