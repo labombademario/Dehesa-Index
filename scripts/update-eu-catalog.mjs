@@ -46,7 +46,9 @@ const NAT = /^National Average/;
 export const FAMILIES = {
   cereales: { endpoint: 'cereal', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.productName, r.stageName], region: r => r.memberStateCode, market: r => r.marketName,
-    keep: r => NAT.test(r.stageName || '') || (r.memberStateCode === 'ES' && /^Departure from silo/.test(r.stageName || '')) },
+    // Desde la campaña 2026/27 la Comisión ya no publica la media nacional de cereales: solo mercados concretos (Bolonia, Wels, Rouen…).
+    // Se guardan todos los mercados de todos los países, cada uno con su nombre (13-oct-2026, decisión de Mario), además de la media nacional histórica.
+    keep: r => NAT.test(r.stageName || '') || !!clean(r.marketName), namedMarkets: true },
   oleaginosas: { endpoint: 'oilseeds', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.product, r.productType, r.marketStage], region: r => r.memberStateCode, market: r => r.market },
   lacteos: { endpoint: 'dairy', freq: 'weekly', since: '01/01/2015', date: 'endDate',
@@ -152,7 +154,8 @@ export function buildFamily(rows, fam, today) {
   for (const [key, s] of series) {
     const regions = [];
     for (const c of s.cells.values()) {
-      const multi = s.markets.get(c.c).size > 1;
+      // en cereales un mercado concreto lleva siempre su nombre, aunque sea el único de su país (no es la media nacional)
+      const multi = s.markets.get(c.c).size > 1 || (!!fam.namedMarkets && !!c.m && !/national|average|moyenne|nacional/i.test(c.m));
       const pts = [...c.pts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
       if (!pts.length) continue;
       regions.push({ c: c.c, m: multi ? c.m : '', pts });
