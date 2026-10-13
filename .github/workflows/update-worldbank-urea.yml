@@ -2,7 +2,7 @@ name: Dehesa Data — World Bank urea EU
 
 on:
   schedule:
-    - cron: '0 13 3 * *'
+    - cron: '0 13 * * *'   # a diario: el snapshot de cada dia lleva la urea (el dato es mensual, pero latest.json se reconstruye solo con los snapshots que quedan tras la poda)
   workflow_dispatch:
 
 permissions:
