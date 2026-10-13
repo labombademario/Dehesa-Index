@@ -95,5 +95,5 @@
       draw();
     });
   }
-  window.DITradePartners = { mount: mount };
+  window.DITradePartners = { mount: mount, label: function (k, lang) { return (P[lang] || P.es)[k] || null; } };
 })();
