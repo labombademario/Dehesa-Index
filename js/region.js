@@ -169,7 +169,7 @@
         var rows = [];
         ks.forEach(function (k, i) {
           var d = sh[i]; if (!d || !d.series) return; var last = ''; d.series.forEach(function (s) { if (s.date > last) last = s.date; });
-          var v = d.series.filter(function (s) { return s.date === last && s.avg != null && s.freshness === 'LIVE'; }).map(function (s) { return s.avg; }); if (!v.length) return;
+          var v = d.series.filter(function (s) { return s.date === last && s.avg != null && /^(LIVE|FRESH|EXPECTED_DELAY)$/.test(s.freshness); }).map(function (s) { return s.avg; }); if (!v.length) return;
           var lo = Math.min.apply(null, v), hi = Math.max.apply(null, v), u = d.series[0].unit || '';
           rows.push([esc((LBL.grain[k] || [m.commodities[k] ? m.commodities[k].name : k])[li()] || k), lo === hi ? nf(lo, 2) : nf(lo, 2) + ' – ' + nf(hi, 2), esc('USD/' + u), esc(day(last)), String(v.length)]);
         });
