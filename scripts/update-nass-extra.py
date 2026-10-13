@@ -91,7 +91,7 @@ def metric_of(sc, sd, unit):
     if sc == 'ASSET VALUE' and unit == 'USD/acre': return ('asset value', 'inputs')
     if sc == 'EXPENSE' and unit == 'USD/acre': return ('cash rent', 'inputs')
     if sc == 'OPERATIONS' and unit == 'operations': return ('number of operations', 'production')
-    if sc in ('ACRES OPERATED', 'AREA OPERATED'): return ('acres operated' if unit == 'acres' else 'average size', 'production')
+    if sc in ('ACRES OPERATED', 'AREA OPERATED'): return ('average size', 'production') if unit == 'acres/operation' else (('acres operated', 'production') if unit == 'acres' else None)
     if sc == 'PLACEMENTS' and unit == 'head': return ('placements', 'production')
     if sc == 'HATCHED' and unit == 'head': return ('hatched', 'production')
     if sc in ('AREA BEARING', 'AREA HARVESTED', 'AREA PLANTED'): return (sc.lower(), 'crops')
@@ -129,6 +129,7 @@ def build():
             unit, q = unit_of(mm.group(2) or '')
             if not unit and not mm.group(2) and r['statisticcat_desc'] in ('AREA BEARING', 'AREA HARVESTED', 'AREA PLANTED', 'ACRES OPERATED'): unit = 'acres'
             if not unit and not mm.group(2) and r['statisticcat_desc'] == 'OPERATIONS': unit = 'operations'
+            if not unit and not mm.group(2) and r['statisticcat_desc'] == 'AREA OPERATED': unit = 'acres'
             if mm.group(2) and not unit: continue
             sc = r['statisticcat_desc']; met = metric_of(sc, sd, unit)
             if not met: continue
