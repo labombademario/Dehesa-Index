@@ -2,7 +2,8 @@
    ES5, sin librerías. Uso: DIProfile.html(cc, country, ctx) devuelve el HTML; ctx = { lang, t, groups, esc, nf, dec, plabel }. */
 (function () {
   var NOTRADE = { es: 'Todavía no hay cifras de comercio exterior de este país en Dehesa Index.', en: 'Dehesa Index does not show foreign-trade figures for this country yet.', fr: 'Dehesa Index n’affiche pas encore de chiffres de commerce extérieur pour ce pays.', it: 'Dehesa Index non mostra ancora cifre del commercio estero per questo paese.' };
-  var SELN = { es: 'Suma de los productos agrarios que seguimos (cereales, oleaginosas, carnes, lácteos, huevos, fruta, vino…), no el total agroalimentario. Total de 12 meses.', en: 'Sum of the farm products we track (grains, oilseeds, meat, dairy, eggs, fruit, wine…), not total agri-food trade. 12-month total.', fr: 'Somme des produits agricoles que nous suivons (céréales, oléagineux, viandes, produits laitiers, œufs, fruits, vin…), pas le total agroalimentaire. Total sur 12 mois.', it: 'Somma dei prodotti agricoli che seguiamo (cereali, semi oleosi, carni, latticini, uova, frutta, vino…), non il totale agroalimentare. Totale su 12 mesi.' };
+  var SELN = { es: 'Suma de los productos agrarios que seguimos (cereales, oleaginosas, carnes, lácteos, huevos, fruta, vino…), no el total agroalimentario. ', en: 'Sum of the farm products we track (grains, oilseeds, meat, dairy, eggs, fruit, wine…), not total agri-food trade. ', fr: 'Somme des produits agricoles que nous suivons (céréales, oléagineux, viandes, produits laitiers, œufs, fruits, vin…), pas le total agroalimentaire. ', it: 'Somma dei prodotti agricoli che seguiamo (cereali, semi oleosi, carni, latticini, uova, frutta, vino…), non il totale agroalimentare. ' };
+  var SEL12 = { es: ' Total de 12 meses.', en: ' 12-month total.', fr: ' Total sur 12 mois.', it: ' Totale su 12 mesi.' };
   var FLAG = { US: '🇺🇸', EU: '🇪🇺', ES: '🇪🇸', FR: '🇫🇷', DE: '🇩🇪', BE: '🇧🇪', AT: '🇦🇹', PT: '🇵🇹', IT: '🇮🇹', DK: '🇩🇰', NL: '🇳🇱', CA: '🇨🇦', AU: '🇦🇺', UK: '🇬🇧', PL: '🇵🇱', EL: '🇬🇷', IE: '🇮🇪', FI: '🇫🇮', BG: '🇧🇬', HR: '🇭🇷', LT: '🇱🇹', SK: '🇸🇰', CZ: '🇨🇿', EE: '🇪🇪', HU: '🇭🇺', LV: '🇱🇻', RO: '🇷🇴', SE: '🇸🇪', SI: '🇸🇮', CH: '🇨🇭', AR: '🇦🇷', CL: '🇨🇱' };
   var T = {
     es: { overview: 'Perfil del país', kpi: 'Indicadores clave', explore: 'Qué puedes explorar', go: 'Explorar', series: 'series', last: 'Último dato', dest: 'Principales destinos', orig: 'Principales orígenes', trade: 'Comercio agroalimentario', from: 'Datos desde', to: 'hasta', sources: 'Fuentes', cover: 'Cobertura', exploreTitle: 'Explorar los datos de', examples: 'Por ejemplo', freq: 'Frecuencias', total: 'series en', cats: 'categorías', yr: 'último año completo', since: 'desde', hint: 'Elige una categoría para filtrar el explorador de abajo.' },
@@ -23,7 +24,7 @@
   // KPI elegidos a mano por país (expresiones sobre el id de la serie; se toma la de mayor puntuación que case).
   var PICKS = {
     US: ['^us-nass-corn-grain-production-m', '^us-nass-soybeans-production-m', '^us-nass-cattle-incl-calves-inventory-', '^us-nass-milk-production-m', '^us-nass-farm-sector-prices-paid-index', '^us-policy-rate$'],
-    EU: ['^eu-policy-rate$'],
+    EU: ['^eu-policy-rate$', '^eu-extra-trade-exp-agrifood$', '^eu-extra-trade-imp-agrifood$', '^eu-extra-trade-bal-agrifood$'],
     ES: ['^es-perc-leche-vaca$', '^es-perc-trigo$', '^es-perc-aceite$', '^es-perc-(cerdo|porcino)', '^eu-es-trade-exp-agrifood$', '^eu-es-trade-bal-agrifood$'],
     FR: ['^fr-meat-porc-e$', '^fr-cot-soft-wheat-rouen-fcw-1-fob$', '^fr-meat-(jeune|vache|gros|bovin|jb)', '^eu-fr-trade-exp-agrifood$', '^eu-fr-trade-bal-agrifood$'],
     DE: ['^de-milk-abhof-std-bayern-konventionell$', '^de-.*(schwein|pig|hog)', '^de-.*(cattle|rind|bovine)', '^eu-de-trade-exp-agrifood$', '^eu-de-trade-bal-agrifood$'],
@@ -266,7 +267,7 @@
         var pieH = window.DehesaChart && window.DehesaChart.pie ? window.DehesaChart.pie({ items: l.map(function (s) { return { name: nmOf(s), v: s.latest }; }), unit: l[0].unit, centerLabel: PL[2], maxN: 4, minShare: 0 }) : '';
         var body = pieH && window.DehesaChart.switcher ? window.DehesaChart.switcher({ line: bars, pie: pieH, lineLabel: PL[0], pieLabel: PL[1] }) : bars;
         return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(l[0].unit) + ', ' + esc(x.plabel(l[0].latestPeriod, l[0].frequency)) + '</span></div>' +
-          body + (/selected agri-food/.test(l[0].label) ? '<div class="di-movers-hint" style="margin:6px 0 0">' + esc(SELN[x.lang] || SELN.es) + '</div>' : '') + CITE(l[0]) + '</div>';
+          body + (/selected agri-food/.test(l[0].label) ? '<div class="di-movers-hint" style="margin:6px 0 0">' + esc((SELN[x.lang] || SELN.es).trim() + (/12-month/.test(l[0].label) ? (SEL12[x.lang] || SEL12.es) : '')) + '</div>' : '') + CITE(l[0]) + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
       if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
