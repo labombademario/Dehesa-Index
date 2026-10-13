@@ -62,7 +62,8 @@
     b += '<div class="di-cite-a"><a href="legal.html#licencias">' + esc(t.all) + '</a></div>';
     return '<details class="di-cite" data-src="' + esc(id) + '"><summary><span class="di-cite-i" aria-hidden="true">ⓘ</span> ' + line + '</summary><div class="di-cite-b">' + b + '</div></details>';
   }
-  function clean(x) { return String(x).replace(/\s*\((?:online data code|código)?:?\s*<[^>]*>\)/gi, '').replace(/,?\s*<[^>]*>/g, '').replace(/\s{2,}/g, ' ').replace(/\s+([.,])/g, '$1').trim(); }
+  // La atribución ya va bajo su rótulo traducido («Attribution»…): fuera del español se quita el «Fuente:» inicial, que se leía en español.
+  function clean(x) { return String(x).replace(lang() === 'es' ? /^$/ : /^\s*Fuente\s*:\s*/i, '').replace(/\s*\((?:online data code|código)?:?\s*<[^>]*>\)/gi, '').replace(/,?\s*<[^>]*>/g, '').replace(/\s{2,}/g, ' ').replace(/\s+([.,])/g, '$1').trim(); }
   function derived(ids, o) {
     o = o || {}; var t = tx(), seen = {}, names = [], rows = '';
     (ids || []).forEach(function (id) { var e = entry(id); if (!e || seen[e.name]) return; seen[e.name] = 1; names.push(shortName(e)); rows += row(t.src, link(e.url, e.name)) + (e.attributionText ? row(t.att, esc(clean(e.attributionText))) : ''); });

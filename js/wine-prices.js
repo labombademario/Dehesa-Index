@@ -119,7 +119,11 @@
   function render(el) {
     if (!el) return;
     load().then(function (d) {
-      if (!d || !d.es || !d.fr || !d.es.weeks.length) return;   // se queda la version estatica
+      if (!d || !d.es || !d.fr || !d.es.weeks.length) {
+        var w = el.querySelector('[data-wp-loading]');
+        if (w) w.textContent = ({ es: 'No se han podido cargar los precios del vino. Vuelve a intentarlo más tarde.', en: 'Wine prices could not be loaded. Please try again later.', fr: 'Les prix du vin n’ont pas pu être chargés. Réessayez plus tard.', it: 'Non è stato possibile caricare i prezzi del vino. Riprova più tardi.' })[lang()] || '';
+        return;
+      }
       var lg = lang(), t = T[lg], state = { type: 'vsig_var' };
       var a = esCard(d, lg, state), f = frCard(d, lg, state.type);
       var src = '<div class="di-field-hint di-info-sources">' + esc(t.src) + ' <a href="' + esc(d.es.source.url) + '" target="_blank" rel="noopener noreferrer">MAPA</a> · <a href="' + esc(d.fr.source.url) + '" target="_blank" rel="noopener noreferrer">FranceAgriMer</a></div>';

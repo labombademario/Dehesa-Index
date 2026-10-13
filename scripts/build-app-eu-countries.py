@@ -39,9 +39,31 @@ SRC = 'Comisión Europea · Agri-food'
 
 def t4(s): return dict(zip(L4, s.split('|')))
 
+STALE = {'weekly': 21, 'monthly': 62}   # dias: mas viejo que esto, la app lo rotula como «último dato de …» (fin de campaña, retraso del país)
+
+def despike(pts):
+    """Quita picos aislados (un punto que se aleja más de un 35 % de dos vecinos que coinciden entre sí): son errores de carga del país.
+    Devuelve (puntos limpios, nº de picos)."""
+    out, n = [], 0
+    for i, p in enumerate(pts):
+        if 0 < i < len(pts) - 1:
+            a, b, c = pts[i - 1][1], p[1], pts[i + 1][1]
+            if a and c and abs(a / c - 1) < 0.15 and abs(b / ((a + c) / 2) - 1) > 0.35: n += 1; continue
+        out.append(p)
+    return out, n
+
+def erratic(pts, spikes):
+    """Serie de un mercado tan estrecho que el precio salta de una semana a otra sin sentido: mediana de los cambios del último medio año > 7 %
+    o cinco picos o más en dos años. No se enseña: un precio así no informa al agricultor."""
+    v = [x[1] for x in pts if x[1]]
+    ch = [abs(b / a - 1) for a, b in zip(v, v[1:]) if a][-26:]
+    if not ch: return False
+    ch.sort(); med = ch[len(ch) // 2]
+    return med > 0.07 or spikes >= 5
+
 def main():
     today = datetime.date.today()
-    fams, files, out = {}, {}, {}
+    fams, files, out, dropped = {}, {}, {}, []
     for pid, fam, sids, nm, un, _div in P:
         if fam not in fams: fams[fam] = json.loads((D / 'eu' / (fam + '.json')).read_text())
         idx = {s['id']: s for s in fams[fam]['series']}
@@ -58,12 +80,18 @@ def main():
                 pts = [[(EPOCH + datetime.timedelta(days=dd)).isoformat(), v] for dd, v in zip(fr['d'], fr['v'])] if fr else []
                 cut = (last - datetime.timedelta(days=5 * 366)).isoformat()   # 5 años: la web los usa en el histórico ampliado
                 pts = [p for p in pts if p[0] >= cut]
+                two = (last - datetime.timedelta(days=2 * 366)).isoformat()
+                _, nsp = despike([p for p in pts if p[0] >= two])   # picos de los dos últimos años
+                pts, _ = despike(pts)
+                if erratic([p for p in pts if p[0] >= two], nsp): dropped.append('%s_%s/%s' % (cc, pid, sid)); continue
+                if not pts: continue
+                age = (today - last).days; fq = files[key].get('freq') or fams[fam].get('freq') or 'weekly'
                 ya = r.get('yoy')
                 prev = r.get('prev')
                 ch = round((r['last'][1] / prev[1] - 1) * 100, 2) if prev and prev[1] else None
                 out.setdefault(cc, []).append({
                     'id': 'eu_%s_%s' % (cc.lower(), pid), 'product': pid, 'region': 'eu', 'cc': cc, 'name': t4(nm), 'place': t4(NAMES[cc]), 'unit': t4(un),
-                    'currency': 'EUR', 'value': r['last'][1], 'changePct': ch, 'date': r['last'][0], 'frequency': files[key].get('freq') or fams[fam].get('freq') or 'weekly',
+                    'currency': 'EUR', 'value': r['last'][1], 'changePct': ch, 'date': r['last'][0], 'frequency': fq, 'stale': age > STALE.get(fq, 120),
                     'sourceId': 'eu_agrifood', 'sourceName': SRC, 'comparability': 'directional',
                     'note': {'es': 'Comisión Europea, portal de datos agroalimentarios: media nacional de %s (%s). Es el dato de este país, no el de otro.' % (t4(NAMES[cc])['es'], ' · '.join(files[key].get('parts') or [sid]))},
                     'points': pts, 'yearAgo': {'date': ya[0], 'value': ya[1]} if ya else None})
@@ -84,6 +112,7 @@ def main():
     for f in OUT.glob('*.json'):
         if f.name not in keep: f.unlink()
     print('app eu: %d países; %s' % (len(out), {k: len(v) for k, v in sorted(out.items())}))
+    if dropped: print('  fuera por erráticas: ' + ', '.join(dropped))
 
 if __name__ == '__main__':
     main()

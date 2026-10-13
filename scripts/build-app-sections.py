@@ -252,6 +252,7 @@ def ganaderia_us():
     return {'id': 'ganaderia-us', 'title': t4('Ganadería y lácteos (EE. UU.)|Livestock and dairy (US)|Élevage et lait (États-Unis)|Allevamento e latte (USA)'), 'emoji': '🐄', 'blocks': out}
 
 ESN = {'All Wheat': 'Trigo|Wheat|Blé|Frumento', 'Corn': 'Maíz|Corn|Maïs|Mais', 'Soybeans': 'Soja|Soybeans|Soja|Soia', 'Soybean Cake & Meal': 'Harina de soja|Soybean meal|Tourteau de soja|Farina di soia', 'Soybean Oil': 'Aceite de soja|Soybean oil|Huile de soja|Olio di soia', 'Sorghum': 'Sorgo|Sorghum|Sorgho|Sorgo', 'Barley': 'Cebada|Barley|Orge|Orzo', 'All Upland Cotton': 'Algodón|Cotton|Coton|Cotone', 'Beef': 'Vacuno|Beef|Bœuf|Bovino', 'Pork': 'Porcino|Pork|Porc|Suino', 'Rice': 'Arroz|Rice|Riz|Riso', 'All Rice': 'Arroz|Rice|Riz|Riso', 'Wheat - HRW': 'Trigo duro rojo de invierno (HRW)|Hard red winter wheat|Blé roux d’hiver (HRW)|Frumento rosso invernale (HRW)', 'Wheat - SRW': 'Trigo blando rojo de invierno (SRW)|Soft red winter wheat|Blé tendre rouge d’hiver (SRW)|Frumento tenero rosso invernale (SRW)', 'Wheat - HRS': 'Trigo duro rojo de primavera (HRS)|Hard red spring wheat|Blé roux de printemps (HRS)|Frumento rosso primaverile (HRS)', 'Wheat - White': 'Trigo blanco|White wheat|Blé blanc|Frumento bianco', 'Wheat - Durum': 'Trigo duro (durum)|Durum wheat|Blé dur|Frumento duro', 'Soybean cake & meal': 'Harina de soja|Soybean meal|Tourteau de soja|Farina di soia', 'Fresh, Chilled, or Frozen Muscle Cuts of Beef': 'Carne de vacuno|Beef|Viande bovine|Carne bovina', 'Fresh, Chilled, or Frozen Muscle Cuts of Pork': 'Carne de cerdo|Pork|Viande porcine|Carne suina'}
+ESR_C = {k: t4(v) for k, v in {'ALGERIA': 'Argelia|Algeria|Algérie|Algeria', 'AUSTRALIA': 'Australia|Australia|Australie|Australia', 'BANGLADESH': 'Bangladés|Bangladesh|Bangladesh|Bangladesh', 'CANADA': 'Canadá|Canada|Canada|Canada', 'CHINA, PEOPLES REPUBLIC OF': 'China|China|Chine|Cina', 'COLOMBIA': 'Colombia|Colombia|Colombie|Colombia', 'COSTA RICA': 'Costa Rica|Costa Rica|Costa Rica|Costa Rica', 'DOMINICAN REPUBLIC': 'República Dominicana|Dominican Republic|République dominicaine|Repubblica Dominicana', 'ECUADOR': 'Ecuador|Ecuador|Équateur|Ecuador', 'EGYPT': 'Egipto|Egypt|Égypte|Egitto', 'EL SALVADOR': 'El Salvador|El Salvador|Salvador|El Salvador', 'GUATEMALA': 'Guatemala|Guatemala|Guatemala|Guatemala', 'HAITI': 'Haití|Haiti|Haïti|Haiti', 'HONDURAS': 'Honduras|Honduras|Honduras|Honduras', 'HONG KONG': 'Hong Kong|Hong Kong|Hong Kong|Hong Kong', 'INDIA': 'India|India|Inde|India', 'INDONESIA': 'Indonesia|Indonesia|Indonésie|Indonesia', 'IRAQ': 'Irak|Iraq|Irak|Iraq', 'ITALY': 'Italia|Italy|Italie|Italia', 'JAMAICA': 'Jamaica|Jamaica|Jamaïque|Giamaica', 'JAPAN': 'Japón|Japan|Japon|Giappone', 'KOREA, REPUBLIC OF': 'Corea del Sur|South Korea|Corée du Sud|Corea del Sud', 'MALAYSIA': 'Malasia|Malaysia|Malaisie|Malesia', 'MEXICO': 'México|Mexico|Mexique|Messico', 'MOROCCO': 'Marruecos|Morocco|Maroc|Marocco', 'NICARAGUA': 'Nicaragua|Nicaragua|Nicaragua|Nicaragua', 'NIGERIA': 'Nigeria|Nigeria|Nigeria|Nigeria', 'PAKISTAN': 'Pakistán|Pakistan|Pakistan|Pakistan', 'PANAMA': 'Panamá|Panama|Panama|Panama', 'PERU': 'Perú|Peru|Pérou|Perù', 'PHILIPPINES': 'Filipinas|Philippines|Philippines|Filippine', 'SAUDI ARABIA': 'Arabia Saudí|Saudi Arabia|Arabie saoudite|Arabia Saudita', 'SINGAPORE': 'Singapur|Singapore|Singapour|Singapore', 'SPAIN': 'España|Spain|Espagne|Spagna', 'SRI LANKA': 'Sri Lanka|Sri Lanka|Sri Lanka|Sri Lanka', 'TAIWAN': 'Taiwán|Taiwan|Taïwan|Taiwan', 'THAILAND': 'Tailandia|Thailand|Thaïlande|Thailandia', 'TURKEY': 'Turquía|Turkey|Turquie|Turchia', 'UNITED KINGDOM': 'Reino Unido|United Kingdom|Royaume-Uni|Regno Unito', 'VENEZUELA': 'Venezuela|Venezuela|Venezuela|Venezuela', 'VIETNAM': 'Vietnam|Vietnam|Viêt Nam|Vietnam'}.items()}   # destinos de USDA FAS (nombres en inglés y mayúsculas) en los cuatro idiomas
 def exportaciones_us():
     es = j('export-sales.json')
     if not es: return None
@@ -259,7 +260,7 @@ def exportaciones_us():
     for c in es['commodities']:
         tt = c['totals']; pv = c.get('prevSameWeek') or {}
         name = t4(ESN.get(c['name'], c['name']))
-        tops = sorted(((x['n'].title(), (x.get('acc') or 0) + (x.get('out') or 0)) for x in c.get('countries', []) if x.get('n') and 'UNKNOWN' not in x['n']), key=lambda x: -x[1])[:10]
+        tops = sorted(((ESR_C.get(x['n']) or t4('|'.join([x['n'].title()] * 4)), (x.get('acc') or 0) + (x.get('out') or 0)) for x in c.get('countries', []) if x.get('n') and 'UNKNOWN' not in x['n']), key=lambda x: -x[1])[:10]
         commit = (tt.get('acc') or 0) + (tt.get('out') or 0); commit_p = (pv.get('acc') or 0) + (pv.get('out') or 0)
         out.append(block('esr-' + str(c['code']), 'US', name, asOf=c['weekEnding'],
             stats=[stat('Ventas comprometidas en la campaña ' + c['my'] + '|Committed sales, marketing year ' + c['my'] + '|Ventes engagées, campagne ' + c['my'] + '|Vendite impegnate, campagna ' + c['my'], commit / 1000, 'kt', 0, chg(pct(commit, commit_p)) if commit_p else None),
@@ -280,7 +281,7 @@ def _rel(d):
 def aranceles():
     out = []
     CH = {'01': 'Animales vivos|Live animals|Animaux vivants|Animali vivi', '02': 'Carne|Meat|Viande|Carne', '04': 'Lácteos, huevos y miel|Dairy, eggs and honey|Lait, œufs et miel|Latte, uova e miele', '07': 'Hortalizas|Vegetables|Légumes|Ortaggi', '08': 'Frutas y frutos secos|Fruit and nuts|Fruits|Frutta', '10': 'Cereales|Cereals|Céréales|Cereali', '11': 'Harinas y malta|Flours and malt|Farines et malt|Farine e malto', '12': 'Semillas oleaginosas|Oilseeds|Graines oléagineuses|Semi oleosi', '15': 'Grasas y aceites|Fats and oils|Graisses et huiles|Grassi e oli', '17': 'Azúcar|Sugar|Sucre|Zucchero', '22': 'Bebidas y vino|Beverages and wine|Boissons et vin|Bevande e vino', '23': 'Piensos y residuos|Feed and residues|Aliments et résidus|Mangimi e residui'}
-    for f, cc, nm in [('tariffs-eu.json', 'EU', 'Unión Europea|European Union|Union européenne|Unione europea'), ('us-tariffs.json', 'US', 'EE. UU.|United States|États-Unis|Stati Uniti'), ('tariffs-ca.json', 'CA', 'Canadá|Canada|Canada|Canada')]:
+    for f, cc, nm in [('tariffs-eu.json', 'EU', 'Unión Europea|European Union|Union européenne|Unione europea'), ('us-tariffs.json', 'US', 'EE. UU.|United States|États-Unis|Stati Uniti')]:   # Canadá (CBSA) fuera de la app hasta confirmar su licencia (PENDING en data/license-registry.json)
         d = j(f)
         if not d or not d.get('chapters'): continue
         ch = d['chapters']
@@ -456,22 +457,43 @@ def analisis():
 def relaciones():
     d = j('relationships.json')
     if not d: return None
-    REG = {'us': 'US', 'eu': 'EU', 'ca': 'CA', 'uk': 'UK'}   # las relaciones de la UE usan índices de Eurostat de toda la UE, no de España
+    # Cada lado de la relación se asigna a su país real: en la región «eu» de la web unos precios son de España (Zaragoza, Lleida…)
+    # y otros de toda la UE (índices de Eurostat, Boletín Petrolero); el clima es de una región concreta (Sajonia-Anhalt = Alemania).
+    # El bloque va al país del precio de mercado; si el factor es de OTRO país, la relación no entra; si es de ámbito UE o mundial, se rotula.
+    lab = (j('market-labels.json') or {}).get('byId', {}); obs = {(o['region'], o['product']): o['id'] for o in (j('latest.json') or {}).get('observations', [])}
+    clim = {l_['id']: l_.get('country') for l_ in (j('climate.json') or {}).get('locations', [])}
+    REG = {'us': 'US', 'ca': 'CA', 'uk': 'UK'}
+    def side_cc(sd):
+        k = sd.get('key') or ''
+        if k.startswith('C/'): c = clim.get(k.split('/')[1]); return 'UK' if c == 'GB' else c
+        if k.startswith('S/'): return REG.get(sd.get('region'), (sd.get('region') or '').upper())
+        if sd.get('sourceId') == 'world_bank': return 'WORLD'
+        if sd.get('region') == 'eu':
+            l0 = lab.get(obs.get(('eu', sd.get('product'))), [''])[0] or ''
+            return 'ES' if l0.startswith('España') else 'EU'
+        return REG.get(sd.get('region'), (sd.get('region') or '').upper())
+    SCOPE = {'EU': t4('UE|EU|UE|UE'), 'WORLD': t4('mundial|world|mondial|mondiale')}
     out = []
     by = {}
     for r in d['relationships']:
         if r.get('status') != 'OBSERVED_RELATIONSHIP': continue
-        by.setdefault(REG.get(r['market']['region'], r['market']['region'].upper()), []).append(r)
+        mc, ic = side_cc(r['market']), side_cc(r['input'])
+        if not mc or mc == 'WORLD': continue
+        if ic != mc and ic not in SCOPE: continue          # p. ej. lluvia de Alemania frente a trigo de Zaragoza: fuera
+        if ic != mc and not (ic == 'EU' and mc in ('ES', 'EU') or ic == 'WORLD'): continue
+        r = dict(r, _isc=SCOPE.get(ic) if ic != mc else None)
+        by.setdefault(mc, []).append(r)
     disc = d['disclaimer'] if isinstance(d['disclaimer'], dict) else {l: d['disclaimer'] for l in L4}
     for cc, rs in sorted(by.items()):
         rs = sorted(rs, key=lambda r: -abs(r['stat']['correlation']))
-        items = [({l: (r['input']['label'].get(l) or r['input']['label']['es']) + ' → ' + (r['market']['label'].get(l) or r['market']['label']['es']) for l in L4}, r['stat']['correlation']) for r in rs]
+        il = lambda r, l: (r['input']['label'].get(l) or r['input']['label']['es']) + (' (' + r['_isc'][l] + ')' if r.get('_isc') else '')
+        items = [({l: il(r, l) + ' → ' + (r['market']['label'].get(l) or r['market']['label']['es']) for l in L4}, r['stat']['correlation']) for r in rs]
         stats = []
         for r in rs[:6]:
             lag = r['stat'].get('lag') or 0; lu = r['stat'].get('lagUnit') or ''
             LU = {'month': ('mes', 'month', 'mois', 'mese'), 'week': ('semana', 'week', 'semaine', 'settimana'), 'quarter': ('trimestre', 'quarter', 'trimestre', 'trimestre'), 'year': ('año', 'year', 'an', 'anno')}.get(lu.rstrip('s'), (lu,) * 4)
             sub = {'d': {l: ('r = %.2f' % r['stat']['correlation']).replace('.', ',' if l != 'en' else '.') + (' · ' + ['retardo', 'lag', 'décalage', 'ritardo'][i] + ' ' + str(lag) + ' ' + LU[i] if lag else '') for i, l in enumerate(L4)}}
-            stats.append({'label': {l: (r['input']['label'].get(l) or r['input']['label']['es']) + ' → ' + (r['market']['label'].get(l) or r['market']['label']['es']) for l in L4}, 'value': None, 'unit': '', 'dec': 2, 'sub': sub, 'expl': r.get('explanation')})
+            stats.append({'label': {l: il(r, l) + ' → ' + (r['market']['label'].get(l) or r['market']['label']['es']) for l in L4}, 'value': None, 'unit': '', 'dec': 2, 'sub': sub, 'expl': r.get('explanation')})
         out.append(block('rel-' + cc, cc, 'Qué se mueve junto a qué|What moves with what|Ce qui bouge ensemble|Cosa si muove insieme', asOf=max((r['stat'].get('periodEnd') or '') for r in rs),
             bars=[bars('Correlación de los cambios (de −1 a +1)|Correlation of changes (−1 to +1)|Corrélation des variations (de −1 à +1)|Correlazione delle variazioni (da −1 a +1)', '', items, 2)],
             note={l: disc.get(l, disc.get('es')) + ' ' + {'es': 'Solo relaciones estables y con datos suficientes.', 'en': 'Only stable relationships with enough data.', 'fr': 'Seulement les relations stables et avec assez de données.', 'it': 'Solo relazioni stabili e con dati sufficienti.'}[l] for l in L4},

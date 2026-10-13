@@ -121,8 +121,15 @@ function priceOf(r, fam) {
 export function buildFamily(rows, fam, today) {
   // 1) agrupa por serie (partes + unidad) y detecta países con varios mercados
   const series = new Map();
+  // Diagnóstico (13-oct-2026): las medias nacionales de cereales de la UE se pararon el 2 de agosto (cambio de campaña).
+  // Se registra qué filas recientes descarta keep(), para ver si la Comisión publica la campaña 2026/27 con otro «stage».
+  const dropped = new Map(), recent = new Date(today); recent.setDate(recent.getDate() - 60);
   for (const r of rows) {
-    if (fam.keep && !fam.keep(r)) continue;
+    if (fam.keep && !fam.keep(r)) {
+      const d0 = rowDate(r, fam);
+      if (d0 && new Date(d0) >= recent) { const k = [fam.region(r), r.productName || r.product, r.stageName || r.marketStage, r.marketName || r.market].join(' | '); dropped.set(k, (dropped.get(k) || 0) + 1); }
+      continue;
+    }
     const p = priceOf(r, fam); const d = rowDate(r, fam); const reg = fam.region(r);
     if (p === null || !d || !reg) continue;
     if (fam.completedOnly && !(d < today)) continue;
@@ -159,6 +166,7 @@ export function buildFamily(rows, fam, today) {
     out.push({ id, parts: s.parts, unit: s.unit, unitLabel: UNIT_LABEL[s.unit] || s.unit, regions });
   }
   out.sort((a, b) => b.regions.reduce((x, r) => x + r.pts.length, 0) - a.regions.reduce((x, r) => x + r.pts.length, 0));
+  if (dropped.size) console.log('[keep] filas recientes descartadas (' + dropped.size + ' combinaciones):\n  ' + [...dropped].slice(0, 80).map(([k, n]) => k + ' ×' + n).join('\n  '));
   return out;
 }
 

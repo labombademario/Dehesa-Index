@@ -307,6 +307,13 @@
 
     document.getElementById('home-movers-title').textContent = t.moversTitle;
     var ms = document.getElementById('home-more-sum'); if (ms) ms.textContent = t.moreData;
+    // El índice de enlaces de esta portada es en español (es lo que leen los buscadores); en otro idioma se enseña solo el enlace a la portada de ese idioma.
+    var sf = document.querySelector('.di-seo-links');
+    if (sf) {
+      if (!sf.getAttribute('data-es')) sf.setAttribute('data-es', '1'), sf._es = sf.innerHTML;
+      var LP = { en: ['en/', 'Agricultural prices and statistics in English: all products, tools and countries'], fr: ['fr/', 'Prix et statistiques agricoles en français : tous les produits, outils et pays'], it: ['it/', 'Prezzi e statistiche agricole in italiano: tutti i prodotti, strumenti e paesi'] }[lang];
+      sf.innerHTML = LP ? '<p class="di-movers-hint" style="margin-top:16px"><a href="' + LP[0] + '">' + LP[1] + '</a></p>' : sf._es;
+    }
     var ss = document.getElementById('home-seo-sum'); if (ss) ss.textContent = ({ es: 'Explorar todo Dehesa Index', en: 'Explore all of Dehesa Index', fr: 'Explorer tout Dehesa Index', it: 'Esplora tutto Dehesa Index' })[lang] || 'Explorar todo Dehesa Index';
     document.getElementById('home-movers-hint').textContent = t.moversHint;
     document.getElementById('home-movers-cta').textContent = t.moversCta;

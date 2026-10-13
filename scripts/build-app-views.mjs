@@ -34,8 +34,15 @@ const PLACE = {
   'Europa': t4('Europa', 'Europe', 'Europe', 'Europa'),
   'Alberta': t4('Alberta (Canadá)', 'Alberta (Canada)', 'Alberta (Canada)', 'Alberta (Canada)'), 'Mundo': t4('Mercado mundial', 'World market', 'Marché mondial', 'Mercato mondiale')
 };
+// Canadá: casi todas las series son de una provincia (StatCan publica por provincia): se rotula la provincia, no «Canadá».
+let MLAB = {}; try { MLAB = read('data/market-labels.json').byId || {}; } catch (e) {}
+const PROV = { Quebec: ['Quebec', 'Quebec', 'Québec', 'Québec'] };
 function place(o) {
   const m = o.methodology || '';
+  if (o.region === 'ca' && MLAB[o.id]) {
+    const pv = String(MLAB[o.id][0] || '').split(' · ')[0];
+    if (/^(Alberta|Ontario|Quebec|Saskatchewan|Manitoba|British Columbia|Columbia Británica)$/.test(pv)) { const n = PROV[pv] || [pv, pv, pv, pv]; return t4(n[0] + ' (Canadá)', n[1] + ' (Canada)', n[2] + ' (Canada)', n[3] + ' (Canada)'); }
+  }
   const mk = /en el mercado de ([A-ZÁÉÍÓÚÑa-záéíóúñ' -]+) \(España\)/.exec(m);
   if (mk) { const c = mk[1].trim(); return t4(c + ' (España)', c + ' (Spain)', c + ' (Espagne)', c + ' (Spagna)'); }
   if (/Alberta/.test(m)) return PLACE.Alberta;
@@ -89,6 +96,8 @@ for (const region of ['eu', 'us', 'uk', 'ca']) {
     if (!ok) continue;  // sin nombre en los cuatro idiomas no se muestra
     // El Boletin Petrolero y la EIA miden el gasoleo de automocion en surtidor, con impuestos, no el gasoleo agricola
     if (o.product === 'diesel') Object.assign(name, t4('Gasóleo de automoción (surtidor)', 'Road diesel (pump price)', 'Gazole routier (prix à la pompe)', 'Gasolio per autotrazione (alla pompa)'));
+    // Gas natural: en EE. UU. es Henry Hub y en Europa el TTF; cada fila con el suyo, no los dos nombres juntos
+    if (o.product === 'gas_natural') Object.assign(name, region === 'us' ? t4('Gas natural (Henry Hub)', 'Natural gas (Henry Hub)', 'Gaz naturel (Henry Hub)', 'Gas naturale (Henry Hub)') : t4('Gas natural (TTF)', 'Natural gas (TTF)', 'Gaz naturel (TTF)', 'Gas naturale (TTF)'));
     prices.push({ id: o.id, product: o.product, region, name, place: place(o), unit: unit(o), currency: o.currency, value: o.value,
       changePct: typeof o.changePct === 'number' ? Math.round(o.changePct * 100) / 100 : null, date: o.observationDate, frequency: o.frequency,
       sourceId: canon(o.sourceId), sourceName: (REG[canon(o.sourceId)] || {}).short || (REG[canon(o.sourceId)] || {}).name || canon(o.sourceId), comparability: o.comparability || null, note: o.methodology ? { es: o.methodology } : null,

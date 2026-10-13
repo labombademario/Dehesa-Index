@@ -1036,14 +1036,15 @@
     // país en el "🗺️ Global Price Map" -- null cuando la fila no
     // corresponde a un único país (la referencia/futuro europeo "eu" es un
     // precio de conjunto, no de un país concreto, así que no se pinta).
-    rows.push({ flag: '🇺🇸', mapCode: 'US', label: lgMarketLabel(product, 'us', RG.us), built: D.buildRegion(product.us, lgMarketLabel(product, 'us', RG.us), 'USD', product.imperialKgPerUnit, UL[product.imperialUnitKey], D.FX, t) });
-    rows.push({ flag: '🇪🇺', mapCode: null, label: lgMarketLabel(product, 'eu', RG.eu), built: D.buildRegion(product.eu, lgMarketLabel(product, 'eu', RG.eu), 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
-    if (product.uk) {
+    // Solo filas con observación verificada (DATA_TRUST): nunca un valor de muestra.
+    var ok = function (code) { var tr = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-' + code]; return !!(tr && tr.status === 'verified'); };
+    if (product.us && ok('us')) rows.push({ flag: '🇺🇸', mapCode: 'US', label: lgMarketLabel(product, 'us', RG.us), built: D.buildRegion(product.us, lgMarketLabel(product, 'us', RG.us), 'USD', product.imperialKgPerUnit, UL[product.imperialUnitKey], D.FX, t) });
+    if (product.uk && ok('uk')) {
       rows.push({ flag: '🇬🇧', mapCode: 'GB', label: lgMarketLabel(product, 'uk', RG.uk), built: D.buildRegion(product.uk, lgMarketLabel(product, 'uk', RG.uk), 'GBP', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
     }
     // Canadá: solo si el bloque ca ya tiene dato verificado (los marcadores
     // iniciales tienen precio 0 y no se muestran).
-    if (product.ca && product.ca.price > 0 && product.caKgPerUnit && product.caUnitKey) {
+    if (product.ca && ok('ca') && product.ca.price > 0 && product.caKgPerUnit && product.caUnitKey) {
       rows.push({ flag: '🇨🇦', mapCode: 'CA', label: lgMarketLabel(product, 'ca', RG.ca || 'Canada'), built: D.buildRegion(product.ca, lgMarketLabel(product, 'ca', RG.ca || 'Canada'), 'CAD', product.caKgPerUnit, UL[product.caUnitKey] || UL[product.metricUnitKey], D.FX, t) });
     }
     // Dinamarca: dato nacional real de Statistics Denmark (si hay serie para este producto).
@@ -1053,9 +1054,15 @@
     }
     // Países de la UE: solo el precio REAL de cada país (media nacional de la Comisión; España, el de la propia tarjeta).
     // Nada de «España × factor»: si un país no publica el producto, no aparece ni en la lista ni en el mapa.
+    // La referencia «eu» de la tarjeta es a veces un mercado español (Zaragoza, Lleida, media de España) y a veces el agregado UE:
+    // la primera va en la fila de España; la segunda, con bandera UE y sin país en el mapa.
+    var euMk = lgMarketLabel(product, 'eu', '');
+    var euTr = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-eu'];
+    var euIsSpain = /Espa(ñ|n)a|Spain|Zaragoza|Lleida|Segovia|Salamanca|Ebro/i.test(euMk) || (!euMk && !!euTr && /\ben Espa(ñ|n)a\b/i.test(euTr.methodology || ''));
+    if (product.eu && ok('eu') && !euIsSpain) rows.push({ flag: '🇪🇺', mapCode: null, label: lgMarketLabel(product, 'eu', RG.eu), built: D.buildRegion(product.eu, lgMarketLabel(product, 'eu', RG.eu), 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
     var MAP_CODE_BY_COUNTRY = { es: 'ES', fr: 'FR', de: 'DE', it: 'IT' }, nCty = 0;
     LG_COUNTRY_ORDER.forEach(function (c) {
-      var raw = c === 'es' ? product.eu : (Core.countryRegion ? Core.countryRegion(entry, c) : null);
+      var raw = c === 'es' ? (ok('eu') && euIsSpain ? product.eu : null) : (Core.countryRegion ? Core.countryRegion(entry, c) : null);
       if (!raw) { if (c !== 'es' && Core.loadCountry) Core.loadCountry(c).then(function () { if (Core.countryRegion && Core.countryRegion(entry, c)) render(); }); return; }
       nCty++;
       var label = ER[D.COUNTRY_ER_KEY[c]];

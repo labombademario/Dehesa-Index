@@ -65,7 +65,7 @@
   var state = {
     location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca') ? v : null; })(),
     euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return EU_CC.indexOf(v) >= 0 ? v : 'es'; })(),
-    activeTab: 'cereales',
+    activeTab: 'cereales', wantTab: 'cereales',
     favorites: readFavorites(),
     searchQuery: '',
     expanded: {},
@@ -267,7 +267,7 @@
   }
   // Para el mapa de mercado y la inteligencia: todos los productos (concurrencia limitada en DIPrices.histories)
   var ALL_HIST = null, PRICES_DONE = null, pricesDone = function () {};
-  PRICES_DONE = new Promise(function (res) { pricesDone = res; });  // se cumple cuando ya se aplico (o fallo) la carga de data/prices/latest
+  PRICES_DONE = new Promise(function (res) { pricesDone = function () { state.pricesSettled = true; res(); }; });  // se cumple cuando ya se aplico (o fallo) la carga de data/prices/latest
   function ensureAllHistory() {
     if (ALL_HIST) return ALL_HIST;
     return ALL_HIST = PRICES_DONE.then(allHistory);
@@ -358,6 +358,12 @@
     return CTRY_P[cc] = fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       var m = {}; ((d && d.prices) || []).forEach(function (q) { m[q.product] = q; }); CTRY[cc] = m; if (state.euCountry && state.euCountry.toUpperCase() === cc) renderAll();
     }).catch(function () { CTRY[cc] = {}; });
+  }
+  // ¿Ya llegó (o falló) la media nacional del país elegido? Hasta entonces una pestaña vacía puede ser solo «todavía no».
+  function countrySettled() {
+    if (state.location !== 'eu') return true;
+    var cc = String(state.euCountry || 'es').toUpperCase();
+    return cc === 'ES' || !!CTRY[cc];
   }
   function countryRegion(entry, country) {
     var cc = String(country || '').toUpperCase(), P = CTRY[cc] && CTRY[cc][entry.nameKey]; if (!P) return null;
@@ -514,7 +520,7 @@
   function goToProduct(key) {
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
-    state.activeTab = entry.catId;
+    state.activeTab = state.wantTab = entry.catId;
     state.searchQuery = '';
     var input = document.getElementById('pr-search-input');
     if (input) input.value = '';
@@ -606,10 +612,10 @@
     var key = entry.catId + ':' + entry.nameKey;
     var disp = resolveDisplay(entry, state.location, state.euCountry);
     if (!disp.region) return false;
-    if (state.deepLinkProduct === key) return true;
+    var obs = trustObservationFor(entry, disp), ver = !!obs && obs.status === 'verified';
+    if (state.deepLinkProduct === key) return ver;   // un enlace directo tampoco enseña un valor de muestra sin verificar
     if ((state.location === 'uk' || state.location === 'ca') && disp.ukGap) return false;
-    var obs = trustObservationFor(entry, disp);
-    return !!obs && obs.status === 'verified';
+    return ver;
   }
   var EU_ONLY = { hortalizas: true, vino: true, madera: true }; // solo hay datos de países europeos: con ubicación EE. UU., Reino Unido o Canadá no se enseñan
   function catHasData(catId) {
@@ -639,6 +645,11 @@
     return '<span class="di-quote-badge" title="' + esc(title) + '">' + esc(qt.label) + '</span>';
   }
 
+  function isVerified(entry, code) {
+    var tr = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-' + code];
+    return !!(tr && tr.status === 'verified');
+  }
+
   function breakdownTableHtml(entry) {
     var t = ui();
     var p = entry.product;
@@ -653,8 +664,8 @@
     for (var i = 0; i < specs.length; i++) {
       var s = specs[i];
       if (!s.region) continue;
-      // Canadá nace con marcador de posición: solo se enseña si hay observación verificada
-      if (s.code === 'ca') { var caTrust = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-ca']; if (!caTrust || caTrust.status !== 'verified') continue; }
+      // Solo regiones con observación verificada: nunca un valor de muestra de data.js
+      if (!isVerified(entry, s.code)) continue;
       var qt = p.quoteTypes && p.quoteTypes[s.code];
       var qtLabel = qt && (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type] ? (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type].label : '—';
       var sym = D.CCY_SYMBOL[s.ccy] || s.ccy;
@@ -733,7 +744,7 @@
     var key = entry.nameKey;
     var stories = index[key] || [];
     var region = state.location || 'us';
-    if (!stories.length) return '<div class="di-related-news di-related-news-pending"><div class="di-related-news-head"><span>' + esc(({ es: 'NOTICIAS', en: 'NEWS', fr: 'ACTUALITÉS', it: 'NOTIZIE' })[lang()] || 'NOTICIAS') + '</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">Noticias relacionadas →</a></div><p>No hay cobertura editorial enlazada a este mercado todavía.</p></div>';
+    if (!stories.length) return '<div class="di-related-news di-related-news-pending"><div class="di-related-news-head"><span>' + esc(({ es: 'NOTICIAS', en: 'NEWS', fr: 'ACTUALITÉS', it: 'NOTIZIE' })[lang()] || 'NOTICIAS') + '</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">' + esc(({ es: 'Noticias relacionadas →', en: 'Related news →', fr: 'Actualités liées →', it: 'Notizie correlate →' })[lang()] || 'Noticias relacionadas →') + '</a></div><p>' + esc(({ es: 'No hay cobertura editorial enlazada a este mercado todavía.', en: 'No news coverage linked to this market yet.', fr: 'Aucune actualité liée à ce marché pour l’instant.', it: 'Nessuna notizia collegata a questo mercato per ora.' })[lang()] || '') + '</p></div>';
     var lg = lang();
     var label = lg === 'es' ? 'Noticias relacionadas' : lg === 'fr' ? 'Actualités liées' : lg === 'it' ? 'Notizie correlate' : 'Related news';
     return '<div class="di-related-news"><div class="di-related-news-head"><span>' + esc(({ es: 'NOTICIAS', en: 'NEWS', fr: 'ACTUALITÉS', it: 'NOTIZIE' })[lang()] || 'NOTICIAS') + '</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">' + esc(({ es: 'Ver todas', en: 'See all', fr: 'Tout voir', it: 'Vedi tutte' })[lang()] || 'Ver todas') + ' →</a></div>' +
@@ -899,38 +910,32 @@
 
   function renderInfoCategoryHtml(catId) {
     if (catId === 'vino') {
-      var win = D.WINE[lang()] || D.WINE.es;
-      return (
-        '<div class="di-badge di-badge-green di-info-badge">' + esc(win.badge) + '</div>' +
-        '<div class="di-info-grid">' +
-          infoStatsCardHtml(win.esTitle, win.esStats) +
-          infoStatsCardHtml(win.frTitle, win.frStats) +
-        '</div>' +
-        '<div class="di-info-scope-note">' + esc(win.scopeNote) + '</div>' +
-        infoSourcesHtml('vino')
-      );
+      // Sin cifras fijas: las tarjetas las pinta js/wine-prices.js con data/wine-prices.json (MAPA y FranceAgriMer, actualizado por el pipeline).
+      return '<div class="di-info-scope-note" data-wp-loading="1">' + esc(({ es: 'Cargando los precios del vino…', en: 'Loading wine prices…', fr: 'Chargement des prix du vin…', it: 'Caricamento dei prezzi del vino…' })[lang()] || '') + '</div>' + infoSourcesHtml('vino');
     }
     // madera: primero el mercado mas cercano a la ubicacion del usuario; si su pais no tiene precio nacional se avisa arriba
     var mad = D.WOOD[lang()] || D.WOOD.es;
     var loc = state.location || 'us', cn = state.euCountry || 'es';
-    var home = loc === 'uk' ? 'uk' : loc === 'eu' ? 'fr' : 'us';
-    var own = loc === 'us' || loc === 'uk' || (loc === 'eu' && cn === 'fr');
-    var cards = { us: infoStatsCardHtml(mad.usTitle, mad.usStats, 'madera-us'), uk: infoStatsCardHtml(mad.ukTitle, mad.ukStats, 'madera-uk'), fr: infoStatsCardHtml(mad.frTitle, mad.frStats, 'madera-fr') };
-    var order = [home].concat(['us', 'uk', 'fr'].filter(function (k) { return k !== home; }));
-    var place = loc === 'ca' ? { es: 'Canadá', en: 'Canada', fr: 'le Canada', it: 'il Canada' } : loc === 'eu' ? { es: { es: 'España', de: 'Alemania', it: 'Italia' }[cn] || 'tu país', en: { es: 'Spain', de: 'Germany', it: 'Italy' }[cn] || 'your country', fr: { es: 'l’Espagne', de: 'l’Allemagne', it: 'l’Italie' }[cn] || 'votre pays', it: { es: 'la Spagna', de: 'la Germania', it: 'l’Italia' }[cn] || 'il tuo paese' } : null;
-    var nearest = { us: { es: 'EE. UU.', en: 'the US', fr: 'les États-Unis', it: 'gli USA' }, fr: { es: 'Francia', en: 'France', fr: 'la France', it: 'la Francia' } }[home];
+    // Solo Reino Unido (Forest Research, OGL v3). EE. UU. (futuro del CME) tiene licencia que prohíbe redistribuir; Francia (France Bois
+    // Forêt/ONF) no tiene licencia de reutilización verificada y el License Gate no deja publicarla. Ver data/license-registry.json.
+    var own = loc === 'uk';
+    var cards = { uk: infoStatsCardHtml(mad.ukTitle, mad.ukStats, 'madera-uk') };
+    var order = ['uk'];
+    var PL = { us: ['EE. UU.', 'The US', 'les États-Unis', 'gli Stati Uniti'], ca: ['Canadá', 'Canada', 'le Canada', 'il Canada'], es: ['España', 'Spain', 'l’Espagne', 'la Spagna'], de: ['Alemania', 'Germany', 'l’Allemagne', 'la Germania'], it: ['Italia', 'Italy', 'l’Italie', 'l’Italia'], fr: ['Francia', 'France', 'la France', 'la Francia'] }[loc === 'eu' ? cn : loc] || ['Tu país', 'Your country', 'votre pays', 'il tuo paese'];
+    var place = { es: PL[0], en: PL[1], fr: PL[2], it: PL[3] };
+    var nearest = { es: 'Reino Unido', en: 'the UK', fr: 'le Royaume-Uni', it: 'il Regno Unito' };
     var NT = {
-      es: function (p, n) { return p.es + ' no tiene un precio nacional de madera que podamos citar; por eso va primero ' + n.es + ', el mercado con dato oficial más cercano.'; },
-      en: function (p, n) { return p.en + ' has no national timber price we can cite, so ' + n.en + ', the nearest market with an official figure, comes first.'; },
-      fr: function (p, n) { return 'Il n’existe pas pour ' + p.fr + ' de prix national du bois que nous puissions citer ; nous plaçons donc en premier ' + n.fr + ', le marché le plus proche disposant d’un chiffre officiel.'; },
-      it: function (p, n) { return 'Per ' + p.it + ' non c’è un prezzo nazionale del legno citabile; per questo viene per primo ' + n.it + ', il mercato più vicino con un dato ufficiale.'; }
+      es: function (p, n) { return p.es + ' no tiene un precio nacional de madera que podamos publicar; por eso se muestra ' + n.es + ', el mercado con dato oficial de licencia abierta.'; },
+      en: function (p, n) { return p.en + ' has no national timber price we can publish, so ' + n.en + ', the market with an open-licence official figure, is shown.'; },
+      fr: function (p, n) { return 'Il n’existe pas pour ' + p.fr + ' de prix national du bois que nous puissions publier ; nous montrons donc ' + n.fr + ', le marché disposant d’un chiffre officiel sous licence ouverte.'; },
+      it: function (p, n) { return 'Per ' + p.it + ' non c’è un prezzo nazionale del legno pubblicabile; per questo si mostra ' + n.it + ', il mercato con un dato ufficiale a licenza aperta.'; }
     };
     var NL = { es: 'Ver por qué faltan otros países', en: 'See why other countries are missing', fr: 'Voir pourquoi d’autres pays manquent', it: 'Perché mancano altri paesi' };
     var notice = '';
-    if (!own && place) { var pl = typeof place.es === 'string' ? place : null; notice = '<div class="di-info-scope-note" style="margin-bottom:10px">' + esc(NT[lang()](pl, nearest)) + ' <a href="#pr-madera-note">' + esc(NL[lang()]) + '</a></div>'; }
+    if (!own) { notice = '<div class="di-info-scope-note" style="margin-bottom:10px">' + esc(NT[lang()](place, nearest)) + ' <a href="#pr-madera-note">' + esc(NL[lang()]) + '</a></div>'; }
     return (
       '<div class="di-badge di-badge-green di-info-badge">' + esc(mad.badge) + '</div>' + notice +
-      '<div class="di-info-grid di-info-grid-3">' + order.map(function (k) { return cards[k]; }).join('') + '</div>' +
+      '<div class="di-info-grid">' + order.map(function (k) { return cards[k]; }).join('') + '</div>' +
       '<div id="pr-wood-de" class="wr-wrap"></div>' +
       '<div id="pr-wood" class="wr-wrap"></div>' +
       '<div class="di-info-scope-note" id="pr-madera-note">' + esc(mad.scopeNote) + '</div>' +
@@ -1696,9 +1701,9 @@
     var tab = qs.get('tab');
     var productKey = queryProductKey();
     var region = qs.get('region');
-    if (validTabs.indexOf(tab) !== -1) state.activeTab = tab;
+    if (validTabs.indexOf(tab) !== -1) state.activeTab = state.wantTab = tab;
     if (productKey && PRODUCT_BY_KEY[productKey]) {
-      state.activeTab = PRODUCT_BY_KEY[productKey].catId;
+      state.activeTab = state.wantTab = PRODUCT_BY_KEY[productKey].catId;
       state.deepLinkProduct = productKey;
     } else {
       state.deepLinkProduct = null;
@@ -1758,7 +1763,7 @@
     document.getElementById('pr-tabs').addEventListener('click', function (e) {
       var btn = e.target.closest ? e.target.closest('[data-tab]') : null;
       if (!btn) return;
-      state.activeTab = btn.getAttribute('data-tab');
+      state.activeTab = state.wantTab = btn.getAttribute('data-tab');
       syncPriceUrl();
       S.renderContextBar('precios');
       renderTabsAndCategory();
@@ -1783,7 +1788,18 @@
   }
 
   function renderTabsAndCategory() {
-    if (!state.deepLinkProduct && !catHasData(state.activeTab)) { var vc = visibleCats(); for (var vi = 0; vi < vc.length; vi++) if (catHasData(vc[vi])) { state.activeTab = vc[vi]; break; } }
+    // state.wantTab es la pestaña que pidió la persona (URL, clic o producto). Mientras llegan los datos (precios publicados,
+    // media nacional del país) puede no tener todavía datos: se enseña otra provisionalmente, pero sin olvidar la pedida,
+    // y en cuanto tiene datos se vuelve a ella. El respaldo prefiere una pestaña de precios antes que seguro/vino/madera.
+    var want = state.wantTab || state.activeTab;
+    if (state.deepLinkProduct || catHasData(want)) state.activeTab = want;
+    else {
+      var vc = visibleCats().filter(function (c) { return c !== want && catHasData(c); });
+      var fb = vc.filter(function (c) { return !INFO_CATS[c]; })[0] || vc[0];
+      if (fb) state.activeTab = fb;
+    }
+    var shown = new URLSearchParams(window.location.search).get('tab');
+    if (shown && shown !== state.activeTab && trustReady() && state.pricesSettled && countrySettled()) syncPriceUrl({ replace: true });
     renderTabs();
     renderCategory();
   }
@@ -1822,9 +1838,9 @@
     var requestedTab = qs.get('tab');
     var requestedRegion = qs.get('region');
     var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','hortalizas','energia','seguro','vino','madera'];
-    if (validTabs.indexOf(requestedTab) !== -1) state.activeTab = requestedTab;
+    if (validTabs.indexOf(requestedTab) !== -1) state.activeTab = state.wantTab = requestedTab;
     if (deepKey && PRODUCT_BY_KEY[deepKey]) {
-      state.activeTab = PRODUCT_BY_KEY[deepKey].catId;
+      state.activeTab = state.wantTab = PRODUCT_BY_KEY[deepKey].catId;
       state.deepLinkProduct = deepKey;
     }
     if (requestedRegion === 'us' || requestedRegion === 'eu' || requestedRegion === 'uk' || requestedRegion === 'ca') {
