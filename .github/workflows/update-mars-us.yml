@@ -28,10 +28,10 @@ jobs:
       - name: Update MARS soybean meal (US)
         env:
           MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
-        run: node scripts/update-mars-us.mjs
+        run: bash scripts/annotate-failure.sh node scripts/update-mars-us.mjs
 
       - name: Update AMS nonfat dry milk (US)
-        run: node scripts/update-ams-nfdm.mjs
+        run: bash scripts/annotate-failure.sh node scripts/update-ams-nfdm.mjs
 
       - uses: ./.github/actions/price-engine
       - name: Publicar

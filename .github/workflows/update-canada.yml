@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Update Statistics Canada farm prices
-        run: python scripts/update-statcan-canada.py
+        run: bash scripts/annotate-failure.sh python scripts/update-statcan-canada.py
       - uses: ./.github/actions/price-engine
       - name: Publicar
         uses: ./.github/actions/publish

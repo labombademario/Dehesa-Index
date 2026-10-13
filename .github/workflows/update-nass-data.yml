@@ -30,7 +30,7 @@ jobs:
         run: |
           set -e
           for product in trigo maiz arroz cebada avena colza sorgo leche huevos cerdo vaca pollo; do
-            node scripts/update-nass-us.mjs "$product"
+            bash scripts/annotate-failure.sh node scripts/update-nass-us.mjs "$product"
           done
 
       - uses: ./.github/actions/price-engine
