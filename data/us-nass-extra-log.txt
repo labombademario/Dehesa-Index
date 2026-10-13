@@ -26,7 +26,12 @@ TOBACCO 6574 filas 2057 utiles
 MUSHROOMS 1083 filas 201 utiles
 HEMP 633 filas 10 utiles
   rechazadas por dominio/practica []
-TURKEYS 24944 filas 434 utiles
+TURKEYS 24947 filas 434 utiles
+AG LAND 98 filas 81 utiles
+RENT 2690 filas 54 utiles
+FARM OPERATIONS 989 filas 78 utiles
+CHICKENS 47449 filas 592 utiles
+EGGS 6267 filas 774 utiles
 descartada ('APPLES',) production value sin dato desde 2003
 descartada ('BLUEBERRIES',) price received sin dato desde 2016
 descartada ('BLUEBERRIES',) production value sin dato desde 2003
@@ -180,4 +185,4 @@ descartada ('TOBACCO', 'NON-CIGAR TYPES (CLASS 1-3)') price received sin dato de
 descartada ('TOBACCO', 'TYPE 42-44') price received sin dato desde 2004
 descartada ('TOMATOES', 'FRESH MARKET') price received sin dato desde 2022-08
 descartada ('WALNUTS', 'ENGLISH') yield short tons/acre pocos puntos 2
-series 201
+series 218
