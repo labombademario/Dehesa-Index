@@ -9,7 +9,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://ec.europa.eu/eurostat/api/comext/dissemination/statistics/1.0/data/DS-045409"
 UA = {"User-Agent": "Dehesa-Index-data-bot/1.0"}
-REP = "EU27_2020"; CH = ["%02d" % i for i in range(1, 25)]
+REP = "EU27_2020"
+MEMBERS = {"AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO", "SE", "SI", "SK"}   # el declarante EU27_2020 tambien trae a los socios miembros: se descartan (solo comercio extra-UE)
+CH = ["%02d" % i for i in range(1, 25)]
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -47,7 +49,7 @@ def main():
         j = get({"reporter": REP, "product": CH, "flow": flow, "freq": "A", "time": str(yr)})
         tot = {}; names = j["dimension"]["partner"]["category"]["label"]
         for r, v in cells(j):
-            if len(r["partner"]) == 2: tot[r["partner"]] = tot.get(r["partner"], 0) + v
+            if len(r["partner"]) == 2 and r["partner"] not in MEMBERS: tot[r["partner"]] = tot.get(r["partner"], 0) + v
         if not tot: log(tag, "sin socios para", yr); continue
         top = sorted(tot, key=lambda k: -tot[k])[:10]
         j = get({"reporter": REP, "partner": top, "product": CH, "flow": flow, "freq": "A", "sinceTimePeriod": "2002"})
@@ -57,9 +59,10 @@ def main():
             nm = re.sub(r"\s*\(.*", "", names.get(p, p)).strip()
             s = series("eu-tp-%s-%s" % (tag, p.lower()), "partners", "%s %s: extra-EU agri-food, HS 01-24 (annual)" % (word, nm), list(ser.get(p, {}).items()))
             if s: out.append(s)
-        j = get({"reporter": REP, "partner": ["WORLD"], "product": CH, "flow": flow, "freq": "A", "sinceTimePeriod": "2002"})
+        j = get({"reporter": REP, "partner": ["EXT_EU27_2020"], "product": CH, "flow": flow, "freq": "A", "sinceTimePeriod": "2002"})
         t = {}
         for r, v in cells(j): t[r["time"]] = t.get(r["time"], 0) + v
+        if not t: log(tag, "sin total extra-UE (EXT_EU27_2020)")
         totals[tag] = t
     for tag, word in (("exp", "Exports"), ("imp", "Imports")):
         if totals.get(tag):
