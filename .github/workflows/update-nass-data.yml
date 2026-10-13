@@ -28,10 +28,13 @@ jobs:
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         run: |
-          set -e
+          ok=0; bad=""
           for product in trigo maiz arroz cebada avena colza sorgo leche huevos cerdo vaca pollo; do
-            bash scripts/annotate-failure.sh node scripts/update-nass-us.mjs "$product"
+            if bash scripts/annotate-failure.sh node scripts/update-nass-us.mjs "$product"; then ok=$((ok+1)); else bad="$bad $product"; fi
           done
+          # un producto que falla no impide actualizar los demas; si fallan todos, el paso falla
+          if [ "$ok" -eq 0 ]; then echo "::error::NASS: fallaron todos los productos"; exit 1; fi
+          if [ -n "$bad" ]; then echo "::warning::NASS: sin actualizar:$bad"; fi
 
       - uses: ./.github/actions/price-engine
       - name: Publicar

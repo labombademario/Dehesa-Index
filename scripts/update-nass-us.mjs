@@ -146,7 +146,15 @@ function buildUrl() {
 
 async function fetchSeries() {
   const url = buildUrl();
-  const res = await fetch(url);
+  let res, lastErr;
+  for (let i = 0; i < 4 && !res; i++) {   // fallos de red (fetch failed) y 5xx: hasta 4 intentos con espera creciente
+    try {
+      const r = await fetch(url, { signal: AbortSignal.timeout(90000) });
+      if (r.status >= 500 && i < 3) { lastErr = new Error('HTTP ' + r.status); await new Promise(function (ok) { setTimeout(ok, 5000 * (i + 1)); }); continue; }
+      res = r;
+    } catch (e) { lastErr = e; await new Promise(function (ok) { setTimeout(ok, 5000 * (i + 1)); }); }
+  }
+  if (!res) throw new Error('NASS API sin respuesta tras 4 intentos: ' + (lastErr && (lastErr.cause && lastErr.cause.code || lastErr.message)));
   if (!res.ok) {
     const body = await res.text().catch(function () { return ''; });
     throw new Error('NASS API respondió ' + res.status + ' ' + res.statusText + ': ' + body.slice(0, 300));
