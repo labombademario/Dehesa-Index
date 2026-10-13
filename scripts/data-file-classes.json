@@ -33,7 +33,10 @@
   "data/catalog/US.json": {
    "class": "RUNTIME",
    "note": "Metadatos de las series de EE. UU. (sin puntos): la ficha del pais los pide por DISeries.country('US'); unos 40 KB comprimidos.",
-   "via": {"file": "js/series-store.js", "pattern": "e.catalog"}
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
   },
   "data/catalog/IT.json": {
    "class": "RUNTIME",
@@ -50,7 +53,10 @@
   "data/eu-trade-products.json": {
    "class": "RUNTIME",
    "note": "comercio-socios.js (comercio por producto y socio); usa la vista por pais data/views/trade-products/<cc>.json y este fichero solo como respaldo.",
-   "via": {"file": "js/comercio-socios.js", "pattern": "eu-trade-products"}
+   "via": {
+    "file": "js/comercio-socios.js",
+    "pattern": "eu-trade-products"
+   }
   },
   "data/eu-trade-stats.json": {
    "class": "BUILD_ONLY",
@@ -175,6 +181,22 @@
   "data/poland-eurostat-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de Polonia (Eurostat): alimentan el catalogo data/catalog/PL.json; paises.js carga por catalogo y no pide este fichero."
+  },
+  "data/app/v1/search-es.json": {
+   "class": "DERIVED",
+   "note": "Indice de busqueda de la app en es (build-app-views.mjs, 13-oct-2026): etiqueta original + traduccion de ese idioma; la app baja solo el de su idioma. La web no lo descarga."
+  },
+  "data/app/v1/search-en.json": {
+   "class": "DERIVED",
+   "note": "Indice de busqueda de la app en en (build-app-views.mjs, 13-oct-2026): etiqueta original + traduccion de ese idioma; la app baja solo el de su idioma. La web no lo descarga."
+  },
+  "data/app/v1/search-fr.json": {
+   "class": "DERIVED",
+   "note": "Indice de busqueda de la app en fr (build-app-views.mjs, 13-oct-2026): etiqueta original + traduccion de ese idioma; la app baja solo el de su idioma. La web no lo descarga."
+  },
+  "data/app/v1/search-it.json": {
+   "class": "DERIVED",
+   "note": "Indice de busqueda de la app en it (build-app-views.mjs, 13-oct-2026): etiqueta original + traduccion de ese idioma; la app baja solo el de su idioma. La web no lo descarga."
   }
  },
  "prefixes": {

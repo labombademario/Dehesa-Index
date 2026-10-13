@@ -429,6 +429,16 @@ for (const [cc, body] of Object.entries(regionData)) {
   let prev = null; try { prev = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) {}
   if (!prev || prev.hash !== hash) fs.writeFileSync(p, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash }, body)) + '\n');
   manifest.search = { hash, bytes: fs.statSync(p).size, rows: searchRows.length };
+  // Optimización (13-oct-2026): un índice por idioma con la etiqueta original y solo la traducción de ese idioma (la app baja ~1/3).
+  // search.json se mantiene para las versiones de la app ya instaladas.
+  manifest.searchL = {};
+  ['es', 'en', 'fr', 'it'].forEach((lg, li) => {
+    const rows = searchRows.map(r => { const tr = r[4] ? (r[4].split('|')[li] || '') : ''; return [r[0], r[1], r[2], r[3], tr && tr !== r[2] ? tr : '']; });
+    const b2 = { rows }, c2 = JSON.stringify(b2), h2 = crypto.createHash('sha256').update(c2).digest('hex').slice(0, 16), p2 = path.join(OUT, 'search-' + lg + '.json');
+    let pv = null; try { pv = JSON.parse(fs.readFileSync(p2, 'utf8')); } catch (e) {}
+    if (!pv || pv.hash !== h2) fs.writeFileSync(p2, JSON.stringify(Object.assign({ schemaVersion: 1, generatedAt: gen, hash: h2 }, b2)) + '\n');
+    manifest.searchL[lg] = { hash: h2, bytes: fs.statSync(p2).size };
+  });
 }
 const mp = path.join(OUT, 'manifest.json');
 let prevM = null; try { prevM = JSON.parse(fs.readFileSync(mp, 'utf8')); } catch (e) {}
