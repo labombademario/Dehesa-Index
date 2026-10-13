@@ -207,6 +207,21 @@
     en: 'Crops by tonnes harvested, latest figure published by USDA NASS. Bushels, hundredweight and pounds are converted to metric tonnes with the standard weight of each crop; the latest year may be a crop forecast. Medals mark the top three items.',
     fr: 'Cultures par tonnes récoltées, dernier chiffre publié par l’USDA NASS. Les boisseaux, quintaux et livres sont convertis en tonnes métriques avec le poids standard de chaque culture ; l’année la plus récente peut être une prévision de récolte. Les médailles marquent les trois premiers.',
     it: 'Colture per tonnellate raccolte, ultimo dato pubblicato dall’USDA NASS. Bushel, quintali e libbre sono convertiti in tonnellate metriche con il peso standard di ciascuna coltura; l’anno più recente può essere una previsione di raccolto. Le medaglie indicano le prime tre voci.' };
+  var PRODT = { es: ['Por producto', 'Principales productos exportados', 'Principales productos importados', 'Millones de USD, 12 meses móviles hasta', 'Suma de los productos que seguimos (no el total agroalimentario).'], en: ['By product', 'Top exported products', 'Top imported products', 'USD million, 12 months to', 'Sum of the products we track (not total agri-food trade).'], fr: ['Par produit', 'Principaux produits exportés', 'Principaux produits importés', 'Millions USD, 12 mois glissants à', 'Somme des produits que nous suivons (pas le total agroalimentaire).'], it: ['Per prodotto', 'Principali prodotti esportati', 'Principali prodotti importati', 'Milioni USD, 12 mesi a', 'Somma dei prodotti che seguiamo (non il totale agroalimentare).'] };
+  function usProducts(x) {
+    var T = PRODT[x.lang] || PRODT.es, esc = x.esc, nf = x.nf;
+    fetch('data/views/trade-products/US.json').then(function (r) { return r.ok ? r : fetch('data/us-trade-products.json'); }).then(function (r) { return r.json(); }).then(function (d) {
+      var el = document.getElementById('pp-trade-prod'), pr = d && d.reporters && d.reporters.US; if (!el || !pr) return;
+      var i = d.years.length - 1, per = String(d.years[i]).replace(/^LTM\s*/, '');
+      var col = function (flow, title) {
+        var l = Object.keys(pr).map(function (k) { var n = pr[k][flow]; return { n: (pr[k].nm && pr[k].nm[x.lang]) || pr[k].name, v: n && n.world ? n.world[i] : null }; }).filter(function (r) { return r.v > 0; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 6);
+        if (!l.length) return '';
+        return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + '</div>' + l.map(function (r) { return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(r.n) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(r.v, 0) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(r.v / l[0].v * 100)) + '%"></div></div>'; }).join('') + '</div>';
+      };
+      var a = col('exp', T[1]), b = col('imp', T[2]); if (!a && !b) return;
+      el.innerHTML = '<div style="border-top:1px solid var(--border);margin:16px 0 12px"></div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:8px">' + esc(T[0].toUpperCase()) + ' <span style="font-weight:500">· ' + esc(T[3]) + ' ' + esc(per) + '</span></div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div><div class="di-movers-hint" style="margin:8px 0 0">' + esc(T[4]) + ' USDA FAS GATS.</div>';
+    }).catch(function () {});
+  }
   function topLists(S, cc) {
     var cr = [], an = {}, m;
     if (cc === 'US') { S.forEach(function (s) { US_TOP.forEach(function (u) { if (u[0].test(s.id) && s.latest > 0) cr.push({ k: u[1], v: s.latest * u[2] / 1e3, y: +String(s.latestPeriod).slice(0, 4), s: s }); }); }); var mx = cr.reduce(function (a, r) { return Math.max(a, r.y); }, 0); return { crops: cr.filter(function (r) { return r.y >= mx - 2; }).sort(function (a, b) { return b.v - a.v; }), animals: [] }; }
@@ -265,6 +280,7 @@
       h += '</div>';
     }
     h += topCard(x, S, cc);
+    if (cc === 'US') setTimeout(function () { usProducts(x); }, 0);
     // comercio: socios
     var pt = groups.partners || [];
     if (pt.length) {
@@ -282,7 +298,7 @@
           body + (/selected agri-food/.test(l[0].label) ? '<div class="di-movers-hint" style="margin:6px 0 0">' + esc((SELN[x.lang] || SELN.es).trim() + (/12-month/.test(l[0].label) ? (SEL12[x.lang] || SEL12.es) : '')) + '</div>' : '') + CITE(l[0]) + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
-      if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
+      if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div>' + (cc === 'US' ? '<div id="pp-trade-prod"></div>' : '') + '</div>';
     }
     if (h.indexOf('id="pp-trade"') < 0) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:6px">' + esc(t.trade.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0">' + esc(NOTRADE[x.lang] || NOTRADE.es) + '</div></div>';
     // categorías
