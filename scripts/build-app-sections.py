@@ -445,12 +445,37 @@ def analisis():
             note=t4('Calculado por Dehesa Index con el histórico mensual de cada precio de este mercado (último dato de cada mes). La volatilidad es la desviación típica de las variaciones mensuales, anualizada; las series con algún salto de más del 50 % en un mes no entran (suelen ser datos erróneos o mercados muy pequeños). El movimiento del próximo mes es la media de los últimos 10 años: no es una previsión.|Calculated by Dehesa Index from each price’s monthly history in this market (last value of each month). Volatility is the standard deviation of monthly changes, annualised; series with any one-month jump above 50% are left out (usually data errors or very thin markets). Next month’s move is the 10-year average: not a forecast.|Calculé par Dehesa Index à partir de l’historique mensuel de chaque prix de ce marché. La volatilité est l’écart type des variations mensuelles, annualisé ; les séries avec un saut de plus de 50 % en un mois sont exclues. Le mouvement du mois suivant est la moyenne sur 10 ans : ce n’est pas une prévision.|Calcolato da Dehesa Index dallo storico mensile di ogni prezzo di questo mercato. La volatilità è la deviazione standard delle variazioni mensili, annualizzata; le serie con un salto di oltre il 50% in un mese sono escluse. Il movimento del mese successivo è la media degli ultimi 10 anni: non è una previsione.')))
     return {'id': 'analisis', 'title': t4('Análisis del mercado|Market analysis|Analyse du marché|Analisi di mercato'), 'emoji': '📈', 'blocks': out}
 
+def relaciones():
+    d = j('relationships.json')
+    if not d: return None
+    REG = {'us': 'US', 'eu': 'EU', 'ca': 'CA', 'uk': 'UK'}   # las relaciones de la UE usan índices de Eurostat de toda la UE, no de España
+    out = []
+    by = {}
+    for r in d['relationships']:
+        if r.get('status') != 'OBSERVED_RELATIONSHIP': continue
+        by.setdefault(REG.get(r['market']['region'], r['market']['region'].upper()), []).append(r)
+    disc = d['disclaimer'] if isinstance(d['disclaimer'], dict) else {l: d['disclaimer'] for l in L4}
+    for cc, rs in sorted(by.items()):
+        rs = sorted(rs, key=lambda r: -abs(r['stat']['correlation']))
+        items = [({l: (r['input']['label'].get(l) or r['input']['label']['es']) + ' → ' + (r['market']['label'].get(l) or r['market']['label']['es']) for l in L4}, r['stat']['correlation']) for r in rs]
+        stats = []
+        for r in rs[:6]:
+            lag = r['stat'].get('lag') or 0; lu = r['stat'].get('lagUnit') or ''
+            LU = {'month': ('mes', 'month', 'mois', 'mese'), 'week': ('semana', 'week', 'semaine', 'settimana'), 'quarter': ('trimestre', 'quarter', 'trimestre', 'trimestre'), 'year': ('año', 'year', 'an', 'anno')}.get(lu.rstrip('s'), (lu,) * 4)
+            sub = {'d': {l: ('r = %.2f' % r['stat']['correlation']).replace('.', ',' if l != 'en' else '.') + (' · ' + ['retardo', 'lag', 'décalage', 'ritardo'][i] + ' ' + str(lag) + ' ' + LU[i] if lag else '') for i, l in enumerate(L4)}}
+            stats.append({'label': {l: (r['input']['label'].get(l) or r['input']['label']['es']) + ' → ' + (r['market']['label'].get(l) or r['market']['label']['es']) for l in L4}, 'value': None, 'unit': '', 'dec': 2, 'sub': sub, 'expl': r.get('explanation')})
+        out.append(block('rel-' + cc, cc, 'Qué se mueve junto a qué|What moves with what|Ce qui bouge ensemble|Cosa si muove insieme', asOf=max((r['stat'].get('periodEnd') or '') for r in rs),
+            bars=[bars('Correlación de los cambios (de −1 a +1)|Correlation of changes (−1 to +1)|Corrélation des variations (de −1 à +1)|Correlazione delle variazioni (da −1 a +1)', '', items, 2)],
+            note={l: disc.get(l, disc.get('es')) + ' ' + {'es': 'Solo relaciones estables y con datos suficientes.', 'en': 'Only stable relationships with enough data.', 'fr': 'Seulement les relations stables et avec assez de données.', 'it': 'Solo relazioni stabili e con dati sufficienti.'}[l] for l in L4},
+            source={'name': 'Dehesa Index, motor de relaciones', 'url': 'https://dehesaindex.com/relaciones.html'}))
+    return {'id': 'relaciones', 'title': t4('Relaciones entre precios|Price relationships|Relations entre prix|Relazioni tra prezzi'), 'emoji': '🔗', 'blocks': out}
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     gen = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     idx = {}
     keep = {'index.json'}
-    for fn in (analisis, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
+    for fn in (analisis, relaciones, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
         try: doc = fn()
         except Exception as e: print('ERROR en', fn.__name__, repr(e)); raise
         if not doc or not doc['blocks']: print('sin datos:', fn.__name__); continue

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T04:46:00Z",
+ "generatedAt": "2026-10-13T04:54:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 159,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "49c179d8",
+   "sha": "1ee6c46e",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e907e8f4-dba9-410c-80cb-bbbc5730011d",
-   "completedAt": "2026-10-13T04:45:14Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3611e1e4-8fff-466b-807a-3cc93a8a5370",
+   "completedAt": "2026-10-13T04:51:12Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-13T03:33:19.202004+00:00",
-  "checkedAt": "2026-10-13T04:46:00Z"
+  "checkedAt": "2026-10-13T04:54:00Z"
  },
  "pipelines": [
   {
@@ -2414,7 +2414,8 @@
      "lastChange": "2026-10-13T03:33:20Z"
     },
     {
-     "path": "data/news-status.json"
+     "path": "data/news-status.json",
+     "lastChange": "2026-10-13T03:33:20Z"
     },
     {
      "path": "data/views/news-index.json",
@@ -2644,7 +2645,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2667,7 +2668,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2684,7 +2685,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/products"
@@ -2695,15 +2696,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/country-pending.json",
@@ -2711,18 +2712,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -2730,7 +2731,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-13T04:44:25Z"
+     "lastChange": "2026-10-13T04:50:30Z"
     },
     {
      "path": "data/home-explore.json",
