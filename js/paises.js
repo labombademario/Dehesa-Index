@@ -162,12 +162,13 @@
   // Linaje y revisiones son detalle de la serie: se descargan al primer gesto o cuando la seccion de fuentes esta cerca, no al abrir la ficha
   (function () {
     var done = false, ev = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
-    function go() {
+    function go(e0) {
+      if (e0 && e0.type === 'scroll' && e0.target !== document && e0.target !== window) return;   // el scroll interno de una lista (p. ej. el selector de series) no cuenta como gesto del usuario
       if (done) return; done = true; ev.forEach(function (e) { window.removeEventListener(e, go, true); });
       fetch('data/pipeline-status.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d) { PS = d; fill(); } }).catch(function () {});
       fetch('data/revisions.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.revisions) { REV = d.revisions; fill(); } }).catch(function () {});
     }
-    ev.forEach(function (e) { window.addEventListener(e, go, { capture: true, passive: true, once: true }); });
+    ev.forEach(function (e) { window.addEventListener(e, go, { capture: true, passive: true }); });
   })();
   function watchBtn(cur) {
     if (!window.DIWatch) return ''; var w = DIWatch.labels[lang()] || DIWatch.labels.es, on = DIWatch.has(ST.c, cur.id);
