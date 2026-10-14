@@ -61,6 +61,18 @@ sources:
     data: [spain-livestock/index.json, spain-livestock-log.txt]
     extra: ['!data/spain-livestock']
     message: Datos efectivos de ganado de España por provincia (MAPA)
+  - id: spain-land
+    name: Update Spain farmland prices and rents by region and province (MAPA)
+    cron: ['25 8 * * 2']
+    script: scripts/update-spain-land.py
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl']
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-land)
+    data: [spain-land/land.json, spain-land-log.txt]
+    extra: ['!data/spain-land']
+    message: Precio de la tierra y cánones de arrendamiento de España por comunidad y provincia (MAPA)
   - id: spain-balances
     name: Update Spain cereal balance sheets (MAPA)
     cron: ['35 7 * * 4']

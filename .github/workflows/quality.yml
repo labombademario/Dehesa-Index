@@ -98,6 +98,9 @@ jobs:
       - name: Spain crops by province (MAPA workbook parser, sums, provisional campaigns, failure safety; synthetic workbook, no network)
         run: pip install openpyxl && python3 scripts/test-spain-crops.py
 
+      - name: Spain farmland prices and rents (MAPA workbook parser, real fixtures, revisions, link picking, refusal on corrupted data; no network)
+        run: pip install openpyxl && python3 scripts/test-spain-land.py
+
       - name: Spain livestock headcounts by province (MAPA workbook parser, negatives as gaps, sums, refusal on corrupted data; synthetic workbook, no network)
         run: pip install openpyxl && python3 scripts/test-spain-livestock.py
 

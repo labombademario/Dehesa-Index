@@ -2389,6 +2389,36 @@ def spain_wine_balance_historic(doc, errs, warns, stats):
     stats["spain-wine-balance-historic campañas"] = n
 
 
+def _sl_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_land", str(Path(__file__).resolve().parent / "update-spain-land.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+def spain_land(doc, errs, warns, stats):
+    """Precio de la tierra y canones del MAPA: anos ordenados con estado conocido, 17 comunidades + total nacional, series de la longitud de los anos, sin valores <= 0, tipos conocidos,
+    las 50 provincias del ultimo ano, precio general de cada comunidad entre los de sus tipos, y el precio general nacional dentro de rango plausible (1.000-60.000 EUR/ha)."""
+    m = _sl_mod(); Y = doc["years"]; n = len(Y)
+    if Y != sorted(set(Y)): errs.append("spain-land: anos desordenados o repetidos"); return
+    if set(doc["status"]) != set(str(y) for y in Y): errs.append("spain-land: estado de campana distinto de los anos"); return
+    if any(v not in ("definitive", "provisional") for v in doc["status"].values()): errs.append("spain-land: estado de campana inventado"); return
+    want = set(m.CCAA.values()) | {"ES"}
+    for blk, known in (("price", set(doc["types"])), ("rent", set(doc["rentTypes"]))):
+        if set(doc[blk]["ccaa"]) != want: errs.append("spain-land %s: comunidades distintas de las 17 esperadas mas el total" % blk); return
+        for c, tv in doc[blk]["ccaa"].items():
+            for t, a in tv.items():
+                if t not in known: errs.append("spain-land %s %s: tipo desconocido %s" % (blk, c, t)); return
+                if len(a) != n: errs.append("spain-land %s %s %s: longitud distinta de los anos" % (blk, c, t)); return
+                if any(x is not None and x <= 0 for x in a): errs.append("spain-land %s %s %s: valor no positivo" % (blk, c, t)); return
+    pv = doc["price"]["prov"]
+    if pv["year"] != Y[-1]: errs.append("spain-land: las provincias no son del ultimo ano"); return
+    if set(pv["values"]) != set("%02d" % i for i in range(1, 51)) or set(pv["names"]) != set(pv["values"]): errs.append("spain-land: no hay exactamente las 50 provincias"); return
+    for k, tv in pv["values"].items():
+        if any(t not in doc["types"] or not isinstance(x, (int, float)) or x <= 0 for t, x in tv.items()): errs.append("spain-land provincia %s: valor o tipo invalido" % k); return
+    g = doc["price"]["ccaa"]["ES"].get("PT")
+    if not g or g[-1] is None or not 1000 <= g[-1] <= 60000: errs.append("spain-land: precio general nacional fuera de rango"); return
+    r = doc["rent"]["ccaa"]["ES"].get("GEN")
+    if not r or r[-1] is None or not 20 <= r[-1] <= 2000: errs.append("spain-land: canon general nacional fuera de rango"); return
+    stats["spain-land anos"] = n
+
 def spain_milk(doc, errs, warns, stats):
     """Leche cruda de INFOLAC (MAPA): periodos ordenados y sin repetir, series de la longitud de los periodos, 17 comunidades esperadas, sin negativos, precio/grasa/proteina en rango, leche ecologica <= entregas,
     comunidades suman las entregas del mes (el total puede superar la suma solo por el ganadero de otro pais que declara el MAPA, <= 0,1 %), ganaderos por comunidad <= total, y el ultimo periodo es el mes del ultimo informe."""
