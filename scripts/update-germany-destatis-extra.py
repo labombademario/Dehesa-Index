@@ -78,7 +78,7 @@ def main():
     for name, sy in (("41253-0002", "1991"), ("41244-0001", "2019"), ("41261-0001", "1998"), ("41261-0010", "1998"), ("41261-0003", "2006"), ("41271-0001", "1971"), ("41271-0010", "1991"),
                      ("41141-0005", "2010"), ("41321-0003", "2010"), ("41362-0001", "2011"), ("41363-0001", "2011"),
                      ("42321-0003", "2010"), ("61243-0005", "2019"), ("61243-0014", "2019"), ("61241-0101", "2005"), ("41215-0001", "2010"), ("41215-0002", "2010"), ("41232-0001", "2012"), ("41214-0001", "2012"),
-                     ("41241-0006", "2010"), ("41252-0002", "1991"), ("41312-0004", "2010"), ("41313-0004", "2010"), ("41314-0002", "2011"), ("41141-0009", "2010"), ("41141-0015", "2010"), ("41141-0016", "2020")):
+                     ("41241-0006", "2010"), ("41252-0002", "2015"), ("41312-0004", "2010"), ("41313-0004", "2010"), ("41314-0002", "2011"), ("41141-0009", "2010"), ("41141-0015", "2010"), ("41141-0016", "2020")):
         try: T[name] = fetch(tok, name, sy); log(name, len(T[name]), "filas")
         except Exception as e: log("ERROR", name, str(e)[:200])
     WN = "Datos de la estadistica de la vendimia de Destatis (41253); el mosto (Weinmost) es la uva prensada antes de fermentar, en hectolitros."
@@ -189,6 +189,11 @@ def tpts(R, var, want, per):
         p = per(r); v = num(r["value"])
         if p and v is not None: out[p] = v
     return out
+def tr(lab, M):
+    """traduccion por subcadena (clave mas larga primero); si no hay, la etiqueta alemana"""
+    for k in sorted(M, key=len, reverse=True):
+        if k in lab: return M[k]
+    return lab
 def p_year(r): return r["time"].strip()[:4]
 def p_q(n):
     def f(r):
@@ -202,7 +207,9 @@ def p_m(r):
     m = re.match(r"^(\d{4})-(\d{2})P1M$", r["time"].strip()); return "%s-%s" % (m.group(1), m.group(2)) if m else None
 def more(T):
     FN = "Ventas interiores de abonos de Destatis (42321), trimestral, toneladas de nutriente (N, P2O5, K2O) o de CaO segun el tipo; solo los tipos con unidad de nutriente en su etiqueta."
-    EN_F = {"Kalkammonsalpeter": "calcium ammonium nitrate", "Harnstoff": "urea", "Kaliumchlorid": "potassium chloride", "Kaliumsulfat": "potassium sulphate", "Kalirohsalz": "crude potash salt", "Branntkalk": "quicklime", "Kohlensaurer Kalk": "carbonate lime"}
+    EN_F = {"Kalkammonsalpeter": "calcium ammonium nitrate", "Ammoniumnitrat-Harnstoff": "urea ammonium nitrate solution", "Kaliumchlorid": "potassium chloride", "Kaliumsulfat": "potassium sulphate", "Kalirohsalz": "crude potash salt",
+            "Branntkalk": "quicklime", "Kohlensaurer Kalk": "carbonate lime", "Konverterkalk": "converter lime", "Andere Einnährstoffdünger": "other single-nutrient fertilisers", "Andere Kalkdünger": "other lime fertilisers",
+            "Andere Phosphatdünger": "other phosphate fertilisers", "NK- und NPK-Dünger": "NK and NPK compound", "NPK-Dünger": "NPK compound", "NP-Dünger": "NP compound", "PK-Dünger": "PK compound", "Superphosphat": "superphosphate"}
     if "42321-0003" in T:
         R = T["42321-0003"]; seen = {}
         for r in R:
@@ -210,7 +217,8 @@ def more(T):
             if m: seen[lab] = m.group(1)
         for lab, nut in sorted(seen.items()):
             base = re.sub(r"\s*\(t-[A-Za-z0-9]+\)", "", lab)
-            add("de-fert-sales-" + slug(base) + "-" + nut.lower(), "inputs", "Fertiliser sales, %s (%s), Germany" % (EN_F.get(base, base), nut), "t " + nut, "quarterly", tpts(R, None, {3: lab}, p_q(1)), FN)
+            en = tr(base, EN_F)
+            add("de-fert-sales-" + slug(en) + "-" + nut.lower(), "inputs", "Fertiliser sales, %s (%s), Germany" % (en, nut), "t " + nut, "quarterly", tpts(R, None, {3: lab}, p_q(1)), FN)
     EP = "Precios de la electricidad y del gas para no hogares de Destatis (61243), semestral, EUR por kWh; 'con impuestos' incluye todos los impuestos y tasas, 'sin impuestos' excluye impuestos, tasas y recargos."
     def energy(tab, var, kind, en, classes):
         if tab not in T: return
@@ -244,16 +252,17 @@ def more(T):
         R = T["41215-0001"]
         for var, k, en, u, g in (("Anbaufläche Gemüse", "area", "Vegetable area", "ha", "crops"), ("Erntemenge Gemüse", "harvest", "Vegetable harvest", "t", "production"), ("Betriebe mit Gemüseanbau", "holdings", "Vegetable growers", "holdings", "production")):
             add("de-veg-total-" + k, g, en + ", Germany", u, "annual", tpts(R, var, {}, p_year), VN)
-    VEG = {"Spargel (im Ertrag)": "asparagus", "Spargel": "asparagus", "Möhren": "carrots", "Möhren, Karotten": "carrots", "Zwiebeln": "onions", "Speisezwiebeln": "onions", "Weißkohl": "white cabbage", "Rotkohl": "red cabbage", "Blumenkohl": "cauliflower", "Broccoli": "broccoli", "Einlegegurken": "pickling cucumbers", "Salatgurken": "salad cucumbers", "Spinat": "spinach", "Eissalat": "iceberg lettuce", "Porree": "leek", "Rote Bete": "beetroot", "Knollensellerie": "celeriac", "Kohlrabi": "kohlrabi", "Chinakohl": "Chinese cabbage", "Feldsalat": "lamb's lettuce", "Speisekürbis": "pumpkin"}
+    VEG = {"Spargel": "asparagus", "Möhren": "carrots", "Speisezwiebeln": "dry onions", "Bundzwiebeln": "spring onions", "Weißkohl": "white cabbage", "Rotkohl": "red cabbage", "Blumenkohl": "cauliflower", "Broccoli": "broccoli", "Einlegegurken": "pickling cucumbers",
+           "Salatgurken": "salad cucumbers", "Gurken": "cucumbers", "Spinat": "spinach", "Eissalat": "iceberg lettuce", "Porree": "leek", "Rote Rüben": "beetroot", "Rote Bete": "beetroot", "Sellerie": "celeriac", "Kohlrabi": "kohlrabi", "Chinakohl": "Chinese cabbage", "Feldsalat": "lamb's lettuce", "Kürbis": "pumpkin", "Tomaten": "tomatoes", "Rettich": "radish"}
     if "41215-0002" in T:
         R = T["41215-0002"]; last = {}
         for r in R:
             if r["value_variable_label"].strip() == "Erntemenge Gemüse (Freiland)":
                 v = num(r["value"]); y = r["time"].strip()[:4]; c = labels(r).get(2, "")
                 if v is not None and c and (c not in last or y >= last[c][0]): last[c] = (y, v)
-        top = sorted(last, key=lambda c: -last[c][1])[:16]
+        top = sorted((c for c in last if c != "Insgesamt" and "insgesamt" not in c.lower()), key=lambda c: -last[c][1])[:16]
         for c in top:
-            nm = VEG.get(c, c)
+            nm = tr(c, VEG)
             add("de-veg-%s-harvest" % slug(nm), "production", "Field vegetable harvest, %s, Germany" % nm, "t", "annual", tpts(R, "Erntemenge Gemüse (Freiland)", {2: c}, p_year), VN)
             add("de-veg-%s-area" % slug(nm), "crops", "Field vegetable area, %s, Germany" % nm, "ha", "annual", tpts(R, "Anbaufläche Gemüse (Freiland)", {2: c}, p_year), VN)
     if "41232-0001" in T:
@@ -267,7 +276,7 @@ def more(T):
         add("de-mushrooms-champignon-harvest", "production", "Champignon harvest, Germany", "t", "annual", tpts(R, "Erntemenge", {2: "Champignons"}, p_year), MU)
     if "41241-0006" in T:
         R = T["41241-0006"]; FO = "Cosecha de forraje basto de Destatis (41241), toneladas de producto fresco o conservado segun el uso."
-        for de, k, en in (("Insgesamt", "total", "all uses"), ("Heu", "hay", "hay"), ("Silage", "silage", "silage"), ("Frischfutter / Weide", "fresh", "fresh feed and grazing")):
+        for de, k, en in (("Heu", "hay", "hay"), ("Silage", "silage", "silage"), ("Frischfutter / Weide", "fresh", "fresh feed and grazing")):
             add("de-forage-" + k, "production", "Forage harvest (grassland and field grass), %s, Germany" % en, "t", "annual", tpts(R, "Erntemenge von Raufutter", {2: "Insgesamt", 3: de}, p_year), FO)
     if "41252-0002" in T:
         R = T["41252-0002"]; VI = "Estadistica de superficie de vinedo de Destatis (41252): superficie con uva de vinificacion por region vitivinicola, en hectareas."
