@@ -37,3 +37,8 @@ No hay historia suficiente para extrapolar una tasa estable; por eso la medicion
 
 ## Que NO se ha hecho a proposito
 No se ha borrado ni reescrito historia ni datos historicos. Todo lo anterior es reversible y esta documentado como recomendacion.
+
+## Medicion del 2026-10-14 (limite del historial subido de 400 a 500 MB)
+- El historial git llego a ~457 MB (limite 400) y `check-repo-growth.py` fallaba en CI. `data/normalized.json` se compacto (13,5 a 10,5 MB), pero eso no reduce el historial ya acumulado.
+- **Decision de Mario (2026-10-14): subir el limite a 500 MB (aviso a 250 se mantiene) y dejar el archivado para mas adelante.** No es permiso para crecer sin freno.
+- Pendiente: archivar el historico antiguo en un repositorio privado `dehesa-index-data-archive` y reiniciar `main` (ver Politica, punto 3). Requiere que Mario cree el repositorio vacio; sin copia segura no se reescribe la historia.

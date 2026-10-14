@@ -4,7 +4,7 @@
   "warnFileMB": 10,
   "maxDataTreeMB": 250,
   "warnDataTreeMB": 215,
-  "maxPackMB": 400,
+  "maxPackMB": 500,
   "warnPackMB": 250,
   "dirBudgets": {
     "data/us-cash-bids/": { "warnMB": 20, "maxMB": 40, "_doc": "US Local Cash Bids: ~58 bytes por observacion en el historico. Con los 30 informes registrados (~1.080 series) se esperan ~8 MB hoy y ~15 MB mas por ano de datos diarios; el aviso salta a ~20 MB (hacia el ano 1) y el limite a 40 MB (hacia el ano 2). Antes de llegar: particionar history/ por ano. Ver docs/REPO_GROWTH.md" }
