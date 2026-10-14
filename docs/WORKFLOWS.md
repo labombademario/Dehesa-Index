@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-187 workflows (149 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+188 workflows (150 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -221,6 +221,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-portugal-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal-eurostat.py | portugal-eurostat-stats.json | finish, validate-files |
 | update-portugal.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal.py | portugal-stats.json | finish, validate-files |
 | update-recan.yml | a mano | semanal (4) | update-recan.py | recan.json | finish, validate-files |
+| update-regions-pl.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-poland-regions.py | poland-regions/regions.json | finish, validate-files |
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | spain-balances/cereals.json | finish, validate-files |
 | update-spain-crops.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-crops.py | spain-crops/index.json | finish, validate-files |
 | update-spain-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-spain-hicp.py | spain-hicp-stats.json | finish, validate-files |
