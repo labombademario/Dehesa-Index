@@ -60,18 +60,32 @@ def country_de():
                 'rules': comp('PARTIAL', 'de/amounts.json', count=len(a['conditions']), note='Resumen de las condiciones de las diez Oko-Regelungen (GAPDZV Anlage 5); no incluye listas ni metodos que fijan los Lander ni el resto de la normativa'),
                 'importantDates': ni('no se han leido los plazos de solicitud (los fijan los Lander)', 'NOT_READ'),
                 'watch': ni('sin vigilancia automatica: ni gesetze-im-internet.de ni el Bundesanzeiger se leen desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre', 'SOURCE_UNREACHABLE')}}
+def country_nat(cc, name, amounts_comp):
+    """FR, IT y PL: reglas curadas (rules.json), vigilancia (watch.json) e importes si los hay. Solo pagos directos: el resto de la PAC no se ha leido."""
+    r, w = J('%s/rules.json' % cc.lower()), J('%s/watch.json' % cc.lower())
+    if not (r and w): return None
+    src = r['source']
+    wc = comp('INGESTED', '%s/watch.json' % cc.lower(), checkedAt=w['checkedAt'], reviewNeeded=len(w['reviewNeeded'])) if w['status'] == 'OK' else \
+        comp('PARTIAL', '%s/watch.json' % cc.lower(), checkedAt=w['checkedAt'], reviewNeeded=len(w['reviewNeeded']), note={'NOT_YET_RUN': 'vigilancia configurada, aun sin primera lectura automatica', 'UNREACHABLE': 'la ultima lectura no llego a la fuente oficial', 'PARTIAL': 'la lectura quedo a medias (se continua en la siguiente ejecucion)'}.get(w['status']))
+    return {'cc': cc, 'name': name, 'scheme': r['scheme'], 'legalAct': {'title': src['instrument'], 'ref': src['ref'], 'url': src['url'], 'sourceId': src['id']},
+            'updatedAt': max([r['verifiedAt']] + ([w['checkedAt']] if w['checkedAt'] else []) + amounts_comp[1]),
+            'components': {
+                'strategicPlan': ni('el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos', 'NOT_READ'),
+                'interventions': comp('PARTIAL', '%s/rules.json' % cc.lower(), count=len(r['interventions']), note='Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido'),
+                'amounts': amounts_comp[0],
+                'rules': comp('PARTIAL', '%s/rules.json' % cc.lower(), count=len(r['rules']), note='Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico'),
+                'importantDates': comp('PARTIAL', '%s/rules.json' % cc.lower(), count=len(r['calendar']), note='Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido'),
+                'watch': wc}}
 def country_fr():
     a = J('fr/amounts.json')
     if not a: return None
-    return {'cc': 'FR', 'name': 'Francia', 'scheme': 'Arretes del Ministerio de Agricultura sobre los importes de la campana 2025 (Journal officiel)', 'legalAct': {'title': 'Arretes de 23 y 30 de septiembre de 2025, 24 de febrero de 2026 y sus modificaciones (25-nov-2025, 11-mar-2026, 5-jun-2026)', 'ref': 'JORF; NOR AGRT2524991A y siguientes', 'url': 'https://www.legifrance.gouv.fr/jorf/id/' + a['documents'][0]['jorfText'], 'sourceId': 'dila_jorf'},
-            'updatedAt': a['verifiedAt'],
-            'components': {
-                'strategicPlan': ni('el plan estrategico frances no se ha leido: solo los importes por unidad', 'NOT_READ'),
-                'interventions': comp('INGESTED', 'fr/amounts.json', count=len(a['items']), note='Ayuda redistributiva, jovenes, tasa de reduccion, ecorregimen, ayudas ovina, caprina y de Corse y ayudas acopladas vegetales, con su importe por unidad'),
-                'amounts': comp('INGESTED', 'fr/amounts.json', campaigns=[a['campaign']], kind=a['kind'], note='Campana 2025: importe de cada arrete y de sus modificaciones; falta el importe unitario de la ayuda de base y aun no hay arretes de la campana 2026'),
-                'rules': ni('no se han leido las condiciones de acceso a las ayudas (otros arretes del JORF)', 'NOT_READ'),
-                'importantDates': ni('no se han leido los plazos de solicitud', 'NOT_READ'),
-                'watch': ni('sin vigilancia automatica: la lectura del volcado de la DILA se hizo a mano una vez', 'NOT_BUILT')}}
+    return country_nat('FR', 'Francia', (comp('PARTIAL', 'fr/amounts.json', campaigns=a['campaigns'], kind=a['kind'], count=len(a['items']), note='Importes de los arretes de las campanas 2025 y 2026 (con sus modificaciones); faltan el importe unitario de la ayuda de base y, en 2026, el ecorregimen y las ayudas acopladas vegetales'), [a['verifiedAt']]))
+def country_it():
+    return country_nat('IT', 'Italia', (ni('el decreto no fija importes unitarios (los calcula AGEA) y las circulares de AGEA no se pueden leer desde los servidores de GitHub', 'SOURCE_UNREACHABLE'), []))
+def country_pl():
+    a = J('pl/amounts.json')
+    if not a: return None
+    return country_nat('PL', 'Polonia', (comp('PARTIAL', 'pl/amounts.json', campaigns=a['campaigns'], kind=a['kind'], count=len(a['items']), note='Tasas oficiales de las ayudas acopladas, ecorregimenes y bienestar animal 2023-2025 y anticipos 2026; faltan las tasas definitivas de 2026 y las del pago basico, redistributivo y jovenes'), [a['verifiedAt']]))
 def country_eu():
     e = J('eu/allocations.json')
     if not e: return None
@@ -100,13 +114,17 @@ def next_occurrence(cal, today):
 def build(today):
     cs = [x for x in (country_es(), country_dk(), country_eu()) if x]
     cs += [blocked(cc, n, r, c) for cc, n, r, c in PENDING]
-    cs += [x for x in (country_de(), country_fr()) if x]   # al final: las pruebas de contrato indexan los primeros paises
+    cs += [x for x in (country_de(), country_fr(), country_it(), country_pl()) if x]   # al final: las pruebas de contrato indexan los primeros paises
     rules, events, deadlines = J('es/rules.json'), [], []
     for cc, f in (('ES', 'es/watch.json'), ('DK', 'dk/watch.json')):
         w = J(f)
         if not w: continue
         for it in w.get('reviewNeeded', []):
             events.append({'type': 'RULE_CHANGED', 'cc': cc, 'detail': it if isinstance(it, str) else json.dumps(it, ensure_ascii=False, sort_keys=True), 'detectedAt': w['checkedAt'], 'officialUrl': (rules['source']['url'] if cc == 'ES' else J('dk/amounts.json')['documents'][0]['url'])})
+    for cc in ('FR', 'IT', 'PL'):
+        w, rr = J('%s/watch.json' % cc.lower()), J('%s/rules.json' % cc.lower())
+        for it in (w or {}).get('reviewNeeded', []):
+            events.append({'type': 'RULE_CHANGED', 'cc': cc, 'detail': it, 'detectedAt': w['checkedAt'], 'officialUrl': rr['source']['url']})
     for cc, f in (('ES', 'es/amounts.json'), ('DK', 'dk/amounts.json')):
         a = J(f)
         for ch in (a or {}).get('changes', []):
@@ -115,9 +133,14 @@ def build(today):
         for c in rules['calendar']:
             d = next_occurrence(c, today)
             if d: deadlines.append({'cc': 'ES', 'id': c['id'], 'kind': c['kind'], 'date': d.isoformat(), 'text': c['text'], 'regionalNote': c.get('regional') or None, 'legalBasis': c['legalBasis'], 'officialUrl': rules['source']['url']})
-    deadlines.sort(key=lambda x: (x['date'], x['id']))
+    for cc in ('FR', 'IT', 'PL'):
+        rr = J('%s/rules.json' % cc.lower())
+        for c in (rr or {}).get('calendar', []):
+            d = next_occurrence(c, today)
+            if d: deadlines.append({'cc': cc, 'id': c['id'], 'kind': c['kind'], 'date': d.isoformat(), 'text': c['text'], 'legalBasis': c['legalBasis'], 'officialUrl': rr['source']['url']})
+    deadlines.sort(key=lambda x: (x['date'], x['cc'], x['id']))
     for x in deadlines:
-        if x['regionalNote'] is None: del x['regionalNote']
+        if x.get('regionalNote', 1) is None: del x['regionalNote']
     return {'schemaVersion': 1, 'asOf': today.isoformat(),
             'contract': {'doc': 'Contrato comun de la PAC por pais en data/cap/<CC>/. Cada componente declara INGESTED, PARTIAL o NOT_INGESTED (con razon). Un pais solo pasa a INGESTED con una fuente institucional oficial y licencia aprobada en el License Gate. Sin consejo juridico ni calculo de ayudas individuales.',
                          'components': COMPONENTS, 'states': ['INGESTED', 'PARTIAL', 'NOT_INGESTED']},

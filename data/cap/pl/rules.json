@@ -1,0 +1,487 @@
+{
+ "schemaVersion": 1,
+ "country": "PL",
+ "scheme": "Plan Strategiczny dla WPR na lata 2023-2027 (ustawa z dnia 8 lutego 2023 r.)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-14",
+ "source": {
+  "id": "sejm_eli",
+  "instrument": "Ustawa z dnia 8 lutego 2023 r. o Planie Strategicznym dla Wspólnej Polityki Rolnej na lata 2023-2027 (Dz.U. 2023 poz. 412; texto unificado Dz.U. 2024 poz. 1741) y reglamentos del Ministro de Agricultura",
+  "ref": "DU/2023/412",
+  "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+ },
+ "note": "Reglas leídas a mano del texto unificado de la ley (Dz.U. 2024 poz. 1741), comprobadas contra las reformas de 2024, 2025 y 2026, y de los reglamentos de tasas y anticipos; vigiladas por data/cap/pl/watch.json (fecha de cambio y reformas del Sejm). Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Podstawowe wsparcie dochodów do celów zrównoważoności",
+   "nameLang": "pl",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 20 pkt 1 lit. a",
+   "articles": [
+    "20"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Uzupełniające redystrybucyjne wsparcie dochodów (płatność redystrybucyjna)",
+   "nameLang": "pl",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 20 pkt 1 lit. b y 27",
+   "articles": [
+    "20",
+    "27"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Uzupełniające wsparcie dochodów dla młodych rolników",
+   "nameLang": "pl",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 20 pkt 1 lit. c y 28",
+   "articles": [
+    "20",
+    "28"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Płatności w ramach wsparcia dochodów związanego z produkcją (płatności związane z produkcją)",
+   "nameLang": "pl",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 20 pkt 1 lit. d y 29",
+   "articles": [
+    "20",
+    "29"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Płatności w ramach schematów na rzecz klimatu, środowiska i dobrostanu zwierząt (ekoschematy)",
+   "nameLang": "pl",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 20 pkt 1 lit. e, 30 y 36",
+   "articles": [
+    "20",
+    "30",
+    "36"
+   ]
+  },
+  {
+   "id": "small-farms",
+   "kind": "basic",
+   "name": "Płatność dla małych gospodarstw",
+   "nameLang": "pl",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 20 pkt 1 lit. f y 36a",
+   "articles": [
+    "20",
+    "36a"
+   ]
+  },
+  {
+   "id": "transitional",
+   "kind": "basic",
+   "name": "Przejściowe wsparcie krajowe (uzupełniająca płatność podstawowa y płatność niezwiązana do tytoniu)",
+   "nameLang": "pl",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 20 pkt 2, 37 y 39",
+   "articles": [
+    "20",
+    "37",
+    "39"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 24",
+   "articles": [
+    "24"
+   ],
+   "text": "Cuando una ayuda exige agricultor activo, no se concede a quien gestiona aeropuertos, aguas o instalaciones deportivas o recreativas permanentes, presta transporte ferroviario o negocia inmuebles, salvo que su actividad agrícola sea la principal según los registros oficiales, sus ingresos agrarios sean al menos un tercio del total (o sus pagos directos del año anterior, al menos el 5 % de sus ingresos no agrarios), o sus pagos directos del año anterior no pasen de 5.000 euros.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "smallEur": 5000
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 25",
+   "articles": [
+    "25"
+   ],
+   "text": "Los pagos directos exigen una actividad agraria y al menos 1 ha en el apoyo básico a la renta. Excepción: sin esa hectárea se pagan igualmente si se piden pagos acoplados por animales o de bienestar y el total, antes de sanciones, es al menos el equivalente a 200 euros.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "minHa": 1,
+    "minEur": 200
+   }
+  },
+  {
+   "id": "parcels",
+   "topic": "payments",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 22 i 26",
+   "articles": [
+    "22",
+    "26"
+   ],
+   "text": "Los pagos directos se conceden por parcelas agrarias de al menos 0,1 ha sobre hectáreas admisibles. Si la ayuda exige tener la tierra, cuenta la que se posee con título legal el 31 de mayo del año de la solicitud.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "minParcelHa": 0.1,
+    "landDate": "05-31"
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 27",
+   "articles": [
+    "27"
+   ],
+   "text": "Pago redistributivo: lo recibe el agricultor que posee a 31 de mayo entre 1 y 300 ha en total y se paga sobre las primeras 30 ha de su tierra en el apoyo básico. Las cooperativas multiplican los límites por su número de miembros si han pasado la auditoría cooperativa en los tres últimos años.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "minHa": 1,
+    "maxHa": 300,
+    "paidUpToHa": 30
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 28",
+   "articles": [
+    "28"
+   ],
+   "text": "Jóvenes agricultores: 40 años como máximo en el primer año de solicitud, dirigir la explotación por cuenta propia y tener formación profesional, media o agraria, o tres años de experiencia en el campo. Se paga sobre la tierra del apoyo básico, durante un máximo de cinco años consecutivos; el último pago puede ser por 2027.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "maxAge": 40,
+    "years": 5,
+    "lastCampaign": 2027
+   }
+  },
+  {
+   "id": "small-farms",
+   "topic": "payments",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 36a",
+   "articles": [
+    "36a"
+   ],
+   "text": "Pago para pequeñas explotaciones (desde junio de 2024): al menos 1 ha en el apoyo básico y como máximo 5 ha de superficie agraria a 31 de mayo. Si el agricultor no cumple esos límites, se le deniega y se resuelven sus pagos directos normales.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "minHa": 1,
+    "maxHa": 5
+   }
+  },
+  {
+   "id": "coupled",
+   "topic": "associated",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 29",
+   "articles": [
+    "29"
+   ],
+   "text": "Los pagos acoplados cubren leguminosas, forrajeras, patata fécula, remolacha azucarera, tomate, lúpulo, fresa, lino y cáñamo por hectárea, y bovinos, ovinos y caprinos por cabeza. Bovino: animales de hasta 24 meses (pago por bovino) o hembras de más de 24 meses (pago por vaca) a 15 de mayo, mínimo 1 animal en siete voivodatos y 3 en los otros nueve, máximo 20 animales.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "maxCattle": 20,
+    "ageMonths": 24,
+    "minHeadFew": 1,
+    "minHeadMany": 3
+   }
+  },
+  {
+   "id": "eco-schemes",
+   "topic": "eco",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 30 i 36",
+   "articles": [
+    "30",
+    "36"
+   ],
+   "text": "Los ecoesquemas se conceden como pagos por: zonas con plantas melíferas, agricultura del carbono y gestión de nutrientes, producción integrada, cultivo biológico (hasta 2024 «protección biológica de cultivos»), retención de agua en pastos permanentes, tierras apartadas de la producción, material de siembra élite o certificado (desde 2025) y bienestar animal. Este último premia prácticas en cerdos, bovinos, ovinos, caprinos, caballos, gallinas y pavos.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html"
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 1",
+   "articles": [
+    "60"
+   ],
+   "text": "La solicitud de pagos directos se presenta del 15 de marzo al 15 de mayo. Fuera de plazo se admite hasta 25 días después, con una penalización del 1 % de la ayuda por día (sin contar sábados ni festivos). El Ministro puede ampliar el plazo por reglamento. El plazo no se restituye.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "openMonth": 3,
+    "openDay": 15,
+    "closeMonth": 5,
+    "closeDay": 15,
+    "lateDays": 25,
+    "perDayPct": 1
+   }
+  },
+  {
+   "id": "changes",
+   "topic": "calendar",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 2",
+   "articles": [
+    "60"
+   ],
+   "text": "Los cambios de la solicitud se hacen hasta el 31 de mayo (después, hasta el último día de presentación, con 1 % de penalización por día hábil) y hasta el 15 de septiembre si la Agencia ha informado de irregularidades detectadas en sus controles o en el seguimiento de superficies. La solicitud puede retirarse hasta la decisión, salvo en la parte con irregularidades o tras avisar de un control in situ.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "month": 5,
+    "day": 31,
+    "irregularitiesMonth": 9,
+    "irregularitiesDay": 15
+   }
+  },
+  {
+   "id": "decision",
+   "topic": "calendar",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 67 ust. 11",
+   "articles": [
+    "67"
+   ],
+   "text": "La decisión sobre los pagos directos se dicta como máximo el 31 de mayo del año siguiente al de la solicitud.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/1741/text.html",
+   "values": {
+    "month": 5,
+    "day": 31,
+    "yearOffset": 1
+   }
+  },
+  {
+   "id": "advances",
+   "topic": "payments",
+   "legalBasis": "Rozporządzenia o wypłacie zaliczek (art. 50 ust. 1 ustawy): Dz.U. 2023 poz. 2218, 2024 poz. 1518, 2025 poz. 1383, 2026 poz. 1173",
+   "articles": [
+    "50"
+   ],
+   "text": "Cada otoño un reglamento fija los anticipos: de 2023 a 2025, el 70 % de la tasa desde el 16 de octubre; en 2026, el 75 % de una tasa estimada desde el 8 de septiembre. El anticipo de las ayudas de desarrollo rural es del 85 %. La tasa estimada de 2026 no es la definitiva.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/1173",
+   "values": {
+    "2023": {
+     "share": 0.7,
+     "from": "2023-10-16"
+    },
+    "2024": {
+     "share": 0.7,
+     "from": "2024-10-16"
+    },
+    "2025": {
+     "share": 0.7,
+     "from": "2025-10-16"
+    },
+    "2026": {
+     "share": 0.75,
+     "from": "2026-09-08"
+    }
+   }
+  },
+  {
+   "id": "annual-rates",
+   "topic": "amounts",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 49 ust. 1",
+   "articles": [
+    "49"
+   ],
+   "text": "Las tasas por unidad de los pagos acoplados, los ecoesquemas y el bienestar animal las fija cada año un reglamento del Ministro. Los de acoplados y ecoesquemas salieron hacia el 15 de octubre de cada campaña; los de bienestar animal, en abril del año siguiente. Las tasas definitivas del apoyo básico, el redistributivo y el de jóvenes no las hemos encontrado en el Dziennik Ustaw.",
+   "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1394"
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-open",
+   "kind": "window-start",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 1",
+   "articles": [
+    "60"
+   ],
+   "when": {
+    "month": 3,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Empieza el plazo de la solicitud de pagos directos (15 de marzo)."
+  },
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 1",
+   "articles": [
+    "60"
+   ],
+   "when": {
+    "month": 5,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Termina el plazo ordinario de la solicitud de pagos directos (15 de mayo). El Ministro puede ampliarlo por reglamento."
+  },
+  {
+   "id": "su-late-limit",
+   "kind": "deadline",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 1",
+   "articles": [
+    "60"
+   ],
+   "when": {
+    "month": 6,
+    "day": 9,
+    "yearOffset": 0
+   },
+   "text": "Último día para presentar la solicitud con penalización del 1 % por día (25 días después del 15 de mayo)."
+  },
+  {
+   "id": "changes-1",
+   "kind": "deadline",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 2 pkt 1",
+   "articles": [
+    "60"
+   ],
+   "when": {
+    "month": 5,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Último día para modificar la solicitud sin penalización (31 de mayo)."
+  },
+  {
+   "id": "changes-2",
+   "kind": "deadline",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 2 pkt 2",
+   "articles": [
+    "60"
+   ],
+   "when": {
+    "month": 9,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Último día para modificar la solicitud si la Agencia ha informado de irregularidades (15 de septiembre)."
+  },
+  {
+   "id": "decision",
+   "kind": "publication",
+   "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 67 ust. 11",
+   "articles": [
+    "67"
+   ],
+   "when": {
+    "month": 5,
+    "day": 31,
+    "yearOffset": 1
+   },
+   "text": "Fecha límite de la decisión sobre los pagos directos solicitados el año anterior (31 de mayo)."
+  }
+ ],
+ "campaignOverrides": [],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "When an aid requires an active farmer, it is not granted to someone who manages airports, waterworks or permanent sports or leisure grounds, provides rail transport or deals in real estate, unless farming is their main activity in the official registers, farm income is at least a third of the total (or last year’s direct payments are at least 5 % of non-farm income), or last year’s direct payments did not exceed €5,000.",
+    "fr": "Lorsqu'une aide exige un agriculteur actif, elle n'est pas accordée à qui gère des aéroports, des réseaux d'eau ou des terrains de sport ou de loisirs permanents, assure des services ferroviaires ou fait de l'immobilier, sauf si l'activité agricole est son activité principale dans les registres officiels, si le revenu agricole représente au moins un tiers du total (ou si les paiements directs de l'an dernier valent au moins 5 % du revenu non agricole), ou si ses paiements directs de l'an dernier n'excèdent pas 5 000 euros.",
+    "it": "Quando un aiuto richiede un agricoltore attivo, non è concesso a chi gestisce aeroporti, acquedotti o impianti sportivi o ricreativi permanenti, presta servizi ferroviari o opera nel settore immobiliare, salvo che l'attività agricola sia quella prevalente nei registri ufficiali, il reddito agricolo sia almeno un terzo del totale (o i pagamenti diretti dell'anno scorso siano almeno il 5 % del reddito non agricolo), oppure i pagamenti diretti dell'anno scorso non superino 5.000 euro."
+   },
+   "minimum": {
+    "en": "Direct payments require farming activity and at least 1 ha in basic income support. Exception: without that hectare they are still paid if coupled animal or welfare payments are claimed and the total, before penalties, is at least the equivalent of €200.",
+    "fr": "Les paiements directs exigent une activité agricole et au moins 1 ha en soutien de base au revenu. Exception : sans cet hectare ils sont versés si des paiements couplés animaux ou de bien-être sont demandés et si le total, avant sanctions, atteint au moins l'équivalent de 200 euros.",
+    "it": "I pagamenti diretti richiedono un'attività agricola e almeno 1 ha nel sostegno di base al reddito. Eccezione: senza quell'ettaro si pagano comunque se si chiedono pagamenti accoppiati per animali o di benessere e il totale, prima delle sanzioni, è almeno l'equivalente di 200 euro."
+   },
+   "parcels": {
+    "en": "Direct payments are granted per agricultural parcel of at least 0.1 ha on eligible hectares. If the aid requires holding the land, the land held under a legal title on 31 May of the application year counts.",
+    "fr": "Les paiements directs sont accordés par parcelle agricole d'au moins 0,1 ha sur des hectares admissibles. Si l'aide exige de détenir la terre, compte celle détenue en vertu d'un titre légal au 31 mai de l'année de la demande.",
+    "it": "I pagamenti diretti si concedono per particella agricola di almeno 0,1 ha su ettari ammissibili. Se l'aiuto richiede il possesso della terra, conta quella detenuta con titolo legale il 31 maggio dell'anno della domanda."
+   },
+   "redistributive": {
+    "en": "Redistributive payment: received by a farmer holding between 1 and 300 ha in total on 31 May and paid on the first 30 ha of their land in basic support. Cooperatives multiply the limits by their number of members if they passed the cooperative audit in the last three years.",
+    "fr": "Paiement redistributif : reçu par l'agriculteur qui détient au total entre 1 et 300 ha au 31 mai ; il est versé sur les 30 premiers ha de sa terre en soutien de base. Les coopératives multiplient les plafonds par leur nombre de membres si elles ont passé l'audit coopératif dans les trois dernières années.",
+    "it": "Pagamento redistributivo: lo riceve l'agricoltore che al 31 maggio possiede in totale tra 1 e 300 ha e si paga sui primi 30 ha della sua terra nel sostegno di base. Le cooperative moltiplicano i limiti per il numero dei soci se hanno superato la revisione cooperativa negli ultimi tre anni."
+   },
+   "young-farmers": {
+    "en": "Young farmers: aged 40 or under in the first application year, running the farm on their own account, with vocational, secondary or agricultural education or three years of farm experience. Paid on basic-support land for a maximum of five consecutive years; the last payment can be for 2027.",
+    "fr": "Jeunes agriculteurs : 40 ans au plus la première année de demande, dirigeant l'exploitation pour leur propre compte, avec une formation professionnelle, secondaire ou agricole, ou trois ans d'expérience agricole. Versé sur les terres du soutien de base pendant cinq ans consécutifs au maximum ; le dernier paiement peut être pour 2027.",
+    "it": "Giovani agricoltori: non più di 40 anni nel primo anno di domanda, conducono l'azienda in proprio e hanno istruzione professionale, secondaria o agraria, o tre anni di esperienza in agricoltura. Si paga sulla terra del sostegno di base per un massimo di cinque anni consecutivi; l'ultimo pagamento può essere per il 2027."
+   },
+   "small-farms": {
+    "en": "Small-farm payment (since June 2024): at least 1 ha in basic support and at most 5 ha of agricultural land on 31 May. If the farmer does not meet those limits it is refused and their ordinary direct payments are decided.",
+    "fr": "Paiement pour les petites exploitations (depuis juin 2024) : au moins 1 ha en soutien de base et au plus 5 ha de surface agricole au 31 mai. Si l'agriculteur ne remplit pas ces limites, il est refusé et ses paiements directs ordinaires sont tranchés.",
+    "it": "Pagamento per le piccole aziende (da giugno 2024): almeno 1 ha nel sostegno di base e al massimo 5 ha di superficie agricola al 31 maggio. Se l'agricoltore non rispetta questi limiti viene negato e si decidono i suoi pagamenti diretti ordinari."
+   },
+   "coupled": {
+    "en": "Coupled payments cover legumes, fodder crops, starch potatoes, sugar beet, tomatoes, hops, strawberries, flax and hemp per hectare, and cattle, sheep and goats per head. Cattle: animals up to 24 months (per-bovine payment) or females over 24 months (per-cow payment) on 15 May, minimum 1 animal in seven voivodeships and 3 in the other nine, maximum 20 animals.",
+    "fr": "Les paiements couplés couvrent légumineuses, fourrages, pommes de terre féculières, betterave sucrière, tomates, houblon, fraises, lin et chanvre à l'hectare, et bovins, ovins et caprins par tête. Bovins : animaux de 24 mois au plus (paiement par bovin) ou femelles de plus de 24 mois (paiement par vache) au 15 mai, minimum 1 animal dans sept voïvodies et 3 dans les neuf autres, maximum 20 animaux.",
+    "it": "I pagamenti accoppiati coprono leguminose, foraggere, patate da fecola, barbabietola da zucchero, pomodori, luppolo, fragole, lino e canapa per ettaro, e bovini, ovini e caprini per capo. Bovini: animali fino a 24 mesi (pagamento per bovino) o femmine oltre 24 mesi (pagamento per vacca) al 15 maggio, minimo 1 animale in sette voivodati e 3 negli altri nove, massimo 20 animali."
+   },
+   "eco-schemes": {
+    "en": "Eco-schemes are granted as payments for: melliferous plant areas, carbon farming and nutrient management, integrated crop production, biological cultivation (until 2024 \"biological crop protection\"), water retention on permanent grassland, land taken out of production, elite or certified seed (since 2025) and animal welfare. The last rewards practices for pigs, cattle, sheep, goats, horses, hens and turkeys.",
+    "fr": "Les écorégimes sont accordés sous forme de paiements pour : zones de plantes mellifères, agriculture du carbone et gestion des nutriments, production intégrée, culture biologique (jusqu'en 2024 « protection biologique des cultures »), rétention d'eau sur les prairies permanentes, terres retirées de la production, semences élite ou certifiées (depuis 2025) et bien-être animal. Ce dernier récompense des pratiques pour les porcs, bovins, ovins, caprins, chevaux, poules et dindes.",
+    "it": "Gli ecoregimi si concedono come pagamenti per: aree con piante mellifere, agricoltura del carbonio e gestione dei nutrienti, produzione integrata, coltivazione biologica (fino al 2024 «protezione biologica delle colture»), ritenzione idrica su prati permanenti, terreni ritirati dalla produzione, sementi élite o certificate (dal 2025) e benessere animale. Quest'ultimo premia pratiche per suini, bovini, ovini, caprini, cavalli, galline e tacchini."
+   },
+   "application": {
+    "en": "The direct-payment application is filed from 15 March to 15 May. Late filing is accepted up to 25 days after, with a penalty of 1 % of the aid per day (not counting Saturdays and public holidays). The Minister can extend the window by regulation. The deadline is not restored.",
+    "fr": "La demande de paiements directs se dépose du 15 mars au 15 mai. Un dépôt tardif est accepté jusqu'à 25 jours après, avec une pénalité de 1 % de l'aide par jour (hors samedis et jours fériés). Le ministre peut prolonger le délai par règlement. Le délai n'est pas restitué.",
+    "it": "La domanda di pagamenti diretti si presenta dal 15 marzo al 15 maggio. È accettata in ritardo fino a 25 giorni dopo, con una penalità dell'1 % dell'aiuto al giorno (esclusi sabati e festivi). Il ministro può prorogare il termine con regolamento. Il termine non viene ripristinato."
+   },
+   "changes": {
+    "en": "Changes to the application can be made until 31 May (afterwards, until the last filing day, with a 1 % penalty per working day) and until 15 September if the Agency has reported irregularities found in its checks or area monitoring. The application can be withdrawn until the decision, except for the part with irregularities or after notice of an on-the-spot check.",
+    "fr": "Les modifications de la demande se font jusqu'au 31 mai (ensuite, jusqu'au dernier jour de dépôt, avec 1 % de pénalité par jour ouvré) et jusqu'au 15 septembre si l'Agence a signalé des irrégularités relevées par ses contrôles ou le suivi des surfaces. La demande peut être retirée jusqu'à la décision, sauf pour la partie présentant des irrégularités ou après avis d'un contrôle sur place.",
+    "it": "Le modifiche alla domanda si fanno fino al 31 maggio (dopo, fino all'ultimo giorno di presentazione, con penalità dell'1 % per giorno lavorativo) e fino al 15 settembre se l'Agenzia ha segnalato irregolarità rilevate nei controlli o nel monitoraggio delle superfici. La domanda può essere ritirata fino alla decisione, tranne per la parte con irregolarità o dopo l'avviso di un controllo in loco."
+   },
+   "decision": {
+    "en": "The decision on direct payments is issued by 31 May of the year after the application at the latest.",
+    "fr": "La décision sur les paiements directs est rendue au plus tard le 31 mai de l'année suivant la demande.",
+    "it": "La decisione sui pagamenti diretti è emessa al più tardi il 31 maggio dell'anno successivo a quello della domanda."
+   },
+   "advances": {
+    "en": "Each autumn a regulation sets the advances: from 2023 to 2025, 70 % of the rate from 16 October; in 2026, 75 % of an estimated rate from 8 September. The advance on rural development aid is 85 %. The 2026 estimated rate is not the final one.",
+    "fr": "Chaque automne, un règlement fixe les avances : de 2023 à 2025, 70 % du taux à partir du 16 octobre ; en 2026, 75 % d'un taux estimé à partir du 8 septembre. L'avance sur les aides au développement rural est de 85 %. Le taux estimé de 2026 n'est pas le taux définitif.",
+    "it": "Ogni autunno un regolamento fissa gli anticipi: dal 2023 al 2025, il 70 % della tariffa dal 16 ottobre; nel 2026, il 75 % di una tariffa stimata dall'8 settembre. L'anticipo sugli aiuti allo sviluppo rurale è dell'85 %. La tariffa stimata del 2026 non è quella definitiva."
+   },
+   "annual-rates": {
+    "en": "Per-unit rates for coupled payments, eco-schemes and animal welfare are set each year by a ministerial regulation. Those for coupled and eco-schemes came out around 15 October of each campaign; those for animal welfare, in April of the following year. We have not found the final rates for basic support, redistributive and young-farmer payments in the Dziennik Ustaw.",
+    "fr": "Les taux unitaires des paiements couplés, écorégimes et bien-être animal sont fixés chaque année par un règlement du ministre. Ceux des paiements couplés et des écorégimes sont parus vers le 15 octobre de chaque campagne ; ceux du bien-être animal, en avril de l'année suivante. Nous n'avons pas trouvé au Dziennik Ustaw les taux définitifs du soutien de base, du redistributif et des jeunes.",
+    "it": "Le tariffe unitarie dei pagamenti accoppiati, degli ecoregimi e del benessere animale le fissa ogni anno un regolamento del ministro. Quelle di accoppiati ed ecoregimi sono uscite verso il 15 ottobre di ogni campagna; quelle del benessere animale, in aprile dell'anno successivo. Non abbiamo trovato nel Dziennik Ustaw le tariffe definitive di sostegno di base, ridistributivo e giovani."
+   }
+  },
+  "calendar": {
+   "su-open": {
+    "en": "The direct-payment application window opens (15 March).",
+    "fr": "La période de dépôt des demandes de paiements directs s'ouvre (15 mars).",
+    "it": "Si apre la finestra per la domanda di pagamenti diretti (15 marzo)."
+   },
+   "su-close": {
+    "en": "The ordinary direct-payment application deadline ends (15 May). The Minister can extend it by regulation.",
+    "fr": "La date limite ordinaire des demandes de paiements directs (15 mai). Le ministre peut la prolonger par règlement.",
+    "it": "Scade il termine ordinario della domanda di pagamenti diretti (15 maggio). Il ministro può prorogarlo con regolamento."
+   },
+   "su-late-limit": {
+    "en": "Last day to file with a 1 % per day penalty (25 days after 15 May).",
+    "fr": "Dernier jour pour déposer avec une pénalité de 1 % par jour (25 jours après le 15 mai).",
+    "it": "Ultimo giorno per presentare con penalità dell'1 % al giorno (25 giorni dopo il 15 maggio)."
+   },
+   "changes-1": {
+    "en": "Last day to amend the application without penalty (31 May).",
+    "fr": "Dernier jour pour modifier la demande sans pénalité (31 mai).",
+    "it": "Ultimo giorno per modificare la domanda senza penalità (31 maggio)."
+   },
+   "changes-2": {
+    "en": "Last day to amend the application if the Agency has reported irregularities (15 September).",
+    "fr": "Dernier jour pour modifier la demande si l'Agence a signalé des irrégularités (15 septembre).",
+    "it": "Ultimo giorno per modificare la domanda se l'Agenzia ha segnalato irregolarità (15 settembre)."
+   },
+   "decision": {
+    "en": "Deadline for the decision on direct payments claimed the previous year (31 May).",
+    "fr": "Date limite de la décision sur les paiements directs demandés l'année précédente (31 mai).",
+    "it": "Scadenza della decisione sui pagamenti diretti richiesti l'anno precedente (31 maggio)."
+   }
+  },
+  "overrides": {}
+ }
+}

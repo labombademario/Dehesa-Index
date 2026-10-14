@@ -1,0 +1,29 @@
+{
+ "schemaVersion": 1,
+ "country": "PL",
+ "source": "sejm_eli",
+ "status": "NOT_YET_RUN",
+ "checkedAt": null,
+ "baseline": {
+  "fingerprints": {},
+  "acknowledged": [
+   "DU/2023/2219",
+   "DU/2024/1517",
+   "DU/2024/1525",
+   "DU/2024/265",
+   "DU/2024/645",
+   "DU/2025/1394",
+   "DU/2025/1397",
+   "DU/2025/557",
+   "DU/2026/1173",
+   "DU/2026/560"
+  ]
+ },
+ "current": {
+  "fingerprints": {},
+  "candidates": [],
+  "lastScanned": null
+ },
+ "reviewNeeded": [],
+ "note": "Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan."
+}

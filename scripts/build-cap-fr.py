@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""PAC Francia: importes unitarios de la campana 2025 (arretes del Ministerio de Agricultura) -> data/cap/fr/amounts.json
+"""PAC Francia: importes unitarios de las campanas 2025 y 2026 (arretes del Ministerio de Agricultura) -> data/cap/fr/amounts.json
 Fuente: Journal officiel de la Republique francaise (JORF), leido del volcado de datos abiertos de la DILA (echanges.dila.gouv.fr/OPENDATA/JORF/),
 cuya reutilizacion es gratuita (Arrete du 24 juin 2014). Se transcriben a mano los articulos de 15 arretes; no hay workflow (la sonda se hizo una vez).
 Cada importe tiene su cadena de versiones: el arrete inicial y los arretes modificativos que lo sustituyen (25-nov-2025, 11-mar-2026, 5-jun-2026). El vigente es el ultimo.
-NO esta el importe unitario de la ayuda de base (no se ha encontrado su arrete) ni los arretes de la campana 2026 (no aparecen en el volcado hasta el 9-oct-2026).
+La campana 2026 tiene los arretes del 16-sep-2026 (JORF del 1-oct-2026): ayuda redistributiva, jovenes, tasa de reduccion, derechos de pago, bovino, ovino, caprino y Corse. Todavia no hay arretes 2026 del ecoregimen ni de las ayudas acopladas vegetales.
+El valor unitario del derecho de pago de base ya existente es individual (no lo fija un arrete); solo estan el de Corse y el de los derechos nuevos.
 Uso: python3 scripts/build-cap-fr.py [--check]"""
 import json, sys, datetime
 from pathlib import Path
@@ -26,6 +27,20 @@ D = [
  ('J3', '2026-06-12', '2026-06-05', 'AGRT2614152A', 'JORFTEXT000054237685', "Arrêté du 5 juin 2026 modifiant l'arrêté du 24 février 2026 (aides couplées végétales)"),
  ('J4', '2026-06-12', '2026-06-05', 'AGRT2614157A', 'JORFTEXT000054237700', "Arrêté du 5 juin 2026 modifiant l'arrêté du 30 septembre 2025 (aides ovines et caprine hors Corse)"),
  ('J5', '2026-06-12', '2026-06-05', 'AGRT2614158A', 'JORFTEXT000054237709', "Arrêté du 5 juin 2026 modifiant l'arrêté du 30 septembre 2025 (aide aux petits ruminants en Corse)"),
+ ('D1', '2025-10-01', '2025-09-23', 'AGRT2524989A', 'JORFTEXT000052328793', "Arrêté du 23 septembre 2025 fixant la valeur unitaire des droits au paiement pour le groupe Corse, la valeur unitaire des nouveaux droits au paiement pour chaque groupe de territoire et du taux de réduction de la valeur des droits au paiement existants pour la campagne 2025"),
+ ('J6', '2026-06-12', '2026-06-05', 'AGRT2614147A', 'JORFTEXT000054237716', "Arrêté du 5 juin 2026 modifiant l'arrêté du 23 septembre 2025 fixant la valeur unitaire des droits au paiement (campagne 2025)"),
+ ('B1', '2025-10-08', '2025-09-30', 'AGRT2525875A', 'JORFTEXT000052372823', "Arrêté du 30 septembre 2025 relatif aux montants de l'aide aux bovins de plus de 16 mois dans les départements métropolitains hors Corse pour la campagne 2025"),
+ ('B2', '2026-01-30', '2026-01-26', 'AGRT2601747A', 'JORFTEXT000053417162', "Arrêté du 26 janvier 2026 modifiant l'arrêté du 30 septembre 2025 (aide aux bovins de plus de 16 mois hors Corse)"),
+ ('B3', '2026-06-12', '2026-06-04', 'AGRT2614161A', 'JORFTEXT000054237649', "Arrêté du 4 juin 2026 modifiant l'arrêté du 30 septembre 2025 (aide aux bovins de plus de 16 mois hors Corse)"),
+ ('C1', '2026-05-12', '2026-05-06', 'AGRT2611218A', 'JORFTEXT000054063203', "Arrêté du 6 mai 2026 relatif aux montants de l'aide aux bovins de plus de 16 mois en Corse pour la campagne 2025"),
+ ('C2', '2026-06-12', '2026-06-04', 'AGRT2614160A', 'JORFTEXT000054237642', "Arrêté du 4 juin 2026 modifiant l'arrêté du 6 mai 2026 (aide aux bovins de plus de 16 mois en Corse)"),
+ ('W1', '2026-03-13', '2026-03-11', 'AGRT2606116A', 'JORFTEXT000053659004', "Arrêté du 11 mars 2026 relatif au montant de l'aide aux veaux sous la mère et aux veaux issus de l'agriculture biologique pour la campagne 2025"),
+ ('W2', '2026-06-12', '2026-06-05', 'AGRT2614156A', 'JORFTEXT000054237693', "Arrêté du 5 juin 2026 modifiant l'arrêté du 11 mars 2026 (aide aux veaux sous la mère et aux veaux issus de l'agriculture biologique)"),
+ ('R6', '2026-10-01', '2026-09-16', 'AGRT2623990A', 'JORFTEXT000054930369', "Arrêté du 16 septembre 2026 fixant les montants de l'aide redistributive complémentaire au revenu pour un développement durable, de l'aide complémentaire au revenu pour les jeunes agriculteurs et du taux de réduction des montants de l'aide de base au revenu pour la campagne 2026"),
+ ('P6', '2026-10-01', '2026-09-16', 'AGRT2623989A', 'JORFTEXT000054930414', "Arrêté du 16 septembre 2026 fixant la valeur unitaire des droits au paiement pour le groupe Corse, la valeur unitaire des nouveaux droits au paiement pour chaque groupe de territoire et du taux de réduction de la valeur des droits au paiement existants pour la campagne 2026"),
+ ('B6', '2026-10-01', '2026-09-16', 'AGRT2623994A', 'JORFTEXT000054930403', "Arrêté du 16 septembre 2026 relatif aux montants de l'aide aux bovins de plus de 16 mois dans les départements métropolitains hors Corse pour la campagne 2026"),
+ ('S6', '2026-10-01', '2026-09-16', 'AGRT2623993A', 'JORFTEXT000054930398', "Arrêté du 16 septembre 2026 relatif aux montants de l'aide aux petits ruminants en Corse pour la campagne 2026"),
+ ('O6', '2026-10-01', '2026-09-16', 'AGRT2623995A', 'JORFTEXT000054930408', "Arrêté du 16 septembre 2026 relatif aux montants des aides ovines et de l'aide caprine dans les départements métropolitains hors Corse pour la campagne 2026"),
 ]
 V = lambda *p: [{'doc': d, 'value': v} for d, v in p]
 # id, grupo, etiqueta oficial, unidad, [(doc, valor)...]
@@ -61,25 +76,64 @@ ITEMS = [
  ('market-garden', 'coupled-plant', "Maraîchage", 'EUR', V(('V2', 1581.94), ('J3', 1740.34))),
  ('pear', 'coupled-plant', "Poires Williams destinées à la transformation", 'EUR', V(('V2', 950.00), ('J3', 1295.04))),
 ]
+# Campana 2025: derechos de pago, bovino y ternero (arretes que faltaban)
+ITEMS25B = [
+ ('dpb-new-hex', 'direct', "Valeur unitaire des nouveaux droits au paiement, groupe Hexagone", 'EUR', V(('D1', 127.67), ('J6', 127.69))),
+ ('dpb-corse', 'direct', "Valeur unitaire des droits au paiement, groupe Corse", 'EUR', V(('D1', 144.64))),
+ ('dpb-new-corse', 'direct', "Valeur unitaire des nouveaux droits au paiement, groupe Corse", 'EUR', V(('D1', 144.64))),
+ ('dpb-lin-hex', 'direct', "Réduction linéaire de la valeur des droits à paiement, groupe Hexagone", 'PCT', V(('D1', 1), ('J6', 0.02))),
+ ('dpb-lin-corse', 'direct', "Réduction linéaire de la valeur des droits à paiement, groupe Corse", 'PCT', V(('D1', 1.7), ('J6', 0.08))),
+ ('bovine-upper', 'coupled-animal', "Aide aux bovins de plus de 16 mois, montant supérieur (hors Corse), par UGB", 'EUR/head', V(('B1', 94), ('B2', 102), ('B3', 104.85))),
+ ('bovine-base', 'coupled-animal', "Aide aux bovins de plus de 16 mois, montant de base (hors Corse), par UGB", 'EUR/head', V(('B1', 51), ('B2', 55.50), ('B3', 57.05))),
+ ('corse-bovine-upper', 'coupled-animal', "Aide aux bovins de plus de 16 mois en Corse, montant supérieur, par UGB", 'EUR/head', V(('C1', 99), ('C2', 101.67))),
+ ('corse-bovine-base', 'coupled-animal', "Aide aux bovins de plus de 16 mois en Corse, montant de base, par UGB", 'EUR/head', V(('C1', 48), ('C2', 50.00))),
+ ('veal', 'coupled-animal', "Aide aux veaux sous la mère et aux veaux issus de l'agriculture biologique, par veau éligible", 'EUR/head', V(('W1', 62.45), ('W2', 66.94))),
+]
+# Campana 2026: arretes del 16 de septiembre de 2026 (JORF del 1 de octubre de 2026). Aun sin ecoregimen ni ayudas acopladas vegetales.
+ITEMS26 = [
+ ('redistributive-2026', 'direct', "Aide redistributive complémentaire au revenu pour un développement durable (CRISS)", 'EUR/ha', V(('R6', 48.50))),
+ ('young-2026', 'direct', "Aide complémentaire au revenu pour les jeunes agriculteurs (montant forfaitaire)", 'EUR', V(('R6', 3700))),
+ ('reduction-hex-2026', 'direct', "Taux de réduction (art. D. 614-67), groupe Hexagone", 'PCT', V(('R6', 2.61820))),
+ ('reduction-corse-2026', 'direct', "Taux de réduction (art. D. 614-67), groupe Corse", 'PCT', V(('R6', 2.57630))),
+ ('dpb-corse-2026', 'direct', "Valeur unitaire des droits au paiement, groupe Corse", 'EUR', V(('P6', 144.52))),
+ ('dpb-new-hex-2026', 'direct', "Valeur unitaire des nouveaux droits au paiement, groupe Hexagone", 'EUR', V(('P6', 127.70))),
+ ('dpb-new-corse-2026', 'direct', "Valeur unitaire des nouveaux droits au paiement, groupe Corse", 'EUR', V(('P6', 144.52))),
+ ('dpb-lin-hex-2026', 'direct', "Réduction linéaire de la valeur des droits à paiement, groupe Hexagone", 'PCT', V(('P6', 1))),
+ ('dpb-lin-corse-2026', 'direct', "Réduction linéaire de la valeur des droits à paiement, groupe Corse", 'PCT', V(('P6', 1.7))),
+ ('bovine-upper-2026', 'coupled-animal', "Aide aux bovins de plus de 16 mois, montant supérieur (hors Corse), par UGB", 'EUR/head', V(('B6', 94))),
+ ('bovine-base-2026', 'coupled-animal', "Aide aux bovins de plus de 16 mois, montant de base (hors Corse), par UGB", 'EUR/head', V(('B6', 51))),
+ ('sheep-base-2026', 'coupled-animal', "Aide ovine de base (hors Corse)", 'EUR/head', V(('O6', 20.54))),
+ ('sheep-first500-2026', 'coupled-animal', "Majoration pour les 500 premières brebis primées (hors Corse)", 'EUR/head', V(('O6', 2))),
+ ('sheep-new-2026', 'coupled-animal', "Aide ovine complémentaire, nouveaux producteurs (hors Corse)", 'EUR/head', V(('O6', 6))),
+ ('goat-2026', 'coupled-animal', "Aide caprine (hors Corse)", 'EUR/head', V(('O6', 13.83))),
+ ('corse-ewe-base-2026', 'coupled-animal', "Corse, montant de base, femelles ovines", 'EUR/head', V(('S6', 22.23))),
+ ('corse-goat-base-2026', 'coupled-animal', "Corse, montant de base, femelles caprines", 'EUR/head', V(('S6', 15.43))),
+ ('corse-ewe-upper-2026', 'coupled-animal', "Corse, montant supérieur, femelles ovines", 'EUR/head', V(('S6', 44.46))),
+ ('corse-goat-upper-2026', 'coupled-animal', "Corse, montant supérieur, femelles caprines", 'EUR/head', V(('S6', 30.87))),
+]
 def build():
-    docs = {d[0]: d for d in D}; errs = []
-    for sid, grp, label, unit, vs in ITEMS:
-        last = None
+    docs = {d[0]: d for d in D}; errs = []; seen = set(); allitems = [(2025,) + i for i in ITEMS + ITEMS25B] + [(2026,) + i for i in ITEMS26]
+    if len(docs) != len(D): errs.append('documentos repetidos')
+    for camp, sid, grp, label, unit, vs in allitems:
+        if sid in seen: errs.append('%s: importe repetido' % sid)
+        seen.add(sid); last = None
         for v in vs:
             if v['doc'] not in docs: errs.append('%s: documento %s desconocido' % (sid, v['doc']))
             else:
                 dt = docs[v['doc']][1]
                 if last and dt < last: errs.append('%s: versiones desordenadas' % sid)
+                if str(camp) not in docs[v['doc']][5] and camp == 2026: errs.append('%s: el documento %s no es de la campana 2026' % (sid, v['doc']))
                 last = dt
     if errs: raise SystemExit('\n'.join(errs))
-    return {'schemaVersion': 1, 'country': 'FR', 'kind': 'OFFICIAL_UNIT_AMOUNTS', 'campaign': 2025,
+    return {'schemaVersion': 2, 'country': 'FR', 'kind': 'OFFICIAL_UNIT_AMOUNTS', 'campaigns': [2025, 2026],
             'sources': [{'id': 'dila_jorf', 'name': 'DILA — Journal officiel de la République française (données ouvertes JORF)', 'url': 'https://echanges.dila.gouv.fr/OPENDATA/JORF/'}],
             'documents': [{'id': d[0], 'published': d[1], 'signed': d[2], 'nor': d[3], 'jorfText': d[4], 'title': d[5], 'url': 'https://www.legifrance.gouv.fr/jorf/id/' + d[4]} for d in D],
-            'items': [{'id': sid, 'group': grp, 'label': label, 'unit': unit, 'versions': vs, 'current': vs[-1]['value'], 'currentDoc': vs[-1]['doc']} for sid, grp, label, unit, vs in ITEMS],
-            'notes': ['Importes de la campaña 2025 tal como los fijan los arrêtés del Ministerio de Agricultura y sus modificaciones; el vigente es el del último arrêté (5 de junio de 2026 en casi todos).',
+            'items': [{'id': sid, 'campaign': camp, 'group': grp, 'label': label, 'unit': unit, 'versions': vs, 'current': vs[-1]['value'], 'currentDoc': vs[-1]['doc']} for camp, sid, grp, label, unit, vs in allitems],
+            'notes': ['Importes de las campañas 2025 y 2026 tal como los fijan los arrêtés del Ministerio de Agricultura y sus modificaciones; el vigente es el del último arrêté.',
                       'Las ayudas acopladas vegetales figuran en el texto oficial en «euros», sin indicar la unidad: no se completa.',
-                      'No incluye el importe unitario de la ayuda de base (no se ha encontrado su arrêté) ni los arrêtés de la campaña 2026 (no aparecen en el volcado de la DILA hasta el 9 de octubre de 2026).',
-                      'Textos leídos del volcado de datos abiertos de la DILA el 8-9 de octubre de 2026; la edición que manda es la del Journal officiel.'],
+                      'Campaña 2026: los arrêtés del 16 de septiembre de 2026 (JORF del 1 de octubre) fijan la ayuda redistributiva, la de jóvenes, la tasa de reducción, los derechos de pago, el bovino, el ovino, el caprino y las ayudas de Córcega. Aún no hay arrêtés de 2026 del ecorrégimen ni de las ayudas acopladas vegetales.',
+                      'El valor unitario de un derecho de pago ya existente en el Hexágono es individual y no lo fija un arrêté: solo figuran el de Córcega y el de los derechos nuevos. No se ha encontrado el importe de la ayuda de base por hectárea.',
+                      'Textos leídos del volcado de datos abiertos de la DILA (JORF); la edición que manda es la del Journal officiel.'],
             'verifiedAt': datetime.date.today().isoformat()}
 if __name__ == '__main__':
     doc = build()

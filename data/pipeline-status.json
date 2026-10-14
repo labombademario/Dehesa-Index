@@ -6,7 +6,7 @@
   "ok": 177,
   "late": 1,
   "error": 1,
-  "not_run": 2,
+  "not_run": 5,
   "unknown": 0
  },
  "global": "error",
@@ -632,6 +632,45 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-fr.yml",
+   "name": "Watch France CAP changes (DILA JORF daily open-data dumps)",
+   "crons": [
+    "20 7 * * 1"
+   ],
+   "nextRun": "2026-10-19T07:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-it.yml",
+   "name": "Watch Italy CAP changes (MASAF consolidated DM 660087/2022)",
+   "crons": [
+    "30 7 * * 1"
+   ],
+   "nextRun": "2026-10-19T07:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-pl.yml",
+   "name": "Watch Poland CAP changes (Sejm ELI, Dziennik Ustaw)",
+   "crons": [
+    "40 7 * * 1"
+   ],
+   "nextRun": "2026-10-19T07:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {

@@ -1,0 +1,1128 @@
+{
+ "schemaVersion": 1,
+ "country": "PL",
+ "kind": "OFFICIAL_UNIT_RATES",
+ "currency": "PLN",
+ "campaigns": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "sources": [
+  {
+   "id": "sejm_eli",
+   "name": "Sejm de la República de Polonia — API ELI del Dziennik Ustaw",
+   "url": "https://api.sejm.gov.pl/eli/acts/"
+  }
+ ],
+ "documents": [
+  {
+   "id": "K23",
+   "eli": "DU/2023/2219",
+   "signed": "2023-10-13",
+   "published": "2023-10-16",
+   "kind": "rates",
+   "campaign": 2023,
+   "title": "Rozporządzenie MRiRW z dnia 13 października 2023 r. w sprawie stawek płatności w ramach wsparcia dochodów związanego z produkcją za 2023 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2219"
+  },
+  {
+   "id": "K24",
+   "eli": "DU/2024/1525",
+   "signed": "2024-10-14",
+   "published": "2024-10-15",
+   "kind": "rates",
+   "campaign": 2024,
+   "title": "Rozporządzenie MRiRW z dnia 14 października 2024 r. w sprawie stawek płatności w ramach wsparcia dochodów związanego z produkcją za 2024 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1525"
+  },
+  {
+   "id": "K25",
+   "eli": "DU/2025/1394",
+   "signed": "2025-10-14",
+   "published": "2025-10-15",
+   "kind": "rates",
+   "campaign": 2025,
+   "title": "Rozporządzenie MRiRW z dnia 14 października 2025 r. w sprawie stawek płatności w ramach wsparcia dochodów związanego z produkcją za 2025 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1394"
+  },
+  {
+   "id": "E23",
+   "eli": "DU/2024/265",
+   "signed": "2024-02-27",
+   "published": "2024-02-27",
+   "kind": "rates",
+   "campaign": 2023,
+   "title": "Rozporządzenie MRiRW z dnia 27 lutego 2024 r. w sprawie stawek płatności w ramach schematów na rzecz klimatu i środowiska za 2023 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/265"
+  },
+  {
+   "id": "E24",
+   "eli": "DU/2024/1517",
+   "signed": "2024-10-14",
+   "published": "2024-10-15",
+   "kind": "rates",
+   "campaign": 2024,
+   "title": "Rozporządzenie MRiRW z dnia 14 października 2024 r. w sprawie stawek płatności w ramach schematów na rzecz klimatu i środowiska za 2024 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1517"
+  },
+  {
+   "id": "E25",
+   "eli": "DU/2025/1397",
+   "signed": "2025-10-14",
+   "published": "2025-10-15",
+   "kind": "rates",
+   "campaign": 2025,
+   "title": "Rozporządzenie MRiRW z dnia 14 października 2025 r. w sprawie stawek płatności w ramach schematów na rzecz klimatu i środowiska za 2025 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1397"
+  },
+  {
+   "id": "W23",
+   "eli": "DU/2024/645",
+   "signed": "2024-04-25",
+   "published": "2024-04-26",
+   "kind": "rates",
+   "campaign": 2023,
+   "title": "Rozporządzenie MRiRW z dnia 25 kwietnia 2024 r. w sprawie stawek płatności w ramach schematów na rzecz dobrostanu zwierząt za 2023 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/645"
+  },
+  {
+   "id": "W24",
+   "eli": "DU/2025/557",
+   "signed": "2025-04-24",
+   "published": "2025-04-28",
+   "kind": "rates",
+   "campaign": 2024,
+   "title": "Rozporządzenie MRiRW z dnia 24 kwietnia 2025 r. w sprawie stawek płatności w ramach schematów na rzecz dobrostanu zwierząt za 2024 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/557"
+  },
+  {
+   "id": "W25",
+   "eli": "DU/2026/560",
+   "signed": "2026-04-22",
+   "published": "2026-04-23",
+   "kind": "rates",
+   "campaign": 2025,
+   "title": "Rozporządzenie MRiRW z dnia 22 kwietnia 2026 r. w sprawie stawek płatności w ramach schematów na rzecz dobrostanu zwierząt za 2025 r.",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/560"
+  },
+  {
+   "id": "Z26",
+   "eli": "DU/2026/1173",
+   "signed": "2026-09-03",
+   "published": "2026-09-03",
+   "kind": "advance",
+   "campaign": 2026,
+   "title": "Rozporządzenie MRiRW z dnia 3 września 2026 r. w sprawie wypłaty zaliczek za 2026 r. z tytułu niektórych rodzajów pomocy w ramach Planu Strategicznego dla Wspólnej Polityki Rolnej na lata 2023–2027",
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1173"
+  }
+ ],
+ "items": [
+  {
+   "id": "legumes",
+   "group": "coupled-plant",
+   "label": "Rośliny strączkowe na nasiona",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 823.91,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 794.08,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 879.96,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 879.96
+  },
+  {
+   "id": "fodder",
+   "group": "coupled-plant",
+   "label": "Rośliny pastewne",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 471.53,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 430.18,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 430.18,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 430.18
+  },
+  {
+   "id": "starch-potato",
+   "group": "coupled-plant",
+   "label": "Ziemniaki skrobiowe",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 1501.05,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 1580.89,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 1580.89,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 1580.89
+  },
+  {
+   "id": "sugar-beet",
+   "group": "coupled-plant",
+   "label": "Buraki cukrowe",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 1391.96,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 1253.34,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 1284.14,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 1284.14
+  },
+  {
+   "id": "tomato",
+   "group": "coupled-plant",
+   "label": "Pomidory",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 2047.34,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 2097.56,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 2097.56,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 2097.56
+  },
+  {
+   "id": "hops",
+   "group": "coupled-plant",
+   "label": "Chmiel",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 1985.54,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 1852.03,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 1864.49,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 1864.49
+  },
+  {
+   "id": "strawberry",
+   "group": "coupled-plant",
+   "label": "Truskawki",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 1237.42,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 1154.2,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 1495.79,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 1495.79
+  },
+  {
+   "id": "flax",
+   "group": "coupled-plant",
+   "label": "Len",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 463.1,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 431.98,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 542.69,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 542.69
+  },
+  {
+   "id": "hemp",
+   "group": "coupled-plant",
+   "label": "Konopie włókniste",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 134.35,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 125.32,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 168.99,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 168.99
+  },
+  {
+   "id": "cattle",
+   "group": "coupled-animal",
+   "label": "Płatność do bydła",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 343.46,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 320.35,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 322.49,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 322.49
+  },
+  {
+   "id": "cows",
+   "group": "coupled-animal",
+   "label": "Płatność do krów",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 439.41,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 409.86,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 412.63,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 412.63
+  },
+  {
+   "id": "sheep",
+   "group": "coupled-animal",
+   "label": "Owca domowa",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 116.44,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 109.4,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 110.16,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 110.16
+  },
+  {
+   "id": "goat",
+   "group": "coupled-animal",
+   "label": "Koza domowa",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 47.84,
+     "doc": "K23"
+    },
+    "2024": {
+     "value": 47.83,
+     "doc": "K24"
+    },
+    "2025": {
+     "value": 48.12,
+     "doc": "K25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 48.12
+  },
+  {
+   "id": "honey",
+   "group": "eco",
+   "label": "Obszary z roślinami miododajnymi",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 1256.77,
+     "doc": "E23"
+    },
+    "2024": {
+     "value": 898.66,
+     "doc": "E24"
+    },
+    "2025": {
+     "value": 931.07,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 931.07
+  },
+  {
+   "id": "carbon-point",
+   "group": "eco",
+   "label": "Rolnictwo węglowe i zarządzanie składnikami odżywczymi (za punkt)",
+   "unit": "PLN/point",
+   "values": {
+    "2023": {
+     "value": 104.89,
+     "doc": "E23"
+    },
+    "2024": {
+     "value": 87.02,
+     "doc": "E24"
+    },
+    "2025": {
+     "value": 87.52,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 87.52
+  },
+  {
+   "id": "ipr",
+   "group": "eco",
+   "label": "Integrowana produkcja roślin (jedna stawka w 2023 i 2024)",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 1363.77,
+     "doc": "E23"
+    },
+    "2024": {
+     "value": 818.92,
+     "doc": "E24"
+    }
+   },
+   "latestCampaign": 2024,
+   "latest": 818.92
+  },
+  {
+   "id": "ipr-orchard",
+   "group": "eco",
+   "label": "Integrowana produkcja roślin: uprawy sadownicze",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 1185.24,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 1185.24
+  },
+  {
+   "id": "ipr-berry",
+   "group": "eco",
+   "label": "Integrowana produkcja roślin: uprawy jagodowe",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 1069.41,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 1069.41
+  },
+  {
+   "id": "ipr-arable",
+   "group": "eco",
+   "label": "Integrowana produkcja roślin: uprawy rolnicze",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 505.18,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 505.18
+  },
+  {
+   "id": "ipr-veg",
+   "group": "eco",
+   "label": "Integrowana produkcja roślin: uprawy warzywne",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 1069.41,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 1069.41
+  },
+  {
+   "id": "bio-protection",
+   "group": "eco",
+   "label": "Biologiczna ochrona upraw (jedna stawka w 2023 i 2024)",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 419.64,
+     "doc": "E23"
+    },
+    "2024": {
+     "value": 300.06,
+     "doc": "E24"
+    }
+   },
+   "latestCampaign": 2024,
+   "latest": 300.06
+  },
+  {
+   "id": "bio-micro",
+   "group": "eco",
+   "label": "Biologiczna uprawa: mikrobiologiczne środki ochrony roślin",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 310.88,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 310.88
+  },
+  {
+   "id": "bio-fert",
+   "group": "eco",
+   "label": "Biologiczna uprawa: nawozowe produkty mikrobiologiczne",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 87.52,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 87.52
+  },
+  {
+   "id": "water",
+   "group": "eco",
+   "label": "Retencjonowanie wody na trwałych użytkach zielonych",
+   "unit": "PLN/ha",
+   "values": {
+    "2023": {
+     "value": 292.27,
+     "doc": "E23"
+    },
+    "2024": {
+     "value": 244.57,
+     "doc": "E24"
+    },
+    "2025": {
+     "value": 245.98,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 245.98
+  },
+  {
+   "id": "fallow",
+   "group": "eco",
+   "label": "Grunty wyłączone z produkcji",
+   "unit": "PLN/ha",
+   "values": {
+    "2024": {
+     "value": 422.34,
+     "doc": "E24"
+    },
+    "2025": {
+     "value": 437.57,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 437.57
+  },
+  {
+   "id": "seed-cereal",
+   "group": "eco",
+   "label": "Materiał siewny elitarny lub kwalifikowany: zboża",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 104.15,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 104.15
+  },
+  {
+   "id": "seed-legume",
+   "group": "eco",
+   "label": "Materiał siewny elitarny lub kwalifikowany: rośliny strączkowe",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 168.93,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 168.93
+  },
+  {
+   "id": "seed-potato",
+   "group": "eco",
+   "label": "Materiał siewny elitarny lub kwalifikowany: ziemniaki",
+   "unit": "PLN/ha",
+   "values": {
+    "2025": {
+     "value": 436.76,
+     "doc": "E25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 436.76
+  },
+  {
+   "id": "welfare-point",
+   "group": "welfare",
+   "label": "Dobrostan: świnie oraz bydło (za punkt)",
+   "unit": "PLN/point",
+   "values": {
+    "2023": {
+     "value": 104,
+     "doc": "W23"
+    },
+    "2024": {
+     "value": 92.75,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 80.83,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 80.83
+  },
+  {
+   "id": "welfare-sheep",
+   "group": "welfare",
+   "label": "Dobrostan: owca domowa",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 160.68,
+     "doc": "W23"
+    },
+    "2024": {
+     "value": 143.3,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 124.89,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 124.89
+  },
+  {
+   "id": "welfare-goat",
+   "group": "welfare",
+   "label": "Dobrostan: koza domowa",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 155.18,
+     "doc": "W23"
+    },
+    "2024": {
+     "value": 138.39,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 120.61,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 120.61
+  },
+  {
+   "id": "welfare-horse-indoor",
+   "group": "welfare",
+   "label": "Dobrostan: koń, pomieszczenia lub budynki",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 449.98,
+     "doc": "W23"
+    },
+    "2024": {
+     "value": 401.32,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 349.75,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 349.75
+  },
+  {
+   "id": "welfare-horse-open",
+   "group": "welfare",
+   "label": "Dobrostan: koń, system otwarty",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 203.72,
+     "doc": "W23"
+    },
+    "2024": {
+     "value": 181.68,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 158.34,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 158.34
+  },
+  {
+   "id": "welfare-hen",
+   "group": "welfare",
+   "label": "Dobrostan: kury nioski",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 14.72,
+     "doc": "W23"
+    },
+    "2024": {
+     "value": 13.12,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 11.43,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 11.43
+  },
+  {
+   "id": "welfare-broiler",
+   "group": "welfare",
+   "label": "Dobrostan: kurczęta brojlery (jedna stawka w 2023)",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 0.21,
+     "doc": "W23"
+    }
+   },
+   "latestCampaign": 2023,
+   "latest": 0.21
+  },
+  {
+   "id": "welfare-broiler-std",
+   "group": "welfare",
+   "label": "Dobrostan: kurczęta brojlery, wymogi z ust. 30 załącznika nr 2",
+   "unit": "PLN/head",
+   "values": {
+    "2024": {
+     "value": 0.18,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 0.16,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 0.16
+  },
+  {
+   "id": "welfare-broiler-pr",
+   "group": "welfare",
+   "label": "Dobrostan: kurczęta brojlery, praktyka z § 3 ust. 2 pkt 7",
+   "unit": "PLN/head",
+   "values": {
+    "2024": {
+     "value": 0.15,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 0.13,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 0.13
+  },
+  {
+   "id": "welfare-turkey",
+   "group": "welfare",
+   "label": "Dobrostan: indyki (jedna stawka w 2023)",
+   "unit": "PLN/head",
+   "values": {
+    "2023": {
+     "value": 3.12,
+     "doc": "W23"
+    }
+   },
+   "latestCampaign": 2023,
+   "latest": 3.12
+  },
+  {
+   "id": "welfare-turkey-std",
+   "group": "welfare",
+   "label": "Dobrostan: indyki, wymogi z ust. 31 załącznika nr 2",
+   "unit": "PLN/head",
+   "values": {
+    "2024": {
+     "value": 2.78,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 2.42,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 2.42
+  },
+  {
+   "id": "welfare-turkey-pr",
+   "group": "welfare",
+   "label": "Dobrostan: indyki, praktyka z § 3 ust. 2 pkt 7",
+   "unit": "PLN/head",
+   "values": {
+    "2024": {
+     "value": 1.0,
+     "doc": "W24"
+    },
+    "2025": {
+     "value": 0.87,
+     "doc": "W25"
+    }
+   },
+   "latestCampaign": 2025,
+   "latest": 0.87
+  }
+ ],
+ "estimates2026": {
+  "doc": "Z26",
+  "campaign": 2026,
+  "kind": "ESTIMATED_RATE_FOR_ADVANCES",
+  "advanceShare": 0.75,
+  "advanceFrom": "2026-09-08",
+  "items": [
+   {
+    "id": "basic",
+    "group": "basic",
+    "label": "Podstawowe wsparcie dochodów (art. 20 pkt 1 lit. a)",
+    "unit": "PLN/ha",
+    "value": 436.23
+   },
+   {
+    "id": "redistributive",
+    "group": "basic",
+    "label": "Płatność redystrybucyjna (lit. b)",
+    "unit": "PLN/ha",
+    "value": 179.12
+   },
+   {
+    "id": "young",
+    "group": "basic",
+    "label": "Płatność dla młodych rolników (lit. c)",
+    "unit": "PLN/ha",
+    "value": 248.7
+   },
+   {
+    "id": "small-farms",
+    "group": "basic",
+    "label": "Płatność dla małych gospodarstw (lit. f)",
+    "unit": "PLN/ha",
+    "value": 941.42
+   },
+   {
+    "id": "complementary-basic",
+    "group": "basic",
+    "label": "Uzupełniająca płatność podstawowa (przejściowe wsparcie krajowe, pkt 2)",
+    "unit": "PLN/ha",
+    "value": 48.04
+   },
+   {
+    "id": "tobacco",
+    "group": "basic",
+    "label": "Płatność niezwiązana do tytoniu (za kg)",
+    "unit": "PLN/kg",
+    "value": 1.92
+   },
+   {
+    "id": "legumes",
+    "group": "coupled-plant",
+    "label": "Rośliny strączkowe na nasiona",
+    "unit": "PLN/ha",
+    "value": 878.45
+   },
+   {
+    "id": "fodder",
+    "group": "coupled-plant",
+    "label": "Rośliny pastewne",
+    "unit": "PLN/ha",
+    "value": 421.55
+   },
+   {
+    "id": "starch-potato",
+    "group": "coupled-plant",
+    "label": "Ziemniaki skrobiowe",
+    "unit": "PLN/ha",
+    "value": 1549.16
+   },
+   {
+    "id": "sugar-beet",
+    "group": "coupled-plant",
+    "label": "Buraki cukrowe",
+    "unit": "PLN/ha",
+    "value": 1258.37
+   },
+   {
+    "id": "tomato",
+    "group": "coupled-plant",
+    "label": "Pomidory",
+    "unit": "PLN/ha",
+    "value": 2055.44
+   },
+   {
+    "id": "hops",
+    "group": "coupled-plant",
+    "label": "Chmiel",
+    "unit": "PLN/ha",
+    "value": 1843.14
+   },
+   {
+    "id": "strawberry",
+    "group": "coupled-plant",
+    "label": "Truskawki",
+    "unit": "PLN/ha",
+    "value": 1465.77
+   },
+   {
+    "id": "flax",
+    "group": "coupled-plant",
+    "label": "Len",
+    "unit": "PLN/ha",
+    "value": 429.92
+   },
+   {
+    "id": "hemp",
+    "group": "coupled-plant",
+    "label": "Konopie włókniste",
+    "unit": "PLN/ha",
+    "value": 124.73
+   },
+   {
+    "id": "cattle",
+    "group": "coupled-animal",
+    "label": "Płatność do bydła",
+    "unit": "PLN/head",
+    "value": 318.83
+   },
+   {
+    "id": "cows",
+    "group": "coupled-animal",
+    "label": "Płatność do krów",
+    "unit": "PLN/head",
+    "value": 407.91
+   },
+   {
+    "id": "sheep",
+    "group": "coupled-animal",
+    "label": "Owca domowa",
+    "unit": "PLN/head",
+    "value": 108.91
+   },
+   {
+    "id": "goat",
+    "group": "coupled-animal",
+    "label": "Koza domowa",
+    "unit": "PLN/head",
+    "value": 47.57
+   },
+   {
+    "id": "honey",
+    "group": "eco",
+    "label": "Obszary z roślinami miododajnymi",
+    "unit": "PLN/ha",
+    "value": 1111.35
+   },
+   {
+    "id": "carbon-point",
+    "group": "eco",
+    "label": "Rolnictwo węglowe (za punkt)",
+    "unit": "PLN/point",
+    "value": 92.76
+   },
+   {
+    "id": "ipr-orchard",
+    "group": "eco",
+    "label": "Integrowana produkcja roślin: sadownicze",
+    "unit": "PLN/ha",
+    "value": 1414.74
+   },
+   {
+    "id": "ipr-berry",
+    "group": "eco",
+    "label": "Integrowana produkcja roślin: jagodowe",
+    "unit": "PLN/ha",
+    "value": 1276.48
+   },
+   {
+    "id": "ipr-arable",
+    "group": "eco",
+    "label": "Integrowana produkcja roślin: rolnicze",
+    "unit": "PLN/ha",
+    "value": 603.0
+   },
+   {
+    "id": "ipr-veg",
+    "group": "eco",
+    "label": "Integrowana produkcja roślin: warzywne",
+    "unit": "PLN/ha",
+    "value": 1276.48
+   },
+   {
+    "id": "bio-micro",
+    "group": "eco",
+    "label": "Biologiczna uprawa: mikrobiologiczne środki ochrony roślin",
+    "unit": "PLN/ha",
+    "value": 371.08
+   },
+   {
+    "id": "bio-fert",
+    "group": "eco",
+    "label": "Biologiczna uprawa: nawozowe produkty mikrobiologiczne",
+    "unit": "PLN/ha",
+    "value": 92.76
+   },
+   {
+    "id": "water",
+    "group": "eco",
+    "label": "Retencjonowanie wody na trwałych użytkach zielonych",
+    "unit": "PLN/ha",
+    "value": 260.69
+   },
+   {
+    "id": "fallow",
+    "group": "eco",
+    "label": "Grunty wyłączone z produkcji",
+    "unit": "PLN/ha",
+    "value": 522.3
+   },
+   {
+    "id": "seed-cereal",
+    "group": "eco",
+    "label": "Materiał siewny: zboża",
+    "unit": "PLN/ha",
+    "value": 110.38
+   },
+   {
+    "id": "seed-legume",
+    "group": "eco",
+    "label": "Materiał siewny: rośliny strączkowe",
+    "unit": "PLN/ha",
+    "value": 179.04
+   },
+   {
+    "id": "seed-potato",
+    "group": "eco",
+    "label": "Materiał siewny: ziemniaki",
+    "unit": "PLN/ha",
+    "value": 462.89
+   }
+  ]
+ },
+ "notes": [
+  "Tasas por campaña de los reglamentos del Ministro de Agricultura y Desarrollo Rural (art. 49 de la ley del Plan Estratégico de la PAC), en zlotys. La tasa 2025 del bienestar animal se fijó el 22-abr-2026 y la de 2023, el 25-abr-2024: cada reglamento llega meses después de la campaña.",
+  "Faltan las tasas definitivas del pago básico, el redistributivo y el de jóvenes: no se encontraron en el Dziennik Ustaw. Solo hay la tasa estimada de 2026 del reglamento de anticipos, que sirve para pagar el 75 % del anticipo y no es la tasa definitiva.",
+  "La campaña 2026 aún no tiene reglamentos de tasas (los de 2024 y 2025 se firmaron el 14 de octubre): cuando salgan, la vigilancia lo avisará.",
+  "Las etiquetas de «ipr», «bio-protection», «welfare-broiler» y «welfare-turkey» cambian de estructura entre 2023, 2024 y 2025: cada año se recoge tal como lo fija su reglamento, sin repartir una tasa única entre variantes.",
+  "Leído de la API ELI del Sejm; la edición que manda es la publicada en el Dziennik Ustaw."
+ ],
+ "verifiedAt": "2026-10-14"
+}

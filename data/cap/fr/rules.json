@@ -1,0 +1,388 @@
+{
+ "schemaVersion": 1,
+ "country": "FR",
+ "scheme": "Plan stratégique national PAC 2023-2027 (Code rural, chapitre IV du titre Ier du livre VI)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-14",
+ "source": {
+  "id": "dila_jorf",
+  "instrument": "Code rural et de la pêche maritime, art. D. 614-1 et suivants (décrets 2022-1525, 2022-1755, 2023-168, 2026-322, 2026-348, 2026-864) y arrêtés del JORF",
+  "ref": "JORFTEXT000046847535",
+  "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
+ },
+ "note": "Reglas leídas a mano de los décrets y arrêtés del Journal officiel (volcado de datos abiertos de la DILA) el 13-14 de octubre de 2026 y vigiladas por data/cap/fr/watch.json: si el JORF publica un acto nuevo sobre la PAC, el seguimiento lo marca para revisión. Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Aide de base au revenu pour un développement durable (droits au paiement)",
+   "nameLang": "fr",
+   "legalBasis": "Code rural, art. D. 614-94 et D. 614-99",
+   "articles": [
+    "D.614-94",
+    "D.614-99"
+   ],
+   "amounts": [
+    "dpb-new-hex",
+    "dpb-corse",
+    "dpb-new-corse",
+    "dpb-lin-hex",
+    "dpb-lin-corse"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Aide redistributive complémentaire au revenu pour un développement durable (CRISS)",
+   "nameLang": "fr",
+   "legalBasis": "Code rural, art. D. 614-101",
+   "articles": [
+    "D.614-101"
+   ],
+   "amounts": [
+    "redistributive",
+    "redistributive-2026"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Aide complémentaire au revenu pour les jeunes agriculteurs",
+   "nameLang": "fr",
+   "legalBasis": "Code rural, art. D. 614-105",
+   "articles": [
+    "D.614-105"
+   ],
+   "amounts": [
+    "young",
+    "young-2026"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Programme volontaire pour le climat, l'environnement et le bien-être animal (écorégime)",
+   "nameLang": "fr",
+   "legalBasis": "Code rural, art. D. 614-109 à D. 614-111",
+   "articles": [
+    "D.614-109",
+    "D.614-110",
+    "D.614-111"
+   ],
+   "amounts": [
+    "eco-base",
+    "eco-upper",
+    "eco-bio",
+    "eco-hedge"
+   ]
+  },
+  {
+   "id": "coupled-animal",
+   "kind": "coupled",
+   "name": "Aides couplées animales (ovines, caprine, bovins de plus de 16 mois, veaux sous la mère, Corse)",
+   "nameLang": "fr",
+   "legalBasis": "Arrêtés annuels du ministre chargé de l'agriculture",
+   "articles": [],
+   "amounts": [
+    "sheep-base",
+    "goat",
+    "bovine-upper",
+    "bovine-base",
+    "veal",
+    "corse-ewe-base"
+   ]
+  },
+  {
+   "id": "coupled-plant",
+   "kind": "coupled",
+   "name": "Aides couplées végétales (légumineuses, blé dur, féculières, riz, houblon, chanvre, fruits et légumes de transformation, maraîchage)",
+   "nameLang": "fr",
+   "legalBasis": "Arrêté du 24 février 2026 (campagne 2025)",
+   "articles": [],
+   "amounts": [
+    "pulses",
+    "durum",
+    "rice",
+    "hops",
+    "hemp",
+    "tomato"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Code rural, art. D. 614-1 (décret 2022-1755)",
+   "articles": [
+    "D.614-1"
+   ],
+   "text": "Es agricultor activo la persona física que cotiza al seguro agrario de accidentes de trabajo y, si ha llegado a la edad de jubilación, no ha pedido su pensión; la sociedad con al menos un socio que cumpla eso; y otras figuras que fija el artículo (sociedades sin socio cotizante, entes públicos, asociaciones, agricultores de otro Estado miembro que cultivan en Francia).",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
+  },
+  {
+   "id": "young-farmer",
+   "topic": "young",
+   "legalBasis": "Code rural, art. D. 614-2 (décret 2022-1755)",
+   "articles": [
+    "D.614-2"
+   ],
+   "text": "Joven agricultor: persona física de 40 años como máximo en la fecha de la solicitud, que sea agricultor activo (o cumpla la variante societaria) y tenga un título agrícola de nivel 4 o superior, o uno de nivel 3 o superior de cualquier especialidad con 24 meses de actividad agrícola en los últimos tres años, o 40 meses en los últimos cinco.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535",
+   "values": {
+    "maxAge": 40,
+    "months3y": 24,
+    "months5y": 40
+   }
+  },
+  {
+   "id": "single-application",
+   "topic": "calendar",
+   "legalBasis": "Code rural, art. D. 614-36 (décret 2022-1755)",
+   "articles": [
+    "D.614-36"
+   ],
+   "text": "Las ayudas por superficie se piden en una solicitud única cuya fecha límite es el 15 de mayo de la campaña; si cae en festivo, sábado o domingo, pasa al primer día hábil siguiente. Las fechas de las ayudas por animales las fija un arrêté del ministro.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535",
+   "values": {
+    "month": 5,
+    "day": 15
+   }
+  },
+  {
+   "id": "late-penalty",
+   "topic": "penalties",
+   "legalBasis": "Code rural, art. D. 614-41 (décret 2022-1755)",
+   "articles": [
+    "D.614-41"
+   ],
+   "text": "Una solicitud presentada fuera de plazo sufre una reducción del 1 % por día hábil de retraso. Si el retraso supera los 25 días naturales, la solicitud no es admisible y no se concede ayuda.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535",
+   "values": {
+    "perWorkingDayPct": 1,
+    "inadmissibleAfterDays": 25
+   }
+  },
+  {
+   "id": "late-penalty-2026",
+   "topic": "penalties",
+   "legalBasis": "Décret 2026-322 du 28 avril 2026 (campagne 2026)",
+   "articles": [
+    "D.614-41"
+   ],
+   "text": "Solo en la campaña 2026: sin reducción del 16 al 18 de mayo; reducción del 1 % por día hábil del 19 de mayo al 9 de junio; pasado el 9 de junio la solicitud no es admisible.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053975168",
+   "values": {
+    "noPenaltyFrom": "2026-05-16",
+    "noPenaltyTo": "2026-05-18",
+    "lastDay": "2026-06-09"
+   }
+  },
+  {
+   "id": "area-discrepancy",
+   "topic": "penalties",
+   "legalBasis": "Code rural, art. D. 614-42 (décret 2022-1755)",
+   "articles": [
+    "D.614-42"
+   ],
+   "text": "Si la superficie declarada difiere de la disponible, el total de pagos por superficie se reduce: 0,5 % si la superficie no declarada pasa del 3 % y no del 30 %; 1 % hasta el 60 %; 2 % hasta el 90 %; 3 % por encima del 90 %.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535",
+   "values": {
+    "tiers": [
+     {
+      "overPct": 3,
+      "upToPct": 30,
+      "reductionPct": 0.5
+     },
+     {
+      "overPct": 30,
+      "upToPct": 60,
+      "reductionPct": 1
+     },
+     {
+      "overPct": 60,
+      "upToPct": 90,
+      "reductionPct": 2
+     },
+     {
+      "overPct": 90,
+      "upToPct": null,
+      "reductionPct": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "ecoscheme",
+   "topic": "eco",
+   "legalBasis": "Code rural, art. D. 614-109 y D. 614-110 (décret 2023-168)",
+   "articles": [
+    "D.614-109",
+    "D.614-110"
+   ],
+   "text": "El écorégime se concede al agricultor activo que activa al menos una fracción de derecho de pago de base y compromete toda su superficie admisible en una misma vía: prácticas agroecológicas, certificación medioambiental o elementos favorables a la biodiversidad. Cada vía tiene nivel de base y nivel superior; la certificación añade un nivel para la agricultura ecológica. Un «bonus haies» se suma a las dos primeras vías.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047278249"
+  },
+  {
+   "id": "organic-bcae",
+   "topic": "eco",
+   "legalBasis": "Décret 2026-348 du 7 mai 2026, art. D. 614-55",
+   "articles": [
+    "D.614-55"
+   ],
+   "text": "Desde el décret de 7 de mayo de 2026, el agricultor certificado como ecológico cuya explotación es entera de unidades ecológicas o en conversión se considera que cumple las normas BCAE 1, 3, 4, 5, 6 y 7.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054048147",
+   "values": {
+    "bcae": [
+     1,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  {
+   "id": "hemp-eligible",
+   "topic": "payments",
+   "legalBasis": "Décret 2026-864 du 14 septembre 2026, art. D. 614-9",
+   "articles": [
+    "D.614-9"
+   ],
+   "text": "Desde el décret de 14 de septiembre de 2026, las superficies de cáñamo cuentan como hectárea admisible si sus variedades estaban inscritas en el catálogo común antes de la fecha que fije un arrêté, que no puede ser posterior al plazo de la solicitud única.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054842465"
+  },
+  {
+   "id": "control-rates-2026",
+   "topic": "controls",
+   "legalBasis": "Arrêté du 29 septembre 2026 (art. D. 614-17)",
+   "articles": [
+    "D.614-17"
+   ],
+   "text": "Tasa mínima de control anual en 2026: 2 % para el écorégime, 3,5 % para las indemnizaciones compensatorias de desventajas naturales (Hexágono) y 2,5 % para las ayudas a la agricultura ecológica (Hexágono y ultramar).",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054938477",
+   "values": {
+    "ecoschemePct": 2,
+    "ichnPct": 3.5,
+    "organicPct": 2.5
+   }
+  },
+  {
+   "id": "unit-amounts",
+   "topic": "amounts",
+   "legalBasis": "Code rural, art. D. 614-67, D. 614-94, D. 614-99, D. 614-101, D. 614-105, D. 614-109",
+   "articles": [
+    "D.614-67",
+    "D.614-94",
+    "D.614-99",
+    "D.614-101",
+    "D.614-105",
+    "D.614-109"
+   ],
+   "text": "Los importes por unidad de cada campaña (ayuda redistributiva, jóvenes, tasa de reducción, derechos de pago, ecorégimen y ayudas acopladas) no están en los decretos: los fija cada año un arrêté del Ministerio de Agricultura publicado en el Journal officiel. Los de la campaña 2026 salieron el 1 de octubre de 2026, salvo el ecorégimen y las ayudas acopladas vegetales.",
+   "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930369"
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "Code rural, art. D. 614-36",
+   "articles": [
+    "D.614-36"
+   ],
+   "when": {
+    "month": 5,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Termina el plazo de la solicitud única de las ayudas por superficie (15 de mayo; si es festivo o fin de semana, el primer día hábil siguiente)."
+  }
+ ],
+ "campaignOverrides": [
+  {
+   "campaign": 2026,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2026-05-18",
+   "legalBasis": "Décret 2026-322 du 28 avril 2026",
+   "text": "En 2026 no hay reducción hasta el 18 de mayo; del 19 de mayo al 9 de junio, 1 % por día hábil; después, la solicitud no es admisible."
+  }
+ ],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "An active farmer is a natural person who pays the farm accident-insurance contribution and, once at retirement age, has not claimed a pension; a company with at least one such partner; and other forms set by the article (companies without a contributing partner, public bodies, associations, farmers from another Member State farming in France).",
+    "fr": "Est agriculteur actif la personne physique redevable de la cotisation d'assurance accidents du travail agricole et qui, à l'âge de la retraite, n'a pas fait valoir ses droits ; la société comptant au moins un associé dans ce cas ; et d'autres formes prévues par l'article (sociétés sans associé cotisant, personnes morales de droit public, associations, agriculteurs d'un autre État membre exploitant en France).",
+    "it": "È agricoltore attivo la persona fisica che versa il contributo assicurativo contro gli infortuni agricoli e che, raggiunta l'età pensionabile, non ha chiesto la pensione; la società con almeno un socio in questa condizione; e altre forme previste dall'articolo (società senza socio contribuente, enti pubblici, associazioni, agricoltori di un altro Stato membro che coltivano in Francia)."
+   },
+   "young-farmer": {
+    "en": "Young farmer: a natural person aged 40 or under on the application date, who is an active farmer (or meets the company variant) and holds an agricultural diploma at level 4 or above, or any level-3-or-above diploma plus 24 months of farm work in the last three years, or 40 months in the last five.",
+    "fr": "Jeune agriculteur : personne physique de 40 ans au plus à la date de la demande, agriculteur actif (ou remplissant la variante sociétaire), titulaire d'un diplôme agricole de niveau 4 ou plus, ou d'un diplôme de niveau 3 ou plus de toute spécialité avec 24 mois d'activité agricole sur les trois dernières années, ou 40 mois sur les cinq dernières.",
+    "it": "Giovane agricoltore: persona fisica di 40 anni al massimo alla data della domanda, agricoltore attivo (o che soddisfa la variante societaria) e con un titolo agricolo di livello 4 o superiore, oppure un titolo di livello 3 o superiore di qualsiasi indirizzo con 24 mesi di attività agricola negli ultimi tre anni, o 40 mesi negli ultimi cinque."
+   },
+   "single-application": {
+    "en": "Area-based aid is claimed in a single application whose deadline is 15 May of the campaign year; if that is a holiday, Saturday or Sunday it moves to the next working day. The dates for animal-based aid are set by ministerial order.",
+    "fr": "Les aides à la surface font l'objet d'une demande unique dont la date limite est le 15 mai de la campagne ; si c'est un jour férié, un samedi ou un dimanche, elle est reportée au premier jour ouvré suivant. Un arrêté du ministre fixe les dates des aides animales.",
+    "it": "Gli aiuti per superficie si richiedono con una domanda unica la cui scadenza è il 15 maggio della campagna; se cade in un giorno festivo, sabato o domenica, slitta al primo giorno lavorativo successivo. Le date degli aiuti per animali le fissa un decreto del ministro."
+   },
+   "late-penalty": {
+    "en": "An application filed late is cut by 1 % per working day of delay. If the delay exceeds 25 calendar days the application is inadmissible and no aid is granted.",
+    "fr": "Une demande déposée en retard subit une réduction de 1 % par jour ouvré de retard. Si le retard dépasse 25 jours calendaires, la demande n'est pas admissible et aucune aide n'est accordée.",
+    "it": "Una domanda presentata in ritardo subisce una riduzione dell'1 % per giorno lavorativo di ritardo. Se il ritardo supera 25 giorni di calendario, la domanda non è ammissibile e non viene concesso alcun aiuto."
+   },
+   "late-penalty-2026": {
+    "en": "Campaign 2026 only: no cut from 16 to 18 May; a 1 % cut per working day from 19 May to 9 June; after 9 June the application is inadmissible.",
+    "fr": "Campagne 2026 uniquement : aucune réduction du 16 au 18 mai ; réduction de 1 % par jour ouvré du 19 mai au 9 juin ; passé le 9 juin, la demande n'est pas admissible.",
+    "it": "Solo campagna 2026: nessuna riduzione dal 16 al 18 maggio; riduzione dell'1 % per giorno lavorativo dal 19 maggio al 9 giugno; dopo il 9 giugno la domanda non è ammissibile."
+   },
+   "area-discrepancy": {
+    "en": "If the declared area differs from the area actually available, total area-based payments are cut: 0.5 % if the undeclared area is over 3 % and up to 30 %; 1 % up to 60 %; 2 % up to 90 %; 3 % above 90 %.",
+    "fr": "Si la surface déclarée diffère de la surface réellement disponible, le total des paiements liés à la surface est réduit : 0,5 % si la surface non déclarée dépasse 3 % sans excéder 30 % ; 1 % jusqu'à 60 % ; 2 % jusqu'à 90 % ; 3 % au-delà de 90 %.",
+    "it": "Se la superficie dichiarata differisce da quella effettivamente disponibile, il totale dei pagamenti per superficie è ridotto: 0,5 % se la superficie non dichiarata supera il 3 % senza oltrepassare il 30 %; 1 % fino al 60 %; 2 % fino al 90 %; 3 % oltre il 90 %."
+   },
+   "ecoscheme": {
+    "en": "The eco-scheme is paid to an active farmer who activates at least one fraction of a basic payment entitlement and commits all eligible area to a single pathway: agro-ecological practices, environmental certification or biodiversity-friendly features. Each pathway has a base and a higher level; certification adds a level for organic farming. A hedgerow bonus can be added to the first two pathways.",
+    "fr": "L'écorégime est versé à l'agriculteur actif qui active au moins une fraction de droit à paiement de base et engage toutes ses surfaces admissibles dans une même voie : pratiques agro-écologiques, certification environnementale ou éléments favorables à la biodiversité. Chaque voie a un niveau de base et un niveau supérieur ; la certification ajoute un niveau pour l'agriculture biologique. Un bonus haies s'ajoute aux deux premières voies.",
+    "it": "L'ecoregime è versato all'agricoltore attivo che attiva almeno una frazione di diritto al pagamento di base e impegna tutta la superficie ammissibile in una stessa via: pratiche agroecologiche, certificazione ambientale o elementi favorevoli alla biodiversità. Ogni via ha un livello di base e uno superiore; la certificazione aggiunge un livello per l'agricoltura biologica. Un bonus siepi si aggiunge alle prime due vie."
+   },
+   "organic-bcae": {
+    "en": "Since the decree of 7 May 2026, an organic-certified farmer whose whole holding is organic or in-conversion units is deemed to meet good agricultural and environmental conditions (GAEC) 1, 3, 4, 5, 6 and 7.",
+    "fr": "Depuis le décret du 7 mai 2026, l'agriculteur certifié bio dont l'exploitation est entièrement composée d'unités de production biologique ou en conversion est réputé satisfaire aux normes BCAE 1, 3, 4, 5, 6 et 7.",
+    "it": "Dal decreto del 7 maggio 2026, l'agricoltore certificato biologico la cui azienda è interamente composta da unità biologiche o in conversione è considerato conforme alle norme BCAA 1, 3, 4, 5, 6 e 7."
+   },
+   "hemp-eligible": {
+    "en": "Since the decree of 14 September 2026, hemp areas count as eligible hectares if their varieties were listed in the common catalogue before a date set by ministerial order, which cannot be later than the single-application deadline.",
+    "fr": "Depuis le décret du 14 septembre 2026, les surfaces de chanvre sont des hectares admissibles si leurs variétés étaient inscrites au catalogue commun avant une date fixée par arrêté, qui ne peut être postérieure à la date limite de dépôt de la demande unique.",
+    "it": "Dal decreto del 14 settembre 2026, le superfici a canapa sono ettari ammissibili se le loro varietà erano iscritte nel catalogo comune prima di una data fissata con decreto, che non può essere successiva alla scadenza della domanda unica."
+   },
+   "control-rates-2026": {
+    "en": "Minimum annual inspection rate in 2026: 2 % for the eco-scheme, 3.5 % for natural-handicap compensation (mainland) and 2.5 % for organic farming aid (mainland and overseas departments).",
+    "fr": "Taux annuel minimum de contrôle en 2026 : 2 % pour l'écorégime, 3,5 % pour les indemnités compensatoires de handicaps naturels (Hexagone) et 2,5 % pour les aides à l'agriculture biologique (Hexagone et DOM).",
+    "it": "Tasso minimo annuo di controllo nel 2026: 2 % per l'ecoregime, 3,5 % per le indennità compensative degli svantaggi naturali (Esagono) e 2,5 % per gli aiuti all'agricoltura biologica (Esagono e dipartimenti d'oltremare)."
+   },
+   "unit-amounts": {
+    "en": "The per-unit amounts of each campaign (redistributive aid, young farmers, reduction rate, payment entitlements, eco-scheme and coupled aid) are not in the decrees: a yearly order of the Ministry of Agriculture sets them in the Journal officiel. The 2026 ones came out on 1 October 2026, except the eco-scheme and the plant-based coupled aid.",
+    "fr": "Les montants unitaires de chaque campagne (aide redistributive, jeunes agriculteurs, taux de réduction, droits à paiement, écorégime et aides couplées) ne figurent pas dans les décrets : un arrêté annuel du ministère de l'Agriculture les fixe au Journal officiel. Ceux de 2026 sont parus le 1er octobre 2026, sauf l'écorégime et les aides couplées végétales.",
+    "it": "Gli importi unitari di ogni campagna (aiuto redistributivo, giovani agricoltori, tasso di riduzione, diritti al pagamento, ecoregime e aiuti accoppiati) non sono nei decreti: li fissa ogni anno un decreto del ministero dell'Agricoltura nel Journal officiel. Quelli del 2026 sono usciti il 1° ottobre 2026, tranne l'ecoregime e gli aiuti accoppiati vegetali."
+   }
+  },
+  "calendar": {
+   "su-close": {
+    "en": "The single-application deadline for area-based aid ends (15 May; the next working day if a holiday or weekend).",
+    "fr": "La date limite de la demande unique des aides à la surface (15 mai ; le premier jour ouvré suivant si férié ou week-end).",
+    "it": "Scade la domanda unica degli aiuti per superficie (15 maggio; il primo giorno lavorativo successivo se festivo o fine settimana)."
+   }
+  },
+  "overrides": {
+   "2026:su-close": {
+    "en": "In 2026 there is no cut until 18 May; from 19 May to 9 June, 1 % per working day; after that the application is inadmissible.",
+    "fr": "En 2026, aucune réduction jusqu'au 18 mai ; du 19 mai au 9 juin, 1 % par jour ouvré ; ensuite, la demande n'est pas admissible.",
+    "it": "Nel 2026 nessuna riduzione fino al 18 maggio; dal 19 maggio al 9 giugno, 1 % per giorno lavorativo; dopo, la domanda non è ammissibile."
+   }
+  }
+ }
+}

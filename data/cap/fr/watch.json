@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "country": "FR",
+ "source": "dila_jorf",
+ "status": "NOT_YET_RUN",
+ "checkedAt": null,
+ "baseline": {
+  "fingerprints": {},
+  "acknowledged": [
+   "JORFTEXT000052328766",
+   "JORFTEXT000052328776",
+   "JORFTEXT000052328793",
+   "JORFTEXT000052372817",
+   "JORFTEXT000052372823",
+   "JORFTEXT000052372828",
+   "JORFTEXT000052869147",
+   "JORFTEXT000052869158",
+   "JORFTEXT000052869177",
+   "JORFTEXT000052869184",
+   "JORFTEXT000053417162",
+   "JORFTEXT000053594055",
+   "JORFTEXT000053659004",
+   "JORFTEXT000053659009",
+   "JORFTEXT000054063203",
+   "JORFTEXT000054237642",
+   "JORFTEXT000054237649",
+   "JORFTEXT000054237656",
+   "JORFTEXT000054237666",
+   "JORFTEXT000054237685",
+   "JORFTEXT000054237693",
+   "JORFTEXT000054237700",
+   "JORFTEXT000054237709",
+   "JORFTEXT000054237716",
+   "JORFTEXT000054930369",
+   "JORFTEXT000054930398",
+   "JORFTEXT000054930403",
+   "JORFTEXT000054930408",
+   "JORFTEXT000054930414"
+  ]
+ },
+ "current": {
+  "fingerprints": {},
+  "candidates": [],
+  "lastScanned": "2026-10-01"
+ },
+ "reviewNeeded": [],
+ "note": "Vigilancia de los boletines diarios del JORF desde el 1 de octubre de 2026 (último día leído a mano). Los textos que aparecen son candidatos: no se interpretan."
+}

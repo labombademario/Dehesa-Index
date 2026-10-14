@@ -3075,9 +3075,12 @@ def cap_de_amounts(doc, errs, warns, stats):
 
 
 def cap_fr_amounts(doc, errs, warns, stats):
-    """PAC Francia: cada importe tiene una cadena de versiones con documentos conocidos y fechas ordenadas, el vigente es el ultimo, los NOR son unicos y hay un arrete inicial y uno modificativo."""
+    """PAC Francia: cada importe pertenece a una campaña declarada y tiene una cadena de versiones con documentos conocidos y fechas ordenadas, el vigente es el ultimo, los NOR son unicos,
+    y los documentos de una campaña no se publican antes del inicio de ese año natural menos uno."""
     vd = _cap_date(doc["verifiedAt"])
     if vd is None or vd > TODAY: errs.append("cap-fr: verifiedAt invalido o en el futuro"); return
+    camps = doc["campaigns"]
+    if camps != sorted(set(camps)): errs.append("cap-fr: campañas repetidas o desordenadas"); return
     docs = {}
     for d in doc["documents"]:
         pub = _cap_date(d["published"]); sig = _cap_date(d["signed"])
@@ -3089,6 +3092,7 @@ def cap_fr_amounts(doc, errs, warns, stats):
     for it in doc["items"]:
         if it["id"] in seen: errs.append("cap-fr: importe repetido %s" % it["id"]); return
         seen.add(it["id"])
+        if it["campaign"] not in camps: errs.append("cap-fr %s: campaña %r no declarada" % (it["id"], it["campaign"])); return
         if it["unit"] not in ("EUR/ha", "EUR/head", "EUR", "PCT"): errs.append("cap-fr %s: unidad invalida %r" % (it["id"], it["unit"])); return
         vs = it["versions"]
         if not vs: errs.append("cap-fr %s: sin versiones" % it["id"]); return
@@ -3098,8 +3102,104 @@ def cap_fr_amounts(doc, errs, warns, stats):
             if not _cap_num(v["value"]) or v["value"] <= 0: errs.append("cap-fr %s: importe invalido" % it["id"]); return
             if last and docs[v["doc"]]["published"] < last: errs.append("cap-fr %s: versiones desordenadas" % it["id"]); return
             last = docs[v["doc"]]["published"]
+            if int(docs[v["doc"]]["published"][:4]) < it["campaign"] - 1: errs.append("cap-fr %s: documento anterior a la campaña" % it["id"]); return
         if it["current"] != vs[-1]["value"] or it["currentDoc"] != vs[-1]["doc"]: errs.append("cap-fr %s: el importe vigente no es el de la ultima version" % it["id"]); return
+    for c in camps:
+        if not any(i["campaign"] == c for i in doc["items"]): errs.append("cap-fr: la campaña %d no tiene importes" % c); return
     stats["cap-fr importes"] = len(doc["items"]); stats["cap-fr arretes"] = len(docs)
+
+
+def cap_pl_amounts(doc, errs, warns, stats):
+    """PAC Polonia: tasas oficiales por campaña: cada valor apunta a un reglamento del Dziennik Ustaw de esa campaña, 'latest' es el de la ultima campaña, las estimaciones de 2026 son
+    SOLO anticipos (kind ESTIMATED_RATE_FOR_ADVANCES) y salen del reglamento declarado."""
+    vd = _cap_date(doc["verifiedAt"])
+    if vd is None or vd > TODAY: errs.append("cap-pl: verifiedAt invalido o en el futuro"); return
+    camps = doc["campaigns"]
+    docs = {}
+    for d in doc["documents"]:
+        pub = _cap_date(d["published"]); sig = _cap_date(d["signed"])
+        if pub is None or sig is None or pub > TODAY or sig > pub: errs.append("cap-pl %s: fechas invalidas" % d["id"]); return
+        if d["id"] in docs or not re.fullmatch(r"DU/\d{4}/\d+", d["eli"]) or not d["url"].startswith("https://api.sejm.gov.pl/eli/acts/" + d["eli"]): errs.append("cap-pl %s: documento repetido o ELI invalido" % d["id"]); return
+        if d["campaign"] not in camps: errs.append("cap-pl %s: campaña no declarada" % d["id"]); return
+        docs[d["id"]] = d
+    if len({d["eli"] for d in docs.values()}) != len(docs): errs.append("cap-pl: ELI repetido"); return
+    seen = set()
+    for it in doc["items"]:
+        if it["id"] in seen: errs.append("cap-pl: tasa repetida %s" % it["id"]); return
+        seen.add(it["id"])
+        if not it["unit"].startswith("PLN"): errs.append("cap-pl %s: unidad invalida %r" % (it["id"], it["unit"])); return
+        vals = it["values"]
+        if not vals: errs.append("cap-pl %s: sin valores" % it["id"]); return
+        for y, v in vals.items():
+            if int(y) not in camps or v["doc"] not in docs or docs[v["doc"]]["campaign"] != int(y): errs.append("cap-pl %s/%s: documento o campaña incoherente" % (it["id"], y)); return
+            if not _cap_num(v["value"]) or v["value"] <= 0: errs.append("cap-pl %s/%s: valor invalido" % (it["id"], y)); return
+        ly = max(int(y) for y in vals)
+        if it["latestCampaign"] != ly or it["latest"] != vals[str(ly)]["value"]: errs.append("cap-pl %s: 'latest' no es el de la ultima campaña" % it["id"]); return
+    e = doc["estimates2026"]
+    if e["kind"] != "ESTIMATED_RATE_FOR_ADVANCES" or e["doc"] not in docs or not 0 < e["advanceShare"] < 1: errs.append("cap-pl: estimaciones de 2026 mal declaradas"); return
+    if any(not _cap_num(x["value"]) or x["value"] <= 0 for x in e["items"]): errs.append("cap-pl: estimacion invalida"); return
+    stats["cap-pl tasas"] = len(doc["items"]); stats["cap-pl reglamentos"] = len(docs)
+
+
+def cap_nat_rules(doc, errs, warns, stats):
+    """PAC Francia/Italia/Polonia, reglas curadas: identificadores unicos, base legal en cada regla, intervencion y hito; fechas del calendario reales; las excepciones por campaña apuntan a un hito
+    y caen en la campaña o la siguiente; cada texto tiene traduccion en en/fr/it; fuente con https."""
+    cc = doc["country"]
+    vd = _cap_date(doc["verifiedAt"])
+    if vd is None or vd > TODAY: errs.append("cap-%s rules: verifiedAt invalido o en el futuro" % cc); return
+    if (TODAY - vd).days > 120: warns.append("cap-%s rules: reglas revisadas por última vez el %s" % (cc, doc["verifiedAt"]))
+    if not str(doc["source"]["url"]).startswith("https://"): errs.append("cap-%s rules: fuente sin https" % cc); return
+    for grp in ("interventions", "rules", "calendar"):
+        ids = [x["id"] for x in doc[grp]]
+        if len(set(ids)) != len(ids): errs.append("cap-%s rules: identificadores repetidos en %s" % (cc, grp)); return
+        for x in doc[grp]:
+            if not x.get("legalBasis"): errs.append("cap-%s rules: %s %s sin base legal" % (cc, grp, x["id"])); return
+    for r in doc["rules"]:
+        if not r.get("text") or not str(r.get("officialUrl", "")).startswith("https://"): errs.append("cap-%s rules: regla %s sin texto o sin enlace oficial" % (cc, r["id"])); return
+    cal = {}
+    for c in doc["calendar"]:
+        w = c["when"]
+        try: datetime.date(2024, w["month"], w["day"])
+        except Exception: errs.append("cap-%s rules: fecha invalida en %s" % (cc, c["id"])); return
+        cal[c["id"]] = c
+    for o in doc["campaignOverrides"]:
+        if o["calendarId"] not in cal: errs.append("cap-%s rules: excepcion a un hito inexistente %s" % (cc, o["calendarId"])); return
+        d = _cap_date(o["date"])
+        if d is None or d.year not in (o["campaign"], o["campaign"] + 1): errs.append("cap-%s rules: fecha de excepcion fuera de campaña (%s)" % (cc, o["date"])); return
+    tr = doc["i18n"]
+    for grp, src in (("rules", doc["rules"]), ("calendar", doc["calendar"])):
+        for x in src:
+            t = tr[grp].get(x["id"])
+            if not isinstance(t, dict) or not all(isinstance(t.get(l), str) and t[l] for l in ("en", "fr", "it")): errs.append("cap-%s rules: sin traduccion en/fr/it de %s %s" % (cc, grp, x["id"])); return
+    for o in doc["campaignOverrides"]:
+        t = tr["overrides"].get("%d:%s" % (o["campaign"], o["calendarId"]))
+        if not isinstance(t, dict) or not all(isinstance(t.get(l), str) and t[l] for l in ("en", "fr", "it")): errs.append("cap-%s rules: sin traduccion de la excepcion %s" % (cc, o["calendarId"])); return
+    stats["cap-%s reglas" % cc.lower()] = len(doc["rules"]); stats["cap-%s intervenciones" % cc.lower()] = len(doc["interventions"])
+
+
+def cap_nat_watch(doc, errs, warns, stats):
+    """PAC Francia/Italia/Polonia, vigilancia: 'reviewNeeded' es EXACTAMENTE la diferencia entre linea base y lectura actual (huellas distintas y textos candidatos sin revisar);
+    sin lectura (NOT_YET_RUN) no hay fecha de comprobacion; comprobacion semanal (aviso a los 21 dias)."""
+    cc = doc["country"]
+    b, c = doc["baseline"], doc["current"]
+    if doc["status"] == "NOT_YET_RUN":
+        if doc["checkedAt"] is not None: errs.append("cap-%s watch: NOT_YET_RUN con fecha de comprobacion" % cc)
+        return
+    cd = _cap_date(doc["checkedAt"]) if doc["checkedAt"] else None
+    if cd is None or cd > TODAY: errs.append("cap-%s watch: checkedAt invalido o en el futuro" % cc); return
+    need = sum(1 for k, v in c["fingerprints"].items() if k not in b["fingerprints"] or b["fingerprints"][k]["sha256"] != v["sha256"])
+    need += sum(1 for k in b["fingerprints"] if k not in c["fingerprints"])
+    ack = set(b["acknowledged"])
+    need += sum(1 for x in c["candidates"] if x["id"] not in ack)
+    if len(doc["reviewNeeded"]) != need: errs.append("cap-%s watch: reviewNeeded tiene %d entradas y la diferencia real es %d" % (cc, len(doc["reviewNeeded"]), need)); return
+    if len({x["id"] for x in c["candidates"]}) != len(c["candidates"]): errs.append("cap-%s watch: candidatos repetidos" % cc); return
+    for x in c["candidates"]:
+        if _cap_date(x["date"]) is None or not str(x["url"]).startswith("https://"): errs.append("cap-%s watch: candidato invalido %s" % (cc, x["id"])); return
+    if c["lastScanned"] is not None and _cap_date(c["lastScanned"]) is None: errs.append("cap-%s watch: lastScanned invalido" % cc); return
+    if need: warns.append("cap-%s: la fuente oficial ha publicado algo que las reglas pueden citar (%s): revisar data/cap/%s/rules.json" % (cc, "; ".join(doc["reviewNeeded"][:3]), cc.lower()))
+    if doc["status"] == "UNREACHABLE": warns.append("cap-%s watch: la ultima lectura no pudo llegar a la fuente" % cc)
+    if (TODAY - cd).days > 21: warns.append("cap-%s watch: ultima comprobacion el %s" % (cc, doc["checkedAt"]))
+    stats["cap-%s textos vigilados" % cc.lower()] = len(c["fingerprints"]) + len(c["candidates"])
 
 
 def cap_dk_amounts(doc, errs, warns, stats):

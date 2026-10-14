@@ -1,0 +1,412 @@
+{
+ "schemaVersion": 1,
+ "country": "IT",
+ "scheme": "Piano strategico PAC 2023-2027 (DM 23 dicembre 2022 n. 660087, pagamenti diretti)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-14",
+ "source": {
+  "id": "masaf_it",
+  "instrument": "Decreto del Ministro dell'agricoltura, della sovranità alimentare e delle foreste del 23 dicembre 2022, n. 660087 (GU Serie Generale n. 47 del 24-2-2023), testo coordinato aggiornato al 30-6-2026",
+  "ref": "DM 660087/2022",
+  "url": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download"
+ },
+ "note": "Reglas leídas a mano del texto coordinado del decreto, publicado por el MASAF y actualizado a 30 de junio de 2026, y vigiladas por data/cap/it/watch.json (huella del texto). El texto coordinado no tiene efecto jurídico: valen las versiones de la Gazzetta Ufficiale. Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Sostegno di base al reddito per la sostenibilità",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 10-13",
+   "articles": [
+    "10",
+    "11",
+    "12",
+    "13"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Sostegno ridistributivo complementare al reddito per la sostenibilità (CRISS)",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 14",
+   "articles": [
+    "14"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Sostegno complementare al reddito per i giovani agricoltori",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 5 e 15",
+   "articles": [
+    "5",
+    "15"
+   ]
+  },
+  {
+   "id": "eco-1",
+   "kind": "eco",
+   "name": "Eco-schema 1: pagamento per la riduzione dell’antimicrobico resistenza e per il benessere animale",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 17",
+   "articles": [
+    "17"
+   ]
+  },
+  {
+   "id": "eco-2",
+   "kind": "eco",
+   "name": "Eco-schema 2: pagamento per inerbimento delle colture arboree",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 18",
+   "articles": [
+    "18"
+   ]
+  },
+  {
+   "id": "eco-3",
+   "kind": "eco",
+   "name": "Eco-schema 3: pagamento per la salvaguardia olivi di valore paesaggistico",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 19",
+   "articles": [
+    "19"
+   ]
+  },
+  {
+   "id": "eco-4",
+   "kind": "eco",
+   "name": "Eco-schema 4: pagamento per sistemi foraggeri estensivi con avvicendamento",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 20",
+   "articles": [
+    "20"
+   ]
+  },
+  {
+   "id": "eco-5",
+   "kind": "eco",
+   "name": "Eco-schema 5: pagamento per misure specifiche per gli impollinatori",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 21",
+   "articles": [
+    "21"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Sostegno accoppiato al reddito (latte, carni bovine, ovicaprini, frumento duro, colza e girasole, riso, barbabietola, pomodoro, olio d’oliva, agrumi, proteiche)",
+   "nameLang": "it",
+   "legalBasis": "DM 660087/2022, art. 22-34",
+   "articles": [
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "DM 660087/2022, art. 4",
+   "articles": [
+    "4"
+   ],
+   "text": "Agricultor en actividad: quien realiza al menos una práctica anual de mantenimiento o producción y, al pedir la ayuda y hasta fin de año, tiene uno de estos requisitos: inscripción en el registro de empresas como empresa agrícola «activa», pequeño empresario agrícola o coltivatore diretto; inscripción en la seguridad social agraria (INPS); o IVA agrícola activo (ATECO 01). Si los pagos directos del año anterior no pasaban de 5.000 €, basta el nivel mínimo de actividad.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "smallFarmerEur": 5000
+   }
+  },
+  {
+   "id": "min-payment",
+   "topic": "payments",
+   "legalBasis": "DM 660087/2022, art. 8",
+   "articles": [
+    "8"
+   ],
+   "text": "No se paga ningún pago directo si el total a abonar es inferior a 300 €, antes de reducciones y sanciones.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "minEur": 300
+   }
+  },
+  {
+   "id": "risk-fund",
+   "topic": "payments",
+   "legalBasis": "DM 660087/2022, art. 9",
+   "articles": [
+    "9"
+   ],
+   "text": "Desde 2023 se retiene el 3 % de cada pago directo para el «Fondo de mutualización nacional de eventos catastróficos» (instrumento de gestión de riesgos), calculado sobre el importe verificado, neto de reducciones y sanciones.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "pct": 3
+   }
+  },
+  {
+   "id": "entitlements",
+   "topic": "abrs",
+   "legalBasis": "DM 660087/2022, art. 10",
+   "articles": [
+    "10"
+   ],
+   "text": "El sostén de base se paga por derechos de ayuda: valor máximo de un derecho 2.000 €; en 2026 todos los derechos deben valer al menos el 85 % del importe medio, con una convergencia en cuatro fases anuales iguales y una reducción de los derechos por encima de la media que no supera el 30 %.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "maxUnitEur": 2000,
+    "minSharePct": 85,
+    "maxReductionPct": 30,
+    "targetCampaign": 2026
+   }
+  },
+  {
+   "id": "single-application",
+   "topic": "calendar",
+   "legalBasis": "DM 660087/2022, art. 11",
+   "articles": [
+    "11"
+   ],
+   "text": "La domanda única se presenta al organismo pagador que tiene el expediente de la explotación (fascicolo aziendale) como máximo el 15 de mayo; si cae en festivo o fin de semana, pasa al primer día hábil. Las hectáreas se declaran a fecha de 15 de mayo y el fascicolo debe estar constituido, actualizado y validado antes. Las solicitudes tardías sufren las reducciones del D.Lgs. 42/2023, art. 5. Desde 2023 el plazo se ha prorrogado cada año por decreto ministerial.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "month": 5,
+    "day": 15
+   }
+  },
+  {
+   "id": "unit-amounts",
+   "topic": "amounts",
+   "legalBasis": "DM 660087/2022, art. 14 c.2, 15 c.8, 16 c.5 y 22 c.7",
+   "articles": [
+    "14",
+    "15",
+    "16",
+    "22"
+   ],
+   "text": "El decreto no fija importes por hectárea: cada año el organismo de coordinación (AGEA Coordinamento) los calcula dividiendo la dotación de cada intervención entre las hectáreas (o cabezas) admisibles del año, respetando el importe unitario máximo del Plan estratégico. Por eso Dehesa Index no publica importes de Italia hasta poder leer las circulares de AGEA.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download"
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "DM 660087/2022, art. 14",
+   "articles": [
+    "14"
+   ],
+   "text": "Sostegno ridistributivo (CRISS): el 10 % de la dotación de pagos directos. Lo pueden pedir los agricultores en actividad con derecho al sostén de base y una explotación de 0,5 a 50 ha admisibles (fuera de ese rango no se concede). Se paga hasta un máximo de 14 ha.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "reservePct": 10,
+    "minHa": 0.5,
+    "maxHa": 50,
+    "paidUpToHa": 14
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "DM 660087/2022, art. 5 y 15",
+   "articles": [
+    "5",
+    "15"
+   ],
+   "text": "Joven agricultor: persona física que se instala por primera vez como jefe de explotación, con 40 años como máximo en el primer año de solicitud, y formación adecuada (título agrícola, otro título con curso de 150 horas o tres años de experiencia documentada, entre otras vías). El pago complementario se concede hasta 90 ha y un máximo de cinco años desde la primera solicitud; sigue aunque supere los 40 años.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "maxAge": 40,
+    "maxHa": 90,
+    "years": 5
+   }
+  },
+  {
+   "id": "eco-schemes",
+   "topic": "eco",
+   "legalBasis": "DM 660087/2022, art. 16-21",
+   "articles": [
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21"
+   ],
+   "text": "Los ecoesquemas reciben el 25 % de la dotación de pagos directos: reducción de la resistencia antimicrobiana y bienestar animal, cubierta vegetal en cultivos arbóreos, olivares de valor paisajístico, sistemas forrajeros extensivos con rotación y medidas para polinizadores. En 2025 y 2026, hasta el 2 % de la dotación de pagos directos reservada a ecoesquemas puede pasar a jóvenes, redistributivo y sostén de base si no se agota.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "reservePct": 25,
+    "flexPct": 2,
+    "flexCampaigns": [
+     2025,
+     2026
+    ],
+    "schemes": 5
+   }
+  },
+  {
+   "id": "coupled",
+   "topic": "associated",
+   "legalBasis": "DM 660087/2022, art. 22",
+   "articles": [
+    "22"
+   ],
+   "text": "El sostén acoplado recibe el 15 % de la dotación de pagos directos (13 % para sectores y 2 % para proteaginosas) y cubre leche, carne bovina, carne ovina y caprina, trigo duro, colza y girasol, arroz, remolacha azucarera, tomate de industria, aceite de oliva, cítricos y proteaginosas. Se paga por hectárea admisible o por cabeza identificada y registrada individualmente.",
+   "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
+   "values": {
+    "reservePct": 15,
+    "sectorsPct": 13,
+    "proteinPct": 2
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "DM 660087/2022, art. 11 c.4",
+   "articles": [
+    "11"
+   ],
+   "when": {
+    "month": 5,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Termina el plazo general de la domanda unica (15 de mayo; si es festivo o fin de semana, el primer día hábil). Cada año se ha prorrogado por decreto ministerial: consulta las excepciones por campaña."
+  }
+ ],
+ "campaignOverrides": [
+  {
+   "campaign": 2023,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2023-06-30",
+   "legalBasis": "DM 248477 del 11-5-2023 y DM 300209 del 9-6-2023",
+   "text": "En 2023 el plazo se prorrogó primero al 15 de junio y después al 30 de junio."
+  },
+  {
+   "campaign": 2024,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2024-08-30",
+   "legalBasis": "DM 207565 del 9-5-2024, DM 28-6-2024 y DM 29-7-2024",
+   "text": "En 2024 el plazo se prorrogó al 1 de julio, después al 31 de julio y por último al 30 de agosto."
+  },
+  {
+   "campaign": 2025,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2025-07-31",
+   "legalBasis": "DM 210400 del 13-5-2025, DM 268613 del 13-6-2025 y DM 323941 del 14-7-2025",
+   "text": "En 2025 el plazo se prorrogó al 16 de junio, después al 15 de julio y por último al 31 de julio."
+  },
+  {
+   "campaign": 2026,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2026-06-30",
+   "legalBasis": "DM 232659 del 15-5-2026",
+   "text": "En 2026 el plazo se prorrogó al 30 de junio."
+  }
+ ],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer: someone who carries out at least one yearly maintenance or production practice and, when applying and until year-end, meets one requirement: registration in the company register as an \"active\" farm business, small farm entrepreneur or coltivatore diretto; registration in farm social security (INPS); or an active agricultural VAT number (ATECO 01). If last year’s direct payments did not exceed €5,000, the minimum activity level is enough.",
+    "fr": "Agriculteur en activité : personne qui exerce au moins une pratique annuelle d'entretien ou de production et qui, lors de la demande et jusqu'à la fin de l'année, remplit une condition : inscription au registre des entreprises comme exploitation « active », petit entrepreneur agricole ou coltivatore diretto ; affiliation à la sécurité sociale agricole (INPS) ; ou numéro de TVA agricole actif (ATECO 01). Si les paiements directs de l'année précédente n'excédaient pas 5 000 €, le niveau minimal d'activité suffit.",
+    "it": "Agricoltore in attività: chi svolge almeno una pratica colturale annuale o un'attività di produzione e, al momento della domanda e fino a fine anno, ha uno dei requisiti: iscrizione al registro delle imprese come impresa agricola «attiva», piccolo imprenditore agricolo o coltivatore diretto; iscrizione alla previdenza agricola (INPS); oppure partita IVA agricola attiva (ATECO 01). Se i pagamenti diretti dell'anno precedente non superavano 5.000 €, basta il livello minimo di attività."
+   },
+   "min-payment": {
+    "en": "No direct payment is made if the total due is below €300, before reductions and penalties.",
+    "fr": "Aucun paiement direct n'est versé si le total dû est inférieur à 300 €, avant réductions et sanctions.",
+    "it": "Nessun pagamento diretto è erogato se il totale dovuto è inferiore a 300 €, prima di riduzioni e sanzioni."
+   },
+   "risk-fund": {
+    "en": "Since 2023, 3 % of each direct payment is withheld for the national catastrophe mutual fund (a risk-management tool), calculated on the verified amount net of reductions and penalties.",
+    "fr": "Depuis 2023, 3 % de chaque paiement direct est prélevé pour le fonds national de mutualisation des événements catastrophiques (outil de gestion des risques), calculé sur le montant vérifié net de réductions et sanctions.",
+    "it": "Dal 2023 si trattiene il 3 % di ogni pagamento diretto per il Fondo di mutualizzazione nazionale per gli eventi catastrofali (strumento di gestione del rischio), calcolato sull'importo accertato al netto di riduzioni e sanzioni."
+   },
+   "entitlements": {
+    "en": "Basic support is paid on payment entitlements: the maximum value of one entitlement is €2,000; by 2026 every entitlement must be worth at least 85 % of the average amount, converging in four equal yearly steps, with a reduction of above-average entitlements capped at 30 %.",
+    "fr": "Le soutien de base est versé sur des droits à l'aide : valeur maximale d'un droit 2 000 € ; en 2026 chaque droit doit valoir au moins 85 % du montant moyen, avec une convergence en quatre étapes annuelles égales et une réduction des droits supérieurs à la moyenne plafonnée à 30 %.",
+    "it": "Il sostegno di base è pagato sui diritti all'aiuto: valore massimo di un diritto 2.000 €; entro il 2026 ogni diritto deve valere almeno l'85 % dell'importo medio, con convergenza in quattro fasi annuali uguali e una riduzione dei diritti sopra la media non superiore al 30 %."
+   },
+   "single-application": {
+    "en": "The single application is filed with the paying agency that holds the farm file (fascicolo aziendale) by 15 May at the latest; if that is a holiday or weekend it moves to the next working day. Hectares are declared as at 15 May and the file must be set up, updated and validated beforehand. Late applications suffer the reductions of Legislative Decree 42/2023, art. 5. The deadline has been extended by ministerial decree every year since 2023.",
+    "fr": "La demande unique est déposée auprès de l'organisme payeur qui détient le dossier d'exploitation (fascicolo aziendale) au plus tard le 15 mai ; si c'est un jour férié ou un week-end, elle passe au premier jour ouvré. Les hectares sont déclarés au 15 mai et le dossier doit être constitué, mis à jour et validé avant. Les demandes tardives subissent les réductions du décret législatif 42/2023, art. 5. Le délai a été prorogé chaque année par décret ministériel depuis 2023.",
+    "it": "La domanda unica si presenta all'organismo pagatore che detiene il fascicolo aziendale entro il 15 maggio; se cade in un giorno festivo o nel fine settimana slitta al primo giorno lavorativo. Gli ettari si dichiarano alla data del 15 maggio e il fascicolo deve essere costituito, aggiornato e validato prima. Le domande tardive subiscono le riduzioni del D.Lgs. 42/2023, art. 5. Dal 2023 il termine è stato prorogato ogni anno con decreto ministeriale."
+   },
+   "unit-amounts": {
+    "en": "The decree sets no per-hectare amounts: each year the coordination body (AGEA Coordinamento) calculates them by dividing each intervention’s allocation by the year’s eligible hectares (or head), within the maximum unit amount in the Strategic Plan. That is why Dehesa Index does not publish Italian amounts until it can read AGEA’s circulars.",
+    "fr": "Le décret ne fixe pas de montants à l'hectare : chaque année l'organisme de coordination (AGEA Coordinamento) les calcule en divisant l'enveloppe de chaque intervention par les hectares (ou têtes) admissibles de l'année, dans la limite du montant unitaire maximal du plan stratégique. C'est pourquoi Dehesa Index ne publie pas de montants pour l'Italie tant qu'il ne peut pas lire les circulaires d'AGEA.",
+    "it": "Il decreto non fissa importi per ettaro: ogni anno l'organismo di coordinamento (AGEA Coordinamento) li calcola dividendo la dotazione di ciascun intervento per gli ettari (o capi) ammissibili dell'anno, nel rispetto dell'importo unitario massimo del Piano strategico. Per questo Dehesa Index non pubblica importi per l'Italia finché non può leggere le circolari AGEA."
+   },
+   "redistributive": {
+    "en": "Redistributive support (CRISS): 10 % of the direct-payment allocation. Active farmers entitled to basic support with a holding of 0.5 to 50 eligible hectares can claim it (outside that range it is not granted). It is paid on up to 14 ha.",
+    "fr": "Soutien redistributif (CRISS) : 10 % de l'enveloppe des paiements directs. Les agriculteurs en activité ayant droit au soutien de base et dont l'exploitation compte de 0,5 à 50 ha admissibles peuvent le demander (hors de cette fourchette il n'est pas accordé). Il est versé sur 14 ha au maximum.",
+    "it": "Sostegno ridistributivo (CRISS): il 10 % della dotazione dei pagamenti diretti. Possono chiederlo gli agricoltori in attività con diritto al sostegno di base e un'azienda tra 0,5 e 50 ettari ammissibili (fuori da questo intervallo non è riconosciuto). Si paga fino a un massimo di 14 ettari."
+   },
+   "young-farmers": {
+    "en": "Young farmer: a natural person setting up for the first time as farm manager, aged 40 or under in the first application year, with suitable training (agricultural qualification, another qualification plus a 150-hour course or three years of documented experience, among other routes). The complementary payment covers up to 90 ha and a maximum of five years from the first application; it continues after the person turns 40.",
+    "fr": "Jeune agriculteur : personne physique qui s'installe pour la première fois comme chef d'exploitation, âgée de 40 ans au plus la première année de demande, avec une formation adéquate (diplôme agricole, autre diplôme plus stage de 150 heures ou trois ans d'expérience documentée, entre autres voies). Le paiement complémentaire couvre jusqu'à 90 ha et cinq ans au maximum à compter de la première demande ; il se poursuit après 40 ans.",
+    "it": "Giovane agricoltore: persona fisica che si insedia per la prima volta come capo azienda, con non più di 40 anni nel primo anno di domanda e adeguata formazione (titolo agricolo, altro titolo più corso di 150 ore o tre anni di esperienza documentata, tra altre vie). Il pagamento complementare copre fino a 90 ettari e al massimo cinque anni dalla prima domanda; continua anche oltre i 40 anni."
+   },
+   "eco-schemes": {
+    "en": "Eco-schemes receive 25 % of the direct-payment allocation: reducing antimicrobial resistance and animal welfare, grass cover in tree crops, landscape-value olive groves, extensive forage systems with rotation, and pollinator measures. In 2025 and 2026, up to 2 % of the direct-payment allocation reserved for eco-schemes can go to young farmers, redistributive and basic support if left unspent.",
+    "fr": "Les écorégimes reçoivent 25 % de l'enveloppe des paiements directs : réduction de la résistance aux antimicrobiens et bien-être animal, enherbement des cultures arborées, oliveraies de valeur paysagère, systèmes fourragers extensifs avec rotation et mesures pour les pollinisateurs. En 2025 et 2026, jusqu'à 2 % de l'enveloppe des paiements directs réservée aux écorégimes peut aller aux jeunes, au redistributif et au soutien de base s'il n'est pas épuisé.",
+    "it": "Gli ecoregimi ricevono il 25 % della dotazione dei pagamenti diretti: riduzione della resistenza antimicrobica e benessere animale, inerbimento delle colture arboree, olivi di valore paesaggistico, sistemi foraggeri estensivi con avvicendamento e misure per gli impollinatori. Nel 2025 e 2026 fino al 2 % della dotazione dei pagamenti diretti riservata agli ecoregimi può andare a giovani, ridistributivo e sostegno di base se non esaurita."
+   },
+   "coupled": {
+    "en": "Coupled support receives 15 % of the direct-payment allocation (13 % for sectors and 2 % for protein crops) and covers milk, beef, sheep and goat meat, durum wheat, rapeseed and sunflower, rice, sugar beet, processing tomato, olive oil, citrus and protein crops. It is paid per eligible hectare or per individually identified and registered animal.",
+    "fr": "Le soutien couplé reçoit 15 % de l'enveloppe des paiements directs (13 % pour les secteurs et 2 % pour les protéagineux) et couvre le lait, la viande bovine, la viande ovine et caprine, le blé dur, le colza et le tournesol, le riz, la betterave sucrière, la tomate de transformation, l'huile d'olive, les agrumes et les protéagineux. Il est versé par hectare admissible ou par animal identifié et enregistré individuellement.",
+    "it": "Il sostegno accoppiato riceve il 15 % della dotazione dei pagamenti diretti (13 % per i settori e 2 % per le colture proteiche) e copre latte, carne bovina, carne ovina e caprina, frumento duro, colza e girasole, riso, barbabietola da zucchero, pomodoro da trasformazione, olio d'oliva, agrumi e colture proteiche. Si paga per ettaro ammissibile o per capo identificato e registrato individualmente."
+   }
+  },
+  "calendar": {
+   "su-close": {
+    "en": "The general single-application deadline ends (15 May; the next working day if a holiday or weekend). It has been extended every year by ministerial decree: see the campaign exceptions.",
+    "fr": "La date limite générale de la demande unique (15 mai ; le premier jour ouvré suivant si férié ou week-end). Elle a été prorogée chaque année par décret ministériel : voir les exceptions par campagne.",
+    "it": "Scade il termine generale della domanda unica (15 maggio; il primo giorno lavorativo successivo se festivo o fine settimana). Ogni anno è stato prorogato con decreto ministeriale: vedi le eccezioni per campagna."
+   }
+  },
+  "overrides": {
+   "2023:su-close": {
+    "en": "In 2023 the deadline was first extended to 15 June and then to 30 June.",
+    "fr": "En 2023, le délai a d'abord été prorogé au 15 juin puis au 30 juin.",
+    "it": "Nel 2023 il termine è stato prorogato prima al 15 giugno e poi al 30 giugno."
+   },
+   "2024:su-close": {
+    "en": "In 2024 the deadline was extended to 1 July, then to 31 July and finally to 30 August.",
+    "fr": "En 2024, le délai a été prorogé au 1er juillet, puis au 31 juillet et enfin au 30 août.",
+    "it": "Nel 2024 il termine è stato prorogato al 1° luglio, poi al 31 luglio e infine al 30 agosto."
+   },
+   "2025:su-close": {
+    "en": "In 2025 the deadline was extended to 16 June, then to 15 July and finally to 31 July.",
+    "fr": "En 2025, le délai a été prorogé au 16 juin, puis au 15 juillet et enfin au 31 juillet.",
+    "it": "Nel 2025 il termine è stato prorogato al 16 giugno, poi al 15 luglio e infine al 31 luglio."
+   },
+   "2026:su-close": {
+    "en": "In 2026 the deadline was extended to 30 June.",
+    "fr": "En 2026, le délai a été prorogé au 30 juin.",
+    "it": "Nel 2026 il termine è stato prorogato al 30 giugno."
+   }
+  }
+ }
+}

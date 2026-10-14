@@ -1290,6 +1290,37 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
     data: [cap/es/amounts.json, cap/es/watch.json]
     message: Seguimiento de la PAC de España (texto consolidado del BOE)
+  - id: cap-fr
+    name: Watch France CAP changes (DILA JORF daily open-data dumps)
+    cron: ['20 7 * * 1']
+    script: scripts/update-cap-nat.py FR
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/fr/watch.json]
+    message: Seguimiento de la PAC de Francia (Journal officiel)
+  - id: cap-it
+    name: Watch Italy CAP changes (MASAF consolidated DM 660087/2022)
+    cron: ['30 7 * * 1']
+    script: scripts/update-cap-nat.py IT
+    pre: ['sudo apt-get update -q >/dev/null', 'sudo apt-get install -y -q poppler-utils >/dev/null']
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/it/watch.json]
+    message: Seguimiento de la PAC de Italia (decreto ministerial coordinado del MASAF)
+  - id: cap-pl
+    name: Watch Poland CAP changes (Sejm ELI, Dziennik Ustaw)
+    cron: ['40 7 * * 1']
+    script: scripts/update-cap-nat.py PL
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/pl/watch.json]
+    message: Seguimiento de la PAC de Polonia (Dziennik Ustaw)
   - id: us-states
     name: Update US data by state (USDA NASS Quick Stats and USDA ERS farm income)
     cron: ['40 21 * * 5']

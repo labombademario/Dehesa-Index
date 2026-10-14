@@ -1193,6 +1193,48 @@
    [
     "poland_land"
    ]
+  ],
+  "cap/fr/rules.json": [
+   "cap-nat-rules",
+   [
+    "cap_nat_rules"
+   ]
+  ],
+  "cap/fr/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/it/rules.json": [
+   "cap-nat-rules",
+   [
+    "cap_nat_rules"
+   ]
+  ],
+  "cap/it/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/pl/rules.json": [
+   "cap-nat-rules",
+   [
+    "cap_nat_rules"
+   ]
+  ],
+  "cap/pl/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/pl/amounts.json": [
+   "cap-pl-amounts",
+   [
+    "cap_pl_amounts"
+   ]
   ]
  },
  "globs": {

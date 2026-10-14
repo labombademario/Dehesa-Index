@@ -1,8 +1,11 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "country": "FR",
  "kind": "OFFICIAL_UNIT_AMOUNTS",
- "campaign": 2025,
+ "campaigns": [
+  2025,
+  2026
+ ],
  "sources": [
   {
    "id": "dila_jorf",
@@ -145,11 +148,138 @@
    "jorfText": "JORFTEXT000054237709",
    "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 30 septembre 2025 (aide aux petits ruminants en Corse)",
    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237709"
+  },
+  {
+   "id": "D1",
+   "published": "2025-10-01",
+   "signed": "2025-09-23",
+   "nor": "AGRT2524989A",
+   "jorfText": "JORFTEXT000052328793",
+   "title": "Arrêté du 23 septembre 2025 fixant la valeur unitaire des droits au paiement pour le groupe Corse, la valeur unitaire des nouveaux droits au paiement pour chaque groupe de territoire et du taux de réduction de la valeur des droits au paiement existants pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052328793"
+  },
+  {
+   "id": "J6",
+   "published": "2026-06-12",
+   "signed": "2026-06-05",
+   "nor": "AGRT2614147A",
+   "jorfText": "JORFTEXT000054237716",
+   "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 23 septembre 2025 fixant la valeur unitaire des droits au paiement (campagne 2025)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237716"
+  },
+  {
+   "id": "B1",
+   "published": "2025-10-08",
+   "signed": "2025-09-30",
+   "nor": "AGRT2525875A",
+   "jorfText": "JORFTEXT000052372823",
+   "title": "Arrêté du 30 septembre 2025 relatif aux montants de l'aide aux bovins de plus de 16 mois dans les départements métropolitains hors Corse pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052372823"
+  },
+  {
+   "id": "B2",
+   "published": "2026-01-30",
+   "signed": "2026-01-26",
+   "nor": "AGRT2601747A",
+   "jorfText": "JORFTEXT000053417162",
+   "title": "Arrêté du 26 janvier 2026 modifiant l'arrêté du 30 septembre 2025 (aide aux bovins de plus de 16 mois hors Corse)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053417162"
+  },
+  {
+   "id": "B3",
+   "published": "2026-06-12",
+   "signed": "2026-06-04",
+   "nor": "AGRT2614161A",
+   "jorfText": "JORFTEXT000054237649",
+   "title": "Arrêté du 4 juin 2026 modifiant l'arrêté du 30 septembre 2025 (aide aux bovins de plus de 16 mois hors Corse)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237649"
+  },
+  {
+   "id": "C1",
+   "published": "2026-05-12",
+   "signed": "2026-05-06",
+   "nor": "AGRT2611218A",
+   "jorfText": "JORFTEXT000054063203",
+   "title": "Arrêté du 6 mai 2026 relatif aux montants de l'aide aux bovins de plus de 16 mois en Corse pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054063203"
+  },
+  {
+   "id": "C2",
+   "published": "2026-06-12",
+   "signed": "2026-06-04",
+   "nor": "AGRT2614160A",
+   "jorfText": "JORFTEXT000054237642",
+   "title": "Arrêté du 4 juin 2026 modifiant l'arrêté du 6 mai 2026 (aide aux bovins de plus de 16 mois en Corse)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237642"
+  },
+  {
+   "id": "W1",
+   "published": "2026-03-13",
+   "signed": "2026-03-11",
+   "nor": "AGRT2606116A",
+   "jorfText": "JORFTEXT000053659004",
+   "title": "Arrêté du 11 mars 2026 relatif au montant de l'aide aux veaux sous la mère et aux veaux issus de l'agriculture biologique pour la campagne 2025",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053659004"
+  },
+  {
+   "id": "W2",
+   "published": "2026-06-12",
+   "signed": "2026-06-05",
+   "nor": "AGRT2614156A",
+   "jorfText": "JORFTEXT000054237693",
+   "title": "Arrêté du 5 juin 2026 modifiant l'arrêté du 11 mars 2026 (aide aux veaux sous la mère et aux veaux issus de l'agriculture biologique)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237693"
+  },
+  {
+   "id": "R6",
+   "published": "2026-10-01",
+   "signed": "2026-09-16",
+   "nor": "AGRT2623990A",
+   "jorfText": "JORFTEXT000054930369",
+   "title": "Arrêté du 16 septembre 2026 fixant les montants de l'aide redistributive complémentaire au revenu pour un développement durable, de l'aide complémentaire au revenu pour les jeunes agriculteurs et du taux de réduction des montants de l'aide de base au revenu pour la campagne 2026",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930369"
+  },
+  {
+   "id": "P6",
+   "published": "2026-10-01",
+   "signed": "2026-09-16",
+   "nor": "AGRT2623989A",
+   "jorfText": "JORFTEXT000054930414",
+   "title": "Arrêté du 16 septembre 2026 fixant la valeur unitaire des droits au paiement pour le groupe Corse, la valeur unitaire des nouveaux droits au paiement pour chaque groupe de territoire et du taux de réduction de la valeur des droits au paiement existants pour la campagne 2026",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930414"
+  },
+  {
+   "id": "B6",
+   "published": "2026-10-01",
+   "signed": "2026-09-16",
+   "nor": "AGRT2623994A",
+   "jorfText": "JORFTEXT000054930403",
+   "title": "Arrêté du 16 septembre 2026 relatif aux montants de l'aide aux bovins de plus de 16 mois dans les départements métropolitains hors Corse pour la campagne 2026",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930403"
+  },
+  {
+   "id": "S6",
+   "published": "2026-10-01",
+   "signed": "2026-09-16",
+   "nor": "AGRT2623993A",
+   "jorfText": "JORFTEXT000054930398",
+   "title": "Arrêté du 16 septembre 2026 relatif aux montants de l'aide aux petits ruminants en Corse pour la campagne 2026",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930398"
+  },
+  {
+   "id": "O6",
+   "published": "2026-10-01",
+   "signed": "2026-09-16",
+   "nor": "AGRT2623995A",
+   "jorfText": "JORFTEXT000054930408",
+   "title": "Arrêté du 16 septembre 2026 relatif aux montants des aides ovines et de l'aide caprine dans les départements métropolitains hors Corse pour la campagne 2026",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930408"
   }
  ],
  "items": [
   {
    "id": "redistributive",
+   "campaign": 2025,
    "group": "direct",
    "label": "Aide redistributive complémentaire au revenu pour un développement durable (CRISS)",
    "unit": "EUR/ha",
@@ -172,6 +302,7 @@
   },
   {
    "id": "young",
+   "campaign": 2025,
    "group": "direct",
    "label": "Aide complémentaire au revenu pour les jeunes agriculteurs (montant forfaitaire)",
    "unit": "EUR",
@@ -194,6 +325,7 @@
   },
   {
    "id": "reduction",
+   "campaign": 2025,
    "group": "direct",
    "label": "Taux de réduction (art. D. 614-67 du code rural)",
    "unit": "PCT",
@@ -212,6 +344,7 @@
   },
   {
    "id": "eco-base",
+   "campaign": 2025,
    "group": "eco",
    "label": "Écorégime, niveau de base",
    "unit": "EUR/ha",
@@ -234,6 +367,7 @@
   },
   {
    "id": "eco-upper",
+   "campaign": 2025,
    "group": "eco",
    "label": "Écorégime, niveau supérieur",
    "unit": "EUR/ha",
@@ -256,6 +390,7 @@
   },
   {
    "id": "eco-bio",
+   "campaign": 2025,
    "group": "eco",
    "label": "Écorégime, niveau spécifique à l'agriculture biologique",
    "unit": "EUR/ha",
@@ -278,6 +413,7 @@
   },
   {
    "id": "eco-hedge",
+   "campaign": 2025,
    "group": "eco",
    "label": "Écorégime, bonus haies",
    "unit": "EUR/ha",
@@ -300,6 +436,7 @@
   },
   {
    "id": "sheep-base",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Aide ovine de base (hors Corse)",
    "unit": "EUR/head",
@@ -322,6 +459,7 @@
   },
   {
    "id": "sheep-first500",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Majoration pour les 500 premières brebis primées (hors Corse)",
    "unit": "EUR/head",
@@ -344,6 +482,7 @@
   },
   {
    "id": "sheep-new",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Aide ovine complémentaire, nouveaux producteurs (hors Corse)",
    "unit": "EUR/head",
@@ -366,6 +505,7 @@
   },
   {
    "id": "goat",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Aide caprine (hors Corse)",
    "unit": "EUR/head",
@@ -384,6 +524,7 @@
   },
   {
    "id": "corse-ewe-base",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Corse, montant de base, femelles ovines",
    "unit": "EUR/head",
@@ -406,6 +547,7 @@
   },
   {
    "id": "corse-goat-base",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Corse, montant de base, femelles caprines",
    "unit": "EUR/head",
@@ -428,6 +570,7 @@
   },
   {
    "id": "corse-ewe-upper",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Corse, montant supérieur, femelles ovines",
    "unit": "EUR/head",
@@ -450,6 +593,7 @@
   },
   {
    "id": "corse-goat-upper",
+   "campaign": 2025,
    "group": "coupled-animal",
    "label": "Corse, montant supérieur, femelles caprines",
    "unit": "EUR/head",
@@ -472,6 +616,7 @@
   },
   {
    "id": "pulses",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Légumineuses à graines et légumineuses fourragères déshydratées ou destinées à la production de semences",
    "unit": "EUR",
@@ -490,6 +635,7 @@
   },
   {
    "id": "forage-mountain",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Légumineuses fourragères en zones de montagne",
    "unit": "EUR",
@@ -508,6 +654,7 @@
   },
   {
    "id": "forage-plain",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Légumineuses fourragères hors zones de montagne",
    "unit": "EUR",
@@ -526,6 +673,7 @@
   },
   {
    "id": "durum",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Blé dur",
    "unit": "EUR",
@@ -544,6 +692,7 @@
   },
   {
    "id": "starch-potato",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Pommes de terre féculières",
    "unit": "EUR",
@@ -562,6 +711,7 @@
   },
   {
    "id": "rice",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Riz",
    "unit": "EUR",
@@ -580,6 +730,7 @@
   },
   {
    "id": "hops",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Houblon",
    "unit": "EUR",
@@ -598,6 +749,7 @@
   },
   {
    "id": "hemp",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Chanvre",
    "unit": "EUR",
@@ -616,6 +768,7 @@
   },
   {
    "id": "grass-seed",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Semences de graminées prairiales",
    "unit": "EUR",
@@ -634,6 +787,7 @@
   },
   {
    "id": "plum",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Prunes d'Ente destinées à la transformation",
    "unit": "EUR",
@@ -652,6 +806,7 @@
   },
   {
    "id": "tomato",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Tomates destinées à la transformation",
    "unit": "EUR",
@@ -670,6 +825,7 @@
   },
   {
    "id": "cherry",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Cerises Bigarreau destinées à la transformation",
    "unit": "EUR",
@@ -688,6 +844,7 @@
   },
   {
    "id": "peach",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Pêches Pavie destinées à la transformation",
    "unit": "EUR",
@@ -706,6 +863,7 @@
   },
   {
    "id": "market-garden",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Maraîchage",
    "unit": "EUR",
@@ -724,6 +882,7 @@
   },
   {
    "id": "pear",
+   "campaign": 2025,
    "group": "coupled-plant",
    "label": "Poires Williams destinées à la transformation",
    "unit": "EUR",
@@ -739,13 +898,489 @@
    ],
    "current": 1295.04,
    "currentDoc": "J3"
+  },
+  {
+   "id": "dpb-new-hex",
+   "campaign": 2025,
+   "group": "direct",
+   "label": "Valeur unitaire des nouveaux droits au paiement, groupe Hexagone",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "D1",
+     "value": 127.67
+    },
+    {
+     "doc": "J6",
+     "value": 127.69
+    }
+   ],
+   "current": 127.69,
+   "currentDoc": "J6"
+  },
+  {
+   "id": "dpb-corse",
+   "campaign": 2025,
+   "group": "direct",
+   "label": "Valeur unitaire des droits au paiement, groupe Corse",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "D1",
+     "value": 144.64
+    }
+   ],
+   "current": 144.64,
+   "currentDoc": "D1"
+  },
+  {
+   "id": "dpb-new-corse",
+   "campaign": 2025,
+   "group": "direct",
+   "label": "Valeur unitaire des nouveaux droits au paiement, groupe Corse",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "D1",
+     "value": 144.64
+    }
+   ],
+   "current": 144.64,
+   "currentDoc": "D1"
+  },
+  {
+   "id": "dpb-lin-hex",
+   "campaign": 2025,
+   "group": "direct",
+   "label": "Réduction linéaire de la valeur des droits à paiement, groupe Hexagone",
+   "unit": "PCT",
+   "versions": [
+    {
+     "doc": "D1",
+     "value": 1
+    },
+    {
+     "doc": "J6",
+     "value": 0.02
+    }
+   ],
+   "current": 0.02,
+   "currentDoc": "J6"
+  },
+  {
+   "id": "dpb-lin-corse",
+   "campaign": 2025,
+   "group": "direct",
+   "label": "Réduction linéaire de la valeur des droits à paiement, groupe Corse",
+   "unit": "PCT",
+   "versions": [
+    {
+     "doc": "D1",
+     "value": 1.7
+    },
+    {
+     "doc": "J6",
+     "value": 0.08
+    }
+   ],
+   "current": 0.08,
+   "currentDoc": "J6"
+  },
+  {
+   "id": "bovine-upper",
+   "campaign": 2025,
+   "group": "coupled-animal",
+   "label": "Aide aux bovins de plus de 16 mois, montant supérieur (hors Corse), par UGB",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "B1",
+     "value": 94
+    },
+    {
+     "doc": "B2",
+     "value": 102
+    },
+    {
+     "doc": "B3",
+     "value": 104.85
+    }
+   ],
+   "current": 104.85,
+   "currentDoc": "B3"
+  },
+  {
+   "id": "bovine-base",
+   "campaign": 2025,
+   "group": "coupled-animal",
+   "label": "Aide aux bovins de plus de 16 mois, montant de base (hors Corse), par UGB",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "B1",
+     "value": 51
+    },
+    {
+     "doc": "B2",
+     "value": 55.5
+    },
+    {
+     "doc": "B3",
+     "value": 57.05
+    }
+   ],
+   "current": 57.05,
+   "currentDoc": "B3"
+  },
+  {
+   "id": "corse-bovine-upper",
+   "campaign": 2025,
+   "group": "coupled-animal",
+   "label": "Aide aux bovins de plus de 16 mois en Corse, montant supérieur, par UGB",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "C1",
+     "value": 99
+    },
+    {
+     "doc": "C2",
+     "value": 101.67
+    }
+   ],
+   "current": 101.67,
+   "currentDoc": "C2"
+  },
+  {
+   "id": "corse-bovine-base",
+   "campaign": 2025,
+   "group": "coupled-animal",
+   "label": "Aide aux bovins de plus de 16 mois en Corse, montant de base, par UGB",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "C1",
+     "value": 48
+    },
+    {
+     "doc": "C2",
+     "value": 50.0
+    }
+   ],
+   "current": 50.0,
+   "currentDoc": "C2"
+  },
+  {
+   "id": "veal",
+   "campaign": 2025,
+   "group": "coupled-animal",
+   "label": "Aide aux veaux sous la mère et aux veaux issus de l'agriculture biologique, par veau éligible",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "W1",
+     "value": 62.45
+    },
+    {
+     "doc": "W2",
+     "value": 66.94
+    }
+   ],
+   "current": 66.94,
+   "currentDoc": "W2"
+  },
+  {
+   "id": "redistributive-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Aide redistributive complémentaire au revenu pour un développement durable (CRISS)",
+   "unit": "EUR/ha",
+   "versions": [
+    {
+     "doc": "R6",
+     "value": 48.5
+    }
+   ],
+   "current": 48.5,
+   "currentDoc": "R6"
+  },
+  {
+   "id": "young-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Aide complémentaire au revenu pour les jeunes agriculteurs (montant forfaitaire)",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "R6",
+     "value": 3700
+    }
+   ],
+   "current": 3700,
+   "currentDoc": "R6"
+  },
+  {
+   "id": "reduction-hex-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Taux de réduction (art. D. 614-67), groupe Hexagone",
+   "unit": "PCT",
+   "versions": [
+    {
+     "doc": "R6",
+     "value": 2.6182
+    }
+   ],
+   "current": 2.6182,
+   "currentDoc": "R6"
+  },
+  {
+   "id": "reduction-corse-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Taux de réduction (art. D. 614-67), groupe Corse",
+   "unit": "PCT",
+   "versions": [
+    {
+     "doc": "R6",
+     "value": 2.5763
+    }
+   ],
+   "current": 2.5763,
+   "currentDoc": "R6"
+  },
+  {
+   "id": "dpb-corse-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Valeur unitaire des droits au paiement, groupe Corse",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "P6",
+     "value": 144.52
+    }
+   ],
+   "current": 144.52,
+   "currentDoc": "P6"
+  },
+  {
+   "id": "dpb-new-hex-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Valeur unitaire des nouveaux droits au paiement, groupe Hexagone",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "P6",
+     "value": 127.7
+    }
+   ],
+   "current": 127.7,
+   "currentDoc": "P6"
+  },
+  {
+   "id": "dpb-new-corse-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Valeur unitaire des nouveaux droits au paiement, groupe Corse",
+   "unit": "EUR",
+   "versions": [
+    {
+     "doc": "P6",
+     "value": 144.52
+    }
+   ],
+   "current": 144.52,
+   "currentDoc": "P6"
+  },
+  {
+   "id": "dpb-lin-hex-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Réduction linéaire de la valeur des droits à paiement, groupe Hexagone",
+   "unit": "PCT",
+   "versions": [
+    {
+     "doc": "P6",
+     "value": 1
+    }
+   ],
+   "current": 1,
+   "currentDoc": "P6"
+  },
+  {
+   "id": "dpb-lin-corse-2026",
+   "campaign": 2026,
+   "group": "direct",
+   "label": "Réduction linéaire de la valeur des droits à paiement, groupe Corse",
+   "unit": "PCT",
+   "versions": [
+    {
+     "doc": "P6",
+     "value": 1.7
+    }
+   ],
+   "current": 1.7,
+   "currentDoc": "P6"
+  },
+  {
+   "id": "bovine-upper-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Aide aux bovins de plus de 16 mois, montant supérieur (hors Corse), par UGB",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "B6",
+     "value": 94
+    }
+   ],
+   "current": 94,
+   "currentDoc": "B6"
+  },
+  {
+   "id": "bovine-base-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Aide aux bovins de plus de 16 mois, montant de base (hors Corse), par UGB",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "B6",
+     "value": 51
+    }
+   ],
+   "current": 51,
+   "currentDoc": "B6"
+  },
+  {
+   "id": "sheep-base-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Aide ovine de base (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "O6",
+     "value": 20.54
+    }
+   ],
+   "current": 20.54,
+   "currentDoc": "O6"
+  },
+  {
+   "id": "sheep-first500-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Majoration pour les 500 premières brebis primées (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "O6",
+     "value": 2
+    }
+   ],
+   "current": 2,
+   "currentDoc": "O6"
+  },
+  {
+   "id": "sheep-new-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Aide ovine complémentaire, nouveaux producteurs (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "O6",
+     "value": 6
+    }
+   ],
+   "current": 6,
+   "currentDoc": "O6"
+  },
+  {
+   "id": "goat-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Aide caprine (hors Corse)",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "O6",
+     "value": 13.83
+    }
+   ],
+   "current": 13.83,
+   "currentDoc": "O6"
+  },
+  {
+   "id": "corse-ewe-base-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Corse, montant de base, femelles ovines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "S6",
+     "value": 22.23
+    }
+   ],
+   "current": 22.23,
+   "currentDoc": "S6"
+  },
+  {
+   "id": "corse-goat-base-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Corse, montant de base, femelles caprines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "S6",
+     "value": 15.43
+    }
+   ],
+   "current": 15.43,
+   "currentDoc": "S6"
+  },
+  {
+   "id": "corse-ewe-upper-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Corse, montant supérieur, femelles ovines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "S6",
+     "value": 44.46
+    }
+   ],
+   "current": 44.46,
+   "currentDoc": "S6"
+  },
+  {
+   "id": "corse-goat-upper-2026",
+   "campaign": 2026,
+   "group": "coupled-animal",
+   "label": "Corse, montant supérieur, femelles caprines",
+   "unit": "EUR/head",
+   "versions": [
+    {
+     "doc": "S6",
+     "value": 30.87
+    }
+   ],
+   "current": 30.87,
+   "currentDoc": "S6"
   }
  ],
  "notes": [
-  "Importes de la campaña 2025 tal como los fijan los arrêtés del Ministerio de Agricultura y sus modificaciones; el vigente es el del último arrêté (5 de junio de 2026 en casi todos).",
+  "Importes de las campañas 2025 y 2026 tal como los fijan los arrêtés del Ministerio de Agricultura y sus modificaciones; el vigente es el del último arrêté.",
   "Las ayudas acopladas vegetales figuran en el texto oficial en «euros», sin indicar la unidad: no se completa.",
-  "No incluye el importe unitario de la ayuda de base (no se ha encontrado su arrêté) ni los arrêtés de la campaña 2026 (no aparecen en el volcado de la DILA hasta el 9 de octubre de 2026).",
-  "Textos leídos del volcado de datos abiertos de la DILA el 8-9 de octubre de 2026; la edición que manda es la del Journal officiel."
+  "Campaña 2026: los arrêtés del 16 de septiembre de 2026 (JORF del 1 de octubre) fijan la ayuda redistributiva, la de jóvenes, la tasa de reducción, los derechos de pago, el bovino, el ovino, el caprino y las ayudas de Córcega. Aún no hay arrêtés de 2026 del ecorrégimen ni de las ayudas acopladas vegetales.",
+  "El valor unitario de un derecho de pago ya existente en el Hexágono es individual y no lo fija un arrêté: solo figuran el de Córcega y el de los derechos nuevos. No se ha encontrado el importe de la ayuda de base por hectárea.",
+  "Textos leídos del volcado de datos abiertos de la DILA (JORF); la edición que manda es la del Journal officiel."
  ],
- "verifiedAt": "2026-10-08"
+ "verifiedAt": "2026-10-14"
 }

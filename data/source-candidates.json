@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T21:40:29Z",
+ "generatedAt": "2026-10-14T22:20:04Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 151,
+  "total": 153,
   "byStatus": {
-   "ACTIVE": 121,
+   "ACTIVE": 123,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2689,8 +2689,8 @@
    "licenseId": "CUSTOM",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "Source : Journal officiel de la République française (DILA, données ouvertes JORF), arrêtés AGRT2524991A, AGRT2524997A, AGRT2525874A, AGRT2525877A, AGRT2531186A, AGRT2531189A, AGRT2531191A, AGRT2531193A, AGRT2604635A, AGRT2606117A, AGRT2614148A, AGRT2614150A, AGRT2614152A, AGRT2614157A, AGRT2614158A. Extraits.",
-   "lastChecked": "2026-10-08",
+   "attribution": "Source : Journal officiel de la République française (DILA, données ouvertes JORF), arrêtés du ministère de l'Agriculture (références NOR dans data/cap/fr/amounts.json) et textes du code rural. Extraits.",
+   "lastChecked": "2026-10-14",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
@@ -4503,6 +4503,45 @@
    ]
   },
   {
+   "sourceId": "masaf_it",
+   "registryId": "masaf_it",
+   "country": "IT",
+   "scope": "integrated",
+   "institution": "MASAF — Ministero dell'agricoltura, della sovranità alimentare e delle foreste (DM 660087/2022, testo coordinato)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fonte: MASAF, decreto ministeriale 23 dicembre 2022, n. 660087 (GU n. 47 del 24-2-2023), testo coordinato. Estratti.",
+   "lastChecked": "2026-10-14",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "mase_dgsaie",
    "registryId": "mase_dgsaie",
    "country": "IT",
@@ -5256,6 +5295,45 @@
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "sejm_eli",
+   "registryId": "sejm_eli",
+   "country": "PL",
+   "scope": "integrated",
+   "institution": "Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Źródło: Dziennik Ustaw (API ELI Sejmu RP), ustawa o Planie Strategicznym dla WPR (Dz.U. 2023 poz. 412) i rozporządzenia Ministra Rolnictwa i Rozwoju Wsi. Wyciągi.",
+   "lastChecked": "2026-10-14",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

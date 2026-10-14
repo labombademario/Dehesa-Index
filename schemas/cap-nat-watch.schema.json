@@ -1,0 +1,69 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - PAC Francia/Italia/Polonia: vigilancia de cambios",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "country",
+  "source",
+  "status",
+  "checkedAt",
+  "baseline",
+  "current",
+  "reviewNeeded",
+  "note"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "country": {
+   "enum": [
+    "FR",
+    "IT",
+    "PL"
+   ]
+  },
+  "source": {
+   "type": "string"
+  },
+  "status": {
+   "enum": [
+    "NOT_YET_RUN",
+    "OK",
+    "PARTIAL",
+    "UNREACHABLE"
+   ]
+  },
+  "checkedAt": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "baseline": {
+   "type": "object",
+   "required": [
+    "fingerprints",
+    "acknowledged"
+   ]
+  },
+  "current": {
+   "type": "object",
+   "required": [
+    "fingerprints",
+    "candidates",
+    "lastScanned"
+   ]
+  },
+  "reviewNeeded": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "note": {
+   "type": "string"
+  }
+ }
+}
