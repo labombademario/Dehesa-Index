@@ -2419,6 +2419,45 @@ def spain_land(doc, errs, warns, stats):
     if not r or r[-1] is None or not 20 <= r[-1] <= 2000: errs.append("spain-land: canon general nacional fuera de rango"); return
     stats["spain-land anos"] = n
 
+def _lfi_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_land_fr_it", str(Path(__file__).resolve().parent / "update-land-fr-it.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+def france_land(doc, errs, warns, stats):
+    """Precio de la tierra de Francia (Agreste/FNSafer): anos consecutivos, departamentos con codigo valido (al menos 85 de tierras libres y 40 de alquiladas), series de la longitud de los anos,
+    sin valores <= 0, y mediana departamental del ultimo ano dentro de lo plausible (3.000-15.000 EUR/ha)."""
+    m = _lfi_mod(); Y = doc["years"]; n = len(Y)
+    if Y != sorted(set(Y)) or Y != list(range(Y[0], Y[-1] + 1)): errs.append("france-land: anos desordenados, repetidos o con huecos"); return
+    valid = set(m.dept_codes().values())
+    for blk, mn in (("free", 85), ("rent", 40)):
+        d = doc[blk]
+        if len(d) < mn: errs.append("france-land %s: solo %d departamentos (minimo %d)" % (blk, len(d), mn)); return
+        for c, a in d.items():
+            if c not in valid: errs.append("france-land %s: departamento desconocido %s" % (blk, c)); return
+            if len(a) != n: errs.append("france-land %s %s: longitud distinta de los anos" % (blk, c)); return
+            if any(x is not None and (not isinstance(x, (int, float)) or x <= 0) for x in a): errs.append("france-land %s %s: valor no positivo" % (blk, c)); return
+    v = sorted(a[-1] for a in doc["free"].values() if a[-1] is not None)
+    if not v or not 3000 <= v[len(v) // 2] <= 15000: errs.append("france-land: mediana departamental del ultimo ano fuera de rango"); return
+    stats["france-land anos"] = n
+
+def italy_land(doc, errs, warns, stats):
+    """Valor de la tierra de Italia (CREA): anos consecutivos desde 1960, las 20 regiones sin huecos, las 5 circoscrizioni, salto interanual razonable (-40 % a +70 % por region, -30 % a +40 % el total),
+    unidades coherentes (regiones y circoscrizioni en EUR/ha completos, nunca en miles) y total de Italia en 8.000-60.000 EUR/ha."""
+    m = _lfi_mod(); Y = doc["years"]; n = len(Y)
+    if Y != list(range(Y[0], Y[-1] + 1)) or Y[0] != 1960: errs.append("italy-land: anos no consecutivos desde 1960"); return
+    if set(doc["regions"]) != set(m.IT_REG.values()): errs.append("italy-land: regiones distintas de las 20 esperadas"); return
+    if set(doc["macro"]) != set(m.IT_MACRO.values()): errs.append("italy-land: circoscrizioni distintas de las 5 esperadas"); return
+    for k, a in list(doc["regions"].items()) + list(doc["macro"].items()) + [("IT", doc["italy"])]:
+        if len(a) != n: errs.append("italy-land %s: longitud distinta de los anos" % k); return
+        if any(x is not None and (not isinstance(x, (int, float)) or x <= 0) for x in a): errs.append("italy-land %s: valor no positivo" % k); return
+        lim = (-0.30, 0.40) if k == "IT" else (-0.40, 0.70)
+        for i in range(1, n):
+            if a[i] is None or a[i - 1] is None: continue
+            if not lim[0] < a[i] / a[i - 1] - 1 < lim[1]: errs.append("italy-land %s %d: salto interanual absurdo (¿unidades?)" % (k, Y[i])); return
+    if any(a[i] is None for a in doc["regions"].values() for i in range(n)): errs.append("italy-land: hueco en una region"); return
+    if not 8000 <= doc["italy"][-1] <= 60000: errs.append("italy-land: total de Italia fuera de rango"); return
+    stats["italy-land anos"] = n
+
 def spain_milk(doc, errs, warns, stats):
     """Leche cruda de INFOLAC (MAPA): periodos ordenados y sin repetir, series de la longitud de los periodos, 17 comunidades esperadas, sin negativos, precio/grasa/proteina en rango, leche ecologica <= entregas,
     comunidades suman las entregas del mes (el total puede superar la suma solo por el ganadero de otro pais que declara el MAPA, <= 0,1 %), ganaderos por comunidad <= total, y el ultimo periodo es el mes del ultimo informe."""

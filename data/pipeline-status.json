@@ -7,7 +7,7 @@
   "late": 1,
   "error": 1,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -2373,6 +2373,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-land-fr-it.yml",
+   "name": "Update France and Italy farmland prices (Agreste, CREA)",
+   "crons": [
+    "40 7 3 * *"
+   ],
+   "nextRun": "2026-11-03T07:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-mars-us.yml",

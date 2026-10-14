@@ -189,6 +189,51 @@ def insumos():
                   bars('Canon medio por comunidad, ' + str(Y[-1]) + '|Average rent by region, ' + str(Y[-1]) + '|Fermage moyen par région, ' + str(Y[-1]) + '|Canone medio per regione, ' + str(Y[-1]), '€/ha·año|€/ha·yr|€/ha·an|€/ha·anno', sorted([(rname(c), at(R, c, 'GEN', n)) for c in R if c != 'ES' and at(R, c, 'GEN', n)], key=lambda x: -x[1]), 0)],
             note=t4('Medias de la encuesta del MAPA, no un registro de compraventas. Los años provisionales pueden cambiar.|Averages from the MAPA survey, not a register of sales. Provisional years may change.|Moyennes de l’enquête du MAPA, pas un registre de ventes. Les années provisoires peuvent changer.|Medie dell’indagine del MAPA, non un registro di compravendite. Gli anni provvisori possono cambiare.'),
             source={'name': 'MAPA, Estadística agraria', 'url': ld['source']['url']}))
+    # Francia (Agreste/FNSafer, por departamento) e Italia (CREA, por región): precio de la tierra
+    import re as _re2, statistics as _st
+    def _names(var):
+        rn_ = (D.parent / 'js' / 'region-names.js').read_text()
+        m_ = _re2.search(r"var " + var + r" = \{(.*?)\};", rn_, _re2.S)
+        out_ = {}
+        for k_, v_ in _re2.findall(r"(\w+): '([^']*)'", m_.group(1) if m_ else ''):
+            q_ = v_.split('|'); out_[k_] = {'en': q_[0], 'es': q_[1], 'fr': q_[2], 'it': q_[3]}
+        return out_
+    lf = j('france-land/land.json')
+    if lf:
+        mp = (D.parent / 'vendor' / 'fr-departements.js').read_text()
+        DN = {i_: n_ for i_, n_ in _re2.findall(r'"id":"(\w+)","name":"([^"]+)"', mp)}
+        Y = lf['years']; n = len(Y) - 1
+        def med(blk, i):
+            a_ = [v[i] for v in blk.values() if i < len(v) and v[i] is not None]
+            return _st.median(a_) if len(a_) >= 20 else None
+        def med_same(blk, i, j_):
+            a_ = [(v[i], v[j_]) for v in blk.values() if v[i] is not None and v[j_] is not None]
+            return (_st.median([x for x, _ in a_]), _st.median([y for _, y in a_])) if len(a_) >= 20 else (None, None)
+        cur, prev = med_same(lf['free'], n, n - 1) if n else (med(lf['free'], n), None)
+        curr, prevr = med_same(lf['rent'], n, n - 1) if n else (med(lf['rent'], n), None)
+        rows = sorted(((DN.get(k, k), v[n]) for k, v in lf['free'].items() if v[n] is not None), key=lambda x: x[1])
+        out.append(block('tierra-fr', 'FR', 'Francia: precio de la tierra agrícola por departamento (Agreste)|France: farmland prices by département (Agreste)|France : prix des terres agricoles par département (Agreste)|Francia: prezzi dei terreni agricoli per dipartimento (Agreste)', asOf=str(Y[-1]),
+            stats=[stat('Mediana de los departamentos, tierra vendida libre|Median of départements, land sold vacant|Médiane des départements, terres vendues libres|Mediana dei dipartimenti, terreni venduti liberi', cur, '€/ha', 0, chg(pct(cur, prev), str(Y[-2])) if prev else None),
+                   stat('Mediana de los departamentos, tierra vendida con arrendatario|Median of départements, land sold with a tenant|Médiane des départements, terres vendues louées|Mediana dei dipartimenti, terreni venduti con affittuario', curr, '€/ha', 0, chg(pct(curr, prevr), str(Y[-2])) if prevr else None),
+                   stat('Departamento más caro|Most expensive département|Département le plus cher|Dipartimento più caro', rows[-1][1] if rows else None, '€/ha', 0, rows[-1][0] if rows else None),
+                   stat('Departamento más barato|Cheapest département|Département le moins cher|Dipartimento più economico', rows[0][1] if rows else None, '€/ha', 0, rows[0][0] if rows else None)],
+            charts=[chart('Mediana de los departamentos|Median of départements|Médiane des départements|Mediana dei dipartimenti', '€/ha', [('Vendida libre|Sold vacant|Vendues libres|Venduti liberi', [[str(y), med(lf['free'], i)] for i, y in enumerate(Y) if med(lf['free'], i) is not None]), ('Vendida con arrendatario|Sold with a tenant|Vendues louées|Venduti con affittuario', [[str(y), med(lf['rent'], i)] for i, y in enumerate(Y) if med(lf['rent'], i) is not None])])],
+            bars=[bars('Departamentos más caros, ' + str(Y[-1]) + '|Most expensive départements, ' + str(Y[-1]) + '|Départements les plus chers, ' + str(Y[-1]) + '|Dipartimenti più cari, ' + str(Y[-1]), '€/ha', [({l: nm for l in L4}, v) for nm, v in rows[::-1][:10]], 0),
+                  bars('Departamentos más baratos, ' + str(Y[-1]) + '|Cheapest départements, ' + str(Y[-1]) + '|Départements les moins chers, ' + str(Y[-1]) + '|Dipartimenti più economici, ' + str(Y[-1]), '€/ha', [({l: nm for l in L4}, v) for nm, v in rows[:10]], 0)],
+            note=t4('Precio medio trienal (año central) de tierras y prados de más de 70 áreas, según las notificaciones de venta a las Safer; no incluye viñedos. Última edición con tablas por departamento.|Three-year average price (central year) of cropland and grassland over 70 ares, from sale notifications to the Safer; excludes vineyards. Latest edition with département tables.|Prix moyen triennal (année centrale) des terres et prés de plus de 70 ares, d’après les notifications de vente aux Safer ; hors vignes. Dernière édition avec tableaux par département.|Prezzo medio triennale (anno centrale) di seminativi e prati oltre 70 are, dalle notifiche di vendita alle Safer; esclusi i vigneti. Ultima edizione con tabelle per dipartimento.'),
+            source={'name': 'Agreste (SSP) con la FNSafer, Valeur vénale des terres', 'url': lf['source']['url']}))
+    li = j('italy-land/land.json')
+    if li:
+        Y = li['years']; n = len(Y) - 1; ITN = _names('IT'); it_ = li['italy']
+        rows = sorted(((ITN.get(k, {l: k for l in L4}), v[n]) for k, v in li['regions'].items() if v[n] is not None), key=lambda x: -x[1])
+        out.append(block('tierra-it', 'IT', 'Italia: valor de la tierra agrícola por región (CREA)|Italy: farmland values by region (CREA)|Italie : valeur des terres agricoles par région (CREA)|Italia: valori fondiari per regione (CREA)', asOf=str(Y[-1]),
+            stats=[stat('Valor medio nacional|National average value|Valeur moyenne nationale|Valore medio nazionale', it_[n], '€/ha', 0, chg(pct(it_[n], it_[n - 1]), str(Y[-2]))),
+                   stat('Región más cara|Most expensive region|Région la plus chère|Regione più cara', rows[0][1], '€/ha', 0, rows[0][0]['es']),
+                   stat('Región más barata|Cheapest region|Région la moins chère|Regione più economica', rows[-1][1], '€/ha', 0, rows[-1][0]['es'])],
+            charts=[chart('Valor medio nacional, desde 1990|National average value, since 1990|Valeur moyenne nationale, depuis 1990|Valore medio nazionale, dal 1990', '€/ha', [('Italia|Italy|Italie|Italia', [[str(y), it_[i]] for i, y in enumerate(Y) if y >= 1990 and it_[i] is not None])])],
+            bars=[bars('Valor por región, ' + str(Y[-1]) + '|Value by region, ' + str(Y[-1]) + '|Valeur par région, ' + str(Y[-1]) + '|Valore per regione, ' + str(Y[-1]), '€/ha', rows, 0)],
+            note=t4('Valor medio estimado por la red del CREA a partir de testigos cualificados, no un registro de compraventas. Serie con el método anterior a 2024; los valores revisados de 2024 no son comparables.|Average value estimated by the CREA network from qualified witnesses, not a register of sales. Series uses the pre-2024 method; the revised 2024 values are not comparable.|Valeur moyenne estimée par le réseau du CREA auprès de témoins qualifiés, pas un registre de ventes. Série selon la méthode antérieure à 2024 ; les valeurs révisées de 2024 ne sont pas comparables.|Valore medio stimato dalla rete del CREA da testimoni qualificati, non un registro di compravendite. Serie con il metodo precedente al 2024; i valori rivisti del 2024 non sono comparabili.'),
+            source={'name': 'CREA, Indagine sul mercato fondiario in Italia', 'url': li['source']['url']}))
     f = j('us-fertilizers.json')
     FN = {'amoniaco': 'Amoníaco anhidro|Anhydrous ammonia|Ammoniac anhydre|Ammoniaca anidra', 'urea': 'Urea|Urea|Urée|Urea', 'dap': 'DAP (fosfato diamónico)|DAP|DAP|DAP', 'map': 'MAP (fosfato monoamónico)|MAP|MAP|MAP', 'potasa': 'Potasa|Potash|Potasse|Potassa', 'uan28': 'UAN 28 %|UAN 28%|UAN 28 %|UAN 28%', 'uan32': 'UAN 32 %|UAN 32%|UAN 32 %|UAN 32%'}
     if f:

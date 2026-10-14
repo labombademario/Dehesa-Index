@@ -147,7 +147,8 @@ def contract_targets(derived_only=False):
     out = []
     for rel, (sch, tests) in REG["files"].items():
         if derived_only and rel not in REG["derived"]: continue
-        if (DATA / rel).exists() or True: out.append((DATA / rel, rel, sch, tests))
+        if rel in REG.get("optional", []) and not (DATA / rel).exists(): continue  # fuente a la espera de licencia verificada: aun no se publica
+        out.append((DATA / rel, rel, sch, tests))
     for pat, (sch, tests) in REG["globs"].items():
         if derived_only and pat not in REG.get("derivedGlobs", []): continue
         if True:

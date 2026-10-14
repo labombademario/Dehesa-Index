@@ -1,0 +1,233 @@
+                                                                 Prix moyen des vignes en
+  Prix moyen des terres et prés libres de plus de 70 ares
+  Prix moyen des terres et prés loués
+  Prix moyen des terres agricoles dans les DOM par petites régions agricoles
+  Prix moyen des vignes en métropole
+    Prix moyen des terres et prés libres de plus de 70 ares (en euros)
+     AUVERGNE RHONES ALPES                      2021     2022     2023                    Minima        Maxima
+     AIN                                         4 170   3 880    3 780       -3%
+     ALLIER                                      4 320   4 220    4 050       -4%
+     ARDÈCHE                                     5 080   5 030    4 560       -9%
+     CANTAL                                      6 470   6 380    6 570      +3%
+     DROME                                       7 220   6 420    6 220       -3%
+     HAUTE-LOIRE                                 3 850   3 760    3 610       -4%
+     HAUTE-SAVOIE                                9 840   10 000   9 400       -6%
+Prix moyen des terres et prés libres de plus de 70 ares
+ ISERE                                      5 370    5 540        4 720       - 15 %
+ LOIRE                                      3 680    3 700        3 830       +4%
+ PUY-DE-DOME                                4 020    3 980        4 070       +2%
+ RHONE                                      3 940    4 290        4 610       +7%
+ SAVOIE                                      4 810   5 400        5 540       +3%
+     Prix moyen des terres et prés libres de plus de 70 ares
+      COTE-D'OR                                   3 060   3 100   3 170      +2%
+       DOUBS                                      2 890   2 870   2 930      +2%
+      HAUTE-SAONE                                 2 580   2 510   2 600      +4%
+      JURA                                        2 390   2 400   2 470      +3%
+      NIEVRE                                      3 300   3 220   3 070       -5%
+      SAONE-ET-LOIRE                              2 400   2 430   2 400       -1%
+      TERRITOIRE-DE-BELFORT                       3 580   3 610   3 680      +2%
+      YONNE                                       3 230   3 420   3 520      +3%
+Prix moyen des terres et prés libres de plus de 70 ares
+ COTES D'ARMOR                           5 430   5 360      5 370         0%
+ FINISTERE                               5 200   5 170      5 220       +1%
+ ILLE-ET-VILAINE                         5 270   5 270      5 240        -1%
+ MORBIHAN                                4 880   4 850      4 950       +2%
+     Prix moyen des terres et prés libres de plus de 70 ares
+       CHER                                       5 560    5 580    5 540        -1%
+      EURE-ET-LOIR                                9 560    9 260    9 240         0%
+       INDRE                                      5 650    5 460    5 600       +3%
+       INDRE-ET-LOIRE                             5 150     5 010   5 180       +3%
+      LOIR-ET-CHER                                4 670    4 620    4 730       +2%
+      LOIRET                                      5 830    6 060    5 860        -3%
+Prix moyen des terres et prés libres de plus de 70 ares
+ CORSE-DU-SUD                          6 020     6 540        6 840        +5%
+ HAUTE-CORSE                           5 550     6 360        6 770        +6%
+      Prix moyen des terres et prés libres de plus de 70 ares
+      ARDENNES                                    6 370    6 540    6 140          -6%
+      AUBE                                        9 600    9 500    9 840        +4%
+      BAS-RHIN                                    6 810    6 420    6 610        +3%
+      HAUT-RHIN                                   7 250    7 050     7 110       +1%
+      HAUTE-MARNE                                 3 780    3 700    3 660         -1%
+      MARNE                                      11 690    11 440   11 690      +2%
+      MEURTHE-ET-MOSELLE                          5 170     4 890    4 780        -2%
+      GRAND-EST - MEUSE                           5 230    5 050    5 050         0%
+      MOSELLE                                     5 830    5 810    5 850        +1%
+      VOSGES                                      3 680    3 720    3 580        -4%
+ Prix moyen des terres et prés libres de plus de 70 ares
+ AISNE                                       8 930    9 740      10 240       +5%
+ NORD                                       14 170   13 210       13 510      +2%
+ OISE                                       10 320    9 710       9 070        -7%
+ PAS-DE-CALAIS                              12 450   12 540      12 730       +2%
+ SOMME                                      10 200   10 480       10 120       -3%
+     Prix moyen des terres et prés libres de plus de 70 ares
+      SEINE-ET-MARNE                              6 970   7 090   7 570      +7%
+      YVELINES                                    9 100   7 840   7 420       -5%
+      ESSONNE                                     7 020   8 090   9 080      + 12 %
+      VAL-D'OISE                                  7 670   8 000   8 210      +3%
+Prix moyen des terres et prés libres de plus de 70 ares
+CALVADOS                                 9 090    9 250      9 550       +3%
+EURE                                     9 230    9 490      9 420        -1%
+MANCHE                                   7 520    7 570      7 770       +3%
+ORNE                                      7 140   7 260      7 230         0%
+SEINE-MARITIME                           9 970    10 300    10 710       +4%
+     Prix moyen des terres et prés libres de plus de 70 ares
+      NOUVELLE-AQUITAINE - CHARENTE                     4 660   4 760   4 860      +2%
+      NOUVELLE-AQUITAINE - CHARENTE-MARITIME            5 430   5 570   5 650       +1%
+      NOUVELLE-AQUITAINE - CORREZE                      3 580   3 530   3 660      +4%
+      NOUVELLE-AQUITAINE - CREUSE                       2550    2 640   2 770      +5%
+      NOUVELLE-AQUITAINE - DEUX-SEVRES                  3 340   3 410   3 440       +1%
+      NOUVELLE-AQUITAINE - DORDOGNE                     5 880   5 700   5 640       -1%
+Prix moyen des terres et prés libres de plus de 70 ares
+ GIRONDE                                  5 880    6 330      7 590      + 20 %
+ HAUTE-VIENNE                             3 230    3 230      3 320       +3%
+ LANDES                                   9 160    8 760      8 270        -6%
+ LOT-ET-GARONNE                           8 530    8 260      8 320        +1%
+ PYRENEES-ATLANTIQUES                     7 250    7 710      7 760        +1%
+ VIENNE                                   4 920    4 790      4 850        +1%
+     Prix moyen des terres et prés libres de plus de 70 ares
+      ARIEGE                                    5 330   5 340    5 520        +3%
+      AUDE                                      5 940   5 540    5 660        +2%
+       AVEYRON                                  7 070   6 850    6 760         -1%
+      GARD                                     10 730   11 200   12 260       +9%
+      GERS                                      7 260   7 250     7 160        -1%
+      HAUTE-GARONNE                             7 750    7 610   7 660        +1%
+Prix moyen des terres et prés libres de plus de 70 ares
+ HAUTES-PYRENEES                             7 250     7 160     7 410       +3%
+ HERAULT                                     9 970    10 730    11 470       +7%
+ LOT                                          5 810   5 660      5 900       +4%
+ LOZERE                                      4 260    4 590      5 070      + 10 %
+ PYRENEES-ORIENTALES                         8 500    8 470      8 970       +6%
+ TARN                                        6 320     6 100     6 270       +3%
+ TARN-ET-GARONNE                             6 730    6 830      7 190       +5%
+     Prix moyen des terres et prés libres de plus de 70 ares
+      LOIRE-ATLANTIQUE                            2 540   2 630   2 770      +5%
+      MAINE-ET-LOIRE                              3 620   3 570   3 600       +1%
+      MAYENNE                                     6 240   6 260   6 230        0%
+      SARTHE                                      4 570   4 590   4 560       -1%
+      VENDEE                                      2 770   2 770   2 840      +3%
+Prix moyen des terres et prés libres de plus de 70 ares
+ ALPES-DE-HAUTE-PROVENCE                   6 600     7 570     7 250        -4%
+ BOUCHES-DU-RHONE                          15 200   15 100    15 360       +2%
+ HAUTES-ALPES                               9 020   12 200     9 910       - 19 %
+ VAR                                       13 270   12 550    11 620        -7%
+ VAUCLUSE                                  14 750   15 050    15 350       +2%
+     Prix moyen des terres et prés loués
+      ALLIER                                      3 450   3 460   3 470        0%
+      CANTAL                                      5 270   5 150   5 260      +2%
+      HAUTE-LOIRE                                 3 100   3 160   3 150        0%
+      PUY-DE-DOME                                 3 560   3 610   3 750      +4%
+Prix moyen des terres et prés loués
+ COTE-D'OR                                 2 830   2 780     2 770         0%
+  DOUBS                                    2 860   2 890     3 070       +6%
+ HAUTE-SAONE                               2 490   2 510     2 570       +2%
+ JURA                                      2 240   2 290     2 360       +3%
+ NIEVRE                                    2 720   2 710     2 730       +1%
+ SAONE-ET-LOIRE                            2 160   2 150     2 180       +1%
+ TERRITOIRE-DE-BELFORT                     3 750   3 690     3 550        -4%
+ YONNE                                     3 120   3 100     3 140       +1%
+     Prix moyen des terres et prés loués
+      COTES D'ARMOR                               4 860   4 990   5 190      +4%
+      FINISTERE                                   4 950   4 890   5 000      +2%
+      ILLE-ET-VILAINE                             4 660   4 670   4 750      +2%
+      MORBIHAN                                    4 420   4 480   4 500        0%
+Prix moyen des terres et prés loués
+ CHER                                       4 790   4 860     4 990       +3%
+ EURE-ET-LOIR                               6 880   7 160     7 180         0%
+ INDRE                                      4 750   4 750     4 740         0%
+ INDRE-ET-LOIRE                             4 280   4 320     4 410       +2%
+ LOIR-ET-CHER                               3 950   4 000     4 160       +4%
+ LOIRET                                     4 940   4 850     4 930       +2%
+     Prix moyen des terres et prés loués
+      ARDENNES                                    6 760    6 730     6 590       -2%
+      AUBE                                        9 400    9 350     9 460       +1%
+      BAS-RHIN                                    6 350    6 330    6 180          -2%
+      HAUT-RHIN                                   6 700    6 590    6 640         +1%
+      HAUTE-MARNE                                 3 420    3 400    3 500         +3%
+       MARNE                                      11 190   11 360   10 750         -5%
+       MEURTHE-ET-MOSELLE                         4 490     4 650     4 610        -1%
+      GRAND-EST - MEUSE                           4 280    4 230     4 280       +1%
+      MOSELLE                                     4 550    4 550     4 760       +5%
+      VOSGES                                      3 140    3 190     3 240       +2%
+Prix moyen des terres et prés loués
+ AISNE                                      6 870   7 030     7 150       +2%
+ NORD                                       6 460   6 530     6 710       +3%
+ OISE                                       6 630   6 840     7 090       +4%
+ PAS-DE-CALAIS                              6 380   6 550     6 740       +3%
+ SOMME                                      6 760   6 850     7 070       +3%
+     Prix moyen des terres et prés loués
+      SEINE-ET-MARNE                              6 990   6 750   6 620       -2%
+      YVELINES                                    7 060   7 160   7 070       -1%
+      ESSONNE                                     7 000   6 510   6 180       -5%
+      VAL-D'OISE                                  6 730   6 870   6 950      +1%
+Prix moyen des terres et prés loués
+ CALVADOS                                 7 200    7 500      7 710       +3%
+ EURE                                     8 540    8 790      8 740        -1%
+ MANCHE                                   6 380    6 400      6 460       +1%
+  ORNE                                    5 930    5 890      5 980       +2%
+ SEINE-MARITIME                           9 360    9 440      9 520       +1%
+     Prix moyen des terres et prés loués
+      CHARENTE                                    4 350   4 490   4 550       +1%
+      CHARENTE-MARITIME                           4 770   4 940   5 130      +4%
+       CORREZE                                    3 100   2 980   2 950       -1%
+      CREUSE                                      2 380   2 290   2 360      +3%
+       DEUX-SEVRES                                3 090   3 110   3 120        0%
+      HAUTE-VIENNE                                2 800   2 660   2 630       -1%
+      VIENNE                                      4 690   4 740   4 660       -2%
+Prix moyen des terres et prés loués
+ LOIRE-ATLANTIQUE                          2 030   2 030     2 040         0%
+ MAINE-ET-LOIRE                            2 840   2 820     2 860       +1%
+ MAYENNE                                   5 090   5 080     5 260       +4%
+ SARTHE                                    3 810   3 860     3 930       +2%
+ VENDEE                                    2 270   2 300     2 380       +3%
+     Prix moyen des terres agricoles dans les DOM par petites régions agricoles
+Prix moyen des vignes en métropole (en milliers d’euros)
+     Prix moyen des vignes en métropole
+                                  AOP                                  201,8      221,4    238,6         +8%
+                                  AOP                                  322,5     367,6     398,5         +8%
+Prix moyen des vignes en métropole
+                             AOP                         201,8    221,4   238,6         +8%
+                             AOP                          27,3    28,5      27,4         -4%
+                             Crus Beaujolais              61,8     63,5     61,6         -3%
+     Prix moyen des vignes en métropole
+                                  Champagne                         1 127,6   1 158,6   1 183,9        +2%
+                                  Vins hors AOP                        15,0      18,0      18,0          0%
+Prix moyen des vignes en métropole
+                             Vins hors AOP                        15,0     15,6     15,2         -2%
+                             Vins hors AOP                       13,3      13,9    13,9            0%
+                             Vins hors AOP                       15,7      15,7    14,0         - 11 %
+                             Vins hors AOP                       15,9      16,8    16,8            0%
+                             Vins hors AOP                        10,0     10,0     11,0        + 10 %
+     Prix moyen des vignes en métropole
+                                  AOP                              27,2   27,3    27,2            0%
+                                  Vins hors AOP                    12,8    13,1    13,1           0%
+                                  Vins hors AOP                    13,0   13,5    13,5            0%
+                                  Vins hors AOP                   12,8    12,8    12,7             0%
+                                  VEDVAOP                         12,0    12,0    12,0             0%
+                                  Raisin de table                   6,0   10,0    10,0             0%
+                                  Vins hors AOP                     5,0    5,0     5,0             0%
+                                  VEDVAOP                         12,0    12,0    12,0             0%
+                                  Vins hors AOP                   14,0    14,0    14,0             0%
+                                  Vins hors AOP                     9,2    9,2     8,7            -5%
+                                  Vins hors AOP                     6,3    6,3     6,3            0%
+                                  Raisin de table                   6,0   10,0    10,0            0%
+Prix moyen des vignes en métropole
+                             Vins hors AOP               4,8     4,8      4,9        +1%
+                             Vins hors AOP               4,9     4,9      5,0        +2%
+                             Vins hors AOP               9,0     9,0      9,0          0%
+                             Vins hors AOP               9,0     9,0      9,0          0%
+     Prix moyen des vignes en métropole
+                                  AOP                         142,2   144,9   145,1         0%
+                                  AOP                          13,1    13,1    15,9       + 21 %
+                                  AOP                          12,6    12,6    13,8       + 10 %
+Prix moyen des vignes en métropole
+                             AOP                         51,4     51,8      51,7          - %
+                             Vins hors AOP               17,9     16,8       17,0       +1%
+                             Côte Rôtie et              39,4       37,7      38,1       +1%
+                             Vins hors AOP               14,2     14,2       14,7       +3%
+                             Vins hors AOP               15,0      15,0      15,0         0%
+                             Côtes du Rhône              17,3      15,8      15,8         0%
+                             Vins hors AOP               11,7      11,7      13,5      + 15 %
+     Prix moyen des vignes en métropole
+                                  AOP                               63,5    64,6    65,2        +1%
+                                  Vins hors AOP                     20,0    18,3    18,3          0%
+                                  AOP                               15,0    15,0    15,0          0%

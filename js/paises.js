@@ -335,6 +335,17 @@
     var mod = function () { if (window.DIItFuel) go(); else js('js/it-fuel.js?v=20261013', go); };
     if (window.DIFrDeptMap) mod(); else js('js/fr-dept-map.js?v=20261015', mod);
   }
+  /* Francia e Italia: precio/valor de la tierra agrícola por departamento/región (js/land-fr-it.js; Italia solo se dibuja si su fichero existe) */
+  function landUp() {
+    if (ST.c !== 'FR' && ST.c !== 'IT') return;
+    var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
+    var after = document.getElementById('pp-fr-nit') || document.getElementById('pp-it-fuel') || document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;
+    var el = document.createElement('div'); el.id = 'pp-land-fr-it'; after.parentNode.insertBefore(el, after.nextSibling);
+    function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
+    var go = function () { if (window.DILandFrIt && ST.c === cc) window.DILandFrIt.mount(el, lang(), cc); };
+    var mod = function () { if (window.DILandFrIt) go(); else js('js/land-fr-it.js?v=20261014', go); };
+    if (window.DIFrDeptMap) mod(); else js('js/fr-dept-map.js?v=20261015', mod);
+  }
   /* Polonia: gasóleo y devolución del impuesto especial (js/pl-diesel.js) */
   function plUp() {
     if (ST.c !== 'PL') return;
@@ -450,7 +461,7 @@
     ((window.DehesaShared.countryLinks && window.DehesaShared.countryLinks(ST.c)) || []).forEach(function (l) { if (own.indexOf(l.file) < 0) own += '<a class="di-card" href="' + l.href + '" style="display:block;padding:14px 18px;margin-top:14px;text-decoration:none;color:inherit"><b>' + esc(l.label) + ' →</b><div class="di-movers-hint" style="margin:4px 0 0">' + esc(l.d) + '</div></a>'; });
     html += '<div id="ps-detail"><h3 id="ps-own" class="ps-own-h">' + esc(OWN[lang()] ? OWN[lang()][0] : OWN.es[0]) + '</h3>' + own + '<div id="ps-ownnote"></div>'; if (REGMAP[ST.c] && !window.DIProfile) html += '<div id="ps-regmap"></div>';
     if (ST.c === 'PT') html += foldBox('ps-ifap', 'ifap'); html += (ST.c === 'DE' ? '<div id="ps-de"></div>' : '') + (ST.c === 'CA' ? '<div id="ps-mb"></div>' : '') + (ST.c === 'US' ? '<div id="ps-us"></div>' : '') + (ST.c === 'ES' ? '<div id="ps-es"></div>' : '') + (/^(DK|NL|FR)$/.test(ST.c) ? '<div id="ps-eu"></div>' : '') + '<div id="ps-agri"></div>' + foldBox('ps-tp', 'tp') + '</div>' + srcHtml;
-    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(); frUp(); deUp(); itUp(); plUp(); beUp(); atUp(); hrUp(); ieUp(); nlUp(); ptUp(); sectorUp(); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
+    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(); frUp(); deUp(); itUp(); landUp(); plUp(); beUp(); atUp(); hrUp(); ieUp(); nlUp(); ptUp(); sectorUp(); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
     var ub = root.querySelector('[data-unusual]'); if (ub) ub.onclick = function () { ub.disabled = true; ub.textContent = ub.getAttribute('data-busy'); Promise.all(c.series.filter(function (x) { return !x.points && x.n >= 24; }).map(pt)).then(function () { build(); }); };
     if (ST.c === 'DE') { var den = document.getElementById('ps-de'), mdf = function () { if (window.DEFarm && den) window.DEFarm.mount(den, lang()); }; if (window.DEFarm) mdf(); else { var dsc = document.createElement('script'); dsc.src = 'js/de-agri.js?v=20261003'; dsc.onload = mdf; document.head.appendChild(dsc); } }
     if (ST.c === 'CA') { var mbn = document.getElementById('ps-mb'); if (mbn) { /* Manitoba (vacuno, ovino y caprino, porcino): cabeceras aqui, modulos (js/mb-cattle.js, js/mb-smallstock.js) solo al abrir */

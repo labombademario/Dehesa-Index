@@ -744,6 +744,18 @@
     "spain_land"
    ]
   ],
+  "france-land/land.json": [
+   "france-land",
+   [
+    "france_land"
+   ]
+  ],
+  "italy-land/land.json": [
+   "italy-land",
+   [
+    "italy_land"
+   ]
+  ],
   "spain-milk/infolac.json": [
    "spain-milk",
    [
@@ -1376,5 +1388,8 @@
   "us-cash-bids/*/*.json",
   "catalog/index/*.json",
   "watch/[A-Z]*.json"
+ ],
+ "optional": [
+  "italy-land/land.json"
  ]
 }

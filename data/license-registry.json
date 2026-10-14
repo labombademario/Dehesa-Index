@@ -3527,6 +3527,56 @@
    "short": "Agence BIO",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Licencia abierta explícita declarada por el editor en la ficha del conjunto de datos."
+  },
+  "agreste_ssp": {
+   "name": "France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer)",
+   "url": "https://www.data.gouv.fr/datasets/agreste-valeur-venale-des-terres/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : SSP (Agreste) – FNSafer, Valeur vénale des terres, sous Licence Ouverte",
+   "additionalRestrictions": "Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-14",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "La ficha de data.gouv.fr «Agreste - Valeur vénale des terres» (organización: ministère de l'Agriculture; ficha actualizada el 25-09-2025) declara «Licence Ouverte / Open Licence». Sus dos recursos apuntan a las publicaciones de Agreste (Chiffres et données n.º 12 y 13, © Agreste). La licencia es la del conjunto en data.gouv.fr; los PDF están alojados en agreste.agriculture.gouv.fr, cuya página de mentions légales no se pudo leer desde el entorno. Por eso la confianza es media.",
+   "used": true,
+   "aliases": [],
+   "notes": "Se leen los precios por departamento de la última edición de Chiffres et données con tablas (2023, datos 2021-2023); la edición 2024 solo trae metodología.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia abierta declarada por el editor en la ficha de data.gouv.fr del conjunto; los PDF viven en el dominio de Agreste, cuyas mentions légales no se pudieron leer."
+  },
+  "crea_fondiario": {
+   "name": "Italy — CREA, Indagine sul mercato fondiario in Italia (Banca Dati dei Valori Fondiari)",
+   "url": "https://www.crea.gov.it/en/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario",
+   "country": "IT",
+   "licenseId": "CUSTOM",
+   "licenseName": "CREA: «È consentita la riproduzione citando la fonte» (reproduction allowed citing the source)",
+   "licenseUrl": "https://www.crea.gov.it/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fonte: CREA, Indagine sul mercato fondiario in Italia",
+   "additionalRestrictions": "La nota de derechos de los informes solo dice que se permite la reproducción citando la fuente; no aborda de forma expresa el uso comercial ni las obras derivadas.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": null,
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "El rapporto 2024 (CREA, noviembre 2025, ISBN 9788833854601) lleva la nota «Copyright © 2025 by CREA ... È consentita la riproduzione citando la fonte». El libro Excel de la serie histórica se enlaza desde la página de la indagine, sin aviso de licencia propio. Permiso de reproducción con cita, pero sin mención expresa de uso comercial ni derivados.",
+   "used": false,
+   "aliases": [],
+   "notes": "PENDING a propósito: la política del registro pide un permiso explícito de uso comercial y derivados para marcar VERIFIED. Mientras no se confirme (decisión del propietario), el pipeline lee y valida el libro pero NO escribe data/italy-land/land.json (es decir, no se publica) y la web y la app no muestran el bloque de Italia. Al pasarla a VERIFIED (used true) el siguiente ciclo lo publica. Para publicar: pasar la fuente a VERIFIED con used true y añadir en 'files' la entrada data/italy-land/ -> crea_fondiario.",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Permiso de reproducción citando la fuente, sin mención expresa de uso comercial ni de obras derivadas."
   }
  },
  "files": {
@@ -4964,6 +5014,12 @@
    "byCountry": {
     "FR": "agence_bio"
    }
+  },
+  "data/france-land/": {
+   "sources": [
+    "agreste_ssp"
+   ],
+   "notes": "Precio de la tierra de Francia por departamento (scripts/update-land-fr-it.py): precio medio trienal de las terres et prés libres y loués (EUR/ha), 2021-2023, de los PDF de Chiffres et données de Agreste."
   }
  },
  "derived": [
