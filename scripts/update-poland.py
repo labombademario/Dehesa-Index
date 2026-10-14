@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Polonia: Oficina Central de Estadistica (GUS), Banco de Datos Locales (BDL, API REST publica) -> data/poland-stats.json (countries.PL, extend)
-Fuente: https://bdl.stat.gov.pl/api/v1/ (sin clave: limites anonimos 5 peticiones/s, 100 por 15 min y 1000 por 12 h; este script hace unas 130 y espera si se acerca al tope).
+Fuente: https://bdl.stat.gov.pl/api/v1/ (sin clave: limites anonimos 5 peticiones/s, 100 por 15 min y 1000 por 12 h; este script hace unas 200 y espera si se acerca al tope; con clave (BDL_CLIENT_ID) el cupo es de 50.000 peticiones por 7 dias).
 Licencia: aviso de copyright de GUS (https://stat.gov.pl/en/copyright/, leido el 7 oct 2026): sin objecion a copiar archivos y paginas ni a elaborar resumenes propios si se cita la fuente.
 Solo nivel nacional (unit-level=0, POLAND) y solo el valor definitivo de cada ano (attrId 1); un dato con otro atributo (0, '-', estimacion) no se publica.
 Precios percibidos por el agricultor (mercado local) y de compra (acopio) anuales, cosechas por cultivo, ganado, produccion de carne, leche y huevos, y acopio mensual.
@@ -9,18 +9,19 @@ import datetime, json, os, re, sys, time, urllib.error, urllib.request
 B = 'https://bdl.stat.gov.pl/api/v1/'
 UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Accept': 'application/json'}
 if os.environ.get('BDL_CLIENT_ID'): UA['X-ClientId'] = os.environ['BDL_CLIENT_ID']   # clave gratuita de la API de BDL (mas cupo de peticiones); sin ella, limites anonimos
+KEY = bool(os.environ.get('BDL_CLIENT_ID'))
 LOG = []
 NREQ = [0, time.time()]
 def log(*a):
     s = ' '.join(str(x) for x in a); LOG.append(s); print(s, flush=True)
 def get(u, t=90):
     # limites anonimos: 100 peticiones por 15 min -> ritmo de ~1 cada 1,3 s y pausa si llevamos 85 en la ventana
-    if NREQ[0] >= 70 and time.time() - NREQ[1] < 900:
+    if not KEY and NREQ[0] >= 70 and time.time() - NREQ[1] < 900:
         w = 905 - (time.time() - NREQ[1]); log('pausa', int(w), 's por el limite de la API'); time.sleep(max(w, 1)); NREQ[0] = 0; NREQ[1] = time.time()
     last = None
     for i in range(4):
         try:
-            time.sleep(1.3); NREQ[0] += 1
+            time.sleep(0.5 if KEY else 1.3); NREQ[0] += 1
             with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r: return json.loads(r.read())
         except urllib.error.HTTPError as e:
             last = e
@@ -145,8 +146,29 @@ def procurement():
         slug = re.sub(r'[^a-z0-9]+', '-', prod.lower()).strip('-')
         n += put('pl-gus-proc-m-%s' % slug, 'production', 'Procurement of %s (monthly, GUS)' % prod.replace(' - ', ': '), u, 'monthly', pts, 'GUS BDL P2488', f)
     log('acopio mensual', n, 'series')
+def monthly_prices():
+    """Precios mensuales: P2968 (percibidos por el agricultor, mercado local) y P2967 (de compra, acopio). Una variable por mes y producto; solo nivel nacional, attrId 1."""
+    n = 0
+    for sid, tag, ttl in (('P2968', 'mkt', 'price received by farmers (market-place)'), ('P2967', 'procm', 'procurement price')):
+        vs = [v for v in variables(sid) if v.get('n1') in MONTHS and v.get('measureUnitName') == 'PLN']
+        vals = values([v['id'] for v in vs]); by = {}
+        for v in vs: by.setdefault(v['n2'], []).append((MONTHS.index(v['n1']) + 1, v['id']))
+        for prod, lst in by.items():
+            if re.search(r'per dt$', prod): u, mu, base = 'PLN/t', 10.0, re.sub(r'\s*per dt$', '', prod)
+            elif re.search(r'per kg live weight$', prod): u, mu, base = 'PLN/kg', 1.0, re.sub(r'\s*per kg live weight$', '', prod) + ' (live weight)'
+            elif re.search(r'per kg$', prod): u, mu, base = 'PLN/kg', 1.0, re.sub(r'\s*per kg$', '', prod)
+            elif re.search(r'per head$', prod): u, mu, base = 'PLN/head', 1.0, re.sub(r'\s*per head$', '', prod)
+            elif re.search(r'per hl$', prod): u, mu, base = 'PLN/l', 0.01, re.sub(r'\s*per hl$', '', prod)
+            else: log('producto mensual sin unidad conocida', prod); continue
+            pts = []
+            for mi, vid in lst:
+                for y, val in vals.get(vid, []): pts.append(('%s-%02d' % (y, mi), val))
+            slug = re.sub(r'[^a-z0-9]+', '-', base.lower()).strip('-')
+            live = re.search(r'slaughter|cattle|pigs|poultry|cow|heifer|piglet', prod, re.I) and u in ('PLN/kg', 'PLN/head')
+            n += put('pl-gus-%s-%s' % (tag, slug), 'prices_lv' if live else 'prices', '%s: %s, monthly (GUS)' % (cap(base.replace(' - ', ': ')), ttl), u, 'monthly', pts, 'GUS BDL %s' % sid, mu)
+    log('precios mensuales', n, 'series')
 def main():
-    for fn in (prices, crops, livestock, output, procurement):
+    for fn in (prices, monthly_prices, crops, livestock, output, procurement):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     if len(OUT) < 40:
