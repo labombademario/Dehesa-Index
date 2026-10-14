@@ -424,10 +424,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "PARTIAL",
+     "state": "INGESTED",
      "file": "fr/watch.json",
-     "reviewNeeded": 0,
-     "note": "vigilancia configurada, aun sin primera lectura automatica"
+     "checkedAt": "2026-10-14",
+     "reviewNeeded": 0
     }
    }
   },
@@ -472,10 +472,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "PARTIAL",
+     "state": "INGESTED",
      "file": "it/watch.json",
-     "reviewNeeded": 0,
-     "note": "vigilancia configurada, aun sin primera lectura automatica"
+     "checkedAt": "2026-10-14",
+     "reviewNeeded": 0
     }
    }
   },
@@ -528,10 +528,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "PARTIAL",
+     "state": "INGESTED",
      "file": "pl/watch.json",
-     "reviewNeeded": 0,
-     "note": "vigilancia configurada, aun sin primera lectura automatica"
+     "checkedAt": "2026-10-14",
+     "reviewNeeded": 0
     }
    }
   }

@@ -35,7 +35,8 @@
    "JORFTEXT000054930398",
    "JORFTEXT000054930403",
    "JORFTEXT000054930408",
-   "JORFTEXT000054930414"
+   "JORFTEXT000054930414",
+   "JORFTEXT000054938477"
   ]
  },
  "current": {
@@ -50,8 +51,6 @@
   ],
   "lastScanned": "2026-10-14"
  },
- "reviewNeeded": [
-  "texto nuevo: Arrêté du 29 septembre 2026 définissant le taux annuel minimum de contrôle 2026 de l'écorégime, des indemnités compensatoires de handicaps n (2026-10-02)"
- ],
+ "reviewNeeded": [],
  "note": "Vigilancia de los boletines diarios del JORF desde el 1 de octubre de 2026 (último día leído a mano). Los textos que aparecen son candidatos: no se interpretan."
 }
