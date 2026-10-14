@@ -7,7 +7,11 @@ set -u
 MSG="$1"; shift
 git config user.name "${PUBLISH_AUTHOR:-github-actions[bot]}"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-if [ "$#" -gt 0 ]; then git add -- "$@" || exit 1; fi   # sin rutas: se publica lo que el llamador ya dejo en el indice
+if [ "$#" -gt 0 ]; then
+  # Rutas que ni existen ni estan en el indice (p. ej. un dataset opcional aun sin publicar) se ignoran: git add falla entero con una sola ruta inexistente.
+  KEEP=(); for p in "$@"; do if [ -e "$p" ] || [ -n "$(git ls-files -- "$p" | head -1)" ]; then KEEP+=("$p"); fi; done
+  if [ "${#KEEP[@]}" -gt 0 ]; then git add -- "${KEEP[@]}" || exit 1; fi
+fi   # sin rutas: se publica lo que el llamador ya dejo en el indice
 git diff --cached --quiet && { echo "Sin cambios que publicar"; exit 0; }
 git commit -qm "$MSG"
 # PUBLISH_DERIVED (rutas separadas por espacios) + PUBLISH_REGEN (comando): ficheros que son funcion de otros datos (motor de precios).
