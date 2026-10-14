@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 121 VERIFIED, 7 PENDING, 5 RESTRICTED, 4 BLOCKED; 21871 series en el catalogo unificado.
+Resumen: 121 VERIFIED, 7 PENDING, 5 RESTRICTED, 4 BLOCKED; 21935 series en el catalogo unificado.
 
 ## VERIFIED (121)
 
@@ -61,7 +61,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `geosphere_austria` | GeoSphere Austria — Data Hub (WINFORE v2, SPEI) | AT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar los cambios. |
 | `gesetze_im_internet` | Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV | DE | CUSTOM | si/si | si | 0 | The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis … |
 | `gisco_nuts` | Eurostat GISCO — NUTS 2021 administrative boundaries (© EuroGeographics) | EU | EC-REUSE-EUROGEOGRAPHICS | si/si | si | 0 | The administrative boundaries are free to use for any purpose with the attribution above (GISCO statistical units terms). We simplify the po… |
-| `gus_poland` | Statistics Poland (GUS) - Local Data Bank (BDL) | PL | GUS-COPYRIGHT-NOTICE | si/si | si | 199 | Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos. |
+| `gus_poland` | Statistics Poland (GUS) - Local Data Bank (BDL) | PL | GUS-COPYRIGHT-NOTICE | si/si | si | 263 | Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos. |
 | `hmrc_govuk` | HM Revenue & Customs - GOV.UK VAT guidance | GB | OGL-UK-3.0 | si/si | si | 0 | Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra. |
 | `hmrc_uktradeinfo` | HM Revenue & Customs - UK Trade Info (OTS, API OData) | GB | OGL-UK-3.0 | si/si | si | 37 | Third-party material and logos excluded. |
 | `hubeau_ades` | ADES (BRGM) — Qualité des eaux souterraines, vía Hub'Eau | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |

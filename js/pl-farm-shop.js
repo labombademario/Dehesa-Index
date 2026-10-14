@@ -53,7 +53,7 @@
     all.forEach(function (s, k) {
       var d = '', go = false;
       for (i = 0; i < Y.length; i++) { if (s.values[i] == null) { go = false; continue; } d += (go ? 'L' : 'M') + X(Y[i]).toFixed(1) + ' ' + Yy(s.values[i]).toFixed(1); go = true; }
-      paths.push('<path class="wp-line ' + (k ? 'wp-line-t' : '') + '" d="' + d + '"' + (k ? '' : ' style="stroke-dasharray:5 3;opacity:.85"') + '/>');
+      paths.push('<path class="wp-line ' + (k ? 'wp-line-t' : '') + '" d="' + d + '"' + (k ? '' : ' style="stroke:#b5651d;stroke-width:2;fill:none;stroke-dasharray:6 3"') + '/>');
     });
     var lgd = '<div class="wp-readout" aria-live="polite" data-def="' + esc(t.hover) + '">' + esc(t.hover) + '</div>';
     return { html: '<div class="di-info-card-title gb-sub">' + esc(t.evo) + '</div><div class="wp-chart gb-chart">' + lgd + '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(t.evo + ' · ' + nm(farm, lg) + ' / ' + nm(ret, lg)) + '">' + grid + paths.join('') + '<line class="wp-cross" x1="0" x2="0" y1="' + Tp + '" y2="' + (H - B) + '" style="display:none"/></svg>' +

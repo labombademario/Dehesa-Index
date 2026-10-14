@@ -217,7 +217,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-mb-smallstock.yml | generado | 3 veces/semana | detect-revisions.py, gen-workflows.py, update-mb-smallstock.py | mb-markets/hogs.json, mb-markets/sheep-goat.json | finish, validate-files |
 | update-partner-tariffs.yml | a mano | mensual | detect-revisions.py, update-partner-tariffs.py | tariffs-ca.json, tariffs-eu.json, tariffs-mx.json | finish, publish, validate-files |
 | update-poland-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-poland-eurostat.py | poland-eurostat-stats.json | finish, validate-files |
-| update-poland.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-poland.py | poland-stats.json | finish, validate-files |
+| update-poland.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-poland.py | poland-farm-shop.json, poland-stats.json | finish, validate-files |
 | update-portugal-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal-eurostat.py | portugal-eurostat-stats.json | finish, validate-files |
 | update-portugal.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal.py | portugal-stats.json | finish, validate-files |
 | update-recan.yml | a mano | semanal (4) | update-recan.py | recan.json | finish, validate-files |
