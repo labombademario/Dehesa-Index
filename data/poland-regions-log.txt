@@ -1,0 +1,2 @@
+clave BDL_CLIENT_ID: presente
+OK Polonia regiones: 42 indicadores, 16 voivodias
