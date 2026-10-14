@@ -2312,3 +2312,14 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
    contain-intrinsic-size reserva un alto aproximado para que la barra de desplazamiento no salte. */
 #home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot{content-visibility:auto;contain-intrinsic-size:auto 700px}
 @media print{#home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot{content-visibility:visible}}
+
+/* ---------- Apps (página y franja de la home) ---------- */
+.di-app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 8px; }
+.di-app-card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 22px; }
+.di-app-card h2 { margin: 0; font-size: 20px; }
+.di-app-card p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-muted); }
+.di-app-pill { display: inline-block; font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-alt, var(--surface)); color: var(--text); }
+.di-app-strip { background: var(--surface); border-bottom: 1px solid var(--border); }
+.di-app-strip-inner { max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--text); }
+.di-app-strip-inner a { color: var(--accent); font-weight: 600; text-decoration: none; }
+@media (max-width: 600px) { .di-app-strip-inner { padding: 12px 16px; } }

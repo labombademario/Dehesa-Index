@@ -142,6 +142,7 @@ const PAGES = [
   ['semana.html', tri('La semana en cada país', 'The week in each country', 'La semaine dans chaque pays', 'La settimana in ogni paese'), 'semana resumen semanal pais españa francia italia alemania eeuu week weekly'],
   ['empresas.html', tri('Empresas', 'Business', 'Entreprises', 'Aziende'), 'empresas business companies profesionales datos api'],
   ['contacto.html', tri('Contacto', 'Contact', 'Contact', 'Contatti'), 'contacto contact contatti email correo escribir'],
+  ['app.html', tri('App para iPhone, iPad y Mac', 'App for iPhone, iPad and Mac', 'App pour iPhone, iPad et Mac', 'App per iPhone, iPad e Mac'), 'app apps iphone ipad mac ios app store descargar download telefono móvil'],
   ['metodologia.html', tri('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), 'metodologia methodology méthodologie como se calcula how calculated fuentes verificacion'],
   ['legal.html', tri('Aviso legal y privacidad', 'Legal notice and privacy', 'Mentions légales et confidentialité', 'Note legali e privacy'), 'legal privacidad privacy cookies terminos terms rgpd gdpr aviso'],
   ['paises.html?c=FR', tri('Datos de Francia', 'Data for France', 'Données : France', 'Dati per Francia'), 'francia france francés francais franceagrimer cotizaciones cotations quotations trigo blé wheat cebada orge barley maiz maïs maize vacuno bovins cattle cerdo porc pork cordero agneau lamb precios pagados productor prix payés paises country pais datos data'],

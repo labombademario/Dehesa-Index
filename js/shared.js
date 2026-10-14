@@ -179,7 +179,8 @@
     var all = [].concat(G.countries.items, prod, G.trade.items, G.costs.items), one = function (f, q) { return all.filter(function (x) { return x.file === f && (x.query || '') === (q || ''); })[0]; };
     G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: [
       { label: L('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio'), items: prod.filter(function (i) { return /^(sequia|clima|mapa)\./.test(i.file); }).concat(one('aranceles.html')) },
-      { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items }
+      { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items },
+      { label: L('Apps', 'Apps', 'Apps', 'App'), items: [pd('app.html', L('App para iPhone, iPad y Mac', 'App for iPhone, iPad and Mac', 'App pour iPhone, iPad et Mac', 'App per iPhone, iPad e Mac'), L('Estado y descarga de las apps', 'Status and download of the apps', 'État et téléchargement des apps', 'Stato e download delle app'))] }
     ] };
     var dl = function (es, en, fr, it, items, cc) { return { label: L(es, en, fr, it), items: items, cc: cc }; };
     G.countries.chipsFirst = 1;

@@ -286,6 +286,20 @@
       .then(function (d) { TAPE_DATA = d.rows || []; render(); }, function () { TAPE_DATA = 'err'; render(); });
   }
 
+  // Franja bajo el hero: aviso de las apps. Sin insignia oficial de Apple hasta que exista el enlace real a la App Store.
+  var APP_STRIP = {
+    es: { text: 'App para iPhone, iPad y Mac', soon: 'Próximamente en la App Store', more: 'Más información →' },
+    en: { text: 'App for iPhone, iPad and Mac', soon: 'Coming soon to the App Store', more: 'Learn more →' },
+    fr: { text: 'App pour iPhone, iPad et Mac', soon: 'Bientôt sur l’App Store', more: 'En savoir plus →' },
+    it: { text: 'App per iPhone, iPad e Mac', soon: 'Presto sull’App Store', more: 'Maggiori informazioni →' }
+  };
+  function renderAppStrip(lang, esc) {
+    var el = document.getElementById('home-app-strip');
+    if (!el) return;
+    var a = APP_STRIP[lang] || APP_STRIP.es;
+    el.innerHTML = '<div class="di-app-strip-inner"><span>' + esc(a.text) + '</span><span class="di-app-pill">' + esc(a.soon) + '</span><a href="' + window.DehesaShared.sitePath('app.html') + '">' + esc(a.more) + '</a></div>';
+  }
+
   function render() {
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
@@ -295,6 +309,7 @@
     document.getElementById('home-h1').textContent = t.h1;
     document.getElementById('home-sub').textContent = t.sub;
     renderSearchBox(lang, esc);
+    renderAppStrip(lang, esc);
     document.getElementById('home-cta-primary').textContent = t.ctaPrimary;
     document.getElementById('home-cta-secondary').textContent = t.ctaSecondary;
 
