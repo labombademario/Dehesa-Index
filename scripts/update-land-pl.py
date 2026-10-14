@@ -81,6 +81,7 @@ def main():
     args = sys.argv[1:]; outdir = ROOT / "data"
     if "--out" in args: outdir = Path(args[args.index("--out") + 1])
     fx = args[args.index("--fixtures") + 1] if "--fixtures" in args else None
+    log("clave BDL_CLIENT_ID: %s" % (("presente (%d caracteres)" % len(os.environ["BDL_CLIENT_ID"])) if os.environ.get("BDL_CLIENT_ID") else "ausente (limites anonimos)"))
     try:
         years, classes = build(fx); validate(years, classes)
         if not licence_ok("gus_poland") and "--out" not in args: log("Polonia leida y validada pero NO publicada: gus_poland no esta VERIFIED en el registro de licencias"); return 0
