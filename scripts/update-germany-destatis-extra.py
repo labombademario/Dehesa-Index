@@ -12,6 +12,9 @@ Necesita GENESIS_TOKEN (el mismo de update-germany). Sin token no se toca el fic
   41321-0003  incubadoras: huevos incubados y pollitos nacidos por especie (mensual desde 2010)
   41362-0001  acuicultura: produccion por tipo (anual desde 2011)
   41363-0001  precio de venta del pescado de acuicultura por especie y canal (anual desde 2011)
+  42321-0003  ventas interiores de abonos por tipo (trimestral); 61243-0005/-0014  precios de electricidad y gas para empresas (semestral)
+  61241-0101  precio de productor del gasoleo de calefaccion (mensual); 41215  hortalizas; 41232  bayas; 41214  setas; 41241-0006  forraje
+  41252-0002  vinedo por region y variedad; 41312/41313/41314  tamaño de hato (vacas de leche, cerdos de cebo, ovino); 41141-0009/-0015/-0016  tenencia, regadio y cultivos permanentes
 Uso: GENESIS_TOKEN=... python3 scripts/update-germany-destatis-extra.py"""
 import csv, datetime, io, json, os, re, sys, time, urllib.parse, urllib.request, zipfile
 from pathlib import Path
@@ -73,7 +76,9 @@ def main():
     if not tok: log("sin GENESIS_TOKEN: se conserva data/germany-extra-stats.json"); LOGF.write_text("\n".join(LOG) + "\n"); return 0
     T = {}
     for name, sy in (("41253-0002", "1991"), ("41244-0001", "2019"), ("41261-0001", "1998"), ("41261-0010", "1998"), ("41261-0003", "2006"), ("41271-0001", "1971"), ("41271-0010", "1991"),
-                     ("41141-0005", "2010"), ("41321-0003", "2010"), ("41362-0001", "2011"), ("41363-0001", "2011")):
+                     ("41141-0005", "2010"), ("41321-0003", "2010"), ("41362-0001", "2011"), ("41363-0001", "2011"),
+                     ("42321-0003", "2010"), ("61243-0005", "2019"), ("61243-0014", "2019"), ("61241-0101", "2005"), ("41215-0001", "2010"), ("41215-0002", "2010"), ("41232-0001", "2012"), ("41214-0001", "2012"),
+                     ("41241-0006", "2010"), ("41252-0002", "1991"), ("41312-0004", "2010"), ("41313-0004", "2010"), ("41314-0002", "2011"), ("41141-0009", "2010"), ("41141-0015", "2010"), ("41141-0016", "2020")):
         try: T[name] = fetch(tok, name, sy); log(name, len(T[name]), "filas")
         except Exception as e: log("ERROR", name, str(e)[:200])
     WN = "Datos de la estadistica de la vendimia de Destatis (41253); el mosto (Weinmost) es la uva prensada antes de fermentar, en hectolitros."
@@ -162,6 +167,8 @@ def main():
                     L = labels(r)
                     if L.get(3) == sp and L.get(2) == ch: pts[r["time"].strip()] = num(r["value"])
                 add("de-fishprice-%s-%s" % (k, kc), "prices", "Aquaculture price, %s, %s, Germany" % (en, enc), "EUR/kg", "annual", pts, PN)
+
+    more(T)
     log("series", len(SER))
     if len(SER) < 40: log("demasiado pocas series; no se escribe"); LOGF.write_text("\n".join(LOG) + "\n"); return 1
     src = {"name": "Statistisches Bundesamt (Destatis), GENESIS-Online", "url": "https://www-genesis.destatis.de/", "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0"}
@@ -169,6 +176,136 @@ def main():
            "countries": {"DE": {"name": "Germany", "source": src, "series": sorted(SER.values(), key=lambda s: s["id"])}}}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); LOGF.write_text("\n".join(LOG) + "\n")
     print("germany-extra-stats.json", OUT.stat().st_size, "bytes"); return 0
+def slug(t):
+    t = t.lower().replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+def tpts(R, var, want, per):
+    """puntos {periodo: valor}; want = {n_variable: etiqueta}; per(r) -> periodo o None"""
+    out = {}
+    for r in R:
+        if var and r["value_variable_label"].strip() != var: continue
+        L = labels(r)
+        if any(L.get(n) != v for n, v in want.items()): continue
+        p = per(r); v = num(r["value"])
+        if p and v is not None: out[p] = v
+    return out
+def p_year(r): return r["time"].strip()[:4]
+def p_q(n):
+    def f(r):
+        m = re.match(r"(\d)\.", labels(r).get(n, "")); return "%s-Q%s" % (r["time"].strip()[:4], m.group(1)) if m else None
+    return f
+def p_h(n):
+    def f(r):
+        m = re.match(r"(\d)\.", labels(r).get(n, "")); return "%s-S%s" % (r["time"].strip()[:4], m.group(1)) if m else None
+    return f
+def p_m(r):
+    m = re.match(r"^(\d{4})-(\d{2})P1M$", r["time"].strip()); return "%s-%s" % (m.group(1), m.group(2)) if m else None
+def more(T):
+    FN = "Ventas interiores de abonos de Destatis (42321), trimestral, toneladas de nutriente (N, P2O5, K2O) o de CaO segun el tipo; solo los tipos con unidad de nutriente en su etiqueta."
+    EN_F = {"Kalkammonsalpeter": "calcium ammonium nitrate", "Harnstoff": "urea", "Kaliumchlorid": "potassium chloride", "Kaliumsulfat": "potassium sulphate", "Kalirohsalz": "crude potash salt", "Branntkalk": "quicklime", "Kohlensaurer Kalk": "carbonate lime"}
+    if "42321-0003" in T:
+        R = T["42321-0003"]; seen = {}
+        for r in R:
+            lab = labels(r).get(3, ""); m = re.search(r"\(t-([A-Za-z0-9]+)\)", lab)
+            if m: seen[lab] = m.group(1)
+        for lab, nut in sorted(seen.items()):
+            base = re.sub(r"\s*\(t-[A-Za-z0-9]+\)", "", lab)
+            add("de-fert-sales-" + slug(base) + "-" + nut.lower(), "inputs", "Fertiliser sales, %s (%s), Germany" % (EN_F.get(base, base), nut), "t " + nut, "quarterly", tpts(R, None, {3: lab}, p_q(1)), FN)
+    EP = "Precios de la electricidad y del gas para no hogares de Destatis (61243), semestral, EUR por kWh; 'con impuestos' incluye todos los impuestos y tasas, 'sin impuestos' excluye impuestos, tasas y recargos."
+    def energy(tab, var, kind, en, classes):
+        if tab not in T: return
+        R = T[tab]
+        for cl, kc in classes:
+            for pre, kp, enp in (("Durchschnittspreise inkl.", "gross", "incl. taxes"), ("Durchschnittspreise ohne Steuern", "net", "excl. taxes")):
+                pts = {}
+                for r in R:
+                    L = labels(r)
+                    if L.get(4) == cl and L.get(3, "").startswith(pre):
+                        p = p_h(1)(r); v = num(r["value"])
+                        if p and v is not None: pts[p] = v
+                add("de-%s-price-business-%s-%s" % (kind, kc, kp), "inputs", "%s price for business, %s, %s, Germany" % (en, kc.replace("-", " "), enp), "EUR/kWh", "semiannual", pts, EP)
+    energy("61243-0005", "Strompreise", "electricity", "Electricity", [("Insgesamt", "all"), ("20 bis unter 500 MWh", "20-500-mwh")])
+    energy("61243-0014", "Erdgaspreise", "gas", "Natural gas", [("Insgesamt", "all"), ("278 bis unter 2 778 MWh", "278-2778-mwh")])
+    if "61241-0101" in T:
+        MN = {m: i + 1 for i, m in enumerate(["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"])}
+        def pm(r):
+            m = MN.get(labels(r).get(1)); return "%s-%02d" % (r["time"].strip()[:4], m) if m else None
+        R = T["61241-0101"]
+        for kind, k, en in (("Lief.i.TKW", "truck", "tanker-truck delivery to consumers"), ("Lieferung v. mind. 500 t", "wholesale", "wholesale delivery of 500 t or more")):
+            pts = {}
+            for r in R:
+                L = labels(r)
+                if L.get(2) == "Deutschland" and L.get(3, "").startswith(kind):
+                    p = pm(r); v = num(r["value"])
+                    if p and v is not None: pts[p] = v
+            add("de-heating-oil-producer-" + k, "inputs", "Light heating oil producer price, %s, Germany" % en, "EUR/hl", "monthly", pts, "Precio de productor del gasoleo de calefaccion ligero de Destatis (61241), EUR por hectolitro; se usa como referencia del gasoleo agricola, que no es lo mismo.")
+    VN = "Estadistica de hortalizas de Destatis (41215): superficie y cosecha, explotaciones con al menos 0,5 ha de hortalizas al aire libre (umbrales segun el tipo)."
+    if "41215-0001" in T:
+        R = T["41215-0001"]
+        for var, k, en, u, g in (("Anbaufläche Gemüse", "area", "Vegetable area", "ha", "crops"), ("Erntemenge Gemüse", "harvest", "Vegetable harvest", "t", "production"), ("Betriebe mit Gemüseanbau", "holdings", "Vegetable growers", "holdings", "production")):
+            add("de-veg-total-" + k, g, en + ", Germany", u, "annual", tpts(R, var, {}, p_year), VN)
+    VEG = {"Spargel (im Ertrag)": "asparagus", "Spargel": "asparagus", "Möhren": "carrots", "Möhren, Karotten": "carrots", "Zwiebeln": "onions", "Speisezwiebeln": "onions", "Weißkohl": "white cabbage", "Rotkohl": "red cabbage", "Blumenkohl": "cauliflower", "Broccoli": "broccoli", "Einlegegurken": "pickling cucumbers", "Salatgurken": "salad cucumbers", "Spinat": "spinach", "Eissalat": "iceberg lettuce", "Porree": "leek", "Rote Bete": "beetroot", "Knollensellerie": "celeriac", "Kohlrabi": "kohlrabi", "Chinakohl": "Chinese cabbage", "Feldsalat": "lamb's lettuce", "Speisekürbis": "pumpkin"}
+    if "41215-0002" in T:
+        R = T["41215-0002"]; last = {}
+        for r in R:
+            if r["value_variable_label"].strip() == "Erntemenge Gemüse (Freiland)":
+                v = num(r["value"]); y = r["time"].strip()[:4]; c = labels(r).get(2, "")
+                if v is not None and c and (c not in last or y >= last[c][0]): last[c] = (y, v)
+        top = sorted(last, key=lambda c: -last[c][1])[:16]
+        for c in top:
+            nm = VEG.get(c, c)
+            add("de-veg-%s-harvest" % slug(nm), "production", "Field vegetable harvest, %s, Germany" % nm, "t", "annual", tpts(R, "Erntemenge Gemüse (Freiland)", {2: c}, p_year), VN)
+            add("de-veg-%s-area" % slug(nm), "crops", "Field vegetable area, %s, Germany" % nm, "ha", "annual", tpts(R, "Anbaufläche Gemüse (Freiland)", {2: c}, p_year), VN)
+    if "41232-0001" in T:
+        R = T["41232-0001"]; BE = "Estadistica de bayas (Strauchbeeren) de Destatis (41232): fresas aparte; superficie en ha y cosecha en toneladas."
+        for var, k, en, u, g in (("Anbaufläche", "area", "Bush-berry area", "ha", "crops"), ("Erntemenge", "harvest", "Bush-berry harvest", "t", "production"), ("Betriebe mit Strauchbeerenanbau", "holdings", "Bush-berry growers", "holdings", "production")):
+            add("de-berries-" + k, g, en + ", Germany", u, "annual", tpts(R, var, {}, p_year), BE)
+    if "41214-0001" in T:
+        R = T["41214-0001"]; MU = "Estadistica de setas de cultivo de Destatis (41214); la superficie de cosecha se publica en 1.000 m2 (superficie acumulada de todas las cosechas del año)."
+        for var, k, en, u, g, f in (("Erntemenge", "harvest", "Cultivated mushroom harvest", "t", "production", 1), ("Betriebe", "holdings", "Mushroom growers", "holdings", "production", 1)):
+            add("de-mushrooms-" + k, g, en + ", Germany", u, "annual", tpts(R, var, {2: "Insgesamt"}, p_year), MU)
+        add("de-mushrooms-champignon-harvest", "production", "Champignon harvest, Germany", "t", "annual", tpts(R, "Erntemenge", {2: "Champignons"}, p_year), MU)
+    if "41241-0006" in T:
+        R = T["41241-0006"]; FO = "Cosecha de forraje basto de Destatis (41241), toneladas de producto fresco o conservado segun el uso."
+        for de, k, en in (("Insgesamt", "total", "all uses"), ("Heu", "hay", "hay"), ("Silage", "silage", "silage"), ("Frischfutter / Weide", "fresh", "fresh feed and grazing")):
+            add("de-forage-" + k, "production", "Forage harvest (grassland and field grass), %s, Germany" % en, "t", "annual", tpts(R, "Erntemenge von Raufutter", {2: "Insgesamt", 3: de}, p_year), FO)
+    if "41252-0002" in T:
+        R = T["41252-0002"]; VI = "Estadistica de superficie de vinedo de Destatis (41252): superficie con uva de vinificacion por region vitivinicola, en hectareas."
+        for g in sorted({labels(r).get(2) for r in R} - {"Insgesamt", None}):
+            add("de-vine-area-" + slug(g), "crops", "Wine-grape vineyard area, %s, Germany" % g, "ha", "annual", tpts(R, "Mit Keltertrauben bestockte Rebfläche", {2: g, 3: "Insgesamt"}, p_year), VI)
+        VAR = {"Riesling": "Riesling", "Müller-Thurgau (Rivaner)": "Muller-Thurgau", "Blauer Spätburgunder": "Pinot noir", "Grauer Burgunder": "Pinot gris", "Weißer Burgunder": "Pinot blanc", "Dornfelder": "Dornfelder", "Silvaner": "Silvaner", "Weißer Riesling": "Riesling"}
+        last = {}
+        for r in R:
+            L = labels(r)
+            if L.get(2) == "Insgesamt" and L.get(3) not in ("Insgesamt", None):
+                v = num(r["value"]); y = r["time"].strip()[:4]
+                if v is not None and (L[3] not in last or y >= last[L[3]][0]): last[L[3]] = (y, v)
+        for c in sorted(last, key=lambda c: -last[c][1])[:8]:
+            add("de-vine-variety-" + slug(VAR.get(c, c)), "crops", "Wine-grape area, %s, Germany" % VAR.get(c, c), "ha", "annual", tpts(R, "Mit Keltertrauben bestockte Rebfläche", {2: "Insgesamt", 3: c}, p_year), VI)
+    CS = "Estructura de la cabana de Destatis (41312, 41313, 41314): numero de explotaciones y de animales segun el tamano del hato, en mayo y noviembre (la frecuencia depende de la especie)."
+    def herd(tab, hold_var, head_var, kind, en_h, en_a, sizes):
+        if tab not in T: return
+        R = T[tab]
+        add("de-%s-holdings" % kind, "livestock", "%s, Germany" % en_h, "holdings", "monthly", tpts(R, hold_var, {2: "Insgesamt"}, p_m), CS)
+        add("de-%s-head" % kind, "livestock", "%s, Germany" % en_a, "head", "monthly", tpts(R, head_var, {2: "Insgesamt"}, p_m), CS)
+        for lab, k in sizes:
+            add("de-%s-head-%s" % (kind, k), "livestock", "%s, herds of %s, Germany" % (en_a, lab.replace(" Tiere", " head").replace(" und mehr", " or more").replace(" bis ", " to ")), "head", "monthly", tpts(R, head_var, {2: lab}, p_m), CS)
+    herd("41312-0004", "Haltungen mit Milchkühen", "Milchkühe", "dairy-cows", "Dairy cow holdings", "Dairy cows", [("500 und mehr Tiere", "500plus"), ("200 bis 499 Tiere", "200-499"), ("100 bis 199 Tiere", "100-199"), ("1 bis 9 Tiere", "1-9")])
+    herd("41313-0004", "Betriebe mit Mastschweinen", "Mastschweine", "fattening-pigs", "Fattening pig holdings", "Fattening pigs", [("5000 und mehr Tiere", "5000plus"), ("1000 bis 1999 Tiere", "1000-1999"), ("1 bis 99 Tiere", "1-99")])
+    herd("41314-0002", "Betriebe mit Schafhaltung", "Schafe", "sheep", "Sheep holdings", "Sheep", [("1000 und mehr Tiere", "1000plus"), ("1 bis 49 Tiere", "1-49")])
+    TN = "Tenencia y uso de la tierra agraria de Destatis (41141, censos agrarios 2010 y 2020 y encuesta de estructura 2016 y 2023)."
+    if "41141-0009" in T:
+        R = T["41141-0009"]
+        for de, k, en in (("Eigene selbstbewirtschaftete LF", "own", "owned"), ("Gepachtete landwirtschaftlich genutzte Fläche", "rented", "rented")):
+            add("de-land-tenure-%s-area" % k, "crops", "Utilised agricultural area, %s, Germany" % en, "ha", "annual", tpts(R, "Fläche im jeweiligen Eigentumsverhältnis", {2: de, 3: "Insgesamt", 4: "Insgesamt"}, p_year), TN)
+    if "41141-0015" in T:
+        R = T["41141-0015"]
+        add("de-irrigated-area", "crops", "Irrigated area in the previous year, Germany", "ha", "annual", tpts(R, "Bewässerte Fläche im Vorjahr", {2: "Insgesamt"}, p_year), TN)
+        add("de-irrigated-holdings", "production", "Farms with irrigation, Germany", "holdings", "annual", tpts(R, "Landwirtschaftl. Betr. mit Bewässerung im Vorjahr", {2: "Insgesamt"}, p_year), TN)
+    if "41141-0016" in T:
+        R = T["41141-0016"]
+        for de, k, en in (("Rebflächen", "vines", "Vineyards"), ("Baumobstanlagen für Kernobst", "pome", "Pome-fruit orchards"), ("Baumobstanlagen für Steinobst", "stone", "Stone-fruit orchards"), ("Beerenobstanlagen (ohne Erdbeeren)", "berries", "Berry plantations"), ("Baumschulen", "nurseries", "Tree nurseries")):
+            add("de-permanent-%s-area" % k, "crops", "%s area (farm structure survey), Germany" % en, "ha", "annual", tpts(R, "Dauerkulturfläche", {2: de, 3: "Insgesamt"}, p_year), TN)
 def _region(R, var, kind, region):
     """41253-0002: variable 2 = tipo de mosto, variable 3 = region vitivinicola"""
     pts = {}
