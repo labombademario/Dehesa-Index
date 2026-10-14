@@ -5,7 +5,7 @@ Fuente: GUS (Oficina Central de Estadística), Banco de Datos Locales (BDL), API
 Licencia: aviso de copyright de GUS (registro de licencias, fuente gus_poland): copia y resúmenes propios permitidos citando la fuente.
 Solo se publica el valor definitivo de cada año (attrId 1); cualquier otro atributo (p. ej. 91, que llega con valor 0) es un hueco, nunca un cero.
 Las unidades se identifican por el código BDL del nivel 2 (no por el nombre). Validaciones (si falla alguna no se escribe nada): 16 voivodías, años consecutivos iguales en las cuatro variables,
-valores entre 500 y 400.000 PLN/ha, saltos interanuales entre -45 % y +120 % (2005, adhesión a la UE, llega a +97 % en la tierra pobre de Cuyavia-Pomerania), el valor nacional dentro del mínimo y el máximo de las voivodías.
+valores entre 500 y 400.000 PLN/ha, saltos interanuales entre -45 % y +120 % (prados: -60 % y +250 %, mercado fino) (2005, adhesión a la UE, llega a +97 % en la tierra pobre de Cuyavia-Pomerania), el valor nacional dentro del mínimo y el máximo de las voivodías.
 Uso: update-land-pl.py [--out DIR] [--fixtures DIR]   (con --fixtures no se toca la red; así lo usan los tests)"""
 import datetime, json, os, sys, time, urllib.error, urllib.request
 from pathlib import Path
@@ -76,11 +76,11 @@ def validate(years, classes):
     for cls, d in classes.items():
         for k, a in d.items():
             if len(a) != n: raise RuntimeError("%s %s: longitud" % (cls, k))
-            prev = None
+            prev = None; lo, hi = (-0.60, 2.50) if cls in MEADOW_VARS else (-0.45, 1.20)   # mercados de prados finos: medias de GUS mas volatiles (p. ej. prados malos de Pequena Polonia 2025: 27.083 -> 60.000)
             for i, x in enumerate(a):
                 if x is None: prev = None; continue
                 if not isinstance(x, (int, float)) or not 500 <= x <= 400000: raise RuntimeError("%s %s %d: valor fuera de rango (%s)" % (cls, k, years[i], x))
-                if prev and not -0.45 < x / prev - 1 < 1.20: raise RuntimeError("%s %s %d: salto interanual absurdo (%s -> %s)" % (cls, k, years[i], prev, x))
+                if prev and not lo < x / prev - 1 < hi: raise RuntimeError("%s %s %d: salto interanual absurdo (%s -> %s)" % (cls, k, years[i], prev, x))
                 prev = x
         for i in range(n):
             reg = [a[i] for k, a in d.items() if k != "PL" and a[i] is not None]
