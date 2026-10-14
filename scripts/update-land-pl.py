@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 B = "https://bdl.stat.gov.pl/api/v1/"
 UA = {"User-Agent": "DehesaIndex/1.0 (+https://dehesaindex.com)", "Accept": "application/json"}
+if os.environ.get('BDL_CLIENT_ID'): UA['X-ClientId'] = os.environ['BDL_CLIENT_ID']   # clave gratuita de la API de BDL (mas cupo de peticiones); sin ella, limites anonimos
 VARS = {"total": 4899, "fertile": 4902, "medium": 4905, "barren": 4908}
 UNITS = {"011200000000": "MA", "012400000000": "SL", "020800000000": "LB", "023000000000": "WP", "023200000000": "ZP", "030200000000": "DS", "031600000000": "OP", "040400000000": "KP",
          "042200000000": "PM", "042800000000": "WN", "051000000000": "LD", "052600000000": "SK", "060600000000": "LU", "061800000000": "PK", "062000000000": "PD", "071400000000": "MZ"}

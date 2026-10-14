@@ -5,9 +5,10 @@ Licencia: aviso de copyright de GUS (https://stat.gov.pl/en/copyright/, leido el
 Solo nivel nacional (unit-level=0, POLAND) y solo el valor definitivo de cada ano (attrId 1); un dato con otro atributo (0, '-', estimacion) no se publica.
 Precios percibidos por el agricultor (mercado local) y de compra (acopio) anuales, cosechas por cultivo, ganado, produccion de carne, leche y huevos, y acopio mensual.
 Conversiones exactas: dt (quintal, 100 kg) -> t (x0,1; precio por dt -> por t x10). Sin estimaciones ni relleno de huecos."""
-import datetime, json, re, sys, time, urllib.error, urllib.request
+import datetime, json, os, re, sys, time, urllib.error, urllib.request
 B = 'https://bdl.stat.gov.pl/api/v1/'
 UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Accept': 'application/json'}
+if os.environ.get('BDL_CLIENT_ID'): UA['X-ClientId'] = os.environ['BDL_CLIENT_ID']   # clave gratuita de la API de BDL (mas cupo de peticiones); sin ella, limites anonimos
 LOG = []
 NREQ = [0, time.time()]
 def log(*a):

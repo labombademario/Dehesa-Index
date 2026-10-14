@@ -89,6 +89,7 @@ sources:
     name: Update Poland farmland prices (GUS, BDL)
     cron: ['10 8 4 * *']
     script: scripts/update-land-pl.py
+    env: {BDL_CLIENT_ID: '${{ secrets.BDL_CLIENT_ID }}'}
     timeout: 20
     script_timeout: 12
     continue: true
@@ -458,6 +459,7 @@ sources:
     name: Update Poland (GUS, Local Data Bank)
     cron: ['30 18 * * 2']
     script: scripts/update-poland.py
+    env: {BDL_CLIENT_ID: '${{ secrets.BDL_CLIENT_ID }}'}
     timeout: 100
     script_timeout: 90
     data: [poland-stats.json]
