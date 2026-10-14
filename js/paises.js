@@ -450,6 +450,32 @@
     var go = function () { if (window.DIGI && ST.c === cc) window.DIGI.mount(el, cc, lang()); };
     if (window.DIGI) go(); else { var sc = document.createElement('script'); sc.src = 'js/denominaciones.js?v=20261013'; sc.onload = go; document.head.appendChild(sc); }
   }
+  /* Selector de series: buscador + lista con grupos «tema: medida». La etiqueta se acorta quitando solo el nombre de la fuente (Eurostat), que ya se cita bajo el gráfico. */
+  var SP = { es: ['Buscar serie', 'p. ej. cebada rendimiento', '{n} de {m} series', 'Sin resultados: prueba con menos palabras.', 'Otras series'], en: ['Find a series', 'e.g. barley yield', '{n} of {m} series', 'No results: try fewer words.', 'Other series'], fr: ['Chercher une série', 'ex. orge rendement', '{n} séries sur {m}', 'Aucun résultat : essayez moins de mots.', 'Autres séries'], it: ['Cerca una serie', 'es. orzo resa', '{n} serie su {m}', 'Nessun risultato: prova con meno parole.', 'Altre serie'] };
+  function norm(x) { var r = String(x || '').toLowerCase(); try { r = r.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {} return r; }
+  function shortLab(x) { return TL(x.label).replace(/,\s*Eurostat\)/, ')').replace(/\s*\(Eurostat\)/, '').replace(/\s{2,}/g, ' ').trim(); }
+  function filterSeries(list, q) {
+    var tk = norm(q).split(/\s+/).filter(Boolean); if (!tk.length) return list;
+    return list.filter(function (x) { var h = norm(x.label + ' ' + TL(x.label)); return tk.every(function (k) { return h.indexOf(k) > -1; }); });
+  }
+  function seriesOpts(list, sel) {
+    var one = function (x, lab) { return '<option value="' + esc(x.id) + '"' + (x.id === sel ? ' selected' : '') + ' title="' + esc(TL(x.label)) + '">' + esc(lab) + '</option>'; };
+    var rows = list.map(function (x) { var l = shortLab(x), i = l.indexOf(': '); return { x: x, l: l, k: i > 2 && i < 70 ? l.slice(0, i) : '', m: i > 2 && i < 70 ? l.slice(i + 2) : l }; });
+    var cnt = {}; rows.forEach(function (r) { if (r.k) cnt[r.k] = (cnt[r.k] || 0) + 1; });
+    var out = '', seen = {}, loose = '';
+    rows.forEach(function (r) {
+      if (r.k && cnt[r.k] > 1) { if (seen[r.k]) return; seen[r.k] = 1; out += '<optgroup label="' + esc(r.k) + '">' + rows.filter(function (q) { return q.k === r.k; }).map(function (q) { return one(q.x, q.m); }).join('') + '</optgroup>'; }
+      else loose += one(r.x, r.l);
+    });
+    return out + (loose ? (out ? '<optgroup label="' + esc((SP[lang()] || SP.es)[4]) + '">' + loose + '</optgroup>' : loose) : '');
+  }
+  function seriesCount(n, m) { return (SP[lang()] || SP.es)[2].replace('{n}', nf(n, 0)).replace('{m}', nf(m, 0)); }
+  function seriesPicker(list, t) {
+    var q = SP[lang()] || SP.es, shown = filterSeries(list, ST.q || '');
+    return '<div style="flex:1 1 100%;font-size:13px"><label for="ps-q">' + esc(q[0]) + '</label><br><input id="ps-q" type="search" class="di-compare-select" autocomplete="off" placeholder="' + esc(q[1]) + '" value="' + esc(ST.q || '') + '" style="width:100%;box-sizing:border-box">' +
+      '<div id="ps-qn" class="di-movers-hint" role="status" aria-live="polite" style="margin:4px 0">' + esc(shown.length ? seriesCount(shown.length, list.length) : q[3]) + '</div>' +
+      '<select id="ps-s" class="di-compare-select" size="' + (shown.length < 8 ? Math.max(2, shown.length) : 8) + '" aria-label="' + esc(t.series) + '" style="width:100%">' + seriesOpts(shown, ST.s) + '</select></div>';
+  }
   function render() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;
     var t = tt(), c = DATA.countries[ST.c];
@@ -473,8 +499,7 @@
     var html = prof + '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
       sel('ps-c', t.country, opt(countries, ST.c, function (k) { return t.countries[k] || k; })) +
       sel('ps-g', t.group, groupOpts(groups, t)) +
-      sel('ps-s', t.series, optS) +
-      sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + '</div>';
+      sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + seriesPicker(list, t) + '</div>';
     if (cur) {
       var ch = cur.changePct;
       html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + (window.DehesaShared && window.DehesaShared.reportLink ? ' <span style="font-weight:400;letter-spacing:0">' + window.DehesaShared.reportLink({ id: ST.c + '/' + cur0.id, label: cur0.label, period: cur0.latestPeriod, value: cur0.latest, unit: cur0.unit }) + '</span>' : '') + '</div>' + fxBox(cur0, cur) + realBox(cur0, cur) + chartFor(cur) +
@@ -513,9 +538,14 @@
     var ow = document.getElementById('ps-detail'), on = document.getElementById('ps-ownnote'); if (ow && on) { var n = 0; Array.prototype.forEach.call(ow.children, function (e) { if (e.tagName === 'A' || /^ps-(de|mb|us|es|eu)$/.test(e.id) || e.getAttribute('data-fold') === 'ps-ifap') n++; }); if (!n) on.innerHTML = '<p class="di-movers-hint">' + esc((OWN[lang()] || OWN.es)[1]) + '</p>'; }
     var psAll = document.getElementById('ps-all'), psBody = document.getElementById('ps-all-body');
     if (psAll && psBody) { var fillAll = function () { if (psAll.open && !psBody.firstChild) psBody.innerHTML = allTbl(); }; psAll.addEventListener('toggle', fillAll); fillAll(); }
-    var psS = document.getElementById('ps-s');
-    if (psS && psS.options.length < list.length) { var fullS = function () { if (psS.options.length >= list.length) return; psS.innerHTML = list.map(optLabS).join(''); psS.value = ST.s; ['focus', 'pointerdown', 'touchstart', 'keydown', 'mouseenter'].forEach(function (ev) { psS.removeEventListener(ev, fullS); }); }; ['focus', 'pointerdown', 'touchstart', 'keydown', 'mouseenter'].forEach(function (ev) { psS.addEventListener(ev, fullS, { passive: true }); }); }
-    var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; var t0 = el.getBoundingClientRect().top; build(); holdAt(id, t0); var n = document.getElementById(id); if (n) { try { n.focus({ preventScroll: true }); } catch (er) {} } }; };
+    var psQ = document.getElementById('ps-q'), psS = document.getElementById('ps-s'), psN = document.getElementById('ps-qn');
+    if (psQ && psS) psQ.oninput = function () {
+      ST.q = psQ.value; var sh = filterSeries(list, ST.q), q = SP[lang()] || SP.es;
+      psS.innerHTML = seriesOpts(sh, ST.s); psS.size = sh.length < 8 ? Math.max(2, sh.length) : 8;
+      if (psN) psN.textContent = sh.length ? seriesCount(sh.length, list.length) : q[3];
+    };
+    if (psQ) psQ.onkeydown = function (e) { if (e.key === 'Enter' && psS && psS.options.length) { e.preventDefault(); ST.s = psS.options[0].value; var t1 = psQ.getBoundingClientRect().top; build(); holdAt('ps-q', t1); } else if (e.key === 'ArrowDown' && psS && psS.options.length) { e.preventDefault(); psS.focus(); } };
+    var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; ST.q = ''; } if (key === 'g') { ST.s = null; ST.q = ''; } var t0 = el.getBoundingClientRect().top; build(); holdAt(id, t0); var n = document.getElementById(id); if (n) { try { n.focus({ preventScroll: true }); } catch (er) {} } }; };
     var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; if (ST.fx) ST.real = false; var t0 = fb.getBoundingClientRect().top; build(); holdAt('ps-fx', t0); };
     var rb = document.getElementById('ps-real'); if (rb) rb.onchange = function () { ST.real = rb.checked; if (ST.real) { ST.fx = false; if (!RCPI) { window.DehesaChart.real.load().then(function (d) { RCPI = d || false; build(); }); return; } } build(); };
     var wb = document.getElementById('ps-watch'); if (wb && cur) wb.onclick = function () { DIWatch.toggle(ST.c, cur.id); build(); };
