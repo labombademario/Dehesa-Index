@@ -179,6 +179,36 @@
   "fr": "Fermage des terres agricoles, un an : prairies permanentes (EUR/ha, Eurostat)",
   "it": "Affitto dei terreni agricoli, un anno: prati permanenti (EUR/ha, Eurostat)"
  },
+ "Air emissions of agriculture, forestry and fishing (NACE A): ammonia (thousand t, Eurostat)": {
+  "en": "Air emissions of agriculture, forestry and fishing (NACE A): ammonia (thousand t, Eurostat)",
+  "es": "Emisiones atmosféricas de la agricultura, silvicultura y pesca (NACE A): amoníaco (miles de t, Eurostat)",
+  "fr": "Émissions atmosphériques de l'agriculture, sylviculture et pêche (NACE A) : ammoniac (milliers de t, Eurostat)",
+  "it": "Emissioni atmosferiche di agricoltura, silvicoltura e pesca (NACE A): ammoniaca (migliaia di t, Eurostat)"
+ },
+ "Air emissions of agriculture, forestry and fishing (NACE A): carbon dioxide (thousand t, Eurostat)": {
+  "en": "Air emissions of agriculture, forestry and fishing (NACE A): carbon dioxide (thousand t, Eurostat)",
+  "es": "Emisiones atmosféricas de la agricultura, silvicultura y pesca (NACE A): dióxido de carbono (miles de t, Eurostat)",
+  "fr": "Émissions atmosphériques de l'agriculture, sylviculture et pêche (NACE A) : dioxyde de carbone (milliers de t, Eurostat)",
+  "it": "Emissioni atmosferiche di agricoltura, silvicoltura e pesca (NACE A): anidride carbonica (migliaia di t, Eurostat)"
+ },
+ "Air emissions of agriculture, forestry and fishing (NACE A): greenhouse gases, total (thousand t CO2e, Eurostat)": {
+  "en": "Air emissions of agriculture, forestry and fishing (NACE A): greenhouse gases, total (thousand t CO2e, Eurostat)",
+  "es": "Emisiones atmosféricas de la agricultura, silvicultura y pesca (NACE A): gases de efecto invernadero, total (miles de t CO2e, Eurostat)",
+  "fr": "Émissions atmosphériques de l'agriculture, sylviculture et pêche (NACE A) : gaz à effet de serre, total (milliers de t CO2e, Eurostat)",
+  "it": "Emissioni atmosferiche di agricoltura, silvicoltura e pesca (NACE A): gas serra, totale (migliaia di t CO2e, Eurostat)"
+ },
+ "Air emissions of agriculture, forestry and fishing (NACE A): methane (thousand t CO2e, Eurostat)": {
+  "en": "Air emissions of agriculture, forestry and fishing (NACE A): methane (thousand t CO2e, Eurostat)",
+  "es": "Emisiones atmosféricas de la agricultura, silvicultura y pesca (NACE A): metano (miles de t CO2e, Eurostat)",
+  "fr": "Émissions atmosphériques de l'agriculture, sylviculture et pêche (NACE A) : méthane (milliers de t CO2e, Eurostat)",
+  "it": "Emissioni atmosferiche di agricoltura, silvicoltura e pesca (NACE A): metano (migliaia di t CO2e, Eurostat)"
+ },
+ "Air emissions of agriculture, forestry and fishing (NACE A): nitrous oxide (thousand t CO2e, Eurostat)": {
+  "en": "Air emissions of agriculture, forestry and fishing (NACE A): nitrous oxide (thousand t CO2e, Eurostat)",
+  "es": "Emisiones atmosféricas de la agricultura, silvicultura y pesca (NACE A): óxido nitroso (miles de t CO2e, Eurostat)",
+  "fr": "Émissions atmosphériques de l'agriculture, sylviculture et pêche (NACE A) : protoxyde d'azote (milliers de t CO2e, Eurostat)",
+  "it": "Emissioni atmosferiche di agricoltura, silvicoltura e pesca (NACE A): protossido di azoto (migliaia di t CO2e, Eurostat)"
+ },
  "All cereals: area declared under CAP": {
   "en": "All cereals: area declared under CAP",
   "es": "Total cereales: superficie declarada en la PAC",
