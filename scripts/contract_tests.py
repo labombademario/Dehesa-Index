@@ -2495,6 +2495,23 @@ def poland_regions(doc, errs, warns, stats):
                     break
     stats["poland-regions indicadores"] = len(got)
 
+def poland_farm_shop(doc, errs, warns, stats):
+    """Precio al agricultor frente a precio al consumo (GUS): pares leche, cerdo y vacuno; cada par con anos consecutivos, una serie 'farm' y al menos una 'retail' de la longitud de los anos,
+    valores positivos y precios al consumo por encima del precio al agricultor en el ultimo ano comun (leche, cerdo y vacuno en tienda siempre cuestan mas que en la granja)."""
+    P = {p.get("id"): p for p in doc.get("pairs", [])}
+    if set(P) != {"milk", "pork", "beef"}: errs.append("poland-farm-shop: pares distintos de leche, cerdo y vacuno"); return
+    for pid, p in P.items():
+        Y = p["years"]; n = len(Y)
+        if Y != list(range(Y[0], Y[-1] + 1)): errs.append("poland-farm-shop %s: anos con huecos" % pid); return
+        farm = [s for s in p["series"] if s["role"] == "farm"]; ret = [s for s in p["series"] if s["role"] == "retail"]
+        if len(farm) != 1 or not ret: errs.append("poland-farm-shop %s: falta la serie del agricultor o la de la tienda" % pid); return
+        for s in p["series"]:
+            if len(s["values"]) != n: errs.append("poland-farm-shop %s: longitud distinta de los anos" % pid); return
+            if any(v is not None and (not isinstance(v, (int, float)) or v <= 0) for v in s["values"]): errs.append("poland-farm-shop %s: valor no positivo" % pid); return
+        i = max(k for k in range(n) if farm[0]["values"][k] is not None and all(s["values"][k] is not None for s in ret))
+        if any(s["values"][i] <= farm[0]["values"][i] for s in ret): errs.append("poland-farm-shop %s %d: el precio en tienda no supera al del agricultor (¿series cambiadas?)" % (pid, Y[i])); return
+    stats["poland-farm-shop pares"] = len(P)
+
 def italy_land(doc, errs, warns, stats):
     """Valor de la tierra de Italia (CREA): anos consecutivos desde 1960, las 20 regiones sin huecos, las 5 circoscrizioni, salto interanual razonable (-40 % a +70 % por region, -30 % a +40 % el total),
     unidades coherentes (regiones y circoscrizioni en EUR/ha completos, nunca en miles) y total de Italia en 8.000-60.000 EUR/ha."""

@@ -474,7 +474,7 @@ sources:
     env: {BDL_CLIENT_ID: '${{ secrets.BDL_CLIENT_ID }}'}
     timeout: 100
     script_timeout: 90
-    data: [poland-stats.json]
+    data: [poland-stats.json, poland-farm-shop.json]
     log: poland-log.txt
     message: Datos Polonia (GUS BDL)
   - id: canada-stats

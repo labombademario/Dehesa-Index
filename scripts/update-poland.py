@@ -206,6 +206,22 @@ def extras():
     ages = [(1611871, 'Forest area, total (GUS)'), (1612043, 'Wooded forest area (GUS)')] + [(1611872 + k, 'Forest stands, age class %s (GUS)' % c) for k, c in ((1, 'I (1-20 years)'), (2, 'II (21-40)'), (3, 'III (41-60)'), (4, 'IV (61-80)'), (5, 'V (81-100)'), (6, 'VI (101-120)'), (7, 'VII (121+)'))]
     n += pick('P3935', [(i, l, 'ha', 1.0) for i, l in ages] + [(1611883, 'Growing stock of standing wood, total (GUS)', 'm3', 1.0)], 'environment')
     log('extras', n, 'series')
+PAIRS = [('milk', 'pl-gus-proc-4876', ['pl-gus-retail-4941']), ('pork', 'pl-gus-proc-4875', ['pl-gus-retail-4920', 'pl-gus-retail-4927']), ('beef', 'pl-gus-proc-4873', ['pl-gus-retail-4922', 'pl-gus-retail-4923'])]
+def farm_shop():
+    """data/poland-farm-shop.json: precio al agricultor (acopio, media anual) frente al precio al consumo (media anual) para leche, cerdo y vacuno. No es un margen: el agricultor cobra por litro o por kg de peso vivo
+    y la tienda cobra por litro o por kg de un corte; solo se publican las dos series de GUS alineadas por ano."""
+    out = []
+    for pid, farm, retail in PAIRS:
+        ids = [farm] + retail
+        if any(i not in OUT for i in ids): log('farm-shop: falta', [i for i in ids if i not in OUT]); continue
+        ys = sorted({int(p[0]) for i in ids for p in OUT[i]['points']})
+        ys = list(range(ys[0], ys[-1] + 1))
+        def al(i): d = {int(p[0]): p[1] for p in OUT[i]['points']}; return [d.get(y) for y in ys]
+        out.append({'id': pid, 'years': ys, 'series': [{'id': i, 'role': 'farm' if i == farm else 'retail', 'label': OUT[i]['label'], 'unit': OUT[i]['unit'], 'values': al(i)} for i in ids]})
+    if len(out) < 3: log('farm-shop: pares insuficientes (%d); no se escribe' % len(out)); return
+    doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'pairs': out,
+           'source': {'name': 'Statistics Poland (GUS), Local Data Bank (BDL): procurement prices of agricultural products (P1458) and retail prices of processed meat, fats and dairy products (P1463, P1464)', 'url': 'https://bdl.stat.gov.pl/', 'licence': 'Statistics Poland copyright notice: copying and own compilations allowed if the source is cited'}}
+    os.makedirs('data', exist_ok=True); json.dump(doc, open('data/poland-farm-shop.json', 'w'), ensure_ascii=False, separators=(',', ':')); log('farm-shop', len(out), 'pares')
 def main():
     for fn in (prices, monthly_prices, retail, extras, crops, livestock, output, procurement):
         try: fn()
@@ -215,6 +231,7 @@ def main():
     src = {'name': 'Statistics Poland (GUS), Local Data Bank (BDL)', 'url': 'https://bdl.stat.gov.pl/', 'license': 'Statistics Poland copyright notice: copying and own compilations allowed if the source is cited'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
            'countries': {'PL': {'name': 'Poland', 'extend': True, 'source': src, 'series': sorted(OUT.values(), key=lambda s: s['id'])}}, 'log': LOG[-30:]}
+    farm_shop()
     json.dump(doc, open('data/poland-stats.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     open('data/poland-log.txt', 'w').write('\n'.join(LOG) + '\n'); log('series', len(OUT))
 main()

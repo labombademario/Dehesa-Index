@@ -23,11 +23,11 @@ jobs:
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         uses: ./.github/actions/validate-files
         with:
-          files: data/poland-stats.json
+          files: data/poland-stats.json data/poland-farm-shop.json
       - name: Detectar revisiones oficiales
-        run: python3 scripts/detect-revisions.py data/poland-stats.json
+        run: python3 scripts/detect-revisions.py data/poland-stats.json data/poland-farm-shop.json
       - name: Publicar
-        run: bash scripts/publish-data.sh "Datos Polonia (GUS BDL)" data/poland-stats.json data/poland-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Datos Polonia (GUS BDL)" data/poland-stats.json data/poland-farm-shop.json data/poland-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

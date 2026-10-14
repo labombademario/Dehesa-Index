@@ -1176,6 +1176,12 @@
     "wood_removals"
    ]
   ],
+  "poland-farm-shop.json": [
+   "poland-farm-shop",
+   [
+    "poland_farm_shop"
+   ]
+  ],
   "poland-regions/regions.json": [
    "poland-regions",
    [

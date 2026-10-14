@@ -302,7 +302,18 @@ def regiones_pl():
             bars=[bars('Por voivodía, ' + str(Y[n]) + '|By voivodeship, ' + str(Y[n]) + '|Par voïvodie, ' + str(Y[n]) + '|Per voivodato, ' + str(Y[n]), unit, rows, dec)],
             note=t4('Valores definitivos de GUS por voivodía; la cosecha y el rendimiento se convierten de quintales a toneladas.|Final GUS values by voivodeship; harvest and yield are converted from quintals to tonnes.|Valeurs définitives de GUS par voïvodie ; récolte et rendement convertis des quintaux en tonnes.|Valori definitivi di GUS per voivodato; raccolto e resa convertiti da quintali a tonnellate.'),
             source={'name': 'GUS, Banco de Datos Locales', 'url': d['source']['url']}))
-    return {'id': 'regiones-pl', 'title': t4('Polonia por voivodía|Poland by voivodeship|Pologne par voïvodie|Polonia per voivodato'), 'emoji': '🗺️', 'blocks': out}
+    fs = j('poland-farm-shop.json')
+    FSN = {'milk': 'Leche de vaca|Cow’s milk|Lait de vache|Latte vaccino', 'pork': 'Cerdo|Pork|Porc|Maiale', 'beef': 'Vacuno|Beef|Bœuf|Manzo'}
+    for p in (fs or {}).get('pairs', []):
+        farm = [x for x in p['series'] if x['role'] == 'farm'][0]; ret = [x for x in p['series'] if x['role'] == 'retail'][0]; Y = p['years']; k = len(Y) - 1
+        while k > 0 and (farm['values'][k] is None or ret['values'][k] is None): k -= 1
+        fv, rv, u = farm['values'][k], ret['values'][k], ret['unit']
+        out.append(block('pl-farm-shop-' + p['id'], 'PL', 'Polonia: del campo a la tienda, ' + FSN[p['id']].split('|')[0].lower() + ' (GUS)|Poland: farm to shop, ' + FSN[p['id']].split('|')[1].lower() + ' (GUS)|Pologne : du champ au magasin, ' + FSN[p['id']].split('|')[2].lower() + ' (GUS)|Polonia: dal campo al negozio, ' + FSN[p['id']].split('|')[3].lower() + ' (GUS)', asOf=str(Y[k]),
+            stats=[stat('Precio al agricultor|Farm price|Prix à l’agriculteur|Prezzo all’agricoltore', fv, u, 2), stat('Precio en tienda|Shop price|Prix en magasin|Prezzo al negozio', rv, u, 2), stat('Veces el precio al agricultor|Times the farm price|Multiple du prix à la ferme|Volte il prezzo in azienda', round(rv / fv, 1), '×', 1)],
+            charts=[chart('Medias anuales|Annual averages|Moyennes annuelles|Medie annue', u, [('Agricultor|Farm|Ferme|Azienda', [[str(y), v] for y, v in zip(Y, farm['values']) if v is not None]), ('Tienda|Shop|Magasin|Negozio', [[str(y), v] for y, v in zip(Y, ret['values']) if v is not None])])],
+            note=t4('No es un margen: el agricultor cobra por litro o kg de peso vivo y la tienda por kg de un corte; la diferencia incluye despiece, transformación, transporte, impuestos y beneficio. Precios corrientes.|Not a margin: the farmer is paid per litre or live-weight kg and the shop charges per kg of a cut; the gap includes cutting, processing, transport, taxes and profit. Current prices.|Pas une marge : l’agriculteur est payé au litre ou au kg de poids vif et le magasin au kg d’une pièce ; l’écart inclut découpe, transformation, transport, taxes et profit. Prix courants.|Non è un margine: l’agricoltore è pagato al litro o al kg di peso vivo e il negozio al kg di un taglio; la differenza include sezionamento, trasformazione, trasporto, imposte e utile. Prezzi correnti.'),
+            source={'name': 'GUS, Banco de Datos Locales', 'url': fs['source']['url']}))
+    return {'id': 'regiones-pl', 'title': t4('Polonia: datos de GUS|Poland: GUS data|Pologne : données GUS|Polonia: dati GUS'), 'emoji': '🇵🇱', 'blocks': out}
 
 def cuentas():
     e = j('eu-farm-economics.json')

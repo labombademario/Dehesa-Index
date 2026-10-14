@@ -1,0 +1,24 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Polonia: precio al agricultor frente a precio al consumo (GUS/BDL)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "pairs", "source"],
+ "properties": {
+  "schemaVersion": {"type": ["integer", "string"]},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T"},
+  "source": {"type": "object", "required": ["name", "url", "licence"]},
+  "pairs": {
+   "type": "array",
+   "minItems": 3,
+   "items": {
+    "type": "object",
+    "required": ["id", "years", "series"],
+    "properties": {
+     "id": {"enum": ["milk", "pork", "beef"]},
+     "years": {"type": "array", "minItems": 3, "items": {"type": "integer", "minimum": 1990}},
+     "series": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["id", "role", "label", "unit", "values"], "properties": {"role": {"enum": ["farm", "retail"]}, "unit": {"enum": ["PLN/l", "PLN/kg"]}, "values": {"type": "array"}}}}
+    }
+   }
+  }
+ }
+}
