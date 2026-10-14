@@ -2,10 +2,19 @@
  "schemaVersion": 1,
  "country": "PL",
  "source": "sejm_eli",
- "status": "NOT_YET_RUN",
- "checkedAt": null,
+ "status": "OK",
+ "checkedAt": "2026-10-14",
  "baseline": {
-  "fingerprints": {},
+  "fingerprints": {
+   "DU/2023/412": {
+    "sha256": "0df0b1a60535b0561b2eca262daf286b52da7956098ee3e3f848d8baff9318ba",
+    "label": "ley del Plan Estratégico, metadatos y referencias (DU/2023/412)"
+   },
+   "DU/2024/1741": {
+    "sha256": "7524ef0617575a3d516b1d95e82a6aaddb8b22c720df3328872d69e9007b1b85",
+    "label": "ley del Plan Estratégico, metadatos y referencias (DU/2024/1741)"
+   }
+  },
   "acknowledged": [
    "DU/2023/2219",
    "DU/2024/1517",
@@ -20,9 +29,26 @@
   ]
  },
  "current": {
-  "fingerprints": {},
-  "candidates": [],
-  "lastScanned": null
+  "fingerprints": {
+   "DU/2023/412": {
+    "sha256": "0df0b1a60535b0561b2eca262daf286b52da7956098ee3e3f848d8baff9318ba",
+    "label": "ley del Plan Estratégico, metadatos y referencias (DU/2023/412)"
+   },
+   "DU/2024/1741": {
+    "sha256": "7524ef0617575a3d516b1d95e82a6aaddb8b22c720df3328872d69e9007b1b85",
+    "label": "ley del Plan Estratégico, metadatos y referencias (DU/2024/1741)"
+   }
+  },
+  "candidates": [
+   {
+    "id": "DU/2026/1173",
+    "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 3 września 2026 r. w sprawie wypłaty zaliczek za 2026 r. z tytułu niektórych rodzajów pomocy w ramach Planu Strategicznego dla Wspólnej Polityki Rolnej na lata 2023-2027",
+    "date": "2026-09-03",
+    "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1173"
+   }
+  ],
+  "lastScanned": null,
+  "search": "OK"
  },
  "reviewNeeded": [],
  "note": "Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan."
