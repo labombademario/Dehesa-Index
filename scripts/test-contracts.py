@@ -60,6 +60,8 @@ CASES = [
  ("france-land/land.json", "mediana absurda (euros por m2)", lambda d: [d["free"].__setitem__(k, [v / 10000 for v in a]) for k, a in list(d["free"].items())]),
  ("poland-land/land.json", "voivodia desconocida", lambda d: d["classes"]["total"].__setitem__("XX", d["classes"]["total"].pop("DS"))),
  ("poland-land/land.json", "falta una voivodia", lambda d: d["classes"]["fertile"].pop("MZ")),
+ ("poland-land/land.json", "pastos: falta una voivodia", lambda d: d["classes"]["meadow"].pop("MZ")),
+ ("poland-land/land.json", "pastos: serie mas corta", lambda d: d["classes"]["goodMeadow"]["DS"].pop()),
  ("poland-land/land.json", "serie mas corta que los anos", lambda d: d["classes"]["total"]["DS"].pop()),
  ("poland-land/land.json", "precio negativo", lambda d: d["classes"]["barren"]["DS"].__setitem__(-1, -5)),
  ("poland-land/land.json", "anos con hueco", lambda d: d["years"].__setitem__(-1, d["years"][-1] + 2)),

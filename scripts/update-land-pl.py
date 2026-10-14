@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Polonia: precio medio de la tierra arable (por hectárea) en el tráfico privado, por voivodía, 1999-hoy -> data/poland-land/land.json.
 Fuente: GUS (Oficina Central de Estadística), Banco de Datos Locales (BDL), API pública https://bdl.stat.gov.pl/api/v1/ , tema P1460
-«Average prices of arable land (per 1ha) in private turnover» (PLN/ha): variables 4899 (total), 4902 (fértil), 4905 (medianamente fértil), 4908 (pobre).
+«Average prices of arable land (per 1ha) in private turnover» (PLN/ha) y, desde 2013, tema P3415 (prados y pastos: total 450360, buenos 450359, malos 450358). Variables 4899 (total), 4902 (fértil), 4905 (medianamente fértil), 4908 (pobre).
 Licencia: aviso de copyright de GUS (registro de licencias, fuente gus_poland): copia y resúmenes propios permitidos citando la fuente.
 Solo se publica el valor definitivo de cada año (attrId 1); cualquier otro atributo (p. ej. 91, que llega con valor 0) es un hueco, nunca un cero.
 Las unidades se identifican por el código BDL del nivel 2 (no por el nombre). Validaciones (si falla alguna no se escribe nada): 16 voivodías, años consecutivos iguales en las cuatro variables,
@@ -14,6 +14,7 @@ B = "https://bdl.stat.gov.pl/api/v1/"
 UA = {"User-Agent": "DehesaIndex/1.0 (+https://dehesaindex.com)", "Accept": "application/json"}
 if os.environ.get('BDL_CLIENT_ID'): UA['X-ClientId'] = os.environ['BDL_CLIENT_ID']   # clave gratuita de la API de BDL (mas cupo de peticiones); sin ella, limites anonimos
 VARS = {"total": 4899, "fertile": 4902, "medium": 4905, "barren": 4908}
+MEADOW_VARS = {"meadow": 450360, "goodMeadow": 450359, "badMeadow": 450358}   # P3415: pastos/prados, serie anual desde 2013
 UNITS = {"011200000000": "MA", "012400000000": "SL", "020800000000": "LB", "023000000000": "WP", "023200000000": "ZP", "030200000000": "DS", "031600000000": "OP", "040400000000": "KP",
          "042200000000": "PM", "042800000000": "WN", "051000000000": "LD", "052600000000": "SK", "060600000000": "LU", "061800000000": "PK", "062000000000": "PD", "071400000000": "MZ"}
 LOG = []
@@ -42,22 +43,34 @@ def series(unit, years):
         if v.get("attrId") == 1 and v.get("val") is not None: by[int(v["year"])] = v["val"]
         else: log("  descartado %s %s (attr %s, val %s)" % (unit.get("name"), v.get("year"), v.get("attrId"), v.get("val")))
     return [by.get(y) for y in years]
+def one(var, level_fx, fixtures, years, strict_years):
+    """{unidad: serie alineada a years} de una variable; con strict_years los anos deben coincidir exactamente con years (las clases de tierra arable), si no deben ser un tramo final consecutivo de years (pastos, desde 2013)."""
+    l2, l0 = fetch(var, 2, fixtures), fetch(var, 0, fixtures)
+    if l2.get("variableId", var) != var or l0.get("variableId", var) != var: raise RuntimeError("la API devolvio otra variable")
+    res = {u["id"]: u for u in l2["results"]}
+    if set(res) != set(UNITS): raise RuntimeError("%s: unidades distintas de las 16 voivodias (%s)" % (var, sorted(set(res) ^ set(UNITS))[:4]))
+    ys = sorted({int(v["year"]) for u in l2["results"] for v in u["values"]} | {int(v["year"]) for u in l0["results"] for v in u["values"]})
+    if ys != list(range(ys[0], ys[-1] + 1)): raise RuntimeError("%s: anos con huecos" % var)
+    if len(l0["results"]) != 1 or l0["results"][0]["id"] != "000000000000": raise RuntimeError("%s: nivel nacional inesperado" % var)
+    return ys, res, l0["results"][0]
 def build(fixtures=None):
     classes, years = {}, None
     for cls, var in VARS.items():
-        l2, l0 = fetch(var, 2, fixtures), fetch(var, 0, fixtures)
-        if l2.get("variableId", var) != var or l0.get("variableId", var) != var: raise RuntimeError("la API devolvio otra variable")
-        res = {u["id"]: u for u in l2["results"]}
-        if set(res) != set(UNITS): raise RuntimeError("%s: unidades distintas de las 16 voivodias (%s)" % (cls, sorted(set(res) ^ set(UNITS))[:4]))
-        ys = sorted({int(v["year"]) for u in l2["results"] for v in u["values"]} | {int(v["year"]) for u in l0["results"] for v in u["values"]})
-        if ys != list(range(ys[0], ys[-1] + 1)): raise RuntimeError("%s: anos con huecos" % cls)
+        ys, res, nat = one(var, None, fixtures, years, True)
         if years is None: years = ys
         elif ys != years: raise RuntimeError("%s: anos distintos a los de la variable total" % cls)
         d = {UNITS[i]: series(res[i], years) for i in res}
-        if len(l0["results"]) != 1 or l0["results"][0]["id"] != "000000000000": raise RuntimeError("%s: nivel nacional inesperado" % cls)
-        d["PL"] = series(l0["results"][0], years)
+        d["PL"] = series(nat, years)
+        classes[cls] = d
+    for cls, var in MEADOW_VARS.items():
+        ys, res, nat = one(var, None, fixtures, years, False)
+        if ys[-1] != years[-1] or ys[0] < years[0]: raise RuntimeError("%s: anos fuera del rango de la tierra arable" % cls)
+        pad = [None] * (ys[0] - years[0])
+        d = {UNITS[i]: pad + series(res[i], ys) for i in res}
+        d["PL"] = pad + series(nat, ys)
         classes[cls] = d
     return years, classes
+
 def validate(years, classes):
     n = len(years)
     for cls, d in classes.items():

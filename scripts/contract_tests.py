@@ -2456,6 +2456,13 @@ def poland_land(doc, errs, warns, stats):
         for c, a in d.items():
             if len(a) != n: errs.append("poland-land %s %s: longitud distinta de los anos" % (cls, c)); return
             if any(x is not None and (not isinstance(x, (int, float)) or x <= 0) for x in a): errs.append("poland-land %s %s: valor no positivo" % (cls, c)); return
+    for cls in ("meadow", "goodMeadow", "badMeadow"):
+        d = doc["classes"].get(cls)
+        if d is None: continue
+        if not isinstance(d, dict) or set(d) != want: errs.append("poland-land %s: unidades distintas de las 16 voivodias y PL" % cls); return
+        for c, a in d.items():
+            if len(a) != n: errs.append("poland-land %s %s: longitud distinta de los anos" % (cls, c)); return
+            if any(x is not None and (not isinstance(x, (int, float)) or x <= 0) for x in a): errs.append("poland-land %s %s: valor no positivo" % (cls, c)); return
     v = sorted(a[-1] for k, a in doc["classes"]["total"].items() if k != "PL" and a[-1] is not None)
     if len(v) < 16 or not 20000 <= v[len(v) // 2] <= 150000: errs.append("poland-land: mediana de las voivodias del ultimo ano fuera de rango"); return
     stats["poland-land anos"] = n

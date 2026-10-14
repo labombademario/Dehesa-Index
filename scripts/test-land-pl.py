@@ -7,7 +7,8 @@ sp = importlib.util.spec_from_file_location("ulp", str(ROOT / "scripts" / "updat
 m.log = lambda *a: None
 years, cl = m.build(str(FX)); m.validate(years, cl)
 assert years[0] == 1999 and years[-1] >= 2025, years
-assert set(cl) == {"total", "fertile", "medium", "barren"} and len(cl["total"]) == 17
+assert set(cl) == {"total", "fertile", "medium", "barren", "meadow", "goodMeadow", "badMeadow"} and len(cl["total"]) == 17
+assert cl["meadow"]["PL"][:14] == [None] * 14 and cl["meadow"]["PL"][14] is not None, "los pastos empiezan en 2013 y antes son huecos"
 assert cl["fertile"]["LB"][-1] is None and cl["fertile"]["LB"][-2] is None, "el atributo 91 (valor 0) debe quedar como hueco"
 assert all(x is None or x > 0 for a in cl["total"].values() for x in a)
 def broken(fn):
@@ -27,7 +28,10 @@ assert broken(edit("data4902_l0.json", lambda j: j["results"][0]["values"][-1]._
 def drop_last_year(d):
     for n in ("data4905_l2.json", "data4905_l0.json"): edit(n, lambda j: [u["values"].pop() for u in j["results"]])(d)
 assert broken(drop_last_year), "una variable con un ano menos que las demas se acepto"
+def drop_meadow_year(d):
+    for n in ("data450360_l2.json", "data450360_l0.json"): edit(n, lambda j: [u["values"].pop() for u in j["results"]])(d)
+assert broken(drop_meadow_year), "pastos con un ano menos que la tierra arable se acepto"
 out = Path(tempfile.mkdtemp())
 sys.argv = ["x", "--out", str(out), "--fixtures", str(FX)]
 assert m.main() == 0 and (out / "poland-land" / "land.json").exists()
-print("test-land-pl OK: %d-%d, 16 voivodias, 4 clases" % (years[0], years[-1]))
+print("test-land-pl OK: %d-%d, 16 voivodias, 7 clases" % (years[0], years[-1]))
