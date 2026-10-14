@@ -3,7 +3,7 @@
  "generatedAt": "2026-10-14T15:45:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 176,
+  "ok": 177,
   "late": 1,
   "error": 1,
   "not_run": 2,
@@ -2428,9 +2428,20 @@
    ],
    "nextRun": "2026-11-05T08:40:00Z",
    "files": [],
-   "last": null,
-   "status": "pending",
-   "expectedEveryHours": 744.0
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-14T17:21:25Z",
+    "durationSec": 197,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38605960700"
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0,
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   }
   },
   {
    "workflow": "update-mars-us.yml",

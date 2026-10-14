@@ -29,7 +29,7 @@ INDICATORS += [("herd-cattle", 4409, "livestock", "Cattle: total herd", "head", 
                ("herd-poultry", 10520, "livestock", "Poultry, total", "head", 1.0, True), ("herd-laying-hens", 10522, "livestock", "Laying hens", "head", 1.0, True),
                ("slaughter-total", 4453, "production", "Production of animals for slaughter, total", "t", 1.0, True), ("slaughter-beef", 4454, "production", "Production of animals for slaughter, beef", "t", 1.0, True),
                ("slaughter-pork", 4456, "production", "Production of animals for slaughter, pork", "t", 1.0, True), ("slaughter-poultry", 4458, "production", "Production of animals for slaughter, poultry", "t", 1.0, True),
-               ("milk-production", 47795, "milk", "Cows' milk production", "t", 1000.0, True), ("milk-procurement", 49562, "milk", "Procurement of cows' milk", "t", 1000.0, True)]
+               ("milk-production", 47795, "milk", "Cows' milk production", "t", 1000.0, True)]
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)

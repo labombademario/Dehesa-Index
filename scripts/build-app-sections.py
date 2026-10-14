@@ -268,6 +268,42 @@ def insumos():
     return {'id': 'insumos', 'title': t4('Gasóleo, fertilizantes y tierra|Diesel, fertiliser and land|Gazole, engrais et terres|Gasolio, fertilizzanti e terreni'), 'emoji': '⛽', 'blocks': out}
 
 EUK = {'output': 'Producción agraria|Agricultural output|Production agricole|Produzione agricola', 'ic': 'Consumos intermedios|Intermediate consumption|Consommations intermédiaires|Consumi intermedi', 'energy': 'Energía|Energy|Énergie|Energia', 'fert': 'Fertilizantes|Fertilisers|Engrais|Fertilizzanti', 'feed': 'Piensos|Feed|Aliments du bétail|Mangimi', 'ppp': 'Fitosanitarios|Plant protection|Phytosanitaires|Fitosanitari', 'vet': 'Veterinario|Veterinary|Vétérinaire|Veterinario', 'entrep': 'Renta empresarial|Entrepreneurial income|Revenu d’entreprise|Reddito imprenditoriale', 'gva': 'Valor añadido bruto|Gross value added|Valeur ajoutée brute|Valore aggiunto lordo', 'nva': 'Valor añadido neto|Net value added|Valeur ajoutée nette|Valore aggiunto netto', 'factor': 'Renta de los factores|Factor income|Revenu des facteurs|Reddito dei fattori'}
+
+PLR = [  # (id del indicador, titulo 4 idiomas, unidad 4 idiomas, decimales)
+    ('crop-harvest-cereals-total', 'Polonia: cosecha de cereales por voivodía (GUS)|Poland: cereal harvest by voivodeship (GUS)|Pologne : récolte de céréales par voïvodie (GUS)|Polonia: raccolto di cereali per voivodato (GUS)', 't', 0),
+    ('crop-yield-wheat', 'Polonia: rendimiento del trigo por voivodía (GUS)|Poland: wheat yield by voivodeship (GUS)|Pologne : rendement du blé par voïvodie (GUS)|Polonia: resa del frumento per voivodato (GUS)', 't/ha', 2),
+    ('crop-harvest-rape-and-turnip-rape', 'Polonia: cosecha de colza por voivodía (GUS)|Poland: rapeseed harvest by voivodeship (GUS)|Pologne : récolte de colza par voïvodie (GUS)|Polonia: raccolto di colza per voivodato (GUS)', 't', 0),
+    ('herd-pigs', 'Polonia: censo de porcino por voivodía (GUS)|Poland: pig herd by voivodeship (GUS)|Pologne : cheptel porcin par voïvodie (GUS)|Polonia: suini per voivodato (GUS)', 'cabezas|head|têtes|capi', 0),
+    ('herd-dairy-cows', 'Polonia: vacas lecheras por voivodía (GUS)|Poland: dairy cows by voivodeship (GUS)|Pologne : vaches laitières par voïvodie (GUS)|Polonia: vacche da latte per voivodato (GUS)', 'cabezas|head|têtes|capi', 0),
+    ('milk-production', 'Polonia: leche de vaca producida por voivodía (GUS)|Poland: cow’s milk produced by voivodeship (GUS)|Pologne : lait de vache produit par voïvodie (GUS)|Polonia: latte vaccino prodotto per voivodato (GUS)', 't', 0),
+    ('slaughter-poultry', 'Polonia: carne de aves producida por voivodía (GUS)|Poland: poultry meat produced by voivodeship (GUS)|Pologne : viande de volaille produite par voïvodie (GUS)|Polonia: carne di pollame prodotta per voivodato (GUS)', 't', 0)]
+def regiones_pl():
+    import re as _r
+    d = j('poland-regions/regions.json')
+    if not d: return None
+    rn = (D.parent / 'js' / 'region-names.js').read_text(); m = _r.search(r"var PL = \{(.*?)\};", rn, _r.S)
+    names = {}
+    for k, v in _r.findall(r"(\w+): '([^']*)'", m.group(1) if m else ''):
+        q = v.split('|'); names[k] = {'en': q[0], 'es': q[1], 'fr': q[2], 'it': q[3]}
+    by = {x['id']: x for x in d['indicators']}; out = []
+    for iid, title, unit, dec in PLR:
+        x = by.get(iid)
+        if not x: continue
+        Y = x['years']; n = len(Y) - 1; nat = x['national']
+        while n > 0 and (nat[n] is None or any(a[n] is None for a in x['regions'].values())): n -= 1
+        rows = sorted(((names.get(k, {l: k for l in L4}), a[n]) for k, a in x['regions'].items() if a[n] is not None), key=lambda r: -r[1])
+        if not rows or nat[n] is None: continue
+        pv = nat[n - 1] if n > 0 else None
+        st = [stat('Total nacional|National total|Total national|Totale nazionale', nat[n], unit, dec, chg(pct(nat[n], pv), str(Y[n - 1])) if pv else None),
+              stat('Mayor voivodía|Top voivodeship|Première voïvodie|Primo voivodato', rows[0][1], unit, dec, rows[0][0]['es'])]
+        pts = [[str(y), nat[i]] for i, y in enumerate(Y) if nat[i] is not None][-25:]
+        out.append(block('pl-' + iid, 'PL', title, asOf=str(Y[n]), stats=st,
+            charts=[chart('Total nacional|National total|Total national|Totale nazionale', unit, [('Polonia|Poland|Pologne|Polonia', pts)])] if len(pts) > 1 else None,
+            bars=[bars('Por voivodía, ' + str(Y[n]) + '|By voivodeship, ' + str(Y[n]) + '|Par voïvodie, ' + str(Y[n]) + '|Per voivodato, ' + str(Y[n]), unit, rows, dec)],
+            note=t4('Valores definitivos de GUS por voivodía; la cosecha y el rendimiento se convierten de quintales a toneladas.|Final GUS values by voivodeship; harvest and yield are converted from quintals to tonnes.|Valeurs définitives de GUS par voïvodie ; récolte et rendement convertis des quintaux en tonnes.|Valori definitivi di GUS per voivodato; raccolto e resa convertiti da quintali a tonnellate.'),
+            source={'name': 'GUS, Banco de Datos Locales', 'url': d['source']['url']}))
+    return {'id': 'regiones-pl', 'title': t4('Polonia por voivodía|Poland by voivodeship|Pologne par voïvodie|Polonia per voivodato'), 'emoji': '🗺️', 'blocks': out}
+
 def cuentas():
     e = j('eu-farm-economics.json')
     if not e: return None
@@ -590,7 +626,7 @@ def main():
     gen = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     idx = {}
     keep = {'index.json'}
-    for fn in (analisis, relaciones, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
+    for fn in (analisis, relaciones, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, regiones_pl, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
         try: doc = fn()
         except Exception as e: print('ERROR en', fn.__name__, repr(e)); raise
         if not doc or not doc['blocks']: print('sin datos:', fn.__name__); continue

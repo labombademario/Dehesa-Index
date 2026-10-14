@@ -20,7 +20,7 @@
      "unit": {"enum": ["ha", "t/ha", "t", "head"]},
      "years": {"type": "array", "minItems": 3, "items": {"type": "integer", "minimum": 1990}},
      "national": {"type": "array"},
-     "regions": {"type": "object", "minProperties": 16, "maxProperties": 16},
+     "regions": {"type": "object", "minProperties": 16},
      "additive": {"type": "boolean"},
      "variable": {"type": "integer"}
     }
