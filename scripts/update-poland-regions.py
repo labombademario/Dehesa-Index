@@ -30,6 +30,17 @@ INDICATORS += [("herd-cattle", 4409, "livestock", "Cattle: total herd", "head", 
                ("slaughter-total", 4453, "production", "Production of animals for slaughter, total", "t", 1.0, True), ("slaughter-beef", 4454, "production", "Production of animals for slaughter, beef", "t", 1.0, True),
                ("slaughter-pork", 4456, "production", "Production of animals for slaughter, pork", "t", 1.0, True), ("slaughter-poultry", 4458, "production", "Production of animals for slaughter, poultry", "t", 1.0, True),
                ("milk-production", 47795, "milk", "Cows' milk production", "t", 1000.0, True)]
+SNAP = set()   # indicadores de una sola foto (censo agrario 2020, encuesta de agricultura de precision 2023): no tienen serie; se publican con su unico ano
+def snap(iid, var, label, unit, additive=True):
+    SNAP.add(iid); INDICATORS.append((iid, var, "census", label, unit, 1.0, additive))
+for key, var in (("total", 1633195), ("up-to-1-ha", 1633196), ("1-5-ha", 1633197), ("5-10-ha", 1633198), ("10-15-ha", 1633199), ("15-ha-plus", 1633200)): snap("census-farms-size-" + key, var, "Agricultural holdings by area of agricultural land: " + key.replace("-", " "), "farms")
+for key, var in (("cereal", 1641527), ("vegetables", 1641528), ("other-crops", 1641530)): snap("census-treatments-" + key, var, "Plant protection treatments on the surface: " + key.replace("-", " "), "pcs")
+for key, var in (("cereal", 1641532), ("vegetables", 1641533), ("other-crops", 1641535)): snap("census-treatments-farms-" + key, var, "Farms making plant protection treatments: " + key.replace("-", " "), "farms")
+for key, var in (("tractors", 1641445), ("combine-harvesters-cereals", 1641446), ("field-crop-sprayers", 1641450)): snap("census-machines-" + key, var, "Agricultural machines: " + key.replace("-", " "), "pcs")
+for key, var in (("tractors", 1641452), ("combine-harvesters-cereals", 1641453), ("field-crop-sprayers", 1641457)): snap("census-machines-farms-" + key, var, "Farms using: " + key.replace("-", " "), "farms")
+for key, var, u in (("solid-manure", 1640595, "t"), ("poultry-manure", 1640596, "t"), ("liquid-manure", 1640597, "m3"), ("slurry", 1640598, "m3")): snap("census-manure-" + key, var, "Natural fertiliser consumption: " + key.replace("-", " "), u)
+for key, var in (("solid-manure", 1640599), ("poultry-manure", 1640600), ("liquid-manure", 1640601), ("slurry", 1640602)): snap("census-manure-farms-" + key, var, "Farms using natural fertiliser: " + key.replace("-", " "), "farms")
+for key, var in (("robots", 1751757), ("gps-sprayers", 1751758), ("band-sprayers", 1751759), ("variable-rate", 1751760), ("crop-monitoring", 1751761), ("soil-samples", 1751762), ("software", 1751763), ("internet", 1751764)): snap("precision-" + key, var, "Farms with precision farming / digital tools: " + key.replace("-", " "), "farms")
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -60,6 +71,13 @@ def one_series(unit, years, mult):
 def build(fixtures=None):
     out = []
     for iid, var, grp, label, unit, mult, additive in INDICATORS:
+        try: out.append(one_indicator(iid, var, grp, label, unit, mult, additive, fixtures))
+        except Exception as e:
+            if iid not in SNAP: raise
+            log("censo/precision: %s omitido (%s)" % (iid, str(e)[:120]))
+    return [x for x in out if x]
+def one_indicator(iid, var, grp, label, unit, mult, additive, fixtures):
+    if True:
         l2, l0 = fetch(var, 2, fixtures), fetch(var, 0, fixtures)
         if l2.get("variableId", var) != var or l0.get("variableId", var) != var: raise RuntimeError("%s: la API devolvio otra variable" % iid)
         res = {u["id"]: u for u in l2["results"]}
@@ -71,18 +89,17 @@ def build(fixtures=None):
         nat = one_series(l0["results"][0], years, mult)
         # recorta los anos iniciales y finales sin ningun dato (la serie empieza cuando hay datos de voivodia)
         has = [any(a[i] is not None for a in reg.values()) for i in range(len(years))]
-        if not any(has): log("sin datos por voivodia:", iid); continue
+        if not any(has): log("sin datos por voivodia:", iid); return None
         s, e = has.index(True), len(has) - 1 - has[::-1].index(True)
         years = years[s:e + 1]; reg = {k: a[s:e + 1] for k, a in reg.items()}; nat = nat[s:e + 1]
-        out.append({"id": iid, "group": grp, "label": label, "unit": unit, "years": years, "national": nat, "regions": reg, "additive": additive, "variable": var})
-    return out
+        return {"id": iid, "group": grp, "label": label, "unit": unit, "years": years, "national": nat, "regions": reg, "additive": additive, "variable": var}
 def validate(ind):
-    if len(ind) < 25: raise RuntimeError("demasiados pocos indicadores (%d)" % len(ind))
+    if len(ind) < 60: raise RuntimeError("demasiados pocos indicadores (%d)" % len(ind))
     for x in ind:
         n = len(x["years"]); ids = x["id"]
         if len(x["national"]) != n or any(len(a) != n for a in x["regions"].values()): raise RuntimeError("%s: longitudes distintas" % ids)
         if any(v is not None and (not isinstance(v, (int, float)) or v < 0) for a in list(x["regions"].values()) + [x["national"]] for v in a): raise RuntimeError("%s: valor negativo o no numerico" % ids)
-        if x["years"][-1] < datetime.date.today().year - 3: raise RuntimeError("%s: ultimo ano %d demasiado antiguo" % (ids, x["years"][-1]))
+        if x["id"] not in SNAP and x["years"][-1] < datetime.date.today().year - 3: raise RuntimeError("%s: ultimo ano %d demasiado antiguo" % (ids, x["years"][-1]))
         last = None
         for i in range(n - 1, -1, -1):
             if x["national"][i] is not None and sum(1 for a in x["regions"].values() if a[i] is not None) == 16: last = i; break

@@ -15,10 +15,10 @@
     "required": ["id", "group", "label", "unit", "years", "national", "regions", "additive", "variable"],
     "properties": {
      "id": {"type": "string"},
-     "group": {"enum": ["crops", "livestock", "production", "milk"]},
+     "group": {"enum": ["crops", "livestock", "production", "milk", "census"]},
      "label": {"type": "string"},
-     "unit": {"enum": ["ha", "t/ha", "t", "head"]},
-     "years": {"type": "array", "minItems": 3, "items": {"type": "integer", "minimum": 1990}},
+     "unit": {"enum": ["ha", "t/ha", "t", "head", "farms", "pcs", "m3"]},
+     "years": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 1990}},
      "national": {"type": "array"},
      "regions": {"type": "object", "minProperties": 16},
      "additive": {"type": "boolean"},

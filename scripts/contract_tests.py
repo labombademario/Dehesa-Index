@@ -2478,7 +2478,7 @@ def poland_regions(doc, errs, warns, stats):
     y para las magnitudes aditivas la suma de las 16 voivodias dentro del 2 % del total nacional en el ultimo ano completo."""
     m = _upr_mod(); want = set(m.UNITS.values()); ids = [i[0] for i in m.INDICATORS]
     got = {x.get("id"): x for x in doc.get("indicators", [])}
-    miss = [i for i in ids if i not in got]
+    miss = [i for i in ids if i not in got and not i.startswith(("census-", "precision-"))]
     if len(miss) > 8: errs.append("poland-regions: faltan %d indicadores (%s...)" % (len(miss), ", ".join(miss[:3]))); return
     for i in miss: warns.append("poland-regions: indicador ausente %s" % i)
     for x in got.values():
