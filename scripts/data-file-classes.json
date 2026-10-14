@@ -94,6 +94,10 @@
    "class": "BUILD_ONLY",
    "note": "Series de Italia (Eurostat): alimentan el catalogo data/catalog/IT.json; paises.js carga por catalogo y no pide este fichero."
   },
+  "data/eurostat-structure-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Eurostat de FR, ES, PT, EL, BE, NL, DE e IT: tierra (precio y alquiler), estructura de explotaciones, plaguicidas, selvicultura y produccion ecologica; alimentan los catalogos por pais."
+  },
   "data/portugal-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de Portugal: alimentan el catalogo; paises.js carga por catalogo y no pide los *-stats.json."

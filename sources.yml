@@ -265,6 +265,15 @@ sources:
     data: [eurostat-eu-stats.json, eurostat-euw-stats.json, eurostat-eu2-stats.json]
     log: eurostat-eu-log.txt
     message: Datos Eurostat de los estados de la UE (modo reducido)
+  - id: eurostat-structure
+    name: Update Eurostat land, farm structure, pesticides, forestry and organic output (FR ES PT EL BE NL DE IT)
+    cron: ['20 18 * * 3']
+    script: scripts/update-eurostat-structure.py
+    timeout: 40
+    script_timeout: 30
+    data: [eurostat-structure-stats.json]
+    log: eurostat-structure-log.txt
+    message: Datos Eurostat de tierra, estructura de explotaciones, plaguicidas, selvicultura y ecologico (FR ES PT EL BE NL DE IT)
   - id: eurostat-depth
     name: Update Eurostat depth (ES, FR, DK, NL, BE, DE, EU-27)
     cron: ['40 17 * * 2,5']
