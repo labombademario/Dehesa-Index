@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T05:51:00Z",
+ "generatedAt": "2026-10-14T06:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 172,
+  "ok": 173,
   "late": 1,
   "error": 1,
   "not_run": 2,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "425e65f1",
+   "sha": "e8350142",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e7c9e258-7fe6-40c0-9efb-04fcb1e3073f",
-   "completedAt": "2026-10-14T05:39:07Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/010de7ea-c785-42ff-8b17-23919bf774d7",
+   "completedAt": "2026-10-14T06:20:08Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-14T03:42:42.564311+00:00",
-  "checkedAt": "2026-10-14T05:51:00Z"
+  "checkedAt": "2026-10-14T06:27:00Z"
  },
  "pipelines": [
   {
@@ -1395,7 +1395,7 @@
    "crons": [
     "15 6 * * 3"
    ],
-   "nextRun": "2026-10-14T06:15:00Z",
+   "nextRun": "2026-10-21T06:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1620,6 +1620,29 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-eurostat-structure.yml",
+   "name": "Update Eurostat land, farm structure, pesticides, forestry and organic output (FR ES PT EL BE NL DE IT)",
+   "crons": [
+    "20 18 * * 3"
+   ],
+   "nextRun": "2026-10-14T18:20:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-14T06:17:55Z",
+    "durationSec": 77,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38521387827"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-eurostat.yml",
    "name": "Dehesa Data — Eurostat agricultural indices",
    "crons": [
@@ -1810,7 +1833,7 @@
    "crons": [
     "15 6 * * 1,3,5"
    ],
-   "nextRun": "2026-10-14T06:15:00Z",
+   "nextRun": "2026-10-16T06:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1948,7 +1971,7 @@
    "crons": [
     "17 6 * * *"
    ],
-   "nextRun": "2026-10-14T06:17:00Z",
+   "nextRun": "2026-10-15T06:17:00Z",
    "files": [
     {
      "path": "data/gats.json",
@@ -2476,7 +2499,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-14T06:17:00Z",
+   "nextRun": "2026-10-14T09:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -2710,11 +2733,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-14T06:10:00Z",
+   "nextRun": "2026-10-14T09:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2737,7 +2760,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2754,7 +2777,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/products"
@@ -2765,15 +2788,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/country-pending.json",
@@ -2781,18 +2804,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -2800,7 +2823,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-14T03:48:07Z"
+     "lastChange": "2026-10-14T06:00:33Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3532,7 +3555,7 @@
    "crons": [
     "20 6 * * 3"
    ],
-   "nextRun": "2026-10-14T06:20:00Z",
+   "nextRun": "2026-10-21T06:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",

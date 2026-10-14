@@ -38,6 +38,14 @@
     "pattern": "e.catalog"
    }
   },
+  "data/catalog/DE.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Alemania (sin puntos): la ficha del pais los pide por DISeries.country('DE').",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
+  },
   "data/catalog/IT.json": {
    "class": "RUNTIME",
    "note": "Metadatos de las series de Italia (sin puntos): la ficha del pais los pide por DISeries.country('IT'); unos 40 KB comprimidos.",
@@ -93,10 +101,6 @@
   "data/italy-eurostat-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de Italia (Eurostat): alimentan el catalogo data/catalog/IT.json; paises.js carga por catalogo y no pide este fichero."
-  },
-  "data/eurostat-structure-stats.json": {
-   "class": "BUILD_ONLY",
-   "note": "Series de Eurostat de FR, ES, PT, EL, BE, NL, DE e IT: tierra (precio y alquiler), estructura de explotaciones, plaguicidas, selvicultura y produccion ecologica; alimentan los catalogos por pais."
   },
   "data/portugal-stats.json": {
    "class": "BUILD_ONLY",

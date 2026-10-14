@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-183 workflows (145 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+184 workflows (146 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -118,6 +118,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-vat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-vat.py | eu-vat.json | finish, validate-files |
 | update-eurostat-depth.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-depth.py | eurostat-depth-stats.json | finish, validate-files |
 | update-eurostat-eu.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-eu.py | eurostat-eu-stats.json, eurostat-eu2-stats.json, eurostat-euw-stats.json | finish, validate-files |
+| update-eurostat-structure.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eurostat-structure.py | eurostat-structure-stats.json | finish, validate-files |
 | update-eurostat.yml | a mano | mensual | qa-navigation.mjs, update-eurostat-indices.mjs | - | price-engine, publish |
 
 ## FR

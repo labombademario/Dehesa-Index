@@ -1,0 +1,1 @@
+{"schemaVersion":1,"country":"BE","group":"livestock","series":[{"id":"be-es-st-lsu-density","label":"Livestock density (livestock units per ha of UAA, Eurostat)","unit":"LSU/ha","frequency":"annual","points":[["2005",2.78],["2007",2.74],["2010",2.78],["2013",2.72],["2016",2.7],["2020",2.68],["2023",2.51]]}]}

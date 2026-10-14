@@ -3566,6 +3566,18 @@
     "IT": "eurostat"
    }
   },
+  "data/eurostat-structure-stats.json": {
+   "byCountry": {
+    "FR": "eurostat",
+    "ES": "eurostat",
+    "PT": "eurostat",
+    "EL": "eurostat",
+    "BE": "eurostat",
+    "NL": "eurostat",
+    "DE": "eurostat",
+    "IT": "eurostat"
+   }
+  },
   "data/eurostat-depth-stats.json": {
    "byCountry": {
     "ES": "eurostat",

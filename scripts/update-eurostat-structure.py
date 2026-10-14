@@ -33,7 +33,7 @@ def land():
         for key, codes in groups.items():
             codes.sort(key=lambda c: PRIO.index(c) if c in PRIO else 9)
             code = codes[0]; nm = names.get(code, code)
-            if len(codes) > 1: nm = 'arable land and permanent grassland (Eurostat reports one value for %s)' % ', '.join(names.get(c, c) for c in codes)
+            if len(codes) > 1: nm = 'arable land and permanent grassland (single value)'
             k += put('st-land-%s-%s' % (kind, code.lower()), 'inputs', label % nm, 'EUR/ha', 'annual', list(key), 'Eurostat %s %s' % (ds, '+'.join(codes)))
         return k
     if cc != 'ES':   # España: el precio ya sale de su pipeline propio y el alquiler lo publica el MAPA
