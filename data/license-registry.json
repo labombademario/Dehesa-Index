@@ -3558,26 +3558,27 @@
    "name": "Italy — CREA, Indagine sul mercato fondiario in Italia (Banca Dati dei Valori Fondiari)",
    "url": "https://www.crea.gov.it/en/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario",
    "country": "IT",
-   "licenseId": "CUSTOM",
-   "licenseName": "CREA: «È consentita la riproduzione citando la fonte» (reproduction allowed citing the source)",
-   "licenseUrl": "https://www.crea.gov.it/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario",
-   "commercialUse": "unclear",
-   "derivatives": "unclear",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (declarada por CREA en la página de la indagine)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
    "redistribution": "yes",
    "attributionRequired": true,
-   "attributionText": "Fonte: CREA, Indagine sul mercato fondiario in Italia",
-   "additionalRestrictions": "La nota de derechos de los informes solo dice que se permite la reproducción citando la fuente; no aborda de forma expresa el uso comercial ni las obras derivadas.",
+   "attributionText": "Fonte: CREA, Indagine sul mercato fondiario in Italia (CC BY 4.0)",
+   "additionalRestrictions": "Citar la fuente (CREA, Indagine sul mercato fondiario); las elaboraciones propias deben acreditarse como tales. CREA advierte de que las cifras son indicaciones generales del mercado y no sustituyen una tasación; el rapporto 2024 revisó superficies y regiones agrarias y sus valores 2024 no son comparables con la serie histórica.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": null,
-   "status": "PENDING",
-   "confidence": "low",
-   "evidence": "El rapporto 2024 (CREA, noviembre 2025, ISBN 9788833854601) lleva la nota «Copyright © 2025 by CREA ... È consentita la riproduzione citando la fonte». El libro Excel de la serie histórica se enlaza desde la página de la indagine, sin aviso de licencia propio. Permiso de reproducción con cita, pero sin mención expresa de uso comercial ni derivados.",
-   "used": false,
+   "verifiedAt": "2026-10-14",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "La página de CREA de la indagine (crea.gov.it/en/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario), leída el 14-10-2026, dice «All contents published on these pages are subject to the Creative Commons license – Attribution – version 4.0» y, en el apartado de la banca dati, que CREA autoriza el uso parcial o total de la base de datos citando la fuente, remitiendo a CC BY 4.0. El libro Excel de la serie histórica se enlaza desde esa misma página. Confianza media: la lectura se hizo con una herramienta de resumen y no se pudo abrir la nota legal general (crea.gov.it/note-legali).",
+   "used": true,
    "aliases": [],
-   "notes": "PENDING a propósito: la política del registro pide un permiso explícito de uso comercial y derivados para marcar VERIFIED. Mientras no se confirme (decisión del propietario), el pipeline lee y valida el libro pero NO escribe data/italy-land/land.json (es decir, no se publica) y la web y la app no muestran el bloque de Italia. Al pasarla a VERIFIED (used true) el siguiente ciclo lo publica. Para publicar: pasar la fuente a VERIFIED con used true y añadir en 'files' la entrada data/italy-land/ -> crea_fondiario.",
-   "legalConfidence": "PENDING",
-   "legalConfidenceReason": "Permiso de reproducción citando la fuente, sin mención expresa de uso comercial ni de obras derivadas."
+   "notes": "Verificada el 14-10-2026 (antes PENDING por un aviso de derechos que solo decía «riproduzione citando la fonte»). El pipeline publica data/italy-land/land.json.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia CC BY 4.0 declarada por el editor en la página de la indagine, que incluye la base de datos; nota legal general sin leer.",
+   "short": "CREA · mercato fondiario"
   }
  },
  "files": {
@@ -5039,6 +5040,12 @@
     "gus_poland"
    ],
    "notes": "Precio de la tierra arable de Polonia por voivodía (scripts/update-land-pl.py): precio medio por hectárea en el tráfico privado (PLN/ha), 1999-2025, de la API del Banco de Datos Locales de GUS (tema P1460)."
+  },
+  "data/italy-land/": {
+   "sources": [
+    "crea_fondiario"
+   ],
+   "notes": "Valor de la tierra de Italia por región (scripts/update-land-fr-it.py): valor fondiario medio (EUR/ha corrientes), 1960-2023, del libro «MF Regione» de la indagine del CREA."
   }
  },
  "derived": [
