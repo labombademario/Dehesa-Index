@@ -253,14 +253,14 @@ def more(T):
         for var, k, en, u, g in (("Anbaufläche Gemüse", "area", "Vegetable area", "ha", "crops"), ("Erntemenge Gemüse", "harvest", "Vegetable harvest", "t", "production"), ("Betriebe mit Gemüseanbau", "holdings", "Vegetable growers", "holdings", "production")):
             add("de-veg-total-" + k, g, en + ", Germany", u, "annual", tpts(R, var, {}, p_year), VN)
     VEG = {"Spargel": "asparagus", "Möhren": "carrots", "Speisezwiebeln": "dry onions", "Bundzwiebeln": "spring onions", "Weißkohl": "white cabbage", "Rotkohl": "red cabbage", "Blumenkohl": "cauliflower", "Broccoli": "broccoli", "Einlegegurken": "pickling cucumbers",
-           "Salatgurken": "salad cucumbers", "Gurken": "cucumbers", "Spinat": "spinach", "Eissalat": "iceberg lettuce", "Porree": "leek", "Rote Rüben": "beetroot", "Rote Bete": "beetroot", "Sellerie": "celeriac", "Kohlrabi": "kohlrabi", "Chinakohl": "Chinese cabbage", "Feldsalat": "lamb's lettuce", "Kürbis": "pumpkin", "Tomaten": "tomatoes", "Rettich": "radish"}
+           "Salatgurken": "salad cucumbers", "Gurken": "cucumbers", "Spinat": "spinach", "Eissalat": "iceberg lettuce", "Porree": "leek", "Rote Rüben": "beetroot", "Rote Bete": "beetroot", "sellerie": "celeriac", "Kohlrabi": "kohlrabi", "Chinakohl": "Chinese cabbage", "Feldsalat": "lamb's lettuce", "kürbis": "pumpkin", "Tomaten": "tomatoes", "Rettich": "radish"}
     if "41215-0002" in T:
         R = T["41215-0002"]; last = {}
         for r in R:
             if r["value_variable_label"].strip() == "Erntemenge Gemüse (Freiland)":
                 v = num(r["value"]); y = r["time"].strip()[:4]; c = labels(r).get(2, "")
                 if v is not None and c and (c not in last or y >= last[c][0]): last[c] = (y, v)
-        top = sorted((c for c in last if c != "Insgesamt" and "insgesamt" not in c.lower()), key=lambda c: -last[c][1])[:16]
+        top = sorted((c for c in last if "insgesamt" not in c.lower() and not c.startswith("Sonstige")), key=lambda c: -last[c][1])[:16]
         for c in top:
             nm = tr(c, VEG)
             add("de-veg-%s-harvest" % slug(nm), "production", "Field vegetable harvest, %s, Germany" % nm, "t", "annual", tpts(R, "Erntemenge Gemüse (Freiland)", {2: c}, p_year), VN)
@@ -282,14 +282,14 @@ def more(T):
         R = T["41252-0002"]; VI = "Estadistica de superficie de vinedo de Destatis (41252): superficie con uva de vinificacion por region vitivinicola, en hectareas."
         for g in sorted({labels(r).get(2) for r in R} - {"Insgesamt", None}):
             add("de-vine-area-" + slug(g), "crops", "Wine-grape vineyard area, %s, Germany" % g, "ha", "annual", tpts(R, "Mit Keltertrauben bestockte Rebfläche", {2: g, 3: "Insgesamt"}, p_year), VI)
-        VAR = {"Riesling": "Riesling", "Müller-Thurgau (Rivaner)": "Muller-Thurgau", "Blauer Spätburgunder": "Pinot noir", "Grauer Burgunder": "Pinot gris", "Weißer Burgunder": "Pinot blanc", "Dornfelder": "Dornfelder", "Silvaner": "Silvaner", "Weißer Riesling": "Riesling"}
+        VAR = {"Riesling": "Riesling", "Müller-Thurgau (Rivaner)": "Muller-Thurgau", "Blauer Spätburgunder": "Pinot noir", "Grauer Burgunder": "Pinot gris", "Weißer Burgunder": "Pinot blanc", "Dornfelder": "Dornfelder", "Grauer Burgunder": "Pinot gris", "Silvaner": "Silvaner", "Weißer Riesling": "Riesling"}
         last = {}
         for r in R:
             L = labels(r)
             if L.get(2) == "Insgesamt" and L.get(3) not in ("Insgesamt", None):
                 v = num(r["value"]); y = r["time"].strip()[:4]
                 if v is not None and (L[3] not in last or y >= last[L[3]][0]): last[L[3]] = (y, v)
-        for c in sorted(last, key=lambda c: -last[c][1])[:8]:
+        for c in sorted((c for c in last if c not in ("Rotwein", "Weißwein", "Weisswein") and not c.startswith(("Sonstige", "Andere"))), key=lambda c: -last[c][1])[:8]:
             add("de-vine-variety-" + slug(VAR.get(c, c)), "crops", "Wine-grape area, %s, Germany" % VAR.get(c, c), "ha", "annual", tpts(R, "Mit Keltertrauben bestockte Rebfläche", {2: "Insgesamt", 3: c}, p_year), VI)
     CS = "Estructura de la cabana de Destatis (41312, 41313, 41314): numero de explotaciones y de animales segun el tamano del hato, en mayo y noviembre (la frecuencia depende de la especie)."
     def herd(tab, hold_var, head_var, kind, en_h, en_a, sizes):
