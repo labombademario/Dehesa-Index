@@ -2,14 +2,28 @@
  "schemaVersion": 1,
  "country": "IT",
  "source": "masaf_it",
- "status": "NOT_YET_RUN",
- "checkedAt": null,
+ "status": "OK",
+ "checkedAt": "2026-10-14",
  "baseline": {
-  "fingerprints": {},
+  "fingerprints": {
+   "dm660087": {
+    "sha256": "12c214756642da70b4eea1873eb4c7c62dbbd39feeaea52f222bec45fff547fa",
+    "chars": 159948,
+    "label": "decreto ministerial 660087/2022 (texto coordinado del MASAF)",
+    "updatedAt": null
+   }
+  },
   "acknowledged": []
  },
  "current": {
-  "fingerprints": {},
+  "fingerprints": {
+   "dm660087": {
+    "sha256": "12c214756642da70b4eea1873eb4c7c62dbbd39feeaea52f222bec45fff547fa",
+    "chars": 159948,
+    "label": "decreto ministerial 660087/2022 (texto coordinado del MASAF)",
+    "updatedAt": null
+   }
+  },
   "candidates": [],
   "lastScanned": null
  },
