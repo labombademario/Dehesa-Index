@@ -1,3 +1,4 @@
-Italia leida y validada (1960-2023) pero NO publicada: la licencia de crea_fondiario no esta VERIFIED en data/license-registry.json
-Francia 2024: sin tablas utilizables (no se encontro la cabecera de anos de las tablas)
-OK Francia: edicion 2023, años [2021, 2022, 2023], 91 departamentos libres, 58 alquilados
+OK Italia: 1960-2023, 20 regiones, total 22809.4 €/ha (2023)
+Francia 2024: no se pudo descargar (https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2)
+Francia 2023: no se pudo descargar (https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2)
+ERROR Francia: ninguna edicion de Agreste con tablas utilizables
