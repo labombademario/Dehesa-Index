@@ -1176,6 +1176,12 @@
     "wood_removals"
    ]
   ],
+  "poland-regions/regions.json": [
+   "poland-regions",
+   [
+    "poland_regions"
+   ]
+  ],
   "poland-land/land.json": [
    "poland-land",
    [

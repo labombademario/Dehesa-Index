@@ -2467,6 +2467,34 @@ def poland_land(doc, errs, warns, stats):
     if len(v) < 16 or not 20000 <= v[len(v) // 2] <= 150000: errs.append("poland-land: mediana de las voivodias del ultimo ano fuera de rango"); return
     stats["poland-land anos"] = n
 
+def _upr_mod():
+    if "_upr" not in globals():
+        import importlib.util
+        sp = importlib.util.spec_from_file_location("upr_ct", str(Path(__file__).resolve().parent / "update-poland-regions.py")); globals()["_upr"] = importlib.util.module_from_spec(sp); sp.loader.exec_module(globals()["_upr"])
+    return globals()["_upr"]
+
+def poland_regions(doc, errs, warns, stats):
+    """Polonia por voivodia (GUS/BDL): los 42 indicadores esperados, cada uno con las 16 voivodias y el total nacional de la longitud de sus anos (consecutivos), sin valores negativos,
+    y para las magnitudes aditivas la suma de las 16 voivodias dentro del 2 % del total nacional en el ultimo ano completo."""
+    m = _upr_mod(); want = set(m.UNITS.values()); ids = [i[0] for i in m.INDICATORS]
+    got = {x.get("id"): x for x in doc.get("indicators", [])}
+    miss = [i for i in ids if i not in got]
+    if len(miss) > 8: errs.append("poland-regions: faltan %d indicadores (%s...)" % (len(miss), ", ".join(miss[:3]))); return
+    for i in miss: warns.append("poland-regions: indicador ausente %s" % i)
+    for x in got.values():
+        Y = x["years"]; n = len(Y)
+        if Y != list(range(Y[0], Y[-1] + 1)): errs.append("poland-regions %s: anos desordenados o con huecos" % x["id"]); return
+        if set(x["regions"]) != want: errs.append("poland-regions %s: unidades distintas de las 16 voivodias" % x["id"]); return
+        if len(x["national"]) != n or any(len(a) != n for a in x["regions"].values()): errs.append("poland-regions %s: longitud distinta de los anos" % x["id"]); return
+        if any(v is not None and (not isinstance(v, (int, float)) or v < 0) for a in list(x["regions"].values()) + [x["national"]] for v in a): errs.append("poland-regions %s: valor negativo" % x["id"]); return
+        if x.get("additive"):
+            for i in range(n - 1, -1, -1):
+                vals = [a[i] for a in x["regions"].values()]
+                if x["national"][i] is not None and None not in vals:
+                    if x["national"][i] and abs(sum(vals) / x["national"][i] - 1) > 0.02: errs.append("poland-regions %s %d: la suma de las voivodias no cuadra con el total nacional" % (x["id"], Y[i])); return
+                    break
+    stats["poland-regions indicadores"] = len(got)
+
 def italy_land(doc, errs, warns, stats):
     """Valor de la tierra de Italia (CREA): anos consecutivos desde 1960, las 20 regiones sin huecos, las 5 circoscrizioni, salto interanual razonable (-40 % a +70 % por region, -30 % a +40 % el total),
     unidades coherentes (regiones y circoscrizioni en EUR/ha completos, nunca en miles) y total de Italia en 8.000-60.000 EUR/ha."""

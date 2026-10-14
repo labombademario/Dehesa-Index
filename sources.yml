@@ -97,6 +97,18 @@ sources:
     data: [poland-land/land.json, land-pl-log.txt]
     extra: ['!data/poland-land']
     message: Precio de la tierra arable de Polonia por voivodía (GUS, BDL)
+  - id: regions-pl
+    name: Update Poland crops, livestock and milk by voivodeship (GUS, BDL)
+    cron: ['40 8 5 * *']
+    script: scripts/update-poland-regions.py
+    env: {BDL_CLIENT_ID: '${{ secrets.BDL_CLIENT_ID }}'}
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/poland-regions)
+    data: [poland-regions/regions.json, poland-regions-log.txt]
+    extra: ['!data/poland-regions']
+    message: Cultivos, ganado y leche de Polonia por voivodía (GUS, BDL)
   - id: spain-balances
     name: Update Spain cereal balance sheets (MAPA)
     cron: ['35 7 * * 4']

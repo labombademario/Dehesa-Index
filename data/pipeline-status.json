@@ -2421,6 +2421,18 @@
    "expectedEveryHours": 744.0
   },
   {
+   "workflow": "update-regions-pl.yml",
+   "name": "Update Poland crops, livestock and milk by voivodeship (GUS, BDL)",
+   "crons": [
+    "40 8 5 * *"
+   ],
+   "nextRun": "2026-11-05T08:40:00Z",
+   "files": [],
+   "last": null,
+   "status": "pending",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-mars-us.yml",
    "name": "Dehesa Data — USDA AMS MARS (harina de soja)",
    "crons": [

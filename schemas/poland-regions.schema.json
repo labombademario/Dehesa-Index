@@ -1,0 +1,30 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Polonia: cultivos, ganado, carne y leche por voivodia (GUS/BDL)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "indicators", "source"],
+ "properties": {
+  "schemaVersion": {"type": ["integer", "string"]},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T"},
+  "source": {"type": "object", "required": ["name", "url", "licence"]},
+  "indicators": {
+   "type": "array",
+   "minItems": 25,
+   "items": {
+    "type": "object",
+    "required": ["id", "group", "label", "unit", "years", "national", "regions", "additive", "variable"],
+    "properties": {
+     "id": {"type": "string"},
+     "group": {"enum": ["crops", "livestock", "production", "milk"]},
+     "label": {"type": "string"},
+     "unit": {"enum": ["ha", "t/ha", "t", "head"]},
+     "years": {"type": "array", "minItems": 3, "items": {"type": "integer", "minimum": 1990}},
+     "national": {"type": "array"},
+     "regions": {"type": "object", "minProperties": 16, "maxProperties": 16},
+     "additive": {"type": "boolean"},
+     "variable": {"type": "integer"}
+    }
+   }
+  }
+ }
+}
