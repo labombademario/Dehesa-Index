@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 // Pestaña «Seguro agrario» de Precios con navegador real (servidor local en :8123): cada cifra de la tarjeta de EE. UU. es la de data/crop-insurance.json,
 // (cada ubicacion de la pagina muestra solo el seguro de su zona: EE. UU., Canada, Europa=Espana; Reino Unido avisa de que no hay datos)
-// lo mismo con la tarjeta y las tablas de Canadá (data/crop-insurance-ca.json), las tablas tienen sus filas, el selector de año cambia el titulo, no hay undefined/NaN, no hay desbordes a 390 px y la tarjeta de España declara que esta pendiente.
+// lo mismo con la tarjeta y las tablas de Canadá (data/crop-insurance-ca.json), las tablas tienen sus filas, el selector de año cambia el titulo, no hay undefined/NaN, no hay desbordes a 390 px y España solo muestra la serie de ENESA (sin la tarjeta de Agroseguro, descartada el 14-oct-2026).
 // Uso: node scripts/test-seguro.mjs [--base http://localhost:8123]
 import fs from 'node:fs';
 import { execSync } from 'node:child_process';
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
-const D = JSON.parse(fs.readFileSync('data/crop-insurance.json', 'utf8')), E = JSON.parse(fs.readFileSync('data/insurance-es.json', 'utf8')), C = JSON.parse(fs.readFileSync('data/crop-insurance-ca.json', 'utf8')), N = JSON.parse(fs.readFileSync('data/enesa-contratacion.json', 'utf8'));
+const D = JSON.parse(fs.readFileSync('data/crop-insurance.json', 'utf8')), C = JSON.parse(fs.readFileSync('data/crop-insurance-ca.json', 'utf8')), N = JSON.parse(fs.readFileSync('data/enesa-contratacion.json', 'utf8'));
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
 const grp = (n, sep) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, sep);
@@ -22,12 +22,12 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const page = await ctx.newPage(), errs = [];
   page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/ERR_|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 120)); });
   const tag = lang + '@' + w, sep = lang === 'en' ? ',' : lang === 'fr' ? ' ' : '.';
-  /* Cada ubicacion muestra SOLO el seguro de su zona (9-oct-2026): EE. UU. -> RMA, Canada -> StatCan, Europa -> Espana (Agroseguro + ENESA), Reino Unido -> aviso sin datos. */
+  /* Cada ubicacion muestra SOLO el seguro de su zona (9-oct-2026): EE. UU. -> RMA, Canada -> StatCan, Europa -> Espana (ENESA), Reino Unido -> aviso sin datos. */
   const open = async (reg, sel) => { await page.goto(BASE + '/precios.html?tab=seguro&region=' + reg, { waitUntil: 'networkidle' }); if (sel) await page.waitForSelector(sel, { timeout: 8000 }).catch(() => {}); return page.evaluate(() => (document.getElementById('pr-category') || document.body).innerText); };
   const tables = () => page.evaluate(() => { const o = {}; document.querySelectorAll('#pr-category table[data-tbl]').forEach(t => { o[t.getAttribute('data-tbl')] = [...t.querySelectorAll('tbody tr')].map(r => [...r.children].map(c => c.innerText.trim())); }); return o; });
   const cites = src => page.evaluate(s => !!document.querySelector('#pr-category .di-cite[data-src="' + s + '"]'), src);
-  const only = async (t, want) => { const has = { us: !!(await page.$('#sg-year')), ca: !!(await page.$('#sg-ca-year')), es: /Agroseguro/.test(t), enesa: /ENESA/.test(t) };
-    ok(tag + ' ' + want + ': solo el seguro de su zona ' + JSON.stringify(has), Object.keys(has).every(k => has[k] === (want === 'eu' ? (k === 'es' || k === 'enesa') : k === want))); };
+  const only = async (t, want) => { const has = { us: !!(await page.$('#sg-year')), ca: !!(await page.$('#sg-ca-year')), enesa: /ENESA/.test(t) };
+    ok(tag + ' ' + want + ': solo el seguro de su zona ' + JSON.stringify(has), Object.keys(has).every(k => has[k] === (want === 'eu' ? k === 'enesa' : k === want))); };
   const top = (g, k) => Object.keys(g).filter(c => g[c][y]).sort((a, b) => g[b][y][k] - g[a][y][k]);
   let text = await open('us', '#sg-year'), tb = await tables();
   await only(text, 'us');
@@ -74,12 +74,11 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   }
   text = await open('eu', 'table[data-tbl="es-enesa"]'); tb = await tables();
   await only(text, 'eu');
-  ok(tag + ': cifras de Espana de insurance-es.json', text.includes(grp(E.stats.premiumsMEur, sep)) && text.includes(grp(E.stats.indemnitiesMEur, sep)));
   const en = (tb['es-enesa'] || []), ea = N.annual.slice().reverse();
   ok(tag + ': ENESA: ' + ea.length + ' filas, una por ejercicio', en.length === ea.length && en.every((r, i) => r[0].startsWith(String(ea[i].year))));
   ok(tag + ': ENESA: las pólizas de cada ejercicio son las del JSON', en.length === ea.length && en.every((r, i) => ea[i].polizas == null ? r[1] === '—' : r[1] === grp(ea[i].polizas, sep)));
   ok(tag + ': ENESA: se declara histórico y no actual', /31/.test(text) && await cites('enesa'));
-  if (lang === 'es' && w === 1280) ok('es: la tarjeta de España avisa de que esta pendiente', /sin contrastar/i.test(text));
+  if (lang === 'es' && w === 1280) ok('es: ya no hay tarjeta de Agroseguro con cifras sin contrastar', !/sin contrastar/i.test(text));
   if (w === 390) ok(tag + ' eu: sin desborde horizontal', await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1));
   text = await open('uk');
   await page.waitForTimeout(300); text = await page.evaluate(() => document.getElementById('pr-category').innerText);

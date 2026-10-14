@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T03:45:53Z",
+ "generatedAt": "2026-10-14T05:54:05Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 149,
+  "total": 148,
   "byStatus": {
-   "ACTIVE": 119,
+   "ACTIVE": 118,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -493,18 +493,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
-   "licenseId": "UNKNOWN",
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
    "commercialReuse": "unclear",
    "derivatives": "unclear",
    "attribution": "Quelle: Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
-   "lastChecked": "2026-10-01",
+   "lastChecked": "2026-10-14",
    "verification": "NOT_REVERIFIED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: uso comercial unclear, derivados unclear"
     ]
    },
    "ingestionStatus": "LICENSE_REVIEW",
@@ -513,8 +513,8 @@
    "evidence": [
     "claude/alemania.md"
    ],
-   "notes": "Licencia PENDING en el registro (BLE).",
-   "legalConfidence": "PENDING",
+   "notes": "Licencia VERIFIED en el registro por decision del propietario (BLE, 2026-10-14).",
+   "legalConfidence": "OWNER_ACCEPTED",
    "registryAlignment": "ALIGNED"
   },
   {
@@ -543,17 +543,17 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
-   "licenseId": "UNKNOWN",
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
    "commercialReuse": "unclear",
    "derivatives": "unclear",
-   "lastChecked": "2026-09-30",
+   "lastChecked": "2026-10-14",
    "verification": "NOT_REVERIFIED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: uso comercial unclear, derivados unclear"
     ]
    },
    "ingestionStatus": "LICENSE_REVIEW",
@@ -566,7 +566,7 @@
     "claude/portugal.md"
    ],
    "notes": "Cereales, corcho y fruta figuran en la nota sin detalle de producto y no se cuentan.",
-   "legalConfidence": "PENDING",
+   "legalConfidence": "OWNER_ACCEPTED",
    "registryAlignment": "ALIGNED"
   },
   {
@@ -1463,46 +1463,6 @@
    ]
   },
   {
-   "sourceId": "agroseguro",
-   "registryId": "agroseguro",
-   "country": "ES",
-   "scope": "integrated",
-   "institution": "Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
-   "access": {
-    "api": null,
-    "csv": null,
-    "json": null
-   },
-   "licenseStatus": "PENDING",
-   "licenseId": "UNKNOWN",
-   "commercialReuse": "unclear",
-   "derivatives": "unclear",
-   "attribution": "Fuente: Agroseguro",
-   "lastChecked": "2026-10-05",
-   "verification": "REGISTRY",
-   "legalConfidence": "PENDING",
-   "registryAlignment": "ALIGNED",
-   "datasetIdentified": true,
-   "gate": {
-    "result": "NOT_READY",
-    "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
-    ]
-   },
-   "ingestionStatus": "ACTIVE",
-   "technicalBlockers": [],
-   "canStart": false,
-   "evidence": [
-    "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
-  },
-  {
    "sourceId": "alberta_ag",
    "registryId": "alberta_ag",
    "country": "CA",
@@ -1860,20 +1820,20 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
-   "licenseId": "UNKNOWN",
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
    "commercialReuse": "unclear",
    "derivatives": "unclear",
    "attribution": "Quelle: Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
-   "lastChecked": "2026-10-01",
+   "lastChecked": "2026-10-14",
    "verification": "REGISTRY",
-   "legalConfidence": "PENDING",
+   "legalConfidence": "OWNER_ACCEPTED",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: uso comercial unclear, derivados unclear"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -1881,8 +1841,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "bls",
@@ -2128,19 +2087,19 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
-   "licenseId": "UNKNOWN",
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
    "commercialReuse": "unclear",
    "derivatives": "unclear",
-   "lastChecked": "2026-10-01",
+   "lastChecked": "2026-10-14",
    "verification": "REGISTRY",
-   "legalConfidence": "PENDING",
+   "legalConfidence": "OWNER_ACCEPTED",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: uso comercial unclear, derivados unclear"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -2148,8 +2107,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "census",

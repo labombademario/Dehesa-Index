@@ -122,7 +122,7 @@
     eia: 'https://www.eia.gov/petroleum/gasdiesel/',
     usdaAgTransportFuel: 'https://agtransport.usda.gov/Fuel/Weekly-On-Highway-Diesel-Fuel-Prices/x88w-atzp',
     euOilBulletin: 'https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en',
-    agroseguro: 'https://agroseguro.es/',
+    enesa: 'https://www.mapa.gob.es/es/enesa/datos_sobre_el_seguro/informes_de_contratacion_del_seguro_agrario/',
     rma: 'https://www.rma.usda.gov/',
     mapaCoyuntura: 'https://www.mapa.gob.es/es/estadistica/temas/publicaciones/informe-semanal-coyuntura',
     franceAgriMerVin: 'https://www.franceagrimer.fr/chiffre-et-analyses-economiques/les-marches-la-production-de-vin',
@@ -155,7 +155,7 @@
       aceite: { label: 'Aceite de oliva', sources: [{ name: 'Comisión Europea', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Frutas y hortalizas', sources: [{ name: 'Comisión Europea', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energía', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Seguro agrario', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
+      seguro: { label: 'Seguro agrario', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Vino a granel', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Madera', sources: [{ name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }] }
     },
@@ -172,7 +172,7 @@
       aceite: { label: 'Olive Oil', sources: [{ name: 'European Commission', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Fruit and vegetables', sources: [{ name: 'European Commission', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energy', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Weekly Oil Bulletin (EC)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Crop insurance', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
+      seguro: { label: 'Crop insurance', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Bulk wine', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Timber', sources: [{ name: 'Forest Research (UK)', url: SRC_URL.forestResearchTimber }] }
     },
@@ -189,7 +189,7 @@
       aceite: { label: "Huile d'olive", sources: [{ name: 'Commission européenne', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Fruits et légumes', sources: [{ name: 'Commission européenne', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Énergie', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bulletin pétrolier hebdomadaire (CE)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Assurance agricole', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
+      seguro: { label: 'Assurance agricole', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Vin en vrac', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Bois', sources: [{ name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }] }
     },
@@ -206,7 +206,7 @@
       aceite: { label: "Olio d'oliva", sources: [{ name: 'Commissione europea', url: SRC_URL.ecOliveOil }] },
       hortalizas: { label: 'Frutta e verdura', sources: [{ name: 'Commissione europea', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energia', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bollettino Petrolifero Settimanale (CE)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Assicurazione agricola', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
+      seguro: { label: 'Assicurazione agricola', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Vino sfuso', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }] },
       madera: { label: 'Legname', sources: [{ name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }] }
     }

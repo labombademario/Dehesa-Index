@@ -1177,9 +1177,9 @@
     var root = document.getElementById('pr-category');
     if (INFO_CATS[state.activeTab]) {
       if (state.activeTab === 'seguro' && global.DehesaSeguro) {
-        // Seguro agrario: cifras de data/crop-insurance.json (USDA RMA) y data/insurance-es.json; ver js/seguro.js
+        // Seguro agrario: cifras de data/crop-insurance.json (USDA RMA) y data/enesa-contratacion.json (ENESA); ver js/seguro.js
         // cada ubicacion solo ve el seguro de su zona; la linea de fuentes, igual (Canada cita StatCan en sus tarjetas)
-        root.innerHTML = '<div id="pr-seguro"></div>' + infoSourcesHtml('seguro', ({ us: ['USDA RMA'], eu: ['Agroseguro'] })[state.location || 'us'] || []);
+        root.innerHTML = '<div id="pr-seguro"></div>' + infoSourcesHtml('seguro', ({ us: ['USDA RMA'], eu: ['ENESA (MAPA)'] })[state.location || 'us'] || []);
         global.DehesaSeguro.render(document.getElementById('pr-seguro'), { region: state.location || 'us', euCountry: state.euCountry });
         return;
       }

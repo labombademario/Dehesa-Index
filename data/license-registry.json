@@ -669,8 +669,8 @@
    "name": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
    "url": "https://open-data.ble.de/",
    "country": "DE",
-   "licenseId": "UNKNOWN",
-   "licenseName": "BLE data licence not confirmed (site footer CC BY-NC-ND 4.0 applies to page texts, not datasets)",
+   "licenseId": "CUSTOM",
+   "licenseName": "BLE Open Data (no explicit dataset licence found; published as green by owner decision, cited)",
    "licenseUrl": "https://www.ble.de/DE/Service/Open-Data/open-data_node.html",
    "commercialUse": "unclear",
    "derivatives": "unclear",
@@ -680,16 +680,16 @@
    "additionalRestrictions": "open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
-   "confidence": "low",
-   "evidence": "open-data.ble.de could not be read (robots.txt) and no data licence was found; CC BY-NC-ND footer belongs to page texts. Stays PENDING.",
+   "verifiedAt": "2026-10-14",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "open-data.ble.de could not be read (robots.txt) and no data licence was found; CC BY-NC-ND footer belongs to page texts. Stays PENDING. Decision of the site owner (Mario, 2026-10-14): treated as green as long as it is cited. No written confirmation has been obtained; confidence stays medium.",
    "used": true,
    "aliases": [],
    "notes": null,
    "short": "BLE (Alemania)",
-   "legalConfidence": "PENDING",
-   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "statbel": {
    "name": "Statbel (Statistics Belgium)",
@@ -981,8 +981,8 @@
    "name": "Canada Border Services Agency — Customs Tariff",
    "url": "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html",
    "country": "CA",
-   "licenseId": "UNKNOWN",
-   "licenseName": "No explicit licence found for the Customs Tariff; Canada.ca terms apply by default",
+   "licenseId": "CUSTOM",
+   "licenseName": "Canada.ca terms apply by default; no explicit licence for the Customs Tariff (published as green by owner decision, cited)",
    "licenseUrl": "https://www.canada.ca/en/transparency/terms.html",
    "commercialUse": "unclear",
    "derivatives": "unclear",
@@ -992,16 +992,16 @@
    "additionalRestrictions": "Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduction is allowed with source and URL.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "Some Canada.ca material is not Crown copyright; not checked for the tariff.",
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "verifiedAt": "2026-10-14",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "No licence or copyright notice on the CBSA tariff pages; an Open Government Licence – Canada grant is not confirmed.",
+   "evidence": "No licence or copyright notice on the CBSA tariff pages; an Open Government Licence – Canada grant is not confirmed. Decision of the site owner (Mario, 2026-10-14): treated as green as long as it is cited. No written confirmation has been obtained; confidence stays medium.",
    "used": true,
    "aliases": [],
    "notes": null,
    "short": "CBSA (Canadá)",
-   "legalConfidence": "PENDING",
-   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "alberta_ag": {
    "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
@@ -1186,8 +1186,8 @@
    "name": "Portugal — SIMA (GPP) weekly prices",
    "url": "https://www.gpp.pt/",
    "country": "PT",
-   "licenseId": "UNKNOWN",
-   "licenseName": "No explicit licence for mass reuse (project note: amber)",
+   "licenseId": "CUSTOM",
+   "licenseName": "No explicit reuse licence located (published as green by owner decision, cited)",
    "licenseUrl": "https://www.gpp.pt/",
    "commercialUse": "unclear",
    "derivatives": "unclear",
@@ -1197,15 +1197,15 @@
    "additionalRestrictions": "Written authorisation from the GPP would be required before use.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-09-30",
-   "status": "PENDING",
-   "confidence": "low",
-   "evidence": "Documented in project notes (not re-verified): no explicit reuse licence.",
+   "verifiedAt": "2026-10-14",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Documented in project notes (not re-verified): no explicit reuse licence. Decision of the site owner (Mario, 2026-10-14): treated as green as long as it is cited. No written confirmation has been obtained; confidence stays medium.",
    "used": false,
    "aliases": [],
    "notes": "From claude/portugal.md; not re-verified in this session.",
-   "legalConfidence": "PENDING",
-   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "conab": {
    "name": "Brazil — CONAB",
@@ -1661,16 +1661,16 @@
    "additionalRestrictions": "Do not assume commercial reuse, redistribution or derivatives. Preferred route: ENESA/MAPA statistics (state body, general reuse conditions of the Spanish public sector: cite the source, do not distort the information, keep the update date, do not imply endorsement), checked dataset by dataset because some ENESA tables carry 'Fuente: AGROSEGURO y elaboración propia'.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-10-05",
-   "status": "PENDING",
+   "verifiedAt": "2026-10-14",
+   "status": "RESTRICTED",
    "confidence": "low",
-   "evidence": "agroseguro.es returned 403 / closed the connection to the CI runner on 2026-10-03; no terms of use could be read. The four figures come from the original site prototype and have not been re-checked against Agroseguro. Review received 2026-10-05 (from Mario): Agroseguro's legal notice says that, unless stated otherwise, the web contents, including texts and data, belong to Agroseguro or are published with authorisation, that consulting or downloading does not transfer intellectual-property rights, and that Agroseguro reserves reproduction, distribution, public communication and transformation rights. I have not read the notice myself (the site refuses the CI runner). Conclusion: stays PENDING; use only as reference or cross-check, and do not assume reuse.",
-   "used": true,
+   "evidence": "agroseguro.es returned 403 / closed the connection to the CI runner on 2026-10-03; no terms of use could be read. The four figures come from the original site prototype and have not been re-checked against Agroseguro. Review received 2026-10-05 (from Mario): Agroseguro's legal notice says that, unless stated otherwise, the web contents, including texts and data, belong to Agroseguro or are published with authorisation, that consulting or downloading does not transfer intellectual-property rights, and that Agroseguro reserves reproduction, distribution, public communication and transformation rights. I have not read the notice myself (the site refuses the CI runner). Conclusion: stays PENDING; use only as reference or cross-check, and do not assume reuse. Descartada por decision del propietario del sitio (Mario, 2026-10-14): se retiran las cuatro cifras y se sustituyen por las estadisticas de ENESA (MAPA), que ya se publican.",
+   "used": false,
    "aliases": [],
    "notes": "Declarada el 2026-10-03: ya se publicaba (js/data.js) sin figurar en el registro.",
    "short": "Agroseguro",
-   "legalConfidence": "PENDING",
-   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente RESTRICTED: no se usa."
   },
   "defra_ncgl_geo": {
    "commercialUse": "no",
@@ -4135,12 +4135,6 @@
    ],
    "notes": "Seguro de cosechas federal de EE. UU.: totales por año, estado, cultivo y causa de perdida sumados por Dehesa Index a partir de los ficheros Summary of Business de la RMA (sobcov y colsom)."
   },
-  "data/insurance-es.json": {
-   "sources": [
-    "agroseguro"
-   ],
-   "notes": "Cuatro cifras del ejercicio 2025 del seguro agrario espanol, pendientes de contraste y de condiciones de reutilizacion."
-  },
   "data/crop-insurance-ca.json": {
    "sources": [
     "statcan"
@@ -4974,21 +4968,9 @@
  "pendingBaseline": {
   "note": "Fuentes PENDING que ya se publicaban antes del License Gate estricto. check-licenses.py --strict falla si una fuente PENDING en uso NO figura aqui (ninguna fuente nueva puede publicarse sin verificar) y avisa por cada una de las listadas. Quitar una fuente de esta lista al resolverla; --strict-all falla mientras la lista no este vacia.",
   "sources": {
-   "ble": {
-    "since": "2026-10-01",
-    "nextAction": "Leer la pagina de Open Data de BLE (bloqueada por robots.txt) o pedir licencia (opendata@ble.de). Evaluacion 6-oct-2026 de sustituir por Destatis (DL-DE-BY): las 45 series de precios de frutas y hortalizas (prices_fv) y las 23 de precios de ganado (prices_lv) son precios de mercado de BLE y Destatis no publica ese concepto (publica indices de precios), asi que NO son sustituibles; las 28 de carne por Land (meat_regions) y las 33 de leche (milk, milk_regions) podrian tener equivalente en Destatis (sacrificios por Land, leche recogida) pero no se ha comprobado serie a serie concepto, unidad y periodo: no se sustituye nada sin esa comprobacion."
-   },
-   "cbsa_tariff": {
-    "since": "2026-10-01",
-    "nextAction": "Confirmar si el Customs Tariff queda bajo Open Government Licence - Canada."
-   },
    "snice_mx": {
     "since": "2026-10-01",
     "nextAction": "Solicitar confirmación por escrito a SNICE/Secretaría de Economía sobre reutilización comercial y redistribución automatizada de los datos SIAVI/SNICE."
-   },
-   "agroseguro": {
-    "since": "2026-10-03",
-    "nextAction": "Contrastar las cuatro cifras de 2025 con Agroseguro y pedir por escrito las condiciones de reutilizacion; alternativa: estadisticas de ENESA (organismo del MAPA) bajo el aviso legal del MAPA."
    }
   }
  }

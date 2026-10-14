@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 116 VERIFIED, 10 PENDING, 4 RESTRICTED, 4 BLOCKED; 21109 series en el catalogo unificado.
+Resumen: 119 VERIFIED, 6 PENDING, 5 RESTRICTED, 4 BLOCKED; 21109 series en el catalogo unificado.
 
-## VERIFIED (116)
+## VERIFIED (119)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -22,11 +22,13 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `bea` | U.S. Bureau of Economic Analysis | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bfs_ch_open` | Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices | CH | OPENDATA-SWISS-TERMS-BY | si/si | si | 87 | Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each… |
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
+| `ble` | BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de) | DE | CUSTOM | unclear/unclear | si | 129 | open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de. |
 | `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 25 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bmluk_hydrographie` | BMLUK — Grundwasser Aktuell Österreich (hydrographischer Dienst, gis.lfrz.gv.at) | AT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente. |
 | `boe_es` | Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada | ES | CUSTOM | si/si | si | 0 | No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legisla… |
 | `bundesanzeiger` | Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes | DE | CUSTOM | si/si | si | 0 | Only the amtlicher Teil (official notices of the Federal Government) is used, never the commercial parts of the Bundesanzeiger. The basis is… |
 | `cbs_nl` | Statistics Netherlands (CBS StatLine) | NL | CUSTOM | si/si | si | 67 | Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read. |
+| `cbsa_tariff` | Canada Border Services Agency — Customs Tariff | CA | CUSTOM | unclear/unclear | si | 0 | Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduc… |
 | `census` | U.S. Census Bureau | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `cftc` | U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment) | US | US-PD | si/si | no | 0 | Acknowledgement of the CFTC requested. Contributed or licensed third-party materials on cftc.gov may be copyrighted; the Commitments of Trad… |
 | `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
@@ -96,6 +98,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
 | `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
+| `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | CUSTOM | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
 | `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 38 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
@@ -129,29 +132,26 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
-## PENDING (10)
+## PENDING (6)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
 | sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |
 |---|---|---|---|---|---|---|---|
-| `agroseguro` | Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados) | ES | UNKNOWN | unclear/unclear | si | 0 | Do not assume commercial reuse, redistribution or derivatives. Preferred route: ENESA/MAPA statistics (state body, general reuse conditions … |
 | `bfs_ch` | Switzerland — FSO/BFS (Federal Statistical Office), agricultural statistics (cantons, farm accounts, structure) | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | Agricultural datasets of the FSO on opendata.swiss are marked 'Use for commercial purposes requires permission of the data owner'. |
-| `ble` | BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de) | DE | UNKNOWN | unclear/unclear | si | 129 | open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de. |
-| `cbsa_tariff` | Canada Border Services Agency — Customs Tariff | CA | UNKNOWN | unclear/unclear | si | 0 | Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduc… |
 | `defra_rpa_land` | RPA Land Parcels / Land Covers / Hedge Control | UK | CUSTOM | no/no | si | 0 | Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset g… |
 | `france_bois_foret` | France Bois Forêt / ONF, prix des bois sur pied (communiqué annuel) | FR | UNKNOWN | unclear/unclear | si | 0 | Cifras de un comunicado de prensa difundido para su publicación; no hay licencia abierta declarada. |
 | `gep_pt` | GEP — Gabinete de Estratégia e Planeamento (MTSSS, Portugal) | PT | UNKNOWN | unclear/unclear | si | 0 | Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilizaci… |
-| `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | UNKNOWN | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
 | `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | unclear/unclear | si | 0 | Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attri… |
 | `swissimpex_ch` | Switzerland — FOCBS/BAZG, SwissImpex and Tares foreign trade statistics | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | SwissImpex/Tares terms: commercial use requires permission of the data owner. |
 
-## RESTRICTED (4)
+## RESTRICTED (5)
 
 la reutilizacion tiene limites incompatibles con un sitio comercial (no comercial, sin derivados, promocion): no se usa.
 
 | sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |
 |---|---|---|---|---|---|---|---|
+| `agroseguro` | Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados) | ES | UNKNOWN | unclear/unclear | si | 0 | Do not assume commercial reuse, redistribution or derivatives. Preferred route: ENESA/MAPA statistics (state body, general reuse conditions … |
 | `cepea` | Brazil — CEPEA/ESALQ | BR | CUSTOM | no/no | si | 0 | Do not automate without permission. |
 | `conab` | Brazil — CONAB | BR | CC-BY-ND-3.0 | unclear/no | si | 0 | No derivatives: unit/currency conversion or re-expression is doubtful; ask gesip@conab.gov.br first. |
 | `faostat` | FAO — FAOSTAT | INT | CC-BY-4.0 | no/si | si | 0 | Datasets may not be used for or in conjunction with the promotion of a commercial enterprise or its products or services; no FAO sponsorship… |

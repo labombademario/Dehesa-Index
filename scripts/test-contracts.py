@@ -376,8 +376,6 @@ CASES = [
  ("crop-insurance-ca.json", "latestYear distinto del ultimo año", lambda d: d.__setitem__("latestYear", d["latestYear"] - 1)),
  ("crop-insurance-ca.json", "año repetido", lambda d: d["years"].__setitem__(-1, d["years"][-2])),
  ("crop-insurance-ca.json", "unidad distinta", lambda d: d.__setitem__("unit", "CAD million")),
- ("insurance-es.json", "verificacion invalida", lambda d: d.__setitem__("verification", "OK")),
- ("insurance-es.json", "subvencion mayor que 100 %", lambda d: d["stats"].__setitem__("publicSubsidyPctOfPremium", 150)),
  ("canada-provinces.json", "produccion negativa", lambda d: d["provinces"]["SK"]["crops"]["wheat-all"]["prod"].__setitem__(-1, [d["provinces"]["SK"]["crops"]["wheat-all"]["prod"][-1][0], -5.0])),
  ("canada-provinces.json", "superficie cosechada mayor que sembrada", lambda d: d["provinces"]["AB"]["crops"]["barley"]["harea"].__setitem__(-1, [d["provinces"]["AB"]["crops"]["barley"]["harea"][-1][0], 99999.0])),
  ("canada-provinces.json", "provincias que no suman Canada", lambda d: d["provinces"]["SK"]["crops"]["canola-rapeseed"]["prod"].__setitem__(-1, [d["provinces"]["SK"]["crops"]["canola-rapeseed"]["prod"][-1][0], 1.0])),

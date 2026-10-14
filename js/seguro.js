@@ -1,7 +1,7 @@
 /* Dehesa Index — pestaña «Seguro agrario» de Precios. ES5, sin dependencias salvo window.DehesaShared (idioma, esc) y window.DICite (citas).
    Datos: data/crop-insurance.json (EE. UU., USDA RMA, sumado por Dehesa Index a partir de los ficheros públicos de la RMA) y
    data/crop-insurance-ca.json (Canadá, Statistics Canada: indemnizaciones y gasto de las explotaciones, por provincia; copiado sin transformar) y
-   data/insurance-es.json (España, cuatro cifras curadas a mano y PENDIENTES de contraste). Nada se escribe a mano aquí salvo etiquetas:
+   data/enesa-contratacion.json (España, informes de contratación de ENESA). Nada se escribe a mano aquí salvo etiquetas:
    cada cifra de las tarjetas de EE. UU. y Canadá sale del JSON y lleva su cita. DehesaSeguro.render(contenedor, { region: 'us'|'ca'|'eu'|'uk', euCountry }):
    cada ubicación muestra solo el seguro de su zona. */
 (function (root) {
@@ -100,13 +100,6 @@
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.tr) + '</h3>' + tbl([t.yearC, t.indS, t.hailS, t.expS], rows, 'ca-trend');
     return h;
   }
-  function esCard(E) {
-    var t = tx(), s = E.stats;
-    return '<div class="di-card di-info-card"><div class="di-info-card-title">' + esc(t.es + ' ' + E.period + ')') + '</div><div class="di-info-stat-list">' +
-      row(t.prem2, grp(s.premiumsMEur) + ' ' + t.mEur) + row(t.area, dec(s.insuredAreaMha, 1) + ' ' + t.mha) + row(t.ind2, grp(s.indemnitiesMEur) + ' ' + t.mEur) +
-      row(t.subs, (s.publicSubsidyApprox ? '≈' : '') + grp(s.publicSubsidyPctOfPremium) + ' % ' + esc(t.ofPrem)) + '</div>' +
-      '<div class="di-info-scope-note" style="margin-top:10px">' + esc(t.pend) + '</div>' + cite('agroseguro', E.period) + '</div>';
-  }
   function details(D, y) {
     var t = tx(), st = D.states, cr = D.crops, h = '';
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.st) + '</h3>' + tbl([t.stateC, t.liab, t.prem, t.ind, t.lr],
@@ -157,15 +150,15 @@
   function tr() { return TR[lang()] || TR.es; }
   function note(msg) { return '<div class="di-info-scope-note">' + esc(msg) + '</div>'; }
   function render(el, opts) {
-    var t = tx(), D = null, E = null, C = null, N = null, reg = (opts && opts.region) || 'us', euc = (opts && opts.euCountry) || 'es';
+    var t = tx(), D = null, C = null, N = null, reg = (opts && opts.region) || 'us', euc = (opts && opts.euCountry) || 'es';
     if (reg === 'uk') { el.innerHTML = note(tr().uk); return; }
     el.innerHTML = '<div class="di-info-scope-note">…</div>';
     function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
     var want = reg === 'us' ? [get('data/crop-insurance.json'), null, null, null] : reg === 'ca' ? [null, null, get('data/crop-insurance-ca.json'), null]
-      : [null, get('data/insurance-es.json').catch(function () { return null; }), null, get('data/enesa-contratacion.json').catch(function () { return null; })];
+      : [null, null, null, get('data/enesa-contratacion.json').catch(function () { return null; })];
     Promise.all(want.concat([root.DICite ? root.DICite.load() : null])).then(function (a) {
-      D = a[0]; E = a[1]; C = a[2]; N = a[3];
-      if (reg === 'eu' && !E && !N) { el.innerHTML = note(tr().none); return; }
+      D = a[0]; C = a[2]; N = a[3];
+      if (reg === 'eu' && !N) { el.innerHTML = note(tr().none); return; }
       paint(D ? String(D.latestCompleteYear) : null, C ? String(C.latestYear) : null);
     }, function () { el.innerHTML = note(reg === 'us' ? t.err : reg === 'ca' ? tc().err : tr().none); });
     function paint(y, cy) {
@@ -182,7 +175,7 @@
           '<div style="margin:0 0 16px"><label class="di-field-hint" for="sg-ca-year">' + esc(c.yearL) + ' </label><select id="sg-ca-year" class="di-eu-country-select">' + copts + '</select></div>' +
           '<div class="di-info-grid">' + caKpi(C, cy) + '</div>' + caDetails(C, cy) + '<div class="di-info-scope-note" style="margin-top:14px">' + esc(c.note) + '</div>';
       } else {
-        h = (euc !== 'es' ? note(tr().euOnly) : '') + (E ? '<div class="di-info-grid">' + esCard(E) + '</div>' : '') + (N ? enesaHist(N) : '');
+        h = (euc !== 'es' ? note(tr().euOnly) : '') + (N ? enesaHist(N) : '');
       }
       el.innerHTML = h;
       var sel = el.querySelector('#sg-year'); if (sel) sel.addEventListener('change', function () { paint(sel.value, cy); });
