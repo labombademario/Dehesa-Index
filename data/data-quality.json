@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T06:48:13Z",
+ "generatedAt": "2026-10-14T09:39:40Z",
  "summary": {
-  "files": 61,
+  "files": 62,
   "errors": 0,
-  "warnings": 17
+  "warnings": 18
  },
  "files": [
   {
@@ -294,13 +294,32 @@
     "IT/it-es-st-orgprod-r2000: salto 51651 -> 48091 en 2022 (mediana previa 1.57e+03)"
    ],
    "stats": {
-    "series": 552,
-    "points": 5520,
+    "series": 592,
+    "points": 6334,
     "lines": 0
    },
-   "generatedAt": "2026-10-14T06:36:42Z",
+   "generatedAt": "2026-10-14T07:38:30Z",
    "info": [],
    "nWarnings": 6,
+   "nErrors": 0
+  },
+  {
+   "file": "france-organic-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "FR/fr-ab-grp-hsau-area: salto 26311.4523 -> 27511.9703 en 2016 (mediana previa 329)",
+    "FR/fr-ab-grp-hsau-area: salto 27511.9703 -> 21692.1668 en 2017 (mediana previa 329)"
+   ],
+   "stats": {
+    "series": 155,
+    "points": 2708,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-14T07:22:19Z",
+   "info": [],
+   "nWarnings": 2,
    "nErrors": 0
   },
   {
@@ -649,7 +668,7 @@
     "points": 798,
     "lines": 0
    },
-   "generatedAt": "2026-10-11T17:40:09Z",
+   "generatedAt": "2026-10-14T08:13:15Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -776,7 +795,7 @@
     "points": 9786,
     "lines": 0
    },
-   "generatedAt": "2026-10-10T14:48:04Z",
+   "generatedAt": "2026-10-14T07:07:35Z",
    "info": [],
    "nWarnings": 4,
    "nErrors": 0
@@ -1237,7 +1256,7 @@
     "points": 1196,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T07:08:12Z",
+   "generatedAt": "2026-10-14T07:21:56Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
