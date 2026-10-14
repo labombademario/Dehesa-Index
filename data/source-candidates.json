@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T06:49:37Z",
+ "generatedAt": "2026-10-14T07:27:15Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 148,
+  "total": 149,
   "byStatus": {
-   "ACTIVE": 118,
+   "ACTIVE": 119,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1447,6 +1447,53 @@
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "agence_bio",
+   "registryId": "agence_bio",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr)",
+   "dataset": "Ya integrada (155 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "eggs",
+    "fruit",
+    "milk",
+    "pigs",
+    "poultry",
+    "sheep"
+   ],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "etalab-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : Agence BIO / organismes certificateurs, données publiées sur data.gouv.fr sous Licence Ouverte 2.0",
+   "lastChecked": "2026-10-14",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
