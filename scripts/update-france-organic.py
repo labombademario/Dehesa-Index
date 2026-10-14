@@ -55,9 +55,10 @@ def load(dirpath=None):
         if k and k not in out: out[k] = rows; log("recurso", k, len(rows), "filas;", r["url"][-60:])
     return out
 HERDS = {"API": ("Beehives", "hives"), "AUPA": ("Other animal production", "head"), "AUVOL": ("Other poultry for meat", "head"), "BL": ("Dairy ewes", "head"), "BV": ("Meat ewes", "head"),
-         "CH": ("Goats", "head"), "CO": ("Fattening pigs", "head"), "LAR": ("Breeding does (rabbits)", "head"), "LA": ("Rabbits (estimate)", "head"), "PO": ("Laying hens", "head"),
+         "CH": ("Goats", "head"), "CO": ("Fattening pigs", "head"), "LAR": ("Breeding does (rabbits)", "head"), "LA": ("Rabbits", "head"), "PO": ("Laying hens", "head"),
          "PC": ("Broilers", "head"), "TR": ("Breeding sows", "head"), "VA": ("Suckler cows", "head"), "VL": ("Dairy cows", "head")}
-GROUPS = {}   # code_groupe -> nombre en ingles (se completa tras ver el log de la primera ejecucion)
+GROUPS = {"AU": "other areas (fallow, collective grazing, gathering)", "FR": "fruit, including nuts", "GCU": "cereals and oilseed and protein crops, including dry pulses",
+          "HSAU": "outside utilised agricultural area", "LE": "fresh vegetables", "PP": "aromatic, medicinal and perfume plants", "SF": "forage crops and grassland", "VI": "vineyards"}
 ACT = {"Production": ("P", "production"), "Transformation": ("T", "processing"), "Distribution": ("D", "distribution"), "Importation": ("I", "import")}
 SER = {}
 def add(sid, label, unit, pts, note=None):
@@ -81,6 +82,9 @@ def build(data):
     by_dep = {}   # (dep, año) -> (surfbio, surfab, surfc123, nb_exp)
     for r in tot: by_dep[(r["codedepartement"], int(r["annee"]))] = (num(r["surfbio"]), num(r["surfab"]), num(r["surfc123"]), num(r["nb_exp"]))
     deps_all = sorted(depts)
+    for y in years:
+        miss = [c for c in deps_all if by_dep.get((c, y), (None,))[0] is None]
+        log("año", y, "departamentos sin dato de superficie:", len(miss), miss[:20])
     NOTE_SUM = "Suma de los departamentos; solo se publican los años sin ningun hueco («NC», secreto estadistico)."
     def national(idx):
         d = {}
