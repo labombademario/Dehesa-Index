@@ -5021,6 +5021,12 @@
     "agreste_ssp"
    ],
    "notes": "Precio de la tierra de Francia por departamento (scripts/update-land-fr-it.py): precio medio trienal de las terres et prés libres y loués (EUR/ha), 2021-2023, de los PDF de Chiffres et données de Agreste."
+  },
+  "data/poland-land/": {
+   "sources": [
+    "gus_poland"
+   ],
+   "notes": "Precio de la tierra arable de Polonia por voivodía (scripts/update-land-pl.py): precio medio por hectárea en el tráfico privado (PLN/ha), 1999-2025, de la API del Banco de Datos Locales de GUS (tema P1460)."
   }
  },
  "derived": [

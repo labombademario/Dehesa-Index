@@ -1175,6 +1175,12 @@
    [
     "wood_removals"
    ]
+  ],
+  "poland-land/land.json": [
+   "poland-land",
+   [
+    "poland_land"
+   ]
   ]
  },
  "globs": {

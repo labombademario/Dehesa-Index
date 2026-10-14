@@ -85,6 +85,17 @@ sources:
     data: [france-land/land.json, italy-land/land.json, land-fr-it-log.txt]
     extra: ['!data/france-land', '!data/italy-land']
     message: Precio de la tierra de Francia por departamento (Agreste) e Italia por región (CREA)
+  - id: land-pl
+    name: Update Poland farmland prices (GUS, BDL)
+    cron: ['10 8 4 * *']
+    script: scripts/update-land-pl.py
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/poland-land)
+    data: [poland-land/land.json, land-pl-log.txt]
+    extra: ['!data/poland-land']
+    message: Precio de la tierra arable de Polonia por voivodía (GUS, BDL)
   - id: spain-balances
     name: Update Spain cereal balance sheets (MAPA)
     cron: ['35 7 * * 4']

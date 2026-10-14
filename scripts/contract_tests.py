@@ -2440,6 +2440,26 @@ def france_land(doc, errs, warns, stats):
     if not v or not 3000 <= v[len(v) // 2] <= 15000: errs.append("france-land: mediana departamental del ultimo ano fuera de rango"); return
     stats["france-land anos"] = n
 
+def _lpl_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_land_pl", str(Path(__file__).resolve().parent / "update-land-pl.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+def poland_land(doc, errs, warns, stats):
+    """Precio de la tierra arable de Polonia (GUS/BDL): anos consecutivos desde 1999, cuatro clases (total, fertile, medium, barren), las 16 voivodias y el total nacional PL en cada una,
+    series de la longitud de los anos, sin valores <= 0 y la mediana de las voivodias del ultimo ano (total) dentro de 20.000-150.000 PLN/ha."""
+    m = _lpl_mod(); Y = doc["years"]; n = len(Y)
+    if Y != sorted(set(Y)) or Y != list(range(Y[0], Y[-1] + 1)): errs.append("poland-land: anos desordenados, repetidos o con huecos"); return
+    want = set(m.UNITS.values()) | {"PL"}
+    for cls in ("total", "fertile", "medium", "barren"):
+        d = doc["classes"].get(cls)
+        if not isinstance(d, dict) or set(d) != want: errs.append("poland-land %s: unidades distintas de las 16 voivodias y PL" % cls); return
+        for c, a in d.items():
+            if len(a) != n: errs.append("poland-land %s %s: longitud distinta de los anos" % (cls, c)); return
+            if any(x is not None and (not isinstance(x, (int, float)) or x <= 0) for x in a): errs.append("poland-land %s %s: valor no positivo" % (cls, c)); return
+    v = sorted(a[-1] for k, a in doc["classes"]["total"].items() if k != "PL" and a[-1] is not None)
+    if len(v) < 16 or not 20000 <= v[len(v) // 2] <= 150000: errs.append("poland-land: mediana de las voivodias del ultimo ano fuera de rango"); return
+    stats["poland-land anos"] = n
+
 def italy_land(doc, errs, warns, stats):
     """Valor de la tierra de Italia (CREA): anos consecutivos desde 1960, las 20 regiones sin huecos, las 5 circoscrizioni, salto interanual razonable (-40 % a +70 % por region, -30 % a +40 % el total),
     unidades coherentes (regiones y circoscrizioni en EUR/ha completos, nunca en miles) y total de Italia en 8.000-60.000 EUR/ha."""

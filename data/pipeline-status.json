@@ -7,7 +7,7 @@
   "late": 1,
   "error": 1,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -2395,6 +2395,19 @@
     "failed": 2
    },
    "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-land-pl.yml",
+   "name": "Update Poland farmland prices (GUS, BDL)",
+   "crons": [
+    "10 8 4 * *"
+   ],
+   "nextRun": "2026-11-04T08:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 744.0
   },
   {
