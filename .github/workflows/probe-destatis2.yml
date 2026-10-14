@@ -1,0 +1,17 @@
+name: Probe Destatis tables (one-off)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 scripts/probe-destatis-tables.py
+        env:
+          GENESIS_TOKEN: ${{ secrets.GENESIS_TOKEN }}
+      - run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add docs/destatis-estructura.txt; git commit -m "probe: catalogo Destatis" ; git pull --rebase -q; git push
