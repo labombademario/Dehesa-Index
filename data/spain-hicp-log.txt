@@ -4,9 +4,6 @@ es-land-price-ara 14 puntos; ultimo 2024 12778.0
 es-land-price-araib 14 puntos; ultimo 2024 26895.0
 es-land-price-araxib 14 puntos; ultimo 2024 8629.0
 es-land-price-j0000 14 puntos; ultimo 2024 4360.0
-es-land-rent-ara_j0000 14 puntos; ultimo 2024 247.0
-es-land-rent-ara 9 puntos; ultimo 2024 325.0
-es-land-rent-j0000 9 puntos; ultimo 2024 76.0
 es-organic-area-uaaxk0000 13 puntos; ultimo 2024 2944904.0
 es-organic-area-ara 13 puntos; ultimo 2024 610245.0
 es-organic-share-uaa 13 puntos; ultimo 2024 11.91
