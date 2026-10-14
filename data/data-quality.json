@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T15:45:04Z",
+ "generatedAt": "2026-10-14T18:47:17Z",
  "summary": {
   "files": 62,
   "errors": 0,
@@ -358,7 +358,7 @@
     "points": 929,
     "lines": 0
    },
-   "generatedAt": "2026-10-11T23:22:48Z",
+   "generatedAt": "2026-10-14T18:17:32Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -946,11 +946,11 @@
     "PL/pl-gus-crop-47784: salto 12380.1 -> 15777.6 en 2020 (mediana previa 524)"
    ],
    "stats": {
-    "series": 184,
-    "points": 5943,
+    "series": 264,
+    "points": 10089,
     "lines": 0
    },
-   "generatedAt": "2026-10-07T10:39:30Z",
+   "generatedAt": "2026-10-14T18:41:44Z",
    "info": [],
    "nWarnings": 7,
    "nErrors": 0
