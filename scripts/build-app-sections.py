@@ -165,6 +165,30 @@ def insumos():
             charts=[chart('Mediana nacional diaria|Daily national median|Médiane nationale quotidienne|Mediana nazionale giornaliera', '€/l', [('Gasóleo B|Diesel B|Gazole B|Gasolio B', [[r[0], r[HF.index('medianB')]] for r in h['rows'] if r[HF.index('medianB')]]), ('Gasóleo A|Diesel A|Gazole A|Gasolio A', [[r[0], r[HF.index('medianA')]] for r in h['rows'] if r[HF.index('medianA')]])])],
             bars=[bars('Provincias más baratas|Cheapest provinces|Provinces les moins chères|Province più economiche', '€/l', [({l: n for l in L4}, v) for n, v in rows[:10]], 3), bars('Provincias más caras|Most expensive provinces|Provinces les plus chères|Province più care', '€/l', [({l: n for l in L4}, v) for n, v in rows[::-1][:10]], 3)],
             source={'name': 'MITECO, Geoportal de gasolineras', 'url': g['source']['url']}))
+    ld = j('spain-land/land.json')
+    if ld:
+        import re as _re
+        rn = (D.parent / 'js' / 'region-names.js').read_text() if (D.parent / 'js' / 'region-names.js').exists() else ''
+        m_es = _re.search(r"var ES = \{(.*?)\};", rn, _re.S)
+        RN = dict(_re.findall(r"(\w+): '([^']*)'", m_es.group(1))) if m_es else {}
+        def rname(c):
+            v = RN.get(c)
+            if not v: return {l: c for l in L4}
+            q = v.split('|'); return {'en': q[0], 'es': q[1], 'fr': q[2], 'it': q[3]}
+        Y = ld['years']; n = len(Y) - 1; P = ld['price']['ccaa']; R = ld['rent']['ccaa']
+        st_ = ld['status'].get(str(Y[-1]))
+        asof = str(Y[-1]) + (' (provisional)' if st_ == 'provisional' else '')
+        def at(blk, c, t, ix): a_ = blk.get(c, {}).get(t); return a_[ix] if a_ and 0 <= ix < len(a_) else None
+        out.append(block('tierra-es', 'ES', 'España: precio de la tierra y canon de arrendamiento (MAPA)|Spain: farmland prices and rents (MAPA)|Espagne : prix des terres et fermages (MAPA)|Spagna: prezzi dei terreni e affitti (MAPA)', asOf=asof,
+            stats=[stat('Precio medio de la tierra|Average land price|Prix moyen des terres|Prezzo medio dei terreni', at(P, 'ES', 'PT', n), '€/ha', 0, chg(pct(at(P, 'ES', 'PT', n), at(P, 'ES', 'PT', n - 1)), str(Y[-2])) if n else None),
+                   stat('Tierras arables de secano|Arable land, rainfed|Terres arables sèches|Seminativi in asciutto', at(P, 'ES', 'TAS', n), '€/ha', 0, chg(pct(at(P, 'ES', 'TAS', n), at(P, 'ES', 'TAS', n - 1)), str(Y[-2])) if n else None),
+                   stat('Tierras arables de regadío|Arable land, irrigated|Terres arables irriguées|Seminativi irrigui', at(P, 'ES', 'TAR', n), '€/ha', 0, chg(pct(at(P, 'ES', 'TAR', n), at(P, 'ES', 'TAR', n - 1)), str(Y[-2])) if n else None),
+                   stat('Canon medio de arrendamiento|Average rental rate|Fermage moyen|Canone medio d’affitto', at(R, 'ES', 'GEN', n), '€/ha·año|€/ha·yr|€/ha·an|€/ha·anno', 0, chg(pct(at(R, 'ES', 'GEN', n), at(R, 'ES', 'GEN', n - 1)), str(Y[-2])) if n else None)],
+            charts=[chart('Precio medio de la tierra, España|Average land price, Spain|Prix moyen des terres, Espagne|Prezzo medio dei terreni, Spagna', '€/ha', [('General|All land|Ensemble|Tutti', [[str(y), at(P, 'ES', 'PT', i)] for i, y in enumerate(Y) if at(P, 'ES', 'PT', i) is not None]), ('Secano|Rainfed|Sec|Asciutto', [[str(y), at(P, 'ES', 'TAS', i)] for i, y in enumerate(Y) if at(P, 'ES', 'TAS', i) is not None]), ('Regadío|Irrigated|Irrigué|Irriguo', [[str(y), at(P, 'ES', 'TAR', i)] for i, y in enumerate(Y) if at(P, 'ES', 'TAR', i) is not None])])],
+            bars=[bars('Precio de la tierra por comunidad, ' + str(Y[-1]) + '|Land price by region, ' + str(Y[-1]) + '|Prix des terres par région, ' + str(Y[-1]) + '|Prezzo dei terreni per regione, ' + str(Y[-1]), '€/ha', sorted([(rname(c), at(P, c, 'PT', n)) for c in P if c != 'ES' and at(P, c, 'PT', n)], key=lambda x: -x[1]), 0),
+                  bars('Canon medio por comunidad, ' + str(Y[-1]) + '|Average rent by region, ' + str(Y[-1]) + '|Fermage moyen par région, ' + str(Y[-1]) + '|Canone medio per regione, ' + str(Y[-1]), '€/ha·año|€/ha·yr|€/ha·an|€/ha·anno', sorted([(rname(c), at(R, c, 'GEN', n)) for c in R if c != 'ES' and at(R, c, 'GEN', n)], key=lambda x: -x[1]), 0)],
+            note=t4('Medias de la encuesta del MAPA, no un registro de compraventas. Los años provisionales pueden cambiar.|Averages from the MAPA survey, not a register of sales. Provisional years may change.|Moyennes de l’enquête du MAPA, pas un registre de ventes. Les années provisoires peuvent changer.|Medie dell’indagine del MAPA, non un registro di compravendite. Gli anni provvisori possono cambiare.'),
+            source={'name': 'MAPA, Estadística agraria', 'url': ld['source']['url']}))
     f = j('us-fertilizers.json')
     FN = {'amoniaco': 'Amoníaco anhidro|Anhydrous ammonia|Ammoniac anhydre|Ammoniaca anidra', 'urea': 'Urea|Urea|Urée|Urea', 'dap': 'DAP (fosfato diamónico)|DAP|DAP|DAP', 'map': 'MAP (fosfato monoamónico)|MAP|MAP|MAP', 'potasa': 'Potasa|Potash|Potasse|Potassa', 'uan28': 'UAN 28 %|UAN 28%|UAN 28 %|UAN 28%', 'uan32': 'UAN 32 %|UAN 32%|UAN 32 %|UAN 32%'}
     if f:
@@ -180,7 +204,7 @@ def insumos():
             bars=[bars('Precio medio de los estados que informan|Average of reporting states|Moyenne des États déclarants|Media degli stati che riportano', 'USD/short ton', items, 0)],
             charts=[{'label': t4('Evolución en el estado con más historia|History in the state with the longest record|Évolution dans l’État avec le plus d’historique|Andamento nello stato con più storico'), 'unit': 'USD/short ton', 'series': [{'label': t4(l), 'points': p} for l, p in chs[:6] if len(p) > 1]}],
             source={'name': 'USDA AMS Market News', 'url': f['source']['url']}))
-    return {'id': 'insumos', 'title': t4('Gasóleo y fertilizantes|Diesel and fertiliser|Gazole et engrais|Gasolio e fertilizzanti'), 'emoji': '⛽', 'blocks': out}
+    return {'id': 'insumos', 'title': t4('Gasóleo, fertilizantes y tierra|Diesel, fertiliser and land|Gazole, engrais et terres|Gasolio, fertilizzanti e terreni'), 'emoji': '⛽', 'blocks': out}
 
 EUK = {'output': 'Producción agraria|Agricultural output|Production agricole|Produzione agricola', 'ic': 'Consumos intermedios|Intermediate consumption|Consommations intermédiaires|Consumi intermedi', 'energy': 'Energía|Energy|Énergie|Energia', 'fert': 'Fertilizantes|Fertilisers|Engrais|Fertilizzanti', 'feed': 'Piensos|Feed|Aliments du bétail|Mangimi', 'ppp': 'Fitosanitarios|Plant protection|Phytosanitaires|Fitosanitari', 'vet': 'Veterinario|Veterinary|Vétérinaire|Veterinario', 'entrep': 'Renta empresarial|Entrepreneurial income|Revenu d’entreprise|Reddito imprenditoriale', 'gva': 'Valor añadido bruto|Gross value added|Valeur ajoutée brute|Valore aggiunto lordo', 'nva': 'Valor añadido neto|Net value added|Valeur ajoutée nette|Valore aggiunto netto', 'factor': 'Renta de los factores|Factor income|Revenu des facteurs|Reddito dei fattori'}
 def cuentas():

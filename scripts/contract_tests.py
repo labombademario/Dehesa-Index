@@ -2389,14 +2389,14 @@ def spain_wine_balance_historic(doc, errs, warns, stats):
     stats["spain-wine-balance-historic campañas"] = n
 
 
-def _sl_mod():
+def _land_mod():
     import importlib.util as _u
     sp = _u.spec_from_file_location("update_spain_land", str(Path(__file__).resolve().parent / "update-spain-land.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
 
 def spain_land(doc, errs, warns, stats):
     """Precio de la tierra y canones del MAPA: anos ordenados con estado conocido, 17 comunidades + total nacional, series de la longitud de los anos, sin valores <= 0, tipos conocidos,
     las 50 provincias del ultimo ano, precio general de cada comunidad entre los de sus tipos, y el precio general nacional dentro de rango plausible (1.000-60.000 EUR/ha)."""
-    m = _sl_mod(); Y = doc["years"]; n = len(Y)
+    m = _land_mod(); Y = doc["years"]; n = len(Y)
     if Y != sorted(set(Y)): errs.append("spain-land: anos desordenados o repetidos"); return
     if set(doc["status"]) != set(str(y) for y in Y): errs.append("spain-land: estado de campana distinto de los anos"); return
     if any(v not in ("definitive", "provisional") for v in doc["status"].values()): errs.append("spain-land: estado de campana inventado"); return
