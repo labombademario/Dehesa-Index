@@ -274,6 +274,15 @@ sources:
     data: [eurostat-structure-stats.json]
     log: eurostat-structure-log.txt
     message: Datos Eurostat de tierra, estructura de explotaciones, plaguicidas, selvicultura y ecologico (FR ES PT EL BE NL DE IT)
+  - id: france-organic
+    name: Update France organic farming by department and region (Agence BIO)
+    cron: ['35 6 * * 3']
+    script: scripts/update-france-organic.py
+    timeout: 20
+    script_timeout: 15
+    data: [france-organic-stats.json]
+    log: france-organic-log.txt
+    message: Datos Francia de agricultura ecologica por departamento y region (Agence BIO)
   - id: eurostat-depth
     name: Update Eurostat depth (ES, FR, DK, NL, BE, DE, EU-27)
     cron: ['40 17 * * 2,5']

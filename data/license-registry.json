@@ -3501,6 +3501,32 @@
    "notes": "No se publica: el License Gate no deja publicar una fuente nueva sin verificar. Para poder enseñar el precio de la madera en pie de Francia hay que confirmar con France Bois Forêt (o usar una fuente pública alternativa, p. ej. Agreste) su licencia de reutilización.",
    "legalConfidence": "PENDING",
    "legalConfidenceReason": "Cita de cifras de prensa con atribución; sin licencia explícita."
+  },
+  "agence_bio": {
+   "name": "Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr)",
+   "url": "https://www.data.gouv.fr/datasets/historique-detaille-des-surfaces-cheptels-et-nombre-doperateurs-par-departement",
+   "country": "FR",
+   "licenseId": "etalab-2.0",
+   "licenseName": "Licence Ouverte / Open Licence version 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Agence BIO / organismes certificateurs, données publiées sur data.gouv.fr sous Licence Ouverte 2.0",
+   "additionalRestrictions": "Citar la fuente y la fecha de la última actualización. Solo se usan los ficheros por departamento: la ficha «par région» de data.gouv.fr no declara licencia.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-14",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "La ficha de data.gouv.fr del conjunto «Historique détaillé des surfaces, cheptels et nombre d'opérateurs par département» (publicado por Agence BIO, actualizado el 2026-09-16) declara la licencia «lov2» = Licence Ouverte / Open Licence 2.0 (API de data.gouv.fr, campo license). El pipeline comprueba ese campo en cada ejecución y no publica si deja de ser lov2.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "Agence BIO",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia abierta explícita declarada por el editor en la ficha del conjunto de datos."
   }
  },
  "files": {
@@ -4933,6 +4959,11 @@
     "mapa_es"
    ],
    "notes": "Secciones de la web para la app (scripts/build-app-sections.py): copian valores ya publicados en data/ (seguro, cultivos, oferta y demanda, clima, gasóleo y fertilizantes, cuentas agrarias, grano de Canadá, ganadería y lácteos de EE. UU., exportaciones de EE. UU., aranceles) con su fuente en cada bloque."
+  },
+  "data/france-organic-stats.json": {
+   "byCountry": {
+    "FR": "agence_bio"
+   }
   }
  },
  "derived": [
