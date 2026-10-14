@@ -2,8 +2,8 @@
  "schemaVersion": 1,
  "country": "FR",
  "source": "dila_jorf",
- "status": "NOT_YET_RUN",
- "checkedAt": null,
+ "status": "OK",
+ "checkedAt": "2026-10-14",
  "baseline": {
   "fingerprints": {},
   "acknowledged": [
@@ -40,9 +40,18 @@
  },
  "current": {
   "fingerprints": {},
-  "candidates": [],
-  "lastScanned": "2026-10-01"
+  "candidates": [
+   {
+    "id": "JORFTEXT000054938477",
+    "title": "Arrêté du 29 septembre 2026 définissant le taux annuel minimum de contrôle 2026 de l'écorégime, des indemnités compensatoires de handicaps naturels et des aides en faveur de l'agriculture biologique en application de l'article D. 614-17 du code rural et de la pêche maritime",
+    "date": "2026-10-02",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054938477"
+   }
+  ],
+  "lastScanned": "2026-10-14"
  },
- "reviewNeeded": [],
+ "reviewNeeded": [
+  "texto nuevo: Arrêté du 29 septembre 2026 définissant le taux annuel minimum de contrôle 2026 de l'écorégime, des indemnités compensatoires de handicaps n (2026-10-02)"
+ ],
  "note": "Vigilancia de los boletines diarios del JORF desde el 1 de octubre de 2026 (último día leído a mano). Los textos que aparecen son candidatos: no se interpretan."
 }
