@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """España: indices de precios de CONSUMO de la mantequilla y el queso (Eurostat, IPCA/HICP, ECOICOP v2) -> data/spain-hicp-stats.json (formato de ficheros de estadisticas por pais).
-Desde el 13-oct-2026 el mismo fichero lleva tambien, de Eurostat y para ES: precio de la tierra agricola y alquileres (apri_lprc, apri_lrnt; EUR/ha, anual, grupo «inputs» como los valores de la tierra de EE. UU.)
+Desde el 13-oct-2026 el mismo fichero lleva tambien, de Eurostat y para ES: precio de la tierra agricola (apri_lprc; EUR/ha, anual, grupo «inputs» como los valores de la tierra de EE. UU.)
 y agricultura ecologica (org_cropar, org_coptyp, apro_mt_lsorg; grupo «organic»). Se reutiliza este script/fichero para no abrir un fichero nuevo con 7 registros; el nombre se queda por historia.
 
 Conjunto prc_hicp_minr (indice mensual, 2025=100), pais ES, partidas CP01152 «Butter and other oils and fats derived from milk» y CP01145 «Cheese». Son indices de precios al CONSUMIDOR
@@ -35,8 +35,7 @@ def parse(j):
         if rec["geo"] != "ES" or rec["unit"] != "I25" or rec["freq"] != "M": raise ValueError("celda fuera de lo pedido: %s" % rec)
         out.setdefault(rec["coicop18"], {})[rec["time"]] = float(v)
     return out
-LAND = [("apri_lprc", "EUR_HA", {"ARA": "arable land", "ARAIB": "irrigable arable land", "ARAXIB": "non-irrigable arable land", "J0000": "permanent grassland"}, "land-price", "Agricultural land price", 10),
-        ("apri_lrnt", "EUR_HA", {"ARA_J0000": "arable land and/or permanent grassland", "ARA": "arable land", "J0000": "permanent grassland"}, "land-rent", "Agricultural land rent (one year)", 6)]
+LAND = [("apri_lprc", "EUR_HA", {"ARA": "arable land", "ARAIB": "irrigable arable land", "ARAXIB": "non-irrigable arable land", "J0000": "permanent grassland"}, "land-price", "Agricultural land price", 10)]  # el alquiler (apri_lrnt) se retiro el 13-oct-2026: Eurostat da +54 % en 2024 y el MAPA +4 % (data/spain-land); el canon sale solo del MAPA
 def parse_any(j, geo="ES"):
     """JSON-stat 2.0 de Eurostat -> {(dimension, codigo)...: {periodo: valor}}; solo celdas de geo pedido y con valor."""
     ids, sizes = j["id"], j["size"]; cat = {k: list(v["category"]["index"]) for k, v in j["dimension"].items()}; out = {}
@@ -64,7 +63,7 @@ def land_series(docs):
             pts = by.get((("unit", unit), ("agriprod", code)))
             if not pts: log("AVISO: %s %s sin datos" % (ds, code)); continue
             out.append(mk("es-%s-%s" % (key, code.lower()), "inputs", "%s: %s, Spain, EUR/ha (Eurostat %s)" % (title, nm, ds), "EUR/ha", pts, ds, minpts))
-    if len(out) < 6: raise ValueError("tierra: solo %d series (se esperan 6 o mas)" % len(out))
+    if len(out) < 4: raise ValueError("tierra: solo %d series (se esperan 4 o mas)" % len(out))
     return out
 ORG_LS = {"A2000": "bovine animals", "A2300F": "dairy cows", "A3100": "pigs", "A4100": "sheep", "A4200": "goats"}
 def organic_series(docs):

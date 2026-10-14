@@ -11,10 +11,10 @@ def check(c, m):
     if not c: fails.append(m)
 land, org = sh.land_series(docs), sh.organic_series(docs)
 ids = {s["id"]: s for s in land + org}
-check(len(land) == 7 and len(org) == 10, "recuento: %d tierra, %d ecologico" % (len(land), len(org)))
+check(len(land) == 4 and len(org) == 10, "recuento: %d tierra, %d ecologico" % (len(land), len(org)))
 s = ids["es-land-price-ara"]; check(s["latestPeriod"] == "2024" and s["latest"] == 12778 and s["points"][0] == ["2011", 12325] and len(s["points"]) == 14, "precio tierra labor")
 check(round(s["changePct"], 2) == round((12778 - 12421) / 12421 * 100, 2), "variacion precio")
-s = ids["es-land-rent-ara_j0000"]; check(s["latest"] == 247 and s["points"][-2] == ["2023", 160], "alquiler")
+check(not [k for k in ids if "land-rent" in k], "sin alquiler de Eurostat (el canon es del MAPA)")
 s = ids["es-land-price-j0000"]; check(s["group"] == "inputs" and s["unit"] == "EUR/ha" and s["frequency"] == "annual", "campos de la serie")
 s = ids["es-organic-area-uaaxk0000"]; check(s["latest"] == 2944904 and s["group"] == "organic" and s["unit"] == "ha", "superficie ecologica")
 check(ids["es-organic-share-uaa"]["latest"] == 11.91, "cuota ecologica")
