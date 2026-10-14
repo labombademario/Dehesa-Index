@@ -89,6 +89,15 @@ def pesticides():
     for k, p in pts(recs, lambda r: r['subst_cat']).items():
         n += put('st-pest-sales-' + k.lower(), 'environment', 'Pesticide sales: %s (tonnes of active substance, Eurostat)' % E.clean(labs['subst_cat'][k]), 't', 'annual', p, 'Eurostat aei_pestsal_rsk %s' % k, 0.001)
     E.log(cc, 'plaguicidas', n)
+EMI = {'GHG': ('greenhouse gases, total', 'thousand t CO2e'), 'CH4_CO2E': ('methane', 'thousand t CO2e'), 'N2O_CO2E': ('nitrous oxide', 'thousand t CO2e'), 'CO2': ('carbon dioxide', 'thousand t'), 'NH3': ('ammonia', 'thousand t')}
+def emissions():
+    cc = E.CFG['geo']; n = 0
+    for k, (nm, un) in EMI.items():
+        try: recs, _ = E.es('env_ac_ainah_r2', nace_r2='A', unit='THS_T', airpol=k)
+        except Exception as e: E.log(cc, 'emisiones', k, 'no disponible', repr(e)[:80]); continue
+        for kk, p in pts(recs, lambda r: 'x').items():
+            n += put('st-emis-' + k.lower(), 'environment', 'Air emissions of agriculture, forestry and fishing (NACE A): %s (%s, Eurostat)' % (nm, un), un, 'annual', p, 'Eurostat env_ac_ainah_r2 A %s' % k)
+    E.log(cc, 'emisiones', n)
 def forestry():
     cc = E.CFG['geo']; n = 0
     recs, labs = E.es('for_basic', treespec='TOTAL', stk_flow='PRD', unit='THS_M3')
@@ -109,7 +118,7 @@ only = [a for a in sys.argv[1:] if a in C]
 out = {}
 for cc in (only or C):
     E.CFG = {'geo': cc, 'pfx': cc.lower()}; E.OUT.clear()
-    for fn in (land, structure, pesticides, forestry, organic):
+    for fn in (land, structure, pesticides, emissions, forestry, organic):
         try: fn()
         except Exception as e: E.log('ERROR', cc, fn.__name__, repr(e)[:300])
     E.log(cc, 'series', len(E.OUT))
