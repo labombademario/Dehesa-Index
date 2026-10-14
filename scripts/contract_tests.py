@@ -1624,7 +1624,7 @@ def worldbank_agri(doc, errs, warns, stats):
     ind = doc["indicators"]
     for k, i in ind.items():
         if i.get("license") != "CC BY-4.0": errs.append("worldbank-agri %s: licencia %r, solo se admite CC BY-4.0" % (k, i.get("license")))
-    euro = {"ES", "FR", "DE", "BE", "AT", "PT", "IT", "NL"}
+    euro = {"ES": 1999, "FR": 1999, "DE": 1999, "BE": 1999, "AT": 1999, "PT": 1999, "IT": 1999, "NL": 1999, "EL": 2001}
     n = 0
     for c, ser in doc["countries"].items():
         for k, s in ser.items():
@@ -1641,7 +1641,7 @@ def worldbank_agri(doc, errs, warns, stats):
                 elif k in WBA_RANGE: ok = WBA_RANGE[k][0] <= x <= WBA_RANGE[k][1]
                 elif k in WBA_NONNEG: ok = x >= 0
                 if not ok: errs.append("worldbank-agri %s/%s %d: valor fuera de rango (%s)" % (c, k, y0 + i, x)); break
-            if k == "fxUsd" and (c == "US" or (c in euro and y0 < 1999)): errs.append("worldbank-agri %s: tipo de cambio no admitido (EE. UU. o antes de 1999 en zona euro)" % c)
+            if k == "fxUsd" and (c == "US" or (c in euro and y0 < euro[c])): errs.append("worldbank-agri %s: tipo de cambio no admitido (EE. UU. o antes de la entrada en el euro)" % c)
         a, b, p = ser.get("cerealYield"), ser.get("cerealArea"), ser.get("cerealProd")
         if a and b and p:
             at = lambda s, y: s["v"][y - s["y0"]] if 0 <= y - s["y0"] < len(s["v"]) else None

@@ -4,8 +4,9 @@ Cada indicador se comprueba contra sus metadatos oficiales (License_Type): solo 
 Si un indicador falla en una ejecucion, se conserva el valor anterior (nunca se rellena ni se estima)."""
 import json, os, sys, time, datetime, urllib.request
 
-WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
-EURO = {'ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'NL'}
+WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'EL': 'GRC', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
+EURO_FROM = {'ES': 1999, 'FR': 1999, 'DE': 1999, 'BE': 1999, 'AT': 1999, 'PT': 1999, 'IT': 1999, 'NL': 1999, 'EL': 2001}   # año desde el que el Banco Mundial deja de dar la moneda nacional anterior
+EURO = set(EURO_FROM)
 FIRST = 1990
 # clave -> (codigo WDI, grupo)
 IND = {
@@ -71,7 +72,7 @@ for key, (code, group) in IND.items():
         c = inv.get(r.get('countryiso3code'))
         if not c or r.get('value') is None: continue
         y = int(r['date'])
-        if key == 'fxUsd' and (c == 'US' or (c in EURO and y < 1999)): continue  # EE. UU. = 1; antes de 1999 el WB usa la moneda nacional anterior al euro
+        if key == 'fxUsd' and (c == 'US' or (c in EURO and y < EURO_FROM[c])): continue  # EE. UU. = 1; antes de 1999 el WB usa la moneda nacional anterior al euro
         byc.setdefault(c, {})[y] = r['value']
     n = 0
     for c, ys in byc.items():
