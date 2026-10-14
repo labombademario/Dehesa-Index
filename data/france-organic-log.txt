@@ -2,8 +2,26 @@ recurso herds 21685 filas; 0260916-122505/donnees-dept-secretstat-14092026-chept
 recurso operators 98779 filas; 60916-123032/donnees-dept-secretstat-14092026-operateurs.csv
 recurso totals 1814 filas; ent/20260916-123140/donnees-dept-secretstat-14092026-sau.csv
 recurso groups 130980 filas; donnees-dept-secretstat-14092026-surfaces-par-production.csv
+año 2008 departamentos sin dato de superficie: 7 ['75', '92', '93', '94', '976', '978', '999']
+año 2009 departamentos sin dato de superficie: 7 ['75', '92', '93', '94', '976', '978', '999']
+año 2010 departamentos sin dato de superficie: 4 ['75', '92', '976', '978']
+año 2011 departamentos sin dato de superficie: 3 ['93', '976', '978']
+año 2012 departamentos sin dato de superficie: 3 ['93', '976', '978']
+año 2013 departamentos sin dato de superficie: 5 ['75', '92', '976', '978', '999']
+año 2014 departamentos sin dato de superficie: 5 ['75', '92', '976', '978', '999']
+año 2015 departamentos sin dato de superficie: 4 ['75', '92', '978', '999']
+año 2016 departamentos sin dato de superficie: 3 ['976', '978', '999']
+año 2017 departamentos sin dato de superficie: 2 ['978', '999']
+año 2018 departamentos sin dato de superficie: 2 ['978', '999']
+año 2019 departamentos sin dato de superficie: 2 ['978', '999']
+año 2020 departamentos sin dato de superficie: 2 ['978', '999']
+año 2021 departamentos sin dato de superficie: 2 ['978', '999']
+año 2022 departamentos sin dato de superficie: 2 ['978', '999']
+año 2023 departamentos sin dato de superficie: 2 ['978', '999']
+año 2024 departamentos sin dato de superficie: 2 ['978', '999']
+año 2025 departamentos sin dato de superficie: 2 ['978', '999']
 descartada fr-ab-dep-978-area 0
 descartada fr-ab-herd-co 0
 grupos de cabaña: [('API', 'Apiculture'), ('AUPA', 'Autres élevages'), ('AUVOL', 'Autres volailles de chair'), ('BL', 'Brebis laitières'), ('BV', 'Brebis viande'), ('CH', 'Chèvres'), ('LA', 'Lapins'), ('LAR', 'Lapines reproductrices'), ('PC', 'Poulets de chair'), ('PO', 'Poules pondeuses'), ('TR', 'Truies'), ('VA', 'Vaches allaitantes'), ('VL', 'Vaches laitières')]
 grupos de superficie: [('AU', 'Autres surfaces'), ('FR', 'Fruits (yc à coque)'), ('GCU', 'Céréales et oléoprotéagineux (yc légumes secs)'), ('HSAU', 'Hors SAU'), ('LE', 'Légumes frais'), ('PP', 'Plantes à parfum, aromatiques et médicinales'), ('SF', 'Surfaces et cultures fourragères'), ('VI', 'Viticulture')]
-series 161
+series 169
