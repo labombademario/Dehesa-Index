@@ -107,6 +107,9 @@ jobs:
       - name: Spain monthly stocks (MAPA SIEGA public report, Power BI response decoder on real saved responses, kilotonne conversion, refusal of paginated/negative/duplicate data, unlabelled series dropped) and HICP butter/cheese parser; no network
         run: python3 scripts/test-spain-siega.py
 
+      - name: Spain Eurostat extras (farmland prices and rents, organic) parse and checks (no network)
+        run: python3 scripts/test-spain-eurostat.py
+
       - name: Data publisher under simultaneous pushes (5 parallel clones, shared registries merged without losing entries, real conflict fails red; no network)
         run: python3 scripts/test-publish-data.py
 

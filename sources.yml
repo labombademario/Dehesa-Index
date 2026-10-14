@@ -1129,13 +1129,13 @@ sources:
     log: spain-siega-log.txt
     message: Existencias mensuales de arroz, cereales y oleaginosas en España (MAPA, SIEGA)
   - id: spain-hicp
-    name: Update Spain consumer price indices for butter and cheese (Eurostat HICP)
+    name: Update Spain consumer prices for butter and cheese, farmland prices and rents, and organic farming (Eurostat)
     cron: ['40 9 4,18 * *']
     script: scripts/update-spain-hicp.py
-    timeout: 10
+    timeout: 15
     data: [spain-hicp-stats.json]
     log: spain-hicp-log.txt
-    message: Índices de precios de consumo de mantequilla y queso en España (Eurostat, IPCA)
+    message: Precios de consumo de mantequilla y queso, precio de la tierra y alquileres, y agricultura ecológica en España (Eurostat)
   - id: france-hicp
     name: Update France consumer price indices for butter, cheese and olive oil (Eurostat HICP)
     cron: ['50 9 4,18 * *']

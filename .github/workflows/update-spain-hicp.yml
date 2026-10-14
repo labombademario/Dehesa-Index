@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update Spain consumer price indices for butter and cheese (Eurostat HICP)
+name: Update Spain consumer prices for butter and cheese, farmland prices and rents, and organic farming (Eurostat)
 on:
   schedule:
     - cron: '40 9 4,18 * *'
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - id: fetch
@@ -24,7 +24,7 @@ jobs:
       - name: Detectar revisiones oficiales
         run: python3 scripts/detect-revisions.py data/spain-hicp-stats.json
       - name: Publicar
-        run: bash scripts/publish-data.sh "Índices de precios de consumo de mantequilla y queso en España (Eurostat, IPCA)" data/spain-hicp-stats.json data/spain-hicp-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Precios de consumo de mantequilla y queso, precio de la tierra y alquileres, y agricultura ecológica en España (Eurostat)" data/spain-hicp-stats.json data/spain-hicp-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
