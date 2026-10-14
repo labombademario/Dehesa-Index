@@ -314,7 +314,7 @@ CASES = [
  ("cap/pl/rules.json", "excepcion a un hito inexistente", lambda d: d["campaignOverrides"].append({"campaign": 2026, "calendarId": "no-existe", "region": None, "date": "2026-06-01", "legalBasis": "x", "text": "x"})),
  ("cap/pl/rules.json", "regla sin traduccion al italiano", lambda d: d["i18n"]["rules"][d["rules"][0]["id"]].__setitem__("it", "")),
  ("cap/fr/rules.json", "fecha de calendario imposible", lambda d: d["calendar"][0]["when"].update(month=2, day=31)),
- ("cap/fr/watch.json", "comprobacion con la vigilancia sin ejecutar", lambda d: d.__setitem__("checkedAt", "2026-10-01")),
+ ("cap/fr/watch.json", "comprobacion con la vigilancia sin ejecutar", lambda d: (d.__setitem__("status", "NOT_YET_RUN"), d.__setitem__("checkedAt", "2026-10-01"))),
  ("cap/it/watch.json", "texto nuevo sin avisar en reviewNeeded", lambda d: (d.__setitem__("status", "OK"), d.__setitem__("checkedAt", "2026-10-01"), d["current"]["candidates"].append({"id": "X1", "title": "t", "date": "2026-10-01", "url": "https://example.org"}))),
  ("cap/pl/watch.json", "huella cambiada sin avisar", lambda d: (d.__setitem__("status", "OK"), d.__setitem__("checkedAt", "2026-10-01"), d["baseline"]["fingerprints"].update({"a": {"sha256": "0" * 64, "label": "a"}}), d["current"]["fingerprints"].update({"a": {"sha256": "1" * 64, "label": "a"}}))),
  ("cap/dk/amounts.json", "importe negativo", lambda d: d["schemes"][0]["items"][0].__setitem__("amount", -3)),

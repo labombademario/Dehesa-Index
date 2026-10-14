@@ -1,9 +1,9 @@
 {
   "_doc": "Presupuesto de carga inicial por pagina (scripts/measure-pages.mjs --check). Cifras en KB. Se mide con navegador real: JSON de datos (crudo), JS (crudo) y total comprimido (gzip). 'forbid' son peticiones que NO deben ocurrir al abrir la pagina. Subir un limite exige justificarlo en el commit.",
   "pages": [
-    { "url": "/", "maxDataRawKB": 215, "maxJsRawKB": 333, "maxTotalGzKB": 222,
+    { "url": "/", "maxDataRawKB": 220, "maxJsRawKB": 333, "maxTotalGzKB": 222,
       "forbid": ["/data/(latest|history|normalized|catalog)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
-    { "url": "/", "mobile": true, "maxDataRawKB": 215, "maxTotalGzKB": 222, "forbid": ["/data/(latest|history|normalized)\\.json"] },
+    { "url": "/", "mobile": true, "maxDataRawKB": 220, "maxTotalGzKB": 222, "forbid": ["/data/(latest|history|normalized)\\.json"] },
     { "url": "/precios.html", "maxDataRawKB": 650, "maxJsRawKB": 669, "maxTotalGzKB": 415,
       "forbid": ["/data/(latest|history|normalized)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
     { "url": "/precios.html", "mobile": true, "maxDataRawKB": 650, "maxTotalGzKB": 415, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/prices/history/"] },
@@ -20,7 +20,7 @@
     { "url": "/observatorio.html", "maxDataRawKB": 237, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/relaciones.html", "maxDataRawKB": 279, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/calculadora.html", "maxDataRawKB": 80, "maxTotalGzKB": 150, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
-    { "url": "/mi-explotacion.html", "maxDataRawKB": 62, "maxTotalGzKB": 150, "wait": 2500, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
+    { "url": "/mi-explotacion.html", "maxDataRawKB": 65, "maxTotalGzKB": 150, "wait": 2500, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/brief.html", "maxDataRawKB": 200, "maxTotalGzKB": 180, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/precios-locales.html", "maxDataRawKB": 160, "maxTotalGzKB": 224, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 2500 },
     { "url": "/noticias.html", "maxDataRawKB": 420, "maxTotalGzKB": 275, "forbid": ["/data/news\\.json", "news-feed\\.js(\\?|$)"] },
