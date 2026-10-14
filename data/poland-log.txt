@@ -1,4 +1,8 @@
 precios 17 series
+  var 218167 descartados 1 valores con atributo distinto de 1
+  var 218168 descartados 1 valores con atributo distinto de 1
+  var 218169 descartados 1 valores con atributo distinto de 1
+precios mensuales 16 series
   var 4401 descartados 1 valores con atributo distinto de 1
   var 4402 descartados 1 valores con atributo distinto de 1
   var 4406 descartados 1 valores con atributo distinto de 1
