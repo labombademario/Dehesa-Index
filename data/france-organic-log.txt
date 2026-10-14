@@ -1,0 +1,9 @@
+recurso herds 21685 filas; 0260916-122505/donnees-dept-secretstat-14092026-cheptels.csv
+recurso operators 98779 filas; 60916-123032/donnees-dept-secretstat-14092026-operateurs.csv
+recurso totals 1814 filas; ent/20260916-123140/donnees-dept-secretstat-14092026-sau.csv
+recurso groups 130980 filas; donnees-dept-secretstat-14092026-surfaces-par-production.csv
+descartada fr-ab-dep-978-area 0
+descartada fr-ab-herd-co 0
+grupos de cabaña: [('API', 'Apiculture'), ('AUPA', 'Autres élevages'), ('AUVOL', 'Autres volailles de chair'), ('BL', 'Brebis laitières'), ('BV', 'Brebis viande'), ('CH', 'Chèvres'), ('LA', 'Lapins'), ('LAR', 'Lapines reproductrices'), ('PC', 'Poulets de chair'), ('PO', 'Poules pondeuses'), ('TR', 'Truies'), ('VA', 'Vaches allaitantes'), ('VL', 'Vaches laitières')]
+grupos de superficie: [('AU', 'Autres surfaces'), ('FR', 'Fruits (yc à coque)'), ('GCU', 'Céréales et oléoprotéagineux (yc légumes secs)'), ('HSAU', 'Hors SAU'), ('LE', 'Légumes frais'), ('PP', 'Plantes à parfum, aromatiques et médicinales'), ('SF', 'Surfaces et cultures fourragères'), ('VI', 'Viticulture')]
+series 161
