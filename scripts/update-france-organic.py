@@ -85,13 +85,20 @@ def build(data):
     for y in years:
         miss = [c for c in deps_all if by_dep.get((c, y), (None,))[0] is None]
         log("año", y, "departamentos sin dato de superficie:", len(miss), miss[:20])
-    NOTE_SUM = "Suma de los departamentos; solo se publican los años sin ningun hueco («NC», secreto estadistico)."
-    def national(idx):
-        d = {}
+    NOTE_SUM = "Suma de los departamentos. Los pocos departamentos con dato confidencial («NC», secreto estadistico) no se incluyen y solo se publica el año si su superficie maxima publicada es inferior al 0,3 % del total (1 % en regiones)."
+    def agg(cs, idx, tol):
+        """Suma por año de los departamentos cs. Un departamento sin dato ese año («NC») se tolera si su maximo publicado en cualquier año es < tol de la suma del año (se avisa en la nota);
+        los que nunca publican nada (978, 999) no cuentan como esperados."""
+        have = [c for c in cs if any(by_dep.get((c, y), (None,) * 4)[idx] is not None for y in years)]
+        mx = {c: max(by_dep[(c, y)][idx] for y in years if (c, y) in by_dep and by_dep[(c, y)][idx] is not None) for c in have}
+        d = {}; skipped = {}
         for y in years:
-            vs = [by_dep.get((c, y), (None,) * 4)[idx] for c in deps_all if (c, y) in by_dep]
-            if vs and len(vs) >= 95 and all(v is not None for v in vs): d[y] = sum(vs)
-        return d
+            vs = {c: by_dep[(c, y)][idx] for c in have if (c, y) in by_dep and by_dep[(c, y)][idx] is not None}
+            miss = [c for c in have if c not in vs]
+            tot = sum(vs.values())
+            if len(have) >= 3 and tot > 0 and sum(mx[c] for c in miss) <= tol * tot: d[y] = tot; skipped[y] = miss
+        return d, skipped
+    def national(idx): return agg(deps_all, idx, 0.003)[0]
     area = national(0)
     if not area or not (1.0e6 <= area[max(area)] <= 6.0e6): raise RuntimeError("superficie nacional fuera de rango: %s" % (area.get(max(area)) if area else None))
     ys = sorted(area)
@@ -106,10 +113,7 @@ def build(data):
     for rc in sorted(regions):
         cs = [c for c in deps_all if reg_of.get(c) == rc]
         for idx, sid, lab, unit in ((0, "area", "Organic farming area, %s (ha, Agence BIO)", "ha"), (3, "farms", "Organic farming holdings, %s (number, Agence BIO)", "holdings")):
-            d = {}
-            for y in years:
-                vs = [by_dep[(c, y)][idx] for c in cs if (c, y) in by_dep]
-                if vs and all(v is not None for v in vs): d[y] = sum(vs)
+            d = agg(cs, idx, 0.01)[0]
             add("fr-ab-reg-%s-%s" % (rc, sid), lab % regions[rc], unit, d, NOTE_SUM.replace("departamentos", "departamentos de la region"))
     for c in deps_all:
         d = {y: by_dep[(c, y)][0] for y in years if (c, y) in by_dep}
