@@ -20,8 +20,22 @@ año 2022 departamentos sin dato de superficie: 2 ['978', '999']
 año 2023 departamentos sin dato de superficie: 2 ['978', '999']
 año 2024 departamentos sin dato de superficie: 2 ['978', '999']
 año 2025 departamentos sin dato de superficie: 2 ['978', '999']
+descartada fr-ab-reg-01-area 0
+descartada fr-ab-reg-01-farms 0
+descartada fr-ab-reg-02-area 0
+descartada fr-ab-reg-02-farms 0
+descartada fr-ab-reg-03-area 0
+descartada fr-ab-reg-03-farms 0
+descartada fr-ab-reg-04-area 0
+descartada fr-ab-reg-04-farms 0
+descartada fr-ab-reg-06-area 0
+descartada fr-ab-reg-06-farms 0
+descartada fr-ab-reg-94-area 0
+descartada fr-ab-reg-94-farms 0
+descartada fr-ab-reg-NA-area 0
+descartada fr-ab-reg-NA-farms 0
 descartada fr-ab-dep-978-area 0
 descartada fr-ab-herd-co 0
 grupos de cabaña: [('API', 'Apiculture'), ('AUPA', 'Autres élevages'), ('AUVOL', 'Autres volailles de chair'), ('BL', 'Brebis laitières'), ('BV', 'Brebis viande'), ('CH', 'Chèvres'), ('LA', 'Lapins'), ('LAR', 'Lapines reproductrices'), ('PC', 'Poulets de chair'), ('PO', 'Poules pondeuses'), ('TR', 'Truies'), ('VA', 'Vaches allaitantes'), ('VL', 'Vaches laitières')]
 grupos de superficie: [('AU', 'Autres surfaces'), ('FR', 'Fruits (yc à coque)'), ('GCU', 'Céréales et oléoprotéagineux (yc légumes secs)'), ('HSAU', 'Hors SAU'), ('LE', 'Légumes frais'), ('PP', 'Plantes à parfum, aromatiques et médicinales'), ('SF', 'Surfaces et cultures fourragères'), ('VI', 'Viticulture')]
-series 169
+series 155
