@@ -167,8 +167,47 @@ def monthly_prices():
             live = re.search(r'slaughter|cattle|pigs|poultry|cow|heifer|piglet', prod, re.I) and u in ('PLN/kg', 'PLN/head')
             n += put('pl-gus-%s-%s' % (tag, slug), 'prices_lv' if live else 'prices', '%s: %s, monthly (GUS)' % (cap(base.replace(' - ', ': ')), ttl), u, 'monthly', pts, 'GUS BDL %s' % sid, mu)
     log('precios mensuales', n, 'series')
+def pick(sid, table, group, freq='annual'):
+    """Series de variables elegidas por id (sin adivinar por nombre): table = [(id de variable, etiqueta en ingles, unidad, factor)]. Solo nivel nacional, attrId 1."""
+    vals = values([t[0] for t in table]); n = 0
+    for vid, label, unit, mult in table:
+        n += put('pl-gus-%s-%d' % (sid.lower(), vid), group, label, unit, freq, vals.get(vid, []), 'GUS BDL %s' % sid, mult)
+    return n
+def retail():
+    """Precios al consumo anuales (media del ano): carne elaborada P1463 y grasas y lacteos P1464. Los cereales (P1461) se dejaron de publicar en 1999 y la tabla mensual P2917 acaba en 2019: no se usan."""
+    n = 0
+    for sid in ('P1463', 'P1464'):
+        vs = variables(sid); vals = values([v['id'] for v in vs])
+        for v in vs:
+            nm = v['n1']
+            if re.search(r'\bper kg\b|\b1kg\b', nm): u = 'PLN/kg'
+            elif re.search(r'\bper l\b|\b1l\b', nm): u = 'PLN/l'
+            elif re.search(r'250\s?g', nm): u = 'PLN/250 g'
+            elif re.search(r'300\s?g', nm): u = 'PLN/300 g'
+            else: continue
+            base = re.sub(r'\s*(-\s*)?per\s*(kg|l|250\s?g|300\s?g)\s*$', '', nm).strip(' -')
+            base = re.sub(r'\s+(1kg|1l|250g)$', '', base).strip(' ,-')
+            n += put('pl-gus-retail-%d' % v['id'], 'prices', '%s: retail price, annual average (GUS)' % cap(base), u, 'annual', vals.get(v['id'], []), 'GUS BDL %s' % sid)
+    log('precios al consumo', n, 'series')
+def extras():
+    n = 0
+    n += pick('P2310', [(58893, 'Crop share of agricultural market output (GUS)', '%', 1.0), (58894, 'Animal share of agricultural market output (GUS)', '%', 1.0)], 'production')
+    n += pick('P2311', [(58892, 'Market output as a share of final agricultural output (GUS)', '%', 1.0)], 'production')
+    n += pick('P3179', [(455388, 'Organic farms, total (GUS)', 'farms', 1.0), (455389, 'Organic agricultural area, total (GUS)', 'ha', 1.0), (288547, 'Certified organic farms (GUS)', 'farms', 1.0),
+                        (288546, 'Certified organic agricultural area (GUS)', 'ha', 1.0), (288544, 'Organic farms under conversion (GUS)', 'farms', 1.0), (288545, 'Organic agricultural area under conversion (GUS)', 'ha', 1.0)], 'organic')
+    n += pick('P1674', [(7883, 'Electricity production, total (GUS)', 'GWh', 1.0), (194886, 'Electricity production from renewable sources (GUS)', 'GWh', 1.0), (288086, 'Renewables share of electricity production (GUS)', '%', 1.0),
+                        (7884, 'Electricity production, water power plants (GUS)', 'GWh', 1.0), (79238, 'Electricity production, thermal power plants (GUS)', 'GWh', 1.0)], 'environment')
+    n += pick('P1675', [(8863, 'Electricity consumption, total (GUS)', 'GWh', 1.0), (8867, 'Electricity consumption, households (GUS)', 'GWh', 1.0), (8868, 'Electricity consumption, agriculture (GUS)', 'GWh', 1.0),
+                        (8864, 'Electricity consumption, industrial sector (GUS)', 'GWh', 1.0), (474248, 'Electricity consumption per capita (GUS)', 'kWh', 1.0)], 'environment')
+    n += pick('P1672', [(4834, 'Installed electric capacity, total (GUS)', 'MW', 1.0), (4837, 'Installed capacity, hard coal public power plants (GUS)', 'MW', 1.0), (4838, 'Installed capacity, lignite public power plants (GUS)', 'MW', 1.0),
+                        (79242, 'Installed capacity, water and unconventional power plants (GUS)', 'MW', 1.0)], 'environment')
+    n += pick('P1477', [(4497, 'Timber removals (felling), total (GUS)', 'm3', 1.0), (4498, 'Timber removals, coniferous (GUS)', 'm3', 1.0), (4504, 'Timber removals, non-coniferous (GUS)', 'm3', 1.0),
+                        (1609874, 'Timber removals, public forests (GUS)', 'm3', 1.0), (1609907, 'Timber removals, private forests (GUS)', 'm3', 1.0), (4513, 'Timber removals, State Forests (GUS)', 'm3', 1.0)], 'production')
+    ages = [(1611871, 'Forest area, total (GUS)'), (1612043, 'Wooded forest area (GUS)')] + [(1611872 + k, 'Forest stands, age class %s (GUS)' % c) for k, c in ((1, 'I (1-20 years)'), (2, 'II (21-40)'), (3, 'III (41-60)'), (4, 'IV (61-80)'), (5, 'V (81-100)'), (6, 'VI (101-120)'), (7, 'VII (121+)'))]
+    n += pick('P3935', [(i, l, 'ha', 1.0) for i, l in ages] + [(1611883, 'Growing stock of standing wood, total (GUS)', 'm3', 1.0)], 'environment')
+    log('extras', n, 'series')
 def main():
-    for fn in (prices, monthly_prices, crops, livestock, output, procurement):
+    for fn in (prices, monthly_prices, retail, extras, crops, livestock, output, procurement):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     if len(OUT) < 40:
