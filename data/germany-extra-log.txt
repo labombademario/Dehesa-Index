@@ -18,7 +18,7 @@
 41232-0001 42 filas
 41214-0001 252 filas
 41241-0006 192 filas
-ERROR 41252-0002 41252-0002: sin ZIP: {"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":98,"Content":"Die Tabelle ist zu gross, um im Dialog abgerufen zu werden. Bitte nutzen sie den
+41252-0002 16632 filas
 41312-0004 528 filas
 41313-0004 462 filas
 41314-0002 150 filas
@@ -26,5 +26,4 @@ ERROR 41252-0002 41252-0002: sin ZIP: {"Ident":{"Service":"data","Method":"table
 41141-0015 100 filas
 41141-0016 216 filas
 descartada de-timber-harvest-land-hb 0
-descartada de-forage-total 0
-series 186
+series 207
