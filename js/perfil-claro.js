@@ -138,6 +138,12 @@
     } catch (e) { REG = {}; }
     return REG;
   }
+  function flagOf(name) { // bandera (emoji) de un país por su nombre en inglés; '' si no es un país
+    var c = regionMap()[String(name || '').toLowerCase().trim()];
+    if (c === 'FX') c = 'FR'; // «France» también corresponde al código obsoleto FX (Francia metropolitana)
+    if (!c || c.length !== 2) return '';
+    return String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1));
+  }
   function country(name, lang) {
     var c = regionMap()[String(name).toLowerCase()]; if (!c) return null;
     try { var r = new Intl.DisplayNames([lang], { type: 'region' }).of(c); return r && r !== c ? r : null; } catch (e) { return null; }
@@ -606,6 +612,6 @@
 
   // Respaldo general (auditoria 8-oct-2026): si las reglas propias no traducen la etiqueta, el glosario comun (js/label-tl.js) lo intenta con la misma regla de todo o nada
   function tlAll(label, lang) { var r = tl(label, lang); if (r === label && root.DILabelTl && root.DILabelTl.ready(lang)) return root.DILabelTl.tl(label, lang); return r; }
-  var API = { share: share, shareUrl: shareUrl, bindShare: bindShare, tl: tlAll, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country };
+  var API = { share: share, shareUrl: shareUrl, bindShare: bindShare, tl: tlAll, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country, flagOf: flagOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.DIClear = API;
 })(typeof window !== 'undefined' ? window : globalThis);
