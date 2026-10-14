@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T03:38:34Z",
+ "generatedAt": "2026-10-14T06:48:13Z",
  "summary": {
-  "files": 60,
+  "files": 61,
   "errors": 0,
-  "warnings": 16
+  "warnings": 17
  },
  "files": [
   {
@@ -278,6 +278,29 @@
    "generatedAt": "2026-10-13T17:44:04Z",
    "info": [],
    "nWarnings": 36,
+   "nErrors": 0
+  },
+  {
+   "file": "eurostat-structure-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "ES/es-es-st-orgprod-r2000: salto 57 -> 2098 en 2018 (mediana previa 57)",
+    "ES/es-es-st-orgprod-r2000: salto 2098 -> 2030 en 2019 (mediana previa 57)",
+    "IT/it-es-st-orgprod-r2000: salto 10455 -> 34134 en 2019 (mediana previa 1.07e+03)",
+    "IT/it-es-st-orgprod-r2000: salto 34134 -> 45774 en 2020 (mediana previa 1.07e+03)",
+    "IT/it-es-st-orgprod-r2000: salto 45774 -> 51651 en 2021 (mediana previa 1.57e+03)",
+    "IT/it-es-st-orgprod-r2000: salto 51651 -> 48091 en 2022 (mediana previa 1.57e+03)"
+   ],
+   "stats": {
+    "series": 552,
+    "points": 5520,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-14T06:36:42Z",
+   "info": [],
+   "nWarnings": 6,
    "nErrors": 0
   },
   {
@@ -849,10 +872,10 @@
    "warnings": [],
    "stats": {
     "series": 207,
-    "points": 6194,
+    "points": 6188,
     "lines": 0
    },
-   "generatedAt": "2026-10-14T03:36:14Z",
+   "generatedAt": "2026-10-14T03:38:50Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
