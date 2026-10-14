@@ -1,0 +1,233 @@
+== 42321-0003 filas=828
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Inlandsabsatz von Düngemitteln
+unidades: jew. ME
+tiempo: 2018 .. 2026 (9)
+1 Quartale (4): 1. Quartal | 2. Quartal | 3. Quartal | 4. Quartal
+2 Deutschland insgesamt (1): Deutschland
+3 Düngemittelarten (23): Ammoniumnitrat-Harnstoff-Lösung, Harnsto | Andere Einnährstoffdünger (t-N) | Andere Kalkdünger (t-CaO) | Andere Phosphatdünger (t-P2O5) | Branntkalk (t-CaO) | Kali-Dünger | Kalirohsalz (t-K2O) | Kaliumchlorid (t-K2O) | Kaliumsulfat (t-K2O) | Kalk-Dünger | Kalkammonsalpeter (t-N) | Kohlensaurer Kalk (t-CaO) | Konverterkalk (t-CaO) | NK- und NPK-Dünger (t-K2O)
+ej: {'time': '2026', '1_variable_attribute_label': '3. Quartal', '2_variable_attribute_label': 'Deutschland', '3_variable_attribute_label': 'Kalkammonsalpeter (t-N)', 'value': '...', 'value_variable_label': 'Inlandsabsatz von Düngemitteln'}
+== 42321-0010 filas=3312
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Inlandsabsatz von Düngemitteln
+unidades: jew. ME
+tiempo: 2016-P1Y .. 2024-P1Y (9)
+1 Bundesländer (16): Baden-Württemberg | Bayern | Berlin | Brandenburg | Bremen | Hamburg | Hessen | Mecklenburg-Vorpommern | Niedersachsen | Nordrhein-Westfalen | Rheinland-Pfalz | Saarland | Sachsen | Sachsen-Anhalt
+2 Düngemittelsorten (23): Ammoniumnitrat-Harnstoff-Lösung, Harnsto | Andere Einnährstoffdünger (t-N) | Andere Kalkdünger (t-CaO) | Andere Phosphatdünger (t-P2O5) | Branntkalk (t-CaO) | Kali-Dünger | Kalirohsalz (t-K2O) | Kaliumchlorid (t-K2O) | Kaliumsulfat (t-K2O) | Kalk-Dünger | Kalkammonsalpeter (t-N) | Kohlensaurer Kalk (t-CaO) | Konverterkalk (t-CaO) | NK- und NPK-Dünger (t-K2O)
+ej: {'time': '2023-P1Y', '1_variable_attribute_label': 'Berlin', '2_variable_attribute_label': 'Kalk-Dünger', 'value': '272', 'value_variable_label': 'Inlandsabsatz von Düngemitteln'}
+== 61243-0005 filas=384
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,4_variable_code,4_variable_label,4_variable_attribute_code,4_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Strompreise für Nicht-Haushalte
+unidades: EUR/kWh
+tiempo: 2019 .. 2026 (8)
+1 Halbjahre (2): 1. Halbjahr | 2. Halbjahr
+2 Deutschland insgesamt (1): Deutschland
+3 Preisarten (3): Durchschnittspreise inkl.Steuern, Abgabe | Durchschnittspreise ohne Steuern, Abgabe | Durchschnittspreise ohne Umsatzsteuer u.
+4 Strom-Jahresverbrauchsklassen Nicht-Haushalte (8): 150 000 MWh und mehr | 2 000 bis unter 20 000 MWh | 20 000 bis unter 70 000 MWh | 20 bis unter 500 MWh | 500 bis unter 2 000 MWh | 70 000 bis unter 150 000 MWh | Insgesamt | unter 20 MWh
+ej: {'time': '2025', '1_variable_attribute_label': '1. Halbjahr', '2_variable_attribute_label': 'Deutschland', '3_variable_attribute_label': 'Durchschnittspreise ohne Steuern, Abgaben, Umlagen', '4_variable_attribute_label': '150 000 MWh und mehr', 'value': '0,1205', 'value_variable_label': 'Strompreise
+== 61243-0014 filas=336
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,4_variable_code,4_variable_label,4_variable_attribute_code,4_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Erdgaspreise für Nicht-Haushalte
+unidades: EUR/kWh
+tiempo: 2019 .. 2026 (8)
+1 Halbjahre (2): 1. Halbjahr | 2. Halbjahr
+2 Deutschland insgesamt (1): Deutschland
+3 Preisarten (3): Durchschnittspreise inkl.Steuern, Abgabe | Durchschnittspreise ohne Steuern, Abgabe | Durchschnittspreise ohne Umsatzsteuer u.
+4 Erdgas-Jahresverbrauchsklassen Nicht-Haushalte (7): 1 111 111 MWh und mehr | 2 778 bis unter 27 778 MWh | 27 778 bis unter 277 778 MWh | 277 778 bis unter 1 111 111 MWh | 278 bis unter 2 778 MWh | Insgesamt | unter 278 MWh
+ej: {'time': '2022', '1_variable_attribute_label': '1. Halbjahr', '2_variable_attribute_label': 'Deutschland', '3_variable_attribute_label': 'Durchschnittspreise ohne Umsatzsteuer u.a. abz.St.', '4_variable_attribute_label': '278 bis unter 2 778 MWh', 'value': '0,0554', 'value_variable_label': 'Erdgaspr
+== 61241-0101 filas=2856
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Erzeugerpreise für leichtes Heizöl
+unidades: EUR/hl
+tiempo: 2020 .. 2026 (7)
+1 Monate (12): April | August | Dezember | Februar | Januar | Juli | Juni | Mai | März | November | Oktober | September
+2 Berichtsort bzw. Geltungsbereich (leichtes Heizöl) (17): Berlin | Bremen | Deutschland | Dresden | Düsseldorf | Frankfurt am Main | Früheres Bundesgebiet | Hamburg | Hannover | Kiel | Leipzig | Magdeburg | Mannheim / Ludwigshafen am Rhein | München
+3 Art der Lieferung (leichtes Heizöl) (2): Lief.i.TKW an Verbr., 40-50 hl/Auftr.,fr | Lieferung v. mind. 500 t a.d. Großhandel
+ej: {'time': '2025', '1_variable_attribute_label': 'April', '2_variable_attribute_label': 'Frankfurt am Main', '3_variable_attribute_label': 'Lieferung v. mind. 500 t a.d. Großhandel, ab Lager', 'value': '73,39', 'value_variable_label': 'Erzeugerpreise für leichtes Heizöl'}
+== 41215-0002 filas=1752
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Anbaufläche Gemüse (Freiland) | Betriebe mit Gemüseanbau im Freiland | Erntemenge Gemüse (Freiland)
+unidades: Anzahl | ha | t
+tiempo: 2018 .. 2025 (8)
+1 Deutschland insgesamt (1): Deutschland
+2 Gemüsearten (73): Blumenkohl | Broccoli | Bundzwiebeln | Busch- und Stangenbohnen | Buschbohnen | Chicoree | Chinakohl | Dauerrotkohl | Dauerweißkohl | Dauerwirsing | Dicke Bohnen | Eichblattsalat | Einlegegurken | Eissalat
+ej: {'time': '2021', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Sonstige Salate', 'value': '434,1', 'value_variable_label': 'Anbaufläche Gemüse (Freiland)'}
+== 41215-0001 filas=48
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Anbaufläche Gemüse | Betriebe mit Gemüseanbau | Erntemenge Gemüse
+unidades: Anzahl | ha | t
+tiempo: 2010 .. 2025 (16)
+1 Deutschland insgesamt (1): Deutschland
+ej: {'time': '2017', '1_variable_attribute_label': 'Deutschland', 'value': '6584', 'value_variable_label': 'Betriebe mit Gemüseanbau'}
+== 41243-0010 filas=2304
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Anbaufläche | Erntemenge
+unidades: dt | ha
+tiempo: 2015 .. 2026 (12)
+1 Bundesländer (16): Baden-Württemberg | Bayern | Berlin | Brandenburg | Bremen | Hamburg | Hessen | Mecklenburg-Vorpommern | Niedersachsen | Nordrhein-Westfalen | Rheinland-Pfalz | Saarland | Sachsen | Sachsen-Anhalt
+2 Baumobstarten (6): Birnen | Mirabellen/Renekloden | Pflaumen/Zwetschen | Sauerkirschen | Süßkirschen | Äpfel
+ej: {'time': '2017', '1_variable_attribute_label': 'Sachsen-Anhalt', '2_variable_attribute_label': 'Pflaumen/Zwetschen', 'value': '76', 'value_variable_label': 'Anbaufläche'}
+== 41243-0012 filas=7680
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Anbaufläche | Erntemenge
+unidades: dt | ha
+tiempo: 2015 .. 2026 (12)
+1 Bundesländer (16): Baden-Württemberg | Bayern | Berlin | Brandenburg | Bremen | Hamburg | Hessen | Mecklenburg-Vorpommern | Niedersachsen | Nordrhein-Westfalen | Rheinland-Pfalz | Saarland | Sachsen | Sachsen-Anhalt
+2 Apfelsorten (20): Berlepsch | Boskoop | Braeburn | Cox Orangenrenette | Delbarestivale | Elstar | Fuji | Gala | Golden Delicious | Holsteiner Cox | Idared | Jonagold | Jonagored | Jonaprince
+ej: {'time': '2025', '1_variable_attribute_label': 'Mecklenburg-Vorpommern', '2_variable_attribute_label': 'Delbarestivale', 'value': '-', 'value_variable_label': 'Anbaufläche'}
+== 41232-0001 filas=33
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Anbaufläche | Betriebe mit Strauchbeerenanbau | Erntemenge
+unidades: Anzahl | ha | t
+tiempo: 2015 .. 2025 (11)
+1 Deutschland insgesamt (1): Deutschland
+ej: {'time': '2020', '1_variable_attribute_label': 'Deutschland', 'value': '1291', 'value_variable_label': 'Betriebe mit Strauchbeerenanbau'}
+== 41214-0001 filas=198
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Betriebe | Erntefläche | Erntemenge
+unidades: 1000 qm | Anzahl | t
+tiempo: 2015 .. 2025 (11)
+1 Deutschland insgesamt (1): Deutschland
+2 Speisepilzarten (6): Austernseitlinge | Champignons | Insgesamt | Kräuterseitlinge | Shiitake | Sonstige Spezialpilzkulturen
+ej: {'time': '2024', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Shiitake', 'value': '22', 'value_variable_label': 'Erntefläche'}
+== 41241-0006 filas=132
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Erntemenge von Raufutter
+unidades: t
+tiempo: 2015 .. 2025 (11)
+1 Deutschland insgesamt (1): Deutschland
+2 Fruchtarten (4): Feldgras/Grasanbau auf dem Ackerland (in | Insgesamt | Leguminosen zur Ganzpflanzenernte (z.B.  | Wiesen und Weiden (einschl. Mähweiden un
+3 Verwendungszweck (3): Frischfutter / Weide | Heu | Silage
+ej: {'time': '2016', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Insgesamt', '3_variable_attribute_label': 'Frischfutter / Weide', 'value': '6638000', 'value_variable_label': 'Erntemenge von Raufutter'}
+== 41252-0002 filas=16632
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Mit Keltertrauben bestockte Rebfläche
+unidades: ha
+tiempo: 2015 .. 2025 (11)
+1 Deutschland insgesamt (1): Deutschland
+2 Weinanbaugebiete (14): Ahr | Baden | Franken | Hessische Bergstraße | Insgesamt | Mittelrhein | Mosel | Nahe | Pfalz | Rheingau | Rheinhessen | Saale-Unstrut | Sachsen | Württemberg
+3 Rebsorte (108): Acolon | Albalonga | Auxerrois | Bacchus | Blauburger | Blauer Frühburgunder | Blauer Limberger | Blauer Portugieser | Blauer Silvaner | Blauer Spätburgunder | Blauer Trollinger | Blauer Zweigelt | Bronner | Cabernet Carbon
+ej: {'time': '2016', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Saale-Unstrut', '3_variable_attribute_label': 'Morio-Muskat', 'value': '-', 'value_variable_label': 'Mit Keltertrauben bestockte Rebfläche'}
+== 41255-0010 filas=528
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Weinbestand
+unidades: hl
+tiempo: 2015 .. 2025 (11)
+1 Bundesländer (16): Baden-Württemberg | Bayern | Berlin | Brandenburg | Bremen | Hamburg | Hessen | Mecklenburg-Vorpommern | Niedersachsen | Nordrhein-Westfalen | Rheinland-Pfalz | Saarland | Sachsen | Sachsen-Anhalt
+2 Rebsorte (3): Insgesamt | Rotwein | Weißwein
+ej: {'time': '2025', '1_variable_attribute_label': 'Hamburg', '2_variable_attribute_label': 'Insgesamt', 'value': '41095', 'value_variable_label': 'Weinbestand'}
+== 41312-0004 filas=208
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Haltungen mit Milchkühen | Milchkühe
+unidades: Anzahl
+tiempo: 2020-05P1M .. 2026-05P1M (13)
+1 Deutschland insgesamt (1): Deutschland
+2 Bestandsgrößenklassen (8): 1 bis 9 Tiere | 10 bis 19 Tiere | 100 bis 199 Tiere | 20 bis 49 Tiere | 200 bis 499 Tiere | 50 bis 99 Tiere | 500 und mehr Tiere | Insgesamt
+ej: {'time': '2025-05P1M', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Insgesamt', 'value': '47719', 'value_variable_label': 'Haltungen mit Milchkühen'}
+== 41313-0004 filas=182
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Betriebe mit Mastschweinen | Mastschweine
+unidades: Anzahl
+tiempo: 2020-05P1M .. 2026-05P1M (13)
+1 Deutschland insgesamt (1): Deutschland
+2 Bestandsgrößenklassen (7): 1 bis 99 Tiere | 100 bis 399 Tiere | 1000 bis 1999 Tiere | 2000 bis 4999 Tiere | 400 bis 999 Tiere | 5000 und mehr Tiere | Insgesamt
+ej: {'time': '2020-11P1M', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': '1 bis 99 Tiere', 'value': '3000', 'value_variable_label': 'Betriebe mit Mastschweinen'}
+== 41314-0002 filas=110
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Betriebe mit Schafhaltung | Schafe
+unidades: Anzahl
+tiempo: 2015-11P1M .. 2025-11P1M (11)
+1 Deutschland insgesamt (1): Deutschland
+2 Bestandsgrößenklassen (5): 1 bis 49 Tiere | 1000 und mehr Tiere | 50 bis 499 Tiere | 500 bis 999 Tiere | Insgesamt
+ej: {'time': '2024-11P1M', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Insgesamt', 'value': '1510900', 'value_variable_label': 'Schafe'}
+== 41141-0026 filas=864
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,4_variable_code,4_variable_label,4_variable_attribute_code,4_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Gepacht.LF i.Betrieben m.Angabe d.Jahrespachtentg. | Landw. Betriebe mit Angabe d. Jahrespachtentgeltes
+unidades: Anzahl | ha
+tiempo: 2020 .. 2023 (2)
+1 Deutschland insgesamt (1): Deutschland
+2 Bodennutzungsarten (4): Ackerland | Dauergrünland | Landwirtschaftlich genutzte Fläche | Sonstige landwirtschaftlich genutzte Flä
+3 Rechtsformen (6): Einzelunternehmen | Einzelunternehmen, Haupterwerb | Einzelunternehmen, Nebenerwerb | Insgesamt | Juristische Personen | Personengemeinschaften, -gesellschaften
+4 Größenklassen des durchschn. Jahrespachtentgeltes (9): 100 bis unter 150 EUR/ha | 150 bis unter 200 EUR/ha | 200 bis unter 250 EUR/ha | 250 bis unter 300 EUR/ha | 300 bis unter 350 EUR/ha | 350 bis unter 400 EUR/ha | 400 und mehr EUR/ha | Insgesamt | unter 100 EUR/ha
+ej: {'time': '2023', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Ackerland', '3_variable_attribute_label': 'Einzelunternehmen, Nebenerwerb', '4_variable_attribute_label': '100 bis unter 150 EUR/ha', 'value': '.', 'value_variable_label': 'Gepacht.LF i.Betrieben m.Angabe d.
+== 41141-0009 filas=4500
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,4_variable_code,4_variable_label,4_variable_attribute_code,4_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Fläche im jeweiligen Eigentumsverhältnis | Landwirtschaftlich genutzte Fläche | Landwirtschaftliche Betriebe
+unidades: Anzahl | ha
+tiempo: 2010 .. 2023 (5)
+1 Deutschland insgesamt (1): Deutschland
+2 Eigentumsverhältnisse (5): Eigene selbstbewirtschaftete LF | Gepachtete landwirtschaftlich genutzte F | Unentgeltlich zur Bewirtschaftung erhalt | Von Familienangehörigen gepachtete LF | Von anderen Verpächtern gepachtete LF
+3 Rechtsformen (6): Einzelunternehmen | Einzelunternehmen, Haupterwerb | Einzelunternehmen, Nebenerwerb | Insgesamt | Juristische Personen | Personengemeinschaften, -gesellschaften
+4 Größenklassen der LF (10): 10 bis unter 20 ha | 100 bis unter 200 ha | 1000 und mehr ha | 20 bis unter 50 ha | 200 bis unter 500 ha | 5 bis unter 10 ha | 50 bis unter 100 ha | 500 bis unter 1000 ha | Insgesamt | unter 5 ha
+ej: {'time': '2023', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Gepachtete landwirtschaftlich genutzte Fläche', '3_variable_attribute_label': 'Einzelunternehmen, Haupterwerb', '4_variable_attribute_label': '500 bis unter 1000 ha', 'value': '.', 'value_variable_label': 'F
+== 41141-0015 filas=100
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Bewässerte Fläche im Vorjahr | Landwirtschaftl. Betr. mit Bewässerung im Vorjahr
+unidades: Anzahl | ha
+tiempo: 2010 .. 2023 (5)
+1 Deutschland insgesamt (1): Deutschland
+2 Größenklassen der LF (10): 10 bis unter 20 ha | 100 bis unter 200 ha | 1000 und mehr ha | 20 bis unter 50 ha | 200 bis unter 500 ha | 5 bis unter 10 ha | 50 bis unter 100 ha | 500 bis unter 1000 ha | Insgesamt | unter 5 ha
+ej: {'time': '2010', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': '1000 und mehr ha', 'value': '31083', 'value_variable_label': 'Bewässerte Fläche im Vorjahr'}
+== 41141-0017 filas=160
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Dauergrünlandfläche | Landwirtschaftliche Betriebe mit Dauergrünland
+unidades: Anzahl | ha
+tiempo: 2020 .. 2023 (2)
+1 Deutschland insgesamt (1): Deutschland
+2 Dauergrünlandarten (4): Dauergrünland | Ertragsarmes u.a.d. Erzeugung gen. Dauer | Weiden (einschließlich Mähweiden und Alm | Wiesen (hauptsächlich Schnittnutzung)
+3 Größenklassen der Dauergrünlandfläche (10): 10 bis unter 20 ha | 100 bis unter 200 ha | 20 bis unter 30 ha | 200 bis unter 500 ha | 30 bis unter 50 ha | 5 bis unter 10 ha | 50 bis unter 100 ha | 500 und mehr ha | Insgesamt | unter 5 ha
+ej: {'time': '2020', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Wiesen (hauptsächlich Schnittnutzung)', '3_variable_attribute_label': '5 bis unter 10 ha', 'value': '181588', 'value_variable_label': 'Dauergrünlandfläche'}
+== 41141-0016 filas=216
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Dauerkulturfläche | Landwirtschaftliche Betriebe mit Dauerkulturen
+unidades: Anzahl | ha
+tiempo: 2020 .. 2023 (2)
+1 Deutschland insgesamt (1): Deutschland
+2 Dauerkulturarten (6): Baumobstanlagen für Kernobst | Baumobstanlagen für Steinobst | Baumschulen | Beerenobstanlagen (ohne Erdbeeren) | Dauerkulturen | Rebflächen
+3 Größenklassen der Dauerkulturen (9): 10 bis unter 15 ha | 15 bis unter 20 ha | 2 bis unter 5 ha | 20 bis unter 30 ha | 30 bis unter 50 ha | 5 bis unter 10 ha | 50 und mehr ha | Insgesamt | unter 2 ha
+ej: {'time': '2023', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Baumobstanlagen für Steinobst', '3_variable_attribute_label': '20 bis unter 30 ha', 'value': '260', 'value_variable_label': 'Landwirtschaftliche Betriebe mit Dauerkulturen'}
+== 41271-0003 filas=2808
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Landwirtschaftlich genutzte Fläche | Landwirtschaftliche Betriebe
+unidades: Anzahl | ha
+tiempo: 2015 .. 2026 (12)
+1 Deutschland insgesamt (1): Deutschland
+2 Bodennutzungsarten (117): Ackerbohnen | Ackerland | Alle anderen Handelsgewächse | And. Hülsenfrüchte u.Mischkulturen zur K | Andere Dauerkulturen | Andere Dauerkulturen im Freiland | Andere Flächen (z.B. Landschaftselemente | Andere Hackfrüchte ohne Saatguterzeugung | Andere Kartoffeln (Industrie-/Futter-/Pf | Andere Leguminosen zur Ganzpflanzenernte | Andere Pflanzen zur Fasergewinnung | Andere Pflanzen zur Ganzpflanzenernte | Andere Speisepilze | Andere Ölfrüchte zur Körnergewinnung
+ej: {'time': '2017', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Wintergerste', 'value': '1226600', 'value_variable_label': 'Landwirtschaftlich genutzte Fläche'}
+== 41261-0012 filas=21120
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,4_variable_code,4_variable_label,4_variable_attribute_code,4_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Schadholzeinschlag
+unidades: 1000 cbm
+tiempo: 2015 .. 2025 (11)
+1 Bundesländer (16): Baden-Württemberg | Bayern | Berlin | Brandenburg | Bremen | Hamburg | Hessen | Mecklenburg-Vorpommern | Niedersachsen | Nordrhein-Westfalen | Rheinland-Pfalz | Saarland | Sachsen | Sachsen-Anhalt
+2 Einschlagsursache (6): Insekten | Insgesamt | Schnee/Duft | Sonstiges | Trockenheit | Wind/Sturm
+3 Holzartengruppen (5): Buche und sonstiges Laubholz | Eiche und Roteiche | Fichte, Tanne, Douglasie und sonstiges N | Insgesamt | Kiefer und Lärche
+4 Waldeigentumsarten (4): Insgesamt | Körperschaftswald | Privatwald | Staatswald (Bundes- und Landeswald)
+ej: {'time': '2017', '1_variable_attribute_label': 'Baden-Württemberg', '2_variable_attribute_label': 'Trockenheit', '3_variable_attribute_label': 'Fichte, Tanne, Douglasie und sonstiges Nadelholz', '4_variable_attribute_label': 'Körperschaftswald', 'value': '-', 'value_variable_label': 'Schadholzeinsch
+== 61521-0020 filas=34200
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Durchschn.Ertragsmesszahl je ha veräußerter Fläche | Durchschnittliche Fläche je Veräußerungsfall | Durchschnittlicher Kaufwert | Kaufsumme | Veräußerte Fläche | Veräußerungsfälle
+unidades: 100 | Anzahl | EUR/ha | Tsd. EUR | ha
+tiempo: 2021 .. 2025 (5)
+1 Regierungsbezirke (38): Arnsberg | Berlin | Brandenburg | Braunschweig | Bremen | Chemnitz | Darmstadt | Detmold | Dresden | Düsseldorf | Freiburg | Gießen | Hamburg | Hannover
+2 Bodenarten (5): Ackerland | Grünland | Insgesamt | Landwirtschaftliche Fläche | Sonstige landwirtschaftliche Fläche
+3 Größenklassen der veräußerten Fläche (6): 0,1 bis unter 0,25 ha | 0,25 bis unter 1 ha | 1 bis unter 2 ha | 2 bis unter 5 ha | 5 und mehr ha | Insgesamt
+ej: {'time': '2024', '1_variable_attribute_label': 'Arnsberg', '2_variable_attribute_label': 'Insgesamt', '3_variable_attribute_label': 'Insgesamt', 'value': '202', 'value_variable_label': 'Veräußerungsfälle'}
+== 41254-0010 filas=576
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Erzeugter Wein und Most
+unidades: hl
+tiempo: 2024 .. 2025 (2)
+1 Bundesländer (16): Baden-Württemberg | Bayern | Berlin | Brandenburg | Bremen | Hamburg | Hessen | Mecklenburg-Vorpommern | Niedersachsen | Nordrhein-Westfalen | Rheinland-Pfalz | Saarland | Sachsen | Sachsen-Anhalt
+2 Qualitätsstufen (6): Insgesamt | Prädikatswein (Wein mit g.U.) | Qualitätswein (Wein mit g.U.) | Rebsortenwein ohne g.U./g.g.A. | Wein mit g.g.A. bzw. Landwein | Wein ohne g.U./g.g.A.
+3 Rebsorte (3): Insgesamt | Rotwein | Weißwein
+ej: {'time': '2024', '1_variable_attribute_label': 'Saarland', '2_variable_attribute_label': 'Insgesamt', '3_variable_attribute_label': 'Weißwein', 'value': '5479', 'value_variable_label': 'Erzeugter Wein und Most'}
+== 41244-0002 filas=936
+cols: statistics_code,statistics_label,time_code,time_label,time,1_variable_code,1_variable_label,1_variable_attribute_code,1_variable_attribute_label,2_variable_code,2_variable_label,2_variable_attribute_code,2_variable_attribute_label,3_variable_code,3_variable_label,3_variable_attribute_code,3_variable_attribute_label,value,value_unit,value_variable_code,value_variable_label
+valores: Erntemenge an Weinmost | Rebfläche im Ertrag | Weinmostertrag je Hektar
+unidades: ha | hl
+tiempo: 2019 .. 2026 (8)
+1 Deutschland insgesamt (1): Deutschland
+2 Weinanbaugebiete (13): Ahr | Baden | Franken | Hessische Bergstraße | Mittelrhein | Mosel | Nahe | Pfalz | Rheingau | Rheinhessen | Saale-Unstrut | Sachsen | Württemberg
+3 Art des Weinmosts (3): Insgesamt | Rotmost | Weißmost
+ej: {'time': '2021', '1_variable_attribute_label': 'Deutschland', '2_variable_attribute_label': 'Württemberg', '3_variable_attribute_label': 'Weißmost', 'value': '296167', 'value_variable_label': 'Erntemenge an Weinmost'}
