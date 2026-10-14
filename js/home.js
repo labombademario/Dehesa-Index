@@ -301,7 +301,7 @@
     document.getElementById('home-stats').innerHTML = tapeHtml(lang, esc);
     if (window.DICite && window.DICite.compact) window.DICite.compact(document.getElementById('home-stats'));
 
-    document.getElementById('home-movers-title').textContent = t.moversTitle;
+    var _mt = document.getElementById('home-movers-title'); if (_mt) _mt.textContent = t.moversTitle;
     var ms = document.getElementById('home-more-sum'); if (ms) ms.textContent = t.moreData;
     // El índice de enlaces de esta portada es en español (es lo que leen los buscadores); en otro idioma se enseña solo el enlace a la portada de ese idioma.
     var sf = document.querySelector('.di-seo-links');
@@ -311,10 +311,10 @@
       sf.innerHTML = LP ? '<p class="di-movers-hint" style="margin-top:16px"><a href="' + LP[0] + '">' + LP[1] + '</a></p>' : sf._es;
     }
     var ss = document.getElementById('home-seo-sum'); if (ss) ss.textContent = ({ es: 'Explorar todo Dehesa Index', en: 'Explore all of Dehesa Index', fr: 'Explorer tout Dehesa Index', it: 'Esplora tutto Dehesa Index' })[lang] || 'Explorar todo Dehesa Index';
-    document.getElementById('home-movers-hint').textContent = t.moversHint;
-    document.getElementById('home-movers-cta').textContent = t.moversCta;
+    var _mh = document.getElementById('home-movers-hint'); if (_mh) _mh.textContent = t.moversHint;
+    var _mc = document.getElementById('home-movers-cta'); if (_mc) _mc.textContent = t.moversCta;
 
-    /* Panel por mercado: el que el usuario eligió (mismo ajuste que «Tu ubicación» en Precios) o el que corresponde a su zona horaria */
+    if (document.getElementById('home-movers-table')) { /* Panel por mercado: el que el usuario eligió (mismo ajuste que «Tu ubicación» en Precios) o el que corresponde a su zona horaria */
     var reg = homeRegion(lang), RN = { eu: ['🇪🇺', { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }], us: ['🇺🇸', { es: 'EE. UU.', en: 'US', fr: 'États-Unis', it: 'USA' }], uk: ['🇬🇧', { es: 'Reino Unido', en: 'UK', fr: 'Royaume-Uni', it: 'Regno Unito' }], ca: ['🇨🇦', { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' }] };
     var tb = document.getElementById('home-movers-table'), chips = document.getElementById('home-movers-reg');
     if (tb && !chips) { chips = document.createElement('div'); chips.id = 'home-movers-reg'; chips.className = 'di-home-reg'; chips.setAttribute('role', 'radiogroup'); tb.parentNode.insertBefore(chips, tb);
@@ -341,6 +341,7 @@
     }).join('') : '<div class="di-home-empty">Sin observaciones reales disponibles todavía.</div>';
     document.getElementById('home-movers-table').innerHTML = headRow + bodyRows;
     if (window.DICite && window.DICite.compact) window.DICite.compact(document.getElementById('home-movers-table'));
+    } /* fin del panel de mercado (ya no esta en la portada) */
 
     document.getElementById('home-how-title').textContent = t.howTitle;
     document.getElementById('home-how-sub').textContent = t.howSub;
