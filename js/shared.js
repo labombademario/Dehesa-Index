@@ -642,7 +642,7 @@
             '<p class="di-footer-notice">' + esc(t.notice) + '</p>' +
           '</div>' +
         '</div>' +
-        '<div class="di-footer-bottom">' + esc(t.copyrightText) + ' · <a href="' + sitePath('metodologia.html') + '">' + esc(t.methodologyLabel) + '</a> · <a href="' + sitePath('legal.html') + '">' + esc(t.legalLabel) + '</a></div>' +
+        '<div class="di-footer-bottom">' + esc(t.copyrightText) + ' · <a href="' + sitePath('metodologia.html') + '">' + esc(t.methodologyLabel) + '</a> · <a href="' + sitePath('legal.html') + '">' + esc(t.legalLabel) + '</a> · <a href="https://www.youtube.com/@dehesaindex" target="_blank" rel="noopener noreferrer me">YouTube</a></div>' +
       '</footer>';
   }
 
