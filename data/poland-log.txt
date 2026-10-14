@@ -23,3 +23,4 @@ produccion 13 series
   var 218074 descartados 1 valores con atributo distinto de 1
   var 218075 descartados 1 valores con atributo distinto de 1
 acopio mensual 13 series
+farm-shop 3 pares
