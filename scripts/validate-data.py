@@ -240,6 +240,7 @@ def main():
         return validate_file(f)
     results = [one(f) for f in files if f.exists()]
     for f in files:
+        if not f.exists() and str(f.relative_to(DATA)) in REG.get("optional", []) if str(f).startswith(str(DATA)) else False: continue  # fichero opcional aun sin publicar
         if not f.exists(): results.append({"file": f.name, "status": "error", "errors": ["archivo inexistente"], "warnings": [], "stats": {}})
     bad = [r for r in results if r["status"] == "error"]; warn = [r for r in results if r["status"] == "warning"]
     for r in results:
