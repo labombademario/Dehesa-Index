@@ -6,4 +6,4 @@ const rows=h.map(o=>{const kg=factors[o.unit]||null; return {...o,normalization:
 const currencies=[...new Set(rows.map(o=>o.currency).filter(Boolean))].sort();
 const units=[...new Set(rows.map(o=>o.unit).filter(Boolean))].sort();
 const out={schemaVersion:'1.0',generatedAt:new Date().toISOString(),policy:{neverConvertQuoteBasis:true,neverTreatIndexAsPrice:true,fxRequiredForCurrencyConversion:true},currencies,units,observations:rows};
-await writeFile(path.join(root,'data','normalized.json'),JSON.stringify(out,null,2)+'\n'); console.log('Normalized layer: '+rows.length+' observations.');
+await writeFile(path.join(root,'data','normalized.json'),JSON.stringify(out)+'\n'); console.log('Normalized layer: '+rows.length+' observations.');
