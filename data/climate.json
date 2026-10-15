@@ -769,7 +769,7 @@
       "names": {
         "en": "Indiana (central)",
         "fr": "Indiana (centre)",
-        "it": "Indiana (centro)"
+        "it": "Indiana (centrale)"
       },
       "region": "us",
       "country": "US",
@@ -2790,7 +2790,12 @@
           "tempBaselineC": 27.3,
           "tempAnomalyC": 2.6
         }
-      ]
+      ],
+      "names": {
+        "en": "Alabama (central)",
+        "fr": "Alabama (centre)",
+        "it": "Alabama (centrale)"
+      }
     },
     {
       "id": "us-alaska",
@@ -2911,7 +2916,12 @@
           "tempBaselineC": 12.6,
           "tempAnomalyC": 1.2
         }
-      ]
+      ],
+      "names": {
+        "en": "Alaska (interior, Delta Junction)",
+        "fr": "Alaska (intérieur, Delta Junction)",
+        "it": "Alaska (interno, Delta Junction)"
+      }
     },
     {
       "id": "us-arizona",
@@ -3033,7 +3043,12 @@
           "tempBaselineC": 33.1,
           "tempAnomalyC": 2.5
         }
-      ]
+      ],
+      "names": {
+        "en": "Arizona (central, Pinal)",
+        "fr": "Arizona (centre, Pinal)",
+        "it": "Arizona (centro, Pinal)"
+      }
     },
     {
       "id": "us-connecticut",
@@ -3154,7 +3169,12 @@
           "tempBaselineC": 22.2,
           "tempAnomalyC": 0.1
         }
-      ]
+      ],
+      "names": {
+        "en": "Connecticut (Connecticut Valley)",
+        "fr": "Connecticut (vallée du Connecticut)",
+        "it": "Connecticut (valle del Connecticut)"
+      }
     },
     {
       "id": "us-delaware",
@@ -3277,7 +3297,12 @@
           "tempBaselineC": 25.3,
           "tempAnomalyC": 0.7
         }
-      ]
+      ],
+      "names": {
+        "en": "Delaware (Sussex)",
+        "fr": "Delaware (Sussex)",
+        "it": "Delaware (Sussex)"
+      }
     },
     {
       "id": "us-florida",
@@ -3399,7 +3424,12 @@
           "tempBaselineC": 27.4,
           "tempAnomalyC": 1.3
         }
-      ]
+      ],
+      "names": {
+        "en": "Florida (central)",
+        "fr": "Floride (centre)",
+        "it": "Florida (centrale)"
+      }
     },
     {
       "id": "us-idaho",
@@ -3522,7 +3552,12 @@
           "tempBaselineC": 24.1,
           "tempAnomalyC": 2.1
         }
-      ]
+      ],
+      "names": {
+        "en": "Idaho (Magic Valley)",
+        "fr": "Idaho (Magic Valley)",
+        "it": "Idaho (Magic Valley)"
+      }
     },
     {
       "id": "us-kentucky",
@@ -3645,7 +3680,12 @@
           "tempBaselineC": 25.4,
           "tempAnomalyC": 1.2
         }
-      ]
+      ],
+      "names": {
+        "en": "Kentucky (west)",
+        "fr": "Kentucky (ouest)",
+        "it": "Kentucky (ovest)"
+      }
     },
     {
       "id": "us-louisiana",
@@ -3768,7 +3808,12 @@
           "tempBaselineC": 28.6,
           "tempAnomalyC": 3.1
         }
-      ]
+      ],
+      "names": {
+        "en": "Louisiana (north-central)",
+        "fr": "Louisiane (centre-nord)",
+        "it": "Louisiana (centro-nord)"
+      }
     },
     {
       "id": "us-massachusetts",
@@ -3889,7 +3934,12 @@
           "tempBaselineC": 21.1,
           "tempAnomalyC": 0.4
         }
-      ]
+      ],
+      "names": {
+        "en": "Massachusetts (Connecticut Valley)",
+        "fr": "Massachusetts (vallée du Connecticut)",
+        "it": "Massachusetts (valle del Connecticut)"
+      }
     },
     {
       "id": "us-maryland",
@@ -4012,7 +4062,12 @@
           "tempBaselineC": 25,
           "tempAnomalyC": 0.6
         }
-      ]
+      ],
+      "names": {
+        "en": "Maryland (east coast)",
+        "fr": "Maryland (côte est)",
+        "it": "Maryland (costa orientale)"
+      }
     },
     {
       "id": "us-maine",
@@ -4133,7 +4188,12 @@
           "tempBaselineC": 17.9,
           "tempAnomalyC": 1.1
         }
-      ]
+      ],
+      "names": {
+        "en": "Maine (Aroostook)",
+        "fr": "Maine (Aroostook)",
+        "it": "Maine (Aroostook)"
+      }
     },
     {
       "id": "us-michigan",
@@ -4256,7 +4316,12 @@
           "tempBaselineC": 21.2,
           "tempAnomalyC": 0.6
         }
-      ]
+      ],
+      "names": {
+        "en": "Michigan (south-central)",
+        "fr": "Michigan (centre-sud)",
+        "it": "Michigan (centro-sud)"
+      }
     },
     {
       "id": "us-new-hampshire",
@@ -4377,7 +4442,12 @@
           "tempBaselineC": 19.3,
           "tempAnomalyC": 0.8
         }
-      ]
+      ],
+      "names": {
+        "en": "New Hampshire (south)",
+        "fr": "New Hampshire (sud)",
+        "it": "New Hampshire (sud)"
+      }
     },
     {
       "id": "us-new-jersey",
@@ -4499,7 +4569,12 @@
           "tempBaselineC": 24.2,
           "tempAnomalyC": 0.9
         }
-      ]
+      ],
+      "names": {
+        "en": "New Jersey (south)",
+        "fr": "New Jersey (sud)",
+        "it": "New Jersey (sud)"
+      }
     },
     {
       "id": "us-new-mexico",
@@ -4621,7 +4696,12 @@
           "tempBaselineC": 25.8,
           "tempAnomalyC": 3.9
         }
-      ]
+      ],
+      "names": {
+        "en": "New Mexico (east, Clovis)",
+        "fr": "Nouveau-Mexique (est, Clovis)",
+        "it": "Nuovo Messico (est, Clovis)"
+      }
     },
     {
       "id": "us-nevada",
@@ -4742,7 +4822,12 @@
           "tempBaselineC": 25.1,
           "tempAnomalyC": 1.8
         }
-      ]
+      ],
+      "names": {
+        "en": "Nevada (Lovelock)",
+        "fr": "Nevada (Lovelock)",
+        "it": "Nevada (Lovelock)"
+      }
     },
     {
       "id": "us-new-york",
@@ -4864,7 +4949,12 @@
           "tempBaselineC": 21.6,
           "tempAnomalyC": 0.2
         }
-      ]
+      ],
+      "names": {
+        "en": "New York (west)",
+        "fr": "New York (ouest)",
+        "it": "New York (ovest)"
+      }
     },
     {
       "id": "us-oregon",
@@ -4985,7 +5075,12 @@
           "tempBaselineC": 18.6,
           "tempAnomalyC": 0.3
         }
-      ]
+      ],
+      "names": {
+        "en": "Oregon (Willamette)",
+        "fr": "Oregon (Willamette)",
+        "it": "Oregon (Willamette)"
+      }
     },
     {
       "id": "us-pennsylvania",
@@ -5108,7 +5203,12 @@
           "tempBaselineC": 23.7,
           "tempAnomalyC": 0.4
         }
-      ]
+      ],
+      "names": {
+        "en": "Pennsylvania (Lancaster)",
+        "fr": "Pennsylvanie (Lancaster)",
+        "it": "Pennsylvania (Lancaster)"
+      }
     },
     {
       "id": "us-rhode-island",
@@ -5352,7 +5452,12 @@
           "tempBaselineC": 27.4,
           "tempAnomalyC": 1.3
         }
-      ]
+      ],
+      "names": {
+        "en": "South Carolina (central)",
+        "fr": "Caroline du Sud (centre)",
+        "it": "Carolina del Sud (centrale)"
+      }
     },
     {
       "id": "us-tennessee",
@@ -5475,7 +5580,12 @@
           "tempBaselineC": 26.6,
           "tempAnomalyC": 0.9
         }
-      ]
+      ],
+      "names": {
+        "en": "Tennessee (west)",
+        "fr": "Tennessee (ouest)",
+        "it": "Tennessee (ovest)"
+      }
     },
     {
       "id": "us-utah",
@@ -5597,7 +5707,12 @@
           "tempBaselineC": 21.6,
           "tempAnomalyC": 2
         }
-      ]
+      ],
+      "names": {
+        "en": "Utah (Cache Valley)",
+        "fr": "Utah (Cache Valley)",
+        "it": "Utah (Cache Valley)"
+      }
     },
     {
       "id": "us-virginia",
@@ -5719,7 +5834,12 @@
           "tempBaselineC": 23,
           "tempAnomalyC": 0.9
         }
-      ]
+      ],
+      "names": {
+        "en": "Virginia (Shenandoah)",
+        "fr": "Virginie (Shenandoah)",
+        "it": "Virginia (Shenandoah)"
+      }
     },
     {
       "id": "us-vermont",
@@ -5840,7 +5960,12 @@
           "tempBaselineC": 20.1,
           "tempAnomalyC": 0.4
         }
-      ]
+      ],
+      "names": {
+        "en": "Vermont (Champlain)",
+        "fr": "Vermont (Champlain)",
+        "it": "Vermont (Champlain)"
+      }
     },
     {
       "id": "us-west-virginia",
@@ -5961,7 +6086,12 @@
           "tempBaselineC": 23.9,
           "tempAnomalyC": 0.5
         }
-      ]
+      ],
+      "names": {
+        "en": "West Virginia (east)",
+        "fr": "Virginie-Occidentale (est)",
+        "it": "Virginia Occidentale (est)"
+      }
     },
     {
       "id": "us-wyoming",
@@ -6083,7 +6213,12 @@
           "tempBaselineC": 21.9,
           "tempAnomalyC": 2.1
         }
-      ]
+      ],
+      "names": {
+        "en": "Wyoming (Platte)",
+        "fr": "Wyoming (Platte)",
+        "it": "Wyoming (Platte)"
+      }
     },
     {
       "id": "eu-aragon",
