@@ -47,6 +47,22 @@
   function big(v, unit, lang) { return v == null ? '–' : (v >= 1e6 ? nf(v / 1e6, 2, lang) + ' M ' : nf(v, 0, lang) + ' ') + unit; }
   function cite(id, period, what) { var Q = window.DICite; if (!Q) return ''; var c = what ? Q.derived([id], { what: what }) : Q.html(id, { period: String(period || '') }); return c ? '<div class="pp-cites">' + c + '</div>' : ''; }
 
+  var EMO = { cereales: '🌾', leguminosas: '🫘', tuberculos: '🥔', industriales: '🌻', hortalizas: '🥕', citricos: '🍊', frutales: '🍑', olivar: '🫒', vinedo: '🍇', otros_lenosos: '🌰' };
+  var XT = {
+    es: { search: 'Busca un cultivo…', nores: 'Sin resultados.', more: 'Ver todos los cultivos', less: 'Ver menos', types: 'Tipos:', whole: 'Todos', allG: 'Todo el grupo', prov: 'Busca una provincia…',
+      ss: function (m, c, y, tot, top, sh) { return (m === 'prod' ? 'En ' + y + ' se produjeron ' : 'En ' + y + ' hay ') + tot + ' de ' + c + ' en España' + (top ? '. Las provincias con más: ' + top + (sh ? ', que suman el ' + sh + ' % del total' : '') + '.' : '.'); },
+      sy: function (c, y, nat, p, pv) { return 'Rendimiento medio de ' + c + ' en ' + y + ': ' + nat + '. El más alto: ' + p + ' (' + pv + ').'; } },
+    en: { search: 'Search a crop…', nores: 'No results.', more: 'Show all crops', less: 'Show fewer', types: 'Types:', whole: 'All', allG: 'Whole group', prov: 'Search a province…',
+      ss: function (m, c, y, tot, top, sh) { return (m === 'prod' ? 'In ' + y + ' Spain produced ' : 'In ' + y + ' Spain has ') + tot + ' of ' + c + (top ? '. Largest provinces: ' + top + (sh ? ', together ' + sh + '% of the total' : '') + '.' : '.'); },
+      sy: function (c, y, nat, p, pv) { return 'Average yield of ' + c + ' in ' + y + ': ' + nat + '. Highest: ' + p + ' (' + pv + ').'; } },
+    fr: { search: 'Chercher une culture…', nores: 'Aucun résultat.', more: 'Voir toutes les cultures', less: 'Voir moins', types: 'Types :', whole: 'Tous', allG: 'Tout le groupe', prov: 'Chercher une province…',
+      ss: function (m, c, y, tot, top, sh) { return (m === 'prod' ? 'En ' + y + ', l\'Espagne a produit ' : 'En ' + y + ', l\'Espagne compte ') + tot + ' de ' + c + (top ? '. Principales provinces : ' + top + (sh ? ', soit ' + sh + ' % du total' : '') + '.' : '.'); },
+      sy: function (c, y, nat, p, pv) { return 'Rendement moyen de ' + c + ' en ' + y + ' : ' + nat + '. Le plus élevé : ' + p + ' (' + pv + ').'; } },
+    it: { search: 'Cerca una coltura…', nores: 'Nessun risultato.', more: 'Mostra tutte le colture', less: 'Mostra meno', types: 'Tipi:', whole: 'Tutti', allG: 'Tutto il gruppo', prov: 'Cerca una provincia…',
+      ss: function (m, c, y, tot, top, sh) { return (m === 'prod' ? 'Nel ' + y + ' la Spagna ha prodotto ' : 'Nel ' + y + ' la Spagna ha ') + tot + ' di ' + c + (top ? '. Province maggiori: ' + top + (sh ? ', insieme il ' + sh + ' % del totale' : '') + '.' : '.'); },
+      sy: function (c, y, nat, p, pv) { return 'Resa media di ' + c + ' nel ' + y + ': ' + nat + '. La più alta: ' + p + ' (' + pv + ').'; } }
+  };
+
   function render(box, st, lang) {
     var t = T[lang], g = GR[st.g];
     if (!g) { box.innerHTML = '<p class="di-movers-hint">' + esc(t.loading) + '</p>'; return; }
@@ -55,10 +71,22 @@
     var crops = g.campaigns[camp].crops, code = st.crop;
     var cur = crops.filter(function (x) { return x.c === code; })[0] || crops[0]; st.crop = cur.c;
     var gi = IDX.groups;
-    var h = '<div class="de-ctl"><label>' + esc(t.group) + '<br><select class="di-compare-select" data-ec="g">' + GORDER.filter(function (k) { return gi[k]; }).map(function (k) { return '<option value="' + k + '"' + (k === st.g ? ' selected' : '') + '>' + esc(t.grp[k]) + '</option>'; }).join('') + '</select></label>' +
-      '<label>' + esc(t.crop) + '<br><select class="di-compare-select" data-ec="crop">' + crops.map(function (x) { var pad = ''; for (var i = 0; i < x.l; i++) pad += '  '; return '<option value="' + esc(x.c) + '"' + (x.c === cur.c ? ' selected' : '') + '>' + pad + esc(x.n) + '</option>'; }).join('') + '</select></label>';
-    if (camps.length > 1) h += '<span><span class="di-movers-hint">' + esc(t.camp) + '</span><br><span class="di-src-tabs" role="group">' + camps.map(function (c) { return '<button type="button" class="di-src-tab" data-ec="camp" data-v="' + c + '" aria-pressed="' + (c === camp) + '">' + c + '</button>'; }).join('') + '</span></span>';
+    var X = XT[lang], nrm = function (z) { z = String(z).toLowerCase(); try { z = z.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {} return z; };
+    var nm = function (x) { return /^TOTAL/.test(x.n) ? X.allG : x.n; };
+    var h = '<div class="ec-g" role="group" aria-label="' + esc(t.group) + '">' + GORDER.filter(function (k) { return gi[k]; }).map(function (k) { return '<button type="button" class="ec-gb" data-ec="g" data-v="' + k + '" aria-pressed="' + (k === st.g) + '"><span aria-hidden="true">' + (EMO[k] || '') + '</span> ' + esc(t.grp[k]) + '</button>'; }).join('') + '</div>';
+    var idx = {}; crops.forEach(function (x, i) { idx[x.c] = i; });
+    var par = cur, ci = idx[cur.c]; while (par.l > 0 && ci > 0) { ci--; par = crops[ci]; if (par.l === 0) break; }
+    var kids = []; for (var ki = idx[par.c] + 1; ki < crops.length && crops[ki].l > 0; ki++) kids.push(crops[ki]);
+    var mains = crops.filter(function (x) { return x.l === 0 && x.t[0] > 0; }).sort(function (a, b) { return /^TOTAL/.test(a.n) ? -1 : /^TOTAL/.test(b.n) ? 1 : b.t[0] - a.t[0]; });
+    var q = nrm(st.q || ''), LIM = 12, shown = q ? crops.filter(function (x) { return x.t[0] > 0 && nrm(x.n).indexOf(q) >= 0; }) : (st.allc || mains.length <= LIM + 2 ? mains : mains.slice(0, LIM));
+    if (!q && shown.indexOf(par) < 0) shown = shown.concat([par]);
+    h += '<div class="ec-q"><label class="visually-hidden" for="ec-q">' + esc(X.search) + '</label><input id="ec-q" type="search" class="um-input" data-ec="q" autocomplete="off" placeholder="' + esc(X.search) + '" value="' + esc(st.q || '') + '"></div>';
+    h += '<div class="ec-chips" role="group" aria-label="' + esc(t.crop) + '">' + (shown.length ? shown.map(function (x) { return '<button type="button" class="ec-chip" data-ec="crop" data-v="' + esc(x.c) + '" aria-pressed="' + (x.c === cur.c) + '">' + esc(nm(x)) + '</button>'; }).join('') : '<span class="di-movers-hint">' + esc(X.nores) + '</span>');
+    if (!q && mains.length > LIM + 2) h += '<button type="button" class="ec-more" data-ec="allc">' + esc(st.allc ? X.less : X.more + ' (' + mains.length + ')') + '</button>';
     h += '</div>';
+    if (kids.length) h += '<div class="ec-sub"><span class="di-movers-hint">' + esc(X.types) + '</span> <button type="button" class="ec-chip ec-chip-s" data-ec="crop" data-v="' + esc(par.c) + '" aria-pressed="' + (par.c === cur.c) + '">' + esc(X.whole) + '</button>' + kids.map(function (x) { return '<button type="button" class="ec-chip ec-chip-s" data-ec="crop" data-v="' + esc(x.c) + '" aria-pressed="' + (x.c === cur.c) + '">' + esc(nm(x)) + '</button>'; }).join('') + '</div>';
+    if (camps.length > 1) h += '<div class="ec-camp"><span class="di-movers-hint">' + esc(t.camp) + '</span> <span class="di-src-tabs" role="group">' + camps.map(function (c) { return '<button type="button" class="di-src-tab" data-ec="camp" data-v="' + c + '" aria-pressed="' + (c === camp) + '">' + c + '</button>'; }).join('') + '</span></div>';
+    h += '<h3 class="ec-h">' + esc(nm(cur)) + ' · ' + camp + '</h3>';
     var tt = cur.t, prevC = camps[camps.indexOf(camp) - 1], pv = prevC && g.campaigns[prevC].crops.filter(function (x) { return x.c === cur.c; })[0];
     var tile = function (lab, val, sub) { return '<div class="de-tile"><div class="de-tl">' + esc(lab) + '</div><div class="de-tv">' + val + '</div><div class="de-ts">' + sub + '</div></div>'; };
     var dv = function (a, b) { return a != null && b != null && b > 0 ? esc(t.vsPrev + ' ' + prevC) + ': ' + pc((a / b - 1) * 100, lang) : ''; };
@@ -73,15 +101,22 @@
     var m = st.m, rows = [], tot = m === 'area' ? tt[0] : m === 'prod' ? tt[4] : y0;
     Object.keys(cur.v).forEach(function (p) { var a = cur.v[p], v = m === 'area' ? a[0] : m === 'prod' ? a[4] : yl(a); if (v != null && v > 0) rows.push({ p: p, v: v, a: a }); });
     rows.sort(function (a, b) { return b.v - a.v; });
-    if (!rows.length) { h += '<p class="di-movers-hint">' + esc(t.none) + '</p>'; }
+    if (rows.length) {
+      var pn = function (r) { return g.provinces[r.p]; }, t3 = rows.slice(0, 3), s3 = 0; t3.forEach(function (r) { s3 += r.v; });
+      var sh = tot ? nf(s3 / tot * 100, 0, lang) : null, nmc = /^TOTAL/.test(cur.n) ? t.grp[st.g].toLowerCase() : nm(cur);
+      h += '<p class="ec-sum">' + (m === 'yld' ? esc(X.sy(nmc, camp, nf(y0, y0 < 10 ? 2 : 1, lang) + ' ' + t.th, pn(rows[0]), nf(rows[0].v, rows[0].v < 10 ? 2 : 1, lang) + ' ' + t.th)) : esc(X.ss(m, nmc, camp, big(tot, m === 'prod' ? t.t : t.ha, lang), t3.map(pn).join(', '), sh))) + '</p>';
+    }
+    h += '<div class="ec-pf"><label class="visually-hidden" for="ec-pq">' + esc(X.prov) + '</label><input id="ec-pq" type="search" class="um-input" data-ec="pq" autocomplete="off" placeholder="' + esc(X.prov) + '" value="' + esc(st.pq || '') + '"></div>';
+    var pq = nrm(st.pq || ''); if (pq) rows = rows.filter(function (r) { return nrm(g.provinces[r.p]).indexOf(pq) >= 0; });
+    if (!rows.length) { h += '<p class="di-movers-hint">' + esc(pq ? X.nores : t.none) + '</p>'; }
     else {
       var mx = rows[0].v, fmtv = function (v) { return m === 'yld' ? nf(v, v < 10 ? 2 : 1, lang) + ' ' + t.th : m === 'prod' ? big(v, t.t, lang) : big(v, t.ha, lang); };
       var tr = function (r) {
         return '<tr><td>' + esc(g.provinces[r.p]) + '</td><td class="r">' + fmtv(r.v) + '</td><td class="r">' + (m === 'yld' ? '' : (tot ? nf(r.v / tot * 100, 1, lang) + ' %' : '')) + '</td><td aria-hidden="true" style="width:30%"><div style="height:8px;border-radius:2px;background:var(--accent,#2f6f4f);width:' + Math.max(1, Math.round(r.v / mx * 100)) + '%"></div></td></tr>';
       };
       var head = '<thead><tr><th scope="col">' + esc(t.prov) + '</th><th scope="col" class="r">' + esc(t.meas[m]) + ' (' + camp + ')</th><th scope="col" class="r">' + (m === 'yld' ? '' : esc(t.share)) + '</th><th scope="col" class="es-bar"><span class="visually-hidden">' + esc(t.a11) + '</span></th></tr></thead>';
-      h += '<div class="de-sc"><table class="de-t" data-no-cards>' + head + '<tbody>' + rows.slice(0, 10).map(tr).join('') + '</tbody></table></div>';
-      if (rows.length > 10) h += '<details><summary style="cursor:pointer;font-size:13px">' + esc(t.all) + ' (' + rows.length + ')</summary><div class="de-sc"><table class="de-t" data-no-cards>' + head + '<tbody>' + rows.slice(10).map(tr).join('') + '</tbody></table></div></details>';
+      h += '<div class="de-sc"><table class="de-t" data-no-cards>' + head + '<tbody>' + rows.slice(0, pq ? 99 : 10).map(tr).join('') + '</tbody></table></div>';
+      if (!pq && rows.length > 10) h += '<details><summary style="cursor:pointer;font-size:13px">' + esc(t.all) + ' (' + rows.length + ')</summary><div class="de-sc"><table class="de-t" data-no-cards>' + head + '<tbody>' + rows.slice(10).map(tr).join('') + '</tbody></table></div></details>';
     }
     h += '<p class="di-movers-hint"><b>' + esc(t.provisional) + ' ' + camp + '.</b> ' + esc(t.note) + '</p>' + (m === 'yld' || y0 != null ? '<p class="di-movers-hint">' + esc(t.yNote) + '</p>' : '');
     h += cite('mapa_es', camp);
@@ -97,15 +132,17 @@
     body.innerHTML = '<p class="di-movers-hint">' + esc(t.hint) + ' ' + esc(t.loading) + '</p>';
     get('index.json').then(function (ix) { IDX = ix; if (!ix.groups[st.g]) st.g = GORDER.filter(function (k) { return ix.groups[k]; })[0]; return loadG(st.g); }).then(draw)
       .catch(function () { body.innerHTML = '<p class="di-movers-hint">' + esc(t.err) + '</p>'; });
-    body.addEventListener('change', function (e) {
-      var a = e.target.getAttribute && e.target.getAttribute('data-ec'); if (!a) return;
-      if (a === 'crop') { st.crop = e.target.value; draw(); }
-      else if (a === 'g') { st.g = e.target.value; st.crop = null; st.camp = null; (GR[st.g] ? Promise.resolve() : loadG(st.g)).then(draw).catch(function () { body.innerHTML = '<p class="di-movers-hint">' + esc(t.err) + '</p>'; }); }
+    body.addEventListener('input', function (e) {
+      var a = e.target.getAttribute && e.target.getAttribute('data-ec'); if (a !== 'q' && a !== 'pq') return;
+      st[a] = e.target.value; var pos = e.target.selectionStart; draw();
+      var el = body.querySelector('[data-ec="' + a + '"]'); if (el) { el.focus(); try { el.setSelectionRange(pos, pos); } catch (x) {} }
     });
     body.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('[data-ec]') : null; if (!b || b.tagName !== 'BUTTON') return;
       var a = b.getAttribute('data-ec'), v = b.getAttribute('data-v');
-      if (a === 'camp') st.camp = v; else if (a === 'meas') st.m = v; draw();
+      if (a === 'camp') st.camp = v; else if (a === 'meas') st.m = v; else if (a === 'crop') { st.crop = v; st.pq = ''; } else if (a === 'allc') st.allc = !st.allc;
+      else if (a === 'g') { st.g = v; st.crop = null; st.camp = null; st.q = ''; st.pq = ''; st.allc = false; (GR[v] ? Promise.resolve() : loadG(v)).then(draw).catch(function () { body.innerHTML = '<p class="di-movers-hint">' + esc(t.err) + '</p>'; }); return; }
+      draw();
     });
   }
   window.ESCrops = { mount: mount };

@@ -2455,3 +2455,14 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .rl-weak .rl2 { opacity: .92; }
 .rl-weak > summary { min-height: 40px; }
 @media (max-width: 560px) { .rl2-ge { display: none; } }
+/* España: cultivos por provincia (es-crops.js) */
+.ec-g, .ec-chips, .ec-sub, .ec-camp { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0; }
+.ec-gb, .ec-chip, .ec-more { font: inherit; font-size: 13px; min-height: 36px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 18px; background: var(--bg-card, transparent); color: var(--text-primary); cursor: pointer; }
+.ec-chip-s { font-size: 12.5px; min-height: 32px; padding: 3px 10px; }
+.ec-more { border-style: dashed; color: var(--text-tertiary); }
+.ec-gb[aria-pressed="true"], .ec-chip[aria-pressed="true"] { background: var(--accent, #2f6f4f); border-color: var(--accent, #2f6f4f); color: #fff; }
+.ec-gb:focus-visible, .ec-chip:focus-visible, .ec-more:focus-visible { outline: 2px solid var(--accent, #2f6f4f); outline-offset: 2px; }
+.ec-q, .ec-pf { margin: 8px 0; max-width: 360px; }
+.ec-q input, .ec-pf input { width: 100%; }
+.ec-h { margin: 14px 0 6px; font-size: 18px; }
+.ec-sum { margin: 10px 0; font-size: 14.5px; line-height: 1.5; }
