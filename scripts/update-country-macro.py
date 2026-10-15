@@ -98,6 +98,15 @@ try:
     log('infl: %d paises' % _n)
 except Exception as e:
     log('infl sin dato: %s' % e)
+# autocomprobacion con el mismo contrato que valida la CI: deja en el log cada incoherencia para poder corregirla sin adivinar
+try:
+    import contract_tests as _ct
+    _e, _w, _st = [], [], {}
+    _ct.country_macro({'countries': out}, _e, _w, _st)
+    for m in _e: log('contrato: ' + m)
+    log('contrato: %d errores, completos %s' % (len(_e), _st.get('macro completos')))
+except Exception as e:
+    log('contrato: no se pudo comprobar (%s)' % e)
 tot = sum(len(v) - 1 for v in out.values())
 os.makedirs('data', exist_ok=True)
 open('data/country-macro-log.txt', 'w').write('\n'.join(LOG) + '\n')
