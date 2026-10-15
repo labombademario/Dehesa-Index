@@ -297,13 +297,14 @@ def main():
             for tag, ref, cands in FR_EDITIONS:
                 found = []; html = ""
                 try:   # enlaces del PDF en la ficha de Agreste de esa edición
-                    html = http(AG_DETAIL % ref, tries=1, timeout=45).decode("utf-8", "replace")
+                    html = http(AG_DETAIL % ref, tries=3, timeout=60).decode("utf-8", "replace")
                     for h in re.findall(r'href=["\']([^"\']+\.pdf)["\']', html, re.I): found.append(urllib.parse.urljoin(AG_DETAIL % ref, h))
                     log("Francia %s: ficha de Agreste con %d PDF" % (tag, len(found)))
                 except Exception as e: log("Francia %s: ficha de Agreste no legible (%s)" % (tag, str(e)[:120]))
                 got = None
                 try:   # tablas departamentales como Excel (datos asociados de la ficha): mas fiables que el PDF
                     xl = dict((k, urllib.parse.urljoin(AG_DETAIL % ref, h)) for h in re.findall(r'href=["\']([^"\']+\.xlsx)["\']', html, re.I) for k in ("LIBRE", "LOUE") if "Publication-" + k + ".xlsx" in h)
+                    log("Francia %s: %d xlsx de datos asociados en la ficha (%d bytes)" % (tag, len(xl), len(html)))
                     if len(xl) == 2:
                         got = (parse_france_xlsx(http(xl["LIBRE"], tries=2, timeout=120), http(xl["LOUE"], tries=2, timeout=120)), "edicion " + tag + " (xlsx)", xl["LIBRE"])
                 except Exception as e: log("Francia %s: xlsx sin tablas utilizables (%s)" % (tag, str(e)[:140]))
