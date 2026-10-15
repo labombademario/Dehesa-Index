@@ -525,7 +525,7 @@ sources:
     timeout: 15
     script_timeout: 10
     continue: true
-    data: [cpi.json]
+    data: [cpi.json, country-macro.json]
     log: cpi-log.txt
     message: Índices de precios de consumo (para precios reales)
   - id: us-tariffs

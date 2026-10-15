@@ -846,6 +846,12 @@
     "blog_weekly_index"
    ]
   ],
+  "country-macro.json": [
+   "country-macro",
+   [
+    "country_macro"
+   ]
+  ],
   "cpi.json": [
    "cpi",
    [

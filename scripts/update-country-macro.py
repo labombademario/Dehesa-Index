@@ -89,6 +89,14 @@ try:
     log('wageh Eurostat: %d paises' % len(got))
 except Exception as e:
     log('wageh sin dato: %s' % e)
+# inflación interanual: de data/cpi.json (sin red); los países que solo tienen inflación se anaden tal cual
+try:
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
+    import macro_infl
+    _n = macro_infl.patch({'countries': out}, json.load(open('data/cpi.json')))
+    log('infl: %d paises' % _n)
+except Exception as e:
+    log('infl sin dato: %s' % e)
 tot = sum(len(v) - 1 for v in out.values())
 os.makedirs('data', exist_ok=True)
 open('data/country-macro-log.txt', 'w').write('\n'.join(LOG) + '\n')

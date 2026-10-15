@@ -130,7 +130,33 @@ def src_eurostat():
         t = http("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=JSON&lang=EN&unit=I15&coicop=CP00&sinceTimePeriod=%d-01" % START_YEAR)
     if not t:
         return {}
-    return {g: v for g, v in parse_eurostat(t).items() if g in EU_GEO}
+    base = {g: v for g, v in parse_eurostat(t).items() if g in EU_GEO}
+    # Eurostat reexpresa el HICP en base 2025=100 (unit=I25); si la serie 2015=100 (I15) se queda atrás, se enlaza con la nueva por los meses en común
+    try:
+        t2 = fixture("eurostat-i25.json") if FIX else http("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=JSON&lang=EN&unit=I25&coicop=CP00&sinceTimePeriod=2025-01", tries=2)
+        new = {g: v for g, v in parse_eurostat(t2).items() if g in EU_GEO} if t2 else {}
+    except Exception as e:
+        log("Eurostat I25: no se pudo leer (%s); se sigue con I15" % e)
+        new = {}
+    for g, pts in new.items():
+        if g in base:
+            ext, f = rebase(base[g], pts)
+            if ext:
+                base[g] = dict(base[g], **ext)
+                log("%s: I15 enlazado con I25 (factor %.4f, +%d meses hasta %s)" % (g, f, len(ext), max(ext)))
+    return base
+
+
+def rebase(old, new, min_overlap=6):
+    """Enlaza una serie en base antigua con la misma en base nueva: factor = mediana de antigua/nueva en los meses comunes;
+    devuelve ({mes: valor en base antigua} de los meses posteriores al último de la antigua, factor), o ({}, None) si no hay solape suficiente."""
+    common = sorted(k for k in old if k in new and new[k] > 0)
+    if len(common) < min_overlap:
+        return {}, None
+    r = sorted(old[k] / new[k] for k in common)
+    f = r[len(r) // 2]
+    last = max(old)
+    return {k: round(v * f, 4) for k, v in new.items() if k > last}, f
 
 
 def src_ons():
@@ -279,8 +305,19 @@ def main():
         except Exception:
             pass
     OUT.write_text(txt + "\n", encoding="utf-8")
-    (ROOT / "data" / "cpi-log.txt").write_text("\n".join(LOG) + "\n")
     log("escrito %s (%d países)" % (OUT.name, len(res)))
+    try:  # inflación interanual de la franja macro (scripts/macro_infl.py), a partir de lo recién escrito
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import macro_infl
+        mp = ROOT / "data" / "country-macro.json"
+        macro = json.loads(mp.read_text(encoding="utf-8")); before = json.dumps(macro["countries"], sort_keys=True)
+        n = macro_infl.patch(macro, doc)
+        if json.dumps(macro["countries"], sort_keys=True) != before:
+            mp.write_text(json.dumps(macro, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        log("inflación en country-macro.json: %d países" % n)
+    except Exception as e:
+        log("inflación: no se pudo actualizar country-macro.json (%s)" % e)
+    (ROOT / "data" / "cpi-log.txt").write_text("\n".join(LOG) + "\n")
     return 0
 
 

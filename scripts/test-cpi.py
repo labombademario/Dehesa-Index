@@ -48,6 +48,35 @@ assert "menos de 24" in m.check("X", {"2024-01": 1.0}), "serie corta no detectad
 g = dict(ok); del g["2020-07"]
 eq(m.unpack(m.pack(g)), g, "pack/unpack con hueco")
 eq(m.pack(g)["v"][6], None, "hueco = null")
+
+# Eurostat reexpresa el HICP en base 2025=100 (I25): enlace con la serie 2015=100 por los meses comunes
+old = {"2025-%02d" % i: 100 + i for i in range(1, 13)}                    # I15 termina en 2025-12
+new = {"2025-%02d" % i: (100 + i) / 1.25 for i in range(1, 13)}            # misma serie en base 2025 (factor 1,25)
+new.update({"2026-01": 113 / 1.25 * 1.01, "2026-02": 113 / 1.25 * 1.02})  # meses nuevos, solo en I25
+ext, f = m.rebase(old, new)
+eq(round(f, 4), 1.25, "factor de enlace")
+eq(sorted(ext), ["2026-01", "2026-02"], "meses añadidos")
+eq(round(ext["2026-01"], 2), round(113 * 1.01, 2), "valor enlazado en base antigua")
+eq(m.rebase(old, {"2025-12": 90.0}), ({}, None), "sin solape suficiente no se enlaza")
+
+# inflación interanual de la franja macro (scripts/macro_infl.py): solo de cpi.json
+sys.path.insert(0, str(ROOT / "scripts"))
+import macro_infl
+mm = {"s": "2025-01", "src": "eurostat", "v": [100.0 + i * 0.25 for i in range(20)]}          # 2025-01..2026-08
+r = macro_infl.one({"m": mm})
+eq((r["m"], r["y"], r["src"], r["kind"]), ("2026-08", 2026, "eurostat", "hicp"), "infl: último mes")
+eq(r["v"], round((mm["v"][19] / mm["v"][7] - 1) * 100, 2), "infl: interanual")
+mm2 = dict(mm, v=mm["v"][:19] + [None]); eq(macro_infl.one({"m": mm2})["m"], "2026-07", "infl: último mes con dato")
+mm3 = dict(mm, v=mm["v"][:15] + [None] * 5); eq(macro_infl.one({"m": mm3}), None, "infl: sin los 3 últimos meses no se publica")
+eq(macro_infl.one({"m": {"s": "2025-01", "src": "bls", "v": [100.0] * 10}}), None, "infl: menos de 13 meses")
+a = {"src": "world_bank_wdi", "y0": 2020, "v": [100.0, 102.0, 105.0, 110.0, 112.0, 115.0]}
+eq(macro_infl.one({"a": a}), {"v": 2.68, "y": 2025, "m": None, "src": "world_bank_wdi", "kind": "cpi"}, "infl: anual (Australia)")
+eq(macro_infl.one({"m": dict(mm, v=[0.0] * 20)}), None, "infl: índice cero no divide")
+mac = {"countries": {"ES": {"currency": "EUR", "infl": {"v": 9}}, "XX": {"infl": {"v": 1}}}}
+macro_infl.patch(mac, {"countries": {"ES": {"m": mm}, "EA": {"m": mm}, "ZZ": {"m": mm}}})
+eq(sorted(mac["countries"]), ["ES", "XX", "ZZ"], "patch: países")
+eq("infl" in mac["countries"]["XX"], False, "patch: se quita infl si ya no hay dato")
+eq(mac["countries"]["ES"]["currency"], "EUR", "patch: respeta el resto de datos")
 if errs:
     print("\n".join("FALLA: " + e for e in errs)); sys.exit(1)
 print("test-cpi: OK")

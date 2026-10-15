@@ -511,6 +511,26 @@ def recan(doc, errs, warns, stats):
         if not (0 <= r[0] < ny and 0 <= r[1] < nc and 0 <= r[2] < nt and 0 <= r[3] < nd): errs.append("fila con indices fuera de rango %s" % r[:4]); break
         if not isinstance(r[6], list) or len(r[6]) != nv: errs.append("fila con %s variables (esperadas %d)" % (len(r[6]) if isinstance(r[6], list) else '?', nv)); break
     stats["rows"] = len(doc["rows"])
+def country_macro(doc, errs, warns, stats):
+    """Macro por pais: la inflacion interanual (infl) sale de cpi.json y debe ser coherente con el.
+    Rango creible, mes AAAA-MM no futuro, fuente del registro de licencias y valor = variacion real del indice."""
+    import datetime as _d, math as _m
+    cpi_doc = load("cpi.json"); reg = load("license-registry.json")["sources"]; today = _d.date.today().strftime("%Y-%m"); n = 0
+    for cc, c in doc["countries"].items():
+        i = c.get("infl")
+        if i is None: continue
+        n += 1
+        if not isinstance(i.get("v"), (int, float)) or not _m.isfinite(i["v"]) or not -20 < i["v"] < 60: errs.append("%s infl: valor %r fuera de rango" % (cc, i.get("v"))); continue
+        if i.get("src") not in reg: errs.append("%s infl: fuente %r no esta en el registro de licencias" % (cc, i.get("src")))
+        if i.get("m") is not None and (not re.match(r"^\d{4}-\d{2}$", str(i["m"])) or i["m"] > today or int(i["m"][:4]) != i.get("y")): errs.append("%s infl: mes %r incoherente" % (cc, i.get("m")))
+        b = cpi_doc["countries"].get(cc)
+        if not b: errs.append("%s infl: el pais no esta en cpi.json" % cc); continue
+        import importlib.util as _u
+        sp = _u.spec_from_file_location("macro_infl", Path(__file__).resolve().parent / "macro_infl.py"); mi = _u.module_from_spec(sp); sp.loader.exec_module(mi)
+        r = mi.one(b)
+        if not r or abs(r["v"] - i["v"]) > 0.011 or r["m"] != i.get("m"): errs.append("%s infl: %r no coincide con lo que da cpi.json (%r)" % (cc, i, r))
+    if n < 20: errs.append("country-macro: inflacion en solo %d paises" % n)
+    stats["infl paises"] = n
 def cpi(doc, errs, warns, stats):
     """Indices de precios de consumo: bloques mensual (m) y anual (a) con valores positivos, sin saltos mensuales > 12 %, sin meses futuros y con la fuente que toca."""
     import math as _m

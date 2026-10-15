@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dehesa-cpi
+  group: dehesa-country-macro
   cancel-in-progress: false
 jobs:
   update:
@@ -23,13 +23,13 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/cpi.json
+          files: data/cpi.json data/country-macro.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/cpi.json
+        run: python3 scripts/detect-revisions.py data/cpi.json data/country-macro.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Índices de precios de consumo (para precios reales)" data/cpi.json data/cpi-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Índices de precios de consumo (para precios reales)" data/cpi.json data/country-macro.json data/cpi-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
