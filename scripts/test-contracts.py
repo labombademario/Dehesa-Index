@@ -526,7 +526,7 @@ CASES = [
  ("italy-istat/crops.json", "rendimiento imposible", lambda d: d["crops"]["WHEATD"]["p"]["IT"].__setitem__(-1, 9e7)),
  ("italy-istat/crops.json", "regiones que superan Italia", lambda d: d["crops"]["WHEATD"]["a"].__setitem__("IT", [1 if x else x for x in d["crops"]["WHEATD"]["a"]["IT"]])),
  ("italy-istat/milk.json", "leche total imposible", lambda d: d["products"]["TOT_MILK_Q"]["v"]["IT"].__setitem__(0, 9e8)),
- ("italy-istat/milk.json", "porcentaje superior a 100", lambda d: d["products"]["CMFFFC_PERC"]["v"]["IT"].__setitem__(0, 400.0)),
+ ("italy-istat/milk.json", "porcentaje superior a 100", lambda d: d["products"]["CMFF_YIE_FAT_PERC"]["v"]["IT"].__setitem__(0, 400.0)),
  ("italy-istat/milk.json", "serie con años de menos", lambda d: d["products"]["TOT_MILK_Q"]["v"]["IT"].pop()),
  ("italy-istat/agritourism.json", "explotaciones imposibles", lambda d: d["series"]["NUMAGRIAUTH|ALL|ALL"]["v"]["IT"].__setitem__(-1, 900000)),
  ("italy-istat/agritourism.json", "serie con años de menos", lambda d: d["series"]["NUMAGRIAUTH|ALL|ALL"]["v"]["ITC4"].pop()),
