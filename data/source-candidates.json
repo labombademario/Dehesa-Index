@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T15:49:19Z",
+ "generatedAt": "2026-10-15T18:47:44Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -6030,7 +6030,7 @@
    "country": "CA",
    "scope": "integrated",
    "institution": "Statistics Canada",
-   "dataset": "Ya integrada (728 series en el catalogo unificado)",
+   "dataset": "Ya integrada (725 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
