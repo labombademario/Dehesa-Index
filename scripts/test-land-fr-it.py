@@ -123,7 +123,7 @@ import io as _io, openpyxl as _ox
 def _mkxlsx(sec, bad=False):
     names = sorted(m.dept_codes().items(), key=lambda kv: kv[1])
     wb = _ox.Workbook(); ws = wb.active; ws.title = "Region A"
-    ws.append(["Prix moyen des terres"]); ws.append(["REGION", 2023, 2024, 2025, "Evolution", "Minima", "Maxima"])
+    ws.append(["Prix moyen des terres"]); ws.append(["REGION", "2023", 2024, " 2025 ", "Evolution", "Minima", "Maxima"])
     for i, (nm, code) in enumerate(names):
         if sec == "rent" and i % 2: continue
         p = 5000 + i * 10

@@ -163,13 +163,19 @@ def xlsx_rows(data):
     out = []; years = None
     def num(v):
         if isinstance(v, (int, float)) and not isinstance(v, bool): return v
+        if isinstance(v, str) and re.match(r"^\s*-?\d+([.,]\d+)?\s*$", v): return float(v.replace(",", "."))
         return None
+    def yint(v):   # el ano puede venir como numero o como texto ("2023", "2023 ")
+        if isinstance(v, bool): return None
+        if isinstance(v, (int, float)): return int(v)
+        mm = re.match(r"^\s*(\d{4})\s*$", v) if isinstance(v, str) else None
+        return int(mm.group(1)) if mm else None
     for ws in wb.worksheets:
         for row in ws.iter_rows(values_only=True):
             r = list(row) + [None] * 7
-            ys = [r[1], r[2], r[3]]
-            if all(isinstance(y, (int, float)) and 1990 < y < 2100 for y in ys):
-                y = [int(v) for v in ys]
+            ys = [yint(r[1]), yint(r[2]), yint(r[3])]
+            if all(y and 1990 < y < 2100 for y in ys):
+                y = ys
                 if y[1] != y[0] + 1 or y[2] != y[1] + 1: raise RuntimeError("anos de cabecera incoherentes %s" % y)
                 if years and y != years: raise RuntimeError("anos distintos entre hojas %s %s" % (years, y))
                 years = y; continue
