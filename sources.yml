@@ -1352,7 +1352,8 @@ sources:
     timeout: 15
     script_timeout: 10
     continue: true
-    data: [us-markets/slaughter-log.txt]
+    check: python3 scripts/validate-data.py --no-report --files data/us-markets/slaughter.json
+    data: [us-markets/slaughter.json, us-markets/slaughter-log.txt]
     message: Sacrificio diario de EE. UU. (USDA AMS)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)
