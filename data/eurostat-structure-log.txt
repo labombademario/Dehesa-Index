@@ -12,14 +12,13 @@ ES emisiones 5
 ES selvicultura 6
 ES ecologico 31
 ES series 87
-PT precio de la tierra omitido: Eurostat da para Portugal precios de la tierra (arable 76.556 EUR/ha en 2024) muy por encima de lo que publica el INE: no se publica hasta contrastarlo con la fuente nacional
-PT tierra 3
+PT tierra 5
 PT estructura 38
 PT plaguicidas 7
 PT emisiones 5
 PT selvicultura 6
 PT ecologico 0
-PT series 59
+PT series 61
 EL tierra 6
 EL estructura 38
 EL plaguicidas 6
