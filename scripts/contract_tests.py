@@ -950,6 +950,23 @@ def us_markets_ethanol(doc, errs, warns, stats):
     n = 0
     for k, sr in doc["series"].items(): _dated_series("etanol %s" % k, sr["points"], errs, 0, 60000 if k.startswith("stocks") else 3000); n += 1
     stats["series"] = n
+def us_markets_baseline(doc, errs, warns, stats):
+    """Proyecciones ERS a 10 anos: >=150 series, anos ordenados y sin repetir (como maximo 12), mismo numero de valores que de anos, sin vacios, produccion/precio/superficie/rendimiento no negativos y las series clave presentes."""
+    S = doc["series"]; seen = set(); key = {("Corn", "Farm price"), ("Soybeans", "Production"), ("Wheat", "Production"), ("Beef", "Commercial production"), ("Pork", "Commercial production"), ("Dairy", "Milk production")}
+    have = set()
+    if not S or len(S) < 150: errs.append("baseline: %d series (se esperan >=150)" % len(S)); return
+    for s in S:
+        k = (s["type"], s["commodity"], s["attribute"], s["unit"]); have.add((s["commodity"], s["attribute"]))
+        if k in seen: errs.append("baseline: serie repetida %r" % (k,)); continue
+        seen.add(k); y = s["years"]; v = s["values"]
+        if len(y) != len(v) or not 5 <= len(y) <= 12 or y != sorted(set(y)): errs.append("baseline %s/%s: anos y valores no cuadran" % k[1:3]); continue
+        if any(x != x or abs(x) > 1e9 for x in v): errs.append("baseline %s/%s: valor imposible" % k[1:3])
+        a = s["attribute"]
+        if min(v) < 0 and (a in ("Production", "Commercial production", "Farm price", "Planted acres", "Harvested acres") or a.startswith("Yield")): errs.append("baseline %s/%s: valor negativo" % k[1:3])
+        elif min(v) < 0 and "return" not in a.lower(): warns.append("baseline %s/%s: valor negativo" % k[1:3])
+        if s["unit"] == "Percent" and max(v) > 300: errs.append("baseline %s/%s: porcentaje fuera de rango" % k[1:3])
+    for m in key - have: errs.append("baseline: falta la serie %s / %s" % m)
+    stats["series"] = len(S)
 def us_markets_slaughter(doc, errs, warns, stats):
     """Sacrificio diario (AMS 3208): fechas ordenadas y sin repetir, cabezas entre 0 y 2 millones (pollo hasta 80 millones), 11 columnas, acumulado del ano que no baja dentro del mismo ano y vacuno por clases que no supera el total."""
     n = 0; cols = doc["columns"]

@@ -1,0 +1,96 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "USDA ERS Agricultural Baseline Database, 10-year US projections: data/us-markets/baseline.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "sourceId",
+  "edition",
+  "series"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "sourceId": {
+   "enum": [
+    "usda_ers"
+   ]
+  },
+  "edition": {
+   "type": "string",
+   "pattern": "^\\d{4}$"
+  },
+  "readmeUpdated": {
+   "type": "string"
+  },
+  "file": {
+   "type": "string"
+  },
+  "zipUrl": {
+   "type": "string"
+  },
+  "pageUrl": {
+   "type": "string"
+  },
+  "series": {
+   "type": "array",
+   "minItems": 150,
+   "items": {
+    "type": "object",
+    "required": [
+     "type",
+     "commodity",
+     "attribute",
+     "unit",
+     "yearType",
+     "years",
+     "values"
+    ],
+    "properties": {
+     "type": {
+      "enum": [
+       "Crops",
+       "Livestock/Dairy"
+      ]
+     },
+     "commodity": {
+      "type": "string"
+     },
+     "attribute": {
+      "type": "string"
+     },
+     "unit": {
+      "type": "string"
+     },
+     "yearType": {
+      "enum": [
+       "Market year",
+       "Calendar year"
+      ]
+     },
+     "years": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "values": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      }
+     }
+    }
+   }
+  }
+ }
+}

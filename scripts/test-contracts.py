@@ -27,6 +27,7 @@ def _smk(d): return d["ccaa"]["galicia"]
 def _swm(d): return d["national"]
 def _swn(d): return d["national"]
 def _ssl(d): return d["national"]["bovino"]
+def SB(d, c, a): return next(s for s in d["series"] if s["commodity"] == c and s["attribute"] == a)
 CASES = [
  ("blog/weekly/2026-W40.json", "totales por region que no suman", lambda d: d["totals"]["byRegion"].__setitem__("eu", d["totals"]["byRegion"]["eu"] + 1)),
  ("blog/weekly/2026-W40.json", "titular fuera de la cobertura", lambda d: d["top"][0].__setitem__("date", "2026-09-20")),
@@ -453,6 +454,11 @@ CASES = [
  ("canada-grain.json", "columna de otra longitud", lambda d: d["grains"][1]["stocks"].pop()),
  ("canada-grain.json", "acumulado que cae", lambda d: d["grains"][0]["cumExports"].__setitem__(-1, 1.0)),
  ("canada-grain.json", "semana que no acaba en domingo", lambda d: d["weeks"].__setitem__(-1, "2026-09-25")),
+ ("us-markets/baseline.json", "precio negativo", lambda d: SB(d, "Corn", "Farm price")["values"].__setitem__(-1, -3)),
+ ("us-markets/baseline.json", "anos y valores que no cuadran", lambda d: SB(d, "Corn", "Production")["values"].pop()),
+ ("us-markets/baseline.json", "anos desordenados", lambda d: SB(d, "Wheat", "Production")["years"].reverse()),
+ ("us-markets/baseline.json", "serie clave que falta", lambda d: d["series"].remove(SB(d, "Dairy", "Milk production"))),
+ ("us-markets/baseline.json", "porcentaje imposible", lambda d: SB(d, "Corn", "Stocks/use ratio, percent")["values"].__setitem__(0, 900)),
  ("us-markets/slaughter.json", "cabezas fuera de rango", lambda d: d["species"]["hogs"]["rows"][-1].__setitem__(1, 5000000)),
  ("us-markets/slaughter.json", "fechas desordenadas", lambda d: d["species"]["hogs"]["rows"].reverse()),
  ("us-markets/slaughter.json", "fila con columnas de menos", lambda d: d["species"]["cattle"]["rows"][-1].pop()),
