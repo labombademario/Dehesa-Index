@@ -174,9 +174,8 @@ def xlsx_rows(data):
         for row in ws.iter_rows(values_only=True):
             r = list(row) + [None] * 7
             ys = [yint(r[1]), yint(r[2]), yint(r[3])]
-            if all(y and 1990 < y < 2100 for y in ys):
+            if all(y and 1990 < y < 2100 for y in ys) and ys[1] == ys[0] + 1 and ys[2] == ys[1] + 1 and isinstance(r[4], str) and not num(r[4]) is not None:
                 y = ys
-                if y[1] != y[0] + 1 or y[2] != y[1] + 1: raise RuntimeError("anos de cabecera incoherentes %s" % y)
                 if years and y != years: raise RuntimeError("anos distintos entre hojas %s %s" % (years, y))
                 years = y; continue
             if not isinstance(r[0], str) or not years: continue
