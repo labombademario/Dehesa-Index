@@ -156,6 +156,49 @@ def parse_france(text):
     v = sorted(p[2] for p in res["free"].values() if p[2]); med = v[len(v) // 2]
     if not 3000 <= med <= 15000: raise RuntimeError("mediana departamental fuera de rango: %s" % med)
     return years, res
+def xlsx_rows(data):
+    """Filas (nombre, [3 precios], variacion, tiene_minmax) de todas las hojas regionales de un xlsx de datos asociados de Agreste; devuelve tambien los anos de la cabecera."""
+    import io, openpyxl
+    wb = openpyxl.load_workbook(io.BytesIO(data), read_only=True, data_only=True)
+    out = []; years = None
+    def num(v):
+        if isinstance(v, (int, float)) and not isinstance(v, bool): return v
+        return None
+    for ws in wb.worksheets:
+        for row in ws.iter_rows(values_only=True):
+            r = list(row) + [None] * 7
+            ys = [r[1], r[2], r[3]]
+            if all(isinstance(y, (int, float)) and 1990 < y < 2100 for y in ys):
+                y = [int(v) for v in ys]
+                if y[1] != y[0] + 1 or y[2] != y[1] + 1: raise RuntimeError("anos de cabecera incoherentes %s" % y)
+                if years and y != years: raise RuntimeError("anos distintos entre hojas %s %s" % (years, y))
+                years = y; continue
+            if not isinstance(r[0], str) or not years: continue
+            p = [num(r[1]), num(r[2]), num(r[3])]
+            if all(v is None for v in p): continue
+            out.append((r[0].strip(), [int(v) if v is not None else None for v in p], num(r[4]), num(r[5]) is not None or num(r[6]) is not None))
+    if not years: raise RuntimeError("no se encontro la cabecera de anos del xlsx")
+    return years, out
+def parse_france_xlsx(free_bytes, rent_bytes):
+    codes = dept_codes(); res = {"free": {}, "rent": {}}; years = None; skipped = []
+    for sec, data in (("free", free_bytes), ("rent", rent_bytes)):
+        y, rows = xlsx_rows(data)
+        if years and y != years: raise RuntimeError("anos distintos entre LIBRE y LOUE")
+        years = y
+        for name, p, evo, mm in rows:
+            if mm: continue   # pequeña region agricola (trae minimo y maximo)
+            code = codes.get(norm(name.split(" - ")[-1]) if " - " in name else norm(name))
+            if not code: skipped.append(name); continue
+            if p[1] and p[2] and evo is not None and abs(round((p[2] / p[1] - 1) * 100) - round(evo * 100)) > 1.01:
+                raise RuntimeError("variacion impresa incoherente en %s %s: %s %s" % (sec, name, p, evo))
+            if code in res[sec]: raise RuntimeError("departamento repetido en %s: %s" % (sec, name))
+            res[sec][code] = p
+    if skipped: log("xlsx: filas sin departamento reconocido, omitidas: %s" % skipped[:10])
+    if len(res["free"]) < 85: raise RuntimeError("solo %d departamentos de tierras libres en el xlsx (se esperan >= 85)" % len(res["free"]))
+    if len(res["rent"]) < 40: raise RuntimeError("solo %d departamentos de tierras alquiladas en el xlsx (se esperan >= 40)" % len(res["rent"]))
+    v = sorted(p[2] for p in res["free"].values() if p[2]); med = v[len(v) // 2]
+    if not 3000 <= med <= 15000: raise RuntimeError("mediana departamental fuera de rango: %s" % med)
+    return years, res
 def pdf_text(data):
     with tempfile.TemporaryDirectory() as d:
         p = Path(d) / "x.pdf"; p.write_bytes(data)
@@ -247,14 +290,19 @@ def main():
                 for r in json.loads(http(DG_API, tries=2, timeout=60)).get("resources", []): log("data.gouv recurso: %s %s" % (r.get("title"), r.get("url")))
             except Exception as e: log("data.gouv: ficha no legible (%s)" % str(e)[:120])
             for tag, ref, cands in FR_EDITIONS:
-                found = []
+                found = []; html = ""
                 try:   # enlaces del PDF en la ficha de Agreste de esa edición
                     html = http(AG_DETAIL % ref, tries=1, timeout=45).decode("utf-8", "replace")
                     for h in re.findall(r'href=["\']([^"\']+\.pdf)["\']', html, re.I): found.append(urllib.parse.urljoin(AG_DETAIL % ref, h))
                     log("Francia %s: ficha de Agreste con %d PDF" % (tag, len(found)))
                 except Exception as e: log("Francia %s: ficha de Agreste no legible (%s)" % (tag, str(e)[:120]))
                 got = None
-                for u in found + cands:
+                try:   # tablas departamentales como Excel (datos asociados de la ficha): mas fiables que el PDF
+                    xl = dict((k, urllib.parse.urljoin(AG_DETAIL % ref, h)) for h in re.findall(r'href=["\']([^"\']+\.xlsx)["\']', html, re.I) for k in ("LIBRE", "LOUE") if "Publication-" + k + ".xlsx" in h)
+                    if len(xl) == 2:
+                        got = (parse_france_xlsx(http(xl["LIBRE"], tries=2, timeout=120), http(xl["LOUE"], tries=2, timeout=120)), "edicion " + tag + " (xlsx)", xl["LIBRE"])
+                except Exception as e: log("Francia %s: xlsx sin tablas utilizables (%s)" % (tag, str(e)[:140]))
+                for u in ([] if got else found + cands):
                     try: data = http(u, tries=2, timeout=240)
                     except Exception as e: log("Francia %s: no se pudo descargar %s (%s)" % (tag, u.rsplit("/", 1)[-1], str(e)[-110:])); continue
                     if data[:4] != b"%PDF": log("Francia %s: %s no es un PDF" % (tag, u.rsplit("/", 1)[-1])); continue
@@ -263,9 +311,7 @@ def main():
                     break
                 if got: editions.append(got); log("Francia %s: leida desde %s" % (tag, got[2]))
                 else: probe_links(AG_DETAIL % ref, "ficha " + ref)
-            B = "https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/DonneesAssociees-cd2026-9_VVT-2025_Publication-"
-            probe_xlsx(B + "LIBRE.xlsx", "2025 LIBRE"); probe_xlsx(B + "LOUE.xlsx", "2025 LOUE")
-            if not editions or editions[0][1] != "edicion " + FR_EDITIONS[0][0]: probe_links("https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/", "disar venale")
+            if not editions or not editions[0][1].startswith("edicion " + FR_EDITIONS[0][0]): probe_links("https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/", "disar venale")
             if editions: parsed = editions[0]
         if frt: editions = [parsed]
         if not parsed: raise RuntimeError("ninguna edicion de Agreste con tablas utilizables")

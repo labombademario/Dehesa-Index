@@ -117,5 +117,42 @@ with _tf.TemporaryDirectory() as d:
     check(any("leida desde" in l and "VVT-2023" in l for l in m.LOG), "la edicion 2023 se lee de Agreste")
     fr_ = json.loads((Path(d) / "france-land" / "land.json").read_text("utf-8"))
     check(fr_["years"] == [2021, 2022, 2023], "datos de Francia desde la edicion que responde")
+
+# lector de los xlsx de datos asociados (edicion 2025): hojas regionales, filas de departamento sin min/max, pequenas regiones con min/max
+import io as _io, openpyxl as _ox
+def _mkxlsx(sec, bad=False):
+    names = sorted(m.dept_codes().items(), key=lambda kv: kv[1])
+    wb = _ox.Workbook(); ws = wb.active; ws.title = "Region A"
+    ws.append(["Prix moyen des terres"]); ws.append(["REGION", 2023, 2024, 2025, "Evolution", "Minima", "Maxima"])
+    for i, (nm, code) in enumerate(names):
+        if sec == "rent" and i % 2: continue
+        p = 5000 + i * 10
+        ws.append([nm.upper(), p, p + 100, p + 200 if not bad else 99999, round((p + 200) / (p + 100) - 1, 4), None, None])
+        ws.append(["PETITE REGION " + code, 4000, 4100, 4200, 0.02, 1000, 9000])
+    b = _io.BytesIO(); wb.save(b); return b.getvalue()
+(yx, rx) = m.parse_france_xlsx(_mkxlsx("free"), _mkxlsx("rent"))
+check(yx == [2023, 2024, 2025] and len(rx["free"]) >= 90 and len(rx["rent"]) >= 40, "xlsx: anos y numero de departamentos")
+check(all(len(v) == 3 for v in rx["free"].values()), "xlsx: tres precios por departamento")
+try: m.parse_france_xlsx(_mkxlsx("free", True), _mkxlsx("rent")); check(False, "xlsx: variacion incoherente no detectada")
+except RuntimeError: pass
+try: m.parse_france_xlsx(b"no es un xlsx", _mkxlsx("rent")); check(False, "xlsx corrupto no detectado")
+except Exception: pass
+# descarga: la ficha enlaza los dos xlsx; la edicion se lee de ahi y se acumula con la anterior
+with _tf.TemporaryDirectory() as d:
+    _http, _pdf = m.http, m.pdf_text
+    AGX = "https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/"
+    def fake2(u, tries=3, timeout=180):
+        if u.endswith("Chd2609/detail/"): return ('<a href="%sDonneesAssociees-x_Publication-LIBRE.xlsx">a</a><a href="%sDonneesAssociees-x_Publication-LOUE.xlsx">b</a>' % (AGX, AGX)).encode()
+        if u.endswith("Publication-LIBRE.xlsx"): return _mkxlsx("free")
+        if u.endswith("Publication-LOUE.xlsx"): return _mkxlsx("rent")
+        if u.endswith("cd2024-12_VVT-2023.pdf"): return b"%PDF-1.4 fake"
+        raise RuntimeError("%s -> HTTP Error 404" % u)
+    m.http, m.pdf_text = fake2, lambda data: txt
+    m.LOG.clear(); sys.argv = ["x", "--out", d, "--it-file", src]
+    try: rc = m.main()
+    finally: m.http, m.pdf_text = _http, _pdf
+    check(rc == 0, "xlsx 2025: main sin error")
+    fx = json.loads((Path(d) / "france-land" / "land.json").read_text("utf-8"))
+    check(fx["years"] == [2021, 2022, 2023, 2024, 2025], "xlsx 2025: anos acumulados con la edicion PDF %s" % fx["years"])
 print("FALLOS:" if fails else "test-land-fr-it OK", *fails, sep="\n" if fails else " ")
 sys.exit(1 if fails else 0)
