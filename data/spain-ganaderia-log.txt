@@ -1,6 +1,38 @@
-huevos 2025 huevos__Huevos-25.2026-08-25-09-18-57.xlsx 61 territorios
-huevos 2024 huevos__huevos-24-web.xlsx 61 territorios
-huevos 2023 huevos__huevos_ch_2023.xlsx 61 territorios
+huevos 2026 Huevos-25.2026-08-25-09-18-57.xlsx 61 territorios
+huevos 2024 huevos-24-web.xlsx 61 territorios
+huevos 2023 huevos_ch_2023.xlsx 61 territorios
+huevos 2022 huevos-22-web.xlsx 61 territorios
+huevos 2021 huevos-21-web.xlsx 61 territorios
+huevos 2020 huevos-20-web.xlsx 61 territorios
+huevos 2019 huevos-19_web.xlsx 61 territorios
+huevos 2018 huevos-18_web.xlsx 61 territorios
+huevos 2017 huevos-17_web.xlsx 61 territorios
+huevos 2016 huevos-16_web.xlsx 61 territorios
+huevos 2015 huevos-15.xls 61 territorios
+huevos 2014 huevos.xls 61 territorios
+huevos 2013 huevos.xls 61 territorios
+lácteas 2013 BH ERROR cuadro-b-2013-espana.xls File is not a zip file
+lácteas 2013 CI ERROR cuadro-c-2013-espana.xls File is not a zip file
+lácteas 2014 BH ERROR cuadro_b_2014.xls File is not a zip file
+lácteas 2014 CI ERROR cuadro_c_2014.xls File is not a zip file
+lácteas 2015 BH ERROR cuadro_b_2015.xls File contains no valid workbook part
+lácteas 2016 BH ERROR cuadro_b_2016.xls File contains no valid workbook part
+lácteas 2016 CI ERROR cuadro_c_2016_espana.xls File is not a zip file
+lácteas 2017 CuadroB'17 21 disponibilidades 69 productos
+lácteas 2017 CI ERROR cuadro_c_2017.xls File is not a zip file
+lácteas 2018 CuadroB'18 23 disponibilidades 69 productos
+lácteas 2018 CI ERROR cuadro_c_2018.xls File is not a zip file
+lácteas 2019 CI ERROR cuadro_c_2019.xls File is not a zip file
+lácteas 2020 Cuadro_B_2020 21 disponibilidades 69 productos
+lácteas 2020 Cuadro_C_2020 30 filas
+lácteas 2021 CuadroB2021 21 disponibilidades 69 productos
+lácteas 2021 Cuadro_C_2021 30 filas
+lácteas 2022 CuadroB2022 23 disponibilidades 69 productos
+lácteas 2022 Cuadro_C_2022 30 filas
+lácteas 2022 Cuadro_I_2022 18 territorios
+lácteas 2023 CuadroB2023 23 disponibilidades 69 productos
+lácteas 2023 Cuadro_C_2023 30 filas
+lácteas 2023 Cuadro_I_2023 18 territorios
 lácteas 2024 CuadroB2024 23 disponibilidades 69 productos
 lácteas 2024 Cuadro_C_2024 30 filas
 lácteas 2024 Cuadro_I_2024 18 territorios
