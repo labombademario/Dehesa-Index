@@ -37,7 +37,8 @@ def main():
     for s in secs:
         rs = s.get("results") or []
         log("SEC", s.get("reportSection"), "claves:", sorted(rs[0].keys()) if rs else [])
-        for r in rs[:40]: log("  ", json.dumps(r, ensure_ascii=False)[:600])
+        drop = ("office", "market_", "slug_", "report_title", "report_begin", "report_end")
+        for r in rs[:60]: log("  ", json.dumps({k: v for k, v in r.items() if not k.startswith(drop)}, ensure_ascii=False)[:500])
     return 0
 if __name__ == "__main__":
     rc = main(); (OUT / "slaughter-log.txt").write_text("\n".join(LOG) + "\n", encoding="utf-8"); sys.exit(rc)
