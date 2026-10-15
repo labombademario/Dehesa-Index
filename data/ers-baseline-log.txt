@@ -1,0 +1,195 @@
+bytes 2098938
+ficheros 19
+  USDA Agricultural Projections to 2035.pdf 1927842
+  Global GDP Shares and GDP Growth Assumptions to 2035.xlsx 25937
+  Population Growth Assumptions to 2035.xlsx 22915
+  Projections2026.csv 239500
+  README File2025-26.txt 4245
+  Real Exchange Rate Growth Rates Assumptions to 2035.xlsx 23251
+  U.S. Acreage and Conservation Reserve Program Assumptions to 2035.xlsx 19915
+  U.S. Agricultural trade long-term fiscal years projections to 2035.xlsx 29251
+  U.S. Dairy projections to 2035.xlsx 19629
+  U.S. Farm receipts expenses and income projections to 2035.xlsx 14492
+  U.S. Feed Grains projections to 2035.xlsx 30932
+  U.S. Fruits Nuts and Vegetables projections to 2035.xlsx 27221
+  U.S. Livestock projections to 2035.xlsx 39794
+  U.S. Rice projections to 2035.xlsx 35670
+  U.S. Soybeans and products projections to 2035.xlsx 21649
+  U.S. Sugar projections to 2035.xlsx 16879
+  U.S. Wheat projections to 2035.xlsx 18757
+  U.S. Macroeoconomic Assumptions to 2035.xlsx 18965
+  U.S. Upland Cotton projections to 2035.xlsx 18534
+XLSX Global GDP Shares and GDP Growth Assumptions to 2035.xlsx ['GDP']
+  hoja GDP
+    ['Table 1: Global real Gross Domestic Product (GDP) shares and GDP growth assumptions to 2035', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, 'GDP', None, 'GDP share', None, 'Per capita', None, None, None, None, None, None]
+    ['                           Region/country', None, None, '2025', None, '2023–25', None, ' GDP, 2025', None, 2024, 2025, 2026, 2027, 2028]
+    [None, None, None, 'Dollars       (billion, 2017)', None, 'Percent', None, 'Dollars (2017)', None, None, None, '     Annual percent change in real GDP', None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['World', None, None, 100331.05153992772, None, 100, None, 12456.8359375, None, 2.690648078918457, 2.569927930831909, 2.421518087387085, 2.830479383468628, 2.683389663696289]
+    ['United States and Canada', None, None, 25580.523071289062, None, 25.665707389513653, None, 67816.2578125, None, 2.7010977268218994, 1.6270381212234497, 1.8448712825775146, 2.5541024208068848, 2.3695547580718994]
+    ['Canada', None, None, 1881.6968994140625, None, 1.9051320229967434, None, 48018.20703125, None, 1.5280810594558716, 0.8434569239616394, 0.4440390467643738, 2.990471839904785, 2.383218765258789]
+XLSX Population Growth Assumptions to 2035.xlsx ['Population']
+  hoja Population
+    ['Table 4: Population growth assumptions to 2035', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, 'Population', None, None, None, None, None, None, None, None, 'Average', None]
+    ['Region/country', None, None, 'in 2025', None, 2024, 2025, 2026, 2027, 2028, 2029, '2006–15', '2016–25', '2026–35']
+    [None, None, None, 'Millions', None, 'Percent change in population', None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['World 1/', None, None, 8054.296911, None, 0.8769173622131348, 0.8729271292686462, 0.8591727614402771, 0.8485416769981384, 0.8360990285873413, 0.823469340801239, 1.2279191255569457, 0.9714727997779846, 0.804787415266037]
+    ['United States and Canada', None, None, 377.203414, None, 0.4935922920703888, 0.4839628338813782, 0.4706084132194519, 0.4544037878513336, 0.43731024861335754, 0.4198472499847412, 0.8486142694950104, 0.5572713986039162, 0.39274840652942655]
+    ['Canada', None, None, 39.187155, None, 0.715817391872406, 0.7264992594718933, 0.7103475332260132, 0.6705650687217712, 0.6306594014167786, 0.591127336025238, 1.0847302556037903, 0.829448127746582, 0.5559757083654404]
+CSV Projections2026.csv 2929 filas
+    ﻿year_type,year,value,unit,attribute,commodity,commodity_type,year_of_projection
+    Market year,2024/25,78,Million bushels,Beginning stocks,Barley,Crops,2026
+    Market year,2025/26,70,Million bushels,Beginning stocks,Barley,Crops,2026
+    Market year,2026/27,66,Million bushels,Beginning stocks,Barley,Crops,2026
+    Market year,2027/28,69,Million bushels,Beginning stocks,Barley,Crops,2026
+    Market year,2028/29,68,Million bushels,Beginning stocks,Barley,Crops,2026
+CSV README File2025-26.txt 104 filas
+    Agricultural Baseline Database
+    Machine readable comma-separated value (.csv) data file notes.
+    Updated 2/13/26   
+    
+    Economic Research Service, United States Department of Agriculture
+    
+XLSX Real Exchange Rate Growth Rates Assumptions to 2035.xlsx ['Exchange rate']
+  hoja Exchange rate
+    ['Table 3: Real exchange rate growth rates assumptions to 2035', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, 'Local currency per', None, None, None, None, None, None, None, None, 'Average', None]
+    ['                      Region/country', None, None, 'U.S. dollar, 2025', None, 2024, 2025, 2026, 2027, 2028, 2029, '2006–15', '2016–25', '2026–35']
+    [None, None, None, 'Index value,', None, 'Percent change in real exchange rate', None, None, None, None, None, None, None, None]
+    [None, None, None, '2017 base 1/', None, None, None, None, None, None, None, None, None, None]
+    ['Total all countries', None, None, 119.65606933344009, None, 2.9885714054107666, 1.5381776094436646, 0.6054069995880127, -0.5483121871948242, -0.8287558555603027, -0.7082459330558777, -0.7616595551371574, 2.218692732974887, -0.4650920182466507]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Canada', None, None, 1.460408329963684, None, 2.080744743347168, 2.731224298477173, -0.3709474205970764, -1.2279943227767944, -1.453373670578003, -1.8297163248062134, 1.0300699532032014, 1.4131173200905323, -1.465871387720108]
+XLSX U.S. Acreage and Conservation Reserve Program Assumptions to 2035.xlsx ['Acreage']
+  hoja Acreage
+    ['Table 5: U.S. acreage for major field crops and CRP assumptions, long-term projections', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, None]
+    [None, None, None, None, None, '    Million acres', None, None, None, None, None, None, None, None]
+    ['Planted acreage, eight major crops', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Corn', 90.90899999999999, 98.728, 95, 95, 94.5, 94, 93.5, 93, 92.5, 92, 91.5, 91, None]
+    ['Sorghum', 6.300000000000001, 6.645000000000001, 6.7, 6.700000000000001, 6.700000000000001, 6.700000000000001, 6.700000000000001, 6.700000000000001, 6.700000000000001, 6.700000000000001, 6.700000000000001, 6.700000000000001, None]
+    ['Barley', 2.381, 2.2989999999999995, 2.2999999999999994, 2.2999999999999994, 2.2999999999999994, 2.2999999999999994, 2.2999999999999994, 2.2999999999999994, 2.3, 2.3, 2.3, 2.3, None]
+XLSX U.S. Agricultural trade long-term fiscal years projections to 2035.xlsx ['Table']
+  hoja Table
+    ['Table 25: U.S. agricultural trade long-term projections to 2035, fiscal years', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+    [None, 'Billion dollars', None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Agricultural exports (value)', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Livestock, dairy, and poultry', 38.823477, 38.680629, 39.137205, 38.5, 39.536822249645404, 41.45624024490473, 42.345500224261, 43.97593959390858, 45.290651575866356, 46.75100077177383, 47.74511581568749, 48.76615143644207, 49.84050176270694]
+    ['   Livestock and meats', 23.671417, 24.127614, 23.067040000000002, 22.3, 22.643690931270427, 23.192396818949213, 23.23732838006059, 24.188685321011864, 24.924776967107125, 25.740875386723904, 25.977831986445942, 26.24022332560853, 26.513589614095803]
+    ['   Dairy products', 8.476880999999999, 8.018618, 9.185331, 9.3, 9.869147189461783, 10.681109135843593, 11.178854462124374, 11.515977804842002, 11.881360754708844, 12.2919671744807, 12.772425015798122, 13.355027995187836, 13.958482264772194]
+    ['   Poultry products', 6.675179, 6.534397, 6.884834, 6.9, 7.0239841289131935, 7.582734290111924, 7.929317382076032, 8.271276468054714, 8.484513854050387, 8.71815821056923, 8.994858813443429, 9.170900115645706, 9.368429883838946]
+XLSX U.S. Dairy projections to 2035.xlsx ['Dairy']
+  hoja Dairy
+    ['Table 24: Dairy long-term projections', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', None, 'Units', '2024 1/', 2025, 2026, 2027, '2028 1/', 2029, 2030, 2031, '2032 1/', 2033, 2034]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Milk production and marketings', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, 'Number of milk cows', 'Thousand', 9342.25, 9495, 9565, 9545.4382, 9541.2321, 9526.5798, 9517.217, 9514.8835, 9520.9496, 9533.4395, 9554.858]
+    [None, 'Milk per cow', 'Pounds', 24177.045144371004, 24375, 24495, 24755.9407, 25114.114298630142, 25322.4264, 25606.6872, 25894.1643, 26254.290032876717, 26468.1126, 26755.8325]
+XLSX U.S. Farm receipts expenses and income projections to 2035.xlsx ['US farm']
+  hoja US farm
+    ['Table 26: Farm receipts, expenses, and income, long-term projections to 2035', None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, 'Billion dollars', None, None, None, None, None, None, None, None, None, None, None]
+    ['Cash income statement', None, None, None, None, None, None, None, None, None, None, None, None]
+    ['  Cash receipts', 511.282472, 535.234199, 540.8753306518528, 537.1729818780877, 543.7085738406236, 538.6443116333581, 537.964932713746, 535.286490073304, 532.8453867127137, 531.983945661085, 530.2364157151927, 528.516513648805]
+    ['    Crops', 242.664594, 236.59708600000002, 241.58037788340675, 245.15086066810395, 249.02053608395704, 253.5648144999722, 254.59095261546062, 258.6289738914542, 259.98040846421736, 262.90995145690675, 264.4284690959974, 267.3937593785166]
+    ['    Livestock', 268.617878, 298.637113, 299.29495276844597, 292.02212120998377, 294.6880377566665, 285.0794971333859, 283.37398009828536, 276.65751618184976, 272.86497824849624, 269.07399420417835, 265.80794661919526, 261.12275427028834]
+XLSX U.S. Feed Grains projections to 2035.xlsx ['Feed grains']
+  hoja Feed grains
+    ['Table 6: U.S. corn long-term projections', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', '2024/25', '2025/26', '2026/27', '2027/28', '2028/29', '2029/30', '2030/31', '2031/32', '2032/33', '2033/34', '2034/35', '2035/36', None]
+    ['Area (million acres):', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [' Planted acres', 90.90899999999999, 98.728, 95, 95, 94.5, 94, 93.5, 93, 92.5, 92, 91.5, 91, None]
+    [' Harvested acres', 83.046, 90.047, 86.9, 86.9, 86.4, 85.9, 85.4, 84.9, 84.4, 83.9, 83.4, 82.9, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+XLSX U.S. Fruits Nuts and Vegetables projections to 2035.xlsx ['Fruits, nuts, vegetables']
+  hoja Fruits, nuts, vegetables
+    ['Table 17: Fruits, nuts, and vegetables long-term projections to 2035', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['      Item', 'Unit', 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Production, farm weight', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['   Fruit and nuts', 'Mil. lbs.', 49235.990000000005, 50929.60498491931, 50253.84670789032, 50295.200948891135, 49871.0955412807, 50118.148906739945, 49927.60304240747, 50342.300372034115, 50084.35396511975, 50579.772713377686, 50456.238943317294, 51074.85459995692]
+    ['      Citrus', 'Mil. lbs.', 10268, 10046, 9637.1333876793, 9439.940999390168, 9330.89298654332, 9214.273455560611, 9140.53254540727, 9097.790807472817, 9126.401560576056, 9223.363391264547, 9361.615666561023, 9537.715463560213]
+XLSX U.S. Livestock projections to 2035.xlsx ['Livestock']
+  hoja Livestock
+    ['Table 18: Per capita meat consumption, retail weight', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['       Item', None, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, '   Pounds', None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [' Beef   ', None, 59.081031032833174, 58.407993987857395, 56.815674084624746, 55.30799958721522, 54.655903194278764, 55.317810609649825, 55.134058975645836, 55.5627162322946, 55.79237809107593, 56.33890777596725, 56.71173122436772, 56.90735489491112]
+    [' Veal', None, 0.11041627689773074, 0.07370913119719198, 0.07048970552764028, 0.06931372294433162, 0.06925675853862931, 0.0707700200046229, 0.0727550960192104, 0.07247683568914526, 0.0722119686411662, 0.07196142375506209, 0.07172271324811061, 0.07149597867759758]
+XLSX U.S. Rice projections to 2035.xlsx ['Rice']
+  hoja Rice
+    ['Table 12: U.S. rice long-term projections, total rice, rough basis', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', '2024/25', '2025/26', '2026/27', '2027/28', '2028/29', '2029/30', '2030/31', '2031/32', '2032/33', '2033/34', '2034/35', '2035/36', None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Area (thousand acres):', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [' Planted', 2910, 2823, 2500, 2620, 2620, 2620, 2620, 2620, 2620, 2620, 2620, 2620, None]
+XLSX U.S. Soybeans and products projections to 2035.xlsx ['Soybeans and products']
+  hoja Soybeans and products
+    ['Table 11: U.S. soybeans and soybean products long-term projections', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', '2024/25', '2025/26', '2026/27', '2027/28', '2028/29', '2029/30', '2030/31', '2031/32', '2032/33', '2033/34', '2034/35', '2035/36', None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Soybeans', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Area (million acres):', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['  Planted', 87.26, 81.135, 85, 84.5, 84, 84, 83.5, 83.5, 83.5, 83, 83, 83, None]
+    ['  Harvested', 86.208, 80.313, 84.2, 83.7, 83.2, 83.2, 82.7, 82.7, 82.7, 82.2, 82.2, 82.2, None]
+XLSX U.S. Sugar projections to 2035.xlsx ['Sugar']
+  hoja Sugar
+    ['Table 16: U.S. sugar long-term projections', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', 'Units', '2024/25', '2025/26', '2026/27', '2027/28', '2028/29', '2029/30', '2030/31', '2031/32', '2032/33', '2033/34', '2034/35', '2035/36']
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Sugarbeets', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [' Planted area', '1,000 acres', 1104.3, 1079, 1050.8430208926104, 1042.4423507830768, 1072.9822053907246, 1072.001975576341, 1066.8929242982551, 1059.664508558867, 1059.664508558867, 1059.664508558867, 1059.664508558867, 1059.664508558867]
+    [' Harvested area', '1,000 acres', 1085.5, 1068.8, 1040.909194374441, 1032.5879374577871, 1062.839092791109, 1061.8681292826627, 1056.807374874861, 1049.6472907763828, 1049.6472907763828, 1049.6472907763828, 1049.6472907763828, 1049.6472907763828]
+    [' Yield', 'Tons/acre', 32.49930907415937, 32.85273203592814, 31.19149175250808, 31.357203784688316, 31.517934672800674, 31.673998397401455, 31.825679472931718, 31.97323656332467, 31.97323656332467, 31.97323656332467, 31.97323656332467, 31.97323656332467]
+XLSX U.S. Wheat projections to 2035.xlsx ['Wheat']
+  hoja Wheat
+    ['Table 10: U.S. wheat long-term projections', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', '2024/25', '2025/26', '2026/27', '2027/28', '2028/29', '2029/30', '2030/31', '2031/32', '2032/33', '2033/34', '2034/35', '2035/36', None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Area (million acres):', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [' Planted acres', 46.274, 45.328, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, None]
+XLSX U.S. Macroeoconomic Assumptions to 2035.xlsx ['US macroeconomics']
+  hoja US macroeconomics
+    ['Table 2: U.S. macroeconomic assumptions to 2035', None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+    [' ', None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Gross domestic product', None, None, None, None, None, None, None, None, None, None, None, None]
+    [' Nominal billion dollars', 29184.9, 30426.4, 31670.1, 33077.45, 34485.47, 35881.8, 37297.83, 38714.09, 40156.2, 41640.93, 43179.98, 44773.81]
+    [' Real 2017 chain-weighted dollars', 23305.03100495231, 23699.187919410444, 24162.904896816483, 24770.958088067837, 25356.300373527636, 25916.490869906153, 26462.920436523596, 26982.083586643756, 27492.31095617509, 28004.724084536916, 28526.305526607648, 29056.237173175105]
+    ['  Percent change', 2.7961491700817964, 1.691295387568359, 1.9566787646180916, 2.5164738836159772, 2.363018351485402, 2.209275360073293, 2.1084242051147006, 1.9618513057372944, 1.8909858013481884, 1.8638415998518676, 1.862476632500476, 1.857694632321616]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None]
+XLSX U.S. Upland Cotton projections to 2035.xlsx ['Cotton']
+  hoja Cotton
+    ['Table 15: U.S. upland cotton long-term projections', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Item', '2024/25', '2025/26', '2026/27', '2027/28', '2028/29', '2029/30', '2030/31', '2031/32', '2032/33', '2033/34', '2034/35', '2035/36', None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    ['Area (thousand acres):', None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+    [' Planted acres', 10976, 9153, 9750, 9500, 9500, 9500, 9600, 9600, 9600, 9600, 9700, 9700, None]
