@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T18:45:08Z",
+ "generatedAt": "2026-10-15T21:40:07Z",
  "summary": {
   "files": 62,
   "errors": 0,
@@ -425,11 +425,11 @@
     "AR/ar-lecheria-wmp-exports-value: salto 8206.934 -> 15706.055 en 1997-06 (mediana previa 470)"
    ],
    "stats": {
-    "series": 222,
-    "points": 34444,
+    "series": 134,
+    "points": 24373,
     "lines": 0
    },
-   "generatedAt": "2026-10-10T16:51:48Z",
+   "generatedAt": "2026-10-15T18:48:06Z",
    "info": [],
    "nWarnings": 26,
    "nErrors": 0
