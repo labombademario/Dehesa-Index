@@ -1253,6 +1253,18 @@
    [
     "cap_nat_rules"
    ]
+  ],
+  "cap/hr/rules.json": [
+   "cap-nat-rules",
+   [
+    "cap_nat_rules"
+   ]
+  ],
+  "cap/el/rules.json": [
+   "cap-nat-rules",
+   [
+    "cap_nat_rules"
+   ]
   ]
  },
  "globs": {

@@ -72,7 +72,8 @@
     var x = t();
     return '<h3 class="pac-eu-h2">' + esc(x.rulesH) + '</h3>' + r.rules.map(function (u) {
       var tx = tr(r, 'rules', u.id, u.text), fs = (tx.match(/^.*?[.;](?=\s|$)/) || [tx])[0]; if (fs.length > 110) fs = fs.slice(0, 107).replace(/\s+\S*$/, '') + '…';
-      return '<details class="pac-eu-all"><summary>' + esc(x['tp_' + u.topic] || u.topic) + ': ' + esc(fs) + '</summary><p>' + esc(tx) + ' <span class="di-movers-hint">(' + esc(u.legalBasis) + ')</span></p><p><a class="di-link-btn" href="' + esc(u.officialUrl) + '" rel="noopener" target="_blank">' + esc(x.official) + '</a></p></details>';
+      var lab = x['tp_' + u.topic] || u.topic; if (fs.toLowerCase().indexOf(lab.toLowerCase()) === 0 && /^\s?:/.test(fs.slice(lab.length))) fs = fs.slice(lab.length).replace(/^\s?:\s*/, '');
+      return '<details class="pac-eu-all"><summary>' + esc(lab) + ': ' + esc(fs) + '</summary><p>' + esc(tx) + ' <span class="di-movers-hint">(' + esc(u.legalBasis) + ')</span></p><p><a class="di-link-btn" href="' + esc(u.officialUrl) + '" rel="noopener" target="_blank">' + esc(x.official) + '</a></p></details>';
     }).join('');
   }
   function intHtml(r) {

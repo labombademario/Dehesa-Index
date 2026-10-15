@@ -11,6 +11,7 @@ import datetime, json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import cap_pt_be_data as PB
+import cap_hr_el_data as HE
 ROOT = Path(__file__).resolve().parents[1]
 TODAY = datetime.date.today().isoformat()
 LG = 'https://www.legifrance.gouv.fr/jorf/id/'
@@ -240,6 +241,12 @@ COUNTRIES = {
  'BE': dict(scheme='Plan estratégico de la PAC de Bélgica 2023-2027 (Flandes y Valonia; pagos directos)', source={'id': 'moniteur_be', 'instrument': 'Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen) y arrêtés du Gouvernement wallon du 23 février 2023 (aide de base, redistributive y jeunes agriculteurs; éco-régimes), publicados en el Moniteur belge / Belgisch Staatsblad', 'ref': 'BVR 21-4-2023; AGW 23-2-2023', 'url': PB.BE_FL_URL},
             note='Reglas leídas a mano de copias consolidadas de los decretos (Codex Vlaanderen, Wallex y e-taamb), que no son la versión oficial: manda el Moniteur belge / Belgisch Staatsblad. No se ha leído Bruselas ni el desarrollo rural. No hay importes por hectárea (los fija el ministro en Valonia y no se han leído en Flandes) ni calendario general (solo fechas de la campaña 2025, que figuran como reglas). Sin vigilancia automática. Son explicaciones breves, no el texto legal.',
             rules=PB.BE_RULES, interventions=PB.BE_INTERVENTIONS, cal=PB.BE_CAL, ovr=[], lang='nl'),
+ 'HR': dict(scheme='Strateški plan ZPP RH 2023.-2027. (izravna plaćanja: Pravilnik o provedbi izravne potpore za 2026., NN 147/2025)', source={'id': 'nn_hr', 'instrument': 'Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), con las modificaciones NN 49/2026 y NN 78/2026, Narodne novine', 'ref': 'NN 147/2025', 'url': HE.HR_URL},
+            note='Reglas leídas a mano del Pravilnik de 2026 (NN 147/2025) y de sus dos modificaciones (NN 49/2026 y NN 78/2026). Los importes por hectárea son los planificados (con posible desviación) de ese Pravilnik; no se han leído los importes de las ayudas asociadas ni la regla de 2026 sobre solicitudes tardías. No se ha leído el desarrollo rural. No es consejo jurídico: manda el texto de Narodne novine.',
+            rules=HE.HR_RULES, interventions=HE.HR_INTERVENTIONS, cal=HE.HR_CAL, ovr=HE.HR_OVR, lang='hr'),
+ 'EL': dict(scheme='Στρατηγικό Σχέδιο ΚΑΠ Ελλάδας 2023-2027 (άμεσες ενισχύσεις: Υ.Α. 519/135068/2023 και 520/135074/2023)', source={'id': 'fek_gr', 'instrument': 'Υ.Α. 519/135068/2023 (ΦΕΚ Β΄ 3071/9-5-2023, horizontal) y Υ.Α. 520/135074/2023 (ΦΕΚ Β΄ 3072/9-5-2023, ayuda básica, redistributiva y jóvenes agricultores), Εφημερίς της Κυβερνήσεως (ΦΕΚ)', 'ref': 'Υ.Α. 519 y 520/2023', 'url': HE.GR_520_URL},
+            note='Reglas leídas a mano de las decisiones ministeriales 519 y 520 de 2023 a través de copias de prensa jurídica (forin.gr), que no son la versión oficial del ΦΕΚ: son los textos originales de 2023 y no se ha comprobado si reformas posteriores los cambian. Las fechas de 2026 proceden de prensa. No hay importes por hectárea. No se ha leído el desarrollo rural. No es consejo jurídico.',
+            rules=HE.GR_RULES, interventions=HE.GR_INTERVENTIONS, cal=HE.GR_CAL, ovr=[], lang='el'),
 }
 def build(cc):
     c = COUNTRIES[cc]; rules, i18nr, ids = [], {}, set()
@@ -264,7 +271,7 @@ def build(cc):
             'interventions': ints, 'rules': rules, 'calendar': cal, 'campaignOverrides': ovr,
             'i18n': {'note': 'Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.', 'rules': i18nr, 'calendar': i18nc, 'overrides': i18no}}
 def main():
-    for cc in ('FR', 'IT', 'PL', 'PT', 'BE'):
+    for cc in ('FR', 'IT', 'PL', 'PT', 'BE', 'HR', 'EL'):
         doc = build(cc); p = ROOT / 'data' / 'cap' / cc.lower() / 'rules.json'
         txt = json.dumps(doc, ensure_ascii=False, indent=1) + '\n'
         if '--check' in sys.argv:

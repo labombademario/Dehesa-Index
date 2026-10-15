@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T12:41:13Z",
+ "generatedAt": "2026-10-15T13:29:41Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 157,
+  "total": 159,
   "byStatus": {
-   "ACTIVE": 127,
+   "ACTIVE": 129,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3434,6 +3434,45 @@
    ]
   },
   {
+   "sourceId": "fek_gr",
+   "registryId": "fek_gr",
+   "country": "EL",
+   "scope": "integrated",
+   "institution": "Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Πηγή: Εφημερίς της Κυβερνήσεως, Υ.Α. 519/135068/2023 (ΦΕΚ Β΄ 3071/9-5-2023) και 520/135074/2023 (ΦΕΚ Β΄ 3072/9-5-2023). Αποσπάσματα.",
+   "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "foag_ch",
    "registryId": "foag_ch",
    "country": "CH",
@@ -5070,6 +5109,45 @@
    "derivatives": "yes",
    "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "nn_hr",
+   "registryId": "nn_hr",
+   "country": "HR",
+   "scope": "integrated",
+   "institution": "Narodne novine — Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025, 49/2026, 78/2026)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Izvor: Narodne novine, Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025) i izmjene (NN 49/2026, 78/2026). Izvaci.",
+   "lastChecked": "2026-10-15",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

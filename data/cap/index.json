@@ -549,6 +549,99 @@
      "reasonCode": "SOURCE_UNREACHABLE"
     }
    }
+  },
+  {
+   "cc": "HR",
+   "name": "Croacia",
+   "scheme": "Strateški plan ZPP RH 2023.-2027. (izravna plaćanja: Pravilnik o provedbi izravne potpore za 2026., NN 147/2025)",
+   "legalAct": {
+    "title": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), con las modificaciones NN 49/2026 y NN 78/2026, Narodne novine",
+    "ref": "NN 147/2025",
+    "url": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+    "sourceId": "nn_hr"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "hr/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes por hectarea del Pravilnik de 2026 figuran en las reglas como planificados; faltan los de las ayudas asociadas y no se han leido los pagos efectivos",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "hr/rules.json",
+     "count": 9,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "hr/rules.json",
+     "count": 1,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha podido probar la lectura de Narodne novine desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "EL",
+   "name": "Grecia",
+   "scheme": "Στρατηγικό Σχέδιο ΚΑΠ Ελλάδας 2023-2027 (άμεσες ενισχύσεις: Υ.Α. 519/135068/2023 και 520/135074/2023)",
+   "legalAct": {
+    "title": "Υ.Α. 519/135068/2023 (ΦΕΚ Β΄ 3071/9-5-2023, horizontal) y Υ.Α. 520/135074/2023 (ΦΕΚ Β΄ 3072/9-5-2023, ayuda básica, redistributiva y jóvenes agricultores), Εφημερίς της Κυβερνήσεως (ΦΕΚ)",
+    "ref": "Υ.Α. 519 y 520/2023",
+    "url": "https://www.forin.gr/articles/article/70797/ua-520-135074-2023",
+    "sourceId": "fek_gr"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "el/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "las decisiones ministeriales de 2023 no fijan importes por hectarea y los de 2025-2026 solo se han visto en prensa, que no se incluye",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "el/rules.json",
+     "count": 9,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "las fechas leidas son de la campana 2025 de cada region y figuran como reglas; no hay un calendario general que se repita cada ano",
+     "reasonCode": "NOT_READ"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha podido probar la lectura del ΦΕΚ (Εθνικό Τυπογραφείο) ni de la AADE desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
   }
  ],
  "watch": {
@@ -645,6 +738,15 @@
     "text": "Termina el plazo de la solicitud única de las ayudas por superficie (15 de mayo; si es festivo o fin de semana, el primer día hábil siguiente).",
     "legalBasis": "Code rural, art. D. 614-36",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
+   },
+   {
+    "cc": "HR",
+    "id": "su-close",
+    "kind": "deadline",
+    "date": "2027-05-15",
+    "text": "Fecha ordinaria de fin de la solicitud única (15 de mayo, como en 2024 y 2026). La fija el reglamento de cada año y en 2026 se amplió al 1 de junio.",
+    "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 10(1)",
+    "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu"
    },
    {
     "cc": "IT",

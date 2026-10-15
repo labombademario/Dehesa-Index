@@ -1,0 +1,340 @@
+{
+ "schemaVersion": 1,
+ "country": "HR",
+ "scheme": "Strateški plan ZPP RH 2023.-2027. (izravna plaćanja: Pravilnik o provedbi izravne potpore za 2026., NN 147/2025)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-15",
+ "source": {
+  "id": "nn_hr",
+  "instrument": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), con las modificaciones NN 49/2026 y NN 78/2026, Narodne novine",
+  "ref": "NN 147/2025",
+  "url": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu"
+ },
+ "note": "Reglas leídas a mano del Pravilnik de 2026 (NN 147/2025) y de sus dos modificaciones (NN 49/2026 y NN 78/2026). Los importes por hectárea son los planificados (con posible desviación) de ese Pravilnik; no se han leído los importes de las ayudas asociadas ni la regla de 2026 sobre solicitudes tardías. No se ha leído el desarrollo rural. No es consejo jurídico: manda el texto de Narodne novine.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Osnovna potpora dohotku za održivost (21.01.)",
+   "nameLang": "hr",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 24 y 28",
+   "articles": [
+    "24",
+    "28"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Dodatna preraspodijeljena potpora (26.01.)",
+   "nameLang": "hr",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 30",
+   "articles": [
+    "30"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Potpora za mlade poljoprivrednike (30.01.)",
+   "nameLang": "hr",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 31",
+   "articles": [
+    "31"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Eko sheme (31.01. do 31.08.)",
+   "nameLang": "hr",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 33 a 48",
+   "articles": [
+    "33",
+    "34",
+    "36",
+    "38",
+    "40",
+    "42",
+    "44",
+    "46",
+    "48"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Proizvodno vezana plaćanja (32.01. do 32.09.)",
+   "nameLang": "hr",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 1(3)",
+   "articles": [
+    "1"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), čl. 3(2)(e)",
+   "articles": [
+    "3"
+   ],
+   "text": "Agricultor activo: tener un resultado económico estándar superior a 3.000 €, o haber recibido pagos directos inferiores a 5.000 € el año anterior. Algunas intervenciones de desarrollo rural (IAKS) están exentas de este requisito (art. 17).",
+   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "values": {
+    "minStandardOutputEur": 3000,
+    "priorYearPaymentsUnderEur": 5000
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 16 y 17",
+   "articles": [
+    "16",
+    "17"
+   ],
+   "text": "Parcela ARKOD mínima para pedir ayuda: 0,05 ha. Superficie admisible mínima para los pagos directos: 1 ha (0,5 ha para las medidas de desarrollo rural IAKS). Quien no llega a 1 ha puede cobrar al menos 200 € si pide pagos ligados a animales.",
+   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "values": {
+    "minParcelHa": 0.05,
+    "minHa": 1,
+    "minHaRuralDevelopment": 0.5,
+    "minCoupledAnimalEur": 200
+   }
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 10(1); Pravilnik o izmjeni Pravilnika (NN 49/2026)",
+   "articles": [
+    "10"
+   ],
+   "text": "La solicitud única (Jedinstveni zahtjev) de 2026 se podía presentar del 7 de enero al 15 de mayo; la reforma NN 49/2026, publicada el 13 de mayo, amplió el plazo hasta el 1 de junio de 2026. En 2024 el plazo fue del 4 de marzo al 15 de mayo, con solicitudes tardías hasta el 10 de junio. En 2024, para las medidas IAKS del programa de desarrollo rural 2014-2020 la demora restaba un 1 % por día hábil; no se ha leído la regla de demora de 2026.",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_49_616.html",
+   "values": {
+    "campaign": 2026,
+    "from": "2026-01-07",
+    "to": "2026-06-01",
+    "originalTo": "2026-05-15"
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 24 y 28",
+   "articles": [
+    "24",
+    "28"
+   ],
+   "text": "Ayuda básica a la renta (21.01): importe unitario planificado de 130,00 € por derecho de pago, con una desviación de hasta el 10 %. Los valores de los derechos convergen en cuatro pasos iguales de 2023 a 2026; en 2026 todos valen el promedio planificado. La reserva nacional se nutre con el 3 % del límite máximo.",
+   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "values": {
+    "plannedEurPerEntitlement": 130.0,
+    "deviationPct": 10,
+    "convergence": "2023-2026",
+    "nationalReservePct": 3
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 30",
+   "articles": [
+    "30"
+   ],
+   "text": "Pago redistributivo (26.01): se concede por un máximo de 30 ha, con un importe unitario planificado de 110,22 €/ha y una desviación de hasta el 10 %.",
+   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "values": {
+    "maxHa": 30,
+    "plannedEurPerHa": 110.22,
+    "deviationPct": 10
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 3(2)(g) y 31; Pravilnik o izmjenama i dopunama Pravilnika (NN 78/2026), art. 1",
+   "articles": [
+    "3",
+    "31"
+   ],
+   "text": "Jóvenes agricultores (30.01): de 18 hasta cumplir 40 años, titular de la explotación por primera vez en los cinco años anteriores al de la solicitud. Se paga por un máximo de 50 ha, con un importe unitario planificado de 85,42 €/ha (desviación de hasta el 20 %), durante hasta cinco años y como muy tarde hasta 2027. La reforma NN 78/2026 redefine «nuevo agricultor»: persona física de más de 40 años que gestiona la explotación por su cuenta y es titular por primera vez después del plazo de solicitud del reglamento de 2025.",
+   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "values": {
+    "minAge": 18,
+    "maxAge": 40,
+    "maxHa": 50,
+    "plannedEurPerHa": 85.42,
+    "deviationPct": 20,
+    "lastYear": 2027
+   }
+  },
+  {
+   "id": "eco-schemes",
+   "topic": "eco",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 33 a 48",
+   "articles": [
+    "33",
+    "34",
+    "36",
+    "38",
+    "40",
+    "42",
+    "44",
+    "46",
+    "48"
+   ],
+   "text": "Ocho ecorregímenes con importes planificados por hectárea: 31.01 diversidad intensificada de la superficie agraria, 62 €; 31.02 pastoreo extensivo de pastos, 100 €; 31.03 mantenimiento intensificado de superficies ecológicamente significativas, 130 € (160 € si al menos el 10 % de la tierra de cultivo lo son); 31.04 estiércol en tierra de cultivo, 215 € (169 € en zonas vulnerables a nitratos); 31.05 leguminosas, 161 € (117 € combinado con 31.04; 119 € con agricultura ecológica 70.04, más 93 € por pasto apícola ecológico); 31.06 agricultura de conservación, 250 € (hasta ±30 %); 31.07 pastos de alto valor natural, 255 € en montaña, 361 € en llanura continental y 113 € en la región mediterránea; 31.08 abonos ecológicos en cultivos permanentes, 250 €. Las desviaciones permitidas son de hasta el 10 % salvo que se indique.",
+   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "values": {
+    "planned": {
+     "31.01": 62,
+     "31.02": 100,
+     "31.03": [
+      130,
+      160
+     ],
+     "31.04": [
+      215,
+      169
+     ],
+     "31.05": [
+      161,
+      117,
+      119
+     ],
+     "31.06": 250,
+     "31.07": {
+      "hillMountain": 255,
+      "continentalLowland": 361,
+      "mediterranean": 113
+     },
+     "31.08": 250
+    },
+    "unit": "EUR/ha"
+   }
+  },
+  {
+   "id": "coupled",
+   "topic": "associated",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 1(3)",
+   "articles": [
+    "1"
+   ],
+   "text": "Ayudas asociadas (32.xx): vacas de leche (con novillas de primer parto), cebo de terneros, vacas nodrizas, ovejas y cabras, hortalizas, fruta, remolacha azucarera, cultivos proteicos forrajeros y semillas. Los importes por animal o hectárea no se han leído.",
+   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu"
+  },
+  {
+   "id": "amendments-2026",
+   "topic": "eco",
+   "legalBasis": "Pravilnik o izmjenama i dopunama Pravilnika (NN 78/2026), arts. 8 y 9",
+   "articles": [
+    "38",
+    "41"
+   ],
+   "text": "La reforma NN 78/2026 (17 de julio de 2026) cambia requisitos de ecorregímenes y control: zanjas de al menos 0,5 m de ancho y profundidad y franjas de protección de cursos de agua de 5 a 10 m (art. 38); los ganaderos, incluido el cebo por contrato, deben añadir adsorbentes (zeolita clinoptilolita o bentonita) al almacén de estiércol, al menos un 0,5 % de la materia seca, y justificar la compra ante la Agencia de Pagos antes del 31 de diciembre (art. 41); sustituye el anexo 5 de criterios de evaluación de incumplimientos. No se han comparado uno a uno los cambios con el texto anterior.",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_07_78_930.html",
+   "values": {
+    "adsorbentMinPctDryMatter": 0.5,
+    "proofDeadline": "12-31",
+    "bufferStripMetres": [
+     5,
+     10
+    ]
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 10(1)",
+   "articles": [
+    "10"
+   ],
+   "when": {
+    "month": 5,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Fecha ordinaria de fin de la solicitud única (15 de mayo, como en 2024 y 2026). La fija el reglamento de cada año y en 2026 se amplió al 1 de junio."
+  }
+ ],
+ "campaignOverrides": [
+  {
+   "campaign": 2026,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2026-06-01",
+   "legalBasis": "Pravilnik o izmjeni Pravilnika (NN 49/2026), art. 1",
+   "text": "En 2026 la reforma NN 49/2026 (publicada el 13 de mayo) amplió el plazo del 15 de mayo al 1 de junio de 2026."
+  }
+ ],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer: a standard economic output above €3,000, or direct payments under €5,000 the previous year. Some rural development (IACS) interventions are exempt from this requirement (art. 17).",
+    "fr": "Agriculteur actif : un résultat économique standard supérieur à 3 000 €, ou des paiements directs inférieurs à 5 000 € l'année précédente. Certaines interventions de développement rural (SIGC) en sont exemptées (art. 17).",
+    "it": "Agricoltore attivo: un risultato economico standard superiore a 3.000 €, oppure pagamenti diretti inferiori a 5.000 € l'anno precedente. Alcuni interventi di sviluppo rurale (SIGC) ne sono esenti (art. 17)."
+   },
+   "minimum": {
+    "en": "Minimum ARKOD parcel to claim support: 0.05 ha. Minimum eligible area for direct payments: 1 ha (0.5 ha for rural development IACS measures). Someone below 1 ha can receive at least €200 if they claim animal-linked payments.",
+    "fr": "Parcelle ARKOD minimale pour demander l'aide : 0,05 ha. Superficie admissible minimale pour les paiements directs : 1 ha (0,5 ha pour les mesures SIGC de développement rural). Qui n'atteint pas 1 ha peut percevoir au moins 200 € s'il demande des paiements liés aux animaux.",
+    "it": "Particella ARKOD minima per chiedere l'aiuto: 0,05 ha. Superficie ammissibile minima per i pagamenti diretti: 1 ha (0,5 ha per le misure SIGC di sviluppo rurale). Chi non arriva a 1 ha può ricevere almeno 200 € se chiede pagamenti legati agli animali."
+   },
+   "application": {
+    "en": "The 2026 single application (Jedinstveni zahtjev) could be filed from 7 January to 15 May; the NN 49/2026 amendment, published on 13 May, extended the deadline to 1 June 2026. In 2024 the window was 4 March to 15 May, with late applications until 10 June. In 2024, for IACS measures of the 2014-2020 rural development programme, lateness cost 1 % per working day; the 2026 late rule has not been read.",
+    "fr": "La demande unique (Jedinstveni zahtjev) de 2026 pouvait être déposée du 7 janvier au 15 mai ; la modification NN 49/2026, publiée le 13 mai, a prorogé le délai au 1er juin 2026. En 2024 la période allait du 4 mars au 15 mai, avec des demandes tardives jusqu'au 10 juin. En 2024, pour les mesures SIGC du programme de développement rural 2014-2020, le retard coûtait 1 % par jour ouvré ; la règle de retard de 2026 n'a pas été lue.",
+    "it": "La domanda unica (Jedinstveni zahtjev) del 2026 poteva essere presentata dal 7 gennaio al 15 maggio; la modifica NN 49/2026, pubblicata il 13 maggio, ha prorogato il termine al 1° giugno 2026. Nel 2024 il periodo andava dal 4 marzo al 15 maggio, con domande tardive fino al 10 giugno. Nel 2024, per le misure SIGC del programma di sviluppo rurale 2014-2020, il ritardo costava l'1 % per giorno lavorativo; la regola sul ritardo del 2026 non è stata letta."
+   },
+   "basic": {
+    "en": "Basic income support (21.01): planned unit amount of €130.00 per payment entitlement, with a deviation of up to 10 %. Entitlement values converge in four equal steps from 2023 to 2026; in 2026 all are worth the planned average. The national reserve is funded with 3 % of the ceiling.",
+    "fr": "Aide de base au revenu (21.01) : montant unitaire prévu de 130,00 € par droit au paiement, avec un écart pouvant aller jusqu'à 10 %. Les valeurs des droits convergent en quatre étapes égales de 2023 à 2026 ; en 2026 tous valent la moyenne prévue. La réserve nationale est alimentée par 3 % du plafond.",
+    "it": "Sostegno di base al reddito (21.01): importo unitario previsto di 130,00 € per diritto al pagamento, con uno scarto fino al 10 %. I valori dei diritti convergono in quattro passi uguali dal 2023 al 2026; nel 2026 tutti valgono la media prevista. La riserva nazionale è alimentata con il 3 % del massimale."
+   },
+   "redistributive": {
+    "en": "Redistributive payment (26.01): granted for a maximum of 30 ha, with a planned unit amount of €110.22/ha and a deviation of up to 10 %.",
+    "fr": "Paiement redistributif (26.01) : accordé pour 30 ha au maximum, avec un montant unitaire prévu de 110,22 €/ha et un écart pouvant aller jusqu'à 10 %.",
+    "it": "Pagamento redistributivo (26.01): concesso per un massimo di 30 ha, con un importo unitario previsto di 110,22 €/ha e uno scarto fino al 10 %."
+   },
+   "young-farmers": {
+    "en": "Young farmers (30.01): aged 18 until turning 40, holder of the farm for the first time within the five years before the application year. Paid on a maximum of 50 ha, with a planned unit amount of €85.42/ha (deviation up to 20 %), for up to five years and at the latest until 2027. The NN 78/2026 amendment redefines \"new farmer\": a natural person over 40 who runs the farm independently and became holder for the first time after the 2025 rule's application deadline.",
+    "fr": "Jeunes agriculteurs (30.01) : de 18 ans jusqu'à 40 ans révolus, chef d'exploitation pour la première fois dans les cinq ans précédant l'année de la demande. Payé sur 50 ha au maximum, avec un montant unitaire prévu de 85,42 €/ha (écart jusqu'à 20 %), pendant cinq ans au plus et au plus tard jusqu'en 2027. La modification NN 78/2026 redéfinit le « nouvel agriculteur » : personne physique de plus de 40 ans qui gère l'exploitation de façon autonome et en est devenue chef pour la première fois après la date limite de demande du règlement de 2025.",
+    "it": "Giovani agricoltori (30.01): da 18 anni fino al compimento dei 40, titolare dell'azienda per la prima volta nei cinque anni precedenti l'anno della domanda. Pagato su un massimo di 50 ha, con un importo unitario previsto di 85,42 €/ha (scarto fino al 20 %), per un massimo di cinque anni e al più tardi fino al 2027. La modifica NN 78/2026 ridefinisce il «nuovo agricoltore»: persona fisica con più di 40 anni che gestisce l'azienda in modo autonomo e ne è diventata titolare per la prima volta dopo la scadenza della domanda del regolamento del 2025."
+   },
+   "eco-schemes": {
+    "en": "Eight eco-schemes with planned amounts per hectare: 31.01 intensified diversity of agricultural area, €62; 31.02 extensive grazing of pastures, €100; 31.03 intensified maintenance of ecologically significant areas, €130 (€160 if at least 10 % of the arable land is such area); 31.04 farmyard manure on arable land, €215 (€169 in nitrate-vulnerable zones); 31.05 legumes, €161 (€117 combined with 31.04; €119 with organic farming 70.04, plus €93 for organic bee pasture); 31.06 conservation agriculture, €250 (up to ±30 %); 31.07 high-natural-value grassland, €255 in the hill-mountain region, €361 in the continental lowland and €113 in the Mediterranean; 31.08 organic fertilisers in permanent crops, €250. Allowed deviations are up to 10 % unless stated.",
+    "fr": "Huit éco-régimes avec des montants prévus à l'hectare : 31.01 diversité intensifiée des surfaces agricoles, 62 € ; 31.02 pâturage extensif des prairies, 100 € ; 31.03 entretien intensifié des surfaces écologiquement significatives, 130 € (160 € si au moins 10 % des terres arables en sont) ; 31.04 fumier sur terres arables, 215 € (169 € en zones vulnérables aux nitrates) ; 31.05 légumineuses, 161 € (117 € combiné avec 31.04 ; 119 € avec l'agriculture biologique 70.04, plus 93 € pour pâturage apicole bio) ; 31.06 agriculture de conservation, 250 € (jusqu'à ±30 %) ; 31.07 prairies à haute valeur naturelle, 255 € en région de collines et de montagne, 361 € en plaine continentale et 113 € en région méditerranéenne ; 31.08 engrais organiques en cultures permanentes, 250 €. Les écarts admis vont jusqu'à 10 % sauf mention contraire.",
+    "it": "Otto ecoregimi con importi previsti per ettaro: 31.01 diversità intensificata delle superfici agricole, 62 €; 31.02 pascolo estensivo dei pascoli, 100 €; 31.03 mantenimento intensificato delle superfici ecologicamente significative, 130 € (160 € se almeno il 10 % dei seminativi lo è); 31.04 letame sui seminativi, 215 € (169 € nelle zone vulnerabili ai nitrati); 31.05 leguminose, 161 € (117 € combinato con 31.04; 119 € con l'agricoltura biologica 70.04, più 93 € per pascolo apistico biologico); 31.06 agricoltura conservativa, 250 € (fino a ±30 %); 31.07 prati di alto valore naturale, 255 € nella regione collinare e montana, 361 € nella pianura continentale e 113 € nella regione mediterranea; 31.08 concimi organici nelle colture permanenti, 250 €. Gli scarti ammessi arrivano al 10 % salvo diversa indicazione."
+   },
+   "coupled": {
+    "en": "Coupled support (32.xx): dairy cows (with first-calving heifers), beef fattening, suckler cows, sheep and goats, vegetables, fruit, sugar beet, fodder protein crops and seed. The per-head and per-hectare amounts have not been read.",
+    "fr": "Aides couplées (32.xx) : vaches laitières (avec génisses primipares), engraissement de bovins, vaches allaitantes, ovins et caprins, légumes, fruits, betterave sucrière, protéagineux fourragers et semences. Les montants par animal ou par hectare n'ont pas été lus.",
+    "it": "Aiuti accoppiati (32.xx): vacche da latte (con giovenche alla prima gravidanza), ingrasso di bovini, vacche nutrici, ovini e caprini, ortaggi, frutta, barbabietola da zucchero, colture proteiche foraggere e sementi. Gli importi per capo o per ettaro non sono stati letti."
+   },
+   "amendments-2026": {
+    "en": "The NN 78/2026 amendment (17 July 2026) changes eco-scheme and control requirements: ditches at least 0.5 m wide and deep and watercourse buffer strips of 5 to 10 m (art. 38); livestock keepers, including contract fattening, must add adsorbents (clinoptilolite zeolite or bentonite) to manure storage, at least 0.5 % of dry matter, and send proof of purchase to the Paying Agency by 31 December (art. 41); it replaces annex 5 on breach assessment criteria. We have not compared the changes line by line with the earlier text.",
+    "fr": "La modification NN 78/2026 (17 juillet 2026) change des exigences d'éco-régimes et de contrôle : fossés d'au moins 0,5 m de largeur et de profondeur et bandes tampons de cours d'eau de 5 à 10 m (art. 38) ; les éleveurs, y compris l'engraissement sous contrat, doivent ajouter des adsorbants (zéolite clinoptilolite ou bentonite) au stockage du fumier, au moins 0,5 % de la matière sèche, et envoyer la preuve d'achat à l'Agence de paiement avant le 31 décembre (art. 41) ; elle remplace l'annexe 5 sur les critères d'évaluation des manquements. Nous n'avons pas comparé les changements ligne à ligne avec le texte antérieur.",
+    "it": "La modifica NN 78/2026 (17 luglio 2026) cambia requisiti di ecoregimi e controllo: fossi larghi e profondi almeno 0,5 m e fasce tampone dei corsi d'acqua da 5 a 10 m (art. 38); gli allevatori, compreso l'ingrasso a contratto, devono aggiungere adsorbenti (zeolite clinoptilolite o bentonite) allo stoccaggio del letame, almeno lo 0,5 % della sostanza secca, e inviare la prova d'acquisto all'Agenzia dei pagamenti entro il 31 dicembre (art. 41); sostituisce l'allegato 5 sui criteri di valutazione delle violazioni. Non abbiamo confrontato riga per riga le modifiche con il testo precedente."
+   }
+  },
+  "calendar": {
+   "su-close": {
+    "en": "Ordinary end date of the single application (15 May, as in 2024 and 2026). Each year's regulation sets it and in 2026 it was extended to 1 June.",
+    "fr": "Date ordinaire de fin de la demande unique (15 mai, comme en 2024 et 2026). Le règlement de chaque année la fixe et en 2026 elle a été prorogée au 1er juin.",
+    "it": "Data ordinaria di chiusura della domanda unica (15 maggio, come nel 2024 e 2026). La fissa il regolamento di ogni anno e nel 2026 è stata prorogata al 1° giugno."
+   }
+  },
+  "overrides": {
+   "2026:su-close": {
+    "en": "In 2026 the NN 49/2026 amendment (published on 13 May) extended the deadline from 15 May to 1 June 2026.",
+    "fr": "En 2026, la modification NN 49/2026 (publiée le 13 mai) a prorogé le délai du 15 mai au 1er juin 2026.",
+    "it": "Nel 2026 la modifica NN 49/2026 (pubblicata il 13 maggio) ha prorogato il termine dal 15 maggio al 1° giugno 2026."
+   }
+  }
+ }
+}
