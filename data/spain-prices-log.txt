@@ -1,0 +1,11 @@
+leído precios_medios_nacionales_2019v2.xlsx productos 84 celdas 3625 semanas 52
+leído precios_medios_nacionales_2020v2.xlsx productos 103 celdas 4074 semanas 53
+leído precios_medios_nacionales_2021s52.xlsx productos 126 celdas 5053 semanas 52
+leído precios_medios_nacionales_2022.xlsx productos 131 celdas 5758 semanas 52
+leído precios_medios_nacionales_2023s52.xlsx productos 126 celdas 5426 semanas 52
+leído precios_medios_nacionales_2024s52.xlsx productos 129 celdas 5377 semanas 52
+leído precios_medios_nacionales_2025-s52.xlsx productos 140 celdas 5697 semanas 52
+leído precios_medios_nacionales_2026-s36.xlsx productos 141 celdas 4454 semanas 40
+observatorio: series 75 semanas 1183 2003-12-29 2026-08-31
+series 180 semanas 405 2018-12-31 2026-09-28
+valores <= 0 tratados como sin dato: 9
