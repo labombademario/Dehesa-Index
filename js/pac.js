@@ -83,7 +83,7 @@
       cDate: 'Date', cWhat: 'Milestone', cKind: 'Type', cNote: 'Note', exc: 'Exception for this campaign', onlyReg: 'Only {r}', before: 'no later than {d}', inDays: 'in {n} days', past: 'past', today: 'today',
       k_deadline: 'deadline', k_publication: 'FEGA publishes', k_window: 'period', 'k_window-start': 'start',
       sRules: 'Rules that affect you most', rulesNote: 'Dehesa Index summary; the legal text prevails. Summaries are in Spanish, the language of the law.', legal: 'Legal basis',
-      sAssoc: 'Coupled support: minimum and maximum per unit', assocIntro: 'Campaign {y}. Minimum and maximum amounts from the royal decree (Annexes XX and XXII). The FEGA sets each campaign\'s amount between those limits; we do not have the campaign amounts yet.', assocNames: 'Names in Spanish, as in the royal decree.', aName: 'Support', aUnitHa: '€/ha', aUnitAn: '€/animal', aCrop: 'Crops', aLive: 'Livestock',
+      sAssoc: 'Coupled support: minimum and maximum per unit', assocIntro: 'Campaign {y}. Minimum and maximum amounts from the royal decree (Annexes XX and XXII). The FEGA sets each campaign\'s amount between those limits; we do not have the campaign amounts yet.', assocNames: 'Names translated by Dehesa Index from the royal decree; the Spanish original appears on hover.', aName: 'Support', aUnitHa: '€/ha', aUnitAn: '€/animal', aCrop: 'Crops', aLive: 'Livestock',
       sTrack: 'Tracking changes in the BOE', trackOk: 'No changes pending review: the text of the articles and annexes we use matches what we reviewed on {v}.', trackBad: 'The BOE has changed text we use since our last review: {l}. Until we review it, the rules and amounts on this page may be out of date.',
       trackChk: 'Last automatic check: {c}. BOE consolidation updated on {u}.', trackAmend: 'Later rules that amend, repeal or correct the royal decree (according to the BOE)', tId: 'Rule', tRel: 'Relation', tTxt: 'Detail (BOE text)', trackLog: 'Amount changes detected', trackNone: 'No amount changes since the first reading ({v}).', trackDiscr: 'Annexes VIII and IX of the royal decree itself differ by a few cents in {n} redistributive amounts; the calculator uses the campaign\'s Annex IX amounts and both are in the data.',
       sMiss: 'What we do not have yet',
@@ -130,7 +130,7 @@
       cDate: 'Date', cWhat: 'Étape', cKind: 'Type', cNote: 'Note', exc: 'Exception de cette campagne', onlyReg: 'Seulement {r}', before: 'au plus tard le {d}', inDays: 'dans {n} jours', past: 'passé', today: 'aujourd\'hui',
       k_deadline: 'échéance', k_publication: 'publication du FEGA', k_window: 'période', 'k_window-start': 'début',
       sRules: 'Règles qui vous concernent le plus', rulesNote: 'Résumé de Dehesa Index ; le texte légal prévaut. Les résumés sont en espagnol, langue de la norme.', legal: 'Base légale',
-      sAssoc: 'Aides couplées : minimum et maximum par unité', assocIntro: 'Campagne {y}. Montants minimal et maximal du décret royal (annexes XX et XXII). Le FEGA fixe le montant de chaque campagne entre ces limites ; nous n\'avons pas encore ceux des campagnes.', assocNames: 'Dénominations en espagnol, telles qu\'elles figurent dans le décret royal.', aName: 'Aide', aUnitHa: '€/ha', aUnitAn: '€/animal', aCrop: 'Cultures', aLive: 'Élevage',
+      sAssoc: 'Aides couplées : minimum et maximum par unité', assocIntro: 'Campagne {y}. Montants minimal et maximal du décret royal (annexes XX et XXII). Le FEGA fixe le montant de chaque campagne entre ces limites ; nous n\'avons pas encore ceux des campagnes.', assocNames: 'Dénominations traduites par Dehesa Index à partir du décret royal ; l\'original espagnol s\'affiche au survol.', aName: 'Aide', aUnitHa: '€/ha', aUnitAn: '€/animal', aCrop: 'Cultures', aLive: 'Élevage',
       sTrack: 'Suivi des changements au BOE', trackOk: 'Aucun changement en attente de revue : le texte des articles et annexes que nous utilisons correspond à celui que nous avons revu le {v}.', trackBad: 'Le BOE a modifié un texte que nous utilisons depuis notre dernière revue : {l}. Tant que nous ne l\'avons pas revu, les règles et montants de cette page peuvent être périmés.',
       trackChk: 'Dernière vérification automatique : {c}. Consolidation du BOE mise à jour le {u}.', trackAmend: 'Normes postérieures qui modifient, abrogent ou corrigent le décret royal (selon le BOE)', tId: 'Norme', tRel: 'Relation', tTxt: 'Détail (texte du BOE)', trackLog: 'Changements de montants détectés', trackNone: 'Aucun changement de montant depuis la première lecture ({v}).', trackDiscr: 'Les annexes VIII et IX du décret royal lui-même diffèrent de quelques centimes pour {n} montants de l\'aide redistributive ; le calculateur utilise les montants de l\'annexe IX de la campagne et les deux figurent dans les données.',
       sMiss: 'Ce qui nous manque encore',
@@ -177,7 +177,7 @@
       cDate: 'Data', cWhat: 'Tappa', cKind: 'Tipo', cNote: 'Nota', exc: 'Eccezione di questa campagna', onlyReg: 'Solo {r}', before: 'entro il {d}', inDays: 'tra {n} giorni', past: 'passato', today: 'oggi',
       k_deadline: 'scadenza', k_publication: 'pubblica il FEGA', k_window: 'periodo', 'k_window-start': 'inizio',
       sRules: 'Le regole che ti riguardano di più', rulesNote: 'Riepilogo di Dehesa Index; prevale il testo giuridico. I riepiloghi sono in spagnolo, la lingua della norma.', legal: 'Base giuridica',
-      sAssoc: 'Aiuti accoppiati: minimo e massimo per unità', assocIntro: 'Campagna {y}. Importi minimo e massimo del real decreto (allegati XX e XXII). Il FEGA fissa l\'importo di ogni campagna tra questi limiti; non abbiamo ancora quelli di campagna.', assocNames: 'Denominazioni in spagnolo, come nel real decreto.', aName: 'Aiuto', aUnitHa: '€/ha', aUnitAn: '€/capo', aCrop: 'Colture', aLive: 'Zootecnia',
+      sAssoc: 'Aiuti accoppiati: minimo e massimo per unità', assocIntro: 'Campagna {y}. Importi minimo e massimo del real decreto (allegati XX e XXII). Il FEGA fissa l\'importo di ogni campagna tra questi limiti; non abbiamo ancora quelli di campagna.', assocNames: 'Denominazioni tradotte da Dehesa Index dal real decreto; l’originale spagnolo compare al passaggio del mouse.', aName: 'Aiuto', aUnitHa: '€/ha', aUnitAn: '€/capo', aCrop: 'Colture', aLive: 'Zootecnia',
       sTrack: 'Monitoraggio delle modifiche al BOE', trackOk: 'Nessuna modifica in attesa di verifica: il testo degli articoli e degli allegati che usiamo coincide con quello verificato il {v}.', trackBad: 'Il BOE ha modificato testo che usiamo dalla nostra ultima verifica: {l}. Finché non lo verifichiamo, regole e importi di questa pagina possono essere superati.',
       trackChk: 'Ultimo controllo automatico: {c}. Consolidamento del BOE aggiornato il {u}.', trackAmend: 'Norme successive che modificano, abrogano o correggono il real decreto (secondo il BOE)', tId: 'Norma', tRel: 'Relazione', tTxt: 'Dettaglio (testo del BOE)', trackLog: 'Modifiche di importi rilevate', trackNone: 'Nessuna modifica di importi dalla prima lettura ({v}).', trackDiscr: 'Gli allegati VIII e IX del real decreto stesso differiscono di pochi centesimi in {n} importi dell\'aiuto redistributivo; il calcolatore usa gli importi dell\'allegato IX della campagna e entrambi sono nei dati.',
       sMiss: 'Cosa non abbiamo ancora',
@@ -224,6 +224,49 @@
   function ecoRow(id) { var a = DATA.amounts.ecoschemes; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i]; return null; }
   /* Textos en español que no vienen de la interfaz: las explicaciones de rules.json se traducen a mano (rules.json → i18n) y las modificaciones que lista el BOE
      (relación y detalle) siguen un patrón fijo que se traduce por reglas; lo que no encaja se deja tal cual, en español. Solo es auténtico el texto del BOE. */
+  /* Denominaciones de las ayudas asociadas del real decreto, traducidas a mano por segmentos (la etiqueta del dato es «base, territorio, tramo…»). El español original queda en el atributo title. */
+  var AAS = {
+    'Legumbres (producción)': ['Pulses (production)', 'Légumineuses à grains (production)', 'Legumi (produzione)'],
+    'Resto de leguminosas (producción)': ['Other legumes (production)', 'Autres légumineuses (production)', 'Altre leguminose (produzione)'],
+    'Semillas certificadas de legumbres': ['Certified pulse seed', 'Semences certifiées de légumineuses à grains', 'Sementi certificate di legumi'],
+    'Semillas certificadas del resto de leguminosas': ['Certified seed of other legumes', 'Semences certifiées des autres légumineuses', 'Sementi certificate delle altre leguminose'],
+    'Arroz': ['Rice', 'Riz', 'Riso'],
+    'Remolacha azucarera': ['Sugar beet', 'Betterave sucrière', 'Barbabietola da zucchero'],
+    'siembra primaveral': ['spring sowing', 'semis de printemps', 'semina primaverile'],
+    'siembra otoñal': ['autumn sowing', 'semis d’automne', 'semina autunnale'],
+    'Tomate para transformación': ['Tomatoes for processing', 'Tomates destinées à la transformation', 'Pomodori da trasformazione'],
+    'Frutos secos en zonas con riesgo de desertificación': ['Nuts in areas at risk of desertification', 'Fruits à coque dans les zones à risque de désertification', 'Frutta a guscio nelle zone a rischio di desertificazione'],
+    'Uva pasa (producción tradicional)': ['Raisins (traditional production)', 'Raisins secs (production traditionnelle)', 'Uva passa (produzione tradizionale)'],
+    'Olivar con dificultades específicas y alto valor medioambiental': ['Olive groves with specific difficulties and high environmental value', 'Oliveraies présentant des difficultés spécifiques et une grande valeur environnementale', 'Oliveti con difficoltà specifiche e alto valore ambientale'],
+    'Vacuno de carne extensivo': ['Extensive beef cattle', 'Bovins allaitants extensifs', 'Bovini da carne estensivi'],
+    'Engorde de terneros en la explotación de nacimiento': ['Calf fattening on the farm of birth', 'Engraissement des veaux dans l’exploitation de naissance', 'Ingrasso dei vitelli nell’azienda di nascita'],
+    'Engorde sostenible de terneros': ['Sustainable calf fattening', 'Engraissement durable des veaux', 'Ingrasso sostenibile dei vitelli'],
+    'Leche de vaca': ['Cow’s milk', 'Lait de vache', 'Latte vaccino'],
+    'Ovino y caprino de carne': ['Meat sheep and goats', 'Ovins et caprins à viande', 'Ovini e caprini da carne'],
+    'Leche de oveja y cabra': ['Sheep and goat milk', 'Lait de brebis et de chèvre', 'Latte di pecora e di capra'],
+    'Ovino y caprino sin pastos (rastrojeras, barbechos y restos hortofrutícolas)': ['Sheep and goats without pasture (stubble, fallow land and fruit-and-vegetable residues)', 'Ovins et caprins sans pâturages (chaumes, jachères et résidus de fruits et légumes)', 'Ovini e caprini senza pascoli (stoppie, maggesi e residui ortofrutticoli)'],
+    'Península': ['Peninsula', 'Péninsule', 'Penisola'],
+    'Illes Balears': ['Balearic Islands', 'Îles Baléares', 'Isole Baleari'],
+    'insular': ['islands', 'îles', 'isole'],
+    'tramo 1': ['band 1', 'tranche 1', 'fascia 1'],
+    'tramo 2': ['band 2', 'tranche 2', 'fascia 2'],
+    'raza autóctona': ['native breed', 'race locale', 'razza autoctona'],
+    'zonas de montaña': ['mountain areas', 'zones de montagne', 'zone di montagna'],
+    'hasta 600 terneros': ['up to 600 calves', 'jusqu’à 600 veaux', 'fino a 600 vitelli'],
+    'de 601 a 1.417 terneros': ['601 to 1,417 calves', 'de 601 à 1 417 veaux', 'da 601 a 1.417 vitelli'],
+    'hasta 150 vacas': ['up to 150 cows', 'jusqu’à 150 vaches', 'fino a 150 vacche'],
+    'de 151 a 725 vacas': ['151 to 725 cows', 'de 151 à 725 vaches', 'da 151 a 725 vacche'],
+    'hasta 725 vacas': ['up to 725 cows', 'jusqu’à 725 vaches', 'fino a 725 vacche']
+  };
+  function aaSplit(l) { var out = [], d = 0, cur = '', i, c; for (i = 0; i < l.length; i++) { c = l.charAt(i); if (c === '(') d++; else if (c === ')') d--; if (c === ',' && d === 0) { out.push(cur.trim()); cur = ''; } else cur += c; } out.push(cur.trim()); return out; }
+  function aaLabel(a) { var n = LIDX[lang()]; if (!n) return a.label; return aaSplit(a.label).map(function (g) { var x = AAS[g]; return x ? x[n - 1] : g; }).join(', '); }
+  window.PACAA = { labels: AAS, split: aaSplit };
+  /* Base legal: «art. 19 y Anexos VIII y IX», «disposición transitoria cuarta»… traducida por reglas */
+  var LBT = { en: ['and', 'Annexes', 'Annex', 'transitional provision', 'note'], fr: ['et', 'Annexes', 'Annexe', 'disposition transitoire', 'note'], it: ['e', 'Allegati', 'Allegato', 'disposizione transitoria', 'nota'] };
+  function lbTr(s) {
+    var w = LBT[lang()]; if (!w || !s) return s; var ord = { primera: 1, segunda: 2, tercera: 3, cuarta: 4 };
+    return String(s).replace(/disposición transitoria (primera|segunda|tercera|cuarta)/g, function (m, o) { return w[3] + ' ' + ord[o]; }).replace(/\bAnexos\b/g, w[1]).replace(/\bAnexo\b/g, w[2]).replace(/\(nota\)/g, '(' + w[4] + ')').replace(/ y /g, ' ' + w[0] + ' ');
+  }
   function ruleTr(r) { var l = lang(), x = DATA.rules.i18n && DATA.rules.i18n.rules && DATA.rules.i18n.rules[r.id]; return l !== 'es' && x && x[l] ? x[l] : ''; }
   var AMR = { 'SE DICTA EN RELACIÓN': { en: 'Issued in connection with', fr: 'Pris en relation avec', it: 'Emanato in relazione a' }, 'SE AÑADE': { en: 'Adds', fr: 'Ajoute', it: 'Aggiunge' }, 'CORRECCIÓN de errores': { en: 'Correction of errors', fr: 'Rectificatif', it: 'Rettifica di errori' }, 'SE MODIFICA': { en: 'Amends', fr: 'Modifie', it: 'Modifica' }, 'SE CORRIGEN errores': { en: 'Corrects errors', fr: 'Corrige des erreurs', it: 'Corregge errori' }, 'SE DEROGA': { en: 'Repeals', fr: 'Abroge', it: 'Abroga' } };
   function amRel(x) { var l = lang(); return l !== 'es' && AMR[x] ? AMR[x][l] : x; }
@@ -410,15 +453,15 @@
       var d = e.until ? dtS(e.date) + ' – ' + dt(e.until) : (e.before ? fill(t.before, { d: dt(e.date) }) : dt(e.date)), end = e.until || e.date, st;
       var n = daysBetween(td, end);
       st = n < 0 ? t.past : n === 0 ? t.today : fill(t.inDays, { n: n });
-      var badges = (e.exc ? ' <span class="di-movers-hint">· ' + esc(t.exc) + ' (' + esc(e.exc.legalBasis.replace(/^RD 1048\/2022, /, '')) + ')</span>' : '') + (e.region ? ' <strong>' + esc(fill(t.onlyReg, { r: e.region })) + '</strong>' : '');
-      h += '<tr><td class="r" style="text-align:left">' + esc(d) + '<br><span class="di-movers-hint">' + esc(st) + '</span></td><td>' + esc(t.cal[e.id]) + badges + '<br><span class="di-movers-hint">' + esc(e.base.legalBasis) + '</span></td><td>' + esc(t['k_' + e.kind]) + '</td><td>' + esc(t.reg[e.id] || '') + '</td></tr>';
+      var badges = (e.exc ? ' <span class="di-movers-hint">· ' + esc(t.exc) + ' (' + esc(lbTr(e.exc.legalBasis.replace(/^RD 1048\/2022, /, ''))) + ')</span>' : '') + (e.region ? ' <strong>' + esc(fill(t.onlyReg, { r: e.region })) + '</strong>' : '');
+      h += '<tr><td class="r" style="text-align:left">' + esc(d) + '<br><span class="di-movers-hint">' + esc(st) + '</span></td><td>' + esc(t.cal[e.id]) + badges + '<br><span class="di-movers-hint">' + esc(lbTr(e.base.legalBasis)) + '</span></td><td>' + esc(t['k_' + e.kind]) + '</td><td>' + esc(t.reg[e.id] || '') + '</td></tr>';
     });
     return h + '</tbody></table></div>' + cite('boe_es', DATA.amounts.source.consolidatedAt.slice(0, 10));
   }
   function rulesHtml() {
     var t = tr(), h = note(t.rulesNote) + trNote();
     DATA.rules.rules.forEach(function (r) {
-      h += '<details style="margin:6px 0"><summary style="cursor:pointer;font-weight:600">' + esc(t.rt[r.id] || r.id) + '</summary><p style="margin:6px 0 2px"' + (lang() !== 'es' && !ruleTr(r) ? ' lang="es"' : '') + '>' + esc(ruleTr(r) || r.text) + '</p><p class="di-movers-hint">' + esc(t.legal) + ': ' + esc(r.legalBasis) + '</p></details>';
+      h += '<details style="margin:6px 0"><summary style="cursor:pointer;font-weight:600">' + esc(t.rt[r.id] || r.id) + '</summary><p style="margin:6px 0 2px"' + (lang() !== 'es' && !ruleTr(r) ? ' lang="es"' : '') + '>' + esc(ruleTr(r) || r.text) + '</p><p class="di-movers-hint">' + esc(t.legal) + ': ' + esc(lbTr(r.legalBasis)) + '</p></details>';
     });
     return h + cite('boe_es', DATA.amounts.source.consolidatedAt.slice(0, 10));
   }
@@ -426,7 +469,7 @@
     var t = tr(), i = idx(), h = note(fill(t.assocIntro, { y: ST.y })) + (lang() !== 'es' ? note(t.assocNames) : '');
     [['crop', t.aCrop], ['livestock', t.aLive]].forEach(function (g) {
       h += '<h3 style="font-size:15px;margin:10px 0 2px">' + esc(g[1]) + '</h3><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th>' + esc(t.aName) + '</th><th class="r">' + esc(t.eMin) + '</th><th class="r">' + esc(t.eMax) + '</th></tr></thead><tbody>';
-      DATA.amounts.associatedAid.forEach(function (a) { if (a.kind === g[0]) h += '<tr><td>' + esc(a.label) + '</td><td class="r">' + nf(a.min[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td><td class="r">' + nf(a.max[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td></tr>'; });
+      DATA.amounts.associatedAid.forEach(function (a) { if (a.kind === g[0]) h += '<tr><td' + (lang() !== 'es' ? ' title="' + esc(a.label) + '"' : '') + '>' + esc(aaLabel(a)) + '</td><td class="r">' + nf(a.min[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td><td class="r">' + nf(a.max[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td></tr>'; });
       h += '</tbody></table></div>';
     });
     return h + cite('boe_es', DATA.amounts.source.consolidatedAt.slice(0, 10));
