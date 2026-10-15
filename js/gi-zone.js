@@ -3,10 +3,14 @@
 (function () {
   'use strict';
   var T = {
-    es: { show: 'Ver zona', hide: 'Ocultar zona', note: 'Zona de producción según el INAO, con el contorno simplificado: es orientativa, no sirve para delimitar parcelas.', src: 'Fuente: INAO, delimitación de las áreas geográficas de los SIQO (Licence Ouverte 2.0).', err: 'No se ha podido cargar la zona.' },
-    en: { show: 'Show area', hide: 'Hide area', note: 'Production area according to INAO, outline simplified: indicative only, not for delimiting plots.', src: 'Source: INAO, delimitation of the geographical areas of SIQO (Licence Ouverte 2.0).', err: 'The area could not be loaded.' },
-    fr: { show: 'Voir l’aire', hide: 'Masquer l’aire', note: 'Aire de production selon l’INAO, contour simplifié : indicatif, ne permet pas de délimiter des parcelles.', src: 'Source : INAO, délimitation des aires géographiques des SIQO (Licence Ouverte 2.0).', err: 'Impossible de charger l’aire.' },
-    it: { show: 'Mostra zona', hide: 'Nascondi zona', note: 'Zona di produzione secondo l’INAO, contorno semplificato: indicativa, non serve a delimitare parcelle.', src: 'Fonte: INAO, delimitazione delle aree geografiche dei SIQO (Licence Ouverte 2.0).', err: 'Impossibile caricare la zona.' }
+    es: { show: 'Ver zona', hide: 'Ocultar zona', note: 'Zona de producción según el INAO, con el contorno simplificado: es orientativa, no sirve para delimitar parcelas.', src: 'Fuente: INAO, delimitación de las áreas geográficas de los SIQO (Licence Ouverte 2.0).', err: 'No se ha podido cargar la zona.',
+      zmH: 'Mapa de las zonas de DOP de vino', zmN: 'Pulsa una zona para ver solo esa denominación. Solo DOP de vino (sin IGP), contorno a nivel municipal y simplificado: es orientativo.', zmIs: '{n} zonas en islas: usa «Ver zona» en la lista.', zmClr: 'Quitar selección', noteG: 'Zona de producción a nivel municipal (registro de la UE a nov-2021), con el contorno simplificado: es orientativa, no sirve para delimitar parcelas.', srcG: 'Fuente: Candiago et al. 2022, EU-PDO (Scientific Data), CC0.' },
+    en: { show: 'Show area', hide: 'Hide area', note: 'Production area according to INAO, outline simplified: indicative only, not for delimiting plots.', src: 'Source: INAO, delimitation of the geographical areas of SIQO (Licence Ouverte 2.0).', err: 'The area could not be loaded.',
+      zmH: 'Map of wine PDO areas', zmN: 'Click an area to see only that designation. Wine PDOs only (no PGIs), municipal-level simplified outline: indicative only.', zmIs: '{n} areas on islands: use “Show area” in the list.', zmClr: 'Clear selection', noteG: 'Production area at municipality level (EU register as of Nov 2021), outline simplified: indicative only, not for delimiting plots.', srcG: 'Source: Candiago et al. 2022, EU-PDO (Scientific Data), CC0.' },
+    fr: { show: 'Voir l’aire', hide: 'Masquer l’aire', note: 'Aire de production selon l’INAO, contour simplifié : indicatif, ne permet pas de délimiter des parcelles.', src: 'Source : INAO, délimitation des aires géographiques des SIQO (Licence Ouverte 2.0).', err: 'Impossible de charger l’aire.',
+      zmH: 'Carte des aires des AOP viticoles', zmN: 'Cliquez sur une aire pour ne voir que cette appellation. AOP viticoles uniquement (sans IGP), contour communal simplifié : indicatif.', zmIs: '{n} aires sur des îles : utilisez « Voir l’aire » dans la liste.', zmClr: 'Effacer la sélection', noteG: 'Aire de production à l’échelle communale (registre de l’UE, nov. 2021), contour simplifié : indicatif, ne permet pas de délimiter des parcelles.', srcG: 'Source : Candiago et al. 2022, EU-PDO (Scientific Data), CC0.' },
+    it: { show: 'Mostra zona', hide: 'Nascondi zona', note: 'Zona di produzione secondo l’INAO, contorno semplificato: indicativa, non serve a delimitare parcelle.', src: 'Fonte: INAO, delimitazione delle aree geografiche dei SIQO (Licence Ouverte 2.0).', err: 'Impossibile caricare la zona.',
+      zmH: 'Mappa delle zone delle DOP vinicole', zmN: 'Clicca una zona per vedere solo quella denominazione. Solo DOP del vino (senza IGP), contorno comunale semplificato: indicativo.', zmIs: '{n} zone su isole: usa «Mostra zona» nell’elenco.', zmClr: 'Rimuovi selezione', noteG: 'Zona di produzione a livello comunale (registro UE a nov. 2021), contorno semplificato: indicativa, non serve a delimitare parcelle.', srcG: 'Fonte: Candiago et al. 2022, EU-PDO (Scientific Data), CC0.' }
   };
   /* categorias del referencial del INAO (en frances) -> es|en|it */
   var CAT = {
@@ -29,6 +33,21 @@
     }));
   }
   function info() { return json('data/gi/FR-inao.json'); }
+  var GEO = { ES: 1, PT: 1, UK: 1, CZ: 1 };
+  function ccOf(f) { var c = (String(f).split('-')[1] || '').toUpperCase(); return c === 'GB' ? 'UK' : c; }
+  // paises con zonas del dataset EU-PDO: devuelve { z: [ids con zona], geo: documento }
+  function geoInfo(cc) { return GEO[cc] ? json('data/gi/' + cc + '-geo.json').then(function (g) { return g && g.areas ? { z: Object.keys(g.areas), geo: g } : null; }) : Promise.resolve(null); }
+  function zoneMap(g, names, sel, lg) {
+    var t = T[lg] || T.es, isl = 0;
+    var paths = Object.keys(g.areas).map(function (f) {
+      var a = g.areas[f]; if (a.i) { isl++; return ''; }
+      var nm = names[f] || f, on = sel === f;
+      return '<path d="' + a.d + '" class="di-gi-zm' + (on ? ' on' : '') + '" data-gi-zn="' + esc(f) + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm) + '"><title>' + esc(nm) + '</title></path>';
+    }).join('');
+    return '<div class="di-gi-map" style="flex:0 0 300px;max-width:100%"><div style="font-size:12px;font-weight:700;margin:0 0 4px">' + esc(t.zmH) + '</div><svg viewBox="' + g.viewBox + '" style="width:100%;height:auto;max-height:380px" role="group" aria-label="' + esc(t.zmH) + '">' + paths + '</svg>' +
+      '<div class="di-movers-hint" style="margin:4px 0 0">' + esc(t.zmN) + (isl ? ' ' + esc(t.zmIs.replace('{n}', isl)) : '') + '</div>' +
+      (sel ? '<div style="margin:6px 0 0"><b>' + esc(names[sel] || sel) + '</b> <button type="button" class="di-gi-zbtn" data-gi-zclr="1">' + esc(t.zmClr) + '</button></div>' : '') + '</div>';
+  }
   function btn(f, lg) { var t = T[lg] || T.es; return ' <button type="button" class="di-gi-zbtn" data-gi-z="' + esc(f) + '" aria-expanded="false">' + esc(t.show) + '</button>'; }
   function svg(a, regions) {
     var b = a.b, w = Math.max(b[2], 90), h = Math.max(b[3], 70), px = w * 0.3, py = h * 0.3;
@@ -43,6 +62,16 @@
     if (box) { box.parentNode.removeChild(box); btnEl.textContent = t.show; btnEl.setAttribute('aria-expanded', 'false'); return; }
     box = document.createElement('div'); box.className = 'di-gi-zone'; box.innerHTML = '<span class="di-movers-hint">…</span>'; li.appendChild(box);
     btnEl.textContent = t.hide; btnEl.setAttribute('aria-expanded', 'true');
+    var gcc = ccOf(f);
+    if (GEO[gcc]) {
+      json('data/gi/' + gcc + '-geo.json').then(function (g) {
+        var a = g && g.areas && g.areas[f];
+        if (!a) { box.innerHTML = '<span class="di-movers-hint">' + esc(t.err) + '</span>'; return; }
+        var bg = Object.keys(g.areas).filter(function (k) { return k !== f && !!g.areas[k].i === !!a.i; }).map(function (k) { return { d: g.areas[k].d }; });
+        box.innerHTML = svg(a, bg) + '<p class="di-movers-hint" style="margin:4px 0 0">' + esc(t.noteG) + ' ' + esc(t.srcG) + '</p>';
+      });
+      return;
+    }
     Promise.all([json('data/gi/FR-geo.json'), script('vendor/fr-regions.js?v=20261013')]).then(function (r) {
       var g = r[0], a = g && g.areas && g.areas[f];
       if (!a) { box.innerHTML = '<span class="di-movers-hint">' + esc(t.err) + '</span>'; return; }
@@ -52,5 +81,5 @@
   }
   function lang() { var l; if (window.DehesaShared && window.DehesaShared.getLang) l = window.DehesaShared.getLang(); try { if (!l) l = localStorage.getItem('dehesaIndexLang'); } catch (e) {} l = l || document.documentElement.lang || 'es'; return T[l] ? l : 'es'; }
   document.addEventListener('click', function (ev) { var b = ev.target && ev.target.closest ? ev.target.closest('[data-gi-z]') : null; if (b) toggle(b, lang()); });
-  window.GIZ = { info: info, btn: btn, toggle: toggle, cat: cat };
+  window.GIZ = { info: info, geoInfo: geoInfo, zoneMap: zoneMap, btn: btn, toggle: toggle, cat: cat };
 })();

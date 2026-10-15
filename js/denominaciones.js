@@ -14,18 +14,19 @@
   function mount(el, cc, lg) {
     if (!el) return;
     var t = T[lg] || T.es;
-    var pre = cc === 'FR' ? new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'js/gi-zone.js?v=20261013'; sc.onload = function () { window.GIZ.info().then(ok); }; sc.onerror = function () { ok(null); }; document.head.appendChild(sc); }) : Promise.resolve(null);
+    var GEOCC = { ES: 1, PT: 1, UK: 1, CZ: 1 };
+    var pre = cc === 'FR' || GEOCC[cc] ? new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'js/gi-zone.js?v=20261015'; sc.onload = function () { (cc === 'FR' ? window.GIZ.info() : window.GIZ.geoInfo(cc)).then(ok); }; sc.onerror = function () { ok(null); }; document.head.appendChild(sc); }) : Promise.resolve(null);
     // primero el indice: solo se pide el fichero del pais si existe (sin 404 para AR, AU, CA, CH, CL, EU, FI...)
     var IDX = window.__giIdx || (window.__giIdx = fetch('data/gi/index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }));
     Promise.all([IDX.then(function (ix) { if (ix && ix.countries && !ix.countries[cc]) return null; return fetch('data/gi/' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }), pre]).then(function (rr) {
       var d = rr[0], inao = rr[1], zset = {}; if (inao && inao.z) inao.z.forEach(function (f) { zset[f] = 1; });
       if (!d || (!d.wine.length && !d.cheese.length)) { el.innerHTML = ''; return; }
-      var st = { k: d.wine.length ? 'wine' : 'cheese', ty: 'all', q: '', open: false, r: '', det: false };
+      var st = { k: d.wine.length ? 'wine' : 'cheese', ty: 'all', q: '', open: false, r: '', det: false, zf: '' }, gnames = {}; d.wine.forEach(function (e) { gnames[e.f] = e.n.join(' / '); });
       var MAPK = 'DEHESA_' + cc + '_REGIONS';
       var hasR = d.wine.concat(d.cheese).some(function (e) { return e.r && e.r.length; });
       var RN = function (r) { var N = window.DehesaRegionNames && window.DehesaRegionNames[cc], v = N && N[r]; return v ? v.split('|')[{ en: 0, es: 1, fr: 2, it: 3 }[lg] || 0] : r; };
       function list() {
-        var L = d[st.k].filter(function (e) { return (st.ty === 'all' || e.t === st.ty) && (!st.r || (e.r && e.r.indexOf(st.r) > -1)) && (!st.q || norm(e.n.join(' ') + ' ' + (e.tr || []).join(' ')).indexOf(norm(st.q)) > -1); });
+        var L = d[st.k].filter(function (e) { return (st.ty === 'all' || e.t === st.ty) && (!st.zf || e.f === st.zf) && (!st.r || (e.r && e.r.indexOf(st.r) > -1)) && (!st.q || norm(e.n.join(' ') + ' ' + (e.tr || []).join(' ')).indexOf(norm(st.q)) > -1); });
         var shown = st.open ? L : L.slice(0, SHOW);
         var items = shown.map(function (e) {
           return '<li class="di-gi-item"><span class="di-gi-name">' + esc(e.n.join(' / ')) + '</span> <span class="di-gi-tag di-gi-' + esc(e.t) + '">' + esc(t[e.t] || e.t) + '</span>' +
@@ -57,11 +58,13 @@
           '<div class="di-gi-filters">' + types.map(function (x) { var n = x === 'all' ? d[st.k].length : d[st.k].filter(function (e) { return e.t === x; }).length; return '<button type="button" class="di-gi-chip' + (st.ty === x ? ' active' : '') + '" data-gi-t="' + x + '">' + esc(x === 'all' ? t.all : t[x]) + ' · ' + n + '</button>'; }).join('') +
           (hasR ? '<select class="di-gi-r di-compare-select" aria-label="' + esc(t.reg) + '" style="max-width:220px"><option value="">' + esc(t.allr) + '</option>' + regs().map(function (r) { return '<option value="' + esc(r) + '"' + (st.r === r ? ' selected' : '') + '>' + esc(RN(r)) + '</option>'; }).join('') + '</select>' : '') +
           '<input type="search" class="di-gi-q" placeholder="' + esc(t.search) + '" value="' + esc(st.q) + '" aria-label="' + esc(t.search) + '"></div>' +
-          '<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">' + mapHtml() + '<div class="di-gi-body" style="flex:1;min-width:260px">' + list() + '</div></div>' + (!window[MAPK] && !(hasR) ? '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.noMap) + '</p>' : '') + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.src) + (hasR && d.regionSource ? ' ' + esc(t.regNote) + esc(d.regionSource.name) + ' (' + esc(d.regionSource.license) + ').' + (d.regionSource.partial ? ' ' + esc(t.partial) : '') : '') + '</p></details>';
+          '<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">' + (mapHtml() || (inao && inao.geo && st.k === 'wine' && window.GIZ ? window.GIZ.zoneMap(inao.geo, gnames, st.zf, lg) : '')) + '<div class="di-gi-body" style="flex:1;min-width:260px">' + list() + '</div></div>' + (!window[MAPK] && !(hasR) && !(inao && inao.geo) ? '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.noMap) + '</p>' : '') + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.src) + (hasR && d.regionSource ? ' ' + esc(t.regNote) + esc(d.regionSource.name) + ' (' + esc(d.regionSource.license) + ').' + (d.regionSource.partial ? ' ' + esc(t.partial) : '') : '') + '</p></details>';
       }
       draw();
       el.addEventListener('toggle', function (ev) { if (ev.target && ev.target.id === 'ps-gi') st.det = ev.target.open; }, true);
       el.addEventListener('click', function (ev) {
+        var zn = ev.target.closest ? ev.target.closest('[data-gi-zn],[data-gi-zclr]') : null;
+        if (zn && el.contains(zn)) { st.zf = zn.getAttribute('data-gi-zclr') ? '' : (st.zf === zn.getAttribute('data-gi-zn') ? '' : zn.getAttribute('data-gi-zn')); st.open = false; draw(); return; }
         var rg = ev.target.closest ? ev.target.closest('[data-gi-reg]') : null;
         if (rg && el.contains(rg)) { var id = rg.getAttribute('data-gi-reg'); st.r = st.r === id ? '' : id; st.open = false; draw(); return; }
         var b = ev.target.closest ? ev.target.closest('button') : null; if (!b || !el.contains(b)) return;
@@ -69,6 +72,7 @@
         else if (b.getAttribute('data-gi-t')) { st.ty = b.getAttribute('data-gi-t'); st.open = false; draw(); }
         else if (b.getAttribute('data-gi') === 'more') { st.open = !st.open; el.querySelector('.di-gi-body').innerHTML = list(); }
       });
+      el.addEventListener('keydown', function (ev) { if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.getAttribute && ev.target.getAttribute('data-gi-zn')) { ev.preventDefault(); ev.target.dispatchEvent(new MouseEvent('click', { bubbles: true })); } });
       el.addEventListener('change', function (ev) { if (ev.target.className.indexOf('di-gi-r') > -1) { st.r = ev.target.value; st.open = false; draw(); } });
       if (hasR && !window[MAPK]) { var sm = document.createElement('script'); sm.src = 'vendor/' + cc.toLowerCase() + '-regions.js'; sm.onload = draw; document.head.appendChild(sm); }
       if (hasR && !window.DehesaRegionNames) { var sc = document.createElement('script'); sc.src = 'js/region-names.js?v=20261012'; sc.onload = draw; document.head.appendChild(sc); }

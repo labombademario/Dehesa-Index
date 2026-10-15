@@ -3657,6 +3657,32 @@
    "evidence": "Politicas de difusion estadistica del INDEC (PDF, leido el 10-oct-2026 desde GitHub Actions), cap. XI 'Usabilidad de la informacion': 'Salvo contenidos especificamente indicados, todo el material publicado en el sitio web del INDEC posee la licencia Creative Commons (CC). Esto permite a los usuarios copiar, reutilizar o redistribuir el material en cualquier medio o formato, siempre que se acredite debidamente la obra, se cite la fuente primaria y se especifiquen cambios si los hubiere.' El pie de cada pagina del INDEC repite la licencia. No hay clausula no comercial ni de no derivados.",
    "short": "INDEC (Argentina)",
    "legalConfidenceReason": "Licencia explicita en la politica de difusion oficial del INDEC y en el pie de su sitio."
+  },
+  "eu_pdo_candiago": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-15",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "additionalRestrictions": "El contorno se deriva de municipios de EuroRegionalMap (EuroGeographics) y del registro eAmbrosia a nov-2021: es orientativo. Solo DOP de vino, sin IGP.",
+   "name": "Candiago et al. (2022) - EU-PDO: inventario geoespacial de las DOP de vino de Europa (Scientific Data; figshare)",
+   "url": "https://doi.org/10.6084/m9.figshare.c.5877659.v1",
+   "country": "EU",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons CC0 1.0 (dominio publico)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attributionText": "Candiago, S. et al. (2022) A geospatial inventory of regulatory information for wine protected designations of origin in Europe. Scientific Data 9, 389 (datos en figshare, CC0). Contorno simplificado por Dehesa Index.",
+   "evidence": "La API de figshare (colección 5877659, leída el 2026-10-15 desde GitHub Actions) declara licencia CC0 en los artículos 19312094 (Wine PDO map, EU_PDO.gpkg), 19312097 y 19312100.",
+   "notes": "Polígonos simplificados de las DOP de vino de España, Portugal, Reino Unido y Chequia (data/gi/ES-geo.json, PT-geo.json, UK-geo.json, CZ-geo.json) generados con scripts/build-gi-geo.py.",
+   "short": "EU-PDO",
+   "legalConfidenceReason": "Licencia CC0 declarada en el repositorio de datos de la publicación."
   }
  },
  "files": {
@@ -4759,7 +4785,8 @@
     "ec_eambrosia",
     "inao_aires",
     "inao_siqo",
-    "it_regioni_dop"
+    "it_regioni_dop",
+    "eu_pdo_candiago"
    ]
   },
   "data/wine-prices.json": {

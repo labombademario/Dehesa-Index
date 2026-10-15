@@ -2437,3 +2437,7 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 @media (max-width: 560px) { .rc-bar { display: none; } .rc-kv { font-size: 19px; } }
 
 .di-nav-flag { margin-right: 7px; font-size: 1.1em; line-height: 1; }
+.di-gi-zm { fill: var(--accent, #1E3328); fill-opacity: .35; stroke: var(--surface, #fff); stroke-width: .8; vector-effect: non-scaling-stroke; cursor: pointer; }
+.di-gi-zm:hover, .di-gi-zm:focus-visible { fill-opacity: .7; outline: none; }
+.di-gi-zm.on { fill-opacity: .85; stroke: var(--text, #222); stroke-width: 2; }
+html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
