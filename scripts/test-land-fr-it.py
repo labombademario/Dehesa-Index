@@ -101,12 +101,12 @@ CASES = [
 for name, fn, doc, mu in CASES:
     check(contract(fn, mutf(doc, mu)) != [], "el contrato no detecto: " + name)
 
-# descarga con varias fuentes: Agreste falla (2025 y 2024 no responden), la 2023 llega por el espejo de la DRAAF; el error exacto queda en el log
+# descarga con varias fuentes: Agreste falla (2025 y 2024 no responden), la 2023 llega por su URL de Agreste; el error exacto queda en el log
 import tempfile as _tf
 with _tf.TemporaryDirectory() as d:
     _http, _pdf = m.http, m.pdf_text
     def fake_http(u, tries=3, timeout=180):
-        if u.endswith("valeur-venale-des-terres-en-2023-1.pdf"): return b"%PDF-1.4 fake"
+        if u.endswith("cd2024-12_VVT-2023.pdf"): return b"%PDF-1.4 fake"
         raise RuntimeError("%s -> HTTP Error 403: Forbidden" % u)
     m.http, m.pdf_text = fake_http, lambda data: txt
     m.LOG.clear(); sys.argv = ["x", "--out", d, "--it-file", src]
@@ -114,8 +114,8 @@ with _tf.TemporaryDirectory() as d:
     finally: m.http, m.pdf_text = _http, _pdf
     check(rc == 0, "descarga con espejo: main sin error")
     check(any("403" in l and "no se pudo descargar" in l for l in m.LOG), "el log lleva el error exacto de la descarga")
-    check(any("leida desde" in l and "draaf" in l for l in m.LOG), "la edicion 2023 se lee del espejo de la DRAAF")
+    check(any("leida desde" in l and "VVT-2023" in l for l in m.LOG), "la edicion 2023 se lee de Agreste")
     fr_ = json.loads((Path(d) / "france-land" / "land.json").read_text("utf-8"))
-    check(fr_["years"] == [2021, 2022, 2023] and "draaf" in fr_["source"]["file"], "datos de Francia desde el espejo")
+    check(fr_["years"] == [2021, 2022, 2023], "datos de Francia desde la edicion que responde")
 print("FALLOS:" if fails else "test-land-fr-it OK", *fails, sep="\n" if fails else " ")
 sys.exit(1 if fails else 0)

@@ -23,13 +23,13 @@ CREA_PAGE = CREA + "/en/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario
 CREA_KNOWN = CREA + "/documents/68457/0/MF+Regione+1960-2023+%282024.09%29.xlsx/2baf48a0-0a57-c012-190c-32f91c4843f5?t=1728635105737"
 AG = "https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/"
 AG_PUBLISHED = "https://www.data.gouv.fr/datasets/agreste-valeur-venale-des-terres/"
-DRAAF = "https://draaf.pays-de-la-loire.agriculture.gouv.fr/IMG/pdf/"   # espejo de la DRAAF Pays de la Loire: aloja los mismos PDF de Agreste y no bloquea
+DRAAF = "https://draaf.pays-de-la-loire.agriculture.gouv.fr/IMG/pdf/"   # espejo de la DRAAF Pays de la Loire (solo para pruebas: desde los runners de GitHub da timeout)
 AG_DETAIL = "https://www.agreste.agriculture.gouv.fr/agreste-web/disaron/%s/detail/"
 DG_API = "https://www.data.gouv.fr/api/1/datasets/agreste-valeur-venale-des-terres/"
 FR_EDITIONS = [  # (año de los precios, referencia Agreste, enlaces candidatos), de la edición más reciente a la más antigua; cada una se lee con la primera fuente que responde
-    ("2025", "Chd2609", [AG + "Chd2609/cd2026-09_Valeur-venale-des-terres-en-2025.pdf", DRAAF + "cd2026-09_valeur-venale-des-terres-en-2025.pdf", AG + "Chd2609/cd2026-09_VVT-2025.pdf"]),
-    ("2024", "Chd2513", [AG + "Chd2513/cd2025-13_Valeur-venale-des-terres-en-2024.pdf", DRAAF + "cd2025-13_valeur-venale-des-terres-en-2024.pdf"]),
-    ("2023", "Chd2412", [AG + "Chd2412/cd2024-12_VVT-2023.pdf", DRAAF + "cd2024-12_valeur-venale-des-terres-en-2023-1.pdf"]),
+    ("2025", "Chd2609", [AG + "Chd2609/cd2026-09_Valeur-venale-des-terres-en-2025.pdf", AG + "Chd2609/cd2026-09_VVT-2025.pdf"]),
+    ("2024", "Chd2513", [AG + "Chd2513/cd2025-13_Valeur-venale-des-terres-en-2024.pdf"]),
+    ("2023", "Chd2412", [AG + "Chd2412/cd2024-12_VVT-2023.pdf"]),
 ]
 FR_PDFS = [(t, c[0]) for t, _, c in FR_EDITIONS]   # compatibilidad: primer enlace de cada edición
 IT_REG = {"piemonte": "PIE", "valle d'aosta": "VDA", "lombardia": "LOM", "trentino a.a.": "TAA", "veneto": "VEN", "friuli v.g.": "FVG", "liguria": "LIG", "emilia romagna": "EMR",
@@ -178,6 +178,16 @@ def merge_fr(prev, years, res):
             out[sec][code] = arr
     return allY, out
 
+def probe_links(url, tag):
+    """Diagnostico: enlaces de una pagina de Agreste que parecen datos (xls, xlsx, csv, ods, zip, pdf, download) para saber de donde salen las tablas nuevas."""
+    try:
+        html = http(url, tries=1, timeout=45).decode("utf-8", "replace")
+        hs = [h for h in re.findall(r'(?:href|src)=["\']([^"\']+)["\']', html, re.I) if re.search(r"\.(xlsx?|csv|ods|zip|pdf)\b|download|export|telecharg", h, re.I)]
+        log("sondeo %s: %d bytes, %d enlaces de datos" % (tag, len(html), len(hs)))
+        for h in list(dict.fromkeys(hs))[:12]: log("  " + urllib.parse.urljoin(url, h)[:170])
+        t = re.search(r"<title>(.*?)</title>", html, re.S | re.I)
+        if t: log("  titulo: " + re.sub(r"\s+", " ", t.group(1))[:100])
+    except Exception as e: log("sondeo %s: no legible (%s)" % (tag, str(e)[-100:]))
 def licence_ok(src):
     """Puerta de licencia: solo se publica lo que el registro marca VERIFIED y en uso."""
     try: v = json.loads((ROOT / "data" / "license-registry.json").read_text("utf-8"))["sources"][src]
@@ -227,7 +237,7 @@ def main():
             for tag, ref, cands in FR_EDITIONS:
                 found = []
                 try:   # enlaces del PDF en la ficha de Agreste de esa edición
-                    html = http(AG_DETAIL % ref, tries=2, timeout=60).decode("utf-8", "replace")
+                    html = http(AG_DETAIL % ref, tries=1, timeout=45).decode("utf-8", "replace")
                     for h in re.findall(r'href=["\']([^"\']+\.pdf)["\']', html, re.I): found.append(urllib.parse.urljoin(AG_DETAIL % ref, h))
                     log("Francia %s: ficha de Agreste con %d PDF" % (tag, len(found)))
                 except Exception as e: log("Francia %s: ficha de Agreste no legible (%s)" % (tag, str(e)[:120]))
@@ -240,6 +250,8 @@ def main():
                     except Exception as e: log("Francia %s: %s sin tablas utilizables (%s)" % (tag, u.rsplit("/", 1)[-1], str(e)[:100])); continue
                     break
                 if got: editions.append(got); log("Francia %s: leida desde %s" % (tag, got[2]))
+                else: probe_links(AG_DETAIL % ref, "ficha " + ref)
+            if not editions or editions[0][1] != "edicion " + FR_EDITIONS[0][0]: probe_links("https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/", "disar venale")
             if editions: parsed = editions[0]
         if frt: editions = [parsed]
         if not parsed: raise RuntimeError("ninguna edicion de Agreste con tablas utilizables")
