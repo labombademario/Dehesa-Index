@@ -109,6 +109,12 @@ def main():
         doc["territories"] = [{"id": terr(t), "name": t, "kind": ("country" if terr(t) == "espana" else "ccaa" if terr(t) in CCAA else "province")} for t in terrs0]
         (out / ("esyrce-%d.json" % y)).write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
         idx["years"][str(y)] = {"file": "esyrce-%d.json" % y, "measures": sorted(doc["measures"]), "crops": len(doc["measures"]["total"]), "territories": len(doc["territories"])}
+    for fp in sorted(out.glob("esyrce-20*.json")):   # años ya publicados que la página ya no enlaza: se conservan tal cual
+        m = re.fullmatch(r"esyrce-(20\d\d)\.json", fp.name)
+        if m and m.group(1) not in idx["years"]:
+            try: o = json.loads(fp.read_text(encoding="utf-8")); idx["years"][m.group(1)] = {"file": fp.name, "measures": sorted(o["measures"]), "crops": len(o["measures"]["total"]), "territories": len(o["territories"])}
+            except Exception as e: log("no se pudo reindexar", fp.name, str(e)[:80])
+    idx["years"] = dict(sorted(idx["years"].items()))
     if not idx["years"]: raise SystemExit("no se leyó ningún año: no se toca nada")
     idx.update({"schemaVersion": 1, "generatedAt": now, "source": {"id": "mapa_es", "name": "MAPA, ESYRCE", "url": PAGE},
                 "note": "Hectáreas por cultivo específico. Secano y regadío solo en el año más reciente. El último año es avance provisional del MAPA."})

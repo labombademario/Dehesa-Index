@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PAGE = "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/economia/precios-medios-nacionales"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
 OBS_PAGE = "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-alimentacion/observatorio-precios"
+OBS_ALIAS = {"gallos": "gallo", "naranja-tipo-navel": "naranja-navel"}
 ALIAS = {"trigo blando panificable": "trigo blando", "trigo blando (desde s27-2025)": "trigo blando"}
 LOG = []
 ZEROS = []
@@ -140,9 +141,11 @@ def build_obs(parsed):
             if d and d.isoformat() not in widx: widx[d.isoformat()] = len(weeks); weeks.append(d.isoformat())
     ser = {}
     for (y, blk, name), (unit, vals) in sorted(parsed.items(), key=lambda kv: kv[0][0]):
-        sid = blk + "-" + slug(name)
-        s = ser.setdefault(sid, {"id": sid, "name": name, "unit": unit, "stage": blk, "v": [None] * len(weeks)})
-        s["name"] = name; s["unit"] = unit
+        sid = blk + "-" + OBS_ALIAS.get(slug(name), slug(name))
+        okunit = unit.lower() in ("kg", "unidad", "docena", "litro", "l")
+        s = ser.setdefault(sid, {"id": sid, "name": name, "unit": unit if okunit else "kg", "stage": blk, "v": [None] * len(weeks)})
+        s["name"] = name
+        if okunit: s["unit"] = unit
         for w, v in vals.items():
             d = monday(y, w)
             if d is None or v is None: continue
