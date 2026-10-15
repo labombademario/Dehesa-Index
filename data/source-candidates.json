@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T23:47:30Z",
+ "generatedAt": "2026-10-15T23:51:57Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -3435,7 +3435,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate)",
-   "dataset": "Ya integrada (1 series en el catalogo unificado)",
+   "dataset": "Ya integrada (45 series en el catalogo unificado)",
    "products": [],
    "productsConfirmed": true,
    "metrics": [],
