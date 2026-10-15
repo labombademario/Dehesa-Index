@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T21:42:36Z",
+ "generatedAt": "2026-10-15T23:18:40Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1838,45 +1838,6 @@
    ]
   },
   {
-   "sourceId": "bis",
-   "registryId": "bis",
-   "country": "INT",
-   "scope": "integrated",
-   "institution": "Bank for International Settlements (central bank policy rates)",
-   "dataset": "Ya integrada (1 series en el catalogo unificado)",
-   "products": [],
-   "productsConfirmed": true,
-   "metrics": [],
-   "frequency": "monthly",
-   "access": {
-    "api": null,
-    "csv": null,
-    "json": null
-   },
-   "licenseStatus": "VERIFIED",
-   "licenseId": "BIS-TERMS",
-   "commercialReuse": "conditional",
-   "derivatives": "conditional",
-   "attribution": "Source: BIS",
-   "lastChecked": "2026-10-01",
-   "verification": "REGISTRY",
-   "legalConfidence": "MEDIUM",
-   "registryAlignment": "ALIGNED",
-   "datasetIdentified": true,
-   "gate": {
-    "result": "NOT_READY",
-    "reasons": [
-     "VERIFIED pero con condiciones no inequivocas: uso comercial conditional, derivados conditional"
-    ]
-   },
-   "ingestionStatus": "ACTIVE",
-   "technicalBlockers": [],
-   "canStart": false,
-   "evidence": [
-    "data/license-registry.json"
-   ]
-  },
-  {
    "sourceId": "ble",
    "registryId": "ble",
    "country": "DE",
@@ -3459,6 +3420,45 @@
     "result": "NOT_READY",
     "reasons": [
      "VERIFIED pero con condiciones no inequivocas: uso comercial conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "fed_board",
+   "registryId": "fed_board",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate)",
+   "dataset": "Ya integrada (1 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Board of Governors of the Federal Reserve System (H.15 Selected Interest Rates). Monthly values computed by Dehesa Index from the last daily rate of each month.",
+   "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",

@@ -511,9 +511,9 @@
    "status": "VERIFIED",
    "confidence": "medium",
    "evidence": "Use of BIS statistics is unrestricted if the BIS is cited; commercial products may include them provided users pay nothing extra.",
-   "used": true,
+   "used": false,
    "aliases": [],
-   "notes": " Being retired (2026-10-15): its condition (no extra charge to users when included in a commercial product) clashed with a paid offer; replaced by fed_board.",
+   "notes": " Not used since 2026-10-15: its condition (no extra charge to users when included in a commercial product) clashed with a paid offer; replaced by fed_board.",
    "short": "BIS",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
