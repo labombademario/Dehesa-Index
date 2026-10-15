@@ -33,9 +33,9 @@ sin CSV valido en https://ers.usda.gov/media/7040/usda-agricultural-baseline-pro
 candidato https://ers.usda.gov/media/5014/usda-agricultural-baseline-projections-to-2035.zip?v=91724 edicion 2026 series 244 readme 2/13/26
 escrito baseline.json 244 series; edicion 2026 ; anos 2024 a 2035/36 ; origen https://ers.usda.gov/media/5014/usda-agricultural-baseline-projections-to-2035.zip?v=16402
 TABLAS 16
-   t1 Global GDP Shares and GDP Growth Assumptions to 20 | Table 1: Global real Gross Domestic Product (GDP) shares and GDP growth assumpti | 2024 a 2026–35 9 cols 56 filas; unidad:  ; omitidas: ['2025', '2023–25', 'GDP, 2025'] ; notas 2
-   t2 Population Growth Assumptions to 2035.xlsx | Table 4: Population growth assumptions to 2035 | 2024 a 2026–35 9 cols 56 filas; unidad:  ; omitidas: ['in 2025'] ; notas 3
-   t3 Real Exchange Rate Growth Rates Assumptions to 203 | Table 3: Real exchange rate growth rates assumptions to 2035 | 2024 a 2026–35 9 cols 54 filas; unidad:  ; omitidas: ['U.S. dollar, 2025'] ; notas 2
+   t1 Global GDP Shares and GDP Growth Assumptions to 20 | Table 1: Global real Gross Domestic Product (GDP) shares and GDP growth assumpti | 2024 a 2026–35 9 cols 56 filas; unidad: Annual percent change in real GDP ; omitidas: ['2025', '2023–25', 'GDP, 2025'] ; notas 2
+   t2 Population Growth Assumptions to 2035.xlsx | Table 4: Population growth assumptions to 2035 | 2024 a 2026–35 9 cols 56 filas; unidad: Percent change in population ; omitidas: ['in 2025'] ; notas 3
+   t3 Real Exchange Rate Growth Rates Assumptions to 203 | Table 3: Real exchange rate growth rates assumptions to 2035 | 2024 a 2026–35 9 cols 54 filas; unidad: Percent change in real exchange rate ; omitidas: ['U.S. dollar, 2025'] ; notas 2
    t4 U.S. Acreage and Conservation Reserve Program Assu | Table 5: U.S. acreage for major field crops and CRP assumptions, long-term proje | 2024 a 2035 12 cols 20 filas; unidad: Million acres ; omitidas: [] ; notas 2
    t5 U.S. Agricultural trade long-term fiscal years pro | Table 25: U.S. agricultural trade long-term projections to 2035, fiscal years | 2023 a 2035 13 cols 37 filas; unidad: Billion dollars ; omitidas: [] ; notas 7
    t6 U.S. Dairy projections to 2035.xlsx | Table 24: Dairy long-term projections | 2024 a 2035 12 cols 24 filas; unidad:  ; omitidas: [] ; notas 3
