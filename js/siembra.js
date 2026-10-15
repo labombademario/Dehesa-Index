@@ -102,6 +102,30 @@
     var assigned = cand.reduce(function (s, c) { return s + c.s; }, 0);
     return { anyCost: anyCost, parts: cand.filter(function (c) { return c.s > 0.004 && c.s * total >= 0.5; }).sort(function (a, b) { return b.s - a.s; }), unassigned: Math.max(0, 1 - assigned), excluded: anyCost ? list.filter(function (x) { return x.margin == null; }) : [], negative: use.filter(function (x) { return val(x) <= 0; }), total: total };
   }
+  /* Mapa del pais para elegir la region (vendor/*.js, Natural Earth, dominio publico): se carga al elegir pais */
+  var MT = {
+    es: { h: 'Elige tu región en el mapa', hint: 'Pulsa una región para ver sus cultivos. En gris, las que no tienen datos en esta herramienta.', sel: 'seleccionada', nod: 'sin datos' },
+    en: { h: 'Pick your area on the map', hint: 'Select an area to see its crops. Grey areas have no data in this tool.', sel: 'selected', nod: 'no data' },
+    fr: { h: 'Choisissez votre région sur la carte', hint: 'Cliquez sur une région pour voir ses cultures. En gris, celles sans données dans cet outil.', sel: 'sélectionnée', nod: 'pas de données' },
+    it: { h: 'Scegli la tua zona sulla mappa', hint: 'Seleziona una zona per vedere le sue colture. In grigio, quelle senza dati in questo strumento.', sel: 'selezionata', nod: 'nessun dato' }
+  };
+  var MAPV = { US: ['DEHESA_US_STATES', 'vendor/us-states.js'], CA: ['DEHESA_CA_PROVINCES', 'vendor/ca-provinces.js'], ES: ['DEHESA_ES_CCAA', 'vendor/es-ccaa.js'], FR: ['DEHESA_FR_REGIONS', 'vendor/fr-regions.js'] }, MAPREQ = {};
+  function mapHtml() {
+    var c = ST.c, v = MAPV[c], doc = DOCS[c]; if (!v || !doc) return '';
+    var M = window[v[0]];
+    if (!M) {
+      if (!MAPREQ[c]) { MAPREQ[c] = 1; var sc = document.createElement('script'); sc.src = S.sitePath(v[1]); sc.onload = function () { if (ST.c === c) render(); }; document.head.appendChild(sc); }
+      return '';
+    }
+    var m = MT[lang()] || MT.es, byId = {};
+    Object.keys(doc.regions).forEach(function (code) { byId[c === 'FR' ? FR_CODE[code] : code] = code; });
+    return '<section class="di-card sw-map" style="padding:14px 16px;margin:0 0 14px"><h2 style="font-size:16px;margin:0 0 4px">' + esc(m.h) + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + esc(m.hint) + '</p>' +
+      '<svg viewBox="' + M.viewBox + '" role="group" aria-label="' + esc(m.h) + '" style="width:100%;max-width:520px;height:auto;display:block;margin:0 auto">' + M.states.map(function (st) {
+        var code = byId[st.id], nm = code ? rname(c, code) : st.name, on = code && code === ST.r;
+        if (!code) return '<path d="' + st.d + '" fill="var(--border)" stroke="var(--surface,#fff)" stroke-width="1"><title>' + esc(nm + ' (' + m.nod + ')') + '</title></path>';
+        return '<a class="sw-mr" data-mr="' + esc(code) + '" tabindex="0" role="button" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + esc(nm + (on ? ' (' + m.sel + ')' : '')) + '"><path d="' + st.d + '" fill="' + (on ? 'var(--accent)' : '#9fb8a0') + '" stroke="var(--surface,#fff)" stroke-width="1"><title>' + esc(nm) + '</title></path></a>';
+      }).join('') + '</svg></section>';
+  }
   function priceTxt(x) { var w = t(), cur = x.C.price.current, k = cur.kind === 'avg12m' ? w.avg12 : cur.kind === 'implied' ? w.implied + ' (' + cur.to + ')' : w.ctd; return nf(x.p0, x.p0 < 10 ? 2 : 0) + ' ' + x.C.priceUnit + ' · ' + k; }
   function render() {
     var w = t(), root = document.getElementById('sw-body');
@@ -111,7 +135,7 @@
     var h = '<div class="di-card" style="padding:14px 16px;margin:0 0 14px"><div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end">' +
       '<label style="font-size:13px">' + esc(w.ctry) + '<br><select id="sw-c" class="di-compare-select"><option value="">' + esc(w.choose) + '</option>' + CT.map(function (x) { return '<option value="' + x[0] + '"' + (ST.c === x[0] ? ' selected' : '') + '>' + esc(w[x[1]]) + '</option>'; }).join('') + '</select></label>' +
       '<label style="font-size:13px">' + esc(w.reg) + '<br><select id="sw-r" class="di-compare-select"' + (doc ? '' : ' disabled') + '><option value="">' + esc(w.choose) + '</option>' + regs.map(function (r) { return '<option value="' + esc(r) + '"' + (r === ST.r ? ' selected' : '') + '>' + esc(rname(ST.c, r)) + '</option>'; }).join('') + '</select></label>' +
-      '<label style="font-size:13px">' + esc(w.area) + ' (' + au + ')<br><input id="sw-a" type="number" min="0" step="1" inputmode="numeric" class="di-compare-select" style="width:140px" value="' + esc(ST.area) + '"></label></div></div>';
+      '<label style="font-size:13px">' + esc(w.area) + ' (' + au + ')<br><input id="sw-a" type="number" min="0" step="1" inputmode="numeric" class="di-compare-select" style="width:140px" value="' + esc(ST.area) + '"></label></div></div>' + mapHtml();
     if (!doc || !ST.r || !doc.regions[ST.r]) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(w.pick) + '</p><p class="di-movers-hint">' + esc(w.caveat) + '</p>'; bind(); return; }
     var L = rows(doc, ST.r);
     if (!L.length) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(w.noData) + '</p>'; bind(); return; }
@@ -178,6 +202,7 @@
   function bind() {
     var c = document.getElementById('sw-c'); if (c) c.onchange = function () { ST.c = c.value; ST.r = ''; save(); if (ST.c) load(ST.c).then(render, render); else render(); };
     var r = document.getElementById('sw-r'); if (r) r.onchange = function () { ST.r = r.value; save(); render(); };
+    Array.prototype.forEach.call(document.querySelectorAll('[data-mr]'), function (el) { var pick = function () { ST.r = el.getAttribute('data-mr'); save(); render(); var sel = document.getElementById('sw-r'); if (sel) sel.scrollIntoView({ block: 'nearest' }); }; el.onclick = pick; el.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } }; });
     var a = document.getElementById('sw-a'); if (a) a.onchange = function () { ST.area = a.value; save(); render(); };
     Array.prototype.forEach.call(document.querySelectorAll('[data-cost]'), function (i) { i.onchange = function () { var k = i.getAttribute('data-cost'); if (i.value === '') delete ST.costs[k]; else ST.costs[k] = i.value; save(); render(); }; });
     try { var q = new URLSearchParams(); if (ST.c) q.set('c', ST.c); if (ST.r) q.set('r', ST.r); history.replaceState(null, '', q.toString() ? '?' + q.toString() : location.pathname); } catch (e) {}
