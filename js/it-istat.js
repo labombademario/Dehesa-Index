@@ -48,7 +48,7 @@
   function lastIdx(a) { for (var i = a.length - 1; i >= 0; i--) if (a[i] != null) return i; return -1; }
   function sgn(v, d) { return v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + U.nf(Math.abs(v), d == null ? 1 : d) + ' %'; }
   function col(v) { return v == null || v === 0 ? '' : v > 0 ? 'color:#2f7d4f' : 'color:#b4541a'; }
-  function card(n, v, note) { return '<div class="cof-card"><div class="cof-n">' + n + '</div><div class="cof-v">' + v + '</div>' + (note ? '<div class="cof-note">' + note + '</div>' : '') + '</div>'; }
+  function card(n, v, note) { return '<div class="di-card cof-card"><div class="cof-lbl">' + n + '</div><div class="cof-val">' + v + '</div>' + (note ? '<div class="cof-note" style="margin:2px 0 0">' + note + '</div>' : '') + '</div>'; }
   function selOf(obj, lg, cur, sortFn) { var ks = Object.keys(obj); if (sortFn) ks.sort(sortFn); return ks.map(function (k) { return U.opt(k, nice(lbl(obj[k], lg, k)), cur); }).join(''); }
   function monthLabel(m, lg) { var p = m.split('-'); try { return new Date(Date.UTC(+p[0], +p[1] - 1, 1)).toLocaleDateString(lg, { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return m; } }
   function note(t, k) { return '<p class="cof-note" style="margin:10px 0 0">' + U.esc(t[k]) + '</p>'; }
@@ -61,7 +61,7 @@
     out += '<div class="cof-cards">' + card(t.idx + ' · ' + U.esc(monthLabel(M[i], lg)), U.nf(e.index[i], 1)) + card(t.mom, '<span style="' + col(e.mom[i]) + '">' + sgn(e.mom[i]) + '</span>') + card(t.yoy, '<span style="' + col(e.yoy[i]) + '">' + sgn(e.yoy[i]) + '</span>') + '</div>';
     out += U.chart([{ name: nice(lbl(e, lg, ST.prod)), v: e.index }], M.map(function (m) { return monthLabel(m, lg); }), t.idx, nice(lbl(e, lg, ST.prod)), 1);
     var rows = ks.map(function (k) { var x = items[k], j = lastIdx(x.index); return { k: k, l: nice(lbl(x, lg, k)), idx: x.index[j], yoy: x.yoy[j] }; }).sort(function (a, b) { return (b.yoy == null ? -1e9 : b.yoy) - (a.yoy == null ? -1e9 : a.yoy); });
-    out += '<h3 class="cof-h3">' + U.esc(t.all) + '</h3><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:320px;font-size:13.5px"><thead><tr><th style="' + U.th + 'text-align:left">' + U.esc(t.prod) + '</th><th style="' + U.th + 'text-align:right">' + U.esc(t.idx) + '</th><th style="' + U.th + 'text-align:right">' + U.esc(t.yoy) + '</th></tr></thead><tbody>' +
+    out += '<h3 class="cof-h3">' + U.esc(t.all) + '</h3><div style="overflow-x:auto"><table data-no-cards data-no-rows style="border-collapse:collapse;width:100%;min-width:320px;font-size:13.5px"><thead><tr><th style="' + U.th + 'text-align:left">' + U.esc(t.prod) + '</th><th style="' + U.th + 'text-align:right">' + U.esc(t.idx) + '</th><th style="' + U.th + 'text-align:right">' + U.esc(t.yoy) + '</th></tr></thead><tbody>' +
       rows.map(function (r) { return '<tr><td style="' + U.td + 'text-align:left">' + U.esc(r.l) + '</td><td style="' + U.td + '">' + U.nf(r.idx, 1) + '</td><td style="' + U.td + col(r.yoy) + '">' + sgn(r.yoy) + '</td></tr>'; }).join('') + '</tbody></table></div>' + note(t, 'nPrices');
     return out;
   }
@@ -78,8 +78,10 @@
   }
   function regional(d, lg, t, o) {
     /* o: groups (obj code -> {label, v:{area:[...]}}), axis, key (state key for group), unit, note */
-    var G = o.groups, ks = Object.keys(G), A = d.areas, ax = d[o.axis];
-    if (!G[ST[o.key]]) ST[o.key] = ks[0];
+    var G0 = o.groups, A = d.areas, ax = d[o.axis], G = {}, k0;
+    for (k0 in G0) if (G0.hasOwnProperty(k0) && Object.keys(G0[k0].v).some(function (a) { return A[a] && A[a].kind === 'region'; })) G[k0] = G0[k0];
+    var ks = Object.keys(G);
+    if (!G[ST[o.key]]) ST[o.key] = G['TOTCATT|9'] ? 'TOTCATT|9' : G.ALL ? 'ALL' : ks[0];
     var g = G[ST[o.key]], yk = o.yk;
     if (ax.indexOf(ST[yk]) < 0) { var cand = ax.map(function (p, j) { var any = false, a; for (a in g.v) if (g.v[a][j] != null) any = true; return any ? p : null; }).filter(Boolean); ST[yk] = cand[cand.length - 1] || ax[ax.length - 1]; }
     var j = ax.indexOf(ST[yk]), out = '';
@@ -87,10 +89,10 @@
     out += gsel + U.sel('it-y-' + o.key, t.per, ax.slice().reverse().map(function (p) { return U.opt(p, p, ST[yk]); }).join(''), ST[yk]) + (o.extra || '');
     var it = g.v.IT ? g.v.IT[j] : null, itp = g.v.IT && j > 0 ? g.v.IT[j - 1] : null;
     out += '<div class="cof-cards">' + card(U.esc(t.nat + ' · ' + ST[yk]), it == null ? '–' : U.nf(it, o.dec) + ' ' + U.esc(o.unit), itp ? '<span style="' + col(it - itp) + '">' + sgn((it / itp - 1) * 100) + '</span>' : '') + '</div>';
-    var rows = Object.keys(g.v).filter(function (a) { return A[a] && A[a].kind === 'region' && g.v[a][j] != null; }).map(function (a) { return [nice(alab(A[a], lg, a)), g.v[a][j]]; }).sort(function (a, b) { return b[1] - a[1]; });
-    if (rows.length) out += '<h3 class="cof-h3">' + U.esc(t.reg) + '</h3>' + U.bars(rows, rows[0][1] || 1, o.dec, o.unit);
+    var rows = Object.keys(g.v).filter(function (a) { return A[a] && A[a].kind === 'region' && !(A.ITDA && (a === 'ITD1' || a === 'ITD2')) && g.v[a][j] != null; }).map(function (a) { return [nice(alab(A[a], lg, a)), g.v[a][j]]; }).sort(function (a, b) { return b[1] - a[1]; });
+    if (rows.length) out += '<h3 class="cof-h3">' + U.esc(t.reg) + '</h3>' + U.bars(rows, rows[0][1] || 1, o.dec, o.unit) + '<p class="cof-note" style="margin:10px 0 0">' + U.esc(t.hint) + '</p>';
     if (g.v.IT && g.v.IT.filter(function (x) { return x != null; }).length > 1) out += '<h3 class="cof-h3">' + U.esc(t.trend) + '</h3>' + U.chart([{ name: nice(lbl(g, lg, ST[o.key])), v: g.v.IT }], ax, o.unit, nice(lbl(g, lg, ST[o.key])), o.dec);
-    return out + '<p class="cof-note" style="margin:10px 0 0">' + U.esc(t.hint) + '</p>' + note(t, o.note);
+    return out + note(t, o.note);
   }
   function herdsView(d, lg, t) {
     var G = {}; Object.keys(d.herds).forEach(function (k) { var h = d.herds[k]; G[k] = { label: { en: nice(lbl(h, 'en', k)) + (h.sex === '1' ? ' (M)' : h.sex === '2' ? ' (F)' : ''), it: nice(lbl(h, 'it', k)) + (h.sex === '1' ? ' (M)' : h.sex === '2' ? ' (F)' : '') }, v: h.v }; });

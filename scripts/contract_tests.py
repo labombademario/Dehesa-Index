@@ -4461,7 +4461,7 @@ def it_istat_herds(doc, errs, warns, stats):
         it = e["v"].get("IT")
         if not it: continue
         for j, tot in enumerate(it):
-            parts = [v[j] for a, v in e["v"].items() if A.get(a, {}).get("kind") == "region" and v[j] is not None]
+            parts = [v[j] for a, v in e["v"].items() if A.get(a, {}).get("kind") == "region" and a not in ("ITD1", "ITD2") and v[j] is not None]
             if tot and len(parts) >= 15 and sum(parts) > 1.05 * tot: errs.append("existencias %s %s: las regiones suman %d y Italia %d" % (k, doc["periods"][j], sum(parts), tot))
     stats["series"] = n
 def it_istat_fertilisers(doc, errs, warns, stats):
