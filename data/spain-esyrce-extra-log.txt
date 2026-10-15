@@ -1,15 +1,10 @@
-  hoja PRADERAS Y PRADOS ignorada (estructura distinta)
-leído 2022 yields esyrce__311_estimaciones_de_rendimientos_de_los_pr 87 series cultivo×régimen 2 conjuntos de territorios
-leído 2022 irrigation irrigation 61 territorios 6 columnas
-leído 2022 irrigation greenhouses 61 territorios 4 columnas
-  hoja PRADERAS Y PRADOS ignorada (estructura distinta)
-leído 2023 yields esyrce__311_estimaciones_de_rendimientos_de_los_pr 93 series cultivo×régimen 2 conjuntos de territorios
+libros sin año en la URL asignados a 2025
   hoja PRADERAS POLIFITAS ignorada (estructura distinta)
   hoja PRADOS ignorada (estructura distinta)
   hoja PRADERAS Y PRADOS2 ignorada (estructura distinta)
   descartado OLIVAR, ACEITUNA DE ALMAZARA secano - cifras idénticas a VIÑEDO, UVA DE TRANSFORMACIÓN (error de copia en el libro original)
   descartado OLIVAR, ACEITUNA DE ALMAZARA regadio - cifras idénticas a VIÑEDO, UVA DE TRANSFORMACIÓN (error de copia en el libro original)
-leído 2025 yields esyrce__3.11_Estimaciones_de_Rendimientos_de_los_p 96 series cultivo×régimen 2 conjuntos de territorios
+leído 2025 yields 3.11 Estimaciones de Rendimientos de los principal 96 series cultivo×régimen 2 conjuntos de territorios
 leído 2025 irrigation irrigation 61 territorios 6 columnas
 leído 2025 irrigation greenhouses 61 territorios 4 columnas
 leído 2025 woody 33 cultivos
