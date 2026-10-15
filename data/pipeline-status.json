@@ -6,7 +6,7 @@
   "ok": 179,
   "late": 1,
   "error": 2,
-  "not_run": 3,
+  "not_run": 4,
   "unknown": 0
  },
  "global": "error",
@@ -4480,6 +4480,19 @@
    "recent": null,
    "status": "not_run",
    "expectedEveryHours": 72.0
+  },
+  {
+   "workflow": "update-ers-baseline.yml",
+   "name": "Update USDA ERS 10-year agricultural baseline projections (Agricultural Baseline Database)",
+   "crons": [
+    "20 6 20 11,2 *"
+   ],
+   "nextRun": "2026-11-20T06:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 2184.0
   }
  ]
 }

@@ -1355,6 +1355,16 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/us-markets/slaughter.json
     data: [us-markets/slaughter.json, us-markets/slaughter-log.txt]
     message: Sacrificio diario de EE. UU. (USDA AMS)
+  - id: ers-baseline
+    name: Update USDA ERS 10-year agricultural baseline projections (Agricultural Baseline Database)
+    cron: ['20 6 20 11,2 *']
+    pre: ['pip install openpyxl']
+    script: scripts/update-ers-baseline.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [ers-baseline-log.txt]
+    message: Proyecciones agrarias a 10 anos (USDA ERS)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)
     cron: ['35 6 3,17 * *']
