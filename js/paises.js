@@ -234,7 +234,7 @@
   }
   function selectedList(c) {
     var list = c.series.filter(function (s) { return ST.g === 'all' || s.group === ST.g; });
-    if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? list[0].id : null;
+    if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? ((window.DIExplorer && window.DIExplorer.first({ list: list, collapse: collapse, t: tt(), lang: lang() })) || list[0].id) : null;
     return list;
   }
   function pt(s) { return DISeries.series(s.cc, s.id).then(function (f) { s.points = f.points; }).catch(function () {}); }
@@ -270,7 +270,7 @@
       if (k) { var nat = null; c.series.forEach(function (x) { if (!nat && x.group !== cur0.group && k.nat.test(x.label)) nat = x; }); if (nat) { need.push(nat); c.series.forEach(function (x) { var kk = x.group === cur0.group && lvKey(x); if (kk && kk.key === k.key && x.latestPeriod === cur0.latestPeriod) need.push(x); }); } }
     }
     if (window.DIProfile) { try { window.DIProfile.kpis(ST.c, c.series, groupsOf(c)).forEach(function (s) { need.push(s); }); } catch (e) {} }
-    var seen = {}; return Promise.all(need.filter(function (s) { if (!s || s.points || seen[s.cc + s.id]) return false; seen[s.cc + s.id] = 1; return true; }).map(pt));
+    var seen = {}; return Promise.all(need.filter(function (s) { if (!s || s.points || seen[s.cc + s.id]) return false; seen[s.cc + s.id] = 1; return true; }).map(pt)).then(function () { return window.DIExplorer ? cmpPrep() : null; });
   }
   /* Migas + barra de secciones */
   var FRL = { es: ['Cifras clave', 'Comercio', 'Gráfico y series', 'Detalle del país', 'Fuentes y metodología', 'Inicio', 'Países', 'Preguntas', 'Regiones', 'Sequía', 'Emisiones'], en: ['Key numbers', 'Trade', 'Chart and series', 'Country detail', 'Sources and methodology', 'Home', 'Countries', 'Questions', 'Regions', 'Drought', 'Emissions'], fr: ['Chiffres clés', 'Commerce', 'Graphique et séries', 'Détail du pays', 'Sources et méthodologie', 'Accueil', 'Pays', 'Questions', 'Régions', 'Sécheresse', 'Émissions'], it: ['Cifre chiave', 'Commercio', 'Grafico e serie', 'Dettaglio del paese', 'Fonti e metodologia', 'Home', 'Paesi', 'Domande', 'Regioni', 'Siccità', 'Emissioni'] };
@@ -518,7 +518,7 @@
     return { info: info, groups: order };
   }
   function collapse(list, all, sel) { /* una entrada por grupo; si la serie elegida esta en el grupo, ella es la que se muestra */
-    var gi = groupInfo(all), byId = {}, inList = {}, out = [], done = {};
+    var gi = all._gi || (all._gi = groupInfo(all)), byId = {}, inList = {}, out = [], done = {};
     gi.info.forEach(function (r) { byId[r.x.id] = r; }); list.forEach(function (x) { inList[x.id] = 1; });
     list.forEach(function (x) {
       var r = byId[x.id], g = r.g; if (done[g.key]) return; done[g.key] = 1;
@@ -564,11 +564,38 @@
     return out + (loose ? (out ? '<optgroup label="' + esc((SP[lang()] || SP.es)[4]) + '">' + loose + '</optgroup>' : loose) : '');
   }
   function seriesCount(n, m) { return (SP[lang()] || SP.es)[2].replace('{n}', nf(n, 0)).replace('{m}', nf(m, 0)); }
-  function seriesPicker(list, t) {
+  function seriesPicker(list, t, nov) {
     var q = SP[lang()] || SP.es, shown = filterSeries(list, ST.q || ''), fl = shown.length; if (!ST.q) shown = collapse(shown, list, ST.s);
     return '<div style="flex:1 1 100%;font-size:13px"><label for="ps-q">' + esc(q[0]) + '</label><br><input id="ps-q" type="search" class="di-compare-select" autocomplete="off" placeholder="' + esc(q[1]) + '" value="' + esc(ST.q || '') + '" style="width:100%;box-sizing:border-box">' +
       '<div id="ps-qn" class="di-movers-hint" role="status" aria-live="polite" style="margin:4px 0">' + esc(shown.length ? seriesCount(shown.length, list.length) + (shown.length < fl ? ' · ' + q[6] : '') : q[3]) + '</div>' +
-      '<select id="ps-s" class="di-compare-select" size="' + (shown.length < 8 ? Math.max(2, shown.length) : 8) + '" aria-label="' + esc(t.series) + '" style="width:100%">' + seriesOpts(shown, ST.s) + '</select>' + variantsHtml(list, list.filter(function (z) { return z.id === ST.s; })[0]) + '</div>';
+      '<select id="ps-s" class="di-compare-select" size="' + (shown.length < 8 ? Math.max(2, shown.length) : 8) + '" aria-label="' + esc(t.series) + '" style="width:100%">' + seriesOpts(shown, ST.s) + '</select>' + (nov ? '' : variantsHtml(list, list.filter(function (z) { return z.id === ST.s; })[0])) + '</div>';
+  }
+  /* Explorador (js/pais-explorer.js): contexto con lo que necesita de esta ficha */
+  function cutPts(pts) { var years = { '6m': 0.5, '1': 1, '3': 3, '5': 5, '10': 10, '20': 20 }[ST.r]; if (!years || !pts.length) return pts; var from = ts(pts[pts.length - 1][0]) - years * 365.25 * 864e5; return pts.filter(function (p) { return ts(p[0]) >= from; }); }
+  function xctx(c, list, cur0, cur, t, countries, opt, groups, rng) {
+    return { lang: lang(), list: list, cc: ST.c, g: ST.g, cur0: cur0, cur: cur, cmp: ST.cmp, t: t, countries: t.countries, country: t.countries[ST.c] || ST.c, allSeries: c.series,
+      cmpCountries: CCODES.filter(function (k) { return AVAIL[k] && k !== ST.c; }), groupLabel: t.group, groupOpts: groupOpts(groups, t),
+      countryOpts: opt(countries, ST.c, function (k) { return t.countries[k] || k; }), rangeOpts: opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; }),
+      oldPicker: seriesPicker(list, t, true), collapse: collapse, filterSeries: filterSeries, TL: TL, shortLab: shortLab, plabel: plabel, nf: nf, dec: dec, ts: ts, cut: cutPts,
+      setS: function (id) { ST.s = id; }, setG: function (g) { ST.g = g; } };
+  }
+  function xapi() {
+    var act = function (fn) { var e = document.getElementById('ex-top'), t0 = e ? e.getBoundingClientRect().top : 0; fn(); build(); holdAt('ex-top', t0); };
+    return { act: act, loadCountry: loadCountry,
+      setCmp: function (o) { act(function () { ST.cmp = o; }); },
+      matchIn: function (cc, s) { /* 1) misma etiqueta (sin la fuente entre paréntesis), unidad y frecuencia; 2) mismo producto, misma medida, unidad y frecuencia. Se muestra siempre qué serie se ha elegido. */
+        var k = function (x) { return String(x.label).replace(/\s*\([^()]*\)\s*$/, '').toLowerCase(); }, L = ((DATA.countries[cc] || {}).series || []), best = null, better = function (x) { return !best || (x.n || 0) > (best.n || 0) || ((x.n || 0) === (best.n || 0) && String(x.latestPeriod) > String(best.latestPeriod)); };
+        L.forEach(function (x) { if (k(x) === k(s) && x.unit === s.unit && x.frequency === s.frequency && better(x)) best = x; });
+        if (!best && s.tags && s.tags.length && window.DIExplorer) { var m = window.DIExplorer.meas(s), t0 = s.tags[0]; L.forEach(function (x) { if ((x.tags || []).indexOf(t0) >= 0 && window.DIExplorer.meas(x) === m && x.unit === s.unit && x.frequency === s.frequency && x.group === s.group && better(x)) best = x; }); }
+        if (!best && s.tags && s.tags.length && window.DIExplorer) { var m2 = window.DIExplorer.meas(s), t1 = s.tags[0]; L.forEach(function (x) { if ((x.tags || []).indexOf(t1) >= 0 && window.DIExplorer.meas(x) === m2 && x.frequency === s.frequency && x.group === s.group && better(x)) best = x; }); } /* otra unidad: se compara en índice */
+        return best; } };
+  }
+  function cmpPrep() {
+    if (!ST.cmp) return Promise.resolve();
+    return loadCountry(ST.cmp.cc).then(function () {
+      var o = ((DATA.countries[ST.cmp.cc] || {}).series || []).filter(function (x) { return x.id === ST.cmp.id; })[0]; if (!o) { ST.cmp = null; return; }
+      return DISeries.series(o.cc, o.id).then(function (f) { window.DIExplorer.setCmpSeries(ST.cmp.cc, ST.cmp.id, { id: o.id, label: o.label, unit: o.unit, frequency: o.frequency, points: f.points }); });
+    }).catch(function () { ST.cmp = null; });
   }
   function render() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;
@@ -590,14 +617,15 @@
     var themes = GROUPS.filter(function (g) { return cnt[g] && t[g] && !/^(idx_perc|idx_pag|rates)$/.test(g); });
     var themeHtml = themes.length > 1 ? '<section id="ps-themes" class="pp-anchor"><h2 style="margin:14px 0 4px;font-size:19px">' + esc(TH[0].replace('{c}', t.countries[ST.c] || ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(TH[2]) + '</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px">' + themes.map(function (g) { return '<a class="di-card" href="paises.html?c=' + ST.c + '&amp;g=' + g + '#ps-explorer" style="display:block;padding:10px 12px;text-decoration:none;color:inherit"><b>' + esc(t[g]) + '</b><div class="di-movers-hint" style="margin:2px 0 0">' + nf(cnt[g], 0) + ' ' + esc(TH[1]) + '</div></a>'; }).join('') + '</div></section>' : '';
     var prof = window.DIProfile ? window.DIProfile.html(ST.c, c, { lang: lang(), t: t, groups: groups, esc: esc, nf: nf, dec: dec, plabel: plabel, macro: MACRO && MACRO.countries[ST.c], wage: WAGES && WAGES.countries[ST.c], rate: window.DIProfile.rateOf(c), afterHero: (window.DehesaSector ? '<div id="ps-sector"></div>' : '') + themeHtml + '<div id="ps-regmap" class="pp-anchor"></div>' }) : '';
-    var html = prof + '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
+    var EXC = window.DIExplorer ? xctx(c, list, cur0, cur, t, countries, opt, groups, rng) : null;
+    var html = prof + (EXC ? window.DIExplorer.html(EXC) : '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
       sel('ps-c', t.country, opt(countries, ST.c, function (k) { return t.countries[k] || k; })) +
       sel('ps-g', t.group, groupOpts(groups, t)) +
-      sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + seriesPicker(list, t) + '</div>';
+      sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + seriesPicker(list, t) + '</div>');
     if (cur) {
       var ch = cur.changePct;
-      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + (window.DehesaShared && window.DehesaShared.reportLink ? ' <span style="font-weight:400;letter-spacing:0">' + window.DehesaShared.reportLink({ id: ST.c + '/' + cur0.id, label: cur0.label, period: cur0.latestPeriod, value: cur0.latest, unit: cur0.unit }) + '</span>' : '') + '</div>' + fxBox(cur0, cur) + realBox(cur0, cur) + chartFor(cur) +
-        '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + localBox(cur, c) + revBox(cur) + '</div>';
+      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + (window.DehesaShared && window.DehesaShared.reportLink ? ' <span style="font-weight:400;letter-spacing:0">' + window.DehesaShared.reportLink({ id: ST.c + '/' + cur0.id, label: cur0.label, period: cur0.latestPeriod, value: cur0.latest, unit: cur0.unit }) + '</span>' : '') + '</div>' + fxBox(cur0, cur) + realBox(cur0, cur) + (EXC ? window.DIExplorer.sentence(EXC, cur, cur0) : '') + ((EXC && ST.cmp && window.DIExplorer.cmpChart(EXC, cur0)) || chartFor(cur)) +
+        '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + localBox(cur, c) + revBox(cur) + (EXC ? window.DIExplorer.variantsWrap(EXC, variantsHtml(list, cur0)) + window.DIExplorer.cmpPanel(EXC) : '') + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     var allTbl = function () { return '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
       c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(TL(s.label)) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div>'; };
@@ -632,6 +660,7 @@
     var ow = document.getElementById('ps-detail'), on = document.getElementById('ps-ownnote'); if (ow && on) { var n = 0; Array.prototype.forEach.call(ow.children, function (e) { if (e.tagName === 'A' || /^ps-(de|mb|us|es|eu)$/.test(e.id) || e.getAttribute('data-fold') === 'ps-ifap') n++; }); if (!n) on.innerHTML = '<p class="di-movers-hint">' + esc((OWN[lang()] || OWN.es)[1]) + '</p>'; }
     var psAll = document.getElementById('ps-all'), psBody = document.getElementById('ps-all-body');
     if (psAll && psBody) { var fillAll = function () { if (psAll.open && !psBody.firstChild) psBody.innerHTML = allTbl(); }; psAll.addEventListener('toggle', fillAll); fillAll(); }
+    if (EXC) window.DIExplorer.bind(root, EXC, xapi());
     var psQ = document.getElementById('ps-q'), psS = document.getElementById('ps-s'), psN = document.getElementById('ps-qn');
     if (psQ && psS) psQ.oninput = function () {
       ST.q = psQ.value; var sh = filterSeries(list, ST.q), q = SP[lang()] || SP.es, fl0 = sh.length; if (!ST.q) sh = collapse(sh, list, ST.s);
@@ -640,7 +669,7 @@
     };
     var pv = document.getElementById('ps-var'); if (pv) pv.onclick = function (e) { var b = e.target.closest ? e.target.closest('button[data-s]') : null; if (!b) return; ST.s = b.getAttribute('data-s'); var t2 = pv.getBoundingClientRect().top; build(); holdAt('ps-var', t2); };
     if (psQ) psQ.onkeydown = function (e) { if (e.key === 'Enter' && psS && psS.options.length) { e.preventDefault(); ST.s = psS.options[0].value; var t1 = psQ.getBoundingClientRect().top; build(); holdAt('ps-q', t1); } else if (e.key === 'ArrowDown' && psS && psS.options.length) { e.preventDefault(); psS.focus(); } };
-    var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; ST.q = ''; } if (key === 'g') { ST.s = null; ST.q = ''; } var t0 = el.getBoundingClientRect().top; build(); holdAt(id, t0); var n = document.getElementById(id); if (n) { try { n.focus({ preventScroll: true }); } catch (er) {} } }; };
+    var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; ST.q = ''; ST.cmp = null; if (window.DIExplorer) window.DIExplorer.reset(); } if (key === 'g') { ST.s = null; ST.q = ''; } var t0 = el.getBoundingClientRect().top; build(); holdAt(id, t0); var n = document.getElementById(id); if (n) { try { n.focus({ preventScroll: true }); } catch (er) {} } }; };
     var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; if (ST.fx) ST.real = false; var t0 = fb.getBoundingClientRect().top; build(); holdAt('ps-fx', t0); };
     var rb = document.getElementById('ps-real'); if (rb) rb.onchange = function () { ST.real = rb.checked; if (ST.real) { ST.fx = false; if (!RCPI) { window.DehesaChart.real.load().then(function (d) { RCPI = d || false; build(); }); return; } } build(); };
     var wb = document.getElementById('ps-watch'); if (wb && cur) wb.onclick = function () { DIWatch.toggle(ST.c, cur.id); build(); };
@@ -651,7 +680,7 @@
       var after = wb.parentNode; after.parentNode.insertBefore(det, after.nextSibling); DIWatch.bindEditor(box, build);
     }
     Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } build(); var e = document.getElementById('ps-explorer'); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
-        try { var qq = new URLSearchParams(window.location.search); qq.set('c', ST.c); ['g', 's', 'r'].forEach(function (k) { var v = ST[k]; if (v && v !== 'all' && !(k === 'r' && v === 'max')) qq.set(k, v); else qq.delete(k); }); history.replaceState(null, '', '?' + qq.toString() + window.location.hash); } catch (e) {} bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
+        try { var qq = new URLSearchParams(window.location.search); qq.set('c', ST.c); ['g', 's', 'r'].forEach(function (k) { var v = ST[k]; if (v && v !== 'all' && !(k === 'r' && v === 'max')) qq.set(k, v); else qq.delete(k); }); if (ST.cmp) qq.set('cmp', ST.cmp.cc + ':' + ST.cmp.id); else qq.delete('cmp'); history.replaceState(null, '', '?' + qq.toString() + window.location.hash); } catch (e) {} bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
   }
   /* Al cambiar un desplegable la ficha se repinta y los bloques de arriba se recargan: se mantiene el control en el mismo sitio de la pantalla
      durante un segundo (hasta que la página termina de colocarse), salvo que el usuario se ponga a desplazarse. */
@@ -669,7 +698,7 @@
   var LABELS_ON = true;
   if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } });
   shell();
-  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
+  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('cmp')) { var cm = q.get('cmp').split(':'); if (cm.length > 1) ST.cmp = { cc: cm[0].toUpperCase(), id: cm.slice(1).join(':') }; } if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
   /* Carga por catalogo (capa de datos unificada): manifiesto -> catalogo del pais -> trozo de la serie. Nunca se piden los *-stats.json. */
   var GROUPS = ['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'crops_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'climate', 'stocks', 'income', 'partners', 'rates'];
   var CCODES = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU', 'UK', 'AR', 'CL', 'PL', 'CH', 'EL', 'IE', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'EE', 'HU', 'LV', 'RO', 'SE', 'SI'], AVAIL = {}, CAT = {}, TOK = 0, LREG = null;
@@ -678,7 +707,7 @@
     if (CAT[cc]) return CAT[cc];
     return CAT[cc] = DISeries.country(cc, true).then(function (c) {
       var S = (c.series || []).filter(function (s) { return s.group !== 'product' && s.format !== 'eu-regions'; }).map(function (s) {
-        return { id: s.id, cc: cc, label: s.label, unit: s.unit, frequency: s.freq, group: s.group, latestPeriod: s.latestPeriod, latest: s.latest, changePct: s.changePct, n: s.n, first: s.first, source: s.source, sourceId: s.sourceId, licenseId: s.licenseId, fs: s.fs };
+        return { id: s.id, cc: cc, label: s.label, unit: s.unit, frequency: s.freq, group: s.group, latestPeriod: s.latestPeriod, latest: s.latest, changePct: s.changePct, n: s.n, first: s.first, source: s.source, sourceId: s.sourceId, licenseId: s.licenseId, fs: s.fs, tags: s.tags || [] };
       });
       DATA.countries[cc] = { name: c.name, sources: c.sources || [], series: S };
     }).catch(function (e) { delete CAT[cc]; throw e; });

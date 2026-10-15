@@ -2466,3 +2466,33 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .ec-q input, .ec-pf input { width: 100%; }
 .ec-h { margin: 14px 0 6px; font-size: 18px; }
 .ec-sum { margin: 10px 0; font-size: 14.5px; line-height: 1.5; }
+/* Explorador de datos de la ficha de país (js/pais-explorer.js) */
+.ex { margin: 0 0 14px; }
+.ex-q { position: relative; margin: 0 0 10px; }
+.ex-ql { display: block; font-size: 13px; margin: 0 0 4px; color: var(--text-tertiary); }
+.ex-q input, .ex-cmpb input { width: 100%; box-sizing: border-box; }
+.ex-res { margin-top: 4px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface, #fffdf7); max-height: 340px; overflow: auto; }
+.ex-opt { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; width: 100%; text-align: left; font: inherit; font-size: 14px; padding: 8px 12px; border: 0; border-bottom: 1px solid var(--border); background: transparent; color: var(--text-primary); cursor: pointer; min-height: 44px; }
+.ex-opt:last-child { border-bottom: 0; }
+.ex-opt:hover, .ex-opt.ex-act, .ex-opt:focus-visible { background: var(--bg-soft, rgba(120,110,80,.1)); outline: none; }
+.ex-om { font-size: 12px; color: var(--text-tertiary); }
+.ex-nores { padding: 10px 12px; font-size: 13px; color: var(--text-tertiary); }
+.ex-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0; }
+.ex-lab { font-size: 12.5px; color: var(--text-tertiary); margin-right: 4px; }
+.ex-chip, .ex-tab { font: inherit; font-size: 13px; min-height: 36px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 18px; background: transparent; color: var(--text-primary); cursor: pointer; }
+.ex-chip-s { min-height: 30px; font-size: 12.5px; padding: 2px 10px; }
+.ex-th { font-size: 12.5px; }
+.ex-more { border-style: dashed; color: var(--text-tertiary); }
+.ex-tab { border-radius: 8px; }
+.ex-chip[aria-pressed="true"], .ex-tab[aria-pressed="true"] { background: var(--accent, #2f6f4f); border-color: var(--accent, #2f6f4f); color: #fff; font-weight: 600; }
+.ex-chip:focus-visible, .ex-tab:focus-visible, .ex-sel:focus-visible { outline: 2px solid var(--accent, #2f6f4f); outline-offset: 2px; }
+.ex-sel { max-width: 100%; }
+.ex-tool { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0 6px; font-size: 13px; }
+.ex-tool label { flex: 1 1 150px; }
+.ex-adv, .ex-var, .ex-cmp { margin: 8px 0; font-size: 13px; }
+.ex-adv summary, .ex-var summary, .ex-cmp summary { cursor: pointer; min-height: 32px; line-height: 32px; color: var(--text-tertiary); }
+.ex-var summary b { color: var(--accent, #2f6f4f); }
+.ex-advb { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 6px; }
+.ex-cmpb { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 8px; }
+.ex-cmpon { margin: 6px 0; }
+.ex-sen { margin: 4px 0 8px; font-size: 14.5px; line-height: 1.5; }
