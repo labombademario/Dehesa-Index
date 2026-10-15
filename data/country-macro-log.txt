@@ -1,77 +1,96 @@
-03:21:20 gdp: 35 paises
-03:21:20 gdppc: 35 paises
-03:21:21 pop: 35 paises
-03:21:21 unemp: 35 paises
-03:21:21 agri: 35 paises
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/USA: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ESP: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/FRA: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DEU: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/BEL: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUT: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/PRT: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ITA: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DNK: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NLD: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CAN: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUS: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/BGR: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CYP: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CZE: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/EST: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/GRC: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/FIN: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/HRV: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/HUN: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/IRL: HTTP Error 403: Forbidden
-03:21:21   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LTU: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LUX: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LVA: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/MLT: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/POL: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ROU: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SWE: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SVN: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SVK: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/GBR: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ARG: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CHE: HTTP Error 403: Forbidden
-03:21:22   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CHL: HTTP Error 403: Forbidden
-03:21:22 debt FMI: 0 paises
-03:21:22 debt US WB central
-03:21:22 debt ES Eurostat 2025
-03:21:23 debt FR Eurostat 2025
-03:21:23 debt DE Eurostat 2025
-03:21:23 debt BE Eurostat 2025
-03:21:24 debt AT Eurostat 2025
-03:21:24 debt PT Eurostat 2025
-03:21:24 debt IT Eurostat 2025
-03:21:25 debt DK Eurostat 2025
-03:21:25 debt NL Eurostat 2025
-03:21:25 debt CA WB central
-03:21:25 debt AU WB central
-03:21:25 debt EU Eurostat 2025
-03:21:26 debt BG Eurostat 2025
-03:21:26 debt CY Eurostat 2025
-03:21:26 debt CZ Eurostat 2025
-03:21:27 debt EE Eurostat 2025
-03:21:27 debt EL Eurostat 2025
-03:21:27 debt FI Eurostat 2025
-03:21:28 debt HR Eurostat 2025
-03:21:28 debt HU Eurostat 2025
-03:21:28 debt IE Eurostat 2025
-03:21:28 debt LT Eurostat 2025
-03:21:29 debt LU Eurostat 2025
-03:21:29 debt LV Eurostat 2025
-03:21:29 debt MT Eurostat 2025
-03:21:30 debt PL Eurostat 2025
-03:21:30 debt RO Eurostat 2025
-03:21:30 debt SE Eurostat 2025
-03:21:31 debt SI Eurostat 2025
-03:21:31 debt SK Eurostat 2025
-03:21:31 debt UK WB central
-03:21:31 debt CH WB central
-03:21:31 debt CL WB central
-03:21:31 wageh Eurostat: 28 paises
-03:21:31 infl: 32 paises
-03:21:32 contrato: 0 errores, completos 35
+03:25:41 gdp: 35 paises
+03:25:41 gdppc: 35 paises
+03:25:41 pop: 35 paises
+03:25:42 unemp: 35 paises
+03:25:42 agri: 35 paises
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/USA: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ESP: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/FRA: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DEU: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/BEL: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUT: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/PRT: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ITA: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DNK: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NLD: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CAN: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUS: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/BGR: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CYP: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CZE: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/EST: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/GRC: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/FIN: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/HRV: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/HUN: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/IRL: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LTU: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LUX: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LVA: HTTP Error 403: Forbidden
+03:25:42   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/MLT: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/POL: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ROU: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SWE: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SVN: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SVK: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/GBR: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ARG: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CHE: HTTP Error 403: Forbidden
+03:25:43   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CHL: HTTP Error 403: Forbidden
+03:25:43 debt FMI: 0 paises
+03:25:43 debt US WB central
+03:25:44 debt ES Eurostat 2025
+03:25:44 debt FR Eurostat 2025
+03:25:45 debt DE Eurostat 2025
+03:25:45 debt BE Eurostat 2025
+03:25:46 debt AT Eurostat 2025
+03:25:46 debt PT Eurostat 2025
+03:25:47 debt IT Eurostat 2025
+03:25:47 debt DK Eurostat 2025
+03:25:48 debt NL Eurostat 2025
+03:25:48 debt CA WB central
+03:25:48 debt AU WB central
+03:25:48 debt EU Eurostat 2025
+03:25:49 debt BG Eurostat 2025
+03:25:49 debt CY Eurostat 2025
+03:25:50 debt CZ Eurostat 2025
+03:25:50 debt EE Eurostat 2025
+03:25:51 debt EL Eurostat 2025
+03:25:51 debt FI Eurostat 2025
+03:25:52 debt HR Eurostat 2025
+03:25:52 debt HU Eurostat 2025
+03:25:53 debt IE Eurostat 2025
+03:25:53 debt LT Eurostat 2025
+03:25:53 debt LU Eurostat 2025
+03:25:54 debt LV Eurostat 2025
+03:25:54 debt MT Eurostat 2025
+03:25:55 debt PL Eurostat 2025
+03:25:55 debt RO Eurostat 2025
+03:25:56 debt SE Eurostat 2025
+03:25:56 debt SI Eurostat 2025
+03:25:57 debt SK Eurostat 2025
+03:25:57 debt UK WB central
+03:25:57 debt CH WB central
+03:25:57 debt CL WB central
+03:25:58 wageh Eurostat: 28 paises
+03:25:58 infl: 32 paises
+03:25:59 sondeo AR IPC 148.3_INIVELNAL_DICI_M_26: [['2026-08-01', 12276.766], ['2026-07-01', 12076.3937], ['2026-06-01', 11826.4103]] | meta [{"catalog": {"title": "Datos Programación Macroeconómica"}, "dataset": {"title": "Índice de Precios al Consumidor Nacional (IPC). Base diciembre 2016.", "description": "Índice de Precios al Consumidor Nacional. Base diciembre 2016.", "issued": "2017-09-28", "source": "Instituto Nacional de Estadíst
+03:26:00 sondeo AR "deuda bruta administracion central": 436.1_FINAN_CONT_AC_DEVE_0_22_61 | finan_contrib_figur_ac | Variación Porcentual | 1961-01-01..1976-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:00 sondeo AR "deuda bruta administracion central": 436.4_FINAN_CONT_AC_DEVE_0_22_72 | finan_contrib_figur_ac | Variación Porcentual | 1990-01-01..1992-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:00 sondeo AR "deuda bruta administracion central": 435.2_FINAN_CONT_AC_DEVE_0_22_78 | finan_contrib_figur_ac | Variación Porcentual | 1977-01-01..1986-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:00 sondeo AR "deuda bruta administracion central": 436.2_FINAN_CONT_AC_DEVE_0_22_15 | finan_contrib_figur_ac | Variación Porcentual | 1977-01-01..1986-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:00 sondeo AR "deuda bruta administracion central": 434.3_FINAN_CONT_AC_DEVE_0_22_55 | finan_contrib_figur_ac | Variación Porcentual | 1987-01-01..1989-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:00 sondeo AR "deuda bruta administracion central": 433.4_FINAN_CONT_AC_DEVE_0_22_7 | finan_contrib_figur_ac | Variación Porcentual | 1990-01-01..1992-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:01 sondeo AR "deuda publica porcentaje PIB": 451.8_GPM_SERVICPIB_0_0_31_65 | gpm_servicios_deuda_publica_pib | Porcentaje del PIB | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:01 sondeo AR "deuda publica porcentaje PIB": 451.6_GPP_SERVICPIB_0_0_31_1 | gpp_servicios_deuda_publica_pib | Porcentaje del PIB | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:01 sondeo AR "deuda publica porcentaje PIB": 451.4_GPN_SERVICPIB_0_0_31_93 | gpn_servicios_deuda_publica_pib | Porcentaje del PIB | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:01 sondeo AR "deuda publica porcentaje PIB": 451.2_GPC_SERVICPIB_0_0_31_0 | gpc_servicios_deuda_publica_pib | Porcentaje del PIB | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:01 sondeo AR "deuda publica porcentaje PIB": 313.1_EN_PORCENTPIB_0_T_21 | en_porcentaje_del_pib | Porecentaje del PIB | 2001-10-01..2017-04-01 | Subsecretaría de Programación Macroeconómica
+03:26:01 sondeo AR "deuda publica porcentaje PIB": 451.4_GPN_PROMOCPIB_0_0_35_70 | gpn_promocion_asistencia_social_pib | Porcentaje del PIB | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:02 sondeo AR "deuda administracion publica nacional": 451.3_GPN_SERVICICA_0_0_27_85 | gpn_servicios_deuda_publica | Millones de pesos | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:02 sondeo AR "deuda administracion publica nacional": 451.4_GPN_SERVICPIB_0_0_31_93 | gpn_servicios_deuda_publica_pib | Porcentaje del PIB | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:02 sondeo AR "deuda administracion publica nacional": 11.1_C_2004_A_60 | admin_publica_planes_seguridad_social_afiliacion_obligatoria | Índice 2004=100 | 2004-01-01..2025-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:02 sondeo AR "deuda administracion publica nacional": 11.2_C_2004_T_60 | admin_publica_planes_seguridad_social_afiliacion_obligatoria | Índice 2004=100 | 2004-01-01..2026-04-01 | Subsecretaría de Programación Macroeconómica
+03:26:02 sondeo AR "deuda administracion publica nacional": 11.3_C_2004_M_60 | admin_publica_planes_seguridad_social_afiliacion_obligatoria | Índice 2004=100 | 2004-01-01..2026-07-01 | Subsecretaría de Programación Macroeconómica
+03:26:02 sondeo AR "deuda administracion publica nacional": 451.1_GPC_SERVICICA_0_0_27_71 | gpc_servicios_deuda_publica | Millones de pesos | 1980-01-01..2023-01-01 | Subsecretaría de Programación Macroeconómica
+03:26:02 contrato: 0 errores, completos 35
