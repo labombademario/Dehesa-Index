@@ -112,7 +112,8 @@
 
   /* ---------- controlador de hover ---------- */
   var tip = null, ov = null, cur = null, cache = new WeakMap(), drag = null;
-  var HINT = { es: 'Arrastra para medir el cambio', en: 'Drag to measure the change', fr: 'Faites glisser pour mesurer la variation', it: 'Trascina per misurare la variazione' };
+  var HINT = { es: 'Pulsa un punto para ver su variación · arrastra para medir', en: 'Click a point to see its change · drag to measure', fr: 'Cliquez sur un point pour voir sa variation · glissez pour mesurer', it: 'Fai clic su un punto per la variazione · trascina per misurare' };
+  var VS = { es: ['frente a', 'desde'], en: ['vs', 'since'], fr: ['par rapport à', 'depuis'], it: ['rispetto a', 'da'] };
   /* Texto alternativo automatico: toda svg[role=img] sin nombre accesible (graficas ligeras con attr(), mapas de estados) recibe un aria-label
      con el titulo del bloque (primer encabezado del contenedor) y, si lleva datos (data-dh), primer y ultimo punto de la primera serie. */
   function autoLabel(root) {
@@ -185,6 +186,7 @@
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     var svg = e.target && e.target.closest ? e.target.closest('svg[data-dh]') : null;
     if (!svg) return;
+    pinnedAtDown = !!(pinned && pinned.svg === svg); if (pinned) clear(true);
     var spec = specOf(svg); if (!spec || !spec.s.length || spec.nm) return; // nm: solo valor al pasar, sin medir cambios entre barras
     var pt = plotPt(svg, e, spec, false); if (!pt) return;
     if (pt.x < spec.L - 4 || pt.x > spec.R + 4 || pt.y < spec.T - 6 || pt.y > spec.B + 6) return;
@@ -193,14 +195,18 @@
   }
   function up(e) {
     if (!drag) return;
-    var d = drag; drag = null;
+    var d = drag; drag = null; lastMoved = !!d.moved;
     try { d.svg.releasePointerCapture(d.id); } catch (er) {}
     if (e.pointerType !== 'touch') { clear(); move(e); }
   }
   function tipEl() { if (!tip) { tip = document.createElement('div'); tip.setAttribute('role', 'tooltip'); tip.style.cssText = 'position:fixed;z-index:99999;pointer-events:none;display:none;background:var(--surface,#fff);color:var(--text,#222);border:1px solid var(--border,#d9d3c3);border-radius:8px;padding:8px 10px;font:12.5px/1.35 "Public Sans",system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.14);max-width:260px'; document.body.appendChild(tip); } return tip; }
   function specOf(svg) { var sp = cache.get(svg); var raw = svg.getAttribute('data-dh'); if (!sp || sp.raw !== raw) { try { sp = { raw: raw, v: JSON.parse(raw) }; } catch (e) { sp = { raw: raw, v: null }; } cache.set(svg, sp); } return sp.v; }
-  function clear() { if (ov && ov.parentNode) ov.parentNode.removeChild(ov); ov = null; cur = null; if (tip) tip.style.display = 'none'; }
+  function hide() { if (ov && ov.parentNode) ov.parentNode.removeChild(ov); ov = null; cur = null; if (tip) tip.style.display = 'none'; }
+  // punto fijado con un clic o toque: lo suelta otro clic, Esc, el scroll o redibujar el gráfico
+  var pinned = null, pinnedAtDown = false, lastMoved = false;
+  function clear(force) { if (pinned && !force) return; pinned = null; hide(); }
   function move(e) {
+    if (pinned) { if (!pinned.svg.isConnected) clear(true); else return; }
     var svg = drag ? drag.svg : (e.target && e.target.closest ? e.target.closest('svg[data-dh]') : null);
     if (!svg) { if (cur) clear(); return; }
     var spec = specOf(svg); if (!spec || !spec.s.length) return;
@@ -232,14 +238,34 @@
     place(svg, t, gx, best.p[1]);
   }
   document.addEventListener('pointermove', move, { passive: true });
-  document.addEventListener('pointerdown', function (e) { down(e); move(e); }, { passive: true });
+  document.addEventListener('pointerdown', function (e) { if (pinned && !(e.target && e.target.closest && e.target.closest('svg[data-dh]'))) clear(true); down(e); move(e); }, { passive: true });
+  function chgOf(a, b, pp) { return a == null || b == null || !isFinite(a) || !isFinite(b) ? null : pp ? a - b : (Math.abs(b) > 1e-9 ? (a - b) / Math.abs(b) * 100 : null); }
+  function chgRow(label, v, pp) { var col = v === 0 ? 'inherit' : (v > 0 ? 'var(--positive,#2F7D4F)' : 'var(--negative,#B23A34)'); return '<div style="display:flex;gap:10px;justify-content:space-between;color:var(--text-faint,#7a7466)"><span>' + esc(label) + '</span><strong style="color:' + col + ';white-space:nowrap">' + esc(pctTxt(v, pp)) + '</strong></div>'; }
+  document.addEventListener('click', function (e) {
+    var svg = e.target && e.target.closest ? e.target.closest('svg[data-dh]') : null; if (!svg) return;
+    if (lastMoved) { lastMoved = false; return; }
+    if (pinnedAtDown) { pinnedAtDown = false; return; }
+    var spec = specOf(svg); if (!spec || !spec.s.length || spec.nm) return;
+    var pt = plotPt(svg, e, spec, false); if (!pt || pt.x < spec.L - 4 || pt.x > spec.R + 4 || pt.y < spec.T - 6 || pt.y > spec.B + 6) return;
+    var pp = spec.m === 'pp', hits = [], best = null, bd = Infinity;
+    spec.s.forEach(function (s) { var bi = nearestIdx(s.p, pt.x); if (bi >= 0) { var h = { s: s, i: bi, p: s.p[bi], d: Math.abs(s.p[bi][0] - pt.x) }; hits.push(h); if (h.d < bd) { bd = h.d; best = h; } } });
+    if (!best || best.p[4] == null) return;
+    var gx = best.p[0], vs = VS[lang()] || VS.es; hide(); cur = svg; ov = document.createElementNS('http://www.w3.org/2000/svg', 'g'); ov.setAttribute('pointer-events', 'none'); svg.appendChild(ov);
+    var html = '<line x1="' + gx + '" x2="' + gx + '" y1="' + spec.T + '" y2="' + spec.B + '" stroke="var(--text-faint,#8a8578)" stroke-width="1"/>', rows = '';
+    hits.filter(function (h) { return Math.abs(h.p[0] - gx) < 40; }).forEach(function (h) {
+      html += '<circle cx="' + h.p[0] + '" cy="' + h.p[1] + '" r="6" fill="' + h.s.c + '" stroke="var(--surface,#fff)" stroke-width="2.5"/>';
+      var prev = h.i > 0 ? h.s.p[h.i - 1] : null, first = h.i > 1 ? h.s.p[0] : null, c1 = prev ? chgOf(h.p[4], prev[4], pp) : null, c2 = first ? chgOf(h.p[4], first[4], pp) : null;
+      rows += '<div style="margin-top:4px">' + (spec.s.length > 1 && h.s.n ? '<div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:' + h.s.c + ';margin-right:6px"></span>' + esc(h.s.n) + '</div>' : '') + '<div style="font-weight:700">' + esc(h.p[2]) + '</div>' + (c1 !== null ? chgRow(vs[0] + ' ' + prev[3], c1, pp) : '') + (c2 !== null ? chgRow(vs[1] + ' ' + first[3], c2, pp) : '') + '</div>';
+    });
+    ov.innerHTML = html; var t = tipEl(); t.innerHTML = '<div style="color:var(--text-faint,#7a7466);font-size:11.5px">' + esc(best.p[3]) + '</div>' + rows; t.style.display = 'block'; place(svg, t, gx, best.p[1]); pinned = { svg: svg };
+  });
   document.addEventListener('pointerup', up, { passive: true });
   // teclado: con el foco en el grafico, flechas/Inicio/Fin recorren los puntos y muestran el mismo tooltip que el raton
   var kbIdx = new WeakMap();
   document.addEventListener('keydown', function (e) {
     var svg = e.target && e.target.matches && e.target.matches('svg[data-dh]') ? e.target : null; if (!svg) return;
     if (['ArrowLeft', 'ArrowRight', 'Home', 'End', 'Escape'].indexOf(e.key) < 0) return;
-    if (e.key === 'Escape') { clear(); return; }
+    if (e.key === 'Escape') { clear(true); return; }
     var spec = specOf(svg); if (!spec || !spec.s.length) return; var pts = spec.s[0].p, i = kbIdx.has(svg) ? kbIdx.get(svg) : pts.length - 1;
     i = e.key === 'Home' ? 0 : e.key === 'End' ? pts.length - 1 : Math.max(0, Math.min(pts.length - 1, i + (e.key === 'ArrowLeft' ? -1 : 1) * (e.shiftKey ? 10 : 1)));
     kbIdx.set(svg, i); e.preventDefault();
@@ -249,7 +275,7 @@
   document.addEventListener('focusout', function (e) { if (e.target && e.target.matches && e.target.matches('svg[data-dh]')) clear(); });
   document.addEventListener('pointercancel', function () { drag = null; clear(); }, { passive: true });
   document.documentElement.addEventListener('mouseleave', clear);
-  document.addEventListener('scroll', function () { if (cur) clear(); }, { passive: true, capture: true });
+  document.addEventListener('scroll', function () { if (cur || pinned) clear(true); }, { passive: true, capture: true });
   document.addEventListener('pointerup', function (e) { if (e.pointerType === 'touch') setTimeout(clear, 1600); }, { passive: true });
 
 
@@ -291,7 +317,7 @@
     var id = bt.getAttribute('data-dhv'), v = bt.getAttribute('data-v'), wrap = bt.closest('[data-dhvw]'); if (!wrap) return;
     ['line', 'pie'].forEach(function (k) { var pn = wrap.querySelector('[data-dhp="' + id + '-' + k + '"]'); if (pn) { if (k === v) pn.removeAttribute('hidden'); else pn.setAttribute('hidden', ''); } });
     Array.prototype.forEach.call(wrap.querySelectorAll('button[data-dhv]'), function (x) { var on = x === bt; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.style.background = on ? 'var(--accent,#2f6b4a)' : 'var(--surface,#fff)'; x.style.color = on ? '#fff' : 'var(--text,#222)'; });
-    clear();
+    clear(true);
   });
 
   /* ---- precios reales: deflactar con el IPC del país (data/cpi.json). Solo aritmética sobre datos publicados; lo que no se puede deflactar se omite y se cuenta ---- */
@@ -326,5 +352,5 @@
     points.forEach(function (p) { var d = p[1] == null ? null : at(p[0]); if (d && p[1] != null) out.push([p[0], p[1] * ref / d]); else miss++; });
     return out.length >= 2 ? { points: out, ref: refLabel, kind: kind, miss: miss, src: src.src, name: src.name, base: src.base } : null;
   }
-  window.DehesaChart = { real: { load: realLoad, can: realCan, curOf: curOfUnit, deflate: realDeflate }, render: render, pie: pie, switcher: switcher, attr: attr, fmtDate: fmtDate, fmtDateFull: fmtDateFull, fmtMonth: fmtMonth, histTs: histTs, clear: clear };
+  window.DehesaChart = { real: { load: realLoad, can: realCan, curOf: curOfUnit, deflate: realDeflate }, render: render, pie: pie, switcher: switcher, attr: attr, fmtDate: fmtDate, fmtDateFull: fmtDateFull, fmtMonth: fmtMonth, histTs: histTs, clear: function () { clear(true); } };
 })();

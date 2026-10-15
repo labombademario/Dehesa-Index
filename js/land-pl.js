@@ -97,14 +97,32 @@
   function bindChart(root, c, lg) {
     var box = root.querySelector('.gb-chart'); if (!box || !c.pts) return;
     var svg = box.querySelector('svg'), ro = box.querySelector('.wp-readout'), cr = box.querySelector('.wp-cross'), t = T[lg];
-    function at(ev) {
+    var pin = -1, VSL = { es: ['frente a', 'desde'], en: ['vs', 'since'], fr: ['par rapport à', 'depuis'], it: ['rispetto al', 'dal'] }[lg] || ['vs', 'since'],
+      HP = { es: 'Pulsa un punto para ver su evolución en %.', en: 'Click a point to see its % change.', fr: 'Cliquez sur un point pour voir sa variation en %.', it: 'Fai clic su un punto per vedere la variazione in %.' }[lg] || '';
+    function near(ev) {
       var r = svg.getBoundingClientRect(), cx = ev.touches ? ev.touches[0].clientX : ev.clientX, vx = (cx - r.left) / r.width * c.W, best = 0, bd = 1e9;
       for (var j = 0; j < c.pts.length; j++) { var dd = Math.abs(c.X(c.pts[j][0]) - vx); if (dd < bd) { bd = dd; best = j; } }
-      var x = c.pts[best], px = c.X(x[0]); cr.setAttribute('x1', px); cr.setAttribute('x2', px); cr.style.display = '';
-      ro.innerHTML = '<b>' + x[0] + '</b> · ' + esc(c.name) + ' <b>' + pln(x[1], lg) + '</b>';
+      return best;
     }
-    svg.addEventListener('mousemove', at); svg.addEventListener('touchstart', at, { passive: true }); svg.addEventListener('touchmove', at, { passive: true });
-    svg.addEventListener('mouseleave', function () { cr.style.display = 'none'; ro.textContent = t.hover; });
+    function chg(v) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toLocaleString(lg, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %'; }
+    function show(j, pinned) {
+      var x = c.pts[j], px = c.X(x[0]); cr.setAttribute('x1', px); cr.setAttribute('x2', px); cr.style.display = '';
+      var s = '<b>' + x[0] + '</b> · ' + esc(c.name) + ' <b>' + pln(x[1], lg) + '</b>';
+      if (pinned) {
+        var ps = [];
+        if (j > 0 && c.pts[j - 1][1]) ps.push('<b>' + chg((x[1] / c.pts[j - 1][1] - 1) * 100) + '</b> ' + VSL[0] + ' ' + c.pts[j - 1][0]);
+        if (j > 1 && c.pts[0][1]) ps.push('<b>' + chg((x[1] / c.pts[0][1] - 1) * 100) + '</b> ' + VSL[1] + ' ' + c.pts[0][0]);
+        if (ps.length) s += '<br>' + ps.join(' · ');
+      }
+      ro.innerHTML = s;
+      Array.prototype.forEach.call(svg.querySelectorAll('.wp-dot'), function (d, k) { d.setAttribute('r', pinned && k === j ? 6 : 3.5); });
+    }
+    svg.addEventListener('mousemove', function (ev) { if (pin < 0) show(near(ev), false); });
+    svg.addEventListener('touchstart', function (ev) { if (pin < 0) show(near(ev), false); }, { passive: true });
+    svg.addEventListener('touchmove', function (ev) { if (pin < 0) show(near(ev), false); }, { passive: true });
+    svg.addEventListener('click', function (ev) { var j = near(ev); pin = pin === j ? -1 : j; show(j, pin >= 0); });
+    svg.addEventListener('mouseleave', function () { if (pin < 0) { cr.style.display = 'none'; ro.textContent = t.hover + ' ' + HP; } });
+    ro.textContent = t.hover + ' ' + HP;
   }
   function sel(label, cls, arr, cur) {
     return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" aria-label="' + esc(label) + '">' + arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
