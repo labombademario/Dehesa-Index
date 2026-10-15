@@ -1,65 +1,67 @@
-03:47:06 Eurostat prc_hicp_minr coicop18=TOTAL (I25): 29 paises, hasta 2026-09
-03:47:06 EU: I15 enlazado con I25 (factor 1.3342, +8 meses hasta 2026-08)
-03:47:06 EA: I15 enlazado con I25 (factor 1.2875, +9 meses hasta 2026-09)
-03:47:06 BE: I15 enlazado con I25 (factor 1.3549, +9 meses hasta 2026-09)
-03:47:06 BG: I15 enlazado con I25 (factor 1.4250, +9 meses hasta 2026-09)
-03:47:06 CZ: I15 enlazado con I25 (factor 1.5544, +8 meses hasta 2026-08)
-03:47:06 DK: I15 enlazado con I25 (factor 1.2132, +8 meses hasta 2026-08)
-03:47:06 DE: I15 enlazado con I25 (factor 1.3194, +9 meses hasta 2026-09)
-03:47:06 EE: I15 enlazado con I25 (factor 1.6257, +9 meses hasta 2026-09)
-03:47:06 IE: I15 enlazado con I25 (factor 1.2186, +9 meses hasta 2026-09)
-03:47:06 EL: I15 enlazado con I25 (factor 1.2275, +9 meses hasta 2026-09)
-03:47:06 ES: I15 enlazado con I25 (factor 1.2665, +9 meses hasta 2026-09)
-03:47:06 FR: I15 enlazado con I25 (factor 1.2443, +9 meses hasta 2026-09)
-03:47:06 HR: I15 enlazado con I25 (factor 1.3782, +9 meses hasta 2026-09)
-03:47:06 IT: I15 enlazado con I25 (factor 1.2428, +9 meses hasta 2026-09)
-03:47:06 CY: I15 enlazado con I25 (factor 1.1806, +9 meses hasta 2026-09)
-03:47:06 LV: I15 enlazado con I25 (factor 1.5086, +9 meses hasta 2026-09)
-03:47:06 LT: I15 enlazado con I25 (factor 1.5599, +9 meses hasta 2026-09)
-03:47:06 LU: I15 enlazado con I25 (factor 1.2793, +9 meses hasta 2026-09)
-03:47:06 HU: I15 enlazado con I25 (factor 1.7396, +8 meses hasta 2026-08)
-03:47:06 MT: I15 enlazado con I25 (factor 1.2590, +9 meses hasta 2026-09)
-03:47:06 NL: I15 enlazado con I25 (factor 1.3586, +9 meses hasta 2026-09)
-03:47:06 AT: I15 enlazado con I25 (factor 1.3901, +9 meses hasta 2026-09)
-03:47:06 PL: I15 enlazado con I25 (factor 1.5367, +8 meses hasta 2026-08)
-03:47:06 PT: I15 enlazado con I25 (factor 1.2483, +9 meses hasta 2026-09)
-03:47:06 RO: I15 enlazado con I25 (factor 1.6005, +8 meses hasta 2026-08)
-03:47:06 SI: I15 enlazado con I25 (factor 1.3104, +9 meses hasta 2026-09)
-03:47:06 SK: I15 enlazado con I25 (factor 1.4923, +9 meses hasta 2026-09)
-03:47:06 FI: I15 enlazado con I25 (factor 1.2201, +9 meses hasta 2026-09)
-03:47:06 SE: I15 enlazado con I25 (factor 1.3235, +8 meses hasta 2026-08)
-03:47:09 EU: eurostat, 320 meses hasta 2026-08
-03:47:09 EA: eurostat, 321 meses hasta 2026-09
-03:47:09 BE: eurostat, 321 meses hasta 2026-09
-03:47:09 BG: eurostat, 321 meses hasta 2026-09
-03:47:09 CZ: eurostat, 320 meses hasta 2026-08
-03:47:09 DK: eurostat, 320 meses hasta 2026-08
-03:47:09 DE: eurostat, 321 meses hasta 2026-09
-03:47:09 EE: eurostat, 321 meses hasta 2026-09
-03:47:09 IE: eurostat, 321 meses hasta 2026-09
-03:47:09 EL: eurostat, 321 meses hasta 2026-09
-03:47:09 ES: eurostat, 321 meses hasta 2026-09
-03:47:09 FR: eurostat, 321 meses hasta 2026-09
-03:47:09 HR: eurostat, 321 meses hasta 2026-09
-03:47:09 IT: eurostat, 321 meses hasta 2026-09
-03:47:09 CY: eurostat, 321 meses hasta 2026-09
-03:47:09 LV: eurostat, 321 meses hasta 2026-09
-03:47:09 LT: eurostat, 321 meses hasta 2026-09
-03:47:09 LU: eurostat, 321 meses hasta 2026-09
-03:47:09 HU: eurostat, 320 meses hasta 2026-08
-03:47:09 MT: eurostat, 321 meses hasta 2026-09
-03:47:09 NL: eurostat, 321 meses hasta 2026-09
-03:47:09 AT: eurostat, 321 meses hasta 2026-09
-03:47:09 PL: eurostat, 320 meses hasta 2026-08
-03:47:09 PT: eurostat, 321 meses hasta 2026-09
-03:47:09 RO: eurostat, 320 meses hasta 2026-08
-03:47:09 SI: eurostat, 321 meses hasta 2026-09
-03:47:09 SK: eurostat, 321 meses hasta 2026-09
-03:47:09 FI: eurostat, 321 meses hasta 2026-09
-03:47:09 SE: eurostat, 320 meses hasta 2026-08
-03:47:09 UK: ons, 464 meses hasta 2026-08
-03:47:09 US: bls, 320 meses hasta 2026-09
-03:47:09 CA: statcan, 360 meses hasta 2026-08
-03:47:09 AR: indec, 25 meses hasta 2026-08
-03:47:09 escrito cpi.json (34 países)
-03:47:09 inflación en country-macro.json: 33 países
+03:53:14 Eurostat prc_hicp_minr coicop18=TOTAL (I25): 29 paises, hasta 2026-09
+03:53:14 EU: I15 enlazado con I25 (factor 1.3342, +8 meses hasta 2026-08)
+03:53:14 EA: I15 enlazado con I25 (factor 1.2875, +9 meses hasta 2026-09)
+03:53:14 BE: I15 enlazado con I25 (factor 1.3549, +9 meses hasta 2026-09)
+03:53:14 BG: I15 enlazado con I25 (factor 1.4250, +9 meses hasta 2026-09)
+03:53:14 CZ: I15 enlazado con I25 (factor 1.5544, +8 meses hasta 2026-08)
+03:53:14 DK: I15 enlazado con I25 (factor 1.2132, +8 meses hasta 2026-08)
+03:53:14 DE: I15 enlazado con I25 (factor 1.3194, +9 meses hasta 2026-09)
+03:53:14 EE: I15 enlazado con I25 (factor 1.6257, +9 meses hasta 2026-09)
+03:53:14 IE: I15 enlazado con I25 (factor 1.2186, +9 meses hasta 2026-09)
+03:53:14 EL: I15 enlazado con I25 (factor 1.2275, +9 meses hasta 2026-09)
+03:53:14 ES: I15 enlazado con I25 (factor 1.2665, +9 meses hasta 2026-09)
+03:53:14 FR: I15 enlazado con I25 (factor 1.2443, +9 meses hasta 2026-09)
+03:53:14 HR: I15 enlazado con I25 (factor 1.3782, +9 meses hasta 2026-09)
+03:53:14 IT: I15 enlazado con I25 (factor 1.2428, +9 meses hasta 2026-09)
+03:53:14 CY: I15 enlazado con I25 (factor 1.1806, +9 meses hasta 2026-09)
+03:53:14 LV: I15 enlazado con I25 (factor 1.5086, +9 meses hasta 2026-09)
+03:53:14 LT: I15 enlazado con I25 (factor 1.5599, +9 meses hasta 2026-09)
+03:53:14 LU: I15 enlazado con I25 (factor 1.2793, +9 meses hasta 2026-09)
+03:53:14 HU: I15 enlazado con I25 (factor 1.7396, +8 meses hasta 2026-08)
+03:53:14 MT: I15 enlazado con I25 (factor 1.2590, +9 meses hasta 2026-09)
+03:53:14 NL: I15 enlazado con I25 (factor 1.3586, +9 meses hasta 2026-09)
+03:53:14 AT: I15 enlazado con I25 (factor 1.3901, +9 meses hasta 2026-09)
+03:53:14 PL: I15 enlazado con I25 (factor 1.5367, +8 meses hasta 2026-08)
+03:53:14 PT: I15 enlazado con I25 (factor 1.2483, +9 meses hasta 2026-09)
+03:53:14 RO: I15 enlazado con I25 (factor 1.6005, +8 meses hasta 2026-08)
+03:53:14 SI: I15 enlazado con I25 (factor 1.3104, +9 meses hasta 2026-09)
+03:53:14 SK: I15 enlazado con I25 (factor 1.4923, +9 meses hasta 2026-09)
+03:53:14 FI: I15 enlazado con I25 (factor 1.2201, +9 meses hasta 2026-09)
+03:53:14 SE: I15 enlazado con I25 (factor 1.3235, +8 meses hasta 2026-08)
+03:53:16 EU: eurostat, 320 meses hasta 2026-08
+03:53:16 EA: eurostat, 321 meses hasta 2026-09
+03:53:16 BE: eurostat, 321 meses hasta 2026-09
+03:53:16 BG: eurostat, 321 meses hasta 2026-09
+03:53:16 CZ: eurostat, 320 meses hasta 2026-08
+03:53:16 DK: eurostat, 320 meses hasta 2026-08
+03:53:16 DE: eurostat, 321 meses hasta 2026-09
+03:53:16 EE: eurostat, 321 meses hasta 2026-09
+03:53:16 IE: eurostat, 321 meses hasta 2026-09
+03:53:16 EL: eurostat, 321 meses hasta 2026-09
+03:53:16 ES: eurostat, 321 meses hasta 2026-09
+03:53:16 FR: eurostat, 321 meses hasta 2026-09
+03:53:16 HR: eurostat, 321 meses hasta 2026-09
+03:53:16 IT: eurostat, 321 meses hasta 2026-09
+03:53:16 CY: eurostat, 321 meses hasta 2026-09
+03:53:16 LV: eurostat, 321 meses hasta 2026-09
+03:53:16 LT: eurostat, 321 meses hasta 2026-09
+03:53:16 LU: eurostat, 321 meses hasta 2026-09
+03:53:16 HU: eurostat, 320 meses hasta 2026-08
+03:53:16 MT: eurostat, 321 meses hasta 2026-09
+03:53:16 NL: eurostat, 321 meses hasta 2026-09
+03:53:16 AT: eurostat, 321 meses hasta 2026-09
+03:53:16 PL: eurostat, 320 meses hasta 2026-08
+03:53:16 PT: eurostat, 321 meses hasta 2026-09
+03:53:16 RO: eurostat, 320 meses hasta 2026-08
+03:53:16 SI: eurostat, 321 meses hasta 2026-09
+03:53:16 SK: eurostat, 321 meses hasta 2026-09
+03:53:16 FI: eurostat, 321 meses hasta 2026-09
+03:53:16 SE: eurostat, 320 meses hasta 2026-08
+03:53:16 UK: ons, 464 meses hasta 2026-08
+03:53:16 US: bls, 320 meses hasta 2026-09
+03:53:16 CA: statcan, 360 meses hasta 2026-08
+03:53:16 AR: indec, 25 meses hasta 2026-08
+03:53:16 escrito cpi.json (34 países)
+03:53:16 inflación en country-macro.json: 33 países
+03:53:17 contrato: 0 errores
+03:53:17 AR infl: {"v": 33.54, "y": 2026, "m": "2026-08", "src": "indec", "kind": "cpi"}
