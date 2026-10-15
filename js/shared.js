@@ -212,9 +212,15 @@
     var on = leafActive(i), d = i.d ? (i.d[lang] || i.d.es) : '';
     return '<a class="di-nav-item' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '"' + (on ? ' aria-current="page"' : '') + '><span class="di-nav-it">' + esc(i.label[lang] || i.label.es) + '</span>' + (d ? '<span class="di-nav-id">' + esc(d) + '</span>' : '') + '</a>';
   }
+  // bandera del país (emoji de indicadores regionales; EL y UK no son códigos ISO)
+  function flagOf(cc) {
+    cc = String(cc || '').toUpperCase(); if (!/^[A-Z]{2}$/.test(cc)) return '';
+    var iso = { EL: 'GR', UK: 'GB' }[cc] || cc;
+    return '<span class="di-nav-flag" aria-hidden="true">' + String.fromCodePoint(127397 + iso.charCodeAt(0), 127397 + iso.charCodeAt(1)) + '</span>';
+  }
   function chipHtml(i) {
     var on = leafActive(i);
-    return '<a class="di-nav-chip' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(i.label[lang] || i.label.es) + '</a>';
+    return '<a class="di-nav-chip' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + '"' + (on ? ' aria-current="page"' : '') + '>' + flagOf((i.query || '').slice(3)) + esc(i.label[lang] || i.label.es) + '</a>';
   }
   var REGIONS = [{ k: 'SA', l: L('Sudamérica', 'South America', 'Amérique du Sud', 'Sud America') }, { k: 'NA', l: L('Norteamérica', 'North America', 'Amérique du Nord', 'Nord America') }, { k: 'EU', l: L('Europa', 'Europe', 'Europe', 'Europa') }, { k: 'OT', l: L('Otros', 'Others', 'Autres', 'Altri') }];
   var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU', PL: 'EU', EL: 'EU', IE: 'EU', FI: 'EU', BG: 'EU', HR: 'EU', LT: 'EU', SK: 'EU', CH: 'EU' };

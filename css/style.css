@@ -2435,3 +2435,5 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 .rc-gh { font-size: 13px; margin: 16px 0 2px; }
 .di-scroll { overflow-x: auto; }
 @media (max-width: 560px) { .rc-bar { display: none; } .rc-kv { font-size: 19px; } }
+
+.di-nav-flag { margin-right: 7px; font-size: 1.1em; line-height: 1; }
