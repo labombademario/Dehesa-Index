@@ -10,6 +10,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 - script scripts/update-cap-nat.py usado por varios workflows: update-cap-fr.yml, update-cap-it.yml, update-cap-pl.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-nl-ghg-agri.yml, update-pl-ghg-agri.yml, update-pt-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
+- salida data/country-macro.json publicada por varios workflows: update-country-macro.yml, update-cpi.yml
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
 
 ## AR
@@ -184,7 +185,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-climate.yml | a mano | semanal (2) | update-climate.mjs | climate-history.json, climate.json | finish, validate-files |
 | update-country-macro.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-country-macro.py | country-macro.json | finish, validate-files |
 | update-country-stats.yml | a mano | semanal (3) | detect-revisions.py, update-country-stats.py | country-stats.json | finish, publish, validate-files |
-| update-cpi.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-cpi.py | cpi.json | finish, validate-files |
+| update-cpi.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-cpi.py | country-macro.json, cpi.json | finish, validate-files |
 | update-crop-insurance-ca.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-crop-insurance-ca.py | crop-insurance-ca.json | finish, validate-files |
 | update-crop-insurance.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-crop-insurance.py | crop-insurance.json | finish, validate-files |
 | update-crop-progress.yml | a mano | 2 veces/semana | update-crop-progress.mjs | crop-progress.json | finish, validate-files |
