@@ -665,6 +665,34 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 .di-emp-cta-body { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0 0 18px; max-width: 560px; }
 .di-btn-gold-solid { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 14px; font-weight: 700; text-decoration: none; }
 .di-emp-cta-note { display: block; font-size: 12px; color: var(--text-faint); font-style: italic; margin-top: 12px; }
+.di-emp-case { display: flex; flex-direction: column; gap: 0; padding: 18px 20px; }
+.di-emp-case-h { font-size: 12px; font-weight: 700; color: var(--text-faint); margin: 14px 0 6px; }
+.di-emp-list { margin: 0; padding-left: 18px; font-size: 13px; color: var(--text-tertiary); line-height: 1.55; }
+.di-emp-case-note { font-size: 12px; color: var(--text-faint); font-style: italic; margin: 10px 0 0; line-height: 1.5; }
+.di-emp-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: auto; padding-top: 14px; font-size: 13px; }
+@media (max-width: 720px) { .di-emp-audience-grid { grid-template-columns: 1fr; } }
+.di-emp-tabs { display: flex; align-items: center; gap: 6px; margin: 0 0 10px; flex-wrap: wrap; }
+.di-emp-tab, .di-emp-copy { padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); font-size: 12.5px; cursor: pointer; }
+.di-emp-tab.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.di-emp-copy { margin-left: auto; }
+.di-emp-tab:focus-visible, .di-emp-copy:focus-visible, .di-emp-pre:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.di-emp-pre { margin: 0; padding: 12px 14px; background: var(--surface-alt); border-radius: 8px; font-size: 12px; line-height: 1.5; max-height: 340px; overflow: auto; white-space: pre; }
+.di-emp-forms { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; margin-bottom: 24px; }
+@media (max-width: 860px) { .di-emp-forms { grid-template-columns: 1fr; } }
+.di-emp-form { padding: 24px 22px; scroll-margin-top: 80px; }
+.di-emp-field { display: block; margin: 0 0 12px; font-size: 13px; }
+.di-emp-field > span { display: block; font-weight: 600; }
+.di-emp-field em, .di-emp-checks legend em { font-weight: 400; font-style: normal; color: var(--text-faint); }
+.di-emp-field .di-compare-select { margin-top: 4px; }
+.di-emp-field textarea { resize: vertical; font-family: inherit; }
+.di-emp-checks { border: 0; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
+.di-emp-checks legend { font-weight: 600; margin-bottom: 6px; padding: 0; }
+.di-emp-checks label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.di-emp-actions { margin: 4px 0 0; }
+.di-emp-actions button { border: 0; cursor: pointer; font-family: inherit; }
+.di-emp-status { font-size: 13px; line-height: 1.5; margin: 12px 0 0; min-height: 1px; }
+.di-emp-status.bad { color: var(--negative); font-weight: 600; }
+.di-emp-status.ok { color: var(--text-muted); }
 
 
 /* Data Trust */

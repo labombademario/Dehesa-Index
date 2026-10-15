@@ -1,0 +1,5574 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-15T22:46:40Z",
+ "policy": {
+  "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
+  "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
+ },
+ "summary": {
+  "sources": 137,
+  "sourcesApto": 124,
+  "sourcesCondiciones": 9,
+  "sourcesNoApto": 4,
+  "datasets": 249,
+  "datasets_apto": 156,
+  "datasets_condiciones": 82,
+  "datasets_parcial": 4,
+  "datasets_no-apto": 3,
+  "datasets_reviewBeforeSelling": 68,
+  "derived": 42
+ },
+ "sources": [
+  {
+   "id": "aafc_drought",
+   "name": "Agriculture and Agri-Food Canada — Canadian Drought Monitor",
+   "url": "https://agriculture.canada.ca/en/agricultural-production/weather/canadian-drought-monitor",
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "conditions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos."
+  },
+  {
+   "id": "abares",
+   "name": "Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences)",
+   "url": "https://www.agriculture.gov.au/abares",
+   "country": "AU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (ABARES publication information)",
+   "licenseUrl": "https://www.agriculture.gov.au/abares/products/publication-information",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: ABARES | Dataset: Australian Crop Report, September 2026 (No. 219) | Date: 2026-09-01 | Licence: CC BY 4.0 | Original: https://doi.org/10.25814/5s62-8a44",
+   "conditions": "Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth Coat of Arms; no endorsement claims. Licence questions: copyright@aff.gov.au."
+  },
+  {
+   "id": "abs",
+   "name": "Australian Bureau of Statistics (Data API)",
+   "url": "https://www.abs.gov.au/",
+   "country": "AU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (ABS copyright statement)",
+   "licenseUrl": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer#copyright-and-creative-commons",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Australian Bureau of Statistics",
+   "conditions": "Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API specifically."
+  },
+  {
+   "id": "agence_bio",
+   "name": "Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr)",
+   "url": "https://www.data.gouv.fr/datasets/historique-detaille-des-surfaces-cheptels-et-nombre-doperateurs-par-departement",
+   "country": "FR",
+   "licenseId": "etalab-2.0",
+   "licenseName": "Licence Ouverte / Open Licence version 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Agence BIO / organismes certificateurs, données publiées sur data.gouv.fr sous Licence Ouverte 2.0",
+   "conditions": "Citar la fuente y la fecha de la última actualización. Solo se usan los ficheros por departamento: la ficha «par région» de data.gouv.fr no declara licencia."
+  },
+  {
+   "id": "agreste_ssp",
+   "name": "France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer)",
+   "url": "https://www.data.gouv.fr/datasets/agreste-valeur-venale-des-terres/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : SSP (Agreste) – FNSafer, Valeur vénale des terres, sous Licence Ouverte",
+   "conditions": "Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer."
+  },
+  {
+   "id": "alberta_ag",
+   "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "url": "https://open.alberta.ca/",
+   "country": "CA",
+   "licenseId": "OGL-Alberta",
+   "licenseName": "Open Government Licence – Alberta (Government of Alberta information; third-party material within the reviews excluded)",
+   "licenseUrl": "https://open.alberta.ca/licence",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "conditions": "No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; alberta.ca pages without an OGL-Alberta line do not allow commercial reproduction without permission."
+  },
+  {
+   "id": "ama_agrardiesel",
+   "name": "AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG",
+   "url": "https://www.ama.at/media/h04ohvo1/infoblatt_agrardieselrueckverguetung_2026-2027.pdf",
+   "country": "AT",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Dato legal y administrativo (tipo de devolución y litros a tanto alzado); § 7 UrhG austriaco: las leyes y actos oficiales no tienen derechos de autor",
+   "licenseUrl": "https://www.ris.bka.gv.at/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "AMA, Infoblatt Agrardieselrückvergütung 2026 und 2027; § 7 MinStG"
+  },
+  {
+   "id": "argentina_datos_abiertos",
+   "name": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",
+   "url": "https://datos.gob.ar/",
+   "country": "AR",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Secretaria de Agricultura, Ganaderia y Pesca / Ministerio de Economia / INDEC, Argentina (datos.gob.ar), licencia CC BY 4.0.",
+   "conditions": "Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan."
+  },
+  {
+   "id": "bank_of_canada",
+   "name": "Bank of Canada (Valet API)",
+   "url": "https://www.bankofcanada.ca/valet/",
+   "country": "CA",
+   "licenseId": "CUSTOM",
+   "licenseName": "Bank of Canada website terms (reproduction of content)",
+   "licenseUrl": "https://www.bankofcanada.ca/terms/",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "conditional",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Bank of Canada",
+   "conditions": "Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank website; exchange rates are indicative only; the Valet API may be rate-limited; no logos or banknote images.",
+   "reviewBeforeSelling": true
+  },
+  {
+   "id": "bea",
+   "name": "U.S. Bureau of Economic Analysis",
+   "url": "https://www.bea.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); BEA citation request",
+   "licenseUrl": "https://bea.gov/help/faq/145",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Bureau of Economic Analysis",
+   "conditions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido."
+  },
+  {
+   "id": "bfs_ch_open",
+   "name": "Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices",
+   "url": "https://opendata.swiss/en/organization/bundesamt-fur-statistik-bfs",
+   "country": "CH",
+   "licenseId": "OPENDATA-SWISS-TERMS-BY",
+   "licenseName": "opendata.swiss: Open use. Must provide the source (terms_by)",
+   "licenseUrl": "https://opendata.swiss/en/terms-of-use#terms_by",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Swiss Federal Statistical Office (FSO/BFS); price indices: Agristat (Swiss Farmers' Union) / FSO. Dataset title and link.",
+   "conditions": "Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each run and stops otherwise). The BFS 'Schätzung' (estimate) year is never published."
+  },
+  {
+   "id": "bis",
+   "name": "Bank for International Settlements (central bank policy rates)",
+   "url": "https://data.bis.org/",
+   "country": "INT",
+   "licenseId": "BIS-TERMS",
+   "licenseName": "BIS Terms of permitted use of BIS statistics",
+   "licenseUrl": "https://www.bis.org/terms_statistics.htm",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "conditional",
+   "derivatives": "conditional",
+   "redistribution": "conditional",
+   "attribution": "Source: BIS",
+   "conditions": "Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation framing; API access may be suspended without notice.",
+   "reviewBeforeSelling": true
+  },
+  {
+   "id": "ble",
+   "name": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
+   "url": "https://open-data.ble.de/",
+   "country": "DE",
+   "licenseId": "CUSTOM",
+   "licenseName": "BLE Open Data (no explicit dataset licence found; published as green by owner decision, cited)",
+   "licenseUrl": "https://www.ble.de/DE/Service/Open-Data/open-data_node.html",
+   "verdict": "no-apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attribution": "Quelle: Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
+   "conditions": "open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de.",
+   "why": "sin confirmar: uso comercial, derivados, redistribución"
+  },
+  {
+   "id": "bls",
+   "name": "U.S. Bureau of Labor Statistics",
+   "url": "https://www.bls.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); BLS citation request",
+   "licenseUrl": "https://www.bls.gov/opub/copyright-information.htm",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Bureau of Labor Statistics",
+   "conditions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido."
+  },
+  {
+   "id": "bmluk_hydrographie",
+   "name": "BMLUK — Grundwasser Aktuell Österreich (hydrographischer Dienst, gis.lfrz.gv.at)",
+   "url": "https://www.data.gv.at/",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (ficha de data.gv.at)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Datenquelle: BMLUK, Grundwasser Aktuell Österreich",
+   "conditions": "Citar la fuente."
+  },
+  {
+   "id": "boe_es",
+   "name": "Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada",
+   "url": "https://www.boe.es/",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "BOE reuse conditions (Agency standard licence, Resolution of 27 June 2024): commercial use and derivatives allowed with attribution",
+   "licenseUrl": "https://www.boe.es/informacion/aviso_legal/index.php",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Basado en datos de la Agencia Estatal Boletín Oficial del Estado (https://www.boe.es). Texto consolidado de carácter meramente informativo.",
+   "conditions": "No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legislación consolidada indicar expresamente que es un texto consolidado de carácter meramente informativo; mencionar la fecha de la última actualización; identificar claramente las modificaciones y adaptaciones propias. Solo son oficiales y auténticos los textos del diario oficial."
+  },
+  {
+   "id": "bundesanzeiger",
+   "name": "Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes",
+   "url": "https://www.bundesanzeiger.de/",
+   "country": "DE",
+   "licenseId": "CUSTOM",
+   "licenseName": "Amtliche Werke are not protected by copyright (§ 5 Abs. 1 UrhG)",
+   "licenseUrl": "https://www.gesetze-im-internet.de/urhg/__5.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle: Bundesanzeiger, amtlicher Teil, Bekanntmachung der tatsächlichen Einheitsbeträge (BAnz AT 08.12.2023 B5, BAnz AT 29.11.2024 B3, BAnz AT 01.12.2025 B6). Auszug.",
+   "conditions": "Only the amtlicher Teil (official notices of the Federal Government) is used, never the commercial parts of the Bundesanzeiger. The basis is the statutory exclusion of official notices from copyright; the site terms were not read in full. Figures are extracts transcribed by hand: cite the BAnz reference. Not readable from GitHub runners (session-based search), so there is no automated refresh."
+  },
+  {
+   "id": "cbs_nl",
+   "name": "Statistics Netherlands (CBS StatLine)",
+   "url": "https://opendata.cbs.nl/",
+   "country": "NL",
+   "licenseId": "CUSTOM",
+   "licenseName": "CBS: CC BY 4.0 content; open data re-use with source citation",
+   "licenseUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: CBS (Statistics Netherlands), StatLine. Own calculations where we derive values.",
+   "conditions": "Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read."
+  },
+  {
+   "id": "cbsa_tariff",
+   "name": "Canada Border Services Agency — Customs Tariff",
+   "url": "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html",
+   "country": "CA",
+   "licenseId": "CUSTOM",
+   "licenseName": "Canada.ca terms apply by default; no explicit licence for the Customs Tariff (published as green by owner decision, cited)",
+   "licenseUrl": "https://www.canada.ca/en/transparency/terms.html",
+   "verdict": "no-apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attribution": null,
+   "conditions": "Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduction is allowed with source and URL.",
+   "why": "sin confirmar: uso comercial, derivados, redistribución"
+  },
+  {
+   "id": "census",
+   "name": "U.S. Census Bureau",
+   "url": "https://www.census.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (open data); Census Bureau citation",
+   "licenseUrl": "https://www.census.gov/about/policies/open-gov.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Census Bureau, Population Estimates Program",
+   "conditions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido."
+  },
+  {
+   "id": "cftc",
+   "name": "U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment)",
+   "url": "https://publicreporting.cftc.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); CFTC acknowledgement requested",
+   "licenseUrl": "https://www.cftc.gov/WebPolicy/index.htm",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Commodity Futures Trading Commission (CFTC), Commitments of Traders",
+   "conditions": "Acknowledgement of the CFTC requested. Contributed or licensed third-party materials on cftc.gov may be copyrighted; the Commitments of Traders data are CFTC's own reports. No seal/logo use."
+  },
+  {
+   "id": "cgc",
+   "name": "Canadian Grain Commission — Grain Statistics Weekly",
+   "url": "https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/",
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "conditions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos."
+  },
+  {
+   "id": "crea_fondiario",
+   "name": "Italy — CREA, Indagine sul mercato fondiario in Italia (Banca Dati dei Valori Fondiari)",
+   "url": "https://www.crea.gov.it/en/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (declarada por CREA en la página de la indagine)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: CREA, Indagine sul mercato fondiario in Italia (CC BY 4.0)",
+   "conditions": "Citar la fuente (CREA, Indagine sul mercato fondiario); las elaboraciones propias deben acreditarse como tales. CREA advierte de que las cifras son indicaciones generales del mercado y no sustituyen una tasación; el rapporto 2024 revisó superficies y regiones agrarias y sus valores 2024 no son comparables con la serie histórica."
+  },
+  {
+   "id": "cso_ie",
+   "name": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05)",
+   "url": "https://data.cso.ie/",
+   "country": "IE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Central Statistics Office, Ireland (CC BY 4.0)",
+   "conditions": "El logotipo del CSO tiene límites de uso propios; Dehesa Index no lo usa."
+  },
+  {
+   "id": "csp_lv",
+   "name": "Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk)",
+   "url": "https://data.stat.gov.lv/",
+   "country": "LV",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (CC BY 4.0), as stated in the portal's licence and copyright notice",
+   "licenseUrl": "https://stat.gov.lv/en/terms",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: CSP Latvia (Central Statistical Bureau of Latvia), official statistics portal."
+  },
+  {
+   "id": "csu_cz",
+   "name": "Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area)",
+   "url": "https://data.csu.gov.cz/opendata/",
+   "country": "CZ",
+   "licenseId": "CZ-OPENDATA-FREE",
+   "licenseName": "data.gov.cz terms of use declared per dataset: no copyright work, no protected database, no sui generis database right, no personal data",
+   "licenseUrl": "https://data.gov.cz/podmínky-užití/neobsahuje-autorská-díla/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Czech Statistical Office (CSU), open data DataStat.",
+   "conditions": "None declared. Credit is given anyway."
+  },
+  {
+   "id": "defra",
+   "name": "UK Defra (gov.uk agricultural statistics)",
+   "url": "https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.data.gov.uk/dataset/c6db55f3-d2ed-4704-9ebf-5f514f081031/agricultural_price_index",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
+   "conditions": "Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agricultural Price Index, leche (UK milk prices and composition), sacrificio y producción de carne (cattle, sheep and pig slaughter), Farm Business Income, censos de ganado, producción de cereales y colza, huevos (incluido el comercio), aves, lácteos (disponibilidad, uso, producción y suministros) y Agriculture in the United Kingdom (capítulos 2 a 10 y 12 a 14; queda fuera el 11): todos «OGL v3.0 salvo indicación contraria» en GOV.UK. NO cubre las capas geoespaciales de Natural England/Defra con Non-Commercial Government Licence, las parcelas RPA para otros usuarios ni la Second Land Utilisation Survey (CC BY-NC-SA): ver defra_ncgl_geo y defra_rpa_land."
+  },
+  {
+   "id": "destatis",
+   "name": "Destatis (GENESIS-Online)",
+   "url": "https://www-genesis.destatis.de/",
+   "country": "DE",
+   "licenseId": "DL-DE-BY-2.0",
+   "licenseName": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+   "licenseUrl": "https://www.destatis.de/EN/Service/Legal-Notice/CopyrightGENESISOnlineDatabase.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Datenquelle: Statistisches Bundesamt (Destatis), Genesis-Online; Datenlizenz by-2-0",
+   "conditions": "Modifications must be marked as such."
+  },
+  {
+   "id": "dgec_prix_petroliers",
+   "name": "Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers",
+   "url": "https://www.ecologie.gouv.fr/politiques-publiques/prix-produits-petroliers",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte Etalab 2.0 (mentions légales de ecologie.gouv.fr)",
+   "licenseUrl": "https://www.ecologie.gouv.fr/mentions-legales",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Ministère de la Transition écologique (DGEC), prix des produits pétroliers",
+   "conditions": "Mencionar la fuente y la fecha de la última actualización."
+  },
+  {
+   "id": "dila_jorf",
+   "name": "DILA — Journal officiel de la République française (données ouvertes JORF)",
+   "url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/",
+   "country": "FR",
+   "licenseId": "CUSTOM",
+   "licenseName": "Réutilisation gratuite des bases de données juridiques de la DILA (Arrêté du 24 juin 2014); API sous Licence Ouverte 2.0",
+   "licenseUrl": "https://www.legifrance.gouv.fr/contenu/pied-de-page/open-data-et-api",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Journal officiel de la République française (DILA, données ouvertes JORF), arrêtés du ministère de l'Agriculture (références NOR dans data/cap/fr/amounts.json) et textes du code rural. Extraits.",
+   "conditions": "The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse under the Arrêté du 24 juin 2014 and that the API is under the Licence Ouverte 2.0. The rest of the usage conditions on that page (second bullet) was cut off and not read, so we cite the source and the arrêté reference as a precaution. Amounts are extracts transcribed by hand from the JORF article texts; the Journal officiel prevails. We read the DILA open-data archives, not the Légifrance site or the PISTE API, so there is no account or API key. Amounts and rules are transcribed by hand; a weekly job only lists the titles of new JORF texts that mention the CAP (candidates for review) and stores no text."
+  },
+  {
+   "id": "dre_pt",
+   "name": "Imprensa Nacional-Casa da Moeda — Diário da República (Portarias n.º 54-D, 54-E y 54-L/2023, PEPAC) y GPP/IFAP",
+   "url": "https://diariodarepublica.pt/",
+   "country": "PT",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial (art. 8, n.º 1 del Código do Direito de Autor e dos Direitos Conexos: los textos oficiales no gozan de protección)",
+   "licenseUrl": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1985-34436175",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: Diário da República, Portarias n.º 54-D/2023, 54-E/2023 e 54-L/2023 (PEPAC Portugal); GPP e IFAP. Extratos.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Diário da República. El art. 8 n.º 1 se leyó en una copia del Código publicada por la SPA, no en la versión consolidada oficial, y no se leyeron los términos de uso del Diário da República, del IFAP ni del GPP: la confianza es media. Las portarias consolidadas del PEPACC no tienen valor jurídico."
+  },
+  {
+   "id": "dst_dk",
+   "name": "Statistics Denmark (StatBank)",
+   "url": "https://www.statbank.dk/",
+   "country": "DK",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (Statistics Denmark source-reference rules)",
+   "licenseUrl": "https://www.dst.dk/en/presse/kildeangivelse",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Statistics Denmark – StatBank.dk/<table code>. For modified data: 'Own calculations based on data from Statistics Denmark.'",
+   "conditions": "Disclose modifications; the Statistics Denmark logo cannot be used."
+  },
+  {
+   "id": "dwd_cdc",
+   "name": "Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de)",
+   "url": "https://opendata.dwd.de/climate_environment/CDC/",
+   "country": "DE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.txt",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Datenbasis: Deutscher Wetterdienst"
+  },
+  {
+   "id": "ec_eambrosia",
+   "name": "Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE)",
+   "url": "https://webgate.ec.europa.eu/eambrosia-api/",
+   "country": "EU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (aviso legal de los sitios de la Comisión Europea)",
+   "licenseUrl": "https://commission.europa.eu/legal-notice_en",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "© Unión Europea, eAmbrosia (registro de indicaciones geográficas de la UE), CC BY 4.0.",
+   "conditions": "No se publican los datos de contacto de los consejos reguladores. Logos y marcas excluidos."
+  },
+  {
+   "id": "ecb",
+   "name": "European Central Bank (euro reference rates, ECB Data Portal)",
+   "url": "https://data.ecb.europa.eu/",
+   "country": "EU",
+   "licenseId": "ESCB-REUSE",
+   "licenseName": "ECB statistics usage policy (ESCB reuse policy)",
+   "licenseUrl": "https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "conditional",
+   "redistribution": "yes",
+   "attribution": "Source: ECB statistics",
+   "conditions": "Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed field (changePct, conversions) is labelled as a Dehesa calculation and the original values are never altered."
+  },
+  {
+   "id": "edo_cdi",
+   "name": "European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS)",
+   "url": "https://drought.emergency.copernicus.eu/",
+   "country": "EU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: European Drought Observatory (EDO), https://drought.emergency.copernicus.eu © European Commission - JRC",
+   "conditions": "Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission. Country polygons come from Natural Earth (public domain)."
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration (Open Data API)",
+   "url": "https://www.eia.gov/opendata/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); EIA Copyrights and Reuse policy and API Terms of Service",
+   "licenseUrl": "https://www.eia.gov/about/copyrights_reuse.php",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "conditional",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Energy Information Administration",
+   "conditions": "Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API key and call limits."
+  },
+  {
+   "id": "enesa",
+   "name": "Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario",
+   "url": "https://www.mapa.gob.es/es/enesa/datos_sobre_el_seguro/informes_de_contratacion_del_seguro_agrario/",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "ENESA: full or partial use allowed with explicit attribution (note in each report); MAPA legal notice",
+   "licenseUrl": "https://www.mapa.gob.es/es/atencion-al-ciudadano/aviso-legal",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Informe de Contratación del Seguro Agrario nº NN, ENESA (MAPA). Datos de Agroseguro; elaboración ENESA",
+   "conditions": "Citar el informe como 'Informe de Contratación del Seguro Agrario nº NN ENESA'. Tablas con 'Fuente Agroseguro. Elaboración ENESA': solo se copian las cifras de la tabla Grandes cifras, sin reelaborarlas. Serie histórica cerrada (último informe nº 31, 1.er semestre 2022)."
+  },
+  {
+   "id": "epa_ie",
+   "name": "Environmental Protection Agency (EPA) Irlanda — indicadores ambientales EIIA13 y EIIA14, publicados por el CSO",
+   "url": "https://data.gov.ie/dataset/eiia14-ireland-nitrates-in-groundwater",
+   "country": "IE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Environmental Protection Agency (EPA), Ireland, vía Central Statistics Office (CC BY 4.0)"
+  },
+  {
+   "id": "esbirka_cz",
+   "name": "Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb.",
+   "url": "https://www.e-sbirka.cz/",
+   "country": "CZ",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de una norma (§ 3 de la Ley 121/2000 Sb.: la protección no se extiende a las normas jurídicas y resoluciones de los órganos públicos)",
+   "licenseUrl": "https://mk.gov.cz/doc/cms_library/autorsky-zakon_uz_po-novele-429_2022-16782.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Zdroj: Sbírka zákonů, nařízení vlády č. 83/2023 Sb. ve znění č. 45/2026 Sb. a 167/2026 Sb.; metodické příručky Ministerstva zemědělství. Výňatky.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda la Sbírka zákonů. El texto se leyó en una copia editorial (epravo.cz), no en e-Sbírka, y la maquetación de esa copia puede tener derechos propios: no se copia. Las condiciones de jóvenes y asociadas y el plazo de retraso salen de guías del Ministerio de Agricultura, que no son derecho; se muestran como hechos con cita. El § 3 se leyó en paráfrasis de la herramienta."
+  },
+  {
+   "id": "eu_agrifood",
+   "name": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "url": "https://agridata.ec.europa.eu/",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "European Commission reuse policy (Decision 2011/833/EU)",
+   "licenseUrl": "https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:330:0039:0042:EN:PDF",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "conditional",
+   "redistribution": "yes",
+   "attribution": "Source: European Commission (Agri-food data portal)",
+   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations."
+  },
+  {
+   "id": "eu_oil_bulletin",
+   "name": "European Commission — Weekly Oil Bulletin (DG ENER)",
+   "url": "https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "European Commission reuse policy (Decision 2011/833/EU)",
+   "licenseUrl": "https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:330:0039:0042:EN:PDF",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "conditional",
+   "redistribution": "yes",
+   "attribution": "Source: European Commission (Weekly Oil Bulletin)",
+   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations."
+  },
+  {
+   "id": "eu_pdo_candiago",
+   "name": "Candiago et al. (2022) - EU-PDO: inventario geoespacial de las DOP de vino de Europa (Scientific Data; figshare)",
+   "url": "https://doi.org/10.6084/m9.figshare.c.5877659.v1",
+   "country": "EU",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons CC0 1.0 (dominio publico)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Candiago, S. et al. (2022) A geospatial inventory of regulatory information for wine protected designations of origin in Europe. Scientific Data 9, 389 (datos en figshare, CC0). Contorno simplificado por Dehesa Index.",
+   "conditions": "El contorno se deriva de municipios de EuroRegionalMap (EuroGeographics) y del registro eAmbrosia a nov-2021: es orientativo. Solo DOP de vino, sin IGP."
+  },
+  {
+   "id": "eu_taric",
+   "name": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
+   "url": "https://taxation-customs.ec.europa.eu/customs/customs-tariff_en",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "European Commission reuse policy (Decision 2011/833/EU)",
+   "licenseUrl": "https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:330:0039:0042:EN:PDF",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "conditional",
+   "redistribution": "yes",
+   "attribution": "Source: European Commission (TARIC / Customs Tariff)",
+   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations."
+  },
+  {
+   "id": "eur_lex",
+   "name": "EUR-Lex (Publications Office of the European Union) — EU legislation",
+   "url": "https://eur-lex.europa.eu/",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Reuse of Commission documents (Commission Decision 2011/833/EU); © European Union",
+   "licenseUrl": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: EUR-Lex, Regulation (EU) 2021/2115, consolidated text. © European Union. Only the Official Journal is authentic.",
+   "conditions": "Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish figures extracted from the annexes of the consolidated text, not the legal text."
+  },
+  {
+   "id": "eurostat",
+   "name": "Eurostat",
+   "url": "https://ec.europa.eu/eurostat/",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Eurostat copyright/licence policy (Commission Decision 2011/833/EU)",
+   "licenseUrl": "https://ec.europa.eu/eurostat/en/help/copyright-notice",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "conditional",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "conditions": "Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded.",
+   "reviewBeforeSelling": true
+  },
+  {
+   "id": "eurostat_comext",
+   "name": "Eurostat — Comext international trade in goods",
+   "url": "https://ec.europa.eu/eurostat/web/international-trade-in-goods",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Eurostat copyright/licence policy (Decision 2011/833/EU), with trade-data exceptions",
+   "licenseUrl": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Copyright/licence_policy",
+   "verdict": "condiciones",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "conditional",
+   "derivatives": "yes",
+   "redistribution": "conditional",
+   "attribution": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
+   "conditions": "Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep Austria at coarser product level).",
+   "reviewBeforeSelling": true
+  },
+  {
+   "id": "fek_gr",
+   "name": "Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023",
+   "url": "https://www.et.gr/",
+   "country": "EL",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de un acto normativo (art. 2(5) de la Ley griega 2121/1993: los textos legislativos, administrativos y judiciales oficiales no son objeto de derechos de autor)",
+   "licenseUrl": "https://www.lawspot.gr/nomothesia/n-2121-1993/arthro-2-nomos-2121-1993-antikeimeno-toy-dikaiomatos/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Πηγή: Εφημερίς της Κυβερνήσεως, Υ.Α. 519/135068/2023 (ΦΕΚ Β΄ 3071/9-5-2023) και 520/135074/2023 (ΦΕΚ Β΄ 3072/9-5-2023). Αποσπάσματα.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y el art. 2(5) de la ley 2121/1993 en una copia de lawspot.gr, no en el ΦΕΚ. Las fechas de la solicitud única 2026 se leyeron en una copia de la decisión de la AADE en taxheaven.gr; la reforma Α.458/2025 y las decisiones de importes de ayudas asociadas, en copias de forin.gr. El cambio de solape de parcelas 2026 procede de prensa (taxrevenue.gr) y se cita como tal. No se han revisado los términos de uso de esos sitios. Confianza media."
+  },
+  {
+   "id": "foag_ch",
+   "name": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
+   "url": "https://www.agrarmarktdaten.ch",
+   "country": "CH",
+   "licenseId": "OPENDATA-SWISS-BY",
+   "licenseName": "opendata.swiss: Open use. Must provide the source (terms_by)",
+   "licenseUrl": "https://opendata.swiss/en/terms-of-use",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Federal Office for Agriculture FOAG/BLW, Agricultural market data (Marktzahlen), via LINDAS / opendata.swiss | Licence: opendata.swiss Open use, must provide the source | Original: https://opendata.swiss/en/organization/bundesamt-fur-landwirtschaft-blw",
+   "conditions": "Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same cubes (EU, Austria, Italy, USA, NZ...; CLAL, AMA, BLE, FranceAgriMer...) are not used."
+  },
+  {
+   "id": "franceagrimer",
+   "name": "FranceAgriMer (VISIONet)",
+   "url": "https://visionet.franceagrimer.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (Etalab) / FranceAgriMer public data: free reuse with attribution",
+   "licenseUrl": "https://www.data.gouv.fr/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
+   "conditions": "Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre derechos de terceros. Licencia por conjunto/recurso pendiente de comprobar para los recursos listados en notes."
+  },
+  {
+   "id": "geosphere_austria",
+   "name": "GeoSphere Austria — Data Hub (WINFORE v2, SPEI)",
+   "url": "https://data.hub.geosphere.at/dataset/winfore-v2-1d-1km",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (datos accesibles sin registro)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Datenquelle: GeoSphere Austria – WINFORE (CC BY 4.0)",
+   "conditions": "Citar la fuente e indicar los cambios."
+  },
+  {
+   "id": "gesetze_im_internet",
+   "name": "Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV",
+   "url": "https://www.gesetze-im-internet.de/",
+   "country": "DE",
+   "licenseId": "CUSTOM",
+   "licenseName": "Amtliche Werke are not protected by copyright (§ 5 Abs. 1 UrhG)",
+   "licenseUrl": "https://www.gesetze-im-internet.de/urhg/__5.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle: Gesetze im Internet (Bundesministerium der Justiz / Bundesamt für Justiz), GAP-Direktzahlungen-Verordnung, Anlagen 3 bis 7. Auszug.",
+   "conditions": "The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis is the statutory exclusion of laws and regulations from copyright. Our figures are extracts transcribed by hand, not the authentic text: always cite the annex. The site is not readable from GitHub runners, so there is no automated refresh."
+  },
+  {
+   "id": "gisco_nuts",
+   "name": "Eurostat GISCO — NUTS 2021 administrative boundaries (© EuroGeographics)",
+   "url": "https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics",
+   "country": "EU",
+   "licenseId": "EC-REUSE-EUROGEOGRAPHICS",
+   "licenseName": "European Commission reuse policy; © EuroGeographics for the administrative boundaries",
+   "licenseUrl": "https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Administrative boundaries: © EuroGeographics, © UN-FAO, © Turkstat; source: Eurostat GISCO",
+   "conditions": "The administrative boundaries are free to use for any purpose with the attribution above (GISCO statistical units terms). We simplify the polygons."
+  },
+  {
+   "id": "gov_ie_dafm",
+   "name": "Department of Agriculture, Food and the Marine (gov.ie) — BISS, CRISS y CISYF",
+   "url": "https://www.gov.ie/en/service/4ae67-basic-income-support-for-sustainability-biss-scheme/",
+   "country": "IE",
+   "licenseId": "CUSTOM",
+   "licenseName": "Páginas oficiales del Gobierno de Irlanda (gov.ie): sin licencia explícita leída; uso de hechos con cita aceptado por el titular de Dehesa Index",
+   "licenseUrl": "https://www.gov.ie/en/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Department of Agriculture, Food and the Marine (gov.ie), BISS 2026, CRISS and CISYF service pages. Extracts.",
+   "conditions": "Las reglas son un resumen propio con cita; no se copia texto. Irlanda no excluye la legislación del copyright (Copyright and Related Rights Act 2000, ss. 191-192) y no se ha leído la política de reutilización de gov.ie; no hay S.I. con las reglas. Los textos de Irish Statute Book van bajo la Oireachtas (Open Data) PSI Licence (CC BY 4.0)."
+  },
+  {
+   "id": "gus_poland",
+   "name": "Statistics Poland (GUS) - Local Data Bank (BDL)",
+   "url": "https://bdl.stat.gov.pl/",
+   "country": "PL",
+   "licenseId": "GUS-COPYRIGHT-NOTICE",
+   "licenseName": "Statistics Poland copyright notice: copying and own works allowed with attribution",
+   "licenseUrl": "https://stat.gov.pl/en/copyright/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Statistics Poland (GUS), Local Data Bank (BDL). Elaboracion propia de dehesaindex.com cuando los datos se convierten (dt a t).",
+   "conditions": "Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos."
+  },
+  {
+   "id": "hmrc_govuk",
+   "name": "HM Revenue & Customs - GOV.UK VAT guidance",
+   "url": "https://www.gov.uk/guidance/rates-of-vat-on-different-goods-and-services",
+   "country": "GB",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 (HM Revenue & Customs).",
+   "conditions": "Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra."
+  },
+  {
+   "id": "hmrc_uktradeinfo",
+   "name": "HM Revenue & Customs - UK Trade Info (OTS, API OData)",
+   "url": "https://www.uktradeinfo.com/api-documentation/",
+   "country": "GB",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 (HM Revenue & Customs, UK Trade Info).",
+   "conditions": "Third-party material and logos excluded."
+  },
+  {
+   "id": "hubeau_ades",
+   "name": "ADES (BRGM) — Qualité des eaux souterraines, vía Hub'Eau",
+   "url": "https://ades.eaufrance.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (datos públicos del sistema de información sobre el agua)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : ADES (BRGM), via Hub'Eau",
+   "conditions": "Mencionar la fuente y la fecha de la última actualización."
+  },
+  {
+   "id": "hubeau_onde",
+   "name": "OFB — Observatoire national des étiages (ONDE), vía Hub'Eau",
+   "url": "https://onde.eaufrance.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (datos públicos del sistema de información sobre el agua)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : OFB, Observatoire national des étiages (ONDE), via Hub'Eau",
+   "conditions": "Mencionar la fuente y la fecha de la última actualización."
+  },
+  {
+   "id": "imgw_pib",
+   "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne)",
+   "url": "https://danepubliczne.imgw.pl/",
+   "country": "PL",
+   "licenseId": "PL-PSI-IMGW",
+   "licenseName": "Reutilización libre y gratuita citando la fuente (Regulamin udostępniania danych IMGW-PIB; ustawa o otwartych danych)",
+   "licenseUrl": "https://danepubliczne.imgw.pl/docs/regulamin_udostepniania_danych.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy (dane przetworzone przez Dehesa Index)",
+   "conditions": "Citar la fuente con la frase del reglamento e indicar que los datos se han procesado."
+  },
+  {
+   "id": "inao_aires",
+   "name": "INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr)",
+   "url": "https://www.data.gouv.fr/datasets/aires-geographiques-des-aoc-aop",
+   "country": "FR",
+   "licenseId": "ETALAB-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "INAO, aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr), Licence Ouverte 2.0.",
+   "conditions": "Logos y marcas excluidos."
+  },
+  {
+   "id": "inao_siqo",
+   "name": "INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr)",
+   "url": "https://www.data.gouv.fr/datasets/delimitation-des-aires-geographiques-des-siqo",
+   "country": "FR",
+   "licenseId": "ETALAB-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "INAO, delimitación de las áreas geográficas de los SIQO y referencial de productos SIQO (data.gouv.fr), Licence Ouverte 2.0.",
+   "conditions": "Logos y marcas excluidos."
+  },
+  {
+   "id": "indec",
+   "name": "Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar",
+   "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31",
+   "country": "AR",
+   "licenseId": "CC-BY-INDEC",
+   "licenseName": "INDEC: Creative Commons, reutilizacion con atribucion (Politicas de difusion estadistica, cap. XI)",
+   "licenseUrl": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/politica_difusion_indec.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: INDEC, Indice de Precios al Consumidor (IPC) nacional, nivel general, base dic-2016=100; serie 148.3_INIVELNAL_DICI_M_26 de datos.gob.ar. La inflacion interanual es un calculo propio sobre el indice.",
+   "conditions": "Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios: la inflacion interanual es calculo propio. El ultimo mes es provisional segun el INDEC."
+  },
+  {
+   "id": "indec_ar",
+   "name": "Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP)",
+   "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-32",
+   "country": "AR",
+   "licenseId": "CC-BY-INDEC",
+   "licenseName": "INDEC: Creative Commons, reutilizacion con atribucion (Politicas de difusion estadistica, cap. XI)",
+   "licenseUrl": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/politica_difusion_indec.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: INDEC, Sistema de Indices de Precios Mayoristas (SIPM). Indices reproducidos sin cambios salvo el formato.",
+   "conditions": "Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios si los hubiere. El ultimo mes es provisional segun el INDEC."
+  },
+  {
+   "id": "ine_es",
+   "name": "Instituto Nacional de Estadística (España)",
+   "url": "https://www.ine.es/",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Reconocimiento 4.0 (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Sitio web del INE: www.ine.es (con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»)",
+   "conditions": "Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»); mencionar la fecha de última actualización si figura en el original; no insinuar que el INE participa, patrocina o apoya la reutilización; uso bajo cuenta y riesgo del reutilizador."
+  },
+  {
+   "id": "ine_pt",
+   "name": "INE — Statistics Portugal",
+   "url": "https://www.ine.pt/",
+   "country": "PT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (INE datasets on dados.gov.pt)",
+   "licenseUrl": "https://dados.gov.pt/en/datasets/populacao-residente-n-o-2/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: Instituto Nacional de Estatística (INE), CC BY 4.0",
+   "conditions": "INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt."
+  },
+  {
+   "id": "insee",
+   "name": "Institut national de la statistique et des études économiques (INSEE)",
+   "url": "https://www.insee.fr/",
+   "country": "FR",
+   "licenseId": "Etalab-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.insee.fr/en/information/2409130",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Insee",
+   "conditions": "Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información."
+  },
+  {
+   "id": "irs_sales_tax",
+   "name": "U.S. Internal Revenue Service - Optional State Sales Tax Tables",
+   "url": "https://www.irs.gov/instructions/i1040sca",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain)",
+   "licenseUrl": "https://www.irs.gov/privacy-disclosure/irs-website-copyright-and-use-policy",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Internal Revenue Service, Instructions for Schedule A (Form 1040) (2025).",
+   "conditions": "Only the state general sales tax rate is used; local rates are not included. Not tax advice."
+  },
+  {
+   "id": "ispra",
+   "name": "ISPRA — Stato di severità idrica a scala nazionale",
+   "url": "https://www.isprambiente.gov.it/pre_meteo/idro/SeverIdrica.html",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (note legali di ISPRA)",
+   "licenseUrl": "https://www.isprambiente.gov.it/it/note-legali",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: ISPRA, stato di severità idrica (Osservatori distrettuali permanenti)",
+   "conditions": "Citar la fuente y, si es posible, el enlace a la página original."
+  },
+  {
+   "id": "istat",
+   "name": "Italy — Istituto Nazionale di Statistica (ISTAT)",
+   "url": "https://www.istat.it/",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (ISTAT note legali)",
+   "licenseUrl": "https://www.istat.it/note-legali/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: Istat (esploradati.istat.it), licenza CC BY 4.0. Elaborazione di dehesaindex.com.",
+   "conditions": "Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen."
+  },
+  {
+   "id": "it_regioni_dop",
+   "name": "Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana)",
+   "url": "https://www.dati.gov.it/",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0/CC0",
+   "licenseName": "CC BY 4.0 (Umbria, Puglia, Toscana) y CC0 1.0 (Trento, Bolzano, Lombardia)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Regione Umbria, Regione Puglia, Regione Toscana (CC BY 4.0); Provincia autonoma di Trento, Provincia autonoma di Bolzano, Regione Lombardia (CC0).",
+   "conditions": "Logos y marcas excluidos."
+  },
+  {
+   "id": "kansas_city_fed",
+   "name": "Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District)",
+   "url": "https://www.kansascityfed.org/agriculture/ag-credit-survey/",
+   "country": "US",
+   "licenseId": "KCFED-OWNER-DECISION",
+   "licenseName": "Federal Reserve Bank of Kansas City: terms accepted by the site owner",
+   "licenseUrl": "https://www.kansascityfed.org/about-us/terms-of-use/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Federal Reserve Bank of Kansas City, Agricultural Credit Survey",
+   "conditions": "No implied endorsement by the Federal Reserve."
+  },
+  {
+   "id": "knmi_daggegevens",
+   "name": "KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación)",
+   "url": "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens",
+   "country": "NL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (KNMI Data Platform)",
+   "licenseUrl": "https://dataplatform.knmi.nl/about",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "KNMI, daggegevens; cálculo de Dehesa Index",
+   "conditions": "Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI."
+  },
+  {
+   "id": "magyarkozlony_hu",
+   "name": "Magyar Közlöny / Nemzeti Jogszabálytár — 15-21/2024. (IV. 9.) AM rendeletek",
+   "url": "https://magyarkozlony.hu/",
+   "country": "HU",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de una norma (1. § (4) de la Szjt., Ley LXXVI de 1999: los actos jurídicos y las resoluciones oficiales no están protegidos)",
+   "licenseUrl": "https://www.sztnh.gov.hu/sites/default/files/1999_lxxvi_tv._szerzoi_jogrol_modosult.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Forrás: Magyar Közlöny / Nemzeti Jogszabálytár, 15-21/2024. (IV. 9.) AM rendeletek; KAP Nemzeti Irányító Hatóság közlemények. Kivonatok.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda la Magyar Közlöny. La exclusión se leyó en la versión de 2015 de la ley (PDF de la oficina húngara de propiedad intelectual SZTNH), no en njt.hu, y la numeración actual no se ha comprobado. Varios decretos no se pudieron abrir (ver el aviso de la ficha) y los importes salen de comunicados de la autoridad de gestión (IH), cuyos términos de uso no se han leído."
+  },
+  {
+   "id": "magyp_estimaciones",
+   "name": "Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas",
+   "url": "https://datos.magyp.gob.ar/dataset/estimaciones-agricolas",
+   "country": "AR",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Ministerio de Agricultura, Ganadería y Pesca, Estimaciones agrícolas"
+  },
+  {
+   "id": "magyp_lecheria",
+   "name": "Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar",
+   "url": "https://www.magyp.gob.ar/sitio/areas/ss_lecheria/estadisticas/",
+   "country": "AR",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (Terminos y condiciones de argentina.gob.ar)",
+   "licenseUrl": "https://www.argentina.gob.ar/terminos-y-condiciones",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Direccion Nacional de Lecheria, Secretaria de Agricultura, Ganaderia y Pesca (Argentina); exportaciones: INDEC. Licencia CC BY 4.0.",
+   "conditions": "Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica esta fuente."
+  },
+  {
+   "id": "mapa_es",
+   "name": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+   "url": "https://www.mapa.gob.es/",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "MAPA aviso legal: reuse without prior authorisation if the source is cited",
+   "licenseUrl": "https://www.mapa.gob.es/es/atencion-al-ciudadano/aviso-legal",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+   "conditions": "Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but that is a different dataset."
+  },
+  {
+   "id": "masaf_it",
+   "name": "MASAF — Ministero dell'agricoltura, della sovranità alimentare e delle foreste (DM 660087/2022, testo coordinato)",
+   "url": "https://www.masaf.gov.it/",
+   "country": "IT",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Atto normativo (art. 5 della L. 633/1941: i testi degli atti ufficiali dello Stato non sono protetti dal diritto d'autore)",
+   "licenseUrl": "https://www.gazzettaufficiale.it/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: MASAF, decreto ministeriale 23 dicembre 2022, n. 660087 (GU n. 47 del 24-2-2023), testo coordinato. Estratti.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda la Gazzetta Ufficiale. El texto coordinado del MASAF es informativo. No se pudo leer en máquina el texto del art. 5 de la L. 633/1941 ni los términos del sitio del MASAF, así que la confianza es media. Las circulares de AGEA (importes unitarios) no se leen: el sitio no responde desde los servidores de GitHub."
+  },
+  {
+   "id": "mase_dgsaie",
+   "name": "Ministero dell'Ambiente e della Sicurezza Energetica (DGSAIE) — Prezzi medi settimanali dei carburanti",
+   "url": "https://sisen.mase.gov.it/dgsaie/prezzi-settimanali-carburanti",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (note legali del MASE)",
+   "licenseUrl": "https://www.mase.gov.it/pagina/note-legali",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: MASE, prezzi medi settimanali dei carburanti",
+   "conditions": "Citar la fuente y, si es posible, el enlace a la página original."
+  },
+  {
+   "id": "mb_agri",
+   "name": "Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba)",
+   "url": "https://www.gov.mb.ca/agriculture/markets-and-statistics/livestock-statistics/livestock-market-prices-current.html",
+   "country": "CA",
+   "licenseId": "OpenMB-1.0",
+   "licenseName": "OpenMB Information and Data Use Licence v1.0",
+   "licenseUrl": "https://www.gov.mb.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information from the Government of Manitoba, licensed under the OpenMB Information and Data Use License (Manitoba.ca/OpenMB)",
+   "conditions": "No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights."
+  },
+  {
+   "id": "meteoswiss",
+   "name": "Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet",
+   "url": "https://opendata.swiss/en/dataset/automatische-wetterstationen-aktuelle-messwerte",
+   "country": "CH",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: MeteoSwiss | Dataset: Automatic weather stations (ogd-smn), monthly | Licence: CC BY 4.0 | Original: https://opendata.swiss/en/dataset/automatische-wetterstationen-aktuelle-messwerte",
+   "conditions": "Source must read 'Source: MeteoSwiss'; MeteoSwiss warnings must not be altered; no implication of MeteoSwiss endorsement; avoid high-frequency downloads (monthly refresh used)."
+  },
+  {
+   "id": "mimit_carburanti",
+   "name": "Ministero delle Imprese e del Made in Italy — Osservaprezzi carburanti (open data)",
+   "url": "https://www.mimit.gov.it/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti",
+   "country": "IT",
+   "licenseId": "IODL-2.0",
+   "licenseName": "Italian Open Data License 2.0",
+   "licenseUrl": "https://www.dati.gov.it/iodl/2.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: MIMIT, Osservaprezzi carburanti",
+   "conditions": "Citar la fuente y, si es posible, el enlace a la página original."
+  },
+  {
+   "id": "miteco_carburantes",
+   "name": "MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras)",
+   "url": "https://geoportalgasolineras.es/",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (declared in the MITECO open data catalogue)",
+   "licenseUrl": "https://catalogo.datosabiertos.miteco.gob.es/catalogo/dataset/214e0895-b3aa-4662-8ebe-18134c21fb45",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), precios de carburantes (Geoportal de Gasolineras)",
+   "conditions": "Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización."
+  },
+  {
+   "id": "miteco_embalses",
+   "name": "MITECO — Boletín Hidrológico (BD-Embalses)",
+   "url": "https://www.miteco.gob.es/es/agua/temas/evaluacion-de-los-recursos-hidricos/boletin-hidrologico.html",
+   "country": "ES",
+   "licenseId": "ES-LEY-37-2007",
+   "licenseName": "MITECO legal notice (free reuse with attribution, Spanish Law 37/2007)",
+   "licenseUrl": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), Boletín Hidrológico",
+   "conditions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha de actualización. Datos provisionales sin validar."
+  },
+  {
+   "id": "miteco_inventario_gei",
+   "name": "MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero",
+   "url": "https://catalogo.datosabiertos.miteco.gob.es/catalogo/dataset/c1f5ae00-18d5-478d-aab1-685ae5506857",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (declared in the MITECO open data catalogue)",
+   "licenseUrl": "https://catalogo.datosabiertos.miteco.gob.es/catalogo/dataset/c1f5ae00-18d5-478d-aab1-685ae5506857",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: MITECO, Inventario Nacional de Emisiones de gases de efecto invernadero",
+   "conditions": "Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización."
+  },
+  {
+   "id": "miteco_rbd",
+   "name": "MITECO — Demarcaciones hidrográficas (límites reportados a la UE; capa WISE WFD 2022 de la Agencia Europea de Medio Ambiente)",
+   "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_RiverBasinDistrict_WM/MapServer",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (MITECO, ficha IDEE 95b8abce); aviso legal de la AEMA: reutilización citando la fuente",
+   "licenseUrl": "https://www.idee.es/csw-codsi-idee/srv/api/records/95b8abce-2083-40b3-bd6b-83a7d8a72307",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Demarcaciones hidrográficas: MITECO, vía Agencia Europea de Medio Ambiente (CC BY 4.0)",
+   "conditions": "Se usa solo como fondo cartográfico (vendor/es-basins.js), simplificado y recortado con la costa. El servidor de descargas del MITECO falla la verificación TLS, por eso se toma la misma capa del servicio público de la AEMA."
+  },
+  {
+   "id": "miteco_sequia",
+   "name": "MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez)",
+   "url": "https://www.miteco.gob.es/es/agua/temas/observatorio-nacional-de-la-sequia/informes-mapas-seguimiento.html",
+   "country": "ES",
+   "licenseId": "ES-LEY-37-2007",
+   "licenseName": "MITECO legal notice (free reuse with attribution, Spanish Law 37/2007)",
+   "licenseUrl": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: MITECO, Observatorio Nacional de la Sequía, informe de la situación de sequía y escasez",
+   "conditions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe."
+  },
+  {
+   "id": "moniteur_be",
+   "name": "Moniteur belge / Belgisch Staatsblad (decretos de pagos directos de Flandes y Valonia, PAC 2023-2027)",
+   "url": "https://www.ejustice.just.fgov.be/",
+   "country": "BE",
+   "licenseId": "CUSTOM",
+   "licenseName": "Condiciones de uso del portal del Moniteur belge: información «libre de derechos, salvo mención contraria»; reutilización comercial permitida sin condiciones; atribución recomendada",
+   "licenseUrl": "https://www.ejustice.just.fgov.be/img_2024/pdf/GebruiksvoorwaardenFR.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Moniteur belge / Belgisch Staatsblad (BVR 21-4-2023; AGW 23-2-2023). Extraits.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Moniteur belge. Los textos se leyeron en copias consolidadas no oficiales: Codex Vlaanderen (sin términos de reutilización explícitos), Wallex (sus avisos legales limitan la reutilización de la información del sitio a fines no comerciales; los textos no coordinados del Moniteur belge se describen como datos públicos) y e-taamb (copia de terceros). No se copia texto de esas copias, solo hechos de los decretos resumidos con palabras propias. Confianza media. La FAQ de Valonia 2025 y el documento flamenco de la campaña 2025 no tienen valor jurídico."
+  },
+  {
+   "id": "monitorul_ro",
+   "name": "Monitorul Oficial al României — HG 1.571/2022 y ordinele MADR de pagos directos",
+   "url": "https://monitoruloficial.ro/",
+   "country": "RO",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de una norma (art. 9 lit. b de la Legea 8/1996: los textos oficiales de naturaleza legislativa y administrativa no gozan de protección)",
+   "licenseUrl": "https://legislatie.just.ro/Public/DetaliiDocument/9402",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Sursa: Monitorul Oficial al României, HG nr. 1.571/2022 și ordinele MADR (106/2024, 44/2026, 268/2025, 447/2023). Extrase.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda el Monitorul Oficial. Todo se leyó en copias de terceros (legeaz.net, agrointel.ro, sitios de ayuntamientos, static.anaf.ro) porque legislatie.just.ro no se pudo abrir; el art. 9 se leyó también en copias (2010 y 2021), no en la versión oficial vigente. Hay contradicciones entre textos señaladas en las reglas."
+  },
+  {
+   "id": "nasa_power",
+   "name": "NASA POWER (Prediction Of Worldwide Energy Resources)",
+   "url": "https://power.larc.nasa.gov/",
+   "country": "US",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "NASA open data policy; POWER listed as CC BY 4.0 in the AWS Open Data Registry",
+   "licenseUrl": "https://earthdata.nasa.gov/learn/articles/nasa-data-policy",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
+   "conditions": "Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees."
+  },
+  {
+   "id": "nn_hr",
+   "name": "Narodne novine — Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025, 49/2026, 78/2026)",
+   "url": "https://narodne-novine.nn.hr/",
+   "country": "HR",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de un acto normativo (art. 18(3) de la Zakon o autorskom pravu i srodnim pravima, NN 111/2021: dejan de estar protegidos al publicarse oficialmente)",
+   "licenseUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2021_10_111_1941.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Izvor: Narodne novine, Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025) i izmjene (NN 49/2026, 78/2026). Izvaci.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda el texto de Narodne novine. El texto del Pravilnik se leyó en una copia (zakon.hr) y en Narodne novine. No se han comprobado los términos de uso del sitio de Narodne novine, así que la confianza es media. Los importes de las ayudas asociadas 32.02 a 32.09 proceden de las fichas informativas de la agencia de pagos (apprrr.hr) y de la presentación «Kampanja 2026» de ruralnirazvoj.hr: son páginas informativas de la administración croata, no el texto de la norma, y no se han revisado sus términos de uso; se muestran como cifras con cita."
+  },
+  {
+   "id": "noaa_ncei",
+   "name": "NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv)",
+   "url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); NOAA NCEI asks for citation",
+   "licenseUrl": "https://www.ncei.noaa.gov/access/monitoring/dyk/data-access-terms",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: NOAA National Centers for Environmental Information (NCEI), Climate at a Glance",
+   "conditions": "No implied NOAA endorsement."
+  },
+  {
+   "id": "odepa_chile",
+   "name": "ODEPA (Chile) - Portal de datos abiertos",
+   "url": "https://datos.odepa.gob.cl/",
+   "country": "CL",
+   "licenseId": "CC-BY",
+   "licenseName": "Creative Commons Attribution (CC BY)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: ODEPA (Oficina de Estudios y Politicas Agrarias, Chile), datos abiertos, licencia Creative Commons Attribution. Comercio exterior: Servicio Nacional de Aduanas.",
+   "conditions": "Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas."
+  },
+  {
+   "id": "ons",
+   "name": "UK Office for National Statistics (consumer price index)",
+   "url": "https://www.ons.gov.uk/economy/inflationandpriceindices",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.ons.gov.uk/help/terms-conditions",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
+   "conditions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice de precios de consumo (CPI, D7BT)."
+  },
+  {
+   "id": "pl_akcyza_rm",
+   "name": "Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej)",
+   "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20250001875",
+   "country": "PL",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Acto normativo (art. 4 de la ley polaca de derechos de autor: los actos normativos no son objeto de derecho de autor)",
+   "licenseUrl": "https://isap.sejm.gov.pl/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. (Dz. U. 2025 poz. 1875)"
+  },
+  {
+   "id": "prix_carburants_fr",
+   "name": "Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers)",
+   "url": "https://www.data.gouv.fr/datasets/prix-des-carburants-en-france-flux-instantane-v2-amelioree",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (data.gouv.fr)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : prix-carburants.gouv.fr (Ministères économiques et financiers)",
+   "conditions": "Mencionar la fuente y la fecha de la última actualización."
+  },
+  {
+   "id": "rba",
+   "name": "Reserve Bank of Australia (statistical tables)",
+   "url": "https://www.rba.gov.au/statistics/",
+   "country": "AU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (RBA Copyright and Disclaimer Notice)",
+   "licenseUrl": "https://www.rba.gov.au/copyright/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Reserve Bank of Australia <year>",
+   "conditions": "No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images."
+  },
+  {
+   "id": "retsinformation",
+   "name": "Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser)",
+   "url": "https://www.retsinformation.dk/",
+   "country": "DK",
+   "licenseId": "CUSTOM",
+   "licenseName": "No copyright in regulations (Ophavsretsloven § 9)",
+   "licenseUrl": "https://www.retsinformation.dk/eli/lta/2023/1093/dan/pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse 1363 og 1381 af 2025. Uddrag.",
+   "conditions": "Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regulations from copyright. Our figures are extracts, not the authentic text: always cite the order number and its version date."
+  },
+  {
+   "id": "ris_at",
+   "name": "Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung",
+   "url": "https://www.ris.bka.gv.at/",
+   "country": "AT",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de una norma (§ 7 Abs. 1 de la Urheberrechtsgesetz: Gesetze, Verordnungen y amtliche Erlässe son obras libres)",
+   "licenseUrl": "https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10001848&Paragraf=7",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle: Rechtsinformationssystem des Bundes (RIS), MOG 2021 und GAP-Strategieplan-Anwendungsverordnung (BGBl. II Nr. 403/2022); Prämienbeträge der AMA. Auszüge.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda el RIS. Parte del texto se leyó en copias (AMA, gesetzefinden.at, jusline.at) y los importes salen de publicaciones de la AMA, cuyos términos de uso no se han leído: se muestran como cifras con cita."
+  },
+  {
+   "id": "rivm_lmm",
+   "name": "RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit",
+   "url": "https://www.rivm.nl/landelijk-meetnet-effecten-mestbeleid/datatool-waterkwaliteit",
+   "country": "NL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "RIVM, Landelijk Meetnet effecten Mestbeleid (CC BY 4.0)"
+  },
+  {
+   "id": "rvo",
+   "name": "RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk)",
+   "url": "https://www.rvo.nl/onderwerpen/marktinformatie/statistieken",
+   "country": "NL",
+   "licenseId": "CUSTOM",
+   "licenseName": "RVO open data: public information, re-use allowed",
+   "licenseUrl": "https://www.rvo.nl/over-ons/open-data",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Bron: RVO (Rijksdienst voor Ondernemend Nederland), marktinformatie statistieken",
+   "conditions": "No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, calves and pigs among the available datasets. Cite RVO and do not present the figures as official RVO publications."
+  },
+  {
+   "id": "sejm_eli",
+   "name": "Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia)",
+   "url": "https://api.sejm.gov.pl/eli/acts/",
+   "country": "PL",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Acto normativo (art. 4 de la ley polaca de derechos de autor: las leyes y reglamentos no son objeto de derecho de autor)",
+   "licenseUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/24",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Źródło: Dziennik Ustaw (API ELI Sejmu RP), ustawa o Planie Strategicznym dla WPR (Dz.U. 2023 poz. 412) i rozporządzenia Ministra Rolnictwa i Rozwoju Wsi. Wyciągi.",
+   "conditions": "Cifras y reglas son extractos transcritos a mano; manda el texto publicado en el Dziennik Ustaw. No se leyeron los términos de uso de la API del Sejm: la base es la exclusión legal de los actos normativos. Los metadatos de la API (fechas, referencias) solo se usan para localizar y vigilar los actos."
+  },
+  {
+   "id": "sjv_se",
+   "name": "Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks)",
+   "url": "https://statistik.jordbruksverket.se/",
+   "country": "SE",
+   "licenseId": "CC0-1.0-OR-CC-BY",
+   "licenseName": "Jordbruksverket open data policy: CC0 (preferred) or CC BY; usable without restrictions",
+   "licenseUrl": "https://jordbruksverket.se/e-tjanster-databaser-och-appar/ovriga-e-tjanster-och-databaser/oppna-data",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Jordbruksverket (Swedish Board of Agriculture), statistics database.",
+   "conditions": "The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is given anyway so the CC BY case is also met."
+  },
+  {
+   "id": "snice_mx",
+   "name": "Mexico — Secretaría de Economía (SNICE, LIGIE tariff)",
+   "url": "https://www.snice.gob.mx/",
+   "country": "MX",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No specific licence located; SIAVI Data is described as open and reproducible but the general gob.mx terms restrict materials to personal/non-commercial use (conflict unresolved)",
+   "licenseUrl": "https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html",
+   "verdict": "no-apto",
+   "status": "PENDING",
+   "legalConfidence": "PENDING",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attribution": null,
+   "conditions": "Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attribution, but that is unconfirmed. Written confirmation from SNICE / Secretaría de Economía is required.",
+   "why": "licencia PENDING en el registro"
+  },
+  {
+   "id": "spf_economie_energie",
+   "name": "SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos)",
+   "url": "https://economie.fgov.be/fr/themes/energie/prix-de-lenergie/prix-maximum-des-produits/tarif-officiel-des-produits",
+   "country": "BE",
+   "licenseId": "BE-FPS-ECONOMY-REUSE",
+   "licenseName": "Condiciones de uso del SPF Economía: reutilización libre, también comercial, recomendando citar fuente y fecha",
+   "licenseUrl": "https://economie.fgov.be/nl/gebruiksvoorwaarden",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "SPF Economie, DG Energie — tarif officiel des produits pétroliers (via be.STAT, Statbel)",
+   "conditions": "Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente."
+  },
+  {
+   "id": "stat_ee",
+   "name": "Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy)",
+   "url": "https://andmed.stat.ee/",
+   "country": "EE",
+   "licenseId": "CC-BY-SA-4.0",
+   "licenseName": "Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0), as stated in the statistical database",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Statistics Estonia, statistical database.",
+   "conditions": "ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with attribution and no alteration."
+  },
+  {
+   "id": "statbel",
+   "name": "Statbel (Statistics Belgium)",
+   "url": "https://statbel.fgov.be/en/open-data",
+   "country": "BE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Statbel open data: Creative Commons Attribution 4.0 (CC BY 4.0); commercial use and adaptation allowed, citing the source",
+   "licenseUrl": "https://statbel.fgov.be/en/cc-40",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Statbel (Directorate-General Statistics – Statistics Belgium)",
+   "conditions": "Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own terms."
+  },
+  {
+   "id": "statcan",
+   "name": "Statistics Canada",
+   "url": "https://www.statcan.gc.ca/",
+   "country": "CA",
+   "licenseId": "CUSTOM",
+   "licenseName": "Statistics Canada Open Licence",
+   "licenseUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "conditions": "No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP)."
+  },
+  {
+   "id": "statistik_austria",
+   "name": "Statistik Austria (open.data)",
+   "url": "https://data.statistik.gv.at/",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (open.data terms)",
+   "licenseUrl": "https://data.statistik.gv.at/web/?page=terms",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Datenquelle: Statistik Austria — data.statistik.gv.at",
+   "conditions": "Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications."
+  },
+  {
+   "id": "statistik_austria_vb",
+   "name": "Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications)",
+   "url": "https://www.statistik.at/statistiken/land-und-forstwirtschaft/landwirtschaftliche-bilanzen/versorgungsbilanzen",
+   "country": "AT",
+   "licenseId": "STATISTIK-AUSTRIA-REUSE",
+   "licenseName": "Statistik Austria: reproduction, distribution and editing allowed with the credit «STATISTIK AUSTRIA» (publication imprint)",
+   "licenseUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle/Fuente: STATISTIK AUSTRIA, Versorgungsbilanzen. Valores extraidos de las tablas de la publicacion (extracto).",
+   "conditions": "Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en cada PDF."
+  },
+  {
+   "id": "svensk_forfattningssamling",
+   "name": "Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket",
+   "url": "https://svenskforfattningssamling.se/",
+   "country": "SE",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de una norma (9 § de la Lag 1960:729 om upphovsrätt: no hay derecho de autor sobre författningar ni decisiones de autoridades)",
+   "licenseUrl": "https://data.riksdagen.se/dokument/sfs-1960-729.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Källa: Svensk författningssamling, förordning (2022:1826) om EU:s gemensamma jordbrukspolitik och Statens jordbruksverks föreskrifter (SJVFS 2022:29, 2022:30, 2025:33, 2025:34). Utdrag.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jordbruksverket som äger texterna»): de ellas solo se usan hechos (importes planificados, fechas) con cita y enlace, sin copiar texto. SFS 2026:288 se leyó en una copia no oficial."
+  },
+  {
+   "id": "tedb",
+   "name": "European Commission - Taxes in Europe Database (TEDB)",
+   "url": "https://ec.europa.eu/taxation_customs/tedb/",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Commission Decision 2011/833/EU on the reuse of Commission documents",
+   "licenseUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32011D0833",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: European Commission, Taxes in Europe Database (TEDB). Rates are reported by the Member States.",
+   "conditions": "Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; it is not legal advice."
+  },
+  {
+   "id": "ttb",
+   "name": "Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics)",
+   "url": "https://www.ttb.gov/regulated-commodities/beverage-alcohol/wine/wine-statistics",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); TTB site copyright notice",
+   "licenseUrl": "https://www.ttb.gov/about-ttb/privacy-policy",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Alcohol and Tobacco Tax and Trade Bureau (TTB), wine statistics",
+   "conditions": "La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresas)."
+  },
+  {
+   "id": "us_drought_monitor",
+   "name": "U.S. Drought Monitor (NDMC, USDA, NOAA)",
+   "url": "https://droughtmonitor.unl.edu/",
+   "country": "US",
+   "licenseId": "CUSTOM",
+   "licenseName": "NDMC credit-line terms (no explicit licence; published as green by owner decision, cited)",
+   "licenseUrl": "https://droughtmonitor.unl.edu/About/Permission.aspx",
+   "verdict": "no-apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attribution": "The U.S. Drought Monitor is jointly produced by the National Drought Mitigation Center at the University of Nebraska-Lincoln, the USDA, NOAA and NASA.",
+   "conditions": "Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisable (DroughtMonitor@unl.edu).",
+   "why": "sin confirmar: uso comercial, derivados, redistribución"
+  },
+  {
+   "id": "us_tariffs",
+   "name": "USITC Harmonized Tariff Schedule, CBP trade remedies, USTR",
+   "url": "https://hts.usitc.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government works (17 U.S.C. 105); no specific licence page found",
+   "licenseUrl": "https://resources.data.gov/open-licenses/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. International Trade Commission, Harmonized Tariff Schedule of the United States",
+   "conditions": "The HTS is legally binding only in its official publication: label derived rates as informational."
+  },
+  {
+   "id": "usbr_rise",
+   "name": "U.S. Bureau of Reclamation — RISE (Reclamation Information Sharing Environment)",
+   "url": "https://data.usbr.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "Public domain (U.S. federal government work)",
+   "licenseUrl": "https://www.usbr.gov/main/disclaimer.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Bureau of Reclamation (RISE)"
+  },
+  {
+   "id": "usda_ams_agtransport",
+   "name": "USDA AMS Agricultural Transportation Open Data Platform (AgTransport)",
+   "url": "https://agtransport.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (AgTransport, Grain Transportation Report)",
+   "conditions": "Only datasets whose AgTransport attribution is USDA/AMS are used; datasets attributed to the Surface Transportation Board, the Army Corps of Engineers or railroads are not used. No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_ams_fgis",
+   "name": "USDA AMS / Federal Grain Inspection Service, Export Grain Inspections",
+   "url": "https://fgisonline.ams.usda.gov/ExportGrainReport/default.aspx",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service, Federal Grain Inspection Service (Export Grain Inspections)",
+   "conditions": "Weekly metric tons by grain and destination aggregated from the yearly CSV (CY2025, CY2026). No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_ams_lmr",
+   "name": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "url": "https://mpr.datamart.ams.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "conditions": "Only AMS-produced reports are used (LM_XB403 boxed beef cutout, LM_PK602 pork cutout, LM_HG201 prior-day swine, LM_CT100 5-area slaughter cattle). No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_ams_mars",
+   "name": "USDA AMS Market News (MARS API)",
+   "url": "https://mymarketnews.ams.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture (AMS Market News (MARS))",
+   "conditions": "USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant rests on the USDA policy page. Third-party material is labelled by USDA and excluded. No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_ers",
+   "name": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "url": "https://www.ers.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
+   "conditions": "USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant rests on the USDA policy page. Third-party material is labelled by USDA and excluded. No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_fas_esr",
+   "name": "USDA FAS — Export Sales Reporting (ESR)",
+   "url": "https://apps.fas.usda.gov/esrquery/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture (FAS Export Sales Reporting)",
+   "conditions": "USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant rests on the USDA policy page. Third-party material is labelled by USDA and excluded. No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_fas_gats",
+   "name": "USDA FAS — Global Agricultural Trade System (GATS)",
+   "url": "https://apps.fas.usda.gov/gats/",
+   "country": "US",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (data.gov catalogue metadata; underlying data from the US Census Bureau)",
+   "licenseUrl": "https://catalog.data.gov/dataset/global-agricultural-trade-system",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: USDA Foreign Agricultural Service, GATS, based on US Census Bureau trade data",
+   "conditions": "The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims."
+  },
+  {
+   "id": "usda_fas_psd",
+   "name": "USDA FAS — Production, Supply and Distribution (PSD Online)",
+   "url": "https://apps.fas.usda.gov/psdonline/",
+   "country": "US",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (declared in USDA/data.gov catalogue metadata)",
+   "licenseUrl": "https://catalog.data.gov/dataset/production-supply-and-distribution-database",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: USDA Foreign Agricultural Service, Production, Supply and Distribution (PSD) Online",
+   "conditions": "Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos."
+  },
+  {
+   "id": "usda_fsa",
+   "name": "USDA Farm Service Agency (ARC/PLC program data)",
+   "url": "https://www.fsa.usda.gov/resources/programs/arc-plc/program-data",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); FSA byline requested",
+   "licenseUrl": "https://www.fsa.usda.gov/help/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "U. S. Department of Agriculture, Farm Service Agency.",
+   "conditions": "Byline requested. Some FSA web materials are copyrighted and labelled as such; the ARC/PLC program data files are FSA's own publications. No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_nass",
+   "name": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "url": "https://quickstats.nass.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); NASS citation request",
+   "licenseUrl": "https://www.nass.usda.gov/Data_and_Statistics/Citation_Request/index.php",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "conditions": "No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rate limits not confirmed."
+  },
+  {
+   "id": "usda_nrcs",
+   "name": "USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API)",
+   "url": "https://www.nrcs.usda.gov/resources/data-and-reports/snow-and-water-interactive-map",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); NRCS asks for citation",
+   "licenseUrl": "https://www.nrcs.usda.gov/privacy-policy",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: USDA Natural Resources Conservation Service (NRCS), SNOTEL network",
+   "conditions": "No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time."
+  },
+  {
+   "id": "usda_oce_wasde",
+   "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
+   "url": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture (WASDE release schedule)",
+   "conditions": "Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release dates are used. No USDA logo/name to imply endorsement."
+  },
+  {
+   "id": "usda_rma",
+   "name": "USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance)",
+   "url": "https://www.rma.usda.gov/tools-reports/summary-of-business",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Risk Management Agency (Summary of Business). Aggregated by Dehesa Index.",
+   "conditions": "USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summary of Business files are published for open download on the RMA public site and contain county-level aggregates, not farm-level records. No USDA/RMA logo or endorsement implied; Dehesa Index sums the published records and does not republish them one by one."
+  },
+  {
+   "id": "vigieau",
+   "name": "VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau)",
+   "url": "https://vigieau.gouv.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (Etalab), data.gouv.fr",
+   "licenseUrl": "https://www.data.gouv.fr/datasets/donnee-secheresse-vigieau",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : VigiEau, Ministère de la Transition écologique — Licence Ouverte 2.0",
+   "conditions": "LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indicatif' by the departmental services; only the prefectural orders are authentic. We read the service's public REST API; the licence is the one declared for the dataset."
+  },
+  {
+   "id": "vlada_hr",
+   "name": "Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo",
+   "url": "https://vlada.gov.hr/vijesti",
+   "country": "HR",
+   "licenseId": "HR-VLADA-REUSE",
+   "licenseName": "Condiciones de uso de vlada.gov.hr: los contenidos pueden reproducirse sin permiso especial citando la fuente",
+   "licenseUrl": "https://vlada.gov.hr/uvjeti-koristenja/11852",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Vlada Republike Hrvatske, vlada.gov.hr — notas sobre los precios máximos de los derivados del petróleo",
+   "conditions": "Se aconseja revisar los avisos de derechos de autor de documentos concretos; se usan solo cifras de precios de la nota de prensa."
+  },
+  {
+   "id": "vmm_waterinfo",
+   "name": "Vlaamse Milieumaatschappij (VMM) — waterinfo.be y feiten & cijfers",
+   "url": "https://waterinfo.vlaanderen.be/",
+   "country": "BE",
+   "licenseId": "VL-MODELLICENTIE-GRATIS-HERGEBRUIK-1.0",
+   "licenseName": "Modellicentie voor gratis hergebruik v1.0 (Gobierno flamenco): reutilización libre para cualquier fin citando la fuente",
+   "licenseUrl": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Bron: Vlaamse Milieumaatschappij (VMM), waterinfo.be",
+   "conditions": "Citar la fuente."
+  },
+  {
+   "id": "wetten_nl",
+   "name": "Wetten.overheid.nl / Staatscourant — Uitvoeringsregeling GLB 2023 (BWBR0047444)",
+   "url": "https://wetten.overheid.nl/BWBR0047444",
+   "country": "NL",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Texto oficial de una norma (art. 11 de la Auteurswet: no existe derecho de autor sobre leyes, decretos y reglamentos)",
+   "licenseUrl": "https://wetten.overheid.nl/BWBR0001886/2026-01-01/0",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Bron: wetten.overheid.nl, Uitvoeringsregeling GLB 2023 (BWBR0047444) en Staatscourant; tarieven van RVO. Uittreksels.",
+   "conditions": "Las reglas son un resumen propio hecho a mano; manda el Staatscourant. Parte de los artículos se leyó en copias de InView (no oficial) y los importes y fechas de campaña salen de páginas informativas de RVO, cuyos términos de uso no se han leído: se muestran como cifras con cita, sin copiar texto."
+  },
+  {
+   "id": "wikidata",
+   "name": "Wikidata",
+   "url": "https://www.wikidata.org/",
+   "country": "INT",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons CC0 1.0 (dominio público)",
+   "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Ubicación de los embalses: Wikidata (CC0)"
+  },
+  {
+   "id": "world_bank",
+   "name": "World Bank — Commodity Price Data (Pink Sheet)",
+   "url": "https://www.worldbank.org/en/research/commodity-markets",
+   "country": "INT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "World Bank Terms of Use for Datasets (CC BY 4.0 default, with additional terms)",
+   "licenseUrl": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "conditions": "No endorsement; no World Bank names or logos without written consent."
+  },
+  {
+   "id": "world_bank_wdi",
+   "name": "World Bank Open Data (World Development Indicators)",
+   "url": "https://data.worldbank.org/",
+   "country": "INT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "World Bank Terms of Use for Datasets (CC BY 4.0 default, with additional terms)",
+   "licenseUrl": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "The World Bank: <indicator name> (World Development Indicators)",
+   "conditions": "No endorsement; no World Bank names or logos without written consent."
+  },
+  {
+   "id": "zoll_agrardiesel",
+   "name": "Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel)",
+   "url": "https://www.zoll.de/DE/Fachthemen/Steuern/Verbrauchsteuern/Energie/Steuerbeguenstigung/Steuerentlastung/Betriebe-Land-Forstwirtschaft/betriebe-land-forstwirtschaft_node.html",
+   "country": "DE",
+   "licenseId": "PUBLIC-LAW",
+   "licenseName": "Dato legal (importe de una devolución fijada por ley, § 57 EnergieStG; § 5 UrhG: las leyes y actos oficiales no tienen derecho de autor)",
+   "licenseUrl": "https://www.gesetze-im-internet.de/urhg/__5.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle: Zoll, Agrardieselentlastung (§ 57 EnergieStG)",
+   "conditions": "Solo se reproduce el importe por litro, citando la página de la aduana."
+  }
+ ],
+ "datasets": [
+  {
+   "path": "data/abares-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "abares"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AU",
+     "sourceId": "abares",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/alberta-weekly-report.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "alberta_ag"
+   ]
+  },
+  {
+   "path": "data/alberta-weekly.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "alberta_ag"
+   ]
+  },
+  {
+   "path": "data/ams-grain-daily.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/ams/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/app/",
+   "scope": "carpeta",
+   "verdict": "parcial",
+   "sources": [
+    "alberta_ag",
+    "cgc",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "statcan",
+    "us_drought_monitor",
+    "usda_ams_mars",
+    "usda_fas_esr",
+    "usda_fas_psd",
+    "usda_nass",
+    "world_bank"
+   ],
+   "commercialSources": [
+    "alberta_ag",
+    "cgc",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "statcan",
+    "usda_ams_mars",
+    "usda_fas_esr",
+    "usda_fas_psd",
+    "usda_nass",
+    "world_bank"
+   ],
+   "excludedSources": [
+    "us_drought_monitor"
+   ]
+  },
+  {
+   "path": "data/app/v1/sec/",
+   "scope": "carpeta",
+   "verdict": "parcial",
+   "sources": [
+    "cbsa_tariff",
+    "cgc",
+    "eu_taric",
+    "eurostat",
+    "mapa_es",
+    "miteco_carburantes",
+    "nasa_power",
+    "statcan",
+    "us_tariffs",
+    "usda_ams_mars",
+    "usda_fas_esr",
+    "usda_fas_psd",
+    "usda_nass",
+    "usda_rma"
+   ],
+   "commercialSources": [
+    "cgc",
+    "eu_taric",
+    "eurostat",
+    "mapa_es",
+    "miteco_carburantes",
+    "nasa_power",
+    "statcan",
+    "us_tariffs",
+    "usda_ams_mars",
+    "usda_fas_esr",
+    "usda_fas_psd",
+    "usda_nass",
+    "usda_rma"
+   ],
+   "excludedSources": [
+    "cbsa_tariff"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/ar-provinces.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "magyp_estimaciones"
+   ]
+  },
+  {
+   "path": "data/argentina-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "argentina_datos_abiertos",
+    "indec_ar",
+    "magyp_lecheria"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:INDEC",
+     "sourceId": "argentina_datos_abiertos",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:INDEC SIPM",
+     "sourceId": "indec_ar",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:Precios FOB",
+     "sourceId": "argentina_datos_abiertos",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:SAGyP",
+     "sourceId": "argentina_datos_abiertos",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:SAGyP Lecheria",
+     "sourceId": "magyp_lecheria",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:SSPM",
+     "sourceId": "argentina_datos_abiertos",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:Secretaria de Energia",
+     "sourceId": "argentina_datos_abiertos",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/at-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "ama_agrardiesel",
+    "eu_oil_bulletin"
+   ]
+  },
+  {
+   "path": "data/at-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "bmluk_hydrographie",
+    "geosphere_austria"
+   ]
+  },
+  {
+   "path": "data/at-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/au-states.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "abs"
+   ]
+  },
+  {
+   "path": "data/au-trade-products.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "abs"
+   ]
+  },
+  {
+   "path": "data/australia-trade-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "abs"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AU",
+     "sourceId": "abs",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/austria-balances-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statistik_austria_vb"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AT",
+     "sourceId": "statistik_austria_vb",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/austria-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/baltics-national-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "csp_lv",
+    "stat_ee"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:CSP Latvia",
+     "sourceId": "csp_lv",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:Statistics Estonia",
+     "sourceId": "stat_ee",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/be-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_oil_bulletin",
+    "spf_economie_energie"
+   ]
+  },
+  {
+   "path": "data/be-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "vmm_waterinfo"
+   ]
+  },
+  {
+   "path": "data/be-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/be-nitrates.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "vmm_waterinfo"
+   ]
+  },
+  {
+   "path": "data/belgium-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statbel"
+   ],
+   "parts": [
+    {
+     "scope": "pais:BE",
+     "sourceId": "statbel",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/blog/",
+   "scope": "carpeta",
+   "verdict": "derivado",
+   "sources": []
+  },
+  {
+   "path": "data/ca-trade-products.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
+   ]
+  },
+  {
+   "path": "data/canada-coverage.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
+   ]
+  },
+  {
+   "path": "data/canada-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "aafc_drought"
+   ]
+  },
+  {
+   "path": "data/canada-grain.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "cgc"
+   ]
+  },
+  {
+   "path": "data/canada-provinces-macro.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
+   ]
+  },
+  {
+   "path": "data/canada-provinces.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
+   ]
+  },
+  {
+   "path": "data/canada-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CA",
+     "sourceId": "statcan",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/cap/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "boe_es",
+    "bundesanzeiger",
+    "dila_jorf",
+    "dre_pt",
+    "esbirka_cz",
+    "fek_gr",
+    "gesetze_im_internet",
+    "gov_ie_dafm",
+    "magyarkozlony_hu",
+    "masaf_it",
+    "moniteur_be",
+    "monitorul_ro",
+    "nn_hr",
+    "retsinformation",
+    "ris_at",
+    "sejm_eli",
+    "svensk_forfattningssamling",
+    "wetten_nl"
+   ]
+  },
+  {
+   "path": "data/cap/eu/allocations.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "eur_lex"
+   ]
+  },
+  {
+   "path": "data/cattle-on-feed.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/ch-chain.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "foag_ch"
+   ]
+  },
+  {
+   "path": "data/chile-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "odepa_chile"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CL",
+     "sourceId": "odepa_chile",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/cl-trade-partners-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "odepa_chile"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CL",
+     "sourceId": "odepa_chile",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/cl-trade-products.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "odepa_chile"
+   ]
+  },
+  {
+   "path": "data/climate-history.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "nasa_power"
+   ]
+  },
+  {
+   "path": "data/climate.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "nasa_power"
+   ]
+  },
+  {
+   "path": "data/country-macro.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "world_bank_wdi"
+   ]
+  },
+  {
+   "path": "data/country-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "abs",
+    "cbs_nl",
+    "dst_dk"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AU",
+     "sourceId": "abs",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "dst_dk",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "cbs_nl",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/country-wages.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "abs",
+    "bls",
+    "destatis",
+    "dst_dk",
+    "eurostat",
+    "ine_es",
+    "insee",
+    "statbel",
+    "statcan",
+    "statistik_austria"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/cpi.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "bls",
+    "eurostat",
+    "indec",
+    "ons",
+    "statcan",
+    "world_bank_wdi"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/crop-insurance-ca.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
+   ]
+  },
+  {
+   "path": "data/crop-insurance.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_rma"
+   ]
+  },
+  {
+   "path": "data/crop-progress.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/czechia-csu-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "csu_cz"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:CSU Czechia",
+     "sourceId": "csu_cz",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/de-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_oil_bulletin",
+    "zoll_agrardiesel"
+   ]
+  },
+  {
+   "path": "data/de-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/de-soil-moisture.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "dwd_cdc"
+   ]
+  },
+  {
+   "path": "data/denmark-depth.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "dst_dk"
+   ]
+  },
+  {
+   "path": "data/denmark-prices.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "dst_dk"
+   ]
+  },
+  {
+   "path": "data/diesel-eu-countries.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_oil_bulletin"
+   ]
+  },
+  {
+   "path": "data/drought.json",
+   "scope": "fichero",
+   "verdict": "no-apto",
+   "sources": [
+    "us_drought_monitor"
+   ],
+   "excludedSources": [
+    "us_drought_monitor"
+   ]
+  },
+  {
+   "path": "data/enesa-contratacion.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "enesa"
+   ]
+  },
+  {
+   "path": "data/ers.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
+   ]
+  },
+  {
+   "path": "data/es-basins.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_rbd"
+   ]
+  },
+  {
+   "path": "data/es-drought-ute.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_sequia"
+   ]
+  },
+  {
+   "path": "data/es-gasoleo-b.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_carburantes"
+   ]
+  },
+  {
+   "path": "data/es-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_inventario_gei"
+   ]
+  },
+  {
+   "path": "data/eu-climate.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "nasa_power"
+   ]
+  },
+  {
+   "path": "data/eu-drought-ind/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ]
+  },
+  {
+   "path": "data/eu-drought-regions/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ]
+  },
+  {
+   "path": "data/eu-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi"
+   ]
+  },
+  {
+   "path": "data/eu-extra-trade-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat_comext"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat_comext"
+   ],
+   "parts": [
+    {
+     "scope": "pais:EU",
+     "sourceId": "eurostat_comext",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eu-farm-economics.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-gapfill-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "destatis",
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Destatis",
+     "sourceId": "destatis",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:Eurostat",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eu-regions-at.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-be.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-bg.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-ch.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-cz.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-de.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-dk.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-el.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-es.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-fi.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-fr.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-hr.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-hu.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-ie.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-it.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-lt.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-macro.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-nl.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-pl.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-pt.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-ro.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-se.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-si.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-sk.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-regions-uk.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-stocks-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Eurostat",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eu-tariff-measures.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "eur_lex"
+   ]
+  },
+  {
+   "path": "data/eu-trade-products.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat_comext"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat_comext"
+   ]
+  },
+  {
+   "path": "data/eu-trade-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat_comext"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat_comext"
+   ]
+  },
+  {
+   "path": "data/eu-vat.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "tedb"
+   ]
+  },
+  {
+   "path": "data/eu/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_agrifood"
+   ]
+  },
+  {
+   "path": "data/eurostat-depth-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:BE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:ES",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EU",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FR",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eurostat-eu-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:BG",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FI",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HR",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SK",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eurostat-eu2-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CZ",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HU",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LV",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eurostat-euw-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:DE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:ES",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eurostat-structure-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:BE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:ES",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FR",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:PT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/export-sales.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fas_esr"
+   ]
+  },
+  {
+   "path": "data/fr-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/fr-gnr.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "dgec_prix_petroliers",
+    "prix_carburants_fr"
+   ]
+  },
+  {
+   "path": "data/fr-nitrates.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "hubeau_ades"
+   ]
+  },
+  {
+   "path": "data/fr-onde.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "hubeau_onde"
+   ]
+  },
+  {
+   "path": "data/france-campaign-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "franceagrimer",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-cereobs-cp.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ]
+  },
+  {
+   "path": "data/france-cereobs.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ]
+  },
+  {
+   "path": "data/france-crops-regions.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ]
+  },
+  {
+   "path": "data/france-crops-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "franceagrimer",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-dairy-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "franceagrimer",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-extras-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "franceagrimer",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-hicp-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Eurostat",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/france-insee-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "insee"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "insee",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-land/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "agreste_ssp"
+   ]
+  },
+  {
+   "path": "data/france-organic-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "agence_bio"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "agence_bio",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-quality-regions.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ]
+  },
+  {
+   "path": "data/france-rnm-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "franceagrimer",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "franceagrimer",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-vigieau.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "vigieau"
+   ]
+  },
+  {
+   "path": "data/fv-farm.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat",
+    "insee"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/fv-products.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_agrifood",
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/fx-history.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "ecb"
+   ]
+  },
+  {
+   "path": "data/gats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fas_gats"
+   ]
+  },
+  {
+   "path": "data/germany-agri.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "destatis"
+   ]
+  },
+  {
+   "path": "data/germany-extra-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "destatis"
+   ],
+   "parts": [
+    {
+     "scope": "pais:DE",
+     "sourceId": "destatis",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/germany-livestock.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "destatis"
+   ]
+  },
+  {
+   "path": "data/germany-stats.json",
+   "scope": "fichero",
+   "verdict": "parcial",
+   "sources": [
+    "ble",
+    "destatis"
+   ],
+   "commercialSources": [
+    "destatis"
+   ],
+   "excludedSources": [
+    "ble"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:BLE",
+     "sourceId": "ble",
+     "verdict": "no-apto"
+    },
+    {
+     "scope": "grupo:Destatis",
+     "sourceId": "destatis",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/gi/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "ec_eambrosia",
+    "eu_pdo_candiago",
+    "inao_aires",
+    "inao_siqo",
+    "it_regioni_dop"
+   ]
+  },
+  {
+   "path": "data/history.json",
+   "scope": "observaciones",
+   "verdict": "condiciones",
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/hr-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_oil_bulletin",
+    "vlada_hr"
+   ]
+  },
+  {
+   "path": "data/hr-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ]
+  },
+  {
+   "path": "data/hr-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/ie-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "cso_ie",
+    "eu_oil_bulletin"
+   ]
+  },
+  {
+   "path": "data/ie-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ]
+  },
+  {
+   "path": "data/ie-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/ie-nitrates.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "cso_ie",
+    "epa_ie"
+   ]
+  },
+  {
+   "path": "data/interest-rates-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "bank_of_canada",
+    "bis",
+    "ecb",
+    "rba"
+   ],
+   "reviewBeforeSelling": [
+    "bank_of_canada",
+    "bis"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AU",
+     "sourceId": "rba",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:CA",
+     "sourceId": "bank_of_canada",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EU",
+     "sourceId": "ecb",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:US",
+     "sourceId": "bis",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/it-fuel.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mase_dgsaie",
+    "mimit_carburanti"
+   ]
+  },
+  {
+   "path": "data/it-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/it-water-severity.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ispra"
+   ]
+  },
+  {
+   "path": "data/italy-eurostat-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:IT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/italy-istat/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "istat"
+   ]
+  },
+  {
+   "path": "data/italy-land/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "crea_fondiario"
+   ]
+  },
+  {
+   "path": "data/label-gloss/",
+   "scope": "carpeta",
+   "verdict": "derivado",
+   "sources": []
+  },
+  {
+   "path": "data/latest.json",
+   "scope": "observaciones",
+   "verdict": "condiciones",
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/mb-markets/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mb_agri"
+   ]
+  },
+  {
+   "path": "data/nass-crops.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/nass-livestock.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/nass-prices.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/nass-received.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/netherlands-farm.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "cbs_nl"
+   ]
+  },
+  {
+   "path": "data/netherlands-markets.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "rvo"
+   ]
+  },
+  {
+   "path": "data/news-archive/",
+   "scope": "carpeta",
+   "verdict": "derivado",
+   "sources": []
+  },
+  {
+   "path": "data/nl-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "cbs_nl",
+    "eu_oil_bulletin",
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/nl-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts",
+    "knmi_daggegevens"
+   ]
+  },
+  {
+   "path": "data/nl-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/nl-nitrates.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat",
+    "rivm_lmm"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/normalized.json",
+   "scope": "observaciones",
+   "verdict": "condiciones",
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/other-tax.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "hmrc_govuk",
+    "irs_sales_tax"
+   ]
+  },
+  {
+   "path": "data/pl-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_oil_bulletin",
+    "pl_akcyza_rm"
+   ]
+  },
+  {
+   "path": "data/pl-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/pl-hydro-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "imgw_pib"
+   ]
+  },
+  {
+   "path": "data/poland-eurostat-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:PL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/poland-farm-shop.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "gus_poland"
+   ]
+  },
+  {
+   "path": "data/poland-land/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "gus_poland"
+   ]
+  },
+  {
+   "path": "data/poland-regions/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "gus_poland"
+   ]
+  },
+  {
+   "path": "data/poland-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "gus_poland"
+   ],
+   "parts": [
+    {
+     "scope": "pais:PL",
+     "sourceId": "gus_poland",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/portugal-eurostat-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:PT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/portugal-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ine_pt"
+   ],
+   "parts": [
+    {
+     "scope": "pais:PT",
+     "sourceId": "ine_pt",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/prices/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/products/",
+   "scope": "carpeta",
+   "verdict": "parcial",
+   "sources": [
+    "cbsa_tariff",
+    "eu_taric",
+    "snice_mx",
+    "us_tariffs",
+    "usda_fas_psd"
+   ],
+   "commercialSources": [
+    "eu_taric",
+    "us_tariffs",
+    "usda_fas_psd"
+   ],
+   "excludedSources": [
+    "cbsa_tariff",
+    "snice_mx"
+   ]
+  },
+  {
+   "path": "data/pt-diesel.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_oil_bulletin",
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/pt-drought.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ]
+  },
+  {
+   "path": "data/pt-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/pt-nitrates.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/recan.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/sowing/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat",
+    "franceagrimer",
+    "mapa_es",
+    "statcan",
+    "usda_ers",
+    "usda_fas_psd",
+    "usda_nass"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/spain-avances/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-balances/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-crops/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-esyrce/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-ganaderia/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-health/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-hicp-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Eurostat",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/spain-income/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-inputs/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-land/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-livestock/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-milk/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-oilseeds-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ],
+   "parts": [
+    {
+     "scope": "pais:ES",
+     "sourceId": "mapa_es",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/spain-prices/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-reservoirs-points.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_embalses",
+    "wikidata"
+   ]
+  },
+  {
+   "path": "data/spain-reservoirs.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_embalses"
+   ]
+  },
+  {
+   "path": "data/spain-siega-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ],
+   "parts": [
+    {
+     "scope": "pais:ES",
+     "sourceId": "mapa_es",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/spain-slaughter/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ],
+   "parts": [
+    {
+     "scope": "pais:ES",
+     "sourceId": "mapa_es",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/spain-wine/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/supply-balances/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_agrifood",
+    "franceagrimer",
+    "statcan"
+   ]
+  },
+  {
+   "path": "data/supply-demand-map.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fas_psd"
+   ]
+  },
+  {
+   "path": "data/supply-demand.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fas_psd"
+   ]
+  },
+  {
+   "path": "data/sweden-sjv-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "sjv_se"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Jordbruksverket",
+     "sourceId": "sjv_se",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/switzerland-bfs-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "bfs_ch_open",
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:BFS",
+     "sourceId": "bfs_ch_open",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:Eurostat",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/switzerland-foag-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "foag_ch"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CH",
+     "sourceId": "foag_ch",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/switzerland-meteo-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "meteoswiss"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CH",
+     "sourceId": "meteoswiss",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/tariffs-ca.json",
+   "scope": "fichero",
+   "verdict": "no-apto",
+   "sources": [
+    "cbsa_tariff"
+   ],
+   "excludedSources": [
+    "cbsa_tariff"
+   ]
+  },
+  {
+   "path": "data/tariffs-eu.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_taric"
+   ]
+  },
+  {
+   "path": "data/tariffs-mx.json",
+   "scope": "fichero",
+   "verdict": "no-apto",
+   "sources": [
+    "snice_mx"
+   ],
+   "excludedSources": [
+    "snice_mx"
+   ]
+  },
+  {
+   "path": "data/trade-sections.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "indec_ar",
+    "statcan"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AR",
+     "sourceId": "indec_ar",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:CA",
+     "sourceId": "statcan",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/uk-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "defra"
+   ],
+   "parts": [
+    {
+     "scope": "pais:UK",
+     "sourceId": "defra",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/uk-trade-products.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "hmrc_uktradeinfo"
+   ]
+  },
+  {
+   "path": "data/uk-trade-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "hmrc_uktradeinfo"
+   ],
+   "parts": [
+    {
+     "scope": "pais:UK",
+     "sourceId": "hmrc_uktradeinfo",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-arcplc/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "usda_fsa"
+   ]
+  },
+  {
+   "path": "data/us-cash-bids/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/us-climate-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "noaa_ncei"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "noaa_ncei",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-county/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/us-crop-progress/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/us-dairy.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/us-ers-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-fertilizers.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/us-kcfed-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "kansas_city_fed"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "kansas_city_fed",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-lamb.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/us-local/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/us-markets/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "cftc",
+    "eia",
+    "usda_ams_agtransport",
+    "usda_ams_fgis",
+    "usda_ams_lmr",
+    "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/us-nass-extra-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_nass",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-ppi.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "bls"
+   ]
+  },
+  {
+   "path": "data/us-reservoirs-normals.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usbr_rise"
+   ]
+  },
+  {
+   "path": "data/us-reservoirs.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usbr_rise"
+   ]
+  },
+  {
+   "path": "data/us-snotel-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nrcs"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_nrcs",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-states-macro.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "bea",
+    "bls",
+    "census"
+   ]
+  },
+  {
+   "path": "data/us-states/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers",
+    "usda_nass"
+   ]
+  },
+  {
+   "path": "data/us-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "bls",
+    "usda_nass"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:BLS",
+     "sourceId": "bls",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:crops",
+     "sourceId": "usda_nass",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:livestock",
+     "sourceId": "usda_nass",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:prices_paid",
+     "sourceId": "usda_nass",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:stocks",
+     "sourceId": "usda_nass",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-tariff-measures.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "us_tariffs"
+   ]
+  },
+  {
+   "path": "data/us-tariffs.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "us_tariffs"
+   ]
+  },
+  {
+   "path": "data/us-trade-partners-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fas_gats"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_fas_gats",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-trade-products.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fas_gats"
+   ]
+  },
+  {
+   "path": "data/us-ttb-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ttb"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "ttb",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-weekly-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eia",
+    "usda_ams_fgis",
+    "usda_ams_mars",
+    "usda_fas_esr"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:EIA",
+     "sourceId": "eia",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "grupo:USDA AMS Grain Inspection",
+     "sourceId": "usda_ams_fgis",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:USDA AMS Market News",
+     "sourceId": "usda_ams_mars",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:USDA FAS Export Sales",
+     "sourceId": "usda_fas_esr",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/usda-calendar.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass",
+    "usda_oce_wasde"
+   ]
+  },
+  {
+   "path": "data/views/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_agrifood"
+   ]
+  },
+  {
+   "path": "data/watch/",
+   "scope": "carpeta",
+   "verdict": "derivado",
+   "sources": []
+  },
+  {
+   "path": "data/wine-prices.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "franceagrimer",
+    "mapa_es"
+   ]
+  },
+  {
+   "path": "data/wood-prices-de.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "destatis"
+   ]
+  },
+  {
+   "path": "data/wood-removals.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "reviewBeforeSelling": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/worldbank-agri.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "world_bank_wdi"
+   ]
+  }
+ ],
+ "derived": [
+  {
+   "path": "data/alberta-weekly-debug.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/alerts.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/api.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/catalog.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/commercial-catalog.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/commercial-summary.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/corrections.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/country-pending.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/coverage-gaps.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/coverage-overrides.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/cross-market.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/daily-brief.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/data-anomalies.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/data-quality.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/dehesa-index-ca.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/dehesa-index-us.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/dehesa-index.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/ers-cost-reference.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/freshness-policy.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/freshness.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/home-explore.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/home-tape.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/instrument-identity.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/intelligence.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/market-labels.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/news-status.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/news.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/observatory.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/pipeline-status.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/premium-tracker.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/product-compare.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/product-labels.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/product-metadata.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/quality.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/relationships.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/revisions.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/search-index.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/series-lifecycle.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/series-registry.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/snapshot-contract.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/source-candidates.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/source-status.json",
+   "verdict": "derivado"
+  }
+ ]
+}

@@ -1,0 +1,567 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-15T22:46:40Z",
+ "summary": {
+  "sources": 137,
+  "sourcesApto": 124,
+  "sourcesCondiciones": 9,
+  "sourcesNoApto": 4,
+  "datasets": 249,
+  "datasets_apto": 156,
+  "datasets_condiciones": 82,
+  "datasets_parcial": 4,
+  "datasets_no-apto": 3,
+  "datasets_reviewBeforeSelling": 68,
+  "derived": 42
+ },
+ "sources": {
+  "aafc_drought": {
+   "name": "Agriculture and Agri-Food Canada — Canadian Drought Monitor",
+   "verdict": "apto"
+  },
+  "abares": {
+   "name": "Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences)",
+   "verdict": "apto"
+  },
+  "abs": {
+   "name": "Australian Bureau of Statistics (Data API)",
+   "verdict": "apto"
+  },
+  "agence_bio": {
+   "name": "Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr)",
+   "verdict": "apto"
+  },
+  "agreste_ssp": {
+   "name": "France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer)",
+   "verdict": "apto"
+  },
+  "alberta_ag": {
+   "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "verdict": "apto"
+  },
+  "ama_agrardiesel": {
+   "name": "AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG",
+   "verdict": "apto"
+  },
+  "argentina_datos_abiertos": {
+   "name": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",
+   "verdict": "apto"
+  },
+  "bank_of_canada": {
+   "name": "Bank of Canada (Valet API)",
+   "verdict": "condiciones"
+  },
+  "bea": {
+   "name": "U.S. Bureau of Economic Analysis",
+   "verdict": "apto"
+  },
+  "bfs_ch_open": {
+   "name": "Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices",
+   "verdict": "apto"
+  },
+  "bis": {
+   "name": "Bank for International Settlements (central bank policy rates)",
+   "verdict": "condiciones"
+  },
+  "ble": {
+   "name": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
+   "verdict": "no-apto"
+  },
+  "bls": {
+   "name": "U.S. Bureau of Labor Statistics",
+   "verdict": "apto"
+  },
+  "bmluk_hydrographie": {
+   "name": "BMLUK — Grundwasser Aktuell Österreich (hydrographischer Dienst, gis.lfrz.gv.at)",
+   "verdict": "apto"
+  },
+  "boe_es": {
+   "name": "Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada",
+   "verdict": "apto"
+  },
+  "bundesanzeiger": {
+   "name": "Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes",
+   "verdict": "apto"
+  },
+  "cbs_nl": {
+   "name": "Statistics Netherlands (CBS StatLine)",
+   "verdict": "apto"
+  },
+  "cbsa_tariff": {
+   "name": "Canada Border Services Agency — Customs Tariff",
+   "verdict": "no-apto"
+  },
+  "census": {
+   "name": "U.S. Census Bureau",
+   "verdict": "apto"
+  },
+  "cftc": {
+   "name": "U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment)",
+   "verdict": "apto"
+  },
+  "cgc": {
+   "name": "Canadian Grain Commission — Grain Statistics Weekly",
+   "verdict": "apto"
+  },
+  "crea_fondiario": {
+   "name": "Italy — CREA, Indagine sul mercato fondiario in Italia (Banca Dati dei Valori Fondiari)",
+   "verdict": "apto"
+  },
+  "cso_ie": {
+   "name": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05)",
+   "verdict": "apto"
+  },
+  "csp_lv": {
+   "name": "Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk)",
+   "verdict": "apto"
+  },
+  "csu_cz": {
+   "name": "Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area)",
+   "verdict": "apto"
+  },
+  "defra": {
+   "name": "UK Defra (gov.uk agricultural statistics)",
+   "verdict": "apto"
+  },
+  "destatis": {
+   "name": "Destatis (GENESIS-Online)",
+   "verdict": "apto"
+  },
+  "dgec_prix_petroliers": {
+   "name": "Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers",
+   "verdict": "apto"
+  },
+  "dila_jorf": {
+   "name": "DILA — Journal officiel de la République française (données ouvertes JORF)",
+   "verdict": "apto"
+  },
+  "dre_pt": {
+   "name": "Imprensa Nacional-Casa da Moeda — Diário da República (Portarias n.º 54-D, 54-E y 54-L/2023, PEPAC) y GPP/IFAP",
+   "verdict": "apto"
+  },
+  "dst_dk": {
+   "name": "Statistics Denmark (StatBank)",
+   "verdict": "apto"
+  },
+  "dwd_cdc": {
+   "name": "Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de)",
+   "verdict": "apto"
+  },
+  "ec_eambrosia": {
+   "name": "Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE)",
+   "verdict": "apto"
+  },
+  "ecb": {
+   "name": "European Central Bank (euro reference rates, ECB Data Portal)",
+   "verdict": "condiciones"
+  },
+  "edo_cdi": {
+   "name": "European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS)",
+   "verdict": "apto"
+  },
+  "eia": {
+   "name": "U.S. Energy Information Administration (Open Data API)",
+   "verdict": "condiciones"
+  },
+  "enesa": {
+   "name": "Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario",
+   "verdict": "apto"
+  },
+  "epa_ie": {
+   "name": "Environmental Protection Agency (EPA) Irlanda — indicadores ambientales EIIA13 y EIIA14, publicados por el CSO",
+   "verdict": "apto"
+  },
+  "esbirka_cz": {
+   "name": "Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb.",
+   "verdict": "apto"
+  },
+  "eu_agrifood": {
+   "name": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "verdict": "condiciones"
+  },
+  "eu_oil_bulletin": {
+   "name": "European Commission — Weekly Oil Bulletin (DG ENER)",
+   "verdict": "condiciones"
+  },
+  "eu_pdo_candiago": {
+   "name": "Candiago et al. (2022) - EU-PDO: inventario geoespacial de las DOP de vino de Europa (Scientific Data; figshare)",
+   "verdict": "apto"
+  },
+  "eu_taric": {
+   "name": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
+   "verdict": "condiciones"
+  },
+  "eur_lex": {
+   "name": "EUR-Lex (Publications Office of the European Union) — EU legislation",
+   "verdict": "apto"
+  },
+  "eurostat": {
+   "name": "Eurostat",
+   "verdict": "condiciones"
+  },
+  "eurostat_comext": {
+   "name": "Eurostat — Comext international trade in goods",
+   "verdict": "condiciones"
+  },
+  "fek_gr": {
+   "name": "Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023",
+   "verdict": "apto"
+  },
+  "foag_ch": {
+   "name": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
+   "verdict": "apto"
+  },
+  "franceagrimer": {
+   "name": "FranceAgriMer (VISIONet)",
+   "verdict": "apto"
+  },
+  "geosphere_austria": {
+   "name": "GeoSphere Austria — Data Hub (WINFORE v2, SPEI)",
+   "verdict": "apto"
+  },
+  "gesetze_im_internet": {
+   "name": "Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV",
+   "verdict": "apto"
+  },
+  "gisco_nuts": {
+   "name": "Eurostat GISCO — NUTS 2021 administrative boundaries (© EuroGeographics)",
+   "verdict": "apto"
+  },
+  "gov_ie_dafm": {
+   "name": "Department of Agriculture, Food and the Marine (gov.ie) — BISS, CRISS y CISYF",
+   "verdict": "apto"
+  },
+  "gus_poland": {
+   "name": "Statistics Poland (GUS) - Local Data Bank (BDL)",
+   "verdict": "apto"
+  },
+  "hmrc_govuk": {
+   "name": "HM Revenue & Customs - GOV.UK VAT guidance",
+   "verdict": "apto"
+  },
+  "hmrc_uktradeinfo": {
+   "name": "HM Revenue & Customs - UK Trade Info (OTS, API OData)",
+   "verdict": "apto"
+  },
+  "hubeau_ades": {
+   "name": "ADES (BRGM) — Qualité des eaux souterraines, vía Hub'Eau",
+   "verdict": "apto"
+  },
+  "hubeau_onde": {
+   "name": "OFB — Observatoire national des étiages (ONDE), vía Hub'Eau",
+   "verdict": "apto"
+  },
+  "imgw_pib": {
+   "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne)",
+   "verdict": "apto"
+  },
+  "inao_aires": {
+   "name": "INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr)",
+   "verdict": "apto"
+  },
+  "inao_siqo": {
+   "name": "INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr)",
+   "verdict": "apto"
+  },
+  "indec": {
+   "name": "Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar",
+   "verdict": "apto"
+  },
+  "indec_ar": {
+   "name": "Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP)",
+   "verdict": "apto"
+  },
+  "ine_es": {
+   "name": "Instituto Nacional de Estadística (España)",
+   "verdict": "apto"
+  },
+  "ine_pt": {
+   "name": "INE — Statistics Portugal",
+   "verdict": "apto"
+  },
+  "insee": {
+   "name": "Institut national de la statistique et des études économiques (INSEE)",
+   "verdict": "apto"
+  },
+  "irs_sales_tax": {
+   "name": "U.S. Internal Revenue Service - Optional State Sales Tax Tables",
+   "verdict": "apto"
+  },
+  "ispra": {
+   "name": "ISPRA — Stato di severità idrica a scala nazionale",
+   "verdict": "apto"
+  },
+  "istat": {
+   "name": "Italy — Istituto Nazionale di Statistica (ISTAT)",
+   "verdict": "apto"
+  },
+  "it_regioni_dop": {
+   "name": "Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana)",
+   "verdict": "apto"
+  },
+  "kansas_city_fed": {
+   "name": "Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District)",
+   "verdict": "apto"
+  },
+  "knmi_daggegevens": {
+   "name": "KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación)",
+   "verdict": "apto"
+  },
+  "magyarkozlony_hu": {
+   "name": "Magyar Közlöny / Nemzeti Jogszabálytár — 15-21/2024. (IV. 9.) AM rendeletek",
+   "verdict": "apto"
+  },
+  "magyp_estimaciones": {
+   "name": "Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas",
+   "verdict": "apto"
+  },
+  "magyp_lecheria": {
+   "name": "Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar",
+   "verdict": "apto"
+  },
+  "mapa_es": {
+   "name": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+   "verdict": "apto"
+  },
+  "masaf_it": {
+   "name": "MASAF — Ministero dell'agricoltura, della sovranità alimentare e delle foreste (DM 660087/2022, testo coordinato)",
+   "verdict": "apto"
+  },
+  "mase_dgsaie": {
+   "name": "Ministero dell'Ambiente e della Sicurezza Energetica (DGSAIE) — Prezzi medi settimanali dei carburanti",
+   "verdict": "apto"
+  },
+  "mb_agri": {
+   "name": "Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba)",
+   "verdict": "apto"
+  },
+  "meteoswiss": {
+   "name": "Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet",
+   "verdict": "apto"
+  },
+  "mimit_carburanti": {
+   "name": "Ministero delle Imprese e del Made in Italy — Osservaprezzi carburanti (open data)",
+   "verdict": "apto"
+  },
+  "miteco_carburantes": {
+   "name": "MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras)",
+   "verdict": "apto"
+  },
+  "miteco_embalses": {
+   "name": "MITECO — Boletín Hidrológico (BD-Embalses)",
+   "verdict": "apto"
+  },
+  "miteco_inventario_gei": {
+   "name": "MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero",
+   "verdict": "apto"
+  },
+  "miteco_rbd": {
+   "name": "MITECO — Demarcaciones hidrográficas (límites reportados a la UE; capa WISE WFD 2022 de la Agencia Europea de Medio Ambiente)",
+   "verdict": "apto"
+  },
+  "miteco_sequia": {
+   "name": "MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez)",
+   "verdict": "apto"
+  },
+  "moniteur_be": {
+   "name": "Moniteur belge / Belgisch Staatsblad (decretos de pagos directos de Flandes y Valonia, PAC 2023-2027)",
+   "verdict": "apto"
+  },
+  "monitorul_ro": {
+   "name": "Monitorul Oficial al României — HG 1.571/2022 y ordinele MADR de pagos directos",
+   "verdict": "apto"
+  },
+  "nasa_power": {
+   "name": "NASA POWER (Prediction Of Worldwide Energy Resources)",
+   "verdict": "apto"
+  },
+  "nn_hr": {
+   "name": "Narodne novine — Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025, 49/2026, 78/2026)",
+   "verdict": "apto"
+  },
+  "noaa_ncei": {
+   "name": "NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv)",
+   "verdict": "apto"
+  },
+  "odepa_chile": {
+   "name": "ODEPA (Chile) - Portal de datos abiertos",
+   "verdict": "apto"
+  },
+  "ons": {
+   "name": "UK Office for National Statistics (consumer price index)",
+   "verdict": "apto"
+  },
+  "pl_akcyza_rm": {
+   "name": "Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej)",
+   "verdict": "apto"
+  },
+  "prix_carburants_fr": {
+   "name": "Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers)",
+   "verdict": "apto"
+  },
+  "rba": {
+   "name": "Reserve Bank of Australia (statistical tables)",
+   "verdict": "apto"
+  },
+  "retsinformation": {
+   "name": "Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser)",
+   "verdict": "apto"
+  },
+  "ris_at": {
+   "name": "Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung",
+   "verdict": "apto"
+  },
+  "rivm_lmm": {
+   "name": "RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit",
+   "verdict": "apto"
+  },
+  "rvo": {
+   "name": "RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk)",
+   "verdict": "apto"
+  },
+  "sejm_eli": {
+   "name": "Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia)",
+   "verdict": "apto"
+  },
+  "sjv_se": {
+   "name": "Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks)",
+   "verdict": "apto"
+  },
+  "snice_mx": {
+   "name": "Mexico — Secretaría de Economía (SNICE, LIGIE tariff)",
+   "verdict": "no-apto"
+  },
+  "spf_economie_energie": {
+   "name": "SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos)",
+   "verdict": "apto"
+  },
+  "stat_ee": {
+   "name": "Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy)",
+   "verdict": "apto"
+  },
+  "statbel": {
+   "name": "Statbel (Statistics Belgium)",
+   "verdict": "apto"
+  },
+  "statcan": {
+   "name": "Statistics Canada",
+   "verdict": "apto"
+  },
+  "statistik_austria": {
+   "name": "Statistik Austria (open.data)",
+   "verdict": "apto"
+  },
+  "statistik_austria_vb": {
+   "name": "Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications)",
+   "verdict": "apto"
+  },
+  "svensk_forfattningssamling": {
+   "name": "Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket",
+   "verdict": "apto"
+  },
+  "tedb": {
+   "name": "European Commission - Taxes in Europe Database (TEDB)",
+   "verdict": "apto"
+  },
+  "ttb": {
+   "name": "Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics)",
+   "verdict": "apto"
+  },
+  "us_drought_monitor": {
+   "name": "U.S. Drought Monitor (NDMC, USDA, NOAA)",
+   "verdict": "no-apto"
+  },
+  "us_tariffs": {
+   "name": "USITC Harmonized Tariff Schedule, CBP trade remedies, USTR",
+   "verdict": "apto"
+  },
+  "usbr_rise": {
+   "name": "U.S. Bureau of Reclamation — RISE (Reclamation Information Sharing Environment)",
+   "verdict": "apto"
+  },
+  "usda_ams_agtransport": {
+   "name": "USDA AMS Agricultural Transportation Open Data Platform (AgTransport)",
+   "verdict": "apto"
+  },
+  "usda_ams_fgis": {
+   "name": "USDA AMS / Federal Grain Inspection Service, Export Grain Inspections",
+   "verdict": "apto"
+  },
+  "usda_ams_lmr": {
+   "name": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "verdict": "apto"
+  },
+  "usda_ams_mars": {
+   "name": "USDA AMS Market News (MARS API)",
+   "verdict": "apto"
+  },
+  "usda_ers": {
+   "name": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "verdict": "apto"
+  },
+  "usda_fas_esr": {
+   "name": "USDA FAS — Export Sales Reporting (ESR)",
+   "verdict": "apto"
+  },
+  "usda_fas_gats": {
+   "name": "USDA FAS — Global Agricultural Trade System (GATS)",
+   "verdict": "apto"
+  },
+  "usda_fas_psd": {
+   "name": "USDA FAS — Production, Supply and Distribution (PSD Online)",
+   "verdict": "apto"
+  },
+  "usda_fsa": {
+   "name": "USDA Farm Service Agency (ARC/PLC program data)",
+   "verdict": "apto"
+  },
+  "usda_nass": {
+   "name": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "verdict": "apto"
+  },
+  "usda_nrcs": {
+   "name": "USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API)",
+   "verdict": "apto"
+  },
+  "usda_oce_wasde": {
+   "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
+   "verdict": "apto"
+  },
+  "usda_rma": {
+   "name": "USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance)",
+   "verdict": "apto"
+  },
+  "vigieau": {
+   "name": "VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau)",
+   "verdict": "apto"
+  },
+  "vlada_hr": {
+   "name": "Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo",
+   "verdict": "apto"
+  },
+  "vmm_waterinfo": {
+   "name": "Vlaamse Milieumaatschappij (VMM) — waterinfo.be y feiten & cijfers",
+   "verdict": "apto"
+  },
+  "wetten_nl": {
+   "name": "Wetten.overheid.nl / Staatscourant — Uitvoeringsregeling GLB 2023 (BWBR0047444)",
+   "verdict": "apto"
+  },
+  "wikidata": {
+   "name": "Wikidata",
+   "verdict": "apto"
+  },
+  "world_bank": {
+   "name": "World Bank — Commodity Price Data (Pink Sheet)",
+   "verdict": "apto"
+  },
+  "world_bank_wdi": {
+   "name": "World Bank Open Data (World Development Indicators)",
+   "verdict": "apto"
+  },
+  "zoll_agrardiesel": {
+   "name": "Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel)",
+   "verdict": "apto"
+  }
+ }
+}

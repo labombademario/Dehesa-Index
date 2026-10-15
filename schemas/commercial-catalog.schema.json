@@ -1,0 +1,156 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Commercial catalogue (derived from the licence registry)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "policy",
+  "summary",
+  "sources",
+  "datasets",
+  "derived"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "policy": {
+   "type": "object",
+   "required": [
+    "es",
+    "en"
+   ]
+  },
+  "summary": {
+   "type": "object",
+   "required": [
+    "sources",
+    "sourcesApto",
+    "sourcesCondiciones",
+    "sourcesNoApto",
+    "datasets",
+    "datasets_apto",
+    "datasets_condiciones",
+    "datasets_parcial",
+    "datasets_no-apto",
+    "datasets_reviewBeforeSelling",
+    "derived"
+   ]
+  },
+  "sources": {
+   "type": "array",
+   "minItems": 50,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "name",
+     "url",
+     "licenseId",
+     "licenseName",
+     "licenseUrl",
+     "verdict",
+     "status",
+     "legalConfidence",
+     "commercialUse",
+     "derivatives",
+     "redistribution",
+     "attribution"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "minLength": 1
+     },
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "apto",
+       "condiciones",
+       "no-apto"
+      ]
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "VERIFIED",
+       "PENDING",
+       "RESTRICTED",
+       "BLOCKED"
+      ]
+     }
+    }
+   }
+  },
+  "datasets": {
+   "type": "array",
+   "minItems": 100,
+   "items": {
+    "type": "object",
+    "required": [
+     "path",
+     "scope",
+     "verdict",
+     "sources"
+    ],
+    "properties": {
+     "path": {
+      "type": "string",
+      "pattern": "^data/"
+     },
+     "scope": {
+      "type": "string",
+      "enum": [
+       "fichero",
+       "carpeta",
+       "observaciones"
+      ]
+     },
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "apto",
+       "condiciones",
+       "parcial",
+       "no-apto",
+       "derivado"
+      ]
+     },
+     "sources": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "derived": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "path",
+     "verdict"
+    ],
+    "properties": {
+     "path": {
+      "type": "string",
+      "pattern": "^data/"
+     },
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "derivado"
+      ]
+     }
+    }
+   }
+  }
+ }
+}

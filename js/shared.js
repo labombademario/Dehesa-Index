@@ -40,7 +40,7 @@
   var theme = readTheme();
 
   var DENSITY = { 'precios.html': 'compact', 'europa.html': 'compact', 'lonjas.html': 'compact', 'mercados.html': 'compact', 'precios-locales.html': 'compact', 'comparador.html': 'compact', 'catalogo.html': 'compact', 'calendario.html': 'compact', 'noticias.html': 'compact',
-    'metodologia.html': 'expanded', 'observatorio.html': 'expanded', 'informacion.html': 'expanded', 'status.html': 'expanded', 'legal.html': 'expanded' };
+    'metodologia.html': 'expanded', 'observatorio.html': 'expanded', 'condiciones.html': 'expanded', 'informacion.html': 'expanded', 'status.html': 'expanded', 'legal.html': 'expanded' };
   function applyThemeAttr() {
     try { var f = window.location.pathname.split('/').pop() || 'index.html'; document.documentElement.setAttribute('data-density', DENSITY[f] || 'standard'); } catch (e) { /* sin densidad: estandar */ }
     document.documentElement.setAttribute('data-theme', theme);
@@ -170,6 +170,7 @@
       pd('metodologia.html', L('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), L('Cómo se verifican, fechan y convierten los datos', 'How data are verified, dated and converted', 'Comment les données sont vérifiées, datées et converties', 'Come i dati sono verificati, datati e convertiti')),
       pd('status.html', L('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati'), L('Última y próxima actualización de cada fuente', 'Last and next update of each source', 'Dernière et prochaine mise à jour de chaque source', 'Ultimo e prossimo aggiornamento di ogni fonte')),
       pd('revisiones.html', L('Revisiones y correcciones', 'Revisions and corrections', 'Révisions et corrections', 'Revisioni e correzioni'), L('Qué cifras cambiaron, cuándo, por qué y qué llegó tarde', 'Which figures changed, when, why, and what arrived late', 'Quels chiffres ont changé, quand, pourquoi, et ce qui est arrivé en retard', 'Quali dati sono cambiati, quando, perché e cosa è arrivato in ritardo')),
+      pd('condiciones.html', L('Condiciones de uso comercial', 'Commercial-use terms', 'Conditions d’usage commercial', 'Condizioni d’uso commerciale'), L('Qué fuentes y ficheros son aptos para empresas, según su licencia', 'Which sources and files are fit for businesses, by licence', 'Quelles sources et quels fichiers conviennent aux entreprises, selon leur licence', 'Quali fonti e file sono idonei per le aziende, in base alla licenza')),
       pd('observatorio.html', L('Observatorio de datos', 'Data observatory', 'Observatoire des données', 'Osservatorio dei dati'), L('Novedades, frescura, cobertura y próximas publicaciones', 'What’s new, freshness, coverage and upcoming releases', 'Nouveautés, fraîcheur, couverture et prochaines publications', 'Novità, freschezza, copertura e prossime pubblicazioni')),
       pd('informacion.html', L('Información', 'About', 'Informations', 'Informazioni'), L('Quiénes somos y de qué fuentes se nutre el panel', 'Who we are and which sources feed the dashboard', 'Qui nous sommes et quelles sources alimentent le tableau', 'Chi siamo e quali fonti alimentano il pannello'))
     ] }

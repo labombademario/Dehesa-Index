@@ -4621,3 +4621,47 @@ def spain_avances(doc, errs, warns, stats):
     for ed, h in doc["history"].items():
         if not re.fullmatch(r"20\d\d-\d\d", ed): errs.append("avances: edición rara %r" % ed)
     stats["series"] = len(doc["items"])
+def commercial_catalog(doc, errs, warns, stats):
+    """data/commercial-catalog.json: el veredicto de cada fuente y de cada fichero se recalcula aqui, de forma independiente del generador, a partir de data/license-registry.json."""
+    reg = json.loads((D / "license-registry.json").read_text(encoding="utf-8"))["sources"]
+    def vd(v):
+        if v["status"] != "VERIFIED" or any(v[k] in ("no", "unclear") for k in ("commercialUse", "derivatives", "redistribution")): return "no-apto"
+        return "apto" if all(v[k] == "yes" for k in ("commercialUse", "derivatives", "redistribution")) else "condiciones"
+    ids = [s["id"] for s in doc["sources"]]; S = {}
+    if len(ids) != len(set(ids)): errs.append("catálogo comercial: fuente repetida")
+    for s in doc["sources"]:
+        r = reg.get(s["id"])
+        if not r: errs.append("catálogo comercial: %s no está en el registro de licencias" % s["id"]); continue
+        S[s["id"]] = s
+        if s["verdict"] != vd(r): errs.append("catálogo comercial: %s es %s pero el registro dice %s" % (s["id"], s["verdict"], vd(r)))
+        if s["verdict"] == "no-apto" and not s.get("why"): errs.append("catálogo comercial: %s no apta sin motivo" % s["id"])
+        if s["verdict"] != "no-apto" and (s["status"] != "VERIFIED" or "no" in (s["commercialUse"], s["derivatives"], s["redistribution"]) or "unclear" in (s["commercialUse"], s["derivatives"], s["redistribution"])): errs.append("catálogo comercial: %s marcada apta con permisos no concedidos" % s["id"])
+        if s["verdict"] != "no-apto" and not s.get("attribution"): errs.append("catálogo comercial: %s sin línea de atribución" % s["id"])
+    paths = [d["path"] for d in doc["datasets"]]
+    if len(paths) != len(set(paths)): errs.append("catálogo comercial: fichero repetido")
+    for d in doc["datasets"]:
+        vs = []
+        for sid in d["sources"]:
+            if sid not in S: errs.append("catálogo comercial: %s usa %s, que no figura en sources" % (d["path"], sid)); break
+            vs.append(S[sid]["verdict"])
+        else:
+            exp = "derivado" if not vs else ("no-apto" if all(x == "no-apto" for x in vs) else ("parcial" if "no-apto" in vs else ("apto" if all(x == "apto" for x in vs) else "condiciones")))
+            if d["verdict"] != exp: errs.append("catálogo comercial: %s es %s pero sus fuentes dan %s" % (d["path"], d["verdict"], exp))
+            if d["verdict"] == "parcial" and not d.get("commercialSources"): errs.append("catálogo comercial: %s parcial sin commercialSources" % d["path"])
+            if d["verdict"] in ("apto", "condiciones") and (d.get("excludedSources")): errs.append("catálogo comercial: %s apto pero excluye fuentes" % d["path"])
+            if set(d.get("commercialSources", [])) & set(d.get("excludedSources", [])): errs.append("catálogo comercial: %s fuente a la vez apta y excluida" % d["path"])
+    sm = doc["summary"]
+    for k, n in (("sources", len(doc["sources"])), ("datasets", len(doc["datasets"])), ("derived", len(doc["derived"])), ("sourcesApto", sum(s["verdict"] == "apto" for s in doc["sources"])),
+                 ("sourcesNoApto", sum(s["verdict"] == "no-apto" for s in doc["sources"])), ("datasets_apto", sum(d["verdict"] == "apto" for d in doc["datasets"])), ("datasets_no-apto", sum(d["verdict"] == "no-apto" for d in doc["datasets"]))):
+        if sm[k] != n: errs.append("catálogo comercial: resumen %s = %s, pero hay %s" % (k, sm[k], n))
+    if sm["sourcesNoApto"] < 1: errs.append("catálogo comercial: ninguna fuente no apta (¿se ha relajado la regla?)")
+    stats["series"] = len(doc["datasets"])
+def commercial_summary(doc, errs, warns, stats):
+    """data/commercial-summary.json es una vista del catálogo comercial: las cifras y el veredicto de cada fuente deben coincidir con data/commercial-catalog.json."""
+    full = json.loads((D / "commercial-catalog.json").read_text(encoding="utf-8"))
+    if doc["summary"] != full["summary"]: errs.append("resumen comercial: las cifras no coinciden con el catálogo comercial")
+    V = {s["id"]: s for s in full["sources"]}
+    if set(doc["sources"]) != set(V): errs.append("resumen comercial: las fuentes no coinciden con el catálogo comercial")
+    for k, s in doc["sources"].items():
+        if k in V and (s.get("verdict") != V[k]["verdict"] or s.get("name") != V[k]["name"]): errs.append("resumen comercial: %s no coincide con el catálogo" % k)
+    stats["series"] = len(doc["sources"])

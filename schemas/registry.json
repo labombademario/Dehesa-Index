@@ -272,6 +272,18 @@
     "source_candidates"
    ]
   ],
+  "commercial-catalog.json": [
+   "commercial-catalog",
+   [
+    "commercial_catalog"
+   ]
+  ],
+  "commercial-summary.json": [
+   "commercial-summary",
+   [
+    "commercial_summary"
+   ]
+  ],
   "coverage-gaps.json": [
    "coverage-gaps",
    [
@@ -1620,6 +1632,8 @@
   "prices/manifest.json",
   "freshness.json",
   "source-candidates.json",
+  "commercial-catalog.json",
+  "commercial-summary.json",
   "coverage-gaps.json",
   "premium-tracker.json",
   "home-tape.json",
