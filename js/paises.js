@@ -459,12 +459,14 @@
 
   /* Variantes casi identicas (trigo y espelta / trigo blando y espelta / ... ; mismo producto en varias plazas): una sola entrada en la lista y las variantes como opcion secundaria */
   var GSTOP = { and: 1, y: 1, et: 1, e: 1, de: 1, of: 1, the: 1 };
-  function gtok(k) { return norm(k).split(/[^a-z0-9]+/).filter(function (w) { return w && !GSTOP[w]; }); }
+  function gtok(k) { return norm(k).split(/[^a-z0-9\-]+/).filter(function (w) { return w && !GSTOP[w]; }); }
+  var GNOT = { non: 1, no: 1, not: 1, sin: 1, sans: 1, senza: 1, excluding: 1, excluded: 1, excluido: 1, excluidos: 1, excluida: 1, excluidas: 1, excl: 1, valor: 1, value: 1, valeur: 1, valore: 1, precio: 1, price: 1, prix: 1, prezzo: 1, indice: 1, index: 1, coste: 1, cost: 1, share: 1, cuota: 1 };
   var GGEO = { west: 1, east: 1, north: 1, south: 1, new: 1, occidental: 1, oriental: 1, norte: 1, sur: 1, nord: 1, ouest: 1, est: 1, ovest: 1, nuevo: 1, nueva: 1, nouveau: 1, nouvelle: 1, nuovo: 1, nuova: 1, septentrional: 1, meridional: 1 };
-  function gsub(a, b) { /* a es una version mas general de b: contiene todas sus palabras y b anade como mucho 2 calificativos (no un punto cardinal: Virginia no es Virginia Occidental) */
-    var i, extra = 0; if (a.length >= b.length) return false;
+  function gproper(t) { return /(^|\s)[A-ZÁÉÍÓÚÑÜ]/.test(String(t || '').replace(/^\S+\s*/, '')); } /* nombre propio tras la primera palabra: es un lugar (Pays de la Loire), no una variante */
+  function gsub(a, b, braw) { /* a es una version mas general de b: contiene todas sus palabras y b anade como mucho 2 calificativos (no un punto cardinal: Virginia no es Virginia Occidental) */
+    var i, extra = 0; if (a.length >= b.length || gproper(braw)) return false;
     for (i = 0; i < a.length; i++) if (b.indexOf(a[i]) < 0) return false;
-    for (i = 0; i < b.length; i++) if (a.indexOf(b[i]) < 0) { extra++; if (GGEO[b[i]]) return false; }
+    for (i = 0; i < b.length; i++) if (a.indexOf(b[i]) < 0) { extra++; if (GGEO[b[i]] || GNOT[b[i]]) return false; }
     return extra <= 2;
   }
   function groupInfo(list) {
@@ -477,7 +479,7 @@
     var byM = {}; info.forEach(function (r) { (byM[r.m] = byM[r.m] || []).push(r); });
     Object.keys(byM).forEach(function (m) {
       var ks = {}, roots = {}; byM[m].forEach(function (r) { ks[r.k] = r.kt; });
-      Object.keys(ks).forEach(function (k) { var best = k; Object.keys(ks).forEach(function (o) { if (o !== k && ks[o].length && gsub(ks[o], ks[k]) && (best === k || ks[o].length < ks[best].length)) best = o; }); roots[k] = best; });
+      Object.keys(ks).forEach(function (k) { var best = k; Object.keys(ks).forEach(function (o) { if (o !== k && ks[o].length && gsub(ks[o], ks[k], k) && (best === k || ks[o].length < ks[best].length)) best = o; }); roots[k] = best; });
       byM[m].forEach(function (r) { r.root = roots[r.k]; });
     });
     var groups = {}, order = [];
@@ -490,7 +492,7 @@
     });
     Object.keys(byT).forEach(function (t) {
       var rs = byT[t]; if (rs.length < 2) return;
-      rs.forEach(function (r) { var best = r; rs.forEach(function (o) { if (o !== r && gsub(o.ht, r.ht) && (best === r || o.ht.length < best.ht.length)) best = o; }); r.broot = best.head; });
+      rs.forEach(function (r) { var best = r; rs.forEach(function (o) { if (o !== r && gsub(o.ht, r.ht, r.head) && (best === r || o.ht.length < best.ht.length)) best = o; }); r.broot = best.head; });
       rs.forEach(function (r) { var key = 'B\u0001' + t + '\u0001' + r.broot; if (!groups[key]) { groups[key] = { key: key, disp: r.k + ': ' + r.broot + r.tail, root: r.k, mem: [] }; order.push(groups[key]); } if (r.g.mem.length === 1) { order.splice(order.indexOf(r.g), 1); } groups[key].mem.push(r); r.g = groups[key]; r.v = r.head; });
     });
     order = order.filter(function (g) { /* un grupo de mas de 8 ya no son "variantes casi iguales" sino productos distintos (cortes, calidades...): se dejan sueltos */
@@ -515,10 +517,12 @@
     if (!cur) return ''; var gi = groupInfo(all), r = gi.info.filter(function (q) { return q.x.id === cur.id; })[0];
     if (!r || r.g.mem.length < 2) return ''; var q = SP[lang()] || SP.es, g = r.g, vk = {}, vp = {};
     g.mem.forEach(function (m) { vk[m.v] = 1; vp[m.par] = 1; });
-    var byK = Object.keys(vk).length > 1, byP = Object.keys(vp).length > 1;
+    var byK = Object.keys(vk).length > 1, byP = Object.keys(vp).length > 1, dup = {};
+    g.mem.forEach(function (m) { var l0 = (byK ? m.v : '') + (byK && byP && m.par ? ' · ' : '') + (byP ? m.par : '') || m.v || m.par || shortLab(m.x); dup[l0] = (dup[l0] || 0) + 1; });
     return '<div id="ps-var" style="margin:8px 0 2px;padding:8px 10px;border-left:3px solid var(--accent,#2f6f4f);background:var(--bg-soft,rgba(120,110,80,.08));border-radius:0 8px 8px 0"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(q[5]) + ' · ' + g.mem.length + '</div><div style="display:flex;flex-wrap:wrap;gap:6px">' +
       g.mem.map(function (m) {
         var lab = (byK ? m.v : '') + (byK && byP && m.par ? ' · ' : '') + (byP ? m.par : '') || m.v || m.par || shortLab(m.x), on = m.x.id === cur.id;
+        if (dup[lab] > 1) lab += ' (' + String(m.x.label).replace(/\s*\((?:[^()]*Eurostat[^()]*)\)\s*$/, '').split(/:\s/)[0].replace(/,\s.*$/, '').slice(0, 40) + ')'; /* misma etiqueta traducida: se distingue por la original */
         return '<button type="button" data-s="' + esc(m.x.id) + '" aria-pressed="' + (on ? 'true' : 'false') + '" style="font:inherit;font-size:12.5px;cursor:pointer;border-radius:999px;padding:4px 11px;border:1px solid ' + (on ? 'var(--text,#231f14)' : 'var(--border,#ddd6c4)') + ';background:' + (on ? 'var(--text,#231f14)' : 'transparent') + ';color:' + (on ? 'var(--surface,#fffdf7)' : 'inherit') + ';font-weight:' + (on ? 700 : 400) + '" title="' + esc(TL(m.x.label)) + '">' + esc(lab) + '</button>';
       }).join('') + '</div></div>';
   }
@@ -534,7 +538,7 @@
     return list.filter(function (x) { return DehesaSearch.match(q, x.label + ' ' + TL(x.label)) >= 0.45; });
   }
   function seriesOpts(list, sel) {
-    var vw = (SP[lang()] || SP.es)[7], one = function (x, lab) { return '<option value="' + esc(x.id) + '"' + (x.id === sel ? ' selected' : '') + ' title="' + esc(TL(x.label)) + '">' + esc(lab + (x._n > 1 ? '  ＋' + (x._n - 1) + vw : '')) + '</option>'; };
+    var one = function (x, lab) { return '<option value="' + esc(x.id) + '"' + (x.id === sel ? ' selected' : '') + ' title="' + esc(TL(x.label)) + '">' + esc((x._n > 1 ? '＋' + (x._n - 1) + ' · ' : '') + lab) + '</option>'; };
     var rows = list.map(function (x) { var l = shortLab(x), i = l.indexOf(': '); return { x: x, l: l, k: i > 2 && i < 70 ? l.slice(0, i) : '', m: i > 2 && i < 70 ? l.slice(i + 2) : l }; });
     var cnt = {}; rows.forEach(function (r) { if (r.k) cnt[r.k] = (cnt[r.k] || 0) + 1; });
     var out = '', seen = {}, loose = '';
