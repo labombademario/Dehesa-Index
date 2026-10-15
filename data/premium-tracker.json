@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T21:40:31Z",
+ "generatedAt": "2026-10-15T15:44:56Z",
  "sourceIds": [
   "usda_ams_mars"
  ],
@@ -21,22 +21,22 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 65,
-   "conventionalSeries": 119,
-   "date": "2026-09-25",
+   "conventionalSeries": 118,
+   "date": "2026-10-09",
    "organic": {
-    "median": 11.25,
+    "median": 10.5,
     "min": 9.75,
     "max": 13.5,
-    "n": 6
+    "n": 7
    },
    "conventional": {
-    "median": 4.9572,
-    "min": 4.42,
-    "max": 6.0675,
-    "n": 119
+    "median": 4.5475,
+    "min": 3.8808,
+    "max": 5.835,
+    "n": 118
    },
-   "premium": 6.2928,
-   "premiumPct": 126.9,
+   "premium": 5.9525,
+   "premiumPct": 130.9,
    "reason": null
   },
   {
@@ -49,8 +49,8 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 50,
-   "conventionalSeries": 109,
-   "date": "2026-09-25",
+   "conventionalSeries": 111,
+   "date": "2026-10-09",
    "organic": {
     "median": 22.0,
     "min": 22,
@@ -58,13 +58,13 @@
     "n": 6
    },
    "conventional": {
-    "median": 12.69,
-    "min": 11.94,
+    "median": 12.455,
+    "min": 11.82,
     "max": 22.0,
-    "n": 109
+    "n": 111
    },
-   "premium": 9.31,
-   "premiumPct": 73.4,
+   "premium": 9.545,
+   "premiumPct": 76.6,
    "reason": null
   },
   {
@@ -77,22 +77,22 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 22,
-   "conventionalSeries": 59,
-   "date": "2026-09-11",
+   "conventionalSeries": 58,
+   "date": "2026-10-09",
    "organic": {
-    "median": 14.5,
-    "min": 14.5,
+    "median": 15.5,
+    "min": 15.5,
     "max": 15.5,
-    "n": 6
+    "n": 4
    },
    "conventional": {
-    "median": 6.915,
-    "min": 5.919,
-    "max": 7.81,
-    "n": 59
+    "median": 6.1859,
+    "min": 5.4665,
+    "max": 7.0092,
+    "n": 58
    },
-   "premium": 7.585,
-   "premiumPct": 109.7,
+   "premium": 9.3141,
+   "premiumPct": 150.6,
    "reason": null
   },
   {

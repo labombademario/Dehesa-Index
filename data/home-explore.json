@@ -1,19 +1,19 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-13T10:53:17Z",
+ "generatedAt": "2026-10-15T15:44:57Z",
  "facts": [
   {
    "id": "eu",
    "file": "eu/index.json",
    "date": "2026-10-11",
-   "series": 576,
+   "series": 589,
    "families": 15
   },
   {
    "id": "drought",
    "file": "drought.json",
-   "date": "2026-10-06",
-   "pctD1": 55.21
+   "date": "2026-10-13",
+   "pctD1": 53.73
   },
   {
    "id": "cattle",
