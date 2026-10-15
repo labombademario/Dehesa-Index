@@ -141,6 +141,19 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
     fr: { clima: 'Climat', costes: 'Coûts', comercio: 'Commerce', politica: 'Politique agricole', oferta: 'Offre & récolte', tecnologia: 'Technologie', energia: 'Énergie', ayudas: 'Aides', precios: 'Prix et marchés', sanidad: 'Santé animale' },
     it: { clima: 'Clima', costes: 'Costi', comercio: 'Commercio', politica: 'Politica agricola', oferta: 'Offerta e raccolto', tecnologia: 'Tecnologia', energia: 'Energia', ayudas: 'Aiuti', precios: 'Prezzi e mercati', sanidad: 'Sanità animale' }
   };
+  /* etiqueta de país del medio (bandera + nombre); si la noticia no tiene país concreto se muestra su ámbito (UE, global...) */
+  var REG_CC = { us: 'US', ca: 'CA', uk: 'GB' };
+  function countryBadge(item, lang) {
+    var esc = window.DehesaShared.esc;
+    var cc = item.country || REG_CC[item.region] || '', lbl = '', fl = '';
+    if (cc) {
+      try { lbl = (window.Intl && Intl.DisplayNames) ? new Intl.DisplayNames([lang], { type: 'region' }).of(cc) : cc; } catch (e) { lbl = cc; }
+      if (/^[A-Z]{2}$/.test(cc)) fl = String.fromCodePoint(cc.charCodeAt(0) + 127397, cc.charCodeAt(1) + 127397) + ' ';
+    } else { lbl = (REGION_LABELS[lang] || REGION_LABELS.es)[item.region] || ''; fl = item.region === 'eu' ? '\uD83C\uDDEA\uD83C\uDDFA ' : '\uD83C\uDF0D '; }
+    if (!lbl) return '';
+    return '<span class="di-news-country" title="' + esc((TT[lang] || TT.es)) + '">' + fl + esc(lbl) + '</span>';
+  }
+  var TT = { es: 'País del medio de comunicación', en: 'Country of the news outlet', fr: 'Pays du média', it: 'Paese della testata' };
   var REGION_LABELS = {
     es: { all: 'Todas', us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', ca: 'Canadá', global: 'Global' },
     en: { all: 'All', us: 'U.S.', eu: 'Europe', uk: 'United Kingdom', ca: 'Canada', global: 'Global' },
@@ -477,7 +490,7 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
         var summary = tr.summary ? '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' : '';
         var origLine = tr.mt ? '<p class="di-news-orig" lang="' + esc(item.lang) + '"><span>' + esc(t.mtOrig.replace('{l}', item.lang.toUpperCase())) + '</span> ' + esc(tr.orig.headline) + '</p>' : '';
         return '<article class="di-card di-news-item">' +
-          '<div class="di-news-item-meta"><span class="di-news-item-source">' + esc(item.source) + '</span><span>·</span><span>' + esc(fmtNewsDate(item.date, lang)) + '</span>' + langBadge + '</div>' +
+          '<div class="di-news-item-meta">' + countryBadge(item, lang) + '<span class="di-news-item-source">' + esc(item.source) + '</span><span>·</span><span>' + esc(fmtNewsDate(item.date, lang)) + '</span>' + langBadge + '</div>' +
           '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' + summary + origLine +
           '<div class="di-news-tags">' + marketTags + topicTags + '</div>' +
           '<a class="di-news-item-readmore" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.readMore) + ' →</a>' +
