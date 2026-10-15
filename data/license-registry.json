@@ -325,13 +325,13 @@
    "evidence": "The general Eurostat policy permits commercial reuse with acknowledgement and names trade-data subsets excluded from commercial redissemination; no Comext-specific page found.",
    "used": true,
    "aliases": [],
-   "notes": "Dehesa Index only uses HS 2-digit chapters and agri-food totals (dataset DS-045409), so the Austria CN8 exclusion does not apply; keep it that way.",
+   "notes": "Dehesa Index only uses HS 2-digit chapters and agri-food totals (dataset DS-045409), so the Austria CN8 exclusion does not apply; keep it that way. Reporters in the published trade files are EU-27 only (EFTA countries appear only as partners), so the EFTA-reporter exclusion does not apply either; contract commercial_catalog guards both.",
    "short": "Eurostat · Comext",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
    "ownerDecision": {
     "date": "2026-10-15",
-    "text": "Mario lo da por valido para el uso comercial; las condiciones de atribucion y de marcar los datos modificados se mantienen."
+    "text": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de atribucion y la exclusion de comercio de declarantes EFTA y de Austria a 8 digitos (si no se puede, no se puede)."
    }
   },
   "eu_agrifood": {
@@ -983,7 +983,11 @@
    "notes": null,
    "short": "Bank of Canada",
    "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "ownerDecision": {
+    "date": "2026-10-15",
+    "text": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (atribuir, indicar cambios, avisar a compradores de que el contenido es gratuito en la web del Banco, tipos de cambio solo indicativos, limites de la API Valet, sin logos)."
+   }
   },
   "cbsa_tariff": {
    "name": "Canada Border Services Agency — Customs Tariff",

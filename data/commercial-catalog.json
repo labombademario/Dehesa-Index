@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T22:59:19Z",
+ "generatedAt": "2026-10-15T23:04:03Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -170,7 +170,7 @@
    "redistribution": "yes",
    "attribution": "Source: Bank of Canada",
    "conditions": "Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank website; exchange rates are indicative only; the Valet API may be rate-limited; no logos or banknote images.",
-   "reviewBeforeSelling": true
+   "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (atribuir, indicar cambios, avisar a compradores de que el contenido es gratuito en la web del Banco, tipos de cambio solo indicativos, limites de la API Valet, sin logos). (2026-10-15)"
   },
   {
    "id": "bea",
@@ -818,7 +818,7 @@
    "redistribution": "conditional",
    "attribution": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
    "conditions": "Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep Austria at coarser product level).",
-   "ownerDecision": "Mario lo da por valido para el uso comercial; las condiciones de atribucion y de marcar los datos modificados se mantienen. (2026-10-15)"
+   "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de atribucion y la exclusion de comercio de declarantes EFTA y de Austria a 8 digitos (si no se puede, no se puede). (2026-10-15)"
   },
   {
    "id": "fek_gr",
@@ -4022,7 +4022,6 @@
     "rba"
    ],
    "reviewBeforeSelling": [
-    "bank_of_canada",
     "bis"
    ],
    "parts": [

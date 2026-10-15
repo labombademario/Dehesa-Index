@@ -4639,6 +4639,17 @@ def commercial_catalog(doc, errs, warns, stats):
         if s["verdict"] == "no-apto" and not s.get("why"): errs.append("catálogo comercial: %s no apta sin motivo" % s["id"])
         if s["verdict"] != "no-apto" and (s["status"] != "VERIFIED" or "no" in (s["commercialUse"], s["derivatives"], s["redistribution"]) or "unclear" in (s["commercialUse"], s["derivatives"], s["redistribution"])): errs.append("catálogo comercial: %s marcada apta con permisos no concedidos" % s["id"])
         if s["verdict"] != "no-apto" and not s.get("attribution"): errs.append("catálogo comercial: %s sin línea de atribución" % s["id"])
+    # Comext no es redistribuible comercialmente para declarantes EFTA ni para Austria a 8 dígitos: los ficheros de comercio solo pueden tener declarantes de la UE-27 y capítulos de 2 dígitos.
+    for fn, key in (("eu-trade-products.json", "reporters"), ("eu-trade-stats.json", "countries")):
+        try: rep = json.loads((D / fn).read_text(encoding="utf-8")).get(key, {})
+        except Exception: continue
+        bad = sorted(set(rep) & {"NO", "CH", "IS", "LI"})
+        if bad: errs.append("comercio Comext: %s tiene declarantes EFTA %s, no redistribuibles comercialmente" % (fn, ",".join(bad)))
+    try:
+        ap = json.loads((D / "eu-trade-products.json").read_text(encoding="utf-8")).get("reporters", {}).get("AT", {})
+        longc = [k for k in (ap.get("products", {}) if isinstance(ap, dict) else {}) if len(str(k)) > 2 and str(k).isdigit()]
+        if longc: errs.append("comercio Comext: Austria con códigos de producto de más de 2 dígitos (%s…)" % longc[0])
+    except Exception: pass
     paths = [d["path"] for d in doc["datasets"]]
     if len(paths) != len(set(paths)): errs.append("catálogo comercial: fichero repetido")
     for d in doc["datasets"]:
