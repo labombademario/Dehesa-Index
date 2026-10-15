@@ -950,6 +950,22 @@ def us_markets_ethanol(doc, errs, warns, stats):
     n = 0
     for k, sr in doc["series"].items(): _dated_series("etanol %s" % k, sr["points"], errs, 0, 60000 if k.startswith("stocks") else 3000); n += 1
     stats["series"] = n
+def us_markets_baseline_tables(doc, errs, warns, stats):
+    """Tablas xlsx de ERS: >=12 tablas, ids unicos, 5-12 columnas de periodo sin repetir, cada fila con tantos valores como periodos, valores finitos y menos de 1e9, y al menos 2 filas con datos por tabla."""
+    T = doc["tables"]; ids = set(); n = 0
+    if len(T) < 12: errs.append("baseline-tables: %d tablas (se esperan >=12)" % len(T)); return
+    for t in T:
+        if t["id"] in ids: errs.append("baseline-tables: id repetido %s" % t["id"])
+        ids.add(t["id"]); y = t["years"]
+        if not 5 <= len(y) <= 14 or len(set(y)) != len(y): errs.append("tabla %s: periodos raros %r" % (t["id"], y[:3])); continue
+        if len(t["rows"]) < 2: errs.append("tabla %s: menos de 2 filas" % t["id"]); continue
+        for r in t["rows"]:
+            v = r["values"]
+            if len(v) != len(y): errs.append("tabla %s, fila %r: %d valores para %d periodos" % (t["id"], r["label"][:30], len(v), len(y))); break
+            if any(x is not None and abs(x) > 1e9 for x in v): errs.append("tabla %s, fila %r: valor imposible" % (t["id"], r["label"][:30])); break
+            if all(x is None for x in v): warns.append("tabla %s, fila %r: sin ningun valor" % (t["id"], r["label"][:30]))
+        n += len(t["rows"])
+    stats["series"] = n
 def us_markets_baseline(doc, errs, warns, stats):
     """Proyecciones ERS a 10 anos: >=150 series, anos ordenados y sin repetir (como maximo 12), mismo numero de valores que de anos, sin vacios, produccion/precio/superficie/rendimiento no negativos y las series clave presentes."""
     S = doc["series"]; seen = set(); key = {("Corn", "Farm price"), ("Soybeans", "Production"), ("Wheat", "Production"), ("Beef", "Commercial production"), ("Pork", "Commercial production"), ("Dairy", "Milk production")}

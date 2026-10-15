@@ -1363,7 +1363,7 @@ sources:
     timeout: 15
     script_timeout: 10
     continue: true
-    check: python3 scripts/validate-data.py --no-report --files data/us-markets/baseline.json
+    check: python3 scripts/validate-data.py --no-report --files data/us-markets/baseline.json data/us-markets/baseline-tables.json
     data: [us-markets/baseline.json, us-markets/baseline-tables.json, ers-baseline-log.txt]
     message: Proyecciones agrarias a 10 anos (USDA ERS)
   - id: us-arcplc

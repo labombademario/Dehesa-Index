@@ -111,7 +111,7 @@ def tables(raw, ed_y, url, readme):
                     inyr = [str(c).strip() for j, c in enumerate(row) if c is not None and str(c).strip() and cur["col0"] <= j < cur["col0"] + len(cur["years"])]
                     inhd = [t for (j, t) in head]
                     if re.match(r"^(\d+/|Note|Source|Totals|Components|Figures|n\.a|NA\b)", txt[0]) or len(txt[0]) > 90: cur["notes"].append(" ".join(txt)[:500])
-                    elif inyr and not inhd: unit = inyr[0]; cur["unit"] = cur["unit"] or unit
+                    elif inyr: unit = inyr[0]; cur["unit"] = cur["unit"] or unit
                     elif inhd and len(inhd) == 1 and not inyr and row.index(next(c for c in row if c is not None and str(c).strip())) < cur["col0"]: sec = inhd[0]
                     elif len(txt) == 1: unit = txt[0]
     out = [t for t in out if len(t["rows"]) >= 2]

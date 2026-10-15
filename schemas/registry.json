@@ -822,6 +822,12 @@
     "us_markets_ethanol"
    ]
   ],
+  "us-markets/baseline-tables.json": [
+    "us-markets-baseline-tables",
+    [
+      "us_markets_baseline_tables"
+    ]
+  ],
   "us-markets/baseline.json": [
     "us-markets-baseline",
     [
