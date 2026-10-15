@@ -1,0 +1,31 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update US daily livestock and poultry slaughter (USDA AMS MARS report 3208)
+on:
+  schedule:
+    - cron: '45 21 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-us-slaughter
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-us-slaughter.py
+        env:
+          MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
+        timeout-minutes: 10
+        continue-on-error: true
+      - name: Publicar
+        if: always()
+        run: bash scripts/publish-data.sh "Sacrificio diario de EE. UU. (USDA AMS)" data/us-markets/slaughter-log.txt
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

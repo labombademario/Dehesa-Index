@@ -1344,6 +1344,16 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard -- 'data/us-markets/*.json')
     data: [us-markets/cot.json, us-markets/transport.json, us-markets/fuel.json, us-markets/ethanol.json, us-markets/inspections.json, us-markets/lmr.json, us-markets/log.txt]
     message: Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte y precios de referencia, FGIS, EIA)
+  - id: us-slaughter
+    name: Update US daily livestock and poultry slaughter (USDA AMS MARS report 3208)
+    cron: ['45 21 * * 1-5']
+    script: scripts/update-us-slaughter.py
+    env: {MARS_API_KEY: '${{ secrets.MARS_API_KEY }}'}
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [us-markets/slaughter-log.txt]
+    message: Sacrificio diario de EE. UU. (USDA AMS)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)
     cron: ['35 6 3,17 * *']
