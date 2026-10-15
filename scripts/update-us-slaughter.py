@@ -78,7 +78,7 @@ def main():
     cut = (end - datetime.timedelta(days=KEEP_DAYS)).isoformat(); mcls = {k: v for k, v in sorted(mcls.items()) if k >= cut}
     for k, rows in merged.items():
         for r in rows:
-            if not 0 <= r[1] <= 2_000_000: log("valor fuera de rango", k, r); return 1
+            if not 0 <= r[1] <= (80_000_000 if k == "chicken" else 2_000_000): log("valor fuera de rango", k, r); return 1
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "sourceId": "usda_ams_mars",
            "report": {"id": REPORT, "title": "Daily Livestock and Poultry Slaughter", "url": "https://mymarketnews.ams.usda.gov/viewReport/%d" % REPORT},
            "note": "Estimacion diaria de animales sacrificados bajo inspeccion federal (FIS), publicada por USDA AMS hacia las 12:00 hora del Este; se revisa al dia siguiente. Solo cabezas: no hay pesos ni produccion de carne. Pollo: solo pollo joven.",

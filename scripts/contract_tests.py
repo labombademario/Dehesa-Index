@@ -951,14 +951,14 @@ def us_markets_ethanol(doc, errs, warns, stats):
     for k, sr in doc["series"].items(): _dated_series("etanol %s" % k, sr["points"], errs, 0, 60000 if k.startswith("stocks") else 3000); n += 1
     stats["series"] = n
 def us_markets_slaughter(doc, errs, warns, stats):
-    """Sacrificio diario (AMS 3208): fechas ordenadas y sin repetir, cabezas entre 0 y 2 millones, 11 columnas, acumulado del ano que no baja dentro del mismo ano y vacuno por clases que no supera el total."""
+    """Sacrificio diario (AMS 3208): fechas ordenadas y sin repetir, cabezas entre 0 y 2 millones (pollo hasta 80 millones), 11 columnas, acumulado del ano que no baja dentro del mismo ano y vacuno por clases que no supera el total."""
     n = 0; cols = doc["columns"]
     if len(cols) != 11: errs.append("slaughter: %d columnas" % len(cols)); return
     for k, sp in doc["species"].items():
         rows = sp["rows"]; ds = [r[0] for r in rows]
         if ds != sorted(set(ds)): errs.append("sacrificio %s: fechas desordenadas o repetidas" % k)
         for r in rows:
-            if len(r) != 11 or not isinstance(r[1], int) or not 0 <= r[1] <= 2000000: errs.append("sacrificio %s %s: fila rara %r" % (k, r[0], r[:3])); break
+            if len(r) != 11 or not isinstance(r[1], int) or not 0 <= r[1] <= (80000000 if k == "chicken" else 2000000): errs.append("sacrificio %s %s: fila rara %r" % (k, r[0], r[:3])); break
         for a, b in zip(rows, rows[1:]):
             if a[0][:4] == b[0][:4] and a[7] and b[7] and b[7] < a[7] and (b[8] or 0) >= (a[8] or 0) and not b[10]: warns.append("sacrificio %s: el acumulado anual baja entre %s y %s" % (k, a[0], b[0])); break
         n += 1
