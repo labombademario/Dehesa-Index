@@ -3,12 +3,23 @@ data.gouv recurso: Prix des terres et/ou Valeur Vénale des terres (VVT) https:/
 data.gouv recurso: Valeur vénale des terres https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/
 Francia 2025: ficha de Agreste con 0 PDF
 Francia 2025: no se pudo descargar cd2026-09_Valeur-venale-des-terres-en-2025.pdf (ownload/publication/publie/Chd2609/cd2026-09_Valeur-venale-des-terres-en-2025.pdf -> HTTP Error 404: Not Found)
-Francia 2025: no se pudo descargar cd2026-09_valeur-venale-des-terres-en-2025.pdf (.fr/IMG/pdf/cd2026-09_valeur-venale-des-terres-en-2025.pdf -> <urlopen error [Errno 110] Connection timed out>)
 Francia 2025: no se pudo descargar cd2026-09_VVT-2025.pdf (re.gouv.fr/agreste-web/download/publication/publie/Chd2609/cd2026-09_VVT-2025.pdf -> HTTP Error 404: Not Found)
+sondeo ficha Chd2609: 89903 bytes, 5 enlaces de datos
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/cd2026-9_Valeur-venale-des-terres-en-2025.pdf
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/DonneesAssociees-cd2026-9_VVT-2025_Publication-Vignes.xlsx
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/DonneesAssociees-cd2026-9_VVT-2025_Publication-DROM.xlsx
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/DonneesAssociees-cd2026-9_VVT-2025_Publication-LIBRE.xlsx
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/DonneesAssociees-cd2026-9_VVT-2025_Publication-LOUE.xlsx
+  titulo: Valeur vénale des terres en 2025|Agreste, la statistique agricole 
 Francia 2024: ficha de Agreste con 1 PDF
 Francia 2024: cd2025-13_Valeur-venale-des-terres-en-2024.pdf sin tablas utilizables (no se encontro la cabecera de anos de las tablas)
 Francia 2024: cd2025-13_Valeur-venale-des-terres-en-2024.pdf sin tablas utilizables (no se encontro la cabecera de anos de las tablas)
-Francia 2024: no se pudo descargar cd2025-13_valeur-venale-des-terres-en-2024.pdf (.fr/IMG/pdf/cd2025-13_valeur-venale-des-terres-en-2024.pdf -> <urlopen error [Errno 110] Connection timed out>)
-Francia 2023: ficha de Agreste con 1 PDF
-Francia 2023: leida desde https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2412/cd2024-12_VVT-2023.pdf
+sondeo ficha Chd2513: 81470 bytes, 2 enlaces de datos
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2513/cd2025-13_Valeur-venale-des-terres-en-2024.pdf
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2513/Données-associées-cd2025-13_Valeur-vénale-des-terres-en-2024.ods
+  titulo: Valeur vénale des terres en 2024|Agreste, la statistique agricole 
+Francia 2023: ficha de Agreste con 0 PDF
+Francia 2023: leida desde https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2412/cd2024-12_VVT-2023.pdf
+sondeo disar venale: 96947 bytes, 0 enlaces de datos
+  titulo: Chiffres et analyses|Agreste, la statistique agricole 
 OK Francia: edicion 2023, años [2021, 2022, 2023], 91 departamentos libres, 58 alquilados
