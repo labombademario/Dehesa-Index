@@ -4475,6 +4475,83 @@ def it_istat_pesticides(doc, errs, warns, stats):
     for c, e in doc["perHa"].items():
         for a, v in e["v"].items():
             if any(x is not None and x > 500 for x in v): errs.append("fitosanitarios %s.%s: kg/ha imposible" % (c, a)); break
+def _it_vals_ok(doc, errs, what, axis, groups, cap):
+    n = 0; A = doc["areas"]
+    for gname, G in groups:
+        for c, e in G.items():
+            for a, v in e["v"].items():
+                n += 1
+                if a not in A: errs.append("%s %s.%s: territorio sin definir" % (what, gname, c)); break
+                if len(v) != len(doc[axis]): errs.append("%s %s.%s.%s: %d valores para %d periodos" % (what, gname, c, a, len(v), len(doc[axis]))); break
+                if any(x is not None and (x < 0 or x > cap) for x in v): errs.append("%s %s.%s.%s: valor imposible" % (what, gname, c, a)); break
+    return n
+def _it_regions_le_total(doc, errs, what, axis, G, tol=1.03):
+    A = doc["areas"]
+    for c, e in G.items():
+        it = e["v"].get("IT")
+        if not it: continue
+        for j, tot in enumerate(it):
+            parts = [v[j] for a, v in e["v"].items() if A.get(a, {}).get("kind") == "region" and a not in ("ITD1", "ITD2") and v[j] is not None]
+            if tot and len(parts) >= 15 and sum(parts) > tol * tot: errs.append("%s %s %s: las regiones suman %.0f e Italia %.0f" % (what, c, doc[axis][j], sum(parts), tot)); break
+def it_istat_crops(doc, errs, warns, stats):
+    """Cultivos: años ordenados, una cifra por año, superficie por cultivo < 10 Mha, produccion < 60 Mt, las regiones no suman mas de un 3 % por encima de Italia y el rendimiento nacional (t/ha) entre 0,1 y 150."""
+    if not _it_axis_ok(doc["years"], errs, "cultivos"): return
+    C = doc["crops"]
+    stats["series"] = _it_vals_ok(doc, errs, "cultivos", "years", [("a", {c: {"v": e["a"]} for c, e in C.items()})], 1e7) + _it_vals_ok(doc, errs, "cultivos", "years", [("p", {c: {"v": e["p"]} for c, e in C.items()})], 6e7)
+    _it_regions_le_total(doc, errs, "cultivos superficie", "years", {c: {"v": e["a"]} for c, e in C.items()})
+    for c, e in C.items():
+        a = e["a"].get("IT"); p = e["p"].get("IT")
+        if a and p:
+            for j in range(len(a)):
+                if a[j] and p[j] and not 0.1 < p[j] / a[j] < 150: errs.append("cultivos %s %s: %.1f t/ha fuera de 0,1-150" % (c, doc["years"][j], p[j] / a[j])); break
+def it_istat_milk(doc, errs, warns, stats):
+    """Lacteos: años ordenados, una cifra por año, valores sin negativos, porcentajes entre 0 y 100, leche total de Italia entre 5 y 30 Mt y regiones <= 3 % sobre Italia."""
+    if not _it_axis_ok(doc["years"], errs, "lacteos"): return
+    stats["series"] = _it_vals_ok(doc, errs, "lacteos", "years", [("products", doc["products"]), ("plants", doc["plants"])], 1e9)
+    for c, e in doc["products"].items():
+        if e["unit"] == "%" and any(x is not None and x > 100 for v in e["v"].values() for x in v): errs.append("lacteos %s: porcentaje superior a 100" % c)
+    if "TOT_MILK_Q" in doc["products"]:
+        it = doc["products"]["TOT_MILK_Q"]["v"].get("IT", [])
+        if any(x is not None and not 5e6 < x < 3e7 for x in it): errs.append("lacteos: leche total de Italia fuera de 5-30 Mt")
+        _it_regions_le_total(doc, errs, "lacteos", "years", {"TOT_MILK_Q": doc["products"]["TOT_MILK_Q"]})
+def it_istat_agritourism(doc, errs, warns, stats):
+    """Agriturismo: años ordenados, una cifra por año, sin negativos, explotaciones autorizadas de Italia entre 10 000 y 40 000 y regiones <= 3 % sobre Italia."""
+    if not _it_axis_ok(doc["years"], errs, "agriturismo"): return
+    stats["series"] = _it_vals_ok(doc, errs, "agriturismo", "years", [("series", doc["series"])], 1e8)
+    s = doc["series"].get("NUMAGRIAUTH|ALL|ALL")
+    if s:
+        if any(x is not None and not 1e4 < x < 4e4 for x in s["v"].get("IT", [])): errs.append("agriturismo: explotaciones autorizadas de Italia fuera de 10 000-40 000")
+        _it_regions_le_total(doc, errs, "agriturismo", "years", {"n": s})
+def it_istat_irrigation(doc, errs, warns, stats):
+    """Riego: años ordenados, una cifra por año, superficie irrigada de Italia entre 1,5 y 4 Mha, regada <= regable y explotaciones que riegan <= con superficie regable, regiones <= 3 % sobre Italia."""
+    if not _it_axis_ok(doc["years"], errs, "riego"): return
+    G = [("irrigable", doc["irrigable"]), ("bySystem", doc["bySystem"]), ("bySource", doc["bySource"]), ("byCrop", doc["byCrop"])]
+    stats["series"] = _it_vals_ok(doc, errs, "riego", "years", G, 1e9)
+    I = doc["irrigable"]
+    if "IA" in I:
+        if any(x is not None and not 1.5e6 < x < 4e6 for x in I["IA"]["v"].get("IT", [])): errs.append("riego: superficie irrigada de Italia fuera de 1,5-4 Mha")
+        if "IBA" in I:
+            for a, v in I["IA"]["v"].items():
+                b = I["IBA"]["v"].get(a)
+                if b and any(x is not None and y is not None and x > 1.001 * y for x, y in zip(v, b)): errs.append("riego %s: regada mayor que regable" % a); break
+    if "FIATED" in I and "FIABLE" in I:
+        for a, v in I["FIATED"]["v"].items():
+            b = I["FIABLE"]["v"].get(a)
+            if b and any(x is not None and y is not None and x > 1.001 * y for x, y in zip(v, b)): errs.append("riego %s: explotaciones que riegan mas que con superficie regable" % a); break
+    for k in ("IA", "IBA", "FIATED"):
+        if k in I: _it_regions_le_total(doc, errs, "riego", "years", {k: I[k]})
+def it_istat_comuni(doc, errs, warns, stats):
+    """Municipios: filas de 8 columnas, codigos de 6 cifras sin repetir, regada <= regable, y la suma de la superficie regada entre 1,5 y 3,5 Mha."""
+    R = doc["rows"]; codes = [r[0] for r in R]
+    if len(set(codes)) != len(codes) or any(not (isinstance(c, str) and len(c) == 6 and c.isdigit()) for c in codes): errs.append("municipios: codigos repetidos o mal formados")
+    tot = 0.0
+    for r in R:
+        if len(r) != len(doc["cols"]): errs.append("municipios: fila con columnas de menos"); break
+        if r[7] is not None: tot += r[7]
+        if r[6] is not None and r[7] is not None and r[7] > 1.001 * r[6]: errs.append("municipios %s: regada mayor que regable" % r[0]); break
+        if r[5] is not None and r[4] is not None and r[5] > r[4]: errs.append("municipios %s: explotaciones que riegan mas que con superficie regable" % r[0]); break
+    if not 1.5e6 < tot < 3.5e6: errs.append("municipios: superficie regada total %.0f ha fuera de 1,5-3,5 Mha" % tot)
+    stats["series"] = len(R)
 def spain_ganaderia_eggs(doc, errs, warns, stats):
     """Huevos: territorios unicos con ESPAÑA, un valor por territorio, ponedoras en rango, jaula+suelo y campera+ecologica suman las gallinas (1 %) y la produccion en miles de docenas es coherente con el numero de ponedoras (15-30 docenas por gallina y año)."""
     T = doc["territories"]; ids = [t["id"] for t in T]

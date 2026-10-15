@@ -1,0 +1,66 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Riego del censo agrario 2020 de Italia por municipio (ISTAT): data/italy-istat/comuni.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "year",
+  "cols",
+  "rows"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "istat"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "note": {
+   "type": "string"
+  },
+  "year": {
+   "type": "string"
+  },
+  "cols": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "rows": {
+   "type": "array",
+   "minItems": 3000,
+   "items": {
+    "type": "array",
+    "minItems": 8
+   }
+  }
+ }
+}

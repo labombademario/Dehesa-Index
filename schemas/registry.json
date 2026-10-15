@@ -1385,6 +1385,36 @@
    [
     "it_istat_pesticides"
    ]
+  ],
+  "italy-istat/crops.json": [
+   "it-istat-crops",
+   [
+    "it_istat_crops"
+   ]
+  ],
+  "italy-istat/milk.json": [
+   "it-istat-milk",
+   [
+    "it_istat_milk"
+   ]
+  ],
+  "italy-istat/agritourism.json": [
+   "it-istat-agritourism",
+   [
+    "it_istat_agritourism"
+   ]
+  ],
+  "italy-istat/irrigation.json": [
+   "it-istat-irrigation",
+   [
+    "it_istat_irrigation"
+   ]
+  ],
+  "italy-istat/comuni.json": [
+   "it-istat-comuni",
+   [
+    "it_istat_comuni"
+   ]
   ]
  },
  "globs": {

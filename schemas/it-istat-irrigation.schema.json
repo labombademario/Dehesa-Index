@@ -1,0 +1,278 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Riego del censo agrario 2020 de Italia (ISTAT): data/italy-istat/irrigation.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "years",
+  "areas",
+  "measures",
+  "irrigable",
+  "bySystem",
+  "bySource",
+  "byCrop"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "istat"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "note": {
+   "type": "string"
+  },
+  "years": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "areas": {
+   "type": "object",
+   "minProperties": 5,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "kind",
+     "label"
+    ],
+    "properties": {
+     "kind": {
+      "enum": [
+       "country",
+       "macro",
+       "zone",
+       "region",
+       "province"
+      ]
+     },
+     "label": {
+      "type": "object",
+      "required": [
+       "en",
+       "it"
+      ],
+      "properties": {
+       "en": {
+        "type": "string"
+       },
+       "it": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  },
+  "measures": {
+   "type": "object"
+  },
+  "parts": {
+   "type": "object"
+  },
+  "irrigable": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label",
+     "measure",
+     "v"
+    ],
+    "properties": {
+     "label": {
+      "type": "object",
+      "required": [
+       "en",
+       "it"
+      ],
+      "properties": {
+       "en": {
+        "type": "string"
+       },
+       "it": {
+        "type": "string"
+       }
+      }
+     },
+     "measure": {
+      "type": "string"
+     },
+     "v": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "minProperties": 4
+  },
+  "bySystem": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label",
+     "measure",
+     "v"
+    ],
+    "properties": {
+     "label": {
+      "type": "object",
+      "required": [
+       "en",
+       "it"
+      ],
+      "properties": {
+       "en": {
+        "type": "string"
+       },
+       "it": {
+        "type": "string"
+       }
+      }
+     },
+     "measure": {
+      "type": "string"
+     },
+     "v": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "bySource": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label",
+     "measure",
+     "v"
+    ],
+    "properties": {
+     "label": {
+      "type": "object",
+      "required": [
+       "en",
+       "it"
+      ],
+      "properties": {
+       "en": {
+        "type": "string"
+       },
+       "it": {
+        "type": "string"
+       }
+      }
+     },
+     "measure": {
+      "type": "string"
+     },
+     "v": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "byCrop": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label",
+     "measure",
+     "v"
+    ],
+    "properties": {
+     "label": {
+      "type": "object",
+      "required": [
+       "en",
+       "it"
+      ],
+      "properties": {
+       "en": {
+        "type": "string"
+       },
+       "it": {
+        "type": "string"
+       }
+      }
+     },
+     "measure": {
+      "type": "string"
+     },
+     "v": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "unit": {
+   "type": "object"
+  }
+ }
+}

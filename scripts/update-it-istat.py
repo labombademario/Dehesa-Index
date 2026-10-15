@@ -24,7 +24,9 @@ def http(u, accept, t=280, tries=3):
         try:
             with urllib.request.urlopen(urllib.request.Request(u, headers=dict(UA, Accept=accept)), timeout=t) as r: return r.read()
         except Exception as e:
-            last = e; time.sleep(4 * (k + 1))
+            last = e
+            if getattr(e, 'code', None) in (400, 404): break      # peticion sin resultado: reintentar no sirve
+            time.sleep(4 * (k + 1))
     raise RuntimeError("%s: %s" % (u[-90:], str(last)[:120]))
 def sdmx_csv(flow, key, q):
     b = http(B + "data/" + flow + "/" + key + "?" + q + "&detail=dataonly", "application/vnd.sdmx.data+csv;version=1.0.0")
