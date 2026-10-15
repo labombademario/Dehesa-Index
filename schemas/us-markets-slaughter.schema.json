@@ -35,16 +35,70 @@
     "sheep",
     "chicken"
    ],
-   "additionalProperties": {
-    "type": "object",
-    "required": [
-     "label",
-     "rows"
-    ],
-    "properties": {
-     "rows": {
-      "type": "array",
-      "minItems": 1
+   "properties": {
+    "cattle": {
+     "type": "object",
+     "required": [
+      "label",
+      "rows"
+     ],
+     "properties": {
+      "rows": {
+       "type": "array",
+       "minItems": 1
+      }
+     }
+    },
+    "calves": {
+     "type": "object",
+     "required": [
+      "label",
+      "rows"
+     ],
+     "properties": {
+      "rows": {
+       "type": "array",
+       "minItems": 1
+      }
+     }
+    },
+    "hogs": {
+     "type": "object",
+     "required": [
+      "label",
+      "rows"
+     ],
+     "properties": {
+      "rows": {
+       "type": "array",
+       "minItems": 1
+      }
+     }
+    },
+    "sheep": {
+     "type": "object",
+     "required": [
+      "label",
+      "rows"
+     ],
+     "properties": {
+      "rows": {
+       "type": "array",
+       "minItems": 1
+      }
+     }
+    },
+    "chicken": {
+     "type": "object",
+     "required": [
+      "label",
+      "rows"
+     ],
+     "properties": {
+      "rows": {
+       "type": "array",
+       "minItems": 1
+      }
      }
     }
    }
