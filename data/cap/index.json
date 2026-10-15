@@ -494,7 +494,7 @@
     "importantDates": {
      "state": "PARTIAL",
      "file": "pt/rules.json",
-     "count": 3,
+     "count": 4,
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
@@ -663,6 +663,15 @@
     "text": "Termina el plazo ordinario de la solicitud de pagos directos (15 de mayo). El Ministro puede ampliarlo por reglamento.",
     "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 1",
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "cc": "PT",
+    "id": "su-close",
+    "kind": "deadline",
+    "date": "2027-05-15",
+    "text": "Fecha ordinaria de fin de la solicitud única en 2025 y 2026 (15 de mayo). La fija el IFAP cada año y en 2025 y 2026 se prorrogó.",
+    "legalBasis": "IFAP, comunicados del Pedido Único 2025 y 2026 (el plazo lo fija el IFAP cada año)",
+    "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
    },
    {
     "cc": "ES",

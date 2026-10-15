@@ -11,7 +11,7 @@
   "ref": "Portaria 54-D/2023",
   "url": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
  },
- "note": "Reglas leídas a mano de la Portaria 54-D/2023 (texto original de 27-2-2023, no se ha comprobado si reformas posteriores la cambian), de la 54-L/2023 consolidada por el PEPACC y de la orientación técnica del GPP sobre ecorregímenes. Solo Portugal continental y solo pagos directos. No se han leído los importes por hectárea de ecorregímenes y ayudas asociadas ni los plazos de cada campaña (los fija el IFAP). Sin vigilancia automática. Son explicaciones breves, no el texto legal.",
+ "note": "Reglas leídas a mano de la Portaria 54-D/2023 (texto original de 27-2-2023, no se ha comprobado si reformas posteriores la cambian), de la 54-L/2023 consolidada por el PEPACC y de la orientación técnica del GPP sobre ecorregímenes. Solo Portugal continental y solo pagos directos. No se han leído los importes por hectárea de ecorregímenes y ayudas asociadas. El plazo de la solicitud única lo fija el IFAP cada año: figuran 2025 (por prensa) y 2026 (comunicado del IFAP). Sin vigilancia automática. Son explicaciones breves, no el texto legal.",
  "interventions": [
   {
    "id": "basic",
@@ -189,7 +189,7 @@
     "13",
     "23"
    ],
-   "text": "El plazo de la solicitud única lo fija cada año el IFAP (no está en la portaria). Una solicitud tardía sufre una reducción del 1 % por día hábil. Los anticipos, de hasta el 50 % o el 75 %, se pagan entre el 16 de octubre y el 1 de diciembre; los pagos de las intervenciones del art. 19.2 se hacen del 1 de diciembre al 30 de junio del año siguiente.",
+   "text": "El plazo de la solicitud única lo fija cada año el IFAP (no está en la portaria): en 2025 y 2026 el plazo ordinario fue el 15 de mayo, y en 2026 la solicitud se abrió el 16 de febrero. Una solicitud tardía sufre una reducción del 1 % por día hábil. Los anticipos, de hasta el 50 % o el 75 %, se pagan entre el 16 de octubre y el 1 de diciembre; los pagos de las intervenciones del art. 19.2 se hacen del 1 de diciembre al 30 de junio del año siguiente.",
    "officialUrl": "https://pepacc.pt/wp-content/uploads/2024/05/Consolidacao-Portaria-n.o-54-L_2023-Diario-da-Republica-n.o-41_2023-1o-Suplemento-Serie-I-de-2023-02-27-1.pdf",
    "values": {
     "latePenaltyPerWorkingDayPct": 1,
@@ -246,6 +246,18 @@
  ],
  "calendar": [
   {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "IFAP, comunicados del Pedido Único 2025 y 2026 (el plazo lo fija el IFAP cada año)",
+   "articles": [],
+   "when": {
+    "month": 5,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Fecha ordinaria de fin de la solicitud única en 2025 y 2026 (15 de mayo). La fija el IFAP cada año y en 2025 y 2026 se prorrogó."
+  },
+  {
    "id": "advance-open",
    "kind": "window-start",
    "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 6",
@@ -288,7 +300,24 @@
    "text": "Termina el período de pagos de las intervenciones del art. 19.2 de la campaña anterior (30 de junio)."
   }
  ],
- "campaignOverrides": [],
+ "campaignOverrides": [
+  {
+   "campaign": 2026,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2026-06-01",
+   "legalBasis": "IFAP, comunicado de 8-5-2026 (Pedido Único 2026)",
+   "text": "En 2026 el IFAP eliminó la penalización hasta el 31 de mayo; como era domingo, se pudo presentar hasta el lunes 1 de junio. Pasada esa fecha no se aceptan solicitudes, ni siquiera con penalización. Estaba previsto hasta el 15 de mayo sin penalización y hasta el 31 de mayo con un 1 % por día hábil."
+  },
+  {
+   "campaign": 2025,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2025-06-15",
+   "legalBasis": "Prensa (Eco/Sapo, 6-6-2025): prórrogas del IFAP al Pedido Único 2025",
+   "text": "En 2025 el plazo del 15 de mayo se prorrogó al 26 de mayo, luego al 6 de junio y por último al 15 de junio sin penalización; hasta el 17 de junio se admitió con un 1 % por día. Fuente: prensa, no el comunicado del IFAP."
+  }
+ ],
  "i18n": {
   "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
   "rules": {
@@ -328,9 +357,9 @@
     "it": "Se la superficie dichiarata supera quella determinata di oltre il 3 % o 2 ha (e fino al 50 %), l'ARB e l'ARC sono ridotti di 1,5 volte la differenza; oltre il 50 % non si paga nulla e si aggiunge una sanzione. Una differenza di 0,1 ha è tollerata se non supera il 20 % di quanto dichiarato. Per il pagamento ai piccoli agricoltori non si paga se lo scarto supera 0,1 ha."
    },
    "late-and-payment": {
-    "en": "The single-application deadline is set each year by IFAP (it is not in the portaria). A late application is cut by 1 % per working day. Advances, of up to 50 % or 75 %, are paid between 16 October and 1 December; payments for the interventions in art. 19(2) are made from 1 December to 30 June of the following year.",
-    "fr": "La date limite de la demande unique est fixée chaque année par l'IFAP (elle ne figure pas dans l'arrêté). Une demande tardive subit une réduction de 1 % par jour ouvré. Les avances, jusqu'à 50 % ou 75 %, sont versées entre le 16 octobre et le 1er décembre ; les paiements des interventions de l'art. 19.2 s'effectuent du 1er décembre au 30 juin de l'année suivante.",
-    "it": "Il termine della domanda unica lo fissa ogni anno l'IFAP (non è nella portaria). Una domanda tardiva subisce una riduzione dell'1 % per giorno lavorativo. Gli anticipi, fino al 50 % o al 75 %, si pagano tra il 16 ottobre e il 1° dicembre; i pagamenti degli interventi dell'art. 19.2 avvengono dal 1° dicembre al 30 giugno dell'anno successivo."
+    "en": "The single-application deadline is set each year by IFAP (it is not in the portaria): in 2025 and 2026 the ordinary deadline was 15 May, and in 2026 applications opened on 16 February. A late application is cut by 1 % per working day. Advances, of up to 50 % or 75 %, are paid between 16 October and 1 December; payments for the interventions in art. 19(2) are made from 1 December to 30 June of the following year.",
+    "fr": "La date limite de la demande unique est fixée chaque année par l'IFAP (elle ne figure pas dans l'arrêté) : en 2025 et 2026 la date ordinaire était le 15 mai, et en 2026 les demandes ont ouvert le 16 février. Une demande tardive subit une réduction de 1 % par jour ouvré. Les avances, jusqu'à 50 % ou 75 %, sont versées entre le 16 octobre et le 1er décembre ; les paiements des interventions de l'art. 19.2 s'effectuent du 1er décembre au 30 juin de l'année suivante.",
+    "it": "Il termine della domanda unica lo fissa ogni anno l'IFAP (non è nella portaria): nel 2025 e 2026 il termine ordinario era il 15 maggio e nel 2026 le domande si sono aperte il 16 febbraio. Una domanda tardiva subisce una riduzione dell'1 % per giorno lavorativo. Gli anticipi, fino al 50 % o al 75 %, si pagano tra il 16 ottobre e il 1° dicembre; i pagamenti degli interventi dell'art. 19.2 avvengono dal 1° dicembre al 30 giugno dell'anno successivo."
    },
    "eco-regimes": {
     "en": "The CAP eco-regimes in mainland Portugal are five: permanent pasture management, promotion of organic fertilisation, feed efficiency to cut emissions, animal welfare and rational use of antimicrobials, and biodiversity-friendly practices. Each has mandatory minimum requirements; non-compliance reduces the payment. The per-hectare and per-animal amounts have not been read.",
@@ -349,6 +378,11 @@
    }
   },
   "calendar": {
+   "su-close": {
+    "en": "Ordinary end date of the single application in 2025 and 2026 (15 May). IFAP sets it each year and it was extended in both 2025 and 2026.",
+    "fr": "Date ordinaire de fin de la demande unique en 2025 et 2026 (15 mai). L'IFAP la fixe chaque année et elle a été prorogée en 2025 et en 2026.",
+    "it": "Data ordinaria di chiusura della domanda unica nel 2025 e 2026 (15 maggio). La fissa ogni anno l'IFAP e nel 2025 e 2026 è stata prorogata."
+   },
    "advance-open": {
     "en": "The advance-payment period starts (16 October), of up to 50 % or 75 %.",
     "fr": "La période de paiement des avances s'ouvre (16 octobre), jusqu'à 50 % ou 75 %.",
@@ -365,6 +399,17 @@
     "it": "Termina il periodo di pagamento degli interventi dell'art. 19.2 della campagna precedente (30 giugno)."
    }
   },
-  "overrides": {}
+  "overrides": {
+   "2026:su-close": {
+    "en": "In 2026 IFAP removed the penalty up to 31 May; as that was a Sunday, applications could be filed until Monday 1 June. After that date no applications are accepted, even with a penalty. The plan had been 15 May without penalty and until 31 May with 1 % per working day.",
+    "fr": "En 2026, l'IFAP a supprimé la pénalité jusqu'au 31 mai ; comme c'était un dimanche, les demandes pouvaient être déposées jusqu'au lundi 1er juin. Passé ce délai, aucune demande n'est acceptée, même avec pénalité. Il était prévu jusqu'au 15 mai sans pénalité et jusqu'au 31 mai avec 1 % par jour ouvré.",
+    "it": "Nel 2026 l'IFAP ha eliminato la penalità fino al 31 maggio; essendo domenica, le domande si sono potute presentare fino a lunedì 1° giugno. Dopo quella data non si accettano domande, nemmeno con penalità. Era previsto fino al 15 maggio senza penalità e fino al 31 maggio con l'1 % per giorno lavorativo."
+   },
+   "2025:su-close": {
+    "en": "In 2025 the 15 May deadline was extended to 26 May, then to 6 June and finally to 15 June without penalty; until 17 June it was accepted with 1 % per day. Source: press, not IFAP's own notice.",
+    "fr": "En 2025, la date limite du 15 mai a été prorogée au 26 mai, puis au 6 juin et enfin au 15 juin sans pénalité ; jusqu'au 17 juin la demande était admise avec 1 % par jour. Source : presse, pas l'avis de l'IFAP lui-même.",
+    "it": "Nel 2025 il termine del 15 maggio è stato prorogato al 26 maggio, poi al 6 giugno e infine al 15 giugno senza penalità; fino al 17 giugno la domanda era ammessa con l'1 % al giorno. Fonte: stampa, non l'avviso dell'IFAP."
+   }
+  }
  }
 }
