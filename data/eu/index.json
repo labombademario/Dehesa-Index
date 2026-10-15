@@ -1,14 +1,14 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-10-13T10:41:08.746Z",
+ "generatedAt": "2026-10-15T14:49:05.098Z",
  "families": [
   {
    "id": "cereales",
    "endpoint": "cereal",
    "freq": "weekly",
    "series": 91,
-   "points": 187407,
+   "points": 187601,
    "latest": "2026-10-11"
   },
   {
@@ -16,71 +16,71 @@
    "endpoint": "oilseeds",
    "freq": "weekly",
    "series": 84,
-   "points": 22236,
-   "latest": "2026-10-04"
+   "points": 22303,
+   "latest": "2026-10-11"
   },
   {
    "id": "lacteos",
    "endpoint": "dairy",
    "freq": "weekly",
    "series": 11,
-   "points": 44536,
-   "latest": "2026-10-04"
+   "points": 44598,
+   "latest": "2026-10-11"
   },
   {
    "id": "vacuno",
    "endpoint": "beef",
    "freq": "weekly",
    "series": 38,
-   "points": 421889,
-   "latest": "2026-10-04"
+   "points": 422552,
+   "latest": "2026-10-11"
   },
   {
    "id": "cerdo",
    "endpoint": "pigmeat",
    "freq": "weekly",
    "series": 5,
-   "points": 48940,
-   "latest": "2026-10-04"
+   "points": 49011,
+   "latest": "2026-10-11"
   },
   {
    "id": "pollo",
    "endpoint": "poultry",
    "freq": "weekly",
    "series": 3,
-   "points": 26026,
-   "latest": "2026-10-04"
+   "points": 26088,
+   "latest": "2026-10-11"
   },
   {
    "id": "huevos",
    "endpoint": "poultry/egg",
    "freq": "weekly",
    "series": 4,
-   "points": 27008,
-   "latest": "2026-10-04"
+   "points": 27083,
+   "latest": "2026-10-11"
   },
   {
    "id": "ovino",
    "endpoint": "sheepAndGoat",
    "freq": "weekly",
    "series": 2,
-   "points": 18798,
-   "latest": "2026-10-04"
+   "points": 18827,
+   "latest": "2026-10-11"
   },
   {
    "id": "arroz",
    "endpoint": "rice",
    "freq": "weekly",
    "series": 112,
-   "points": 41932,
-   "latest": "2026-10-04"
+   "points": 41971,
+   "latest": "2026-10-11"
   },
   {
    "id": "leche",
    "endpoint": "rawMilk",
    "freq": "monthly",
    "series": 2,
-   "points": 9455,
+   "points": 9460,
    "latest": "2026-09-30"
   },
   {
@@ -88,8 +88,8 @@
    "endpoint": "oliveOil",
    "freq": "weekly",
    "series": 6,
-   "points": 44031,
-   "latest": "2026-10-04"
+   "points": 44127,
+   "latest": "2026-10-11"
   },
   {
    "id": "azucar",
@@ -111,9 +111,9 @@
    "id": "fruta",
    "endpoint": "fruitAndVegetable/pricesSupplyChain",
    "freq": "weekly",
-   "series": 179,
-   "points": 105856,
-   "latest": "2026-10-04"
+   "series": 192,
+   "points": 185300,
+   "latest": "2026-10-11"
   },
   {
    "id": "fertilizantes",
