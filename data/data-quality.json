@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T00:47:40Z",
+ "generatedAt": "2026-10-15T03:37:55Z",
  "summary": {
   "files": 62,
   "errors": 0,
-  "warnings": 18
+  "warnings": 19
  },
  "files": [
   {
@@ -1324,17 +1324,18 @@
   {
    "file": "country-macro.json",
    "schema": "country-macro",
-   "status": "ok",
+   "status": "warning",
    "errors": [],
-   "warnings": [],
+   "warnings": [
+    "CY: PIB / poblacion (30075) no cuadra con el PIB per capita (41783); es lo que publica el Banco Mundial"
+   ],
    "stats": {
     "series": 0,
-    "points": 0,
-    "lines": 0
+    "macro completos": 35,
+    "infl paises": 32
    },
-   "generatedAt": "2026-10-06T14:46:14Z",
-   "nWarnings": 0,
-   "nErrors": 0
+   "nErrors": 0,
+   "nWarnings": 1
   }
  ]
 }
