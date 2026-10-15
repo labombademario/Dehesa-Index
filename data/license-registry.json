@@ -2354,7 +2354,7 @@
    "country": "SE",
    "licenseId": "CC0-1.0-OR-CC-BY",
    "licenseName": "Jordbruksverket open data policy: CC0 (preferred) or CC BY; usable without restrictions",
-   "licenseUrl": "http://www.jordbruksverket.se/oppnadata.4.10e2eedd15919993ebd3f1ab.html",
+   "licenseUrl": "https://jordbruksverket.se/e-tjanster-databaser-och-appar/ovriga-e-tjanster-och-databaser/oppna-data",
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
@@ -2366,7 +2366,7 @@
    "verifiedAt": "2026-10-10",
    "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "jordbruksverket.se/oppnadata (10-oct-2026): open data can be used without restrictions, licences CC0 (preferred) or CC BY; statistik.jordbruksverket.se user guide: database free to use, open data with an API for every table.",
+   "evidence": "jordbruksverket.se/oppnadata (10-oct-2026; releido el 15-oct-2026 en la direccion https actual, que dice lo mismo): open data can be used without restrictions, licences CC0 (preferred) or CC BY; statistik.jordbruksverket.se user guide: database free to use, open data with an API for every table.",
    "used": true,
    "aliases": [
     "sjv_se"
@@ -4461,9 +4461,10 @@
     "statcan",
     "ons",
     "bls",
+    "indec",
     "world_bank_wdi"
    ],
-   "notes": "Índices de precios de consumo para deflactar precios (mensuales: Eurostat HICP, ONS, BLS, Statistics Canada; anuales: Banco Mundial WDI a partir de data/worldbank-agri.json). Cada país indica su fuente; si una fuente falla se conserva el valor anterior y nunca se rellena ni se estima."
+   "notes": "Índices de precios de consumo para deflactar precios (mensuales: Eurostat HICP, ONS, BLS, Statistics Canada, INDEC (Argentina); anuales: Banco Mundial WDI a partir de data/worldbank-agri.json). Cada país indica su fuente; si una fuente falla se conserva el valor anterior y nunca se rellena ni se estima."
   },
   "data/eu-gapfill-stats.json": {
    "bySourceGroupPrefix": {

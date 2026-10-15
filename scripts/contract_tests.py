@@ -1928,8 +1928,8 @@ def us_local_cattle(doc, errs, warns, stats):
         lo = int(m.group(2))
         for p in pts:
             if not (50 <= p[1] <= 1200) or p[2] <= 0 or (p[3] is not None and not (lo - 5 <= p[3] <= lo + 150)): errs.append("us-local cattle/%s/%s %s: punto fuera de rango %r" % (st, k, p[0], p[1:])); return
-        for q, p in zip(pts, pts[1:]):
-            if (_d.date.fromisoformat(p[0]) - _d.date.fromisoformat(q[0])).days <= 8 and q[1] > 0 and abs(p[1] / q[1] - 1) > 0.35: warns.append("us-local cattle/%s/%s %s: salto semanal de %.0f %%" % (st, k, p[0], (p[1] / q[1] - 1) * 100))
+        for q, p in zip(pts, pts[1:]):   # los lotes de menos de 10 cabezas son ruido de mercado fino (p. ej. 1 toro a 170 y otro a 260 $/cwt), no un fallo del dato
+            if (_d.date.fromisoformat(p[0]) - _d.date.fromisoformat(q[0])).days <= 8 and q[1] > 0 and abs(p[1] / q[1] - 1) > 0.35 and min(p[2], q[2]) >= 10: warns.append("us-local cattle/%s/%s %s: salto semanal de %.0f %%" % (st, k, p[0], (p[1] / q[1] - 1) * 100))
     if not _ul_series("cattle/%s/receipts" % st, doc["receipts"], errs, 2): return
     if any(not isinstance(p[1], (int, float)) or p[1] < 0 for p in doc["receipts"]): errs.append("us-local cattle/%s: recibos negativos" % st); return
     if (_d.date.today() - _d.date.fromisoformat(doc["latest"]["date"])).days > 21: warns.append("us-local cattle/%s: el ultimo informe es del %s" % (st, doc["latest"]["date"]))
