@@ -59,7 +59,8 @@
          "eurostat",
          "ons",
          "bls",
-         "statcan"
+         "statcan",
+         "indec"
         ]
        },
        "name": {
