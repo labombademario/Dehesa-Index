@@ -17,19 +17,19 @@
 1052 OK 1 series, 108 filas, ultimo 2026-10-09, 3 KB, dims=
 1053 OK 2 series, 108 filas, ultimo 2026-10-09, 3 KB, dims=grade
 1082 OK 1 series, 54 filas, ultimo 2026-10-09, 2 KB, dims=
-1089 OK 1 series, 108 filas, ultimo 2026-10-09, 3 KB, dims=
-1090 OK 1 series, 108 filas, ultimo 2026-10-09, 3 KB, dims=
-1091 OK 1 series, 108 filas, ultimo 2026-10-09, 3 KB, dims=
+1089 OK 1 series, 109 filas, ultimo 2026-10-16, 3 KB, dims=
+1090 OK 1 series, 109 filas, ultimo 2026-10-16, 3 KB, dims=
+1091 OK 1 series, 109 filas, ultimo 2026-10-16, 3 KB, dims=
 1098 OK 2 series, 110 filas, ultimo 2026-10-09, 3 KB, dims=commodity,lot_Desc
 1099 OK 1 series, 54 filas, ultimo 2026-10-09, 2 KB, dims=
 1100 OK 13 series, 516 filas, ultimo 2026-10-09, 16 KB, dims=commodity,group,trade_Activity,region
 1101 OK 13 series, 649 filas, ultimo 2026-10-09, 21 KB, dims=commodity,group,trade_Activity,region sin_precio={"Report":1}
 1102 OK 4 series, 432 filas, ultimo 2026-10-09, 14 KB, dims=group
 1623 OK 554 series, 5239 filas, ultimo 2026-09-30, 193 KB, dims=commodity,grade,category,community,group,lot_Desc,report_month,region,package sin_precio={"CME Monthly Averages":120,"Dairy Monthly Averages":1,"Fluid Products Monthly Averages":187,"Dry Products Monthly Averages":315,"International Monthly Averages":231}
-1650 OK 57 series, 1080 filas, ultimo 2026-10-06, 30 KB, dims=commodity,class,quality,crop,desc,non-Conventional,pkg sin_precio={"Volumes":162}
+1650 OK 57 series, 1087 filas, ultimo 2026-10-13, 30 KB, dims=commodity,class,quality,crop,desc,non-Conventional,pkg sin_precio={"Volumes":163}
 1655 OK 23 series, 9256 filas, ultimo 2026-10-09, 53 KB, dims=commodity,class,group,trade_location,package sin_precio={"Report Details":2671}
 1716 OK 72 series, 2335 filas, ultimo 2026-10-12, 59 KB, dims=commodity,class,quality,desc,pkg sin_precio={"Volumes":292}
-1725 OK 60 series, 1554 filas, ultimo 2026-10-07, 37 KB, dims=commodity,class,quality,desc,pkg sin_precio={"Volumes":249}
+1725 OK 62 series, 1570 filas, ultimo 2026-10-14, 37 KB, dims=commodity,class,quality,desc,pkg sin_precio={"Volumes":251}
 1778 OK 656 series, 18947 filas, ultimo 2026-10-10, 311 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=2450
 1784 OK 896 series, 35002 filas, ultimo 2026-10-10, 503 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=4060
 1785 OK 143 series, 6936 filas, ultimo 2026-10-10, 71 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=922
@@ -50,101 +50,101 @@
 2039 OK 345 series, 12752 filas, ultimo 2026-10-10, 136 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=1275
 2041 OK 317 series, 9623 filas, ultimo 2026-10-10, 179 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=547
 2056 OK 355 series, 24777 filas, ultimo 2026-10-10, 247 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=1813
-2082 OK 527 series, 51077 filas, ultimo 2026-10-12, 321 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=4619
+2082 OK 530 series, 51210 filas, ultimo 2026-10-13, 323 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=4635
 2091 OK 428 series, 29759 filas, ultimo 2026-10-10, 215 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=2827
-2106 OK 113 series, 3985 filas, ultimo 2026-10-10, 66 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=291
+2106 OK 110 series, 3984 filas, ultimo 2026-10-10, 65 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=291
 2167 OK 173 series, 11396 filas, ultimo 2026-10-10, 142 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=1119
 2187 OK 74 series, 17312 filas, ultimo 2026-10-10, 25 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=1442
 2193 OK 741 series, 42398 filas, ultimo 2026-10-10, 474 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=3280
 2240 OK 51 series, 214 filas, ultimo 2025-09-13, 8 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=20
 2243 OK 81 series, 647 filas, ultimo 2026-09-10, 19 KB, dims=commodity,class,quality,crop,desc,pkg sin_precio={"Volumes":84}
-2244 OK 252 series, 2659 filas, ultimo 2026-10-01, 83 KB, dims=commodity,class,quality,crop,desc,pkg sin_precio={"Volumes":283}
+2244 OK 256 series, 2687 filas, ultimo 2026-10-08, 84 KB, dims=commodity,class,quality,crop,desc,pkg sin_precio={"Volumes":285}
 2245 OK 40 series, 993 filas, ultimo 2026-10-12, 16 KB, dims=commodity,class,quality,crop,desc,pkg sin_precio={"Volumes":205}
-2246 OK 46 series, 1641 filas, ultimo 2026-10-13, 26 KB, dims=commodity,class,quality,pkg sin_precio={"Volumes":358}
-2277 OK 332 series, 9210 filas, ultimo 2026-10-13, 232 KB, dims=commodity,variety,condition,grade,quality,appearance,crop,district,item_size,organic,properties,repack,origin,package descartados_por_ambiguedad=26 sin_precio={"Report Details":1023}
-2278 OK 515 series, 13512 filas, ultimo 2026-10-13, 375 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,crop,district,item_size,properties,repack,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=183 sin_precio={"Report Details":562}
-2279 OK 149 series, 3983 filas, ultimo 2026-10-13, 100 KB, dims=commodity,variety,condition,grade,appearance,crop,district,item_size,properties,repack,origin,package descartados_por_ambiguedad=26 sin_precio={"Report Details":315}
-2280 OK 15 series, 450 filas, ultimo 2026-10-13, 12 KB, dims=commodity,variety,item_size,properties,origin,package sin_precio={"Report Details":75}
-2281 OK 159 series, 3984 filas, ultimo 2026-10-13, 110 KB, dims=commodity,variety,condition,grade,appearance,district,item_size,organic,properties,unit_sales,origin,package sin_precio={"Report Details":55}
-2282 OK 287 series, 6968 filas, ultimo 2026-10-13, 194 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package sin_precio={"Report Details":35}
-2283 OK 51 series, 1301 filas, ultimo 2026-10-13, 38 KB, dims=commodity,variety,grade,quality,appearance,district,item_size,properties,origin,package
-2284 OK 5 series, 130 filas, ultimo 2026-10-13, 4 KB, dims=commodity,variety,properties,repack,origin,package
-2285 OK 256 series, 6332 filas, ultimo 2026-10-13, 171 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,unit_sales,origin,package descartados_por_ambiguedad=3
-2286 OK 400 series, 10242 filas, ultimo 2026-10-13, 303 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,origin,package
-2287 OK 80 series, 2105 filas, ultimo 2026-10-13, 57 KB, dims=commodity,variety,grade,appearance,district,item_size,organic,properties,repack,origin,package
-2288 OK 11 series, 286 filas, ultimo 2026-10-13, 9 KB, dims=commodity,variety,item_size,properties,repack,origin,package
-2290 OK 341 series, 9108 filas, ultimo 2026-10-13, 221 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,repack,transportation_mode,origin,package descartados_por_ambiguedad=2 sin_precio={"Report Details":41}
-2291 OK 508 series, 13794 filas, ultimo 2026-10-13, 384 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=106
-2292 OK 104 series, 2619 filas, ultimo 2026-10-13, 79 KB, dims=commodity,variety,grade,appearance,district,item_size,organic,properties,repack,origin,package descartados_por_ambiguedad=17
-2293 OK 11 series, 276 filas, ultimo 2026-10-13, 9 KB, dims=commodity,variety,grade,appearance,item_size,properties,origin,package
-2294 OK 148 series, 3576 filas, ultimo 2026-10-13, 89 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,repack,storage,origin,package
-2295 OK 301 series, 7090 filas, ultimo 2026-10-13, 190 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,crop,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package
-2296 OK 56 series, 1382 filas, ultimo 2026-10-13, 34 KB, dims=commodity,variety,condition,grade,district,item_size,properties,repack,origin,package
-2297 OK 10 series, 270 filas, ultimo 2026-10-13, 6 KB, dims=commodity,variety,crop,item_size,properties,repack,origin,package
-2302 OK 271 series, 7224 filas, ultimo 2026-10-13, 199 KB, dims=commodity,variety,grade,appearance,district,item_size,organic,properties,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=6
-2303 OK 495 series, 12348 filas, ultimo 2026-10-13, 383 KB, dims=commodity,variety,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=71
-2304 OK 73 series, 2089 filas, ultimo 2026-10-13, 59 KB, dims=commodity,variety,grade,appearance,item_size,organic,properties,repack,unit_sales,origin,package
-2305 OK 4 series, 104 filas, ultimo 2026-10-13, 3 KB, dims=properties,origin,package
-2306 OK 240 series, 5907 filas, ultimo 2026-10-13, 162 KB, dims=commodity,variety,condition,grade,quality,appearance,crop,district,item_size,properties,transportation_mode,origin,package sin_precio={"Report Details":121}
-2307 OK 327 series, 7854 filas, ultimo 2026-10-13, 244 KB, dims=commodity,variety,environment,grade,quality,district,item_size,properties,repack,transportation_mode,origin,package sin_precio={"Report Details":38}
-2308 OK 50 series, 1216 filas, ultimo 2026-10-13, 36 KB, dims=commodity,variety,grade,district,item_size,properties,origin,package
-2309 OK 3 series, 104 filas, ultimo 2026-10-13, 3 KB, dims=commodity,variety,district,item_size,properties,origin sin_precio={"Report Details":12}
-2310 OK 112 series, 2868 filas, ultimo 2026-10-13, 75 KB, dims=commodity,variety,condition,grade,quality,appearance,item_size,properties,unit_sales,origin,package
-2311 OK 231 series, 5758 filas, ultimo 2026-10-13, 165 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package
-2312 OK 28 series, 714 filas, ultimo 2026-10-13, 21 KB, dims=commodity,variety,condition,grade,district,item_size,properties,repack,origin,package
-2313 OK 1 series, 26 filas, ultimo 2026-10-13, 1 KB, dims=
-2314 OK 558 series, 11404 filas, ultimo 2026-10-13, 277 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,repack,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=17 sin_precio={"Report Details":6}
-2315 OK 394 series, 10222 filas, ultimo 2026-10-13, 267 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=178 sin_precio={"Report Details":91}
-2316 OK 90 series, 1853 filas, ultimo 2026-10-13, 51 KB, dims=commodity,variety,condition,grade,appearance,district,item_size,properties,repack,origin,package
-2317 OK 18 series, 460 filas, ultimo 2026-10-13, 14 KB, dims=commodity,variety,grade,item_size,properties,repack,origin,package
-2318 OK 432 series, 8683 filas, ultimo 2026-10-13, 210 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,origin,package sin_precio={"Report Details":81}
-2319 OK 418 series, 9011 filas, ultimo 2026-10-13, 259 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package sin_precio={"Report Details":6}
-2320 OK 81 series, 2079 filas, ultimo 2026-10-13, 56 KB, dims=commodity,variety,grade,quality,appearance,district,item_size,properties,repack,origin,package
-2321 OK 6 series, 124 filas, ultimo 2026-10-13, 4 KB, dims=commodity,variety,condition,item_size,properties,origin,package
-2386 OK 10 series, 104 filas, ultimo 2026-10-13, 4 KB, dims=commodity,var,grade,district,import_export_flag,item_size,organic,rep_cmt,pkg sin_precio={"Report Details":5}
-2387 OK 6 series, 310 filas, ultimo 2026-10-13, 4 KB, dims=commodity,var,quality,district,item_size,properties,rep_cmt,pkg sin_precio={"Report Details":4}
-2388 SIN SERIES (filas 2, secciones sin precio {})
+2246 OK 44 series, 1641 filas, ultimo 2026-10-13, 25 KB, dims=commodity,class,quality,pkg sin_precio={"Volumes":358}
+2277 OK 328 series, 9570 filas, ultimo 2026-10-14, 231 KB, dims=commodity,variety,condition,grade,quality,appearance,crop,district,item_size,organic,properties,repack,origin,package descartados_por_ambiguedad=27 sin_precio={"Report Details":1066}
+2278 OK 519 series, 14047 filas, ultimo 2026-10-14, 386 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,crop,district,item_size,properties,repack,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=189 sin_precio={"Report Details":590}
+2279 OK 138 series, 4131 filas, ultimo 2026-10-14, 95 KB, dims=commodity,variety,condition,grade,appearance,crop,district,item_size,properties,repack,origin,package descartados_por_ambiguedad=27 sin_precio={"Report Details":324}
+2280 OK 15 series, 450 filas, ultimo 2026-10-14, 12 KB, dims=commodity,variety,item_size,properties,origin,package sin_precio={"Report Details":75}
+2281 OK 159 series, 3971 filas, ultimo 2026-10-14, 111 KB, dims=commodity,variety,grade,appearance,district,item_size,properties,unit_sales,origin,package sin_precio={"Report Details":55}
+2282 OK 280 series, 6956 filas, ultimo 2026-10-14, 193 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package sin_precio={"Report Details":35}
+2283 OK 51 series, 1308 filas, ultimo 2026-10-14, 38 KB, dims=commodity,variety,grade,quality,district,item_size,properties,origin,package
+2284 OK 5 series, 130 filas, ultimo 2026-10-14, 4 KB, dims=commodity,variety,properties,repack,origin,package
+2285 OK 266 series, 6303 filas, ultimo 2026-10-14, 176 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,unit_sales,origin,package descartados_por_ambiguedad=2
+2286 OK 399 series, 10225 filas, ultimo 2026-10-14, 302 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,origin,package
+2287 OK 80 series, 2099 filas, ultimo 2026-10-14, 58 KB, dims=commodity,variety,grade,appearance,district,item_size,organic,properties,repack,origin,package
+2288 OK 11 series, 286 filas, ultimo 2026-10-14, 9 KB, dims=commodity,variety,item_size,properties,repack,origin,package
+2290 OK 336 series, 8745 filas, ultimo 2026-10-13, 211 KB, dims=commodity,variety,grade,quality,appearance,item_size,organic,properties,repack,transportation_mode,origin,package descartados_por_ambiguedad=1 sin_precio={"Report Details":41}
+2291 OK 518 series, 13767 filas, ultimo 2026-10-14, 388 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=109
+2292 OK 102 series, 2628 filas, ultimo 2026-10-14, 77 KB, dims=commodity,variety,grade,appearance,district,item_size,organic,properties,repack,origin,package descartados_por_ambiguedad=17
+2293 OK 11 series, 277 filas, ultimo 2026-10-14, 9 KB, dims=commodity,variety,grade,appearance,item_size,properties,origin,package
+2294 OK 155 series, 3579 filas, ultimo 2026-10-14, 92 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,repack,storage,origin,package
+2295 OK 311 series, 7117 filas, ultimo 2026-10-14, 194 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,crop,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package
+2296 OK 55 series, 1391 filas, ultimo 2026-10-14, 34 KB, dims=commodity,variety,condition,grade,district,item_size,properties,repack,origin,package
+2297 OK 10 series, 269 filas, ultimo 2026-10-14, 6 KB, dims=commodity,variety,crop,item_size,properties,repack,origin,package
+2302 OK 266 series, 7212 filas, ultimo 2026-10-14, 198 KB, dims=commodity,variety,grade,appearance,district,item_size,organic,properties,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=7
+2303 OK 493 series, 12385 filas, ultimo 2026-10-14, 383 KB, dims=commodity,variety,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=71
+2304 OK 73 series, 2073 filas, ultimo 2026-10-14, 60 KB, dims=commodity,variety,grade,appearance,item_size,organic,properties,repack,unit_sales,origin,package
+2305 OK 4 series, 104 filas, ultimo 2026-10-14, 3 KB, dims=properties,origin,package
+2306 OK 238 series, 5942 filas, ultimo 2026-10-14, 163 KB, dims=commodity,variety,condition,grade,quality,appearance,crop,district,item_size,properties,transportation_mode,origin,package sin_precio={"Report Details":125}
+2307 OK 333 series, 7855 filas, ultimo 2026-10-14, 238 KB, dims=commodity,variety,environment,grade,quality,district,item_size,properties,repack,transportation_mode,origin,package sin_precio={"Report Details":42}
+2308 OK 50 series, 1222 filas, ultimo 2026-10-14, 36 KB, dims=commodity,variety,grade,district,item_size,properties,origin,package
+2309 OK 3 series, 104 filas, ultimo 2026-10-14, 3 KB, dims=commodity,variety,district,item_size,properties,origin sin_precio={"Report Details":13}
+2310 OK 115 series, 2861 filas, ultimo 2026-10-14, 77 KB, dims=commodity,variety,condition,grade,quality,appearance,item_size,properties,unit_sales,origin,package
+2311 OK 230 series, 5778 filas, ultimo 2026-10-14, 165 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package
+2312 OK 28 series, 712 filas, ultimo 2026-10-14, 21 KB, dims=commodity,variety,condition,grade,district,item_size,properties,repack,origin,package
+2313 OK 1 series, 26 filas, ultimo 2026-10-14, 1 KB, dims=
+2314 OK 569 series, 11504 filas, ultimo 2026-10-14, 283 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,repack,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=15 sin_precio={"Report Details":6}
+2315 OK 389 series, 10243 filas, ultimo 2026-10-14, 267 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package descartados_por_ambiguedad=176 sin_precio={"Report Details":92}
+2316 OK 93 series, 1880 filas, ultimo 2026-10-14, 52 KB, dims=commodity,variety,condition,grade,appearance,district,item_size,properties,repack,origin,package
+2317 OK 20 series, 463 filas, ultimo 2026-10-14, 15 KB, dims=commodity,variety,grade,item_size,properties,repack,origin,package
+2318 OK 444 series, 8733 filas, ultimo 2026-10-14, 216 KB, dims=commodity,variety,condition,grade,quality,appearance,district,item_size,organic,properties,origin,package sin_precio={"Report Details":86}
+2319 OK 421 series, 9080 filas, ultimo 2026-10-14, 262 KB, dims=commodity,variety,condition,environment,grade,quality,appearance,district,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package sin_precio={"Report Details":6}
+2320 OK 82 series, 2080 filas, ultimo 2026-10-14, 57 KB, dims=commodity,variety,grade,quality,appearance,district,item_size,properties,repack,origin,package
+2321 OK 6 series, 126 filas, ultimo 2026-10-14, 4 KB, dims=commodity,variety,condition,item_size,properties,origin,package
+2386 OK 10 series, 112 filas, ultimo 2026-10-14, 5 KB, dims=commodity,var,grade,district,import_export_flag,item_size,organic,rep_cmt,pkg sin_precio={"Report Details":5}
+2387 OK 6 series, 302 filas, ultimo 2026-10-14, 4 KB, dims=commodity,var,quality,district,item_size,properties,rep_cmt,pkg sin_precio={"Report Details":4}
+2388 SIN SERIES (filas 3, secciones sin precio {})
 2389 OK 7 series, 88 filas, ultimo 2026-10-08, 2 KB, dims=commodity,var,item_size,rep_cmt,pkg sin_precio={"Report Details":22}
-2390 OK 27 series, 815 filas, ultimo 2026-10-13, 16 KB, dims=commodity,var,district,import_export_flag,item_size,organic,rep_cmt,pkg sin_precio={"Report Details":22}
-2391 OK 5 series, 69 filas, ultimo 2026-10-13, 2 KB, dims=commodity,var,grade,district,import_export_flag,item_size,properties,rep_cmt,market_location_name,pkg sin_precio={"Report Details":26}
-2392 OK 11 series, 199 filas, ultimo 2026-10-13, 4 KB, dims=commodity,var,grade,district,item_size,properties,rep_cmt,pkg sin_precio={"Report Details":2}
-2393 OK 82 series, 1793 filas, ultimo 2026-10-13, 42 KB, dims=commodity,var,grade,district,import_export_flag,item_size,properties,rep_cmt,unit_sales,pkg sin_precio={"Report Details":2}
-2394 OK 16 series, 304 filas, ultimo 2026-10-13, 10 KB, dims=var,item_size,rep_cmt,pkg
-2395 OK 68 series, 1237 filas, ultimo 2026-10-13, 34 KB, dims=commodity,var,basis_of_sale,district,import_export_flag,item_size,properties,rep_cmt,market_location_name,pkg sin_precio={"Report Details":29}
-2396 OK 41 series, 853 filas, ultimo 2026-10-13, 19 KB, dims=commodity,var,district,item_size,organic,properties,rep_cmt,market_location_name,pkg sin_precio={"Report Details":8}
+2390 OK 27 series, 796 filas, ultimo 2026-10-14, 17 KB, dims=commodity,var,district,import_export_flag,item_size,organic,rep_cmt,pkg sin_precio={"Report Details":22}
+2391 OK 4 series, 70 filas, ultimo 2026-10-14, 2 KB, dims=commodity,var,grade,district,import_export_flag,item_size,properties,rep_cmt,market_location_name,pkg sin_precio={"Report Details":25}
+2392 OK 11 series, 196 filas, ultimo 2026-10-14, 4 KB, dims=var,item_size,rep_cmt,pkg sin_precio={"Report Details":2}
+2393 OK 82 series, 1792 filas, ultimo 2026-10-14, 43 KB, dims=commodity,var,grade,district,import_export_flag,item_size,properties,rep_cmt,unit_sales,pkg sin_precio={"Report Details":2}
+2394 OK 16 series, 316 filas, ultimo 2026-10-14, 10 KB, dims=var,item_size,rep_cmt,pkg
+2395 OK 55 series, 1230 filas, ultimo 2026-10-14, 29 KB, dims=commodity,var,basis_of_sale,district,import_export_flag,item_size,properties,rep_cmt,market_location_name,pkg sin_precio={"Report Details":28}
+2396 OK 34 series, 859 filas, ultimo 2026-10-14, 17 KB, dims=commodity,var,district,item_size,organic,properties,rep_cmt,market_location_name,pkg sin_precio={"Report Details":8}
 2398 SIN SERIES (filas 0, secciones sin precio {})
-2399 SIN SERIES (filas 194, secciones sin precio {"Report Details":24})
-2400 OK 11 series, 331 filas, ultimo 2026-10-13, 9 KB, dims=commodity,var,grade,district,item_size,rep_cmt,pkg sin_precio={"Report Details":20}
-2401 OK 24 series, 879 filas, ultimo 2026-10-13, 14 KB, dims=commodity,var,grade,district,item_size,rep_cmt,pkg sin_precio={"Report Details":214}
-2402 OK 73 series, 2142 filas, ultimo 2026-10-13, 58 KB, dims=commodity,var,grade,appear,district,import_export_flag,item_size,organic,rep_cmt,reporting_city,market_location_name,pkg sin_precio={"Report Details":59}
-2403 OK 151 series, 3776 filas, ultimo 2026-10-13, 96 KB, dims=commodity,var,quality,district,env,import_export_flag,item_size,organic,properties,rep_cmt,reporting_city,unit_sales,market_location_name,pkg sin_precio={"Report Details":254}
+2399 SIN SERIES (filas 182, secciones sin precio {"Report Details":24})
+2400 OK 11 series, 328 filas, ultimo 2026-10-14, 9 KB, dims=commodity,var,grade,district,item_size,rep_cmt,pkg sin_precio={"Report Details":20}
+2401 OK 16 series, 858 filas, ultimo 2026-10-14, 11 KB, dims=commodity,var,grade,district,item_size,rep_cmt,pkg sin_precio={"Report Details":215}
+2402 OK 69 series, 2139 filas, ultimo 2026-10-14, 54 KB, dims=commodity,var,grade,appear,district,import_export_flag,item_size,organic,rep_cmt,reporting_city,market_location_name,pkg sin_precio={"Report Details":62}
+2403 OK 151 series, 3788 filas, ultimo 2026-10-14, 97 KB, dims=commodity,var,quality,district,env,import_export_flag,item_size,organic,properties,rep_cmt,reporting_city,unit_sales,market_location_name,pkg sin_precio={"Report Details":258}
 2404 SIN SERIES (filas 0, secciones sin precio {})
 2405 OK 3 series, 22 filas, ultimo 2026-10-13, 1 KB, dims=grade,item_size,rep_cmt sin_precio={"Report Details":4}
 2406 SIN SERIES (filas 0, secciones sin precio {})
 2409 SIN SERIES (filas 0, secciones sin precio {})
-2410 OK 15 series, 194 filas, ultimo 2026-10-13, 5 KB, dims=commodity,var,quality,item_size,properties,rep_cmt,storage,pkg sin_precio={"Report Details":9}
+2410 OK 16 series, 209 filas, ultimo 2026-10-14, 6 KB, dims=commodity,var,quality,item_size,properties,rep_cmt,storage,pkg sin_precio={"Report Details":10}
 2411 OK 3 series, 13 filas, ultimo 2026-10-13, 1 KB, dims=grade,district,item_size,rep_cmt
-2412 OK 95 series, 2739 filas, ultimo 2026-10-13, 81 KB, dims=commodity,var,grade,appear,item_size,rep_cmt,pkg sin_precio={"Report Details":25}
+2412 OK 97 series, 2754 filas, ultimo 2026-10-14, 82 KB, dims=commodity,var,grade,appear,item_size,rep_cmt,pkg sin_precio={"Report Details":41}
 2413 SIN SERIES (filas 2, secciones sin precio {"Report Details":2})
 2707 OK 89 series, 1418 filas, ultimo 2026-10-02, 37 KB, dims=class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":10}
 2708 OK 105 series, 622 filas, ultimo 2026-10-09, 20 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=13 sin_precio={"Report Receipts":117}
 2709 OK 312 series, 1028 filas, ultimo 2026-10-09, 38 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min descartados_por_ambiguedad=24 sin_precio={"Report Receipts":110}
 2710 OK 1135 series, 5330 filas, ultimo 2026-10-09, 209 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight,purchase_type descartados_por_ambiguedad=281 sin_precio={"Report Receipts":293}
-2711 OK 11 series, 968 filas, ultimo 2026-10-13, 33 KB, dims=commodity,class,protein,delivery_point,trade_loc,sale Type,trans_mode
+2711 OK 11 series, 979 filas, ultimo 2026-10-14, 34 KB, dims=commodity,class,protein,delivery_point,trade_loc,sale Type,trans_mode
 2714 OK 25 series, 75 filas, ultimo 2026-06-23, 6 KB, dims=commodity,class,grade,protein,application,delivery_end,delivery_start,desc,trade_loc,quote_type
 2720 SIN SERIES (filas 0, secciones sin precio {})
 2721 SIN SERIES (filas 0, secciones sin precio {})
-2734 OK 3 series, 264 filas, ultimo 2026-10-13, 7 KB, dims=class
-2756 OK 1594 series, 52712 filas, ultimo 2026-10-09, 1645 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":972}
-2757 OK 398 series, 10010 filas, ultimo 2026-10-09, 222 KB, dims=type,environment,quality_grade,section,region,package_size descartados_por_ambiguedad=1305 sin_precio={"Report Metrics":862}
+2734 OK 3 series, 267 filas, ultimo 2026-10-14, 7 KB, dims=class
+2756 OK 1594 series, 52196 filas, ultimo 2026-10-09, 1631 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":963}
+2757 OK 398 series, 9909 filas, ultimo 2026-10-09, 221 KB, dims=type,environment,quality_grade,section,region,package_size descartados_por_ambiguedad=1293 sin_precio={"Report Metrics":853}
 2769 OK 95 series, 572 filas, ultimo 2026-10-02, 18 KB, dims=commodity,class,quality,crop_Age,desc,use,region,package,sale_Type sin_precio={"Report Receipts":118}
 2770 OK 2 series, 38 filas, ultimo 2026-10-02, 0 KB, dims=class,lot_desc,weight_max,weight_min sin_precio={"Report Receipts":29}
-2771 OK 52 series, 4467 filas, ultimo 2026-10-13, 152 KB, dims=commodity,class,grade,protein,trade_loc,quote_type
-2787 OK 66 series, 2224 filas, ultimo 2026-10-13, 83 KB, dims=commodity,class,grade,protein,application,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,desc,location_City,trade_loc,quote_type
+2771 OK 52 series, 4519 filas, ultimo 2026-10-14, 154 KB, dims=commodity,class,grade,protein,trade_loc,quote_type
+2787 OK 66 series, 2246 filas, ultimo 2026-10-14, 84 KB, dims=commodity,class,grade,protein,application,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,desc,location_City,trade_loc,quote_type
 2807 OK 121 series, 1120 filas, ultimo 2026-10-09, 30 KB, dims=commodity,class,quality,crop_Age,desc,freight,package,sale_Type sin_precio={"Report Receipts":208}
 2808 OK 35 series, 219 filas, ultimo 2026-10-09, 5 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min descartados_por_ambiguedad=1 sin_precio={"Report Receipts":112}
 2810 OK 12 series, 3406 filas, ultimo 2026-10-09, 32 KB, dims=class,lot_size,weight_basis,purchase_type sin_precio={"Report Receipts":216,"Report Volume":1880,"Report Comprehensive":215}
-2829 OK 32 series, 3060 filas, ultimo 2026-10-13, 87 KB, dims=commodity,item,sub_Group sin_precio={"Report Totals":180}
+2829 OK 32 series, 3094 filas, ultimo 2026-10-14, 88 KB, dims=commodity,item,sub_Group sin_precio={"Report Totals":182}
 2830 OK 12 series, 90 filas, ultimo 2026-10-09, 3 KB, dims=class,hide_desc,hide_weight
 2833 OK 42 series, 343 filas, ultimo 2026-10-09, 13 KB, dims=commodity,item,class,export,item_description
 2834 OK 15 series, 288 filas, ultimo 2026-10-09, 9 KB, dims=commodity,item sin_precio={"Report Totals":18}
@@ -153,80 +153,80 @@
 2838 OK 56 series, 2020 filas, ultimo 2026-10-09, 60 KB, dims=commodity,item,class,export,item_description
 2839 OK 16 series, 473 filas, ultimo 2026-10-09, 15 KB, dims=commodity,item,class,edible,freight_region,freight,trans_mode
 2842 OK 24 series, 780 filas, ultimo 2026-10-10, 18 KB, dims=commodity,class,egg_type,environment,delivery,destination,origin,region,Section,freight,purchase_type sin_precio={"Report Volume Weighted":58,"Report Detail Weighted":106,"Report Detail Simple":132}
-2843 OK 36 series, 3823 filas, ultimo 2026-10-13, 37 KB, dims=class,egg_type,color,environment,destination,origin,freight descartados_por_ambiguedad=4 sin_precio={"Report Volume Weighted":1783,"Report Detail Weighted":897}
+2843 OK 36 series, 3857 filas, ultimo 2026-10-14, 38 KB, dims=class,egg_type,color,environment,destination,origin,freight descartados_por_ambiguedad=4 sin_precio={"Report Volume Weighted":1798,"Report Detail Weighted":902}
 2844 OK 9 series, 801 filas, ultimo 2026-10-10, 22 KB, dims=class,delivery,region,purchase_type
 2848 OK 21 series, 1869 filas, ultimo 2026-10-10, 53 KB, dims=class,delivery,region
-2850 OK 15 series, 1335 filas, ultimo 2026-10-13, 48 KB, dims=commodity,class,grade,delivery_point,trade_loc
-2851 OK 50 series, 2516 filas, ultimo 2026-10-13, 92 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc
+2850 OK 15 series, 1350 filas, ultimo 2026-10-14, 49 KB, dims=commodity,class,grade,delivery_point,trade_loc
+2851 OK 50 series, 2543 filas, ultimo 2026-10-14, 93 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc
 2863 OK 7 series, 325 filas, ultimo 2026-10-02, 10 KB, dims=commod,class,material_type,shipping_point
-2867 OK 704 series, 19726 filas, ultimo 2026-10-09, 608 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":970}
-2868 OK 1848 series, 64657 filas, ultimo 2026-10-09, 2020 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":972}
+2867 OK 704 series, 19529 filas, ultimo 2026-10-09, 603 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":961}
+2868 OK 1848 series, 64068 filas, ultimo 2026-10-09, 2003 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":963}
 2885 OK 531 series, 7573 filas, ultimo 2026-10-09, 188 KB, dims=commodity,class,quality,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":348}
-2886 OK 50 series, 4201 filas, ultimo 2026-10-13, 146 KB, dims=commodity,class,grade,protein,delivery_point,trade_loc sin_precio={"Report Detail":10}
-2887 OK 95 series, 4237 filas, ultimo 2026-10-13, 140 KB, dims=commodity,class,grade,cat,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,location_City,location_State,trans_mode
-2892 OK 90 series, 4317 filas, ultimo 2026-10-13, 157 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc
+2886 OK 50 series, 4250 filas, ultimo 2026-10-14, 148 KB, dims=commodity,class,grade,protein,delivery_point,trade_loc sin_precio={"Report Detail":10}
+2887 OK 95 series, 4283 filas, ultimo 2026-10-14, 141 KB, dims=commodity,class,grade,cat,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,location_City,location_State,trans_mode
+2892 OK 90 series, 4363 filas, ultimo 2026-10-14, 159 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc
 2904 OK 514 series, 2140 filas, ultimo 2026-10-09, 109 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":255}
 2905 OK 345 series, 2059 filas, ultimo 2026-10-09, 75 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":199}
 2906 OK 323 series, 1363 filas, ultimo 2026-10-09, 51 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=35 sin_precio={"Report Receipts":228}
 2911 OK 40 series, 2019 filas, ultimo 2026-05-15, 6 KB, dims=class,variety,micron/grade,region sin_precio={"Report Details - Domestic Volume":181,"Report Details - AUS AWEX":1344,"Report Details - AUS Price":384}
-2912 OK 50 series, 2534 filas, ultimo 2026-10-13, 90 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start,trade_loc
+2912 OK 50 series, 2561 filas, ultimo 2026-10-14, 91 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start,trade_loc
 2914 OK 20 series, 1539 filas, ultimo 2026-10-05, 35 KB, dims=commodity,class,conventional,desc,trade_loc,freight
-2917 OK 5 series, 353 filas, ultimo 2026-10-13, 9 KB, dims=class,trade_loc
+2917 OK 5 series, 358 filas, ultimo 2026-10-14, 9 KB, dims=class,trade_loc
 2920 OK 9 series, 692 filas, ultimo 2026-10-09, 23 KB, dims=commodity,class,grade,application,trade_loc sin_precio={"Report Detail":11}
-2928 OK 31 series, 1236 filas, ultimo 2026-10-12, 41 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start,desc,location_City
+2928 OK 31 series, 1254 filas, ultimo 2026-10-13, 41 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start,desc,location_City
 2929 OK 12 series, 873 filas, ultimo 2026-10-02, 20 KB, dims=commodity,class,quality,package
-2932 OK 33 series, 2786 filas, ultimo 2026-10-13, 99 KB, dims=commodity,class,grade,protein,delivery_point,trade_loc sin_precio={"Report Detail":1}
+2932 OK 33 series, 2816 filas, ultimo 2026-10-14, 100 KB, dims=commodity,class,grade,protein,delivery_point,trade_loc sin_precio={"Report Detail":1}
 2935 OK 179 series, 1665 filas, ultimo 2026-10-09, 54 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":181}
 2939 OK 156 series, 1535 filas, ultimo 2026-10-09, 45 KB, dims=class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":92}
 2940 OK 55 series, 588 filas, ultimo 2026-10-02, 10 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=44 sin_precio={"Report Receipts":239}
-2960 OK 82 series, 2907 filas, ultimo 2026-10-13, 111 KB, dims=commodity,class,grade,protein,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,location_City,trade_loc sin_precio={"Report Detail":15}
+2960 OK 82 series, 2949 filas, ultimo 2026-10-14, 113 KB, dims=commodity,class,grade,protein,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,location_City,trade_loc sin_precio={"Report Detail":15}
 2995 SIN SERIES (filas 74054, secciones sin precio {"Report":37027,"Report Details":37027})
-3043 OK 18 series, 1170 filas, ultimo 2026-10-13, 43 KB, dims=commodity,class,grade,delivery_end,delivery_start,desc,trade_loc
-3046 OK 54 series, 1442 filas, ultimo 2026-10-13, 56 KB, dims=commodity,class,grade,protein,application,delivery_end,delivery_point,delivery_start,desc,freight,sale Type,trans_mode
-3049 OK 6 series, 352 filas, ultimo 2026-10-13, 13 KB, dims=commodity,class,grade,delivery_end,delivery_start,desc
+3043 OK 18 series, 1182 filas, ultimo 2026-10-14, 43 KB, dims=commodity,class,grade,delivery_end,delivery_start,desc,trade_loc
+3046 OK 54 series, 1460 filas, ultimo 2026-10-14, 57 KB, dims=commodity,class,grade,protein,application,delivery_end,delivery_point,delivery_start,desc,freight,sale Type,trans_mode
+3049 OK 6 series, 356 filas, ultimo 2026-10-14, 13 KB, dims=commodity,class,grade,delivery_end,delivery_start,desc
 3050 OK 17 series, 738 filas, ultimo 2026-10-02, 17 KB, dims=commodity,class,quality,package sin_precio={"Report Receipts":165}
 3056 OK 96 series, 532 filas, ultimo 2026-10-02, 18 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package sin_precio={"Report Receipts":135}
 3057 OK 194 series, 1162 filas, ultimo 2026-10-09, 42 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package sin_precio={"Report Receipts":135}
 3058 OK 149 series, 745 filas, ultimo 2026-10-02, 30 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package sin_precio={"Report Receipts":138}
 3059 OK 113 series, 724 filas, ultimo 2026-10-09, 18 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=5 sin_precio={"Report Receipts":209}
-3088 OK 120 series, 3910 filas, ultimo 2026-10-09, 147 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc sin_precio={"Report Detail":2}
-3091 OK 25 series, 337 filas, ultimo 2026-10-06, 14 KB, dims=commodity,class,grade,protein,conventional,delivery_end,delivery_start,desc,trade_loc,quote_type sin_precio={"Report Detail":2}
+3088 OK 120 series, 3978 filas, ultimo 2026-10-14, 150 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc sin_precio={"Report Detail":2}
+3091 OK 25 series, 356 filas, ultimo 2026-10-13, 15 KB, dims=commodity,class,grade,protein,conventional,delivery_end,delivery_start,desc,trade_loc,quote_type sin_precio={"Report Detail":3}
 3095 OK 110 series, 1147 filas, ultimo 2026-10-02, 31 KB, dims=class,quality,crop_Age,desc,region,freight,package,sale_Type sin_precio={"Report Receipts":103}
 3096 OK 103 series, 542 filas, ultimo 2026-10-09, 17 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=33 sin_precio={"Report Receipts":123}
 3097 OK 360 series, 1839 filas, ultimo 2026-10-09, 58 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=70 sin_precio={"Report Receipts":220}
 3098 OK 314 series, 1430 filas, ultimo 2026-10-09, 48 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=24 sin_precio={"Report Receipts":216}
-3100 OK 63 series, 4476 filas, ultimo 2026-10-13, 157 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,desc,location_City,trade_loc sin_precio={"Report Detail":2}
+3100 OK 63 series, 4527 filas, ultimo 2026-10-14, 159 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,desc,location_City,trade_loc sin_precio={"Report Detail":2}
 3133 SIN SERIES (filas 0, secciones sin precio {})
 3134 SIN SERIES (filas 0, secciones sin precio {})
 3135 SIN SERIES (filas 0, secciones sin precio {})
 3146 OK 4 series, 68 filas, ultimo 2026-10-08, 3 KB, dims=commodity,class,delivery_point,trade_loc,freight,trans_mode
-3147 OK 59 series, 1822 filas, ultimo 2026-10-13, 68 KB, dims=commodity,class,grade,protein,delivery End Half,delivery Start Half,delivery_end,delivery_start
-3148 OK 41 series, 2203 filas, ultimo 2026-10-13, 76 KB, dims=commodity,class,grade,protein,application,delivery_end,delivery_point,delivery_start,trade_loc,quote_type,trans_mode sin_precio={"Report Detail":1}
-3156 OK 159 series, 5874 filas, ultimo 2026-10-13, 219 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,location_City,trade_loc,quote_type sin_precio={"Report Detail":36}
+3147 OK 59 series, 1842 filas, ultimo 2026-10-14, 69 KB, dims=commodity,class,grade,protein,delivery End Half,delivery Start Half,delivery_end,delivery_start
+3148 OK 41 series, 2229 filas, ultimo 2026-10-14, 77 KB, dims=commodity,class,grade,protein,application,delivery_end,delivery_point,delivery_start,trade_loc,quote_type,trans_mode sin_precio={"Report Detail":1}
+3156 OK 159 series, 5943 filas, ultimo 2026-10-14, 221 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,location_City,trade_loc,quote_type sin_precio={"Report Detail":36}
 3159 OK 10 series, 520 filas, ultimo 2026-10-02, 16 KB, dims=commod,class,material_type,shipping_point,freight
-3167 OK 49 series, 2493 filas, ultimo 2026-10-13, 91 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,desc,trade_loc,quote_type
+3167 OK 49 series, 2517 filas, ultimo 2026-10-14, 92 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,desc,trade_loc,quote_type
 3183 OK 29 series, 649 filas, ultimo 2026-09-04, 9 KB, dims=commodity,class,quality,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":167}
 3184 OK 11 series, 51 filas, ultimo 2026-08-07, 1 KB, dims=class,lot_desc,weight_max,weight_min sin_precio={"Report Receipts":34}
-3186 OK 23 series, 1825 filas, ultimo 2026-10-13, 63 KB, dims=commodity,class,grade,protein,trade_loc,quote_type
-3192 OK 95 series, 4429 filas, ultimo 2026-10-13, 164 KB, dims=commodity,class,grade,protein,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,trade_loc sin_precio={"Report Detail":2}
+3186 OK 23 series, 1846 filas, ultimo 2026-10-14, 64 KB, dims=commodity,class,grade,protein,trade_loc,quote_type
+3192 OK 95 series, 4478 filas, ultimo 2026-10-14, 166 KB, dims=commodity,class,grade,protein,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,trade_loc sin_precio={"Report Detail":2}
 3195 OK 10 series, 522 filas, ultimo 2026-10-02, 15 KB, dims=commod,class,material_type,shipping_point
-3223 OK 17 series, 1496 filas, ultimo 2026-10-13, 50 KB, dims=protein
-3225 OK 24 series, 2050 filas, ultimo 2026-10-13, 71 KB, dims=commodity,class,grade,protein,trade_loc
-3228 OK 3736 series, 85003 filas, ultimo 2026-10-09, 2870 KB, dims=type,condition,environment,quality_grade,section,region,package_size sin_precio={"Report Metrics":972}
-3229 OK 354 series, 5682 filas, ultimo 2026-10-09, 171 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":803}
+3223 OK 17 series, 1513 filas, ultimo 2026-10-14, 51 KB, dims=protein
+3225 OK 24 series, 2073 filas, ultimo 2026-10-14, 72 KB, dims=commodity,class,grade,protein,trade_loc
+3228 OK 3736 series, 84215 filas, ultimo 2026-10-09, 2848 KB, dims=type,condition,environment,quality_grade,section,region,package_size sin_precio={"Report Metrics":963}
+3229 OK 354 series, 5608 filas, ultimo 2026-10-09, 170 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":794}
 3236 OK 103 series, 803 filas, ultimo 2026-10-02, 22 KB, dims=commodity,class,quality,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":104}
 3237 OK 61 series, 429 filas, ultimo 2026-10-09, 10 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_estimate,pregnancy,weight_max,weight_min,freight descartados_por_ambiguedad=1 sin_precio={"Report Receipts":241}
-3239 OK 7 series, 352 filas, ultimo 2026-10-13, 12 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start
+3239 OK 7 series, 356 filas, ultimo 2026-10-14, 13 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start
 3324 SIN SERIES (filas 200000, secciones sin precio {"Report Details":100000,"Report by Region":100000})
 3364 OK 57 series, 1320 filas, ultimo 2026-10-07, 34 KB, dims=commodity,class,quality,crop,desc,non-Conventional,pkg sin_precio={"Volumes":202}
 3455 OK 29 series, 160 filas, ultimo 2026-09-25, 3 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min,freight sin_precio={"Report Receipts":111}
-3463 OK 103 series, 5137 filas, ultimo 2026-10-13, 188 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc,trans_mode
+3463 OK 103 series, 5190 filas, ultimo 2026-10-14, 190 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc,trans_mode
 3489 OK 49 series, 218 filas, ultimo 2026-09-30, 7 KB, dims=commodity,class,quality,crop,desc,pkg sin_precio={"Volumes":56}
 3510 OK 31 series, 2189 filas, ultimo 2026-10-09, 62 KB, dims=commodity,variety,protein,trade Loc,freight,sale_type,trans_mode
 3511 OK 77 series, 6916 filas, ultimo 2026-10-09, 205 KB, dims=commodity,variety,protein,category,market_location_name,trade Loc,trade_loc,Section,freight,quote_type,sale_type,trans_mode
 3512 OK 20 series, 1848 filas, ultimo 2026-10-09, 51 KB, dims=commodity,variety,protein,category,trade Loc,freight,sale_type,trans_mode
 3616 OK 59 series, 5432 filas, ultimo 2026-10-09, 147 KB, dims=commodity,variety,application,cat,shipping_point,region,state/Province,sale Type,trans_mode
-3617 OK 12 series, 1056 filas, ultimo 2026-10-13, 36 KB, dims=region,state/Province
+3617 OK 12 series, 1068 filas, ultimo 2026-10-14, 36 KB, dims=region,state/Province
 3618 OK 52 series, 6110 filas, ultimo 2026-10-09, 148 KB, dims=commodity,class,variety,grade,application,cat,delivery_point,grp,shipping_point,trade_loc,Section,freight sin_precio={"Report Detail":287,"Report EPV":1040}
 3621 OK 16 series, 822 filas, ultimo 2026-10-02, 23 KB, dims=commod,class,material_type,shipping_point
 3641 OK 18 series, 552 filas, ultimo 2026-10-09, 15 KB, dims=class,hide_desc,hide_weight
@@ -244,14 +244,14 @@
 3776 OK 9 series, 423 filas, ultimo 2026-06-26, 13 KB, dims=commod,class,material_type,shipping_point,freight
 3784 OK 131 series, 2453 filas, ultimo 2026-10-02, 50 KB, dims=commodity,class,quality,crop_Age,desc,use,region,package,sale_Type sin_precio={"Report Receipts":140}
 3793 OK 182 series, 1130 filas, ultimo 2026-09-25, 42 KB, dims=commodity,class,quality,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":39}
-3796 OK 28 series, 757 filas, ultimo 2026-10-09, 18 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":224}
+3796 OK 28 series, 735 filas, ultimo 2026-10-09, 17 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":215}
 3797 OK 15 series, 669 filas, ultimo 2026-10-09, 13 KB, dims=type,condition,environment,section,region,package_size sin_precio={"Report Metrics":280}
-3802 OK 1373 series, 3013 filas, ultimo 2026-09-25, 338 KB, dims=commod,class,grade,protein,cat,delivery_End,delivery_Point,delivery_Start,desc,group,seller,region,freight,package,saleType,trans_Mode descartados_por_ambiguedad=5
-3878 OK 17 series, 1326 filas, ultimo 2026-10-13, 47 KB, dims=commodity,class,grade,protein,trade_loc
+3802 OK 1397 series, 3120 filas, ultimo 2026-10-09, 345 KB, dims=commod,class,grade,protein,cat,delivery_End,delivery_Point,delivery_Start,desc,group,seller,region,freight,package,saleType,trans_Mode descartados_por_ambiguedad=5
+3878 OK 17 series, 1341 filas, ultimo 2026-10-14, 47 KB, dims=commodity,class,grade,protein,trade_loc
 3883 OK 8 series, 141 filas, ultimo 2026-10-02, 5 KB, dims=commod,class,material_type,shipping_point,freight
-3888 OK 1 series, 88 filas, ultimo 2026-10-13, 2 KB, dims=
+3888 OK 1 series, 89 filas, ultimo 2026-10-14, 2 KB, dims=
 3905 OK 97 series, 187 filas, ultimo 2026-09-04, 15 KB, dims=class,quality,conventional,crop_Age,desc,use,package,sale_Type sin_precio={"Report Receipts":14}
-3913 OK 64 series, 843 filas, ultimo 2026-10-12, 28 KB, dims=commodity,variety,environment,grade,appearance,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package
-3914 OK 76 series, 976 filas, ultimo 2026-10-12, 31 KB, dims=commodity,variety,grade,district,item_size,organic,properties,repack,origin,package
-3915 OK 19 series, 245 filas, ultimo 2026-10-12, 8 KB, dims=commodity,variety,grade,item_size,organic,properties,repack,origin,package
+3913 OK 64 series, 778 filas, ultimo 2026-10-12, 27 KB, dims=commodity,variety,environment,grade,appearance,item_size,organic,properties,repack,storage,transportation_mode,unit_sales,origin,package
+3914 OK 76 series, 904 filas, ultimo 2026-10-12, 30 KB, dims=commodity,variety,grade,district,item_size,organic,properties,repack,origin,package
+3915 OK 19 series, 227 filas, ultimo 2026-10-12, 8 KB, dims=commodity,variety,grade,item_size,organic,properties,repack,origin,package
 3926 OK 23 series, 48 filas, ultimo 2026-10-02, 3 KB, dims=class,quality,crop_Age,desc,use,region,package sin_precio={"Report Receipts":8}
