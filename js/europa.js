@@ -345,10 +345,12 @@
   }
 
   function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+  function euSw(cur, lang) { var S = window.DehesaShared, old = document.querySelector('.di-eusw'); if (!S || !S.euSwitch) return; var tmp = document.createElement('div'); tmp.innerHTML = S.euSwitch(lang, cur); if (old) old.parentNode.replaceChild(tmp.firstChild, old); else { var h = document.querySelector('.di-page-head'); if (h && h.parentNode) h.parentNode.insertBefore(tmp.firstChild, h.nextSibling); } }
   function render() {
     var t = tr(), root = document.getElementById('pr-body');
-    document.title = t.title + ' | Dehesa Index';
-    document.getElementById('pg-h1').textContent = t.title;
+    var EUT = window.DehesaShared && window.DehesaShared.euTitle ? window.DehesaShared.euTitle(lang()) : t.title;
+    document.title = EUT + ' | Dehesa Index';
+    document.getElementById('pg-h1').textContent = EUT; euSw('europa.html', lang());
     document.getElementById('pg-sub').textContent = t.sub;
     if (!ST.idx) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.err) + '</p>'; return; }
     root.innerHTML = shell(t);

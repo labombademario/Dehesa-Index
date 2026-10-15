@@ -68,6 +68,14 @@
   };
 
   function L(es, en, fr, it) { return { es: es, en: en, fr: fr, it: it }; }
+  /* Un solo título para «Precios de la UE» y «Lonjas y mercados locales»: dos pestañas enlazadas */
+  var EUSW = { title: L('Precios, lonjas y mercados UE', 'EU prices, exchanges and local markets', 'Prix, bourses et marchés locaux UE', 'Prezzi, borse merci e mercati locali UE'),
+    tabs: [['europa.html', L('Precios por país', 'Prices by country', 'Prix par pays', 'Prezzi per paese')], ['lonjas.html', L('Lonjas y mercados locales', 'Local markets', 'Marchés locaux', 'Mercati locali')]] };
+  function euSwitch(lang, cur) {
+    var n = function (o) { return o[lang] || o.es; };
+    return '<nav class="di-eusw" aria-label="' + n(EUSW.title) + '" style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px">' + EUSW.tabs.map(function (t) { var on = t[0] === cur; return '<a class="di-tab-btn' + (on ? ' active' : '') + '" style="text-decoration:none;border-color:var(--border)" href="' + t[0] + '"' + (on ? ' aria-current="page"' : '') + '>' + n(t[1]) + '</a>'; }).join('') + '</nav>';
+  }
+  function euTitle(lang) { return EUSW.title[lang] || EUSW.title.es; }
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
   var NAV_ORDER = ['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:today', 'g:more'];
@@ -84,8 +92,7 @@
     prices: { label: L('Precios', 'Prices', 'Prix', 'Prezzi'), mega: 1, first: L('Precios', 'Prices', 'Prix', 'Prezzi'), items: [
       pd('precios.html', L('Panel de precios', 'Price dashboard', 'Tableau des prix', 'Pannello dei prezzi'), L('Todos los productos en EE. UU., UE, Reino Unido y Canadá', 'Every product in the US, EU, UK and Canada', 'Tous les produits aux États-Unis, dans l’UE, au Royaume-Uni et au Canada', 'Tutti i prodotti in USA, UE, Regno Unito e Canada')),
       pd('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), L('Un producto a fondo: precio, países, histórico y comercio', 'One product in depth: price, countries, history and trade', 'Un produit en détail : prix, pays, historique et commerce', 'Un prodotto a fondo: prezzo, paesi, storico e commercio'), '?p=trigo'),
-      pd('europa.html', L('Precios de la UE', 'EU prices', 'Prix de l’UE', 'Prezzi UE'), L('UE · cotizaciones país por país, con histórico', 'EU · country-by-country quotes, with history', 'UE · cotations pays par pays, avec historique', 'UE · quotazioni paese per paese, con storico')),
-      pd('lonjas.html', L('Lonjas y mercados locales', 'Local markets', 'Marchés locaux', 'Mercati locali'), L('Cereales, aceite y oleaginosas por mercado en seis países', 'Cereals, olive oil and oilseeds by market in six countries', 'Céréales, huile d’olive et oléagineux par marché, six pays', 'Cereali, olio d’oliva e semi oleosi per mercato, sei paesi')),
+      pd('europa.html', L('Precios, lonjas y mercados UE', 'EU prices, exchanges and local markets', 'Prix, bourses et marchés locaux UE', 'Prezzi, borse merci e mercati locali UE'), L('Cotizaciones país por país y por lonja o mercado local, con histórico', 'Country-by-country quotes and local market prices, with history', 'Cotations par pays et par marché local, avec historique', 'Quotazioni per paese e per mercato locale, con storico')),
       { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa', 'Dehesa Index', 'Indice Dehesa', 'Indice Dehesa'), d: L('Índice de precios agrícolas de la UE, EE. UU. y Canadá', 'Farm price index for the EU, US and Canada', 'Indice des prix agricoles UE, États-Unis et Canada', 'Indice dei prezzi agricoli UE, USA e Canada') },
       pd('comparador.html', L('Comparador por producto y país', 'Product and country comparator', 'Comparateur par produit et pays', 'Confronto per prodotto e paese'), L('El precio de un producto en varios países, misma unidad', 'One product’s price across countries, same unit', 'Le prix d’un produit dans plusieurs pays, même unité', 'Il prezzo di un prodotto in più paesi, stessa unità')),
       { label: L('Mercados y relaciones', 'Markets and relationships', 'Marchés et relations', 'Mercati e relazioni'), items: [
@@ -857,6 +864,7 @@
     fmtDate: fmtDate,
     sitePath: sitePath,
     openSearch: openSearch,
+    euSwitch: euSwitch, euTitle: euTitle,
     frame: { crumbs: frCrumbs, bar: frBar },
     onLangChange: null // páginas pueden sobrescribir esto para re-renderizar su contenido sin recargar
   };

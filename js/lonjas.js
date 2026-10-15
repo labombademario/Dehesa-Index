@@ -141,7 +141,8 @@
     Array.prototype.forEach.call(document.querySelectorAll('[data-f]'), function (b) { b.onclick = function () { ST.fam = b.getAttribute('data-f'); ST.sid = null; load(ST.fam, build); }; });
     Array.prototype.forEach.call(document.querySelectorAll('[data-s]'), function (b) { b.onclick = function () { ST.sid = b.getAttribute('data-s'); build(); }; });
   }
-  function shell() { var t = tt(), h = document.getElementById('lj-h1'), s = document.getElementById('lj-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
+  function euSw(cur, lang) { var S = window.DehesaShared, old = document.querySelector('.di-eusw'); if (!S || !S.euSwitch) return; var tmp = document.createElement('div'); tmp.innerHTML = S.euSwitch(lang, cur); if (old) old.parentNode.replaceChild(tmp.firstChild, old); else { var h = document.querySelector('.di-page-head'); if (h && h.parentNode) h.parentNode.insertBefore(tmp.firstChild, h.nextSibling); } }
+  function shell() { var t = tt(), h = document.getElementById('lj-h1'), s = document.getElementById('lj-sub'); var S0 = window.DehesaShared, T0 = S0 && S0.euTitle ? S0.euTitle(lang()) : t.title; if (h) h.textContent = T0; if (s) s.textContent = t.sub; document.title = T0 + ' | Dehesa Index'; euSw('lonjas.html', lang()); }
   (function () { var q = new URLSearchParams(window.location.search); if (CTRY[q.get('c')]) { ST.c = q.get('c'); ST.fam = CTRY[ST.c][0]; } if (CTRY[ST.c].indexOf(q.get('f')) >= 0) ST.fam = q.get('f'); if (q.get('s')) ST.sid = q.get('s'); })();
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
