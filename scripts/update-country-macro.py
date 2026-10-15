@@ -98,6 +98,25 @@ try:
     log('infl: %d paises' % _n)
 except Exception as e:
     log('infl sin dato: %s' % e)
+# Argentina: sondeo (solo log) de las series de datos.gob.ar (INDEC y Ministerio de Economia) para inflacion y deuda publica; no se usa ningun valor hasta confirmar el identificador en el log
+def _probe_ar():
+    base = 'https://apis.datos.gob.ar/series/api/'
+    try:
+        d = get(base + 'series/?ids=148.3_INIVELNAL_DICI_M_26&limit=14&sort=desc&format=json')
+        meta = ((d or {}).get('meta') or [{}])[1:2]
+        log('sondeo AR IPC 148.3_INIVELNAL_DICI_M_26: %s | meta %s' % (((d or {}).get('data') or [])[:3], json.dumps(meta, ensure_ascii=False)[:300]))
+    except Exception as e: log('sondeo AR IPC: fallo %s' % e)
+    for q in ('deuda bruta administracion central', 'deuda publica porcentaje PIB', 'deuda administracion publica nacional'):
+        try:
+            d = get(base + 'search/?q=' + urllib.parse.quote(q) + '&limit=6')
+            for r in (d or {}).get('data', [])[:6]:
+                f = r.get('field', {}); ds = r.get('dataset', {})
+                log('sondeo AR "%s": %s | %s | %s | %s..%s | %s' % (q, f.get('id'), (f.get('title') or '')[:70], f.get('units'), f.get('time_index_start'), f.get('time_index_end'), (ds.get('publisher') or {}).get('name') if isinstance(ds.get('publisher'), dict) else ds.get('source')))
+        except Exception as e: log('sondeo AR "%s": fallo %s' % (q, e))
+try:
+    import urllib.parse
+    _probe_ar()
+except Exception as e: log('sondeo AR: %s' % e)
 # autocomprobacion con el mismo contrato que valida la CI: deja en el log cada incoherencia para poder corregirla sin adivinar
 try:
     import contract_tests as _ct
