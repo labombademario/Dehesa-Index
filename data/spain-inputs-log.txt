@@ -1,0 +1,12 @@
+fert 2021 fertilizantes2021_cifrasdefinitivasexcel.xlsx 17 filas 0 comunidades
+fert 2022 fertilizantes2022_definitivoswebexcel.xlsx 18 filas 0 comunidades
+fert 2023 fertilizantes2023_definitivoswebexcel.xlsx 17 filas 18 comunidades
+fert 2024 fertilizantes2024_definitivos(excel).2026-04-09-14 18 filas 18 comunidades
+fert 2025 fertilizantes2025_definitivosweb(excel).2026-09-04 18 filas 18 comunidades
+fito 2015 datosygraficosdelosprincipalesgruposfitosanitarios 0 filas
+fito 2019 datosygraficosdelosprincipalesgruposfitosanitarios 25 filas
+fito 2020 datosygraficossustanciascomercializadas_2020.xlsx 25 filas
+fito 2021 datosygraficossustanciascomercializadas_2021.xlsx 23 filas
+fito 2022 encuestacomercializacionfitosanitariospublicacion_ 20 filas
+fito 2023 encuestacomercializacionfitosanitarios_2023.xlsx 20 filas
+fito 2024 Encuesta Comercialización Fitosanitarios_2024.2026 19 filas
