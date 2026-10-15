@@ -6,6 +6,7 @@ oats ok
 rye ok
 rice ok
 estimaciones ok
+fob: ficha modificada 2026-08-06T01:54:45.575898; ultimo dia con fila 2025-01-21; filas 11706
 descartada ar-fob-rice ultimo 2022-10
 fob ok
 descartada ar-insc-steer ultimo 2019-12
@@ -41,10 +42,98 @@ faena ok
 descartada ar-sspm-barley-feed-area ultimo 2006
 descartada ar-sspm-barley-feed-production ultimo 2006
 campanas ok
-descartada ar-indec-retail-gba-aceite-mezcla ultimo 2016-11
+descartada ar-indec-retail-gba-french-bread ultimo 2020-12
+descartada ar-indec-retail-gba-wheat-flour-000 ultimo 2020-12
+descartada ar-indec-retail-gba-white-rice ultimo 2020-12
+descartada ar-indec-retail-gba-dry-pasta-500-g-pack ultimo 2020-12
+descartada ar-indec-retail-gba-ground-beef ultimo 2020-12
+descartada ar-indec-retail-gba-whole-chicken ultimo 2020-12
+descartada ar-indec-retail-gba-sunflower-oil ultimo 2020-12
+descartada ar-indec-retail-gba-whole-milk-sachet ultimo 2020-12
+descartada ar-indec-retail-gba-hen-eggs ultimo 2020-12
+descartada ar-indec-retail-gba-potato ultimo 2020-12
+descartada ar-indec-retail-gba-sugar ultimo 2020-12
+descartada ar-indec-retail-pampeana-french-bread ultimo 2020-12
+descartada ar-indec-retail-pampeana-wheat-flour-000 ultimo 2020-12
+descartada ar-indec-retail-pampeana-white-rice ultimo 2020-12
+descartada ar-indec-retail-pampeana-dry-pasta-500-g-pack ultimo 2020-12
+descartada ar-indec-retail-pampeana-ground-beef ultimo 2020-12
+descartada ar-indec-retail-pampeana-whole-chicken ultimo 2020-12
+descartada ar-indec-retail-pampeana-sunflower-oil ultimo 2020-12
+descartada ar-indec-retail-pampeana-whole-milk-sachet ultimo 2020-12
+descartada ar-indec-retail-pampeana-hen-eggs ultimo 2020-12
+descartada ar-indec-retail-pampeana-potato ultimo 2020-12
+descartada ar-indec-retail-pampeana-sugar ultimo 2020-12
+descartada ar-indec-retail-nea-french-bread ultimo 2020-12
+descartada ar-indec-retail-nea-wheat-flour-000 ultimo 2020-12
+descartada ar-indec-retail-nea-white-rice ultimo 2020-12
+descartada ar-indec-retail-nea-dry-pasta-500-g-pack ultimo 2020-12
+descartada ar-indec-retail-nea-ground-beef ultimo 2020-12
+descartada ar-indec-retail-nea-whole-chicken ultimo 2020-12
+descartada ar-indec-retail-nea-sunflower-oil ultimo 2020-12
+descartada ar-indec-retail-nea-whole-milk-sachet ultimo 2020-12
+descartada ar-indec-retail-nea-hen-eggs ultimo 2020-12
+descartada ar-indec-retail-nea-potato ultimo 2020-12
+descartada ar-indec-retail-nea-sugar ultimo 2020-12
+descartada ar-indec-retail-noa-french-bread ultimo 2020-12
+descartada ar-indec-retail-noa-wheat-flour-000 ultimo 2020-12
+descartada ar-indec-retail-noa-white-rice ultimo 2020-12
+descartada ar-indec-retail-noa-dry-pasta-500-g-pack ultimo 2020-12
+descartada ar-indec-retail-noa-ground-beef ultimo 2020-12
+descartada ar-indec-retail-noa-whole-chicken ultimo 2020-12
+descartada ar-indec-retail-noa-sunflower-oil ultimo 2020-12
+descartada ar-indec-retail-noa-whole-milk-sachet ultimo 2020-12
+descartada ar-indec-retail-noa-hen-eggs ultimo 2020-12
+descartada ar-indec-retail-noa-potato ultimo 2020-12
+descartada ar-indec-retail-noa-sugar ultimo 2020-12
+descartada ar-indec-retail-cuyo-french-bread ultimo 2020-12
+descartada ar-indec-retail-cuyo-wheat-flour-000 ultimo 2020-12
+descartada ar-indec-retail-cuyo-white-rice ultimo 2020-12
+descartada ar-indec-retail-cuyo-dry-pasta-500-g-pack ultimo 2020-12
+descartada ar-indec-retail-cuyo-ground-beef ultimo 2020-12
+descartada ar-indec-retail-cuyo-whole-chicken ultimo 2020-12
+descartada ar-indec-retail-cuyo-sunflower-oil ultimo 2020-12
+descartada ar-indec-retail-cuyo-whole-milk-sachet ultimo 2020-12
+descartada ar-indec-retail-cuyo-hen-eggs ultimo 2020-12
+descartada ar-indec-retail-cuyo-potato ultimo 2020-12
+descartada ar-indec-retail-cuyo-sugar ultimo 2020-12
+descartada ar-indec-retail-patagonia-french-bread ultimo 2020-12
+descartada ar-indec-retail-patagonia-wheat-flour-000 ultimo 2020-12
+descartada ar-indec-retail-patagonia-white-rice ultimo 2020-12
+descartada ar-indec-retail-patagonia-dry-pasta-500-g-pack ultimo 2020-12
+descartada ar-indec-retail-patagonia-ground-beef ultimo 2020-12
+descartada ar-indec-retail-patagonia-whole-chicken ultimo 2020-12
+descartada ar-indec-retail-patagonia-sunflower-oil ultimo 2020-12
+descartada ar-indec-retail-patagonia-whole-milk-sachet ultimo 2020-12
+descartada ar-indec-retail-patagonia-hen-eggs ultimo 2020-12
+descartada ar-indec-retail-patagonia-potato ultimo 2020-12
+descartada ar-indec-retail-patagonia-sugar ultimo 2020-12
+descartada ar-indec-retail-gba-asado ultimo 2020-07
+descartada ar-indec-retail-gba-paleta ultimo 2020-07
+descartada ar-indec-retail-gba-cuadril ultimo 2020-07
+descartada ar-indec-retail-gba-nalga ultimo 2020-07
+descartada ar-indec-retail-gba-aceite-mezcla ultimo 2020-07
+descartada ar-indec-retail-gba-leche-polvo-entera ultimo 2020-07
+descartada ar-indec-retail-gba-queso-cremoso ultimo 2020-07
+descartada ar-indec-retail-gba-queso-pate-grass ultimo 2020-07
+descartada ar-indec-retail-gba-queso-sardo ultimo 2020-07
+descartada ar-indec-retail-gba-manteca ultimo 2020-07
+descartada ar-indec-retail-gba-yogur-firme ultimo 2020-07
+descartada ar-indec-retail-gba-manzana-deliciosa ultimo 2020-07
+descartada ar-indec-retail-gba-limon ultimo 2020-07
+descartada ar-indec-retail-gba-naranja ultimo 2020-07
+descartada ar-indec-retail-gba-banana ultimo 2020-07
+descartada ar-indec-retail-gba-batata ultimo 2020-07
+descartada ar-indec-retail-gba-cebolla ultimo 2020-07
+descartada ar-indec-retail-gba-lechuga ultimo 2020-07
+descartada ar-indec-retail-gba-tomate-redondo ultimo 2020-07
+descartada ar-indec-retail-gba-zapallo ultimo 2020-07
+descartada ar-indec-retail-gba-arvejas-secas-remojadas ultimo 2020-07
+descartada ar-indec-retail-gba-vino-comun ultimo 2020-07
+descartada ar-indec-retail-gba-yerba-mate ultimo 2020-07
 precios minoristas INDEC 89
 SIPM INDEC 13
 gasoil agro ok
 Lecheria: fecha repetida en la cabecera de totales; se usa la del detalle (mismas columnas)
 lecheria ok
-series 222
+series 134
