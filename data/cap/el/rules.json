@@ -11,7 +11,7 @@
   "ref": "Υ.Α. 519 y 520/2023",
   "url": "https://www.forin.gr/articles/article/70797/ua-520-135074-2023"
  },
- "note": "Reglas leídas a mano de las decisiones ministeriales 519 y 520 de 2023 a través de copias de prensa jurídica (forin.gr), que no son la versión oficial del ΦΕΚ: son los textos originales de 2023 y no se ha comprobado si reformas posteriores los cambian. Las fechas de 2026 proceden de prensa. No hay importes por hectárea. No se ha leído el desarrollo rural. No es consejo jurídico.",
+ "note": "Reglas leídas a mano de las decisiones ministeriales 519 y 520 de 2023 (copias de forin.gr, no el ΦΕΚ), de la 3.ª modificación de la 519 (Υ.Α. 458/2025), de tres decisiones de importes de ayudas asociadas y de la decisión Α.1216/2026 de la ΑΑΔΕ sobre la solicitud única 2026 (copia de taxheaven.gr). No se ha comprobado si la 520 tiene modificaciones; no se han leído los tramos ni el importe del pago redistributivo ni la ayuda a jóvenes, ni los importes de los ecoesquemas. No se ha leído el desarrollo rural. No es consejo jurídico.",
  "interventions": [
   {
    "id": "basic",
@@ -53,7 +53,7 @@
    "kind": "eco",
    "name": "Οικολογικά σχήματα (Π1-31)",
    "nameLang": "el",
-   "legalBasis": "Reglamento (UE) 2021/2115, art. 31 (los actos griegos de los ecoesquemas no se han leído)",
+   "legalBasis": "Reglamento (UE) 2021/2115, art. 31; importes por decisión ministerial (p. ej. Υ.Α. 83922/2025, ΦΕΚ 1481/2025)",
    "articles": [
     "31"
    ]
@@ -63,7 +63,7 @@
    "kind": "coupled",
    "name": "Συνδεδεμένη εισοδηματική στήριξη",
    "nameLang": "el",
-   "legalBasis": "Reglamento (UE) 2021/2115, arts. 32 a 34 (los actos griegos no se han leído)",
+   "legalBasis": "Reglamento (UE) 2021/2115, arts. 32 a 34; importes por decisión ministerial (Υ.Α. 84297/2026, 132913/2026, 101913/2025)",
    "articles": [
     "32"
    ]
@@ -73,18 +73,78 @@
   {
    "id": "active-farmer",
    "topic": "farmer",
-   "legalBasis": "Υ.Α. 519/135068/2023 (ΦΕΚ Β΄ 3071/9-5-2023), οριζόντια θέματα άμεσων ενισχύσεων, art. 3 § 4",
+   "legalBasis": "Υ.Α. 519/135068/2023 (ΦΕΚ Β΄ 3071/9-5-2023), οριζόντια θέματα άμεσων ενισχύσεων, art. 3 § 4, sustituido por Υ.Α. 458/2025 (ΦΕΚ Β΄ 1472/27-3-2025), 3.ª modificación de la 519/135068/2023",
    "articles": [
     "3"
    ],
-   "text": "Agricultor activo: debe cumplir al menos una condición: haber recibido hasta 5.000 € de ayuda directa el ejercicio anterior; o, si recibió más, demostrar que la ayuda es al menos el 5 % de sus ingresos no agrarios del año fiscal anterior; o demostrar que sus ingresos agrarios son al menos el 10 % de los ingresos totales. Quedan excluidas, si cobran más de 5.000 €, las empresas cuya actividad principal no es agraria (por ejemplo aeropuertos, hoteles, campings), salvo que la actividad agraria sea al menos un tercio de su facturación. Los ingresos se comprueban con datos del Ministerio de Finanzas.",
-   "officialUrl": "https://www.forin.gr/articles/article/70798/ua-519-135068-2023",
+   "text": "Desde la Υ.Α. 458/2025, que sustituye la definición, el agricultor activo debe ejercer actividad agraria según el plan estratégico y cumplir al menos una condición: (a) haber recibido hasta 5.000 € de ayuda directa el ejercicio anterior; (b) si recibió más, que la ayuda sea al menos el 5 % de sus ingresos no agrarios del año fiscal anterior (cuando existan datos); (c) demostrar que sus ingresos agrarios del año fiscal anterior son al menos el 10 % de sus ingresos totales; (d) las entidades sin ánimo de lucro de educación agraria y los monasterios del Monte Athos cuentan como activos si cultivan al menos 50 estremas con ingresos (reales o imputados) superiores a 5.000 €; (e) los establecimientos penitenciarios agrícolas. Quedan excluidas las personas que cobran más de 5.000 € y gestionan empresas cuya finalidad principal no es agraria (aeropuertos, campings, hoteles, estadios, inmobiliarias, centros educativos), salvo que su finalidad sea la educación agraria.",
+   "officialUrl": "https://www.forin.gr/articles/article/84032/ua-458-2025",
    "values": {
-    "smallAidEur": 5000,
-    "aidShareOfNonAgriIncomePct": 5,
-    "agriShareOfIncomePct": 10,
-    "companyAgriTurnoverShare": "1/3"
+    "upToEur": 5000,
+    "nonFarmIncomeSharePct": 5,
+    "farmIncomeSharePct": 10,
+    "minStremmataInstitutions": 50
    }
+  },
+  {
+   "id": "unit-reduction",
+   "topic": "payments",
+   "legalBasis": "Υ.Α. 519/135068/2023 (ΦΕΚ Β΄ 3071/9-5-2023), οριζόντια θέματα άμεσων ενισχύσεων, art. 32A, sustituido por Υ.Α. 458/2025 (ΦΕΚ Β΄ 1472/27-3-2025), 3.ª modificación de la 519/135068/2023",
+   "articles": [
+    "32A"
+   ],
+   "text": "Reducción de importes unitarios (art. 32A, sustituido por la Υ.Α. 458/2025): si no sobran fondos, los importes unitarios de las intervenciones con exceso de demanda se reducen con un mismo porcentaje único. En los ecoesquemas: sin reducción si no se supera el presupuesto aprobado; si el exceso supera el 100 % del presupuesto aprobado, recorte horizontal del 55 % sobre los precios unitarios del plan estratégico; si no lo supera, del 45 %. Los importes pueden diferenciarse dentro de una intervención ante circunstancias extraordinarias (fenómenos naturales, zoonosis, catástrofes). Por eso los importes por superficie de cada campaña se fijan después, por decisión ministerial (véanse las reglas de ayudas asociadas).",
+   "officialUrl": "https://www.forin.gr/articles/article/84032/ua-458-2025",
+   "values": {
+    "ecoSchemeCutOverrunAbove100Pct": 55,
+    "ecoSchemeCutOverrunUpTo100Pct": 45
+   }
+  },
+  {
+   "id": "coupled-soft-wheat",
+   "topic": "associated",
+   "legalBasis": "Υ.Α. 84297/2026 (ΦΕΚ Β΄ 1955/6-4-2026), Π1-32.1, έτος ενίσχυσης 2025",
+   "articles": [],
+   "text": "Ayuda asociada al trigo blando, campaña 2025: 115 €/ha (11,50 €/estrema), fijada por la Υ.Α. 84297/2026 (ΦΕΚ Β΄ 1955/6-4-2026), es decir, después de la campaña.",
+   "officialUrl": "https://www.forin.gr/articles/article/89907/ua-84297-2026",
+   "values": {
+    "year": 2025,
+    "eurPerHa": 115
+   }
+  },
+  {
+   "id": "coupled-fodder-legumes",
+   "topic": "associated",
+   "legalBasis": "Υ.Α. 132913/2026 (ΦΕΚ Β΄ 2947/26-5-2026), Π1-32.2, έτος ενίσχυσης 2025",
+   "articles": [],
+   "text": "Ayuda asociada a las leguminosas proteicas forrajeras, campaña 2025: 83 €/ha (8,30 €/estrema), fijada por la Υ.Α. 132913/2026 (ΦΕΚ Β΄ 2947/26-5-2026).",
+   "officialUrl": "https://www.forin.gr/articles/article/90606/ua-132913-2026",
+   "values": {
+    "year": 2025,
+    "eurPerHa": 83
+   }
+  },
+  {
+   "id": "coupled-beef",
+   "topic": "associated",
+   "legalBasis": "Υ.Α. 101913/2025 (ΦΕΚ Β΄ 1840/15-4-2025), sector del vacuno, έτος ενίσχυσης 2024",
+   "articles": [],
+   "text": "Ayuda asociada al sector del vacuno, campaña 2024: 92 €, 200 € y 210 € por animal para las medidas A, B y Γ, fijadas por la Υ.Α. 101913/2025 (ΦΕΚ Β΄ 1840/15-4-2025). El texto consultado no dice qué categoría de animal corresponde a cada medida. No se han leído los importes de los demás cultivos y sectores asociados ni los de 2025 para el vacuno.",
+   "officialUrl": "https://www.forin.gr/articles/article/84366/ua-101913-2025",
+   "values": {
+    "year": 2024,
+    "measureAEur": 92,
+    "measureBEur": 200,
+    "measureGammaEur": 210
+   }
+  },
+  {
+   "id": "eco-amount-acts",
+   "topic": "eco",
+   "legalBasis": "Υ.Α. 83922/2025 (ΦΕΚ 1481/2025), Π1-31.1, Π1-31.2, Π1-31.5 y Π1-31.6",
+   "articles": [],
+   "text": "Ecoesquemas: los importes unitarios por estrema se fijan por decisión ministerial, no en las decisiones 519 y 520. Por ejemplo, la Υ.Α. 83922/2025 (ΦΕΚ 1481/2025) fija los de Π1-31.1, Π1-31.2, Π1-31.5 y Π1-31.6. No he podido leer el texto oficial de esas decisiones, así que no se publican importes por estrema; las cifras que circulan en prensa no se incluyen.",
+   "officialUrl": "https://www.opekepe.gr/opekepe-organisation-gr/223-ss-kap-2023-2027-library/4782-ya-gia-ton-kathorismo-ypsous-enisxysis-83922-28-martiou-2025-p1-31-1"
   },
   {
    "id": "minimum",
@@ -181,22 +241,18 @@
   {
    "id": "single-application-2026",
    "topic": "calendar",
-   "legalBasis": "ΑΑΔΕ, τροποποίηση της Α.1161/2026 (ανακοίνωση 12-10-2026; Ενιαία Αίτηση Ενίσχυσης 2026)",
-   "articles": [],
-   "text": "Solicitud única 2026: la ΑΑΔΕ (Autoridad Independiente de Ingresos Públicos) la gestiona según la prensa y amplió el plazo hasta el 30 de octubre de 2026 (anuncio del 12 de octubre). Quien la presente hasta esa fecha puede hacer modificaciones generales hasta el 10 de noviembre; quien la presentó antes del 25 de septiembre pudo modificar hasta el 10 de octubre y sus cambios cuentan para el anticipo del 31 de octubre (los posteriores, para el del 30 de noviembre). Intervenciones de desarrollo rural: 16 de noviembre. Fuente: prensa, no la decisión oficial.",
-   "officialUrl": "https://taxrevenue.gr/paratasi-prothesmion-eniaia-aitisi-enischysis-2026/",
-   "values": {
-    "campaign": 2026,
-    "deadline": "2026-10-30",
-    "generalChangesUntil": "2026-11-10",
-    "earlyChangesUntil": "2026-10-10",
-    "ruralDevelopmentUntil": "2026-11-16"
-   }
+   "legalBasis": "ΑΑΔΕ, Α.1216/2026 (ΦΕΚ Β΄ 6224/13-10-2026), τροποποίηση της Α.1161/3-8-2026 (Β΄ 4808)",
+   "articles": [
+    "2",
+    "3"
+   ],
+   "text": "Solicitud única 2026 (decisión Α.1216/2026 de la ΑΑΔΕ, ΦΕΚ Β΄ 6224/13-10-2026, que modifica la Α.1161/2026): plazo final de presentación, 30 de octubre de 2026; una solicitud fuera de plazo es inadmisible salvo fuerza mayor o circunstancias excepcionales (art. 12). Modificaciones: las solicitudes presentadas hasta el 30 de octubre pueden modificarse hasta el 10 de noviembre y cuentan para el anticipo del 30 de noviembre; las presentadas hasta el 25 de septiembre y modificadas hasta el 10 de octubre cuentan para el anticipo del 31 de octubre; las intervenciones de desarrollo rural, hasta el 16 de noviembre; las parcelas de los ecoesquemas, hasta el 11 de enero de 2027 (pastos públicos, 31 de enero); las parcelas de la ayuda asociada y las modificaciones por seguimiento de superficies, hasta el 31 de marzo de 2027. Texto leído en una copia de taxheaven.gr, no en el ΦΕΚ.",
+   "officialUrl": "https://www.taxheaven.gr/circulars/55637/a-1216-2026"
   },
   {
    "id": "plot-overlap-2026",
    "topic": "controls",
-   "legalBasis": "ΑΑΔΕ, τροποποίηση της Α.1161/2026 (ανακοίνωση 12-10-2026; Ενιαία Αίτηση Ενίσχυσης 2026)",
+   "legalBasis": "ΑΑΔΕ, ανακοίνωση 12-10-2026 (πηγή: τύπος; Ενιαία Αίτηση Ενίσχυσης 2026)",
    "articles": [],
    "text": "Cambio de 2026: la superposición mínima entre el área digitalizada y los códigos catastrales (KAEK) declarados vuelve al 55 %. Algunos KAEK no verificables por causas objetivas pueden aceptarse si el motivo se declara en myAGRO. Si no hay documentos para un KAEK o un ATAK, vale una declaración jurada. Los tramitadores deben entregar los archivos digitales a la ΑΑΔΕ en 2 días hábiles y los documentos en papel en 5. Fuente: prensa.",
    "officialUrl": "https://taxrevenue.gr/paratasi-prothesmion-eniaia-aitisi-enischysis-2026/",
@@ -213,9 +269,34 @@
   "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
   "rules": {
    "active-farmer": {
-    "en": "Active farmer: must meet at least one condition: received up to €5,000 of direct aid the previous financial year; or, if more, show the aid is at least 5 % of non-farm income of the previous tax year; or show farm income is at least 10 % of total income. Companies whose main activity is not farming (for example airports, hotels, campsites) are excluded if they receive more than €5,000, unless farming is at least a third of their turnover. Income is checked against Ministry of Finance data.",
-    "fr": "Agriculteur actif : doit remplir au moins une condition : avoir reçu jusqu'à 5 000 € d'aide directe l'exercice précédent ; ou, si plus, démontrer que l'aide représente au moins 5 % de ses revenus non agricoles de l'année fiscale précédente ; ou démontrer que ses revenus agricoles sont au moins 10 % du total. Sont exclues, si elles reçoivent plus de 5 000 €, les entreprises dont l'activité principale n'est pas agricole (par exemple aéroports, hôtels, campings), sauf si l'agriculture représente au moins un tiers de leur chiffre d'affaires. Les revenus sont vérifiés avec les données du ministère des Finances.",
-    "it": "Agricoltore attivo: deve soddisfare almeno una condizione: aver ricevuto fino a 5.000 € di aiuto diretto l'esercizio precedente; oppure, se di più, dimostrare che l'aiuto è almeno il 5 % dei redditi non agricoli dell'anno fiscale precedente; oppure dimostrare che il reddito agricolo è almeno il 10 % del totale. Sono escluse, se ricevono più di 5.000 €, le imprese la cui attività principale non è agricola (per esempio aeroporti, alberghi, campeggi), salvo che l'agricoltura sia almeno un terzo del loro fatturato. I redditi si verificano con i dati del Ministero delle Finanze."
+    "en": "Since Decision 458/2025 replaced the definition, an active farmer must carry out agricultural activity as defined in the strategic plan and meet at least one condition: (a) received up to €5,000 of direct aid the previous financial year; (b) if more, the aid is at least 5 % of non-farm income of the previous tax year (where data exist); (c) show that farm income of the previous tax year is at least 10 % of total income; (d) non-profit agricultural-education bodies and the Mount Athos monasteries count as active if they farm at least 50 stremmata generating income (actual or imputed) above €5,000; (e) agricultural prison facilities. Excluded are people who receive more than €5,000 and manage companies whose main purpose is not farming (airports, campsites, hotels, stadiums, estate agencies, educational institutions), unless the purpose is agricultural education.",
+    "fr": "Depuis que la décision 458/2025 a remplacé la définition, l'agriculteur actif doit exercer une activité agricole au sens du plan stratégique et remplir au moins une condition : (a) avoir reçu jusqu'à 5 000 € d'aide directe l'exercice précédent ; (b) si plus, l'aide représente au moins 5 % des revenus non agricoles de l'année fiscale précédente (si des données existent) ; (c) démontrer que les revenus agricoles de l'année fiscale précédente sont au moins 10 % du total ; (d) les organismes sans but lucratif d'enseignement agricole et les monastères du mont Athos comptent comme actifs s'ils cultivent au moins 50 stremmata générant un revenu (réel ou imputé) supérieur à 5 000 € ; (e) les établissements pénitentiaires agricoles. Sont exclues les personnes qui perçoivent plus de 5 000 € et gèrent des entreprises dont l'objet principal n'est pas agricole (aéroports, campings, hôtels, stades, agences immobilières, établissements d'enseignement), sauf si leur objet est l'enseignement agricole.",
+    "it": "Da quando la decisione 458/2025 ha sostituito la definizione, l'agricoltore attivo deve esercitare attività agricola ai sensi del piano strategico e soddisfare almeno una condizione: (a) aver ricevuto fino a 5.000 € di aiuto diretto l'esercizio precedente; (b) se di più, l'aiuto è almeno il 5 % dei redditi non agricoli dell'anno fiscale precedente (se esistono dati); (c) dimostrare che il reddito agricolo dell'anno fiscale precedente è almeno il 10 % del totale; (d) gli enti senza scopo di lucro di istruzione agraria e i monasteri del Monte Athos contano come attivi se coltivano almeno 50 stremmata con un reddito (effettivo o imputato) superiore a 5.000 €; (e) gli istituti penitenziari agricoli. Sono escluse le persone che ricevono più di 5.000 € e gestiscono imprese il cui scopo principale non è agricolo (aeroporti, campeggi, alberghi, stadi, agenzie immobiliari, istituti scolastici), salvo che lo scopo sia l'istruzione agraria."
+   },
+   "unit-reduction": {
+    "en": "Reduction of unit amounts (art. 32A, replaced by Decision 458/2025): where there are no unallocated funds, unit amounts for interventions with excess demand are cut by one single uniform percentage. For eco-schemes: no cut if the approved budget is not exceeded; if the overrun is above 100 % of the approved budget, a horizontal cut of 55 % on the unit prices in the strategic plan; if not, 45 %. Amounts can be differentiated within an intervention for extraordinary circumstances (natural phenomena, zoonoses, disasters). That is why per-area amounts for each campaign are set afterwards by ministerial decision (see the coupled-support rules).",
+    "fr": "Réduction des montants unitaires (art. 32A, remplacé par la décision 458/2025) : faute de fonds disponibles, les montants unitaires des interventions en excès de demande sont réduits d'un même pourcentage unique. Pour les éco-régimes : aucune réduction si le budget approuvé n'est pas dépassé ; si le dépassement excède 100 % du budget approuvé, réduction horizontale de 55 % sur les prix unitaires du plan stratégique ; sinon, 45 %. Les montants peuvent être différenciés au sein d'une intervention en cas de circonstances extraordinaires (phénomènes naturels, zoonoses, catastrophes). C'est pourquoi les montants à la surface de chaque campagne sont fixés ensuite par décision ministérielle (voir les règles des aides couplées).",
+    "it": "Riduzione degli importi unitari (art. 32A, sostituito dalla decisione 458/2025): in assenza di fondi disponibili, gli importi unitari degli interventi con domanda eccedente sono ridotti con un'unica percentuale uniforme. Per gli ecoregimi: nessuna riduzione se il bilancio approvato non è superato; se lo scostamento supera il 100 % del bilancio approvato, taglio orizzontale del 55 % sui prezzi unitari del piano strategico; altrimenti, 45 %. Gli importi possono essere differenziati all'interno di un intervento in circostanze straordinarie (fenomeni naturali, zoonosi, calamità). Per questo gli importi a superficie di ogni campagna sono fissati dopo, con decisione ministeriale (vedi le regole degli aiuti accoppiati)."
+   },
+   "coupled-soft-wheat": {
+    "en": "Coupled support for soft wheat, 2025 campaign: €115/ha (€11.50 per stremma), set by Decision 84297/2026 (ΦΕΚ Β΄ 1955/6-4-2026), that is, after the campaign.",
+    "fr": "Aide couplée au blé tendre, campagne 2025 : 115 €/ha (11,50 € par stremma), fixée par la décision 84297/2026 (ΦΕΚ Β΄ 1955/6-4-2026), c'est-à-dire après la campagne.",
+    "it": "Aiuto accoppiato al frumento tenero, campagna 2025: 115 €/ha (11,50 € per stremma), fissato dalla decisione 84297/2026 (ΦΕΚ Β΄ 1955/6-4-2026), cioè dopo la campagna."
+   },
+   "coupled-fodder-legumes": {
+    "en": "Coupled support for protein fodder legumes, 2025 campaign: €83/ha (€8.30 per stremma), set by Decision 132913/2026 (ΦΕΚ Β΄ 2947/26-5-2026).",
+    "fr": "Aide couplée aux légumineuses protéagineuses fourragères, campagne 2025 : 83 €/ha (8,30 € par stremma), fixée par la décision 132913/2026 (ΦΕΚ Β΄ 2947/26-5-2026).",
+    "it": "Aiuto accoppiato alle leguminose proteiche foraggere, campagna 2025: 83 €/ha (8,30 € per stremma), fissato dalla decisione 132913/2026 (ΦΕΚ Β΄ 2947/26-5-2026)."
+   },
+   "coupled-beef": {
+    "en": "Coupled support for the beef sector, 2024 campaign: €92, €200 and €210 per animal for measures A, B and Γ, set by Decision 101913/2025 (ΦΕΚ Β΄ 1840/15-4-2025). The text consulted does not say which animal category each measure covers. The amounts for the other coupled crops and sectors, and the 2025 beef amounts, have not been read.",
+    "fr": "Aide couplée au secteur bovin, campagne 2024 : 92 €, 200 € et 210 € par animal pour les mesures A, B et Γ, fixées par la décision 101913/2025 (ΦΕΚ Β΄ 1840/15-4-2025). Le texte consulté ne dit pas quelle catégorie d'animaux correspond à chaque mesure. Les montants des autres cultures et secteurs couplés, et ceux de 2025 pour les bovins, n'ont pas été lus.",
+    "it": "Aiuto accoppiato al settore bovino, campagna 2024: 92 €, 200 € e 210 € per capo per le misure A, B e Γ, fissati dalla decisione 101913/2025 (ΦΕΚ Β΄ 1840/15-4-2025). Il testo consultato non dice quale categoria di animali corrisponda a ciascuna misura. Gli importi delle altre colture e settori accoppiati, e quelli 2025 per i bovini, non sono stati letti."
+   },
+   "eco-amount-acts": {
+    "en": "Eco-schemes: unit amounts per stremma are set by ministerial decision, not in decisions 519 and 520. For example, Decision 83922/2025 (ΦΕΚ 1481/2025) sets those for Π1-31.1, Π1-31.2, Π1-31.5 and Π1-31.6. I could not read the official text of those decisions, so no per-stremma amounts are published; figures circulating in the press are not included.",
+    "fr": "Éco-régimes : les montants unitaires par stremma sont fixés par décision ministérielle, non dans les décisions 519 et 520. Par exemple, la décision 83922/2025 (ΦΕΚ 1481/2025) fixe ceux de Π1-31.1, Π1-31.2, Π1-31.5 et Π1-31.6. Je n'ai pas pu lire le texte officiel de ces décisions : aucun montant par stremma n'est publié ; les chiffres qui circulent dans la presse ne sont pas repris.",
+    "it": "Ecoregimi: gli importi unitari per stremma sono fissati con decisione ministeriale, non nelle decisioni 519 e 520. Per esempio, la decisione 83922/2025 (ΦΕΚ 1481/2025) fissa quelli di Π1-31.1, Π1-31.2, Π1-31.5 e Π1-31.6. Non ho potuto leggere il testo ufficiale di quelle decisioni: non si pubblicano importi per stremma; le cifre che circolano sulla stampa non sono riprese."
    },
    "minimum": {
     "en": "Minimum area of 0.4 ha per holding to claim payment entitlements, and no direct aid is paid if the annual total is €150 or less. Holdings in the Aegean islands (except Evia and Crete) are exempt from both minimums.",
@@ -248,9 +329,9 @@
     "it": "I giovani agricoltori che si insediano per la prima volta e i nuovi agricoltori hanno priorità nelle riserve regionali di diritti. L'età massima, gli ettari e l'importo del sostegno complementare ai giovani non sono stati letti."
    },
    "single-application-2026": {
-    "en": "2026 single application: according to the press, the AADE (Independent Authority for Public Revenue) runs it and extended the deadline to 30 October 2026 (announcement of 12 October). Anyone filing by that date can make general amendments until 10 November; those who filed before 25 September could amend until 10 October and their changes count for the 31 October advance (later ones, for the 30 November advance). Rural development interventions: 16 November. Source: press, not the official decision.",
-    "fr": "Demande unique 2026 : selon la presse, l'AADE (Autorité indépendante des recettes publiques) la gère et a prorogé le délai jusqu'au 30 octobre 2026 (annonce du 12 octobre). Qui la dépose à cette date peut faire des modifications générales jusqu'au 10 novembre ; ceux qui l'ont déposée avant le 25 septembre pouvaient modifier jusqu'au 10 octobre et leurs changements comptent pour l'avance du 31 octobre (les suivants, pour celle du 30 novembre). Interventions de développement rural : 16 novembre. Source : presse, pas la décision officielle.",
-    "it": "Domanda unica 2026: secondo la stampa la gestisce l'AADE (Autorità indipendente per le entrate pubbliche), che ha prorogato il termine al 30 ottobre 2026 (annuncio del 12 ottobre). Chi la presenta entro quella data può fare modifiche generali fino al 10 novembre; chi l'aveva presentata prima del 25 settembre ha potuto modificare fino al 10 ottobre e le sue modifiche contano per l'anticipo del 31 ottobre (le successive, per quello del 30 novembre). Interventi di sviluppo rurale: 16 novembre. Fonte: stampa, non la decisione ufficiale."
+    "en": "2026 single application (AADE decision Α.1216/2026, ΦΕΚ Β΄ 6224/13-10-2026, amending Α.1161/2026): final filing date 30 October 2026; a late application is inadmissible except for force majeure or exceptional circumstances (art. 12). Amendments: applications filed by 30 October can be amended until 10 November and count for the 30 November advance; those filed by 25 September and amended by 10 October count for the 31 October advance; rural development interventions, until 16 November; eco-scheme parcels, until 11 January 2027 (public grazing land, 31 January); coupled-support parcels and area-monitoring amendments, until 31 March 2027. Text read in a copy on taxheaven.gr, not in the ΦΕΚ.",
+    "fr": "Demande unique 2026 (décision AADE Α.1216/2026, ΦΕΚ Β΄ 6224/13-10-2026, modifiant la Α.1161/2026) : date limite de dépôt 30 octobre 2026 ; une demande tardive est irrecevable sauf force majeure ou circonstances exceptionnelles (art. 12). Modifications : les demandes déposées jusqu'au 30 octobre peuvent être modifiées jusqu'au 10 novembre et comptent pour l'avance du 30 novembre ; celles déposées avant le 25 septembre et modifiées jusqu'au 10 octobre comptent pour l'avance du 31 octobre ; interventions de développement rural, jusqu'au 16 novembre ; parcelles des éco-régimes, jusqu'au 11 janvier 2027 (pâturages publics, 31 janvier) ; parcelles de l'aide couplée et modifications issues du suivi des surfaces, jusqu'au 31 mars 2027. Texte lu dans une copie de taxheaven.gr, non dans le ΦΕΚ.",
+    "it": "Domanda unica 2026 (decisione AADE Α.1216/2026, ΦΕΚ Β΄ 6224/13-10-2026, che modifica la Α.1161/2026): termine finale di presentazione 30 ottobre 2026; una domanda tardiva è irricevibile salvo forza maggiore o circostanze eccezionali (art. 12). Modifiche: le domande presentate entro il 30 ottobre possono essere modificate fino al 10 novembre e contano per l'anticipo del 30 novembre; quelle presentate entro il 25 settembre e modificate entro il 10 ottobre contano per l'anticipo del 31 ottobre; interventi di sviluppo rurale, fino al 16 novembre; particelle degli ecoregimi, fino all'11 gennaio 2027 (pascoli pubblici, 31 gennaio); particelle dell'aiuto accoppiato e modifiche da monitoraggio delle superfici, fino al 31 marzo 2027. Testo letto in una copia su taxheaven.gr, non nel ΦΕΚ."
    },
    "plot-overlap-2026": {
     "en": "2026 change: the minimum overlap between the digitised area and the declared cadastral codes (KAEK) is reset to 55 %. Some KAEK that cannot be verified for objective reasons can be accepted if the reason is declared in myAGRO. If there are no documents for a KAEK or ATAK, a sworn declaration is enough. Submitters must hand digital files to the AADE within 2 working days and paper documents within 5. Source: press.",

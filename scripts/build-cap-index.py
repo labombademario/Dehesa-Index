@@ -95,9 +95,9 @@ def country_pl():
 def country_pt():
     return country_nat('PT', 'Portugal', (ni('los importes unitarios de ecorregimes y ayudas asociadas no se han leido; los importes indicativos del ARC y del pago a pequenos agricultores figuran en las reglas', 'NOT_READ'), []))
 def country_hr():
-    return country_nat('HR', 'Croacia', (ni('los importes por hectarea del Pravilnik de 2026 figuran en las reglas como planificados; faltan los de las ayudas asociadas y no se han leido los pagos efectivos', 'NOT_READ'), []))
+    return country_nat('HR', 'Croacia', (ni('los importes planificados por hectarea y por animal del Pravilnik de 2026 (ayudas asociadas incluidas) figuran en las reglas; no se han leido los pagos efectivos', 'NOT_READ'), []))
 def country_el():
-    return country_nat('EL', 'Grecia', (ni('las decisiones ministeriales de 2023 no fijan importes por hectarea y los de 2025-2026 solo se han visto en prensa, que no se incluye', 'NOT_READ'), []))
+    return country_nat('EL', 'Grecia', (ni('las decisiones de 2023 no fijan importes; solo se han leido tres decisiones de importes de ayudas asociadas (figuran en las reglas) y faltan basica, redistributiva, jovenes y ecoesquemas', 'NOT_READ'), []))
 def country_be():
     return country_nat('BE', 'Belgica', (ni('en Valonia el ministro fija los importes y en Flandes no se han leido; no hay importes por hectarea', 'NOT_READ'), []))
 def country_eu():

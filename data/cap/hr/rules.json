@@ -9,9 +9,9 @@
   "id": "nn_hr",
   "instrument": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), con las modificaciones NN 49/2026 y NN 78/2026, Narodne novine",
   "ref": "NN 147/2025",
-  "url": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu"
+  "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html"
  },
- "note": "Reglas leídas a mano del Pravilnik de 2026 (NN 147/2025) y de sus dos modificaciones (NN 49/2026 y NN 78/2026). Los importes por hectárea son los planificados (con posible desviación) de ese Pravilnik; no se han leído los importes de las ayudas asociadas ni la regla de 2026 sobre solicitudes tardías. No se ha leído el desarrollo rural. No es consejo jurídico: manda el texto de Narodne novine.",
+ "note": "Reglas leídas a mano del Pravilnik de 2026 (NN 147/2025) y de sus dos modificaciones (NN 49/2026 y NN 78/2026). Los importes por hectárea y por animal son los planificados (con un margen de desviación): los de las ayudas asociadas 32.01 salen del texto oficial y los de 32.02 a 32.09 de las fichas de la agencia de pagos y de su presentación de la campaña 2026, porque la copia legible del texto oficial se corta en el art. 53. No se ha encontrado en ninguna fuente oficial la regla de 2026 sobre solicitudes tardías. No se ha leído el desarrollo rural. No es consejo jurídico: manda el texto de Narodne novine.",
  "interventions": [
   {
    "id": "basic",
@@ -67,9 +67,11 @@
    "kind": "coupled",
    "name": "Proizvodno vezana plaćanja (32.01. do 32.09.)",
    "nameLang": "hr",
-   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 1(3)",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 1(3), 51 y 52",
    "articles": [
-    "1"
+    "1",
+    "51",
+    "52"
    ]
   }
  ],
@@ -82,7 +84,7 @@
     "3"
    ],
    "text": "Agricultor activo: tener un resultado económico estándar superior a 3.000 €, o haber recibido pagos directos inferiores a 5.000 € el año anterior. Algunas intervenciones de desarrollo rural (IAKS) están exentas de este requisito (art. 17).",
-   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
    "values": {
     "minStandardOutputEur": 3000,
     "priorYearPaymentsUnderEur": 5000
@@ -97,7 +99,7 @@
     "17"
    ],
    "text": "Parcela ARKOD mínima para pedir ayuda: 0,05 ha. Superficie admisible mínima para los pagos directos: 1 ha (0,5 ha para las medidas de desarrollo rural IAKS). Quien no llega a 1 ha puede cobrar al menos 200 € si pide pagos ligados a animales.",
-   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
    "values": {
     "minParcelHa": 0.05,
     "minHa": 1,
@@ -130,7 +132,7 @@
     "28"
    ],
    "text": "Ayuda básica a la renta (21.01): importe unitario planificado de 130,00 € por derecho de pago, con una desviación de hasta el 10 %. Los valores de los derechos convergen en cuatro pasos iguales de 2023 a 2026; en 2026 todos valen el promedio planificado. La reserva nacional se nutre con el 3 % del límite máximo.",
-   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
    "values": {
     "plannedEurPerEntitlement": 130.0,
     "deviationPct": 10,
@@ -146,7 +148,7 @@
     "30"
    ],
    "text": "Pago redistributivo (26.01): se concede por un máximo de 30 ha, con un importe unitario planificado de 110,22 €/ha y una desviación de hasta el 10 %.",
-   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
    "values": {
     "maxHa": 30,
     "plannedEurPerHa": 110.22,
@@ -162,7 +164,7 @@
     "31"
    ],
    "text": "Jóvenes agricultores (30.01): de 18 hasta cumplir 40 años, titular de la explotación por primera vez en los cinco años anteriores al de la solicitud. Se paga por un máximo de 50 ha, con un importe unitario planificado de 85,42 €/ha (desviación de hasta el 20 %), durante hasta cinco años y como muy tarde hasta 2027. La reforma NN 78/2026 redefine «nuevo agricultor»: persona física de más de 40 años que gestiona la explotación por su cuenta y es titular por primera vez después del plazo de solicitud del reglamento de 2025.",
-   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
    "values": {
     "minAge": 18,
     "maxAge": 40,
@@ -188,7 +190,7 @@
     "48"
    ],
    "text": "Ocho ecorregímenes con importes planificados por hectárea: 31.01 diversidad intensificada de la superficie agraria, 62 €; 31.02 pastoreo extensivo de pastos, 100 €; 31.03 mantenimiento intensificado de superficies ecológicamente significativas, 130 € (160 € si al menos el 10 % de la tierra de cultivo lo son); 31.04 estiércol en tierra de cultivo, 215 € (169 € en zonas vulnerables a nitratos); 31.05 leguminosas, 161 € (117 € combinado con 31.04; 119 € con agricultura ecológica 70.04, más 93 € por pasto apícola ecológico); 31.06 agricultura de conservación, 250 € (hasta ±30 %); 31.07 pastos de alto valor natural, 255 € en montaña, 361 € en llanura continental y 113 € en la región mediterránea; 31.08 abonos ecológicos en cultivos permanentes, 250 €. Las desviaciones permitidas son de hasta el 10 % salvo que se indique.",
-   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
    "values": {
     "planned": {
      "31.01": 62,
@@ -220,12 +222,26 @@
   {
    "id": "coupled",
    "topic": "associated",
-   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 1(3)",
+   "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), arts. 51 y 52 (texto oficial); resto: fichas de la APPRRR y presentación «Kampanja 2026»",
    "articles": [
-    "1"
+    "51",
+    "52"
    ],
-   "text": "Ayudas asociadas (32.xx): vacas de leche (con novillas de primer parto), cebo de terneros, vacas nodrizas, ovejas y cabras, hortalizas, fruta, remolacha azucarera, cultivos proteicos forrajeros y semillas. Los importes por animal o hectárea no se han leído.",
-   "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu"
+   "text": "Ayudas asociadas (32.xx), importes unitarios planificados de 2026 (el importe final puede moverse dentro de un margen: en los animales, de −10 % a +20 %): vacas de leche 247 € por animal (32.01.01; entre 222,30 y 296,40 €); novillas de primer parto 342 € (32.01.02; 307,80 a 410,40 €); cebo de terneros 80 € (32.02; 72 a 96 €); vacas nodrizas 98 € (32.03; 88,20 a 117,60 €); ovejas y cabras 10 € (32.04; 8 a 14 €; mínimo 10 animales); hortalizas 162,02 €/ha (32.05; 145,82 a 194,42 €; primeras 20 ha, mínimo 0,5 ha por cultivo); fruta 169,87 €/ha (32.06; 152,88 a 203,84 €; primeras 20 ha); remolacha azucarera 536 €/ha (32.07; 482,40 a 643,20 €; mínimo 1 ha); cultivos proteicos forrajeros 186,08 €/ha (32.08; al menos 1 UGM por hectárea admisible); semillas 495 €/ha y 666,64 €/ha para el maíz de semilla (32.09; mínimo 1 ha, 0,10 ha en hortalizas). Los importes de 32.01 salen del texto oficial (arts. 51 y 52); los de 32.02 a 32.09 de las fichas de la agencia de pagos y de su presentación de la campaña 2026, que no he podido cotejar con el texto del Pravilnik porque la copia legible se corta en el art. 53.",
+   "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
+   "values": {
+    "dairyCowEur": 247,
+    "firstCalvingHeiferEur": 342,
+    "beefFatteningEur": 80,
+    "sucklerCowEur": 98,
+    "sheepGoatEur": 10,
+    "vegetablesEurPerHa": 162.02,
+    "fruitEurPerHa": 169.87,
+    "sugarBeetEurPerHa": 536,
+    "proteinCropsEurPerHa": 186.08,
+    "seedEurPerHa": 495,
+    "maizeSeedEurPerHa": 666.64
+   }
   },
   {
    "id": "amendments-2026",
@@ -312,9 +328,9 @@
     "it": "Otto ecoregimi con importi previsti per ettaro: 31.01 diversità intensificata delle superfici agricole, 62 €; 31.02 pascolo estensivo dei pascoli, 100 €; 31.03 mantenimento intensificato delle superfici ecologicamente significative, 130 € (160 € se almeno il 10 % dei seminativi lo è); 31.04 letame sui seminativi, 215 € (169 € nelle zone vulnerabili ai nitrati); 31.05 leguminose, 161 € (117 € combinato con 31.04; 119 € con l'agricoltura biologica 70.04, più 93 € per pascolo apistico biologico); 31.06 agricoltura conservativa, 250 € (fino a ±30 %); 31.07 prati di alto valore naturale, 255 € nella regione collinare e montana, 361 € nella pianura continentale e 113 € nella regione mediterranea; 31.08 concimi organici nelle colture permanenti, 250 €. Gli scarti ammessi arrivano al 10 % salvo diversa indicazione."
    },
    "coupled": {
-    "en": "Coupled support (32.xx): dairy cows (with first-calving heifers), beef fattening, suckler cows, sheep and goats, vegetables, fruit, sugar beet, fodder protein crops and seed. The per-head and per-hectare amounts have not been read.",
-    "fr": "Aides couplées (32.xx) : vaches laitières (avec génisses primipares), engraissement de bovins, vaches allaitantes, ovins et caprins, légumes, fruits, betterave sucrière, protéagineux fourragers et semences. Les montants par animal ou par hectare n'ont pas été lus.",
-    "it": "Aiuti accoppiati (32.xx): vacche da latte (con giovenche alla prima gravidanza), ingrasso di bovini, vacche nutrici, ovini e caprini, ortaggi, frutta, barbabietola da zucchero, colture proteiche foraggere e sementi. Gli importi per capo o per ettaro non sono stati letti."
+    "en": "Coupled support (32.xx), planned unit amounts for 2026 (the final amount can move within a margin: for animals, from −10 % to +20 %): dairy cows €247 per animal (32.01.01; €222.30 to €296.40); first-calving heifers €342 (32.01.02; €307.80 to €410.40); beef fattening €80 (32.02; €72 to €96); suckler cows €98 (32.03; €88.20 to €117.60); sheep and goats €10 (32.04; €8 to €14; minimum 10 animals); vegetables €162.02/ha (32.05; €145.82 to €194.42; first 20 ha, minimum 0.5 ha per crop); fruit €169.87/ha (32.06; €152.88 to €203.84; first 20 ha); sugar beet €536/ha (32.07; €482.40 to €643.20; minimum 1 ha); fodder protein crops €186.08/ha (32.08; at least 1 livestock unit per eligible hectare); seed €495/ha and €666.64/ha for seed maize (32.09; minimum 1 ha, 0.10 ha for vegetables). The 32.01 amounts come from the official text (arts. 51 and 52); those for 32.02 to 32.09 come from the payment agency's intervention pages and its 2026 campaign presentation, which I could not check against the Pravilnik because the readable copy is cut off at art. 53.",
+    "fr": "Aides couplées (32.xx), montants unitaires prévus pour 2026 (le montant final peut varier dans une marge : pour les animaux, de −10 % à +20 %) : vaches laitières 247 € par animal (32.01.01 ; de 222,30 à 296,40 €) ; génisses primipares 342 € (32.01.02 ; de 307,80 à 410,40 €) ; engraissement de bovins 80 € (32.02 ; de 72 à 96 €) ; vaches allaitantes 98 € (32.03 ; de 88,20 à 117,60 €) ; ovins et caprins 10 € (32.04 ; de 8 à 14 € ; minimum 10 animaux) ; légumes 162,02 €/ha (32.05 ; de 145,82 à 194,42 € ; 20 premiers ha, minimum 0,5 ha par culture) ; fruits 169,87 €/ha (32.06 ; de 152,88 à 203,84 € ; 20 premiers ha) ; betterave sucrière 536 €/ha (32.07 ; de 482,40 à 643,20 € ; minimum 1 ha) ; protéagineux fourragers 186,08 €/ha (32.08 ; au moins 1 UGB par hectare admissible) ; semences 495 €/ha et 666,64 €/ha pour le maïs semence (32.09 ; minimum 1 ha, 0,10 ha pour les légumes). Les montants de 32.01 viennent du texte officiel (art. 51 et 52) ; ceux de 32.02 à 32.09 viennent des fiches de l'agence de paiement et de sa présentation de la campagne 2026, que je n'ai pas pu recouper avec le Pravilnik parce que la copie lisible s'arrête à l'art. 53.",
+    "it": "Aiuti accoppiati (32.xx), importi unitari previsti per il 2026 (l'importo finale può muoversi entro un margine: per gli animali, da −10 % a +20 %): vacche da latte 247 € per capo (32.01.01; da 222,30 a 296,40 €); giovenche alla prima gravidanza 342 € (32.01.02; da 307,80 a 410,40 €); ingrasso di bovini 80 € (32.02; da 72 a 96 €); vacche nutrici 98 € (32.03; da 88,20 a 117,60 €); ovini e caprini 10 € (32.04; da 8 a 14 €; minimo 10 capi); ortaggi 162,02 €/ha (32.05; da 145,82 a 194,42 €; primi 20 ha, minimo 0,5 ha per coltura); frutta 169,87 €/ha (32.06; da 152,88 a 203,84 €; primi 20 ha); barbabietola da zucchero 536 €/ha (32.07; da 482,40 a 643,20 €; minimo 1 ha); colture proteiche foraggere 186,08 €/ha (32.08; almeno 1 UBA per ettaro ammissibile); sementi 495 €/ha e 666,64 €/ha per il mais da seme (32.09; minimo 1 ha, 0,10 ha per gli ortaggi). Gli importi di 32.01 vengono dal testo ufficiale (artt. 51 e 52); quelli da 32.02 a 32.09 dalle schede dell'agenzia dei pagamenti e dalla sua presentazione della campagna 2026, che non ho potuto confrontare con il Pravilnik perché la copia leggibile si interrompe all'art. 53."
    },
    "amendments-2026": {
     "en": "The NN 78/2026 amendment (17 July 2026) changes eco-scheme and control requirements: ditches at least 0.5 m wide and deep and watercourse buffer strips of 5 to 10 m (art. 38); livestock keepers, including contract fattening, must add adsorbents (clinoptilolite zeolite or bentonite) to manure storage, at least 0.5 % of dry matter, and send proof of purchase to the Paying Agency by 31 December (art. 41); it replaces annex 5 on breach assessment criteria. We have not compared the changes line by line with the earlier text.",

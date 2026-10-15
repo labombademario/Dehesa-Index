@@ -557,7 +557,7 @@
    "legalAct": {
     "title": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), con las modificaciones NN 49/2026 y NN 78/2026, Narodne novine",
     "ref": "NN 147/2025",
-    "url": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu",
+    "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html",
     "sourceId": "nn_hr"
    },
    "updatedAt": "2026-10-15",
@@ -575,7 +575,7 @@
     },
     "amounts": {
      "state": "NOT_INGESTED",
-     "reason": "los importes por hectarea del Pravilnik de 2026 figuran en las reglas como planificados; faltan los de las ayudas asociadas y no se han leido los pagos efectivos",
+     "reason": "los importes planificados por hectarea y por animal del Pravilnik de 2026 (ayudas asociadas incluidas) figuran en las reglas; no se han leido los pagos efectivos",
      "reasonCode": "NOT_READ"
     },
     "rules": {
@@ -622,13 +622,13 @@
     },
     "amounts": {
      "state": "NOT_INGESTED",
-     "reason": "las decisiones ministeriales de 2023 no fijan importes por hectarea y los de 2025-2026 solo se han visto en prensa, que no se incluye",
+     "reason": "las decisiones de 2023 no fijan importes; solo se han leido tres decisiones de importes de ayudas asociadas (figuran en las reglas) y faltan basica, redistributiva, jovenes y ecoesquemas",
      "reasonCode": "NOT_READ"
     },
     "rules": {
      "state": "PARTIAL",
      "file": "el/rules.json",
-     "count": 9,
+     "count": 14,
      "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
     },
     "importantDates": {
@@ -746,7 +746,7 @@
     "date": "2027-05-15",
     "text": "Fecha ordinaria de fin de la solicitud única (15 de mayo, como en 2024 y 2026). La fija el reglamento de cada año y en 2026 se amplió al 1 de junio.",
     "legalBasis": "Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025), art. 10(1)",
-    "officialUrl": "https://www.zakon.hr/c/podzakonski-propis/671496/nn-147-2025-%284.12.2025.%29%2C-pravilnik-o-provedbi-izravne-potpore-poljoprivredi-i-iaks-mjera-ruralnog-razvoja-za-2026.-godinu"
+    "officialUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_147_2185.html"
    },
    {
     "cc": "IT",
