@@ -565,7 +565,7 @@ def cpi(doc, errs, warns, stats):
                 if not _num(x) or x <= 0 or not _m.isfinite(x): errs.append("%s: valor invalido en la posicion %d" % (cc, i)); break
                 if prev and abs(x / prev - 1) > 0.12: errs.append("%s: salto mensual de %.1f %% en la posicion %d" % (cc, (x / prev - 1) * 100, i)); break
                 prev = x
-            exp = {"US": "bls", "UK": "ons", "CA": "statcan"}.get(cc)
+            exp = {"US": "bls", "UK": "ons", "CA": "statcan", "AR": "indec"}.get(cc)
             if exp and m["src"] != exp: errs.append("%s: la fuente mensual deberia ser %s" % (cc, exp))
             if not exp and m["src"] != "eurostat": errs.append("%s: la fuente mensual deberia ser eurostat" % cc)
         a = c.get("a")

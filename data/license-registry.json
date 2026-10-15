@@ -3631,6 +3631,32 @@
    "short": "MASAF (IT)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+  },
+  "indec": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-10",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "notes": "Solo se usa el nivel general del IPC nacional desde ago-2024 para la inflacion interanual del perfil de pais. La licencia aplicada es la politica de difusion del INDEC (CC con atribucion); el INDEC ya figura en datos.gob.ar con CC BY 4.0 segun la evidencia de indec_ar. No se ha leido todavia la ficha de licencia especifica de este conjunto de datos.",
+   "name": "Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar",
+   "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31",
+   "country": "AR",
+   "licenseId": "CC-BY-INDEC",
+   "licenseName": "INDEC: Creative Commons, reutilizacion con atribucion (Politicas de difusion estadistica, cap. XI)",
+   "licenseUrl": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/politica_difusion_indec.pdf",
+   "attributionText": "Fuente: INDEC, Indice de Precios al Consumidor (IPC) nacional, nivel general, base dic-2016=100; serie 148.3_INIVELNAL_DICI_M_26 de datos.gob.ar. La inflacion interanual es un calculo propio sobre el indice.",
+   "additionalRestrictions": "Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios: la inflacion interanual es calculo propio. El ultimo mes es provisional segun el INDEC.",
+   "evidence": "Politicas de difusion estadistica del INDEC (PDF, leido el 10-oct-2026 desde GitHub Actions), cap. XI 'Usabilidad de la informacion': 'Salvo contenidos especificamente indicados, todo el material publicado en el sitio web del INDEC posee la licencia Creative Commons (CC). Esto permite a los usuarios copiar, reutilizar o redistribuir el material en cualquier medio o formato, siempre que se acredite debidamente la obra, se cite la fuente primaria y se especifiquen cambios si los hubiere.' El pie de cada pagina del INDEC repite la licencia. No hay clausula no comercial ni de no derivados.",
+   "short": "INDEC (Argentina)",
+   "legalConfidenceReason": "Licencia explicita en la politica de difusion oficial del INDEC y en el pie de su sitio."
   }
  },
  "files": {

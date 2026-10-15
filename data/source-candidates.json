@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-14T22:20:04Z",
+ "generatedAt": "2026-10-15T03:44:05Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 153,
+  "total": 154,
   "byStatus": {
-   "ACTIVE": 123,
+   "ACTIVE": 124,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3923,6 +3923,45 @@
    "derivatives": "yes",
    "attribution": "INAO, delimitación de las áreas geográficas de los SIQO y referencial de productos SIQO (data.gouv.fr), Licence Ouverte 2.0.",
    "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "indec",
+   "registryId": "indec",
+   "country": "AR",
+   "scope": "integrated",
+   "institution": "Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-INDEC",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: INDEC, Indice de Precios al Consumidor (IPC) nacional, nivel general, base dic-2016=100; serie 148.3_INIVELNAL_DICI_M_26 de datos.gob.ar. La inflacion interanual es un calculo propio sobre el indice.",
+   "lastChecked": "2026-10-10",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",

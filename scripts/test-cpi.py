@@ -36,6 +36,12 @@ except ValueError: pass
 sc = [{"status": "SUCCESS", "object": {"vectorId": 41690973, "vectorDataPoint": [{"refPer": "2024-01-01", "value": 158.3}, {"refPer": "2024-02-01", "value": 159.0}, {"refPer": "2024-03-01", "value": None}]}}]
 eq(m.parse_statcan(json.dumps(sc)), {"2024-01": 158.3, "2024-02": 159.0}, "statcan")
 
+# INDEC (datos.gob.ar): filas [fecha, valor], con un null que se ignora
+ind = {"data": [["2024-08-01", 6000.5], ["2024-09-01", 6150.25], ["2024-10-01", None]], "meta": []}
+eq(m.parse_indec(json.dumps(ind)), {"2024-08": 6000.5, "2024-09": 6150.25}, "indec")
+try: m.parse_indec(json.dumps({"errors": ["x"]})); errs.append("indec: respuesta sin data deberia fallar")
+except ValueError: pass
+
 # comprobaciones
 ok = {"%04d-%02d" % (2020 + i // 12, i % 12 + 1): 100 + i * 0.2 for i in range(30)}
 eq(m.check("X", ok), None, "serie válida")

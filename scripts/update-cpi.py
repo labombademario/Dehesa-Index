@@ -6,7 +6,7 @@ Anuales: Banco Mundial WDI (FP.CPI.TOTL, 2010=100), leídos de data/worldbank-ag
 Reglas: nunca se rellena ni se estima. Si una fuente falla, o devuelve datos que no pasan las comprobaciones (valor no positivo, salto mensual > 12 %),
 se conserva el bloque anterior de ese país y queda anotado en el log. Un mes que no publica la fuente queda null.
 Uso: python3 scripts/update-cpi.py [--fixtures DIR]   (con --fixtures lee eurostat.json, ons.csv, bls-*.json, statcan.json de DIR en vez de la red)"""
-import csv, datetime, io, json, math, os, sys, time, urllib.request
+import csv, datetime, io, json, math, os, re, sys, time, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -122,6 +122,19 @@ def parse_statcan(text):
     return out
 
 
+def parse_indec(text):
+    """API de series de datos.gob.ar (INDEC, IPC nacional, base dic-2016=100): {"data": [["2026-08-01", 12276.766], ...]} -> {'YYYY-MM': valor}"""
+    d = json.loads(text)
+    rows = d.get("data")
+    if not isinstance(rows, list):
+        raise ValueError("INDEC: respuesta sin 'data'")
+    out = {}
+    for r in rows:
+        if isinstance(r, list) and len(r) >= 2 and r[1] is not None and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r[0])):
+            out[str(r[0])[:7]] = float(r[1])
+    return out
+
+
 # ---------- fuentes ----------
 def src_eurostat():
     if FIX:
@@ -203,6 +216,12 @@ def src_statcan():
     return parse_statcan(t) if t else {}
 
 
+def src_indec():
+    # solo desde ago-2024: antes la inflacion mensual supera el 12 % y la comprobacion de saltos descartaria la serie; basta para la interanual
+    t = fixture("indec.json") if FIX else http("https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26&start_date=2024-08-01&limit=200&format=json")
+    return parse_indec(t) if t else {}
+
+
 # ---------- comprobaciones y empaquetado ----------
 def check(cc, pts):
     """Devuelve None si es válido, o el motivo."""
@@ -257,9 +276,10 @@ def main():
         "ons": ("ONS CPI index, all items (D7BT)", "2015=100"),
         "bls": ("BLS CPI-U, all items, U.S. city average, not seasonally adjusted (CUUR0000SA0)", "1982-84=100"),
         "statcan": ("Statistics Canada CPI, all-items, Canada (v41690973)", "2002=100"),
+        "indec": ("INDEC IPC nacional, nivel general (serie 148.3_INIVELNAL_DICI_M_26, datos.gob.ar)", "dic-2016=100"),
     }
     monthly = {}
-    for name, fn in (("eurostat", src_eurostat), ("ons", src_ons), ("bls", src_bls), ("statcan", src_statcan)):
+    for name, fn in (("eurostat", src_eurostat), ("ons", src_ons), ("bls", src_bls), ("statcan", src_statcan), ("indec", src_indec)):
         try:
             data = fn()
         except Exception as e:
@@ -269,7 +289,7 @@ def main():
             for g, pts in data.items():
                 monthly[g] = (name, pts)
         elif data:
-            monthly[{"ons": "UK", "bls": "US", "statcan": "CA"}[name]] = (name, data)
+            monthly[{"ons": "UK", "bls": "US", "statcan": "CA", "indec": "AR"}[name]] = (name, data)
         else:
             log("%s: sin datos; se conserva lo anterior" % name)
     for cc, (name, pts) in monthly.items():

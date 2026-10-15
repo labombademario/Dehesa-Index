@@ -123,7 +123,7 @@
     fr: ['Prix réels (corrigés de l’inflation)', 'Déflaté avec {src} ({base}) et exprimé en prix de {ref} : valeur × IPC de {ref} ÷ IPC de la période. C’est un calcul de notre part, pas une donnée publiée ; original :', '{n} points sans IPC disponible sont omis.', 'Décochez pour voir les valeurs publiées (nominales).', 'Pas d’IPC utilisable pour cette série (le pays n’en a pas à la fréquence requise) ; les valeurs publiées sont affichées.', 'prix de {ref}'],
     it: ['Prezzi reali (corretti per l’inflazione)', 'Deflazionato con {src} ({base}) ed espresso in prezzi di {ref}: valore × IPC di {ref} ÷ IPC del periodo. È un calcolo nostro, non un dato pubblicato; originale:', '{n} punti senza IPC disponibile vengono omessi.', 'Deseleziona per vedere i valori pubblicati (nominali).', 'Nessun IPC utilizzabile per questa serie (il paese non ne ha alla frequenza necessaria); si mostrano i valori pubblicati.', 'prezzi di {ref}']
   };
-  var RSRC = { eurostat: 'Eurostat HICP', ons: 'ONS CPI', bls: 'BLS CPI-U', statcan: 'Statistics Canada CPI', world_bank_wdi: 'World Bank CPI' };
+  var RSRC = { eurostat: 'Eurostat HICP', ons: 'ONS CPI', bls: 'BLS CPI-U', statcan: 'Statistics Canada CPI', indec: 'INDEC IPC', world_bank_wdi: 'World Bank CPI' };
   function rfill(x, o) { return String(x).replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
   function rref(r) { return r.kind === 'm' && /^\d{4}-\d{2}$/.test(r.ref) ? plabel(r.ref, 'monthly') : r.ref; }
   function realConv(sr) {

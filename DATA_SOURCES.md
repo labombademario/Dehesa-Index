@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 124 VERIFIED, 6 PENDING, 5 RESTRICTED, 4 BLOCKED; 21935 series en el catalogo unificado.
+Resumen: 125 VERIFIED, 6 PENDING, 5 RESTRICTED, 4 BLOCKED; 21935 series en el catalogo unificado.
 
-## VERIFIED (124)
+## VERIFIED (125)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -70,6 +70,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `imgw_pib` | IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne) | PL | PL-PSI-IMGW | si/si | si | 0 | Citar la fuente con la frase del reglamento e indicar que los datos se han procesado. |
 | `inao_aires` | INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `inao_siqo` | INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
+| `indec` | Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar | AR | CC-BY-INDEC | si/si | si | 0 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios: la inflacion interanual es calculo propio. El ultimo mes es provision… |
 | `indec_ar` | Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP) | AR | CC-BY-INDEC | si/si | si | 13 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios si los hubiere. El ultimo mes es provisional segun el INDEC. |
 | `ine_es` | Instituto Nacional de Estadística (España) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web de… |
 | `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 547 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |
