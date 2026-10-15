@@ -6,7 +6,7 @@
   "ok": 190,
   "late": 1,
   "error": 2,
-  "not_run": 3,
+  "not_run": 4,
   "unknown": 0
  },
  "global": "error",
@@ -4728,6 +4728,19 @@
     "30 7 7 * *"
    ],
    "nextRun": "2026-11-07T07:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-us-fed.yml",
+   "name": "Update US exchange rates, dollar indices and market interest rates (Federal Reserve Board H.10 / H.15)",
+   "crons": [
+    "40 7 16 * *"
+   ],
+   "nextRun": "2026-11-16T07:40:00Z",
    "files": [],
    "last": null,
    "recent": null,

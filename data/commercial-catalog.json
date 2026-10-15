@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T23:14:09Z",
+ "generatedAt": "2026-10-15T23:47:30Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 125,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 4,
-  "datasets": 249,
-  "datasets_apto": 156,
+  "datasets": 250,
+  "datasets_apto": 157,
   "datasets_condiciones": 82,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -4886,6 +4886,21 @@
     {
      "scope": "pais:US",
      "sourceId": "usda_ers",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-fed-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "fed_board"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "fed_board",
      "verdict": "apto"
     }
    ]

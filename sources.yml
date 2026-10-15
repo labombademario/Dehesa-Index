@@ -1166,6 +1166,15 @@ sources:
     data: [interest-rates-stats.json]
     log: interest-rates-log.txt
     message: Tipos de interés oficiales
+  - id: us-fed
+    name: Update US exchange rates, dollar indices and market interest rates (Federal Reserve Board H.10 / H.15)
+    cron: ['40 7 16 * *']
+    script: scripts/update-us-fed.py
+    timeout: 10
+    continue: true
+    data: [us-fed-stats.json]
+    log: us-fed-log.txt
+    message: Divisas, indices del dolar y tipos de mercado de la Reserva Federal (H.10 y H.15)
   - id: us-ppi
     name: Update US producer price indices for farm and food products (BLS PPI)
     cron: ['20 14 * * 4']

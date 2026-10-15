@@ -5014,6 +5014,12 @@
    },
    "notes": "Encuesta de credito agrario de la Fed de Kansas City: tipos de interes, valor de la tierra e indices de credito del Tenth District, sin cambiar valores."
   },
+  "data/us-fed-stats.json": {
+   "byCountry": {
+    "US": "fed_board"
+   },
+   "notes": "Divisas y indices del dolar (H.10) y tipos de mercado (H.15) del Board de la Reserva Federal; los rendimientos del Tesoro a 2-30 anos son la media mensual que calcula Dehesa Index sobre el dato diario del Board (scripts/update-us-fed.py)."
+  },
   "data/us-snotel-stats.json": {
    "byCountry": {
     "US": "usda_nrcs"
