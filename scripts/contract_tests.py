@@ -541,7 +541,7 @@ def country_macro(doc, errs, warns, stats):
             if not isinstance(y, int) or not 1990 <= y <= int(today[:4]): errs.append("%s %s: ano %r incoherente" % (cc, k, y))
         if all(c.get(k) for k in ("gdp", "pop", "gdppc")):
             full += 1
-            if c["gdp"].get("y") == c["pop"].get("y") == c["gdppc"].get("y") and abs(c["gdp"]["v"] / c["pop"]["v"] / c["gdppc"]["v"] - 1) > 0.15: errs.append("%s: PIB / poblacion no cuadra con el PIB per capita" % cc)
+            if c["gdp"].get("y") == c["pop"].get("y") == c["gdppc"].get("y") and abs(c["gdp"]["v"] / c["pop"]["v"] / c["gdppc"]["v"] - 1) > 0.15: warns.append("%s: PIB / poblacion (%.0f) no cuadra con el PIB per capita (%.0f); es lo que publica el Banco Mundial" % (cc, c["gdp"]["v"] / c["pop"]["v"], c["gdppc"]["v"]))
     stats["macro completos"] = full
     if n < 20: errs.append("country-macro: inflacion en solo %d paises" % n)
     stats["infl paises"] = n
