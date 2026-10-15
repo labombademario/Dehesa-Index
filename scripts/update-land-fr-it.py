@@ -188,6 +188,18 @@ def probe_links(url, tag):
         t = re.search(r"<title>(.*?)</title>", html, re.S | re.I)
         if t: log("  titulo: " + re.sub(r"\s+", " ", t.group(1))[:100])
     except Exception as e: log("sondeo %s: no legible (%s)" % (tag, str(e)[-100:]))
+def probe_xlsx(url, tag, nrows=8):
+    """Diagnostico: descarga un xlsx de Agreste y registra hojas, dimensiones y primeras filas, para escribir el lector sobre el formato real."""
+    try:
+        import io, openpyxl
+        wb = openpyxl.load_workbook(io.BytesIO(http(url, tries=2, timeout=90)), read_only=True, data_only=True)
+        log("sondeo xlsx %s: %d hojas %s" % (tag, len(wb.sheetnames), wb.sheetnames[:12]))
+        for n in wb.sheetnames[:4]:
+            ws = wb[n]; log("  hoja %r %sx%s" % (n, ws.max_row, ws.max_column))
+            for i, row in enumerate(ws.iter_rows(values_only=True)):
+                if i >= nrows: break
+                log("    " + " | ".join("" if v is None else str(v)[:22] for v in row[:9]))
+    except Exception as e: log("sondeo xlsx %s: fallo (%s)" % (tag, str(e)[-120:]))
 def licence_ok(src):
     """Puerta de licencia: solo se publica lo que el registro marca VERIFIED y en uso."""
     try: v = json.loads((ROOT / "data" / "license-registry.json").read_text("utf-8"))["sources"][src]
@@ -251,6 +263,8 @@ def main():
                     break
                 if got: editions.append(got); log("Francia %s: leida desde %s" % (tag, got[2]))
                 else: probe_links(AG_DETAIL % ref, "ficha " + ref)
+            B = "https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/DonneesAssociees-cd2026-9_VVT-2025_Publication-"
+            probe_xlsx(B + "LIBRE.xlsx", "2025 LIBRE"); probe_xlsx(B + "LOUE.xlsx", "2025 LOUE")
             if not editions or editions[0][1] != "edicion " + FR_EDITIONS[0][0]: probe_links("https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/", "disar venale")
             if editions: parsed = editions[0]
         if frt: editions = [parsed]
