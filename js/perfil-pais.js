@@ -222,7 +222,11 @@
       var col = function (flow, title) {
         var l = keys.map(function (k) { var n = pr[k][flow]; return { n: lab(k), v: n && n.world ? n.world[i] : null }; }).filter(function (r) { return r.v > 0; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 6);
         if (l.length < 3) return '';
-        return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + '</div>' + l.map(function (r) { return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(r.n) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(r.v, 0) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(r.v / l[0].v * 100)) + '%"></div></div>'; }).join('') + '</div>';
+        var bars = l.map(function (r) { return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(r.n) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(r.v, 0) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(r.v / l[0].v * 100)) + '%"></div></div>'; }).join('');
+        var PW = { es: ['Barras', 'Tarta'], en: ['Bars', 'Pie'], fr: ['Barres', 'Camembert'], it: ['Barre', 'Torta'] }[x.lang] || ['Bars', 'Pie'], CH = window.DehesaChart;
+        var pieH = CH && CH.pie ? CH.pie({ items: l.map(function (r) { return { name: r.n, v: r.v }; }), unit: String(meta.unit || '').replace(/\s*million$/i, '') + ' M', centerLabel: 'Top ' + l.length, maxN: 6, minShare: 0 }) : '';
+        var body = pieH && CH.switcher ? CH.switcher({ line: bars, pie: pieH, lineLabel: PW[0], pieLabel: PW[1] }) : bars;
+        return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + '</div>' + body + '</div>';
       };
       var a = col('exp', T[1]), b = col('imp', T[2]); if (!a && !b) return false;
       var cur = String(meta.unit || '').replace(/\s*million$/i, ''), eu = /^EUR/.test(meta.unit || ''), unit = cur ? T[3] + ' ' + cur : '';
@@ -304,7 +308,7 @@
         if (!l.length) return '';
         var tot = l.reduce(function (m, s) { return Math.max(m, s.latest); }, 0);
         var nmOf = function (s) { var n0 = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); return (window.DIClear && window.DIClear._country(n0, x.lang)) || n0; };
-        var PL = { es: ['Barras', 'Tarta', 'Reparto entre los 4 principales'], en: ['Bars', 'Pie', 'Split among the top 4'], fr: ['Barres', 'Camembert', 'Répartition entre les 4 premiers'], it: ['Barre', 'Torta', 'Ripartizione tra i primi 4'] }[x.lang] || [];
+        var PL = { es: ['Barras', 'Tarta', 'Top 4'], en: ['Bars', 'Pie', 'Top 4'], fr: ['Barres', 'Camembert', 'Top 4'], it: ['Barre', 'Torta', 'Top 4'] }[x.lang] || [];
         var flg = function (s) { var f = window.DIClear && window.DIClear.flagOf ? window.DIClear.flagOf(s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, '')) : ''; return f ? '<span aria-hidden="true" style="margin-right:6px">' + f + '</span>' : ''; };
         var bars = l.map(function (s) { var nm = nmOf(s); return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + flg(s) + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('');
         var pieH = window.DehesaChart && window.DehesaChart.pie ? window.DehesaChart.pie({ items: l.map(function (s) { return { name: nmOf(s), v: s.latest }; }), unit: l[0].unit, centerLabel: PL[2], maxN: 4, minShare: 0 }) : '';
