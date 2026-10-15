@@ -4351,3 +4351,128 @@ def spain_health_focos(doc, errs, warns, stats):
         if k in names and names[k] not in r["disease"].lower(): errs.append("focos %s: kind %s no coincide con %r" % (r["id"], k, r["disease"][:40]))
         if k == "other" and any(n in r["disease"].lower() for n in names.values()): errs.append("focos %s: enfermedad vigilada marcada como other" % r["id"])
     stats["series"] = len(doc["focos"])
+def spain_esyrce_extra_index(doc, errs, warns, stats):
+    Y = doc["years"]
+    if not Y: errs.append("esyrce extra index: sin años"); return
+    for y, v in Y.items():
+        if not re.fullmatch(r"20\d\d", y) or not v.get("tables"): errs.append("esyrce extra index %s: datos raros" % y)
+    stats["series"] = len(Y)
+def _terr_ok(T, errs, what):
+    ids = [t["id"] for t in T]
+    if len(set(ids)) != len(ids): errs.append("%s: territorios repetidos" % what)
+    return ids
+def spain_esyrce_extra(doc, errs, warns, stats):
+    """ESYRCE complementario: territorios unicos, series con un valor por territorio, rendimientos plausibles (0 < kg/ha < 300000), parcelas >= 0, estados de plantacion que suman la superficie total, sistemas de riego que suman el regadio y suelos con hectareas no negativas."""
+    n = 0
+    if "yields" in doc:
+        sets = doc.get("yieldSets", [])
+        for k, T in enumerate(sets): _terr_ok(T, errs, "yieldSets[%d]" % k)
+        seen = set()
+        for c in doc["yields"]:
+            n += 1
+            key = (c["group"], c["name"], c["regime"])
+            if key in seen: errs.append("rendimientos: serie repetida %r" % (key,)); break
+            seen.add(key)
+            if not 0 <= c["set"] < len(sets): errs.append("rendimientos %r: conjunto de territorios inexistente" % (c["name"],)); continue
+            L = len(sets[c["set"]])
+            if len(c["y"]) != L or len(c["n"]) != L: errs.append("rendimientos %r: longitud distinta de los territorios" % (c["name"],)); continue
+            if any(v is not None and not 0 < v < 3e5 for v in c["y"]): errs.append("rendimientos %r %s: valor imposible" % (c["name"], c["regime"])); continue
+            if any(v is not None and v < 0 for v in c["n"]): errs.append("rendimientos %r: parcelas negativas" % (c["name"],))
+            if any(y is not None and (m is not None and m <= 0) for y, m in zip(c["y"], c["n"])): errs.append("rendimientos %r: rendimiento sin parcelas aforadas" % (c["name"],))
+    for key, parts, tot in (("irrigation", ("Gravedad", "Aspersión", "Automotriz", "Localizado", "Sin información"), "Total regadío"), ("greenhouses", ("Baja tecnificación", "Media tecnificación", "Altamente tecnificados", "Sin Información"), "Total invernaderos")):
+        if key not in doc: continue
+        T = doc[key]["territories"]; ids = _terr_ok(T, errs, key); M = doc[key]["measures"]
+        for m, v in M.items():
+            n += 1
+            if len(v) != len(T): errs.append("%s %s: %d valores para %d territorios" % (key, m, len(v), len(T))); continue
+            if any(x is not None and (x < 0 or x > 5e7) for x in v): errs.append("%s %s: superficie imposible" % (key, m))
+        if "espana" in ids and tot in M:
+            ie = ids.index("espana"); t = M[tot][ie]; ps = [M[p][ie] for p in parts if p in M and M[p][ie] is not None]
+            if t and ps and abs(sum(ps) - t) > 0.01 * t: errs.append("%s: las partes suman %.0f y el total es %.0f" % (key, sum(ps), t))
+    if "woody" in doc:
+        T = doc["woody"]["territories"]; ids = _terr_ok(T, errs, "woody"); seen = set()
+        for c in doc["woody"]["crops"]:
+            n += 1
+            if c["crop"] in seen: errs.append("leñosos: cultivo repetido %r" % c["crop"]); break
+            seen.add(c["crop"])
+            if len(c["v"]) != 7 or any(len(x) != len(T) for x in c["v"]): errs.append("leñosos %r: forma distinta" % c["crop"]); continue
+            if any(v is not None and (v < 0 or v > 5e6) for col in c["v"] for v in col): errs.append("leñosos %r: superficie imposible" % c["crop"]); continue
+            if "espana" in ids:
+                ie = ids.index("espana"); parts = [c["v"][k][ie] for k in range(6) if c["v"][k][ie] is not None]; t = c["v"][6][ie]
+                if t and parts and abs(sum(parts) - t) > 0.005 * t + 1: errs.append("leñosos %r: los estados suman %.0f y el total es %.0f" % (c["crop"], sum(parts), t))
+    if "soil" in doc:
+        for k, o in doc["soil"].items():
+            T = o["territories"]; _terr_ok(T, errs, "soil " + k)
+            for m, v in o["measures"].items():
+                n += 1
+                if len(v) != len(T) or any(x is not None and (x < 0 or x > 5e7) for x in v): errs.append("suelo %s %s: valores imposibles" % (k, m))
+    if n == 0: errs.append("esyrce extra: sin series")
+    stats["series"] = n
+def spain_ganaderia_eggs(doc, errs, warns, stats):
+    """Huevos: territorios unicos con ESPAÑA, un valor por territorio, ponedoras en rango, jaula+suelo y campera+ecologica suman las gallinas (1 %) y la produccion en miles de docenas es coherente con el numero de ponedoras (15-30 docenas por gallina y año)."""
+    T = doc["territories"]; ids = [t["id"] for t in T]
+    if len(set(ids)) != len(ids) or "espana" not in ids: errs.append("huevos: territorios repetidos o sin ESPAÑA"); return
+    ie = ids.index("espana"); n = 0
+    for y, o in doc["years"].items():
+        for key in ("hens", "dozens"):
+            for k, v in o.get(key, {}).items():
+                n += 1
+                if len(v) != len(T): errs.append("huevos %s %s.%s: %d valores para %d territorios" % (y, key, k, len(v), len(T))); continue
+                if any(x is not None and x < 0 for x in v): errs.append("huevos %s %s.%s: valor negativo" % (y, key, k))
+        h = o.get("hens", {}); d = o.get("dozens", {})
+        if "hens" in h and not 2e7 < (h["hens"][ie] or 0) < 9e7: errs.append("huevos %s: ponedoras de España %s fuera de rango" % (y, h["hens"][ie]))
+        for src in (h, d):
+            if all(k in src and src[k][ie] is not None for k in ("hens", "cage_floor", "free_organic")) and abs(src["cage_floor"][ie] + src["free_organic"][ie] - src["hens"][ie]) > 0.01 * src["hens"][ie]: errs.append("huevos %s: jaula+suelo y campera+ecológica no suman el total" % y)
+        if h.get("hens") and d.get("hens") and h["hens"][ie] and d["hens"][ie]:
+            r = d["hens"][ie] * 1000 / h["hens"][ie]
+            if not 15 < r < 30: errs.append("huevos %s: %.1f docenas por gallina y año, fuera de 15-30" % (y, r))
+    stats["series"] = n
+def spain_ganaderia_dairy(doc, errs, warns, stats):
+    """Lacteas: años ordenados, una cifra por año en cada serie, leche de vaca de España en rango y la suma de comunidades ≈ ESPAÑA (1 %)."""
+    Y = doc["years"]
+    if Y != sorted(set(Y)): errs.append("lácteas: años desordenados")
+    n = 0
+    for sec in (doc["industry"].get("collected", []), doc["industry"].get("products", []), doc["farm"]):
+        for r in sec:
+            n += 1
+            if len(r["v"]) != len(Y): errs.append("lácteas %r: %d valores para %d años" % (r.get("label"), len(r["v"]), len(Y))); continue
+            if any(x is not None and (x < 0 or x > 5e7) for x in r["v"]): errs.append("lácteas %r: valor imposible" % r.get("label"))
+    cow = next((r for r in doc["industry"].get("collected", []) if r["label"].lower().startswith("i. leche de vaca")), None)
+    if cow and any(x is not None and not 4000 < x < 12000 for x in cow["v"]): errs.append("lácteas: leche de vaca recogida fuera de 4-12 Mt")
+    C = doc["cowMilkByCcaa"]; T = C["territories"]; ids = [t["id"] for t in T]
+    if len(set(ids)) != len(ids): errs.append("lácteas: CCAA repetidas")
+    if "espana" in ids:
+        for j, y in enumerate(Y):
+            es = C["v"]["espana"][j]; parts = [C["v"][t][j] for t in ids if t != "espana" and C["v"][t][j] is not None]
+            if es and parts and abs(sum(parts) - es) > 0.01 * es: errs.append("lácteas %d: las CCAA suman %.0f y ESPAÑA %.0f" % (y, sum(parts), es))
+    stats["series"] = n
+def spain_ganaderia_forecasts(doc, errs, warns, stats):
+    """Previsiones: ediciones AAAA-S1/S2, al menos tres especies, un valor por columna y, en bovino, el total ≈ suma de categorias (1 %)."""
+    n = 0
+    for ed, e in doc["editions"].items():
+        if not re.fullmatch(r"20\d\d-S[12]", ed): errs.append("previsiones: edición rara %r" % ed)
+        if len(e["species"]) < 3: errs.append("previsiones %s: solo %d especies" % (ed, len(e["species"])))
+        for s in e["species"]:
+            for p in s["periods"]:
+                n += 1
+                if len(p["v"]) != max(1, len(s["columns"])): errs.append("previsiones %s %s: valores y columnas no cuadran" % (ed, s["species"])); continue
+                if any(x is not None and (x < 0 or x > 1e5) for x in p["v"]): errs.append("previsiones %s %s: valor imposible" % (ed, s["species"]))
+                if s["species"].lower().startswith("total bovinos") and len(p["v"]) == 5 and all(x is not None for x in p["v"]) and abs(sum(p["v"][1:]) - p["v"][0]) > 0.01 * p["v"][0]: errs.append("previsiones %s: bovino no suma" % ed)
+    stats["series"] = n
+def spain_avances(doc, errs, warns, stats):
+    """Avances: claves unicas, tres valores por cultivo con años consecutivos, superficies y producciones en rango y trigo total ≈ duro + blando (1 %)."""
+    keys = set(); K = {}
+    for it in doc["items"]:
+        if it["key"] in keys: errs.append("avances: clave repetida %s" % it["key"]); break
+        keys.add(it["key"]); K[it["key"]] = it
+        if len(it["area"]) != 3 or len(it["prod"]) != 3 or len(it["years"]) != 3 or it["years"] != [it["years"][0] + i for i in range(3)]: errs.append("avances %s: forma distinta" % it["key"]); continue
+        if any(x is not None and (x < 0 or x > 6e3) for x in it["area"]): errs.append("avances %s: superficie imposible" % it["key"])
+        if any(x is not None and (x < 0 or x > 6e4) for x in it["prod"]): errs.append("avances %s: producción imposible" % it["key"])
+    if len(doc["items"]) < 100: errs.append("avances: solo %d cultivos" % len(doc["items"]))
+    w, d, b = K.get("cereales-trigo-resumen-general"), K.get("cereales-trigo-duro"), K.get("cereales-trigo-semiduro-y-blando")
+    if w and d and b:
+        for k in (0, 1):
+            if all(x[k] is not None for x in (w["area"], d["area"], b["area"])) and abs(d["area"][k] + b["area"][k] - w["area"][k]) > 0.01 * w["area"][k]: errs.append("avances: trigo duro + blando no suma el total (superficie, columna %d)" % k)
+    for ed, h in doc["history"].items():
+        if not re.fullmatch(r"20\d\d-\d\d", ed): errs.append("avances: edición rara %r" % ed)
+    stats["series"] = len(doc["items"])

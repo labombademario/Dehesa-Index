@@ -5469,7 +5469,7 @@
    "sources": [
     "mapa_es"
    ],
-   "notes": "ESYRCE, superficie por cultivo específico, provincia y comunidad (scripts/update-es-esyrce.py): libros 3.3, 3.3.1 y 3.3.2 de la Encuesta sobre Superficies y Rendimientos de Cultivos del MAPA. Hectáreas tal como se publican; el año más reciente es avance provisional. No es lo mismo que «Superficies y producciones anuales» (data/spain-crops). La página del MAPA no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
+   "notes": "ESYRCE, superficie por cultivo específico, provincia y comunidad (scripts/update-es-esyrce.py): libros 3.3, 3.3.1 y 3.3.2 de la Encuesta sobre Superficies y Rendimientos de Cultivos del MAPA. Hectáreas tal como se publican; el año más reciente es avance provisional. No es lo mismo que «Superficies y producciones anuales» (data/spain-crops). La página del MAPA no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra. Complemento (scripts/update-es-esyrce-extra.py): tablas 3.11 (rendimientos), 3.7 (riego e invernaderos), 3.8 (estado de las plantaciones leñosas) y 3.6 (mantenimiento del suelo) de la misma encuesta; cada hoja se valida contra su estructura y se descarta lo que no encaja."
   },
   "data/spain-inputs/": {
    "sources": [
@@ -5482,6 +5482,18 @@
     "mapa_es"
    ],
    "notes": "Focos de enfermedades de declaración obligatoria (scripts/update-es-rasve.py): listado público «Últimas notificaciones» de RASVE (MAPA). Solo los 15 últimos focos están publicados; Dehesa Index acumula el histórico desde la primera ejecución y lo dice en pantalla. La página no declara licencia propia: aviso legal general del MAPA registrado en mapa_es, confianza media, cita de la fuente."
+  },
+  "data/spain-ganaderia/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Huevos, estadística láctea y previsiones de ganado del MAPA (scripts/update-es-ganaderia.py): libros publicados en las páginas de estadística del Ministerio. Se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
+  },
+  "data/spain-avances/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Avances mensuales de superficies y producciones agrícolas del MAPA (scripts/update-es-avances.py): hoja «resumen nacional» del cuaderno mensual. Se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
   }
  },
  "derived": [

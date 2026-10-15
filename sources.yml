@@ -1422,6 +1422,40 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/spain-health/focos.json
     data: [spain-health/focos.json, spain-health-log.txt]
     message: Focos de enfermedades animales en España (MAPA RASVE)
+  - id: es-esyrce-extra
+    name: Update Spain ESYRCE yields, irrigation systems, woody-crop stage and soil management by province (MAPA)
+    cron: ['45 7 11 * *']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
+    script: scripts/update-es-esyrce-extra.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-esyrce)
+    data: [spain-esyrce/extra-index.json, spain-esyrce-extra-log.txt]
+    extra: ['!data/spain-esyrce']
+    message: Rendimientos, riego, plantaciones leñosas y suelo de ESYRCE por provincia (MAPA)
+  - id: es-ganaderia
+    name: Update Spain eggs, dairy industry and livestock production forecasts (MAPA)
+    cron: ['20 8 14 * *']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
+    script: scripts/update-es-ganaderia.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/spain-ganaderia/eggs.json data/spain-ganaderia/dairy.json data/spain-ganaderia/forecasts.json
+    data: [spain-ganaderia/eggs.json, spain-ganaderia/dairy.json, spain-ganaderia/forecasts.json, spain-ganaderia-log.txt]
+    message: Huevos, industria láctea y previsiones de producción de ganado de España (MAPA)
+  - id: es-avances
+    name: Update Spain monthly crop area and production advance estimates (MAPA)
+    cron: ['10 9 * * 1']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
+    script: scripts/update-es-avances.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/spain-avances/avances.json
+    data: [spain-avances/avances.json, spain-avances-log.txt]
+    message: Avances mensuales de superficies y producciones agrícolas de España (MAPA)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)
     cron: ['35 6 3,17 * *']

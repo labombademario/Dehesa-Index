@@ -1,0 +1,44 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Spain eggs, dairy industry and livestock production forecasts (MAPA)
+on:
+  schedule:
+    - cron: '20 8 14 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-es-ganaderia
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
+      - run: pip install openpyxl xlrd
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-es-ganaderia.py
+        timeout-minutes: 20
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/spain-ganaderia/eggs.json data/spain-ganaderia/dairy.json data/spain-ganaderia/forecasts.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/spain-ganaderia/eggs.json data/spain-ganaderia/dairy.json data/spain-ganaderia/forecasts.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files data/spain-ganaderia/eggs.json data/spain-ganaderia/dairy.json data/spain-ganaderia/forecasts.json
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Huevos, industria láctea y previsiones de producción de ganado de España (MAPA)" data/spain-ganaderia/eggs.json data/spain-ganaderia/dairy.json data/spain-ganaderia/forecasts.json data/spain-ganaderia-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

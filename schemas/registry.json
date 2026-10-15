@@ -1325,6 +1325,36 @@
    [
     "spain_health_focos"
    ]
+  ],
+  "spain-esyrce/extra-index.json": [
+   "spain-esyrce-extra-index",
+   [
+    "spain_esyrce_extra_index"
+   ]
+  ],
+  "spain-ganaderia/eggs.json": [
+   "spain-ganaderia-eggs",
+   [
+    "spain_ganaderia_eggs"
+   ]
+  ],
+  "spain-ganaderia/dairy.json": [
+   "spain-ganaderia-dairy",
+   [
+    "spain_ganaderia_dairy"
+   ]
+  ],
+  "spain-ganaderia/forecasts.json": [
+   "spain-ganaderia-forecasts",
+   [
+    "spain_ganaderia_forecasts"
+   ]
+  ],
+  "spain-avances/avances.json": [
+   "spain-avances",
+   [
+    "spain_avances"
+   ]
   ]
  },
  "globs": {
@@ -1498,6 +1528,12 @@
    "spain-esyrce",
    [
     "spain_esyrce"
+   ]
+  ],
+  "spain-esyrce/extra-20*.json": [
+   "spain-esyrce-extra",
+   [
+    "spain_esyrce_extra"
    ]
   ]
  },

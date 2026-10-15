@@ -6,7 +6,7 @@
   "ok": 179,
   "late": 1,
   "error": 2,
-  "not_run": 9,
+  "not_run": 12,
   "unknown": 0
  },
  "global": "error",
@@ -4558,6 +4558,45 @@
    "recent": null,
    "status": "not_run",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-es-esyrce-extra.yml",
+   "name": "Update Spain ESYRCE yields, irrigation systems, woody-crop stage and soil management by province (MAPA)",
+   "crons": [
+    "45 7 11 * *"
+   ],
+   "nextRun": "2026-11-11T07:45:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-ganaderia.yml",
+   "name": "Update Spain eggs, dairy industry and livestock production forecasts (MAPA)",
+   "crons": [
+    "20 8 14 * *"
+   ],
+   "nextRun": "2026-11-14T08:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-avances.yml",
+   "name": "Update Spain monthly crop area and production advance estimates (MAPA)",
+   "crons": [
+    "10 9 * * 1"
+   ],
+   "nextRun": "2026-10-19T09:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 168.0
   }
  ]
 }
