@@ -452,10 +452,65 @@
     if (window.DIGI) go(); else { var sc = document.createElement('script'); sc.src = 'js/denominaciones.js?v=20261013'; sc.onload = go; document.head.appendChild(sc); }
   }
   /* Selector de series: buscador + lista con grupos «tema: medida». La etiqueta se acorta quitando solo el nombre de la fuente (Eurostat), que ya se cita bajo el gráfico. */
-  var SP = { es: ['Buscar serie', 'p. ej. cebada rendimiento', '{n} de {m} series', 'Sin resultados: prueba con menos palabras.', 'Otras series'], en: ['Find a series', 'e.g. barley yield', '{n} of {m} series', 'No results: try fewer words.', 'Other series'], fr: ['Chercher une série', 'ex. orge rendement', '{n} séries sur {m}', 'Aucun résultat : essayez moins de mots.', 'Autres séries'], it: ['Cerca una serie', 'es. orzo resa', '{n} serie su {m}', 'Nessun risultato: prova con meno parole.', 'Altre serie'] };
+  var SP = { es: ['Buscar serie', 'p. ej. cebada rendimiento', '{n} de {m} series', 'Sin resultados: prueba con menos palabras.', 'Otras series', 'Variantes de esta serie', 'Las variantes casi idénticas van agrupadas: elige la tuya en «Variantes».', ' variantes'], en: ['Find a series', 'e.g. barley yield', '{n} of {m} series', 'No results: try fewer words.', 'Other series', 'Variants of this series', 'Near-identical variants are grouped: pick yours under “Variants”.', ' variants'], fr: ['Chercher une série', 'ex. orge rendement', '{n} séries sur {m}', 'Aucun résultat : essayez moins de mots.', 'Autres séries', 'Variantes de cette série', 'Les variantes quasi identiques sont regroupées : choisissez la vôtre sous « Variantes ».', ' variantes'], it: ['Cerca una serie', 'es. orzo resa', '{n} serie su {m}', 'Nessun risultato: prova con meno parole.', 'Altre serie', 'Varianti di questa serie', 'Le varianti quasi identiche sono raggruppate: scegli la tua sotto «Varianti».', ' varianti'] };
   function norm(x) { var r = String(x || '').toLowerCase(); try { r = r.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {} return r; }
-  function shortLab(x) { return TL(x.label).replace(/,\s*Eurostat\)/, ')').replace(/\s*\(Eurostat\)/, '').replace(/\s{2,}/g, ' ').trim(); }
+  function shortLab(x) { if (x._lab) return x._lab; return TL(x.label).replace(/,\s*Eurostat\)/, ')').replace(/\s*\(Eurostat\)/, '').replace(/\s{2,}/g, ' ').trim(); }
   window.DIPaisesLabel = function (t) { return TL(t); };
+
+  /* Variantes casi identicas (trigo y espelta / trigo blando y espelta / ... ; mismo producto en varias plazas): una sola entrada en la lista y las variantes como opcion secundaria */
+  var GSTOP = { and: 1, y: 1, et: 1, e: 1, de: 1, of: 1, the: 1 };
+  function gtok(k) { return norm(k).split(/[^a-z0-9]+/).filter(function (w) { return w && !GSTOP[w]; }); }
+  function gsub(a, b) { var i; if (a.length >= b.length) return false; for (i = 0; i < a.length; i++) if (b.indexOf(a[i]) < 0) return false; return true; }
+  function groupInfo(list) {
+    var info = list.map(function (x) {
+      var l = shortLab(x), i = l.indexOf(': '), k = '', m = l, par = '', pm;
+      if (i > 2 && i < 70) { k = l.slice(0, i); m = l.slice(i + 2); pm = /^(.*\S)\s+\(([^()]{1,40})\)$/.exec(m); if (pm && !/[=,]|^[A-Z]{3,}$/.test(pm[2])) { m = pm[1]; par = pm[2]; } }
+      else { pm = /^(.*?)\s+\((.+)\)$/.exec(l); if (pm) { k = pm[1]; m = '(' + pm[2] + ')'; } }
+      return { x: x, k: k, m: m, par: par, kt: gtok(k) };
+    });
+    var byM = {}; info.forEach(function (r) { (byM[r.m] = byM[r.m] || []).push(r); });
+    Object.keys(byM).forEach(function (m) {
+      var ks = {}, roots = {}; byM[m].forEach(function (r) { ks[r.k] = r.kt; });
+      Object.keys(ks).forEach(function (k) { var best = k; Object.keys(ks).forEach(function (o) { if (o !== k && ks[o].length && gsub(ks[o], ks[k]) && (best === k || ks[o].length < ks[best].length)) best = o; }); roots[k] = best; });
+      byM[m].forEach(function (r) { r.root = roots[r.k]; });
+    });
+    var groups = {}, order = [];
+    info.forEach(function (r) { r.v = r.k; var key = 'A\u0001' + r.root + '\u0001' + r.m; if (!groups[key]) { groups[key] = { key: key, disp: r.root ? r.root + (r.m.charAt(0) === '(' ? ' ' : ': ') + r.m : r.m, root: r.root, mem: [] }; order.push(groups[key]); } groups[key].mem.push(r); r.g = groups[key]; });
+    /* segunda pasada: lo que no se agrupo por el prefijo se agrupa por el producto tras los dos puntos ("Indice de precios: Trigo y espelta (2020=100)") */
+    var byT = {};
+    info.forEach(function (r) {
+      if (r.g.mem.length > 1 || !r.k) return; var m = r.m + (r.par ? ' (' + r.par + ')' : ''), mm = /^(.*?)((?:\s+\(|,\s|\s·\s).*)?$/.exec(m); r.head = mm[1]; r.tail = mm[2] || ''; r.ht = gtok(r.head);
+      if (r.ht.length) (byT[r.k + '\u0001' + r.tail] = byT[r.k + '\u0001' + r.tail] || []).push(r);
+    });
+    Object.keys(byT).forEach(function (t) {
+      var rs = byT[t]; if (rs.length < 2) return;
+      rs.forEach(function (r) { var best = r; rs.forEach(function (o) { if (o !== r && gsub(o.ht, r.ht) && (best === r || o.ht.length < best.ht.length)) best = o; }); r.broot = best.head; });
+      rs.forEach(function (r) { var key = 'B\u0001' + t + '\u0001' + r.broot; if (!groups[key]) { groups[key] = { key: key, disp: r.k + ': ' + r.broot + r.tail, root: r.k, mem: [] }; order.push(groups[key]); } if (r.g.mem.length === 1) { order.splice(order.indexOf(r.g), 1); } groups[key].mem.push(r); r.g = groups[key]; r.v = r.head; });
+    });
+    return { info: info, groups: order };
+  }
+  function collapse(list, all, sel) { /* una entrada por grupo; si la serie elegida esta en el grupo, ella es la que se muestra */
+    var gi = groupInfo(all), byId = {}, inList = {}, out = [], done = {};
+    gi.info.forEach(function (r) { byId[r.x.id] = r; }); list.forEach(function (x) { inList[x.id] = 1; });
+    list.forEach(function (x) {
+      var r = byId[x.id], g = r.g; if (done[g.key]) return; done[g.key] = 1;
+      var rep = g.mem.filter(function (q) { return q.x.id === sel; })[0] || g.mem.slice().sort(function (a, b) { return a.kt.length - b.kt.length || (a.par ? 1 : 0) - (b.par ? 1 : 0); })[0];
+      var c = {}, kk; for (kk in rep.x) c[kk] = rep.x[kk];
+      c._lab = g.disp; c._n = g.mem.length; c.id = rep.x.id; out.push(c);
+    });
+    return out;
+  }
+  function variantsHtml(all, cur) {
+    if (!cur) return ''; var gi = groupInfo(all), r = gi.info.filter(function (q) { return q.x.id === cur.id; })[0];
+    if (!r || r.g.mem.length < 2) return ''; var q = SP[lang()] || SP.es, g = r.g, vk = {}, vp = {};
+    g.mem.forEach(function (m) { vk[m.v] = 1; vp[m.par] = 1; });
+    var byK = Object.keys(vk).length > 1, byP = Object.keys(vp).length > 1;
+    return '<div id="ps-var" style="margin:8px 0 2px;padding:8px 10px;border-left:3px solid var(--accent,#2f6f4f);background:var(--bg-soft,rgba(120,110,80,.08));border-radius:0 8px 8px 0"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(q[5]) + ' · ' + g.mem.length + '</div><div style="display:flex;flex-wrap:wrap;gap:6px">' +
+      g.mem.map(function (m) {
+        var lab = (byK ? m.v : '') + (byK && byP && m.par ? ' · ' : '') + (byP ? m.par : '') || m.v || m.par || shortLab(m.x), on = m.x.id === cur.id;
+        return '<button type="button" data-s="' + esc(m.x.id) + '" aria-pressed="' + (on ? 'true' : 'false') + '" style="font:inherit;font-size:12.5px;cursor:pointer;border-radius:999px;padding:4px 11px;border:1px solid ' + (on ? 'var(--text,#231f14)' : 'var(--border,#ddd6c4)') + ';background:' + (on ? 'var(--text,#231f14)' : 'transparent') + ';color:' + (on ? 'var(--surface,#fffdf7)' : 'inherit') + ';font-weight:' + (on ? 700 : 400) + '" title="' + esc(TL(m.x.label)) + '">' + esc(lab) + '</button>';
+      }).join('') + '</div></div>';
+  }
   function filterSeries(list, q) {
     var tk = norm(q).split(/\s+/).filter(Boolean); if (!tk.length) return list;
     var ex = list.filter(function (x) { var h = norm(x.label + ' ' + TL(x.label)); return tk.every(function (k) { return h.indexOf(k) > -1; }); });
@@ -468,7 +523,7 @@
     return list.filter(function (x) { return DehesaSearch.match(q, x.label + ' ' + TL(x.label)) >= 0.45; });
   }
   function seriesOpts(list, sel) {
-    var one = function (x, lab) { return '<option value="' + esc(x.id) + '"' + (x.id === sel ? ' selected' : '') + ' title="' + esc(TL(x.label)) + '">' + esc(lab) + '</option>'; };
+    var vw = (SP[lang()] || SP.es)[7], one = function (x, lab) { return '<option value="' + esc(x.id) + '"' + (x.id === sel ? ' selected' : '') + ' title="' + esc(TL(x.label)) + '">' + esc(lab + (x._n > 1 ? '  ＋' + (x._n - 1) + vw : '')) + '</option>'; };
     var rows = list.map(function (x) { var l = shortLab(x), i = l.indexOf(': '); return { x: x, l: l, k: i > 2 && i < 70 ? l.slice(0, i) : '', m: i > 2 && i < 70 ? l.slice(i + 2) : l }; });
     var cnt = {}; rows.forEach(function (r) { if (r.k) cnt[r.k] = (cnt[r.k] || 0) + 1; });
     var out = '', seen = {}, loose = '';
@@ -480,10 +535,10 @@
   }
   function seriesCount(n, m) { return (SP[lang()] || SP.es)[2].replace('{n}', nf(n, 0)).replace('{m}', nf(m, 0)); }
   function seriesPicker(list, t) {
-    var q = SP[lang()] || SP.es, shown = filterSeries(list, ST.q || '');
+    var q = SP[lang()] || SP.es, shown = filterSeries(list, ST.q || ''), fl = shown.length; if (!ST.q) shown = collapse(shown, list, ST.s);
     return '<div style="flex:1 1 100%;font-size:13px"><label for="ps-q">' + esc(q[0]) + '</label><br><input id="ps-q" type="search" class="di-compare-select" autocomplete="off" placeholder="' + esc(q[1]) + '" value="' + esc(ST.q || '') + '" style="width:100%;box-sizing:border-box">' +
-      '<div id="ps-qn" class="di-movers-hint" role="status" aria-live="polite" style="margin:4px 0">' + esc(shown.length ? seriesCount(shown.length, list.length) : q[3]) + '</div>' +
-      '<select id="ps-s" class="di-compare-select" size="' + (shown.length < 8 ? Math.max(2, shown.length) : 8) + '" aria-label="' + esc(t.series) + '" style="width:100%">' + seriesOpts(shown, ST.s) + '</select></div>';
+      '<div id="ps-qn" class="di-movers-hint" role="status" aria-live="polite" style="margin:4px 0">' + esc(shown.length ? seriesCount(shown.length, list.length) + (shown.length < fl ? ' · ' + q[6] : '') : q[3]) + '</div>' +
+      '<select id="ps-s" class="di-compare-select" size="' + (shown.length < 8 ? Math.max(2, shown.length) : 8) + '" aria-label="' + esc(t.series) + '" style="width:100%">' + seriesOpts(shown, ST.s) + '</select>' + variantsHtml(list, list.filter(function (z) { return z.id === ST.s; })[0]) + '</div>';
   }
   function render() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;
@@ -549,10 +604,11 @@
     if (psAll && psBody) { var fillAll = function () { if (psAll.open && !psBody.firstChild) psBody.innerHTML = allTbl(); }; psAll.addEventListener('toggle', fillAll); fillAll(); }
     var psQ = document.getElementById('ps-q'), psS = document.getElementById('ps-s'), psN = document.getElementById('ps-qn');
     if (psQ && psS) psQ.oninput = function () {
-      ST.q = psQ.value; var sh = filterSeries(list, ST.q), q = SP[lang()] || SP.es;
+      ST.q = psQ.value; var sh = filterSeries(list, ST.q), q = SP[lang()] || SP.es, fl0 = sh.length; if (!ST.q) sh = collapse(sh, list, ST.s);
       psS.innerHTML = seriesOpts(sh, ST.s); psS.size = sh.length < 8 ? Math.max(2, sh.length) : 8;
-      if (psN) psN.textContent = sh.length ? seriesCount(sh.length, list.length) : q[3];
+      if (psN) psN.textContent = sh.length ? seriesCount(sh.length, list.length) + (sh.length < fl0 ? ' · ' + q[6] : '') : q[3];
     };
+    var pv = document.getElementById('ps-var'); if (pv) pv.onclick = function (e) { var b = e.target.closest ? e.target.closest('button[data-s]') : null; if (!b) return; ST.s = b.getAttribute('data-s'); var t2 = pv.getBoundingClientRect().top; build(); holdAt('ps-var', t2); };
     if (psQ) psQ.onkeydown = function (e) { if (e.key === 'Enter' && psS && psS.options.length) { e.preventDefault(); ST.s = psS.options[0].value; var t1 = psQ.getBoundingClientRect().top; build(); holdAt('ps-q', t1); } else if (e.key === 'ArrowDown' && psS && psS.options.length) { e.preventDefault(); psS.focus(); } };
     var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; ST.q = ''; } if (key === 'g') { ST.s = null; ST.q = ''; } var t0 = el.getBoundingClientRect().top; build(); holdAt(id, t0); var n = document.getElementById(id); if (n) { try { n.focus({ preventScroll: true }); } catch (er) {} } }; };
     var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; if (ST.fx) ST.real = false; var t0 = fb.getBoundingClientRect().top; build(); holdAt('ps-fx', t0); };
