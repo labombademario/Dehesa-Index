@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "asOf": "2026-10-14",
+ "asOf": "2026-10-15",
  "contract": {
   "doc": "Contrato comun de la PAC por pais en data/cap/<CC>/. Cada componente declara INGESTED, PARTIAL o NOT_INGESTED (con razon). Un pais solo pasa a INGESTED con una fuente institucional oficial y licencia aprobada en el License Gate. Sin consejo juridico ni calculo de ayudas individuales.",
   "components": [
@@ -169,86 +169,8 @@
    }
   },
   {
-   "cc": "PT",
-   "name": "Portugal",
-   "scheme": null,
-   "legalAct": null,
-   "updatedAt": null,
-   "components": {
-    "strategicPlan": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "interventions": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "amounts": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "rules": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "importantDates": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    }
-   }
-  },
-  {
    "cc": "NL",
    "name": "Paises Bajos",
-   "scheme": null,
-   "legalAct": null,
-   "updatedAt": null,
-   "components": {
-    "strategicPlan": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "interventions": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "amounts": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "rules": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "importantDates": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    }
-   }
-  },
-  {
-   "cc": "BE",
-   "name": "Belgica",
    "scheme": null,
    "legalAct": null,
    "updatedAt": null,
@@ -534,6 +456,99 @@
      "reviewNeeded": 0
     }
    }
+  },
+  {
+   "cc": "PT",
+   "name": "Portugal",
+   "scheme": "PEPAC Portugal 2023-2027 (pagamentos diretos: Portarias n.º 54-D, 54-E, 54-L e 54-I/2023)",
+   "legalAct": {
+    "title": "Portaria n.º 54-D/2023, de 27 de fevereiro (ARB, pagamento aos pequenos agricultores e ARC), Portaria n.º 54-E/2023 (ecorregimes) e Portaria n.º 54-L/2023 (pedidos de ajuda e de pagamento), Diário da República, 1.ª série, n.º 41, 1.º suplemento",
+    "ref": "Portaria 54-D/2023",
+    "url": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf",
+    "sourceId": "dre_pt"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "pt/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes unitarios de ecorregimes y ayudas asociadas no se han leido; los importes indicativos del ARC y del pago a pequenos agricultores figuran en las reglas",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "pt/rules.json",
+     "count": 11,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "pt/rules.json",
+     "count": 3,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha podido probar la lectura del Diario da Republica ni del IFAP desde estos servidores, asi que no se promete una vigilancia que no se ha visto funcionar",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "BE",
+   "name": "Belgica",
+   "scheme": "Plan estratégico de la PAC de Bélgica 2023-2027 (Flandes y Valonia; pagos directos)",
+   "legalAct": {
+    "title": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen) y arrêtés du Gouvernement wallon du 23 février 2023 (aide de base, redistributive y jeunes agriculteurs; éco-régimes), publicados en el Moniteur belge / Belgisch Staatsblad",
+    "ref": "BVR 21-4-2023; AGW 23-2-2023",
+    "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false",
+    "sourceId": "moniteur_be"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "be/rules.json",
+     "count": 8,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "en Valonia el ministro fija los importes y en Flandes no se han leido; no hay importes por hectarea",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "be/rules.json",
+     "count": 12,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "las fechas leidas son de la campana 2025 de cada region y figuran como reglas; no hay un calendario general que se repita cada ano",
+     "reasonCode": "NOT_READ"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha podido probar la lectura del Moniteur belge, del Codex Vlaanderen ni de Wallex desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
   }
  ],
  "watch": {
@@ -558,6 +573,15 @@
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
    },
    {
+    "cc": "PT",
+    "id": "advance-open",
+    "kind": "window-start",
+    "date": "2026-10-16",
+    "text": "Empieza el período de pago de anticipos (16 de octubre), de hasta el 50 % o el 75 %.",
+    "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 6",
+    "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
+   },
+   {
     "cc": "ES",
     "id": "fega-revised",
     "kind": "publication",
@@ -574,6 +598,15 @@
     "text": "Periodo de pago del saldo, del 1 de diciembre al 30 de junio del año siguiente.",
     "legalBasis": "RD 1048/2022, art. 118.1",
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "PT",
+    "id": "advance-close",
+    "kind": "deadline",
+    "date": "2026-12-01",
+    "text": "Termina el período de anticipos y empieza el de pagos de las intervenciones del art. 19.2 (1 de diciembre).",
+    "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 6",
+    "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
    },
    {
     "cc": "ES",
@@ -676,6 +709,15 @@
     "text": "Importes unitarios definitivos para el último pago del saldo (antes del 30 de junio del año siguiente).",
     "legalBasis": "RD 1048/2022, art. 124.4",
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "PT",
+    "id": "payment-close",
+    "kind": "deadline",
+    "date": "2027-06-30",
+    "text": "Termina el período de pagos de las intervenciones del art. 19.2 de la campaña anterior (30 de junio).",
+    "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 5",
+    "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
    },
    {
     "cc": "ES",

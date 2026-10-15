@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PAC Francia, Italia y Polonia: reglas, intervenciones y calendario CURADOS a mano de los textos oficiales -> data/cap/{fr,it,pl}/rules.json
+"""PAC Francia, Italia, Polonia, Portugal y Bélgica: reglas, intervenciones y calendario CURADOS a mano de los textos oficiales -> data/cap/{fr,it,pl,pt,be}/rules.json
 Cada regla es un resumen propio de Dehesa Index (no el texto legal) de un articulo concreto leido de la fuente primaria:
   FR  Code rural (D. 614-x), decretos 2022-1755, 2023-168, 2026-322, 2026-348, 2026-864 y arretes del JORF; leidos del volcado de la DILA.
   IT  Decreto del Ministro de Agricultura 23-dic-2022 n. 660087 (GU Serie Generale n. 47 de 24-2-2023), testo coordinato actualizado a 30-jun-2026 (MASAF).
@@ -9,6 +9,8 @@ Las traducciones (en, fr, it) son de Dehesa Index. Vale el texto oficial. Sin co
 Uso: python3 scripts/build-cap-rules.py [--check]"""
 import datetime, json, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import cap_pt_be_data as PB
 ROOT = Path(__file__).resolve().parents[1]
 TODAY = datetime.date.today().isoformat()
 LG = 'https://www.legifrance.gouv.fr/jorf/id/'
@@ -232,6 +234,12 @@ COUNTRIES = {
  'PL': dict(scheme='Plan Strategiczny dla WPR na lata 2023-2027 (ustawa z dnia 8 lutego 2023 r.)', source={'id': 'sejm_eli', 'instrument': 'Ustawa z dnia 8 lutego 2023 r. o Planie Strategicznym dla Wspólnej Polityki Rolnej na lata 2023-2027 (Dz.U. 2023 poz. 412; texto unificado Dz.U. 2024 poz. 1741) y reglamentos del Ministro de Agricultura', 'ref': 'DU/2023/412', 'url': 'https://api.sejm.gov.pl/eli/acts/DU/2023/412'},
             note='Reglas leídas a mano del texto unificado de la ley (Dz.U. 2024 poz. 1741), comprobadas contra las reformas de 2024, 2025 y 2026, y de los reglamentos de tasas y anticipos; vigiladas por data/cap/pl/watch.json (fecha de cambio y reformas del Sejm). Son explicaciones breves, no el texto legal.',
             rules=PL_RULES, interventions=PL_INTERVENTIONS, cal=PL_CAL, ovr=[], lang='pl'),
+ 'PT': dict(scheme='PEPAC Portugal 2023-2027 (pagamentos diretos: Portarias n.º 54-D, 54-E, 54-L e 54-I/2023)', source={'id': 'dre_pt', 'instrument': 'Portaria n.º 54-D/2023, de 27 de fevereiro (ARB, pagamento aos pequenos agricultores e ARC), Portaria n.º 54-E/2023 (ecorregimes) e Portaria n.º 54-L/2023 (pedidos de ajuda e de pagamento), Diário da República, 1.ª série, n.º 41, 1.º suplemento', 'ref': 'Portaria 54-D/2023', 'url': PB.PT_54D_URL},
+            note='Reglas leídas a mano de la Portaria 54-D/2023 (texto original de 27-2-2023, no se ha comprobado si reformas posteriores la cambian), de la 54-L/2023 consolidada por el PEPACC y de la orientación técnica del GPP sobre ecorregímenes. Solo Portugal continental y solo pagos directos. No se han leído los importes por hectárea de ecorregímenes y ayudas asociadas ni los plazos de cada campaña (los fija el IFAP). Sin vigilancia automática. Son explicaciones breves, no el texto legal.',
+            rules=PB.PT_RULES, interventions=PB.PT_INTERVENTIONS, cal=PB.PT_CAL, ovr=[], lang='pt'),
+ 'BE': dict(scheme='Plan estratégico de la PAC de Bélgica 2023-2027 (Flandes y Valonia; pagos directos)', source={'id': 'moniteur_be', 'instrument': 'Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen) y arrêtés du Gouvernement wallon du 23 février 2023 (aide de base, redistributive y jeunes agriculteurs; éco-régimes), publicados en el Moniteur belge / Belgisch Staatsblad', 'ref': 'BVR 21-4-2023; AGW 23-2-2023', 'url': PB.BE_FL_URL},
+            note='Reglas leídas a mano de copias consolidadas de los decretos (Codex Vlaanderen, Wallex y e-taamb), que no son la versión oficial: manda el Moniteur belge / Belgisch Staatsblad. No se ha leído Bruselas ni el desarrollo rural. No hay importes por hectárea (los fija el ministro en Valonia y no se han leído en Flandes) ni calendario general (solo fechas de la campaña 2025, que figuran como reglas). Sin vigilancia automática. Son explicaciones breves, no el texto legal.',
+            rules=PB.BE_RULES, interventions=PB.BE_INTERVENTIONS, cal=PB.BE_CAL, ovr=[], lang='nl'),
 }
 def build(cc):
     c = COUNTRIES[cc]; rules, i18nr, ids = [], {}, set()
@@ -250,12 +258,13 @@ def build(cc):
     ints = []
     for it in c['interventions']:
         if cc == 'FR': iid, kind, name, basis, arts, am = it; ints.append({'id': iid, 'kind': kind, 'name': name, 'nameLang': 'fr', 'legalBasis': basis, 'articles': arts, 'amounts': am})
+        elif cc == 'BE': iid, kind, name, basis, arts, nl = it; ints.append({'id': iid, 'kind': kind, 'name': name, 'nameLang': nl, 'legalBasis': basis, 'articles': arts})
         else: iid, kind, name, basis, arts = it; ints.append({'id': iid, 'kind': kind, 'name': name, 'nameLang': c['lang'], 'legalBasis': basis, 'articles': arts})
     return {'schemaVersion': 1, 'country': cc, 'scheme': c['scheme'], 'status': 'CURRENT', 'curated': True, 'verifiedAt': TODAY, 'source': c['source'], 'note': c['note'],
             'interventions': ints, 'rules': rules, 'calendar': cal, 'campaignOverrides': ovr,
             'i18n': {'note': 'Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.', 'rules': i18nr, 'calendar': i18nc, 'overrides': i18no}}
 def main():
-    for cc in ('FR', 'IT', 'PL'):
+    for cc in ('FR', 'IT', 'PL', 'PT', 'BE'):
         doc = build(cc); p = ROOT / 'data' / 'cap' / cc.lower() / 'rules.json'
         txt = json.dumps(doc, ensure_ascii=False, indent=1) + '\n'
         if '--check' in sys.argv:

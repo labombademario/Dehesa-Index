@@ -168,9 +168,9 @@
         '<p><a class="di-link-btn" href="paises.html?c=DK">' + esc(x.dkMore) + '</a></p>' + cite('retsinformation', String(DK.campaign || ''));
     } else if (c === 'DE' && DE && DE.items) h += deHtml();
     else if (c === 'FR' && FR && FR.items) h += frHtml();
-    else if (c === 'IT' || c === 'PL' || c === 'FR') h += '';
+    else if (c === 'IT' || c === 'PL' || c === 'FR' || c === 'PT' || c === 'BE') h += '';
     else h += '<p class="di-movers-hint">' + esc(x.natNone) + '</p>';
-    if (c === 'FR' || c === 'IT' || c === 'PL') h += '<div id="pac-nat" data-cc="' + c + '"></div>';
+    if (c === 'FR' || c === 'IT' || c === 'PL' || c === 'PT' || c === 'BE') h += '<div id="pac-nat" data-cc="' + c + '"></div>';
     h += '<p>' + (CSP[c] || []).map(function (s) { return '<a class="di-link-btn" href="https://agriculture.ec.europa.eu/cap-my-country/cap-strategic-plans/' + s + '_en" rel="noopener" target="_blank">' + esc(x.csp) + (CSP[c].length > 1 ? ' (' + (s.indexOf('flanders') > 0 ? 'Vlaanderen' : 'Wallonie') + ')' : '') + '</a> '; }).join('') + '</p>' + (c === 'BE' ? '<p class="di-movers-hint">' + esc(x.beNote) + '</p>' : '');
     return h;
   }

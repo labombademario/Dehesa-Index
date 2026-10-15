@@ -1241,6 +1241,18 @@
    [
     "cap_pl_amounts"
    ]
+  ],
+  "cap/pt/rules.json": [
+   "cap-nat-rules",
+   [
+    "cap_nat_rules"
+   ]
+  ],
+  "cap/be/rules.json": [
+   "cap-nat-rules",
+   [
+    "cap_nat_rules"
+   ]
   ]
  },
  "globs": {

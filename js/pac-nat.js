@@ -4,7 +4,7 @@
 (function () {
   'use strict';
   var T = {
-    es: { scope: 'Solo pagos directos: el desarrollo rural y las ayudas sectoriales no se han leído. Resumen de Dehesa Index de la norma oficial; manda el texto publicado.', verified: 'Reglas revisadas el {d}',
+    es: { wOff: 'Todavía no hay vigilancia automática de cambios para este país: no se ha podido probar la lectura de la fuente oficial desde nuestros servidores. Las reglas se revisaron a mano en la fecha indicada.', scope: 'Solo pagos directos: el desarrollo rural y las ayudas sectoriales no se han leído. Resumen de Dehesa Index de la norma oficial; manda el texto publicado.', verified: 'Reglas revisadas el {d}',
       datesH: 'Plazos importantes', next: 'Próxima fecha general', ovrH: 'Excepciones por campaña', ovrC: 'Campaña {c}', rulesH: 'Reglas', intH: 'Intervenciones', legal: 'Base legal', official: 'Texto oficial',
       watchH: 'Vigilancia de cambios', wOK: 'Comprobado el {d}: sin textos nuevos pendientes de revisar.', wRev: 'Comprobado el {d}: hay {n} elemento(s) por revisar.', wNone: 'La vigilancia está configurada y todavía no ha hecho su primera lectura.', wBad: 'La última lectura no llegó a la fuente oficial; se conserva la anterior.',
       wNote: 'Son candidatos: títulos o huellas que cambian en la fuente oficial. Dehesa Index no sabe si afectan a las reglas hasta que alguien los lee.',
@@ -13,7 +13,7 @@
       item: 'Ayuda', unit: 'Unidad', ha: 'PLN/ha', head: 'PLN/animal', point: 'PLN/punto', g_coupled_plant: 'Ayudas acopladas: cultivos', g_coupled_animal: 'Ayudas acopladas: ganadería', g_eco: 'Ecoesquemas', g_welfare: 'Bienestar animal', g_basic: 'Pagos básicos (estimación de anticipos)',
       pn: 'Las tasas básica, redistributiva y de jóvenes definitivas no figuran en el Dziennik Ustaw: no se completan.',
       tp_farmer: 'Agricultor activo', tp_young: 'Jóvenes agricultores', tp_calendar: 'Calendario', tp_penalties: 'Sanciones', tp_eco: 'Ecoesquemas', tp_payments: 'Pagos', tp_controls: 'Controles', tp_amounts: 'Importes', tp_abrs: 'Derechos de pago', tp_redistributive: 'Pago redistributivo', tp_associated: 'Ayudas asociadas', tp_basic: 'Ayuda básica' },
-    en: { scope: 'Direct payments only: rural development and sector aid have not been read. Dehesa Index summary of the official text; the published text prevails.', verified: 'Rules reviewed on {d}',
+    en: { wOff: 'There is no automatic change watch for this country yet: we could not test reading the official source from our servers. The rules were reviewed by hand on the date shown.', scope: 'Direct payments only: rural development and sector aid have not been read. Dehesa Index summary of the official text; the published text prevails.', verified: 'Rules reviewed on {d}',
       datesH: 'Key dates', next: 'Next general date', ovrH: 'Exceptions by campaign', ovrC: 'Campaign {c}', rulesH: 'Rules', intH: 'Interventions', legal: 'Legal basis', official: 'Official text',
       watchH: 'Change watch', wOK: 'Checked on {d}: no new texts waiting for review.', wRev: 'Checked on {d}: {n} item(s) to review.', wNone: 'The watch is set up and has not made its first read yet.', wBad: 'The last read could not reach the official source; the previous one is kept.',
       wNote: 'These are candidates: titles or fingerprints that change at the official source. Dehesa Index cannot tell whether they affect the rules until someone reads them.',
@@ -22,7 +22,7 @@
       item: 'Aid', unit: 'Unit', ha: 'PLN/ha', head: 'PLN/head', point: 'PLN/point', g_coupled_plant: 'Coupled support: crops', g_coupled_animal: 'Coupled support: livestock', g_eco: 'Eco-schemes', g_welfare: 'Animal welfare', g_basic: 'Basic payments (advance estimates)',
       pn: 'The final basic, redistributive and young-farmer rates are not in the Dziennik Ustaw: they are not filled in.',
       tp_farmer: 'Active farmer', tp_young: 'Young farmers', tp_calendar: 'Calendar', tp_penalties: 'Penalties', tp_eco: 'Eco-schemes', tp_payments: 'Payments', tp_controls: 'Controls', tp_amounts: 'Amounts', tp_abrs: 'Payment entitlements', tp_redistributive: 'Redistributive payment', tp_associated: 'Coupled support', tp_basic: 'Basic support' },
-    fr: { scope: 'Paiements directs uniquement : le développement rural et les aides sectorielles n’ont pas été lus. Résumé de Dehesa Index du texte officiel ; le texte publié fait foi.', verified: 'Règles revues le {d}',
+    fr: { wOff: 'Il n’y a pas encore de veille automatique des changements pour ce pays : nous n’avons pas pu tester la lecture de la source officielle depuis nos serveurs. Les règles ont été revues à la main à la date indiquée.', scope: 'Paiements directs uniquement : le développement rural et les aides sectorielles n’ont pas été lus. Résumé de Dehesa Index du texte officiel ; le texte publié fait foi.', verified: 'Règles revues le {d}',
       datesH: 'Dates importantes', next: 'Prochaine date générale', ovrH: 'Exceptions par campagne', ovrC: 'Campagne {c}', rulesH: 'Règles', intH: 'Interventions', legal: 'Base légale', official: 'Texte officiel',
       watchH: 'Veille des changements', wOK: 'Vérifié le {d} : aucun nouveau texte à examiner.', wRev: 'Vérifié le {d} : {n} élément(s) à examiner.', wNone: 'La veille est configurée et n’a pas encore fait sa première lecture.', wBad: 'La dernière lecture n’a pas atteint la source officielle ; la précédente est conservée.',
       wNote: 'Ce sont des candidats : titres ou empreintes qui changent à la source officielle. Dehesa Index ne sait pas s’ils touchent les règles tant que personne ne les lit.',
@@ -31,7 +31,7 @@
       item: 'Aide', unit: 'Unité', ha: 'PLN/ha', head: 'PLN/animal', point: 'PLN/point', g_coupled_plant: 'Aides couplées : cultures', g_coupled_animal: 'Aides couplées : élevage', g_eco: 'Écorégimes', g_welfare: 'Bien-être animal', g_basic: 'Paiements de base (estimation des avances)',
       pn: 'Les taux définitifs de base, redistributif et jeunes ne figurent pas au Dziennik Ustaw : ils ne sont pas complétés.',
       tp_farmer: 'Agriculteur actif', tp_young: 'Jeunes agriculteurs', tp_calendar: 'Calendrier', tp_penalties: 'Sanctions', tp_eco: 'Écorégimes', tp_payments: 'Paiements', tp_controls: 'Contrôles', tp_amounts: 'Montants', tp_abrs: 'Droits au paiement', tp_redistributive: 'Paiement redistributif', tp_associated: 'Aides couplées', tp_basic: 'Aide de base' },
-    it: { scope: 'Solo pagamenti diretti: lo sviluppo rurale e gli aiuti settoriali non sono stati letti. Sintesi di Dehesa Index del testo ufficiale; fa fede il testo pubblicato.', verified: 'Regole riviste il {d}',
+    it: { wOff: 'Per questo paese non c’è ancora un monitoraggio automatico delle modifiche: non siamo riusciti a provare la lettura della fonte ufficiale dai nostri server. Le regole sono state riviste a mano alla data indicata.', scope: 'Solo pagamenti diretti: lo sviluppo rurale e gli aiuti settoriali non sono stati letti. Sintesi di Dehesa Index del testo ufficiale; fa fede il testo pubblicato.', verified: 'Regole riviste il {d}',
       datesH: 'Scadenze importanti', next: 'Prossima data generale', ovrH: 'Eccezioni per campagna', ovrC: 'Campagna {c}', rulesH: 'Regole', intH: 'Interventi', legal: 'Base giuridica', official: 'Testo ufficiale',
       watchH: 'Monitoraggio delle modifiche', wOK: 'Verificato il {d}: nessun nuovo testo da esaminare.', wRev: 'Verificato il {d}: {n} elemento/i da esaminare.', wNone: 'Il monitoraggio è configurato e non ha ancora fatto la prima lettura.', wBad: 'L’ultima lettura non ha raggiunto la fonte ufficiale; si conserva la precedente.',
       wNote: 'Sono candidati: titoli o impronte che cambiano nella fonte ufficiale. Dehesa Index non sa se incidono sulle regole finché qualcuno non li legge.',
@@ -58,7 +58,7 @@
   function today() { var n = new Date(); return new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())); }
   function datesHtml(r) {
     var x = t(), now = today(), rows = r.calendar.map(function (c) { return { c: c, d: next(c, now) }; }).filter(function (o) { return o.d; }).sort(function (a, b) { return a.d - b.d; });
-    var h = '<h3 class="pac-eu-h2">' + esc(x.datesH) + '</h3><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(x.next) + '</th><th scope="col">' + esc(x.legal) + '</th></tr></thead><tbody>' + rows.map(function (o) {
+    var h = !rows.length ? '' : '<h3 class="pac-eu-h2">' + esc(x.datesH) + '</h3><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(x.next) + '</th><th scope="col">' + esc(x.legal) + '</th></tr></thead><tbody>' + rows.map(function (o) {
       return '<tr><td><b>' + esc(dt(o.d.toISOString())) + '</b><br>' + esc(tr(r, 'calendar', o.c.id, o.c.text)) + '</td><td class="di-movers-hint">' + esc(o.c.legalBasis) + '</td></tr>';
     }).join('') + '</tbody></table></div>';
     if (r.campaignOverrides.length) {
@@ -81,7 +81,7 @@
   }
   function watchHtml(w) {
     var x = t(), h = '<h3 class="pac-eu-h2">' + esc(x.watchH) + '</h3>';
-    if (!w) return h;
+    if (!w) return h + '<p class="di-movers-hint">' + esc(x.wOff) + '</p>';
     if (w.status === 'NOT_YET_RUN') h += '<p class="di-movers-hint">' + esc(x.wNone) + '</p>';
     else {
       h += '<p class="di-movers-hint" role="status">' + esc(w.reviewNeeded.length ? fill(x.wRev, { d: dt(w.checkedAt), n: w.reviewNeeded.length }) : fill(x.wOK, { d: dt(w.checkedAt) })) + (w.status === 'UNREACHABLE' ? ' ' + esc(x.wBad) : '') + '</p>';

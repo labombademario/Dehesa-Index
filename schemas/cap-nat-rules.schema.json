@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "Dehesa Index - PAC Francia/Italia/Polonia: reglas curadas",
+ "title": "Dehesa Index - PAC Francia/Italia/Polonia/Portugal/Belgica: reglas curadas",
  "type": "object",
  "required": [
   "schemaVersion",
@@ -25,7 +25,9 @@
    "enum": [
     "FR",
     "IT",
-    "PL"
+    "PL",
+    "PT",
+    "BE"
    ]
   },
   "scheme": {
@@ -62,7 +64,7 @@
   },
   "calendar": {
    "type": "array",
-   "minItems": 1
+   "minItems": 0
   },
   "campaignOverrides": {
    "type": "array"

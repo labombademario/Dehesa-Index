@@ -1,0 +1,410 @@
+{
+ "schemaVersion": 1,
+ "country": "BE",
+ "scheme": "Plan estratégico de la PAC de Bélgica 2023-2027 (Flandes y Valonia; pagos directos)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-15",
+ "source": {
+  "id": "moniteur_be",
+  "instrument": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen) y arrêtés du Gouvernement wallon du 23 février 2023 (aide de base, redistributive y jeunes agriculteurs; éco-régimes), publicados en el Moniteur belge / Belgisch Staatsblad",
+  "ref": "BVR 21-4-2023; AGW 23-2-2023",
+  "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false"
+ },
+ "note": "Reglas leídas a mano de copias consolidadas de los decretos (Codex Vlaanderen, Wallex y e-taamb), que no son la versión oficial: manda el Moniteur belge / Belgisch Staatsblad. No se ha leído Bruselas ni el desarrollo rural. No hay importes por hectárea (los fija el ministro en Valonia y no se han leído en Flandes) ni calendario general (solo fechas de la campaña 2025, que figuran como reglas). Sin vigilancia automática. Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "fl-basic",
+   "kind": "basic",
+   "name": "Basisinkomenssteun voor duurzaamheid",
+   "nameLang": "nl",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 13 a 18",
+   "articles": [
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18"
+   ]
+  },
+  {
+   "id": "fl-redistributive",
+   "kind": "redistributive",
+   "name": "Aanvullende herverdelende inkomenssteun",
+   "nameLang": "nl",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 35 y 36",
+   "articles": [
+    "35",
+    "36"
+   ]
+  },
+  {
+   "id": "fl-young",
+   "kind": "young",
+   "name": "Aanvullende inkomenssteun voor jonge landbouwers",
+   "nameLang": "nl",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 37 a 42",
+   "articles": [
+    "37",
+    "38",
+    "39",
+    "42"
+   ]
+  },
+  {
+   "id": "fl-coupled",
+   "kind": "coupled",
+   "name": "Gekoppelde inkomenssteun (zoogkoeien)",
+   "nameLang": "nl",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 43 a 48",
+   "articles": [
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48"
+   ]
+  },
+  {
+   "id": "wa-basic",
+   "kind": "basic",
+   "name": "Aide de base au revenu pour un développement durable",
+   "nameLang": "fr",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide de base, redistributive et jeunes agriculteurs), arts. 5 a 22",
+   "articles": [
+    "5",
+    "6",
+    "7",
+    "21",
+    "22"
+   ]
+  },
+  {
+   "id": "wa-redistributive",
+   "kind": "redistributive",
+   "name": "Aide redistributive complémentaire au revenu pour un développement durable",
+   "nameLang": "fr",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide de base, redistributive et jeunes agriculteurs), arts. 23 a 25",
+   "articles": [
+    "23",
+    "24",
+    "25"
+   ]
+  },
+  {
+   "id": "wa-young",
+   "kind": "young",
+   "name": "Aide complémentaire au revenu pour les jeunes agriculteurs",
+   "nameLang": "fr",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide de base, redistributive et jeunes agriculteurs), arts. 26 a 31",
+   "articles": [
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31"
+   ]
+  },
+  {
+   "id": "wa-eco",
+   "kind": "eco",
+   "name": "Aide aux éco-régimes",
+   "nameLang": "fr",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide aux éco-régimes)",
+   "articles": [
+    "2",
+    "3",
+    "6",
+    "11"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "fl-active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), art. 4, § 2 (desde 1-1-2026)",
+   "articles": [
+    "4"
+   ],
+   "text": "Flandes, desde 2026: agricultor activo es quien tiene un número de empresa belga con código NACEBEL agrario de IVA, obtiene al menos un tercio de sus ventas sujetas a IVA de la agricultura, tiene una capacidad de ingresos estándar de al menos 7.500 € y no es un organismo público, asociación de naturaleza reconocida, colegio o universidad, y al menos un jefe de explotación no cobra pensión de jubilación.",
+   "officialUrl": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false",
+   "values": {
+    "minStandardEarningCapacityEur": 7500,
+    "minAgriSalesShare": "1/3",
+    "from": "2026-01-01"
+   }
+  },
+  {
+   "id": "fl-parcels",
+   "topic": "payments",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 9 y 23",
+   "articles": [
+    "9",
+    "23"
+   ],
+   "text": "Flandes: los derechos de pago solo se activan en parcelas de al menos 0,01 ha. Los árboles aislados cuentan hasta 200 por hectárea admisible. La superficie mínima de declaración la fija el ministro.",
+   "officialUrl": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false",
+   "values": {
+    "minEntitlementParcelHa": 0.01,
+    "isolatedTreesPerHa": 200
+   }
+  },
+  {
+   "id": "fl-basic",
+   "topic": "basic",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 13 a 18",
+   "articles": [
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18"
+   ],
+   "text": "Flandes, apoyo básico: pago mínimo anual de 400 €. La parte entre 60.000 y 100.000 € se reduce un 85 % y la que supera 100.000 €, un 100 %. El valor máximo de un derecho en 2026 es 1.500 €, y los derechos por debajo del 85 % del valor medio de 2026 suben a ese 85 %. Transferencia al desarrollo rural: 10 % en 2023, 11 % en 2024 y 2025, 12 % en 2026. Reparto indicativo: 25 % para ecorregímenes.",
+   "officialUrl": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false",
+   "values": {
+    "minPaymentEur": 400,
+    "reduction60to100kPct": 85,
+    "reductionOver100kPct": 100,
+    "maxEntitlementEur2026": 1500,
+    "convergenceFloorPct": 85,
+    "transferRuralPct": {
+     "2023": 10,
+     "2024": 11,
+     "2025": 11,
+     "2026": 12
+    },
+    "ecoSchemeSharePct": 25
+   }
+  },
+  {
+   "id": "fl-redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 35 y 36",
+   "articles": [
+    "35",
+    "36"
+   ],
+   "text": "Flandes, pago redistributivo: se paga sobre las primeras 30 ha admisibles y exige activar al menos un derecho de pago. Reparto indicativo del 10 %. El importe por hectárea no figura en el decreto.",
+   "officialUrl": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false",
+   "values": {
+    "firstHa": 30,
+    "allocationPct": 10
+   }
+  },
+  {
+   "id": "fl-young",
+   "topic": "young",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 37 a 42",
+   "articles": [
+    "37",
+    "38",
+    "39",
+    "42"
+   ],
+   "text": "Flandes, jóvenes agricultores: persona física jefe de explotación con control real y duradero, con 40 años como máximo en el año de la primera solicitud y con la competencia profesional exigida. La ayuda se pide dentro de los cinco años desde la instalación, se paga por hectárea admisible durante cinco años seguidos y exige activar al menos un derecho. Reparto indicativo del 3 %. El máximo de hectáreas lo fija el ministro.",
+   "officialUrl": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false",
+   "values": {
+    "maxAge": 40,
+    "applyWithinYears": 5,
+    "years": 5,
+    "allocationPct": 3
+   }
+  },
+  {
+   "id": "fl-coupled",
+   "topic": "associated",
+   "legalBasis": "Besluit van de Vlaamse Regering van 21 april 2023 (rechtstreekse betalingen), arts. 43 a 48",
+   "articles": [
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48"
+   ],
+   "text": "Flandes, ayuda asociada: vacas nodrizas de agricultores con rebaño de tipo carne en Flandes o Bruselas, por vaca y año. Exige mantener pastos permanentes y alcanzar al menos 20 puntos en los criterios de gestión de pastos y producción de forraje. Tope de 100.000 vacas equivalentes al año y pago decreciente por rebaño en tres tramos (1-50, 51-100, más de 100 animales). Reparto indicativo del 8 %. Los importes no figuran en el decreto.",
+   "officialUrl": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1038293&datum=&geannoteerd=false&print=false",
+   "values": {
+    "minPoints": 20,
+    "capCowEquivalents": 100000,
+    "tiers": [
+     "1-50",
+     "51-100",
+     ">100"
+    ],
+    "allocationPct": 8
+   }
+  },
+  {
+   "id": "fl-deadline-2025",
+   "topic": "calendar",
+   "legalBasis": "Departement Landbouw en Visserij, bundel steun 2025 (ecoregelingen), campaña 2025",
+   "articles": [],
+   "text": "Flandes, campaña 2025: la solicitud única (verzamelaanvraag) se presentó hasta el 30 de abril de 2025 y las modificaciones de los ecorregímenes y las medidas agroambientales se admitieron hasta el 31 de mayo de 2025. No hemos leído las fechas de otras campañas: las fija la administración cada año. Los importes planificados de los ecorregímenes de ese documento no se reproducen aquí.",
+   "officialUrl": "https://lv.vlaanderen.be/media/9482/download",
+   "values": {
+    "campaign": 2025,
+    "applicationDeadline": "2025-04-30",
+    "ecoChangesDeadline": "2025-05-31"
+   }
+  },
+  {
+   "id": "wa-basic",
+   "topic": "basic",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide de base, redistributive et jeunes agriculteurs), arts. 5 a 7, 21 y 22",
+   "articles": [
+    "5",
+    "6",
+    "7",
+    "21",
+    "22"
+   ],
+   "text": "Valonia, ayuda de base: el valor inicial de la unidad parte de los valores de 2022 y se ajusta de forma lineal de 2023 a 2026; en 2026 no puede ser inferior al 85 % del valor medio previsto. Se reduce un 30 % la parte entre 60.000 y 75.000 €, un 85 % la de 75.000 a 100.000 € y un 100 % lo que supera 100.000 €. Los derechos deben activarse al menos una vez cada dos años; los que no se activan dos años seguidos pasan a la reserva regional.",
+   "officialUrl": "https://etaamb.openjustice.be/fr/arrete-du-gouvernement-wallon-du-23-fevrier-2023_n2023042305.html",
+   "values": {
+    "convergenceFloorPct2026": 85,
+    "reduction60to75kPct": 30,
+    "reduction75to100kPct": 85,
+    "reductionOver100kPct": 100,
+    "activationYears": 2
+   }
+  },
+  {
+   "id": "wa-redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide de base, redistributive et jeunes agriculteurs), arts. 23 a 25",
+   "articles": [
+    "23",
+    "24",
+    "25"
+   ],
+   "text": "Valonia, ayuda redistributiva: la reciben los agricultores activos con derecho a la ayuda de base que presentan la solicitud a tiempo, sobre las primeras 30 ha admisibles. El importe por hectárea lo fija el ministro: no figura en el decreto.",
+   "officialUrl": "https://etaamb.openjustice.be/fr/arrete-du-gouvernement-wallon-du-23-fevrier-2023_n2023042305.html",
+   "values": {
+    "firstHa": 30
+   }
+  },
+  {
+   "id": "wa-young",
+   "topic": "young",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide de base, redistributive et jeunes agriculteurs), arts. 26 a 31",
+   "articles": [
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31"
+   ],
+   "text": "Valonia, jóvenes agricultores: primera instalación como jefe de explotación dentro de los cinco años naturales anteriores al año de la solicitud. La ayuda dura hasta cinco años seguidos y se limita a 100 ha admisibles. Las personas jurídicas pueden recibirla si cobran la ayuda de base e incluyen a una persona física que cumple la definición. El importe por hectárea lo fija el ministro: no figura en el decreto.",
+   "officialUrl": "https://etaamb.openjustice.be/fr/arrete-du-gouvernement-wallon-du-23-fevrier-2023_n2023042305.html",
+   "values": {
+    "applyWithinYears": 5,
+    "years": 5,
+    "maxHa": 100
+   }
+  },
+  {
+   "id": "wa-eco",
+   "topic": "eco",
+   "legalBasis": "Arrêté du Gouvernement wallon du 23 février 2023 (aide aux éco-régimes), arts. 2 a 11",
+   "articles": [
+    "2",
+    "3",
+    "6",
+    "11"
+   ],
+   "text": "Valonia, ecorregímenes: son cinco: cobertura larga del suelo, cultivos favorables al medio ambiente, malla ecológica, reducción de insumos, y mantenimiento de pastos con reducción de la carga ganadera. Cada compromiso dura un año natural y se renueva con una nueva solicitud. Los importes por ecorregimen los fija el ministro: no figuran en el decreto.",
+   "officialUrl": "https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042304/2023/01/01"
+  },
+  {
+   "id": "wa-dates-2025",
+   "topic": "calendar",
+   "legalBasis": "SPW Agriculture, FAQ 1er pilier, campagne 2025",
+   "articles": [],
+   "text": "Valonia, campaña 2025: la declaración de superficie podía modificarse hasta el 31 de mayo; la declaración anticipada del ecorregimen de cobertura larga del suelo debía presentarse antes del 15 de diciembre del año anterior. La ayuda de base a los pastos permanentes del ecorregimen de pastos era de 40 €/ha. La FAQ no tiene valor jurídico y no hemos leído las fechas de otras campañas.",
+   "officialUrl": "https://agriculture.wallonie.be/files/FAQ%201er%20pilier%20-Campagne%202025.pdf",
+   "values": {
+    "campaign": 2025,
+    "surfaceChangesUntil": "2025-05-31",
+    "clsAdvanceDeclarationBefore": "12-15",
+    "permanentGrasslandEurPerHa": 40
+   }
+  }
+ ],
+ "calendar": [],
+ "campaignOverrides": [],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "fl-active-farmer": {
+    "en": "Flanders, from 2026: an active farmer has a Belgian enterprise number with an agricultural VAT NACEBEL code, earns at least one third of VAT-taxable sales from farming, has a standard earning capacity of at least €7,500, is not a public body, recognised nature association, college or university, and at least one farm head does not receive a retirement pension.",
+    "fr": "Flandre, à partir de 2026 : est agriculteur actif celui qui a un numéro d'entreprise belge avec un code NACEBEL agricole de TVA, tire au moins un tiers de son chiffre d'affaires soumis à la TVA de l'agriculture, a une capacité de revenu standard d'au moins 7 500 €, n'est ni un organisme public, ni une association de nature reconnue, ni un collège ou une université, et dont au moins un chef d'exploitation ne perçoit pas de pension de retraite.",
+    "it": "Fiandre, dal 2026: è agricoltore attivo chi ha un numero d'impresa belga con codice NACEBEL agricolo ai fini IVA, ricava almeno un terzo delle vendite soggette a IVA dall'agricoltura, ha una capacità di reddito standard di almeno 7.500 €, non è un ente pubblico, un'associazione naturalistica riconosciuta, un collegio o un'università, e almeno un capo azienda non percepisce una pensione."
+   },
+   "fl-parcels": {
+    "en": "Flanders: payment entitlements can only be activated on parcels of at least 0.01 ha. Isolated trees count up to 200 per eligible hectare. The minimum declaration area is set by the minister.",
+    "fr": "Flandre : les droits au paiement ne s'activent que sur des parcelles d'au moins 0,01 ha. Les arbres isolés comptent jusqu'à 200 par hectare admissible. La superficie minimale de déclaration est fixée par le ministre.",
+    "it": "Fiandre: i diritti al pagamento si attivano solo su particelle di almeno 0,01 ha. Gli alberi isolati contano fino a 200 per ettaro ammissibile. La superficie minima di dichiarazione la fissa il ministro."
+   },
+   "fl-basic": {
+    "en": "Flanders, basic support: minimum annual payment of €400. The part between €60,000 and €100,000 is cut by 85 % and the part above €100,000 by 100 %. The maximum value of an entitlement in 2026 is €1,500, and entitlements below 85 % of the 2026 average value rise to that 85 %. Transfer to rural development: 10 % in 2023, 11 % in 2024 and 2025, 12 % in 2026. Indicative allocation: 25 % to eco-schemes.",
+    "fr": "Flandre, soutien de base : paiement annuel minimum de 400 €. La part entre 60 000 et 100 000 € est réduite de 85 % et celle au-dessus de 100 000 €, de 100 %. La valeur maximale d'un droit en 2026 est de 1 500 €, et les droits inférieurs à 85 % de la valeur moyenne de 2026 sont relevés à ces 85 %. Transfert vers le développement rural : 10 % en 2023, 11 % en 2024 et 2025, 12 % en 2026. Répartition indicative : 25 % pour les éco-régimes.",
+    "it": "Fiandre, sostegno di base: pagamento annuo minimo di 400 €. La parte tra 60.000 e 100.000 € è ridotta dell'85 % e quella oltre 100.000 €, del 100 %. Il valore massimo di un diritto nel 2026 è 1.500 € e i diritti inferiori all'85 % del valore medio 2026 salgono a quell'85 %. Trasferimento allo sviluppo rurale: 10 % nel 2023, 11 % nel 2024 e 2025, 12 % nel 2026. Ripartizione indicativa: 25 % agli ecoregimi."
+   },
+   "fl-redistributive": {
+    "en": "Flanders, redistributive payment: paid on the first 30 eligible hectares and requires activating at least one payment entitlement. Indicative allocation of 10 %. The per-hectare amount is not in the decree.",
+    "fr": "Flandre, paiement redistributif : versé sur les 30 premiers hectares admissibles et exige d'activer au moins un droit au paiement. Répartition indicative de 10 %. Le montant à l'hectare ne figure pas dans l'arrêté.",
+    "it": "Fiandre, pagamento redistributivo: pagato sui primi 30 ettari ammissibili e richiede di attivare almeno un diritto al pagamento. Ripartizione indicativa del 10 %. L'importo per ettaro non è nel decreto."
+   },
+   "fl-young": {
+    "en": "Flanders, young farmers: a natural person who is farm head with real and lasting control, aged 40 or under in the year of the first application and with the required professional competence. The aid is claimed within five years of establishment, paid per eligible hectare for five consecutive years and requires activating at least one entitlement. Indicative allocation of 3 %. The maximum hectares are set by the minister.",
+    "fr": "Flandre, jeunes agriculteurs : personne physique chef d'exploitation avec un contrôle effectif et durable, âgée de 40 ans au plus l'année de la première demande et possédant la compétence professionnelle requise. L'aide se demande dans les cinq ans suivant l'installation, est versée à l'hectare admissible pendant cinq années consécutives et exige d'activer au moins un droit. Répartition indicative de 3 %. Le nombre maximal d'hectares est fixé par le ministre.",
+    "it": "Fiandre, giovani agricoltori: persona fisica capo azienda con controllo effettivo e duraturo, di 40 anni al massimo nell'anno della prima domanda e con la competenza professionale richiesta. L'aiuto si chiede entro cinque anni dall'insediamento, è pagato per ettaro ammissibile per cinque anni consecutivi e richiede di attivare almeno un diritto. Ripartizione indicativa del 3 %. Il massimo di ettari lo fissa il ministro."
+   },
+   "fl-coupled": {
+    "en": "Flanders, coupled support: suckler cows of farmers with a beef-type herd in Flanders or Brussels, per cow and year. Requires keeping permanent grassland and scoring at least 20 points on grassland management and feed production criteria. Cap of 100,000 cow-equivalents a year and a payment that falls per herd in three tiers (1-50, 51-100, over 100 animals). Indicative allocation of 8 %. The amounts are not in the decree.",
+    "fr": "Flandre, aide couplée : vaches allaitantes d'agriculteurs ayant un troupeau de type viande en Flandre ou à Bruxelles, par vache et par an. Exige de maintenir des prairies permanentes et d'atteindre au moins 20 points aux critères de gestion des prairies et de production fourragère. Plafond de 100 000 vaches équivalentes par an et paiement dégressif par troupeau en trois tranches (1-50, 51-100, plus de 100 animaux). Répartition indicative de 8 %. Les montants ne figurent pas dans l'arrêté.",
+    "it": "Fiandre, aiuto accoppiato: vacche nutrici di agricoltori con mandria da carne nelle Fiandre o a Bruxelles, per vacca e anno. Richiede di mantenere i pascoli permanenti e di ottenere almeno 20 punti nei criteri di gestione dei pascoli e produzione di foraggio. Tetto di 100.000 vacche equivalenti l'anno e pagamento decrescente per mandria in tre fasce (1-50, 51-100, oltre 100 capi). Ripartizione indicativa dell'8 %. Gli importi non sono nel decreto."
+   },
+   "fl-deadline-2025": {
+    "en": "Flanders, 2025 campaign: the single application (verzamelaanvraag) was filed by 30 April 2025 and changes to eco-schemes and agri-environment measures were accepted until 31 May 2025. We have not read the dates of other campaigns: the administration sets them each year. The planned eco-scheme amounts in that document are not reproduced here.",
+    "fr": "Flandre, campagne 2025 : la demande unique (verzamelaanvraag) a été déposée jusqu'au 30 avril 2025 et les modifications des éco-régimes et des mesures agro-environnementales ont été admises jusqu'au 31 mai 2025. Nous n'avons pas lu les dates des autres campagnes : l'administration les fixe chaque année. Les montants prévus des éco-régimes de ce document ne sont pas reproduits ici.",
+    "it": "Fiandre, campagna 2025: la domanda unica (verzamelaanvraag) è stata presentata entro il 30 aprile 2025 e le modifiche agli ecoregimi e alle misure agroambientali sono state ammesse fino al 31 maggio 2025. Non abbiamo letto le date delle altre campagne: le fissa ogni anno l'amministrazione. Gli importi previsti degli ecoregimi di quel documento non sono riprodotti qui."
+   },
+   "wa-basic": {
+    "en": "Wallonia, basic aid: the initial unit value starts from the 2022 values and is adjusted linearly from 2023 to 2026; in 2026 it cannot be below 85 % of the expected average value. The part between €60,000 and €75,000 is cut by 30 %, that from €75,000 to €100,000 by 85 % and anything above €100,000 by 100 %. Entitlements must be activated at least once every two years; those not activated two years running go to the regional reserve.",
+    "fr": "Wallonie, aide de base : la valeur initiale de l'unité part des valeurs de 2022 et est ajustée linéairement de 2023 à 2026 ; en 2026 elle ne peut être inférieure à 85 % de la valeur moyenne prévue. La part entre 60 000 et 75 000 € est réduite de 30 %, celle de 75 000 à 100 000 € de 85 % et tout ce qui dépasse 100 000 € de 100 %. Les droits doivent être activés au moins une fois tous les deux ans ; ceux non activés deux années de suite vont à la réserve régionale.",
+    "it": "Vallonia, aiuto di base: il valore iniziale dell'unità parte dai valori del 2022 e si adegua in modo lineare dal 2023 al 2026; nel 2026 non può essere inferiore all'85 % del valore medio previsto. La parte tra 60.000 e 75.000 € è ridotta del 30 %, quella da 75.000 a 100.000 € dell'85 % e quanto supera 100.000 € del 100 %. I diritti vanno attivati almeno una volta ogni due anni; quelli non attivati per due anni consecutivi passano alla riserva regionale."
+   },
+   "wa-redistributive": {
+    "en": "Wallonia, redistributive aid: received by active farmers entitled to basic aid who apply on time, on the first 30 eligible hectares. The per-hectare amount is set by the minister: it is not in the decree.",
+    "fr": "Wallonie, aide redistributive : perçue par les agriculteurs actifs ayant droit à l'aide de base qui déposent leur demande à temps, sur les 30 premiers hectares admissibles. Le montant à l'hectare est fixé par le ministre : il ne figure pas dans l'arrêté.",
+    "it": "Vallonia, aiuto redistributivo: lo ricevono gli agricoltori attivi con diritto all'aiuto di base che presentano la domanda in tempo, sui primi 30 ettari ammissibili. L'importo per ettaro lo fissa il ministro: non è nel decreto."
+   },
+   "wa-young": {
+    "en": "Wallonia, young farmers: first installation as head of the holding within the five calendar years before the application year. The aid lasts up to five consecutive years and is limited to 100 eligible hectares. Legal persons can receive it if they get basic aid and include a natural person who meets the definition. The per-hectare amount is set by the minister: it is not in the decree.",
+    "fr": "Wallonie, jeunes agriculteurs : première installation comme chef d'exploitation dans les cinq années civiles précédant l'année de la demande. L'aide dure jusqu'à cinq années consécutives et est limitée à 100 ha admissibles. Les personnes morales peuvent la percevoir si elles reçoivent l'aide de base et comptent une personne physique répondant à la définition. Le montant à l'hectare est fixé par le ministre : il ne figure pas dans l'arrêté.",
+    "it": "Vallonia, giovani agricoltori: prima installazione come capo azienda nei cinque anni civili precedenti l'anno della domanda. L'aiuto dura fino a cinque anni consecutivi ed è limitato a 100 ettari ammissibili. Le persone giuridiche possono riceverlo se percepiscono l'aiuto di base e includono una persona fisica che soddisfa la definizione. L'importo per ettaro lo fissa il ministro: non è nel decreto."
+   },
+   "wa-eco": {
+    "en": "Wallonia, eco-schemes: there are five: long soil cover, environmentally favourable crops, ecological network, input reduction, and grassland maintenance with reduced livestock density. Each commitment lasts one calendar year and is renewed with a new application. The amounts per eco-scheme are set by the minister: they are not in the decree.",
+    "fr": "Wallonie, éco-régimes : il y en a cinq : couverture longue du sol, cultures favorables à l'environnement, maillage écologique, réduction d'intrants, et maintien des prairies avec réduction de la charge en bétail. Chaque engagement dure une année civile et se renouvelle par une nouvelle demande. Les montants par éco-régime sont fixés par le ministre : ils ne figurent pas dans l'arrêté.",
+    "it": "Vallonia, ecoregimi: sono cinque: copertura lunga del suolo, colture favorevoli all'ambiente, rete ecologica, riduzione degli input e mantenimento dei prati con riduzione del carico di bestiame. Ogni impegno dura un anno civile e si rinnova con una nuova domanda. Gli importi per ecoregime li fissa il ministro: non sono nel decreto."
+   },
+   "wa-dates-2025": {
+    "en": "Wallonia, 2025 campaign: the surface declaration could be changed until 31 May; the advance declaration for the long soil cover eco-scheme had to be filed before 15 December of the previous year. The basic aid for permanent grassland in the grassland eco-scheme was €40/ha. The FAQ has no legal value and we have not read the dates of other campaigns.",
+    "fr": "Wallonie, campagne 2025 : la déclaration de superficie pouvait être modifiée jusqu'au 31 mai ; la déclaration anticipée de l'éco-régime de couverture longue du sol devait être déposée avant le 15 décembre de l'année précédente. L'aide de base aux prairies permanentes de l'éco-régime prairies était de 40 €/ha. La FAQ n'a pas de valeur juridique et nous n'avons pas lu les dates des autres campagnes.",
+    "it": "Vallonia, campagna 2025: la dichiarazione di superficie poteva essere modificata fino al 31 maggio; la dichiarazione anticipata dell'ecoregime di copertura lunga del suolo andava presentata prima del 15 dicembre dell'anno precedente. L'aiuto di base ai pascoli permanenti dell'ecoregime prati era di 40 €/ha. La FAQ non ha valore giuridico e non abbiamo letto le date delle altre campagne."
+   }
+  },
+  "calendar": {},
+  "overrides": {}
+ }
+}

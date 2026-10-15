@@ -60,21 +60,25 @@ def country_de():
                 'rules': comp('PARTIAL', 'de/amounts.json', count=len(a['conditions']), note='Resumen de las condiciones de las diez Oko-Regelungen (GAPDZV Anlage 5); no incluye listas ni metodos que fijan los Lander ni el resto de la normativa'),
                 'importantDates': ni('no se han leido los plazos de solicitud (los fijan los Lander)', 'NOT_READ'),
                 'watch': ni('sin vigilancia automatica: ni gesetze-im-internet.de ni el Bundesanzeiger se leen desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre', 'SOURCE_UNREACHABLE')}}
+NO_WATCH = {
+    'PT': 'sin vigilancia automatica: no se ha podido probar la lectura del Diario da Republica ni del IFAP desde estos servidores, asi que no se promete una vigilancia que no se ha visto funcionar',
+    'BE': 'sin vigilancia automatica: no se ha podido probar la lectura del Moniteur belge, del Codex Vlaanderen ni de Wallex desde estos servidores'}
 def country_nat(cc, name, amounts_comp):
     """FR, IT y PL: reglas curadas (rules.json), vigilancia (watch.json) e importes si los hay. Solo pagos directos: el resto de la PAC no se ha leido."""
     r, w = J('%s/rules.json' % cc.lower()), J('%s/watch.json' % cc.lower())
-    if not (r and w): return None
+    if not r: return None
+    if not w and cc not in NO_WATCH: return None
     src = r['source']
-    wc = comp('INGESTED', '%s/watch.json' % cc.lower(), checkedAt=w['checkedAt'], reviewNeeded=len(w['reviewNeeded'])) if w['status'] == 'OK' else \
+    wc = ni(NO_WATCH[cc], 'SOURCE_UNREACHABLE') if not w else comp('INGESTED', '%s/watch.json' % cc.lower(), checkedAt=w['checkedAt'], reviewNeeded=len(w['reviewNeeded'])) if w['status'] == 'OK' else \
         comp('PARTIAL', '%s/watch.json' % cc.lower(), checkedAt=w['checkedAt'], reviewNeeded=len(w['reviewNeeded']), note={'NOT_YET_RUN': 'vigilancia configurada, aun sin primera lectura automatica', 'UNREACHABLE': 'la ultima lectura no llego a la fuente oficial', 'PARTIAL': 'la lectura quedo a medias (se continua en la siguiente ejecucion)'}.get(w['status']))
     return {'cc': cc, 'name': name, 'scheme': r['scheme'], 'legalAct': {'title': src['instrument'], 'ref': src['ref'], 'url': src['url'], 'sourceId': src['id']},
-            'updatedAt': max([r['verifiedAt']] + ([w['checkedAt']] if w['checkedAt'] else []) + amounts_comp[1]),
+            'updatedAt': max([r['verifiedAt']] + ([w['checkedAt']] if w and w['checkedAt'] else []) + amounts_comp[1]),
             'components': {
                 'strategicPlan': ni('el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos', 'NOT_READ'),
                 'interventions': comp('PARTIAL', '%s/rules.json' % cc.lower(), count=len(r['interventions']), note='Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido'),
                 'amounts': amounts_comp[0],
                 'rules': comp('PARTIAL', '%s/rules.json' % cc.lower(), count=len(r['rules']), note='Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico'),
-                'importantDates': comp('PARTIAL', '%s/rules.json' % cc.lower(), count=len(r['calendar']), note='Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido'),
+                'importantDates': (comp('PARTIAL', '%s/rules.json' % cc.lower(), count=len(r['calendar']), note='Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido') if r['calendar'] else ni('las fechas leidas son de la campana 2025 de cada region y figuran como reglas; no hay un calendario general que se repita cada ano', 'NOT_READ')),
                 'watch': wc}}
 def country_fr():
     a = J('fr/amounts.json')
@@ -86,6 +90,10 @@ def country_pl():
     a = J('pl/amounts.json')
     if not a: return None
     return country_nat('PL', 'Polonia', (comp('PARTIAL', 'pl/amounts.json', campaigns=a['campaigns'], kind=a['kind'], count=len(a['items']), note='Tasas oficiales de las ayudas acopladas, ecorregimenes y bienestar animal 2023-2025 y anticipos 2026; faltan las tasas definitivas de 2026 y las del pago basico, redistributivo y jovenes'), [a['verifiedAt']]))
+def country_pt():
+    return country_nat('PT', 'Portugal', (ni('los importes unitarios de ecorregimes y ayudas asociadas no se han leido; los importes indicativos del ARC y del pago a pequenos agricultores figuran en las reglas', 'NOT_READ'), []))
+def country_be():
+    return country_nat('BE', 'Belgica', (ni('en Valonia el ministro fija los importes y en Flandes no se han leido; no hay importes por hectarea', 'NOT_READ'), []))
 def country_eu():
     e = J('eu/allocations.json')
     if not e: return None
@@ -102,8 +110,7 @@ def country_eu():
 def blocked(cc, name, reason, code):
     return {'cc': cc, 'name': name, 'scheme': None, 'legalAct': None, 'updatedAt': None, 'components': {k: ni(reason, code) for k in COMPONENTS}}
 PENDING = [
-    ('PT', 'Portugal', NO_SOURCE, 'NOT_ASSESSED'), ('NL', 'Paises Bajos', NO_SOURCE, 'NOT_ASSESSED'),
-    ('BE', 'Belgica', NO_SOURCE, 'NOT_ASSESSED'), ('AT', 'Austria', NO_SOURCE, 'NOT_ASSESSED')]
+    ('NL', 'Paises Bajos', NO_SOURCE, 'NOT_ASSESSED'), ('AT', 'Austria', NO_SOURCE, 'NOT_ASSESSED')]
 def next_occurrence(cal, today):
     w = cal['when']; best = None
     for y in (today.year - 1, today.year, today.year + 1):
@@ -114,14 +121,14 @@ def next_occurrence(cal, today):
 def build(today):
     cs = [x for x in (country_es(), country_dk(), country_eu()) if x]
     cs += [blocked(cc, n, r, c) for cc, n, r, c in PENDING]
-    cs += [x for x in (country_de(), country_fr(), country_it(), country_pl()) if x]   # al final: las pruebas de contrato indexan los primeros paises
+    cs += [x for x in (country_de(), country_fr(), country_it(), country_pl(), country_pt(), country_be()) if x]   # al final: las pruebas de contrato indexan los primeros paises
     rules, events, deadlines = J('es/rules.json'), [], []
     for cc, f in (('ES', 'es/watch.json'), ('DK', 'dk/watch.json')):
         w = J(f)
         if not w: continue
         for it in w.get('reviewNeeded', []):
             events.append({'type': 'RULE_CHANGED', 'cc': cc, 'detail': it if isinstance(it, str) else json.dumps(it, ensure_ascii=False, sort_keys=True), 'detectedAt': w['checkedAt'], 'officialUrl': (rules['source']['url'] if cc == 'ES' else J('dk/amounts.json')['documents'][0]['url'])})
-    for cc in ('FR', 'IT', 'PL'):
+    for cc in ('FR', 'IT', 'PL', 'PT', 'BE'):
         w, rr = J('%s/watch.json' % cc.lower()), J('%s/rules.json' % cc.lower())
         for it in (w or {}).get('reviewNeeded', []):
             events.append({'type': 'RULE_CHANGED', 'cc': cc, 'detail': it, 'detectedAt': w['checkedAt'], 'officialUrl': rr['source']['url']})
@@ -133,7 +140,7 @@ def build(today):
         for c in rules['calendar']:
             d = next_occurrence(c, today)
             if d: deadlines.append({'cc': 'ES', 'id': c['id'], 'kind': c['kind'], 'date': d.isoformat(), 'text': c['text'], 'regionalNote': c.get('regional') or None, 'legalBasis': c['legalBasis'], 'officialUrl': rules['source']['url']})
-    for cc in ('FR', 'IT', 'PL'):
+    for cc in ('FR', 'IT', 'PL', 'PT', 'BE'):
         rr = J('%s/rules.json' % cc.lower())
         for c in (rr or {}).get('calendar', []):
             d = next_occurrence(c, today)
