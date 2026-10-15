@@ -5476,6 +5476,12 @@
     "mapa_es"
    ],
    "notes": "Mercado de fertilizantes y comercialización de fitosanitarios (scripts/update-es-inputs.py): libros anuales del MAPA. Las importaciones y exportaciones de fertilizantes que contienen los libros proceden de DataComex (Ministerio de Industria y Turismo), que el propio MAPA cita como fuente; se muestran tal cual con esa cita. A partir de 2022 el MAPA excluye ciertas sustancias activas de los fitosanitarios: la web avisa de la ruptura de serie. La página del MAPA no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
+  },
+  "data/spain-health/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Focos de enfermedades de declaración obligatoria (scripts/update-es-rasve.py): listado público «Últimas notificaciones» de RASVE (MAPA). Solo los 15 últimos focos están publicados; Dehesa Index acumula el histórico desde la primera ejecución y lo dice en pantalla. La página no declara licencia propia: aviso legal general del MAPA registrado en mapa_es, confianza media, cita de la fuente."
   }
  },
  "derived": [

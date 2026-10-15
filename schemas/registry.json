@@ -1319,6 +1319,12 @@
    [
     "spain_inputs_pesticides"
    ]
+  ],
+  "spain-health/focos.json": [
+   "spain-health-focos",
+   [
+    "spain_health_focos"
+   ]
   ]
  },
  "globs": {

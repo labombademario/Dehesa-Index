@@ -4337,3 +4337,17 @@ def spain_inputs_pesticides(doc, errs, warns, stats):
     v = [x for x in t["v"] if x is not None]
     if not v or not 2e4 < v[-1] < 2e5: errs.append("fito: total %s t fuera de rango" % (v[-1] if v else None))
     stats["series"] = len(R)
+def spain_health_focos(doc, errs, warns, stats):
+    """Focos RASVE: ids unicos, fechas validas y no futuras, ni anteriores a 2000, y la clave de enfermedad coherente con el nombre."""
+    ids = set(); today = datetime.date.today() + datetime.timedelta(days=2); names = {"asf": "peste porcina africana", "lsd": "dermatosis nodular", "bluetongue": "lengua azul", "hpai": "influenza aviar", "wnv": "nilo occidental"}
+    for r in doc["focos"]:
+        if r["id"] in ids: errs.append("focos: id repetido %s" % r["id"])
+        ids.add(r["id"])
+        try: d = datetime.date.fromisoformat(r["date"])
+        except ValueError: errs.append("focos %s: fecha invalida" % r["id"]); continue
+        if d > today or d.year < 2000: errs.append("focos %s: fecha fuera de rango %s" % (r["id"], r["date"]))
+        if r["id"][:4] != r["date"][:4] and abs(int(r["id"][:4]) - d.year) > 1: errs.append("focos %s: el año del foco no cuadra con la fecha" % r["id"])
+        k = r["kind"]
+        if k in names and names[k] not in r["disease"].lower(): errs.append("focos %s: kind %s no coincide con %r" % (r["id"], k, r["disease"][:40]))
+        if k == "other" and any(n in r["disease"].lower() for n in names.values()): errs.append("focos %s: enfermedad vigilada marcada como other" % r["id"])
+    stats["series"] = len(doc["focos"])

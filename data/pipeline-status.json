@@ -6,7 +6,7 @@
   "ok": 179,
   "late": 1,
   "error": 2,
-  "not_run": 8,
+  "not_run": 9,
   "unknown": 0
  },
  "global": "error",
@@ -4545,6 +4545,19 @@
    "recent": null,
    "status": "not_run",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-health.yml",
+   "name": "Update Spain animal disease outbreaks (MAPA RASVE)",
+   "crons": [
+    "30 8 * * *"
+   ],
+   "nextRun": "2026-10-16T08:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 24.0
   }
  ]
 }

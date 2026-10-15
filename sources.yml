@@ -1411,6 +1411,17 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/spain-inputs/fertilizers.json data/spain-inputs/pesticides.json
     data: [spain-inputs/fertilizers.json, spain-inputs/pesticides.json, spain-inputs-log.txt]
     message: Mercado de fertilizantes y fitosanitarios de España (MAPA)
+  - id: es-health
+    name: Update Spain animal disease outbreaks (MAPA RASVE)
+    cron: ['30 8 * * *']
+    pre: ['bash scripts/trust-fnmt.sh']
+    script: scripts/update-es-rasve.py
+    timeout: 10
+    script_timeout: 5
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/spain-health/focos.json
+    data: [spain-health/focos.json, spain-health-log.txt]
+    message: Focos de enfermedades animales en España (MAPA RASVE)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)
     cron: ['35 6 3,17 * *']
