@@ -1,16 +1,16 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-15T14:15:14.942Z",
+  "generatedAt": "2026-10-15T14:31:35.977Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
       "product": "arroz",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:15.522Z",
+      "verifiedAt": "2026-10-15T14:31:10.253Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal medio del arroz cáscara (paddy) tipo japónica en España, EUR/tonelada. No es la media de la UE ni arroz índica. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 334.37,
@@ -19,11 +19,6 @@
       "frequency": "weekly",
       "changePct": 0,
       "history": [
-        {
-          "period": "10-22",
-          "year": 2006,
-          "value": 209.17
-        },
         {
           "period": "10-29",
           "year": 2006,
@@ -2467,17 +2462,17 @@
         {
           "period": "10-29",
           "year": 2017,
-          "value": 289.46
+          "value": 292.37
         },
         {
           "period": "11-05",
           "year": 2017,
-          "value": 292.42
+          "value": 289.68
         },
         {
           "period": "11-12",
           "year": 2017,
-          "value": 292.42
+          "value": 289.68
         },
         {
           "period": "11-19",
@@ -2487,7 +2482,7 @@
         {
           "period": "11-26",
           "year": 2017,
-          "value": 292.43
+          "value": 289.7
         },
         {
           "period": "12-03",
@@ -4788,9 +4783,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 334.37
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 334.37
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_arroz_us",
@@ -10566,7 +10566,7 @@
       "observationDate": "2026-08-02",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:24.576Z",
+      "verifiedAt": "2026-10-15T14:31:21.857Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de avena pienso (media nacional de los Estados miembros que la publican), EUR/tonelada. España no publica avena en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 149.57,
@@ -13371,7 +13371,7 @@
           "value": 149.57
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_avena_us",
@@ -16200,7 +16200,7 @@
       "observationDate": "2026-06",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:13.240Z",
+      "verifiedAt": "2026-10-15T14:31:07.648Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio mensual medio del azúcar en la UE (contratos mensuales), EUR/tonelada. Es la media de la UE, no un precio de España. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 501.4009,
@@ -17410,7 +17410,7 @@
           "value": 501.4009
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_cereales_canola_elevador_ca",
@@ -20880,17 +20880,17 @@
       "product": "cebada",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:19.597Z",
+      "verifiedAt": "2026-10-15T14:31:15.499Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la cebada pienso en el mercado de Lleida (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. El portal no publica cebada pienso en Zaragoza. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 238,
+      "value": 243,
       "currency": "EUR",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": 1.2766,
+      "changePct": 2.1008,
       "history": [
         {
           "period": "11-22",
@@ -23681,9 +23681,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 238
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 243
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_cebada_us",
@@ -26512,7 +26517,7 @@
       "observationDate": "2026-08-02",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:30.008Z",
+      "verifiedAt": "2026-10-15T14:31:28.891Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de centeno panificable (media nacional de los Estados miembros que lo publican), EUR/tonelada. España no publica centeno en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 170.89,
@@ -29307,7 +29312,7 @@
           "value": 170.89
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_porcino_cerdo_ab_ca",
@@ -32276,17 +32281,17 @@
       "product": "cerdo",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:08.294Z",
+      "verifiedAt": "2026-10-15T14:31:01.183Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 172.68,
+      "value": 170.37,
       "currency": "EUR",
       "unit": "100kg",
       "frequency": "weekly",
-      "changePct": -1.6405,
+      "changePct": -1.3377,
       "history": [
         {
           "period": "07-13",
@@ -35482,9 +35487,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 172.68
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 170.37
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_cerdo_us",
@@ -40831,17 +40841,17 @@
       "product": "colza",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:25.210Z",
+      "verifiedAt": "2026-10-15T14:31:22.535Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la colza en España (media nacional, salida de silo del agricultor), EUR/tonelada. No es la media de la UE ni el futuro de Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 479.51,
+      "value": 477.07,
       "currency": "EUR",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": 0.8921,
+      "changePct": -0.5089,
       "history": [
         {
           "period": "04-25",
@@ -42262,9 +42272,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 479.51
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 477.07
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_colza_us",
@@ -45951,17 +45966,17 @@
       "product": "cordero",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:11.474Z",
+      "verifiedAt": "2026-10-15T14:31:05.460Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en España, EUR/100 kg de canal. No es la media de la UE ni cordero ligero. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 1052.5,
+      "value": 1061.6,
       "currency": "EUR",
       "unit": "100kg",
       "frequency": "weekly",
-      "changePct": 2.0062,
+      "changePct": 0.8646,
       "history": [
         {
           "period": "01-04",
@@ -49032,9 +49047,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 1052.5
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 1061.6
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_fertilizantes_dap_eu",
@@ -49044,7 +49064,7 @@
       "observationDate": "2026-09",
       "publicationDate": "2026-10-10",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:33.854Z",
+      "verifiedAt": "2026-10-15T14:31:33.839Z",
       "comparability": "not_comparable",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes fosfatados (P) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es DAP: la Comisión no especifica el producto, así que no es comparable con DAP ni con el índice DTN. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 742,
@@ -49519,7 +49539,7 @@
           "value": 742
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_defra_barley_output_index",
@@ -86032,17 +86052,17 @@
       "product": "harina_soja",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:35.216Z",
+      "verifiedAt": "2026-10-15T14:31:35.621Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la harina de soja de 40-50 % de proteína en España (media, salida de fábrica), EUR/tonelada. Sustituye a la referencia anterior de colza en Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 422.46,
+      "value": 435.07,
       "currency": "EUR",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": -0.5602,
+      "changePct": 2.9849,
       "history": [
         {
           "period": "02-07",
@@ -87523,9 +87543,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 422.46
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 435.07
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_pienso_harina_soja_us",
@@ -90593,23 +90618,18 @@
       "product": "huevos",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:12.831Z",
+      "verifiedAt": "2026-10-15T14:31:07.119Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 248.31,
+      "value": 249.65,
       "currency": "EUR",
       "unit": "100kg",
       "frequency": "weekly",
-      "changePct": 1.0664,
+      "changePct": 0.5396,
       "history": [
-        {
-          "period": "10-22",
-          "year": 2006,
-          "value": 89.46
-        },
         {
           "period": "10-29",
           "year": 2006,
@@ -94959,9 +94979,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 248.31
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 249.65
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_huevos_us",
@@ -96532,23 +96557,18 @@
       "product": "leche_polvo",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:33.469Z",
+      "verifiedAt": "2026-10-15T14:31:33.298Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la leche desnatada en polvo (SMP), agregado de la UE calculado por la Comisión, EUR/100 kg. No es un futuro ni una media calculada por Dehesa Index. La serie de España tiene huecos de varias semanas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 321.06,
+      "value": 324.74,
       "currency": "EUR",
       "unit": "100kg",
       "frequency": "weekly",
-      "changePct": 3.2281,
+      "changePct": 1.1462,
       "history": [
-        {
-          "period": "10-22",
-          "year": 2006,
-          "value": 223.8
-        },
         {
           "period": "10-29",
           "year": 2006,
@@ -101753,9 +101773,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 321.06
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 324.74
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_lacteos_leche_polvo_us",
@@ -104131,7 +104156,7 @@
       "observationDate": "2026-09-30",
       "publicationDate": "2026-10-03",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:34.692Z",
+      "verifiedAt": "2026-10-15T14:31:34.926Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Milk Market Observatory (Agri-food Data Portal): precio mensual de la leche cruda de vaca pagada al productor en España, EUR/100 kg, último mes completo. Las cifras del último mes pueden ser provisionales. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 45.53,
@@ -105446,7 +105471,7 @@
           "value": 45.53
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_lacteos_leche_uk",
@@ -119596,17 +119621,17 @@
       "product": "maiz",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:16.517Z",
+      "verifiedAt": "2026-10-15T14:31:11.546Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del maíz pienso en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro de Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 259,
       "currency": "EUR",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": -0.3846,
+      "changePct": 0,
       "history": [
         {
           "period": "11-22",
@@ -122347,9 +122372,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 259
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 259
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_maiz_us",
@@ -125175,23 +125205,18 @@
       "product": "mantequilla",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:31.681Z",
+      "verifiedAt": "2026-10-15T14:31:31.133Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la mantequilla, agregado de la UE calculado por la Comisión, EUR/100 kg. No es un futuro ni una media calculada por Dehesa Index. La serie de España tiene huecos de varias semanas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 412.54,
+      "value": 414.45,
       "currency": "EUR",
       "unit": "100kg",
       "frequency": "weekly",
-      "changePct": -3.023,
+      "changePct": 0.463,
       "history": [
-        {
-          "period": "10-22",
-          "year": 2006,
-          "value": 253.1
-        },
         {
           "period": "10-29",
           "year": 2006,
@@ -130396,9 +130421,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 412.54
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 414.45
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_ganado_novillo_ab_ca",
@@ -130861,23 +130891,18 @@
       "product": "oliva",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:14.841Z",
+      "verifiedAt": "2026-10-15T14:31:09.517Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal medio nacional del aceite de oliva virgen extra (hasta 0,8 %) en España, EUR/100 kg. No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 343.19,
+      "value": 331.86,
       "currency": "EUR",
       "unit": "100kg",
       "frequency": "weekly",
-      "changePct": -0.4785,
+      "changePct": -3.3014,
       "history": [
-        {
-          "period": "10-22",
-          "year": 2006,
-          "value": 262.52
-        },
         {
           "period": "10-29",
           "year": 2006,
@@ -136067,9 +136092,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 343.19
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 331.86
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_petroleo_brent_eu",
@@ -159550,23 +159580,18 @@
       "product": "pollo",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:12.162Z",
+      "verifiedAt": "2026-10-15T14:31:06.339Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 2.3531,
+      "value": 2.3386,
       "currency": "EUR",
       "unit": "kg",
       "frequency": "weekly",
-      "changePct": 0.7148,
+      "changePct": -0.6162,
       "history": [
-        {
-          "period": "10-22",
-          "year": 2006,
-          "value": 1.7454
-        },
         {
           "period": "10-29",
           "year": 2006,
@@ -164771,9 +164796,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 2.3531
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 2.3386
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_pollo_us",
@@ -166942,7 +166972,7 @@
       "observationDate": "2026-09",
       "publicationDate": "2026-10-10",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:34.249Z",
+      "verifiedAt": "2026-10-15T14:31:34.371Z",
       "comparability": "not_comparable",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes potásicos (K) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es MOP: la Comisión no especifica el producto, así que no es comparable con MOP ni con el índice DTN. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 363,
@@ -167417,7 +167447,7 @@
           "value": 363
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_cereales_soja_grano_ca",
@@ -174147,17 +174177,17 @@
       "product": "trigo",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:18.629Z",
+      "verifiedAt": "2026-10-15T14:31:14.245Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada país (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercialización no son idénticas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 266,
+      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "value": 271.8,
       "currency": "EUR",
       "unit": "tonelada",
       "frequency": "weekly",
-      "changePct": 0.7194,
+      "changePct": 2.1805,
       "history": [
         {
           "period": "11-22",
@@ -176413,9 +176443,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 266
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 271.8
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_trigo_us",
@@ -184165,23 +184200,18 @@
       "product": "vaca",
       "region": "eu",
       "sourceId": "eu_agrifood",
-      "observationDate": "2026-10-04",
-      "publicationDate": "2026-10-10",
+      "observationDate": "2026-10-11",
+      "publicationDate": "2026-10-15",
       "status": "verified",
-      "verifiedAt": "2026-10-10T03:41:10.944Z",
+      "verifiedAt": "2026-10-15T14:31:04.744Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de macho joven (categoría A, conformación R3, la referencia UE) en España, EUR/100 kg de canal. No es vaca de desecho ni la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
-      "value": 605.72,
+      "value": 605.93,
       "currency": "EUR",
       "unit": "100kg",
       "frequency": "weekly",
-      "changePct": -0.9112,
+      "changePct": 0.0347,
       "history": [
-        {
-          "period": "10-22",
-          "year": 2006,
-          "value": 331.83
-        },
         {
           "period": "10-29",
           "year": 2006,
@@ -189386,9 +189416,14 @@
           "period": "10-04",
           "year": 2026,
           "value": 605.72
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 605.93
         }
       ],
-      "snapshotDate": "2026-10-10"
+      "snapshotDate": "2026-10-15"
     },
     {
       "id": "di_vaca_us",
