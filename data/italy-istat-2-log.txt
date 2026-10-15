@@ -1,0 +1,23 @@
+cultivos: 202 cultivos, 23 areas, 2018 -> 2026
+escrito crops.json 417 KB
+lacteos: 29 productos, 5 tipos de establecimiento, 21 areas, 2015 -> 2021
+escrito milk.json 31 KB
+agriturismo: 66 series, 21 areas, 2018 -> 2024 ; dinamica ['ACT', 'CLOSED', 'NEW'] altimetria ['HI', 'MO', 'PL'] sexo ['1', '2']
+escrito agritourism.json 83 KB
+  censo DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS 780 filas
+  censo DF_DCAT_CENSAGRIC2020_SURF_SPA2023_2 138 filas
+  censo DF_DCAT_CENSAGRIC2020_IRRSIS 1554 filas
+  censo DF_DCAT_CENSAGRIC2020_IRRSIS_SPA2023 270 filas
+  censo DF_DCAT_CENSAGRIC2020_IRRSOU 1560 filas
+  censo DF_DCAT_CENSAGRIC2020_IRRSOU_SPA2023_1 274 filas
+  censo DF_DCAT_CENSAGRIC2020_SURF_IRRCROPS 4892 filas
+  censo DF_DCAT_CENSAGRIC2020_IRRCROPS_SPA2023_1 820 filas
+riego cons : 6 series
+riego sys : 12 series
+riego src : 16 series
+riego crop : 42 series
+escrito irrigation.json 232 KB
+  municipios en el catalogo: 9380
+  prefijos de provincia emparejados: 107 de 107 ; sin emparejar: [] ; regiones: ['ITC1', 'ITC2', 'ITC3', 'ITC4', 'ITD3', 'ITD4', 'ITD5', 'ITDA', 'ITE1', 'ITE2', 'ITE3', 'ITE4', 'ITF1', 'ITF2', 'ITF3', 'ITF4', 'ITF5', 'ITF6', 'ITG1', 'ITG2']
+municipios con dato: 7752
+escrito comuni.json 553 KB
