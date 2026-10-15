@@ -460,7 +460,13 @@
   /* Variantes casi identicas (trigo y espelta / trigo blando y espelta / ... ; mismo producto en varias plazas): una sola entrada en la lista y las variantes como opcion secundaria */
   var GSTOP = { and: 1, y: 1, et: 1, e: 1, de: 1, of: 1, the: 1 };
   function gtok(k) { return norm(k).split(/[^a-z0-9]+/).filter(function (w) { return w && !GSTOP[w]; }); }
-  function gsub(a, b) { var i; if (a.length >= b.length) return false; for (i = 0; i < a.length; i++) if (b.indexOf(a[i]) < 0) return false; return true; }
+  var GGEO = { west: 1, east: 1, north: 1, south: 1, new: 1, occidental: 1, oriental: 1, norte: 1, sur: 1, nord: 1, ouest: 1, est: 1, ovest: 1, nuevo: 1, nueva: 1, nouveau: 1, nouvelle: 1, nuovo: 1, nuova: 1, septentrional: 1, meridional: 1 };
+  function gsub(a, b) { /* a es una version mas general de b: contiene todas sus palabras y b anade como mucho 2 calificativos (no un punto cardinal: Virginia no es Virginia Occidental) */
+    var i, extra = 0; if (a.length >= b.length) return false;
+    for (i = 0; i < a.length; i++) if (b.indexOf(a[i]) < 0) return false;
+    for (i = 0; i < b.length; i++) if (a.indexOf(b[i]) < 0) { extra++; if (GGEO[b[i]]) return false; }
+    return extra <= 2;
+  }
   function groupInfo(list) {
     var info = list.map(function (x) {
       var l = shortLab(x), i = l.indexOf(': '), k = '', m = l, par = '', pm;
@@ -486,6 +492,11 @@
       var rs = byT[t]; if (rs.length < 2) return;
       rs.forEach(function (r) { var best = r; rs.forEach(function (o) { if (o !== r && gsub(o.ht, r.ht) && (best === r || o.ht.length < best.ht.length)) best = o; }); r.broot = best.head; });
       rs.forEach(function (r) { var key = 'B\u0001' + t + '\u0001' + r.broot; if (!groups[key]) { groups[key] = { key: key, disp: r.k + ': ' + r.broot + r.tail, root: r.k, mem: [] }; order.push(groups[key]); } if (r.g.mem.length === 1) { order.splice(order.indexOf(r.g), 1); } groups[key].mem.push(r); r.g = groups[key]; r.v = r.head; });
+    });
+    order = order.filter(function (g) { /* un grupo de mas de 8 ya no son "variantes casi iguales" sino productos distintos (cortes, calidades...): se dejan sueltos */
+      if (g.mem.length <= 8) return true;
+      g.mem.forEach(function (r) { r.g = { key: 'S\u0001' + r.x.id, disp: shortLab(r.x), root: '', mem: [r] }; r.v = r.k; });
+      return false;
     });
     return { info: info, groups: order };
   }
