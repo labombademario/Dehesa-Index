@@ -112,6 +112,8 @@ FOB = (('soy', 'Soybeans', r'^habas_soja_demas_granel'), ('maize', 'Maize', r'^m
 def fob():
     try:
         pkg = package('precios-fob-oficiales'); head, rows = table(csv_url(pkg, lambda n, u: 'valores-diarios' in u))
+        try: log('fob: ficha modificada %s; ultimo dia con fila %s; filas %d' % (pkg.get('metadata_modified') if isinstance(pkg, dict) else '?', max((r[0][:10] for r in rows if r and r[0][:4].isdigit()), default='-'), len(rows)))
+        except Exception as e: log('fob: sin diagnostico (%s)' % str(e)[:80])
         for key, en, rx in FOB:
             try: i = col(head, rx)
             except KeyError: log('sin columna FOB', key); continue
