@@ -1,32 +1,76 @@
-14:46:05 gdp: 13 paises
-14:46:06 gdppc: 13 paises
-14:46:07 pop: 13 paises
-14:46:07 unemp: 13 paises
-14:46:08 agri: 13 paises
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/USA: HTTP Error 403: Forbidden
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ESP: HTTP Error 403: Forbidden
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/FRA: HTTP Error 403: Forbidden
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DEU: HTTP Error 403: Forbidden
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/BEL: HTTP Error 403: Forbidden
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUT: HTTP Error 403: Forbidden
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/PRT: HTTP Error 403: Forbidden
-14:46:08   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ITA: HTTP Error 403: Forbidden
-14:46:09   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DNK: HTTP Error 403: Forbidden
-14:46:09   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NLD: HTTP Error 403: Forbidden
-14:46:09   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CAN: HTTP Error 403: Forbidden
-14:46:09   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUS: HTTP Error 403: Forbidden
-14:46:09 debt FMI: 0 paises
-14:46:09 debt US WB central
-14:46:09 debt ES Eurostat 2025
-14:46:10 debt FR Eurostat 2025
-14:46:10 debt DE Eurostat 2025
-14:46:11 debt BE Eurostat 2025
-14:46:11 debt AT Eurostat 2025
-14:46:11 debt PT Eurostat 2025
-14:46:12 debt IT Eurostat 2025
-14:46:12 debt DK Eurostat 2025
-14:46:13 debt NL Eurostat 2025
-14:46:13 debt CA WB central
-14:46:13 debt AU WB central
-14:46:13 debt EU Eurostat 2025
-14:46:14 wageh Eurostat: 10 paises
+03:14:35 gdp: 35 paises
+03:14:35 gdppc: 35 paises
+03:14:35 pop: 35 paises
+03:14:36 unemp: 35 paises
+03:14:36 agri: 35 paises
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/USA: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ESP: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/FRA: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DEU: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/BEL: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUT: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/PRT: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ITA: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/DNK: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/NLD: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CAN: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/AUS: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/BGR: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CYP: HTTP Error 403: Forbidden
+03:14:36   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CZE: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/EST: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/GRC: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/FIN: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/HRV: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/HUN: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/IRL: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LTU: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LUX: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/LVA: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/MLT: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/POL: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ROU: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SWE: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SVN: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/SVK: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/GBR: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ARG: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CHE: HTTP Error 403: Forbidden
+03:14:37   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/CHL: HTTP Error 403: Forbidden
+03:14:37 debt FMI: 0 paises
+03:14:37 debt US WB central
+03:14:38 debt ES Eurostat 2025
+03:14:38 debt FR Eurostat 2025
+03:14:38 debt DE Eurostat 2025
+03:14:39 debt BE Eurostat 2025
+03:14:39 debt AT Eurostat 2025
+03:14:39 debt PT Eurostat 2025
+03:14:39 debt IT Eurostat 2025
+03:14:40 debt DK Eurostat 2025
+03:14:40 debt NL Eurostat 2025
+03:14:40 debt CA WB central
+03:14:40 debt AU WB central
+03:14:41 debt EU Eurostat 2025
+03:14:41 debt BG Eurostat 2025
+03:14:41 debt CY Eurostat 2025
+03:14:41 debt CZ Eurostat 2025
+03:14:42 debt EE Eurostat 2025
+03:14:42 debt EL Eurostat 2025
+03:14:42 debt FI Eurostat 2025
+03:14:43 debt HR Eurostat 2025
+03:14:43 debt HU Eurostat 2025
+03:14:43 debt IE Eurostat 2025
+03:14:44 debt LT Eurostat 2025
+03:14:44 debt LU Eurostat 2025
+03:14:44 debt LV Eurostat 2025
+03:14:45 debt MT Eurostat 2025
+03:14:45 debt PL Eurostat 2025
+03:14:45 debt RO Eurostat 2025
+03:14:45 debt SE Eurostat 2025
+03:14:46 debt SI Eurostat 2025
+03:14:46 debt SK Eurostat 2025
+03:14:46 debt UK WB central
+03:14:46 debt CH WB central
+03:14:46 debt CL WB central
+03:14:47 wageh Eurostat: 28 paises
+03:14:47 infl: 32 paises
