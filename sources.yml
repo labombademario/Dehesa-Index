@@ -1358,12 +1358,13 @@ sources:
   - id: ers-baseline
     name: Update USDA ERS 10-year agricultural baseline projections (Agricultural Baseline Database)
     cron: ['20 6 20 11,12,2,3 *']
+    pre: ['pip install openpyxl']
     script: scripts/update-ers-baseline.py
     timeout: 15
     script_timeout: 10
     continue: true
     check: python3 scripts/validate-data.py --no-report --files data/us-markets/baseline.json
-    data: [us-markets/baseline.json, ers-baseline-log.txt]
+    data: [us-markets/baseline.json, us-markets/baseline-tables.json, ers-baseline-log.txt]
     message: Proyecciones agrarias a 10 anos (USDA ERS)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)

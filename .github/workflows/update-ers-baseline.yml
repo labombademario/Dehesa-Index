@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
+      - run: pip install openpyxl
       - id: fetch
         run: bash scripts/annotate-failure.sh python3 scripts/update-ers-baseline.py
         timeout-minutes: 10
@@ -23,10 +24,10 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/us-markets/baseline.json
+          files: data/us-markets/baseline.json data/us-markets/baseline-tables.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/us-markets/baseline.json
+        run: python3 scripts/detect-revisions.py data/us-markets/baseline.json data/us-markets/baseline-tables.json
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
         if: always()
@@ -34,7 +35,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Proyecciones agrarias a 10 anos (USDA ERS)" data/us-markets/baseline.json data/ers-baseline-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Proyecciones agrarias a 10 anos (USDA ERS)" data/us-markets/baseline.json data/us-markets/baseline-tables.json data/ers-baseline-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
