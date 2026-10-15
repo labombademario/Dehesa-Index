@@ -64,7 +64,14 @@ NO_WATCH = {
     'PT': 'sin vigilancia automatica: no se ha podido probar la lectura del Diario da Republica ni del IFAP desde estos servidores, asi que no se promete una vigilancia que no se ha visto funcionar',
     'BE': 'sin vigilancia automatica: no se ha podido probar la lectura del Moniteur belge, del Codex Vlaanderen ni de Wallex desde estos servidores',
     'HR': 'sin vigilancia automatica: no se ha podido probar la lectura de Narodne novine desde estos servidores',
-    'EL': 'sin vigilancia automatica: no se ha podido probar la lectura del ΦΕΚ (Εθνικό Τυπογραφείο) ni de la AADE desde estos servidores'}
+    'EL': 'sin vigilancia automatica: no se ha podido probar la lectura del ΦΕΚ (Εθνικό Τυπογραφείο) ni de la AADE desde estos servidores',
+    'NL': 'sin vigilancia automatica: no se ha probado la lectura de wetten.overheid.nl ni del Staatscourant desde estos servidores',
+    'AT': 'sin vigilancia automatica: no se ha probado la lectura del RIS desde estos servidores',
+    'IE': 'sin vigilancia automatica: las paginas de gov.ie no se han probado desde estos servidores',
+    'RO': 'sin vigilancia automatica: legislatie.just.ro no se puede leer con robots (ROBOTS_DISALLOWED)',
+    'HU': 'sin vigilancia automatica: no se ha probado la lectura de Magyar Kozlony ni del Nemzeti Jogszabalytar desde estos servidores',
+    'CZ': 'sin vigilancia automatica: e-Sbirka no se pudo leer; el texto se leyo en una copia editorial',
+    'SE': 'sin vigilancia automatica: no se ha probado la lectura de la Svensk forfattningssamling desde estos servidores'}
 def country_nat(cc, name, amounts_comp):
     """FR, IT y PL: reglas curadas (rules.json), vigilancia (watch.json) e importes si los hay. Solo pagos directos: el resto de la PAC no se ha leido."""
     r, w = J('%s/rules.json' % cc.lower()), J('%s/watch.json' % cc.lower())
@@ -98,6 +105,20 @@ def country_hr():
     return country_nat('HR', 'Croacia', (ni('los importes planificados por hectarea y por animal del Pravilnik de 2026 (ayudas asociadas incluidas) figuran en las reglas; no se han leido los pagos efectivos', 'NOT_READ'), []))
 def country_el():
     return country_nat('EL', 'Grecia', (ni('las decisiones de 2023 no fijan importes; solo se han leido tres decisiones de importes de ayudas asociadas (figuran en las reglas) y faltan basica, redistributiva, jovenes y ecoesquemas', 'NOT_READ'), []))
+def country_nl():
+    return country_nat('NL', 'Paises Bajos', (ni('las tarifas reales de 2023 a 2025 (provisionales y definitivas, RVO y Staatscourant) figuran en las reglas; de 2026 solo un minimo previsto', 'NOT_READ'), []))
+def country_at():
+    return country_nat('AT', 'Austria', (ni('los importes finales de 2024 y previstos de 2026 de la AMA figuran en las reglas; no se han leido los de la ecorregulacion', 'NOT_READ'), []))
+def country_ie():
+    return country_nat('IE', 'Irlanda', (ni('importes planificados en 2022 y el del ecoesquema 2025 figuran en las reglas; no se han leido las condiciones de 2026', 'NOT_READ'), []))
+def country_ro():
+    return country_nat('RO', 'Rumania', (ni('solo hay importes adoptados de la campana 2023 (Ordin 447/2023); los de 2025 son borradores y no hay de 2024 ni 2026', 'NOT_READ'), []))
+def country_hu():
+    return country_nat('HU', 'Hungria', (ni('solo intervalos minimo-maximo de 2025-2026 y anticipos de 2026 en forintos; ningun importe unitario final', 'NOT_READ'), []))
+def country_cz():
+    return country_nat('CZ', 'Chequia', (ni('solo tipos planificados de 2026 de BISS, CRISS, lupulo y hortalizas; faltan ecorregimenes, jovenes y el resto de asociadas', 'NOT_READ'), []))
+def country_se():
+    return country_nat('SE', 'Suecia', (ni('margenes del anexo 3 de la ordenanza y cifras planificadas de 2026 o ya fijadas de 2025 figuran en las reglas; no se han leido los definitivos de 2026', 'NOT_READ'), []))
 def country_be():
     return country_nat('BE', 'Belgica', (ni('en Valonia el ministro fija los importes y en Flandes no se han leido; no hay importes por hectarea', 'NOT_READ'), []))
 def country_eu():
@@ -115,8 +136,7 @@ def country_eu():
                 'watch': ni('sin vigilancia de cambios del texto consolidado (solo se anota la version consolidada)', 'NOT_BUILT')}}
 def blocked(cc, name, reason, code):
     return {'cc': cc, 'name': name, 'scheme': None, 'legalAct': None, 'updatedAt': None, 'components': {k: ni(reason, code) for k in COMPONENTS}}
-PENDING = [
-    ('NL', 'Paises Bajos', NO_SOURCE, 'NOT_ASSESSED'), ('AT', 'Austria', NO_SOURCE, 'NOT_ASSESSED')]
+PENDING = []
 def next_occurrence(cal, today):
     w = cal['when']; best = None
     for y in (today.year - 1, today.year, today.year + 1):
@@ -127,14 +147,14 @@ def next_occurrence(cal, today):
 def build(today):
     cs = [x for x in (country_es(), country_dk(), country_eu()) if x]
     cs += [blocked(cc, n, r, c) for cc, n, r, c in PENDING]
-    cs += [x for x in (country_de(), country_fr(), country_it(), country_pl(), country_pt(), country_be(), country_hr(), country_el()) if x]   # al final: las pruebas de contrato indexan los primeros paises
+    cs += [x for x in (country_de(), country_fr(), country_it(), country_pl(), country_pt(), country_be(), country_hr(), country_el(), country_nl(), country_at(), country_ie(), country_ro(), country_hu(), country_cz(), country_se()) if x]   # al final: las pruebas de contrato indexan los primeros paises
     rules, events, deadlines = J('es/rules.json'), [], []
     for cc, f in (('ES', 'es/watch.json'), ('DK', 'dk/watch.json')):
         w = J(f)
         if not w: continue
         for it in w.get('reviewNeeded', []):
             events.append({'type': 'RULE_CHANGED', 'cc': cc, 'detail': it if isinstance(it, str) else json.dumps(it, ensure_ascii=False, sort_keys=True), 'detectedAt': w['checkedAt'], 'officialUrl': (rules['source']['url'] if cc == 'ES' else J('dk/amounts.json')['documents'][0]['url'])})
-    for cc in ('FR', 'IT', 'PL', 'PT', 'BE', 'HR', 'EL'):
+    for cc in ('FR', 'IT', 'PL', 'PT', 'BE', 'HR', 'EL', 'NL', 'AT', 'IE', 'RO', 'HU', 'CZ', 'SE'):
         w, rr = J('%s/watch.json' % cc.lower()), J('%s/rules.json' % cc.lower())
         for it in (w or {}).get('reviewNeeded', []):
             events.append({'type': 'RULE_CHANGED', 'cc': cc, 'detail': it, 'detectedAt': w['checkedAt'], 'officialUrl': rr['source']['url']})
@@ -146,7 +166,7 @@ def build(today):
         for c in rules['calendar']:
             d = next_occurrence(c, today)
             if d: deadlines.append({'cc': 'ES', 'id': c['id'], 'kind': c['kind'], 'date': d.isoformat(), 'text': c['text'], 'regionalNote': c.get('regional') or None, 'legalBasis': c['legalBasis'], 'officialUrl': rules['source']['url']})
-    for cc in ('FR', 'IT', 'PL', 'PT', 'BE', 'HR', 'EL'):
+    for cc in ('FR', 'IT', 'PL', 'PT', 'BE', 'HR', 'EL', 'NL', 'AT', 'IE', 'RO', 'HU', 'CZ', 'SE'):
         rr = J('%s/rules.json' % cc.lower())
         for c in (rr or {}).get('calendar', []):
             d = next_occurrence(c, today)

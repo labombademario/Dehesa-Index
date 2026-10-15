@@ -169,84 +169,6 @@
    }
   },
   {
-   "cc": "NL",
-   "name": "Paises Bajos",
-   "scheme": null,
-   "legalAct": null,
-   "updatedAt": null,
-   "components": {
-    "strategicPlan": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "interventions": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "amounts": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "rules": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "importantDates": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    }
-   }
-  },
-  {
-   "cc": "AT",
-   "name": "Austria",
-   "scheme": null,
-   "legalAct": null,
-   "updatedAt": null,
-   "components": {
-    "strategicPlan": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "interventions": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "amounts": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "rules": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "importantDates": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    },
-    "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
-     "reasonCode": "NOT_ASSESSED"
-    }
-   }
-  },
-  {
    "cc": "DE",
    "name": "Alemania",
    "scheme": "Direktzahlungen und Oko-Regelungen (Bundesanzeiger y GAPDZV)",
@@ -642,6 +564,335 @@
      "reasonCode": "SOURCE_UNREACHABLE"
     }
    }
+  },
+  {
+   "cc": "NL",
+   "name": "Paises Bajos",
+   "scheme": "Nationaal Strategisch Plan GLB 2023-2027 (rechtstreekse betalingen: Uitvoeringsregeling GLB 2023)",
+   "legalAct": {
+    "title": "Uitvoeringsregeling GLB 2023 (Regeling van de Minister van Landbouw, Natuur en Voedselkwaliteit; Stcrt. 2022, 29696, con modificaciones), Staatscourant / wetten.overheid.nl",
+    "ref": "BWBR0047444",
+    "url": "https://wetten.overheid.nl/BWBR0047444/2026-01-21",
+    "sourceId": "wetten_nl"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "nl/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "las tarifas reales de 2023 a 2025 (provisionales y definitivas, RVO y Staatscourant) figuran en las reglas; de 2026 solo un minimo previsto",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "nl/rules.json",
+     "count": 12,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "nl/rules.json",
+     "count": 5,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura de wetten.overheid.nl ni del Staatscourant desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "AT",
+   "name": "Austria",
+   "scheme": "GAP-Strategieplan Österreich 2023-2027 (Direktzahlungen: MOG 2021 y GAP-Strategieplan-Anwendungsverordnung)",
+   "legalAct": {
+    "title": "Marktordnungsgesetz 2021 (MOG 2021) y GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022 idF BGBl. II Nr. 1/2026, Rechtsinformationssystem des Bundes (RIS)",
+    "ref": "MOG 2021; GSP-AV BGBl. II 403/2022",
+    "url": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf",
+    "sourceId": "ris_at"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "at/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes finales de 2024 y previstos de 2026 de la AMA figuran en las reglas; no se han leido los de la ecorregulacion",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "at/rules.json",
+     "count": 12,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "at/rules.json",
+     "count": 7,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura del RIS desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "IE",
+   "name": "Irlanda",
+   "scheme": "Plan Estratégico de la PAC de Irlanda 2023-2027 (pagos directos: BISS, CRISS, CISYF, ecoesquema y ayuda a las proteaginosas)",
+   "legalAct": {
+    "title": "Department of Agriculture, Food and the Marine (gov.ie): páginas de los servicios BISS 2026, CRISS y CISYF; Summary of Ireland's CAP Strategic Plan 2023-2027 (nov. 2022); respuesta parlamentaria del Ministro (22-2-2024); S.I. No. 628 of 2023 (intercambio de datos)",
+    "ref": "BISS 2026 (gov.ie)",
+    "url": "https://www.gov.ie/en/service/4ae67-basic-income-support-for-sustainability-biss-scheme/",
+    "sourceId": "gov_ie_dafm"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "ie/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "importes planificados en 2022 y el del ecoesquema 2025 figuran en las reglas; no se han leido las condiciones de 2026",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "ie/rules.json",
+     "count": 12,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "ie/rules.json",
+     "count": 3,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: las paginas de gov.ie no se han probado desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "RO",
+   "name": "Rumania",
+   "scheme": "Planul Strategic PAC 2023-2027 al României (plăți directe: HG 1.571/2022, Ordinele MADR 106/2024, 44/2026, 268/2025 și 447/2023)",
+   "legalAct": {
+    "title": "Hotărârea Guvernului nr. 1.571/2022 (modificada por HG 208/2024); Ordinul MADR nr. 106/2024 (modificado por el Ordinul 44/2026); Ordinul MADR nr. 268/2025 (sanciones); Ordinul MADR nr. 447/2023; OUG nr. 85/2023, Monitorul Oficial al României",
+    "ref": "HG 1.571/2022",
+    "url": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024",
+    "sourceId": "monitorul_ro"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "ro/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "solo hay importes adoptados de la campana 2023 (Ordin 447/2023); los de 2025 son borradores y no hay de 2024 ni 2026",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "ro/rules.json",
+     "count": 13,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "ro/rules.json",
+     "count": 3,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: legislatie.just.ro no se puede leer con robots (ROBOTS_DISALLOWED)",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "HU",
+   "name": "Hungria",
+   "scheme": "Magyarország KAP Stratégiai Terve 2023-2027 (közvetlen támogatások: 15-21/2024. (IV. 9.) AM rendeletek)",
+   "legalAct": {
+    "title": "15/2024. (egységes kérelem), 17/2024. (Agro-ökológiai Program), 18/2024. (alapszintű jövedelemtámogatás, újraelosztó), 19/2024. (termeléshez kötött), 20/2024. (aktív mezőgazdasági termelő) y 21/2024. (fiatal mezőgazdasági termelők) (IV. 9.) AM rendelet, modificados por el 5/2025. (IV. 3.) AM rendelet, Magyar Közlöny, y comunicados IH de la Autoridad Nacional de Gestión de la PAC",
+    "ref": "AM 15-21/2024",
+    "url": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R",
+    "sourceId": "magyarkozlony_hu"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "hu/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "solo intervalos minimo-maximo de 2025-2026 y anticipos de 2026 en forintos; ningun importe unitario final",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "hu/rules.json",
+     "count": 12,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "hu/rules.json",
+     "count": 2,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura de Magyar Kozlony ni del Nemzeti Jogszabalytar desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "CZ",
+   "name": "Chequia",
+   "scheme": "Strategický plán SZP ČR 2023-2027 (přímé platby: nařízení vlády č. 83/2023 Sb.)",
+   "legalAct": {
+    "title": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, ve znění nařízení vlády č. 45/2026 Sb. y č. 167/2026 Sb., Sbírka zákonů; y metodické příručky del Ministerio de Agricultura 2026",
+    "ref": "NV 83/2023 Sb.",
+    "url": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83",
+    "sourceId": "esbirka_cz"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "cz/rules.json",
+     "count": 6,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "solo tipos planificados de 2026 de BISS, CRISS, lupulo y hortalizas; faltan ecorregimenes, jovenes y el resto de asociadas",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "cz/rules.json",
+     "count": 12,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "cz/rules.json",
+     "count": 2,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: e-Sbirka no se pudo leer; el texto se leyo en una copia editorial",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "SE",
+   "name": "Suecia",
+   "scheme": "Strategisk plan för Sveriges genomförande av EU:s gemensamma jordbrukspolitik 2023-2027 (direktstöd: förordning 2022:1826)",
+   "legalAct": {
+    "title": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik (SFS 2022:1826, con las modificaciones SFS 2023:952, 2024:1204, 2025:845, 2025:1322 y 2026:288) y SJVFS 2022:30 (modificada por SJVFS 2025:33) y SJVFS 2022:29 (modificada por SJVFS 2025:34), Svensk författningssamling / Statens jordbruksverks författningssamling",
+    "ref": "SFS 2022:1826",
+    "url": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+    "sourceId": "svensk_forfattningssamling"
+   },
+   "updatedAt": "2026-10-15",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "se/rules.json",
+     "count": 5,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "margenes del anexo 3 de la ordenanza y cifras planificadas de 2026 o ya fijadas de 2025 figuran en las reglas; no se han leido los definitivos de 2026",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "se/rules.json",
+     "count": 14,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "se/rules.json",
+     "count": 4,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura de la Svensk forfattningssamling desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
   }
  ],
  "watch": {
@@ -656,6 +907,15 @@
   "events": [],
   "deadlines": [
    {
+    "cc": "NL",
+    "id": "changes-close",
+    "kind": "deadline",
+    "date": "2026-10-15",
+    "text": "Último día para comunicar cambios en la solicitud (15 de octubre del año de solicitud).",
+    "legalBasis": "Uitvoeringsregeling GLB 2023 (BWBR0047444), art. 10",
+    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
+   },
+   {
     "cc": "ES",
     "id": "advance",
     "kind": "window",
@@ -664,6 +924,15 @@
     "regionalNote": "Lo paga la comunidad autónoma.",
     "legalBasis": "RD 1048/2022, art. 118.2",
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "IE",
+    "id": "advance-open",
+    "kind": "window-start",
+    "date": "2026-10-16",
+    "text": "Desde el 16 de octubre pueden pagarse anticipos de los pagos directos, de hasta el 70 % (en 2026 se admite hasta el 75 %, incluso antes de esa fecha).",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a)",
+    "officialUrl": "https://www.gov.ie/en/service/4ae67-basic-income-support-for-sustainability-biss-scheme/"
    },
    {
     "cc": "PT",
@@ -675,6 +944,33 @@
     "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
    },
    {
+    "cc": "RO",
+    "id": "advance-open",
+    "kind": "window-start",
+    "date": "2026-10-16",
+    "text": "Desde el 16 de octubre puede pagarse el anticipo de los pagos directos, de hasta el 70 % (en 2023 solo hasta el 30 de noviembre).",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a); Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), art. 4",
+    "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024"
+   },
+   {
+    "cc": "SE",
+    "id": "changes-crops",
+    "kind": "deadline",
+    "date": "2026-10-31",
+    "text": "Último día para cambiar límites de parcela o cultivos dentro del recinto (31 de octubre), sin aumentar la superficie pedida.",
+    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 14 §",
+    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
+   },
+   {
+    "cc": "SE",
+    "id": "withdraw",
+    "kind": "deadline",
+    "date": "2026-10-31",
+    "text": "Último día para retirar toda la solicitud o una parte (31 de octubre); en la ayuda a bovinos, toda la solicitud hasta el 30 de julio.",
+    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 15 §",
+    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
+   },
+   {
     "cc": "ES",
     "id": "fega-revised",
     "kind": "publication",
@@ -682,6 +978,24 @@
     "text": "El FEGA publica el importe unitario provisional revisado y el porcentaje del primer saldo (a más tardar el 15 de noviembre).",
     "legalBasis": "RD 1048/2022, art. 124.3",
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "AT",
+    "id": "slurry-quantity",
+    "kind": "deadline",
+    "date": "2026-11-30",
+    "text": "Fecha límite de la cantidad de purín aplicado con baja emisión (medida 70-08, 30 de noviembre).",
+    "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 6",
+    "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
+   },
+   {
+    "cc": "AT",
+    "id": "payment-open",
+    "kind": "window-start",
+    "date": "2026-12-01",
+    "text": "Empieza el período de pago de los pagos directos (1 de diciembre); la AMA suele pagar a mediados de diciembre. Base: art. 44 del Reglamento (UE) 2021/2116, leído en copia no oficial.",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44 (leído en copia de gesetze.legal, no en EUR-Lex)",
+    "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
    },
    {
     "cc": "ES",
@@ -693,6 +1007,24 @@
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
    },
    {
+    "cc": "IE",
+    "id": "payment-open",
+    "kind": "window-start",
+    "date": "2026-12-01",
+    "text": "Empieza el periodo ordinario de pago de los pagos directos (1 de diciembre).",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2",
+    "officialUrl": "https://www.gov.ie/en/service/4ae67-basic-income-support-for-sustainability-biss-scheme/"
+   },
+   {
+    "cc": "NL",
+    "id": "payment-open",
+    "kind": "window-start",
+    "date": "2026-12-01",
+    "text": "Empieza el período de pago de los pagos directos (1 de diciembre); RVO empieza a pagar ese día. Base: art. 44 del Reglamento (UE) 2021/2116, leído en copia no oficial.",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44 (leído en copia de gesetze.legal, no en EUR-Lex)",
+    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
+   },
+   {
     "cc": "PT",
     "id": "advance-close",
     "kind": "deadline",
@@ -700,6 +1032,15 @@
     "text": "Termina el período de anticipos y empieza el de pagos de las intervenciones del art. 19.2 (1 de diciembre).",
     "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 6",
     "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
+   },
+   {
+    "cc": "RO",
+    "id": "payment-open",
+    "kind": "window-start",
+    "date": "2026-12-01",
+    "text": "Empieza el periodo ordinario de pago de los pagos directos (1 de diciembre); la APIA paga entonces la diferencia entre el importe fijado y los anticipos.",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2; Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), art. 5",
+    "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024"
    },
    {
     "cc": "ES",
@@ -712,6 +1053,15 @@
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
    },
    {
+    "cc": "NL",
+    "id": "su-open",
+    "kind": "window-start",
+    "date": "2027-03-01",
+    "text": "Se abre el plazo de la solicitud (Gecombineerde opgave) de pagos directos (1 de marzo del año de solicitud).",
+    "legalBasis": "Uitvoeringsregeling GLB 2023 (BWBR0047444), art. 10",
+    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
+   },
+   {
     "cc": "PL",
     "id": "su-open",
     "kind": "window-start",
@@ -719,6 +1069,15 @@
     "text": "Empieza el plazo de la solicitud de pagos directos (15 de marzo).",
     "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 1",
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "cc": "AT",
+    "id": "su-close",
+    "kind": "deadline",
+    "date": "2027-04-15",
+    "text": "Termina el plazo de la solicitud única de pagos directos y de la lista de parcelas y animales (15 de abril del año de solicitud), sin prórroga.",
+    "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 2",
+    "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
    },
    {
     "cc": "ES",
@@ -729,6 +1088,15 @@
     "regionalNote": "Cada comunidad puede ampliarlo con comunicación motivada al FEGA, sin pasar del 15 de mayo.",
     "legalBasis": "RD 1048/2022, art. 108.2",
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "CZ",
+    "id": "su-close",
+    "kind": "deadline",
+    "date": "2027-05-15",
+    "text": "Fin del plazo ordinario de la solicitud única (15 de mayo del año de la solicitud). Lo fija el § 2 del NV 83/2023.",
+    "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 2",
+    "officialUrl": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83"
    },
    {
     "cc": "FR",
@@ -756,6 +1124,15 @@
     "text": "Termina el plazo general de la domanda unica (15 de mayo; si es festivo o fin de semana, el primer día hábil). Cada año se ha prorrogado por decreto ministerial: consulta las excepciones por campaña.",
     "legalBasis": "DM 660087/2022, art. 11 c.4",
     "officialUrl": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download"
+   },
+   {
+    "cc": "NL",
+    "id": "su-close",
+    "kind": "deadline",
+    "date": "2027-05-15",
+    "text": "Termina el plazo ordinario de la solicitud (15 de mayo, que también es la fecha de referencia). Si cae en sábado o domingo, pasa al siguiente día hábil.",
+    "legalBasis": "Uitvoeringsregeling GLB 2023 (BWBR0047444), art. 10",
+    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
    },
    {
     "cc": "PL",
@@ -804,6 +1181,24 @@
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
    },
    {
+    "cc": "CZ",
+    "id": "su-late-limit",
+    "kind": "deadline",
+    "date": "2027-06-09",
+    "text": "Último día para presentar la solicitud con reducción del 1 % por día hábil (25 días naturales después del 15 de mayo). Fuente: guía del Ministerio, no el texto del NV.",
+    "legalBasis": "MZe, Metodická příručka k podmínkám poskytování přímých plateb v ČR v roce 2026 (sección de plazos)",
+    "officialUrl": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83"
+   },
+   {
+    "cc": "HU",
+    "id": "su-close",
+    "kind": "deadline",
+    "date": "2027-06-09",
+    "text": "Fin del plazo de la solicitud única (9 de junio del año de la campaña). Lo fija el art. 11 (1) del decreto 15/2024 AM, modificado por el 5/2025 AM. La apertura la anuncia cada año la Tesorería (en 2026 fue el 15 de abril).",
+    "legalBasis": "15/2024. (IV. 9.) AM rendelet (egységes kérelem), 11. § (1), módosította az 5/2025. (IV. 3.) AM rendelet 19. §-a",
+    "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R"
+   },
+   {
     "cc": "PL",
     "id": "su-late-limit",
     "kind": "deadline",
@@ -811,6 +1206,24 @@
     "text": "Último día para presentar la solicitud con penalización del 1 % por día (25 días después del 15 de mayo).",
     "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 1",
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "cc": "SE",
+    "id": "changes-add",
+    "kind": "deadline",
+    "date": "2027-06-15",
+    "text": "Último día para añadir superficie, parcelas o cambios similares a la solicitud (15 de junio; si es festivo o víspera de festivo, el siguiente día hábil).",
+    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 13 §",
+    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
+   },
+   {
+    "cc": "AT",
+    "id": "payment-close",
+    "kind": "deadline",
+    "date": "2027-06-30",
+    "text": "Termina el período de pago de los pagos directos de la campaña anterior (30 de junio). Base: art. 44 del Reglamento (UE) 2021/2116, leído en copia no oficial.",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44 (leído en copia de gesetze.legal, no en EUR-Lex)",
+    "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
    },
    {
     "cc": "ES",
@@ -822,6 +1235,24 @@
     "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
    },
    {
+    "cc": "IE",
+    "id": "payment-close",
+    "kind": "deadline",
+    "date": "2027-06-30",
+    "text": "Termina el periodo de pago de los pagos directos de la campaña anterior (30 de junio).",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2",
+    "officialUrl": "https://www.gov.ie/en/service/4ae67-basic-income-support-for-sustainability-biss-scheme/"
+   },
+   {
+    "cc": "NL",
+    "id": "decision-close",
+    "kind": "deadline",
+    "date": "2027-06-30",
+    "text": "Fecha límite para que el ministro decida sobre las solicitudes del año anterior (30 de junio).",
+    "legalBasis": "Uitvoeringsregeling GLB 2023 (BWBR0047444), art. 10",
+    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
+   },
+   {
     "cc": "PT",
     "id": "payment-close",
     "kind": "deadline",
@@ -829,6 +1260,42 @@
     "text": "Termina el período de pagos de las intervenciones del art. 19.2 de la campaña anterior (30 de junio).",
     "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 5",
     "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
+   },
+   {
+    "cc": "RO",
+    "id": "payment-close",
+    "kind": "deadline",
+    "date": "2027-06-30",
+    "text": "Termina el periodo de pago de los pagos directos de la campaña anterior (30 de junio).",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2",
+    "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024"
+   },
+   {
+    "cc": "AT",
+    "id": "alp-list",
+    "kind": "deadline",
+    "date": "2027-07-15",
+    "text": "Fecha límite de la lista de subida a los alpes (15 de julio); para el ganado bovino subido hasta esa fecha la sustituye el aviso de pastoreo del reglamento de identificación bovina.",
+    "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 3",
+    "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
+   },
+   {
+    "cc": "SE",
+    "id": "withdraw-cattle",
+    "kind": "deadline",
+    "date": "2027-07-30",
+    "text": "Último día para retirar toda la solicitud de ayuda a bovinos (30 de julio).",
+    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 15 §",
+    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
+   },
+   {
+    "cc": "AT",
+    "id": "cover-crop-a",
+    "kind": "deadline",
+    "date": "2027-08-31",
+    "text": "Fecha límite de las coberturas intercalares de las variantes 1 a 3 (medida 31-01, 31 de agosto).",
+    "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 4",
+    "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
    },
    {
     "cc": "ES",
@@ -867,6 +1334,24 @@
     "text": "Último día para modificar la solicitud si la Agencia ha informado de irregularidades (15 de septiembre).",
     "legalBasis": "Ustawa o Planie Strategicznym dla WPR 2023-2027 (Dz.U. 2023 poz. 412), art. 60 ust. 2 pkt 2",
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "cc": "AT",
+    "id": "cover-crop-b",
+    "kind": "deadline",
+    "date": "2027-09-30",
+    "text": "Fecha límite de las coberturas intercalares de las variantes 4 a 7 (medida 31-01, 30 de septiembre).",
+    "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 5",
+    "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
+   },
+   {
+    "cc": "HU",
+    "id": "sugarbeet-contract",
+    "kind": "deadline",
+    "date": "2027-09-30",
+    "text": "Fecha límite para presentar la copia del contrato de entrega de remolacha azucarera para la ayuda asociada (30 de septiembre).",
+    "legalBasis": "19/2024. (IV. 9.) AM rendelet (termeléshez kötött közvetlen támogatások), 21. §",
+    "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R"
    }
   ]
  }

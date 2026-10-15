@@ -1,0 +1,501 @@
+{
+ "schemaVersion": 1,
+ "country": "HU",
+ "scheme": "Magyarország KAP Stratégiai Terve 2023-2027 (közvetlen támogatások: 15-21/2024. (IV. 9.) AM rendeletek)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-15",
+ "source": {
+  "id": "magyarkozlony_hu",
+  "instrument": "15/2024. (egységes kérelem), 17/2024. (Agro-ökológiai Program), 18/2024. (alapszintű jövedelemtámogatás, újraelosztó), 19/2024. (termeléshez kötött), 20/2024. (aktív mezőgazdasági termelő) y 21/2024. (fiatal mezőgazdasági termelők) (IV. 9.) AM rendelet, modificados por el 5/2025. (IV. 3.) AM rendelet, Magyar Közlöny, y comunicados IH de la Autoridad Nacional de Gestión de la PAC",
+  "ref": "AM 15-21/2024",
+  "url": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R"
+ },
+ "note": "Reglas leídas a mano del texto consolidado de los decretos 19/2024, 17/2024 y 21/2024 AM (Nemzeti Jogszabálytár), de los fragmentos del Magyar Közlöny de 3-4-2025 que modifican el 15/2024 y de los comunicados IH (importes: solo intervalos mínimo-máximo de 2025-2026 y anticipos de 2026 en forintos). No se han podido leer los decretos 15/2024 (solo los fragmentos modificados), 16/2024, 18/2024 (solo un borrador) ni 20/2024 (se leyó el 18/2023 de 2023). El plazo de 2026 sale de una nota de una oficina de gobierno, no de la norma. No es consejo jurídico: manda el texto de la Magyar Közlöny.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Alapszintű-jövedelemtámogatás",
+   "nameLang": "hu",
+   "legalBasis": "18/2024. (IV. 9.) AM rendelet (alapszintű-jövedelemtámogatás, újraelosztó támogatás), 2. §",
+   "articles": [
+    "2"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Újraelosztó támogatás",
+   "nameLang": "hu",
+   "legalBasis": "18/2024. (IV. 9.) AM rendelet (alapszintű-jövedelemtámogatás, újraelosztó támogatás)",
+   "articles": []
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Fiatal mezőgazdasági termelők támogatása",
+   "nameLang": "hu",
+   "legalBasis": "21/2024. (IV. 9.) AM rendelet (fiatal mezőgazdasági termelők támogatása), 5. §",
+   "articles": [
+    "5"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Agro-ökológiai Program (AÖP)",
+   "nameLang": "hu",
+   "legalBasis": "17/2024. (IV. 9.) AM rendelet (Agro-ökológiai Program), 4. §",
+   "articles": [
+    "4"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Termeléshez kötött közvetlen támogatások",
+   "nameLang": "hu",
+   "legalBasis": "19/2024. (IV. 9.) AM rendelet (termeléshez kötött közvetlen támogatások), 9. és 17. §",
+   "articles": [
+    "9",
+    "17"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "15/2024. (IV. 9.) AM rendelet (egységes kérelem), 11. § (1), módosította az 5/2025. (IV. 3.) AM rendelet 19. §-a",
+   "articles": [
+    "11"
+   ],
+   "text": "La solicitud única (egységes kérelem) se presenta por vía electrónica a la Tesorería (Magyar Államkincstár). El plazo lo fija el art. 11 (1) del decreto 15/2024 AM: «hasta el 9 de junio del año de la campaña» (antes ponía 10 de junio; lo cambió el decreto 5/2025 AM, publicado en el Magyar Közlöny de 3-4-2025). En 2026 la oficina de gobierno del condado de Vas informó de que se podía presentar del 15 de abril al 9 de junio de 2026, que el plazo es de pérdida de derecho y que la Tesorería rechaza sin examinar las solicitudes tardías (fuente: nota de prensa oficial de la oficina de gobierno, no la norma). En 2023 el plazo también acabó el 9 de junio. No se ha podido leer el texto completo y consolidado del decreto 15/2024: solo los fragmentos que modifica el 5/2025.",
+   "officialUrl": "https://magyarkozlony.hu/dokumentumok/7221853f0a3036ca9cdfbe478730877ce035a22c/letoltes",
+   "values": {
+    "campaign": 2026,
+    "from": "2026-04-15",
+    "to": "2026-06-09"
+   }
+  },
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "18/2023. (IV. 19.) AM rendelet (aktív mezőgazdasági termelő)",
+   "articles": [
+    "3",
+    "4"
+   ],
+   "text": "Agricultor activo. El texto leído es el decreto 18/2023 AM (el de 2023); el decreto vigente es el 20/2024 AM (IV. 9.), que no se pudo abrir, así que pueden haber cambiado detalles. En el de 2023: las personas físicas que son agricultores cuentan como activas; las personas jurídicas deben tener al menos 10 ha admisibles o estar registradas como activas en FELIR para las actividades que lo exigen; iglesias, entes locales, centros de enseñanza y otras entidades vinculadas a la agricultura también pueden serlo si presentan la solicitud única. Si hay dudas, la Tesorería comprueba de oficio la actividad (ingresos agrarios declarados en la tasa de la cadena alimentaria, código de explotación ganadera activo, cuaderno de campo). Las personas jurídicas también pueden acreditarlo con ingresos agrarios del año anterior superiores a la mitad del salario mínimo anual (cifra no leída).",
+   "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2023-18-20-7R",
+   "values": {
+    "legalPersonMinHa": 10,
+    "textRead": "18/2023 AM",
+    "currentDecree": "20/2024 AM (not read)"
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "19/2024. (IV. 9.) AM rendelet (termeléshez kötött közvetlen támogatások)",
+   "articles": [
+    "3",
+    "17"
+   ],
+   "text": "Superficies y animales mínimos. Para las ayudas asociadas (decreto 19/2024 AM): al menos 1 ha admisible en arroz, remolacha, hortalizas industriales, oleaginosas industriales, proteicos de grano y proteicos de forraje; en hortalizas y fruta (extensiva e intensiva), al menos 0,3 ha por cultivo y que la superficie aprobada en la ayuda básica llegue a 1 ha; cuando la superficie se suma de varias parcelas, cada una debe tener al menos 0,25 ha. En ganado, el mínimo es 1 animal (art. 10). Una parcela solo puede recibir un tipo de ayuda asociada (art. 19 (7)). Para la ayuda básica a la renta, el borrador del decreto 18/2024 AM (no la versión publicada) pedía 1 ha y parcelas de al menos 0,25 ha; el texto final no se ha leído.",
+   "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R",
+   "values": {
+    "coupledMinHa": 1,
+    "vegFruitMinHaPerCrop": 0.3,
+    "minParcelHa": 0.25,
+    "minAnimals": 1
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "18/2024. (IV. 9.) AM rendelet (alapszintű-jövedelemtámogatás, újraelosztó támogatás); KAP Nemzeti Irányító Hatóság 32/2025. számú IH közleménye, módosítva az 52/2026. számú IH közleménnyel",
+   "articles": [
+    "2"
+   ],
+   "text": "Ayuda básica a la renta (alapszintű-jövedelemtámogatás). Los importes no están en el decreto sino en un comunicado de la Autoridad Nacional de Gestión de la PAC (decreto 5/2025 AM): para 2025 y 2026 fija un presupuesto de 735.300.000 € y un importe unitario mínimo de 125 €/ha y máximo de 169,12 €/ha. Son límites del intervalo, no el importe final por hectárea de cada campaña (el importe real depende de la superficie aprobada; no se ha leído). Para el anticipo de 2026, el comunicado 95/2026 IH fija un máximo de 36.902 HUF/ha. El texto del decreto 18/2024 AM no se pudo leer (solo un borrador previo).",
+   "officialUrl": "https://kap.gov.hu/sites/default/files/2026-04/52_2026.pdf",
+   "values": {
+    "budgetEur": 735300000,
+    "minEurPerHa": 125,
+    "maxEurPerHa": 169.12,
+    "campaigns": "2025-2026",
+    "advance2026MaxHufPerHa": 36902
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "18/2024. (IV. 9.) AM rendelet (alapszintű-jövedelemtámogatás, újraelosztó támogatás); KAP Nemzeti Irányító Hatóság 32/2025. számú IH közleménye, módosítva az 52/2026. számú IH közleménnyel",
+   "articles": [
+    "2"
+   ],
+   "text": "Pago redistributivo (újraelosztó támogatás) con dos tramos de superficie. Para 2025 y 2026 el comunicado de la Autoridad Nacional de Gestión fija un presupuesto de 189.176.282,80 € y un importe unitario de 55,99 a 103,99 €/ha para las primeras 10 ha (de 1,0000 a 10,0000 ha) y de 28,00 a 52,00 €/ha para el tramo de 10,0001 a 150,0000 ha. Son los límites del intervalo, no el importe final de cada campaña. Anticipo máximo de 2026 (comunicado 95/2026 IH): 23.814 HUF/ha en el tramo alto y 12.254 HUF/ha en el reducido. El texto del decreto 18/2024 AM no se pudo leer.",
+   "officialUrl": "https://kap.gov.hu/sites/default/files/2026-04/52_2026.pdf",
+   "values": {
+    "budgetEur": 189176282.8,
+    "tier1Ha": [
+     1,
+     10
+    ],
+    "tier1EurPerHa": [
+     55.99,
+     103.99
+    ],
+    "tier2Ha": [
+     10.0001,
+     150
+    ],
+    "tier2EurPerHa": [
+     28.0,
+     52.0
+    ],
+    "advance2026MaxHufPerHa": [
+     23814,
+     12254
+    ]
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "21/2024. (IV. 9.) AM rendelet (fiatal mezőgazdasági termelők támogatása), arts. 1, 2 y 5",
+   "articles": [
+    "1",
+    "2",
+    "5"
+   ],
+   "text": "Jóvenes agricultores (fiatal mezőgazdasági termelő). Persona física de 18 años cumplidos y hasta 40 años como máximo, que se establece por primera vez como titular y empieza la actividad agraria después del cierre del plazo de la solicitud única del año anterior. Debe acreditar una titulación del anexo 1 (o equivalente) o 730 días de trabajo agrario a tiempo completo. La ayuda se calcula sobre un máximo de 300 ha admisibles y se concede hasta cinco años. Para 2025 y 2026 el comunicado de la Autoridad Nacional de Gestión fija un presupuesto de 18.690.804 € y un importe unitario de 78,67 a 236,00 €/ha (límites del intervalo, no el importe final). El texto leído se corta en el anexo 1; no se ha leído el resto de la lista de titulaciones.",
+   "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-21-20-7R",
+   "values": {
+    "minAge": 18,
+    "maxAge": 40,
+    "maxHa": 300,
+    "maxYears": 5,
+    "experienceDays": 730,
+    "budgetEur": 18690804,
+    "minEurPerHa": 78.67,
+    "maxEurPerHa": 236.0
+   }
+  },
+  {
+   "id": "agro-ecological",
+   "topic": "eco",
+   "legalBasis": "17/2024. (IV. 9.) AM rendelet (Agro-ökológiai Program), arts. 2, 4 a 28/A",
+   "articles": [
+    "2",
+    "4",
+    "9",
+    "19"
+   ],
+   "text": "Programa Agroecológico (Agro-ökológiai Program, AÖP), la ecorregimen húngaro. Se pide cada año en la solicitud única y exige, en cada categoría de uso de la tierra, prácticas que sumen al menos 2 puntos y como máximo 4. Quedan exentas de elegir prácticas las explotaciones con menos de 5 ha de tierra de cultivo, menos de 5 ha de otros pastos o menos de 1 ha de otros cultivos permanentes. Tierra de cultivo: prácticas 1 a 9 (cobertura del suelo, diversificación de cultivos con 2 a 6 cultivos según la superficie, elementos no productivos, límite de tamaño de parcela de 30 ha, productos seguros para abejas, urea, productos microbiológicos, acondicionadores, no laboreo). Pastos: prácticas 10 a 14a (mantenimiento del pasto, pastoreo rotacional o con pastor, siega anual extensiva, cortadoras alternativas, pastoreo con razas autóctonas). Para 2025 y 2026 el comunicado de la Autoridad Nacional de Gestión fija un presupuesto de 202.125.000 € y un importe unitario de 60,64 a 105,10 €/ha (límites del intervalo). El texto leído (versión de 28-3-2026) se corta en el art. 28/A (7): faltan el resto de la práctica 14a, la práctica 15 y los anexos con los puntos de cada práctica.",
+   "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-17-20-7R",
+   "values": {
+    "minPoints": 2,
+    "maxPoints": 4,
+    "budgetEur": 202125000,
+    "minEurPerHa": 60.64,
+    "maxEurPerHa": 105.1,
+    "arablePractices": "1-9",
+    "grasslandPractices": "10-14a"
+   }
+  },
+  {
+   "id": "coupled-livestock",
+   "topic": "associated",
+   "legalBasis": "19/2024. (IV. 9.) AM rendelet (termeléshez kötött közvetlen támogatások), arts. 9 a 16; KAP Nemzeti Irányító Hatóság 32/2025. számú IH közleménye, módosítva az 52/2026. számú IH közleménnyel",
+   "articles": [
+    "9",
+    "10",
+    "13",
+    "14",
+    "15",
+    "16"
+   ],
+   "text": "Ayudas asociadas al ganado (decreto 19/2024 AM). Oveja de cría: los animales se mantienen 100 días seguidos desde el 1 de abril del año de la campaña. Vaca nodriza: al menos el 30 % de los animales declarados debe parir ese año, las novillas pueden ser como máximo el 40 % y la retención dura seis meses desde la solicitud. Toro de cebo: machos bovinos o búfalos de nueve meses o más, retenidos al menos dos meses. Vaca de leche: debe haber parido al menos una vez y tener 23 meses cumplidos. Importes unitarios mínimo y máximo para 2025-2026 (comunicado 32/2025 IH, modificado por el 52/2026 IH, en €/animal): vaca nodriza 111,96 a 174,94; vaca de leche 237,74 a 396,24; oveja 29,97 a 44,08; toro de cebo 40,76 a 65,22 en 2025 y 57,15 a 106,68 en 2026. Son límites del intervalo, no el importe final; el presupuesto de 2025 es de 34.631.327,25 € para vaca nodriza, 68.274.257,17 € para vaca de leche, 22.656.030,92 € para oveja y 5.061.180,70 € para toro de cebo (2026: 5.061.204,00 €).",
+   "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R",
+   "values": {
+    "ewe": {
+     "holdingDaysFromApril1": 100,
+     "eurRange": [
+      29.97,
+      44.08
+     ]
+    },
+    "sucklerCow": {
+     "minCalvingPct": 30,
+     "maxHeiferPct": 40,
+     "retentionMonths": 6,
+     "eurRange": [
+      111.96,
+      174.94
+     ]
+    },
+    "fatteningBull": {
+     "minAgeMonths": 9,
+     "retentionMonths": 2,
+     "eurRange2025": [
+      40.76,
+      65.22
+     ],
+     "eurRange2026": [
+      57.15,
+      106.68
+     ]
+    },
+    "dairyCow": {
+     "minAgeMonths": 23,
+     "eurRange": [
+      237.74,
+      396.24
+     ]
+    },
+    "unit": "EUR/animal"
+   }
+  },
+  {
+   "id": "coupled-crops",
+   "topic": "associated",
+   "legalBasis": "19/2024. (IV. 9.) AM rendelet (termeléshez kötött közvetlen támogatások), arts. 17 a 28; KAP Nemzeti Irányító Hatóság 32/2025. számú IH közleménye, módosítva az 52/2026. számú IH közleménnyel",
+   "articles": [
+    "17",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28"
+   ],
+   "text": "Ayudas asociadas a cultivos (decreto 19/2024 AM): arroz, remolacha azucarera, hortalizas, hortalizas industriales, oleaginosas industriales, fruta extensiva, fruta intensiva, proteicos de grano y proteicos de forraje. Condiciones destacadas: arroz, rendimiento mínimo demostrado de 2,5 t/ha; remolacha, copia del contrato de entrega a más tardar el 30 de septiembre; proteicos de grano, 1 t/ha en soja, haba y altramuz dulce y 2 t/ha en guisante seco, garbanzo y guisante forrajero; proteicos de forraje, al menos una siega hasta el 30 de septiembre; fruta extensiva, plantación que no supere la edad máxima del anexo 4 y riego fijo o al menos 85 % de densidad de plantas (se exigen dos condiciones). Importes unitarios mínimo y máximo para 2025-2026 en €/ha (comunicado 32/2025 IH, modificado por el 52/2026 IH): remolacha 424,52 a 881,70; arroz 582,75 a 874,13; hortalizas industriales 260,44 a 390,66 en 2025 y 300,91 a 451,37 en 2026; hortalizas 219,60 a 351,36; oleaginosas industriales 76,71 a 142,47; fruta extensiva 143,54 a 191,39; fruta intensiva 280,11 a 429,50; proteicos de grano 163,01 a 302,73; proteicos de forraje 44,92 a 77,00. Son límites del intervalo, no el importe final. El texto del anexo 4 se corta y no se han leído los anexos 5 a 11.",
+   "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R",
+   "values": {
+    "crops": [
+     "rice",
+     "sugarBeet",
+     "vegetables",
+     "industrialVegetables",
+     "industrialOilseeds",
+     "extensiveFruit",
+     "intensiveFruit",
+     "grainProtein",
+     "forageProtein"
+    ],
+    "unit": "EUR/ha",
+    "eurRange": {
+     "sugarBeet": [
+      424.52,
+      881.7
+     ],
+     "rice": [
+      582.75,
+      874.13
+     ],
+     "industrialVegetables2025": [
+      260.44,
+      390.66
+     ],
+     "industrialVegetables2026": [
+      300.91,
+      451.37
+     ],
+     "vegetables": [
+      219.6,
+      351.36
+     ],
+     "industrialOilseeds": [
+      76.71,
+      142.47
+     ],
+     "extensiveFruit": [
+      143.54,
+      191.39
+     ],
+     "intensiveFruit": [
+      280.11,
+      429.5
+     ],
+     "grainProtein": [
+      163.01,
+      302.73
+     ],
+     "forageProtein": [
+      44.92,
+      77.0
+     ]
+    }
+   }
+  },
+  {
+   "id": "amounts-notice",
+   "topic": "amounts",
+   "legalBasis": "5/2025. (IV. 3.) AM rendelet (preámbulo); KAP Nemzeti Irányító Hatóság 32/2025. számú IH közleménye, módosítva az 52/2026. számú IH közleménnyel",
+   "articles": [],
+   "text": "Cómo se fijan los importes en Hungría. Desde el decreto 5/2025 AM, los presupuestos en euros y los importes unitarios mínimo y máximo de cada pago directo no figuran en el decreto sino en un comunicado (IH közlemény) de la Autoridad Nacional de Gestión de la PAC. El comunicado 32/2025 IH los fijó para 2025-2026 y el 52/2026 IH lo modificó (cambia el toro de cebo y las hortalizas industriales de 2026). El 43/2026 IH modifica los presupuestos de 2024 en forintos (ayuda básica, AÖP y jóvenes). Los anticipos de 2026 se fijan en forintos por hectárea (95/2026 IH). Lo que se ha leído son intervalos mínimo-máximo; no se ha leído el comunicado con el importe unitario final de una campaña (por ejemplo el 67/2025 IH).",
+   "officialUrl": "https://kap.gov.hu/sites/default/files/2026-04/52_2026.pdf",
+   "values": {
+    "noticeCurrent": "32/2025 IH, amended 52/2026 IH",
+    "finalUnitAmountsRead": false
+   }
+  },
+  {
+   "id": "exempt-small",
+   "topic": "controls",
+   "legalBasis": "Agrárminisztérium, Szakmai tájékoztató a közvetlen területalapú támogatások év közbeni kedvező változásairól (17/2024. és 16/2024. AM rendelet), 1. pont",
+   "articles": [],
+   "text": "Controles de condicionalidad: según una nota técnica del Ministerio de Agricultura (sin fecha en el texto leído), los agricultores cuya superficie admisible declarada en la solicitud única no supera las 10 ha quedan exentos de los controles y sanciones de condicionalidad, aunque no de las inspecciones generales de las autoridades. La misma nota recoge una versión simplificada de la rotación (diversificación en lugar de rotación) y el fin de la doble sanción para quien cobra desarrollo rural y pagos por superficie. Es una nota informativa, no el decreto 16/2024 AM, que no se ha leído.",
+   "officialUrl": "https://cdn.kormany.hu/uploads/document/b/bc/bcb/bcb31b73c66949e9bf93952b1e29df11a2fd575b.pdf",
+   "values": {
+    "exemptMaxHa": 10
+   }
+  },
+  {
+   "id": "late-and-missed",
+   "topic": "penalties",
+   "legalBasis": "15/2024. (IV. 9.) AM rendelet (egységes kérelem), 11. § (1), módosította az 5/2025. (IV. 3.) AM rendelet 19. §-a; 5/2025. (IV. 3.) AM rendelet, 14. § (2)",
+   "articles": [
+    "11",
+    "14",
+    "19"
+   ],
+   "text": "Plazos incumplidos. La solicitud única presentada después del 9 de junio se rechaza (nota de la oficina de gobierno de 2026; en un borrador de 2024 la norma era la misma con 10 de junio). Las operaciones de campo que hay que comunicar (por ejemplo segundos cultivos) deben notificarse en 20 días (antes 15, según el decreto 5/2025 AM); si no se cumplen esos plazos, la operación notificada tarde no se tiene en cuenta para la ayuda ni la condicionalidad, salvo que un decreto o convocatoria diga otra cosa (art. 19 (9) del 15/2024). No se ha leído en el texto consolidado ninguna escala de penalización porcentual por retraso, ni las reducciones por incumplimiento parcial del AÖP (arts. 5 y 6 del 17/2024).",
+   "officialUrl": "https://magyarkozlony.hu/dokumentumok/7221853f0a3036ca9cdfbe478730877ce035a22c/letoltes",
+   "values": {
+    "lateRejectedAfter": "06-09",
+    "reportingDays": 20
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "15/2024. (IV. 9.) AM rendelet (egységes kérelem), 11. § (1), módosította az 5/2025. (IV. 3.) AM rendelet 19. §-a",
+   "articles": [
+    "11"
+   ],
+   "when": {
+    "month": 6,
+    "day": 9,
+    "yearOffset": 0
+   },
+   "text": "Fin del plazo de la solicitud única (9 de junio del año de la campaña). Lo fija el art. 11 (1) del decreto 15/2024 AM, modificado por el 5/2025 AM. La apertura la anuncia cada año la Tesorería (en 2026 fue el 15 de abril)."
+  },
+  {
+   "id": "sugarbeet-contract",
+   "kind": "deadline",
+   "legalBasis": "19/2024. (IV. 9.) AM rendelet (termeléshez kötött közvetlen támogatások), 21. §",
+   "articles": [
+    "21"
+   ],
+   "when": {
+    "month": 9,
+    "day": 30,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite para presentar la copia del contrato de entrega de remolacha azucarera para la ayuda asociada (30 de septiembre)."
+  }
+ ],
+ "campaignOverrides": [
+  {
+   "campaign": 2026,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2026-06-09",
+   "legalBasis": "Vas Vármegyei Kormányhivatal, hír «Elindult a 2026. évi egységes kérelmek benyújtása» (2026.04.14.)",
+   "text": "En 2026 el plazo de la solicitud única fue del 15 de abril al 9 de junio, según la oficina de gobierno del condado de Vas (nota de 14-4-2026, no la norma). No se ha visto ninguna prórroga."
+  }
+ ],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "application": {
+    "en": "The single application (egységes kérelem) is filed electronically with the Treasury (Magyar Államkincstár). The deadline is set by art. 11(1) of decree 15/2024 AM: \"by 9 June of the campaign year\" (it used to say 10 June; decree 5/2025 AM, published in the Magyar Közlöny on 3-4-2025, changed it). In 2026 the Vas county government office reported that applications could be filed from 15 April to 9 June 2026, that the deadline is forfeiting and that the Treasury rejects late applications without examining them (source: the government office's own news item, not the rule). In 2023 the deadline also ended on 9 June. The full consolidated text of decree 15/2024 could not be read: only the fragments amended by 5/2025.",
+    "fr": "La demande unique (egységes kérelem) se dépose par voie électronique auprès du Trésor (Magyar Államkincstár). La date limite est fixée par l'art. 11 (1) du décret 15/2024 AM : « au plus tard le 9 juin de l'année de campagne » (il disait 10 juin ; le décret 5/2025 AM, publié au Magyar Közlöny le 3-4-2025, l'a modifié). En 2026, l'office gouvernemental du comté de Vas a indiqué que les demandes pouvaient être déposées du 15 avril au 9 juin 2026, que le délai est une déchéance et que le Trésor rejette sans examen les demandes tardives (source : communiqué de l'office gouvernemental, pas la norme). En 2023, la date limite était aussi le 9 juin. Le texte complet consolidé du décret 15/2024 n'a pas pu être lu : seulement les fragments modifiés par le 5/2025.",
+    "it": "La domanda unica (egységes kérelem) si presenta per via elettronica al Tesoro (Magyar Államkincstár). Il termine è fissato dall'art. 11 (1) del decreto 15/2024 AM: «entro il 9 giugno dell'anno di campagna» (prima diceva 10 giugno; lo ha cambiato il decreto 5/2025 AM, pubblicato sul Magyar Közlöny il 3-4-2025). Nel 2026 l'ufficio di governo della contea di Vas ha comunicato che le domande si potevano presentare dal 15 aprile al 9 giugno 2026, che il termine è perentorio e che il Tesoro respinge senza esame le domande tardive (fonte: notizia dell'ufficio di governo, non la norma). Nel 2023 il termine finì anch'esso il 9 giugno. Non è stato possibile leggere il testo completo consolidato del decreto 15/2024: solo i frammenti modificati dal 5/2025."
+   },
+   "active-farmer": {
+    "en": "Active farmer. The text read is decree 18/2023 AM (the 2023 one); the decree now in force is 20/2024 AM (IV. 9.), which could not be opened, so details may have changed. Under the 2023 text: natural persons who are farmers count as active; legal persons must have at least 10 eligible ha or be registered as active in FELIR for the activities that require it; churches, local authorities, schools and other agriculture-linked bodies can also qualify if they file the single application. In case of doubt the Treasury checks the activity ex officio (farm income declared in the food-chain fee return, an active herd code, a field logbook). Legal persons can also prove it with farm turnover in the previous year above half of the annual minimum wage (figure not read).",
+    "fr": "Agriculteur actif. Le texte lu est le décret 18/2023 AM (celui de 2023) ; le décret en vigueur est le 20/2024 AM (IV. 9.), qui n'a pas pu être ouvert, donc des détails ont pu changer. Dans celui de 2023 : les personnes physiques exploitantes sont réputées actives ; les personnes morales doivent avoir au moins 10 ha admissibles ou être enregistrées comme actives dans FELIR pour les activités qui l'exigent ; églises, collectivités locales, établissements d'enseignement et autres entités liées à l'agriculture peuvent l'être aussi si elles déposent la demande unique. En cas de doute, le Trésor vérifie l'activité d'office (revenus agricoles déclarés dans la redevance de la chaîne alimentaire, code de troupeau actif, cahier de champ). Les personnes morales peuvent aussi le prouver par un chiffre d'affaires agricole de l'année précédente supérieur à la moitié du salaire minimum annuel (montant non lu).",
+    "it": "Agricoltore attivo. Il testo letto è il decreto 18/2023 AM (quello del 2023); il decreto in vigore è il 20/2024 AM (IV. 9.), che non è stato possibile aprire, quindi i dettagli possono essere cambiati. In quello del 2023: le persone fisiche agricoltori sono considerate attive; le persone giuridiche devono avere almeno 10 ha ammissibili o essere registrate come attive in FELIR per le attività che lo richiedono; anche chiese, enti locali, istituti di istruzione e altri enti legati all'agricoltura possono esserlo se presentano la domanda unica. In caso di dubbio il Tesoro verifica d'ufficio l'attività (ricavi agricoli dichiarati nel contributo della filiera alimentare, codice di allevamento attivo, registro di campagna). Le persone giuridiche possono dimostrarlo anche con un fatturato agricolo dell'anno precedente superiore alla metà del salario minimo annuo (cifra non letta)."
+   },
+   "minimum": {
+    "en": "Minimum areas and animals. For coupled support (decree 19/2024 AM): at least 1 eligible ha for rice, sugar beet, industrial vegetables, industrial oilseeds, grain protein crops and forage protein crops; for vegetables and fruit (extensive and intensive), at least 0.3 ha per crop and the area approved for basic support must reach 1 ha; where the area is added up from several parcels, each must be at least 0.25 ha. For livestock the minimum is 1 animal (art. 10). A parcel can receive only one type of coupled support (art. 19(7)). For basic income support, the draft of decree 18/2024 AM (not the published version) asked for 1 ha and parcels of at least 0.25 ha; the final text has not been read.",
+    "fr": "Superficies et animaux minimaux. Pour les aides couplées (décret 19/2024 AM) : au moins 1 ha admissible pour le riz, la betterave sucrière, les légumes industriels, les oléagineux industriels, les protéagineux à grains et les protéagineux fourragers ; pour les légumes et les fruits (extensifs et intensifs), au moins 0,3 ha par culture et la surface approuvée pour l'aide de base doit atteindre 1 ha ; quand la surface est additionnée sur plusieurs parcelles, chacune doit faire au moins 0,25 ha. Pour l'élevage, le minimum est de 1 animal (art. 10). Une parcelle ne peut recevoir qu'un seul type d'aide couplée (art. 19 (7)). Pour l'aide de base au revenu, le projet de décret 18/2024 AM (pas la version publiée) demandait 1 ha et des parcelles d'au moins 0,25 ha ; le texte final n'a pas été lu.",
+    "it": "Superfici e animali minimi. Per gli aiuti accoppiati (decreto 19/2024 AM): almeno 1 ha ammissibile per riso, barbabietola da zucchero, ortaggi industriali, oleaginose industriali, proteiche da granella e proteiche da foraggio; per ortaggi e frutta (estensiva e intensiva), almeno 0,3 ha per coltura e la superficie approvata per il sostegno di base deve raggiungere 1 ha; quando la superficie si somma su più particelle, ciascuna deve avere almeno 0,25 ha. Per gli animali il minimo è 1 capo (art. 10). Una particella può ricevere un solo tipo di aiuto accoppiato (art. 19 (7)). Per il sostegno di base al reddito, la bozza del decreto 18/2024 AM (non la versione pubblicata) chiedeva 1 ha e particelle di almeno 0,25 ha; il testo finale non è stato letto."
+   },
+   "basic": {
+    "en": "Basic income support (alapszintű-jövedelemtámogatás). The amounts are not in the decree but in a notice of the CAP National Managing Authority (decree 5/2025 AM): for 2025 and 2026 it sets a budget of €735,300,000 and a minimum unit amount of €125/ha and a maximum of €169.12/ha. These are the limits of a range, not the final per-hectare amount of each campaign (the real amount depends on the approved area; not read). For the 2026 advance, notice 95/2026 IH sets a maximum of HUF 36,902/ha. The text of decree 18/2024 AM could not be read (only an earlier draft).",
+    "fr": "Aide de base au revenu (alapszintű-jövedelemtámogatás). Les montants ne figurent pas dans le décret mais dans un avis de l'Autorité nationale de gestion de la PAC (décret 5/2025 AM) : pour 2025 et 2026 il fixe un budget de 735 300 000 € et un montant unitaire minimum de 125 €/ha et maximum de 169,12 €/ha. Ce sont les bornes d'une fourchette, pas le montant final par hectare de chaque campagne (le montant réel dépend de la surface approuvée ; non lu). Pour l'avance de 2026, l'avis 95/2026 IH fixe un maximum de 36 902 HUF/ha. Le texte du décret 18/2024 AM n'a pas pu être lu (seulement un projet antérieur).",
+    "it": "Sostegno di base al reddito (alapszintű-jövedelemtámogatás). Gli importi non sono nel decreto ma in un avviso dell'Autorità nazionale di gestione della PAC (decreto 5/2025 AM): per il 2025 e il 2026 fissa un bilancio di 735.300.000 € e un importo unitario minimo di 125 €/ha e massimo di 169,12 €/ha. Sono i limiti di un intervallo, non l'importo finale per ettaro di ogni campagna (l'importo reale dipende dalla superficie approvata; non letto). Per l'anticipo 2026, l'avviso 95/2026 IH fissa un massimo di 36.902 HUF/ha. Il testo del decreto 18/2024 AM non è stato possibile leggerlo (solo una bozza precedente)."
+   },
+   "redistributive": {
+    "en": "Redistributive payment (újraelosztó támogatás) with two area bands. For 2025 and 2026 the Managing Authority notice sets a budget of €189,176,282.80 and a unit amount of €55.99 to €103.99/ha for the first 10 ha (1.0000 to 10.0000 ha) and €28.00 to €52.00/ha for the band from 10.0001 to 150.0000 ha. These are the limits of a range, not the final amount of each campaign. Maximum 2026 advance (notice 95/2026 IH): HUF 23,814/ha in the higher band and HUF 12,254/ha in the reduced one. The text of decree 18/2024 AM could not be read.",
+    "fr": "Paiement redistributif (újraelosztó támogatás) avec deux tranches de surface. Pour 2025 et 2026, l'avis de l'Autorité de gestion fixe un budget de 189 176 282,80 € et un montant unitaire de 55,99 à 103,99 €/ha pour les 10 premiers ha (de 1,0000 à 10,0000 ha) et de 28,00 à 52,00 €/ha pour la tranche de 10,0001 à 150,0000 ha. Ce sont les bornes d'une fourchette, pas le montant final de chaque campagne. Avance maximale 2026 (avis 95/2026 IH) : 23 814 HUF/ha dans la tranche haute et 12 254 HUF/ha dans la réduite. Le texte du décret 18/2024 AM n'a pas pu être lu.",
+    "it": "Pagamento redistributivo (újraelosztó támogatás) con due fasce di superficie. Per il 2025 e il 2026 l'avviso dell'Autorità di gestione fissa un bilancio di 189.176.282,80 € e un importo unitario da 55,99 a 103,99 €/ha per i primi 10 ha (da 1,0000 a 10,0000 ha) e da 28,00 a 52,00 €/ha per la fascia da 10,0001 a 150,0000 ha. Sono i limiti di un intervallo, non l'importo finale di ogni campagna. Anticipo massimo 2026 (avviso 95/2026 IH): 23.814 HUF/ha nella fascia alta e 12.254 HUF/ha in quella ridotta. Il testo del decreto 18/2024 AM non è stato possibile leggerlo."
+   },
+   "young-farmers": {
+    "en": "Young farmers (fiatal mezőgazdasági termelő). A natural person aged 18 and up to 40, setting up for the first time as holder and starting farming after the closing of the previous year's single-application period. They must show a qualification from annex 1 (or an equivalent) or 730 days of full-time farm work. The aid is calculated on a maximum of 300 eligible ha and granted for up to five years. For 2025 and 2026 the Managing Authority notice sets a budget of €18,690,804 and a unit amount of €78.67 to €236.00/ha (limits of a range, not the final amount). The text read cuts off in annex 1; the rest of the qualification list has not been read.",
+    "fr": "Jeunes agriculteurs (fiatal mezőgazdasági termelő). Personne physique de 18 ans révolus et au plus 40 ans, qui s'installe pour la première fois comme chef d'exploitation et commence l'activité agricole après la clôture de la période de la demande unique de l'année précédente. Elle doit justifier d'un diplôme de l'annexe 1 (ou équivalent) ou de 730 jours de travail agricole à temps plein. L'aide est calculée sur 300 ha admissibles au maximum et accordée pendant cinq ans au plus. Pour 2025 et 2026, l'avis de l'Autorité de gestion fixe un budget de 18 690 804 € et un montant unitaire de 78,67 à 236,00 €/ha (bornes d'une fourchette, pas le montant final). Le texte lu s'interrompt dans l'annexe 1 ; le reste de la liste des diplômes n'a pas été lu.",
+    "it": "Giovani agricoltori (fiatal mezőgazdasági termelő). Persona fisica di almeno 18 anni e al massimo 40, che si insedia per la prima volta come titolare e inizia l'attività agricola dopo la chiusura del periodo della domanda unica dell'anno precedente. Deve dimostrare un titolo dell'allegato 1 (o equivalente) o 730 giorni di lavoro agricolo a tempo pieno. L'aiuto è calcolato su un massimo di 300 ha ammissibili e concesso fino a cinque anni. Per il 2025 e il 2026 l'avviso dell'Autorità di gestione fissa un bilancio di 18.690.804 € e un importo unitario da 78,67 a 236,00 €/ha (limiti di un intervallo, non l'importo finale). Il testo letto si interrompe nell'allegato 1; il resto dell'elenco dei titoli non è stato letto."
+   },
+   "agro-ecological": {
+    "en": "Agro-ecological Programme (Agro-ökológiai Program, AÖP), the Hungarian eco-scheme. It is claimed each year in the single application and requires, in each land-use category, practices adding up to at least 2 points and at most 4. Holdings with under 5 ha of arable land, under 5 ha of other grassland or under 1 ha of other permanent crops are exempt from choosing practices. Arable land: practices 1 to 9 (soil cover, crop diversification with 2 to 6 crops depending on area, non-productive features, a 30 ha parcel-size limit, bee-safe products, urea, microbiological products, conditioners, no-till). Grassland: practices 10 to 14a (keeping grassland, rotational or shepherded grazing, annual extensive mowing, alternative mowers, grazing with native breeds). For 2025 and 2026 the Managing Authority notice sets a budget of €202,125,000 and a unit amount of €60.64 to €105.10/ha (limits of a range). The text read (version of 28-3-2026) cuts off at art. 28/A(7): the rest of practice 14a, practice 15 and the annexes with the points of each practice are missing.",
+    "fr": "Programme agro-écologique (Agro-ökológiai Program, AÖP), l'éco-régime hongrois. Il se demande chaque année dans la demande unique et exige, dans chaque catégorie d'utilisation des terres, des pratiques totalisant au moins 2 points et au plus 4. Sont dispensées de choisir des pratiques les exploitations de moins de 5 ha de terres arables, de moins de 5 ha d'autres prairies ou de moins de 1 ha d'autres cultures permanentes. Terres arables : pratiques 1 à 9 (couverture du sol, diversification des cultures avec 2 à 6 cultures selon la surface, éléments non productifs, limite de taille de parcelle de 30 ha, produits sans danger pour les abeilles, urée, produits microbiologiques, amendements, non-labour). Prairies : pratiques 10 à 14a (maintien de la prairie, pâturage tournant ou gardé, fauche annuelle extensive, faucheuses alternatives, pâturage avec races locales). Pour 2025 et 2026, l'avis de l'Autorité de gestion fixe un budget de 202 125 000 € et un montant unitaire de 60,64 à 105,10 €/ha (bornes d'une fourchette). Le texte lu (version du 28-3-2026) s'interrompt à l'art. 28/A (7) : manquent le reste de la pratique 14a, la pratique 15 et les annexes avec les points de chaque pratique.",
+    "it": "Programma agroecologico (Agro-ökológiai Program, AÖP), l'ecoregime ungherese. Si chiede ogni anno nella domanda unica e richiede, in ogni categoria di uso del suolo, pratiche che sommino almeno 2 punti e al massimo 4. Sono esentate dallo scegliere pratiche le aziende con meno di 5 ha di seminativi, meno di 5 ha di altri prati o meno di 1 ha di altre colture permanenti. Seminativi: pratiche da 1 a 9 (copertura del suolo, diversificazione colturale con 2-6 colture secondo la superficie, elementi non produttivi, limite di 30 ha per particella, prodotti sicuri per le api, urea, prodotti microbiologici, ammendanti, non lavorazione). Prati: pratiche da 10 a 14a (mantenimento del prato, pascolo a rotazione o custodito, sfalcio annuale estensivo, falciatrici alternative, pascolo con razze autoctone). Per il 2025 e il 2026 l'avviso dell'Autorità di gestione fissa un bilancio di 202.125.000 € e un importo unitario da 60,64 a 105,10 €/ha (limiti di un intervallo). Il testo letto (versione del 28-3-2026) si interrompe all'art. 28/A (7): mancano il resto della pratica 14a, la pratica 15 e gli allegati con i punti di ogni pratica."
+   },
+   "coupled-livestock": {
+    "en": "Coupled support for livestock (decree 19/2024 AM). Breeding ewe: animals are kept for 100 consecutive days from 1 April of the campaign year. Suckler cow: at least 30 % of the declared animals must calve that year, heifers can be at most 40 % and retention lasts six months from the application. Fattening bull: male cattle or buffalo of nine months or more, kept at least two months. Dairy cow: must have calved at least once and be 23 months old. Minimum and maximum unit amounts for 2025-2026 (notice 32/2025 IH, amended by 52/2026 IH, in €/animal): suckler cow 111.96 to 174.94; dairy cow 237.74 to 396.24; ewe 29.97 to 44.08; fattening bull 40.76 to 65.22 in 2025 and 57.15 to 106.68 in 2026. These are limits of a range, not the final amount; the 2025 budget is €34,631,327.25 for suckler cows, €68,274,257.17 for dairy cows, €22,656,030.92 for ewes and €5,061,180.70 for fattening bulls (2026: €5,061,204.00).",
+    "fr": "Aides couplées à l'élevage (décret 19/2024 AM). Brebis reproductrice : les animaux sont gardés 100 jours consécutifs à partir du 1er avril de l'année de campagne. Vache allaitante : au moins 30 % des animaux déclarés doivent vêler cette année-là, les génisses peuvent être 40 % au plus et la rétention dure six mois à compter de la demande. Taureau d'engraissement : mâles bovins ou buffles de neuf mois ou plus, gardés au moins deux mois. Vache laitière : doit avoir vêlé au moins une fois et avoir 23 mois révolus. Montants unitaires minimum et maximum pour 2025-2026 (avis 32/2025 IH, modifié par le 52/2026 IH, en €/animal) : vache allaitante 111,96 à 174,94 ; vache laitière 237,74 à 396,24 ; brebis 29,97 à 44,08 ; taureau d'engraissement 40,76 à 65,22 en 2025 et 57,15 à 106,68 en 2026. Ce sont les bornes d'une fourchette, pas le montant final ; le budget 2025 est de 34 631 327,25 € pour les vaches allaitantes, 68 274 257,17 € pour les vaches laitières, 22 656 030,92 € pour les brebis et 5 061 180,70 € pour les taureaux d'engraissement (2026 : 5 061 204,00 €).",
+    "it": "Aiuti accoppiati agli allevamenti (decreto 19/2024 AM). Pecora da riproduzione: gli animali sono tenuti 100 giorni consecutivi dal 1° aprile dell'anno di campagna. Vacca nutrice: almeno il 30 % degli animali dichiarati deve partorire in quell'anno, le manze possono essere al massimo il 40 % e la ritenzione dura sei mesi dalla domanda. Toro da ingrasso: maschi bovini o bufali di nove mesi o più, tenuti almeno due mesi. Vacca da latte: deve aver partorito almeno una volta e avere 23 mesi compiuti. Importi unitari minimi e massimi per il 2025-2026 (avviso 32/2025 IH, modificato dal 52/2026 IH, in €/capo): vacca nutrice da 111,96 a 174,94; vacca da latte da 237,74 a 396,24; pecora da 29,97 a 44,08; toro da ingrasso da 40,76 a 65,22 nel 2025 e da 57,15 a 106,68 nel 2026. Sono limiti di un intervallo, non l'importo finale; il bilancio 2025 è di 34.631.327,25 € per le vacche nutrici, 68.274.257,17 € per le vacche da latte, 22.656.030,92 € per le pecore e 5.061.180,70 € per i tori da ingrasso (2026: 5.061.204,00 €)."
+   },
+   "coupled-crops": {
+    "en": "Coupled support for crops (decree 19/2024 AM): rice, sugar beet, vegetables, industrial vegetables, industrial oilseeds, extensive fruit, intensive fruit, grain protein crops and forage protein crops. Notable conditions: rice, a proven minimum yield of 2.5 t/ha; sugar beet, a copy of the delivery contract by 30 September at the latest; grain protein, 1 t/ha for soya, faba bean and sweet lupin and 2 t/ha for dry pea, chickpea and fodder pea; forage protein, at least one cut by 30 September; extensive fruit, an orchard no older than the maximum age in annex 4 and fixed irrigation or at least 85 % plant density (two conditions are required). Minimum and maximum unit amounts for 2025-2026 in €/ha (notice 32/2025 IH, amended by 52/2026 IH): sugar beet 424.52 to 881.70; rice 582.75 to 874.13; industrial vegetables 260.44 to 390.66 in 2025 and 300.91 to 451.37 in 2026; vegetables 219.60 to 351.36; industrial oilseeds 76.71 to 142.47; extensive fruit 143.54 to 191.39; intensive fruit 280.11 to 429.50; grain protein 163.01 to 302.73; forage protein 44.92 to 77.00. These are limits of a range, not the final amount. The text of annex 4 is cut off and annexes 5 to 11 have not been read.",
+    "fr": "Aides couplées aux cultures (décret 19/2024 AM) : riz, betterave sucrière, légumes, légumes industriels, oléagineux industriels, fruits extensifs, fruits intensifs, protéagineux à grains et protéagineux fourragers. Conditions notables : riz, rendement minimal démontré de 2,5 t/ha ; betterave, copie du contrat de livraison au plus tard le 30 septembre ; protéagineux à grains, 1 t/ha pour le soja, la féverole et le lupin doux et 2 t/ha pour le pois sec, le pois chiche et le pois fourrager ; protéagineux fourragers, au moins une coupe avant le 30 septembre ; fruits extensifs, verger ne dépassant pas l'âge maximal de l'annexe 4 et irrigation fixe ou au moins 85 % de densité de plants (deux conditions sont exigées). Montants unitaires minimum et maximum pour 2025-2026 en €/ha (avis 32/2025 IH, modifié par le 52/2026 IH) : betterave 424,52 à 881,70 ; riz 582,75 à 874,13 ; légumes industriels 260,44 à 390,66 en 2025 et 300,91 à 451,37 en 2026 ; légumes 219,60 à 351,36 ; oléagineux industriels 76,71 à 142,47 ; fruits extensifs 143,54 à 191,39 ; fruits intensifs 280,11 à 429,50 ; protéagineux à grains 163,01 à 302,73 ; protéagineux fourragers 44,92 à 77,00. Ce sont les bornes d'une fourchette, pas le montant final. Le texte de l'annexe 4 est coupé et les annexes 5 à 11 n'ont pas été lues.",
+    "it": "Aiuti accoppiati alle colture (decreto 19/2024 AM): riso, barbabietola da zucchero, ortaggi, ortaggi industriali, oleaginose industriali, frutta estensiva, frutta intensiva, proteiche da granella e proteiche da foraggio. Condizioni di rilievo: riso, resa minima dimostrata di 2,5 t/ha; barbabietola, copia del contratto di consegna entro il 30 settembre; proteiche da granella, 1 t/ha per soia, fava e lupino dolce e 2 t/ha per pisello secco, cece e pisello foraggero; proteiche da foraggio, almeno uno sfalcio entro il 30 settembre; frutta estensiva, impianto che non superi l'età massima dell'allegato 4 e irrigazione fissa o almeno l'85 % di densità di piante (servono due condizioni). Importi unitari minimi e massimi per il 2025-2026 in €/ha (avviso 32/2025 IH, modificato dal 52/2026 IH): barbabietola da 424,52 a 881,70; riso da 582,75 a 874,13; ortaggi industriali da 260,44 a 390,66 nel 2025 e da 300,91 a 451,37 nel 2026; ortaggi da 219,60 a 351,36; oleaginose industriali da 76,71 a 142,47; frutta estensiva da 143,54 a 191,39; frutta intensiva da 280,11 a 429,50; proteiche da granella da 163,01 a 302,73; proteiche da foraggio da 44,92 a 77,00. Sono limiti di un intervallo, non l'importo finale. Il testo dell'allegato 4 è tagliato e gli allegati da 5 a 11 non sono stati letti."
+   },
+   "amounts-notice": {
+    "en": "How amounts are set in Hungary. Since decree 5/2025 AM, the euro budgets and the minimum and maximum unit amounts of each direct payment are not in the decree but in a notice (IH közlemény) of the CAP National Managing Authority. Notice 32/2025 IH set them for 2025-2026 and 52/2026 IH amended it (it changes the 2026 fattening bull and industrial vegetables). Notice 43/2026 IH amends the 2024 budgets in forints (basic support, AÖP and young farmers). The 2026 advances are set in forints per hectare (95/2026 IH). What has been read are minimum-maximum ranges; the notice with the final unit amount of a campaign (for example 67/2025 IH) has not been read.",
+    "fr": "Comment les montants sont fixés en Hongrie. Depuis le décret 5/2025 AM, les budgets en euros et les montants unitaires minimum et maximum de chaque paiement direct ne figurent plus dans le décret mais dans un avis (IH közlemény) de l'Autorité nationale de gestion de la PAC. L'avis 32/2025 IH les a fixés pour 2025-2026 et le 52/2026 IH l'a modifié (il change le taureau d'engraissement et les légumes industriels de 2026). L'avis 43/2026 IH modifie les budgets 2024 en forints (aide de base, AÖP et jeunes). Les avances 2026 sont fixées en forints par hectare (95/2026 IH). Ce qui a été lu, ce sont des fourchettes minimum-maximum ; l'avis avec le montant unitaire final d'une campagne (par exemple le 67/2025 IH) n'a pas été lu.",
+    "it": "Come si fissano gli importi in Ungheria. Dal decreto 5/2025 AM, i bilanci in euro e gli importi unitari minimi e massimi di ogni pagamento diretto non sono più nel decreto ma in un avviso (IH közlemény) dell'Autorità nazionale di gestione della PAC. L'avviso 32/2025 IH li ha fissati per il 2025-2026 e il 52/2026 IH lo ha modificato (cambia il toro da ingrasso e gli ortaggi industriali del 2026). L'avviso 43/2026 IH modifica i bilanci 2024 in fiorini (sostegno di base, AÖP e giovani). Gli anticipi 2026 sono fissati in fiorini per ettaro (95/2026 IH). Ciò che è stato letto sono intervalli minimo-massimo; l'avviso con l'importo unitario finale di una campagna (per esempio il 67/2025 IH) non è stato letto."
+   },
+   "exempt-small": {
+    "en": "Conditionality checks: according to an Agriculture Ministry technical note (undated in the text read), farmers whose eligible area declared in the single application does not exceed 10 ha are exempt from conditionality checks and sanctions, though not from the authorities' general inspections. The same note covers a simplified crop-rotation rule (diversification instead of rotation) and the end of double sanctions for those receiving both rural development and area payments. It is an information note, not decree 16/2024 AM, which has not been read.",
+    "fr": "Contrôles de conditionnalité : selon une note technique du ministère de l'Agriculture (non datée dans le texte lu), les agriculteurs dont la surface admissible déclarée dans la demande unique ne dépasse pas 10 ha sont exemptés des contrôles et sanctions de conditionnalité, mais pas des inspections générales des autorités. La même note traite d'une règle de rotation simplifiée (diversification au lieu de rotation) et de la fin de la double sanction pour ceux qui perçoivent développement rural et paiements à la surface. C'est une note d'information, pas le décret 16/2024 AM, qui n'a pas été lu.",
+    "it": "Controlli di condizionalità: secondo una nota tecnica del Ministero dell'Agricoltura (senza data nel testo letto), gli agricoltori la cui superficie ammissibile dichiarata nella domanda unica non supera 10 ha sono esentati dai controlli e dalle sanzioni di condizionalità, ma non dalle ispezioni generali delle autorità. La stessa nota tratta una regola semplificata di rotazione (diversificazione al posto della rotazione) e la fine della doppia sanzione per chi percepisce sviluppo rurale e pagamenti a superficie. È una nota informativa, non il decreto 16/2024 AM, che non è stato letto."
+   },
+   "late-and-missed": {
+    "en": "Missed deadlines. A single application filed after 9 June is rejected (2026 government-office item; in a 2024 draft the rule was the same with 10 June). Field operations that must be reported (for example second crops) must be notified within 20 days (it was 15, under decree 5/2025 AM); if those deadlines are missed, the late-reported operation is not counted for the aid or for conditionality unless a decree or call says otherwise (art. 19(9) of 15/2024). No percentage penalty scale for lateness has been read in the consolidated text, nor the reductions for partial AÖP non-compliance (arts. 5 and 6 of 17/2024).",
+    "fr": "Délais non respectés. La demande unique déposée après le 9 juin est rejetée (communiqué de l'office gouvernemental de 2026 ; dans un projet de 2024 la règle était la même avec le 10 juin). Les opérations de terrain à déclarer (par exemple les secondes cultures) doivent être notifiées dans les 20 jours (15 auparavant, selon le décret 5/2025 AM) ; si ces délais ne sont pas respectés, l'opération déclarée tardivement n'est pas prise en compte pour l'aide ni la conditionnalité, sauf disposition contraire d'un décret ou d'un appel (art. 19 (9) du 15/2024). Aucun barème de pénalité en pourcentage pour retard n'a été lu dans le texte consolidé, ni les réductions pour non-respect partiel de l'AÖP (art. 5 et 6 du 17/2024).",
+    "it": "Termini non rispettati. La domanda unica presentata dopo il 9 giugno è respinta (notizia dell'ufficio di governo del 2026; in una bozza del 2024 la regola era la stessa con il 10 giugno). Le operazioni di campo da comunicare (per esempio le seconde colture) vanno notificate entro 20 giorni (prima 15, secondo il decreto 5/2025 AM); se quei termini non sono rispettati, l'operazione notificata in ritardo non è considerata per l'aiuto né per la condizionalità, salvo diversa disposizione di un decreto o di un bando (art. 19 (9) del 15/2024). Nel testo consolidato non è stata letta alcuna scala percentuale di penalità per ritardo, né le riduzioni per mancato rispetto parziale dell'AÖP (artt. 5 e 6 del 17/2024)."
+   }
+  },
+  "calendar": {
+   "su-close": {
+    "en": "End of the single-application period (9 June of the campaign year). Art. 11(1) of decree 15/2024 AM, as amended by 5/2025 AM, sets it. The Treasury announces the opening each year (15 April in 2026).",
+    "fr": "Fin de la période de la demande unique (9 juin de l'année de campagne). L'art. 11 (1) du décret 15/2024 AM, modifié par le 5/2025 AM, le fixe. Le Trésor annonce l'ouverture chaque année (le 15 avril en 2026).",
+    "it": "Fine del periodo della domanda unica (9 giugno dell'anno di campagna). Lo fissa l'art. 11 (1) del decreto 15/2024 AM, modificato dal 5/2025 AM. Il Tesoro annuncia ogni anno l'apertura (il 15 aprile nel 2026)."
+   },
+   "sugarbeet-contract": {
+    "en": "Deadline to submit the copy of the sugar beet delivery contract for coupled support (30 September).",
+    "fr": "Date limite pour déposer la copie du contrat de livraison de betterave sucrière pour l'aide couplée (30 septembre).",
+    "it": "Scadenza per presentare la copia del contratto di consegna della barbabietola da zucchero per l'aiuto accoppiato (30 settembre)."
+   }
+  },
+  "overrides": {
+   "2026:su-close": {
+    "en": "In 2026 the single-application period ran from 15 April to 9 June, according to the Vas county government office (news item of 14-4-2026, not the rule). No extension was seen.",
+    "fr": "En 2026, la période de la demande unique allait du 15 avril au 9 juin, selon l'office gouvernemental du comté de Vas (communiqué du 14-4-2026, pas la norme). Aucune prorogation n'a été vue.",
+    "it": "Nel 2026 il periodo della domanda unica andava dal 15 aprile al 9 giugno, secondo l'ufficio di governo della contea di Vas (notizia del 14-4-2026, non la norma). Non si è vista alcuna proroga."
+   }
+  }
+ }
+}

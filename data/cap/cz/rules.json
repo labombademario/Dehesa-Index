@@ -1,0 +1,428 @@
+{
+ "schemaVersion": 1,
+ "country": "CZ",
+ "scheme": "Strategický plán SZP ČR 2023-2027 (přímé platby: nařízení vlády č. 83/2023 Sb.)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-15",
+ "source": {
+  "id": "esbirka_cz",
+  "instrument": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, ve znění nařízení vlády č. 45/2026 Sb. y č. 167/2026 Sb., Sbírka zákonů; y metodické příručky del Ministerio de Agricultura 2026",
+  "ref": "NV 83/2023 Sb.",
+  "url": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83"
+ },
+ "note": "Reglas leídas a mano de una copia consolidada del NV 83/2023 Sb. (epravo.cz, no la fuente oficial e-Sbírka, que no se pudo leer; versión del 1-4 al 30-6-2026, cortada en el § 15 (4)), de los textos de las novelas 45/2026 y 167/2026 Sb. y de las guías del Ministerio de Agricultura de 2026 (que no son derecho). No se han leído los §§ 15 (4) a 40 ni los anexos: las condiciones de jóvenes y ayudas asociadas salen de las guías. Importes: solo tipos planificados de 2026 de BISS, CRISS, lúpulo y hortalizas de alta mano de obra. La penalización por retraso sale solo de las guías. Sin vigilancia automática. Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Základní podpora příjmu pro udržitelnost (BISS)",
+   "nameLang": "cs",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 6 a 7",
+   "articles": [
+    "6",
+    "7"
+   ]
+  },
+  {
+   "id": "small-farmers",
+   "kind": "basic",
+   "name": "Platba pro malé zemědělce",
+   "nameLang": "cs",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 8",
+   "articles": [
+    "8"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Doplňková redistributivní podpora příjmu (CRISS)",
+   "nameLang": "cs",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 9",
+   "articles": [
+    "9"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Doplňková podpora příjmu pro mladé zemědělce (YF)",
+   "nameLang": "cs",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 26",
+   "articles": [
+    "26"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Režimy pro klima a životní prostředí (ekoplatba)",
+   "nameLang": "cs",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 10 až 15",
+   "articles": [
+    "10",
+    "11",
+    "12",
+    "12a",
+    "13",
+    "14",
+    "15"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Podpora příjmu vázaná na produkci (CIS)",
+   "nameLang": "cs",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 27 až 38",
+   "articles": [
+    "27",
+    "38"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 2; MZe, Harmonogram příjmu žádostí SP SZP na rok 2026 (aktualizace k 10. 8. 2026)",
+   "articles": [
+    "2"
+   ],
+   "text": "Solo puede pedir pagos directos un agricultor activo (§ 4), con la solicitud única al SZIF, a más tardar el 15 de mayo del año de la solicitud (§ 2 del NV 83/2023, versión vigente del 1-4 al 30-6-2026). El calendario de 2026 del Ministerio fijó la recepción de la solicitud única del 9 de abril al 15 de mayo de 2026 (versión de 10-8-2026, sin prórroga). Según la guía del Ministerio, la ventana suele ir de mediados de abril al 15 de mayo y el SZIF publica las fechas exactas. El texto del NV no contiene reglas de retraso; están en la guía (ver regla de penalización por retraso).",
+   "officialUrl": "https://mze.gov.cz/public/portal/mze/-a99194---1nGoMZUb/harmonogram-prijmu-zadosti-sp-szp-na-rok-2026-aktualizace-k-10.-8.-2026",
+   "values": {
+    "campaign": 2026,
+    "from": "2026-04-09",
+    "to": "2026-05-15"
+   }
+  },
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 4",
+   "articles": [
+    "4"
+   ],
+   "text": "Agricultor activo (§ 4 NV 83/2023). Base: al menos 1 ha de tierra agrícola en el registro de uso de la tierra (LPIS) o al menos 1 unidad de ganado (VDJ) en el registro central de animales, y además una de estas: pagos directos del año anterior que no superen 5.000 €; en el año anterior, solicitudes de ayuda asociada sobre al menos el 10 % de la tierra, o declaración de cultivos con cereales y oleaginosas más cultivos asociados del 30 % o más; solicitudes agroambientales o ecológicas sobre al menos el 10 % de la tierra; o carga ganadera media de al menos 0,3 VDJ/ha entre el 1 de junio y el 30 de septiembre del año anterior. Alternativa: ingresos agrarios de al menos el 30 % de los ingresos totales del último periodo contable cerrado y pagos directos de como máximo el 80 % de los ingresos agrarios (se prueba con informe de auditor o declaración de impuestos). Hay vías especiales para investigación y enseñanza, para quien empieza y para quien tiene vacas de leche o terneros sin tierra registrada. Texto leído en copia consolidada (epravo.cz), no en la Sbírka oficial.",
+   "officialUrl": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83",
+   "values": {
+    "minHa": 1,
+    "minLsu": 1,
+    "priorYearPaymentsMaxEur": 5000,
+    "coupledAreaMinPct": 10,
+    "agriEnvAreaMinPct": 10,
+    "stockingMinLsuPerHa": 0.3,
+    "agriIncomeMinPct": 30,
+    "directPaymentsMaxPctOfAgriIncome": 80
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 7, 8 y 9; Nařízení vlády č. 45/2026 Sb. (novela NV 83/2023, účinná od 1. 4. 2026)",
+   "articles": [
+    "7",
+    "8",
+    "9"
+   ],
+   "text": "Superficie mínima: 1 ha para la ayuda básica (§ 7 (10)), para la ayuda a pequeños agricultores (§ 8 (10)) y para el pago redistributivo (§ 9 (4), incluido por la novela 45/2026 Sb. desde el 1-4-2026). Para ser agricultor activo se necesita 1 ha en LPIS o 1 VDJ. En la ayuda básica, la tierra debe constar en el registro desde la solicitud hasta el 31 de agosto, cultivarse todo ese tiempo, y los barbechos y pastos deben segarse, pastarse o triturarse (con retirada de biomasa en el caso del pasto) antes del 31 de agosto; si no, esa parte no cobra (§ 7). Texto leído en copia consolidada (epravo.cz).",
+   "officialUrl": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83",
+   "values": {
+    "minHa": 1,
+    "landRecordedUntil": "08-31"
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 6 y 7; MZe, Metodická příručka k podmínkám poskytování přímých plateb v ČR v roce 2026",
+   "articles": [
+    "6",
+    "7"
+   ],
+   "text": "Ayuda básica a la renta (BISS, intervención 01.21). Tipo planificado de 2026: 66,42 €/ha, con una desviación posible de hasta el 5 %; el importe final depende de los solicitantes y de la superficie declarada y se publica después, con el tipo de cambio del BCE del último día anterior al 1 de octubre del año de pago (guía del Ministerio, sin fecha de publicación). Es planificado, no real. La guía de 2024 daba 72,48 €/ha planificados para 2024. Ver la regla de superficie mínima para las condiciones de la tierra. Las condiciones de cáñamo y adormidera (variedades del Catálogo Común a 15 de marzo) están en el § 7 (8).",
+   "officialUrl": "https://mze.gov.cz/public/portal/mze/-a92642---H7JnEJ1y/metodicka-prirucka-k-podminkam-poskytovani-primych-plateb-v-ceske-republice-v-roce-2026",
+   "values": {
+    "campaign": 2026,
+    "plannedEurPerHa": 66.42,
+    "deviationPct": 5,
+    "planned2024EurPerHa": 72.48,
+    "status": "planned"
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 9; MZe, Metodická příručka k podmínkám poskytování přímých plateb v ČR v roce 2026",
+   "articles": [
+    "9"
+   ],
+   "text": "Pago redistributivo complementario (CRISS, intervención 03.29). Se paga a todos los solicitantes sobre un máximo de 150 ha admisibles (sin tramos), con mínimo de 1 ha; exige solicitar y tener derecho a la ayuda básica y se reduce en la misma proporción que ella. Tipo planificado de 2026: 153,90 €/ha, con una desviación posible de hasta el 9 %; el importe final se conoce después (guía del Ministerio). Es planificado, no real.",
+   "officialUrl": "https://mze.gov.cz/public/portal/mze/-a92642---H7JnEJ1y/metodicka-prirucka-k-podminkam-poskytovani-primych-plateb-v-ceske-republice-v-roce-2026",
+   "values": {
+    "campaign": 2026,
+    "maxHa": 150,
+    "minHa": 1,
+    "plannedEurPerHa": 153.9,
+    "deviationPct": 9,
+    "status": "planned"
+   }
+  },
+  {
+   "id": "small-farmers",
+   "topic": "payments",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 8; MZe, Přímé platby 2026 (informační brožura, aktuální k 08/2026)",
+   "articles": [
+    "8"
+   ],
+   "text": "Pago a pequeños agricultores (intervención 02.28). Pueden pedirlo quienes tienen como máximo 10 ha en LPIS el día de la solicitud; se paga sobre un máximo de 4 ha admisibles, con mínimo de 1 ha. No se puede combinar con otros pagos directos (si se piden, la solicitud se rechaza) y tiene un sistema de sanciones simplificado. El Ministerio dice que equivale aproximadamente a la suma de la ayuda básica, el redistributivo y el ecorregimen transversal. No se ha leído el importe.",
+   "officialUrl": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83",
+   "values": {
+    "maxHaOwned": 10,
+    "maxHaPaid": 4,
+    "minHa": 1
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 26; MZe, Metodická příručka k doplňkové podpoře příjmu pro mladé zemědělce (platba YF, platná od 1. 1. 2026)",
+   "articles": [
+    "26"
+   ],
+   "text": "Ayuda complementaria a jóvenes agricultores (YF, intervención 04.30). Según la guía del Ministerio (válida desde el 1-1-2026): el solicitante no cumple 41 años en el año de la primera solicitud; se paga sobre un máximo de 90 ha admisibles, con un mínimo de 1 ha en LPIS; se concede a un mismo solicitante como máximo cinco años seguidos; con la primera solicitud hay que presentar prueba de la cualificación agraria mínima (formación profesional agraria, curso de 300 horas, tres cualificaciones profesionales o dos años de práctica) y no se admite presentarla más tarde, ni siquiera en un recurso. La novela 45/2026 Sb. añadió al § 26 (1) d) la alternativa de dos años de práctica. El tipo por hectárea varía cada año y no se ha leído; la guía da una dotación de unos 520,2 millones de CZK para 2023-2027.",
+   "officialUrl": "https://mze.gov.cz/public/portal/mze/-a91052---bvzMeG-S/metodicka-prirucka-pro-zadatele-k-doplnkove-podpore-prijmu-pro-mlade-zemedelce",
+   "values": {
+    "maxAgeExclusive": 41,
+    "maxHa": 90,
+    "minHa": 1,
+    "maxYears": 5,
+    "allocationCzkApprox": 520200000
+   }
+  },
+  {
+   "id": "eco-schemes",
+   "topic": "eco",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 10 a 15; MZe, Režimy pro klima a životní prostředí (Ekoplatba) 2026, aktuální k 08/2026",
+   "articles": [
+    "10",
+    "11",
+    "12",
+    "12a",
+    "13",
+    "14",
+    "15"
+   ],
+   "text": "Ecorregímenes (Režimy pro klima a životní prostředí, ekoplatba, intervenciones 05.31 a 06b.31). Hay seis: ecorregimen básico de toda la explotación, ecorregimen premium de toda la explotación, gestión sostenible de nutrientes, cultivo en franjas, nuevos elementos del paisaje y mantenimiento de elementos del paisaje. Pedir cualquiera de los demás exige pedir también el básico; no se declaran superficies de 0,1 ha o menos (§ 11). El básico: al menos 1 ha, 5 % de superficie no productiva en cultivo, pasto o barbecho, y en tierra de cultivo diversidad de cultivos (2 cultivos de 10 a 30 ha con el mayor como máximo al 75 %, 3 cultivos de 30 a 150 ha, 4 cultivos desde 150 ha, § 12a). El premium: 7 % de superficie no productiva, de la cual al menos un 2 % «superpremium». Gestión de nutrientes: excedente de fósforo hasta 10 kg P/ha y de nitrógeno medio hasta 60 kg N/ha (periodo 1-7-2025 a 30-6-2026). Cultivo en franjas: al menos 4 ha por parcela y pendiente de al menos el 3 % en el 70 % de la parcela. No se han leído los importes por hectárea (la ficha del Ministerio no los incluye). Fuente de los umbrales: el § del NV leído en copia consolidada y la ficha del Ministerio de agosto de 2026; el NV se corta en el § 15 (4).",
+   "officialUrl": "https://mze.gov.cz/public/portal/mze/-a99314---3iTUdBuT/informacni-brozura-prime-platby-rezimy-pro-klima-a-zivotni-prostredi-ekoplatba-2026-aktualni-k-08-2026",
+   "values": {
+    "regimes": 6,
+    "basicMinHa": 1,
+    "nonProductivePctBasic": 5,
+    "nonProductivePctPremium": 7,
+    "stripCroppingMinHaPerParcel": 4,
+    "ratesRead": false
+   }
+  },
+  {
+   "id": "coupled",
+   "topic": "associated",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 27 a 38; MZe, Metodická příručka k podmínkám poskytování přímých plateb v ČR v roce 2026",
+   "articles": [
+    "27",
+    "29",
+    "32",
+    "33"
+   ],
+   "text": "Ayuda a la renta ligada a la producción (CIS, intervenciones 07.32 a 15.32). Sectores según el Ministerio: lúpulo, hortalizas y fruta de alta y muy alta intensidad de mano de obra, remolacha azucarera, proteicos, patata para almidón, ovino y caprino, vacuno de carne (terneros) y vacas de leche; se paga por hectárea o por unidad de ganado. Tipos planificados de 2026 que se han podido leer: lúpulo 573,96 €/ha (desviación hasta ±10 %) y hortalizas de alta intensidad de mano de obra 182,24 €/ha (hasta ±15 %). No se han leído los tipos ni las condiciones de los demás sectores: la guía de 2026 se corta en la página 37 de 63 y los §§ 27 a 38 del NV no estaban en el texto leído. Condiciones de 2024 recogidas en la guía de 2024: presencia de ovejas y cabras del 15 de mayo al 11 de septiembre, cobertura de proteicos del 1 de junio al 15 de julio, comprobación de vacas de leche el 31 de marzo, y prueba de producción de fruta y hortalizas hasta el 31 de enero del año siguiente. Las reducciones por bienestar animal del § 36 a 38 (novela 45/2026) están en la regla de penalizaciones.",
+   "officialUrl": "https://mze.gov.cz/public/portal/mze/-a92642---H7JnEJ1y/metodicka-prirucka-k-podminkam-poskytovani-primych-plateb-v-ceske-republice-v-roce-2026",
+   "values": {
+    "campaign": 2026,
+    "hopsPlannedEurPerHa": 573.96,
+    "hopsDeviationPct": 10,
+    "highLabourVegPlannedEurPerHa": 182.24,
+    "highLabourVegDeviationPct": 15,
+    "status": "planned"
+   }
+  },
+  {
+   "id": "late-penalty",
+   "topic": "penalties",
+   "legalBasis": "MZe, Metodická příručka k podmínkám poskytování přímých plateb v ČR v roce 2026 (sección de plazos)",
+   "articles": [],
+   "text": "Retraso en la solicitud única: según la guía del Ministerio de 2026 y la de jóvenes agricultores, el importe se reduce un 1 % por cada día hábil de retraso y, si el retraso supera los 25 días naturales, la solicitud se rechaza (salvo fuerza mayor, que debe comunicarse en 15 días). Los anexos que falten no los reclama el SZIF: según los ejemplos de la guía, la solicitud se rechaza si no se aportan antes del 9 de junio. Las reglas vienen de la guía, no del texto del NV 83/2023, que no las contiene; no se ha comprobado el reglamento europeo en que se basan.",
+   "officialUrl": "https://mze.gov.cz/public/portal/mze/-a92642---H7JnEJ1y/metodicka-prirucka-k-podminkam-poskytovani-primych-plateb-v-ceske-republice-v-roce-2026",
+   "values": {
+    "penaltyPctPerWorkingDay": 1,
+    "rejectAfterCalendarDays": 25,
+    "forceMajeureDays": 15
+   }
+  },
+  {
+   "id": "reductions",
+   "topic": "penalties",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, §§ 12 a 14; Nařízení vlády č. 45/2026 Sb. (novela NV 83/2023, účinná od 1. 4. 2026)",
+   "articles": [
+    "12",
+    "13",
+    "14",
+    "36",
+    "37",
+    "38"
+   ],
+   "text": "Reducciones por incumplimiento en los ecorregímenes: en el básico de pasto, la parcela que no cumple deja de cobrar o el ecorregimen se reduce un 10 % (§ 12 (7)-(8)); en tierra de cultivo estándar con franjas de protección de agua (§ 13) y en barbecho (§ 14, sin cosecha ni pastoreo del 1 de febrero al 15 de agosto), la reducción es del 3 %, 5 % o 10 % según la gravedad, y en la tierra de cultivo también del 50 % o denegación completa. La novela 45/2026 Sb. añadió reducciones por bienestar animal en el apoyo ligado al ganado: 50 % cuando la multa es de más de 50.000 y hasta 100.000 CZK, y denegación por encima de 100.000 CZK (§§ 36 a 38; leído en un resumen del texto, que está incompleto: falta el punto 54 del art. I). No se ha leído el resto del sistema de sanciones.",
+   "officialUrl": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2023/83",
+   "values": {
+    "ecoReductionPct": [
+     3,
+     5,
+     10,
+     50
+    ],
+    "grasslandBasicEcoReductionPct": 10,
+    "animalWelfareFineCzk": [
+     50000,
+     100000
+    ]
+   }
+  },
+  {
+   "id": "recent-changes",
+   "topic": "controls",
+   "legalBasis": "Nařízení vlády č. 45/2026 Sb. (novela NV 83/2023, účinná od 1. 4. 2026); Nařízení vlády č. 167/2026 Sb. (novela NV 83/2023, účinná od 1. 10. 2026)",
+   "articles": [],
+   "text": "Cambios recientes en el NV 83/2023. La novela 45/2026 Sb. (aprobada el 16-3-2026, publicada el 25-3-2026, en vigor el 1-4-2026) incluye un nuevo § 12a (reglas comunes del ecorregimen básico en tierra de cultivo), cambios en los §§ 13 a 15 y 23 a 24d, el mínimo de 1 ha del pago redistributivo y anexos nuevos. La novela 167/2026 Sb. (aprobada el 17-8-2026, publicada el 16-9-2026, en vigor el 1-10-2026) permite cambiar o arar el pasto permanente si el dictamen de la autoridad de protección de la naturaleza muestra que no afecta a hábitats ni lugares europeos (§ 12 (6) c), deroga el § 25, añade el § 38b (sin ayuda si falta el documento adicional exigido) y fija que los procedimientos iniciados se terminan con la versión antigua, salvo algunos apartados que se aplican desde el 1-10-2026. Lo leído son los textos de las novelas, no una versión consolidada que las incorpore.",
+   "officialUrl": "https://www.epravo.cz/top/zakony/sbirka-zakonu/sb/2026/167",
+   "values": {
+    "amendments": [
+     "45/2026 Sb. (2026-04-01)",
+     "167/2026 Sb. (2026-10-01)"
+    ]
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "Nařízení vlády č. 83/2023 Sb., o stanovení podmínek poskytování přímých plateb zemědělcům, § 2",
+   "articles": [
+    "2"
+   ],
+   "when": {
+    "month": 5,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Fin del plazo ordinario de la solicitud única (15 de mayo del año de la solicitud). Lo fija el § 2 del NV 83/2023."
+  },
+  {
+   "id": "su-late-limit",
+   "kind": "deadline",
+   "legalBasis": "MZe, Metodická příručka k podmínkám poskytování přímých plateb v ČR v roce 2026 (sección de plazos)",
+   "articles": [],
+   "when": {
+    "month": 6,
+    "day": 9,
+    "yearOffset": 0
+   },
+   "text": "Último día para presentar la solicitud con reducción del 1 % por día hábil (25 días naturales después del 15 de mayo). Fuente: guía del Ministerio, no el texto del NV."
+  }
+ ],
+ "campaignOverrides": [
+  {
+   "campaign": 2026,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2026-05-15",
+   "legalBasis": "MZe, Harmonogram příjmu žádostí SP SZP na rok 2026 (aktualizace k 10. 8. 2026)",
+   "text": "En 2026 la recepción de la solicitud única fue del 9 de abril al 15 de mayo, según el calendario del Ministerio actualizado el 10-8-2026, que no recoge ninguna prórroga."
+  }
+ ],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "application": {
+    "en": "Only an active farmer (§ 4) can claim direct payments, with the single application to SZIF, by 15 May of the application year at the latest (§ 2 of NV 83/2023, version in force 1-4 to 30-6-2026). The Ministry's 2026 schedule set receipt of the single application from 9 April to 15 May 2026 (version of 10-8-2026, no extension). According to the Ministry guide, the window usually runs from mid-April to 15 May and SZIF publishes the exact dates. The text of the regulation contains no lateness rules; they are in the guide (see the late-submission penalty rule).",
+    "fr": "Seul un agriculteur actif (§ 4) peut demander les paiements directs, avec la demande unique au SZIF, au plus tard le 15 mai de l'année de demande (§ 2 du NV 83/2023, version en vigueur du 1-4 au 30-6-2026). Le calendrier 2026 du ministère a fixé la réception de la demande unique du 9 avril au 15 mai 2026 (version du 10-8-2026, sans prorogation). Selon le guide du ministère, la fenêtre va en général de mi-avril au 15 mai et le SZIF publie les dates exactes. Le texte du règlement ne contient pas de règles de retard ; elles figurent dans le guide (voir la règle de pénalité pour retard).",
+    "it": "Solo un agricoltore attivo (§ 4) può chiedere i pagamenti diretti, con la domanda unica al SZIF, entro il 15 maggio dell'anno della domanda (§ 2 del NV 83/2023, versione in vigore dal 1-4 al 30-6-2026). Il calendario 2026 del Ministero ha fissato la ricezione della domanda unica dal 9 aprile al 15 maggio 2026 (versione del 10-8-2026, senza proroga). Secondo la guida del Ministero, la finestra va di solito da metà aprile al 15 maggio e il SZIF pubblica le date esatte. Il testo del regolamento non contiene regole sul ritardo; sono nella guida (vedi la regola sulla penalità per ritardo)."
+   },
+   "active-farmer": {
+    "en": "Active farmer (§ 4 NV 83/2023). Base: at least 1 ha of farmland in the land register (LPIS) or at least 1 livestock unit (LSU) in the central animal register, plus one of these: direct payments in the previous year not above €5,000; in the previous year, coupled-support applications on at least 10 % of the land, or a crop declaration with cereals and oilseeds plus coupled crops at 30 % or more; agri-environment or organic applications on at least 10 % of the land; or an average stocking density of at least 0.3 LSU/ha from 1 June to 30 September of the previous year. Alternative: agricultural income of at least 30 % of total income in the last closed accounting period and direct payments of at most 80 % of agricultural income (shown with an auditor's report or a tax return). There are special routes for research and teaching, for new entrants and for holders of dairy cows or calves without registered land. Text read in a consolidated copy (epravo.cz), not in the official Sbírka.",
+    "fr": "Agriculteur actif (§ 4 NV 83/2023). Base : au moins 1 ha de terres agricoles dans le registre d'utilisation des terres (LPIS) ou au moins 1 unité de gros bétail (UGB) dans le registre central des animaux, et en plus l'une de ces conditions : paiements directs de l'année précédente ne dépassant pas 5 000 € ; l'année précédente, demandes d'aide couplée sur au moins 10 % des terres, ou déclaration de cultures avec céréales et oléagineux plus cultures couplées à 30 % ou plus ; demandes agroenvironnementales ou bio sur au moins 10 % des terres ; ou chargement moyen d'au moins 0,3 UGB/ha entre le 1er juin et le 30 septembre de l'année précédente. Alternative : revenu agricole d'au moins 30 % du revenu total du dernier exercice clos et paiements directs d'au plus 80 % du revenu agricole (prouvé par rapport d'auditeur ou déclaration fiscale). Il existe des voies spéciales pour la recherche et l'enseignement, les nouveaux installés et les détenteurs de vaches laitières ou de veaux sans terres enregistrées. Texte lu dans une copie consolidée (epravo.cz), pas dans le Sbírka officiel.",
+    "it": "Agricoltore attivo (§ 4 NV 83/2023). Base: almeno 1 ha di terreno agricolo nel registro d'uso del suolo (LPIS) o almeno 1 unità di bestiame (UBA) nel registro centrale degli animali, e inoltre una di queste condizioni: pagamenti diretti dell'anno precedente non superiori a 5.000 €; nell'anno precedente, domande di aiuto accoppiato su almeno il 10 % del terreno, o dichiarazione colturale con cereali e oleaginose più colture accoppiate al 30 % o più; domande agroambientali o biologiche su almeno il 10 % del terreno; oppure carico medio di almeno 0,3 UBA/ha dal 1° giugno al 30 settembre dell'anno precedente. Alternativa: reddito agricolo di almeno il 30 % del reddito totale dell'ultimo periodo contabile chiuso e pagamenti diretti al massimo l'80 % del reddito agricolo (provato con relazione di revisore o dichiarazione dei redditi). Ci sono vie speciali per ricerca e insegnamento, nuovi insediati e detentori di vacche da latte o vitelli senza terreno registrato. Testo letto in una copia consolidata (epravo.cz), non nella Sbírka ufficiale."
+   },
+   "minimum": {
+    "en": "Minimum area: 1 ha for basic income support (§ 7(10)), for the small-farmer payment (§ 8(10)) and for the redistributive payment (§ 9(4), added by amendment 45/2026 Sb. from 1-4-2026). To be an active farmer 1 ha in LPIS or 1 LSU is needed. For basic support the land must be recorded from the application until 31 August, farmed throughout, and fallow and grassland must be mown, grazed or mulched (with biomass removal for grassland) by 31 August; otherwise that part gets no payment (§ 7). Text read in a consolidated copy (epravo.cz).",
+    "fr": "Superficie minimale : 1 ha pour l'aide de base au revenu (§ 7 (10)), pour le paiement aux petits agriculteurs (§ 8 (10)) et pour le paiement redistributif (§ 9 (4), ajouté par la modification 45/2026 Sb. depuis le 1-4-2026). Pour être agriculteur actif il faut 1 ha en LPIS ou 1 UGB. Pour l'aide de base, la terre doit figurer au registre de la demande au 31 août, être cultivée pendant toute cette période, et les jachères et prairies doivent être fauchées, pâturées ou broyées (avec exportation de la biomasse pour la prairie) avant le 31 août ; sinon cette partie n'est pas payée (§ 7). Texte lu dans une copie consolidée (epravo.cz).",
+    "it": "Superficie minima: 1 ha per il sostegno di base al reddito (§ 7 (10)), per il pagamento ai piccoli agricoltori (§ 8 (10)) e per il pagamento redistributivo (§ 9 (4), aggiunto dalla modifica 45/2026 Sb. dal 1-4-2026). Per essere agricoltore attivo servono 1 ha in LPIS o 1 UBA. Per il sostegno di base la terra deve risultare registrata dalla domanda al 31 agosto, essere coltivata per tutto il periodo, e maggesi e prati devono essere sfalciati, pascolati o trinciati (con asportazione della biomassa per il prato) entro il 31 agosto; altrimenti quella parte non è pagata (§ 7). Testo letto in una copia consolidata (epravo.cz)."
+   },
+   "basic": {
+    "en": "Basic income support (BISS, intervention 01.21). Planned 2026 rate: €66.42/ha, with a possible deviation of up to 5 %; the final amount depends on applicants and declared area and is published later, using the ECB exchange rate of the last day before 1 October of the payment year (Ministry guide, publication date not stated). It is planned, not actual. The 2024 guide gave a planned €72.48/ha for 2024. See the minimum-area rule for the land conditions. The hemp and poppy conditions (Common Catalogue varieties as of 15 March) are in § 7(8).",
+    "fr": "Aide de base au revenu (BISS, intervention 01.21). Taux prévu pour 2026 : 66,42 €/ha, avec un écart possible allant jusqu'à 5 % ; le montant final dépend des demandeurs et de la surface déclarée et est publié plus tard, avec le taux de change de la BCE du dernier jour avant le 1er octobre de l'année de paiement (guide du ministère, date de publication non indiquée). C'est un montant prévu, pas réel. Le guide de 2024 donnait 72,48 €/ha prévus pour 2024. Voir la règle de superficie minimale pour les conditions de la terre. Les conditions pour le chanvre et le pavot (variétés du Catalogue commun au 15 mars) figurent au § 7 (8).",
+    "it": "Sostegno di base al reddito (BISS, intervento 01.21). Tasso previsto per il 2026: 66,42 €/ha, con uno scarto possibile fino al 5 %; l'importo finale dipende dai richiedenti e dalla superficie dichiarata e si pubblica dopo, con il tasso di cambio BCE dell'ultimo giorno prima del 1° ottobre dell'anno di pagamento (guida del Ministero, data di pubblicazione non indicata). È previsto, non reale. La guida del 2024 indicava 72,48 €/ha previsti per il 2024. Vedi la regola sulla superficie minima per le condizioni del terreno. Le condizioni per canapa e papavero (varietà del Catalogo comune al 15 marzo) sono nel § 7 (8)."
+   },
+   "redistributive": {
+    "en": "Complementary redistributive payment (CRISS, intervention 03.29). It is paid to all applicants on a maximum of 150 eligible ha (no tiers), with a minimum of 1 ha; it requires applying for and being entitled to basic support and is reduced in the same proportion. Planned 2026 rate: €153.90/ha, with a possible deviation of up to 9 %; the final amount is known later (Ministry guide). It is planned, not actual.",
+    "fr": "Paiement redistributif complémentaire (CRISS, intervention 03.29). Il est versé à tous les demandeurs sur 150 ha admissibles au maximum (sans tranches), avec un minimum de 1 ha ; il exige de demander l'aide de base et d'y avoir droit, et est réduit dans la même proportion. Taux prévu pour 2026 : 153,90 €/ha, avec un écart possible allant jusqu'à 9 % ; le montant final est connu plus tard (guide du ministère). C'est un montant prévu, pas réel.",
+    "it": "Pagamento redistributivo complementare (CRISS, intervento 03.29). È pagato a tutti i richiedenti su un massimo di 150 ha ammissibili (senza fasce), con un minimo di 1 ha; richiede di chiedere il sostegno di base e di averne diritto, ed è ridotto nella stessa proporzione. Tasso previsto per il 2026: 153,90 €/ha, con uno scarto possibile fino al 9 %; l'importo finale si conosce dopo (guida del Ministero). È previsto, non reale."
+   },
+   "small-farmers": {
+    "en": "Small-farmer payment (intervention 02.28). Open to those with at most 10 ha in LPIS on the application day; it is paid on a maximum of 4 eligible ha, with a minimum of 1 ha. It cannot be combined with other direct payments (if they are claimed, the application is refused) and has a simplified sanctions system. The Ministry says it roughly equals the sum of basic support, the redistributive payment and the cross-cutting eco-scheme. The amount has not been read.",
+    "fr": "Paiement aux petits agriculteurs (intervention 02.28). Ouvert à ceux qui ont au plus 10 ha en LPIS le jour de la demande ; il est versé sur 4 ha admissibles au maximum, avec un minimum de 1 ha. Il ne peut pas être cumulé avec d'autres paiements directs (si on les demande, la demande est rejetée) et comporte un système de sanctions simplifié. Le ministère indique qu'il équivaut à peu près à la somme de l'aide de base, du paiement redistributif et de l'éco-régime transversal. Le montant n'a pas été lu.",
+    "it": "Pagamento ai piccoli agricoltori (intervento 02.28). Aperto a chi ha al massimo 10 ha in LPIS il giorno della domanda; è pagato su un massimo di 4 ha ammissibili, con un minimo di 1 ha. Non si può cumulare con altri pagamenti diretti (se si chiedono, la domanda è respinta) e ha un sistema di sanzioni semplificato. Il Ministero afferma che equivale all'incirca alla somma del sostegno di base, del pagamento redistributivo e dell'ecoregime trasversale. L'importo non è stato letto."
+   },
+   "young-farmers": {
+    "en": "Complementary income support for young farmers (YF, intervention 04.30). According to the Ministry guide (valid from 1-1-2026): the applicant does not turn 41 in the year of the first application; it is paid on a maximum of 90 eligible ha, with a minimum of 1 ha in LPIS; one applicant receives it for at most five consecutive years; with the first application the applicant must submit proof of the minimum agricultural qualification (agricultural vocational education, a 300-hour course, three professional qualifications or two years of practice) and filing it later is not accepted, not even on appeal. Amendment 45/2026 Sb. added the two-years-of-practice alternative to § 26(1)(d). The per-hectare rate varies each year and has not been read; the guide gives an allocation of about CZK 520.2 million for 2023-2027.",
+    "fr": "Aide complémentaire au revenu pour les jeunes agriculteurs (YF, intervention 04.30). Selon le guide du ministère (valable depuis le 1-1-2026) : le demandeur n'a pas 41 ans révolus l'année de la première demande ; elle est versée sur 90 ha admissibles au maximum, avec un minimum de 1 ha en LPIS ; un même demandeur la reçoit pendant cinq années consécutives au plus ; avec la première demande, il faut fournir la preuve de la qualification agricole minimale (formation professionnelle agricole, cours de 300 heures, trois qualifications professionnelles ou deux ans de pratique) et la fournir plus tard n'est pas admis, même en recours. La modification 45/2026 Sb. a ajouté au § 26 (1) d) l'alternative de deux ans de pratique. Le taux par hectare varie chaque année et n'a pas été lu ; le guide donne une dotation d'environ 520,2 millions de CZK pour 2023-2027.",
+    "it": "Sostegno complementare al reddito per i giovani agricoltori (YF, intervento 04.30). Secondo la guida del Ministero (valida dal 1-1-2026): il richiedente non compie 41 anni nell'anno della prima domanda; è pagato su un massimo di 90 ha ammissibili, con un minimo di 1 ha in LPIS; lo stesso richiedente lo riceve per al massimo cinque anni consecutivi; con la prima domanda va presentata la prova della qualifica agricola minima (istruzione professionale agraria, corso di 300 ore, tre qualifiche professionali o due anni di pratica) e presentarla più tardi non è ammesso, nemmeno in ricorso. La modifica 45/2026 Sb. ha aggiunto al § 26 (1) d) l'alternativa dei due anni di pratica. Il tasso per ettaro varia ogni anno e non è stato letto; la guida indica una dotazione di circa 520,2 milioni di CZK per il 2023-2027."
+   },
+   "eco-schemes": {
+    "en": "Eco-schemes (Režimy pro klima a životní prostředí, ekoplatba, interventions 05.31 to 06b.31). There are six: basic whole-farm eco-scheme, premium whole-farm eco-scheme, sustainable nutrient management, strip cropping, new landscape features and landscape-feature maintenance. Claiming any of the others requires claiming the basic one as well; areas of 0.1 ha or less are not declared (§ 11). The basic one: at least 1 ha, 5 % non-productive area on arable land, grassland or fallow, and on arable land crop diversity (2 crops from 10 to 30 ha with the largest at most 75 %, 3 crops from 30 to 150 ha, 4 crops from 150 ha, § 12a). The premium one: 7 % non-productive area, of which at least 2 % \"superpremium\". Nutrient management: phosphorus surplus up to 10 kg P/ha and average nitrogen surplus up to 60 kg N/ha (period 1-7-2025 to 30-6-2026). Strip cropping: at least 4 ha per parcel and a slope of at least 3 % on 70 % of the parcel. The per-hectare amounts have not been read (the Ministry sheet does not include them). Source of the thresholds: the § of the regulation read in a consolidated copy and the Ministry sheet of August 2026; the regulation text cuts off at § 15(4).",
+    "fr": "Éco-régimes (Režimy pro klima a životní prostředí, ekoplatba, interventions 05.31 à 06b.31). Il y en a six : éco-régime de base pour toute l'exploitation, éco-régime premium pour toute l'exploitation, gestion durable des nutriments, culture en bandes, nouveaux éléments du paysage et entretien des éléments du paysage. Demander l'un des autres exige de demander aussi celui de base ; les surfaces de 0,1 ha ou moins ne sont pas déclarées (§ 11). Le régime de base : au moins 1 ha, 5 % de surface non productive en terres arables, prairies ou jachère, et en terres arables diversité des cultures (2 cultures de 10 à 30 ha avec la plus grande à 75 % au plus, 3 cultures de 30 à 150 ha, 4 cultures à partir de 150 ha, § 12a). Le premium : 7 % de surface non productive, dont au moins 2 % « superpremium ». Gestion des nutriments : excédent de phosphore jusqu'à 10 kg P/ha et d'azote moyen jusqu'à 60 kg N/ha (période du 1-7-2025 au 30-6-2026). Culture en bandes : au moins 4 ha par parcelle et pente d'au moins 3 % sur 70 % de la parcelle. Les montants par hectare n'ont pas été lus (la fiche du ministère ne les contient pas). Source des seuils : le § du règlement lu dans une copie consolidée et la fiche du ministère d'août 2026 ; le texte du règlement s'interrompt au § 15 (4).",
+    "it": "Ecoregimi (Režimy pro klima a životní prostředí, ekoplatba, interventi da 05.31 a 06b.31). Sono sei: ecoregime di base per tutta l'azienda, ecoregime premium per tutta l'azienda, gestione sostenibile dei nutrienti, coltivazione a strisce, nuovi elementi del paesaggio e manutenzione degli elementi del paesaggio. Chiedere uno degli altri richiede di chiedere anche quello di base; le superfici di 0,1 ha o meno non si dichiarano (§ 11). Quello di base: almeno 1 ha, 5 % di superficie non produttiva su seminativo, prato o maggese, e sul seminativo diversità colturale (2 colture da 10 a 30 ha con la maggiore al massimo al 75 %, 3 colture da 30 a 150 ha, 4 colture da 150 ha, § 12a). Il premium: 7 % di superficie non produttiva, di cui almeno il 2 % «superpremium». Gestione dei nutrienti: eccedenza di fosforo fino a 10 kg P/ha e di azoto medio fino a 60 kg N/ha (periodo dal 1-7-2025 al 30-6-2026). Coltivazione a strisce: almeno 4 ha per particella e pendenza di almeno il 3 % sul 70 % della particella. Gli importi per ettaro non sono stati letti (la scheda del Ministero non li contiene). Fonte delle soglie: il § del regolamento letto in una copia consolidata e la scheda del Ministero di agosto 2026; il testo del regolamento si interrompe al § 15 (4)."
+   },
+   "coupled": {
+    "en": "Coupled income support (CIS, interventions 07.32 to 15.32). Sectors according to the Ministry: hops, high and very high labour-intensity vegetables and fruit, sugar beet, protein crops, starch potatoes, sheep and goats, beef (calves) and dairy cows; paid per hectare or per livestock unit. Planned 2026 rates that could be read: hops €573.96/ha (deviation up to ±10 %) and high labour-intensity vegetables €182.24/ha (up to ±15 %). The rates and conditions of the other sectors have not been read: the 2026 guide cuts off at page 37 of 63 and §§ 27 to 38 of the regulation were not in the text read. Conditions from the 2024 guide: sheep and goats present from 15 May to 11 September, protein-crop cover from 1 June to 15 July, a dairy-cow check on 31 March, and proof of fruit and vegetable production by 31 January of the following year. The animal-welfare reductions of §§ 36 to 38 (amendment 45/2026) are in the penalties rule.",
+    "fr": "Aide au revenu couplée à la production (CIS, interventions 07.32 à 15.32). Secteurs selon le ministère : houblon, légumes et fruits à forte et très forte intensité de main-d'œuvre, betterave sucrière, protéagineux, pommes de terre féculières, ovins et caprins, viande bovine (veaux) et vaches laitières ; versée par hectare ou par unité de bétail. Taux prévus pour 2026 qui ont pu être lus : houblon 573,96 €/ha (écart jusqu'à ±10 %) et légumes à forte intensité de main-d'œuvre 182,24 €/ha (jusqu'à ±15 %). Les taux et conditions des autres secteurs n'ont pas été lus : le guide de 2026 s'interrompt à la page 37 sur 63 et les §§ 27 à 38 du règlement ne figuraient pas dans le texte lu. Conditions de 2024 reprises du guide de 2024 : présence des brebis et chèvres du 15 mai au 11 septembre, couverture des protéagineux du 1er juin au 15 juillet, contrôle des vaches laitières le 31 mars, et preuve de production de fruits et légumes jusqu'au 31 janvier de l'année suivante. Les réductions pour bien-être animal des §§ 36 à 38 (modification 45/2026) figurent dans la règle des pénalités.",
+    "it": "Sostegno al reddito accoppiato alla produzione (CIS, interventi da 07.32 a 15.32). Settori secondo il Ministero: luppolo, ortaggi e frutta ad alta e altissima intensità di manodopera, barbabietola da zucchero, proteiche, patata da amido, ovini e caprini, carne bovina (vitelli) e vacche da latte; pagato per ettaro o per unità di bestiame. Tassi previsti per il 2026 che si sono potuti leggere: luppolo 573,96 €/ha (scarto fino a ±10 %) e ortaggi ad alta intensità di manodopera 182,24 €/ha (fino a ±15 %). I tassi e le condizioni degli altri settori non sono stati letti: la guida 2026 si interrompe a pagina 37 di 63 e i §§ da 27 a 38 del regolamento non erano nel testo letto. Condizioni del 2024 riprese dalla guida del 2024: presenza di pecore e capre dal 15 maggio all'11 settembre, copertura delle proteiche dal 1° giugno al 15 luglio, controllo delle vacche da latte il 31 marzo e prova della produzione di frutta e ortaggi entro il 31 gennaio dell'anno successivo. Le riduzioni per benessere animale dei §§ da 36 a 38 (modifica 45/2026) sono nella regola delle penalità."
+   },
+   "late-penalty": {
+    "en": "Late single application: according to the Ministry's 2026 guide and the young-farmers guide, the amount is cut by 1 % for each working day of delay and, if the delay exceeds 25 calendar days, the application is rejected (except for force majeure, which must be reported within 15 days). SZIF does not ask for missing attachments: according to the guide's examples, the application is rejected if they are not supplied by 9 June. The rules come from the guide, not from the text of NV 83/2023, which does not contain them; the EU regulation they rest on has not been checked.",
+    "fr": "Demande unique tardive : selon le guide du ministère de 2026 et celui des jeunes agriculteurs, le montant est réduit de 1 % par jour ouvré de retard et, si le retard dépasse 25 jours calendaires, la demande est rejetée (sauf force majeure, à notifier sous 15 jours). Le SZIF ne réclame pas les annexes manquantes : d'après les exemples du guide, la demande est rejetée si elles ne sont pas fournies avant le 9 juin. Les règles viennent du guide, pas du texte du NV 83/2023, qui ne les contient pas ; le règlement européen sur lequel elles reposent n'a pas été vérifié.",
+    "it": "Domanda unica tardiva: secondo la guida del Ministero del 2026 e quella dei giovani agricoltori, l'importo è ridotto dell'1 % per ogni giorno lavorativo di ritardo e, se il ritardo supera 25 giorni di calendario, la domanda è respinta (salvo forza maggiore, da comunicare entro 15 giorni). Il SZIF non richiede gli allegati mancanti: secondo gli esempi della guida, la domanda è respinta se non vengono forniti entro il 9 giugno. Le regole vengono dalla guida, non dal testo del NV 83/2023, che non le contiene; il regolamento europeo su cui si fondano non è stato verificato."
+   },
+   "reductions": {
+    "en": "Eco-scheme non-compliance reductions: in the basic grassland eco-scheme, a non-compliant parcel loses payment or the eco-scheme is reduced by 10 % (§ 12(7)-(8)); on standard arable land with water protection strips (§ 13) and on fallow (§ 14, no harvest or grazing from 1 February to 15 August), the reduction is 3 %, 5 % or 10 % depending on severity, and on arable land also 50 % or complete denial. Amendment 45/2026 Sb. added animal-welfare reductions to livestock-linked support: 50 % where the fine is over CZK 50,000 and up to CZK 100,000, and denial above CZK 100,000 (§§ 36 to 38; read in a summary of the text, which is incomplete: point 54 of art. I is missing). The rest of the sanctions system has not been read.",
+    "fr": "Réductions pour non-respect dans les éco-régimes : dans l'éco-régime de base sur prairie, la parcelle non conforme perd le paiement ou l'éco-régime est réduit de 10 % (§ 12 (7)-(8)) ; sur terres arables standard avec bandes de protection des eaux (§ 13) et sur jachère (§ 14, ni récolte ni pâturage du 1er février au 15 août), la réduction est de 3 %, 5 % ou 10 % selon la gravité, et sur terres arables aussi de 50 % ou refus complet. La modification 45/2026 Sb. a ajouté des réductions pour bien-être animal dans les aides liées à l'élevage : 50 % lorsque l'amende dépasse 50 000 et va jusqu'à 100 000 CZK, et refus au-delà de 100 000 CZK (§§ 36 à 38 ; lu dans un résumé du texte, qui est incomplet : le point 54 de l'art. I manque). Le reste du système de sanctions n'a pas été lu.",
+    "it": "Riduzioni per inadempienza negli ecoregimi: nell'ecoregime di base su prato, la particella non conforme perde il pagamento o l'ecoregime è ridotto del 10 % (§ 12 (7)-(8)); su seminativo standard con fasce di protezione delle acque (§ 13) e su maggese (§ 14, niente raccolta né pascolo dal 1° febbraio al 15 agosto), la riduzione è del 3 %, 5 % o 10 % secondo la gravità, e sul seminativo anche del 50 % o diniego completo. La modifica 45/2026 Sb. ha aggiunto riduzioni per il benessere animale negli aiuti legati agli allevamenti: 50 % quando la multa supera 50.000 e arriva a 100.000 CZK, e diniego oltre 100.000 CZK (§§ da 36 a 38; letto in un riassunto del testo, che è incompleto: manca il punto 54 dell'art. I). Il resto del sistema sanzionatorio non è stato letto."
+   },
+   "recent-changes": {
+    "en": "Recent changes to NV 83/2023. Amendment 45/2026 Sb. (adopted 16-3-2026, published 25-3-2026, in force 1-4-2026) includes a new § 12a (common rules for the basic eco-scheme on arable land), changes to §§ 13 to 15 and 23 to 24d, the 1 ha minimum for the redistributive payment and new annexes. Amendment 167/2026 Sb. (adopted 17-8-2026, published 16-9-2026, in force 1-10-2026) allows permanent grassland to be converted or ploughed if the nature-protection authority's opinion shows no impact on European habitats or sites (§ 12(6)(c)), repeals § 25, adds § 38b (no aid if the required additional document is missing) and provides that proceedings already started are finished under the old version, except some paragraphs that apply from 1-10-2026. What has been read are the texts of the amendments, not a consolidated version incorporating them.",
+    "fr": "Modifications récentes du NV 83/2023. La modification 45/2026 Sb. (adoptée le 16-3-2026, publiée le 25-3-2026, en vigueur le 1-4-2026) comprend un nouveau § 12a (règles communes de l'éco-régime de base sur terres arables), des changements aux §§ 13 à 15 et 23 à 24d, le minimum de 1 ha du paiement redistributif et de nouvelles annexes. La modification 167/2026 Sb. (adoptée le 17-8-2026, publiée le 16-9-2026, en vigueur le 1-10-2026) permet de convertir ou labourer la prairie permanente si l'avis de l'autorité de protection de la nature montre l'absence d'effet sur les habitats ou sites européens (§ 12 (6) c), abroge le § 25, ajoute le § 38b (pas d'aide si le document complémentaire exigé manque) et prévoit que les procédures engagées s'achèvent sous l'ancienne version, sauf certains alinéas applicables dès le 1-10-2026. Ce qui a été lu, ce sont les textes des modifications, pas une version consolidée qui les intègre.",
+    "it": "Modifiche recenti del NV 83/2023. La modifica 45/2026 Sb. (adottata il 16-3-2026, pubblicata il 25-3-2026, in vigore dal 1-4-2026) comprende un nuovo § 12a (regole comuni dell'ecoregime di base su seminativo), modifiche ai §§ da 13 a 15 e da 23 a 24d, il minimo di 1 ha del pagamento redistributivo e nuovi allegati. La modifica 167/2026 Sb. (adottata il 17-8-2026, pubblicata il 16-9-2026, in vigore dal 1-10-2026) consente di convertire o arare il prato permanente se il parere dell'autorità di tutela della natura mostra che non incide su habitat o siti europei (§ 12 (6) c), abroga il § 25, aggiunge il § 38b (nessun aiuto se manca il documento aggiuntivo richiesto) e prevede che i procedimenti avviati si concludano con la versione precedente, salvo alcuni commi applicabili dal 1-10-2026. Ciò che è stato letto sono i testi delle modifiche, non una versione consolidata che le incorpori."
+   }
+  },
+  "calendar": {
+   "su-close": {
+    "en": "End of the ordinary single-application period (15 May of the application year). § 2 of NV 83/2023 sets it.",
+    "fr": "Fin de la période ordinaire de la demande unique (15 mai de l'année de demande). Le § 2 du NV 83/2023 le fixe.",
+    "it": "Fine del periodo ordinario della domanda unica (15 maggio dell'anno della domanda). Lo fissa il § 2 del NV 83/2023."
+   },
+   "su-late-limit": {
+    "en": "Last day to file with a 1 % per working day reduction (25 calendar days after 15 May). Source: the Ministry guide, not the text of the regulation.",
+    "fr": "Dernier jour pour déposer avec une réduction de 1 % par jour ouvré (25 jours calendaires après le 15 mai). Source : guide du ministère, pas le texte du règlement.",
+    "it": "Ultimo giorno per presentare con riduzione dell'1 % per giorno lavorativo (25 giorni di calendario dopo il 15 maggio). Fonte: guida del Ministero, non il testo del regolamento."
+   }
+  },
+  "overrides": {
+   "2026:su-close": {
+    "en": "In 2026 receipt of the single application ran from 9 April to 15 May, according to the Ministry schedule updated on 10-8-2026, which shows no extension.",
+    "fr": "En 2026, la réception de la demande unique allait du 9 avril au 15 mai, selon le calendrier du ministère mis à jour le 10-8-2026, qui ne mentionne aucune prorogation.",
+    "it": "Nel 2026 la ricezione della domanda unica andava dal 9 aprile al 15 maggio, secondo il calendario del Ministero aggiornato il 10-8-2026, che non riporta alcuna proroga."
+   }
+  }
+ }
+}

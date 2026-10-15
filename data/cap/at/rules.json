@@ -1,0 +1,513 @@
+{
+ "schemaVersion": 1,
+ "country": "AT",
+ "scheme": "GAP-Strategieplan Österreich 2023-2027 (Direktzahlungen: MOG 2021 y GAP-Strategieplan-Anwendungsverordnung)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-15",
+ "source": {
+  "id": "ris_at",
+  "instrument": "Marktordnungsgesetz 2021 (MOG 2021) y GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022 idF BGBl. II Nr. 1/2026, Rechtsinformationssystem des Bundes (RIS)",
+  "ref": "MOG 2021; GSP-AV BGBl. II 403/2022",
+  "url": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf"
+ },
+ "note": "Reglas leídas a mano de párrafos sueltos del RIS (MOG 2021 §§ 6c, 6d, 8, 8a y 8c; GSP-AV §§ 3, 21, 33, 42 y 51) y de la copia del RIS alojada por la AMA (MOG 2021, versión de 2-1-2023, de donde salen los §§ 8b y 8d). La copia consolidada de la GSP-AV se corta en el § 33: no se han leído los §§ 34 a 53 salvo los citados, ni los §§ 104 a 113, ni la Sonderrichtlinie ÖPUL ni los importes de la ecorregulación. Importes: finales de 2024 (AMA) y previstos de 2026 (Merkblatt de la AMA). Sin vigilancia automática. Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Einkommensgrundstützung für Nachhaltigkeit",
+   "nameLang": "de",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 8a",
+   "articles": [
+    "8a"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Ergänzende Umverteilungseinkommensstützung für Nachhaltigkeit",
+   "nameLang": "de",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 8b",
+   "articles": [
+    "8b"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Ergänzende Einkommensstützung für Junglandwirte",
+   "nameLang": "de",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 8c",
+   "articles": [
+    "8c"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Regelung für Klima, Umwelt und Tierwohl",
+   "nameLang": "de",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 6c Abs. 2 Z 4",
+   "articles": [
+    "6c"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Gekoppelte Einkommensstützung für auf Almen aufgetriebene Rinder, Mutterschafe und -ziegen",
+   "nameLang": "de",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 8d",
+   "articles": [
+    "8d"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 6d Abs. 9; GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 21 Abs. 3",
+   "articles": [
+    "6d",
+    "21"
+   ],
+   "text": "Agricultor activo: según la ley son activos las personas físicas con seguro obligatorio agrario (BSVG, § 3 Abs. 1 Z 1 primer caso) y las personas jurídicas y sociedades con valor catastral agrario (landwirtschaftlicher Einheitswert); un reglamento puede admitir otras pruebas. Quien cobró 5.000 € o menos de pagos directos el año anterior cuenta siempre como activo. El reglamento (§ 21 Abs. 3 GSP-AV, versiones de 2023 y 2024) añade como activos a las personas jurídicas o sociedades con tierra arrendada y valor catastral, las de nueva creación con prueba fiscal o de arrendamiento, los agricultores con sede principal en otro Estado miembro con la prueba de ese Estado, y quienes cultivan al menos 1,5 ha de superficie agraria con cultivos o solo gestionan alpes con pastoreo común, si no encajan en lo anterior. La reforma BGBl. II Nr. 1/2026 tocó el § 21 (Abs. 1a); no se ha leído el texto vigente completo del § 21.",
+   "officialUrl": "https://ris.bka.gv.at/Dokumente/Bundesnormen/NOR40244385/NOR40244385.pdf",
+   "values": {
+    "priorYearDirectPaymentsMaxEur": 5000,
+    "minCroppedHa": 1.5
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 8 Abs. 2 y 3",
+   "articles": [
+    "8"
+   ],
+   "text": "Tamaño mínimo: una explotación accede a los pagos directos con al menos 1,5 ha; quien solo recibe la ayuda asociada del § 8d debe alcanzar un importe mínimo de 150 €. Regla antifraccionamiento: las explotaciones divididas después del 6 de diciembre de 2021 solo para eludir la limitación (capping) del § 8a Abs. 4 o el límite de la ayuda redistributiva del § 8b no obtienen la ventaja buscada, ni las explotaciones resultantes. Versión del RIS de 10-6-2022, en vigor desde el 1-1-2023.",
+   "officialUrl": "https://ris.bka.gv.at/Dokumente/Bundesnormen/NOR40244503/NOR40244503.pdf",
+   "values": {
+    "minHa": 1.5,
+    "minCoupledOnlyEur": 150,
+    "antiSplitFrom": "2021-12-06"
+   }
+  },
+  {
+   "id": "basic-income",
+   "topic": "basic",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 8a; § 8 Abs. 1",
+   "articles": [
+    "8",
+    "8a"
+   ],
+   "text": "Ayuda básica a la renta para la sostenibilidad (Einkommensgrundstützung): se reparte lo que queda del techo del anexo V del Reglamento (UE) 2021/2115 tras las reservas del § 8; el importe unitario por hectárea admisible declarada (sin los alpes) es esa cantidad dividida por las hectáreas declaradas. Para pastos alpinos (Almweiden) se reserva el 1,8 % del anexo V, con su propio importe por hectárea. La ayuda de cada agricultor está limitada a 100.000 € tras descontar los costes laborales del art. 17(3)(a) del Reglamento (UE) 2021/2115 cuando se hayan incurrido según el derecho laboral y los convenios (la ayuda se llama «Basiszahlung» en las fichas). Importes por hectárea (AMA): 2024 final, Heimgut 208,08 € y Almweide 37,91 €; 2026 previstos, unos 207 € y unos 38 €. El BMLUK, en una página sin fecha, da importes previstos de unos 208 €/ha y unos 41 €/ha y unos 483 millones de € al año (el 71 % de unos 678 millones).",
+   "officialUrl": "https://ris.bka.gv.at/Dokumente/Bundesnormen/NOR40244365/NOR40244365.pdf",
+   "values": {
+    "cappingEur": 100000,
+    "alpineReservePct": 1.8,
+    "perHaEur": {
+     "2024homeFinal": 208.08,
+     "2024alpineFinal": 37.91,
+     "2026homePlanned": 207,
+     "2026alpinePlanned": 38
+    }
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, § 8b (leído en la copia del RIS alojada por la AMA); § 8 Abs. 1",
+   "articles": [
+    "8",
+    "8b"
+   ],
+   "text": "Ayuda redistributiva complementaria (ergänzende Umverteilungseinkommensstützung): se financia con el 10 % del techo de pagos directos más lo liberado por la limitación del § 8a Abs. 4, y se paga a todos los agricultores admisibles hasta 40 ha por explotación, sin los alpes. Las primeras 20 ha reciben el importe completo y de 20 a 40 ha la mitad. Importes por hectárea (AMA): 2024 final, tramo 1 45,14 € y tramo 2 22,57 €; 2026 previstos, unos 45 € y unos 22 €. El BMLUK da unos 44 y unos 22 €/ha previstos y 67,8 millones de €. El texto del § 8b es el de la copia del RIS de 2-1-2023 alojada por la AMA, no la versión consolidada vigente.",
+   "officialUrl": "https://dfp.ama.at/allgemeine-informationen/allgemeine-rechtliche-grundlagen/dokumente/oesterreich/allgemein/bundesgesetzes-ueber-die-durchfuehrung-der-gemeinsamen-marktorganisationen-und-die-grundsaetze-der-umse/",
+   "values": {
+    "maxHa": 40,
+    "fullRateHa": 20,
+    "ceilingSharePct": 10,
+    "perHaEur": {
+     "2024tier1Final": 45.14,
+     "2024tier2Final": 22.57,
+     "2026tier1Planned": 45,
+     "2026tier2Planned": 22
+    }
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, §§ 6d Abs. 8 y 8c; GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, §§ 21 Abs. 1 y 51",
+   "articles": [
+    "6d",
+    "8c",
+    "21",
+    "51"
+   ],
+   "text": "Ayuda complementaria a jóvenes agricultores: joven agricultor es quien no tiene más de 40 años en el año en que empieza a ejercer y tiene formación al menos de nivel de trabajador cualificado (Facharbeiter); debe llevar la explotación a su nombre y por su cuenta o tener influencia decisiva en su gestión, y probar la formación en dos años desde el inicio (ampliable un año en casos justificados si se pide antes). En sociedades, lo cumple quien tiene el control efectivo y duradero. Se paga por hectárea admisible, hasta 40 ha por joven agricultor, y financia el 2,1 % del techo. Quien empezó hace menos de cinco años y no cobró entero el pago anterior lo recibe el período restante; quien lo pide por primera vez en 2024 o después, hasta el año de solicitud 2027 como máximo. La primera solicitud debe hacerse a más tardar el año siguiente al inicio. Importe por hectárea (AMA): 2024 final 67,39 €; 2026 previsto unos 67 € (la AMA publicará el definitivo en diciembre de 2026). Sanción (§ 51 GSP-AV): si no se cumplen las condiciones se deniega o se retira todo el pago; si se presentó una prueba falsa, se añade una sanción del 20 % del importe a que se tenía o se habría tenido derecho. Reglas de la UE sobre la edad y la instalación (art. 30 del Reglamento (UE) 2021/2115) no leídas.",
+   "officialUrl": "https://ris.bka.gv.at/Dokumente/Bundesnormen/NOR40244367/NOR40244367.pdf",
+   "values": {
+    "maxAge": 40,
+    "maxHa": 40,
+    "maxYears": 5,
+    "lastApplicationYear": 2027,
+    "trainingProofYears": 2,
+    "falseEvidencePenaltyPct": 20,
+    "ceilingSharePct": 2.1,
+    "perHaEur": {
+     "2024final": 67.39,
+     "2026planned": 67
+    }
+   }
+  },
+  {
+   "id": "eco-scheme",
+   "topic": "eco",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, §§ 6c Abs. 2 Z 4 y 8 Abs. 1; GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 48",
+   "articles": [
+    "6c",
+    "8",
+    "48"
+   ],
+   "text": "Regelung für Klima, Umwelt und Tierwohl (ecorregulación): el MOG la define como medidas anuales de agroambiente o bienestar animal basadas en superficie o animales, y se reserva para ella el 25 % del techo de pagos directos (el porcentaje exacto lo fija un reglamento tras las opciones de inclusión del art. 97 del Reglamento (UE) 2021/2115). Las medidas concretas son del programa agroambiental ÖPUL, que regula la directriz especial (Sonderrichtlinie) ÖPUL 2023, no leída aquí; tampoco se han leído sus importes por hectárea. Plazos de la solicitud única relacionados (§ 33 GSP-AV): inscripción en nuevas medidas ÖPUL hasta el 31 de diciembre del año anterior; coberturas intercalares variantes 1 a 3 hasta el 31 de agosto y 4 a 7 hasta el 30 de septiembre; cantidad de purín aplicado con baja emisión hasta el 30 de noviembre. Sanciones por incumplir las exigencias de gestión de las medidas de los arts. 31, 70 y 72 (§ 48 GSP-AV, leído en copia de gesetzefinden.at): aviso o reducción del 2, 5, 10, 25, 50 o 100 % según alcance, gravedad, duración y frecuencia; desde 2027 el aviso se sustituye por retener el 1 % de la prima; los porcentajes se suman hasta el 100 % anual, la reincidencia sube un nivel desde la segunda vez, y dos reducciones del 100 % en el período excluyen de la medida.",
+   "officialUrl": "https://ris.bka.gv.at/Dokumente/Bundesnormen/NOR40244384/NOR40244384.pdf",
+   "values": {
+    "ceilingSharePct": 25,
+    "reductionLevelsPct": [
+     2,
+     5,
+     10,
+     25,
+     50,
+     100
+    ],
+    "withholdingFrom2027Pct": 1
+   }
+  },
+  {
+   "id": "coupled-alpine",
+   "topic": "associated",
+   "legalBasis": "Marktordnungsgesetz 2021 (MOG 2021), BGBl. I Nr. 55/2007 idF BGBl. I Nr. 77/2022, §§ 8d y 8 Abs. 1 (copia del RIS alojada por la AMA); GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 21 Abs. 4",
+   "articles": [
+    "8",
+    "8d",
+    "21"
+   ],
+   "text": "Ayuda asociada para bovinos, ovejas madre y cabras madre llevados a pastos alpinos (Almauftriebsprämie): se financia con el 2,66 % del techo de pagos directos, dividido por las UGM de pastos (RGVE) declaradas; los períodos de pastoreo, los procedimientos y los plazos de registro los fija un reglamento. Equivalencias en RGVE (§ 21 Abs. 4 GSP-AV): bovinos de 2 años o más 1,00; de medio año a 2 años 0,60; hasta medio año 0,40; ovejas y cabras de un año o más 0,15 y menores de un año 0,07; bovinos enanos 0,5, 0,3 y 0,2. La lista de subida a los alpes se entrega hasta el 15 de julio y todos los animales deben haber subido a más tardar ese día para cobrar. Importes por RGVE (AMA): 2024 final, vacas 97,58 €, otros bovinos 48,79 € y ovejas y cabras madre 97,58 €; 2026 previstos, unos 98 €, 49 € y 98 €. El BMLUK cifra el total de los alpes en unos 30 millones de €, 18 de ellos de la ayuda asociada.",
+   "officialUrl": "https://dfp.ama.at/allgemeine-informationen/allgemeine-rechtliche-grundlagen/dokumente/oesterreich/allgemein/bundesgesetzes-ueber-die-durchfuehrung-der-gemeinsamen-marktorganisationen-und-die-grundsaetze-der-umse/",
+   "values": {
+    "ceilingSharePct": 2.66,
+    "listDeadline": "07-15",
+    "perRgveEur": {
+     "2024cowsFinal": 97.58,
+     "2024otherCattleFinal": 48.79,
+     "2024sheepGoatsFinal": 97.58
+    }
+   }
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2",
+   "articles": [
+    "33"
+   ],
+   "text": "Solicitud única (Mehrfachantrag, MFA): la presentación se abre en noviembre del año anterior (en la campaña 2026, desde el 1 de noviembre de 2025). Hasta el 15 de abril del año de solicitud hay que entregar la solicitud de pagos directos y de indemnización compensatoria, la lista de parcelas y la lista de animales; el 15 de julio, la lista de subida a los alpes; el 31 de diciembre del año anterior, la solicitud de medidas ÖPUL nuevas. No hay prórroga (Nachfrist): según la AMA en 2026 (y la cámara agraria de Carintia en 2025) lo presentado desde el 16 de abril se considera tardío y no da derecho a prima del año; el § 5 Abs. 2 exceptúa estos plazos de la regla de pasar al siguiente día hábil si caen en fin de semana o festivo (así consta en el resumen leído de la reforma BGBl. II Nr. 1/2026). Fecha de referencia de la superficie: el 1 de abril. Texto del § 33 vigente desde el 3-1-2026 (RIS).",
+   "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf",
+   "values": {
+    "deadline": "04-15",
+    "alpineList": "07-15",
+    "newOepulMeasures": "12-31",
+    "noGracePeriod": true,
+    "surfaceReferenceDate": "04-01"
+   }
+  },
+  {
+   "id": "changes-after-deadline",
+   "topic": "controls",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 3",
+   "articles": [
+    "33"
+   ],
+   "text": "Cambios tras el plazo (§ 33 Abs. 3): se permiten las correcciones derivadas del monitoreo de superficies o de las comprobaciones previas en los 14 días naturales siguientes al aviso de la AMA. Mientras no se haya avisado de una infracción ni anunciado un control sobre el terreno (o hallado una infracción en él), se puede cambiar el tipo de uso de la parcela o condiciones comprobables por monitoreo hasta 15 días naturales antes del pago, hacer cambios que no suban la prima ni den otra ventaja, retirar la solicitud total o parcialmente hasta 15 días antes del pago y corregir la lista de animales medios con pruebas adecuadas. La AMA añade para 2026 que los cambios de uso se admiten hasta primeros de diciembre y que ampliar superficies o añadir códigos con prima solo vale si se presentan antes del 15 de abril. El § 33 Abs. 3 Z 2 lit. d se derogó por BGBl. II Nr. 1/2026.",
+   "officialUrl": "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40275103/NOR40275103.pdf",
+   "values": {
+    "monitoringCorrectionDays": 14,
+    "withdrawalBeforePaymentDays": 15
+   }
+  },
+  {
+   "id": "penalties",
+   "topic": "penalties",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, §§ 42, 48 y 51",
+   "articles": [
+    "42",
+    "48",
+    "51"
+   ],
+   "text": "Sanciones: la base de cálculo de las sanciones de pagos por superficie (§ 42 GSP-AV, versión de 29-9-2023) es, en general, cada medida por separado; si la superficie determinada es mayor que la declarada, se usa la declarada, y si es menor, la determinada; para las ayudas de los §§ 8b y 8c la superficie declarada se limita a 40 ha. Para las medidas ÖPUL y ecorregulación rige el § 48 (niveles del 2 al 100 %, ver la regla de ecorregulación) y para jóvenes agricultores el § 51 (retirada del pago y 20 % más por prueba falsa). La AMA advierte además de que el incumplimiento de las obligaciones puede llevar a recortes de la prima o a sanciones administrativas. No se han leído los porcentajes por declarar de más la superficie (§ 46), la sanción de la ayuda asociada (§ 50) ni la orden de las reducciones (§ 53), porque la copia de la AMA se corta en el § 33.",
+   "officialUrl": "https://ris.bka.gv.at/Dokumente/Bundesnormen/NOR40255958/NOR40255958.pdf",
+   "values": {
+    "maxHaYoungAndRedistributive": 40,
+    "falseEvidencePenaltyPct": 20
+   }
+  },
+  {
+   "id": "payment-timing",
+   "topic": "calendar",
+   "legalBasis": "Reglamento (UE) 2021/2116, art. 44 (leído en copia de gesetze.legal, no en EUR-Lex); AMA, Presseinformation Hauptauszahlung 2025 (16.12.2025)",
+   "articles": [
+    "44"
+   ],
+   "text": "Pagos: la AMA paga los pagos directos de la campaña en una sola vez, «en voller Höhe», a mediados de diciembre: el 19 de diciembre de 2024 (unos 573,1 millones de € de pagos directos) y el 18 de diciembre de 2025 (unos 571,6 millones de €); ÖPUL e indemnización compensatoria cobraron ese día el 75 %, con el resto previsto para junio. Los datos de la AMA para 2026 indican que publicará los importes definitivos en diciembre de 2026. Marco de la UE: pagos entre el 1 de diciembre y el 30 de junio del año siguiente, con anticipos desde el 16 de octubre (hasta el 70 %; hasta el 75 % en la campaña 2026), según el art. 44 del Reglamento (UE) 2021/2116 leído en una copia no oficial. No se ha leído el § 52 GSP-AV (pagos).",
+   "officialUrl": "https://www.ama.at/allgemein/presse/presse-2025/hauptauszahlung-2025-ueber-1-3-milliarden-werden-von-der-ama-am-18-dezember-2025-ausgezahlt",
+   "values": {
+    "paymentFrom": "12-01",
+    "paymentTo": "06-30",
+    "euAdvanceFrom": "10-16",
+    "euAdvanceMaxPct": 70,
+    "mainPayment": {
+     "2024": "2024-12-19",
+     "2025": "2025-12-18"
+    }
+   }
+  },
+  {
+   "id": "unit-amounts",
+   "topic": "amounts",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 21 Abs. 11; AMA, Veröffentlichung gemäß § 21 Abs. 11 GSP-AV: Prämienbeträge 2024; AMA, Merkblatt Direktzahlungen 2026 (Stand November 2025)",
+   "articles": [
+    "21"
+   ],
+   "text": "Importes unitarios: la AMA publica por cada medida la fecha de referencia del primer cálculo y el importe fijo de la prima (§ 21 Abs. 11 GSP-AV). Campaña 2024, importes finales (fecha de referencia 11-10-2024; publicado el 16-12-2024): Basiszahlung Heimgut 208,08 €/ha, Almweide 37,91 €/ha, redistributiva tramo 1 45,14 € y tramo 2 22,57 €/ha, jóvenes agricultores 67,39 €/ha; Almauftriebsprämie 97,58 €/RGVE (vacas), 48,79 € (otros bovinos), 97,58 € (ovejas y cabras madre). Campaña 2026, importes previstos (provisionales) del Merkblatt de la AMA de noviembre de 2025: unos 207 €/ha (Heimgut), 38 € (Alm), 45 € y 22 € (redistributiva), 67 € (jóvenes), 98 €, 49 € y 98 € por RGVE. No se han leído los importes de 2023 y 2025 ni los de la ecorregulación.",
+   "officialUrl": "https://www.ama.at/fachliche-informationen/direktzahlungen/praemienbetrag-gemaess-21-abs-11-gsp-av/stichtag-fuer-die-erstberechnung-und-praemienbetrag-je-hektar-bzw-je-rgve-2024",
+   "values": {
+    "2024final": {
+     "homeHa": 208.08,
+     "alpineHa": 37.91,
+     "redTier1": 45.14,
+     "redTier2": 22.57,
+     "young": 67.39,
+     "cowRgve": 97.58,
+     "otherCattleRgve": 48.79,
+     "sheepGoatRgve": 97.58
+    },
+    "2026planned": {
+     "homeHa": 207,
+     "alpineHa": 38,
+     "redTier1": 45,
+     "redTier2": 22,
+     "young": 67
+    }
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 2",
+   "articles": [
+    "33"
+   ],
+   "when": {
+    "month": 4,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Termina el plazo de la solicitud única de pagos directos y de la lista de parcelas y animales (15 de abril del año de solicitud), sin prórroga."
+  },
+  {
+   "id": "alp-list",
+   "kind": "deadline",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 3",
+   "articles": [
+    "33"
+   ],
+   "when": {
+    "month": 7,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite de la lista de subida a los alpes (15 de julio); para el ganado bovino subido hasta esa fecha la sustituye el aviso de pastoreo del reglamento de identificación bovina."
+  },
+  {
+   "id": "cover-crop-a",
+   "kind": "deadline",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 4",
+   "articles": [
+    "33"
+   ],
+   "when": {
+    "month": 8,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite de las coberturas intercalares de las variantes 1 a 3 (medida 31-01, 31 de agosto)."
+  },
+  {
+   "id": "cover-crop-b",
+   "kind": "deadline",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 5",
+   "articles": [
+    "33"
+   ],
+   "when": {
+    "month": 9,
+    "day": 30,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite de las coberturas intercalares de las variantes 4 a 7 (medida 31-01, 30 de septiembre)."
+  },
+  {
+   "id": "slurry-quantity",
+   "kind": "deadline",
+   "legalBasis": "GAP-Strategieplan-Anwendungsverordnung (GSP-AV), BGBl. II Nr. 403/2022, § 33 Abs. 2 Z 6",
+   "articles": [
+    "33"
+   ],
+   "when": {
+    "month": 11,
+    "day": 30,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite de la cantidad de purín aplicado con baja emisión (medida 70-08, 30 de noviembre)."
+  },
+  {
+   "id": "payment-open",
+   "kind": "window-start",
+   "legalBasis": "Reglamento (UE) 2021/2116, art. 44 (leído en copia de gesetze.legal, no en EUR-Lex)",
+   "articles": [
+    "44"
+   ],
+   "when": {
+    "month": 12,
+    "day": 1,
+    "yearOffset": 0
+   },
+   "text": "Empieza el período de pago de los pagos directos (1 de diciembre); la AMA suele pagar a mediados de diciembre. Base: art. 44 del Reglamento (UE) 2021/2116, leído en copia no oficial."
+  },
+  {
+   "id": "payment-close",
+   "kind": "deadline",
+   "legalBasis": "Reglamento (UE) 2021/2116, art. 44 (leído en copia de gesetze.legal, no en EUR-Lex)",
+   "articles": [
+    "44"
+   ],
+   "when": {
+    "month": 6,
+    "day": 30,
+    "yearOffset": 1
+   },
+   "text": "Termina el período de pago de los pagos directos de la campaña anterior (30 de junio). Base: art. 44 del Reglamento (UE) 2021/2116, leído en copia no oficial."
+  }
+ ],
+ "campaignOverrides": [],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer: by law, active farmers are natural persons with compulsory agricultural social insurance (BSVG, § 3(1) no. 1 first case) and legal persons and partnerships with an agricultural unit value (landwirtschaftlicher Einheitswert); a regulation may allow other proof. Anyone who received €5,000 or less of direct payments the previous year always counts as active. The regulation (§ 21(3) GSP-AV, 2023 and 2024 versions) adds legal persons or partnerships with leased land and a unit value, newly formed ones with tax or lease evidence, farmers with their main base in another Member State with that State's proof, and those who farm at least 1.5 ha of agricultural land under crops or only manage alpine pastures grazed in common, if they do not fit the above. The amendment BGBl. II No. 1/2026 touched § 21 (para. 1a); the full current text of § 21 was not read.",
+    "fr": "Agriculteur actif : selon la loi, sont actifs les personnes physiques avec assurance sociale agricole obligatoire (BSVG, § 3(1) n° 1 premier cas) et les personnes morales et sociétés ayant une valeur unitaire agricole (landwirtschaftlicher Einheitswert) ; un règlement peut admettre d'autres preuves. Celui qui a perçu 5 000 € ou moins de paiements directs l'année précédente est toujours considéré comme actif. Le règlement (§ 21(3) GSP-AV, versions de 2023 et 2024) ajoute les personnes morales ou sociétés avec terres louées et valeur unitaire, celles nouvellement créées avec preuve fiscale ou de location, les agriculteurs dont le siège principal est dans un autre État membre avec la preuve de cet État, et ceux qui exploitent au moins 1,5 ha de surface agricole en cultures ou gèrent seulement des alpages pâturés en commun, s'ils ne relèvent pas de ce qui précède. La modification BGBl. II n° 1/2026 a touché le § 21 (al. 1a) ; le texte actuel complet du § 21 n'a pas été lu.",
+    "it": "Agricoltore attivo: per legge sono attivi le persone fisiche con assicurazione sociale agricola obbligatoria (BSVG, § 3(1) n. 1 primo caso) e le persone giuridiche e società con valore unitario agricolo (landwirtschaftlicher Einheitswert); un regolamento può ammettere altre prove. Chi ha ricevuto 5.000 € o meno di pagamenti diretti l'anno precedente conta sempre come attivo. Il regolamento (§ 21(3) GSP-AV, versioni 2023 e 2024) aggiunge le persone giuridiche o società con terreno in affitto e valore unitario, quelle di nuova costituzione con prova fiscale o di affitto, gli agricoltori con sede principale in un altro Stato membro con la prova di quello Stato, e chi coltiva almeno 1,5 ha di superficie agricola a colture o gestisce solo alpeggi pascolati in comune, se non rientrano nei casi precedenti. La modifica BGBl. II n. 1/2026 ha toccato il § 21 (c. 1a); il testo attuale completo del § 21 non è stato letto."
+   },
+   "minimum": {
+    "en": "Minimum size: a holding qualifies for direct payments with at least 1.5 ha; a farmer who only receives the coupled support of § 8d must reach a minimum amount of €150. Anti-splitting rule: holdings split after 6 December 2021 solely to avoid the capping of § 8a(4) or the limit on redistributive support of § 8b do not get the intended advantage, nor do the resulting holdings. RIS version of 10-6-2022, in force since 1-1-2023.",
+    "fr": "Taille minimale : une exploitation a accès aux paiements directs avec au moins 1,5 ha ; l'agriculteur qui ne reçoit que l'aide couplée du § 8d doit atteindre un montant minimal de 150 €. Règle anti-fractionnement : les exploitations scindées après le 6 décembre 2021 uniquement pour éviter le plafonnement du § 8a(4) ou la limite de l'aide redistributive du § 8b n'obtiennent pas l'avantage recherché, pas plus que les exploitations qui en résultent. Version du RIS du 10-6-2022, en vigueur depuis le 1-1-2023.",
+    "it": "Dimensione minima: un'azienda accede ai pagamenti diretti con almeno 1,5 ha; chi riceve solo il sostegno accoppiato del § 8d deve raggiungere un importo minimo di 150 €. Regola antifrazionamento: le aziende divise dopo il 6 dicembre 2021 solo per eludere il tetto del § 8a(4) o il limite del sostegno redistributivo del § 8b non ottengono il vantaggio cercato, né le aziende risultanti. Versione del RIS del 10-6-2022, in vigore dal 1-1-2023."
+   },
+   "basic-income": {
+    "en": "Basic income support for sustainability (Einkommensgrundstützung): what remains of the ceiling in annex V of Regulation (EU) 2021/2115 after the reserves in § 8 is shared out; the unit amount per declared eligible hectare (excluding alpine areas) is that sum divided by the declared hectares. For alpine pastures (Almweiden) 1.8 % of annex V is set aside, with its own amount per hectare. Each farmer's support is capped at €100,000 after deducting the labour costs of art. 17(3)(a) of Regulation (EU) 2021/2115 when incurred in line with labour law and collective agreements (the payment is called \"Basiszahlung\" in the information sheets). Amounts per hectare (AMA): 2024 final, home land (Heimgut) €208.08 and alpine pasture €37.91; 2026 planned, about €207 and about €38. BMLUK, on an undated page, gives planned amounts of about €208/ha and about €41/ha and about €483 million a year (71 % of about €678 million).",
+    "fr": "Aide de base au revenu pour la durabilité (Einkommensgrundstützung) : ce qui reste du plafond de l'annexe V du règlement (UE) 2021/2115 après les réserves du § 8 est réparti ; le montant unitaire par hectare admissible déclaré (hors alpages) est cette somme divisée par les hectares déclarés. Pour les pâturages alpins (Almweiden), 1,8 % de l'annexe V est réservé, avec son propre montant par hectare. L'aide de chaque agriculteur est plafonnée à 100 000 € après déduction des coûts de main-d'œuvre de l'art. 17(3)(a) du règlement (UE) 2021/2115 lorsqu'ils ont été engagés conformément au droit du travail et aux conventions collectives (le paiement s'appelle « Basiszahlung » dans les fiches d'information). Montants par hectare (AMA) : 2024 définitif, terres de l'exploitation (Heimgut) 208,08 € et pâturage alpin 37,91 € ; 2026 prévus, environ 207 € et environ 38 €. Le BMLUK, sur une page non datée, donne des montants prévus d'environ 208 €/ha et environ 41 €/ha et environ 483 millions d'euros par an (71 % d'environ 678 millions).",
+    "it": "Sostegno di base al reddito per la sostenibilità (Einkommensgrundstützung): ciò che resta del massimale dell'allegato V del regolamento (UE) 2021/2115 dopo le riserve del § 8 viene ripartito; l'importo unitario per ettaro ammissibile dichiarato (esclusi gli alpeggi) è quella somma divisa per gli ettari dichiarati. Per i pascoli alpini (Almweiden) si riserva l'1,8 % dell'allegato V, con un proprio importo per ettaro. Il sostegno di ogni agricoltore è limitato a 100.000 € dopo aver dedotto i costi del lavoro dell'art. 17(3)(a) del regolamento (UE) 2021/2115 quando sostenuti nel rispetto del diritto del lavoro e dei contratti collettivi (nelle schede informative il pagamento si chiama «Basiszahlung»). Importi per ettaro (AMA): 2024 definitivo, terreni aziendali (Heimgut) 208,08 € e pascolo alpino 37,91 €; 2026 previsti, circa 207 € e circa 38 €. Il BMLUK, in una pagina senza data, indica importi previsti di circa 208 €/ha e circa 41 €/ha e circa 483 milioni di € l'anno (il 71 % di circa 678 milioni)."
+   },
+   "redistributive": {
+    "en": "Complementary redistributive income support (ergänzende Umverteilungseinkommensstützung): funded with 10 % of the direct-payment ceiling plus what the capping of § 8a(4) frees up, and paid to all eligible farmers up to 40 ha per holding, excluding alpine areas. The first 20 ha receive the full amount and 20 to 40 ha half. Amounts per hectare (AMA): 2024 final, tier 1 €45.14 and tier 2 €22.57; 2026 planned, about €45 and about €22. BMLUK gives about €44 and about €22/ha planned and €67.8 million. The text of § 8b is that of the RIS copy of 2-1-2023 hosted by AMA, not the current consolidated version.",
+    "fr": "Aide redistributive complémentaire (ergänzende Umverteilungseinkommensstützung) : financée par 10 % du plafond des paiements directs plus ce que libère le plafonnement du § 8a(4), et versée à tous les agriculteurs admissibles jusqu'à 40 ha par exploitation, hors alpages. Les 20 premiers hectares reçoivent le montant complet et de 20 à 40 ha la moitié. Montants par hectare (AMA) : 2024 définitif, tranche 1 45,14 € et tranche 2 22,57 € ; 2026 prévus, environ 45 € et environ 22 €. Le BMLUK donne environ 44 et environ 22 €/ha prévus et 67,8 millions d'euros. Le texte du § 8b est celui de la copie du RIS du 2-1-2023 hébergée par l'AMA, non la version consolidée en vigueur.",
+    "it": "Sostegno redistributivo complementare (ergänzende Umverteilungseinkommensstützung): finanziato con il 10 % del massimale dei pagamenti diretti più quanto liberato dal tetto del § 8a(4), e pagato a tutti gli agricoltori ammissibili fino a 40 ha per azienda, esclusi gli alpeggi. I primi 20 ha ricevono l'importo pieno e da 20 a 40 ha la metà. Importi per ettaro (AMA): 2024 definitivo, fascia 1 45,14 € e fascia 2 22,57 €; 2026 previsti, circa 45 € e circa 22 €. Il BMLUK indica circa 44 e circa 22 €/ha previsti e 67,8 milioni di €. Il testo del § 8b è quello della copia del RIS del 2-1-2023 ospitata dall'AMA, non la versione consolidata vigente."
+   },
+   "young-farmers": {
+    "en": "Complementary support for young farmers: a young farmer is someone no older than 40 in the year they start farming who has training at least at skilled-worker level (Facharbeiter); they must run the farm in their own name and for their own account or have decisive influence over its management, and prove the training within two years of starting (extendable by one year in justified cases if requested beforehand). In companies, the person with effective long-term control must meet the conditions. It is paid per eligible hectare, up to 40 ha per young farmer, and is funded with 2.1 % of the ceiling. Someone who started less than five years ago and has not received the earlier payment in full gets it for the remaining period; someone first applying in 2024 or later gets it until application year 2027 at the latest. The first application must be made no later than the year after starting. Amount per hectare (AMA): 2024 final €67.39; 2026 planned about €67 (AMA will publish the final amount in December 2026). Sanction (§ 51 GSP-AV): if the conditions are not met the payment is refused or fully withdrawn; if false evidence was submitted, a further penalty of 20 % of the amount due, or that would have been due, is added. EU rules on age and setting up (art. 30 of Regulation (EU) 2021/2115) were not read.",
+    "fr": "Aide complémentaire aux jeunes agriculteurs : est jeune agriculteur celui qui n'a pas plus de 40 ans l'année où il commence à exercer et qui a une formation au moins de niveau ouvrier qualifié (Facharbeiter) ; il doit exploiter en son nom et pour son compte ou avoir une influence décisive sur la gestion, et prouver la formation dans les deux ans suivant le début (prolongeable d'un an dans des cas justifiés si demandé avant). Dans les sociétés, la personne qui exerce le contrôle effectif durable doit remplir les conditions. Elle est versée par hectare admissible, jusqu'à 40 ha par jeune agriculteur, et financée par 2,1 % du plafond. Celui qui a commencé il y a moins de cinq ans et n'a pas perçu intégralement le paiement antérieur la reçoit pour la période restante ; celui qui la demande pour la première fois en 2024 ou après, jusqu'à l'année de demande 2027 au plus tard. La première demande doit être faite au plus tard l'année suivant le début. Montant par hectare (AMA) : 2024 définitif 67,39 € ; 2026 prévu environ 67 € (l'AMA publiera le définitif en décembre 2026). Sanction (§ 51 GSP-AV) : si les conditions ne sont pas remplies, le paiement est refusé ou entièrement retiré ; si une preuve fausse a été fournie, une pénalité supplémentaire de 20 % du montant dû, ou qui aurait été dû, s'ajoute. Les règles de l'UE sur l'âge et l'installation (art. 30 du règlement (UE) 2021/2115) n'ont pas été lues.",
+    "it": "Sostegno complementare ai giovani agricoltori: è giovane agricoltore chi non ha più di 40 anni nell'anno in cui inizia l'attività e ha una formazione almeno di livello operaio qualificato (Facharbeiter); deve condurre l'azienda a proprio nome e per proprio conto o avere un'influenza decisiva sulla gestione, e dimostrare la formazione entro due anni dall'inizio (prorogabile di un anno in casi giustificati se richiesto prima). Nelle società devono soddisfare le condizioni le persone con controllo effettivo e duraturo. È pagato per ettaro ammissibile, fino a 40 ha per giovane agricoltore, e finanziato con il 2,1 % del massimale. Chi ha iniziato da meno di cinque anni e non ha ricevuto per intero il pagamento precedente lo riceve per il periodo restante; chi lo chiede per la prima volta nel 2024 o dopo, al più tardi fino all'anno di domanda 2027. La prima domanda va fatta al più tardi l'anno successivo all'inizio. Importo per ettaro (AMA): 2024 definitivo 67,39 €; 2026 previsto circa 67 € (l'AMA pubblicherà il definitivo a dicembre 2026). Sanzione (§ 51 GSP-AV): se le condizioni non sono soddisfatte il pagamento è negato o ritirato per intero; se è stata presentata una prova falsa si aggiunge una penalità del 20 % dell'importo dovuto, o che sarebbe stato dovuto. Le norme UE su età e insediamento (art. 30 del regolamento (UE) 2021/2115) non sono state lette."
+   },
+   "eco-scheme": {
+    "en": "Regelung für Klima, Umwelt und Tierwohl (eco-scheme): the MOG defines it as one-year area- or animal-based agri-environment or animal-welfare measures, and 25 % of the direct-payment ceiling is reserved for it (the exact percentage is set by regulation after the inclusion options of art. 97 of Regulation (EU) 2021/2115). The specific measures belong to the ÖPUL agri-environment programme, governed by the special guideline (Sonderrichtlinie) ÖPUL 2023, not read here; its per-hectare amounts were not read either. Related single-application deadlines (§ 33 GSP-AV): entry into new ÖPUL measures by 31 December of the previous year; cover crops variants 1 to 3 by 31 August and 4 to 7 by 30 September; low-emission slurry quantity by 30 November. Sanctions for breaching the management requirements of the measures in arts. 31, 70 and 72 (§ 48 GSP-AV, read in a gesetzefinden.at copy): a warning or a reduction of 2, 5, 10, 25, 50 or 100 % depending on extent, severity, duration and frequency; from 2027 the warning is replaced by withholding 1 % of the premium; percentages add up to 100 % a year, repeats raise the sanction one level from the second time, and two 100 % reductions in the period exclude the farmer from the measure.",
+    "fr": "Regelung für Klima, Umwelt und Tierwohl (éco-régime) : le MOG la définit comme des mesures annuelles agro-environnementales ou de bien-être animal à la surface ou à l'animal, et 25 % du plafond des paiements directs lui est réservé (le pourcentage exact est fixé par règlement après les options d'inclusion de l'art. 97 du règlement (UE) 2021/2115). Les mesures concrètes relèvent du programme agro-environnemental ÖPUL, régi par la directive spéciale (Sonderrichtlinie) ÖPUL 2023, non lue ici ; ses montants par hectare n'ont pas été lus non plus. Échéances liées de la demande unique (§ 33 GSP-AV) : entrée dans de nouvelles mesures ÖPUL jusqu'au 31 décembre de l'année précédente ; couverts intermédiaires variantes 1 à 3 jusqu'au 31 août et 4 à 7 jusqu'au 30 septembre ; quantité de lisier épandu à faibles émissions jusqu'au 30 novembre. Sanctions pour manquement aux exigences de gestion des mesures des arts. 31, 70 et 72 (§ 48 GSP-AV, lu dans une copie de gesetzefinden.at) : avertissement ou réduction de 2, 5, 10, 25, 50 ou 100 % selon l'étendue, la gravité, la durée et la fréquence ; à partir de 2027 l'avertissement est remplacé par la retenue de 1 % de la prime ; les pourcentages s'additionnent jusqu'à 100 % par an, la récidive relève la sanction d'un niveau dès la deuxième fois, et deux réductions de 100 % dans la période excluent de la mesure.",
+    "it": "Regelung für Klima, Umwelt und Tierwohl (eco-regime): il MOG la definisce come misure annuali agroambientali o di benessere animale a superficie o a capo, e le è riservato il 25 % del massimale dei pagamenti diretti (la percentuale esatta è fissata da un regolamento dopo le opzioni di inclusione dell'art. 97 del regolamento (UE) 2021/2115). Le misure concrete rientrano nel programma agroambientale ÖPUL, disciplinato dalla direttiva speciale (Sonderrichtlinie) ÖPUL 2023, non letta qui; non sono stati letti nemmeno i suoi importi per ettaro. Scadenze collegate della domanda unica (§ 33 GSP-AV): ingresso in nuove misure ÖPUL entro il 31 dicembre dell'anno precedente; colture intercalari varianti da 1 a 3 entro il 31 agosto e da 4 a 7 entro il 30 settembre; quantità di liquame distribuito a basse emissioni entro il 30 novembre. Sanzioni per inosservanza dei requisiti di gestione delle misure degli artt. 31, 70 e 72 (§ 48 GSP-AV, letto in una copia di gesetzefinden.at): avvertimento o riduzione del 2, 5, 10, 25, 50 o 100 % in base a portata, gravità, durata e frequenza; dal 2027 l'avvertimento è sostituito dalla trattenuta dell'1 % del premio; le percentuali si sommano fino al 100 % annuo, la recidiva alza la sanzione di un livello dalla seconda volta e due riduzioni del 100 % nel periodo escludono dalla misura."
+   },
+   "coupled-alpine": {
+    "en": "Coupled support for cattle, breeding ewes and breeding goats driven to alpine pastures (Almauftriebsprämie): funded with 2.66 % of the direct-payment ceiling, divided by the declared livestock units (RGVE) of such animals; grazing periods, procedures and registration deadlines are set by regulation. RGVE equivalents (§ 21(4) GSP-AV): cattle aged 2 or more 1.00; over half a year to 2 years 0.60; up to half a year 0.40; sheep and goats aged one or more 0.15 and under one 0.07; dwarf cattle 0.5, 0.3 and 0.2. The alpine drive list is due by 15 July and all animals must have been driven up by that day to be paid. Amounts per RGVE (AMA): 2024 final, cows €97.58, other cattle €48.79 and breeding ewes and goats €97.58; 2026 planned, about €98, €49 and €98. BMLUK puts the total for alpine areas at about €30 million, of which €18 million is the coupled payment.",
+    "fr": "Aide couplée pour les bovins, brebis et chèvres mères conduits sur des pâturages alpins (Almauftriebsprämie) : financée par 2,66 % du plafond des paiements directs, divisé par les UGB (RGVE) déclarées de ces animaux ; les périodes de pâturage, les procédures et les délais d'enregistrement sont fixés par règlement. Équivalences en RGVE (§ 21(4) GSP-AV) : bovins de 2 ans ou plus 1,00 ; de plus de six mois à 2 ans 0,60 ; jusqu'à six mois 0,40 ; ovins et caprins d'un an ou plus 0,15 et de moins d'un an 0,07 ; bovins nains 0,5, 0,3 et 0,2. La liste de montée en alpage est due avant le 15 juillet et tous les animaux doivent y être montés au plus tard ce jour-là pour être payés. Montants par RGVE (AMA) : 2024 définitif, vaches 97,58 €, autres bovins 48,79 € et brebis et chèvres mères 97,58 € ; 2026 prévus, environ 98 €, 49 € et 98 €. Le BMLUK chiffre le total des alpages à environ 30 millions d'euros, dont 18 millions pour l'aide couplée.",
+    "it": "Sostegno accoppiato per bovini, pecore madri e capre madri portati su pascoli alpini (Almauftriebsprämie): finanziato con il 2,66 % del massimale dei pagamenti diretti, diviso per le UBA (RGVE) dichiarate di tali animali; periodi di pascolo, procedure e termini di registrazione sono fissati da un regolamento. Equivalenze in RGVE (§ 21(4) GSP-AV): bovini di 2 anni o più 1,00; da oltre sei mesi a 2 anni 0,60; fino a sei mesi 0,40; ovini e caprini di un anno o più 0,15 e sotto l'anno 0,07; bovini nani 0,5, 0,3 e 0,2. L'elenco della monticazione va consegnato entro il 15 luglio e tutti gli animali devono essere saliti entro quel giorno per essere pagati. Importi per RGVE (AMA): 2024 definitivo, vacche 97,58 €, altri bovini 48,79 € e pecore e capre madri 97,58 €; 2026 previsti, circa 98 €, 49 € e 98 €. Il BMLUK stima il totale per gli alpeggi in circa 30 milioni di €, di cui 18 milioni per il sostegno accoppiato."
+   },
+   "application": {
+    "en": "Single application (Mehrfachantrag, MFA): filing opens in November of the previous year (for the 2026 campaign, from 1 November 2025). By 15 April of the application year the application for direct payments and compensatory allowance, the parcel list and the animal list must be submitted; by 15 July, the alpine drive list; by 31 December of the previous year, the application for new ÖPUL measures. There is no grace period (Nachfrist): according to AMA in 2026 (and the Carinthian chamber of agriculture in 2025), anything submitted from 16 April is late and gives no premium for the year; § 5(2) exempts these deadlines from the next-working-day rule when they fall on a weekend or holiday (as stated in the summary read of the amendment BGBl. II No. 1/2026). Surface reference date: 1 April. Text of § 33 in force since 3-1-2026 (RIS).",
+    "fr": "Demande unique (Mehrfachantrag, MFA) : le dépôt s'ouvre en novembre de l'année précédente (pour la campagne 2026, dès le 1er novembre 2025). Avant le 15 avril de l'année de demande, il faut remettre la demande de paiements directs et d'indemnité compensatoire, la liste des parcelles et la liste des animaux ; avant le 15 juillet, la liste de montée en alpage ; avant le 31 décembre de l'année précédente, la demande de nouvelles mesures ÖPUL. Il n'y a pas de délai de grâce (Nachfrist) : selon l'AMA en 2026 (et la chambre d'agriculture de Carinthie en 2025), tout ce qui est déposé à partir du 16 avril est tardif et ne donne pas droit à la prime de l'année ; le § 5(2) exempte ces délais de la règle du jour ouvrable suivant lorsqu'ils tombent un week-end ou un jour férié (tel qu'indiqué dans le résumé lu de la modification BGBl. II n° 1/2026). Date de référence de la surface : le 1er avril. Texte du § 33 en vigueur depuis le 3-1-2026 (RIS).",
+    "it": "Domanda unica (Mehrfachantrag, MFA): la presentazione si apre a novembre dell'anno precedente (per la campagna 2026, dal 1° novembre 2025). Entro il 15 aprile dell'anno di domanda vanno consegnate la domanda di pagamenti diretti e di indennità compensativa, l'elenco delle particelle e l'elenco degli animali; entro il 15 luglio l'elenco della monticazione; entro il 31 dicembre dell'anno precedente la domanda di nuove misure ÖPUL. Non c'è proroga (Nachfrist): secondo l'AMA nel 2026 (e la camera agraria della Carinzia nel 2025) ciò che è presentato dal 16 aprile è tardivo e non dà diritto al premio dell'anno; il § 5(2) esclude questi termini dalla regola del giorno lavorativo successivo quando cadono in un fine settimana o festivo (come indicato nel riassunto letto della modifica BGBl. II n. 1/2026). Data di riferimento della superficie: 1° aprile. Testo del § 33 in vigore dal 3-1-2026 (RIS)."
+   },
+   "changes-after-deadline": {
+    "en": "Changes after the deadline (§ 33(3)): corrections arising from area monitoring or preliminary checks are allowed within 14 calendar days of AMA's notice. As long as the farmer has not been told of a breach or of an announced on-the-spot check (or a breach found in one), they can change the parcel's land-use type or conditions checkable by monitoring up to 15 calendar days before payment, make changes that raise no premium or other advantage, withdraw the application fully or partly up to 15 days before payment, and correct the average-animal list with suitable evidence. For 2026 AMA adds that land-use changes are accepted until early December and that expanding areas or adding premium-bearing codes only counts if filed before 15 April. § 33(3) no. 2 lit. d was repealed by BGBl. II No. 1/2026.",
+    "fr": "Modifications après la date limite (§ 33(3)) : les corrections issues du suivi des surfaces ou des contrôles préalables sont admises dans les 14 jours calendaires suivant l'avis de l'AMA. Tant que l'agriculteur n'a pas été informé d'une infraction ni d'un contrôle sur place annoncé (ou d'une infraction constatée lors de celui-ci), il peut changer le type d'utilisation de la parcelle ou des conditions vérifiables par suivi jusqu'à 15 jours calendaires avant le paiement, faire des modifications qui n'augmentent pas la prime ni ne donnent d'autre avantage, retirer la demande en tout ou partie jusqu'à 15 jours avant le paiement et corriger la liste des animaux moyens avec des preuves adéquates. Pour 2026, l'AMA ajoute que les changements d'utilisation sont admis jusqu'à début décembre et que l'extension de surfaces ou l'ajout de codes donnant droit à prime ne compte que s'ils sont déposés avant le 15 avril. Le § 33(3) n° 2 lit. d a été abrogé par BGBl. II n° 1/2026.",
+    "it": "Modifiche dopo la scadenza (§ 33(3)): le correzioni derivanti dal monitoraggio delle superfici o dai controlli preliminari sono ammesse entro 14 giorni di calendario dall'avviso dell'AMA. Finché all'agricoltore non è stata segnalata una violazione né annunciato un controllo in loco (o accertata una violazione in esso), può cambiare il tipo di uso della particella o condizioni verificabili con il monitoraggio fino a 15 giorni di calendario prima del pagamento, fare modifiche che non aumentano il premio né danno altro vantaggio, ritirare la domanda in tutto o in parte fino a 15 giorni prima del pagamento e correggere l'elenco degli animali medi con prove adeguate. Per il 2026 l'AMA aggiunge che i cambi d'uso sono ammessi fino a inizio dicembre e che ampliare superfici o aggiungere codici con premio vale solo se presentati prima del 15 aprile. Il § 33(3) n. 2 lett. d è stato abrogato da BGBl. II n. 1/2026."
+   },
+   "penalties": {
+    "en": "Sanctions: the calculation basis for area-based payment sanctions (§ 42 GSP-AV, version of 29-9-2023) is, in general, each measure separately; if the determined area is larger than the declared one, the declared one is used, and if smaller, the determined one; for the supports of §§ 8b and 8c the declared area is capped at 40 ha. ÖPUL measures and the eco-scheme fall under § 48 (levels from 2 to 100 %, see the eco-scheme rule) and young farmers under § 51 (payment withdrawn and a further 20 % for false evidence). AMA also warns that breaching obligations can lead to premium cuts or administrative sanctions. The percentages for over-declared area (§ 46), the sanction for coupled support (§ 50) and the order of reductions (§ 53) were not read, because the AMA copy is cut off at § 33.",
+    "fr": "Sanctions : la base de calcul des sanctions des paiements à la surface (§ 42 GSP-AV, version du 29-9-2023) est en général chaque mesure séparément ; si la surface déterminée est supérieure à la surface déclarée, la déclarée est retenue, et si elle est inférieure, la déterminée ; pour les aides des §§ 8b et 8c, la surface déclarée est plafonnée à 40 ha. Les mesures ÖPUL et l'éco-régime relèvent du § 48 (niveaux de 2 à 100 %, voir la règle de l'éco-régime) et les jeunes agriculteurs du § 51 (retrait du paiement et 20 % de plus pour preuve fausse). L'AMA avertit aussi que le non-respect des obligations peut entraîner des réductions de la prime ou des sanctions administratives. Les pourcentages pour surface surdéclarée (§ 46), la sanction de l'aide couplée (§ 50) et l'ordre des réductions (§ 53) n'ont pas été lus, car la copie de l'AMA est coupée au § 33.",
+    "it": "Sanzioni: la base di calcolo delle sanzioni dei pagamenti a superficie (§ 42 GSP-AV, versione del 29-9-2023) è in generale ciascuna misura separatamente; se la superficie accertata è maggiore di quella dichiarata si usa la dichiarata, se minore l'accertata; per i sostegni dei §§ 8b e 8c la superficie dichiarata è limitata a 40 ha. Le misure ÖPUL e l'eco-regime rientrano nel § 48 (livelli dal 2 al 100 %, vedi la regola dell'eco-regime) e i giovani agricoltori nel § 51 (ritiro del pagamento e un ulteriore 20 % per prova falsa). L'AMA avverte inoltre che l'inosservanza degli obblighi può comportare tagli del premio o sanzioni amministrative. Le percentuali per superficie sovradichiarata (§ 46), la sanzione del sostegno accoppiato (§ 50) e l'ordine delle riduzioni (§ 53) non sono state lette, perché la copia dell'AMA è tagliata al § 33."
+   },
+   "payment-timing": {
+    "en": "Payments: AMA pays the campaign's direct payments in one go, \"in voller Höhe\" (in full), in mid-December: 19 December 2024 (about €573.1 million of direct payments) and 18 December 2025 (about €571.6 million); ÖPUL and the compensatory allowance received 75 % that day, with the rest planned for June. AMA's 2026 information says it will publish the final amounts in December 2026. EU framework: payments between 1 December and 30 June of the following year, with advances from 16 October (up to 70 %; up to 75 % for the 2026 campaign), under art. 44 of Regulation (EU) 2021/2116 read in an unofficial copy. § 52 GSP-AV (payments) was not read.",
+    "fr": "Paiements : l'AMA verse les paiements directs de la campagne en une seule fois, « in voller Höhe » (en totalité), à la mi-décembre : le 19 décembre 2024 (environ 573,1 millions d'euros de paiements directs) et le 18 décembre 2025 (environ 571,6 millions d'euros) ; l'ÖPUL et l'indemnité compensatoire ont reçu 75 % ce jour-là, le reste étant prévu pour juin. Les informations de l'AMA pour 2026 indiquent qu'elle publiera les montants définitifs en décembre 2026. Cadre de l'UE : paiements entre le 1er décembre et le 30 juin de l'année suivante, avec des avances à partir du 16 octobre (jusqu'à 70 % ; jusqu'à 75 % pour la campagne 2026), selon l'art. 44 du règlement (UE) 2021/2116 lu dans une copie non officielle. Le § 52 GSP-AV (paiements) n'a pas été lu.",
+    "it": "Pagamenti: l'AMA paga i pagamenti diretti della campagna in un'unica soluzione, «in voller Höhe» (per intero), a metà dicembre: il 19 dicembre 2024 (circa 573,1 milioni di € di pagamenti diretti) e il 18 dicembre 2025 (circa 571,6 milioni di €); ÖPUL e indennità compensativa hanno ricevuto il 75 % quel giorno, con il resto previsto per giugno. Le informazioni dell'AMA per il 2026 indicano che pubblicherà gli importi definitivi a dicembre 2026. Quadro UE: pagamenti tra il 1° dicembre e il 30 giugno dell'anno seguente, con anticipi dal 16 ottobre (fino al 70 %; fino al 75 % per la campagna 2026), ai sensi dell'art. 44 del regolamento (UE) 2021/2116 letto in una copia non ufficiale. Il § 52 GSP-AV (pagamenti) non è stato letto."
+   },
+   "unit-amounts": {
+    "en": "Unit amounts: AMA publishes for each measure the reference date of the initial calculation and the fixed premium amount (§ 21(11) GSP-AV). 2024 campaign, final amounts (reference date 11-10-2024; published 16-12-2024): Basiszahlung home land (Heimgut) €208.08/ha, alpine pasture €37.91/ha, redistributive tier 1 €45.14 and tier 2 €22.57/ha, young farmers €67.39/ha; Almauftriebsprämie €97.58/RGVE (cows), €48.79 (other cattle), €97.58 (breeding ewes and goats). 2026 campaign, planned (provisional) amounts from AMA's November 2025 Merkblatt: about €207/ha (Heimgut), €38 (Alm), €45 and €22 (redistributive), €67 (young farmers), €98, €49 and €98 per RGVE. The 2023 and 2025 amounts and the eco-scheme amounts were not read.",
+    "fr": "Montants unitaires : l'AMA publie pour chaque mesure la date de référence du premier calcul et le montant fixe de la prime (§ 21(11) GSP-AV). Campagne 2024, montants définitifs (date de référence 11-10-2024 ; publié le 16-12-2024) : Basiszahlung terres de l'exploitation (Heimgut) 208,08 €/ha, pâturage alpin 37,91 €/ha, redistributive tranche 1 45,14 € et tranche 2 22,57 €/ha, jeunes agriculteurs 67,39 €/ha ; Almauftriebsprämie 97,58 €/RGVE (vaches), 48,79 € (autres bovins), 97,58 € (brebis et chèvres mères). Campagne 2026, montants prévus (provisoires) du Merkblatt de l'AMA de novembre 2025 : environ 207 €/ha (Heimgut), 38 € (Alm), 45 € et 22 € (redistributive), 67 € (jeunes), 98 €, 49 € et 98 € par RGVE. Les montants de 2023 et 2025 et ceux de l'éco-régime n'ont pas été lus.",
+    "it": "Importi unitari: l'AMA pubblica per ogni misura la data di riferimento del primo calcolo e l'importo fisso del premio (§ 21(11) GSP-AV). Campagna 2024, importi definitivi (data di riferimento 11-10-2024; pubblicato il 16-12-2024): Basiszahlung terreni aziendali (Heimgut) 208,08 €/ha, pascolo alpino 37,91 €/ha, redistributivo fascia 1 45,14 € e fascia 2 22,57 €/ha, giovani agricoltori 67,39 €/ha; Almauftriebsprämie 97,58 €/RGVE (vacche), 48,79 € (altri bovini), 97,58 € (pecore e capre madri). Campagna 2026, importi previsti (provvisori) dal Merkblatt dell'AMA di novembre 2025: circa 207 €/ha (Heimgut), 38 € (Alm), 45 € e 22 € (redistributivo), 67 € (giovani), 98 €, 49 € e 98 € per RGVE. Gli importi 2023 e 2025 e quelli dell'eco-regime non sono stati letti."
+   }
+  },
+  "calendar": {
+   "su-close": {
+    "en": "The single-application deadline for direct payments and the parcel and animal lists ends (15 April of the application year), with no grace period.",
+    "fr": "La date limite de la demande unique de paiements directs et des listes de parcelles et d'animaux (15 avril de l'année de demande), sans délai de grâce.",
+    "it": "Scade il termine della domanda unica di pagamenti diretti e degli elenchi di particelle e animali (15 aprile dell'anno di domanda), senza proroga."
+   },
+   "alp-list": {
+    "en": "Deadline for the alpine drive list (15 July); for cattle driven up by that date the pasture notice under the cattle identification regulation replaces it.",
+    "fr": "Date limite de la liste de montée en alpage (15 juillet) ; pour les bovins montés avant cette date, elle est remplacée par la déclaration de pâturage du règlement d'identification bovine.",
+    "it": "Scadenza dell'elenco della monticazione (15 luglio); per i bovini saliti entro tale data lo sostituisce la comunicazione di pascolo ai sensi del regolamento sull'identificazione dei bovini."
+   },
+   "cover-crop-a": {
+    "en": "Deadline for cover crop variants 1 to 3 (measure 31-01, 31 August).",
+    "fr": "Date limite des couverts intermédiaires variantes 1 à 3 (mesure 31-01, 31 août).",
+    "it": "Scadenza delle colture intercalari varianti da 1 a 3 (misura 31-01, 31 agosto)."
+   },
+   "cover-crop-b": {
+    "en": "Deadline for cover crop variants 4 to 7 (measure 31-01, 30 September).",
+    "fr": "Date limite des couverts intermédiaires variantes 4 à 7 (mesure 31-01, 30 septembre).",
+    "it": "Scadenza delle colture intercalari varianti da 4 a 7 (misura 31-01, 30 settembre)."
+   },
+   "slurry-quantity": {
+    "en": "Deadline for the quantity of low-emission slurry applied (measure 70-08, 30 November).",
+    "fr": "Date limite de la quantité de lisier épandu à faibles émissions (mesure 70-08, 30 novembre).",
+    "it": "Scadenza della quantità di liquame distribuito a basse emissioni (misura 70-08, 30 novembre)."
+   },
+   "payment-open": {
+    "en": "The payment period for direct payments starts (1 December); AMA usually pays in mid-December. Basis: art. 44 of Regulation (EU) 2021/2116, read in an unofficial copy.",
+    "fr": "La période de paiement des paiements directs s'ouvre (1er décembre) ; l'AMA paie généralement à la mi-décembre. Base : art. 44 du règlement (UE) 2021/2116, lu dans une copie non officielle.",
+    "it": "Si apre il periodo di pagamento dei pagamenti diretti (1° dicembre); l'AMA di solito paga a metà dicembre. Base: art. 44 del regolamento (UE) 2021/2116, letto in una copia non ufficiale."
+   },
+   "payment-close": {
+    "en": "The payment period for the previous campaign's direct payments ends (30 June). Basis: art. 44 of Regulation (EU) 2021/2116, read in an unofficial copy.",
+    "fr": "La période de paiement des paiements directs de la campagne précédente se termine (30 juin). Base : art. 44 du règlement (UE) 2021/2116, lu dans une copie non officielle.",
+    "it": "Termina il periodo di pagamento dei pagamenti diretti della campagna precedente (30 giugno). Base: art. 44 del regolamento (UE) 2021/2116, letto in una copia non ufficiale."
+   }
+  },
+  "overrides": {}
+ }
+}

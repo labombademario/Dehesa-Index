@@ -1,0 +1,536 @@
+{
+ "schemaVersion": 1,
+ "country": "SE",
+ "scheme": "Strategisk plan för Sveriges genomförande av EU:s gemensamma jordbrukspolitik 2023-2027 (direktstöd: förordning 2022:1826)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-15",
+ "source": {
+  "id": "svensk_forfattningssamling",
+  "instrument": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik (SFS 2022:1826, con las modificaciones SFS 2023:952, 2024:1204, 2025:845, 2025:1322 y 2026:288) y SJVFS 2022:30 (modificada por SJVFS 2025:33) y SJVFS 2022:29 (modificada por SJVFS 2025:34), Svensk författningssamling / Statens jordbruksverks författningssamling",
+  "ref": "SFS 2022:1826",
+  "url": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
+ },
+ "note": "Reglas leídas a mano de la ordenanza SFS 2022:1826 (consolidada de riksdagen.se leída en extracto y PDF oficiales de las modificaciones), de dos reglamentos de Jordbruksverket (SJVFS 2025:33 y 2025:34, que solo imprimen los artículos modificados) y de las fichas de 2026 de Jordbruksverket. Los importes son márgenes del anexo 3 y cifras planificadas de 2026 o ya fijadas de 2025; no se han leído los definitivos de 2026. El último día de la solicitud única es el jueves de la semana 15 (9 de abril en 2026) y figura en la regla «application». No se han leído los capítulos 11 y 12 vigentes (controles y sanciones), el SJVFS 2022:29 completo ni el desarrollo rural. SFS 2026:288 se leyó en una copia no oficial. Sin vigilancia automática. Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Grundläggande inkomststöd för hållbarhet (gårdsstöd)",
+   "nameLang": "sv",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 5 och 6 §§",
+   "articles": [
+    "5 kap. 5 §",
+    "5 kap. 6 §"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Kompletterande omfördelningsinkomststöd för hållbarhet",
+   "nameLang": "sv",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 7 §",
+   "articles": [
+    "5 kap. 7 §"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Kompletterande inkomststöd till unga jordbrukare",
+   "nameLang": "sv",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 8-12 §§",
+   "articles": [
+    "5 kap. 8 §",
+    "5 kap. 9 §",
+    "5 kap. 10 §",
+    "5 kap. 11 §",
+    "5 kap. 12 §"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Stöd för klimatet och miljön (ekologisk produktion, mellangröda, fånggröda, vårbearbetning, precisionsjordbruk, blommande åker och fältkant, vallodling)",
+   "nameLang": "sv",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 13-28 b §§",
+   "articles": [
+    "5 kap. 13 §",
+    "5 kap. 14 §",
+    "5 kap. 20 §",
+    "5 kap. 24 §",
+    "5 kap. 28 a §",
+    "5 kap. 28 b §"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Kopplat inkomststöd för nötkreatur",
+   "nameLang": "sv",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 29-31 §§",
+   "articles": [
+    "5 kap. 29 §",
+    "5 kap. 30 §",
+    "5 kap. 31 §"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 1 kap. 7 a § (införd genom SFS 2023:952)",
+   "articles": [
+    "1 kap. 7 a §"
+   ],
+   "text": "Agricultor activo (aktiv jordbrukare): debe cumplir al menos una condición: más de 36 ha de superficie agrícola en la solicitud única, más de 50 unidades de ganado (djurenheter) en la solicitud, o haber cobrado como máximo 5.000 € de pagos directos el año anterior. La ordenanza admite además acreditar la actividad agraria por otros medios. La ficha de Jordbruksverket para 2026 añade que también cuenta quien no cobró pagos directos el año anterior, pide este año y se espera que cobre como máximo 5.000 €, y que si no se cumple ninguna condición la länsstyrelse (administración provincial) puede pedir pruebas de costes o ingresos de la actividad. Equivalencias de unidades de ganado según esa ficha: bovino de más de 2 años 1,00; bovino joven (6 meses a 2 años) 0,60; cerda 0,50; oveja y cabra 0,20; cerdo de cebo 0,30; pollo de carne 0,03; gallina ponedora 0,014. No se ha leído la definición de unidad de ganado de la propia ordenanza (1 kap. 7 c §), que remite a un anexo de un reglamento de la Comisión.",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "overHa": 36,
+    "overLivestockUnits": 50,
+    "priorYearDirectPaymentsMaxEur": 5000
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 4 §; Jordbruksverket, ficha «Gårdsstöd» 2026",
+   "articles": [
+    "5 kap. 4 §"
+   ],
+   "text": "Superficie mínima: para los pagos directos desacoplados hacen falta al menos 4 ha de superficie agrícola en la solicitud. Excepción: quien tiene derecho al pago asociado a bovinos (5 kap. 29 §) y la ayuda llega a 100 € como mínimo. Según la ficha de Jordbruksverket de 2026, los 4 ha deben constar en la solicitud el 9 de abril; si hay menos, hay que llegar a 4 ha antes del 4 de mayo, con una reducción del 1 % por día hábil hasta entonces, y quien no llega recibe cero. Con menos de 4 ha se puede cobrar si el total de los pagos directos listados (pago por explotación con el redistributivo, jóvenes, bovinos, ecológico, agricultura de precisión, cultivos intermedios y de cobertura, flores y márgenes, praderas) suma al menos 100 €. Cada parcela (skifte) debe tener al menos 0,1 ha (con una excepción para parcelas pequeñas contiguas a otra del mismo recinto). No se ha leído el 2 kap. 4 § del reglamento SJVFS 2022:29 en una versión oficial.",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "minHa": 4,
+    "minTotalSupportEur": 100,
+    "minParcelHa": 0.1
+   }
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 11, 13-15 §§; Jordbruksverket, «Viktiga datum för jordbrukarstöden» 2026",
+   "articles": [
+    "11",
+    "13",
+    "14",
+    "15"
+   ],
+   "text": "Solicitud única (SAM Internet): el último día es el jueves de la semana 15 de cada año (si ese jueves es el Jueves Santo, el miércoles de esa semana); en 2026 fue el 9 de abril. Según Jordbruksverket, lo presentado después del 9 de abril se reduce un 1 % por día hábil de retraso y lo que llega después del 4 de mayo de 2026 no recibe ayuda (el reglamento de la UE que fija esa regla no se ha leído). Después se puede: añadir superficie hasta el 15 de junio (si es festivo o víspera, el siguiente día hábil); cambiar límites de parcela y cultivos hasta el 31 de octubre (sin aumentar la superficie pedida); retirar la solicitud, total o parcial, hasta el 31 de octubre, y la solicitud de ayuda a bovinos hasta el 30 de julio. Los pagos de 2026 empiezan el 11 de diciembre de 2026 (sin anticipo para los pagos directos; plan de pagos de Jordbruksverket, que no cita norma). El 11 §, 13 §, 14 § y 15 § se leyeron en el texto oficial de SJVFS 2025:33 (solo se imprimen los artículos modificados); la versión 2022 del 11 § fijaba una fecha concreta (13 de abril de 2023) y no se ha usado.",
+   "officialUrl": "https://jordbruksverket.se/download/18.1d84726e19cb1ab885b309a/1772784437197/2025-033.pdf",
+   "values": {
+    "campaign": 2026,
+    "to": "2026-04-09",
+    "rule": "Thursday of week 15",
+    "lateReductionPctPerWorkingDay": 1,
+    "noPaymentAfter": "2026-05-04",
+    "addLandUntil": "06-15",
+    "changeCropsUntil": "10-31",
+    "withdrawUntil": "10-31",
+    "withdrawCattleUntil": "07-30",
+    "paymentsStart": "2026-12-11"
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 5 y 6 §§ y bilaga 3 (SFS 2025:845); Jordbruksverket, ficha «Gårdsstöd» 2026",
+   "articles": [
+    "5 kap. 5 §",
+    "5 kap. 6 §",
+    "bilaga 3"
+   ],
+   "text": "Ayuda básica a la renta para la sostenibilidad (grundläggande inkomststöd för hållbarhet, gårdsstöd): se paga cada año por hectárea admisible a quien dispone de la tierra. Jordbruksverket fija el importe unitario cada año dentro de los límites del anexo 3: para 2026, entre 130 y 147 €/ha (2023: 137-155; 2024: 134-152; 2025: 132-148; 2027: 130-146). El importe de 2026 es planificado y se fija en otoño según el número de solicitantes; el de 2025, ya fijado, fue de 134,80 €/ha. Se paga en coronas (cambio de 2026: 1 € = 11,331 SEK, el del BCE el último día hábil antes del 1 de octubre). No se ha leído el importe definitivo de 2026.",
+   "officialUrl": "https://xn--svenskfrfattningssamling-roc.se/sites/default/files/sfs/2025-08/SFS2025-845.pdf",
+   "values": {
+    "campaign": 2026,
+    "plannedMinEurPerHa": 130,
+    "plannedMaxEurPerHa": 147,
+    "fixed2025EurPerHa": 134.8,
+    "eurSek2026": 11.331
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 7 § y bilaga 3 (SFS 2025:845); Jordbruksverket, ficha «Gårdsstöd» 2026",
+   "articles": [
+    "5 kap. 7 §",
+    "bilaga 3"
+   ],
+   "text": "Pago redistributivo (kompletterande omfördelningsinkomststöd för hållbarhet): se suma automáticamente al pago por explotación, sin solicitud aparte, para quien cobra la ayuda básica, por un máximo de 150 ha al año. El anexo 3 fija un margen de 14,0 a 17,1 €/ha; para 2026 la ficha de Jordbruksverket da el mismo margen (14,00-17,10 €/ha, planificado, se fija en otoño) y para 2025, ya fijado, 16,40 €/ha. No se ha leído el importe definitivo de 2026.",
+   "officialUrl": "https://xn--svenskfrfattningssamling-roc.se/sites/default/files/sfs/2025-08/SFS2025-845.pdf",
+   "values": {
+    "maxHa": 150,
+    "campaign": 2026,
+    "plannedMinEurPerHa": 14.0,
+    "plannedMaxEurPerHa": 17.1,
+    "fixed2025EurPerHa": 16.4
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 8-12 §§ y bilaga 3 (SFS 2025:845); Jordbruksverket, ficha «Stöd till unga jordbrukare» 2026",
+   "articles": [
+    "5 kap. 8 §",
+    "5 kap. 9 §",
+    "5 kap. 10 §",
+    "5 kap. 11 §",
+    "5 kap. 12 §",
+    "bilaga 3"
+   ],
+   "text": "Jóvenes agricultores (kompletterande inkomststöd till unga jordbrukare): ayuda por hectárea durante un máximo de cinco años y como muy tarde hasta el año de ayuda 2027, por un máximo de 200 ha al año. Condiciones: establecerse como responsable de la empresa por primera vez el año de la primera solicitud o en los cinco años anteriores, no haber sido responsable antes de otra explotación y tener como máximo 40 años el año de la solicitud. Responsable es quien tiene el control efectivo y duradero de la gestión, las decisiones de remuneración y los riesgos financieros; si es sociedad, además debe ser socio y tener firma. Debe tener bachillerato (gymnasieexamen) o equivalente extranjero, o al menos 12 meses de trabajo a tiempo completo en agricultura, horticultura o renos, a más tardar el último día de solicitud. El anexo 3 da para 2026 un margen de 85 a 159 €/ha (2023: 84-156; 2024: 85-157; 2025: 84-156; 2027: 88-162). La ficha de Jordbruksverket da para 2026 el mismo margen, planificado, y para 2025 ya fijado 140 €/ha; los documentos debían llegar a la länsstyrelse antes del 9 de abril de 2026. No se ha leído el importe definitivo de 2026.",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "maxAge": 40,
+    "maxHa": 200,
+    "maxYears": 5,
+    "lastYear": 2027,
+    "establishedWithinYears": 5,
+    "minWorkMonths": 12,
+    "campaign": 2026,
+    "plannedMinEurPerHa": 85,
+    "plannedMaxEurPerHa": 159,
+    "fixed2025EurPerHa": 140
+   }
+  },
+  {
+   "id": "eco-schemes",
+   "topic": "eco",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 13-28 b §§ y bilaga 3 (SFS 2025:845)",
+   "articles": [
+    "5 kap. 13 §",
+    "5 kap. 14 §",
+    "5 kap. 20 §",
+    "5 kap. 24 §",
+    "5 kap. 28 a §",
+    "5 kap. 28 b §",
+    "bilaga 3"
+   ],
+   "text": "Ayuda para el clima y el medio ambiente (stöd för klimatet och miljön, el ecoesquema sueco; art. 31 del reglamento 2021/2115): siete ayudas anuales que se pueden combinar según el anexo 7. Márgenes del anexo 3 (€/ha) y, entre paréntesis, importe planificado de 2026 según Jordbruksverket (se fija en otoño; entre corchetes el de 2025 ya fijado): producción ecológica, cereales, oleaginosas, proteaginosas y otros cultivos anuales 132-162 (147; [162]), patata, remolacha y hortalizas 443-541 (492; [541]), fruta, frutos secos y bayas 663-811 (737; [811]), animales sobre tierra de cultivo (1 ha por unidad de ganado) 159-195 según la ficha, 177 planificado [195]; cultivo intermedio para fijar carbono 113-141 (128; [141]); cultivo de cobertura para reducir la lixiviación de nitrógeno 130-156 (147; [156]); laboreo de primavera 61-72 (no se ha leído el planificado); agricultura de precisión (planificación) 20-41 ([41]); flores y márgenes de campo (blommande åker och fältkant) 212-282 en zona de ayuda compensatoria (235; [282]), 325-434 fuera de ella (361; [434]) y 596-729 en las llanuras del sur de Götaland (663; [729]), con un tope desde 2026 de 10 ha más el 20 % de la tierra de cultivo por encima de 10 ha; praderas (vallodling) 49-59 en 2026 y 2027 (54), un año, fuera de las zonas de ayuda compensatoria. En el anexo 3 que se leyó (SFS 2025:845), la fila de animales de la producción ecológica aparece como 663-811, que choca con los 159-195 de la ficha; se usa la ficha. No se han leído los importes definitivos de 2026.",
+   "officialUrl": "https://xn--svenskfrfattningssamling-roc.se/sites/default/files/sfs/2025-08/SFS2025-845.pdf",
+   "values": {
+    "campaign": 2026,
+    "organicCerealsPlannedEurPerHa": 147,
+    "organicPotatoBeetVegPlannedEurPerHa": 492,
+    "organicFruitBerryPlannedEurPerHa": 737,
+    "organicAnimalsPlannedEurPerHa": 177,
+    "intermediateCropPlannedEurPerHa": 128,
+    "catchCropPlannedEurPerHa": 147,
+    "precisionRangeEurPerHa": [
+     20,
+     41
+    ],
+    "flowerCompensationAreaPlannedEurPerHa": 235,
+    "flowerOutsideSouthPlainsPlannedEurPerHa": 361,
+    "flowerSouthPlainsPlannedEurPerHa": 663,
+    "leyPlannedEurPerHa": 54,
+    "flowerMaxFullHa": 10,
+    "flowerPctAbove": 20
+   }
+  },
+  {
+   "id": "eco-conditions",
+   "topic": "eco",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 14-28 b §§; Jordbruksverket, ficha «Ersättning för ekologisk produktion» 2026",
+   "articles": [
+    "5 kap. 14 §",
+    "5 kap. 17 §",
+    "5 kap. 18 §",
+    "5 kap. 22 §",
+    "5 kap. 24 §",
+    "5 kap. 25 §",
+    "5 kap. 26 §",
+    "5 kap. 28 a §",
+    "5 kap. 28 b §"
+   ],
+   "text": "Condiciones de las ayudas del ecoesquema (resumen de la ordenanza y de las fichas de Jordbruksverket de 2026). Ecológico: solo tierra de cultivo, producción certificada o en conversión por un organismo de control (aviso al organismo a más tardar el último día de solicitud); la ayuda por animales cubre vacas lecheras y de carne, terneros, ovejas, cabras (hembras), cerdas, cerdos de cebo, gallinas ponedoras y pollos, hasta tantas hectáreas como unidades de ganado (oveja o cabra 0,2), y exige también ecológico en cultivos; ovejas, cabras y cerdas se mantienen al menos 60 días. Cultivo intermedio: zonas de ayuda 6-12 o sin ayuda compensatoria, legumbres como máximo el 30 % de la semilla; cultivo de cobertura y laboreo de primavera: zona sensible a nitratos; no hay ayuda para cultivos permanentes ni, en cobertura e intermedio, si hubo maíz el mismo año; fecha más temprana de rotura el 10 de octubre (20 de octubre en Blekinge, Skåne y Halland). Agricultura de precisión: plan de cultivo, balance de nutrientes y análisis de suelo (máximo 10 años) disponibles el 9 de abril de 2026 y análisis de purín a 15 de junio, tierra de cultivo y prado permanente sobre tierra de cultivo, no en barbecho. Flores y márgenes: parcelas de 0,1 a 0,5 ha (elementos del paisaje) o de más de 0,5 ha (superficies no productivas), al menos 3 especies de hierbas melíferas, prohibido segar del 1 de abril al 30 de junio. Praderas: fuera de las zonas de ayuda compensatoria, pradera implantada antes del 1 de abril, pastada o cosechada al menos una vez, rotura desde el 10 de octubre. Parcela mínima 0,1 ha en todas. Son condiciones resumidas; no se han leído las ordenanzas SJVFS 2022:29 completas en versión oficial vigente (la copia de lagen.nu puede estar sin consolidar).",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "organicMinHoldingDays": 60,
+    "minParcelHa": 0.1,
+    "intermediateLegumesMaxPct": 30,
+    "earliestBreakDate": "10-10",
+    "earliestBreakDateSouth": "10-20"
+   }
+  },
+  {
+   "id": "coupled-cattle",
+   "topic": "associated",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 29-31 §§ y bilaga 3 (SFS 2025:845); Jordbruksverket, ficha «Nötkreatursstöd» 2026",
+   "articles": [
+    "5 kap. 29 §",
+    "5 kap. 30 §",
+    "5 kap. 31 §",
+    "bilaga 3"
+   ],
+   "text": "Pago asociado a bovinos (kopplat inkomststöd för nötkreatur, art. 32 del reglamento 2021/2115): importe por animal y año según el anexo 3, calculado sobre los días que el animal está en las explotaciones declaradas en la solicitud (según la base de datos de animales, CDB); se cuenta desde el día siguiente a cumplir 12 meses y el animal debe estar identificado, registrado y notificado según los arts. 108-120 del reglamento 2016/429. No hay ayuda por bisontes americanos ni yaks. Según la ficha de Jordbruksverket el período de cómputo de 2026 es del 1 de agosto de 2025 al 31 de julio de 2026. Margen del anexo 3: 87-96 € por animal (unidad de ganado completa del período según la ficha); 2026 planificado dentro de ese margen y se fija en otoño; 2025 ya fijado: 93,23 €. En la ficha, las altas y bajas en la CDB deben registrarse en 7 días. No se ha leído el importe definitivo de 2026.",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "campaign": 2026,
+    "plannedMinEurPerUnit": 87,
+    "plannedMaxEurPerUnit": 96,
+    "fixed2025EurPerUnit": 93.23,
+    "minAgeMonths": 12
+   }
+  },
+  {
+   "id": "conditionality",
+   "topic": "controls",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 4 kap. 1-25 §§",
+   "articles": [
+    "4 kap. 1 §",
+    "4 kap. 2 §",
+    "4 kap. 5 §",
+    "4 kap. 6 §",
+    "4 kap. 7 §",
+    "4 kap. 10 §",
+    "4 kap. 19 §",
+    "4 kap. 20 §"
+   ],
+   "text": "Condicionalidad (grundvillkor): los pagos directos exigen cumplir los requisitos legales de gestión de la UE y las normas de buenas condiciones agrarias y medioambientales (BCAM/GAEC). GAEC 1: la parte nacional de pastos permanentes no puede caer más de un 10 % respecto de 2018. GAEC 2: sin drenar humedales o turberas sin permiso; las tierras sobre turba no pueden quedar en barbecho sin vegetación. GAEC 3: prohibido quemar rastrojos. GAEC 4: sin abonar una franja de 2 m junto a cursos de agua o lagos (nunca abono a menos de 3 m del borde) y sin fitosanitarios a menos de 6 m. GAEC 5: tierra con pendiente de más del 15 % hacia agua debe mantenerse con vegetación o sin labrar del 15 de septiembre al 15 de febrero. GAEC 6: cobertura mínima del suelo en periodos sensibles del 60 % (Skåne, Halland, Blekinge), 50 %, 40 % o 30 % según la provincia, con fecha de fin no anterior al 20 de octubre, 10 de octubre, 1 de octubre o 15 de septiembre según la región; los ecológicos certificados en parte de las provincias están exentos. GAEC 7: al menos el 33 % de la tierra de cultivo cambia de cultivo cada año y ningún cultivo anual más de tres años seguidos, o bien diversificación (10-30 ha: al menos 2 cultivos y el principal como máximo el 75 %; más de 30 ha: al menos 3 cultivos, principal como máximo el 75 % y los dos mayores como máximo el 95 %); exentas, entre otras, las explotaciones con 10 ha o menos de tierra de cultivo y las de más del 75 % de pasto o leguminosas. GAEC 8: no se pueden quitar ni dañar los elementos del paisaje; setos y árboles que sean elementos del paisaje no se podan del 1 de abril al 15 de agosto. GAEC 9: los pastos permanentes en Natura 2000 no se convierten ni se aran salvo que lo permita el plan de conservación. El texto es el consolidado de riksdagen.se hasta SFS 2026:288 (leído en extracto, no el Svensk författningssamling original); el 4 kap. 1 a § (exención de los ecológicos de los §§ 4-7) y el 1 b § se vieron además en SFS 2026:288, aplicable desde el año de ayuda 2026. No se leyeron los anexos de elementos del paisaje.",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "permanentGrasslandMaxDeclinePct": 10,
+    "cropChangeMinPct": 33,
+    "hedgePruningBan": "04-01/08-15",
+    "steepSlopePct": 15,
+    "steepSlopeProtectedFrom": "09-15",
+    "steepSlopeProtectedTo": "02-15",
+    "exemptArableHa": 10
+   }
+  },
+  {
+   "id": "social-conditions",
+   "topic": "controls",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 4 a kap. 1-6 §§ y 12 kap. 32 a-32 l §§ (SFS 2024:1204)",
+   "articles": [
+    "4 a kap. 1 §",
+    "4 a kap. 2 §",
+    "4 a kap. 3 §",
+    "12 kap. 32 a §"
+   ],
+   "text": "Condicionalidad social (sociala grundvillkor): además de la condicionalidad ambiental, los pagos directos exigen cumplir condiciones laborales del reglamento 2021/2115: la Ley de Medio Ambiente Laboral (1977:1160) y sus normas (evaluación de riesgos, equipos de protección, registro de accidentes, primeros auxilios, formación, trabajo contratado), no obstaculizar a los delegados de seguridad, y la Ley de Protección del Empleo (1982:80) y la de jornada (1982:673) en materias como periodo de prueba, información al trabajador, cambios de horarios y pago del trabajo cancelado. Un tribunal o una orden de sanción de Arbetsmiljöverket (autoridad de medio ambiente laboral) comunicada a la länsstyrelse fundamenta la reducción. Según SFS 2024:1204 (12 kap. 32 a-32 l §), la reducción base es del 3 % para un incumplimiento no intencional, con casos del 1 % o el 5 %, y aumenta con incumplimientos repetidos en tres años naturales; en vigor para incumplimientos posteriores al 1 de enero de 2025. No se ha leído el 12 kap. en su versión consolidada vigente.",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "baseReductionPct": 3,
+    "repeatYears": 3
+   }
+  },
+  {
+   "id": "controls",
+   "topic": "controls",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 3 kap. 22-25 b, 27 §§ y 11 kap. 4, 13, 14 §§ (SFS 2024:1204)",
+   "articles": [
+    "3 kap. 22 §",
+    "3 kap. 25 §",
+    "3 kap. 25 b §",
+    "3 kap. 27 §",
+    "11 kap. 4 §",
+    "11 kap. 13 §",
+    "11 kap. 14 §"
+   ],
+   "text": "Controles y cálculo de la superficie. La ayuda por superficie se calcula sobre la superficie declarada, agrupada por importe; si la diferencia entre lo pedido y la superficie determinada es de 0,10 ha o menos, vale lo declarado; si no se retira o corrige la solicitud o no se demuestra el cumplimiento, se paga sobre lo declarado menos la superficie incumplida (3 kap. 22-25 b §). Si un incumplimiento solo se detecta por el sistema de seguimiento por satélite, debe abarcar parcelas agrícolas enteras. Según SFS 2024:1204, los controles sobre el terreno cubren al menos el 5 % de los solicitantes de ayudas por superficie y de ayudas por animales (y el 30 % de las superficies de cáñamo); este 11 kap. 13 § se modificó después por SFS 2025:845 y SFS 2025:1322 y el texto vigente no se ha leído. Según SFS 2026:288 (texto de una copia no oficial), el control sobre el terreno de la condicionalidad es del 1 % de los solicitantes con más de 10 ha. Jordbruksverket vigila el uso de la tierra por satélite y puede pedir una foto georreferenciada (app Geofoto). Fuerza mayor: se notifica por escrito en 15 días hábiles desde que se pueda (3 kap. 27 §).",
+   "officialUrl": "https://www.svenskforfattningssamling.se/sites/default/files/sfs/2024-12/SFS2024-1204.pdf",
+   "values": {
+    "onSiteAreaPct": 5,
+    "onSiteAnimalPct": 5,
+    "forceMajeureWorkingDays": 15,
+    "toleranceHa": 0.1
+   }
+  },
+  {
+   "id": "penalties",
+   "topic": "penalties",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 12 kap. 6, 22 §§ (SFS 2026:288); Jordbruksverket, ficha «Gårdsstöd» 2026",
+   "articles": [
+    "12 kap. 22 §"
+   ],
+   "text": "Sanciones. Retraso en la solicitud: reducción del 1 % por día hábil de retraso respecto del último día y ayuda cero si llega después del 4 de mayo de 2026 (según Jordbruksverket). Condicionalidad: según SFS 2026:288, aplicable desde el año de ayuda 2026 (texto de una copia no oficial del Svensk författningssamling, no de la web oficial), las explotaciones con 10 ha o menos están exentas de reducciones por incumplir las condiciones básicas y las de hasta 30 ha de reducciones por incumplir la rotación o diversificación (GAEC 7) (12 kap. 22 §). Incumplimientos sociales: reducción base del 3 % (ver la regla de condicionalidad social). Jordbruksverket indica además que, si el total de los pagos listados supera 2.000 €, puede aplicarse una reducción (porcentaje sobre el exceso) si la Comisión lo fija en noviembre por riesgo de superar el presupuesto de la UE. No se han leído la escala de reducciones por incumplir la condicionalidad (SJVFS 2022:29, cap. 4 y anexo 1, que solo se vio en una copia de lagen.nu no oficial), los umbrales de diferencias de superficie y animales del 12 kap. ni los porcentajes de intencionalidad.",
+   "officialUrl": "https://lezdkonjjjbvaghdwpog.supabase.co/storage/v1/object/public/sfs-pdfs/2026/SFS2026-288.pdf",
+   "values": {
+    "lateReductionPctPerWorkingDay": 1,
+    "noPaymentAfter": "2026-05-04",
+    "exemptHaConditionality": 10,
+    "exemptHaGaec7": 30,
+    "budgetReductionThresholdEur": 2000
+   }
+  },
+  {
+   "id": "unit-amounts",
+   "topic": "amounts",
+   "legalBasis": "Förordning (2022:1826) om EU:s gemensamma jordbrukspolitik, 5 kap. 2 y 3 §§ y bilaga 3; Jordbruksverket, ficha «Gårdsstöd» 2026",
+   "articles": [
+    "5 kap. 2 §",
+    "5 kap. 3 §",
+    "bilaga 3"
+   ],
+   "text": "Cómo se fijan los importes: Jordbruksverket fija cada año un importe unitario por tipo de pago directo, calculado a partir del presupuesto indicativo y del número de hectáreas o animales admisibles, dentro de los máximos y mínimos del anexo 3 y sin rebasar el límite máximo de pagos directos del anexo V del reglamento 2021/2115. Por eso las fichas de Jordbruksverket dan para 2026 importes planificados dentro de un margen (en euros, pagados en coronas al cambio de 1 € = 11,331 SEK, el del BCE el último día hábil antes del 1 de octubre) y los definitivos se conocen en otoño; el pago de 2026 empieza el 11 de diciembre de 2026. Los márgenes están en la regla de cada pago. En el anexo 3 leído (SFS 2025:845) los márgenes del pago por explotación, jóvenes y bovinos no tienen más modificaciones posteriores leídas, pero SFS 2025:1322 y SFS 2026:288 no se han examinado en su anexo 3 y podrían haberlos cambiado. Importes definitivos de 2026 no leídos; de 2025, solo los citados en cada regla.",
+   "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826",
+   "values": {
+    "campaign": 2026,
+    "eurSek2026": 11.331,
+    "paymentsStart": "2026-12-11"
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "changes-add",
+   "kind": "deadline",
+   "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 13 §",
+   "articles": [
+    "13"
+   ],
+   "when": {
+    "month": 6,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Último día para añadir superficie, parcelas o cambios similares a la solicitud (15 de junio; si es festivo o víspera de festivo, el siguiente día hábil)."
+  },
+  {
+   "id": "withdraw-cattle",
+   "kind": "deadline",
+   "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 15 §",
+   "articles": [
+    "15"
+   ],
+   "when": {
+    "month": 7,
+    "day": 30,
+    "yearOffset": 0
+   },
+   "text": "Último día para retirar toda la solicitud de ayuda a bovinos (30 de julio)."
+  },
+  {
+   "id": "changes-crops",
+   "kind": "deadline",
+   "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 14 §",
+   "articles": [
+    "14"
+   ],
+   "when": {
+    "month": 10,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Último día para cambiar límites de parcela o cultivos dentro del recinto (31 de octubre), sin aumentar la superficie pedida."
+  },
+  {
+   "id": "withdraw",
+   "kind": "deadline",
+   "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 15 §",
+   "articles": [
+    "15"
+   ],
+   "when": {
+    "month": 10,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Último día para retirar toda la solicitud o una parte (31 de octubre); en la ayuda a bovinos, toda la solicitud hasta el 30 de julio."
+  }
+ ],
+ "campaignOverrides": [],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer (aktiv jordbrukare): must meet at least one condition: more than 36 ha of agricultural land in the single application, more than 50 livestock units (djurenheter) in the application, or having received at most €5,000 in direct payments the previous year. The ordinance also allows proving farming activity by other means. The 2026 Jordbruksverket page adds that someone who received no direct payments the previous year, applies this year and is expected to receive at most €5,000 also qualifies, and that if no condition is met the länsstyrelse (county administrative board) can ask for evidence of the activity's costs or income. Livestock-unit equivalents according to that page: cattle over 2 years 1.00; young cattle (6 months to 2 years) 0.60; sows 0.50; ewes and goats 0.20; slaughter pigs 0.30; broilers 0.03; laying hens 0.014. The ordinance's own definition of livestock unit (1 kap. 7 c §), which refers to an annex of a Commission regulation, has not been read.",
+    "fr": "Agriculteur actif (aktiv jordbrukare) : doit remplir au moins une condition : plus de 36 ha de surface agricole dans la demande unique, plus de 50 unités de bétail (djurenheter) dans la demande, ou avoir perçu au plus 5 000 € de paiements directs l'année précédente. L'ordonnance admet aussi de prouver l'activité agricole par d'autres moyens. La fiche 2026 de Jordbruksverket ajoute que compte aussi celui qui n'a perçu aucun paiement direct l'année précédente, demande cette année et devrait percevoir au plus 5 000 €, et que si aucune condition n'est remplie la länsstyrelse (administration provinciale) peut demander des preuves des coûts ou revenus de l'activité. Équivalences d'unités de bétail selon cette fiche : bovin de plus de 2 ans 1,00 ; jeune bovin (6 mois à 2 ans) 0,60 ; truie 0,50 ; brebis et chèvre 0,20 ; porc charcutier 0,30 ; poulet de chair 0,03 ; poule pondeuse 0,014. La définition d'unité de bétail de l'ordonnance elle-même (1 kap. 7 c §), qui renvoie à une annexe d'un règlement de la Commission, n'a pas été lue.",
+    "it": "Agricoltore attivo (aktiv jordbrukare): deve soddisfare almeno una condizione: più di 36 ha di superficie agricola nella domanda unica, più di 50 unità di bestiame (djurenheter) nella domanda, oppure aver percepito al massimo 5.000 € di pagamenti diretti l'anno precedente. L'ordinanza ammette anche di dimostrare l'attività agricola in altro modo. La scheda 2026 di Jordbruksverket aggiunge che conta anche chi non ha percepito pagamenti diretti l'anno precedente, fa domanda quest'anno e dovrebbe percepire al massimo 5.000 €, e che se non è soddisfatta nessuna condizione la länsstyrelse (amministrazione provinciale) può chiedere prove dei costi o dei ricavi dell'attività. Equivalenze di unità di bestiame secondo quella scheda: bovino oltre 2 anni 1,00; giovane bovino (6 mesi-2 anni) 0,60; scrofa 0,50; pecora e capra 0,20; suino da ingrasso 0,30; pollo da carne 0,03; gallina ovaiola 0,014. La definizione di unità di bestiame dell'ordinanza stessa (1 kap. 7 c §), che rinvia a un allegato di un regolamento della Commissione, non è stata letta."
+   },
+   "minimum": {
+    "en": "Minimum area: decoupled direct payments require at least 4 ha of agricultural land in the application. Exception: those entitled to the cattle coupled payment (5 kap. 29 §) whose aid reaches at least €100. According to the 2026 Jordbruksverket page, the 4 ha must be in the application on 9 April; if less, 4 ha must be reached before 4 May, with a 1 % reduction per working day until then, and anyone who does not get there receives nothing. Below 4 ha one can still be paid if the total of the listed direct payments (farm support with redistributive, young farmers, cattle, organic, precision farming, catch and intermediate crops, flowers and margins, leys) is at least €100. Each parcel (skifte) must be at least 0.1 ha (with an exception for small parcels adjoining another in the same block). Chapter 2, § 4 of regulation SJVFS 2022:29 has not been read in an official version.",
+    "fr": "Superficie minimale : les paiements directs découplés exigent au moins 4 ha de surface agricole dans la demande. Exception : celui qui a droit au paiement couplé bovins (5 kap. 29 §) et dont l'aide atteint au moins 100 €. Selon la fiche 2026 de Jordbruksverket, les 4 ha doivent figurer dans la demande le 9 avril ; s'il y en a moins, il faut atteindre 4 ha avant le 4 mai, avec une réduction de 1 % par jour ouvré jusque-là, et qui n'y arrive pas ne perçoit rien. Sous 4 ha on peut être payé si le total des paiements directs listés (soutien à l'exploitation avec redistributif, jeunes, bovins, bio, agriculture de précision, cultures intermédiaires et dérobées, fleurs et bordures, prairies) atteint au moins 100 €. Chaque parcelle (skifte) doit faire au moins 0,1 ha (avec une exception pour les petites parcelles contiguës à une autre du même îlot). Le chap. 2, § 4 du règlement SJVFS 2022:29 n'a pas été lu dans une version officielle.",
+    "it": "Superficie minima: i pagamenti diretti disaccoppiati richiedono almeno 4 ha di superficie agricola nella domanda. Eccezione: chi ha diritto al pagamento accoppiato per i bovini (5 kap. 29 §) e l'aiuto raggiunge almeno 100 €. Secondo la scheda 2026 di Jordbruksverket, i 4 ha devono risultare nella domanda il 9 aprile; se meno, occorre arrivare a 4 ha prima del 4 maggio, con una riduzione dell'1 % per giorno lavorativo fino ad allora, e chi non ci arriva non riceve nulla. Sotto i 4 ha si può essere pagati se il totale dei pagamenti diretti elencati (sostegno all'azienda con redistributivo, giovani, bovini, biologico, agricoltura di precisione, colture intermedie e di copertura, fiori e margini, prati) raggiunge almeno 100 €. Ogni particella (skifte) deve avere almeno 0,1 ha (con un'eccezione per piccole particelle contigue a un'altra nello stesso blocco). Il cap. 2, § 4 del regolamento SJVFS 2022:29 non è stato letto in una versione ufficiale."
+   },
+   "application": {
+    "en": "Single application (SAM Internet): the last day is the Thursday of week 15 each year (if that Thursday is Maundy Thursday, the Wednesday of that week); in 2026 it was 9 April. According to Jordbruksverket, anything submitted after 9 April is reduced by 1 % per working day of delay and anything arriving after 4 May 2026 receives no aid (the EU regulation behind that rule has not been read). Afterwards one can: add land until 15 June (next working day if it is a holiday or the day before one); change parcel boundaries and crops until 31 October (without increasing the area applied for); withdraw the application, in whole or in part, until 31 October, and the cattle aid application until 30 July. 2026 payments start on 11 December 2026 (no advance for direct payments; Jordbruksverket's payment plan, which cites no rule). Sections 11, 13, 14 and 15 were read in the official text of SJVFS 2025:33 (only the amended sections are printed); the 2022 version of § 11 fixed a specific date (13 April 2023) and was not used.",
+    "fr": "Demande unique (SAM Internet) : le dernier jour est le jeudi de la semaine 15 de chaque année (si ce jeudi est le jeudi saint, le mercredi de cette semaine) ; en 2026 c'était le 9 avril. Selon Jordbruksverket, ce qui est déposé après le 9 avril est réduit de 1 % par jour ouvré de retard et ce qui arrive après le 4 mai 2026 ne reçoit aucune aide (le règlement de l'UE à l'origine de cette règle n'a pas été lu). Ensuite on peut : ajouter des surfaces jusqu'au 15 juin (jour ouvré suivant s'il est férié ou veille de férié) ; modifier limites de parcelle et cultures jusqu'au 31 octobre (sans augmenter la surface demandée) ; retirer la demande, en tout ou partie, jusqu'au 31 octobre, et la demande d'aide aux bovins jusqu'au 30 juillet. Les paiements de 2026 commencent le 11 décembre 2026 (pas d'avance pour les paiements directs ; plan de paiement de Jordbruksverket, qui ne cite aucune norme). Les §§ 11, 13, 14 et 15 ont été lus dans le texte officiel de SJVFS 2025:33 (seuls les articles modifiés y sont imprimés) ; la version 2022 du § 11 fixait une date précise (13 avril 2023) et n'a pas été utilisée.",
+    "it": "Domanda unica (SAM Internet): l'ultimo giorno è il giovedì della settimana 15 di ogni anno (se quel giovedì è il giovedì santo, il mercoledì di quella settimana); nel 2026 era il 9 aprile. Secondo Jordbruksverket, ciò che è presentato dopo il 9 aprile è ridotto dell'1 % per giorno lavorativo di ritardo e ciò che arriva dopo il 4 maggio 2026 non riceve aiuto (il regolamento UE alla base di questa regola non è stato letto). In seguito si può: aggiungere superficie fino al 15 giugno (giorno lavorativo successivo se è festivo o vigilia di festivo); modificare confini delle particelle e colture fino al 31 ottobre (senza aumentare la superficie richiesta); ritirare la domanda, in tutto o in parte, fino al 31 ottobre, e la domanda di aiuto per i bovini fino al 30 luglio. I pagamenti 2026 iniziano l'11 dicembre 2026 (nessun anticipo per i pagamenti diretti; piano dei pagamenti di Jordbruksverket, che non cita norme). I §§ 11, 13, 14 e 15 sono stati letti nel testo ufficiale di SJVFS 2025:33 (vi sono stampati solo gli articoli modificati); la versione 2022 del § 11 fissava una data precisa (13 aprile 2023) e non è stata usata."
+   },
+   "basic": {
+    "en": "Basic income support for sustainability (grundläggande inkomststöd för hållbarhet, gårdsstöd): paid each year per eligible hectare to whoever has the land at their disposal. Jordbruksverket sets the unit amount every year within the limits of annex 3: for 2026, between €130 and €147/ha (2023: 137-155; 2024: 134-152; 2025: 132-148; 2027: 130-146). The 2026 amount is planned and is fixed in autumn according to the number of applicants; the 2025 amount, already fixed, was €134.80/ha. It is paid in kronor (2026 rate: €1 = SEK 11.331, the ECB rate on the last banking day before 1 October). The final 2026 amount has not been read.",
+    "fr": "Aide de base au revenu pour la durabilité (grundläggande inkomststöd för hållbarhet, gårdsstöd) : versée chaque année par hectare admissible à celui qui dispose des terres. Jordbruksverket fixe chaque année le montant unitaire dans les limites de l'annexe 3 : pour 2026, entre 130 et 147 €/ha (2023 : 137-155 ; 2024 : 134-152 ; 2025 : 132-148 ; 2027 : 130-146). Le montant 2026 est prévisionnel et fixé à l'automne selon le nombre de demandeurs ; celui de 2025, déjà fixé, était de 134,80 €/ha. Il est versé en couronnes (taux 2026 : 1 € = 11,331 SEK, celui de la BCE le dernier jour bancaire avant le 1er octobre). Le montant définitif 2026 n'a pas été lu.",
+    "it": "Sostegno di base al reddito per la sostenibilità (grundläggande inkomststöd för hållbarhet, gårdsstöd): pagato ogni anno per ettaro ammissibile a chi dispone del terreno. Jordbruksverket fissa ogni anno l'importo unitario entro i limiti dell'allegato 3: per il 2026, tra 130 e 147 €/ha (2023: 137-155; 2024: 134-152; 2025: 132-148; 2027: 130-146). L'importo 2026 è previsto e viene fissato in autunno in base al numero di richiedenti; quello 2025, già fissato, era di 134,80 €/ha. Viene pagato in corone (cambio 2026: 1 € = 11,331 SEK, quello della BCE l'ultimo giorno bancario prima del 1° ottobre). L'importo definitivo 2026 non è stato letto."
+   },
+   "redistributive": {
+    "en": "Redistributive payment (kompletterande omfördelningsinkomststöd för hållbarhet): added automatically to the farm payment, with no separate application, for those who receive basic support, for a maximum of 150 ha per year. Annex 3 sets a range of €14.0 to €17.1/ha; for 2026 the Jordbruksverket page gives the same range (€14.00-17.10/ha, planned, fixed in autumn) and for 2025, already fixed, €16.40/ha. The final 2026 amount has not been read.",
+    "fr": "Paiement redistributif (kompletterande omfördelningsinkomststöd för hållbarhet) : ajouté automatiquement au paiement à l'exploitation, sans demande séparée, pour celui qui perçoit l'aide de base, pour 150 ha au maximum par an. L'annexe 3 fixe une fourchette de 14,0 à 17,1 €/ha ; pour 2026 la fiche de Jordbruksverket donne la même fourchette (14,00-17,10 €/ha, prévisionnel, fixé à l'automne) et pour 2025, déjà fixé, 16,40 €/ha. Le montant définitif 2026 n'a pas été lu.",
+    "it": "Pagamento redistributivo (kompletterande omfördelningsinkomststöd för hållbarhet): aggiunto automaticamente al pagamento all'azienda, senza domanda separata, per chi riceve il sostegno di base, per un massimo di 150 ha all'anno. L'allegato 3 fissa un intervallo da 14,0 a 17,1 €/ha; per il 2026 la scheda di Jordbruksverket indica lo stesso intervallo (14,00-17,10 €/ha, previsto, fissato in autunno) e per il 2025, già fissato, 16,40 €/ha. L'importo definitivo 2026 non è stato letto."
+   },
+   "young-farmers": {
+    "en": "Young farmers (kompletterande inkomststöd till unga jordbrukare): per-hectare aid for a maximum of five years and at the latest until support year 2027, for a maximum of 200 ha per year. Conditions: become the person responsible for the business for the first time in the year of the first application or in the five years before, not having previously been responsible for another farm, and being at most 40 years old in the year of application. The responsible person is whoever has effective and lasting control over management, pay decisions and financial risks; for a company, they must also be a co-owner with signing authority. They must hold upper-secondary education (gymnasieexamen) or a foreign equivalent, or at least 12 months of full-time work in farming, horticulture or reindeer husbandry, by the last application day at the latest. For 2026 annex 3 gives a range of €85 to €159/ha (2023: 84-156; 2024: 85-157; 2025: 84-156; 2027: 88-162). The Jordbruksverket page gives the same planned range for 2026 and, for 2025, already fixed, €140/ha; documents had to reach the länsstyrelse by 9 April 2026. The final 2026 amount has not been read.",
+    "fr": "Jeunes agriculteurs (kompletterande inkomststöd till unga jordbrukare) : aide à l'hectare pendant cinq ans au plus et au plus tard jusqu'à l'année d'aide 2027, pour 200 ha au maximum par an. Conditions : s'établir comme responsable de l'entreprise pour la première fois l'année de la première demande ou dans les cinq ans précédents, ne pas avoir déjà été responsable d'une autre exploitation et avoir au plus 40 ans l'année de la demande. Est responsable celui qui a le contrôle effectif et durable de la gestion, des décisions de rémunération et des risques financiers ; pour une société, il doit en outre être associé et avoir la signature. Il faut un diplôme de fin d'études secondaires (gymnasieexamen) ou équivalent étranger, ou au moins 12 mois de travail à plein temps en agriculture, horticulture ou élevage de rennes, au plus tard le dernier jour de demande. Pour 2026 l'annexe 3 donne une fourchette de 85 à 159 €/ha (2023 : 84-156 ; 2024 : 85-157 ; 2025 : 84-156 ; 2027 : 88-162). La fiche de Jordbruksverket donne la même fourchette prévisionnelle pour 2026 et, pour 2025, déjà fixé, 140 €/ha ; les documents devaient parvenir à la länsstyrelse avant le 9 avril 2026. Le montant définitif 2026 n'a pas été lu.",
+    "it": "Giovani agricoltori (kompletterande inkomststöd till unga jordbrukare): aiuto per ettaro per un massimo di cinque anni e al più tardi fino all'anno di aiuto 2027, per un massimo di 200 ha all'anno. Condizioni: stabilirsi come responsabile dell'impresa per la prima volta nell'anno della prima domanda o nei cinque anni precedenti, non essere stato in precedenza responsabile di un'altra azienda e avere al massimo 40 anni nell'anno della domanda. È responsabile chi ha il controllo effettivo e duraturo della gestione, delle decisioni sulla remunerazione e dei rischi finanziari; per una società deve inoltre essere socio e avere la firma. Serve il diploma di scuola secondaria (gymnasieexamen) o un equivalente estero, oppure almeno 12 mesi di lavoro a tempo pieno in agricoltura, orticoltura o allevamento di renne, al più tardi l'ultimo giorno di domanda. Per il 2026 l'allegato 3 indica un intervallo da 85 a 159 €/ha (2023: 84-156; 2024: 85-157; 2025: 84-156; 2027: 88-162). La scheda di Jordbruksverket indica lo stesso intervallo previsto per il 2026 e, per il 2025, già fissato, 140 €/ha; i documenti dovevano arrivare alla länsstyrelse entro il 9 aprile 2026. L'importo definitivo 2026 non è stato letto."
+   },
+   "eco-schemes": {
+    "en": "Climate and environment support (stöd för klimatet och miljön, the Swedish eco-scheme; art. 31 of Regulation 2021/2115): seven annual payments that can be combined according to annex 7. Annex 3 ranges (€/ha) and, in brackets, the 2026 planned amount according to Jordbruksverket (fixed in autumn; in square brackets the already fixed 2025 amount): organic production, cereals, oilseeds, protein crops and other annual crops 132-162 (147; [162]), potatoes, sugar beet and vegetables 443-541 (492; [541]), fruit, nuts and berries 663-811 (737; [811]), animals on arable land (1 ha per livestock unit) 159-195 per the page, 177 planned [195]; intermediate crop for carbon storage 113-141 (128; [141]); catch crop to reduce nitrogen leaching 130-156 (147; [156]); spring tillage 61-72 (the planned amount has not been read); precision farming (planning) 20-41 ([41]); flowering field and field margins (blommande åker och fältkant) 212-282 in the compensation-support area (235; [282]), 325-434 outside it (361; [434]) and 596-729 in the southern plains of Götaland (663; [729]), with a cap from 2026 of 10 ha plus 20 % of the arable land above 10 ha; leys (vallodling) 49-59 in 2026 and 2027 (54), one year, outside the compensation-support areas. In the annex 3 that was read (SFS 2025:845) the animals row of organic production appears as 663-811, which conflicts with the 159-195 of the page; the page is used. The final 2026 amounts have not been read.",
+    "fr": "Soutien pour le climat et l'environnement (stöd för klimatet och miljön, l'éco-régime suédois ; art. 31 du règlement 2021/2115) : sept aides annuelles combinables selon l'annexe 7. Fourchettes de l'annexe 3 (€/ha) et, entre parenthèses, montant prévisionnel 2026 selon Jordbruksverket (fixé à l'automne ; entre crochets celui de 2025, déjà fixé) : production biologique, céréales, oléagineux, protéagineux et autres cultures annuelles 132-162 (147 ; [162]), pommes de terre, betteraves et légumes 443-541 (492 ; [541]), fruits, fruits à coque et baies 663-811 (737 ; [811]), animaux sur terres arables (1 ha par unité de bétail) 159-195 selon la fiche, 177 prévu [195] ; culture intermédiaire pour stocker du carbone 113-141 (128 ; [141]) ; culture dérobée pour réduire le lessivage d'azote 130-156 (147 ; [156]) ; travail du sol de printemps 61-72 (le montant prévu n'a pas été lu) ; agriculture de précision (planification) 20-41 ([41]) ; jachère fleurie et bordures de champ (blommande åker och fältkant) 212-282 en zone d'aide compensatoire (235 ; [282]), 325-434 hors de celle-ci (361 ; [434]) et 596-729 dans les plaines du sud du Götaland (663 ; [729]), avec un plafond depuis 2026 de 10 ha plus 20 % des terres arables au-delà de 10 ha ; prairies (vallodling) 49-59 en 2026 et 2027 (54), un an, hors des zones d'aide compensatoire. Dans l'annexe 3 lue (SFS 2025:845), la ligne animaux de la production biologique apparaît comme 663-811, ce qui contredit les 159-195 de la fiche ; la fiche est utilisée. Les montants définitifs 2026 n'ont pas été lus.",
+    "it": "Sostegno per il clima e l'ambiente (stöd för klimatet och miljön, l'ecoregime svedese; art. 31 del regolamento 2021/2115): sette aiuti annuali cumulabili secondo l'allegato 7. Intervalli dell'allegato 3 (€/ha) e, tra parentesi, importo previsto 2026 secondo Jordbruksverket (fissato in autunno; tra quadre quello 2025, già fissato): produzione biologica, cereali, oleaginose, proteaginose e altre colture annuali 132-162 (147; [162]), patate, barbabietole e ortaggi 443-541 (492; [541]), frutta, frutta a guscio e bacche 663-811 (737; [811]), animali su seminativo (1 ha per unità di bestiame) 159-195 secondo la scheda, 177 previsto [195]; coltura intermedia per stoccare carbonio 113-141 (128; [141]); coltura di copertura per ridurre il dilavamento di azoto 130-156 (147; [156]); lavorazione primaverile 61-72 (l'importo previsto non è stato letto); agricoltura di precisione (pianificazione) 20-41 ([41]); campo fiorito e margini (blommande åker och fältkant) 212-282 nella zona di aiuto compensativo (235; [282]), 325-434 fuori da essa (361; [434]) e 596-729 nelle pianure del sud del Götaland (663; [729]), con un tetto dal 2026 di 10 ha più il 20 % dei seminativi oltre i 10 ha; prati (vallodling) 49-59 nel 2026 e 2027 (54), un anno, fuori dalle zone di aiuto compensativo. Nell'allegato 3 letto (SFS 2025:845) la riga animali della produzione biologica compare come 663-811, in contrasto con i 159-195 della scheda; si usa la scheda. Gli importi definitivi 2026 non sono stati letti."
+   },
+   "eco-conditions": {
+    "en": "Conditions of the eco-scheme payments (summary of the ordinance and the 2026 Jordbruksverket pages). Organic: arable land only, production certified or in conversion by a control body (notice to the body by the last application day at the latest); animal payment covers dairy and suckler cows, young cattle, ewes, goats (females), sows, slaughter pigs, laying hens and broilers, up to as many hectares as livestock units (ewe or goat 0.2), and also requires organic crops; ewes, goats and sows are kept at least 60 days. Intermediate crop: support areas 6-12 or without compensatory aid, legumes at most 30 % of the seed; catch crop and spring tillage: nitrate-sensitive area; no aid for permanent crops nor, for catch and intermediate crops, if maize was grown the same year; earliest breaking date 10 October (20 October in Blekinge, Skåne and Halland). Precision farming: crop plan, nutrient balance and soil analysis (maximum 10 years) available on 9 April 2026 and slurry analysis by 15 June, arable land and permanent grassland on arable land, not fallow. Flowers and margins: parcels of 0.1 to 0.5 ha (landscape elements) or over 0.5 ha (non-productive areas), at least 3 pollen- and nectar-rich herb species, no mowing from 1 April to 30 June. Leys: outside the compensation-support areas, ley established before 1 April, grazed or harvested at least once, breaking from 10 October. Minimum parcel 0.1 ha for all. These are summarised conditions; the full SJVFS 2022:29 regulation has not been read in a current official version (the lagen.nu copy may be unconsolidated).",
+    "fr": "Conditions des aides de l'éco-régime (résumé de l'ordonnance et des fiches 2026 de Jordbruksverket). Bio : terres arables uniquement, production certifiée ou en conversion par un organisme de contrôle (notification à l'organisme au plus tard le dernier jour de demande) ; l'aide aux animaux couvre vaches laitières et allaitantes, jeunes bovins, brebis, chèvres (femelles), truies, porcs charcutiers, poules pondeuses et poulets, dans la limite d'autant d'hectares que d'unités de bétail (brebis ou chèvre 0,2), et exige aussi des cultures bio ; brebis, chèvres et truies sont gardées au moins 60 jours. Culture intermédiaire : zones d'aide 6-12 ou sans aide compensatoire, légumineuses au plus 30 % de la semence ; culture dérobée et travail du sol de printemps : zone sensible aux nitrates ; pas d'aide pour les cultures permanentes ni, pour dérobée et intermédiaire, si du maïs a été cultivé la même année ; date de destruction la plus précoce le 10 octobre (20 octobre dans le Blekinge, la Scanie et le Halland). Agriculture de précision : plan de culture, bilan de nutriments et analyse de sol (10 ans au plus) disponibles le 9 avril 2026 et analyse de lisier au 15 juin, terres arables et prairie permanente sur terres arables, pas de jachère. Fleurs et bordures : parcelles de 0,1 à 0,5 ha (éléments du paysage) ou de plus de 0,5 ha (surfaces non productives), au moins 3 espèces d'herbes mellifères, fauche interdite du 1er avril au 30 juin. Prairies : hors des zones d'aide compensatoire, prairie implantée avant le 1er avril, pâturée ou récoltée au moins une fois, destruction à partir du 10 octobre. Parcelle minimale 0,1 ha pour toutes. Ce sont des conditions résumées ; le règlement SJVFS 2022:29 complet n'a pas été lu dans une version officielle en vigueur (la copie de lagen.nu peut ne pas être consolidée).",
+    "it": "Condizioni degli aiuti dell'ecoregime (sintesi dell'ordinanza e delle schede 2026 di Jordbruksverket). Biologico: solo seminativo, produzione certificata o in conversione da un organismo di controllo (notifica all'organismo al più tardi l'ultimo giorno di domanda); l'aiuto per gli animali copre vacche da latte e nutrici, giovani bovini, pecore, capre (femmine), scrofe, suini da ingrasso, galline ovaiole e polli, fino a tanti ettari quante le unità di bestiame (pecora o capra 0,2), e richiede anche colture biologiche; pecore, capre e scrofe sono tenute almeno 60 giorni. Coltura intermedia: zone di aiuto 6-12 o senza aiuto compensativo, leguminose al massimo il 30 % del seme; coltura di copertura e lavorazione primaverile: zona sensibile ai nitrati; nessun aiuto per colture permanenti né, per copertura e intermedia, se nello stesso anno c'è stato mais; data più precoce di rottura il 10 ottobre (20 ottobre in Blekinge, Scania e Halland). Agricoltura di precisione: piano colturale, bilancio dei nutrienti e analisi del suolo (massimo 10 anni) disponibili il 9 aprile 2026 e analisi del liquame entro il 15 giugno, seminativo e prato permanente su seminativo, non maggese. Fiori e margini: particelle da 0,1 a 0,5 ha (elementi del paesaggio) o oltre 0,5 ha (superfici non produttive), almeno 3 specie di erbe mellifere, sfalcio vietato dal 1° aprile al 30 giugno. Prati: fuori dalle zone di aiuto compensativo, prato impiantato prima del 1° aprile, pascolato o raccolto almeno una volta, rottura dal 10 ottobre. Particella minima 0,1 ha per tutti. Sono condizioni sintetizzate; il regolamento SJVFS 2022:29 completo non è stato letto in una versione ufficiale vigente (la copia di lagen.nu potrebbe non essere consolidata)."
+   },
+   "coupled-cattle": {
+    "en": "Coupled payment for cattle (kopplat inkomststöd för nötkreatur, art. 32 of Regulation 2021/2115): amount per animal and year according to annex 3, calculated on the days the animal is on the holdings declared in the application (according to the animal database, CDB); counting starts the day after it turns 12 months and the animal must be identified, recorded and reported under arts. 108-120 of Regulation 2016/429. No aid for American bison or yak. According to the Jordbruksverket page the 2026 counting period is 1 August 2025 to 31 July 2026. Annex 3 range: €87-96 per animal (full livestock unit of the period per the page); 2026 planned within that range and fixed in autumn; 2025, already fixed: €93.23. On the page, entries and exits in the CDB must be recorded within 7 days. The final 2026 amount has not been read.",
+    "fr": "Paiement couplé bovins (kopplat inkomststöd för nötkreatur, art. 32 du règlement 2021/2115) : montant par animal et par an selon l'annexe 3, calculé sur les jours où l'animal se trouve dans les exploitations déclarées dans la demande (selon la base de données des animaux, CDB) ; le décompte commence le lendemain de ses 12 mois et l'animal doit être identifié, enregistré et notifié selon les art. 108-120 du règlement 2016/429. Pas d'aide pour les bisons d'Amérique ni les yaks. Selon la fiche de Jordbruksverket, la période de décompte 2026 va du 1er août 2025 au 31 juillet 2026. Fourchette de l'annexe 3 : 87-96 € par animal (unité de bétail complète de la période selon la fiche) ; 2026 prévisionnel dans cette fourchette et fixé à l'automne ; 2025, déjà fixé : 93,23 €. Sur la fiche, les entrées et sorties dans la CDB doivent être enregistrées sous 7 jours. Le montant définitif 2026 n'a pas été lu.",
+    "it": "Pagamento accoppiato per i bovini (kopplat inkomststöd för nötkreatur, art. 32 del regolamento 2021/2115): importo per animale e anno secondo l'allegato 3, calcolato sui giorni in cui l'animale si trova negli stabilimenti dichiarati nella domanda (secondo la banca dati degli animali, CDB); il computo inizia il giorno dopo i 12 mesi e l'animale deve essere identificato, registrato e notificato ai sensi degli artt. 108-120 del regolamento 2016/429. Nessun aiuto per bisonti americani né yak. Secondo la scheda di Jordbruksverket il periodo di computo 2026 va dal 1° agosto 2025 al 31 luglio 2026. Intervallo dell'allegato 3: 87-96 € per animale (unità di bestiame intera del periodo secondo la scheda); 2026 previsto in quell'intervallo e fissato in autunno; 2025, già fissato: 93,23 €. Sulla scheda, ingressi e uscite nella CDB vanno registrati entro 7 giorni. L'importo definitivo 2026 non è stato letto."
+   },
+   "conditionality": {
+    "en": "Conditionality (grundvillkor): direct payments require compliance with EU statutory management requirements and the standards of good agricultural and environmental condition (GAEC). GAEC 1: the national share of permanent grassland may not fall by more than 10 % compared with 2018. GAEC 2: no draining of wetland or peatland without a permit; peat soils may not be left fallow without vegetation. GAEC 3: no burning of stubble. GAEC 4: no fertilising a 2 m strip beside watercourses or lakes (never fertiliser within 3 m of the edge) and no plant protection products within 6 m. GAEC 5: land sloping more than 15 % towards water must stay vegetated or unworked from 15 September to 15 February. GAEC 6: minimum ground cover in sensitive periods of 60 % (Skåne, Halland, Blekinge), 50 %, 40 % or 30 % depending on the county, with an end date no earlier than 20 October, 10 October, 1 October or 15 September depending on the region; certified organic holdings in part of the counties are exempt. GAEC 7: at least 33 % of arable land changes crop each year and no annual crop more than three years in a row, or else diversification (10-30 ha: at least 2 crops and the main one at most 75 %; over 30 ha: at least 3 crops, main one at most 75 % and the two largest at most 95 %); exempt, among others, holdings with 10 ha or less of arable land and those with more than 75 % grass or legumes. GAEC 8: landscape elements may not be removed or damaged; hedges and trees that are landscape elements are not pruned from 1 April to 15 August. GAEC 9: permanent grassland in Natura 2000 is not converted or ploughed unless the conservation plan allows it. The text is the riksdagen.se consolidated version up to SFS 2026:288 (read in extract, not the original Svensk författningssamling); 4 kap. 1 a § (organic exemption from §§ 4-7) and 1 b § were also seen in SFS 2026:288, applicable from support year 2026. The landscape-element annexes were not read.",
+    "fr": "Conditionnalité (grundvillkor) : les paiements directs exigent de respecter les exigences réglementaires de gestion de l'UE et les normes de bonnes conditions agricoles et environnementales (BCAE/GAEC). GAEC 1 : la part nationale de prairies permanentes ne peut baisser de plus de 10 % par rapport à 2018. GAEC 2 : pas de drainage de zones humides ou tourbières sans permis ; les sols tourbeux ne peuvent rester en jachère sans végétation. GAEC 3 : interdiction de brûler les chaumes. GAEC 4 : pas de fertilisation sur une bande de 2 m le long des cours d'eau ou lacs (jamais d'engrais à moins de 3 m du bord) et pas de produits phytosanitaires à moins de 6 m. GAEC 5 : terre en pente de plus de 15 % vers l'eau doit rester végétalisée ou non travaillée du 15 septembre au 15 février. GAEC 6 : couverture minimale du sol en périodes sensibles de 60 % (Scanie, Halland, Blekinge), 50 %, 40 % ou 30 % selon le comté, avec une date de fin non antérieure au 20 octobre, 10 octobre, 1er octobre ou 15 septembre selon la région ; les exploitations bio certifiées d'une partie des comtés sont exemptées. GAEC 7 : au moins 33 % des terres arables changent de culture chaque année et aucune culture annuelle plus de trois ans de suite, ou bien diversification (10-30 ha : au moins 2 cultures et la principale au plus 75 % ; plus de 30 ha : au moins 3 cultures, principale au plus 75 % et les deux plus grandes au plus 95 %) ; exemptées notamment les exploitations de 10 ha ou moins de terres arables et celles de plus de 75 % d'herbe ou de légumineuses. GAEC 8 : les éléments du paysage ne peuvent être supprimés ni endommagés ; haies et arbres qui sont des éléments du paysage ne sont pas taillés du 1er avril au 15 août. GAEC 9 : les prairies permanentes en Natura 2000 ne sont ni converties ni labourées sauf si le plan de conservation le permet. Le texte est la version consolidée de riksdagen.se jusqu'à SFS 2026:288 (lue en extrait, pas le Svensk författningssamling original) ; le 4 kap. 1 a § (exemption bio des §§ 4-7) et le 1 b § ont aussi été vus dans SFS 2026:288, applicable dès l'année d'aide 2026. Les annexes sur les éléments du paysage n'ont pas été lues.",
+    "it": "Condizionalità (grundvillkor): i pagamenti diretti richiedono il rispetto dei requisiti legali di gestione dell'UE e delle norme sulle buone condizioni agronomiche e ambientali (BCAA/GAEC). GAEC 1: la quota nazionale di prato permanente non può calare di più del 10 % rispetto al 2018. GAEC 2: niente drenaggio di zone umide o torbiere senza permesso; i terreni su torba non possono restare a maggese senza vegetazione. GAEC 3: vietato bruciare le stoppie. GAEC 4: niente concimazione su una fascia di 2 m lungo corsi d'acqua o laghi (mai concime entro 3 m dal bordo) e niente prodotti fitosanitari entro 6 m. GAEC 5: terreno con pendenza oltre il 15 % verso l'acqua deve restare con vegetazione o non lavorato dal 15 settembre al 15 febbraio. GAEC 6: copertura minima del suolo nei periodi sensibili del 60 % (Scania, Halland, Blekinge), 50 %, 40 % o 30 % secondo la contea, con data di fine non anteriore al 20 ottobre, 10 ottobre, 1° ottobre o 15 settembre secondo la regione; le aziende biologiche certificate in parte delle contee sono esentate. GAEC 7: almeno il 33 % dei seminativi cambia coltura ogni anno e nessuna coltura annuale per più di tre anni di fila, oppure diversificazione (10-30 ha: almeno 2 colture e la principale al massimo il 75 %; oltre 30 ha: almeno 3 colture, principale al massimo il 75 % e le due maggiori al massimo il 95 %); esentate, tra le altre, le aziende con 10 ha o meno di seminativo e quelle con oltre il 75 % di erba o leguminose. GAEC 8: gli elementi del paesaggio non possono essere rimossi né danneggiati; siepi e alberi che sono elementi del paesaggio non si potano dal 1° aprile al 15 agosto. GAEC 9: i prati permanenti in Natura 2000 non si convertono né si arano salvo che il piano di conservazione lo consenta. Il testo è la versione consolidata di riksdagen.se fino a SFS 2026:288 (letta in estratto, non il Svensk författningssamling originale); il 4 kap. 1 a § (esenzione biologica dei §§ 4-7) e l'1 b § sono stati visti anche in SFS 2026:288, applicabile dall'anno di aiuto 2026. Gli allegati sugli elementi del paesaggio non sono stati letti."
+   },
+   "social-conditions": {
+    "en": "Social conditionality (sociala grundvillkor): besides environmental conditionality, direct payments require compliance with labour conditions of Regulation 2021/2115: the Work Environment Act (1977:1160) and its rules (risk assessment, protective equipment, accident registration, first aid, training, hired labour), not obstructing safety representatives, and the Employment Protection Act (1982:80) and the Working Hours Act (1982:673) on matters such as probationary periods, information to the employee, changes to working-time schedules and pay for cancelled work. A court judgment or a sanction fee order of Arbetsmiljöverket (work environment authority) notified to the länsstyrelse grounds the reduction. According to SFS 2024:1204 (12 kap. 32 a-32 l §), the base reduction is 3 % for an unintentional breach, with cases of 1 % or 5 %, and it increases with repeated breaches within three calendar years; in force for breaches after 1 January 2025. The current consolidated 12 kap. has not been read.",
+    "fr": "Conditionnalité sociale (sociala grundvillkor) : outre la conditionnalité environnementale, les paiements directs exigent le respect de conditions de travail du règlement 2021/2115 : la loi sur le milieu de travail (1977:1160) et ses règles (évaluation des risques, équipements de protection, registre des accidents, premiers secours, formation, main-d'œuvre sous-traitée), ne pas entraver les délégués à la sécurité, et la loi sur la protection de l'emploi (1982:80) et la loi sur le temps de travail (1982:673) sur des points comme la période d'essai, l'information du salarié, les changements d'horaires et le paiement du travail annulé. Un jugement ou une injonction de sanction de l'Arbetsmiljöverket (autorité du milieu de travail) communiqué à la länsstyrelse fonde la réduction. Selon SFS 2024:1204 (12 kap. 32 a-32 l §), la réduction de base est de 3 % pour un manquement non intentionnel, avec des cas à 1 % ou 5 %, et elle augmente avec les manquements répétés dans les trois années civiles ; en vigueur pour les manquements postérieurs au 1er janvier 2025. Le 12 kap. consolidé en vigueur n'a pas été lu.",
+    "it": "Condizionalità sociale (sociala grundvillkor): oltre alla condizionalità ambientale, i pagamenti diretti richiedono il rispetto di condizioni di lavoro del regolamento 2021/2115: la legge sull'ambiente di lavoro (1977:1160) e le sue norme (valutazione dei rischi, dispositivi di protezione, registro degli infortuni, primo soccorso, formazione, manodopera in appalto), non ostacolare i rappresentanti per la sicurezza, e la legge sulla protezione dell'impiego (1982:80) e quella sull'orario di lavoro (1982:673) su temi come periodo di prova, informazione al lavoratore, modifiche degli orari e pagamento del lavoro annullato. Una sentenza o un'ingiunzione di sanzione dell'Arbetsmiljöverket (autorità per l'ambiente di lavoro) comunicata alla länsstyrelse fonda la riduzione. Secondo SFS 2024:1204 (12 kap. 32 a-32 l §), la riduzione base è del 3 % per una violazione non intenzionale, con casi all'1 % o al 5 %, e aumenta con violazioni ripetute entro tre anni civili; in vigore per violazioni successive al 1° gennaio 2025. Il 12 kap. consolidato vigente non è stato letto."
+   },
+   "controls": {
+    "en": "Checks and area calculation. Area aid is calculated on the declared area, grouped by amount; if the difference between what was applied for and the determined area is 0.10 ha or less, the declared area is used; if the application is not withdrawn or corrected or compliance is not shown, payment is made on the declared area minus the non-compliant area (3 kap. 22-25 b §). If non-compliance is detected only through the satellite monitoring system, it must cover entire agricultural parcels. According to SFS 2024:1204, on-the-spot checks cover at least 5 % of applicants for area aid and for animal aid (and 30 % of hemp areas); this 11 kap. 13 § was later amended by SFS 2025:845 and SFS 2025:1322 and the current text has not been read. According to SFS 2026:288 (text of an unofficial copy), the on-the-spot check of conditionality is 1 % of applicants with more than 10 ha. Jordbruksverket monitors land use by satellite and may ask for a geotagged photo (Geofoto app). Force majeure: notify in writing within 15 working days from when possible (3 kap. 27 §).",
+    "fr": "Contrôles et calcul de la surface. L'aide à la surface est calculée sur la surface déclarée, regroupée par montant ; si l'écart entre ce qui est demandé et la surface déterminée est de 0,10 ha ou moins, la surface déclarée est retenue ; si la demande n'est pas retirée ou corrigée ou si le respect n'est pas démontré, le paiement porte sur la surface déclarée moins la surface non conforme (3 kap. 22-25 b §). Si un manquement n'est détecté que par le système de suivi par satellite, il doit couvrir des parcelles agricoles entières. Selon SFS 2024:1204, les contrôles sur place couvrent au moins 5 % des demandeurs d'aides à la surface et d'aides aux animaux (et 30 % des surfaces de chanvre) ; ce 11 kap. 13 § a été modifié ensuite par SFS 2025:845 et SFS 2025:1322 et le texte en vigueur n'a pas été lu. Selon SFS 2026:288 (texte d'une copie non officielle), le contrôle sur place de la conditionnalité est de 1 % des demandeurs de plus de 10 ha. Jordbruksverket surveille l'usage des terres par satellite et peut demander une photo géolocalisée (appli Geofoto). Force majeure : notification écrite dans les 15 jours ouvrés à compter du moment où c'est possible (3 kap. 27 §).",
+    "it": "Controlli e calcolo della superficie. L'aiuto a superficie è calcolato sulla superficie dichiarata, raggruppata per importo; se la differenza tra quanto richiesto e la superficie accertata è di 0,10 ha o meno, vale la superficie dichiarata; se la domanda non è ritirata o corretta o il rispetto non è dimostrato, il pagamento è sulla superficie dichiarata meno la superficie non conforme (3 kap. 22-25 b §). Se un'inadempienza è rilevata solo dal sistema di monitoraggio satellitare, deve riguardare particelle agricole intere. Secondo SFS 2024:1204, i controlli in loco riguardano almeno il 5 % dei richiedenti di aiuti a superficie e di aiuti per animali (e il 30 % delle superfici di canapa); questo 11 kap. 13 § è stato poi modificato da SFS 2025:845 e SFS 2025:1322 e il testo vigente non è stato letto. Secondo SFS 2026:288 (testo di una copia non ufficiale), il controllo in loco della condizionalità è l'1 % dei richiedenti con più di 10 ha. Jordbruksverket sorveglia l'uso del suolo via satellite e può chiedere una foto georeferenziata (app Geofoto). Forza maggiore: notifica scritta entro 15 giorni lavorativi da quando è possibile (3 kap. 27 §)."
+   },
+   "penalties": {
+    "en": "Penalties. Late application: 1 % reduction per working day of delay beyond the last day, and zero aid if it arrives after 4 May 2026 (according to Jordbruksverket). Conditionality: according to SFS 2026:288, applicable from support year 2026 (text of an unofficial copy of the Svensk författningssamling, not the official site), holdings of 10 ha or less are exempt from reductions for failing the basic conditions and those up to 30 ha from reductions for failing crop rotation or diversification (GAEC 7) (12 kap. 22 §). Social breaches: base reduction of 3 % (see the social conditionality rule). Jordbruksverket also states that if the total of the listed payments exceeds €2,000, a reduction (a percentage of the excess) may apply if the Commission sets it in November because of the risk of exceeding the EU budget. Not read: the scale of reductions for breaching conditionality (SJVFS 2022:29, chapter 4 and annex 1, seen only in an unofficial lagen.nu copy), the area and animal difference thresholds of 12 kap., and the intentionality percentages.",
+    "fr": "Sanctions. Retard de la demande : réduction de 1 % par jour ouvré de retard après le dernier jour et aide nulle si elle arrive après le 4 mai 2026 (selon Jordbruksverket). Conditionnalité : selon SFS 2026:288, applicable dès l'année d'aide 2026 (texte d'une copie non officielle du Svensk författningssamling, pas du site officiel), les exploitations de 10 ha ou moins sont exemptées de réductions pour non-respect des conditions de base et celles jusqu'à 30 ha de réductions pour non-respect de la rotation ou diversification (GAEC 7) (12 kap. 22 §). Manquements sociaux : réduction de base de 3 % (voir la règle de conditionnalité sociale). Jordbruksverket indique aussi que si le total des paiements listés dépasse 2 000 €, une réduction (pourcentage de l'excédent) peut s'appliquer si la Commission la fixe en novembre en raison du risque de dépassement du budget de l'UE. Non lus : le barème des réductions pour non-respect de la conditionnalité (SJVFS 2022:29, chapitre 4 et annexe 1, vu seulement dans une copie non officielle de lagen.nu), les seuils d'écart de surface et d'animaux du 12 kap., et les pourcentages d'intentionnalité.",
+    "it": "Sanzioni. Ritardo della domanda: riduzione dell'1 % per giorno lavorativo di ritardo oltre l'ultimo giorno e aiuto nullo se arriva dopo il 4 maggio 2026 (secondo Jordbruksverket). Condizionalità: secondo SFS 2026:288, applicabile dall'anno di aiuto 2026 (testo di una copia non ufficiale del Svensk författningssamling, non del sito ufficiale), le aziende con 10 ha o meno sono esentate da riduzioni per inosservanza delle condizioni di base e quelle fino a 30 ha da riduzioni per inosservanza della rotazione o diversificazione (GAEC 7) (12 kap. 22 §). Violazioni sociali: riduzione base del 3 % (vedi la regola sulla condizionalità sociale). Jordbruksverket indica anche che, se il totale dei pagamenti elencati supera 2.000 €, può applicarsi una riduzione (percentuale sull'eccedenza) se la Commissione la fissa a novembre per il rischio di superare il bilancio UE. Non letti: la scala delle riduzioni per inosservanza della condizionalità (SJVFS 2022:29, capitolo 4 e allegato 1, visto solo in una copia non ufficiale di lagen.nu), le soglie di differenza di superficie e animali del 12 kap. e le percentuali di intenzionalità."
+   },
+   "unit-amounts": {
+    "en": "How amounts are set: Jordbruksverket fixes each year a unit amount for each type of direct payment, calculated from the indicative budget and the number of eligible hectares or animals, within the annex 3 maximums and minimums and without exceeding the direct payments ceiling of annex V of Regulation 2021/2115. That is why the Jordbruksverket pages give planned 2026 amounts within a range (in euro, paid in kronor at €1 = SEK 11.331, the ECB rate on the last banking day before 1 October) and the final ones are known in autumn; the 2026 payment starts on 11 December 2026. The ranges are in each payment's rule. In the annex 3 that was read (SFS 2025:845), no later changes to the ranges for farm payment, young farmers and cattle were read, but SFS 2025:1322 and SFS 2026:288 were not examined for their annex 3 and might have changed them. Final 2026 amounts not read; for 2025 only those quoted in each rule.",
+    "fr": "Comment les montants sont fixés : Jordbruksverket fixe chaque année un montant unitaire pour chaque type de paiement direct, calculé à partir du budget indicatif et du nombre d'hectares ou d'animaux admissibles, dans les maximums et minimums de l'annexe 3 et sans dépasser le plafond des paiements directs de l'annexe V du règlement 2021/2115. C'est pourquoi les fiches de Jordbruksverket donnent pour 2026 des montants prévisionnels dans une fourchette (en euros, versés en couronnes au taux de 1 € = 11,331 SEK, celui de la BCE le dernier jour bancaire avant le 1er octobre) et les montants définitifs sont connus à l'automne ; le paiement 2026 commence le 11 décembre 2026. Les fourchettes figurent dans la règle de chaque paiement. Dans l'annexe 3 lue (SFS 2025:845), aucune modification ultérieure des fourchettes du paiement à l'exploitation, des jeunes et des bovins n'a été lue, mais SFS 2025:1322 et SFS 2026:288 n'ont pas été examinés pour leur annexe 3 et ont pu les changer. Montants définitifs 2026 non lus ; pour 2025 seulement ceux cités dans chaque règle.",
+    "it": "Come si fissano gli importi: Jordbruksverket fissa ogni anno un importo unitario per ciascun tipo di pagamento diretto, calcolato dal bilancio indicativo e dal numero di ettari o animali ammissibili, entro i massimi e minimi dell'allegato 3 e senza superare il massimale dei pagamenti diretti dell'allegato V del regolamento 2021/2115. Per questo le schede di Jordbruksverket danno per il 2026 importi previsti entro un intervallo (in euro, pagati in corone al cambio di 1 € = 11,331 SEK, quello della BCE l'ultimo giorno bancario prima del 1° ottobre) e quelli definitivi si conoscono in autunno; il pagamento 2026 inizia l'11 dicembre 2026. Gli intervalli sono nella regola di ciascun pagamento. Nell'allegato 3 letto (SFS 2025:845) non sono state lette modifiche successive degli intervalli del pagamento all'azienda, dei giovani e dei bovini, ma SFS 2025:1322 e SFS 2026:288 non sono stati esaminati per il loro allegato 3 e potrebbero averli cambiati. Importi definitivi 2026 non letti; per il 2025 solo quelli citati in ogni regola."
+   }
+  },
+  "calendar": {
+   "changes-add": {
+    "en": "Last day to add land, parcels or similar changes to the application (15 June; if it is a holiday or the day before one, the next working day).",
+    "fr": "Dernier jour pour ajouter des surfaces, des parcelles ou des modifications similaires à la demande (15 juin ; s'il est férié ou veille de férié, le jour ouvré suivant).",
+    "it": "Ultimo giorno per aggiungere superficie, particelle o modifiche simili alla domanda (15 giugno; se è festivo o vigilia di festivo, il giorno lavorativo successivo)."
+   },
+   "withdraw-cattle": {
+    "en": "Last day to withdraw the whole cattle aid application (30 July).",
+    "fr": "Dernier jour pour retirer toute la demande d'aide aux bovins (30 juillet).",
+    "it": "Ultimo giorno per ritirare l'intera domanda di aiuto per i bovini (30 luglio)."
+   },
+   "changes-crops": {
+    "en": "Last day to change parcel boundaries or crops within the block (31 October), without increasing the area applied for.",
+    "fr": "Dernier jour pour modifier limites de parcelle ou cultures au sein de l'îlot (31 octobre), sans augmenter la surface demandée.",
+    "it": "Ultimo giorno per modificare confini delle particelle o colture all'interno del blocco (31 ottobre), senza aumentare la superficie richiesta."
+   },
+   "withdraw": {
+    "en": "Last day to withdraw all or part of the application (31 October); for cattle aid, the whole application until 30 July.",
+    "fr": "Dernier jour pour retirer tout ou partie de la demande (31 octobre) ; pour l'aide aux bovins, toute la demande jusqu'au 30 juillet.",
+    "it": "Ultimo giorno per ritirare tutta o parte della domanda (31 ottobre); per l'aiuto ai bovini, l'intera domanda fino al 30 luglio."
+   }
+  },
+  "overrides": {}
+ }
+}

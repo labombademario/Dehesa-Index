@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T15:44:54Z",
+ "generatedAt": "2026-10-15T15:49:19Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 159,
+  "total": 166,
   "byStatus": {
-   "ACTIVE": 129,
+   "ACTIVE": 136,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3088,6 +3088,45 @@
    ]
   },
   {
+   "sourceId": "esbirka_cz",
+   "registryId": "esbirka_cz",
+   "country": "CZ",
+   "scope": "integrated",
+   "institution": "Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb.",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Zdroj: Sbírka zákonů, nařízení vlády č. 83/2023 Sb. ve znění č. 45/2026 Sb. a 167/2026 Sb.; metodické příručky Ministerstva zemědělství. Výňatky.",
+   "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "eu_agrifood",
    "registryId": "eu_agrifood",
    "country": "EU",
@@ -3696,6 +3735,45 @@
    "lastChecked": "2026-10-11",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "gov_ie_dafm",
+   "registryId": "gov_ie_dafm",
+   "country": "IE",
+   "scope": "integrated",
+   "institution": "Department of Agriculture, Food and the Marine (gov.ie) — BISS, CRISS y CISYF",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Department of Agriculture, Food and the Marine (gov.ie), BISS 2026, CRISS and CISYF service pages. Extracts.",
+   "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
@@ -4505,6 +4583,45 @@
    ]
   },
   {
+   "sourceId": "magyarkozlony_hu",
+   "registryId": "magyarkozlony_hu",
+   "country": "HU",
+   "scope": "integrated",
+   "institution": "Magyar Közlöny / Nemzeti Jogszabálytár — 15-21/2024. (IV. 9.) AM rendeletek",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Forrás: Magyar Közlöny / Nemzeti Jogszabálytár, 15-21/2024. (IV. 9.) AM rendeletek; KAP Nemzeti Irányító Hatóság közlemények. Kivonatok.",
+   "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "magyp_estimaciones",
    "registryId": "magyp_estimaciones",
    "country": "AR",
@@ -5088,6 +5205,45 @@
    ]
   },
   {
+   "sourceId": "monitorul_ro",
+   "registryId": "monitorul_ro",
+   "country": "RO",
+   "scope": "integrated",
+   "institution": "Monitorul Oficial al României — HG 1.571/2022 y ordinele MADR de pagos directos",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Sursa: Monitorul Oficial al României, HG nr. 1.571/2022 și ordinele MADR (106/2024, 44/2026, 268/2025, 447/2023). Extrase.",
+   "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "nasa_power",
    "registryId": "nasa_power",
    "country": "US",
@@ -5449,6 +5605,45 @@
    "derivatives": "yes",
    "attribution": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse 1363 og 1381 af 2025. Uddrag.",
    "lastChecked": "2026-10-03",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "ris_at",
+   "registryId": "ris_at",
+   "country": "AT",
+   "scope": "integrated",
+   "institution": "Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Quelle: Rechtsinformationssystem des Bundes (RIS), MOG 2021 und GAP-Strategieplan-Anwendungsverordnung (BGBl. II Nr. 403/2022); Prämienbeträge der AMA. Auszüge.",
+   "lastChecked": "2026-10-15",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
@@ -5976,6 +6171,45 @@
    "lastChecked": "2026-10-10",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "svensk_forfattningssamling",
+   "registryId": "svensk_forfattningssamling",
+   "country": "SE",
+   "scope": "integrated",
+   "institution": "Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Källa: Svensk författningssamling, förordning (2022:1826) om EU:s gemensamma jordbrukspolitik och Statens jordbruksverks föreskrifter (SJVFS 2022:29, 2022:30, 2025:33, 2025:34). Utdrag.",
+   "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
@@ -6875,6 +7109,45 @@
    "derivatives": "yes",
    "attribution": "Bron: Vlaamse Milieumaatschappij (VMM), waterinfo.be",
    "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "wetten_nl",
+   "registryId": "wetten_nl",
+   "country": "NL",
+   "scope": "integrated",
+   "institution": "Wetten.overheid.nl / Staatscourant — Uitvoeringsregeling GLB 2023 (BWBR0047444)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Bron: wetten.overheid.nl, Uitvoeringsregeling GLB 2023 (BWBR0047444) en Staatscourant; tarieven van RVO. Uittreksels.",
+   "lastChecked": "2026-10-15",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

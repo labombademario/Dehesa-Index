@@ -320,7 +320,7 @@ CASES = [
  ("cap/dk/amounts.json", "importe negativo", lambda d: d["schemes"][0]["items"][0].__setitem__("amount", -3)),
  ("cap/dk/amounts.json", "decreto no vigente", lambda d: d["documents"][0].__setitem__("status", "Repealed")),
  ("cap/index.json", "componente ingerido sin fichero", lambda d: d["countries"][0]["components"]["rules"].__setitem__("file", "es/no-existe.json")),
- ("cap/index.json", "no ingerido sin razon", lambda d: d["countries"][3]["components"]["amounts"].pop("reason")),
+ ("cap/index.json", "no ingerido sin razon", lambda d: next(c for c in d["countries"] if c["components"]["amounts"]["state"] == "NOT_INGESTED")["components"]["amounts"].pop("reason")),
  ("cap/index.json", "evento NEW_RULE emitido", lambda d: d["watch"]["events"].append({"type": "NEW_RULE", "cc": "ES", "detail": "x", "detectedAt": "2026-10-01", "officialUrl": "https://www.boe.es/"})),
  ("cap/index.json", "plazo anterior a asOf", lambda d: d["watch"]["deadlines"][0].__setitem__("date", "2000-01-01")),
  ("cap/index.json", "pais con datos sin acto legal", lambda d: d["countries"][1].__setitem__("legalAct", None)),

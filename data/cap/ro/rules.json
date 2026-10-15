@@ -1,0 +1,472 @@
+{
+ "schemaVersion": 1,
+ "country": "RO",
+ "scheme": "Planul Strategic PAC 2023-2027 al României (plăți directe: HG 1.571/2022, Ordinele MADR 106/2024, 44/2026, 268/2025 și 447/2023)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-15",
+ "source": {
+  "id": "monitorul_ro",
+  "instrument": "Hotărârea Guvernului nr. 1.571/2022 (modificada por HG 208/2024); Ordinul MADR nr. 106/2024 (modificado por el Ordinul 44/2026); Ordinul MADR nr. 268/2025 (sanciones); Ordinul MADR nr. 447/2023; OUG nr. 85/2023, Monitorul Oficial al României",
+  "ref": "HG 1.571/2022",
+  "url": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024"
+ },
+ "note": "Reglas leídas a mano de copias de los textos del Monitorul Oficial (legeaz.net, agrointel.ro, sitios de ayuntamientos y static.anaf.ro), no de legislatie.just.ro, que la herramienta no pudo abrir: manda el Monitorul Oficial. La HG 1.571/2022 solo se leyó en la parte que reproduce la HG 208/2024; el Ordin 106/2024 solo en su versión de 2024 y cortado en el art. 34; del Ordin 268/2025 solo los anexos 1 a 6. No hay texto consolidado de 2026. Hay contradicciones sin resolver entre textos (jóvenes agricultores, PD-05) señaladas en las reglas. Los importes por hectárea adoptados son de la campaña 2023; los de 2025 son borradores. Sin vigilancia automática. Son explicaciones breves, no el texto legal.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "PD-01 Sprijin de bază pentru venit în scopul sustenabilității (BISS)",
+   "nameLang": "ro",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), art. 26",
+   "articles": [
+    "26"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "PD-02 Sprijin redistributiv complementar pentru venit în scopul sustenabilității (CRISS)",
+   "nameLang": "ro",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), arts. 30 a 32",
+   "articles": [
+    "30",
+    "31",
+    "32"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "PD-03 Sprijin complementar pentru venit pentru tinerii fermieri",
+   "nameLang": "ro",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), art. 33; Ordinul MADR nr. 44/2026 (MO nr. 152/27-2-2026), que modifica el Ordinul 106/2024, art. 34(4)",
+   "articles": [
+    "33",
+    "34"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "PD-04 Practici benefice pentru mediu aplicabile în teren arabil; PD-05 Practicarea unei agriculturi prietenoase cu mediul în fermele mici (gospodăriile tradiționale); PD-06 Înierbarea intervalului dintre rânduri în plantațiile pomicole, viticole, pepiniere și hameiști",
+   "nameLang": "ro",
+   "legalBasis": "Ordinul MADR nr. 268/2025 (MO nr. 742 bis/8-8-2025, sistemas de sanciones); HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024), art. 15",
+   "articles": [
+    "15"
+   ]
+  },
+  {
+   "id": "coupled",
+   "kind": "coupled",
+   "name": "Sprijin cuplat pentru venit (PD-09 – PD-26)",
+   "nameLang": "ro",
+   "legalBasis": "HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024), art. 16",
+   "articles": [
+    "16"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), arts. 18 a 25; Ordinul MADR nr. 44/2026 (MO nr. 152/27-2-2026), que modifica el Ordinul 106/2024, arts. 18 y 25¹",
+   "articles": [
+    "18",
+    "20",
+    "21",
+    "25",
+    "25¹"
+   ],
+   "text": "Agricultor activo (texto de 2024): se considera activo quien el año anterior habría cobrado 5.000 € o menos de pagos directos. Por encima de 5.000 € debe probar su derecho a ejercer la actividad agraria (por ejemplo, con un certificado del ayuntamiento o del registro mercantil, ONRC). Las explotaciones de hasta 50 ha admisibles deben además pasar una prueba de actividad mínima: pagos directos de al menos el 5 % de los ingresos no agrarios, o ingresos agrarios de al menos un tercio de los ingresos totales; los documentos de ingresos se presentan antes del 31 de enero del año siguiente. El Ordin 44/2026 cambia el art. 18 (las personas jurídicas que piden por primera vez son activas si prueban su inscripción en el ONRC con actividad agraria; el documento del órgano superior debe decir expresamente que ejercen actividad agraria) y añade, desde la campaña 2027, la prueba del establecimiento o mantenimiento del cultivo en tierra arable antes del 31 de agosto (art. 25¹). No se ha leído el texto consolidado vigente en 2026 del Ordin 106/2024.",
+   "officialUrl": "https://agrointel.ro/wp-content/uploads/2024/03/Ordin-106-19.03.2024-FEGA-final.pdf",
+   "values": {
+    "priorYearPaymentsMaxEur": 5000,
+    "smallHoldingMaxHa": 50,
+    "nonFarmIncomeSharePct": 5,
+    "farmIncomeShare": "1/3",
+    "incomeDocumentsDeadline": "01-31",
+    "cropProofFromCampaign": 2027,
+    "cropProofDeadline": "08-31"
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024), arts. 6(1)(c) y 7; Ordinul MADR nr. 106/2024 (versión de 2024), art. 26; Ordinul MADR nr. 44/2026 (MO nr. 152/27-2-2026), que modifica el Ordinul 106/2024, art. 26",
+   "articles": [
+    "6",
+    "7",
+    "26"
+   ],
+   "text": "Superficie mínima: explotación de al menos 1 ha de tierra agrícola; parcela de al menos 0,3 ha, de 0,03 ha en invernaderos y solarios y de 0,1 ha en cultivos permanentes (viñedo, frutales, lúpulo, viveros y arbustos frutales). Lo repiten el Ordin 106/2024 y el Ordin 44/2026 (art. 26). Quien no tiene tierra o tiene menos de 1 ha y pide pagos asociados ganaderos solo cobra si el total de sus pagos directos llega a 150 € (HG, art. 7). El texto de la HG que se leyó es la modificación de 2024 y tiene huecos marcados con «(...)».",
+   "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024",
+   "values": {
+    "minHa": 1,
+    "minParcelHa": 0.3,
+    "minGreenhouseParcelHa": 0.03,
+    "minPermanentCropParcelHa": 0.1,
+    "minTotalPaymentNoLandEur": 150
+   }
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), art. 3; Ordinul MADR nr. 44/2026 (MO nr. 152/27-2-2026), que modifica el Ordinul 106/2024, art. 3; HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024), art. 6(2)",
+   "articles": [
+    "3",
+    "6"
+   ],
+   "text": "La solicitud de pago (cerere de plată) se presenta cada año en los centros de la APIA dentro del plazo que fija una orden ministerial (si el plazo cae en día no laborable, pasa al siguiente hábil, HG art. 6(2)). Periodos leídos: 2024, del 4 de abril al 7 de junio (Ordin 106/2024, art. 3); 2025, del 3 de marzo al 13 de junio, ampliado por el Ordin MADR 179/2025 (dato de prensa, no del texto de la orden); 2026, del 16 de marzo al 5 de junio (Ordin 44/2026, art. 3). Una solicitud presentada fuera de plazo es inadmisible (no hay reducción por día: se rechaza) y las modificaciones deben presentarse dentro del mismo plazo. No hay una fecha ordinaria recurrente: cambia cada año. No se ha leído el plazo original de 2025.",
+   "officialUrl": "https://www.primaria-seimeni.ro/wp-content/uploads/2026/03/Ordinul-44.pdf",
+   "values": {
+    "2024": [
+     "2024-04-04",
+     "2024-06-07"
+    ],
+    "2025": [
+     "2025-03-03",
+     "2025-06-13"
+    ],
+    "2026": [
+     "2026-03-16",
+     "2026-06-05"
+    ],
+    "lateIsInadmissible": true
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), art. 26; HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024)",
+   "articles": [
+    "26"
+   ],
+   "text": "PD-01, sprijin de bază pentru venit în scopul sustenabilității (BISS): el agricultor debe ser activo y ejercer la actividad agraria en Rumanía, explotar al menos 1 ha con las parcelas mínimas de la regla «minimum», y, en pastos permanentes, tener una carga de al menos 0,3 UVM/ha (unidad de ganado mayor) o una actividad anual de siega o cosecha. En 2024 una excepción de la BCAM 8 permitió usar el barbecho de tierra arable para cultivos fijadores de nitrógeno o secundarios. Los importes unitarios están en la regla «unit-amounts». No se han leído las reglas de reducción de pagos altos ni de convergencia: el texto leído del Ordin 106/2024 se corta en el art. 34.",
+   "officialUrl": "https://agrointel.ro/wp-content/uploads/2024/03/Ordin-106-19.03.2024-FEGA-final.pdf",
+   "values": {
+    "minHa": 1,
+    "minPermanentGrasslandUvmPerHa": 0.3
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), arts. 30 a 32; Ordinul MADR nr. 268/2025 (MO nr. 742 bis/8-8-2025, sistemas de sanciones)",
+   "articles": [
+    "30",
+    "31",
+    "32"
+   ],
+   "text": "PD-02, sprijin redistributiv complementar (CRISS): hay que poder cobrar el PD-01 y explotar entre 1 y 50 ha; las explotaciones de más de 50 ha quedan excluidas (el anexo de sanciones del Ordin 268/2025 lo confirma). Se excluye la fragmentación artificial posterior a 2020, incluido pedir la ayuda por tierra fragmentada para obtenerla. Si se transfiere tierra entre dos agricultores, se evalúa la superficie conjunta. La herencia, la venta de tierra, el fin de un arrendamiento iniciado por el arrendador y la expropiación no cuentan como fragmentación artificial. No se ha leído hasta cuántas hectáreas se paga el CRISS ni si hay tramos.",
+   "officialUrl": "https://agrointel.ro/wp-content/uploads/2024/03/Ordin-106-19.03.2024-FEGA-final.pdf",
+   "values": {
+    "minHa": 1,
+    "maxHoldingHa": 50,
+    "artificialFragmentationAfter": 2020
+   }
+  },
+  {
+   "id": "young-farmer",
+   "topic": "young",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), art. 33; Ordinul MADR nr. 44/2026 (MO nr. 152/27-2-2026), que modifica el Ordinul 106/2024, art. 34(4); Ordinul MADR nr. 268/2025 (MO nr. 742 bis/8-8-2025, sistemas de sanciones)",
+   "articles": [
+    "33",
+    "34"
+   ],
+   "text": "PD-03, sprijin complementar pentru tinerii fermieri: según el Ordin 106/2024 (art. 33), tener como máximo 40 años en el año de la solicitud e instalarse por primera vez como jefe de explotación; la ayuda cubre las primeras 50 ha elegibles durante 5 años seguidos desde la primera solicitud. La formación o competencia se prueba con un diploma, un certificado de formación, un certificado de competencia o al menos 12 meses de experiencia agraria en los últimos 10 años; los documentos se presentan antes del 30 de septiembre. El Ordin 44/2026 (art. 34, apdo. 4) menciona 60 ha elegibles y 5 años seguidos para quienes no recibieron todo el apoyo en 2014-2020 o en la transición 2021-2022. El anexo de sanciones del Ordin 268/2025 habla de una instalación de como máximo 24 meses antes de la solicitud, algo que no aparece en el art. 33 leído: las dos versiones no se han conciliado.",
+   "officialUrl": "https://agrointel.ro/wp-content/uploads/2024/03/Ordin-106-19.03.2024-FEGA-final.pdf",
+   "values": {
+    "maxAge": 40,
+    "maxHa": 50,
+    "maxHaTransitional": 60,
+    "years": 5,
+    "documentsDeadline": "09-30",
+    "experienceMonthsOfLast10Years": 12
+   }
+  },
+  {
+   "id": "eco-arable",
+   "topic": "eco",
+   "legalBasis": "Ordinul MADR nr. 268/2025 (MO nr. 742 bis/8-8-2025, sistemas de sanciones), anexa del PD-04; HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024), art. 15(5)",
+   "articles": [
+    "15"
+   ],
+   "text": "PD-04, practici benefice pentru mediu aplicabile în teren arabil (ecoesquema): exige al menos 10,01 ha de tierra arable (HG art. 15(5)). Según el anexo de sanciones del Ordin 268/2025: cobertura del suelo del 85 % del 15 de junio al 15 de octubre; diversificación con dos cultivos entre 10,01 y 30 ha y tres por encima de 30 ha, con el cultivo principal en un máximo del 70 %; laboreo de conservación en al menos el 50 % de la superficie cultivada; leguminosas en al menos el 2 % de la tierra arable. Las reducciones van del 2,5 % al 40 % y no se paga si el incumplimiento supera el 70 %. Solo se leyeron los anexos 1 a 6 del Ordin 268/2025 (el texto se corta); los importes están en la regla «unit-amounts».",
+   "officialUrl": "https://agrointel.ro/wp-content/uploads/2025/08/Monitorul-Oficial-Partea-I-nr.-742Bis.pdf",
+   "values": {
+    "minArableHa": 10.01,
+    "soilCoveragePct": 85,
+    "soilCoverFrom": "06-15",
+    "soilCoverTo": "10-15",
+    "mainCropMaxPct": 70,
+    "conservationTillageMinPct": 50,
+    "legumesMinPct": 2,
+    "reductionRangePct": [
+     2.5,
+     40
+    ],
+    "noPaymentOverPct": 70
+   }
+  },
+  {
+   "id": "eco-small",
+   "topic": "eco",
+   "legalBasis": "Ordinul MADR nr. 268/2025 (MO nr. 742 bis/8-8-2025, sistemas de sanciones), anexas de PD-05; HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024), art. 15(6) a 15(8); Ordinul MADR nr. 44/2026 (MO nr. 152/27-2-2026), que modifica el Ordinul 106/2024, art. 46",
+   "articles": [
+    "15",
+    "46"
+   ],
+   "text": "PD-05, agricultura prietenoasă cu mediul en fermas pequeñas (gospodării tradiționale): explotación de 1 a 10 ha (Ordin 44/2026, art. 46) con parcelas de al menos 0,3 ha (0,1 ha en cultivos permanentes). La HG (art. 15(6)) habla de 0,3 a 1 UVM/ha; el anexo de sanciones del Ordin 268/2025 exige un mínimo de 0,3 UVM/ha durante seis meses (abril a septiembre), tolera hasta 2 UVM/ha con reducciones del 15, 25 o 35 % y no paga por encima de 5 UVM/ha: ambas versiones no se han conciliado. Además: leguminosas en al menos el 10 % de la tierra arable y al menos 2 árboles por hectárea, probados con fotos geoetiquetadas antes del 30 de noviembre. PD-06 (hierba entre filas en frutales, viñedos, viveros y lúpulo) exige al menos 1 ha de cultivos permanentes con parcelas de 0,1 ha; PD-05 y PD-06 no se combinan, y PD-07, PD-08 y PD-27 (bienestar animal) no pueden combinarse para los mismos animales. Las condiciones de PD-06 en el anexo de sanciones no se leyeron (el texto se corta).",
+   "officialUrl": "https://agrointel.ro/wp-content/uploads/2025/08/Monitorul-Oficial-Partea-I-nr.-742Bis.pdf",
+   "values": {
+    "holdingMinHa": 1,
+    "holdingMaxHa": 10,
+    "minParcelHa": 0.3,
+    "minLuPerHa": 0.3,
+    "graceLuPerHa": 2,
+    "noPaymentOverLuPerHa": 5,
+    "legumesMinPct": 10,
+    "treesPerHa": 2,
+    "photosDeadline": "11-30"
+   }
+  },
+  {
+   "id": "coupled",
+   "topic": "associated",
+   "legalBasis": "HG nr. 1.571/2022 (cadrul general de aplicare a intervențiilor din PS PAC 2023-2027), modificată prin HG nr. 208/2024 (MO nr. 224/18-3-2024), arts. 16 y 36; Ordinul MADR nr. 268/2025 (MO nr. 742 bis/8-8-2025, sistemas de sanciones)",
+   "articles": [
+    "16",
+    "36"
+   ],
+   "text": "PD-09 a PD-26 son ayudas asociadas por cultivo o por animal: soja, alfalfa, leguminosas de grano para industria, cáñamo, arroz, patata de siembra, lúpulo, remolacha azucarera, hortalizas de campo y de invernadero, fruta (ciruela, manzana, cereza, guinda, albaricoque, melocotón), semilla de plantas forrajeras, vacas de leche, vacuno de carne, búfalas de leche, ovino y caprino, gusanos de seda y maíz de ensilaje (PD-26, añadido por la HG 208/2024). Los beneficiarios deben ser agricultores activos y, en el sector vegetal, cobrar también el PD-01 (HG art. 16). Se pagan cada año por hectárea o por cabeza dentro del mínimo y máximo de cada ficha, y el importe puede ajustarse según la participación (art. 36). Las condiciones de cada una las fija una orden ministerial que no se ha leído; tampoco los importes definitivos.",
+   "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024",
+   "values": {
+    "interventions": "PD-09..PD-26"
+   }
+  },
+  {
+   "id": "area-discrepancy",
+   "topic": "penalties",
+   "legalBasis": "Ordinul MADR nr. 268/2025 (MO nr. 742 bis/8-8-2025, sistemas de sanciones), art. 2 y anexas 1 a 6",
+   "articles": [
+    "2"
+   ],
+   "text": "Sobredeclaración (por grupo de cultivos), según el Ordin 268/2025: las diferencias de 0,1 ha o menos se ignoran, salvo que superen el 20 % de lo declarado; con hasta 2 ha y menos del 3 % se paga la superficie determinada; por encima del 3 % (o 2 ha) y hasta el 20 %, se paga la superficie determinada menos 1,5 veces la diferencia, sin pasar del 100 %; por encima del 20 % no se paga ese grupo. Si la superficie determinada supera la declarada no hay sanción y se paga la declarada. Infradeclaración: tolerancia del 3 %; por encima, reducciones del 1 % (3 a 30 % sin declarar), del 2 % (30 a 50 %) y del 3 % (más del 50 %). Si una explotación seleccionada rechaza la inspección no cobra nada ese año. No se pagan ni sancionan los casos de fuerza mayor documentados (art. 3). Solo se leyeron los anexos 1 a 6; los anexos 7 a 37 (entre ellos los de las ayudas asociadas) no.",
+   "officialUrl": "https://agrointel.ro/wp-content/uploads/2025/08/Monitorul-Oficial-Partea-I-nr.-742Bis.pdf",
+   "values": {
+    "ignoreDiffHa": 0.1,
+    "ignoreDiffMaxPctOfDeclared": 20,
+    "tolerancePct": 3,
+    "toleranceHa": 2,
+    "multiplier": 1.5,
+    "noPaymentOverPct": 20,
+    "underDeclarationTolerancePct": 3,
+    "underDeclarationReductionPct": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "advances",
+   "topic": "calendar",
+   "legalBasis": "Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), arts. 4 a 7; OUG nr. 85/2023 (gestionarea financiară a fondurilor FEGA și FEADR 2023-2027), arts. 4, 10 y 11",
+   "articles": [
+    "4",
+    "5",
+    "6",
+    "7"
+   ],
+   "text": "Anticipos y saldo (campaña 2023): el anticipo de 2023 solo podía pagarse del 16 de octubre al 30 de noviembre de 2023 (preámbulo de la OUG 85/2023). El Ordin 447/2023 fija un anticipo máximo del 70 % de los importes de su anexo 2 para PD-01, PD-02 y PD-03; después del 1 de diciembre de 2023 la APIA paga la diferencia hasta ese importe; se paga en lei al tipo del BCE publicado antes del 1 de octubre de 2023 y dentro del presupuesto aprobado. La OUG 85/2023 (art. 10) obliga a que el MADR fije por orden las condiciones del anticipo cada año, ordena pagar solo a la cuenta bancaria declarada ante la APIA (art. 4) y prevé que la APIA retenga el 3 % para el instrumento de pérdida de renta (DR 32) (art. 11); no se ha leído a quién se aplica esa retención. Para 2025 solo se leyó un borrador de orden (octubre de 2025): anticipo del 70 % desde el 16 de octubre y pago del resto después del 1 de diciembre.",
+   "officialUrl": "https://legeaz.net/monitorul-oficial-956-2023/ordin-madr-447-2023",
+   "values": {
+    "maxAdvancePct": 70,
+    "advanceWindow2023": [
+     "2023-10-16",
+     "2023-11-30"
+    ],
+    "balanceAfter2023": "2023-12-01",
+    "incomeLossRetentionPct": 3
+   }
+  },
+  {
+   "id": "controls",
+   "topic": "controls",
+   "legalBasis": "Ordinul MADR nr. 106/2024 (versión de 2024), art. 16; Ordinul MADR nr. 44/2026 (MO nr. 152/27-2-2026), que modifica el Ordinul 106/2024, art. 16",
+   "articles": [
+    "16"
+   ],
+   "text": "Controles y cambios: tras recibir el aviso de un control sobre el terreno ya no pueden hacerse cambios ni retiradas de la solicitud. En 2024 (Ordin 106/2024, art. 16) la supervisión por Sentinel permitía cambios sin aumentar la superficie hasta el 20 de septiembre; el Ordin 44/2026 (art. 16) lo fija en el 30 de septiembre, salvo que ya se haya enviado el aviso de control. La APIA notifica el incumplimiento en los 90 días siguientes al final de los controles sobre el terreno. Las sanciones de condicionalidad se rigen por el Ordin 393/2023 y por la orden conjunta 54/570/32/2023, citadas por el Ordin 268/2025 y el Ordin 44/2026, pero no se han leído.",
+   "officialUrl": "https://www.primaria-seimeni.ro/wp-content/uploads/2026/03/Ordinul-44.pdf",
+   "values": {
+    "changesUntil2026": "2026-09-30",
+    "changesUntil2024": "2024-09-20",
+    "nonConformityNoticeDays": 90
+   }
+  },
+  {
+   "id": "unit-amounts",
+   "topic": "amounts",
+   "legalBasis": "Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), anexa 2; Proiect de ordin MADR privind cuantumurile unitare ale plăților directe pentru cererile 2025 (borrador de febrero de 2026, sin número ni fecha); Proiect de ordin MADR privind avansul plăților directe 2025 (borrador de octubre de 2025, sin número ni fecha)",
+   "articles": [],
+   "text": "Importes unitarios leídos. Adoptados (campaña 2023, anexa 2 del Ordin 447/2023, base del anticipo del 70 % y del pago del resto): PD-01, 97,5715 €/ha; PD-02, 51,1365 €/ha; PD-03, 46,0000 €/ha; la orden también reasigna 27.331.982,64 € a PD-01 y 2.747.960,42 € a PD-03 desde los ecoesquemas PD-05 a PD-08. No se ha comprobado si el importe definitivo de 2023 fue otro. De 2025 solo hay borradores sin número ni fecha, no adoptados cuando se leyeron: el de febrero de 2026 propone PD-02, 53,5212 €/ha, PD-03, 46,6676 €/ha y PD-28, 32,9366 €/ha; el de octubre de 2025 (referencias de anticipo) da PD-01, 89,34; PD-02, 46,87; PD-03, 43,20; PD-04, 56,28; PD-05 y PD-06, 85,00 €/ha; y por cabeza, vaca de leche 296,12, vacuno de carne 190,82, búfala 160,00 y ovino-caprino 12,54 €. No se han leído importes de 2024 ni de 2026.",
+   "officialUrl": "https://legeaz.net/monitorul-oficial-956-2023/ordin-madr-447-2023",
+   "values": {
+    "adopted2023EurPerHa": {
+     "PD-01": 97.5715,
+     "PD-02": 51.1365,
+     "PD-03": 46.0
+    },
+    "draft2025EurPerHa": {
+     "PD-02": 53.5212,
+     "PD-03": 46.6676,
+     "PD-28": 32.9366
+    },
+    "draftAdvance2025EurPerHa": {
+     "PD-01": 89.34,
+     "PD-02": 46.87,
+     "PD-03": 43.2,
+     "PD-04": 56.28,
+     "PD-05": 85.0,
+     "PD-06": 85.0
+    }
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "advance-open",
+   "kind": "window-start",
+   "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a); Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), art. 4",
+   "articles": [
+    "44"
+   ],
+   "when": {
+    "month": 10,
+    "day": 16,
+    "yearOffset": 0
+   },
+   "text": "Desde el 16 de octubre puede pagarse el anticipo de los pagos directos, de hasta el 70 % (en 2023 solo hasta el 30 de noviembre)."
+  },
+  {
+   "id": "payment-open",
+   "kind": "window-start",
+   "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2; Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), art. 5",
+   "articles": [
+    "44"
+   ],
+   "when": {
+    "month": 12,
+    "day": 1,
+    "yearOffset": 0
+   },
+   "text": "Empieza el periodo ordinario de pago de los pagos directos (1 de diciembre); la APIA paga entonces la diferencia entre el importe fijado y los anticipos."
+  },
+  {
+   "id": "payment-close",
+   "kind": "deadline",
+   "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2",
+   "articles": [
+    "44"
+   ],
+   "when": {
+    "month": 6,
+    "day": 30,
+    "yearOffset": 1
+   },
+   "text": "Termina el periodo de pago de los pagos directos de la campaña anterior (30 de junio)."
+  }
+ ],
+ "campaignOverrides": [],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer (2024 text): someone who, the previous year, would have received €5,000 or less in direct payments counts as active. Above €5,000 they must prove their right to carry out farming (for example with a town hall or trade register, ONRC, certificate). Holdings of up to 50 eligible ha must also pass a minimum-activity test: direct payments of at least 5 % of non-farm income, or farm income of at least one third of total income; income documents are due before 31 January of the following year. Order 44/2026 changes art. 18 (legal persons applying for the first time are active if they prove ONRC registration with agricultural activity; the document from the higher body must state expressly that they carry out farming) and adds, from the 2027 campaign, proof of establishing or maintaining the crop on arable land by 31 August (art. 25¹). The consolidated text of Order 106/2024 in force in 2026 has not been read.",
+    "fr": "Agriculteur actif (texte de 2024) : est considéré comme actif celui qui, l'année précédente, aurait perçu 5 000 € ou moins de paiements directs. Au-dessus de 5 000 €, il doit prouver son droit d'exercer l'activité agricole (par exemple par un certificat de la mairie ou du registre du commerce, ONRC). Les exploitations jusqu'à 50 ha admissibles doivent en outre passer un test d'activité minimale : paiements directs d'au moins 5 % des revenus non agricoles, ou revenus agricoles d'au moins un tiers du revenu total ; les documents de revenus sont à remettre avant le 31 janvier de l'année suivante. L'ordre 44/2026 modifie l'art. 18 (les personnes morales qui demandent pour la première fois sont actives si elles prouvent leur inscription à l'ONRC avec une activité agricole ; le document de l'organe supérieur doit indiquer expressément qu'elles exercent une activité agricole) et ajoute, à partir de la campagne 2027, la preuve de l'implantation ou de l'entretien de la culture sur terres arables avant le 31 août (art. 25¹). Le texte consolidé de l'ordre 106/2024 en vigueur en 2026 n'a pas été lu.",
+    "it": "Agricoltore attivo (testo del 2024): è considerato attivo chi l'anno precedente avrebbe percepito 5.000 € o meno di pagamenti diretti. Sopra i 5.000 € deve provare il diritto di esercitare l'attività agricola (ad esempio con un certificato del comune o del registro delle imprese, ONRC). Le aziende fino a 50 ha ammissibili devono inoltre superare una prova di attività minima: pagamenti diretti pari ad almeno il 5 % del reddito non agricolo, oppure reddito agricolo pari ad almeno un terzo del reddito totale; i documenti sui redditi vanno presentati entro il 31 gennaio dell'anno successivo. L'ordine 44/2026 modifica l'art. 18 (le persone giuridiche che presentano domanda per la prima volta sono attive se provano l'iscrizione all'ONRC con attività agricola; il documento dell'organo superiore deve indicare espressamente che svolgono attività agricola) e aggiunge, dalla campagna 2027, la prova dell'impianto o del mantenimento della coltura su seminativo entro il 31 agosto (art. 25¹). Il testo consolidato dell'ordine 106/2024 in vigore nel 2026 non è stato letto."
+   },
+   "minimum": {
+    "en": "Minimum area: a holding of at least 1 ha of agricultural land; parcels of at least 0.3 ha, 0.03 ha in greenhouses and solaria and 0.1 ha for permanent crops (vineyards, orchards, hops, nurseries and fruit shrubs). Order 106/2024 and Order 44/2026 (art. 26) repeat this. Someone with no land or under 1 ha who claims coupled livestock payments is only paid if total direct payments reach €150 (GD, art. 7). The GD text read is the 2024 amendment and has gaps marked «(...)».",
+    "fr": "Superficie minimale : une exploitation d'au moins 1 ha de terres agricoles ; des parcelles d'au moins 0,3 ha, de 0,03 ha en serres et solariums et de 0,1 ha pour les cultures permanentes (vignobles, vergers, houblon, pépinières et arbustes fruitiers). L'ordre 106/2024 et l'ordre 44/2026 (art. 26) le répètent. Celui qui n'a pas de terres ou en a moins de 1 ha et demande des paiements couplés à l'élevage n'est payé que si le total des paiements directs atteint 150 € (HG, art. 7). Le texte de la HG lu est la modification de 2024 et comporte des lacunes marquées «(...)».",
+    "it": "Superficie minima: un'azienda di almeno 1 ha di terreno agricolo; particelle di almeno 0,3 ha, di 0,03 ha in serre e solarium e di 0,1 ha per le colture permanenti (vigneti, frutteti, luppolo, vivai e arbusti da frutto). L'ordine 106/2024 e l'ordine 44/2026 (art. 26) lo ripetono. Chi non ha terra o ne ha meno di 1 ha e chiede pagamenti accoppiati zootecnici è pagato solo se il totale dei pagamenti diretti raggiunge 150 € (HG, art. 7). Il testo della HG letto è la modifica del 2024 e presenta lacune segnate «(...)»."
+   },
+   "application": {
+    "en": "The payment application (cerere de plată) is filed each year at APIA centres within the period set by a ministerial order (if the deadline falls on a non-working day it moves to the next working day, GD art. 6(2)). Periods read: 2024, 4 April to 7 June (Order 106/2024, art. 3); 2025, 3 March to 13 June, extended by MADR Order 179/2025 (press report, not the text of the order); 2026, 16 March to 5 June (Order 44/2026, art. 3). An application filed late is inadmissible (there is no per-day cut: it is rejected) and amendments must be filed within the same period. There is no recurring ordinary date: it changes every year. The original 2025 deadline has not been read.",
+    "fr": "La demande de paiement (cerere de plată) est déposée chaque année dans les centres de l'APIA dans le délai fixé par un arrêté ministériel (si l'échéance tombe un jour non ouvrable, elle passe au jour ouvrable suivant, HG art. 6(2)). Périodes lues : 2024, du 4 avril au 7 juin (ordre 106/2024, art. 3) ; 2025, du 3 mars au 13 juin, prorogée par l'ordre MADR 179/2025 (information de presse, pas le texte de l'ordre) ; 2026, du 16 mars au 5 juin (ordre 44/2026, art. 3). Une demande déposée hors délai est irrecevable (il n'y a pas de réduction par jour : elle est rejetée) et les modifications doivent être déposées dans le même délai. Il n'y a pas de date ordinaire récurrente : elle change chaque année. Le délai initial de 2025 n'a pas été lu.",
+    "it": "La domanda di pagamento (cerere de plată) si presenta ogni anno presso i centri dell'APIA entro il termine fissato da un ordine ministeriale (se la scadenza cade in un giorno non lavorativo, passa al primo giorno lavorativo successivo, HG art. 6(2)). Periodi letti: 2024, dal 4 aprile al 7 giugno (ordine 106/2024, art. 3); 2025, dal 3 marzo al 13 giugno, prorogato dall'ordine MADR 179/2025 (notizia di stampa, non il testo dell'ordine); 2026, dal 16 marzo al 5 giugno (ordine 44/2026, art. 3). Una domanda presentata fuori termine è inammissibile (non c'è una riduzione per giorno: viene respinta) e le modifiche vanno presentate entro lo stesso termine. Non c'è una data ordinaria ricorrente: cambia ogni anno. Il termine iniziale del 2025 non è stato letto."
+   },
+   "basic": {
+    "en": "PD-01, basic income support for sustainability (BISS): the farmer must be active and carry out farming in Romania, farm at least 1 ha with the minimum parcels in the «minimum» rule, and, on permanent grassland, have a stocking rate of at least 0.3 UVM/ha (livestock unit) or an annual mowing or harvesting activity. In 2024 a GAEC 8 exception allowed arable fallow to be used for nitrogen-fixing or secondary crops. Unit amounts are in the «unit-amounts» rule. The rules on capping high payments and on convergence have not been read: the text of Order 106/2024 read is cut off at art. 34.",
+    "fr": "PD-01, soutien de base au revenu pour la durabilité (BISS) : l'agriculteur doit être actif et exercer l'activité agricole en Roumanie, exploiter au moins 1 ha avec les parcelles minimales de la règle «minimum» et, sur prairies permanentes, avoir une charge d'au moins 0,3 UGB/ha (UVM) ou une activité annuelle de fauche ou de récolte. En 2024, une dérogation de la BCAE 8 a permis d'utiliser la jachère sur terres arables pour des cultures fixatrices d'azote ou secondaires. Les montants unitaires figurent dans la règle «unit-amounts». Les règles sur le plafonnement des paiements élevés et sur la convergence n'ont pas été lues : le texte de l'ordre 106/2024 lu s'interrompt à l'art. 34.",
+    "it": "PD-01, sostegno di base al reddito per la sostenibilità (BISS): l'agricoltore deve essere attivo ed esercitare l'attività agricola in Romania, coltivare almeno 1 ha con le particelle minime della regola «minimum» e, sui pascoli permanenti, avere un carico di almeno 0,3 UBA/ha (UVM) o un'attività annuale di sfalcio o raccolta. Nel 2024 una deroga della BCAA 8 ha permesso di usare il maggese su seminativo per colture azotofissatrici o secondarie. Gli importi unitari sono nella regola «unit-amounts». Le regole sul tetto ai pagamenti elevati e sulla convergenza non sono state lette: il testo dell'ordine 106/2024 letto si interrompe all'art. 34."
+   },
+   "redistributive": {
+    "en": "PD-02, complementary redistributive income support (CRISS): the farmer must be able to receive PD-01 and farm between 1 and 50 ha; holdings above 50 ha are excluded (the penalty annex of Order 268/2025 confirms this). Artificial fragmentation after 2020 is excluded, including claiming on fragmented land to obtain the aid. If land is transferred between two farmers, the combined area is assessed. Inheritance, sale of land, the end of a lease initiated by the lessor and expropriation do not count as artificial fragmentation. How many hectares CRISS is paid on, and whether there are bands, has not been read.",
+    "fr": "PD-02, soutien redistributif complémentaire (CRISS) : il faut pouvoir percevoir le PD-01 et exploiter entre 1 et 50 ha ; les exploitations de plus de 50 ha sont exclues (l'annexe des sanctions de l'ordre 268/2025 le confirme). La fragmentation artificielle postérieure à 2020 est exclue, y compris demander l'aide sur des terres fragmentées pour l'obtenir. Si des terres sont transférées entre deux agriculteurs, la superficie combinée est évaluée. L'héritage, la vente de terres, la fin d'un bail à l'initiative du bailleur et l'expropriation ne comptent pas comme fragmentation artificielle. Le nombre d'hectares sur lesquels le CRISS est payé et l'existence de tranches n'ont pas été lus.",
+    "it": "PD-02, sostegno ridistributivo complementare (CRISS): occorre poter percepire il PD-01 e coltivare tra 1 e 50 ha; le aziende oltre 50 ha sono escluse (l'allegato delle sanzioni dell'ordine 268/2025 lo conferma). È esclusa la frammentazione artificiale successiva al 2020, compreso chiedere l'aiuto su terra frammentata per ottenerlo. Se la terra è trasferita tra due agricoltori, si valuta la superficie complessiva. L'eredità, la vendita di terreni, la fine di un affitto avviata dal locatore e l'esproprio non contano come frammentazione artificiale. Non è stato letto fino a quanti ettari si paga il CRISS né se esistono fasce."
+   },
+   "young-farmer": {
+    "en": "PD-03, complementary income support for young farmers: under Order 106/2024 (art. 33), aged 40 or under in the application year and setting up for the first time as head of the holding; the aid covers the first 50 eligible ha for 5 consecutive years from the first application. Training or competence is proved with a diploma, a training certificate, a competence certificate or at least 12 months of farm experience in the last 10 years; documents are due before 30 September. Order 44/2026 (art. 34(4)) mentions 60 eligible ha and 5 consecutive years for those who did not receive all their support in 2014-2020 or in the 2021-2022 transition. The penalty annex of Order 268/2025 speaks of an installation no more than 24 months before the application, which does not appear in the art. 33 read: the two versions have not been reconciled.",
+    "fr": "PD-03, soutien complémentaire au revenu pour les jeunes agriculteurs : selon l'ordre 106/2024 (art. 33), avoir 40 ans au plus l'année de la demande et s'installer pour la première fois comme chef d'exploitation ; l'aide couvre les 50 premiers ha éligibles pendant 5 années consécutives à partir de la première demande. La formation ou la compétence se prouve par un diplôme, un certificat de formation, un certificat de compétence ou au moins 12 mois d'expérience agricole au cours des 10 dernières années ; les documents sont à remettre avant le 30 septembre. L'ordre 44/2026 (art. 34, al. 4) mentionne 60 ha éligibles et 5 années consécutives pour ceux qui n'ont pas reçu tout leur soutien en 2014-2020 ou pendant la transition 2021-2022. L'annexe des sanctions de l'ordre 268/2025 parle d'une installation au plus 24 mois avant la demande, ce qui ne figure pas dans l'art. 33 lu : les deux versions n'ont pas été conciliées.",
+    "it": "PD-03, sostegno complementare al reddito per i giovani agricoltori: secondo l'ordine 106/2024 (art. 33), avere al massimo 40 anni nell'anno della domanda e insediarsi per la prima volta come capo azienda; l'aiuto copre i primi 50 ha ammissibili per 5 anni consecutivi dalla prima domanda. La formazione o competenza si prova con un diploma, un attestato di formazione, un certificato di competenza o almeno 12 mesi di esperienza agricola negli ultimi 10 anni; i documenti vanno presentati prima del 30 settembre. L'ordine 44/2026 (art. 34, comma 4) cita 60 ha ammissibili e 5 anni consecutivi per chi non ha ricevuto tutto il sostegno nel 2014-2020 o nella transizione 2021-2022. L'allegato delle sanzioni dell'ordine 268/2025 parla di un insediamento avvenuto al massimo 24 mesi prima della domanda, cosa che non compare nell'art. 33 letto: le due versioni non sono state conciliate."
+   },
+   "eco-arable": {
+    "en": "PD-04, environmental practices on arable land (eco-scheme): requires at least 10.01 ha of arable land (GD art. 15(5)). Under the penalty annex of Order 268/2025: 85 % soil cover from 15 June to 15 October; diversification with two crops between 10.01 and 30 ha and three above 30 ha, with the main crop at most 70 %; conservation tillage on at least 50 % of the cultivated area; legumes on at least 2 % of the arable land. Cuts range from 2.5 % to 40 % and nothing is paid if non-compliance exceeds 70 %. Only annexes 1 to 6 of Order 268/2025 were read (the text is cut off); the amounts are in the «unit-amounts» rule.",
+    "fr": "PD-04, pratiques bénéfiques pour l'environnement sur terres arables (éco-régime) : exige au moins 10,01 ha de terres arables (HG art. 15(5)). Selon l'annexe des sanctions de l'ordre 268/2025 : couverture du sol de 85 % du 15 juin au 15 octobre ; diversification avec deux cultures entre 10,01 et 30 ha et trois au-dessus de 30 ha, la culture principale ne dépassant pas 70 % ; travail du sol de conservation sur au moins 50 % de la surface cultivée ; légumineuses sur au moins 2 % des terres arables. Les réductions vont de 2,5 % à 40 % et rien n'est payé si le non-respect dépasse 70 %. Seules les annexes 1 à 6 de l'ordre 268/2025 ont été lues (le texte est tronqué) ; les montants figurent dans la règle «unit-amounts».",
+    "it": "PD-04, pratiche benefiche per l'ambiente sui seminativi (ecoregime): richiede almeno 10,01 ha di seminativo (HG art. 15(5)). Secondo l'allegato delle sanzioni dell'ordine 268/2025: copertura del suolo dell'85 % dal 15 giugno al 15 ottobre; diversificazione con due colture tra 10,01 e 30 ha e tre oltre 30 ha, con la coltura principale al massimo al 70 %; lavorazione conservativa su almeno il 50 % della superficie coltivata; leguminose su almeno il 2 % del seminativo. Le riduzioni vanno dal 2,5 % al 40 % e non si paga nulla se l'inadempienza supera il 70 %. Sono stati letti solo gli allegati da 1 a 6 dell'ordine 268/2025 (il testo è troncato); gli importi sono nella regola «unit-amounts»."
+   },
+   "eco-small": {
+    "en": "PD-05, environmentally friendly farming on small holdings (traditional households): a holding of 1 to 10 ha (Order 44/2026, art. 46) with parcels of at least 0.3 ha (0.1 ha for permanent crops). The GD (art. 15(6)) speaks of 0.3 to 1 UVM/ha; the penalty annex of Order 268/2025 requires a minimum of 0.3 UVM/ha for six months (April to September), tolerates up to 2 UVM/ha with cuts of 15, 25 or 35 % and pays nothing above 5 UVM/ha: the two versions have not been reconciled. Also: legumes on at least 10 % of the arable land and at least 2 trees per hectare, proved with geotagged photos before 30 November. PD-06 (grass between rows in orchards, vineyards, nurseries and hops) requires at least 1 ha of permanent crops with parcels of 0.1 ha; PD-05 and PD-06 cannot be combined, and PD-07, PD-08 and PD-27 (animal welfare) cannot be combined for the same animals. The PD-06 conditions in the penalty annex were not read (the text is cut off).",
+    "fr": "PD-05, agriculture respectueuse de l'environnement dans les petites exploitations (gospodării tradiționale) : une exploitation de 1 à 10 ha (ordre 44/2026, art. 46) avec des parcelles d'au moins 0,3 ha (0,1 ha pour les cultures permanentes). La HG (art. 15(6)) parle de 0,3 à 1 UVM/ha ; l'annexe des sanctions de l'ordre 268/2025 exige un minimum de 0,3 UVM/ha pendant six mois (avril à septembre), tolère jusqu'à 2 UVM/ha avec des réductions de 15, 25 ou 35 % et ne paie rien au-delà de 5 UVM/ha : les deux versions n'ont pas été conciliées. En outre : légumineuses sur au moins 10 % des terres arables et au moins 2 arbres par hectare, prouvés par des photos géolocalisées avant le 30 novembre. Le PD-06 (enherbement entre les rangs en vergers, vignobles, pépinières et houblonnières) exige au moins 1 ha de cultures permanentes avec des parcelles de 0,1 ha ; PD-05 et PD-06 ne se cumulent pas, et PD-07, PD-08 et PD-27 (bien-être animal) ne se cumulent pas pour les mêmes animaux. Les conditions du PD-06 dans l'annexe des sanctions n'ont pas été lues (le texte est tronqué).",
+    "it": "PD-05, agricoltura rispettosa dell'ambiente nelle piccole aziende (gospodării tradiționale): un'azienda da 1 a 10 ha (ordine 44/2026, art. 46) con particelle di almeno 0,3 ha (0,1 ha per le colture permanenti). La HG (art. 15(6)) parla di 0,3-1 UVM/ha; l'allegato delle sanzioni dell'ordine 268/2025 richiede un minimo di 0,3 UVM/ha per sei mesi (da aprile a settembre), tollera fino a 2 UVM/ha con riduzioni del 15, 25 o 35 % e non paga nulla oltre 5 UVM/ha: le due versioni non sono state conciliate. Inoltre: leguminose su almeno il 10 % del seminativo e almeno 2 alberi per ettaro, provati con foto geolocalizzate entro il 30 novembre. Il PD-06 (inerbimento tra le file in frutteti, vigneti, vivai e luppoleti) richiede almeno 1 ha di colture permanenti con particelle di 0,1 ha; PD-05 e PD-06 non si cumulano, e PD-07, PD-08 e PD-27 (benessere animale) non si cumulano per gli stessi animali. Le condizioni del PD-06 nell'allegato delle sanzioni non sono state lette (il testo è troncato)."
+   },
+   "coupled": {
+    "en": "PD-09 to PD-26 are coupled supports per crop or animal: soya, lucerne, pulses for industry, hemp, rice, seed potatoes, hops, sugar beet, field and greenhouse vegetables, fruit (plums, apples, cherries, sour cherries, apricots, peaches), forage plant seed, dairy cows, beef cattle, dairy buffaloes, sheep and goats, silkworms and silage maize (PD-26, added by GD 208/2024). Beneficiaries must be active farmers and, in the crop sector, also receive PD-01 (GD art. 16). They are paid each year per hectare or per head within the minimum and maximum of each fact sheet, and the amount may be adjusted for take-up (art. 36). The conditions of each are set by a ministerial order that has not been read; neither have the final amounts.",
+    "fr": "PD-09 à PD-26 sont des aides couplées par culture ou par animal : soja, luzerne, légumineuses à grain pour l'industrie, chanvre, riz, pommes de terre de semence, houblon, betterave sucrière, légumes de plein champ et sous serre, fruits (prunes, pommes, cerises, griottes, abricots, pêches), semences de plantes fourragères, vaches laitières, bovins viande, bufflonnes laitières, ovins et caprins, vers à soie et maïs d'ensilage (PD-26, ajouté par la HG 208/2024). Les bénéficiaires doivent être des agriculteurs actifs et, dans le secteur végétal, percevoir aussi le PD-01 (HG art. 16). Elles sont versées chaque année par hectare ou par tête dans le minimum et le maximum de chaque fiche, et le montant peut être ajusté selon la participation (art. 36). Les conditions de chacune sont fixées par un arrêté ministériel qui n'a pas été lu ; les montants définitifs non plus.",
+    "it": "PD-09 - PD-26 sono aiuti accoppiati per coltura o per animale: soia, erba medica, leguminose da granella per l'industria, canapa, riso, patata da seme, luppolo, barbabietola da zucchero, ortaggi di pieno campo e in serra, frutta (prugne, mele, ciliegie, amarene, albicocche, pesche), sementi di piante foraggere, vacche da latte, bovini da carne, bufale da latte, ovini e caprini, bachi da seta e mais da insilato (PD-26, aggiunto dalla HG 208/2024). I beneficiari devono essere agricoltori attivi e, nel settore vegetale, percepire anche il PD-01 (HG art. 16). Sono pagati ogni anno per ettaro o per capo entro il minimo e il massimo di ciascuna scheda, e l'importo può essere adeguato in base alla partecipazione (art. 36). Le condizioni di ciascuno sono fissate da un ordine ministeriale che non è stato letto; neppure gli importi definitivi."
+   },
+   "area-discrepancy": {
+    "en": "Over-declaration (per crop group), under Order 268/2025: differences of 0.1 ha or less are ignored, unless they exceed 20 % of the declared area; with up to 2 ha and under 3 % the determined area is paid; above 3 % (or 2 ha) and up to 20 %, the determined area minus 1.5 times the difference is paid, not exceeding 100 %; above 20 % that group is not paid. If the determined area exceeds the declared area there is no penalty and the declared area is paid. Under-declaration: 3 % tolerance; above it, cuts of 1 % (3 to 30 % undeclared), 2 % (30 to 50 %) and 3 % (over 50 %). If a selected holding refuses inspection it receives nothing that year. Documented force majeure cases are neither refused nor penalised (art. 3). Only annexes 1 to 6 were read; annexes 7 to 37 (including those on coupled support) were not.",
+    "fr": "Surdéclaration (par groupe de cultures), selon l'ordre 268/2025 : les écarts de 0,1 ha ou moins sont ignorés, sauf s'ils dépassent 20 % de la surface déclarée ; avec jusqu'à 2 ha et moins de 3 %, la surface déterminée est payée ; au-delà de 3 % (ou 2 ha) et jusqu'à 20 %, on paie la surface déterminée moins 1,5 fois l'écart, sans dépasser 100 % ; au-delà de 20 %, ce groupe n'est pas payé. Si la surface déterminée dépasse la surface déclarée, il n'y a pas de sanction et la surface déclarée est payée. Sous-déclaration : tolérance de 3 % ; au-delà, réductions de 1 % (3 à 30 % non déclarés), 2 % (30 à 50 %) et 3 % (plus de 50 %). Si une exploitation sélectionnée refuse le contrôle, elle ne perçoit rien cette année-là. Les cas de force majeure documentés ne sont ni rejetés ni sanctionnés (art. 3). Seules les annexes 1 à 6 ont été lues ; les annexes 7 à 37 (dont celles des aides couplées) ne l'ont pas été.",
+    "it": "Sovradichiarazione (per gruppo di colture), secondo l'ordine 268/2025: le differenze di 0,1 ha o meno si ignorano, salvo che superino il 20 % della superficie dichiarata; con fino a 2 ha e meno del 3 % si paga la superficie determinata; oltre il 3 % (o 2 ha) e fino al 20 % si paga la superficie determinata meno 1,5 volte la differenza, senza superare il 100 %; oltre il 20 % quel gruppo non è pagato. Se la superficie determinata supera quella dichiarata non c'è sanzione e si paga quella dichiarata. Sottodichiarazione: tolleranza del 3 %; oltre, riduzioni dell'1 % (dal 3 al 30 % non dichiarato), del 2 % (dal 30 al 50 %) e del 3 % (oltre il 50 %). Se un'azienda selezionata rifiuta il controllo non riceve nulla quell'anno. I casi di forza maggiore documentati non sono né respinti né sanzionati (art. 3). Sono stati letti solo gli allegati da 1 a 6; gli allegati da 7 a 37 (compresi quelli degli aiuti accoppiati) non sono stati letti."
+   },
+   "advances": {
+    "en": "Advances and balance (2023 campaign): the 2023 advance could only be paid from 16 October to 30 November 2023 (preamble of GEO 85/2023). Order 447/2023 sets a maximum advance of 70 % of the amounts in its annex 2 for PD-01, PD-02 and PD-03; after 1 December 2023 APIA pays the difference up to that amount; payment is in lei at the ECB rate published before 1 October 2023 and within the approved budget. GEO 85/2023 (art. 10) requires MADR to set the advance conditions by order each year, orders payment only to the bank account declared to APIA (art. 4) and provides that APIA withholds 3 % for the income-loss instrument (DR 32) (art. 11); to whom that withholding applies has not been read. For 2025 only a draft order was read (October 2025): a 70 % advance from 16 October and payment of the rest after 1 December.",
+    "fr": "Avances et solde (campagne 2023) : l'avance de 2023 ne pouvait être versée que du 16 octobre au 30 novembre 2023 (préambule de l'OUG 85/2023). L'ordre 447/2023 fixe une avance maximale de 70 % des montants de son annexe 2 pour PD-01, PD-02 et PD-03 ; après le 1er décembre 2023, l'APIA paie la différence jusqu'à ce montant ; le paiement se fait en lei au taux de la BCE publié avant le 1er octobre 2023 et dans la limite du budget approuvé. L'OUG 85/2023 (art. 10) oblige le MADR à fixer chaque année par arrêté les conditions de l'avance, impose de payer uniquement sur le compte bancaire déclaré à l'APIA (art. 4) et prévoit que l'APIA retient 3 % pour l'instrument de perte de revenu (DR 32) (art. 11) ; à qui s'applique cette retenue n'a pas été lu. Pour 2025, seul un projet d'ordre a été lu (octobre 2025) : avance de 70 % à partir du 16 octobre et paiement du reste après le 1er décembre.",
+    "it": "Anticipi e saldo (campagna 2023): l'anticipo del 2023 poteva essere pagato solo dal 16 ottobre al 30 novembre 2023 (preambolo dell'OUG 85/2023). L'ordine 447/2023 fissa un anticipo massimo del 70 % degli importi del suo allegato 2 per PD-01, PD-02 e PD-03; dopo il 1° dicembre 2023 l'APIA paga la differenza fino a tale importo; il pagamento avviene in lei al cambio BCE pubblicato prima del 1° ottobre 2023 e nei limiti del bilancio approvato. L'OUG 85/2023 (art. 10) obbliga il MADR a fissare ogni anno con ordine le condizioni dell'anticipo, impone di pagare solo sul conto bancario dichiarato all'APIA (art. 4) e prevede che l'APIA trattenga il 3 % per lo strumento di perdita di reddito (DR 32) (art. 11); a chi si applichi tale trattenuta non è stato letto. Per il 2025 è stato letto solo un progetto di ordine (ottobre 2025): anticipo del 70 % dal 16 ottobre e pagamento del resto dopo il 1° dicembre."
+   },
+   "controls": {
+    "en": "Checks and changes: once notice of an on-the-spot check has been received, no changes or withdrawals of the application can be made. In 2024 (Order 106/2024, art. 16) Sentinel monitoring allowed changes without increasing the area until 20 September; Order 44/2026 (art. 16) sets this at 30 September, unless the check notice has already been sent. APIA notifies non-conformity within 90 days of the end of the on-the-spot checks. Conditionality penalties are governed by Order 393/2023 and joint order 54/570/32/2023, cited by Order 268/2025 and Order 44/2026, but they have not been read.",
+    "fr": "Contrôles et modifications : une fois l'avis d'un contrôle sur place reçu, plus aucune modification ni retrait de la demande n'est possible. En 2024 (ordre 106/2024, art. 16), le suivi par Sentinel permettait des modifications sans augmentation de surface jusqu'au 20 septembre ; l'ordre 44/2026 (art. 16) le fixe au 30 septembre, sauf si l'avis de contrôle a déjà été envoyé. L'APIA notifie la non-conformité dans les 90 jours suivant la fin des contrôles sur place. Les sanctions de conditionnalité relèvent de l'ordre 393/2023 et de l'ordre conjoint 54/570/32/2023, cités par l'ordre 268/2025 et l'ordre 44/2026, mais ils n'ont pas été lus.",
+    "it": "Controlli e modifiche: una volta ricevuto l'avviso di un controllo in loco non si possono più fare modifiche né ritiri della domanda. Nel 2024 (ordine 106/2024, art. 16) il monitoraggio con Sentinel consentiva modifiche senza aumentare la superficie fino al 20 settembre; l'ordine 44/2026 (art. 16) lo fissa al 30 settembre, salvo che l'avviso di controllo sia già stato inviato. L'APIA notifica la non conformità entro 90 giorni dalla fine dei controlli in loco. Le sanzioni di condizionalità sono regolate dall'ordine 393/2023 e dall'ordine congiunto 54/570/32/2023, citati dall'ordine 268/2025 e dall'ordine 44/2026, ma non sono stati letti."
+   },
+   "unit-amounts": {
+    "en": "Unit amounts read. Adopted (2023 campaign, annex 2 of Order 447/2023, the basis for the 70 % advance and the payment of the rest): PD-01, €97.5715/ha; PD-02, €51.1365/ha; PD-03, €46.0000/ha; the order also reallocates €27,331,982.64 to PD-01 and €2,747,960.42 to PD-03 from the eco-schemes PD-05 to PD-08. It has not been checked whether the final 2023 amount was different. For 2025 there are only drafts with no number or date, not adopted when read: the February 2026 one proposes PD-02, €53.5212/ha, PD-03, €46.6676/ha and PD-28, €32.9366/ha; the October 2025 one (advance references) gives PD-01, 89.34; PD-02, 46.87; PD-03, 43.20; PD-04, 56.28; PD-05 and PD-06, €85.00/ha; and per head, dairy cow €296.12, beef cattle €190.82, buffalo €160.00 and sheep-goats €12.54. No 2024 or 2026 amounts have been read.",
+    "fr": "Montants unitaires lus. Adoptés (campagne 2023, annexe 2 de l'ordre 447/2023, base de l'avance de 70 % et du paiement du solde) : PD-01, 97,5715 €/ha ; PD-02, 51,1365 €/ha ; PD-03, 46,0000 €/ha ; l'ordre réaffecte aussi 27 331 982,64 € au PD-01 et 2 747 960,42 € au PD-03 depuis les éco-régimes PD-05 à PD-08. On n'a pas vérifié si le montant définitif de 2023 était différent. Pour 2025, il n'y a que des projets sans numéro ni date, non adoptés au moment de la lecture : celui de février 2026 propose PD-02, 53,5212 €/ha, PD-03, 46,6676 €/ha et PD-28, 32,9366 €/ha ; celui d'octobre 2025 (références d'avance) donne PD-01, 89,34 ; PD-02, 46,87 ; PD-03, 43,20 ; PD-04, 56,28 ; PD-05 et PD-06, 85,00 €/ha ; et par tête, vache laitière 296,12, bovin viande 190,82, bufflonne 160,00 et ovin-caprin 12,54 €. Aucun montant de 2024 ni de 2026 n'a été lu.",
+    "it": "Importi unitari letti. Adottati (campagna 2023, allegato 2 dell'ordine 447/2023, base dell'anticipo del 70 % e del pagamento del resto): PD-01, 97,5715 €/ha; PD-02, 51,1365 €/ha; PD-03, 46,0000 €/ha; l'ordine riassegna inoltre 27.331.982,64 € al PD-01 e 2.747.960,42 € al PD-03 dagli ecoregimi PD-05-PD-08. Non è stato verificato se l'importo definitivo del 2023 fosse diverso. Per il 2025 ci sono solo progetti senza numero né data, non adottati al momento della lettura: quello di febbraio 2026 propone PD-02, 53,5212 €/ha, PD-03, 46,6676 €/ha e PD-28, 32,9366 €/ha; quello di ottobre 2025 (riferimenti per l'anticipo) indica PD-01, 89,34; PD-02, 46,87; PD-03, 43,20; PD-04, 56,28; PD-05 e PD-06, 85,00 €/ha; e per capo, vacca da latte 296,12, bovino da carne 190,82, bufala 160,00 e ovicaprino 12,54 €. Non sono stati letti importi del 2024 né del 2026."
+   }
+  },
+  "calendar": {
+   "advance-open": {
+    "en": "From 16 October the advance on direct payments may be paid, up to 70 % (in 2023 only until 30 November).",
+    "fr": "À partir du 16 octobre, l'avance sur les paiements directs peut être versée, jusqu'à 70 % (en 2023 seulement jusqu'au 30 novembre).",
+    "it": "Dal 16 ottobre può essere pagato l'anticipo sui pagamenti diretti, fino al 70 % (nel 2023 solo fino al 30 novembre)."
+   },
+   "payment-open": {
+    "en": "The ordinary payment period for direct payments starts (1 December); APIA then pays the difference between the set amount and the advances.",
+    "fr": "La période ordinaire de paiement des paiements directs s'ouvre (1er décembre) ; l'APIA paie alors la différence entre le montant fixé et les avances.",
+    "it": "Inizia il periodo ordinario di pagamento dei pagamenti diretti (1° dicembre); l'APIA paga allora la differenza tra l'importo fissato e gli anticipi."
+   },
+   "payment-close": {
+    "en": "The payment period for the direct payments of the previous campaign ends (30 June).",
+    "fr": "La période de paiement des paiements directs de la campagne précédente se termine (30 juin).",
+    "it": "Termina il periodo di pagamento dei pagamenti diretti della campagna precedente (30 giugno)."
+   }
+  },
+  "overrides": {}
+ }
+}
