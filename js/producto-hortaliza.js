@@ -210,7 +210,7 @@
               (provis ? '<p class="di-field-hint" style="margin:6px 0 0">' + esc(t.provNote.replace('{y}', cy)) + '</p>' : '') + '</section>';
           }
         }
-        h += '<section class="di-card ps-rm vg-card"><p style="margin:0 0 6px"><a href="precios.html?tab=hortalizas">' + esc(t.allTxt) + '</a> · <a href="catalogo.html?q=' + encodeURIComponent(P.name.es) + '">' + esc(t.cat) + '</a></p>' +
+        h += '<section class="di-card ps-rm vg-card"><p style="margin:0 0 6px"><a href="precios.html?tab=hortalizas&region=eu">' + esc(t.allTxt) + '</a> · <a href="catalogo.html?q=' + encodeURIComponent(P.name.es) + '">' + esc(t.cat) + '</a></p>' +
           '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' <a href="https://agridata.ec.europa.eu/" target="_blank" rel="noopener noreferrer">' + esc(t.sEU) + '</a>' + (isES && P.perc ? '; <a href="https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido" target="_blank" rel="noopener noreferrer">' + esc(t.sMAPA) + '</a>' : '') + (isES && P.crops ? '; <a href="https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/" target="_blank" rel="noopener noreferrer">' + esc(t.sCrop) + '</a>' : '') + '</p></section>';
         el.innerHTML = h;
         var h1 = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h1) h1.textContent = (P.emoji ? P.emoji + ' ' : '') + nm; if (sb) sb.textContent = isES ? t.sub : (t.subX || t.sub).replace('{c}', cN); document.title = nm + ' | Dehesa Index';
