@@ -40,12 +40,257 @@ XLSX Population Growth Assumptions to 2035.xlsx ['Population']
     ['United States and Canada', None, None, 377.203414, None, 0.4935922920703888, 0.4839628338813782, 0.4706084132194519, 0.4544037878513336, 0.43731024861335754, 0.4198472499847412, 0.8486142694950104, 0.5572713986039162, 0.39274840652942655]
     ['Canada', None, None, 39.187155, None, 0.715817391872406, 0.7264992594718933, 0.7103475332260132, 0.6705650687217712, 0.6306594014167786, 0.591127336025238, 1.0847302556037903, 0.829448127746582, 0.5559757083654404]
 CSV Projections2026.csv 2929 filas
-    ﻿year_type,year,value,unit,attribute,commodity,commodity_type,year_of_projection
+    year_type,year,value,unit,attribute,commodity,commodity_type,year_of_projection
     Market year,2024/25,78,Million bushels,Beginning stocks,Barley,Crops,2026
     Market year,2025/26,70,Million bushels,Beginning stocks,Barley,Crops,2026
     Market year,2026/27,66,Million bushels,Beginning stocks,Barley,Crops,2026
     Market year,2027/28,69,Million bushels,Beginning stocks,Barley,Crops,2026
     Market year,2028/29,68,Million bushels,Beginning stocks,Barley,Crops,2026
+CATALOGO 244 combinaciones; años ['2024', '2024/25', '2025'] ['2034/35', '2035', '2035/36'] proyeccion ['2026']
+CAT| Crops | Barley | Beginning stocks | Million bushels | Market year 12
+CAT| Crops | Barley | Domestic use | Million bushels | Market year 12
+CAT| Crops | Barley | Ending stocks | Million bushels | Market year 12
+CAT| Crops | Barley | Exports | Million bushels | Market year 12
+CAT| Crops | Barley | Farm price | Dollars per bushel | Market year 12
+CAT| Crops | Barley | Feed & residual | Million bushels | Market year 12
+CAT| Crops | Barley | Food, seed, & industrial | Million bushels | Market year 12
+CAT| Crops | Barley | Harvested acres | Million acres | Market year 12
+CAT| Crops | Barley | Imports | Million bushels | Market year 12
+CAT| Crops | Barley | Loan rate | Dollars per bushel | Market year 12
+CAT| Crops | Barley | Planted acres | Million acres | Market year 12
+CAT| Crops | Barley | Production | Million bushels | Market year 12
+CAT| Crops | Barley | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Barley | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Barley | Supply total | Million bushels | Market year 12
+CAT| Crops | Barley | Total use/disposition | Million bushels | Market year 12
+CAT| Crops | Barley | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Barley | Variable cost of production (per bushel) | Dollars | Market year 12
+CAT| Crops | Barley | Yield/harvested acre | Bushels per acre | Market year 12
+CAT| Crops | Corn | Beginning stocks | Million bushels | Market year 12
+CAT| Crops | Corn | Domestic use | Million bushels | Market year 12
+CAT| Crops | Corn | Ending stocks | Million bushels | Market year 12
+CAT| Crops | Corn | Ethanol for fuel | Million bushels | Market year 12
+CAT| Crops | Corn | Exports | Million bushels | Market year 12
+CAT| Crops | Corn | Farm price | Dollars per bushel | Market year 12
+CAT| Crops | Corn | Feed & residual | Million bushels | Market year 12
+CAT| Crops | Corn | Food, seed, & industrial | Million bushels | Market year 12
+CAT| Crops | Corn | Harvested acres | Million acres | Market year 12
+CAT| Crops | Corn | Imports | Million bushels | Market year 12
+CAT| Crops | Corn | Loan rate | Dollars per bushel | Market year 12
+CAT| Crops | Corn | Planted acres | Million acres | Market year 12
+CAT| Crops | Corn | Production | Million bushels | Market year 12
+CAT| Crops | Corn | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Corn | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Corn | Supply total | Million bushels | Market year 12
+CAT| Crops | Corn | Total use/disposition | Million bushels | Market year 12
+CAT| Crops | Corn | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Corn | Variable cost of production (per bushel) | Dollars | Market year 12
+CAT| Crops | Corn | Yield/harvested acre | Bushels per acre | Market year 12
+CAT| Crops | Oats | Beginning stocks | Million bushels | Market year 12
+CAT| Crops | Oats | Domestic use | Million bushels | Market year 12
+CAT| Crops | Oats | Ending stocks | Million bushels | Market year 12
+CAT| Crops | Oats | Exports | Million bushels | Market year 12
+CAT| Crops | Oats | Farm price | Dollars per bushel | Market year 12
+CAT| Crops | Oats | Feed & residual | Million bushels | Market year 12
+CAT| Crops | Oats | Food, seed, & industrial | Million bushels | Market year 12
+CAT| Crops | Oats | Harvested acres | Million acres | Market year 12
+CAT| Crops | Oats | Imports | Million bushels | Market year 12
+CAT| Crops | Oats | Loan rate | Dollars per bushel | Market year 12
+CAT| Crops | Oats | Planted acres | Million acres | Market year 12
+CAT| Crops | Oats | Production | Million bushels | Market year 12
+CAT| Crops | Oats | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Oats | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Oats | Supply total | Million bushels | Market year 12
+CAT| Crops | Oats | Total use/disposition | Million bushels | Market year 12
+CAT| Crops | Oats | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Oats | Variable cost of production (per bushel) | Dollars | Market year 12
+CAT| Crops | Oats | Yield/harvested acre | Bushels per acre | Market year 12
+CAT| Crops | Rice | Beginning stocks | Million cwt. | Market year 12
+CAT| Crops | Rice | Domestic use | Million cwt. | Market year 12
+CAT| Crops | Rice | Ending stocks | Million cwt. | Market year 12
+CAT| Crops | Rice | Exports | Million cwt. | Market year 12
+CAT| Crops | Rice | Farm price | Dollars per cwt. | Market year 12
+CAT| Crops | Rice | Harvested acres | Thousand acres | Market year 12
+CAT| Crops | Rice | Imports | Million cwt. | Market year 12
+CAT| Crops | Rice | Loan rate | Dollars per cwt. | Market year 12
+CAT| Crops | Rice | Milling rate, percent | Million cwt. | Market year 12
+CAT| Crops | Rice | Planted acres | Thousand acres | Market year 12
+CAT| Crops | Rice | Production | Million cwt. | Market year 12
+CAT| Crops | Rice | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Rice | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Rice | Supply total | Million cwt. | Market year 12
+CAT| Crops | Rice | Total use/disposition | Million cwt. | Market year 12
+CAT| Crops | Rice | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Rice | Variable cost of production (per cwt.) | Dollars | Market year 12
+CAT| Crops | Rice | Yield/harvested acre | Pounds per acre | Market year 12
+CAT| Crops | Sorghum | Beginning stocks | Million bushels | Market year 12
+CAT| Crops | Sorghum | Domestic use | Million bushels | Market year 12
+CAT| Crops | Sorghum | Ending stocks | Million bushels | Market year 12
+CAT| Crops | Sorghum | Exports | Million bushels | Market year 12
+CAT| Crops | Sorghum | Farm price | Dollars per bushel | Market year 12
+CAT| Crops | Sorghum | Feed & residual | Million bushels | Market year 12
+CAT| Crops | Sorghum | Food, seed, & industrial | Million bushels | Market year 12
+CAT| Crops | Sorghum | Harvested acres | Million acres | Market year 12
+CAT| Crops | Sorghum | Imports | Million bushels | Market year 12
+CAT| Crops | Sorghum | Loan rate | Dollars per bushel | Market year 12
+CAT| Crops | Sorghum | Planted acres | Million acres | Market year 12
+CAT| Crops | Sorghum | Production | Million bushels | Market year 12
+CAT| Crops | Sorghum | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Sorghum | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Sorghum | Supply total | Million bushels | Market year 12
+CAT| Crops | Sorghum | Total use/disposition | Million bushels | Market year 12
+CAT| Crops | Sorghum | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Sorghum | Variable cost of production (per bushel) | Dollars | Market year 12
+CAT| Crops | Sorghum | Yield/harvested acre | Bushels per acre | Market year 12
+CAT| Crops | Soybean meal | Beginning stocks | Thousand short tons | Market year 12
+CAT| Crops | Soybean meal | Crushing yields | Pounds per bushel | Market year 12
+CAT| Crops | Soybean meal | Domestic use | Thousand short tons | Market year 12
+CAT| Crops | Soybean meal | Ending stocks | Thousand short tons | Market year 12
+CAT| Crops | Soybean meal | Exports | Thousand short tons | Market year 12
+CAT| Crops | Soybean meal | Imports | Thousand short tons | Market year 12
+CAT| Crops | Soybean meal | Price | Dollars per short ton | Market year 12
+CAT| Crops | Soybean meal | Production | Thousand short tons | Market year 12
+CAT| Crops | Soybean meal | Supply total | Thousand short tons | Market year 12
+CAT| Crops | Soybean meal | Total demand | Thousand short tons | Market year 12
+CAT| Crops | Soybean oil | Beginning stocks | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Biofuel | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Crushing yields | Pounds per bushel | Market year 12
+CAT| Crops | Soybean oil | Domestic use | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Ending stocks | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Exports | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Imports | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Price | Dollars per pound | Market year 12
+CAT| Crops | Soybean oil | Production | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Supply total | Million pounds | Market year 12
+CAT| Crops | Soybean oil | Total demand | Million pounds | Market year 12
+CAT| Crops | Soybeans | Beginning stocks | Million bushels | Market year 12
+CAT| Crops | Soybeans | Crush margin | Dollars per bushel | Market year 12
+CAT| Crops | Soybeans | Crush | Million bushels | Market year 12
+CAT| Crops | Soybeans | Ending stocks | Million bushels | Market year 12
+CAT| Crops | Soybeans | Exports | Million bushels | Market year 12
+CAT| Crops | Soybeans | Farm price | Dollars per bushel | Market year 12
+CAT| Crops | Soybeans | Harvested acres | Million acres | Market year 12
+CAT| Crops | Soybeans | Imports | Million bushels | Market year 12
+CAT| Crops | Soybeans | Loan rate | Dollars per bushel | Market year 12
+CAT| Crops | Soybeans | Planted acres | Million acres | Market year 12
+CAT| Crops | Soybeans | Production | Million bushels | Market year 12
+CAT| Crops | Soybeans | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Soybeans | Seed & residual | Million bushels | Market year 12
+CAT| Crops | Soybeans | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Soybeans | Supply total | Million bushels | Market year 12
+CAT| Crops | Soybeans | Total use/disposition | Million bushels | Market year 12
+CAT| Crops | Soybeans | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Soybeans | Variable cost of production (per bushel) | Dollars | Market year 12
+CAT| Crops | Soybeans | Yield/harvested acre | Bushels per acre | Market year 12
+CAT| Crops | Upland Cotton | Beginning stocks | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Domestic use | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Ending stocks | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Exports | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Farm price | Dollars per pound | Market year 12
+CAT| Crops | Upland Cotton | Harvested acres | Million acres | Market year 12
+CAT| Crops | Upland Cotton | Imports | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Loan rate | Dollars per pound | Market year 12
+CAT| Crops | Upland Cotton | Planted acres | Million acres | Market year 12
+CAT| Crops | Upland Cotton | Production | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Upland Cotton | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Upland Cotton | Supply total | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Total use/disposition | Thousand bales | Market year 12
+CAT| Crops | Upland Cotton | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Upland Cotton | Variable cost of production (per pound) | Dollars | Market year 12
+CAT| Crops | Upland Cotton | Yield/harvested acre | Pounds per acre | Market year 12
+CAT| Crops | Wheat | Beginning stocks | Million bushels | Market year 12
+CAT| Crops | Wheat | Domestic use | Million bushels | Market year 12
+CAT| Crops | Wheat | Ending stocks | Million bushels | Market year 12
+CAT| Crops | Wheat | Exports | Million bushels | Market year 12
+CAT| Crops | Wheat | Farm price | Dollars per bushel | Market year 12
+CAT| Crops | Wheat | Feed & residual | Million bushels | Market year 12
+CAT| Crops | Wheat | Food | Million bushels | Market year 12
+CAT| Crops | Wheat | Harvested acres | Million acres | Market year 12
+CAT| Crops | Wheat | Imports | Million bushels | Market year 12
+CAT| Crops | Wheat | Loan rate | Dollars per bushel | Market year 12
+CAT| Crops | Wheat | Planted acres | Million acres | Market year 12
+CAT| Crops | Wheat | Production | Million bushels | Market year 12
+CAT| Crops | Wheat | Returns over variable costs (net returns) | Dollars per acre | Market year 12
+CAT| Crops | Wheat | Seed | Million bushels | Market year 12
+CAT| Crops | Wheat | Stocks/use ratio, percent | Percent | Market year 12
+CAT| Crops | Wheat | Supply total | Million bushels | Market year 12
+CAT| Crops | Wheat | Total use/disposition | Million bushels | Market year 12
+CAT| Crops | Wheat | Variable cost of production (per acre) | Dollars | Market year 12
+CAT| Crops | Wheat | Variable cost of production (per bushel) | Dollars | Market year 12
+CAT| Crops | Wheat | Yield/harvested acre | Bushels per acre | Market year 12
+CAT| Livestock/Dairy | Beef | Beef cattle, farm price | Dollars per cwt. | Calendar year 12
+CAT| Livestock/Dairy | Beef | Beef cow inventory | Thousand head | Calendar year 12
+CAT| Livestock/Dairy | Beef | Beginning stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Calves, farm price | Dollars per cwt. | Calendar year 12
+CAT| Livestock/Dairy | Beef | Cattle inventory | Thousand head | Calendar year 12
+CAT| Livestock/Dairy | Beef | Commercial production | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Ending stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Exports | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Feeder steers, Okla. City price | Dollars per cwt. | Calendar year 12
+CAT| Livestock/Dairy | Beef | Imports | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Production, farm | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Steers, 5-area, all grades price | Dollars per cwt. | Calendar year 12
+CAT| Livestock/Dairy | Beef | Supply total | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Total cow inventory | Thousand head | Calendar year 12
+CAT| Livestock/Dairy | Beef | Total disappearance | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Beef | Total production | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Beginning stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Broilers, farm price | Cents per pound | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Disappearance | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Ending stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Exports | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Federally inspected slaughter | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Chicken | National composite price | Cents per pound | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Production | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Chicken | Supply total | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Dairy | Commercial use: Milkfat basis | Billion pounds | Calendar year 12
+CAT| Livestock/Dairy | Dairy | Commercial use: Skim solids | Billion pounds | Calendar year 12
+CAT| Livestock/Dairy | Dairy | Milk per cow | Pounds | Calendar year 12
+CAT| Livestock/Dairy | Dairy | Milk production | Billion pounds | Calendar year 12
+CAT| Livestock/Dairy | Dairy | Number of cows | Thousand | Calendar year 12
+CAT| Livestock/Dairy | Dairy | Prices: All milk | Dollars per cwt. | Calendar year 12
+CAT| Livestock/Dairy | Egg | Beginning stocks | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Disappearance | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Eggs, farm price | Cents per dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Ending stocks | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Exports | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Hatching use | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Imports | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | New York, Grade A large price | Cents per dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Per capita | Number per capita | Calendar year 12
+CAT| Livestock/Dairy | Egg | Production | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Egg | Supply total | Million dozen | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Broilers | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Lamb & mutton | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Other chicken | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Red meat & poultry | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Total beef | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Total pork | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Total poultry | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Total red meat | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Total veal | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Per capita meat consumption, retail weight | Retail weight: Turkeys | Pounds per capita | Calendar year 12
+CAT| Livestock/Dairy | Pork | Beginning stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | Commercial production | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | Ending stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | Exports | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | Hog, inventory Dec.1, previous year | Thousand head | Calendar year 12
+CAT| Livestock/Dairy | Pork | Hogs, farm price | Dollars per cwt. | Calendar year 12
+CAT| Livestock/Dairy | Pork | Imports | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | National base, live eqv price | Dollars per cwt. | Calendar year 12
+CAT| Livestock/Dairy | Pork | Production, farm | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | Supply total | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | Total disappearance | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Pork | Total production | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Beginning stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Disappearance | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Ending stocks | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Exports | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Hen turkeys, National price | Cents per pound | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Production | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Supply total | Million pounds | Calendar year 12
+CAT| Livestock/Dairy | Turkey | Turkey, farm price | Cents per pound | Calendar year 12
 CSV README File2025-26.txt 104 filas
     Agricultural Baseline Database
     Machine readable comma-separated value (.csv) data file notes.
@@ -53,6 +298,110 @@ CSV README File2025-26.txt 104 filas
     
     Economic Research Service, United States Department of Agriculture
     
+README| Agricultural Baseline Database
+README| Machine readable comma-separated value (.csv) data file notes.
+README| Updated 2/13/26   
+README| 
+README| Economic Research Service, United States Department of Agriculture
+README| 
+README| 
+README| Suggested citation: U.S. Department of Agriculture, Office of the Chief Economist, World Agricultural 
+README| 	Outlook Board.  Data prepared by the Interagency Agricultural Projections Committee.    
+README| 
+README| *************************************************************************
+README| Questions concerning the development, use, or interpretation of these
+README| data should be addressed to:
+README| 
+README|  Erik Dohlman 
+README|  USDA/ERS/MTED 
+README|           
+README| 
+README| *************************************************************************
+README| 
+README| This file is available on December 5, 2025. 
+README| 
+README| USDA Agricultural Projection tables contain data covering 1 year of 
+README| history (2024), the current year, and projections for the next 10 years through 2035 of 
+README| the supply and use of selected U.S. crop and animal commodities.  
+README| 
+README|  - Variable names are contained in the first row: 
+README| 	Attribute......(Supply and use category variable name) (String)
+README| 	Commodity......(Crop or Livestock/Dairy commodity) (String) 
+README| 	Commoditytype..(One of two categories: Crop or 
+README| 			Livestock/Dairy) (String)
+README| 	Units..........(Measurement unit) (String)
+README| 	Year type......(Either marketing year or calendar year) (String)
+README| 	Year...........(Year of measurement within the current projection 
+README| 			year) (String)
+README| 	Value..........(Data value) (Double) 
+README| 
+README|  - Marketing years differ by commodity.  
+README| 	Corn....................September 1 
+README| 	Sorghum.................September 1
+README| 	Barley..................June 1
+README| 	Oats....................June 1
+README| 	Wheat...................June 1
+README| 	Soybeans................September 1
+README| 	Soybean oil.............October 1
+README| 	Soybean meal............October 1
+README| 	Rice....................August 1
+README| 	Rice, California........October 1
+README| 	Upland cotton...........August 1
+README| 
+README|  - Note that totals in the tables may not add due to rounding. Some of the attribute values in this .csv file are also rounded
+README| 	from the values available in the source .xlsx files. 
+README| 
+README|  - Biofuel in the Soybean oil Supply and Use (S&U) table reflects biofuel-as reported by the U.S. Department of Energy, Energy
+README| 	Information Administration.
+README| 
+README|  - Net returns for upland cotton include revenue from cottonseed.
+README| 
+README|  - Cwt = hundredweight (100 pounds).
+README| 
+README|  - The broiler-feed price based on 58 percent corn price and 42 percent 
+README| 	soybean price-as used by USDA, National Agricultural Statistics
+README| 	Service.
+README| 
+README|  - The turkey feed price is based on 51 percent corn price, 28 percent soybean
+README| 	price, and 21 percent wheat price-as used by USDA, National
+README| 	Agricultural Statistics Service.
+README| 
+README|  - The egg feed price based on 75 percent corn price and 25 percent soybean
+README| 	price-as used by USDA, National Agricultural Statistics Service.
+README| 
+README| 
+README| *************************************************************************
+README| 
+README| Sources:  This data combines information from USDA's National 
+README| Agricultural Statistics Service, USDA's World Agricultural Supply and
+README| Demand Estimates (WASDE) reports, and projections made by USDA's
+README| Interagency Agricultural Projections Committee.
+README| 
+README| *************************************************************************
+README| 
+README| The .csv file contains information from the following tables that are found in the
+README| USDA Agricultural Projections to 2035/36 Report:   
+README| 
+README| 
+README| Table 6.	U.S. corn long-term projections
+README| Table 7.	U.S. sorghum long-term projections
+README| Table 8.	U.S. barley long-term projections
+README| Table 9.	U.S. oats long-term projections
+README| Table 10.	U.S. wheat long-term projections
+README| Table 11.	U.S. soybeans and products, long-term projections
+README| Table 12.	U.S. rice long-term projections, total rice, rough basis
+README| Table 13.	U.S. rice long-term projections, long-grain rice, rough basis
+README| Table 14.	U.S. rice long-term projections, medium- and short-grain rice, rough basis
+README| Table 15.	U.S. upland cotton long-term projections
+README| Table 18.	Per capita meat disappearance, retail weight
+README| Table 19.	Beef long-term projections
+README| Table 20.	Pork long-term projections
+README| Table 21.	Young chicken long-term projections
+README| Table 22.	Turkey long-term projections
+README| Table 23.	Egg long-term projections
+README| Table 24.	Dairy long-term projections
+README| 
+README| 
 XLSX Real Exchange Rate Growth Rates Assumptions to 2035.xlsx ['Exchange rate']
   hoja Exchange rate
     ['Table 3: Real exchange rate growth rates assumptions to 2035', None, None, None, None, None, None, None, None, None, None, None, None, None]
