@@ -190,6 +190,9 @@
   }
   var ISO = { 'United States': 'US', 'European Union': 'EU', 'Russia': 'RU', 'Canada': 'CA', 'Australia': 'AU', 'Argentina': 'AR', 'Ukraine': 'UA', 'Kazakhstan': 'KZ', 'Brazil': 'BR', 'China': 'CN', 'India': 'IN', 'Indonesia': 'ID', 'Egypt': 'EG', 'Algeria': 'DZ', 'Philippines': 'PH', 'Bangladesh': 'BD', 'Nigeria': 'NG', 'Mexico': 'MX', 'Japan': 'JP', 'Turkey': 'TR', 'Vietnam': 'VN', 'Thailand': 'TH', 'Pakistan': 'PK', 'Saudi Arabia': 'SA', 'South Korea': 'KR', 'Korea, South': 'KR', 'Iran': 'IR', 'Iraq': 'IQ', 'Morocco': 'MA', 'Malaysia': 'MY', 'Burma': 'MM', 'Cambodia': 'KH', 'Uruguay': 'UY', 'Paraguay': 'PY', 'New Zealand': 'NZ', 'United Kingdom': 'GB', 'Tunisia': 'TN', 'Peru': 'PE', 'Colombia': 'CO', 'Chile': 'CL', 'Taiwan': 'TW', 'Israel': 'IL', 'Switzerland': 'CH', 'Serbia': 'RS', 'Moldova': 'MD', 'Belarus': 'BY', 'South Africa': 'ZA', 'Senegal': 'SN', 'Ghana': 'GH', 'Cuba': 'CU', 'Venezuela': 'VE', 'Zimbabwe': 'ZW', 'Jordan': 'JO', 'Yemen': 'YE', 'Kenya': 'KE', 'Sri Lanka': 'LK', 'Nepal': 'NP', 'Philippines ': 'PH' };
   function cname(n) { var P = window.DehesaPSD; return P && P.countryName ? P.countryName(ISO[n] || n, n) : n; }
+  /* emoji decorativo (aria-hidden) como en la página de precios */
+  var EMO = { trigo: '🌾', maiz: '🌽', cebada: '🌾', avena: '🌾', arroz: '🍚', soja: '🫘', colza: '🌼', leche: '🥛', vacuno: '🐄', cerdo: '🐖', huevos: '🥚', urea: '🧪', fertilizantes: '🌱', diesel: '⛽', oliva: '🫒', pollo: '🐔', azucar: '🍬' };
+  function emo(pid) { return EMO[pid] ? '<span class="di-emoji" aria-hidden="true">' + EMO[pid] + '</span> ' : ''; }
   function nm(pid) { var m = META && META.products[pid]; if (m) return m.name[LANGS[li()]] || m.name.es; var x = NAMEX[pid]; return x ? x[li()] : pid; }
 
   /* ---------- unidades ---------- */
@@ -696,7 +699,7 @@
   function tabsHtml() {
     var groups = {}, order = [];
     Object.keys(META.products).forEach(function (k) { var g = META.products[k].group || 'otros'; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(k); });
-    return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + esc(nm(k)) + '</a>'; }).join('') + '</nav>' +
+    return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + emo(k) + esc(nm(k)) + '</a>'; }).join('') + '</nav>' +
       // Movil: un selector en vez de una segunda fila desplazable (auditoria 8-oct-2026)
       '<label class="pt-tabs-sel"><span>' + esc(({ es: 'Producto', en: 'Product', fr: 'Produit', it: 'Prodotto' })[['es', 'en', 'fr', 'it'][li()]]) + '</span> <select onchange="if(this.value)location.href=\'producto.html?p=\'+this.value">' + Object.keys(META.products).map(function (k) { return '<option value="' + k + '"' + (k === ST.p ? ' selected' : '') + '>' + esc(nm(k)) + '</option>'; }).join('') + '</select></label>';
   }
@@ -723,7 +726,7 @@
   }
   function shell(el) {
     var gname = (TX.group[li()] || TX.group[0])[CTX.meta.group] || CTX.meta.group;
-    document.getElementById('pg-h1').textContent = t('title') + ': ' + nm(CTX.pid);
+    document.getElementById('pg-h1').innerHTML = emo(CTX.pid) + esc(t('title') + ': ' + nm(CTX.pid));
     document.getElementById('pg-sub').textContent = gname + ' · ' + t('sub');
     document.title = t('title') + ': ' + nm(CTX.pid) + ' | Dehesa Index';
     CUR = blocks();

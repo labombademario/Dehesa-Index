@@ -457,9 +457,10 @@
     return sec(x.rel, x.relHint, '<div style="display:flex;gap:8px;flex-wrap:wrap">' + chips.join('') + '</div>');
   }
 
+  var EMO = { trigo: '🌾', maiz: '🌽', cebada: '🌾', arroz: '🍚', soja: '🫘', colza: '🌼', leche: '🥛', vacuno: '🐄', cerdo: '🐖', huevos: '🥚', oliva: '🫒', pollo: '🐔', azucar: '🍬' };
   function tabs(t) {
     var nm = names();
-    return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px">' + ORDER.map(function (k) { return '<a class="di-link-btn" href="producto.html?p=' + k + '" data-p="' + k + '" style="' + (k === SEL.p ? 'font-weight:700;border-color:var(--gold,#a9491f);' : '') + '">' + esc(nm[k] || k) + '</a>'; }).join('') + '</div>';
+    return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px">' + ORDER.map(function (k) { return '<a class="di-link-btn" href="producto.html?p=' + k + '" data-p="' + k + '" style="' + (k === SEL.p ? 'font-weight:700;border-color:var(--gold,#a9491f);' : '') + '">' + (EMO[k] ? '<span class="di-emoji" aria-hidden="true">' + EMO[k] + '</span> ' : '') + esc(nm[k] || k) + '</a>'; }).join('') + '</div>';
   }
 
   // canonical y og:url propios por producto (la pagina es una sola con ?p=): cada URL del sitemap se declara a si misma
