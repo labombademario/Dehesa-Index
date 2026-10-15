@@ -345,6 +345,14 @@
   }
   /* Francia e Italia: precio/valor de la tierra agrícola por departamento/región (js/land-fr-it.js; Italia solo se dibuja si su fichero existe) */
   function landUp() {
+    if (ST.c === 'ES') {   /* España: el bloque de insumos.html (MAPA, comunidades y provincias, con mapa) tambien en la ficha del pais */
+      var trE = document.getElementById('pp-trade'); if (!trE || !trE.parentNode) return;
+      var afE = document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || trE;
+      var elE = document.createElement('div'); elE.id = 'pp-land-es'; afE.parentNode.insertBefore(elE, afE.nextSibling);
+      var goE = function () { if (window.DehesaEsTierra && ST.c === 'ES') window.DehesaEsTierra.render(elE); };
+      if (window.DehesaEsTierra) goE(); else { var scE = document.createElement('script'); scE.src = 'js/es-tierra.js?v=20261015'; scE.onload = goE; document.head.appendChild(scE); }
+      return;
+    }
     if (ST.c !== 'FR' && ST.c !== 'IT') return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var after = document.getElementById('pp-fr-nit') || document.getElementById('pp-it-fuel') || document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;

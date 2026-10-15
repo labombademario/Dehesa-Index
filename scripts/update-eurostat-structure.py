@@ -19,7 +19,7 @@ def pts(recs, f):
         k = f(r)
         if k is not None: d.setdefault(k, []).append((r['time'], v))
     return d
-SKIP_PRICE = {'PT': 'Eurostat da para Portugal precios de la tierra (arable 76.556 EUR/ha en 2024) muy por encima de lo que publica el INE: no se publica hasta contrastarlo con la fuente nacional'}
+SKIP_PRICE = {}   # Portugal ya no se omite (15-oct): Eurostat lo publica como dato oficial (arable 76.556 EUR/ha en 2024); se muestra con aviso en la etiqueta: valor muy superior al del resto de paises y sin contraste con fuente nacional
 def land():
     cc = E.CFG['geo']
     LP = {'ARA': 'arable land', 'ARAIB': 'irrigable arable land', 'ARAXIB': 'non-irrigable arable land', 'J0000': 'permanent grassland'}
@@ -39,7 +39,7 @@ def land():
     if cc != 'ES':   # España: el precio ya sale de su pipeline propio y el alquiler lo publica el MAPA
         if cc in SKIP_PRICE: E.log(cc, 'precio de la tierra omitido:', SKIP_PRICE[cc])
         else:
-            recs, _ = E.es('apri_lprc', unit='EUR_HA'); n += emit('price', 'apri_lprc', LP, 'Agricultural land price: %s (EUR/ha, Eurostat)', recs)
+            recs, _ = E.es('apri_lprc', unit='EUR_HA'); n += emit('price', 'apri_lprc', LP, 'Agricultural land price: %s (EUR/ha, Eurostat' + ('; as reported by Portugal, far above other EU countries and not cross-checked with a national source' if cc == 'PT' else '') + ')', recs)
         recs, _ = E.es('apri_lrnt', unit='EUR_HA'); n += emit('rent', 'apri_lrnt', LR, 'Agricultural land rent, one year: %s (EUR/ha, Eurostat)', recs)
     E.log(cc, 'tierra', n)
 BANDS = {'HA_GT0_LT2': '0-2 ha', 'HA2-4': '2-5 ha', 'HA5-9': '5-10 ha', 'HA10-19': '10-20 ha', 'HA20-29': '20-30 ha', 'HA30-49': '30-50 ha', 'HA50-99': '50-100 ha', 'HA100-249': '100-250 ha', 'HA_GE250': '250 ha or more'}

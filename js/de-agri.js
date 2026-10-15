@@ -135,6 +135,34 @@
     acc.d = d; acc.miss += d.miss; return d.points.map(function (p) { return [+p[0], p[1]]; });
   }
   /* ---------- pestaña 2: tierra ---------- */
+  /* Mapa de precios de compra por estado federado (vendor/de-laender.js, Natural Earth, dominio publico): se pinta con el precio del ultimo año de la clase elegida */
+  var DEMT = {
+    es: ['Precio de compra por estado federado', 'Pulsa un estado para ver su evolución. En gris, los que Destatis no publica (Berlín, Bremen y Hamburgo).', 'sin dato', 'Más barato', 'Más caro'],
+    en: ['Purchase price by federal state', 'Select a state to see its history. Grey states are not published by Destatis (Berlin, Bremen and Hamburg).', 'no data', 'Cheaper', 'More expensive'],
+    fr: ['Prix d’achat par Land', 'Cliquez sur un Land pour voir son évolution. En gris, ceux que Destatis ne publie pas (Berlin, Brême et Hambourg).', 'pas de données', 'Moins cher', 'Plus cher'],
+    it: ['Prezzo d’acquisto per Land', 'Seleziona un Land per vedere l’andamento. In grigio, quelli che Destatis non pubblica (Berlino, Brema e Amburgo).', 'nessun dato', 'Più economico', 'Più caro']
+  }, DEMREQ = false;
+  function deMap(rows, st, lang, t, redraw) {
+    var M = window.DEHESA_DE_LAENDER;
+    if (!M) {
+      if (!DEMREQ) { DEMREQ = true; var sc = document.createElement('script'); sc.src = 'vendor/de-laender.js'; sc.onload = redraw; document.head.appendChild(sc); }
+      return '';
+    }
+    var m = DEMT[lang] || DEMT.es, vals = rows.filter(function (r) { return r.p != null; }).map(function (r) { return r.p; });
+    if (vals.length < 2) return '';
+    var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), by = {};
+    rows.forEach(function (r) { by[r.k] = r; });
+    var col = function (v) { var f = mx > mn ? (v - mn) / (mx - mn) : 0.5, a = [246, 227, 214], b = [138, 47, 20]; return 'rgb(' + a.map(function (c, i) { return Math.round(c + (b[i] - c) * f); }).join(',') + ')'; };
+    var h = '<p class="di-movers-hint" style="margin:12px 0 4px"><b>' + esc(m[0]) + ' · ' + esc(t.kinds[st.kind]) + '</b></p><p class="di-movers-hint" style="margin:0 0 6px">' + esc(m[1]) + '</p>' +
+      '<svg viewBox="' + M.viewBox + '" role="group" aria-label="' + esc(m[0]) + '" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto">' + M.states.map(function (g) {
+        var r = by[g.id], nm = pick(LANDS, g.id, lang) || g.name;
+        if (!r || r.p == null) return '<path d="' + g.d + '" fill="var(--border)" stroke="var(--surface,#fff)" stroke-width="1"><title>' + esc(nm + ' (' + m[2] + ')') + '</title></path>';
+        var on = st.sel === g.id;
+        return '<g data-dl="' + g.id + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm + ': ' + nf(r.p, 0, lang) + ' ' + t.eurha) + '" style="cursor:pointer"><path d="' + g.d + '" fill="' + col(r.p) + '" stroke="' + (on ? 'var(--text)' : 'var(--surface,#fff)') + '" stroke-width="' + (on ? 3 : 1) + '"><title>' + esc(nm + ' · ' + nf(r.p, 0, lang) + ' ' + t.eurha) + '</title></path></g>';
+      }).join('') + '</svg>' +
+      '<div style="display:flex;align-items:center;gap:8px;justify-content:center;font-size:12px;margin:6px 0 8px"><span>' + esc(m[3]) + ' ' + esc(nf(mn, 0, lang)) + '</span><span style="width:120px;height:10px;border-radius:5px;background:linear-gradient(90deg,' + col(mn) + ',' + col(mx) + ')" aria-hidden="true"></span><span>' + esc(m[4]) + ' ' + esc(nf(mx, 0, lang)) + '</span></div>';
+    return h;
+  }
   function renderLand(body, st, lang, t) {
     var K = st.kind, LP = A.landPrice, R = A.rent, py = 0, ry = 0, rows = [];
     var natP = LP.nat[K] && LP.nat[K].p, natR = R.nat[K];
@@ -146,6 +174,7 @@
     });
     rows.sort(function (a, b) { return (b.p || 0) - (a.p || 0); });
     var h = '<div class="di-src-tabs" role="group">' + ['lf', 'acker', 'gruen'].map(function (k) { return '<button type="button" class="di-src-tab" data-dk="' + k + '" aria-pressed="' + (k === K) + '">' + esc(t.kinds[k]) + '</button>'; }).join('') + '</div>';
+    h += deMap(rows, st, lang, t, function () { var host = document.querySelector('.de-body'); if (host && st.tab === 'land') renderLand(host, st, lang, t); });
     h += '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.land) + '</th><th scope="col" class="r">' + esc(t.buy) + ' (' + py + ')</th><th scope="col" class="r">' + esc(t.since21) + '</th><th scope="col" class="r">' + esc(t.deals) + '</th><th scope="col" class="r">' + esc(t.rent) + ' (' + ry + ')</th><th scope="col" class="r">' + esc(t.since10) + '</th><th scope="col" class="r">' + esc(t.ratio) + '</th></tr></thead><tbody>';
     var nl = function (k, name, p, p0, n, r, r0, pr, bold) {
       var on = st.sel === k, b = function (s) { return bold ? '<b>' + s + '</b>' : s; };

@@ -50,7 +50,7 @@
   function ccaaName(code, lg) {
     if (code === 'ES') return T[lg].nat;
     var N = global.DehesaRegionNames && global.DehesaRegionNames.ES, v = N && N[code];
-    if (v) { var p = v.split('|'); return p[LI[lg]] || p[1] || code; }
+    if (v) { var p = v.split('|'); return p[{ en: 0, es: 1, fr: 2, it: 3 }[lg]] || p[1] || code; }
     var M = global.DEHESA_ES_CCAA; if (M) for (var i = 0; i < M.states.length; i++) if (M.states[i].id === code) return M.states[i].name;
     return code;
   }
