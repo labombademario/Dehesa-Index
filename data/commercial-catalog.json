@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T22:46:40Z",
+ "generatedAt": "2026-10-15T22:59:19Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -15,7 +15,7 @@
   "datasets_condiciones": 82,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
-  "datasets_reviewBeforeSelling": 68,
+  "datasets_reviewBeforeSelling": 1,
   "derived": 42
  },
  "sources": [
@@ -800,7 +800,7 @@
    "redistribution": "yes",
    "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
    "conditions": "Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded.",
-   "reviewBeforeSelling": true
+   "ownerDecision": "Mario lo da por valido para el uso comercial; las condiciones de atribucion y de marcar los datos modificados se mantienen. (2026-10-15)"
   },
   {
    "id": "eurostat_comext",
@@ -818,7 +818,7 @@
    "redistribution": "conditional",
    "attribution": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
    "conditions": "Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep Austria at coarser product level).",
-   "reviewBeforeSelling": true
+   "ownerDecision": "Mario lo da por valido para el uso comercial; las condiciones de atribucion y de marcar los datos modificados se mantienen. (2026-10-15)"
   },
   {
    "id": "fek_gr",
@@ -2470,9 +2470,6 @@
    ],
    "excludedSources": [
     "cbsa_tariff"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -2554,9 +2551,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -2612,9 +2606,6 @@
    "sources": [
     "eurostat"
    ],
-   "reviewBeforeSelling": [
-    "eurostat"
-   ],
    "parts": [
     {
      "scope": "pais:AT",
@@ -2666,9 +2657,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -2917,9 +2905,6 @@
     "statbel",
     "statcan",
     "statistik_austria"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -2933,9 +2918,6 @@
     "ons",
     "statcan",
     "world_bank_wdi"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -2991,9 +2973,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3129,9 +3108,6 @@
    "sources": [
     "eurostat_comext"
    ],
-   "reviewBeforeSelling": [
-    "eurostat_comext"
-   ],
    "parts": [
     {
      "scope": "pais:EU",
@@ -3146,9 +3122,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3157,9 +3130,6 @@
    "verdict": "condiciones",
    "sources": [
     "destatis",
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -3181,9 +3151,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3191,9 +3158,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3203,9 +3167,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3213,9 +3174,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3225,9 +3183,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3235,9 +3190,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3247,9 +3199,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3257,9 +3206,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3269,9 +3215,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3279,9 +3222,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3291,9 +3231,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3301,9 +3238,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3313,9 +3247,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3323,9 +3254,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3335,9 +3263,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3345,9 +3270,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3357,9 +3279,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3367,9 +3286,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3379,9 +3295,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3389,9 +3302,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3401,9 +3311,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3411,9 +3318,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3423,9 +3327,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3433,9 +3334,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3445,9 +3343,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -3455,9 +3350,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -3482,9 +3374,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat_comext"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat_comext"
    ]
   },
   {
@@ -3492,9 +3381,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat_comext"
-   ],
-   "reviewBeforeSelling": [
     "eurostat_comext"
    ]
   },
@@ -3519,9 +3405,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -3569,9 +3452,6 @@
    "sources": [
     "eurostat"
    ],
-   "reviewBeforeSelling": [
-    "eurostat"
-   ],
    "parts": [
     {
      "scope": "pais:BG",
@@ -3617,9 +3497,6 @@
    "sources": [
     "eurostat"
    ],
-   "reviewBeforeSelling": [
-    "eurostat"
-   ],
    "parts": [
     {
      "scope": "pais:CZ",
@@ -3648,9 +3525,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -3686,9 +3560,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -3747,9 +3618,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -3869,9 +3737,6 @@
    "sources": [
     "eurostat"
    ],
-   "reviewBeforeSelling": [
-    "eurostat"
-   ],
    "parts": [
     {
      "scope": "grupo:Eurostat",
@@ -3971,9 +3836,6 @@
    "sources": [
     "eurostat",
     "insee"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4086,9 +3948,6 @@
     "usda_ams_mars",
     "usda_nass",
     "world_bank"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4115,9 +3974,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4143,9 +3999,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -4210,9 +4063,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4228,9 +4078,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -4278,9 +4125,6 @@
     "usda_ams_mars",
     "usda_nass",
     "world_bank"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4353,9 +4197,6 @@
     "cbs_nl",
     "eu_oil_bulletin",
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4374,9 +4215,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4386,9 +4224,6 @@
    "sources": [
     "eurostat",
     "rivm_lmm"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4406,9 +4241,6 @@
     "usda_ams_mars",
     "usda_nass",
     "world_bank"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4435,9 +4267,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4453,9 +4282,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -4512,9 +4338,6 @@
    "sources": [
     "eurostat"
    ],
-   "reviewBeforeSelling": [
-    "eurostat"
-   ],
    "parts": [
     {
      "scope": "pais:PT",
@@ -4553,9 +4376,6 @@
     "usda_ams_mars",
     "usda_nass",
     "world_bank"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4586,9 +4406,6 @@
    "sources": [
     "eu_oil_bulletin",
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4606,9 +4423,6 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4616,9 +4430,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },
@@ -4642,9 +4453,6 @@
     "usda_ers",
     "usda_fas_psd",
     "usda_nass"
-   ],
-   "reviewBeforeSelling": [
-    "eurostat"
    ]
   },
   {
@@ -4700,9 +4508,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -4886,9 +4691,6 @@
    "verdict": "condiciones",
    "sources": [
     "bfs_ch_open",
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ],
    "parts": [
@@ -5386,9 +5188,6 @@
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
-    "eurostat"
-   ],
-   "reviewBeforeSelling": [
     "eurostat"
    ]
   },

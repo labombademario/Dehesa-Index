@@ -67,7 +67,7 @@ def build():
         e = {"path": path, "scope": scope, "verdict": v, "sources": ids}
         if good and bad: e["commercialSources"] = good
         if bad: e["excludedSources"] = bad
-        rv = [x for x in good if S[x]["commercialUse"] == "conditional"]
+        rv = [x for x in good if S[x]["commercialUse"] == "conditional" and not S[x].get("ownerDecision")]
         if rv: e["reviewBeforeSelling"] = rv
         if scope in ("fichero", "carpeta") and len({sc for sc, _ in parts}) > 1 or any(sc.startswith(("pais:", "grupo:")) for sc, _ in parts):
             e["parts"] = [{"scope": sc, "sourceId": s, "verdict": vs[s]} for sc, s in parts]
@@ -81,7 +81,8 @@ def build():
              "redistribution": v["redistribution"], "attribution": v["attributionText"]}
         if v.get("additionalRestrictions"): e["conditions"] = v["additionalRestrictions"]
         if vd == "no-apto": e["why"] = reason(v)
-        if vd == "condiciones" and v["commercialUse"] == "conditional": e["reviewBeforeSelling"] = True  # la condicion afecta al propio uso comercial: leerla antes de cobrar por estos datos
+        if v.get("ownerDecision"): e["ownerDecision"] = v["ownerDecision"]["text"] + " (" + v["ownerDecision"]["date"] + ")"
+        if vd == "condiciones" and v["commercialUse"] == "conditional" and not v.get("ownerDecision"): e["reviewBeforeSelling"] = True  # la condicion afecta al propio uso comercial: leerla antes de cobrar por estos datos
         sources.append(e)
     cnt = lambda lst, key, val: sum(1 for x in lst if x[key] == val)
     summary = {"sources": len(sources), "sourcesApto": cnt(sources, "verdict", "apto"), "sourcesCondiciones": cnt(sources, "verdict", "condiciones"), "sourcesNoApto": cnt(sources, "verdict", "no-apto"),

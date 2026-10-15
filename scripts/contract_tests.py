@@ -4634,6 +4634,8 @@ def commercial_catalog(doc, errs, warns, stats):
         if not r: errs.append("catálogo comercial: %s no está en el registro de licencias" % s["id"]); continue
         S[s["id"]] = s
         if s["verdict"] != vd(r): errs.append("catálogo comercial: %s es %s pero el registro dice %s" % (s["id"], s["verdict"], vd(r)))
+        if bool(s.get("reviewBeforeSelling")) != (s["verdict"] == "condiciones" and r["commercialUse"] == "conditional" and not r.get("ownerDecision")): errs.append("catálogo comercial: %s con marca de revisión previa incoherente con el registro" % s["id"])
+        if bool(s.get("ownerDecision")) != bool(r.get("ownerDecision")): errs.append("catálogo comercial: %s con decisión del propietario que no coincide con el registro" % s["id"])
         if s["verdict"] == "no-apto" and not s.get("why"): errs.append("catálogo comercial: %s no apta sin motivo" % s["id"])
         if s["verdict"] != "no-apto" and (s["status"] != "VERIFIED" or "no" in (s["commercialUse"], s["derivatives"], s["redistribution"]) or "unclear" in (s["commercialUse"], s["derivatives"], s["redistribution"])): errs.append("catálogo comercial: %s marcada apta con permisos no concedidos" % s["id"])
         if s["verdict"] != "no-apto" and not s.get("attribution"): errs.append("catálogo comercial: %s sin línea de atribución" % s["id"])

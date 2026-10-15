@@ -22,7 +22,7 @@
       dnOnly: 'Solo filtrando por fuente. Aptas: {a}. Excluidas: {x}.', dnRev: 'Revisar antes de cobrar las condiciones de: {r}.', dnExc: 'Excluidas: {x}.', dnDer: 'Se calcula en Dehesa Index; falta declarar de qué fuentes sale.',
       v: { apto: 'Apto', condiciones: 'Con condiciones', 'no-apto': 'No apto', parcial: 'Parcial', derivado: 'Derivado' },
       perm: { yes: 'sí', no: 'no', conditional: 'condicionado', unclear: 'sin confirmar' }, permT: 'Uso comercial / derivados / redistribución',
-      conf: 'Confianza jurídica', gen: 'Generado el {d}', contact: '¿Quieres usar estos datos con fines comerciales? Cuéntanos qué necesitas.', contactBtn: 'Ir a Empresas'
+      conf: 'Confianza jurídica', owner: 'Dado por válido por el propietario del sitio (15-oct-2026); estas condiciones se mantienen.', gen: 'Generado el {d}', contact: '¿Quieres usar estos datos con fines comerciales? Cuéntanos qué necesitas.', contactBtn: 'Ir a Empresas'
     },
     en: {
       title: 'Commercial use terms', h1: 'Commercial-use terms for the data',
@@ -42,7 +42,7 @@
       dnOnly: 'Only when filtered by source. Fit: {a}. Excluded: {x}.', dnRev: 'Check the conditions of {r} before charging.', dnExc: 'Excluded: {x}.', dnDer: 'Computed by Dehesa Index; the sources it comes from are not yet declared.',
       v: { apto: 'Fit', condiciones: 'With conditions', 'no-apto': 'Not fit', parcial: 'Partial', derivado: 'Derived' },
       perm: { yes: 'yes', no: 'no', conditional: 'conditional', unclear: 'unconfirmed' }, permT: 'Commercial use / derivatives / redistribution',
-      conf: 'Legal confidence', gen: 'Generated {d}', contact: 'Want to use this data commercially? Tell us what you need.', contactBtn: 'Go to Business'
+      conf: 'Legal confidence', owner: 'Accepted by the site owner (15 Oct 2026); these conditions still apply.', gen: 'Generated {d}', contact: 'Want to use this data commercially? Tell us what you need.', contactBtn: 'Go to Business'
     },
     fr: {
       title: 'Conditions d’usage commercial', h1: 'Conditions d’usage commercial des données',
@@ -62,7 +62,7 @@
       dnOnly: 'Seulement en filtrant par source. Aptes : {a}. Exclues : {x}.', dnRev: 'Vérifier avant de facturer les conditions de : {r}.', dnExc: 'Exclues : {x}.', dnDer: 'Calculé par Dehesa Index ; ses sources ne sont pas encore déclarées.',
       v: { apto: 'Apte', condiciones: 'Sous conditions', 'no-apto': 'Non apte', parcial: 'Partiel', derivado: 'Dérivé' },
       perm: { yes: 'oui', no: 'non', conditional: 'conditionné', unclear: 'non confirmé' }, permT: 'Usage commercial / dérivés / redistribution',
-      conf: 'Confiance juridique', gen: 'Généré le {d}', contact: 'Vous voulez utiliser ces données à des fins commerciales ? Dites-nous ce qu’il vous faut.', contactBtn: 'Aller à Entreprises'
+      conf: 'Confiance juridique', owner: 'Validé par le propriétaire du site (15 oct. 2026) ; ces conditions restent applicables.', gen: 'Généré le {d}', contact: 'Vous voulez utiliser ces données à des fins commerciales ? Dites-nous ce qu’il vous faut.', contactBtn: 'Aller à Entreprises'
     },
     it: {
       title: 'Condizioni d’uso commerciale', h1: 'Condizioni d’uso commerciale dei dati',
@@ -82,7 +82,7 @@
       dnOnly: 'Solo filtrando per fonte. Idonee: {a}. Escluse: {x}.', dnRev: 'Controllare prima di addebitare le condizioni di: {r}.', dnExc: 'Escluse: {x}.', dnDer: 'Calcolato da Dehesa Index; le fonti di origine non sono ancora dichiarate.',
       v: { apto: 'Idoneo', condiciones: 'Con condizioni', 'no-apto': 'Non idoneo', parcial: 'Parziale', derivado: 'Derivato' },
       perm: { yes: 'sì', no: 'no', conditional: 'condizionato', unclear: 'non confermato' }, permT: 'Uso commerciale / derivati / ridistribuzione',
-      conf: 'Affidabilità giuridica', gen: 'Generato il {d}', contact: 'Vuoi usare questi dati a fini commerciali? Dicci di cosa hai bisogno.', contactBtn: 'Vai ad Aziende'
+      conf: 'Affidabilità giuridica', owner: 'Accettata dal proprietario del sito (15 ott. 2026); queste condizioni restano valide.', gen: 'Generato il {d}', contact: 'Vuoi usare questi dati a fini commerciali? Dicci di cosa hai bisogno.', contactBtn: 'Vai ad Aziende'
     }
   };
   var DOC = null, FAILED = false, SRC_Q = '', SRC_V = 'all', SRC_LIM = 40, DS_Q = '', DS_V = 'all', DS_LIM = 40, OPEN = {};
@@ -120,7 +120,7 @@
       var p = [s.commercialUse, s.derivatives, s.redistribution].map(function (x) { return w.perm[x] || x; }).join(' / ');
       return '<tr>' + td(link(s.url, s.name) + '<div class="di-movers-hint" style="margin:2px 0 0">' + esc(s.country) + '</div>', 1) +
         td(link(s.licenseUrl, s.licenseName) + '<div class="di-movers-hint" style="margin:2px 0 0" title="' + esc(w.permT) + '">' + esc(p) + ' · ' + esc(w.conf + ': ' + s.legalConfidence) + '</div>', 1) +
-        td(chip(s.verdict) + (s.why ? '<div class="di-movers-hint" style="margin:2px 0 0">' + esc(s.why) + '</div>' : ''), 1) + td(s.attribution || '—') + td(s.conditions || '—') + '</tr>';
+        td(chip(s.verdict) + (s.why ? '<div class="di-movers-hint" style="margin:2px 0 0">' + esc(s.why) + '</div>' : ''), 1) + td(s.attribution || '—') + td((s.conditions || '—') + (s.ownerDecision ? ' ' + w.owner : '')) + '</tr>';
     });
     return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px">' + sel + inp + '</div>' + (R.length ? table(w.sCols, rows) : '<p class="di-movers-hint">' + esc(w.none) + '</p>') +
       '<p class="di-movers-hint" style="margin:6px 0 0">' + esc(w.shown.replace('{n}', Math.min(SRC_LIM, R.length)).replace('{t}', R.length)) + (R.length > SRC_LIM ? ' <button type="button" class="di-link-btn" id="cc-smore">' + esc(w.more) + '</button>' : '') + '</p>';
