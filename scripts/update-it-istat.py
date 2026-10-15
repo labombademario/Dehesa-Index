@@ -55,8 +55,12 @@ def labels(flow, dims):
             m[c.get("id")] = {"en": nm.get("en") or nm.get("it") or c.get("id"), "it": nm.get("it") or nm.get("en") or c.get("id")}
         out[d.get("id")] = m
     return out
+TYPOS = {"lahying": "laying", "less then": "less than", "viitelli": "vitelli"}   # erratas evidentes en las etiquetas del ISTAT
+def fixtypo(s):
+    for a, b in TYPOS.items(): s = s.replace(a, b)
+    return s
 def lab(L, dim, code):
-    x = (L.get(dim) or {}).get(code); return {"en": x["en"], "it": x["it"]} if x else {"en": code, "it": code}
+    x = (L.get(dim) or {}).get(code); return {"en": fixtypo(x["en"]), "it": fixtypo(x["it"])} if x else {"en": code, "it": code}
 def num(v):
     try: return None if v in ("", None) else float(v)
     except ValueError: return None
@@ -137,7 +141,7 @@ def do_herds(out, loc):
 
 def do_fert(out, loc):
     if loc: rows = get_rows(loc, "fert4", "", "", "")
-    else: rows = sdmx_csv("104_466_DF_DCSP_FERTILIZZANTI_4", "A...ALL.WORLD.ALL.9", "startPeriod=2013")
+    else: rows = sdmx_csv("104_466_DF_DCSP_FERTILIZZANTI_4", "A....ALL.WORLD.ALL.9", "startPeriod=2013")
     L = {} if loc else labels("104_466_DF_DCSP_FERTILIZZANTI_4", ["TYPE_OF_FERTILIZER", "REF_AREA"])
     ys = months_axis(r["TIME_PERIOD"] for r in rows); ix = {y: i for i, y in enumerate(ys)}; types = {}; areas = {}
     for r in rows:
