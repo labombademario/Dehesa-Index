@@ -455,9 +455,17 @@
   var SP = { es: ['Buscar serie', 'p. ej. cebada rendimiento', '{n} de {m} series', 'Sin resultados: prueba con menos palabras.', 'Otras series'], en: ['Find a series', 'e.g. barley yield', '{n} of {m} series', 'No results: try fewer words.', 'Other series'], fr: ['Chercher une série', 'ex. orge rendement', '{n} séries sur {m}', 'Aucun résultat : essayez moins de mots.', 'Autres séries'], it: ['Cerca una serie', 'es. orzo resa', '{n} serie su {m}', 'Nessun risultato: prova con meno parole.', 'Altre serie'] };
   function norm(x) { var r = String(x || '').toLowerCase(); try { r = r.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {} return r; }
   function shortLab(x) { return TL(x.label).replace(/,\s*Eurostat\)/, ')').replace(/\s*\(Eurostat\)/, '').replace(/\s{2,}/g, ' ').trim(); }
+  window.DIPaisesLabel = function (t) { return TL(t); };
   function filterSeries(list, q) {
     var tk = norm(q).split(/\s+/).filter(Boolean); if (!tk.length) return list;
-    return list.filter(function (x) { var h = norm(x.label + ' ' + TL(x.label)); return tk.every(function (k) { return h.indexOf(k) > -1; }); });
+    var ex = list.filter(function (x) { var h = norm(x.label + ' ' + TL(x.label)); return tk.every(function (k) { return h.indexOf(k) > -1; }); });
+    if (ex.length) return ex;
+    if (!window.DehesaSearch) { // el motor se carga solo si hace falta (primera busqueda sin coincidencia exacta)
+      if (!document.getElementById('di-search-js')) { var sc = document.createElement('script'); sc.id = 'di-search-js'; sc.src = window.DehesaShared && DehesaShared.sitePath ? DehesaShared.sitePath('js/search.js') : 'js/search.js'; sc.onload = function () { var i = document.getElementById('ps-q'); if (i && i.oninput) i.oninput(); }; document.head.appendChild(sc); }
+      return ex;
+    }
+    // sin coincidencia exacta: tolera erratas ("cevada rendimento") con el mismo motor del buscador global
+    return list.filter(function (x) { return DehesaSearch.match(q, x.label + ' ' + TL(x.label)) >= 0.45; });
   }
   function seriesOpts(list, sel) {
     var one = function (x, lab) { return '<option value="' + esc(x.id) + '"' + (x.id === sel ? ' selected' : '') + ' title="' + esc(TL(x.label)) + '">' + esc(lab) + '</option>'; };

@@ -4,16 +4,16 @@
   'use strict';
   var TXT = {
     es: { ph: 'Busca un producto, país, dato o página…', hint: 'Prueba con', empty: 'Sin resultados para', tryTxt: 'Prueba con otro término, en cualquier idioma (p. ej. «trigo», «wheat», «exportaciones soja»).', partial: 'Coincidencias parciales', close: 'Cerrar', popular: 'Sugerencias', nav: '↑↓ moverse · Enter abrir · Esc cerrar', loadFail: 'No se pudo cargar el buscador.',
-      types: { product: 'Precio', category: 'Categoría', supply: 'Oferta y demanda', map: 'Mapa', crop: 'Cultivos', market: 'Mercado USDA', country: 'País', climate: 'Clima', page: 'Página', section: 'Sección', concept: 'Explicación', news: 'Noticia' } },
+      types: { series: 'Serie', product: 'Precio', category: 'Categoría', supply: 'Oferta y demanda', map: 'Mapa', crop: 'Cultivos', market: 'Mercado USDA', country: 'País', climate: 'Clima', page: 'Página', section: 'Sección', concept: 'Explicación', news: 'Noticia' } },
     en: { ph: 'Search a product, country, dataset or page…', hint: 'Try', empty: 'No results for', tryTxt: 'Try another term, in any language (e.g. “wheat”, “trigo”, “soy exports”).', partial: 'Partial matches', close: 'Close', popular: 'Suggestions', nav: '↑↓ move · Enter open · Esc close', loadFail: 'The search could not be loaded.',
-      types: { product: 'Price', category: 'Category', supply: 'Supply & demand', map: 'Map', crop: 'Crops', market: 'USDA market', country: 'Country', climate: 'Climate', page: 'Page', section: 'Section', concept: 'Explainer', news: 'News' } },
+      types: { series: 'Series', product: 'Price', category: 'Category', supply: 'Supply & demand', map: 'Map', crop: 'Crops', market: 'USDA market', country: 'Country', climate: 'Climate', page: 'Page', section: 'Section', concept: 'Explainer', news: 'News' } },
     fr: { ph: 'Cherchez un produit, un pays, une donnée ou une page…', hint: 'Essayez', empty: 'Aucun résultat pour', tryTxt: 'Essayez un autre terme, dans n’importe quelle langue (p. ex. « blé », « wheat », « exportations soja »).', partial: 'Correspondances partielles', close: 'Fermer', popular: 'Suggestions', nav: '↑↓ naviguer · Entrée ouvrir · Échap fermer', loadFail: 'La recherche n’a pas pu être chargée.',
-      types: { product: 'Prix', category: 'Catégorie', supply: 'Offre et demande', map: 'Carte', crop: 'Cultures', market: 'Marché USDA', country: 'Pays', climate: 'Climat', page: 'Page', section: 'Section', concept: 'Explication', news: 'Actualité' } },
+      types: { series: 'Série', product: 'Prix', category: 'Catégorie', supply: 'Offre et demande', map: 'Carte', crop: 'Cultures', market: 'Marché USDA', country: 'Pays', climate: 'Climat', page: 'Page', section: 'Section', concept: 'Explication', news: 'Actualité' } },
     it: { ph: 'Cerca un prodotto, un paese, un dato o una pagina…', hint: 'Prova', empty: 'Nessun risultato per', tryTxt: 'Prova un altro termine, in qualsiasi lingua (es. «grano», «wheat», «esportazioni soia»).', partial: 'Corrispondenze parziali', close: 'Chiudi', popular: 'Suggerimenti', nav: '↑↓ muovi · Invio apri · Esc chiudi', loadFail: 'Impossibile caricare la ricerca.',
-      types: { product: 'Prezzo', category: 'Categoria', supply: 'Offerta e domanda', map: 'Mappa', crop: 'Colture', market: 'Mercato USDA', country: 'Paese', climate: 'Clima', page: 'Pagina', section: 'Sezione', concept: 'Spiegazione', news: 'Notizia' } }
+      types: { series: 'Serie', product: 'Prezzo', category: 'Categoria', supply: 'Offerta e domanda', map: 'Mappa', crop: 'Colture', market: 'Mercato USDA', country: 'Paese', climate: 'Clima', page: 'Pagina', section: 'Sezione', concept: 'Spiegazione', news: 'Notizia' } }
   };
-  var ICON = { product: '💶', category: '🏷️', supply: '⚖️', map: '🗺️', crop: '🌱', market: '📈', country: '🌍', climate: '🌦️', page: '📄', section: '📑', concept: '💡', news: '📰' };
-  var BOOST = { product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.06, climate: 0.04, page: 0.05, concept: 0.05, news: -0.05, section: 0, map: -0.04 };
+  var ICON = { product: '💶', category: '🏷️', supply: '⚖️', map: '🗺️', crop: '🌱', market: '📈', country: '🌍', climate: '🌦️', page: '📄', section: '📑', concept: '💡', news: '📰', series: '📊' };
+  var BOOST = { series: 0.14, product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.06, climate: 0.04, page: 0.05, concept: 0.05, news: -0.05, section: 0, map: -0.04 };
   var STOP = { de: 1, del: 1, la: 1, el: 1, los: 1, las: 1, en: 1, of: 1, the: 1, in: 1, and: 1, y: 1, e: 1, et: 1, le: 1, les: 1, du: 1, des: 1, di: 1, il: 1, lo: 1, da: 1, un: 1, una: 1, a: 1, to: 1, for: 1, por: 1, para: 1, con: 1, pour: 1, per: 1 };
   var SUGGEST = ['precios.html?tab=cereales&product=cereales%3Atrigo', 'precios.html?tab=cereales&product=cereales%3Amaiz', 'precios.html?tab=lacteos&product=lacteos%3Aleche', 'precios.html?tab=fertilizantes&product=fertilizantes%3Aurea', 'oferta-demanda.html?c=soja', 'cultivos.html?crop=corn', 'clima.html', 'mapa.html?layer=exp&sd=trigo'];
   var TRYQ = { h: { es: 'Pregunta directamente', en: 'Ask directly', fr: 'Posez la question', it: 'Chiedi direttamente' }, q: {
@@ -105,6 +105,37 @@
     out.sort(function (a, b) { return b.s - a.s; });
     return out.slice(0, 3).map(function (x) { return x.e; });
   }
+  // Series del pais abierto (solo en paises.html?c=XX): el catalogo se baja al buscar, igual que las noticias.
+  var SER = { cc: null, arr: null, p: null };
+  function serCtx() { try { if (!/paises\.html$/.test(global.location.pathname)) return null; var c = new URLSearchParams(global.location.search).get('c'); return c && /^[A-Za-z]{2}$/.test(c) ? c.toUpperCase() : null; } catch (e) { return null; } }
+  function loadSeries() {
+    var cc = serCtx(); if (!cc || !global.DISeries) return Promise.resolve();
+    if (SER.cc === cc && SER.p) return SER.p;
+    SER.cc = cc; SER.arr = null;
+    SER.p = global.DISeries.country(cc, true).then(function (c) {
+      SER.arr = (c.series || []).filter(function (x) { return x.group !== 'product' && x.format !== 'eu-regions'; }).map(function (x) {
+        var n = {}, s = {}, tl = global.DIPaisesLabel; L.forEach(function (l) { n[l] = l === lang() && tl ? tl(x.label) : x.label; s[l] = (x.latestPeriod ? x.latestPeriod : '') + (x.unit ? ' · ' + x.unit : ''); });
+        return { t: 'series', u: 'paises.html?c=' + cc + '&g=' + encodeURIComponent(x.group || 'all') + '&s=' + encodeURIComponent(x.id), n: n, s: s, k: x.label };
+      });
+      prep(SER.arr);
+    }).catch(function () { SER.p = null; SER.arr = []; });
+    return SER.p;
+  }
+  function seriesFor(query, lang) {
+    if (!SER.arr) return [];
+    var qs = toks(query).filter(function (x) { return !STOP[x]; }), out = [];
+    if (!qs.length) return out;
+    SER.arr.forEach(function (e) { var s = scoreEntry(e, qs, lang, true); if (s > 0.3) out.push({ e: e, s: s }); });
+    out.sort(function (a, b) { return b.s - a.s; });
+    return out.slice(0, 6).map(function (x) { return x.e; });
+  }
+  // Puntuacion 0..1 de un texto suelto frente a una consulta (todas las palabras, con erratas); la usa el explorador de series.
+  function match(query, text) {
+    var qs = toks(query).filter(function (x) { return !STOP[x]; }), ws = toks(text), i, b, t = 0;
+    if (!qs.length) return 1;
+    for (i = 0; i < qs.length; i++) { b = fieldBest(qs[i], ws); if (!b) return 0; t += b; }
+    return t / qs.length;
+  }
   function lang() { return global.DehesaShared && global.DehesaShared.getLang ? global.DehesaShared.getLang() : 'es'; }
   function tx() { return TXT[lang()] || TXT.es; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -165,7 +196,8 @@
       STATE.results = SUGGEST.map(function (u) { return by[u]; }).filter(Boolean);
       html = chipsHtml(l) + '<div class="ds-head">' + esc(t.popular) + '</div><ul id="ds-list" role="listbox">' + STATE.results.map(function (e, i) { return item(e, l, i); }).join('') + '</ul><div class="ds-msg">' + esc(TRYQ.honest[l] || TRYQ.honest.es) + '</div>';
     } else {
-      var r = search(q, l); r.list = r.list.concat(newsFor(q, l)); STATE.results = r.list;
+      var r = search(q, l); r.list = seriesFor(q, l).concat(r.list, newsFor(q, l)); STATE.results = r.list;
+      if (serCtx() && norm(q).length >= 2 && !SER.arr) loadSeries().then(function () { if (STATE.open && STATE.q === q) renderResults(); });
       if (norm(q).length >= 3 && !NEWS.arr) loadNews().then(function () { if (STATE.open && STATE.q === q) renderResults(); });
       if (!r.list.length) html = '<div class="ds-msg">' + esc(t.empty) + ' «' + esc(q.trim()) + '». ' + esc(t.tryTxt) + '</div>' + chipsHtml(l) + '<div class="ds-msg">' + esc(TRYQ.honest[l] || TRYQ.honest.es) + '</div>';
       else html = (r.partial ? '<div class="ds-head">' + esc(t.partial) + '</div>' : '') + '<ul id="ds-list" role="listbox">' + r.list.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
@@ -212,6 +244,6 @@
   function load() {
     return fetch(href('data/search-index.json')).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { IDX = d.entries; prep(IDX); }).catch(function () { var b = document.getElementById('ds-body'); if (b) b.innerHTML = '<div class="ds-msg">' + esc(tx().loadFail) + '</div>'; });
   }
-  global.DehesaSearch = { open: open, close: close, _tokScore: tokScore, _search: function (q, l) { return search(q, l || 'es'); }, _load: function (entries) { IDX = entries; prep(IDX); }, _norm: norm };
+  global.DehesaSearch = { open: open, close: close, _tokScore: tokScore, match: match, _search: function (q, l) { return search(q, l || 'es'); }, _load: function (entries) { IDX = entries; prep(IDX); }, _norm: norm };
   if (global.__diSearchWantOpen) { var w = global.__diSearchWantOpen; global.__diSearchWantOpen = false; open(typeof w === 'string' ? w : undefined); }
 })(typeof window !== 'undefined' ? window : globalThis);
