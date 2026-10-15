@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T15:42:43Z",
+ "generatedAt": "2026-10-15T18:45:08Z",
  "summary": {
   "files": 62,
   "errors": 0,
@@ -143,10 +143,10 @@
    "warnings": [],
    "stats": {
     "series": 265,
-    "points": 63264,
+    "points": 63313,
     "lines": 0
    },
-   "generatedAt": "2026-10-12T15:52:26Z",
+   "generatedAt": "2026-10-15T16:06:10Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1140,11 +1140,11 @@
     "CA/ca-pay-livestock-insurance-gross: salto 5.816 -> 32.271 en 2016 (mediana previa 0.877)"
    ],
    "stats": {
-    "series": 713,
-    "points": 96655,
+    "series": 710,
+    "points": 96337,
     "lines": 0
    },
-   "generatedAt": "2026-10-12T15:53:55Z",
+   "generatedAt": "2026-10-15T16:22:21Z",
    "info": [
     "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
     "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]",

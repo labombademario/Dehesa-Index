@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T15:42:00Z",
+ "generatedAt": "2026-10-15T18:45:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 179,
+  "ok": 188,
   "late": 1,
-  "error": 2,
-  "not_run": 12,
+  "error": 3,
+  "not_run": 2,
   "unknown": 0
  },
  "global": "error",
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "e0430606",
+   "sha": "9ce40606",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/f4fce2d0-0ffc-44de-90e6-2de21ec5a442",
-   "completedAt": "2026-10-15T15:21:32Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/0a955193-08f4-496a-92e9-7adf006da97d",
+   "completedAt": "2026-10-15T18:37:05Z"
   },
   "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-15T12:54:32.132504+00:00",
-  "repoGeneratedAt": "2026-10-15T12:54:32.132504+00:00",
-  "checkedAt": "2026-10-15T15:42:00Z"
+  "prodGeneratedAt": "2026-10-15T15:47:02.715753+00:00",
+  "repoGeneratedAt": "2026-10-15T15:47:02.715753+00:00",
+  "checkedAt": "2026-10-15T18:45:00Z"
  },
  "pipelines": [
   {
@@ -134,7 +134,7 @@
    "crons": [
     "10 18 * * 4"
    ],
-   "nextRun": "2026-10-15T18:10:00Z",
+   "nextRun": "2026-10-22T18:10:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
@@ -479,18 +479,18 @@
    "crons": [
     "40 16 * * 3,4,5"
    ],
-   "nextRun": "2026-10-15T16:40:00Z",
+   "nextRun": "2026-10-16T16:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-14T17:08:02Z",
-    "durationSec": 25,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38604034738"
+    "startedAt": "2026-10-15T17:08:45Z",
+    "durationSec": 29,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38774870552"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -553,9 +553,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-12T15:52:35Z",
-    "durationSec": 88,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38273397864"
+    "startedAt": "2026-10-15T16:05:28Z",
+    "durationSec": 1022,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38766029617"
    },
    "recent": {
     "runs": 10,
@@ -1202,6 +1202,29 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-ers-baseline.yml",
+   "name": "Update USDA ERS 10-year agricultural baseline projections (Agricultural Baseline Database)",
+   "crons": [
+    "20 6 20 11,12,2,3 *"
+   ],
+   "nextRun": "2026-11-20T06:20:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T17:02:43Z",
+    "durationSec": 61,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38774029065"
+   },
+   "recent": {
+    "runs": 5,
+    "success": 5,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 1488.0
+  },
+  {
    "workflow": "update-ers.yml",
    "name": "update-ers",
    "crons": [
@@ -1219,6 +1242,29 @@
    "recent": {
     "runs": 5,
     "success": 5,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-es-avances.yml",
+   "name": "Update Spain monthly crop area and production advance estimates (MAPA)",
+   "crons": [
+    "10 9 * * 1"
+   ],
+   "nextRun": "2026-10-19T09:10:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T18:29:00Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38785981548"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
     "failed": 0
    },
    "status": "ok",
@@ -1246,6 +1292,75 @@
    },
    "status": "ok",
    "expectedEveryHours": 240.0
+  },
+  {
+   "workflow": "update-es-esyrce-extra.yml",
+   "name": "Update Spain ESYRCE yields, irrigation systems, woody-crop stage and soil management by province (MAPA)",
+   "crons": [
+    "45 7 11 * *"
+   ],
+   "nextRun": "2026-11-11T07:45:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T18:28:57Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38785974832"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-esyrce.yml",
+   "name": "Update Spain ESYRCE crop areas by province, rainfed and irrigated (MAPA)",
+   "crons": [
+    "30 7 11 * *"
+   ],
+   "nextRun": "2026-11-11T07:30:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T17:51:54Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38780857453"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-ganaderia.yml",
+   "name": "Update Spain eggs, dairy industry and livestock production forecasts (MAPA)",
+   "crons": [
+    "20 8 14 * *"
+   ],
+   "nextRun": "2026-11-14T08:20:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T18:28:58Z",
+    "durationSec": 72,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38785978377"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 0,
+    "failed": 1
+   },
+   "status": "error",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-es-gasoleo-b.yml",
@@ -1292,6 +1407,98 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-health.yml",
+   "name": "Update Spain animal disease outbreaks (MAPA RASVE)",
+   "crons": [
+    "30 8 * * *"
+   ],
+   "nextRun": "2026-10-16T08:30:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T18:00:31Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38782034764"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-es-income.yml",
+   "name": "Update Spain agricultural economic accounts and farm income (MAPA)",
+   "crons": [
+    "10 7 12 * *"
+   ],
+   "nextRun": "2026-11-12T07:10:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T17:51:52Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38780853996"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-inputs.yml",
+   "name": "Update Spain fertilizer market and plant-protection product sales (MAPA)",
+   "crons": [
+    "50 7 13 * *"
+   ],
+   "nextRun": "2026-11-13T07:50:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T17:51:56Z",
+    "durationSec": 182,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38780861585"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "error",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-prices.yml",
+   "name": "Update Spain weekly national prices and origin-destination price observatory (MAPA)",
+   "crons": [
+    "40 7 * * 2,4"
+   ],
+   "nextRun": "2026-10-20T07:40:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T17:51:50Z",
+    "durationSec": 28,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38780849810"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 120.0
   },
   {
    "workflow": "update-eu-agrifood.yml",
@@ -2040,14 +2247,14 @@
    "crons": [
     "0 17 * * 1-5"
    ],
-   "nextRun": "2026-10-15T17:00:00Z",
+   "nextRun": "2026-10-16T17:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-14T17:17:50Z",
+    "startedAt": "2026-10-15T17:18:48Z",
     "durationSec": 46,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38605449727"
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38776280495"
    },
    "recent": {
     "runs": 10,
@@ -2142,9 +2349,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-12T15:48:05Z",
-    "durationSec": 266,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38272863764"
+    "startedAt": "2026-10-15T16:01:28Z",
+    "durationSec": 290,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38765450192"
    },
    "recent": {
     "runs": 10,
@@ -2614,14 +2821,14 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-15T15:47:00Z",
+   "nextRun": "2026-10-15T18:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-15T13:22:41Z",
-    "durationSec": 193,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38742168673"
+    "startedAt": "2026-10-15T16:11:40Z",
+    "durationSec": 157,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38766909190"
    },
    "recent": {
     "runs": 10,
@@ -2637,35 +2844,35 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-15T18:17:00Z",
+   "nextRun": "2026-10-15T21:17:00Z",
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-15T12:54:33Z"
+     "lastChange": "2026-10-15T15:47:04Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-15T12:54:33Z"
+     "lastChange": "2026-10-15T15:47:04Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-15T12:54:33Z"
+     "lastChange": "2026-10-15T15:47:04Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-15T12:54:33Z"
+     "lastChange": "2026-10-15T15:47:04Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-15T12:54:33Z"
+     "lastChange": "2026-10-15T15:47:04Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-15T12:50:01Z",
-    "durationSec": 276,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38737673938"
+    "startedAt": "2026-10-15T15:42:26Z",
+    "durationSec": 282,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38762680622"
    },
    "recent": {
     "runs": 9,
@@ -2871,15 +3078,19 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-15T18:10:00Z",
+   "nextRun": "2026-10-15T21:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-15T12:52:05Z"
+     "lastChange": "2026-10-15T18:28:26Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-15T12:52:05Z"
+     "lastChange": "2026-10-15T15:44:31Z"
+    },
+    {
+     "path": "data/observatory.json",
+     "lastChange": "2026-10-15T18:28:26Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -2891,18 +3102,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-14T19:45:49Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-14T21:40:47Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-14T21:40:47Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/catalog"
@@ -2915,45 +3126,41 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-15T14:31:42Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-13T23:33:22Z"
-    },
-    {
-     "path": "data/observatory.json",
-     "lastChange": "2026-10-15T14:10:40Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-15T14:44:19Z"
+     "lastChange": "2026-10-15T15:49:19Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-14T21:40:47Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-14T17:40:38Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-14T21:40:47Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-14T21:40:47Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-14T21:40:47Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -2961,15 +3168,15 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-14T21:40:47Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/home-explore.json",
-     "lastChange": "2026-10-13T10:56:49Z"
+     "lastChange": "2026-10-15T15:45:14Z"
     },
     {
      "path": "data/cap/index.json",
-     "lastChange": "2026-10-15T14:10:40Z"
+     "lastChange": "2026-10-15T15:49:19Z"
     },
     {
      "path": "data/blog/posts.json",
@@ -2983,18 +3190,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-15T13:45:21Z",
-    "durationSec": 316,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38737533007"
+    "startedAt": "2026-10-15T15:41:46Z",
+    "durationSec": 215,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38762583605"
    },
    "recent": {
     "runs": 9,
     "success": 4,
     "failed": 5
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 3.0
   },
   {
@@ -4057,14 +4264,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-14T15:50:48Z",
-    "durationSec": 30,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38592917432"
+    "startedAt": "2026-10-15T15:47:51Z",
+    "durationSec": 34,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38763477681"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 72.0
@@ -4160,6 +4367,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-us-slaughter.yml",
+   "name": "Update US daily livestock and poultry slaughter (USDA AMS MARS report 3208)",
+   "crons": [
+    "45 21 * * 1-5"
+   ],
+   "nextRun": "2026-10-15T21:45:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-15T16:34:08Z",
+    "durationSec": 27,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38770093980"
+   },
+   "recent": {
+    "runs": 4,
+    "success": 3,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-snotel.yml",
@@ -4467,136 +4697,6 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
-  },
-  {
-   "workflow": "update-us-slaughter.yml",
-   "name": "Update US daily livestock and poultry slaughter (USDA AMS MARS report 3208)",
-   "crons": [
-    "45 21 * * 1-5"
-   ],
-   "nextRun": "2026-10-15T21:45:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 72.0
-  },
-  {
-   "workflow": "update-ers-baseline.yml",
-   "name": "Update USDA ERS 10-year agricultural baseline projections (Agricultural Baseline Database)",
-   "crons": [
-    "20 6 20 11,2 *"
-   ],
-   "nextRun": "2026-11-20T06:20:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 2184.0
-  },
-  {
-   "workflow": "update-es-prices.yml",
-   "name": "Update Spain weekly national prices and origin-destination price observatory (MAPA)",
-   "crons": [
-    "40 7 * * 2,4"
-   ],
-   "nextRun": "2026-10-20T07:40:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 120.0
-  },
-  {
-   "workflow": "update-es-income.yml",
-   "name": "Update Spain agricultural economic accounts and farm income (MAPA)",
-   "crons": [
-    "10 7 12 * *"
-   ],
-   "nextRun": "2026-11-12T07:10:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 744.0
-  },
-  {
-   "workflow": "update-es-esyrce.yml",
-   "name": "Update Spain ESYRCE crop areas by province, rainfed and irrigated (MAPA)",
-   "crons": [
-    "30 7 11 * *"
-   ],
-   "nextRun": "2026-11-11T07:30:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 744.0
-  },
-  {
-   "workflow": "update-es-inputs.yml",
-   "name": "Update Spain fertilizer market and plant-protection product sales (MAPA)",
-   "crons": [
-    "50 7 13 * *"
-   ],
-   "nextRun": "2026-11-13T07:50:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 744.0
-  },
-  {
-   "workflow": "update-es-health.yml",
-   "name": "Update Spain animal disease outbreaks (MAPA RASVE)",
-   "crons": [
-    "30 8 * * *"
-   ],
-   "nextRun": "2026-10-16T08:30:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 24.0
-  },
-  {
-   "workflow": "update-es-esyrce-extra.yml",
-   "name": "Update Spain ESYRCE yields, irrigation systems, woody-crop stage and soil management by province (MAPA)",
-   "crons": [
-    "45 7 11 * *"
-   ],
-   "nextRun": "2026-11-11T07:45:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 744.0
-  },
-  {
-   "workflow": "update-es-ganaderia.yml",
-   "name": "Update Spain eggs, dairy industry and livestock production forecasts (MAPA)",
-   "crons": [
-    "20 8 14 * *"
-   ],
-   "nextRun": "2026-11-14T08:20:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 744.0
-  },
-  {
-   "workflow": "update-es-avances.yml",
-   "name": "Update Spain monthly crop area and production advance estimates (MAPA)",
-   "crons": [
-    "10 9 * * 1"
-   ],
-   "nextRun": "2026-10-19T09:10:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 168.0
   }
  ]
 }
