@@ -4580,7 +4580,8 @@ def spain_ganaderia_dairy(doc, errs, warns, stats):
         for r in sec:
             n += 1
             if len(r["v"]) != len(Y): errs.append("lácteas %r: %d valores para %d años" % (r.get("label"), len(r["v"]), len(Y))); continue
-            if any(x is not None and (x < 0 or x > 5e7) for x in r["v"]): errs.append("lácteas %r: valor imposible" % r.get("label"))
+            lo = -5e7 if str(r.get("label", "")).lower().startswith("diferencias") else 0  # el saldo de disponibilidades (diferencias y pérdidas) puede ser negativo
+            if any(x is not None and (x < lo or x > 5e7) for x in r["v"]): errs.append("lácteas %r: valor imposible" % r.get("label"))
     cow = next((r for r in doc["industry"].get("collected", []) if r["label"].lower().startswith("i. leche de vaca")), None)
     if cow and any(x is not None and not 4000 < x < 12000 for x in cow["v"]): errs.append("lácteas: leche de vaca recogida fuera de 4-12 Mt")
     C = doc["cowMilkByCcaa"]; T = C["territories"]; ids = [t["id"] for t in T]

@@ -500,6 +500,7 @@ CASES = [
  ("spain-ganaderia/eggs.json", "territorio de menos", lambda d: d["years"]["2024"]["dozens"]["hens"].pop()),
  ("spain-ganaderia/dairy.json", "años desordenados", lambda d: d.__setitem__("years", list(reversed(d["years"])))),
  ("spain-ganaderia/dairy.json", "CCAA que no suman", lambda d: d["cowMilkByCcaa"]["v"]["galicia"].__setitem__(0, 1.0)),
+ ("spain-ganaderia/dairy.json", "valor imposible", lambda d: d["industry"]["products"][0]["v"].__setitem__(0, -5.0)),
  ("spain-ganaderia/dairy.json", "leche de vaca imposible", lambda d: d["industry"]["collected"][0]["v"].__setitem__(0, 99999.0)),
  ("spain-ganaderia/forecasts.json", "bovino que no suma", lambda d: next(s for e in d["editions"].values() for s in e["species"] if s["species"].startswith("Total Bovinos"))["periods"][0]["v"].__setitem__(1, 9999.0)),
  ("spain-ganaderia/forecasts.json", "edicion rara", lambda d: d["editions"].__setitem__("hoy", d["editions"].popitem()[1])),
