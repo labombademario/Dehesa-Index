@@ -529,6 +529,20 @@ def country_macro(doc, errs, warns, stats):
         sp = _u.spec_from_file_location("macro_infl", Path(__file__).resolve().parent / "macro_infl.py"); mi = _u.module_from_spec(sp); sp.loader.exec_module(mi)
         r = mi.one(b)
         if not r or abs(r["v"] - i["v"]) > 0.011 or r["m"] != i.get("m"): errs.append("%s infl: %r no coincide con lo que da cpi.json (%r)" % (cc, i, r))
+    RNG = {"gdp": (1e9, 4e13), "gdppc": (500, 3e5), "pop": (3e5, 1.5e9), "unemp": (0, 40), "agri": (0, 40), "debt": (0, 400), "wageh": (0.5, 100)}
+    cur_ok = re.compile(r"^[A-Z]{3}$"); full = 0
+    for cc, c in doc["countries"].items():
+        if c.get("currency") is not None and not cur_ok.match(str(c["currency"])): errs.append("%s: moneda %r no es un codigo de 3 letras" % (cc, c.get("currency")))
+        for k, (lo, hi) in RNG.items():
+            e = c.get(k)
+            if e is None: continue
+            v, y = e.get("v"), e.get("y")
+            if not isinstance(v, (int, float)) or not _m.isfinite(v) or not lo <= v <= hi: errs.append("%s %s: valor %r fuera de rango" % (cc, k, v))
+            if not isinstance(y, int) or not 1990 <= y <= int(today[:4]): errs.append("%s %s: ano %r incoherente" % (cc, k, y))
+        if all(c.get(k) for k in ("gdp", "pop", "gdppc")):
+            full += 1
+            if abs(c["gdp"]["v"] / c["pop"]["v"] / c["gdppc"]["v"] - 1) > 0.15: errs.append("%s: PIB / poblacion no cuadra con el PIB per capita" % cc)
+    stats["macro completos"] = full
     if n < 20: errs.append("country-macro: inflacion en solo %d paises" % n)
     stats["infl paises"] = n
 def cpi(doc, errs, warns, stats):

@@ -2,11 +2,12 @@
 """Indicadores macro por país: Banco Mundial (PIB, PIB per cápita, población, paro, peso agrario) y FMI DataMapper (deuda/PIB)."""
 import json, os, sys, time, datetime, urllib.request
 
-WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
+WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU',
+      'BG': 'BGR', 'CY': 'CYP', 'CZ': 'CZE', 'EE': 'EST', 'EL': 'GRC', 'FI': 'FIN', 'HR': 'HRV', 'HU': 'HUN', 'IE': 'IRL', 'LT': 'LTU', 'LU': 'LUX', 'LV': 'LVA', 'MT': 'MLT', 'PL': 'POL', 'RO': 'ROU', 'SE': 'SWE', 'SI': 'SVN', 'SK': 'SVK', 'UK': 'GBR', 'AR': 'ARG', 'CH': 'CHE', 'CL': 'CHL'}
 IND = {'gdp': 'NY.GDP.MKTP.CD', 'gdppc': 'NY.GDP.PCAP.CD', 'pop': 'SP.POP.TOTL', 'unemp': 'SL.UEM.TOTL.ZS', 'agri': 'NV.AGR.TOTL.ZS'}
 CUR = {'US': 'USD'}
-CUR.update({c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'NL', 'EU']})
-CUR.update({'DK': 'DKK', 'CA': 'CAD', 'AU': 'AUD'})
+CUR.update({c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'NL', 'EU', 'BG', 'CY', 'EE', 'EL', 'FI', 'HR', 'IE', 'LT', 'LU', 'LV', 'MT', 'SI', 'SK']})  # Bulgaria usa el euro desde 2026-01-01 (Croacia desde 2023)
+CUR.update({'DK': 'DKK', 'CA': 'CAD', 'AU': 'AUD', 'CZ': 'CZK', 'HU': 'HUF', 'PL': 'PLN', 'RO': 'RON', 'SE': 'SEK', 'UK': 'GBP', 'AR': 'ARS', 'CH': 'CHF', 'CL': 'CLP'})
 LOG = []
 
 def log(m):
@@ -53,7 +54,7 @@ for c, iso in WB.items():
 log('debt FMI: %d paises' % n)
 for c in WB:
     if 'debt' in out[c]: continue
-    if c in ('CA', 'AU', 'US'):
+    if c in ('CA', 'AU', 'US', 'UK', 'AR', 'CH', 'CL'):
         d = get('https://api.worldbank.org/v2/country/%s/indicator/GC.DOD.TOTL.GD.ZS?format=json&mrnev=1' % WB[c])
         r = d[1][0] if d and len(d) > 1 and d[1] else None
         if r and r.get('value') is not None:
@@ -69,7 +70,7 @@ for c in WB:
             log('debt %s sin dato (%s)' % (c, e))
 
 # salario mediano horario armonizado (Eurostat SES, cada 4 años)
-geos = [c for c in WB if c not in ('US', 'CA', 'AU')]
+geos = [c for c in WB if c not in ('US', 'CA', 'AU', 'UK', 'AR', 'CH', 'CL')]
 d = get('https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_ses_pub2s?format=JSON&lang=EN&sex=T&unit=EUR&sizeclas=GE10&sinceTimePeriod=2018&' + '&'.join('geo=' + ('EU27_2020' if g == 'EU' else g) for g in geos))
 try:
     dim = d['dimension']; ids = d['id']; sizes = d['size']
