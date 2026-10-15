@@ -6,8 +6,8 @@
    "from": "2026-10-12",
    "to": "2026-10-18",
    "complete": false,
-   "items": 975,
-   "sources": 300,
+   "items": 1497,
+   "sources": 372,
    "coverageFrom": "2026-10-12"
   },
   {
@@ -15,7 +15,7 @@
    "from": "2026-10-05",
    "to": "2026-10-11",
    "complete": true,
-   "items": 1470,
+   "items": 1472,
    "sources": 382,
    "coverageFrom": "2026-10-05"
   },
@@ -24,10 +24,10 @@
    "from": "2026-09-28",
    "to": "2026-10-04",
    "complete": true,
-   "items": 2321,
-   "sources": 618,
+   "items": 2323,
+   "sources": 620,
    "coverageFrom": "2026-09-29"
   }
  ],
- "generatedAt": "2026-10-14T00:11:05Z"
+ "generatedAt": "2026-10-15T00:07:22Z"
 }
