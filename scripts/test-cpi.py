@@ -59,6 +59,27 @@ eq(sorted(ext), ["2026-01", "2026-02"], "meses añadidos")
 eq(round(ext["2026-01"], 2), round(113 * 1.01, 2), "valor enlazado en base antigua")
 eq(m.rebase(old, {"2025-12": 90.0}), ({}, None), "sin solape suficiente no se enlaza")
 
+
+# src_eurostat con fixtures: la serie 2015=100 acaba en 2025-12 y la 2025=100 (prc_hicp_minr) trae 2026; el resultado llega a 2026 sin salto
+import tempfile, os
+def _js(unit, geo, series):
+    times = sorted(series)
+    return {"id": ["freq", "unit", "coicop18", "geo", "time"], "size": [1, 1, 1, 1, len(times)],
+            "dimension": {"freq": {"category": {"index": {"M": 0}}}, "unit": {"category": {"index": {unit: 0}}}, "coicop18": {"category": {"index": {"TOTAL": 0}}},
+                          "geo": {"category": {"index": {geo: 0}}}, "time": {"category": {"index": {t: i for i, t in enumerate(times)}}}},
+            "value": {str(i): series[t] for i, t in enumerate(times)}}
+i15 = {"%04d-%02d" % (2024 + (i // 12), i % 12 + 1): 120 + i * 0.1 for i in range(24)}            # 2024-01..2025-12
+i25 = {k: v / 1.2 for k, v in i15.items() if k >= "2025-01"}
+i25.update({"2026-01": i15["2025-12"] / 1.2 + 0.1, "2026-02": i15["2025-12"] / 1.2 + 0.2})
+with tempfile.TemporaryDirectory() as td:
+    td = Path(td); (td / "eurostat.json").write_text(json.dumps(_js("I15", "ES", i15))); (td / "eurostat-i25.json").write_text(json.dumps(_js("I25", "ES", i25)))
+    m.FIX = td
+    r = m.src_eurostat()["ES"]
+    m.FIX = None
+eq(max(r), "2026-02", "src_eurostat: llega a 2026-02")
+eq(round(r["2026-01"], 2), round(i15["2025-12"] + 0.12, 2), "src_eurostat: enlace sin salto")
+eq(m.check("ES", r), None, "src_eurostat: la serie enlazada es valida")
+
 # inflación interanual de la franja macro (scripts/macro_infl.py): solo de cpi.json
 sys.path.insert(0, str(ROOT / "scripts"))
 import macro_infl

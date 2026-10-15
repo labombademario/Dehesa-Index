@@ -128,16 +128,34 @@ def src_eurostat():
         t = fixture("eurostat.json")
     else:
         t = http("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=JSON&lang=EN&unit=I15&coicop=CP00&sinceTimePeriod=%d-01" % START_YEAR)
-    if not t:
+    base = {g: v for g, v in parse_eurostat(t).items() if g in EU_GEO} if t else {}
+    if len(base) < len(EU_GEO) - 3:  # la serie antigua ya no llega o falla: se parte de lo ya guardado (el empalme con la base 2025 necesita meses comunes)
+        try:
+            for g, c in json.loads(OUT.read_text(encoding="utf-8"))["countries"].items():
+                if g in EU_GEO and g not in base and (c.get("m") or {}).get("src") == "eurostat":
+                    base[g] = unpack(c["m"])
+        except Exception:
+            pass
+    if not base:
         return {}
-    base = {g: v for g, v in parse_eurostat(t).items() if g in EU_GEO}
-    # Eurostat reexpresa el HICP en base 2025=100 (unit=I25); si la serie 2015=100 (I15) se queda atrás, se enlaza con la nueva por los meses en común
-    try:
-        t2 = fixture("eurostat-i25.json") if FIX else http("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=JSON&lang=EN&unit=I25&coicop=CP00&sinceTimePeriod=2025-01", tries=2)
-        new = {g: v for g, v in parse_eurostat(t2).items() if g in EU_GEO} if t2 else {}
-    except Exception as e:
-        log("Eurostat I25: no se pudo leer (%s); se sigue con I15" % e)
-        new = {}
+    # Desde 2026 Eurostat publica el HICP en base 2025=100 y con COICOP 2018 (prc_hicp_minr, el mismo conjunto que ya usan update-spain-hicp.py y
+    # update-france-hicp.py); la serie 2015=100 de prc_hicp_midx se queda en 2025-12. Se enlaza la nueva con la vieja por los meses comunes.
+    # El codigo del indice general en COICOP 2018 es TOTAL; se prueban alternativas por si el conjunto lo llama distinto.
+    new = {}
+    base_url = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+    for ds, dim, code in (("prc_hicp_minr", "coicop18", "TOTAL"), ("prc_hicp_minr", "coicop18", "CP00"), ("prc_hicp_midx", "coicop", "CP00")):
+        try:
+            t2 = fixture("eurostat-i25.json") if FIX else http("%s%s?format=JSON&lang=EN&unit=I25&%s=%s&sinceTimePeriod=2025-01" % (base_url, ds, dim, code), tries=2)
+            got = {g: v for g, v in parse_eurostat(t2).items() if g in EU_GEO} if t2 else {}
+        except Exception as e:
+            log("Eurostat %s %s=%s: no se pudo leer (%s)" % (ds, dim, code, e))
+            got = {}
+        if got:
+            new = got
+            log("Eurostat %s %s=%s (I25): %d paises, hasta %s" % (ds, dim, code, len(got), max(max(v) for v in got.values())))
+            break
+        if FIX:
+            break
     for g, pts in new.items():
         if g in base:
             ext, f = rebase(base[g], pts)
