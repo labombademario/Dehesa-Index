@@ -16,7 +16,38 @@
       year: 'Esercizio', ccaa: 'Regione', type: 'Tipo di azienda', dim: 'Dimensione economica', variable: 'Variabile', chart: 'Andamento', all: 'Tutte le variabili dell’esercizio', rank: 'Confronto tra regioni', value: 'Valore', prev: 'Esercizio precedente', chg: 'Variazione', farms: 'Aziende nel campione', rep: 'Aziende rappresentate', none: 'Nessun dato per questa combinazione (il MAPA lo segnala come riservato o il campione è troppo piccolo).', sample: 'Campione',
       note: 'Valori medi per azienda come pubblicati dal MAPA. Le celle riservate non compaiono e non vengono riempite né mediate tra regioni. Con poche aziende nel campione la cifra è meno affidabile. Le variazioni tra esercizi possono riflettere cambi del campione. I nomi delle variabili restano in spagnolo.', src: 'Fonte', lic: 'Licenza', updated: 'Aggiornato', perFarm: 'per azienda' }
   };
-  var D = null, ST = { c: null, t: null, d: null, y: null, v: 'SE420' };
+  var X = {
+    es: { q: '¿Qué explotación quieres consultar?', ph: 'Prueba con «olivar», «vacuno de leche» o «Extremadura»', go: 'Buscar', secs: 'O elige un sector', subtype: 'Subtipo', size: 'Tamaño económico', sizeHint: 'clase de producción estándar de la explotación', reset: 'Restablecer', nores: 'Sin resultados para «{q}». Prueba con otra palabra.', kT: 'Tipo', kC: 'Comunidad', kS: 'Sector',
+      noCom: '«{t}» no tiene datos en {c}. Te mostramos {c2}, la comunidad con más datos.', noType: 'En {c} no hay datos de «{t}». Te mostramos «{t2}».', onlyHere: '{n} subtipos más sin datos en esta comunidad.',
+      sumA: '{t} en {c}, {y}: la renta neta fue de {v} € por explotación ({chg} frente a {py}). Los ingresos fueron de {i} € y los costes de {k} €.', sumB: '{t} en {c}, {y}: la renta neta fue de {v} € por explotación. Los ingresos fueron de {i} € y los costes de {k} €.', sumC: '{t} en {c}, {y}: no hay renta neta publicada para esta combinación.', sumS: ' Las subvenciones corrientes netas equivalen al {x} % del valor añadido neto.',
+      kinc: 'Ingresos (producción bruta)', kcost: 'Costes totales', ksub: 'Subvenciones corrientes', knet: 'Renta neta', kuta: 'Valor añadido neto por UTA', kHint: 'Pulsa un indicador para ver su evolución.', vs: 'frente a {y}', nodata: 'sin datos',
+      small: 'Muestra pequeña ({n} explotaciones): interprétalo con cautela.', allv: 'Ver las {n} variables del MAPA', rankHint: 'Pulsa una comunidad para verla.',
+      g1: 'Mano de obra, tierra y ganado', g2: 'Producción', g3: 'Costes', g4: 'Resultados', g5: 'Balance: activos y deudas', g6: 'Subvenciones', pick: 'Ver gráfico' },
+    en: { q: 'Which farm type do you want to look up?', ph: 'Try “olives”, “dairy cattle” or “Extremadura”', go: 'Search', secs: 'Or pick a sector', subtype: 'Subtype', size: 'Economic size', sizeHint: 'standard-output class of the farm', reset: 'Reset', nores: 'No results for “{q}”. Try another word.', kT: 'Type', kC: 'Region', kS: 'Sector',
+      noCom: '“{t}” has no data in {c}. Showing {c2}, the region with most data.', noType: 'No data for “{t}” in {c}. Showing “{t2}”.', onlyHere: '{n} more subtypes have no data in this region.',
+      sumA: '{t} in {c}, {y}: net income was €{v} per farm ({chg} vs {py}). Output was €{i} and costs €{k}.', sumB: '{t} in {c}, {y}: net income was €{v} per farm. Output was €{i} and costs €{k}.', sumC: '{t} in {c}, {y}: no net income is published for this combination.', sumS: ' Net current subsidies equal {x}% of farm net value added.',
+      kinc: 'Output (gross production)', kcost: 'Total costs', ksub: 'Current subsidies', knet: 'Net income', kuta: 'Net value added per AWU', kHint: 'Select an indicator to see its trend.', vs: 'vs {y}', nodata: 'no data',
+      small: 'Small sample ({n} farms): read with caution.', allv: 'See all {n} MAPA variables', rankHint: 'Select a region to view it.',
+      g1: 'Labour, land and livestock', g2: 'Output', g3: 'Costs', g4: 'Results', g5: 'Balance sheet: assets and debts', g6: 'Subsidies', pick: 'Show chart' },
+    fr: { q: 'Quelle exploitation voulez-vous consulter ?', ph: 'Essayez « oliviers », « bovins lait » ou « Estrémadure »', go: 'Rechercher', secs: 'Ou choisissez un secteur', subtype: 'Sous-type', size: 'Taille économique', sizeHint: 'classe de production standard de l’exploitation', reset: 'Réinitialiser', nores: 'Aucun résultat pour « {q} ». Essayez un autre mot.', kT: 'Type', kC: 'Région', kS: 'Secteur',
+      noCom: '« {t} » n’a pas de données en {c}. Affichage : {c2}, la région avec le plus de données.', noType: 'Pas de données « {t} » en {c}. Affichage : « {t2} ».', onlyHere: '{n} autres sous-types sans données dans cette région.',
+      sumA: '{t} en {c}, {y} : le revenu net était de {v} € par exploitation ({chg} par rapport à {py}). La production était de {i} € et les coûts de {k} €.', sumB: '{t} en {c}, {y} : le revenu net était de {v} € par exploitation. La production était de {i} € et les coûts de {k} €.', sumC: '{t} en {c}, {y} : aucun revenu net publié pour cette combinaison.', sumS: ' Les subventions courantes nettes représentent {x} % de la valeur ajoutée nette.',
+      kinc: 'Production brute', kcost: 'Coûts totaux', ksub: 'Subventions courantes', knet: 'Revenu net', kuta: 'Valeur ajoutée nette par UTA', kHint: 'Cliquez sur un indicateur pour voir son évolution.', vs: 'par rapport à {y}', nodata: 'pas de données',
+      small: 'Petit échantillon ({n} exploitations) : à interpréter avec prudence.', allv: 'Voir les {n} variables du MAPA', rankHint: 'Cliquez sur une région pour l’afficher.',
+      g1: 'Main-d’œuvre, terre et cheptel', g2: 'Production', g3: 'Coûts', g4: 'Résultats', g5: 'Bilan : actifs et dettes', g6: 'Subventions', pick: 'Voir le graphique' },
+    it: { q: 'Quale azienda vuoi consultare?', ph: 'Prova con «olivo», «bovini da latte» o «Estremadura»', go: 'Cerca', secs: 'Oppure scegli un settore', subtype: 'Sottotipo', size: 'Dimensione economica', sizeHint: 'classe di produzione standard dell’azienda', reset: 'Reimposta', nores: 'Nessun risultato per «{q}». Prova un’altra parola.', kT: 'Tipo', kC: 'Regione', kS: 'Settore',
+      noCom: '«{t}» non ha dati in {c}. Mostriamo {c2}, la regione con più dati.', noType: 'Nessun dato «{t}» in {c}. Mostriamo «{t2}».', onlyHere: 'Altri {n} sottotipi senza dati in questa regione.',
+      sumA: '{t} in {c}, {y}: il reddito netto è stato di {v} € per azienda ({chg} rispetto al {py}). La produzione è stata di {i} € e i costi di {k} €.', sumB: '{t} in {c}, {y}: il reddito netto è stato di {v} € per azienda. La produzione è stata di {i} € e i costi di {k} €.', sumC: '{t} in {c}, {y}: nessun reddito netto pubblicato per questa combinazione.', sumS: ' Le sovvenzioni correnti nette equivalgono al {x} % del valore aggiunto netto.',
+      kinc: 'Produzione lorda', kcost: 'Costi totali', ksub: 'Sovvenzioni correnti', knet: 'Reddito netto', kuta: 'Valore aggiunto netto per ULA', kHint: 'Seleziona un indicatore per vederne l’andamento.', vs: 'rispetto al {y}', nodata: 'nessun dato',
+      small: 'Campione piccolo ({n} aziende): interpretare con cautela.', allv: 'Vedi le {n} variabili del MAPA', rankHint: 'Seleziona una regione per vederla.',
+      g1: 'Manodopera, terra e bestiame', g2: 'Produzione', g3: 'Costi', g4: 'Risultati', g5: 'Bilancio: attività e debiti', g6: 'Sovvenzioni', pick: 'Mostra grafico' }
+  };
+  Object.keys(X).forEach(function (l) { for (var k in X[l]) T[l][k] = X[l][k]; });
+  var SECN = { es: { cer: 'Cereales y cultivos extensivos', oli: 'Olivar', vin: 'Viñedo', fru: 'Frutales y leñosos', hor: 'Hortalizas y flores', bov: 'Vacuno', ovi: 'Ovino y caprino', por: 'Porcino y aves', mix: 'Explotaciones mixtas' },
+    en: { cer: 'Cereals and field crops', oli: 'Olives', vin: 'Vineyards', fru: 'Fruit and tree crops', hor: 'Vegetables and flowers', bov: 'Cattle', ovi: 'Sheep and goats', por: 'Pigs and poultry', mix: 'Mixed farms' },
+    fr: { cer: 'Céréales et grandes cultures', oli: 'Oliviers', vin: 'Vignes', fru: 'Fruits et cultures ligneuses', hor: 'Légumes et fleurs', bov: 'Bovins', ovi: 'Ovins et caprins', por: 'Porcins et volailles', mix: 'Exploitations mixtes' },
+    it: { cer: 'Cereali e colture estensive', oli: 'Olivo', vin: 'Vigneti', fru: 'Frutteti e colture legnose', hor: 'Ortaggi e fiori', bov: 'Bovini', ovi: 'Ovini e caprini', por: 'Suini e avicoli', mix: 'Aziende miste' } };
+  var D = null, ST = { c: null, t: null, d: null, y: null, v: 'SE420', note: '', openAll: false };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -30,72 +61,183 @@
   function vidx(id) { for (var i = 0; i < D.vars.length; i++) if (D.vars[i][0] === id) return i; return 0; }
   function uniq(a) { var o = [], s = {}; a.forEach(function (x) { if (!s[x]) { s[x] = 1; o.push(x); } }); return o; }
   function num(a) { return a.sort(function (x, y) { return x - y; }); }
-  // filas (ejercicio, comunidad, tipo, dimensión, muestra, representadas, [valores])
-  function rowsWhere(f) { return D.rows.filter(f); }
-  function fix() {
-    var r = rowsWhere(function (x) { return true; });
-    var cs = num(uniq(r.map(function (x) { return x[1]; })));
-    if (cs.indexOf(ST.c) < 0) ST.c = cs.indexOf(D.ccaa.indexOf('Andalucía')) >= 0 ? D.ccaa.indexOf('Andalucía') : cs[0];
-    var ts = num(uniq(rowsWhere(function (x) { return x[1] === ST.c; }).map(function (x) { return x[2]; })));
-    if (ts.indexOf(ST.t) < 0) ST.t = ts[0];
-    var ds = num(uniq(rowsWhere(function (x) { return x[1] === ST.c && x[2] === ST.t; }).map(function (x) { return x[3]; })));
-    if (ds.indexOf(ST.d) < 0) ST.d = ds[0];
-    var ys = num(uniq(rowsWhere(function (x) { return x[1] === ST.c && x[2] === ST.t && x[3] === ST.d; }).map(function (x) { return x[0]; })));
-    if (ys.indexOf(ST.y) < 0) ST.y = ys[ys.length - 1];
-    return { cs: cs, ts: ts, ds: ds, ys: ys };
-  }
+  // ---------- selección y datos ----------
+  var SEC = [['cer', '🌾', ['Cereales, oleaginosas y proteaginosas', 'Otros cultivos anuales extensivos']], ['oli', '🫒', ['Olivar']], ['vin', '🍇', ['Vitivinicultura']], ['fru', '🍎', ['Frutales', 'Cultivos permanentes combinados']], ['hor', '🍅', ['Horticultura']], ['bov', '🐄', ['Bovinos de carne y cría de bovinos', 'Bovinos de carne, leche y cría de bovinos', 'Vacuno lechero']], ['ovi', '🐑', ['Ovino, caprino y otros herbívoros']], ['por', '🐖', ['Porcinos', 'Aves', 'Granívoros diversos combinados']], ['mix', '🔀', ['Mixto agricultura', 'Mixto agricultura y ganadería', 'Mixto ganadería']]];
+  var KP = [['SE131', 'kinc'], ['SE270', 'kcost'], ['SE605', 'ksub'], ['SE420', 'knet'], ['SE425', 'kuta']];
+  var GR = [['g1', function (id) { return /^SE0/.test(id); }], ['g2', function (id) { return /^SE(1|2[0-5])/.test(id); }], ['g3', function (id) { return /^SE(27|28|30|31|33|34|35|36|37|38)/.test(id) || id === 'SE750'; }], ['g4', function (id) { return /^SE4[012]/.test(id); }], ['g5', function (id) { return /^SE4[3-9]/.test(id); }], ['g6', function (id) { return /^SE6/.test(id) || id === 'XSCVA'; }]];
+  var AND = -1;
+  function secName(id) { return (SECN[lang()] || SECN.es)[id]; }
+  function secOf(ti) { var g = D.types[ti][0]; for (var i = 0; i < SEC.length; i++) if (SEC[i][2].indexOf(g) >= 0) return SEC[i][0]; return null; }
+  function secTypes(id) { var o = []; D.types.forEach(function (x, i) { if (secOf(i) === id) o.push(i); }); return o; }
+  function fm(s, o) { return s.replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
+  function fmt(v) { return nf(v, dec(v)); }
+  function norm(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
   function find(y, c, t, d) { for (var i = 0; i < D.rows.length; i++) { var x = D.rows[i]; if (x[0] === y && x[1] === c && x[2] === t && x[3] === d) return x; } return null; }
-  function chartFor(vi, av) {
+  function cnt(c, t) { var n = 0; D.rows.forEach(function (x) { if (x[1] === c && x[2] === t) n++; }); return n; }
+  function comsFor(t) { return num(uniq(D.rows.filter(function (x) { return x[2] === t; }).map(function (x) { return x[1]; }))); }
+  function dimsFor(c, t) { return num(uniq(D.rows.filter(function (x) { return x[1] === c && x[2] === t; }).map(function (x) { return x[3]; }))); }
+  function yearsFor(c, t, d) { return num(uniq(D.rows.filter(function (x) { return x[1] === c && x[2] === t && x[3] === d; }).map(function (x) { return x[0]; }))); }
+  function bestCom(t) { var cs = comsFor(t); if (cs.indexOf(AND) >= 0) return AND; var b = cs[0], m = -1; cs.forEach(function (c) { var n = cnt(c, t); if (n > m) { m = n; b = c; } }); return b; }
+  function bestType(c, pool) { var b = null, m = 0; (pool || D.types.map(function (x, i) { return i; })).forEach(function (ti) { var n = cnt(c, ti); if (n > m) { m = n; b = ti; } }); return b; }
+  function tIdx(name) { for (var i = 0; i < D.types.length; i++) if (D.types[i][0] === name) return i; return 0; }
+  function defaults() { ST.t = tIdx('Olivar'); ST.c = null; ST.d = null; ST.y = null; ST.v = 'SE420'; ST.note = ''; }
+  function fix() {
+    if (ST.t == null || !D.types[ST.t]) ST.t = tIdx('Olivar');
+    var cs = comsFor(ST.t); if (cs.indexOf(ST.c) < 0) ST.c = bestCom(ST.t);
+    var ds = dimsFor(ST.c, ST.t);
+    if (ds.indexOf(ST.d) < 0) { var bd = ds[0], m = -1; ds.forEach(function (d) { var yy = yearsFor(ST.c, ST.t, d), n = yy[yy.length - 1] * 100 + yy.length; if (n > m) { m = n; bd = d; } }); ST.d = bd; }
+    var ys = yearsFor(ST.c, ST.t, ST.d); if (ys.indexOf(ST.y) < 0) ST.y = ys[ys.length - 1];
+    if (!D.vars.some(function (v) { return v[0] === ST.v; })) ST.v = 'SE420';
+    return ys;
+  }
+  function pickType(t) { ST.note = ''; var old = ST.c; ST.t = t; if (cnt(ST.c, t) === 0) { var c2 = bestCom(t); ST.note = fm(tt().noCom, { t: tlabel(t), c: D.ccaa[old], c2: D.ccaa[c2] }); ST.c = c2; } ST.d = null; ST.y = null; }
+  function pickCom(c) { ST.note = ''; var old = ST.t; ST.c = c; if (cnt(c, ST.t) === 0) { var sid = secOf(ST.t), t2 = bestType(c, sid ? secTypes(sid) : null); if (t2 == null) t2 = bestType(c, null); ST.note = fm(tt().noType, { t: tlabel(old), c: D.ccaa[c], t2: tlabel(t2) }); ST.t = t2; } ST.d = null; ST.y = null; }
+  function pickSec(id) { var pool = secTypes(id), t2 = bestType(ST.c, pool); if (t2 != null) { ST.note = ''; ST.t = t2; ST.d = null; ST.y = null; return; } var best = pool[0], m = -1; pool.forEach(function (ti) { var n = D.rows.filter(function (x) { return x[2] === ti; }).length; if (n > m) { m = n; best = ti; } }); pickType(best); }
+  function subLabel(ti, multi) { var x = D.types[ti]; return multi ? tlabel(ti) : rt(x[1]); }
+  function pct(a, b) { return b != null && b !== 0 && a != null ? (a - b) / Math.abs(b) * 100 : null; }
+  function sgn(c) { return (c > 0 ? '+' : c < 0 ? '−' : '') + nf(Math.abs(c), 1) + ' %'; }
+  function val(row, id) { return row ? row[6][vidx(id)] : null; }
+  function chartFor(vi, ys) {
     var pts = [];
-    av.ys.forEach(function (y) { var r = find(y, ST.c, ST.t, ST.d); if (r && r[6][vi] != null) pts.push({ x: Date.UTC(D.years[y], 0, 1), y: r[6][vi], l: String(D.years[y]) }); });
+    ys.forEach(function (y) { var r = find(y, ST.c, ST.t, ST.d); if (r && r[6][vi] != null) pts.push({ x: Date.UTC(D.years[y], 0, 1), y: r[6][vi], l: String(D.years[y]) }); });
     if (pts.length < 2) return '';
     var v = D.vars[vi];
     return window.DehesaChart.render({ series: [{ name: rt(v[1]), color: '#2f6b4a', pts: pts }], xMode: 'time', xTitle: tt().year, yTitle: ru(v[2]), aria: rt(v[1]) + ' (' + ru(v[2]) + ')', noLegend: true,
       vFmt: function (x) { return nf(x, dec(x)); }, xFmt: function (x) { return new Date(x).getUTCFullYear(); } });
   }
-  function build() {
-    var root = document.getElementById('recan-body'); if (!root || !D) return;
-    var t = tt(), av = fix(), vi = vidx(ST.v), cur = find(ST.y, ST.c, ST.t, ST.d);
+  // ---------- pintado ----------
+  function topHtml() {
+    var t = tt();
+    return '<div class="um-hero"><h2 class="um-q" id="rc-q">' + esc(t.q) + '</h2><form class="um-form" id="rc-form" role="search" aria-labelledby="rc-q"><input class="um-input" id="rc-s" type="search" autocomplete="off" placeholder="' + esc(t.ph) + '" aria-label="' + esc(t.q) + '"><button class="di-btn um-go" type="submit">' + esc(t.go) + '</button></form><div id="rc-sr" class="rc-sg" aria-live="polite"></div>' +
+      '<h3 class="um-h2">' + esc(t.secs) + '</h3><div class="um-prods" id="rc-secs"></div></div><div id="rc-ctl"></div><div id="rc-out"></div>';
+  }
+  function secsHtml() {
+    var cur = secOf(ST.t);
+    return SEC.map(function (s) { return '<button type="button" class="um-prod" data-sec="' + s[0] + '" data-rf="sec:' + s[0] + '" aria-pressed="' + (s[0] === cur) + '"><span class="um-emo" aria-hidden="true">' + s[1] + '</span><span>' + esc(secName(s[0])) + '</span></button>'; }).join('');
+  }
+  function ctlHtml(ys) {
+    var t = tt(), sid = secOf(ST.t), all = sid ? secTypes(sid) : [ST.t], pool = all.filter(function (ti) { return cnt(ST.c, ti) > 0 || ti === ST.t; });
+    var multi = uniq(all.map(function (ti) { return D.types[ti][0]; })).length > 1;
     var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + k + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
-    var sel = function (id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:170px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
-    var html = '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
-      sel('rc-c', t.ccaa, opt(av.cs, ST.c, function (k) { return D.ccaa[k]; })) +
-      sel('rc-t', t.type, opt(av.ts, ST.t, tlabel)) +
-      sel('rc-d', t.dim, opt(av.ds, ST.d, function (k) { return rt(D.dims[k]); })) +
-      sel('rc-y', t.year, opt(av.ys, ST.y, function (k) { return D.years[k]; })) +
-      sel('rc-v', t.variable, D.vars.map(function (v) { return '<option value="' + v[0] + '"' + (v[0] === ST.v ? ' selected' : '') + '>' + esc(rt(v[1])) + '</option>'; }).join('')) + '</div>';
-    var v = D.vars[vi], val = cur ? cur[6][vi] : null;
-    html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(rt(v[1]).toUpperCase()) + ' (' + esc(ru(v[2])) + ') · ' + t.chart.toUpperCase() + '</div>';
-    var ch = chartFor(vi, av);
-    html += ch || '<p class="di-movers-hint">' + t.none + '</p>';
-    if (val != null) html += '<div class="di-movers-hint" style="margin-top:6px">' + D.years[ST.y] + ': <b>' + nf(val, dec(val)) + ' ' + esc(ru(v[2])) + '</b> · ' + t.farms + ': ' + (cur[4] != null ? nf(cur[4], 0) : '—') + ' · ' + t.rep + ': ' + (cur[5] != null ? nf(cur[5], 0) : '—') + '</div>';
-    html += '</div>';
-    // todas las variables del ejercicio
-    var prevY = av.ys[av.ys.indexOf(ST.y) - 1], prev = prevY != null ? find(prevY, ST.c, ST.t, ST.d) : null;
-    var th = 'padding:8px 6px;';
-    html += '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);padding:10px 0 2px">' + t.all.toUpperCase() + ' · ' + D.years[ST.y] + '</div><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="' + th + '">' + t.variable + '</th><th style="' + th + 'text-align:right">' + t.value + '</th><th style="' + th + '">&nbsp;</th><th style="' + th + 'text-align:right">' + t.chg + (prevY != null ? ' vs ' + D.years[prevY] : '') + '</th></tr>';
-    D.vars.forEach(function (vv, i) {
-      var a = cur ? cur[6][i] : null, b = prev ? prev[6][i] : null;
-      if (a == null) return;
-      var c = b != null && b !== 0 ? (a - b) / Math.abs(b) * 100 : null;
-      html += '<tr style="border-top:1px solid var(--border)"><td style="' + th + '">' + esc(rt(vv[1])) + '</td><td style="' + th + 'text-align:right">' + nf(a, dec(a)) + '</td><td style="' + th + 'color:var(--text-faint);font-size:12px">' + esc(ru(vv[2])) + '</td><td style="' + th + 'text-align:right">' + (c == null ? '' : (c > 0 ? '+' : c < 0 ? '−' : '') + nf(Math.abs(c), 1) + ' %') + '</td></tr>';
-    });
-    html += '</table></div>';
-    // comparativa entre comunidades (mismo tipo, dimensión y ejercicio)
+    var fld = function (id, label, inner) { return '<div class="rc-fld"><label for="' + id + '">' + esc(label) + '</label><select id="' + id + '" class="di-compare-select" data-rf="' + id + '">' + inner + '</select></div>'; };
+    var h = '<div class="rc-ctl">';
+    if (pool.length > 1) h += fld('rc-t', t.subtype, opt(pool, ST.t, function (k) { return subLabel(k, multi); }));
+    h += fld('rc-c', t.ccaa, opt(comsFor(ST.t), ST.c, function (k) { return D.ccaa[k]; })) + fld('rc-y', t.year, opt(ys.slice().reverse(), ST.y, function (k) { return D.years[k]; }));
+    h += '<button type="button" class="di-btn um-cf" data-reset="1" data-rf="reset">' + esc(t.reset) + '</button></div>';
+    var hid = all.length - pool.length; if (hid > 0) h += '<p class="um-hint">' + esc(fm(t.onlyHere, { n: hid })) + '</p>';
+    var ds = dimsFor(ST.c, ST.t);
+    if (ds.length > 1) h += '<fieldset class="rc-sz"><legend><b>' + esc(t.size) + '</b> <span class="um-cnt">· ' + esc(t.sizeHint) + '</span></legend><div class="rc-chips">' + ds.map(function (d) { return '<button type="button" class="rc-chip" data-dim="' + d + '" data-rf="dim:' + d + '" aria-pressed="' + (d === ST.d) + '">' + esc(rt(D.dims[d])) + '</button>'; }).join('') + '</div></fieldset>';
+    else if (ds.length === 1) h += '<p class="um-hint"><b>' + esc(t.size) + ':</b> ' + esc(rt(D.dims[ds[0]])) + '</p>';
+    return h;
+  }
+  function outHtml(ys) {
+    var t = tt(), vi = vidx(ST.v), cur = find(ST.y, ST.c, ST.t, ST.d), pyI = ys[ys.indexOf(ST.y) - 1], prev = pyI != null ? find(pyI, ST.c, ST.t, ST.d) : null, h = '';
+    if (ST.note) h += '<p class="um-warn" role="status">' + esc(ST.note) + '</p>';
+    var names = { t: tlabel(ST.t), c: D.ccaa[ST.c], y: D.years[ST.y] }, net = val(cur, 'SE420'), inc = val(cur, 'SE131'), cost = val(cur, 'SE270'), sb = val(cur, 'XSCVA'), nc = net != null ? pct(net, val(prev, 'SE420')) : null, sum;
+    if (net == null) sum = fm(t.sumC, names);
+    else { var o = { t: names.t, c: names.c, y: names.y, v: fmt(net), i: inc != null ? fmt(inc) : '—', k: cost != null ? fmt(cost) : '—', chg: nc != null ? sgn(nc) : '', py: pyI != null ? D.years[pyI] : '' }; sum = fm(nc != null ? t.sumA : t.sumB, o); }
+    if (net != null && sb != null && sb >= 0) sum += fm(t.sumS, { x: nf(sb, 0) });
+    h += '<p class="rc-sum" role="status" aria-live="polite">' + esc(sum) + '</p>';
+    h += '<p class="um-hint" style="margin:0 0 8px">' + esc(t.kHint) + '</p><div class="rc-kpis">' + KP.map(function (k) {
+      var i = vidx(k[0]), a = cur ? cur[6][i] : null, b = prev ? prev[6][i] : null, c = pct(a, b);
+      return '<button type="button" class="rc-kpi" data-kpi="' + k[0] + '" data-rf="kpi:' + k[0] + '" aria-pressed="' + (k[0] === ST.v) + '"><span class="rc-kl">' + esc(t[k[1]]) + '</span><span class="rc-kv">' + (a != null ? fmt(a) + ' <small>€</small>' : '<small>' + esc(t.nodata) + '</small>') + '</span><span class="rc-kc">' + (c != null ? esc(sgn(c) + ' ' + fm(t.vs, { y: D.years[pyI] })) : '&nbsp;') + '</span></button>';
+    }).join('') + '</div>';
+    var v = D.vars[vi], ch = chartFor(vi, ys);
+    h += '<div class="di-card rc-card" id="rc-chart"><div class="rc-ct">' + esc(rt(v[1])) + ' (' + esc(ru(v[2])) + ')</div>' + (ch || '<p class="di-movers-hint">' + esc(t.none) + '</p>');
+    var vv = cur ? cur[6][vi] : null;
+    if (vv != null) h += '<div class="di-movers-hint" style="margin-top:6px">' + D.years[ST.y] + ': <b>' + nf(vv, dec(vv)) + ' ' + esc(ru(v[2])) + '</b> · ' + esc(t.farms) + ': ' + (cur[4] != null ? nf(cur[4], 0) : '—') + ' · ' + esc(t.rep) + ': ' + (cur[5] != null ? nf(cur[5], 0) : '—') + '</div>';
+    if (cur && cur[4] != null && cur[4] < 10) h += '<p class="um-warn" style="margin:8px 0 0">' + esc(fm(t.small, { n: nf(cur[4], 0) })) + '</p>';
+    h += '</div>';
     var rk = D.rows.filter(function (x) { return x[0] === ST.y && x[2] === ST.t && x[3] === ST.d && x[6][vi] != null; }).sort(function (a, b) { return b[6][vi] - a[6][vi]; });
     if (rk.length > 1) {
       var max = Math.max.apply(null, rk.map(function (x) { return Math.abs(x[6][vi]); })) || 1;
-      html += '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);padding:10px 0 6px">' + t.rank.toUpperCase() + ' · ' + esc(rt(v[1])) + ' (' + esc(ru(v[2])) + ') · ' + D.years[ST.y] + '</div><table style="border-collapse:collapse;width:100%;min-width:480px;font-size:13.5px">';
+      h += '<div class="di-card rc-card"><div class="rc-ct">' + esc(t.rank) + ' · ' + esc(rt(v[1])) + ' (' + esc(ru(v[2])) + ') · ' + D.years[ST.y] + '</div><p class="um-hint" style="margin:0 0 6px">' + esc(t.rankHint) + '</p><div class="di-scroll"><table class="rc-t" data-no-cards data-no-rows><tbody>';
       rk.forEach(function (x) {
         var w = Math.max(2, Math.round(Math.abs(x[6][vi]) / max * 100)), me = x[1] === ST.c;
-        html += '<tr style="border-top:1px solid var(--border)' + (me ? ';font-weight:700' : '') + '"><td style="padding:7px 6px;width:34%">' + esc(D.ccaa[x[1]]) + '</td><td style="padding:7px 6px;width:38%"><div style="height:8px;border-radius:4px;background:' + (x[6][vi] < 0 ? '#b5483a' : '#2f6b4a') + ';width:' + w + '%;opacity:' + (me ? 1 : .55) + '"></div></td><td style="padding:7px 6px;text-align:right;white-space:nowrap">' + nf(x[6][vi], dec(x[6][vi])) + '</td><td style="padding:7px 6px;text-align:right;color:var(--text-faint);font-size:12px;white-space:nowrap">' + t.sample + ': ' + (x[4] != null ? nf(x[4], 0) : '—') + '</td></tr>';
+        h += '<tr' + (me ? ' class="on"' : '') + '><td><button type="button" class="rc-lk" data-com="' + x[1] + '" data-rf="com:' + x[1] + '" aria-pressed="' + me + '">' + esc(D.ccaa[x[1]]) + '</button></td><td class="rc-bar"><div style="height:8px;border-radius:4px;background:' + (x[6][vi] < 0 ? '#b5483a' : '#2f6b4a') + ';width:' + w + '%;opacity:' + (me ? 1 : .55) + '"></div></td><td class="r">' + nf(x[6][vi], dec(x[6][vi])) + ' <small>' + esc(ru(v[2])) + '</small></td><td class="r um-cnt">' + (x[4] != null ? nf(x[4], 0) : '—') + '</td></tr>';
       });
-      html += '</table></div>';
+      h += '</tbody></table></div></div>';
     }
-    html += '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p><p class="di-movers-hint">' + t.src + ': <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener">' + esc(D.source.name) + '</a> · ' + t.lic + ': ' + esc(D.source.license) + ' · ' + t.updated + ': ' + esc((D.generatedAt || '').slice(0, 10)) + '</p>';
-    root.innerHTML = html;
-    var bind = function (id, key, numeric) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = numeric ? +e.target.value : e.target.value; if (key === 'c') { ST.t = null; ST.d = null; ST.y = null; } if (key === 't') { ST.d = null; ST.y = null; } if (key === 'd') ST.y = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
-    bind('rc-c', 'c', true); bind('rc-t', 't', true); bind('rc-d', 'd', true); bind('rc-y', 'y', true); bind('rc-v', 'v', false);
+    h += '<details class="um-adv" id="rc-all"' + (ST.openAll ? ' open' : '') + '><summary>' + esc(fm(t.allv, { n: D.vars.length })) + ' · ' + D.years[ST.y] + '</summary><div class="rc-allb">';
+    GR.forEach(function (g) {
+      var rows = D.vars.map(function (vv2, i) { return [vv2, i]; }).filter(function (p) { return g[1](p[0][0]) && cur && cur[6][p[1]] != null; });
+      if (!rows.length) return;
+      h += '<h4 class="rc-gh">' + esc(t[g[0]]) + '</h4><div class="di-scroll"><table class="rc-t" data-no-cards data-no-rows><tbody>' + rows.map(function (p) {
+        var a = cur[6][p[1]], c = pct(a, prev ? prev[6][p[1]] : null);
+        return '<tr><td><button type="button" class="rc-lk" data-var="' + p[0][0] + '" data-rf="var:' + p[0][0] + '" aria-pressed="' + (p[0][0] === ST.v) + '" title="' + esc(t.pick) + '">' + esc(rt(p[0][1])) + '</button></td><td class="r">' + nf(a, dec(a)) + '</td><td class="um-cnt">' + esc(ru(p[0][2])) + '</td><td class="r">' + (c == null ? '' : sgn(c)) + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+    });
+    h += '</div></details>';
+    h += '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p><p class="di-movers-hint">' + t.src + ': <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener">' + esc(D.source.name) + '</a> · ' + t.lic + ': ' + esc(D.source.license) + ' · ' + t.updated + ': ' + esc((D.generatedAt || '').slice(0, 10)) + '</p>';
+    return h;
+  }
+  function syncUrl() {
+    if (EMB || !window.history || !history.replaceState) return;
+    try { history.replaceState(null, '', location.pathname + '?t=' + ST.t + '&c=' + ST.c + '&d=' + ST.d + '&y=' + ST.y + '&v=' + ST.v); } catch (e) { /* sin historial */ }
+  }
+  function update(focusKey) {
+    var ys = fix(), root = document.getElementById('recan-body'); if (!root || !D) return;
+    var ae = focusKey || (document.activeElement && document.activeElement.getAttribute ? document.activeElement.getAttribute('data-rf') : null);
+    var ctl = document.getElementById('rc-ctl'), out = document.getElementById('rc-out'), se = document.getElementById('rc-secs');
+    if (!ctl || !out || !se) return;
+    se.innerHTML = secsHtml(); ctl.innerHTML = ctlHtml(ys); out.innerHTML = outHtml(ys); syncUrl();
+    if (ae) { var el = root.querySelector('[data-rf="' + ae + '"]'); if (el) el.focus(); }
+  }
+  function suggest(q) {
+    var t = tt(), n = norm(q).trim(), res = [];
+    if (!n) return res;
+    var add = function (kind, id, label, hay, extra) { var h = norm(hay), i = h.indexOf(n); if (i >= 0) res.push({ kind: kind, id: id, label: label, k: t[extra], s: i === 0 ? 0 : (' ' + h).indexOf(' ' + n) >= 0 ? 1 : 2 }); };
+    SEC.forEach(function (s) { add('s', s[0], secName(s[0]), secName(s[0]) + ' ' + SECN.es[s[0]], 'kS'); });
+    D.types.forEach(function (x, i) { add('t', i, tlabel(i), tlabel(i) + ' ' + x[0] + ' ' + x[1], 'kT'); });
+    D.ccaa.forEach(function (c, i) { add('c', i, c, c, 'kC'); });
+    return res.sort(function (a, b) { return a.s - b.s; }).slice(0, 8);
+  }
+  function sgHtml(q) {
+    var t = tt(), r = suggest(q); if (!q.trim()) return '';
+    if (!r.length) return '<p class="um-hint">' + esc(fm(t.nores, { q: q })) + '</p>';
+    return '<ul class="rc-sgl">' + r.map(function (x) { return '<li><button type="button" class="rc-sgb" data-sg="' + x.kind + ':' + x.id + '"><span>' + esc(x.label) + '</span><small>' + esc(x.k) + '</small></button></li>'; }).join('') + '</ul>';
+  }
+  function applySg(s) {
+    var p = s.split(':'), id = p[1]; 
+    if (p[0] === 's') pickSec(id); else if (p[0] === 't') pickType(+id); else pickCom(+id);
+    var inp = document.getElementById('rc-s'), sr = document.getElementById('rc-sr'); if (inp) inp.value = ''; if (sr) sr.innerHTML = '';
+    update(); var o = document.getElementById('rc-out'); if (o && o.scrollIntoView && window.matchMedia && !matchMedia('(prefers-reduced-motion: reduce)').matches) { /* el resumen queda justo debajo */ }
+  }
+  function build() {
+    var root = document.getElementById('recan-body'); if (!root || !D) return;
+    root.innerHTML = topHtml();
+    var form = document.getElementById('rc-form'), inp = document.getElementById('rc-s'), sr = document.getElementById('rc-sr');
+    inp.oninput = function () { sr.innerHTML = sgHtml(inp.value); };
+    form.onsubmit = function (e) { e.preventDefault(); var r = suggest(inp.value); if (r.length) applySg(r[0].kind + ':' + r[0].id); else sr.innerHTML = sgHtml(inp.value); };
+    root.onclick = function (e) {
+      var b = e.target.closest ? e.target.closest('[data-sg],[data-sec],[data-kpi],[data-var],[data-dim],[data-com],[data-reset]') : null; if (!b || !root.contains(b)) return;
+      if (b.hasAttribute('data-sg')) return applySg(b.getAttribute('data-sg'));
+      var k;
+      if ((k = b.getAttribute('data-sec'))) pickSec(k);
+      else if ((k = b.getAttribute('data-kpi'))) { ST.v = k; ST.note = ''; }
+      else if ((k = b.getAttribute('data-var'))) { ST.v = k; ST.note = ''; ST.openAll = true; }
+      else if ((k = b.getAttribute('data-dim'))) { ST.d = +k; ST.y = null; ST.note = ''; }
+      else if ((k = b.getAttribute('data-com'))) pickCom(+k);
+      else if (b.hasAttribute('data-reset')) defaults();
+      update(b.getAttribute('data-rf'));
+      if (b.hasAttribute('data-var')) { var c = document.getElementById('rc-chart'); if (c && c.scrollIntoView) c.scrollIntoView({ block: 'center' }); }
+    };
+    root.onchange = function (e) {
+      var el = e.target, id = el.id; if (!id || id.indexOf('rc-') !== 0) return;
+      if (id === 'rc-c') pickCom(+el.value); else if (id === 'rc-t') pickType(+el.value); else if (id === 'rc-y') { ST.y = +el.value; ST.note = ''; } else return;
+      update(el.getAttribute('data-rf'));
+    };
+    root.addEventListener('toggle', function (e) { if (e.target && e.target.id === 'rc-all') ST.openAll = e.target.open; }, true);
+    update();
+  }
+  function fromUrl() {
+    if (EMB) return; var q = {};
+    (location.search || '').replace(/^\?/, '').split('&').forEach(function (p) { var a = p.split('='); if (a[0]) q[a[0]] = decodeURIComponent(a[1] || ''); });
+    if (q.t != null && /^\d+$/.test(q.t)) ST.t = +q.t;
+    if (q.c != null && /^\d+$/.test(q.c)) ST.c = +q.c;
+    if (q.d != null && /^\d+$/.test(q.d)) ST.d = +q.d;
+    if (q.y != null && /^\d+$/.test(q.y)) ST.y = +q.y;
+    if (q.v) ST.v = q.v;
   }
   function shell() { if (!ON) return; var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
   var EMB = !!document.getElementById('cs-es'), ON = !EMB;
@@ -106,7 +248,7 @@
   var LOADED = false;
   function loadData() {
     if (LOADED) { build(); return; } LOADED = true;
-    fetch('data/recan.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { D = d; if (ON) build(); })
+    fetch('data/recan.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { D = d; AND = D.ccaa.indexOf('Andalucía'); defaults(); fromUrl(); if (ON) build(); })
       .catch(function () { var b = document.getElementById('recan-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
   }
   if (!EMB) loadData();
