@@ -355,6 +355,20 @@ def main():
         log("inflación en country-macro.json: %d países" % n)
     except Exception as e:
         log("inflación: no se pudo actualizar country-macro.json (%s)" % e)
+    # autocomprobacion con los mismos contratos que valida la CI: deja el motivo exacto en el log
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import contract_tests as _ct
+        _e, _w, _st = [], [], {}
+        _ct.cpi(doc, _e, _w, _st)
+        _m2 = json.loads((ROOT / "data" / "country-macro.json").read_text(encoding="utf-8"))
+        _ct.country_macro(_m2, _e, _w, _st)
+        for x in _e:
+            log("contrato: " + x)
+        log("contrato: %d errores" % len(_e))
+        log("AR infl: %s" % json.dumps(_m2["countries"].get("AR", {}).get("infl")))
+    except Exception as e:
+        log("contrato: no se pudo comprobar (%s)" % e)
     (ROOT / "data" / "cpi-log.txt").write_text("\n".join(LOG) + "\n")
     return 0
 
