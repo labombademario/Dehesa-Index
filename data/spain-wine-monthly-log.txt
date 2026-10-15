@@ -2,6 +2,7 @@ pagina infovi_2021: GET https://www.mapa.gob.es/es/agricultura/temas/produccione
 pagina infovi_2022: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
 pagina infovi_2023: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
 pagina infovi_2024: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
+AVISO: 2025-12: identidad de existencias con un residuo de 133832 hl
 AVISO: 2021-02: existencias finales 53762234 y iniciales de 2021-03 52930730 no encadenan
 AVISO: 2021-07: existencias finales 35936353 y iniciales de 2021-08 35787076 no encadenan
 AVISO: 2021-09: existencias finales 55561124 y iniciales de 2021-10 55853114 no encadenan
