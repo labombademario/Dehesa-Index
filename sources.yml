@@ -1366,6 +1366,51 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/us-markets/baseline.json data/us-markets/baseline-tables.json
     data: [us-markets/baseline.json, us-markets/baseline-tables.json, ers-baseline-log.txt]
     message: Proyecciones agrarias a 10 anos (USDA ERS)
+  - id: es-prices
+    name: Update Spain weekly national prices and origin-destination price observatory (MAPA)
+    cron: ['40 7 * * 2,4']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl']
+    script: scripts/update-es-pmn.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/spain-prices/pmn.json data/spain-prices/obs.json
+    data: [spain-prices/pmn.json, spain-prices/obs.json, spain-prices-log.txt]
+    message: Precios medios nacionales y observatorio de precios de España (MAPA)
+  - id: es-income
+    name: Update Spain agricultural economic accounts and farm income (MAPA)
+    cron: ['10 7 12 * *']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl']
+    script: scripts/update-es-cea.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/spain-income/cea.json
+    data: [spain-income/cea.json, spain-income-log.txt]
+    message: Cuentas económicas de la agricultura y renta agraria de España (MAPA)
+  - id: es-esyrce
+    name: Update Spain ESYRCE crop areas by province, rainfed and irrigated (MAPA)
+    cron: ['30 7 11 * *']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl']
+    script: scripts/update-es-esyrce.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-esyrce)
+    data: [spain-esyrce/index.json, spain-esyrce-log.txt]
+    extra: ['!data/spain-esyrce']
+    message: Superficies de cultivos de España por provincia, secano y regadío (MAPA ESYRCE)
+  - id: es-inputs
+    name: Update Spain fertilizer market and plant-protection product sales (MAPA)
+    cron: ['50 7 13 * *']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl']
+    script: scripts/update-es-inputs.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/spain-inputs/fertilizers.json data/spain-inputs/pesticides.json
+    data: [spain-inputs/fertilizers.json, spain-inputs/pesticides.json, spain-inputs-log.txt]
+    message: Mercado de fertilizantes y fitosanitarios de España (MAPA)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)
     cron: ['35 6 3,17 * *']

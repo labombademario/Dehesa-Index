@@ -4215,3 +4215,125 @@ def gi_index(doc, errs, warns, stats):
     tot = sum(v["wine"] + v["cheese"] for v in C.values())
     if tot < 1500: errs.append("gi: solo %d denominaciones" % tot)
     stats["countries"] = len(C); stats["total"] = tot
+
+# ---- España: MAPA (precios, renta agraria, ESYRCE, fertilizantes, fitosanitarios) ----
+def _weeks_ok(W, name, errs):
+    prev = None
+    for w in W:
+        try: d = datetime.date.fromisoformat(w)
+        except ValueError: errs.append("%s: fecha invalida %r" % (name, w)); return False
+        if d.weekday() != 0: errs.append("%s: la semana %s no empieza en lunes" % (name, w)); return False
+        if prev and w <= prev: errs.append("%s: semanas desordenadas o repetidas (%s)" % (name, w)); return False
+        prev = w
+    return True
+def spain_prices_pmn(doc, errs, warns, stats):
+    """Precios medios nacionales: semanas ISO (lunes) crecientes, >=100 series con tantos valores como semanas, sin ids repetidos, precios positivos y plausibles, series clave presentes."""
+    W = doc["weeks"]; S = doc["series"]; ids = set()
+    if not _weeks_ok(W, "pmn", errs): return
+    if len(S) < 100: errs.append("pmn: %d series (se esperan >=100)" % len(S)); return
+    for s in S:
+        if s["id"] in ids: errs.append("pmn: id repetido %s" % s["id"])
+        ids.add(s["id"])
+        if len(s["v"]) != len(W): errs.append("pmn %s: %d valores para %d semanas" % (s["id"], len(s["v"]), len(W))); continue
+        vs = [x for x in s["v"] if x is not None]
+        if not vs: errs.append("pmn %s: sin ningun dato" % s["id"]); continue
+        if min(vs) <= 0 or max(vs) > 30000 or any(x != x for x in vs): errs.append("pmn %s: precio imposible" % s["id"])
+    for k, lo, hi in (("trigo-blando", 80, 700), ("cebada-pienso", 80, 700), ("maiz-grano", 80, 700), ("trigo-duro", 80, 900)):
+        s = next((x for x in S if x["id"] == k), None)
+        if not s: errs.append("pmn: falta la serie clave %s" % k); continue
+        vs = [x for x in s["v"] if x is not None]
+        if vs and not (lo <= vs[-1] <= hi): errs.append("pmn %s: ultimo precio %s fuera de %d-%d EUR/t" % (k, vs[-1], lo, hi))
+    stats["series"] = len(S)
+def spain_prices_obs(doc, errs, warns, stats):
+    """Observatorio de precios: semanas ISO crecientes (>=500), series de origen y de MERCASA (>=25 cada una), valores positivos y por debajo de 500 EUR por unidad."""
+    W = doc["weeks"]; S = doc["series"]; ids = set(); st = {"origen": 0, "mercasa": 0}
+    if not _weeks_ok(W, "obs", errs): return
+    if len(W) < 500: errs.append("obs: %d semanas (se esperan >=500)" % len(W))
+    for s in S:
+        if s["id"] in ids: errs.append("obs: id repetido %s" % s["id"])
+        ids.add(s["id"]); st[s["stage"]] += 1
+        if len(s["v"]) != len(W): errs.append("obs %s: %d valores para %d semanas" % (s["id"], len(s["v"]), len(W))); continue
+        vs = [x for x in s["v"] if x is not None]
+        if not vs: errs.append("obs %s: sin ningun dato" % s["id"]); continue
+        if min(vs) <= 0 or max(vs) > 500: errs.append("obs %s: precio imposible" % s["id"])
+    for k, n in st.items():
+        if n < 25: errs.append("obs: solo %d series de %s (se esperan >=25)" % (n, k))
+    stats["series"] = len(S)
+def spain_income_cea(doc, errs, warns, stats):
+    """Cuentas de la agricultura: años crecientes que llegan a >=2024, todas las filas con un valor por año, fila A y fila G (renta agraria) presentes y plausibles, y cada cuenta regional con >=18 territorios cuyo total ESPAÑA cuadra con la suma de comunidades (1 %)."""
+    Y = doc["years"]; N = doc["national"]
+    if Y != sorted(set(Y)) or Y[0] > 1995 or Y[-1] < 2024: errs.append("cea: años raros %r..%r" % (Y[0], Y[-1])); return
+    for it in N:
+        if len(it["v"]) != len(Y): errs.append("cea nacional %r: %d valores para %d años" % (it["label"][:30], len(it["v"]), len(Y)))
+    A = next((x for x in N if x["label"].startswith("A.")), None); G = next((x for x in N if x["label"].startswith("G")), None)
+    if not A or not G: errs.append("cea: faltan la fila A (produccion) o G (renta agraria)"); return
+    if not 3e3 < (G["v"][-1] or 0) < 8e4: errs.append("cea: renta agraria %s fuera de rango (millones EUR)" % G["v"][-1])
+    if not 1e4 < (A["v"][-1] or 0) < 2e5: errs.append("cea: produccion %s fuera de rango" % A["v"][-1])
+    if (G["v"][-1] or 0) > (A["v"][-1] or 0): errs.append("cea: la renta agraria supera la produccion")
+    for y, r in doc["regional"].items():
+        R = r["regions"]
+        if len(R) < 18 or not R[-1].upper().startswith("ESPA"): errs.append("cea regional %s: territorios raros" % y); continue
+        for it in r["items"]:
+            if len(it["v"]) != len(R): errs.append("cea regional %s %r: valores y territorios no cuadran" % (y, it["label"][:30])); break
+        a = r["items"][0]["v"]
+        if all(x is not None for x in a) and abs(sum(a[:-1]) - a[-1]) > 0.01 * abs(a[-1]): errs.append("cea regional %s: las comunidades no suman España (%s vs %s)" % (y, round(sum(a[:-1])), a[-1]))
+    stats["series"] = len(N)
+def spain_esyrce(doc, errs, warns, stats):
+    """ESYRCE: territorios unicos con ESPAÑA, cada cultivo con un valor por territorio, hectareas no negativas y bajo 20 M ha, y si hay secano y regadio, secano+regadio ≈ total en España (<=1 % de los cultivos de mas de 1000 ha pueden fallar un 2 %)."""
+    T = doc["territories"]; ids = [t["id"] for t in T]
+    if len(set(ids)) != len(ids): errs.append("esyrce: territorios repetidos")
+    if "espana" not in ids: errs.append("esyrce: falta ESPAÑA"); return
+    ie = ids.index("espana"); M = doc["measures"]
+    for m, cs in M.items():
+        seen = set()
+        for c in cs:
+            k = (c["group"], c["name"])
+            if k in seen: errs.append("esyrce %s: cultivo repetido %r" % (m, k)); break
+            seen.add(k)
+            if len(c["v"]) != len(T): errs.append("esyrce %s %r: %d valores para %d territorios" % (m, c["name"], len(c["v"]), len(T))); break
+            if any(x is not None and (x < 0 or x > 2e7) for x in c["v"]): errs.append("esyrce %s %r: superficie imposible" % (m, c["name"])); break
+    tot = {(c["group"], c["name"]): c["v"][ie] for c in M["total"]}
+    if "secano" in M and "regadio" in M:
+        sec = {(c["group"], c["name"]): c["v"][ie] for c in M["secano"]}; reg = {(c["group"], c["name"]): c["v"][ie] for c in M["regadio"]}
+        big = bad = 0
+        for k, t in tot.items():
+            if t is None or t < 1000: continue
+            big += 1; s = (sec.get(k) or 0) + (reg.get(k) or 0)
+            if abs(s - t) > 0.02 * t: bad += 1; warns.append("esyrce: %r secano+regadio=%s total=%s" % (k, round(s), round(t)))
+        if big and bad > 0.01 * big + 1: errs.append("esyrce: %d de %d cultivos no cuadran secano+regadio=total" % (bad, big))
+    ts = [(k, v) for k, v in tot.items() if k[1] == "Trigo Total"]
+    if ts and not 1e6 < (ts[0][1] or 0) < 4e6: errs.append("esyrce: trigo total España %s ha fuera de rango" % ts[0][1])
+    stats["series"] = len(M["total"])
+def spain_esyrce_index(doc, errs, warns, stats):
+    Y = doc["years"]
+    if not Y: errs.append("esyrce index: sin años"); return
+    for y, v in Y.items():
+        if not re.fullmatch(r"20\d\d", y) or v["territories"] < 50 or v["crops"] < 100: errs.append("esyrce index %s: datos raros" % y)
+    stats["series"] = len(Y)
+def spain_inputs_fertilizers(doc, errs, warns, stats):
+    """Fertilizantes: filas con un valor por año, filas totales presentes, ventas agricolas plausibles (t) y regiones con un valor por año regional."""
+    Y = doc["years"]; R = doc["rows"]
+    if Y != sorted(set(Y)): errs.append("fert: años desordenados")
+    for r in R:
+        for m in ("produccion", "importacion", "ventas", "usosNoAgricolas", "exportacion"):
+            if m in r and len(r[m]) != len(Y): errs.append("fert %s.%s: %d valores para %d años" % (r["id"], m, len(r[m]), len(Y)))
+            elif m in r and any(x is not None and (x < 0 or x > 2e7) for x in r[m]): errs.append("fert %s.%s: valor imposible" % (r["id"], m))
+    tn = next((r for r in R if r["id"] == "elemento:total-n"), None)
+    if not tn: errs.append("fert: falta TOTAL N"); return
+    v = [x for x in tn["ventas"] if x is not None]
+    if not v or not 3e5 < v[-1] < 2e6: errs.append("fert: ventas de N %s t fuera de rango" % (v[-1] if v else None))
+    rg = doc["regional"]
+    for x in rg["regions"]:
+        for e in ("N", "P2O5", "K2O"):
+            if len(x[e]) != len(rg["years"]): errs.append("fert regional %s.%s: valores y años no cuadran" % (x["id"], e))
+    stats["series"] = len(R)
+def spain_inputs_pesticides(doc, errs, warns, stats):
+    Y = doc["years"]; R = doc["rows"]
+    t = next((r for r in R if r["id"] == "total"), None)
+    if not t: errs.append("fito: falta TOTAL"); return
+    for r in R:
+        if len(r["v"]) != len(Y): errs.append("fito %s: %d valores para %d años" % (r["id"], len(r["v"]), len(Y))); continue
+        if any(x is not None and (x < 0 or x > 5e5) for x in r["v"]): errs.append("fito %s: valor imposible" % r["id"])
+    v = [x for x in t["v"] if x is not None]
+    if not v or not 2e4 < v[-1] < 2e5: errs.append("fito: total %s t fuera de rango" % (v[-1] if v else None))
+    stats["series"] = len(R)

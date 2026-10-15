@@ -1,0 +1,207 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Mercado de fertilizantes de España (MAPA): data/spain-inputs/fertilizers.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "unit",
+  "years",
+  "rows",
+  "regional"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mapa_es"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "unit": {
+   "type": "string"
+  },
+  "note": {
+   "type": "string"
+  },
+  "years": {
+   "type": "array",
+   "minItems": 3,
+   "items": {
+    "type": "integer"
+   }
+  },
+  "rows": {
+   "type": "array",
+   "minItems": 8,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "label",
+     "section"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "section": {
+      "enum": [
+       "producto",
+       "elemento"
+      ]
+     },
+     "produccion": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "importacion": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "ventas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "usosNoAgricolas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "exportacion": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     }
+    }
+   }
+  },
+  "regional": {
+   "type": "object",
+   "required": [
+    "years",
+    "regions"
+   ],
+   "properties": {
+    "years": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "integer"
+     }
+    },
+    "unit": {
+     "type": "string"
+    },
+    "regions": {
+     "type": "array",
+     "minItems": 10,
+     "items": {
+      "type": "object",
+      "required": [
+       "id",
+       "name",
+       "N",
+       "P2O5",
+       "K2O"
+      ],
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "name": {
+        "type": "string"
+       },
+       "N": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "P2O5": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "K2O": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

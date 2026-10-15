@@ -5452,6 +5452,30 @@
     "crea_fondiario"
    ],
    "notes": "Valor de la tierra de Italia por región (scripts/update-land-fr-it.py): valor fondiario medio (EUR/ha corrientes), 1960-2023, del libro «MF Regione» de la indagine del CREA."
+  },
+  "data/spain-prices/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Precios medios nacionales semanales (scripts/update-es-pmn.py): libros anuales «Precios Medios Nacionales» del MAPA (Subdirección General de Análisis, Coordinación y Estadística) y libro «Precios semanales origen-destino» del Observatorio de precios de los alimentos. La columna «mercasa» es el precio mayorista de las Mercas que recoge el propio libro del MAPA (MERCASA es sociedad estatal; el MAPA lo publica en su libro). Un precio de 0 en el libro se trata como «sin dato». La diferencia origen-destino que muestra la web la calcula Dehesa Index y se rotula como cálculo propio. La página del MAPA no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
+  },
+  "data/spain-income/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Cuentas económicas de la agricultura y renta agraria (scripts/update-es-cea.py): libros resumen nacionales (1990 en adelante, últimos años avance o estimación) y regionales del MAPA, sin recalcular nada. La página del MAPA no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
+  },
+  "data/spain-esyrce/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "ESYRCE, superficie por cultivo específico, provincia y comunidad (scripts/update-es-esyrce.py): libros 3.3, 3.3.1 y 3.3.2 de la Encuesta sobre Superficies y Rendimientos de Cultivos del MAPA. Hectáreas tal como se publican; el año más reciente es avance provisional. No es lo mismo que «Superficies y producciones anuales» (data/spain-crops). La página del MAPA no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
+  },
+  "data/spain-inputs/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Mercado de fertilizantes y comercialización de fitosanitarios (scripts/update-es-inputs.py): libros anuales del MAPA. Las importaciones y exportaciones de fertilizantes que contienen los libros proceden de DataComex (Ministerio de Industria y Turismo), que el propio MAPA cita como fuente; se muestran tal cual con esa cita. A partir de 2022 el MAPA excluye ciertas sustancias activas de los fitosanitarios: la web avisa de la ruptura de serie. La página del MAPA no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
   }
  },
  "derived": [

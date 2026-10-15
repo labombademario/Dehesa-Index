@@ -1,0 +1,107 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Observatorio de precios de los alimentos de España, origen y mayorista MERCASA (MAPA): data/spain-prices/obs.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "weeks",
+  "series",
+  "stages"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mapa_es"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "weeks": {
+   "type": "array",
+   "minItems": 100,
+   "items": {
+    "type": "string",
+    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+   }
+  },
+  "weekDefinition": {
+   "type": "string"
+  },
+  "unit": {
+   "type": "string"
+  },
+  "note": {
+   "type": "string"
+  },
+  "stages": {
+   "type": "object"
+  },
+  "series": {
+   "type": "array",
+   "minItems": 40,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "name",
+     "unit",
+     "stage",
+     "v"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "unit": {
+      "type": "string"
+     },
+     "stage": {
+      "enum": [
+       "origen",
+       "mercasa"
+      ]
+     },
+     "v": {
+      "type": "array",
+      "minItems": 100,
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     }
+    }
+   }
+  }
+ }
+}

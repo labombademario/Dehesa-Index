@@ -6,7 +6,7 @@
   "ok": 179,
   "late": 1,
   "error": 2,
-  "not_run": 4,
+  "not_run": 8,
   "unknown": 0
  },
  "global": "error",
@@ -4493,6 +4493,58 @@
    "recent": null,
    "status": "not_run",
    "expectedEveryHours": 2184.0
+  },
+  {
+   "workflow": "update-es-prices.yml",
+   "name": "Update Spain weekly national prices and origin-destination price observatory (MAPA)",
+   "crons": [
+    "40 7 * * 2,4"
+   ],
+   "nextRun": "2026-10-20T07:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 120.0
+  },
+  {
+   "workflow": "update-es-income.yml",
+   "name": "Update Spain agricultural economic accounts and farm income (MAPA)",
+   "crons": [
+    "10 7 12 * *"
+   ],
+   "nextRun": "2026-11-12T07:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-esyrce.yml",
+   "name": "Update Spain ESYRCE crop areas by province, rainfed and irrigated (MAPA)",
+   "crons": [
+    "30 7 11 * *"
+   ],
+   "nextRun": "2026-11-11T07:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-inputs.yml",
+   "name": "Update Spain fertilizer market and plant-protection product sales (MAPA)",
+   "crons": [
+    "50 7 13 * *"
+   ],
+   "nextRun": "2026-11-13T07:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
   }
  ]
 }

@@ -823,16 +823,16 @@
    ]
   ],
   "us-markets/baseline-tables.json": [
-    "us-markets-baseline-tables",
-    [
-      "us_markets_baseline_tables"
-    ]
+   "us-markets-baseline-tables",
+   [
+    "us_markets_baseline_tables"
+   ]
   ],
   "us-markets/baseline.json": [
-    "us-markets-baseline",
-    [
-      "us_markets_baseline"
-    ]
+   "us-markets-baseline",
+   [
+    "us_markets_baseline"
+   ]
   ],
   "us-markets/slaughter.json": [
    "us-markets-slaughter",
@@ -1283,6 +1283,42 @@
    [
     "cap_nat_rules"
    ]
+  ],
+  "spain-prices/pmn.json": [
+   "spain-prices-pmn",
+   [
+    "spain_prices_pmn"
+   ]
+  ],
+  "spain-prices/obs.json": [
+   "spain-prices-obs",
+   [
+    "spain_prices_obs"
+   ]
+  ],
+  "spain-income/cea.json": [
+   "spain-income-cea",
+   [
+    "spain_income_cea"
+   ]
+  ],
+  "spain-esyrce/index.json": [
+   "spain-esyrce-index",
+   [
+    "spain_esyrce_index"
+   ]
+  ],
+  "spain-inputs/fertilizers.json": [
+   "spain-inputs-fertilizers",
+   [
+    "spain_inputs_fertilizers"
+   ]
+  ],
+  "spain-inputs/pesticides.json": [
+   "spain-inputs-pesticides",
+   [
+    "spain_inputs_pesticides"
+   ]
   ]
  },
  "globs": {
@@ -1450,6 +1486,12 @@
    "gi-country",
    [
     "gi_country"
+   ]
+  ],
+  "spain-esyrce/esyrce-*.json": [
+   "spain-esyrce",
+   [
+    "spain_esyrce"
    ]
   ]
  },

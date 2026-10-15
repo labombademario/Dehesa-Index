@@ -1,0 +1,44 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Spain ESYRCE crop areas by province, rainfed and irrigated (MAPA)
+on:
+  schedule:
+    - cron: '30 7 11 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-es-esyrce
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
+      - run: pip install openpyxl
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-es-esyrce.py
+        timeout-minutes: 20
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/spain-esyrce/index.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/spain-esyrce/index.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-esyrce)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Superficies de cultivos de España por provincia, secano y regadío (MAPA ESYRCE)" data/spain-esyrce/index.json data/spain-esyrce-log.txt data/spain-esyrce data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}
