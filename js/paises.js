@@ -286,13 +286,19 @@
     var F = window.DehesaShared && window.DehesaShared.frame, L = FRL[lang()] || FRL.es; if (!F) return;
     var nm = tt().countries[ST.c] || c.name || ST.c;
     F.crumbs(document.getElementById('pa-crumbs'), [[L[5], 'index.html'], [L[6], 'paises.html'], [nm, null]]);
-    F.bar(document.getElementById('pa-bar'), nm, [['ps-regmap', L[8]], ['pp-kpi', L[0]], ['pp-trade', L[1]], ['ps-drought', L[9]], ['pp-ask', L[7]], ['ps-explorer', L[2]], ['ps-detail', L[3]], ['ps-sources', L[4]]]); /* misma barra, mismo orden en todos los paises */
+    F.bar(document.getElementById('pa-bar'), nm, [['ps-regmap', L[8]], ['pp-kpi', L[0]], ['pp-trade', L[1]], ['pp-ask', L[7]], ['ps-explorer', L[2]], ['ps-detail', L[3]], ['ps-drought', L[9]], ['ps-sources', L[4]]]); /* misma barra, mismo orden en todos los paises */
   }
   /* Denominaciones de origen (vinos y quesos, eAmbrosia): bloque propio que se carga solo si el pais tiene fichero (js/denominaciones.js) */
   /* Sequia del pais (js/country-drought.js): solo ese pais; la pagina completa sigue en sequia.html. Se carga a peticion y, si hay datos, se anade a la barra. */
+  /* Sequía y emisiones van después del detalle del país y justo antes de «Fuentes»; los huecos vacíos pp-drought-slot / pp-ghg-slot se quedan junto al comercio como puntos de anclaje del resto de bloques */
+  function lateBox(id, after) {
+    var s = document.getElementById('ps-sources'); if (!s || !s.parentNode) return null;
+    var el = document.createElement('div'); el.id = id; var ref = after && after.parentNode === s.parentNode ? after.nextSibling : s; s.parentNode.insertBefore(el, ref); return el;
+  }
   function droughtUp(c) {
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-drought-slot'; tr.parentNode.insertBefore(el, tr.nextSibling);
+    el = lateBox('pp-drought-box') || el;
     var go = function () { if (!window.DIDroughtCountry || ST.c !== cc) return; window.DIDroughtCountry.mount(el, cc, tt().countries[cc] || cc, lang()).then(function (ok) { if (ok && ST.c === cc) frameUp(c); }); };
     if (window.DIDroughtCountry) go(); else { var sc = document.createElement('script'); sc.src = 'js/country-drought.js?v=20261012'; sc.onload = go; document.head.appendChild(sc); }
   }
@@ -301,6 +307,7 @@
     if (['ES', 'FR', 'DE', 'IT', 'PL', 'BE', 'AT', 'HR', 'IE', 'NL', 'PT'].indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-ghg-slot'; var after = document.getElementById('pp-drought-slot') || tr; after.parentNode.insertBefore(el, after.nextSibling);
+    el = lateBox('pp-ghg-box', document.getElementById('pp-drought-box')) || el;
     var go = function () { if (window.DIEsGHG && ST.c === cc) window.DIEsGHG.mount(el, lang(), cc); };
     if (window.DIEsGHG) go(); else { var sc = document.createElement('script'); sc.src = 'js/es-ghg-agri.js?v=20261020'; sc.onload = go; document.head.appendChild(sc); }
   }

@@ -2310,8 +2310,8 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 
 /* Rendimiento (13-oct-2026): las secciones de abajo no se maquetan hasta acercarse a la pantalla (la maqueta era el mayor coste de CPU en móvil).
    contain-intrinsic-size reserva un alto aproximado para que la barra de desplazamiento no salte. */
-#home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot{content-visibility:auto;contain-intrinsic-size:auto 700px}
-@media print{#home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot{content-visibility:visible}}
+#home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot,#pp-drought-box{content-visibility:auto;contain-intrinsic-size:auto 700px}
+@media print{#home-cultivos,#home-mercados,#home-oferta,#home-clima,.di-how,.di-seo-links,.di-cta-banner,.di-footer,.di-intel-section,#pp-drought-slot,#pp-drought-box{content-visibility:visible}}
 
 /* ---------- Apps (página y franja de la home) ---------- */
 .di-app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 8px; }
