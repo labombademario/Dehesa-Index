@@ -44,7 +44,7 @@
       var nm = names[f] || f, on = sel === f;
       return '<path d="' + a.d + '" class="di-gi-zm' + (on ? ' on' : '') + '" data-gi-zn="' + esc(f) + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm) + '"><title>' + esc(nm) + '</title></path>';
     }).join('');
-    return '<div class="di-gi-map" style="flex:0 0 300px;max-width:100%"><div style="font-size:12px;font-weight:700;margin:0 0 4px">' + esc(t.zmH) + '</div><svg viewBox="' + g.viewBox + '" style="width:100%;height:auto;max-height:380px" role="group" aria-label="' + esc(t.zmH) + '">' + paths + '</svg>' +
+    return '<div class="di-gi-map" style="flex:0 0 300px;max-width:100%"><div style="font-size:12px;font-weight:700;margin:0 0 4px">' + esc(t.zmH) + '</div><svg viewBox="' + g.viewBox + '" style="width:100%;height:auto;max-height:380px" role="group" aria-label="' + esc(t.zmH) + '">' + (g.n ? '<path class="di-gi-zn" d="' + g.n + '" pointer-events="none"/>' : '') + (g.o ? '<path class="di-gi-zo" d="' + g.o + '" pointer-events="none"/>' : '') + paths + (g.o ? '<path class="di-gi-zb" d="' + g.o + '" pointer-events="none"/>' : '') + '</svg>' +
       '<div class="di-movers-hint" style="margin:4px 0 0">' + esc(t.zmN) + (isl ? ' ' + esc(t.zmIs.replace('{n}', isl)) : '') + '</div>' +
       (sel ? '<div style="margin:6px 0 0"><b>' + esc(names[sel] || sel) + '</b> <button type="button" class="di-gi-zbtn" data-gi-zclr="1">' + esc(t.zmClr) + '</button></div>' : '') + '</div>';
   }

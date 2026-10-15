@@ -2440,6 +2440,12 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 .di-gi-zm { fill: var(--accent, #1E3328); fill-opacity: .35; stroke: var(--surface, #fff); stroke-width: .8; vector-effect: non-scaling-stroke; cursor: pointer; }
 .di-gi-zm:hover, .di-gi-zm:focus-visible { fill-opacity: .7; outline: none; }
 .di-gi-zm.on { fill-opacity: .85; stroke: var(--text, #222); stroke-width: 2; }
+.di-gi-zn { fill: var(--surface-2, #eceae3); fill-opacity: .6; stroke: var(--text-muted, #8a8a80); stroke-width: .8; vector-effect: non-scaling-stroke; }
+.di-gi-zo { fill: var(--surface, #fff); stroke: none; }
+.di-gi-zb { fill: none; stroke: var(--text, #222); stroke-width: 1.6; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+html[data-theme="dark"] .di-gi-zn { fill: #2a2f2b; stroke: #6f776f; }
+html[data-theme="dark"] .di-gi-zo { fill: #1d221e; }
+html[data-theme="dark"] .di-gi-zb { stroke: #d9ddd5; }
 html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 /* relaciones entre mercados (tarjeta simple) */
 .rl2 { padding: 14px 16px; min-width: 0; }
