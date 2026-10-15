@@ -3969,6 +3969,32 @@
    "notes": null,
    "legalConfidence": "OWNER_ACCEPTED",
    "legalConfidenceReason": "Aceptada por el titular del proyecto el 15-10-2026; sin licencia explícita leída."
+  },
+  "istat": {
+   "name": "Italy — Istituto Nazionale di Statistica (ISTAT)",
+   "url": "https://www.istat.it/",
+   "country": "IT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (ISTAT note legali)",
+   "licenseUrl": "https://www.istat.it/note-legali/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fonte: Istat (esploradati.istat.it), licenza CC BY 4.0. Elaborazione di dehesaindex.com.",
+   "additionalRestrictions": "Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-15",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Note legali ISTAT (read 2026-10-15): contents released under Creative Commons Attribution 4.0 licence; attribution required.",
+   "used": true,
+   "aliases": [],
+   "notes": "API SDMX https://esploradati.istat.it/SDMXWS/rest. Pipeline scripts/update-it-istat.py.",
+   "short": "ISTAT",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   }
  },
  "files": {
@@ -5494,6 +5520,12 @@
     "mapa_es"
    ],
    "notes": "Avances mensuales de superficies y producciones agrícolas del MAPA (scripts/update-es-avances.py): hoja «resumen nacional» del cuaderno mensual. Se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente y manteniendo fechas; contenido de terceros excluido), con confianza media. Se cita la fuente en la pantalla y no se altera ninguna cifra."
+  },
+  "data/italy-istat/": {
+   "sources": [
+    "istat"
+   ],
+   "notes": "Macellazioni mensili, indici dei prezzi agricoli, consistenze del bestiame, fertilizzanti e prodotti fitosanitari distribuiti (scripts/update-it-istat.py), por la API SDMX del ISTAT con licencia CC BY 4.0."
   }
  },
  "derived": [

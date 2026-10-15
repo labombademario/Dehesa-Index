@@ -6,7 +6,7 @@
   "ok": 188,
   "late": 1,
   "error": 3,
-  "not_run": 2,
+  "not_run": 3,
   "unknown": 0
  },
  "global": "error",
@@ -4697,6 +4697,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-it-istat.yml",
+   "name": "Update Italy agriculture statistics (ISTAT - slaughter, farm prices, herds, fertilisers, pesticides)",
+   "crons": [
+    "30 7 6 * *"
+   ],
+   "nextRun": "2026-11-06T07:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
   }
  ]
 }

@@ -748,6 +748,16 @@ sources:
     continue: true
     data: [it-fuel.json]
     message: Gasolio en Italia (MASE, MIMIT)
+  - id: it-istat
+    name: Update Italy agriculture statistics (ISTAT - slaughter, farm prices, herds, fertilisers, pesticides)
+    cron: ['30 7 6 * *']
+    script: scripts/update-it-istat.py
+    timeout: 40
+    script_timeout: 35
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/italy-istat/slaughter.json data/italy-istat/prices.json data/italy-istat/herds.json data/italy-istat/fertilisers.json data/italy-istat/pesticides.json
+    data: [italy-istat/slaughter.json, italy-istat/prices.json, italy-istat/herds.json, italy-istat/fertilisers.json, italy-istat/pesticides.json, italy-istat-log.txt]
+    message: Estadísticas agrarias de Italia (ISTAT)
   - id: it-ghg-agri
     name: Update Italy agricultural greenhouse gas emissions (Eurostat env_air_gge)
     cron: ['5 8 4 * *']

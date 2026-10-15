@@ -1355,6 +1355,36 @@
    [
     "spain_avances"
    ]
+  ],
+  "italy-istat/slaughter.json": [
+   "it-istat-slaughter",
+   [
+    "it_istat_slaughter"
+   ]
+  ],
+  "italy-istat/prices.json": [
+   "it-istat-prices",
+   [
+    "it_istat_prices"
+   ]
+  ],
+  "italy-istat/herds.json": [
+   "it-istat-herds",
+   [
+    "it_istat_herds"
+   ]
+  ],
+  "italy-istat/fertilisers.json": [
+   "it-istat-fertilisers",
+   [
+    "it_istat_fertilisers"
+   ]
+  ],
+  "italy-istat/pesticides.json": [
+   "it-istat-pesticides",
+   [
+    "it_istat_pesticides"
+   ]
   ]
  },
  "globs": {

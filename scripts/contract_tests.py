@@ -4408,6 +4408,73 @@ def spain_esyrce_extra(doc, errs, warns, stats):
                 if len(v) != len(T) or any(x is not None and (x < 0 or x > 5e7) for x in v): errs.append("suelo %s %s: valores imposibles" % (k, m))
     if n == 0: errs.append("esyrce extra: sin series")
     stats["series"] = n
+def _it_axis_ok(ax, errs, what):
+    if ax != sorted(set(ax)) or not ax: errs.append("%s: periodos desordenados, repetidos o vacíos" % what); return False
+    return True
+def it_istat_slaughter(doc, errs, warns, stats):
+    """Macellazioni: meses ordenados, series alineadas con los meses, sin negativos, rendimiento 0-100 % y vacuno/porcino totales en rango."""
+    M = doc["months"]
+    if not _it_axis_ok(M, errs, "macellazioni"): return
+    n = 0
+    for c, e in doc["species"].items():
+        for k in ("heads", "dead", "yield"):
+            n += 1
+            if len(e[k]) != len(M): errs.append("macellazioni %s.%s: %d valores para %d meses" % (c, k, len(e[k]), len(M))); continue
+            if any(x is not None and x < 0 for x in e[k]): errs.append("macellazioni %s.%s: valor negativo" % (c, k))
+        if any(x is not None and x > 100 for x in e["yield"]): errs.append("macellazioni %s: rendimiento superior al 100 %%" % c)
+        if any(x is not None and x > 1e9 for x in e["heads"]): errs.append("macellazioni %s: cabezas imposibles" % c)
+    for c, lo, hi in (("TOTCATT", 5e4, 6e5), ("TOTPIG", 3e5, 3e6)):
+        if c in doc["species"]:
+            v = [x for x in doc["species"][c]["heads"] if x is not None]
+            if v and not lo < v[-1] < hi: errs.append("macellazioni %s: %s cabezas en el último mes, fuera de %d-%d" % (c, v[-1], lo, hi))
+    stats["series"] = n
+def it_istat_prices(doc, errs, warns, stats):
+    """Indices de precios agrarios: meses ordenados, tres series alineadas por grupo, indice entre 20 y 600 (base 2020=100) y variaciones entre -80 y 300 %."""
+    n = 0
+    for side in ("sold", "bought"):
+        M = doc[side]["months"]
+        if not _it_axis_ok(M, errs, "precios " + side): continue
+        for c, e in doc[side]["items"].items():
+            for k in ("index", "mom", "yoy"):
+                n += 1
+                if len(e[k]) != len(M): errs.append("precios %s %s.%s: %d valores para %d meses" % (side, c, k, len(e[k]), len(M))); continue
+                lim = (20, 600) if k == "index" else (-80, 300)
+                if any(x is not None and not lim[0] < x < lim[1] for x in e[k]): errs.append("precios %s %s.%s: valor fuera de %s" % (side, c, k, lim))
+    stats["series"] = n
+def _it_area_series(doc, errs, what, axis, groups):
+    if not _it_axis_ok(doc[axis], errs, what): return 0
+    A = doc["areas"]; n = 0
+    if "IT" not in A: errs.append("%s: falta el total nacional IT" % what)
+    for gname, G in groups:
+        for c, e in G.items():
+            for a, v in e["v"].items():
+                n += 1
+                if a not in A: errs.append("%s %s.%s: territorio sin definir" % (what, gname, c)); break
+                if len(v) != len(doc[axis]): errs.append("%s %s.%s.%s: %d valores para %d periodos" % (what, gname, c, a, len(v), len(doc[axis]))); break
+                if any(x is not None and (x < 0 or x > 1e12) for x in v): errs.append("%s %s.%s.%s: valor imposible" % (what, gname, c, a)); break
+    return n
+def it_istat_herds(doc, errs, warns, stats):
+    """Existencias: periodos ordenados, cada serie con un valor por periodo, territorios definidos, con IT, y la suma de regiones no supera en mas de un 5 % al total nacional."""
+    n = _it_area_series(doc, errs, "existencias", "periods", [("herds", doc["herds"])])
+    A = doc["areas"]
+    for k, e in doc["herds"].items():
+        it = e["v"].get("IT")
+        if not it: continue
+        for j, tot in enumerate(it):
+            parts = [v[j] for a, v in e["v"].items() if A.get(a, {}).get("kind") == "region" and v[j] is not None]
+            if tot and len(parts) >= 15 and sum(parts) > 1.05 * tot: errs.append("existencias %s %s: las regiones suman %d y Italia %d" % (k, doc["periods"][j], sum(parts), tot))
+    stats["series"] = n
+def it_istat_fertilisers(doc, errs, warns, stats):
+    """Fertilizantes: años ordenados, serie por region con un valor por año, sin negativos y el total nacional de cada tipo en rango (menos de 20 Mt)."""
+    stats["series"] = _it_area_series(doc, errs, "fertilizantes", "years", [("types", doc["types"])])
+    for c, e in doc["types"].items():
+        if any(x is not None and x > 2e7 for x in e["v"].get("IT", [])): errs.append("fertilizantes %s: total nacional imposible" % c)
+def it_istat_pesticides(doc, errs, warns, stats):
+    """Fitosanitarios: años ordenados, serie por region con un valor por año, sin negativos y kg/ha de cada clase por debajo de 500."""
+    stats["series"] = _it_area_series(doc, errs, "fitosanitarios", "years", [("classes", doc["classes"]), ("perHa", doc["perHa"])])
+    for c, e in doc["perHa"].items():
+        for a, v in e["v"].items():
+            if any(x is not None and x > 500 for x in v): errs.append("fitosanitarios %s.%s: kg/ha imposible" % (c, a)); break
 def spain_ganaderia_eggs(doc, errs, warns, stats):
     """Huevos: territorios unicos con ESPAÑA, un valor por territorio, ponedoras en rango, jaula+suelo y campera+ecologica suman las gallinas (1 %) y la produccion en miles de docenas es coherente con el numero de ponedoras (15-30 docenas por gallina y año)."""
     T = doc["territories"]; ids = [t["id"] for t in T]
