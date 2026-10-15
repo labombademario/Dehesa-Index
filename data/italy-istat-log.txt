@@ -1,0 +1,11 @@
+macellazioni: 57 categorias, 91 meses 2019-01 -> 2026-07
+escrito slaughter.json 112 KB
+precios sold : 22 grupos, 78 meses 2020-01 -> 2026-06
+precios bought : 33 grupos, 78 meses 2020-01 -> 2026-06
+escrito prices.json 83 KB
+existencias: 42 categorias, 24 areas, 2015-06 -> 2025-06
+escrito herds.json 129 KB
+fertilizantes: 59 tipos, 26 areas, 2013 -> 2024
+escrito fertilisers.json 158 KB
+fitosanitarios: 43 clases, 4 clases kg/ha, 26 areas, 2019 -> 2024
+escrito pesticides.json 66 KB
