@@ -23,10 +23,15 @@ CREA_PAGE = CREA + "/en/web/politiche-e-bioeconomia/-/indagine-mercato-fondiario
 CREA_KNOWN = CREA + "/documents/68457/0/MF+Regione+1960-2023+%282024.09%29.xlsx/2baf48a0-0a57-c012-190c-32f91c4843f5?t=1728635105737"
 AG = "https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/"
 AG_PUBLISHED = "https://www.data.gouv.fr/datasets/agreste-valeur-venale-des-terres/"
-FR_PDFS = [  # de la edición más reciente a la más antigua; se usa la primera con tablas
-    ("2024", AG + "Chd2513/cd2025-13_Valeur-venale-des-terres-en-2024.pdf"),
-    ("2023", AG + "Chd2412/cd2024-12_VVT-2023.pdf"),
+DRAAF = "https://draaf.pays-de-la-loire.agriculture.gouv.fr/IMG/pdf/"   # espejo de la DRAAF Pays de la Loire: aloja los mismos PDF de Agreste y no bloquea
+AG_DETAIL = "https://www.agreste.agriculture.gouv.fr/agreste-web/disaron/%s/detail/"
+DG_API = "https://www.data.gouv.fr/api/1/datasets/agreste-valeur-venale-des-terres/"
+FR_EDITIONS = [  # (año de los precios, referencia Agreste, enlaces candidatos), de la edición más reciente a la más antigua; cada una se lee con la primera fuente que responde
+    ("2025", "Chd2609", [AG + "Chd2609/cd2026-09_Valeur-venale-des-terres-en-2025.pdf", DRAAF + "cd2026-09_valeur-venale-des-terres-en-2025.pdf", AG + "Chd2609/cd2026-09_VVT-2025.pdf"]),
+    ("2024", "Chd2513", [AG + "Chd2513/cd2025-13_Valeur-venale-des-terres-en-2024.pdf", DRAAF + "cd2025-13_valeur-venale-des-terres-en-2024.pdf"]),
+    ("2023", "Chd2412", [AG + "Chd2412/cd2024-12_VVT-2023.pdf", DRAAF + "cd2024-12_valeur-venale-des-terres-en-2023-1.pdf"]),
 ]
+FR_PDFS = [(t, c[0]) for t, _, c in FR_EDITIONS]   # compatibilidad: primer enlace de cada edición
 IT_REG = {"piemonte": "PIE", "valle d'aosta": "VDA", "lombardia": "LOM", "trentino a.a.": "TAA", "veneto": "VEN", "friuli v.g.": "FVG", "liguria": "LIG", "emilia romagna": "EMR",
           "toscana": "TOS", "umbria": "UMB", "marche": "MAR", "lazio": "LAZ", "abruzzo": "ABR", "molise": "MOL", "campania": "CAM", "puglia": "PUG", "basilicata": "BAS",
           "calabria": "CAL", "sicilia": "SIC", "sardegna": "SAR"}
@@ -212,19 +217,36 @@ def main():
         if pf.exists():
             try: prev = json.loads(pf.read_text("utf-8"))
             except Exception: prev = None
-        parsed = None
+        parsed = None; editions = []
         if frt: parsed = (parse_france(Path(frt).read_text("utf-8")), "texto " + Path(frt).name, fru)
         else:
-            for tag, u in FR_PDFS:
-                try: data = http(u, tries=2, timeout=240)
-                except Exception as e: log("Francia %s: no se pudo descargar (%s)" % (tag, str(e)[:80])); continue
-                if data[:4] != b"%PDF": log("Francia %s: la respuesta no es un PDF" % tag); continue
-                try: parsed = (parse_france(pdf_text(data)), "edicion " + tag, u)
-                except Exception as e: log("Francia %s: sin tablas utilizables (%s)" % (tag, str(e)[:100])); continue
-                break
+            dg = []   # PDF de la ficha de data.gouv.fr, por si los enlaces directos cambian
+            try:
+                for r in json.loads(http(DG_API, tries=2, timeout=60)).get("resources", []): log("data.gouv recurso: %s %s" % (r.get("title"), r.get("url")))
+            except Exception as e: log("data.gouv: ficha no legible (%s)" % str(e)[:120])
+            for tag, ref, cands in FR_EDITIONS:
+                found = []
+                try:   # enlaces del PDF en la ficha de Agreste de esa edición
+                    html = http(AG_DETAIL % ref, tries=2, timeout=60).decode("utf-8", "replace")
+                    for h in re.findall(r'href=["\']([^"\']+\.pdf)["\']', html, re.I): found.append(urllib.parse.urljoin(AG_DETAIL % ref, h))
+                    log("Francia %s: ficha de Agreste con %d PDF" % (tag, len(found)))
+                except Exception as e: log("Francia %s: ficha de Agreste no legible (%s)" % (tag, str(e)[:120]))
+                got = None
+                for u in found + cands:
+                    try: data = http(u, tries=2, timeout=240)
+                    except Exception as e: log("Francia %s: no se pudo descargar %s (%s)" % (tag, u.rsplit("/", 1)[-1], str(e)[-110:])); continue
+                    if data[:4] != b"%PDF": log("Francia %s: %s no es un PDF" % (tag, u.rsplit("/", 1)[-1])); continue
+                    try: got = (parse_france(pdf_text(data)), "edicion " + tag, u)
+                    except Exception as e: log("Francia %s: %s sin tablas utilizables (%s)" % (tag, u.rsplit("/", 1)[-1], str(e)[:100])); continue
+                    break
+                if got: editions.append(got); log("Francia %s: leida desde %s" % (tag, got[2]))
+            if editions: parsed = editions[0]
+        if frt: editions = [parsed]
         if not parsed: raise RuntimeError("ninguna edicion de Agreste con tablas utilizables")
         (years, res), label, url = parsed
-        allY, merged = merge_fr(prev, years, res)
+        allY, merged = None, None
+        for (yy, rr), _l, _u in reversed(editions):   # de la más antigua a la más reciente: la nueva manda y las revisiones quedan en el log
+            allY, merged = merge_fr(prev if merged is None else {"years": allY, "free": merged["free"], "rent": merged["rent"]}, yy, rr)
         doc = {"schemaVersion": 1, "generatedAt": stamp, "unit": "EUR/ha", "years": allY, "free": merged["free"], "rent": merged["rent"],
                "source": {"name": "SSP (Agreste) con la FNSafer, Valeur vénale des terres", "url": AG_PUBLISHED, "file": url or label, "licence": "Licence Ouverte (data.gouv.fr)",
                           "note": "Precio medio trienal de las terres et prés libres (más de 70 áreas) y de los loués por departamento, en euros por hectárea del año central; observatorio de los Safer sobre las notificaciones de venta. Departamentos sin dato fiable (NS/ND) quedan en blanco."}}
