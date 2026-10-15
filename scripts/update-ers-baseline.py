@@ -17,7 +17,16 @@ def main():
     for i in names[:60]:
         n = i.filename.lower(); b = z.read(i)
         if n.endswith((".csv", ".txt")):
-            t = b.decode("utf-8", "replace").splitlines(); log("CSV", i.filename, len(t), "filas"); [log("   ", l[:300]) for l in t[:6]]
+            t = b.decode("utf-8-sig", "replace").splitlines(); log("CSV", i.filename, len(t), "filas"); [log("   ", l[:300]) for l in t[:6]]
+            if n.endswith(".txt"): [log("README|", l[:400]) for l in t[:140]]
+            if n.endswith(".csv"):
+                import csv, collections
+                cat = collections.OrderedDict(); yrs = set(); ty = set()
+                for r in csv.DictReader(t):
+                    k = (r["commodity_type"], r["commodity"], r["attribute"], r["unit"], r["year_type"])
+                    cat.setdefault(k, 0); cat[k] += 1; yrs.add(r["year"]); ty.add(r["year_of_projection"])
+                log("CATALOGO", len(cat), "combinaciones; años", sorted(yrs)[:3], sorted(yrs)[-3:], "proyeccion", sorted(ty))
+                for k, v in cat.items(): log("CAT|", " | ".join(k), v)
         elif n.endswith((".xlsx", ".xlsm")):
             try:
                 import openpyxl
