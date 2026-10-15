@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T22:59:19Z",
+ "generatedAt": "2026-10-15T23:14:09Z",
  "summary": {
   "sources": 137,
-  "sourcesApto": 124,
-  "sourcesCondiciones": 9,
+  "sourcesApto": 125,
+  "sourcesCondiciones": 8,
   "sourcesNoApto": 4,
   "datasets": 249,
   "datasets_apto": 156,
   "datasets_condiciones": 82,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
-  "datasets_reviewBeforeSelling": 1,
+  "datasets_reviewBeforeSelling": 0,
   "derived": 42
  },
  "sources": {
@@ -58,10 +58,6 @@
   "bfs_ch_open": {
    "name": "Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices",
    "verdict": "apto"
-  },
-  "bis": {
-   "name": "Bank for International Settlements (central bank policy rates)",
-   "verdict": "condiciones"
   },
   "ble": {
    "name": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
@@ -202,6 +198,10 @@
   "eurostat_comext": {
    "name": "Eurostat — Comext international trade in goods",
    "verdict": "condiciones"
+  },
+  "fed_board": {
+   "name": "Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate)",
+   "verdict": "apto"
   },
   "fek_gr": {
    "name": "Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023",

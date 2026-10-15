@@ -1,21 +1,21 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T23:04:03Z",
+ "generatedAt": "2026-10-15T23:14:09Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
   "sources": 137,
-  "sourcesApto": 124,
-  "sourcesCondiciones": 9,
+  "sourcesApto": 125,
+  "sourcesCondiciones": 8,
   "sourcesNoApto": 4,
   "datasets": 249,
   "datasets_apto": 156,
   "datasets_condiciones": 82,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
-  "datasets_reviewBeforeSelling": 1,
+  "datasets_reviewBeforeSelling": 0,
   "derived": 42
  },
  "sources": [
@@ -205,24 +205,6 @@
    "redistribution": "yes",
    "attribution": "Source: Swiss Federal Statistical Office (FSO/BFS); price indices: Agristat (Swiss Farmers' Union) / FSO. Dataset title and link.",
    "conditions": "Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each run and stops otherwise). The BFS 'Schätzung' (estimate) year is never published."
-  },
-  {
-   "id": "bis",
-   "name": "Bank for International Settlements (central bank policy rates)",
-   "url": "https://data.bis.org/",
-   "country": "INT",
-   "licenseId": "BIS-TERMS",
-   "licenseName": "BIS Terms of permitted use of BIS statistics",
-   "licenseUrl": "https://www.bis.org/terms_statistics.htm",
-   "verdict": "condiciones",
-   "status": "VERIFIED",
-   "legalConfidence": "MEDIUM",
-   "commercialUse": "conditional",
-   "derivatives": "conditional",
-   "redistribution": "conditional",
-   "attribution": "Source: BIS",
-   "conditions": "Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation framing; API access may be suspended without notice.",
-   "reviewBeforeSelling": true
   },
   {
    "id": "ble",
@@ -819,6 +801,23 @@
    "attribution": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
    "conditions": "Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep Austria at coarser product level).",
    "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de atribucion y la exclusion de comercio de declarantes EFTA y de Austria a 8 digitos (si no se puede, no se puede). (2026-10-15)"
+  },
+  {
+   "id": "fed_board",
+   "name": "Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate)",
+   "url": "https://www.federalreserve.gov/releases/h15/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "Federal Reserve Board website content: public domain; cite the Board as the source",
+   "licenseUrl": "https://www.federalreserve.gov/disclaimer.htm",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Board of Governors of the Federal Reserve System (H.15 Selected Interest Rates). Monthly values computed by Dehesa Index from the last daily rate of each month.",
+   "conditions": "Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-party material on the site is excluded; only the Board's own H.15 series is used."
   },
   {
    "id": "fek_gr",
@@ -4017,12 +4016,9 @@
    "verdict": "condiciones",
    "sources": [
     "bank_of_canada",
-    "bis",
     "ecb",
+    "fed_board",
     "rba"
-   ],
-   "reviewBeforeSelling": [
-    "bis"
    ],
    "parts": [
     {
@@ -4042,8 +4038,8 @@
     },
     {
      "scope": "pais:US",
-     "sourceId": "bis",
-     "verdict": "condiciones"
+     "sourceId": "fed_board",
+     "verdict": "apto"
     }
    ]
   },

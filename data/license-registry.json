@@ -513,7 +513,7 @@
    "evidence": "Use of BIS statistics is unrestricted if the BIS is cited; commercial products may include them provided users pay nothing extra.",
    "used": true,
    "aliases": [],
-   "notes": null,
+   "notes": " Being retired (2026-10-15): its condition (no extra charge to users when included in a commercial product) clashed with a paid offer; replaced by fed_board.",
    "short": "BIS",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
@@ -4007,6 +4007,34 @@
    "short": "ISTAT",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
+  },
+  "fed_board": {
+   "name": "Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate)",
+   "url": "https://www.federalreserve.gov/releases/h15/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "Federal Reserve Board website content: public domain; cite the Board as the source",
+   "licenseUrl": "https://www.federalreserve.gov/disclaimer.htm",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Board of Governors of the Federal Reserve System (H.15 Selected Interest Rates). Monthly values computed by Dehesa Index from the last daily rate of each month.",
+   "additionalRestrictions": "Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-party material on the site is excluded; only the Board's own H.15 series is used.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "Only the Board-produced H.15 effective federal funds rate (series RIFSPFF_N.B) is used.",
+   "verifiedAt": "2026-10-15",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Federal Reserve Board disclaimer page (federalreserve.gov/disclaimer.htm, read 2026-10-15): Copyright section says information on the Board's website is in the public domain and may be copied and distributed without permission, and asks to cite the Board as the source; logos/seals need written permission. The page does not mention commercial use explicitly (public domain implies no restriction), so confidence stays medium. Data Download Program CSV for H.15 series c5025f4bbbed155a6f17c587772ed69e ('Federal funds effective rate') returned HTTP 200 from the CI runner on 2026-10-15; it replaces the BIS WS_CBPOL series, whose terms forbid charging users extra for BIS data in a commercial product.",
+   "used": true,
+   "aliases": [
+    "federal_reserve_board"
+   ],
+   "notes": "Replaced the BIS policy-rate series for the US on 2026-10-15 (Mario asked for another source). The former BIS fallback for the other central banks was removed so that no BIS data enters the files.",
+   "short": "Federal Reserve Board",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   }
  },
  "files": {
@@ -4117,7 +4145,7 @@
   },
   "data/interest-rates-stats.json": {
    "byCountry": {
-    "US": "bis",
+    "US": "fed_board",
     "EU": "ecb",
     "CA": "bank_of_canada",
     "AU": "rba"

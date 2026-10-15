@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Tipos de interés oficiales (EE. UU., UE/BCE, Canadá, Australia). Fuentes primarias con respaldo BIS. Salida en formato de estadísticas por país."""
-import csv, io, json, os, sys, time, datetime, urllib.request
+"""Tipos de interés oficiales (EE. UU., UE/BCE, Canadá, Australia). Fuentes primarias de cada banco central (sin BIS: su licencia impide cobrar extra por sus datos). Salida en formato de estadísticas por país."""
+import csv, io, json, os, re, sys, time, datetime, urllib.request
 
 LOG = []
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36 DehesaIndex/1.0'
@@ -59,22 +59,26 @@ def au_rba():
             out.append((dd, float(r[ci])))
     return monthly(out) if out else None
 
-def bis(area):
-    t = fetch('https://stats.bis.org/api/v1/data/WS_CBPOL/M.%s?format=csv&startPeriod=1990' % area)
+def us_fed():
+    """Tipo efectivo de los fondos federales (H.15, serie diaria) del Programa de Descarga de Datos de la Reserva Federal; se queda con el ultimo valor de cada mes."""
+    t = fetch('https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=c5025f4bbbed155a6f17c587772ed69e&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package')
     if not t: return None
-    rd = csv.DictReader(io.StringIO(t))
-    pts = [[r['TIME_PERIOD'], float(r['OBS_VALUE'])] for r in rd if r.get('OBS_VALUE')]
-    return sorted(pts) or None
+    rows = [r for r in csv.reader(io.StringIO(t)) if len(r) > 1 and re.fullmatch(r'\d{4}-\d{2}-\d{2}', r[0].strip())]
+    daily = []
+    for r in rows:
+        if r[0].strip() < '1990-01-01': continue  # misma profundidad que el resto de tipos
+        try: daily.append((r[0].strip(), float(r[1])))
+        except ValueError: continue  # 'ND' = sin dato ese dia
+    return monthly(daily) if daily else None
 
 SRC = {
-    'US': ('BIS — central bank policy rates (Federal Reserve)', 'https://data.bis.org/topics/CBPOL', 'BIS terms of use (attribution)'),
+    'US': ('Federal Reserve Board (H.15 Selected Interest Rates)', 'https://www.federalreserve.gov/releases/h15/', 'Public domain (Federal Reserve Board; cite the Board as the source)'),
     'EU': ('European Central Bank (ECB Data Portal)', 'https://data.ecb.europa.eu/', 'ECB reuse policy (attribution)'),
     'CA': ('Bank of Canada (Valet API)', 'https://www.bankofcanada.ca/valet/', 'Bank of Canada terms of use (attribution)'),
     'AU': ('Reserve Bank of Australia (F1.1)', 'https://www.rba.gov.au/statistics/tables/', 'RBA copyright notice (attribution)')
 }
-BISAREA = {'US': 'US', 'EU': 'XM', 'CA': 'CA', 'AU': 'AU'}
 LABEL = {
-    'US': [('us-policy-rate', 'Federal funds rate (effective, monthly; BIS)', lambda: bis('US'), 'US')],
+    'US': [('us-policy-rate', 'Federal funds rate (effective, monthly; Federal Reserve Board)', us_fed, 'US')],
     'EU': [('eu-policy-rate', 'ECB main refinancing operations rate (monthly)', lambda: eu_ecb('MRR_FR'), 'MRR'),
            ('eu-deposit-rate', 'ECB deposit facility rate (monthly)', lambda: eu_ecb('DFR'), 'DFR')],
     'CA': [('ca-policy-rate', 'Bank of Canada target overnight rate (monthly)', ca_boc, 'CA')],
@@ -87,9 +91,7 @@ for cc, lst in LABEL.items():
         pts = None
         try: pts = fn()
         except Exception as e: log('  fallo %s: %s' % (sid, e))
-        used = 'primaria'
-        if not pts and sid.endswith('policy-rate'):
-            pts = bis(BISAREA[cc]); used = 'BIS (respaldo)'
+        used = 'primaria'  # sin respaldo de otra fuente: si falla, no hay dato (no se mezcla una fuente con otra)
         if not pts:
             log('%s: sin datos' % sid); continue
         log('%s: %d puntos, ultimo %s=%s (%s)' % (sid, len(pts), pts[-1][0], pts[-1][1], used))
