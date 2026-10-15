@@ -2441,3 +2441,17 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 .di-gi-zm:hover, .di-gi-zm:focus-visible { fill-opacity: .7; outline: none; }
 .di-gi-zm.on { fill-opacity: .85; stroke: var(--text, #222); stroke-width: 2; }
 html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
+/* relaciones entre mercados (tarjeta simple) */
+.rl2 { padding: 14px 16px; min-width: 0; }
+.rl2-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+.rl2-pair { font-size: 15px; font-weight: 400; margin: 0; line-height: 1.35; overflow-wrap: anywhere; flex: 1 1 260px; }
+.rl2-conf { white-space: nowrap; }
+.rl2-sent { font-size: 15px; line-height: 1.5; margin: 8px 0 10px; max-width: 70ch; }
+.rl2-g { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--text-faint); margin: 0 0 6px; }
+.rl2-gt { position: relative; flex: 1; height: 8px; border-radius: 4px; background: var(--surface-alt, #efeadb); min-width: 80px; }
+.rl2-gz { position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--border-strong); }
+.rl2-gt b { position: absolute; top: -4px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--accent); border: 2px solid var(--surface, #fff); box-sizing: border-box; }
+.rl2-meta { font-size: 12.5px; color: var(--text-faint); margin: 0 0 4px; }
+.rl-weak .rl2 { opacity: .92; }
+.rl-weak > summary { min-height: 40px; }
+@media (max-width: 560px) { .rl2-ge { display: none; } }

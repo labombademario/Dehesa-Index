@@ -38,6 +38,18 @@
     d_positive: ['mismo sentido', 'same direction', 'même sens', 'stessa direzione'], d_negative: ['sentido contrario', 'opposite', 'sens inverse', 'direzione opposta'], d_none: ['sin asociación lineal clara', 'no clear linear association', 'pas d’association linéaire claire', 'nessuna associazione lineare chiara'],
     s_negligible: ['insignificante', 'negligible', 'négligeable', 'trascurabile'], s_weak: ['débil', 'weak', 'faible', 'debole'], s_moderate: ['moderada', 'moderate', 'modérée', 'moderata'], s_strong: ['fuerte', 'strong', 'forte', 'forte'],
     sameP: ['mismo periodo', 'same period', 'même période', 'stesso periodo'], mon: ['m', 'mo', 'm', 'm'], qtr: ['T', 'Q', 'T', 'T'], yr: ['a', 'y', 'a', 'a'],
+    q: ['¿Qué precio quieres entender?', 'Which price do you want to understand?', 'Quel prix voulez-vous comprendre ?', 'Quale prezzo vuoi capire?'],
+    qsub: ['Elige un producto y verás qué lo ha acompañado en el pasado: fertilizantes, energía, pienso, clima o existencias.', 'Pick a product to see what has moved with it in the past: fertiliser, energy, feed, weather or stocks.', 'Choisissez un produit pour voir ce qui a évolué avec lui par le passé : engrais, énergie, aliments, météo ou stocks.', 'Scegli un prodotto per vedere cosa si è mosso con lui in passato: fertilizzanti, energia, mangimi, meteo o scorte.'],
+    ph: ['Prueba con «cebada», «diésel» o «Canadá»', 'Try “barley”, “diesel” or “Canada”', 'Essayez « orge », « diesel » ou « Canada »', 'Prova con «orzo», «gasolio» o «Canada»'],
+    go: ['Buscar', 'Search', 'Rechercher', 'Cerca'], prods: ['O elige un producto', 'Or pick a product', 'Ou choisissez un produit', 'Oppure scegli un prodotto'],
+    moreF: ['Más filtros', 'More filters', 'Plus de filtres', 'Altri filtri'],
+    sumF: ['{n} de {tot} relaciones · {s} fiables · {w} poco fiables', '{n} of {tot} relationships · {s} reliable · {w} less reliable', '{n} relations sur {tot} · {s} fiables · {w} peu fiables', '{n} relazioni su {tot} · {s} affidabili · {w} poco affidabili'],
+    solidH: ['Relaciones más sólidas', 'Strongest relationships', 'Relations les plus solides', 'Relazioni più solide'],
+    weakH: ['Relaciones poco fiables', 'Less reliable relationships', 'Relations peu fiables', 'Relazioni poco affidabili'],
+    weakN: ['Tienen confianza baja, son débiles o inestables, o tienen pocos datos. Se muestran por transparencia: conviene no apoyarse en ellas.', 'They have low confidence, are weak or unstable, or rest on little data. They are shown for transparency: better not to rely on them.', 'Elles ont une confiance faible, sont faibles ou instables, ou reposent sur peu de données. Elles sont affichées par transparence : mieux vaut ne pas s’y fier.', 'Hanno confidenza bassa, sono deboli o instabili o poggiano su pochi dati. Sono mostrate per trasparenza: meglio non fidarsi.'],
+    detail: ['Ver detalle técnico', 'Show technical detail', 'Voir le détail technique', 'Vedi dettaglio tecnico'], chan: ['Canal', 'Channel', 'Canal', 'Canale'],
+    nsol: ['Ninguna relación sólida con estos filtros.', 'No strong relationship with these filters.', 'Aucune relation solide avec ces filtres.', 'Nessuna relazione solida con questi filtri.'],
+    obsN: ['observaciones', 'observations', 'observations', 'osservazioni'], corrAria: ['Correlación', 'Correlation', 'Corrélation', 'Correlazione'], fil: ['Filtros activos', 'Active filters', 'Filtres actifs', 'Filtri attivi'],
     obsH: ['Lo observado (estadística)', 'What was observed (statistics)', 'Ce qui a été observé (statistiques)', 'Ciò che si è osservato (statistica)'],
     hypH: ['Hipótesis económica (no demostrada)', 'Economic hypothesis (not proven)', 'Hypothèse économique (non démontrée)', 'Ipotesi economica (non dimostrata)'],
     lagH: ['Correlación por rezago probado', 'Correlation by tested lag', 'Corrélation par décalage testé', 'Correlazione per ritardo provato'],
@@ -51,7 +63,32 @@
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function L(o) { return o ? (o[lang()] || o.en || '') : ''; }
   var PAGE = { trigo: 'trigo', maiz: 'maiz', leche: 'leche', vaca: 'vacuno', urea: 'urea', diesel: 'diesel', harina_soja: 'soja', cerdo: 'cerdo', cebada: 'cebada' };
-  var DOC = null, F = { ch: '', r: '', st: '', c: '', p: '', id: '' };
+  var DOC = null, F = { ch: '', r: '', st: '', c: '', p: '', id: '', g: '', q: '' }, weakOpen = false;
+  // temas del mercado (lado «precio» de cada relación): cada botón agrupa los productos equivalentes
+  var GRP = [['wheat', '🌾', ['trigo', 'defra_wheat_output_index', 'eurostat_cereals_output_index']], ['maize', '🌽', ['maiz']], ['milk', '🥛', ['leche', 'defra_milk_output_index']], ['cattle', '🐄', ['vaca', 'defra_cattle_output_index']], ['barley', '🌱', ['cebada', 'defra_barley_output_index', 'avena']], ['oilseed', '🌼', ['colza', 'defra_oilseed_rape_output_index']], ['pigs', '🐖', ['defra_pigs_output_index']], ['fert', '🧪', ['urea', 'eurostat_fertiliser_input_index']]];
+  var GN = { wheat: ['Trigo y cereales', 'Wheat and cereals', 'Blé et céréales', 'Grano e cereali'], maize: ['Maíz', 'Maize', 'Maïs', 'Mais'], milk: ['Leche', 'Milk', 'Lait', 'Latte'], cattle: ['Vacuno', 'Cattle', 'Bovins', 'Bovini'], barley: ['Cebada y avena', 'Barley and oats', 'Orge et avoine', 'Orzo e avena'], oilseed: ['Colza', 'Rapeseed and canola', 'Colza', 'Colza'], pigs: ['Cerdo', 'Pigs', 'Porc', 'Suini'], fert: ['Fertilizantes', 'Fertiliser', 'Engrais', 'Fertilizzanti'] };
+  var LU = { month: [['mes', 'meses'], ['month', 'months'], ['mois', 'mois'], ['mese', 'mesi']], quarter: [['trimestre', 'trimestres'], ['quarter', 'quarters'], ['trimestre', 'trimestres'], ['trimestre', 'trimestri']], year: [['año', 'años'], ['year', 'years'], ['an', 'ans'], ['anno', 'anni']] };
+  var SN = {
+    rel: ['{a} y {b} se han movido {d}{lag}: correlación {r} ({s}), de {p0} a {p1}.', '{a} and {b} have moved {d}{lag}: correlation {r} ({s}), {p0} to {p1}.', '{a} et {b} ont évolué {d}{lag} : corrélation {r} ({s}), de {p0} à {p1}.', '{a} e {b} si sono mossi {d}{lag}: correlazione {r} ({s}), da {p0} a {p1}.'],
+    none: ['{a} y {b} no muestran una relación lineal clara entre {p0} y {p1} (correlación {r}).', '{a} and {b} show no clear linear relationship between {p0} and {p1} (correlation {r}).', '{a} et {b} ne montrent pas de relation linéaire claire entre {p0} et {p1} (corrélation {r}).', '{a} e {b} non mostrano una relazione lineare chiara tra {p0} e {p1} (correlazione {r}).'],
+    lag: [', con {n} {u} de rezago', ', with a lag of {n} {u}', ', avec un décalage de {n} {u}', ', con un ritardo di {n} {u}'],
+    dp: ['en el mismo sentido', 'in the same direction', 'dans le même sens', 'nella stessa direzione'], dn: ['en sentido contrario', 'in opposite directions', 'en sens inverse', 'in direzione opposta']
+  };
+  function fm(str, o) { return str.replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
+  function sentence(x) {
+    var s = x.stat, i = li(), lag = '', un = LU[s.lagUnit] ? LU[s.lagUnit][i][s.lag === 1 ? 0 : 1] : '';
+    if (s.lag > 0) lag = fm(SN.lag[i], { n: s.lag, u: un });
+    var o = { a: L(x.input.label), b: L(x.market.label), r: s.correlation === null ? '—' : nf(s.correlation, 2), s: t('s_' + s.strength), p0: s.periodStart, p1: s.periodEnd, lag: lag, d: s.direction === 'negative' ? SN.dn[i] : SN.dp[i] };
+    return fm(s.direction === 'none' || x.status === 'INSUFFICIENT_DATA' ? SN.none[i] : SN.rel[i], o);
+  }
+  function norm(v) { return String(v).normalize ? String(v).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase() : String(v).toLowerCase(); }
+  function hay(x) {
+    if (x._h) return x._h;
+    var a = []; [x.input, x.market].forEach(function (sd) { LANGS.forEach(function (lg) { a.push(sd.label[lg] || ''); if (DOC.regions[sd.region]) a.push(DOC.regions[sd.region][lg] || ''); }); a.push(sd.product); });
+    var ch = DOC.channels[x.channel]; if (ch) LANGS.forEach(function (lg) { a.push(ch[lg] || ''); });
+    return (x._h = norm(a.join(' ')));
+  }
+  var CONF_ICON = { HIGH: '●●●', MEDIUM: '●●○', LOW: '●○○' };
 
   function readUrl() { var q = new URLSearchParams(location.search); for (var k in F) F[k] = q.get(k) || ''; }
   function writeUrl() {
@@ -68,6 +105,8 @@
     if (F.st && x.status !== F.st) return false;
     if (F.c && x.confidence !== F.c) return false;
     if (F.r && x.input.region !== F.r && x.market.region !== F.r) return false;
+    if (F.g) { var gg = GRP.filter(function (q) { return q[0] === F.g; })[0]; if (gg && gg[2].indexOf(x.market.product) < 0) return false; }
+    if (F.q) { var h = hay(x); if (norm(F.q).split(/\s+/).some(function (w) { return w && h.indexOf(w) < 0; })) return false; }
     if (F.p && x.input.product !== F.p && x.market.product !== F.p && PAGE[x.input.product] !== F.p && PAGE[x.market.product] !== F.p) return false;
     return true;
   }
@@ -75,14 +114,13 @@
   function uniq(list) { var o = {}, r = []; list.forEach(function (x) { if (!o[x]) { o[x] = 1; r.push(x); } }); return r; }
   function filters() {
     var rels = DOC.relationships, chs = uniq(rels.map(function (x) { return x.channel; })), regs = uniq([].concat.apply([], rels.map(function (x) { return [x.input.region, x.market.region]; }))).sort();
-    var prods = uniq([].concat.apply([], rels.map(function (x) { return sidesOf(x).map(function (s) { return PAGE[s.product] || s.product; }); }))).sort();
-    var h = '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fReg')) + '"><span class="pt-lbl">' + esc(t('fReg')) + '</span>' + chip('r', '', t('all'), !F.r) + regs.map(function (r) { return chip('r', r, flagName(r), F.r === r); }).join('') + '</div>';
-    h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fCh')) + '"><span class="pt-lbl">' + esc(t('fCh')) + '</span>' + chip('ch', '', t('all'), !F.ch) + chs.map(function (c) { return chip('ch', c, t('ch_' + c), F.ch === c); }).join('') + '</div>';
-    h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fSt')) + '"><span class="pt-lbl">' + esc(t('fSt')) + '</span>' + chip('st', '', t('all'), !F.st) + ['OBSERVED_RELATIONSHIP', 'WEAK_OR_UNSTABLE', 'INSUFFICIENT_DATA'].map(function (s) { return chip('st', s, t('stl_' + s), F.st === s); }).join('') + '</div>';
-    h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fConf')) + '"><span class="pt-lbl">' + esc(t('fConf')) + '</span>' + chip('c', '', t('all'), !F.c) + ['HIGH', 'MEDIUM', 'LOW'].map(function (s) { return chip('c', s, t('conf_' + s), F.c === s); }).join('') + '</div>';
-    h += '<div class="rl-prod"><label for="rl-p" class="pt-lbl">' + esc(t('fProd')) + '</label> <select id="rl-p" data-f="p"><option value="">' + esc(t('all')) + '</option>' + prods.map(function (p) { return '<option value="' + esc(p) + '"' + (F.p === p ? ' selected' : '') + '>' + esc(prodLabel(p)) + '</option>'; }).join('') + '</select></div>';
-    return h;
+    var grp = function (key, label, inner) { return '<div class="pt-bar-ctl" role="group" aria-label="' + esc(label) + '"><span class="pt-lbl">' + esc(label) + '</span>' + inner + '</div>'; };
+    return grp('r', t('fReg'), chip('r', '', t('all'), !F.r) + regs.map(function (r) { return chip('r', r, flagName(r), F.r === r); }).join('')) +
+      grp('ch', t('fCh'), chip('ch', '', t('all'), !F.ch) + chs.map(function (c) { return chip('ch', c, t('ch_' + c), F.ch === c); }).join('')) +
+      grp('st', t('fSt'), chip('st', '', t('all'), !F.st) + ['OBSERVED_RELATIONSHIP', 'WEAK_OR_UNSTABLE', 'INSUFFICIENT_DATA'].map(function (s2) { return chip('st', s2, t('stl_' + s2), F.st === s2); }).join('')) +
+      grp('c', t('fConf'), chip('c', '', t('all'), !F.c) + ['HIGH', 'MEDIUM', 'LOW'].map(function (s2) { return chip('c', s2, t('conf_' + s2), F.c === s2); }).join(''));
   }
+  function nFilters() { return ['ch', 'r', 'st', 'c'].filter(function (k) { return F[k]; }).length; }
   function prodLabel(p) {
     for (var i = 0; i < DOC.relationships.length; i++) { var s = sidesOf(DOC.relationships[i]); for (var j = 0; j < 2; j++) if ((PAGE[s[j].product] || s[j].product) === p) return L(s[j].label); }
     return p;
@@ -107,13 +145,11 @@
     });
     return h + '</div>';
   }
-  function card(x) {
+  function detail(x) {
     var s = x.stat, fam = DOC.families[x.family], ok = x.status !== 'INSUFFICIENT_DATA';
-    var h = '<article class="di-card rl-card" id="r-' + esc(x.id) + '" data-status="' + x.status + '">';
-    h += '<div class="rl-flow">' + side('input', x.input, x.freshness.input) + '<span class="rl-arrow" aria-hidden="true">→</span><div class="rl-node rl-channel"><span class="pt-k">' + esc(t('CHANNEL')) + '</span><strong>' + esc(L(DOC.channels[x.channel])) + '</strong></div><span class="rl-arrow" aria-hidden="true">→</span>' + side('market', x.market, x.freshness.market) + '</div>';
-    h += '<p class="rl-badges"><span class="pt-badge rl-st-' + x.status + '" title="' + esc(t('stl_' + x.status)) + '">' + esc(t('st_' + x.status)) + '</span><span class="pt-badge rl-conf-' + x.confidence + '">' + esc(t('conf_' + x.confidence)) + '</span></p>';
-    h += '<h3 class="rl-h">' + esc(t('obsH')) + '</h3><p class="rl-expl">' + esc(L(x.explanation)) + '</p>';
-    h += '<dl class="rl-stats">';
+    var h = '<div class="rl-flow">' + side('input', x.input, x.freshness.input) + '<span class="rl-arrow" aria-hidden="true">→</span><div class="rl-node rl-channel"><span class="pt-k">' + esc(t('CHANNEL')) + '</span><strong>' + esc(L(DOC.channels[x.channel])) + '</strong></div><span class="rl-arrow" aria-hidden="true">→</span>' + side('market', x.market, x.freshness.market) + '</div>';
+    h += '<p class="rl-badges"><span class="pt-badge rl-st-' + x.status + '">' + esc(t('stl_' + x.status)) + '</span></p>';
+    h += '<h3 class="rl-h">' + esc(t('obsH')) + '</h3><p class="rl-expl">' + esc(L(x.explanation)) + '</p><dl class="rl-stats">';
     function kv(k, v) { return '<div><dt>' + esc(t(k)) + '</dt><dd>' + v + '</dd></div>'; }
     h += kv('corr', s.correlation === null ? '—' : '<strong>' + nf(s.correlation, 2) + '</strong> <span class="pt-sub">' + esc(t('s_' + s.strength)) + '</span>');
     h += kv('dir', esc(t('d_' + s.direction)));
@@ -124,39 +160,82 @@
     h += kv('stab', s.signStability === null ? '—' : nf(s.signStability * 100, 0) + ' % <span class="pt-sub">(' + s.windows + ')</span>');
     h += kv('recent', s.recentCorrelation === null ? '—' : nf(s.recentCorrelation, 2));
     h += kv('lastIn', x.stat.inputTransform === 'anomaly' && x.last.input ? esc(x.last.input.period) + ' · ' + (x.last.input.value > 0 ? '+' : '') + nf(x.last.input.value, 1) + ' ' + (x.input.unit.charAt(0) === '%' ? '%' : '°C') : mv(x.last.input)); h += kv('lastMk', mv(x.last.market));
-    h += '</dl>';
-    h += '<h3 class="rl-h">' + esc(t('hypH')) + '</h3><p class="rl-hyp">' + esc(L(fam.hypothesis)) + '</p>';
+    h += '</dl><h3 class="rl-h">' + esc(t('hypH')) + '</h3><p class="rl-hyp">' + esc(L(fam.hypothesis)) + '</p>';
     h += '<details class="rl-det"><summary>' + esc(t('lagH')) + '</summary>' + profile(x) + '</details>';
-    h += '<p class="pt-src">' + esc(t('discl')) + ' <a href="#r-' + esc(x.id) + '" data-copy="' + esc(x.id) + '">' + esc(t('link')) + '</a></p>';
+    return h + '<p class="pt-src">' + esc(t('discl')) + ' <a href="#r-' + esc(x.id) + '" data-copy="' + esc(x.id) + '">' + esc(t('link')) + '</a></p>';
+  }
+  function card(x) {
+    var s = x.stat, r = s.correlation, pos = r === null ? 50 : Math.max(0, Math.min(100, (r + 1) / 2 * 100)), pg = PAGE[x.market.product];
+    var mk = pg ? '<a href="producto.html?p=' + pg + '">' + esc(L(x.market.label)) + '</a>' : esc(L(x.market.label));
+    var h = '<article class="di-card rl2" id="r-' + esc(x.id) + '" data-status="' + x.status + '">';
+    h += '<div class="rl2-top"><h3 class="rl2-pair"><span>' + esc(flagName(x.input.region)) + ' · ' + esc(L(x.input.label)) + '</span><span class="rl2-arr" aria-hidden="true"> → </span><span><b>' + esc(flagName(x.market.region)) + ' · ' + mk + '</b></span></h3>' +
+      '<span class="pt-badge rl2-conf rl-conf-' + x.confidence + '"><span aria-hidden="true">' + CONF_ICON[x.confidence] + '</span> ' + esc(t('conf_' + x.confidence)) + '</span></div>';
+    h += '<p class="rl2-sent">' + esc(sentence(x)) + '</p>';
+    h += '<div class="rl2-g" role="img" aria-label="' + esc(t('corrAria') + ' ' + (r === null ? '—' : nf(r, 2)) + ' (' + t('s_' + s.strength) + ', ' + t('d_' + s.direction) + ')') + '"><span class="rl2-ge">' + esc(t('d_negative')) + '</span><span class="rl2-gt"><i class="rl2-gz"></i><b style="left:' + pos.toFixed(1) + '%"></b></span><span class="rl2-ge">' + esc(t('d_positive')) + '</span></div>';
+    h += '<p class="rl2-meta">' + esc(t('chan')) + ': ' + esc(L(DOC.channels[x.channel])) + ' · ' + esc(s.periodStart + '–' + s.periodEnd) + ' · ' + s.n + ' ' + esc(t('obsN')) + '</p>';
+    h += '<details class="rl-det"' + (F.id === x.id ? ' open' : '') + '><summary>' + esc(t('detail')) + '</summary>' + detail(x) + '</details>';
     return h + '</article>';
   }
+  function rank(x) { return ({ HIGH: 0, MEDIUM: 1, LOW: 2 })[x.confidence] * 10 - Math.abs(x.stat.correlation || 0); }
   function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+  function tilesHtml() {
+    var cnt = {}; DOC.relationships.forEach(function (x) { GRP.forEach(function (g2) { if (g2[2].indexOf(x.market.product) >= 0) cnt[g2[0]] = (cnt[g2[0]] || 0) + 1; }); });
+    return GRP.filter(function (g2) { return cnt[g2[0]]; }).map(function (g2) { return '<button type="button" class="um-prod" data-g="' + g2[0] + '" data-rf="g:' + g2[0] + '" aria-pressed="' + (F.g === g2[0]) + '"><span class="um-emo" aria-hidden="true">' + g2[1] + '</span><span>' + esc(GN[g2[0]][li()]) + '</span><span class="um-cnt">' + cnt[g2[0]] + '</span></button>'; }).join('');
+  }
+  function shell() {
+    var body = document.getElementById('rl-body');
+    var h = '<div class="pt-note rl-disclaimer" role="note"><strong>' + esc(L(DOC.disclaimer)) + '</strong></div>';
+    h += '<div class="um-hero"><h2 class="um-q" id="rl-q">' + esc(t('q')) + '</h2><p class="um-hint" style="margin:0 0 10px">' + esc(t('qsub')) + '</p><form class="um-form" id="rl-form" role="search" aria-labelledby="rl-q"><input class="um-input" id="rl-s" type="search" autocomplete="off" placeholder="' + esc(t('ph')) + '" aria-label="' + esc(t('q')) + '" value="' + esc(F.q) + '"><button class="di-btn um-go" type="submit">' + esc(t('go')) + '</button></form>' +
+      '<h3 class="um-h2">' + esc(t('prods')) + '</h3><div class="um-prods" id="rl-tiles"></div></div>';
+    h += '<details class="um-adv" id="rl-more"' + (nFilters() ? ' open' : '') + '><summary id="rl-mores"></summary><div class="rl-filters" id="rl-fl" style="padding:4px 14px 12px"></div></details>';
+    h += '<div id="rl-res"></div>';
+    h += '<details class="rl-det rl-method"><summary>' + esc(t('method')) + '</summary><p>' + esc(t('mSummary')) + '</p><p>' + esc(t('mRules')) + '</p><p>' + esc(t('mCur')) + '</p></details>';
+    body.innerHTML = h; SHELL = lang();
+  }
+  var SHELL = '';
+  function res() {
+    var list = DOC.relationships.filter(matches).sort(function (a, b) { return rank(a) - rank(b); });
+    var solid = list.filter(function (x) { return (x.confidence === 'HIGH' || x.confidence === 'MEDIUM') && x.status === 'OBSERVED_RELATIONSHIP'; }), weak = list.filter(function (x) { return solid.indexOf(x) < 0; });
+    var any = F.g || F.q || nFilters() || F.id;
+    var h = '<p class="um-sum" aria-live="polite" role="status">' + esc(fm(t('sumF'), { n: list.length, tot: DOC.relationships.length, s: solid.length, w: weak.length })) + ' · ' + esc(t('gen')) + ' ' + esc(DOC.generatedAt.slice(0, 10)) + (any ? ' <button type="button" class="pt-chip" data-reset="1">' + esc(t('reset')) + '</button>' : '') + '</p>';
+    if (!list.length) return h + '<p class="pt-note">' + esc(t('none')) + '</p>';
+    h += '<h3 class="um-h2">' + esc(t('solidH')) + ' (' + solid.length + ')</h3>' + (solid.length ? '<div class="rl-list">' + solid.map(card).join('') + '</div>' : '<p class="um-hint">' + esc(t('nsol')) + '</p>');
+    if (weak.length) h += '<details class="rl-det rl-weak" id="rl-weak"' + (weakOpen || !solid.length || F.id || F.st || F.c ? ' open' : '') + '><summary><b>' + esc(t('weakH')) + ' (' + weak.length + ')</b></summary><p class="um-hint">' + esc(t('weakN')) + '</p><div class="rl-list">' + weak.map(card).join('') + '</div></details>';
+    return h;
+  }
+  function update(rf) {
+    var body = document.getElementById('rl-body'); if (!body || !DOC) return;
+    var ae = rf || (document.activeElement && document.activeElement.getAttribute ? document.activeElement.getAttribute('data-rf') : null);
+    document.getElementById('rl-tiles').innerHTML = tilesHtml(); document.getElementById('rl-fl').innerHTML = filters();
+    var n = nFilters(); document.getElementById('rl-mores').textContent = t('moreF') + (n ? ' (' + n + ')' : '');
+    document.getElementById('rl-res').innerHTML = res();
+    if (ae) { var el = body.querySelector('[data-rf="' + ae + '"]'); if (el) el.focus(); }
+  }
   function render() {
     var body = document.getElementById('rl-body'); if (!body) return;
     document.getElementById('rl-h1').textContent = t('title'); document.getElementById('rl-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
     if (!DOC) return;
-    var list = DOC.relationships.filter(matches);
-    var h = '<div class="pt-note rl-disclaimer" role="note"><strong>' + esc(L(DOC.disclaimer)) + '</strong></div>';
-    h += '<details class="rl-det rl-method"><summary>' + esc(t('method')) + '</summary><p>' + esc(t('mSummary')) + '</p><p>' + esc(t('mRules')) + '</p><p>' + esc(t('mCur')) + '</p></details>';
-    h += '<div class="rl-filters">' + filters() + '</div>';
-    h += '<p class="pt-sub" aria-live="polite">' + list.length + ' / ' + DOC.relationships.length + ' ' + esc(t('count')) + ' · ' + esc(t('gen')) + ' ' + esc(DOC.generatedAt.slice(0, 10)) + (Object.keys(F).some(function (k) { return F[k]; }) ? ' · <button type="button" class="pt-chip" data-reset="1">' + esc(t('reset')) + '</button>' : '') + '</p>';
-    h += list.length ? '<div class="rl-list">' + list.map(card).join('') + '</div>' : '<p class="pt-note">' + esc(t('none')) + '</p>';
-    body.innerHTML = h;
+    if (SHELL !== lang() || !document.getElementById('rl-res')) shell();
+    update();
     if (F.id) { var el = document.getElementById('r-' + F.id); if (el && el.scrollIntoView) el.scrollIntoView(); }
   }
   function onClick(e) {
-    var b = e.target.closest ? e.target.closest('button[data-f],button[data-reset],a[data-copy]') : null; if (!b) return;
-    if (b.getAttribute('data-reset')) { for (var k in F) F[k] = ''; }
-    else if (b.getAttribute('data-copy')) { e.preventDefault(); F = { ch: '', r: '', st: '', c: '', p: '', id: b.getAttribute('data-copy') }; }
+    var b = e.target.closest ? e.target.closest('button[data-f],button[data-reset],button[data-g],a[data-copy]') : null; if (!b) return;
+    if (b.getAttribute('data-reset')) { for (var k in F) F[k] = ''; var inp = document.getElementById('rl-s'); if (inp) inp.value = ''; }
+    else if (b.getAttribute('data-copy')) { e.preventDefault(); F = { ch: '', r: '', st: '', c: '', p: '', id: b.getAttribute('data-copy'), g: '', q: '' }; }
+    else if (b.getAttribute('data-g')) { var gv = b.getAttribute('data-g'); F.g = F.g === gv ? '' : gv; F.id = ''; }
     else { F[b.getAttribute('data-f')] = b.getAttribute('data-v'); F.id = ''; }
-    writeUrl(); render();
+    writeUrl(); update(b.getAttribute('data-rf'));
   }
-  function onChange(e) { var el = e.target; if (el.id === 'rl-p') { F.p = el.value; F.id = ''; writeUrl(); render(); } }
+  function onChange(e) { }
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };
   window.DehesaShared.init('informacion');
   readUrl();
   var body = document.getElementById('rl-body'); body.addEventListener('click', onClick); body.addEventListener('change', onChange);
+  body.addEventListener('input', function (e) { if (e.target && e.target.id === 'rl-s') { F.q = e.target.value; F.id = ''; writeUrl(); var r = document.getElementById('rl-res'); if (r) r.innerHTML = res(); } });
+  body.addEventListener('submit', function (e) { e.preventDefault(); });
+  body.addEventListener('toggle', function (e) { if (e.target && e.target.id === 'rl-weak') weakOpen = e.target.open; }, true);
   render();
   fetch('data/relationships.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { DOC = d; var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go); })
     .catch(function () { body.innerHTML = '<p class="pt-err">' + esc(t('err')) + '</p>'; });
