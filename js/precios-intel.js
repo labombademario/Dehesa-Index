@@ -640,7 +640,7 @@
       var r = monthlyReturns(info.pts);
       if (Object.keys(r).length >= CORR_MIN_RETURNS) { returnsByKey[key] = r; keys.push(key); }
     });
-    var corrCache = {};
+    var corrCache = {}, corrN = {};
     function getCorr(a, b) {
       if (a === b) return 1;
       var ck = a < b ? a + '|' + b : b + '|' + a;
@@ -648,6 +648,7 @@
       var ra = returnsByKey[a], rb = returnsByKey[b], xa = [], xb = [];
       Object.keys(ra).forEach(function (m) { if (rb[m] !== undefined) { xa.push(ra[m]); xb.push(rb[m]); } });
       var r = xa.length >= CORR_MIN_OVERLAP ? pearson(xa, xb) : null;
+      corrN[ck] = xa.length;
       corrCache[ck] = r;
       return r;
     }
@@ -659,7 +660,7 @@
         var colEntry = entryByDashKey(colKey);
         if (r === null) return { bg: P().surfaceAlt, textColor: P().textFaint, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': —', value: '—' };
         var style = tileStyle(r, 1, CORR_COLOR_GAMMA);
-        return { bg: style.bg, textColor: style.textColor, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': r = ' + fmtCorr(r), value: fmtCorr(r), r: r };
+        return { bg: style.bg, textColor: style.textColor, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': r = ' + fmtCorr(r), value: fmtCorr(r), r: r, n: corrN[rowKey < colKey ? rowKey + '|' + colKey : colKey + '|' + rowKey] };
       });
       return { key: rowKey, name: productName(rowEntry.nameKey), cells: cells };
     });
@@ -690,19 +691,19 @@
   CORR_LINKS.forEach(function (p) { CORR_LINK_SET[p[0] + '|' + p[1]] = 1; CORR_LINK_SET[p[1] + '|' + p[0]] = 1; });
   var CORR_SEL = null;
   var CORR_STR = {
-    es: { title: '¿Qué se mueve junto a qué?', intro: 'Cuando el precio de un producto sube o baja, otros suelen hacer lo mismo o lo contrario. Medido sobre los cambios mensuales de los últimos 5 años.', top: 'Las parejas que más se mueven juntas', topNote: 'Solo parejas con una razón económica clara (energía, piensos, sustitutos, subproductos).', pick: 'Elige un producto', with: 'Con qué se mueve: ', together: 'tienden a subir y bajar juntos', opposite: 'tienden a moverse en sentido contrario', and: ' y ', strong: 'Fuerte', mod: 'Moderada', weak: 'Débil', none: 'Sin relación clara', chance: 'Sin explicación económica clara: puede ser casualidad', note: 'Que dos precios se muevan juntos no significa que uno cause el otro. «Sin relación clara» = por debajo de ±0,20: es ruido, no una pauta.', full: 'Ver matriz completa', empty: 'Aún no hay parejas fuertes con una razón económica clara.' },
-    en: { title: 'What moves with what?', intro: 'When one product\'s price rises or falls, others tend to do the same or the opposite. Measured on monthly changes over the last 5 years.', top: 'The pairs that move together most', topNote: 'Only pairs with a clear economic reason (energy, feed, substitutes, by-products).', pick: 'Pick a product', with: 'What it moves with: ', together: 'tend to rise and fall together', opposite: 'tend to move in opposite directions', and: ' and ', strong: 'Strong', mod: 'Moderate', weak: 'Weak', none: 'No clear relationship', chance: 'No clear economic reason: may be chance', note: 'Two prices moving together does not mean one causes the other. “No clear relationship” = below ±0.20: noise, not a pattern.', full: 'Show full matrix', empty: 'No strong pairs with a clear economic reason yet.' },
-    fr: { title: 'Qu\'est-ce qui bouge avec quoi ?', intro: 'Quand le prix d\'un produit monte ou baisse, d\'autres font souvent pareil ou l\'inverse. Mesuré sur les variations mensuelles des 5 dernières années.', top: 'Les paires qui bougent le plus ensemble', topNote: 'Seulement les paires avec une raison économique claire (énergie, aliments, substituts, coproduits).', pick: 'Choisissez un produit', with: 'Avec quoi il bouge : ', together: 'ont tendance à monter et baisser ensemble', opposite: 'ont tendance à évoluer en sens inverse', and: ' et ', strong: 'Forte', mod: 'Modérée', weak: 'Faible', none: 'Pas de relation claire', chance: 'Pas de raison économique claire : peut être un hasard', note: 'Deux prix qui bougent ensemble ne signifient pas que l\'un cause l\'autre. « Pas de relation claire » = sous ±0,20 : du bruit, pas une tendance.', full: 'Voir la matrice complète', empty: 'Pas encore de paires fortes avec une raison économique claire.' },
-    it: { title: 'Cosa si muove con cosa?', intro: 'Quando il prezzo di un prodotto sale o scende, altri tendono a fare lo stesso o il contrario. Misurato sulle variazioni mensili degli ultimi 5 anni.', top: 'Le coppie che si muovono più insieme', topNote: 'Solo coppie con una ragione economica chiara (energia, mangimi, sostituti, sottoprodotti).', pick: 'Scegli un prodotto', with: 'Con cosa si muove: ', together: 'tendono a salire e scendere insieme', opposite: 'tendono a muoversi in senso opposto', and: ' e ', strong: 'Forte', mod: 'Moderata', weak: 'Debole', none: 'Nessuna relazione chiara', chance: 'Nessuna ragione economica chiara: può essere un caso', note: 'Due prezzi che si muovono insieme non significa che uno causi l\'altro. «Nessuna relazione chiara» = sotto ±0,20: rumore, non una tendenza.', full: 'Mostra la matrice completa', empty: 'Ancora nessuna coppia forte con una ragione economica chiara.' }
+    es: { months: 'meses', title: '¿Qué se mueve junto a qué?', intro: 'Cuando el precio de un producto sube o baja, otros suelen hacer lo mismo o lo contrario. Medido sobre los cambios mensuales de los últimos 5 años.', top: 'Las parejas que más se mueven juntas', topNote: 'Solo parejas con una razón económica clara (energía, piensos, sustitutos, subproductos).', pick: 'Elige un producto', with: 'Con qué se mueve: ', together: 'tienden a subir y bajar juntos', opposite: 'tienden a moverse en sentido contrario', and: ' y ', strong: 'Fuerte', mod: 'Moderada', weak: 'Débil', none: 'Sin relación clara', chance: 'Sin explicación económica clara: puede ser casualidad', note: 'Que dos precios se muevan juntos no significa que uno cause el otro. «Sin relación clara» = por debajo de ±0,20: es ruido, no una pauta.', full: 'Ver matriz completa', empty: 'Aún no hay parejas fuertes con una razón económica clara.' },
+    en: { months: 'months', title: 'What moves with what?', intro: 'When one product\'s price rises or falls, others tend to do the same or the opposite. Measured on monthly changes over the last 5 years.', top: 'The pairs that move together most', topNote: 'Only pairs with a clear economic reason (energy, feed, substitutes, by-products).', pick: 'Pick a product', with: 'What it moves with: ', together: 'tend to rise and fall together', opposite: 'tend to move in opposite directions', and: ' and ', strong: 'Strong', mod: 'Moderate', weak: 'Weak', none: 'No clear relationship', chance: 'No clear economic reason: may be chance', note: 'Two prices moving together does not mean one causes the other. “No clear relationship” = below ±0.20: noise, not a pattern.', full: 'Show full matrix', empty: 'No strong pairs with a clear economic reason yet.' },
+    fr: { months: 'mois', title: 'Qu\'est-ce qui bouge avec quoi ?', intro: 'Quand le prix d\'un produit monte ou baisse, d\'autres font souvent pareil ou l\'inverse. Mesuré sur les variations mensuelles des 5 dernières années.', top: 'Les paires qui bougent le plus ensemble', topNote: 'Seulement les paires avec une raison économique claire (énergie, aliments, substituts, coproduits).', pick: 'Choisissez un produit', with: 'Avec quoi il bouge : ', together: 'ont tendance à monter et baisser ensemble', opposite: 'ont tendance à évoluer en sens inverse', and: ' et ', strong: 'Forte', mod: 'Modérée', weak: 'Faible', none: 'Pas de relation claire', chance: 'Pas de raison économique claire : peut être un hasard', note: 'Deux prix qui bougent ensemble ne signifient pas que l\'un cause l\'autre. « Pas de relation claire » = sous ±0,20 : du bruit, pas une tendance.', full: 'Voir la matrice complète', empty: 'Pas encore de paires fortes avec une raison économique claire.' },
+    it: { months: 'mesi', title: 'Cosa si muove con cosa?', intro: 'Quando il prezzo di un prodotto sale o scende, altri tendono a fare lo stesso o il contrario. Misurato sulle variazioni mensili degli ultimi 5 anni.', top: 'Le coppie che si muovono più insieme', topNote: 'Solo coppie con una ragione economica chiara (energia, mangimi, sostituti, sottoprodotti).', pick: 'Scegli un prodotto', with: 'Con cosa si muove: ', together: 'tendono a salire e scendere insieme', opposite: 'tendono a muoversi in senso opposto', and: ' e ', strong: 'Forte', mod: 'Moderata', weak: 'Debole', none: 'Nessuna relazione chiara', chance: 'Nessuna ragione economica chiara: può essere un caso', note: 'Due prezzi che si muovono insieme non significa che uno causi l\'altro. «Nessuna relazione chiara» = sotto ±0,20: rumore, non una tendenza.', full: 'Mostra la matrice completa', empty: 'Ancora nessuna coppia forte con una ragione economica chiara.' }
   };
   function corrLevel(r, c) { var a = Math.abs(r); return a >= 0.5 ? c.strong : a >= 0.3 ? c.mod : a >= 0.2 ? c.weak : c.none; }
   function corrBar(r) { return '<span class="di-cx-trk"><span class="di-cx-bar ' + (r > 0 ? 'pos' : 'neg') + '" style="width:' + Math.min(100, Math.abs(r) * 100).toFixed(0) + '%"></span></span>'; }
   function corrSuffix(k) { return k.split('-').slice(1).join('-'); }
   function corrData(data) {
-    var M = {}, nameOf = {};
+    var M = {}, N = {}, nameOf = {};
     data.keys.forEach(function (k, i) { nameOf[k] = productName(entryByDashKey(k).nameKey); });
-    data.rows.forEach(function (row, i) { row.cells.forEach(function (c, j) { if (i !== j && typeof c.r === 'number') M[row.key + '|' + data.keys[j]] = c.r; }); });
-    return { M: M, nameOf: nameOf };
+    data.rows.forEach(function (row, i) { row.cells.forEach(function (c, j) { if (i !== j && typeof c.r === 'number') { M[row.key + '|' + data.keys[j]] = c.r; N[row.key + '|' + data.keys[j]] = c.n; } }); });
+    return { M: M, N: N, nameOf: nameOf };
   }
   function corrDetailHtml(data, cd, sel, c) {
     var rel = data.keys.filter(function (k) { return k !== sel && cd.M.hasOwnProperty(sel + '|' + k); }).map(function (k) { return { k: k, r: cd.M[sel + '|' + k] }; });
@@ -710,7 +711,7 @@
     return '<h3>' + esc(c.with + cd.nameOf[sel]) + '</h3>' + rel.map(function (x) {
       var weak = Math.abs(x.r) < 0.2, linked = !!CORR_LINK_SET[corrSuffix(sel) + '|' + corrSuffix(x.k)];
       var chance = !weak && Math.abs(x.r) >= 0.3 && !linked;
-      return '<div class="di-cx-rw' + (weak ? ' weak' : '') + '"><span class="di-cx-n">' + esc(cd.nameOf[x.k]) + '</span>' + (weak ? '<span class="di-cx-trk none"></span>' : corrBar(x.r)) + '<b>' + (weak ? '—' : esc(fmtCorr(x.r))) + '</b><em>' + esc(corrLevel(x.r, c)) + '</em>' + (chance ? '<i class="di-cx-chance" title="' + esc(c.chance) + '">?</i>' : '') + '</div>';
+      return '<div class="di-cx-rw' + (weak ? ' weak' : '') + '"><span class="di-cx-n">' + esc(cd.nameOf[x.k]) + '</span>' + (weak ? '<span class="di-cx-trk none"></span>' : corrBar(x.r)) + '<b>' + (weak ? '—' : esc(fmtCorr(x.r))) + '</b><em>' + esc(corrLevel(x.r, c)) + (weak || !cd.N[sel + '|' + x.k] ? '' : ' · ' + cd.N[sel + '|' + x.k] + ' ' + esc(c.months)) + '</em>' + (chance ? '<i class="di-cx-chance" title="' + esc(c.chance) + '">?</i>' : '') + '</div>';
     }).join('') + '<p class="di-cx-foot"><i class="di-cx-chance">?</i> ' + esc(c.chance) + '</p>';
   }
   function renderCorrelationHtml(data) {
@@ -728,7 +729,7 @@
     });
     pairs.sort(function (x, y) { return Math.abs(y.r) - Math.abs(x.r); });
     var topHtml = pairs.slice(0, 8).map(function (p) {
-      return '<div class="di-cx-pr"><div class="di-cx-t">' + esc(cd.nameOf[p.a] + c.and + cd.nameOf[p.b] + ' ' + (p.r > 0 ? c.together : c.opposite)) + '</div><div class="di-cx-m">' + corrBar(p.r) + '<b>' + esc(fmtCorr(p.r)) + '</b><em>' + esc(corrLevel(p.r, c)) + '</em></div></div>';
+      return '<div class="di-cx-pr"><div class="di-cx-t">' + esc(cd.nameOf[p.a] + c.and + cd.nameOf[p.b] + ' ' + (p.r > 0 ? c.together : c.opposite)) + '</div><div class="di-cx-m">' + corrBar(p.r) + '<b>' + esc(fmtCorr(p.r)) + '</b><em>' + esc(corrLevel(p.r, c)) + (cd.N[p.a + '|' + p.b] ? ' · ' + cd.N[p.a + '|' + p.b] + ' ' + esc(c.months) : '') + '</em></div></div>';
     }).join('') || '<p class="di-intel-muted">' + esc(c.empty) + '</p>';
     var pills = data.keys.map(function (k) { return '<button type="button" class="di-cx-pill' + (k === CORR_SEL ? ' on' : '') + '" data-corr-sel="' + esc(k) + '" aria-pressed="' + (k === CORR_SEL) + '">' + esc(cd.nameOf[k]) + '</button>'; }).join('');
     var headerCells = data.keys.map(function (k) { return '<th title="' + esc(cd.nameOf[k]) + '">' + esc(cd.nameOf[k].slice(0, 4)) + '</th>'; }).join('');
