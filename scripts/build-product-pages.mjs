@@ -99,6 +99,49 @@ for (const r of ['us', 'eu', 'ca', 'uk']) {
   let d; try { d = JSON.parse(read('data/prices/latest/' + r + '.json')); } catch (e) { continue; }
   for (const o of d.observations || []) if (P[o.product] && o.currency !== 'INDEX' && typeof o.value === 'number' && !(r === 'eu' && (o.product === 'dap' || o.product === 'potasa')) /* «DAP/potasa» UE = agregado por nutriente, no es DAP ni MOP */) (byProd[o.product] = byProd[o.product] || []).push({ r, ...o });
 }
+// ---- Historico de 12 meses por mercado (15-oct-2026). Solo datos ya publicados en data/prices/history/<region>/<producto>.json: maximo, minimo, media, variacion
+// frente a hace un ano y media por trimestre. Sin estimaciones: si el historico no termina en el ultimo dato publicado o tiene pocos puntos, ese mercado no se muestra.
+const DAY = 864e5, MN = { JAN: 1, FEB: 2, MAR: 3, APR: 4, MAY: 5, JUN: 6, JUL: 7, AUG: 8, SEP: 9, OCT: 10, NOV: 11, DEC: 12 }, HC = {};
+const histPts = o => {
+  const f = 'data/prices/history/' + o.r + '/' + o.product + '.json';
+  if (!(f in HC)) { try { HC[f] = JSON.parse(read(f)); } catch (e) { HC[f] = null; } }
+  const d = HC[f]; if (!d || d.id !== o.id || !Array.isArray(d.history)) return null;
+  const out = [];
+  for (const h of d.history) {
+    if (typeof h.value !== 'number' || !isFinite(h.value)) continue;
+    const p = String(h.period).trim().toUpperCase(); let m, dd = null, mm;
+    if ((m = /^(\d{2})-(\d{2})$/.exec(p))) { mm = +m[1]; dd = +m[2]; }
+    else if (/^\d{1,2}$/.test(p)) mm = +p;
+    else if (/^[A-Z]{3}/.test(p) && MN[p.slice(0, 3)]) mm = MN[p.slice(0, 3)];
+    else continue;
+    if (!(mm >= 1 && mm <= 12) || !(+h.year > 1990)) continue;
+    const y = +h.year;
+    out.push({ iso: y + '-' + String(mm).padStart(2, '0') + (dd ? '-' + String(dd).padStart(2, '0') : ''), t: Date.UTC(y, mm - 1, dd || 15), y, m: mm, v: h.value });
+  }
+  return out.sort((a, b) => a.t - b.t);
+};
+const histStats = o => {
+  const pts = histPts(o); if (!pts || pts.length < 8) return null;
+  const last = pts[pts.length - 1];
+  if (Math.abs(last.v - o.value) > Math.abs(o.value) * 1e-6 + 1e-9) return null;   // el historico debe terminar en el ultimo dato publicado
+  const win = pts.filter(x => x.t > last.t - 365 * DAY); if (win.length < 6) return null;
+  let hi = win[0], lo = win[0], sum = 0; for (const x of win) { if (x.v > hi.v) hi = x; if (x.v < lo.v) lo = x; sum += x.v; }
+  const refT = last.t - 365 * DAY; let ago = null; for (const x of pts) if (Math.abs(x.t - refT) <= 20 * DAY && (!ago || Math.abs(x.t - refT) < Math.abs(ago.t - refT))) ago = x;
+  const qs = {}; for (const x of pts) { const k = x.y * 4 + Math.floor((x.m - 1) / 3); (qs[k] = qs[k] || []).push(x.v); }
+  const kl = last.y * 4 + Math.floor((last.m - 1) / 3), qm = {};
+  for (let k = kl - 5; k <= kl; k++) if (qs[k]) qm[k] = { avg: qs[k].reduce((a, b) => a + b, 0) / qs[k].length, partial: k === kl && last.m % 3 !== 0 };
+  return { last, hi, lo, avg: sum / win.length, ago: ago && ago.v > 0 ? ago : null, qm, kl };
+};
+const HT = {
+  es: { h: 'Evolución en los últimos 12 meses', cols: ['Mercado', 'Máximo', 'Mínimo', 'Media', 'Último dato', 'Hace un año'], qh: 'Media por trimestre', q: (q, y) => 'T' + q + ' ' + y, part: '* Trimestre en curso: media de los datos publicados hasta ahora.', note: 'Calculado con los datos que publica la fuente en cada periodo; no hay estimaciones.',
+    dir: { up: 'por encima', dn: 'por debajo' }, eq: 'coincide con', sen: (de, r, lo, dlo, hi, dhi, v, x, dir, avg) => r + ': en los últimos 12 meses el precio ' + de + ' ha oscilado entre ' + lo + ' (' + dlo + ') y ' + hi + ' (' + dhi + '). El último dato (' + v + ') ' + (dir === null ? 'coincide con la media del periodo' : 'está un ' + x + ' % ' + dir + ' de la media del periodo') + ' (' + avg + ').' },
+  en: { h: 'Last 12 months', cols: ['Market', 'High', 'Low', 'Average', 'Latest', 'A year ago'], qh: 'Average by quarter', q: (q, y) => 'Q' + q + ' ' + y, part: '* Current quarter: average of the data published so far.', note: 'Calculated from the data the source publishes for each period; nothing is estimated.',
+    dir: { up: 'above', dn: 'below' }, sen: (de, r, lo, dlo, hi, dhi, v, x, dir, avg) => r + ': over the last 12 months the ' + de + ' price ranged from ' + lo + ' (' + dlo + ') to ' + hi + ' (' + dhi + '). The latest value (' + v + ') ' + (dir === null ? 'is in line with the 12-month average' : 'is ' + x + '% ' + dir + ' the 12-month average') + ' (' + avg + ').' },
+  fr: { h: 'Évolution sur les 12 derniers mois', cols: ['Marché', 'Maximum', 'Minimum', 'Moyenne', 'Dernière donnée', 'Il y a un an'], qh: 'Moyenne par trimestre', q: (q, y) => 'T' + q + ' ' + y, part: '* Trimestre en cours : moyenne des données publiées à ce jour.', note: 'Calculé à partir des données que publie la source pour chaque période ; aucune estimation.',
+    dir: { up: 'au-dessus de', dn: 'en dessous de' }, sen: (de, r, lo, dlo, hi, dhi, v, x, dir, avg) => r + ' : sur les 12 derniers mois, le prix ' + de + ' a oscillé entre ' + lo + ' (' + dlo + ') et ' + hi + ' (' + dhi + '). La dernière donnée (' + v + ') ' + (dir === null ? 'est égale à la moyenne de la période' : 'est ' + x + ' % ' + dir + ' la moyenne de la période') + ' (' + avg + ').' },
+  it: { h: 'Andamento negli ultimi 12 mesi', cols: ['Mercato', 'Massimo', 'Minimo', 'Media', 'Ultimo dato', 'Un anno fa'], qh: 'Media per trimestre', q: (q, y) => 'T' + q + ' ' + y, part: '* Trimestre in corso: media dei dati pubblicati finora.', note: 'Calcolato con i dati che la fonte pubblica per ogni periodo; nessuna stima.',
+    dir: { up: 'sopra', dn: 'sotto' }, sen: (de, r, lo, dlo, hi, dhi, v, x, dir, avg) => r + ': negli ultimi 12 mesi il prezzo ' + de + ' è oscillato tra ' + lo + ' (' + dlo + ') e ' + hi + ' (' + dhi + '). L’ultimo dato (' + v + ') ' + (dir === null ? 'coincide con la media del periodo' : 'è ' + x + ' % ' + dir + ' la media del periodo') + ' (' + avg + ').' }
+};
 const QUINTAL = new Set(['arroz', 'avena', 'cebada', 'centeno', 'colza', 'maiz', 'trigo']);
 const ORDER = ['us', 'eu', 'ca', 'uk'];
 const keys = Object.keys(byProd).sort();
@@ -122,6 +165,21 @@ for (const lg of Object.keys(L)) {
     const desc = (T.descIntro(de) + obs.map(o => rg(o) + ' ' + line(o) + ' (' + per(o.observationDate) + (o.changePct != null ? ', ' + pct(o.changePct) : '') + ')').join('; ') + T.descEnd).slice(0, 300);
     const rows = obs.map(o => { const s = cite[o.sourceId] || {};
       return '<tr><th scope="row" style="text-align:left;padding:8px 6px">' + esc(rg(o)) + '</th><td style="text-align:right;padding:8px 6px"><b>' + esc(nf(o.value)) + '</b></td><td style="padding:8px 6px">' + esc(CUR[o.currency] + un(o)) + '</td><td style="padding:8px 6px">' + esc(per(o.observationDate) + (STALE.has(o.id) ? ' (' + STALE_T[lg] + ')' : '')) + '</td><td style="text-align:right;padding:8px 6px">' + esc(pct(o.changePct)) + '</td><td style="padding:8px 6px">' + (s.url ? '<a href="' + esc(s.url) + '" rel="noopener">' + esc(s.short || s.name || o.sourceId) + '</a>' : esc(o.sourceId)) + '</td></tr>'; }).join('\n');
+    // Historico de 12 meses (solo mercados con historico completo hasta el ultimo dato publicado)
+    const hs = obs.map(o => ({ o, s: histStats(o) })).filter(x => x.s && (Date.parse(lastDay) - x.s.last.t) / DAY <= 200), HL = HT[lg], rgh = o => rg(o) + (STALE.has(o.id) ? ' (' + STALE_T[lg] + ')' : '');   // los datos sin actualizar se resumen rotulados, con las fechas reales del ultimo dato
+    let histHtml = '';
+    if (hs.length) {
+      const fm = (o, v) => nf(v) + ' ' + CUR[o.currency] + ((T.unitS && T.unitS[o.unit]) || US[o.unit] || '/' + o.unit);
+      const sens = hs.map(({ o, s }) => { const x = (s.last.v / s.avg - 1) * 100; return '<p>' + esc(HL.sen(de, rgh(o), fm(o, s.lo.v), per(s.lo.iso), fm(o, s.hi.v), per(s.hi.iso), fm(o, s.last.v), pct(x).replace(/^[+−]/, '').replace(' %', ''), Math.abs(x) < 0.1 ? null : (x > 0 ? HL.dir.up : HL.dir.dn), fm(o, s.avg))) + '</p>'; }).join('\n');
+      const th = (t, i) => '<th scope="col" style="text-align:' + (i === 0 ? 'left' : 'right') + ';padding:8px 6px;font-size:11px">' + esc(t) + '</th>';
+      const trs = hs.map(({ o, s }) => '<tr><th scope="row" style="text-align:left;padding:8px 6px">' + esc(rgh(o)) + '</th>' + [fm(o, s.hi.v) + ' (' + per(s.hi.iso) + ')', fm(o, s.lo.v) + ' (' + per(s.lo.iso) + ')', fm(o, s.avg), fm(o, s.last.v), s.ago ? pct((s.last.v / s.ago.v - 1) * 100) : '–'].map(c => '<td style="text-align:right;padding:8px 6px">' + esc(c) + '</td>').join('') + '</tr>').join('\n');
+      const kl = Math.max(...hs.map(x => x.s.kl)), ks = []; for (let k = kl - 5; k <= kl; k++) if (hs.some(x => x.s.qm[k])) ks.push(k);
+      const qrows = hs.map(({ o, s }) => '<tr><th scope="row" style="text-align:left;padding:8px 6px">' + esc(rgh(o)) + '</th>' + ks.map(k => '<td style="text-align:right;padding:8px 6px">' + (s.qm[k] ? esc(nf(s.qm[k].avg) + (s.qm[k].partial ? ' *' : '')) : '–') + '</td>').join('') + '</tr>').join('\n');
+      const anyPartial = hs.some(x => Object.values(x.s.qm).some(q => q.partial));
+      histHtml = '    <h2 style="font-size:17px;margin-top:22px">' + esc(HL.h) + '</h2>\n' + sens + '\n    <div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><thead><tr>' + HL.cols.map(th).join('') + '</tr></thead><tbody>\n' + trs + '\n</tbody></table></div>\n' +
+        '    <h3 style="font-size:15px;margin:16px 0 6px">' + esc(HL.qh) + '</h3>\n    <div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:480px;font-size:14px"><thead><tr>' + [HL.cols[0]].concat(ks.map(k => HL.q(k % 4 + 1, Math.floor(k / 4)))).map(th).join('') + '</tr></thead><tbody>\n' + qrows + '\n</tbody></table></div>\n' +
+        '    <p class="di-movers-hint">' + esc(HL.note + (anyPartial ? ' ' + HL.part : '')) + '</p>\n';
+    }
     const meth = lg === 'es' ? obs.filter(o => o.methodology).map(o => '<li><b>' + esc(rg(o)) + ':</b> ' + esc(o.methodology) + '</li>').join('\n') : '';
     const faq = obs.map(o => '<h3 style="font-size:15px;margin:14px 0 4px">' + esc(T.q(de, (PLACE[o.id] && PLACE[o.id][lg]) || T.regQ[o.r])) + '</h3><p>' + esc(T.a(nf(o.value) + ' ' + CUR[o.currency] + un(o), per(o.observationDate), o.changePct != null ? pct(o.changePct) : '', T.freq[o.frequency] || o.frequency || '')) + '</p>').join('\n');
     // fr/it: los cereales y oleaginosas se cotizan al quintal (1 q = 100 kg): respuesta directa, conversion exacta
@@ -164,7 +222,7 @@ ${rows}
     <p style="margin:14px 0"><a class="di-btn-gold-solid" href="${up}precios.html?product=${esc(p)}">${esc(T.cta)}</a></p>
     <p class="di-movers-hint"><a href="${up}noticias.html?product=${esc(topic)}">${esc(T.news(name))}</a> · <a href="${up}calendario.html?crop=${esc(topic)}">${esc(T.cal(name))}</a></p>
     <p class="di-movers-hint">${esc(T.note)} <a href="${up}${T.metodo}">${esc(T.meth)}</a> · ${esc(T.gen)} ${esc(lastDay)}.</p>
-${meth ? '    <h2 style="font-size:17px;margin-top:22px">' + esc(T.what) + '</h2>\n    <ul>' + meth + '</ul>' : ''}
+${histHtml}${meth ? '    <h2 style="font-size:17px;margin-top:22px">' + esc(T.what) + '</h2>\n    <ul>' + meth + '</ul>' : ''}
     <h2 style="font-size:17px;margin-top:22px">${esc(T.faqH)}</h2>
 ${faq}
 ${qFaq}
