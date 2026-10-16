@@ -1241,6 +1241,15 @@ sources:
     data: [us-stats.json]
     log: us-stats-log.txt
     message: Series nacionales de EE. UU. (USDA NASS) para el catalogo
+  - id: us-cash-receipts
+    name: Update US cash receipts by commodity and state (USDA ERS Farm Income and Wealth Statistics, public domain)
+    cron: ['25 15 * * 4']
+    script: scripts/update-us-cash-receipts.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [us-cash-receipts.json]
+    message: Ingresos en efectivo por producto y estado de EE. UU. (USDA ERS)
   - id: us-ers
     name: Update US ERS data products and TTB wine statistics (public domain)
     cron: ['40 14 * * 3']

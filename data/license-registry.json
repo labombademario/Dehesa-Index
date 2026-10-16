@@ -4937,6 +4937,12 @@
     "foag_ch"
    ]
   },
+  "data/us-cash-receipts.json": {
+   "sources": [
+    "usda_ers"
+   ],
+   "notes": "Ingresos en efectivo por producto y estado (USDA ERS, Farm Income and Wealth Statistics, obra del Gobierno federal de EE. UU.): los 12 productos principales de cada estado, ultimos 6 anos; el ultimo ano puede ser prevision de ERS."
+  },
   "data/eu-nitrates.json": {
    "sources": [
     "eurostat"
