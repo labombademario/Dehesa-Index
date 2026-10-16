@@ -1,4 +1,4 @@
-2026-10-16T04:24:15.766Z
+2026-10-16T04:35:59.017Z
 OK cerdo
 OK vaca
 OK cordero
@@ -10,7 +10,7 @@ OK arroz
 OK maiz
 OK trigo
 OK cebada
-FALLO avena: Serie insuficiente para avena: 10 puntos
+OK avena
 OK colza
 OK centeno
 OK mantequilla

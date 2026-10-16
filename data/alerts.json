@@ -1,16 +1,8 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-16T04:33:26.733Z",
+  "generatedAt": "2026-10-16T04:36:27.512Z",
   "status": "informational",
   "rules": [
-    {
-      "type": "stale_data",
-      "product": "avena",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "message": "Latest observation is older than the configured freshness threshold."
-    },
     {
       "type": "stale_data",
       "product": "azucar",
@@ -135,6 +127,15 @@
       "severity": "high",
       "changePct": -10.99,
       "observationDate": "2026-07-01"
+    },
+    {
+      "type": "period_move",
+      "product": "avena",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 6.93,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
