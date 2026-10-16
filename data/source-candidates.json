@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T16:37:41Z",
+ "generatedAt": "2026-10-16T17:06:44Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2313,12 +2313,27 @@
    "registryId": "cso_ie",
    "country": "IE",
    "scope": "integrated",
-   "institution": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "institution": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05), Intake of Cows Milk (AKA01), Agricultural Land Sales (ARA02)",
+   "dataset": "Ya integrada (124 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "milk",
+    "pigs",
+    "potato",
+    "poultry",
+    "sheep"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price",
+    "production"
+   ],
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,

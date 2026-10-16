@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T13:33:53Z",
+ "generatedAt": "2026-10-16T17:06:44Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 125,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 274,
-  "datasets_apto": 158,
+  "datasets": 275,
+  "datasets_apto": 159,
   "datasets_condiciones": 104,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
@@ -397,7 +397,7 @@
   },
   {
    "id": "cso_ie",
-   "name": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05)",
+   "name": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05), Intake of Cows Milk (AKA01), Agricultural Land Sales (ARA02)",
    "url": "https://data.cso.ie/",
    "country": "IE",
    "licenseId": "CC-BY-4.0",
@@ -4227,6 +4227,21 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/ie-cso-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "cso_ie"
+   ],
+   "parts": [
+    {
+     "scope": "pais:IE",
+     "sourceId": "cso_ie",
+     "verdict": "apto"
+    }
    ]
   },
   {
