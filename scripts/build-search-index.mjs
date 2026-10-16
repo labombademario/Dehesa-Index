@@ -231,6 +231,10 @@ const PAGES = [
   ['region.html?c=LT&r=LT02', tri('Perfil por región de Lituania', 'Lithuanian region profile', 'Profil par région lituanienne', 'Profilo per regione lituana'), 'lituania lithuania lituanie region regiones vilna vilnius'],
   ['cultivos.html', CS, 'cultivos crops condicion valoracion siembra cosecha progress nass estados unidos']
 ];
+/* Gasóleo semanal de 16 países de la UE (js/eu-diesel.js) */
+[['EL', 'Grecia', 'Greece', 'Grèce', 'Grecia'], ['BG', 'Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'], ['CY', 'Chipre', 'Cyprus', 'Chypre', 'Cipro'], ['CZ', 'Chequia', 'Czechia', 'Tchéquie', 'Cechia'], ['DK', 'Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], ['EE', 'Estonia', 'Estonia', 'Estonie', 'Estonia'], ['FI', 'Finlandia', 'Finland', 'Finlande', 'Finlandia'], ['HU', 'Hungría', 'Hungary', 'Hongrie', 'Ungheria'], ['LT', 'Lituania', 'Lithuania', 'Lituanie', 'Lituania'], ['LU', 'Luxemburgo', 'Luxembourg', 'Luxembourg', 'Lussemburgo'], ['LV', 'Letonia', 'Latvia', 'Lettonie', 'Lettonia'], ['MT', 'Malta', 'Malta', 'Malte', 'Malta'], ['RO', 'Rumanía', 'Romania', 'Roumanie', 'Romania'], ['SE', 'Suecia', 'Sweden', 'Suède', 'Svezia'], ['SI', 'Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'], ['SK', 'Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia']].forEach(function (k) {
+  PAGES.push(['paises.html?c=' + k[0] + '#ps-eu-diesel', tri('Gasóleo en ' + k[1] + ': precio semanal en surtidor con y sin impuestos', 'Diesel in ' + k[2] + ': weekly pump price with and without taxes', 'Gazole en ' + k[3] + ' : prix hebdomadaire à la pompe TTC et hors taxes', 'Gasolio in ' + k[4] + ': prezzo settimanale alla pompa con e senza tasse'), 'gasoleo diesel gasolio gazole surtidor pump precio price boletin petrolero oil bulletin ' + k[1].toLowerCase() + ' ' + k[2].toLowerCase()]);
+});
 for (const [u, n, k] of PAGES) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });
 function sections(file, page, pageName) {
   const src = read(file), re = /\{ h: '((?:[^'\\]|\\.)*)', id: '([a-z0-9-]+)'/g, by = {}; let m;

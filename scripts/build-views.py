@@ -91,6 +91,13 @@ def trade_products():
         for cc, rep in (d.get('reporters') or {}).items():
             write('trade-products/%s.json' % cc, dict({k: v for k, v in d.items() if k != 'reporters'}, reporters={cc: rep}))
 
+def diesel_eu_more():
+    """data/views/diesel-eu/<CC>.json: gasoleo semanal de un pais (Boletin Petrolero de la UE); la ficha solo baja su pais."""
+    try: d = load('diesel-eu-more.json')
+    except Exception: return
+    for cc, rows in (d.get('countries') or {}).items():
+        write('diesel-eu/%s.json' % cc, {'schemaVersion': 1, 'generatedAt': d.get('generatedAt'), 'cc': cc, 'unit': d.get('unit'), 'fields': d.get('fields'), 'source': d.get('source'), 'note': d.get('note'), 'weekly': rows})
+
 def _last(a):
     for p in reversed(a or []):
         if p and p[1] is not None: return p
@@ -239,4 +246,5 @@ def main():
     write('region-metrics.json', region_metrics())
     write('lonjas.json', lonjas())
     trade_products()
+    diesel_eu_more()
 main()

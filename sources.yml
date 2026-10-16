@@ -1013,6 +1013,16 @@ sources:
     continue: true
     data: [pt-diesel.json]
     message: Gasoleo en Portugal (Boletin Petrolero UE, precio de compra agrario de Eurostat)
+  - id: eu-diesel-more
+    name: Update diesel in 16 more EU countries (EU Weekly Oil Bulletin)
+    cron: ['50 7 * * 2,5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-eu-diesel-more.py
+    timeout: 30
+    script_timeout: 25
+    continue: true
+    data: [diesel-eu-more.json]
+    message: Gasoleo semanal en 16 paises de la UE (Boletin Petrolero de la Comision)
   - id: pt-ghg-agri
     name: Update Portugal agricultural greenhouse gas emissions (Eurostat env_air_gge)
     cron: ['50 8 4 * *']

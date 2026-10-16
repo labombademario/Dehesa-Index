@@ -4481,7 +4481,8 @@
   },
   "data/views/": {
    "sources": [
-    "eu_agrifood"
+    "eu_agrifood",
+    "eu_oil_bulletin"
    ],
    "notes": "Vistas pequenas derivadas (scripts/build-views.py y scripts/update_news.py). home-summary y eu-preview citan las fuentes de las que se derivan; news-index y news-feed solo guardan titular, enlace y medio (la fuente es el medio enlazado, sin reproducir el texto de la noticia)."
   },
@@ -4935,6 +4936,12 @@
    "sources": [
     "foag_ch"
    ]
+  },
+  "data/diesel-eu-more.json": {
+   "sources": [
+    "eu_oil_bulletin"
+   ],
+   "notes": "Gasoleo de automocion semanal con y sin impuestos en 16 paises de la UE (Grecia, Bulgaria, Chipre, Chequia, Dinamarca, Estonia, Finlandia, Hungria, Lituania, Luxemburgo, Letonia, Malta, Rumania, Suecia, Eslovenia, Eslovaquia) del Boletin Semanal del Petroleo de la Comision Europea (Decision 2011/833/UE); el navegador lee las vistas por pais data/views/diesel-eu/<CC>.json."
   },
   "data/diesel-eu-countries.json": {
    "sources": [
