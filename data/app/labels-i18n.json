@@ -227,11 +227,23 @@
   "fr": "Nitrate d'ammonium (26 % N) (en sacs) (prix payé)",
   "it": "Nitrato ammonico (26% N) (in sacchi) (prezzo pagato)"
  },
+ "Anhydrous ammonia: retail price, Illinois (USDA AMS)": {
+  "en": "Anhydrous ammonia: retail price, Illinois (USDA AMS)",
+  "es": "Amoníaco anhidro: precio al por menor, Illinois (USDA AMS)",
+  "fr": "Ammoniac anhydre : prix de détail, Illinois (USDA AMS)",
+  "it": "Ammoniaca anidra: prezzo al dettaglio, Illinois (USDA AMS)"
+ },
  "Animal feedingstuffs: input price index": {
   "en": "Animal feedingstuffs: input price index",
   "es": "Piensos: índice de precios de los insumos",
   "fr": "Aliments pour animaux : indice des prix des intrants",
   "it": "Mangimi: indice dei prezzi degli input"
+ },
+ "Animal feedingstuffs: input price index (Eurostat)": {
+  "en": "Animal feedingstuffs: input price index (Eurostat)",
+  "es": "Piensos: índice de precios pagados (Eurostat)",
+  "fr": "Aliments des animaux : indice des prix des intrants (Eurostat)",
+  "it": "Mangimi: indice dei prezzi dei mezzi di produzione (Eurostat)"
  },
  "Animal sector: prices paid index": {
   "en": "Animal sector: prices paid index",
@@ -262,6 +274,138 @@
   "es": "Manzanas: producción",
   "fr": "Pommes : production",
   "it": "Mele: produzione"
+ },
+ "Apricots (fruit): production (BFS)": {
+  "en": "Apricots (fruit): production (BFS)",
+  "es": "Albaricoques (fruta): producción (BFS)",
+  "fr": "Abricots (fruits) : production (BFS)",
+  "it": "Albicocche (frutta): produzione (BFS)"
+ },
+ "Aquaculture price, common carp, direct sale, Germany": {
+  "en": "Aquaculture price, common carp, direct sale, Germany",
+  "es": "Precio de acuicultura, carpa común, venta directa, Alemania",
+  "fr": "Prix aquacole, carpe commune, vente directe, Allemagne",
+  "it": "Prezzo dell’acquacoltura, carpa comune, vendita diretta, Germania"
+ },
+ "Aquaculture price, common carp, sold to wholesale, Germany": {
+  "en": "Aquaculture price, common carp, sold to wholesale, Germany",
+  "es": "Precio de acuicultura, carpa común, venta al por mayor, Alemania",
+  "fr": "Prix aquacole, carpe commune, vente au commerce de gros, Allemagne",
+  "it": "Prezzo dell’acquacoltura, carpa comune, vendita all’ingrosso, Germania"
+ },
+ "Aquaculture price, rainbow trout, direct sale, Germany": {
+  "en": "Aquaculture price, rainbow trout, direct sale, Germany",
+  "es": "Precio de acuicultura, trucha arcoíris, venta directa, Alemania",
+  "fr": "Prix aquacole, truite arc-en-ciel, vente directe, Allemagne",
+  "it": "Prezzo dell’acquacoltura, trota iridea, vendita diretta, Germania"
+ },
+ "Aquaculture price, rainbow trout, sold to wholesale, Germany": {
+  "en": "Aquaculture price, rainbow trout, sold to wholesale, Germany",
+  "es": "Precio de acuicultura, trucha arcoíris, venta al por mayor, Alemania",
+  "fr": "Prix aquacole, truite arc-en-ciel, vente au commerce de gros, Allemagne",
+  "it": "Prezzo dell’acquacoltura, trota iridea, vendita all’ingrosso, Germania"
+ },
+ "Aquaculture price, salmon trout, direct sale, Germany": {
+  "en": "Aquaculture price, salmon trout, direct sale, Germany",
+  "es": "Precio de acuicultura, trucha asalmonada, venta directa, Alemania",
+  "fr": "Prix aquacole, truite saumonée, vente directe, Allemagne",
+  "it": "Prezzo dell’acquacoltura, trota salmonata, vendita diretta, Germania"
+ },
+ "Aquaculture price, salmon trout, sold to wholesale, Germany": {
+  "en": "Aquaculture price, salmon trout, sold to wholesale, Germany",
+  "es": "Precio de acuicultura, trucha asalmonada, venta al por mayor, Alemania",
+  "fr": "Prix aquacole, truite saumonée, vente au commerce de gros, Allemagne",
+  "it": "Prezzo dell’acquacoltura, trota salmonata, vendita all’ingrosso, Germania"
+ },
+ "Aquaculture production: Brook trout, price (Eurostat)": {
+  "en": "Aquaculture production: Brook trout, price (Eurostat)",
+  "es": "Producción de acuicultura: trucha de arroyo, precio (Eurostat)",
+  "fr": "Production aquacole : omble de fontaine, prix (Eurostat)",
+  "it": "Produzione dell’acquacoltura: salmerino di fonte, prezzo (Eurostat)"
+ },
+ "Aquaculture production: Brook trout, quantity (Eurostat)": {
+  "en": "Aquaculture production: Brook trout, quantity (Eurostat)",
+  "es": "Producción de acuicultura: trucha de arroyo, cantidad (Eurostat)",
+  "fr": "Production aquacole : omble de fontaine, quantité (Eurostat)",
+  "it": "Produzione dell’acquacoltura: salmerino di fonte, quantità (Eurostat)"
+ },
+ "Aquaculture production: Common carp, price (Eurostat)": {
+  "en": "Aquaculture production: Common carp, price (Eurostat)",
+  "es": "Producción de acuicultura: carpa común, precio (Eurostat)",
+  "fr": "Production aquacole : carpe commune, prix (Eurostat)",
+  "it": "Produzione dell’acquacoltura: carpa comune, prezzo (Eurostat)"
+ },
+ "Aquaculture production: Common carp, quantity (Eurostat)": {
+  "en": "Aquaculture production: Common carp, quantity (Eurostat)",
+  "es": "Producción de acuicultura: carpa común, cantidad (Eurostat)",
+  "fr": "Production aquacole : carpe commune, quantité (Eurostat)",
+  "it": "Produzione dell’acquacoltura: carpa comune, quantità (Eurostat)"
+ },
+ "Aquaculture production: Freshwater fishes NEI, price (Eurostat)": {
+  "en": "Aquaculture production: Freshwater fishes NEI, price (Eurostat)",
+  "es": "Producción de acuicultura: peces de agua dulce sin especificar, precio (Eurostat)",
+  "fr": "Production aquacole : poissons d’eau douce non spécifiés, prix (Eurostat)",
+  "it": "Produzione dell’acquacoltura: pesci d’acqua dolce non specificati, prezzo (Eurostat)"
+ },
+ "Aquaculture production: Freshwater fishes NEI, quantity (Eurostat)": {
+  "en": "Aquaculture production: Freshwater fishes NEI, quantity (Eurostat)",
+  "es": "Producción de acuicultura: peces de agua dulce sin especificar, cantidad (Eurostat)",
+  "fr": "Production aquacole : poissons d’eau douce non spécifiés, quantité (Eurostat)",
+  "it": "Produzione dell’acquacoltura: pesci d’acqua dolce non specificati, quantità (Eurostat)"
+ },
+ "Aquaculture production: Grass carp, price (Eurostat)": {
+  "en": "Aquaculture production: Grass carp, price (Eurostat)",
+  "es": "Producción de acuicultura: carpa herbívora, precio (Eurostat)",
+  "fr": "Production aquacole : carpe amour, prix (Eurostat)",
+  "it": "Produzione dell’acquacoltura: carpa erbivora, prezzo (Eurostat)"
+ },
+ "Aquaculture production: Grass carp, quantity (Eurostat)": {
+  "en": "Aquaculture production: Grass carp, quantity (Eurostat)",
+  "es": "Producción de acuicultura: carpa herbívora, cantidad (Eurostat)",
+  "fr": "Production aquacole : carpe amour, quantité (Eurostat)",
+  "it": "Produzione dell’acquacoltura: carpa erbivora, quantità (Eurostat)"
+ },
+ "Aquaculture production: Rainbow trout, price (Eurostat)": {
+  "en": "Aquaculture production: Rainbow trout, price (Eurostat)",
+  "es": "Producción de acuicultura: trucha arcoíris, precio (Eurostat)",
+  "fr": "Production aquacole : truite arc-en-ciel, prix (Eurostat)",
+  "it": "Produzione dell’acquacoltura: trota iridea, prezzo (Eurostat)"
+ },
+ "Aquaculture production: Rainbow trout, quantity (Eurostat)": {
+  "en": "Aquaculture production: Rainbow trout, quantity (Eurostat)",
+  "es": "Producción de acuicultura: trucha arcoíris, cantidad (Eurostat)",
+  "fr": "Production aquacole : truite arc-en-ciel, quantité (Eurostat)",
+  "it": "Produzione dell’acquacoltura: trota iridea, quantità (Eurostat)"
+ },
+ "Aquaculture production: Wels catfish, price (Eurostat)": {
+  "en": "Aquaculture production: Wels catfish, price (Eurostat)",
+  "es": "Producción de acuicultura: siluro, precio (Eurostat)",
+  "fr": "Production aquacole : silure glane, prix (Eurostat)",
+  "it": "Produzione dell’acquacoltura: siluro, prezzo (Eurostat)"
+ },
+ "Aquaculture production: Wels catfish, quantity (Eurostat)": {
+  "en": "Aquaculture production: Wels catfish, quantity (Eurostat)",
+  "es": "Producción de acuicultura: siluro, cantidad (Eurostat)",
+  "fr": "Production aquacole : silure glane, quantité (Eurostat)",
+  "it": "Produzione dell’acquacoltura: siluro, quantità (Eurostat)"
+ },
+ "Aquaculture production: total, average price (Eurostat)": {
+  "en": "Aquaculture production: total, average price (Eurostat)",
+  "es": "Producción de acuicultura: total, precio medio (Eurostat)",
+  "fr": "Production aquacole : total, prix moyen (Eurostat)",
+  "it": "Produzione dell’acquacoltura: totale, prezzo medio (Eurostat)"
+ },
+ "Aquaculture production: total, quantity (Eurostat)": {
+  "en": "Aquaculture production: total, quantity (Eurostat)",
+  "es": "Producción de acuicultura: total, cantidad (Eurostat)",
+  "fr": "Production aquacole : total, quantité (Eurostat)",
+  "it": "Produzione dell’acquacoltura: totale, quantità (Eurostat)"
+ },
+ "Aquaculture production: total, value (Eurostat)": {
+  "en": "Aquaculture production: total, value (Eurostat)",
+  "es": "Producción de acuicultura: total, valor (Eurostat)",
+  "fr": "Production aquacole : total, valeur (Eurostat)",
+  "it": "Produzione dell’acquacoltura: totale, valore (Eurostat)"
  },
  "Area under agri-environment schemes: England (hectares)": {
   "en": "Area under agri-environment schemes: England (hectares)",
@@ -341,6 +485,18 @@
   "fr": "Superficie : Orge, Sud-Est et Londres (hectares)",
   "it": "Superficie: Orzo, Sud Est e Londra (ettari)"
  },
+ "Area: Barley, South West (hectares)": {
+  "en": "Area: Barley, South West (hectares)",
+  "es": "Superficie: cebada, South West (hectáreas)",
+  "fr": "Surface : orge, South West (hectares)",
+  "it": "Superficie: orzo, South West (ettari)"
+ },
+ "Area: Barley, West Midlands (hectares)": {
+  "en": "Area: Barley, West Midlands (hectares)",
+  "es": "Superficie: cebada, West Midlands (hectáreas)",
+  "fr": "Surface : orge, West Midlands (hectares)",
+  "it": "Superficie: orzo, West Midlands (ettari)"
+ },
  "Area: Sugar beet, United Kingdom (hectares)": {
   "en": "Area: Sugar beet, United Kingdom (hectares)",
   "es": "Superficie: Remolacha azucarera, Reino Unido (hectáreas)",
@@ -388,6 +544,12 @@
   "es": "Pienso para pollitos (en sacos) (precio pagado)",
   "fr": "Aliment pour poussins (en sacs) (prix payé)",
   "it": "Mangime per pulcini (in sacchi) (prezzo pagato)"
+ },
+ "Baden-Württemberg, conventional milk: farm-gate price, standardised": {
+  "en": "Baden-Württemberg, conventional milk: farm-gate price, standardised",
+  "es": "Baden-Württemberg, leche convencional: precio en explotación, estandarizado",
+  "fr": "Baden-Württemberg, lait conventionnel : prix à la ferme, standardisé",
+  "it": "Baden-Württemberg, latte convenzionale: prezzo franco azienda, standardizzato"
  },
  "Banana: retail price, Greater Buenos Aires (INDEC average price survey)": {
   "en": "Banana: retail price, Greater Buenos Aires (INDEC average price survey)",
@@ -521,6 +683,12 @@
   "fr": "Orge : production récoltée, humidité standard UE (Eurostat)",
   "it": "Orzo: produzione raccolta, umidità standard UE (Eurostat)"
  },
+ "Barley: official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Barley: official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Cebada: precio FOB oficial, Argentina (SSPM/Ministerio de Economia)",
+  "fr": "Orge : prix FOB officiel, Argentine (SSPM/Ministerio de Economia)",
+  "it": "Orzo: prezzo FOB ufficiale, Argentina (SSPM/Ministerio de Economia)"
+ },
  "Barley: output price index": {
   "en": "Barley: output price index",
   "es": "Cebada: índice de precios de producción",
@@ -545,6 +713,12 @@
   "fr": "Orge : production (ABARES)",
   "it": "Orzo: produzione (ABARES)"
  },
+ "Barley: production (BFS)": {
+  "en": "Barley: production (BFS)",
+  "es": "Cebada: producción (BFS)",
+  "fr": "Orge : production (BFS)",
+  "it": "Orzo: produzione (BFS)"
+ },
  "Barley: seeded area": {
   "en": "Barley: seeded area",
   "es": "Cebada: superficie sembrada",
@@ -556,6 +730,12 @@
   "es": "Cebada: rendimiento",
   "fr": "Orge : rendement",
   "it": "Orzo: resa"
+ },
+ "Bavaria, conventional milk: farm-gate price, standardised": {
+  "en": "Bavaria, conventional milk: farm-gate price, standardised",
+  "es": "Baviera, leche convencional: precio en explotación, estandarizado",
+  "fr": "Bavière, lait conventionnel : prix à la ferme, standardisé",
+  "it": "Baviera, latte convenzionale: prezzo franco azienda, standardizzato"
  },
  "Beef and veal products, fresh or frozen: producer price index": {
   "en": "Beef and veal products, fresh or frozen: producer price index",
@@ -851,6 +1031,12 @@
   "fr": "Taureaux, bœufs et bouvillons abattus",
   "it": "Tori, buoi e manzi macellati"
  },
+ "Bulls, class E-P (Germany, carcass)": {
+  "en": "Bulls, class E-P (Germany, carcass)",
+  "es": "Toros, clases E-P (Alemania, canal)",
+  "fr": "Taureaux, classes E-P (Allemagne, carcasse)",
+  "it": "Tori, classi E-P (Germania, carcassa)"
+ },
  "Butter and milk fats (HS 0405): Chile exports, world, value FOB (ODEPA/Aduanas)": {
   "en": "Butter and milk fats (HS 0405): Chile exports, world, value FOB (ODEPA/Aduanas)",
   "es": "Mantequilla y grasas lácteas (HS 0405): exportaciones de Chile, mundo, valor FOB (ODEPA/Aduanas)",
@@ -923,6 +1109,12 @@
   "fr": "Beurre : production",
   "it": "Burro: produzione"
  },
+ "Butter: weighted average price, United States (USDA AMS, weekly)": {
+  "en": "Butter: weighted average price, United States (USDA AMS, weekly)",
+  "es": "Mantequilla: precio medio ponderado, Estados Unidos (USDA AMS, semanal)",
+  "fr": "Beurre : prix moyen pondéré, États-Unis (USDA AMS, hebdomadaire)",
+  "it": "Burro: prezzo medio ponderato, Stati Uniti (USDA AMS, settimanale)"
+ },
  "Cabrito lechal": {
   "en": "Suckling kid",
   "es": "Cabrito lechal",
@@ -965,6 +1157,12 @@
   "fr": "Veaux (prix à la production, Eurostat)",
   "it": "Vitelli (prezzo alla produzione, Eurostat)"
  },
+ "Calves (veal), class E-P (Germany, carcass)": {
+  "en": "Calves (veal), class E-P (Germany, carcass)",
+  "es": "Terneros (ternera), clases E-P (Alemania, canal)",
+  "fr": "Veaux (veau), classes E-P (Allemagne, carcasse)",
+  "it": "Vitelli (vitello), classi E-P (Germania, carcassa)"
+ },
  "Calves for slaughter (live weight): procurement price, annual average (GUS)": {
   "en": "Calves for slaughter (live weight): procurement price, annual average (GUS)",
   "es": "Terneros para sacrificio (peso vivo): precio de adquisición, media anual (GUS)",
@@ -976,6 +1174,12 @@
   "es": "Terneros sacrificados",
   "fr": "Veaux abattus",
   "it": "Vitelli macellati"
+ },
+ "Calves, live weight: production (BFS)": {
+  "en": "Calves, live weight: production (BFS)",
+  "es": "Terneros, peso vivo: producción (BFS)",
+  "fr": "Veaux, poids vif : production (BFS)",
+  "it": "Vitelli, peso vivo: produzione (BFS)"
  },
  "Canary seed: area, Argentina by crop year (SSPM)": {
   "en": "Canary seed: area, Argentina by crop year (SSPM)",
@@ -1175,6 +1379,12 @@
   "fr": "Céréales (y compris semences) : indice des prix de production",
   "it": "Cereali (comprese le sementi): indice dei prezzi alla produzione"
  },
+ "Cereals (including seeds): output price index (Eurostat)": {
+  "en": "Cereals (including seeds): output price index (Eurostat)",
+  "es": "Cereales (incluidas semillas): índice de precios percibidos (Eurostat)",
+  "fr": "Céréales (semences comprises) : indice des prix à la production (Eurostat)",
+  "it": "Cereali (sementi incluse): indice dei prezzi alla produzione (Eurostat)"
+ },
  "Cereals: Argentina exports, FOB value (INDEC, Intercambio Comercial Argentino)": {
   "en": "Cereals: Argentina exports, FOB value (INDEC, Intercambio Comercial Argentino)",
   "es": "Cereales: exportaciones de Argentina, valor FOB (INDEC, Intercambio Comercial Argentino)",
@@ -1186,6 +1396,12 @@
   "es": "Champiñón",
   "fr": "Champignon de Paris",
   "it": "Champignon (prataiolo coltivato)"
+ },
+ "Cheddar cheese, 40-lb block: weighted average price, United States (USDA AMS, weekly)": {
+  "en": "Cheddar cheese, 40-lb block: weighted average price, United States (USDA AMS, weekly)",
+  "es": "Queso cheddar, bloque de 40 libras: precio medio ponderado, Estados Unidos (USDA AMS, semanal)",
+  "fr": "Fromage cheddar, bloc de 40 livres : prix moyen pondéré, États-Unis (USDA AMS, hebdomadaire)",
+  "it": "Formaggio cheddar, blocco da 40 libbre: prezzo medio ponderato, Stati Uniti (USDA AMS, settimanale)"
  },
  "Cheddar cheese: ending stocks (quarterly)": {
   "en": "Cheddar cheese: ending stocks (quarterly)",
@@ -1253,6 +1469,12 @@
   "fr": "Lait de fromagerie, conventionnel : prix à la production (OFAG)",
   "it": "Latte da caseificazione, convenzionale: prezzo alla produzione (UFAG)"
  },
+ "Cherries (fruit): production (BFS)": {
+  "en": "Cherries (fruit): production (BFS)",
+  "es": "Cerezas (fruta): producción (BFS)",
+  "fr": "Cerises (fruits) : production (BFS)",
+  "it": "Ciliegie (frutta): produzione (BFS)"
+ },
  "Chicken eggs: producer price index": {
   "en": "Chicken eggs: producer price index",
   "es": "Huevos de gallina: índice de precios en origen",
@@ -1294,6 +1516,36 @@
   "es": "Garbanzos: producción (ABARES)",
   "fr": "Pois chiches : production (ABARES)",
   "it": "Ceci: produzione (ABARES)"
+ },
+ "Chicks hatched, all poultry, Germany": {
+  "en": "Chicks hatched, all poultry, Germany",
+  "es": "Pollitos nacidos, todas las aves, Alemania",
+  "fr": "Poussins éclos, toutes volailles, Allemagne",
+  "it": "Pulcini nati, tutto il pollame, Germania"
+ },
+ "Chicks hatched, broiler chicks, Germany": {
+  "en": "Chicks hatched, broiler chicks, Germany",
+  "es": "Pollitos nacidos, pollitos de engorde, Alemania",
+  "fr": "Poussins éclos, poussins de chair, Allemagne",
+  "it": "Pulcini nati, pulcini da carne, Germania"
+ },
+ "Chicks hatched, goslings, Germany": {
+  "en": "Chicks hatched, goslings, Germany",
+  "es": "Pollitos nacidos, ansarinos, Alemania",
+  "fr": "Poussins éclos, oisons, Allemagne",
+  "it": "Pulcini nati, papere, Germania"
+ },
+ "Chicks hatched, laying-hen chicks, Germany": {
+  "en": "Chicks hatched, laying-hen chicks, Germany",
+  "es": "Pollitos nacidos, pollitas de puesta, Alemania",
+  "fr": "Poussins éclos, poussins de ponte, Allemagne",
+  "it": "Pulcini nati, pulcini ovaiole, Germania"
+ },
+ "Chicks hatched, turkey poults, Germany": {
+  "en": "Chicks hatched, turkey poults, Germany",
+  "es": "Pollitos nacidos, pavipollos, Alemania",
+  "fr": "Poussins éclos, dindonneaux, Allemagne",
+  "it": "Pulcini nati, tacchinotti, Germania"
  },
  "Chicory in the open (producer price, Eurostat)": {
   "en": "Chicory in the open (producer price, Eurostat)",
@@ -1348,6 +1600,54 @@
   "es": "Existencias finales: semilla de girasol (balances de cereales y oleaginosas de Eurostat)",
   "fr": "Stock de clôture: graines de tournesol (bilans céréaliers et oléagineux d'Eurostat)",
   "it": "Scorte finali: semi di girasole (bilanci dei cereali e dei semi oleosi di Eurostat)"
+ },
+ "Commercial fish landings: American lobster, quantity (pounds live weight, NOAA Fisheries)": {
+  "en": "Commercial fish landings: American lobster, quantity (pounds live weight, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: bogavante americano, cantidad (libras de peso vivo, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : homard américain, quantité (livres de poids vif, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: astice americano, quantità (libbre di peso vivo, NOAA Fisheries)"
+ },
+ "Commercial fish landings: American lobster, value (USD, NOAA Fisheries)": {
+  "en": "Commercial fish landings: American lobster, value (USD, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: bogavante americano, valor (USD, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : homard américain, valeur (USD, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: astice americano, valore (USD, NOAA Fisheries)"
+ },
+ "Commercial fish landings: Blue crab, quantity (pounds live weight, NOAA Fisheries)": {
+  "en": "Commercial fish landings: Blue crab, quantity (pounds live weight, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: cangrejo azul, cantidad (libras de peso vivo, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : crabe bleu, quantité (livres de poids vif, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: granchio blu, quantità (libbre di peso vivo, NOAA Fisheries)"
+ },
+ "Commercial fish landings: Blue crab, value (USD, NOAA Fisheries)": {
+  "en": "Commercial fish landings: Blue crab, value (USD, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: cangrejo azul, valor (USD, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : crabe bleu, valeur (USD, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: granchio blu, valore (USD, NOAA Fisheries)"
+ },
+ "Commercial fish landings: Dungeness crab, quantity (pounds live weight, NOAA Fisheries)": {
+  "en": "Commercial fish landings: Dungeness crab, quantity (pounds live weight, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: cangrejo Dungeness, cantidad (libras de peso vivo, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : crabe dormeur du Pacifique, quantité (livres de poids vif, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: granchio Dungeness, quantità (libbre di peso vivo, NOAA Fisheries)"
+ },
+ "Commercial fish landings: Dungeness crab, value (USD, NOAA Fisheries)": {
+  "en": "Commercial fish landings: Dungeness crab, value (USD, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: cangrejo Dungeness, valor (USD, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : crabe dormeur du Pacifique, valeur (USD, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: granchio Dungeness, valore (USD, NOAA Fisheries)"
+ },
+ "Commercial fish landings: total quantity (pounds live weight, NOAA Fisheries)": {
+  "en": "Commercial fish landings: total quantity (pounds live weight, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: cantidad total (libras de peso vivo, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : quantité totale (livres de poids vif, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: quantità totale (libbre di peso vivo, NOAA Fisheries)"
+ },
+ "Commercial fish landings: total value (USD, NOAA Fisheries)": {
+  "en": "Commercial fish landings: total value (USD, NOAA Fisheries)",
+  "es": "Desembarques pesqueros comerciales: valor total (USD, NOAA Fisheries)",
+  "fr": "Débarquements commerciaux de pêche : valeur totale (USD, NOAA Fisheries)",
+  "it": "Sbarchi commerciali di pesca: valore totale (USD, NOAA Fisheries)"
  },
  "Common spring wheat and spelt: cultivated area (Eurostat)": {
   "en": "Common spring wheat and spelt: cultivated area (Eurostat)",
@@ -1643,6 +1943,12 @@
   "fr": "Champignons de culture : toutes qualités (prix à la production, Eurostat)",
   "it": "Funghi coltivati: tutte le qualità (prezzo alla produzione, Eurostat)"
  },
+ "DAP 18-46-0: retail price, Illinois (USDA AMS)": {
+  "en": "DAP 18-46-0: retail price, Illinois (USDA AMS)",
+  "es": "DAP 18-46-0: precio al por menor, Illinois (USDA AMS)",
+  "fr": "DAP 18-46-0 : prix de détail, Illinois (USDA AMS)",
+  "it": "DAP 18-46-0: prezzo al dettaglio, Illinois (USDA AMS)"
+ },
  "Dairy cows (May-June, Eurostat)": {
   "en": "Dairy cows (May-June, Eurostat)",
   "es": "Vacas lecheras (mayo-junio, Eurostat)",
@@ -1762,6 +2068,12 @@
   "es": "Guisantes secos: superficie sembrada",
   "fr": "Pois secs: superficie ensemencée",
   "it": "Piselli secchi: superficie seminata"
+ },
+ "Dry whey: weighted average price, United States (USDA AMS, weekly)": {
+  "en": "Dry whey: weighted average price, United States (USDA AMS, weekly)",
+  "es": "Suero en polvo: precio medio ponderado, Estados Unidos (USDA AMS, semanal)",
+  "fr": "Lactosérum en poudre : prix moyen pondéré, États-Unis (USDA AMS, hebdomadaire)",
+  "it": "Siero in polvere: prezzo medio ponderato, Stati Uniti (USDA AMS, settimanale)"
  },
  "Dry, condensed, and evaporated milk products: producer price index": {
   "en": "Dry, condensed, and evaporated milk products: producer price index",
@@ -1949,6 +2261,12 @@
   "fr": "Œufs : biologiques",
   "it": "Uova: biologiche"
  },
+ "Eggs: production (monthly)": {
+  "en": "Eggs: production (monthly)",
+  "es": "Huevos: producción (mensual)",
+  "fr": "Œufs : production (mensuel)",
+  "it": "Uova: produzione (mensile)"
+ },
  "Electricity (price paid)": {
   "en": "Electricity (price paid)",
   "es": "Electricidad (precio pagado)",
@@ -1960,6 +2278,60 @@
   "es": "Energía; lubricantes: índice de precios de los insumos",
   "fr": "Énergie ; lubrifiants : indice des prix des intrants",
   "it": "Energia; lubrificanti: indice dei prezzi degli input"
+ },
+ "Energy; lubricants: input price index (Eurostat)": {
+  "en": "Energy; lubricants: input price index (Eurostat)",
+  "es": "Energía; lubricantes: índice de precios pagados (Eurostat)",
+  "fr": "Énergie; lubrifiants : indice des prix des intrants (Eurostat)",
+  "it": "Energia; lubrificanti: indice dei prezzi dei mezzi di produzione (Eurostat)"
+ },
+ "Export inspections: Corn, United States (USDA AMS/FGIS, weekly)": {
+  "en": "Export inspections: Corn, United States (USDA AMS/FGIS, weekly)",
+  "es": "Inspecciones de exportación: maíz, Estados Unidos (USDA AMS/FGIS, semanal)",
+  "fr": "Inspections à l’exportation : maïs, États-Unis (USDA AMS/FGIS, hebdomadaire)",
+  "it": "Ispezioni all’esportazione: mais, Stati Uniti (USDA AMS/FGIS, settimanale)"
+ },
+ "Export inspections: Sorghum, United States (USDA AMS/FGIS, weekly)": {
+  "en": "Export inspections: Sorghum, United States (USDA AMS/FGIS, weekly)",
+  "es": "Inspecciones de exportación: sorgo, Estados Unidos (USDA AMS/FGIS, semanal)",
+  "fr": "Inspections à l’exportation : sorgho, États-Unis (USDA AMS/FGIS, hebdomadaire)",
+  "it": "Ispezioni all’esportazione: sorgo, Stati Uniti (USDA AMS/FGIS, settimanale)"
+ },
+ "Export inspections: Soybeans, United States (USDA AMS/FGIS, weekly)": {
+  "en": "Export inspections: Soybeans, United States (USDA AMS/FGIS, weekly)",
+  "es": "Inspecciones de exportación: soja, Estados Unidos (USDA AMS/FGIS, semanal)",
+  "fr": "Inspections à l’exportation : soja, États-Unis (USDA AMS/FGIS, hebdomadaire)",
+  "it": "Ispezioni all’esportazione: soia, Stati Uniti (USDA AMS/FGIS, settimanale)"
+ },
+ "Export inspections: Wheat, United States (USDA AMS/FGIS, weekly)": {
+  "en": "Export inspections: Wheat, United States (USDA AMS/FGIS, weekly)",
+  "es": "Inspecciones de exportación: trigo, Estados Unidos (USDA AMS/FGIS, semanal)",
+  "fr": "Inspections à l’exportation : blé, États-Unis (USDA AMS/FGIS, hebdomadaire)",
+  "it": "Ispezioni all’esportazione: grano, Stati Uniti (USDA AMS/FGIS, settimanale)"
+ },
+ "Export net sales: Beef muscle cuts, United States (USDA FAS, weekly)": {
+  "en": "Export net sales: Beef muscle cuts, United States (USDA FAS, weekly)",
+  "es": "Ventas netas de exportación: cortes de vacuno (músculo), Estados Unidos (USDA FAS, semanal)",
+  "fr": "Ventes nettes à l’exportation : morceaux de bœuf (muscle), États-Unis (USDA FAS, hebdomadaire)",
+  "it": "Vendite nette all’esportazione: tagli di bovino (muscolo), Stati Uniti (USDA FAS, settimanale)"
+ },
+ "Export net sales: Pork muscle cuts, United States (USDA FAS, weekly)": {
+  "en": "Export net sales: Pork muscle cuts, United States (USDA FAS, weekly)",
+  "es": "Ventas netas de exportación: cortes de porcino (músculo), Estados Unidos (USDA FAS, semanal)",
+  "fr": "Ventes nettes à l’exportation : morceaux de porc (muscle), États-Unis (USDA FAS, hebdomadaire)",
+  "it": "Vendite nette all’esportazione: tagli di suino (muscolo), Stati Uniti (USDA FAS, settimanale)"
+ },
+ "Export net sales: Wheat HRW, United States (USDA FAS, weekly)": {
+  "en": "Export net sales: Wheat HRW, United States (USDA FAS, weekly)",
+  "es": "Ventas netas de exportación: trigo HRW, Estados Unidos (USDA FAS, semanal)",
+  "fr": "Ventes nettes à l’exportation : blé HRW, États-Unis (USDA FAS, hebdomadaire)",
+  "it": "Vendite nette all’esportazione: frumento HRW, Stati Uniti (USDA FAS, settimanale)"
+ },
+ "Export net sales: Wheat SRW, United States (USDA FAS, weekly)": {
+  "en": "Export net sales: Wheat SRW, United States (USDA FAS, weekly)",
+  "es": "Ventas netas de exportación: trigo SRW, Estados Unidos (USDA FAS, semanal)",
+  "fr": "Ventes nettes à l’exportation : blé SRW, États-Unis (USDA FAS, hebdomadaire)",
+  "it": "Vendite nette all’esportazione: frumento SRW, Stati Uniti (USDA FAS, settimanale)"
  },
  "Export price index: cereals": {
   "en": "Export price index: cereals",
@@ -2849,6 +3221,12 @@
   "fr": "Prix départ exploitation, Royaume-Uni : Tomates (GBP par tonne)",
   "it": "Prezzo alla produzione in azienda, Regno Unito: Pomodori (GBP per tonnellata)"
  },
+ "Farmland of organic farms, Germany": {
+  "en": "Farmland of organic farms, Germany",
+  "es": "Superficie de las explotaciones ecológicas, Alemania",
+  "fr": "Surface des exploitations biologiques, Allemagne",
+  "it": "Superficie delle aziende biologiche, Germania"
+ },
  "Fats and oils: Argentina exports, FOB value (INDEC, Intercambio Comercial Argentino)": {
   "en": "Fats and oils: Argentina exports, FOB value (INDEC, Intercambio Comercial Argentino)",
   "es": "Grasas y aceites: exportaciones de Argentina, valor FOB (INDEC, Intercambio Comercial Argentino)",
@@ -2872,6 +3250,12 @@
   "es": "Cerdos de engorde (50 kg o más) (censo nov-dic)",
   "fr": "Porcs à l'engrais (50 kg ou plus) (recensement nov.-déc.)",
   "it": "Suini da ingrasso (50 kg o più) (censimento nov-dic)"
+ },
+ "Fattening pigs, Germany": {
+  "en": "Fattening pigs, Germany",
+  "es": "Cerdos de cebo, Alemania",
+  "fr": "Porcs à l’engrais, Allemagne",
+  "it": "Suini da ingrasso, Germania"
  },
  "Fattening pigs, from 50 kg to less than 80 kg (May-June, Eurostat)": {
   "en": "Fattening pigs, from 50 kg to less than 80 kg (May-June, Eurostat)",
@@ -2969,6 +3353,12 @@
   "fr": "Engrais et amendements : indice des prix des intrants",
   "it": "Concimi e ammendanti: indice dei prezzi degli input"
  },
+ "Fertilisers and soil improvers: input price index (Eurostat)": {
+  "en": "Fertilisers and soil improvers: input price index (Eurostat)",
+  "es": "Fertilizantes y enmiendas: índice de precios pagados (Eurostat)",
+  "fr": "Engrais et amendements : indice des prix des intrants (Eurostat)",
+  "it": "Fertilizzanti e ammendanti: indice dei prezzi dei mezzi di produzione (Eurostat)"
+ },
  "Fertilizante: Cloruro potásico 60 %": {
   "en": "Fertiliser: Potassium chloride 60%",
   "es": "Fertilizante: Cloruro potásico 60 %",
@@ -3028,6 +3418,252 @@
   "es": "Entregas de fertilizantes a la agricultura canadiense: nitrato de urea y amonio (UAN) (campaña jul-jun)",
   "fr": "Livraisons d'engrais à l'agriculture canadienne: nitrate d'ammonium et urée (UAN) (campagne juil.-juin)",
   "it": "Consegne di fertilizzanti all'agricoltura canadese: nitrato di urea e ammonio (UAN) (annata lug-giu)"
+ },
+ "Fish catches: Atlantic bluefin tuna (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Atlantic bluefin tuna (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: atún rojo del Atlántico (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : thon rouge de l’Atlantique (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: tonno rosso dell’Atlantico (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Atlantic chub mackerel (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Atlantic chub mackerel (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: estornino del Atlántico (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : maquereau espagnol (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: lanzardo (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Atlantic cod (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Atlantic cod (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: bacalao del Atlántico (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : morue de l’Atlantique (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: merluzzo bianco (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Atlantic herring (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Atlantic herring (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: arenque del Atlántico (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : hareng de l’Atlantique (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: aringa atlantica (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Atlantic horse mackerel (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Atlantic horse mackerel (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: jurel (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : chinchard d’Europe (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: sugarello (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Atlantic mackerel (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Atlantic mackerel (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: caballa del Atlántico (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : maquereau commun (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: sgombro (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Common cuttlefish (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Common cuttlefish (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: sepia común (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : seiche commune (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: seppia comune (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Common sole (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Common sole (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: lenguado común (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : sole commune (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: sogliola comune (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Deep-water rose shrimp (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Deep-water rose shrimp (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: gamba blanca (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : crevette rose du large (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: gambero rosa (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Eastern Central Atlantic (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Eastern Central Atlantic (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: Atlántico centro-oriental (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : Atlantique centre-est (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: Atlantico centro-orientale (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European anchovy (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European anchovy (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: anchoa (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : anchois (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: acciuga (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European flounder (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European flounder (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: platija (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : flet (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: passera pianuzza (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European hake (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European hake (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: merluza europea (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : merlu européen (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: nasello (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European perch (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European perch (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: perca europea (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : perche (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: pesce persico (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European pilchard (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European pilchard (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: sardina (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : sardine (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: sardina (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European seabass (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European seabass (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: lubina (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : bar (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: spigola (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European smelt (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European smelt (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: eperlano (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : éperlan (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: sperlano (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: European sprat (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: European sprat (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: espadín (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : sprat (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: spratto (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Freshwater bream (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Freshwater bream (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: brema común (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : brème commune (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: abramide (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Gilthead seabream (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Gilthead seabream (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: dorada (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : dorade royale (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: orata (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Mediterranean and Black Sea (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Mediterranean and Black Sea (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: Mediterráneo y mar Negro (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : Méditerranée et mer Noire (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: Mediterraneo e Mar Nero (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Mediterranean horse mackerel (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Mediterranean horse mackerel (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: jurel mediterráneo (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : chinchard à queue jaune (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: sugarello maggiore (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Mullets NEI (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Mullets NEI (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: mújoles sin especificar (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : mulets non spécifiés (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: cefali non specificati (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Northeast Atlantic (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Northeast Atlantic (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: Atlántico nordeste (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : Atlantique nord-est (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: Atlantico nord-orientale (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Northern prawn (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Northern prawn (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: camarón boreal (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : crevette nordique (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: gamberello boreale (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Red mullet (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Red mullet (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: salmonete de fango (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : rouget de vase (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: triglia di fango (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Roach (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Roach (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: rutilo (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : gardon (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: triotto (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Round sardinella (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Round sardinella (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: alacha (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : allache (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: alaccia (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: Turbot (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: Turbot (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: rodaballo (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : turbot (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: rombo chiodato (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish catches: total (tonnes live weight, Eurostat)": {
+  "en": "Fish catches: total (tonnes live weight, Eurostat)",
+  "es": "Capturas de pesca: total (toneladas de peso vivo, Eurostat)",
+  "fr": "Captures de pêche : total (tonnes de poids vif, Eurostat)",
+  "it": "Catture di pesca: totale (tonnellate di peso vivo, Eurostat)"
+ },
+ "Fish landings: European anchovy, first-sale price (Eurostat)": {
+  "en": "Fish landings: European anchovy, first-sale price (Eurostat)",
+  "es": "Desembarques de pesca: anchoa, precio en primera venta (Eurostat)",
+  "fr": "Débarquements de pêche : anchois, prix de première vente (Eurostat)",
+  "it": "Sbarchi di pesca: acciuga, prezzo di prima vendita (Eurostat)"
+ },
+ "Fish landings: European anchovy, value (Eurostat)": {
+  "en": "Fish landings: European anchovy, value (Eurostat)",
+  "es": "Desembarques de pesca: anchoa, valor (Eurostat)",
+  "fr": "Débarquements de pêche : anchois, valeur (Eurostat)",
+  "it": "Sbarchi di pesca: acciuga, valore (Eurostat)"
+ },
+ "Fishing fleet: engine power (Eurostat)": {
+  "en": "Fishing fleet: engine power (Eurostat)",
+  "es": "Flota pesquera: potencia motriz (Eurostat)",
+  "fr": "Flotte de pêche : puissance motrice (Eurostat)",
+  "it": "Flotta peschereccia: potenza motrice (Eurostat)"
+ },
+ "Fishing fleet: gross tonnage (Eurostat)": {
+  "en": "Fishing fleet: gross tonnage (Eurostat)",
+  "es": "Flota pesquera: arqueo bruto (Eurostat)",
+  "fr": "Flotte de pêche : jauge brute (Eurostat)",
+  "it": "Flotta peschereccia: stazza lorda (Eurostat)"
+ },
+ "Fishing fleet: number of vessels (Eurostat)": {
+  "en": "Fishing fleet: number of vessels (Eurostat)",
+  "es": "Flota pesquera: número de buques (Eurostat)",
+  "fr": "Flotte de pêche : nombre de navires (Eurostat)",
+  "it": "Flotta peschereccia: numero di pescherecci (Eurostat)"
+ },
+ "Fishing fleet: vessels aged 10 to 14 years (number, Eurostat)": {
+  "en": "Fishing fleet: vessels aged 10 to 14 years (number, Eurostat)",
+  "es": "Flota pesquera: buques de 10 a 14 años (número, Eurostat)",
+  "fr": "Flotte de pêche : navires de 10 à 14 ans (nombre, Eurostat)",
+  "it": "Flotta peschereccia: pescherecci da 10 a 14 anni (numero, Eurostat)"
+ },
+ "Fishing fleet: vessels aged 15 to 19 years (number, Eurostat)": {
+  "en": "Fishing fleet: vessels aged 15 to 19 years (number, Eurostat)",
+  "es": "Flota pesquera: buques de 15 a 19 años (número, Eurostat)",
+  "fr": "Flotte de pêche : navires de 15 à 19 ans (nombre, Eurostat)",
+  "it": "Flotta peschereccia: pescherecci da 15 a 19 anni (numero, Eurostat)"
+ },
+ "Fishing fleet: vessels aged 20 to 24 years (number, Eurostat)": {
+  "en": "Fishing fleet: vessels aged 20 to 24 years (number, Eurostat)",
+  "es": "Flota pesquera: buques de 20 a 24 años (número, Eurostat)",
+  "fr": "Flotte de pêche : navires de 20 à 24 ans (nombre, Eurostat)",
+  "it": "Flotta peschereccia: pescherecci da 20 a 24 anni (numero, Eurostat)"
+ },
+ "Fishing fleet: vessels aged 25 years or over (number, Eurostat)": {
+  "en": "Fishing fleet: vessels aged 25 years or over (number, Eurostat)",
+  "es": "Flota pesquera: buques de 25 años o más (número, Eurostat)",
+  "fr": "Flotte de pêche : navires de 25 ans ou plus (nombre, Eurostat)",
+  "it": "Flotta peschereccia: pescherecci di 25 anni o più (numero, Eurostat)"
+ },
+ "Fishing fleet: vessels aged 5 to 9 years (number, Eurostat)": {
+  "en": "Fishing fleet: vessels aged 5 to 9 years (number, Eurostat)",
+  "es": "Flota pesquera: buques de 5 a 9 años (número, Eurostat)",
+  "fr": "Flotte de pêche : navires de 5 à 9 ans (nombre, Eurostat)",
+  "it": "Flotta peschereccia: pescherecci da 5 a 9 anni (numero, Eurostat)"
+ },
+ "Fishing fleet: vessels aged under 5 years (number, Eurostat)": {
+  "en": "Fishing fleet: vessels aged under 5 years (number, Eurostat)",
+  "es": "Flota pesquera: buques de menos de 5 años (número, Eurostat)",
+  "fr": "Flotte de pêche : navires de moins de 5 ans (nombre, Eurostat)",
+  "it": "Flotta peschereccia: pescherecci con meno di 5 anni (numero, Eurostat)"
  },
  "Flax: depot stocks held for farmers": {
   "en": "Flax: depot stocks held for farmers",
@@ -3137,6 +3773,12 @@
   "fr": "Fruits frais : exportations de l'Argentine, valeur FOB (INDEC, Intercambio Comercial Argentino)",
   "it": "Frutta fresca: esportazioni dell'Argentina, valore FOB (INDEC, Intercambio Comercial Argentino)"
  },
+ "Fresh vegetables (including melons): output price index (Eurostat)": {
+  "en": "Fresh vegetables (including melons): output price index (Eurostat)",
+  "es": "Hortalizas frescas (incluidos melones): índice de precios percibidos (Eurostat)",
+  "fr": "Légumes frais (y compris melons) : indice des prix à la production (Eurostat)",
+  "it": "Ortaggi freschi (inclusi meloni): indice dei prezzi alla produzione (Eurostat)"
+ },
  "Fresh vegetables and pulses: Argentina exports, FOB value (INDEC, Intercambio Comercial Argentino)": {
   "en": "Fresh vegetables and pulses: Argentina exports, FOB value (INDEC, Intercambio Comercial Argentino)",
   "es": "Hortalizas y legumbres frescas: exportaciones de Argentina, valor FOB (INDEC, Intercambio Comercial Argentino)",
@@ -3149,11 +3791,41 @@
   "fr": "Produits de pommes de terre surgelés : importations (OFAG)",
   "it": "Prodotti di patate surgelati: importazioni (UFAG)"
  },
+ "Fuel ethanol production, Midwest (EIA, weekly)": {
+  "en": "Fuel ethanol production, Midwest (EIA, weekly)",
+  "es": "Producción de etanol combustible, Medio Oeste (EIA, semanal)",
+  "fr": "Production d’éthanol carburant, Midwest (EIA, hebdomadaire)",
+  "it": "Produzione di etanolo carburante, Midwest (EIA, settimanale)"
+ },
+ "Fuel ethanol production, United States (EIA, weekly)": {
+  "en": "Fuel ethanol production, United States (EIA, weekly)",
+  "es": "Producción de etanol combustible, Estados Unidos (EIA, semanal)",
+  "fr": "Production d’éthanol carburant, États-Unis (EIA, hebdomadaire)",
+  "it": "Produzione di etanolo carburante, Stati Uniti (EIA, settimanale)"
+ },
+ "Fuel ethanol stocks, Midwest (EIA, weekly)": {
+  "en": "Fuel ethanol stocks, Midwest (EIA, weekly)",
+  "es": "Existencias de etanol combustible, Medio Oeste (EIA, semanal)",
+  "fr": "Stocks d’éthanol carburant, Midwest (EIA, hebdomadaire)",
+  "it": "Scorte di etanolo carburante, Midwest (EIA, settimanale)"
+ },
+ "Fuel ethanol stocks, United States (EIA, weekly)": {
+  "en": "Fuel ethanol stocks, United States (EIA, weekly)",
+  "es": "Existencias de etanol combustible, Estados Unidos (EIA, semanal)",
+  "fr": "Stocks d’éthanol carburant, États-Unis (EIA, hebdomadaire)",
+  "it": "Scorte di etanolo carburante, Stati Uniti (EIA, settimanale)"
+ },
  "Fuelwood (including wood for charcoal): production (thousand m3, Eurostat)": {
   "en": "Fuelwood (including wood for charcoal): production (thousand m3, Eurostat)",
   "es": "Leña (incluida la madera para carbón vegetal): producción (miles de m3, Eurostat)",
   "fr": "Bois de chauffage (y compris le bois pour charbon de bois) : production (milliers de m3, Eurostat)",
   "it": "Legna da ardere (compreso il legno per carbone): produzione (migliaia di m3, Eurostat)"
+ },
+ "Goats (producer price)": {
+  "en": "Goats (producer price)",
+  "es": "Caprino (precio al productor)",
+  "fr": "Caprins (prix à la production)",
+  "it": "Caprini (prezzo alla produzione)"
  },
  "Goats (producer price, Eurostat)": {
   "en": "Goats (producer price, Eurostat)",
@@ -3167,6 +3839,12 @@
   "fr": "Biens et services de consommation courante en agriculture : indice des prix des intrants",
   "it": "Beni e servizi di consumo corrente in agricoltura: indice dei prezzi degli input"
  },
+ "Goods and services currently consumed in agriculture: input price index (Eurostat)": {
+  "en": "Goods and services currently consumed in agriculture: input price index (Eurostat)",
+  "es": "Bienes y servicios de consumo corriente en la agricultura: índice de precios pagados (Eurostat)",
+  "fr": "Biens et services de consommation courante en agriculture : indice des prix des intrants (Eurostat)",
+  "it": "Beni e servizi di consumo corrente in agricoltura: indice dei prezzi dei mezzi di produzione (Eurostat)"
+ },
  "Grain corn: seeded area": {
   "en": "Grain corn: seeded area",
   "es": "Maíz grano: superficie sembrada",
@@ -3179,6 +3857,18 @@
   "fr": "Maïs grain (millions d'EUR, prix courants, Eurostat)",
   "it": "Mais da granella (milioni di EUR, prezzi correnti, Eurostat)"
  },
+ "Grain maize and corn-cob-mix: cultivated area (Eurostat)": {
+  "en": "Grain maize and corn-cob-mix: cultivated area (Eurostat)",
+  "es": "Maíz grano y mazorca: superficie cultivada (Eurostat)",
+  "fr": "Maïs grain et corn-cob-mix : surface cultivée (Eurostat)",
+  "it": "Mais da granella e pastone: superficie coltivata (Eurostat)"
+ },
+ "Grain maize and corn-cob-mix: harvested production, EU standard humidity (Eurostat)": {
+  "en": "Grain maize and corn-cob-mix: harvested production, EU standard humidity (Eurostat)",
+  "es": "Maíz grano y mazorca: producción cosechada, humedad estándar UE (Eurostat)",
+  "fr": "Maïs grain et corn-cob-mix : production récoltée, humidité standard UE (Eurostat)",
+  "it": "Mais da granella e pastone: produzione raccolta, umidità standard UE (Eurostat)"
+ },
  "Grain maize: area declared under CAP": {
   "en": "Grain maize: area declared under CAP",
   "es": "Maíz grano: superficie declarada en la PAC",
@@ -3190,6 +3880,12 @@
   "es": "Maíz grano: índice de precios de producción",
   "fr": "Maïs grain : indice des prix de production",
   "it": "Mais da granella: indice dei prezzi alla produzione"
+ },
+ "Hatching eggs set, all poultry, Germany": {
+  "en": "Hatching eggs set, all poultry, Germany",
+  "es": "Huevos incubados, todas las aves, Alemania",
+  "fr": "Œufs mis en incubation, toutes volailles, Allemagne",
+  "it": "Uova messe in incubazione, tutto il pollame, Germania"
  },
  "Heating gas oil (price paid)": {
   "en": "Heating gas oil (price paid)",
@@ -3262,6 +3958,36 @@
   "es": "Novillas de 2 años o más, para sacrificio (mayo-junio, Eurostat)",
   "fr": "Génisses de 2 ans ou plus, destinées à l'abattage (mai-juin, Eurostat)",
   "it": "Giovenche di 2 anni o più, da macello (maggio-giugno, Eurostat)"
+ },
+ "Heifers, class E-P (Germany, carcass)": {
+  "en": "Heifers, class E-P (Germany, carcass)",
+  "es": "Novillas, clases E-P (Alemania, canal)",
+  "fr": "Génisses, classes E-P (Allemagne, carcasse)",
+  "it": "Manze, classi E-P (Germania, carcassa)"
+ },
+ "Heifers, class E-P, conventional (Germany, carcass)": {
+  "en": "Heifers, class E-P, conventional (Germany, carcass)",
+  "es": "Novillas, clases E-P, convencional (Alemania, canal)",
+  "fr": "Génisses, classes E-P, conventionnel (Allemagne, carcasse)",
+  "it": "Manze, classi E-P, convenzionale (Germania, carcassa)"
+ },
+ "Heifers, class R3 (Germany, carcass)": {
+  "en": "Heifers, class R3 (Germany, carcass)",
+  "es": "Novillas, clase R3 (Alemania, canal)",
+  "fr": "Génisses, classe R3 (Allemagne, carcasse)",
+  "it": "Manze, classe R3 (Germania, carcassa)"
+ },
+ "Heifers, class R3: Baden-Württemberg, Hesse and Rhineland-Palatinate": {
+  "en": "Heifers, class R3: Baden-Württemberg, Hesse and Rhineland-Palatinate",
+  "es": "Novillas, clase R3: Baden-Württemberg, Hesse y Renania-Palatinado",
+  "fr": "Génisses, classe R3 : Baden-Württemberg, Hesse et Rhénanie-Palatinat",
+  "it": "Manze, classe R3: Baden-Württemberg, Assia e Renania-Palatinato"
+ },
+ "Heifers, class R3: Bavaria": {
+  "en": "Heifers, class R3: Bavaria",
+  "es": "Novillas, clase R3: Baviera",
+  "fr": "Génisses, classe R3 : Bavière",
+  "it": "Manze, classe R3: Baviera"
  },
  "Heno de alfalfa": {
   "en": "Alfalfa hay",
@@ -3371,6 +4097,12 @@
   "fr": "Chevaux (prix à la production, Eurostat)",
   "it": "Cavalli (prezzo alla produzione, Eurostat)"
  },
+ "Imports from Germany: agri-food, HS 01-24 (annual)": {
+  "en": "Imports from Germany: agri-food, HS 01-24 (annual)",
+  "es": "Importaciones desde Alemania: agroalimentario, HS 01-24 (anual)",
+  "fr": "Importations depuis Allemagne : agroalimentaire, HS 01-24 (annuel)",
+  "it": "Importazioni da Germania: agroalimentare, HS 01-24 (annuale)"
+ },
  "Imports: All products (milk equivalent milk-fat basis) (ERS dairy data, monthly)": {
   "en": "Imports: All products (milk equivalent milk-fat basis) (ERS dairy data, monthly)",
   "es": "Importaciones: Todos los productos (equivalente en leche, base materia grasa láctea) (datos lácteos del ERS, mensual)",
@@ -3418,6 +4150,12 @@
   "es": "Cultivos industriales: índice de precios de producción",
   "fr": "Plantes industrielles : indice des prix de production",
   "it": "Colture industriali: indice dei prezzi alla produzione"
+ },
+ "Industrial crops: output price index (Eurostat)": {
+  "en": "Industrial crops: output price index (Eurostat)",
+  "es": "Cultivos industriales: índice de precios percibidos (Eurostat)",
+  "fr": "Cultures industrielles : indice des prix à la production (Eurostat)",
+  "it": "Colture industriali: indice dei prezzi alla produzione (Eurostat)"
  },
  "Industrial potatoes: procurement price, annual average (GUS)": {
   "en": "Industrial potatoes: procurement price, annual average (GUS)",
@@ -3833,6 +4571,12 @@
   "fr": "Carcasse d'agneau 16-22 kg, France, classe R, gros Rungis",
   "it": "Carcassa di agnello 16-22 kg, Francia, classe R, ingrosso Rungis"
  },
+ "Lamb carcass cutout, gross, United States (USDA AMS, 5-day rolling average, FOB plant)": {
+  "en": "Lamb carcass cutout, gross, United States (USDA AMS, 5-day rolling average, FOB plant)",
+  "es": "Despiece de canal de cordero, valor bruto, Estados Unidos (USDA AMS, media móvil de 5 días, FOB planta)",
+  "fr": "Découpe de carcasse d’agneau, valeur brute, États-Unis (USDA AMS, moyenne mobile sur 5 jours, FOB usine)",
+  "it": "Sezionamento carcassa di agnello, valore lordo, Stati Uniti (USDA AMS, media mobile a 5 giorni, FOB stabilimento)"
+ },
  "Lambs slaughtered": {
   "en": "Lambs slaughtered",
   "es": "Corderos sacrificados",
@@ -3887,6 +4631,12 @@
   "fr": "Laitue",
   "it": "Lattuga"
  },
+ "Leeks in the open (producer price, Eurostat)": {
+  "en": "Leeks in the open (producer price, Eurostat)",
+  "es": "Puerros al aire libre (precio al productor, Eurostat)",
+  "fr": "Poireaux de plein champ (prix à la production, Eurostat)",
+  "it": "Porri in pieno campo (prezzo alla produzione, Eurostat)"
+ },
  "Lemon: retail price, Greater Buenos Aires (INDEC average price survey)": {
   "en": "Lemon: retail price, Greater Buenos Aires (INDEC average price survey)",
   "es": "Limón: precio minorista, Gran Buenos Aires (encuesta de precios medios del INDEC)",
@@ -3898,6 +4648,12 @@
   "es": "Limones, precio mayorista, malla de 18 kg netos (ODEPA, promedio de mercados mayoristas)",
   "fr": "Citrons, prix de gros, filet de 18 kg net (ODEPA, moyenne des marchés de gros)",
   "it": "Limoni, prezzo all'ingrosso, rete da 18 kg netti (ODEPA, media dei mercati all'ingrosso)"
+ },
+ "Lemons: yield": {
+  "en": "Lemons: yield",
+  "es": "Limones: rendimiento",
+  "fr": "Citrons : rendement",
+  "it": "Limoni: resa"
  },
  "Lentils: farm-gate price, campaign average": {
   "en": "Lentils: farm-gate price, campaign average",
@@ -4109,6 +4865,12 @@
   "fr": "Lucerne : Précipitations (total mensuel)",
   "it": "Lucerna: Precipitazioni (totale mensile)"
  },
+ "MAP 11-52-0: retail price, Illinois (USDA AMS)": {
+  "en": "MAP 11-52-0: retail price, Illinois (USDA AMS)",
+  "es": "MAP 11-52-0: precio al por menor, Illinois (USDA AMS)",
+  "fr": "MAP 11-52-0 : prix de détail, Illinois (USDA AMS)",
+  "it": "MAP 11-52-0: prezzo al dettaglio, Illinois (USDA AMS)"
+ },
  "Main crop potatoes (producer price, Eurostat)": {
   "en": "Main crop potatoes (producer price, Eurostat)",
   "es": "Patatas de cosecha principal (precio en origen, Eurostat)",
@@ -4120,6 +4882,12 @@
   "es": "Mantenimiento de materiales: índice de precios de los insumos",
   "fr": "Entretien du matériel : indice des prix des intrants",
   "it": "Manutenzione dei materiali: indice dei prezzi degli input"
+ },
+ "Maintenance of materials: input price index (Eurostat)": {
+  "en": "Maintenance of materials: input price index (Eurostat)",
+  "es": "Mantenimiento de material: índice de precios pagados (Eurostat)",
+  "fr": "Entretien du matériel : indice des prix des intrants (Eurostat)",
+  "it": "Manutenzione dei materiali: indice dei prezzi dei mezzi di produzione (Eurostat)"
  },
  "Maize (producer price)": {
   "en": "Maize (producer price)",
@@ -4168,6 +4936,12 @@
   "es": "Maíz: grano utilizado por los fabricantes de piensos",
   "fr": "Maïs : grain utilisé par les fabricants d'aliments du bétail",
   "it": "Mais: granella utilizzata dai mangimifici"
+ },
+ "Maize: official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Maize: official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Maíz: precio FOB oficial, Argentina (SSPM/Ministerio de Economia)",
+  "fr": "Maïs : prix FOB officiel, Argentine (SSPM/Ministerio de Economia)",
+  "it": "Mais: prezzo FOB ufficiale, Argentina (SSPM/Ministerio de Economia)"
  },
  "Male bovine animals, 1 to less than 2 years old (May-June, Eurostat)": {
   "en": "Male bovine animals, 1 to less than 2 years old (May-June, Eurostat)",
@@ -4234,6 +5008,12 @@
   "es": "Carne: exportaciones de Argentina, valor FOB (INDEC, Intercambio Comercial Argentino)",
   "fr": "Viande : exportations de l'Argentine, valeur FOB (INDEC, Intercambio Comercial Argentino)",
   "it": "Carne: esportazioni dell'Argentina, valore FOB (INDEC, Intercambio Comercial Argentino)"
+ },
+ "Mecklenburg-Western Pomerania, conventional milk: farm-gate price, standardised": {
+  "en": "Mecklenburg-Western Pomerania, conventional milk: farm-gate price, standardised",
+  "es": "Mecklemburgo-Pomerania Occidental, leche convencional: precio en explotación, estandarizado",
+  "fr": "Mecklembourg-Poméranie-Occidentale, lait conventionnel : prix à la ferme, standardisé",
+  "it": "Meclemburgo-Pomerania Anteriore, latte convenzionale: prezzo franco azienda, standardizzato"
  },
  "Milk and cream powders, excluding skimmed milk powders (monthly)": {
   "en": "Milk and cream powders, excluding skimmed milk powders (monthly)",
@@ -4379,6 +5159,12 @@
   "fr": "Vaches non laitières (recensement nov.-déc.)",
   "it": "Vacche non da latte (censimento nov-dic)"
  },
+ "North Rhine-Westphalia, conventional milk: farm-gate price, standardised": {
+  "en": "North Rhine-Westphalia, conventional milk: farm-gate price, standardised",
+  "es": "Renania del Norte-Westfalia, leche convencional: precio en explotación, estandarizado",
+  "fr": "Rhénanie-du-Nord-Westphalie, lait conventionnel : prix à la ferme, standardisé",
+  "it": "Renania Settentrionale-Vestfalia, latte convenzionale: prezzo franco azienda, standardizzato"
+ },
  "Oats (producer price)": {
   "en": "Oats (producer price)",
   "es": "Avena (precio en origen)",
@@ -4456,6 +5242,12 @@
   "es": "Avena: superficie cosechada, Argentina (SAGyP)",
   "fr": "Avoine : superficie récoltée, Argentine (SAGyP)",
   "it": "Avena: superficie raccolta, Argentina (SAGyP)"
+ },
+ "Oats: harvested production, EU standard humidity (Eurostat)": {
+  "en": "Oats: harvested production, EU standard humidity (Eurostat)",
+  "es": "Avena: producción cosechada, humedad estándar UE (Eurostat)",
+  "fr": "Avoine : production récoltée, humidité standard UE (Eurostat)",
+  "it": "Avena: produzione raccolta, umidità standard UE (Eurostat)"
  },
  "Oats: production, Argentina (SAGyP)": {
   "en": "Oats: production, Argentina (SAGyP)",
@@ -5393,6 +6185,18 @@
   "fr": "Agriculture biologique : surface totale, certifiée et en conversion, France (ha, Agence BIO)",
   "it": "Agricoltura biologica: superficie totale, certificata e in conversione, Francia (ha, Agence BIO)"
  },
+ "Organic farms, Germany": {
+  "en": "Organic farms, Germany",
+  "es": "Explotaciones ecológicas, Alemania",
+  "fr": "Exploitations biologiques, Allemagne",
+  "it": "Aziende biologiche, Germania"
+ },
+ "Organic farms, total (GUS)": {
+  "en": "Organic farms, total (GUS)",
+  "es": "Explotaciones ecológicas, total (GUS)",
+  "fr": "Exploitations biologiques, total (GUS)",
+  "it": "Aziende biologiche, totale (GUS)"
+ },
  "Organic hens' eggs": {
   "en": "Organic hens' eggs",
   "es": "Huevos de gallina ecológicos",
@@ -5831,6 +6635,12 @@
   "fr": "Autres céréales : indice des prix de production",
   "it": "Altri cereali: indice dei prezzi alla produzione"
  },
+ "Other industrial crops: output price index (Eurostat)": {
+  "en": "Other industrial crops: output price index (Eurostat)",
+  "es": "Otros cultivos industriales: índice de precios percibidos (Eurostat)",
+  "fr": "Autres cultures industrielles : indice des prix à la production (Eurostat)",
+  "it": "Altre colture industriali: indice dei prezzi alla produzione (Eurostat)"
+ },
  "Output price index, nominal: Agricultural goods, excluding fruit and vegetables (2020=100, Eurostat)": {
   "en": "Output price index, nominal: Agricultural goods, excluding fruit and vegetables (2020=100, Eurostat)",
   "es": "Índice de precios de la producción, nominal: Productos agrícolas, excluidas frutas y hortalizas (2020=100, Eurostat)",
@@ -5939,6 +6749,12 @@
   "fr": "Indice des prix de la production, nominal : Graines et fruits oléagineux (y compris semences) (2020=100, Eurostat)",
   "it": "Indice dei prezzi della produzione, nominale: Semi e frutti oleaginosi (comprese le sementi) (2020=100, Eurostat)"
  },
+ "Output price index, nominal: Olive oil (2020=100, Eurostat)": {
+  "en": "Output price index, nominal: Olive oil (2020=100, Eurostat)",
+  "es": "Índice de precios percibidos, nominal: aceite de oliva (2020=100, Eurostat)",
+  "fr": "Indice des prix à la production, nominal : huile d’olive (2020=100, Eurostat)",
+  "it": "Indice dei prezzi alla produzione, nominale: olio d’oliva (2020=100, Eurostat)"
+ },
  "Output price index, nominal: Olives (2020=100, Eurostat)": {
   "en": "Output price index, nominal: Olives (2020=100, Eurostat)",
   "es": "Índice de precios de la producción, nominal: Aceitunas (2020=100, Eurostat)",
@@ -5963,6 +6779,12 @@
   "fr": "Indice des prix à la production, nominal : Autres fruits frais (2020=100, Eurostat)",
   "it": "Indice dei prezzi alla produzione, nominale: Altra frutta fresca (2020=100, Eurostat)"
  },
+ "Output price index, nominal: PDO and PGI (quality wine) (2020=100, Eurostat)": {
+  "en": "Output price index, nominal: PDO and PGI (quality wine) (2020=100, Eurostat)",
+  "es": "Índice de precios percibidos, nominal: DOP e IGP (vino de calidad) (2020=100, Eurostat)",
+  "fr": "Indice des prix à la production, nominal : AOP et IGP (vin de qualité) (2020=100, Eurostat)",
+  "it": "Indice dei prezzi alla produzione, nominale: DOP e IGP (vino di qualità) (2020=100, Eurostat)"
+ },
  "Output price index, nominal: Potatoes (including seeds) (2020=100, Eurostat)": {
   "en": "Output price index, nominal: Potatoes (including seeds) (2020=100, Eurostat)",
   "es": "Índice de precios de la producción agrícola, nominal: Patatas (incluidas las de siembra) (2020=100, Eurostat)",
@@ -5986,6 +6808,12 @@
   "es": "Índice de precios de la producción, nominal: Patatas de siembra (2020=100, Eurostat)",
   "fr": "Indice des prix de la production, nominal : Plants de pommes de terre (2020=100, Eurostat)",
   "it": "Indice dei prezzi della produzione, nominale: Patate da semina (2020=100, Eurostat)"
+ },
+ "Output price index, nominal: Total crop, including fruit and vegetables (2020=100, Eurostat)": {
+  "en": "Output price index, nominal: Total crop, including fruit and vegetables (2020=100, Eurostat)",
+  "es": "Índice de precios percibidos, nominal: total cultivos, incluidas frutas y hortalizas (2020=100, Eurostat)",
+  "fr": "Indice des prix à la production, nominal : total cultures, y compris fruits et légumes (2020=100, Eurostat)",
+  "it": "Indice dei prezzi alla produzione, nominale: totale colture, incluse frutta e verdura (2020=100, Eurostat)"
  },
  "Output price index, nominal: Wheat and spelt (2020=100, Eurostat)": {
   "en": "Output price index, nominal: Wheat and spelt (2020=100, Eurostat)",
@@ -6161,11 +6989,53 @@
   "fr": "Porcs abattus",
   "it": "Suini macellati"
  },
+ "Pigs, class E (Germany, carcass)": {
+  "en": "Pigs, class E (Germany, carcass)",
+  "es": "Porcino, clase E (Alemania, canal)",
+  "fr": "Porcs, classe E (Allemagne, carcasse)",
+  "it": "Suini, classe E (Germania, carcassa)"
+ },
+ "Pigs, class E: Baden-Württemberg": {
+  "en": "Pigs, class E: Baden-Württemberg",
+  "es": "Porcino, clase E: Baden-Württemberg",
+  "fr": "Porcs, classe E : Baden-Württemberg",
+  "it": "Suini, classe E: Baden-Württemberg"
+ },
+ "Pigs, class E: Bavaria": {
+  "en": "Pigs, class E: Bavaria",
+  "es": "Porcino, clase E: Baviera",
+  "fr": "Porcs, classe E : Bavière",
+  "it": "Suini, classe E: Baviera"
+ },
+ "Pigs, class E: Hesse and Rhineland-Palatinate": {
+  "en": "Pigs, class E: Hesse and Rhineland-Palatinate",
+  "es": "Porcino, clase E: Hesse y Renania-Palatinado",
+  "fr": "Porcs, classe E : Hesse et Rhénanie-Palatinat",
+  "it": "Suini, classe E: Assia e Renania-Palatinato"
+ },
+ "Pigs, class E: Lower Saxony and Bremen": {
+  "en": "Pigs, class E: Lower Saxony and Bremen",
+  "es": "Porcino, clase E: Baja Sajonia y Bremen",
+  "fr": "Porcs, classe E : Basse-Saxe et Brême",
+  "it": "Suini, classe E: Bassa Sassonia e Brema"
+ },
+ "Pigs, class E: North Rhine-Westphalia": {
+  "en": "Pigs, class E: North Rhine-Westphalia",
+  "es": "Porcino, clase E: Renania del Norte-Westfalia",
+  "fr": "Porcs, classe E : Rhénanie-du-Nord-Westphalie",
+  "it": "Suini, classe E: Renania Settentrionale-Vestfalia"
+ },
  "Pigs, from 20 kg to less than 50 kg (May-June, Eurostat)": {
   "en": "Pigs, from 20 kg to less than 50 kg (May-June, Eurostat)",
   "es": "Cerdos de 20 kg a menos de 50 kg (mayo-junio, Eurostat)",
   "fr": "Porcs de 20 kg à moins de 50 kg (mai-juin, Eurostat)",
   "it": "Suini da 20 kg a meno di 50 kg (maggio-giugno, Eurostat)"
+ },
+ "Pigs, from 20 kg to less than 50 kg (November, December, Eurostat)": {
+  "en": "Pigs, from 20 kg to less than 50 kg (November, December, Eurostat)",
+  "es": "Porcino, de 20 a menos de 50 kg (noviembre, diciembre, Eurostat)",
+  "fr": "Porcs, de 20 à moins de 50 kg (novembre, décembre, Eurostat)",
+  "it": "Suini, da 20 a meno di 50 kg (novembre, dicembre, Eurostat)"
  },
  "Pigs: slaughter, carcass weight, Argentina (SSPM, Faena pecuaria)": {
   "en": "Pigs: slaughter, carcass weight, Argentina (SSPM, Faena pecuaria)",
@@ -6191,6 +7061,18 @@
   "fr": "Produits phytosanitaires : indice des prix des intrants",
   "it": "Prodotti fitosanitari: indice dei prezzi degli input"
  },
+ "Plant protection products: input price index (Eurostat)": {
+  "en": "Plant protection products: input price index (Eurostat)",
+  "es": "Fitosanitarios: índice de precios pagados (Eurostat)",
+  "fr": "Produits phytosanitaires : indice des prix des intrants (Eurostat)",
+  "it": "Prodotti fitosanitari: indice dei prezzi dei mezzi di produzione (Eurostat)"
+ },
+ "Plants and flowers: output price index (Eurostat)": {
+  "en": "Plants and flowers: output price index (Eurostat)",
+  "es": "Plantas y flores: índice de precios percibidos (Eurostat)",
+  "fr": "Plantes et fleurs : indice des prix à la production (Eurostat)",
+  "it": "Piante e fiori: indice dei prezzi alla produzione (Eurostat)"
+ },
  "Pork products, fresh, frozen, or processed, except sausage: producer price index": {
   "en": "Pork products, fresh, frozen, or processed, except sausage: producer price index",
   "es": "Productos de porcino, frescos, congelados o transformados, excepto embutidos: índice de precios en origen",
@@ -6203,11 +7085,23 @@
   "fr": "Porc : offre du marché, production indigène plus importations (OFAG)",
   "it": "Carne suina: offerta di mercato, produzione nazionale più importazioni (UFAG)"
  },
+ "Potash 0-0-62: retail price, Illinois (USDA AMS)": {
+  "en": "Potash 0-0-62: retail price, Illinois (USDA AMS)",
+  "es": "Potasa 0-0-62: precio al por menor, Illinois (USDA AMS)",
+  "fr": "Potasse 0-0-62 : prix de détail, Illinois (USDA AMS)",
+  "it": "Potassa 0-0-62: prezzo al dettaglio, Illinois (USDA AMS)"
+ },
  "Potatoes (including seed potatoes): harvested production, EU standard humidity (Eurostat)": {
   "en": "Potatoes (including seed potatoes): harvested production, EU standard humidity (Eurostat)",
   "es": "Patatas (incluidas las patatas de siembra): producción cosechada, humedad estándar de la UE (Eurostat)",
   "fr": "Pommes de terre (y compris plants) : production récoltée, humidité standard UE (Eurostat)",
   "it": "Patate (comprese le patate da semina): produzione raccolta, umidità standard UE (Eurostat)"
+ },
+ "Potatoes (including seeds): output price index (Eurostat)": {
+  "en": "Potatoes (including seeds): output price index (Eurostat)",
+  "es": "Patatas (incluidas semillas): índice de precios percibidos (Eurostat)",
+  "fr": "Pommes de terre (semences comprises) : indice des prix à la production (Eurostat)",
+  "it": "Patate (sementi incluse): indice dei prezzi alla produzione (Eurostat)"
  },
  "Potatoes for processing: imports (FOAG)": {
   "en": "Potatoes for processing: imports (FOAG)",
@@ -6226,6 +7120,18 @@
   "es": "Patatas: precio de adquisición, media anual (GUS)",
   "fr": "Pommes de terre : prix d'achat, moyenne annuelle (GUS)",
   "it": "Patate: prezzo di acquisto, media annuale (GUS)"
+ },
+ "Potatoes: procurement price, monthly (GUS)": {
+  "en": "Potatoes: procurement price, monthly (GUS)",
+  "es": "Patatas: precio de compra, mensual (GUS)",
+  "fr": "Pommes de terre : prix d’achat, mensuel (GUS)",
+  "it": "Patate: prezzo di acquisto, mensile (GUS)"
+ },
+ "Poultry meat: slaughterings, monthly (head, Eurostat)": {
+  "en": "Poultry meat: slaughterings, monthly (head, Eurostat)",
+  "es": "Carne de ave: sacrificios, mensual (cabezas, Eurostat)",
+  "fr": "Viande de volaille : abattages, mensuel (têtes, Eurostat)",
+  "it": "Carne di pollame: macellazioni, mensile (capi, Eurostat)"
  },
  "Poultry meat: slaughterings, monthly (tonnes carcass weight, Eurostat)": {
   "en": "Poultry meat: slaughterings, monthly (tonnes carcass weight, Eurostat)",
@@ -6310,6 +7216,48 @@
   "es": "Queso fundido (de cheddar y otras bases): producción (trimestral)",
   "fr": "Fromage fondu (à base de cheddar et autres): production (trimestrielle)",
   "it": "Formaggio fuso (da cheddar e altre basi): produzione (trimestrale)"
+ },
+ "Procurement of animals for slaughter in live weight: cattle (monthly, GUS)": {
+  "en": "Procurement of animals for slaughter in live weight: cattle (monthly, GUS)",
+  "es": "Compra de animales para sacrificio en peso vivo: vacuno (mensual, GUS)",
+  "fr": "Achats d’animaux de boucherie en poids vif : bovins (mensuel, GUS)",
+  "it": "Acquisti di animali da macello in peso vivo: bovini (mensile, GUS)"
+ },
+ "Procurement of animals for slaughter in live weight: pigs (monthly, GUS)": {
+  "en": "Procurement of animals for slaughter in live weight: pigs (monthly, GUS)",
+  "es": "Compra de animales para sacrificio en peso vivo: porcino (mensual, GUS)",
+  "fr": "Achats d’animaux de boucherie en poids vif : porcs (mensuel, GUS)",
+  "it": "Acquisti di animali da macello in peso vivo: suini (mensile, GUS)"
+ },
+ "Procurement of animals for slaughter in live weight: poultry (monthly, GUS)": {
+  "en": "Procurement of animals for slaughter in live weight: poultry (monthly, GUS)",
+  "es": "Compra de animales para sacrificio en peso vivo: aves (mensual, GUS)",
+  "fr": "Achats d’animaux de boucherie en poids vif : volailles (mensuel, GUS)",
+  "it": "Acquisti di animali da macello in peso vivo: pollame (mensile, GUS)"
+ },
+ "Procurement of animals for slaughter in live weight: total (monthly, GUS)": {
+  "en": "Procurement of animals for slaughter in live weight: total (monthly, GUS)",
+  "es": "Compra de animales para sacrificio en peso vivo: total (mensual, GUS)",
+  "fr": "Achats d’animaux de boucherie en poids vif : total (mensuel, GUS)",
+  "it": "Acquisti di animali da macello in peso vivo: totale (mensile, GUS)"
+ },
+ "Procurement of animals for slaughter in terms of meat: pork (monthly, GUS)": {
+  "en": "Procurement of animals for slaughter in terms of meat: pork (monthly, GUS)",
+  "es": "Compra de animales para sacrificio en carne: carne de cerdo (mensual, GUS)",
+  "fr": "Achats d’animaux de boucherie en viande : viande de porc (mensuel, GUS)",
+  "it": "Acquisti di animali da macello in carne: carne suina (mensile, GUS)"
+ },
+ "Procurement of animals for slaughter in terms of meat: poultry (monthly, GUS)": {
+  "en": "Procurement of animals for slaughter in terms of meat: poultry (monthly, GUS)",
+  "es": "Compra de animales para sacrificio en carne: aves (mensual, GUS)",
+  "fr": "Achats d’animaux de boucherie en viande : volailles (mensuel, GUS)",
+  "it": "Acquisti di animali da macello in carne: pollame (mensile, GUS)"
+ },
+ "Procurement of animals for slaughter in terms of meat: total (monthly, GUS)": {
+  "en": "Procurement of animals for slaughter in terms of meat: total (monthly, GUS)",
+  "es": "Compra de animales para sacrificio en carne: total (mensual, GUS)",
+  "fr": "Achats d’animaux de boucherie en viande : total (mensuel, GUS)",
+  "it": "Acquisti di animali da macello in carne: totale (mensile, GUS)"
  },
  "Producer price index: Cauliflower (2020=100)": {
   "en": "Producer price index: Cauliflower (2020=100)",
@@ -6635,6 +7583,12 @@
   "fr": "Protéagineux (y compris semences) (millions EUR, prix courants, Eurostat)",
   "it": "Colture proteiche (compresi i semi) (milioni di EUR, prezzi correnti, Eurostat)"
  },
+ "Protein crops (including seeds): output price index (Eurostat)": {
+  "en": "Protein crops (including seeds): output price index (Eurostat)",
+  "es": "Proteaginosas (incluidas semillas): índice de precios percibidos (Eurostat)",
+  "fr": "Protéagineux (semences comprises) : indice des prix à la production (Eurostat)",
+  "it": "Colture proteiche (sementi incluse): indice dei prezzi alla produzione (Eurostat)"
+ },
  "Purchased animal feed, United Kingdom: total purchased animal feed (tonnes)": {
   "en": "Purchased animal feed, United Kingdom: total purchased animal feed (tonnes)",
   "es": "Piensos comprados, Reino Unido: total de piensos comprados (toneladas)",
@@ -6652,6 +7606,12 @@
   "es": "Harina pura producida por la industria harinera",
   "fr": "Farine pure produite par les meuniers",
   "it": "Farina pura prodotta dai mulini"
+ },
+ "Quality wine (producer price, Eurostat)": {
+  "en": "Quality wine (producer price, Eurostat)",
+  "es": "Vino de calidad (precio al productor, Eurostat)",
+  "fr": "Vin de qualité (prix à la production, Eurostat)",
+  "it": "Vino di qualità (prezzo alla produzione, Eurostat)"
  },
  "RBA cash rate target (monthly)": {
   "en": "RBA cash rate target (monthly)",
@@ -6989,11 +7949,29 @@
   "fr": "Carthame : superficie, Argentine par campagne (SSPM)",
   "it": "Cartamo: superficie, Argentina per campagna (SSPM)"
  },
+ "Saxony, conventional milk: farm-gate price, standardised": {
+  "en": "Saxony, conventional milk: farm-gate price, standardised",
+  "es": "Sajonia, leche convencional: precio en explotación, estandarizado",
+  "fr": "Saxe, lait conventionnel : prix à la ferme, standardisé",
+  "it": "Sassonia, latte convenzionale: prezzo franco azienda, standardizzato"
+ },
+ "Saxony-Anhalt, conventional milk: farm-gate price, standardised": {
+  "en": "Saxony-Anhalt, conventional milk: farm-gate price, standardised",
+  "es": "Sajonia-Anhalt, leche convencional: precio en explotación, estandarizado",
+  "fr": "Saxe-Anhalt, lait conventionnel : prix à la ferme, standardisé",
+  "it": "Sassonia-Anhalt, latte convenzionale: prezzo franco azienda, standardizzato"
+ },
  "Seeds and planting stock: input price index": {
   "en": "Seeds and planting stock: input price index",
   "es": "Semillas y plantones: índice de precios de los insumos",
   "fr": "Semences et plants : indice des prix des intrants",
   "it": "Sementi e piantine: indice dei prezzi degli input"
+ },
+ "Seeds and planting stock: input price index (Eurostat)": {
+  "en": "Seeds and planting stock: input price index (Eurostat)",
+  "es": "Semillas y plantones: índice de precios pagados (Eurostat)",
+  "fr": "Semences et plants : indice des prix des intrants (Eurostat)",
+  "it": "Sementi e piantine: indice dei prezzi dei mezzi di produzione (Eurostat)"
  },
  "Sheep (producer price)": {
   "en": "Sheep (producer price)",
@@ -7054,6 +8032,12 @@
   "es": "Ovinos: sacrificio, cabezas, Argentina (SSPM, Faena pecuaria)",
   "fr": "Ovins : abattages, têtes, Argentine (SSPM, Faena pecuaria)",
   "it": "Ovini: macellazioni, capi, Argentina (SSPM, Faena pecuaria)"
+ },
+ "Sheepmeat: slaughterings, monthly (head, Eurostat)": {
+  "en": "Sheepmeat: slaughterings, monthly (head, Eurostat)",
+  "es": "Carne de ovino: sacrificios, mensual (cabezas, Eurostat)",
+  "fr": "Viande ovine : abattages, mensuel (têtes, Eurostat)",
+  "it": "Carne ovina: macellazioni, mensile (capi, Eurostat)"
  },
  "Sheepmeat: slaughterings, monthly (tonnes carcass weight, Eurostat)": {
   "en": "Sheepmeat: slaughterings, monthly (tonnes carcass weight, Eurostat)",
@@ -7325,6 +8309,12 @@
   "fr": "Sorgho : prix payé au producteur (cumul de campagne)",
   "it": "Sorgo: prezzo pagato alla produzione (cumulato di campagna)"
  },
+ "Sorghum: official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Sorghum: official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Sorgo: precio FOB oficial, Argentina (SSPM/Ministerio de Economia)",
+  "fr": "Sorgho : prix FOB officiel, Argentine (SSPM/Ministerio de Economia)",
+  "it": "Sorgo: prezzo FOB ufficiale, Argentina (SSPM/Ministerio de Economia)"
+ },
  "Sows covered for the first time (May-June, Eurostat)": {
   "en": "Sows covered for the first time (May-June, Eurostat)",
   "es": "Cerdas cubiertas por primera vez (mayo-junio, Eurostat)",
@@ -7336,6 +8326,24 @@
   "es": "Cerdas cubiertas por primera vez (noviembre, diciembre, Eurostat)",
   "fr": "Truies saillies pour la première fois (novembre, décembre, Eurostat)",
   "it": "Scrofe montate per la prima volta (novembre, dicembre, Eurostat)"
+ },
+ "Soya (producer price, Eurostat)": {
+  "en": "Soya (producer price, Eurostat)",
+  "es": "Soja (precio al productor, Eurostat)",
+  "fr": "Soja (prix à la production, Eurostat)",
+  "it": "Soia (prezzo alla produzione, Eurostat)"
+ },
+ "Soybean meal: official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Soybean meal: official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Harina de soja: precio FOB oficial, Argentina (SSPM/Ministerio de Economia)",
+  "fr": "Tourteau de soja : prix FOB officiel, Argentine (SSPM/Ministerio de Economia)",
+  "it": "Farina di soia: prezzo FOB ufficiale, Argentina (SSPM/Ministerio de Economia)"
+ },
+ "Soybeans: official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Soybeans: official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Soja: precio FOB oficial, Argentina (SSPM/Ministerio de Economia)",
+  "fr": "Soja : prix FOB officiel, Argentine (SSPM/Ministerio de Economia)",
+  "it": "Soia: prezzo FOB ufficiale, Argentina (SSPM/Ministerio de Economia)"
  },
  "Soybeans: production (FOAG)": {
   "en": "Soybeans: production (FOAG)",
@@ -7372,6 +8380,12 @@
   "es": "Espelta: producción (OFAG)",
   "fr": "Épeautre : production (OFAG)",
   "it": "Farro: produzione (UFAG)"
+ },
+ "Steers, class E-P (Germany, carcass)": {
+  "en": "Steers, class E-P (Germany, carcass)",
+  "es": "Novillos, clases E-P (Alemania, canal)",
+  "fr": "Bouvillons, classes E-P (Allemagne, carcasse)",
+  "it": "Manzi, classi E-P (Germania, carcassa)"
  },
  "Stocks: barley, Estonia (Statistics Estonia)": {
   "en": "Stocks: barley, Estonia (Statistics Estonia)",
@@ -7553,6 +8567,12 @@
   "fr": "Engrais ternaires : 1 - 2 - 2 (prix payé)",
   "it": "Concimi ternari: 1 - 2 - 2 (prezzo pagato)"
  },
+ "Thuringia, conventional milk: farm-gate price, standardised": {
+  "en": "Thuringia, conventional milk: farm-gate price, standardised",
+  "es": "Turingia, leche convencional: precio en explotación, estandarizado",
+  "fr": "Thuringe, lait conventionnel : prix à la ferme, standardisé",
+  "it": "Turingia, latte convenzionale: prezzo franco azienda, standardizzato"
+ },
  "Tomatoes in the open: all qualities (producer price, Eurostat)": {
   "en": "Tomatoes in the open: all qualities (producer price, Eurostat)",
   "es": "Tomates al aire libre: todas las calidades (precio en origen, Eurostat)",
@@ -7606,6 +8626,18 @@
   "es": "Triticale: precio de adquisición, media anual (GUS)",
   "fr": "Triticale : prix d'achat, moyenne annuelle (GUS)",
   "it": "Triticale: prezzo di acquisto, media annuale (GUS)"
+ },
+ "UAN 28-0-0: retail price, Illinois (USDA AMS)": {
+  "en": "UAN 28-0-0: retail price, Illinois (USDA AMS)",
+  "es": "UAN 28-0-0: precio al por menor, Illinois (USDA AMS)",
+  "fr": "UAN 28-0-0 : prix de détail, Illinois (USDA AMS)",
+  "it": "UAN 28-0-0: prezzo al dettaglio, Illinois (USDA AMS)"
+ },
+ "UAN 32-0-0: retail price, Illinois (USDA AMS)": {
+  "en": "UAN 32-0-0: retail price, Illinois (USDA AMS)",
+  "es": "UAN 32-0-0: precio al por menor, Illinois (USDA AMS)",
+  "fr": "UAN 32-0-0 : prix de détail, Illinois (USDA AMS)",
+  "it": "UAN 32-0-0: prezzo al dettaglio, Illinois (USDA AMS)"
  },
  "UK butter: exports (tonnes)": {
   "en": "UK butter: exports (tonnes)",
@@ -7787,6 +8819,12 @@
   "fr": "Urée (prix payé)",
   "it": "Urea (prezzo pagato)"
  },
+ "Urea 46-0-0: retail price, Illinois (USDA AMS)": {
+  "en": "Urea 46-0-0: retail price, Illinois (USDA AMS)",
+  "es": "Urea 46-0-0: precio al por menor, Illinois (USDA AMS)",
+  "fr": "Urée 46-0-0 : prix de détail, Illinois (USDA AMS)",
+  "it": "Urea 46-0-0: prezzo al dettaglio, Illinois (USDA AMS)"
+ },
  "Use and risk of chemical pesticides: harmonised risk indicator (index 2015-2017 = 100, Eurostat)": {
   "en": "Use and risk of chemical pesticides: harmonised risk indicator (index 2015-2017 = 100, Eurostat)",
   "es": "Uso y riesgo de plaguicidas químicos: indicador de riesgo armonizado (índice 2015-2017 = 100, Eurostat)",
@@ -7841,11 +8879,23 @@
   "fr": "Valeur de la production, Royaume-Uni : Blé (millions de GBP)",
   "it": "Valore della produzione, Regno Unito: Frumento (milioni di GBP)"
  },
+ "Vegetables and horticultural products: output price index (Eurostat)": {
+  "en": "Vegetables and horticultural products: output price index (Eurostat)",
+  "es": "Hortalizas y productos hortícolas: índice de precios percibidos (Eurostat)",
+  "fr": "Légumes et produits horticoles : indice des prix à la production (Eurostat)",
+  "it": "Ortaggi e prodotti orticoli: indice dei prezzi alla produzione (Eurostat)"
+ },
  "Veterinary expenses: input price index": {
   "en": "Veterinary expenses: input price index",
   "es": "Gastos veterinarios: índice de precios de los insumos",
   "fr": "Frais vétérinaires : indice des prix des intrants",
   "it": "Spese veterinarie: indice dei prezzi degli input"
+ },
+ "Veterinary expenses: input price index (Eurostat)": {
+  "en": "Veterinary expenses: input price index (Eurostat)",
+  "es": "Gastos veterinarios: índice de precios pagados (Eurostat)",
+  "fr": "Frais vétérinaires : indice des prix des intrants (Eurostat)",
+  "it": "Spese veterinarie: indice dei prezzi dei mezzi di produzione (Eurostat)"
  },
  "Wheat (all): seeded area": {
   "en": "Wheat (all): seeded area",
@@ -7918,6 +8968,12 @@
   "es": "Trigo: rendimiento bruto por ha",
   "fr": "Blé : rendement brut par ha",
   "it": "Frumento: resa lorda per ha"
+ },
+ "Wheat: official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Wheat: official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Trigo: precio FOB oficial, Argentina (SSPM/Ministerio de Economia)",
+  "fr": "Blé : prix FOB officiel, Argentine (SSPM/Ministerio de Economia)",
+  "it": "Grano: prezzo FOB ufficiale, Argentina (SSPM/Ministerio de Economia)"
  },
  "Wheat: procurement price, annual average (GUS)": {
   "en": "Wheat: procurement price, annual average (GUS)",
