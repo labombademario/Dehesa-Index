@@ -607,7 +607,8 @@
     var den = Math.sqrt(denA * denB);
     return den ? (num / den) : 0;
   }
-  function fmtCorr(r) { var sign = r > 0 ? '+' : (r < 0 ? '−' : ''); return sign + Math.abs(r).toFixed(2); }
+  function decSep(str) { return lang() === 'en' ? String(str) : String(str).replace('.', ','); }
+  function fmtCorr(r) { var sign = r > 0 ? '+' : (r < 0 ? '−' : ''); return sign + decSep(Math.abs(r).toFixed(2)); }
 
   // Retornos mensuales reales: último dato de cada mes, solo meses consecutivos (sin rellenar huecos).
   var CORR_MONTHS = 60, CORR_MIN_RETURNS = 18, CORR_MIN_OVERLAP = 18;
@@ -918,16 +919,16 @@
 
   function renderAtlanticSpreadHtml() {
     var L = {
-      es:{title:'Dehesa Atlantic Spread',intro:'Cómo se mueve el mismo producto a ambos lados del Atlántico: variación del último mes y de los últimos tres meses en EE. UU. y en Europa, cada una con su propia serie verificada.',
+      es:{title:'EE. UU. frente a Europa',intro:'Cómo se mueve el mismo producto a ambos lados del Atlántico: variación del último mes y de los últimos tres meses en EE. UU. y en Europa, cada una con su propia serie verificada.',
         us:'EE. UU.',eu:'Europa',last:'Último dato',m1:'1 mes',m3:'3 meses',same:'Misma dirección',diverge:'Direcciones opuestas',flat:'Sin cambio claro',prod:'Producto',trend:'Lectura',
         note:'Se comparan MOVIMIENTOS, no niveles: los precios no son equivalentes (EE. UU. es precio recibido por el agricultor o referencia nacional; Europa es lonja, precio de mercado o media de la UE, con otra etapa, calidad, unidad, moneda e impuestos), así que no se calcula ningún diferencial de precio entre ambos. Cada dato conserva su fecha.',empty:'Aún no hay productos con dato verificado en EE. UU. y en Europa a la vez.'},
-      en:{title:'Dehesa Atlantic Spread',intro:'How the same product moves on both sides of the Atlantic: the last-month and last-three-month change in the U.S. and in Europe, each from its own verified series.',
+      en:{title:'US vs Europe',intro:'How the same product moves on both sides of the Atlantic: the last-month and last-three-month change in the U.S. and in Europe, each from its own verified series.',
         us:'U.S.',eu:'Europe',last:'Latest',m1:'1 month',m3:'3 months',same:'Same direction',diverge:'Opposite directions',flat:'No clear move',prod:'Product',trend:'Reading',
         note:'MOVES are compared, not levels: prices are not equivalent (the U.S. is a price received by farmers or a national reference; Europe is a market quote or EU average, with a different stage, quality, unit, currency and taxes), so no price differential is computed between them. Each data point keeps its date.',empty:'No products with verified data in both the U.S. and Europe yet.'},
-      fr:{title:'Dehesa Atlantic Spread',intro:"Comment un même produit évolue des deux côtés de l'Atlantique : variation du dernier mois et des trois derniers mois aux États-Unis et en Europe, chacune issue de sa propre série vérifiée.",
+      fr:{title:'États-Unis face à l’Europe',intro:"Comment un même produit évolue des deux côtés de l'Atlantique : variation du dernier mois et des trois derniers mois aux États-Unis et en Europe, chacune issue de sa propre série vérifiée.",
         us:'États-Unis',eu:'Europe',last:'Dernière donnée',m1:'1 mois',m3:'3 mois',same:'Même direction',diverge:'Directions opposées',flat:'Pas de mouvement net',prod:'Produit',trend:'Lecture',
         note:"On compare des MOUVEMENTS, pas des niveaux : les prix ne sont pas équivalents (États-Unis : prix reçu par l'agriculteur ou référence nationale ; Europe : cotation de marché ou moyenne UE, avec une autre étape, qualité, unité, monnaie et fiscalité), donc aucun écart de prix n'est calculé. Chaque donnée garde sa date.",empty:'Pas encore de produits avec données vérifiées aux États-Unis et en Europe à la fois.'},
-      it:{title:'Dehesa Atlantic Spread',intro:"Come si muove lo stesso prodotto ai due lati dell'Atlantico: variazione dell'ultimo mese e degli ultimi tre mesi negli Stati Uniti e in Europa, ciascuna dalla propria serie verificata.",
+      it:{title:'Stati Uniti e Europa',intro:"Come si muove lo stesso prodotto ai due lati dell'Atlantico: variazione dell'ultimo mese e degli ultimi tre mesi negli Stati Uniti e in Europa, ciascuna dalla propria serie verificata.",
         us:'Stati Uniti',eu:'Europa',last:'Ultimo dato',m1:'1 mese',m3:'3 mesi',same:'Stessa direzione',diverge:'Direzioni opposte',flat:'Nessun movimento netto',prod:'Prodotto',trend:'Lettura',
         note:"Si confrontano i MOVIMENTI, non i livelli: i prezzi non sono equivalenti (Stati Uniti: prezzo ricevuto dall'agricoltore o riferimento nazionale; Europa: quotazione di mercato o media UE, con fase, qualità, unità, valuta e imposte diverse), quindi non si calcola alcun differenziale di prezzo. Ogni dato conserva la sua data.",empty:'Ancora nessun prodotto con dati verificati sia negli Stati Uniti sia in Europa.'}
     };
@@ -1249,7 +1250,8 @@
       defra_milk_output_index:{es:'Leche · índice de producción',en:'Milk · output index',fr:'Lait · indice de production',it:'Latte · indice di produzione'}
     };
     if(!ready.length){
-      return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><p class="di-rel-note">'+esc(X({es:'Sin relación estadística compatible para este mercado: las relaciones observadas existen hoy solo para la UE y el Reino Unido.',en:'No compatible statistical relationship for this market: observed relationships currently exist only for the EU and the UK.',fr:'Aucune relation statistique compatible pour ce marché : les relations observées n’existent aujourd’hui que pour l’UE et le Royaume-Uni.',it:'Nessuna relazione statistica compatibile per questo mercato: le relazioni osservate esistono oggi solo per UE e Regno Unito.'}))+'</p></section>';
+      if(['eu','uk'].indexOf(core().getLocation?core().getLocation():'us')<0) return ''; // sin relaciones medidas para este mercado: no se muestra un bloque vacío
+      return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">'+esc(X({es:'Relaciones entre mercados',en:'Market relationships',fr:'Relations entre marchés',it:'Relazioni tra mercati'}))+'</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><p class="di-rel-note">'+esc(X({es:'Sin relación estadística compatible para este mercado: las relaciones observadas existen hoy solo para la UE y el Reino Unido.',en:'No compatible statistical relationship for this market: observed relationships currently exist only for the EU and the UK.',fr:'Aucune relation statistique compatible pour ce marché : les relations observées n’existent aujourd’hui que pour l’UE et le Royaume-Uni.',it:'Nessuna relazione statistica compatibile per questo mercato: le relazioni osservate esistono oggi solo per UE e Regno Unito.'}))+'</p></section>';
     }
     var rank={high:3,medium:2,low:1};
     ready.sort(function(a,b){return (rank[b.confidence]||0)-(rank[a.confidence]||0);});
@@ -1261,7 +1263,7 @@
       return '<article class="di-rel-card">'+
         '<div class="di-rel-top"><span>'+esc(r.label)+'</span><b class="di-rel-confidence '+esc(r.confidence)+'">'+esc(r.confidence.toUpperCase())+'</b></div>'+
         '<div class="di-rel-series">'+esc(aName)+' · '+esc(String(r.region||'eu').toUpperCase())+' <span>→</span> '+esc(bName)+' · '+esc(String(r.region||'eu').toUpperCase())+'</div>'+
-        '<div class="di-rel-metrics"><div><small>'+esc(t.corr)+'</small><strong>'+corr.toFixed(2)+'</strong></div><div><small>'+esc(t.lag)+'</small><strong>'+esc(String(r.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>'+esc(t.window)+'</small><strong>'+esc(r.window)+'</strong></div></div>'+
+        '<div class="di-rel-metrics"><div><small>'+esc(t.corr)+'</small><strong>'+decSep(corr.toFixed(2))+'</strong></div><div><small>'+esc(t.lag)+'</small><strong>'+esc(String(r.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>'+esc(t.window)+'</small><strong>'+esc(r.window)+'</strong></div></div>'+
         '<p class="di-rel-note">'+esc(r.interpretation)+'</p>'+
       '</article>';
     }).join('');
@@ -1271,14 +1273,14 @@
       var lagUnit=a.relationship.frequency==='quarterly'?(a.relationship.lagPeriods===1?t.periodQ:t.periodQs):(a.relationship.lagPeriods===1?t.periodM:t.periodMs);
       return '<article class="di-rel-card di-transmission-card">'+
         '<div class="di-rel-top"><span>⚠ '+esc(a.label)+'</span><b class="di-rel-confidence '+esc(a.relationship.confidence)+'">'+esc(a.severity.toUpperCase())+'</b></div>'+
-        '<div class="di-rel-series">'+esc(X({es:'Shock',en:'Shock',fr:'Choc',it:'Shock'}))+': <strong>'+esc(a.shock.changePct.toFixed(1))+'%</strong> · '+esc(a.shock.date)+'</div>'+
+        '<div class="di-rel-series">'+esc(X({es:'Shock',en:'Shock',fr:'Choc',it:'Shock'}))+': <strong>'+esc(decSep(a.shock.changePct.toFixed(1)))+'%</strong> · '+esc(a.shock.date)+'</div>'+
         (a.ageMonths!=null&&a.ageMonths>=3?'<div class="di-rel-note" style="color:var(--warning,#b45309);font-weight:600">⏳ '+esc(X({es:'Señal de hace '+a.ageMonths+' meses (dato de '+a.shock.date+'): no es de hoy.',en:'Signal from '+a.ageMonths+' months ago (data for '+a.shock.date+'): not current.',fr:'Signal d’il y a '+a.ageMonths+' mois (donnée de '+a.shock.date+') : pas actuel.',it:'Segnale di '+a.ageMonths+' mesi fa (dato di '+a.shock.date+'): non attuale.'}))+'</div>':'')+
         '<div class="di-rel-metrics"><div><small>'+esc(X({es:'Canal',en:'Channel',fr:'Canal',it:'Canale'}))+'</small><strong>'+esc(X({es:'Coste de insumos',en:'Input cost',fr:'Coût des intrants',it:'Costo degli input'}))+'</strong></div><div><small>'+esc(X({es:'Rezago',en:'Lag',fr:'Décalage',it:'Ritardo'}))+'</small><strong>'+esc(String(a.relationship.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>'+esc(X({es:'Confianza',en:'Confidence',fr:'Confiance',it:'Confidenza'}))+'</small><strong>'+esc(a.relationship.confidence.toUpperCase())+'</strong></div></div>'+
         '<p class="di-rel-note">'+esc(a.message)+'</p>'+
       '</article>';
     }).join('');
-    var alertSection=alerts.length ? '<div class="di-transmission-wrap"><div class="di-intel-head"><span class="di-intel-kicker">TRANSMISSION WATCH</span><h3>'+esc(X({es:'Shock de insumo → mercado afectado',en:'Input shock → affected market',fr:'Choc d’intrant → marché affecté',it:'Shock di input → mercato interessato'}))+'</h3><p class="di-intel-muted">'+esc(X({es:'Las alertas se activan cuando un insumo supera un umbral y existe una relación histórica compatible. No estiman precios futuros.',en:'Alerts trigger when an input crosses a threshold and a compatible historical relationship exists. They do not estimate future prices.',fr:'Les alertes se déclenchent lorsqu’un intrant dépasse un seuil et qu’une relation historique compatible existe. Elles n’estiment pas les prix futurs.',it:'Gli avvisi scattano quando un input supera una soglia ed esiste una relazione storica compatibile. Non stimano i prezzi futuri.'}))+'</p></div><div class="di-rel-grid">'+alertCards+'</div></div>' : '';
-    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+alertSection+'</section>';
+    var alertSection=alerts.length ? '<div class="di-transmission-wrap"><div class="di-intel-head"><span class="di-intel-kicker">'+esc(X({es:'Aviso de costes',en:'Cost alert',fr:'Alerte coûts',it:'Avviso costi'}))+'</span><h3>'+esc(X({es:'Shock de insumo → mercado afectado',en:'Input shock → affected market',fr:'Choc d’intrant → marché affecté',it:'Shock di input → mercato interessato'}))+'</h3><p class="di-intel-muted">'+esc(X({es:'Las alertas se activan cuando un insumo supera un umbral y existe una relación histórica compatible. No estiman precios futuros.',en:'Alerts trigger when an input crosses a threshold and a compatible historical relationship exists. They do not estimate future prices.',fr:'Les alertes se déclenchent lorsqu’un intrant dépasse un seuil et qu’une relation historique compatible existe. Elles n’estiment pas les prix futurs.',it:'Gli avvisi scattano quando un input supera una soglia ed esiste una relazione storica compatibile. Non stimano i prezzi futuri.'}))+'</p></div><div class="di-rel-grid">'+alertCards+'</div></div>' : '';
+    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">'+esc(X({es:'Relaciones entre mercados',en:'Market relationships',fr:'Relations entre marchés',it:'Relazioni tra mercati'}))+'</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+alertSection+'</section>';
   }
 
 
@@ -1288,7 +1290,7 @@
     var loc=core().getLocation ? core().getLocation() : 'eu';
     if(loc && loc!=='eu') return '';
     var rows=(INTEL20&&INTEL20.series)||[];
-    var head=function(h2,msg){return '<section class="di-intel-section di-intel-engine20"><div class="di-intel-head"><span class="di-intel-kicker">INTELLIGENCE ENGINE 2.0</span><h2>'+esc(h2)+'</h2><p class="di-intel-muted">'+esc(msg)+'</p></div>';};
+    var head=function(h2,msg){return '<section class="di-intel-section di-intel-engine20"><div class="di-intel-head"><span class="di-intel-kicker">'+esc(X({es:'Indicadores de la UE',en:'EU indicators',fr:'Indicateurs de l’UE',it:'Indicatori UE'}))+'</span><h2>'+esc(h2)+'</h2><p class="di-intel-muted">'+esc(msg)+'</p></div>';};
     if(!rows.length) return head(X({es:'Señales reales',en:'Real signals',fr:'Signaux réels',it:'Segnali reali'}),X({es:'Pendiente: el motor no tiene todavía una serie con cobertura suficiente.',en:'Pending: the engine does not yet have a series with enough coverage.',fr:'En attente : le moteur n’a pas encore de série avec une couverture suffisante.',it:'In attesa: il motore non ha ancora una serie con copertura sufficiente.'}))+'</section>';
     var labels={
       eurostat_cereals_output_index:{es:'Cereales EU · índice de producción',en:'Cereals EU · output index',fr:'Céréales UE · indice de production',it:'Cereali UE · indice di produzione'},
@@ -1335,10 +1337,10 @@
     stories=stories.slice(0,5);
 
     var labels={
-      es:{kicker:'NOTICIAS',title:'Noticias del mercado',intro:'Titulares recientes sobre este mercado, con el último precio medido del producto. La asociación es automática por palabras clave y no demuestra impacto; la relación estadística solo aparece cuando se ha observado.',q1:'trimestre',qn:'trimestres',m1:'mes',mn:'meses',related:'NOTICIA POSIBLEMENTE RELACIONADA',product:'PRODUCTO',topic:'TEMA DETECTADO',rapeSun:'Colza y girasol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relación observada',none:(region==='eu'?'Sin relación estadística compatible':'Sin relación estadística regional disponible'),watch:'TRANSMISSION WATCH',context:'Contexto descriptivo · no es una predicción.',empty:'No hay noticias enlazadas para este mercado.'},
-      en:{kicker:'NEWS',title:'Market news',intro:'Recent headlines about this market, with the product\'s latest measured price. The match is automatic by keywords and does not prove impact; a statistical relationship appears only when one has been observed.',q1:'quarter',qn:'quarters',m1:'month',mn:'months',related:'POSSIBLY RELATED NEWS',product:'PRODUCT',topic:'DETECTED TOPIC',rapeSun:'Rapeseed and sunflower',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Observed relationship',none:'No compatible regional statistical relationship',watch:'TRANSMISSION WATCH',context:'Descriptive context · not a forecast.',empty:'No linked news is available for this market.'},
-      fr:{kicker:'ACTUALITÉS',title:'Actualités du marché',intro:'Titres récents sur ce marché, avec le dernier prix mesuré du produit. L\'association est automatique par mots-clés et ne prouve aucun impact ; une relation statistique n\'apparaît que si elle a été observée.',q1:'trimestre',qn:'trimestres',m1:'mois',mn:'mois',related:'ACTUALITÉ POSSIBLEMENT LIÉE',product:'PRODUIT',topic:'THÈME DÉTECTÉ',rapeSun:'Colza et tournesol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relation observée',none:'Aucune relation statistique régionale compatible',watch:'TRANSMISSION WATCH',context:'Contexte descriptif · pas une prévision.',empty:'Aucune actualité liée à ce marché.'},
-      it:{kicker:'NOTIZIE',title:'Notizie dal mercato',intro:'Titoli recenti su questo mercato, con l\'ultimo prezzo misurato del prodotto. L\'associazione è automatica per parole chiave e non prova alcun impatto; una relazione statistica compare solo se è stata osservata.',q1:'trimestre',qn:'trimestri',m1:'mese',mn:'mesi',related:'NOTIZIA POSSIBILMENTE COLLEGATA',product:'PRODOTTO',topic:'TEMA RILEVATO',rapeSun:'Colza e girasole',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relazione osservata',none:'Nessuna relazione statistica regionale compatibile',watch:'TRANSMISSION WATCH',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
+      es:{kicker:'NOTICIAS',title:'Noticias del mercado',intro:'Titulares recientes sobre este mercado, con el último precio medido del producto. La asociación es automática por palabras clave y no demuestra impacto; la relación estadística solo aparece cuando se ha observado.',q1:'trimestre',qn:'trimestres',m1:'mes',mn:'meses',related:'NOTICIA POSIBLEMENTE RELACIONADA',product:'PRODUCTO',topic:'TEMA DETECTADO',rapeSun:'Colza y girasol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relación observada',none:(region==='eu'?'Sin relación estadística compatible':'Sin relación estadística regional disponible'),watch:'AVISO DE COSTES',context:'Contexto descriptivo · no es una predicción.',empty:'No hay noticias enlazadas para este mercado.'},
+      en:{kicker:'NEWS',title:'Market news',intro:'Recent headlines about this market, with the product\'s latest measured price. The match is automatic by keywords and does not prove impact; a statistical relationship appears only when one has been observed.',q1:'quarter',qn:'quarters',m1:'month',mn:'months',related:'POSSIBLY RELATED NEWS',product:'PRODUCT',topic:'DETECTED TOPIC',rapeSun:'Rapeseed and sunflower',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Observed relationship',none:'No compatible regional statistical relationship',watch:'COST ALERT',context:'Descriptive context · not a forecast.',empty:'No linked news is available for this market.'},
+      fr:{kicker:'ACTUALITÉS',title:'Actualités du marché',intro:'Titres récents sur ce marché, avec le dernier prix mesuré du produit. L\'association est automatique par mots-clés et ne prouve aucun impact ; une relation statistique n\'apparaît que si elle a été observée.',q1:'trimestre',qn:'trimestres',m1:'mois',mn:'mois',related:'ACTUALITÉ POSSIBLEMENT LIÉE',product:'PRODUIT',topic:'THÈME DÉTECTÉ',rapeSun:'Colza et tournesol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relation observée',none:'Aucune relation statistique régionale compatible',watch:'ALERTE COÛTS',context:'Contexte descriptif · pas une prévision.',empty:'Aucune actualité liée à ce marché.'},
+      it:{kicker:'NOTIZIE',title:'Notizie dal mercato',intro:'Titoli recenti su questo mercato, con l\'ultimo prezzo misurato del prodotto. L\'associazione è automatica per parole chiave e non prova alcun impatto; una relazione statistica compare solo se è stata osservata.',q1:'trimestre',qn:'trimestri',m1:'mese',mn:'mesi',related:'NOTIZIA POSSIBILMENTE COLLEGATA',product:'PRODOTTO',topic:'TEMA RILEVATO',rapeSun:'Colza e girasole',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relazione osservata',none:'Nessuna relazione statistica regionale compatibile',watch:'AVVISO COSTI',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
     };
     var t=labels[lang()]||labels.es;
     var channelLabels=({es:{input_cost:'COSTE DE INSUMOS',trade:'COMERCIO',weather:'CLIMA',supply:'OFERTA',energy:'ENERGÍA',policy:'POLÍTICA',market_impact:'IMPACTO EN EL MERCADO'},en:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},fr:{input_cost:'COÛTS DES INTRANTS',trade:'COMMERCE',weather:'CLIMAT',supply:'OFFRE',energy:'ÉNERGIE',policy:'POLITIQUE',market_impact:'IMPACT MARCHÉ'},it:{input_cost:'COSTI INPUT',trade:'COMMERCIO',weather:'METEO',supply:'OFFERTA',energy:'ENERGIA',policy:'POLITICA',market_impact:'IMPATTO MERCATO'}})[lang()]||{};
@@ -1369,7 +1371,7 @@
       var sig='';
       if(r){
         var lag=String(r.lagPeriods)+' '+(r.frequency==='quarterly'?(r.lagPeriods===1?t.q1:t.qn):(r.lagPeriods===1?t.m1:t.mn));
-        sig='<div class="di-nw-sig '+(corr>=0?'positive':'negative')+'"><b>'+esc(t.observed)+':</b> '+esc(r.label)+' · '+esc(corr>=0?'Δ +':'Δ −')+' · r '+(corr==null?'—':corr.toFixed(2))+' · lag '+esc(lag)+(alert?' · ⚠ '+esc(t.watch):'')+'</div>';
+        sig='<div class="di-nw-sig '+(corr>=0?'positive':'negative')+'"><b>'+esc(t.observed)+':</b> '+esc(r.label)+' · '+esc(corr>=0?'Δ +':'Δ −')+' · r '+(corr==null?'—':decSep(corr.toFixed(2)))+' · lag '+esc(lag)+(alert?' · ⚠ '+esc(t.watch):'')+'</div>';
       }
       var foreign=(lang()!=='en'&&!(n.headline&&n.headline[lang()]))?'<span class="di-nw-lang">EN</span>':'';
       return '<article class="di-nw-card">'+
@@ -1407,6 +1409,11 @@
     });
   }
 
+  function moreAnalysisHtml(inner) {
+    var t = X({ es: ['Más análisis', 'Relaciones entre mercados, tendencia, correlaciones, volatilidad y ratios agrícolas'], en: ['More analysis', 'Market relationships, momentum, correlations, volatility and agricultural ratios'], fr: ['Plus d’analyses', 'Relations entre marchés, tendance, corrélations, volatilité et ratios agricoles'], it: ['Più analisi', 'Relazioni tra mercati, tendenza, correlazioni, volatilità e rapporti agricoli'] });
+    return '<details class="di-more-analysis"><summary><b>' + esc(t[0]) + '</b><span>' + esc(t[1]) + '</span></summary>' + inner + '</details>';
+  }
+
   function render() {
     var root = document.getElementById('pr-intel');
     if (!root) return;
@@ -1422,15 +1429,16 @@
     root.innerHTML =
       renderNewsImpactPanelHtml() +
       renderIntelligence20Html() +
-      renderRelationshipsHtml() +
       renderMarketMapHtml() +
-      renderMomentumHtml() +
-      renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) +
-      renderSeasonalityHtml() +
-      renderLocalGlobalHtml() +
       renderAtlanticSpreadHtml() +
-      renderSpreadsHtml() +
-      renderMarginHtml();
+      renderSeasonalityHtml() +
+      renderMarginHtml() +
+      renderLocalGlobalHtml() +
+      moreAnalysisHtml(
+        renderRelationshipsHtml() +
+        renderMomentumHtml() +
+        renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) +
+        renderSpreadsHtml());
     wireOpenTargets(root);
     wireCorrSelector(root, corrVolData);
     labelSvgs(root);
