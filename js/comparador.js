@@ -40,7 +40,13 @@
     fr: { csvBtn: 'Télécharger le CSV', csvNote: 'Le CSV contient pour chaque ligne la valeur d’origine, l’unité d’origine, la valeur convertie et son unité, la date, la source et la comparabilité, comme dans le tableau.',  fFresh: 'Données', fOnly: 'Données à jour seulement', fAll: 'Inclure l’historique', kLbl: 'Comparabilité', kAll: 'Toutes', kExact: 'Exacte', kDir: 'Indicative', cOrigH: 'Origine', cNormH: 'Normalisé', cDate: 'Date', kHelp: 'Exacte : même produit, unité et stade de la chaîne. Indicative : produit voisin mais définitions différentes (variété, qualité, point de vente) : utile pour l’ordre de grandeur et la tendance, pas pour soustraire des prix.', noKExact: 'Aucune série de ce produit n’a une comparabilité exacte : les sources définissent le produit différemment. Essayez « Indicative » ou « Toutes ».', noKDir: 'Aucune série de ce produit n’est seulement indicative avec les filtres actuels.', normNote: 'Normalisé = converti dans l’unité choisie avec le taux mensuel de la BCE ; sous « Unités d’origine » et « Indice 100 » il s’affiche en €/t à titre de référence. Sans taux de change valide, c’est indiqué au lieu de combler.', staleHid: 'Masqués car pas à jour', shown: 'Affichage', of: 'sur', share: 'Copier le lien', copied: 'Lien copié', link: 'Lien vers cette comparaison' },
     it: { csvBtn: 'Scarica CSV', csvNote: 'Il CSV contiene per ogni riga valore originale, unità originale, valore convertito e unità, data, fonte e confrontabilità, come nella tabella.',  fFresh: 'Dati', fOnly: 'Solo dati aggiornati', fAll: 'Includi storici', kLbl: 'Confrontabilità', kAll: 'Tutte', kExact: 'Esatta', kDir: 'Indicativa', cOrigH: 'Originale', cNormH: 'Normalizzato', cDate: 'Data', kHelp: 'Esatta: stesso prodotto, unità e punto della filiera. Indicativa: prodotto simile ma con definizioni diverse (varietà, qualità, punto vendita): utile per ordine di grandezza e tendenza, non per sottrarre prezzi.', noKExact: 'Nessuna serie di questo prodotto ha confrontabilità esatta: le fonti definiscono il prodotto in modo diverso. Prova «Indicativa» o «Tutte».', noKDir: 'Nessuna serie di questo prodotto è solo indicativa con i filtri attuali.', normNote: 'Normalizzato = convertito nell’unità scelta con il cambio mensile BCE; in «Unità originali» e «Indice 100» è mostrato in €/t come riferimento. Se manca un cambio valido lo dice invece di riempire.', staleHid: 'Nascosti perché non aggiornati', shown: 'Mostrati', of: 'su', share: 'Copia link', copied: 'Link copiato', link: 'Link a questo confronto' }
   };
-  Object.keys(X).forEach(function (l) { for (var k in X[l]) T[l][k] = X[l][k]; });
+  var Y = {
+    es: { hl: '{a} tiene el precio más alto: {va}. {b} está un {pct} % por debajo ({vb}).', hlA: ' Orientativo: no son exactamente el mismo producto ni la misma fecha.', cap: 'Último dato de cada fuente, en {u} (valor original debajo)', chg: 'vs. hace 12 meses', ctl: 'Qué comparar' },
+    en: { hl: '{a} has the highest price: {va}. {b} is {pct} % lower ({vb}).', hlA: ' Indicative: not exactly the same product or the same date.', cap: 'Latest value of each source, in {u} (original value below)', chg: 'vs. 12 months ago', ctl: 'What to compare' },
+    fr: { hl: '{a} affiche le prix le plus élevé : {va}. {b} est {pct} % en dessous ({vb}).', hlA: ' Indicatif : pas exactement le même produit ni la même date.', cap: 'Dernière valeur de chaque source, en {u} (valeur d’origine dessous)', chg: 'vs il y a 12 mois', ctl: 'Que comparer' },
+    it: { hl: '{a} ha il prezzo più alto: {va}. {b} è inferiore del {pct} % ({vb}).', hlA: ' Indicativo: non esattamente lo stesso prodotto né la stessa data.', cap: 'Ultimo dato di ogni fonte, in {u} (valore originale sotto)', chg: 'vs 12 mesi fa', ctl: 'Cosa confrontare' }
+  };
+  Object.keys(X).forEach(function (l) { for (var k in X[l]) T[l][k] = X[l][k]; for (var k2 in Y[l]) T[l][k2] = Y[l][k2]; });
   var COL = ['#2f6b4a', '#c0662d', '#3b6fa8', '#8c5a9e', '#b08a1f', '#5f6b70'];
   var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'idx', r: 10, m: {} }, D = null, FX = null, SKIP = 0;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
@@ -154,19 +160,44 @@
       setTimeout(function () { URL.revokeObjectURL(a.href); document.body.removeChild(a); }, 500);
     } catch (e) { /* sin descarga disponible */ }
   }
-  function chipStyle(on) { return 'display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;padding:4px 11px;border:1px solid ' + (on ? '#2f6b3a' : 'var(--border)') + ';border-radius:999px;background:' + (on ? '#e3f0e5' : 'transparent') + ';color:' + (on ? '#1E3328' : 'inherit') + ';font:inherit;font-size:13px;cursor:pointer'; }
+  function cidx(list, c) { for (var i = 0; i < list.length; i++) if (list[i].c === c) return i; return -1; }
+  function spark(s, col) {
+    var pts = cut(s).map(function (q) { return q[1]; }).filter(function (v) { return typeof v === 'number'; }); if (pts.length < 2) return '';
+    var w = 132, h = 38, mn = Math.min.apply(null, pts), mx = Math.max.apply(null, pts), rg = (mx - mn) || 1;
+    var xy = pts.map(function (v, i) { return [(i / (pts.length - 1) * (w - 6) + 3).toFixed(1), (h - 4 - (v - mn) / rg * (h - 8)).toFixed(1)]; });
+    var l = xy[xy.length - 1];
+    return '<svg class="cmp-spark" viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '" aria-hidden="true" focusable="false"><polyline fill="none" stroke="' + col + '" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" points="' + xy.map(function (q) { return q.join(','); }).join(' ') + '"/><circle cx="' + l[0] + '" cy="' + l[1] + '" r="2.8" fill="' + col + '"/></svg>';
+  }
+  function cards(list, p, t) {
+    var cmode = (ST.u === 'idx' || ST.u === 'orig') ? 'eur' : ST.u, cu = unitLbl(cmode, p.per);
+    var rows = list.map(function (s, i) { var cv = convert(s, s.latest[1], s.latest[0].slice(0, 7), cmode, p.per); return { s: s, i: i, cv: cv }; });
+    var ok = rows.filter(function (r) { return r.cv != null; }).sort(function (a, b) { return b.cv - a.cv; }), hl = '';
+    if (ok.length > 1) {
+      var A = ok[0], B = ok[ok.length - 1], pct = (1 - B.cv / A.cv) * 100;
+      hl = '<p class="cmp-hl">' + esc(t.hl.replace('{a}', lbl(A.s)).replace('{va}', nf(A.cv) + ' ' + cu).replace('{b}', lbl(B.s)).replace('{pct}', nf(pct, 0)).replace('{vb}', nf(B.cv) + ' ' + cu)) +
+        ((ST.u === 'orig' || ST.u === 'idx') && list.some(function (s) { return s.comp !== 'exact'; }) ? '<span class="cmp-hl-a">' + esc(t.hlA) + '</span>' : '') + '</p>';
+    }
+    return hl + '<div class="cmp-cards">' + rows.map(function (r) {
+      var s = r.s, col = COL[r.i % COL.length], ch = chg12(s);
+      return '<div class="cmp-card" style="--cc:' + col + '"><div class="cmp-card-n">' + flag(s.c) + ' ' + esc(lbl(s)) + '</div>' +
+        '<div class="cmp-card-v">' + (r.cv == null ? '<span class="cmp-card-nc">' + esc(t.noConv) + '</span>' : nf(r.cv) + '<small> ' + esc(cu) + '</small>') + '</div>' +
+        '<div class="cmp-card-r">' + spark(s, col) + '<div class="cmp-card-c">' + pc(ch) + '<small>' + esc(t.chg) + '</small></div></div>' +
+        '<div class="cmp-card-o">' + esc(orgTxt(s)) + ' · ' + esc(s.latest[0]) + '</div></div>';
+    }).join('') + '</div><p class="cmp-cap">' + esc(t.cap.replace('{u}', cu)) + '</p>';
+  }
+  function chipStyle() { return ''; }  // el aspecto de los botones vive en css/style.css (.cmp-ctl)
   function render() {
     var root = document.getElementById('cmp-body'); if (!root || !D || !D.products[ST.p] || !D.products[ST.p].series) return; var t = tt(), p = D.products[ST.p];
     var h1 = document.getElementById('cp-h1'), sb = document.getElementById('cp-sub'); if (h1) h1.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     var list = sel(), codes = p.series.map(function (s) { return s.c; });
     var orderPref = ['ES', 'FR', 'DE', 'IT', 'NL', 'PL', 'DK', 'IE', 'UK', 'EU', 'CA', 'US'];
     codes.sort(function (a, b) { var x = orderPref.indexOf(a), y = orderPref.indexOf(b); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y) || (a < b ? -1 : 1); });
-    var h = '<div class="di-card" style="padding:14px 16px;margin-bottom:16px"><div style="display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin-bottom:10px"><label style="font-size:13px">' + esc(t.prod) + '<br><select id="cp-p" class="di-compare-select">' + Object.keys(D.products).map(function (k) { return '<option value="' + k + '"' + (k === ST.p ? ' selected' : '') + '>' + esc(D.products[k].label[lang()] || k) + '</option>'; }).join('') + '</select></label>' +
-      '<label style="font-size:13px">' + esc(t.range) + '<br><select id="cp-r" class="di-compare-select">' + t.yrs.map(function (y, i) { return '<option value="' + i + '"' + (i === (ST.r_i != null ? ST.r_i : 3) ? ' selected' : '') + '>' + esc(y) + '</option>'; }).join('') + '</select></label></div>';
+    var h = '<div class="cmp-grid"><aside class="cmp-ctl di-card" aria-label="' + esc(t.ctl) + '"><div class="cmp-pair"><label class="cmp-lbl">' + esc(t.prod) + '<select id="cp-p" class="di-compare-select cmp-big">' + Object.keys(D.products).map(function (k) { return '<option value="' + k + '"' + (k === ST.p ? ' selected' : '') + '>' + esc(D.products[k].label[lang()] || k) + '</option>'; }).join('') + '</select></label>' +
+      '<label class="cmp-lbl">' + esc(t.range) + '<select id="cp-r" class="di-compare-select cmp-big">' + t.yrs.map(function (y, i) { return '<option value="' + i + '"' + (i === (ST.r_i != null ? ST.r_i : 3) ? ' selected' : '') + '>' + esc(y) + '</option>'; }).join('') + '</select></label></div>';
     var byC = {}; p.series.forEach(function (s) { byC[s.c] = pick(p, s.c); });
     var fresh = codes.filter(function (c) { return !isOld(byC[c], p); }), hist = codes.filter(function (c) { return isOld(byC[c], p); });
-    var chip = function (c) { var on = ST.c.indexOf(c) > -1, o = isOld(byC[c], p); return '<button type="button" data-c="' + c + '" aria-pressed="' + on + '" style="' + chipStyle(on) + (o ? ';opacity:.8' : '') + '">' + flag(c) + ' ' + esc(byC[c] ? lbl(byC[c]) : cname(c)) + (o ? ' <span style="font-size:11px;color:var(--text-faint)">· ' + esc(byC[c].latest[0].slice(0, 4)) + '</span>' : '') + '</button>'; };
-    h += '<div style="font-size:13px;margin-bottom:4px">' + esc(t.countries) + '</div><div role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '</div>';
+    var chip = function (c) { var on = ST.c.indexOf(c) > -1, o = isOld(byC[c], p); return '<button type="button" data-c="' + c + '" aria-pressed="' + on + '" style="' + (o ? 'opacity:.8' : '') + '">' + (on && cidx(list, c) > -1 ? '<i class="cmp-dot" style="background:' + COL[cidx(list, c) % COL.length] + '"></i>' : '') + flag(c) + ' ' + esc(byC[c] ? lbl(byC[c]) : cname(c)) + (o ? ' <span style="font-size:11px;color:var(--text-faint)">· ' + esc(byC[c].latest[0].slice(0, 4)) + '</span>' : '') + '</button>'; };
+    h += '<div class="cmp-lbl cmp-lbl-s">' + esc(t.countries) + '</div><div class="cmp-chips" role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '</div>';
     /* selector de mercado para los paises marcados que tienen varios (p. ej. lonjas de España) */
     var ML = MKTL[lang()] || MKTL.es;
     ST.c.forEach(function (c) { var b = p.series.filter(function (s) { return s.c === c; })[0]; if (!b || !b.alts) return; var cur = (byC[c] && byC[c].m) || '';
@@ -177,17 +208,19 @@
       else if (ST.c.some(function (c) { return byC[c] && isOld(byC[c], p); })) h += '<div class="di-movers-hint" style="margin:0 0 6px">' + ST.c.filter(function (c) { return byC[c] && isOld(byC[c], p); }).map(function (c) { return flag(c) + ' ' + cname(c); }).join(', ') + ' — ' + esc(t.hiddenOld) + '. ' + esc(t.oldNote) + '</div>';
     }
     var modes = [['orig', t.orig], ['eur', '€/' + (p.per === 1000 ? t.t : t.kg100)], ['usd', 'USD/' + (p.per === 1000 ? t.t : t.kg100)], ['idx', t.idx]];
-    var rg = function (lbl, attr, opts, cur) { return '<div style="font-size:13px;margin:6px 0 4px">' + esc(lbl) + '</div><div role="radiogroup" aria-label="' + esc(lbl) + '">' + opts.map(function (m) { var on = cur === m[0]; return '<button type="button" role="radio" aria-checked="' + on + '" data-' + attr + '="' + m[0] + '" style="' + chipStyle(on) + '">' + esc(m[1]) + '</button>'; }).join('') + '</div>'; };
-    h += rg(t.unit, 'u', modes, ST.u) + rg(t.fFresh, 'f', [['fresh', t.fOnly], ['all', t.fAll + (hist.length ? ' (' + hist.length + ')' : '')]], ST.old ? 'all' : 'fresh') + rg(t.kLbl, 'k', [['all', t.kAll], ['exact', t.kExact], ['directional', t.kDir]], ST.k) + '<div class="di-movers-hint" style="margin-top:2px">' + esc(t.kHelp) + '</div></div>';
+    var rg = function (lbl, attr, opts, cur) { return '<div class="cmp-lbl cmp-lbl-s">' + esc(lbl) + '</div><div class="cmp-seg" role="radiogroup" aria-label="' + esc(lbl) + '">' + opts.map(function (m) { var on = cur === m[0]; return '<button type="button" role="radio" aria-checked="' + on + '" data-' + attr + '="' + m[0] + '" style="' + chipStyle(on) + '">' + esc(m[1]) + '</button>'; }).join('') + '</div>'; };
+    h += rg(t.unit, 'u', modes, ST.u) + rg(t.fFresh, 'f', [['fresh', t.fOnly], ['all', t.fAll + (hist.length ? ' (' + hist.length + ')' : '')]], ST.old ? 'all' : 'fresh') + rg(t.kLbl, 'k', [['all', t.kAll], ['exact', t.kExact], ['directional', t.kDir]], ST.k) + '<div class="di-movers-hint cmp-help">' + esc(t.kHelp) + '</div></aside><div class="cmp-out">';
     if (!list.length) h += '<p class="di-movers-hint">' + esc(ST.k === 'exact' ? t.noKExact : ST.k === 'directional' ? t.noKDir : t.none) + '</p>';
     else {
       // Niveles convertidos con series orientativas: aviso junto al grafico, no en una nota al pie (auditoria 8-oct-2026)
       var DW = { es: 'Atención: hay series orientativas (distinta calidad, lugar, etapa comercial o fecha). Convertir moneda y unidad no las hace intercambiables; para comparar tendencias usa el índice base 100. El valor original de cada serie está en la tabla.', en: 'Note: some series are indicative (different quality, place, trading stage or date). Converting currency and unit does not make them interchangeable; to compare trends use the base-100 index. Each series’ original value is in the table.', fr: 'Attention : certaines séries sont indicatives (qualité, lieu, stade commercial ou date différents). Convertir devise et unité ne les rend pas interchangeables ; pour comparer les tendances, utilisez l’indice base 100. La valeur d’origine de chaque série est dans le tableau.', it: 'Attenzione: alcune serie sono indicative (qualità, luogo, fase commerciale o data diversi). Convertire valuta e unità non le rende intercambiabili; per confrontare le tendenze usa l’indice base 100. Il valore originale di ogni serie è nella tabella.' };
       if ((ST.u === 'eur' || ST.u === 'usd') && list.some(function (s) { return s.comp !== 'exact'; })) h += '<div class="pt-note" role="note" style="margin:0 0 10px">' + esc(DW[lang()] || DW.es) + '</div>';
-      h += '<div class="di-card" style="padding:12px 14px;margin-bottom:16px">' + (ST.u === 'orig' ? '<div class="di-movers-hint" style="margin:0 0 8px">' + esc(t.small) + '</div>' + smallMultiples(list, p, t) : (chartHtml(list, p, t) || '<p class="di-movers-hint">' + esc(t.none) + '</p>')) + '</div>';
+      h += cards(list, p, t);
+      h += '<div class="di-card cmp-chart" style="padding:12px 14px;margin-bottom:16px"><div class="cmp-chart-h">' + esc(D.products[ST.p].label[lang()] || ST.p) + ' <span>· ' + esc(ST.u === 'orig' ? t.orig : ST.u === 'idx' ? t.idx : unitLbl(ST.u, p.per)) + ' · ' + esc(t.yrs[ST.r_i != null ? ST.r_i : 3]) + '</span></div>' + (ST.u === 'orig' ? '<div class="di-movers-hint" style="margin:0 0 8px">' + esc(t.small) + '</div>' + smallMultiples(list, p, t) : (chartHtml(list, p, t) || '<p class="di-movers-hint">' + esc(t.none) + '</p>')) + '</div>';
       h += '<div class="di-card" style="padding:12px 14px;margin-bottom:16px">' + table(list, p, t) + '</div>';
       h += '<p style="margin:-8px 0 14px"><button type="button" id="cp-csv" class="di-compare-select" style="cursor:pointer">' + esc(t.csvBtn) + '</button> <span class="di-movers-hint">' + esc(t.csvNote) + '</span></p>';
     }
+    h += '</div></div>';
     h += '<p class="di-movers-hint">' + (ST.u === 'idx' ? esc(t.baseNote) + ' ' : '') + esc(t.fxNote) + ' ' + esc(t.fxMiss) + (SKIP ? ' <strong>' + SKIP + ' ' + esc(t.skipN) + '.</strong>' : '') + ' <a href="metodologia.html" style="color:inherit">' + esc(t.meth) + '</a></p>';
     root.innerHTML = h; bind(root, p);
     try { var q = new URLSearchParams(); q.set('p', ST.p); q.set('c', ST.c.join(',')); q.set('u', ST.u); q.set('r', ST.r_i != null ? ST.r_i : 3); if (ST.old) q.set('f', 'all'); if (ST.k !== 'all') q.set('k', ST.k); var mk = Object.keys(ST.m).filter(function (c) { return ST.m[c]; }).map(function (c) { return c + ':' + ST.m[c]; }); if (mk.length) q.set('m', mk.join(',')); history.replaceState(null, '', '?' + q.toString()); } catch (e) {}
