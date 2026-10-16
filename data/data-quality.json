@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T09:39:08Z",
+ "generatedAt": "2026-10-16T12:48:09Z",
  "summary": {
   "files": 65,
   "errors": 0,
@@ -193,10 +193,10 @@
    "warnings": [],
    "stats": {
     "series": 686,
-    "points": 47632,
+    "points": 47658,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T09:38:09Z",
+   "generatedAt": "2026-10-16T09:48:28Z",
    "info": [
     "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86) [KNOWN_VERIFIED_ANOMALY]",
     "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3) [KNOWN_VERIFIED_ANOMALY]",
@@ -1312,7 +1312,7 @@
     "BG/eu-bg-tp-exp-dz: salto 22.265 -> 456.673 en 2022 (mediana previa 7.68)",
     "BG/eu-bg-tp-exp-dz: salto 456.673 -> 456.949 en 2023 (mediana previa 9.4)",
     "BG/eu-bg-tp-exp-dz: salto 456.949 -> 405.138 en 2024 (mediana previa 9.4)",
-    "BG/eu-bg-tp-exp-dz: salto 405.138 -> 530.695 en 2025 (mediana previa 11)",
+    "BG/eu-bg-tp-exp-dz: salto 405.138 -> 531.007 en 2025 (mediana previa 11)",
     "BG/eu-bg-tp-imp-ua: salto 95.627 -> 1106.216 en 2022 (mediana previa 21.1)",
     "CY/eu-cy-trade-exp-live-animals: salto 0.052 -> 1.834 en 2014-01 (mediana previa 0.052)",
     "CY/eu-cy-trade-exp-cereals: salto 0.0 -> 1.252 en 2008-09 (mediana previa 0.001)",
@@ -1324,10 +1324,10 @@
    ],
    "stats": {
     "series": 1785,
-    "points": 404335,
+    "points": 405570,
     "lines": 0
    },
-   "generatedAt": "2026-10-10T12:57:05Z",
+   "generatedAt": "2026-10-16T10:59:18Z",
    "info": [],
    "nWarnings": 86,
    "nErrors": 0
