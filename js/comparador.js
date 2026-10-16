@@ -48,7 +48,7 @@
   };
   Object.keys(X).forEach(function (l) { for (var k in X[l]) T[l][k] = X[l][k]; for (var k2 in Y[l]) T[l][k2] = Y[l][k2]; });
   var COL = ['#2f6b4a', '#c0662d', '#3b6fa8', '#8c5a9e', '#b08a1f', '#5f6b70'];
-  var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'idx', r: 10, m: {} }, D = null, FX = null, SKIP = 0;
+  var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'IT', 'DE', 'US', 'CA'], u: 'idx', r: 10, m: {} }, D = null, FX = null, SKIP = 0;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -71,7 +71,7 @@
   // Frescura: un dato esta "antiguo" si su ultimo punto va mas de ~6 meses por detras del mas reciente del producto.
   var OLD_DAYS = 180;
   function refDate(p) { return p.series.reduce(function (a, s) { return s.latest[0] > a ? s.latest[0] : a; }, ''); }
-  function isOld(s, p) { if (s.fs) return OKST.indexOf(s.fs) < 0; return (Date.parse(refDate(p)) - Date.parse(s.latest[0])) / 864e5 > OLD_DAYS; }
+  function isOld(s, p) { var lag = (Date.parse(refDate(p)) - Date.parse(s.latest[0])) / 864e5; if (s.fs) { if (OKST.indexOf(s.fs) > -1) return false; if (s.fs === 'DELAYED' || s.fs === 'STALE') return lag > OLD_DAYS; /* publicacion algo retrasada: se compara y se ve su fecha; HISTORICAL/DISCONTINUED siguen ocultas */ return true; } return (Date.parse(refDate(p)) - Date.parse(s.latest[0])) / 864e5 > OLD_DAYS; }
   /* Pais con varios mercados (España: lonjas provinciales del portal UE): por defecto la serie del pais; ST.m[c] elige otra */
   function pick(p, c) { var b = p.series.filter(function (s) { return s.c === c; })[0], w = ST.m[c]; if (!b || !b.alts || !w || w === (b.m || '')) return b; var a = b.alts.filter(function (x) { return x.m === w; })[0]; if (a) a.alt = true; return a || b; }
   function sel() { var p = D.products[ST.p]; return ST.c.map(function (c) { return pick(p, c); }).filter(function (s) { return s && (ST.old || !isOld(s, p)) && (ST.k === 'all' || s.comp === ST.k); }); }
