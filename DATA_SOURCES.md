@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 140 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 25880 series en el catalogo unificado.
+Resumen: 140 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 25883 series en el catalogo unificado.
 
 ## VERIFIED (140)
 
@@ -35,7 +35,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `cftc` | U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment) | US | US-PD | si/si | no | 0 | Acknowledgement of the CFTC requested. Contributed or licensed third-party materials on cftc.gov may be copyrighted; the Commitments of Trad… |
 | `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `crea_fondiario` | Italy — CREA, Indagine sul mercato fondiario in Italia (Banca Dati dei Valori Fondiari) | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente (CREA, Indagine sul mercato fondiario); las elaboraciones propias deben acreditarse como tales. CREA advierte de que las cif… |
-| `cso_ie` | Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05), Intake of Cows Milk (AKA01), Agricultural Land Sales (ARA02) | IE | CC-BY-4.0 | si/si | si | 124 | El logotipo del CSO tiene límites de uso propios; Dehesa Index no lo usa. |
+| `cso_ie` | Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05), Intake of Cows Milk (AKA01), Agricultural Land Sales (ARA02) | IE | CC-BY-4.0 | si/si | si | 127 | El logotipo del CSO tiene límites de uso propios; Dehesa Index no lo usa. |
 | `csp_lv` | Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk) | LV | CC-BY-4.0 | si/si | si | 51 |  |
 | `csu_cz` | Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area) | CZ | CZ-OPENDATA-FREE | si/si | si | 75 | None declared. Credit is given anyway. |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 718 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
