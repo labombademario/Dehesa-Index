@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T04:20:43Z",
+ "generatedAt": "2026-10-16T05:14:49Z",
  "summary": {
-  "files": 63,
+  "files": 64,
   "errors": 0,
-  "warnings": 19
+  "warnings": 20
  },
  "files": [
   {
@@ -510,10 +510,10 @@
    ],
    "stats": {
     "series": 2891,
-    "points": 186196,
+    "points": 186234,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T18:31:37Z",
+   "generatedAt": "2026-10-16T05:12:57Z",
    "info": [],
    "nWarnings": 185,
    "nErrors": 0
@@ -555,7 +555,7 @@
     "points": 188285,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T18:31:37Z",
+   "generatedAt": "2026-10-16T05:12:57Z",
    "info": [],
    "nWarnings": 68,
    "nErrors": 0
@@ -596,9 +596,47 @@
     "points": 88507,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T18:31:37Z",
+   "generatedAt": "2026-10-16T05:12:57Z",
    "info": [],
    "nWarnings": 24,
+   "nErrors": 0
+  },
+  {
+   "file": "eurostat-eu3-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "RO/ro-es-meatm-b4110-ths_hd: salto 90.0 -> 83410.0 en 2010-03 (mediana previa 770)",
+    "RO/ro-es-meatm-b4110-ths_hd: salto 0 -> 38530.0 en 2012-03 (mediana previa 630)",
+    "RO/ro-es-meatm-b4110-ths_hd: salto 38530.0 -> 46990.0 en 2012-04 (mediana previa 630)",
+    "RO/ro-es-meatm-b4110-ths_t: salto 0 -> 710.0 en 2010-03 (mediana previa 10)",
+    "RO/ro-es-meatm-b4200-ths_hd: salto 30000 -> 326000 en 2007-04 (mediana previa 6e+03)",
+    "SI/si-es-eaa-am022000: salto 0.36 -> 1.41 en 2005 (mediana previa 0.05)",
+    "SI/si-es-eaa-am022000: salto 1.41 -> 2.69 en 2006 (mediana previa 0.05)",
+    "CY/cy-es-crop-c1110-production: salto 9660.0 -> 11410.0 en 2022 (mediana previa 320)",
+    "CY/cy-es-crop-c1111-production: salto 9660.0 -> 11410.0 en 2022 (mediana previa 320)",
+    "CY/cy-es-meatm-b7300-ths_hd: salto 10390.0 -> 54810.0 en 2006-12 (mediana previa 620)",
+    "CY/cy-es-meatm-b7300-ths_hd: salto 0 -> 50420.0 en 2008-12 (mediana previa 1.39e+03)",
+    "MT/mt-es-meatm-b7300-ths_hd: salto 150.0 -> 4640.0 en 2000-12 (mediana previa 150)",
+    "MT/mt-es-meatm-b7300-ths_hd: salto 0 -> 4240.0 en 2002-05 (mediana previa 130)",
+    "MT/mt-es-meatm-b7300-ths_hd: salto 4240.0 -> 5650.0 en 2002-06 (mediana previa 130)",
+    "MT/mt-es-meatm-b7300-ths_hd: salto 5650.0 -> 4000 en 2002-07 (mediana previa 130)",
+    "MT/mt-es-meatm-b7300-ths_hd: salto 4000 -> 4000 en 2002-08 (mediana previa 130)",
+    "MT/mt-es-meatm-b7300-ths_t: salto 110.0 -> 3520.0 en 2000-12 (mediana previa 110)",
+    "MT/mt-es-meatm-b7300-ths_t: salto 0 -> 3020.0 en 2002-05 (mediana previa 70)",
+    "MT/mt-es-meatm-b7300-ths_t: salto 3020.0 -> 4360.0 en 2002-06 (mediana previa 70)",
+    "MT/mt-es-meatm-b7300-ths_t: salto 4360.0 -> 2800.0 en 2002-07 (mediana previa 70)",
+    "MT/mt-es-meatm-b7300-ths_t: salto 2800.0 -> 2800.0 en 2002-08 (mediana previa 70)"
+   ],
+   "stats": {
+    "series": 1978,
+    "points": 122536,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-16T05:12:57Z",
+   "info": [],
+   "nWarnings": 21,
    "nErrors": 0
   },
   {
