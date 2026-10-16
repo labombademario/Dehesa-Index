@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T00:50:10Z",
+ "generatedAt": "2026-10-16T02:58:06Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -4555,20 +4555,20 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "VERIFIED",
-   "licenseId": "KCFED-OWNER-DECISION",
-   "commercialReuse": "yes",
-   "derivatives": "yes",
+   "licenseStatus": "PENDING",
+   "licenseId": "KCFED-NOT-COMMERCIAL",
+   "commercialReuse": "no",
+   "derivatives": "unclear",
    "attribution": "Source: Federal Reserve Bank of Kansas City, Agricultural Credit Survey",
-   "lastChecked": "2026-10-09",
+   "lastChecked": "2026-10-15",
    "verification": "REGISTRY",
-   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidence": "PENDING",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
-    "result": "READY",
+    "result": "NOT_READY",
     "reasons": [
-     "Registro: VERIFIED, uso comercial y derivados permitidos"
+     "Registro: PENDING (licencia poco clara o no verificable)"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -4576,7 +4576,8 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ]
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
    "sourceId": "knmi_daggegevens",
@@ -5887,9 +5888,9 @@
    },
    "licenseStatus": "PENDING",
    "licenseId": "UNKNOWN",
-   "commercialReuse": "unclear",
+   "commercialReuse": "no",
    "derivatives": "unclear",
-   "lastChecked": "2026-10-05",
+   "lastChecked": "2026-10-15",
    "verification": "REGISTRY",
    "legalConfidence": "PENDING",
    "registryAlignment": "ALIGNED",

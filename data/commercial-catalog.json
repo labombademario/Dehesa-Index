@@ -1,20 +1,20 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T00:02:15Z",
+ "generatedAt": "2026-10-16T02:58:06Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
   "sources": 137,
-  "sourcesApto": 125,
+  "sourcesApto": 124,
   "sourcesCondiciones": 8,
-  "sourcesNoApto": 4,
+  "sourcesNoApto": 5,
   "datasets": 250,
-  "datasets_apto": 157,
+  "datasets_apto": 156,
   "datasets_condiciones": 82,
   "datasets_parcial": 4,
-  "datasets_no-apto": 3,
+  "datasets_no-apto": 4,
   "datasets_reviewBeforeSelling": 0,
   "derived": 42
  },
@@ -1237,17 +1237,18 @@
    "name": "Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District)",
    "url": "https://www.kansascityfed.org/agriculture/ag-credit-survey/",
    "country": "US",
-   "licenseId": "KCFED-OWNER-DECISION",
-   "licenseName": "Federal Reserve Bank of Kansas City: terms accepted by the site owner",
+   "licenseId": "KCFED-NOT-COMMERCIAL",
+   "licenseName": "Federal Reserve Bank of Kansas City: terms not reviewed; owner decision not to use commercially",
    "licenseUrl": "https://www.kansascityfed.org/about-us/terms-of-use/",
-   "verdict": "apto",
-   "status": "VERIFIED",
-   "legalConfidence": "OWNER_ACCEPTED",
-   "commercialUse": "yes",
-   "derivatives": "yes",
-   "redistribution": "yes",
+   "verdict": "no-apto",
+   "status": "PENDING",
+   "legalConfidence": "PENDING",
+   "commercialUse": "no",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
    "attribution": "Source: Federal Reserve Bank of Kansas City, Agricultural Credit Survey",
-   "conditions": "No implied endorsement by the Federal Reserve."
+   "conditions": "Sin uso comercial por decisión del propietario. No implied endorsement by the Federal Reserve.",
+   "why": "licencia PENDING en el registro"
   },
   {
    "id": "knmi_daggegevens",
@@ -1784,7 +1785,7 @@
    "verdict": "no-apto",
    "status": "PENDING",
    "legalConfidence": "PENDING",
-   "commercialUse": "unclear",
+   "commercialUse": "no",
    "derivatives": "unclear",
    "redistribution": "unclear",
    "attribution": null,
@@ -4921,15 +4922,18 @@
   {
    "path": "data/us-kcfed-stats.json",
    "scope": "fichero",
-   "verdict": "apto",
+   "verdict": "no-apto",
    "sources": [
+    "kansas_city_fed"
+   ],
+   "excludedSources": [
     "kansas_city_fed"
    ],
    "parts": [
     {
      "scope": "pais:US",
      "sourceId": "kansas_city_fed",
-     "verdict": "apto"
+     "verdict": "no-apto"
     }
    ]
   },

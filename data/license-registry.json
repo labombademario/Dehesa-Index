@@ -1120,7 +1120,7 @@
    "licenseId": "UNKNOWN",
    "licenseName": "No specific licence located; SIAVI Data is described as open and reproducible but the general gob.mx terms restrict materials to personal/non-commercial use (conflict unresolved)",
    "licenseUrl": "https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html",
-   "commercialUse": "unclear",
+   "commercialUse": "no",
    "derivatives": "unclear",
    "redistribution": "unclear",
    "attributionRequired": true,
@@ -1128,13 +1128,13 @@
    "additionalRestrictions": "Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attribution, but that is unconfirmed. Written confirmation from SNICE / Secretaría de Economía is required.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-10-05",
+   "verifiedAt": "2026-10-15",
    "status": "PENDING",
    "confidence": "low",
-   "evidence": "The SNICE LIGIE page has no copyright, terms or licence statement. Review received 2026-10-05: SIAVI Data is described as open and reproducible, but the general gob.mx terms restrict materials to personal/non-commercial use, and no specific licence resolving that conflict has been found. Status stays PENDING (commercialUse and redistribution unknown, attribution required).",
+   "evidence": "The SNICE LIGIE page has no copyright, terms or licence statement. Review received 2026-10-05: SIAVI Data is described as open and reproducible, but the general gob.mx terms restrict materials to personal/non-commercial use, and no specific licence resolving that conflict has been found. Status stays PENDING (commercialUse and redistribution unknown, attribution required). | Decisión del propietario del sitio (2026-10-15): estos datos se muestran con cita de la fuente pero no se usarán comercialmente ni se venderán.",
    "used": true,
    "aliases": [],
-   "notes": null,
+   "notes": "Se publica con cita; queda fuera de la parte de pago hasta tener confirmación escrita de SNICE/Secretaría de Economía.",
    "short": "SNICE (México)",
    "legalConfidence": "PENDING",
    "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
@@ -2332,27 +2332,27 @@
    "name": "Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District)",
    "url": "https://www.kansascityfed.org/agriculture/ag-credit-survey/",
    "country": "US",
-   "licenseId": "KCFED-OWNER-DECISION",
-   "licenseName": "Federal Reserve Bank of Kansas City: terms accepted by the site owner",
+   "licenseId": "KCFED-NOT-COMMERCIAL",
+   "licenseName": "Federal Reserve Bank of Kansas City: terms not reviewed; owner decision not to use commercially",
    "licenseUrl": "https://www.kansascityfed.org/about-us/terms-of-use/",
-   "commercialUse": "yes",
-   "derivatives": "yes",
-   "redistribution": "yes",
+   "commercialUse": "no",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
    "attributionRequired": true,
    "attributionText": "Source: Federal Reserve Bank of Kansas City, Agricultural Credit Survey",
-   "additionalRestrictions": "No implied endorsement by the Federal Reserve.",
+   "additionalRestrictions": "Sin uso comercial por decisión del propietario. No implied endorsement by the Federal Reserve.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-10-09",
-   "status": "VERIFIED",
+   "verifiedAt": "2026-10-15",
+   "status": "PENDING",
    "confidence": "low",
-   "evidence": "Marked VERIFIED by the site owner's decision (2026-10-09); the Bank's terms of use were not independently reviewed in this session.",
+   "evidence": "Decisión del propietario del sitio (2026-10-15): estos datos se muestran con cita de la fuente pero no se usarán comercialmente ni se venderán. Los términos de uso del banco no se han revisado de forma independiente.",
    "used": true,
    "aliases": [],
-   "notes": null,
+   "notes": "Se publica en la web con cita; queda fuera de la parte de pago. Revisar los términos (licenseUrl) antes de cualquier cambio.",
    "short": "KC Fed",
-   "legalConfidence": "OWNER_ACCEPTED",
-   "legalConfidenceReason": "Verde por decision del propietario del sitio; los terminos de uso no se revisaron de forma independiente."
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Términos de uso sin revisar; decisión del propietario: sin uso comercial."
   },
   "usda_nrcs": {
    "name": "USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API)",
@@ -5696,6 +5696,10 @@
    "snice_mx": {
     "since": "2026-10-01",
     "nextAction": "Solicitar confirmación por escrito a SNICE/Secretaría de Economía sobre reutilización comercial y redistribución automatizada de los datos SIAVI/SNICE."
+   },
+   "kansas_city_fed": {
+    "since": "2026-10-15",
+    "nextAction": "Sin uso comercial por decisión del propietario. Leer los términos de uso del banco antes de volver a considerarlo."
    }
   }
  }
