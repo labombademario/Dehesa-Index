@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T19:48:16Z",
+ "generatedAt": "2026-10-16T21:41:37Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 169,
+  "total": 170,
   "byStatus": {
-   "ACTIVE": 139,
+   "ACTIVE": 140,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3369,7 +3369,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (14016 series en el catalogo unificado)",
+   "dataset": "Ya integrada (15243 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -5455,6 +5455,47 @@
    "lastChecked": "2026-10-15",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "noaa_fisheries",
+   "registryId": "noaa_fisheries",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "NOAA Fisheries — Fisheries One Stop Shop (FOSS), commercial landings",
+   "dataset": "Ya integrada (38 series en el catalogo unificado)",
+   "products": [
+    "poultry"
+   ],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC0-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: NOAA Fisheries, Fisheries One Stop Shop (FOSS)",
+   "lastChecked": "2026-10-16",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

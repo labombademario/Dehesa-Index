@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 140 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 25883 series en el catalogo unificado.
+Resumen: 141 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 27148 series en el catalogo unificado.
 
-## VERIFIED (140)
+## VERIFIED (141)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -58,7 +58,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_pdo_candiago` | Candiago et al. (2022) - EU-PDO: inventario geoespacial de las DOP de vino de Europa (Scientific Data; figshare) | EU | CC0-1.0 | si/si | si | 0 | El contorno se deriva de municipios de EuroRegionalMap (EuroGeographics) y del registro eAmbrosia a nov-2021: es orientativo. Solo DOP de vi… |
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 14016 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 15243 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 1808 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
 | `fek_gr` | Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023 | EL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y e… |
@@ -106,6 +106,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `monitorul_ro` | Monitorul Oficial al României — HG 1.571/2022 y ordinele MADR de pagos directos | RO | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el Monitorul Oficial. Todo se leyó en copias de terceros (legeaz.net, agrointel.ro, sit… |
 | `nasa_power` | NASA POWER (Prediction Of Worldwide Energy Resources) | US | CC-BY-4.0 | si/si | si | 0 | Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees. |
 | `nn_hr` | Narodne novine — Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025, 49/2026, 78/2026) | HR | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto de Narodne novine. El texto del Pravilnik se leyó en una copia (zakon.hr) y en… |
+| `noaa_fisheries` | NOAA Fisheries — Fisheries One Stop Shop (FOSS), commercial landings | US | CC0-1.0 | si/si | no | 38 | Sin uso del logotipo de NOAA ni insinuacion de respaldo. NOAA agrupa como «withheld for confidentiality» lo que no puede desglosar por espec… |
 | `noaa_ncei` | NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv) | US | US-PD | si/si | si | 149 | No implied NOAA endorsement. |
 | `odepa_chile` | ODEPA (Chile) - Portal de datos abiertos | CL | CC-BY | si/si | si | 130 | Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas. |
 | `ons` | UK Office for National Statistics (consumer price index) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice… |

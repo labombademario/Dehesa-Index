@@ -69,12 +69,12 @@ def main():
         if s: ser.append(s)
     notesp = "Main species chosen by Dehesa Index from the latest published value; NOAA sums all states. " + "NOAA revises recent years."
     for nm in [k for k, _ in sorted(((k, v.get(last, 0)) for k, v in sp_v.items() if "WITHHELD" not in k.upper() and k != "UNSPECIFIED"), key=lambda x: -x[1])[:8]]:
-        for d, u, txt in ((sp_v, "USD", "value"), (sp_lb, "lb", "quantity (pounds live weight)")):
-            s = build("us-noaa-fish-sp-%s-%s" % (slug(nm), u.lower()), "Commercial fish landings: %s, %s (NOAA Fisheries)" % (nice(nm), txt), u, d.get(nm, {}), "NOAA FOSS %s" % nm, notesp)
+        for d, u, txt in ((sp_v, "USD", "value (USD"), (sp_lb, "lb", "quantity (pounds live weight")):
+            s = build("us-noaa-fish-sp-%s-%s" % (slug(nm), u.lower()), "Commercial fish landings: %s, %s, NOAA Fisheries)" % (nice(nm), txt), u, d.get(nm, {}), "NOAA FOSS %s" % nm, notesp)
             if s: ser.append(s)
     for nm in [k for k, _ in sorted(((k, v.get(last, 0)) for k, v in st_v.items() if k), key=lambda x: -x[1])[:10]]:
-        for d, u, txt in ((st_v, "USD", "value"), (st_lb, "lb", "quantity (pounds live weight)")):
-            s = build("us-noaa-fish-st-%s-%s" % (slug(nm), u.lower()), "Commercial fish landings in %s: %s (NOAA Fisheries)" % (nm.title(), txt), u, d.get(nm, {}), "NOAA FOSS %s" % nm,
+        for d, u, txt in ((st_v, "USD", "value (USD"), (st_lb, "lb", "quantity (pounds live weight")):
+            s = build("us-noaa-fish-st-%s-%s" % (slug(nm), u.lower()), "Commercial fish landings in %s: %s, NOAA Fisheries)" % (nm.title(), txt), u, d.get(nm, {}), "NOAA FOSS %s" % nm,
                       "Main states chosen by Dehesa Index from the latest published value. " + NOTE)
             if s: ser.append(s)
     ids = [s["id"] for s in ser]

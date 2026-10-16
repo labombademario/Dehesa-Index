@@ -4159,6 +4159,32 @@
    "short": "KSH",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: condiciones de uso del KSH (CC BY 4.0)."
+  },
+  "noaa_fisheries": {
+   "name": "NOAA Fisheries — Fisheries One Stop Shop (FOSS), commercial landings",
+   "url": "https://www.fisheries.noaa.gov/foss",
+   "country": "US",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero 1.0 (U.S. Government work, public domain)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: NOAA Fisheries, Fisheries One Stop Shop (FOSS)",
+   "additionalRestrictions": "Sin uso del logotipo de NOAA ni insinuacion de respaldo. NOAA agrupa como «withheld for confidentiality» lo que no puede desglosar por especie.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-16",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Catalogo federal data.gov, ficha «Fisheries One Stop Shop Public Data 2009 - Present» (catalog.data.gov/dataset/fisheries-one-stop-shop-public-data-2009-present): license https://creativecommons.org/publicdomain/zero/1.0/. Ficha InPort 10574 de NOAA: datos publicos y no confidenciales. Obra del Gobierno federal de EE. UU.",
+   "used": true,
+   "aliases": [],
+   "notes": "API ORDS sin clave (apps-st.fisheries.noaa.gov/ods/foss/landings/), libras de peso vivo y dolares corrientes por ano, estado y especie. La ficha InPort dice que no hay acceso maquina a maquina, pero la API ORDS responde (probado desde GitHub el 16-oct-2026).",
+   "short": "NOAA Fisheries",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia explicita (CC0) en el catalogo federal de datos."
   }
  },
  "files": {
@@ -5881,6 +5907,41 @@
     "HU": "ksh_hu"
    },
    "notes": "Hungria: superficies, produccion y rendimientos por cultivo, uso, precio y alquiler de la tierra, censo ganadero, carne, leche y huevos (KSH STADAT). scripts/update-hu-ksh.py."
+  },
+  "data/eurostat-fish-stats.json": {
+   "byCountry": {
+    "ES": "eurostat",
+    "FR": "eurostat",
+    "DE": "eurostat",
+    "BE": "eurostat",
+    "AT": "eurostat",
+    "PT": "eurostat",
+    "IT": "eurostat",
+    "DK": "eurostat",
+    "NL": "eurostat",
+    "PL": "eurostat",
+    "EL": "eurostat",
+    "IE": "eurostat",
+    "FI": "eurostat",
+    "BG": "eurostat",
+    "HR": "eurostat",
+    "LT": "eurostat",
+    "SK": "eurostat",
+    "CZ": "eurostat",
+    "EE": "eurostat",
+    "HU": "eurostat",
+    "LV": "eurostat",
+    "RO": "eurostat",
+    "SE": "eurostat",
+    "SI": "eurostat"
+   },
+   "notes": "Pesca y acuicultura por pais: capturas (fish_ca_main), desembarques con valor y precio en primera venta (fish_ld_main), acuicultura (fish_aq2a) y flota (fish_fleet_alt). scripts/update-eurostat-fish.py."
+  },
+  "data/us-noaa-fish-stats.json": {
+   "byCountry": {
+    "US": "noaa_fisheries"
+   },
+   "notes": "EE. UU.: desembarques comerciales de pesca por ano, especie y estado (NOAA Fisheries, FOSS). scripts/update-us-noaa-fish.py."
   }
  },
  "derived": [

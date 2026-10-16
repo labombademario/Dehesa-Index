@@ -1,18 +1,18 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T17:40:21Z",
+ "generatedAt": "2026-10-16T21:41:38Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 139,
-  "sourcesApto": 126,
+  "sources": 140,
+  "sourcesApto": 127,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 276,
-  "datasets_apto": 160,
-  "datasets_condiciones": 104,
+  "datasets": 278,
+  "datasets_apto": 161,
+  "datasets_condiciones": 105,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
   "datasets_reviewBeforeSelling": 0,
@@ -1605,6 +1605,23 @@
    "redistribution": "yes",
    "attribution": "Izvor: Narodne novine, Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025) i izmjene (NN 49/2026, 78/2026). Izvaci.",
    "conditions": "Las reglas son un resumen propio hecho a mano; manda el texto de Narodne novine. El texto del Pravilnik se leyó en una copia (zakon.hr) y en Narodne novine. No se han comprobado los términos de uso del sitio de Narodne novine, así que la confianza es media. Los importes de las ayudas asociadas 32.02 a 32.09 proceden de las fichas informativas de la agencia de pagos (apprrr.hr) y de la presentación «Kampanja 2026» de ruralnirazvoj.hr: son páginas informativas de la administración croata, no el texto de la norma, y no se han revisado sus términos de uso; se muestran como cifras con cita."
+  },
+  {
+   "id": "noaa_fisheries",
+   "name": "NOAA Fisheries — Fisheries One Stop Shop (FOSS), commercial landings",
+   "url": "https://www.fisheries.noaa.gov/foss",
+   "country": "US",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero 1.0 (U.S. Government work, public domain)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: NOAA Fisheries, Fisheries One Stop Shop (FOSS)",
+   "conditions": "Sin uso del logotipo de NOAA ni insinuacion de respaldo. NOAA agrupa como «withheld for confidentiality» lo que no puede desglosar por especie."
   },
   {
    "id": "noaa_ncei",
@@ -3710,6 +3727,136 @@
    ]
   },
   {
+   "path": "data/eurostat-fish-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:BE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:BG",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:CZ",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:ES",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FI",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FR",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HR",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HU",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LV",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:PL",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:PT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:RO",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SI",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SK",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
    "path": "data/eurostat-structure-stats.json",
    "scope": "fichero",
    "verdict": "condiciones",
@@ -5361,6 +5508,21 @@
     {
      "scope": "pais:US",
      "sourceId": "usda_nass",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-noaa-fish-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "noaa_fisheries"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "noaa_fisheries",
      "verdict": "apto"
     }
    ]

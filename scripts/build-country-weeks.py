@@ -21,7 +21,7 @@ COUNTRIES = ['ES', 'FR', 'IT', 'DE', 'US']
 MOVERS = 8; RELEASES = 10; MAX_PER_GROUP = 2; NEWS_N = 8; MAX_PER_SOURCE = 2
 BLOCK_ORDER = ['precios', 'produccion', 'comercio', 'costes', 'otros']
 MARKETS = {'quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions', 'product', 'idx_perc'}
-PRODUCTION = {'production', 'crops', 'crops_regions', 'livestock', 'stocks', 'organic'}
+PRODUCTION = {'production', 'crops', 'crops_regions', 'livestock', 'stocks', 'organic', 'fish'}
 TRADE = {'trade', 'partners'}
 COSTS = {'inputs', 'inputs_f', 'inputs_a', 'costs', 'prices_paid', 'idx_pag'}
 
