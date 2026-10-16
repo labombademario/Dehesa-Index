@@ -27,7 +27,7 @@ def table(code):
     for k in d["id"]:
         c = d["dimension"][k]["category"]; idx = c["index"]
         keys = sorted(idx, key=lambda x: idx[x]) if isinstance(idx, dict) else list(idx)
-        lab = c.get("label", {}); un = {kk: (v.get("base") or "") for kk, v in (c.get("unit") or {}).items()}
+        lab = c.get("label", {}); un = {kk: (v.get("base") or v.get("label") or "") for kk, v in (c.get("unit") or {}).items()}
         dims.append((k, [(kk, lab.get(kk, kk)) for kk in keys], un))
     return {"dims": dims, "value": d["value"], "size": d["size"], "updated": d.get("updated")}
 def cell(t, ix):
@@ -61,9 +61,9 @@ def milk():
     for i0, (sk, sl) in enumerate(st):
         for j, (ok, ol) in enumerate(ori):
             pts = [(per(tk), cell(t, (i0, i, j))) for i, (tk, _) in enumerate(tm)]
-            unit = un.get(sk) or ""
-            lab = "Cows' milk intake by processors and co-ops, %s origin: %s (%s, CSO)" % (ol.lower(), sl.lower().replace("intake of cows milk by milk processors and co-ops", "volume"), unit or "see table")
-            s = build("ie-cso-aka01-%s-%s" % (slug(sl)[:24], slug(ol)), "milk", lab, unit or "", "annual", pts, "CSO AKA01")
+            unit = un.get(sk) or ("%" if "Content" in sl else "million litres")
+            lab = "Cows' milk intake by processors and co-ops, %s origin: %s (%s, CSO)" % (ol.lower(), sl.lower().replace("intake of cows milk by milk processors and co-ops", "volume"), unit)
+            s = build("ie-cso-aka01-%s-%s" % (slug(sl)[:24], slug(ol)), "milk", lab, unit, "annual", pts, "CSO AKA01")
             if s: out.append(s)
     log("AKA01", len(out), "series"); return out
 def land():
