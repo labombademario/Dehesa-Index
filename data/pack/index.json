@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15",
+ "generatedAt": "2026-10-16",
  "policy": "Solo fuentes con veredicto comercial apto o con condiciones (data/commercial-summary.json). Sin estimaciones ni relleno.",
  "columns": [
   "product_key",
@@ -18,7 +18,7 @@
  "summary": {
   "files": 81,
   "excluded": 0,
-  "rows": 38125
+  "rows": 37033
  },
  "files": [
   {
@@ -695,13 +695,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 559,
-   "first": "2015-11-22",
-   "last": "2026-08-02",
+   "rows": 10,
+   "first": "2026-08-09",
+   "last": "2026-10-11",
    "csv": "data/pack/eu/avena.csv",
    "xlsx": "data/pack/eu/avena.xlsx",
-   "csvBytes": 100075,
-   "xlsxBytes": 32878
+   "csvBytes": 1880,
+   "xlsxBytes": 7390
   },
   {
    "product": "azucar",
@@ -788,13 +788,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 557,
-   "first": "2015-11-22",
-   "last": "2026-08-02",
+   "rows": 14,
+   "first": "2023-07-23",
+   "last": "2026-10-11",
    "csv": "data/pack/eu/centeno.csv",
    "xlsx": "data/pack/eu/centeno.xlsx",
-   "csvBytes": 101957,
-   "xlsxBytes": 32813
+   "csvBytes": 2653,
+   "xlsxBytes": 7623
   },
   {
    "product": "cerdo",
