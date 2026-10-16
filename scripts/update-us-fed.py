@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""EE. UU.: divisas (H.10), indices del dolar (H.10) y tipos de mercado (H.15) de la Reserva Federal (Board of Governors), Programa de Descarga de Datos -> data/us-fed-stats.json (countries.US, extend).
+"""EE. UU.: divisas de los paises con ficha (H.10), indices del dolar (H.10) y tipos de mercado (H.15) de la Reserva Federal (Board of Governors), Programa de Descarga de Datos -> data/us-fed-stats.json (countries.US, extend).
 Todo son series mensuales publicadas por el Board, salvo los rendimientos del Tesoro a 2-30 anos: el Board solo da el dato diario en ese paquete, y aqui se calcula la media aritmetica de los dias con dato de cada mes ya cerrado (se anota en periodNote). Sin estimaciones: un 'ND'/'NA' se omite. Un fallo no borra lo anterior."""
 import collections, csv, datetime, io, json, re, sys, time, urllib.request
 from pathlib import Path
@@ -29,14 +29,13 @@ def table(t):
                 except ValueError: pass
     return out
 # H.10 mensual: id -> (codigo, nombre ES/EN en etiqueta, forma de cotizacion)
-FX = [('RXI$US_N.M.EU', 'eur', 'Euro area', 'USD per EUR'), ('RXI$US_N.M.UK', 'gbp', 'United Kingdom', 'USD per GBP'), ('RXI$US_N.M.AL', 'aud', 'Australia', 'USD per AUD'),
-      ('RXI$US_N.M.NZ', 'nzd', 'New Zealand', 'USD per NZD'), ('RXI_N.M.BZ', 'brl', 'Brazil', 'BRL per USD'), ('RXI_N.M.CA', 'cad', 'Canada', 'CAD per USD'),
-      ('RXI_N.M.CH', 'cny', 'China', 'CNY per USD'), ('RXI_N.M.DN', 'dkk', 'Denmark', 'DKK per USD'), ('RXI_N.M.HK', 'hkd', 'Hong Kong', 'HKD per USD'),
-      ('RXI_N.M.IN', 'inr', 'India', 'INR per USD'), ('RXI_N.M.JA', 'jpy', 'Japan', 'JPY per USD'), ('RXI_N.M.MA', 'myr', 'Malaysia', 'MYR per USD'),
-      ('RXI_N.M.MX', 'mxn', 'Mexico', 'MXN per USD'), ('RXI_N.M.NO', 'nok', 'Norway', 'NOK per USD'), ('RXI_N.M.SF', 'zar', 'South Africa', 'ZAR per USD'),
-      ('RXI_N.M.SI', 'sgd', 'Singapore', 'SGD per USD'), ('RXI_N.M.KO', 'krw', 'South Korea', 'KRW per USD'), ('RXI_N.M.SL', 'lkr', 'Sri Lanka', 'LKR per USD'),
-      ('RXI_N.M.SD', 'sek', 'Sweden', 'SEK per USD'), ('RXI_N.M.SZ', 'chf', 'Switzerland', 'CHF per USD'), ('RXI_N.M.TA', 'twd', 'Taiwan', 'TWD per USD'),
-      ('RXI_N.M.TH', 'thb', 'Thailand', 'THB per USD')]  # Venezuela (VEF) se omite: moneda redenominada, la serie no es comparable
+FX = [('RXI$US_N.M.EU', 'eur', 'Euro area', 'USD per EUR'),
+      ('RXI$US_N.M.UK', 'gbp', 'United Kingdom', 'USD per GBP'),
+      ('RXI$US_N.M.AL', 'aud', 'Australia', 'USD per AUD'),
+      ('RXI_N.M.CA', 'cad', 'Canada', 'CAD per USD'),
+      ('RXI_N.M.DN', 'dkk', 'Denmark', 'DKK per USD'),
+      ('RXI_N.M.SD', 'sek', 'Sweden', 'SEK per USD'),
+      ('RXI_N.M.SZ', 'chf', 'Switzerland', 'CHF per USD')]  # solo las monedas de paises con ficha en Dehesa Index (euro, Reino Unido, Australia, Canada, Suiza, Dinamarca, Suecia); las demas divisas del H.10 se descartaron a proposito
 IDX = [('JRXWTFB_N.M', 'broad', 'Nominal broad U.S. dollar index'), ('JRXWTFN_N.M', 'afe', 'Nominal U.S. dollar index vs advanced foreign economies'), ('JRXWTFO_N.M', 'eme', 'Nominal U.S. dollar index vs emerging market economies')]
 RATES = [('RIFSPBLP_N.M', 'prime', 'Bank prime loan rate (monthly average)'), ('RIFSRP_F02_N.M', 'primary-credit', 'Federal Reserve primary credit (discount window) rate, monthly average'),
          ('RIFSGFSW04_N.M', 'bill-4w', 'U.S. Treasury bill, secondary market, 4-week (monthly average)'), ('RIFSGFSM03_N.M', 'bill-3m', 'U.S. Treasury bill, secondary market, 3-month (monthly average)'),
@@ -93,7 +92,7 @@ def main():
             s = mk('us-fed-cmt-' + cc, 'U.S. Treasury yield, constant maturity, %s (monthly mean of daily values)' % lab, '%', pts, NOTE_CMT); s and out.append(s)
     log('series', len(out))
     LOGF.write_text('\n'.join(LOG[-60:]) + '\n', encoding='utf-8')
-    if len(out) < 40: log('demasiado pocas series; no se escribe'); sys.exit(1)
+    if len(out) < 25: log('demasiado pocas series; no se escribe'); sys.exit(1)
     src = {'name': 'Board of Governors of the Federal Reserve System (H.10 Foreign Exchange Rates, H.15 Selected Interest Rates)', 'url': 'https://www.federalreserve.gov/data.htm', 'license': 'Public domain (Federal Reserve Board; cite the Board as the source)'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'countries': {'US': {'name': 'United States', 'extend': True, 'source': src, 'series': out}}, 'log': LOG[-30:]}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
