@@ -5090,7 +5090,7 @@
    "byCountry": {
     "US": "fed_board"
    },
-   "notes": "Divisas y indices del dolar (H.10) y tipos de mercado (H.15) del Board de la Reserva Federal; los rendimientos del Tesoro a 2-30 anos son la media mensual que calcula Dehesa Index sobre el dato diario del Board (scripts/update-us-fed.py)."
+   "notes": "Divisas y indices del dolar (H.10) y tipos de mercado (H.15) del Board de la Reserva Federal; el rendimiento del Tesoro a 10 anos es la media mensual que calcula Dehesa Index sobre el dato diario del Board (scripts/update-us-fed.py)."
   },
   "data/us-snotel-stats.json": {
    "byCountry": {

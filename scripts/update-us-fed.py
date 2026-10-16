@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""EE. UU.: divisas de los paises con ficha (H.10), indices del dolar (H.10) y tipos de mercado (H.15) de la Reserva Federal (Board of Governors), Programa de Descarga de Datos -> data/us-fed-stats.json (countries.US, extend).
-Todo son series mensuales publicadas por el Board, salvo los rendimientos del Tesoro a 2-30 anos: el Board solo da el dato diario en ese paquete, y aqui se calcula la media aritmetica de los dias con dato de cada mes ya cerrado (se anota en periodNote). Sin estimaciones: un 'ND'/'NA' se omite. Un fallo no borra lo anterior."""
+"""EE. UU.: divisas de los paises con ficha y indice amplio del dolar (H.10), tipo prime y bono a 10 anos (H.15) de la Reserva Federal (Board of Governors), Programa de Descarga de Datos -> data/us-fed-stats.json (countries.US, extend).
+Todo son series mensuales publicadas por el Board, salvo los rendimiento del Tesoro a 10 anos: el Board solo da el dato diario en ese paquete, y aqui se calcula la media aritmetica de los dias con dato de cada mes ya cerrado (se anota en periodNote). Sin estimaciones: un 'ND'/'NA' se omite. Un fallo no borra lo anterior."""
 import collections, csv, datetime, io, json, re, sys, time, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
@@ -36,15 +36,9 @@ FX = [('RXI$US_N.M.EU', 'eur', 'Euro area', 'USD per EUR'),
       ('RXI_N.M.DN', 'dkk', 'Denmark', 'DKK per USD'),
       ('RXI_N.M.SD', 'sek', 'Sweden', 'SEK per USD'),
       ('RXI_N.M.SZ', 'chf', 'Switzerland', 'CHF per USD')]  # solo las monedas de paises con ficha en Dehesa Index (euro, Reino Unido, Australia, Canada, Suiza, Dinamarca, Suecia); las demas divisas del H.10 se descartaron a proposito
-IDX = [('JRXWTFB_N.M', 'broad', 'Nominal broad U.S. dollar index'), ('JRXWTFN_N.M', 'afe', 'Nominal U.S. dollar index vs advanced foreign economies'), ('JRXWTFO_N.M', 'eme', 'Nominal U.S. dollar index vs emerging market economies')]
-RATES = [('RIFSPBLP_N.M', 'prime', 'Bank prime loan rate (monthly average)'), ('RIFSRP_F02_N.M', 'primary-credit', 'Federal Reserve primary credit (discount window) rate, monthly average'),
-         ('RIFSGFSW04_N.M', 'bill-4w', 'U.S. Treasury bill, secondary market, 4-week (monthly average)'), ('RIFSGFSM03_N.M', 'bill-3m', 'U.S. Treasury bill, secondary market, 3-month (monthly average)'),
-         ('RIFSGFSM06_N.M', 'bill-6m', 'U.S. Treasury bill, secondary market, 6-month (monthly average)'), ('RIFSGFSY01_N.M', 'bill-1y', 'U.S. Treasury bill, secondary market, 1-year (monthly average)'),
-         ('RIFSPPNAAD30_N.M', 'cp-nonfin-30', 'AA nonfinancial commercial paper, 30-day (monthly average)'), ('RIFSPPNAAD60_N.M', 'cp-nonfin-60', 'AA nonfinancial commercial paper, 60-day (monthly average)'),
-         ('RIFSPPNAAD90_N.M', 'cp-nonfin-90', 'AA nonfinancial commercial paper, 90-day (monthly average)'), ('RIFSPPFAAD30_N.M', 'cp-fin-30', 'AA financial commercial paper, 30-day (monthly average)'),
-         ('RIFSPPFAAD60_N.M', 'cp-fin-60', 'AA financial commercial paper, 60-day (monthly average)'), ('RIFSPPFAAD90_N.M', 'cp-fin-90', 'AA financial commercial paper, 90-day (monthly average)')]
-CMT = [('RIFLGFCY02_N.B', '2y', '2-year'), ('RIFLGFCY03_N.B', '3y', '3-year'), ('RIFLGFCY05_N.B', '5y', '5-year'), ('RIFLGFCY07_N.B', '7y', '7-year'), ('RIFLGFCY10_N.B', '10y', '10-year'),
-       ('RIFLGFCY20_N.B', '20y', '20-year'), ('RIFLGFCY30_N.B', '30y', '30-year')]
+IDX = [('JRXWTFB_N.M', 'broad', 'Nominal broad U.S. dollar index')]  # los indices frente a economias avanzadas y emergentes se descartaron: no aportan a la ficha
+RATES = [('RIFSPBLP_N.M', 'prime', 'Bank prime loan rate (monthly average)')]  # referencia de los prestamos agricolas; letras, papel comercial y tipo de descuento se descartaron por irrelevantes
+CMT = [('RIFLGFCY10_N.B', '10y', '10-year')]  # referencia de largo plazo; el resto de plazos se descartaron
 NOTE_CMT = 'The Board publishes this series daily; the monthly value is the arithmetic mean of the daily values available in each closed calendar month (calculated by Dehesa Index).'
 def find(tab, suffix):
     for k, v in tab.items():
@@ -92,7 +86,7 @@ def main():
             s = mk('us-fed-cmt-' + cc, 'U.S. Treasury yield, constant maturity, %s (monthly mean of daily values)' % lab, '%', pts, NOTE_CMT); s and out.append(s)
     log('series', len(out))
     LOGF.write_text('\n'.join(LOG[-60:]) + '\n', encoding='utf-8')
-    if len(out) < 25: log('demasiado pocas series; no se escribe'); sys.exit(1)
+    if len(out) < 8: log('demasiado pocas series; no se escribe'); sys.exit(1)
     src = {'name': 'Board of Governors of the Federal Reserve System (H.10 Foreign Exchange Rates, H.15 Selected Interest Rates)', 'url': 'https://www.federalreserve.gov/data.htm', 'license': 'Public domain (Federal Reserve Board; cite the Board as the source)'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'countries': {'US': {'name': 'United States', 'extend': True, 'source': src, 'series': out}}, 'log': LOG[-30:]}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
