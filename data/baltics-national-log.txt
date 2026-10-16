@@ -2,6 +2,14 @@ LAC020c 7 series
 LAC020m 3 series
 LAB010 6 series
 LAB020 1 series
+rendimiento winter wheat: se descarta 2026 (valor 4.8 en otra unidad que los anteriores)
+rendimiento rye: se descarta 2026 (valor 4.2 en otra unidad que los anteriores)
+rendimiento winter barley: se descarta 2026 (valor 4.4 en otra unidad que los anteriores)
+rendimiento spring wheat: se descarta 2026 (valor 3.8 en otra unidad que los anteriores)
+rendimiento spring barley: se descarta 2026 (valor 3.5 en otra unidad que los anteriores)
+rendimiento oats: se descarta 2026 (valor 3.5 en otra unidad que los anteriores)
+rendimiento peas: se descarta 2026 (valor 3.1 en otra unidad que los anteriores)
+rendimiento potatoes: se descarta 2026 (valor 27.0 en otra unidad que los anteriores)
 LAG020 33 series
 LAL050m 1 series
 PM0281 27 series
@@ -10,5 +18,3 @@ PM192 3 series
 PM47 4 series
 PM20 5 series
 PM31 1 series
-OK 93 series, 5087 puntos
-rendimiento: se descarta el dato preliminar del año en curso cuando la CSP lo publica en otra unidad
