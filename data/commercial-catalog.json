@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T04:14:59Z",
+ "generatedAt": "2026-10-16T05:14:09Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,9 +10,9 @@
   "sourcesApto": 124,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 252,
+  "datasets": 268,
   "datasets_apto": 156,
-  "datasets_condiciones": 84,
+  "datasets_condiciones": 100,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
   "datasets_reviewBeforeSelling": 0,
@@ -2689,6 +2689,14 @@
    ]
   },
   {
+   "path": "data/bg-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
    "path": "data/blog/",
    "scope": "carpeta",
    "verdict": "derivado",
@@ -2950,6 +2958,22 @@
    ]
   },
   {
+   "path": "data/cy-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/cz-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
    "path": "data/czechia-csu-stats.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -3014,6 +3038,14 @@
    ]
   },
   {
+   "path": "data/dk-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
    "path": "data/drought.json",
    "scope": "fichero",
    "verdict": "no-apto",
@@ -3022,6 +3054,14 @@
    ],
    "excludedSources": [
     "us_drought_monitor"
+   ]
+  },
+  {
+   "path": "data/ee-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
    ]
   },
   {
@@ -3534,6 +3574,41 @@
    ]
   },
   {
+   "path": "data/eurostat-eu3-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CY",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LU",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:MT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:RO",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SI",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
    "path": "data/eurostat-euw-stats.json",
    "scope": "fichero",
    "verdict": "condiciones",
@@ -3624,6 +3699,14 @@
    "verdict": "apto",
    "sources": [
     "usda_fas_esr"
+   ]
+  },
+  {
+   "path": "data/fi-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
    ]
   },
   {
@@ -3990,6 +4073,14 @@
    ]
   },
   {
+   "path": "data/hu-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
    "path": "data/ie-diesel.json",
    "scope": "fichero",
    "verdict": "condiciones",
@@ -4137,11 +4228,43 @@
    ]
   },
   {
+   "path": "data/lt-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/lu-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/lv-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
    "path": "data/mb-markets/",
    "scope": "carpeta",
    "verdict": "apto",
    "sources": [
     "mb_agri"
+   ]
+  },
+  {
+   "path": "data/mt-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
    ]
   },
   {
@@ -4465,6 +4588,38 @@
    "verdict": "apto",
    "sources": [
     "mapa_es"
+   ]
+  },
+  {
+   "path": "data/ro-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/se-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/si-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
+   "path": "data/sk-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
    ]
   },
   {

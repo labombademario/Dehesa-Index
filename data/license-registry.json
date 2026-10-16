@@ -5027,6 +5027,15 @@
     "LV": "eurostat"
    }
   },
+  "data/eurostat-eu3-stats.json": {
+   "byCountry": {
+    "RO": "eurostat",
+    "SI": "eurostat",
+    "CY": "eurostat",
+    "LU": "eurostat",
+    "MT": "eurostat"
+   }
+  },
   "data/eurostat-euw-stats.json": {
    "byCountry": {
     "DE": "eurostat",
@@ -5521,6 +5530,96 @@
     "eurostat"
    ],
    "notes": "Emisiones de la agricultura griega por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
+  "data/bg-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura búlgara por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/cy-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura chipriota por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/cz-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura checa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/dk-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura danesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/ee-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura estonia por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/fi-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura finlandesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/hu-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura húngara por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/lt-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura lituana por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/lu-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura luxemburguesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/lv-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura letona por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/mt-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura maltesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/ro-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura rumana por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/se-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura sueca por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/si-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura eslovena por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
+  },
+  "data/sk-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura eslovaca por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py --many."
   },
   "data/pt-nitrates.json": {
    "sources": [
