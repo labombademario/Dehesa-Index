@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-10-16T21:58:22.549Z",
+  "generatedAt": "2026-10-16T22:53:07.073Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -1368,7 +1368,7 @@
       "observationDate": "2026-10-01",
       "periodChangePct": 3.4378906693942612,
       "yoyPct": null,
-      "volatility": 0.06229158203659539,
+      "volatility": 0.06230396536215443,
       "points": 26,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-10-01",
