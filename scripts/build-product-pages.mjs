@@ -50,7 +50,7 @@ const L = {
     th: ['Mercado', 'Precio', 'Unidad', 'Periodo', 'Variación', 'Fuente'], cta: 'Ver gráfica e histórico →', news: n => 'Noticias ' + n, cal: n => 'Calendario de informes ' + n,
     note: 'Los precios de mercados distintos no son directamente comparables: cambian la unidad, la moneda, el punto de la cadena y la calidad del producto. Cifras tal como las publica cada fuente, sin conversión.', meth: 'Metodología', gen: 'Página generada el', what: 'Qué mide exactamente cada precio',
     faqH: 'Preguntas frecuentes', q: (de, m) => '¿Cuál es el precio ' + de + ' en ' + m + '?', a: (v, per, ch, fr) => v + ', dato de ' + per + (ch ? ', con una variación de ' + ch + ' respecto al dato anterior' : '') + '. Frecuencia de la fuente: ' + fr + '.',
-    freq: { weekly: 'semanal', daily: 'diaria', monthly: 'mensual' }, regQ: { eu: 'la Unión Europea', us: 'EE. UU.', ca: 'Canadá', uk: 'el Reino Unido' }, others: 'Otros precios', prices: 'Precios', dsName: (de, rs) => 'Precio ' + de + ' en ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
+    freq: { biweekly: 'quincenal', weekly: 'semanal', daily: 'diaria', monthly: 'mensual' }, regQ: { eu: 'la Unión Europea', us: 'EE. UU.', ca: 'Canadá', uk: 'el Reino Unido' }, others: 'Otros precios', prices: 'Precios', dsName: (de, rs) => 'Precio ' + de + ' en ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
   en: { code: 'en', root: 'en/prices', up: '../../../', locale: 'en-GB',
     reg: { us: 'United States', eu: 'European Union', ca: 'Canada', uk: 'United Kingdom' }, regShort: { us: 'US', eu: 'EU' }, mon: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     unit: { cwt: '/cwt (100 lb)', bushel: '/bushel', tonelada: '/tonne', '100kg': '/100 kg', litro: '/litre', gal: '/gallon', mmbtu: '/MMBtu', docena: '/dozen', lb: '/lb', ton_corta: '/short ton', barril: '/barrel', kg: '/kg' },
@@ -60,7 +60,7 @@ const L = {
     th: ['Market', 'Price', 'Unit', 'Period', 'Change', 'Source'], cta: 'See chart and history →', news: n => n + ' news', cal: n => n + ' report calendar',
     note: 'Prices from different markets are not directly comparable: unit, currency, point in the supply chain and product quality all differ. Figures are shown as each source publishes them, without conversion.', meth: 'Methodology', gen: 'Page generated on', what: '',
     faqH: 'Frequently asked questions', q: (de, m) => 'What is the price of ' + de + ' in ' + m + '?', a: (v, per, ch, fr) => v + ', data for ' + per + (ch ? ', ' + ch + ' versus the previous data point' : '') + '. Source frequency: ' + fr + '.',
-    freq: { weekly: 'weekly', daily: 'daily', monthly: 'monthly' }, regQ: { eu: 'the European Union', us: 'the United States', ca: 'Canada', uk: 'the United Kingdom' }, others: 'Other prices', prices: 'Prices', dsName: (de, rs) => de[0].toUpperCase() + de.slice(1) + ' price in ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
+    freq: { biweekly: 'biweekly', weekly: 'weekly', daily: 'daily', monthly: 'monthly' }, regQ: { eu: 'the European Union', us: 'the United States', ca: 'Canada', uk: 'the United Kingdom' }, others: 'Other prices', prices: 'Prices', dsName: (de, rs) => de[0].toUpperCase() + de.slice(1) + ' price in ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
   fr: { code: 'fr', root: 'fr/prix', up: '../../../', locale: 'fr-FR',
     reg: { us: 'États-Unis', eu: 'Union européenne', ca: 'Canada', uk: 'Royaume-Uni' }, regShort: { eu: 'UE', us: 'É.-U.' }, mon: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
     unit: { cwt: '/cwt (100 livres)', bushel: '/bushel', tonelada: '/tonne', '100kg': '/100 kg', litro: '/litre', gal: '/gallon', mmbtu: '/MMBtu', docena: '/douzaine', lb: '/livre', ton_corta: '/tonne courte', barril: '/baril', kg: '/kg' },
@@ -70,7 +70,7 @@ const L = {
     th: ['Marché', 'Prix', 'Unité', 'Période', 'Variation', 'Source'], cta: 'Voir le graphique et l’historique →', news: n => 'Actualités : ' + n, cal: n => 'Calendrier des rapports : ' + n,
     note: 'Les prix de marchés différents ne sont pas directement comparables : l’unité, la devise, le stade de la chaîne et la qualité du produit changent. Chiffres tels que publiés par chaque source, sans conversion.', meth: 'Méthodologie', gen: 'Page générée le', what: '',
     faqH: 'Questions fréquentes', q: (de, m) => 'Quel est le prix ' + de + ' en ' + m + ' ?', a: (v, per, ch, fr) => v + ', donnée de ' + per + (ch ? ', variation de ' + ch + ' par rapport à la donnée précédente' : '') + '. Fréquence de la source : ' + fr + '.',
-    qq: (de, m) => 'Quel est le prix ' + de + ' au quintal (' + m + ') ?', qa: (v, per) => v + ' (1 quintal = 100 kg, soit le prix à la tonne divisé par 10), donnée de ' + per + '.', freq: { weekly: 'hebdomadaire', daily: 'quotidienne', monthly: 'mensuelle' }, regQ: { eu: 'l’Union européenne', us: 'aux États-Unis', ca: 'au Canada', uk: 'au Royaume-Uni' }, others: 'Autres prix', prices: 'Prix', dsName: (de, rs) => 'Prix ' + de + ' : ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
+    qq: (de, m) => 'Quel est le prix ' + de + ' au quintal (' + m + ') ?', qa: (v, per) => v + ' (1 quintal = 100 kg, soit le prix à la tonne divisé par 10), donnée de ' + per + '.', freq: { biweekly: 'bimensuelle', weekly: 'hebdomadaire', daily: 'quotidienne', monthly: 'mensuelle' }, regQ: { eu: 'l’Union européenne', us: 'aux États-Unis', ca: 'au Canada', uk: 'au Royaume-Uni' }, others: 'Autres prix', prices: 'Prix', dsName: (de, rs) => 'Prix ' + de + ' : ' + rs, home: 'precios.html', metodo: 'metodologia.html' },
   it: { code: 'it', root: 'it/prezzi', up: '../../../', locale: 'it-IT',
     reg: { us: 'Stati Uniti', eu: 'Unione europea', ca: 'Canada', uk: 'Regno Unito' }, regShort: { eu: 'UE', us: 'USA' }, mon: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'],
     unit: { cwt: '/cwt (100 libbre)', bushel: '/bushel', tonelada: '/tonnellata', '100kg': '/100 kg', litro: '/litro', gal: '/gallone', mmbtu: '/MMBtu', docena: '/dozzina', lb: '/libbra', ton_corta: '/tonnellata corta', barril: '/barile', kg: '/kg' },
@@ -80,7 +80,7 @@ const L = {
     th: ['Mercato', 'Prezzo', 'Unità', 'Periodo', 'Variazione', 'Fonte'], cta: 'Vedi grafico e storico →', news: n => 'Notizie: ' + n, cal: n => 'Calendario dei rapporti: ' + n,
     note: 'I prezzi di mercati diversi non sono direttamente confrontabili: cambiano unità, valuta, punto della filiera e qualità del prodotto. Cifre come le pubblica ogni fonte, senza conversione.', meth: 'Metodologia', gen: 'Pagina generata il', what: '',
     faqH: 'Domande frequenti', q: (de, m) => 'Qual è il prezzo ' + de + ' in ' + m + '?', a: (v, per, ch, fr) => v + ', dato di ' + per + (ch ? ', variazione di ' + ch + ' rispetto al dato precedente' : '') + '. Frequenza della fonte: ' + fr + '.',
-    qq: (de, m) => 'Qual è il prezzo ' + de + ' al quintale (' + m + ')?', qa: (v, per) => v + ' (1 quintale = 100 kg, cioè il prezzo alla tonnellata diviso per 10), dato di ' + per + '.', freq: { weekly: 'settimanale', daily: 'giornaliera', monthly: 'mensile' }, regQ: { eu: 'l’Unione europea', us: 'negli Stati Uniti', ca: 'in Canada', uk: 'nel Regno Unito' }, others: 'Altri prezzi', prices: 'Prezzi', dsName: (de, rs) => 'Prezzo ' + de + ': ' + rs, home: 'precios.html', metodo: 'metodologia.html' }
+    qq: (de, m) => 'Qual è il prezzo ' + de + ' al quintale (' + m + ')?', qa: (v, per) => v + ' (1 quintale = 100 kg, cioè il prezzo alla tonnellata diviso per 10), dato di ' + per + '.', freq: { biweekly: 'quindicinale', weekly: 'settimanale', daily: 'giornaliera', monthly: 'mensile' }, regQ: { eu: 'l’Unione europea', us: 'negli Stati Uniti', ca: 'in Canada', uk: 'nel Regno Unito' }, others: 'Altri prezzi', prices: 'Prezzi', dsName: (de, rs) => 'Prezzo ' + de + ': ' + rs, home: 'precios.html', metodo: 'metodologia.html' }
 };
 const CUR = { USD: 'USD', EUR: 'EUR', CAD: 'CAD', GBP: 'GBP' };
 const TOPIC = { urea: 'fertilizantes', dap: 'fertilizantes', potasa: 'fertilizantes' };
@@ -103,6 +103,7 @@ for (const r of ['us', 'eu', 'ca', 'uk']) {
 // frente a hace un ano y media por trimestre. Sin estimaciones: si el historico no termina en el ultimo dato publicado o tiene pocos puntos, ese mercado no se muestra.
 const DAY = 864e5, MN = { JAN: 1, FEB: 2, MAR: 3, APR: 4, MAY: 5, JUN: 6, JUL: 7, AUG: 8, SEP: 9, OCT: 10, NOV: 11, DEC: 12 }, HC = {};
 const histPts = o => {
+  if (o.histArr) return o.histArr.map(([iso, v]) => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso); return m && typeof v === 'number' && isFinite(v) ? { iso, t: Date.UTC(+m[1], +m[2] - 1, +m[3]), y: +m[1], m: +m[2], v } : null; }).filter(Boolean).sort((a, b) => a.t - b.t);
   const f = 'data/prices/history/' + o.r + '/' + o.product + '.json';
   if (!(f in HC)) { try { HC[f] = JSON.parse(read(f)); } catch (e) { HC[f] = null; } }
   const d = HC[f]; if (!d || d.id !== o.id || !Array.isArray(d.history)) return null;
@@ -142,6 +143,31 @@ const HT = {
   it: { h: 'Andamento negli ultimi 12 mesi', cols: ['Mercato', 'Massimo', 'Minimo', 'Media', 'Ultimo dato', 'Un anno fa'], qh: 'Media per trimestre', q: (q, y) => 'T' + q + ' ' + y, part: '* Trimestre in corso: media dei dati pubblicati finora.', note: 'Calcolato con i dati che la fonte pubblica per ogni periodo; nessuna stima.',
     dir: { up: 'sopra', dn: 'sotto' }, sen: (de, r, lo, dlo, hi, dhi, v, x, dir, avg) => r + ': negli ultimi 12 mesi il prezzo ' + de + ' è oscillato tra ' + lo + ' (' + dlo + ') e ' + hi + ' (' + dhi + '). L’ultimo dato (' + v + ') ' + (dir === null ? 'coincide con la media del periodo' : 'è ' + x + ' % ' + dir + ' la media del periodo') + ' (' + avg + ').' }
 };
+// Fertilizantes de EE. UU. por estado (USDA AMS, data/us-fertilizers.json): no hay precio nacional, asi que cada estado es una fila propia con su fecha y su unidad
+// (USD por tonelada corta), sin promediar ni mezclar con el precio mundial (USD por tonelada metrica). El historico de cada fila sale del propio fichero.
+const STN = {
+  'Illinois': { es: 'Illinois (EE. UU.)', en: 'Illinois (US)', fr: 'Illinois (États-Unis)', it: 'Illinois (Stati Uniti)' },
+  'Iowa': { es: 'Iowa (EE. UU.)', en: 'Iowa (US)', fr: 'Iowa (États-Unis)', it: 'Iowa (Stati Uniti)' },
+  'Maryland': { es: 'Maryland (EE. UU.)', en: 'Maryland (US)', fr: 'Maryland (États-Unis)', it: 'Maryland (Stati Uniti)' },
+  'North Carolina': { es: 'Carolina del Norte (EE. UU.)', en: 'North Carolina (US)', fr: 'Caroline du Nord (États-Unis)', it: 'Carolina del Nord (Stati Uniti)' },
+  'Oklahoma': { es: 'Oklahoma (EE. UU.)', en: 'Oklahoma (US)', fr: 'Oklahoma (États-Unis)', it: 'Oklahoma (Stati Uniti)' },
+  'Inter-Mountain West': { es: 'Inter-Mountain West (Oeste interior, EE. UU.)', en: 'Inter-Mountain West (US)', fr: 'Inter-Mountain West (Ouest intérieur, États-Unis)', it: 'Inter-Mountain West (Ovest interno, Stati Uniti)' }
+};
+const STR = ['Illinois', 'Iowa', 'Oklahoma', 'North Carolina', 'Maryland', 'Inter-Mountain West'];   // orden de las filas por estado
+const POT = { Red: { es: 'roja 0-0-60', en: 'red 0-0-60', fr: 'rouge 0-0-60', it: 'rossa 0-0-60' }, White: { es: 'blanca 0-0-62', en: 'white 0-0-62', fr: 'blanche 0-0-62', it: 'bianca 0-0-62' } };
+try {
+  const fz = JSON.parse(read('data/us-fertilizers.json'));
+  for (const fp of fz.products || []) {
+    if (!P[fp.id]) continue;
+    for (const st of fp.states || []) {
+      if (!STN[st.state] || typeof st.avg !== 'number' || !st.date) continue;
+      const id = 'us_ams_' + fp.id + '_' + st.state.toLowerCase().replace(/[^a-z]+/g, '_');
+      const pot = fp.id === 'potasa' ? (/White/.test(st.spec) ? POT.White : POT.Red) : null;
+      PLACE[id] = {}; for (const lg of ['es', 'en', 'fr', 'it']) PLACE[id][lg] = STN[st.state][lg] + (pot ? ' · ' + pot[lg] : '');
+      (byProd[fp.id] = byProd[fp.id] || []).push({ r: 'us', state: true, rank: STR.indexOf(st.state), id, product: fp.id, value: st.avg, currency: 'USD', unit: 'ton_corta', observationDate: st.date, changePct: typeof st.prev === 'number' && st.prev > 0 ? (st.avg / st.prev - 1) * 100 : null, frequency: 'biweekly', sourceId: 'usda_ams_mars', histArr: st.hist });
+    }
+  }
+} catch (e) { /* sin fertilizantes de EE. UU. */ }
 const QUINTAL = new Set(['arroz', 'avena', 'cebada', 'centeno', 'colza', 'maiz', 'trigo']);
 const ORDER = ['us', 'eu', 'ca', 'uk'];
 const keys = Object.keys(byProd).sort();
@@ -153,11 +179,11 @@ for (const lg of Object.keys(L)) {
   const nf = v => v.toLocaleString(T.locale, { minimumFractionDigits: Math.abs(v) >= 100 ? 0 : 2, maximumFractionDigits: Math.abs(v) >= 100 ? 1 : 2 });
   const pct = v => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toLocaleString(T.locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %';
   for (const p of keys) {
-    const obs = byProd[p].sort((a, b) => ORDER.indexOf(a.r) - ORDER.indexOf(b.r)), [name, de] = P[p][lg];
+    const obs = byProd[p].sort((a, b) => (a.state ? 1 : 0) - (b.state ? 1 : 0) || (a.rank || 0) - (b.rank || 0) || ORDER.indexOf(a.r) - ORDER.indexOf(b.r)), [name, de] = P[p][lg];
     const url = urlOf(lg, p), up = T.up, rg = o => (PLACE[o.id] && PLACE[o.id][lg]) || T.reg[o.r], un = o => T.unit[o.unit] || '/' + o.unit;
     const line = o => nf(o.value) + ' ' + CUR[o.currency] + ((T.unitS && T.unitS[o.unit]) || US[o.unit] || '/' + o.unit);
     const fresh = obs.filter(o => !STALE.has(o.id)).concat(obs.filter(o => STALE.has(o.id)));   // en el título, primero los datos al día
-    const rgs = o => { const r0 = rg(o); return (r0 === T.reg[o.r] || /^(EE\. UU\.|US|États-Unis|Stati Uniti)$/.test(r0)) ? (T.regShort[o.r] || r0) : r0; };   // en el título, abreviatura de país si el lugar es el país entero
+    const rgs = o => { if (o.state) return rg(o).split(' (')[0].split(' · ')[0]; const r0 = rg(o); return (r0 === T.reg[o.r] || /^(EE\. UU\.|US|États-Unis|Stati Uniti)$/.test(r0)) ? (T.regShort[o.r] || r0) : r0; };   // en el título, abreviatura de país si el lugar es el país entero
     const head = fresh.slice(0, 2).map(o => rgs(o) + ' ' + line(o)).join(' · ');
     const head1 = fresh.slice(0, 1).map(o => rgs(o) + ' ' + line(o)).join(' · ');
     const title = seoTitle(T.title(de, T.title(de, head).length <= 62 ? head : head1));   // <= ~62 caracteres: si dos mercados no caben, solo el primero (el resto va en la descripcion)
