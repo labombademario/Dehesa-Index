@@ -5516,6 +5516,12 @@
    ],
    "notes": "Emisiones de la agricultura portuguesa por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
   },
+  "data/el-ghg-agri.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Emisiones de la agricultura griega por categoría, ganado y gas (Eurostat env_air_gge). scripts/update-eu-ghg-agri.py."
+  },
   "data/pt-nitrates.json": {
    "sources": [
     "eurostat"

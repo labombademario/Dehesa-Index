@@ -304,7 +304,7 @@
   }
   /* Emisiones del campo en España (js/es-ghg-agri.js, MITECO): solo en la ficha de España, debajo de la sequía */
   function ghgUp(c) {
-    if (['ES', 'FR', 'DE', 'IT', 'PL', 'BE', 'AT', 'HR', 'IE', 'NL', 'PT'].indexOf(ST.c) < 0) return;
+    if (['ES', 'FR', 'DE', 'IT', 'PL', 'BE', 'AT', 'HR', 'IE', 'NL', 'PT', 'EL'].indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-ghg-slot'; var after = document.getElementById('pp-drought-slot') || tr; after.parentNode.insertBefore(el, after.nextSibling);
     el = lateBox('pp-ghg-box', document.getElementById('pp-drought-box')) || el;
