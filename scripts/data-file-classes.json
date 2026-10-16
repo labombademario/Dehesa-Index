@@ -213,6 +213,10 @@
   "data/italy-istat/comuni.json": {
    "class": "RUNTIME",
    "note": "Datos de ISTAT por municipio italiano (js/it-istat.js lo descarga solo en la ficha de Italia, al abrir el bloque municipal)."
+  },
+  "data/eurostat-eu3-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Eurostat de RO, SI, CY, LU y MT (modo reducido): alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
   }
  },
  "prefixes": {

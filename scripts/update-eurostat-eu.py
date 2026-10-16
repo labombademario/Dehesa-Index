@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Eurostat para los estados de la zona euro con peso agrario (BG EL FI HR IE LT SK) y relleno de ES, DE y NL -> data/eurostat-eu-stats.json (BG EL FI HR IE LT SK) y data/eurostat-euw-stats.json (DE ES NL DK SE) y data/eurostat-eu2-stats.json (CZ EE HU LV)
+"""Eurostat para los estados de la zona euro con peso agrario (BG EL FI HR IE LT SK) y relleno de ES, DE y NL -> data/eurostat-eu-stats.json (BG EL FI HR IE LT SK) y data/eurostat-euw-stats.json (DE ES NL DK SE) y data/eurostat-eu3-stats.json (RO SI CY LU MT, 16-oct-2026: solo tenian comercio) y data/eurostat-eu2-stats.json (CZ EE HU LV)
 Modo reducido (lite): solo cultivos, ganado, carne, leche, indices de precios y cuentas agrarias de los productos de la matriz de cobertura y los totales, para respetar el presupuesto de datos del repositorio.
 Toda la logica vive en scripts/eurostat_country.py (nucleo comun con Italia y Polonia). Nada se estima: lo que Eurostat no publica para un pais se queda sin serie."""
 import datetime, json, os, sys
@@ -8,7 +8,7 @@ _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from lib_breaks import clean as _clean_breaks   # rupturas de serie (cambios de unidad): ver scripts/lib_breaks.py
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import eurostat_country as E
-C = {'BG': 'Bulgaria', 'EL': 'Greece', 'FI': 'Finland', 'HR': 'Croatia', 'IE': 'Ireland', 'LT': 'Lithuania', 'SK': 'Slovakia', 'DE': 'Germany', 'ES': 'Spain', 'NL': 'Netherlands', 'DK': 'Denmark', 'SE': 'Sweden', 'CZ': 'Czechia', 'EE': 'Estonia', 'HU': 'Hungary', 'LV': 'Latvia'}
+C = {'BG': 'Bulgaria', 'EL': 'Greece', 'FI': 'Finland', 'HR': 'Croatia', 'IE': 'Ireland', 'LT': 'Lithuania', 'SK': 'Slovakia', 'DE': 'Germany', 'ES': 'Spain', 'NL': 'Netherlands', 'DK': 'Denmark', 'SE': 'Sweden', 'CZ': 'Czechia', 'EE': 'Estonia', 'HU': 'Hungary', 'RO': 'Romania', 'SI': 'Slovenia', 'CY': 'Cyprus', 'LU': 'Luxembourg', 'MT': 'Malta', 'LV': 'Latvia'}
 SRC = {'url': 'https://ec.europa.eu/eurostat/web/agriculture', 'license': 'Eurostat reuse policy (Decision 2011/833/EU); cite source'}
 only = [a for a in sys.argv[1:] if a in C]
 out = {}
@@ -19,7 +19,7 @@ for cc in (only or C):
 open('data/eurostat-eu-log.txt', 'w').write('\n'.join(E.LOG) + '\n')
 if not out: sys.exit(1)
 now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-for fn, grp in (('eurostat-eu-stats.json', ('BG', 'EL', 'FI', 'HR', 'IE', 'LT', 'SK')), ('eurostat-euw-stats.json', ('DE', 'ES', 'NL', 'DK', 'SE')), ('eurostat-eu2-stats.json', ('CZ', 'EE', 'HU', 'LV'))):   # dos ficheros: el limite de peso por fichero (900 KB gzip) no admite los diez juntos
+for fn, grp in (('eurostat-eu-stats.json', ('BG', 'EL', 'FI', 'HR', 'IE', 'LT', 'SK')), ('eurostat-euw-stats.json', ('DE', 'ES', 'NL', 'DK', 'SE')), ('eurostat-eu2-stats.json', ('CZ', 'EE', 'HU', 'LV')), ('eurostat-eu3-stats.json', ('RO', 'SI', 'CY', 'LU', 'MT'))):   # dos ficheros: el limite de peso por fichero (900 KB gzip) no admite los diez juntos
     cs = {k: v for k, v in out.items() if k in grp}
     if not cs: continue
     json.dump(_clean_breaks({'schemaVersion': 1, 'generatedAt': now, 'countries': cs, 'log': E.LOG[-30:]}), open('data/' + fn, 'w'), ensure_ascii=False, separators=(',', ':'))

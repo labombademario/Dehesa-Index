@@ -298,7 +298,7 @@ sources:
     script: scripts/update-eurostat-eu.py
     timeout: 60
     script_timeout: 50
-    data: [eurostat-eu-stats.json, eurostat-euw-stats.json, eurostat-eu2-stats.json]
+    data: [eurostat-eu-stats.json, eurostat-euw-stats.json, eurostat-eu2-stats.json, eurostat-eu3-stats.json]
     log: eurostat-eu-log.txt
     message: Datos Eurostat de los estados de la UE (modo reducido)
   - id: eurostat-structure
