@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T05:21:35Z",
+ "generatedAt": "2026-10-16T05:26:13Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,9 +10,9 @@
   "sourcesApto": 124,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 269,
+  "datasets": 270,
   "datasets_apto": 156,
-  "datasets_condiciones": 101,
+  "datasets_condiciones": 102,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
   "datasets_reviewBeforeSelling": 0,
@@ -3696,6 +3696,106 @@
     },
     {
      "scope": "pais:PT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eurostat-structure2-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:BG",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:CY",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:CZ",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FI",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HR",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HU",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LU",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LV",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:MT",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:RO",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SE",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SI",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SK",
      "sourceId": "eurostat",
      "verdict": "condiciones"
     }

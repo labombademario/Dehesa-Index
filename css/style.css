@@ -2424,7 +2424,7 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 }
 @media (prefers-reduced-motion: no-preference) { .um-prod, .um-sec { transition: border-color .15s; } }
 
-.sw-mr{cursor:pointer;outline:none}.sw-mr:hover path{fill:var(--accent);opacity:.75}.sw-mr:focus-visible path{stroke:var(--text);stroke-width:3}
+.sw-mr{cursor:pointer}.sw-mr:focus{outline:2px solid var(--accent);outline-offset:1px}.sw-mr:hover path{fill:var(--accent);opacity:.75}.sw-mr:focus-visible path{stroke:var(--text);stroke-width:3}
 /* costes y rentas (RECAN) */
 .rc-sg { margin: 6px 0 0; }
 .rc-sgl { list-style: none; margin: 6px 0 0; padding: 0; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); overflow: hidden; }
@@ -2704,3 +2704,6 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
   @page{size:A4;margin:12mm}
 }
 .lq-ex-badge{display:inline-block;margin-top:4px;font-size:12px;font-weight:700;color:#8f5f12;border:1px solid #8f5f12;border-radius:999px;padding:1px 10px}
+
+/* Enlaces cortos del pie (p. ej. «EIA»): objetivo táctil de 24 px como mínimo (WCAG 2.5.8) */
+#di-footer-root li a{min-width:24px;text-align:center}

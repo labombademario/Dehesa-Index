@@ -4184,6 +4184,28 @@
     "IT": "eurostat"
    }
   },
+  "data/eurostat-structure2-stats.json": {
+   "byCountry": {
+    "AT": "eurostat",
+    "BG": "eurostat",
+    "CY": "eurostat",
+    "CZ": "eurostat",
+    "DK": "eurostat",
+    "EE": "eurostat",
+    "FI": "eurostat",
+    "HR": "eurostat",
+    "HU": "eurostat",
+    "IE": "eurostat",
+    "LT": "eurostat",
+    "LU": "eurostat",
+    "LV": "eurostat",
+    "MT": "eurostat",
+    "RO": "eurostat",
+    "SE": "eurostat",
+    "SI": "eurostat",
+    "SK": "eurostat"
+   }
+  },
   "data/eurostat-depth-stats.json": {
    "byCountry": {
     "ES": "eurostat",

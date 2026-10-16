@@ -123,7 +123,7 @@
       '<svg viewBox="' + M.viewBox + '" role="group" aria-label="' + esc(m.h) + '" style="width:100%;max-width:520px;height:auto;display:block;margin:0 auto">' + M.states.map(function (st) {
         var code = byId[st.id], nm = code ? rname(c, code) : st.name, on = code && code === ST.r;
         if (!code) return '<path d="' + st.d + '" fill="var(--border)" stroke="var(--surface,#fff)" stroke-width="1"><title>' + esc(nm + ' (' + m.nod + ')') + '</title></path>';
-        return '<a class="sw-mr" data-mr="' + esc(code) + '" tabindex="0" role="button" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + esc(nm + (on ? ' (' + m.sel + ')' : '')) + '"><path d="' + st.d + '" fill="' + (on ? 'var(--accent)' : '#9fb8a0') + '" stroke="var(--surface,#fff)" stroke-width="1"><title>' + esc(nm) + '</title></path></a>';
+        return '<a class="sw-mr" data-equiv="sw-r" data-mr="' + esc(code) + '" tabindex="0" role="button" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + esc(nm + (on ? ' (' + m.sel + ')' : '')) + '"><path d="' + st.d + '" fill="' + (on ? 'var(--accent)' : '#9fb8a0') + '" stroke="var(--surface,#fff)" stroke-width="1"><title>' + esc(nm) + '</title></path></a>';
       }).join('') + '</svg></section>';
   }
   function priceTxt(x) { var w = t(), cur = x.C.price.current, k = cur.kind === 'avg12m' ? w.avg12 : cur.kind === 'implied' ? w.implied + ' (' + cur.to + ')' : w.ctd; return nf(x.p0, x.p0 < 10 ? 2 : 0) + ' ' + x.C.priceUnit + ' · ' + k; }

@@ -179,7 +179,6 @@ for (const w of [1280, 390]) {
       const all = await page.$$eval(CARD, (e) => e.length);
       const tx0 = await page.innerText('#rl-body');
       if (!/no predictivo|not predictive|pas prédictif|non predittivo/i.test(tx0)) throw new Error('falta el descargo descriptivo/no predictivo');
-      for (const must of [/INSUMO|INPUT|INTRANT/, /CANAL|CHANNEL/, /MERCADO|MARKET|MARCH/]) if (!must.test(tx0)) throw new Error('falta el esquema INSUMO>CANAL>MERCADO');
       await page.click('[data-g=wheat]'); await page.waitForTimeout(150);
       const wh = await page.$$eval(CARD, (e) => e.length);
       if (!(wh > 0 && wh < all)) throw new Error('el filtro de producto no filtra (' + wh + ' de ' + all + ')');
@@ -189,6 +188,8 @@ for (const w of [1280, 390]) {
       await page.goto(BASE + '/relaciones.html?id=fertiliser_to_grain__urea-eu__trigo-eu', { waitUntil: 'load' }); await page.waitForSelector(CARD, { timeout: 8000 });
       if ((await page.$$eval(CARD, (e) => e.length)) !== 1) throw new Error('el enlace profundo ?id= no abre una sola relacion');
       if (!(await page.$('.rl-hyp')) || !(await page.$('.rl-expl'))) throw new Error('la correlacion y la hipotesis deben mostrarse separadas');
+      const tx1 = await page.innerText('#rl-body');   // el esquema INSUMO > CANAL > MERCADO va en la tarjeta abierta
+      for (const must of [/INSUMO|INPUT|INTRANT/, /CANAL|CHANNEL/, /MERCADO|MARKET|MARCH/]) if (!must.test(tx1)) throw new Error('falta el esquema INSUMO>CANAL>MERCADO');
     });
     await flow('observatorio: filtros, ventanas y enlace profundo', w, async (page) => {
       await page.goto(BASE + '/observatorio.html', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
