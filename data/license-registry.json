@@ -1626,6 +1626,32 @@
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
+  "eccc_ghg": {
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Canada.",
+   "additionalRestrictions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
+   "verifiedAt": "2026-10-16",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": "Inventario oficial de gases de efecto invernadero de Canada: solo se usan las filas de agricultura (IPCC 500-550), el total nacional y las provincias; las cifras suprimidas por ECCC («x») quedan como hueco.",
+   "name": "Environment and Climate Change Canada — Canada's Official Greenhouse Gas Inventory",
+   "url": "https://data-donnees.ec.gc.ca/data/substances/monitor/canada-s-official-greenhouse-gas-inventory/",
+   "evidence": "El catalogo de datos abiertos de Canada (open.canada.ca, API package_show, leida el 16-oct-2026) publica el conjunto «Canada's Official Greenhouse Gas Inventory» (ECCC, id 779c7bcf-4982-47eb-af1b-a33618a05e5b) con la licencia «Open Government Licence - Canada»; el fichero GHG_IPCC_Can_Prov_Terr.csv se descargo del Data Mart de ECCC desde GitHub Actions el 16-oct-2026.",
+   "short": "ECCC emisiones",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia OGL-Canada explicita en el catalogo oficial para este conjunto."
+  },
   "aafc_drought": {
    "country": "CA",
    "licenseId": "OGL-Canada",
@@ -4948,6 +4974,12 @@
     "eurostat"
    ],
    "notes": "Nitrato en aguas subterraneas (sdg_06_40) y balance bruto de nitrogeno (aei_pr_gnb) de 17 paises de la UE sin bloque propio de nitratos; Eurostat, CC BY 4.0."
+  },
+  "data/ca-ghg-agri.json": {
+   "sources": [
+    "eccc_ghg"
+   ],
+   "notes": "Emisiones de gases de efecto invernadero de la agricultura de Canada, 1990-ultimo ano, por categoria, gas y provincia (inventario oficial de ECCC, OGL-Canada); lo suprimido por confidencialidad queda como hueco."
   },
   "data/diesel-eu-more.json": {
    "sources": [

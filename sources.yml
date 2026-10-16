@@ -1032,6 +1032,15 @@ sources:
     continue: true
     data: [eu-nitrates.json]
     message: Nitratos en aguas subterraneas y balance de nitrogeno por pais de la UE (Eurostat)
+  - id: ca-ghg-agri
+    name: Update Canada agricultural greenhouse gas emissions (ECCC official inventory, OGL-Canada)
+    cron: ['15 9 5 * *']
+    script: scripts/update-ca-ghg-agri.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [ca-ghg-agri.json]
+    message: Emisiones de la agricultura de Canada (ECCC)
   - id: pt-ghg-agri
     name: Update Portugal agricultural greenhouse gas emissions (Eurostat env_air_gge)
     cron: ['50 8 4 * *']
