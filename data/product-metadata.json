@@ -480,7 +480,20 @@
      "relation": "input",
      "why": "energy"
     }
-   ]
+   ],
+   "compare": {
+    "eu": [
+     "vacuno",
+     "young-bulls-ar3"
+    ],
+    "per": 100,
+    "label": {
+     "es": "Vacuno: macho joven R3",
+     "en": "Beef: young bull R3",
+     "fr": "Bovins : jeune bovin R3",
+     "it": "Bovino: vitellone R3"
+    }
+   }
   },
   "cerdo": {
    "name": {
@@ -515,7 +528,20 @@
    "hs": [
     "0203"
    ],
-   "related": []
+   "related": [],
+   "compare": {
+    "eu": [
+     "cerdo",
+     "s"
+    ],
+    "per": 100,
+    "label": {
+     "es": "Cerdo (canal clase S)",
+     "en": "Pig carcass (class S)",
+     "fr": "Porc (carcasse S)",
+     "it": "Suino (carcassa S)"
+    }
+   }
   },
   "huevos": {
    "name": {
@@ -551,7 +577,20 @@
     "0407",
     "0408"
    ],
-   "related": []
+   "related": [],
+   "compare": {
+    "eu": [
+     "huevos",
+     "cage"
+    ],
+    "per": 100,
+    "label": {
+     "es": "Huevos (jaula)",
+     "en": "Eggs (caged hens)",
+     "fr": "Œufs (poules en cage)",
+     "it": "Uova (galline in gabbia)"
+    }
+   }
   },
   "urea": {
    "name": {
@@ -712,7 +751,20 @@
    "hs": [
     "0207"
    ],
-   "related": []
+   "related": [],
+   "compare": {
+    "eu": [
+     "pollo",
+     "whole-broiler-65-selling-price"
+    ],
+    "per": 100,
+    "label": {
+     "es": "Pollo entero (65 %)",
+     "en": "Whole broiler (65 %)",
+     "fr": "Poulet entier (65 %)",
+     "it": "Pollo intero (65 %)"
+    }
+   }
   },
   "azucar": {
    "name": {

@@ -2547,6 +2547,9 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .cmp-seg button[role="radio"]{flex:1 1 auto;justify-content:center;border:0;border-radius:0;border-right:1px solid var(--border);background:transparent;padding:6px 8px;font-size:12.5px}
 .cmp-seg button[role="radio"]:last-child{border-right:0}
 .cmp-seg button[aria-checked="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.cmp-seg-2{display:grid;grid-template-columns:1fr 1fr}
+.cmp-seg-2 button[role="radio"]:nth-child(2n){border-right:0}
+.cmp-seg-2 button[role="radio"]:nth-child(-n+2){border-bottom:1px solid var(--border)}
 .cmp-dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex:none}
 .cmp-help{margin-top:8px}
 .cmp-hl{font:600 21px/1.35 'Source Serif 4',Georgia,serif;margin:0 0 14px;max-width:62ch;color:var(--text)}

@@ -115,9 +115,13 @@ CMP = {
  'cebada': dict(concept='barley', product=P('Cebada pienso', 'Feed barley', 'Orge fourragère', 'Orzo da foraggio'), form='grain', grade=L('Media nacional', 'National average', 'Moyenne nationale', 'Media nazionale')),
  'avena': dict(concept='oats', product=P('Avena pienso', 'Feed oats', 'Avoine fourragère', 'Avena da foraggio'), form='grain', grade=L('Media nacional', 'National average', 'Moyenne nationale', 'Media nazionale')),
  'colza': dict(concept='rapeseed', product=P('Colza', 'Rapeseed', 'Colza', 'Colza'), form='grain', grade=None),
- 'leche': dict(concept='milk', product=P('Leche cruda de vaca', 'Raw cow’s milk', 'Lait cru de vache', 'Latte crudo di vacca'), form='milk', grade=None)}
-CMP_STAGE = {'trigo': 'unspecified', 'maiz': 'unspecified', 'cebada': 'unspecified', 'avena': 'unspecified', 'colza': 'unspecified', 'leche': 'farm_gate'}
-for k, v in CMP.items(): v['stage'] = CMP_STAGE[k]; v['evidence'] = 'Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; ' + ('el portal no indica la etapa' if k != 'leche' else 'leche cruda pagada al productor')
+ 'leche': dict(concept='milk', product=P('Leche cruda de vaca', 'Raw cow’s milk', 'Lait cru de vache', 'Latte crudo di vacca'), form='milk', grade=None),
+ 'vacuno': dict(concept='cattle', product=P('Macho joven', 'Young bull', 'Jeune bovin', 'Giovane toro'), form='carcass', grade=L('Categoría A, conformación R3', 'Category A, conformation R3', 'Catégorie A, conformation R3', 'Categoria A, conformazione R3')),
+ 'cerdo': dict(concept='pigs', product=P('Cerdo', 'Pig', 'Porc', 'Suino'), form='carcass', grade=L('Clase S (≥ 60 % magro)', 'Class S (≥ 60 % lean)', 'Classe S (≥ 60 % de maigre)', 'Classe S (≥ 60 % di magro)')),
+ 'huevos': dict(concept='eggs', product=P('Huevos de gallinas en jaula', 'Eggs from caged hens', 'Œufs de poules en cage', 'Uova di galline in gabbia'), form='eggs', grade=L('Categoría «Cage»', '«Cage» category', 'Catégorie «Cage»', 'Categoria «Cage»')),
+ 'pollo': dict(concept='chicken', product=P('Pollo broiler entero', 'Whole broiler chicken', 'Poulet de chair entier', 'Pollo da carne intero'), form='whole_bird', grade=L('65 % de rendimiento', '65 % yield', 'Rendement 65 %', 'Resa 65 %'))}
+CMP_STAGE = {'trigo': 'unspecified', 'maiz': 'unspecified', 'cebada': 'unspecified', 'avena': 'unspecified', 'colza': 'unspecified', 'leche': 'farm_gate', 'vacuno': 'unspecified', 'cerdo': 'unspecified', 'huevos': 'unspecified', 'pollo': 'selling_price'}
+for k, v in CMP.items(): v['stage'] = CMP_STAGE[k]; v['evidence'] = 'Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; ' + ('leche cruda pagada al productor' if k == 'leche' else 'precio de venta; el portal no indica el nivel de la cadena' if v['stage'] == 'selling_price' else 'el portal no indica la etapa')
 doc = {'schemaVersion': 1, '_doc': 'Identidad visible de cada instrumento (ver scripts/build-instrument-identity.py). `unspecified` = la fuente no declara el dato; nunca se rellena. Dos instrumentos son equivalentes solo si coinciden producto, forma, calidad y etapa.',
        'stages': STAGES, 'forms': FORMS, 'instruments': E, 'comparator': CMP}
 out = ROOT / 'data/instrument-identity.json'

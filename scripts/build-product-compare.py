@@ -84,6 +84,7 @@ def main():
                     if alts: o['alts'] = sorted(alts, key=lambda a: (-int(a['latest'][0][:4]), a['m']))
         for o in latest:
             if o['product'] != pid or o['region'] not in ('us', 'ca', 'uk') or o.get('status') != 'verified': continue
+            if o.get('comparability') == 'not_comparable': continue  # no es el mismo instrumento (p. ej. peso vivo frente a canal): no se pone al lado de la serie UE
             if o['region'] == 'uk' and any(s['c'] == 'UK' for s in series): continue
             un = o['unit']; kg = BU.get(pid) if un == 'bushel' else KG.get(un)
             if not kg: continue

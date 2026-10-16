@@ -1527,6 +1527,78 @@
    "grade": null,
    "stage": "farm_gate",
    "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; leche cruda pagada al productor"
+  },
+  "vacuno": {
+   "concept": "cattle",
+   "product": {
+    "es": "Macho joven",
+    "en": "Young bull",
+    "fr": "Jeune bovin",
+    "it": "Giovane toro"
+   },
+   "form": "carcass",
+   "grade": {
+    "es": "Categoría A, conformación R3",
+    "en": "Category A, conformation R3",
+    "fr": "Catégorie A, conformation R3",
+    "it": "Categoria A, conformazione R3"
+   },
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "cerdo": {
+   "concept": "pigs",
+   "product": {
+    "es": "Cerdo",
+    "en": "Pig",
+    "fr": "Porc",
+    "it": "Suino"
+   },
+   "form": "carcass",
+   "grade": {
+    "es": "Clase S (≥ 60 % magro)",
+    "en": "Class S (≥ 60 % lean)",
+    "fr": "Classe S (≥ 60 % de maigre)",
+    "it": "Classe S (≥ 60 % di magro)"
+   },
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "huevos": {
+   "concept": "eggs",
+   "product": {
+    "es": "Huevos de gallinas en jaula",
+    "en": "Eggs from caged hens",
+    "fr": "Œufs de poules en cage",
+    "it": "Uova di galline in gabbia"
+   },
+   "form": "eggs",
+   "grade": {
+    "es": "Categoría «Cage»",
+    "en": "«Cage» category",
+    "fr": "Catégorie «Cage»",
+    "it": "Categoria «Cage»"
+   },
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "pollo": {
+   "concept": "chicken",
+   "product": {
+    "es": "Pollo broiler entero",
+    "en": "Whole broiler chicken",
+    "fr": "Poulet de chair entier",
+    "it": "Pollo da carne intero"
+   },
+   "form": "whole_bird",
+   "grade": {
+    "es": "65 % de rendimiento",
+    "en": "65 % yield",
+    "fr": "Rendement 65 %",
+    "it": "Resa 65 %"
+   },
+   "stage": "selling_price",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; precio de venta; el portal no indica el nivel de la cadena"
   }
  }
 }
