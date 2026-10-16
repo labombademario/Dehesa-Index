@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-16T10:00:07.205Z",
+  "generatedAt": "2026-10-16T15:46:06.522Z",
   "scope": {
     "latestObservations": 81,
     "historyObservations": 21977,
@@ -8,8 +8,8 @@
     "pending": 0,
     "stale": 1,
     "freshness": {
-      "LIVE": 52,
-      "FRESH": 28,
+      "LIVE": 55,
+      "FRESH": 25,
       "DELAYED": 1
     },
     "regions": [
@@ -725,7 +725,7 @@
       "comparability": "directional",
       "observationDate": "2026-09-01",
       "publicationDate": "2026-10-02",
-      "verifiedAt": "2026-10-14T15:52:26Z",
+      "verifiedAt": "2026-10-16T15:46:05Z",
       "frequency": "monthly",
       "historyPoints": 561,
       "ageDays": 16,
@@ -739,13 +739,13 @@
       "sourceId": "eia",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
-      "verifiedAt": "2026-10-14T15:51:44.047Z",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
+      "verifiedAt": "2026-10-16T15:45:49.781Z",
       "frequency": "weekly",
       "historyPoints": 358,
-      "ageDays": 14,
-      "freshness": "FRESH",
+      "ageDays": 7,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1107,13 +1107,13 @@
       "sourceId": "eia",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
-      "verifiedAt": "2026-10-14T15:51:44.047Z",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
+      "verifiedAt": "2026-10-16T15:45:49.781Z",
       "frequency": "weekly",
       "historyPoints": 474,
-      "ageDays": 14,
-      "freshness": "FRESH",
+      "ageDays": 7,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1123,13 +1123,13 @@
       "sourceId": "eia",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-10-02",
-      "publicationDate": "2026-10-02",
-      "verifiedAt": "2026-10-14T15:51:44.047Z",
+      "observationDate": "2026-10-09",
+      "publicationDate": "2026-10-09",
+      "verifiedAt": "2026-10-16T15:45:49.781Z",
       "frequency": "weekly",
       "historyPoints": 490,
-      "ageDays": 14,
-      "freshness": "FRESH",
+      "ageDays": 7,
+      "freshness": "LIVE",
       "stale": false
     },
     {
