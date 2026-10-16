@@ -1,0 +1,387 @@
+{
+ "base": "http://localhost:8123",
+ "at": "2026-10-16T05:15:24.644Z",
+ "report": [
+  {
+   "tag": "desktop /",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /precios.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /producto.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /paises.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /perfiles.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /semana.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /comparador.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /calculadora.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /mi-explotacion.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /relaciones.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /observatorio.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /mi-seguimiento.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /catalogo.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /brief.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /precios-locales.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /mi-mercado.html?c=US&r=KS&p=cattle",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /siembra.html?c=FR&r=24",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /pac.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /noticias.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /mapa.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /calendario.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /cultivos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /oferta-demanda.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /clima.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /mercados.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /status.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /metodologia.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /europa.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /lonjas.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /sequia.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /ganaderia.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /exportaciones.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /insumos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /costes.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /rendimientos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /legal.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /region.html?c=NL&r=GR",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /regiones/espana/andalucia/",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /precios.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /producto.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /paises.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /perfiles.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /semana.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /comparador.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /calculadora.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /mi-explotacion.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /relaciones.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /observatorio.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /mi-seguimiento.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /catalogo.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /brief.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /precios-locales.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /mi-mercado.html?c=US&r=KS&p=cattle",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /siembra.html?c=FR&r=24",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /pac.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /noticias.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /mapa.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /calendario.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /cultivos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /oferta-demanda.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /clima.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /mercados.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /status.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /metodologia.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /europa.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /lonjas.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /sequia.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /ganaderia.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /exportaciones.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /insumos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /costes.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /rendimientos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /legal.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /region.html?c=NL&r=GR",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /regiones/espana/andalucia/",
+   "errors": [],
+   "axe": 0
+  }
+ ],
+ "notes": []
+}

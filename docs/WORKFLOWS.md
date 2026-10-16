@@ -124,7 +124,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-eu-drought.py | eu-drought.json | finish, validate-files |
 | update-eu-farm-economics.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-farm-economics.py | eu-farm-economics.json | finish, validate-files |
 | update-eu-gapfill.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eu-gapfill.py | eu-gapfill-stats.json | finish, validate-files |
-| update-eu-more-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | bg-ghg-agri.json, cy-ghg-agri.json, cz-ghg-agri.json … | finish, validate-files |
+| update-eu-more-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | bg-ghg-agri.json, ch-ghg-agri.json, cy-ghg-agri.json … | finish, validate-files |
 | update-eu-regions-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eurostat-regions-macro.py | eu-regions-macro.json | finish, validate-files |
 | update-eu-regions.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eurostat-regions.py | eu-regions-at.json, eu-regions-be.json, eu-regions-bg.json … | finish, validate-files |
 | update-eu-stocks.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-stocks.py | eu-stocks-stats.json | finish, validate-files |

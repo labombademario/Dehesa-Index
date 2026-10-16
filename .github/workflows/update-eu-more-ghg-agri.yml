@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update agricultural greenhouse gas emissions for 15 more EU countries (Eurostat env_air_gge)
+name: Update agricultural greenhouse gas emissions for 15 more EU countries and Switzerland (Eurostat env_air_gge)
 on:
   schedule:
     - cron: '5 9 4 * *'
@@ -16,20 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: fetch
-        run: bash scripts/annotate-failure.sh python3 scripts/update-eu-ghg-agri.py --many BG CY CZ DK EE FI HU LT LU LV MT RO SE SI SK
+        run: bash scripts/annotate-failure.sh python3 scripts/update-eu-ghg-agri.py --many BG CY CZ DK EE FI HU LT LU LV MT RO SE SI SK CH
         timeout-minutes: 25
         continue-on-error: true
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/bg-ghg-agri.json data/cy-ghg-agri.json data/cz-ghg-agri.json data/dk-ghg-agri.json data/ee-ghg-agri.json data/fi-ghg-agri.json data/hu-ghg-agri.json data/lt-ghg-agri.json data/lu-ghg-agri.json data/lv-ghg-agri.json data/mt-ghg-agri.json data/ro-ghg-agri.json data/se-ghg-agri.json data/si-ghg-agri.json data/sk-ghg-agri.json
+          files: data/bg-ghg-agri.json data/cy-ghg-agri.json data/cz-ghg-agri.json data/dk-ghg-agri.json data/ee-ghg-agri.json data/fi-ghg-agri.json data/hu-ghg-agri.json data/lt-ghg-agri.json data/lu-ghg-agri.json data/lv-ghg-agri.json data/mt-ghg-agri.json data/ro-ghg-agri.json data/se-ghg-agri.json data/si-ghg-agri.json data/sk-ghg-agri.json data/ch-ghg-agri.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/bg-ghg-agri.json data/cy-ghg-agri.json data/cz-ghg-agri.json data/dk-ghg-agri.json data/ee-ghg-agri.json data/fi-ghg-agri.json data/hu-ghg-agri.json data/lt-ghg-agri.json data/lu-ghg-agri.json data/lv-ghg-agri.json data/mt-ghg-agri.json data/ro-ghg-agri.json data/se-ghg-agri.json data/si-ghg-agri.json data/sk-ghg-agri.json
+        run: python3 scripts/detect-revisions.py data/bg-ghg-agri.json data/cy-ghg-agri.json data/cz-ghg-agri.json data/dk-ghg-agri.json data/ee-ghg-agri.json data/fi-ghg-agri.json data/hu-ghg-agri.json data/lt-ghg-agri.json data/lu-ghg-agri.json data/lv-ghg-agri.json data/mt-ghg-agri.json data/ro-ghg-agri.json data/se-ghg-agri.json data/si-ghg-agri.json data/sk-ghg-agri.json data/ch-ghg-agri.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Emisiones de la agricultura de 15 paises mas de la UE (Eurostat)" data/bg-ghg-agri.json data/cy-ghg-agri.json data/cz-ghg-agri.json data/dk-ghg-agri.json data/ee-ghg-agri.json data/fi-ghg-agri.json data/hu-ghg-agri.json data/lt-ghg-agri.json data/lu-ghg-agri.json data/lv-ghg-agri.json data/mt-ghg-agri.json data/ro-ghg-agri.json data/se-ghg-agri.json data/si-ghg-agri.json data/sk-ghg-agri.json data/revisions.json
+        run: bash scripts/publish-data.sh "Emisiones de la agricultura de 15 paises mas de la UE (Eurostat)" data/bg-ghg-agri.json data/cy-ghg-agri.json data/cz-ghg-agri.json data/dk-ghg-agri.json data/ee-ghg-agri.json data/fi-ghg-agri.json data/hu-ghg-agri.json data/lt-ghg-agri.json data/lu-ghg-agri.json data/lv-ghg-agri.json data/mt-ghg-agri.json data/ro-ghg-agri.json data/se-ghg-agri.json data/si-ghg-agri.json data/sk-ghg-agri.json data/ch-ghg-agri.json data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
