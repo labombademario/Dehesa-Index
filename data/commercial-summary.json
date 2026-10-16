@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T13:17:04Z",
+ "generatedAt": "2026-10-16T13:33:53Z",
  "summary": {
-  "sources": 137,
-  "sourcesApto": 124,
+  "sources": 138,
+  "sourcesApto": 125,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 272,
-  "datasets_apto": 156,
+  "datasets": 274,
+  "datasets_apto": 158,
   "datasets_condiciones": 104,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
@@ -150,6 +150,10 @@
   "ecb": {
    "name": "European Central Bank (euro reference rates, ECB Data Portal)",
    "verdict": "condiciones"
+  },
+  "eccc_ghg": {
+   "name": "Environment and Climate Change Canada — Canada's Official Greenhouse Gas Inventory",
+   "verdict": "apto"
   },
   "edo_cdi": {
    "name": "European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS)",

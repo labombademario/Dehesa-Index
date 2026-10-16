@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T13:17:04Z",
+ "generatedAt": "2026-10-16T13:33:53Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 137,
-  "sourcesApto": 124,
+  "sources": 138,
+  "sourcesApto": 125,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 272,
-  "datasets_apto": 156,
+  "datasets": 274,
+  "datasets_apto": 158,
   "datasets_condiciones": 104,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
@@ -597,6 +597,23 @@
    "attribution": "Source: ECB statistics",
    "conditions": "Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed field (changePct, conversions) is labelled as a Dehesa calculation and the original values are never altered.",
    "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (no modificar las estadisticas, respetar los avisos del BCE, calculos propios etiquetados). (2026-10-15)"
+  },
+  {
+   "id": "eccc_ghg",
+   "name": "Environment and Climate Change Canada — Canada's Official Greenhouse Gas Inventory",
+   "url": "https://data-donnees.ec.gc.ca/data/substances/monitor/canada-s-official-greenhouse-gas-inventory/",
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "conditions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos."
   },
   {
    "id": "edo_cdi",
@@ -2701,6 +2718,14 @@
    "scope": "carpeta",
    "verdict": "derivado",
    "sources": []
+  },
+  {
+   "path": "data/ca-ghg-agri.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "eccc_ghg"
+   ]
   },
   {
    "path": "data/ca-trade-products.json",
@@ -5144,6 +5169,14 @@
    "verdict": "apto",
    "sources": [
     "usda_ams_mars"
+   ]
+  },
+  {
+   "path": "data/us-cash-receipts.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
    ]
   },
   {
