@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T05:14:00Z",
+ "generatedAt": "2026-10-16T05:30:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 196,
+  "ok": 197,
   "late": 1,
   "error": 1,
   "not_run": 1,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "c296d0e2",
+   "sha": "da5ec8de",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/d4ffe2a1-fb92-4c4b-b12b-be4e80e72048",
-   "completedAt": "2026-10-16T05:16:02Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/b8a2ab2a-93bb-45a7-a663-f5f01b5c9d4e",
+   "completedAt": "2026-10-16T05:30:59Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-16T03:42:13.131025+00:00",
   "repoGeneratedAt": "2026-10-16T03:42:13.131025+00:00",
-  "checkedAt": "2026-10-16T05:14:00Z"
+  "checkedAt": "2026-10-16T05:30:00Z"
  },
  "pipelines": [
   {
@@ -1746,7 +1746,7 @@
   },
   {
    "workflow": "update-eu-more-ghg-agri.yml",
-   "name": "Update agricultural greenhouse gas emissions for 15 more EU countries (Eurostat env_air_gge)",
+   "name": "Update agricultural greenhouse gas emissions for 15 more EU countries and Switzerland (Eurostat env_air_gge)",
    "crons": [
     "5 9 4 * *"
    ],
@@ -1755,13 +1755,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-16T05:10:11Z",
-    "durationSec": 79,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38854368259"
+    "startedAt": "2026-10-16T05:19:33Z",
+    "durationSec": 58,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38855182650"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -1969,6 +1969,29 @@
    "recent": {
     "runs": 5,
     "success": 5,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-eurostat-structure2.yml",
+   "name": "Update Eurostat land, farm structure, pesticides, forestry and organic output (18 more EU countries)",
+   "crons": [
+    "40 18 * * 3"
+   ],
+   "nextRun": "2026-10-21T18:40:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-16T05:15:27Z",
+    "durationSec": 452,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38854826099"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
     "failed": 0
    },
    "status": "ok",
@@ -3184,15 +3207,15 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-16T04:22:50Z"
+     "lastChange": "2026-10-16T05:16:25Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-16T04:22:50Z"
+     "lastChange": "2026-10-16T05:16:25Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-16T04:33:26Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3204,18 +3227,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-16T03:40:46Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-16T04:33:26Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-16T03:40:46Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/catalog"
@@ -3228,45 +3251,45 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-16T04:36:31Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-15T15:45:14Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-16T03:40:46Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-16T05:14:09Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-16T05:14:09Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/pack"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-16T03:40:46Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-16T00:50:29Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-16T03:40:46Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-16T03:40:46Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/sowing"
@@ -3281,7 +3304,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-16T04:33:26Z"
+     "lastChange": "2026-10-16T05:29:53Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3305,9 +3328,9 @@
    "last": {
     "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-16T04:19:54Z",
-    "durationSec": 195,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38850060927"
+    "startedAt": "2026-10-16T05:14:13Z",
+    "durationSec": 139,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38854716286"
    },
    "recent": {
     "runs": 9,
