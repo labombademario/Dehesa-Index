@@ -64,6 +64,58 @@
   function priceDecimals(v) { return Math.abs(v) >= 100 ? 0 : Math.abs(v) >= 10 ? 1 : 2; }
   function inClass(v, classes) { for (var i = 0; i < classes.length; i++) if (v >= classes[i][0] && v < classes[i][1]) return classes[i][2]; return classes[classes.length - 1][2]; }
 
+  /* Paises extra (15-oct-2026): para cada producto del comparador se pintan tambien los paises que tienen serie propia (data/views/compare/<producto>.json).
+     Solo se usan datos publicados por cada fuente: sin dato reciente (mas de 180 dias respecto a la serie mas nueva) el pais queda en gris, igual que en el comparador. */
+  var CMP = {}, CMPID = { vaca: 'vacuno' }, OLD_DAYS = 180;
+  var XT = {
+    es: { late: 'dato retrasado', nochg: 'variación no calculable', mchg: 'Variación mensual', cnt: '{n} países con dato reciente', noch: 'sin variación calculable', ph: 'Buscar producto…', none: 'Sin coincidencias', groups: { cer: 'Cereales', oil: 'Oleaginosas y aceites', leg: 'Legumbres', meat: 'Carne y huevos', dairy: 'Lácteos', other: 'Otros cultivos', inp: 'Energía y fertilizantes', ab: 'Alberta (Canadá)' } },
+    en: { late: 'delayed data', nochg: 'change not computable', mchg: 'Monthly change', cnt: '{n} countries with recent data', noch: 'change not computable', ph: 'Search product…', none: 'No matches', groups: { cer: 'Cereals', oil: 'Oilseeds and oils', leg: 'Pulses', meat: 'Meat and eggs', dairy: 'Dairy', other: 'Other crops', inp: 'Energy and fertilisers', ab: 'Alberta (Canada)' } },
+    fr: { late: 'donnée en retard', nochg: 'variation non calculable', mchg: 'Variation mensuelle', cnt: '{n} pays avec données récentes', noch: 'variation non calculable', ph: 'Chercher un produit…', none: 'Aucun résultat', groups: { cer: 'Céréales', oil: 'Oléagineux et huiles', leg: 'Légumineuses', meat: 'Viande et œufs', dairy: 'Produits laitiers', other: 'Autres cultures', inp: 'Énergie et engrais', ab: 'Alberta (Canada)' } },
+    it: { late: 'dato in ritardo', nochg: 'variazione non calcolabile', mchg: 'Variazione mensile', cnt: '{n} paesi con dati recenti', noch: 'variazione non calcolabile', ph: 'Cerca un prodotto…', none: 'Nessun risultato', groups: { cer: 'Cereali', oil: 'Semi oleosi e oli', leg: 'Legumi', meat: 'Carne e uova', dairy: 'Latticini', other: 'Altre colture', inp: 'Energia e fertilizzanti', ab: 'Alberta (Canada)' } }
+  };
+  function xt() { return XT[lang()] || XT.es; }
+  var GORD = ['cer', 'oil', 'leg', 'meat', 'dairy', 'other', 'inp', 'ab'];
+  var GRP = { trigo: 'cer', cebada: 'cer', maiz: 'cer', avena: 'cer', centeno: 'cer', arroz: 'cer', colza: 'oil', soja_grano: 'oil', lino: 'oil', harina_soja: 'oil', oliva: 'oil', lenteja: 'leg', guisante_seco: 'leg',
+    vaca: 'meat', cerdo: 'meat', cordero: 'meat', pollo: 'meat', huevos: 'meat', leche: 'dairy', mantequilla: 'dairy', leche_polvo: 'dairy', azucar: 'other',
+    dap: 'inp', potasa: 'inp', diesel: 'inp', gas_natural: 'inp', petroleo_wti: 'inp', petroleo_brent: 'inp' };
+  var EMO = { trigo: '🌾', cebada: '🌾', avena: '🌾', centeno: '🌾', maiz: '🌽', arroz: '🍚', colza: '🌼', canola_elevador: '🌼', soja_grano: '🫘', harina_soja: '🫘', lino: '🌱', oliva: '🫒', lenteja: '🫘', lenteja_laird_ab: '🫘', guisante_seco: '🫛', guisante_verde_ab: '🫛',
+    vaca: '🐄', novillo_ab: '🐄', cerdo: '🐖', cerdo_ab: '🐖', cordero: '🐑', pollo: '🐔', huevos: '🥚', leche: '🥛', leche_polvo: '🥛', mantequilla: '🧈', azucar: '🍬', dap: '🧪', potasa: '🧪', diesel: '⛽', gas_natural: '🔥', petroleo_wti: '🛢️', petroleo_brent: '🛢️',
+    trigo_pienso_ab: '🌾', cebada_pienso_ab: '🌾', avena_pienso_ab: '🌾', trigo_cwrs_ab: '🌾' };
+  function grpOf(p) { return GRP[p] || (/_ab$|_elevador$/.test(p) ? 'ab' : 'other'); }
+  function norm(x) { return String(x).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function ensureCmp(prod) {
+    var id = CMPID[prod] || prod; if (CMP[id] !== undefined) return; CMP[id] = null;
+    fetch('data/views/compare/' + id + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
+      CMP[id] = d || false; if (d && SEL.layer === 'price' && (CMPID[SEL.product] || SEL.product) === id) render();
+    });
+  }
+  function cName(code) { try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(code) || code; } catch (e) { return code; } }
+  function dayOf(d) { return Date.parse(d.length === 7 ? d + '-28' : d); }
+  function cmpRows(product, own) {
+    var d = CMP[CMPID[product] || product]; if (!d || !d.series) return [];
+    var ref = d.series.reduce(function (a, x) { return x.latest[0] > a ? x.latest[0] : a; }, ''), out = [];
+    d.series.forEach(function (x) {
+      var cc = x.c === 'EL' ? 'GR' : x.c === 'UK' ? 'GB' : x.c; if (x.c === 'EU' || own[cc]) return;
+      if (!((dayOf(ref) - dayOf(x.latest[0])) / 864e5 <= OLD_DAYS)) return;
+      var pt = x.points || [], n = pt.length, ch = null;
+      if (n > 1 && pt[n - 2][1]) { var a = pt[n - 2][0].split('-'), b = pt[n - 1][0].split('-'); if ((+b[0]) * 12 + (+b[1]) - ((+a[0]) * 12 + (+a[1])) === 1) ch = (pt[n - 1][1] / pt[n - 2][1] - 1) * 100; }
+      out.push({ codes: [cc], scope: cName(cc), value: x.latest[1], currency: x.cur, unit: x.unit, ut: x.unit, change: ch, date: x.latest[0], nc: false, freq: x.freq, late: x.fs === 'DELAYED' || x.fs === 'STALE', cmp: true });
+    });
+    return out;
+  }
+  function valText(r, t) { return r.ut ? num(r.value, priceDecimals(r.value)) + ' ' + r.ut : (SYM[r.currency] || r.currency) + num(r.value, priceDecimals(r.value)) + ' / ' + (t.units[r.unit] || r.unit); }
+  function chColor(r) { return r.change == null ? '#8a8672' : changeColor(r.change); }
+  function chText(r) { return r.change == null ? '–' : sgn(r.change, 1, ' %'); }
+  function chWord(r, t) { return r.change == null ? '– ' + xt().nochg : changeWord(r.change, t); }
+  function optsHtml(prods, t, q) {
+    var by = {}, x = xt(), nq = norm(q || '');
+    prods.forEach(function (p) { if (nq && norm(t.names[p]).indexOf(nq) < 0) return; (by[grpOf(p)] = by[grpOf(p)] || []).push(p); });
+    var h = GORD.filter(function (g) { return by[g]; }).map(function (g) {
+      return '<optgroup label="' + esc(x.groups[g]) + '">' + by[g].map(function (p) { return '<option value="' + p + '"' + (p === SEL.product ? ' selected' : '') + '>' + (EMO[p] || '•') + ' ' + esc(t.names[p]) + '</option>'; }).join('') + '</optgroup>';
+    }).join('');
+    return h || '<option value="" disabled>' + esc(x.none) + '</option>';
+  }
+
   function priceRows(product) {
     var t = tr(), out = [];
     LATEST.forEach(function (o) {
@@ -79,7 +131,8 @@
     });
     var dk = window.DehesaDenmark && window.DehesaDenmark.mapRow(product);
     if (dk) out.push({ codes: ['DK'], scope: t.scopeDk, value: dk.value, currency: dk.currency, unit: dk.unit, change: dk.change, date: dk.date, nc: false, freq: dk.freq });
-    return out;
+    var own = {}; out.forEach(function (r) { if (r.codes.length === 1) own[r.codes[0]] = 1; });
+    ensureCmp(product); return out.concat(cmpRows(product, own));
   }
   function priceProducts() {
     var seen = {};
@@ -120,17 +173,20 @@
     var prods = priceProducts();
     if (prods.indexOf(SEL.product) < 0) SEL.product = prods[0];
     var rows = priceRows(SEL.product);
-    var opts = prods.map(function (p) { return '<option value="' + p + '"' + (p === SEL.product ? ' selected' : '') + '>' + esc(t.names[p]) + '</option>'; }).join('');
+    var opts = optsHtml(prods, t, SEL.q);
     var colors = {};
     rows.forEach(function (r) {
-      var html = '<strong>' + esc(r.scope) + '</strong><br>' + esc(SYM[r.currency] || r.currency) + num(r.value, priceDecimals(r.value)) + ' / ' + esc(t.units[r.unit] || r.unit) + '<br>' + esc(t.change) + ': ' + sgn(r.change, 1, ' %') + ' (' + changeWord(r.change, t) + ')';
-      r.codes.forEach(function (c) { colors[c] = { color: changeColor(r.change), html: html }; });
+      var html = '<strong>' + esc(r.scope) + '</strong><br>' + esc(valText(r, t)) + '<br>' + esc(r.cmp ? xt().mchg : t.change) + ': ' + chText(r) + ' (' + chWord(r, t) + ')' + (r.cmp ? '<br>' + esc(r.date) + (r.late ? ' · ' + esc(xt().late) : '') : '');
+      r.codes.forEach(function (c) { colors[c] = { color: chColor(r), html: html }; });
     });
     var table = '<div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:10px 6px">' + t.area.toUpperCase() + '</th><th style="padding:10px 6px;text-align:right">' + t.price.toUpperCase() + '</th><th style="padding:10px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:10px 6px">' + t.date.toUpperCase() + '</th><th style="padding:10px 6px"></th></tr>' +
-      rows.map(function (r) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:10px 6px;font-weight:600">' + esc(r.scope) + '</td><td style="padding:10px 6px;text-align:right">' + esc(SYM[r.currency] || r.currency) + num(r.value, priceDecimals(r.value)) + ' / ' + esc(t.units[r.unit] || r.unit) + '</td><td style="padding:10px 6px;text-align:right;font-weight:600;color:' + changeColor(r.change) + '">' + sgn(r.change, 1, ' %') + '</td><td style="padding:10px 6px">' + esc(r.date) + '</td><td style="padding:10px 6px"><span class="di-movers-hint">' + (r.nc ? t.nc : t.real) + '</span></td></tr>'; }).join('') + '</table></div>';
-    document.getElementById('mapa-controls').innerHTML = '<label style="font-size:13px">' + t.product + '<br><select id="mapa-sel-prod" class="di-compare-select">' + opts + '</select></label>';
+      rows.map(function (r) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:10px 6px;font-weight:600">' + esc(r.scope) + '</td><td style="padding:10px 6px;text-align:right">' + esc(valText(r, t)) + '</td><td style="padding:10px 6px;text-align:right;font-weight:600;color:' + chColor(r) + '">' + chText(r) + '</td><td style="padding:10px 6px">' + esc(r.date) + (r.late ? ' <span class="di-movers-hint">(' + esc(xt().late) + ')</span>' : '') + '</td><td style="padding:10px 6px"><span class="di-movers-hint">' + (r.nc ? t.nc : t.real) + '</span></td></tr>'; }).join('') + '</table></div>';
+    var ncount = Object.keys(colors).length;
+    document.getElementById('mapa-controls').innerHTML = '<label style="font-size:13px;display:block;max-width:460px">' + t.product + '<br><input id="mapa-q" type="search" class="di-compare-select" autocomplete="off" placeholder="' + esc(xt().ph) + '" value="' + esc(SEL.q || '') + '" aria-label="' + esc(xt().ph) + '" style="width:100%;box-sizing:border-box;margin-bottom:6px"><select id="mapa-sel-prod" class="di-compare-select" style="width:100%">' + opts + '</select></label><div class="di-movers-hint" id="mapa-cnt" aria-live="polite" style="margin-top:6px">' + esc(xt().cnt.replace('{n}', ncount)) + '</div>';
     document.getElementById('mapa-sel-prod').onchange = function (e) { SEL.product = e.target.value; render(); };
-    document.getElementById('mapa-legend').innerHTML = legend([[UP, '▲ ' + t.up], [DOWN, '▼ ' + t.down], [FLAT, '■ ' + t.flat], ['#e6e2d6', t.noVerified]]);
+    document.getElementById('mapa-q').oninput = function (e) { SEL.q = e.target.value; document.getElementById('mapa-sel-prod').innerHTML = optsHtml(prods, t, SEL.q); };
+    document.getElementById('mapa-q').onkeydown = function (e) { if (e.key === 'Enter') { var o = document.querySelector('#mapa-sel-prod option:not([disabled])'); if (o) { SEL.product = o.value; SEL.q = ''; render(); } } };
+    document.getElementById('mapa-legend').innerHTML = legend([[UP, '▲ ' + t.up], [DOWN, '▼ ' + t.down], [FLAT, '■ ' + t.flat]].concat(rows.some(function (r) { return r.change == null; }) ? [['#8a8672', xt().noch]] : []).concat([['#e6e2d6', t.noVerified]]));
     document.getElementById('mapa-table').innerHTML = rows.length ? table : '<p class="di-movers-hint">' + t.noData + '</p>';
     document.getElementById('mapa-note').textContent = t.priceNote;
     paintMap(colors, null);
