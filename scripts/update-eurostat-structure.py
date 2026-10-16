@@ -114,6 +114,13 @@ def organic():
     for k, p in pts(recs, lambda r: r['crops'] if ORGK.search(E.clean(labs['crops'][r['crops']])) and not E.NEC.search(E.clean(labs['crops'][r['crops']])) else None).items():
         n += put('st-orgprod-' + k.lower(), 'organic', 'Organic production: %s (tonnes, Eurostat)' % E.clean(labs['crops'][k]), 't', 'annual', p, 'Eurostat org_croppro %s' % k)
     E.log(cc, 'ecologico', n)
+# 16-oct-2026: segundo grupo (los 18 estados de la UE que no tenian estos temas) -> data/eurostat-structure2-stats.json con --set2
+C2 = {'AT': 'Austria', 'BG': 'Bulgaria', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DK': 'Denmark', 'EE': 'Estonia', 'FI': 'Finland', 'HR': 'Croatia', 'HU': 'Hungary', 'IE': 'Ireland',
+      'LT': 'Lithuania', 'LU': 'Luxembourg', 'LV': 'Latvia', 'MT': 'Malta', 'RO': 'Romania', 'SE': 'Sweden', 'SI': 'Slovenia', 'SK': 'Slovakia'}
+SET2 = '--set2' in sys.argv
+if SET2: C = C2
+OUTF = 'data/eurostat-structure2-stats.json' if SET2 else 'data/eurostat-structure-stats.json'
+LOGF = 'data/eurostat-structure2-log.txt' if SET2 else 'data/eurostat-structure-log.txt'
 only = [a for a in sys.argv[1:] if a in C]
 out = {}
 for cc in (only or C):
@@ -124,8 +131,8 @@ for cc in (only or C):
     E.log(cc, 'series', len(E.OUT))
     if len(E.OUT) >= 15: out[cc] = {'name': C[cc], 'extend': True, 'source': dict(SRC), 'series': sorted(E.OUT.values(), key=lambda s: s['id'])}
     else: E.log('sin datos suficientes', cc)
-open('data/eurostat-structure-log.txt', 'w').write('\n'.join(E.LOG) + '\n')
+open(LOGF, 'w').write('\n'.join(E.LOG) + '\n')
 if not out: sys.exit(1)
 now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-json.dump(_clean_breaks({'schemaVersion': 1, 'generatedAt': now, 'countries': out, 'log': E.LOG[-30:]}), open('data/eurostat-structure-stats.json', 'w'), ensure_ascii=False, separators=(',', ':'))
+json.dump(_clean_breaks({'schemaVersion': 1, 'generatedAt': now, 'countries': out, 'log': E.LOG[-30:]}), open(OUTF, 'w'), ensure_ascii=False, separators=(',', ':'))
 print('paises', len(out), 'series', sum(len(v['series']) for v in out.values()))

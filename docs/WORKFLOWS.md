@@ -2,13 +2,14 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-206 workflows (168 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+207 workflows (169 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-cap-nat.py usado por varios workflows: update-cap-fr.yml, update-cap-it.yml, update-cap-pl.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-el-ghg-agri.yml, update-eu-more-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-nl-ghg-agri.yml, update-pl-ghg-agri.yml, update-pt-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-eurostat-structure.py usado por varios workflows: update-eurostat-structure.yml, update-eurostat-structure2.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
 - salida data/country-macro.json publicada por varios workflows: update-country-macro.yml, update-cpi.yml
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
@@ -133,6 +134,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eurostat-depth.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-depth.py | eurostat-depth-stats.json | finish, validate-files |
 | update-eurostat-eu.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-eu.py | eurostat-eu-stats.json, eurostat-eu2-stats.json, eurostat-eu3-stats.json … | finish, validate-files |
 | update-eurostat-structure.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eurostat-structure.py | eurostat-structure-stats.json | finish, validate-files |
+| update-eurostat-structure2.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eurostat-structure.py | eurostat-structure2-stats.json | finish, validate-files |
 | update-eurostat.yml | a mano | mensual | qa-navigation.mjs, update-eurostat-indices.mjs | - | price-engine, publish |
 
 ## FR

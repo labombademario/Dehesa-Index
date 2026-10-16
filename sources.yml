@@ -310,6 +310,16 @@ sources:
     data: [eurostat-structure-stats.json]
     log: eurostat-structure-log.txt
     message: Datos Eurostat de tierra, estructura de explotaciones, plaguicidas, selvicultura y ecologico (FR ES PT EL BE NL DE IT)
+  - id: eurostat-structure2
+    name: Update Eurostat land, farm structure, pesticides, forestry and organic output (18 more EU countries)
+    cron: ['40 18 * * 3']
+    script: scripts/update-eurostat-structure.py
+    args: --set2
+    timeout: 60
+    script_timeout: 50
+    data: [eurostat-structure2-stats.json]
+    log: eurostat-structure2-log.txt
+    message: Datos Eurostat de tierra, estructura de explotaciones, plaguicidas, selvicultura y ecologico (18 paises mas de la UE)
   - id: france-organic
     name: Update France organic farming by department and region (Agence BIO)
     cron: ['35 6 * * 3']
