@@ -182,6 +182,9 @@
     G.mine.label = L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato');
     G.mine.items = G.mine.items.concat(pick('costs', ['calculadora.html']));
     G.compare = { label: L('Comparar', 'Compare', 'Comparer', 'Confrontare'), items: pick('prices', ['comparador.html']).concat(pick('countries', ['perfiles.html']), pick('production', ['oferta-demanda.html']), G.prices.items.filter(function (i) { return i.items; })[0].items.filter(function (i) { return i.file === 'relaciones.html'; })) };
+    /* 15-oct: el comparador y las relaciones viven en «Comparar»; se quitan de «Buscar precios» para no repetirlos */
+    var noCmp = function (i) { return i.file !== 'comparador.html' && i.file !== 'relaciones.html'; };
+    G.prices.items = G.prices.items.filter(noCmp).map(function (i) { if (!i.items) return i; var o = {}; for (var k in i) o[k] = i[k]; o.items = i.items.filter(noCmp); if (o.items.length < i.items.length) o.label = L('Mercados', 'Markets', 'Marchés', 'Mercati'); return o; });
     var prod = G.production.items.filter(function (i) { return !i.items; }).concat(G.production.items.filter(function (i) { return i.items; })[0].items);
     var all = [].concat(G.countries.items, prod, G.trade.items, G.costs.items), one = function (f, q) { return all.filter(function (x) { return x.file === f && (x.query || '') === (q || ''); })[0]; };
     G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: [
