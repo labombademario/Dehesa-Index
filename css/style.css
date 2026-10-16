@@ -2581,3 +2581,24 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .di-nw-px{margin-left:auto;font-size:13px}
 .di-nw-sig{margin-top:8px;padding:6px 9px;border-left:3px solid var(--border-strong);background:var(--surface-alt);font-size:12px;border-radius:0 6px 6px 0}
 .di-nw-sig.positive{border-left-color:var(--positive)}.di-nw-sig.negative{border-left-color:var(--negative)}
+
+.di-cx-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+.di-cx-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;min-width:0}
+.di-cx-card h3{font-size:15px;margin:0 0 10px}
+.di-cx-pr{padding:8px 0;border-top:1px solid var(--border)}.di-cx-pr:first-of-type{border-top:0}
+.di-cx-t{font-size:14px;font-weight:600;margin-bottom:5px}
+.di-cx-m,.di-cx-rw{display:flex;align-items:center;gap:10px;font-size:13px}
+.di-cx-rw{padding:6px 0;border-top:1px solid var(--border)}
+.di-cx-n{flex:0 0 120px;font-weight:600;min-width:0}
+.di-cx-trk{flex:0 0 130px;height:8px;border-radius:4px;background:var(--surface-alt);overflow:hidden;display:inline-block}
+.di-cx-bar{display:block;height:100%}.di-cx-bar.pos{background:var(--positive)}.di-cx-bar.neg{background:var(--negative)}
+.di-cx-m b,.di-cx-rw b{min-width:46px;text-align:right}
+.di-cx-m em,.di-cx-rw em{font-style:normal;color:var(--muted);font-size:12px}
+.di-cx-rw.weak{color:var(--muted)}.di-cx-rw.weak .di-cx-n{font-weight:500}
+.di-cx-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.di-cx-pill{border:1px solid var(--border-strong);border-radius:999px;padding:4px 11px;font-size:12.5px;background:var(--surface-alt);color:var(--text);cursor:pointer;font-family:inherit}
+.di-cx-pill.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.di-cx-chance{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;border:1px solid var(--border-strong);font-size:10px;font-style:normal;font-weight:700;color:var(--muted)}
+.di-cx-foot{font-size:12px;color:var(--muted);margin:10px 0 0;display:flex;gap:6px;align-items:center}
+.di-cx-full{margin-top:12px}.di-cx-full summary{cursor:pointer;font-size:13px;font-weight:600;padding:7px 0}
+@media(max-width:800px){.di-cx-grid{grid-template-columns:1fr}.di-cx-trk{flex-basis:90px}.di-cx-n{flex-basis:96px}}

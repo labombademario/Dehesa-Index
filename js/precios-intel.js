@@ -659,7 +659,7 @@
         var colEntry = entryByDashKey(colKey);
         if (r === null) return { bg: P().surfaceAlt, textColor: P().textFaint, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': —', value: '—' };
         var style = tileStyle(r, 1, CORR_COLOR_GAMMA);
-        return { bg: style.bg, textColor: style.textColor, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': r = ' + fmtCorr(r), value: fmtCorr(r) };
+        return { bg: style.bg, textColor: style.textColor, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': r = ' + fmtCorr(r), value: fmtCorr(r), r: r };
       });
       return { key: rowKey, name: productName(rowEntry.nameKey), cells: cells };
     });
@@ -676,24 +676,87 @@
     return { rows: rows, keys: keys, ranking: ranking };
   }
 
+  // Parejas con una razón económica clara (energía→insumos, grano→pienso→carne, sustitutos, subproductos).
+  // Solo estas se destacan arriba; el resto se muestra al elegir un producto, avisando de que puede ser casualidad.
+  var CORR_LINKS = [
+    ['diesel','petroleo_wti'],['diesel','petroleo_brent'],['petroleo_wti','petroleo_brent'],['gas_natural','urea'],['gas_natural','petroleo_wti'],['petroleo_wti','urea'],['diesel','gas_natural'],
+    ['maiz','trigo'],['maiz','sorgo'],['trigo','sorgo'],['maiz','cebada'],['trigo','cebada'],['maiz','avena'],['trigo','avena'],['cebada','avena'],['trigo','centeno'],['maiz','centeno'],
+    ['maiz','harina_soja'],['trigo','harina_soja'],['colza','harina_soja'],['colza','petroleo_wti'],['maiz','petroleo_wti'],
+    ['maiz','pollo'],['maiz','cerdo'],['maiz','huevos'],['maiz','vaca'],['harina_soja','pollo'],['harina_soja','cerdo'],['harina_soja','huevos'],['harina_soja','vaca'],
+    ['leche','leche_polvo'],['leche','mantequilla'],['leche_polvo','mantequilla'],['leche','vaca'],['leche','pienso'],
+    ['cerdo','pollo'],['vaca','cerdo'],['vaca','pollo'],['huevos','pollo'],['urea','dap'],['urea','potasa'],['dap','potasa']
+  ];
+  var CORR_LINK_SET = {};
+  CORR_LINKS.forEach(function (p) { CORR_LINK_SET[p[0] + '|' + p[1]] = 1; CORR_LINK_SET[p[1] + '|' + p[0]] = 1; });
+  var CORR_SEL = null;
+  var CORR_STR = {
+    es: { title: '¿Qué se mueve junto a qué?', intro: 'Cuando el precio de un producto sube o baja, otros suelen hacer lo mismo o lo contrario. Medido sobre los cambios mensuales de los últimos 5 años.', top: 'Las parejas que más se mueven juntas', topNote: 'Solo parejas con una razón económica clara (energía, piensos, sustitutos, subproductos).', pick: 'Elige un producto', with: 'Con qué se mueve: ', together: 'tienden a subir y bajar juntos', opposite: 'tienden a moverse en sentido contrario', and: ' y ', strong: 'Fuerte', mod: 'Moderada', weak: 'Débil', none: 'Sin relación clara', chance: 'Sin explicación económica clara: puede ser casualidad', note: 'Que dos precios se muevan juntos no significa que uno cause el otro. «Sin relación clara» = por debajo de ±0,20: es ruido, no una pauta.', full: 'Ver matriz completa', empty: 'Aún no hay parejas fuertes con una razón económica clara.' },
+    en: { title: 'What moves with what?', intro: 'When one product\'s price rises or falls, others tend to do the same or the opposite. Measured on monthly changes over the last 5 years.', top: 'The pairs that move together most', topNote: 'Only pairs with a clear economic reason (energy, feed, substitutes, by-products).', pick: 'Pick a product', with: 'What it moves with: ', together: 'tend to rise and fall together', opposite: 'tend to move in opposite directions', and: ' and ', strong: 'Strong', mod: 'Moderate', weak: 'Weak', none: 'No clear relationship', chance: 'No clear economic reason: may be chance', note: 'Two prices moving together does not mean one causes the other. “No clear relationship” = below ±0.20: noise, not a pattern.', full: 'Show full matrix', empty: 'No strong pairs with a clear economic reason yet.' },
+    fr: { title: 'Qu\'est-ce qui bouge avec quoi ?', intro: 'Quand le prix d\'un produit monte ou baisse, d\'autres font souvent pareil ou l\'inverse. Mesuré sur les variations mensuelles des 5 dernières années.', top: 'Les paires qui bougent le plus ensemble', topNote: 'Seulement les paires avec une raison économique claire (énergie, aliments, substituts, coproduits).', pick: 'Choisissez un produit', with: 'Avec quoi il bouge : ', together: 'ont tendance à monter et baisser ensemble', opposite: 'ont tendance à évoluer en sens inverse', and: ' et ', strong: 'Forte', mod: 'Modérée', weak: 'Faible', none: 'Pas de relation claire', chance: 'Pas de raison économique claire : peut être un hasard', note: 'Deux prix qui bougent ensemble ne signifient pas que l\'un cause l\'autre. « Pas de relation claire » = sous ±0,20 : du bruit, pas une tendance.', full: 'Voir la matrice complète', empty: 'Pas encore de paires fortes avec une raison économique claire.' },
+    it: { title: 'Cosa si muove con cosa?', intro: 'Quando il prezzo di un prodotto sale o scende, altri tendono a fare lo stesso o il contrario. Misurato sulle variazioni mensili degli ultimi 5 anni.', top: 'Le coppie che si muovono più insieme', topNote: 'Solo coppie con una ragione economica chiara (energia, mangimi, sostituti, sottoprodotti).', pick: 'Scegli un prodotto', with: 'Con cosa si muove: ', together: 'tendono a salire e scendere insieme', opposite: 'tendono a muoversi in senso opposto', and: ' e ', strong: 'Forte', mod: 'Moderata', weak: 'Debole', none: 'Nessuna relazione chiara', chance: 'Nessuna ragione economica chiara: può essere un caso', note: 'Due prezzi che si muovono insieme non significa che uno causi l\'altro. «Nessuna relazione chiara» = sotto ±0,20: rumore, non una tendenza.', full: 'Mostra la matrice completa', empty: 'Ancora nessuna coppia forte con una ragione economica chiara.' }
+  };
+  function corrLevel(r, c) { var a = Math.abs(r); return a >= 0.5 ? c.strong : a >= 0.3 ? c.mod : a >= 0.2 ? c.weak : c.none; }
+  function corrBar(r) { return '<span class="di-cx-trk"><span class="di-cx-bar ' + (r > 0 ? 'pos' : 'neg') + '" style="width:' + Math.min(100, Math.abs(r) * 100).toFixed(0) + '%"></span></span>'; }
+  function corrSuffix(k) { return k.split('-').slice(1).join('-'); }
+  function corrData(data) {
+    var M = {}, nameOf = {};
+    data.keys.forEach(function (k, i) { nameOf[k] = productName(entryByDashKey(k).nameKey); });
+    data.rows.forEach(function (row, i) { row.cells.forEach(function (c, j) { if (i !== j && typeof c.r === 'number') M[row.key + '|' + data.keys[j]] = c.r; }); });
+    return { M: M, nameOf: nameOf };
+  }
+  function corrDetailHtml(data, cd, sel, c) {
+    var rel = data.keys.filter(function (k) { return k !== sel && cd.M.hasOwnProperty(sel + '|' + k); }).map(function (k) { return { k: k, r: cd.M[sel + '|' + k] }; });
+    rel.sort(function (a, b) { return Math.abs(b.r) - Math.abs(a.r); });
+    return '<h3>' + esc(c.with + cd.nameOf[sel]) + '</h3>' + rel.map(function (x) {
+      var weak = Math.abs(x.r) < 0.2, linked = !!CORR_LINK_SET[corrSuffix(sel) + '|' + corrSuffix(x.k)];
+      var chance = !weak && Math.abs(x.r) >= 0.3 && !linked;
+      return '<div class="di-cx-rw' + (weak ? ' weak' : '') + '"><span class="di-cx-n">' + esc(cd.nameOf[x.k]) + '</span>' + (weak ? '<span class="di-cx-trk none"></span>' : corrBar(x.r)) + '<b>' + (weak ? '—' : esc(fmtCorr(x.r))) + '</b><em>' + esc(corrLevel(x.r, c)) + '</em>' + (chance ? '<i class="di-cx-chance" title="' + esc(c.chance) + '">?</i>' : '') + '</div>';
+    }).join('') + '<p class="di-cx-foot"><i class="di-cx-chance">?</i> ' + esc(c.chance) + '</p>';
+  }
   function renderCorrelationHtml(data) {
-    var t = ui();
+    var t = ui(), c = CORR_STR[lang()] || CORR_STR.es;
     if (data.pending) return fullPendingHtml(t.corrTitle, 'di-intel-corr');
     if (data.keys.length < 2) return intelPendingHtml(t.corrTitle, t.corrEmpty || 'Aún no hay al menos dos productos con histórico verificado suficiente.', 'di-intel-corr');
-    var headerCells = data.keys.map(function (k) { var e = entryByDashKey(k); return '<th title="' + esc(productName(e.nameKey)) + '">' + esc(productName(e.nameKey).slice(0, 4)) + '</th>'; }).join('');
+    var cd = corrData(data);
+    if (!CORR_SEL || data.keys.indexOf(CORR_SEL) < 0) CORR_SEL = data.keys.indexOf('cereales-maiz') > -1 ? 'cereales-maiz' : data.keys[0];
+    var seen = {}, pairs = [];
+    Object.keys(cd.M).forEach(function (ck) {
+      var ab = ck.split('|'), id = ab[0] < ab[1] ? ck : ab[1] + '|' + ab[0];
+      if (seen[id]) return; seen[id] = 1;
+      var r = cd.M[ck];
+      if (r >= 0.3 && CORR_LINK_SET[corrSuffix(ab[0]) + '|' + corrSuffix(ab[1])]) pairs.push({ a: ab[0], b: ab[1], r: r });
+    });
+    pairs.sort(function (x, y) { return Math.abs(y.r) - Math.abs(x.r); });
+    var topHtml = pairs.slice(0, 8).map(function (p) {
+      return '<div class="di-cx-pr"><div class="di-cx-t">' + esc(cd.nameOf[p.a] + c.and + cd.nameOf[p.b] + ' ' + (p.r > 0 ? c.together : c.opposite)) + '</div><div class="di-cx-m">' + corrBar(p.r) + '<b>' + esc(fmtCorr(p.r)) + '</b><em>' + esc(corrLevel(p.r, c)) + '</em></div></div>';
+    }).join('') || '<p class="di-intel-muted">' + esc(c.empty) + '</p>';
+    var pills = data.keys.map(function (k) { return '<button type="button" class="di-cx-pill' + (k === CORR_SEL ? ' on' : '') + '" data-corr-sel="' + esc(k) + '" aria-pressed="' + (k === CORR_SEL) + '">' + esc(cd.nameOf[k]) + '</button>'; }).join('');
+    var headerCells = data.keys.map(function (k) { return '<th title="' + esc(cd.nameOf[k]) + '">' + esc(cd.nameOf[k].slice(0, 4)) + '</th>'; }).join('');
     var bodyRows = data.rows.map(function (row) {
-      var cells = row.cells.map(function (c) {
-        return '<td class="di-corr-cell" style="background:' + c.bg + ';color:' + c.textColor + ';" title="' + esc(c.title) + '">' + esc(c.value) + '</td>';
-      }).join('');
-      return '<tr><th class="di-corr-row-label" data-open="' + row.key + '">' + esc(productName(entryByDashKey(row.key).nameKey)) + '</th>' + cells + '</tr>';
+      var cells = row.cells.map(function (x) { return '<td class="di-corr-cell" style="background:' + x.bg + ';color:' + x.textColor + ';" title="' + esc(x.title) + '">' + esc(x.value) + '</td>'; }).join('');
+      return '<tr><th class="di-corr-row-label" data-open="' + row.key + '">' + esc(cd.nameOf[row.key]) + '</th>' + cells + '</tr>';
     }).join('');
     return (
       '<div class="di-intel-section" id="di-intel-corr">' +
-        '<div class="di-intel-head"><h2>' + esc(t.corrTitle) + '</h2><p>' + esc(t.corrIntro) + '</p></div>' +
-        '<div class="di-corr-scroll"><table class="di-corr-table"><thead><tr><th></th>' + headerCells + '</tr></thead><tbody>' + bodyRows + '</tbody></table></div>' +
-        '<div class="di-intel-disclaimer">' + esc(t.corrDisclaimer) + '</div>' +
+        '<div class="di-intel-head"><h2>' + esc(c.title) + '</h2><p>' + esc(c.intro) + '</p></div>' +
+        '<div class="di-cx-grid">' +
+          '<div class="di-cx-card"><h3>' + esc(c.top) + '</h3>' + topHtml + '<p class="di-cx-foot">' + esc(c.topNote) + '</p></div>' +
+          '<div class="di-cx-card"><h3>' + esc(c.pick) + '</h3><div class="di-cx-pills">' + pills + '</div><div id="di-cx-detail">' + corrDetailHtml(data, cd, CORR_SEL, c) + '</div></div>' +
+        '</div>' +
+        '<div class="di-intel-disclaimer">' + esc(c.note) + '</div>' +
+        '<details class="di-cx-full"><summary>' + esc(c.full) + '</summary><div class="di-corr-scroll"><table class="di-corr-table"><thead><tr><th></th>' + headerCells + '</tr></thead><tbody>' + bodyRows + '</tbody></table></div><div class="di-intel-disclaimer">' + esc(t.corrDisclaimer) + '</div></details>' +
       '</div>'
     );
+  }
+  function wireCorrSelector(root, data) {
+    var box = root.querySelector('#di-intel-corr'); if (!box || !data || data.pending || !data.keys) return;
+    var cd = corrData(data), c = CORR_STR[lang()] || CORR_STR.es;
+    box.addEventListener('click', function (ev) {
+      var btn = ev.target.closest ? ev.target.closest('[data-corr-sel]') : null; if (!btn) return;
+      CORR_SEL = btn.getAttribute('data-corr-sel');
+      Array.prototype.forEach.call(box.querySelectorAll('[data-corr-sel]'), function (b) { var on = b.getAttribute('data-corr-sel') === CORR_SEL; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+      box.querySelector('#di-cx-detail').innerHTML = corrDetailHtml(data, cd, CORR_SEL, c);
+    });
   }
 
   function renderVolatilityHtml(data) {
@@ -1361,13 +1424,14 @@
       renderRelationshipsHtml() +
       renderMarketMapHtml() +
       renderMomentumHtml() +
-      '<div class="di-intel-grid-2">' + renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) + '</div>' +
+      renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) +
       renderSeasonalityHtml() +
       renderLocalGlobalHtml() +
       renderAtlanticSpreadHtml() +
       renderSpreadsHtml() +
       renderMarginHtml();
     wireOpenTargets(root);
+    wireCorrSelector(root, corrVolData);
     labelSvgs(root);
     armFull(root);
     var seasonSelect = document.getElementById('di-season-select');
