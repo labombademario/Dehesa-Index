@@ -1,4 +1,2 @@
-celda en disputa entre informes (se deja vacia): 2026-09-25 0 234.69 235.64
-celda en disputa entre informes (se deja vacia): 2026-09-25 1 222.62 223.52
 sin cambios en sheep-goat.json
-escrito hogs.json 96 semanas; 2 informes leidos
+sin cambios en hogs.json
