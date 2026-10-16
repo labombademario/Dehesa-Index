@@ -1271,16 +1271,25 @@
     stories=stories.slice(0,5);
 
     var labels={
-      es:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Noticias posiblemente relacionadas con el mercado',intro:'Cada noticia se asocia con un producto y un tema por palabras clave: es una asociación automática, no una demostración de impacto. Solo cuando existe una relación estadística observada se muestra su señal.',related:'NOTICIA POSIBLEMENTE RELACIONADA',product:'PRODUCTO',topic:'TEMA DETECTADO',rapeSun:'Colza y girasol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELACIÓN OBSERVADA',none:(region==='eu'?'Sin relación estadística compatible':'Sin relación estadística regional disponible'),watch:'TRANSMISSION WATCH',context:'Contexto descriptivo · no es una predicción.',empty:'No hay noticias enlazadas para este mercado.'},
-      en:{kicker:'NEWS → MARKET INTELLIGENCE',title:'News possibly related to the market',intro:'Each story is matched to a product and a topic by keywords: an automatic association, not proof of impact. A statistical signal is shown only where an observed relationship exists.',related:'POSSIBLY RELATED NEWS',product:'PRODUCT',topic:'DETECTED TOPIC',rapeSun:'Rapeseed and sunflower',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'OBSERVED RELATIONSHIP',none:'No compatible regional statistical relationship',watch:'TRANSMISSION WATCH',context:'Descriptive context · not a forecast.',empty:'No linked news is available for this market.'},
-      fr:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Actualités possiblement liées au marché',intro:'Chaque actualité est associée à un produit et à un thème par mots-clés : une association automatique, pas une preuve d\'impact. Un signal statistique n\'apparaît que lorsqu\'une relation observée existe.',related:'ACTUALITÉ POSSIBLEMENT LIÉE',product:'PRODUIT',topic:'THÈME DÉTECTÉ',rapeSun:'Colza et tournesol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELATION OBSERVÉE',none:'Aucune relation statistique régionale compatible',watch:'TRANSMISSION WATCH',context:'Contexte descriptif · pas une prévision.',empty:'Aucune actualité liée à ce marché.'},
-      it:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Notizie possibilmente collegate al mercato',intro:'Ogni notizia è associata a un prodotto e a un tema tramite parole chiave: un\'associazione automatica, non una prova di impatto. Un segnale statistico compare solo dove esiste una relazione osservata.',related:'NOTIZIA POSSIBILMENTE COLLEGATA',product:'PRODOTTO',topic:'TEMA RILEVATO',rapeSun:'Colza e girasole',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELAZIONE OSSERVATA',none:'Nessuna relazione statistica regionale compatibile',watch:'TRANSMISSION WATCH',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
+      es:{kicker:'NOTICIAS',title:'Noticias del mercado',intro:'Titulares recientes sobre este mercado, con el último precio medido del producto. La asociación es automática por palabras clave y no demuestra impacto; la relación estadística solo aparece cuando se ha observado.',q1:'trimestre',qn:'trimestres',m1:'mes',mn:'meses',related:'NOTICIA POSIBLEMENTE RELACIONADA',product:'PRODUCTO',topic:'TEMA DETECTADO',rapeSun:'Colza y girasol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relación observada',none:(region==='eu'?'Sin relación estadística compatible':'Sin relación estadística regional disponible'),watch:'TRANSMISSION WATCH',context:'Contexto descriptivo · no es una predicción.',empty:'No hay noticias enlazadas para este mercado.'},
+      en:{kicker:'NEWS',title:'Market news',intro:'Recent headlines about this market, with the product\'s latest measured price. The match is automatic by keywords and does not prove impact; a statistical relationship appears only when one has been observed.',q1:'quarter',qn:'quarters',m1:'month',mn:'months',related:'POSSIBLY RELATED NEWS',product:'PRODUCT',topic:'DETECTED TOPIC',rapeSun:'Rapeseed and sunflower',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Observed relationship',none:'No compatible regional statistical relationship',watch:'TRANSMISSION WATCH',context:'Descriptive context · not a forecast.',empty:'No linked news is available for this market.'},
+      fr:{kicker:'ACTUALITÉS',title:'Actualités du marché',intro:'Titres récents sur ce marché, avec le dernier prix mesuré du produit. L\'association est automatique par mots-clés et ne prouve aucun impact ; une relation statistique n\'apparaît que si elle a été observée.',q1:'trimestre',qn:'trimestres',m1:'mois',mn:'mois',related:'ACTUALITÉ POSSIBLEMENT LIÉE',product:'PRODUIT',topic:'THÈME DÉTECTÉ',rapeSun:'Colza et tournesol',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relation observée',none:'Aucune relation statistique régionale compatible',watch:'TRANSMISSION WATCH',context:'Contexte descriptif · pas une prévision.',empty:'Aucune actualité liée à ce marché.'},
+      it:{kicker:'NOTIZIE',title:'Notizie dal mercato',intro:'Titoli recenti su questo mercato, con l\'ultimo prezzo misurato del prodotto. L\'associazione è automatica per parole chiave e non prova alcun impatto; una relazione statistica compare solo se è stata osservata.',q1:'trimestre',qn:'trimestri',m1:'mese',mn:'mesi',related:'NOTIZIA POSSIBILMENTE COLLEGATA',product:'PRODOTTO',topic:'TEMA RILEVATO',rapeSun:'Colza e girasole',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'Relazione osservata',none:'Nessuna relazione statistica regionale compatibile',watch:'TRANSMISSION WATCH',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
     };
     var t=labels[lang()]||labels.es;
     var channelLabels=({es:{input_cost:'COSTE DE INSUMOS',trade:'COMERCIO',weather:'CLIMA',supply:'OFERTA',energy:'ENERGÍA',policy:'POLÍTICA',market_impact:'IMPACTO EN EL MERCADO'},en:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},fr:{input_cost:'COÛTS DES INTRANTS',trade:'COMMERCE',weather:'CLIMAT',supply:'OFFRE',energy:'ÉNERGIE',policy:'POLITIQUE',market_impact:'IMPACT MARCHÉ'},it:{input_cost:'COSTI INPUT',trade:'COMMERCIO',weather:'METEO',supply:'OFFERTA',energy:'ENERGIA',policy:'POLITICA',market_impact:'IMPATTO MERCATO'}})[lang()]||{};
     function productLabel(k){if(k==='colza'&&t.rapeSun) return t.rapeSun; return Core.productName ? Core.productName(k) : k;}
     function alertFor(relId){return alerts.some(function(a){return a.relationship&&a.relationship.id===relId;});}
     function relFor(link){return link.relation&&rels[link.relation]&&rels[link.relation].status==='ready'?rels[link.relation]:null;}
+    function priceFor(k){
+      try{
+        var e=Core.PRODUCT_BY_KEY&&Object.keys(Core.PRODUCT_BY_KEY).map(function(x){return Core.PRODUCT_BY_KEY[x];}).filter(function(x){return x.nameKey===k;})[0];
+        if(!e||!Core.mapInfo||!Core.mapInfo(e)) return null; // solo dato verificado del mercado elegido
+        var d=Core.resolveDisplay(e,Core.getLocation(),Core.getEuCountry());
+        var b=D.buildRegion(d.region,Core.productName(e.nameKey),d.targetCcy,d.targetKgPerUnit,d.targetUnitLabel,D.FX,Core.T());
+        return b&&b.price?b:null;
+      }catch(err){return null;}
+    }
     function storyCard(n){
       var links=n.marketLinks||[];
       var link=links[0]||{market:(n.products||[])[0]||'—',channel:n.impactChannel||'market_impact'};
@@ -1288,38 +1297,21 @@
       for(var j=0;j<links.length;j++){r=relFor(links[j]);if(r){link=links[j];break;}}
       var alert=r&&alertFor(r.id);
       var corr=r&&isFinite(Number(r.correlationReturns))?Number(r.correlationReturns):null;
-      var signal=r ? (corr>=0?'Δ + asociación':'Δ − asociación') : t.none;
-      var signalClass=r ? (corr>=0?'positive':'negative') : 'neutral';
-      var relationText=r ? r.label : t.none;
-      if(!r){
-        // Sin relación estadística observada: solo «posiblemente relacionada», sin canal→impacto→señal.
-        var topicNode=(link.channel&&link.channel!=='market_impact') ? '<span class="di-news-impact-arrow">→</span><div class="di-news-impact-node"><small>'+t.topic+'</small><strong>'+esc(channelLabels[link.channel]||'')+'</strong></div>' : '';
-        return '<article class="di-news-impact-card">'+
-          '<div class="di-news-impact-flow">'+
-            '<div class="di-news-impact-node news"><small>'+t.related+'</small><strong>'+esc(n.source)+'</strong><span>'+esc(n.date)+'</span></div>'+
-            '<span class="di-news-impact-arrow">→</span>'+
-            '<div class="di-news-impact-node"><small>'+t.product+'</small><strong>'+esc(productLabel(link.market))+'</strong></div>'+topicNode+
-            '<span class="di-news-impact-arrow">→</span>'+
-            '<div class="di-news-impact-node signal neutral"><small>'+t.signal+'</small><strong>'+esc(t.none)+'</strong></div>'+
-          '</div>'+
-          '<div class="di-news-impact-story"><a href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+esc((n.headline&& (n.headline[lang()]||n.headline.es))||'')+'</a><span>'+esc(t.context)+'</span></div>'+
-        '</article>';
+      var hl=(n.headline&&(n.headline[lang()]||n.headline.es||n.headline.en))||'';
+      var topic=(link.channel&&link.channel!=='market_impact')?(channelLabels[link.channel]||''):'';
+      var b=priceFor(link.market);
+      var chips='<span class="di-nw-chip">'+esc(productLabel(link.market))+'</span>'+(topic?'<span class="di-nw-chip di-nw-topic">'+esc(topic)+'</span>':'');
+      var px=b?'<span class="di-nw-px"><b>'+esc(b.price)+esc(b.unit)+'</b>'+(b.changeLabel?' <span style="color:'+b.changeColor+';font-weight:700">'+esc(b.changeLabel)+'</span>':'')+'</span>':'';
+      var sig='';
+      if(r){
+        var lag=String(r.lagPeriods)+' '+(r.frequency==='quarterly'?(r.lagPeriods===1?t.q1:t.qn):(r.lagPeriods===1?t.m1:t.mn));
+        sig='<div class="di-nw-sig '+(corr>=0?'positive':'negative')+'"><b>'+esc(t.observed)+':</b> '+esc(r.label)+' · '+esc(corr>=0?'Δ +':'Δ −')+' · r '+(corr==null?'—':corr.toFixed(2))+' · lag '+esc(lag)+(alert?' · ⚠ '+esc(t.watch):'')+'</div>';
       }
-      var lag=r ? String(r.lagPeriods)+' '+(r.frequency==='quarterly'?(r.lagPeriods===1?'trimestre':'trimestres'):(r.lagPeriods===1?'mes':'meses')) : '—';
-      return '<article class="di-news-impact-card">'+
-        '<div class="di-news-impact-flow">'+
-          '<div class="di-news-impact-node news"><small>'+t.news+'</small><strong>'+esc(n.source)+'</strong><span>'+esc(n.date)+'</span></div>'+
-          '<span class="di-news-impact-arrow">→</span>'+
-          '<div class="di-news-impact-node"><small>'+t.channel+'</small><strong>'+esc(channelLabels[link.channel]||'MARKET IMPACT')+'</strong></div>'+
-          '<span class="di-news-impact-arrow">→</span>'+
-          '<div class="di-news-impact-node"><small>'+t.market+'</small><strong>'+esc(productLabel(link.market))+'</strong></div>'+
-          '<span class="di-news-impact-arrow">→</span>'+
-          '<div class="di-news-impact-node"><small>'+t.relationship+'</small><strong>'+esc(relationText)+'</strong></div>'+
-          '<span class="di-news-impact-arrow">→</span>'+
-          '<div class="di-news-impact-node signal '+signalClass+'"><small>'+t.signal+'</small><strong>'+esc(signal)+'</strong><span>'+esc(r ? ('r '+corr.toFixed(2)+' · lag '+lag) : '—')+'</span></div>'+
-          (alert?'<span class="di-news-impact-alert-node">⚠ '+t.watch+'</span>':'')+
-        '</div>'+
-        '<div class="di-news-impact-story"><a href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+esc((n.headline&& (n.headline[lang()]||n.headline.es))||'')+'</a><span>'+esc(t.context)+'</span></div>'+
+      var foreign=(lang()!=='en'&&!(n.headline&&n.headline[lang()]))?'<span class="di-nw-lang">EN</span>':'';
+      return '<article class="di-nw-card">'+
+        '<a class="di-nw-head" href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+esc(hl)+'</a>'+
+        '<div class="di-nw-meta"><span>'+esc(n.source)+' · '+esc(n.date)+'</span>'+foreign+'</div>'+
+        '<div class="di-nw-row">'+chips+px+'</div>'+sig+
       '</article>';
     }
     return '<section class="di-intel-section di-news-impact-panel"><div class="di-intel-head"><span class="di-intel-kicker">'+t.kicker+'</span><h2>'+t.title+'</h2><p class="di-intel-muted">'+t.intro+'</p></div>'+
