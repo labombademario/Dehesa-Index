@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T17:35:01Z",
+ "generatedAt": "2026-10-16T17:40:21Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -3369,7 +3369,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (14017 series en el catalogo unificado)",
+   "dataset": "Ya integrada (14016 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -4678,11 +4678,31 @@
    "country": "HU",
    "scope": "integrated",
    "institution": "Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (196 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "soy",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "production"
+   ],
+   "frequency": "annual",
    "access": {
     "api": null,
     "csv": null,

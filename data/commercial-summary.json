@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T17:06:44Z",
+ "generatedAt": "2026-10-16T17:40:21Z",
  "summary": {
-  "sources": 138,
-  "sourcesApto": 125,
+  "sources": 139,
+  "sourcesApto": 126,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 275,
-  "datasets_apto": 159,
+  "datasets": 276,
+  "datasets_apto": 160,
   "datasets_condiciones": 104,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
@@ -309,6 +309,10 @@
   },
   "knmi_daggegevens": {
    "name": "KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación)",
+   "verdict": "apto"
+  },
+  "ksh_hu": {
+   "name": "Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables",
    "verdict": "apto"
   },
   "magyarkozlony_hu": {

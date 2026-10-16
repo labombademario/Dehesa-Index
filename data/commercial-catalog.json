@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T17:06:44Z",
+ "generatedAt": "2026-10-16T17:40:21Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 138,
-  "sourcesApto": 125,
+  "sources": 139,
+  "sourcesApto": 126,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 275,
-  "datasets_apto": 159,
+  "datasets": 276,
+  "datasets_apto": 160,
   "datasets_condiciones": 104,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
@@ -1283,6 +1283,23 @@
    "redistribution": "yes",
    "attribution": "KNMI, daggegevens; cálculo de Dehesa Index",
    "conditions": "Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI."
+  },
+  {
+   "id": "ksh_hu",
+   "name": "Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables",
+   "url": "https://www.ksh.hu/stadat",
+   "country": "HU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Hungarian Central Statistical Office (KSH), STADAT (CC BY 4.0)",
+   "conditions": "La licencia cubre el contenido publicado en el sitio (tablas, graficos). Quedan fuera los ficheros consultados a peticion a las bases internas del KSH (no se usan)."
   },
   {
    "id": "magyarkozlony_hu",
@@ -4227,6 +4244,21 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/hu-ksh-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ksh_hu"
+   ],
+   "parts": [
+    {
+     "scope": "pais:HU",
+     "sourceId": "ksh_hu",
+     "verdict": "apto"
+    }
    ]
   },
   {
