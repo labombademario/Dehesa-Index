@@ -14,6 +14,7 @@ Cuatro conjuntos oficiales de Defra, todos bajo OGL v3.0 (uso comercial permitid
   8. Leche (UK, mensual): disponibilidad, uso y producción de leche de las lecherías; y suministros de mantequilla, queso, leche condensada, leche en polvo y yogur (producción, importaciones, exportaciones).
   9. Huevos: transformación y comercio (HMRC publicado por Defra).
   10. Agriculture in the United Kingdom (capítulos 3, 7, 8 y 13, anual): valor de la producción, precios en origen, leche por vaca, renta por país y comercio exterior de productos clave.
+  11. Alquiler medio de la tierra arrendada en Inglaterra (Farm Rents in England, tabla 3 del CSV machine-readable): GBP por hectarea, total, por tipo de granja, region y tipo de contrato.
 No inventa nada: un dato no disponible («[x]») es un hueco, nunca cero; si falta un fichero o el formato cambia, esa parte se omite y el
 script termina con error sin escribir si quedan pocas series. Los enlaces se descubren con la API de contenido de GOV.UK.
 Uso: python3 scripts/update-uk-defra.py [--fixtures DIR]   (con --fixtures lee slaughter.csv, fbi_timeseries.csv, livestock_pop_june_dec.ods, cereal_production.ods)"""
@@ -122,6 +123,35 @@ def fbi():
         if put('uk-fbi-' + slug_(ft), 'income', 'Farm Business Income, England: %s (GBP per farm, current prices)' % ft, 'GBP/farm', 'annual', pts, 'Defra – Farm Business Income (England)',
                {'periodNote': 'Farm year starting in the period shown (2024 = 2024/25); England only; Defra typology changes over time'}): n += 1
     PUB['fbi'] = pub; log('FBI:', n, 'series; publicado', pub)
+
+def rents():
+    """Alquiler medio de la tierra arrendada en Inglaterra, GBP por hectarea (Farm Business Survey, «Farm Rents in England», tabla 3 del zip machine-readable)."""
+    import zipfile
+    raw, pub = fetch('rents.zip', 'farm-rents', r'machine_readable\.zip$')
+    z = zipfile.ZipFile(io.BytesIO(raw)); name = next((n for n in z.namelist() if 'table3' in n.lower() and n.lower().endswith('.csv')), None)
+    if not name: raise RuntimeError('alquileres: sin la tabla 3 en el zip %s' % z.namelist())
+    rows = list(csv.DictReader(io.StringIO(z.read(name).decode('utf-8-sig', 'replace'))))
+    ORDER = ['2010', '2013', '2017']
+    rows = [r for r in rows if r['prices'] == 'Current']
+    if len(rows) < 200: raise RuntimeError('alquileres: muy pocas filas (%d)' % len(rows))
+    best = {}
+    for r in rows:
+        if r['typology'] not in ORDER: raise RuntimeError('alquileres: tipologia desconocida ' + r['typology'])
+        k = (r['agreement_type'], r['grouping'], r['group'], r['survey_year']); t = ORDER.index(r['typology'])
+        if k not in best or t > best[k][0]: best[k] = (t, num(r['mean_rent_per_ha']))
+    AG = {'All agreements': 'all', 'FBT': 'fbt', 'FAT': 'fat', 'Informal': 'informal', '1 year and over': '1yr-plus', 'Seasonal': 'seasonal', 'Other': 'other'}
+    series = {}
+    for (ag, gr, g, y), (t, v) in best.items():
+        if not re.match(r'^\d{4}/\d{2}$', y) or ag not in AG: continue
+        if gr == 'All farms' and g == 'All farms': sid, lab = 'uk-rent-%s-all-farms' % AG[ag], 'Mean rent, England: all farms, %s (GBP per hectare, current prices)' % ag.lower()
+        elif ag == 'All agreements' and gr in ('Farm type', 'Region'): sid, lab = 'uk-rent-%s-%s' % ('type' if gr == 'Farm type' else 'region', slug_(g)), 'Mean rent, England: %s, all agreements (GBP per hectare, current prices)' % g
+        else: continue
+        series.setdefault((sid, lab), []).append((y[:4], v))
+    n = 0
+    for (sid, lab), pts in sorted(series.items()):
+        if put(sid, 'income', lab, 'GBP/ha', 'annual', pts, 'Defra – Farm Rents in England',
+               {'periodNote': 'Farm year starting in the period shown (2024 = 2024/25); tenanted land in England only; Farm Business Survey estimate with confidence intervals in the source; Defra typology changes over time'}): n += 1
+    PUB['rents'] = pub; log('alquileres:', n, 'series; publicado', pub)
 
 def livestock():
     import pandas as pd
@@ -647,7 +677,7 @@ def auk_more():
     PUB['auk_more'] = max(pubs) if pubs else ''; log('Agriculture in the UK (resto de capítulos):', n, 'series; publicado', PUB['auk_more'])
 
 def main():
-    for fn in (slaughter, fbi, livestock, cereals, eggs, poultry, cereals_regions, milk, milk_products, auk, auk_more):
+    for fn in (slaughter, fbi, rents, livestock, cereals, eggs, poultry, cereals_regions, milk, milk_products, auk, auk_more):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e))
     if len(OUT) < 30:
