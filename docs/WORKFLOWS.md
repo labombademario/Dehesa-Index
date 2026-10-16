@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-211 workflows (173 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+212 workflows (174 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -156,6 +156,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-ie-cso.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-ie-cso.py | ie-cso-stats.json | finish, validate-files |
 | update-ie-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-ie-diesel.py | ie-diesel.json | finish, validate-files |
 | update-ie-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-ie-drought.py | ie-drought.json | finish, validate-files |
 | update-ie-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | ie-ghg-agri.json | finish, validate-files |

@@ -320,6 +320,15 @@ sources:
     data: [eurostat-structure2-stats.json]
     log: eurostat-structure2-log.txt
     message: Datos Eurostat de tierra, estructura de explotaciones, plaguicidas, selvicultura y ecologico (18 paises mas de la UE)
+  - id: ie-cso
+    name: Update Ireland agricultural price indices, milk intake and land sales (CSO)
+    cron: ['50 7 * * 3']
+    script: scripts/update-ie-cso.py
+    timeout: 20
+    script_timeout: 15
+    data: [ie-cso-stats.json]
+    log: ie-cso-log.txt
+    message: Irlanda - indices de precios agrarios, leche recibida y venta de tierra (CSO)
   - id: france-organic
     name: Update France organic farming by department and region (Agence BIO)
     cron: ['35 6 * * 3']

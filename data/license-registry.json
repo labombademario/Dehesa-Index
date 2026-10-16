@@ -3381,7 +3381,7 @@
    "legalConfidenceReason": "VERIFIED: condiciones de uso publicadas."
   },
   "cso_ie": {
-   "name": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05)",
+   "name": "Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05), Intake of Cows Milk (AKA01), Agricultural Land Sales (ARA02)",
    "url": "https://data.cso.ie/",
    "country": "IE",
    "licenseId": "CC-BY-4.0",
@@ -3398,10 +3398,10 @@
    "verifiedAt": "2026-10-12",
    "status": "VERIFIED",
    "confidence": "high",
-   "evidence": "Política de derechos de autor del CSO (cso.ie/en/aboutus/whoweare/copyrightpolicy): las estadísticas del CSO se pueden usar libremente bajo CC BY 4.0, citando al CSO. Las tablas FPM01 y AHM05 llevan 'Central Statistics Office, Ireland' como titular en su metadato JSON-stat.",
+   "evidence": "Política de derechos de autor del CSO (cso.ie/en/aboutus/whoweare/copyrightpolicy): las estadísticas del CSO se pueden usar libremente bajo CC BY 4.0, citando al CSO. Las tablas FPM01, AHM05, AKA01 y ARA02 llevan 'Central Statistics Office, Ireland' como titular en su metadato JSON-stat.",
    "used": true,
    "aliases": [],
-   "notes": "API PxStat (ws.cso.ie), sin clave. FPM01 trae millones de litros despachados por tipo de combustible (datos de Revenue); AHM05 los índices de precios agrarios, base 2020=100.",
+   "notes": "API PxStat (ws.cso.ie), sin clave. FPM01 trae millones de litros despachados por tipo de combustible (datos de Revenue); AHM05 los índices de precios agrarios, base 2020=100. AKA01: leche de vaca recibida por industrias y cooperativas (anual). ARA02: venta de tierra agricola (precio por hectarea y transacciones, por region).",
    "short": "CSO",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: política de copyright del CSO (CC BY 4.0)."
@@ -5843,6 +5843,12 @@
     "world_bank"
    ],
    "notes": "Paquete descargable para empresas (scripts/build-data-pack.py): CSV y Excel por producto y mercado copiados de data/prices/history, sin cambiar valores. Solo entran fuentes con veredicto comercial apto o con condiciones; cada fila lleva su fuente, licencia y atribucion."
+  },
+  "data/ie-cso-stats.json": {
+   "byCountry": {
+    "IE": "cso_ie"
+   },
+   "notes": "Irlanda: indices de precios agrarios mensuales (AHM05), leche de vaca recibida por industrias (AKA01) y venta de tierra agricola (ARA02), todo del CSO. scripts/update-ie-cso.py."
   }
  },
  "derived": [
