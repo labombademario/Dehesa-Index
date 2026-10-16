@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T21:40:07Z",
+ "generatedAt": "2026-10-16T00:48:25Z",
  "summary": {
-  "files": 62,
+  "files": 63,
   "errors": 0,
   "warnings": 19
  },
@@ -907,10 +907,10 @@
    "warnings": [],
    "stats": {
     "series": 32,
-    "points": 4417,
+    "points": 4418,
     "lines": 0
    },
-   "generatedAt": "2026-10-14T00:50:22Z",
+   "generatedAt": "2026-10-15T21:42:20Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1110,6 +1110,22 @@
    "nErrors": 0
   },
   {
+   "file": "us-fed-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 10,
+    "points": 4110,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-16T00:27:04Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
    "file": "canada-stats.json",
    "schema": "country-stats",
    "status": "warning",
@@ -1253,10 +1269,10 @@
    "warnings": [],
    "stats": {
     "series": 5,
-    "points": 1196,
+    "points": 1197,
     "lines": 0
    },
-   "generatedAt": "2026-10-15T07:21:44Z",
+   "generatedAt": "2026-10-15T23:16:13Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
