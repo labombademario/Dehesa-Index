@@ -2734,3 +2734,4 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .fsh-age-r b{min-width:56px;text-align:right;font-variant-numeric:tabular-nums}
 @media (max-width:480px){.fsh-kpis{grid-template-columns:1fr 1fr}.fsh-kv{font-size:18px}}
 .fsh-sec .wp-chart{max-width:760px}
+.fsh-mgr-two{display:flex;gap:18px;flex-wrap:wrap;align-items:center}.fsh-mgr-two .fsh-age{flex:1 1 360px}.fsh-pie{flex:0 1 340px}

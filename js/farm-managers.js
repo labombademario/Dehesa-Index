@@ -12,6 +12,7 @@
     h: L('Edad de los jefes de explotación', 'Age of farm managers', 'Âge des chefs d’exploitation', 'Età dei capi azienda'),
     sub: L('Explotaciones según la edad de quien las dirige, en el último censo o encuesta de estructura publicado.', 'Holdings by the age of the person who manages them, in the latest published census or farm structure survey.', 'Exploitations selon l’âge de la personne qui les dirige, dans le dernier recensement ou enquête sur la structure publié.', 'Aziende secondo l’età di chi le dirige, nell’ultimo censimento o indagine sulla struttura pubblicato.'),
     yrs: L('años', 'years', 'ans', 'anni'),
+    unitH: L('explotaciones', 'holdings', 'exploitations', 'aziende'),
     old: L('Jefes de 65 años o más', 'Managers aged 65 or over', 'Chefs de 65 ans ou plus', 'Capi azienda di 65 anni o più'),
     young: L('Jefes menores de 40 años', 'Managers under 40', 'Chefs de moins de 40 ans', 'Capi azienda con meno di 40 anni'),
     women: L('Explotaciones dirigidas por mujeres', 'Holdings managed by women', 'Exploitations dirigées par des femmes', 'Aziende dirette da donne'),
@@ -54,6 +55,7 @@
       var mx = Math.max.apply(null, bands.map(function (b) { return at(o[b[0]], y) / s.tot * 100; })) || 1;
       var bars = bands.map(function (b) { var v = at(o[b[0]], y), p = v / s.tot * 100;
         return '<div class="fsh-age-r"><span>' + esc(b[1][i]) + '</span><span class="fsh-bar wide"><i style="width:' + (p / mx * 100).toFixed(1) + '%"></i></span><b>' + nf(p, 1) + ' %</b><span class="fsh-m" style="min-width:80px;text-align:right">' + nf(v, 0) + '</span></div>'; }).join('');
+      var DC = global.DehesaChart, pie = DC && DC.pie ? '<div class="fsh-pie">' + DC.pie({ items: bands.map(function (b) { return { name: b[1][i], v: at(o[b[0]], y) }; }), unit: T.unitH[i], aria: T.h[i] + ' ' + y, center: nf(s.tot, 0), centerLabel: T.unitH[i] + ' ' + y, maxN: 10, minShare: 0 }) + '</div>' : '';
       var kp = function (lab, v, extra) { return '<div class="fsh-kpi"><div class="fsh-kl">' + esc(lab) + '</div><div class="fsh-kv">' + v + '</div><div class="fsh-kp">' + esc(extra || '') + '</div></div>'; };
       var kpis = kp(T.old[i], s.old != null ? nf(s.old, 1) + ' %' : '—', y + (s0 && s0.old != null ? ' · ' + y0 + ': ' + nf(s0.old, 1) + ' %' : '')) +
         (s.young != null ? kp(T.young[i], nf(s.young, 1) + ' %', y) : '') +
@@ -65,7 +67,7 @@
         rows.map(function (r) { return '<tr' + (r.cc === cc ? ' class="on"' : '') + '><td>' + esc((N[r.cc] || [r.cc, r.cc, r.cc, r.cc])[i]) + '</td><td class="num">' + (r.s.old != null ? nf(r.s.old, 1) + ' %' : '—') + '</td><td class="num">' + (r.s.young != null ? nf(r.s.young, 1) + ' %' : '—') + '</td><td class="num">' + (r.s.women != null ? nf(r.s.women, 1) + ' %' : '—') + '</td><td class="num">' + esc(r.s.y) + '</td></tr>'; }).join('') +
         '</tbody></table></div></details>';
       el.innerHTML = '<section class="di-card ps-rm gb-card" id="ps-farm-managers" style="max-width:none"><h2 class="ps-rm-h">' + esc(T.h[i]) + ' · ' + esc(y) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(T.sub[i]) + '</p>' +
-        '<div class="fsh-kpis">' + kpis + '</div><div class="fsh-age">' + bars + '</div>' + cmp +
+        '<div class="fsh-kpis">' + kpis + '</div><div class="fsh-mgr-two"><div class="fsh-age">' + bars + '</div>' + pie + '</div>' + cmp +
         '<p class="di-movers-hint" style="margin:10px 0 0;max-width:860px">' + esc(T.note[i]) + '</p><p class="di-field-hint" style="margin:8px 0 0">' + esc(T.src[i]) + ' <a href="https://ec.europa.eu/eurostat/databrowser/view/ef_fsi_agesex/default/table" target="_blank" rel="noopener noreferrer">' + esc(T.srcA[i]) + '</a></p></section>';
       return true;
     });
