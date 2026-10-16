@@ -2,6 +2,6 @@ agriprices ['https://statbel.fgov.be/sites/default/files/files/documents/landbou
 output 47 series columnas mensuales 200
 input 31 series columnas mensuales 200
 leche ficheros 9
-leche 98 meses
+leche 102 meses
 sacrificio ficheros 13
 sacrificio 42 series
