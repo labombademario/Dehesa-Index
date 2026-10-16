@@ -1,5 +1,6 @@
 sacrificio: 26 series; publicado 2026-10-15
 FBI: 10 series; publicado 2026-09-08
+alquileres: 20 series; publicado 2026-03-12
 censo ganado: 7 series; publicado 2026-10-02
 cereales: 8 series; publicado 2026-10-08
 omitida (sin datos recientes): uk-egg-price-barn 2005-Q4
