@@ -44,7 +44,7 @@ def land():
         recs, _ = E.es('apri_lrnt', unit='EUR_HA'); n += emit('rent', 'apri_lrnt', LR, 'Agricultural land rent, one year: %s (EUR/ha, Eurostat)', recs)
     E.log(cc, 'tierra', n)
 BANDS = {'HA_GT0_LT2': '0-2 ha', 'HA2-4': '2-5 ha', 'HA5-9': '5-10 ha', 'HA10-19': '10-20 ha', 'HA20-29': '20-30 ha', 'HA30-49': '30-50 ha', 'HA50-99': '50-100 ha', 'HA100-249': '100-250 ha', 'HA_GE250': '250 ha or more'}
-AGES = {'Y_LT25': 'under 25', 'Y25-34': '25 to 34', 'Y35-44': '35 to 44', 'Y45-54': '45 to 54', 'Y55-64': '55 to 64', 'Y_GE65': '65 or over'}
+AGES = {'Y_LT25': 'under 25', 'Y25-34': '25 to 34', 'Y35-39': '35 to 39', 'Y40-44': '40 to 44', 'Y35-44': '35 to 44', 'Y45-54': '45 to 54', 'Y55-64': '55 to 64', 'Y_GE65': '65 or over'}   # ef_fsi_agesex parte 35-44 en 35-39 y 40-44
 def structure():
     cc = E.CFG['geo']; n = 0
     recs, _ = E.es('ef_fsi_farms', unit='HLD')
@@ -65,6 +65,11 @@ def structure():
     recs, _ = E.es('ef_fsi_agesex', so_eur='TOTAL', sex='T', unit='HLD')
     for k, p in pts(recs, lambda r: r['age'] if r['age'] in AGES else None).items():
         n += put('st-mgr-age-' + k.lower(), 'production', 'Farm managers aged %s (number of holdings, Eurostat)' % AGES[k], 'holdings', 'annual', p, 'Eurostat ef_fsi_agesex %s' % k)
+    for k, p in pts(recs, lambda r: r['age'] if r['age'] == 'TOTAL' else None).items():
+        n += put('st-mgr-total', 'production', 'Farm managers: total (number of holdings, Eurostat)', 'holdings', 'annual', p, 'Eurostat ef_fsi_agesex TOTAL')
+    recs, _ = E.es('ef_fsi_agesex', so_eur='TOTAL', sex='F', unit='HLD')
+    for k, p in pts(recs, lambda r: r['age'] if r['age'] == 'TOTAL' else None).items():
+        n += put('st-mgr-women', 'production', 'Farm managers: women (number of holdings, Eurostat)', 'holdings', 'annual', p, 'Eurostat ef_fsi_agesex F TOTAL')
     recs, _ = E.es('ef_fsi_training', age='TOTAL', unit='PC')
     TR = {'FULL': 'full agricultural training', 'BASIC': 'basic training', 'PRACT': 'practical experience only'}
     for k, p in pts(recs, lambda r: r['training'] if r['training'] in TR else None).items():
