@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "asOf": "2026-10-15",
+ "asOf": "2026-10-16",
  "contract": {
   "doc": "Contrato comun de la PAC por pais en data/cap/<CC>/. Cada componente declara INGESTED, PARTIAL o NOT_INGESTED (con razon). Un pais solo pasa a INGESTED con una fuente institucional oficial y licencia aprobada en el License Gate. Sin consejo juridico ni calculo de ayudas individuales.",
   "components": [
@@ -907,15 +907,6 @@
   "events": [],
   "deadlines": [
    {
-    "cc": "NL",
-    "id": "changes-close",
-    "kind": "deadline",
-    "date": "2026-10-15",
-    "text": "Último día para comunicar cambios en la solicitud (15 de octubre del año de solicitud).",
-    "legalBasis": "Uitvoeringsregeling GLB 2023 (BWBR0047444), art. 10",
-    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
-   },
-   {
     "cc": "ES",
     "id": "advance",
     "kind": "window",
@@ -1352,6 +1343,15 @@
     "text": "Fecha límite para presentar la copia del contrato de entrega de remolacha azucarera para la ayuda asociada (30 de septiembre).",
     "legalBasis": "19/2024. (IV. 9.) AM rendelet (termeléshez kötött közvetlen támogatások), 21. §",
     "officialUrl": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7R"
+   },
+   {
+    "cc": "NL",
+    "id": "changes-close",
+    "kind": "deadline",
+    "date": "2027-10-15",
+    "text": "Último día para comunicar cambios en la solicitud (15 de octubre del año de solicitud).",
+    "legalBasis": "Uitvoeringsregeling GLB 2023 (BWBR0047444), art. 10",
+    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
    }
   ]
  }
