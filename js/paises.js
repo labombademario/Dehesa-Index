@@ -630,7 +630,6 @@
     var prof = window.DIProfile ? window.DIProfile.html(ST.c, c, { lang: lang(), t: t, groups: groups, esc: esc, nf: nf, dec: dec, plabel: plabel, macro: MACRO && MACRO.countries[ST.c], wage: WAGES && WAGES.countries[ST.c], rate: window.DIProfile.rateOf(c), afterHero: (window.DehesaSector ? '<div id="ps-sector"></div>' : '') + themeHtml + '<div id="ps-regmap" class="pp-anchor"></div>' }) : '';
     var EXC = window.DIExplorer ? xctx(c, list, cur0, cur, t, countries, opt, groups, rng) : null;
     var html = prof + (EXC ? window.DIExplorer.html(EXC) : '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
-      sel('ps-c', t.country, opt(countries, ST.c, function (k) { return t.countries[k] || k; })) +
       sel('ps-g', t.group, groupOpts(groups, t)) +
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + seriesPicker(list, t) + '</div>');
     if (cur) {
@@ -709,7 +708,7 @@
   var LABELS_ON = true;
   if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } });
   shell();
-  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('cmp')) { var cm = q.get('cmp').split(':'); if (cm.length > 1) ST.cmp = { cc: cm[0].toUpperCase(), id: cm.slice(1).join(':') }; } if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
+  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('cmp')) { var cm = q.get('cmp').split(':'); if (cm.length > 1 && cm[0].toUpperCase() === ST.c) ST.cmp = { cc: cm[0].toUpperCase(), id: cm.slice(1).join(':') }; } if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
   /* Carga por catalogo (capa de datos unificada): manifiesto -> catalogo del pais -> trozo de la serie. Nunca se piden los *-stats.json. */
   var GROUPS = ['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'crops_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'climate', 'stocks', 'income', 'partners', 'rates'];
   var CCODES = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU', 'UK', 'AR', 'CL', 'PL', 'CH', 'EL', 'IE', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'EE', 'HU', 'LV', 'RO', 'SE', 'SI'], AVAIL = {}, CAT = {}, TOK = 0, LREG = null;
