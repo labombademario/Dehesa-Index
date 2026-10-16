@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-10-15T14:31:37.074Z",
+  "generatedAt": "2026-10-16T04:25:27.066Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -1155,14 +1155,14 @@
       "frequency": "weekly",
       "unit": "tonelada",
       "currency": "EUR",
-      "latest": 170.89,
-      "observationDate": "2026-08-01",
-      "periodChangePct": -6.423173803526461,
+      "latest": 154.02,
+      "observationDate": "2026-10-01",
+      "periodChangePct": 0.2864956374527994,
       "yoyPct": null,
-      "volatility": 0.0727107515894483,
-      "points": 130,
+      "volatility": 0.08098469601437405,
+      "points": 132,
       "coverageStart": "2015-11-01",
-      "coverageEnd": "2026-08-01",
+      "coverageEnd": "2026-10-01",
       "status": "verified",
       "comparability": "directional"
     },
