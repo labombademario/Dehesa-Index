@@ -76,7 +76,7 @@ export const PRODUCTS = {
   avena: {
     catId: 'cereales', id: 'di_cereales_avena_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'cereal', member: 'EU', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
-    select: r => r.productName === 'Feed oats' && /^Deliver to first customer/.test(r.stageName), recent: true,
+    select: r => r.productName === 'Feed oats' && /^Deliver to first customer/.test(r.stageName), recent: true, minPoints: 8, // serie nueva de la Comisión (desde el 9-8-2026): aún tiene pocas semanas
     market: 'Comisión Europea (avena pienso, agregado UE)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de avena pienso en la fase «entrega al primer comprador» (silo o industria), EUR/tonelada. Desde agosto de 2026 la Comisión dejó de publicar la «media nacional» de los cereales; esta serie empieza el 9-8-2026 y no se empalma con la anterior. España no publica avena en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
   },
@@ -299,7 +299,7 @@ async function updateProduct(name, today) {
   const members = cfg.member ? [...new Set([cfg.member, ...countries.map(k => COUNTRY_CODE[k])])] : ['ES'];
   const rows = await fetchRows(cfg, members);
   const series = buildSeries(rows, cfg, cfg.member, today);
-  if (series.length < 12) throw new Error('Serie insuficiente para ' + name + ': ' + series.length + ' puntos');
+  if (series.length < (cfg.minPoints || 12)) throw new Error('Serie insuficiente para ' + name + ': ' + series.length + ' puntos');
   const latest = series[series.length - 1], prev = series[series.length - 2];
   const changePct = Number(((latest[1] / prev[1] - 1) * 100).toFixed(4));
 
