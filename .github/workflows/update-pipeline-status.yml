@@ -88,7 +88,7 @@ jobs:
       - name: Paquete de datos descargable para empresas (CSV y Excel; solo fuentes aptas segun el catalogo comercial)
         run: pip install --quiet openpyxl && python3 scripts/build-data-pack.py
       - name: Informe de mercado para cooperativas (muestra) y estado por fuente
-        run: python3 scripts/build-coop-report.py && python3 scripts/build-source-health.py
+        run: python3 scripts/build-coop-report.py && python3 scripts/build-source-health.py && python3 scripts/build-input-monitor.py && python3 scripts/build-liquidation-refs.py
       - name: Huecos de cobertura (pais x producto x metrica)
         run: python3 scripts/build-coverage-gaps.py
       - name: Paises - que falta por llegar (cobertura hoy, techo y fuentes esperadas)
