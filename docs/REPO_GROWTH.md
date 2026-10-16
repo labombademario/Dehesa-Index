@@ -42,3 +42,9 @@ No se ha borrado ni reescrito historia ni datos historicos. Todo lo anterior es 
 - El historial git llego a ~457 MB (limite 400) y `check-repo-growth.py` fallaba en CI. `data/normalized.json` se compacto (13,5 a 10,5 MB), pero eso no reduce el historial ya acumulado.
 - **Decision de Mario (2026-10-14): subir el limite a 500 MB (aviso a 250 se mantiene) y dejar el archivado para mas adelante.** No es permiso para crecer sin freno.
 - Pendiente: archivar el historico antiguo en un repositorio privado `dehesa-index-data-archive` y reiniciar `main` (ver Politica, punto 3). Requiere que Mario cree el repositorio vacio; sin copia segura no se reescribe la historia.
+
+## Medicion del 2026-10-16
+- `data/` pesaba 259 MB y hacia fallar `quality.yml` (limite 250). Se compactaron `data/latest.json` y `data/history.json` (sin sangria, -4,7 MB; los regenera `build-data-index.mjs` y son derivados en `publish-data.sh`, asi que no hay conflictos de mezcla). Los snapshots diarios NO se compactan: varios workflows escriben el mismo fichero del dia y git solo puede mezclar sus cambios linea a linea si el JSON esta sangrado.
+- Lo que crece es contenido nuevo (paquete descargable `data/pack/` ~10 MB, referencias de liquidacion, paises nuevos), no duplicados: el resto de JSON de `data/` ya esta compacto (0,6 MB de sangria en total).
+- Limite de `data/` subido a 300 MB (aviso 270). GitHub mide el repositorio en 219 MB.
+- Siguiente paso cuando avise: particionar `data/series/<pais>` y `data/ams/` por ano.

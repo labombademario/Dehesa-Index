@@ -409,7 +409,7 @@
 
   /* ---------- bloques ---------- */
   function blkChanged() {
-    return Promise.all([J('views/product-brief.json', { cache: 'no-cache' }).catch(function () { return null; }), J('revisions.json', { cache: 'no-cache' }).catch(function () { return null; })]).then(function (a) { return { brief: a[0], revs: a[1] }; });
+    return Promise.all([J('views/product-brief.json', { cache: 'no-cache' }).catch(function () { return null; }), J('views/price-revisions.json', { cache: 'no-cache' }).catch(function () { return null; })]).then(function (a) { return { brief: a[0], revs: a[1] }; });
   }
   function htmlChanged(d) {
     var keys = {}, ids = {}; CTX.inst.concat(CTX.idx).forEach(function (o) { keys['P/' + obsKey(o)] = o; ids[o.id] = o; });
@@ -419,7 +419,7 @@
     h += inB.length ? '<ul class="pt-list">' + inB.map(function (x) { return '<li><strong>' + esc(reg(keys[x.k].region)) + '</strong> · ' + esc(t('newPoint')) + ' ' + esc(dstr(x.period)) + ': ' + esc(nf(x.value, 2)) + ' ' + esc(x.unit || '') + ' · ' + chg(x.changePct) + '</li>'; }).join('') + '</ul>' : '<p class="pt-sub">' + esc(t('noBrief')) + '</p>';
     h += '<h3 style="font-size:14px;margin:12px 0 6px">' + esc(t('lastObs')) + '</h3><div class="pt-tblwrap"><table class="pt-table rs"><thead><tr><th>' + esc(t('cMarket')) + '</th><th>' + esc(t('cDate')) + '</th><th class="r">' + esc(t('cOrig')) + '</th><th class="r">' + esc(t('vsPrev')) + '</th><th>' + esc(t('cFresh')) + '</th></tr></thead><tbody>' +
       CTX.inst.concat(CTX.idx).map(function (o) { return '<tr><td data-l="' + esc(t('cMarket')) + '">' + esc(reg(o.region)) + (isIdx(o) ? ' · ' + esc(UL.index_2020_100) : '') + '</td><td data-l="' + esc(t('cDate')) + '">' + esc(dstr(o.observationDate)) + '</td><td class="r" data-l="' + esc(t('cOrig')) + '">' + esc(isIdx(o) ? nf(o.value, 1) : origTxt(o)) + '</td><td class="r" data-l="' + esc(t('vsPrev')) + '">' + chg(o.changePct) + '</td><td data-l="' + esc(t('cFresh')) + '">' + freshBadge(o) + '</td></tr>'; }).join('') + '</tbody></table></div>';
-    var revs = d.revs && d.revs.revisions ? d.revs.revisions.filter(function (r) { return ids[r.series] && String(r.detectedAt || '') >= new Date(Date.now() - 30 * 86400000).toISOString(); }) : [];
+    var revs = d.revs && d.revs.revisions ? d.revs.revisions.filter(function (r) { return (ids[r.series] || ids[String(r.series).replace(/^P\//, '')]) && String(r.detectedAt || '') >= new Date(Date.now() - 30 * 86400000).toISOString(); }) : [];
     h += '<h3 style="font-size:14px;margin:12px 0 6px">' + esc(t('revs')) + '</h3>' + (revs.length ? '<ul class="pt-list">' + revs.map(function (r) { return '<li>' + esc(r.label || r.series) + ' · ' + esc(dstr(r.period)) + ': ' + esc(nf(r.old, 2)) + ' → ' + esc(nf(r.new, 2)) + (typeof r.pct === 'number' ? ' (' + chgTxt(r.pct) + ')' : '') + '</li>'; }).join('') + '</ul>' : '<p class="pt-sub">' + esc(t('noRevs')) + '</p>');
     return h + srcLine(CTX.inst.concat(CTX.idx).map(function (o) { return o.sourceId; }), 'Daily Brief');
   }

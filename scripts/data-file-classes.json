@@ -205,6 +205,14 @@
   "data/app/v1/search-it.json": {
    "class": "DERIVED",
    "note": "Indice de busqueda de la app en it (build-app-views.mjs, 13-oct-2026): etiqueta original + traduccion de ese idioma; la app baja solo el de su idioma. La web no lo descarga."
+  },
+  "data/product-compare.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series del comparador en un solo fichero (scripts/build-product-compare.py). El navegador descarga solo los fragmentos data/views/compare/<producto>.json; este lo leen las pruebas."
+  },
+  "data/italy-istat/comuni.json": {
+   "class": "RUNTIME",
+   "note": "Datos de ISTAT por municipio italiano (js/it-istat.js lo descarga solo en la ficha de Italia, al abrir el bloque municipal)."
   }
  },
  "prefixes": {

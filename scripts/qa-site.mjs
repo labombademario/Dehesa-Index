@@ -72,6 +72,7 @@ for(const o of latest.observations){
  if(o.unit!=='index_2020_100') check(o.id+' is wired to a visible price card (LIVE_OBSERVATION_MAP)',prices.includes("'"+o.product+':'+o.region+"':"));
  check(o.id+' has observation date',/^\d{4}-\d{2}/.test(o.observationDate||''));
 }
+{ const {readdirSync}=await import('node:fs'); const have=readdirSync('data/views/trade-products').filter(f=>/^[A-Z]{2}\.json$/.test(f)).map(f=>f.slice(0,2)).sort().join(' '); for(const f of ['js/perfil-pais.js','js/comercio-socios.js']){ const m=/var TPV = '([A-Z ]+)'/.exec(await read(f)); check(f+' lists exactly the countries with a trade-products view',m&&m[1]===have); } }
 const passed=checks.filter(x=>x[1]).length;
 console.log('Dehesa Index QA: '+passed+'/'+checks.length+' checks passed');
 if(failures.length){console.error('FAILURES');failures.forEach(x=>console.error(' - '+x));process.exit(1);}

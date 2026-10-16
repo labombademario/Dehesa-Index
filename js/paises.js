@@ -361,7 +361,7 @@
       var afE = document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || trE;
       var elE = document.createElement('div'); elE.id = 'pp-land-es'; afE.parentNode.insertBefore(elE, afE.nextSibling);
       var goE = function () { if (window.DehesaEsTierra && ST.c === 'ES') window.DehesaEsTierra.render(elE); };
-      if (window.DehesaEsTierra) goE(); else { var scE = document.createElement('script'); scE.src = 'js/es-tierra.js?v=20261015'; scE.onload = goE; document.head.appendChild(scE); }
+      elE.style.minHeight = '1px'; nearView(elE, function () { if (window.DehesaEsTierra) goE(); else { var scE = document.createElement('script'); scE.src = 'js/es-tierra.js?v=20261015'; scE.onload = goE; document.head.appendChild(scE); } });
       return;
     }
     if (ST.c !== 'FR' && ST.c !== 'IT') return;
@@ -471,11 +471,17 @@
     var run = function (obj, el, src) { var go = function () { if (window[obj] && ST.c === cc) window[obj].mount(el, lang()); }; if (window[obj]) go(); else { var sc = document.createElement('script'); sc.src = src; sc.onload = go; document.head.appendChild(sc); } };
     run('DIPtDiesel', a, 'js/pt-diesel.js?v=0'); run('DIPtNitrates', b, 'js/pt-nitrates.js?v=0');
   }
+  /* Carga diferida: el bloque se monta cuando se acerca a la pantalla (16-oct-2026: las denominaciones de España bajaban 96 KB de zonas al abrir la ficha) */
+  function nearView(el, fn) {
+    if (!el || !('IntersectionObserver' in window)) return fn();
+    var io = new IntersectionObserver(function (en) { if (en.some(function (x) { return x.isIntersecting; })) { io.disconnect(); fn(); } }, { rootMargin: '600px 0px' });
+    io.observe(el);
+  }
   function giUp() {
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
-    var el = document.createElement('div'); el.id = 'pp-gi'; tr.parentNode.insertBefore(el, tr.nextSibling);
+    var el = document.createElement('div'); el.id = 'pp-gi'; el.style.minHeight = '1px'; tr.parentNode.insertBefore(el, tr.nextSibling);
     var go = function () { if (window.DIGI && ST.c === cc) window.DIGI.mount(el, cc, lang()); };
-    if (window.DIGI) go(); else { var sc = document.createElement('script'); sc.src = 'js/denominaciones.js?v=20261013'; sc.onload = go; document.head.appendChild(sc); }
+    nearView(el, function () { if (window.DIGI) go(); else { var sc = document.createElement('script'); sc.src = 'js/denominaciones.js?v=20261013'; sc.onload = go; document.head.appendChild(sc); } });
   }
   /* Selector de series: buscador + lista con grupos «tema: medida». La etiqueta se acorta quitando solo el nombre de la fuente (Eurostat), que ya se cita bajo el gráfico. */
   var SP = { es: ['Buscar serie', 'p. ej. cebada rendimiento', '{n} de {m} series', 'Sin resultados: prueba con menos palabras.', 'Otras series', 'Variantes de esta serie', 'Las variantes casi idénticas van agrupadas: elige la tuya en «Variantes».', ' variantes'], en: ['Find a series', 'e.g. barley yield', '{n} of {m} series', 'No results: try fewer words.', 'Other series', 'Variants of this series', 'Near-identical variants are grouped: pick yours under “Variants”.', ' variants'], fr: ['Chercher une série', 'ex. orge rendement', '{n} séries sur {m}', 'Aucun résultat : essayez moins de mots.', 'Autres séries', 'Variantes de cette série', 'Les variantes quasi identiques sont regroupées : choisissez la vôtre sous « Variantes ».', ' variantes'], it: ['Cerca una serie', 'es. orzo resa', '{n} serie su {m}', 'Nessun risultato: prova con meno parole.', 'Altre serie', 'Varianti di questa serie', 'Le varianti quasi identiche sono raggruppate: scegli la tua sotto «Varianti».', ' varianti'] };

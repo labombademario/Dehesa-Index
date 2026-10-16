@@ -235,7 +235,9 @@
       var nt = document.getElementById('pp-notrade'); if (nt) nt.style.display = 'none';
       return true;
     };
-    get('data/views/trade-products/' + cc + '.json').then(function (d) {
+    /* paises con vista data/views/trade-products/<CC>.json (lo comprueba scripts/qa-site.mjs); el resto va directo a trade-sections, sin pedir un 404 */
+    var TPV = 'AT AU BE BG CA CL CY CZ DE DK EE EL ES FI FR HR HU IE IT LT LU LV MT NL PL PT RO SE SI SK UK US';
+    (TPV.indexOf(cc) > -1 ? get('data/views/trade-products/' + cc + '.json') : Promise.resolve(null)).then(function (d) {
       if (d && draw(d, { years: d.years, unit: d.unit, source: d.source })) return;
       return get('data/trade-sections.json').then(function (t) { if (t && t.meta && t.meta[cc]) draw(t, t.meta[cc]); });
     });

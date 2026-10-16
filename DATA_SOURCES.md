@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 126 VERIFIED, 6 PENDING, 5 RESTRICTED, 4 BLOCKED; 21935 series en el catalogo unificado.
+Resumen: 138 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 22042 series en el catalogo unificado.
 
-## VERIFIED (126)
+## VERIFIED (138)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -19,11 +19,11 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `agreste_ssp` | France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer) | FR | etalab-1.0 | si/si | si | 0 | Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer. |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `ama_agrardiesel` | AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG | AT | PUBLIC-LAW | si/si | si | 0 |  |
-| `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 179 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
+| `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 91 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 1 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
 | `bea` | U.S. Bureau of Economic Analysis | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bfs_ch_open` | Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices | CH | OPENDATA-SWISS-TERMS-BY | si/si | si | 87 | Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each… |
-| `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
+| `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 0 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
 | `ble` | BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de) | DE | CUSTOM | unclear/unclear | si | 129 | open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de. |
 | `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 25 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bmluk_hydrographie` | BMLUK — Grundwasser Aktuell Österreich (hydrographischer Dienst, gis.lfrz.gv.at) | AT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente. |
@@ -42,6 +42,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 340 | Modifications must be marked as such. |
 | `dgec_prix_petroliers` | Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |
+| `dre_pt` | Imprensa Nacional-Casa da Moeda — Diário da República (Portarias n.º 54-D, 54-E y 54-L/2023, PEPAC) y GPP/IFAP | PT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Diário da República. El art. 8 n.º 1 se leyó en una copia del … |
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 58 | Disclose modifications; the Statistics Denmark logo cannot be used. |
 | `dwd_cdc` | Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de) | DE | CC-BY-4.0 | si/si | si | 0 |  |
 | `ec_eambrosia` | Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE) | EU | CC-BY-4.0 | si/si | si | 0 | No se publican los datos de contacto de los consejos reguladores. Logos y marcas excluidos. |
@@ -50,19 +51,23 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eia` | U.S. Energy Information Administration (Open Data API) | US | US-PD | si/conditional | si | 8 | Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API k… |
 | `enesa` | Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario | ES | CUSTOM | si/si | si | 0 | Citar el informe como 'Informe de Contratación del Seguro Agrario nº NN ENESA'. Tablas con 'Fuente Agroseguro. Elaboración ENESA': solo se c… |
 | `epa_ie` | Environmental Protection Agency (EPA) Irlanda — indicadores ambientales EIIA13 y EIIA14, publicados por el CSO | IE | CC-BY-4.0 | si/si | si | 0 |  |
-| `eu_agrifood` | European Commission — Agri-food Data Portal (DG AGRI) | EU | EU-REUSE-2011-833 | si/conditional | si | 3674 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
+| `esbirka_cz` | Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb. | CZ | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Sbírka zákonů. El texto se leyó en una copia editorial (epravo.cz), no en e-Sbírka, … |
+| `eu_agrifood` | European Commission — Agri-food Data Portal (DG AGRI) | EU | EU-REUSE-2011-833 | si/conditional | si | 3860 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_oil_bulletin` | European Commission — Weekly Oil Bulletin (DG ENER) | EU | EU-REUSE-2011-833 | si/conditional | si | 1 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_pdo_candiago` | Candiago et al. (2022) - EU-PDO: inventario geoespacial de las DOP de vino de Europa (Scientific Data; figshare) | EU | CC0-1.0 | si/si | si | 0 | El contorno se deriva de municipios de EuroRegionalMap (EuroGeographics) y del registro eAmbrosia a nov-2021: es orientativo. Solo DOP de vi… |
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 10516 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 10518 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 1808 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
+| `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
+| `fek_gr` | Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023 | EL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y e… |
 | `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 118 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
 | `forest_research` | Forest Research (UK), Timber Price Indices (official statistics) | GB | OGL-UK-3.0 | si/si | si | 0 |  |
 | `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 215 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
 | `geosphere_austria` | GeoSphere Austria — Data Hub (WINFORE v2, SPEI) | AT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar los cambios. |
 | `gesetze_im_internet` | Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV | DE | CUSTOM | si/si | si | 0 | The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis … |
 | `gisco_nuts` | Eurostat GISCO — NUTS 2021 administrative boundaries (© EuroGeographics) | EU | EC-REUSE-EUROGEOGRAPHICS | si/si | si | 0 | The administrative boundaries are free to use for any purpose with the attribution above (GISCO statistical units terms). We simplify the po… |
+| `gov_ie_dafm` | Department of Agriculture, Food and the Marine (gov.ie) — BISS, CRISS y CISYF | IE | CUSTOM | si/si | si | 0 | Las reglas son un resumen propio con cita; no se copia texto. Irlanda no excluye la legislación del copyright (Copyright and Related Rights … |
 | `gus_poland` | Statistics Poland (GUS) - Local Data Bank (BDL) | PL | GUS-COPYRIGHT-NOTICE | si/si | si | 263 | Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos. |
 | `hmrc_govuk` | HM Revenue & Customs - GOV.UK VAT guidance | GB | OGL-UK-3.0 | si/si | si | 0 | Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra. |
 | `hmrc_uktradeinfo` | HM Revenue & Customs - UK Trade Info (OTS, API OData) | GB | OGL-UK-3.0 | si/si | si | 37 | Third-party material and logos excluded. |
@@ -78,9 +83,10 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `insee` | Institut national de la statistique et des études économiques (INSEE) | FR | Etalab-2.0 | si/si | si | 221 | Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información. |
 | `irs_sales_tax` | U.S. Internal Revenue Service - Optional State Sales Tax Tables | US | US-PD | si/si | no | 0 | Only the state general sales tax rate is used; local rates are not included. Not tax advice. |
 | `ispra` | ISPRA — Stato di severità idrica a scala nazionale | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
+| `istat` | Italy — Istituto Nazionale di Statistica (ISTAT) | IT | CC-BY-4.0 | si/si | si | 0 | Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen. |
 | `it_regioni_dop` | Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana) | IT | CC-BY-4.0/CC0 | si/si | si | 0 | Logos y marcas excluidos. |
-| `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-OWNER-DECISION | si/si | si | 47 | No implied endorsement by the Federal Reserve. |
 | `knmi_daggegevens` | KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación) | NL | CC-BY-4.0 | si/si | si | 0 | Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI. |
+| `magyarkozlony_hu` | Magyar Közlöny / Nemzeti Jogszabálytár — 15-21/2024. (IV. 9.) AM rendeletek | HU | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Magyar Közlöny. La exclusión se leyó en la versión de 2015 de la ley (PDF de la ofic… |
 | `magyp_estimaciones` | Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas | AR | CC-BY-4.0 | si/si | si | 0 |  |
 | `magyp_lecheria` | Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar | AR | CC-BY-4.0 | si/si | si | 30 | Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica est… |
 | `mapa_es` | Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA) | ES | CUSTOM | si/si | si | 250 | Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but th… |
@@ -94,7 +100,10 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `miteco_inventario_gei` | MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |
 | `miteco_rbd` | MITECO — Demarcaciones hidrográficas (límites reportados a la UE; capa WISE WFD 2022 de la Agencia Europea de Medio Ambiente) | ES | CC-BY-4.0 | si/si | si | 0 | Se usa solo como fondo cartográfico (vendor/es-basins.js), simplificado y recortado con la costa. El servidor de descargas del MITECO falla … |
 | `miteco_sequia` | MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe. |
+| `moniteur_be` | Moniteur belge / Belgisch Staatsblad (decretos de pagos directos de Flandes y Valonia, PAC 2023-2027) | BE | CUSTOM | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Moniteur belge. Los textos se leyeron en copias consolidadas n… |
+| `monitorul_ro` | Monitorul Oficial al României — HG 1.571/2022 y ordinele MADR de pagos directos | RO | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el Monitorul Oficial. Todo se leyó en copias de terceros (legeaz.net, agrointel.ro, sit… |
 | `nasa_power` | NASA POWER (Prediction Of Worldwide Energy Resources) | US | CC-BY-4.0 | si/si | si | 0 | Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees. |
+| `nn_hr` | Narodne novine — Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025, 49/2026, 78/2026) | HR | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto de Narodne novine. El texto del Pravilnik se leyó en una copia (zakon.hr) y en… |
 | `noaa_ncei` | NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv) | US | US-PD | si/si | si | 149 | No implied NOAA endorsement. |
 | `odepa_chile` | ODEPA (Chile) - Portal de datos abiertos | CL | CC-BY | si/si | si | 130 | Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas. |
 | `ons` | UK Office for National Statistics (consumer price index) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice… |
@@ -102,6 +111,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `prix_carburants_fr` | Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers) | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 1 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
+| `ris_at` | Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung | AT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el RIS. Parte del texto se leyó en copias (AMA, gesetzefinden.at, jusline.at) y los imp… |
 | `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
 | `sejm_eli` | Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia) | PL | PUBLIC-LAW | si/si | si | 0 | Cifras y reglas son extractos transcritos a mano; manda el texto publicado en el Dziennik Ustaw. No se leyeron los términos de uso de la API… |
@@ -110,9 +120,10 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
 | `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 123 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
-| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 728 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
+| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 725 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `statistik_austria_vb` | Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications) | AT | STATISTIK-AUSTRIA-REUSE | si/si | si | 11 | Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en … |
+| `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |
 | `us_drought_monitor` | U.S. Drought Monitor (NDMC, USDA, NOAA) | US | CUSTOM | unclear/unclear | si | 0 | Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisa… |
@@ -134,12 +145,13 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `vigieau` | VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau) | FR | LO-2.0 | si/si | si | 0 | LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indica… |
 | `vlada_hr` | Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo | HR | HR-VLADA-REUSE | si/si | si | 0 | Se aconseja revisar los avisos de derechos de autor de documentos concretos; se usan solo cifras de precios de la nota de prensa. |
 | `vmm_waterinfo` | Vlaamse Milieumaatschappij (VMM) — waterinfo.be y feiten & cijfers | BE | VL-MODELLICENTIE-GRATIS-HERGEBRUIK-1.0 | si/si | si | 0 | Citar la fuente. |
+| `wetten_nl` | Wetten.overheid.nl / Staatscourant — Uitvoeringsregeling GLB 2023 (BWBR0047444) | NL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el Staatscourant. Parte de los artículos se leyó en copias de InView (no oficial) y los… |
 | `wikidata` | Wikidata | INT | CC0-1.0 | si/si | no | 0 |  |
 | `world_bank` | World Bank — Commodity Price Data (Pink Sheet) | INT | CC-BY-4.0 | si/si | si | 2 | No endorsement; no World Bank names or logos without written consent. |
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
-## PENDING (6)
+## PENDING (7)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
@@ -149,10 +161,11 @@ licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya est
 | `defra_rpa_land` | RPA Land Parcels / Land Covers / Hedge Control | UK | CUSTOM | no/no | si | 0 | Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset g… |
 | `france_bois_foret` | France Bois Forêt / ONF, prix des bois sur pied (communiqué annuel) | FR | UNKNOWN | unclear/unclear | si | 0 | Cifras de un comunicado de prensa difundido para su publicación; no hay licencia abierta declarada. |
 | `gep_pt` | GEP — Gabinete de Estratégia e Planeamento (MTSSS, Portugal) | PT | UNKNOWN | unclear/unclear | si | 0 | Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilizaci… |
-| `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | unclear/unclear | si | 0 | Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attri… |
+| `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-NOT-COMMERCIAL | no/unclear | si | 47 | Sin uso comercial por decisión del propietario. No implied endorsement by the Federal Reserve. |
+| `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | no/unclear | si | 0 | Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attri… |
 | `swissimpex_ch` | Switzerland — FOCBS/BAZG, SwissImpex and Tares foreign trade statistics | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | SwissImpex/Tares terms: commercial use requires permission of the data owner. |
 
-## RESTRICTED (5)
+## RESTRICTED (7)
 
 la reutilizacion tiene limites incompatibles con un sitio comercial (no comercial, sin derivados, promocion): no se usa.
 
@@ -160,7 +173,9 @@ la reutilizacion tiene limites incompatibles con un sitio comercial (no comercia
 |---|---|---|---|---|---|---|---|
 | `agroseguro` | Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados) | ES | UNKNOWN | unclear/unclear | si | 0 | Do not assume commercial reuse, redistribution or derivatives. Preferred route: ENESA/MAPA statistics (state body, general reuse conditions … |
 | `cepea` | Brazil — CEPEA/ESALQ | BR | CUSTOM | no/no | si | 0 | Do not automate without permission. |
+| `chicago_fed` | Federal Reserve Bank of Chicago (AgLetter / Seventh District agricultural survey) | US | NONCOMMERCIAL-TERMS | no/unclear | si | 0 | Terms of use allow reproduction only 'not for the purpose of private gain'; commercial use needs the Bank's permission. |
 | `conab` | Brazil — CONAB | BR | CC-BY-ND-3.0 | unclear/no | si | 0 | No derivatives: unit/currency conversion or re-expression is doubtful; ask gesip@conab.gov.br first. |
+| `dallas_fed` | Federal Reserve Bank of Dallas (Agricultural Survey, Eleventh District) | US | NONCOMMERCIAL-TERMS | no/unclear | si | 0 | Terms of use allow reproduction only 'not for the purpose of private gain'; commercial use needs the Bank's permission. |
 | `faostat` | FAO — FAOSTAT | INT | CC-BY-4.0 | no/si | si | 0 | Datasets may not be used for or in conjunction with the promotion of a commercial enterprise or its products or services; no FAO sponsorship… |
 | `mla` | Australia — Meat & Livestock Australia (MLA) | AU | CUSTOM | unclear/unclear | si | 0 | Ask MLA for access/licence before any use. |
 

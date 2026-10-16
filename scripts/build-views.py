@@ -225,7 +225,15 @@ def lonjas():
         if not out[cc]: del out[cc]
     return {'schemaVersion': 2, 'generatedAt': now(), 'unit': 'EUR/t', 'labels': LONJA_T,
             'source': {'name': 'Comisión Europea, Agri-food Data Portal', 'url': 'https://agridata.ec.europa.eu/', 'license': 'Commission Decision 2011/833/EU'}, 'countries': out}
+def price_revisions():
+    """data/views/price-revisions.json: solo las revisiones de precios del panel (series 'P/<id>') de los ultimos 90 dias. La ficha de producto
+    las enseña; antes descargaba data/revisions.json entero (315 KB, 1.500 revisiones de estadisticas de todos los paises)."""
+    rv = json.loads((D / 'revisions.json').read_text()).get('revisions', [])
+    cut = (datetime.datetime.utcnow() - datetime.timedelta(days=90)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    keep = [r for r in rv if str(r.get('series', '')).startswith('P/') and str(r.get('detectedAt', '')) >= cut]
+    return {'schemaVersion': 1, 'generatedAt': now(), 'windowDays': 90, 'source': 'data/revisions.json', 'revisions': keep}
 def main():
+    write('price-revisions.json', price_revisions())
     write('home-summary.json', home_summary())
     write('eu-preview.json', eu_preview())
     write('region-metrics.json', region_metrics())

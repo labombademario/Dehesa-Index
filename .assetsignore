@@ -8,3 +8,8 @@ wrangler.jsonc
 *.md
 _config.yml
 http:
+docs
+manual-sources
+sources.yml
+sitemap-lastmod.json
+.gitignore

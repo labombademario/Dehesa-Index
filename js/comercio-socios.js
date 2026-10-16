@@ -26,8 +26,10 @@
   function nf(v, lang) { if (v == null) return '–'; try { return v.toLocaleString(lang, { maximumFractionDigits: v >= 100 ? 0 : 1 }); } catch (e) { return String(Math.round(v)); } }
   var TAR = null;
   function loadTar(k) { var f = { us: 'data/us-tariffs.json', ca: 'data/tariffs-ca.json', mx: 'data/tariffs-mx.json' }[k]; TAR = TAR || {}; if (!TAR[k]) TAR[k] = fetch(f).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); return TAR[k]; }
+  var TPV = 'AT AU BE BG CA CL CY CZ DE DK EE EL ES FI FR HR HU IE IT LT LU LV MT NL PL PT RO SE SI SK UK US';   /* paises con vista data/views/trade-products/<CC>.json (lo comprueba scripts/qa-site.mjs) */
   function load(cc) {
     var f = FILES[cc] || 'data/eu-trade-products.json', v = 'data/views/trade-products/' + cc + '.json'; /* vista por pais (KB); si no existe, el fichero completo */
+    if (TPV.indexOf(cc) < 0) return CACHE[cc] || (CACHE[cc] = Promise.resolve(null));   /* sin datos de socios por producto para este pais: no se pide nada */
     if (!CACHE[cc]) CACHE[cc] = fetch(v).then(function (r) { return r.ok ? r.json() : fetch(f).then(function (r2) { return r2.ok ? r2.json() : null; }); }).catch(function () { return null; });
     return CACHE[cc];
   }
@@ -107,7 +109,8 @@
       function drawMap(node, i, tot) {
         var box = document.getElementById('tp-map'); if (!box) return;
         try { if (MAP && MAP.destroy) MAP.destroy(); } catch (x) {} MAP = null;
-        loadMapLib(function (ok) {
+        var near = function (fn) { if (!('IntersectionObserver' in window)) return fn(); var io = new IntersectionObserver(function (en) { if (en.some(function (x) { return x.isIntersecting; })) { io.disconnect(); fn(); } }, { rootMargin: '600px 0px' }); io.observe(box); };
+        near(function () { loadMapLib(function (ok) {   /* el mapa mundial (47 KB comprimidos) se baja solo cuando el bloque se acerca a la pantalla */
           var b = document.getElementById('tp-map'); if (!b || b !== box || !ok || typeof window.jsVectorMap !== 'function') { if (b) b.style.display = 'none'; return; }
           var vals = {}, nm = {}; node.partners.forEach(function (r) { if (r.v[i] && /^[A-Z]{2}$/.test(r.c)) { vals[r.c] = r.v[i]; nm[r.c] = r.n; } });
           try {
@@ -121,7 +124,7 @@
               pa.style.fill = 'rgb(' + a.map(function (c, j) { return Math.round(c + (z[j] - c) * f); }).join(',') + ')';
             });
           } catch (x) { MAP = null; b.style.display = 'none'; }
-        });
+        }); });
       }
       draw();
     });

@@ -117,7 +117,8 @@ const catalog = {
 };
 
 await mkdir(outDir, { recursive: true });
-await writeFile(path.join(outDir, 'latest.json'), JSON.stringify(latest, null, 2) + '\n');
-await writeFile(path.join(outDir, 'history.json'), JSON.stringify(history, null, 2) + '\n');
+// latest.json e history.json sin sangria (16-oct-2026): -4,7 MB en data/; mismo contenido, cualquier lector JSON los lee igual
+await writeFile(path.join(outDir, 'latest.json'), JSON.stringify(latest) + '\n');
+await writeFile(path.join(outDir, 'history.json'), JSON.stringify(history) + '\n');
 await writeFile(path.join(outDir, 'catalog.json'), JSON.stringify(catalog, null, 2) + '\n');
 console.log('Generated latest.json, history.json and catalog.json from ' + files.length + ' snapshot(s).');

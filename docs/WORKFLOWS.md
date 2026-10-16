@@ -2,13 +2,13 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-191 workflows (153 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+205 workflows (167 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-cap-nat.py usado por varios workflows: update-cap-fr.yml, update-cap-it.yml, update-cap-pl.yml (duplicado o fan-out intencionado: revisar)
-- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-nl-ghg-agri.yml, update-pl-ghg-agri.yml, update-pt-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-el-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-nl-ghg-agri.yml, update-pl-ghg-agri.yml, update-pt-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
 - salida data/country-macro.json publicada por varios workflows: update-country-macro.yml, update-cpi.yml
 - salida data/search-index.json publicada por varios workflows: update-ams-auctions.yml, update-ams.yml
@@ -98,9 +98,17 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-es-avances.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-es-avances.py | spain-avances/avances.json | finish, validate-files |
 | update-es-drought-ute.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-drought-ute.py | es-drought-ute.json | finish, validate-files |
+| update-es-esyrce-extra.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-esyrce-extra.py | spain-esyrce/extra-index.json | finish, validate-files |
+| update-es-esyrce.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-esyrce.py | spain-esyrce/index.json | finish, validate-files |
+| update-es-ganaderia.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-ganaderia.py | spain-ganaderia/dairy.json, spain-ganaderia/eggs.json, spain-ganaderia/forecasts.json | finish, validate-files |
 | update-es-gasoleo-b.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-es-gasoleo-b.py | es-gasoleo-b.json | finish, validate-files |
 | update-es-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-ghg-agri.py | es-ghg-agri.json | finish, validate-files |
+| update-es-health.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-es-rasve.py | spain-health/focos.json | finish, validate-files |
+| update-es-income.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-cea.py | spain-income/cea.json | finish, validate-files |
+| update-es-inputs.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-inputs.py | spain-inputs/fertilizers.json, spain-inputs/pesticides.json | finish, validate-files |
+| update-es-prices.yml | generado | semanal (2,4) | detect-revisions.py, gen-workflows.py, update-es-pmn.py | spain-prices/obs.json, spain-prices/pmn.json | finish, validate-files |
 
 ## EU
 
@@ -153,6 +161,8 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | update-it-fuel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-it-fuel.py | it-fuel.json | finish, validate-files |
 | update-it-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | it-ghg-agri.json | finish, validate-files |
+| update-it-istat-2.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat-2.py | italy-istat/agritourism.json, italy-istat/comuni.json, italy-istat/crops.json … | finish, validate-files |
+| update-it-istat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat.py | italy-istat/fertilisers.json, italy-istat/herds.json, italy-istat/pesticides.json … | finish, validate-files |
 | update-it-water-severity.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-it-severity.py | it-water-severity.json | finish, validate-files |
 
 ## NL
@@ -195,6 +205,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-denmark.yml | a mano | semanal (2,5) | update-dst-denmark.py | denmark-prices.json | finish, validate-files |
 | update-drought.yml | a mano | 2 veces/semana | update-drought.mjs | drought.json | finish, validate-files |
 | update-eambrosia.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-eambrosia.py | gi/index.json | finish, validate-files |
+| update-el-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | el-ghg-agri.json | finish, validate-files |
 | update-embalses.yml | generado | semanal (3,4) | detect-revisions.py, gen-workflows.py, update-embalses.py | spain-reservoirs-points.json, spain-reservoirs.json | finish, validate-files |
 | update-energy-markets.yml | a mano | semanal (3,5) | update-eia-energy-markets.mjs, update-worldbank-gas-eu.py | - | finish, price-engine, publish |
 | update-energy.yml | a mano | semanal (5) | sync-diesel-trust.mjs, update-ec-diesel-eu.py, update-eia-diesel-us.mjs | - | price-engine, publish |
@@ -286,6 +297,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | update-ams-auctions.yml | a mano | semanal (6) | build-search-index.mjs, update-ams.mjs | search-index.json | finish, validate-files |
 | update-ams.yml | a mano | 2 veces/semana | build-ams-daily.py, build-search-index.mjs, build-us-fertilizers.py | ams-grain-daily.json, search-index.json, us-fertilizers.json | finish, publish, validate-files |
+| update-ers-baseline.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ers-baseline.py | us-markets/baseline-tables.json, us-markets/baseline.json | finish, validate-files |
 | update-ers.yml | a mano | semanal (1) | update-ers.mjs | ers.json | finish, validate-files |
 | update-nass-data.yml | a mano | semanal (1) | update-nass-us.mjs | - | price-engine, publish |
 | update-nass.yml | a mano | semanal (1) | update-nass.mjs | nass-crops.json, nass-livestock.json, nass-prices.json … | finish, validate-files |
@@ -296,6 +308,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-crop-progress-states.yml | a mano | 2 veces/semana | update-us-crop-progress-states.mjs | us-crop-progress/*.json | finish, validate-files |
 | update-us-dairy.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-dairy.py | us-dairy.json | finish, validate-files |
 | update-us-ers.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-us-ers.py | us-ers-stats.json, us-ttb-stats.json | finish, validate-files |
+| update-us-fed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-fed.py | us-fed-stats.json | finish, validate-files |
 | update-us-kcfed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-kc-fed-ag-credit.py | us-kcfed-stats.json | finish, validate-files |
 | update-us-lamb.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-lamb.py | us-lamb.json | finish, validate-files |
 | update-us-local-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-local-markets.py | us-local/status.json | finish, validate-files |
@@ -303,6 +316,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-nass-extra.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-nass-extra.py | us-nass-extra-stats.json | finish, validate-files |
 | update-us-ppi.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ppi.py | us-ppi.json | finish, validate-files |
 | update-us-reservoirs.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-us-reservoirs.py | us-reservoirs-normals.json, us-reservoirs.json | finish, validate-files |
+| update-us-slaughter.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-slaughter.py | us-markets/slaughter.json | finish, validate-files |
 | update-us-snotel.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-snotel.py | us-snotel-stats.json | finish, validate-files |
 | update-us-states-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-states-macro.py | us-states-macro.json | finish, validate-files |
 | update-us-states.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-states.py | us-states/index.json | finish, validate-files |
