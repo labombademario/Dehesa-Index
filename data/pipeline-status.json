@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T16:35:00Z",
+ "generatedAt": "2026-10-16T17:03:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 200,
+  "ok": 201,
   "late": 1,
   "error": 2,
   "not_run": 1,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "28bd3abf",
+   "sha": "b1400a30",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/850a4c4c-08fd-4d2d-aada-45209024d80b",
-   "completedAt": "2026-10-16T16:14:43Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/9bc36b4f-5c43-49e4-baa2-8c4ec9daca6a",
+   "completedAt": "2026-10-16T17:03:25Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-16T15:41:30.867427+00:00",
   "repoGeneratedAt": "2026-10-16T15:41:30.867427+00:00",
-  "checkedAt": "2026-10-16T16:35:00Z"
+  "checkedAt": "2026-10-16T17:03:00Z"
  },
  "pipelines": [
   {
@@ -310,9 +310,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-13T16:41:57Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38432633836"
+    "startedAt": "2026-10-16T16:54:49Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38935620656"
    },
    "recent": {
     "runs": 10,
@@ -512,7 +512,7 @@
    "crons": [
     "40 16 * * 3,4,5"
    ],
-   "nextRun": "2026-10-16T16:40:00Z",
+   "nextRun": "2026-10-21T16:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2395,7 +2395,7 @@
    "crons": [
     "0 17 * * 1-5"
    ],
-   "nextRun": "2026-10-16T17:00:00Z",
+   "nextRun": "2026-10-19T17:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2410,7 +2410,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-gats.yml",
@@ -2577,6 +2577,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-ie-cso.yml",
+   "name": "Update Ireland agricultural price indices, milk intake and land sales (CSO)",
+   "crons": [
+    "50 7 * * 3"
+   ],
+   "nextRun": "2026-10-21T07:50:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-16T17:02:06Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38936538691"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-ie-diesel.yml",
@@ -3276,15 +3299,15 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-16T15:39:20Z"
+     "lastChange": "2026-10-16T16:37:22Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-16T15:39:20Z"
+     "lastChange": "2026-10-16T16:37:22Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3296,14 +3319,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/product-compare.json",
@@ -3320,7 +3343,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-16T15:46:11Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/products"
@@ -3331,7 +3354,7 @@
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -3346,26 +3369,26 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -3373,7 +3396,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-16T15:40:06Z"
+     "lastChange": "2026-10-16T16:37:57Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3395,11 +3418,11 @@
     }
    ],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-10-16T15:38:10Z",
-    "durationSec": 57,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38925538867"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-16T16:34:57Z",
+    "durationSec": 185,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38933080036"
    },
    "recent": {
     "runs": 9,
@@ -3530,7 +3553,7 @@
    "crons": [
     "55 16 * * 2,5"
    ],
-   "nextRun": "2026-10-16T16:55:00Z",
+   "nextRun": "2026-10-20T16:55:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3553,7 +3576,7 @@
    "crons": [
     "40 16 * * 2,5"
    ],
-   "nextRun": "2026-10-16T16:40:00Z",
+   "nextRun": "2026-10-20T16:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
