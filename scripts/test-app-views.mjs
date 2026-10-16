@@ -118,7 +118,9 @@ if (man.files['pac.json']) {
 // Indice de busqueda de series
 if (man.search) {
   const d = load('search.json'); ok(d.hash === man.search.hash && d.rows.length === man.search.rows && d.rows.length > 5000, 'search: hash o filas');
-  ok(man.search.bytes < 4 * 1024 * 1024, 'search: fichero demasiado grande (' + man.search.bytes + ')');
+  // 16-oct-2026: 4 -> 5 MB. search.json solo lo bajan versiones antiguas de la app; la actual baja search-<idioma>.json (~2,7 MB). Crecio por las 3.500 series nuevas de Eurostat (RO, SI y 18 paises con tierra y estructura).
+  ok(man.search.bytes < 5 * 1024 * 1024, 'search: fichero demasiado grande (' + man.search.bytes + ')');
+  for (const lg of Object.keys(man.searchL || {})) ok(man.searchL[lg].bytes < 3.5 * 1024 * 1024, 'search-' + lg + ': fichero demasiado grande (' + man.searchL[lg].bytes + ')');
   const cats = new Set(C.map(c => c.code)); const seen = new Set();
   d.rows.forEach(r => { ok(r.length === 5 && cats.has(r[0]) && r[1] && r[2], 'search: fila mal formada'); const k = r[0] + '/' + r[1]; ok(!seen.has(k), 'search: repetida ' + k); seen.add(k); });
 }
