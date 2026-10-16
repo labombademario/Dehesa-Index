@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T14:04:09Z",
+ "generatedAt": "2026-10-16T15:37:45Z",
  "summary": {
   "files": 65,
   "errors": 0,
@@ -34,7 +34,7 @@
     "points": 58767,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T14:52:56Z",
+   "generatedAt": "2026-10-16T15:02:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -50,7 +50,7 @@
     "points": 29317,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T15:25:52Z",
+   "generatedAt": "2026-10-16T15:33:07Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -114,7 +114,7 @@
     "points": 1035,
     "lines": 0
    },
-   "generatedAt": "2026-10-15T14:48:50Z",
+   "generatedAt": "2026-10-16T14:48:32Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -294,11 +294,11 @@
     "IT/it-es-st-orgprod-r2000: salto 51651 -> 48091 en 2022 (mediana previa 1.57e+03)"
    ],
    "stats": {
-    "series": 594,
-    "points": 6346,
+    "series": 600,
+    "points": 6506,
     "lines": 0
    },
-   "generatedAt": "2026-10-15T04:11:16Z",
+   "generatedAt": "2026-10-16T15:33:56Z",
    "info": [],
    "nWarnings": 6,
    "nErrors": 0
@@ -327,11 +327,11 @@
     "SK/sk-es-st-orgprod-c1120: salto 836 -> 705 en 2022 (mediana previa 24)"
    ],
    "stats": {
-    "series": 1513,
-    "points": 16528,
+    "series": 1515,
+    "points": 16578,
     "lines": 0
    },
-   "generatedAt": "2026-10-16T05:22:53Z",
+   "generatedAt": "2026-10-16T15:34:52Z",
    "info": [],
    "nWarnings": 16,
    "nErrors": 0
