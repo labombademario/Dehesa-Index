@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-213 workflows (175 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+215 workflows (177 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -136,6 +136,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-vat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-vat.py | eu-vat.json | finish, validate-files |
 | update-eurostat-depth.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-depth.py | eurostat-depth-stats.json | finish, validate-files |
 | update-eurostat-eu.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-eu.py | eurostat-eu-stats.json, eurostat-eu2-stats.json, eurostat-eu3-stats.json … | finish, validate-files |
+| update-eurostat-fish.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eurostat-fish.py | eurostat-fish-stats.json | finish, validate-files |
 | update-eurostat-structure.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eurostat-structure.py | eurostat-structure-stats.json | finish, validate-files |
 | update-eurostat-structure2.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eurostat-structure.py | eurostat-structure2-stats.json | finish, validate-files |
 | update-eurostat.yml | a mano | mensual | qa-navigation.mjs, update-eurostat-indices.mjs | - | price-engine, publish |
@@ -323,6 +324,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-local-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-local-markets.py | us-local/status.json | finish, validate-files |
 | update-us-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-markets.py | us-markets/cot.json, us-markets/ethanol.json, us-markets/fuel.json … | finish, validate-files |
 | update-us-nass-extra.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-nass-extra.py | us-nass-extra-stats.json | finish, validate-files |
+| update-us-noaa-fish.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-noaa-fish.py | us-noaa-fish-stats.json | finish, validate-files |
 | update-us-ppi.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ppi.py | us-ppi.json | finish, validate-files |
 | update-us-reservoirs.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-us-reservoirs.py | us-reservoirs-normals.json, us-reservoirs.json | finish, validate-files |
 | update-us-slaughter.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-slaughter.py | us-markets/slaughter.json | finish, validate-files |

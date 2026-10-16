@@ -1,0 +1,33 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update U.S. commercial fish landings (NOAA Fisheries FOSS)
+on:
+  schedule:
+    - cron: '35 6 11 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-us-noaa-fish
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-us-noaa-fish.py
+        timeout-minutes: 20
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/us-noaa-fish-stats.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/us-noaa-fish-stats.json
+      - name: Publicar
+        run: bash scripts/publish-data.sh "EE. UU. - desembarques comerciales de pesca (NOAA Fisheries)" data/us-noaa-fish-stats.json data/us-noaa-fish-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

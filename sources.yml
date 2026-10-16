@@ -329,6 +329,24 @@ sources:
     data: [ie-cso-stats.json]
     log: ie-cso-log.txt
     message: Irlanda - indices de precios agrarios, leche recibida y venta de tierra (CSO)
+  - id: eurostat-fish
+    name: Update fisheries and aquaculture by country (Eurostat catches, landings, aquaculture, fleet)
+    cron: ['15 6 9,24 * *']
+    script: scripts/update-eurostat-fish.py
+    timeout: 30
+    script_timeout: 20
+    data: [eurostat-fish-stats.json]
+    log: eurostat-fish-log.txt
+    message: Pesca y acuicultura por pais (Eurostat)
+  - id: us-noaa-fish
+    name: Update U.S. commercial fish landings (NOAA Fisheries FOSS)
+    cron: ['35 6 11 * *']
+    script: scripts/update-us-noaa-fish.py
+    timeout: 30
+    script_timeout: 20
+    data: [us-noaa-fish-stats.json]
+    log: us-noaa-fish-log.txt
+    message: EE. UU. - desembarques comerciales de pesca (NOAA Fisheries)
   - id: hu-ksh
     name: Update Hungary agriculture tables (KSH STADAT)
     cron: ['55 7 * * 3']
