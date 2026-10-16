@@ -415,6 +415,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-uk-profile.mjs
+      - name: Cifras clave de Irlanda (CSO) y Hungría (KSH) en la ficha de país (cifras = JSON de la vista, 2 gráficas, fuente con licencia; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-farm-headlines.mjs
       - name: PAC España (importes y estimación = los JSON del real decreto; cita del BOE con su texto obligatorio; cambios pendientes visibles; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

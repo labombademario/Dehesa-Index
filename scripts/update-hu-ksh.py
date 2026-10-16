@@ -82,6 +82,7 @@ def parse(tab, group, prefix, colunits, skip):
     for (sec, j), pts in data.items():
         name, unit = (col_unit(head[j]) if colunits else (head[j], tu))
         if not unit: unit = tu
+        if "previous year = 100" in unit: unit = "index (previous year = 100)"
         low = name.lower()
         if "huf/hectares" in head[j].lower(): name, unit = clean(head[j].split(",")[0]), "HUF/ha"
         elif not unit and ("previous year" in low or "terms of trade" in low): unit = "index (previous year = 100)"

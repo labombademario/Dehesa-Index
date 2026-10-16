@@ -98,6 +98,22 @@ def diesel_eu_more():
     for cc, rows in (d.get('countries') or {}).items():
         write('diesel-eu/%s.json' % cc, {'schemaVersion': 1, 'generatedAt': d.get('generatedAt'), 'cc': cc, 'unit': d.get('unit'), 'fields': d.get('fields'), 'source': d.get('source'), 'note': d.get('note'), 'weekly': rows})
 
+FARM_HEAD = {
+    'IE': ('ie-cso-stats.json', ['ie-cso-ara02-median-price-p-all-land-types-ireland', 'ie-cso-ara02-number-of-tran-all-land-types-ireland', 'ie-cso-aka01-intake-of-cows-milk-by-m-domestic', 'ie-cso-aka01-fat-content-domestic', 'ie-cso-aka01-protein-content-domestic',
+           'ie-cso-ahm05-agricultural-output-price-index', 'ie-cso-ahm05-agricultural-input-price-index', 'ie-cso-ahm05-milk', 'ie-cso-ahm05-fertilisers', 'ie-cso-eiia17-total-sales', 'ie-cso-eiia17-potassium']),
+    'HU': ('hu-ksh-stats.json', ['hu-ksh-0009-arable-land-agricultural-land-pr', 'hu-ksh-0009-arable-land-annual-rental-prices', 'hu-ksh-0009-grassland-agricultural-land-pr', 'hu-ksh-0015-wheat', 'hu-ksh-0018-wheat', 'hu-ksh-0015-maize', 'hu-ksh-0018-maize',
+           'hu-ksh-0034-cow-s-milk-production', 'hu-ksh-0027-cattle', 'hu-ksh-0027-pigs', 'hu-ksh-0001-share-of-agriculture-forestry-and-fishin']),
+}
+def farm_headlines():
+    """data/views/farm-headlines/<CC>.json: las series de las cifras clave de Irlanda (CSO) y Hungria (KSH) (js/farm-headlines.js); la ficha no baja el fichero entero."""
+    for cc, (fn, ids) in FARM_HEAD.items():
+        try: d = load(fn)
+        except Exception: continue
+        c = (d.get('countries') or {}).get(cc) or {}; by = {s['id']: s for s in c.get('series', [])}
+        keep = [dict((k, s[k]) for k in ('id', 'label', 'unit', 'frequency', 'latestPeriod', 'latest', 'changePct', 'points', 'periodNote') if k in s) for i in ids for s in [by.get(i)] if s]
+        if len(keep) < 6: print('farm-headlines', cc, 'faltan series (%d de %d): no se escribe' % (len(keep), len(ids))); continue
+        write('farm-headlines/%s.json' % cc, {'schemaVersion': 1, 'generatedAt': d.get('generatedAt'), 'cc': cc, 'source': c.get('source'), 'series': keep})
+
 def _last(a):
     for p in reversed(a or []):
         if p and p[1] is not None: return p
@@ -247,4 +263,5 @@ def main():
     write('lonjas.json', lonjas())
     trade_products()
     diesel_eu_more()
+    farm_headlines()
 main()
