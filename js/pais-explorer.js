@@ -120,7 +120,6 @@
         else h += '<div class="ex-row"><label class="ex-lab" for="ex-sel">' + esc(w.ser) + ' (' + cl.length + ')</label><select id="ex-sel" class="di-compare-select ex-sel" data-ex="ssel">' + cl.map(function (c, i) { return '<option value="' + esc(c.id) + '"' + (c.id === cur.id ? ' selected' : '') + '>' + esc(labs[i]) + '</option>'; }).join('') + '</select></div>';
       }
     }
-    h += '<div class="ex-tool"><label>' + esc(w.per) + '<br><select id="ps-r" class="di-compare-select">' + cx.rangeOpts + '</select></label></div>';
     h += '<details class="ex-adv"><summary>' + esc(w.adv) + '</summary><div class="ex-advb"><label style="font-size:13px">' + esc(cx.groupLabel) + '<br><select id="ps-g" class="di-compare-select">' + cx.groupOpts + '</select></label>' + cx.oldPicker + '</div></details></div>';
     return h;
   }
@@ -213,5 +212,5 @@
   }
   function loadCmp(cc, id, pts) { var k = cc + '/' + id; if (CP[k] && CP[k].points) return Promise.resolve(CP[k]); return pts(cc, id).then(function (s) { CP[k] = s; return s; }); }
   function setCmpSeries(cc, id, s) { CP[cc + '/' + id] = s; }
-  window.DIExplorer = { html: html, bind: bind, first: first, sentence: sentence, variantsWrap: variantsWrap, cmpPanel: cmpPanel, cmpChart: cmpChart, loadCmp: loadCmp, setCmpSeries: setCmpSeries, meas: meas, reset: function () { S.pf = null; S.allp = false; S.allt = false; } };
+  window.DIExplorer = { perLabel: function (cx) { return X[lg(cx)].per; }, html: html, bind: bind, first: first, sentence: sentence, variantsWrap: variantsWrap, cmpPanel: cmpPanel, cmpChart: cmpChart, loadCmp: loadCmp, setCmpSeries: setCmpSeries, meas: meas, reset: function () { S.pf = null; S.allp = false; S.allt = false; } };
 })();
