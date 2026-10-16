@@ -460,8 +460,30 @@
         var pieF = DC.pie({ items: types.map(function (r) { return { name: EFT[r.k][li()], v: r.e.HLD }; }), unit: t.holdings.toLowerCase(), aria: t.typeH + ' ' + nm(C[x.c], x.r), center: nf(f.HLD, 0), centerLabel: t.holdings + ' ' + y });
         body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(t.typeH) + '</h3>' + twoViews(serF, pieF, t.holdings, t.typeH + ' ' + nm(C[x.c], x.r));
       }
+      body += mgrHtml(b.managers);
       return card(t.erfarms, t.erfarmsSub, body, euNote(x.c));
     });
+  }
+  /* Edad de los jefes de explotación de la región (Eurostat ef_m_farmang, NUTS 2): barras por edad del último año; % calculados por Dehesa Index */
+  var MGR = [['Y_LT25', ['Menos de 25 años', 'Under 25', 'Moins de 25 ans', 'Meno di 25 anni']], ['Y25-34', ['25 a 34 años', '25 to 34', '25 à 34 ans', '25-34 anni']], ['Y35-39', ['35 a 39 años', '35 to 39', '35 à 39 ans', '35-39 anni']],
+    ['Y40-44', ['40 a 44 años', '40 to 44', '40 à 44 ans', '40-44 anni']], ['Y35-44', ['35 a 44 años', '35 to 44', '35 à 44 ans', '35-44 anni']], ['Y45-54', ['45 a 54 años', '45 to 54', '45 à 54 ans', '45-54 anni']],
+    ['Y55-64', ['55 a 64 años', '55 to 64', '55 à 64 ans', '55-64 anni']], ['Y_GE65', ['65 años o más', '65 or over', '65 ans ou plus', '65 anni o più']]];
+  var MGT = { h: ['Edad de los jefes de explotación', 'Age of farm managers', 'Âge des chefs d’exploitation', 'Età dei capi azienda'], old: ['De 65 años o más', 'Aged 65 or over', '65 ans ou plus', '65 anni o più'],
+    young: ['Menores de 40 años', 'Under 40', 'Moins de 40 ans', 'Meno di 40 anni'], women: ['Dirigidas por mujeres', 'Managed by women', 'Dirigées par des femmes', 'Dirette da donne'],
+    note: ['Explotaciones según la edad de su jefe (Eurostat, censo agrario y encuestas de estructura). Porcentajes calculados por Dehesa Index sobre el total de jefes de la región. Los menores de 40 solo se pueden contar desde 2016, cuando Eurostat separa 35-39 y 40-44.',
+           'Holdings by age of the manager (Eurostat, agricultural census and farm structure surveys). Percentages calculated by Dehesa Index over the region’s total of managers. Managers under 40 can only be counted from 2016, when Eurostat splits 35-39 and 40-44.',
+           'Exploitations selon l’âge du chef (Eurostat, recensement agricole et enquêtes sur la structure). Pourcentages calculés par Dehesa Index sur le total des chefs de la région. Les moins de 40 ans ne se comptent que depuis 2016, quand Eurostat sépare 35-39 et 40-44.',
+           'Aziende secondo l’età del capo azienda (Eurostat, censimento agricolo e indagini sulla struttura). Percentuali calcolate da Dehesa Index sul totale dei capi azienda della regione. I minori di 40 anni si contano solo dal 2016, quando Eurostat separa 35-39 e 40-44.'] };
+  function mgrHtml(M) {
+    if (!M) return ''; var ys = Object.keys(M).sort(), y = ys[ys.length - 1], m = M[y], i = li(); if (!m || !m.TOTAL) return '';
+    var y0 = ys[0], m0 = y0 !== y ? M[y0] : null, P = function (v, tot) { return v != null && tot ? v / tot * 100 : null; };
+    var bands = MGR.filter(function (b) { return m[b[0]] != null; }), mx = Math.max.apply(null, bands.map(function (b) { return m[b[0]]; })) || 1;
+    var young = m['Y35-39'] != null && m.Y_LT25 != null && m['Y25-34'] != null ? P(m.Y_LT25 + m['Y25-34'] + m['Y35-39'], m.TOTAL) : null;
+    var tile = function (lab, v, sub) { return '<div style="flex:1;min-width:130px"><div style="font-size:12px;color:var(--text-faint)">' + esc(lab) + '</div><div style="font-size:20px;font-weight:700">' + v + '</div>' + (sub ? '<div style="font-size:12px;color:var(--text-faint)">' + esc(sub) + '</div>' : '') + '</div>'; };
+    var old = P(m.Y_GE65, m.TOTAL), old0 = m0 ? P(m0.Y_GE65, m0.TOTAL) : null, w = P(m.F, m.TOTAL), w0 = m0 ? P(m0.F, m0.TOTAL) : null;
+    var tiles = (old != null ? tile(MGT.old[i], nf(old, 1) + ' %', old0 != null ? y0 + ': ' + nf(old0, 1) + ' %' : '') : '') + (young != null ? tile(MGT.young[i], nf(young, 1) + ' %', '') : '') + (w != null ? tile(MGT.women[i], nf(w, 1) + ' %', w0 != null ? y0 + ': ' + nf(w0, 1) + ' %' : '') : '');
+    var bars = bands.map(function (b) { var v = m[b[0]], p = P(v, m.TOTAL); return '<div style="display:flex;gap:10px;align-items:center;font-size:13px;padding:3px 0"><span style="min-width:120px">' + esc(b[1][i]) + '</span><span style="flex:1;height:9px;background:var(--border);border-radius:5px;overflow:hidden"><i style="display:block;height:100%;background:var(--accent);width:' + (v / mx * 100).toFixed(1) + '%"></i></span><b style="min-width:56px;text-align:right">' + nf(p, 1) + ' %</b><span style="min-width:70px;text-align:right;font-size:12px;color:var(--text-faint)">' + nf(v, 0) + '</span></div>'; }).join('');
+    return '<h3 id="rg-managers" style="margin:16px 0 4px;font-size:14px">' + esc(MGT.h[i]) + ' · ' + esc(y) + '</h3><div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px">' + tiles + '</div><div style="max-width:640px">' + bars + '</div><p class="di-movers-hint" style="margin:8px 0 0">' + esc(MGT.note[i]) + '</p>';
   }
   /* Alemania: precios BLE por grupo de Länder */
   var DE_EN = { BW: 'Baden-Württemberg', BY: 'Bavaria', BE: 'Berlin', BB: 'Brandenburg', HB: 'Bremen', HH: 'Hamburg', HE: 'Hesse', MV: 'Mecklenburg-Western Pomerania', NI: 'Lower Saxony', NW: 'North Rhine-Westphalia', RP: 'Rhineland-Palatinate', SL: 'Saarland', SN: 'Saxony', ST: 'Saxony-Anhalt', SH: 'Schleswig-Holstein', TH: 'Thuringia' };

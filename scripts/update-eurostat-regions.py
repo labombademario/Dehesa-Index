@@ -7,6 +7,7 @@ Datasets (todos por region NUTS, reutilizacion con cita de la fuente):
   apro_mt_ls_r  efectivos ganaderos (miles de cabezas)
   agr_r_milkpr  leche de vaca en granja (miles de t)
   ef_m_farmleg  estructura de las explotaciones (censo agrario 2010-2023): explotaciones, SAU, UGM, UTA, produccion estandar
+  ef_m_farmang  jefes de explotacion por edad y sexo (explotaciones), NUTS 2
 Una region se calcula asi: si Eurostat publica el codigo NUTS de la region, se usa tal cual; si no, se suman sus NUTS 2 y solo cuando estan todos (nunca se rellena un hueco).
 Uso: python3 scripts/update-eurostat-regions.py [--outdir data]"""
 import datetime, json, sys, urllib.parse, urllib.request
@@ -59,6 +60,7 @@ EAA = ["AM180000", "AM160000", "AM100000", "AM110000", "AM120000", "AM010000", "
 CROPS = ["UAA", "ARA", "J0000", "C0000", "C1110", "C1120", "C1200", "C1300", "C1400", "C1500", "R1000", "R2000", "I1110", "I1120", "I1130", "P0000", "G3000", "F0000", "T0000", "W1000", "O1000"]
 STRUC = ["AR_THS_HA", "MAR_THS_HA", "HPRD_HUMD_EU_THS_T"]
 ANIMALS = ["A2000", "A2300F", "A2300G", "A3100", "A4100", "A4200"]
+MGR_AGES = ["TOTAL", "Y_LT25", "Y25-34", "Y35-39", "Y40-44", "Y35-44", "Y45-54", "Y55-64", "Y_GE65"]   # Eurostat parte 35-44 en 35-39 y 40-44 desde 2016
 FARMTYPES = ["TOTAL", "FT1", "FT2", "FT3", "FT4", "FT5", "FT6", "FT7", "FT8", "FT9"]
 LOG = []
 def log(*a):
@@ -150,6 +152,18 @@ def build(cc, reg):
                 p = region_series(t, (ft, un), (None, s[1]), ymin=2000)
                 for y, v in p: farms.setdefault(ft, {}).setdefault(str(y), {})[un] = v
         if farms.get("TOTAL"): out[r]["farms"] = farms
+    # edad y sexo de los jefes de explotacion (ef_m_farmang, NUTS 2; explotaciones). Se suman los NUTS 2 de la region solo si estan todos (region_series)
+    try:
+        j = fetch("ef_m_farmang", statinfo="TOTAL", sex=["T", "F"], age=MGR_AGES, so_eur="TOTAL", uaarea="TOTAL", unit="HLD", geo=kids)
+        t = collect(j, lambda c: (c["sex"], c["age"]))
+        for r, s in reg.items():
+            mg = {}
+            for sx, ages in (("T", MGR_AGES), ("F", ["TOTAL"])):
+                for ag in ages:
+                    for y, v in region_series(t, (sx, ag), (None, s[1]), ymin=2000): mg.setdefault(str(y), {})[ag if sx == "T" else "F"] = v
+            mg = {y: v for y, v in mg.items() if v.get("TOTAL")}
+            if mg: out[r]["managers"] = mg
+    except Exception as e: log(cc, "ef_m_farmang", repr(e)[:200])
     for r in out:
         log(cc, r, {k: (len(v) if hasattr(v, "__len__") else 1) for k, v in out[r].items() if k != "nuts"})
     return out
@@ -168,8 +182,8 @@ def main():
         except Exception as e:
             print("FALLO", cc, repr(e)); rc = 1; continue
         doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "country": cc.upper(),
-               "source": {"name": "Eurostat (aact_eaa01_r, apro_cpshr, apro_mt_ls_r, agr_r_milkpr, ef_m_farmleg)", "url": "https://ec.europa.eu/eurostat/", "license": "Eurostat reuse policy (Commission Decision 2011/833/EU)"},
-               "units": {"eaa": "EUR million, current prices", "area": "thousand ha", "prod": "thousand t", "animals": "thousand head", "milk": "thousand t", "HLD": "holdings", "HA": "ha", "EUR": "EUR standard output", "LSU": "livestock units", "AWU": "annual work units"},
+               "source": {"name": "Eurostat (aact_eaa01_r, apro_cpshr, apro_mt_ls_r, agr_r_milkpr, ef_m_farmleg, ef_m_farmang)", "url": "https://ec.europa.eu/eurostat/", "license": "Eurostat reuse policy (Commission Decision 2011/833/EU)"},
+               "units": {"eaa": "EUR million, current prices", "area": "thousand ha", "prod": "thousand t", "animals": "thousand head", "milk": "thousand t", "HLD": "holdings", "HA": "ha", "EUR": "EUR standard output", "LSU": "livestock units", "AWU": "annual work units", "managers": "holdings by age band of the manager (TOTAL, Y_*) and holdings managed by women (F)"},
                "regions": out}
         p = outdir / ("eu-regions-%s.json" % cc)
         p.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); log("escrito", p.name, p.stat().st_size // 1024, "KB")
