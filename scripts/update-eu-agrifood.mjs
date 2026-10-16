@@ -76,9 +76,9 @@ export const PRODUCTS = {
   avena: {
     catId: 'cereales', id: 'di_cereales_avena_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'cereal', member: 'EU', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
-    select: r => r.productName === 'Feed oats' && /^National Average/.test(r.stageName), recent: true,
+    select: r => r.productName === 'Feed oats' && /^Deliver to first customer/.test(r.stageName), recent: true,
     market: 'Comisión Europea (avena pienso, agregado UE)',
-    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de avena pienso (media nacional de los Estados miembros que la publican), EUR/tonelada. España no publica avena en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de avena pienso en la fase «entrega al primer comprador» (silo o industria), EUR/tonelada. Desde agosto de 2026 la Comisión dejó de publicar la «media nacional» de los cereales; esta serie empieza el 9-8-2026 y no se empalma con la anterior. España no publica avena en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
   },
   mantequilla: {
     catId: 'lacteos', id: 'di_lacteos_mantequilla_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -104,9 +104,9 @@ export const PRODUCTS = {
   centeno: {
     catId: 'cereales', id: 'di_cereales_centeno_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'cereal', member: 'EU', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
-    select: r => r.productName === 'Rye of breadmaking quality' && /^National Average/.test(r.stageName), recent: true,
+    select: r => r.productName === 'Milling rye' && /^Deliver to first customer/.test(r.stageName), recent: true,
     market: 'Comisión Europea (centeno panificable, agregado UE)',
-    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de centeno panificable (media nacional de los Estados miembros que lo publican), EUR/tonelada. España no publica centeno en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de centeno panificable en la fase «entrega al primer comprador» (silo o industria), EUR/tonelada. Desde agosto de 2026 la Comisión dejó de publicar la «media nacional» de los cereales; se usa esta fase, publicada desde 2023, sin empalmarla con la anterior. España no publica centeno en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
   },
   trigo: {
     catId: 'cereales', id: 'di_cereales_trigo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',

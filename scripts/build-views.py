@@ -23,18 +23,23 @@ def write(name, doc, volatile=('generatedAt',)):
     except Exception: pass
     p.write_text(new); print(name, len(new), 'bytes')
 # (familia, serie, pais, clave de etiqueta en js/perfiles.js)
-EUP = [('cerdo', 'e', 'EU', 'cerdo'), ('vacuno', 'young-bulls-ao2', 'EU', 'vacuno'), ('cereales', 'breadmaking-common-wheat-national-average-not-specified', 'EU', 'trigo'),
-       ('cereales', 'feed-barley-national-average-not-specified', 'EU', 'cebada'), ('lacteos', 'butter', 'EU', 'mantequilla'), ('lacteos', 'smp', 'EU', 'leche_polvo'), ('huevos', 'cage', 'EU', 'huevos'),
+EUP = [('cerdo', 'e', 'EU', 'cerdo'), ('vacuno', 'young-bulls-ao2', 'EU', 'vacuno'), ('cereales', ('milling-wheat-deliver-to-first-customer-silo-or-processing-plant-on-tr', 'breadmaking-common-wheat-national-average-not-specified'), 'EU', 'trigo'),
+       ('cereales', ('feed-barley-deliver-to-first-customer-silo-or-processing-plant-on-truc', 'feed-barley-national-average-not-specified'), 'EU', 'cebada'), ('lacteos', 'butter', 'EU', 'mantequilla'), ('lacteos', 'smp', 'EU', 'leche_polvo'), ('huevos', 'cage', 'EU', 'huevos'),
        ('pollo', 'whole-broiler-65-selling-price', 'EU', 'pollo'), ('ovino', 'heavy-lamb', 'EU', 'cordero'), ('fertilizantes', 'n-nitrogen', 'EU', 'nitrogeno'), ('leche', 'raw-milk', 'DE', 'leche'),
        ('aceite', 'extra-virgin-olive-oil-up-to-0-8', 'ES', 'aceite')]
 def eu_preview():
     cards = []; fams = {}
     for fam, sid, cc, k in EUP:
         fd = fams.get(fam) or fams.setdefault(fam, json.loads((D / 'eu' / (fam + '.json')).read_text()))  # estricto: la familia debe existir
-        se = next((s for s in fd['series'] if s['id'] == sid), None)
-        if not se: raise KeyError('eu/%s: serie %s no existe' % (fam, sid))
-        r = next((x for x in se['regions'] if x['c'] == cc), None)
-        if not r: raise KeyError('eu/%s/%s: region %s no existe' % (fam, sid, cc))
+        # Cereales: desde agosto de 2026 la Comision publica el agregado UE en la fase «entrega al primer comprador» y deja la «media nacional»;
+        # se aceptan varias series candidatas y se usa la que tiene el dato mas reciente (sin mezclar puntos de dos series).
+        cand = []
+        for one in (sid if isinstance(sid, tuple) else (sid,)):
+            se1 = next((s for s in fd['series'] if s['id'] == one), None)
+            r1 = next((x for x in se1['regions'] if x['c'] == cc), None) if se1 else None
+            if r1: cand.append((r1['last'][0], one, se1, r1))
+        if not cand: raise KeyError('eu/%s/%s: region %s no existe' % (fam, sid, cc))
+        _, sid, se, r = max(cand, key=lambda z: z[0])
         cards.append({'k': k, 'family': fam, 'series': sid, 'c': cc, 'unit': se['unit'], 'freq': se.get('freq'), 'last': r['last'], 'prev': r.get('prev'), 'yoy': r.get('yoy')})
     return {'schemaVersion': 1, 'generatedAt': now(), 'cards': cards}
 HOME_CROPS = ['corn', 'soybeans', 'wheat_spring', 'cotton']   # js/cultivos.js (teaser)

@@ -46,9 +46,9 @@
  "sources": {
   "usda_nass": {
    "lagDays": {
-    "monthly": 5
+    "monthly": 35
    },
-   "evidence": "NASS Agricultural Prices se publica el ultimo dia habil del propio mes (publicationDate - fin de periodo = 0 en data/latest.json)."
+   "evidence": "NASS Agricultural Prices publica a final de mes los precios del MES ANTERIOR: el informe del 31-08-2026 trae julio y el del 29-09-2026 trae agosto (esmis.nal.usda.gov, agpr0826/agpr0926). Rezago observado 29-31 dias."
   },
   "statcan": {
    "lagDays": {
