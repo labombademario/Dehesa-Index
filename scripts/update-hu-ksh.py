@@ -58,6 +58,11 @@ def build(sid, group, label, unit, pts, tab, note=None):
              changePct=round((pts[-1][1] / prev - 1) * 100, 2) if prev else None, points=pts, sourceGroup="KSH STADAT %s" % tab)
     if note: s["periodNote"] = note
     return s
+def note_for(tab, name, pts):
+    n = []
+    if pts and pts[-1][0] == str(datetime.date.today().year): n.append("The current-year value is as published by KSH and may be provisional.")
+    if tab == "mez0008" and "kitchen" in name.lower(): n.append("Large steps in this series (1992, 2020) may reflect changes in KSH's land-use classification rather than real change; see the KSH table notes.")
+    return " ".join(n) or None
 def parse(tab, group, prefix, colunits, skip):
     rows = list(csv.reader(io.StringIO(get(URL % tab)), delimiter=";", quotechar='"'))
     title = clean(rows[0][0]); tu = unit_of(title)
@@ -84,7 +89,7 @@ def parse(tab, group, prefix, colunits, skip):
         if not unit: log("sin unidad, se omite:", tab, name[:60]); continue
         lab = "%s: %s%s (%s, KSH)" % (prefix, name, (", " + sec.lower()) if sec else "", unit)
         s = build("hu-ksh-%s-%s%s" % (tab[3:], slug(name)[:40], ("-" + slug(sec)[:20]) if sec else ""), group, lab, unit, pts, tab,
-                  "The current-year value is as published by KSH and may be provisional." if pts and pts[-1][0] == str(datetime.date.today().year) else None)
+                  note_for(tab, name, pts))
         if s: out.append(s)
     log(tab, len(out), "series")
     return out

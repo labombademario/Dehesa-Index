@@ -2,6 +2,7 @@
 """Irlanda — estadisticas agrarias del CSO (Central Statistics Office, PxStat, CC BY 4.0) -> data/ie-cso-stats.json (countries.IE, extend)
   * AHM05  Agricultural Input and Output Price Indices (base 2020=100), mensual: 42 indices (producto y insumos).
   * AKA01  Leche de vaca recibida por industrias y cooperativas (millones de litros; grasa y proteina), anual.
+  * EIIA17 Ventas de fertilizantes por nutriente (EPA, publicado por el CSO): potasio, cal y total, anual desde 1981.
   * ARA02  Venta de tierra agricola (PSRA/CSO): precio mediano y medio por hectarea y numero de transacciones, por tipo de tierra y region, anual.
 Sin clave. Nada se estima: una celda vacia de la tabla se omite; una serie con menos de 3 puntos o sin dato desde hace mas de 3 anos no se publica.
 Los precios mensuales de leche (AJM07) y fertilizantes (AJM05) del CSO estan parados desde 2024 y no se cargan."""
@@ -76,12 +77,23 @@ def land():
                 pts = [(per(yk), cell(t, (i0, i, j, k))) for i, (yk, _) in enumerate(tm)]
                 unit = "EUR/ha" if "Hectare" in sl else "transactions"
                 lab = "Agricultural land sales, %s, %s: %s (%s, CSO)" % (rl, tl.lower(), want[sl], unit)
-                s = build("ie-cso-ara02-%s-%s-%s" % (slug(sl)[:14], slug(tl), slug(rl)), "inputs", lab, unit, "annual", pts, "CSO ARA02")
+                s = build("ie-cso-ara02-%s-%s-%s" % (slug(sl)[:14], slug(tl), slug(rl)), "inputs", lab, unit, "annual", pts, "CSO ARA02",
+                          "Regional values rest on a small number of transactions in some years (Dublin, arable land) and can swing widely; compare with the national series." if "Hectare" in sl else None)
                 if s: out.append(s)
     log("ARA02", len(out), "series"); return out
+def fert():
+    """EIIA17 (EPA, publicado por el CSO): ventas de fertilizantes por nutriente, 1981-. Solo potasio, cal y total (nitrogeno y fosforo ya vienen de Eurostat)."""
+    t = table("EIIA17"); (_, st, un), (_, tm, _), (_, nut, _) = t["dims"]; out = []
+    for j, (nk, nl) in enumerate(nut):
+        if nl not in ("Potassium", "Lime", "Total Sales"): continue
+        pts = [(per(yk), cell(t, (0, i, j))) for i, (yk, _) in enumerate(tm)]
+        name = {"Potassium": "potassium (K)", "Lime": "lime", "Total Sales": "total (N + P + K + lime)"}[nl]
+        s = build("ie-cso-eiia17-" + slug(nl), "inputs_f", "Fertiliser sales in Ireland: %s (tonnes, EPA via CSO)" % name, "t", "annual", pts, "CSO EIIA17 (EPA)")
+        if s: out.append(s)
+    log("EIIA17", len(out), "series"); return out
 def main():
     ser = []
-    for fn in (prices, milk, land):
+    for fn in (prices, milk, land, fert):
         try: ser += fn()
         except Exception as e: log("ERROR", fn.__name__, repr(e)[:300])
     ids = [s["id"] for s in ser]
