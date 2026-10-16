@@ -481,8 +481,8 @@
     var go = function () { if (window.DIEuDiesel && ST.c === cc) window.DIEuDiesel.mount(el, lang(), cc); };
     nearView(el, function () { if (window.DIEuDiesel) go(); else { var sc = document.createElement('script'); sc.src = 'js/eu-diesel.js?v=0'; sc.onload = go; document.head.appendChild(sc); } });
   }
-  /* Nitratos en aguas subterráneas y balance de nitrógeno (Eurostat) en 22 países sin bloque propio (js/eu-nitrates.js, data/eu-nitrates.json) */
-  var EUNIT = ['ES', 'DE', 'IT', 'PL', 'AT', 'HR', 'EL', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'HU', 'LT', 'LU', 'LV', 'MT', 'RO', 'SE', 'SI', 'SK'];
+  /* Nitratos en aguas subterráneas y balance de nitrógeno (Eurostat) en 17 países sin bloque propio (js/eu-nitrates.js, data/eu-nitrates.json) */
+  var EUNIT = ['ES', 'DE', 'IT', 'PL', 'AT', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'LT', 'LV', 'RO', 'SE', 'SI', 'SK'];
   function euNitUp() {
     if (EUNIT.indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;

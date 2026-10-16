@@ -1024,7 +1024,7 @@ sources:
     data: [diesel-eu-more.json]
     message: Gasoleo semanal en 16 paises de la UE (Boletin Petrolero de la Comision)
   - id: eu-nitrates
-    name: Update nitrate in groundwater and nitrogen balance for 22 EU countries (Eurostat)
+    name: Update nitrate in groundwater and nitrogen balance for 17 EU countries (Eurostat)
     cron: ['20 9 8 * *']
     script: scripts/update-eu-nitrates.py
     timeout: 15

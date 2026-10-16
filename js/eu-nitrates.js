@@ -1,11 +1,11 @@
-/* Dehesa Index — Nitrato en aguas subterráneas y balance de nitrógeno (Eurostat) en 22 países de la UE sin bloque propio de nitratos.
+/* Dehesa Index — Nitrato en aguas subterráneas y balance de nitrógeno (Eurostat) en 17 países de la UE sin bloque propio de nitratos.
    data/eu-nitrates.json (scripts/update-eu-nitrates.py). Ficha de país. ES5. */
 (function (global) {
   'use strict';
   var NM = {
-    ES: ['España', 'Spain', 'Espagne', 'Spagna'], DE: ['Alemania', 'Germany', 'Allemagne', 'Germania'], IT: ['Italia', 'Italy', 'Italie', 'Italia'], PL: ['Polonia', 'Poland', 'Pologne', 'Polonia'], AT: ['Austria', 'Austria', 'Autriche', 'Austria'], HR: ['Croacia', 'Croatia', 'Croatie', 'Croazia'],
-    EL: ['Grecia', 'Greece', 'Grèce', 'Grecia'], BG: ['Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'], CY: ['Chipre', 'Cyprus', 'Chypre', 'Cipro'], CZ: ['Chequia', 'Czechia', 'Tchéquie', 'Cechia'], DK: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], EE: ['Estonia', 'Estonia', 'Estonie', 'Estonia'],
-    FI: ['Finlandia', 'Finland', 'Finlande', 'Finlandia'], HU: ['Hungría', 'Hungary', 'Hongrie', 'Ungheria'], LT: ['Lituania', 'Lithuania', 'Lituanie', 'Lituania'], LU: ['Luxemburgo', 'Luxembourg', 'Luxembourg', 'Lussemburgo'], LV: ['Letonia', 'Latvia', 'Lettonie', 'Lettonia'], MT: ['Malta', 'Malta', 'Malte', 'Malta'],
+    ES: ['España', 'Spain', 'Espagne', 'Spagna'], DE: ['Alemania', 'Germany', 'Allemagne', 'Germania'], IT: ['Italia', 'Italy', 'Italie', 'Italia'], PL: ['Polonia', 'Poland', 'Pologne', 'Polonia'], AT: ['Austria', 'Austria', 'Autriche', 'Austria'],
+    BG: ['Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'], CY: ['Chipre', 'Cyprus', 'Chypre', 'Cipro'], CZ: ['Chequia', 'Czechia', 'Tchéquie', 'Cechia'], DK: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], EE: ['Estonia', 'Estonia', 'Estonie', 'Estonia'],
+    FI: ['Finlandia', 'Finland', 'Finlande', 'Finlandia'], LT: ['Lituania', 'Lithuania', 'Lituanie', 'Lituania'], LV: ['Letonia', 'Latvia', 'Lettonie', 'Lettonia'],
     RO: ['Rumanía', 'Romania', 'Roumanie', 'Romania'], SE: ['Suecia', 'Sweden', 'Suède', 'Svezia'], SI: ['Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'], SK: ['Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia']
   };
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
