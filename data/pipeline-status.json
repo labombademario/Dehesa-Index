@@ -1,28 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T21:36:00Z",
+ "generatedAt": "2026-10-16T21:50:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 204,
+  "ok": 205,
   "late": 1,
-  "error": 0,
+  "error": 1,
   "not_run": 1,
   "unknown": 0
  },
- "global": "late",
+ "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "eafc0939",
+   "sha": "ba7ad044",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/acd86465-1d5b-4e0a-9b8a-b754c8d806a9",
-   "completedAt": "2026-10-16T21:00:48Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/9944755a-8271-47f9-8873-7679d7a2631f",
+   "completedAt": "2026-10-16T21:49:58Z"
   },
   "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-16T18:47:13.414131+00:00",
-  "repoGeneratedAt": "2026-10-16T18:47:13.414131+00:00",
-  "checkedAt": "2026-10-16T21:36:00Z"
+  "prodGeneratedAt": "2026-10-16T21:40:29.763663+00:00",
+  "repoGeneratedAt": "2026-10-16T21:40:29.763663+00:00",
+  "checkedAt": "2026-10-16T21:50:00Z"
  },
  "pipelines": [
   {
@@ -742,7 +742,7 @@
    "crons": [
     "50 21 * * 5"
    ],
-   "nextRun": "2026-10-16T21:50:00Z",
+   "nextRun": "2026-10-23T21:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2021,6 +2021,29 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-eurostat-fish.yml",
+   "name": "Update fisheries and aquaculture by country (Eurostat catches, landings, aquaculture, fleet)",
+   "crons": [
+    "15 6 9,24 * *"
+   ],
+   "nextRun": "2026-10-24T06:15:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-16T21:36:40Z",
+    "durationSec": 91,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38970534231"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 384.0
+  },
+  {
    "workflow": "update-eurostat-structure.yml",
    "name": "Update Eurostat land, farm structure, pesticides, forestry and organic output (FR ES PT EL BE NL DE IT)",
    "crons": [
@@ -3061,7 +3084,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-16T21:47:00Z",
+   "nextRun": "2026-10-17T00:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3088,35 +3111,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-16T18:47:14Z"
+     "lastChange": "2026-10-16T21:40:30Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-16T18:47:14Z"
+     "lastChange": "2026-10-16T21:40:30Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-16T18:47:14Z"
+     "lastChange": "2026-10-16T21:40:30Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-16T18:47:14Z"
+     "lastChange": "2026-10-16T21:40:30Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-16T18:47:14Z"
+     "lastChange": "2026-10-16T21:40:30Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-16T18:42:59Z",
-    "durationSec": 259,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38949456389"
+    "startedAt": "2026-10-16T21:36:49Z",
+    "durationSec": 225,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38970550166"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -3322,15 +3345,15 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-16T18:44:41Z"
+     "lastChange": "2026-10-16T21:38:36Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-16T18:44:41Z"
+     "lastChange": "2026-10-16T21:38:36Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3342,14 +3365,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/product-compare.json",
@@ -3366,7 +3389,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-16T19:52:07Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/products"
@@ -3377,34 +3400,34 @@
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-16T17:40:40Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-16T17:40:40Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/pack"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/sowing"
@@ -3419,7 +3442,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-16T19:48:30Z"
+     "lastChange": "2026-10-16T21:42:38Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3441,18 +3464,18 @@
     }
    ],
    "last": {
-    "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-16T18:42:08Z",
-    "durationSec": 195,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38949348677"
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-16T21:42:31Z",
+    "durationSec": 334,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38971173049"
    },
    "recent": {
     "runs": 9,
-    "success": 7,
-    "failed": 1
+    "success": 5,
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 3.0
   },
   {
@@ -4620,6 +4643,29 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-us-noaa-fish.yml",
+   "name": "Update U.S. commercial fish landings (NOAA Fisheries FOSS)",
+   "crons": [
+    "35 6 11 * *"
+   ],
+   "nextRun": "2026-11-11T06:35:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-16T21:48:17Z",
+    "durationSec": 52,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38971803624"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-us-ppi.yml",
    "name": "Update US producer price indices for farm and food products (BLS PPI)",
    "crons": [
@@ -4671,7 +4717,7 @@
    "crons": [
     "45 21 * * 1-5"
    ],
-   "nextRun": "2026-10-16T21:45:00Z",
+   "nextRun": "2026-10-19T21:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4686,7 +4732,7 @@
     "failed": 1
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-snotel.yml",
@@ -4740,7 +4786,7 @@
    "crons": [
     "40 21 * * 5"
    ],
-   "nextRun": "2026-10-16T21:40:00Z",
+   "nextRun": "2026-10-23T21:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4867,10 +4913,10 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-16T00:03:18Z",
-    "durationSec": 124,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38827235234"
+    "event": "push",
+    "startedAt": "2026-10-16T21:42:44Z",
+    "durationSec": 343,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38971196831"
    },
    "recent": {
     "runs": 10,

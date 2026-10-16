@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T21:36:45Z",
+ "generatedAt": "2026-10-16T21:50:10Z",
  "summary": {
-  "files": 67,
+  "files": 69,
   "errors": 0,
-  "warnings": 21
+  "warnings": 22
  },
  "files": [
   {
@@ -364,6 +364,64 @@
     "lines": 0
    },
    "generatedAt": "2026-10-16T19:22:39Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "eurostat-fish-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "FR/fr-fish-ca-area-47: salto 343.1 -> 1391.9 en 2016 (mediana previa 20)",
+    "FR/fr-fish-fleet-age-y20-24: salto 1791 -> 2077 en 1996 (mediana previa 16)",
+    "FR/fr-fish-fleet-age-y20-24: salto 2077 -> 2118 en 1997 (mediana previa 16)",
+    "FR/fr-fish-fleet-age-y20-24: salto 2118 -> 2053 en 1998 (mediana previa 22)",
+    "FR/fr-fish-fleet-age-y20-24: salto 2053 -> 1949 en 1999 (mediana previa 22)",
+    "FR/fr-fish-fleet-age-y_ge25: salto 42 -> 148 en 1998 (mediana previa 4)",
+    "FR/fr-fish-fleet-age-y_ge25: salto 148 -> 456 en 1999 (mediana previa 4)",
+    "FR/fr-fish-fleet-age-y_ge25: salto 456 -> 1579 en 2000 (mediana previa 7)",
+    "FR/fr-fish-fleet-age-y_ge25: salto 1579 -> 1758 en 2001 (mediana previa 7)",
+    "FR/fr-fish-fleet-age-y_ge25: salto 1758 -> 1972 en 2002 (mediana previa 7)",
+    "FR/fr-fish-fleet-age-y_ge25: salto 1972 -> 2198 en 2003 (mediana previa 42)",
+    "DE/de-fish-ld-sp-lbe-eur: salto 204.49 -> 6977.77 en 2017 (mediana previa 11.2)",
+    "DE/de-fish-ld-sp-lbe-eur: salto 155.556 -> 70783.42 en 2019 (mediana previa 15)",
+    "DE/de-fish-ld-sp-lbe-eur: salto 70783.42 -> 154479.93 en 2020 (mediana previa 156)",
+    "DE/de-fish-ld-sp-lbe-eur: salto 154479.93 -> 462057.93 en 2021 (mediana previa 204)",
+    "DE/de-fish-ld-sp-lbe-eur: salto 462057.93 -> 980210.77 en 2022 (mediana previa 204)",
+    "DE/de-fish-ld-sp-lbe-eur: salto 980210.77 -> 859103.53 en 2023 (mediana previa 252)",
+    "DE/de-fish-ld-sp-lbe-eur: salto 859103.53 -> 1165395.52 en 2024 (mediana previa 6.98e+03)",
+    "DE/de-fish-ld-sp-lbe-tpw: salto 9.864 -> 19.661 en 2021 (mediana previa 0.6)",
+    "DE/de-fish-ld-sp-lbe-tpw: salto 19.661 -> 34.748 en 2022 (mediana previa 0.6)",
+    "DE/de-fish-ld-sp-lbe-tpw: salto 34.748 -> 32.805 en 2023 (mediana previa 0.6)",
+    "DE/de-fish-ld-sp-lbe-tpw: salto 32.805 -> 44.405 en 2024 (mediana previa 1.02)",
+    "PT/pt-fish-ld-sp-reg-eur: salto 5228.3 -> 20862217.852 en 2021 (mediana previa 8.6e+03)",
+    "PT/pt-fish-ld-sp-reg-eur: salto 20862217.852 -> 24271776.033 en 2022 (mediana previa 1.26e+04)",
+    "PT/pt-fish-ld-sp-reg-eur: salto 24271776.033 -> 9843150.306 en 2023 (mediana previa 1.46e+04)"
+   ],
+   "stats": {
+    "series": 1227,
+    "points": 25849,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-16T21:38:03Z",
+   "info": [],
+   "nWarnings": 107,
+   "nErrors": 0
+  },
+  {
+   "file": "us-noaa-fish-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 38,
+    "points": 1330,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-16T21:49:04Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
