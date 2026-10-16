@@ -428,10 +428,9 @@
   {
    "series": "BE/be-eus-poultry-imp-a5130p",
    "file": "eurostat-depth-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Importaciones de pollitos de pollo de engorde en Bélgica (cabezas, anual): 3,2 millones en 2024 y 151 mil en 2025 (−95 %), tras 13,7 millones en 2021.",
    "hypothesis": "Posible año incompleto: Eurostat (apro_ec_poula) publica 151,21 mil cabezas sin marca de calidad, mientras que el resto de flujos belgas de 2025 son de año completo y suben (exportaciones 49,0 millones, huevos puestos a incubar 417,8 millones); Países Bajos y Francia no caen. No se ha podido comprobar con el declarante, así que sigue siendo una hipótesis.",
-   "nextAction": "Releer la serie tras la próxima revisión de Eurostat (apro_ec_poula, geo=BE, hatchitm=IMP, animals=A5130P); si el valor de 2025 cambia, es una revisión; si no, consultar al instituto estadístico belga (Statbel) por la cobertura de las importaciones intra-UE de 2025.",
    "since": "2026-10-11",
    "verifier": {
     "kind": "eurostat",
@@ -452,10 +451,14 @@
     "scale": 1000
    },
    "lastCheck": {
-    "at": "2026-10-12T05:54:31Z",
-    "result": "MISMATCH",
-    "detail": "2021 13654240.0/13654.24; 2022 3451810.0/3451.81; 2023 4173370.0/4173.37; 2024 3222440.0/3222.44; 2025 151210.0/151.21"
-   }
+    "at": "2026-10-16T20:56:20Z",
+    "result": "REPRODUCED",
+    "detail": "2021 13654240.0/13654240.0; 2022 3451810.0/3451810.0; 2023 4173370.0/4173370.0; 2024 3222440.0/3222440.0; 2025 151210.0/151210.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-16: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2021: 13654240.0; 2022: 3451810.0; 2023: 4173370.0; 2024: 3222440.0; 2025: 151210.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-16",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_ec_poula?lang=EN&geo=BE&hatchitm=IMP&animals=A5130P&unit=THS",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
   }
  ]
 }
