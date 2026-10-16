@@ -24,12 +24,6 @@ def monthly(daily):
         m[d[:7]] = v
     return [[k, m[k]] for k in sorted(m)]
 
-def us_fred(sid):
-    t = fetch('https://fred.stlouisfed.org/graph/fredgraph.csv?id=' + sid)
-    if not t: return None
-    rows = [r for r in csv.reader(io.StringIO(t))][1:]
-    return monthly([(r[0], float(r[1])) for r in rows if len(r) > 1 and r[1] not in ('', '.')])
-
 def ca_boc():
     t = fetch('https://www.bankofcanada.ca/valet/observations/V39079/json?start_date=1990-01-01')
     if not t: return None
