@@ -27,6 +27,7 @@ concurrency:
 jobs:
   update-fx:
     runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v6

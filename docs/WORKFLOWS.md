@@ -78,7 +78,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | qa-navigation.yml | a mano | manual / por evento | qa-navigation.mjs | - | - |
 | qa-site.yml | a mano | manual / por evento | qa-site.mjs, validate-snapshots.mjs | - | - |
-| quality.yml | a mano | manual / por evento | build-csv.mjs, build-data-index.mjs, build-data-quality.mjs | - | - |
+| quality.yml | a mano | diaria | build-csv.mjs, build-data-index.mjs, build-data-quality.mjs | - | - |
 | verify-anomalies.yml | a mano | semanal (1) | test-verify-anomalies.py, verify-anomalies.py | data-anomalies.json | finish, validate-files |
 
 ## DE

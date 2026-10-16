@@ -34,7 +34,7 @@ def render(x, group="dehesa-data-writes"):
         for k, v in x["dispatch_inputs"].items():
             L += ["      %s:" % k, "        description: " + q(v["description"]), "        required: " + ("true" if v.get("required") else "false"), "        default: " + q(v.get("default", ""))]
     L += ["permissions:", "  contents: write", "concurrency:", "  group: " + group, "  cancel-in-progress: false", "jobs:", "  update:", "    runs-on: ubuntu-24.04"]
-    if x.get("timeout"): L.append("    timeout-minutes: %d" % x["timeout"])
+    L.append("    timeout-minutes: %d" % (x.get("timeout") or 60))   # sin limite propio, 60 min: un job colgado no debe bloquear 6 h la cola de escritura de datos
     L += ["    steps:", "      - uses: actions/checkout@v6"]
     for p in x.get("pre", []): L.append("      - run: " + p)
     cmd = (x.get("runner", "python3") + " " + x["script"] + (" " + x["args"] if x.get("args") else "")).strip()

@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   pull_request:
+  # Los commits de datos de los bots (GITHUB_TOKEN) no disparan este workflow: sin esta pasada diaria, un dato nuevo que rompa un
+  # presupuesto o un contrato solo se ve en el siguiente cambio de codigo. Una vez al dia se revisa main tal como esta.
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,6 +16,7 @@ permissions:
 jobs:
   static-quality:
     runs-on: ubuntu-24.04
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -254,6 +260,7 @@ jobs:
   page-budget:
     # Presupuesto de carga inicial POR PAGINA con navegador real (JSON, JS y gzip; peticiones prohibidas; 404 y errores de JS).
     runs-on: ubuntu-24.04
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -281,6 +288,7 @@ jobs:
     # Navegador real (escritorio y movil): errores de consola/pagina, 4xx/5xx, JSON invalido, componentes criticos vacios,
     # flujos de usuario y accesibilidad (axe-core, WCAG 2 A/AA: critical y serious bloquean).
     runs-on: ubuntu-24.04
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6

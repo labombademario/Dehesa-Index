@@ -11,6 +11,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
       - run: bash scripts/trust-fnmt.sh

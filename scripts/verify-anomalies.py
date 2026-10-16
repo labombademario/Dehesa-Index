@@ -52,7 +52,8 @@ def fetch_eurostat(v, fx):
     q = "lang=EN&" + "&".join("%s=%s" % (k, urllib.parse.quote(x)) for k, x in v["filters"].items())
     url = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/%s?%s" % (v["dataset"], q)
     raw = fx("eurostat-%s" % v["filters"].get("meat", v["dataset"]), url)
-    return eurostat_series(json.loads(raw)), url
+    k = float(v.get("scale", 1))  # el pipeline convierte la unidad de la fuente (p. ej. THS -> cabezas: scale 1000); se aplica la misma conversion
+    return {p: (None if x is None else x * k, f) for p, (x, f) in eurostat_series(json.loads(raw)).items()}, url
 
 
 # ---------------------------------------------------------------- Statistics Canada (tabla completa CSV, como el pipeline)
