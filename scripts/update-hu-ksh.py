@@ -77,6 +77,11 @@ def parse(tab, group, prefix, colunits, skip):
     for (sec, j), pts in data.items():
         name, unit = (col_unit(head[j]) if colunits else (head[j], tu))
         if not unit: unit = tu
+        low = name.lower()
+        if "huf/hectares" in head[j].lower(): name, unit = clean(head[j].split(",")[0]), "HUF/ha"
+        elif not unit and ("previous year" in low or "terms of trade" in low): unit = "index (previous year = 100)"
+        elif not unit and "share" in low: unit = "%"
+        if not unit: log("sin unidad, se omite:", tab, name[:60]); continue
         lab = "%s: %s%s (%s, KSH)" % (prefix, name, (", " + sec.lower()) if sec else "", unit)
         s = build("hu-ksh-%s-%s%s" % (tab[3:], slug(name)[:40], ("-" + slug(sec)[:20]) if sec else ""), group, lab, unit, pts, tab,
                   "The current-year value is as published by KSH and may be provisional." if pts and pts[-1][0] == str(datetime.date.today().year) else None)
