@@ -3,6 +3,7 @@
   * Tierra: precio de la tierra agricola (apri_lprc: arable, regadio, secano, prados) y alquiler (apri_lrnt) en EUR/ha. ES solo trae precios de este tema por su pipeline propio y el alquiler de ES NO se publica
     (Eurostat da +54 % en 2024 y el MAPA +4 %: ver data/spain-land).
   * Estructura de explotaciones (censo agrario 2023 y anteriores; ef_fsi_*): numero de explotaciones y por tamaño, usos de la tierra, regimen de tenencia (propiedad/arrendamiento), edad de los jefes, formacion, mano de obra, regadio, carga ganadera.
+  * Uso de fertilizantes inorganicos (aei_fm_usefert: nitrogeno y fosforo, toneladas de nutriente) para FR PT BE AT; Eurostat no publica potasio. Chipre se omite: su serie acaba en 2019.
   * Plaguicidas (sdg_02_53, aei_pestsal_rsk), selvicultura (for_basic, for_eco_cp) y produccion ecologica en toneladas (org_croppro).
 Nada se estima: lo que Eurostat no publica para un pais se queda sin serie. Series con <3 puntos o paradas (ultimo dato anterior a año-3) se omiten (eurostat_country.put).
 Uso: update-eurostat-structure.py [XX ...]"""
@@ -114,6 +115,9 @@ def organic():
     for k, p in pts(recs, lambda r: r['crops'] if ORGK.search(E.clean(labs['crops'][r['crops']])) and not E.NEC.search(E.clean(labs['crops'][r['crops']])) else None).items():
         n += put('st-orgprod-' + k.lower(), 'organic', 'Organic production: %s (tonnes, Eurostat)' % E.clean(labs['crops'][k]), 't', 'annual', p, 'Eurostat org_croppro %s' % k)
     E.log(cc, 'ecologico', n)
+FERT_ONLY = ('FR', 'PT', 'BE', 'AT')   # 16-oct-2026: uso de fertilizantes inorganicos (N y P; Eurostat no publica potasio). Los demas paises ya lo traen de eurostat_country.fertiliser
+def fertuse():
+    if E.CFG['geo'] in FERT_ONLY: E.fertiliser()
 # 16-oct-2026: segundo grupo (los 18 estados de la UE que no tenian estos temas) -> data/eurostat-structure2-stats.json con --set2
 C2 = {'AT': 'Austria', 'BG': 'Bulgaria', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DK': 'Denmark', 'EE': 'Estonia', 'FI': 'Finland', 'HR': 'Croatia', 'HU': 'Hungary', 'IE': 'Ireland',
       'LT': 'Lithuania', 'LU': 'Luxembourg', 'LV': 'Latvia', 'MT': 'Malta', 'RO': 'Romania', 'SE': 'Sweden', 'SI': 'Slovenia', 'SK': 'Slovakia'}
@@ -125,7 +129,7 @@ only = [a for a in sys.argv[1:] if a in C]
 out = {}
 for cc in (only or C):
     E.CFG = {'geo': cc, 'pfx': cc.lower()}; E.OUT.clear()
-    for fn in (land, structure, pesticides, emissions, forestry, organic):
+    for fn in (land, structure, pesticides, emissions, forestry, organic, fertuse):
         try: fn()
         except Exception as e: E.log('ERROR', cc, fn.__name__, repr(e)[:300])
     E.log(cc, 'series', len(E.OUT))
