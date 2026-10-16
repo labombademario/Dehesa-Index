@@ -18,7 +18,7 @@
  "summary": {
   "files": 81,
   "excluded": 0,
-  "rows": 37036
+  "rows": 37038
  },
  "files": [
   {
@@ -230,13 +230,13 @@
    "unit": "gal",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 1699,
+   "rows": 1700,
    "first": "1994-03-21",
-   "last": "2026-10-05",
+   "last": "2026-10-12",
    "csv": "data/pack/us/diesel.csv",
    "xlsx": "data/pack/us/diesel.xlsx",
-   "csvBytes": 314236,
-   "xlsxBytes": 82606
+   "csvBytes": 314421,
+   "xlsxBytes": 82194
   },
   {
    "product": "harina_soja",
@@ -262,11 +262,11 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 104,
-   "first": "2024-09-06",
-   "last": "2026-10-09",
+   "first": "2024-09-13",
+   "last": "2026-10-16",
    "csv": "data/pack/us/harina_soja.csv",
    "xlsx": "data/pack/us/harina_soja.xlsx",
-   "csvBytes": 17789,
+   "csvBytes": 17790,
    "xlsxBytes": 11997
   },
   {
@@ -355,12 +355,12 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 104,
-   "first": "2024-10-18",
-   "last": "2026-10-09",
+   "first": "2024-10-25",
+   "last": "2026-10-16",
    "csv": "data/pack/us/leche_polvo.csv",
    "xlsx": "data/pack/us/leche_polvo.xlsx",
-   "csvBytes": 18030,
-   "xlsxBytes": 11700
+   "csvBytes": 18031,
+   "xlsxBytes": 11682
   },
   {
    "product": "maiz",
@@ -943,13 +943,13 @@
    "unit": "litro",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1087,
+   "rows": 1088,
    "first": "2005-01-03",
-   "last": "2026-10-05",
+   "last": "2026-10-12",
    "csv": "data/pack/eu/diesel.csv",
    "xlsx": "data/pack/eu/diesel.xlsx",
-   "csvBytes": 232451,
-   "xlsxBytes": 65046
+   "csvBytes": 232664,
+   "xlsxBytes": 65075
   },
   {
    "product": "harina_soja",
