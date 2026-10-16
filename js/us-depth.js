@@ -40,7 +40,7 @@
       d.addEventListener('toggle', function () { OPEN[key] = d.open; });
     });
   }
-  var ORDER = ['usslaughter', 'usstocks', 'usdairy', 'usland', 'usincome', 'uscensus'];
+  var ORDER = ['usslaughter', 'usstocks', 'usdairy', 'usland', 'usincome', 'usrecv', 'uscensus'];
   function render(el) {
     var m = mods(); if (!el || !m || !m.us) return; var SEC = window.DehesaSector, h = HEAD[lang()] || HEAD.es;
     el.innerHTML = '<p class="di-movers-hint" role="status">…</p>';

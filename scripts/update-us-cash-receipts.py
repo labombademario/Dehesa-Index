@@ -5,7 +5,7 @@ Obra del Gobierno federal de EE. UU. (dominio publico). Mismo fichero de ERS que
   productos, cultivos, ganado y productos, ganado para carne, aves y huevos, cultivos forrajeros, cereales para alimentacion, oleaginosas, frutas y frutos secos,
   hortalizas) y los componentes del algodon (fibra y semilla), que ya estan en «cotton».
 - Por estado: los 12 productos con mayor ingreso en el ultimo ano publicado y los ultimos 6 anos. Nada se estima; un hueco es un hueco (null).
-- ERS publica el ultimo ano como prevision: se guarda `forecastYear` si el fichero lo marca por ser posterior al ultimo ano cerrado.
+- ERS publica el total nacional del ano en curso como prevision; por estado se usa el ultimo ano con dato en casi todos los estados.
 Si algo falla se conserva el fichero anterior. Uso: python3 scripts/update-us-cash-receipts.py"""
 import csv, datetime, io, json, re, sys, urllib.parse, urllib.request, zipfile
 from pathlib import Path
@@ -48,7 +48,10 @@ def main():
             V.setdefault((st, prod), {})[y] = v
     except Exception as e:
         print("FALLO:", repr(e)[:200]); return 0 if OUT.exists() else 1
-    last = max(max(t) for t in total.values()) if total else None
+    cnt = {}
+    for t in total.values():
+        for y in t: cnt[y] = cnt.get(y, 0) + 1
+    last = max((y for y, n in cnt.items() if n >= 40), default=None)   # ultimo ano con dato en (casi) todos los estados: ERS solo preve el total nacional
     if not last or len(total) < 40: print("FALLO: pocos estados con total (%d)" % len(total)); return 0 if OUT.exists() else 1
     years = [str(y) for y in range(int(last) - NYEARS + 1, int(last) + 1)]
     S = {}

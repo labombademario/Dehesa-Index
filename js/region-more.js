@@ -149,7 +149,7 @@
   };
   Object.keys(T2).forEach(function (l) { var x = T[l]; if (!x) return; Object.keys(T2[l]).forEach(function (k) { x[k] = T2[l][k]; }); });
   Object.keys(T).forEach(function (l) { var x = T[l]; x.usprices = x.usPr; x.usstocks = x.usSt; x.usslaughter = x.usSl; x.usdairy = x.usDa; x.usland = x.usLand; x.usincome = x.usIn; x.uscensus = x.usCe; });
-  (function () { var N = { es: 'Estado de los cultivos', en: 'Crop condition', fr: 'État des cultures', it: 'Stato delle colture' }; Object.keys(N).forEach(function (l) { if (T[l]) T[l].uscprog = N[l]; }); })();   // títulos de los bloques para el índice
+  (function () { var N = { es: 'Estado de los cultivos', en: 'Crop condition', fr: 'État des cultures', it: 'Stato delle colture' }, R = { es: 'Ingresos por producto', en: 'Cash receipts by commodity', fr: 'Recettes par produit', it: 'Ricavi per prodotto' }; Object.keys(N).forEach(function (l) { if (T[l]) { T[l].uscprog = N[l]; T[l].usrecv = R[l]; } }); })();   // títulos de los bloques para el índice
   window.DehesaRegionMore = function (H) {
     var get = H.get, card = H.card, cite = H.cite, table = H.table, nf = H.nf, esc = H.esc, tt = H.tt, day = H.day, pct = H.pct, dec = H.dec;
     function L(s) { var p = String(s).split('|'), i = IX[H.lang()]; return p[i == null ? 0 : i] || p[0]; }
@@ -463,6 +463,21 @@
         return card(t.usIn, t.usInSub, table([''].concat(ys), rows, 520), cite('usda_ers', ys[ys.length - 1]));
       });
     }
+    /* Ingresos en efectivo por producto y estado (USDA ERS, Farm Income and Wealth Statistics; data/us-cash-receipts.json, scripts/update-us-cash-receipts.py) */
+    function usReceipts(x) {
+      return get('data/us-cash-receipts.json').then(function (D) {
+        var S = D && D.states && D.states[x.r]; if (!S || !S.items || !S.items.length || !D.years) return null;
+        var ys = D.years.slice(-4), off = D.years.length - 4, tot = S.total && S.total[S.total.length - 1], rows = [];
+        S.items.forEach(function (it) {
+          var last = it[1][it[1].length - 1], nm = it[0].charAt(0).toUpperCase() + it[0].slice(1);
+          rows.push([esc(nm)].concat(ys.map(function (y, i) { var v = it[1][off + i]; return v == null ? '—' : nf(v / 1e3, v >= 1e5 ? 0 : 1) + ' M'; }), [tot && last != null ? nf(last / tot * 100, 1) + ' %' : '—']));
+        });
+        var hd = [L('Producto|Commodity|Produit|Prodotto')].concat(ys.map(function (y) { return String(y); }), [L('Cuota del total|Share of total|Part du total|Quota sul totale')]);
+        return card(L('Ingresos por producto|Cash receipts by commodity|Recettes par produit|Ricavi per prodotto'),
+          L('Los 12 productos con más ingresos en efectivo en el estado (USDA ERS, Farm Income and Wealth Statistics), millones de dólares corrientes. Los nombres son los de ERS, en inglés. El último año puede ser una previsión de ERS. La cuota es un cálculo de Dehesa Index: ingresos del producto entre los ingresos en efectivo de todos los productos del estado.|The 12 commodities with the highest cash receipts in the state (USDA ERS, Farm Income and Wealth Statistics), million current dollars. Names are ERS’s own. The latest year may be an ERS forecast. The share is a Dehesa Index calculation: commodity receipts divided by the state’s cash receipts for all commodities.|Les 12 produits aux recettes en espèces les plus élevées de l’État (USDA ERS, Farm Income and Wealth Statistics), millions de dollars courants. Les noms sont ceux d’ERS, en anglais. La dernière année peut être une prévision d’ERS. La part est un calcul de Dehesa Index : recettes du produit divisées par les recettes en espèces de tous les produits de l’État.|I 12 prodotti con i maggiori ricavi in contanti nello Stato (USDA ERS, Farm Income and Wealth Statistics), milioni di dollari correnti. I nomi sono quelli di ERS, in inglese. L’ultimo anno può essere una previsione dell’ERS. La quota è un calcolo di Dehesa Index: ricavi del prodotto divisi per i ricavi in contanti di tutti i prodotti dello Stato.'),
+          table(hd, rows, 620), cite('usda_ers', D.years[D.years.length - 1]));
+      });
+    }
     /* Gasóleo por región PADD y propano del estado (js/us-market.js se baja solo aquí) */
     function usFuel(x) {
       if (x.r === 'US') return Promise.resolve(null);
@@ -564,9 +579,9 @@
     }
     var C = function (k, fn) { return [k, fn]; };
     return {
-      T: T, us: { usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
+      T: T, us: { usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, usrecv: usReceipts, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
       mods: {
-        US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('uscprog', usCropProg), C('clim', clim)],
+        US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('usrecv', usReceipts), C('uscensus', usCensus), C('ins', usIns), C('uscprog', usCropProg), C('clim', clim)],
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', clim)],
