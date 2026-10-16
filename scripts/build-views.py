@@ -255,6 +255,71 @@ def price_revisions():
     cut = (datetime.datetime.utcnow() - datetime.timedelta(days=90)).strftime('%Y-%m-%dT%H:%M:%SZ')
     keep = [r for r in rv if str(r.get('series', '')).startswith('P/') and str(r.get('detectedAt', '')) >= cut]
     return {'schemaVersion': 1, 'generatedAt': now(), 'windowDays': 90, 'source': 'data/revisions.json', 'revisions': keep}
+def _pts(s): return [[str(p), v] for p, v in (s or {}).get('points', []) if v is not None]
+def fish():
+    """data/views/fish/index.json (tabla de paises) y data/views/fish/<CC>.json (series y especies) para pesca.html y la ficha de pais (js/fish.js).
+    Solo cifras publicadas por Eurostat y NOAA; las especies principales las elige el cargador por la ultima cifra publicada. Nada se calcula aqui
+    salvo el reparto de la flota por edad (buques de 25 anos o mas / total de buques del mismo ano), que la pagina rotula como calculo."""
+    import re
+    rows = []
+    try: eu = load('eurostat-fish-stats.json')
+    except Exception: eu = {'countries': {}}
+    for cc, c in sorted((eu.get('countries') or {}).items()):
+        by = {x['id'][len(cc) + 6:]: x for x in c.get('series', [])}   # '<cc>-fish-' fuera
+        g = lambda k: _pts(by.get(k))
+        sp = []
+        for k, x in by.items():
+            m = re.match(r'ld-sp-([a-z0-9_]+)-eur$', k)
+            if not m: continue
+            code = m.group(1); nm = re.match(r'^Fish landings: (.*), value \(Eurostat\)$', x['label'])
+            sp.append({'code': code, 'name': nm.group(1) if nm else code, 'value': g('ld-sp-%s-eur' % code), 'qty': g('ld-sp-%s-tpw' % code), 'price': g('ld-sp-%s-eur_t' % code)})
+        sp.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1])
+        cs = []
+        for k, x in by.items():
+            m = re.match(r'ca-sp-([a-z0-9_]+)$', k); nm = re.match(r'^Fish catches: (.*) \(tonnes live weight, Eurostat\)$', x['label'])
+            if m: cs.append({'code': m.group(1), 'name': nm.group(1) if nm else m.group(1), 'qty': g(k)})
+        cs.sort(key=lambda o: -(_last(o['qty']) or [0, 0])[1])
+        aq = []
+        for k, x in by.items():
+            m = re.match(r'aq-sp-([a-z0-9_]+)-tlw$', k); nm = re.match(r'^Aquaculture production: (.*), quantity \(Eurostat\)$', x['label'])
+            if m: aq.append({'code': m.group(1), 'name': nm.group(1) if nm else m.group(1), 'qty': g(k), 'price': g('aq-sp-%s-eur_t' % m.group(1))})
+        aq.sort(key=lambda o: -(_last(o['qty']) or [0, 0])[1])
+        areas = []
+        for k, x in by.items():
+            m = re.match(r'ca-area-(\d+)$', k); nm = re.match(r'^Fish catches: (.*) \(tonnes live weight, Eurostat\)$', x['label'])
+            if m: areas.append({'code': m.group(1), 'name': nm.group(1) if nm else m.group(1), 'qty': g(k)})
+        areas.sort(key=lambda o: -(_last(o['qty']) or [0, 0])[1])
+        S = {k: g(k) for k in ('ca-total', 'ld-total-eur', 'ld-total-tpw', 'ld-total-eur_t', 'aq-total-tlw', 'aq-total-eur', 'aq-total-eur_t', 'fleet-nr', 'fleet-gt', 'fleet-kw', 'fleet-age-y_ge25')}
+        S = {k: v for k, v in S.items() if v}
+        if not S: continue
+        fa = {k: g('fleet-age-' + k) for k in ('y_lt5', 'y5-9', 'y10-14', 'y15-19', 'y20-24', 'y_ge25') if g('fleet-age-' + k)}
+        write('fish/%s.json' % cc, {'schemaVersion': 1, 'generatedAt': eu.get('generatedAt'), 'cc': cc, 'src': 'eurostat', 'series': S, 'landings': sp, 'catches': cs, 'aquaculture': aq, 'areas': areas, 'fleetAge': fa})
+        L = lambda k: _last(S.get(k))
+        old = None; nr = L('fleet-nr'); o25 = L('fleet-age-y_ge25')
+        if nr and o25 and nr[0] == o25[0] and nr[1]: old = [nr[0], round(o25[1] / nr[1] * 100, 1)]
+        rows.append({'cc': cc, 'src': 'eurostat', 'catches': L('ca-total'), 'landValue': L('ld-total-eur'), 'landQty': L('ld-total-tpw'), 'landPrice': L('ld-total-eur_t'),
+                     'aqQty': L('aq-total-tlw'), 'aqValue': L('aq-total-eur'), 'fleet': nr, 'fleetOld': old})
+    try:
+        us = load('us-noaa-fish-stats.json'); c = (us.get('countries') or {}).get('US') or {}
+        by = {x['id']: x for x in c.get('series', [])}
+        sp = []
+        for k, x in by.items():
+            m = re.match(r'us-noaa-fish-sp-(.+)-usd$', k); nm = re.match(r'^Commercial fish landings: (.*), value \(USD, NOAA Fisheries\)$', x['label'])
+            if m: sp.append({'code': m.group(1), 'name': nm.group(1) if nm else m.group(1), 'value': _pts(x), 'qty': _pts(by.get('us-noaa-fish-sp-%s-lb' % m.group(1)))})
+        sp.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1])
+        st = []
+        for k, x in by.items():
+            m = re.match(r'us-noaa-fish-st-(.+)-usd$', k); nm = re.match(r'^Commercial fish landings in (.*): value \(USD, NOAA Fisheries\)$', x['label'])
+            if m: st.append({'code': m.group(1), 'name': nm.group(1) if nm else m.group(1), 'value': _pts(x), 'qty': _pts(by.get('us-noaa-fish-st-%s-lb' % m.group(1)))})
+        st.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1])
+        S = {k: _pts(by.get(i)) for k, i in (('ld-total-usd', 'us-noaa-fish-landings-value'), ('ld-total-lb', 'us-noaa-fish-landings-lb'))}
+        S = {k: v for k, v in S.items() if v}
+        if S:
+            write('fish/US.json', {'schemaVersion': 1, 'generatedAt': us.get('generatedAt'), 'cc': 'US', 'src': 'noaa_fisheries', 'series': S, 'landings': sp, 'states': st})
+            rows.append({'cc': 'US', 'src': 'noaa_fisheries', 'landValueUsd': _last(S.get('ld-total-usd')), 'landLb': _last(S.get('ld-total-lb'))})
+    except Exception as e: print('fish US', e)
+    if rows: write('fish/index.json', {'schemaVersion': 1, 'generatedAt': max([eu.get('generatedAt') or '']), 'countries': rows})
+
 def main():
     write('price-revisions.json', price_revisions())
     write('home-summary.json', home_summary())
@@ -264,4 +329,5 @@ def main():
     trade_products()
     diesel_eu_more()
     farm_headlines()
+    fish()
 main()

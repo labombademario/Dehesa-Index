@@ -2707,3 +2707,30 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 
 /* Enlaces cortos del pie (p. ej. «EIA»): objetivo táctil de 24 px como mínimo (WCAG 2.5.8) */
 #di-footer-root li a{min-width:24px;text-align:center}
+/* Pesca y acuicultura (pesca.html y bloque de la ficha de pais; js/pesca.js) */
+.fsh-pick{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:6px 0 14px;font-size:13.5px}
+.fsh-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin:0 0 14px}
+.fsh-kpi{border:1px solid var(--border);border-radius:10px;padding:10px 12px;background:var(--surface)}
+.fsh-kl{font-size:12px;color:var(--text-muted);line-height:1.3}
+.fsh-kv{font-size:21px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums;line-height:1.15}
+.fsh-ku{font-size:12px;font-weight:600;color:var(--text-muted)}
+.fsh-kp{font-size:11.5px;color:var(--text-muted);margin-top:3px}
+.fsh-sec{margin:0 0 14px;max-width:none}
+.fsh-h2{font-size:16px;margin:0 0 4px}
+.fsh-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.fsh-tbl th{text-align:left;font-size:11.5px;font-weight:700;color:var(--text-muted);padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
+.fsh-tbl td{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:middle}
+.fsh-tbl .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fsh-tbl tr.fsh-row{cursor:pointer}.fsh-tbl tr.fsh-row:hover td,.fsh-tbl tr.fsh-row:focus td{background:rgba(120,110,90,.07)}
+.fsh-tbl tr.on td{background:rgba(120,110,90,.12);font-weight:600}
+.fsh-m{color:var(--text-muted);font-size:11px;font-weight:400}
+.fsh-chg.up{color:var(--positive);font-weight:600}.fsh-chg.dn{color:var(--negative);font-weight:600}
+.fsh-bar{display:inline-block;width:70px;height:8px;background:var(--border);border-radius:4px;overflow:hidden;vertical-align:middle}
+.fsh-bar i{display:block;height:100%;background:var(--accent)}
+.fsh-bar.wide{width:auto;flex:1}
+.fsh-age{max-width:640px}
+.fsh-age-r{display:flex;gap:10px;align-items:center;font-size:13px;padding:3px 0}
+.fsh-age-r span:first-child{min-width:120px}
+.fsh-age-r b{min-width:56px;text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:480px){.fsh-kpis{grid-template-columns:1fr 1fr}.fsh-kv{font-size:18px}}
+.fsh-sec .wp-chart{max-width:760px}

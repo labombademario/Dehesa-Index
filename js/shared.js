@@ -141,6 +141,7 @@
       pd('cultivos.html', L('Estado de los cultivos (EE. UU.)', 'Crop progress (US)', 'État des cultures (É.-U.)', 'Stato delle colture (USA)'), L('EE. UU. · condición y avance semanal por estado', 'US · weekly condition and progress by state', 'États-Unis · état et avancement hebdomadaires par État', 'USA · condizione e avanzamento settimanali per stato')),
       pd('rendimientos.html', L('Rendimientos (EE. UU.)', 'Yields (US)', 'Rendements (É.-U.)', 'Rese (USA)'), L('EE. UU. · rendimiento, superficie y producción por estado', 'US · yield, acreage and output by state', 'États-Unis · rendement, surface et production par État', 'USA · resa, superficie e produzione per stato')),
       pd('ganaderia.html', L('Ganadería (EE. UU.)', 'Livestock (US)', 'Élevage (É.-U.)', 'Zootecnia (USA)'), L('EE. UU. · censos, leche por estado y existencias en frío', 'US · inventories, milk by state and cold storage', 'États-Unis · cheptels, lait par État et stocks frigorifiques', 'USA · consistenze, latte per stato e scorte in frigo')),
+      pd('pesca.html', L('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura'), L('Capturas, desembarques, precios y flota por país', 'Catches, landings, prices and fleet by country', 'Captures, débarquements, prix et flotte par pays', 'Catture, sbarchi, prezzi e flotta per paese')),
       pd('oferta-demanda.html', L('Oferta y demanda mundial', 'World supply and demand', 'Offre et demande mondiales', 'Offerta e domanda mondiale'), L('Mundo · producción, consumo y existencias por país', 'World · production, use and stocks by country', 'Monde · production, consommation et stocks par pays', 'Mondo · produzione, consumi e scorte per paese')),
       { label: L('Clima y mapa', 'Weather and map', 'Météo et carte', 'Meteo e mappa'), items: [
         pd('sequia.html', L('Sequía', 'Drought', 'Sécheresse', 'Siccità'), L('EE. UU. por estado y Europa por país, semana a semana', 'US by state and Europe by country, week by week', 'États-Unis par État et Europe par pays, semaine par semaine', 'USA per stato ed Europa per paese, settimana per settimana')),
@@ -205,7 +206,8 @@
       dl('Datos de EE. UU.', 'US data', 'Données des É.-U.', 'Dati USA', [one('exportaciones.html'), one('insumos.html'), one('costes.html'), one('cultivos.html'), one('rendimientos.html'), one('ganaderia.html')], 'US'),
       dl('Datos de Canadá', 'Canada data', 'Données du Canada', 'Dati Canada', [one('canada-granos.html')], 'CA'),
       dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES')], 'ES'),
-      dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU')
+      dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU'),
+      dl('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura', [one('pesca.html')])
     ]);
   })();
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }

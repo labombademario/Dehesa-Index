@@ -427,6 +427,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-farm-headlines.mjs
+      - name: Pesca y acuicultura (pagina y bloque de la ficha; cifras = data/views/fish, especies traducidas, sector «Pesca»; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-pesca.mjs
       - name: PAC España (importes y estimación = los JSON del real decreto; cita del BOE con su texto obligatorio; cambios pendientes visibles; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
