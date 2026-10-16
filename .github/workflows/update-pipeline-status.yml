@@ -85,6 +85,8 @@ jobs:
         run: python3 scripts/build-source-candidates.py
       - name: Catalogo comercial (que ficheros pueden ofrecerse a empresas segun el registro de licencias)
         run: python3 scripts/build-commercial-catalog.py
+      - name: Citas de licencia por fuente (data/views/license-cite.json; se queda atrasada si el registro cambia y nadie la regenera)
+        run: python3 scripts/build-cite-view.py
       - name: Paquete de datos descargable para empresas (CSV y Excel; solo fuentes aptas segun el catalogo comercial)
         run: pip install --quiet openpyxl && python3 scripts/build-data-pack.py
       - name: Informe de mercado para cooperativas (muestra) y estado por fuente

@@ -24,7 +24,7 @@ for (const [lang, w] of combos) {
     await page.waitForTimeout(600);
     const m = await page.evaluate((order) => {
       const pos = id => { const e = document.getElementById(id); if (!e) return -1; let n = 0, el = e; /* posicion en el documento */ const all = document.getElementsByTagName('*'); for (let i = 0; i < all.length; i++) if (all[i] === e) return i; return -1; };
-      const bar = Array.from(document.querySelectorAll('#pa-bar a')).map(a => (a.getAttribute('href') || '').replace('#', '') + '|' + a.textContent.trim()).filter(x => x.indexOf('ps-drought|') !== 0); // la entrada de sequia solo sale en los paises con mapa de sequia
+      const bar = Array.from(document.querySelectorAll('#pa-bar a')).map(a => (a.getAttribute('href') || '').replace('#', '') + '|' + a.textContent.trim()).filter(x => x.indexOf('ps-drought|') !== 0 && x.indexOf('ps-ghg|') !== 0); // sequia y emisiones solo salen en los paises que tienen esos datos
       const own = document.getElementById('ps-own');
       return { pos: order.map(pos), bar, ownText: own ? own.textContent.trim() : null, h1: (document.querySelector('h1') || {}).textContent, ownSibs: own ? own.parentNode.id : null };
     }, ORDER);
