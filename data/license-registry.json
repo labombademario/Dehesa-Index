@@ -4133,6 +4133,32 @@
    "short": "Dallas Fed",
    "legalConfidence": "NOT_APPLICABLE",
    "legalConfidenceReason": "Fuente RESTRICTED: no se usa."
+  },
+  "ksh_hu": {
+   "name": "Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables",
+   "url": "https://www.ksh.hu/stadat",
+   "country": "HU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Hungarian Central Statistical Office (KSH), STADAT (CC BY 4.0)",
+   "additionalRestrictions": "La licencia cubre el contenido publicado en el sitio (tablas, graficos). Quedan fuera los ficheros consultados a peticion a las bases internas del KSH (no se usan).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-16",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Condiciones de uso del KSH (https://www.ksh.hu/copyright_eng): «HCSO uses standardised international licence Creative Commons Attribution 4.0 International (CC BY 4.0), according to which all of the content available on the Website - including tables, figures and infographics - can be copied, reproduced and redistributed without limitations». Excepcion: ficheros consultados a peticion a las bases internas.",
+   "used": true,
+   "aliases": [],
+   "notes": "Tablas STADAT mez0001-mez0035 (CSV en ingles). scripts/update-hu-ksh.py.",
+   "short": "KSH",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de uso del KSH (CC BY 4.0)."
   }
  },
  "files": {
@@ -5849,6 +5875,12 @@
     "IE": "cso_ie"
    },
    "notes": "Irlanda: indices de precios agrarios mensuales (AHM05), leche de vaca recibida por industrias (AKA01) y venta de tierra agricola (ARA02), todo del CSO. scripts/update-ie-cso.py."
+  },
+  "data/hu-ksh-stats.json": {
+   "byCountry": {
+    "HU": "ksh_hu"
+   },
+   "notes": "Hungria: superficies, produccion y rendimientos por cultivo, uso, precio y alquiler de la tierra, censo ganadero, carne, leche y huevos (KSH STADAT). scripts/update-hu-ksh.py."
   }
  },
  "derived": [

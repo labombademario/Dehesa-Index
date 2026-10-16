@@ -329,6 +329,15 @@ sources:
     data: [ie-cso-stats.json]
     log: ie-cso-log.txt
     message: Irlanda - indices de precios agrarios, leche recibida y venta de tierra (CSO)
+  - id: hu-ksh
+    name: Update Hungary agriculture tables (KSH STADAT)
+    cron: ['55 7 * * 3']
+    script: scripts/update-hu-ksh.py
+    timeout: 20
+    script_timeout: 15
+    data: [hu-ksh-stats.json]
+    log: hu-ksh-log.txt
+    message: Hungria - agricultura (superficies, produccion, rendimientos, ganaderia, leche, tierra) del KSH
   - id: france-organic
     name: Update France organic farming by department and region (Agence BIO)
     cron: ['35 6 * * 3']

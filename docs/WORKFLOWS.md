@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-212 workflows (174 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+213 workflows (175 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -230,6 +230,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-hr-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-hr-diesel.py | hr-diesel.json | finish, validate-files |
 | update-hr-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-hr-drought.py | hr-drought.json | finish, validate-files |
 | update-hr-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | hr-ghg-agri.json | finish, validate-files |
+| update-hu-ksh.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-hu-ksh.py | hu-ksh-stats.json | finish, validate-files |
 | update-inao-geo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-inao-geo.py | gi/FR-geo.json, gi/FR-inao.json | finish, validate-files |
 | update-interest-rates.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-interest-rates.py | interest-rates-stats.json | finish, validate-files |
 | update-italy-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-italy-eurostat.py | italy-eurostat-stats.json | finish, validate-files |
