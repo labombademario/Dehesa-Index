@@ -4,7 +4,8 @@ FR plaguicidas 7
 FR emisiones 5
 FR selvicultura 6
 FR ecologico 14
-FR series 72
+fertilizantes 2 series
+FR series 74
 ES tierra 0
 ES estructura 38
 ES plaguicidas 7
@@ -18,7 +19,8 @@ PT plaguicidas 7
 PT emisiones 5
 PT selvicultura 6
 PT ecologico 0
-PT series 61
+fertilizantes 2 series
+PT series 63
 EL tierra 6
 EL estructura 38
 EL plaguicidas 6
@@ -32,7 +34,8 @@ BE plaguicidas 6
 BE emisiones 5
 BE selvicultura 3
 BE ecologico 29
-BE series 84
+fertilizantes 2 series
+BE series 86
 NL tierra 3
 NL estructura 36
 NL plaguicidas 7
