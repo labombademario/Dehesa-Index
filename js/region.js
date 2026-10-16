@@ -475,7 +475,7 @@
            'Exploitations selon l’âge du chef (Eurostat, recensement agricole et enquêtes sur la structure). Pourcentages calculés par Dehesa Index sur le total des chefs de la région. Les moins de 40 ans ne se comptent que depuis 2016, quand Eurostat sépare 35-39 et 40-44.',
            'Aziende secondo l’età del capo azienda (Eurostat, censimento agricolo e indagini sulla struttura). Percentuali calcolate da Dehesa Index sul totale dei capi azienda della regione. I minori di 40 anni si contano solo dal 2016, quando Eurostat separa 35-39 e 40-44.'] };
   function mgrHtml(M) {
-    if (!M) return ''; var ys = Object.keys(M).sort(), y = ys[ys.length - 1], m = M[y], i = li(); if (!m || !m.TOTAL) return '';
+    if (!M) return ''; var ys = Object.keys(M).sort(), y = ys[ys.length - 1], m = M[y], i = { es: 0, en: 1, fr: 2, it: 3 }[lang()]; if (i == null) i = 0;   // textos de este bloque en orden es, en, fr, it (L4 de este fichero va en, es, fr, it) if (!m || !m.TOTAL) return '';
     var y0 = ys[0], m0 = y0 !== y ? M[y0] : null, P = function (v, tot) { return v != null && tot ? v / tot * 100 : null; };
     var bands = MGR.filter(function (b) { return m[b[0]] != null; }), mx = Math.max.apply(null, bands.map(function (b) { return m[b[0]]; })) || 1;
     var young = m['Y35-39'] != null && m.Y_LT25 != null && m['Y25-34'] != null ? P(m.Y_LT25 + m['Y25-34'] + m['Y35-39'], m.TOTAL) : null;

@@ -32,6 +32,19 @@ for (const cc of ['ES', 'DE', 'SE']) for (const lang of ['es', 'en', 'fr', 'it']
   ok(tag + ' sin errores de consola (' + errs.join('; ') + ')', errs.length === 0);
   await ctx.close();
 }
+// por region: Comunidad Valenciana y Emilia-Romagna (ficha de region, bloque de explotaciones)
+for (const [cc, r] of [['ES', 'VC'], ['IT', 'EMR']]) for (const lang of ['es', 'it']) for (const w of [1280, 390]) {
+  const tag = cc + '-' + r + ' ' + lang + '@' + w, R = JSON.parse(fs.readFileSync('data/eu-regions-' + cc.toLowerCase() + '.json', 'utf8')).regions[r].managers;
+  ok(tag + ' datos por region', !!R);
+  const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, serviceWorkers: 'block' });
+  await ctx.addInitScript(l => { try { localStorage.setItem('dehesaIndexLang', l); localStorage.setItem('dehesaIndexTourSeen', '1'); } catch (e) {} }, lang);
+  const page = await ctx.newPage(), errs = []; page.on('pageerror', e => errs.push(e.message));
+  await page.goto(BASE + '/region.html?c=' + cc + '&r=' + r, { waitUntil: 'networkidle' }); await page.waitForSelector('#rg-managers', { timeout: 15000 }).catch(() => {});
+  const t = await page.evaluate(() => { const h = document.getElementById('rg-managers'); return h ? h.parentElement.innerText : null; });
+  ok(tag + ' bloque de edad en la region', !!t);
+  if (t && R) { const ys = Object.keys(R).sort(), m = R[ys[ys.length - 1]], pct = (m.Y_GE65 / m.TOTAL * 100).toLocaleString(lang === 'es' ? 'es-ES' : 'it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 }); ok(tag + ' % de 65 o mas = JSON (' + pct + ')', t.indexOf(pct) > -1 && !/undefined|NaN/.test(t)); }
+  ok(tag + ' sin errores (' + errs.join('; ') + ')', errs.length === 0); await ctx.close();
+}
 await browser.close();
 if (fail) { console.log('FALLOS', fail); process.exit(1); }
 console.log('OK test-farm-managers');

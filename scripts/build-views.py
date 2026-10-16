@@ -195,7 +195,11 @@ def region_metrics():
             if p:
                 u2 = _at(ua, p[0])
                 if u2: vp[k] = p[1] / u2 * 1000; pp = max(pp, str(p[0]))
-        put(cc, 'output', vo, po, f); put(cc, 'uaa', vu, pu, f); put(cc, 'perha', vp, pp, f)
+        vm = {}; pm = ''
+        for k, b in (d.get('regions') or {}).items():
+            mg = b.get('managers') or {}; ys = sorted(mg)
+            if ys and mg[ys[-1]].get('TOTAL') and mg[ys[-1]].get('Y_GE65') is not None: vm[k] = mg[ys[-1]]['Y_GE65'] / mg[ys[-1]]['TOTAL'] * 100; pm = max(pm, ys[-1])
+        put(cc, 'output', vo, po, f); put(cc, 'uaa', vu, pu, f); put(cc, 'perha', vp, pp, f); put(cc, 'mgr65', vm, pm, f)
     return {'schemaVersion': 1, 'generatedAt': now(), 'note': 'Valor por region para colorear los mapas de las fichas de pais; derivado de los ficheros de data/ indicados en source.', 'countries': C}
 # Lonjas (mercados) de cereales por pais del Agri-food Data Portal (precio salida de silo, EUR/t): para elegir otra lonja en la tarjeta de Precios.
 # Solo mercados con dato en las ultimas 10 semanas respecto al ultimo dato del producto (los parados no se ofrecen). Ultimos 26 puntos semanales para el minigrafico.

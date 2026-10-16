@@ -29,9 +29,10 @@
     { id: 'output', ramp: G, unit: ' M EUR', label: ['Agricultural industry output (M EUR)', 'Producción de la rama agraria (M EUR)', 'Production de la branche agricole (M EUR)', 'Produzione del ramo agricolo (M EUR)'], dec: 0 },
     { id: 'uaa', ramp: G, unit: ' kha', label: ['Utilised agricultural area (thousand ha)', 'Superficie agraria útil (miles de ha)', 'Surface agricole utilisée (milliers d’ha)', 'Superficie agricola utilizzata (migliaia di ha)'], dec: 0 },
     { id: 'perha', ramp: G, unit: ' EUR/ha', label: ['Output per hectare of farmland (EUR/ha)', 'Producción por hectárea de superficie agraria (EUR/ha)', 'Production par hectare de surface agricole (EUR/ha)', 'Produzione per ettaro di superficie agricola (EUR/ha)'], dec: 0 }];
+  EU.push({ id: 'mgr65', ramp: O, unit: ' %', label: ['Farm managers aged 65 or over (% of holdings; Dehesa Index calculation from Eurostat)', 'Jefes de explotación de 65 años o más (% de explotaciones; cálculo de Dehesa Index con Eurostat)', 'Chefs d’exploitation de 65 ans ou plus (% des exploitations ; calcul de Dehesa Index à partir d’Eurostat)', 'Capi azienda di 65 anni o più (% delle aziende; calcolo di Dehesa Index su dati Eurostat)'], dec: 1 });
   ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'HU', 'RO', 'SE', 'SI', 'UK'].forEach(function (c) { M[c] = EU; });
   // Reino Unido y Bulgaria: sin cuentas economicas regionales publicables (ver scripts/update-eurostat-regions.py): solo superficie
-  M.UK = M.BG = EU.filter(function (m) { return m.id === 'uaa'; });
+  M.UK = EU.filter(function (m) { return m.id === 'uaa'; }); M.BG = EU.filter(function (m) { return m.id === 'uaa' || m.id === 'mgr65'; });
   M.AR = [
     { id: 'soja', ramp: G, unit: ' kt', label: ['Soybean production, latest season (thousand t)', 'Producción de soja, última campaña (miles de t)', 'Production de soja, dernière campagne (milliers de t)', 'Produzione di soia, ultima campagna (migliaia di t)'], dec: 0 },
     { id: 'maiz', ramp: G, unit: ' kt', label: ['Maize production, latest season (thousand t)', 'Producción de maíz, última campaña (miles de t)', 'Production de maïs, dernière campagne (milliers de t)', 'Produzione di mais, ultima campagna (migliaia di t)'], dec: 0 },
@@ -55,6 +56,7 @@
       Object.keys(d.regions).forEach(function (k) { var b = d.regions[k], o = b.eaa && b.eaa.AM180000, ua = b.crops && b.crops.UAA && b.crops.UAA.area;
         if (id === 'output') { var p = last(o); if (p && p[1] > 0) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }
         else if (id === 'uaa') { var q = last(ua); if (q) { v[k] = q[1]; if (String(q[0]) > per) per = String(q[0]); } }
+        else if (id === 'mgr65') { var mg = b.managers, ys = mg ? Object.keys(mg).sort() : [], yy = ys[ys.length - 1], e = yy && mg[yy]; if (e && e.TOTAL && e.Y_GE65 != null) { v[k] = e.Y_GE65 / e.TOTAL * 100; if (yy > per) per = yy; } }
         else if (id === 'perha') { var p2 = last(o), u2 = p2 && at(ua, p2[0]); if (p2 && p2[1] > 0 && u2) { v[k] = p2[1] / u2 * 1000; if (String(p2[0]) > per) per = String(p2[0]); } } });
       return { vals: v, period: per }; });
   }
