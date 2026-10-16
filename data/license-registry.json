@@ -218,7 +218,11 @@
    "notes": null,
    "short": "EIA",
    "legalConfidence": "HIGH",
-   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion.",
+   "ownerDecision": {
+    "date": "2026-10-15",
+    "text": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (no alterar los datos diciendo que son de la EIA, no insinuar su respaldo, sin logo de la EIA, limites de la API)."
+   }
   },
   "nasa_power": {
    "name": "NASA POWER (Prediction Of Worldwide Energy Resources)",
@@ -360,7 +364,11 @@
    "notes": null,
    "short": "Comisión Europea · Agri-food",
    "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "ownerDecision": {
+    "date": "2026-10-15",
+    "text": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de la Comision (citar la fuente, no alterar el sentido, respetar sus avisos, calculos propios etiquetados como de Dehesa Index)."
+   }
   },
   "eu_oil_bulletin": {
    "name": "European Commission — Weekly Oil Bulletin (DG ENER)",
@@ -386,7 +394,11 @@
    "notes": null,
    "short": "Comisión Europea · Oil Bulletin",
    "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "ownerDecision": {
+    "date": "2026-10-15",
+    "text": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de la Comision (citar la fuente, no alterar el sentido, respetar sus avisos, calculos propios etiquetados como de Dehesa Index)."
+   }
   },
   "ecb": {
    "name": "European Central Bank (euro reference rates, ECB Data Portal)",
@@ -412,7 +424,11 @@
    "notes": null,
    "short": "BCE",
    "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "ownerDecision": {
+    "date": "2026-10-15",
+    "text": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (no modificar las estadisticas, respetar los avisos del BCE, calculos propios etiquetados)."
+   }
   },
   "eu_taric": {
    "name": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
@@ -438,7 +454,11 @@
    "notes": null,
    "short": "Comisión Europea · TARIC",
    "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "ownerDecision": {
+    "date": "2026-10-15",
+    "text": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de la Comision (citar la fuente, no alterar el sentido, respetar sus avisos, calculos propios etiquetados como de Dehesa Index)."
+   }
   },
   "world_bank": {
    "name": "World Bank — Commodity Price Data (Pink Sheet)",

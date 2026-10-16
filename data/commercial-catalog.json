@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-15T23:47:30Z",
+ "generatedAt": "2026-10-16T00:02:15Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -595,7 +595,8 @@
    "derivatives": "conditional",
    "redistribution": "yes",
    "attribution": "Source: ECB statistics",
-   "conditions": "Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed field (changePct, conversions) is labelled as a Dehesa calculation and the original values are never altered."
+   "conditions": "Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed field (changePct, conversions) is labelled as a Dehesa calculation and the original values are never altered.",
+   "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (no modificar las estadisticas, respetar los avisos del BCE, calculos propios etiquetados). (2026-10-15)"
   },
   {
    "id": "edo_cdi",
@@ -629,7 +630,8 @@
    "derivatives": "conditional",
    "redistribution": "yes",
    "attribution": "Source: U.S. Energy Information Administration",
-   "conditions": "Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API key and call limits."
+   "conditions": "Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API key and call limits.",
+   "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (no alterar los datos diciendo que son de la EIA, no insinuar su respaldo, sin logo de la EIA, limites de la API). (2026-10-15)"
   },
   {
    "id": "enesa",
@@ -696,7 +698,8 @@
    "derivatives": "conditional",
    "redistribution": "yes",
    "attribution": "Source: European Commission (Agri-food data portal)",
-   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations."
+   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations.",
+   "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de la Comision (citar la fuente, no alterar el sentido, respetar sus avisos, calculos propios etiquetados como de Dehesa Index). (2026-10-15)"
   },
   {
    "id": "eu_oil_bulletin",
@@ -713,7 +716,8 @@
    "derivatives": "conditional",
    "redistribution": "yes",
    "attribution": "Source: European Commission (Weekly Oil Bulletin)",
-   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations."
+   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations.",
+   "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de la Comision (citar la fuente, no alterar el sentido, respetar sus avisos, calculos propios etiquetados como de Dehesa Index). (2026-10-15)"
   },
   {
    "id": "eu_pdo_candiago",
@@ -747,7 +751,8 @@
    "derivatives": "conditional",
    "redistribution": "yes",
    "attribution": "Source: European Commission (TARIC / Customs Tariff)",
-   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations."
+   "conditions": "Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures must be labelled as Dehesa Index calculations.",
+   "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de la Comision (citar la fuente, no alterar el sentido, respetar sus avisos, calculos propios etiquetados como de Dehesa Index). (2026-10-15)"
   },
   {
    "id": "eur_lex",
