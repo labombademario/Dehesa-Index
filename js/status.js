@@ -47,6 +47,7 @@
   function nf(n) { try { return Number(n).toLocaleString(lang()); } catch (e) { return String(n); } }
   function render() {
     var t = tt(), root = document.getElementById('status-body'); if (!root) return;
+    var srcRoot = document.getElementById('status-sources'); if (srcRoot) { srcRoot.innerHTML = srcBlock(); var sa0 = document.getElementById('st-src-all'); if (sa0) sa0.onclick = function () { SH_ALL = true; render(); }; }
     document.getElementById('st-h1').textContent = t.title; document.getElementById('st-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     if (!P) { root.innerHTML = ''; return; }
     var sm = P.summary, h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:10px">';
@@ -116,9 +117,34 @@
     var bar = '<div role="img" aria-label="' + esc(SUM[lang()] || SUM.es) + '" style="display:flex;height:12px;border-radius:6px;overflow:hidden;margin:10px 0 6px;max-width:760px">' + seg.map(function (x) { return '<span title="' + esc(x[2]) + ': ' + nf(x[0]) + '" style="flex:' + x[0] + ' 1 0;background:' + x[1] + ';min-width:2px;margin-right:2px"></span>'; }).join('') + '</div>';
     return '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(f[0]) + '</h2><p style="font-size:14px;max-width:760px;margin:0">' + esc(SUM[lang()] || SUM.es) + '</p>' + bar + '<div style="font-size:13px;margin:8px 0">' + esc(f[1]) + ': <strong>' + nf(ok) + '</strong> · ' + esc(f[2]) + ': <strong>' + nf(b.DELAYED || 0) + '</strong> · ' + esc(f[3]) + ': <strong>' + nf(b.STALE || 0) + '</strong> · ' + esc(f[4]) + ': <strong>' + nf(arch) + '</strong> / ' + nf(FR.catalog.total) + '</div><p style="color:var(--text-muted);font-size:13px;max-width:760px">' + esc(f[5]) + '</p>';
   }
+  // Fuentes: último dato, frescura de sus series y uso comercial (data/views/source-health.json, scripts/build-source-health.py)
+  var SH = null, SH_ALL = false;
+  var ST = {
+    es: { t: 'Fuentes: último dato y licencia', s: 'Para cada fuente oficial: cuántas series publicamos, el periodo más reciente, cuántas están al día y si su licencia permite el uso comercial.', cols: ['Fuente', 'Países', 'Series', 'Último periodo', 'Al día', 'Con retraso', 'Desactualizadas', 'Uso comercial'], v: { apto: 'Apto', condiciones: 'Con condiciones', 'no-apto': 'No apto' }, more: 'Ver las {n} fuentes', sum: '{s} fuentes con {n} series identificadas por fuente.' },
+    en: { t: 'Sources: latest data and licence', s: 'For each official source: how many series we publish, the most recent period, how many are up to date and whether its licence allows commercial use.', cols: ['Source', 'Countries', 'Series', 'Latest period', 'Up to date', 'Delayed', 'Stale', 'Commercial use'], v: { apto: 'Fit', condiciones: 'With conditions', 'no-apto': 'Not fit' }, more: 'Show all {n} sources', sum: '{s} sources with {n} series attributed to a source.' },
+    fr: { t: 'Sources : dernière donnée et licence', s: 'Pour chaque source officielle : combien de séries nous publions, la période la plus récente, combien sont à jour et si sa licence autorise l’usage commercial.', cols: ['Source', 'Pays', 'Séries', 'Dernière période', 'À jour', 'En retard', 'Obsolètes', 'Usage commercial'], v: { apto: 'Apte', condiciones: 'Sous conditions', 'no-apto': 'Non apte' }, more: 'Voir les {n} sources', sum: '{s} sources avec {n} séries attribuées à une source.' },
+    it: { t: 'Fonti: ultimo dato e licenza', s: 'Per ogni fonte ufficiale: quante serie pubblichiamo, il periodo più recente, quante sono aggiornate e se la licenza consente l’uso commerciale.', cols: ['Fonte', 'Paesi', 'Serie', 'Ultimo periodo', 'Aggiornate', 'In ritardo', 'Obsolete', 'Uso commerciale'], v: { apto: 'Idoneo', condiciones: 'Con condizioni', 'no-apto': 'Non idoneo' }, more: 'Vedi tutte le {n} fonti', sum: '{s} fonti con {n} serie attribuite a una fonte.' }
+  };
+  var VC = { apto: '#17703f', condiciones: '#8f5f12', 'no-apto': '#c0392b' };
+  function srcBlock() {
+    if (!SH || !SH.sources) return '';
+    var w = ST[lang()] || ST.es, rows = SH_ALL ? SH.sources : SH.sources.slice(0, 15), th = 'padding:8px 6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600';
+    var h = '<h2 style="margin:22px 0 6px;font-size:18px">' + esc(w.t) + '</h2><p style="color:var(--text-muted);font-size:13.5px;max-width:760px;margin:0 0 8px">' + esc(w.s) + ' ' + esc(w.sum.replace('{s}', SH.summary.sources).replace('{n}', nf(SH.summary.series))) + '</p>';
+    h += '<div class="di-card" style="padding:4px 14px;overflow-x:auto;margin-bottom:8px"><table style="border-collapse:collapse;width:100%;min-width:760px;font-size:13px"><thead><tr>' + w.cols.map(function (c, i) { return '<th style="' + th + (i > 1 && i < 7 ? ';text-align:right' : '') + '">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
+    rows.forEach(function (x) {
+      var c = VC[x.verdict] || '#666666', td = 'padding:7px 6px;text-align:right';
+      h += '<tr style="border-top:1px solid var(--border)"><td style="padding:7px 6px;font-weight:600" title="' + esc(x.fullName) + '">' + esc(x.name) + '</td><td style="padding:7px 6px;font-size:12px;color:var(--text-muted)">' + esc(x.countries.length > 4 ? x.countries.slice(0, 4).join(', ') + ' +' + (x.countries.length - 4) : x.countries.join(', ')) + '</td>' +
+        '<td style="' + td + '">' + nf(x.series) + '</td><td style="' + td + '">' + esc(x.lastPeriod || '–') + '</td><td style="' + td + ';color:' + COL.ok + '">' + nf(x.ok) + '</td>' +
+        '<td style="' + td + ';color:' + (x.delayed ? COL.late : 'inherit') + '">' + nf(x.delayed) + '</td><td style="' + td + ';color:' + (x.stale ? COL.error : 'inherit') + '">' + nf(x.stale) + '</td>' +
+        '<td style="padding:7px 6px"><span class="di-badge" style="background:' + c + '1a;color:' + c + '">' + esc(w.v[x.verdict] || x.verdict) + '</span></td></tr>';
+    });
+    h += '</tbody></table></div>';
+    if (!SH_ALL && SH.sources.length > 15) h += '<button type="button" class="di-link-btn" id="st-src-all" style="margin-bottom:18px">' + esc(w.more.replace('{n}', SH.sources.length)) + '</button>';
+    return h;
+  }
   if (window.DehesaShared && window.DehesaShared.init) window.DehesaShared.init('status'); // menu, pie, migas y Relacionado (antes faltaban)
   function get(u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
-  Promise.all([get('data/pipeline-status.json'), get('data/data-quality.json'), get('data/freshness.json')]).then(function (r) { P = r[0]; Q = r[1]; FR = r[2]; render(); });
+  Promise.all([get('data/pipeline-status.json'), get('data/data-quality.json'), get('data/freshness.json'), get('data/views/source-health.json')]).then(function (r) { P = r[0]; Q = r[1]; FR = r[2]; SH = r[3]; render(); });
   var prev = window.DehesaShared && window.DehesaShared.onLangChange;
   if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
 })();

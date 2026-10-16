@@ -5644,6 +5644,21 @@
     "istat"
    ],
    "notes": "Macellazioni mensili, indici dei prezzi agricoli, consistenze del bestiame, fertilizzanti e prodotti fitosanitari distribuiti (scripts/update-it-istat.py), por la API SDMX del ISTAT con licencia CC BY 4.0."
+  },
+  "data/pack/": {
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ],
+   "notes": "Paquete descargable para empresas (scripts/build-data-pack.py): CSV y Excel por producto y mercado copiados de data/prices/history, sin cambiar valores. Solo entran fuentes con veredicto comercial apto o con condiciones; cada fila lleva su fuente, licencia y atribucion."
   }
  },
  "derived": [
