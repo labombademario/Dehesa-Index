@@ -1023,6 +1023,16 @@ sources:
     continue: true
     data: [el-ghg-agri.json]
     message: Emisiones de la agricultura griega (Eurostat)
+  - id: eu-more-ghg-agri
+    name: Update agricultural greenhouse gas emissions for 15 more EU countries (Eurostat env_air_gge)
+    cron: ['5 9 4 * *']
+    script: scripts/update-eu-ghg-agri.py
+    args: --many BG CY CZ DK EE FI HU LT LU LV MT RO SE SI SK
+    timeout: 30
+    script_timeout: 25
+    continue: true
+    data: [bg-ghg-agri.json, cy-ghg-agri.json, cz-ghg-agri.json, dk-ghg-agri.json, ee-ghg-agri.json, fi-ghg-agri.json, hu-ghg-agri.json, lt-ghg-agri.json, lu-ghg-agri.json, lv-ghg-agri.json, mt-ghg-agri.json, ro-ghg-agri.json, se-ghg-agri.json, si-ghg-agri.json, sk-ghg-agri.json]
+    message: Emisiones de la agricultura de 15 paises mas de la UE (Eurostat)
   - id: pt-nitrates
     name: Update Portugal nitrate in groundwater and nitrogen balance (Eurostat)
     cron: ['5 9 7 * *']

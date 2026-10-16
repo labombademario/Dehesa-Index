@@ -58,4 +58,17 @@ def main():
     L = len(years) - 1
     print("%s: %d-%d; agricultura %.0f kt (%.1f %% de %.0f kt); maquinaria y pesca %.0f kt; categorias %s; ganado %s; gases %s" % (out.name, years[0], years[-1], agri[L], 100 * agri[L] / nat[L], nat[L], mach[L], {k: round(v[L]) for k, v in bycat.items()}, {k: round(v[L]) for k, v in doc["bySpecies"].items()}, {k: round(v[L]) for k, v in bygas.items()}))
     return 0
-if __name__ == "__main__": sys.exit(main())
+def many(codes):
+    """Varios paises en una sola ejecucion (16-oct-2026): python3 scripts/update-eu-ghg-agri.py --many BG CZ DK ...
+    Cada pais escribe su data/<pais>-ghg-agri.json; el que falle conserva su fichero anterior. Rojo solo si ninguno sale."""
+    ok = 0
+    for cc in codes:
+        sys.argv = [sys.argv[0], cc, cc.lower()]
+        try: r = main()
+        except Exception as e: print("FALLO", cc, e); r = 1
+        if r == 0 and (ROOT / "data" / ("%s-ghg-agri.json" % cc.lower())).exists(): ok += 1
+    print("paises con fichero: %d de %d" % (ok, len(codes)))
+    return 0 if ok else 1
+if __name__ == "__main__":
+    if len(sys.argv) > 2 and sys.argv[1] == "--many": sys.exit(many([a.upper() for a in sys.argv[2:]]))
+    sys.exit(main())

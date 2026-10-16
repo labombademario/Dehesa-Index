@@ -302,14 +302,14 @@
     var go = function () { if (!window.DIDroughtCountry || ST.c !== cc) return; window.DIDroughtCountry.mount(el, cc, tt().countries[cc] || cc, lang()).then(function (ok) { if (ok && ST.c === cc) frameUp(c); }); };
     if (window.DIDroughtCountry) go(); else { var sc = document.createElement('script'); sc.src = 'js/country-drought.js?v=20261012'; sc.onload = go; document.head.appendChild(sc); }
   }
-  /* Emisiones del campo en España (js/es-ghg-agri.js, MITECO): solo en la ficha de España, debajo de la sequía */
+  /* Emisiones del campo (js/es-ghg-agri.js): España con el inventario del MITECO; el resto de la UE con Eurostat env_air_gge. Si el fichero del país no existe, no se pinta nada */
   function ghgUp(c) {
-    if (['ES', 'FR', 'DE', 'IT', 'PL', 'BE', 'AT', 'HR', 'IE', 'NL', 'PT', 'EL'].indexOf(ST.c) < 0) return;
+    if (['ES', 'FR', 'DE', 'IT', 'PL', 'BE', 'AT', 'HR', 'IE', 'NL', 'PT', 'EL', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'HU', 'LT', 'LU', 'LV', 'MT', 'RO', 'SE', 'SI', 'SK'].indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-ghg-slot'; var after = document.getElementById('pp-drought-slot') || tr; after.parentNode.insertBefore(el, after.nextSibling);
     el = lateBox('pp-ghg-box', document.getElementById('pp-drought-box')) || el;
     var go = function () { if (window.DIEsGHG && ST.c === cc) window.DIEsGHG.mount(el, lang(), cc).then(function (ok) { if (ok && ST.c === cc) frameUp(c); }); };
-    if (window.DIEsGHG) go(); else { var sc = document.createElement('script'); sc.src = 'js/es-ghg-agri.js?v=20261020'; sc.onload = go; document.head.appendChild(sc); }
+    if (window.DIEsGHG) go(); else { var sc = document.createElement('script'); sc.src = 'js/es-ghg-agri.js?v=20261016g'; sc.onload = go; document.head.appendChild(sc); }
   }
   /* Francia: gasóleo no de carretera (js/fr-gnr.js) y nitratos en las aguas subterráneas (js/fr-nitrates.js), con el mapa de departamentos compartido */
   function frUp() {
