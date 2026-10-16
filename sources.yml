@@ -1023,6 +1023,15 @@ sources:
     continue: true
     data: [diesel-eu-more.json]
     message: Gasoleo semanal en 16 paises de la UE (Boletin Petrolero de la Comision)
+  - id: eu-nitrates
+    name: Update nitrate in groundwater and nitrogen balance for 22 EU countries (Eurostat)
+    cron: ['20 9 8 * *']
+    script: scripts/update-eu-nitrates.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [eu-nitrates.json]
+    message: Nitratos en aguas subterraneas y balance de nitrogeno por pais de la UE (Eurostat)
   - id: pt-ghg-agri
     name: Update Portugal agricultural greenhouse gas emissions (Eurostat env_air_gge)
     cron: ['50 8 4 * *']

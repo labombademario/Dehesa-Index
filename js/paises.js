@@ -481,6 +481,16 @@
     var go = function () { if (window.DIEuDiesel && ST.c === cc) window.DIEuDiesel.mount(el, lang(), cc); };
     nearView(el, function () { if (window.DIEuDiesel) go(); else { var sc = document.createElement('script'); sc.src = 'js/eu-diesel.js?v=0'; sc.onload = go; document.head.appendChild(sc); } });
   }
+  /* Nitratos en aguas subterráneas y balance de nitrógeno (Eurostat) en 22 países sin bloque propio (js/eu-nitrates.js, data/eu-nitrates.json) */
+  var EUNIT = ['ES', 'DE', 'IT', 'PL', 'AT', 'HR', 'EL', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'HU', 'LT', 'LU', 'LV', 'MT', 'RO', 'SE', 'SI', 'SK'];
+  function euNitUp() {
+    if (EUNIT.indexOf(ST.c) < 0) return;
+    var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
+    var after = document.getElementById('pp-eu-diesel') || document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;
+    var el = document.createElement('div'); el.id = 'pp-eu-nit'; el.style.minHeight = '1px'; after.parentNode.insertBefore(el, after.nextSibling);
+    var go = function () { if (window.DIEuNitrates && ST.c === cc) window.DIEuNitrates.mount(el, lang(), cc); };
+    nearView(el, function () { if (window.DIEuNitrates) go(); else { var sc = document.createElement('script'); sc.src = 'js/eu-nitrates.js?v=0'; sc.onload = go; document.head.appendChild(sc); } });
+  }
   /* Carga diferida: el bloque se monta cuando se acerca a la pantalla (16-oct-2026: las denominaciones de España bajaban 96 KB de zonas al abrir la ficha) */
   function nearView(el, fn) {
     if (!el || !('IntersectionObserver' in window)) return fn();
@@ -664,7 +674,7 @@
     ((window.DehesaShared.countryLinks && window.DehesaShared.countryLinks(ST.c)) || []).forEach(function (l) { if (own.indexOf(l.file) < 0) own += '<a class="di-card" href="' + l.href + '" style="display:block;padding:14px 18px;margin-top:14px;text-decoration:none;color:inherit"><b>' + esc(l.label) + ' →</b><div class="di-movers-hint" style="margin:4px 0 0">' + esc(l.d) + '</div></a>'; });
     html += '<div id="ps-detail"><h3 id="ps-own" class="ps-own-h">' + esc(OWN[lang()] ? OWN[lang()][0] : OWN.es[0]) + '</h3>' + own + '<div id="ps-ownnote"></div>'; if (REGMAP[ST.c] && !window.DIProfile) html += '<div id="ps-regmap"></div>';
     if (ST.c === 'PT') html += foldBox('ps-ifap', 'ifap'); html += (ST.c === 'DE' ? '<div id="ps-de"></div>' : '') + (ST.c === 'CA' ? '<div id="ps-mb"></div>' : '') + (ST.c === 'US' ? '<div id="ps-us"></div>' : '') + (ST.c === 'ES' ? '<div id="ps-es"></div>' : '') + (/^(DK|NL|FR)$/.test(ST.c) ? '<div id="ps-eu"></div>' : '') + '<div id="ps-agri"></div>' + foldBox('ps-tp', 'tp') + '</div>' + srcHtml;
-    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(c); frUp(); deUp(); itUp(); landUp(); itIstatUp(); plUp(); plLandUp(); plRegionsUp(); plFarmShopUp(); beUp(); atUp(); hrUp(); ieUp(); nlUp(); ptUp(); euDieselUp(); sectorUp(); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
+    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(c); frUp(); deUp(); itUp(); landUp(); itIstatUp(); plUp(); plLandUp(); plRegionsUp(); plFarmShopUp(); beUp(); atUp(); hrUp(); ieUp(); nlUp(); ptUp(); euDieselUp(); euNitUp(); sectorUp(); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
     var ub = root.querySelector('[data-unusual]'); if (ub) ub.onclick = function () { ub.disabled = true; ub.textContent = ub.getAttribute('data-busy'); Promise.all(c.series.filter(function (x) { return !x.points && x.n >= 24; }).map(pt)).then(function () { build(); }); };
     if (ST.c === 'DE') { var den = document.getElementById('ps-de'), mdf = function () { if (window.DEFarm && den) window.DEFarm.mount(den, lang()); }; if (window.DEFarm) mdf(); else { var dsc = document.createElement('script'); dsc.src = 'js/de-agri.js?v=20261003'; dsc.onload = mdf; document.head.appendChild(dsc); } }
     if (ST.c === 'CA') { var mbn = document.getElementById('ps-mb'); if (mbn) { /* Manitoba (vacuno, ovino y caprino, porcino): cabeceras aqui, modulos (js/mb-cattle.js, js/mb-smallstock.js) solo al abrir */

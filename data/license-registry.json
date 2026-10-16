@@ -4937,6 +4937,12 @@
     "foag_ch"
    ]
   },
+  "data/eu-nitrates.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Nitrato en aguas subterraneas (sdg_06_40) y balance bruto de nitrogeno (aei_pr_gnb) de 22 paises de la UE sin bloque propio de nitratos; Eurostat, CC BY 4.0."
+  },
   "data/diesel-eu-more.json": {
    "sources": [
     "eu_oil_bulletin"
