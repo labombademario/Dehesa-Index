@@ -320,6 +320,20 @@ def fish():
     except Exception as e: print('fish US', e)
     if rows: write('fish/index.json', {'schemaVersion': 1, 'generatedAt': max([eu.get('generatedAt') or '']), 'countries': rows})
 
+def farm_managers():
+    """data/views/farm-managers.json: jefes de explotacion por edad (numero de explotaciones), total y mujeres, de los 26 paises de la UE
+    (data/eurostat-structure*-stats.json, Eurostat ef_fsi_agesex). Cifras tal cual; los porcentajes los calcula la ficha (js/farm-managers.js) y los rotula como calculo."""
+    out = {}
+    for fn in ('eurostat-structure-stats.json', 'eurostat-structure2-stats.json'):
+        try: d = load(fn)
+        except Exception: continue
+        for cc, c in (d.get('countries') or {}).items():
+            pre = cc.lower() + '-es-st-mgr-'; o = {}
+            for x in c.get('series', []):
+                if x['id'].startswith(pre): o[x['id'][len(pre):].replace('age-', '', 1)] = [[str(p), v] for p, v in x['points'] if v is not None]
+            if o.get('total'): out[cc] = o
+    if out: write('farm-managers.json', {'schemaVersion': 1, 'source': 'eurostat', 'dataset': 'ef_fsi_agesex', 'countries': dict(sorted(out.items()))})
+
 def main():
     write('price-revisions.json', price_revisions())
     write('home-summary.json', home_summary())
@@ -330,4 +344,5 @@ def main():
     diesel_eu_more()
     farm_headlines()
     fish()
+    farm_managers()
 main()
