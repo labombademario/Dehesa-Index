@@ -465,7 +465,7 @@
 
   // canonical y og:url propios por producto (la pagina es una sola con ?p=): cada URL del sitemap se declara a si misma
   function setCanonical() {
-    var u = 'https://dehesaindex.com/producto.html?p=' + SEL.p, c = document.querySelector('link[rel="canonical"]'), o = document.querySelector('meta[property="og:url"]');
+    var u = 'https://dehesaindex.com/producto?p=' + SEL.p, c = document.querySelector('link[rel="canonical"]'), o = document.querySelector('meta[property="og:url"]');
     if (c) c.setAttribute('href', u); if (o) o.setAttribute('content', u);
   }
   function render() {

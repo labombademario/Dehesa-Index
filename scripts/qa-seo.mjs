@@ -10,7 +10,8 @@ const ORIGIN = 'https://dehesaindex.com';
 const errs = []; let checks = 0;
 const ok = (c, m) => { checks++; if (!c) errs.push(m); };
 const exists = async p => stat(p).then(() => true).catch(() => false);
-const toFile = u => { const p = u.replace(ORIGIN, '').split('#')[0].split('?')[0]; return path.join(root, p.endsWith('/') ? p + 'index.html' : p || 'index.html'); };
+// URL limpia -> fichero: Cloudflare sirve /pagina desde pagina.html (y redirige pagina.html -> /pagina), asi que la URL canonica NO lleva .html
+const toFile = u => { const p = u.replace(ORIGIN, '').split('#')[0].split('?')[0]; return path.join(root, p.endsWith('/') ? p + 'index.html' : p ? (/\.[a-z0-9]+$/i.test(p) ? p : p + '.html') : 'index.html'); };
 const sm = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 ok(new Set(locs).size === locs.length, 'sitemap: URLs duplicadas');
