@@ -492,27 +492,33 @@
     var lang = inp.lang, t = PR[lang] || PR.es, out = [], k = (inp.kpis || []).filter(function (s) { return s && s.latest != null && s.latestPeriod; });
     var lead = k.filter(function (s) { return /^(prices|quotes|milk|prices_lv|prices_fv|idx_perc)$/.test(s.group); })[0] || k[0], second = k.filter(function (s) { return s !== lead && s.unit !== (lead && lead.unit); })[0];
     var clean = function (l) { return tlAll(String(l).replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''), lang); };
-    var done = {};
+    var done = {}, items = [];
+    function splitSrc(l) { var m = /^(.*\S)\s*\(([^()]*)\)\s*$/.exec(l); return m ? { t: m[1], s: m[2] } : { t: l, s: null }; }
     [lead, second].forEach(function (s) {
       if (!s) return;
       var txt = clean(s.label) + ' — ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ')';
       if (s.changePct != null) { var c = Math.abs(s.changePct) < 0.05; txt += ', ' + (c ? t.same : pct(s.changePct, lang) + ' ') + (t.cmp[s.frequency] || t.cmp[s.frequency === 'semiannual' ? 'half-year' : 'monthly'] || t.cmp.monthly); }
       var cx = ctx(s); if (cx && (cx.isMax || cx.isMin)) txt += ', ' + (cx.isMax ? t.hi : t.lo).replace('{n}', cx.yrs);
       out.push(txt + '.'); done[s.id] = 1;
+      var lb = splitSrc(clean(s.label)), cm = s.changePct != null ? Math.abs(s.changePct) < 0.05 : null, cxx = ctx(s);
+      items.push({ k: 'kpi', title: lb.t, src: lb.s, value: unitTxt(s.latest, s.unit, lang), when: inp.plabel(s.latestPeriod, s.frequency),
+        delta: s.changePct == null ? null : (cm ? (t.same + (t.cmp[s.frequency] || t.cmp[s.frequency === 'semiannual' ? 'half-year' : 'monthly'] || t.cmp.monthly)).replace(/^./, function (c) { return c.toUpperCase(); }) : pct(s.changePct, lang) + ' ' + (t.cmp[s.frequency] || t.cmp[s.frequency === 'semiannual' ? 'half-year' : 'monthly'] || t.cmp.monthly)), dir: s.changePct == null || cm ? 0 : s.changePct > 0 ? 1 : -1,
+        note: cxx && (cxx.isMax || cxx.isMin) ? (cxx.isMax ? t.hi : t.lo).replace('{n}', cxx.yrs).replace(/^./, function (c) { return c.toUpperCase(); }) : null });
     });
     // otros indicadores clave que también están en su máximo o mínimo del periodo
     var ext = { hi: [], lo: [] }; k.forEach(function (s) { if (done[s.id]) return; var cx = ctx(s); if (!cx) return; if (cx.isMax) ext.hi.push({ s: s, n: cx.yrs }); else if (cx.isMin) ext.lo.push({ s: s, n: cx.yrs }); });
-    ['hi', 'lo'].forEach(function (w) { if (ext[w].length) out.push(t[w === 'hi' ? 'alsoHi' : 'alsoLo'].replace('{n}', ext[w][0].n) + ext[w].slice(0, 3).map(function (e) { return clean(e.s.label); }).join('; ') + '.'); });
+    ['hi', 'lo'].forEach(function (w) { if (ext[w].length) { var lh = t[w === 'hi' ? 'alsoHi' : 'alsoLo'].replace('{n}', ext[w][0].n), ll = ext[w].slice(0, 3).map(function (e) { return clean(e.s.label); }); out.push(lh + ll.join('; ') + '.'); items.push({ k: 'wide', title: lh.replace(/\s*:\s*$/, ''), list: ll }); } });
     var side = function (tag, lab) {
       var l = (inp.partners || []).filter(function (s) { return s.id.indexOf('-' + tag + '-') > -1; }), an = l.filter(function (s) { return s.frequency === 'annual'; }); if (an.length) l = an;
       l = l.filter(function (s) { return s.latest != null; }).sort(function (a, b) { return b.latest - a.latest; });
       if (!l.length) return null; var s = l[0], raw = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, '');
-      return lab + ': ' + (country(raw, lang) || raw) + ', ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ').';
+      var cn = country(raw, lang) || raw; items.push({ k: 'kpi', title: lab, src: null, value: cn, when: inp.plabel(s.latestPeriod, s.frequency), delta: unitTxt(s.latest, s.unit, lang), dir: 0, note: null });
+      return lab + ': ' + cn + ', ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ').';
     };
     var d = side('exp', t.dst), o = side('imp', t.org); if (d) out.push(d); if (o) out.push(o);
-    var u = (inp.unusual || [])[0]; if (u) out.push(t.unusual + ': ' + clean(u.s.label) + ', ' + pct(u.ch, lang) + '.');
+    var u = (inp.unusual || [])[0]; if (u) { out.push(t.unusual + ': ' + clean(u.s.label) + ', ' + pct(u.ch, lang) + '.'); var ul = splitSrc(clean(u.s.label)); items.push({ k: 'kpi', title: t.unusual, src: null, value: ul.t, when: null, delta: pct(u.ch, lang), dir: u.ch > 0 ? 1 : u.ch < 0 ? -1 : 0, note: ul.s }); }
     if (!out.length) return null;
-    return { head: t.head, sentences: out, note: t.note };
+    return { head: t.head, sentences: out, items: items, note: t.note };
   }
 
   // ---------- ayudas «?» ----------
@@ -632,6 +638,16 @@
 
   // Respaldo general (auditoria 8-oct-2026): si las reglas propias no traducen la etiqueta, el glosario comun (js/label-tl.js) lo intenta con la misma regla de todo o nada
   function tlAll(label, lang) { var r = tl(label, lang); if (r === label && root.DILabelTl && root.DILabelTl.ready(lang)) return root.DILabelTl.tl(label, lang); return r; }
-  var API = { share: share, shareUrl: shareUrl, bindShare: bindShare, tl: tlAll, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country, flagOf: flagOf };
+  function plainHtml(pl, esc) { // lista de bloques cortos (titulo, cifra, variacion) en vez de un parrafo; mismas cifras que pl.sentences
+    var h = '<div class="pp-pl">';
+    pl.items.forEach(function (o) {
+      if (o.k === 'wide') { h += '<div class="pp-pl-i pp-pl-wide"><div class="pp-pl-t">' + esc(o.title) + '</div><div class="pp-pl-n">' + o.list.map(esc).join(' · ') + '</div></div>'; return; }
+      h += '<div class="pp-pl-i"><div class="pp-pl-t">' + esc(o.title) + '</div><div class="pp-pl-v">' + esc(o.value) + '</div>' +
+        '<div class="pp-pl-m">' + (o.when ? '<span>' + esc(o.when) + '</span>' : '') + (o.delta ? '<span class="pp-pl-d' + (o.dir > 0 ? ' is-up' : o.dir < 0 ? ' is-dn' : '') + '">' + esc(o.delta) + '</span>' : '') + '</div>' +
+        (o.note ? '<div class="pp-pl-n">' + esc(o.note) + '</div>' : '') + (o.src ? '<div class="pp-pl-s">' + esc(o.src) + '</div>' : '') + '</div>';
+    });
+    return h + '</div>';
+  }
+  var API = { plainHtml: plainHtml, share: share, shareUrl: shareUrl, bindShare: bindShare, tl: tlAll, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country, flagOf: flagOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.DIClear = API;
 })(typeof window !== 'undefined' ? window : globalThis);

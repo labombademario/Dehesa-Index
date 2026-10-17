@@ -285,7 +285,7 @@
     var qs = C ? C.questions(groups, x.lang) : []; present.ask = qs.length > 0;
     var pl = C ? C.plain({ lang: x.lang, kpis: kp, partners: groups.partners || [], unusual: partial(S) ? [] : unusual(S), plabel: x.plabel }) : null;
     if (C) h += C.nav(present, x.lang, esc);
-    if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + ' ' + SHR(x, 'pp-sum') + '</div><p>' + pl.sentences.map(esc).join(' ') + '</p><div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div>' + SUMCITE(kp, groups.partners || [], x) + '</section>';
+    if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + ' ' + SHR(x, 'pp-sum') + '</div>' + (pl.items && pl.items.length && C.plainHtml ? C.plainHtml(pl, esc) : '<p>' + pl.sentences.map(esc).join(' ') + '</p>') + '<div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div>' + SUMCITE(kp, groups.partners || [], x) + '</section>';
     else h += '<span id="pp-sum"></span>';
     h += coverageBox(S, x) + summary(S, x);
     // KPIs
