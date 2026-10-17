@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T06:03:00Z",
+ "generatedAt": "2026-10-17T06:43:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 205,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "82e671ef",
+   "sha": "9363ab2e",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/ed83ecf3-dd14-4852-9f10-680aec519853",
-   "completedAt": "2026-10-17T05:28:18Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5b1defe2-4ac7-4c59-afb0-7dd936f16f84",
+   "completedAt": "2026-10-17T06:13:51Z"
   },
-  "lagHours": null,
-  "prodGeneratedAt": null,
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-17T03:40:49.940640+00:00",
   "repoGeneratedAt": "2026-10-17T03:40:49.940640+00:00",
-  "checkedAt": "2026-10-17T06:03:00Z"
+  "checkedAt": "2026-10-17T06:43:00Z"
  },
  "pipelines": [
   {
@@ -2467,7 +2467,7 @@
    "crons": [
     "17 6 * * *"
    ],
-   "nextRun": "2026-10-17T06:17:00Z",
+   "nextRun": "2026-10-18T06:17:00Z",
    "files": [
     {
      "path": "data/gats.json",
@@ -3133,7 +3133,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-17T06:17:00Z",
+   "nextRun": "2026-10-17T09:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -3164,8 +3164,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38999426623"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -3367,19 +3367,19 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-17T06:10:00Z",
+   "nextRun": "2026-10-17T09:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-17T03:37:58Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-17T05:27:37Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-17T05:25:19Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3391,14 +3391,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-17T05:25:19Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-17T05:25:19Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/product-compare.json",
@@ -3415,7 +3415,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-17T05:25:19Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/products"
@@ -3426,7 +3426,7 @@
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-17T05:25:19Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -3441,11 +3441,11 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-17T05:25:19Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-17T02:13:23Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -3468,7 +3468,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-17T05:25:19Z"
+     "lastChange": "2026-10-17T06:12:52Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3497,8 +3497,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38999357392"
    },
    "recent": {
-    "runs": 10,
-    "success": 6,
+    "runs": 9,
+    "success": 5,
     "failed": 4
    },
    "status": "ok",
@@ -4338,7 +4338,7 @@
    "crons": [
     "35 6 3,17 * *"
    ],
-   "nextRun": "2026-10-17T06:35:00Z",
+   "nextRun": "2026-11-03T06:35:00Z",
    "files": [
     {
      "path": "data/source-status.json",
@@ -4358,7 +4358,7 @@
     "failed": 2
    },
    "status": "late",
-   "expectedEveryHours": 408.0,
+   "expectedEveryHours": 384.0,
    "sourceUnavailable": {
     "since": "2026-10-06T05:09:50Z",
     "lastAttempt": "2026-10-11T17:49:00Z",
