@@ -1,5 +1,5 @@
 /* Dehesa Index — Censo agrario de Eurostat en la ficha de país y en la de región (24 países de la UE).
-   Datos: data/views/census/<PAIS>.json (scripts/build-views.py, desde data/eurostat-census-stats.json: Eurostat ef_mp_*, ef_lf_main, ef_fsi_nfm, ef_fsi_ecsz, ef_lsk_*, ef_lus_*).
+   Datos: data/views/census/<PAIS>.json (scripts/build-views.py, desde data/eurostat-census-stats.json: Eurostat ef_mp_* (incl. voctraining, manorg, digilsk), ef_lf_main, ef_lf_fam, ef_lf_size, ef_lus_pegrass, ef_lus_allcrops, ef_fsi_nfm, ef_fsi_ecsz, ef_lsk_*, ef_lus_*).
    Las cifras son las de Eurostat; los porcentajes y las medias por explotación los calcula esta ficha y los rotula como cálculo de Dehesa Index. ES5.
    mount(el, lang, cc, regionKey): sin regionKey, el país; con regionKey, la región (suma de sus NUTS 2). */
 (function (global) {
@@ -72,7 +72,27 @@
     nuaa: L('Superficie agraria no utilizada', 'Unutilised agricultural area', 'Surface agricole non utilisée', 'Superficie agricola non utilizzata'), wa: L('Superficie boscosa', 'Wooded area', 'Surface boisée', 'Superficie boscata'),
     orch: L('Frutales por edad de la plantación (2023)', 'Orchards by age of plantation (2023)', 'Vergers selon l’âge de la plantation (2023)', 'Frutteti per età dell’impianto (2023)'),
     apples: L('Manzano y peral', 'Apples and pears', 'Pommiers et poiriers', 'Meli e peri'), stone: L('Melocotonero, nectarino y albaricoquero', 'Peaches, nectarines and apricots', 'Pêchers, nectariniers et abricotiers', 'Peschi, nettarine e albicocchi'), citrus: L('Naranjo, mandarino y limonero', 'Oranges, small citrus and lemons', 'Orangers, petits agrumes et citronniers', 'Aranci, piccoli agrumi e limoni'), olives: L('Olivo', 'Olives', 'Oliviers', 'Ulivi'), grapes: L('Uva de mesa y pasas', 'Table grapes and raisins', 'Raisins de table et secs', 'Uva da tavola e uva passa'),
-    changeSince: L('desde', 'since', 'depuis', 'dal')
+    changeSince: L('desde', 'since', 'depuis', 'dal'),
+    // tanda 2: formación profesional, ecológico, mano de obra familiar y por tamaño, ganadería, pastos y cultivos
+    voc: L('Formación profesional del jefe en los últimos 12 meses', 'Manager’s vocational training in the last 12 months', 'Formation professionnelle du chef au cours des 12 derniers mois', 'Formazione professionale del capo negli ultimi 12 mesi'),
+    vocYes: L('Con formación en los últimos 12 meses', 'Trained in the last 12 months', 'Formé au cours des 12 derniers mois', 'Formato negli ultimi 12 mesi'), vocNo: L('Sin formación en los últimos 12 meses', 'Not trained in the last 12 months', 'Non formé au cours des 12 derniers mois', 'Non formato negli ultimi 12 mesi'),
+    orgM: L('Agricultura ecológica según la edad del jefe', 'Organic farming by manager age', 'Agriculture biologique selon l’âge du chef', 'Agricoltura biologica per età del capo'), orgShare: L('% ecológicas', '% organic', '% bio', '% biologiche'),
+    orgTr: L('Explotaciones ecológicas según la formación del jefe', 'Organic holdings by manager training', 'Exploitations bio selon la formation du chef', 'Aziende biologiche per formazione del capo'),
+    orgHld: L('Explotaciones ecológicas', 'Organic holdings', 'Exploitations bio', 'Aziende biologiche'), orgHa: L('Superficie en ecológico', 'Organic area', 'Surface en bio', 'Superficie biologica'),
+    fam: L('Mano de obra familiar: explotaciones según su peso', 'Family labour: holdings by its share of the workforce', 'Main-d’œuvre familiale : exploitations selon son poids', 'Manodopera familiare: aziende per incidenza'),
+    famAll: L('Solo mano de obra familiar (100 %)', 'Family labour only (100%)', 'Main-d’œuvre uniquement familiale (100 %)', 'Solo manodopera familiare (100%)'), famMost: L('Mayoría familiar (50 a 99 %)', 'Mostly family (50 to 99%)', 'Majoritairement familiale (50 à 99 %)', 'Prevalentemente familiare (50-99%)'), famSome: L('Minoría familiar (menos del 50 %)', 'Minority family (under 50%)', 'Minoritairement familiale (moins de 50 %)', 'Minoritaria (meno del 50%)'), famNone: L('Sin mano de obra familiar', 'No family labour', 'Aucune main-d’œuvre familiale', 'Nessuna manodopera familiare'),
+    labSize: L('Mano de obra según el tamaño de la explotación', 'Labour by farm size', 'Main-d’œuvre selon la taille de l’exploitation', 'Manodopera per dimensione aziendale'), size: L('Superficie de la explotación', 'Farm area', 'Surface de l’exploitation', 'Superficie aziendale'),
+    nonFam: L('% UTA asalariada fija no familiar', '% regular non-family AWU', '% UTA salariée régulière non familiale', '% ULA regolare non familiare'), nonReg: L('% UTA no regular', '% non-regular AWU', '% UTA non régulière', '% ULA non regolare'),
+    sz0: L('Sin superficie', 'No area', 'Sans surface', 'Senza superficie'), sz1: L('Menos de 5 ha', 'Under 5 ha', 'Moins de 5 ha', 'Meno di 5 ha'), sz2: L('5 a 30 ha', '5 to 30 ha', '5 à 30 ha', '5-30 ha'), sz3: L('30 a 100 ha', '30 to 100 ha', '30 à 100 ha', '30-100 ha'), sz4: L('100 ha o más', '100 ha or more', '100 ha ou plus', '100 ha o più'),
+    lskM: L('Maquinaria y sistemas para el ganado', 'Machinery and systems for livestock', 'Machines et systèmes pour l’élevage', 'Macchinari e sistemi per il bestiame'),
+    mRob: L('Robots de ordeño', 'Milking robots', 'Robots de traite', 'Robot di mungitura'), mAf: L('Alimentación automática', 'Automatic feeding', 'Alimentation automatique', 'Alimentazione automatica'), mGm: L('Mezcladora-trituradora de pienso', 'Grinder-mixer for feed', 'Broyeur-mélangeur d’aliments', 'Mulino-miscelatore per mangimi'), mClim: L('Regulación automática del clima de la nave', 'Automatic barn climate regulation', 'Régulation automatique du climat du bâtiment', 'Regolazione automatica del clima'), mWh: L('Control del bienestar y la salud', 'Welfare and health monitoring', 'Suivi du bien-être et de la santé', 'Monitoraggio di benessere e salute'),
+    lskUniv: L('de las explotaciones con ganado que respondieron', 'of the livestock holdings that answered', 'des exploitations d’élevage ayant répondu', 'delle aziende zootecniche rispondenti'),
+    lsuSize: L('Maquinaria para el ganado según el tamaño del rebaño (UGM)', 'Livestock machinery by herd size (LSU)', 'Machines pour l’élevage selon la taille du troupeau (UGB)', 'Macchinari zootecnici per dimensione dell’allevamento (UBA)'), anyMach: L('% con maquinaria', '% with machinery', '% avec machines', '% con macchinari'), robShare: L('% con robot de ordeño', '% with milking robot', '% avec robot de traite', '% con robot di mungitura'),
+    ls0: L('Menos de 5 UGM', 'Under 5 LSU', 'Moins de 5 UGB', 'Meno di 5 UBA'), ls1: L('5 a 20 UGM', '5 to 20 LSU', '5 à 20 UGB', '5-20 UBA'), ls2: L('20 a 100 UGM', '20 to 100 LSU', '20 à 100 UGB', '20-100 UBA'), ls3: L('100 a 500 UGM', '100 to 500 LSU', '100 à 500 UGB', '100-500 UBA'), ls4: L('500 UGM o más', '500 LSU or more', '500 UGB ou plus', '500 UBA o più'),
+    pg: L('Pastos permanentes por tipo', 'Permanent grassland by type', 'Prairies permanentes par type', 'Prati permanenti per tipo'), pg1: L('Pastos y praderas (sin pastos pobres)', 'Pastures and meadows (excluding rough grazing)', 'Pâturages et prairies (hors parcours)', 'Pascoli e prati (esclusi i pascoli magri)'), pg2: L('Pastos pobres y rastrojeras', 'Rough grazings', 'Parcours extensifs', 'Pascoli magri'), pg3: L('Pastos no utilizados con derecho a ayudas', 'Unused grassland eligible for subsidies', 'Prairies non utilisées éligibles aux aides', 'Prati non utilizzati ammissibili ai contributi'),
+    crp: L('Cultivos por superficie y explotaciones', 'Crops by area and holdings', 'Cultures par surface et exploitations', 'Colture per superficie e aziende'), crop: L('Cultivo', 'Crop', 'Culture', 'Coltura'), avgHa: L('ha por explotación', 'ha per holding', 'ha par exploitation', 'ha per azienda'),
+    c11: L('Trigo blando y espelta', 'Common wheat and spelt', 'Blé tendre et épeautre', 'Frumento tenero e farro'), c12: L('Trigo duro', 'Durum wheat', 'Blé dur', 'Frumento duro'), c13: L('Cebada', 'Barley', 'Orge', 'Orzo'), c14: L('Avena y mezclas de cereales de primavera', 'Oats and spring cereal mixtures', 'Avoine et mélanges de céréales de printemps', 'Avena e miscugli di cereali primaverili'), c15: L('Maíz grano', 'Grain maize', 'Maïs grain', 'Mais da granella'), c16: L('Centeno y mezclas de invierno', 'Rye and winter cereal mixtures', 'Seigle et méteil', 'Segale e miscugli invernali'), c17: L('Otros cereales (triticale, sorgo…)', 'Other cereals (triticale, sorghum…)', 'Autres céréales (triticale, sorgho…)', 'Altri cereali (triticale, sorgo…)'), c20: L('Arroz', 'Rice', 'Riz', 'Riso'),
+    pls: L('Leguminosas grano y proteaginosas', 'Dry pulses and protein crops', 'Légumineuses et protéagineux', 'Leguminose da granella e proteaginose'), pot: L('Patata', 'Potatoes', 'Pommes de terre', 'Patate'), sbt: L('Remolacha azucarera', 'Sugar beet', 'Betterave sucrière', 'Barbabietola da zucchero'), rps: L('Colza y nabina', 'Rape and turnip rape', 'Colza et navette', 'Colza e ravizzone'), sfl: L('Girasol', 'Sunflower', 'Tournesol', 'Girasole'), soy: L('Soja', 'Soya', 'Soja', 'Soia'), tgr: L('Praderas temporales', 'Temporary grasses and grazings', 'Prairies temporaires', 'Prati avvicendati'), gmz: L('Maíz forrajero', 'Green maize', 'Maïs fourrage', 'Mais verde'), veg: L('Hortalizas y fresa', 'Fresh vegetables and strawberries', 'Légumes frais et fraises', 'Ortaggi freschi e fragole'), fal: L('Barbecho', 'Fallow land', 'Jachère', 'Maggese')
   };
   /* franjas de edad: Eurostat publica 35-39 y 40-44 (2020, 2023) o 35-44 (2016); nunca se mezclan en la misma tabla */
   var AGE = [['Y_LT25', L('Menos de 25', 'Under 25', 'Moins de 25', 'Meno di 25')], ['Y25-34', L('25 a 34', '25 to 34', '25 à 34', '25-34')], ['Y35-39', L('35 a 39', '35 to 39', '35 à 39', '35-39')], ['Y40-44', L('40 a 44', '40 to 44', '40 à 44', '40-44')], ['Y35-44', L('35 a 44', '35 to 44', '35 à 44', '35-44')],
@@ -176,6 +196,43 @@
         out += h3(T.labour[i], yl) + '<div class="fsh-kpis">' + kpi(T.persons[i], C.nf(lt, 0), yl) + (la != null ? kpi(T.awu[i], C.nf(la, 0), la && lt ? C.nf(la / lt, 2) + ' ' + T.awuP[i] : '') : '') + '</div>' + two(lb, lp);
       }
     }
+    if (C.has('ef_lf_fam')) {
+      var yf = C.yearOf('ef_lf_fam', 'TOTAL|HLD'), ft = yf ? C.at('ef_lf_fam', 'TOTAL|HLD', yf) : null;
+      if (ft) {
+        var fm = [['PC100', T.famAll[i]], ['PC50-99', T.famMost[i]], ['PC_GT0-49', T.famSome[i]], ['PC0', T.famNone[i]]];
+        out += h3(T.fam[i], yf) + two(barRows(C, fm.map(function (a) { var v = C.at('ef_lf_fam', a[0] + '|HLD', yf); return { n: a[1], p: v != null ? v / ft * 100 : null, sub: v != null ? C.nf(v, 0) + ' ' + T.holdings[i] : '' }; })),
+          pieOf(C, fm.map(function (a) { return { name: a[1], v: C.at('ef_lf_fam', a[0] + '|HLD', yf) }; }), T.holdings[i], T.fam[i] + ' ' + yf, C.nf(ft, 0), T.holdings[i] + ' ' + yf));
+      }
+    }
+    if (C.has('ef_lf_size')) {
+      var yz = C.yearOf('ef_lf_size', 'TOTAL|TOTAL|PER');
+      if (yz) {
+        var zs = [['HA0', T.sz0[i]], ['HA_GT0_LT5', T.sz1[i]], ['HA5-29', T.sz2[i]], ['HA30-99', T.sz3[i]], ['HA_GE100', T.sz4[i]], ['TOTAL', T.tot[i]]];
+        var zr = zs.map(function (a) { var pe = C.at('ef_lf_size', a[0] + '|TOTAL|PER', yz), aw = C.at('ef_lf_size', a[0] + '|TOTAL|AWU', yz), nf0 = C.at('ef_lf_size', a[0] + '|FLF_D_RNFAM|AWU', yz), nr = C.at('ef_lf_size', a[0] + '|FLF_D_NR|AWU', yz);
+          if (!pe) return null; return [esc(a[1]), C.nf(pe, 0), aw != null ? C.nf(aw, 0) : '—', aw && nf0 != null ? C.pc(nf0 / aw * 100, 1) : '—', aw && nr != null ? C.pc(nr / aw * 100, 1) : '—']; }).filter(Boolean);
+        if (zr.length) out += h3(T.labSize[i], yz) + table([T.size[i], T.persons[i], T.awu[i], T.nonFam[i], T.nonReg[i]], zr);
+      }
+    }
+    if (C.has('ef_mp_voctraining')) {
+      var yv = C.yearOf('ef_mp_voctraining', 'TOTAL|TOTAL|HLD');
+      if (yv) {
+        var vr = ageSet(C, 'ef_mp_voctraining', 'TOTAL|HLD', yv).concat([['TOTAL', T.tot]]).map(function (a) { var t = C.at('ef_mp_voctraining', a[0] + '|TOTAL|HLD', yv), m = C.at('ef_mp_voctraining', a[0] + '|M12|HLD', yv);
+          return t && m != null ? [esc(a[1][i]), C.nf(t, 0), C.nf(m, 0), C.pc(m / t * 100, 1)] : null; }).filter(Boolean);
+        var vt = C.at('ef_mp_voctraining', 'TOTAL|TOTAL|HLD', yv), vm = C.at('ef_mp_voctraining', 'TOTAL|M12|HLD', yv), vn = C.at('ef_mp_voctraining', 'TOTAL|NVR_NM12|HLD', yv);
+        if (vr.length) out += h3(T.voc[i], yv) + two(table([T.age[i], T.holdings[i], T.vocYes[i], '%'], vr), pieOf(C, [{ name: T.vocYes[i], v: vm }, { name: T.vocNo[i], v: vn }], T.holdings[i], T.voc[i] + ' ' + yv, C.nf(vt, 0), T.holdings[i] + ' ' + yv));
+      }
+    }
+    if (C.has('ef_mp_manorg')) {
+      var yo = C.yearOf('ef_mp_manorg', 'TOTAL|TOTAL|ORG|HLD'), ot = yo ? C.at('ef_mp_manorg', 'TOTAL|TOTAL|TOTAL|HLD', yo) : null, oh = yo ? C.at('ef_mp_manorg', 'TOTAL|TOTAL|ORG|HLD', yo) : null, oa = yo ? C.at('ef_mp_manorg', 'TOTAL|TOTAL|ORG|HA', yo) : null, oat = yo ? C.at('ef_mp_manorg', 'TOTAL|TOTAL|TOTAL|HA', yo) : null;
+      if (ot && oh != null) {
+        var oar = ageSet(C, 'ef_mp_manorg', 'TOTAL|ORG|HLD', yo).map(function (a) { var t = C.at('ef_mp_manorg', a[0] + '|TOTAL|TOTAL|HLD', yo), g = C.at('ef_mp_manorg', a[0] + '|TOTAL|ORG|HLD', yo); return t && g != null ? { n: a[1][i], p: g / t * 100, sub: C.nf(g, 0) + ' ' + T.holdings[i] } : null; }).filter(Boolean);
+        out += h3(T.orgM[i], yo) + '<div class="fsh-kpis">' + kpi(T.orgHld[i], C.nf(oh, 0), C.pc(oh / ot * 100, 1) + ' ' + T.ofAll[i]) + (oa != null && oat ? kpi(T.orgHa[i], C.nf(oa, 0) + ' ' + T.ha[i], C.pc(oa / oat * 100, 1) + ' ' + T.of[i] + ' ' + T.uaa[i]) : '') + '</div>' +
+          (oar.length ? '<p class="di-field-hint" style="margin:4px 0">' + esc(T.orgShare[i]) + ' · ' + esc(T.age[i]) + '</p>' + barRows(C, oar, Math.max.apply(null, oar.map(function (r) { return r.p; })) || 1) : '');
+        var otr = [['FULL', T.full[i]], ['BASIC', T.basic[i]], ['PRACT', T.pract[i]]];
+        if (oh) out += h3(T.orgTr[i], yo) + two(barRows(C, otr.map(function (a) { var v = C.at('ef_mp_manorg', 'TOTAL|' + a[0] + '|ORG|HLD', yo); return { n: a[1], p: v != null ? v / oh * 100 : null, sub: v != null ? C.nf(v, 0) + ' ' + T.holdings[i] : '' }; })),
+          pieOf(C, otr.map(function (a) { return { name: a[1], v: C.at('ef_mp_manorg', 'TOTAL|' + a[0] + '|ORG|HLD', yo) }; }), T.holdings[i], T.orgTr[i] + ' ' + yo, C.nf(oh, 0), T.holdings[i] + ' ' + yo));
+      }
+    }
     return out;
   }
   /* 2. Tecnología, maquinaria y renovables */
@@ -203,6 +260,18 @@
       if (mt) {
         var mi = [['MAC_TSP_TRT', T.trt[i]], ['MAC_TSPSP', T.tsp[i]], ['MAC_CHVT', T.chvt[i]], ['MAC_FMHVT_OTH', T.hvt[i]]];
         out += h3(T.mach[i], ym) + barRows(C, mi.map(function (a) { var v = C.at('ef_mp_mach', a[0] + '|HLD', ym); return { n: a[1], p: v != null ? v / mt * 100 : null, sub: v != null ? C.nf(v, 0) + ' ' + T.holdings[i] : '' }; }));
+      }
+    }
+    if (C.has('ef_mp_digilsk')) {
+      var yk = C.yearOf('ef_mp_digilsk', 'TOTAL|MAC_LSM|HLD'), km = yk ? C.at('ef_mp_digilsk', 'TOTAL|MAC_LSM|HLD', yk) : null, kn = yk ? C.at('ef_mp_digilsk', 'TOTAL|NMAC_LSM|HLD', yk) : null, kt = km != null && kn != null ? km + kn : null;
+      if (kt) {
+        var kitems = [['MAC_LSM', T.lsm[i]], ['MAC_MLK_ROB', T.mRob[i]], ['MAC_AFDS', T.mAf[i]], ['MAC_GM_AFD', T.mGm[i]], ['MAC_AREG', T.mClim[i]], ['MAC_WHMON', T.mWh[i]]];
+        out += h3(T.lskM[i], yk) + barRows(C, kitems.map(function (a) { var v = C.at('ef_mp_digilsk', 'TOTAL|' + a[0] + '|HLD', yk); return { n: a[1], p: v != null ? v / kt * 100 : null, sub: v != null ? C.nf(v, 0) + ' ' + T.holdings[i] : '' }; })) +
+          '<p class="di-field-hint" style="margin:4px 0 0">' + esc(T.of[i]) + ' ' + C.nf(kt, 0) + ' ' + esc(T.holdings[i]) + ' · ' + esc(T.lskUniv[i]) + '</p>';
+        var ksz = [['LSU_GE0_LT5', T.ls0[i]], ['LSU5-19', T.ls1[i]], ['LSU20-99', T.ls2[i]], ['LSU100-499', T.ls3[i]], ['LSU_GE500', T.ls4[i]]];
+        var krows = ksz.map(function (a) { var m = C.at('ef_mp_digilsk', a[0] + '|MAC_LSM|HLD', yk), n = C.at('ef_mp_digilsk', a[0] + '|NMAC_LSM|HLD', yk), r = C.at('ef_mp_digilsk', a[0] + '|MAC_MLK_ROB|HLD', yk);
+          return m != null && n != null && m + n ? [esc(a[1]), C.nf(m + n, 0), C.pc(m / (m + n) * 100, 1), r != null ? C.pc(r / (m + n) * 100, 1) : '—'] : null; }).filter(Boolean);
+        if (krows.length) out += h3(T.lsuSize[i], yk) + table([T.lsu[i], T.holdings[i], T.anyMach[i], T.robShare[i]], krows);
       }
     }
     if (C.has('ef_mp_renerg')) {
@@ -291,6 +360,23 @@
           two(barRows(C, rowsL, 100), pieOf(C, lu.map(function (a) { return { name: a[1], v: C.at('ef_lus_main', a[0] + '|HA', yl) }; }), T.ha[i], T.lus[i] + ' ' + yl, C.nf(ut, 0), T.ha[i] + ' ' + yl));
       }
     }
+    if (C.has('ef_lus_pegrass')) {
+      var yg = C.yearOf('ef_lus_pegrass', 'J0000|HA'), gt0 = yg ? C.at('ef_lus_pegrass', 'J0000|HA', yg) : null;
+      if (gt0) {
+        var gp = [['J1000', T.pg1[i]], ['J2000', T.pg2[i]], ['J3000TE', T.pg3[i]]], gh = C.at('ef_lus_pegrass', 'J0000|HLD', yg);
+        out += h3(T.pg[i], yg) + '<div class="fsh-kpis">' + kpi(T.grass[i], C.nf(gt0, 0) + ' ' + T.ha[i], gh ? C.nf(gh, 0) + ' ' + T.holdings[i] + ' · ' + C.nf(gt0 / gh, 1) + ' ' + T.ha[i] + '/' + T.hold1[i] : yg) + '</div>' +
+          two(barRows(C, gp.map(function (a) { var v = C.at('ef_lus_pegrass', a[0] + '|HA', yg); return { n: a[1], p: v != null ? v / gt0 * 100 : null, sub: v != null ? C.nf(v, 0) + ' ' + T.ha[i] : '' }; })),
+            pieOf(C, gp.map(function (a) { return { name: a[1], v: C.at('ef_lus_pegrass', a[0] + '|HA', yg) }; }), T.ha[i], T.pg[i] + ' ' + yg, C.nf(gt0, 0), T.ha[i] + ' ' + yg));
+      }
+    }
+    if (C.has('ef_lus_allcrops')) {
+      var yc = C.yearOf('ef_lus_allcrops', 'UAA|HA');
+      if (yc) {
+        var cl = [['C1110', T.c11], ['C1120', T.c12], ['C1300', T.c13], ['C1400', T.c14], ['C1500', T.c15], ['C1200', T.c16], ['C1600_1700_1900', T.c17], ['C2000', T.c20], ['P0000', T.pls], ['R1000', T.pot], ['R2000', T.sbt], ['I1110', T.rps], ['I1120', T.sfl], ['I1130', T.soy], ['G1000', T.tgr], ['G3000', T.gmz], ['V0000_S0000', T.veg], ['Q0000', T.fal]];
+        var cr2 = cl.map(function (a) { var ha = C.at('ef_lus_allcrops', a[0] + '|HA', yc), hd = C.at('ef_lus_allcrops', a[0] + '|HLD', yc); return ha ? { k: a[1][i], ha: ha, hd: hd } : null; }).filter(Boolean).sort(function (x, y) { return y.ha - x.ha; }).slice(0, 12);
+        if (cr2.length) out += h3(T.crp[i], yc) + table([T.crop[i], T.ha[i], T.holdings[i], T.avgHa[i]], cr2.map(function (r) { return [esc(r.k), C.nf(r.ha, 0), r.hd != null ? C.nf(r.hd, 0) : '—', r.hd ? C.nf(r.ha / r.hd, 1) : '—']; }));
+      }
+    }
     var og = Object.keys(ORCH).map(function (k) {
       var spec = ORCH[k], ds = spec[0]; if (!C.has(ds)) return '';
       var y = C.yearOf(ds, spec[1] + '|TOTAL|HA'), tot = y ? C.at(ds, spec[1] + '|TOTAL|HA', y) : null; if (!tot) return '';
@@ -313,8 +399,8 @@
   function render(d, lg, region, P) {
     var o = region ? (d.regions && d.regions[region]) : d.nat; if (!o) return '';
     var abvList = region ? (o.abv || []) : (d.abvNat || []), C = ctx(d, o, abvList, lg), i = C.i; C.dd = d;
-    var nat = region ? null : d, blocks = [[T.s1[i], secManagers(C, lg, nat), ['ef_mp_training', 'ef_mp_tenure', 'ef_lf_main'], 'managers'], [T.s2[i], secTech(C, lg), ['ef_mp_digi', 'ef_mp_digicr', 'ef_mp_mach', 'ef_mp_renerg'], 'tech'],
-      [T.s3[i], secIrri(C, lg), ['ef_mp_irri', 'ef_lus_irri', 'ef_mp_prac', 'ef_mp_soil', 'ef_mp_efa'], 'irri'], [T.s4[i], secStruct(C, lg), ['ef_lsk_main', 'ef_lus_main', 'ef_lus_orchpome', 'ef_lus_orchstone', 'ef_lus_orchcitrus', 'ef_lus_orcholives', 'ef_lus_orchgrapes'], 'struct']];
+    var nat = region ? null : d, blocks = [[T.s1[i], secManagers(C, lg, nat), ['ef_mp_training', 'ef_mp_tenure', 'ef_lf_main', 'ef_lf_fam', 'ef_lf_size', 'ef_mp_voctraining', 'ef_mp_manorg'], 'managers'], [T.s2[i], secTech(C, lg), ['ef_mp_digi', 'ef_mp_digicr', 'ef_mp_mach', 'ef_mp_renerg', 'ef_mp_digilsk'], 'tech'],
+      [T.s3[i], secIrri(C, lg), ['ef_mp_irri', 'ef_lus_irri', 'ef_mp_prac', 'ef_mp_soil', 'ef_mp_efa'], 'irri'], [T.s4[i], secStruct(C, lg), ['ef_lsk_main', 'ef_lus_main', 'ef_lus_pegrass', 'ef_lus_allcrops', 'ef_lus_orchpome', 'ef_lus_orchstone', 'ef_lus_orchcitrus', 'ef_lus_orcholives', 'ef_lus_orchgrapes'], 'struct']];
     if (!region) { var pb = secPrices(P, d.cc, lg); if (pb) blocks.push([PT.h[i], pb, [], 'prices', true]); }
     blocks = blocks.filter(function (b) { return b[1]; }); if (!blocks.length) return '';
     var anyAbv = blocks.some(function (b) { return b[2].some(function (ds) { return C.abv(ds); }); });

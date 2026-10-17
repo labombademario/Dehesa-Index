@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T05:27:31Z",
+ "generatedAt": "2026-10-17T06:00:15Z",
  "summary": {
   "files": 70,
   "errors": 0,
@@ -416,6 +416,10 @@
    "status": "warning",
    "errors": [],
    "warnings": [
+    "ES/es-mo-irspec-exp-cfir-thsm3: salto 24.87 -> 117.29 en 2014 (mediana previa 1.46)",
+    "ES/es-mo-irspec-exp-cfir-thsm3: salto 42.32 -> 1271.18 en 2024 (mediana previa 24.9)",
+    "ES/es-mo-irspec-exp-ncbir-thsm3: salto 0.33 -> 2.44 en 2014 (mediana previa 0.06)",
+    "ES/es-mo-irspec-exp-ncbir-thsm3: salto 0.09 -> 7.88 en 2017 (mediana previa 0.09)",
     "ES/es-mo-poulm-a5130on-ths: salto 0.3 -> 183.1 en 2018-08 (mediana previa 0.25)",
     "ES/es-mo-poulm-a5130on-ths: salto 183.1 -> 149.3 en 2018-09 (mediana previa 0.25)",
     "ES/es-mo-poulm-a5130on-ths: salto 149.3 -> 139.75 en 2018-10 (mediana previa 0.3)",
@@ -424,32 +428,28 @@
     "ES/es-mo-poulm-a5130on-ths: salto 155.72 -> 142.06 en 2019-01 (mediana previa 0.35)",
     "ES/es-mo-tibio-r5210p-thst: salto 87.793 -> 149.034 en 2011 (mediana previa 4)",
     "ES/es-mo-tibio-r5210p-thst: salto 149.034 -> 124.483 en 2012 (mediana previa 4)",
+    "FR/fr-mo-irspec-imp-ncbir-thsm3: salto 0.6 -> 66.23 en 2017 (mediana previa 1)",
+    "FR/fr-mo-irspec-imp-ncbir-thsm3: salto 66.23 -> 48.88 en 2018 (mediana previa 1)",
+    "FR/fr-mo-irspec-imp-ncbir-thsm3: salto 48.88 -> 44.23 en 2019 (mediana previa 1.02)",
+    "FR/fr-mo-irspec-imp-ncbir-thsm3: salto 44.23 -> 47.61 en 2020 (mediana previa 1.23)",
+    "FR/fr-mo-irspec-imp-ncbir-thsm3: salto 47.61 -> 45.58 en 2021 (mediana previa 1.23)",
+    "FR/fr-mo-irspec-imp-ncbir-thsm3: salto 45.58 -> 31.41 en 2022 (mediana previa 1.23)",
     "DE/de-mo-pcatlhs-a4100-thshd: salto 855.62 -> 696601 en 2019-S1 (mediana previa 856)",
     "DE/de-mo-pcatlhs-a4100-thshd: salto 696601 -> 831344 en 2019-S2 (mediana previa 856)",
     "DE/de-mo-pcatlhs-a4200-thshd: salto 10.3 -> 10155 en 2019-S1 (mediana previa 12.2)",
     "DE/de-mo-pcatlhs-a4200-thshd: salto 10155 -> 12735 en 2019-S2 (mediana previa 12.2)",
+    "BE/be-mo-irspec-exp-ncbir-thsm3: salto 15.8 -> 55.76 en 2022 (mediana previa 2.09)",
     "BE/be-mo-tebio-r5220p-thst: salto 229.1 -> 517.9 en 2021 (mediana previa 20.2)",
-    "PT/pt-mo-aq4b-mio: salto 0 -> 58.09 en 2022 (mediana previa 1.38)",
-    "PT/pt-mo-tebio-r5220p-thst: salto 0.007 -> 20.051 en 2013 (mediana previa 0.069)",
-    "PT/pt-mo-tebio-r5220p-thst: salto 20.051 -> 32.202 en 2014 (mediana previa 0.069)",
-    "PT/pt-mo-tebio-r5220p-thst: salto 32.202 -> 39.064 en 2015 (mediana previa 0.237)",
-    "PT/pt-mo-tebio-r5220p-thst: salto 39.064 -> 58.516 en 2016 (mediana previa 0.237)",
-    "PT/pt-mo-tebio-r5220p-thst: salto 58.516 -> 59.359 en 2017 (mediana previa 1.06)",
-    "PT/pt-mo-tibio-r5220p-thst: salto 1.993 -> 77.88 en 2021 (mediana previa 1.99)",
-    "PT/pt-mo-tibio-r5220p-thst: salto 49.554 -> 66.679 en 2023 (mediana previa 1.99)",
-    "PT/pt-mo-tibio-r5220p-thst: salto 66.679 -> 89.717 en 2024 (mediana previa 3.33)",
-    "IT/it-mo-poulm-a5130m-ths: salto 465 -> 40063 en 2021-09 (mediana previa 465)",
-    "IT/it-mo-poulm-a5130on-ths: salto 11 -> 26 en 2018-05 (mediana previa 1)",
-    "IT/it-mo-poulm-a5241p-ths: salto 227 -> 227 en 2016-06 (mediana previa 1)"
+    "PT/pt-mo-aq4b-mio: salto 0 -> 58.09 en 2022 (mediana previa 1.38)"
    ],
    "stats": {
-    "series": 1493,
-    "points": 59860,
+    "series": 1887,
+    "points": 67002,
     "lines": 0
    },
-   "generatedAt": "2026-10-17T02:03:01Z",
+   "generatedAt": "2026-10-17T05:59:03Z",
    "info": [],
-   "nWarnings": 83,
+   "nWarnings": 118,
    "nErrors": 0
   },
   {

@@ -135,6 +135,8 @@ def forestry():
     r, l = safe('for_area', 'indic_fo', ['FOR', 'FAWS', 'OWL'], sinceTimePeriod='2000'); n += gen(r, l, 'area', 'production', 'Forest area', 'Eurostat for_area', maxn=6)
     r, l = safe('for_vol', 'indic_fo', ['GS_FOR', 'GS_FAWS'], sinceTimePeriod='2000'); n += gen(r, l, 'vol', 'production', 'Growing stock volume of forest', 'Eurostat for_vol', maxn=6)
     r, l = safe('for_irass', 'stk_flow', ['EXP', 'IMP'], prod_wd='RW_IN_LG', unit='THS_M3', treespec='TOTAL', sinceTimePeriod='2000'); n += gen(r, l, 'irass', 'trade', 'Forestry, industrial roundwood trade', 'Eurostat for_irass', maxn=6)
+    r, l = safe('for_irspec', 'stk_flow', ['EXP', 'IMP'], prod_wd='RW_IN', treespec=['CONIF', 'NCONIF', 'C_FIR', 'C_PIN', 'NC_OAK', 'NC_BEE', 'NC_BIR'], unit='THS_M3', sinceTimePeriod='2000'); n += gen(r, l, 'irspec', 'trade', 'Forestry, industrial roundwood trade by species', 'Eurostat for_irspec', maxn=16)
+    r, l = safe('for_awu', 'wstatus', ['EMP', 'SELF'], unit='THS_AWU', sinceTimePeriod='2000'); n += gen(r, l, 'awu', 'production', 'Forestry, annual work units', 'Eurostat for_awu', maxn=4)
     return n
 def energy():
     n = 0
@@ -155,6 +157,7 @@ def aquaculture():
     r, l = es('fish_aq3', species='F00', unit='TLW', sinceTimePeriod='2000'); n += gen(r, l, 'aq3', 'fish', None, 'Eurostat fish_aq3', maxn=8)
     for ds in ('fish_aq4a', 'fish_aq4b'):
         r, l = es(ds, species='F00', dest_use='TOTAL', sinceTimePeriod='2000'); n += gen(r, l, ds[-4:], 'fish', None, 'Eurostat ' + ds, maxn=8)
+    r, l = safe('fish_aq2b', 'species', ['F00', 'F01', 'F07'], aquameth='TOTAL', aquaenv='TOTAL', fishreg='0', unit='TLW', sinceTimePeriod='2000'); n += gen(r, l, 'aq2b', 'fish', None, 'Eurostat fish_aq2b', maxn=6)
     return n
 def organic():
     n = 0

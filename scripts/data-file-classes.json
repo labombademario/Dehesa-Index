@@ -253,6 +253,14 @@
     "file": "js/series-store.js",
     "pattern": "e.catalog"
    }
+  },
+  "data/catalog/PT.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Portugal (sin puntos): la ficha del pais los pide por DISeries.country('PT').",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
   }
  },
  "prefixes": {
