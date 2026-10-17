@@ -19,7 +19,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await ctx.addInitScript(l => { try { localStorage.setItem('dehesaIndexLang', l); localStorage.setItem('dehesaIndexTourSeen', '1'); } catch (e) {} }, lang);
   const page = await ctx.newPage(), errs = [];
   page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/ERR_|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 120)); });
-  await page.goto(BASE + '/blog.html', { waitUntil: 'networkidle' });
+  await page.goto(BASE + '/blog.html#resumen', { waitUntil: 'networkidle' });
   await page.waitForSelector('#bl-weekly details[data-wk]');
   const t = await page.innerText('#bl-weekly');
   ok(tag + ': semana más reciente abierta', await page.$eval('#bl-weekly details[data-wk="' + w0.week + '"]', n => n.open));

@@ -288,6 +288,20 @@
     var el = document.getElementById(id); if (!el || el.firstElementChild) return; var X = RMX[lang()] || RMX.es;
     el.innerHTML = '<section class="di-card ps-rm"><h2 class="ps-rm-h">' + esc(X.title.replace('{c}', tt().countries[ST.c] || ST.c)) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(SLOT[key][lang()] || SLOT[key].es) + '</p></section>';
   }
+  /* Desplegable de «Más datos» en la barra de secciones: el botón ▾ lo pinta shared.js (frBar); el menú y sus clics viven aquí porque solo lo usa esta ficha */
+  var FRM = false; window.DIFrMenu = function () {
+    if (FRM) return; FRM = true; var e = function (x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
+    var closeM = function () { var m = document.getElementById('fr-menu'); if (m) m.parentNode.removeChild(m); Array.prototype.forEach.call(document.querySelectorAll('.fr-more[aria-expanded="true"]'), function (b) { b.setAttribute('aria-expanded', 'false'); }); };
+      document.addEventListener('click', function (ev) {
+        var it = ev.target.closest ? ev.target.closest('#fr-menu a[data-fr-go]') : null;
+        if (it) { ev.preventDefault(); var t = document.getElementById(it.getAttribute('data-fr-go')); closeM(); if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' }); return; }
+        var b = ev.target.closest ? ev.target.closest('.fr-more') : null; var was = b && b.getAttribute('aria-expanded') === 'true'; closeM(); if (!b || was) return;
+        var m = document.createElement('div'); m.id = 'fr-menu'; m.className = 'fr-menu'; m.setAttribute('role', 'menu');
+        m.innerHTML = b.getAttribute('data-fr-menu').split('~').map(function (x) { var p = x.split('|'); return '<a role="menuitem" href="#' + e(p[0]) + '" data-fr-go="' + e(p[0]) + '">' + e(p[1]) + '</a>'; }).join('');
+        document.body.appendChild(m); var r = b.getBoundingClientRect(); m.style.top = (r.bottom + 4) + 'px'; m.style.left = Math.max(8, Math.min(r.left, window.innerWidth - m.offsetWidth - 8)) + 'px'; b.setAttribute('aria-expanded', 'true');
+      });
+      document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') closeM(); }); window.addEventListener('scroll', closeM, { passive: true }); window.addEventListener('resize', closeM);
+    };
   function frameUp(c) {
     var F = window.DehesaShared && window.DehesaShared.frame, L = FRL[lang()] || FRL.es; if (!F) return;
     var nm = tt().countries[ST.c] || c.name || ST.c;

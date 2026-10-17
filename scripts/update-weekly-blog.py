@@ -38,7 +38,7 @@ def slim(x):
 
 KEEP_REL = 54   # relevancia a partir de la cual se guarda el registro completo (el resto solo cuenta: id, fecha, region, tema, productos, medio)
 FULL_REGIONS = ("us", "ca", "uk")  # estas regiones tienen pocas noticias: se guardan todas completas para poder destacar titulares de ellas
-COUNTRY_FULL = ("ES", "FR", "IT", "DE", "US")  # medios de los paises con «La semana en...»: se guardan completos para poder enlazar sus titulares
+COUNTRY_FULL = ("ES", "FR", "IT", "DE", "US", "CA")  # medios de los paises con «La semana en...»: se guardan completos para poder enlazar sus titulares
 def keep_full(i): return i["rel"] >= KEEP_REL or i["region"] in FULL_REGIONS or i.get("country") in COUNTRY_FULL
 def lite(i): return [i["id"], i["date"], i["region"], i["topic"], i["products"], i["source"]]
 def unlite(r): return {"id": r[0], "date": r[1], "region": r[2], "topic": r[3], "products": r[4], "source": r[5]}

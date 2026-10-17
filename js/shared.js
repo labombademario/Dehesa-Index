@@ -411,18 +411,8 @@
     host.hidden = false; host.className = 'pt-ctx di-frame-bar'; host.setAttribute('aria-label', title);
     var subsOf = function (it) { return (it[2] || []).filter(function (x) { return document.getElementById(x[0]); }); };
     host.innerHTML = '<strong class="pt-ctx-t">' + e(title) + '</strong>' + items.map(function (it) { var sb = subsOf(it); return '<a href="#' + e(it[0]) + '" data-fr="' + e(it[0]) + '">' + e(it[1]) + '</a>' + (sb.length > 1 ? '<button type="button" class="fr-more" aria-haspopup="true" aria-expanded="false" aria-label="' + e(it[1]) + '" data-fr-menu="' + e(sb.map(function (x) { return x[0] + '|' + x[1]; }).join('~')) + '">▾</button>' : ''); }).join('');
-    if (!FR.menu) {
-      FR.menu = true; var closeM = function () { var m = document.getElementById('fr-menu'); if (m) m.parentNode.removeChild(m); Array.prototype.forEach.call(document.querySelectorAll('.fr-more[aria-expanded="true"]'), function (b) { b.setAttribute('aria-expanded', 'false'); }); };
-      document.addEventListener('click', function (ev) {
-        var it = ev.target.closest ? ev.target.closest('#fr-menu a[data-fr-go]') : null;
-        if (it) { ev.preventDefault(); var t = document.getElementById(it.getAttribute('data-fr-go')); closeM(); if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' }); return; }
-        var b = ev.target.closest ? ev.target.closest('.fr-more') : null; var was = b && b.getAttribute('aria-expanded') === 'true'; closeM(); if (!b || was) return;
-        var m = document.createElement('div'); m.id = 'fr-menu'; m.className = 'fr-menu'; m.setAttribute('role', 'menu');
-        m.innerHTML = b.getAttribute('data-fr-menu').split('~').map(function (x) { var p = x.split('|'); return '<a role="menuitem" href="#' + e(p[0]) + '" data-fr-go="' + e(p[0]) + '">' + e(p[1]) + '</a>'; }).join('');
-        document.body.appendChild(m); var r = b.getBoundingClientRect(); m.style.top = (r.bottom + 4) + 'px'; m.style.left = Math.max(8, Math.min(r.left, window.innerWidth - m.offsetWidth - 8)) + 'px'; b.setAttribute('aria-expanded', 'true');
-      });
-      document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') closeM(); }); window.addEventListener('scroll', closeM, { passive: true }); window.addEventListener('resize', closeM);
-    }
+    if (window.DIFrMenu) window.DIFrMenu();   // el desplegable de los submenus (solo lo usa la ficha de pais: js/paises.js)
+
     frHdr();
     var upd = function () { var cur = null, h = frHdr(); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { var t = document.getElementById(a.getAttribute('data-fr')); if (t && t.getBoundingClientRect().top <= h + 100) cur = a; }); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { if (a === cur) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); }); };
     if (!FR.spy) { FR.spy = true; var tk = false; window.addEventListener('resize', frHdr); window.addEventListener('scroll', function () { if (tk) return; tk = true; (window.requestAnimationFrame || setTimeout)(function () { tk = false; upd(); }); }, { passive: true }); }
