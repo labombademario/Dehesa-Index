@@ -218,13 +218,41 @@
    "class": "BUILD_ONLY",
    "note": "Series de Eurostat de RO, SI, CY, LU y MT (modo reducido): alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
   },
-  "data/eurostat-more-stats.json": {"class": "BUILD_ONLY", "note": "Series nacionales adicionales de Eurostat (previsiones, mensuales, ambiente, silvicultura, energia, lacteo, acuicultura, ecologico): alimentan los catalogos por pais; la ficha carga por catalogo y no pide este fichero."},
-  "data/eurostat-census-stats.json": {"class": "BUILD_ONLY", "note": "Censo agrario de Eurostat por pais y region NUTS 2 (2,2 MB): lo lee scripts/build-views.py para escribir data/views/census/<PAIS>.json; la web carga las vistas, no este fichero."},
-  "data/eurostat-fish-stats.json": {"class": "BUILD_ONLY", "note": "Pesca y acuicultura de Eurostat (24 paises): alimenta los catalogos y data/views/fish/; pesca.html y la ficha leen las vistas, no este fichero."},
-  "data/app/labels-i18n.json": {"class": "BUILD_ONLY", "note": "Glosario de etiquetas de series en 4 idiomas para la app movil: lo lee build-app-views.mjs (y su prueba) para escribir labelT; la web no lo carga."},
+  "data/eurostat-more-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series nacionales adicionales de Eurostat (previsiones, mensuales, ambiente, silvicultura, energia, lacteo, acuicultura, ecologico): alimentan los catalogos por pais; la ficha carga por catalogo y no pide este fichero."
+  },
+  "data/eurostat-census-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Censo agrario de Eurostat por pais y region NUTS 2 (2,2 MB): lo lee scripts/build-views.py para escribir data/views/census/<PAIS>.json; la web carga las vistas, no este fichero."
+  },
+  "data/eurostat-fish-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Pesca y acuicultura de Eurostat (24 paises): alimenta los catalogos y data/views/fish/; pesca.html y la ficha leen las vistas, no este fichero."
+  },
+  "data/app/labels-i18n.json": {
+   "class": "BUILD_ONLY",
+   "note": "Glosario de etiquetas de series en 4 idiomas para la app movil: lo lee build-app-views.mjs (y su prueba) para escribir labelT; la web no lo carga."
+  },
   "data/eurostat-structure2-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Eurostat de tierra, estructura, plaguicidas, selvicultura y ecologico de 18 estados de la UE: alimenta los catalogos por pais; la ficha no pide este fichero."
+  },
+  "data/catalog/FR.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Francia (sin puntos): la ficha del pais los pide por DISeries.country('FR').",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
+  },
+  "data/catalog/ES.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Espana (sin puntos): la ficha del pais los pide por DISeries.country('ES').",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
   }
  },
  "prefixes": {
