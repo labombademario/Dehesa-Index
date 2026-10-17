@@ -1,2 +1,13 @@
-agrifood: 0 paths
-toc: RuntimeError("https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en <HTTPError 406: 'Not Acceptable'>")
+spec poultry: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/poultry <HTTPError 500: ''>")
+spec sheepAndGoat: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/sheepAndGoat <HTTPError 500: ''>")
+spec dairy: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/dairy <HTTPError 500: ''>")
+spec fruitAndVegetable: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/fruitAndVegetable <HTTPError 500: ''>")
+spec oliveOil: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/oliveOil <HTTPError 500: ''>")
+spec taxud: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/taxud <HTTPError 500: ''>")
+spec cmef: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/cmef <HTTPError 500: ''>")
+spec pmef: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/pmef <HTTPError 500: ''>")
+spec rawMilk: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/rawMilk <HTTPError 500: ''>")
+spec eggs: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/eggs <HTTPError 500: ''>")
+spec general: RuntimeError("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/general <HTTPError 500: ''>")
+agrifood: 116 paths
+toc 1968865 bytes

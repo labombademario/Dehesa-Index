@@ -1,1 +1,1623 @@
-{}
+{
+ "GET /api/wine/prices": {
+  "group": "wine",
+  "summary": "Wine prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "descriptions",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/taxud/weeklyData/import": {
+  "group": "all",
+  "summary": "Taxud import weekly data",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "partnerCodes",
+    null
+   ],
+   [
+    "sectors",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "cn8ProductCodes",
+    null
+   ],
+   [
+    "taric10ProductCodes",
+    null
+   ],
+   [
+    "importCategories",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ]
+  ]
+ },
+ "GET /api/sugar/prices": {
+  "group": "sugar",
+  "summary": "Sugar prices",
+  "params": [
+   [
+    "regions",
+    null
+   ],
+   [
+    "yms",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "contractTypes",
+    null
+   ]
+  ]
+ },
+ "GET /api/sheepAndGoat/prices": {
+  "group": "all",
+  "summary": "Sheep and goat meat prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "productCodes",
+    null
+   ],
+   [
+    "marketCodes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/rice/prices": {
+  "group": "rice",
+  "summary": "Rice prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "stages",
+    null
+   ],
+   [
+    "types",
+    null
+   ],
+   [
+    "varieties",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/rawMilk/prices": {
+  "group": "all",
+  "summary": "Raw milk prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/poultry/prices": {
+  "group": "all",
+  "summary": "Poultry weekly prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "priceTypes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/pigmeat/prices": {
+  "group": "pigmeat",
+  "summary": "Pigmeat (carcasses and piglets) prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "pigClasses",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/organic/prices": {
+  "group": "organic",
+  "summary": "Organic prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "sectors",
+    null
+   ],
+   [
+    "organicProducts",
+    null
+   ],
+   [
+    "overallProducts",
+    null
+   ]
+  ]
+ },
+ "GET /api/oliveOil/prices": {
+  "group": "all",
+  "summary": "Olive oil prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "markets",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/oilseeds/prices": {
+  "group": "oilseeds",
+  "summary": "Oilseeds prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "productTypes",
+    null
+   ],
+   [
+    "markets",
+    null
+   ],
+   [
+    "marketStages",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/indicators/pmef/values": {
+  "group": "all",
+  "summary": "PMEF indicators values",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "memberStateIso3Codes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "types",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "indicators",
+    null
+   ],
+   [
+    "subindicators",
+    null
+   ],
+   [
+    "parameters",
+    null
+   ],
+   [
+    "units",
+    null
+   ],
+   [
+    "codes",
+    null
+   ],
+   [
+    "sources",
+    null
+   ],
+   [
+    "planned",
+    null
+   ]
+  ]
+ },
+ "GET /api/fruitAndVegetable/pricesSupplyChain": {
+  "group": "all",
+  "summary": "Fruit and vegetables supply chain prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ],
+   [
+    "productStages",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "varieties",
+    null
+   ]
+  ]
+ },
+ "GET /api/fertiliser/prices": {
+  "group": "fertiliser",
+  "summary": "Fertiliser prices",
+  "params": [
+   [
+    "years",
+    null
+   ],
+   [
+    "quarters",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "products",
+    null
+   ]
+  ]
+ },
+ "GET /api/cmefIndicators/values": {
+  "group": "all",
+  "summary": "CMEF indicators values",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "types",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "indicators",
+    null
+   ],
+   [
+    "subindicators",
+    null
+   ],
+   [
+    "parameters",
+    null
+   ],
+   [
+    "units",
+    null
+   ],
+   [
+    "codes",
+    null
+   ],
+   [
+    "sources",
+    null
+   ]
+  ]
+ },
+ "GET /api/cereal/prices": {
+  "group": "cereals",
+  "summary": "Cereal prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "referencePeriod",
+    null
+   ],
+   [
+    "productCodes",
+    null
+   ],
+   [
+    "stageCodes",
+    null
+   ],
+   [
+    "marketCodes",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/beef/prices": {
+  "group": "beef",
+  "summary": "Beef (carcasses) prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "productCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/wine/descriptions": {
+  "group": "wine",
+  "summary": "Wine descriptions",
+  "params": []
+ },
+ "GET /api/taxud/weeklyData/import/products": {
+  "group": "all",
+  "summary": "Taxud import products",
+  "params": []
+ },
+ "GET /api/sugar/regions": {
+  "group": "sugar",
+  "summary": "Sugar prices regions",
+  "params": []
+ },
+ "GET /api/sheepAndGoat/categories": {
+  "group": "all",
+  "summary": "Sheep and goat meat categories",
+  "params": []
+ },
+ "GET /api/rice/memberStates": {
+  "group": "rice",
+  "summary": "Rice member states",
+  "params": []
+ },
+ "GET /api/rawMilk/products": {
+  "group": "all",
+  "summary": "Raw milk products",
+  "params": []
+ },
+ "GET /api/poultry/priceTypes": {
+  "group": "all",
+  "summary": "Poultry weekly price types",
+  "params": []
+ },
+ "GET /api/pigmeat/cuts/prices": {
+  "group": "pigmeat",
+  "summary": "Pigmeat (cuts) weekly prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "priceTypes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/organic/sectors": {
+  "group": "organic",
+  "summary": "Organic sectors",
+  "params": []
+ },
+ "GET /api/oliveOil/memberStates": {
+  "group": "all",
+  "summary": "Olive oil member states",
+  "params": []
+ },
+ "GET /api/oilseeds/products": {
+  "group": "oilseeds",
+  "summary": "Oilseeds products",
+  "params": []
+ },
+ "GET /api/indicators/pmef/types": {
+  "group": "all",
+  "summary": "PMEF indicators types",
+  "params": []
+ },
+ "GET /api/fruitAndVegetable/pricesSupplyChain/productStages": {
+  "group": "all",
+  "summary": "Fruit and vegetable supply chain prices product stages",
+  "params": []
+ },
+ "GET /api/fertiliser/prices/products": {
+  "group": "fertiliser",
+  "summary": "Fertiliser products",
+  "params": []
+ },
+ "GET /api/cmefIndicators/types": {
+  "group": "all",
+  "summary": "CMEF indicators types",
+  "params": []
+ },
+ "GET /api/cereal/products": {
+  "group": "cereals",
+  "summary": "Cereal products",
+  "params": []
+ },
+ "GET /api/beef/categories": {
+  "group": "beef",
+  "summary": "Beef (carcasses) categories",
+  "params": []
+ },
+ "GET /api/taxud/weeklyData/import/cn8ProductCodes": {
+  "group": "all",
+  "summary": "Taxud import CN 8 product codes",
+  "params": []
+ },
+ "GET /api/sugar/production": {
+  "group": "sugar",
+  "summary": "Sugar production",
+  "params": [
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "regions",
+    null
+   ]
+  ]
+ },
+ "GET /api/sheepAndGoat/markets": {
+  "group": "all",
+  "summary": "Sheep and goat meat markets",
+  "params": []
+ },
+ "GET /api/rice/stages": {
+  "group": "rice",
+  "summary": "Rice stages",
+  "params": []
+ },
+ "GET /api/poultry/prices/month": {
+  "group": "all",
+  "summary": "Poultry monthly prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "priceTypes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/pigmeat/cuts/categories": {
+  "group": "pigmeat",
+  "summary": "Pigmeat (cuts) weekly categories",
+  "params": []
+ },
+ "GET /api/organic/organicProducts": {
+  "group": "organic",
+  "summary": "Organic products",
+  "params": []
+ },
+ "GET /api/oliveOil/products": {
+  "group": "all",
+  "summary": "Olive oil products",
+  "params": []
+ },
+ "GET /api/oilseeds/productTypes": {
+  "group": "oilseeds",
+  "summary": "Oilseeds product types",
+  "params": []
+ },
+ "GET /api/indicators/pmef/categories": {
+  "group": "all",
+  "summary": "PMEF indicators categories",
+  "params": []
+ },
+ "GET /api/fruitAndVegetable/pricesSupplyChain/products": {
+  "group": "all",
+  "summary": "Fruit and vegetable supply chain prices products",
+  "params": []
+ },
+ "GET /api/dairy/prices": {
+  "group": "all",
+  "summary": "Dairy prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/cmefIndicators/categories": {
+  "group": "all",
+  "summary": "CMEF indicators categories",
+  "params": []
+ },
+ "GET /api/cereal/stages": {
+  "group": "cereals",
+  "summary": "Cereal stages",
+  "params": []
+ },
+ "GET /api/beef/productCodes": {
+  "group": "beef",
+  "summary": "Beef (carcasses) product codes",
+  "params": []
+ },
+ "GET /api/taxud/weeklyData/import/taric10ProductCodes": {
+  "group": "all",
+  "summary": "Taxud import TARIC 10 product codes",
+  "params": []
+ },
+ "GET /api/sugar/production/regions": {
+  "group": "sugar",
+  "summary": "Sugar production regions",
+  "params": []
+ },
+ "GET /api/sheepAndGoat/production": {
+  "group": "all",
+  "summary": "Sheep and goat meat production",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "meats",
+    null
+   ],
+   [
+    "items",
+    null
+   ]
+  ]
+ },
+ "GET /api/rice/types": {
+  "group": "rice",
+  "summary": "Rice types",
+  "params": []
+ },
+ "GET /api/poultry/prices/month/priceTypes": {
+  "group": "all",
+  "summary": "Poultry monthly price types",
+  "params": []
+ },
+ "GET /api/pigmeat/cuts/priceTypes": {
+  "group": "pigmeat",
+  "summary": "Pigmeat (cuts) weekly price types",
+  "params": []
+ },
+ "GET /api/organic/overallProducts": {
+  "group": "organic",
+  "summary": "Overall products",
+  "params": []
+ },
+ "GET /api/oliveOil/markets": {
+  "group": "all",
+  "summary": "Olive oil markets",
+  "params": []
+ },
+ "GET /api/oilseeds/markets": {
+  "group": "oilseeds",
+  "summary": "Oilseeds markets",
+  "params": []
+ },
+ "GET /api/liveAnimal/prices": {
+  "group": "beef",
+  "summary": "Beef (live animals) prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/indicators/pmef/indicators": {
+  "group": "all",
+  "summary": "PMEF indicators indicators",
+  "params": []
+ },
+ "GET /api/fruitAndVegetable/pricesSupplyChain/varieties": {
+  "group": "all",
+  "summary": "Fruit and vegetable supply chain prices varieties",
+  "params": []
+ },
+ "GET /api/dairy/products": {
+  "group": "all",
+  "summary": "Dairy products",
+  "params": []
+ },
+ "GET /api/cmefIndicators/indicators": {
+  "group": "all",
+  "summary": "CMEF indicators indicators",
+  "params": []
+ },
+ "GET /api/cereal/markets": {
+  "group": "cereals",
+  "summary": "Cereal markets",
+  "params": []
+ },
+ "GET /api/taxud/weeklyData/sectors": {
+  "group": "all",
+  "summary": "Taxud sectors",
+  "params": []
+ },
+ "GET /api/sheepAndGoat/production/meats": {
+  "group": "all",
+  "summary": "Sheep and goat production meats",
+  "params": []
+ },
+ "GET /api/rice/varieties": {
+  "group": "rice",
+  "summary": "Rice varieties",
+  "params": []
+ },
+ "GET /api/poultry/egg/prices": {
+  "group": "all",
+  "summary": "Egg prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "farmingMethods",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "weekNumbers",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/pigmeat/cuts/prices/month": {
+  "group": "pigmeat",
+  "summary": "Pigmeat (cuts) monthly prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "priceTypes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/oliveOil/production": {
+  "group": "all",
+  "summary": "Olive oil production volumes",
+  "params": [
+   [
+    "granularity",
+    true
+   ],
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "productionYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ]
+  ]
+ },
+ "GET /api/oilseeds/marketStages": {
+  "group": "oilseeds",
+  "summary": "Oilseeds market stages",
+  "params": []
+ },
+ "GET /api/liveAnimal/categories": {
+  "group": "beef",
+  "summary": "Beef (live animals) categories",
+  "params": []
+ },
+ "GET /api/indicators/pmef/subindicators": {
+  "group": "all",
+  "summary": "PMEF indicators subindicators",
+  "params": [
+   [
+    "indicators",
+    null
+   ]
+  ]
+ },
+ "GET /api/dairy/production": {
+  "group": "all",
+  "summary": "Dairy production volumes",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ]
+  ]
+ },
+ "GET /api/cmefIndicators/subindicators": {
+  "group": "all",
+  "summary": "CMEF indicators subindicators",
+  "params": [
+   [
+    "indicators",
+    null
+   ]
+  ]
+ },
+ "GET /api/cereal/production": {
+  "group": "cereals",
+  "summary": "Cereal production volumes",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "crops",
+    null
+   ]
+  ]
+ },
+ "GET /api/taxud/weeklyData/importCategories": {
+  "group": "all",
+  "summary": "Taxud import categories",
+  "params": []
+ },
+ "GET /api/sheepAndGoat/production/items": {
+  "group": "all",
+  "summary": "Sheep and goat production items",
+  "params": []
+ },
+ "GET /api/rice/production": {
+  "group": "rice",
+  "summary": "Rice production area and quantities",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "types",
+    null
+   ]
+  ]
+ },
+ "GET /api/poultry/egg/farmingMethods": {
+  "group": "all",
+  "summary": "Egg farming methods",
+  "params": []
+ },
+ "GET /api/pigmeat/cuts/prices/month/categories": {
+  "group": "pigmeat",
+  "summary": "Pigmeat (cuts) monthly categories",
+  "params": []
+ },
+ "GET /api/oilseeds/production": {
+  "group": "oilseeds",
+  "summary": "Oilseeds and protein crops production volumes",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "crops",
+    null
+   ],
+   [
+    "type",
+    null
+   ]
+  ]
+ },
+ "GET /api/indicators/pmef/parameters": {
+  "group": "all",
+  "summary": "PMEF indicators parameters",
+  "params": [
+   [
+    "indicators",
+    null
+   ],
+   [
+    "subindicators",
+    null
+   ]
+  ]
+ },
+ "GET /api/dairy/production/categories": {
+  "group": "all",
+  "summary": "Dairy production categories",
+  "params": []
+ },
+ "GET /api/cmefIndicators/parameters": {
+  "group": "all",
+  "summary": "CMEF indicators parameters",
+  "params": [
+   [
+    "indicators",
+    null
+   ],
+   [
+    "subindicators",
+    null
+   ]
+  ]
+ },
+ "GET /api/cereal/production/crops": {
+  "group": "cereals",
+  "summary": "Cereal production crops",
+  "params": []
+ },
+ "GET /api/beef/cuts/prices": {
+  "group": "beef",
+  "summary": "Beef (cuts) weekly prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "priceTypes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/taxud/weeklyData/export": {
+  "group": "all",
+  "summary": "Taxud export weekly data",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "partnerCodes",
+    null
+   ],
+   [
+    "sectors",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "cn8ProductCodes",
+    null
+   ],
+   [
+    "taric10ProductCodes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "weeks",
+    null
+   ]
+  ]
+ },
+ "GET /api/rice/production/products": {
+  "group": "rice",
+  "summary": "Rice production products",
+  "params": []
+ },
+ "GET /api/poultry/production": {
+  "group": "all",
+  "summary": "Poultry production",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "animals",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ]
+  ]
+ },
+ "GET /api/pigmeat/cuts/prices/month/priceTypes": {
+  "group": "pigmeat",
+  "summary": "Pigmeat (cuts) monthly price types",
+  "params": []
+ },
+ "GET /api/oilseeds/production/crops": {
+  "group": "oilseeds",
+  "summary": "Oilseeds and protein crops production crops",
+  "params": []
+ },
+ "GET /api/indicators/pmef/units": {
+  "group": "all",
+  "summary": "PMEF indicators units",
+  "params": []
+ },
+ "GET /api/cmefIndicators/units": {
+  "group": "all",
+  "summary": "CMEF indicators units",
+  "params": []
+ },
+ "GET /api/beef/cuts/prices/categories": {
+  "group": "beef",
+  "summary": "Beef (cuts) weekly categories",
+  "params": []
+ },
+ "GET /api/taxud/weeklyData/export/products": {
+  "group": "all",
+  "summary": "Taxud export products",
+  "params": []
+ },
+ "GET /api/rice/production/types": {
+  "group": "rice",
+  "summary": "Rice production types",
+  "params": []
+ },
+ "GET /api/poultry/production/animals": {
+  "group": "all",
+  "summary": "Poultry production animals",
+  "params": []
+ },
+ "GET /api/pigmeat/production": {
+  "group": "pigmeat",
+  "summary": "Pigmeat production",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ]
+  ]
+ },
+ "GET /api/oilseeds/crops/prices": {
+  "group": "oilseeds",
+  "summary": "Oilseeds protein crops prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "marketingYears",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "products",
+    null
+   ],
+   [
+    "productTypes",
+    null
+   ],
+   [
+    "marketStages",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/indicators/pmef/codes": {
+  "group": "all",
+  "summary": "PMEF indicators codes",
+  "params": []
+ },
+ "GET /api/cmefIndicators/codes": {
+  "group": "all",
+  "summary": "CMEF indicators codes",
+  "params": []
+ },
+ "GET /api/beef/cuts/prices/priceTypes": {
+  "group": "beef",
+  "summary": "Beef (cuts) weekly price types",
+  "params": []
+ },
+ "GET /api/taxud/weeklyData/export/cn8ProductCodes": {
+  "group": "all",
+  "summary": "Taxud export CN 8 product codes",
+  "params": []
+ },
+ "GET /api/oilseeds/crops/products": {
+  "group": "oilseeds",
+  "summary": "Oilseeds protein crops products",
+  "params": []
+ },
+ "GET /api/indicators/pmef/dataSources": {
+  "group": "all",
+  "summary": "PMEF indicators sources",
+  "params": []
+ },
+ "GET /api/cmefIndicators/sources": {
+  "group": "all",
+  "summary": "CMEF indicators sources",
+  "params": []
+ },
+ "GET /api/beef/cuts/prices/month": {
+  "group": "beef",
+  "summary": "Beef (cuts) monthly prices",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "priceTypes",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ],
+   [
+    "beginDate",
+    null
+   ],
+   [
+    "endDate",
+    null
+   ]
+  ]
+ },
+ "GET /api/taxud/weeklyData/export/taric10ProductCodes": {
+  "group": "all",
+  "summary": "Taxud export TARIC 10 product codes",
+  "params": []
+ },
+ "GET /api/oilseeds/crops/productTypes": {
+  "group": "oilseeds",
+  "summary": "Oilseeds protein crops product types\n",
+  "params": []
+ },
+ "GET /api/indicators/pmef/planned": {
+  "group": "all",
+  "summary": "PMEF indicators planned/realised",
+  "params": []
+ },
+ "GET /api/beef/cuts/prices/month/categories": {
+  "group": "beef",
+  "summary": "Beef (cuts) monthly categories",
+  "params": []
+ },
+ "GET /api/oilseeds/crops/marketStages": {
+  "group": "oilseeds",
+  "summary": "Oilseeds protein crops market stages",
+  "params": []
+ },
+ "GET /api/beef/cuts/prices/month/priceTypes": {
+  "group": "beef",
+  "summary": "Beef (cuts) monthly price types",
+  "params": []
+ },
+ "GET /api/beef/production": {
+  "group": "beef",
+  "summary": "Beef production",
+  "params": [
+   [
+    "memberStateCodes",
+    null
+   ],
+   [
+    "categories",
+    null
+   ],
+   [
+    "years",
+    null
+   ],
+   [
+    "months",
+    null
+   ]
+  ]
+ },
+ "GET /api/beef/production/categories": {
+  "group": "beef",
+  "summary": "Beef production categories",
+  "params": []
+ }
+}
