@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'; OUT = DATA / 'blog' / 'countries'; LEDGER = OUT / 'ledger'; NEWS = DATA / 'news-archive'
 COUNTRIES = ['ES', 'FR', 'IT', 'DE', 'US', 'CA']
+ORGS = {'UPA', 'COAG', 'ASAJA', 'Cooperativas Agro-alimentarias'}
 MOVERS = 8; RELEASES = 10; MAX_PER_GROUP = 2; NEWS_N = 8; MAX_PER_SOURCE = 2
 BLOCK_ORDER = ['precios', 'produccion', 'comercio', 'costes', 'otros']
 MARKETS = {'quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions', 'product', 'idx_perc'}
@@ -100,7 +101,10 @@ def news_for(cc, key, cov):
     if not a: return 0, []
     rows = [i for i in a.get('items', []) if i.get('country') == cc and i['date'] >= max(cov, a['coverage']['from'])]
     out, seen, cnt = [], set(), {}
-    for i in sorted(rows, key=lambda i: (-i['rel'], i['date'], i['id'])):
+    first, ordered = set(), sorted(rows, key=lambda i: (-i['rel'], i['date'], i['id']))
+    for i in ordered:   # las organizaciones agrarias (UPA, COAG...) publican poco: su titular mas relevante de la semana va siempre en la lista
+        if i['source'] in ORGS and i['source'] not in first: first.add(i['source']); i['_org'] = True
+    for i in sorted(ordered, key=lambda i: 0 if i.get('_org') else 1):
         k = re.sub(r'[^a-z0-9]+', ' ', i['h'].lower())[:48].strip()
         if k in seen or cnt.get(i['source'], 0) >= MAX_PER_SOURCE: continue
         seen.add(k); cnt[i['source']] = cnt.get(i['source'], 0) + 1
