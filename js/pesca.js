@@ -161,12 +161,31 @@
     var rows = d.states.map(function (o) { var v = last(o.value), q = last(o.qty); return '<tr>' + td(esc(o.name)) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>'; });
     return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.stUS)) + '</h2>' + table([tx(T.hSt), tx(T.hVal), tx(T.hQty), tx(T.hYear)], rows) + '</section>';
   }
+  /* Mapa de zonas FAO (vendor/fao-areas.js: FAO 2024, CC BY 4.0): se colorean las zonas donde el pais capturo, por su peso en el total */
+  var FAOC = { 'Northeast Atlantic': '27', 'Northwest Atlantic': '21', 'Eastern Central Atlantic': '34', 'Mediterranean and Black Sea': '37', 'Western Indian Ocean': '51', 'Southwest Atlantic': '41', 'Southeast Atlantic': '47' };
+  var FM = { es: ['Más oscuro = mayor parte de las capturas del país. En gris claro, zonas sin capturas registradas.', 'Zonas principales de pesca: FAO (2024), CC BY 4.0.', 't'], en: ['Darker = larger share of the country’s catches. Light grey: areas with no recorded catches.', 'Major fishing areas: FAO (2024), CC BY 4.0.', 't'], fr: ['Plus foncé = plus grande part des captures du pays. Gris clair : zones sans captures enregistrées.', 'Zones de pêche principales : FAO (2024), CC BY 4.0.', 't'], it: ['Più scuro = quota maggiore delle catture del paese. Grigio chiaro: zone senza catture registrate.', 'Zone di pesca principali: FAO (2024), CC BY 4.0.', 't'] };
+  function mountFaoMaps(root) {
+    var boxes = root.querySelectorAll('.fsh-fmap'); if (!boxes.length) return;
+    var draw = function () {
+      var M = global.DEHESA_FAO_AREAS; if (!M) return; var tt = FM[lg()] || FM.es;
+      [].forEach.call(boxes, function (b) {
+        var z = {}; try { z = JSON.parse(b.getAttribute('data-z')); } catch (e) {}
+        var mx = Math.max.apply(null, Object.keys(z).map(function (k) { return z[k][2]; }).concat([1]));
+        b.innerHTML = '<svg viewBox="' + M.viewBox + '" role="img" aria-label="' + esc(tx(T.zT)) + '" style="width:100%;height:auto;display:block">' + M.areas.map(function (a) {
+          var v = z[a.id], op = v ? (0.25 + 0.75 * (v[2] / mx)).toFixed(2) : 0;
+          return '<path d="' + a.d + '" fill="' + (v ? 'var(--accent,#2f5d3a)' : 'var(--border,#e3dfd0)') + '"' + (v ? ' fill-opacity="' + op + '"' : ' fill-opacity=".55"') + ' stroke="var(--surface,#fff)" stroke-width="1"><title>' + esc(v ? v[0] + ' (FAO ' + a.id + ') · ' + nf(v[1], 0) + ' t · ' + nf(v[2], 1) + ' %' : 'FAO ' + a.id) + '</title></path>';
+        }).join('') + '</svg><p class="di-movers-hint" style="margin:4px 0 10px">' + esc(tt[0]) + ' ' + esc(tt[1]) + '</p>';
+      });
+    };
+    if (global.DEHESA_FAO_AREAS) draw(); else { var sc = document.createElement('script'); sc.src = sp('vendor/fao-areas.js'); sc.onload = draw; document.head.appendChild(sc); }
+  }
   function zonesBlock(d) {
     var tot = last(d.series['ca-total']); if (!d.areas || !d.areas.length || !tot) return '';
-    var rows = d.areas.map(function (o) { var q = last(o.qty); if (!q || q[0] !== tot[0]) return ''; var sh = q[1] / tot[1] * 100;
+    var zmap = {};
+    var rows = d.areas.map(function (o) { var q = last(o.qty); if (!q || q[0] !== tot[0]) return ''; var sh = q[1] / tot[1] * 100; if (FAOC[o.name]) zmap[FAOC[o.name]] = [spName(o.name), q[1], sh];
       return '<tr>' + td(esc(spName(o.name))) + td(nf(q[1], 0) + ' t', 1) + td('<span class="fsh-bar"><i style="width:' + Math.max(1, Math.min(100, sh)).toFixed(1) + '%"></i></span> ' + nf(sh, 1) + ' %', 1) + '</tr>'; }).filter(Boolean);
     if (!rows.length) return '';
-    return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.zT)) + ' · ' + esc(tot[0]) + '</h2><p class="di-movers-hint">' + esc(tx(T.zS)) + '</p>' + table([tx(T.hZone), tx(T.hQty), tx(T.hShare)], rows) + '</section>';
+    return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.zT)) + ' · ' + esc(tot[0]) + '</h2><p class="di-movers-hint">' + esc(tx(T.zS)) + '</p>' + (Object.keys(zmap).length ? '<div class="fsh-fmap" data-z="' + esc(JSON.stringify(zmap)) + '"></div>' : '') + table([tx(T.hZone), tx(T.hQty), tx(T.hShare)], rows) + '</section>';
   }
   function listBlock(title, list, withPrice) {
     if (!list || !list.length) return '';
@@ -231,7 +250,7 @@
           T.notes.map(function (n) { return '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(n)) + '</p>'; }).join('') + sources(d) +
           (d.cc === 'US' ? '' : '<p class="di-field-hint" style="margin:4px 0 0"><a href="https://www.fisheries.noaa.gov/foss" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcUs)) + '</a></p>');
         root.innerHTML = h;
-        ch.forEach(function (c) { bindChart(root, c); });
+        ch.forEach(function (c) { bindChart(root, c); }); mountFaoMaps(root);
         var sel = document.getElementById('fsh-cc'); if (sel) sel.onchange = function () { go(sel.value); };
         [].forEach.call(root.querySelectorAll('.fsh-row'), function (tr) {
           tr.onclick = function (e) { if (e.target.closest && e.target.closest('a')) { e.preventDefault(); } go(tr.getAttribute('data-cc')); };
