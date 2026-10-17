@@ -72,7 +72,7 @@ def pend(p):
 def nice(l): return E.clean(l).replace(' - ', ', ')
 def sid(*a): return '-'.join(re.sub(r'[^a-z0-9]+', '', str(x).lower().replace('-', '_')) or 'x' for x in a)
 
-def gen(recs, labs, tag, group, title, src, note=None, maxn=60, drop=(), unit_label=None, only_units=None):
+def gen(recs, labs, tag, group, title, src, note=None, maxn=60, drop=(), unit_label=None, only_units=None, skip_zero=False):
     """Convierte registros de Eurostat en series: una por combinacion de las dimensiones que varian (salvo freq, geo, time, unit). El texto sale de las etiquetas de Eurostat."""
     title = title or DSL[0]
     dims = sorted({d for r, _ in recs for d in r} - set(SKIP_DIMS) - set(drop))
@@ -87,6 +87,7 @@ def gen(recs, labs, tag, group, title, src, note=None, maxn=60, drop=(), unit_la
     for (codes, u), pts in rows[:maxn]:
         fr = freq_of(pts[0][0])
         if not fr: continue
+        if skip_zero and all(v == 0 for _, v in pts): E.log('  todo a cero, se oculta', tag, codes); continue   # decidido por Mario (17 oct): una serie de huevas siempre a cero no aporta nada
         parts = [nice(labs[d].get(c, c)) for d, c in zip(vary, codes)]
         ul = nice(labs.get('unit', {}).get(u, u)) if u else (unit_label or '')
         if not ul and 'indic_ag' in dims:   # tablas sin dimension de unidad (estructura lactea): la unidad es la del indicador (p. ej. numero de empresas)
@@ -157,7 +158,7 @@ def aquaculture():
     r, l = es('fish_aq3', species='F00', unit='TLW', sinceTimePeriod='2000'); n += gen(r, l, 'aq3', 'fish', None, 'Eurostat fish_aq3', maxn=8)
     for ds in ('fish_aq4a', 'fish_aq4b'):
         r, l = es(ds, species='F00', dest_use='TOTAL', sinceTimePeriod='2000'); n += gen(r, l, ds[-4:], 'fish', None, 'Eurostat ' + ds, maxn=8)
-    r, l = safe('fish_aq2b', 'species', ['F00', 'F01', 'F07'], aquameth='TOTAL', aquaenv='TOTAL', fishreg='0', unit='TLW', sinceTimePeriod='2000'); n += gen(r, l, 'aq2b', 'fish', None, 'Eurostat fish_aq2b', maxn=6)
+    r, l = safe('fish_aq2b', 'species', ['F00', 'F01', 'F07'], aquameth='TOTAL', aquaenv='TOTAL', fishreg='0', unit='TLW', sinceTimePeriod='2000'); n += gen(r, l, 'aq2b', 'fish', None, 'Eurostat fish_aq2b', maxn=6, skip_zero=True)
     return n
 def organic():
     n = 0
