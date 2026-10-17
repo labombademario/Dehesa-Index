@@ -1,5 +1,7 @@
 # Dehesa Index
 
+**English** · [Español](README.es.md) · [Français](README.fr.md)
+
 [dehesaindex.com](https://dehesaindex.com) is a Bloomberg-style, global tracker of agricultural prices and official statistics: livestock, dairy, grains, oilseeds, fertilisers, feed and energy, with prices for the United States, the European Union, the United Kingdom and Canada and official statistics for more than 30 countries (the exact counts of countries, aggregates and regions come from `data/catalog/manifest.json`, `entityType`). It is a static site (vanilla ES5 HTML, CSS and JavaScript, no build step) fed by scheduled GitHub Actions pipelines that commit JSON files to `data/`. Interface in Spanish, English, French and Italian.
 
 ## Rights and licensing
@@ -7,8 +9,6 @@
 © 2026 Dehesa Index. **All rights reserved.** The code, scripts, schemas, data compilation and design in this repository are published for transparency only and are not licensed for copying, redistribution, or commercial reuse. To ask for a licence, write to [dehesaindex@gmail.com](mailto:dehesaindex@gmail.com).
 
 Data published by third-party sources (Eurostat, USDA, the European Commission and others) keeps its own licence and attribution terms, listed in [`DATA_SOURCES.md`](DATA_SOURCES.md). This notice does not change them.
-
-*Todos los derechos reservados. Para solicitar una licencia, escribe a dehesaindex@gmail.com.*
 
 ## Documentation
 
