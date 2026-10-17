@@ -1,5 +1,5 @@
 import json, os, urllib.request, time
-UA = {"User-Agent": "Mozilla/5.0 (compatible; Dehesa-Index-data-bot/1.0; +https://dehesaindex.com)", "Accept": "application/json"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; Dehesa-Index-data-bot/1.0; +https://dehesaindex.com)", "Accept": "*/*"}
 OUT = "probe/eu-out"; os.makedirs(OUT, exist_ok=True)
 def get(u, t=120):
     last = None
@@ -13,7 +13,10 @@ try:
     cfg = json.loads(get("https://api.tech.ec.europa.eu/agrifood/v3/api-docs/swagger-config"))
     open(OUT + "/swagger-config.json", "w").write(json.dumps(cfg, indent=1))
     paths = {}
-    for u in cfg.get("urls", []):
+    urls = cfg.get("urls") or [{"name": "all", "url": cfg.get("url")}]
+    for g in ["cereals","beef","pigmeat","poultry","sheepAndGoat","dairy","fruitAndVegetable","rice","oilseeds","sugar","oliveOil","wine","taxud","cmef","pmef","fertiliser","organic","rawMilk","eggs","general"]:
+        urls.append({"name": g, "url": "/agrifood/v3/api-docs/" + g})
+    for u in urls:
         name, url = u.get("name"), u.get("url")
         try:
             spec = json.loads(get("https://api.tech.ec.europa.eu" + url if url.startswith("/") else url))
