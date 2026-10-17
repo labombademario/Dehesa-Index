@@ -5,7 +5,7 @@ Los de consistencia entre ficheros (cross_*) se ejecutan con validate-data.py --
 import datetime, json, math, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / "data"
-TODAY = datetime.date.today()
+TODAY = datetime.datetime.now(datetime.timezone.utc).date()   # UTC, como los constructores (date.today() es local y fallaba por la noche en husos de EE. UU.)
 def _num(x): return isinstance(x, (int, float)) and not isinstance(x, bool) and not (isinstance(x, float) and (math.isnan(x) or math.isinf(x)))
 def _date(s):
     s = str(s)[:10]
