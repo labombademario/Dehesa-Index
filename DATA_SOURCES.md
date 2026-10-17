@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 141 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 29119 series en el catalogo unificado.
+Resumen: 142 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 29482 series en el catalogo unificado.
 
-## VERIFIED (141)
+## VERIFIED (142)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -134,16 +134,17 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usbr_rise` | U.S. Bureau of Reclamation — RISE (Reclamation Information Sharing Environment) | US | US-PD | si/si | no | 0 |  |
 | `usda_ams_agtransport` | USDA AMS Agricultural Transportation Open Data Platform (AgTransport) | US | US-PD | si/si | no | 0 | Only datasets whose AgTransport attribution is USDA/AMS are used; datasets attributed to the Surface Transportation Board, the Army Corps of… |
 | `usda_ams_fgis` | USDA AMS / Federal Grain Inspection Service, Export Grain Inspections | US | US-PD | si/si | no | 4 | Weekly metric tons by grain and destination aggregated from the yearly CSV (CY2025, CY2026). No USDA logo/name to imply endorsement. |
+| `usda_ams_fmmo` | USDA AMS Dairy Programs, Federal Milk Marketing Orders (Market News datamart) | US | US-PD | si/si | no | 48 | Only AMS-produced FMMO reports are used (3355 class prices by order, 3351 uniform prices, 3357 mailbox prices, 3352 price and pool, 3462 pro… |
 | `usda_ams_lmr` | USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart | US | US-PD | si/si | no | 0 | Only AMS-produced reports are used (LM_XB403 boxed beef cutout, LM_PK602 pork cutout, LM_HG201 prior-day swine, LM_CT100 5-area slaughter ca… |
 | `usda_ams_mars` | USDA AMS Market News (MARS API) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
-| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 297 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
+| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 504 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_esr` | USDA FAS — Export Sales Reporting (ESR) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 16 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
 | `usda_fsa` | USDA Farm Service Agency (ARC/PLC program data) | US | US-PD | si/si | no | 0 | Byline requested. Some FSA web materials are copyrighted and labelled as such; the ARC/PLC program data files are FSA's own publications. No… |
-| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 490 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
+| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 598 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
 | `usda_nrcs` | USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API) | US | US-PD | si/si | si | 12 | No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time. |
-| `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
+| `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
 | `vigieau` | VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau) | FR | LO-2.0 | si/si | si | 0 | LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indica… |
 | `vlada_hr` | Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo | HR | HR-VLADA-REUSE | si/si | si | 0 | Se aconseja revisar los avisos de derechos de autor de documentos concretos; se usan solo cifras de precios de la nota de prensa. |

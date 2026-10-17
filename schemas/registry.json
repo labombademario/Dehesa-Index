@@ -1427,6 +1427,26 @@
    [
     "it_istat_comuni"
    ]
+  ],
+  "us-markets/wasde.json": [
+   "us-markets-wasde",
+   [
+    "us_markets_wasde"
+   ]
+  ],
+  "us-markets/wasde-ledger.json": [
+   "us-markets-wasde-ledger",
+   []
+  ],
+  "us-markets/sap-forecasts.json": [
+   "us-markets-sap",
+   [
+    "us_markets_sap"
+   ]
+  ],
+  "us-nass-processing-ledger.json": [
+   "us-nass-processing-ledger",
+   []
   ]
  },
  "globs": {

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T18:38:40Z",
+ "generatedAt": "2026-10-17T21:07:00Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 170,
+  "total": 171,
   "byStatus": {
-   "ACTIVE": 140,
+   "ACTIVE": 141,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -6700,6 +6700,45 @@
    ]
   },
   {
+   "sourceId": "usda_ams_fmmo",
+   "registryId": "usda_ams_fmmo",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA AMS Dairy Programs, Federal Milk Marketing Orders (Market News datamart)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Federal Milk Marketing Orders)",
+   "lastChecked": "2026-10-05",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "usda_ams_lmr",
    "registryId": "usda_ams_lmr",
    "country": "US",
@@ -7126,7 +7165,7 @@
    "registryId": "usda_oce_wasde",
    "country": "US",
    "scope": "integrated",
-   "institution": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
+   "institution": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE)",
    "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
    "products": [],
    "productsConfirmed": false,
@@ -7141,7 +7180,7 @@
    "licenseId": "US-PD",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "Source: U.S. Department of Agriculture (WASDE release schedule)",
+   "attribution": "Source: U.S. Department of Agriculture, World Agricultural Supply and Demand Estimates (WASDE)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",

@@ -1341,7 +1341,7 @@
    "legalConfidenceReason": "Fuente RESTRICTED: no se usa."
   },
   "usda_oce_wasde": {
-   "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
+   "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE)",
    "url": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report",
    "country": "US",
    "licenseId": "US-PD",
@@ -1351,14 +1351,14 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attributionRequired": false,
-   "attributionText": "Source: U.S. Department of Agriculture (WASDE release schedule)",
+   "attributionText": "Source: U.S. Department of Agriculture, World Agricultural Supply and Demand Estimates (WASDE)",
    "additionalRestrictions": "Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release dates are used. No USDA logo/name to imply endorsement.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "USDA says some materials are protected and used with permission; they are labelled as such. Only agency-produced series are used.",
    "verifiedAt": "2026-10-01",
    "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "USDA policies page (read 2026-10-01): \"Most information presented on the USDA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Only the published release dates are used, not report content.",
+   "evidence": "USDA policies page (read 2026-10-01): \"Most information presented on the USDA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Both the release dates and the published supply-and-demand tables of the WASDE are used, unchanged.",
    "used": true,
    "aliases": [],
    "notes": null,
@@ -4185,6 +4185,32 @@
    "short": "NOAA Fisheries",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Licencia explicita (CC0) en el catalogo federal de datos."
+  },
+  "usda_ams_fmmo": {
+   "name": "USDA AMS Dairy Programs, Federal Milk Marketing Orders (Market News datamart)",
+   "url": "https://www.ams.usda.gov/rules-regulations/moa/dairy",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Federal Milk Marketing Orders)",
+   "additionalRestrictions": "Only AMS-produced FMMO reports are used (3355 class prices by order, 3351 uniform prices, 3357 mailbox prices, 3352 price and pool, 3462 producer milk components). No USDA logo/name to imply endorsement.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "USDA says some materials are protected and used with permission; they are labelled as such. Only agency-produced series are used.",
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "USDA Policies and Links (read 2026-10-05): \"Most information presented on the USDA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested. Attribution may be cited as follows: \"U.S. Department of Agriculture.\"\" The public datamart API (mpr.datamart.ams.usda.gov) is published by AMS Market News without a key and has no separate licence page, so confidence stays medium. Official US government data: green by Mario's rule of 2026-10-05, cited.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "USDA AMS FMMO",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   }
  },
  "files": {
@@ -4912,9 +4938,12 @@
     "eia",
     "usda_ams_lmr",
     "usda_ams_fgis",
-    "usda_ams_mars"
+    "usda_ams_mars",
+    "usda_oce_wasde",
+    "usda_ers",
+    "usda_ams_fmmo"
    ],
-   "notes": "Mercado e insumos de EE. UU. (scripts/update-us-markets.py): posiciones de los fondos del informe Commitments of Traders desagregado, solo futuros (CFTC, Public Reporting Environment, conjunto 72hh-3qpy) de maiz, soja, harina y aceite de soja, trigo SRW y HRW, vacuno vivo, vacuno de engorde y porcino magro; indicadores semanales de coste del transporte de grano por modo y fletes de barcaza rio abajo por el sistema del Misisipi (USDA AMS AgTransport, conjuntos 8uye-ieij, deqi-uken y 7spn-fbua, atribuidos a USDA/AMS); gasoleo por region PADD y estado y propano residencial y mayorista (EIA API v2, petroleum/pri/gnd y petroleum/pri/wfr). produccion y existencias semanales de etanol de combustible (EIA, petroleum/sum/sndw); inspecciones semanales de exportacion de maiz, soja, trigo y sorgo por destino (USDA AMS/FGIS, Export Grain Report); precios de referencia de la Notificacion Obligatoria de Precios (USDA AMS LMR): indice de vacuno en caja Choice y Select (LM_XB403), indice de la canal de cerdo y piezas (LM_PK602), precio base del cerdo (LM_HG201) y novillos y novillas de las 5 zonas (LM_CT100). Tal como lo publica cada fuente; se cita la fuente de cada bloque. Sacrificio diario (scripts/update-us-slaughter.py, slaughter.json): cabezas por especie del informe AMS 3208 (Daily Livestock and Poultry Slaughter) leido de la API MARS; estimacion del dia, revisada al dia siguiente; sin pesos. Proyecciones a 10 años (scripts/update-ers-baseline.py, baseline.json): USDA ERS, Agricultural Baseline Database (CSV maquina-legible de las proyecciones del Interagency Agricultural Projections Committee); valores y unidades tal como los publica ERS, sin calculo propio. Son proyecciones bajo supuestos macroeconomicos y de politica, no previsiones de precio. Tablas de los libros .xlsx de la misma edicion (baseline-tables.json): macro, PIB y poblacion mundiales, tipo de cambio real, superficie y CRP, comercio exterior agrario, renta agraria, frutas, frutos secos y hortalizas, azucar, lacteos y ganaderia; filas, secciones y unidades tal como las publica ERS."
+   "notes": "Mercado e insumos de EE. UU. (scripts/update-us-markets.py): posiciones de los fondos del informe Commitments of Traders desagregado, solo futuros (CFTC, Public Reporting Environment, conjunto 72hh-3qpy) de maiz, soja, harina y aceite de soja, trigo SRW y HRW, vacuno vivo, vacuno de engorde y porcino magro; indicadores semanales de coste del transporte de grano por modo y fletes de barcaza rio abajo por el sistema del Misisipi (USDA AMS AgTransport, conjuntos 8uye-ieij, deqi-uken y 7spn-fbua, atribuidos a USDA/AMS); gasoleo por region PADD y estado y propano residencial y mayorista (EIA API v2, petroleum/pri/gnd y petroleum/pri/wfr). produccion y existencias semanales de etanol de combustible (EIA, petroleum/sum/sndw); inspecciones semanales de exportacion de maiz, soja, trigo y sorgo por destino (USDA AMS/FGIS, Export Grain Report); precios de referencia de la Notificacion Obligatoria de Precios (USDA AMS LMR): indice de vacuno en caja Choice y Select (LM_XB403), indice de la canal de cerdo y piezas (LM_PK602), precio base del cerdo (LM_HG201) y novillos y novillas de las 5 zonas (LM_CT100). Tal como lo publica cada fuente; se cita la fuente de cada bloque. Sacrificio diario (scripts/update-us-slaughter.py, slaughter.json): cabezas por especie del informe AMS 3208 (Daily Livestock and Poultry Slaughter) leido de la API MARS; estimacion del dia, revisada al dia siguiente; sin pesos. Proyecciones a 10 años (scripts/update-ers-baseline.py, baseline.json): USDA ERS, Agricultural Baseline Database (CSV maquina-legible de las proyecciones del Interagency Agricultural Projections Committee); valores y unidades tal como los publica ERS, sin calculo propio. Son proyecciones bajo supuestos macroeconomicos y de politica, no previsiones de precio. Tablas de los libros .xlsx de la misma edicion (baseline-tables.json): macro, PIB y poblacion mundiales, tipo de cambio real, superficie y CRP, comercio exterior agrario, renta agraria, frutas, frutos secos y hortalizas, azucar, lacteos y ganaderia; filas, secciones y unidades tal como las publica ERS. WASDE (scripts/update-us-wasde.py, wasde.json): cifras de oferta y demanda del informe mensual del USDA con las revisiones mes a mes, tal como se publican; el historico de revisiones empieza en la primera ejecucion y se acumula en wasde-ledger.json. Prevision de precio medio de campana de ERS (scripts/update-us-sap.py, sap-forecasts.json): salida de un modelo (futuros y base), NO es una prevision oficial del USDA, y asi se rotula."
   },
   "data/us-arcplc/": {
    "sources": [
@@ -6001,6 +6030,30 @@
     "SI": "eurostat"
    },
    "notes": "Censo agrario y encuestas de estructura de Eurostat por pais y region NUTS 2 (2016, 2020, 2023): formacion y tenencia por edad del jefe, mano de obra, nuevos jefes, tamano economico, tecnologia, maquinaria, renovables, riego, practicas del suelo, ganado, uso del suelo y frutales; mas precios de insumos 2025 (apri_aip_*). scripts/update-eurostat-census.py."
+  },
+  "data/us-fmmo-stats.json": {
+   "byCountry": {
+    "US": "usda_ams_fmmo"
+   },
+   "notes": "Precios minimos de clase I-IV, precio uniforme, mailbox, pool y composicion de la leche de las ordenes federales (USDA AMS datamart), sin cambiar valores."
+  },
+  "data/us-ers-livestock-stats.json": {
+   "byCountry": {
+    "US": "usda_ers"
+   },
+   "notes": "Carne y ganado de EE. UU. (USDA ERS, Livestock and Meat Domestic Data): oferta y utilizacion, pesos, precios, recria y simulador del cebadero, sin cambiar valores."
+  },
+  "data/us-nass-processing-stats.json": {
+   "byCountry": {
+    "US": "usda_nass"
+   },
+   "notes": "Trituracion de oleaginosas, aceites y grasas y coproductos del maiz (informes mensuales Fats and Oils y Grain Crushings de USDA NASS), sin cambiar valores."
+  },
+  "data/us-nass-processing-ledger.json": {
+   "sources": [
+    "usda_nass"
+   ],
+   "notes": "Libro interno que acumula los informes mensuales de NASS; mismos valores que us-nass-processing-stats.json."
   }
  },
  "derived": [

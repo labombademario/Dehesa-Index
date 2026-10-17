@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T02:03:56Z",
+ "generatedAt": "2026-10-17T21:14:29Z",
  "summary": {
-  "sources": 140,
-  "sourcesApto": 127,
+  "sources": 141,
+  "sourcesApto": 128,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 280,
-  "datasets_apto": 161,
+  "datasets": 284,
+  "datasets_apto": 165,
   "datasets_condiciones": 107,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
@@ -499,6 +499,10 @@
    "name": "USDA AMS / Federal Grain Inspection Service, Export Grain Inspections",
    "verdict": "apto"
   },
+  "usda_ams_fmmo": {
+   "name": "USDA AMS Dairy Programs, Federal Milk Marketing Orders (Market News datamart)",
+   "verdict": "apto"
+  },
   "usda_ams_lmr": {
    "name": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
    "verdict": "apto"
@@ -536,7 +540,7 @@
    "verdict": "apto"
   },
   "usda_oce_wasde": {
-   "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
+   "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE)",
    "verdict": "apto"
   },
   "usda_rma": {

@@ -1,0 +1,2 @@
+pagina del WASDE no legible: RuntimeError("https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets
+FALLO: ValueError('no hay XML del WASDE en la pagina')

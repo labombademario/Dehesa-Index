@@ -1,0 +1,32 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update USDA WASDE supply and demand tables with month-to-month revisions (OCE / WAOB, public domain)
+on:
+  schedule:
+    - cron: '30 17 9-17 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-us-wasde
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-us-wasde.py
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/us-markets/wasde.json data/us-markets/wasde-ledger.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/us-markets/wasde.json data/us-markets/wasde-ledger.json
+      - name: Publicar
+        run: bash scripts/publish-data.sh "WASDE de EE. UU. - balances y revisiones mensuales (USDA OCE/WAOB)" data/us-markets/wasde.json data/us-markets/wasde-ledger.json data/us-wasde-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

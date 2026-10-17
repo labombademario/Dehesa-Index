@@ -7,7 +7,7 @@
   "late": 1,
   "error": 1,
   "not_run": 3,
-  "unknown": 0
+  "unknown": 5
  },
  "global": "error",
  "deploy": {
@@ -5065,6 +5065,71 @@
     "failed": 2
    },
    "status": "ok",
+   "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-us-ers-livestock.yml",
+   "name": "Update US livestock and meat domestic data (USDA ERS machine-readable files)",
+   "crons": [
+    "50 14 * * 4"
+   ],
+   "nextRun": "2026-10-22T14:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-us-fmmo.yml",
+   "name": "Update US federal milk marketing order prices, pool and mailbox prices (USDA AMS datamart)",
+   "crons": [
+    "10 17 * * 2"
+   ],
+   "nextRun": "2026-10-20T17:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-us-nass-processing.yml",
+   "name": "Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)",
+   "crons": [
+    "40 16 1-8,20 * *"
+   ],
+   "nextRun": "2026-10-20T16:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 288.0
+  },
+  {
+   "workflow": "update-us-sap.yml",
+   "name": "Update USDA ERS season-average price forecast model (not an official USDA forecast)",
+   "crons": [
+    "35 15 * * 5"
+   ],
+   "nextRun": "2026-10-23T15:35:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-us-wasde.yml",
+   "name": "Update USDA WASDE supply and demand tables with month-to-month revisions (OCE / WAOB, public domain)",
+   "crons": [
+    "30 17 9-17 * *"
+   ],
+   "nextRun": "2026-11-09T17:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 24.0
   }
  ]
