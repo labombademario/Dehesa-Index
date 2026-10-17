@@ -2,10 +2,10 @@
   "_doc": "Presupuesto de crecimiento del repositorio. Los limites duros de GitHub son 100 MB por fichero y ~5 GB por repo (recomendado <1 GB). Aqui nos ponemos margenes mucho mas estrictos.",
   "maxFileMB": 25,
   "warnFileMB": 10,
-  "maxDataTreeMB": 300,
-  "warnDataTreeMB": 270,
-  "maxPackMB": 500,
-  "warnPackMB": 250,
+  "maxDataTreeMB": 400,
+  "warnDataTreeMB": 360,
+  "maxPackMB": 900,
+  "warnPackMB": 600,
   "dirBudgets": {
     "data/us-cash-bids/": {
       "warnMB": 20,

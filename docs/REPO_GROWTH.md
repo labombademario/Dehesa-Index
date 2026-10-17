@@ -48,3 +48,9 @@ No se ha borrado ni reescrito historia ni datos historicos. Todo lo anterior es 
 - Lo que crece es contenido nuevo (paquete descargable `data/pack/` ~10 MB, referencias de liquidacion, paises nuevos), no duplicados: el resto de JSON de `data/` ya esta compacto (0,6 MB de sangria en total).
 - Limite de `data/` subido a 300 MB (aviso 270). GitHub mide el repositorio en 219 MB.
 - Siguiente paso cuando avise: particionar `data/series/<pais>` y `data/ams/` por ano.
+
+## Medicion del 2026-10-16 (noche): limites subidos por decision de Mario
+- GitHub mide el repositorio en 246 MB (API); el `.git` local de 505 MB incluia ramas locales viejas. El historial tiene 19 dias (28 sep - 16 oct), asi que no hay "tramo antiguo" que podar: la primera semana pesa ~54 MB.
+- `main` crece ~8 MB/dia sin contar la carga masiva del 16 oct (80 MB). El peso viene de reescribir `data/` (73 % del historial): `series-registry.json`, `data/app/v1/search*.json`, `normalized.json`, `history.json`, `news*.json`.
+- **Decision de Mario (2026-10-16):** historial git: aviso 250 -> 600 MB, limite 500 -> 900 MB; `data/`: aviso 270 -> 360 MB, limite 300 -> 400 MB. GitHub recomienda < 1 GB y tiene un maximo duro de ~5 GB, asi que hay margen. No se poda el historial.
+- Pendiente: volver a medir el ritmo de crecimiento hacia el 16 nov (con ~6 semanas de historial); si sigue en ~8 MB/dia, atacar registro de series e indices de busqueda.
