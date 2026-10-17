@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: |
-          for f in probe/usda*.py; do python3 $f > probe/$(basename $f).log 2>&1 || true; done
+          for f in probe/usda2.py; do python3 $f > probe/$(basename $f).log 2>&1 || true; done
           git config user.name probe; git config user.email probe@x
-          git add -f probe/usda-out probe/*.log; git commit -qm "probe out" || true; git push || true
+          git add -f probe/usda-out2 probe/*.log; git commit -qm "probe out" || true; git push || true
