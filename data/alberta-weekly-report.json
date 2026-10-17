@@ -1,67 +1,67 @@
 {
- "generatedAt": "2026-10-16T21:58:21Z",
+ "generatedAt": "2026-10-17T21:54:07Z",
  "products": {
   "canola_elevador": {
-   "points": 90,
+   "points": 91,
    "last": [
-    "2026-10-09",
-    773.63
+    "2026-10-16",
+    754.44
    ]
   },
   "trigo_pienso_ab": {
-   "points": 90,
+   "points": 91,
    "last": [
-    "2026-10-09",
+    "2026-10-16",
     234.4
    ]
   },
   "cebada_pienso_ab": {
-   "points": 90,
+   "points": 91,
    "last": [
-    "2026-10-09",
-    250.72
+    "2026-10-16",
+    253.44
    ]
   },
   "avena_pienso_ab": {
-   "points": 81,
+   "points": 82,
    "last": [
-    "2026-10-09",
-    250.0
+    "2026-10-16",
+    260.0
    ]
   },
   "trigo_cwrs_ab": {
-   "points": 89,
+   "points": 90,
    "last": [
-    "2026-10-09",
-    326.84
+    "2026-10-16",
+    322.21
    ]
   },
   "lenteja_laird_ab": {
-   "points": 90,
+   "points": 91,
    "last": [
-    "2026-10-09",
-    633.49
+    "2026-10-16",
+    644.52
    ]
   },
   "guisante_verde_ab": {
-   "points": 90,
+   "points": 91,
    "last": [
-    "2026-10-09",
+    "2026-10-16",
     339.88
    ]
   },
   "novillo_ab": {
-   "points": 87,
+   "points": 88,
    "last": [
-    "2026-10-09",
-    298.37
+    "2026-10-16",
+    298.3
    ]
   },
   "cerdo_ab": {
-   "points": 84,
+   "points": 85,
    "last": [
-    "2026-10-09",
-    2.109
+    "2026-10-16",
+    2.041
    ]
   }
  }
