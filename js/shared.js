@@ -259,6 +259,7 @@
       noticeTitle: 'AVISO',
       notice: 'Datos oficiales verificados, con su fecha y fuente; lo que no se puede verificar se marca como pendiente. Informativo: no es asesoramiento de inversión ni precios en tiempo real.',
       copyrightText: '© 2026 Dehesa Index',
+      followTitle: 'Síguenos',
       methodologyLabel: 'Metodología',
       legalLabel: 'Aviso legal y privacidad'
     },
@@ -269,6 +270,7 @@
       noticeTitle: 'DISCLAIMER',
       notice: 'Verified official data with its date and source; anything we cannot verify is marked pending. For information only: not investment advice and not real-time prices.',
       copyrightText: '© 2026 Dehesa Index',
+      followTitle: 'Follow us',
       methodologyLabel: 'Methodology',
       legalLabel: 'Legal notice & privacy'
     },
@@ -279,6 +281,7 @@
       noticeTitle: 'AVERTISSEMENT',
       notice: "Données officielles vérifiées, avec leur date et leur source ; ce qui ne peut être vérifié est marqué en attente. À titre informatif : ni conseil en investissement ni prix en temps réel.",
       copyrightText: '© 2026 Dehesa Index',
+      followTitle: 'Suivez-nous',
       methodologyLabel: 'Méthodologie',
       legalLabel: 'Mentions légales et confidentialité'
     },
@@ -289,6 +292,7 @@
       noticeTitle: 'AVVISO',
       notice: 'Dati ufficiali verificati, con data e fonte; ciò che non si può verificare è segnato come in attesa. Solo a scopo informativo: non è consulenza di investimento né prezzi in tempo reale.',
       copyrightText: '© 2026 Dehesa Index',
+      followTitle: 'Seguici',
       methodologyLabel: 'Metodologia',
       legalLabel: 'Note legali e privacy'
     }
@@ -667,11 +671,26 @@
             '<p class="di-footer-notice">' + esc(t.notice) + '</p>' +
           '</div>' +
         '</div>' +
-        '<div class="di-footer-bottom">' + esc(t.copyrightText) + ' · <a href="' + sitePath('metodologia.html') + '">' + esc(t.methodologyLabel) + '</a> · <a href="' + sitePath('legal.html') + '">' + esc(t.legalLabel) + '</a> · <a href="https://www.youtube.com/@dehesaindex" target="_blank" rel="noopener noreferrer me">YouTube</a></div>' +
+        socialHtml(t) +
+        '<div class="di-footer-bottom">' + esc(t.copyrightText) + ' · <a href="' + sitePath('metodologia.html') + '">' + esc(t.methodologyLabel) + '</a> · <a href="' + sitePath('legal.html') + '">' + esc(t.legalLabel) + '</a></div>' +
       '</footer>';
   }
 
 
+
+  var SOCIAL = [
+    { n: 'YouTube', u: 'https://www.youtube.com/@dehesaindex', d: 'M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z' },
+    { n: 'Substack', u: 'https://dehesaindex.substack.com', d: 'M4 4h16v2.5H4V4zm0 4.5h16V11H4V8.5zM4 13h16v8l-8-4.5L4 21v-8z' },
+    { n: 'X', u: 'https://x.com/Dehesaindex', d: 'M18.9 2H22l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.2 22H2l7.7-8.8L1.6 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z' }
+  ];
+  function socialHtml(t) {
+    var h = '<div class="di-footer-social" aria-label="' + esc(t.followTitle) + '"><span class="di-footer-social-t">' + esc(t.followTitle) + '</span>';
+    for (var i = 0; i < SOCIAL.length; i++) {
+      var o = SOCIAL[i];
+      h += '<a href="' + o.u + '" target="_blank" rel="noopener noreferrer me"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="' + o.d + '"/></svg>' + esc(o.n) + '</a>';
+    }
+    return h + '</div>';
+  }
 
   function setLang(code, opts) {
     if (LANGS.indexOf(code) === -1) return;
