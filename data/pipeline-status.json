@@ -1,28 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T18:36:00Z",
+ "generatedAt": "2026-10-17T21:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 205,
+  "ok": 210,
   "late": 1,
   "error": 1,
   "not_run": 3,
-  "unknown": 5
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "1b2ddd21",
+   "sha": "54363415",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/56f487af-939c-49e1-8169-dbb2c8160920",
-   "completedAt": "2026-10-17T18:32:40Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c3ed1776-7bc3-41b8-b0a0-837ea0a94b6e",
+   "completedAt": "2026-10-17T21:26:08Z"
   },
   "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-17T15:38:38.498082+00:00",
-  "repoGeneratedAt": "2026-10-17T15:38:38.498082+00:00",
-  "checkedAt": "2026-10-17T18:36:00Z"
+  "prodGeneratedAt": "2026-10-17T18:50:53.507527+00:00",
+  "repoGeneratedAt": "2026-10-17T18:50:53.507527+00:00",
+  "checkedAt": "2026-10-17T21:34:00Z"
  },
  "pipelines": [
   {
@@ -31,7 +31,7 @@
    "crons": [
     "30 21 * * 5,6"
    ],
-   "nextRun": "2026-10-17T21:30:00Z",
+   "nextRun": "2026-10-23T21:30:00Z",
    "files": [
     {
      "path": "data/alberta-weekly-debug.txt"
@@ -3110,14 +3110,14 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-17T18:47:00Z",
+   "nextRun": "2026-10-17T21:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-17T16:02:52Z",
-    "durationSec": 65,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39047704821"
+    "startedAt": "2026-10-17T19:06:23Z",
+    "durationSec": 78,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39061006785"
    },
    "recent": {
     "runs": 10,
@@ -3133,39 +3133,39 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-17T21:17:00Z",
+   "nextRun": "2026-10-18T00:17:00Z",
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-17T15:38:39Z"
+     "lastChange": "2026-10-17T18:51:09Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-17T15:38:39Z"
+     "lastChange": "2026-10-17T18:51:09Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-17T15:38:39Z"
+     "lastChange": "2026-10-17T18:51:09Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-17T15:38:39Z"
+     "lastChange": "2026-10-17T18:51:09Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-17T15:38:39Z"
+     "lastChange": "2026-10-17T18:51:09Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-17T15:34:16Z",
-    "durationSec": 267,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39045628922"
+    "event": "push",
+    "startedAt": "2026-10-17T18:49:09Z",
+    "durationSec": 125,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39059766441"
    },
    "recent": {
     "runs": 9,
-    "success": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -3367,19 +3367,19 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-17T21:10:00Z",
+   "nextRun": "2026-10-18T00:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-17T15:35:52Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-17T15:35:52Z"
+     "lastChange": "2026-10-17T18:38:12Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3391,18 +3391,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-17T13:26:42Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/catalog"
@@ -3415,7 +3415,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/products"
@@ -3426,22 +3426,22 @@
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-17T02:13:23Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-17T02:13:23Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/pack"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T21:22:50Z"
     },
     {
      "path": "data/country-pending.json",
@@ -3449,18 +3449,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T18:39:07Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T18:39:07Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T18:39:07Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -3468,7 +3468,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-17T15:36:42Z"
+     "lastChange": "2026-10-17T18:39:07Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3492,14 +3492,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-17T15:33:21Z",
+    "startedAt": "2026-10-17T18:35:46Z",
     "durationSec": 205,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39045561619"
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39058791987"
    },
    "recent": {
     "runs": 9,
-    "success": 7,
-    "failed": 2
+    "success": 8,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 3.0
@@ -4508,6 +4508,29 @@
    "expectedEveryHours": 150.0
   },
   {
+   "workflow": "update-us-ers-livestock.yml",
+   "name": "Update US livestock and meat domestic data (USDA ERS machine-readable files)",
+   "crons": [
+    "50 14 * * 4"
+   ],
+   "nextRun": "2026-10-22T14:50:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-17T21:23:09Z",
+    "durationSec": 15,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39070713965"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-us-ers.yml",
    "name": "Update US ERS data products and TTB wine statistics (public domain)",
    "crons": [
@@ -4552,6 +4575,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-us-fmmo.yml",
+   "name": "Update US federal milk marketing order prices, pool and mailbox prices (USDA AMS datamart)",
+   "crons": [
+    "10 17 * * 2"
+   ],
+   "nextRun": "2026-10-20T17:10:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-17T21:23:07Z",
+    "durationSec": 22,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39070711845"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-us-kcfed.yml",
@@ -4669,6 +4715,29 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-us-nass-processing.yml",
+   "name": "Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)",
+   "crons": [
+    "40 16 1-8,20 * *"
+   ],
+   "nextRun": "2026-10-20T16:40:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-17T21:23:10Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39070715992"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 288.0
+  },
+  {
    "workflow": "update-us-noaa-fish.yml",
    "name": "Update U.S. commercial fish landings (NOAA Fisheries FOSS)",
    "crons": [
@@ -4736,6 +4805,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-us-sap.yml",
+   "name": "Update USDA ERS season-average price forecast model (not an official USDA forecast)",
+   "crons": [
+    "35 15 * * 5"
+   ],
+   "nextRun": "2026-10-23T15:35:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-17T21:23:06Z",
+    "durationSec": 13,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39070709463"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-us-slaughter.yml",
@@ -4876,6 +4968,29 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-us-wasde.yml",
+   "name": "Update USDA WASDE supply and demand tables with month-to-month revisions (OCE / WAOB, public domain)",
+   "crons": [
+    "30 17 9-17 * *"
+   ],
+   "nextRun": "2026-11-09T17:30:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-17T21:24:42Z",
+    "durationSec": 25,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39070822531"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 24.0
+  },
+  {
    "workflow": "update-usda-calendar.yml",
    "name": "Update USDA release calendar (NASS + WASDE)",
    "crons": [
@@ -4939,15 +5054,15 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-17T00:03:41Z",
-    "durationSec": 348,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38984581027"
+    "event": "push",
+    "startedAt": "2026-10-17T19:48:26Z",
+    "durationSec": 22,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39064033803"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 7,
+    "failed": 3
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -5065,71 +5180,6 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
-  },
-  {
-   "workflow": "update-us-ers-livestock.yml",
-   "name": "Update US livestock and meat domestic data (USDA ERS machine-readable files)",
-   "crons": [
-    "50 14 * * 4"
-   ],
-   "nextRun": "2026-10-22T14:50:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
-   "expectedEveryHours": 168.0
-  },
-  {
-   "workflow": "update-us-fmmo.yml",
-   "name": "Update US federal milk marketing order prices, pool and mailbox prices (USDA AMS datamart)",
-   "crons": [
-    "10 17 * * 2"
-   ],
-   "nextRun": "2026-10-20T17:10:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
-   "expectedEveryHours": 168.0
-  },
-  {
-   "workflow": "update-us-nass-processing.yml",
-   "name": "Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)",
-   "crons": [
-    "40 16 1-8,20 * *"
-   ],
-   "nextRun": "2026-10-20T16:40:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
-   "expectedEveryHours": 288.0
-  },
-  {
-   "workflow": "update-us-sap.yml",
-   "name": "Update USDA ERS season-average price forecast model (not an official USDA forecast)",
-   "crons": [
-    "35 15 * * 5"
-   ],
-   "nextRun": "2026-10-23T15:35:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
-   "expectedEveryHours": 168.0
-  },
-  {
-   "workflow": "update-us-wasde.yml",
-   "name": "Update USDA WASDE supply and demand tables with month-to-month revisions (OCE / WAOB, public domain)",
-   "crons": [
-    "30 17 9-17 * *"
-   ],
-   "nextRun": "2026-11-09T17:30:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
    "expectedEveryHours": 24.0
   }
  ]

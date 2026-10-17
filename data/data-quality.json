@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T18:36:44Z",
+ "generatedAt": "2026-10-17T21:34:49Z",
  "summary": {
-  "files": 70,
+  "files": 73,
   "errors": 0,
   "warnings": 23
  },
@@ -841,6 +841,54 @@
    "generatedAt": "2026-10-14T15:07:29Z",
    "info": [],
    "nWarnings": 23,
+   "nErrors": 0
+  },
+  {
+   "file": "us-fmmo-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 48,
+    "points": 11173,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-17T21:23:24Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-ers-livestock-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 207,
+    "points": 28049,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-17T21:23:19Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-nass-processing-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 108,
+    "points": 2403,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-17T21:23:29Z",
+   "info": [],
+   "nWarnings": 0,
    "nErrors": 0
   },
   {
