@@ -1,0 +1,67 @@
+3355  rows=2000 years={2012: 89, 2013: 132, 2014: 132, 2015: 132, 2016: 132, 2017: 132, 2018: 135, 2019: 144, 2020: 144, 2021: 144, 2022: 144, 2023: 144, 2024: 144, 2025: 144, 2026: 108}
+3355 ?q=report_year=2026 rows=108 years={2026: 108}
+areas All Market Average|None; Appalachian (Charlotte)|005; Arizona (Phoenix)|131; California (Los Angeles)|051; Central (Kansas City)|032; Florida (Tampa)|006; Mideast (Cleveland)|033; Northeast (Boston)|001; Pacific Northwest (Seattle)|124; Southeast (Atlanta)|007; Southwest (Dallas)|126; Upper Midwest (Chicago)|030
+3355 ?q=report_year=2025 rows=144 years={2025: 144}
+3355 ?q=report_year=2012 rows=89 years={2012: 89}
+3355 ?q=report_year=2012:2014 rows=353 years={2012: 89, 2013: 132, 2014: 132}
+3355 ?q=report_month=Aug rows=173 years={2012: 11, 2013: 11, 2014: 11, 2015: 11, 2016: 11, 2017: 11, 2018: 11, 2019: 12, 2020: 12, 2021: 12, 2022: 12, 2023: 12, 2024: 12, 2025: 12, 2026: 12}
+WX 0122 NO HTTP Error 404: Not Found
+WX 0222 NO HTTP Error 404: Not Found
+WX 0322 NO HTTP Error 404: Not Found
+WX 0422 NO HTTP Error 404: Not Found
+WX 0522 NO HTTP Error 404: Not Found
+WX 0622 NO HTTP Error 404: Not Found
+WX 0722 NO HTTP Error 404: Not Found
+WX 0822 NO HTTP Error 404: Not Found
+WX 0922 NO HTTP Error 404: Not Found
+WX 1022 NO HTTP Error 404: Not Found
+WX 1122 NO HTTP Error 404: Not Found
+WX 1222 NO HTTP Error 404: Not Found
+WX 0123 NO HTTP Error 404: Not Found
+WX 0223 NO HTTP Error 404: Not Found
+WX 0323 NO HTTP Error 404: Not Found
+WX 0423 NO HTTP Error 404: Not Found
+WX 0523 NO HTTP Error 404: Not Found
+WX 0623 NO HTTP Error 404: Not Found
+WX 0723 NO HTTP Error 404: Not Found
+WX 0823 NO HTTP Error 404: Not Found
+WX 0923 NO HTTP Error 404: Not Found
+WX 1023 NO HTTP Error 404: Not Found
+WX 1123 NO HTTP Error 404: Not Found
+WX 1223 NO HTTP Error 404: Not Found
+WX 0124 NO HTTP Error 404: Not Found
+WX 0224 NO HTTP Error 404: Not Found
+WX 0324 NO HTTP Error 404: Not Found
+WX 0424 NO HTTP Error 404: Not Found
+WX 0524 NO HTTP Error 404: Not Found
+WX 0624 NO HTTP Error 404: Not Found
+WX 0724 NO HTTP Error 404: Not Found
+WX 0824 NO HTTP Error 404: Not Found
+WX 0924 NO HTTP Error 404: Not Found
+WX 1024 NO HTTP Error 404: Not Found
+WX 1124 NO HTTP Error 404: Not Found
+WX 1224 NO HTTP Error 404: Not Found
+WX 0125 NO HTTP Error 404: Not Found
+WX 0225 NO HTTP Error 404: Not Found
+WX 0325 NO HTTP Error 404: Not Found
+WX 0425 NO HTTP Error 404: Not Found
+WX 0525 NO HTTP Error 404: Not Found
+WX 0625 NO HTTP Error 404: Not Found
+WX 0725 NO HTTP Error 404: Not Found
+WX 0825 NO HTTP Error 404: Not Found
+WX 0925 NO HTTP Error 404: Not Found
+WX 1025 NO HTTP Error 404: Not Found
+WX 1125 NO HTTP Error 404: Not Found
+WX 1225 NO HTTP Error 404: Not Found
+WX 0126 NO HTTP Error 404: Not Found
+WX 0226 NO HTTP Error 404: Not Found
+WX 0326 NO HTTP Error 404: Not Found
+WX 0426 NO HTTP Error 404: Not Found
+WX 0526 NO HTTP Error 404: Not Found
+WX 0626 NO HTTP Error 404: Not Found
+WX 0726 NO HTTP Error 404: Not Found
+WX 0826 NO HTTP Error 404: Not Found
+WX 0926 200 ﻿<?xml version="1.0" encoding="utf-8"?><Report Name="wasde
+WX 1026 200 ﻿<?xml version="1.0" encoding="utf-8"?> <Report Name="was
+fo pages: [[0, ["cafo1026", "cafo0926", "cafo0726", "cafo0726", "cafo0626", "cafo0526", "cafo0426", "cafo0326", "cafo0226", "cafo0126", "cafo1026"]], [1, ["cafo1225", "cafo1025", "cafo1026"]], [2, ["cafo1026"]], [3, ["cafo1026"]], [4, ["cafo1026"]], [5, ["cafo1026"]], [6, ["cafo1026"]], [7, ["cafo1026"]], [8, ["cafo1026"]], [9, ["cafo1026"]], [10, ["cafo1026"]], [11, ["cafo1026"]]]
+gc pages: [[0, ["cagc1026", "cagc0926", "cagc0726", "cagc0726", "cagc0626", "cagc0526", "cagc0426", "cagc0326", "cagc0226", "cagc0126", "cagc1026"]], [1, ["cagc1225", "cagc1025", "cagc1026"]], [2, ["cagc1026"]], [3, ["cagc1026"]], [4, ["cagc1026"]], [5, ["cagc1026"]], [6, ["cagc1026"]], [7, ["cagc1026"]], [8, ["cagc1026"]], [9, ["cagc1026"]], [10, ["cagc1026"]], [11, ["cagc1026"]]]
