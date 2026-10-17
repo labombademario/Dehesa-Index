@@ -30,7 +30,7 @@
   function load(cc) {
     var f = FILES[cc] || 'data/eu-trade-products.json', v = 'data/views/trade-products/' + cc + '.json'; /* vista por pais (KB); si no existe, el fichero completo */
     if (TPV.indexOf(cc) < 0) return CACHE[cc] || (CACHE[cc] = Promise.resolve(null));   /* sin datos de socios por producto para este pais: no se pide nada */
-    if (!CACHE[cc]) CACHE[cc] = fetch(v).then(function (r) { return r.ok ? r.json() : fetch(f).then(function (r2) { return r2.ok ? r2.json() : null; }); }).catch(function () { return null; });
+    if (!CACHE[cc]) CACHE[cc] = (function () { var J = window.DIJsonOnce = window.DIJsonOnce || {}; return J[v] || (J[v] = fetch(v).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); })().then(function (d) { return d ? d : fetch(f).then(function (r2) { return r2.ok ? r2.json() : null; }); }).catch(function () { return null; });
     return CACHE[cc];
   }
   var MAPLIB = null;
