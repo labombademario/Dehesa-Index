@@ -2749,3 +2749,7 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 @media (max-width:480px){.fsh-kpis{grid-template-columns:1fr 1fr}.fsh-kv{font-size:18px}}
 .fsh-sec .wp-chart{max-width:760px}
 .fsh-mgr-two{display:flex;gap:18px;flex-wrap:wrap;align-items:center}.fsh-mgr-two .fsh-age{flex:1 1 360px}.fsh-pie{flex:0 1 340px}
+
+/* «Ver los datos de» y el mapa de regiones forman un solo bloque (el mapa se colorea según lo elegido) */
+.ps-secgrp { margin: 32px 0 18px; padding: 14px 16px 2px; border: 1px solid var(--border); border-radius: 14px; background: color-mix(in srgb, var(--accent) 4%, transparent); }
+.ps-secgrp .ps-rm { margin-bottom: 14px; }
