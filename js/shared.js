@@ -681,7 +681,8 @@
   var SOCIAL = [
     { n: 'YouTube', u: 'https://www.youtube.com/@dehesaindex', d: 'M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z' },
     { n: 'Substack', u: 'https://dehesaindex.substack.com', d: 'M4 4h16v2.5H4V4zm0 4.5h16V11H4V8.5zM4 13h16v8l-8-4.5L4 21v-8z' },
-    { n: 'X', u: 'https://x.com/Dehesaindex', d: 'M18.9 2H22l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.2 22H2l7.7-8.8L1.6 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z' }
+    { n: 'X', u: 'https://x.com/Dehesaindex', d: 'M18.9 2H22l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.2 22H2l7.7-8.8L1.6 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z' },
+    { n: 'Facebook', u: 'https://www.facebook.com/profile.php?id=61595385425513', d: 'M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z' }
   ];
   function socialHtml(t) {
     var h = '<div class="di-footer-social" aria-label="' + esc(t.followTitle) + '"><span class="di-footer-social-t">' + esc(t.followTitle) + '</span>';
