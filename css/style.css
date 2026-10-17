@@ -2753,3 +2753,13 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 /* «Ver los datos de» y el mapa de regiones forman un solo bloque (el mapa se colorea según lo elegido) */
 .ps-secgrp { margin: 32px 0 18px; padding: 14px 16px 2px; border: 1px solid var(--border); border-radius: 14px; background: color-mix(in srgb, var(--accent) 4%, transparent); }
 .ps-secgrp .ps-rm { margin-bottom: 14px; }
+
+/* Previsiones de carne (js/eu-forecast.js) */
+.ef-gh { font-size: 16px; margin: 18px 0 6px; }
+.ef-tbl th[scope=row] { font-weight: 600; text-align: left; }
+.ef-chg { font-size: 12px; font-weight: 600; white-space: nowrap; margin-left: 2px; }
+.ef-chg.up { color: #2f6b4a; } .ef-chg.dn { color: #a4472f; }
+.ef-chip { display: inline-block; margin: 2px 8px 2px 0; padding: 2px 8px; border: 1px solid var(--border); border-radius: 12px; font-size: 12.5px; white-space: nowrap; }
+@media (min-width: 721px) { .ef-tbl { table-layout: fixed; width: 100%; } .ef-tbl th:nth-child(1) { width: 26%; } .ef-tbl th:nth-child(2) { width: 17%; } .ef-tbl th:nth-child(3) { width: 21%; } .ef-tbl th { text-align: left; } .ef-tbl .num { text-align: left; } }
+@media (max-width: 720px) { .ef-tbl th[scope=row], .ef-tbl td { text-align: left !important; } .ef-tbl td[data-label] { display: flex !important; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; } .ef-chip { margin: 2px 6px 2px 0; } }
+@media (max-width: 720px) { .ef-tbl th[scope=row] { justify-content: flex-start !important; text-align: left !important; font-size: 15px; } .ef-tbl td[data-label] { justify-content: flex-start !important; } .ef-tbl td[data-label]::before { min-width: 9.5em; } }

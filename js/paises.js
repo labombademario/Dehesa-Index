@@ -509,7 +509,7 @@
     var el = document.createElement('div'); el.id = 'pp-forecast'; el.style.minHeight = '1px'; prev.parentNode.insertBefore(el, prev.nextSibling);
     var go = function () { if (window.DIEuForecast && ST.c === cc) window.DIEuForecast.mount(el, lang(), cc); };
     var load = function (src, then) { var sc = document.createElement('script'); sc.src = src; sc.onload = then; sc.onerror = then; document.head.appendChild(sc); };
-    nearView(el, function () { if (window.DIEuForecast) go(); else if (window.DILabelTl) load('js/eu-forecast.js?v=0', go); else load('js/label-tl.js?v=0', function () { load('js/eu-forecast.js?v=0', go); }); });
+    nearView(el, function () { if (window.DIEuForecast) go(); else if (window.DILabelTl) load('js/eu-forecast.js?v=1', go); else load('js/label-tl.js?v=0', function () { load('js/eu-forecast.js?v=1', go); }); });
   }
   /* Pesca y acuicultura (js/pesca.js, data/views/fish/<CC>.json): 24 países de la UE (Eurostat) y EE. UU. (NOAA). Con el sector «Pesca» sube justo debajo de las cifras clave;
      con «Agricultura» o «Ganadería» se pliega (no se borra), como el resto de bloques de otro sector. */
