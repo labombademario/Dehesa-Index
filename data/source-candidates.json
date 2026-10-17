@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T21:07:00Z",
+ "generatedAt": "2026-10-17T21:37:27Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -6705,11 +6705,20 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA AMS Dairy Programs, Federal Milk Marketing Orders (Market News datamart)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (48 series en el catalogo unificado)",
+   "products": [
+    "butter",
+    "cheese",
+    "maize",
+    "milk",
+    "rice"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "monthly",
    "access": {
     "api": null,
     "csv": null,
@@ -6832,7 +6841,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
-   "dataset": "Ya integrada (297 series en el catalogo unificado)",
+   "dataset": "Ya integrada (504 series en el catalogo unificado)",
    "products": [
     "butter",
     "cattle",
@@ -6845,6 +6854,7 @@
     "poultry",
     "rapeseed",
     "rice",
+    "sheep",
     "soy",
     "sugar",
     "wheat"
@@ -7058,7 +7068,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "dataset": "Ya integrada (490 series en el catalogo unificado)",
+   "dataset": "Ya integrada (598 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
