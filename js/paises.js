@@ -260,7 +260,8 @@
   }
   function sectorUp() {
     var SEC = window.DehesaSector, bar = document.getElementById('ps-sector'), det = document.getElementById('ps-detail'); if (!SEC || !bar) return;
-    bar.innerHTML = SEC.barHtml(); SEC.bind(bar, function () { var y = window.pageYOffset; build(); setTimeout(function () { try { window.scrollTo(0, y); } catch (e) {} }, 0); });
+    var reb = function () { var y = window.pageYOffset; build(); setTimeout(function () { try { window.scrollTo(0, y); } catch (e) {} }, 0); };
+    bar.innerHTML = SEC.barHtml(); SEC.bind(bar, reb); SEC.bind(document.getElementById('pp-sum-sec'), reb);   // la misma elección también desde «En pocas palabras»
     if (!det || SEC.get() === 'all') return;
     var hide = [].filter.call(det.children, function (el) { return el.id && !SEC.visible(SEC.ofDetail(el.id)); }); if (!hide.length) return;
     var wrap = document.createElement('div'); wrap.innerHTML = SEC.foldHtml(hide.length, ''); var fold = wrap.firstChild; if (!fold) return;

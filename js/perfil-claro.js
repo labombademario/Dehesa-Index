@@ -448,7 +448,7 @@
   function nfmt(v, d, lang) { try { return v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function dec(v) { var a = Math.abs(v); return a >= 100 ? 0 : a >= 10 ? 1 : 2; }
   function unitTxt(v, u, lang) { // «EUR million» se lee mejor como «12.050 millones de EUR»
-    var m = /^(\S+) million(?: \(.*\))?$/.exec(u), n = nfmt(v, dec(v), lang); if (!m) return n + ' ' + u;
+    var m = /^(\S+) million(?: \(.*\))?$/.exec(u), n = nfmt(v, dec(v), lang), W = { 't live weight': ['t live weight', 't de peso vivo', 't de poids vif', 't di peso vivo'], 't product weight': ['t product weight', 't de peso del producto', 't de poids du produit', 't di peso del prodotto'], 'thousand t': ['thousand t', 'miles de t', 'milliers de t', 'migliaia di t'] }[u]; if (W) return n + ' ' + W[li(lang)]; if (!m) return n + ' ' + u;
     return { es: n + ' millones de ' + m[1], en: m[1] + ' ' + n + ' million', fr: n + ' millions de ' + m[1], it: n + ' milioni di ' + m[1] }[lang] || n + ' ' + u;
   }
   function pct(v, lang) { return (v > 0 ? '+' : v < 0 ? '−' : '') + nfmt(Math.abs(v), 1, lang) + ' %'; }
