@@ -78,7 +78,22 @@ export const FAMILIES = {
     parts: r => [r.variety, r.productStage], region: r => r.memberStateCode,
     keep: r => r.periodType === 'Week' && /^National/i.test(r.market || '') },
   fertilizantes: { endpoint: 'fertiliser', freq: 'monthly', since: null, date: 'yearMonth',
-    parts: r => [r.product], region: () => 'EU', unitFixed: '€/tonne' }
+    parts: r => [r.product], region: () => 'EU', unitFixed: '€/tonne' },
+  // 17-oct-2026 (petición de Mario): despieces de vacuno y cerdo, animales vivos y pollo mensual. Los precios llegan ya en euros (comprobado: Polonia, Chequia, Hungría… en €).
+  // Cobertura real del portal: despiece vacuno 12 países y cerdo 13, casi todo desde 2021; el mensual solo trae carne picada (España solo publica ese).
+  'despiece-vacuno': { endpoint: 'beef/cuts', path: 'beef/cuts/prices', freq: 'weekly', since: '01/01/2015', date: 'endDate',
+    parts: r => [r.category, r.priceType], region: r => r.memberStateCode },
+  'despiece-vacuno-mes': { endpoint: 'beef/cuts/month', path: 'beef/cuts/prices/month', freq: 'monthly', since: '01/01/2015', date: 'endDate',
+    parts: r => [r.category, r.priceType], region: r => r.memberStateCode },
+  'despiece-cerdo': { endpoint: 'pigmeat/cuts', path: 'pigmeat/cuts/prices', freq: 'weekly', since: '01/01/2015', date: 'endDate',
+    parts: r => [r.category, r.priceType], region: r => r.memberStateCode },
+  'despiece-cerdo-mes': { endpoint: 'pigmeat/cuts/month', path: 'pigmeat/cuts/prices/month', freq: 'monthly', since: '01/01/2015', date: 'endDate',
+    parts: r => [r.category, r.priceType], region: r => r.memberStateCode },
+  // Terneros y cebo joven vivos. La misma categoría llega en €/kg y en €/cabeza según el país: son series distintas (nunca se convierte una en otra).
+  vivos: { endpoint: 'liveAnimal', path: 'liveAnimal/prices', freq: 'weekly', since: '01/01/2015', date: 'endDate',
+    parts: r => [r.category, /head/i.test(r.unit || '') ? 'per head' : 'per kg'], region: r => r.memberStateCode },
+  'pollo-mes': { endpoint: 'poultry/month', path: 'poultry/prices/month', freq: 'monthly', since: '01/01/2015', date: 'endDate',
+    parts: r => [r.productName, r.priceType], region: r => r.memberStateCode }
 };
 
 const MIN_POINTS = 10;

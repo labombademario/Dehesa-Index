@@ -12,7 +12,7 @@ OK_STATES = ('LIVE', 'FRESH', 'EXPECTED_DELAY')   # igual que js/freshness.js ok
 GROUP_METRIC = {
   'prices': 'price', 'prices_lv': 'price', 'prices_fv': 'price', 'prices_paid': 'price', 'quotes': 'price', 'meat_regions': 'price', 'milk_regions': 'price', 'product': 'price',
   'eu_cereales': 'price', 'eu_vacuno': 'price', 'eu_fruta': 'price', 'eu_oleaginosas': 'price', 'eu_arroz': 'price', 'eu_lacteos': 'price', 'eu_leche': 'price', 'eu_aceite': 'price',
-  'eu_cerdo': 'price', 'eu_huevos': 'price', 'eu_pollo': 'price', 'eu_ovino': 'price', 'eu_vino': 'price', 'eu_azucar': 'price',
+  'eu_cerdo': 'price', 'eu_despiece-vacuno': 'price', 'eu_despiece-vacuno-mes': 'price', 'eu_despiece-cerdo': 'price', 'eu_despiece-cerdo-mes': 'price', 'eu_vivos': 'price', 'eu_pollo-mes': 'price', 'eu_huevos': 'price', 'eu_pollo': 'price', 'eu_ovino': 'price', 'eu_vino': 'price', 'eu_azucar': 'price',
   'eu_fertilizantes': 'input_price',
   'idx_perc': 'price_index', 'idx_pag': 'price_index',
   'crops': 'production', 'crops_regions': 'production', 'production': 'production', 'livestock': 'production', 'milk': 'production',

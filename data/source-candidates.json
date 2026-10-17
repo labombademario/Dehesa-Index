@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T21:37:27Z",
+ "generatedAt": "2026-10-17T22:25:46Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -3143,7 +3143,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "European Commission — Agri-food Data Portal (DG AGRI)",
-   "dataset": "Ya integrada (3818 series en el catalogo unificado)",
+   "dataset": "Ya integrada (5545 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -3172,7 +3172,8 @@
    "productsConfirmed": true,
    "metrics": [
     "input_price",
-    "price"
+    "price",
+    "production"
    ],
    "frequency": "mixed",
    "access": {
@@ -3369,7 +3370,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (17214 series en el catalogo unificado)",
+   "dataset": "Ya integrada (17302 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",

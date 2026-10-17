@@ -1,7 +1,7 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-10-15T14:49:05.098Z",
+ "generatedAt": "2026-10-17T22:09:08.571Z",
  "families": [
   {
    "id": "cereales",
@@ -122,6 +122,54 @@
    "series": 3,
    "points": 279,
    "latest": "2026-09-01"
+  },
+  {
+   "id": "despiece-vacuno",
+   "endpoint": "beef/cuts",
+   "freq": "weekly",
+   "series": 5,
+   "points": 6544,
+   "latest": "2026-10-11"
+  },
+  {
+   "id": "despiece-vacuno-mes",
+   "endpoint": "beef/cuts/month",
+   "freq": "monthly",
+   "series": 3,
+   "points": 733,
+   "latest": "2026-09-30"
+  },
+  {
+   "id": "despiece-cerdo",
+   "endpoint": "pigmeat/cuts",
+   "freq": "weekly",
+   "series": 7,
+   "points": 13240,
+   "latest": "2026-10-11"
+  },
+  {
+   "id": "despiece-cerdo-mes",
+   "endpoint": "pigmeat/cuts/month",
+   "freq": "monthly",
+   "series": 3,
+   "points": 839,
+   "latest": "2026-09-30"
+  },
+  {
+   "id": "vivos",
+   "endpoint": "liveAnimal",
+   "freq": "weekly",
+   "series": 5,
+   "points": 29385,
+   "latest": "2026-10-11"
+  },
+  {
+   "id": "pollo-mes",
+   "endpoint": "poultry/month",
+   "freq": "monthly",
+   "series": 6,
+   "points": 5881,
+   "latest": "2026-09-30"
   }
  ]
 }

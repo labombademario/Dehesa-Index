@@ -27,7 +27,13 @@
     azucar: ['Azúcar', 'Sugar', 'Sucre', 'Zucchero'],
     vino: ['Vino', 'Wine', 'Vin', 'Vino'],
     fruta: ['Fruta y hortaliza', 'Fruit and vegetables', 'Fruits et légumes', 'Frutta e ortaggi'],
-    fertilizantes: ['Fertilizantes', 'Fertilisers', 'Engrais', 'Fertilizzanti']
+    fertilizantes: ['Fertilizantes', 'Fertilisers', 'Engrais', 'Fertilizzanti'],
+    'despiece-vacuno': ['Vacuno: despieces (semanal)', 'Beef cuts (weekly)', 'Bovins : morceaux (hebdomadaire)', 'Bovini: tagli (settimanale)'],
+    'despiece-vacuno-mes': ['Vacuno: carne picada (mensual)', 'Beef minced meat (monthly)', 'Bovins : viande hachée (mensuel)', 'Bovini: carne macinata (mensile)'],
+    'despiece-cerdo': ['Cerdo: despieces (semanal)', 'Pigmeat cuts (weekly)', 'Porc : morceaux (hebdomadaire)', 'Suino: tagli (settimanale)'],
+    'despiece-cerdo-mes': ['Cerdo: carne picada (mensual)', 'Pigmeat minced meat (monthly)', 'Porc : viande hachée (mensuel)', 'Suino: carne macinata (mensile)'],
+    vivos: ['Animales vivos: terneros y recría', 'Live animals: calves and store cattle', 'Animaux vivants : veaux et bovins d’élevage', 'Animali vivi: vitelli e bovini da ristallo'],
+    'pollo-mes': ['Pollo (mensual)', 'Poultry (monthly)', 'Volaille (mensuel)', 'Pollame (mensile)']
   };
   // Etiquetas del portal (en inglés) -> [es, en, fr, it]. Lo que no está aquí se muestra tal cual lo publica el portal.
   var W = {
@@ -98,6 +104,15 @@
     'Heavy Lamb': ['Cordero pesado', 'Heavy lamb', 'Agneau lourd', 'Agnello pesante'], 'Light Lamb': ['Cordero ligero', 'Light lamb', 'Agneau léger', 'Agnello leggero'],
     'Paddy': ['Arroz cáscara', 'Paddy rice', 'Riz paddy', 'Risone'], 'Milled non parboiled': ['Blanco (no vaporizado)', 'Milled, non-parboiled', 'Blanchi (non étuvé)', 'Lavorato (non parboiled)'], 'Broken': ['Partido', 'Broken', 'Brisures', 'Rotture'],
     'Japonica': ['Japónica', 'Japonica', 'Japonica', 'Japonica'], 'Indica': ['Índica', 'Indica', 'Indica', 'Indica'], 'Avg': ['media', 'average', 'moyenne', 'media'],
+    'Forequarter': ['Cuarto delantero', 'Forequarter', 'Avant', 'Quarto anteriore'], 'Hindquarter': ['Cuarto trasero', 'Hindquarter', 'Arrière', 'Quarto posteriore'],
+    'Minced meat': ['Carne picada', 'Minced meat', 'Viande hachée', 'Carne macinata'], 'Minced Meat': ['Carne picada', 'Minced meat', 'Viande hachée', 'Carne macinata'],
+    'Ham': ['Jamón (pierna)', 'Ham', 'Jambon', 'Prosciutto (coscia)'], 'Loin': ['Lomo', 'Loin', 'Longe', 'Lonza'], 'Belly': ['Panceta', 'Belly', 'Poitrine', 'Pancetta'], 'Shoulder': ['Paleta', 'Shoulder', 'Épaule', 'Spalla'],
+    'Non-retail buying price': ['Compra fuera del comercio minorista', 'Non-retail buying price', 'Prix d’achat hors commerce de détail', 'Prezzo d’acquisto fuori dal dettaglio'],
+    'Retail buying prices': ['Compra del comercio minorista', 'Retail buying price', 'Prix d’achat du commerce de détail', 'Prezzo d’acquisto del dettaglio'],
+    'Non-retail buying prices': ['Compra fuera del comercio minorista', 'Non-retail buying price', 'Prix d’achat hors commerce de détail', 'Prezzo d’acquisto fuori dal dettaglio'],
+    'Male Calves Dairy Type': ['Terneros machos de raza lechera', 'Male calves, dairy type', 'Veaux mâles de race laitière', 'Vitelli maschi da latte'], 'Male Calves Beef Type': ['Terneros machos de raza de carne', 'Male calves, beef type', 'Veaux mâles de race à viande', 'Vitelli maschi da carne'],
+    'Young Store Cattle': ['Ganado joven de recría', 'Young store cattle', 'Jeunes bovins d’engraissement', 'Giovani bovini da ristallo'], 'Yearling Female Store Cattle': ['Añojas de recría', 'Yearling female store cattle', 'Génisses d’un an', 'Femmine di un anno da ristallo'], 'Yearling Male Store Cattle': ['Añojos de recría', 'Yearling male store cattle', 'Mâles d’un an', 'Maschi di un anno da ristallo'],
+    'per head': ['por cabeza', 'per head', 'par tête', 'per capo'], 'per kg': ['por kg de peso vivo', 'per kg live weight', 'par kg de poids vif', 'per kg di peso vivo'],
     'Raw milk': ['Leche cruda', 'Raw milk', 'Lait cru', 'Latte crudo'], 'Organic raw milk': ['Leche cruda ecológica', 'Organic raw milk', 'Lait cru bio', 'Latte crudo biologico'],
     'Extra virgin olive oil (up to 0.8%)': ['Aceite de oliva virgen extra (hasta 0,8 %)', 'Extra virgin olive oil (up to 0.8%)', "Huile d'olive vierge extra (jusqu'à 0,8 %)", "Olio extra vergine d'oliva (fino a 0,8%)"],
     'Virgin olive oil (up to 2%)': ['Aceite de oliva virgen (hasta 2 %)', 'Virgin olive oil (up to 2%)', "Huile d'olive vierge (jusqu'à 2 %)", "Olio vergine d'oliva (fino a 2%)"],

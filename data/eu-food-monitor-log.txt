@@ -1,0 +1,7 @@
+EU27_2020: 91 series, ultimo mes 2026-07
+DE: 111 series, ultimo mes 2026-07
+ES: 94 series, ultimo mes 2026-07
+FR: 94 series, ultimo mes 2026-07
+IT: 97 series, ultimo mes 2026-07
+NL: 84 series, ultimo mes 2026-07
+PL: 106 series, ultimo mes 2026-07

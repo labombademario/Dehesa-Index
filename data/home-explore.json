@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T13:17:09Z",
+ "generatedAt": "2026-10-17T22:20:27Z",
  "facts": [
   {
    "id": "eu",
    "file": "eu/index.json",
    "date": "2026-10-11",
-   "series": 589,
-   "families": 15
+   "series": 618,
+   "families": 21
   },
   {
    "id": "drought",

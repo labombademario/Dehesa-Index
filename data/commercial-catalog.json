@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T21:14:29Z",
+ "generatedAt": "2026-10-17T22:20:23Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,9 +10,9 @@
   "sourcesApto": 128,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 284,
+  "datasets": 288,
   "datasets_apto": 165,
-  "datasets_condiciones": 107,
+  "datasets_condiciones": 111,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
   "datasets_reviewBeforeSelling": 0,
@@ -3270,6 +3270,29 @@
    ]
   },
   {
+   "path": "data/eu-food-monitor-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:EU",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eu-food-monitor/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ]
+  },
+  {
    "path": "data/eu-gapfill-stats.json",
    "scope": "fichero",
    "verdict": "condiciones",
@@ -3296,6 +3319,271 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-organic-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_agrifood"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:BE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:BG",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:CY",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:CZ",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EL",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:ES",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FR",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HR",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LV",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:PL",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:PT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:RO",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SI",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
+   "path": "data/eu-production-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eu_agrifood"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:BE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:BG",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:CY",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:CZ",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EL",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:ES",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:EU",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FI",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:FR",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HR",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:HU",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:IT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LU",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:LV",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:PL",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:PT",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:RO",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SE",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SI",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:SK",
+     "sourceId": "eu_agrifood",
+     "verdict": "condiciones"
+    }
    ]
   },
   {

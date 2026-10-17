@@ -965,6 +965,21 @@ def us_markets_wasde(doc, errs, warns, stats):
     for k in ("corn|avg-farm-price-bu", "wheat|avg-farm-price-bu", "soybeans|avg-farm-price-bu", "cotton|avg-farm-price", "corn|production", "dairyprices|class-iii"):
         if k not in ids: errs.append("wasde: falta la magnitud %s" % k)
     stats["series"] = len(I)
+def eu_food_monitor_geo(doc, errs, warns, stats):
+    """Monitor de precios de alimentos de Eurostat por zona: >=20 series, sin pareja producto-indice repetida, indices base 2025=100 entre 0 y 2000, mes de inicio coherente con la longitud y que acaba en el mes declarado."""
+    seen = set(); n = 0
+    def mi(m): return int(m[:4]) * 12 + int(m[5:7]) - 1
+    for s in doc["series"]:
+        k = (s["p"], s["i"])
+        if k in seen: errs.append("fpm %s: serie repetida %s" % (doc["geo"], k)); continue
+        seen.add(k)
+        for v in s["v"]:
+            if v is not None and not 0 < v < 2000: errs.append("fpm %s %s: indice imposible %r" % (doc["geo"], k, v)); break
+        if mi(s["s"]) + len(s["v"]) - 1 > mi(doc["end"]): errs.append("fpm %s %s: acaba despues del mes final %s" % (doc["geo"], k, doc["end"]))
+        if s["v"][-1] is None or s["v"][0] is None: errs.append("fpm %s %s: empieza o acaba en hueco" % (doc["geo"], k))
+        n += 1
+    if n < 20: errs.append("fpm %s: solo %d series" % (doc["geo"], n))
+    stats["series"] = n
 def us_markets_sap(doc, errs, warns, stats):
     """Prevision de precio de ERS (modelo, no oficial): >=3 productos, cada ano con puntos de fecha ordenada y sin repetir, precio del modelo entre 0 y 1000, la marca official=false y la nota bilingue."""
     n = 0

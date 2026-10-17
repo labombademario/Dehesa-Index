@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 142 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 29482 series en el catalogo unificado.
+Resumen: 142 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 31297 series en el catalogo unificado.
 
 ## VERIFIED (142)
 
@@ -53,12 +53,12 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `enesa` | Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario | ES | CUSTOM | si/si | si | 0 | Citar el informe como 'Informe de Contratación del Seguro Agrario nº NN ENESA'. Tablas con 'Fuente Agroseguro. Elaboración ENESA': solo se c… |
 | `epa_ie` | Environmental Protection Agency (EPA) Irlanda — indicadores ambientales EIIA13 y EIIA14, publicados por el CSO | IE | CC-BY-4.0 | si/si | si | 0 |  |
 | `esbirka_cz` | Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb. | CZ | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Sbírka zákonů. El texto se leyó en una copia editorial (epravo.cz), no en e-Sbírka, … |
-| `eu_agrifood` | European Commission — Agri-food Data Portal (DG AGRI) | EU | EU-REUSE-2011-833 | si/conditional | si | 3860 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
+| `eu_agrifood` | European Commission — Agri-food Data Portal (DG AGRI) | EU | EU-REUSE-2011-833 | si/conditional | si | 5587 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_oil_bulletin` | European Commission — Weekly Oil Bulletin (DG ENER) | EU | EU-REUSE-2011-833 | si/conditional | si | 1 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_pdo_candiago` | Candiago et al. (2022) - EU-PDO: inventario geoespacial de las DOP de vino de Europa (Scientific Data; figshare) | EU | CC0-1.0 | si/si | si | 0 | El contorno se deriva de municipios de EuroRegionalMap (EuroGeographics) y del registro eAmbrosia a nov-2021: es orientativo. Solo DOP de vi… |
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17214 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17302 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 1808 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
 | `fek_gr` | Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023 | EL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y e… |

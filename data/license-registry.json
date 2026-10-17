@@ -6054,6 +6054,75 @@
     "usda_nass"
    ],
    "notes": "Libro interno que acumula los informes mensuales de NASS; mismos valores que us-nass-processing-stats.json."
+  },
+  "data/eu-organic-stats.json": {
+   "byCountry": {
+    "AT": "eu_agrifood",
+    "BE": "eu_agrifood",
+    "BG": "eu_agrifood",
+    "CY": "eu_agrifood",
+    "CZ": "eu_agrifood",
+    "DE": "eu_agrifood",
+    "DK": "eu_agrifood",
+    "EE": "eu_agrifood",
+    "EL": "eu_agrifood",
+    "ES": "eu_agrifood",
+    "FR": "eu_agrifood",
+    "HR": "eu_agrifood",
+    "IE": "eu_agrifood",
+    "IT": "eu_agrifood",
+    "LT": "eu_agrifood",
+    "LV": "eu_agrifood",
+    "NL": "eu_agrifood",
+    "PL": "eu_agrifood",
+    "PT": "eu_agrifood",
+    "RO": "eu_agrifood",
+    "SE": "eu_agrifood",
+    "SI": "eu_agrifood"
+   },
+   "notes": "Precios ecologicos frente a convencionales en la UE (portal Agri-food de la Comision Europea), sin cambiar valores."
+  },
+  "data/eu-production-stats.json": {
+   "byCountry": {
+    "AT": "eu_agrifood",
+    "BE": "eu_agrifood",
+    "BG": "eu_agrifood",
+    "CY": "eu_agrifood",
+    "CZ": "eu_agrifood",
+    "DE": "eu_agrifood",
+    "DK": "eu_agrifood",
+    "EE": "eu_agrifood",
+    "EL": "eu_agrifood",
+    "ES": "eu_agrifood",
+    "EU": "eu_agrifood",
+    "FI": "eu_agrifood",
+    "FR": "eu_agrifood",
+    "HR": "eu_agrifood",
+    "HU": "eu_agrifood",
+    "IE": "eu_agrifood",
+    "IT": "eu_agrifood",
+    "LT": "eu_agrifood",
+    "LU": "eu_agrifood",
+    "LV": "eu_agrifood",
+    "NL": "eu_agrifood",
+    "PL": "eu_agrifood",
+    "PT": "eu_agrifood",
+    "RO": "eu_agrifood",
+    "SE": "eu_agrifood",
+    "SI": "eu_agrifood",
+    "SK": "eu_agrifood"
+   },
+   "notes": "Produccion, superficie y rendimiento de cereales, oleaginosas, arroz, azucar y aceite de oliva por pais (portal Agri-food de la Comision Europea), sin cambiar valores."
+  },
+  "data/eu-food-monitor-stats.json": {
+   "byCountry": {
+    "EU": "eurostat"
+   },
+   "notes": "Agregado UE del monitor de precios de alimentos de Eurostat (prc_fpmt_m), sin cambiar valores."
+  },
+  "data/eu-food-monitor/": {
+   "default": "eurostat",
+   "notes": "Monitor de precios de alimentos de Eurostat (prc_fpmt_m): un fichero por pais con 41 productos y 4 indices."
   }
  },
  "derived": [

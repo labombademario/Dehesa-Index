@@ -1447,6 +1447,10 @@
   "us-nass-processing-ledger.json": [
    "us-nass-processing-ledger",
    []
+  ],
+  "eu-food-monitor/index.json": [
+   "eu-food-monitor-index",
+   []
   ]
  },
  "globs": {
@@ -1626,6 +1630,12 @@
    "spain-esyrce-extra",
    [
     "spain_esyrce_extra"
+   ]
+  ],
+  "eu-food-monitor/[A-Z]*.json": [
+   "eu-food-monitor-geo",
+   [
+    "eu_food_monitor_geo"
    ]
   ]
  },

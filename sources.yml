@@ -1809,3 +1809,28 @@ sources:
     data: [us-nass-processing-stats.json, us-nass-processing-ledger.json]
     log: us-nass-processing-log.txt
     message: Transformacion de oleaginosas y cereales en EE. UU. - trituracion, aceites, grasas y coproductos (USDA NASS)
+  - id: eu-organic
+    name: Update EU organic vs conventional farm-gate price comparison (European Commission Agri-food data portal)
+    cron: ['20 9 * * 3']
+    script: scripts/update-eu-organic.py
+    timeout: 15
+    data: [eu-organic-stats.json]
+    log: eu-organic-log.txt
+    message: Precios ecologico frente a convencional en la UE (Comision Europea, portal Agri-food)
+  - id: eu-production
+    name: Update EU cereal and oilseed production, area and yield by country (European Commission Agri-food data portal)
+    cron: ['40 9 * * 3']
+    script: scripts/update-eu-production.py
+    timeout: 20
+    data: [eu-production-stats.json]
+    log: eu-production-log.txt
+    message: Produccion, superficie y rendimiento de cereales y oleaginosas por pais de la UE, mas arroz, azucar y aceite de oliva (Comision Europea, portal Agri-food)
+  - id: eu-food-monitor
+    name: Update Eurostat food price monitor (prc_fpmt_m, 41 products across the supply chain)
+    cron: ['15 10 20 * *']
+    script: scripts/update-eu-food-monitor.py
+    timeout: 45
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/eu-food-monitor)
+    data: [eu-food-monitor-stats.json, eu-food-monitor/index.json, eu-food-monitor-log.txt]
+    extra: ['!data/eu-food-monitor']
+    message: Monitor de precios de alimentos de Eurostat - 41 productos a lo largo de la cadena (precio agrario, produccion, importacion y consumo)

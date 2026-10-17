@@ -1,0 +1,32 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update EU cereal and oilseed production, area and yield by country (European Commission Agri-food data portal)
+on:
+  schedule:
+    - cron: '40 9 * * 3'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-eu-production
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-eu-production.py
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/eu-production-stats.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/eu-production-stats.json
+      - name: Publicar
+        run: bash scripts/publish-data.sh "Produccion, superficie y rendimiento de cereales y oleaginosas por pais de la UE, mas arroz, azucar y aceite de oliva (Comision Europea, portal Agri-food)" data/eu-production-stats.json data/eu-production-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}
