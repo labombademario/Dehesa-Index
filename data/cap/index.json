@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "asOf": "2026-10-16",
+ "asOf": "2026-10-17",
  "contract": {
   "doc": "Contrato comun de la PAC por pais en data/cap/<CC>/. Cada componente declara INGESTED, PARTIAL o NOT_INGESTED (con razon). Un pais solo pasa a INGESTED con una fuente institucional oficial y licencia aprobada en el License Gate. Sin consejo juridico ni calculo de ayudas individuales.",
   "components": [
@@ -907,43 +907,6 @@
   "events": [],
   "deadlines": [
    {
-    "cc": "ES",
-    "id": "advance",
-    "kind": "window",
-    "date": "2026-10-16",
-    "text": "Periodo de anticipos: hasta el 50 % en pagos directos.",
-    "regionalNote": "Lo paga la comunidad autónoma.",
-    "legalBasis": "RD 1048/2022, art. 118.2",
-    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
-   },
-   {
-    "cc": "IE",
-    "id": "advance-open",
-    "kind": "window-start",
-    "date": "2026-10-16",
-    "text": "Desde el 16 de octubre pueden pagarse anticipos de los pagos directos, de hasta el 70 % (en 2026 se admite hasta el 75 %, incluso antes de esa fecha).",
-    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a)",
-    "officialUrl": "https://www.gov.ie/en/service/4ae67-basic-income-support-for-sustainability-biss-scheme/"
-   },
-   {
-    "cc": "PT",
-    "id": "advance-open",
-    "kind": "window-start",
-    "date": "2026-10-16",
-    "text": "Empieza el período de pago de anticipos (16 de octubre), de hasta el 50 % o el 75 %.",
-    "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 6",
-    "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
-   },
-   {
-    "cc": "RO",
-    "id": "advance-open",
-    "kind": "window-start",
-    "date": "2026-10-16",
-    "text": "Desde el 16 de octubre puede pagarse el anticipo de los pagos directos, de hasta el 70 % (en 2023 solo hasta el 30 de noviembre).",
-    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a); Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), art. 4",
-    "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024"
-   },
-   {
     "cc": "SE",
     "id": "changes-crops",
     "kind": "deadline",
@@ -1352,6 +1315,43 @@
     "text": "Último día para comunicar cambios en la solicitud (15 de octubre del año de solicitud).",
     "legalBasis": "Uitvoeringsregeling GLB 2023 (BWBR0047444), art. 10",
     "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
+   },
+   {
+    "cc": "ES",
+    "id": "advance",
+    "kind": "window",
+    "date": "2027-10-16",
+    "text": "Periodo de anticipos: hasta el 50 % en pagos directos.",
+    "regionalNote": "Lo paga la comunidad autónoma.",
+    "legalBasis": "RD 1048/2022, art. 118.2",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "IE",
+    "id": "advance-open",
+    "kind": "window-start",
+    "date": "2027-10-16",
+    "text": "Desde el 16 de octubre pueden pagarse anticipos de los pagos directos, de hasta el 70 % (en 2026 se admite hasta el 75 %, incluso antes de esa fecha).",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a)",
+    "officialUrl": "https://www.gov.ie/en/service/4ae67-basic-income-support-for-sustainability-biss-scheme/"
+   },
+   {
+    "cc": "PT",
+    "id": "advance-open",
+    "kind": "window-start",
+    "date": "2027-10-16",
+    "text": "Empieza el período de pago de anticipos (16 de octubre), de hasta el 50 % o el 75 %.",
+    "legalBasis": "Portaria n.º 54-L/2023, de 27 de fevereiro (texto consolidado pelo PEPACC a 21-10-2024), art. 13, n.º 6",
+    "officialUrl": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf"
+   },
+   {
+    "cc": "RO",
+    "id": "advance-open",
+    "kind": "window-start",
+    "date": "2027-10-16",
+    "text": "Desde el 16 de octubre puede pagarse el anticipo de los pagos directos, de hasta el 70 % (en 2023 solo hasta el 30 de noviembre).",
+    "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a); Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), art. 4",
+    "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024"
    }
   ]
  }
