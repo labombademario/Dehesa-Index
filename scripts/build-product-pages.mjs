@@ -186,7 +186,8 @@ for (const lg of Object.keys(L)) {
     const rgs = o => { if (o.state) return rg(o).split(' (')[0].split(' · ')[0]; const r0 = rg(o); return (r0 === T.reg[o.r] || /^(EE\. UU\.|US|États-Unis|Stati Uniti)$/.test(r0)) ? (T.regShort[o.r] || r0) : r0; };   // en el título, abreviatura de país si el lugar es el país entero
     const head = fresh.slice(0, 2).map(o => rgs(o) + ' ' + line(o)).join(' · ');
     const head1 = fresh.slice(0, 1).map(o => rgs(o) + ' ' + line(o)).join(' · ');
-    const title = seoTitle(T.title(de, T.title(de, head).length <= 62 ? head : head1));   // <= ~62 caracteres: si dos mercados no caben, solo el primero (el resto va en la descripcion)
+    // <= ~62 caracteres: si dos mercados no caben, solo el primero (el resto va en la descripcion); si ni asi cabe en 65 (cifra de precio mas larga), solo la cifra sin el lugar
+    const head0 = fresh.length ? line(fresh[0]) : head1, title = seoTitle(T.title(de, T.title(de, head).length <= 62 ? head : T.title(de, head1).length <= 65 ? head1 : head0));
     const latest = obs.reduce((m, o) => o.observationDate > m ? o.observationDate : m, '');
     const desc = (T.descIntro(de) + obs.map(o => rg(o) + ' ' + line(o) + ' (' + per(o.observationDate) + (o.changePct != null ? ', ' + pct(o.changePct) : '') + ')').join('; ') + T.descEnd).slice(0, 300);
     const rows = obs.map(o => { const s = cite[o.sourceId] || {};
