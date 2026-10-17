@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-215 workflows (177 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+217 workflows (179 generados desde `sources.yml`, 38 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -134,9 +134,11 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-trade-extra.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-trade-extra.py | eu-extra-trade-stats.json | finish, validate-files |
 | update-eu-trade.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-trade.py | eu-trade-products.json, eu-trade-stats.json | finish, validate-files |
 | update-eu-vat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-vat.py | eu-vat.json | finish, validate-files |
+| update-eurostat-census.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eurostat-census.py | eurostat-census-stats.json | finish, validate-files |
 | update-eurostat-depth.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-depth.py | eurostat-depth-stats.json | finish, validate-files |
 | update-eurostat-eu.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eurostat-eu.py | eurostat-eu-stats.json, eurostat-eu2-stats.json, eurostat-eu3-stats.json … | finish, validate-files |
 | update-eurostat-fish.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eurostat-fish.py | eurostat-fish-stats.json | finish, validate-files |
+| update-eurostat-more.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eurostat-more.py | eurostat-more-stats.json | finish, validate-files |
 | update-eurostat-structure.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eurostat-structure.py | eurostat-structure-stats.json | finish, validate-files |
 | update-eurostat-structure2.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eurostat-structure.py | eurostat-structure2-stats.json | finish, validate-files |
 | update-eurostat.yml | a mano | mensual | qa-navigation.mjs, update-eurostat-indices.mjs | - | price-engine, publish |
