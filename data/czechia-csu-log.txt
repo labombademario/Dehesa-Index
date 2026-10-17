@@ -1,4 +1,4 @@
-CEN0203B filas nacionales mensuales: 10825
+CEN0203B filas nacionales mensuales: 10880
 precios: 19 series
 insumos: 9 series
 indices: 8 series
