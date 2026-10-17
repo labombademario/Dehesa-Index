@@ -1,0 +1,30 @@
+name: Fetch FAO major fishing areas (one-off)
+# Descarga una sola vez la geometria oficial de las zonas de pesca FAO (CC BY 4.0, FAO 2024, "FAO Major Fishing Areas for Statistical Purposes")
+# y la guarda en scripts/ref/fao-areas-lowres.json. Solo manual: no se programa.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - name: Download GeoJSON
+        run: |
+          curl -fsSL --retry 3 -o /tmp/fao.json "https://www.fao.org/fishery/geoserver/fifao/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=fifao:FAO_AREAS_ERASE_LOWRES&outputFormat=json"
+          python3 - <<'PY'
+          import json
+          d = json.load(open('/tmp/fao.json'))
+          assert d.get('type') == 'FeatureCollection' and len(d['features']) > 20, 'respuesta inesperada'
+          print(len(d['features']), 'features;', sorted(d['features'][0]['properties'].keys()))
+          json.dump(d, open('scripts/ref/fao-areas-lowres.json', 'w'), separators=(',', ':'))
+          PY
+          ls -l scripts/ref/fao-areas-lowres.json
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/ref/fao-areas-lowres.json
+          git commit -m "Zonas de pesca FAO: geometria oficial (CC BY 4.0)" && git push || echo "sin cambios"
