@@ -39,7 +39,7 @@ def wide(rows, namef, cols, scale=1.0):
         if nm is None: continue
         for i, c in enumerate(cols):
             v = U.fnum(r.get(c))
-            if v is not None: out[nm].append(("%04d-%02d" % (int(r["report_year"]), i + 1), v * scale))
+            if v is not None and v > 0: out[nm].append(("%04d-%02d" % (int(r["report_year"]), i + 1), v * scale))   # 0 = mes aun no publicado en la fila del ano en curso
     return out
 def main():
     local, outdir = U.parse_args()
@@ -59,7 +59,7 @@ def main():
             p = "%04d-%02d" % (int(r["report_year"]), mo)
             for f in ("ClassIWhole", "ClassIIWhole", "ClassIIIWhole", "ClassIVWhole"):
                 v = U.fnum(r.get(f))
-                if v is not None: by[f][r["MarketingArea"]].append((p, v))
+                if v is not None and v > 0: by[f][r["MarketingArea"]].append((p, v))
         unit = "USD/cwt (3.5% butterfat)"
         for f, nm in (("ClassIIWhole", "II"), ("ClassIIIWhole", "III"), ("ClassIVWhole", "IV")):
             a = by[f].get("All Market Average") or next(iter(by[f].values()), [])
@@ -90,7 +90,7 @@ def main():
         for y in range(2005, this + 1): rows += dm(3352, "Price and Pool Monthly", "report_year=%d" % y)
         U.log("3352:", len(rows), "filas")
         tot = [r for r in newest(rows, lambda r: (r["report_year"], r["report_month"], r["Pool_Order_Name"])) if r.get("Pool_Order_Name") == "ALL MARKET AVERAGE OR TOTAL"]
-        def mp(f): return [("%04d-%02d" % (int(r["report_year"]), U.mon_num(r["report_month"])), U.fnum(r.get(f))) for r in tot if U.mon_num(r["report_month"])]
+        def mp(f): return [("%04d-%02d" % (int(r["report_year"]), U.mon_num(r["report_month"])), U.fnum(r.get(f))) for r in tot if U.mon_num(r["report_month"]) and (U.fnum(r.get(f)) or 0) > 0]
         for f, sid, lab, u, g in (("Producer_Receipts", "pool-receipts", "Federal order producer milk receipts (pooled), all markets", "million lb", "production"),
                                   ("ClassI_Util_Percent", "util-class-i", "Share of pooled milk used as Class I (fluid), all markets", "%", "production"),
                                   ("ClassII_Util_Percent", "util-class-ii", "Share of pooled milk used as Class II (soft products), all markets", "%", "production"),
