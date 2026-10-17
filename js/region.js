@@ -687,24 +687,35 @@
     if (h1) h1.textContent = known ? nm(cfg, ST.r) : cfg.kinds[li()].charAt(0).toUpperCase() + cfg.kinds[li()].slice(1); if (sub) sub.textContent = t.sub;
     document.title = (known ? nm(cfg, ST.r) + ' · ' + cfg.country[li()] : cfg.country[li()]) + ' | Dehesa Index';
     var side = '<div class="di-card" style="padding:12px 14px"><label style="font-size:13px;display:block;margin-bottom:8px">' + esc(cfg.kind[li()]) + '<br><select id="rg-sel" class="di-compare-select"><option value="">' + esc(t.pick) + '…</option>' + ids.map(function (i) { return '<option value="' + i + '"' + (i === ST.r ? ' selected' : '') + '>' + esc(nm(cfg, i)) + '</option>'; }).join('') + '</select></label>' + mapSvg(cfg, ST.r) + '</div>';
+    var hb0 = document.getElementById('rg-bar'); if (hb0) { hb0.innerHTML = ''; hb0.hidden = true; }
     if (!known) { root.innerHTML = side; bind(); return; }
     root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start"><div style="flex:1 1 300px;max-width:420px" class="rg-side">' + side + '</div><div id="rg-main" style="flex:2 1 420px;min-width:0"><p class="di-movers-hint">' + esc(t.loading) + '</p></div></div>';
     bind(); bindMetric(); var my = ++seq, x = { c: ST.c, r: ST.r };
     Promise.all(MODS[ST.c].map(function (m) { return m[1](x).catch(function () { return null; }); })).then(function (out) {
       if (my !== seq) return; var el = document.getElementById('rg-main'); if (!el) return; var miss = [];
       // vista por sector (js/sector.js): lo de la otra vista se pliega al final, no se borra; lo común se ve siempre
-      var SEC = window.DehesaSector, toc = [], tocA = [], tocB = [], main = [], folded = [], first = [];
+      var SEC = window.DehesaSector, toc = [], tocA = [], tocB = [], barA = [], barB = [], main = [], folded = [], first = [];
       out.forEach(function (h, i) { var k = MODS[ST.c][i][0]; if (!h) { if (!OPTIONAL[k]) miss.push(t[MOD_NAME[k]]); return; }
         var blk = '<div id="rg-' + k + '" class="rg-blk">' + h + '</div>', sec = SEC ? SEC.ofModule(k) : 'common';
         if (SEC && !SEC.visible(sec)) { folded.push(blk); return; }
-        var lead = SEC && SEC.get() !== 'all' && sec !== 'common', a = '<a href="#rg-' + k + '">' + esc(t[MOD_NAME[k]] || k) + '</a>'; (lead ? first : main).push(blk); (lead ? tocA : tocB).push(a); });
-      toc = tocA.concat(tocB);
-      var html = (SEC ? '<div id="rg-sector">' + SEC.barHtml() + '</div>' : '') + (toc.length > 1 ? '<nav class="rg-toc" aria-label="' + esc(t.toc || '') + '"><span>' + esc(t.toc || '') + '</span>' + toc.join('') + '</nav>' : '') + first.join('') + main.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '');
+        var lead = SEC && SEC.get() !== 'all' && sec !== 'common', a = '<a href="#rg-' + k + '">' + esc(t[MOD_NAME[k]] || k) + '</a>'; (lead ? first : main).push(blk); (lead ? tocA : tocB).push(a); (lead ? barA : barB).push(['rg-' + k, t[MOD_NAME[k]] || k]); });
+      toc = tocA.concat(tocB); var barItems = barA.concat(barB);
+      var html = (SEC ? '<div id="rg-sector">' + SEC.barHtml() + '</div>' : '') + first.join('') + main.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '');
       if (miss.length) html += '<section class="di-card" style="padding:14px 18px;margin-top:14px"><b>' + esc(t.missing) + '</b><p class="di-movers-hint" style="margin:6px 0 0">' + esc(t.missingHint) + ' ' + esc(miss.join(', ')) + '.</p></section>';
       html += staticLinks();
       el.innerHTML = html;
+      regionBar(barItems);
       if (SEC) SEC.bind(document.getElementById('rg-sector'), function () { render(); });
     });
+  }
+  /* Barra de secciones en una sola fila, como la ficha de pais (js/shared.js frBar): las primeras partidas a la vista y el resto en «Más datos ▾» */
+  var MORE_L = { es: 'Más datos', en: 'More data', fr: 'Plus de données', it: 'Altri dati' };
+  function regionBar(items) {
+    var host = document.getElementById('rg-bar'), F = window.DehesaShared && window.DehesaShared.frame; if (!host) return;
+    if (!F || !ST.r || !C[ST.c]) { host.innerHTML = ''; host.hidden = true; return; }
+    var N = 4, shown = items.slice(0, N), rest = items.slice(N);
+    if (rest.length > 1) shown.push([rest[0][0], MORE_L[lang()] || MORE_L.es, rest]); else if (rest.length === 1) shown.push(rest[0]);
+    F.bar(host, nm(C[ST.c], ST.r), shown);
   }
   var SL = { es: ['Resumen fijo de ', 'Todas las regiones: '], en: ['Fixed summary page for ', 'All regions: '], fr: ['Page de synthèse de ', 'Toutes les régions : '], it: ['Pagina di sintesi di ', 'Tutte le regioni: '] };
   function staticLinks() {
