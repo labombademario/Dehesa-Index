@@ -1,0 +1,34 @@
+3355 sections ['Summary', 'Final Class Prices by Order'] stats {'totalRows:': 173, 'returnedRows:': 173, 'userAllowedRows:': 99999}
+  3355/Summary rows=173
+  3355/Final Class Prices by Order rows=2000
+3354 sections ['Summary', 'Advanced Class Prices by Order'] stats {'totalRows:': 174, 'returnedRows:': 174, 'userAllowedRows:': 99999}
+  3354/Summary rows=174
+  3354/Advanced Class Prices by Order rows=2010
+3345 sections ['Summary', 'Milk', 'Butterfat', 'Skim'] stats {'totalRows:': 27, 'returnedRows:': 27, 'userAllowedRows:': 99999}
+  3345/Summary rows=27
+  3345/Milk rows=310
+  3345/Butterfat rows=310
+  3345/Skim rows=310
+3351 sections ['Summary', 'Milk', 'Butterfat', 'Skim', 'PPD'] stats {'totalRows:': 27, 'returnedRows:': 27, 'userAllowedRows:': 99999}
+  3351/Summary rows=27
+  3351/Milk rows=311
+  3351/Butterfat rows=135
+  3351/Skim rows=135
+3357 sections ['Summary', 'Mailbox Milk Prices'] stats {'totalRows:': 21, 'returnedRows:': 21, 'userAllowedRows:': 99999}
+  3357/Summary rows=21
+  3357/Mailbox Milk Prices rows=442
+3352 sections ['Summary', 'Price and Pool Monthly', 'Price and Pool Month Receipts', 'Price and Pool Month ClassI Utility', 'Price and Pool Month ClassI Percent', 'Price and Pool Month Uniform Price'] stats {'totalRows:': 298, 'returnedRows:': 298, 'userAllowedRows:': 99999}
+  3352/Summary rows=298
+  3352/Price and Pool Monthly rows=3410
+  3352/Price and Pool Month Receipts rows=359
+  3352/Price and Pool Month ClassI Utility rows=359
+3462 sections ['Summary', 'Receipts', 'Butterfat', 'NFS', 'Protein', 'Other Solids', 'SomCell'] stats {'totalRows:': 27, 'returnedRows:': 27, 'userAllowedRows:': 99999}
+  3462/Summary rows=27
+  3462/Receipts rows=311
+  3462/Butterfat rows=311
+  3462/NFS rows=203
+3353 sections ['Summary', 'Price and Pool Annual', 'Price and Pool Annual Receipts', 'Price and Pool Annual ClassI Utility', 'Price and Pool Annual ClassI Percent', 'Price and Pool Annual Uniform Price'] stats {'totalRows:': 23, 'returnedRows:': 23, 'userAllowedRows:': 99999}
+  3353/Summary rows=23
+  3353/Price and Pool Annual rows=263
+  ERR 3353/Price and Pool Annual Receipts "'str' object has no attribute 'get'"
+  ERR 3353/Price and Pool Annual ClassI Utility "'str' object has no attribute 'get'"
