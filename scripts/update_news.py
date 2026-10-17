@@ -26,6 +26,8 @@ MAX_FEED = 450       # tope en js/news-feed.js (página Noticias)
 MAX_PER_FEED = 40    # máximo por feed antes de deduplicar
 MAX_PER_PUBLISHER = 14
 MIN_PER_COUNTRY = 8    # cupo mínimo reservado a cada país del medio
+ORG_RESERVED = 3       # titulares reservados a cada organización agraria (UPA, COAG, ASAJA...): publican poco y, por fecha, no entrarían en el cupo del país
+ORGS = {"UPA", "COAG", "ASAJA", "Cooperativas Agro-alimentarias"}
 MAX_PER_COUNTRY = 36   # noticias como máximo por país del medio (las sin país no cuentan)
 INDEX_PER_KEY = 25
 UA = "DehesaIndex-NewsBot/1.0 (+https://dehesaindex.com)"
@@ -669,7 +671,11 @@ def pick(rows, limit):
     """Elige `limit` noticias (ya ordenadas por fecha y relevancia) repartidas entre países del medio:
     primero hasta MIN_PER_COUNTRY por país, luego el resto por orden con un tope MAX_PER_COUNTRY. Las noticias sin país
     (organismos internacionales, agencias globales) no tienen tope. Devuelve la lista otra vez ordenada."""
-    seen = {}; chosen = set()
+    seen = {}; chosen = set(); org = {}
+    for i, x in enumerate(rows):   # organizaciones agrarias: sus titulares (los más recientes) entran siempre y cuentan en el cupo de su país
+        if x.get("source") in ORGS and org.get(x["source"], 0) < ORG_RESERVED:
+            org[x["source"]] = org.get(x["source"], 0) + 1; chosen.add(i); cc = x.get("country")
+            if cc: seen[cc] = seen.get(cc, 0) + 1
     for i, x in enumerate(rows):
         cc = x.get("country")
         if cc and seen.get(cc, 0) < MIN_PER_COUNTRY:
