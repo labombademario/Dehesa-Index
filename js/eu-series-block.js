@@ -85,10 +85,12 @@
     var ids = Object.keys(BLOCKS).filter(function (k) { return document.getElementById(k); });
     if (!ids.length) return;
     ids.forEach(function (id) {
-      Promise.all([fetch(BLOCKS[id].file).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DICite ? window.DICite.load().catch(function () { return null; }) : Promise.resolve(null)]).then(function (a) {
+      var go = function () { Promise.all([fetch(BLOCKS[id].file).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DICite ? window.DICite.load().catch(function () { return null; }) : Promise.resolve(null)]).then(function (a) {
         var cs = a[0] && a[0].countries; if (!cs || Object.keys(cs).length < 3) return;
         STATE[id] = { countries: cs, cc: null, cat: null, sid: null }; render(id);
-      });
+      }); }, el = document.getElementById(id), done = false, once = function () { if (!done) { done = true; go(); } };
+      // el fichero pesa cerca de 1 MB: se pide cuando el bloque esta a punto de verse
+      if (el && 'IntersectionObserver' in window) { var io = new IntersectionObserver(function (e) { if (e.some(function (x) { return x.isIntersecting; })) { io.disconnect(); once(); } }, { rootMargin: '800px 0px' }); io.observe(el); } else once();
     });
     var prev = window.DehesaShared && window.DehesaShared.onLangChange;
     if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); ids.forEach(render); };

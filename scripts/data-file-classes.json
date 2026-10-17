@@ -117,7 +117,10 @@
   "data/us-ers-livestock-stats.json": {
    "class": "RUNTIME",
    "note": "Carne y ganado de EE. UU. (USDA ERS): oferta y utilizacion, pesos, precios, recria y simulador del cebadero. El navegador lo descarga al abrir ganaderia.html (bloque con selector); ademas alimenta el catalogo.",
-   "via": {"file": "js/us-series-block.js", "pattern": "data/us-ers-livestock-stats.json"}
+   "via": {
+    "file": "js/us-series-block.js",
+    "pattern": "data/us-ers-livestock-stats.json"
+   }
   },
   "data/us-ers-stats.json": {
    "class": "BUILD_ONLY",
@@ -266,6 +269,10 @@
     "file": "js/series-store.js",
     "pattern": "e.catalog"
    }
+  },
+  "data/eu-production-stats.json": {
+   "class": "RUNTIME",
+   "note": "Produccion, superficie y rendimiento por pais (portal Agri-food): la pagina de la UE lo descarga en js/eu-series-block.js para el bloque de produccion; ademas alimenta los catalogos por pais."
   }
  },
  "prefixes": {
