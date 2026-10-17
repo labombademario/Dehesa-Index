@@ -219,6 +219,7 @@
    "note": "Series de Eurostat de RO, SI, CY, LU y MT (modo reducido): alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
   },
   "data/eurostat-fish-stats.json": {"class": "BUILD_ONLY", "note": "Pesca y acuicultura de Eurostat (24 paises): alimenta los catalogos y data/views/fish/; pesca.html y la ficha leen las vistas, no este fichero."},
+  "data/app/labels-i18n.json": {"class": "BUILD_ONLY", "note": "Glosario de etiquetas de series en 4 idiomas para la app movil: lo lee build-app-views.mjs (y su prueba) para escribir labelT; la web no lo carga."},
   "data/eurostat-structure2-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Eurostat de tierra, estructura, plaguicidas, selvicultura y ecologico de 18 estados de la UE: alimenta los catalogos por pais; la ficha no pide este fichero."
