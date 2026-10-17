@@ -1,0 +1,2560 @@
+{
+ "beefcuts_w": {
+  "n": 6546,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "05/10/2026",
+    "endDate": "11/10/2026",
+    "price": "€609.18",
+    "unit": "€/100Kg",
+    "year": 2026,
+    "category": "Forequarter",
+    "priceType": "Selling price",
+    "weekNumber": 40
+   },
+   {
+    "memberStateCode": "CZ",
+    "memberStateName": "Czechia",
+    "beginDate": "05/10/2026",
+    "endDate": "11/10/2026",
+    "price": "€582.75",
+    "unit": "€/100Kg",
+    "year": 2026,
+    "category": "Forequarter",
+    "priceType": "Selling price",
+    "weekNumber": 40
+   }
+  ],
+  "memberStateCode": {
+   "DE": 1085,
+   "PL": 979,
+   "CZ": 911,
+   "AT": 681,
+   "FR": 661,
+   "IT": 608,
+   "PT": 592,
+   "IE": 402,
+   "SE": 288,
+   "NL": 284,
+   "EL": 29,
+   "ES": 26
+  },
+  "year": {
+   "2024": 1347,
+   "2022": 1198,
+   "2023": 1188,
+   "2025": 1083,
+   "2021": 900,
+   "2026": 818,
+   "2020": 12
+  },
+  "category": {
+   "Minced meat": 2396,
+   "Forequarter": 2173,
+   "Hindquarter": 1977
+  },
+  "priceType": {
+   "Selling price": 5509,
+   "Retail buying price": 907,
+   "Non-retail buying price": 130
+  },
+  "unit": {
+   "€/100Kg": 6546
+  },
+  "byCountryYear": {
+   "AT": {
+    "2021": 47,
+    "2022": 177,
+    "2023": 174,
+    "2024": 166,
+    "2025": 68,
+    "2026": 49
+   },
+   "CZ": {
+    "2020": 6,
+    "2021": 153,
+    "2022": 158,
+    "2023": 159,
+    "2024": 156,
+    "2025": 156,
+    "2026": 123
+   },
+   "DE": {
+    "2021": 94,
+    "2022": 259,
+    "2023": 245,
+    "2024": 214,
+    "2025": 153,
+    "2026": 120
+   },
+   "EL": {
+    "2021": 29
+   },
+   "ES": {
+    "2024": 26
+   },
+   "FR": {
+    "2021": 153,
+    "2022": 110,
+    "2023": 106,
+    "2024": 105,
+    "2025": 104,
+    "2026": 83
+   },
+   "IE": {
+    "2023": 15,
+    "2024": 169,
+    "2025": 135,
+    "2026": 83
+   },
+   "IT": {
+    "2020": 6,
+    "2021": 102,
+    "2022": 104,
+    "2023": 106,
+    "2024": 104,
+    "2025": 104,
+    "2026": 82
+   },
+   "NL": {
+    "2021": 13,
+    "2022": 55,
+    "2023": 60,
+    "2024": 52,
+    "2025": 52,
+    "2026": 52
+   },
+   "PL": {
+    "2021": 156,
+    "2022": 179,
+    "2023": 187,
+    "2024": 178,
+    "2025": 156,
+    "2026": 123
+   },
+   "PT": {
+    "2021": 92,
+    "2022": 104,
+    "2023": 106,
+    "2024": 104,
+    "2025": 104,
+    "2026": 82
+   },
+   "SE": {
+    "2021": 38,
+    "2022": 52,
+    "2023": 53,
+    "2024": 52,
+    "2025": 52,
+    "2026": 41
+   }
+  },
+  "bytes": 1791315
+ },
+ "beefcuts_m": {
+  "n": 736,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "01/09/2026",
+    "endDate": "30/09/2026",
+    "price": "€953.34",
+    "unit": "€/100Kg",
+    "year": 2026,
+    "category": "Minced meat",
+    "priceType": "Selling price",
+    "monthNumber": 9,
+    "month": "September"
+   },
+   {
+    "memberStateCode": "CZ",
+    "memberStateName": "Czechia",
+    "beginDate": "01/09/2026",
+    "endDate": "30/09/2026",
+    "price": "€779.80",
+    "unit": "€/100Kg",
+    "year": 2026,
+    "category": "Minced meat",
+    "priceType": "Selling price",
+    "monthNumber": 9,
+    "month": "September"
+   }
+  ],
+  "memberStateCode": {
+   "DE": 158,
+   "PL": 124,
+   "AT": 109,
+   "NL": 81,
+   "CZ": 70,
+   "SE": 68,
+   "IE": 55,
+   "FR": 38,
+   "ES": 27,
+   "EL": 6
+  },
+  "year": {
+   "2024": 146,
+   "2025": 145,
+   "2023": 126,
+   "2022": 125,
+   "2026": 107,
+   "2021": 86,
+   "2020": 1
+  },
+  "category": {
+   "Minced meat": 736
+  },
+  "priceType": {
+   "Retail buying price": 369,
+   "Selling price": 334,
+   "Non-retail buying price": 33
+  },
+  "unit": {
+   "€/100Kg": 736
+  },
+  "month": {
+   "August": 66,
+   "December": 64,
+   "July": 63,
+   "May": 63,
+   "March": 63,
+   "September": 62,
+   "April": 62,
+   "January": 61,
+   "June": 60,
+   "February": 60,
+   "November": 56,
+   "October": 56
+  },
+  "monthNumber": {
+   "8": 66,
+   "12": 64,
+   "7": 63,
+   "5": 63,
+   "3": 63,
+   "9": 62,
+   "4": 62,
+   "1": 61,
+   "6": 60,
+   "2": 60,
+   "11": 56,
+   "10": 56
+  },
+  "byCountryYear": {
+   "AT": {
+    "2021": 9,
+    "2022": 24,
+    "2023": 24,
+    "2024": 25,
+    "2025": 15,
+    "2026": 12
+   },
+   "CZ": {
+    "2020": 1,
+    "2021": 12,
+    "2022": 12,
+    "2023": 12,
+    "2024": 12,
+    "2025": 12,
+    "2026": 9
+   },
+   "DE": {
+    "2021": 18,
+    "2022": 36,
+    "2023": 36,
+    "2024": 28,
+    "2025": 23,
+    "2026": 17
+   },
+   "EL": {
+    "2021": 6
+   },
+   "ES": {
+    "2024": 7,
+    "2025": 12,
+    "2026": 8
+   },
+   "FR": {
+    "2021": 12,
+    "2022": 3,
+    "2024": 3,
+    "2025": 10,
+    "2026": 10
+   },
+   "IE": {
+    "2023": 4,
+    "2024": 21,
+    "2025": 20,
+    "2026": 10
+   },
+   "NL": {
+    "2021": 4,
+    "2022": 14,
+    "2023": 14,
+    "2024": 13,
+    "2025": 19,
+    "2026": 17
+   },
+   "PL": {
+    "2021": 15,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 22,
+    "2026": 15
+   },
+   "SE": {
+    "2021": 10,
+    "2022": 12,
+    "2023": 12,
+    "2024": 13,
+    "2025": 12,
+    "2026": 9
+   }
+  },
+  "bytes": 220067
+ },
+ "pigcuts_w": {
+  "n": 13442,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "05/10/2026",
+    "endDate": "11/10/2026",
+    "price": "€203.52",
+    "unit": "100 KG",
+    "weekNumber": 41,
+    "category": "Ham",
+    "priceType": "Selling price"
+   },
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "05/10/2026",
+    "endDate": "11/10/2026",
+    "price": "€391.37",
+    "unit": "100 KG",
+    "weekNumber": 41,
+    "category": "Loin",
+    "priceType": "Selling price"
+   }
+  ],
+  "memberStateCode": {
+   "DE": 1643,
+   "PL": 1602,
+   "HU": 1537,
+   "CZ": 1526,
+   "IT": 1517,
+   "AT": 1269,
+   "FR": 1220,
+   "PT": 1160,
+   "BE": 792,
+   "NL": 586,
+   "RO": 314,
+   "DK": 252,
+   "ES": 24
+  },
+  "category": {
+   "Minced Meat": 2782,
+   "Ham": 2665,
+   "Loin": 2665,
+   "Belly": 2665,
+   "Shoulder": 2665
+  },
+  "priceType": {
+   "Selling price": 12213,
+   "Retail buying price": 942,
+   "Non-retail buying price": 287
+  },
+  "unit": {
+   "100 KG": 13442
+  },
+  "byCountryYear": {
+   "AT": {
+    "2021": 79,
+    "2022": 267,
+    "2023": 270,
+    "2024": 249,
+    "2025": 230,
+    "2026": 174
+   },
+   "BE": {
+    "2022": 4,
+    "2023": 208,
+    "2024": 208,
+    "2025": 204,
+    "2026": 168
+   },
+   "CZ": {
+    "2021": 256,
+    "2022": 265,
+    "2023": 270,
+    "2024": 260,
+    "2025": 265,
+    "2026": 210
+   },
+   "DE": {
+    "2021": 133,
+    "2022": 371,
+    "2023": 355,
+    "2024": 319,
+    "2025": 260,
+    "2026": 205
+   },
+   "DK": {
+    "2020": 12,
+    "2021": 212,
+    "2022": 28
+   },
+   "ES": {
+    "2024": 24
+   },
+   "FR": {
+    "2021": 204,
+    "2022": 212,
+    "2023": 216,
+    "2024": 208,
+    "2025": 212,
+    "2026": 168
+   },
+   "HU": {
+    "2021": 263,
+    "2022": 284,
+    "2023": 271,
+    "2024": 266,
+    "2025": 247,
+    "2026": 206
+   },
+   "IT": {
+    "2021": 246,
+    "2022": 266,
+    "2023": 270,
+    "2024": 260,
+    "2025": 265,
+    "2026": 210
+   },
+   "NL": {
+    "2021": 13,
+    "2022": 56,
+    "2023": 62,
+    "2024": 52,
+    "2025": 193,
+    "2026": 210
+   },
+   "PL": {
+    "2021": 181,
+    "2022": 317,
+    "2023": 324,
+    "2024": 303,
+    "2025": 267,
+    "2026": 210
+   },
+   "PT": {
+    "2021": 144,
+    "2022": 212,
+    "2023": 216,
+    "2024": 208,
+    "2025": 212,
+    "2026": 168
+   },
+   "RO": {
+    "2021": 2,
+    "2022": 104,
+    "2023": 108,
+    "2024": 100
+   }
+  },
+  "bytes": 3340583
+ },
+ "pigcuts_m": {
+  "n": 844,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "01/09/2026",
+    "endDate": "30/09/2026",
+    "price": "€314.89",
+    "unit": "100 KG",
+    "marketingYear": 2026,
+    "monthNumber": 9,
+    "month": "September",
+    "category": "Minced Meat",
+    "priceType": "Selling price"
+   },
+   {
+    "memberStateCode": "CZ",
+    "memberStateName": "Czechia",
+    "beginDate": "01/09/2026",
+    "endDate": "30/09/2026",
+    "price": "€363.24",
+    "unit": "100 KG",
+    "marketingYear": 2026,
+    "monthNumber": 9,
+    "month": "September",
+    "category": "Minced Meat",
+    "priceType": "Selling price"
+   }
+  ],
+  "memberStateCode": {
+   "DE": 158,
+   "PL": 129,
+   "RO": 110,
+   "HU": 108,
+   "AT": 88,
+   "NL": 82,
+   "IT": 72,
+   "CZ": 70,
+   "ES": 27
+  },
+  "marketingYear": {
+   "2025": 168,
+   "2022": 161,
+   "2024": 153,
+   "2023": 149,
+   "2026": 124,
+   "2021": 89
+  },
+  "category": {
+   "Minced Meat": 844
+  },
+  "priceType": {
+   "Selling price": 387,
+   "Retail buying price": 370,
+   "Non-retail buying price": 87
+  },
+  "unit": {
+   "100 KG": 844
+  },
+  "month": {
+   "August": 78,
+   "September": 73,
+   "June": 73,
+   "July": 72,
+   "May": 71,
+   "January": 71,
+   "December": 71,
+   "February": 70,
+   "March": 69,
+   "April": 67,
+   "November": 65,
+   "October": 64
+  },
+  "monthNumber": {
+   "8": 78,
+   "9": 73,
+   "6": 73,
+   "7": 72,
+   "5": 71,
+   "1": 71,
+   "12": 71,
+   "2": 70,
+   "3": 69,
+   "4": 67,
+   "11": 65,
+   "10": 64
+  },
+  "byCountryYear": {
+   "AT": {
+    "2021": 9,
+    "2022": 17,
+    "2023": 14,
+    "2024": 14,
+    "2025": 21,
+    "2026": 13
+   },
+   "CZ": {
+    "2021": 13,
+    "2022": 12,
+    "2023": 12,
+    "2024": 12,
+    "2025": 12,
+    "2026": 9
+   },
+   "DE": {
+    "2021": 18,
+    "2022": 36,
+    "2023": 36,
+    "2024": 28,
+    "2025": 23,
+    "2026": 17
+   },
+   "ES": {
+    "2024": 7,
+    "2025": 12,
+    "2026": 8
+   },
+   "HU": {
+    "2021": 16,
+    "2022": 21,
+    "2023": 13,
+    "2024": 17,
+    "2025": 23,
+    "2026": 18
+   },
+   "IT": {
+    "2021": 13,
+    "2022": 14,
+    "2023": 12,
+    "2024": 12,
+    "2025": 12,
+    "2026": 9
+   },
+   "NL": {
+    "2021": 4,
+    "2022": 14,
+    "2023": 14,
+    "2024": 14,
+    "2025": 19,
+    "2026": 17
+   },
+   "PL": {
+    "2021": 15,
+    "2022": 24,
+    "2023": 24,
+    "2024": 25,
+    "2025": 24,
+    "2026": 17
+   },
+   "RO": {
+    "2021": 1,
+    "2022": 23,
+    "2023": 24,
+    "2024": 24,
+    "2025": 22,
+    "2026": 16
+   }
+  },
+  "bytes": 257464
+ },
+ "live": {
+  "n": 29522,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "05/10/2026",
+    "endDate": "11/10/2026",
+    "price": "€527.48",
+    "unit": "€/head",
+    "weekNumber": 41,
+    "category": "Male Calves Beef Type"
+   },
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "05/10/2026",
+    "endDate": "11/10/2026",
+    "price": "€3.98",
+    "unit": "€/kg",
+    "weekNumber": 41,
+    "category": "Young Store Cattle"
+   }
+  ],
+  "memberStateCode": {
+   "BE": 3085,
+   "IT": 3085,
+   "IE": 3083,
+   "EU": 3040,
+   "AT": 3021,
+   "FR": 3012,
+   "DE": 1875,
+   "SE": 1851,
+   "ES": 1850,
+   "PL": 1491,
+   "NL": 1234,
+   "RO": 953,
+   "PT": 841,
+   "DK": 686,
+   "HR": 415
+  },
+  "category": {
+   "Male Calves Dairy Type": 7226,
+   "Male Calves Beef Type": 7093,
+   "Young Store Cattle": 5605,
+   "Yearling Female Store Cattle": 4835,
+   "Yearling Male Store Cattle": 4763
+  },
+  "unit": {
+   "€/kg": 15203,
+   "€/head": 14319
+  },
+  "byCountryYear": {
+   "AT": {
+    "2015": 255,
+    "2016": 260,
+    "2017": 265,
+    "2018": 260,
+    "2019": 260,
+    "2020": 260,
+    "2021": 260,
+    "2022": 259,
+    "2023": 267,
+    "2024": 249,
+    "2025": 233,
+    "2026": 193
+   },
+   "BE": {
+    "2015": 255,
+    "2016": 260,
+    "2017": 265,
+    "2018": 260,
+    "2019": 260,
+    "2020": 260,
+    "2021": 260,
+    "2022": 260,
+    "2023": 270,
+    "2024": 260,
+    "2025": 265,
+    "2026": 210
+   },
+   "DE": {
+    "2015": 115,
+    "2016": 115,
+    "2017": 117,
+    "2018": 104,
+    "2019": 104,
+    "2020": 104,
+    "2021": 206,
+    "2022": 208,
+    "2023": 214,
+    "2024": 208,
+    "2025": 212,
+    "2026": 168
+   },
+   "DK": {
+    "2015": 51,
+    "2016": 52,
+    "2017": 53,
+    "2018": 52,
+    "2019": 52,
+    "2020": 52,
+    "2021": 104,
+    "2022": 69,
+    "2023": 54,
+    "2024": 52,
+    "2025": 53,
+    "2026": 42
+   },
+   "ES": {
+    "2015": 153,
+    "2016": 156,
+    "2017": 159,
+    "2018": 156,
+    "2019": 156,
+    "2020": 156,
+    "2021": 156,
+    "2022": 156,
+    "2023": 162,
+    "2024": 156,
+    "2025": 159,
+    "2026": 125
+   },
+   "EU": {
+    "2015": 255,
+    "2016": 260,
+    "2017": 265,
+    "2018": 260,
+    "2019": 255,
+    "2020": 260,
+    "2021": 260,
+    "2022": 235,
+    "2023": 265,
+    "2024": 260,
+    "2025": 260,
+    "2026": 205
+   },
+   "FR": {
+    "2015": 255,
+    "2016": 260,
+    "2017": 265,
+    "2018": 260,
+    "2019": 253,
+    "2020": 253,
+    "2021": 234,
+    "2022": 227,
+    "2023": 270,
+    "2024": 260,
+    "2025": 265,
+    "2026": 210
+   },
+   "HR": {
+    "2024": 141,
+    "2025": 143,
+    "2026": 131
+   },
+   "IE": {
+    "2015": 255,
+    "2016": 260,
+    "2017": 265,
+    "2018": 260,
+    "2019": 260,
+    "2020": 260,
+    "2021": 260,
+    "2022": 260,
+    "2023": 268,
+    "2024": 260,
+    "2025": 265,
+    "2026": 210
+   },
+   "IT": {
+    "2015": 255,
+    "2016": 260,
+    "2017": 265,
+    "2018": 260,
+    "2019": 260,
+    "2020": 260,
+    "2021": 260,
+    "2022": 260,
+    "2023": 270,
+    "2024": 260,
+    "2025": 265,
+    "2026": 210
+   },
+   "NL": {
+    "2015": 102,
+    "2016": 104,
+    "2017": 106,
+    "2018": 104,
+    "2019": 104,
+    "2020": 104,
+    "2021": 104,
+    "2022": 104,
+    "2023": 108,
+    "2024": 104,
+    "2025": 106,
+    "2026": 84
+   },
+   "PL": {
+    "2015": 153,
+    "2016": 156,
+    "2017": 159,
+    "2018": 154,
+    "2019": 144,
+    "2020": 104,
+    "2021": 115,
+    "2022": 104,
+    "2023": 108,
+    "2024": 104,
+    "2025": 106,
+    "2026": 84
+   },
+   "PT": {
+    "2015": 51,
+    "2016": 52,
+    "2017": 3,
+    "2022": 132,
+    "2023": 162,
+    "2024": 156,
+    "2025": 159,
+    "2026": 126
+   },
+   "RO": {
+    "2015": 51,
+    "2016": 52,
+    "2017": 84,
+    "2018": 63,
+    "2019": 96,
+    "2020": 70,
+    "2021": 104,
+    "2022": 104,
+    "2023": 108,
+    "2024": 104,
+    "2025": 75,
+    "2026": 42
+   },
+   "SE": {
+    "2015": 153,
+    "2016": 156,
+    "2017": 159,
+    "2018": 156,
+    "2019": 156,
+    "2020": 156,
+    "2021": 156,
+    "2022": 156,
+    "2023": 162,
+    "2024": 156,
+    "2025": 159,
+    "2026": 126
+   }
+  },
+  "bytes": 6839016
+ },
+ "poultry_m": {
+  "n": 5889,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "01/09/2026",
+    "endDate": "30/09/2026",
+    "price": "€944.67",
+    "unit": "national currency/100kg",
+    "marketingYear": 2026,
+    "monthNumber": 9,
+    "month": "September",
+    "productName": "Breast Fillet",
+    "priceType": "Selling price"
+   },
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "beginDate": "01/09/2026",
+    "endDate": "30/09/2026",
+    "price": "€390.96",
+    "unit": "national currency/100kg",
+    "marketingYear": 2026,
+    "monthNumber": 9,
+    "month": "September",
+    "productName": "Whole broiler (65%)",
+    "priceType": "Selling price"
+   }
+  ],
+  "memberStateCode": {
+   "EU": 441,
+   "RO": 396,
+   "DE": 348,
+   "AT": 340,
+   "HU": 327,
+   "PL": 314,
+   "MT": 261,
+   "CZ": 238,
+   "BE": 216,
+   "FR": 213,
+   "EL": 213,
+   "BG": 211,
+   "SI": 211,
+   "HR": 210,
+   "IT": 210,
+   "PT": 210,
+   "SK": 210,
+   "SE": 210,
+   "ES": 207,
+   "CY": 198,
+   "NL": 186,
+   "LT": 154,
+   "FI": 112,
+   "IE": 96,
+   "DK": 86,
+   "LV": 37,
+   "EE": 34
+  },
+  "marketingYear": {
+   "2022": 776,
+   "2024": 759,
+   "2023": 748,
+   "2021": 686,
+   "2025": 613,
+   "2026": 457,
+   "2015": 324,
+   "2016": 315,
+   "2020": 311,
+   "2017": 308,
+   "2019": 302,
+   "2018": 290
+  },
+  "priceType": {
+   "Selling price": 4727,
+   "Retail buying prices": 873,
+   "Non-retail buying prices": 289
+  },
+  "productName": {
+   "Whole broiler (65%)": 3808,
+   "Breast Fillet": 2081
+  },
+  "unit": {
+   "national currency/100kg": 5889
+  },
+  "month": {
+   "June": 504,
+   "May": 502,
+   "April": 502,
+   "March": 502,
+   "January": 501,
+   "February": 500,
+   "July": 499,
+   "August": 497,
+   "September": 491,
+   "December": 477,
+   "November": 460,
+   "October": 454
+  },
+  "monthNumber": {
+   "6": 504,
+   "5": 502,
+   "4": 502,
+   "3": 502,
+   "1": 501,
+   "2": 500,
+   "7": 499,
+   "8": 497,
+   "9": 491,
+   "12": 477,
+   "11": 460,
+   "10": 454
+  },
+  "byCountryYear": {
+   "AT": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 13,
+    "2021": 36,
+    "2022": 60,
+    "2023": 60,
+    "2024": 49,
+    "2025": 36,
+    "2026": 26
+   },
+   "BE": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 28,
+    "2026": 20
+   },
+   "BG": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 13,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "CY": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 13,
+    "2022": 23,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "CZ": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 38,
+    "2022": 38,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "DE": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 34,
+    "2022": 39,
+    "2023": 60,
+    "2024": 62,
+    "2025": 47,
+    "2026": 34
+   },
+   "DK": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 12,
+    "2022": 2
+   },
+   "EE": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 8,
+    "2023": 2
+   },
+   "EL": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 33,
+    "2022": 29,
+    "2023": 12,
+    "2024": 26,
+    "2025": 29,
+    "2026": 12
+   },
+   "ES": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 12,
+    "2022": 12,
+    "2023": 12,
+    "2024": 37,
+    "2025": 36,
+    "2026": 26
+   },
+   "EU": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 15,
+    "2021": 66,
+    "2022": 72,
+    "2023": 72,
+    "2024": 74,
+    "2025": 48,
+    "2026": 34
+   },
+   "FI": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 12,
+    "2022": 12,
+    "2023": 12,
+    "2024": 4
+   },
+   "FR": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 26,
+    "2025": 24,
+    "2026": 19
+   },
+   "HR": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "HU": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 48,
+    "2022": 48,
+    "2023": 48,
+    "2024": 49,
+    "2025": 36,
+    "2026": 26
+   },
+   "IE": {
+    "2015": 12,
+    "2016": 3,
+    "2017": 4,
+    "2018": 3,
+    "2019": 12,
+    "2020": 12,
+    "2021": 12,
+    "2022": 12,
+    "2023": 13,
+    "2024": 3,
+    "2026": 10
+   },
+   "IT": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "LT": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 13,
+    "2021": 24,
+    "2022": 20,
+    "2023": 11,
+    "2024": 3,
+    "2025": 11,
+    "2026": 12
+   },
+   "LV": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 8,
+    "2018": 1,
+    "2019": 2,
+    "2022": 2
+   },
+   "MT": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 15,
+    "2021": 48,
+    "2022": 48,
+    "2023": 48,
+    "2024": 42
+   },
+   "NL": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 10,
+    "2019": 12,
+    "2020": 12,
+    "2021": 16,
+    "2022": 23,
+    "2023": 14,
+    "2024": 24,
+    "2025": 23,
+    "2026": 16
+   },
+   "PL": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 13,
+    "2021": 38,
+    "2022": 48,
+    "2023": 48,
+    "2024": 48,
+    "2025": 33,
+    "2026": 26
+   },
+   "PT": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "RO": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 28,
+    "2022": 72,
+    "2023": 72,
+    "2024": 72,
+    "2025": 46,
+    "2026": 34
+   },
+   "SE": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "SI": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 13,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   },
+   "SK": {
+    "2015": 12,
+    "2016": 12,
+    "2017": 12,
+    "2018": 12,
+    "2019": 12,
+    "2020": 12,
+    "2021": 24,
+    "2022": 24,
+    "2023": 24,
+    "2024": 24,
+    "2025": 24,
+    "2026": 18
+   }
+  },
+  "bytes": 1938936
+ },
+ "organic": {
+  "n": 4500,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "year": 2026,
+    "month": "September",
+    "monthNumber": 9,
+    "sector": "Eggs",
+    "organicProduct": "Organic eggs",
+    "overallProduct": "Free-range",
+    "organicStage": "Representative selling price in packing station",
+    "overallStage": "Representative selling price in packing station",
+    "organicPrice": 575.71,
+    "overallPrice": 376.8,
+    "differencePercentage": 52.8,
+    "organicUnit": "€/100kg",
+    "overallUnit": "€/100kg"
+   },
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "year": 2026,
+    "month": "August",
+    "monthNumber": 8,
+    "sector": "Beef and veal",
+    "organicProduct": "Cows",
+    "overallProduct": "Cows",
+    "organicStage": "Representative selling price, in slaughter plant or representative market",
+    "overallStage": "Representative selling price, in slaughter plant or representative market",
+    "organicPrice": 483.21,
+    "overallPrice": 450.25,
+    "differencePercentage": 7.3,
+    "organicUnit": "€/100kg",
+    "overallUnit": "€/100kg"
+   }
+  ],
+  "memberStateCode": {
+   "FR": 698,
+   "IT": 663,
+   "AT": 465,
+   "DE": 423,
+   "SE": 319,
+   "PL": 180,
+   "SI": 163,
+   "RO": 155,
+   "BE": 134,
+   "NL": 126,
+   "CY": 124,
+   "LV": 124,
+   "PT": 115,
+   "DK": 110,
+   "EE": 110,
+   "ES": 101,
+   "CZ": 98,
+   "IE": 87,
+   "EL": 83,
+   "BG": 70,
+   "LT": 69,
+   "HR": 46,
+   "SK": 32,
+   "LU": 4,
+   "EU13": 1
+  },
+  "year": {
+   "2024": 884,
+   "2025": 842,
+   "2022": 841,
+   "2023": 836,
+   "2021": 572,
+   "2026": 525
+  },
+  "sector": {
+   "Milk and milk products": 1374,
+   "Fruit and vegetables": 945,
+   "Eggs": 914,
+   "Beef and veal": 587,
+   "Cereals": 323,
+   "Oilseeds and protein crops": 219,
+   "Poultrymeat": 138
+  },
+  "organicProduct": {
+   "Organic Raw milk Product": 1374,
+   "Organic eggs": 914,
+   "Heifers": 294,
+   "Cows": 293,
+   "organic common wheat": 188,
+   "Organic soya beans": 176,
+   "Class A Chicken": 138,
+   "Organic-Apples - Gala": 128,
+   "Organic-Apples - Golden delicious": 128,
+   "Organic-Tomatoes - Trusses=Vine/\"Grappes\"": 93,
+   "Organic-Apples - Braeburn": 74,
+   "organic rye": 72,
+   "Organic-Apples - Elstar": 64,
+   "organic durum wheat": 63,
+   "Organic-Apples - Granny smith": 56,
+   "Organic-Tomatoes - Round": 56,
+   "Organic-Tomatoes - Cherry/Special": 55,
+   "Organic soya meal": 43,
+   "Organic-Apples - Red delicious and other red varieties": 42,
+   "Organic-Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification": 42,
+   "Organic-Apples - Fuji": 38,
+   "Organic-Apples - Idared": 32,
+   "Organic-Nectarines - Yellow flesh": 28,
+   "Organic-Nectarines - White flesh": 27,
+   "Organic-Peaches - White flesh - Large packaging": 24,
+   "Organic-Peaches - Yellow flesh - Large packaging": 23,
+   "Organic-Oranges - Tarocco": 15,
+   "Organic-Oranges - Navel": 12,
+   "Organic-Apples - Jonagold (or Jonagored)": 8
+  },
+  "overallProduct": {
+   "Raw milk": 1374,
+   "Free-range": 914,
+   "Heifers": 294,
+   "Cows": 293,
+   "Milling wheat": 188,
+   "Soya beans - N.A.": 176,
+   "Class A Chicken": 138,
+   "Apples - Gala": 128,
+   "Apples - Golden delicious": 128,
+   "Tomatoes - Trusses=Vine/\"Grappes\"": 93,
+   "Apples - Braeburn": 74,
+   "Apples - Elstar": 64,
+   "Durum wheat": 63,
+   "Apples - Granny smith": 56,
+   "Tomatoes - Round": 56,
+   "Tomatoes - Cherry/Special": 55,
+   "Feed rye": 45,
+   "Soya meal - 40-50% protein content": 43,
+   "Apples - Red delicious and other red varieties": 42,
+   "Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification": 42,
+   "Apples - Fuji": 38,
+   "Apples - Idared": 32,
+   "Nectarines - Yellow flesh": 28,
+   "Nectarines - White flesh": 27,
+   "Milling rye": 27,
+   "Peaches - White flesh - Large packaging": 24,
+   "Peaches - Yellow flesh - Large packaging": 23,
+   "Oranges - Tarocco": 15,
+   "Oranges - Navel": 12,
+   "Apples - Jonagold": 8
+  },
+  "organicStage": {
+   "Price paid by first purchaser established in the territory of the MS": 1374,
+   "Representative selling price, ex-packaging station": 945,
+   "Representative selling price in packing station": 914,
+   "Representative selling price, in slaughter plant or representative market": 725,
+   "Deliver to first customer - silo or processing plant - on truck or other transport means": 207,
+   "Not Defined": 88,
+   "Delivered to processor after one intermediary": 62,
+   "National Average - Not Defined": 56,
+   "Departure from silo - after some storage - on truck or other transport means": 45,
+   "Free On Board - Incoterm": 44,
+   "Price at farm gate": 40
+  },
+  "overallStage": {
+   "Price paid by first purchaser established in the territory of the MS": 1374,
+   "Representative selling price, ex-packaging station": 945,
+   "Representative selling price in packing station": 914,
+   "Representative selling price, in slaughter plant or representative market": 725,
+   "Deliver to first customer - silo or processing plant - on truck or other transport means": 253,
+   "Free On Board - Incoterm": 87,
+   "Departure from silo - after some storage - on truck or other transport means": 85,
+   "Delivered to port - grain delivered to a port silo by train or truck or barge": 62,
+   "Rendu Port - Delivered": 45,
+   "National Average - Not Defined": 10
+  },
+  "organicUnit": {
+   "€/100kg": 3958,
+   "€/ton": 542
+  },
+  "month": {
+   "March": 397,
+   "May": 396,
+   "August": 386,
+   "April": 384,
+   "February": 383,
+   "July": 382,
+   "June": 382,
+   "January": 373,
+   "September": 359,
+   "November": 359,
+   "October": 352,
+   "December": 347
+  },
+  "monthNumber": {
+   "3": 397,
+   "5": 396,
+   "8": 386,
+   "4": 384,
+   "2": 383,
+   "7": 382,
+   "6": 382,
+   "1": 373,
+   "9": 359,
+   "11": 359,
+   "10": 352,
+   "12": 347
+  },
+  "bytes": 2495607
+ },
+ "cereal_prod": {
+  "n": 6237,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "year": 2026,
+    "crop": "Triticale",
+    "grossProduction": 240.27,
+    "area": 46.81,
+    "yield": 5.13
+   },
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "year": 2026,
+    "crop": "Sorghum",
+    "grossProduction": 33.26,
+    "area": 5.38,
+    "yield": 6.18
+   }
+  ],
+  "memberStateCode": {
+   "AT": 225,
+   "BE": 225,
+   "BG": 225,
+   "HR": 225,
+   "CY": 225,
+   "CZ": 225,
+   "DK": 225,
+   "EE": 225,
+   "FI": 225,
+   "FR": 225,
+   "DE": 225,
+   "GR": 225,
+   "HU": 225,
+   "IE": 225,
+   "IT": 225,
+   "LV": 225,
+   "LT": 225,
+   "LU": 225,
+   "MT": 225,
+   "NL": 225,
+   "PL": 225,
+   "PT": 225,
+   "RO": 225,
+   "SK": 225,
+   "SI": 225,
+   "ES": 225,
+   "SE": 225,
+   "GB": 162
+  },
+  "year": {
+   "2019": 252,
+   "2018": 252,
+   "2017": 252,
+   "2016": 252,
+   "2015": 252,
+   "2014": 252,
+   "2013": 252,
+   "2012": 252,
+   "2011": 252,
+   "2010": 252,
+   "2009": 252,
+   "2008": 252,
+   "2007": 252,
+   "2006": 252,
+   "2005": 252,
+   "2004": 252,
+   "2003": 252,
+   "2002": 252,
+   "2026": 243,
+   "2025": 243,
+   "2024": 243,
+   "2023": 243,
+   "2022": 243,
+   "2021": 243,
+   "2020": 243
+  },
+  "crop": {
+   "Triticale": 693,
+   "Sorghum": 693,
+   "Soft wheat": 693,
+   "Rye": 693,
+   "Barley": 693,
+   "Oat": 693,
+   "Maize": 693,
+   "Durum wheat": 693,
+   "Other cereals": 693
+  },
+  "bytes": 1051393
+ },
+ "oilseeds_prod": {
+  "n": 5239,
+  "sample": [
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "year": 2026,
+    "crop": "Broad/field beans",
+    "grossProduction": 12.71,
+    "area": 5.17,
+    "yield": 2.46
+   },
+   {
+    "memberStateCode": "AT",
+    "memberStateName": "Austria",
+    "year": 2026,
+    "crop": "Field peas",
+    "grossProduction": 12.95,
+    "area": 5.8,
+    "yield": 2.23
+   }
+  ],
+  "memberStateCode": {
+   "AT": 189,
+   "BE": 189,
+   "HR": 189,
+   "CY": 189,
+   "CZ": 189,
+   "DK": 189,
+   "EE": 189,
+   "FI": 189,
+   "FR": 189,
+   "DE": 189,
+   "GR": 189,
+   "IE": 189,
+   "IT": 189,
+   "LT": 189,
+   "LU": 189,
+   "MT": 189,
+   "NL": 189,
+   "PL": 189,
+   "PT": 189,
+   "RO": 189,
+   "SK": 189,
+   "SI": 189,
+   "ES": 189,
+   "SE": 189,
+   "BG": 188,
+   "LV": 188,
+   "HU": 187,
+   "GB": 140
+  },
+  "year": {
+   "2019": 196,
+   "2018": 196,
+   "2017": 196,
+   "2016": 196,
+   "2015": 196,
+   "2014": 196,
+   "2013": 196,
+   "2011": 196,
+   "2009": 196,
+   "2008": 196,
+   "2007": 196,
+   "2006": 196,
+   "2005": 196,
+   "2004": 196,
+   "2003": 196,
+   "2002": 196,
+   "2012": 195,
+   "2010": 195,
+   "2001": 195,
+   "2000": 195,
+   "2026": 189,
+   "2025": 189,
+   "2024": 189,
+   "2023": 189,
+   "2022": 189,
+   "2021": 189,
+   "2020": 189
+  },
+  "crop": {
+   "Lupins": 749,
+   "Rapeseed": 749,
+   "Soybean": 749,
+   "Sunflower seed": 749,
+   "Field peas": 748,
+   "Linseed": 748,
+   "Broad/field beans": 747
+  },
+  "bytes": 888499
+ },
+ "rice_prod": {
+  "n": 583,
+  "sample": [
+   {
+    "memberStateCode": "BG",
+    "memberStateName": "Bulgaria",
+    "year": 2025,
+    "product": "(1) Round grain paddy rice",
+    "type": 1006103000,
+    "area": 2905.0,
+    "areaUnit": "hectares",
+    "milledRiceEquivalentQuantity": 9764.0,
+    "riceHuskQuantity": 17130.0,
+    "quantityUnit": "Tonnes"
+   },
+   {
+    "memberStateCode": "BG",
+    "memberStateName": "Bulgaria",
+    "year": 2025,
+    "product": "(2) Medium grain paddy rice",
+    "type": 1006105000,
+    "area": 8441.5,
+    "areaUnit": "hectares",
+    "milledRiceEquivalentQuantity": 23221.0,
+    "riceHuskQuantity": 43002.0,
+    "quantityUnit": "Tonnes"
+   }
+  ],
+  "memberStateCode": {
+   "EU": 122,
+   "IT": 76,
+   "BG": 66,
+   "FR": 64,
+   "RO": 63,
+   "ES": 62,
+   "EL": 54,
+   "PT": 47,
+   "HU": 29
+  },
+  "year": {
+   "2019": 38,
+   "2018": 38,
+   "2014": 37,
+   "2023": 35,
+   "2022": 35,
+   "2021": 35,
+   "2017": 33,
+   "2016": 33,
+   "2015": 33,
+   "2024": 32,
+   "2020": 32,
+   "2025": 30,
+   "2013": 24,
+   "2012": 24,
+   "2011": 21,
+   "2010": 21,
+   "2009": 21,
+   "2008": 21,
+   "2007": 20,
+   "2006": 20
+  },
+  "product": {
+   "(4) Long grain B paddy rice": 177,
+   "(3) Long grain A paddy rice": 142,
+   "(2) Medium grain paddy rice": 137,
+   "(1) Round grain paddy rice": 127
+  },
+  "type": {
+   "1006102700": 70,
+   "1006102300": 68,
+   "1006109800": 57,
+   "1006103000": 52,
+   "1006107100": 51,
+   "1006107900": 50,
+   "1006109600": 49,
+   "1006105000": 46,
+   "1006102500": 42,
+   "1006109200": 39,
+   "1006102100": 36,
+   "1006109400": 23
+  },
+  "bytes": 176227
+ },
+ "sugar_prod": {
+  "n": 65,
+  "sample": [
+   {
+    "marketingYear": "2026/27",
+    "region": "Region 1",
+    "grossProduction": 3892305.86,
+    "grossProductionUnit": "tonnes",
+    "area": 415.07,
+    "areaUnit": "thousand hectares",
+    "yield": 9.38,
+    "yieldUnit": "tonnes per hectare",
+    "isEstimated": "N"
+   },
+   {
+    "marketingYear": "2026/27",
+    "region": "Region 2",
+    "grossProduction": 9082944.63,
+    "grossProductionUnit": "tonnes",
+    "area": 745.96,
+    "areaUnit": "thousand hectares",
+    "yield": 12.18,
+    "yieldUnit": "tonnes per hectare",
+    "isEstimated": "N"
+   }
+  ],
+  "marketingYear": {
+   "2024/25": 19,
+   "2023/24": 19,
+   "2026/27": 3,
+   "2025/26": 3,
+   "2022/23": 3,
+   "2021/22": 3,
+   "2020/21": 3,
+   "2019/20": 3,
+   "2018/19": 3,
+   "2017/18": 3,
+   "2016/17": 3
+  },
+  "region": {
+   "Region 1": 11,
+   "Region 2": 11,
+   "Region 3": 11,
+   "Austria": 2,
+   "Belgium": 2,
+   "Croatia": 2,
+   "Czechia": 2,
+   "Denmark - Finland - Sweden": 2,
+   "France Dom": 2,
+   "France Met": 2,
+   "Germany": 2,
+   "Hungary": 2,
+   "Italy": 2,
+   "Lithuania": 2,
+   "Netherlands": 2,
+   "Poland": 2,
+   "Romania": 2,
+   "Slovakia": 2,
+   "Spain": 2
+  },
+  "bytes": 17096
+ },
+ "olive_m": {
+  "n": 667,
+  "sample": [
+   {
+    "memberStateCode": "HR",
+    "memberStateName": "Croatia",
+    "marketingYear": "2025/26",
+    "productionYear": 2025,
+    "productionMonth": "December",
+    "monthProductionQuantity": 0.65
+   },
+   {
+    "memberStateCode": "FR",
+    "memberStateName": "France",
+    "marketingYear": "2025/26",
+    "productionYear": 2025,
+    "productionMonth": "December",
+    "monthProductionQuantity": 2.07
+   }
+  ],
+  "memberStateCode": {
+   "FR": 115,
+   "IT": 112,
+   "ES": 111,
+   "EL": 96,
+   "PT": 70,
+   "CY": 65,
+   "SI": 45,
+   "HR": 35,
+   "MT": 18
+  },
+  "marketingYear": {
+   "2015/16": 51,
+   "2017/18": 49,
+   "2014/15": 49,
+   "2016/17": 48,
+   "2018/19": 47,
+   "2020/21": 41,
+   "2010/11": 41,
+   "2024/25": 40,
+   "2025/26": 39,
+   "2021/22": 36,
+   "2022/23": 35,
+   "2012/13": 35,
+   "2011/12": 35,
+   "2013/14": 34,
+   "2023/24": 33,
+   "2019/20": 32,
+   "2009/10": 22
+  },
+  "productionYear": {
+   "2015": 51,
+   "2017": 49,
+   "2014": 49,
+   "2016": 48,
+   "2018": 47,
+   "2020": 41,
+   "2010": 41,
+   "2024": 40,
+   "2025": 39,
+   "2021": 36,
+   "2022": 35,
+   "2012": 35,
+   "2011": 35,
+   "2013": 34,
+   "2023": 33,
+   "2019": 32,
+   "2009": 22
+  },
+  "bytes": 127455
+ },
+ "olive_y": {
+  "error": "<HTTPError 500: ''>"
+ },
+ "organic_sectors": {
+  "n": 7,
+  "sample": [
+   "Beef and veal",
+   "Cereals"
+  ],
+  "bytes": 133
+ },
+ "organic_products": {
+  "n": 29,
+  "sample": [
+   "Class A Chicken",
+   "Cows"
+  ],
+  "bytes": 999
+ },
+ "organic_overall": {
+  "n": 30,
+  "sample": [
+   "Apples - Braeburn",
+   "Apples - Elstar"
+  ],
+  "bytes": 827
+ },
+ "beefcuts_cat": {
+  "n": 3,
+  "sample": [
+   "Forequarter",
+   "Hindquarter"
+  ],
+  "bytes": 47
+ },
+ "beefcuts_pt": {
+  "n": 3,
+  "sample": [
+   "Non-retail buying price",
+   "Retail buying price"
+  ],
+  "bytes": 69
+ },
+ "beefcutsm_cat": {
+  "n": 1,
+  "sample": [
+   "Minced meat"
+  ],
+  "bytes": 17
+ },
+ "pigcuts_cat": {
+  "n": 5,
+  "sample": [
+   "Belly",
+   "Ham"
+  ],
+  "bytes": 53
+ },
+ "pigcuts_pt": {
+  "n": 3,
+  "sample": [
+   "Non-retail buying price",
+   "Retail buying price"
+  ],
+  "bytes": 69
+ },
+ "poultrym_pt": {
+  "n": 3,
+  "sample": [
+   "Non-retail buying prices",
+   "Retail buying prices"
+  ],
+  "bytes": 71
+ },
+ "live_cat": {
+  "n": 5,
+  "sample": [
+   "Male Calves Beef Type",
+   "Male Calves Dairy Type"
+  ],
+  "bytes": 137
+ },
+ "cereal_crops": {
+  "n": 9,
+  "sample": [
+   "Barley",
+   "Durum wheat"
+  ],
+  "bytes": 105
+ },
+ "oilseeds_crops": {
+  "n": 7,
+  "sample": [
+   "Broad/field beans",
+   "Field peas"
+  ],
+  "bytes": 99
+ },
+ "rice_prod_products": {
+  "n": 4,
+  "sample": [
+   "(1) Round grain paddy rice",
+   "(2) Medium grain paddy rice"
+  ],
+  "bytes": 125
+ },
+ "fpmt_dims": {
+  "freq": [
+   [
+    "M",
+    "Monthly"
+   ]
+  ],
+  "coicop18": [
+   [
+    "CP011",
+    "Food"
+   ],
+   [
+    "CP01111",
+    "Cereals (ND)"
+   ],
+   [
+    "CP011131",
+    "Bread"
+   ],
+   [
+    "CP011139",
+    "Other bakery products"
+   ],
+   [
+    "CP01115",
+    "Macaroni, noodles, couscous and similar pasta products (ND)"
+   ],
+   [
+    "CP01122",
+    "Meat, fresh, chilled or frozen (ND)"
+   ],
+   [
+    "CP011221",
+    "Meat of bovine animals, fresh, chilled or frozen"
+   ],
+   [
+    "CP011222",
+    "Meat of pigs, fresh, chilled or frozen"
+   ],
+   [
+    "CP011223",
+    "Meat of goats, lambs and sheep, fresh, chilled or frozen"
+   ],
+   [
+    "CP011224",
+    "Meat of poultry, fresh, chilled or frozen"
+   ],
+   [
+    "CP011225",
+    "Meat of hares and rabbits, fresh, chilled or frozen"
+   ],
+   [
+    "CP011226",
+    "Meat of horses and other equines, fresh, chilled or frozen"
+   ],
+   [
+    "CP0113",
+    "Fish and other seafood (ND)"
+   ],
+   [
+    "CP0114",
+    "Milk, other dairy products and eggs (ND)"
+   ],
+   [
+    "CP01141",
+    "Raw and whole milk (ND)"
+   ],
+   [
+    "CP01142",
+    "Skimmed milk (ND)"
+   ],
+   [
+    "CP01145",
+    "Cheese (ND)"
+   ],
+   [
+    "CP01146",
+    "Yoghurt and similar products (ND)"
+   ],
+   [
+    "CP01148",
+    "Eggs (ND)"
+   ],
+   [
+    "CP0115",
+    "Oils and fats (ND)"
+   ],
+   [
+    "CP01151",
+    "Vegetable oils (ND)"
+   ],
+   [
+    "CP011513",
+    "Olive oil"
+   ],
+   [
+    "CP01152",
+    "Butter and other oils and fats derived from milk (ND)"
+   ],
+   [
+    "CP0116",
+    "Fruits and nuts (ND)"
+   ],
+   [
+    "CP01162",
+    "Citrus fruits, fresh (ND)"
+   ],
+   [
+    "CP01166",
+    "Fruits, frozen (ND)"
+   ],
+   [
+    "CP01167",
+    "Fruits, dried and dehydrated (ND)"
+   ],
+   [
+    "CP01168",
+    "Nuts, in shell or shelled (ND)"
+   ],
+   [
+    "CP0117",
+    "Vegetables, tubers, plantains, cooking bananas and pulses (ND)"
+   ],
+   [
+    "CP011751",
+    "Potatoes"
+   ],
+   [
+    "CP01181",
+    "Cane sugar and beet sugar (ND)"
+   ],
+   [
+    "CP01185",
+    "Chocolate, cocoa and cocoa-based food products (ND)"
+   ],
+   [
+    "CP01186",
+    "Ice, ice cream and sorbets (ND)"
+   ],
+   [
+    "CP01193",
+    "Salt, condiments and sauces (ND)"
+   ],
+   [
+    "CP0121",
+    "Fruit and vegetable juices (ND)"
+   ],
+   [
+    "CP0122",
+    "Coffee and coffee substitutes (ND)"
+   ],
+   [
+    "CP0123",
+    "Tea, maté and other plant-derived products for infusion (ND)"
+   ],
+   [
+    "CP0124",
+    "Cocoa drinks (ND)"
+   ],
+   [
+    "CP02121",
+    "Wine from grapes (ND)"
+   ],
+   [
+    "CP0213",
+    "Beer (ND)"
+   ],
+   [
+    "CP023",
+    "Tobacco"
+   ]
+  ],
+  "indx": [
+   [
+    "ACPI",
+    "Agricultural commodity price index"
+   ],
+   [
+    "HICP",
+    "Harmonised index of consumer prices"
+   ],
+   [
+    "PPI",
+    "Producer price index"
+   ],
+   [
+    "IPI",
+    "Import price index"
+   ]
+  ],
+  "unit": [
+   [
+    "I25",
+    "Index, 2025=100"
+   ],
+   [
+    "RCH_M",
+    "Monthly rate of change"
+   ],
+   [
+    "RCH_A",
+    "Annual rate of change"
+   ]
+  ],
+  "geo": [
+   [
+    "EU",
+    "European Union (EU6-1958, EU9-1973, EU10-1981, EU12-1986, EU15-1995, EU25-2004, EU27-2007, EU28-2013, EU27-2020)"
+   ],
+   [
+    "EU27_2020",
+    "European Union - 27 countries (from 2020)"
+   ],
+   [
+    "EU28",
+    "European Union - 28 countries (2013-2020)"
+   ],
+   [
+    "EA",
+    "Euro area (EA11-1999, EA12-2001, EA13-2007, EA15-2008, EA16-2009, EA17-2011, EA18-2014, EA19-2015, EA20-2023, EA21-2026)"
+   ],
+   [
+    "EA21",
+    "Euro area – 21 countries (from 2026)"
+   ],
+   [
+    "EA20",
+    "Euro area – 20 countries (2023-2025)"
+   ],
+   [
+    "EA19",
+    "Euro area - 19 countries  (2015-2022)"
+   ],
+   [
+    "BE",
+    "Belgium"
+   ],
+   [
+    "BG",
+    "Bulgaria"
+   ],
+   [
+    "CZ",
+    "Czechia"
+   ],
+   [
+    "DK",
+    "Denmark"
+   ],
+   [
+    "DE",
+    "Germany"
+   ],
+   [
+    "EE",
+    "Estonia"
+   ],
+   [
+    "IE",
+    "Ireland"
+   ],
+   [
+    "EL",
+    "Greece"
+   ],
+   [
+    "ES",
+    "Spain"
+   ],
+   [
+    "FR",
+    "France"
+   ],
+   [
+    "HR",
+    "Croatia"
+   ],
+   [
+    "IT",
+    "Italy"
+   ],
+   [
+    "CY",
+    "Cyprus"
+   ],
+   [
+    "LV",
+    "Latvia"
+   ],
+   [
+    "LT",
+    "Lithuania"
+   ],
+   [
+    "LU",
+    "Luxembourg"
+   ],
+   [
+    "HU",
+    "Hungary"
+   ],
+   [
+    "MT",
+    "Malta"
+   ],
+   [
+    "NL",
+    "Netherlands"
+   ],
+   [
+    "AT",
+    "Austria"
+   ],
+   [
+    "PL",
+    "Poland"
+   ],
+   [
+    "PT",
+    "Portugal"
+   ],
+   [
+    "RO",
+    "Romania"
+   ],
+   [
+    "SI",
+    "Slovenia"
+   ],
+   [
+    "SK",
+    "Slovakia"
+   ],
+   [
+    "FI",
+    "Finland"
+   ],
+   [
+    "SE",
+    "Sweden"
+   ],
+   [
+    "EEA",
+    "European Economic Area (EEA18-1995, EEA28-2004, EEA30-2007, EEA31-2013, EEA30-2020)"
+   ],
+   [
+    "IS",
+    "Iceland"
+   ],
+   [
+    "NO",
+    "Norway"
+   ],
+   [
+    "CH",
+    "Switzerland"
+   ],
+   [
+    "UK",
+    "United Kingdom"
+   ],
+   [
+    "ME",
+    "Montenegro"
+   ],
+   [
+    "MK",
+    "North Macedonia"
+   ],
+   [
+    "GE",
+    "Georgia"
+   ],
+   [
+    "AL",
+    "Albania"
+   ],
+   [
+    "RS",
+    "Serbia"
+   ],
+   [
+    "TR",
+    "Türkiye"
+   ],
+   [
+    "UA",
+    "Ukraine"
+   ],
+   [
+    "XK",
+    "Kosovo*"
+   ]
+  ],
+  "time": [
+   [
+    "2026-07",
+    "2026-07"
+   ],
+   [
+    "2026-08",
+    "2026-08"
+   ]
+  ]
+ },
+ "fpmt_updated": "2026-09-11T11:00:00+0200",
+ "fpmt_EU27_2020": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   380
+  ],
+  "nvals": 54404,
+  "bytes": 1078365
+ },
+ "fpmt_ES": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   380
+  ],
+  "nvals": 75250,
+  "bytes": 1323142
+ },
+ "fpmt_FR": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   380
+  ],
+  "nvals": 91545,
+  "bytes": 1959577
+ },
+ "fpmt_DE": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   380
+  ],
+  "nvals": 94679,
+  "bytes": 1501744
+ },
+ "fpmt_IT": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   380
+  ],
+  "nvals": 81624,
+  "bytes": 1502459
+ },
+ "fpmt_NL": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   380
+  ],
+  "nvals": 67764,
+  "bytes": 1184609
+ },
+ "fpmt_PL": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   380
+  ],
+  "nvals": 69992,
+  "bytes": 1205464
+ }
+}
