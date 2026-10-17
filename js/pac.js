@@ -465,11 +465,17 @@
     });
     return h + cite('boe_es', DATA.amounts.source.consolidatedAt.slice(0, 10));
   }
+  /* Filtro Península / Islas: la zona sale solo de lo que dice la etiqueta del real decreto («Península»; «Illes Balears» o «insular»). Las ayudas sin zona indicada se ven en las dos vistas. Las filas se ocultan, no se quitan. */
+  var AZ = { es: [['all', 'Todas'], ['p', 'Península'], ['i', 'Islas']], en: [['all', 'All'], ['p', 'Mainland'], ['i', 'Islands']], fr: [['all', 'Toutes'], ['p', 'Péninsule'], ['i', 'Îles']], it: [['all', 'Tutte'], ['p', 'Penisola'], ['i', 'Isole']] };
+  var AZN = { es: 'Las ayudas cuyo nombre no indica zona en el real decreto aparecen en las dos vistas.', en: 'Aids whose name gives no zone in the royal decree appear in both views.', fr: 'Les aides dont le nom n’indique aucune zone dans le décret royal figurent dans les deux vues.', it: 'Gli aiuti il cui nome non indica una zona nel real decreto compaiono in entrambe le viste.' };
+  function aaZone(a) { return /Illes Balears|insular/i.test(a.label) ? 'i' : /Pen[ií]nsula/i.test(a.label) ? 'p' : 'n'; }
+  function aaShow(z) { return !ST.az || ST.az === 'all' || z === 'n' || z === ST.az; }
   function assocHtml() {
     var t = tr(), i = idx(), h = note(fill(t.assocIntro, { y: ST.y })) + (lang() !== 'es' ? note(t.assocNames) : '');
+    h += '<div class="di-tabs-bar" data-pac-azbar role="group" aria-label="' + esc(AZ[lang()] ? AZ[lang()].map(function (o) { return o[1]; }).join(' / ') : '') + '" style="margin:6px 0 4px">' + (AZ[lang()] || AZ.es).map(function (o) { var on = (ST.az || 'all') === o[0]; return '<button type="button" class="di-tab-btn' + (on ? ' active' : '') + '" data-pac-az="' + o[0] + '" aria-pressed="' + (on ? 'true' : 'false') + '">' + esc(o[1]) + '</button>'; }).join('') + '</div>' + note(AZN[lang()] || AZN.es);
     [['crop', t.aCrop], ['livestock', t.aLive]].forEach(function (g) {
       h += '<h3 style="font-size:15px;margin:10px 0 2px">' + esc(g[1]) + '</h3><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th>' + esc(t.aName) + '</th><th class="r">' + esc(t.eMin) + '</th><th class="r">' + esc(t.eMax) + '</th></tr></thead><tbody>';
-      DATA.amounts.associatedAid.forEach(function (a) { if (a.kind === g[0]) h += '<tr><td' + (lang() !== 'es' ? ' title="' + esc(a.label) + '"' : '') + '>' + esc(aaLabel(a)) + '</td><td class="r">' + nf(a.min[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td><td class="r">' + nf(a.max[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td></tr>'; });
+      DATA.amounts.associatedAid.forEach(function (a) { if (a.kind === g[0]) h += '<tr data-az="' + aaZone(a) + '"' + (aaShow(aaZone(a)) ? '' : ' hidden') + '><td' + (lang() !== 'es' ? ' title="' + esc(a.label) + '"' : '') + '>' + esc(aaLabel(a)) + '</td><td class="r">' + nf(a.min[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td><td class="r">' + nf(a.max[i], 2) + ' ' + esc(a.unit === 'EUR/ha' ? t.aUnitHa : t.aUnitAn) + '</td></tr>'; });
       h += '</tbody></table></div>';
     });
     return h + cite('boe_es', DATA.amounts.source.consolidatedAt.slice(0, 10));
@@ -526,6 +532,8 @@
     }
   }
   function onClick(e) {
+    var zb = e.target.closest ? e.target.closest('[data-pac-az]') : null;
+    if (zb) { ST.az = zb.getAttribute('data-pac-az'); Array.prototype.forEach.call(root.querySelectorAll('[data-pac-az]'), function (x) { var on = x === zb; x.classList.toggle('active', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); }); Array.prototype.forEach.call(root.querySelectorAll('tr[data-az]'), function (r) { r.hidden = !aaShow(r.getAttribute('data-az')); }); return; }
     var b = e.target.closest ? e.target.closest('[data-pac-add],[data-pac-rm],[data-pac-reset]') : null; if (!b) return;
     if (b.hasAttribute('data-pac-add')) { if (ST.eco.length < 12) { var first = DATA.amounts.ecoschemes[0]; ST.eco.push({ id: first.id, ha: '', bonus: 0, cost: '' }); save(); root.querySelector('[data-pac-form]').innerHTML = formHtml(); refresh(); var s = root.querySelector('[data-pac-eco="' + (ST.eco.length - 1) + '"][data-f="ha"]'); if (s) s.focus(); } }
     else if (b.hasAttribute('data-pac-rm')) { ST.eco.splice(+b.getAttribute('data-pac-rm'), 1); save(); root.querySelector('[data-pac-form]').innerHTML = formHtml(); refresh(); var a = root.querySelector('[data-pac-add]'); if (a) a.focus(); }
