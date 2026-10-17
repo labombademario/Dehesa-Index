@@ -54,7 +54,7 @@ def main():
         for (c, i), arr in sorted((k, v) for k, v in rows.items() if k[0] != "flag"):
             nz = [n for n, x in enumerate(arr) if x is not None]
             if len(nz) < 12 or i not in INDX: continue
-            a, b = nz[0], nz[-1]; s = {"p": c, "i": i, "s": t[a], "v": [None if x is None else round(x, 2) for x in arr[a:b + 1]]}
+            a, b = nz[0], nz[-1]; s = {"p": c, "i": i, "s": t[a], "v": [None if x is None else round(x, 4) for x in arr[a:b + 1]]}
             fl = rows.get(("flag", c, i), {}).get(b)
             if fl: s["f"] = fl
             ser.append(s); lastm = max(lastm, t[b])
