@@ -1,0 +1,44 @@
+ZIP: https://www.ers.usda.gov/media/5539/livestock-domestic-data-machine-readable-files.zip?v=98700
+descartada us-erslm-veal-exports-a: 19 puntos, ultimo 1988
+descartada us-erslm-veal-imports-a: 19 puntos, ultimo 1988
+oferta y utilizacion: 70 series
+estadisticas mensuales: 42 series
+descartada us-erslm-lp-hay-national-alfalfa-hay-u-s-average-m: 6 puntos, ultimo 2026-07
+descartada us-erslm-lp-hay-national-grass-hay-u-s-average-m: 6 puntos, ultimo 2026-07
+descartada us-erslm-lp-sheep-and-lamb-san-angelo-tx-ewes-good-m: 237 puntos, ultimo 2019-10
+descartada us-erslm-lp-sheep-and-lamb-san-angelo-tx-feeder-lambs-choice-m: 238 puntos, ultimo 2019-10
+descartada us-erslm-lp-sheep-and-lamb-san-angelo-tx-slaughter-lambs-choice-m: 219 puntos, ultimo 2018-03
+descartada us-erslm-wp-broilers-12-city-12-city-composite-m: 156 puntos, ultimo 2012-12
+descartada us-erslm-wp-broilers-georgia-georgia-dock-m: 196 puntos, ultimo 2016-04
+descartada us-erslm-wp-broilers-northeast-breast-boneless-m: 272 puntos, ultimo 2022-08
+descartada us-erslm-wp-broilers-northeast-breast-ribs-on-m: 272 puntos, ultimo 2022-08
+descartada us-erslm-wp-broilers-northeast-leg-quarters-m: 272 puntos, ultimo 2022-08
+descartada us-erslm-wp-broilers-northeast-legs-whole-m: 272 puntos, ultimo 2022-08
+descartada us-erslm-wp-lamb-east-coast-55-65-pounds-choice4-m: 202 puntos, ultimo 2017-03
+precios: 32 series
+descartada us-erslm-feeder-supply-on-farms-jan-1-calves-under-500-lbs-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-farms-jan-1-steers-500-lbs-and-over-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-farms-jan-1-heifers-500-lbs-and-over-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-farms-jan-1-total-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-feed-jan-1-total-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-feeder-cattle-outside-feedlots-on-jan-1-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-slaughter-jan-mar-calves-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-slaughter-jan-mar-steers-heifers-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-slaughter-jan-mar-total-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-feed-apr-1-total-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-feeder-cattle-outside-feedlots-on-apr-1-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-farms-jul-1-calves-under-500-lbs-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-farms-jul-1-steers-500-lbs-and-over-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-farms-jul-1-heifers-500-lbs-and-over-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-farms-jul-1-total-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-on-feed-jul-1-total-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-feeder-cattle-outside-feedlots-on-jul-1-a: 1 puntos, ultimo 2026
+descartada us-erslm-feeder-supply-slaughter-jul-sep-calves-a: 0 puntos, ultimo -
+descartada us-erslm-feeder-supply-slaughter-jul-sep-steers-heifers-a: 0 puntos, ultimo -
+descartada us-erslm-feeder-supply-slaughter-jul-sep-total-a: 0 puntos, ultimo -
+descartada us-erslm-feeder-supply-on-feed-oct-1-total-a: 0 puntos, ultimo -
+descartada us-erslm-feeder-supply-feeder-cattle-outside-feedlots-on-oct-1-a: 0 puntos, ultimo -
+recria fuera de cebaderos: 22 series
+novillas: 22 series
+simulador: 19 series
+OK: 207 series
