@@ -229,6 +229,59 @@ def es():
     (OUT / "es.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
     return len(crops), len(regions)
 
+# ---------------- Resto de Europa: regiones Eurostat (apro_cpshr) + precio nacional al productor (apro_cp_crop) ----------------
+import re
+EU_STATS = ("eurostat-eu-stats.json", "eurostat-eu2-stats.json", "eurostat-eu3-stats.json", "eurostat-euw-stats.json", "italy-eurostat-stats.json", "poland-eurostat-stats.json", "portugal-eurostat-stats.json")
+EU_CCS = ["DE", "IT", "PL", "PT", "NL", "DK", "SE", "FI", "IE", "EL", "BG", "HR", "HU", "CZ", "SK", "SI", "LT", "RO"]
+def region_names(cc):
+    """nombres de region en 4 idiomas desde js/region-names.js ('en|es|fr|it')"""
+    src = (ROOT / "js" / "region-names.js").read_text()
+    m = re.search(r"var %s = \{(.*?)\};" % cc, src, re.S)
+    out = {}
+    if m:
+        for k, v in re.findall(r"""['"]?([A-Za-z0-9_]+)['"]?\s*:\s*'([^']*)'""", m.group(1)):
+            a = v.split("|")
+            if len(a) == 4: out[k] = {"en": a[0], "es": a[1], "fr": a[2], "it": a[3]}
+    return out
+def eu_all():
+    ser = {}
+    for f in EU_STATS:
+        for cc, v in load(f)["countries"].items():
+            for x in v["series"]: ser.setdefault(cc, {})[x["id"]] = x
+    res = {}
+    for cc in EU_CCS:
+        fn = D / ("eu-regions-%s.json" % cc.lower())
+        if not fn.exists() or cc not in ser: continue
+        reg = json.loads(fn.read_text())["regions"]; names = region_names(cc); crops = {}; pre = cc.lower() + "-es-crop-"
+        for cid, nm, eid, _mid, _bk in ESC:
+            e = ser[cc].get(pre + eid.split("-")[-1])
+            if not e or len(e["points"]) < 8: continue
+            k100 = 1 if "1000 kg" in (e.get("unit") or "") else 10
+            hist = {p[0]: round(p[1] * k100, 2) for p in e["points"]}; yy = max(hist)
+            crops[cid] = {"name": nm, "yieldUnit": "t/ha", "priceUnit": "EUR/t", "areaUnit": "ha", "revUnit": "EUR/ha",
+                          "price": {"current": {"value": hist[yy], "kind": "implied", "from": yy, "to": yy, "sourceId": "eurostat"}, "hist": hist}, "costs": None, "stocks": None}
+        regions = {}
+        for code, R in reg.items():
+            if code not in names or "crops" not in R: continue
+            rr = {"name": names[code]["es"], "names": names[code], "crops": {}}
+            for cid in crops:
+                c = R["crops"].get(cid)
+                if not c or not c.get("area") or not c.get("prod"): continue
+                a = {str(y): v for y, v in c["area"]}; pr = {str(y): v for y, v in c["prod"]}
+                yld = {y: round(pr[y] / a[y], 3) for y in a if y in pr and a[y] > 0 and pr[y] > 0}
+                area = {y: round(a[y] * 1000) for y in a if a[y] > 0}; ph = crops[cid]["price"]["hist"]
+                if len(yld) >= 3: rr["crops"][cid] = {"yield": yld, "area": area, "rev": {y: round(yld[y] * ph[y], 1) for y in yld if y in ph}}
+            if rr["crops"]: regions[code] = rr
+        used = {k for r in regions.values() for k in r["crops"]}
+        crops = {k: v for k, v in crops.items() if k in used}
+        if len(regions) < 2 or len(crops) < 3: continue
+        doc = {"schemaVersion": 1, "generatedAt": NOW, "country": cc, "areaUnit": "ha", "currency": "EUR",
+               "note": "Rendimiento (produccion / superficie) y superficie por region (Eurostat, apro_cpshr) y precio al productor por año (Eurostat, apro_cp_crop: precio nacional, en euros). Precio actual = el del ultimo año publicado. Ingreso por ha = rendimiento x precio nacional de ese año. Sin costes ni existencias.",
+               "crops": crops, "regions": regions}
+        (OUT / (cc.lower() + ".json")).write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
+        res[cc] = (len(crops), len(regions))
+    return res
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    print("us", us()); print("fr", fr()); print("ca", ca()); print("es", es())
+    print("us", us()); print("fr", fr()); print("ca", ca()); print("es", es()); print("eu", eu_all())
