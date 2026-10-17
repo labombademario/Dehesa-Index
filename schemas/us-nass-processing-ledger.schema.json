@@ -1,0 +1,22 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Transformacion NASS: libro acumulado de informes mensuales (data/us-nass-processing-ledger.json)",
+ "type": "object",
+ "required": [
+  "done",
+  "series"
+ ],
+ "properties": {
+  "done": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "string"
+   }
+  },
+  "series": {
+   "type": "object",
+   "minProperties": 30
+  }
+ }
+}

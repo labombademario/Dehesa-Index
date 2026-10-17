@@ -1,0 +1,17 @@
+name: tmp-probe-usda-run
+on:
+  push:
+    branches: [research/probe-usda-run]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          mkdir -p probe/run
+          for s in fmmo ers-livestock nass-processing wasde sap; do python3 scripts/update-us-$s.py --out probe/run > probe/run/$s.log 2>&1; echo "$s rc=$?" >> probe/run/rc.txt; done
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/run; git commit -qm "probe run out" || true; git push || true

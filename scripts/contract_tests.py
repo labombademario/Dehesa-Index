@@ -950,6 +950,34 @@ def us_markets_ethanol(doc, errs, warns, stats):
     n = 0
     for k, sr in doc["series"].items(): _dated_series("etanol %s" % k, sr["points"], errs, 0, 60000 if k.startswith("stocks") else 3000); n += 1
     stats["series"] = n
+def us_markets_wasde(doc, errs, warns, stats):
+    """WASDE (OCE/WAOB): >=150 magnitudes con id unico, anos comerciales sin repetir y ordenados, valores finitos y menos de 1e7, precios y produccion no negativos, series clave presentes y hist que termina en el mes del informe."""
+    I = doc["items"]; ids = set(); rm = doc["reportMonth"]
+    for it in I:
+        if it["id"] in ids: errs.append("wasde: id repetido %s" % it["id"]); continue
+        ids.add(it["id"]); ys = [r["my"] for r in it["rows"]]
+        if ys != sorted(set(ys)): errs.append("wasde %s: anos desordenados o repetidos" % it["id"]); continue
+        for r in it["rows"]:
+            v = r["v"]
+            if v is not None and (v != v or abs(v) > 1e7): errs.append("wasde %s %s: valor imposible %r" % (it["id"], r["my"], v)); break
+            if v is not None and v < 0 and ("price" in it["id"] or "production" in it["id"] or "area" in it["id"]): errs.append("wasde %s %s: valor negativo" % (it["id"], r["my"])); break
+            if r.get("hist") and r["hist"][-1][0] != rm: warns.append("wasde %s %s: el historico no acaba en %s" % (it["id"], r["my"], rm)); break
+    for k in ("corn|avg-farm-price-bu", "wheat|avg-farm-price-bu", "soybeans|avg-farm-price-bu", "cotton|avg-farm-price", "corn|production", "dairyprices|class-iii"):
+        if k not in ids: errs.append("wasde: falta la magnitud %s" % k)
+    stats["series"] = len(I)
+def us_markets_sap(doc, errs, warns, stats):
+    """Prevision de precio de ERS (modelo, no oficial): >=3 productos, cada ano con puntos de fecha ordenada y sin repetir, precio del modelo entre 0 y 1000, la marca official=false y la nota bilingue."""
+    n = 0
+    if doc.get("official") is not False: errs.append("sap: debe declararse official=false")
+    for c in doc["commodities"]:
+        for y in c["years"]:
+            ds = [p[0] for p in y["points"]]
+            if ds != sorted(set(ds)): errs.append("sap %s %s: fechas desordenadas o repetidas" % (c["id"], y["label"])); continue
+            for p in y["points"]:
+                if p[1] is not None and not 0 < p[1] < 1000: errs.append("sap %s %s: precio imposible %r" % (c["id"], y["label"], p[1])); break
+                if p[2] is not None and not 0 < p[2] < 1000: errs.append("sap %s %s: cifra WASDE imposible %r" % (c["id"], y["label"], p[2])); break
+        n += 1
+    stats["series"] = n
 def us_markets_baseline_tables(doc, errs, warns, stats):
     """Tablas xlsx de ERS: >=12 tablas, ids unicos, 5-12 columnas de periodo sin repetir, cada fila con tantos valores como periodos, valores finitos y menos de 1e9, y al menos 2 filas con datos por tabla."""
     T = doc["tables"]; ids = set(); n = 0

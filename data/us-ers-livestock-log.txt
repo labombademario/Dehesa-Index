@@ -1,0 +1,3 @@
+pagina no legible: RuntimeError("https://www.ers.usda.gov/data-products/livestock-and-meat-domestic-data/livestock-and-
+ZIP: https://www.ers.usda.gov/media/5539/livestock-domestic-data-machine-readable-files.zip
+FALLO: RuntimeError("https://www.ers.usda.gov/media/5539/livestock-domestic-data-machine-readable-files.zip: URLError(OSError('Tunnel connection failed: 403 Forbidden'))")
