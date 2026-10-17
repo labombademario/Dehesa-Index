@@ -255,14 +255,18 @@
   function topCard(x, S, cc) {
     var w = TOPW[x.lang] || TOPW.es, i = TOPI[x.lang] == null ? 1 : TOPI[x.lang], esc = x.esc, T = topLists(S, cc);
     if (cc === 'US') w = [w[0], US_NOTE[x.lang] || US_NOTE.es, w[2], w[3], w[4], w[5], w[6]];
+    var LP = { es: ['Lista', 'Tarta'], en: ['List', 'Pie'], fr: ['Liste', 'Camembert'], it: ['Elenco', 'Torta'] }[x.lang] || ['List', 'Pie'], CH = window.DehesaChart;
     var list = function (title, rows, dict, unit, div) {
       if (rows.length < 3) return ''; // con menos de tres partidas no hay podio
-      return '<div style="flex:1;min-width:240px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(unit) + ', ' + rows[0].y + '</span></div>' +
-        rows.slice(0, 6).map(function (r, n) { return '<div style="display:flex;gap:8px;align-items:baseline;font-size:13px;margin:5px 0"><span style="width:22px;flex:none"' + (n < 3 ? ' role="img" title="' + esc(w[6][n]) + '" aria-label="' + esc(w[6][n]) + '"' : ' aria-hidden="true"') + '>' + (n < 3 ? MEDALS[n] : '') + '</span><span style="flex:1">' + esc(dict[r.k][i]) + '</span><b style="font-variant-numeric:tabular-nums">' + x.nf(r.v / div, r.v / div < 100 ? 1 : 0) + '</b></div>'; }).join('') + '</div>';
+      var top = rows.slice(0, 6);
+      var lst = top.map(function (r, n) { return '<div style="display:flex;gap:8px;align-items:baseline;font-size:13px;margin:5px 0"><span style="width:22px;flex:none;text-align:center"' + (n < 3 ? ' role="img" title="' + esc(w[6][n]) + '" aria-label="' + esc(w[6][n]) + '"' : ' aria-label="' + (n + 1) + '"') + '>' + (n < 3 ? MEDALS[n] : '<b style="font-size:12px;color:var(--text-muted);font-variant-numeric:tabular-nums">' + (n + 1) + '</b>') + '</span><span style="flex:1">' + esc(dict[r.k][i]) + '</span><b style="font-variant-numeric:tabular-nums">' + x.nf(r.v / div, r.v / div < 100 ? 1 : 0) + '</b></div>'; }).join('');
+      var pieH = CH && CH.pie ? CH.pie({ items: top.map(function (r) { return { name: dict[r.k][i], v: r.v / div }; }), unit: unit, centerLabel: 'Top ' + top.length, maxN: 6, minShare: 0 }) : '';
+      var body = pieH && CH.switcher ? CH.switcher({ line: lst, pie: pieH, lineLabel: LP[0], pieLabel: LP[1] }) : lst;
+      return '<div style="flex:1;min-width:240px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(unit) + ', ' + rows[0].y + '</span></div>' + body + '</div>';
     };
     var a = list(w[2], T.crops, TOPC, w[4], 1000), b = list(w[3], T.animals, TOPA, w[5], 1000);
     if (!a && !b) return '';
-    return '<div id="pp-top" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(w[0].toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 10px">' + esc(w[1]) + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
+    return '<div id="pp-top" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(w[0].toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 10px">' + esc(w[1] + ' ' + ({ es: 'La tarta reparte solo las partidas mostradas, no el total del país.', en: 'The pie splits only the items shown, not the country total.', fr: 'Le camembert ne répartit que les postes affichés, pas le total du pays.', it: 'La torta ripartisce solo le voci mostrate, non il totale del paese.' }[x.lang] || '')) + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
   }
   function html(cc, c, x) {
     var t = T[x.lang] || T.es, esc = x.esc, nf = x.nf, S = c.series, groups = {}, i;
