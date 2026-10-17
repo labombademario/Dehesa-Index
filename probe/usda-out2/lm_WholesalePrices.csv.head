@@ -1,0 +1,26 @@
+lines=7074
+"commodity_desc","geography_desc","attribute_desc","unit_desc","year_id","month_id","month_desc","amount"
+"Beef","Central U.S.","Boxed beef cutout Choice 1-3, 600 - 900 pounds","Dollars per hundredweight",2026,9,"September",376
+"Beef","Central U.S.","Boxed beef cutout Select 1-3, 600 - 900 pounds","Dollars per hundredweight",2026,9,"September",354.25
+"Beef","Central U.S.","Boneless beef, 90 percent, fresh ","Dollars per hundredweight",2026,9,"September",426.25
+"Beef","Central U.S.","Imported boneless beef, 90 percent, frozen ","Dollars per hundredweight",2026,9,"September",340.25
+"Pork","Central U.S.","Pork cutout composite","Dollars per hundredweight",2026,9,"September",91.25
+"Pork","Central U.S.","Loins, 1/4"", trimmed vacuum-packed","Dollars per hundredweight",2026,9,"September",100
+"Pork","Central U.S.","Bellies, 12-14 pounds, skin on","Dollars per hundredweight",2026,9,"September",176
+"Pork","Central U.S.","Hams, 23-27 pounds, trimmed selected","Dollars per hundredweight",2026,9,"September",81.75
+"Pork","Central U.S.","Trimmings, 72 percent combo","Dollars per hundredweight",2026,9,"September",88
+"Broilers","National","National composite","Cents per pound",2026,9,"September",116.5
+"Broilers","National","Breast, boneless","Cents per pound",2026,9,"September",105.5
+"Broilers","National","Breast, ribs on","Cents per pound",2026,9,"September",109
+"Broilers","National","Legs, whole","Cents per pound",2026,9,"September",71.5
+"Broilers","National","Leg quarters","Cents per pound",2026,9,"September",53.5
+"Turkeys","National","Hens, 8-16 pounds","Cents per pound",2026,9,"September",180
+"Turkeys","National","Toms, 16-24 pounds","Cents per pound",2026,9,"September",184
+"Turkeys","National","Drumsticks","Cents per pound",2026,9,"September",86
+"Turkeys","National","Wings, full cut","Cents per pound",2026,9,"September",107.5
+"Eggs","Combined regional","Eggs, Grade A, large","Cents per dozen",2026,9,"September",73.5
+"Eggs","New York","Eggs, Grade A, large","Cents per dozen",2026,9,"September",83
+"Beef","Central U.S.","Boxed beef cutout Choice 1-3, 600 - 900 pounds","Dollars per hundredweight",2000,1,"January",114.74
+"Beef","Central U.S.","Boxed beef cutout Choice 1-3, 600 - 900 pounds","Dollars per hundredweight",2000,2,"February",112.59
+"Beef","Central U.S.","Boxed beef cutout Choice 1-3, 600 - 900 pounds","Dollars per hundredweight",2000,3,"March",118.42
+"Beef","Central U.S.","Boxed beef cutout Choice 1-3, 600 - 900 pounds","Dollars per hundredweight",2000,4,"April",123.45

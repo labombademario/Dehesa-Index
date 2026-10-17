@@ -1,0 +1,14 @@
+NO hist.html https://www.usda.gov/oce/commodity-markets/wasde/historical-wasde-report-data 'HTTP Error 403: Forbidden'
+OK outputfc.csv 2884019 https://www.ers.usda.gov/media/6497/output-forecast-csv-file.csv
+OK inputdata.csv 17470882 https://www.ers.usda.gov/media/6498/input-data-csv-file.csv
+OK lm.zip 919887 https://www.ers.usda.gov/media/5539/livestock-domestic-data-machine-readable-files.zip
+lm.zip: livestock-data-machine-readable-files/=0; livestock-data-machine-readable-files/FeederCattleSuppliesOutsideFeedlots.csv=15828; livestock-data-machine-readable-files/heifersenteringherd.csv=38863; livestock-data-machine-readable-files/highplainscattlefeedingsimulator.csv=34289; livestock-data-machine-readable-files/LivestockPrices.csv=561845; livestock-data-machine-readable-files/Meat-Statistics.csv=9293109; livestock-data-machine-readable-files/Meat-Supply-Disappearance.csv=2396318; livestock-data-machine-readable-files/WholesalePrices.csv=669729; livestock-data-machine-readable-files/_Read_Me.txt=1616
+OK dairy.html 52511 https://www.ers.usda.gov/data-products/dairy-data
+cafo txts /sites/default/release-files/796091/cafo1026.txt,/sites/default/release-files/796044/cafo0926.txt,/sites/default/release-files/796003/cafo0726.txt,/sites/default/release-files/795966/cafo0726.txt,/sites/default/release-files/795926/cafo0626.txt,/sites/default/release-files/795887/cafo0526.txt,/sites/default/release-files/795845/cafo0426.txt,/sites/default/release-files/795799/cafo0326.txt,/sites/default/release-files/795753/cafo0226.txt,/sites/default/release-files/795713/cafo0126.txt,/sites/default/release-files/796091/cafo1026.txt
+OK cafo-latest.txt 38450 https://esmis.nal.usda.gov/sites/default/release-files/796091/cafo1026.txt
+OK cafo-first.txt 38450 https://esmis.nal.usda.gov/sites/default/release-files/796091/cafo1026.txt
+cagc txts /sites/default/release-files/796092/cagc1026.txt,/sites/default/release-files/796045/cagc0926.txt,/sites/default/release-files/796005/cagc0726.txt,/sites/default/release-files/795967/cagc0726.txt,/sites/default/release-files/795927/cagc0626.txt,/sites/default/release-files/795890/cagc0526.txt,/sites/default/release-files/795846/cagc0426.txt,/sites/default/release-files/795803/cagc0326.txt,/sites/default/release-files/795755/cagc0226.txt,/sites/default/release-files/795714/cagc0126.txt,/sites/default/release-files/796092/cagc1026.txt
+OK cagc-latest.txt 11043 https://esmis.nal.usda.gov/sites/default/release-files/796092/cagc1026.txt
+OK cagc-first.txt 11043 https://esmis.nal.usda.gov/sites/default/release-files/796092/cagc1026.txt
+OK wasde1026.xml 3569419 https://www.usda.gov/oce/commodity/wasde/wasde1026.xml
+OK wasde1026.txt 122378 https://www.usda.gov/oce/commodity/wasde/wasde1026.txt

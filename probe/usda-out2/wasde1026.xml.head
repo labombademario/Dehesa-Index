@@ -1,0 +1,41 @@
+lines=73282
+<?xml version="1.0" encoding="utf-8"?>
+<Report Name="wasde">
+  <sr08>
+    <Report Name="sr08" Report_Month="October 2026" page_title=" WASDE - 676 - 8" sub_report_title="World and U.S. Supply and Use for Grains  1/" sub_report_subtitle="Million Metric Tons" sub_report_f
+      <matrix1 commodity_header1="World">
+        <m1_commodity_group_Collection>
+          <m1_commodity_group commodity1="Total Grains 4/">
+            <m1_year_group_Collection>
+              <m1_year_group market_year1="2024/25">
+                <m1_month_group_Collection>
+                  <m1_month_group forecast_month1="">
+                    <m1_attribute_group_Collection>
+                      <m1_attribute_group>
+                        <s3 attribute1="Output">
+                          <s4>
+                            <Cell cell_value1="2858.26" />
+                          </s4>
+                        </s3>
+                      </m1_attribute_group>
+                      <m1_attribute_group>
+                        <s3 attribute1="Total&#xD;&#xA;Supply">
+                          <s4>
+                            <Cell cell_value1="3653.72" />
+                          </s4>
+                        </s3>
+                      </m1_attribute_group>
+                      <m1_attribute_group>
+                        <s3 attribute1="Trade 2/">
+                          <s4>
+                            <Cell cell_value1="500.21" />
+                          </s4>
+                        </s3>
+                      </m1_attribute_group>
+                      <m1_attribute_group>
+                        <s3 attribute1="Total&#xD;&#xA;Use 3/">
+                          <s4>
+                            <Cell cell_value1="2877.67" />
+                          </s4>
+                        </s3>
+                      </m1_attribute_group>

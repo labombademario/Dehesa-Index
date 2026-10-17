@@ -1,0 +1,26 @@
+lines=4502
+"commodity_desc","geography_desc","attribute_desc","unit_desc","year_id","month_id","month_desc","amount"
+"Cattle","Nebraska","Steers 65-80 percent Choice","Dollars per hundredweight",2026,9,"September",222
+"Cattle","Oklahoma City, OK","Steers: medium and large #1 500-550 pounds","Dollars per hundredweight",2026,9,"September",393.5
+"Cattle","Oklahoma City, OK","Steers: medium and large #1 600-650 pounds","Dollars per hundredweight",2026,9,"September",374
+"Cattle","Oklahoma City, OK","Steers: medium and large #1 750-800 pounds","Dollars per hundredweight",2026,9,"September",347.75
+"Cattle","Oklahoma City, OK","Heifers: medium and large #1 450-500 pounds","Dollars per hundredweight",2026,9,"September",381.25
+"Cattle","Oklahoma City, OK","Heifers: medium and large #1 700-750 pounds","Dollars per hundredweight",2026,9,"September",329.5
+"Hog","National","Barrows and Gilts: Producer sold, average net price (live equivalent = carcass x 0.74)","Dollars per hundredweight",2026,9,"September",65
+"Hog","Iowa-Minnesota","Sows #1-2, 300-400 pounds","Dollars per hundredweight",2026,9,"September",63
+"Sheep and lamb","National","Domestic slaughter lambs, Choice and Prime, live negotiated purchases","Dollars per hundredweight",2026,9,"September",284
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,1,"January",69.07
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,2,"February",68.88
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,3,"March",71.74
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,4,"April",73.13
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,5,"May",71.28
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,6,"June",69.41
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,7,"July",67.22
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,8,"August",65.02
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,9,"September",65.43
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,10,"October",68.51
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,11,"November",72.19
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2000,12,"December",76.41
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2001,1,"January",78.79
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2001,2,"February",79.4
+"Cattle","Texas/Oklahoma/New Mexico","Steers 35-65 percent Choice","Dollars per hundredweight",2001,3,"March",79.44

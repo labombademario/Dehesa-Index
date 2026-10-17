@@ -1,0 +1,181 @@
+
+Grain Crushings and Co-Products Production
+
+ISSN: 2377-3855
+
+Released October 1, 2026, by the National Agricultural Statistics Service 
+(NASS), Agricultural Statistics Board, United States Department of 
+Agriculture (USDA).
+
+Highlights
+
+July 2026 contained 31 days.
+August 2026 contained 31 days.
+
+Total corn consumed for alcohol and other uses was 528 million bushels in 
+August 2026. Total corn consumption was down less than 1 percent from July 2026 but up 
+4 percent from August 2025. August 2026 usage included 92.6 percent for 
+alcohol and 7.4 percent for other purposes. Corn consumed for beverage 
+alcohol totaled 3.31 million bushels, down 11 percent from July 2026 and down 
+3 percent from August 2025. Corn for fuel alcohol, at 478 million bushels, 
+was up less than 1 percent from July 2026 and up 4 percent from August 2025. Corn 
+consumed in August 2026 for dry milling fuel production and wet milling fuel 
+production was 92.2 percent and 7.8 percent, respectively.
+
+Dry mill co-product production of distillers dried grains with solubles 
+(DDGS) was 1.85 million tons during August 2026, down less than 1 percent from July 2026 
+and down 2 percent from August 2025. Distillers wet grains (DWG) 65 percent 
+or more moisture was 1.28 million tons in August 2026, down 1 percent from 
+July 2026 but up 5 percent from August 2025.
+
+Wet mill corn gluten feed production was 278,611 tons during August 2026, up 
+11 percent from July 2026 and up 11 percent from August 2025. Wet corn gluten 
+feed 40 to 60 percent moisture was 180,096 tons in August 2026, down 
+14 percent from July 2026 but up 2 percent from August 2025.
+
+Dry and Wet Mill, Corn Consumed - United States: August 2026 with Comparisons
+------------------------------------------------------------------------------------------------------------
+                           Purpose                          :  August 2025  :   July 2026   :  August 2026  
+------------------------------------------------------------------------------------------------------------
+                                                            :                 1,000 bushels                 
+                                                            :                                               
+Consumed for alcohol production                             :                                               
+  Beverage alcohol .........................................:      3,407           3,704           3,309    
+  Fuel alcohol .............................................:    459,373         476,146         477,732    
+    Dry mill ...............................................:    423,310         440,991         440,666    
+    Wet mill ...............................................:     36,063          35,155          37,066    
+  Industrial alcohol .......................................:      7,714           8,557           8,046    
+Consumed for other purposes                                 :                                               
+  Total wet mill products other than fuel ..................:     36,636          40,577          39,017    
+------------------------------------------------------------------------------------------------------------
+
+Dry and Wet Mill, Co-products and Products Produced - United States: August 2026 with Comparisons
+------------------------------------------------------------------------------------------------------------
+                  Co-products and products                  :  August 2025  :   July 2026   :  August 2026  
+------------------------------------------------------------------------------------------------------------
+                                                            :                     tons                      
+                                                            :                                               
+Dry mill                                                    :                                               
+  Condensed distillers solubles (CDS - syrup) ..............:     121,200         120,964         120,765   
+  Corn oil (Corn Distillers Oil - CDO) .....................:     197,431         222,100         221,754   
+  Distillers dried grains (DDG) ............................:     401,483         393,639         412,722   
+  Distillers dried grains with solubles (DDGS) .............:   1,873,585       1,849,717       1,845,438   
+  Distillers wet grains (DWG) 65% or more moisture .........:   1,211,796       1,293,382       1,278,164   
+  Modified distillers wet grains (DWG) 40% to 64% moisture .:     406,314         359,152         406,854   
+                                                            :                                               
+Wet mill                                                    :                                               
+  Corn germ meal ...........................................:      57,506          50,571          57,915   
+  Corn gluten feed .........................................:     251,036         250,692         278,611   
+  Corn gluten meal .........................................:      98,197         103,391          98,844   
+  Wet corn gluten feed 40% to 60% moisture .................:     175,862         210,120         180,096   
+                                                            :                                               
+Dry and wet mill                                            :                                               
+  Carbon dioxide captured ..................................:     268,024         284,535         292,163   
+------------------------------------------------------------------------------------------------------------
+
+Statistical Methodology 
+
+Survey Procedures: Grain Crushings and Co-Products Production is part of the 
+Current Agricultural Industrial Reports (CAIR) program. CAIR reports are 
+administered under NASS's Census of Agriculture program. Response to CAIR 
+surveys are required by law (Title 7, U.S. Code). Data are collected from all 
+known mills that produce ethanol.
+
+The census universe was determined during operation profile interviews which 
+were completed for each potential facility to identify the presence of 
+ethanol production in 2014. During the operation profile, facilities that met 
+the survey criteria were asked for the nameplate production capacity. The 
+operation profile also documented the manner in which the firm will report. A 
+firm headquarters can report for all milling locations or each location can 
+report separately.
+
+In the Dry Mill Producers and Wet Mill Producers survey questionnaires, mills 
+are asked for previous calendar month data on feedstocks consumed, products 
+and co-products produced. Mills are mailed questionnaires with the options of 
+completing the survey by mail or by Electronic Data Reporting (EDR). For 
+surveys not received in a reasonable amount of time, telephone follow-up is 
+conducted.
+
+Estimating Procedures: Imputation is done for operations with non-response by 
+using historical data and current data relationships. Data for reporting 
+firms are added to estimates for non-reporting firms to obtain National 
+totals.
+
+Revision Policy: Data are revised the following month based on late reports 
+or corrected data. Final figures are published in the annual summary of the 
+following year. 
+
+Reliability: Approximately 130 reports are received each month which 
+represent about 90 percent of total capacity. Monthly data can vary due to 
+different firms reporting month to month. Survey data are also subject to 
+non-sampling errors such as omissions and mistakes in reporting and in 
+processing the data. While these errors cannot be measured directly, they are 
+minimized by carefully reviewing all reported data for consistency and 
+reasonableness.
+
+USDA National Agricultural Statistics Service - Estimation Branch Contacts
+
+For more information about specific data items, please contact the Estimation 
+Branch staff members below. You can also email inquiries to nass@usda.gov.
+
+Anthony Prillaman, Associate Deputy 
+Administrator................................................................
+.............................................................................
+.............................................................................
+................................... (202) 720-2127
+
+Darin Jantzi, Section Chief   (701) 412-5953
+
+Crops: Apricots, Bell Peppers, Broccoli, Canola, Cauliflower, Chile Peppers, 
+Cucumbers, Hemp, Macadamias, Mustard Seed, Nectarines, Peaches, Plums, 
+Pumpkins, Prunes, Rapeseed, Rye, Safflower, Soybeans, Squash, Sunflower
+
+Jeff Lemmons, Section Chief   (202) 973-3272
+
+Crops: Artichokes, Avocados, Cabbage, Crop Progress, Dates, Dry Edible Beans, 
+Grapes, Green Peas, Hops, Olives, Pistachios, Potatoes, Rice, Snap Beans, 
+Sugarbeets, Sugarcane, Sweet Potatoes, Tomatoes, Walnuts, Wheat
+
+Fleming Gibson, Section Chief (Acting)   (202) 236-2428
+
+Crops: Almonds, Asparagus, Barley, Beets, Blueberries, Carrots, Chickpeas, 
+Coffee, Corn, Cranberries, Dry Edible Peas, Garlic, Grapefruit, Lemons, 
+Lentils, Mandarins/Tangerines, Maple, Mushrooms, Onions, Oranges, Papayas, 
+Pears, Pecans, Raspberries, Sweet Corn, Tobacco
+
+Julie Weber, Section Chief   (202) 317-0165
+
+Crops: Apples, Cantaloupe, Cotton, Cotton System Consumption and Stocks, Fats 
+and Oils, Flaxseed, Flour Milling Products, Grain Crushings, Hay, Hazelnuts, 
+Honeydew, Kale, Kiwifruit, Lettuce, Mint, Oats, Peanuts, Proso Millet, 
+Sorghum, Spinach, Strawberries, Sweet Cherries, Tart Cherries, Watermelon
+
+Access to NASS Reports
+
+For your convenience, you may access NASS reports and products the following 
+ways:
+
+ 	All reports are available electronically, at no cost, on the NASS web 
+site: www.nass.usda.gov.
+
+ 	The national specific reports are available via a free e-mail 
+subscription. To set-up this free subscription, visit www.nass.usda.gov 
+and click on "National" in upper right corner above "search" box to 
+create an account and select the reports you would like to receive.
+
+ 	Economics, Statistics, and Market Information (ESMIS) - National 
+Agricultural Library (NAL) website houses NASS's and other agency 
+archived reports at https://esmis.nal.usda.gov. All email subscriptions 
+containing reports will be sent from https://esmis.nal.usda.gov. To 
+receive the reports via e-mail, you will have to go to the website, 
+create a new account and subscribe to the reports. You should whitelist 
+notifications@esmis.nal.usda.gov in your email client to avoid the 
+emails going into spam/junk folders. 
+
+For more information on NASS surveys and reports, call the NASS Agricultural 
+Statistics Hotline at (800) 727-9540, 7:30 a.m. to 4:00 p.m. ET, or e-mail: 
+nass@usda.gov. 
+
+
+USDA is an equal opportunity provider, employer, and lender.
+
