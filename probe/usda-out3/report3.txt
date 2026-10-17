@@ -1,0 +1,7 @@
+OK datamart-reports.json 67405 https://mpr.datamart.ams.usda.gov/services/v1.1/reports
+reports 151 hits 28
+NO ams-class.html https://www.ams.usda.gov/resources/class-and-component-prices 'HTTP Error 403: Forbidden'
+NO ams-fmmo-prices.html https://www.ams.usda.gov/rules-regulations/moa/dairy/class-prices 'HTTP Error 403: Forbidden'
+NO ams-prices.html https://www.ams.usda.gov/market-news/dairy-market-news 'HTTP Error 403: Forbidden'
+NO fred-class3.csv https://fred.stlouisfed.org/graph/fredgraph.csv?id=WPU01790201 'HTTP Error 404: Not Found'
+OK fmmo-prices-page.html 7615 https://www.fmmone.com/

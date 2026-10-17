@@ -1,0 +1,612 @@
+[
+{
+"slug_id": 2700,
+"slug_name": "AMS_2700",
+"report_title": "National Weekly Fed Cattle Comprehensive (PDF) (LSWFEDCC)",
+"published_date": "10/13/2026 14:03:59",
+"markets": [
+"LMR"
+],
+"market_types": [
+"Direct Livestock - LMR Cattle"
+],
+"offices": [
+"St Joseph, MO"
+],
+"sectionNames": [
+"Summary",
+"Weekly Fed Cattle Comprehensive",
+"Weighted Average",
+"Percent Choice Breakdown",
+"Beef Type minus Dairy",
+"Weekly Purchasing Basis",
+"Weekly Negotiated Head Count by Delivery Period"
+]
+},
+{
+"slug_id": 2989,
+"slug_name": "DYMADVANCEDPRICES",
+"report_title": "Announcement of Advanced Prices and Pricing Factors (PDF)",
+"published_date": "09/23/2026 13:05:24",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy MMR"
+],
+"sectionNames": [
+"Summary",
+"Detail"
+]
+},
+{
+"slug_id": 2989,
+"slug_name": "DYMADVANCEDPRICES",
+"report_title": "Announcement of Advanced Prices and Pricing Factors (PDF)",
+"published_date": "09/23/2026 13:05:24",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"LMR Dairy"
+],
+"offices": [
+"Dairy MMR"
+],
+"sectionNames": [
+"Summary",
+"Detail"
+]
+},
+{
+"slug_id": 2991,
+"slug_name": "DYMCLASSPRICES",
+"report_title": "Announcement of Class and Component Prices (PDF)",
+"published_date": "09/30/2026 13:05:19",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy MMR"
+],
+"sectionNames": [
+"Summary",
+"Detail"
+]
+},
+{
+"slug_id": 2991,
+"slug_name": "DYMCLASSPRICES",
+"report_title": "Announcement of Class and Component Prices (PDF)",
+"published_date": "09/30/2026 13:05:19",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"LMR Dairy"
+],
+"offices": [
+"Dairy MMR"
+],
+"sectionNames": [
+"Summary",
+"Detail"
+]
+},
+{
+"slug_id": 2993,
+"slug_name": "DYWDAIRYPRODUCTSSALES",
+"report_title": "National Dairy Products Sales Report (PDF)",
+"published_date": "10/15/2026 13:01:48",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy MMR"
+],
+"sectionNames": [
+"Summary",
+"Butter Prices and Sales",
+"40 Pound Block Cheddar Cheese Prices and Sales",
+"500 Pound Barrel Cheddar Cheese Prices, Sales, and Moisture Content",
+"Dry Whey Prices and Sales",
+"Nonfat Dry Milk Prices and Sales",
+"Final Butter Prices and Sales",
+"Final 40 Pound Block Cheddar Cheese Prices and Sales",
+"Final 500 Pound Barrel Cheddar Cheese Prices, Sales, and Moisture Content",
+"Final Dry Whey Prices and Sales",
+"Final Nonfat Dry Milk Prices and Sales"
+]
+},
+{
+"slug_id": 2993,
+"slug_name": "DYWDAIRYPRODUCTSSALES",
+"report_title": "National Dairy Products Sales Report (PDF)",
+"published_date": "10/15/2026 13:01:48",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"LMR Dairy"
+],
+"offices": [
+"Dairy MMR"
+],
+"sectionNames": [
+"Summary",
+"Butter Prices and Sales",
+"40 Pound Block Cheddar Cheese Prices and Sales",
+"500 Pound Barrel Cheddar Cheese Prices, Sales, and Moisture Content",
+"Dry Whey Prices and Sales",
+"Nonfat Dry Milk Prices and Sales",
+"Final Butter Prices and Sales",
+"Final 40 Pound Block Cheddar Cheese Prices and Sales",
+"Final 500 Pound Barrel Cheddar Cheese Prices, Sales, and Moisture Content",
+"Final Dry Whey Prices and Sales",
+"Final Nonfat Dry Milk Prices and Sales"
+]
+},
+{
+"slug_id": 3345,
+"slug_name": "AMS_3345",
+"report_title": "Class I Prices",
+"published_date": "09/24/2026 10:58:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Milk",
+"Butterfat",
+"Skim"
+]
+},
+{
+"slug_id": 3346,
+"slug_name": "AMS_3346",
+"report_title": "Class I Utilization",
+"published_date": "09/24/2026 11:32:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Milk",
+"Utilization",
+"Butterfat",
+"NFS"
+]
+},
+{
+"slug_id": 3347,
+"slug_name": "AMS_3347",
+"report_title": "Class II Utilization",
+"published_date": "09/24/2026 11:32:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Milk",
+"Utilization",
+"Butterfat",
+"NFS"
+]
+},
+{
+"slug_id": 3348,
+"slug_name": "AMS_3348",
+"report_title": "Class III Utilization",
+"published_date": "09/24/2026 11:32:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Milk",
+"Utilization",
+"Butterfat",
+"Protein",
+"Other Solids"
+]
+},
+{
+"slug_id": 3349,
+"slug_name": "AMS_3349",
+"report_title": "Class IV Utilization",
+"published_date": "09/24/2026 11:32:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Milk",
+"Utilization",
+"Butterfat",
+"NFS"
+]
+},
+{
+"slug_id": 3350,
+"slug_name": "AMS_3350",
+"report_title": "Total Receipts of Producer Milk",
+"published_date": "07/28/2023 11:01:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Producers",
+"Receipts",
+"Avg Daily",
+"Butterfat",
+"NFS",
+"Protein",
+"Other Solids",
+"SomCell"
+]
+},
+{
+"slug_id": 3351,
+"slug_name": "AMS_3351",
+"report_title": "Uniform Milk Prices",
+"published_date": "09/24/2026 11:35:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Milk",
+"Butterfat",
+"Skim",
+"PPD"
+]
+},
+{
+"slug_id": 3352,
+"slug_name": "AMS_3352",
+"report_title": "Price and Pool - Monthly",
+"published_date": "09/28/2026 10:50:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Price and Pool Monthly",
+"Price and Pool Month Receipts",
+"Price and Pool Month ClassI Utility",
+"Price and Pool Month ClassI Percent",
+"Price and Pool Month Uniform Price"
+]
+},
+{
+"slug_id": 3353,
+"slug_name": "AMS_3353",
+"report_title": "Price and Pool - Annual",
+"published_date": "02/14/2024 07:22:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Price and Pool Annual",
+"Price and Pool Annual Receipts",
+"Price and Pool Annual ClassI Utility",
+"Price and Pool Annual ClassI Percent",
+"Price and Pool Annual Uniform Price"
+]
+},
+{
+"slug_id": 3354,
+"slug_name": "AMS_3354",
+"report_title": "Advanced Prices by Order",
+"published_date": "09/23/2026 13:47:31",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Advanced Class Prices by Order"
+]
+},
+{
+"slug_id": 3355,
+"slug_name": "AMS_3355",
+"report_title": "Class Prices by Order",
+"published_date": "09/30/2026 13:51:23",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Final Class Prices by Order"
+]
+},
+{
+"slug_id": 3356,
+"slug_name": "AMS_3356",
+"report_title": "Retail Prices",
+"published_date": "09/24/2026 10:31:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Conventional Whole Milk",
+"Conventional Reduced Fat",
+"Organic Whole Milk",
+"Organic Reduced Fat"
+]
+},
+{
+"slug_id": 3357,
+"slug_name": "AMS_3357",
+"report_title": "Mailbox Milk Prices",
+"published_date": "09/23/2026 11:27:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Mailbox Milk Prices"
+]
+},
+{
+"slug_id": 3358,
+"slug_name": "AMS_3358",
+"report_title": "Estimated Fluid Milk Sales",
+"published_date": "10/14/2026 07:57:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Estimated Total U.S. Sales of Fluid Milk Conventional Products",
+"Package Sales of Organic Fluid Milk Products in Federal Milk Orders by Region",
+"Estimated Total U.S. Sales of Fluid Milk Organic Products",
+"Total Package Sales of Fluid Milk Products",
+"Estimated Total U.S. Sales - Conventional, Organic and Total",
+"Estimated U.S. Sales of Conventional Fluid Milk Products by Month",
+"Estimated U.S. Sales of Organic Fluid Milk Products by Month",
+"Total Package Sales of Fluid Milk Products by Month"
+]
+},
+{
+"slug_id": 3359,
+"slug_name": "AMS_3359",
+"report_title": "Regulated Pool Plant Lists",
+"published_date": "09/29/2026 11:19:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Distributing Plants by Month",
+"Supply Plants by Month"
+]
+},
+{
+"slug_id": 3361,
+"slug_name": "AMS_3361",
+"report_title": "Milk by State of Origin",
+"published_date": "12/17/2025 07:57:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Receipts of Producer Milk by Handlers",
+"Receipts of Producer Milk by Marketing Area",
+"Top 10 States"
+]
+},
+{
+"slug_id": 3361,
+"slug_name": "AMS_3361",
+"report_title": "Milk by State of Origin",
+"published_date": "12/17/2025 07:57:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"LMR Dairy"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Receipts of Producer Milk by Handlers",
+"Receipts of Producer Milk by Marketing Area",
+"Top 10 States"
+]
+},
+{
+"slug_id": 3461,
+"slug_name": "AMS_3461",
+"report_title": "Producer Receipts",
+"published_date": "09/24/2026 11:35:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Producers",
+"Receipts",
+"Avg Daily"
+]
+},
+{
+"slug_id": 3462,
+"slug_name": "AMS_3462",
+"report_title": "Producer Milk Components",
+"published_date": "09/24/2026 11:34:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Receipts",
+"Butterfat",
+"NFS",
+"Protein",
+"Other Solids",
+"SomCell"
+]
+},
+{
+"slug_id": 3899,
+"slug_name": "AMS_3899",
+"report_title": "Measure of Growth in Federal Milk Marketing Orders",
+"published_date": "07/02/2026 09:44:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"FMMOS"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Details"
+]
+},
+{
+"slug_id": 3899,
+"slug_name": "AMS_3899",
+"report_title": "Measure of Growth in Federal Milk Marketing Orders",
+"published_date": "07/02/2026 09:44:00",
+"markets": [
+"Non Mars Location"
+],
+"market_types": [
+"LMR Dairy"
+],
+"offices": [
+"Dairy FMMOS"
+],
+"sectionNames": [
+"Summary",
+"Details"
+]
+}
+]
