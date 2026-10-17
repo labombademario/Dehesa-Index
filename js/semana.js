@@ -6,6 +6,8 @@
   'use strict';
   var S = window.DehesaShared; if (!S) return;
   var root = document.getElementById('sw-root'); if (!root) return;
+  var EMB = !document.getElementById('sw-h1'); /* dentro de blog.html («Resumen semanal»): lo monta js/blog-hub.js */
+  if (!EMB) { try { var rq = /[?&]c=([A-Z]{2})/.exec(location.search); location.replace('blog.html#resumen' + (rq ? '-' + rq[1] : '')); } catch (e) {} }
   var esc = S.esc, CCS = ['ES', 'FR', 'IT', 'DE', 'US'];
   var NAME = {
     ES: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, FR: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' },
@@ -77,8 +79,8 @@
   function lab(l) { var L = window.DILabelTl; return L && L.ready(lg()) ? L.tl(l, lg()) : l; }
   function cname(cc) { return (NAME[cc] || {})[lg()] || cc; }
   function tabName(cc) { return (TAB[cc] || NAME[cc] || {})[lg()] || cc; }
-  function readUrl() { var q = /[?&]c=([A-Z]{2})/.exec(location.search), w = /[?&]w=(\d{4}-W\d\d)/.exec(location.search); if (q && CCS.indexOf(q[1]) > -1) state.c = q[1]; if (w) state.w = w[1]; }
-  function writeUrl() { try { history.replaceState(null, '', '?c=' + state.c + (state.w ? '&w=' + state.w : '')); } catch (e) {} }
+  function readUrl() { if (EMB) return; var q = /[?&]c=([A-Z]{2})/.exec(location.search), w = /[?&]w=(\d{4}-W\d\d)/.exec(location.search); if (q && CCS.indexOf(q[1]) > -1) state.c = q[1]; if (w) state.w = w[1]; }
+  function writeUrl() { if (EMB) return; try { history.replaceState(null, '', '?c=' + state.c + (state.w ? '&w=' + state.w : '')); } catch (e) {} }
   function fold(title, desc, inner, open) { return '<details class="di-fold di-card" style="padding:12px 16px;margin:0 0 12px"' + (open ? ' open' : '') + '><summary><h3 style="margin:0 0 2px;font-size:16px">' + esc(title) + '</h3><p class="di-movers-hint" style="margin:0">' + esc(desc) + '</p></summary>' + inner + '</details>'; }
   function table(rows, t, withPrev) {
     var R = 'text-align:right;white-space:nowrap';
@@ -110,7 +112,7 @@
     if (d.releases.length) out.push(fold(t.releases, t.releasesD, table(d.releases, t, false)));
     if (d.news.length) out.push(fold(t.news, fill(t.newsD, { m: m.charAt(0).toUpperCase() + m.slice(1) }), '<ul style="margin:6px 0 0 18px;padding:0;line-height:1.5">' + d.news.map(function (n) {
       return '<li><a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' + esc(n.h) + '</a> <span class="di-movers-hint">' + esc(n.source) + ' · ' + esc(dfmt(n.date)) + (n.lang && n.lang !== l ? ' · ' + esc(t.lang) + ': ' + esc(n.lang.toUpperCase()) : '') + '</span></li>'; }).join('') + '</ul>'));
-    out.push('<p style="margin:4px 0 12px"><a href="paises.html?c=' + esc(d.country) + '">' + esc(fill(t.more, { c: tabName(d.country) })) + '</a> · <a href="blog.html">' + esc(t.blog) + '</a></p>');
+    out.push('<p style="margin:4px 0 12px"><a href="paises.html?c=' + esc(d.country) + '">' + esc(fill(t.more, { c: tabName(d.country) })) + '</a>' + (EMB ? '' : ' · <a href="blog.html">' + esc(t.blog) + '</a>') + '</p>');
     return out.join('');
   }
   function weeksNav(rows, t) {
@@ -124,12 +126,12 @@
   }
   function render() {
     var l = lg(), t = T[l];
-    document.title = t.title; document.documentElement.lang = l;
-    document.getElementById('sw-h1').textContent = t.h1; document.getElementById('sw-sub').textContent = t.sub; document.getElementById('sw-note').textContent = t.note;
+    var nt = document.getElementById('sw-note'); if (nt) nt.textContent = t.note;
+    if (!EMB) { document.title = t.title; document.documentElement.lang = l; document.getElementById('sw-h1').textContent = t.h1; document.getElementById('sw-sub').textContent = t.sub; }
     if (!IDX) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.loading) + '</p>'; return; }
     var rows = (IDX.countries || {})[state.c] || [];
     if (!state.w || !rows.some(function (r) { return r.week === state.w; })) state.w = rows.length ? rows[0].week : null;
-    var head = tabs(t);
+    var head = EMB ? '' : tabs(t);
     if (!state.w) { root.innerHTML = head + '<p>' + esc(t.none) + '</p>'; return; }
     var key = state.c + '/' + state.w, d = CACHE[key];
     if (!d) {
@@ -145,6 +147,12 @@
     else { e.preventDefault(); state.w = b.getAttribute('data-w'); }
     writeUrl(); render();
   });
+  if (EMB) {
+    var started = false, start = function () { if (started) return; started = true; get('data/blog/countries/index.json').then(function (x) { IDX = x; render(); }).catch(function () { root.innerHTML = '<p>' + esc(T[lg()].err) + '</p>'; }); if (window.DILabelTl && !window.DILabelTl.ready(lg())) window.DILabelTl.load(lg()).then(function (ok) { if (ok) render(); }); };
+    var prev = S.onLangChange; S.onLangChange = function () { if (prev) prev.apply(this, arguments); if (started) render(); };
+    window.DehesaSemana = { ccs: CCS, label: tabName, show: function (cc) { if (CCS.indexOf(cc) < 0) return; state.c = cc; state.w = null; start(); render(); } };
+    return;
+  }
   S.init('blog');
   readUrl();
   S.onLangChange = function () { render(); if (window.DILabelTl && !window.DILabelTl.ready(lg())) window.DILabelTl.load(lg()).then(function (ok) { if (ok) render(); }); };

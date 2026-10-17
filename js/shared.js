@@ -87,7 +87,6 @@
       pd('noticias.html', L('Noticias', 'News', 'Actualités', 'Notizie'), L('Titulares recientes de agencias y fuentes oficiales', 'Recent headlines from agencies and official sources', 'Titres récents d’agences et de sources officielles', 'Titoli recenti da agenzie e fonti ufficiali')),
       pd('calendario.html', L('Calendario agrícola', 'Farm calendar', 'Calendrier agricole', 'Calendario agricolo'), L('Próximas publicaciones oficiales: USDA, UE, Canadá, Australia', 'Upcoming official releases: USDA, EU, Canada, Australia', 'Prochaines publications officielles : USDA, UE, Canada, Australie', 'Prossime pubblicazioni ufficiali: USDA, UE, Canada, Australia')),
       pd('blog.html', L('Resumen semanal / Blog', 'Weekly summary / Blog', 'Résumé hebdomadaire / Blog', 'Riepilogo settimanale / Blog'), L('Lo más importante de la semana, con sus datos', 'The week’s key moves, with their data', 'L’essentiel de la semaine, avec ses données', 'Il più importante della settimana, con i dati')),
-      pd('semana.html', L('La semana en cada país', 'The week in each country', 'La semaine dans chaque pays', 'La settimana in ogni paese'), L('España, Francia, Italia, Alemania y EE. UU.: datos y titulares de la semana', 'Spain, France, Italy, Germany and the US: the week’s data and headlines', 'Espagne, France, Italie, Allemagne et États-Unis : données et titres de la semaine', 'Spagna, Francia, Italia, Germania e Stati Uniti: dati e titoli della settimana'))
     ] },
     prices: { label: L('Precios', 'Prices', 'Prix', 'Prezzi'), mega: 1, first: L('Precios', 'Prices', 'Prix', 'Prezzi'), items: [
       pd('precios.html', L('Panel de precios', 'Price dashboard', 'Tableau des prix', 'Pannello dei prezzi'), L('Todos los productos en EE. UU., UE, Reino Unido y Canadá', 'Every product in the US, EU, UK and Canada', 'Tous les produits aux États-Unis, dans l’UE, au Royaume-Uni et au Canada', 'Tutti i prodotti in USA, UE, Regno Unito e Canada')),
@@ -236,7 +235,8 @@
     return '<a class="di-nav-chip' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + '"' + (on ? ' aria-current="page"' : '') + '>' + flagOf((i.query || '').slice(3)) + esc(i.label[lang] || i.label.es) + '</a>';
   }
   var REGIONS = [{ k: 'SA', l: L('Sudamérica', 'South America', 'Amérique du Sud', 'Sud America') }, { k: 'NA', l: L('Norteamérica', 'North America', 'Amérique du Nord', 'Nord America') }, { k: 'EU', l: L('Europa', 'Europe', 'Europe', 'Europa') }, { k: 'OT', l: L('Otros', 'Others', 'Autres', 'Altri') }];
-  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU', PL: 'EU', EL: 'EU', IE: 'EU', FI: 'EU', BG: 'EU', HR: 'EU', LT: 'EU', SK: 'EU', CH: 'EU' };
+  /* Europa = Unión Europea y países que usan el euro (Bulgaria desde 1-1-2026); «Otros» = europeos fuera del euro (Dinamarca, Reino Unido, Polonia, Suiza, Chequia, Hungría, Rumanía, Suecia) y Australia */
+  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', NL: 'EU', IE: 'EU', EL: 'EU', FI: 'EU', BG: 'EU', HR: 'EU', LT: 'EU', SK: 'EU', EE: 'EU', LV: 'EU', SI: 'EU' };
   function panelHtml(g) {
     var leaves = g.items.filter(function (i) { return !i.items && !i.chip; }), chips = g.items.filter(function (i) { return i.chip; }), cols = [];
     if (leaves.length) cols.push({ h: g.first, items: leaves });

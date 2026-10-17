@@ -94,7 +94,7 @@
       '<input id="ex-q" type="search" class="um-input" role="combobox" aria-expanded="false" aria-controls="ex-res" aria-autocomplete="list" autocomplete="off" placeholder="' + esc(w.ph) + '" value="">' +
       '<div id="ex-res" class="ex-res" role="listbox" aria-label="' + esc(w.q) + '" hidden></div></div>';
     var hl = highlights(cx, md);
-    if (hl.length) h += '<div class="ex-row"><span class="ex-lab">' + esc(w.start) + '</span>' + hl.map(function (o) { return chip('ex-chip ex-hl', ' data-ex="h" data-v="' + esc(o.id) + '"', esc((o.k ? PN[o.k][4] + ' ' : '') + hlLabel(cx, o)), cur && o.id === cur.id); }).join('') + '</div>';
+    // «Para empezar» retirado: duplicaba Productos + Qué mirar
     if (cx.g !== 'all' && cx.t[cx.g]) h += '<div class="ex-row"><span class="ex-lab">' + esc(w.scope) + ' <b>' + esc(cx.t[cx.g]) + '</b></span>' + chip('ex-chip', ' data-ex="g0"', esc(w.clear), false) + '</div>';
     var pk = pkeys(md);
     if (pk.length) {

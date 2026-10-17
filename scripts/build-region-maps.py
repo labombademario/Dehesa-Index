@@ -58,7 +58,7 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0,
         return "".join(o)
     items = [{"id": i, "name": n, "d": p2(g)} for i, (n, g) in sorted(out.items())]
     js = "/* Contornos de " + label + " a partir de Natural Earth 1:10m (dominio publico); unidades administrativas disueltas por region. Generado por scripts/build-region-maps.py. */\nwindow." + var + " = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
-    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions", "PL": "pl-voivodeships", "PT": "pt-regions", "CH": "ch-regions", "IE": "ie-regions", "EL": "el-regions", "FI": "fi-regions", "BG": "bg-regions", "HR": "hr-regions", "LT": "lt-regions", "SK": "sk-regions", "CZ": "cz-regions", "HU": "hu-regions", "RO": "ro-regions", "SE": "se-regions", "SI": "si-regions", "UK": "uk-regions", "AR": "ar-provinces"}[cc]
+    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions", "PL": "pl-voivodeships", "PT": "pt-regions", "CH": "ch-regions", "IE": "ie-regions", "EL": "el-regions", "FI": "fi-regions", "BG": "bg-regions", "HR": "hr-regions", "LT": "lt-regions", "SK": "sk-regions", "CZ": "cz-regions", "HU": "hu-regions", "RO": "ro-regions", "SE": "se-regions", "SI": "si-regions", "UK": "uk-regions", "AR": "ar-provinces", "CL": "cl-regions"}[cc]
     (ROOT / "vendor" / (fn + ".js")).write_text(js, encoding="utf-8"); print("vendor/%s.js" % fn, len(js), "bytes", len(items), "regiones, viewBox", "0 0 %d %s" % (W2, H2))
 ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
 FR_CODES = {"Auvergne-Rhône-Alpes": "ARA", "Bourgogne-Franche-Comté": "BFC", "Bretagne": "BRE", "Centre-Val de Loire": "CVL", "Corse": "COR", "Grand Est": "GES", "Hauts-de-France": "HDF", "Normandie": "NOR", "Nouvelle-Aquitaine": "NAQ", "Occitanie": "OCC", "Pays de la Loire": "PDL", "Provence-Alpes-Côte-d'Azur": "PAC", "Île-de-France": "IDF"}
@@ -111,3 +111,12 @@ europe_map("UK", _uk, {k: k for k in ("UKC", "UKD", "UKE", "UKF", "UKG", "UKH", 
 # Argentina: 24 provincias (Natural Earth 1:10m admin-1, dominio publico; scripts/ref/ne-admin1-arcl.json), id = letra ISO 3166-2:AR
 _ar = [{"properties": {"name": f["properties"]["iso"].split("-")[1]}, "geometry": f["geometry"]} for f in json.loads((ROOT / "scripts" / "ref" / "ne-admin1-arcl.json").read_text(encoding="utf-8"))["ARG"]]
 europe_map("AR", _ar, {f["properties"]["name"]: f["properties"]["name"] for f in _ar}, "name", "DEHESA_AR_PROVINCES", "las 24 provincias de Argentina (incluida la Ciudad de Buenos Aires)", 0.02)
+
+# Chile: 16 regiones (Natural Earth 1:10m admin-1, dominio publico; scripts/ref/ne-admin1-arcl.json), id = sufijo ISO 3166-2:CL. Solo contornos y nombres: sin series regionales publicadas en Dehesa Index
+def _cl_cont(g):
+    # solo Chile continental: se omiten Isla de Pascua y Juan Fernandez (lejos de la costa, harian el mapa ilegible)
+    polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+    keep = [pl for pl in polys if min(x for x, y in pl[0]) > -76.5]
+    return {"type": "MultiPolygon", "coordinates": keep}
+_cl = [{"properties": {"name": f["properties"]["iso"].split("-")[1]}, "geometry": _cl_cont(f["geometry"])} for f in json.loads((ROOT / "scripts" / "ref" / "ne-admin1-arcl.json").read_text(encoding="utf-8"))["CHL"]]
+europe_map("CL", _cl, {f["properties"]["name"]: f["properties"]["name"] for f in _cl}, "name", "DEHESA_CL_REGIONS", "las 16 regiones de Chile (continental)", 0.04)
