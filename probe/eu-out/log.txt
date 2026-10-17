@@ -1,0 +1,2 @@
+agrifood: 0 paths
+toc: RuntimeError("https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en <HTTPError 406: 'Not Acceptable'>")

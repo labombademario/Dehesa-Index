@@ -1,0 +1,10 @@
+{
+ "configUrl": "/agrifood/v3/api-docs/swagger-config",
+ "defaultModelExpandDepth": "100",
+ "defaultModelsExpandDepth": "-1",
+ "docExpansion": "none",
+ "oauth2RedirectUrl": "http://s-agri-agrvwpub.cc.cec.eu.int:8083/agrifood/swagger-ui/oauth2-redirect.html",
+ "tagsSorter": "alpha",
+ "url": "/agrifood/v3/api-docs",
+ "validatorUrl": "none"
+}
