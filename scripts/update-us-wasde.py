@@ -205,6 +205,18 @@ def main():
         names = discover()
         if local is not None and not names:
             names = sorted({p.stem.replace("wasde", "") for p in local.glob("wasde????.xml")}, key=lambda s: (s[2:], s[:2]))
+        if not names and local is None:
+            # la pagina del WASDE a veces no responde desde los runners (usda.gov): se deducen los nombres de los 3 ultimos meses y se quedan los que existen
+            import datetime as _dt
+            t = _dt.date.today(); cand = []
+            for k in range(3):
+                y, m = t.year, t.month - k
+                while m < 1: m += 12; y -= 1
+                cand.append("%02d%02d" % (m, y % 100))
+            for nm in sorted(cand, key=lambda s: (s[2:], s[:2])):
+                try: U.get(BASE + "wasde%s.xml" % nm, tries=2, timeout=90); names.append(nm)
+                except Exception as e: U.log("sin XML de %s: %s" % (nm, repr(e)[:80]))
+            U.log("nombres deducidos del mes:", names)
         if not names: raise ValueError("no hay XML del WASDE en la pagina")
         if len(names) < 2: U.log("solo un informe en la pagina:", names)
         done = set(ledger.get("reports", []))
