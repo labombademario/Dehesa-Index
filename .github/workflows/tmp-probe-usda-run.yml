@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: |
-          python3 probe/eu_probe2.py > probe/eu_probe2.log 2>&1 || true
+          python3 probe/eu_probe3.py > probe/eu_probe3.log 2>&1 || true
           git config user.name probe; git config user.email probe@x
-          git add -f probe/eu-out2 probe/eu_probe2.log; git commit -qm "probe eu out" || true; git push || true
+          git add -f probe/eu-out3 probe/eu_probe3.log; git commit -qm "probe eu out" || true; git push || true
