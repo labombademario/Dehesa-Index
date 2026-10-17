@@ -1,0 +1,16 @@
+name: tmp-probe-usda
+on:
+  push:
+    branches: [research/probe-usda-17oct]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          for f in probe/usda*.py; do python3 $f > probe/$(basename $f).log 2>&1 || true; done
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/usda-out probe/*.log; git commit -qm "probe out" || true; git push || true
