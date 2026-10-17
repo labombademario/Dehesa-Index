@@ -1,14 +1,14 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-10-17T22:09:08.571Z",
+ "generatedAt": "2026-10-17T22:29:50.372Z",
  "families": [
   {
    "id": "cereales",
    "endpoint": "cereal",
    "freq": "weekly",
    "series": 91,
-   "points": 187601,
+   "points": 187602,
    "latest": "2026-10-11"
   },
   {
@@ -24,7 +24,7 @@
    "endpoint": "dairy",
    "freq": "weekly",
    "series": 11,
-   "points": 44598,
+   "points": 44596,
    "latest": "2026-10-11"
   },
   {
@@ -112,7 +112,7 @@
    "endpoint": "fruitAndVegetable/pricesSupplyChain",
    "freq": "weekly",
    "series": 192,
-   "points": 185300,
+   "points": 185304,
    "latest": "2026-10-11"
   },
   {
