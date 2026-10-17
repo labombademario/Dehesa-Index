@@ -199,7 +199,14 @@ def region_metrics():
         for k, b in (d.get('regions') or {}).items():
             mg = b.get('managers') or {}; ys = sorted(mg)
             if ys and mg[ys[-1]].get('TOTAL') and mg[ys[-1]].get('Y_GE65') is not None: vm[k] = mg[ys[-1]]['Y_GE65'] / mg[ys[-1]]['TOTAL'] * 100; pm = max(pm, ys[-1])
-        put(cc, 'output', vo, po, f); put(cc, 'uaa', vu, pu, f); put(cc, 'perha', vp, pp, f); put(cc, 'mgr65', vm, pm, f)
+        # rama agricola (produccion vegetal, AM100000) y rama ganadera (animales AM110000 + productos animales AM120000 del mismo ano = produccion animal de Eurostat)
+        vc = {}; va = {}; pc = pa = ''
+        for k, b in (d.get('regions') or {}).items():
+            e = b.get('eaa') or {}; c1 = _last(e.get('AM100000'))
+            if c1 and c1[1] > 0: vc[k] = c1[1]; pc = max(pc, str(c1[0]))
+            a1 = _last(e.get('AM110000')); a2 = a1 and _at(e.get('AM120000'), a1[0])
+            if a1 and a2 is not None and a1[1] + a2 > 0: va[k] = a1[1] + a2; pa = max(pa, str(a1[0]))
+        put(cc, 'output', vo, po, f); put(cc, 'uaa', vu, pu, f); put(cc, 'perha', vp, pp, f); put(cc, 'mgr65', vm, pm, f); put(cc, 'crop', vc, pc, f); put(cc, 'animal', va, pa, f)
     return {'schemaVersion': 1, 'generatedAt': now(), 'note': 'Valor por region para colorear los mapas de las fichas de pais; derivado de los ficheros de data/ indicados en source.', 'countries': C}
 # Lonjas (mercados) de cereales por pais del Agri-food Data Portal (precio salida de silo, EUR/t): para elegir otra lonja en la tarjeta de Precios.
 # Solo mercados con dato en las ultimas 10 semanas respecto al ultimo dato del producto (los parados no se ofrecen). Ultimos 26 puntos semanales para el minigrafico.

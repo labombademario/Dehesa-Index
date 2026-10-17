@@ -11,9 +11,9 @@
   var M = {
     US: [
       { id: 'drought', ramp: O, unit: ' %', label: ['Drought (moderate or worse)', 'Sequía (moderada o peor)', 'Sécheresse (modérée ou pire)', 'Siccità (moderata o peggiore)'], dec: 1 },
-      { id: 'cattle', ramp: G, unit: '', label: ['Cattle on feed (thousand head)', 'Vacuno en cebaderos (miles de cabezas)', 'Bovins en engraissement (milliers de têtes)', 'Bovini in ingrasso (migliaia di capi)'], dec: 0 },
-      { id: 'landval', ramp: G, unit: ' USD/acre', label: ['Cropland value (USD per acre)', 'Valor de la tierra de cultivo (USD por acre)', 'Valeur des terres de culture (USD par acre)', 'Valore dei seminativi (USD per acro)'], dec: 0 },
-      { id: 'milk', ramp: G, unit: ' M lb', label: ['Milk production, latest month (million lb)', 'Producción de leche, último mes (millones de lb)', 'Production de lait, dernier mois (millions de lb)', 'Produzione di latte, ultimo mese (milioni di lb)'], dec: 0 },
+      { id: 'cattle', sec: 'live', ramp: G, unit: '', label: ['Cattle on feed (thousand head)', 'Vacuno en cebaderos (miles de cabezas)', 'Bovins en engraissement (milliers de têtes)', 'Bovini in ingrasso (migliaia di capi)'], dec: 0 },
+      { id: 'landval', sec: 'agri', ramp: G, unit: ' USD/acre', label: ['Cropland value (USD per acre)', 'Valor de la tierra de cultivo (USD por acre)', 'Valeur des terres de culture (USD par acre)', 'Valore dei seminativi (USD per acro)'], dec: 0 },
+      { id: 'milk', sec: 'live', ramp: G, unit: ' M lb', label: ['Milk production, latest month (million lb)', 'Producción de leche, último mes (millones de lb)', 'Production de lait, dernier mois (millions de lb)', 'Produzione di latte, ultimo mese (milioni di lb)'], dec: 0 },
       { id: 'sales', ramp: G, unit: ' M USD', label: ['Agricultural sales, 2022 Census (million USD)', 'Ventas agrarias, Censo 2022 (millones de USD)', 'Ventes agricoles, recensement 2022 (millions USD)', 'Vendite agricole, censimento 2022 (milioni USD)'], dec: 0 },
       { id: 'tax', ramp: G, unit: ' %', label: ['State sales tax rate', 'Impuesto estatal sobre las ventas', 'Taxe de vente de l’État', 'Imposta statale sulle vendite'], dec: 2 }],
     CA: [
@@ -21,22 +21,24 @@
       { id: 'receipts', ramp: G, unit: ' M CAD', label: ['Farm cash receipts (M CAD)', 'Ingresos en efectivo de las explotaciones (M CAD)', 'Recettes agricoles en espèces (M CAD)', 'Ricavi agricoli in contanti (M CAD)'], dec: 0 }],
     AU: [
       { id: 'agrifood', ramp: G, unit: ' A$ M', label: ['Agri-food exports (A$ M)', 'Exportaciones agroalimentarias (M A$)', 'Exportations agroalimentaires (M A$)', 'Esportazioni agroalimentari (M A$)'], dec: 0 },
-      { id: 'beef', ramp: G, unit: ' A$ M', label: ['Beef exports (A$ M)', 'Exportaciones de carne bovina (M A$)', 'Exportations de viande bovine (M A$)', 'Esportazioni di carne bovina (M A$)'], dec: 0 },
-      { id: 'wheat', ramp: G, unit: ' A$ M', label: ['Wheat exports (A$ M)', 'Exportaciones de trigo (M A$)', 'Exportations de blé (M A$)', 'Esportazioni di frumento (M A$)'], dec: 0 },
-      { id: 'wine', ramp: G, unit: ' A$ M', label: ['Wine and spirits exports (A$ M)', 'Exportaciones de vino y bebidas (M A$)', 'Exportations de vin et boissons (M A$)', 'Esportazioni di vino e bevande (M A$)'], dec: 0 }]
+      { id: 'beef', sec: 'live', ramp: G, unit: ' A$ M', label: ['Beef exports (A$ M)', 'Exportaciones de carne bovina (M A$)', 'Exportations de viande bovine (M A$)', 'Esportazioni di carne bovina (M A$)'], dec: 0 },
+      { id: 'wheat', sec: 'agri', ramp: G, unit: ' A$ M', label: ['Wheat exports (A$ M)', 'Exportaciones de trigo (M A$)', 'Exportations de blé (M A$)', 'Esportazioni di frumento (M A$)'], dec: 0 },
+      { id: 'wine', sec: 'agri', ramp: G, unit: ' A$ M', label: ['Wine and spirits exports (A$ M)', 'Exportaciones de vino y bebidas (M A$)', 'Exportations de vin et boissons (M A$)', 'Esportazioni di vino e bevande (M A$)'], dec: 0 }]
   };
   var EU = [
     { id: 'output', ramp: G, unit: ' M EUR', label: ['Agricultural industry output (M EUR)', 'Producción de la rama agraria (M EUR)', 'Production de la branche agricole (M EUR)', 'Produzione del ramo agricolo (M EUR)'], dec: 0 },
-    { id: 'uaa', ramp: G, unit: ' kha', label: ['Utilised agricultural area (thousand ha)', 'Superficie agraria útil (miles de ha)', 'Surface agricole utilisée (milliers d’ha)', 'Superficie agricola utilizzata (migliaia di ha)'], dec: 0 },
-    { id: 'perha', ramp: G, unit: ' EUR/ha', label: ['Output per hectare of farmland (EUR/ha)', 'Producción por hectárea de superficie agraria (EUR/ha)', 'Production par hectare de surface agricole (EUR/ha)', 'Produzione per ettaro di superficie agricola (EUR/ha)'], dec: 0 }];
+    { id: 'crop', sec: 'agri', ramp: G, unit: ' M EUR', label: ['Crop output (M EUR)', 'Producción de la rama agrícola (vegetal, M EUR)', 'Production végétale (M EUR)', 'Produzione vegetale (M EUR)'], dec: 0 },
+    { id: 'animal', sec: 'live', ramp: G, unit: ' M EUR', label: ['Animal output: livestock and animal products (M EUR)', 'Producción de la rama ganadera: ganado y productos animales (M EUR)', 'Production animale : animaux et produits animaux (M EUR)', 'Produzione animale: animali e prodotti animali (M EUR)'], dec: 0 },
+    { id: 'uaa', sec: 'agri', ramp: G, unit: ' kha', label: ['Utilised agricultural area (thousand ha)', 'Superficie agraria útil (miles de ha)', 'Surface agricole utilisée (milliers d’ha)', 'Superficie agricola utilizzata (migliaia di ha)'], dec: 0 },
+    { id: 'perha', sec: 'agri', ramp: G, unit: ' EUR/ha', label: ['Output per hectare of farmland (EUR/ha)', 'Producción por hectárea de superficie agraria (EUR/ha)', 'Production par hectare de surface agricole (EUR/ha)', 'Produzione per ettaro di superficie agricola (EUR/ha)'], dec: 0 }];
   EU.push({ id: 'mgr65', ramp: O, unit: ' %', label: ['Farm managers aged 65 or over (% of holdings; Dehesa Index calculation from Eurostat)', 'Jefes de explotación de 65 años o más (% de explotaciones; cálculo de Dehesa Index con Eurostat)', 'Chefs d’exploitation de 65 ans ou plus (% des exploitations ; calcul de Dehesa Index à partir d’Eurostat)', 'Capi azienda di 65 anni o più (% delle aziende; calcolo di Dehesa Index su dati Eurostat)'], dec: 1 });
   ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL', 'PT', 'CH', 'IE', 'EL', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'HU', 'RO', 'SE', 'SI', 'UK'].forEach(function (c) { M[c] = EU; });
   // Reino Unido y Bulgaria: sin cuentas economicas regionales publicables (ver scripts/update-eurostat-regions.py): solo superficie
   M.UK = EU.filter(function (m) { return m.id === 'uaa'; }); M.BG = EU.filter(function (m) { return m.id === 'uaa' || m.id === 'mgr65'; });
   M.AR = [
-    { id: 'soja', ramp: G, unit: ' kt', label: ['Soybean production, latest season (thousand t)', 'Producción de soja, última campaña (miles de t)', 'Production de soja, dernière campagne (milliers de t)', 'Produzione di soia, ultima campagna (migliaia di t)'], dec: 0 },
-    { id: 'maiz', ramp: G, unit: ' kt', label: ['Maize production, latest season (thousand t)', 'Producción de maíz, última campaña (miles de t)', 'Production de maïs, dernière campagne (milliers de t)', 'Produzione di mais, ultima campagna (migliaia di t)'], dec: 0 },
-    { id: 'trigo', ramp: G, unit: ' kt', label: ['Wheat production, latest season (thousand t)', 'Producción de trigo, última campaña (miles de t)', 'Production de blé, dernière campagne (milliers de t)', 'Produzione di frumento, ultima campagna (migliaia di t)'], dec: 0 }];
+    { id: 'soja', sec: 'agri', ramp: G, unit: ' kt', label: ['Soybean production, latest season (thousand t)', 'Producción de soja, última campaña (miles de t)', 'Production de soja, dernière campagne (milliers de t)', 'Produzione di soia, ultima campagna (migliaia di t)'], dec: 0 },
+    { id: 'maiz', sec: 'agri', ramp: G, unit: ' kt', label: ['Maize production, latest season (thousand t)', 'Producción de maíz, última campaña (miles de t)', 'Production de maïs, dernière campagne (milliers de t)', 'Produzione di mais, ultima campagna (migliaia di t)'], dec: 0 },
+    { id: 'trigo', sec: 'agri', ramp: G, unit: ' kt', label: ['Wheat production, latest season (thousand t)', 'Producción de trigo, última campaña (miles de t)', 'Production de blé, dernière campagne (milliers de t)', 'Produzione di frumento, ultima campagna (migliaia di t)'], dec: 0 }];
   // vista precalculada (scripts/build-views.py -> data/views/region-metrics.json, ~7 KB): el mapa no baja el fichero regional entero; si falta, se calcula aquí
   function compute(cc, id) {
     return get('data/views/region-metrics.json').then(function (V) { var m = V && V.countries && V.countries[cc] && V.countries[cc][id]; return m && m.vals ? { vals: m.vals, period: m.period } : computeFull(cc, id); });
@@ -55,6 +57,8 @@
     return get('data/eu-regions-' + f + '.json').then(function (d) { if (!d || !d.regions) return null;
       Object.keys(d.regions).forEach(function (k) { var b = d.regions[k], o = b.eaa && b.eaa.AM180000, ua = b.crops && b.crops.UAA && b.crops.UAA.area;
         if (id === 'output') { var p = last(o); if (p && p[1] > 0) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }
+        else if (id === 'crop') { var c1 = last(b.eaa && b.eaa.AM100000); if (c1 && c1[1] > 0) { v[k] = c1[1]; if (String(c1[0]) > per) per = String(c1[0]); } }
+        else if (id === 'animal') { var a1 = last(b.eaa && b.eaa.AM110000), a2 = a1 && at(b.eaa.AM120000, a1[0]); if (a1 && a2 != null && a1[1] + a2 > 0) { v[k] = a1[1] + a2; if (String(a1[0]) > per) per = String(a1[0]); } }
         else if (id === 'uaa') { var q = last(ua); if (q) { v[k] = q[1]; if (String(q[0]) > per) per = String(q[0]); } }
         else if (id === 'mgr65') { var mg = b.managers, ys = mg ? Object.keys(mg).sort() : [], yy = ys[ys.length - 1], e = yy && mg[yy]; if (e && e.TOTAL && e.Y_GE65 != null) { v[k] = e.Y_GE65 / e.TOTAL * 100; if (yy > per) per = yy; } }
         else if (id === 'perha') { var p2 = last(o), u2 = p2 && at(ua, p2[0]); if (p2 && p2[1] > 0 && u2) { v[k] = p2[1] / u2 * 1000; if (String(p2[0]) > per) per = String(p2[0]); } } });
@@ -88,8 +92,8 @@
       return '<div class="di-movers-hint" style="margin:8px 0 0;font-size:12px">' + esc(m.label[li]) + (res.period ? ' · ' + esc(t.as + ' ' + String(res.period).slice(0, 10)) : '') + '<div style="margin-top:4px">' + sw.join('') + '</div></div>';
     });
   }
-  function selectHtml(cc, lg, idAttr, current) {
-    var list = M[cc] || [], t = TXT[lg] || TXT.es, li = L4[lg] == null ? 1 : L4[lg]; if (!list.length) return '';
+  function selectHtml(cc, lg, idAttr, current, only) {
+    var list = only || M[cc] || [], t = TXT[lg] || TXT.es, li = L4[lg] == null ? 1 : L4[lg]; if (!list.length) return '';
     return '<label style="font-size:13px;display:block;margin:0 0 8px">' + esc(t.by) + ' <select id="' + idAttr + '" class="di-compare-select"><option value="">' + esc(t.hl) + '</option>' + list.map(function (m) { return '<option value="' + m.id + '"' + (m.id === current ? ' selected' : '') + '>' + esc(m.label[li]) + '</option>'; }).join('') + '</select></label>';
   }
   window.DehesaRegionMetrics = { list: function (cc) { return M[cc] || []; }, paint: paint, selectHtml: selectHtml, compute: compute };
