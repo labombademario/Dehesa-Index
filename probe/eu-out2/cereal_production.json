@@ -1,0 +1,5833 @@
+[ {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 240.27,
+  "area" : 46.81,
+  "yield" : 5.13
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 33.26,
+  "area" : 5.38,
+  "yield" : 6.18
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1255.3,
+  "area" : 253.31,
+  "yield" : 4.96
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 124.41,
+  "area" : 30.14,
+  "yield" : 4.13
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 672.64,
+  "area" : 122.3,
+  "yield" : 5.5
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 63.04,
+  "area" : 18.61,
+  "yield" : 3.39
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 1791.74,
+  "area" : 225.66,
+  "yield" : 7.94
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 92.15,
+  "area" : 23.22,
+  "yield" : 3.97
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 35.33,
+  "area" : 12.53,
+  "yield" : 2.82
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 28.04,
+  "area" : 5.32,
+  "yield" : 5.27
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1413.7,
+  "area" : 196.85,
+  "yield" : 7.18
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 3.93,
+  "area" : 0.77,
+  "yield" : 5.1
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 4.42,
+  "area" : 1.23,
+  "yield" : 3.58
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 13.34,
+  "area" : 3.39,
+  "yield" : 3.94
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 487.08,
+  "area" : 54.91,
+  "yield" : 8.87
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 280.24,
+  "area" : 43.0,
+  "yield" : 6.52
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 22.0,
+  "area" : 10.0,
+  "yield" : 2.2
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 7260.0,
+  "area" : 1140.0,
+  "yield" : 6.37
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 15.0,
+  "area" : 6.0,
+  "yield" : 2.5
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 7.77,
+  "area" : 4.42,
+  "yield" : 1.76
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 78.0,
+  "area" : 19.0,
+  "yield" : 4.11
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 1843.2,
+  "area" : 320.0,
+  "yield" : 5.76
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 240.0,
+  "area" : 40.0,
+  "yield" : 6.0
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 1370.0,
+  "area" : 233.0,
+  "yield" : 5.88
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 67.0,
+  "area" : 30.0,
+  "yield" : 2.23
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 17.0,
+  "area" : 3.0,
+  "yield" : 5.67
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 319.0,
+  "area" : 57.0,
+  "yield" : 5.6
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 48.0,
+  "area" : 10.0,
+  "yield" : 4.8
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1078.0,
+  "area" : 158.0,
+  "yield" : 6.82
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 4.5,
+  "area" : 1.2,
+  "yield" : 3.75
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.02,
+  "area" : 0.96,
+  "yield" : 1.06
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 1651.0,
+  "area" : 260.0,
+  "yield" : 6.35
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 50.0,
+  "area" : 15.0,
+  "yield" : 3.33
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 15.37,
+  "area" : 6.74,
+  "yield" : 2.28
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 16.21,
+  "area" : 7.95,
+  "yield" : 2.04
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 0.42,
+  "area" : 0.27,
+  "yield" : 1.56
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 1.07,
+  "area" : 0.61,
+  "yield" : 1.75
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 8.44,
+  "area" : 4.75,
+  "yield" : 1.78
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 39.96,
+  "area" : 7.87,
+  "yield" : 5.08
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 580.06,
+  "area" : 92.22,
+  "yield" : 6.29
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 140.67,
+  "area" : 45.88,
+  "yield" : 3.07
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 9.48,
+  "area" : 5.35,
+  "yield" : 1.77
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 107.68,
+  "area" : 22.11,
+  "yield" : 4.87
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 4388.99,
+  "area" : 774.27,
+  "yield" : 5.67
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 238.26,
+  "area" : 48.23,
+  "yield" : 4.94
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 1553.5,
+  "area" : 287.62,
+  "yield" : 5.4
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 3473.74,
+  "area" : 572.25,
+  "yield" : 6.07
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 55.1,
+  "area" : 8.4,
+  "yield" : 6.56
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 292.79,
+  "area" : 58.32,
+  "yield" : 5.02
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 47.07,
+  "area" : 7.35,
+  "yield" : 6.4
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 699.82,
+  "area" : 114.35,
+  "yield" : 6.12
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 3519.31,
+  "area" : 453.86,
+  "yield" : 7.75
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 28.45,
+  "area" : 9.6,
+  "yield" : 2.96
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 410.33,
+  "area" : 105.39,
+  "yield" : 3.89
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 115.24,
+  "area" : 47.21,
+  "yield" : 2.44
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 29.54,
+  "area" : 6.66,
+  "yield" : 4.44
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 61.0,
+  "area" : 16.05,
+  "yield" : 3.8
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 778.11,
+  "area" : 176.05,
+  "yield" : 4.42
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 8.64,
+  "area" : 7.09,
+  "yield" : 1.22
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 833.0,
+  "area" : 199.5,
+  "yield" : 4.18
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 66.3,
+  "area" : 16.0,
+  "yield" : 4.14
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 29.89,
+  "area" : 9.79,
+  "yield" : 3.05
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 36.0,
+  "area" : 8.7,
+  "yield" : 4.14
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 1152.1,
+  "area" : 302.6,
+  "yield" : 3.81
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 1099.3,
+  "area" : 273.4,
+  "yield" : 4.02
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 1504.76,
+  "area" : 323.37,
+  "yield" : 4.65
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 122.18,
+  "area" : 33.86,
+  "yield" : 3.61
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 31674.64,
+  "area" : 4614.35,
+  "yield" : 6.86
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 112.94,
+  "area" : 30.33,
+  "yield" : 3.72
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 433.71,
+  "area" : 128.83,
+  "yield" : 3.37
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 356.98,
+  "area" : 90.25,
+  "yield" : 3.96
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 8094.92,
+  "area" : 1186.9,
+  "yield" : 6.82
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 10801.86,
+  "area" : 1771.74,
+  "yield" : 6.1
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 1109.32,
+  "area" : 210.31,
+  "yield" : 5.27
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 20455.5,
+  "area" : 2831.3,
+  "yield" : 7.22
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 2831.0,
+  "area" : 507.9,
+  "yield" : 5.57
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 86.15,
+  "area" : 22.6,
+  "yield" : 3.81
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 1644.6,
+  "area" : 276.9,
+  "yield" : 5.94
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 3961.6,
+  "area" : 510.4,
+  "yield" : 7.76
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 361.3,
+  "area" : 60.4,
+  "yield" : 5.98
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 11314.1,
+  "area" : 1539.6,
+  "yield" : 7.35
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 722.9,
+  "area" : 174.1,
+  "yield" : 4.15
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 21.97,
+  "area" : 9.51,
+  "yield" : 2.31
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 6.88,
+  "area" : 1.77,
+  "yield" : 3.89
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 225.46,
+  "area" : 77.45,
+  "yield" : 2.91
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 11.05,
+  "area" : 6.13,
+  "yield" : 1.8
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.66,
+  "area" : 0.53,
+  "yield" : 3.12
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 71.52,
+  "area" : 60.93,
+  "yield" : 1.17
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 1118.62,
+  "area" : 101.6,
+  "yield" : 11.01
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 273.39,
+  "area" : 104.98,
+  "yield" : 2.6
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 613.29,
+  "area" : 201.23,
+  "yield" : 3.05
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 1655.73,
+  "area" : 373.05,
+  "yield" : 4.44
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 288.66,
+  "area" : 73.23,
+  "yield" : 3.94
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 2013.21,
+  "area" : 599.17,
+  "yield" : 3.36
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 57.38,
+  "area" : 25.47,
+  "yield" : 2.25
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 240.42,
+  "area" : 69.93,
+  "yield" : 3.44
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 78.98,
+  "area" : 28.09,
+  "yield" : 2.81
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 4212.06,
+  "area" : 1000.72,
+  "yield" : 4.21
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 97.78,
+  "area" : 31.17,
+  "yield" : 3.14
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 9.67,
+  "area" : 7.22,
+  "yield" : 1.34
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 1236.43,
+  "area" : 169.46,
+  "yield" : 7.3
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 533.7,
+  "area" : 58.69,
+  "yield" : 9.09
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 43.78,
+  "area" : 4.86,
+  "yield" : 9.01
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.01,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 181.7,
+  "area" : 24.25,
+  "yield" : 7.49
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 936.61,
+  "area" : 230.67,
+  "yield" : 4.06
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 272.29,
+  "area" : 46.9,
+  "yield" : 5.81
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 2956.89,
+  "area" : 531.74,
+  "yield" : 5.56
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 10.23,
+  "area" : 3.39,
+  "yield" : 3.02
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 74.49,
+  "area" : 16.36,
+  "yield" : 4.55
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 217.52,
+  "area" : 91.29,
+  "yield" : 2.38
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 4527.33,
+  "area" : 539.61,
+  "yield" : 8.39
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 3902.09,
+  "area" : 1123.5,
+  "yield" : 3.47
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 72.18,
+  "area" : 25.51,
+  "yield" : 2.83
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 207.2,
+  "area" : 52.3,
+  "yield" : 3.96
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 392.8,
+  "area" : 109.1,
+  "yield" : 3.6
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 40.2,
+  "area" : 10.3,
+  "yield" : 3.9
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 83.2,
+  "area" : 19.8,
+  "yield" : 4.2
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 2323.1,
+  "area" : 497.2,
+  "yield" : 4.67
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 29.37,
+  "area" : 23.61,
+  "yield" : 1.24
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 206.42,
+  "area" : 65.23,
+  "yield" : 3.16
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 4174.2,
+  "area" : 904.96,
+  "yield" : 4.61
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 48.61,
+  "area" : 19.6,
+  "yield" : 2.48
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 46.94,
+  "area" : 50.52,
+  "yield" : 0.93
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 274.07,
+  "area" : 117.75,
+  "yield" : 2.33
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 116.44,
+  "area" : 16.49,
+  "yield" : 7.06
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 710.5,
+  "area" : 171.69,
+  "yield" : 4.14
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 2.32,
+  "area" : 0.59,
+  "yield" : 3.95
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 72.55,
+  "area" : 12.57,
+  "yield" : 5.77
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 7.38,
+  "area" : 1.34,
+  "yield" : 5.5
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.05,
+  "area" : 0.25,
+  "yield" : 4.14
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 30.49,
+  "area" : 4.81,
+  "yield" : 6.33
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 1.6,
+  "area" : 0.2,
+  "yield" : 7.99
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.79,
+  "area" : 0.2,
+  "yield" : 3.9
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 34.83,
+  "area" : 5.82,
+  "yield" : 5.98
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 7.38,
+  "area" : 1.56,
+  "yield" : 4.73
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 317.76,
+  "area" : 44.81,
+  "yield" : 7.09
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 135.65,
+  "area" : 12.21,
+  "yield" : 11.11
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 6.27,
+  "area" : 1.33,
+  "yield" : 4.71
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 7.36,
+  "area" : 1.58,
+  "yield" : 4.66
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 7.73,
+  "area" : 2.21,
+  "yield" : 3.5
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 978.24,
+  "area" : 114.14,
+  "yield" : 8.57
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.54,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 3392.14,
+  "area" : 750.48,
+  "yield" : 4.52
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 5040.18,
+  "area" : 1109.42,
+  "yield" : 4.54
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 12315.39,
+  "area" : 2333.42,
+  "yield" : 5.28
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 2097.18,
+  "area" : 560.86,
+  "yield" : 3.74
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 1241.17,
+  "area" : 420.1,
+  "yield" : 2.95
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 1777.68,
+  "area" : 525.69,
+  "yield" : 3.38
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 8722.04,
+  "area" : 1194.8,
+  "yield" : 7.3
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 14.09,
+  "area" : 4.79,
+  "yield" : 2.94
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 33.41,
+  "area" : 10.01,
+  "yield" : 3.34
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 10.73,
+  "area" : 11.35,
+  "yield" : 0.95
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 16.81,
+  "area" : 7.53,
+  "yield" : 2.23
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 27.93,
+  "area" : 28.87,
+  "yield" : 0.97
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 616.08,
+  "area" : 62.23,
+  "yield" : 9.9
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 2.33,
+  "area" : 1.46,
+  "yield" : 1.6
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.83,
+  "area" : 0.85,
+  "yield" : 0.98
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 3917.28,
+  "area" : 720.22,
+  "yield" : 5.44
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 54.12,
+  "area" : 13.88,
+  "yield" : 3.9
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 7881.78,
+  "area" : 1698.66,
+  "yield" : 4.64
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 195.67,
+  "area" : 73.11,
+  "yield" : 2.68
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 364.05,
+  "area" : 76.68,
+  "yield" : 4.75
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 44.56,
+  "area" : 13.3,
+  "yield" : 3.35
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 13064.17,
+  "area" : 2254.3,
+  "yield" : 5.8
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 27.53,
+  "area" : 17.07,
+  "yield" : 1.61
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 2.82,
+  "area" : 1.49,
+  "yield" : 1.9
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 579.39,
+  "area" : 114.17,
+  "yield" : 5.07
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 33.65,
+  "area" : 9.35,
+  "yield" : 3.6
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 32.7,
+  "area" : 9.91,
+  "yield" : 3.3
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1532.49,
+  "area" : 295.5,
+  "yield" : 5.19
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 413.81,
+  "area" : 79.0,
+  "yield" : 5.24
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.86,
+  "area" : 2.05,
+  "yield" : 0.91
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 23.75,
+  "area" : 10.27,
+  "yield" : 2.31
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 781.99,
+  "area" : 157.66,
+  "yield" : 4.96
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 28.64,
+  "area" : 9.11,
+  "yield" : 3.14
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 30.52,
+  "area" : 6.1,
+  "yield" : 5.0
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.15,
+  "area" : 0.05,
+  "yield" : 3.25
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 155.72,
+  "area" : 28.33,
+  "yield" : 5.5
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 4.6,
+  "area" : 1.12,
+  "yield" : 4.12
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 3.26,
+  "area" : 4.74,
+  "yield" : 0.69
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 106.35,
+  "area" : 20.98,
+  "yield" : 5.07
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 285.66,
+  "area" : 42.13,
+  "yield" : 6.78
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 3.23,
+  "area" : 1.01,
+  "yield" : 3.21
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 19.45,
+  "area" : 5.21,
+  "yield" : 3.73
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 818.79,
+  "area" : 284.74,
+  "yield" : 2.88
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 6486.87,
+  "area" : 1738.43,
+  "yield" : 3.73
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 220.61,
+  "area" : 98.82,
+  "yield" : 2.23
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 114.31,
+  "area" : 49.31,
+  "yield" : 2.32
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 1172.5,
+  "area" : 513.21,
+  "yield" : 2.28
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 3823.94,
+  "area" : 321.07,
+  "yield" : 11.91
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 633.01,
+  "area" : 203.06,
+  "yield" : 3.12
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 7967.28,
+  "area" : 2290.29,
+  "yield" : 3.48
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Barley",
+  "grossProduction" : 1339.2,
+  "area" : 257.01,
+  "yield" : 5.21
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Triticale",
+  "grossProduction" : 192.3,
+  "area" : 32.84,
+  "yield" : 5.86
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Maize",
+  "grossProduction" : 18.06,
+  "area" : 2.43,
+  "yield" : 7.43
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Rye",
+  "grossProduction" : 166.7,
+  "area" : 27.24,
+  "yield" : 6.12
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Other cereals",
+  "grossProduction" : 38.0,
+  "area" : 10.6,
+  "yield" : 3.58
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Oat",
+  "grossProduction" : 675.8,
+  "area" : 153.97,
+  "yield" : 4.39
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2026,
+  "crop" : "Soft wheat",
+  "grossProduction" : 3448.7,
+  "area" : 510.71,
+  "yield" : 6.75
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 825.05,
+  "area" : 122.29,
+  "yield" : 6.75
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 145.19,
+  "area" : 24.96,
+  "yield" : 5.82
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 2521.14,
+  "area" : 226.38,
+  "yield" : 11.14
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 83.19,
+  "area" : 20.65,
+  "yield" : 4.03
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 295.45,
+  "area" : 47.6,
+  "yield" : 6.21
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 144.72,
+  "area" : 27.51,
+  "yield" : 5.26
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1601.65,
+  "area" : 256.06,
+  "yield" : 6.25
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 43.41,
+  "area" : 5.83,
+  "yield" : 7.45
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 36.64,
+  "area" : 12.88,
+  "yield" : 2.85
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 305.77,
+  "area" : 37.49,
+  "yield" : 8.16
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 34.35,
+  "area" : 5.09,
+  "yield" : 6.75
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1792.62,
+  "area" : 196.38,
+  "yield" : 9.13
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 3.92,
+  "area" : 0.8,
+  "yield" : 4.9
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 7.29,
+  "area" : 1.94,
+  "yield" : 3.75
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 22.04,
+  "area" : 4.33,
+  "yield" : 5.09
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 492.25,
+  "area" : 51.84,
+  "yield" : 9.5
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 1060.02,
+  "area" : 196.17,
+  "yield" : 5.4
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 21.21,
+  "area" : 10.31,
+  "yield" : 2.06
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 7155.14,
+  "area" : 1239.59,
+  "yield" : 5.77
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 11.05,
+  "area" : 7.29,
+  "yield" : 1.52
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 64.12,
+  "area" : 21.25,
+  "yield" : 3.02
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 49.47,
+  "area" : 24.04,
+  "yield" : 2.06
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 974.33,
+  "area" : 398.88,
+  "yield" : 2.44
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 176.99,
+  "area" : 33.3,
+  "yield" : 5.32
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 8.45,
+  "area" : 4.67,
+  "yield" : 1.81
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 48.47,
+  "area" : 14.65,
+  "yield" : 3.31
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 1679.42,
+  "area" : 263.23,
+  "yield" : 6.38
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 14.3,
+  "area" : 2.45,
+  "yield" : 5.84
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 352.33,
+  "area" : 64.13,
+  "yield" : 5.49
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 43.69,
+  "area" : 8.98,
+  "yield" : 4.87
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 3.46,
+  "area" : 0.97,
+  "yield" : 3.57
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1033.26,
+  "area" : 156.14,
+  "yield" : 6.62
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.0,
+  "area" : 0.98,
+  "yield" : 1.03
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 0.35,
+  "area" : 0.22,
+  "yield" : 1.59
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 10.42,
+  "area" : 7.28,
+  "yield" : 1.43
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 5.78,
+  "area" : 6.19,
+  "yield" : 0.93
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 0.77,
+  "area" : 0.5,
+  "yield" : 1.54
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 5.2,
+  "area" : 3.85,
+  "yield" : 1.35
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 1851.4,
+  "area" : 294.83,
+  "yield" : 6.28
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 51.92,
+  "area" : 7.91,
+  "yield" : 6.56
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 802.74,
+  "area" : 90.59,
+  "yield" : 8.86
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 271.68,
+  "area" : 68.24,
+  "yield" : 3.98
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 220.04,
+  "area" : 42.53,
+  "yield" : 5.17
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 5184.29,
+  "area" : 777.12,
+  "yield" : 6.67
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 112.06,
+  "area" : 20.34,
+  "yield" : 5.51
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 7.77,
+  "area" : 4.51,
+  "yield" : 1.72
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 3509.76,
+  "area" : 548.18,
+  "yield" : 6.4
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 77.27,
+  "area" : 8.6,
+  "yield" : 8.98
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 493.29,
+  "area" : 82.83,
+  "yield" : 5.96
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 41.06,
+  "area" : 6.05,
+  "yield" : 6.79
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 771.24,
+  "area" : 109.21,
+  "yield" : 7.06
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 4116.62,
+  "area" : 473.03,
+  "yield" : 8.7
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 28.39,
+  "area" : 9.29,
+  "yield" : 3.05
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 335.11,
+  "area" : 79.68,
+  "yield" : 4.21
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 118.77,
+  "area" : 48.66,
+  "yield" : 2.44
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 31.61,
+  "area" : 6.96,
+  "yield" : 4.54
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 63.98,
+  "area" : 17.94,
+  "yield" : 3.57
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 868.57,
+  "area" : 186.27,
+  "yield" : 4.66
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 7.97,
+  "area" : 6.91,
+  "yield" : 1.15
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 975.22,
+  "area" : 221.78,
+  "yield" : 4.4
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 84.8,
+  "area" : 20.68,
+  "yield" : 4.1
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 44.83,
+  "area" : 19.25,
+  "yield" : 2.33
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 35.02,
+  "area" : 7.15,
+  "yield" : 4.9
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 1214.27,
+  "area" : 318.59,
+  "yield" : 3.81
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 1127.27,
+  "area" : 303.37,
+  "yield" : 3.72
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 1558.87,
+  "area" : 299.63,
+  "yield" : 5.2
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 268.45,
+  "area" : 63.25,
+  "yield" : 4.24
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 33363.28,
+  "area" : 4494.36,
+  "yield" : 7.42
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 104.7,
+  "area" : 27.18,
+  "yield" : 3.85
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 535.71,
+  "area" : 159.4,
+  "yield" : 3.36
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 476.69,
+  "area" : 108.45,
+  "yield" : 4.4
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 13903.68,
+  "area" : 1614.47,
+  "yield" : 8.61
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 11856.5,
+  "area" : 1790.85,
+  "yield" : 6.62
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 1295.72,
+  "area" : 221.85,
+  "yield" : 5.84
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 99.65,
+  "area" : 24.52,
+  "yield" : 4.06
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 2985.47,
+  "area" : 530.1,
+  "yield" : 5.63
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 22813.3,
+  "area" : 2906.3,
+  "yield" : 7.85
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 1830.8,
+  "area" : 288.2,
+  "yield" : 6.35
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 11336.6,
+  "area" : 1523.0,
+  "yield" : 7.44
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 338.7,
+  "area" : 52.1,
+  "yield" : 6.5
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 4944.8,
+  "area" : 489.9,
+  "yield" : 10.09
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 934.8,
+  "area" : 187.3,
+  "yield" : 4.99
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 369.62,
+  "area" : 112.5,
+  "yield" : 3.29
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 861.79,
+  "area" : 308.98,
+  "yield" : 2.79
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 22.97,
+  "area" : 10.56,
+  "yield" : 2.18
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 7.0,
+  "area" : 2.05,
+  "yield" : 3.41
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 288.66,
+  "area" : 106.23,
+  "yield" : 2.72
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 14.33,
+  "area" : 7.65,
+  "yield" : 1.87
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 2.87,
+  "area" : 0.76,
+  "yield" : 3.76
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 65.18,
+  "area" : 60.01,
+  "yield" : 1.09
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 949.45,
+  "area" : 103.72,
+  "yield" : 9.15
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 1695.05,
+  "area" : 290.74,
+  "yield" : 5.83
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 168.48,
+  "area" : 46.01,
+  "yield" : 3.66
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 5426.26,
+  "area" : 981.85,
+  "yield" : 5.53
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 71.95,
+  "area" : 23.25,
+  "yield" : 3.09
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 247.79,
+  "area" : 60.07,
+  "yield" : 4.13
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 76.87,
+  "area" : 26.23,
+  "yield" : 2.93
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 3871.4,
+  "area" : 737.06,
+  "yield" : 5.25
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 364.72,
+  "area" : 69.94,
+  "yield" : 5.21
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 10.59,
+  "area" : 7.14,
+  "yield" : 1.48
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 1388.44,
+  "area" : 172.58,
+  "yield" : 8.05
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 234.83,
+  "area" : 33.82,
+  "yield" : 6.94
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.01,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 39.25,
+  "area" : 3.81,
+  "yield" : 10.3
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 670.85,
+  "area" : 64.42,
+  "yield" : 10.41
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 3618.25,
+  "area" : 1134.23,
+  "yield" : 3.19
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 5511.12,
+  "area" : 540.95,
+  "yield" : 10.19
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 223.46,
+  "area" : 98.09,
+  "yield" : 2.28
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 76.31,
+  "area" : 26.79,
+  "yield" : 2.85
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 10.41,
+  "area" : 3.6,
+  "yield" : 2.89
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 2510.85,
+  "area" : 511.24,
+  "yield" : 4.91
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 279.53,
+  "area" : 48.15,
+  "yield" : 5.81
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 78.25,
+  "area" : 15.73,
+  "yield" : 4.97
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 844.0,
+  "area" : 228.83,
+  "yield" : 3.69
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 184.8,
+  "area" : 51.7,
+  "yield" : 3.57
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 262.8,
+  "area" : 102.6,
+  "yield" : 2.56
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 34.0,
+  "area" : 10.4,
+  "yield" : 3.27
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 91.1,
+  "area" : 27.7,
+  "yield" : 3.29
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 2611.7,
+  "area" : 547.4,
+  "yield" : 4.77
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 30.09,
+  "area" : 24.13,
+  "yield" : 1.25
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 273.78,
+  "area" : 76.75,
+  "yield" : 3.57
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 1.4,
+  "area" : 0.45,
+  "yield" : 3.11
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 4857.67,
+  "area" : 905.85,
+  "yield" : 5.36
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 60.23,
+  "area" : 23.24,
+  "yield" : 2.59
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 48.94,
+  "area" : 49.62,
+  "yield" : 0.99
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 270.74,
+  "area" : 102.13,
+  "yield" : 2.65
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 121.81,
+  "area" : 17.42,
+  "yield" : 6.99
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 701.24,
+  "area" : 144.98,
+  "yield" : 4.84
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 5.58,
+  "area" : 1.22,
+  "yield" : 4.57
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 84.65,
+  "area" : 12.43,
+  "yield" : 6.81
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 7.34,
+  "area" : 1.23,
+  "yield" : 5.97
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.08,
+  "area" : 0.26,
+  "yield" : 4.12
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 33.23,
+  "area" : 4.96,
+  "yield" : 6.7
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 2.59,
+  "area" : 0.3,
+  "yield" : 8.63
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.69,
+  "area" : 0.17,
+  "yield" : 4.06
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 40.04,
+  "area" : 6.04,
+  "yield" : 6.63
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 10.48,
+  "area" : 1.81,
+  "yield" : 5.79
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 260.69,
+  "area" : 34.8,
+  "yield" : 7.49
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 145.3,
+  "area" : 12.13,
+  "yield" : 11.98
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 6.11,
+  "area" : 1.3,
+  "yield" : 4.7
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 6.57,
+  "area" : 1.22,
+  "yield" : 5.39
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 6.33,
+  "area" : 1.78,
+  "yield" : 3.56
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1031.31,
+  "area" : 111.47,
+  "yield" : 9.25
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.67,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 13505.3,
+  "area" : 2414.11,
+  "yield" : 5.59
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 2307.61,
+  "area" : 603.92,
+  "yield" : 3.82
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 1299.06,
+  "area" : 433.9,
+  "yield" : 2.99
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 5267.74,
+  "area" : 1115.5,
+  "yield" : 4.72
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 10535.16,
+  "area" : 1341.81,
+  "yield" : 7.85
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 2991.01,
+  "area" : 620.62,
+  "yield" : 4.82
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 1845.78,
+  "area" : 528.65,
+  "yield" : 3.49
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 21.99,
+  "area" : 15.0,
+  "yield" : 1.47
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 49.47,
+  "area" : 20.3,
+  "yield" : 2.44
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 13.15,
+  "area" : 13.38,
+  "yield" : 0.98
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.99,
+  "area" : 0.93,
+  "yield" : 1.06
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 40.15,
+  "area" : 34.0,
+  "yield" : 1.18
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 524.92,
+  "area" : 65.16,
+  "yield" : 8.06
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 34.65,
+  "area" : 12.0,
+  "yield" : 2.89
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 8.74,
+  "area" : 3.5,
+  "yield" : 2.5
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 3440.93,
+  "area" : 629.24,
+  "yield" : 5.47
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 45.96,
+  "area" : 14.13,
+  "yield" : 3.25
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 7753.67,
+  "area" : 1969.17,
+  "yield" : 3.94
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 203.88,
+  "area" : 77.17,
+  "yield" : 2.64
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 379.95,
+  "area" : 76.59,
+  "yield" : 4.96
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 40.23,
+  "area" : 12.2,
+  "yield" : 3.3
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 12965.11,
+  "area" : 2294.09,
+  "yield" : 5.65
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 23.86,
+  "area" : 18.59,
+  "yield" : 1.28
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 2.86,
+  "area" : 1.51,
+  "yield" : 1.89
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 38.02,
+  "area" : 8.95,
+  "yield" : 4.25
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 40.0,
+  "area" : 9.22,
+  "yield" : 4.34
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1746.32,
+  "area" : 293.19,
+  "yield" : 5.96
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 29.05,
+  "area" : 7.35,
+  "yield" : 3.95
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 719.84,
+  "area" : 117.53,
+  "yield" : 6.12
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 33.23,
+  "area" : 11.9,
+  "yield" : 2.79
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 1299.97,
+  "area" : 158.12,
+  "yield" : 8.22
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 540.88,
+  "area" : 88.97,
+  "yield" : 6.08
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.97,
+  "area" : 2.0,
+  "yield" : 0.99
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.11,
+  "area" : 0.03,
+  "yield" : 3.67
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 27.5,
+  "area" : 5.17,
+  "yield" : 5.32
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 171.04,
+  "area" : 28.0,
+  "yield" : 6.11
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 5.27,
+  "area" : 1.18,
+  "yield" : 4.47
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 3.33,
+  "area" : 4.73,
+  "yield" : 0.7
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 2.64,
+  "area" : 0.79,
+  "yield" : 3.34
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 304.85,
+  "area" : 42.98,
+  "yield" : 7.09
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.08,
+  "area" : 0.01,
+  "yield" : 8.0
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 115.21,
+  "area" : 20.4,
+  "yield" : 5.65
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 20.17,
+  "area" : 5.47,
+  "yield" : 3.69
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 7754.99,
+  "area" : 1791.03,
+  "yield" : 4.33
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 255.82,
+  "area" : 97.21,
+  "yield" : 2.63
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 117.53,
+  "area" : 49.79,
+  "yield" : 2.36
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 860.09,
+  "area" : 285.87,
+  "yield" : 3.01
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 4017.05,
+  "area" : 323.38,
+  "yield" : 12.42
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 656.96,
+  "area" : 215.79,
+  "yield" : 3.04
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 9199.39,
+  "area" : 2295.59,
+  "yield" : 4.01
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 1317.04,
+  "area" : 511.81,
+  "yield" : 2.57
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Triticale",
+  "grossProduction" : 199.3,
+  "area" : 33.74,
+  "yield" : 5.91
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Soft wheat",
+  "grossProduction" : 3822.1,
+  "area" : 522.23,
+  "yield" : 7.32
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Rye",
+  "grossProduction" : 183.4,
+  "area" : 29.1,
+  "yield" : 6.3
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Other cereals",
+  "grossProduction" : 34.2,
+  "area" : 8.54,
+  "yield" : 4.0
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Oat",
+  "grossProduction" : 718.7,
+  "area" : 146.86,
+  "yield" : 4.89
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Maize",
+  "grossProduction" : 18.4,
+  "area" : 2.49,
+  "yield" : 7.39
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Barley",
+  "grossProduction" : 1461.3,
+  "area" : 251.7,
+  "yield" : 5.81
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2025,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 716.12,
+  "area" : 125.68,
+  "yield" : 5.7
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 139.41,
+  "area" : 26.27,
+  "yield" : 5.31
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 2059.36,
+  "area" : 208.02,
+  "yield" : 9.9
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 67.61,
+  "area" : 17.45,
+  "yield" : 3.87
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 257.16,
+  "area" : 50.63,
+  "yield" : 5.08
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 127.88,
+  "area" : 32.15,
+  "yield" : 3.98
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1427.5,
+  "area" : 247.96,
+  "yield" : 5.76
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 36.44,
+  "area" : 5.5,
+  "yield" : 6.63
+}, {
+  "memberStateCode" : "AT",
+  "memberStateName" : "Austria",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 32.76,
+  "area" : 12.4,
+  "yield" : 2.64
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 300.22,
+  "area" : 48.15,
+  "yield" : 6.24
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 20.1,
+  "area" : 4.04,
+  "yield" : 4.98
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1092.58,
+  "area" : 164.54,
+  "yield" : 6.64
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 2.87,
+  "area" : 0.84,
+  "yield" : 3.42
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 3.21,
+  "area" : 0.91,
+  "yield" : 3.53
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 14.05,
+  "area" : 3.21,
+  "yield" : 4.38
+}, {
+  "memberStateCode" : "BE",
+  "memberStateName" : "Belgium",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 655.84,
+  "area" : 60.25,
+  "yield" : 10.89
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 1052.48,
+  "area" : 196.38,
+  "yield" : 5.36
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 11.0,
+  "area" : 5.95,
+  "yield" : 1.85
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 6743.19,
+  "area" : 1170.04,
+  "yield" : 5.76
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 12.8,
+  "area" : 6.44,
+  "yield" : 1.99
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 63.73,
+  "area" : 20.87,
+  "yield" : 3.05
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 53.35,
+  "area" : 23.57,
+  "yield" : 2.26
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 1597.94,
+  "area" : 503.03,
+  "yield" : 3.18
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 103.12,
+  "area" : 24.46,
+  "yield" : 4.22
+}, {
+  "memberStateCode" : "BG",
+  "memberStateName" : "Bulgaria",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 7.57,
+  "area" : 5.42,
+  "yield" : 1.4
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 54.31,
+  "area" : 16.75,
+  "yield" : 3.24
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 2067.1,
+  "area" : 273.16,
+  "yield" : 7.57
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 6.56,
+  "area" : 1.2,
+  "yield" : 5.47
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 297.93,
+  "area" : 60.2,
+  "yield" : 4.95
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 30.57,
+  "area" : 7.65,
+  "yield" : 4.0
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 2.12,
+  "area" : 0.69,
+  "yield" : 3.07
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 812.11,
+  "area" : 139.59,
+  "yield" : 5.82
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.81,
+  "area" : 0.78,
+  "yield" : 1.04
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 0.41,
+  "area" : 0.25,
+  "yield" : 1.64
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 13.54,
+  "area" : 8.15,
+  "yield" : 1.66
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 6.42,
+  "area" : 6.82,
+  "yield" : 0.94
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 0.8,
+  "area" : 0.52,
+  "yield" : 1.54
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 6.86,
+  "area" : 4.33,
+  "yield" : 1.58
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 1671.53,
+  "area" : 317.12,
+  "yield" : 5.27
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 27.08,
+  "area" : 4.89,
+  "yield" : 5.54
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 712.24,
+  "area" : 87.48,
+  "yield" : 8.14
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 200.64,
+  "area" : 52.62,
+  "yield" : 3.81
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 196.19,
+  "area" : 44.05,
+  "yield" : 4.45
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 4598.29,
+  "area" : 771.61,
+  "yield" : 5.96
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 105.64,
+  "area" : 24.3,
+  "yield" : 4.35
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 9.18,
+  "area" : 5.57,
+  "yield" : 1.65
+}, {
+  "memberStateCode" : "CZ",
+  "memberStateName" : "Czechia",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 3178.1,
+  "area" : 571.4,
+  "yield" : 5.56
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 63.4,
+  "area" : 9.1,
+  "yield" : 6.97
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 256.66,
+  "area" : 51.91,
+  "yield" : 4.94
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 23.9,
+  "area" : 3.8,
+  "yield" : 6.29
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 657.4,
+  "area" : 112.0,
+  "yield" : 5.87
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 3387.4,
+  "area" : 475.6,
+  "yield" : 7.12
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DK",
+  "memberStateName" : "Denmark",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 17.69,
+  "area" : 5.84,
+  "yield" : 3.03
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 315.2,
+  "area" : 95.06,
+  "yield" : 3.32
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 134.9,
+  "area" : 48.36,
+  "yield" : 2.79
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 25.79,
+  "area" : 6.37,
+  "yield" : 4.05
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 72.62,
+  "area" : 18.24,
+  "yield" : 3.98
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 744.75,
+  "area" : 173.32,
+  "yield" : 4.3
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "EE",
+  "memberStateName" : "Estonia",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 10.28,
+  "area" : 7.85,
+  "yield" : 1.31
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 750.7,
+  "area" : 214.8,
+  "yield" : 3.49
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 43.49,
+  "area" : 15.91,
+  "yield" : 2.73
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 48.03,
+  "area" : 17.54,
+  "yield" : 2.74
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 24.2,
+  "area" : 6.8,
+  "yield" : 3.56
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 1165.4,
+  "area" : 321.84,
+  "yield" : 3.62
+}, {
+  "memberStateCode" : "FI",
+  "memberStateName" : "Finland",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 1207.5,
+  "area" : 328.3,
+  "yield" : 3.68
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 1100.62,
+  "area" : 255.16,
+  "yield" : 4.31
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 452.37,
+  "area" : 100.48,
+  "yield" : 4.5
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 25673.69,
+  "area" : 4214.57,
+  "yield" : 6.09
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 109.63,
+  "area" : 29.32,
+  "yield" : 3.74
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 615.4,
+  "area" : 193.36,
+  "yield" : 3.18
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 306.26,
+  "area" : 78.2,
+  "yield" : 3.92
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 14851.96,
+  "area" : 1594.69,
+  "yield" : 9.31
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 9783.01,
+  "area" : 1808.5,
+  "yield" : 5.41
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 1237.79,
+  "area" : 239.61,
+  "yield" : 5.17
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 285.5,
+  "area" : 48.5,
+  "yield" : 5.89
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 5010.5,
+  "area" : 498.4,
+  "yield" : 10.05
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 696.8,
+  "area" : 156.2,
+  "yield" : 4.46
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 115.32,
+  "area" : 26.36,
+  "yield" : 4.38
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 2531.78,
+  "area" : 525.79,
+  "yield" : 4.82
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 18241.2,
+  "area" : 2566.7,
+  "yield" : 7.11
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 1510.9,
+  "area" : 265.7,
+  "yield" : 5.69
+}, {
+  "memberStateCode" : "DE",
+  "memberStateName" : "Germany",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 10610.0,
+  "area" : 1660.0,
+  "yield" : 6.39
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 333.17,
+  "area" : 116.12,
+  "yield" : 2.87
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 935.73,
+  "area" : 283.68,
+  "yield" : 3.3
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 960.03,
+  "area" : 99.24,
+  "yield" : 9.67
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 82.31,
+  "area" : 66.74,
+  "yield" : 1.23
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 20.34,
+  "area" : 9.41,
+  "yield" : 2.16
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 13.48,
+  "area" : 7.06,
+  "yield" : 1.91
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 273.58,
+  "area" : 93.28,
+  "yield" : 2.93
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 4.45,
+  "area" : 1.75,
+  "yield" : 2.54
+}, {
+  "memberStateCode" : "GR",
+  "memberStateName" : "Greece",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.81,
+  "area" : 0.28,
+  "yield" : 2.89
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 1554.57,
+  "area" : 285.24,
+  "yield" : 5.45
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 269.33,
+  "area" : 50.66,
+  "yield" : 5.32
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 5328.71,
+  "area" : 883.06,
+  "yield" : 6.03
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 77.13,
+  "area" : 25.51,
+  "yield" : 3.02
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 218.5,
+  "area" : 56.19,
+  "yield" : 3.89
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 70.82,
+  "area" : 22.63,
+  "yield" : 3.13
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 5003.63,
+  "area" : 872.24,
+  "yield" : 5.74
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 164.55,
+  "area" : 41.38,
+  "yield" : 3.98
+}, {
+  "memberStateCode" : "HU",
+  "memberStateName" : "Hungary",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 24.51,
+  "area" : 14.73,
+  "yield" : 1.66
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 1362.74,
+  "area" : 181.43,
+  "yield" : 7.51
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 413.58,
+  "area" : 47.73,
+  "yield" : 8.66
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 235.85,
+  "area" : 29.77,
+  "yield" : 7.92
+}, {
+  "memberStateCode" : "IE",
+  "memberStateName" : "Ireland",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 891.52,
+  "area" : 239.08,
+  "yield" : 3.73
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 247.75,
+  "area" : 43.28,
+  "yield" : 5.72
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 2562.97,
+  "area" : 520.31,
+  "yield" : 4.93
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 11.62,
+  "area" : 3.69,
+  "yield" : 3.15
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 65.52,
+  "area" : 14.85,
+  "yield" : 4.41
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 206.6,
+  "area" : 94.32,
+  "yield" : 2.19
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 4924.5,
+  "area" : 495.35,
+  "yield" : 9.94
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 3500.08,
+  "area" : 1177.44,
+  "yield" : 2.97
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 65.53,
+  "area" : 23.04,
+  "yield" : 2.84
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 252.9,
+  "area" : 84.6,
+  "yield" : 2.99
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 263.1,
+  "area" : 104.9,
+  "yield" : 2.51
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 27.0,
+  "area" : 7.8,
+  "yield" : 3.46
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 116.6,
+  "area" : 34.6,
+  "yield" : 3.37
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 2465.9,
+  "area" : 540.0,
+  "yield" : 4.57
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LV",
+  "memberStateName" : "Latvia",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 26.9,
+  "area" : 21.4,
+  "yield" : 1.26
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 281.43,
+  "area" : 81.88,
+  "yield" : 3.44
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 4218.28,
+  "area" : 836.67,
+  "yield" : 5.04
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 60.5,
+  "area" : 25.43,
+  "yield" : 2.38
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 49.6,
+  "area" : 42.89,
+  "yield" : 1.16
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 236.71,
+  "area" : 107.88,
+  "yield" : 2.19
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 111.74,
+  "area" : 14.19,
+  "yield" : 7.87
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 748.51,
+  "area" : 191.73,
+  "yield" : 3.9
+}, {
+  "memberStateCode" : "LT",
+  "memberStateName" : "Lithuania",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 1.0,
+  "area" : 0.3,
+  "yield" : 3.33
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 65.26,
+  "area" : 12.54,
+  "yield" : 5.2
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 6.24,
+  "area" : 1.32,
+  "yield" : 4.73
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.49,
+  "area" : 0.33,
+  "yield" : 4.52
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 26.54,
+  "area" : 4.76,
+  "yield" : 5.58
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 2.11,
+  "area" : 0.25,
+  "yield" : 8.44
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.63,
+  "area" : 0.17,
+  "yield" : 3.71
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 32.86,
+  "area" : 6.38,
+  "yield" : 5.15
+}, {
+  "memberStateCode" : "LU",
+  "memberStateName" : "Luxembourg",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 5.98,
+  "area" : 1.27,
+  "yield" : 4.71
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 237.87,
+  "area" : 38.19,
+  "yield" : 6.23
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 159.2,
+  "area" : 14.52,
+  "yield" : 10.96
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 6.12,
+  "area" : 1.38,
+  "yield" : 4.43
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 2.99,
+  "area" : 0.77,
+  "yield" : 3.88
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 3.97,
+  "area" : 1.49,
+  "yield" : 2.66
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 675.71,
+  "area" : 95.85,
+  "yield" : 7.05
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "NL",
+  "memberStateName" : "Netherlands",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.0,
+  "area" : 1.31,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 3016.16,
+  "area" : 695.32,
+  "yield" : 4.34
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 5052.2,
+  "area" : 1147.03,
+  "yield" : 4.4
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 12414.59,
+  "area" : 2385.69,
+  "yield" : 5.2
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 2438.55,
+  "area" : 682.18,
+  "yield" : 3.57
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 1029.73,
+  "area" : 373.85,
+  "yield" : 2.75
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 1647.56,
+  "area" : 519.0,
+  "yield" : 3.17
+}, {
+  "memberStateCode" : "PL",
+  "memberStateName" : "Poland",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 9398.08,
+  "area" : 1276.73,
+  "yield" : 7.36
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 44.22,
+  "area" : 11.49,
+  "yield" : 3.85
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 65.94,
+  "area" : 20.3,
+  "yield" : 3.25
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 12.52,
+  "area" : 12.74,
+  "yield" : 0.98
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 27.11,
+  "area" : 13.87,
+  "yield" : 1.95
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 56.84,
+  "area" : 36.1,
+  "yield" : 1.57
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 617.53,
+  "area" : 65.16,
+  "yield" : 9.48
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 12.67,
+  "area" : 3.8,
+  "yield" : 3.33
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 0.69,
+  "area" : 0.44,
+  "yield" : 1.57
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 2203.26,
+  "area" : 531.05,
+  "yield" : 4.15
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 31.67,
+  "area" : 7.73,
+  "yield" : 4.1
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 5971.85,
+  "area" : 2111.02,
+  "yield" : 2.83
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 143.64,
+  "area" : 68.77,
+  "yield" : 2.09
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 185.26,
+  "area" : 56.52,
+  "yield" : 3.28
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 27.92,
+  "area" : 11.12,
+  "yield" : 2.51
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 9259.21,
+  "area" : 2263.5,
+  "yield" : 4.09
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 24.88,
+  "area" : 13.03,
+  "yield" : 1.91
+}, {
+  "memberStateCode" : "RO",
+  "memberStateName" : "Romania",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 2.29,
+  "area" : 1.61,
+  "yield" : 1.42
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 24.03,
+  "area" : 7.59,
+  "yield" : 3.17
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 1.81,
+  "area" : 2.17,
+  "yield" : 0.83
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 31.87,
+  "area" : 11.98,
+  "yield" : 2.66
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 1063.82,
+  "area" : 147.28,
+  "yield" : 7.22
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 1470.91,
+  "area" : 270.04,
+  "yield" : 5.45
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 595.04,
+  "area" : 126.48,
+  "yield" : 4.7
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 31.45,
+  "area" : 9.71,
+  "yield" : 3.24
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 31.2,
+  "area" : 7.55,
+  "yield" : 4.13
+}, {
+  "memberStateCode" : "SK",
+  "memberStateName" : "Slovakia",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 437.03,
+  "area" : 80.32,
+  "yield" : 5.44
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 384.93,
+  "area" : 41.86,
+  "yield" : 9.2
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 2.43,
+  "area" : 0.77,
+  "yield" : 3.16
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 3.91,
+  "area" : 4.65,
+  "yield" : 0.84
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 4.42,
+  "area" : 1.08,
+  "yield" : 4.09
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 153.39,
+  "area" : 28.04,
+  "yield" : 5.47
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 100.7,
+  "area" : 20.86,
+  "yield" : 4.83
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.28,
+  "area" : 0.06,
+  "yield" : 4.67
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 22.9,
+  "area" : 4.86,
+  "yield" : 4.71
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 27.19,
+  "area" : 6.5,
+  "yield" : 4.18
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 617.83,
+  "area" : 248.62,
+  "yield" : 2.49
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 6372.81,
+  "area" : 1717.46,
+  "yield" : 3.71
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 223.31,
+  "area" : 97.26,
+  "yield" : 2.3
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 130.47,
+  "area" : 49.0,
+  "yield" : 2.66
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 1144.59,
+  "area" : 514.06,
+  "yield" : 2.23
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 3542.48,
+  "area" : 288.9,
+  "yield" : 12.26
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 728.62,
+  "area" : 238.75,
+  "yield" : 3.05
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 7350.35,
+  "area" : 2264.27,
+  "yield" : 3.25
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Barley",
+  "grossProduction" : 1263.9,
+  "area" : 284.26,
+  "yield" : 4.45
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Durum wheat",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Maize",
+  "grossProduction" : 15.5,
+  "area" : 2.29,
+  "yield" : 6.77
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Oat",
+  "grossProduction" : 622.5,
+  "area" : 157.43,
+  "yield" : 3.95
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Sorghum",
+  "grossProduction" : 0.0,
+  "area" : 0.0,
+  "yield" : 0.0
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Rye",
+  "grossProduction" : 155.5,
+  "area" : 27.48,
+  "yield" : 5.66
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Soft wheat",
+  "grossProduction" : 2930.6,
+  "area" : 475.02,
+  "yield" : 6.17
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Triticale",
+  "grossProduction" : 124.7,
+  "area" : 24.38,
+  "yield" : 5.11
+}, {
+  "memberStateCode" : "SE",
+  "memberStateName" : "Sweden",
+  "year" : 2024,
+  "crop" : "Other cereals",
+  "grossProduction" : 37.0,
+  "area" : 11.47,
+  "yield" : 3.23
+} ]

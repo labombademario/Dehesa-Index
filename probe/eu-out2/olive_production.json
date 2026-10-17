@@ -1,0 +1,4670 @@
+[ {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.65
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.07
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 80.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 91.1
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 65.29
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 426.92
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.18
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 40.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 125.17
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 72.97
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.33
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 261.46
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.6
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.73
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 5.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 70.48
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 24.79
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.54
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 43.3
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.97
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.13
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 1.58
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 1.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.44
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 12.25
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 9.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 2.21
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 85.24
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 30.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 5.67
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 143.83
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.21
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 66.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 28.67
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 11.52
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2025/26",
+  "productionYear" : 2025,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 331.27
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.34
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.77
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 75.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 54.86
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 66.2
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 595.22
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.95
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.59
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 41.5
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 123.4
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 73.99
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.19
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 266.62
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.48
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.75
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 3.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 51.34
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 25.13
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 36.69
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.74
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.19
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.22
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 8.5
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.58
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 3.16
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 12.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 1.57
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 12.1
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.07
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 45.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 3.66
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 153.19
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.48
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 65.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 11.49
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 11.68
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2024/25",
+  "productionYear" : 2024,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 351.92
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.28
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.61
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 60.5
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 58.94
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 328.81
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.83
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.5
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 29.5
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 65.88
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.12
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 228.09
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.41
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.67
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.5
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 22.38
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 38.63
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.74
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 1.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.19
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 2.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 2.79
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.04
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 8.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 14.09
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 22.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 54.15
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.73
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 50.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 10.4
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2023/24",
+  "productionYear" : 2023,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 187.24
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.2
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.69
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 120.7
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 47.12
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 237.36
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.84
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.99
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 59.5
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 52.67
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.2
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 169.9
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.35
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.42
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.6
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 17.89
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.25
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 30.64
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.46
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.05
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.19
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 3.2
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 1.44
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.2
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 4.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 2.54
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.21
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 17.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 8.38
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 38.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 35.18
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.59
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 99.5
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 8.32
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2022/23",
+  "productionYear" : 2022,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 181.26
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.14
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 77.5
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 46.75
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 542.8
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.32
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.25
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 38.2
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 52.25
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.4
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 288.56
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.58
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.42
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.77
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 17.75
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.31
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 51.37
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.11
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.35
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.31
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.88
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.71
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 2.1
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 6.89
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.21
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 10.55
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 20.18
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 35.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 108.62
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.59
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 61.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 8.25
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2021/22",
+  "productionYear" : 2021,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 470.45
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.35
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.84
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 90.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 37.4
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 475.4
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.7
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.03
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.25
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 50.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 41.8
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.15
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 244.6
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.5
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.61
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.42
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 14.2
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.13
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 38.2
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.11
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.49
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.31
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.3
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 3.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 8.2
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.21
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 12.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 43.5
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.37
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 35.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 226.1
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 1.23
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.59
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 80.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 6.6
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2020/21",
+  "productionYear" : 2020,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 351.5
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.3
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.1
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 99.8
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 52.55
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 457.9
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.7
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.31
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 50.6
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 58.73
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.3
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 170.2
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.3
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.7
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.67
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 19.95
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 42.9
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.46
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.1
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.52
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 3.4
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 2.1
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.07
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 13.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 12.1
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.42
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 35.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 101.1
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 1.4
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 69.5
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 9.28
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2019/20",
+  "productionYear" : 2019,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 332.9
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.38
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.41
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 66.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 20.87
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 53.57
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.1
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 630.3
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.75
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 37.4
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 83.74
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 25.27
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 98.2
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.79
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.7
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.7
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 64.04
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.01
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.3
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 7.3
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.72
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.09
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 3.25
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 1.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 10.85
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.29
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 71.4
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.29
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.2
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 21.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.82
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 1.02
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 276.6
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.89
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.18
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 55.9
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 2.96
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 20.22
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2018/19",
+  "productionYear" : 2018,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 688.4
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.59
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.62
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.18
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 98.15
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 126.15
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 56.61
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.05
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 423.1
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.58
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.2
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 48.5
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 153.55
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 52.56
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.2
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 205.3
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.44
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.92
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.15
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 58.93
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 9.44
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.1
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 27.9
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.53
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.6
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 1.66
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.17
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 3.8
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 4.31
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 17.65
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 39.7
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 9.65
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 18.4
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.37
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.35
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 69.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 13.46
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 1.35
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 154.8
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.9
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.28
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 82.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 60.68
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 14.83
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2017/18",
+  "productionYear" : 2017,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 402.0
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.5
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.79
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.9
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 60.1
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 26.44
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 35.41
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.05
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 455.5
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.87
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.8
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 37.21
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 98.88
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 26.73
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.22
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 93.1
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.63
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.4
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.89
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 51.77
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 3.12
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.08
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 9.7
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.29
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.85
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.02
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.5
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 2.8
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.04
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 4.5
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 9.62
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.09
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 36.8
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.43
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.08
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 30.5
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.48
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 154.7
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 1.07
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.28
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 49.98
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 3.34
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 4.17
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2016/17",
+  "productionYear" : 2016,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 525.2
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.15
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.51
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 94.72
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 146.75
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 39.29
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 605.1
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.24
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.12
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 46.8
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 162.71
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 50.42
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.24
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 259.6
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.4
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.76
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.5
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.27
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 47.6
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.04
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 15.17
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.25
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 22.7
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.34
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.37
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.46
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.44
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.02
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 15.26
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 2.49
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 3.42
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.02
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.04
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 18.31
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 8.02
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 25.8
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.51
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.26
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 42.04
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 26.21
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 114.2
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 1.28
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.49
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 98.12
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 77.63
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 4.26
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2015/16",
+  "productionYear" : 2015,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 363.6
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.16
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.9
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 103.33
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 40.02
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 26.75
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 426.6
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.3
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.24
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.25
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 51.06
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 107.6
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 26.75
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 157.2
+}, {
+  "memberStateCode" : "HR",
+  "memberStateName" : "Croatia",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.7
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.76
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.17
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 2.27
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 56.99
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 8.15
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.15
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 30.3
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.91
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.17
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.04
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.4
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 3.19
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.19
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 4.18
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 6.4
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 1.12
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 19.3
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.51
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 39.23
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 3.72
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 37.4
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 1.28
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.08
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 85.26
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 11.4
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 2.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2014/15",
+  "productionYear" : 2014,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 159.5
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.6
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 189.27
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 45.0
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.05
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 589.9
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.5
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 37.2
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 27.0
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.5
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 168.9
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.1
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.1
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.8
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.05
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 8.8
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 131.89
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 2.26
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 1.02
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 9.65
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 18.17
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 15.03
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 206.5
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.18
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 64.68
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 18.0
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 299.2
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.65
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 142.52
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 14.4
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2013/14",
+  "productionYear" : 2013,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 480.4
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.3
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.72
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 132.51
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 25.83
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.6
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 164.48
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 20.63
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.2
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.45
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.35
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 26.85
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 4.06
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.98
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.11
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.08
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 357.46
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.2
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.02
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 1.85
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.08
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 8.05
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.53
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.07
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 18.99
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.23
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.65
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.81
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 62.45
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2012/13",
+  "productionYear" : 2012,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 6.4
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.3
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.91
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 121.37
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 31.17
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.6
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.81
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 134.32
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 27.61
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.41
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 1.45
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.34
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 27.18
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 8.51
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.98
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.02
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 294.56
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 1.41
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 4.43
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 13.48
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.53
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 24.92
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.22
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.65
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.11
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 72.06
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2011/12",
+  "productionYear" : 2011,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 6.52
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.6
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.68
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 105.66
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 26.86
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 589.9
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.45
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.31
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 143.55
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 14.99
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.54
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 168.9
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.98
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.18
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 28.9
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.02
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.63
+}, {
+  "memberStateCode" : "SI",
+  "memberStateName" : "Slovenia",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.06
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 8.8
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.04
+}, {
+  "memberStateCode" : "MT",
+  "memberStateName" : "Malta",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "EL",
+  "memberStateName" : "Greece",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 300.8
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 1.39
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.02
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 1.54
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 13.95
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.53
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.05
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 2.66
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 207.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.65
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.08
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 11.08
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 1.87
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 298.09
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 1.3
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.63
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 32.07
+}, {
+  "memberStateCode" : "PT",
+  "memberStateName" : "Portugal",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 18.11
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "marketingYear" : "2010/11",
+  "productionYear" : 2010,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 480.4
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 1.75
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 2.19
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "December",
+  "monthProductionQuantity" : 0.1
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 1.2
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 2.66
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "November",
+  "monthProductionQuantity" : 0.15
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.4
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.24
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "October",
+  "monthProductionQuantity" : 0.03
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "September",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "May",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "April",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "March",
+  "monthProductionQuantity" : 0.0
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.3
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.05
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "February",
+  "monthProductionQuantity" : 0.01
+}, {
+  "memberStateCode" : "CY",
+  "memberStateName" : "Cyprus",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.85
+}, {
+  "memberStateCode" : "FR",
+  "memberStateName" : "France",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.58
+}, {
+  "memberStateCode" : "IT",
+  "memberStateName" : "Italy",
+  "marketingYear" : "2009/10",
+  "productionYear" : 2009,
+  "productionMonth" : "January",
+  "monthProductionQuantity" : 0.05
+} ]

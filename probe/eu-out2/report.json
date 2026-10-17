@@ -1,0 +1,5222 @@
+{
+ "beef_production": {
+  "n": 5074,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "month",
+   "category",
+   "tonnes",
+   "heads",
+   "kgPerHead"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "year": 2026,
+   "month": "July",
+   "category": "Bull",
+   "tonnes": 6.67,
+   "heads": 16.42,
+   "kgPerHead": 406.21
+  },
+  "last": {
+   "memberStateCode": "SK",
+   "memberStateName": "Slovakia",
+   "year": 2024,
+   "month": "January",
+   "category": "Young cattle",
+   "tonnes": 0.0,
+   "heads": 0.02,
+   "kgPerHead": 0.0
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "EL",
+   "ES",
+   "FI",
+   "FR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2024",
+   "2025",
+   "2026"
+  ],
+  "month": [
+   "April",
+   "August",
+   "December",
+   "February",
+   "January",
+   "July",
+   "June",
+   "March",
+   "May",
+   "November",
+   "October",
+   "September"
+  ],
+  "category": [
+   "Bull",
+   "Bullock",
+   "Calf",
+   "Cow",
+   "Heifer",
+   "Young cattle"
+  ],
+  "bytes": 960933
+ },
+ "beef_production_categories": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "cereal_production": {
+  "n": 729,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "crop",
+   "grossProduction",
+   "area",
+   "yield"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "year": 2026,
+   "crop": "Triticale",
+   "grossProduction": 240.27,
+   "area": 46.81,
+   "yield": 5.13
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "year": 2024,
+   "crop": "Other cereals",
+   "grossProduction": 37.0,
+   "area": 11.47,
+   "yield": 3.23
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "ES",
+   "FI",
+   "FR",
+   "GR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2024",
+   "2025",
+   "2026"
+  ],
+  "crop": [
+   "Barley",
+   "Durum wheat",
+   "Maize",
+   "Oat",
+   "Other cereals",
+   "Rye",
+   "Soft wheat",
+   "Sorghum",
+   "Triticale"
+  ],
+  "bytes": 123074
+ },
+ "cereal_production_crops": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "dairy_production": {
+  "n": 4370,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "month",
+   "category",
+   "unit",
+   "production",
+   "fatUnit",
+   "fat",
+   "proteinUnit",
+   "protein"
+  ],
+  "first": {
+   "memberStateCode": "MT",
+   "memberStateName": "Malta",
+   "year": 2026,
+   "month": 9,
+   "category": "Total raw cow's milk delivered to dairies",
+   "unit": "Thousand tonnes",
+   "production": 2.61,
+   "fatUnit": "% of product weight",
+   "fat": 3.43,
+   "proteinUnit": "% of product weight",
+   "protein": 3.42
+  },
+  "last": {
+   "memberStateCode": "SK",
+   "memberStateName": "Slovakia",
+   "year": 2025,
+   "month": 1,
+   "category": "Total raw cow's milk delivered to dairies",
+   "unit": "Thousand tonnes",
+   "production": 71.23,
+   "fatUnit": "% of product weight",
+   "fat": 4.1,
+   "proteinUnit": "% of product weight",
+   "protein": 3.51
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "EL",
+   "ES",
+   "FI",
+   "FR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2025",
+   "2026"
+  ],
+  "month": [
+   "1",
+   "10",
+   "11",
+   "12",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "category": [
+   "Acidified milk (yoghurts and other)",
+   "Butter, incl. dehydrated butter and ghee, and other fats and oils derived from milk; dairy spreads",
+   "Cheese from cows'milk (pure)",
+   "Concentrated milk",
+   "Cream for direct consumption",
+   "Drinking milk",
+   "Milk and cream powders, excluding skimmed milk powders",
+   "Organic raw cow's milk delivered to dairies",
+   "Skimmed milk powder",
+   "Total raw cow's milk delivered to dairies"
+  ],
+  "bytes": 1406158
+ },
+ "dairy_production_categories": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "pigmeat_production": {
+  "n": 518,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "month",
+   "tonnes",
+   "heads",
+   "kgPerHead"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "year": 2026,
+   "month": "July",
+   "tonnes": 38.22,
+   "heads": 391.96,
+   "kgPerHead": 97.51
+  },
+  "last": {
+   "memberStateCode": "SK",
+   "memberStateName": "Slovakia",
+   "year": 2025,
+   "month": "January",
+   "tonnes": 3.14,
+   "heads": 32.8,
+   "kgPerHead": 95.73
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "EL",
+   "ES",
+   "FI",
+   "FR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2025",
+   "2026"
+  ],
+  "month": [
+   "April",
+   "August",
+   "December",
+   "February",
+   "January",
+   "July",
+   "June",
+   "March",
+   "May",
+   "November",
+   "October",
+   "September"
+  ],
+  "bytes": 86093
+ },
+ "poultry_production": {
+  "n": 1646,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "month",
+   "animal",
+   "tonnes",
+   "heads",
+   "kgPerHead"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "year": 2026,
+   "month": "July",
+   "animal": "Chicken",
+   "tonnes": 14.14,
+   "heads": 9493.19,
+   "kgPerHead": 1.49
+  },
+  "last": {
+   "memberStateCode": "SK",
+   "memberStateName": "Slovakia",
+   "year": 2025,
+   "month": "January",
+   "animal": "Poultry meat",
+   "tonnes": 7.05,
+   "heads": 4077.19,
+   "kgPerHead": 1.73
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "EL",
+   "ES",
+   "FI",
+   "FR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2025",
+   "2026"
+  ],
+  "month": [
+   "April",
+   "August",
+   "December",
+   "February",
+   "January",
+   "July",
+   "June",
+   "March",
+   "May",
+   "November",
+   "October",
+   "September"
+  ],
+  "bytes": 311235
+ },
+ "sheep_production": {
+  "n": 1192,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "month",
+   "meat",
+   "item",
+   "tonnes",
+   "heads",
+   "kgPerHead"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "year": 2026,
+   "month": "July",
+   "meat": "Sheepmeat",
+   "item": "Slaughterings",
+   "tonnes": 0.45,
+   "heads": 22.55,
+   "kgPerHead": 19.96
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "year": 2025,
+   "month": "January",
+   "meat": "Goat meat",
+   "item": "Slaughterings",
+   "tonnes": 0.0,
+   "heads": 0.01,
+   "kgPerHead": 0.0
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "EL",
+   "ES",
+   "FI",
+   "FR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2025",
+   "2026"
+  ],
+  "month": [
+   "April",
+   "August",
+   "December",
+   "February",
+   "January",
+   "July",
+   "June",
+   "March",
+   "May",
+   "November",
+   "October",
+   "September"
+  ],
+  "bytes": 268082
+ },
+ "oilseeds_production": {
+  "n": 567,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "crop",
+   "grossProduction",
+   "area",
+   "yield"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "year": 2026,
+   "crop": "Broad/field beans",
+   "grossProduction": 12.71,
+   "area": 5.17,
+   "yield": 2.46
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "year": 2024,
+   "crop": "Sunflower seed",
+   "grossProduction": 0.0,
+   "area": 0.0,
+   "yield": 0.0
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "ES",
+   "FI",
+   "FR",
+   "GR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2024",
+   "2025",
+   "2026"
+  ],
+  "crop": [
+   "Broad/field beans",
+   "Field peas",
+   "Linseed",
+   "Lupins",
+   "Rapeseed",
+   "Soybean",
+   "Sunflower seed"
+  ],
+  "bytes": 96357
+ },
+ "rice_production": {
+  "n": 62,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "product",
+   "type",
+   "area",
+   "areaUnit",
+   "milledRiceEquivalentQuantity",
+   "riceHuskQuantity",
+   "quantityUnit"
+  ],
+  "first": {
+   "memberStateCode": "BG",
+   "memberStateName": "Bulgaria",
+   "year": 2025,
+   "product": "(1) Round grain paddy rice",
+   "type": 1006103000,
+   "area": 2905.0,
+   "areaUnit": "hectares",
+   "milledRiceEquivalentQuantity": 9764.0,
+   "riceHuskQuantity": 17130.0,
+   "quantityUnit": "Tonnes"
+  },
+  "last": {
+   "memberStateCode": "ES",
+   "memberStateName": "Spain",
+   "year": 2024,
+   "product": "(4) Long grain B paddy rice",
+   "type": 1006107900,
+   "area": 32807.0,
+   "areaUnit": "hectares",
+   "milledRiceEquivalentQuantity": 125662.0,
+   "riceHuskQuantity": 206714.0,
+   "quantityUnit": "Tonnes"
+  },
+  "memberStateCode": [
+   "BG",
+   "EL",
+   "ES",
+   "EU",
+   "FR",
+   "HU",
+   "IT",
+   "PT",
+   "RO"
+  ],
+  "memberStateName": [
+   "Bulgaria",
+   "European Union",
+   "France",
+   "Greece",
+   "Hungary",
+   "Italy",
+   "Portugal",
+   "Romania",
+   "Spain"
+  ],
+  "year": [
+   "2024",
+   "2025"
+  ],
+  "product": [
+   "(1) Round grain paddy rice",
+   "(2) Medium grain paddy rice",
+   "(3) Long grain A paddy rice",
+   "(4) Long grain B paddy rice"
+  ],
+  "bytes": 18710
+ },
+ "sugar_production": {
+  "n": 65,
+  "keys": [
+   "marketingYear",
+   "region",
+   "grossProduction",
+   "grossProductionUnit",
+   "area",
+   "areaUnit",
+   "yield",
+   "yieldUnit",
+   "isEstimated"
+  ],
+  "first": {
+   "marketingYear": "2026/27",
+   "region": "Region 1",
+   "grossProduction": 3892305.86,
+   "grossProductionUnit": "tonnes",
+   "area": 415.07,
+   "areaUnit": "thousand hectares",
+   "yield": 9.38,
+   "yieldUnit": "tonnes per hectare",
+   "isEstimated": "N"
+  },
+  "last": {
+   "marketingYear": "2016/17",
+   "region": "Region 3",
+   "grossProduction": 1694186.43,
+   "grossProductionUnit": "tonnes",
+   "area": 113.15,
+   "areaUnit": "thousand hectares",
+   "yield": 14.97,
+   "yieldUnit": "tonnes per hectare",
+   "isEstimated": "N"
+  },
+  "marketingYear": [
+   "2016/17",
+   "2017/18",
+   "2018/19",
+   "2019/20",
+   "2020/21",
+   "2021/22",
+   "2022/23",
+   "2023/24",
+   "2024/25",
+   "2025/26",
+   "2026/27"
+  ],
+  "bytes": 17096
+ },
+ "olive_production": {
+  "n": 667,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "marketingYear",
+   "productionYear",
+   "productionMonth",
+   "monthProductionQuantity"
+  ],
+  "first": {
+   "memberStateCode": "HR",
+   "memberStateName": "Croatia",
+   "marketingYear": "2025/26",
+   "productionYear": 2025,
+   "productionMonth": "December",
+   "monthProductionQuantity": 0.65
+  },
+  "last": {
+   "memberStateCode": "IT",
+   "memberStateName": "Italy",
+   "marketingYear": "2009/10",
+   "productionYear": 2009,
+   "productionMonth": "January",
+   "monthProductionQuantity": 0.05
+  },
+  "memberStateCode": [
+   "CY",
+   "EL",
+   "ES",
+   "FR",
+   "HR",
+   "IT",
+   "MT",
+   "PT",
+   "SI"
+  ],
+  "memberStateName": [
+   "Croatia",
+   "Cyprus",
+   "France",
+   "Greece",
+   "Italy",
+   "Malta",
+   "Portugal",
+   "Slovenia",
+   "Spain"
+  ],
+  "marketingYear": [
+   "2009/10",
+   "2010/11",
+   "2011/12",
+   "2012/13",
+   "2013/14",
+   "2014/15",
+   "2015/16",
+   "2016/17",
+   "2017/18",
+   "2018/19",
+   "2019/20",
+   "2020/21",
+   "2021/22",
+   "2022/23",
+   "2023/24",
+   "2024/25",
+   "2025/26"
+  ],
+  "productionYear": [
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "bytes": 127455
+ },
+ "olive_production_y": {
+  "error": "<HTTPError 500: ''>"
+ },
+ "liveanimal_prices": {
+  "n": 992,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "beginDate",
+   "endDate",
+   "price",
+   "unit",
+   "weekNumber",
+   "category"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "beginDate": "05/10/2026",
+   "endDate": "11/10/2026",
+   "price": "€3.20",
+   "unit": "€/kg",
+   "weekNumber": 41,
+   "category": "Yearling Female Store Cattle"
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "beginDate": "01/06/2026",
+   "endDate": "07/06/2026",
+   "price": "€4.79",
+   "unit": "€/kg",
+   "weekNumber": 23,
+   "category": "Young Store Cattle"
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "DE",
+   "DK",
+   "ES",
+   "EU",
+   "FR",
+   "HR",
+   "IE",
+   "IT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Croatia",
+   "Denmark",
+   "European Union",
+   "France",
+   "Germany",
+   "Ireland",
+   "Italy",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Spain",
+   "Sweden"
+  ],
+  "beginDate": [
+   "01/06/2026",
+   "03/08/2026",
+   "05/10/2026",
+   "06/07/2026",
+   "07/09/2026",
+   "08/06/2026",
+   "10/08/2026",
+   "13/07/2026",
+   "14/09/2026",
+   "15/06/2026",
+   "17/08/2026",
+   "20/07/2026",
+   "21/09/2026",
+   "22/06/2026",
+   "24/08/2026",
+   "27/07/2026",
+   "28/09/2026",
+   "29/06/2026",
+   "31/08/2026"
+  ],
+  "endDate": [
+   "02/08/2026",
+   "04/10/2026",
+   "05/07/2026",
+   "06/09/2026",
+   "07/06/2026",
+   "09/08/2026",
+   "11/10/2026",
+   "12/07/2026",
+   "13/09/2026",
+   "14/06/2026",
+   "16/08/2026",
+   "19/07/2026",
+   "20/09/2026",
+   "21/06/2026",
+   "23/08/2026",
+   "26/07/2026",
+   "27/09/2026",
+   "28/06/2026",
+   "30/08/2026"
+  ],
+  "category": [
+   "Male Calves Beef Type",
+   "Male Calves Dairy Type",
+   "Yearling Female Store Cattle",
+   "Yearling Male Store Cattle",
+   "Young Store Cattle"
+  ],
+  "bytes": 230171
+ },
+ "liveanimal_categories": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "beefcuts_prices": {
+  "n": 201,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "beginDate",
+   "endDate",
+   "price",
+   "unit",
+   "year",
+   "category",
+   "priceType",
+   "weekNumber"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "beginDate": "05/10/2026",
+   "endDate": "11/10/2026",
+   "price": "€609.18",
+   "unit": "€/100Kg",
+   "year": 2026,
+   "category": "Forequarter",
+   "priceType": "Selling price",
+   "weekNumber": 40
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "beginDate": "03/08/2026",
+   "endDate": "09/08/2026",
+   "price": "€1248.86",
+   "unit": "€/100Kg",
+   "year": 2026,
+   "category": "Minced meat",
+   "priceType": "Selling price",
+   "weekNumber": 31
+  },
+  "memberStateCode": [
+   "AT",
+   "CZ",
+   "DE",
+   "FR",
+   "IE",
+   "IT",
+   "NL",
+   "PL",
+   "PT",
+   "SE"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Czechia",
+   "France",
+   "Germany",
+   "Ireland",
+   "Italy",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Sweden"
+  ],
+  "year": [
+   "2026"
+  ],
+  "beginDate": [
+   "03/08/2026",
+   "05/10/2026",
+   "07/09/2026",
+   "10/08/2026",
+   "14/09/2026",
+   "17/08/2026",
+   "21/09/2026",
+   "24/08/2026",
+   "28/09/2026",
+   "31/08/2026"
+  ],
+  "endDate": [
+   "04/10/2026",
+   "06/09/2026",
+   "09/08/2026",
+   "11/10/2026",
+   "13/09/2026",
+   "16/08/2026",
+   "20/09/2026",
+   "23/08/2026",
+   "27/09/2026",
+   "30/08/2026"
+  ],
+  "category": [
+   "Forequarter",
+   "Hindquarter",
+   "Minced meat"
+  ],
+  "bytes": 54855
+ },
+ "beefcuts_month": {
+  "n": 107,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "beginDate",
+   "endDate",
+   "price",
+   "unit",
+   "year",
+   "category",
+   "priceType",
+   "monthNumber",
+   "month"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "beginDate": "01/09/2026",
+   "endDate": "30/09/2026",
+   "price": "€953.34",
+   "unit": "€/100Kg",
+   "year": 2026,
+   "category": "Minced meat",
+   "priceType": "Selling price",
+   "monthNumber": 9,
+   "month": "September"
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "beginDate": "01/01/2026",
+   "endDate": "31/01/2026",
+   "price": "€1127.66",
+   "unit": "€/100Kg",
+   "year": 2026,
+   "category": "Minced meat",
+   "priceType": "Selling price",
+   "monthNumber": 1,
+   "month": "January"
+  },
+  "memberStateCode": [
+   "AT",
+   "CZ",
+   "DE",
+   "ES",
+   "FR",
+   "IE",
+   "NL",
+   "PL",
+   "SE"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Czechia",
+   "France",
+   "Germany",
+   "Ireland",
+   "Netherlands",
+   "Poland",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2026"
+  ],
+  "beginDate": [
+   "01/01/2026",
+   "01/02/2026",
+   "01/03/2026",
+   "01/04/2026",
+   "01/05/2026",
+   "01/06/2026",
+   "01/07/2026",
+   "01/08/2026",
+   "01/09/2026"
+  ],
+  "endDate": [
+   "28/02/2026",
+   "30/04/2026",
+   "30/06/2026",
+   "30/09/2026",
+   "31/01/2026",
+   "31/03/2026",
+   "31/05/2026",
+   "31/07/2026",
+   "31/08/2026"
+  ],
+  "month": [
+   "April",
+   "August",
+   "February",
+   "January",
+   "July",
+   "June",
+   "March",
+   "May",
+   "September"
+  ],
+  "category": [
+   "Minced meat"
+  ],
+  "bytes": 31907
+ },
+ "pigcuts_prices": {
+  "n": 459,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "beginDate",
+   "endDate",
+   "price",
+   "unit",
+   "weekNumber",
+   "category",
+   "priceType"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "beginDate": "05/10/2026",
+   "endDate": "11/10/2026",
+   "price": "€391.37",
+   "unit": "100 KG",
+   "weekNumber": 41,
+   "category": "Loin",
+   "priceType": "Selling price"
+  },
+  "last": {
+   "memberStateCode": "PT",
+   "memberStateName": "Portugal",
+   "beginDate": "03/08/2026",
+   "endDate": "09/08/2026",
+   "price": "€305.00",
+   "unit": "100 KG",
+   "weekNumber": 32,
+   "category": "Loin",
+   "priceType": "Selling price"
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "CZ",
+   "DE",
+   "FR",
+   "HU",
+   "IT",
+   "NL",
+   "PL",
+   "PT"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Czechia",
+   "France",
+   "Germany",
+   "Hungary",
+   "Italy",
+   "Netherlands",
+   "Poland",
+   "Portugal"
+  ],
+  "beginDate": [
+   "03/08/2026",
+   "05/10/2026",
+   "07/09/2026",
+   "10/08/2026",
+   "14/09/2026",
+   "17/08/2026",
+   "21/09/2026",
+   "24/08/2026",
+   "28/09/2026",
+   "31/08/2026"
+  ],
+  "endDate": [
+   "04/10/2026",
+   "06/09/2026",
+   "09/08/2026",
+   "11/10/2026",
+   "13/09/2026",
+   "16/08/2026",
+   "20/09/2026",
+   "23/08/2026",
+   "27/09/2026",
+   "30/08/2026"
+  ],
+  "category": [
+   "Belly",
+   "Ham",
+   "Loin",
+   "Minced Meat",
+   "Shoulder"
+  ],
+  "bytes": 113779
+ },
+ "poultry_month": {
+  "n": 457,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "beginDate",
+   "endDate",
+   "price",
+   "unit",
+   "marketingYear",
+   "monthNumber",
+   "month",
+   "productName",
+   "priceType"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "beginDate": "01/09/2026",
+   "endDate": "30/09/2026",
+   "price": "€390.96",
+   "unit": "national currency/100kg",
+   "marketingYear": 2026,
+   "monthNumber": 9,
+   "month": "September",
+   "productName": "Whole broiler (65%)",
+   "priceType": "Selling price"
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "beginDate": "01/01/2026",
+   "endDate": "31/01/2026",
+   "price": "€340.11",
+   "unit": "national currency/100kg",
+   "marketingYear": 2026,
+   "monthNumber": 1,
+   "month": "January",
+   "productName": "Whole broiler (65%)",
+   "priceType": "Selling price"
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "EL",
+   "ES",
+   "EU",
+   "FR",
+   "HR",
+   "HU",
+   "IE",
+   "IT",
+   "LT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "European Union",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Lithuania",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "marketingYear": [
+   "2026"
+  ],
+  "beginDate": [
+   "01/01/2026",
+   "01/02/2026",
+   "01/03/2026",
+   "01/04/2026",
+   "01/05/2026",
+   "01/06/2026",
+   "01/07/2026",
+   "01/08/2026",
+   "01/09/2026"
+  ],
+  "endDate": [
+   "28/02/2026",
+   "30/04/2026",
+   "30/06/2026",
+   "30/09/2026",
+   "31/01/2026",
+   "31/03/2026",
+   "31/05/2026",
+   "31/07/2026",
+   "31/08/2026"
+  ],
+  "month": [
+   "April",
+   "August",
+   "February",
+   "January",
+   "July",
+   "June",
+   "March",
+   "May",
+   "September"
+  ],
+  "bytes": 149457
+ },
+ "protein_prices": {
+  "n": 114,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "marketingYear",
+   "product",
+   "productType",
+   "marketStage",
+   "month",
+   "beginDate",
+   "endDate",
+   "price"
+  ],
+  "first": {
+   "memberStateCode": "BG",
+   "memberStateName": "Bulgaria",
+   "marketingYear": "2026/2027",
+   "product": "Alfalfa",
+   "productType": "Not Defined",
+   "marketStage": "BG - National Average - FGATE",
+   "month": "September",
+   "beginDate": "01/09/2026",
+   "endDate": "30/09/2026",
+   "price": "€195.00"
+  },
+  "last": {
+   "memberStateCode": "ES",
+   "memberStateName": "Spain",
+   "marketingYear": "2025/2026",
+   "product": "Peas",
+   "productType": "Not Defined",
+   "marketStage": "ES - National Average - DEPPROC",
+   "month": "June",
+   "beginDate": "01/06/2026",
+   "endDate": "30/06/2026",
+   "price": "€242.67"
+  },
+  "memberStateCode": [
+   "BG",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "ES",
+   "FI",
+   "FR",
+   "HU",
+   "IT",
+   "LT",
+   "LV",
+   "RO"
+  ],
+  "memberStateName": [
+   "Bulgaria",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Hungary",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Romania",
+   "Spain"
+  ],
+  "marketingYear": [
+   "2025/2026",
+   "2026/2027"
+  ],
+  "beginDate": [
+   "01/06/2026",
+   "01/07/2026",
+   "01/08/2026",
+   "01/09/2026"
+  ],
+  "endDate": [
+   "30/06/2026",
+   "30/09/2026",
+   "31/07/2026",
+   "31/08/2026"
+  ],
+  "month": [
+   "August",
+   "July",
+   "June",
+   "September"
+  ],
+  "product": [
+   "Alfalfa",
+   "Broad beans",
+   "Chickpeas",
+   "Lentils",
+   "Peas"
+  ],
+  "bytes": 34596
+ },
+ "organic_prices": {
+  "n": 1367,
+  "keys": [
+   "memberStateCode",
+   "memberStateName",
+   "year",
+   "month",
+   "monthNumber",
+   "sector",
+   "organicProduct",
+   "overallProduct",
+   "organicStage",
+   "overallStage",
+   "organicPrice",
+   "overallPrice",
+   "differencePercentage",
+   "organicUnit",
+   "overallUnit"
+  ],
+  "first": {
+   "memberStateCode": "AT",
+   "memberStateName": "Austria",
+   "year": 2026,
+   "month": "September",
+   "monthNumber": 9,
+   "sector": "Eggs",
+   "organicProduct": "Organic eggs",
+   "overallProduct": "Free-range",
+   "organicStage": "Representative selling price in packing station",
+   "overallStage": "Representative selling price in packing station",
+   "organicPrice": 575.71,
+   "overallPrice": 376.8,
+   "differencePercentage": 52.8,
+   "organicUnit": "€/100kg",
+   "overallUnit": "€/100kg"
+  },
+  "last": {
+   "memberStateCode": "SE",
+   "memberStateName": "Sweden",
+   "year": 2025,
+   "month": "January",
+   "monthNumber": 1,
+   "sector": "Milk and milk products",
+   "organicProduct": "Organic Raw milk Product",
+   "overallProduct": "Raw milk",
+   "organicStage": "Price paid by first purchaser established in the territory of the MS",
+   "overallStage": "Price paid by first purchaser established in the territory of the MS",
+   "organicPrice": 62.72,
+   "overallPrice": 55.75,
+   "differencePercentage": 12.5,
+   "organicUnit": "€/100kg",
+   "overallUnit": "€/100kg"
+  },
+  "memberStateCode": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "EL",
+   "ES",
+   "EU13",
+   "FR",
+   "HR",
+   "IE",
+   "IT",
+   "LT",
+   "LV",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI"
+  ],
+  "memberStateName": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czechia",
+   "Denmark",
+   "Estonia",
+   "European Union (13 countries)",
+   "France",
+   "Germany",
+   "Greece",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "year": [
+   "2025",
+   "2026"
+  ],
+  "month": [
+   "April",
+   "August",
+   "December",
+   "February",
+   "January",
+   "July",
+   "June",
+   "March",
+   "May",
+   "November",
+   "October",
+   "September"
+  ],
+  "sector": [
+   "Beef and veal",
+   "Cereals",
+   "Eggs",
+   "Fruit and vegetables",
+   "Milk and milk products",
+   "Oilseeds and protein crops",
+   "Poultrymeat"
+  ],
+  "bytes": 757855
+ },
+ "organic_sectors": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "taxud_sectors": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "taxud_import_products": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "taxud_import_cats": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "taxud_import_cereals": {
+  "error": "<HTTPError 404: ''>"
+ },
+ "taxud_export_cereals": {
+  "error": "<HTTPError 404: ''>"
+ },
+ "cmef_indicators": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "pmef_indicators": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "pmef_planned": {
+  "error": "'str' object has no attribute 'keys'"
+ },
+ "es_prc_fpmt_m": {
+  "size": [
+   1,
+   41,
+   4,
+   3,
+   1,
+   2
+  ],
+  "nvals": 187,
+  "dims": {
+   "freq": [
+    [
+     "M",
+     "Monthly"
+    ]
+   ],
+   "coicop18": [
+    [
+     "CP011",
+     "Food"
+    ],
+    [
+     "CP01111",
+     "Cereals (ND)"
+    ],
+    [
+     "CP011131",
+     "Bread"
+    ],
+    [
+     "CP011139",
+     "Other bakery products"
+    ],
+    [
+     "CP01115",
+     "Macaroni, noodles, couscous and similar pasta products (ND)"
+    ],
+    [
+     "CP01122",
+     "Meat, fresh, chilled or frozen (ND)"
+    ],
+    [
+     "CP011221",
+     "Meat of bovine animals, fresh, chilled or frozen"
+    ],
+    [
+     "CP011222",
+     "Meat of pigs, fresh, chilled or frozen"
+    ],
+    [
+     "CP011223",
+     "Meat of goats, lambs and sheep, fresh, chilled or frozen"
+    ],
+    [
+     "CP011224",
+     "Meat of poultry, fresh, chilled or frozen"
+    ],
+    [
+     "CP011225",
+     "Meat of hares and rabbits, fresh, chilled or frozen"
+    ],
+    [
+     "CP011226",
+     "Meat of horses and other equines, fresh, chilled or frozen"
+    ],
+    [
+     "CP0113",
+     "Fish and other seafood (ND)"
+    ],
+    [
+     "CP0114",
+     "Milk, other dairy products and eggs (ND)"
+    ],
+    [
+     "CP01141",
+     "Raw and whole milk (ND)"
+    ],
+    [
+     "CP01142",
+     "Skimmed milk (ND)"
+    ],
+    [
+     "CP01145",
+     "Cheese (ND)"
+    ],
+    [
+     "CP01146",
+     "Yoghurt and similar products (ND)"
+    ],
+    [
+     "CP01148",
+     "Eggs (ND)"
+    ],
+    [
+     "CP0115",
+     "Oils and fats (ND)"
+    ],
+    [
+     "CP01151",
+     "Vegetable oils (ND)"
+    ],
+    [
+     "CP011513",
+     "Olive oil"
+    ],
+    [
+     "CP01152",
+     "Butter and other oils and fats derived from milk (ND)"
+    ],
+    [
+     "CP0116",
+     "Fruits and nuts (ND)"
+    ],
+    [
+     "CP01162",
+     "Citrus fruits, fresh (ND)"
+    ],
+    [
+     "CP01166",
+     "Fruits, frozen (ND)"
+    ],
+    [
+     "CP01167",
+     "Fruits, dried and dehydrated (ND)"
+    ],
+    [
+     "CP01168",
+     "Nuts, in shell or shelled (ND)"
+    ],
+    [
+     "CP0117",
+     "Vegetables, tubers, plantains, cooking bananas and pulses (ND)"
+    ],
+    [
+     "CP011751",
+     "Potatoes"
+    ],
+    [
+     "CP01181",
+     "Cane sugar and beet sugar (ND)"
+    ],
+    [
+     "CP01185",
+     "Chocolate, cocoa and cocoa-based food products (ND)"
+    ],
+    [
+     "CP01186",
+     "Ice, ice cream and sorbets (ND)"
+    ],
+    [
+     "CP01193",
+     "Salt, condiments and sauces (ND)"
+    ],
+    [
+     "CP0121",
+     "Fruit and vegetable juices (ND)"
+    ],
+    [
+     "CP0122",
+     "Coffee and coffee substitutes (ND)"
+    ],
+    [
+     "CP0123",
+     "Tea, maté and other plant-derived products for infusion (ND)"
+    ],
+    [
+     "CP0124",
+     "Cocoa drinks (ND)"
+    ],
+    [
+     "CP02121",
+     "Wine from grapes (ND)"
+    ],
+    [
+     "CP0213",
+     "Beer (ND)"
+    ],
+    [
+     "CP023",
+     "Tobacco"
+    ]
+   ],
+   "indx": [
+    [
+     "ACPI",
+     "Agricultural commodity price index"
+    ],
+    [
+     "HICP",
+     "Harmonised index of consumer prices"
+    ],
+    [
+     "PPI",
+     "Producer price index"
+    ],
+    [
+     "IPI",
+     "Import price index"
+    ]
+   ],
+   "unit": [
+    [
+     "I25",
+     "Index, 2025=100"
+    ],
+    [
+     "RCH_M",
+     "Monthly rate of change"
+    ],
+    [
+     "RCH_A",
+     "Annual rate of change"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2026-07",
+     "2026-07"
+    ],
+    [
+     "2026-08",
+     "2026-08"
+    ]
+   ]
+  },
+  "updated": "2026-09-11T11:00:00+0200"
+ },
+ "es_apro_cpsh1_geo": {
+  "size": [
+   1,
+   1,
+   0,
+   41,
+   1
+  ],
+  "nvals": 0,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "crops": [
+    [
+     "C1100",
+     "Wheat and spelt"
+    ]
+   ],
+   "strucpro": [],
+   "geo": [
+    [
+     "EU",
+     "European Union (EU6-1958, EU9-1973, EU10-1981, EU12-1986, EU15-1995, EU25-2004, EU27-2007, EU28-2013, EU27-2020)"
+    ],
+    [
+     "EU27_2020",
+     "European Union - 27 countries (from 2020)"
+    ],
+    [
+     "EU28",
+     "European Union - 28 countries (2013-2020)"
+    ],
+    [
+     "BE",
+     "Belgium"
+    ],
+    [
+     "BG",
+     "Bulgaria"
+    ],
+    [
+     "CZ",
+     "Czechia"
+    ],
+    [
+     "DK",
+     "Denmark"
+    ],
+    [
+     "DE",
+     "Germany"
+    ],
+    [
+     "EE",
+     "Estonia"
+    ],
+    [
+     "IE",
+     "Ireland"
+    ],
+    [
+     "EL",
+     "Greece"
+    ],
+    [
+     "ES",
+     "Spain"
+    ],
+    [
+     "FR",
+     "France"
+    ],
+    [
+     "HR",
+     "Croatia"
+    ],
+    [
+     "IT",
+     "Italy"
+    ],
+    [
+     "CY",
+     "Cyprus"
+    ],
+    [
+     "LV",
+     "Latvia"
+    ],
+    [
+     "LT",
+     "Lithuania"
+    ],
+    [
+     "LU",
+     "Luxembourg"
+    ],
+    [
+     "HU",
+     "Hungary"
+    ],
+    [
+     "MT",
+     "Malta"
+    ],
+    [
+     "NL",
+     "Netherlands"
+    ],
+    [
+     "AT",
+     "Austria"
+    ],
+    [
+     "PL",
+     "Poland"
+    ],
+    [
+     "PT",
+     "Portugal"
+    ],
+    [
+     "RO",
+     "Romania"
+    ],
+    [
+     "SI",
+     "Slovenia"
+    ],
+    [
+     "SK",
+     "Slovakia"
+    ],
+    [
+     "FI",
+     "Finland"
+    ],
+    [
+     "SE",
+     "Sweden"
+    ],
+    [
+     "IS",
+     "Iceland"
+    ],
+    [
+     "NO",
+     "Norway"
+    ],
+    [
+     "CH",
+     "Switzerland"
+    ],
+    [
+     "UK",
+     "United Kingdom"
+    ],
+    [
+     "BA",
+     "Bosnia and Herzegovina"
+    ],
+    [
+     "ME",
+     "Montenegro"
+    ],
+    [
+     "MK",
+     "North Macedonia"
+    ],
+    [
+     "AL",
+     "Albania"
+    ],
+    [
+     "RS",
+     "Serbia"
+    ],
+    [
+     "TR",
+     "Türkiye"
+    ],
+    [
+     "XK",
+     "Kosovo*"
+    ]
+   ],
+   "time": [
+    [
+     "2026",
+     "2026"
+    ]
+   ]
+  },
+  "updated": "2026-09-28T23:00:00+0200"
+ },
+ "es_apro_mt_lscatl_geo": {
+  "size": [
+   1,
+   0,
+   1,
+   1,
+   44,
+   1
+  ],
+  "nvals": 0,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "month": [],
+   "animals": [
+    [
+     "A2000",
+     "Live bovine animals"
+    ]
+   ],
+   "unit": [
+    [
+     "THS_HD",
+     "Thousand heads (animals)"
+    ]
+   ],
+   "geo": [
+    [
+     "EU",
+     "European Union (EU6-1958, EU9-1973, EU10-1981, EU12-1986, EU15-1995, EU25-2004, EU27-2007, EU28-2013, EU27-2020)"
+    ],
+    [
+     "EU27_2020",
+     "European Union - 27 countries (from 2020)"
+    ],
+    [
+     "EU28",
+     "European Union - 28 countries (2013-2020)"
+    ],
+    [
+     "EU27_2007",
+     "European Union - 27 countries (2007-2013)"
+    ],
+    [
+     "EU25",
+     "European Union - 25 countries (2004-2006)"
+    ],
+    [
+     "EU15",
+     "European Union - 15 countries (1995-2004)"
+    ],
+    [
+     "BE",
+     "Belgium"
+    ],
+    [
+     "BG",
+     "Bulgaria"
+    ],
+    [
+     "CZ",
+     "Czechia"
+    ],
+    [
+     "DK",
+     "Denmark"
+    ],
+    [
+     "DE",
+     "Germany"
+    ],
+    [
+     "EE",
+     "Estonia"
+    ],
+    [
+     "IE",
+     "Ireland"
+    ],
+    [
+     "EL",
+     "Greece"
+    ],
+    [
+     "ES",
+     "Spain"
+    ],
+    [
+     "FR",
+     "France"
+    ],
+    [
+     "HR",
+     "Croatia"
+    ],
+    [
+     "IT",
+     "Italy"
+    ],
+    [
+     "CY",
+     "Cyprus"
+    ],
+    [
+     "LV",
+     "Latvia"
+    ],
+    [
+     "LT",
+     "Lithuania"
+    ],
+    [
+     "LU",
+     "Luxembourg"
+    ],
+    [
+     "HU",
+     "Hungary"
+    ],
+    [
+     "MT",
+     "Malta"
+    ],
+    [
+     "NL",
+     "Netherlands"
+    ],
+    [
+     "AT",
+     "Austria"
+    ],
+    [
+     "PL",
+     "Poland"
+    ],
+    [
+     "PT",
+     "Portugal"
+    ],
+    [
+     "RO",
+     "Romania"
+    ],
+    [
+     "SI",
+     "Slovenia"
+    ],
+    [
+     "SK",
+     "Slovakia"
+    ],
+    [
+     "FI",
+     "Finland"
+    ],
+    [
+     "SE",
+     "Sweden"
+    ],
+    [
+     "IS",
+     "Iceland"
+    ],
+    [
+     "CH",
+     "Switzerland"
+    ],
+    [
+     "UK",
+     "United Kingdom"
+    ],
+    [
+     "BA",
+     "Bosnia and Herzegovina"
+    ],
+    [
+     "ME",
+     "Montenegro"
+    ],
+    [
+     "MK",
+     "North Macedonia"
+    ],
+    [
+     "AL",
+     "Albania"
+    ],
+    [
+     "RS",
+     "Serbia"
+    ],
+    [
+     "TR",
+     "Türkiye"
+    ],
+    [
+     "UA",
+     "Ukraine"
+    ],
+    [
+     "XK",
+     "Kosovo*"
+    ]
+   ],
+   "time": [
+    [
+     "2026",
+     "2026"
+    ]
+   ]
+  },
+  "updated": "2026-10-01T23:00:00+0200"
+ },
+ "es_apro_mt_pann_geo": {
+  "size": [
+   1,
+   0,
+   1,
+   1,
+   43,
+   1
+  ],
+  "nvals": 0,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "meatitem": [],
+   "meat": [
+    [
+     "B1000",
+     "Bovine meat"
+    ]
+   ],
+   "unit": [
+    [
+     "THS_T",
+     "Thousand tonnes"
+    ]
+   ],
+   "geo": [
+    [
+     "EU",
+     "European Union (EU6-1958, EU9-1973, EU10-1981, EU12-1986, EU15-1995, EU25-2004, EU27-2007, EU28-2013, EU27-2020)"
+    ],
+    [
+     "EU27_2020",
+     "European Union - 27 countries (from 2020)"
+    ],
+    [
+     "EU28",
+     "European Union - 28 countries (2013-2020)"
+    ],
+    [
+     "EU27_2007",
+     "European Union - 27 countries (2007-2013)"
+    ],
+    [
+     "EU25",
+     "European Union - 25 countries (2004-2006)"
+    ],
+    [
+     "EU15",
+     "European Union - 15 countries (1995-2004)"
+    ],
+    [
+     "BE",
+     "Belgium"
+    ],
+    [
+     "BG",
+     "Bulgaria"
+    ],
+    [
+     "CZ",
+     "Czechia"
+    ],
+    [
+     "DK",
+     "Denmark"
+    ],
+    [
+     "DE",
+     "Germany"
+    ],
+    [
+     "EE",
+     "Estonia"
+    ],
+    [
+     "IE",
+     "Ireland"
+    ],
+    [
+     "EL",
+     "Greece"
+    ],
+    [
+     "ES",
+     "Spain"
+    ],
+    [
+     "FR",
+     "France"
+    ],
+    [
+     "HR",
+     "Croatia"
+    ],
+    [
+     "IT",
+     "Italy"
+    ],
+    [
+     "CY",
+     "Cyprus"
+    ],
+    [
+     "LV",
+     "Latvia"
+    ],
+    [
+     "LT",
+     "Lithuania"
+    ],
+    [
+     "LU",
+     "Luxembourg"
+    ],
+    [
+     "HU",
+     "Hungary"
+    ],
+    [
+     "MT",
+     "Malta"
+    ],
+    [
+     "NL",
+     "Netherlands"
+    ],
+    [
+     "AT",
+     "Austria"
+    ],
+    [
+     "PL",
+     "Poland"
+    ],
+    [
+     "PT",
+     "Portugal"
+    ],
+    [
+     "RO",
+     "Romania"
+    ],
+    [
+     "SI",
+     "Slovenia"
+    ],
+    [
+     "SK",
+     "Slovakia"
+    ],
+    [
+     "FI",
+     "Finland"
+    ],
+    [
+     "SE",
+     "Sweden"
+    ],
+    [
+     "IS",
+     "Iceland"
+    ],
+    [
+     "CH",
+     "Switzerland"
+    ],
+    [
+     "UK",
+     "United Kingdom"
+    ],
+    [
+     "BA",
+     "Bosnia and Herzegovina"
+    ],
+    [
+     "ME",
+     "Montenegro"
+    ],
+    [
+     "MK",
+     "North Macedonia"
+    ],
+    [
+     "AL",
+     "Albania"
+    ],
+    [
+     "RS",
+     "Serbia"
+    ],
+    [
+     "TR",
+     "Türkiye"
+    ],
+    [
+     "XK",
+     "Kosovo*"
+    ]
+   ],
+   "time": [
+    [
+     "2025",
+     "2025"
+    ]
+   ]
+  },
+  "updated": "2026-10-06T23:00:00+0200"
+ },
+ "es_enpe_apro_cpnh1": {
+  "size": [
+   1,
+   1,
+   6,
+   6,
+   1
+  ],
+  "nvals": 23,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "unit": [
+    [
+     "THS_T",
+     "Thousand tonnes"
+    ]
+   ],
+   "crops": [
+    [
+     "C1000",
+     "Cereals (excluding rice) for the production of grain (including seed)"
+    ],
+    [
+     "C2000",
+     "Rice"
+    ],
+    [
+     "R1000",
+     "Potatoes (including seed potatoes)"
+    ],
+    [
+     "R2000",
+     "Sugar beet (excluding seed)"
+    ],
+    [
+     "I1100",
+     "Oilseeds"
+    ],
+    [
+     "V0000",
+     "Fresh vegetables (including melons)"
+    ]
+   ],
+   "geo": [
+    [
+     "MD",
+     "Moldova"
+    ],
+    [
+     "GE",
+     "Georgia"
+    ],
+    [
+     "UA",
+     "Ukraine"
+    ],
+    [
+     "BY",
+     "Belarus"
+    ],
+    [
+     "AM",
+     "Armenia"
+    ],
+    [
+     "AZ",
+     "Azerbaijan"
+    ]
+   ],
+   "time": [
+    [
+     "2024",
+     "2024"
+    ]
+   ]
+  },
+  "updated": "2026-02-03T23:00:00+0100"
+ },
+ "es_enps_apro_cpnh1": {
+  "size": [
+   1,
+   1,
+   25,
+   9,
+   1
+  ],
+  "nvals": 63,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "unit": [
+    [
+     "THS_T",
+     "Thousand tonnes"
+    ]
+   ],
+   "crops": [
+    [
+     "C1000",
+     "Cereals (excluding rice) for the production of grain (including seed)"
+    ],
+    [
+     "C1110",
+     "Common wheat and spelt"
+    ],
+    [
+     "C1120",
+     "Durum wheat"
+    ],
+    [
+     "C1300",
+     "Barley"
+    ],
+    [
+     "C1500",
+     "Grain maize and corn-cob-mix"
+    ],
+    [
+     "C2000",
+     "Rice"
+    ],
+    [
+     "R1000",
+     "Potatoes (including seed potatoes)"
+    ],
+    [
+     "R2000",
+     "Sugar beet (excluding seed)"
+    ],
+    [
+     "I1100",
+     "Oilseeds"
+    ],
+    [
+     "V0000",
+     "Fresh vegetables (including melons)"
+    ],
+    [
+     "S0000",
+     "Strawberries"
+    ],
+    [
+     "F1110",
+     "Apples"
+    ],
+    [
+     "F1120",
+     "Pears"
+    ],
+    [
+     "F1210",
+     "Peaches"
+    ],
+    [
+     "F1230",
+     "Apricots"
+    ],
+    [
+     "F1240",
+     "Cherries"
+    ],
+    [
+     "F1250",
+     "Plums"
+    ],
+    [
+     "F2100",
+     "Figs"
+    ],
+    [
+     "F2910",
+     "Dates"
+    ],
+    [
+     "F4300",
+     "Almonds"
+    ],
+    [
+     "T0000",
+     "Citrus fruits"
+    ],
+    [
+     "W1000",
+     "Grapes"
+    ],
+    [
+     "O1000",
+     "Olives"
+    ],
+    [
+     "O1100",
+     "Olives for table use"
+    ],
+    [
+     "O1910",
+     "Olives for oil"
+    ]
+   ],
+   "geo": [
+    [
+     "DZ",
+     "Algeria"
+    ],
+    [
+     "EG",
+     "Egypt"
+    ],
+    [
+     "LY",
+     "Libya"
+    ],
+    [
+     "MA",
+     "Morocco"
+    ],
+    [
+     "TN",
+     "Tunisia"
+    ],
+    [
+     "IL",
+     "Israel"
+    ],
+    [
+     "JO",
+     "Jordan"
+    ],
+    [
+     "LB",
+     "Lebanon"
+    ],
+    [
+     "PS",
+     "Palestine*"
+    ]
+   ],
+   "time": [
+    [
+     "2024",
+     "2024"
+    ]
+   ]
+  },
+  "updated": "2026-03-05T11:00:00+0100"
+ },
+ "es_enpe_apro_mt_ls": {
+  "size": [
+   1,
+   1,
+   5,
+   6,
+   1
+  ],
+  "nvals": 25,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "unit": [
+    [
+     "THS_HD",
+     "Thousand heads (animals)"
+    ]
+   ],
+   "animals": [
+    [
+     "A2000",
+     "Live bovine animals"
+    ],
+    [
+     "A2300F",
+     "Dairy cows"
+    ],
+    [
+     "A3100",
+     "Live swine, domestic species"
+    ],
+    [
+     "A4100",
+     "Live sheep"
+    ],
+    [
+     "A4200",
+     "Live goats"
+    ]
+   ],
+   "geo": [
+    [
+     "MD",
+     "Moldova"
+    ],
+    [
+     "GE",
+     "Georgia"
+    ],
+    [
+     "UA",
+     "Ukraine"
+    ],
+    [
+     "BY",
+     "Belarus"
+    ],
+    [
+     "AM",
+     "Armenia"
+    ],
+    [
+     "AZ",
+     "Azerbaijan"
+    ]
+   ],
+   "time": [
+    [
+     "2024",
+     "2024"
+    ]
+   ]
+  },
+  "updated": "2026-02-03T23:00:00+0100"
+ },
+ "es_ef_ah_pigt": {
+  "size": [
+   1,
+   3,
+   7,
+   6,
+   3,
+   3,
+   6,
+   3,
+   1,
+   1
+  ],
+  "nvals": 3079,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "statinfo": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "ABVTH",
+     "Above threshold"
+    ],
+    [
+     "BLWTH",
+     "Below threshold"
+    ]
+   ],
+   "farmtype": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "OTH",
+     "Other"
+    ],
+    [
+     "FT51",
+     "Specialist pigs"
+    ],
+    [
+     "FT53",
+     "Various granivores combined"
+    ],
+    [
+     "FT73",
+     "Mixed livestock, mainly grazing livestock"
+    ],
+    [
+     "FT83",
+     "Field crops-grazing livestock combined"
+    ],
+    [
+     "FT84",
+     "Various crops and livestock combined"
+    ]
+   ],
+   "lsu": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "LSU_GE0_LT5",
+     "Zero LSU or over to less than 5 LSU"
+    ],
+    [
+     "LSU5-19",
+     "From 5 to 19.9 LSU"
+    ],
+    [
+     "LSU20-99",
+     "From 20 to 99.9 LSU"
+    ],
+    [
+     "LSU100-499",
+     "From 100 to 499.9 LSU"
+    ],
+    [
+     "LSU_GE500",
+     "500 LSU or over"
+    ]
+   ],
+   "yn_acs": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "YES_OUTACS",
+     "Outdoor access"
+    ],
+    [
+     "NO_OUTACS",
+     "No outdoor access"
+    ]
+   ],
+   "animals": [
+    [
+     "A3100",
+     "Live swine, domestic species"
+    ],
+    [
+     "A3100X3120",
+     "Other pigs"
+    ],
+    [
+     "A3120",
+     "Breeding sows, live weight 50 kg or over"
+    ]
+   ],
+   "hous_ani": [
+    [
+     "TOT_INDR",
+     "Total indoor"
+    ],
+    [
+     "SLTD_FUL",
+     "Fully slatted floor"
+    ],
+    [
+     "SLTD_PART",
+     "Partially slatted floor"
+    ],
+    [
+     "SO_X_DPLT",
+     "Solid floor housing (excluding deep litter)"
+    ],
+    [
+     "DPLT_ENTI",
+     "Entire deep litter surface"
+    ],
+    [
+     "OTH",
+     "Other"
+    ]
+   ],
+   "unit": [
+    [
+     "MTH",
+     "Month"
+    ],
+    [
+     "HD",
+     "Head (animal)"
+    ],
+    [
+     "HLD",
+     "Holding"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2020",
+     "2020"
+    ]
+   ]
+  },
+  "updated": "2026-06-17T23:00:00+0200"
+ },
+ "es_ef_ah_poult": {
+  "size": [
+   1,
+   3,
+   7,
+   6,
+   3,
+   1,
+   8,
+   2,
+   1,
+   1
+  ],
+  "nvals": 774,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "statinfo": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "ABVTH",
+     "Above threshold"
+    ],
+    [
+     "BLWTH",
+     "Below threshold"
+    ]
+   ],
+   "farmtype": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "OTH",
+     "Other"
+    ],
+    [
+     "FT52",
+     "Specialist poultry"
+    ],
+    [
+     "FT53",
+     "Various granivores combined"
+    ],
+    [
+     "FT73",
+     "Mixed livestock, mainly grazing livestock"
+    ],
+    [
+     "FT83",
+     "Field crops-grazing livestock combined"
+    ],
+    [
+     "FT84",
+     "Various crops and livestock combined"
+    ]
+   ],
+   "lsu": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "LSU_GE0_LT5",
+     "Zero LSU or over to less than 5 LSU"
+    ],
+    [
+     "LSU5-19",
+     "From 5 to 19.9 LSU"
+    ],
+    [
+     "LSU20-99",
+     "From 20 to 99.9 LSU"
+    ],
+    [
+     "LSU100-499",
+     "From 100 to 499.9 LSU"
+    ],
+    [
+     "LSU_GE500",
+     "500 LSU or over"
+    ]
+   ],
+   "yn_acs": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "YES_OUTACS",
+     "Outdoor access"
+    ],
+    [
+     "NO_OUTACS",
+     "No outdoor access"
+    ]
+   ],
+   "animals": [
+    [
+     "A5110O",
+     "Laying hens"
+    ]
+   ],
+   "hous_ani": [
+    [
+     "TOT_INDR",
+     "Total indoor"
+    ],
+    [
+     "DPLT",
+     "Deep litter housing"
+    ],
+    [
+     "AVNLT",
+     "Aviary house (without litter)"
+    ],
+    [
+     "CAG",
+     "Cages"
+    ],
+    [
+     "CAG_MNRBLT",
+     "Cages with manure belt"
+    ],
+    [
+     "CAG_DPPIT",
+     "Cages with deep pits"
+    ],
+    [
+     "CAG_STLT",
+     "Cages with stilt house"
+    ],
+    [
+     "OTH",
+     "Other"
+    ]
+   ],
+   "unit": [
+    [
+     "HD",
+     "Head (animal)"
+    ],
+    [
+     "HLD",
+     "Holding"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2020",
+     "2020"
+    ]
+   ]
+  },
+  "updated": "2026-06-17T23:00:00+0200"
+ },
+ "es_ef_oga_type": {
+  "size": [
+   1,
+   3,
+   4,
+   4,
+   4,
+   9,
+   14,
+   2,
+   1,
+   1
+  ],
+  "nvals": 4801,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "statinfo": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "ABVTH",
+     "Above threshold"
+    ],
+    [
+     "BLWTH",
+     "Below threshold"
+    ]
+   ],
+   "farmtype": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "CR",
+     "Crops"
+    ],
+    [
+     "LS",
+     "Livestock"
+    ],
+    [
+     "OTH",
+     "Other"
+    ]
+   ],
+   "so_eur": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "KE_LT2",
+     "Less than 2 000 euros"
+    ],
+    [
+     "KE2-49",
+     "From 2 000 to 49 999 euros"
+    ],
+    [
+     "KE_GE50",
+     "50 000 euros or over"
+    ]
+   ],
+   "uaarea": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "HA_LT2",
+     "Less than 2 ha"
+    ],
+    [
+     "HA2-19",
+     "From 2 to 19.9 ha"
+    ],
+    [
+     "HA_GE20",
+     "20 ha or over"
+    ]
+   ],
+   "age": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "Y_LT25",
+     "Less than 25 years"
+    ],
+    [
+     "Y25-34",
+     "From 25 to 34 years"
+    ],
+    [
+     "Y35-39",
+     "From 35 to 39 years"
+    ],
+    [
+     "Y35-44",
+     "From 35 to 44 years"
+    ],
+    [
+     "Y40-44",
+     "From 40 to 44 years"
+    ],
+    [
+     "Y45-54",
+     "From 45 to 54 years"
+    ],
+    [
+     "Y55-64",
+     "From 55 to 64 years"
+    ],
+    [
+     "Y_GE65",
+     "65 years or over"
+    ]
+   ],
+   "oga_type": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "OGA",
+     "Holdings having other gainful activity"
+    ],
+    [
+     "OGA_TAOLA",
+     "Tourism, accommodation and other leisure activities"
+    ],
+    [
+     "OGA_HC",
+     "Handicraft"
+    ],
+    [
+     "OGA_PCS_FPRD",
+     "Processing of farm products"
+    ],
+    [
+     "OGA_PRD_REN",
+     "Production of renewable energy"
+    ],
+    [
+     "OGA_WPCS",
+     "Wood processing"
+    ],
+    [
+     "OGA_AQUA",
+     "Aquaculture"
+    ],
+    [
+     "OGA_ACW",
+     "Agricultural contractual work (using production means of the holding)"
+    ],
+    [
+     "OGA_NACW",
+     "Non-agricultural contractual work (using production means of the holding)"
+    ],
+    [
+     "OGA_FOR",
+     "Forestry"
+    ],
+    [
+     "OGA_HSES",
+     "Provision of health, social or educational services"
+    ],
+    [
+     "OGA_OTH",
+     "Other gainful activities related to the agricultural holding n.e.c."
+    ],
+    [
+     "NOGA",
+     "Holdings having no other gainful activity"
+    ]
+   ],
+   "unit": [
+    [
+     "AWU",
+     "Annual working unit (AWU)"
+    ],
+    [
+     "HLD",
+     "Holding"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2023",
+     "2023"
+    ]
+   ]
+  },
+  "updated": "2026-06-17T23:00:00+0200"
+ },
+ "es_ef_mp_ms": {
+  "size": [
+   1,
+   10,
+   6,
+   6,
+   3,
+   14,
+   2,
+   1,
+   1
+  ],
+  "nvals": 4931,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "farmtype": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "FT1",
+     "Specialist field crops"
+    ],
+    [
+     "FT2",
+     "Specialist horticulture"
+    ],
+    [
+     "FT3",
+     "Specialist permanent crops"
+    ],
+    [
+     "FT4",
+     "Specialist grazing livestock"
+    ],
+    [
+     "FT5",
+     "Specialist granivores"
+    ],
+    [
+     "FT6",
+     "Mixed cropping"
+    ],
+    [
+     "FT7",
+     "Mixed livestock farms"
+    ],
+    [
+     "FT8",
+     "Mixed crops-livestock"
+    ],
+    [
+     "FT9",
+     "Non-classified farms"
+    ]
+   ],
+   "uaarea": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "HA0",
+     "Zero ha"
+    ],
+    [
+     "HA_GT0_LT5",
+     "Over 0 ha to less than 5 ha"
+    ],
+    [
+     "HA5-29",
+     "From 5 to 29.9 ha"
+    ],
+    [
+     "HA30-99",
+     "From 30 to 99.9 ha"
+    ],
+    [
+     "HA_GE100",
+     "100 ha or over"
+    ]
+   ],
+   "lsu": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "LSU_GE0_LT5",
+     "Zero LSU or over to less than 5 LSU"
+    ],
+    [
+     "LSU5-19",
+     "From 5 to 19.9 LSU"
+    ],
+    [
+     "LSU20-99",
+     "From 20 to 99.9 LSU"
+    ],
+    [
+     "LSU100-499",
+     "From 100 to 499.9 LSU"
+    ],
+    [
+     "LSU_GE500",
+     "500 LSU or over"
+    ]
+   ],
+   "statinfo": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "ABVTH",
+     "Above threshold"
+    ],
+    [
+     "BLWTH",
+     "Below threshold"
+    ]
+   ],
+   "mansto": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "ST",
+     "Storage facilities for manure"
+    ],
+    [
+     "NST",
+     "No storage facilities for manure"
+    ],
+    [
+     "ST_SO",
+     "Manure solid storage"
+    ],
+    [
+     "ST_SO_NC",
+     "Manure solid storage without cover"
+    ],
+    [
+     "ST_SO_HEAP",
+     "Manure solid storage in heaps"
+    ],
+    [
+     "ST_COMP",
+     "Manure stored in compost piles"
+    ],
+    [
+     "ST_PIT",
+     "Manure stored in pits below animal confinement"
+    ],
+    [
+     "ST_DPLT",
+     "Manure stored in deep litter systems"
+    ],
+    [
+     "ST_LQ_SL_C",
+     "Liquid manure/slurry storage with cover"
+    ],
+    [
+     "ST_LQ_SL_NC",
+     "Liquid manure/slurry storage without cover"
+    ],
+    [
+     "ST_LQ_SL_PC",
+     "Liquid manure/slurry storage with permeable cover"
+    ],
+    [
+     "ST_LQ_SL_IC",
+     "Liquid manure/slurry storage with impermeable cover"
+    ],
+    [
+     "ST_OF",
+     "Manure stored in other facilities n.e.c."
+    ]
+   ],
+   "unit": [
+    [
+     "LSU",
+     "Livestock unit (LSU)"
+    ],
+    [
+     "HLD",
+     "Holding"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2020",
+     "2020"
+    ]
+   ]
+  },
+  "updated": "2026-06-17T23:00:00+0200"
+ },
+ "es_ef_mp_ma": {
+  "size": [
+   1,
+   6,
+   3,
+   9,
+   3,
+   10,
+   2,
+   1,
+   1
+  ],
+  "nvals": 1543,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "lsu": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "LSU_GE0_LT5",
+     "Zero LSU or over to less than 5 LSU"
+    ],
+    [
+     "LSU5-19",
+     "From 5 to 19.9 LSU"
+    ],
+    [
+     "LSU20-99",
+     "From 20 to 99.9 LSU"
+    ],
+    [
+     "LSU100-499",
+     "From 100 to 499.9 LSU"
+    ],
+    [
+     "LSU_GE500",
+     "500 LSU or over"
+    ]
+   ],
+   "agr_inp": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "FER_MIN",
+     "Mineral fertilisers"
+    ],
+    [
+     "FER_ORG",
+     "Organic fertilisers"
+    ]
+   ],
+   "mansto": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "INC_BC_LE4H",
+     "Manure broadcast incorporation within 4 hours"
+    ],
+    [
+     "INC_BC_GT4H",
+     "Manure broadcast incorporation after 4 hours"
+    ],
+    [
+     "NINC_BC",
+     "Manure broadcast no incorporation"
+    ],
+    [
+     "INC_BSTH",
+     "Manure band spread trailing hose incorporation"
+    ],
+    [
+     "INC_BSTS",
+     "Manure band spread trailing shoe incorporation"
+    ],
+    [
+     "INJN_SWOP",
+     "Manure injection shallow/open slit"
+    ],
+    [
+     "INJN_DPCL",
+     "Manure injection deep/closed slit"
+    ],
+    [
+     "NAP",
+     "Not applicable"
+    ]
+   ],
+   "statinfo": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "ABVTH",
+     "Above threshold"
+    ],
+    [
+     "BLWTH",
+     "Below threshold"
+    ]
+   ],
+   "farmtype": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "FT1",
+     "Specialist field crops"
+    ],
+    [
+     "FT2",
+     "Specialist horticulture"
+    ],
+    [
+     "FT3",
+     "Specialist permanent crops"
+    ],
+    [
+     "FT4",
+     "Specialist grazing livestock"
+    ],
+    [
+     "FT5",
+     "Specialist granivores"
+    ],
+    [
+     "FT6",
+     "Mixed cropping"
+    ],
+    [
+     "FT7",
+     "Mixed livestock farms"
+    ],
+    [
+     "FT8",
+     "Mixed crops-livestock"
+    ],
+    [
+     "FT9",
+     "Non-classified farms"
+    ]
+   ],
+   "unit": [
+    [
+     "HA",
+     "Hectare"
+    ],
+    [
+     "HLD",
+     "Holding"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2020",
+     "2020"
+    ]
+   ]
+  },
+  "updated": "2026-06-17T23:00:00+0200"
+ },
+ "es_ef_fsi_cdiv": {
+  "size": [
+   1,
+   5,
+   6,
+   2,
+   1,
+   5
+  ],
+  "nvals": 270,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "croparea": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "HA_LT10",
+     "Less than 10 ha"
+    ],
+    [
+     "HA10-29",
+     "From 10 to 29.9 ha"
+    ],
+    [
+     "HA30-99",
+     "From 30 to 99.9 ha"
+    ],
+    [
+     "HA_GE100",
+     "100 ha or over"
+    ]
+   ],
+   "n_crop": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "0",
+     "No crops"
+    ],
+    [
+     "1",
+     "1 crop"
+    ],
+    [
+     "2",
+     "2 crops"
+    ],
+    [
+     "3",
+     "3 crops"
+    ],
+    [
+     "GT3",
+     "More than 3 crops"
+    ]
+   ],
+   "unit": [
+    [
+     "HLD",
+     "Holding"
+    ],
+    [
+     "PC",
+     "Percentage"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2010",
+     "2010"
+    ],
+    [
+     "2013",
+     "2013"
+    ],
+    [
+     "2016",
+     "2016"
+    ],
+    [
+     "2020",
+     "2020"
+    ],
+    [
+     "2023",
+     "2023"
+    ]
+   ]
+  },
+  "updated": "2026-06-17T23:00:00+0200"
+ },
+ "es_ef_fsi_legum": {
+  "size": [
+   1,
+   5,
+   9,
+   3,
+   1,
+   5
+  ],
+  "nvals": 609,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "crops": [
+    [
+     "ARA",
+     "Arable land"
+    ],
+    [
+     "P0000_I1130_G2000",
+     "Leguminous crops (excluding fresh pulses)"
+    ],
+    [
+     "P0000",
+     "Dry pulses and protein crops for the production of grain (including seed and mixtures of cereals and pulses)"
+    ],
+    [
+     "I1130",
+     "Soya"
+    ],
+    [
+     "G2000",
+     "Leguminous plants harvested green"
+    ]
+   ],
+   "arable": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "HA_GT0_LT2",
+     "Over 0 ha to less than 2 ha"
+    ],
+    [
+     "HA2-4",
+     "From 2 to 4.9 ha"
+    ],
+    [
+     "HA5-9",
+     "From 5 to 9.9 ha"
+    ],
+    [
+     "HA10-19",
+     "From 10 to 19.9 ha"
+    ],
+    [
+     "HA20-29",
+     "From 20 to 29.9 ha"
+    ],
+    [
+     "HA30-49",
+     "From 30 to 49.9 ha"
+    ],
+    [
+     "HA50-99",
+     "From 50 to 99.9 ha"
+    ],
+    [
+     "HA_GE100",
+     "100 ha or over"
+    ]
+   ],
+   "unit": [
+    [
+     "HA",
+     "Hectare"
+    ],
+    [
+     "HLD",
+     "Holding"
+    ],
+    [
+     "PC",
+     "Percentage"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2010",
+     "2010"
+    ],
+    [
+     "2013",
+     "2013"
+    ],
+    [
+     "2016",
+     "2016"
+    ],
+    [
+     "2020",
+     "2020"
+    ],
+    [
+     "2023",
+     "2023"
+    ]
+   ]
+  },
+  "updated": "2026-08-06T11:00:00+0200"
+ },
+ "es_ef_m_pry": {
+  "size": [
+   1,
+   3,
+   3,
+   2,
+   2,
+   4,
+   1,
+   1,
+   1
+  ],
+  "nvals": 144,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "sex": [
+    [
+     "T",
+     "Total"
+    ],
+    [
+     "M",
+     "Males"
+    ],
+    [
+     "F",
+     "Females"
+    ]
+   ],
+   "farmsize": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "SMAL",
+     "Small"
+    ],
+    [
+     "LARGE",
+     "Large"
+    ]
+   ],
+   "statinfo": [
+    [
+     "SE",
+     "Standard error"
+    ],
+    [
+     "VAL",
+     "Value"
+    ]
+   ],
+   "pry": [
+    [
+     "LAND",
+     "Land productivity"
+    ],
+    [
+     "LABOUR",
+     "Labour productivity"
+    ]
+   ],
+   "farmtype": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "CR",
+     "Crops"
+    ],
+    [
+     "LS",
+     "Livestock"
+    ],
+    [
+     "OTH",
+     "Other"
+    ]
+   ],
+   "unit": [
+    [
+     "INX",
+     "Index"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2023",
+     "2023"
+    ]
+   ]
+  },
+  "updated": "2026-06-17T23:00:00+0200"
+ },
+ "es_aact_eaa05": {
+  "error": "<HTTPError 400: 'Bad Request'>"
+ },
+ "es_lan_lcv_ovw": {
+  "size": [
+   1,
+   3,
+   92,
+   1,
+   1
+  ],
+  "nvals": 257,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "unit": [
+    [
+     "KM2",
+     "Square kilometre"
+    ],
+    [
+     "CVA",
+     "Coefficient of variation for absolute value"
+    ],
+    [
+     "PC",
+     "Percentage"
+    ]
+   ],
+   "landcover": [
+    [
+     "TOTAL",
+     "Total area"
+    ],
+    [
+     "A00",
+     "Artificial land"
+    ],
+    [
+     "A10",
+     "Built-up area"
+    ],
+    [
+     "A11",
+     "Buildings with 1 to 3 floors"
+    ],
+    [
+     "A12",
+     "Buildings with more than 3 floors"
+    ],
+    [
+     "A13",
+     "Greenhouses"
+    ],
+    [
+     "A20",
+     "Artificial, non built-up area"
+    ],
+    [
+     "A21",
+     "Artificial, non built-up area feature"
+    ],
+    [
+     "A22",
+     "Artificial, non built-up linear feature"
+    ],
+    [
+     "A30",
+     "Other artificial areas"
+    ],
+    [
+     "B00",
+     "Cropland"
+    ],
+    [
+     "B00_PI",
+     "Photo interpreted crops"
+    ],
+    [
+     "B10-50_PI",
+     "Photo interpreted non permanent crops"
+    ],
+    [
+     "B70-80_PI",
+     "Photo interpreted permanent crops"
+    ],
+    [
+     "B10",
+     "Cereals"
+    ],
+    [
+     "B11",
+     "Common wheat"
+    ],
+    [
+     "B12",
+     "Durum wheat"
+    ],
+    [
+     "B13",
+     "Barley"
+    ],
+    [
+     "B14",
+     "Rye"
+    ],
+    [
+     "B15",
+     "Oats"
+    ],
+    [
+     "B16",
+     "Maize"
+    ],
+    [
+     "B17",
+     "Rice"
+    ],
+    [
+     "B18",
+     "Triticale"
+    ],
+    [
+     "B19",
+     "Other cereals"
+    ],
+    [
+     "B20",
+     "Root and tuber vegetables"
+    ],
+    [
+     "...",
+     60
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2022",
+     "2022"
+    ]
+   ]
+  },
+  "updated": "2025-07-25T23:00:00+0200"
+ },
+ "es_lan_use_ovw": {
+  "size": [
+   1,
+   3,
+   19,
+   1,
+   1
+  ],
+  "nvals": 53,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "unit": [
+    [
+     "KM2",
+     "Square kilometre"
+    ],
+    [
+     "CVA",
+     "Coefficient of variation for absolute value"
+    ],
+    [
+     "PC",
+     "Percentage"
+    ]
+   ],
+   "landuse": [
+    [
+     "TOTAL",
+     "Total area"
+    ],
+    [
+     "U110",
+     "Agriculture"
+    ],
+    [
+     "U120",
+     "Forestry"
+    ],
+    [
+     "U130",
+     "Fishing and aquaculture"
+    ],
+    [
+     "HENVI",
+     "Land use with heavy environmental impact"
+    ],
+    [
+     "U140",
+     "Mining and quarrying"
+    ],
+    [
+     "U150",
+     "Other primary sector activities"
+    ],
+    [
+     "U210",
+     "Energy production"
+    ],
+    [
+     "U220",
+     "Industry and manufacturing"
+    ],
+    [
+     "U310",
+     "Transport, telecommunication, energy distribution, storage, protective works"
+    ],
+    [
+     "U320",
+     "Water and waste treatment"
+    ],
+    [
+     "U330",
+     "Construction"
+    ],
+    [
+     "U340-370",
+     "Services and residential area"
+    ],
+    [
+     "U340",
+     "Commercial, financial, professional and information services"
+    ],
+    [
+     "U350",
+     "Community services"
+    ],
+    [
+     "U360",
+     "Arts, entertainement and recreation"
+    ],
+    [
+     "U364",
+     "Nature reserves"
+    ],
+    [
+     "U370",
+     "Residential area"
+    ],
+    [
+     "U400",
+     "Unused and abandoned areas"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2022",
+     "2022"
+    ]
+   ]
+  },
+  "updated": "2025-07-25T23:00:00+0200"
+ },
+ "es_ef_rd_man": {
+  "size": [
+   1,
+   5,
+   3,
+   9,
+   27,
+   3,
+   2,
+   1,
+   1
+  ],
+  "nvals": 3678,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "training": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "BASIC",
+     "Basic training"
+    ],
+    [
+     "PRACT",
+     "Practical experience only"
+    ],
+    [
+     "FULL",
+     "Full agricultural training"
+    ],
+    [
+     "NAP",
+     "Not applicable"
+    ]
+   ],
+   "sex": [
+    [
+     "T",
+     "Total"
+    ],
+    [
+     "M",
+     "Males"
+    ],
+    [
+     "F",
+     "Females"
+    ]
+   ],
+   "age": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "Y_LT25",
+     "Less than 25 years"
+    ],
+    [
+     "Y25-34",
+     "From 25 to 34 years"
+    ],
+    [
+     "Y35-39",
+     "From 35 to 39 years"
+    ],
+    [
+     "Y35-44",
+     "From 35 to 44 years"
+    ],
+    [
+     "Y40-44",
+     "From 40 to 44 years"
+    ],
+    [
+     "Y45-54",
+     "From 45 to 54 years"
+    ],
+    [
+     "Y55-64",
+     "From 55 to 64 years"
+    ],
+    [
+     "Y_GE65",
+     "65 years or over"
+    ]
+   ],
+   "ruraldev": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "RDEV",
+     "Beneficiary of rural development measures"
+    ],
+    [
+     "RDEV_A",
+     "Investments"
+    ],
+    [
+     "RDEV_A01",
+     "Investments for forests"
+    ],
+    [
+     "RDEV_A04",
+     "Investments for the restoration of damage to agricultural or forestry production"
+    ],
+    [
+     "RDEV_A09",
+     "Investments in physical assets"
+    ],
+    [
+     "RDEV_A11",
+     "Investments for agricultural products"
+    ],
+    [
+     "RDEV_B",
+     "Farm and business development"
+    ],
+    [
+     "RDEV_B01",
+     "Setting up young farmers"
+    ],
+    [
+     "RDEV_B03",
+     "Start up for income diversification"
+    ],
+    [
+     "RDEV_B05",
+     "Business support for small and medium-sized enterprises"
+    ],
+    [
+     "RDEV_C",
+     "Commitments"
+    ],
+    [
+     "RDEV_C01",
+     "Commitments for animal welfare"
+    ],
+    [
+     "RDEV_C02",
+     "Commitments for organic farming"
+    ],
+    [
+     "RDEV_C03",
+     "Commitments for environment and climate"
+    ],
+    [
+     "RDEV_C05",
+     "Commitments for environment and climate related to existing forest land"
+    ],
+    [
+     "RDEV_D",
+     "Area-specific disadvantages"
+    ],
+    [
+     "RDEV_D01",
+     "Habitats and water framework Directive"
+    ],
+    [
+     "RDEV_E",
+     "Natural constraints"
+    ],
+    [
+     "RDEV_E01",
+     "Natural constraints related to area"
+    ],
+    [
+     "RDEV_E02",
+     "Risk management"
+    ],
+    [
+     "RDEV_F",
+     "Knowledge exchange and dissemination of information"
+    ],
+    [
+     "RDEV_F03",
+     "Received farm advisory services"
+    ],
+    [
+     "RDEV_G",
+     "Cooperation"
+    ],
+    [
+     "RDEV_G03",
+     "Cooperation to support quality schemes"
+    ],
+    [
+     "RDEV_G05",
+     "Cooperation to support tourism activities"
+    ],
+    [
+     "NRDEV",
+     "Non-beneficiary of rural development measures"
+    ]
+   ],
+   "statinfo": [
+    [
+     "TOTAL",
+     "Total"
+    ],
+    [
+     "ABVTH",
+     "Above threshold"
+    ],
+    [
+     "BLWTH",
+     "Below threshold"
+    ]
+   ],
+   "unit": [
+    [
+     "HA",
+     "Hectare"
+    ],
+    [
+     "HLD",
+     "Holding"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "2023",
+     "2023"
+    ]
+   ]
+  },
+  "updated": "2026-05-08T11:00:00+0200"
+ },
+ "es_for_eoutput": {
+  "size": [
+   1,
+   5,
+   2,
+   1,
+   39
+  ],
+  "nvals": 60,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "for_acc": [
+    [
+     "P1",
+     "Output of forestry and connected secondary activities"
+    ],
+    [
+     "P11",
+     "Market output"
+    ],
+    [
+     "P12",
+     "Output for own final use"
+    ],
+    [
+     "P13",
+     "Other non-market output"
+    ],
+    [
+     "P1_S14",
+     "Output of households"
+    ]
+   ],
+   "unit": [
+    [
+     "MIO_EUR",
+     "Million euro"
+    ],
+    [
+     "MIO_NAC",
+     "Million units of national currency"
+    ]
+   ],
+   "geo": [
+    [
+     "ES",
+     "Spain"
+    ]
+   ],
+   "time": [
+    [
+     "1986",
+     "1986"
+    ],
+    [
+     "1987",
+     "1987"
+    ],
+    [
+     "1988",
+     "1988"
+    ],
+    [
+     "1989",
+     "1989"
+    ],
+    [
+     "1990",
+     "1990"
+    ],
+    [
+     "1991",
+     "1991"
+    ],
+    [
+     "1992",
+     "1992"
+    ],
+    [
+     "1993",
+     "1993"
+    ],
+    [
+     "1994",
+     "1994"
+    ],
+    [
+     "1995",
+     "1995"
+    ],
+    [
+     "1996",
+     "1996"
+    ],
+    [
+     "1997",
+     "1997"
+    ],
+    [
+     "1998",
+     "1998"
+    ],
+    [
+     "1999",
+     "1999"
+    ],
+    [
+     "2000",
+     "2000"
+    ],
+    [
+     "2001",
+     "2001"
+    ],
+    [
+     "2002",
+     "2002"
+    ],
+    [
+     "2003",
+     "2003"
+    ],
+    [
+     "2004",
+     "2004"
+    ],
+    [
+     "2005",
+     "2005"
+    ],
+    [
+     "2006",
+     "2006"
+    ],
+    [
+     "2007",
+     "2007"
+    ],
+    [
+     "2008",
+     "2008"
+    ],
+    [
+     "2009",
+     "2009"
+    ],
+    [
+     "2010",
+     "2010"
+    ],
+    [
+     "2011",
+     "2011"
+    ],
+    [
+     "2012",
+     "2012"
+    ],
+    [
+     "2013",
+     "2013"
+    ],
+    [
+     "2014",
+     "2014"
+    ],
+    [
+     "2015",
+     "2015"
+    ],
+    [
+     "2016",
+     "2016"
+    ],
+    [
+     "2017",
+     "2017"
+    ],
+    [
+     "2018",
+     "2018"
+    ],
+    [
+     "2019",
+     "2019"
+    ],
+    [
+     "2020",
+     "2020"
+    ],
+    [
+     "2021",
+     "2021"
+    ],
+    [
+     "2022",
+     "2022"
+    ],
+    [
+     "2023",
+     "2023"
+    ],
+    [
+     "2024",
+     "2024"
+    ]
+   ]
+  },
+  "updated": "2026-03-09T11:00:00+0100"
+ },
+ "es_sdg_06_70": {
+  "size": [
+   1,
+   1,
+   33,
+   11
+  ],
+  "nvals": 285,
+  "dims": {
+   "freq": [
+    [
+     "A",
+     "Annual"
+    ]
+   ],
+   "unit": [
+    [
+     "PC",
+     "Percentage"
+    ]
+   ],
+   "geo": [
+    [
+     "EU27_2020",
+     "European Union - 27 countries (from 2020)"
+    ],
+    [
+     "BE",
+     "Belgium"
+    ],
+    [
+     "BG",
+     "Bulgaria"
+    ],
+    [
+     "CZ",
+     "Czechia"
+    ],
+    [
+     "DK",
+     "Denmark"
+    ],
+    [
+     "DE",
+     "Germany"
+    ],
+    [
+     "EE",
+     "Estonia"
+    ],
+    [
+     "IE",
+     "Ireland"
+    ],
+    [
+     "EL",
+     "Greece"
+    ],
+    [
+     "ES",
+     "Spain"
+    ],
+    [
+     "FR",
+     "France"
+    ],
+    [
+     "HR",
+     "Croatia"
+    ],
+    [
+     "IT",
+     "Italy"
+    ],
+    [
+     "CY",
+     "Cyprus"
+    ],
+    [
+     "LV",
+     "Latvia"
+    ],
+    [
+     "LT",
+     "Lithuania"
+    ],
+    [
+     "LU",
+     "Luxembourg"
+    ],
+    [
+     "HU",
+     "Hungary"
+    ],
+    [
+     "MT",
+     "Malta"
+    ],
+    [
+     "NL",
+     "Netherlands"
+    ],
+    [
+     "AT",
+     "Austria"
+    ],
+    [
+     "PL",
+     "Poland"
+    ],
+    [
+     "PT",
+     "Portugal"
+    ],
+    [
+     "RO",
+     "Romania"
+    ],
+    [
+     "SI",
+     "Slovenia"
+    ],
+    [
+     "SK",
+     "Slovakia"
+    ],
+    [
+     "FI",
+     "Finland"
+    ],
+    [
+     "SE",
+     "Sweden"
+    ],
+    [
+     "IS",
+     "Iceland"
+    ],
+    [
+     "NO",
+     "Norway"
+    ],
+    [
+     "CH",
+     "Switzerland"
+    ],
+    [
+     "ME",
+     "Montenegro"
+    ],
+    [
+     "RS",
+     "Serbia"
+    ]
+   ],
+   "time": [
+    [
+     "2013",
+     "2013"
+    ],
+    [
+     "2014",
+     "2014"
+    ],
+    [
+     "2015",
+     "2015"
+    ],
+    [
+     "2016",
+     "2016"
+    ],
+    [
+     "2017",
+     "2017"
+    ],
+    [
+     "2018",
+     "2018"
+    ],
+    [
+     "2019",
+     "2019"
+    ],
+    [
+     "2020",
+     "2020"
+    ],
+    [
+     "2021",
+     "2021"
+    ],
+    [
+     "2022",
+     "2022"
+    ],
+    [
+     "2023",
+     "2023"
+    ]
+   ]
+  },
+  "updated": "2026-05-18T23:00:00+0200"
+ }
+}
