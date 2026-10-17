@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""«La semana en...»: un resumen semanal por pais (España, Francia, Italia, Alemania y EE. UU.), aparte del blog general.
+"""«La semana en...»: un resumen semanal por pais (España, Francia, Italia, Alemania, EE. UU. y Canadá), aparte del blog general.
 Sin LLM ni prosa inventada: el texto lo compone la web (js/semana.js, 4 idiomas) a partir de estas cifras.
 
 1) REGISTRO (data/blog/countries/ledger/<CC>.json): ultimo periodo y valor de cada serie del catalogo del pais (data/catalog/<CC>.json y, en la UE,
@@ -17,7 +17,7 @@ import datetime, json, re, subprocess, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'; OUT = DATA / 'blog' / 'countries'; LEDGER = OUT / 'ledger'; NEWS = DATA / 'news-archive'
-COUNTRIES = ['ES', 'FR', 'IT', 'DE', 'US']
+COUNTRIES = ['ES', 'FR', 'IT', 'DE', 'US', 'CA']
 MOVERS = 8; RELEASES = 10; MAX_PER_GROUP = 2; NEWS_N = 8; MAX_PER_SOURCE = 2
 BLOCK_ORDER = ['precios', 'produccion', 'comercio', 'costes', 'otros']
 MARKETS = {'quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions', 'product', 'idx_perc'}

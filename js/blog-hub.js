@@ -7,15 +7,15 @@
   var $ = function (id) { return document.getElementById(id); }, esc = S.esc;
   var T = {
     es: { h: 'Resumen semanal y blog', sub: 'Elige qué quieres leer.', rh: 'Resumen semanal', rsub: 'Lo más importante de la semana, con sus datos: el resumen general y el de cada país.', bh: 'Blog', bsub: 'Notas con contexto sobre qué mueve estos mercados, con cifras y fuentes reales.',
-      rd: 'Lo más importante de la semana, con sus datos: el resumen general y el de España, Francia, Italia, Alemania y EE. UU.', bd: 'Notas con contexto sobre qué mueve estos mercados, con cifras y fuentes.', gen: 'General', sw: 'Ver otra opción', aria: 'Elegir vista' },
+      rd: 'Lo más importante de la semana, con sus datos: el resumen general y el de España, Francia, Italia, Alemania, EE. UU. y Canadá.', bd: 'Notas con contexto sobre qué mueve estos mercados, con cifras y fuentes.', gen: 'General', sw: 'Ver otra opción', aria: 'Elegir vista' },
     en: { h: 'Weekly summary and blog', sub: 'Choose what you want to read.', rh: 'Weekly summary', rsub: 'The week’s most important points, with their data: the general summary and one for each country.', bh: 'Blog', bsub: 'Notes with context on what moves these markets, with real figures and sources.',
-      rd: 'The week’s most important points, with their data: the general summary and the ones for Spain, France, Italy, Germany and the US.', bd: 'Notes with context on what moves these markets, with figures and sources.', gen: 'General', sw: 'Other view', aria: 'Choose a view' },
+      rd: 'The week’s most important points, with their data: the general summary and the ones for Spain, France, Italy, Germany, the US and Canada.', bd: 'Notes with context on what moves these markets, with figures and sources.', gen: 'General', sw: 'Other view', aria: 'Choose a view' },
     fr: { h: 'Résumé hebdomadaire et blog', sub: 'Choisissez ce que vous voulez lire.', rh: 'Résumé hebdomadaire', rsub: 'L’essentiel de la semaine, avec ses données : le résumé général et celui de chaque pays.', bh: 'Blog', bsub: 'Notes de contexte sur ce qui fait bouger ces marchés, avec des chiffres et des sources réels.',
-      rd: 'L’essentiel de la semaine, avec ses données : le résumé général et ceux de l’Espagne, la France, l’Italie, l’Allemagne et les États-Unis.', bd: 'Notes de contexte sur ce qui fait bouger ces marchés, avec chiffres et sources.', gen: 'Général', sw: 'Autre vue', aria: 'Choisir une vue' },
+      rd: 'L’essentiel de la semaine, avec ses données : le résumé général et ceux de l’Espagne, la France, l’Italie, l’Allemagne, les États-Unis et le Canada.', bd: 'Notes de contexte sur ce qui fait bouger ces marchés, avec chiffres et sources.', gen: 'Général', sw: 'Autre vue', aria: 'Choisir une vue' },
     it: { h: 'Riepilogo settimanale e blog', sub: 'Scegli cosa vuoi leggere.', rh: 'Riepilogo settimanale', rsub: 'Il più importante della settimana, con i suoi dati: il riepilogo generale e quello di ogni paese.', bh: 'Blog', bsub: 'Note di contesto su cosa muove questi mercati, con cifre e fonti reali.',
-      rd: 'Il più importante della settimana, con i suoi dati: il riepilogo generale e quelli di Spagna, Francia, Italia, Germania e Stati Uniti.', bd: 'Note di contesto su cosa muove questi mercati, con cifre e fonti.', gen: 'Generale', sw: 'Altra vista', aria: 'Scegli una vista' }
+      rd: 'Il più importante della settimana, con i suoi dati: il riepilogo generale e quelli di Spagna, Francia, Italia, Germania, Stati Uniti e Canada.', bd: 'Note di contesto su cosa muove questi mercati, con cifre e fonti.', gen: 'Generale', sw: 'Altra vista', aria: 'Scegli una vista' }
   };
-  var CCS = ['ES', 'FR', 'IT', 'DE', 'US'];
+  var CCS = ['ES', 'FR', 'IT', 'DE', 'US', 'CA'];
   function lg() { var l = S.getLang(); return T[l] ? l : 'es'; }
   function parse() {
     var h = (location.hash || '').replace('#', '');

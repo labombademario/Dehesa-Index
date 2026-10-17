@@ -8,18 +8,19 @@
   var root = document.getElementById('sw-root'); if (!root) return;
   var EMB = !document.getElementById('sw-h1'); /* dentro de blog.html («Resumen semanal»): lo monta js/blog-hub.js */
   if (!EMB) { try { var rq = /[?&]c=([A-Z]{2})/.exec(location.search); location.replace('blog.html#resumen' + (rq ? '-' + rq[1] : '')); } catch (e) {} }
-  var esc = S.esc, CCS = ['ES', 'FR', 'IT', 'DE', 'US'];
+  var esc = S.esc, CCS = ['ES', 'FR', 'IT', 'DE', 'US', 'CA'];
   var NAME = {
     ES: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, FR: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' },
     IT: { es: 'Italia', en: 'Italy', fr: 'Italie', it: 'Italia' }, DE: { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' },
-    US: { es: 'EE. UU.', en: 'the United States', fr: 'les États-Unis', it: 'gli Stati Uniti' }
+    US: { es: 'EE. UU.', en: 'the United States', fr: 'les États-Unis', it: 'gli Stati Uniti' },
+    CA: { es: 'Canadá', en: 'Canada', fr: 'le Canada', it: 'il Canada' }
   };
-  var TAB = { US: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' } };
+  var TAB = { US: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, CA: { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' } };
   var MEDIA = { ES: { es: 'españoles', en: 'Spanish', fr: 'espagnols', it: 'spagnoli' }, FR: { es: 'franceses', en: 'French', fr: 'français', it: 'francesi' },
     IT: { es: 'italianos', en: 'Italian', fr: 'italiens', it: 'italiani' }, DE: { es: 'alemanes', en: 'German', fr: 'allemands', it: 'tedeschi' },
-    US: { es: 'estadounidenses', en: 'US', fr: 'américains', it: 'statunitensi' } };
+    US: { es: 'estadounidenses', en: 'US', fr: 'américains', it: 'statunitensi' }, CA: { es: 'canadienses', en: 'Canadian', fr: 'canadiens', it: 'canadesi' } };
   var T = {
-    es: { title: 'La semana en cada país | Dehesa Index', h1: 'La semana en cada país', sub: 'España, Francia, Italia, Alemania y EE. UU.: los datos que se publicaron cada semana y los titulares de sus medios agrarios.',
+    es: { title: 'La semana en cada país | Dehesa Index', h1: 'La semana en cada país', sub: 'España, Francia, Italia, Alemania, EE. UU. y Canadá: los datos que se publicaron cada semana y los titulares de sus medios agrarios.',
       head: 'La semana en {c}', week: 'del {a} al {b}', open: 'Semana en curso: se actualiza cada día y se cierra el domingo.', closed: 'Semana cerrada.',
       p1: 'Esta semana llegaron a Dehesa Index {n} datos nuevos de {c}: {parts}.', p1none: 'Esta semana no llegó ningún dato nuevo de {c} a Dehesa Index.',
       parts: { precios: '{n} de precios', produccion: '{n} de producción y existencias', comercio: '{n} de comercio', costes: '{n} de costes e insumos', otros: '{n} de otros indicadores' },
@@ -31,7 +32,7 @@
       older: 'Otras semanas', more: 'Todos los datos de {c}', cov: 'Cobertura desde el {d}: antes de esa fecha no registrábamos el día de llegada de cada dato.',
       note: 'Resumen automático, sin redacción: cuenta los datos que llegaron a Dehesa Index esa semana (un dato es nuevo cuando su serie publica un periodo nuevo; las revisiones no cuentan) y enlaza los titulares de medios del país sin reescribirlos ni verificarlos. El cambio es el de la propia serie frente a su dato anterior.',
       none: 'Todavía no hay ninguna semana para este país.', loading: 'Cargando…', err: 'No se pudo cargar esta semana.', blog: 'Resumen semanal general', lang: 'idioma' },
-    en: { title: 'The week in each country | Dehesa Index', h1: 'The week in each country', sub: 'Spain, France, Italy, Germany and the US: the data published each week and the headlines from their farm media.',
+    en: { title: 'The week in each country | Dehesa Index', h1: 'The week in each country', sub: 'Spain, France, Italy, Germany, the US and Canada: the data published each week and the headlines from their farm media.',
       head: 'The week in {c}', week: '{a} to {b}', open: 'Current week: updated daily and closed on Sunday.', closed: 'Closed week.',
       p1: 'This week Dehesa Index received {n} new data points for {c}: {parts}.', p1none: 'No new data for {c} reached Dehesa Index this week.',
       parts: { precios: '{n} prices', produccion: '{n} production and stocks', comercio: '{n} trade', costes: '{n} costs and inputs', otros: '{n} other indicators' },
@@ -43,7 +44,7 @@
       older: 'Other weeks', more: 'All data for {c}', cov: 'Coverage from {d}: before that date we did not record the day each figure arrived.',
       note: 'Automatic summary, not written by anyone: it counts the data that reached Dehesa Index that week (a figure is new when its series publishes a new period; revisions do not count) and links headlines from the country’s media without rewriting or checking them. The change is the series’ own change on its previous figure.',
       none: 'There is no week for this country yet.', loading: 'Loading…', err: 'This week could not be loaded.', blog: 'General weekly digest', lang: 'language' },
-    fr: { title: 'La semaine dans chaque pays | Dehesa Index', h1: 'La semaine dans chaque pays', sub: 'Espagne, France, Italie, Allemagne et États-Unis : les données publiées chaque semaine et les titres de leurs médias agricoles.',
+    fr: { title: 'La semaine dans chaque pays | Dehesa Index', h1: 'La semaine dans chaque pays', sub: 'Espagne, France, Italie, Allemagne, États-Unis et Canada : les données publiées chaque semaine et les titres de leurs médias agricoles.',
       head: 'La semaine : {c}', week: 'du {a} au {b}', open: 'Semaine en cours : mise à jour chaque jour et clôturée le dimanche.', closed: 'Semaine clôturée.',
       p1: 'Cette semaine, Dehesa Index a reçu {n} nouvelles données pour {c} : {parts}.', p1none: 'Aucune nouvelle donnée pour {c} n’est arrivée cette semaine.',
       parts: { precios: '{n} de prix', produccion: '{n} de production et stocks', comercio: '{n} de commerce', costes: '{n} de coûts et intrants', otros: '{n} d’autres indicateurs' },
@@ -55,7 +56,7 @@
       older: 'Autres semaines', more: 'Toutes les données : {c}', cov: 'Couverture depuis le {d} : avant cette date nous n’enregistrions pas le jour d’arrivée de chaque donnée.',
       note: 'Résumé automatique, non rédigé : il compte les données arrivées sur Dehesa Index cette semaine (une donnée est nouvelle quand sa série publie une nouvelle période ; les révisions ne comptent pas) et relie les titres des médias du pays sans les réécrire ni les vérifier. La variation est celle de la série par rapport à sa donnée précédente.',
       none: 'Aucune semaine pour ce pays pour l’instant.', loading: 'Chargement…', err: 'Impossible de charger cette semaine.', blog: 'Résumé hebdomadaire général', lang: 'langue' },
-    it: { title: 'La settimana in ogni paese | Dehesa Index', h1: 'La settimana in ogni paese', sub: 'Spagna, Francia, Italia, Germania e Stati Uniti: i dati pubblicati ogni settimana e i titoli dei loro media agricoli.',
+    it: { title: 'La settimana in ogni paese | Dehesa Index', h1: 'La settimana in ogni paese', sub: 'Spagna, Francia, Italia, Germania, Stati Uniti e Canada: i dati pubblicati ogni settimana e i titoli dei loro media agricoli.',
       head: 'La settimana: {c}', week: 'dal {a} al {b}', open: 'Settimana in corso: aggiornata ogni giorno e chiusa la domenica.', closed: 'Settimana chiusa.',
       p1: 'Questa settimana Dehesa Index ha ricevuto {n} nuovi dati per {c}: {parts}.', p1none: 'Questa settimana non è arrivato nessun nuovo dato per {c}.',
       parts: { precios: '{n} di prezzi', produccion: '{n} di produzione e scorte', comercio: '{n} di commercio', costes: '{n} di costi e input', otros: '{n} di altri indicatori' },
@@ -79,6 +80,7 @@
   function lab(l) { var L = window.DILabelTl; return L && L.ready(lg()) ? L.tl(l, lg()) : l; }
   function cname(cc) { return (NAME[cc] || {})[lg()] || cc; }
   function tabName(cc) { return (TAB[cc] || NAME[cc] || {})[lg()] || cc; }
+  function tabLabel(cc) { return String.fromCodePoint(127397 + cc.charCodeAt(0), 127397 + cc.charCodeAt(1)) + ' ' + tabName(cc); }
   function readUrl() { if (EMB) return; var q = /[?&]c=([A-Z]{2})/.exec(location.search), w = /[?&]w=(\d{4}-W\d\d)/.exec(location.search); if (q && CCS.indexOf(q[1]) > -1) state.c = q[1]; if (w) state.w = w[1]; }
   function writeUrl() { if (EMB) return; try { history.replaceState(null, '', '?c=' + state.c + (state.w ? '&w=' + state.w : '')); } catch (e) {} }
   function fold(title, desc, inner, open) { return '<details class="di-fold di-card" style="padding:12px 16px;margin:0 0 12px"' + (open ? ' open' : '') + '><summary><h3 style="margin:0 0 2px;font-size:16px">' + esc(title) + '</h3><p class="di-movers-hint" style="margin:0">' + esc(desc) + '</p></summary>' + inner + '</details>'; }
@@ -122,7 +124,7 @@
   }
   function tabs(t) {
     return '<div role="group" aria-label="' + esc(t.h1) + '" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px">' + CCS.map(function (cc) {
-      var on = cc === state.c; return '<button type="button" class="di-chip" data-c="' + cc + '" aria-pressed="' + on + '" style="min-height:36px;padding:6px 12px;border-radius:18px;border:1px solid var(--border,#d8d2c0);background:' + (on ? 'var(--accent,#2f5d3a);color:#fff' : 'transparent;color:inherit') + ';font:inherit;font-size:14px;cursor:pointer">' + esc(tabName(cc)) + '</button>'; }).join('') + '</div>';
+      var on = cc === state.c; return '<button type="button" class="di-chip" data-c="' + cc + '" aria-pressed="' + on + '" style="min-height:36px;padding:6px 12px;border-radius:18px;border:1px solid var(--border,#d8d2c0);background:' + (on ? 'var(--accent,#2f5d3a);color:#fff' : 'transparent;color:inherit') + ';font:inherit;font-size:14px;cursor:pointer">' + esc(tabLabel(cc)) + '</button>'; }).join('') + '</div>';
   }
   function render() {
     var l = lg(), t = T[l];
@@ -150,7 +152,7 @@
   if (EMB) {
     var started = false, start = function () { if (started) return; started = true; get('data/blog/countries/index.json').then(function (x) { IDX = x; render(); }).catch(function () { root.innerHTML = '<p>' + esc(T[lg()].err) + '</p>'; }); if (window.DILabelTl && !window.DILabelTl.ready(lg())) window.DILabelTl.load(lg()).then(function (ok) { if (ok) render(); }); };
     var prev = S.onLangChange; S.onLangChange = function () { if (prev) prev.apply(this, arguments); if (started) render(); };
-    window.DehesaSemana = { ccs: CCS, label: tabName, show: function (cc) { if (CCS.indexOf(cc) < 0) return; state.c = cc; state.w = null; start(); render(); } };
+    window.DehesaSemana = { ccs: CCS, label: tabLabel, show: function (cc) { if (CCS.indexOf(cc) < 0) return; state.c = cc; state.w = null; start(); render(); } };
     return;
   }
   S.init('blog');
