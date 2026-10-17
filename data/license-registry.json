@@ -5942,6 +5942,65 @@
     "US": "noaa_fisheries"
    },
    "notes": "EE. UU.: desembarques comerciales de pesca por ano, especie y estado (NOAA Fisheries, FOSS). scripts/update-us-noaa-fish.py."
+  },
+  "data/eurostat-more-stats.json": {
+   "byCountry": {
+    "ES": "eurostat",
+    "FR": "eurostat",
+    "DE": "eurostat",
+    "BE": "eurostat",
+    "AT": "eurostat",
+    "PT": "eurostat",
+    "IT": "eurostat",
+    "DK": "eurostat",
+    "NL": "eurostat",
+    "PL": "eurostat",
+    "EL": "eurostat",
+    "IE": "eurostat",
+    "FI": "eurostat",
+    "BG": "eurostat",
+    "HR": "eurostat",
+    "LT": "eurostat",
+    "SK": "eurostat",
+    "CZ": "eurostat",
+    "EE": "eurostat",
+    "HU": "eurostat",
+    "LV": "eurostat",
+    "RO": "eurostat",
+    "SE": "eurostat",
+    "SI": "eurostat",
+    "EU": "eurostat"
+   },
+   "notes": "Series nacionales adicionales de Eurostat: previsiones y mensuales de carne y aves, plaguicidas, erosion, agua, aves de campo, desperdicio alimentario, silvicultura ampliada, precios de gas y electricidad para empresas, biocombustibles, industrias lacteas, criaderos de acuicultura, procesadores ecologicos y, para la UE, superficie incorporada en el comercio y stocks pesqueros. scripts/update-eurostat-more.py."
+  },
+  "data/eurostat-census-stats.json": {
+   "byCountry": {
+    "ES": "eurostat",
+    "FR": "eurostat",
+    "DE": "eurostat",
+    "BE": "eurostat",
+    "AT": "eurostat",
+    "PT": "eurostat",
+    "IT": "eurostat",
+    "DK": "eurostat",
+    "NL": "eurostat",
+    "PL": "eurostat",
+    "EL": "eurostat",
+    "IE": "eurostat",
+    "FI": "eurostat",
+    "BG": "eurostat",
+    "HR": "eurostat",
+    "LT": "eurostat",
+    "SK": "eurostat",
+    "CZ": "eurostat",
+    "EE": "eurostat",
+    "HU": "eurostat",
+    "LV": "eurostat",
+    "RO": "eurostat",
+    "SE": "eurostat",
+    "SI": "eurostat"
+   },
+   "notes": "Censo agrario y encuestas de estructura de Eurostat por pais y region NUTS 2 (2016, 2020, 2023): formacion y tenencia por edad del jefe, mano de obra, nuevos jefes, tamano economico, tecnologia, maquinaria, renovables, riego, practicas del suelo, ganado, uso del suelo y frutales; mas precios de insumos 2025 (apri_aip_*). scripts/update-eurostat-census.py."
   }
  },
  "derived": [

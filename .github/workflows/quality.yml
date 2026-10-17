@@ -435,6 +435,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-farm-managers.mjs
+      - name: Censo agrario de Eurostat en la ficha de pais y de region (cifras = data/views/census, regiones sin doble conteo, umbral avisado, fuente; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-farm-census.mjs
       - name: PAC España (importes y estimación = los JSON del real decreto; cita del BOE con su texto obligatorio; cambios pendientes visibles; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

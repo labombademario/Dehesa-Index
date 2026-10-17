@@ -338,6 +338,67 @@ def farm_managers():
             if o.get('total'): out[cc] = o
     if out: write('farm-managers.json', {'schemaVersion': 1, 'source': 'eurostat', 'dataset': 'ef_fsi_agesex', 'countries': dict(sorted(out.items()))})
 
+def census():
+    """data/views/census/<PAIS>.json: censo agrario de Eurostat (data/eurostat-census-stats.json) por pais y por region de la ficha.
+    Cada region suma los NUTS 2 que la forman (todo son recuentos o superficies, asi que se pueden sumar); si a algun NUTS le falta un valor, el de la region queda vacio.
+    'abv' lista las tablas en las que algun NUTS solo publica las explotaciones por encima del umbral estadistico (Eurostat no da el total): la ficha lo avisa.
+    Los precios de insumos de 2025 (apri_aip_*) van aparte en input-prices-2025.json. Cifras tal cual: nada se estima."""
+    try: d = load('eurostat-census-stats.json')
+    except Exception as e: print('census', e); return
+    G = d['geo']; T = d['meta']['tables']; made = 0
+    for cc in sorted(k for k in G if len(k) == 2):
+        reg = {}
+        f = D / ('eu-regions-' + cc.lower() + '.json')
+        if f.exists():
+            for rk, r in (json.loads(f.read_text()).get('regions') or {}).items(): reg[rk] = sorted(set(r.get('nuts') or []))   # la lista mezcla niveles (DE1, DE11, DE12): no se pueden sumar todos
+        nat = {ds: ks for ds, ks in G[cc].items() if not ds.startswith('apri_aip')}
+        regions = {}
+        for rk, nuts in reg.items():
+            o = {}; abv = []
+            for ds in nat:
+                if ds in ('ef_fsi_nfm', 'ef_fsi_ecsz'): continue
+                ks_out = {}
+                leaves = [n for n in nuts if not any(m != n and m.startswith(n) for m in nuts)]   # NUTS mas detallados
+                roots = [n for n in nuts if not any(m != n and n.startswith(m) for m in nuts)]    # NUTS mas amplios (por si el detalle no se publica)
+                used = None
+                for k in nat[ds]:
+                    for cand in (leaves, roots):
+                        cols = [G.get(n, {}).get(ds, {}).get(k) for n in cand]
+                        if cand and all(c is not None for c in cols): break
+                    else: continue
+                    used = cand
+                    ks_out[k] = [None if any(c[i] is None for c in cols) else round(sum(c[i] for c in cols), 2) for i in range(len(cols[0]))]
+                if ks_out:
+                    o[ds] = ks_out
+                    if used and any(n in T[ds]['abv'] for n in used): abv.append(ds)
+            if o: o['abv'] = abv; regions[rk] = o
+        doc = {'schemaVersion': 1, 'generatedAt': d.get('generatedAt'), 'cc': cc, 'source': 'eurostat', 'years': {ds: T[ds]['years'] for ds in nat},
+               'abvNat': [ds for ds in nat if cc in T[ds]['abv']], 'nat': nat, 'regions': regions}
+        write('census/' + cc + '.json', doc); made += 1
+    ap = {}; yrs = set()
+    for ds in ('apri_aip_ft', 'apri_aip_fs', 'apri_aip_en'):
+        for g, tb in G.items():
+            for k, vs in (tb.get(ds) or {}).items():
+                code = k.split('|')[0]; y = T[ds]['years']
+                for i, v in enumerate(vs):
+                    if v is not None: ap.setdefault(g if len(g) == 2 else 'EU', {}).setdefault(code, {})[y[i]] = v; yrs.add(y[i])
+    if ap: write('input-prices-2025.json', {'schemaVersion': 1, 'generatedAt': d.get('generatedAt'), 'source': 'eurostat', 'datasets': ['apri_aip_ft', 'apri_aip_fs', 'apri_aip_en'], 'countries': dict(sorted(ap.items()))})
+    print('census', made, 'paises')
+
+def forecasts():
+    """data/views/forecast/<PAIS>.json: previsiones de produccion de carne de Eurostat (apro_mt_ppighq porcino, apro_mt_pcatlhs vacuno, ovino y caprino) hasta 2027.
+    Los periodos aun no terminados van en 'fc' (campo forecast de la serie, data/eurostat-more-stats.json); lo observado reciente, en 'obs'. Cifras tal cual."""
+    try: d = load('eurostat-more-stats.json')
+    except Exception as e: print('forecast', e); return
+    n = 0
+    for cc, c in (d.get('countries') or {}).items():
+        rows = []
+        for x in c.get('series', []):
+            if not x.get('forecast'): continue
+            rows.append({'id': x['id'], 'label': x['label'], 'unit': x['unit'], 'freq': x['frequency'], 'obs': x['points'][-6:], 'fc': x['forecast']})
+        if rows: write('forecast/' + cc + '.json', {'schemaVersion': 1, 'generatedAt': d.get('generatedAt'), 'cc': cc, 'source': 'eurostat', 'series': rows}); n += 1
+    print('forecast', n, 'paises')
+
 def main():
     write('price-revisions.json', price_revisions())
     write('home-summary.json', home_summary())
@@ -349,4 +410,7 @@ def main():
     farm_headlines()
     fish()
     farm_managers()
-main()
+    census()
+    forecasts()
+if len(sys.argv) > 1 and sys.argv[1] in ('census', 'forecasts', 'farm_managers', 'fish'): globals()[sys.argv[1]]()   # uso: build-views.py census (solo esa vista)
+else: main()

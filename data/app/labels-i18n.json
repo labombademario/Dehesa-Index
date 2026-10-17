@@ -9148,5 +9148,185 @@
   "es": "Índice: Electricidad",
   "fr": "Indice : électricité",
   "it": "Indice: elettricità"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Live bovine animals (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Live bovine animals (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos vivos (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins vivants (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini vivi (Migliaia di capi, Eurostat)"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Bovine animals, less than 1 year old (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Bovine animals, less than 1 year old (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos de menos de 1 año (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins de moins d'un an (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini di meno di 1 anno (Migliaia di capi, Eurostat)"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos de 1 año o más (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins d'un an ou plus (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini di 1 anno o più (Migliaia di capi, Eurostat)"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Male bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Male bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos machos de 1 año o más (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins mâles d'un an ou plus (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini maschi di 1 anno o più (Migliaia di capi, Eurostat)"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Heifers (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Heifers (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Novillas (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Génisses (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Giovenche (Migliaia di capi, Eurostat)"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Cows (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Cows (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Vacas (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Vaches (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Vacche (Migliaia di capi, Eurostat)"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Live sheep (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Live sheep (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Ovinos vivos (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Ovins vivants (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Ovini vivi (Migliaia di capi, Eurostat)"
+ },
+ "Meat production, forecast (cattle, sheep, goats): Live goats (Thousand heads (animals), Eurostat)": {
+  "en": "Meat production, forecast (cattle, sheep, goats): Live goats (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Caprinos vivos (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Caprins vivants (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Caprini vivi (Migliaia di capi, Eurostat)"
+ },
+ "Electricity price for non-household consumers, excluding VAT: Consumption from 20 MWh to 499 MWh, band IB (Kilowatt-hour, Eurostat)": {
+  "en": "Electricity price for non-household consumers, excluding VAT: Consumption from 20 MWh to 499 MWh, band IB (Kilowatt-hour, Eurostat)",
+  "es": "Precio de la electricidad para consumidores no domésticos, sin IVA: Consumo de 20 a 499 MWh, banda IB (Kilovatio hora, Eurostat)",
+  "fr": "Prix de l'électricité pour les consommateurs non résidentiels, hors TVA : Consommation de 20 à 499 MWh, tranche IB (Kilowattheure, Eurostat)",
+  "it": "Prezzo dell'elettricità per i consumatori non domestici, IVA esclusa: Consumo da 20 a 499 MWh, fascia IB (Kilowattora, Eurostat)"
+ },
+ "Electricity price for non-household consumers, excluding VAT: Consumption less than 20 MWh, band IA (Kilowatt-hour, Eurostat)": {
+  "en": "Electricity price for non-household consumers, excluding VAT: Consumption less than 20 MWh, band IA (Kilowatt-hour, Eurostat)",
+  "es": "Precio de la electricidad para consumidores no domésticos, sin IVA: Consumo inferior a 20 MWh, banda IA (Kilovatio hora, Eurostat)",
+  "fr": "Prix de l'électricité pour les consommateurs non résidentiels, hors TVA : Consommation inférieure à 20 MWh, tranche IA (Kilowattheure, Eurostat)",
+  "it": "Prezzo dell'elettricità per i consumatori non domestici, IVA esclusa: Consumo inferiore a 20 MWh, fascia IA (Kilowattora, Eurostat)"
+ },
+ "Natural gas price for non-household consumers, excluding VAT: Consumption from 1 000 GJ to 9 999 GJ -band I2 (Kilowatt-hour, Eurostat)": {
+  "en": "Natural gas price for non-household consumers, excluding VAT: Consumption from 1 000 GJ to 9 999 GJ -band I2 (Kilowatt-hour, Eurostat)",
+  "es": "Precio del gas natural para consumidores no domésticos, sin IVA: Consumo de 1 000 a 9 999 GJ, banda I2 (Kilovatio hora, Eurostat)",
+  "fr": "Prix du gaz naturel pour les consommateurs non résidentiels, hors TVA : Consommation de 1 000 à 9 999 GJ, tranche I2 (Kilowattheure, Eurostat)",
+  "it": "Prezzo del gas naturale per i consumatori non domestici, IVA esclusa: Consumo da 1 000 a 9 999 GJ, fascia I2 (Kilowattora, Eurostat)"
+ },
+ "Natural gas price for non-household consumers, excluding VAT: Consumption less than 1 000 GJ, band I1 (Kilowatt-hour, Eurostat)": {
+  "en": "Natural gas price for non-household consumers, excluding VAT: Consumption less than 1 000 GJ, band I1 (Kilowatt-hour, Eurostat)",
+  "es": "Precio del gas natural para consumidores no domésticos, sin IVA: Consumo inferior a 1 000 GJ, banda I1 (Kilovatio hora, Eurostat)",
+  "fr": "Prix du gaz naturel pour les consommateurs non résidentiels, hors TVA : Consommation inférieure à 1 000 GJ, tranche I1 (Kilowattheure, Eurostat)",
+  "it": "Prezzo del gas naturale per i consumatori non domestici, IVA esclusa: Consumo inferiore a 1 000 GJ, fascia I1 (Kilowattora, Eurostat)"
+ },
+ "Freshwater abstraction: Water abstraction by public water supply (Million cubic metres, Eurostat)": {
+  "en": "Freshwater abstraction: Water abstraction by public water supply (Million cubic metres, Eurostat)",
+  "es": "Extracción de agua dulce: Extracción de agua para abastecimiento público (Millones de m³, Eurostat)",
+  "fr": "Prélèvement d'eau douce : Prélèvement d'eau pour l'approvisionnement public (Millions de m³, Eurostat)",
+  "it": "Prelievo di acqua dolce: Prelievo idrico per approvvigionamento pubblico (Milioni di m³, Eurostat)"
+ },
+ "Freshwater abstraction: Water abstraction by agriculture, forestry, fishing (Million cubic metres, Eurostat)": {
+  "en": "Freshwater abstraction: Water abstraction by agriculture, forestry, fishing (Million cubic metres, Eurostat)",
+  "es": "Extracción de agua dulce: Extracción de agua por agricultura, silvicultura y pesca (Millones de m³, Eurostat)",
+  "fr": "Prélèvement d'eau douce : Prélèvement d'eau par l'agriculture, la sylviculture et la pêche (Millions de m³, Eurostat)",
+  "it": "Prelievo di acqua dolce: Prelievo idrico di agricoltura, silvicoltura e pesca (Milioni di m³, Eurostat)"
+ },
+ "Freshwater abstraction: Water abstraction by manufacturing industry (Million cubic metres, Eurostat)": {
+  "en": "Freshwater abstraction: Water abstraction by manufacturing industry (Million cubic metres, Eurostat)",
+  "es": "Extracción de agua dulce: Extracción de agua por la industria manufacturera (Millones de m³, Eurostat)",
+  "fr": "Prélèvement d'eau douce : Prélèvement d'eau par l'industrie manufacturière (Millions de m³, Eurostat)",
+  "it": "Prelievo di acqua dolce: Prelievo idrico dell'industria manifatturiera (Milioni di m³, Eurostat)"
+ },
+ "Freshwater abstraction: Total gross abstraction (Million cubic metres, Eurostat)": {
+  "en": "Freshwater abstraction: Total gross abstraction (Million cubic metres, Eurostat)",
+  "es": "Extracción de agua dulce: Extracción bruta total (Millones de m³, Eurostat)",
+  "fr": "Prélèvement d'eau douce : Prélèvement brut total (Millions de m³, Eurostat)",
+  "it": "Prelievo di acqua dolce: Prelievo lordo totale (Milioni di m³, Eurostat)"
+ },
+ "Freshwater abstraction: Water abstraction by agriculture, forestry, fishing, irrigation (Million cubic metres, Eurostat)": {
+  "en": "Freshwater abstraction: Water abstraction by agriculture, forestry, fishing, irrigation (Million cubic metres, Eurostat)",
+  "es": "Extracción de agua dulce: Extracción de agua por agricultura, silvicultura y pesca: riego (Millones de m³, Eurostat)",
+  "fr": "Prélèvement d'eau douce : Prélèvement d'eau par l'agriculture, la sylviculture et la pêche : irrigation (Millions de m³, Eurostat)",
+  "it": "Prelievo di acqua dolce: Prelievo idrico di agricoltura, silvicoltura e pesca: irrigazione (Milioni di m³, Eurostat)"
+ },
+ "Organic slaughter: Bovine meat (Tonne, Eurostat)": {
+  "en": "Organic slaughter: Bovine meat (Tonne, Eurostat)",
+  "es": "Sacrificio ecológico: Carne de vacuno (Toneladas, Eurostat)",
+  "fr": "Abattage biologique : Viande bovine (Tonnes, Eurostat)",
+  "it": "Macellazione biologica: Carne bovina (Tonnellate, Eurostat)"
+ },
+ "Organic slaughter: Pigmeat (Tonne, Eurostat)": {
+  "en": "Organic slaughter: Pigmeat (Tonne, Eurostat)",
+  "es": "Sacrificio ecológico: Carne de porcino (Toneladas, Eurostat)",
+  "fr": "Abattage biologique : Viande porcine (Tonnes, Eurostat)",
+  "it": "Macellazione biologica: Carne suina (Tonnellate, Eurostat)"
+ },
+ "Organic slaughter: Meat of sheep and goats (Tonne, Eurostat)": {
+  "en": "Organic slaughter: Meat of sheep and goats (Tonne, Eurostat)",
+  "es": "Sacrificio ecológico: Carne de ovino y caprino (Toneladas, Eurostat)",
+  "fr": "Abattage biologique : Viande d'ovins et de caprins (Tonnes, Eurostat)",
+  "it": "Macellazione biologica: Carne ovina e caprina (Tonnellate, Eurostat)"
+ },
+ "Pigmeat production, forecast (Thousand heads (animals), Eurostat)": {
+  "en": "Pigmeat production, forecast (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción de porcino (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production de porcins (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione di suini (Migliaia di capi, Eurostat)"
+ },
+ "Poultry, monthly: Chicks of mixed meat-laying breeds (Thousand, Eurostat)": {
+  "en": "Poultry, monthly: Chicks of mixed meat-laying breeds (Thousand, Eurostat)",
+  "es": "Aves, mensual: pollitos de razas mixtas carne-puesta (Miles, Eurostat)",
+  "fr": "Volailles, mensuel : poussins de races mixtes chair-ponte (Milliers, Eurostat)",
+  "it": "Pollame, mensile: pulcini di razze miste carne-uova (Migliaia, Eurostat)"
+ },
+ "Organic processors: Processing and preserving of meat and production of meat products (Number, Eurostat)": {
+  "en": "Organic processors: Processing and preserving of meat and production of meat products (Number, Eurostat)",
+  "es": "Procesadores ecológicos: Procesado y conservación de carne y elaboración de productos cárnicos (Número, Eurostat)",
+  "fr": "Transformateurs biologiques : Transformation et conservation de la viande et fabrication de produits à base de viande (Nombre, Eurostat)",
+  "it": "Trasformatori biologici: Lavorazione e conservazione della carne e prodotti a base di carne (Numero, Eurostat)"
+ },
+ "Organic processors: Processing and preserving of fruit and vegetables (Number, Eurostat)": {
+  "en": "Organic processors: Processing and preserving of fruit and vegetables (Number, Eurostat)",
+  "es": "Procesadores ecológicos: Procesado y conservación de frutas y hortalizas (Número, Eurostat)",
+  "fr": "Transformateurs biologiques : Transformation et conservation de fruits et légumes (Nombre, Eurostat)",
+  "it": "Trasformatori biologici: Lavorazione e conservazione di frutta e ortaggi (Numero, Eurostat)"
+ },
+ "Organic processors: Processing and preserving of fish, crustaceans and molluscs (Number, Eurostat)": {
+  "en": "Organic processors: Processing and preserving of fish, crustaceans and molluscs (Number, Eurostat)",
+  "es": "Procesadores ecológicos: Procesado y conservación de pescados, crustáceos y moluscos (Número, Eurostat)",
+  "fr": "Transformateurs biologiques : Transformation et conservation de poissons, crustacés et mollusques (Nombre, Eurostat)",
+  "it": "Trasformatori biologici: Lavorazione e conservazione di pesci, crostacei e molluschi (Numero, Eurostat)"
+ },
+ "Organic processors: Manufacture of vegetable and animal oils and fats (Number, Eurostat)": {
+  "en": "Organic processors: Manufacture of vegetable and animal oils and fats (Number, Eurostat)",
+  "es": "Procesadores ecológicos: Fabricación de aceites y grasas vegetales y animales (Número, Eurostat)",
+  "fr": "Transformateurs biologiques : Fabrication d'huiles et graisses végétales et animales (Nombre, Eurostat)",
+  "it": "Trasformatori biologici: Produzione di oli e grassi vegetali e animali (Numero, Eurostat)"
+ },
+ "Organic processors: Manufacture of dairy products (Number, Eurostat)": {
+  "en": "Organic processors: Manufacture of dairy products (Number, Eurostat)",
+  "es": "Procesadores ecológicos: Fabricación de productos lácteos (Número, Eurostat)",
+  "fr": "Transformateurs biologiques : Fabrication de produits laitiers (Nombre, Eurostat)",
+  "it": "Trasformatori biologici: Produzione di prodotti lattiero-caseari (Numero, Eurostat)"
+ },
+ "Meat, monthly: Bovine meat (Thousand tonnes, Eurostat)": {
+  "en": "Meat, monthly: Bovine meat (Thousand tonnes, Eurostat)",
+  "es": "Carne, mensual: Carne de vacuno (Miles de toneladas, Eurostat)",
+  "fr": "Viande, mensuel : Viande bovine (Milliers de tonnes, Eurostat)",
+  "it": "Carne, mensile: Carne bovina (Migliaia di tonnellate, Eurostat)"
+ },
+ "Meat, monthly: Pigmeat (Thousand tonnes, Eurostat)": {
+  "en": "Meat, monthly: Pigmeat (Thousand tonnes, Eurostat)",
+  "es": "Carne, mensual: Carne de porcino (Miles de toneladas, Eurostat)",
+  "fr": "Viande, mensuel : Viande porcine (Milliers de tonnes, Eurostat)",
+  "it": "Carne, mensile: Carne suina (Migliaia di tonnellate, Eurostat)"
+ },
+ "Grapes for wine production (producer price, Eurostat)": {
+  "en": "Grapes for wine production (producer price, Eurostat)",
+  "es": "Uva para vinificación (precio al productor, Eurostat)",
+  "fr": "Raisins de cuve (prix à la production, Eurostat)",
+  "it": "Uva da vino (prezzo alla produzione, Eurostat)"
  }
 }

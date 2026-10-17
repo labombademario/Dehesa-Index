@@ -566,7 +566,7 @@
       return '<section class="di-card" style="padding:14px 18px"><h2 style="margin:0 0 4px;font-size:17px">' + esc(g[0]) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(g[1]) + '</p>' + part(g[2], W) + part(g[3], Q) + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(g[5] + (d.regionSource ? d.regionSource.name + ' (' + d.regionSource.license + ').' : '')) + (d.regionSource && d.regionSource.partial ? ' ' + esc(GIP[lang()] || GIP.es) : '') + '</p></section>';
     });
   }
-  var MOD_NAME = { gi: 'gi', auex: 'auex', recan: 'recan', eaa: 'eaa', ercrops: 'ercrops', erlive: 'erlive', erfarms: 'erfarms', deprices: 'deprices', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
+  var MOD_NAME = { census: 'census', gi: 'gi', auex: 'auex', recan: 'recan', eaa: 'eaa', ercrops: 'ercrops', erlive: 'erlive', erfarms: 'erfarms', deprices: 'deprices', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
   /* Economía y población de la región (Eurostat NUTS 2): PIB, PIB por habitante (calculado), población y paro. Solo lo que Eurostat publica para esa región. */
   var MAC = {
     es: { t: 'Economía y población', sub: 'PIB, población y paro de la región según Eurostat (nivel NUTS 2). Solo se muestra lo que la fuente publica.', gdp: 'PIB', gdppc: 'PIB por habitante', pop: 'Población', unemp: 'Paro (15-74 años)', yoy: 'frente al año anterior', note: 'El PIB por habitante lo calcula Dehesa Index dividiendo el PIB por la población de 1 de enero. La tasa de paro y el resto de cifras aparecen solo cuando Eurostat las publica para esa región; Dehesa Index no las estima ni suma tasas.', mn: ' M', bn: ' mil M' },
@@ -643,11 +643,24 @@
     Object.keys(M.mods).forEach(function (c) { if (!MODS[c]) MODS[c] = []; M.mods[c].forEach(function (m) { MODS[c].push(m); MOD_NAME[m[0]] = m[0]; }); });
     OPTIONAL = M.optional || {};
   })();
+  /* Censo agrario de Eurostat de la región (js/farm-census.js, data/views/census/<PAIS>.json): jefes, mano de obra, tecnología, riego, prácticas y estructura. */
+  var CENSUS_CC = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'PL', 'EL', 'IE', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'HU', 'RO', 'SE', 'SI'];
+  var censusJs = null;
+  function euCensus(x) {
+    censusJs = censusJs || new Promise(function (ok) { if (window.DIFarmCensus) return ok(); var sc = document.createElement('script'); sc.src = 'js/farm-census.js?v=0'; sc.onload = ok; sc.onerror = ok; document.head.appendChild(sc); });
+    return censusJs.then(function () { return window.DIFarmCensus ? window.DIFarmCensus.html(lang(), x.c, x.r) : ''; }).then(function (h) { return h || null; });
+  }
+  (function () {
+    var TX = { es: 'Censo agrario', en: 'Farm census', fr: 'Recensement agricole', it: 'Censimento agricolo' };
+    Object.keys(TX).forEach(function (l) { if (T[l]) T[l].census = TX[l]; });
+    MOD_NAME.census = 'census'; OPTIONAL.census = true;   // regiones sin cifras del censo (p. ej. las que Eurostat no publica) no se listan como «sin datos»
+    CENSUS_CC.forEach(function (c) { if (MODS[c]) MODS[c].push(['census', euCensus]); });
+  })();
   (function () {
     /* Orden unico en todos los paises: resumen, precios y mercado, costes, produccion (cuentas, cultivos, ganado, explotaciones), PAC y seguros, clima y comercio. Estable: dentro de cada grupo se respeta el orden de cada pais. */
     var RANK = { macro: 0, usprices: 10, prices: 10, bids: 11, local: 12, deprices: 13, mb: 14, fert: 20, fuel: 21, usfuel: 21, costs: 22, tax: 23, usland: 24, deland: 24,
       eaa: 30, recan: 31, inc: 32, rec: 33, usincome: 34, usrecv: 35, crops: 40, cacrops: 40, ercrops: 40, escrops: 40, vig: 80, cere: 41, deprod: 41, nlcrops: 41, usstocks: 42,
-      cattle: 50, lvst: 50, erlive: 50, eslv: 51, essl: 52, esmilk: 53, usslaughter: 54, usdairy: 55, delive: 56, erfarms: 60, uscensus: 61, usarc: 70, ins: 71, insca: 71, drought: 80, clim: 81, auex: 90 };
+      cattle: 50, lvst: 50, erlive: 50, eslv: 51, essl: 52, esmilk: 53, usslaughter: 54, usdairy: 55, delive: 56, erfarms: 60, census: 62, uscensus: 61, usarc: 70, ins: 71, insca: 71, drought: 80, clim: 81, auex: 90 };
     Object.keys(MODS).forEach(function (c) { var L = MODS[c].map(function (m, i) { return [m, i, RANK[m[0]] == null ? 65 : RANK[m[0]]]; }); L.sort(function (a, b) { return a[2] - b[2] || a[1] - b[1]; }); MODS[c] = L.map(function (e) { return e[0]; }); });
   })();
   /* ---------- mapa y página ---------- */

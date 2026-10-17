@@ -1,14 +1,14 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-16T21:41:38Z",
+ "generatedAt": "2026-10-17T02:03:56Z",
  "summary": {
   "sources": 140,
   "sourcesApto": 127,
   "sourcesCondiciones": 8,
   "sourcesNoApto": 5,
-  "datasets": 278,
+  "datasets": 280,
   "datasets_apto": 161,
-  "datasets_condiciones": 105,
+  "datasets_condiciones": 107,
   "datasets_parcial": 4,
   "datasets_no-apto": 4,
   "datasets_reviewBeforeSelling": 0,

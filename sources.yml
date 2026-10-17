@@ -338,6 +338,24 @@ sources:
     data: [eurostat-fish-stats.json]
     log: eurostat-fish-log.txt
     message: Pesca y acuicultura por pais (Eurostat)
+  - id: eurostat-more
+    name: Update Eurostat extra national series (forecasts, monthly meat and poultry, environment, forestry, energy, dairy, aquaculture, organic)
+    cron: ['25 6 12 * *']
+    script: scripts/update-eurostat-more.py
+    timeout: 60
+    script_timeout: 50
+    data: [eurostat-more-stats.json]
+    log: eurostat-more-log.txt
+    message: Series nacionales adicionales de Eurostat (previsiones, mensuales, ambiente, silvicultura, energia, lacteo, acuicultura, ecologico)
+  - id: eurostat-census
+    name: Update Eurostat farm census by region (managers, labour, technology, practices, irrigation, livestock, land use, orchards, 2025 input prices)
+    cron: ['45 6 13 * *']
+    script: scripts/update-eurostat-census.py
+    timeout: 60
+    script_timeout: 50
+    data: [eurostat-census-stats.json]
+    log: eurostat-census-log.txt
+    message: Censo agrario de Eurostat por region NUTS 2 y precios de insumos 2025
   - id: us-noaa-fish
     name: Update U.S. commercial fish landings (NOAA Fisheries FOSS)
     cron: ['35 6 11 * *']

@@ -1,28 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T00:49:00Z",
+ "generatedAt": "2026-10-17T02:08:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 206,
   "late": 1,
   "error": 0,
   "not_run": 1,
-  "unknown": 0
+  "unknown": 2
  },
  "global": "late",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "191f1f55",
+   "sha": "68863364",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/87dece24-1a08-474e-93cb-da2f9e6c363b",
-   "completedAt": "2026-10-17T00:17:16Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/d465be53-13cf-47e4-a7c5-36e1b95b7a21",
+   "completedAt": "2026-10-17T00:56:03Z"
   },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-16T21:40:29.763663+00:00",
-  "repoGeneratedAt": "2026-10-16T21:40:29.763663+00:00",
-  "checkedAt": "2026-10-17T00:49:00Z"
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-17T00:54:16.324005+00:00",
+  "checkedAt": "2026-10-17T02:08:00Z"
  },
  "pipelines": [
   {
@@ -1975,6 +1975,19 @@
    "expectedEveryHours": 744.0
   },
   {
+   "workflow": "update-eurostat-census.yml",
+   "name": "Update Eurostat farm census by region (managers, labour, technology, practices, irrigation, livestock, land use, orchards, 2025 input prices)",
+   "crons": [
+    "45 6 13 * *"
+   ],
+   "nextRun": "2026-11-13T06:45:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-eurostat-depth.yml",
    "name": "Update Eurostat depth (ES, FR, DK, NL, BE, DE, EU-27)",
    "crons": [
@@ -2042,6 +2055,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 384.0
+  },
+  {
+   "workflow": "update-eurostat-more.yml",
+   "name": "Update Eurostat extra national series (forecasts, monthly meat and poultry, environment, forestry, energy, dairy, aquaculture, organic)",
+   "crons": [
+    "25 6 12 * *"
+   ],
+   "nextRun": "2026-11-12T06:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-eurostat-structure.yml",
@@ -3089,9 +3115,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-16T22:08:46Z",
-    "durationSec": 85,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38973953272"
+    "startedAt": "2026-10-17T01:15:39Z",
+    "durationSec": 61,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38990091404"
    },
    "recent": {
     "runs": 10,
@@ -3111,35 +3137,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-16T21:40:30Z"
+     "lastChange": "2026-10-17T00:54:18Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-16T21:40:30Z"
+     "lastChange": "2026-10-17T00:54:18Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-16T21:40:30Z"
+     "lastChange": "2026-10-17T00:54:18Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-16T21:40:30Z"
+     "lastChange": "2026-10-17T00:54:18Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-16T21:40:30Z"
+     "lastChange": "2026-10-17T00:54:18Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-16T21:36:49Z",
-    "durationSec": 225,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38970550166"
+    "startedAt": "2026-10-17T00:49:12Z",
+    "durationSec": 310,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38988108314"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -3345,15 +3371,15 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-16T23:53:16Z"
+     "lastChange": "2026-10-17T00:51:35Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-16T23:53:16Z"
+     "lastChange": "2026-10-17T00:51:35Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3361,18 +3387,18 @@
      "series": 32,
      "points": 4434,
      "lines": 0,
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/product-compare.json",
@@ -3389,7 +3415,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/products"
@@ -3400,7 +3426,7 @@
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -3415,26 +3441,26 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -3442,7 +3468,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-16T23:53:53Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3450,7 +3476,7 @@
     },
     {
      "path": "data/cap/index.json",
-     "lastChange": "2026-10-16T00:50:29Z"
+     "lastChange": "2026-10-17T00:52:20Z"
     },
     {
      "path": "data/blog/posts.json",
@@ -3465,14 +3491,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-16T23:50:22Z",
-    "durationSec": 218,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38983497475"
+    "event": "schedule",
+    "startedAt": "2026-10-17T00:48:38Z",
+    "durationSec": 229,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38988068445"
    },
    "recent": {
-    "runs": 9,
-    "success": 5,
+    "runs": 10,
+    "success": 6,
     "failed": 4
    },
    "status": "ok",
