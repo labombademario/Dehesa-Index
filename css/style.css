@@ -2775,3 +2775,16 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .pp-sum-sec { margin: 4px 0 12px; }
 .pp-sum-sec .sec-hint { display: none; }
 .pp-sum-sec .sec-bar { margin: 0; padding: 0; background: none; border: 0; box-shadow: none; }
+
+/* «La semana en…»: titulares agrupados por día (js/semana.js newsHtml) */
+.sw-news { margin: 6px 0 0; }
+.sw-day { margin: 14px 0 6px; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+.sw-day:first-child { margin-top: 4px; }
+.sw-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.sw-list li + li { border-top: 1px solid var(--border); }
+.sw-item { display: block; padding: 10px 14px; color: inherit; text-decoration: none; }
+.sw-item:hover, .sw-item:focus-visible { background: color-mix(in srgb, var(--accent) 7%, transparent); outline: none; }
+.sw-h { display: block; font-size: 15.5px; line-height: 1.4; font-weight: 600; }
+.sw-item:hover .sw-h { text-decoration: underline; }
+.sw-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 5px; font-size: 12.5px; color: var(--text-muted); }
+.sw-tag { padding: 1px 9px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--text-primary, inherit); font-weight: 600; font-size: 12px; }

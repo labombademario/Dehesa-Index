@@ -94,6 +94,19 @@
           (withPrev ? td(t.prev, esc(num(r.prevValue)) + ' <span class="di-movers-hint">' + esc(per(r.prevPeriod || '')) + '</span>') : '') + td(t.ch, esc(pct(r.changePct))) + '</tr>';
       }).join('') + '</tbody></table></div>';
   }
+  /* Titulares: agrupados por día (el más reciente primero), cada uno con su tema, el titular entero (sin cortar) y el medio debajo */
+  var TOP = { es: { clima: 'Clima', costes: 'Costes', comercio: 'Comercio', politica: 'Política agraria', oferta: 'Oferta y cosecha', tecnologia: 'Tecnología', energia: 'Energía', ayudas: 'Ayudas', precios: 'Precios y mercado', sanidad: 'Sanidad animal' },
+    en: { clima: 'Weather', costes: 'Costs', comercio: 'Trade', politica: 'Agricultural policy', oferta: 'Supply & harvest', tecnologia: 'Technology', energia: 'Energy', ayudas: 'Support & aid', precios: 'Prices & markets', sanidad: 'Animal health' },
+    fr: { clima: 'Climat', costes: 'Coûts', comercio: 'Commerce', politica: 'Politique agricole', oferta: 'Offre & récolte', tecnologia: 'Technologie', energia: 'Énergie', ayudas: 'Aides', precios: 'Prix et marchés', sanidad: 'Santé animale' },
+    it: { clima: 'Clima', costes: 'Costi', comercio: 'Commercio', politica: 'Politica agricola', oferta: 'Offerta e raccolto', tecnologia: 'Tecnologia', energia: 'Energia', ayudas: 'Aiuti', precios: 'Prezzi e mercati', sanidad: 'Sanità animale' } };
+  function dayFmt(iso) { var p = String(iso).split('-'); try { var x = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lg(), { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }); return x.charAt(0).toUpperCase() + x.slice(1); } catch (e) { return iso; } }
+  function newsHtml(list, t, l) {
+    var days = [], by = {}; list.slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; }).forEach(function (n) { if (!by[n.date]) { by[n.date] = []; days.push(n.date); } by[n.date].push(n); });
+    return '<div class="sw-news">' + days.map(function (dd) {
+      return '<div class="sw-day">' + esc(dayFmt(dd)) + '</div><ul class="sw-list">' + by[dd].map(function (n) {
+        var tp = (TOP[l] || TOP.es)[n.topic];
+        return '<li><a class="sw-item" href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer"><span class="sw-h">' + esc(n.h) + '</span><span class="sw-meta">' + (tp ? '<span class="sw-tag">' + esc(tp) + '</span>' : '') + '<span class="sw-src">' + esc(n.source) + (n.lang && n.lang !== l ? ' · ' + esc(t.lang) + ': ' + esc(n.lang.toUpperCase()) : '') + ' ↗</span></span></a></li>'; }).join('') + '</ul>'; }).join('') + '</div>';
+  }
   function body(d) {
     var l = lg(), t = T[l], c = cname(d.country), m = MEDIA[d.country][l], tt = d.totals, out = [];
     var parts = ['precios', 'produccion', 'comercio', 'costes', 'otros'].filter(function (k) { return tt.byBlock[k]; }).map(function (k) { return fill(t.parts[k], { n: num(tt.byBlock[k]) }); });
@@ -112,8 +125,7 @@
       (d.coverage.from > d.from ? '<p class="di-movers-hint" style="margin:6px 0 0">' + esc(fill(t.cov, { d: dfmt(d.coverage.from, true) })) + '</p>' : '') + '</article>');
     if (mv.length) out.push(fold(t.movers, t.moversD, table(mv, t, true)));
     if (d.releases.length) out.push(fold(t.releases, t.releasesD, table(d.releases, t, false)));
-    if (d.news.length) out.push(fold(t.news, fill(t.newsD, { m: m.charAt(0).toUpperCase() + m.slice(1) }), '<ul style="margin:6px 0 0 18px;padding:0;line-height:1.5">' + d.news.map(function (n) {
-      return '<li><a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' + esc(n.h) + '</a> <span class="di-movers-hint">' + esc(n.source) + ' · ' + esc(dfmt(n.date)) + (n.lang && n.lang !== l ? ' · ' + esc(t.lang) + ': ' + esc(n.lang.toUpperCase()) : '') + '</span></li>'; }).join('') + '</ul>'));
+    if (d.news.length) out.push(fold(t.news, fill(t.newsD, { m: m.charAt(0).toUpperCase() + m.slice(1) }), newsHtml(d.news, t, l), true));
     out.push('<p style="margin:4px 0 12px"><a href="paises.html?c=' + esc(d.country) + '">' + esc(fill(t.more, { c: tabName(d.country) })) + '</a>' + (EMB ? '' : ' · <a href="blog.html">' + esc(t.blog) + '</a>') + '</p>');
     return out.join('');
   }
