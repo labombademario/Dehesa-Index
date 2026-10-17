@@ -1,0 +1,24 @@
+wasde-node ERR <HTTPError 403: 'Forbidden'>
+wasde-page 200 160489 bytes, 6 file links
+ers-sap 200 43173 bytes, 3 file links
+ers-sap-doc 200 113479 bytes, 0 file links
+ers-lm 200 47536 bytes, 10 file links
+ers-lm2 200 47536 bytes, 10 file links
+esmis-fo 200 56202 bytes, 30 file links
+esmis-gc 200 55781 bytes, 30 file links
+esmis-fm 200 48783 bytes, 30 file links
+ams-2991 200 119732 bytes, 0 file links
+ams-2992 200 17 bytes, 0 file links
+ams-2992b ERR <HTTPError 403: 'Forbidden'>
+NO https://www.usda.gov/sites/default/files/documents/oce-wasde-report-data-2026-10.csv 'HTTP Error 403: Forbidden'
+NO https://www.usda.gov/oce/commodity/wasde/oce-wasde-report-data-2026-10.csv 'HTTP Error 404: Not Found'
+NO https://www.usda.gov/sites/default/files/documents/oce-wasde-report-data-2026-10-V2.csv 'HTTP Error 403: Forbidden'
+NO https://www.usda.gov/oce/commodity/wasde/oce-wasde-report-data-2026-10-V2.csv 'HTTP Error 404: Not Found'
+NO https://www.usda.gov/sites/default/files/documents/oce-wasde-report-data-2026-09.csv 'HTTP Error 403: Forbidden'
+NO https://www.usda.gov/oce/commodity/wasde/oce-wasde-report-data-2026-09.csv 'HTTP Error 404: Not Found'
+NO https://www.usda.gov/sites/default/files/documents/oce-wasde-report-data-2026-09-V2.csv 'HTTP Error 403: Forbidden'
+NO https://www.usda.gov/oce/commodity/wasde/oce-wasde-report-data-2026-09-V2.csv 'HTTP Error 404: Not Found'
+NO https://www.usda.gov/sites/default/files/documents/oce-wasde-report-data-2026-08.csv 'HTTP Error 403: Forbidden'
+NO https://www.usda.gov/oce/commodity/wasde/oce-wasde-report-data-2026-08.csv 'HTTP Error 404: Not Found'
+NO https://www.usda.gov/sites/default/files/documents/oce-wasde-report-data-2026-08-V2.csv 'HTTP Error 403: Forbidden'
+NO https://www.usda.gov/oce/commodity/wasde/oce-wasde-report-data-2026-08-V2.csv 'HTTP Error 404: Not Found'

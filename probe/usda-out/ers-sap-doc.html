@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<noscript><style>form.antibot > * { display: none !important; } form.antibot noscript { display: block !important; }</style>
+</noscript><meta name="description" content="Documentation for ERS&#039; Season-Average Price Forecast Data Set. This data product provides three Excel spreadsheet models that use futures prices to forecast the U.S. season-average price received and the implied CCP for three major field crops (corn, soybeans, and wheat). Users can view the model forecasts or create their own forecast by inserting different values for futures prices, basis values, or marketing weights." />
+<link rel="canonical" href="http://ers.usda.gov/data-products/season-average-price-forecasts/documentation" />
+<meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="gWMZ-j8KBKzSJytO2xaxEcmizd4UT6Ng04GlyACWD-c" />
+<link rel="icon" href="/themes/custom/uswds_ers/favicon.ico" type="image/vnd.microsoft.icon" />
+
+  <title>Season-Average Price Forecasts - Documentation | Economic Research Service</title>
+  <link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?tn04dr" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?tn04dr" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?tn04dr" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?tn04dr" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?tn04dr" />
+<link rel="stylesheet" media="all" href="/themes/custom/uswds_ers/package/dist/css/uswds.css?tn04dr" />
+<link rel="stylesheet" media="all" href="/themes/custom/uswds_ers/assets/stylesheets/custom.css?tn04dr" />
+
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/3934","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"dataLayer":{"page":{"nid":"3934","chartId":"","pubId":"","title":"Season-Average Price Forecasts - Documentation","date":"2026-10-13","type":"Basic Page","series":"","authors":["Joshua Huang"],"division":"","breadcrumbs":["Data Products","Season-Average Price Forecasts","Documentation"],"pageName":"","siteSectionSecondLevel":"","siteSectionThirdLevel":"","siteSectionFourthLevel":""}},"csp":{"nonce":"oRZY3mU8cDniGRltqu_rfg"},"user":{"uid":0,"permissionsHash":"6098fea00c5b73e7308eddae5d9abb80b7227c6555765be781c5aa4f4d699378"}}</script>
+<script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=11.4.10"></script>
+<script src="/core/misc/drupal.js?v=11.4.10"></script>
+<script src="/core/misc/drupal.init.js?v=11.4.10"></script>
+<script src="/modules/custom/ers_blocks/js/AppMeasurement.js?v=2.26.0.3"></script>
+<script src="/modules/custom/ers_blocks/js/VisitorAPI.js?v=5.5.0.1"></script>
+<script src="/modules/custom/ers_blocks/js/adobeAnalyticsUsdaErs.js?v=1.0.2"></script>
+<script src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&amp;subagency=ERS" async id="_fed_an_ua_tag"></script>
+<script src="/modules/custom/ers_blocks/js/google_analytics_ers.js?v=1.0.1"></script>
+
+    <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MK4SCKB6');</script>
+  <!-- End Google Tag Manager -->
+  </head>
+<body>
+<a href="#main-content" class="usa-sr-only focusable">
+  Skip to main content
+</a>
+
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<!-- Skip link -->
+<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+<!-- Official Website Banner -->
+<section class="usa-banner" aria-label="Official website of the United States government">
+	<div class="usa-accordion">
+		<header class="usa-banner__header">
+			<div class="usa-banner__inner">
+				<div class="grid-col-auto">
+					<img aria-hidden="true" class="usa-banner__header-flag" src="/themes/custom/uswds_ers/package/dist/img//us_flag_small.png" alt="" />
+				</div>
+				<div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
+					<p class="usa-banner__header-text"> An official website of the United States government </p>
+					<p class="usa-banner__header-action">Here’s how you know</p>
+				</div>
+				<button type="button" class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="gov-banner-default-default">
+					<span class="usa-banner__button-text">Here’s how you know</span>
+				</button>
+			</div>
+		</header>
+		<div class="usa-banner__content usa-accordion__content" id="gov-banner-default-default">
+			<div class="grid-row grid-gap-lg">
+				<div class="usa-banner__guidance tablet:grid-col-6">
+					<img class="usa-banner__icon usa-media-block__img" src="/themes/custom/uswds_ers/package/dist/img//icon-dot-gov.svg" role="img" alt="" aria-hidden="true" />
+					<div class="usa-media-block__body">
+						<p>
+							<strong>Official websites use .gov</strong>
+							<br />A <strong>.gov</strong> website belongs to an official government organization in the United States.
+						</p>
+					</div>
+				</div>
+				<div class="usa-banner__guidance tablet:grid-col-6">
+					<img class="usa-banner__icon usa-media-block__img" src="/themes/custom/uswds_ers/package/dist/img//icon-https.svg" role="img" alt="" aria-hidden="true" />
+					<div class="usa-media-block__body">
+						<p>
+							<strong>Secure .gov websites use HTTPS</strong>
+							<br />A <strong>lock</strong> ( <span class="icon-lock">
+								<svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-description-default" focusable="false">
+									<title id="banner-lock-title-default">Lock</title>
+									<desc id="banner-lock-description-default">Locked padlock icon</desc>
+									<path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" />
+								</svg>
+							</span>) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Site alert -->
+	<section id="site-alert">
+		
+	</section>
+
+<!-- Overlay -->
+<div class="usa-overlay"></div>
+
+<!-- Header & Navigation -->	
+<header class="usa-header usa-header--extended">
+	<div class="usa-navbar">
+		<div class="usa-logo" id="logo">
+			<a href="/">
+				<div class="grid-row flex-align-center grid-gap-1 desktop:grid-gap-2">
+					<div class="grid-col-auto">
+						<img class="width-6 tablet:width-7 desktop:width-8" src="/themes/custom/uswds_ers/logo.svg" alt="U.S. Department of Agriculture logo">
+					</div>
+					<div class="grid-col-fill">
+						<em class="usa-logo__text margin-bottom-05 font-sans-sm tablet:font-sans-md desktop:font-sans-lg">Economic Research Service</em>
+						<span class="font-sans-3xs tablet:font-sans-2xs desktop:font-sans-xs display-block">U.S. DEPARTMENT OF AGRICULTURE</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<button type="button" class="usa-menu-btn">Menu</button>
+	</div>
+	<nav aria-label="Primary navigation" class="usa-nav">
+		<div class="usa-nav__inner">
+			<button type="button" class="usa-nav__close">
+				<img src="/themes/custom/uswds_ers/package/dist/img//usa-icons/close.svg" role="img" alt="">
+			</button>
+			<ul class="usa-nav__primary usa-accordion">
+									<li class="usa-nav__primary-item">
+						<a href="/topics" class="usa-nav__link simple-link">Topics</a>
+					</li>
+																					<li class="usa-nav__primary-item">
+						<button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="extended-mega-nav-section-2">
+							<span>Data</span>
+						</button>
+						<div id="extended-mega-nav-section-2" class="usa-nav__submenu usa-megamenu" hidden="">
+							<div class="grid-row grid-gap-4">
+								<div class="usa-col">
+									  <div>
+    
+
+<div  id="block-navdatacolumn1" class="block block-block-content block-block-content6dbf8ad9-725a-4bf7-a060-c8d76690c5b7">
+	
+						<p class="hide-mobile hide-tablet margin-top-1 margin-bottom-0 font-sans-xl text-bold text-primary-dark">Access the Data</p>
+							<p class="hide-mobile hide-tablet line-height-sans-3">Access and analyze data sets, maps, charts and graphs.</p>
+							<a href="/data-products" class="usa-button margin-top-2 desktop:margin-top-0">Browse All Data</a>
+			</div>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									  <div>
+    
+
+<ul  id="block-navdatacolumn2" class="usa-nav__submenu-list block block-block-content block-block-contenta6258f45-9115-46d5-8c89-26b57c9843bd">
+	
+						<li class="usa-nav__submenu-item desktop:border-bottom">
+				<p class="desktop:margin-bottom-1 text-bold font-sans-sm">Data by Type</p>
+				<p class="hide-mobile hide-tablet margin-top-0 font-sans-3xs line-height-sans-3">Access the Data</p>
+			</li>
+																																																																																						<li class="usa-nav__submenu-item">
+					<a href="/data-products?type=charts">Charts</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?type=downloadable-data-files">Downloadable Data Files</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?type=queryable-data-applications">Queryable Data Applications</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?type=maps">Maps</a>
+				</li>
+																</ul>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									  <div>
+    
+
+<ul  id="block-navdatacolumn3" class="usa-nav__submenu-list block block-block-content block-block-content1f045922-8309-408f-b4be-bac727e100ee">
+	
+						<li class="usa-nav__submenu-item desktop:border-bottom">
+				<p class="desktop:margin-bottom-1 text-bold font-sans-sm">Data by Topic</p>
+				<p class="hide-mobile hide-tablet margin-top-0 font-sans-3xs line-height-sans-3">Explore the Data Repository</p>
+			</li>
+																																																																																						<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=animal-products">Animal Products</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=crops">Crops</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=farm-bill">Farm Bill</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=farm-economy">Farm Economy</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=farm-practices-management">Farm Practices &amp; Management</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=food-nutrition-assistance">Food &amp; Nutrition Assistance</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=food-choices-health">Food Choices &amp; Health</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=food-markets-prices">Food Markets &amp; Prices</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=food-safety">Food Safety</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=international-markets-us-trade">International Markets &amp; U.S. Trade</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=natural-resources-environment">Natural Resources &amp; Environment</a>
+				</li>
+												<li class="usa-nav__submenu-item">
+					<a href="/data-products?topic=rural-economy-population">Rural Economy &amp; Population</a>
+				</li>
+																</ul>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									
+								</div>
+							</div>
+						</div>
+					</li>
+																	<li class="usa-nav__primary-item">
+						<button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="extended-mega-nav-section-3">
+							<span>Analysis</span>
+						</button>
+						<div id="extended-mega-nav-section-3" class="usa-nav__submenu usa-megamenu" hidden="">
+							<div class="grid-row grid-gap-4">
+								<div class="usa-col">
+									  <div>
+    
+
+<div  id="block-navanalysiscolumn1" class="block block-block-content block-block-content527ff1ec-28bc-4743-9a72-47e9278baf50">
+	
+						<p class="hide-mobile hide-tablet margin-top-1 margin-bottom-0 font-sans-xl text-bold text-primary-dark">Understand the Research</p>
+							<p class="hide-mobile hide-tablet line-height-sans-3">Get insights and objective analysis from experts in the field.</p>
+							<a href="/publications" class="usa-button margin-top-2 desktop:margin-top-0">Browse All Analysis</a>
+			</div>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									  <div>
+    
+
+<ul  id="block-navanalysiscolumn2" class="usa-nav__submenu-list block block-block-content block-block-content7b2f9f6c-f2fe-4753-b31b-4745e75857fd">
+	
+																																																																																													<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/publications?series=research-reports" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Research Reports</span>
+																			<span class="display-block hide-mobile hide-tablet font-sans-3xs">Published Papers from ERS</span>
+											</a>
+				</li>
+																				<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/publications?series=outlook-reports" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Outlook Reports</span>
+																			<span class="display-block hide-mobile hide-tablet font-sans-3xs">Agricultural Outlooks and Projections</span>
+											</a>
+				</li>
+																</ul>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									  <div>
+    
+
+<ul  id="block-navanalysiscolumn3" class="usa-nav__submenu-list block block-block-content block-block-content25ac9f29-ebd7-4817-a39f-1f0ec033f7e5">
+	
+																																																																																													<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/amber-waves" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Amber Waves</span>
+																			<span class="display-block hide-mobile hide-tablet font-sans-3xs">The Economics of Food, Farming, Natural Resources, and Rural Amer…</span>
+											</a>
+				</li>
+																				<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/data-products/charts-of-note" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Charts of Note</span>
+																			<span class="display-block hide-mobile hide-tablet font-sans-3xs">Fast facts on U.S. agriculture</span>
+											</a>
+				</li>
+																</ul>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									
+								</div>
+							</div>
+						</div>
+					</li>
+																	<li class="usa-nav__primary-item">
+						<button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="extended-mega-nav-section-4">
+							<span>Newsroom</span>
+						</button>
+						<div id="extended-mega-nav-section-4" class="usa-nav__submenu usa-megamenu" hidden="">
+							<div class="grid-row grid-gap-4">
+								<div class="usa-col">
+									  <div>
+    
+
+<div  id="block-navnewsroomcolumn1" class="block block-block-content block-block-contentde5cb6af-9c19-490e-8175-c54d1ed8cf62">
+	
+						<p class="hide-mobile hide-tablet margin-top-1 margin-bottom-0 font-sans-xl text-bold text-primary-dark">Newsroom</p>
+							<p class="hide-mobile hide-tablet line-height-sans-3">See what&#039;s new and what&#039;s trending from ERS.</p>
+							<a href="/newsroom" class="usa-button margin-top-2 desktop:margin-top-0">Visit the Newsroom</a>
+			</div>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									  <div>
+    
+
+<ul  id="block-navnewsroomcolumn2" class="usa-nav__submenu-list block block-block-content block-block-contenta63a75ba-34d2-41c6-a3bf-b2bd78a408f3">
+	
+																																																																																													<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/newsroom/events" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Events</span>
+																	</a>
+				</li>
+																				<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/newsroom/trending-topics" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Trending Topics</span>
+																	</a>
+				</li>
+																				<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/newsroom/contact-ers-press-office" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Contact ERS Press Office</span>
+																	</a>
+				</li>
+																</ul>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									  <div>
+    
+
+<ul  id="block-navnewsroomcolumn3" class="usa-nav__submenu-list block block-block-content block-block-content13c6d10a-517b-44e4-8ddf-b1ad696370f2">
+	
+																																																																																													<li class="usa-nav__submenu-item desktop:border-left-05 desktop:border-primary-dark">
+					<a href="/subject-specialists" class="desktop:margin-bottom-1" >
+													<span class="display-block text-bold font-sans-sm">Subject Specialists</span>
+																	</a>
+				</li>
+																</ul>
+  </div>
+
+								</div>
+								<div class="usa-col">
+									
+								</div>
+							</div>
+						</div>
+					</li>
+													<li class="usa-nav__primary-item">
+						<a href="/amber-waves" class="usa-nav__link simple-link">Amber Waves</a>
+					</li>
+							</ul>
+			<div class="usa-nav__secondary">
+				  <div>
+    
+
+<ul  id="block-navsecondarylinks" class="usa-nav__secondary-links block block-block-content block-block-content3edf4787-d591-4248-a272-95444cfb5711">
+	
+																																																																																																																								<li class="usa-nav__secondary-item">
+						<a href="/calendar">Calendar</a>
+					</li>
+																<li class="usa-nav__secondary-item">
+						<a href="/about-ers">About</a>
+					</li>
+																<li class="usa-nav__secondary-item">
+						<a href="/about-ers/careers-at-ers">Careers</a>
+					</li>
+																<li class="usa-nav__secondary-item">
+						<a href="/contact-us">Contact Us</a>
+					</li>
+																								</ul>
+  </div>
+
+				<section aria-label="Search component">
+					<form class="usa-search usa-search--small " role="search" method="GET" action="https://search.ers.usda.gov/search">
+						<input name="affiliate" type="hidden" value="ers" aria-hidden="true">
+						<label class="usa-sr-only" for="search-field">Search</label>
+						<input class="usa-input" id="search-field" type="search" name="query">
+						<button class="usa-button" type="submit">
+							<img src="/themes/custom/uswds_ers/package/dist/img//usa-icons-bg/search--white.svg" class="usa-search__submit-icon" alt="Search">
+						</button>
+					</form>
+				</section>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<!-- Main content -->
+<main id="main-content">
+
+	<!-- Highlighted -->
+						<div class="grid-container-desktop-lg">
+				<div data-drupal-messages-fallback class="hidden"></div>
+
+
+			</div>
+			
+	<!-- Help -->
+						<div class="grid-container-desktop-lg">
+				
+			</div>
+			
+	<!-- Breadcrumbs -->
+						<section id="breadcrumbs" class="grid-container-desktop-lg">
+				  <div>
+    <div id="block-uswds-ers-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+          <nav class="usa-breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+        <h2 id="system-breadcrumb" class="usa-sr-only">Breadcrumb</h2>
+        <ol class="usa-breadcrumb__list">
+                            <li class="usa-breadcrumb__list-item">
+                                            <a href="/" class="usa-breadcrumb__link"><span>Home</span></a>
+                                    </li>
+                            <li class="usa-breadcrumb__list-item">
+                                            <a href="/data-products" class="usa-breadcrumb__link"><span>Data Products</span></a>
+                                    </li>
+                            <li class="usa-breadcrumb__list-item">
+                                            <a href="/data-products/season-average-price-forecasts" class="usa-breadcrumb__link"><span>Season-Average Price Forecasts</span></a>
+                                    </li>
+                            <li class="usa-breadcrumb__list-item">
+                                            <span>Documentation</span>
+                                    </li>
+                    </ol>
+    </nav>
+
+  </div>
+
+  </div>
+
+			</section>
+			
+	<!-- Hero full width -->
+			<div id="hero">
+			  <div>
+    
+
+<div  id="block-hero-default" class="padding-y-5 margin-bottom-4 bg-primary-darker text-white block block-ers-blocks block-hero-default">
+	
+			<div class="grid-container-desktop-lg">
+			<!-- h1 -->
+			<h1 class="desktop:font-heading-2xl section-heading-gold margin-top-0">Season-Average Price Forecasts - Documentation</h1>
+
+			<!-- Page Info -->
+			<ul id="pageInfo" class="usa-list usa-list--unstyled padding-top-1" aria-label="More information">
+				<li class="tablet:display-inline margin-right-2"><strong>Updated:</strong> 10/13/2026</li>
+				<li class="tablet:display-inline"><strong>Contact:</strong>
+																																			<a class="text-white" href="/authors/ers-staff-directory/joshua-huang">Joshua Huang</a>																														</li>
+			</ul>
+		</div>
+	</div>
+  </div>
+
+		</div>
+	
+	<!-- Content full width -->
+	
+	<!-- Content grid container -->
+	
+	<!-- Sidebar and Content -->
+			<div class="grid-container-desktop-lg">
+			<div class="grid-row grid-gap-3">
+
+				<!-- Left Column -->
+									<div class="desktop:grid-col-3">
+																		<div class="usa-accordion top-1 margin-bottom-3">
+							<div class="usa-accordion__heading"><button type="button" class="usa-accordion__button" aria-expanded="true" aria-controls="sectionNavigation">In this section</button></div>
+							<div id="sectionNavigation" class="usa-accordion__content padding-x-1">
+								<nav class="margin-top-4" aria-label="Secondary navigation">
+									  
+
+  
+      <ul class="usa-sidenav">
+              
+                          
+                          
+        
+                          
+        <li class="usa-sidenav__item expanded dropdown active active-trail first last">
+          <a href="/data-products/season-average-price-forecasts" class="link usa-current" data-drupal-link-system-path="node/3755">Season-Average Price Forecasts</a>
+                        
+      <ul class="usa-sidenav__sublist">
+              
+                          
+                          
+        
+                          
+        <li class="usa-sidenav__item active active-trail first last">
+          <a href="/data-products/season-average-price-forecasts/documentation" class="link usa-current is-active" data-drupal-link-system-path="node/3934" aria-current="page">Documentation</a>
+                  </li>
+          </ul>
+  
+                  </li>
+          </ul>
+  
+
+
+
+
+								</nav>
+							</div>
+						</div>
+											</div>
+				
+				<!-- Right Column -->
+				<div class="desktop:grid-col-fill">
+					    <div id="block-uswds-ers-content" class="block block-system block-system-main-block">
+  
+    
+      <article data-history-node-id="3934">
+
+  
+    
+
+  
+  <div>
+    
+	<div class="usa-prose">
+		<h2>Scope/Coverage of Data</h2>
+<p><strong>Note:</strong>&nbsp;The model forecasts are not official USDA forecasts. See USDA's&nbsp;<a href="https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer"><em>World Agricultural Supply and Demand Estimates</em></a>&nbsp;for official USDA Season-Average Price (Marketing Year Average price) forecasts.</p>
+<h3>Current Forecasts</h3>
+<p>The data product provides weekly model forecasts of Marketing Year Average (MYA) prices (Season-Average Prices), Price Loss Coverage (PLC) payment rates, county Agricultural Risk Coverage (ARC-CO) prices, and individual Agricultural Risk Coverage (ARC-IC) prices for selected U.S. commodities for current and 1-2 upcoming marketing years along with their input data. The commodities include corn, soybeans, wheat, and upland cotton. Concurrent <em>WASDE</em> (<em>World Agricultural Supply and Demand Estimates</em> report) projections of the MYA prices and their implied PLC payment rates and ARC-CO/IC prices are also provided.&nbsp;</p>
+<p>The data product files are updated monthly (adding more recent weekly forecasts) and posted 1 business day after the release of USDA’s <em>WASDE</em> report.</p>
+<h3>Historical Forecasts</h3>
+<p>The historical forecasts include previous MYA forecasts for corn, soybeans, and wheat for marketing years 2003/04 and beyond. For marketing years 2003/04 through 2013/14, the MYA price forecasts were used to compute forecasts of Counter-Cyclical Payment (CCP) rates introduced by the 2002 Farm Act. No Average Crop Revenue Election (ACRE) program payments were computed for the marketing year 2003/04 through 2013/14 because those calculations required State-, county-, or farm-level data. For marketing year 2014/15 and beyond, the MYA price forecasts were used to compute forecasts of PLC payment rates and ARC-CO/ARC-IC prices for corn, soybeans, and wheat. The historical forecasts also include MYA price forecasts for upland cotton for marketing years 2017/18 and beyond.&nbsp;</p>
+<p>The historical forecasts can be found in the csv output forecast file [<em>outputfc.csv</em>] and the used input data can be found in the csv input data file [<em>inputdata.csv</em>].</p>
+<p><strong>Note for upland cotton forecasts:</strong></p>
+<p>Both the current <em>WASDE</em> report and ERS’s forecasting model only focus on the upland cotton (lint cotton) MYA price, neither the cottonseed nor seed cotton MYA price. The recent farm bill commodity program for seed cotton was added to Title 1 of the 2018 farm bill. The seed cotton program combines lint cotton and cottonseed into one program. Seed cotton price is a weighted average of national upland cotton and cottonseed prices. The calculations of forecasts of the PLC payment rate and ARC price for seed cotton require not only a forecast of the upland cotton MYA price but also an additional forecast of the cottonseed MYA price that both <em>WASDE</em> report and ERS’s forecasting model do not currently focus on.&nbsp;</p>
+<h2>Methods</h2>
+<h3>Data File Items:</h3>
+<p><u>Tables in the excel calculator file [</u><em><u>futmodel-calculator.xlsx</u></em><u>]</u>:</p>
+<ul type="disc">
+<li data-list-item-id="ee9d143617932b15562c84d19d5799e3d">Header: this section specifies the commodity and marketing year and shows forecasting date and the output forecasts.</li>
+<li data-list-item-id="e02c3128b23ae6736a14aea2123553f95">Table 1: this is a calculator table for the model forecast of MYA price.<br>
+<ul type="circle">
+<li data-list-item-id="e8e20851e4577729cd7110648e8fe6e5c">Year-month (column A): this is the calendar year and month for the marketing year.</li>
+<li data-list-item-id="ebf6b9688cf9d1a7acee3e1b398e84270">NASS price received (column B): this is the official monthly price received data, which is also provided in the csv input data file [<em>inputdata.csv</em>].</li>
+<li data-list-item-id="e17631b1440e7ab820229012ffc3a3667">Futures nearby contract year-month (column C): this column specifies the nearby futures contract year and month (maturity year and month) for each month during the marketing year.</li>
+<li data-list-item-id="e40ba41f89c5f882a5c2c47db72003a26">Daily futures price based on nearby contract (column D): this is the most recent daily futures settlement price of the nearby futures contract (column C) as of the forecasting date. The default values are also provided in the csv input data file [<em>inputdata.csv</em>]. Users are encouraged to enter more recent futures prices here and the spreadsheet will generate new forecasts based on the entered prices.</li>
+<li data-list-item-id="ea05a141f2aef45ceccf23ab98e0ebe43">Basis (5-year U.S. average or 7-year U.S. Olympic average) (column E): this is the historical average of the basis input data for each month during the marketing year. The basis input data is provided in the csv input data file [<em>inputdata.csv</em>] but not its average. Users may enter different basis values such as historical averages made by different averaging methods or forward-looking estimates.</li>
+<li data-list-item-id="e2f0cf9963edaa533510f1225098877f5">NASS marketing percentage (5-year U.S. average or 7-year U.S. Olympic average) (column F): this is the historical average of the marketing percentage input data for each month during the marketing year. The marketing percentage input data is provided in the csv input data file [<em>inputdata.csv</em>] but not its average. Users may enter different marketing percentage values such as historical averages made by different averaging methods or forward-looking estimates.</li>
+<li data-list-item-id="eaf789b6439f21192b7f8c9f4ebee65a8">Marketing years for basis and marketing percentage average (column G): this column specifies the marketing years used for calculating the average of the basis and marketing percentage input data (column E and F).</li>
+<li data-list-item-id="ea8fb7f57c50afde6dbd2ca01cbf85c35">Price received forecast (column H): this column equals daily futures price (column D) plus historical average of the basis (column E) for each month during the marketing year.</li>
+<li data-list-item-id="e45d9c321ef518abea7b0cdb26e9a75bb">Composite price received official/forecast (column I): this column equals NASS price received (column B) if it is available or price received forecast (column H) if NASS price received (column B) is not available. If both NASS price received (column B) and price received forecast (column H) are not available, an interpolated value by column I of the previous month and the next month is used.</li>
+<li data-list-item-id="e1f832a0056228d472ef059549a7df769">MYA price weight (column J): this column equals the marketing percentage (column F) times composite price received official/forecast (column I) and divides by 100 for each month during the marketing year.</li>
+<li data-list-item-id="eb62028fd3efd12032a2d835c7102d8c8">Model forecast of the MYA price (last row): this forecast equals the sum of monthly price weights (column J) for each month during the marketing year.</li>
+<li data-list-item-id="e8769e02e36c7ba1a26bce1cfcfa318d6">Notice values in column E to column J are intermediate calculations based on the data in the csv input data file [<em>inputdata.csv</em>] and they are not provided directly in the csv input data file. More information is in the <strong>forecast procedure</strong> section.</li>
+</ul>
+</li>
+<li data-list-item-id="eae278e2cdfaff25a1e96478f2ca2eb1f">Table 2: this table calculates the effective reference price for PLC and ARC programs based on MYA prices in previous marketing years.<br>
+<ul type="circle">
+<li data-list-item-id="e19f1eda5cb5ffd7065d722291d5b0f62">Reference price: this is an official farm bill parameter used in PLC and ARC programs.</li>
+<li data-list-item-id="efcff24c2ea9f52749de271d8a2e57d35">MYA price: this is marketing year average (MYA) price, also known as season-average price (SAP), the national average price received by U.S. farmers for a commodity during a 12-month marketing year.</li>
+<li data-list-item-id="ec1665a05c6e3c9b047fb8de767ec534b">5-year MYA price Olympic average: this is the MYA price average dropping the lowest and highest data point over the 5 marketing years that is used in PLC and ARC programs. Notice the 5 marketing years used have a 1-year gap to the program year, for example, the 2025 program uses MYA prices from marketing years 2019/20 to 2023/24.</li>
+<li data-list-item-id="ee66061ea4fabd1841a58cc6d6cbcf902">Effective reference price: the effective reference price is the greater of the reference price or&nbsp;85 percent (88 percent for marketing years 2025/26 and beyond)&nbsp;of the average of the MYA price from the preceding 5 years, excluding the highest and lowest prices, capped at 115 percent of the statutory reference price. The effective reference price is used in PLC and ARC programs.</li>
+</ul>
+</li>
+<li data-list-item-id="e4ff37de255cafc971fbad02c87b84931">Table 3: this table calculates the implied PLC payment rates based on MYA price model and <em>WASDE</em> forecasts.<br>
+<ul type="circle">
+<li data-list-item-id="e99767e30925704ca77c2a6e2cedf3779">Effective reference price: the value of effective reference price is from table 2.</li>
+<li data-list-item-id="e597e2e9d39fd3bef6c60acbda124d5e2">MYA price forecast: the value of the MYA price forecast is from the model (table 1) and <em>WASDE</em> report.</li>
+<li data-list-item-id="e2377434fbdef5b2f698febce439e90cf">National loan rate: this is an official farm bill parameter used in PLC and ARC programs.</li>
+<li data-list-item-id="eba7a965cd27b766e2ac9bad90dc4ecbb">Effective price forecast: this is the implied effective price based on the model forecast and <em>WASDE</em> forecast of the MYA price for the PLC program.</li>
+<li data-list-item-id="e9ec31e9b4e336b9134611cfe23bce388">PLC payment rate forecast: this is the implied PLC payment rate based on the model forecast and <em>WASDE</em> forecast of the MYA price for PLC programs.</li>
+<li data-list-item-id="eab3fdf04eb116a5d169725a6e22657d9">Maximum PLC payment rate: this is the highest possible PLC payment rate, which is the effective reference price less the national loan rate.</li>
+</ul>
+</li>
+<li data-list-item-id="e0a78c927f3ff612069069ce1e33e60ed">Table 4: this table calculates the benchmark price and implied price for county/individual agricultural risk coverage (ARC-CO/IC).<br>
+<ul type="circle">
+<li data-list-item-id="ed1af1ec14e29b7f8879a0ff7ec929cc7">Effective reference price: the value of effective reference price is from table 2.</li>
+<li data-list-item-id="ea937b44dda3b1093322d443087f06fdb">Annual benchmark price: this equals the higher of the effective reference price or the MYA price in a given marketing year. Notice the 5 marketing years used have a 1-year gap to the program year, for example, the 2025 program uses MYA prices from marketing years 2019/20 to 2023/24.</li>
+<li data-list-item-id="e06dd9632ddbccb25cd254290ed769ade">MYA price forecast: the value of the MYA price forecast is from the model (table 1) and WASDE report.</li>
+<li data-list-item-id="ed658ac99870f6d959f61c0f7ef508dae">National loan rate: this is an official farm bill parameter used in PLC and ARC programs.</li>
+<li data-list-item-id="eedd238ab6ae052505418439c9f88409c">ARC-CO price forecast: this is the implied ARC-CO price based on the model forecast and WASDE forecast of the MYA price for ARC programs.</li>
+<li data-list-item-id="e2caa9e84065af1fa71bca878c4e6e11f">ARC-IC price forecast: this is the implied ARC-IC price based on the model forecast and WASDE forecast of the MYA price for ARC programs.</li>
+</ul>
+</li>
+<li data-list-item-id="e9c4e669386184fae58e784d2739372a5">Table 5: this table provides previous weekly forecasts of MYA price, PLC payment rate, and ARC-CO/IC price and effective reference price.</li>
+</ul>
+<p><u>Columns in the output forecast data file [</u><em><u>outputfc.csv</u></em><u>]</u>:</p>
+<ul type="disc">
+<li data-list-item-id="e301a49d542e1240fc77612e93c1aa6aa">Model forecast date: the model only uses data that is available as of the model forecast date to generate forecast outputs.</li>
+<li data-list-item-id="ec0cb53ce48d3f25e1171efad45c31524">Commodity: this is the underlying agricultural product of forecasts, including corn, soybeans, wheat, and cotton.</li>
+<li data-list-item-id="eea9ee0b5f5833b9984a4ffe252a0cce0">Futures model type: this is the type of the forecast model used to generate output forecasts: single-contract model or three-contract aggregate model. The single-contract model only uses futures prices from one specific futures contract, while the three-contract aggregate model uses weighted futures prices from three different futures contracts. See more details in the <strong>Input data definitions and sources</strong> section below.</li>
+<li data-list-item-id="ecda312fccd4b63c8943691a316b30f0d">Futures exchange: this is the futures market or exchange where futures contracts are traded on, including CBOT (Chicago Board of Trade) and KCBT (Kansas City Board of Trade) of the CME group, MGE (Minneapolis Grain Exchange), and ICE (Intercontinental Exchange). For weighted futures prices used in aggregate models, multiple exchanges are specified.</li>
+<li data-list-item-id="e21b640a9d3c49035b52c725e7a30d580">Marketing year: this is the underlying marketing year of forecasts.</li>
+<li data-list-item-id="e5360d5045817c3e0e0b660c7f5445ebf">MYA price model forecast: this is the marketing year average (MYA) price model forecast, which is the unofficial forecast made by the forecast model.</li>
+<li data-list-item-id="e8842b86e293fc3ab8f50d2211dd2e357">MYA price WASDE forecast: this is the USDA official MYA price forecast that is released by WASDE reports.</li>
+<li data-list-item-id="e7e95f694d8be22e9c36abbec0ae34783">WASDE forecast date: this is the release date of the WASDE report that provides official MYA price forecasts.</li>
+<li data-list-item-id="e5c4a86699475b680d656ab3d9b8cccda">Target price: this is an official farm bill parameter used in CCP programs for marketing years 2002/03 through 2013/14.</li>
+<li data-list-item-id="e58f2a7fef00365dfe2ba9c6a4c4d714d">National loan rate: this is an official farm bill parameter used in CCP, PLC, or ARC programs.</li>
+<li data-list-item-id="ee4c0180f34980454b3641e9f53566bf9">Direct payment rate: this is an official farm bill parameter used in CCP programs for marketing years 2002/03 through 2013/14.</li>
+<li data-list-item-id="e766bd2db3f8e7e5a66ba1cdcfeef8223">Reference price: this is an official farm bill parameter used in PLC and ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="efd2646818efedb049ed4befc739ffc7e">CCP effective price model forecast: this is the implied effective price based on the MYA price model forecast for CCP programs for marketing years 2002/03 through 2013/14.</li>
+<li data-list-item-id="e6402d6388724d86ca45fec62995aa05e">CCP rate model forecast: this is the implied CCP rate based on the MYA price model forecast for CCP programs for marketing years 2002/03 through 2013/14.</li>
+<li data-list-item-id="ea8cb20c3f23d6ae789417c00ad7a1f51">CCP effective price WASDE forecast: this is the implied effective price based on the MYA price WASDE forecast for CCP programs for marketing years 2002/03 through 2013/14.</li>
+<li data-list-item-id="ecde33f224451e3de92ebd83f25c16839">CCP rate WASDE forecast: this is the implied CCP rate based on the MYA price WASDE forecast for CCP programs for marketing years 2002/03 through 2013/14.</li>
+<li data-list-item-id="e32201e0b83f897ab8c020b8bdddf8355">Historical MYA price year1, 2, 3, …, and 5: these are the historical MYA prices in the recent 5 marketing years used for calculating the 5-year average MYA price for PLC and ARC programs for marketing years 2014/15 and beyond. Notice the 5 marketing years used have a 1-year gap to the program year, for example, the 2025 program uses MYA prices from marketing years 2019/20 to 2023/24. If an official MYA price is not available on the forecast date, its model forecast is used.</li>
+<li data-list-item-id="e0350dedb5d5626ff112fe29a92015881">Historical MYA 5-year range: this is the year range of the 5 marketing years used for calculating the 5-year average MYA price for PLC and ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="ea0c25e02860e314fbe7a50fd6150eb0c">Historical MYA price 5-year Olympic average: this is the MYA price average dropping the lowest and highest data point over the 5 marketing years that is used in PLC and ARC programs for marketing years 2014/15 and beyond. Notice the 5 marketing years used have a 1-year gap to the program year, for example, the 2025 program uses MYA prices from marketing years 2019/20 to 2023/24.</li>
+<li data-list-item-id="e02dd6ed6446909ef8b8ae18154936243">Effective reference price: the effective reference price is the greater of the reference price or&nbsp;85 percent (88 percent for marketing years 2025/26 and beyond)&nbsp;of the average of the MYA price from the preceding 5 years, excluding the highest and lowest prices, capped at 115 percent of the statutory reference price. The effective reference price is used in PLC and ARC programs for marketing years 2019/20 and beyond.</li>
+<li data-list-item-id="efe6cc947e01b4aa018590475ae19eb3d">Effective price model forecast: this is the implied effective price based on the MYA price model forecast for the PLC program for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e86f764fa90f4352206fa2a2f460a0ac9">PLC payment rate model forecast: this is the implied PLC payment rate based on the MYA price model forecast for PLC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e2afc71b29b53871ac7239effaba589a0">Effective price WASDE forecast: this is the implied effective price based on the MYA price WASDE forecast for the PLC program for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e70c4211e325e440c91a3d20df44f1d74">PLC payment rate WASDE forecast: this is the implied PLC payment rate based on the MYA price WASDE forecast for PLC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e4c403b29c65e4cd34bdce7016e63a8c6">Maximum PLC payment rate: this is the highest possible PLC payment rate, which is the effective reference price less the national loan rate. This is for PLC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e93944ab9afc0a75b2be99440917d0c59">ARC annual benchmark price year1, 2, 3, …, and 5: these equal the higher of the effective reference price or the MYA price in a given marketing year. Notice the 5 marketing years used have a 1-year gap to the program year, for example, the 2025 program uses MYA prices from marketing years 2019/20 to 2023/24.</li>
+<li data-list-item-id="e9fc540dea794d982c5cf01e4b30a6c23">ARC annual benchmark price 5-year range: this is the marketing years used for generating the five ARC Annual Benchmark Prices for ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e7cbe8c15f1d9d9cdad693bf8d0138e76">ARC CO benchmark price: this is the ARC annual benchmark price 5-year average, dropping the highest and lowest data point, for ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="ed46925bf497eb9372c3f5f4445943d1b">ARC CO price model forecast: this is the implied ARC-CO price based on the MYA price model forecast for ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="ea5b7d474ad060914c3a6e6f3931db3a1">ARC CO price WASDE forecast: this is the implied ARC-CO price based on the MYA price WASDE forecast for ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e268507f2add246158c1aa9c73743ca0c">ARC IC price model forecast: this is the implied ARC-IC price based on the MYA price model forecast for ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e696598412ecc6e9d24a9d6b32ff2cf86">ARC IC price WASDE forecast: this is the implied ARC-IC price based on the MYA price WASDE forecast for ARC programs for marketing years 2014/15 and beyond.</li>
+<li data-list-item-id="e0895d1a41f4af8bcf784f7c1f3119046">Actual MYA price: this is the realized USDA official marketing average price, which is not available when the forecast is made but will be updated once the statistics become available.</li>
+<li data-list-item-id="e20def28b3733a573d89e1a409978841d">Price unit: this is the unit for all prices and rates for a given commodity.</li>
+</ul>
+<p><u>Columns in the Input Data File [</u><em><u>inputdata.csv</u></em><u>]</u>:</p>
+<ul type="disc">
+<li data-list-item-id="ef842302107c77e9dd0e61ea7ea1b278e">Commodity: this is the agricultural product of the input data, including corn, soybeans, wheat, and cotton.</li>
+<li data-list-item-id="e121dad076e2892d4ae7fc2893c6ec1af">Item: this is the description of the input data, including basis, farm bill direct payment rate, farm bill national loan rate, farm bill reference price, farm bill target price, futures price monthly, futures price daily, marketing percentage, marketing year average price, price received, WASDE MYA price forecast, wheat contract weight, and wheat production by class. See <strong>Input data definitions and sources</strong> section for more information.</li>
+<li data-list-item-id="e680d773506b5b335e55bde092b5a8c55">Futures exchange: this is the futures market or exchange where futures contracts are traded on, including CBOT (Chicago Board of Trade) and KCBT (Kansas City Board of Trade) of the CME group, MGE (Minneapolis Grain Exchange), and ICE (Intercontinental Exchange). For weighted futures prices used in aggregate models, multiple exchanges are specified.</li>
+<li data-list-item-id="e24112c536fced91760ce06651a543fb2">Commodity class: this is the class of the commodity of the input data, only applicable to cotton and wheat.</li>
+<li data-list-item-id="e374b518d24e8501baf522fba0d73eb02">Data period: this is the period of the input data, including daily, monthly or yearly.</li>
+<li data-list-item-id="e079e61c4813013584c1c590d087f2352">Marketing year: this is the marketing year of the input data.</li>
+<li data-list-item-id="e0d46d1b5aa308f1d8fdd881360d3d87c">Calendar year month: this is the calendar year and month of the input data in the format of year-month (YYYY-MM).</li>
+<li data-list-item-id="eb8c1c5233a8a2b0a449db0dca63ec79d">Futures contract: this is the futures contract year and month (maturity year and month) associated with futures price or basis data in the format of year-month (YYYY-MM).</li>
+<li data-list-item-id="eef7661d3271b90d0d83f522df2db11a0">Data source date: this is the release or update date of the input data in the format of year-month-day (YYYY-MM-DD). Notice the format may be automatically converted to a different one depending on users’ computer software.</li>
+<li data-list-item-id="e685951c59ca808a0b572ea0abd749904">Value: this is the value of the input data.</li>
+<li data-list-item-id="e35dda8e5963aa34669f53336efd8946f">Unit: this is the unit of the input data.</li>
+</ul>
+<h3>Input Data Definitions and Sources</h3>
+<p>This section provides detailed definitions and sources of the input data used for calculating the model forecasts in this data product.</p>
+<ul type="disc">
+<li data-list-item-id="e4d360fb977561bc3f674d726748adf04">U.S. futures price (daily and monthly): both daily settlement futures prices and their monthly average prices are used in the forecast model. ERS’s forecasting models use every Thursday’s settlement price (or the most recent settlement price as of each Thursday) to produce weekly forecasts of the MYA prices. Monthly average prices are based on the Thursday settlement prices. ERS retrieves futures price data through LSEG Data &amp; Analytics (formerly Refinitiv) through August 2026 and from exchanges afterward.<br>
+<ul type="circle">
+<li data-list-item-id="e5f9dc76777214c56bfc13373cf59d709">Corn and soybeans: corn and soybean futures prices are from futures contracts traded on the CBOT of the CME Group.</li>
+<li data-list-item-id="e0428f3095a13b7cccb9b6c724104f927">Wheat: the data product provides wheat forecasts using the three-contract aggregate futures model for marketing years 2021/22 and beyond. For marketing years 2003/04 through 2020/21, originally only the single-contract model was used and released prior to marketing year 2021/22, but forecasts based on the three-contract aggregate model are re-generated and provided in the current data product.<br>
+<ol style="padding-left:48px;" type="i">
+<li data-list-item-id="e68038961eea369f0e372f780f58549ad">Three-contract aggregate model: this model uses weighted futures prices. The weighted price comes from averaging Chicago Soft Red Winter Wheat futures contracts traded on the CBOT, Kansas City Hard Red Winter Wheat futures contracts traded on the CBOT (formerly KCBT), and Minneapolis Hard Red Spring Wheat futures contracts traded on the Minneapolis Grain Exchange (MGE) by their contract weights. The contract weights are decided by the most recent wheat production estimates or projections by class for a given marketing year, and their formula is:<br>
+<ul style="padding-left:48px;" type="square">
+<li data-list-item-id="eb927738dd23fb723f8491b493791d982">Weight of Chicago contract = (Soft Red Winter wheat production + Soft White Winter wheat production)/All wheat production.</li>
+<li data-list-item-id="e4b87363876e0ddb345139dedc1f696ab">Weight of Kansas City contract = (Hard Red Winter wheat production + Hard White Winter wheat production)/All wheat production.</li>
+<li data-list-item-id="e78aeeeab9db38dd7e823ab7b4c063419">Weight of Minneapolis contract = (All Spring wheat production + Durum wheat production)/All wheat production</li>
+<li data-list-item-id="e1da280f2a58a0255aeecc3dd55daa9d7">Wheat production by class estimates and projections are from<span> </span><a href="https://usda.library.cornell.edu/concern/publications/tm70mv177" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">USDA NASS Crop Production report</a> and <a href="https://usda.library.cornell.edu/concern/publications/5t34sj573" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">Small Grains Annual Summary report</a>.</li>
+</ul>
+</li>
+<li data-list-item-id="e65aa2cfb58a40740195fbead3226cb18">Single-contract model: this model only uses Chicago Soft Red Winter Wheat futures contracts traded on the CBOT.</li>
+</ol>
+</li>
+<li data-list-item-id="e86c9b93efe3b0d2055d49f359bd8f7c9">Upland cotton: cotton futures prices from futures contracts traded on the Intercontinental Exchange (ICE).</li>
+</ul>
+</li>
+<li data-list-item-id="e73763bfd58ed5b446922f245c9b6b2a0">Price received (monthly): this data is the monthly average price received by producers. Released by <a href="https://usda.library.cornell.edu/concern/publications/c821gj76b" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">USDA, NASS <em>Agricultural Price</em>s reports</a>. As of January 1, 2015, NASS discontinued reporting preliminary mid-month prices for the most current month and instead reports only full-month prices 1 month later. The data product had used the preliminary prices to compute forecasts prior to January 1, 2015.</li>
+<li data-list-item-id="ea3c7603f2bb864e82e8dc3e6b42972d6">Basis (monthly): the monthly basis is the monthly NASS price received less monthly average of the daily (Thursday) nearby futures settlement prices for a given month. Specifics for the nearby futures contract schedule are presented in the following table:&nbsp;</li>
+</ul>
+<table class="table">
+<tbody>
+<tr>
+<td colspan="8"><strong>Table 1. Nearby futures contract matching schedule</strong></td>
+</tr>
+<tr>
+<td style="text-align:center;" colspan="2"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Corn</span></td>
+<td style="text-align:center;" colspan="2"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Soybeans</span></td>
+<td style="text-align:center;" colspan="2"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Wheat</span></td>
+<td style="text-align:center;" colspan="2"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Upland Cotton</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Marketing</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">year</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">month</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Futures</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">nearby</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">contract</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Marketing</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">year</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">month</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Futures</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">nearby</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">contract</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Marketing</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">year</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">month</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Futures</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">nearby</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">contract</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Marketing</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">year</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">month</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">Futures</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">nearby</span><br><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">contract</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">November</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">June</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">August</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">October</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">October</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">October</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">November</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">October</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">November</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">November</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">January</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">August</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">October</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">January</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">November</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">January</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">January</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">October</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">February</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">February</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">November</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">January</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">December</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">February</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">April</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">April</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">January</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">February</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">April</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">June</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">June</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">March</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">August</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">April</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">June</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">August</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">August</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">September</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">May</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Aptos&quot;,sans-serif;font-size:12.0pt;line-height:115%;">July</span></td>
+</tr>
+</tbody>
+</table>
+<ul type="disc">
+<li data-list-item-id="ef045c58dcbd83bda81004eac1f0cdf61">Marketing percentage (monthly): the data is the proportion of the marketing year’s crop that is marketed in a given month, which is used as monthly weights for calculating marketing year average prices. Released by <a href="https://usda.library.cornell.edu/concern/publications/c821gj76b" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">USDA, NASS <em>Agricultural Price</em>s reports</a>. For cotton, currently raw monthly marketings numbers are used to generate monthly marketing percentages at the end of each August before official marketing percentages are released at the end of each September.</li>
+<li data-list-item-id="e5e9c6eeb55891785cf4f7dfc12f6e844">Marketing year average (MYA) price (yearly): the marketing year average price data is from <a href="https://usda.library.cornell.edu/concern/publications/c821gj76b" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">USDA, NASS <em>Agricultural Prices</em> reports</a>, which is equal to the sum of the product of monthly prices received and monthly marketing percentages for each month during the 12-month marketing year. Also known as season-average price. The 12-month duration of a marketing year for each commodity is:<br>
+<ul type="circle">
+<li data-list-item-id="ec453b46b96093bfe927c847428cdf269">Corn and soybeans: from September to August.</li>
+<li data-list-item-id="ea2b9c6af10cca7d8f649668334745b26">Wheat: from June to May.</li>
+<li data-list-item-id="e3a02cff997fc600a87f64e3aa483b343">Cotton: from August to July.</li>
+</ul>
+</li>
+<li data-list-item-id="ee22e7e140af62203cdce060096c63479">WASDE MYA price forecast (monthly): each month <a href="https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">USDA, <em>WASDE</em> report</a> releases USDA’s official MYA price (SAP) forecasts, which can be compared to the model forecasts from this data product. Historically, the <em>WASDE</em> report published a range forecast for the MYA price, and the midpoint of the range forecast is used in this data product. Starting in May 2019, the <em>WASDE</em> report began publishing a point forecast for the MYA price.</li>
+<li data-list-item-id="efab5ae17676c99b13364342e6ae3ba07">Farm bill program parameters:<br>
+<ul type="circle">
+<li data-list-item-id="eba36490b65aa76fc81cacb8de0d6fcd5">Marketing years 2002/03 through 2013/14: the parameters include target price (yearly), direct payment rate (yearly), and national average loan rate (yearly) from the commodity program of the 2002 through 2008 Farm Acts.</li>
+<li data-list-item-id="e8ddd59c27963f312d1644863a90b7aeb">Marketing years 2014/15 and beyond: the parameters include reference price (yearly) and national average loan rate (yearly) from the commodity program of the 2014 and 2018 Farm Acts. Also see <a href="https://www.fsa.usda.gov/resources/programs/arc-plc/program-data" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">USDA, FSA webpage</a>.</li>
+</ul>
+</li>
+</ul>
+<h3>Forecast Procedure&nbsp;</h3>
+<p>This data product provides weekly model forecasts for Marketing Year Average (MYA) prices (also known as Season-Average Price; SAP), counter-cyclical payment (CCP) rates (marketing years 2002/03 through 2013/14), price loss coverage (PLC) payment rates (marketing years 2014/15 and beyond), and county and individual agricultural risk coverage (ARC-CO and ARC-IC) prices (marketing years 2014/15 and beyond). The output forecasts are provided in an output csv file. Notice the model forecasts are not official USDA forecasts. USDA official MYA price (SAP) forecasts (from USDA, <em>WASDE</em> report) and their implied CCP rate, PLC payment rate, and ARC-CO and ARC-IC price forecasts are also provided in this data product for comparisons. The forecasts are made weekly using the most recently available data as of each Thursday and updated on ERS’s webpage once a month.</p>
+<p>Forecast procedures are provided below with an example for corn for marketing year 2024/25 made on February 6, 2025 (table 2):</p>
+<ul type="disc">
+<li data-list-item-id="e5982d5ed43b71a48e58aec306454eb1b">MYA price (SAP) forecast:<br>
+<ul type="circle">
+<li data-list-item-id="e590d9ae3f62acc78e5a1bcefee4b59cf">Step #1: obtain U.S. monthly price received data. Official price received data is always used if it is available from USDA, NASS for any month during the marketing year; otherwise, monthly price received forecasts are needed for the months without actual monthly price received data. This data is provided in the csv input data file [<em>inputdata.csv</em>].</li>
+<li data-list-item-id="e953fe8d0ed6ed15d76a641d57478eb08">Step #2: obtain daily futures settlement prices of nearby contracts on the forecasting date; the nearby futures contract matching schedule is presented in table 1. If no settlement price is available on the forecasting date, the most recent available settlement prices as of the forecast date are used. No futures price is used if the nearby futures contract is already expired for a given month. This data is provided in the csv input data file [<em>inputdata.csv</em>].</li>
+<li data-list-item-id="e412e3d5ce22c40aca3d107c1634f8cb5">Step #3: obtain monthly marketing percentage data and construct the monthly averages. A 5-year monthly average is used for corn, soybeans, and wheat (for example, averaging January marketing percentages in 5 recent years); a 7-year Olympic average is used for cotton (an Olympic average is an average dropping the highest and lowest data points). The most recent marketing years with available data are used for calculating the averages. Notice the marketing years used for calculating monthly marketing percentage averages should be used for calculating monthly basis averages in Step #4. The monthly marketing percentage data is provided in the csv input data file [<em>inputdata.csv</em>].</li>
+<li data-list-item-id="e37de8c7d808fa37abe2a87bfd5afa94f">Step #4: obtain monthly basis data and construct the monthly averages. A 5-year average monthly basis is used for corn, soybeans, and wheat (for example, averaging January basis in recent 5 years); a 7-year Olympic average monthly basis is used for cotton. Notice the marketing years selected for calculating monthly basis averages should be the same as the marketing years used for calculating monthly marketing percentage averages in Step #3. The monthly basis data is provided in the csv input data file [<em>inputdata.csv</em>].</li>
+<li data-list-item-id="e5db55458ebbe48b01eb742c83f306fed">Step #5: construct monthly price received forecasts. Monthly price received forecast is equal to futures nearby contract settlement price on the forecasting date (from Step #2) plus monthly basis average (from Step #4).</li>
+<li data-list-item-id="e2b1cd385f58666ecb175d8c08999c253">Step #6: construct monthly composites of official monthly price received and monthly price received forecast. The monthly composite is equal to either the official monthly price received (from Step #1) or the monthly price received forecast (from Step #5) for each month. Official monthly price received data is always used if any is available for months during the marketing year; otherwise, monthly price received forecasts are used for the months without official monthly price received data. Notice if official monthly price received is not available for a given month and its forecast is also not available due to the corresponding nearby futures contract expiration, an interpolation value is used for the month. The interpolation value is the average of the monthly composite of values from the previous month and the next month.</li>
+<li data-list-item-id="ee9bb0a0dd3102f76f111553cfbd9d6f3">Step #7: calculate monthly MYA price weights. The monthly MYA price weight is equal to the product of the monthly composite of official price received and price received forecast (from Step #6) and the monthly marketing percentage average (from Step #3).</li>
+<li data-list-item-id="e305e59f19b6d354b2d5f5978b9532d81">Step #8: calculate the MYA price forecast. The MYA price forecast for a given marketing year is equal to the sum of monthly MYA price weights (from Step #7) during the 12-month marketing year.</li>
+</ul>
+</li>
+</ul>
+<table class="table">
+<tbody>
+<tr>
+<td colspan="10"><strong>Table 2. Example for constructing a model forecast of MYA price for corn for marketing year 2024/25 made on February 6, 2025</strong></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Year-month</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NASS price received (Step #1)</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Futures nearby contract year-month (Step #2)</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Daily futures price based on nearby contract (Step #2)</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Basis (5-year U.S. average) (Step #4)</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NASS marketing percentage (5-year U.S. average) (Step #3)</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Marketing years for basis and marketing percentage average (Step #3 and #4)</span></td>
+<td style="text-align:center;">
+<p style="line-height:normal;margin-bottom:0in;text-align:center;" align="center"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;">Price received forecast </span><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">(Step #5)</span></p>
+</td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Composite price received NASS/forecast (Step #6)</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">MYA price weight (Step #7)</span></td>
+</tr>
+<tr>
+<td style="text-align:center;">&nbsp;</td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">$/bushel</span></td>
+<td style="text-align:center;">&nbsp;</td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">$/bushel</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">$/bushel</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Percent</span></td>
+<td style="text-align:center;">&nbsp;</td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">$/bushel</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">$/bushel</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">$/bushel</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2024-09</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">3.98</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2024-12</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.17</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.98</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">3.98</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.24</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2024-10</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">3.99</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2024-12</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.22</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">12.68</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">3.99</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.51</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2024-11</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.07</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2024-12</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.20</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">12.28</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.07</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.50</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2024-12</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.23</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-03</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.95</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.21</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">9.64</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.74</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.23</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.41</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-01</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-03</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.95</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.28</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">13.80</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.67</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.67</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.64</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-02</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-03</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.95</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.18</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">7.32</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.77</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.77</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.35</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-03</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-05</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.08</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.21</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">7.52</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.87</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.87</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.37</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-04</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-05</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.08</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.27</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">6.00</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.81</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.81</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.29</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-05</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-07</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.11</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.16</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.34</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.95</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.95</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.26</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-06</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-07</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.11</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">-0.10</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">7.00</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.01</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.01</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.35</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-07</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-09</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.72</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.57</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.90</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.29</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.29</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.31</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-08</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">NA</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2025-09</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">4.72</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.53</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">6.54</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">2019-2023</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.25</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">5.25</span></td>
+<td style="text-align:center;"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">0.34</span></td>
+</tr>
+<tr>
+<td style="text-align:right;" colspan="10"><span style="font-family:&quot;Arial&quot;,sans-serif;font-size:10.0pt;line-height:115%;">Model forecast of the MYA price (Step #8): &nbsp; &nbsp; &nbsp; &nbsp; 4.57&nbsp;</span></td>
+</tr>
+</tbody>
+</table>
+<ul type="disc">
+<li data-list-item-id="e0cc3ddbf4b0cbbf124977a956e11078a">CCP rate forecast (marketing years 2002/03 through 2013/14): the counter-cyclical payment (CCP) rate is the higher of target price less the effective price forecast or zero. The effective price forecast is equal to the direct payment rate plus the higher of the MYA price (SAP) forecast or the national loan rate.</li>
+<li data-list-item-id="e3c3ed65a30713afc53db75a688958bf0">PLC payment rate forecast<br>
+<ul type="circle">
+<li data-list-item-id="ec970e563995956d40d8cb3fb4202082f">Marketing years 2014/15 through 2018/19: the PLC payment rate forecast is the higher of the reference price less the effective price forecast or zero. The effective price forecast is the higher of the MYA price (SAP) forecast or national loan rate.</li>
+<li data-list-item-id="e5f3b3f300b3fe836b1a70a9e35e8ba98">Marketing years 2019/20 and beyond: the PLC payment rate forecast is the effective reference price less the effective price forecast. The effective reference price is the greater of the reference price or&nbsp;85 percent (88 percent for marketing years 2025/26 and beyond)&nbsp;of the average of the MYA price from the preceding 5 years, excluding the highest and lowest prices, capped at 115 percent of the statutory reference price. Notice the 5 marketing years used for calculating the average MYA price have a 1-year gap to the program year, for example, the 2025 program uses MYA prices from 2019/20 to 2023/24. If any official MYA price for the 5 marketing years is not available before the forecast date, its MYA price model forecast would be used for forecasting the effective reference price. The effective price forecast is the higher of MYA price (SAP) forecast or the national loan rate.</li>
+</ul>
+</li>
+<li data-list-item-id="e889c17fe5b338b88f0e346d89eaf64f7">ARC-CO and ARC-IC price forecast: ARC-CO and ARC-IC price forecast is the higher of MYA price (SAP) forecast or the national loan rate.</li>
+</ul>
+<h2>Measures of Accuracy</h2>
+<p>Measures of accuracy were discussed and evaluated in ERS reports, see <a href="/publications/100978" class="usa-link">Merits of an Aggregate Futures Price Forecasting Model for the All Wheat U.S. Season-Average Farm Price</a>, <em><a href="/publications/36456" class="usa-link">Forecasting the Counter-Cyclical Payment Rate for U.S. Corn: An Application of the Futures Price Forecasting Model</a></em>, and <em><a href="/publications/90244" class="usa-link">Forecasting the U.S. Season-Average Farm Price of Upland Cotton: Derivation of a Futures Price Forecasting Model</a></em>.</p>
+<h2>Strengths and Limitations</h2>
+<p>This data product uses a market data-driven forecast model that depends on futures prices and USDA, NASS data. The procedure is transparent, and the input data is publicly available. The model can be further updated by users weekly or daily using more recent futures prices or other basis and marketing percentage values. Academic research over decades has shown U.S. agricultural futures prices generally provide good forecasts of subsequent prices; however, they can be biased in the short term under certain market conditions. This type of forecast model using futures prices has been providing input in the development of USDA official MYA price (SAP) projections released in USDA <em>WASDE</em> reports. Although the data product’s model forecasts are unofficial, they can supplement official projections. Additionally, the model could provide forecasts with a longer forecast horizon than <em>WASDE</em> projections as the earliest USDA official forecast for a given marketing year is released in the May before the start of the marketing year.</p>
+<h2>Resources</h2>
+<ul type="disc">
+<li data-list-item-id="e036d0fc9efdd619870ba5c9b0e317660"><a href="/publications/100978" class="usa-link">Merits of an Aggregate Futures Price Forecasting Model for the All Wheat U.S. Season-Average Farm Price</a> provides information about the aggregate wheat futures price model, its data requirements, the forecast procedure, and forecast accuracy for the marketing years 2005/06 to 2019/20.</li>
+<li data-list-item-id="ed0add4d956ebdd4c9678f827aa9a4202"><a href="/publications/36456" class="usa-link">Forecasting the Counter-Cyclical Payment Rate for U.S. Corn: An Application of the Futures Price Forecasting Model</a> provides background information on the futures forecast model for corn, its data requirements, the forecast procedure, and forecast results for crop years 2003/04 and 2004/05.</li>
+<li data-list-item-id="eade7a3328455085cdebc997467300ca9"><a href="/publications/90244" class="usa-link">Forecasting the U.S. Season-Average Farm Price of Upland Cotton: Derivation of a Futures Price Forecasting Model</a> provides information about the cotton futures adjusted-price model, its structure, data requirements, forecast procedure, and forecast accuracy for marketing years 2008/09 to 2016/17.</li>
+<li data-list-item-id="e74c0dc9e844e9cd0290fba3dff16646f">Information on farm bill programs can be found on the <a href="/topics/farm-bill" data-entity-type="node" data-entity-uuid="dbf48f43-15fe-4c57-af18-f52f20788c67" data-entity-substitution="canonical" title="Farm Bill" class="usa-link">USDA, ERS Farm Bill webpage</a> and <a href="https://www.fsa.usda.gov/resources/programs/arc-plc" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">USDA, FSA webpage</a>.</li>
+<li data-list-item-id="e2fdc3a59542cb69465532dea7ba4f4f3">Iowa State University’s Extension and Outreach program develops a similar <a href="https://www.extension.iastate.edu/agdm/crops/html/a2-15.html" target="_blank" class="usa-link usa-link--external" rel="noopener noreferrer">excel calculator</a> for corn and soybeans that is based on this data product.&nbsp;</li>
+</ul>
+<h2>Recommended Citation</h2>
+<p>U.S. Department of Agriculture, Economic Research Service. <em>Season-average price forecasts</em>.</p>
+	</div>
+
+  </div>
+
+</article>
+
+  </div>
+
+
+				</div>
+			</div>
+		</div>
+	
+	<!-- Chart Detail -->
+	
+	<!-- AW Article -->
+	
+	<!-- Content full width 2 -->
+			<div>
+			  <div>
+    
+    
+<div id="ers-csat-survey-invite"  id="block-ers-csat-survey-invite" class="display-none margin-top-5 block block-ers-csat-survey block-ers-csat-survey-invite">
+	
+			
+
+		<!-- Template: ers-csat-survey-invite-banner -->
+		<template id="ers-csat-survey-invite-banner">
+			<div class="padding-y-3 desktop:padding-y-8" style="background-position:center; background-size:cover; background-image: url('/media/4065/bg22.jpg');">
+				<div class="grid-container-desktop-lg">
+					<div class="grid-row grid-gap-3">
+						<div class="tablet:grid-col-5 margin-bottom-2">
+							<div class="bg-white shadow-5 height-full padding-3">
+																	<h2 class="font-heading-xl section-heading-gold margin-top-0">We’d welcome your feedback!</h2>
+																									<p class="usa-prose">Would you be willing to answer a few quick questions about your experience?</p>
+																									<p class="margin-bottom-0">
+										<a class="usa-button usa-button--accent-cool" href="/survey?destination=/data-products/season-average-price-forecasts/documentation">Yes, I’ll give feedback</a>
+									</p>
+															</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+	</div>
+  </div>
+
+		</div>
+	
+</main>
+
+<!-- Footer -->
+<footer class="usa-footer usa-footer--big">
+	<div class="grid-container usa-footer__return-to-top">
+		<a href="#">Return to top</a>
+	</div>
+	<div class="usa-footer__primary-section">
+		<div class="grid-container">
+			<div class="grid-row grid-gap">
+				<div class="tablet:grid-col-8">
+					<nav class="usa-footer__nav" aria-label="Footer navigation">
+						<div class="grid-row grid-gap-4">
+							<div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+								  <div>
+    
+
+<div  id="block-erslinks" class="usa-footer__primary-content usa-footer__primary-content--collapsible block block-block-content block-block-contentf13f7333-6453-4473-81d8-3036e35013d4">
+	
+						
+			<h4 class="usa-footer__primary-link">ERS Links</h4>
+							<ul class="usa-list usa-list--unstyled">
+																																																																																																																																																						<li class="usa-footer__secondary-link">
+							<a href="/help/accessibility">Accessibility</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="/about-ers/careers-at-ers">Careers</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="/contact-us">Contact Us</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="/help">Help</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="/about-ers/policies-and-standards/information-quality">Information Quality</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="/privacy">Privacy Policy</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="/index/sitemap.xml">Site Map</a>
+						</li>
+																														</ul>
+			</div>
+  </div>
+
+							</div>
+							<div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+								  <div>
+    
+
+<div  id="block-usdalinks" class="usa-footer__primary-content usa-footer__primary-content--collapsible block block-block-content block-block-content58ec706d-11bf-4052-9069-258798fc676b">
+	
+						
+			<h4 class="usa-footer__primary-link">USDA Links</h4>
+							<ul class="usa-list usa-list--unstyled">
+																																																																																																																																																						<li class="usa-footer__secondary-link">
+							<a href="/freedom-of-information-act">FOIA</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="https://www.usda.gov/non-discrimination-statement" rel="noopener noreferrer" class="usa-link--external" target="_blank">Non-Discrimination Statement</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="https://www.usda.gov/plain-writing" rel="noopener noreferrer" class="usa-link--external" target="_blank">Plain Writing</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="https://usdaoig.oversight.gov/" rel="noopener noreferrer" class="usa-link--external" target="_blank">Report Fraud</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="https://www.usda.gov/" rel="noopener noreferrer" class="usa-link--external" target="_blank">USDA.gov</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="https://www.usa.gov/" rel="noopener noreferrer" class="usa-link--external" target="_blank">USA.gov</a>
+						</li>
+																				<li class="usa-footer__secondary-link">
+							<a href="https://www.whitehouse.gov/" rel="noopener noreferrer" class="usa-link--external" target="_blank">White House.gov</a>
+						</li>
+																														</ul>
+			</div>
+  </div>
+
+							</div>
+							<div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+								
+							</div>
+							<div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+								
+							</div>
+						</div>
+					</nav>
+				</div>
+				<div class="tablet:grid-col-4">
+					  <div>
+    
+
+<div  id="block-footersignup" class="usa-sign-up block block-block-content block-block-content39783e6f-aae9-40d1-9627-10ef8db98ed3">
+	
+						<h3 class="usa-sign-up__heading">ERS E-newsletters</h3>
+							<a href="https://visitor.r20.constantcontact.com/manage/optin?v=001CPZXBN9FC9oQmIu-TWkaLC06vEWBMy1Q" class="usa-button usa-link--external" rel="noopener noreferrer" target="_blank">Subscribe</a>
+			</div>
+  </div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="usa-footer__secondary-section">
+		<div class="grid-container">
+			<div class="grid-row grid-gap">
+				<div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+					<div class="mobile-lg:grid-col-auto">
+						<img class="usa-footer__logo-img width-8" src="/themes/custom/uswds_ers/logo.svg" alt="U.S. Department of Agriculture logo" />
+					</div>
+					<div class="mobile-lg:grid-col-auto">
+						<p class="usa-footer__logo-heading">Economic Research Service</p>
+					</div>
+				</div>
+				<div class="usa-footer__contact-links mobile-lg:grid-col-6">
+					  <div>
+    
+
+<div  id="block-footersociallinks" class="usa-footer__social-links grid-row grid-gap-1 block block-block-content block-block-content203b4224-078b-4f64-b252-631eece03f7d">
+	
+																																																																																																																																																																																																																																																																																																																								<div class="grid-col-auto">
+						<a class="usa-social-link" href="https://x.com/USDA_ERS" target="_blank" rel="noopener noreferrer">
+							<img class="usa-social-link__icon" src="/themes/custom/uswds_ers/package/dist/img/usa-icons/x.svg" alt="x logo" />
+						</a>
+					</div>
+																												<div class="grid-col-auto">
+						<a class="usa-social-link" href="https://www.linkedin.com/company/usda-economic-research-service/" target="_blank" rel="noopener noreferrer">
+							<img class="usa-social-link__icon" src="/themes/custom/uswds_ers/package/dist/img/usa-icons/linkedin.svg" alt="LinkedIn logo" />
+						</a>
+					</div>
+																																																</div>
+  </div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Analytics -->
+  <div>
+    
+
+<div  id="block-uswds-ers-googleanalyticsdap" class="block block-ers-blocks block-google-analytics-dap">
+	
+			
+	</div><div id="block-uswds-ers-googleanalyticsers" class="block block-ers-blocks block-google-analytics-ers">
+  
+    
+      
+  </div>
+
+
+<div  id="block-uswds-ers-adobeanalytics" class="block block-ers-blocks block-adobe-analytics">
+	
+			
+	</div>
+
+<div  id="block-uswds-ers-googlesiteverification" class="block block-ers-blocks block-google-site-verification">
+	
+			
+	</div>
+  </div>
+
+  </div>
+
+
+<script src="/modules/custom/ers_csat_survey/js/ers_csat_survey_invite.js?v=1"></script>
+<script src="/themes/custom/uswds_ers/package/dist/js/uswds.min.js?v=3.12.0"></script>
+
+</body>
+</html>
