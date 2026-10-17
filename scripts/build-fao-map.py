@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Mapa de las 19 zonas principales de pesca FAO (vendor/fao-areas.js) a partir de scripts/ref/fao-areas-lowres.json.
+Ese fichero (10,7 MB) no se guarda en el repositorio: para regenerar el mapa, lanzar a mano el workflow «fetch-fao-areas» (lo vuelve a bajar de la FAO, CC BY 4.0), ejecutar este script y no subir el fichero.
 Fuente: FAO. 2024. FAO Major Fishing Areas for Statistical Purposes (capa FAO_AREAS_ERASE_LOWRES), licencia CC BY 4.0.
 Se descargo con .github/workflows/fetch-fao-areas.yml. Proyeccion plana (longitud, latitud), simplificada."""
 import json
