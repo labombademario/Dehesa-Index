@@ -1,2 +1,3 @@
-pagina del WASDE no legible: RuntimeError("https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets
-FALLO: ValueError('no hay XML del WASDE en la pagina')
+ya en el libro: 2026-09
+leido 1026: 1172 celdas
+OK: informe 2026-10, 258 magnitudes, libro desde 2026-09
