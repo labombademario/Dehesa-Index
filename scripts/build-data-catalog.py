@@ -151,12 +151,12 @@ def main():
             files = []
             for i, ch in enumerate(chunks):
                 rel = 'series/%s/%s%s.json' % (slug(cc), g, '' if i == 0 else '-%d' % (i + 1)); files.append(rel)
-                doc = {'schemaVersion': 1, 'country': cc, 'group': g, 'series': [{'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'frequency': s.get('frequency', ''), 'points': s.get('points', [])} for n, s, r in ch]}
+                doc = {'schemaVersion': 1, 'country': cc, 'group': g, 'series': [dict({'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'frequency': s.get('frequency', ''), 'points': s.get('points', [])}, **({'forecast': s['forecast'], 'periodNote': s.get('periodNote', '')} if s.get('forecast') else {})) for n, s, r in ch]}   # forecast: periodos futuros que publica la fuente (Eurostat); aparte de points para que ninguna comprobacion los tome por observaciones
                 changed += write_if_changed(ROOT / 'data' / rel, dump(doc), written)
                 for n, s, r in ch:
                     pts = s.get('points', [])
                     cat.append({'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'freq': s.get('frequency', ''), 'group': g, 'latestPeriod': s.get('latestPeriod'), 'latest': s.get('latest'), 'changePct': s.get('changePct'),
-                                'first': pts[0][0] if pts else None, 'n': len(pts), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', '').split(' \u00b7 ')[0] if n == 'latest' else s.get('label', ''), g), 'source': n + '.json', 'file': rel,
+                                'first': pts[0][0] if pts else None, 'n': len(pts), **({'nForecast': len(s['forecast'])} if s.get('forecast') else {}), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', '').split(' \u00b7 ')[0] if n == 'latest' else s.get('label', ''), g), 'source': n + '.json', 'file': rel,
                                 'sourceId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[0], 'licenseId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[1]})
             gs = [x for x in cat if x['group'] == g]
             mg[g] = {'n': len(gs), 'files': files, 'latestPeriod': max([x['latestPeriod'] for x in gs if x['latestPeriod']] or [None]), 'tags': sorted({t for x in gs for t in x['tags']})}

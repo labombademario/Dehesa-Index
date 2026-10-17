@@ -9149,54 +9149,6 @@
   "fr": "Indice : électricité",
   "it": "Indice: elettricità"
  },
- "Meat production, forecast (cattle, sheep, goats): Live bovine animals (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Live bovine animals (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos vivos (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins vivants (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini vivi (Migliaia di capi, Eurostat)"
- },
- "Meat production, forecast (cattle, sheep, goats): Bovine animals, less than 1 year old (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Bovine animals, less than 1 year old (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos de menos de 1 año (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins de moins d'un an (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini di meno di 1 anno (Migliaia di capi, Eurostat)"
- },
- "Meat production, forecast (cattle, sheep, goats): Bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos de 1 año o más (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins d'un an ou plus (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini di 1 anno o più (Migliaia di capi, Eurostat)"
- },
- "Meat production, forecast (cattle, sheep, goats): Male bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Male bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Bovinos machos de 1 año o más (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Bovins mâles d'un an ou plus (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Bovini maschi di 1 anno o più (Migliaia di capi, Eurostat)"
- },
- "Meat production, forecast (cattle, sheep, goats): Heifers (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Heifers (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Novillas (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Génisses (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Giovenche (Migliaia di capi, Eurostat)"
- },
- "Meat production, forecast (cattle, sheep, goats): Cows (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Cows (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Vacas (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Vaches (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Vacche (Migliaia di capi, Eurostat)"
- },
- "Meat production, forecast (cattle, sheep, goats): Live sheep (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Live sheep (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Ovinos vivos (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Ovins vivants (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Ovini vivi (Migliaia di capi, Eurostat)"
- },
- "Meat production, forecast (cattle, sheep, goats): Live goats (Thousand heads (animals), Eurostat)": {
-  "en": "Meat production, forecast (cattle, sheep, goats): Live goats (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de carne (vacuno, ovino, caprino): Caprinos vivos (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de viande (bovins, ovins, caprins) : Caprins vivants (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di carne (bovini, ovini, caprini): Caprini vivi (Migliaia di capi, Eurostat)"
- },
  "Electricity price for non-household consumers, excluding VAT: Consumption from 20 MWh to 499 MWh, band IB (Kilowatt-hour, Eurostat)": {
   "en": "Electricity price for non-household consumers, excluding VAT: Consumption from 20 MWh to 499 MWh, band IB (Kilowatt-hour, Eurostat)",
   "es": "Precio de la electricidad para consumidores no domésticos, sin IVA: Consumo de 20 a 499 MWh, banda IB (Kilovatio hora, Eurostat)",
@@ -9269,12 +9221,6 @@
   "fr": "Abattage biologique : Viande d'ovins et de caprins (Tonnes, Eurostat)",
   "it": "Macellazione biologica: Carne ovina e caprina (Tonnellate, Eurostat)"
  },
- "Pigmeat production, forecast (Thousand heads (animals), Eurostat)": {
-  "en": "Pigmeat production, forecast (Thousand heads (animals), Eurostat)",
-  "es": "Previsión de producción de porcino (Miles de cabezas, Eurostat)",
-  "fr": "Prévision de production de porcins (Milliers de têtes, Eurostat)",
-  "it": "Previsione di produzione di suini (Migliaia di capi, Eurostat)"
- },
  "Poultry, monthly: Chicks of mixed meat-laying breeds (Thousand, Eurostat)": {
   "en": "Poultry, monthly: Chicks of mixed meat-laying breeds (Thousand, Eurostat)",
   "es": "Aves, mensual: pollitos de razas mixtas carne-puesta (Miles, Eurostat)",
@@ -9328,5 +9274,59 @@
   "es": "Uva para vinificación (precio al productor, Eurostat)",
   "fr": "Raisins de cuve (prix à la production, Eurostat)",
   "it": "Uva da vino (prezzo alla produzione, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Live bovine animals (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Live bovine animals (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Bovinos vivos (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Bovins vivants (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Bovini vivi (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Bovine animals, less than 1 year old (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Bovine animals, less than 1 year old (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Bovinos de menos de 1 año (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Bovins de moins d'un an (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Bovini di meno di 1 anno (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Bovinos de 1 año o más (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Bovins d'un an ou plus (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Bovini di 1 anno o più (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Male bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Male bovine animals, 1 year old or over (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Bovinos machos de 1 año o más (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Bovins mâles d'un an ou plus (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Bovini maschi di 1 anno o più (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Heifers (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Heifers (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Novillas (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Génisses (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Giovenche (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Cows (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Cows (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Vacas (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Vaches (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Vacche (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Live sheep (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Live sheep (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Ovinos vivos (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Ovins vivants (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Ovini vivi (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (cattle, sheep, goats): Live goats (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (cattle, sheep, goats): Live goats (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (vacuno, ovino, caprino): Caprinos vivos (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (bovins, ovins, caprins) : Caprins vivants (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (bovini, ovini, caprini): Caprini vivi (Migliaia di capi, Eurostat)"
+ },
+ "Gross indigenous production, forecast (pigs) (Thousand heads (animals), Eurostat)": {
+  "en": "Gross indigenous production, forecast (pigs) (Thousand heads (animals), Eurostat)",
+  "es": "Previsión de producción indígena bruta (porcino) (Miles de cabezas, Eurostat)",
+  "fr": "Prévision de production indigène brute (porcins) (Milliers de têtes, Eurostat)",
+  "it": "Previsione di produzione indigena lorda (suini) (Migliaia di capi, Eurostat)"
  }
 }

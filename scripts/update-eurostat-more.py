@@ -19,6 +19,7 @@ C = {'ES': 'Spain', 'FR': 'France', 'DE': 'Germany', 'BE': 'Belgium', 'AT': 'Aus
 GEO = {'EU': 'EU27_2020'}
 SRC = {'name': 'Eurostat (forecasts, monthly series, environment, forestry, energy, dairy, aquaculture and organic statistics)', 'url': 'https://ec.europa.eu/eurostat/web/agriculture', 'license': 'Eurostat reuse policy (Decision 2011/833/EU); cite source'}
 FC = 'Forecast: the periods after the last observed one are Eurostat forecasts, not observations.'
+GIP = FC + ' Gross indigenous production = slaughterings + exports of live animals - imports of live animals, so it can be negative when imports exceed slaughter.'
 DSL = ['']   # titulo de la ultima tabla pedida
 SKIP_DIMS = ('freq', 'geo', 'time', 'unit')
 
@@ -108,8 +109,8 @@ def run(name, fn):
 
 def forecasts():
     n = 0
-    r, l = es('apro_mt_ppighq', sinceTimePeriod='2015-Q1'); n += gen(r, l, 'ppighq', 'production', 'Pigmeat production, forecast', 'Eurostat apro_mt_ppighq', FC)
-    r, l = es('apro_mt_pcatlhs', sinceTimePeriod='2015-S1'); n += gen(r, l, 'pcatlhs', 'production', 'Meat production, forecast (cattle, sheep, goats)', 'Eurostat apro_mt_pcatlhs', FC)
+    r, l = es('apro_mt_ppighq', sinceTimePeriod='2015-Q1'); n += gen(r, l, 'ppighq', 'production', 'Gross indigenous production, forecast (pigs)', 'Eurostat apro_mt_ppighq', GIP)
+    r, l = es('apro_mt_pcatlhs', sinceTimePeriod='2015-S1'); n += gen(r, l, 'pcatlhs', 'production', 'Gross indigenous production, forecast (cattle, sheep, goats)', 'Eurostat apro_mt_pcatlhs', GIP)
     return n
 def monthlies():
     n = 0
