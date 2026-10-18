@@ -266,20 +266,35 @@
     }).join('') + '</svg>';
     return svg + '<div class="di-movers-hint" style="margin-top:6px"><span style="display:inline-block;width:10px;height:10px;background:#7fb48d;border-radius:2px"></span> ' + esc(t.mapLegend) + ' &nbsp; <span style="display:inline-block;width:10px;height:10px;background:#e6e2d6;border-radius:2px"></span> ' + esc(t.mapNone) + ' · ' + esc(t.clickState) + '</div><p class="di-movers-hint">' + esc(t.mapNote) + '</p>';
   }
+  var GLOS = null;
+  var HELPX = {
+    es: { chg: ['Cambio', 'Variación del precio frente a la observación anterior de este mismo mercado.'], fr: ['Frescura', 'Si el dato es de hoy o ya tiene días de retraso: los informes de USDA no salen todos los días.'], what: 'Qué representa este precio' },
+    en: { chg: ['Change', 'Change in price versus the previous observation for this same market.'], fr: ['Freshness', 'Whether the data is from today or already a few days old: USDA reports are not all published every day.'], what: 'What this price represents' },
+    fr: { chg: ['Variation', 'Variation du prix par rapport à l’observation précédente de ce même marché.'], fr: ['Fraîcheur', 'Si la donnée date d’aujourd’hui ou a déjà quelques jours : les rapports de l’USDA ne paraissent pas tous les jours.'], what: 'Ce que représente ce prix' },
+    it: { chg: ['Variazione', 'Variazione del prezzo rispetto all’osservazione precedente dello stesso mercato.'], fr: ['Freschezza', 'Se il dato è di oggi o ha già qualche giorno: i rapporti USDA non escono tutti i giorni.'], what: 'Che cosa rappresenta questo prezzo' }
+  };
+  function buyerEmoji(n) { var x = String(n || '').toLowerCase(); return /terminal/.test(x) ? '🚢' : /export|port|river|gulf/.test(x) ? '⚓' : /process|plant|crush|mill|ethanol/.test(x) ? '🏭' : /feed|feedlot/.test(x) ? '🐄' : /elevator/.test(x) ? '🌾' : '📍'; }
+  function helpIcon(key, term, def) { return ' <button type="button" class="pl-help" data-help="' + esc(key) + '" data-term="' + esc(term) + '" data-def="' + esc(def) + '" title="' + esc(term + ': ' + def) + '" aria-label="' + esc(term + ': ' + def) + '">❔</button>'; }
   function groupHtml(name, rows, t) {
-    var maxD = rows.reduce(function (m, s) { return s.date > m ? s.date : m; }, ''), same = rows.filter(function (s) { return s.date === maxD; }), rng = '';
+    var hx = HELPX[lang()] || HELPX.es, maxD = rows.reduce(function (m, s) { return s.date > m ? s.date : m; }, ''), same = rows.filter(function (s) { return s.date === maxD; }), rng = '';
     if (same.length > 1) {
       var lo = Math.min.apply(null, same.map(function (s) { return s.lo != null ? s.lo : head(s); }).filter(function (v) { return v != null; })), hi = Math.max.apply(null, same.map(function (s) { return s.hi != null ? s.hi : head(s); }).filter(function (v) { return v != null; }));
-      if (isFinite(lo) && isFinite(hi)) rng = '<div style="font-size:13px;margin:2px 0 8px"><strong>' + esc(t.stateRange) + ':</strong> ' + money(lo) + ' — ' + money(hi) + per(same[0]) + ' <span class="di-movers-hint">(' + same.length + ' ' + esc(t.markets) + ' ' + esc(t.on) + ' ' + esc(dtxt(maxD)) + ')</span></div>';
+      if (isFinite(lo) && isFinite(hi)) rng = '<div class="pl-grng"><strong>' + esc(t.stateRange) + ':</strong> <span class="pl-grng-v">' + money(lo) + ' — ' + money(hi) + per(same[0]) + '</span> <span class="di-movers-hint">(' + same.length + ' ' + esc(t.markets) + ' ' + esc(t.on) + ' ' + esc(dtxt(maxD)) + ')</span></div>';
     }
+    var best = null; same.forEach(function (s) { var v = head(s); if (v != null && (best === null || v > best.v)) best = { v: v, id: s.id }; });
     var trs = rows.map(function (s) {
-      var f = fresh(s), url = VIEW + s.reportId;
-      return '<tr data-id="' + esc(s.id) + '" style="border-top:1px solid var(--border);' + (ST.id === s.id ? 'background:rgba(47,107,58,.08)' : '') + '"><td style="padding:9px 6px;vertical-align:top"><button type="button" class="di-link-btn" data-sel="' + esc(s.id) + '" style="text-align:left">' + esc(s.locationName || '—') + '</button><div class="di-movers-hint">' + esc(s.locationType) + (s.deliveryPoint ? ' · ' + esc(s.deliveryPoint) : '') + '</div></td>' +
-        '<td style="padding:9px 6px;text-align:right;vertical-align:top;white-space:nowrap">' + bidHtml(s) + '</td><td style="padding:9px 6px;text-align:right;vertical-align:top">' + basisHtml(s) + '</td><td style="padding:9px 6px;text-align:right;vertical-align:top">' + changeHtml(s) + '</td>' +
-        '<td style="padding:9px 6px;vertical-align:top;white-space:nowrap">' + esc(dtxt(s.date)) + '</td><td style="padding:9px 6px;vertical-align:top">' + badge(f, s.date) + '</td><td style="padding:9px 6px;vertical-align:top"><a href="' + url + '" target="_blank" rel="noopener">USDA AMS</a><div class="di-movers-hint">#' + s.reportId + '</div></td></tr>';
+      var f = fresh(s), url = VIEW + s.reportId, top = same.length > 1 && best && best.id === s.id && s.date === maxD;
+      return '<tr data-id="' + esc(s.id) + '" class="pl-row' + (ST.id === s.id ? ' pl-sel' : '') + '"><td class="pl-c-m"><button type="button" class="di-link-btn" data-sel="' + esc(s.id) + '" style="text-align:left">' + esc(s.locationName || '—') + '</button><div class="di-movers-hint">' + esc(s.locationType) + '</div></td>' +
+        '<td class="pl-c-bid">' + bidHtml(s) + '</td><td class="pl-c-basis">' + basisHtml(s) + '</td><td class="pl-c-chg">' + changeHtml(s) + '</td>' +
+        '<td class="pl-c-small">' + esc(dtxt(s.date)) + '</td><td class="pl-c-small">' + badge(f, s.date) + '</td><td class="pl-c-small"><a href="' + url + '" target="_blank" rel="noopener">USDA AMS</a><div class="di-movers-hint">#' + s.reportId + '</div></td></tr>';
     }).join('');
-    return '<div class="di-card" style="padding:12px 16px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 4px">' + esc(name || '—') + '</h3>' + rng + '<div class="di-table-wrap"><table class="pl-t" style="border-collapse:collapse;width:100%;min-width:640px;font-size:14px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left">' +
-      ['cMarket', 'cBid', 'cBasis', 'cChange', 'cDate', 'cFresh', 'cSource'].map(function (k, i) { return '<th scope="col" style="padding:8px 6px;' + (i > 0 && i < 4 ? 'text-align:right' : '') + '">' + esc(t[k].toUpperCase()) + '</th>'; }).join('') + '</tr></thead><tbody>' + trs + '</tbody></table></div></div>';
+    var hel = { cBid: GLOS && GLOS[0], cBasis: GLOS && GLOS[1], cChange: hx.chg, cFresh: hx.fr };
+    var ths = ['cMarket', 'cBid', 'cBasis', 'cChange', 'cDate', 'cFresh', 'cSource'].map(function (k, i) {
+      return '<th scope="col" class="' + (i > 0 && i < 4 ? 'pl-r' : '') + '">' + esc(t[k]) + (hel[k] ? helpIcon(k, hel[k][0], hel[k][1]) : '') + '</th>';
+    }).join('');
+    var rep = rows[0] ? represents(rows[0]) + ' ' + t.notComparable : '';
+    return '<section class="pl-group"><h3 class="pl-gh"><span aria-hidden="true">' + buyerEmoji(name) + '</span> ' + esc(name || '—') + helpIcon('what', hx.what, rep) + '</h3><div class="pl-helpbox" hidden></div>' + rng +
+      '<div class="di-table-wrap"><table class="pl-t"><thead><tr>' + ths + '</tr></thead><tbody>' + trs + '</tbody></table></div></section>';
   }
   function render(doc) {
     var t = tt(), R = rowsOf(doc), cur = specFor(R); ST.spec = cur;
@@ -291,13 +306,13 @@
     if (M.run && M.run.status !== 'OK') h += '<p class="di-info-api-notice" role="status">' + esc(t['run' + M.run.status] || '') + '</p>';
     h += hero(doc, R, shown) + controls(doc, R);
     h += '<h2 style="font-size:18px;margin:6px 0 2px">' + esc(stName(ST.s)) + ' · ' + esc(cname(ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(specLabel(c0 || { commodity: ST.c, unit: '' })) + ' · USDA AMS</p>';
-    if (shown.length) { var ls = {}; shown.forEach(function (s) { ls[s.locationType] = s; }); h += '<details class="di-card pl-what" style="padding:8px 14px;margin-bottom:12px;font-size:13px"><summary style="cursor:pointer;font-weight:600">' + esc(t.whatIs) + '</summary><div style="margin-top:6px">' + Object.keys(ls).map(function (k) { return '<div>• ' + esc(represents(ls[k])) + '</div>'; }).join('') + '<div class="di-movers-hint" style="margin-top:4px">' + esc(t.notComparable) + '</div></div></details>'; }
+    GLOS = null;
     // Terminos tecnicos explicados junto al dato, sin quitar el nombre original (auditoria 8-oct-2026)
     var GL = { es: ['Qué significan los términos', [['Precio al contado (cash bid)', 'lo que un comprador concreto (elevador, planta, terminal) ofrece por el grano entregado hoy o en el periodo indicado.'], ['Basis', 'diferencia entre ese precio al contado y el futuro de referencia de Chicago; negativo = por debajo del futuro.'], ['Mes de contrato', 'el vencimiento del futuro con el que USDA calcula el basis (p. ej. dic. para maíz nuevo).']]],
       en: ['What the terms mean', [['Cash bid', 'what a specific buyer (elevator, plant, terminal) offers for grain delivered now or in the period shown.'], ['Basis', 'the difference between that cash bid and the reference Chicago futures price; negative = below futures.'], ['Contract month', 'the futures expiry USDA uses to compute the basis (e.g. Dec for new-crop corn).']]],
       fr: ['Ce que signifient les termes', [['Prix comptant (cash bid)', 'ce qu’un acheteur précis (silo, usine, terminal) offre pour le grain livré maintenant ou sur la période indiquée.'], ['Basis', 'l’écart entre ce prix comptant et le contrat à terme de référence de Chicago ; négatif = en dessous du contrat.'], ['Mois du contrat', 'l’échéance du contrat à terme utilisée par l’USDA pour calculer le basis (ex. déc. pour le maïs nouvelle récolte).']]],
       it: ['Cosa significano i termini', [['Prezzo a pronti (cash bid)', 'quanto offre un acquirente preciso (elevatore, impianto, terminale) per il grano consegnato ora o nel periodo indicato.'], ['Basis', 'la differenza tra quel prezzo a pronti e il future di riferimento di Chicago; negativa = sotto il future.'], ['Mese del contratto', 'la scadenza del future usata da USDA per calcolare il basis (es. dic. per il mais di nuovo raccolto).']]] }[lang()] || null;
-    if (GL && shown.length) h += '<details class="di-card" style="padding:8px 14px;margin-bottom:12px;font-size:13px"><summary style="cursor:pointer;font-weight:600">' + esc(GL[0]) + '</summary><dl style="margin:6px 0 0">' + GL[1].map(function (g) { return '<dt style="font-weight:600;margin-top:6px">' + esc(g[0]) + '</dt><dd style="margin:0">' + esc(g[1]) + '</dd>'; }).join('') + '</dl></details>';
+    if (GL && shown.length) GLOS = GL[1];
     h += shown.length ? ns.map(function (k) { return groupHtml(k || '—', groups[k], t); }).join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>';
     h += '<div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:4px 0 14px">' + (hid ? '<label style="font-size:13px"><input type="checkbox" id="pl-inact"' + (ST.inactive ? ' checked' : '') + '> ' + esc(t.inactive) + ' (' + hid + ' ' + esc(t.hiddenN) + ')</label>' : '') +
       (shown.length && window.DIWatch ? '<button type="button" class="di-link-btn" id="pl-follow-all">' + esc(t.followAll) + ' (' + Math.min(shown.length, 20) + ')</button>' : '') + '</div>';
@@ -319,6 +334,7 @@
   }
   function bind(doc, shown) {
     var on = function (id, fn) { var el = document.getElementById(id); if (el) el.onchange = fn; };
+    Array.prototype.forEach.call(root.querySelectorAll('.pl-help'), function (b) { b.onclick = function () { var box = b.closest('.pl-group').querySelector('.pl-helpbox'), k = b.getAttribute('data-help'); if (!box.hidden && box.getAttribute('data-k') === k) { box.hidden = true; return; } box.setAttribute('data-k', k); box.innerHTML = '<b>' + esc(b.getAttribute('data-term')) + ':</b> ' + esc(b.getAttribute('data-def')); box.hidden = false; }; });
     var zg = document.getElementById('pl-zip-go'); if (zg) zg.onclick = function () { zipGo(doc); }; var zi = document.getElementById('pl-zip'); if (zi) zi.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); zipGo(doc); } };
     on('pl-s', function (e) { ST.s = e.target.value; if (!M.states[ST.s].commodities[ST.c]) ST.c = M.states[ST.s].commodities.corn ? 'corn' : Object.keys(M.states[ST.s].commodities)[0]; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load(); });
     on('pl-c', function (e) { ST.c = e.target.value; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load(); });

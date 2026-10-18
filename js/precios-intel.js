@@ -378,14 +378,18 @@
     return '<svg class="di-map-spark" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" aria-hidden="true"><path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg>';
   }
 
+  var TM_RANGES = [['1m', 27], ['3m', 88], ['6m', 180], ['1y', 365], ['3y', 1095], ['5y', 1825]];
+  var TM_KEY = '1m', TM_LOADING = false;
+  function tmDays() { for (var i = 0; i < TM_RANGES.length; i++) if (TM_RANGES[i][0] === TM_KEY) return TM_RANGES[i][1]; return 27; }
+  function tmPts(pts, days) { if (days < 88 || !pts || pts.length < 3) return pts; var cut = pts[pts.length - 1].ts - days * 86400000, sl = pts.filter(function (q) { return q.ts >= cut; }); return sl.length >= 2 ? sl : pts; }
   function buildMarketMap() {
-    var Core = core(), t = ui(), byGroup = {}, maxAbs = 0, items = [];
+    var Core = core(), t = ui(), byGroup = {}, maxAbs = 0, items = [], days = tmDays();
     Core.PRODUCTS.forEach(function (e) {
       var key = e.catId + '-' + e.nameKey, g = MAP_GROUP[key];
       if (!g || !Core.mapInfo) return;
       var info = Core.mapInfo(e);
       if (!info || !info.pts) return;
-      var chg = mapChange(info.pts);
+      var chg = mapChange(info.pts, days);
       if (chg !== null && Math.abs(chg) > maxAbs) maxAbs = Math.abs(chg);
       items.push({ key: key, g: g, entry: e, info: info, chg: chg });
     });
@@ -398,7 +402,7 @@
           var style = it.chg === null ? { bg: P().surfaceAlt, textColor: P().textFaint || '#5b5a52' } : tileStyle(it.chg, maxAbs);
           var changeLabel = it.chg === null ? '—' : D.fmtChange(it.chg);
           return { key: it.key, chg: it.chg, name: name, price: it.info.price, unit: it.info.unit, changeLabel: changeLabel, bg: style.bg, textColor: style.textColor,
-            spark: sparkSvg(it.info.pts, style.textColor), tileTitle: name + ' · ' + it.info.price + ' ' + it.info.unit + ' · ' + changeLabel + (it.info.date ? ' · ' + it.info.date : '') };
+            spark: sparkSvg(tmPts(it.info.pts, days), style.textColor), tileTitle: name + ' · ' + it.info.price + ' ' + it.info.unit + ' · ' + changeLabel + (it.info.date ? ' · ' + it.info.date : '') };
         })
       };
     });
@@ -467,6 +471,30 @@
     });
   }
 
+  var TM_LBL = {
+    es: { lbl: 'Periodo', m: { '1m': '1 mes', '3m': '3 meses', '6m': '6 meses', '1y': '1 año', '3y': '3 años', '5y': '5 años' }, load: 'Cargando el histórico…', note: 'Si un producto no tiene tanta historia verificada en este mercado, aparece sin cambio (—): no se estima.' },
+    en: { lbl: 'Period', m: { '1m': '1 month', '3m': '3 months', '6m': '6 months', '1y': '1 year', '3y': '3 years', '5y': '5 years' }, load: 'Loading history…', note: 'If a product does not have that much verified history in this market, it shows no change (—): nothing is estimated.' },
+    fr: { lbl: 'Période', m: { '1m': '1 mois', '3m': '3 mois', '6m': '6 mois', '1y': '1 an', '3y': '3 ans', '5y': '5 ans' }, load: 'Chargement de l’historique…', note: 'Si un produit n’a pas autant d’historique vérifié sur ce marché, il apparaît sans variation (—) : rien n’est estimé.' },
+    it: { lbl: 'Periodo', m: { '1m': '1 mese', '3m': '3 mesi', '6m': '6 mesi', '1y': '1 anno', '3y': '3 anni', '5y': '5 anni' }, load: 'Caricamento dello storico…', note: 'Se un prodotto non ha tanto storico verificato in questo mercato, appare senza variazione (—): nulla viene stimato.' }
+  };
+  function tmRangeHtml() {
+    var x = TM_LBL[lang()] || TM_LBL.es;
+    return '<div class="di-tm-range" id="di-tm-range"><span class="di-tm-rl">' + esc(x.lbl) + '</span><span class="pl-chips" role="group" aria-label="' + esc(x.lbl) + '">' + TM_RANGES.map(function (r) { return '<button type="button" class="pl-chip" data-tmr="' + r[0] + '" aria-pressed="' + (r[0] === TM_KEY) + '">' + esc(x.m[r[0]]) + '</button>'; }).join('') + '</span><span class="di-movers-hint" id="di-tm-note">' + (TM_LOADING ? esc(x.load) : esc(x.note)) + '</span></div>';
+  }
+  function redoTreemap() {
+    var host = document.getElementById('di-tm-host'); if (!host) return;
+    host.innerHTML = treemapHtml(buildMarketMap()); wireOpenTargets(host);
+    var rg = document.getElementById('di-tm-range'); if (rg) { rg.outerHTML = tmRangeHtml(); wireTreemapRange(); }
+  }
+  function wireTreemapRange() {
+    Array.prototype.forEach.call(document.querySelectorAll('#di-tm-range [data-tmr]'), function (b) {
+      b.onclick = function () {
+        TM_KEY = b.getAttribute('data-tmr'); var Core = core();
+        if (tmDays() >= 180 && Core && Core.ensureAllHistory) { TM_LOADING = true; redoTreemap(); Core.ensureAllHistory().then(function () { TM_LOADING = false; redoTreemap(); }, function () { TM_LOADING = false; redoTreemap(); }); }
+        else redoTreemap();
+      };
+    });
+  }
   function renderMarketMapHtml() {
     var t = ui();
     var groups = buildMarketMap();
@@ -475,7 +503,7 @@
     return (
       '<div class="di-intel-section" id="di-intel-map">' +
         '<div class="di-intel-head"><h2>' + esc(t.mapTitle) + '</h2><p>' + esc(t.mapIntro) + '</p></div>' +
-        '<div class="di-tm-host" id="di-tm-host">' + groupsHtml + '</div>' +
+        tmRangeHtml() + '<div class="di-tm-host" id="di-tm-host">' + groupsHtml + '</div>' +
         '<div class="di-intel-disclaimer">' + esc(t.mapDisclaimer) + '</div>' +
       '</div>'
     );
@@ -1515,6 +1543,7 @@
         renderSpreadsHtml());
     wireOpenTargets(root);
     armTreemapResize();
+    wireTreemapRange();
     wireAtlanticSort();
     wireCorrSelector(root, corrVolData);
     labelSvgs(root);
