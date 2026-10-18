@@ -194,6 +194,9 @@ jobs:
       - name: canonicalSeriesId v2 (unicidad salvo equivalencias declaradas)
         run: python3 scripts/test-canonical-ids.py
 
+      - name: Uruguay adapter (odc-uy licence gate, HTML-as-200, URSEA quarantine, land Sem 999, DICOSE PD_AD)
+        run: pip install openpyxl && python3 scripts/test-uruguay.py
+
       - name: Coverage Score precalculado = el de la ficha de pais
         run: node scripts/test-coverage-parity.mjs
 

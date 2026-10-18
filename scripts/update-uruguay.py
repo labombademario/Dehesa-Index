@@ -14,9 +14,14 @@ Conjuntos usados:
   mgap-serie-precio-de-la-tierra-compraventas  MGAP, compraventas de tierra por semestre, anio y departamento (XLSX; el CSV tiene la coma decimal sin comillas y desplaza columnas).
         Se publica por anio, con los departamentos que declaran los dos semestres: USD por hectarea = suma de montos / suma de hectareas (ponderado, no media de precios), hectareas
         y numero de operaciones. Operaciones registradas, no precios de oferta. Semestre 999 y anios incompletos no se asignan.
+  mgap-datos-*-declaracion-jurada-de-existencias-dicose-snig-{2016..2025}  MGAP, DICOSE/SNIG, existencias por especie (datosanimales.csv, un conjunto por ejercicio). Se publica la
+        suma nacional de AnimalesPorEspeciePD_AD (animales propios dentro + ajenos dentro, el criterio tradicional de DICOSE; existencia fisica en los establecimientos) de bovinos (1),
+        ovinos (2) y bovinos de leche (11), y los nacimientos declarados de bovinos. NO se suma PD_PF (propios dentro + propios fuera) y NO se suman los codigos 1 y 11 en un total:
+        la fuente no garantiza que no se solapen. Suinos, caprinos, yeguarizos y aves no se publican: el MGAP advierte que no pasaron controles de calidad. El ejercicio
+        es el ejercicio ganadero de la declaracion jurada; no se supone una fecha exacta de referencia.
 Sin estimaciones: lo que falta no se rellena; una serie con menos de 3 puntos o sin dato en los ultimos 3 anios se descarta y se anota en el log.
 
-Modo local de prueba: python3 scripts/update-uruguay.py --local DIR  (DIR con los originales del paquete de investigacion: raw/*.csv, raw/*.xlsx, raw/ckan-*.json)."""
+Modo local de prueba: python3 scripts/update-uruguay.py --local DIR [--out DIR_SALIDA]  (DIR con los originales del paquete de investigacion: raw/*.csv, raw/*.xlsx, raw/ckan-*.json)."""
 import csv, datetime, io, json, re, sys, time, urllib.request, calendar
 from collections import defaultdict
 from pathlib import Path
@@ -186,10 +191,60 @@ def land():
     mk('uy-mgap-land-sale-count', 'prices', 'Uruguay: land sales, number of registered operations (MGAP)', 'operations', 'annual', [(str(y), yr[y][2]) for y in ys], 'MGAP (Uruguay)', nt)
 
 
+# ------------------------------------------------------------------ MGAP: DICOSE existencias
+DICOSE_PKGS = ['mgap-datos-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig-2016', 'mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2017',
+               'mgap-datos-2018-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig', 'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2019',
+               'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2020', 'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2021',
+               'datos-preliminares-declaracion-jurada-de-existencias-dicose-snig-2022', 'mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2023',
+               'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2024', 'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2025']
+SPECIES = {'1': 'cattle', '2': 'sheep', '11': 'dairy-cattle'}
+
+
+def dicose():
+    tot = defaultdict(lambda: defaultdict(float))   # (especie) -> ejercicio -> PD_AD
+    births = defaultdict(float)
+    for name in DICOSE_PKGS:
+        try: pkg = package(name)
+        except Exception as e: log('DICOSE %s: %s' % (name[-12:], e)); continue
+        got = False
+        for r in pkg['resources']:
+            if not (r.get('url') or '').endswith('datosanimales.csv'): continue
+            try: b = resource_bytes(r)
+            except Exception as e: log('DICOSE %s: fallo %s' % (name[-12:], e)); continue
+            if b is None: continue
+            if b.lstrip().startswith(b'<'): log('DICOSE %s: contenido no es CSV' % name[-12:]); continue
+            rd = csv.DictReader(io.StringIO(b.decode('latin-1')), delimiter=';')
+            cols = {(c or '').replace('ns1:', ''): c for c in (rd.fieldnames or [])}
+            need = ('Ejercicio', 'EspecieCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD')
+            if any(n not in cols for n in need): continue   # otro recurso (p. ej. el detallado por categoria) o formato distinto
+            sub = defaultdict(float); sb = 0.0; ej = set(); nrow = 0
+            for x in rd:
+                e, sp = (x[cols['Ejercicio']] or '').strip(), (x[cols['EspecieCodigo']] or '').strip()
+                v = num(x[cols['AnimalesPorEspeciePD_AD']])
+                if not re.fullmatch(r'\d{4}', e) or v is None: continue
+                ej.add(e); nrow += 1
+                if sp in SPECIES: sub[sp] += v
+                if sp == '1': sb += num(x[cols['AnimalesPorEspecieNacimientosPD_AD']]) or 0
+            if len(ej) != 1 or nrow < 1000: log('DICOSE %s: ejercicios %s, filas %d: se omite' % (name[-12:], sorted(ej), nrow)); continue
+            y = ej.pop()
+            for sp, v in sub.items(): tot[sp][y] = v
+            births[y] = sb; got = True
+            break
+        if not got: log('DICOSE %s: sin datosanimales.csv utilizable' % name[-12:])
+    nt = ('MGAP, DICOSE/SNIG: declaracion jurada de existencias. Suma nacional de animales propios dentro + ajenos dentro (PD_AD, criterio tradicional de DICOSE), ejercicio ganadero; '
+          'no es un censo ni se suma con PD_PF. Los datos de ejercicios recientes son preliminares.')
+    names = {'1': 'Cattle', '2': 'Sheep', '11': 'Dairy cattle (DICOSE species 11)'}
+    for sp, nm in names.items():
+        extra = ' No se suma con bovinos: la fuente no garantiza que los codigos 1 y 11 no se solapen.' if sp in ('1', '11') else ''
+        mk('uy-dicose-%s-head' % SPECIES[sp], 'livestock', '%s: inventory on holdings, head, Uruguay (MGAP DICOSE, PD_AD)' % nm, 'head', 'annual', list(tot[sp].items()), 'MGAP (Uruguay)', nt + extra)
+    mk('uy-dicose-cattle-births', 'livestock', 'Cattle: births declared, head, Uruguay (MGAP DICOSE)', 'head', 'annual',
+       [(y, v) for y, v in births.items() if v > 0], 'MGAP (Uruguay)', nt + ' El dato de nacimientos solo existe para bovinos.')
+
+
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, land):
+    for fn in (inia, ursea, land, dicose):
         try: fn()
         except Exception as e: log('fallo en', fn.__name__, e)
     if not OUT: log('sin series'); sys.exit(1)
@@ -199,7 +254,7 @@ def main():
         'license': 'Licencia de Datos Abiertos - Uruguay (odc-uy); Dehesa Index calcula medias, sumas y ponderaciones sin aval del proveedor'},
         'series': [OUT[k] for k in sorted(OUT)]}}}
     log('series guardadas:', len(OUT))
-    out = ROOT / 'data'
+    out = Path(sys.argv[sys.argv.index('--out') + 1]) if '--out' in sys.argv else ROOT / 'data'
     (out / 'uruguay-stats.json').write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     (out / 'uruguay-log.txt').write_text('\n'.join(LOG) + '\n', encoding='utf-8')
 
