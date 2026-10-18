@@ -242,7 +242,7 @@
         var d = r[0]; if (!d) { root.innerHTML = '<p>' + esc(tx(T.fail)) + '</p>'; return; }
         var opts = ccs.slice().sort(function (a, b) { return tx(N[a] || [a, a, a, a]).localeCompare(tx(N[b] || [b, b, b, b]), LOC[lg()]); }).map(function (c) { return '<option value="' + c + '"' + (c === CUR ? ' selected' : '') + '>' + esc(tx(N[c] || [c, c, c, c])) + '</option>'; }).join('');
         var ch = charts(d), noSea = d.cc !== 'US' && !d.series['ca-total'] && !d.series['ld-total-eur'];
-        var h = '<div class="fsh-pick"><label for="fsh-cc">' + esc(tx(T.country)) + '</label> <select id="fsh-cc" class="di-compare-select">' + opts + '</select>' + (noSea ? ' <span class="di-movers-hint">' + esc(tx(T.land)) + '</span>' : '') + '</div>' +
+        var h = '<div class="fsh-pick"><label for="fsh-cc">' + esc(tx(T.country)) + '</label> <select data-cpick="1" id="fsh-cc" class="di-compare-select">' + opts + '</select>' + (noSea ? ' <span class="di-movers-hint">' + esc(tx(T.land)) + '</span>' : '') + '</div>' +
           '<div class="fsh-kpis">' + kpis(d) + '</div>' +
           (ch.length ? '<section class="di-card fsh-sec wp-card">' + ch.map(function (c) { return c.html; }).join('') + '</section>' : '') +
           speciesBlock(d) + statesBlock(d) + zonesBlock(d) + listBlock(tx(T.cT), d.catches, false) + listBlock(tx(T.aT), d.aquaculture, true) + fleetBlock(d) +

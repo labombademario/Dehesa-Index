@@ -553,7 +553,7 @@
     if (state.location === 'eu') {
       // todos los países de la UE con precios propios en la Comisión (antes solo España, Alemania, Francia e Italia)
       var countries = EU_CC.map(function (c) { return { code: c, flag: ccFlag(c), label: ccName(c) }; });
-      html += '<select class="di-eu-country-select" id="pr-eu-country" aria-label="' + ({ es: 'País de la UE', en: 'EU country', fr: 'Pays de l’UE', it: 'Paese UE' }[lang()] || 'EU country') + '">' + countries.map(function (c) {
+      html += '<select data-cpick="1" class="di-eu-country-select" id="pr-eu-country" aria-label="' + ({ es: 'País de la UE', en: 'EU country', fr: 'Pays de l’UE', it: 'Paese UE' }[lang()] || 'EU country') + '">' + countries.map(function (c) {
         return '<option value="' + c.code + '"' + (c.code === state.euCountry ? ' selected' : '') + '>' + c.flag + ' ' + esc(c.label) + '</option>';
       }).join('') + '</select>';
       html += '<details class="di-eu-country-hint"><summary>' + esc(({ es: 'Cómo se fijan los precios por país', en: 'How country prices are set', fr: 'Comment sont fixés les prix par pays', it: 'Come si fissano i prezzi per paese' })[lang()] || 'Cómo se fijan los precios por país') + '</summary>' + esc(t.euCountryHint) + '</details>';

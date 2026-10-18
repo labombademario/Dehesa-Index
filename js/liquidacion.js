@@ -223,7 +223,7 @@
   function inputsHtml(w) {
     var u = unitOf();
     var h = '<section class="di-card lq-sec no-print"><h2>' + esc(w.s1) + '</h2><div class="lq-row">';
-    h += '<label>' + esc(w.country) + ' <select id="lq-c" class="di-compare-select">' + (IDX ? IDX.countries : [{ c: 'ES' }]).map(function (c) { return { c: c.c, n: cname(c.c) }; }).sort(function (a, b) { return a.c === 'ES' ? -1 : b.c === 'ES' ? 1 : a.n < b.n ? -1 : 1; }).map(function (c) { return '<option value="' + c.c + '"' + (c.c === CC ? ' selected' : '') + '>' + esc(c.n) + '</option>'; }).join('') + '</select></label>';
+    h += '<label>' + esc(w.country) + ' <select data-cpick="1" id="lq-c" class="di-compare-select">' + (IDX ? IDX.countries : [{ c: 'ES' }]).map(function (c) { return { c: c.c, n: cname(c.c) }; }).sort(function (a, b) { return a.c === 'ES' ? -1 : b.c === 'ES' ? 1 : a.n < b.n ? -1 : 1; }).map(function (c) { return '<option value="' + c.c + '"' + (c.c === CC ? ' selected' : '') + '>' + esc(c.n) + '</option>'; }).join('') + '</select></label>';
     if (REFS) h += '<label>' + esc(w.product) + ' <select id="lq-p" class="di-compare-select">' + products().map(function (o) { return '<option value="' + esc(o.k) + '"' + (o.k === PROD ? ' selected' : '') + '>' + esc(nm(o.r.product)) + ' (' + o.n + ')</option>'; }).join('') + '</select></label>';
     h += '</div>';
     if (REFS) {

@@ -30,3 +30,7 @@ CI ejecuta lo mismo (`Dehesa Quality`). Commits pequenos, un bloque por commit, 
 
 ## Accesibilidad
 WCAG 2 A/AA: contraste ≥ 4,5:1 (usa los tokens `--text-faint`, `--positive`… no colores literales claros), `select` e inputs con etiqueta, SVG decorativos `aria-hidden`, regiones con scroll accesibles por teclado, `lang` sincronizado con el selector de idioma. `scripts/e2e.mjs` falla con `critical|serious`.
+
+## Norma: selector de pais
+
+Siempre que el usuario deba elegir un pais, el `<select>` lleva el atributo `data-cpick="1"`. `js/country-picker.js` (que carga `js/shared.js` solo cuando hace falta) lo sustituye por un boton con buscador y grupos **Zona euro, Resto de Europa, America y Resto del mundo**, con bandera. El `<select>` original sigue en el DOM y recibe el valor y el evento `change`, asi que no hay que tocar la logica de la pagina. No se anaden listas desplegables largas de paises.

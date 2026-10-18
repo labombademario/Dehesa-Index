@@ -60,7 +60,7 @@
     all.forEach(function (s) { if (catOf(s) === st.cat) list.push(s); });
     if (!st.sid || !list.some(function (s) { return s.id === st.sid; })) st.sid = list[0].id;
     var s = list.filter(function (x) { return x.id === st.sid; })[0];
-    var sel = '<div style="display:flex;flex-wrap:wrap;gap:10px 18px;margin:10px 0 4px"><label class="di-movers-hint">' + esc(T0.ctry) + '<select id="' + id + '-cc" style="display:block;margin-top:4px;font:inherit;max-width:100%">' +
+    var sel = '<div style="display:flex;flex-wrap:wrap;gap:10px 18px;margin:10px 0 4px"><label class="di-movers-hint">' + esc(T0.ctry) + '<select data-cpick="1" id="' + id + '-cc" style="display:block;margin-top:4px;font:inherit;max-width:100%">' +
       codes.map(function (c) { return '<option value="' + esc(c) + '"' + (c === st.cc ? ' selected' : '') + '>' + esc(cname(st.countries[c], c)) + '</option>'; }).join('') + '</select></label>' +
       '<label class="di-movers-hint">' + esc(T0.cat) + '<select id="' + id + '-cat" style="display:block;margin-top:4px;font:inherit;max-width:100%">' +
       cats.map(function (c) { return '<option value="' + esc(c) + '"' + (c === st.cat ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</select></label>' +
