@@ -220,6 +220,29 @@
       ZMSG = t.zipOk.replace('{0}', stName(st)); ST.s = st; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load();
     }).catch(function () { say(t.zipNone); });
   }
+  /* ---------- cabecera: mapa a la izquierda; resumen y productos a la derecha ---------- */
+  var CE = { corn: '🌽', soybeans: '🫘', wheat: '🌾', barley: '🍺', oats: '🥣', sorghum: '🌿' };
+  var HS = {
+    es: { med: 'Mediana de {n} mercados', rng: 'Rango', chg: 'Cambio frente al día anterior', on: 'el', none: 'Sin precios recientes para esta selección.', calc: 'Cálculo de Dehesa Index con los precios publicados por USDA; no es un precio oficial.', pick: 'Producto' },
+    en: { med: 'Median of {n} markets', rng: 'Range', chg: 'Change vs previous day', on: 'on', none: 'No recent prices for this selection.', calc: 'Dehesa Index calculation from USDA-published prices; not an official price.', pick: 'Commodity' },
+    fr: { med: 'Médiane de {n} marchés', rng: 'Fourchette', chg: 'Variation vs veille', on: 'le', none: 'Aucun prix récent pour cette sélection.', calc: 'Calcul de Dehesa Index à partir des prix publiés par l’USDA ; ce n’est pas un prix officiel.', pick: 'Produit' },
+    it: { med: 'Mediana di {n} mercati', rng: 'Intervallo', chg: 'Variazione sul giorno precedente', on: 'il', none: 'Nessun prezzo recente per questa selezione.', calc: 'Calcolo di Dehesa Index sui prezzi pubblicati da USDA; non è un prezzo ufficiale.', pick: 'Prodotto' }
+  };
+  function median(a) { var b = a.slice().sort(function (x, y) { return x - y; }), n = b.length; return n ? (n % 2 ? b[(n - 1) / 2] : (b[n / 2 - 1] + b[n / 2]) / 2) : null; }
+  function hero(doc, R, shown) {
+    var h = HS[lang()] || HS.es, coms = Object.keys(M.states[ST.s].commodities).sort(function (a, b) { return cname(a).localeCompare(cname(b)); });
+    var chips = coms.map(function (c) { return '<button type="button" class="pl-chip" data-com="' + esc(c) + '" aria-pressed="' + (c === ST.c) + '"><span aria-hidden="true">' + (CE[c] || '🌾') + '</span> ' + esc(cname(c)) + '</button>'; }).join('');
+    var maxD = shown.reduce(function (m, x) { return x.date > m ? x.date : m; }, ''), same = shown.filter(function (x) { return x.date === maxD && head(x) != null; }), sum;
+    if (!same.length) sum = '<p class="di-movers-hint">' + esc(h.none) + '</p>';
+    else {
+      var vals = same.map(head), med = median(vals), lo = Math.min.apply(null, same.map(function (x) { return x.lo != null ? x.lo : head(x); })), hi = Math.max.apply(null, same.map(function (x) { return x.hi != null ? x.hi : head(x); }));
+      var chs = same.filter(function (x) { return x.changePct != null; }).map(function (x) { return x.changePct; }), mc = median(chs);
+      var arrow = mc == null ? '' : '<div class="pl-chg ' + (mc > 0.049 ? 'up' : mc < -0.049 ? 'dn' : '') + '">' + (mc > 0.049 ? '▲ +' : mc < -0.049 ? '▼ −' : '■ ') + nf(Math.abs(mc), 1) + ' % <span>' + esc(h.chg) + '</span></div>';
+      sum = '<div class="pl-sum"><div class="pl-sum-k">' + esc(h.med.replace('{n}', same.length)) + ' · ' + esc(h.on) + ' ' + esc(dtxt(maxD)) + '</div><div class="pl-big">' + money(med) + '<small>' + esc(per(same[0])) + '</small></div>' +
+        '<div class="pl-rng"><b>' + esc(h.rng) + ':</b> ' + money(lo) + ' – ' + money(hi) + esc(per(same[0])) + '</div>' + arrow + '<p class="di-movers-hint">' + esc(h.calc) + '</p></div>';
+    }
+    return '<div class="pl-hero"><div class="pl-hero-map"><div id="pl-map">' + mapHtml() + '</div></div><aside class="pl-hero-panel"><h2 class="pl-ph">' + esc(stName(ST.s)) + '</h2><div class="pl-chips" role="group" aria-label="' + esc(h.pick) + '">' + chips + '</div>' + sum + '</aside></div>';
+  }
   function controls(doc, R) {
     var t = tt(), st = Object.keys(M.states).sort(function (a, b) { return stName(a).localeCompare(stName(b)); });
     var coms = Object.keys(M.states[ST.s].commodities).sort(function (a, b) { return cname(a).localeCompare(cname(b)); });
@@ -229,7 +252,6 @@
     var lab = function (id, txt, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + esc(txt) + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
     return '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:0 0 12px">' +
       lab('pl-s', t.state, st.map(function (k) { return opt(k, stName(k), k === ST.s); }).join('')) +
-      lab('pl-c', t.commodity, coms.map(function (k) { return opt(k, cname(k), k === ST.c); }).join('')) +
       (sp_.length > 1 ? lab('pl-spec', t.spec, sp_.map(function (x) { return opt(x.key, specLabel(x.s) + ' (' + Object.keys(x.mk).length + ')', x.key === cur); }).join('')) : '') +
       (Object.keys(buyers).length > 1 ? lab('pl-buyer', t.buyer, opt('', t.allBuyers, !ST.buyer) + Object.keys(buyers).sort().map(function (b) { return opt(b, b || '—', b === ST.buyer); }).join('')) : '') +
       lab('pl-m', t.market, opt('', t.allMarkets, !ST.market) + Object.keys(markets).sort().map(function (m) { return opt(m, m || '—', m === ST.market); }).join('')) + '</div>' + zipRow();
@@ -267,7 +289,7 @@
     var ns = Object.keys(groups).sort(); ns.forEach(function (k) { groups[k].sort(function (a, b) { return (a.locationName || '').localeCompare(b.locationName || ''); }); });
     var c0 = shown[0], h = '';
     if (M.run && M.run.status !== 'OK') h += '<p class="di-info-api-notice" role="status">' + esc(t['run' + M.run.status] || '') + '</p>';
-    h += controls(doc, R);
+    h += hero(doc, R, shown) + controls(doc, R);
     h += '<h2 style="font-size:18px;margin:6px 0 2px">' + esc(stName(ST.s)) + ' · ' + esc(cname(ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(specLabel(c0 || { commodity: ST.c, unit: '' })) + ' · USDA AMS</p>';
     if (shown.length) { var ls = {}; shown.forEach(function (s) { ls[s.locationType] = s; }); h += '<details class="di-card pl-what" style="padding:8px 14px;margin-bottom:12px;font-size:13px"><summary style="cursor:pointer;font-weight:600">' + esc(t.whatIs) + '</summary><div style="margin-top:6px">' + Object.keys(ls).map(function (k) { return '<div>• ' + esc(represents(ls[k])) + '</div>'; }).join('') + '<div class="di-movers-hint" style="margin-top:4px">' + esc(t.notComparable) + '</div></div></details>'; }
     // Terminos tecnicos explicados junto al dato, sin quitar el nombre original (auditoria 8-oct-2026)
@@ -280,7 +302,7 @@
     h += '<div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:4px 0 14px">' + (hid ? '<label style="font-size:13px"><input type="checkbox" id="pl-inact"' + (ST.inactive ? ' checked' : '') + '> ' + esc(t.inactive) + ' (' + hid + ' ' + esc(t.hiddenN) + ')</label>' : '') +
       (shown.length && window.DIWatch ? '<button type="button" class="di-link-btn" id="pl-follow-all">' + esc(t.followAll) + ' (' + Math.min(shown.length, 20) + ')</button>' : '') + '</div>';
     h += '<div id="pl-detail"></div>';
-    h += '<details class="di-card" style="padding:12px 16px;margin:0 0 14px"' + (window.innerWidth > 760 ? ' open' : '') + '><summary style="cursor:pointer;font-weight:700">' + esc(t.mapTitle) + '</summary><div id="pl-map" style="margin-top:10px">' + mapHtml() + '</div></details>';
+    // el mapa vive ahora arriba, junto al resumen (hero)
     h += '<p class="di-movers-hint">' + esc(t.nearMe) + '</p><p class="di-movers-hint">' + esc(t.foot) + ' <a href="metodologia.html#precios-locales">' + esc(t.method) + '</a>. ' + esc(t.basisFooter) + ' ' + esc(t.pending) + '</p>' + ci('usda_ams_mars');
     root.innerHTML = h; bind(doc, shown); if (ST.id) detail(doc);
     if (!window.DEHESA_US_STATES) loadMap();
@@ -300,6 +322,7 @@
     var zg = document.getElementById('pl-zip-go'); if (zg) zg.onclick = function () { zipGo(doc); }; var zi = document.getElementById('pl-zip'); if (zi) zi.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); zipGo(doc); } };
     on('pl-s', function (e) { ST.s = e.target.value; if (!M.states[ST.s].commodities[ST.c]) ST.c = M.states[ST.s].commodities.corn ? 'corn' : Object.keys(M.states[ST.s].commodities)[0]; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load(); });
     on('pl-c', function (e) { ST.c = e.target.value; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load(); });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-com]'), function (b) { b.onclick = function () { ST.c = b.getAttribute('data-com'); ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load(); }; });
     on('pl-spec', function (e) { ST.spec = e.target.value; ST.buyer = ''; ST.market = ''; render(doc); sync(); });
     on('pl-buyer', function (e) { ST.buyer = e.target.value; ST.market = ''; render(doc); sync(); });
     on('pl-m', function (e) { ST.market = e.target.value; render(doc); sync(); });
@@ -412,7 +435,7 @@
   }
   function drawTabs() {
     var x = TABS[lang()] || TABS.es;
-    tabsEl.innerHTML = '<div class="di-src-tabs" role="group" aria-label="' + esc(x.lbl) + '">' + ['grain', 'cattle', 'hay'].map(function (k) { return '<button type="button" class="di-src-tab" data-pltab="' + k + '" aria-pressed="' + (k === TAB) + '">' + esc(x[k]) + '</button>'; }).join('') + '</div>';
+    tabsEl.innerHTML = '<div class="di-src-tabs" role="group" aria-label="' + esc(x.lbl) + '">' + ['grain', 'cattle', 'hay'].map(function (k) { return '<button type="button" class="di-src-tab" data-pltab="' + k + '" aria-pressed="' + (k === TAB) + '">' + ({ grain: '🌾', cattle: '🐄', hay: '🌿' })[k] + ' ' + esc(x[k]) + '</button>'; }).join('') + '</div>';
   }
   function bootExt() {
     var x = TABS[lang()] || TABS.es, t = tt(), title = x[TAB + 'Title'], sub = x[TAB + 'Sub'];
