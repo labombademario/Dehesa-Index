@@ -1437,6 +1437,12 @@
       var readable=stories.filter(function(n){return (!euCc||n.country!==euCc)&&n.lang===ul;});
       stories=mine.concat(readable);
     }
+    else {
+      // Fuera de la UE tambien: un titular en rumano o bulgaro no debe aparecer en el mercado de EE. UU. solo porque cite al USDA.
+      // Se admiten los idiomas propios del mercado y el del usuario; el resto no se traduce y se omite.
+      var OWN={us:['en'],uk:['en'],ca:['en','fr']}, ok=(OWN[region]||['en']).concat([lang()]);
+      stories=stories.filter(function(n){return !n.lang||ok.indexOf(n.lang)>-1;});
+    }
     stories.sort(function(a,b){return String(a.date)<String(b.date)?1:-1;});
     stories=stories.slice(0,5);
 
