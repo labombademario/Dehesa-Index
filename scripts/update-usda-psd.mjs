@@ -106,12 +106,13 @@ fs.writeFileSync(path.join(OUT,'supply-demand.json'),JSON.stringify({schemaVersi
  methodology:{es:'Balances de oferta y demanda por país y campaña de comercialización, tal como los publica USDA (PSD). La campaña indicada (p. ej. 2025) es la que empieza ese año (2025/26); la más reciente es una PREVISIÓN y las anteriores son estimaciones o cifras finales. Los valores están en las unidades de PSD (miles de toneladas; carne en equivalente canal). "Mundo" es la suma de los países de la base PSD, contando la UE una sola vez (como agregado); no es una cifra publicada por USDA. Las campañas de comercialización no coinciden entre países. Solo se publican los países principales; el resto está en el mapa.',en:'Supply and demand balances by country and marketing year, as published by USDA (PSD). The year shown (e.g. 2025) is the marketing year starting that year (2025/26); the latest one is a FORECAST and earlier ones are estimates or final figures. Values are in PSD units (thousand tonnes; meat in carcass-weight equivalent). "World" is the sum of the countries in the PSD database, counting the EU once (as an aggregate); it is not a figure published by USDA. Marketing years differ between countries. Only the main countries are published here; the rest are on the map.'},
  commodities:commodityOut})+'\n');
 fs.writeFileSync(path.join(OUT,'supply-demand-map.json'),JSON.stringify({schemaVersion:'1.0',generatedAt,source,note:'iso EU = agregado de la Unión Europea (se pinta en los 27 países). Valores en las unidades de cada materia prima (miles de toneladas).',commodities:mapOut})+'\n');
+function wsum0(id){const e=extraOut.find(x=>x.id===id);return e?Object.values(e.countries).reduce((a,c)=>a+((c.years[e.latestMarketYear]||{}).production||0),0):0}
 // Produccion mundial ampliada (frutales, frutos secos, cafe, algodon...): si falta algo se avisa pero no se bloquea.
 if(extraOut.length){
  const wsum=e=>Object.values(e.countries).reduce((a,c)=>a+((c.years[e.latestMarketYear]||{}).production||0),0);
  const apples=extraOut.find(e=>e.id==='manzana'),okApples=!apples||(wsum(apples)>30000&&wsum(apples)<130000);
  if(okApples)fs.writeFileSync(path.join(OUT,'world-production.json'),JSON.stringify({schemaVersion:'1.0',generatedAt,source,note:'Produccion por pais de productos adicionales de USDA PSD. iso EU = agregado de la Union Europea. Unidades de PSD (miles de toneladas; cafe en miles de sacos de 60 kg; algodon en miles de balas de 480 libras).',commodities:extraOut})+'\n');
- else console.error('Manzana mundial fuera de rango ('+(apples&&wsum(apples))+'); world-production.json no se actualiza');
+ else console.log('::warning::Manzana mundial fuera de rango ('+(apples&&wsum(apples))+'); world-production.json no se actualiza');
 }
-if(warns.length)console.warn('PSD extra: '+warns.join('; '));
+console.log('::notice::PSD extra: '+extraOut.length+'/'+EXTRA.length+' productos'+(extraOut.length?' (manzana '+Math.round(wsum0('manzana'))+')':'')+(warns.length?'; avisos: '+warns.join('; '):''));
 console.log('PSD: '+commodityOut.length+' materias primas; trigo mundial MY'+(w.latestMarketYear-1)+': '+wp+' (miles de t)');
