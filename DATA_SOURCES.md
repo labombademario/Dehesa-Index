@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 142 VERIFIED, 7 PENDING, 7 RESTRICTED, 4 BLOCKED; 31337 series en el catalogo unificado.
+Resumen: 143 VERIFIED, 12 PENDING, 7 RESTRICTED, 4 BLOCKED; 31361 series en el catalogo unificado.
 
-## VERIFIED (142)
+## VERIFIED (143)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -129,6 +129,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |
+| `uruguay_datos_abiertos` | Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA) | UY | odc-uy | si/si | si | 24 | Identificar proveedor, licencia y conjunto; declarar las modificaciones. No extender a logos ni a materiales de terceros. |
 | `us_drought_monitor` | U.S. Drought Monitor (NDMC, USDA, NOAA) | US | CUSTOM | unclear/unclear | si | 0 | Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisa… |
 | `us_tariffs` | USITC Harmonized Tariff Schedule, CBP trade remedies, USTR | US | US-PD | si/si | no | 0 | The HTS is legally binding only in its official publication: label derived rates as informational. |
 | `usbr_rise` | U.S. Bureau of Reclamation — RISE (Reclamation Information Sharing Environment) | US | US-PD | si/si | no | 0 |  |
@@ -155,7 +156,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
-## PENDING (7)
+## PENDING (12)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
@@ -168,6 +169,11 @@ licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya est
 | `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-NOT-COMMERCIAL | no/unclear | si | 47 | Sin uso comercial por decisión del propietario. No implied endorsement by the Federal Reserve. |
 | `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | no/unclear | si | 0 | Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attri… |
 | `swissimpex_ch` | Switzerland — FOCBS/BAZG, SwissImpex and Tares foreign trade statistics | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | SwissImpex/Tares terms: commercial use requires permission of the data owner. |
+| `uy_bcu` | Banco Central del Uruguay (BCU) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
+| `uy_inac` | Uruguay - INAC (Instituto Nacional de Carnes) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
+| `uy_inale` | Uruguay - INALE (Instituto Nacional de la Leche) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
+| `uy_uam` | Unidad Agroalimentaria Metropolitana (UAM) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
+| `uy_xxi` | Uruguay XXI (comercio exterior) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
 
 ## RESTRICTED (7)
 
