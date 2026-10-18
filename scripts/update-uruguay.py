@@ -11,6 +11,8 @@ Conjuntos usados:
         meses con al menos el 90 % de los dias. Es clima de cinco estaciones, no un promedio nacional. Desde YEAR0.
   ursea-ppi_vs_pe_v2  URSEA, paridad de importacion (PPI) del gasoil 50S, ex planta y con impuestos. Es un precio MODELADO (paridad), no un precio observado en surtidor;
         la ventana de evaluacion va del dia 26 al 25, y el periodo es el mes en que termina. La fila con Inicio posterior a Fin se descarta y se anota (no se corrige la fecha).
+  mgap-serie-precio-de-la-tierra-arrendamientos  MGAP, arrendamientos por semestre, anio y departamento (XLSX; mismo tratamiento que compraventas). 'Valor anual' = monto anual de los
+        contratos; la suma nacional de 2020 coincide con el comunicado anual 2020 del MGAP (97,5 millones USD, 904.888 ha, 2.323 contratos, 108 USD/ha/anio). Solo anios con semestres 1 y 2 (2008 en adelante).
   mgap-serie-precio-de-la-tierra-compraventas  MGAP, compraventas de tierra por semestre, anio y departamento (XLSX; el CSV tiene la coma decimal sin comillas y desplaza columnas).
         Se publica por anio, con los departamentos que declaran los dos semestres: USD por hectarea = suma de montos / suma de hectareas (ponderado, no media de precios), hectareas
         y numero de operaciones. Operaciones registradas, no precios de oferta. Semestre 999 y anios incompletos no se asignan.
@@ -153,42 +155,60 @@ def ursea():
 
 
 # ------------------------------------------------------------------ MGAP: tierra
-def land():
-    try: pkg = package('mgap-serie-precio-de-la-tierra-compraventas')
-    except Exception as e: log('MGAP tierra:', e); return
-    res = [r for r in pkg['resources'] if (r.get('url') or '').endswith('compraventas-por-semestre-ao-y-departamento.xlsx')]
-    if not res: log('MGAP tierra: sin XLSX por semestre y departamento'); return
+LAND = {
+    'sale': dict(pkg='mgap-serie-precio-de-la-tierra-compraventas', file='compraventas-por-semestre-ao-y-departamento.xlsx', head=['idDepto', 'ano', 'Sem', 'montous_sum', 'suptran_sum', 'cuenta_sum'],
+                 en='land sales', what='compraventas de tierra registradas (operaciones, no precios de oferta)', unit='USD/ha', cnt='operations',
+                 extra=''),
+    'rent': dict(pkg='mgap-serie-precio-de-la-tierra-arrendamientos', file='arrendamientos-por-departamento.xlsx', head=['DEPCOD', 'ano', 'Sem', 'montot_sum', 'suptran_sum', 'cuenta_sum'],
+                 en='land rents', what='arrendamientos de tierra registrados (contratos, no precios de oferta)', unit='USD/ha/year', cnt='contracts',
+                 extra=' El monto es el valor anual de los contratos: la suma nacional de 2020 de esta tabla (USD 97,5 millones, 904.888 ha, 2.323 contratos, 108 USD/ha/año) coincide con el comunicado anual 2020 del MGAP.'),
+}
+
+
+def land(kind):
+    L = LAND[kind]
+    try: pkg = package(L['pkg'])
+    except Exception as e: log('MGAP tierra %s:' % kind, e); return
+    res = [r for r in pkg['resources'] if (r.get('url') or '').endswith(L['file'])]
+    if not res: log('MGAP tierra %s: sin XLSX %s' % (kind, L['file'])); return
     b = resource_bytes(res[0])
     if b is None: return
     try:
         import openpyxl
         wb = openpyxl.load_workbook(io.BytesIO(b), data_only=True, read_only=True)
-    except Exception as e: log('MGAP tierra: XLSX ilegible', e); return
+    except Exception as e: log('MGAP tierra %s: XLSX ilegible' % kind, e); return
     ws = wb['Datos'] if 'Datos' in wb.sheetnames else wb[wb.sheetnames[0]]
     it = ws.iter_rows(values_only=True)
     head = [str(c).strip() if c is not None else '' for c in next(it)][:6]
-    if head != ['idDepto', 'ano', 'Sem', 'montous_sum', 'suptran_sum', 'cuenta_sum']:
-        log('MGAP tierra: cabecera inesperada', head); return
+    if head != L['head']:
+        log('MGAP tierra %s: cabecera inesperada' % kind, head); return
     cell = defaultdict(dict)   # (anio, depto) -> semestre -> (USD, ha, n)
+    has999 = set()
     for r in it:
         if not r or not isinstance(r[0], (int, float)) or not isinstance(r[1], (int, float)): continue
         sem = str(int(r[2])) if isinstance(r[2], (int, float)) else str(r[2])
-        if sem not in ('1', '2'): continue   # 999 u otros: no se asignan a un semestre
+        if sem == '999': has999.add((int(r[1]), int(r[0]))); continue   # semestre no asignado: no se reparte entre semestres
+        if sem not in ('1', '2'): continue
         usd, ha, n = num(r[3]), num(r[4]), num(r[5])
         if usd is None or ha is None or n is None: continue
         cell[(int(r[1]), int(r[0]))][sem] = (usd, ha, n)
     yr = defaultdict(lambda: [0.0, 0.0, 0.0, 0])
     for (y, d), s in cell.items():
-        if '1' in s and '2' in s:   # solo departamentos con los dos semestres del anio
+        if '1' in s and '2' in s and (y, d) not in has999:   # solo departamentos con los dos semestres y sin filas 999 ese anio
             for k in ('1', '2'):
                 yr[y][0] += s[k][0]; yr[y][1] += s[k][1]; yr[y][2] += s[k][2]
             yr[y][3] += 1
     ys = sorted(y for y in yr if yr[y][1] > 0)
-    if ys and yr[ys[-1]][3] < max(yr[y][3] for y in ys) - 2: log('MGAP tierra: ultimo anio %d con pocos departamentos, descartado' % ys[-1]); ys = ys[:-1]
-    nt = 'MGAP (DIEA), compraventas de tierra registradas (operaciones, no precios de oferta). Suma de los departamentos que declaran los dos semestres del año; USD por hectárea = suma de montos / suma de hectáreas (ponderado, cálculo de Dehesa Index). Los años y departamentos con semestre incompleto no se incluyen.'
-    mk('uy-mgap-land-sale-usd-ha', 'prices', 'Uruguay: land sales, average price per hectare (MGAP, derived, weighted)', 'USD/ha', 'annual', [(str(y), yr[y][0] / yr[y][1]) for y in ys], 'MGAP (Uruguay)', nt)
-    mk('uy-mgap-land-sale-area', 'prices', 'Uruguay: land sold, area in registered sales (MGAP)', 'ha', 'annual', [(str(y), yr[y][1]) for y in ys], 'MGAP (Uruguay)', nt)
-    mk('uy-mgap-land-sale-count', 'prices', 'Uruguay: land sales, number of registered operations (MGAP)', 'operations', 'annual', [(str(y), yr[y][2]) for y in ys], 'MGAP (Uruguay)', nt)
+    # un anio con bastantes menos departamentos que el resto esta incompleto (p. ej. el ultimo): no se publica
+    mx = max((yr[y][3] for y in ys), default=0)
+    short = [y for y in ys if yr[y][3] < mx - 2]
+    if short: log('MGAP tierra %s: anios con pocos departamentos, descartados: %s' % (kind, short)); ys = [y for y in ys if y not in short]
+    nt = ('MGAP (DIEA), %s; registro de la DGR, operaciones de 10 o mas hectareas. Suma de los departamentos que declaran los dos semestres del anio; %s = suma de montos / suma de hectareas '
+          '(ponderado, calculo de Dehesa Index). Los anios y departamentos con semestre incompleto o con filas de semestre 999 no se incluyen.' % (L['what'], L['unit'])) + L['extra']
+    p = 'uy-mgap-land-%s' % kind
+    mk(p + '-usd-ha', 'prices', 'Uruguay: %s, average price per hectare (MGAP, derived, weighted)' % L['en'], L['unit'], 'annual', [(str(y), yr[y][0] / yr[y][1]) for y in ys], 'MGAP (Uruguay)', nt)
+    mk(p + '-area', 'prices', 'Uruguay: %s, area in registered operations (MGAP)' % L['en'], 'ha', 'annual', [(str(y), yr[y][1]) for y in ys], 'MGAP (Uruguay)', nt)
+    mk(p + '-count', 'prices', 'Uruguay: %s, number of registered %s (MGAP)' % (L['en'], L['cnt']), L['cnt'], 'annual', [(str(y), yr[y][2]) for y in ys], 'MGAP (Uruguay)', nt)
 
 
 # ------------------------------------------------------------------ MGAP: DICOSE existencias
@@ -244,9 +264,9 @@ def dicose():
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, land, dicose):
+    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose):
         try: fn()
-        except Exception as e: log('fallo en', fn.__name__, e)
+        except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
     if not OUT: log('sin series'); sys.exit(1)
     now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     doc = {'schemaVersion': 1, 'generatedAt': now, 'countries': {'UY': {'name': 'Uruguay', 'source': {

@@ -83,7 +83,8 @@ ws.append(['idDepto', 'ano', 'Sem', 'montous_sum', 'suptran_sum', 'cuenta_sum'])
 for y in (2022, 2023, 2024):
     ws.append([1, y, 1, 1000.0, 100.0, 2]); ws.append([1, y, 2, 3000.0, 100.0, 2])   # dpto 1: (4000/200 = 20 USD/ha)
     ws.append([2, y, 1, 9000.0, 100.0, 1])                                          # dpto 2 solo semestre 1: fuera
-ws.append([1, 2024, 999, 5e9, 1.0, 1])                                              # Sem 999: no se asigna
+ws.append([3, 2024, 999, 5e9, 1.0, 1])                                              # Sem 999: no se asigna ni contamina
+ws.append([1, 2021, 999, 7.0, 1.0, 1]); ws.append([1, 2021, 1, 1000.0, 100.0, 2]); ws.append([1, 2021, 2, 3000.0, 100.0, 2])   # dpto-anio con fila 999: se excluye entero
 bio = io.BytesIO(); wb.save(bio)
 p, s, log = run({'x--r0.xlsx': bio.getvalue()}, [pkg('mgap-serie-precio-de-la-tierra-compraventas', ['https://x/compraventas-por-semestre-ao-y-departamento.xlsx'])])
 l = s.get('uy-mgap-land-sale-usd-ha')
@@ -92,6 +93,20 @@ if l:
     ok('Tierra: USD/ha ponderado = suma montos / suma ha (20)', abs(l['latest'] - 20.0) < 1e-6)
     ok('Tierra: Sem 999 no contamina', l['latest'] < 1000)
     ok('Tierra: operaciones sumadas (4)', s['uy-mgap-land-sale-count']['latest'] == 4)
+    ok('Tierra: dpto-anio con fila 999 excluido (2021 ausente)', '2021' not in dict(l['points']))
+
+# ---- 5b. Arrendamientos: otra cabecera (DEPCOD, montot_sum), unidad USD/ha/anio
+wb = openpyxl.Workbook(); ws = wb.active; ws.title = 'Datos'
+ws.append(['DEPCOD', 'ano', 'Sem', 'montot_sum', 'suptran_sum', 'cuenta_sum'])
+for y in (2023, 2024, 2025):
+    ws.append([1, y, 1, 5000.0, 100.0, 2]); ws.append([1, y, 2, 5000.0, 100.0, 3])
+bio = io.BytesIO(); wb.save(bio)
+p, s, log = run({'x--r0.xlsx': bio.getvalue()}, [pkg('mgap-serie-precio-de-la-tierra-arrendamientos', ['https://x/arrendamientos-por-departamento.xlsx'])])
+r = s.get('uy-mgap-land-rent-usd-ha')
+ok('Alquiler genera serie', r is not None)
+if r:
+    ok('Alquiler: 10000/200 = 50 USD/ha/anio', abs(r['latest'] - 50.0) < 1e-6 and r['unit'] == 'USD/ha/year')
+    ok('Alquiler: contratos sumados (5)', s['uy-mgap-land-rent-count']['latest'] == 5)
 
 # ---- 6. DICOSE: PD_AD, no PD_PF; bovinos y bovinos de leche separados; especies sin control de calidad fuera
 def dic(year):
