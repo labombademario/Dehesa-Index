@@ -42,6 +42,18 @@ for (const cat of D.RAW) for (const p of cat.products) {
   const key = cat.id + ':' + p.nameKey; seen.add(key);
   add({ t: 'product', u: 'precios.html?tab=' + cat.id + '&product=' + encodeURIComponent(key), n: Object.fromEntries(L.map(l => [l, D.NAMES[l][p.nameKey]])), s: Object.fromEntries(L.map(l => [l, catLabel(l, cat.id)])), k: SYN[p.nameKey] || '' });
 }
+// Una entrada por pestaña de precios (Cereales, Lácteos, Fertilizantes…): «fertilizantes» o «lácteos» abren la pestaña, no solo un producto.
+// Las palabras clave solo nombran lo que la pestaña tiene de verdad (la de lácteos no tiene queso, por eso no se anuncia).
+const TABK = {
+  cereales: 'cereales cereal grano granos grain grains céréales cereali oleaginosas oilseeds', lacteos: 'lacteos lácteos dairy laitier laitiers lattiero caseario',
+  ganado: 'ganado vacuno bovino livestock cattle bétail bestiame', porcino: 'porcino cerdo pork pigs hogs porc suini', ovino: 'ovino ovinos sheep lamb corderos agneau ovins ovini',
+  avicultura: 'avicultura aves poultry eggs volaille avicoltura huevos pollo', pienso: 'pienso piensos feed aliments mangimi', fertilizantes: 'fertilizantes fertilizer fertiliser engrais fertilizzanti abonos nitrogeno fosfato potasa',
+  azucar: 'azucar sugar sucre zucchero', aceite: 'aceite aceites oil huile olio oliva', energia: 'energia energía energy énergie gasoil petroleo gas natural combustibles'
+};
+for (const cat of D.RAW) {
+  const n = cat.products.length;
+  add({ t: 'category', u: 'precios.html?tab=' + cat.id, n: Object.fromEntries(L.map(l => [l, catLabel(l, cat.id)])), s: tri(n + ' productos: precios y gráficos', n + ' products: prices and charts', n + ' produits : prix et graphiques', n + ' prodotti: prezzi e grafici'), k: TABK[cat.id] || '' });
+}
 // Frutas, hortalizas y frutos secos con ficha propia (data/fv-products.json, js/producto-hortaliza.js) y su pestaña en precios.html
 {
   const FV = JSON.parse(read('data/fv-products.json'));

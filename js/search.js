@@ -13,8 +13,11 @@
       types: { series: 'Serie', product: 'Prezzo', category: 'Categoria', supply: 'Offerta e domanda', map: 'Mappa', crop: 'Colture', market: 'Mercato USDA', country: 'Paese', climate: 'Clima', page: 'Pagina', section: 'Sezione', concept: 'Spiegazione', news: 'Notizia' } }
   };
   var ICON = { product: '💶', category: '🏷️', supply: '⚖️', map: '🗺️', crop: '🌱', market: '📈', country: '🌍', climate: '🌦️', page: '📄', section: '📑', concept: '💡', news: '📰', series: '📊' };
-  var BOOST = { series: 0.14, product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.06, climate: 0.04, page: 0.05, concept: 0.05, news: -0.05, section: 0, map: -0.04 };
-  var STOP = { de: 1, del: 1, la: 1, el: 1, los: 1, las: 1, en: 1, of: 1, the: 1, in: 1, and: 1, y: 1, e: 1, et: 1, le: 1, les: 1, du: 1, des: 1, di: 1, il: 1, lo: 1, da: 1, un: 1, una: 1, a: 1, to: 1, for: 1, por: 1, para: 1, con: 1, pour: 1, per: 1 };
+  var BOOST = { series: 0.14, product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.12, climate: 0.04, page: 0.05, concept: 0.05, news: -0.05, section: 0, map: -0.04 };
+  var STOP = { de: 1, del: 1, la: 1, el: 1, los: 1, las: 1, en: 1, of: 1, the: 1, in: 1, and: 1, y: 1, e: 1, et: 1, le: 1, les: 1, du: 1, des: 1, di: 1, il: 1, lo: 1, da: 1, un: 1, una: 1, a: 1, to: 1, for: 1, por: 1, para: 1, con: 1, pour: 1, per: 1, is: 1, are: 1, was: 1, what: 1, does: 1, do: 1, how: 1, where: 1, who: 1, which: 1, que: 1, qu: 1, cual: 1, como: 1, donde: 1, quien: 1, est: 1, sont: 1, quel: 1, quelle: 1, comment: 1, che: 1, quale: 1, come: 1, dove: 1, sono: 1 };
+  // Palabras de pregunta o de tipo de dato («precio», «cuánto vale», «how much», «prix»…): ayudan a ordenar pero no descartan una entrada
+  // (el producto se llama «Trigo», no «Precio del trigo»). «costs» no está aquí: es un tema (costes de producción), no una pregunta.
+  var GEN = {}; 'precio precios price prices prix prezzo prezzi cotizacion cotizaciones quote quotes cotation cotations cours quotazione quotazioni cuanto vale valen cuesta cuestan hoy actual actuales ahora much combien coute coutent aujourd hui quanto costa costano oggi attuale today current now latest ultimo ultimos ultima'.split(' ').forEach(function (w) { GEN[w] = 1; });
   var SUGGEST = ['precios.html?tab=cereales&product=cereales%3Atrigo', 'precios.html?tab=cereales&product=cereales%3Amaiz', 'precios.html?tab=lacteos&product=lacteos%3Aleche', 'precios.html?tab=fertilizantes&product=fertilizantes%3Aurea', 'oferta-demanda.html?c=soja', 'cultivos.html?crop=corn', 'clima.html', 'mapa.html?layer=exp&sd=trigo'];
   var TRYQ = { h: { es: 'Pregunta directamente', en: 'Ask directly', fr: 'Posez la question', it: 'Chiedi direttamente' }, q: {
     es: ['precio del trigo', 'maíz en Iowa', 'trigo vs maíz', 'qué ha subido más', 'existencias de soja', 'precio de la tierra en Baviera', 'exportaciones de España a Francia', 'cuándo sale el WASDE'],
@@ -43,6 +46,8 @@
   function tokScore(q, w) {
     if (q === w) return 1;
     if (w.indexOf(q) === 0 && q.length >= 2) return 0.85;
+    if (w.length >= 4 && q.length > w.length && q.length - w.length <= 3 && q.indexOf(w) === 0) return 0.95;   // plural: «huevos» → «huevo», «prices» → «price»
+    if (q.length >= 6 && q.length === w.length && q.slice(0, -1) === w.slice(0, -1) && 'aeiosx'.indexOf(q.charAt(q.length - 1)) > -1 && 'aeiosx'.indexOf(w.charAt(w.length - 1)) > -1) return 0.8;   // «fertilizzanti» / «fertilizzante»
     if (q.length >= 5 && w.indexOf(q) > 0) return 0.45;
     if (q.length >= 4 && q.charAt(0) === w.charAt(0)) { // las erratas casi nunca están en la primera letra
       var d = q.length <= 4 ? 0 : q.length <= 6 ? 1 : 2;
@@ -60,11 +65,11 @@
   }
   var L = ['es', 'en', 'fr', 'it'];
   function fieldBest(q, arr) { var b = 0, i, s; for (i = 0; i < arr.length; i++) { s = tokScore(q, arr[i]); if (s > b) { b = s; if (b === 1) break; } } return b; }
-  function scoreEntry(e, qs, lang, needAll) {
+  function scoreEntry(e, qs, lang, needAll, gen) {
     var total = 0, hit = 0, i;
     for (i = 0; i < qs.length; i++) {
       var q = qs[i], best = fieldBest(q, e._t[lang]);
-      if (best < 1) { var o = 0, k; for (k = 0; k < L.length; k++) if (L[k] !== lang) o = Math.max(o, fieldBest(q, e._t[L[k]]) * 0.85); best = Math.max(best, o); }
+      if (best < 1) { var o = 0, k; for (k = 0; k < L.length; k++) if (L[k] !== lang) o = Math.max(o, fieldBest(q, e._t[L[k]]) * 0.7); best = Math.max(best, o); }  // 0.7: «pesca» (es) es la pesca, no el melocotón italiano
       if (best < 1) best = Math.max(best, fieldBest(q, e._k) * 0.7, fieldBest(q, e._s[lang]) * 0.3);
       if (best > 0) hit++;
       total += best;
@@ -74,12 +79,15 @@
     var title = e.n[lang] || ''; s -= Math.min(title.length, 80) / 1500;
     // frase completa dentro del título
     if (qs.length > 1 && norm(title).indexOf(qs.join(' ')) >= 0) s += 0.2;
+    if (gen) for (i = 0; i < gen.length; i++) { var g = Math.max(fieldBest(gen[i], e._t[lang]), fieldBest(gen[i], e._k) * 0.5); if (g >= 0.85) s += 0.015; else if (g > 0) s += 0.007; }
     return s;
   }
   function search(query, lang) {
-    var qs = toks(query).filter(function (t) { return !STOP[t]; });
-    if (!qs.length) return { list: [], partial: false };
-    var run = function (needAll) { var out = []; IDX.forEach(function (e) { var s = scoreEntry(e, qs, lang, needAll); if (s > 0.12) out.push({ e: e, s: s }); }); out.sort(function (a, b) { return b.s - a.s; }); return out; };
+    var all = toks(query).filter(function (t) { return !STOP[t]; });
+    if (!all.length) return { list: [], partial: false };
+    var qs = all.filter(function (t) { return !GEN[t]; }), gen = all.filter(function (t) { return GEN[t]; });
+    if (!qs.length) { qs = all; gen = []; }   // «precios» a secas: se busca tal cual
+    var run = function (needAll) { var out = []; IDX.forEach(function (e) { var s = scoreEntry(e, qs, lang, needAll, gen); if (s > 0.12) out.push({ e: e, s: s }); }); out.sort(function (a, b) { return b.s - a.s; }); return out; };
     var r = run(true), partial = false;
     if (!r.length && qs.length > 1) { r = run(false); partial = true; }
     return { list: r.slice(0, 10).map(function (x) { return x.e; }), partial: partial };
