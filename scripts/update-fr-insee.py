@@ -19,6 +19,13 @@ def get(url, tries=3):
         except Exception as e: last = e; time.sleep(6 * (i + 1))
     raise RuntimeError("%s: %r" % (url, last))
 NOW = datetime.date.today()
+
+# IPAMPA fino que SI se publica (18-oct): abonos por producto y piensos por especie; semillas, fitosanitarios, veterinaria y abonos ternarios por clase quedan fuera
+FINE_D6 = ("IPAMPA_010502040102", "IPAMPA_010502040106", "IPAMPA_010502040107", "IPAMPA_010302010101")
+def keep_fine(code, d):
+    if code.startswith("IPAMPA_0103020") and d == 5 and code[-4:-2] == "02" and code[-2:] not in ("01",): return False  # ternarios por clase (02, 05, 06, 10, 11, 12)
+    if d == 5: return code.startswith(("IPAMPA_0103", "IPAMPA_0105"))
+    return code in FINE_D6
 GROUP = {"IPPAP": "idx_perc", "IPGA": "idx_perc", "IPAMPA": "idx_pag"}
 def main():
     outdir = ROOT / "data"
@@ -44,7 +51,7 @@ def main():
         code0 = a.get("PRODUITS_IPAGRI_2020", "") or ""
         d0 = len(re.sub(r"^[A-Z]+_", "", code0)) // 2
         # nivel de detalle: IPPAP hasta 5 (sin floricultura), IPAMPA hasta 4; los niveles mas finos son ruido para un panel
-        if (ind == "IPAMPA" and d0 > 4) or (ind != "IPAMPA" and (d0 > 5 or code0.startswith("IPPAP_0101050"))):
+        if (ind == "IPAMPA" and d0 > 4 and not keep_fine(code0, d0)) or (ind != "IPAMPA" and (d0 > 5 or code0.startswith("IPPAP_0101050"))):
             stats["detail"] = stats.get("detail", 0) + 1
             if ind == "IPAMPA": log("omitida", idb, ind, "d%d" % d0, code0, re.sub(r"\s+", " ", a.get("TITLE_EN", "")).strip()[:110], len(pts), pts[-1][0])  # detalle fino que no se publica: queda en el registro para valorarlo
             continue

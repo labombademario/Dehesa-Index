@@ -42,6 +42,9 @@ NM = {  # códigos Eurostat AM y series INSEE -> nombre en 4 idiomas
     'fr-319': ('Fertilizantes y enmiendas (total)', 'Fertilisers and soil improvers (total)', 'Engrais et amendements (total)', 'Concimi e ammendanti (totale)'),
 }
 NM['fr-321'] = NM['am203110']; NM['fr-327'] = NM['am203120']; NM['fr-330'] = NM['am203130']; NM['fr-331'] = NM['am203200']
+NM['fr-324'] = ('Urea', 'Urea', 'Urée', 'Urea'); NM['fr-322'] = ('Amonitratos', 'Ammonium nitrates', 'Ammonitrates', 'Nitrati ammonici'); NM['fr-323'] = ('Soluciones nitrogenadas', 'Nitrogen solutions', 'Solutions azotées', 'Soluzioni azotate')
+NM['fr-427'] = ('Torta de soja', 'Soya cake', 'Tourteau de soja', 'Panello di soia'); NM['fr-445'] = ('Pienso vacas lecheras (TNM 20-35 %)', 'Dairy cow feed (TNM 20-35%)', 'Aliment vaches laitières (TNM 20-35 %)', 'Mangime vacche da latte (TNM 20-35%)')
+NM['fr-453'] = ('Pienso cerdos de engorde (completo)', 'Fattening pig feed (complete)', 'Aliment porcs charcutiers (complet)', 'Mangime suini da ingrasso (completo)'); NM['fr-459'] = ('Pienso pollos de engorde', 'Broiler feed', 'Aliment poulets de chair', 'Mangime polli da carne'); NM['fr-463'] = ('Pienso gallinas ponedoras (suelo)', 'Laying hen feed (floor)', 'Aliment poules pondeuses (sol)', 'Mangime galline ovaiole (a terra)')
 NM['fr-417'] = NM['am206000']; NM['fr-418'] = NM['am206100']; NM['fr-437'] = NM['am206200']
 NM['fr-308'] = NM['am202000']; NM['fr-317'] = NM['am202100']; NM['fr-276'] = NM['am220000']; NM['fr-367'] = NM['am204000']; NM['fr-484'] = NM['am205000']
 NM['fr-315'] = ('Gasóleo de automoción', 'Road diesel', 'Gazole routier', 'Gasolio per autotrazione')
@@ -52,10 +55,10 @@ NM['diesel'] = ('Gasóleo de automoción (surtidor, con impuestos)', 'Road diese
 EU_GROUPS = [('fert', ['am203000', 'am203110', 'am203120', 'am203130', 'am203200']), ('feed', ['am206000', 'am206100', 'am206110', 'am206200', 'am206210', 'am206220', 'am206230', 'am206240']),
              ('energy', ['am202000', 'am202100', 'am202200', 'am202300']), ('general', ['am220000', 'am204000', 'am205000'])]
 EU_GRAINS = ['am010000', 'am011000', 'am013000', 'am015000']; EU_FERTS = ['am203110', 'am203120', 'am203130', 'am203200']
-FR_GROUPS = [('fert', ['fr-319', 'fr-321', 'fr-327', 'fr-330', 'fr-331']), ('feed', ['fr-417', 'fr-418', 'fr-437']),
+FR_GROUPS = [('fert', ['fr-319', 'fr-321', 'fr-327', 'fr-330', 'fr-331', 'fr-324', 'fr-322', 'fr-323']), ('feed', ['fr-417', 'fr-418', 'fr-437', 'fr-427', 'fr-445', 'fr-453', 'fr-459', 'fr-463']),
              ('energy', ['fr-308', 'fr-316', 'fr-315', 'fr-317']), ('general', ['fr-276', 'fr-367', 'fr-484'])]
 FR_GRAINS = ['fr-596', 'fr-600', 'fr-597', 'fr-605']; FR_FERTS = ['fr-321', 'fr-327', 'fr-330', 'fr-331']
-FR_IDS = {'fr-%s' % n: 'fr-insee-010777%s' % n for n in (319, 321, 327, 330, 331, 417, 418, 437, 308, 316, 315, 317, 276, 367, 484)}
+FR_IDS = {'fr-%s' % n: 'fr-insee-010777%s' % n for n in (322, 323, 324, 427, 445, 453, 459, 463, 319, 321, 327, 330, 331, 417, 418, 437, 308, 316, 315, 317, 276, 367, 484)}
 FR_IDS.update({'fr-596': 'fr-insee-010776596', 'fr-600': 'fr-insee-010776600', 'fr-597': 'fr-insee-010776597', 'fr-605': 'fr-insee-010776605'})
 
 def pkey(p):  # clave ordenable y número de periodo
