@@ -150,6 +150,7 @@
       ] }
     ] },
     trade: { label: L('Comercio', 'Trade', 'Commerce', 'Commercio'), items: [
+      pd('comercio-pais.html', L('Comercio exterior por país', 'Foreign trade by country', 'Commerce extérieur par pays', 'Commercio estero per paese'), L('Más de 30 países · a quién venden y de quién compran', '30+ countries · who they sell to and buy from', 'Plus de 30 pays · à qui ils vendent et de qui ils achètent', 'Oltre 30 paesi · a chi vendono e da chi comprano')),
       pd('exportaciones.html', L('Exportaciones de EE. UU.', 'US exports', 'Exportations des États-Unis', 'Esportazioni USA'), L('EE. UU. · ventas semanales y comercio por país comprador', 'US · weekly sales and trade by buyer country', 'États-Unis · ventes hebdomadaires et commerce par pays acheteur', 'USA · vendite settimanali e commercio per paese acquirente')),
       pd('aranceles.html', L('Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'), L('EE. UU., UE, Canadá y México · por producto', 'US, EU, Canada and Mexico · by product', 'États-Unis, UE, Canada et Mexique · par produit', 'USA, UE, Canada e Messico · per prodotto')),
       pd('canada-granos.html', L('Granos de Canadá', 'Canadian grain', 'Grains du Canada', 'Cereali del Canada'), L('Canadá · exportaciones, entregas y existencias semanales', 'Canada · weekly exports, deliveries and stocks', 'Canada · exportations, livraisons et stocks hebdomadaires', 'Canada · esportazioni, consegne e scorte settimanali'))
