@@ -6,6 +6,118 @@
   "ARCHIVE": "historico o instantaneas; no se sirve al navegador"
  },
  "files": {
+  "data/us-arcplc/TX.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/GA.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/KS.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/NE.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/MO.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/ND.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/IL.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/NC.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/MN.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/SD.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/OK.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/IA.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/TN.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
+  "data/us-arcplc/VA.json": {
+   "class": "RUNTIME",
+   "note": "Tasas ARC-CO por condado y cultivo de un estado (FSA). El navegador descarga solo el del estado que se esta viendo (region-more.js, usArc), una vez.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/us-arcplc/' + x.r + '.json"
+   }
+  },
   "data/gi/FR-geo.json": {
    "class": "RUNTIME",
    "note": "Zonas de produccion de las denominaciones francesas (INAO), poligonos simplificados. El navegador lo descarga solo al pulsar «Ver zona» (270 KB gz)."
