@@ -136,13 +136,48 @@
       }).join('') + '</svg></section>';
   }
   function priceTxt(x) { var w = t(), cur = x.C.price.current, k = cur.kind === 'avg12m' ? w.avg12 : cur.kind === 'implied' ? w.implied + ' (' + cur.to + ')' : w.ctd; return nf(x.p0, x.p0 < 10 ? 2 : 0) + ' ' + x.C.priceUnit + ' · ' + k; }
+  // Selector de país con buscador y grupos (en vez de una lista desplegable de 22 filas).
+  var EUROZONE = { ES: 1, FR: 1, DE: 1, IT: 1, PT: 1, NL: 1, BE: 1, AT: 1, IE: 1, FI: 1, EL: 1, HR: 1, SK: 1, SI: 1, LT: 1, BG: 1 };
+  var GRP = { am: ['América', 'Americas', 'Amériques', 'Americhe'], ez: ['Zona euro', 'Euro area', 'Zone euro', 'Area euro'], eu: ['Resto de Europa', 'Rest of Europe', 'Reste de l’Europe', 'Resto d’Europa'], q: ['Buscar país…', 'Search country…', 'Rechercher un pays…', 'Cerca paese…'], none: ['Sin resultados', 'No results', 'Aucun résultat', 'Nessun risultato'] };
+  function shortName(x, w) { return x[1] === 'eu' ? CTN[x[0]][L4i()] : String(w[x[1]]).replace(/\s*\(.*\)\s*$/, ''); }
+  function longName(x, w) { return x[1] === 'eu' ? CTN[x[0]][L4i()] + ' (' + CTU[CTN[x[0]][4] || 0][L4i()] + ')' : w[x[1]]; }
+  function cpicker(w) {
+    var cur = null; CT.forEach(function (x) { if (x[0] === ST.c) cur = x; });
+    var groups = { am: [], ez: [], eu: [] }; CT.forEach(function (x) { (x[0] === 'US' || x[0] === 'CA' ? groups.am : EUROZONE[x[0]] ? groups.ez : groups.eu).push(x); });
+    var chips = ['am', 'ez', 'eu'].map(function (g) {
+      return '<div class="sw-cg" data-g="' + g + '"><div class="sw-cgt">' + esc(GRP[g][L4i()]) + '</div><div class="sw-cgc">' + groups[g].map(function (x) {
+        return '<button type="button" role="option" class="pt-chip sw-copt" data-cc="' + x[0] + '" data-n="' + esc(shortName(x, w).toLowerCase()) + '" aria-selected="' + (x[0] === ST.c) + '" title="' + esc(longName(x, w)) + '">' + esc(FLAG(x[0]) + ' ' + shortName(x, w)) + '</button>';
+      }).join('') + '</div></div>';
+    }).join('');
+    return '<div class="sw-cp" style="position:relative;display:inline-block"><button type="button" id="sw-cb" class="di-compare-select" aria-haspopup="listbox" aria-expanded="false" style="min-width:260px;text-align:left;cursor:pointer">' + esc(cur ? FLAG(cur[0]) + ' ' + longName(cur, w) : w.choose) + ' ▾</button>' +
+      '<div id="sw-cpanel" hidden style="position:absolute;z-index:30;left:0;top:calc(100% + 4px);width:min(440px,92vw);max-height:min(420px,70vh);overflow:auto;background:var(--surface,#fff);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.18);padding:10px">' +
+      '<input id="sw-cq" type="search" class="di-compare-select" autocomplete="off" placeholder="' + esc(GRP.q[L4i()]) + '" style="width:100%;margin:0 0 8px">' +
+      chips + '<p id="sw-cnone" class="di-movers-hint" hidden>' + esc(GRP.none[L4i()]) + '</p></div></div>' +
+      '<style>.sw-cgt{font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:8px 0 4px}.sw-cgc{display:flex;flex-wrap:wrap;gap:6px}.sw-copt[aria-selected="true"]{background:var(--accent,#1f3d2f);color:#fff}</style>';
+  }
+  function bindPicker() {
+    var b = document.getElementById('sw-cb'), pn = document.getElementById('sw-cpanel'), q = document.getElementById('sw-cq'); if (!b || !pn) return;
+    function close() { pn.hidden = true; b.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', away, true); document.removeEventListener('keydown', esck, true); }
+    function away(e) { if (!pn.contains(e.target) && e.target !== b) close(); }
+    function esck(e) { if (e.key === 'Escape') { close(); b.focus(); } }
+    b.onclick = function () { if (!pn.hidden) { close(); return; } pn.hidden = false; b.setAttribute('aria-expanded', 'true'); document.addEventListener('click', away, true); document.addEventListener('keydown', esck, true); q.value = ''; filt(); q.focus(); };
+    function filt() {
+      var v = q.value.trim().toLowerCase(), any = false;
+      Array.prototype.forEach.call(pn.querySelectorAll('.sw-copt'), function (c) { var ok = !v || c.getAttribute('data-n').indexOf(v) > -1; c.hidden = !ok; if (ok) any = true; });
+      Array.prototype.forEach.call(pn.querySelectorAll('.sw-cg'), function (g) { g.hidden = !g.querySelector('.sw-copt:not([hidden])'); });
+      document.getElementById('sw-cnone').hidden = any;
+    }
+    q.oninput = filt;
+    q.onkeydown = function (e) { if (e.key === 'Enter') { var f = pn.querySelector('.sw-copt:not([hidden])'); if (f) f.click(); } };
+    Array.prototype.forEach.call(pn.querySelectorAll('.sw-copt'), function (c) { c.onclick = function () { close(); ST.c = c.getAttribute('data-cc'); ST.r = ''; save(); if (ST.c) load(ST.c).then(render, render); else render(); }; });
+  }
   function render() {
     var w = t(), root = document.getElementById('sw-body');
     document.getElementById('sw-h1').textContent = w.h1; document.getElementById('sw-sub').textContent = w.sub; document.title = w.h1 + ' | Dehesa Index';
     var doc = ST.c && DOCS[ST.c], au = doc && doc.areaUnit === 'acre' ? 'acres' : 'ha', ru = doc ? doc.crops[Object.keys(doc.crops)[0]].revUnit : '';
     var regs = doc ? Object.keys(doc.regions).sort(function (a, b) { return rname(ST.c, a).localeCompare(rname(ST.c, b), lang()); }) : [];
-    var h = '<div class="di-card" style="padding:14px 16px;margin:0 0 14px"><div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end">' +
-      '<label style="font-size:13px">' + esc(w.ctry) + '<br><select id="sw-c" class="di-compare-select"><option value="">' + esc(w.choose) + '</option>' + CT.map(function (x) { return '<option value="' + x[0] + '"' + (ST.c === x[0] ? ' selected' : '') + '>' + esc(FLAG(x[0]) + ' ' + (x[1] === 'eu' ? CTN[x[0]][L4i()] + ' (' + CTU[CTN[x[0]][4] || 0][L4i()] + ')' : w[x[1]])) + '</option>'; }).join('') + '</select></label>' +
+    var h = '<div class="di-card" style="padding:14px 16px;margin:0 0 14px;overflow:visible"><div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end">' +
+      '<div style="font-size:13px">' + esc(w.ctry) + '<br>' + cpicker(w) + '</div>' +
       (doc ? '<label style="font-size:13px">' + esc(w.reg) + '<br><select id="sw-r" class="di-compare-select"' + (doc ? '' : ' disabled') + '><option value="">' + esc(w.choose) + '</option>' + regs.map(function (r) { return '<option value="' + esc(r) + '"' + (r === ST.r ? ' selected' : '') + '>' + esc(rname(ST.c, r)) + '</option>'; }).join('') + '</select></label>' +
       '<label style="font-size:13px">' + esc(w.area) + ' (' + au + ')<br><input id="sw-a" type="number" min="0" step="1" inputmode="numeric" class="di-compare-select" style="width:140px" value="' + esc(ST.area) + '"></label>' : '') + '</div></div>' + mapHtml();
     if (!doc || !ST.r || !doc.regions[ST.r]) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(!doc ? ({ es: 'Elige primero el país; después aparecen la región y la superficie.', en: 'Choose the country first; the region and area then appear.', fr: 'Choisissez d’abord le pays ; la région et la surface apparaissent ensuite.', it: 'Scegli prima il paese; poi compaiono regione e superficie.' }[lang()] || w.pick) : w.pick) + '</p><p class="di-movers-hint">' + esc(w.caveat) + '</p>'; bind(); return; }
@@ -209,7 +244,7 @@
     root.innerHTML = h; bind();
   }
   function bind() {
-    var c = document.getElementById('sw-c'); if (c) c.onchange = function () { ST.c = c.value; ST.r = ''; save(); if (ST.c) load(ST.c).then(render, render); else render(); };
+    bindPicker();
     var r = document.getElementById('sw-r'); if (r) r.onchange = function () { ST.r = r.value; save(); render(); };
     Array.prototype.forEach.call(document.querySelectorAll('[data-mr]'), function (el) { var pick = function () { ST.r = el.getAttribute('data-mr'); save(); render(); var sel = document.getElementById('sw-r'); if (sel) sel.scrollIntoView({ block: 'nearest' }); }; el.onclick = pick; el.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } }; });
     var a = document.getElementById('sw-a'); if (a) a.onchange = function () { ST.area = a.value; save(); render(); };
