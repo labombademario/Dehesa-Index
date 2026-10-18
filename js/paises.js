@@ -672,7 +672,7 @@
   function xctx(c, list, cur0, cur, t, countries, opt, groups, rng) {
     return { lang: lang(), list: list, cc: ST.c, g: ST.g, cur0: cur0, cur: cur, cmp: ST.cmp, t: t, countries: t.countries, country: t.countries[ST.c] || ST.c, allSeries: c.series,
       cmpCountries: CCODES.filter(function (k) { return AVAIL[k] && k !== ST.c; }), groupLabel: t.group, groupOpts: groupOpts(groups, t),
-      countryOpts: opt(countries, ST.c, function (k) { return t.countries[k] || k; }), rangeOpts: opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; }),
+      countryOpts: opt(countries, ST.c, function (k) { return flagE(k) + (t.countries[k] || k); }), rangeOpts: opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; }),
       oldPicker: seriesPicker(list, t, true), collapse: collapse, filterSeries: filterSeries, TL: TL, shortLab: shortLab, plabel: plabel, nf: nf, dec: dec, ts: ts, cut: cutPts,
       setS: function (id) { ST.s = id; }, setG: function (g) { ST.g = g; } };
   }
@@ -798,6 +798,7 @@
   var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('cmp')) { var cm = q.get('cmp').split(':'); if (cm.length > 1 && cm[0].toUpperCase() === ST.c) ST.cmp = { cc: cm[0].toUpperCase(), id: cm.slice(1).join(':') }; } if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
   /* Carga por catalogo (capa de datos unificada): manifiesto -> catalogo del pais -> trozo de la serie. Nunca se piden los *-stats.json. */
   var GROUPS = ['production', 'crops', 'livestock', 'fish', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'crops_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'climate', 'stocks', 'income', 'partners', 'rates'];
+  function flagE(k) { if (k === 'EU') return '\uD83C\uDDEA\uD83C\uDDFA '; var i = k === 'EL' ? 'GR' : k === 'UK' ? 'GB' : k; return /^[A-Z]{2}$/.test(i) ? String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)) + ' ' : ''; }
   var CCODES = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU', 'UK', 'AR', 'CL', 'PL', 'CH', 'EL', 'IE', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'EE', 'HU', 'LV', 'RO', 'SE', 'SI'], AVAIL = {}, CAT = {}, TOK = 0, LREG = null;
   var LP = { es: ['licencia pendiente de verificar', 'Fuentes de este país', 'Licencia'], en: ['licence pending verification', 'Sources for this country', 'Licence'], fr: ['licence à vérifier', 'Sources de ce pays', 'Licence'], it: ['licenza da verificare', 'Fonti di questo paese', 'Licenza'] };
   function loadCountry(cc) {
