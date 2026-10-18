@@ -5,7 +5,7 @@
   'use strict';
   var S = window.DehesaShared;
   var T = {
-    es: {
+    es: { barShort: 'Cuánto fertilizante', barT: 'En esta página', seeChart: 'Ver gráfico',
       title: 'Monitor de insumos', h1: 'Monitor de insumos: ¿está caro o barato?',
       sub: 'El precio que pagan los agricultores en España por fertilizantes, piensos y gasóleo, comparado con sus propios últimos 10 años. Y cuánto fertilizante se compra hoy con el grano. Sirve para preparar la compra agrupada de la cooperativa con datos oficiales en la mano.',
       loading: 'Cargando…', fail: 'No se pudo cargar el monitor. Vuelve a intentarlo en unos minutos.', asof: 'Datos a fecha de',
@@ -21,7 +21,7 @@
         'Nada se estima ni se rellena: si un dato llega tarde, se muestra con su fecha y la etiqueta «dato retrasado».'],
       cta: '¿Quieres este monitor con los insumos que compra tu cooperativa y un aviso cuando un precio baje de un umbral? Cuéntanos qué necesitas.', ctaBtn: 'Escríbenos'
     },
-    en: {
+    en: { barShort: 'Fertiliser purchasing power', barT: 'On this page', seeChart: 'View chart',
       title: 'Input monitor', h1: 'Input monitor: expensive or cheap?',
       sub: 'What Spanish farmers pay for fertiliser, feed and diesel, compared with their own last 10 years, and how much fertiliser grain buys today. Use it to prepare the cooperative’s group purchase with official data at hand.',
       loading: 'Loading…', fail: 'Could not load the monitor. Please try again in a few minutes.', asof: 'Data as of',
@@ -37,7 +37,7 @@
         'Nothing is estimated or filled in: late data are shown with their date and a “late data” label.'],
       cta: 'Want this monitor with the inputs your cooperative buys and an alert when a price drops below a threshold? Tell us what you need.', ctaBtn: 'Contact us'
     },
-    fr: {
+    fr: { barShort: 'Combien d’engrais', barT: 'Sur cette page', seeChart: 'Voir le graphique',
       title: 'Moniteur des intrants', h1: 'Moniteur des intrants : cher ou bon marché ?',
       sub: 'Ce que paient les agriculteurs espagnols pour les engrais, les aliments du bétail et le gazole, comparé à leurs propres 10 dernières années, et combien d’engrais le grain achète aujourd’hui. Pour préparer l’achat groupé de la coopérative avec des données officielles.',
       loading: 'Chargement…', fail: 'Impossible de charger le moniteur. Réessayez dans quelques minutes.', asof: 'Données au',
@@ -53,7 +53,7 @@
         'Rien n’est estimé ni complété : une donnée en retard est affichée avec sa date et la mention « donnée en retard ».'],
       cta: 'Vous voulez ce moniteur avec les intrants que votre coopérative achète et une alerte quand un prix passe sous un seuil ? Dites-nous ce qu’il vous faut.', ctaBtn: 'Nous écrire'
     },
-    it: {
+    it: { barShort: 'Quanto fertilizzante', barT: 'In questa pagina', seeChart: 'Vedi grafico',
       title: 'Monitor dei mezzi tecnici', h1: 'Monitor dei mezzi tecnici: caro o conveniente?',
       sub: 'Quanto pagano gli agricoltori spagnoli per fertilizzanti, mangimi e gasolio, confrontato con i loro ultimi 10 anni, e quanto fertilizzante compra oggi il grano. Per preparare l’acquisto collettivo della cooperativa con dati ufficiali alla mano.',
       loading: 'Caricamento…', fail: 'Impossibile caricare il monitor. Riprova tra qualche minuto.', asof: 'Dati al',
@@ -101,7 +101,7 @@
     DOC.ratios.forEach(function (r) { if (!seen[r.grain]) { seen[r.grain] = 1; grains.push(r); } });
     if (!seen[GRAIN] && grains.length) GRAIN = grains[0].grain;
     var rows = DOC.ratios.filter(function (r) { return r.grain === GRAIN; });
-    var h = '<section class="di-card mi-sec"><h2>' + esc(w.rT) + '</h2><p class="mi-sub">' + esc(w.rS) + '</p>' +
+    var h = '<section class="di-card mi-sec" id="mi-ratio"><h2>' + esc(w.rT) + '</h2><p class="mi-sub">' + esc(w.rS) + '</p>' +
       '<label class="mi-lab">' + esc(w.grain) + ' <select id="mi-g" class="di-compare-select" style="width:auto">' + grains.map(function (r) { return '<option value="' + r.grain + '"' + (r.grain === GRAIN ? ' selected' : '') + '>' + esc(({ 'es-perc-trigo': '🌾 ', 'es-perc-cebada': '🍺 ', 'es-perc-maiz': '🌽 ', 'es-perc-girasol': '🌻 ' }[r.grain] || '') + nm(r.grainName)) + '</option>'; }).join('') + '</select></label>';
     h += '<div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + w.rCols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
     rows.forEach(function (r) {
@@ -114,7 +114,7 @@
   }
   function groupBlock(w, g) {
     if (!g.items.length) return '';
-    var h = '<section class="di-card mi-sec"><h2>' + esc(w.g[g.id] || g.id) + '</h2><div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + w.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
+    var h = '<section class="di-card mi-sec" id="mi-g-' + esc(g.id) + '"><h2>' + esc(w.g[g.id] || g.id) + '</h2><div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + w.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
     g.items.forEach(function (x) {
       var late = x.state === 'DELAYED' || x.state === 'STALE', yrs = x.years < 9.5 ? '<div class="mi-m">' + esc(num(x.years, 0) + ' ' + w.yrs) + '</div>' : '';
       h += '<tr><td><strong>' + esc(nm(x.name)) + '</strong></td>' +
@@ -122,9 +122,20 @@
         '<td style="color:' + (x.yoy > 0 ? 'var(--negative)' : x.yoy < 0 ? 'var(--positive)' : 'inherit') + ';font-weight:600">' + esc(pct(x.yoy)) + '</td>' +
         '<td>' + bar(x.pct, w, false) + yrs + '</td>' +
         '<td>' + esc(num(x.min[1], dec(x.min[1]))) + '<div class="mi-m">' + esc(per(x.min[0])) + '</div></td><td>' + esc(num(x.max[1], dec(x.max[1]))) + '<div class="mi-m">' + esc(per(x.max[0])) + '</div></td>' +
-        '<td>' + spark(x.spark) + '</td></tr>';
+        '<td>' + (x.spark && x.spark.length > 2 ? '<button type="button" class="mi-sp" data-sp="' + esc(x.id) + '" aria-expanded="false" title="' + esc(w.seeChart) + '" aria-label="' + esc(w.seeChart + ': ' + nm(x.name)) + '" style="background:none;border:0;padding:2px;cursor:pointer;font:inherit;color:inherit;text-align:left">' + spark(x.spark) + '<div class="mi-m" style="font-size:11px">' + esc(w.seeChart) + ' ▾</div></button>' : '') + '</td></tr>' +
+        '<tr class="mi-ch" data-ch="' + esc(x.id) + '" hidden><td colspan="7" style="padding:4px 6px 14px"></td></tr>';
     });
     return h + '</tbody></table></div></section>';
+  }
+  function findItem(id) { var r = null; DOC.groups.forEach(function (g) { g.items.forEach(function (x) { if (x.id === id) r = x; }); }); return r; }
+  function toggleChart(id, btn) {
+    var row = document.querySelector('tr[data-ch="' + id + '"]'); if (!row) return;
+    var open = row.hasAttribute('hidden'); if (!open) { row.setAttribute('hidden', ''); btn.setAttribute('aria-expanded', 'false'); return; }
+    var x = findItem(id), w = t(), cell = row.firstChild; if (!x || !x.spark) return;
+    var pts = [], n = x.spark.length, y = +x.last.slice(0, 4), m = +x.last.slice(5, 7) - 1, i, d;
+    for (i = n - 1; i >= 0; i--) { d = Date.UTC(y, m, 15); if (x.spark[i] != null) pts.unshift({ x: d, y: x.spark[i], l: per(new Date(d).toISOString().slice(0, 7)) }); m--; if (m < 0) { m = 11; y--; } }
+    cell.innerHTML = '<div style="font-weight:600;margin:6px 0">' + esc(nm(x.name)) + ' · ' + esc(unitShort(x.unit)) + '</div>' + (window.DehesaChart && window.DehesaChart.render && pts.length > 2 ? window.DehesaChart.render({ series: [{ name: nm(x.name), color: '#8a2d2d', pts: pts }], xMode: 'time', yTitle: unitShort(x.unit), aria: nm(x.name), zero: false, noLegend: true, vFmt: function (v) { return v == null ? '—' : num(v, dec(v)); } }) : '');
+    row.removeAttribute('hidden'); btn.setAttribute('aria-expanded', 'true');
   }
   function render() {
     var w = t(), root = document.getElementById('mi-body'); if (!root) return;
@@ -137,6 +148,9 @@
     h += w.note.map(function (p) { return '<p class="di-movers-hint" style="max-width:820px">' + esc(p) + '</p>'; }).join('');
     h += '<section class="di-card di-emp-cta" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaBtn) + '</a></section>';
     root.innerHTML = h;
+    Array.prototype.forEach.call(root.querySelectorAll('.mi-sp'), function (b) { b.onclick = function () { toggleChart(b.getAttribute('data-sp'), b); }; });
+    var F = S.frame, bh = document.getElementById('mi-bar');
+    if (F && bh) F.bar(bh, w.barT, [['mi-ratio', w.barShort]].concat(DOC.groups.filter(function (g) { return g.items.length; }).map(function (g) { return ['mi-g-' + g.id, w.g[g.id] || g.id]; })));
     var sel = document.getElementById('mi-g'); if (sel) sel.onchange = function (e) { GRAIN = e.target.value; render(); };
   }
   S.init('data');
