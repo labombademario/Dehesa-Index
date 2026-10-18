@@ -1,7 +1,9 @@
 URSEA fila 16 descartada: Inicio 2022-12-26 posterior a Fin 2022-12-25 (no se corrige la fecha)
+MGAP tierra sale: anios con pocos departamentos, descartados: [2006]
+MGAP tierra rent: anios con pocos departamentos, descartados: [2007]
 DICOSE se-snig-2016: sin datosanimales.csv utilizable
 DICOSE se-snig-2017: sin datosanimales.csv utilizable
 DICOSE -dicose-snig: sin datosanimales.csv utilizable
 DICOSE se-snig-2019: sin datosanimales.csv utilizable
 DICOSE se-snig-2020: sin datosanimales.csv utilizable
-series guardadas: 24
+series guardadas: 27

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T22:14:52Z",
+ "generatedAt": "2026-10-18T22:19:48Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -6506,7 +6506,7 @@
    "country": "UY",
    "scope": "integrated",
    "institution": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA)",
-   "dataset": "Ya integrada (24 series en el catalogo unificado)",
+   "dataset": "Ya integrada (27 series en el catalogo unificado)",
    "products": [
     "cattle",
     "energy",
