@@ -582,6 +582,16 @@ sources:
     data: [worldbank-agri.json]
     log: worldbank-agri-log.txt
     message: Perfil agrario por país (Banco Mundial WDI)
+  - id: worldbank-fertilizers
+    name: Update World Bank fertiliser prices (Pink Sheet)
+    cron: ['50 7 6 * *']
+    pre: ['pip install openpyxl']
+    script: scripts/update-worldbank-fertilizers.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [worldbank-fertilizers.json]
+    message: Precios internacionales de fertilizantes (Banco Mundial, Pink Sheet)
   - id: cpi
     name: Update consumer price indices (Eurostat, ONS, BLS, StatCan)
     cron: ['25 9 * * 3']

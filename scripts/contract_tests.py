@@ -1751,6 +1751,19 @@ WBA_RANGE = {"cropIdx": (0, 400), "livestockIdx": (0, 400), "foodIdx": (0, 400),
 WBA_NONNEG = {"agriLandKm2", "arablePerCap", "agriVaPerWorker", "agriVaUsd", "cerealArea", "cerealProd", "ch4Agri", "n2oAgri"}
 
 
+def worldbank_fertilizers(doc, errs, warns, stats):
+    import datetime as _dt
+    ids = [x["id"] for x in doc["series"]]
+    if "urea" not in ids: errs.append("fertilizantes Banco Mundial: falta la urea")
+    for x in doc["series"]:
+        ps = [p[0] for p in x["points"]]
+        if ps != sorted(set(ps)): errs.append("fertilizantes BM %s: periodos no ascendentes o repetidos" % x["id"]); continue
+        for p, v in x["points"]:
+            if not re.fullmatch(r"\d{4}-\d{2}", p): errs.append("fertilizantes BM %s: periodo %s no es AAAA-MM" % (x["id"], p)); break
+            if not isinstance(v, (int, float)) or not 20 <= v <= 3000: errs.append("fertilizantes BM %s %s: precio fuera de rango (%s USD/t)" % (x["id"], p, v)); break
+    last = max(x["points"][-1][0] for x in doc["series"])
+    if last < (_dt.date.today() - _dt.timedelta(days=100)).strftime("%Y-%m"): warns.append("fertilizantes BM: ultimo mes %s, con retraso" % last)
+    stats["series"] = len(doc["series"]); stats["ultimo"] = last
 def worldbank_agri(doc, errs, warns, stats):
     """Banco Mundial (WDI): licencia CC BY-4.0 por indicador, series sin huecos en los extremos, rangos fisicos y coherencia produccion = rendimiento x superficie."""
     import datetime as _d, math as _m

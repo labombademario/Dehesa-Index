@@ -70,19 +70,70 @@
       cta: 'Vuoi questo monitor con i mezzi tecnici che compra la tua cooperativa e un avviso quando un prezzo scende sotto una soglia? Raccontaci di cosa hai bisogno.', ctaBtn: 'Scrivici'
     }
   };
-  var DOC = null, FAILED = false, GRAIN = 'es-perc-trigo';
+
+  /* Textos del selector de país y de los países con índices (no son precios: son posiciones frente a su propia historia) */
+  var X = {
+    es: { country: 'País', sub: 'Cuánto cuestan los insumos en {c} frente a su propia historia: dónde está hoy cada índice de precios entre sus mínimos y máximos de los últimos {y} años.',
+      idx: 'índice 2020=100', q: 'T', rI: 'Cereales frente a abonos', rSI: 'Cuántos abonos compra el cereal respecto a 2020: precio de venta de los cereales dividido entre el índice de precios del abono, ambos con base 2020=100 y del mismo periodo. Más de 100 = el cereal compra más abono que en 2020; menos de 100 = menos. Es un cociente de índices, no kilos.',
+      rColsI: ['Abono', 'Cereal ÷ abono (2020=100)', 'Posición en {y} años', 'Peor periodo', 'Mejor periodo'],
+      g: { fert: 'Abonos y fertilizantes', general: 'Otros insumos', world: 'Referencia internacional (Banco Mundial)' },
+      wT: 'Precio internacional de los fertilizantes', wS: 'Referencia común para todos los países: precio de mercado internacional en USD por tonelada, no lo que paga el agricultor en su país. Sirve para ver si el abono está caro o barato en el mundo.',
+      noteI: ['Índices de precios pagados por los agricultores (insumos) y de precios percibidos (cereales), con base 2020 = 100: miden cuánto ha subido o bajado el precio frente a 2020, no cuánto cuesta en euros. La posición dice dónde está el último dato entre los {y} años que cubre cada serie.',
+        'Nada se estima ni se rellena: si un país no publica una serie, no aparece. Los datos trimestrales se muestran como T1 a T4.'],
+      srcI: { FR: 'Fuente: INSEE (índices IPAMPA de precios pagados e IPPAP de precios percibidos), mensuales desde 2005.', EU: 'Fuente: Eurostat (apri_pi_inq y apri_pi_outq), trimestrales desde 2020; gasóleo: Boletín Petrolero Semanal de la Comisión Europea, con impuestos.' },
+      wNote: 'Fuente: Banco Mundial, Commodity Price Data (Pink Sheet), USD por tonelada, mensual. Son precios internacionales de mercado: el precio que paga un agricultor depende de su país, su proveedor y los impuestos.', spain: 'Precios reales (MAPA)' },
+    en: { country: 'Country', sub: 'How expensive inputs are in {c} compared with their own history: where each price index sits today between its lows and highs of the last {y} years.',
+      idx: 'index 2020=100', q: 'Q', rI: 'Cereals versus fertiliser', rSI: 'How much fertiliser cereals buy compared with 2020: the cereal selling-price index divided by the fertiliser price index, both based on 2020=100 and for the same period. Above 100 = cereals buy more fertiliser than in 2020; below 100 = less. It is a ratio of indices, not kilos.',
+      rColsI: ['Fertiliser', 'Cereal ÷ fertiliser (2020=100)', 'Position in {y} years', 'Worst period', 'Best period'],
+      g: { fert: 'Fertilisers', general: 'Other inputs', world: 'International reference (World Bank)' },
+      wT: 'International fertiliser prices', wS: 'A common reference for every country: international market price in USD per tonne, not what a farmer pays at home. It shows whether fertiliser is dear or cheap worldwide.',
+      noteI: ['Indices of prices paid by farmers (inputs) and prices received (cereals), base 2020 = 100: they show how much a price has risen or fallen since 2020, not what it costs in euros. The position shows where the latest value sits within the {y} years each series covers.',
+        'Nothing is estimated or filled in: if a country does not publish a series, it does not appear. Quarterly data are shown as Q1 to Q4.'],
+      srcI: { FR: 'Source: INSEE (IPAMPA index of prices paid and IPPAP index of prices received), monthly since 2005.', EU: 'Source: Eurostat (apri_pi_inq and apri_pi_outq), quarterly since 2020; diesel: European Commission Weekly Oil Bulletin, taxes included.' },
+      wNote: 'Source: World Bank, Commodity Price Data (Pink Sheet), USD per tonne, monthly. These are international market prices: what a farmer pays depends on the country, the supplier and taxes.', spain: 'Actual prices (MAPA)' },
+    fr: { country: 'Pays', sub: 'Combien coûtent les intrants en {c} par rapport à leur propre historique : où se situe aujourd’hui chaque indice de prix entre ses minimums et maximums des {y} dernières années.',
+      idx: 'indice 2020=100', q: 'T', rI: 'Céréales face aux engrais', rSI: 'Quelle quantité d’engrais les céréales achètent par rapport à 2020 : l’indice du prix de vente des céréales divisé par l’indice du prix de l’engrais, tous deux en base 2020=100 et pour la même période. Plus de 100 = les céréales achètent plus d’engrais qu’en 2020 ; moins de 100 = moins. C’est un rapport d’indices, pas des kilos.',
+      rColsI: ['Engrais', 'Céréale ÷ engrais (2020=100)', 'Position sur {y} ans', 'Pire période', 'Meilleure période'],
+      g: { fert: 'Engrais', general: 'Autres intrants', world: 'Référence internationale (Banque mondiale)' },
+      wT: 'Prix internationaux des engrais', wS: 'Une référence commune à tous les pays : prix du marché international en USD par tonne, pas ce que paie l’agriculteur chez lui. Elle montre si l’engrais est cher ou bon marché dans le monde.',
+      noteI: ['Indices des prix payés par les agriculteurs (intrants) et des prix perçus (céréales), base 2020 = 100 : ils montrent de combien un prix a monté ou baissé depuis 2020, pas combien il coûte en euros. La position indique où se situe la dernière valeur sur les {y} ans couverts par chaque série.',
+        'Rien n’est estimé ni complété : si un pays ne publie pas une série, elle n’apparaît pas. Les données trimestrielles sont affichées en T1 à T4.'],
+      srcI: { FR: 'Source : INSEE (indices IPAMPA des prix payés et IPPAP des prix perçus), mensuels depuis 2005.', EU: 'Source : Eurostat (apri_pi_inq et apri_pi_outq), trimestriel depuis 2020 ; gazole : Bulletin pétrolier hebdomadaire de la Commission européenne, taxes comprises.' },
+      wNote: 'Source : Banque mondiale, Commodity Price Data (Pink Sheet), USD par tonne, mensuel. Ce sont des prix de marché internationaux : ce que paie un agriculteur dépend du pays, du fournisseur et des taxes.', spain: 'Prix réels (MAPA)' },
+    it: { country: 'Paese', sub: 'Quanto costano i mezzi tecnici in {c} rispetto alla loro storia: dove si trova oggi ciascun indice dei prezzi tra i minimi e i massimi degli ultimi {y} anni.',
+      idx: 'indice 2020=100', q: 'T', rI: 'Cereali rispetto ai concimi', rSI: 'Quanto concime comprano i cereali rispetto al 2020: l’indice del prezzo di vendita dei cereali diviso per l’indice del prezzo del concime, entrambi in base 2020=100 e dello stesso periodo. Oltre 100 = i cereali comprano più concime che nel 2020; sotto 100 = meno. È un rapporto tra indici, non chili.',
+      rColsI: ['Concime', 'Cereale ÷ concime (2020=100)', 'Posizione in {y} anni', 'Periodo peggiore', 'Periodo migliore'],
+      g: { fert: 'Concimi', general: 'Altri mezzi tecnici', world: 'Riferimento internazionale (Banca Mondiale)' },
+      wT: 'Prezzi internazionali dei concimi', wS: 'Un riferimento comune a tutti i paesi: prezzo di mercato internazionale in USD per tonnellata, non quanto paga l’agricoltore nel suo paese. Mostra se il concime è caro o conveniente nel mondo.',
+      noteI: ['Indici dei prezzi pagati dagli agricoltori (mezzi tecnici) e dei prezzi ricevuti (cereali), base 2020 = 100: mostrano di quanto un prezzo è salito o sceso dal 2020, non quanto costa in euro. La posizione indica dove si trova l’ultimo dato negli {y} anni coperti da ciascuna serie.',
+        'Niente è stimato né riempito: se un paese non pubblica una serie, non compare. I dati trimestrali sono mostrati come T1–T4.'],
+      srcI: { FR: 'Fonte: INSEE (indici IPAMPA dei prezzi pagati e IPPAP dei prezzi percepiti), mensili dal 2005.', EU: 'Fonte: Eurostat (apri_pi_inq e apri_pi_outq), trimestrali dal 2020; gasolio: Bollettino petrolifero settimanale della Commissione europea, tasse incluse.' },
+      wNote: 'Fonte: Banca Mondiale, Commodity Price Data (Pink Sheet), USD per tonnellata, mensile. Sono prezzi di mercato internazionali: quanto paga un agricoltore dipende dal paese, dal fornitore e dalle tasse.', spain: 'Prezzi reali (MAPA)' }
+  };
+  var DOC = null, WORLD = null, INDEX = null, CC = 'ES', FAILED = false, GRAIN = 'es-perc-trigo', ES_DOC = null;
   function lang() { return S.getLang ? S.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function nm(o) { return (o && (o[lang()] || o.es)) || ''; }
   function num(v, d) { if (v == null || !isFinite(v)) return '—'; var s = Number(v).toFixed(d); return lang() === 'en' ? s : s.replace('.', ','); }
   function pct(v) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + num(Math.abs(v), 1) + ' %'; }
-  function per(p) { var mo = ['', 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept', 'oct', 'nov', 'dic'];
+
+  function xt() { return X[lang()] || X.es; }
+  function yrs() { var v = DOC && DOC.years ? DOC.years : 10; return num(v, v % 1 ? 1 : 0); }
+  function Y(s) { return String(s).replace(/\b10\b/g, yrs()).replace('{y}', yrs()); }
+  function isIdx() { return !!(DOC && DOC.kind === 'index'); }
+  function flag(c) { var i = c === 'EL' ? 'GR' : c; return /^[A-Z]{2}$/.test(i) && c !== 'EU' ? String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)) : '🇪🇺'; }
+  function cname(c) { if (c === 'EU') return ({ es: 'Unión Europea', en: 'European Union', fr: 'Union européenne', it: 'Unione europea' })[lang()]; try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(c === 'EL' ? 'GR' : c) || c; } catch (e) { return c; } }
+  function per(p) {
+    var mo = ['', 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept', 'oct', 'nov', 'dic'], q = /^(\d{4})-Q([1-4])$/.exec(p || '');
+    if (q) return xt().q + q[2] + ' ' + q[1];
     if (!p) return '—'; if (p.length === 10) return S.fmtDate ? S.fmtDate(p) : p;
     if (p.length === 7) { try { return new Date(p + '-15T00:00:00Z').toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return mo[+p.slice(5)] + ' ' + p.slice(0, 4); } }
-    return p; }
-  function unitShort(u) { return String(u || '').replace(' (sin IVA)', '').replace('EUR/litro', '€/l'); }
-  function dec(v) { return v < 10 ? 3 : 2; }
+    return p;
+  }
+  function unitShort(u) { u = String(u || ''); if (u.indexOf('índice') === 0) return xt().idx; return u.replace(' (sin IVA)', '').replace('EUR/litro', '€/l'); }
+  function dec(v, u) { if (u && String(u).indexOf('índice') === 0) return 1; if (u === 'USD/t') return v >= 100 ? 0 : 1; return v < 10 ? 3 : 2; }
+
   // barra de posición: 0 = el más barato de la ventana, 100 = el más caro
   function bar(p, w, inverse) {
     var c = inverse ? (p >= 67 ? 'var(--positive)' : p <= 33 ? 'var(--negative)' : '#8f5f12') : (p >= 67 ? 'var(--negative)' : p <= 33 ? 'var(--positive)' : '#8f5f12');
@@ -96,66 +147,97 @@
     var lx = W, ly = (H - 3 - (vals[vals.length - 1] - mn) / r * (H - 6)).toFixed(1);
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" aria-hidden="true"><path d="' + d + '" fill="none" stroke="var(--text-muted)" stroke-width="1.4"/><circle cx="' + (lx - 1.5) + '" cy="' + ly + '" r="2.6" fill="var(--text)"/></svg>';
   }
+
   function ratioBlock(w) {
-    var grains = [], seen = {};
+    var X1 = xt(), I = isIdx(), grains = [], seen = {};
     DOC.ratios.forEach(function (r) { if (!seen[r.grain]) { seen[r.grain] = 1; grains.push(r); } });
-    if (!seen[GRAIN] && grains.length) GRAIN = grains[0].grain;
-    var rows = DOC.ratios.filter(function (r) { return r.grain === GRAIN; });
-    var h = '<section class="di-card mi-sec" id="mi-ratio"><h2>' + esc(w.rT) + '</h2><p class="mi-sub">' + esc(w.rS) + '</p>' +
-      '<label class="mi-lab">' + esc(w.grain) + ' <select id="mi-g" class="di-compare-select" style="width:auto">' + grains.map(function (r) { return '<option value="' + r.grain + '"' + (r.grain === GRAIN ? ' selected' : '') + '>' + esc(({ 'es-perc-trigo': '🌾 ', 'es-perc-cebada': '🍺 ', 'es-perc-maiz': '🌽 ', 'es-perc-girasol': '🌻 ' }[r.grain] || '') + nm(r.grainName)) + '</option>'; }).join('') + '</select></label>';
-    h += '<div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + w.rCols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
+    if (!grains.length) return '';
+    if (!seen[GRAIN]) GRAIN = grains[0].grain;
+    var rows = DOC.ratios.filter(function (r) { return r.grain === GRAIN; }), cols = I ? X1.rColsI : w.rCols, u = I ? '' : ' ' + w.kg;
+    var h = '<section class="di-card mi-sec" id="mi-ratio"><h2>' + esc(I ? X1.rI : w.rT) + '</h2><p class="mi-sub">' + esc(I ? X1.rSI : w.rS) + '</p>';
+    if (grains.length > 1) h += '<label class="mi-lab">' + esc(w.grain) + ' <select id="mi-g" class="di-compare-select" style="width:auto">' + grains.map(function (r) { return '<option value="' + r.grain + '"' + (r.grain === GRAIN ? ' selected' : '') + '>' + esc(({ 'es-perc-trigo': '🌾 ', 'es-perc-cebada': '🍺 ', 'es-perc-maiz': '🌽 ', 'es-perc-girasol': '🌻 ', 'am010000': '🌾 ', 'am011000': '🌾 ', 'am013000': '🍺 ', 'am015000': '🌽 ', 'fr-596': '🌾 ', 'fr-600': '🌾 ', 'fr-597': '🍺 ', 'fr-605': '🌽 ' }[r.grain] || '') + nm(r.grainName)) + '</option>'; }).join('') + '</select></label>';
+    h += '<div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + cols.map(function (c) { return '<th>' + esc(Y(c)) + '</th>'; }).join('') + '</tr></thead><tbody>';
     rows.forEach(function (r) {
       var lab = r.pct <= 20 ? w.rLow : r.pct >= 80 ? w.rHigh : w.rMid;
-      h += '<tr><td><strong>' + esc(nm(r.fertName)) + '</strong><div class="mi-m">' + esc(per(r.last)) + '</div></td><td><strong>' + esc(num(r.value, 1)) + ' ' + esc(w.kg) + '</strong></td>' +
-        '<td>' + bar(r.pct, w, true) + '<div class="mi-m">' + esc(lab) + '</div></td><td>' + esc(num(r.min[1], 1)) + ' ' + esc(w.kg) + '<div class="mi-m">' + esc(per(r.min[0])) + '</div></td>' +
-        '<td>' + esc(num(r.max[1], 1)) + ' ' + esc(w.kg) + '<div class="mi-m">' + esc(per(r.max[0])) + '</div></td></tr>';
+      h += '<tr><td><strong>' + esc(nm(r.fertName)) + '</strong><div class="mi-m">' + esc(per(r.last)) + '</div></td><td><strong>' + esc(num(r.value, 1)) + esc(u) + '</strong></td>' +
+        '<td>' + bar(r.pct, w, true) + '<div class="mi-m">' + esc(lab) + '</div></td><td>' + esc(num(r.min[1], 1)) + esc(u) + '<div class="mi-m">' + esc(per(r.min[0])) + '</div></td>' +
+        '<td>' + esc(num(r.max[1], 1)) + esc(u) + '<div class="mi-m">' + esc(per(r.max[0])) + '</div></td></tr>';
     });
     return h + '</tbody></table></div></section>';
   }
-  function groupBlock(w, g) {
+  function groupBlock(w, g, title, sub) {
     if (!g.items.length) return '';
-    var h = '<section class="di-card mi-sec" id="mi-g-' + esc(g.id) + '"><h2>' + esc(w.g[g.id] || g.id) + '</h2><div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + w.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
+    var X1 = xt(), h = '<section class="di-card mi-sec" id="mi-g-' + esc(g.id) + '"><h2>' + esc(title || w.g[g.id] || X1.g[g.id] || g.id) + '</h2>' + (sub ? '<p class="mi-sub">' + esc(sub) + '</p>' : '') + '<div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + w.cols.map(function (c) { return '<th>' + esc(Y(c)) + '</th>'; }).join('') + '</tr></thead><tbody>';
     g.items.forEach(function (x) {
-      var late = x.state === 'DELAYED' || x.state === 'STALE', yrs = x.years < 9.5 ? '<div class="mi-m">' + esc(num(x.years, 0) + ' ' + w.yrs) + '</div>' : '';
+      var late = x.state === 'DELAYED' || x.state === 'STALE', yr = x.years < 9.5 ? '<div class="mi-m">' + esc(num(x.years, x.years % 1 ? 1 : 0) + ' ' + w.yrs) + '</div>' : '';
       h += '<tr><td><strong>' + esc(nm(x.name)) + '</strong></td>' +
-        '<td><strong>' + esc(num(x.value, dec(x.value))) + '</strong> <span class="mi-m">' + esc(unitShort(x.unit)) + '</span><div class="mi-m">' + esc(per(x.last)) + (late ? ' · <span style="color:#8f5f12">' + esc(w.late) + '</span>' : '') + '</div></td>' +
+        '<td><strong>' + esc(num(x.value, dec(x.value, x.unit))) + '</strong> <span class="mi-m">' + esc(unitShort(x.unit)) + '</span><div class="mi-m">' + esc(per(x.last)) + (late ? ' · <span style="color:#8f5f12">' + esc(w.late) + '</span>' : '') + '</div></td>' +
         '<td style="color:' + (x.yoy > 0 ? 'var(--negative)' : x.yoy < 0 ? 'var(--positive)' : 'inherit') + ';font-weight:600">' + esc(pct(x.yoy)) + '</td>' +
-        '<td>' + bar(x.pct, w, false) + yrs + '</td>' +
-        '<td>' + esc(num(x.min[1], dec(x.min[1]))) + '<div class="mi-m">' + esc(per(x.min[0])) + '</div></td><td>' + esc(num(x.max[1], dec(x.max[1]))) + '<div class="mi-m">' + esc(per(x.max[0])) + '</div></td>' +
-        '<td>' + (x.spark && x.spark.length > 2 ? '<button type="button" class="mi-sp" data-sp="' + esc(x.id) + '" aria-expanded="false" title="' + esc(w.seeChart) + '" aria-label="' + esc(w.seeChart + ': ' + nm(x.name)) + '" style="background:none;border:0;padding:2px;cursor:pointer;font:inherit;color:inherit;text-align:left">' + spark(x.spark) + '<div class="mi-m" style="font-size:11px">' + esc(w.seeChart) + ' ▾</div></button>' : '') + '</td></tr>' +
+        '<td>' + bar(x.pct, w, false) + yr + '</td>' +
+        '<td>' + esc(num(x.min[1], dec(x.min[1], x.unit))) + '<div class="mi-m">' + esc(per(x.min[0])) + '</div></td><td>' + esc(num(x.max[1], dec(x.max[1], x.unit))) + '<div class="mi-m">' + esc(per(x.max[0])) + '</div></td>' +
+        '<td>' + (x.spark && x.spark.length > 2 ? '<button type="button" class="mi-sp" data-sp="' + esc(x.id) + '" aria-expanded="false" title="' + esc(w.seeChart) + '" aria-label="' + esc(w.seeChart + ': ' + nm(x.name)) + '" style="background:none;border:0;padding:2px;cursor:pointer;font:inherit;color:inherit;text-align:left">' + spark(x.spark) + '<div class="mi-m" style="margin:0">' + esc(w.seeChart) + ' ▾</div></button>' : '') + '</td></tr>' +
         '<tr class="mi-ch" data-ch="' + esc(x.id) + '" hidden><td colspan="7" style="padding:4px 6px 14px"></td></tr>';
     });
     return h + '</tbody></table></div></section>';
   }
-  function findItem(id) { var r = null; DOC.groups.forEach(function (g) { g.items.forEach(function (x) { if (x.id === id) r = x; }); }); return r; }
+  function findItem(id) { var r = null; [DOC, WORLD].forEach(function (d) { if (d) d.groups.forEach(function (g) { g.items.forEach(function (x) { if (x.id === id) r = x; }); }); }); return r; }
   function toggleChart(id, btn) {
     var row = document.querySelector('tr[data-ch="' + id + '"]'); if (!row) return;
     var open = row.hasAttribute('hidden'); if (!open) { row.setAttribute('hidden', ''); btn.setAttribute('aria-expanded', 'false'); return; }
     var x = findItem(id), w = t(), cell = row.firstChild; if (!x || !x.spark) return;
-    var pts = [], n = x.spark.length, y = +x.last.slice(0, 4), m = +x.last.slice(5, 7) - 1, i, d;
-    for (i = n - 1; i >= 0; i--) { d = Date.UTC(y, m, 15); if (x.spark[i] != null) pts.unshift({ x: d, y: x.spark[i], l: per(new Date(d).toISOString().slice(0, 7)) }); m--; if (m < 0) { m = 11; y--; } }
-    cell.innerHTML = '<div style="font-weight:600;margin:6px 0">' + esc(nm(x.name)) + ' · ' + esc(unitShort(x.unit)) + '</div>' + (window.DehesaChart && window.DehesaChart.render && pts.length > 2 ? window.DehesaChart.render({ series: [{ name: nm(x.name), color: '#8a2d2d', pts: pts }], xMode: 'time', yTitle: unitShort(x.unit), aria: nm(x.name), zero: false, noLegend: true, vFmt: function (v) { return v == null ? '—' : num(v, dec(v)); } }) : '');
+    var pts = [], n = x.spark.length, y = +x.last.slice(0, 4), qm = /-Q([1-4])$/.exec(x.last), m = qm ? +qm[1] * 3 - 1 : +x.last.slice(5, 7) - 1, step = qm ? 3 : 1, i, d, lab, qq = qm ? +qm[1] : 0;
+    for (i = n - 1; i >= 0; i--) {
+      d = Date.UTC(y, m, 15); lab = qm ? per(y + '-Q' + qq) : per(new Date(d).toISOString().slice(0, 7));
+      if (x.spark[i] != null) pts.unshift({ x: d, y: x.spark[i], l: lab });
+      m -= step; if (m < 0) { m += 12; y--; } if (qm) { qq--; if (qq < 1) qq = 4; }
+    }
+    cell.innerHTML = '<div style="font-weight:600;margin:6px 0">' + esc(nm(x.name)) + ' · ' + esc(unitShort(x.unit)) + '</div>' + (window.DehesaChart && window.DehesaChart.render && pts.length > 2 ? window.DehesaChart.render({ series: [{ name: nm(x.name), color: '#8a2d2d', pts: pts }], xMode: 'time', yTitle: unitShort(x.unit), aria: nm(x.name), zero: false, noLegend: true, vFmt: function (v) { return v == null ? '—' : num(v, dec(v, x.unit)); } }) : '');
     row.removeAttribute('hidden'); btn.setAttribute('aria-expanded', 'true');
   }
+  function chips() {
+    var X1 = xt(), list = [{ cc: 'ES' }].concat((INDEX && INDEX.countries) || []);
+    return '<div class="mi-how" style="display:block;margin-bottom:14px"><div class="mi-m" style="margin:0 0 6px;font-weight:600">' + esc(X1.country) + '</div><div class="cp-chips" role="group" aria-label="' + esc(X1.country) + '" style="display:flex;flex-wrap:wrap;gap:6px">' +
+      list.map(function (c) { return '<button type="button" class="cp-chip" data-cc="' + c.cc + '" aria-pressed="' + (c.cc === CC) + '">' + flag(c.cc) + ' ' + esc(cname(c.cc)) + '</button>'; }).join('') + '</div></div>';
+  }
   function render() {
-    var w = t(), root = document.getElementById('mi-body'); if (!root) return;
-    document.getElementById('mi-h1').textContent = w.h1; document.getElementById('mi-sub').textContent = w.sub; document.title = w.title + ' | Dehesa Index';
+    var w = t(), X1 = xt(), root = document.getElementById('mi-body'); if (!root) return;
+    document.getElementById('mi-h1').textContent = w.h1; document.title = w.title + ' | Dehesa Index';
+    document.getElementById('mi-sub').textContent = DOC && isIdx() ? Y(X1.sub).replace('{c}', cname(CC)) : w.sub;
     if (FAILED) { root.innerHTML = '<p>' + esc(w.fail) + '</p>'; return; }
-    if (!DOC) { root.innerHTML = '<p class="di-movers-hint">' + esc(w.loading) + '</p>'; return; }
-    var h = '<div class="mi-how"><strong>' + esc(w.howT) + '.</strong> ' + esc(w.how) + '<div class="mi-m" style="margin-top:4px">' + esc(w.asof) + ' ' + esc(S.fmtDate ? S.fmtDate(String(DOC.generatedAt).slice(0, 10)) : DOC.generatedAt) + '</div></div>';
+    if (!DOC) { root.innerHTML = chips() + '<p class="di-movers-hint" role="status">' + esc(w.loading) + '</p>'; bindChips(root); return; }
+    var I = isIdx(), h = chips() + '<div class="mi-how"><strong>' + esc(w.howT) + '.</strong> ' + esc(Y(w.how)) + '<div class="mi-m" style="margin-top:4px">' + esc(w.asof) + ' ' + esc(S.fmtDate ? S.fmtDate(String(DOC.generatedAt).slice(0, 10)) : DOC.generatedAt) + '</div></div>';
     h += ratioBlock(w);
     DOC.groups.forEach(function (g) { h += groupBlock(w, g); });
-    h += w.note.map(function (p) { return '<p class="di-movers-hint" style="max-width:820px">' + esc(p) + '</p>'; }).join('');
+    if (WORLD && WORLD.groups[0].items.length) h += groupBlock(w, WORLD.groups[0], X1.wT, X1.wS);
+    h += (I ? X1.noteI.map(Y).concat([X1.srcI[CC === 'FR' ? 'FR' : 'EU']]) : w.note).concat(WORLD ? [X1.wNote] : []).map(function (p) { return '<p class="di-movers-hint" style="max-width:820px">' + esc(p) + '</p>'; }).join('');
     h += '<section class="di-card di-emp-cta" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaBtn) + '</a></section>';
-    root.innerHTML = h;
+    root.innerHTML = h; bindChips(root);
     Array.prototype.forEach.call(root.querySelectorAll('.mi-sp'), function (b) { b.onclick = function () { toggleChart(b.getAttribute('data-sp'), b); }; });
-    var F = S.frame, bh = document.getElementById('mi-bar');
-    if (F && bh) F.bar(bh, w.barT, [['mi-ratio', w.barShort]].concat(DOC.groups.filter(function (g) { return g.items.length; }).map(function (g) { return ['mi-g-' + g.id, w.g[g.id] || g.id]; })));
+    var F = S.frame, bh = document.getElementById('mi-bar'), secs = [];
+    if (root.querySelector('#mi-ratio')) secs.push(['mi-ratio', w.barShort]);
+    DOC.groups.forEach(function (g) { if (g.items.length) secs.push(['mi-g-' + g.id, w.g[g.id] || X1.g[g.id] || g.id]); });
+    if (WORLD && WORLD.groups[0].items.length) secs.push(['mi-g-world', X1.g.world]);
+    if (F && bh) F.bar(bh, w.barT, secs);
     var sel = document.getElementById('mi-g'); if (sel) sel.onchange = function (e) { GRAIN = e.target.value; render(); };
+  }
+  function bindChips(root) { Array.prototype.forEach.call(root.querySelectorAll('[data-cc]'), function (b) { b.onclick = function () { setCountry(b.getAttribute('data-cc')); }; }); }
+  function getJ(u) { return fetch(S.sitePath(u), { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }); }
+  function setCountry(cc, noPush) {
+    CC = cc; FAILED = false; DOC = null;
+    if (!noPush) { try { var u = new URL(location.href); if (cc === 'ES') u.searchParams.delete('c'); else u.searchParams.set('c', cc); history.replaceState(null, '', u.pathname + u.search + u.hash); } catch (e) { /* sin historial */ } }
+    render();
+    var p = cc === 'ES' ? (ES_DOC ? Promise.resolve(ES_DOC) : getJ('data/views/input-monitor.json').then(function (d) { return (ES_DOC = d); })) : getJ('data/views/input-monitor-countries/' + cc + '.json');
+    p.then(function (d) { if (CC !== cc) return; DOC = d; GRAIN = d.ratios && d.ratios.length ? d.ratios[0].grain : GRAIN; render(); }).catch(function () { if (CC === cc) { FAILED = true; render(); } });
   }
   S.init('data');
   S.onLangChange = render;
   render();
-  fetch(S.sitePath('data/views/input-monitor.json'), { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-    .then(function (d) { DOC = d; render(); }).catch(function () { FAILED = true; render(); });
+  var q0 = /[?&]c=([A-Za-z]{2})/.exec(location.search), cc0 = q0 ? q0[1].toUpperCase() : 'ES';
+  getJ('data/views/input-monitor-countries/index.json').then(function (d) { INDEX = d; }).catch(function () { INDEX = null; }).then(function () {
+    if (!INDEX || !INDEX.world) return null;  // la referencia mundial solo se pide si el índice dice que existe
+    return getJ('data/views/input-monitor-countries/world.json').then(function (d) { WORLD = d; }).catch(function () { WORLD = null; });
+  }).then(function () {
+    var ok = cc0 === 'ES' || (INDEX && INDEX.countries.some(function (c) { return c.cc === cc0; }));
+    setCountry(ok ? cc0 : 'ES', true);
+  });
 })();

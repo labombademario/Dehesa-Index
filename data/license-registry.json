@@ -6132,6 +6132,12 @@
   "data/eu-food-monitor/": {
    "default": "eurostat",
    "notes": "Monitor de precios de alimentos de Eurostat (prc_fpmt_m): un fichero por pais con 41 productos y 4 indices."
+  },
+  "data/worldbank-fertilizers.json": {
+   "sources": [
+    "world_bank"
+   ],
+   "notes": "Precios internacionales mensuales de urea, DAP, TSP, cloruro potasico y roca fosforica (World Bank Commodity Price Data, Pink Sheet). Referencia comun del monitor de insumos; no es el precio que paga el agricultor."
   }
  },
  "derived": [

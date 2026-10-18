@@ -362,6 +362,12 @@
     "germany_livestock"
    ]
   ],
+  "worldbank-fertilizers.json": [
+   "worldbank-fertilizers",
+   [
+    "worldbank_fertilizers"
+   ]
+  ],
   "worldbank-agri.json": [
    "worldbank-agri",
    [
