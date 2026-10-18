@@ -110,8 +110,8 @@ function wsum0(id){const e=extraOut.find(x=>x.id===id);return e?Object.values(e.
 // Produccion mundial ampliada (frutales, frutos secos, cafe, algodon...): si falta algo se avisa pero no se bloquea.
 if(extraOut.length){
  const wsum=e=>Object.values(e.countries).reduce((a,c)=>a+((c.years[e.latestMarketYear]||{}).production||0),0);
- const apples=extraOut.find(e=>e.id==='manzana'),okApples=!apples||(wsum(apples)>30000&&wsum(apples)<130000);
- if(okApples)fs.writeFileSync(path.join(OUT,'world-production.json'),JSON.stringify({schemaVersion:'1.0',generatedAt,source,note:'Produccion por pais de productos adicionales de USDA PSD. iso EU = agregado de la Union Europea. Unidades de PSD (miles de toneladas; cafe en miles de sacos de 60 kg; algodon en miles de balas de 480 libras).',commodities:extraOut})+'\n');
+ const apples=extraOut.find(e=>e.id==='manzana'),okApples=!apples||(()=>{const t=wsum(apples)*(/^1000/.test(apples.unit)?1000:1);return t>30e6&&t<130e6})();
+ if(okApples)fs.writeFileSync(path.join(OUT,'world-production.json'),JSON.stringify({schemaVersion:'1.0',generatedAt,source,note:'Produccion por pais de productos adicionales de USDA PSD. iso EU = agregado de la Union Europea. Unidades de PSD, indicadas en cada producto (fruta en toneladas; cafe en miles de sacos de 60 kg; algodon en miles de balas de 480 libras).',commodities:extraOut})+'\n');
  else console.log('::warning::Manzana mundial fuera de rango ('+(apples&&wsum(apples))+'); world-production.json no se actualiza');
 }
 console.log('::notice::PSD extra: '+extraOut.length+'/'+EXTRA.length+' productos'+(extraOut.length?' (manzana '+Math.round(wsum0('manzana'))+')':'')+(warns.length?'; avisos: '+warns.join('; '):''));
