@@ -397,7 +397,7 @@
           var name = productName(it.entry.nameKey);
           var style = it.chg === null ? { bg: P().surfaceAlt, textColor: P().textFaint || '#5b5a52' } : tileStyle(it.chg, maxAbs);
           var changeLabel = it.chg === null ? '—' : D.fmtChange(it.chg);
-          return { key: it.key, name: name, price: it.info.price, unit: it.info.unit, changeLabel: changeLabel, bg: style.bg, textColor: style.textColor,
+          return { key: it.key, chg: it.chg, name: name, price: it.info.price, unit: it.info.unit, changeLabel: changeLabel, bg: style.bg, textColor: style.textColor,
             spark: sparkSvg(it.info.pts, style.textColor), tileTitle: name + ' · ' + it.info.price + ' ' + it.info.unit + ' · ' + changeLabel + (it.info.date ? ' · ' + it.info.date : '') };
         })
       };
@@ -410,25 +410,72 @@
     '</div>';
   }
 
+  /* ---------- treemap: tamaño = intensidad del cambio; grupos con cabecera negra ---------- */
+  var TM_LAST = null;
+  function squarify(items, x, y, w, h) {
+    var out = [], tot = items.reduce(function (a, b) { return a + b.v; }, 0), k = tot ? w * h / tot : 0, rest = items.map(function (it) { return { it: it, a: it.v * k }; });
+    function worst(row, side) { var sm = 0, mx = 0, mn = Infinity; row.forEach(function (r) { sm += r.a; if (r.a > mx) mx = r.a; if (r.a < mn) mn = r.a; }); return Math.max(side * side * mx / (sm * sm), sm * sm / (side * side * mn)); }
+    while (rest.length) {
+      var side = Math.min(w, h), row = [rest[0]], i = 1;
+      while (i < rest.length && worst(row.concat([rest[i]]), side) <= worst(row, side)) { row.push(rest[i]); i++; }
+      rest = rest.slice(row.length);
+      var sm = row.reduce(function (a, b) { return a + b.a; }, 0), t = sm / side, off = 0;
+      row.forEach(function (r) {
+        var l = r.a / t;
+        out.push(w >= h ? { it: r.it, x: x, y: y + off, w: t, h: l } : { it: r.it, x: x + off, y: y, w: l, h: t });
+        off += l;
+      });
+      if (w >= h) { x += t; w -= t; } else { y += t; h -= t; }
+    }
+    return out;
+  }
+  function treemapSize() {
+    var vw = global.innerWidth || 1200, W = Math.max(280, Math.min(vw - 32, 1160));
+    return { W: W, H: vw < 700 ? Math.round(W * 2.1) : Math.round(Math.min(640, W * 0.55)), mobile: vw < 700 };
+  }
+  function treemapHtml(groups) {
+    var sz = treemapSize(), HEAD = 46, maxAbs = 0;
+    TM_LAST = sz.mobile ? 'm' : 'd';
+    var G = groups.map(function (g) {
+      var items = g.products.map(function (p) { return { p: p, v: Math.max(Math.sqrt(Math.abs(p.chg == null ? 0 : p.chg)), 1.05) }; }).sort(function (a, b) { return b.v - a.v; });
+      return { g: g, items: items, v: items.reduce(function (a, b) { return a + b.v; }, 0) };
+    }).sort(function (a, b) { return b.v - a.v; });
+    var gr = squarify(G.map(function (x) { return { v: x.v, ref: x }; }), 0, 0, sz.W, sz.H);
+    return gr.map(function (r) {
+      var G0 = r.it.ref, inH = Math.max(r.h - HEAD, 10), inner = squarify(G0.items.map(function (x) { return { v: x.v, p: x.p }; }), 0, 0, r.w, inH);
+      var tiles = inner.map(function (q) {
+        var p = q.it.p, area = Math.sqrt(q.w * q.h), big = q.w >= 120 && q.h >= 96, mid = q.w >= 70 && q.h >= 52;
+        var fs = Math.max(10, Math.min(22, area / 7)), nm = String(p.name || ''); while (fs > 9 && (Math.ceil(nm.length * 0.62 * fs / Math.max(q.w - 12, 20)) * fs * 1.15 + fs * 1.5 + (big ? 70 : 0)) > q.h - 10) fs -= 0.5; var pct = function (v, tot) { return (v / tot * 100).toFixed(3) + '%'; };
+        return '<button type="button" class="di-tm-tile" data-open="' + p.key + '" title="' + esc(p.tileTitle) + '" style="left:' + pct(q.x, r.w) + ';top:' + pct(q.y, inH) + ';width:' + pct(q.w, r.w) + ';height:' + pct(q.h, inH) + ';background:' + p.bg + ';color:' + p.textColor + ';">' +
+          '<span class="di-tm-name" style="font-size:' + (mid ? fs.toFixed(1) : 10) + 'px">' + esc(p.name) + '</span>' +
+          (mid ? '<span class="di-tm-chg" style="font-size:' + Math.max(11, fs * 0.9).toFixed(1) + 'px">' + esc(p.changeLabel) + '</span>' : '') +
+          (big ? p.spark + '<span class="di-tm-px">' + esc(p.price) + ' <small>' + esc(p.unit) + '</small></span>' : '') + '</button>';
+      }).join('');
+      return '<div class="di-tm-group" style="left:' + pct0(r.x, sz.W) + ';top:' + pct0(r.y, sz.H) + ';width:' + pct0(r.w, sz.W) + ';height:' + pct0(r.h, sz.H) + ';"><div class="di-tm-head"><span aria-hidden="true">' + (MAP_GROUP_EMOJI[G0.g.id] || '') + '</span> ' + esc(G0.g.label) + '</div><div class="di-tm-body">' + tiles + '</div></div>';
+    }).join('').replace(/^/, '<div class="di-tm" style="aspect-ratio:' + sz.W + '/' + sz.H + '">') + '</div>';
+  }
+  function pct0(v, tot) { return (v / tot * 100).toFixed(3) + '%'; }
+  var TM_BOUND = false;
+  function armTreemapResize() {
+    if (TM_BOUND) return; TM_BOUND = true; var timer = null;
+    global.addEventListener('resize', function () {
+      clearTimeout(timer); timer = setTimeout(function () {
+        var host = document.getElementById('di-tm-host'); if (!host) return;
+        var now = treemapSize().mobile ? 'm' : 'd'; if (now === TM_LAST) return;
+        host.innerHTML = treemapHtml(buildMarketMap()); wireOpenTargets(host);
+      }, 200);
+    });
+  }
+
   function renderMarketMapHtml() {
     var t = ui();
     var groups = buildMarketMap();
     if (!groups.length) return intelPendingHtml(t.mapTitle, t.mapEmpty || 'Aún no hay productos con dato verificado en este mercado.', 'di-intel-map');
-    var groupsHtml = groups.map(function (g) {
-      var tilesHtml = g.products.map(function (p) {
-        return '<button type="button" class="di-map-tile" data-open="' + p.key + '" title="' + esc(p.tileTitle) + '" style="background:' + p.bg + ';color:' + p.textColor + ';">' +
-          '<span class="di-map-tile-name">' + esc(p.name) + '</span>' +
-          '<span class="di-map-tile-change">' + esc(p.changeLabel) + '</span>' +
-          p.spark +
-          '<span class="di-map-tile-price">' + esc(p.price) + ' <small>' + esc(p.unit) + '</small></span>' +
-          '</button>';
-      }).join('');
-      return '<div class="di-map-group"><div class="di-map-group-label"><span aria-hidden="true">' + (MAP_GROUP_EMOJI[g.id] || '') + '</span> ' + esc(g.label) + '</div><div class="di-map-grid">' + tilesHtml + '</div></div>';
-    }).join('');
+    var groupsHtml = treemapHtml(groups);
     return (
       '<div class="di-intel-section" id="di-intel-map">' +
         '<div class="di-intel-head"><h2>' + esc(t.mapTitle) + '</h2><p>' + esc(t.mapIntro) + '</p></div>' +
-        '<div class="di-map-wrap">' + groupsHtml + '</div>' +
+        '<div class="di-tm-host" id="di-tm-host">' + groupsHtml + '</div>' +
         '<div class="di-intel-disclaimer">' + esc(t.mapDisclaimer) + '</div>' +
       '</div>'
     );
@@ -1450,6 +1497,7 @@
         renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) +
         renderSpreadsHtml());
     wireOpenTargets(root);
+    armTreemapResize();
     wireCorrSelector(root, corrVolData);
     labelSvgs(root);
     armFull(root);
