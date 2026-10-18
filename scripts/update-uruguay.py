@@ -39,6 +39,12 @@ YEAR0 = 2000
 STATIONS = {'le': 'La Estanzuela', 'lb': 'Las Brujas', 'sg': 'Salto Grande', 'tyt': 'Treinta y Tres', 'tb': 'Tacuarembó'}
 LOG = []
 OUT = {}
+DEPT = {'livestock': {}, 'land': {}}   # datos por departamento (se escriben en data/uruguay-departments.json)
+# Departamentos: codigo numerico alfabetico (INE/AGESIC; el mismo que usa DICOSE) y sufijo ISO 3166-2 (el id del mapa vendor/uy-departments.js). Son cosas distintas: no mezclar.
+UY_DEPTS = [(1, 'Artigas', 'AR'), (2, 'Canelones', 'CA'), (3, 'Cerro Largo', 'CL'), (4, 'Colonia', 'CO'), (5, 'Durazno', 'DU'), (6, 'Flores', 'FS'), (7, 'Florida', 'FD'), (8, 'Lavalleja', 'LA'),
+            (9, 'Maldonado', 'MA'), (10, 'Montevideo', 'MO'), (11, 'Paysandú', 'PA'), (12, 'Río Negro', 'RN'), (13, 'Rivera', 'RV'), (14, 'Rocha', 'RO'), (15, 'Salto', 'SA'), (16, 'San José', 'SJ'),
+            (17, 'Soriano', 'SO'), (18, 'Tacuarembó', 'TA'), (19, 'Treinta y Tres', 'TT')]
+ISO_OF = {c: i for c, _, i in UY_DEPTS}
 NOW = datetime.date.today()
 LOCAL = None
 ROOT = Path(__file__).resolve().parent.parent
@@ -198,16 +204,19 @@ def land(kind):
         if usd is None or ha is None or n is None: continue
         cell[(int(r[1]), int(r[0]))][sem] = (usd, ha, n)
     yr = defaultdict(lambda: [0.0, 0.0, 0.0, 0])
+    dy = defaultdict(dict)   # anio -> iso -> [USD, ha, n]
     for (y, d), s in cell.items():
         if '1' in s and '2' in s and (y, d) not in has999:   # solo departamentos con los dos semestres y sin filas 999 ese anio
             for k in ('1', '2'):
                 yr[y][0] += s[k][0]; yr[y][1] += s[k][1]; yr[y][2] += s[k][2]
             yr[y][3] += 1
+            if d in ISO_OF and sum(s[k][1] for k in ('1', '2')) > 0: dy[y][ISO_OF[d]] = [sum(s[k][0] for k in ('1', '2')), sum(s[k][1] for k in ('1', '2')), sum(s[k][2] for k in ('1', '2'))]
     ys = sorted(y for y in yr if yr[y][1] > 0)
     # un anio con bastantes menos departamentos que el resto esta incompleto (p. ej. el ultimo): no se publica
     mx = max((yr[y][3] for y in ys), default=0)
     short = [y for y in ys if yr[y][3] < mx - 2]
     if short: log('MGAP tierra %s: anios con pocos departamentos, descartados: %s' % (kind, short)); ys = [y for y in ys if y not in short]
+    DEPT['land'][kind] = {str(y): {i: {'usdHa': round(v[0] / v[1], 2), 'ha': round(v[1], 1), 'n': int(v[2])} for i, v in sorted(dy[y].items())} for y in ys if y >= max(ys) - 9}
     nt = ('MGAP (DIEA), %s; registro de la DGR, operaciones de 10 o mas hectareas. Suma de los departamentos que declaran los dos semestres del anio; %s = suma de montos / suma de hectareas '
           '(ponderado, calculo de Dehesa Index). Los anios y departamentos con semestre incompleto o con filas de semestre 999 no se incluyen.' % (L['what'], L['unit'])) + L['extra']
     p = 'uy-mgap-land-%s' % kind
@@ -275,6 +284,7 @@ SPECIES = {'1': 'cattle', '2': 'sheep', '11': 'dairy-cattle'}
 def dicose():
     tot = defaultdict(lambda: defaultdict(float))   # (especie) -> ejercicio -> PD_AD
     births = defaultdict(float)
+    dep = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))   # especie -> anio -> iso -> PD_AD
     for name in DICOSE_PKGS:
         try: pkg = package(name)
         except Exception as e: log('DICOSE %s: %s' % (name[-12:], e)); continue
@@ -287,22 +297,29 @@ def dicose():
             if b.lstrip().startswith(b'<'): log('DICOSE %s: contenido no es CSV' % name[-12:]); continue
             rd = csv.DictReader(io.StringIO(b.decode('latin-1')), delimiter=';')
             cols = {(c or '').replace('ns1:', ''): c for c in (rd.fieldnames or [])}
-            need = ('Ejercicio', 'EspecieCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD')
+            need = ('Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD')
             if any(n not in cols for n in need): continue   # otro recurso (p. ej. el detallado por categoria) o formato distinto
-            sub = defaultdict(float); sb = 0.0; ej = set(); nrow = 0
+            sub = defaultdict(float); sb = 0.0; ej = set(); nrow = 0; sdep = defaultdict(lambda: defaultdict(float))
             for x in rd:
                 e, sp = (x[cols['Ejercicio']] or '').strip(), (x[cols['EspecieCodigo']] or '').strip()
                 v = num(x[cols['AnimalesPorEspeciePD_AD']])
                 if not re.fullmatch(r'\d{4}', e) or v is None: continue
                 ej.add(e); nrow += 1
-                if sp in SPECIES: sub[sp] += v
+                if sp in SPECIES:
+                    sub[sp] += v
+                    try: sdep[sp][ISO_OF[int(x[cols['DepartamentoCodigo']])]] += v
+                    except (KeyError, ValueError): pass
                 if sp == '1': sb += num(x[cols['AnimalesPorEspecieNacimientosPD_AD']]) or 0
             if len(ej) != 1 or nrow < 1000: log('DICOSE %s: ejercicios %s, filas %d: se omite' % (name[-12:], sorted(ej), nrow)); continue
             y = ej.pop()
             for sp, v in sub.items(): tot[sp][y] = v
+            for sp, dd in sdep.items(): dep[sp][y] = dict(dd)
             births[y] = sb; got = True
             break
         if not got: log('DICOSE %s: sin datosanimales.csv utilizable' % name[-12:])
+    for sp in SPECIES:
+        yrs = sorted(dep[sp])[-10:]
+        if yrs: DEPT['livestock'][SPECIES[sp]] = {y: {i: round(v) for i, v in sorted(dep[sp][y].items())} for y in yrs}
     nt = ('MGAP, DICOSE/SNIG: declaracion jurada de existencias. Suma nacional de animales propios dentro + ajenos dentro (PD_AD, criterio tradicional de DICOSE), ejercicio ganadero; '
           'no es un censo ni se suma con PD_PF. Los datos de ejercicios recientes son preliminares.')
     names = {'1': 'Cattle', '2': 'Sheep', '11': 'Dairy cattle (DICOSE species 11)'}
@@ -325,9 +342,13 @@ def main():
         'name': 'Uruguay, datos abiertos (INIA, MGAP, URSEA; catalogodatos.gub.uy)', 'url': 'https://catalogodatos.gub.uy/',
         'license': 'Licencia de Datos Abiertos - Uruguay (odc-uy); Dehesa Index calcula medias, sumas y ponderaciones sin aval del proveedor'},
         'series': [OUT[k] for k in sorted(OUT)]}}}
+    ddoc = {'schemaVersion': 1, 'generatedAt': now, 'source': doc['countries']['UY']['source'],
+            'note': 'Departamentos por sufijo ISO 3166-2 (id del mapa) y codigo numerico alfabetico INE/AGESIC (el de DICOSE y MGAP). Existencias: DICOSE PD_AD por departamento donde esta registrado el tenedor (puede diferir del departamento donde pastan los animales). Tierra: solo departamentos con los dos semestres; USD/ha ponderado.',
+            'departments': [{'iso': i, 'code': c, 'name': n} for c, n, i in UY_DEPTS], 'livestock': DEPT['livestock'], 'land': DEPT['land']}
     log('series guardadas:', len(OUT))
     out = Path(sys.argv[sys.argv.index('--out') + 1]) if '--out' in sys.argv else ROOT / 'data'
     (out / 'uruguay-stats.json').write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    (out / 'uruguay-departments.json').write_text(json.dumps(ddoc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     (out / 'uruguay-log.txt').write_text('\n'.join(LOG) + '\n', encoding='utf-8')
 
 

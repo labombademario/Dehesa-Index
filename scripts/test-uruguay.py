@@ -9,6 +9,7 @@ import openpyxl
 ROOT = Path(__file__).resolve().parent.parent
 fails = []
 LAST = ['']
+DEPS = [None]
 def ok(name, cond):
     if not cond:
         fails.append(name); print('FALLA', name)
@@ -25,6 +26,7 @@ def run(files, pkgs, extra=()):
     st = out / 'uruguay-stats.json'
     series = {s['id']: s for s in json.loads(st.read_text())['countries']['UY']['series']} if st.exists() else {}
     lg = (out / 'uruguay-log.txt').read_text() if (out / 'uruguay-log.txt').exists() else ''
+    DEPS[0] = json.loads((out / 'uruguay-departments.json').read_text()) if (out / 'uruguay-departments.json').exists() else None
     LAST[0] = (lg + p.stdout + p.stderr)[-500:].replace(chr(10), ' | ')
     return p, series, lg + p.stdout + p.stderr
 
@@ -99,6 +101,7 @@ if l:
     ok('Tierra: Sem 999 no contamina', l['latest'] < 1000)
     ok('Tierra: operaciones sumadas (4)', s['uy-mgap-land-sale-count']['latest'] == 4)
     ok('Tierra: dpto-anio con fila 999 excluido (2021 ausente)', '2021' not in dict(l['points']))
+    ok('Tierra: por departamento (id ISO, USD/ha 20)', DEPS[0]['land']['sale']['2023'].get('AR', {}).get('usdHa') == 20.0)
 
 # ---- 5b. Arrendamientos: otra cabecera (DEPCOD, montot_sum), unidad USD/ha/anio
 wb = openpyxl.Workbook(); ws = wb.active; ws.title = 'Datos'
@@ -116,9 +119,10 @@ if r:
 # ---- 6. DICOSE: PD_AD, no PD_PF; bovinos y bovinos de leche separados; especies sin control de calidad fuera
 def dic(year):
     b = io.StringIO(); w = csv.writer(b, delimiter=';')
-    w.writerow(['ns1:Ejercicio', 'ns1:EspecieCodigo', 'ns1:AnimalesPorEspecieConsumoPD_AD', 'ns1:AnimalesPorEspecieNacimientosPD_AD', 'ns1:AnimalesPorEspecieMortandadPD_AD', 'ns1:CantidadTenedoresPorEspecie', 'ns1:AnimalesPorEspeciePD_AD', 'ns1:AnimalesPorEspeciePD_PF'])
+    w.writerow(['ns1:Ejercicio', 'ns1:DepartamentoCodigo', 'ns1:EspecieCodigo', 'ns1:AnimalesPorEspecieConsumoPD_AD', 'ns1:AnimalesPorEspecieNacimientosPD_AD', 'ns1:AnimalesPorEspecieMortandadPD_AD', 'ns1:CantidadTenedoresPorEspecie', 'ns1:AnimalesPorEspeciePD_AD', 'ns1:AnimalesPorEspeciePD_PF'])
     for i in range(1200):
-        w.writerow([year, 1, 0, 2, 0, 1, 10, 12]); w.writerow([year, 11, 0, 0, 0, 1, 1, 2]); w.writerow([year, 5, 0, 0, 0, 1, 7, 7])
+        dpt = 1 + (i % 2)   # departamentos 1 (AR) y 2 (CA)
+        w.writerow([year, dpt, 1, 0, 2, 0, 1, 10, 12]); w.writerow([year, dpt, 11, 0, 0, 0, 1, 1, 2]); w.writerow([year, dpt, 5, 0, 0, 0, 1, 7, 7])
     return b.getvalue().encode('latin-1')
 pk = []; files = {}
 for i, y in enumerate((2023, 2024, 2025)):
@@ -132,6 +136,12 @@ if c:
     ok('DICOSE: bovinos de leche separado de bovinos', s['uy-dicose-dairy-cattle-head']['latest'] == 1200.0)
     ok('DICOSE: no hay serie de porcinos (sin control de calidad)', not any('pig' in k or 'swine' in k for k in s))
     ok('DICOSE: no hay total bovinos+leche', not any('total' in k for k in s))
+    dd = DEPS[0]
+    ok('Departamentos: fichero generado con 19 departamentos', bool(dd) and len(dd['departments']) == 19)
+    if dd:
+        cat = dd['livestock']['cattle']['2025']
+        ok('Departamentos: ids = sufijo ISO (AR, CA), no codigo numerico', sorted(cat) == ['AR', 'CA'])
+        ok('Departamentos: la suma de los departamentos = total nacional (PD_AD)', sum(cat.values()) == c['latest'])
     ok('DICOSE: nota avisa de no sumar bovinos y leche', 'No se suma con bovinos' in s['uy-dicose-dairy-cattle-head'].get('note', ''))
 
 # ---- 7. Rejillas INIA: solo columna mensual (sufijo 0), media de celdas, mes con celda vacia fuera, ANR identico a PAD descartado
@@ -158,5 +168,13 @@ if g:
     ok('Rejilla: mes con celda vacia no entra (no se rellena con 0)', '2026-02' not in pts and '2026-03' in pts)
 ok('Rejilla ANR identica a PAD: no se publica', 'uy-inia-grid-anr-mean' not in s)
 ok('Rejilla ANR identica: anotado en el log', 'identica a PAD' in log)
+
+# ---- 8. Mapa de departamentos: 19 contornos con id ISO, los mismos que usa el adaptador
+mp = json.loads((ROOT / 'vendor/uy-departments.js').read_text(encoding='utf-8').split('window.DEHESA_UY_DEPTS = ', 1)[1].rstrip().rstrip(';'))
+import importlib.util
+sp = importlib.util.spec_from_file_location('uy', ROOT / 'scripts/update-uruguay.py'); mod = importlib.util.module_from_spec(sp); sp.loader.exec_module(mod)
+ok('Mapa: 19 departamentos', len(mp['states']) == 19)
+ok('Mapa: ids del mapa = sufijos ISO del adaptador', sorted(s['id'] for s in mp['states']) == sorted(i for _, _, i in mod.UY_DEPTS))
+ok('Mapa: nombres del mapa = nombres del adaptador', sorted(s['name'] for s in mp['states']) == sorted(n for _, n, _ in mod.UY_DEPTS))
 
 print('test-uruguay:', 'OK' if not fails else '%d fallos' % len(fails)); sys.exit(1 if fails else 0)

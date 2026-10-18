@@ -226,6 +226,10 @@
    "class": "BUILD_ONLY",
    "note": "Series de Argentina (SAGyP, INDEC, datos.gob.ar): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/AR.json."
   },
+  "data/uruguay-departments.json": {
+   "class": "BUILD_ONLY",
+   "note": "Existencias ganaderas (DICOSE) y tierra (MGAP) por departamento de Uruguay. Todavia no lo descarga ninguna pagina; alimentara las fichas de departamento cuando se conecten (el mapa vendor/uy-departments.js ya esta generado)."
+  },
   "data/uruguay-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de Uruguay (INIA, MGAP, URSEA; datos abiertos odc-uy): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/UY.json."

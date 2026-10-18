@@ -447,7 +447,7 @@ sources:
     script: scripts/update-uruguay.py
     timeout: 30
     script_timeout: 20
-    data: [uruguay-stats.json]
+    data: [uruguay-stats.json, uruguay-departments.json]
     log: uruguay-log.txt
     message: Datos Uruguay (INIA, MGAP, URSEA)
   - id: switzerland-foag
