@@ -93,7 +93,7 @@
     STRIPS.push({ m: m, x: x });
     return '<div class="pp-macro" data-mi="' + (STRIPS.length - 1) + '">' + macroInner(m, x) + '</div>';
   }
-  if (typeof document !== 'undefined' && !window.__diMacroCur) {
+  if (typeof document !== 'undefined' && typeof document.addEventListener === 'function' && !window.__diMacroCur) {
     window.__diMacroCur = 1;
     document.addEventListener('click', function (e) {
       var b = e.target && e.target.closest ? e.target.closest('[data-curpick]') : null; if (!b) return;
