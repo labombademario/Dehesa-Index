@@ -1000,7 +1000,7 @@
     var k = document.getElementById('di-atl-key'), d = document.getElementById('di-atl-dir');
     function redo() { var sec = document.getElementById('di-intel-atlantic'); if (!sec) return; sec.outerHTML = renderAtlanticSpreadHtml(); wireAtlanticSort(); var n = document.getElementById(ATL_SORT.k ? 'di-atl-key' : 'di-atl-key'); if (n) n.focus(); }
     if (k) k.onchange = function () { ATL_SORT.k = k.value; redo(); };
-    if (d) d.onchange = function () { ATL_SORT.dir = d.value; redo(); };
+    if (d) d.onchange = function () { ATL_SORT.dir = d.value; if (!ATL_SORT.k) ATL_SORT.k = 'u1'; /* con «orden original» el sentido no ordena nada: se pasa a EE. UU. · 1 mes en vez de bloquear el selector */ redo(); };
   }
   function renderAtlanticSpreadHtml() {
     var L = {
@@ -1047,7 +1047,7 @@
     return '<div class="di-intel-section" id="di-intel-atlantic"><div class="di-intel-head"><h2>' + esc(t.title) + '</h2><p>' + esc(t.intro) + '</p></div>' +
       '<div class="di-atl-sort"><label for="di-atl-key">' + esc(t.sortBy) + '</label> <select id="di-atl-key" class="di-compare-select">' +
         [['', t.sortOrig], ['u1', t.us + ' · ' + t.m1], ['u3', t.us + ' · ' + t.m3], ['e1', t.eu + ' · ' + t.m1], ['e3', t.eu + ' · ' + t.m3]].map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === ATL_SORT.k ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select> ' +
-        '<select id="di-atl-dir" class="di-compare-select" aria-label="' + esc(t.sortBy) + '"' + (ATL_SORT.k ? '' : ' disabled') + '><option value="hi"' + (ATL_SORT.dir === 'hi' ? ' selected' : '') + '>↓ ' + esc(t.sortHi) + '</option><option value="lo"' + (ATL_SORT.dir === 'lo' ? ' selected' : '') + '>↑ ' + esc(t.sortLo) + '</option></select></div>' +
+        '<select id="di-atl-dir" class="di-compare-select" aria-label="' + esc(t.sortBy) + '"' + '><option value="hi"' + (ATL_SORT.dir === 'hi' ? ' selected' : '') + '>↓ ' + esc(t.sortHi) + '</option><option value="lo"' + (ATL_SORT.dir === 'lo' ? ' selected' : '') + '>↑ ' + esc(t.sortLo) + '</option></select></div>' +
       '<div class="di-corr-scroll"><table class="di-atl-table"><thead><tr><th rowspan="2">' + esc(t.prod) + '</th><th colspan="3">' + esc(t.us) + '</th><th colspan="3">' + esc(t.eu) + '</th><th rowspan="2">' + esc(t.trend) + '</th></tr>' +
       '<tr><th>' + esc(t.last) + '</th><th>' + esc(t.m1) + '</th><th>' + esc(t.m3) + '</th><th>' + esc(t.last) + '</th><th>' + esc(t.m1) + '</th><th>' + esc(t.m3) + '</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>' +
       '<div class="di-intel-disclaimer">' + esc(t.note) + '</div></div>';
