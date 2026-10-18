@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T21:37:30Z",
+ "generatedAt": "2026-10-18T22:04:26Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 171,
+  "total": 172,
   "byStatus": {
-   "ACTIVE": 141,
+   "ACTIVE": 142,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -6485,6 +6485,50 @@
    "lastChecked": "2026-10-08",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "uruguay_datos_abiertos",
+   "registryId": "uruguay_datos_abiertos",
+   "country": "UY",
+   "scope": "integrated",
+   "institution": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA)",
+   "dataset": "Ya integrada (20 series en el catalogo unificado)",
+   "products": [
+    "energy"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "odc-uy",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: INIA / MGAP / URSEA, Uruguay (catalogodatos.gub.uy), Licencia de Datos Abiertos - Uruguay. Dehesa Index calcula medias mensuales, sumas anuales y promedios ponderados; esas cifras derivadas no cuentan con aval del proveedor.",
+   "lastChecked": "2026-10-18",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
