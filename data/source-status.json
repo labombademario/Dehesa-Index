@@ -2,9 +2,9 @@
  "schemaVersion": 1,
  "workflows": {
   "update-us-arcplc.yml": {
-   "consecutive": 3,
-   "lastAttempt": "2026-10-17T07:19:57Z",
-   "reason": "la web de la FSA no responde (https://www.fsa.usda.gov/programs-and-services/arcplc_program/arcplc-program-data/index: TimeoutError('The read operation timed out'))",
+   "consecutive": 4,
+   "lastAttempt": "2026-10-18T13:14:08Z",
+   "reason": "la pagina de la FSA no tiene enlaces reconocibles",
    "since": "2026-10-06T05:09:50Z",
    "state": "sourceUnavailable"
   }
