@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T05:57:54Z",
+ "generatedAt": "2026-10-18T18:40:18Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 128,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 288,
-  "datasets_apto": 165,
+  "datasets": 290,
+  "datasets_apto": 167,
   "datasets_condiciones": 113,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -6363,11 +6363,27 @@
    ]
   },
   {
+   "path": "data/world-production.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fas_psd"
+   ]
+  },
+  {
    "path": "data/worldbank-agri.json",
    "scope": "fichero",
    "verdict": "apto",
    "sources": [
     "world_bank_wdi"
+   ]
+  },
+  {
+   "path": "data/worldbank-fertilizers.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "world_bank"
    ]
   }
  ],
