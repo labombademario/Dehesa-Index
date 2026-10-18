@@ -32,14 +32,19 @@ SERIES = [
     ('us-fsa-rate-emergency', 'Emergency loan (amount of actual loss): interest rate (USDA FSA)', r'Emergency Loans?\s*[-–(:]*\s*(?:\(?Amount of Actual Loss\)?)?\s*[:\-–]?\s*' + NUM),
 ]
 class Blocked(Exception): pass
-def get(u):
-    req = urllib.request.Request(u, headers=H)
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r: return r.read().decode('utf-8', 'replace')
-    except urllib.error.HTTPError as e:
-        if e.code == 404: return None
-        if e.code in (403, 429): raise Blocked('%s %s' % (e.code, u))
-        raise
+def get(u, tries=1):
+    """404 -> None; 403/429 -> Blocked; tiempo agotado o conexion cortada -> se reintenta y, si persiste, Blocked (el cortafuegos a veces deja la conexion colgada)."""
+    last = None
+    for i in range(tries):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=45) as r: return r.read().decode('utf-8', 'replace')
+        except urllib.error.HTTPError as e:
+            if e.code == 404: return None
+            if e.code in (403, 429): raise Blocked('%s %s' % (e.code, u))
+            last = 'HTTP %s' % e.code
+        except Exception as e: last = repr(e)[:160]
+        if i + 1 < tries: time.sleep(20 * (i + 1))
+    raise Blocked('%s %s' % (last, u))
 def text(page):
     page = re.sub(r'(?is)<(script|style)[^>]*>.*?</\1>', ' ', page)
     page = re.sub(r'(?i)<br\s*/?>|</(p|li|tr|td|th|div|h\d)>', '\n', page)
@@ -54,7 +59,7 @@ def parse(t):
             if 0 < v < 25: out[sid] = v
     return out
 def parse_current():
-    page = get(CURRENT)
+    page = get(CURRENT, tries=3)
     if page is None: raise SystemExit('pagina de tipos vigentes no encontrada (404): ' + CURRENT)
     t = text(page)
     m = re.search(r'Effective (?:as of )?([A-Z][a-z]+) (\d{1,2}), (\d{4})', t)
@@ -93,10 +98,14 @@ def months(a, b):
 def main():
     pts = load()
     for sid, _, _ in SERIES: pts.setdefault(sid, {})
-    period, vals = parse_current()
-    if len(vals) < 4: raise SystemExit('la pagina de tipos vigentes no trae los tipos esperados: %s' % vals)
-    for k, v in vals.items(): pts[k][period] = v
-    cy, cm = int(period[:4]), int(period[5:])
+    try:
+        period, vals = parse_current()
+        if len(vals) < 4: raise SystemExit('la pagina de tipos vigentes no trae los tipos esperados: %s' % vals)
+        for k, v in vals.items(): pts[k][period] = v
+        cy, cm = int(period[:4]), int(period[5:])
+    except Blocked as e:
+        log('pagina de tipos vigentes no disponible:', e, '- se intenta el historico')
+        d = datetime.date.today(); cy, cm = d.year, d.month
     have = set(pts['us-fsa-rate-operating-direct'])
     todo = [(y, m) for y, m in months(START, (cy, cm)) if '%d-%02d' % (y, m) not in have]
     log('meses sin dato desde %d-%02d:' % START, len(todo))
