@@ -44,6 +44,13 @@ def fetch(u, tries=3, deadline=240):
             if e.code in (403, 404): break
         except Exception as e: last = repr(e)[:200]
         time.sleep(10 * (i + 1))
+    if u.startswith(BASE) and not FROM:  # cortafuegos de la FSA: ultima copia de Archive.org de la misma URL oficial (contenido sin tocar)
+        log("FSA no responde (%s) -> copia de Archive.org: %s" % (last, u))
+        try:
+            with urllib.request.urlopen(urllib.request.Request("https://web.archive.org/web/2id_/" + u, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) dehesaindex.com-pipeline (+https://dehesaindex.com)"}), timeout=120) as r:
+                b = r.read()
+            if b: return b
+        except Exception as e: last = "%s; archive.org %s" % (last, repr(e)[:120])
     raise RuntimeError("%s: %s" % (u, last))
 def xlsx_of(href):
     """Un enlace de la pagina puede ser el xlsx o una pagina /documents/... que enlaza al xlsx."""

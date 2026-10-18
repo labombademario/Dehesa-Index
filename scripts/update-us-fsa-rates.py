@@ -32,7 +32,24 @@ SERIES = [
     ('us-fsa-rate-emergency', 'Emergency loan (amount of actual loss): interest rate (USDA FSA)', r'Emergency Loans?\s*[-–(:]*\s*(?:\(?Amount of Actual Loss\)?)?\s*[:\-–]?\s*' + NUM),
 ]
 class Blocked(Exception): pass
+WAYBACK = 'https://web.archive.org/web/2id_/'
+def get_wayback(u):
+    """Respaldo cuando el cortafuegos de la FSA corta la peticion: ultima copia de Archive.org de la misma URL oficial (contenido sin tocar, id_).
+    El periodo y los tipos se leen de la propia pagina copiada (\"Effective as of ...\"), asi que una copia vieja nunca se hace pasar por un mes nuevo. 404 -> None."""
+    try:
+        with urllib.request.urlopen(urllib.request.Request(WAYBACK + u, headers=H), timeout=60) as r: return r.read().decode('utf-8', 'replace')
+    except urllib.error.HTTPError as e:
+        if e.code == 404: return None
+        raise Blocked('archive.org %s %s' % (e.code, u))
+    except Exception as e: raise Blocked('archive.org %s %s' % (repr(e)[:120], u))
 def get(u, tries=1):
+    try: return get_direct(u, tries)
+    except Blocked as e:
+        log('FSA bloquea (%s) -> copia de Archive.org' % str(e)[:60])
+        page = get_wayback(u)
+        if page is not None: log('copia de Archive.org usada:', u)
+        return page
+def get_direct(u, tries=1):
     """404 -> None; 403/429 -> Blocked; tiempo agotado o conexion cortada -> se reintenta y, si persiste, Blocked (el cortafuegos a veces deja la conexion colgada)."""
     last = None
     for i in range(tries):
@@ -60,7 +77,7 @@ def parse(t):
     return out
 def parse_current():
     page = get(CURRENT, tries=3)
-    if page is None: raise SystemExit('pagina de tipos vigentes no encontrada (404): ' + CURRENT)
+    if page is None: raise Blocked('pagina de tipos vigentes no encontrada ni en la FSA ni en Archive.org: ' + CURRENT)
     t = text(page)
     m = re.search(r'Effective (?:as of )?([A-Z][a-z]+) (\d{1,2}), (\d{4})', t)
     if not m: raise SystemExit('sin fecha de vigencia en la pagina de tipos vigentes')
@@ -95,9 +112,23 @@ def months(a, b):
         yield y, m
         m += 1
         if m == 13: y, m = y + 1, 1
+MANUAL = ROOT / 'data/us-fsa-rates-manual.json'
+def manual(pts):
+    """Entrada manual mensual (ultimo recurso): data/us-fsa-rates-manual.json = {"2026-11": {"us-fsa-rate-operating-direct": 5.5, ...}, ...}
+    copiada tal cual de la pagina oficial de tipos vigentes; solo se aceptan ids conocidos y valores 0-25. No pisa meses ya leidos de la FSA."""
+    if not MANUAL.exists(): return
+    try: d = json.loads(MANUAL.read_text())
+    except Exception as e: log('entrada manual ilegible', e); return
+    ids = {sid for sid, _, _ in SERIES}; n = 0
+    for per, vals in d.items():
+        if not re.match(r'^\d{4}-(0[1-9]|1[0-2])$', per) or not isinstance(vals, dict): log('entrada manual descartada', per); continue
+        for k, v in vals.items():
+            if k in ids and isinstance(v, (int, float)) and 0 < v < 25 and per not in pts[k]: pts[k][per] = float(v); n += 1
+    log('entrada manual: %d valores' % n)
 def main():
     pts = load()
     for sid, _, _ in SERIES: pts.setdefault(sid, {})
+    manual(pts)
     try:
         period, vals = parse_current()
         if len(vals) < 4: raise SystemExit('la pagina de tipos vigentes no trae los tipos esperados: %s' % vals)
