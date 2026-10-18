@@ -24,6 +24,7 @@
     canola: { es: 'Canola (colza)', en: 'Canola', fr: 'Canola', it: 'Canola' }, oats: { es: 'Avena', en: 'Oats', fr: 'Avoine', it: 'Avena' }, peas: { es: 'Guisantes', en: 'Peas', fr: 'Pois', it: 'Piselli' }, lentils: { es: 'Lentejas', en: 'Lentils', fr: 'Lentilles', it: 'Lenticchie' },
     flaxseed: { es: 'Lino', en: 'Flaxseed', fr: 'Lin', it: 'Lino' }, soybeans: { es: 'Soja', en: 'Soybeans', fr: 'Soja', it: 'Soia' }, corn: { es: 'Maíz', en: 'Corn', fr: 'Maïs', it: 'Mais' }, rye: { es: 'Centeno', en: 'Rye', fr: 'Seigle', it: 'Segale' }, chickpeas: { es: 'Garbanzos', en: 'Chickpeas', fr: 'Pois chiches', it: 'Ceci' } };
   var D = null, ST = { g: 'wheat' };
+  var EMO = { wheat: '🌾', durum: '🍝', barley: '🍺', canola: '🌼', oats: '🥣', peas: '🟢', lentils: '🫘', flaxseed: '🌱', soybeans: '🫛', corn: '🌽', rye: '🍞', chickpeas: '🧆' };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -47,7 +48,7 @@
     var root = document.getElementById('cg-body'); if (!root) return;
     var t = tt(); if (!D) { root.innerHTML = '<p class="di-movers-hint">' + t.none + '</p>'; return; }
     var g = cur(), n = D.weeks.length - 1, i0 = n - 1, iy = yearAgo(n);
-    var html = '<label style="font-size:13px;display:block;max-width:320px;margin:0 0 6px">' + t.grain + '<br><select id="cg-g" class="di-compare-select">' + D.grains.map(function (x) { return '<option value="' + x.id + '"' + (x.id === g.id ? ' selected' : '') + '>' + esc(gname(x)) + '</option>'; }).join('') + '</select></label>' +
+    var html = '<label style="font-size:13px;display:block;max-width:320px;margin:0 0 6px">' + t.grain + '<br><select id="cg-g" class="di-compare-select">' + D.grains.map(function (x) { return '<option value="' + x.id + '"' + (x.id === g.id ? ' selected' : '') + '>' + (EMO[x.id] ? EMO[x.id] + ' ' : '') + esc(gname(x)) + '</option>'; }).join('') + '</select></label>' +
       '<p class="di-movers-hint">' + t.asof + ' ' + esc(dlab(D.asOf)) + '</p>';
     var th = 'padding:8px 6px;', rows = [['ex', t.ex], ['dl', t.dl], ['st', t.st], ['cum', t.cum]], keys = { ex: 'exports', dl: 'deliveries', st: 'stocks', cum: 'cumExports' };
     html += '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="' + th + '">' + esc(gname(g).toUpperCase()) + ' · ' + esc(t.kt.toUpperCase()) + '</th><th style="' + th + 'text-align:right">' + t.last.toUpperCase() + '</th><th style="' + th + 'text-align:right">' + t.prev.toUpperCase() + '</th><th style="' + th + 'text-align:right">' + t.chg.toUpperCase() + '</th><th style="' + th + 'text-align:right">' + t.yago.toUpperCase() + '</th><th style="' + th + 'text-align:right">' + t.chg.toUpperCase() + '</th></tr>';

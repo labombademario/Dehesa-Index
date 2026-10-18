@@ -27,6 +27,7 @@
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function f(s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' }); } catch (e) { return v.toFixed(d); } }
+  function xl(k, s) { var l = lang(); return s && window.DIUS && l !== 'en' ? window.DIUS[k](s, l) : s; }
   function fv(v) { if (v == null) return '—'; var a = Math.abs(v); return nf(v, a >= 1000 ? 0 : a >= 100 ? 1 : 2); }
   function cite(id, period) { return window.DICite && window.DICite.html ? '<div class="pp-cites" style="margin-top:10px">' + window.DICite.html(id, { period: period }) + '</div>' : ''; }
   var TH = 'padding:7px 6px;font-size:11px;font-weight:700;color:var(--text-faint);text-align:right;white-space:nowrap;', TD = 'padding:6px;border-top:1px solid var(--border);font-variant-numeric:tabular-nums;text-align:right;';
@@ -40,7 +41,7 @@
     yrs.sort(); yrs = yrs.slice(-3);
     if (WR >= rows.length) WR = 0;
     var sel = '<label class="di-movers-hint" style="display:block;margin:10px 0 4px">' + esc(T0.com) + '<select id="wsd-sel" style="display:block;margin-top:4px;font:inherit;max-width:100%">' +
-      ['crops', 'oilseeds', 'livestock', 'dairy'].filter(function (k) { return byG[k]; }).map(function (k) { return '<optgroup label="' + esc(T0.g[k]) + '">' + byG[k].map(function (c) { return '<option value="' + esc(c) + '"' + (c === WC ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</optgroup>'; }).join('') + '</select></label>';
+      ['crops', 'oilseeds', 'livestock', 'dairy'].filter(function (k) { return byG[k]; }).map(function (k) { return '<optgroup label="' + esc(T0.g[k]) + '">' + byG[k].map(function (c) { return '<option value="' + esc(c) + '"' + (c === WC ? ' selected' : '') + '>' + esc((window.DIUS && window.DIUS.emo(c) ? window.DIUS.emo(c) + ' ' : '') + xl('prod', c)) + '</option>'; }).join('') + '</optgroup>'; }).join('') + '</select></label>';
     var head = '<tr><th scope="col" style="' + TH + 'text-align:left">' + esc(T0.a) + '</th><th scope="col" style="' + TH + 'text-align:left">' + esc(T0.u) + '</th>' + yrs.map(function (y) { return '<th scope="col" style="' + TH + '">' + esc(y) + '</th>'; }).join('') + '</tr>';
     var body = rows.map(function (it, j) {
       var cells = yrs.map(function (y) {
@@ -49,11 +50,11 @@
         var ch = r.prev != null && r.prev !== r.v ? '<br><span style="font-size:11px;color:var(--text-faint)">' + esc(T0.prev) + ': ' + esc(fv(r.prev)) + '</span>' : '';
         return '<td style="' + TD + '">' + esc(fv(r.v)) + (r.st ? ' <span style="font-size:11px;color:var(--text-faint)">' + esc(r.st) + '</span>' : '') + ch + '</td>';
       }).join('');
-      return '<tr class="wsd-r" data-j="' + j + '" tabindex="0" style="cursor:pointer;' + (j === WR ? 'background:var(--bg-soft,rgba(0,0,0,.05))' : '') + '"><th scope="row" style="' + TD + 'text-align:left;font-weight:400">' + esc(it.a) + '</th><td style="' + TD + 'text-align:left">' + esc(it.u) + '</td>' + cells + '</tr>';
+      return '<tr class="wsd-r" data-j="' + j + '" tabindex="0" style="cursor:pointer;' + (j === WR ? 'background:var(--bg-soft,rgba(0,0,0,.05))' : '') + '"><th scope="row" style="' + TD + 'text-align:left;font-weight:400">' + esc(xl('mag', it.a)) + '</th><td style="' + TD + 'text-align:left">' + esc(xl('unit', it.u)) + '</td>' + cells + '</tr>';
     }).join('');
     var it0 = rows[WR], path = '';
     it0.rows.forEach(function (r) { if (r.hist && r.hist.length > 1) path += '<p class="di-movers-hint"><strong>' + esc(r.my) + '</strong>: ' + r.hist.map(function (h) { return esc(h[0]) + ' ' + esc(fv(h[1])); }).join(' → ') + '</p>'; });
-    var rev = '<h3 class="cof-h3">' + esc(T0.rev) + ' · ' + esc(it0.a) + '</h3>' + (path || '<p class="di-movers-hint">' + esc(T0.none) + '</p>') + '<p class="di-movers-hint">' + esc(f(T0.since, { m: W.ledgerSince })) + '</p>';
+    var rev = '<h3 class="cof-h3">' + esc(T0.rev) + ' · ' + esc(xl('mag', it0.a)) + '</h3>' + (path || '<p class="di-movers-hint">' + esc(T0.none) + '</p>') + '<p class="di-movers-hint">' + esc(f(T0.since, { m: W.ledgerSince })) + '</p>';
     root.innerHTML = '<h2 class="cof-h2">' + esc(T0.wh) + '</h2><p class="cof-sub">' + esc(T0.ws) + '</p>' + sel + '<div style="overflow:auto;max-height:520px"><table style="border-collapse:collapse;width:100%;font-size:13px"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div><p class="di-movers-hint">' + esc(T0.pick) + '</p>' + rev +
       '<p class="cof-note">' + esc(f(T0.wn, { m: W.reportMonth })) + ' <a href="' + esc(W.pageUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(T0.open) + '</a></p>' + cite('usda_oce_wasde', W.reportMonth);
     var s = document.getElementById('wsd-sel'); if (s) s.onchange = function () { WC = s.value; WR = 0; renderW(); };

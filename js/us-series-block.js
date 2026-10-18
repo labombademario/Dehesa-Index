@@ -5,7 +5,7 @@
   'use strict';
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
   var BLOCKS = {
-    npr: { file: 'data/us-nass-processing-stats.json', cite: 'usda_nass', cat: 'colon', url: 'https://esmis.nal.usda.gov/publication/fats-and-oils-oilseed-crushings-production-consumption-and-stocks',
+    npr: { tr: 1, file: 'data/us-nass-processing-stats.json', cite: 'usda_nass', cat: 'colon', url: 'https://esmis.nal.usda.gov/publication/fats-and-oils-oilseed-crushings-production-consumption-and-stocks',
       h: ['Transformación de oleaginosas y maíz en EE. UU.', 'U.S. oilseed and corn processing', 'Transformation des oléagineux et du maïs aux États-Unis', 'Trasformazione di semi oleosi e mais negli USA'],
       sub: ['Soja triturada, aceite y harina producidos, existencias en fábrica, colza, algodón, grasas animales y coproductos del maíz (etanol, DDGS): los informes mensuales Fats and Oils y Grain Crushings del USDA NASS.',
         'Soybeans crushed, oil and meal produced, crusher stocks, canola, cottonseed, animal fats and corn co-products (ethanol, DDGS): USDA NASS monthly Fats and Oils and Grain Crushings reports.',
@@ -37,19 +37,22 @@
         'I prezzi di classe sono minimi regolamentati (USD per cwt al 3,5 % di grasso), non quanto incassa ogni allevatore; il prezzo mailbox è quanto riceve l’allevatore dopo le detrazioni. Se AMS rivede un mese, vale l’ultima pubblicazione.'] }
   };
   var T = {
-    es: { cat: 'Categoría', ser: 'Serie', chart: 'Gráfica', last: 'Últimos 12 periodos', per: 'Periodo', val: 'Valor', chg: 'Cambio', open: 'Abrir la fuente', src: 'Último dato:', alt: 'Evolución de {n}', en: 'Los nombres de las series están como los publica la fuente (en inglés). Dehesa Index no calcula nada sobre estas cifras.', grp: { prices: 'Precios', production: 'Producción y uso', stocks: 'Existencias', trade: 'Comercio' } },
+    es: { trn: 'Los nombres de las series están traducidos del inglés original de la fuente; las cifras no se modifican. Dehesa Index no calcula nada sobre ellas.', cat: 'Categoría', ser: 'Serie', chart: 'Gráfica', last: 'Últimos 12 periodos', per: 'Periodo', val: 'Valor', chg: 'Cambio', open: 'Abrir la fuente', src: 'Último dato:', alt: 'Evolución de {n}', en: 'Los nombres de las series están como los publica la fuente (en inglés). Dehesa Index no calcula nada sobre estas cifras.', grp: { prices: 'Precios', production: 'Producción y uso', stocks: 'Existencias', trade: 'Comercio' } },
     en: { cat: 'Category', ser: 'Series', chart: 'Chart', last: 'Last 12 periods', per: 'Period', val: 'Value', chg: 'Change', open: 'Open the source', src: 'Latest data:', alt: 'Trend of {n}', en: 'Series names appear as published by the source (in English). Dehesa Index calculates nothing on these figures.', grp: { prices: 'Prices', production: 'Production and use', stocks: 'Stocks', trade: 'Trade' } },
-    fr: { cat: 'Catégorie', ser: 'Série', chart: 'Graphique', last: '12 dernières périodes', per: 'Période', val: 'Valeur', chg: 'Variation', open: 'Ouvrir la source', src: 'Dernière donnée :', alt: 'Évolution de {n}', en: 'Les noms des séries sont ceux de la source (en anglais). Dehesa Index ne calcule rien sur ces chiffres.', grp: { prices: 'Prix', production: 'Production et usage', stocks: 'Stocks', trade: 'Commerce' } },
-    it: { cat: 'Categoria', ser: 'Serie', chart: 'Grafico', last: 'Ultimi 12 periodi', per: 'Periodo', val: 'Valore', chg: 'Variazione', open: 'Apri la fonte', src: 'Ultimo dato:', alt: 'Andamento di {n}', en: 'I nomi delle serie sono quelli della fonte (in inglese). Dehesa Index non calcola nulla su queste cifre.', grp: { prices: 'Prezzi', production: 'Produzione e uso', stocks: 'Scorte', trade: 'Commercio' } }
+    fr: { trn: 'Les noms des séries sont traduits de l’anglais d’origine de la source ; les chiffres ne sont pas modifiés. Dehesa Index ne calcule rien sur ces chiffres.', cat: 'Catégorie', ser: 'Série', chart: 'Graphique', last: '12 dernières périodes', per: 'Période', val: 'Valeur', chg: 'Variation', open: 'Ouvrir la source', src: 'Dernière donnée :', alt: 'Évolution de {n}', en: 'Les noms des séries sont ceux de la source (en anglais). Dehesa Index ne calcule rien sur ces chiffres.', grp: { prices: 'Prix', production: 'Production et usage', stocks: 'Stocks', trade: 'Commerce' } },
+    it: { trn: 'I nomi delle serie sono tradotti dall’inglese originale della fonte; le cifre non vengono modificate. Dehesa Index non calcola nulla su queste cifre.', cat: 'Categoria', ser: 'Serie', chart: 'Grafico', last: 'Ultimi 12 periodi', per: 'Periodo', val: 'Valore', chg: 'Variazione', open: 'Apri la fonte', src: 'Ultimo dato:', alt: 'Andamento di {n}', en: 'I nomi delle serie sono quelli della fonte (in inglese). Dehesa Index non calcola nulla su queste cifre.', grp: { prices: 'Prezzi', production: 'Produzione e uso', stocks: 'Scorte', trade: 'Commercio' } }
   };
   var STATE = {};
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' }); } catch (e) { return v.toFixed(d); } }
   function fv(v) { if (v == null) return '—'; var a = Math.abs(v); return nf(v, a >= 1000 ? 0 : a >= 100 ? 1 : 2); }
-  function clean(l) { return String(l).replace(/\s*\((?:[^()]*(?:NASS|ERS|AMS|monthly|annual)[^()]*)\)\s*$/, ''); }
+  function xu(u) { var l = lang(); return u && window.DIUS && l !== 'en' ? window.DIUS.unit(u, l) : u; }
+  function tr(l) { var g = lang(); return window.DIClear && window.DIClear.tl && g !== 'en' ? window.DIClear.tl(String(l), g) : String(l); }
+  function clean(l) { return tr(l).replace(/\s*\((?:[^()]*(?:NASS|ERS|AMS|monthly|annual|mensual|mensuel|mensile)[^()]*)\)\s*$/, ''); }
+  var CNAME = {};
   function catOf(b, s, T0) { if (b.cat === 'group') return s.group; var i = String(s.label).indexOf(':'); return i > 0 ? s.label.slice(0, i) : s.group; }
-  function catName(b, c, T0) { return b.cat === 'group' ? (T0.grp[c] || c) : c; }
+  function catName(b, c, T0) { return b.cat === 'group' ? (T0.grp[c] || c) : (CNAME[c] || c); }
   function pfmt(p, fq) { return fq === 'annual' ? p : p.length === 7 ? p : p; }
   function ts(p) { var m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(String(p)); return m ? Date.UTC(+m[1], m[2] ? +m[2] - 1 : 0, m[3] ? +m[3] : 1) : null; }
   function chart(s, T0) {
@@ -57,19 +60,19 @@
     var rows = s.points.slice(-(s.frequency === 'annual' ? 40 : 120)), pts = [], k, t;
     for (k = 0; k < rows.length; k++) { t = ts(rows[k][0]); if (t != null) pts.push({ x: t, y: rows[k][1], l: rows[k][0] }); }
     if (pts.length < 3) return '';
-    return window.DehesaChart.render({ series: [{ name: clean(s.label), color: '#1d5178', pts: pts }], xMode: 'time', yTitle: s.unit || '', aria: T0.alt.replace('{n}', clean(s.label)), zero: false, noLegend: true, vFmt: fv });
+    return window.DehesaChart.render({ series: [{ name: clean(s.label), color: '#1d5178', pts: pts }], xMode: 'time', yTitle: xu(s.unit) || '', aria: T0.alt.replace('{n}', clean(s.label)), zero: false, noLegend: true, vFmt: fv });
   }
   function render(id) {
     var root = document.getElementById(id), st = STATE[id], b = BLOCKS[id]; if (!root || !st) return;
     var P = LI[lang()] || 0, T0 = T[lang()] || T.es, i, cats = [], seen = {}, list = [];
-    st.series.forEach(function (s) { var c = catOf(b, s, T0); if (!seen[c]) { seen[c] = 1; cats.push(c); } });
+    st.series.forEach(function (s) { var c = catOf(b, s, T0); if (!seen[c]) { seen[c] = 1; cats.push(c); if (b.cat !== 'group') { var tn = clean(s.label), q = tn.indexOf(':'); CNAME[c] = q > 0 ? tn.slice(0, q) : c; } } });
     cats.sort(function (a, c) { return String(catName(b, a, T0)).localeCompare(catName(b, c, T0), lang()); });
     if (!st.cat || !seen[st.cat]) st.cat = cats[0];
     st.series.forEach(function (s) { if (catOf(b, s, T0) === st.cat) list.push(s); });
     if (!st.sid || !list.some(function (s) { return s.id === st.sid; })) st.sid = list[0].id;
     var s = list.filter(function (x) { return x.id === st.sid; })[0];
     var sel = '<div style="display:flex;flex-wrap:wrap;gap:10px 18px;margin:10px 0 4px"><label class="di-movers-hint">' + esc(T0.cat) + '<select id="' + id + '-cat" style="display:block;margin-top:4px;font:inherit;max-width:100%">' +
-      cats.map(function (c) { return '<option value="' + esc(c) + '"' + (c === st.cat ? ' selected' : '') + '>' + esc(catName(b, c, T0)) + '</option>'; }).join('') + '</select></label>' +
+      cats.map(function (c) { return '<option value="' + esc(c) + '"' + (c === st.cat ? ' selected' : '') + '>' + esc((window.DIUS && window.DIUS.emo(c) ? window.DIUS.emo(c) + ' ' : '') + catName(b, c, T0)) + '</option>'; }).join('') + '</select></label>' +
       '<label class="di-movers-hint" style="flex:1 1 280px">' + esc(T0.ser) + '<select id="' + id + '-ser" style="display:block;margin-top:4px;font:inherit;max-width:100%;width:100%">' +
       list.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === st.sid ? ' selected' : '') + '>' + esc(clean(x.label)) + '</option>'; }).join('') + '</select></label></div>';
     var rows = s.points.slice(-12).reverse(), body = '';
@@ -78,10 +81,10 @@
       var prev = s.points[s.points.length - 1 - j - 1], ch = prev && prev[1] ? (r[1] / prev[1] - 1) * 100 : null;
       body += '<tr><th scope="row" style="' + td + 'text-align:left;font-weight:400">' + esc(r[0]) + '</th><td style="' + td + '">' + esc(fv(r[1])) + '</td><td style="' + td + '">' + (ch == null ? '—' : esc((ch > 0 ? '+' : '') + nf(ch, 1) + ' %')) + '</td></tr>';
     });
-    var tab = '<details class="usm-more"><summary>' + esc(T0.last) + '</summary><div style="overflow:auto"><table style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr><th scope="col" style="' + th + 'text-align:left">' + esc(T0.per) + '</th><th scope="col" style="' + th + '">' + esc(T0.val) + ' (' + esc(s.unit || '') + ')</th><th scope="col" style="' + th + '">' + esc(T0.chg) + '</th></tr></thead><tbody>' + body + '</tbody></table></div></details>';
+    var tab = '<details class="usm-more"><summary>' + esc(T0.last) + '</summary><div style="overflow:auto"><table style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr><th scope="col" style="' + th + 'text-align:left">' + esc(T0.per) + '</th><th scope="col" style="' + th + '">' + esc(T0.val) + ' (' + esc(xu(s.unit) || '') + ')</th><th scope="col" style="' + th + '">' + esc(T0.chg) + '</th></tr></thead><tbody>' + body + '</tbody></table></div></details>';
     var cite = window.DICite && window.DICite.html ? '<div class="pp-cites" style="margin-top:10px">' + window.DICite.html(b.cite, { period: s.latestPeriod }) + '</div>' : '';
     root.innerHTML = '<h2 class="cof-h2">' + esc(b.h[P]) + '</h2><p class="cof-sub">' + esc(b.sub[P]) + '</p>' + sel + '<h3 class="cof-h3">' + esc(clean(s.label)) + ' · ' + esc(T0.chart) + '</h3>' + chart(s, T0) + tab +
-      '<p class="cof-note">' + esc(b.note[P]) + ' ' + esc(T0.en) + ' ' + esc(T0.src) + ' ' + esc(s.latestPeriod) + '. <a href="' + esc(b.url) + '" target="_blank" rel="noopener noreferrer">' + esc(T0.open) + '</a></p>' + cite;
+      '<p class="cof-note">' + esc(b.note[P]) + ' ' + esc(b.tr && T0.trn ? T0.trn : T0.en) + ' ' + esc(T0.src) + ' ' + esc(s.latestPeriod) + '. <a href="' + esc(b.url) + '" target="_blank" rel="noopener noreferrer">' + esc(T0.open) + '</a></p>' + cite;
     var c = document.getElementById(id + '-cat'), r = document.getElementById(id + '-ser');
     if (c) c.onchange = function () { st.cat = c.value; st.sid = null; render(id); };
     if (r) r.onchange = function () { st.sid = r.value; render(id); };

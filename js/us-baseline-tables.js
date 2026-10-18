@@ -24,6 +24,7 @@
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' }); } catch (e) { return v.toFixed(d); } }
   function fv(v) { if (v == null) return '—'; var a = Math.abs(v); return nf(v, a >= 1000 ? 0 : a >= 100 ? 1 : 2); }
   function num(t) { var m = /^Table\s+(\d+)/.exec(t.title); return m ? +m[1] : 0; }
+  function xl(k, s) { var l = lang(); return s && window.DIUS && l !== 'en' ? window.DIUS[k](s, l) : s; }
   function tname(t, P) { var n = num(t); return TN[n] ? TN[n][P] : t.title; }
   function cur() { var i; for (i = 0; i < D.tables.length; i++) if (D.tables[i].id === SEL) return D.tables[i]; return D.tables[0]; }
   function isP(y) { return /[–-]/.test(y) && !/\//.test(y); }
@@ -32,7 +33,7 @@
     var pts = [], lab = {}, k = 0, i;
     for (i = 0; i < t.years.length; i++) { if (isP(t.years[i]) || r.values[i] == null) continue; lab[k] = t.years[i]; pts.push({ x: k, y: r.values[i], l: t.years[i] }); k++; }
     if (pts.length < 3) return '';
-    return window.DehesaChart.render({ series: [{ name: r.label, color: '#1d5178', pts: pts }], xLabels: lab, yTitle: r.unit || t.unit || '', aria: f(T.alt, { n: tname(t, P), r: r.label }), zero: false, noLegend: true, vFmt: fv });
+    return window.DehesaChart.render({ series: [{ name: xl('row', r.label), color: '#1d5178', pts: pts }], xLabels: lab, yTitle: xl('unit', r.unit || t.unit || ''), aria: f(T.alt, { n: tname(t, P), r: xl('row', r.label) }), zero: false, noLegend: true, vFmt: fv });
   }
   function render() {
     var root = document.getElementById('nbt'); if (!root || !D) return;
@@ -44,12 +45,12 @@
     var last = null, body = '';
     t.rows.forEach(function (x, j) {
       if (x.section && x.section !== last) { body += '<tr><th scope="rowgroup" colspan="' + (t.years.length + 2) + '" style="padding:10px 6px 4px;text-align:left;font-size:12px">' + esc(x.section) + '</th></tr>'; last = x.section; }
-      body += '<tr class="nbt-r" data-j="' + j + '" tabindex="0" style="cursor:pointer;' + (j === ROW ? 'background:var(--bg-soft,rgba(0,0,0,.05))' : '') + '"><th scope="row" style="' + td + 'text-align:left;font-weight:400;padding-left:' + (6 + 12 * (x.indent || 0)) + 'px;white-space:normal;min-width:180px">' + esc(x.label) + '</th><td style="' + td + 'text-align:left;color:var(--text-muted)">' + esc(x.unit || t.unit || '') + '</td>' + x.values.map(function (v) { return '<td style="' + td + '">' + esc(fv(v)) + '</td>'; }).join('') + '</tr>';
+      body += '<tr class="nbt-r" data-j="' + j + '" tabindex="0" style="cursor:pointer;' + (j === ROW ? 'background:var(--bg-soft,rgba(0,0,0,.05))' : '') + '"><th scope="row" style="' + td + 'text-align:left;font-weight:400;padding-left:' + (6 + 12 * (x.indent || 0)) + 'px;white-space:normal;min-width:180px">' + esc(xl('row', x.label)) + '</th><td style="' + td + 'text-align:left;color:var(--text-muted)">' + esc(xl('unit', x.unit || t.unit || '')) + '</td>' + x.values.map(function (v) { return '<td style="' + td + '">' + esc(fv(v)) + '</td>'; }).join('') + '</tr>';
     });
     var tab = '<div style="overflow:auto;max-height:520px"><table style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr><th scope="col" style="' + th + 'text-align:left">' + esc(T0.row) + '</th><th scope="col" style="' + th + 'text-align:left">' + esc(T0.unit) + '</th>' + t.years.map(function (y) { return '<th scope="col" style="' + th + '">' + esc(y) + '</th>'; }).join('') + '</tr></thead><tbody>' + body + '</tbody></table></div>';
     var notes = t.notes.length ? '<details class="usm-more"><summary>' + esc(T0.notes) + '</summary>' + t.notes.map(function (n) { return '<p class="di-movers-hint">' + esc(n) + '</p>'; }).join('') + '</details>' : '';
     var cite = window.DICite && window.DICite.html ? '<div class="pp-cites" style="margin-top:10px">' + window.DICite.html('usda_ers', { period: D.edition }) + '</div>' : '';
-    root.innerHTML = '<h2 class="cof-h2">' + esc(T0.h) + '</h2><p class="cof-sub">' + esc(T0.sub) + '</p>' + sel + '<h3 class="cof-h3">' + esc(r.label) + ' · ' + esc(T0.chart) + '</h3>' + chart(t, r, T0, P) + '<h3 class="cof-h3">' + esc(tname(t, P)) + '</h3>' + tab + notes +
+    root.innerHTML = '<h2 class="cof-h2">' + esc(T0.h) + '</h2><p class="cof-sub">' + esc(T0.sub) + '</p>' + sel + '<h3 class="cof-h3">' + esc(xl('row', r.label)) + ' · ' + esc(T0.chart) + '</h3>' + chart(t, r, T0, P) + '<h3 class="cof-h3">' + esc(tname(t, P)) + '</h3>' + tab + notes +
       '<p class="cof-note">' + esc(T0.note) + ' ' + esc(f(T0.src, { ed: D.edition })) + ' <a href="' + esc(D.pageUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(T0.open) + '</a></p>' + cite;
     var s = document.getElementById('nbt-sel'); if (s) s.onchange = function () { SEL = s.value; ROW = 0; render(); };
     Array.prototype.forEach.call(root.querySelectorAll('.nbt-r'), function (el) { function go() { ROW = +el.getAttribute('data-j'); render(); } el.onclick = go; el.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } }; });
