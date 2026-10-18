@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 143 VERIFIED, 12 PENDING, 7 RESTRICTED, 4 BLOCKED; 31364 series en el catalogo unificado.
+Resumen: 143 VERIFIED, 12 PENDING, 7 RESTRICTED, 4 BLOCKED; 31367 series en el catalogo unificado.
 
 ## VERIFIED (143)
 
@@ -129,7 +129,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |
-| `uruguay_datos_abiertos` | Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA) | UY | odc-uy | si/si | si | 27 | Identificar proveedor, licencia y conjunto; declarar las modificaciones. No extender a logos ni a materiales de terceros. |
+| `uruguay_datos_abiertos` | Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA) | UY | odc-uy | si/si | si | 30 | Identificar proveedor, licencia y conjunto; declarar las modificaciones. No extender a logos ni a materiales de terceros. |
 | `us_drought_monitor` | U.S. Drought Monitor (NDMC, USDA, NOAA) | US | CUSTOM | unclear/unclear | si | 0 | Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisa… |
 | `us_tariffs` | USITC Harmonized Tariff Schedule, CBP trade remedies, USTR | US | US-PD | si/si | no | 0 | The HTS is legally binding only in its official publication: label derived rates as informational. |
 | `usbr_rise` | U.S. Bureau of Reclamation — RISE (Reclamation Information Sharing Environment) | US | US-PD | si/si | no | 0 |  |

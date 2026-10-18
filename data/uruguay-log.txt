@@ -6,4 +6,4 @@ DICOSE se-snig-2017: sin datosanimales.csv utilizable
 DICOSE -dicose-snig: sin datosanimales.csv utilizable
 DICOSE se-snig-2019: sin datosanimales.csv utilizable
 DICOSE se-snig-2020: sin datosanimales.csv utilizable
-series guardadas: 27
+series guardadas: 30
