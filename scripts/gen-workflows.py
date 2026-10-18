@@ -26,8 +26,8 @@ def groups(cfg):
     for x in src: members.setdefault(find(x["id"]), []).append(x["id"])
     return {i: ("dehesa-data-writes" if next(y for y in src if y["id"] == i).get("group") == "heavy" else "dehesa-" + min(m)) for m in members.values() for i in m}
 def render(x, group="dehesa-data-writes"):
-    L = ["# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.", "name: " + x["name"], "on:", "  schedule:"]
-    L += ["    - cron: " + q(c) for c in x["cron"]]
+    L = ["# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.", "name: " + x["name"], "on:"]
+    if x["cron"]: L += ["  schedule:"] + ["    - cron: " + q(c) for c in x["cron"]]   # cron: [] = pausado: solo se lanza a mano
     L += ["  workflow_dispatch:"]
     if x.get("dispatch_inputs"):
         L.append("    inputs:")

@@ -1,8 +1,6 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
 name: Update US USDA FSA farm loan interest rates (direct operating, ownership, emergency; public domain)
 on:
-  schedule:
-    - cron: '50 13 1-4 * *'
   workflow_dispatch:
 permissions:
   contents: write

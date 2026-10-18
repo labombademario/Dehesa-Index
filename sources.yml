@@ -1751,7 +1751,7 @@ sources:
     message: Datos EEUU credito agrario Fed de Kansas City (tipos de interes, valor de la tierra)
   - id: us-fsa-rates
     name: Update US USDA FSA farm loan interest rates (direct operating, ownership, emergency; public domain)
-    cron: ['50 13 1-4 * *']
+    cron: []   # PAUSADO (18-oct-2026): el cortafuegos de la FSA (y Archive.org) bloquea a los servidores de GitHub. Datos: data/us-fsa-rates-manual.json + lanzar a mano.
     script: scripts/update-us-fsa-rates.py
     timeout: 25
     script_timeout: 20
