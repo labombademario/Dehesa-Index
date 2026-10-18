@@ -63,6 +63,7 @@ def main():
         code = a.get("PRODUITS_IPAGRI_2020", "") or ""
         depth = len(re.sub(r"^[A-Z]+_", "", code)) // 2
         prod = re.sub(r"\s*\(?\s*(Series|Discontinued).*$", "", prod).strip()
+        prod = prod.replace("TNM <= 20%", "TNM up to 20%").replace("TNM > 20%", "TNM over 20%").replace("TNM >= 35%", "TNM 35% or more").replace("20% < TNM < 35%", "TNM 20-35%").replace("TNM <= 20", "TNM up to 20").replace("TNM > 20", "TNM over 20")  # los simbolos < y > desaparecen en el identificador canonico y dos tramos chocan
         kind = {"IPPAP": "agricultural producer price index (IPPAP)", "IPGA": "gross agricultural price index (IPGA)", "IPAMPA": "agricultural input price index (IPAMPA)"}.get(ind, ind)
         prev = pts[-2][1]
         ser.append(dict(id="fr-insee-%s" % idb, group=GROUP.get(ind, "idx_perc"), label="France %s: %s (INSEE, 2020=100, monthly)" % (kind, prod), unit="index 2020=100", frequency="monthly",

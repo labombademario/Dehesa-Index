@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T20:18:00Z",
+ "generatedAt": "2026-10-18T20:28:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 215,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "d438a550",
+   "sha": "6245f6e6",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/420fe725-0c04-4ec2-8895-bf13d398af53",
-   "completedAt": "2026-10-18T20:18:24Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/7126d97e-e91a-4099-94aa-3a974e79de0a",
+   "completedAt": "2026-10-18T20:22:12Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-18T18:42:45.115691+00:00",
-  "checkedAt": "2026-10-18T20:18:00Z"
+  "checkedAt": "2026-10-18T20:28:00Z"
  },
  "pipelines": [
   {
@@ -3440,7 +3440,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-18T18:39:48Z"
+     "lastChange": "2026-10-18T20:21:28Z"
     },
     {
      "path": "data/data-quality.json",
@@ -3448,7 +3448,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-18T18:40:47Z"
+     "lastChange": "2026-10-18T20:21:28Z"
     },
     {
      "path": "data/us-weekly-stats.json",
