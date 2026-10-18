@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var REG = {};
-  function flg(cc) { cc = String(cc || '').slice(0, 2).toUpperCase(); return /^[A-Z]{2}$/.test(cc) ? String.fromCodePoint(127397 + cc.charCodeAt(0), 127397 + cc.charCodeAt(1)) + ' ' : ''; }
+  function flg(cc) { cc = String(cc || '').slice(0, 2).toUpperCase(); cc = { EL: 'GR', UK: 'GB' }[cc] || cc; return /^[A-Z]{2}$/.test(cc) ? String.fromCodePoint(127397 + cc.charCodeAt(0), 127397 + cc.charCodeAt(1)) + ' ' : ''; }
   function drawTabs(G) {
     var host = null; Object.keys(REG).forEach(function (k) { if (REG[k] === G) host = document.getElementById(k); }); if (!host) return;
     var any = G.list.some(function (o) { return o.isOn(); });

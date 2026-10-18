@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
-  function flg(cc) { cc = String(cc || '').slice(0, 2).toUpperCase(); return /^[A-Z]{2}$/.test(cc) ? String.fromCodePoint(127397 + cc.charCodeAt(0), 127397 + cc.charCodeAt(1)) + ' ' : ''; }
+  function flg(cc) { cc = String(cc || '').slice(0, 2).toUpperCase(); cc = { EL: 'GR', UK: 'GB' }[cc] || cc; return /^[A-Z]{2}$/.test(cc) ? String.fromCodePoint(127397 + cc.charCodeAt(0), 127397 + cc.charCodeAt(1)) + ' ' : ''; }
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function li() { var i = LI[lang()]; return i == null ? 0 : i; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
