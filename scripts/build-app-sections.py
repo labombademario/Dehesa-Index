@@ -660,14 +660,18 @@ def rendimientos_eu():
         regs = d['regions']; n = len(regs)
         for code, emo, name in EU_CROPS:
             def nat(k):
+                # solo cuentan las regiones que alguna vez informan de este cultivo (Berlín o Hamburgo no siembran colza);
+                # un año entra si todas ellas tienen dato: nunca se rellena un hueco
+                rep = [r for r in regs.values() if r.get('crops', {}).get(code, {}).get(k)]
                 by = {}
-                for r in regs.values():
-                    for y, v in (r.get('crops', {}).get(code, {}).get(k) or []):
+                for r in rep:
+                    for y, v in (r['crops'][code][k] or []):
                         if v is None: continue
                         e = by.setdefault(y, [0.0, 0]); e[0] += v; e[1] += 1
-                return [[str(y), round(by[y][0], 1)] for y in sorted(by) if by[y][1] == n]
+                return [[str(y), round(by[y][0], 1)] for y in sorted(by) if rep and by[y][1] == len(rep)]
             P, A = [x for x in nat('prod') if x[0] >= '2005'], [x for x in nat('area') if x[0] >= '2005']
             if len(P) < 2 or len(A) < 2: continue
+            if not any(v for _, v in P): continue  # cultivo que no se da en el país (cítricos en Alemania): no se enseña una ficha a cero
             am = dict(A); Y = [[y, round(v / am[y] * 1000)] for y, v in P if am.get(y)]
             last = P[-1][0]; prevP = dict(P).get(str(int(last) - 1)); prevY = dict(Y).get(str(int(last) - 1))
             ry, rp = [], []
@@ -685,7 +689,7 @@ def rendimientos_eu():
                         chart('Rendimiento nacional (calculado)|National yield (calculated)|Rendement national (calculé)|Resa nazionale (calcolata)', 'kg/ha', [('Rendimiento|Yield|Rendement|Resa', Y)])],
                 bars=[bars('Rendimiento por región · ' + last + '|Yield by region · ' + last + '|Rendement par région · ' + last + '|Resa per regione · ' + last, 'kg/ha', ry, 0),
                       bars('Producción por región · ' + last + '|Production by region · ' + last + '|Production par région · ' + last + '|Produzione per regione · ' + last, 'kt', rp, 0)],
-                note=t4('Eurostat publica superficie (miles de ha) y producción (miles de t) por región; el rendimiento se calcula aquí como producción ÷ superficie. El total nacional suma las regiones solo en los años en que todas tienen dato.|Eurostat publishes area (thousand ha) and production (thousand t) by region; yield is calculated here as production ÷ area. The national total adds up regions only in years when all of them have data.|Eurostat publie la surface (milliers d’ha) et la production (milliers de t) par région ; le rendement est calculé ici comme production ÷ surface. Le total national additionne les régions uniquement les années où toutes ont une donnée.|Eurostat pubblica superficie (migliaia di ha) e produzione (migliaia di t) per regione; la resa è calcolata qui come produzione ÷ superficie. Il totale nazionale somma le regioni solo negli anni in cui tutte hanno il dato.'),
+                note=t4('Eurostat publica superficie (miles de ha) y producción (miles de t) por región; el rendimiento se calcula aquí como producción ÷ superficie. El total nacional suma las regiones que informan de ese cultivo, solo en los años en que todas ellas tienen dato.|Eurostat publishes area (thousand ha) and production (thousand t) by region; yield is calculated here as production ÷ area. The national total adds up the regions that report that crop, only in years when all of them have data.|Eurostat publie la surface (milliers d’ha) et la production (milliers de t) par région ; le rendement est calculé ici comme production ÷ surface. Le total national additionne les régions qui déclarent cette culture, uniquement les années où toutes ont une donnée.|Eurostat pubblica superficie (migliaia di ha) e produzione (migliaia di t) per regione; la resa è calcolata qui come produzione ÷ superficie. Il totale nazionale somma le regioni che dichiarano quella coltura, solo negli anni in cui tutte hanno il dato.'),
                 source={'name': 'Eurostat (apro_cpshr)', 'url': 'https://ec.europa.eu/eurostat/databrowser/view/apro_cpshr/default/table'}))
     return {'id': 'rendimientos', 'title': t4('Rendimientos por región (zona euro)|Yields by region (euro area)|Rendements par région (zone euro)|Rese per regione (area euro)'), 'emoji': '🌾', 'blocks': out}
 
