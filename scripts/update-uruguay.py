@@ -236,7 +236,7 @@ def read_grid(r):
     if b is None: return None
     if b.lstrip().startswith(b'<'): log('Grilla %s: contenido no es CSV' % (r.get('url') or '')[-24:]); return None
     rd = csv.DictReader(io.StringIO(b.decode('utf-8-sig')))
-    if not rd.fieldnames or rd.fieldnames[:3] != ['id', 'Longitud', 'Latitud']: log('Grilla %s: cabecera inesperada' % (r.get('url') or '')[-24:]); return None
+    if not rd.fieldnames or rd.fieldnames[:3] != ['id', 'Longitud', 'Latitud']: log('Grilla %s: cabecera inesperada (primeras columnas: %s)' % ((r.get('url') or '')[-24:], (rd.fieldnames or [])[:5])); return None
     rows = list(rd)
     return rd.fieldnames, rows
 
@@ -288,7 +288,7 @@ def dicose():
     for name in DICOSE_PKGS:
         try: pkg = package(name)
         except Exception as e: log('DICOSE %s: %s' % (name[-12:], e)); continue
-        got = False
+        got = False; diag = []
         for r in pkg['resources']:
             if not (r.get('url') or '').endswith('datosanimales.csv'): continue
             try: b = resource_bytes(r)
@@ -298,7 +298,9 @@ def dicose():
             rd = csv.DictReader(io.StringIO(b.decode('latin-1')), delimiter=';')
             cols = {(c or '').replace('ns1:', ''): c for c in (rd.fieldnames or [])}
             need = ('Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD')
-            if any(n not in cols for n in need): continue   # otro recurso (p. ej. el detallado por categoria) o formato distinto
+            if any(n not in cols for n in need):   # otro recurso (p. ej. el detallado por categoria) o formato distinto
+                if len(diag) < 3: diag.append('%s: faltan %s; columnas %s' % ((r.get('url') or '')[-28:], [n for n in need if n not in cols], list(cols)[:6]))
+                continue
             sub = defaultdict(float); sb = 0.0; ej = set(); nrow = 0; sdep = defaultdict(lambda: defaultdict(float))
             for x in rd:
                 e, sp = (x[cols['Ejercicio']] or '').strip(), (x[cols['EspecieCodigo']] or '').strip()
@@ -316,7 +318,8 @@ def dicose():
             for sp, dd in sdep.items(): dep[sp][y] = dict(dd)
             births[y] = sb; got = True
             break
-        if not got: log('DICOSE %s: sin datosanimales.csv utilizable' % name[-12:])
+        if not got and not diag: diag.append('recursos: %s' % [(r.get('url') or '')[-34:] for r in pkg['resources']][:8])
+        if not got: log('DICOSE %s: sin datosanimales.csv utilizable%s' % (name[-12:], (' | ' + ' | '.join(diag)) if diag else ''))
     for sp in SPECIES:
         yrs = sorted(dep[sp])[-10:]
         if yrs: DEPT['livestock'][SPECIES[sp]] = {y: {i: round(v) for i, v in sorted(dep[sp][y].items())} for y in yrs}
