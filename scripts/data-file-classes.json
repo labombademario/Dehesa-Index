@@ -273,6 +273,10 @@
   "data/eu-production-stats.json": {
    "class": "RUNTIME",
    "note": "Produccion, superficie y rendimiento por pais (portal Agri-food): la pagina de la UE lo descarga en js/eu-series-block.js para el bloque de produccion; ademas alimenta los catalogos por pais."
+  },
+  "data/app/v1/sec/rendimientos.json": {
+   "class": "DERIVED",
+   "note": "Seccion Rendimientos de la app (build-app-sections.py): rendimientos y superficie por region en la zona euro, incluida Francia. La app la baja solo al abrir esa seccion; la web no la descarga."
   }
  },
  "prefixes": {

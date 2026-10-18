@@ -1749,6 +1749,15 @@ sources:
     data: [us-kcfed-stats.json]
     log: us-kcfed-log.txt
     message: Datos EEUU credito agrario Fed de Kansas City (tipos de interes, valor de la tierra)
+  - id: us-fsa-rates
+    name: Update US USDA FSA farm loan interest rates (direct operating, ownership, emergency; public domain)
+    cron: ['50 13 1-4 * *']
+    script: scripts/update-us-fsa-rates.py
+    timeout: 25
+    script_timeout: 20
+    data: [us-fsa-rates-stats.json]
+    log: us-fsa-rates-log.txt
+    message: Datos EEUU tipos de interes de los prestamos agrarios de la FSA (USDA)
   - id: us-snotel
     name: Update US western snowpack (USDA NRCS SNOTEL, snow water equivalent by state)
     cron: ['30 8 3 * *']
