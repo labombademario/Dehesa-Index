@@ -318,6 +318,43 @@
     render();
   });
 
+  // ---- Añadir a mi calendario (.ics para Apple/Google/Outlook y enlace directo a Google Calendar) ----
+  function p2(n) { return (n < 10 ? '0' : '') + n; }
+  function etToUtc(date, et) {
+    var m = /^(\d{1,2}):(\d{2})/.exec(et || ''); if (!m) return null;
+    var y = +date.slice(0, 4), mo = +date.slice(5, 7) - 1, d = +date.slice(8, 10);
+    for (var off = 4; off <= 5; off++) {
+      var u = new Date(Date.UTC(y, mo, d, +m[1] + off, +m[2]));
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', hour12: false }).format(u).split(':');
+      if ((+parts[0] % 24) === +m[1] && +parts[1] === +m[2]) return u;
+    }
+    return new Date(Date.UTC(y, mo, d, +m[1] + 5, +m[2]));
+  }
+  function stamp(u) { return u.getUTCFullYear() + p2(u.getUTCMonth() + 1) + p2(u.getUTCDate()) + 'T' + p2(u.getUTCHours()) + p2(u.getUTCMinutes()) + '00Z'; }
+  function icsEsc(x) { return String(x || '').replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n'); }
+  function calParts(ev, lg) {
+    var tr = ev[lg] || ev.es, title = tr.name + ' (Dehesa Index)', desc = tr.desc + ' ' + ev.sourceUrl;
+    var d = ev.nextDate, u = ev.timeEt ? etToUtc(d, ev.timeEt) : null, a, b, allDay = !u;
+    if (u) { a = stamp(u); b = stamp(new Date(u.getTime() + 3600000)); }
+    else { a = d.replace(/-/g, ''); var n = new Date(Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +d.slice(8, 10) + 1)); b = n.getUTCFullYear() + p2(n.getUTCMonth() + 1) + p2(n.getUTCDate()); }
+    return { title: title, desc: desc, a: a, b: b, allDay: allDay, id: ev.id || tr.name };
+  }
+  function icsFor(ev, lg) {
+    var c = calParts(ev, lg), v = c.allDay ? ';VALUE=DATE' : '';
+    return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Dehesa Index//Calendario agricola//ES', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT',
+      'UID:' + String(c.id).replace(/[^\w-]/g, '') + '-' + c.a + '@dehesaindex.com', 'DTSTAMP:' + stamp(new Date()),
+      'DTSTART' + v + ':' + c.a, 'DTEND' + v + ':' + c.b, 'SUMMARY:' + icsEsc(c.title), 'DESCRIPTION:' + icsEsc(c.desc), 'URL:' + ev.sourceUrl,
+      'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsEsc(c.title), 'TRIGGER:-PT30M', 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+  }
+  function gcalUrl(ev, lg) { var c = calParts(ev, lg); return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(c.title) + '&dates=' + c.a + '/' + c.b + '&details=' + encodeURIComponent(c.desc); }
+  var ADDCAL = { es: ['Añadir a mi calendario', 'Descargar .ics (Apple, Outlook)', 'Google Calendar'], en: ['Add to my calendar', 'Download .ics (Apple, Outlook)', 'Google Calendar'], fr: ['Ajouter à mon agenda', 'Télécharger .ics (Apple, Outlook)', 'Google Agenda'], it: ['Aggiungi al calendario', 'Scarica .ics (Apple, Outlook)', 'Google Calendar'] };
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-ics]'); if (!b) return;
+    var ev = CALENDAR_EVENTS.filter(function (x) { return x.id === b.getAttribute('data-ics'); })[0]; if (!ev || !ev.nextDate) return;
+    var blob = new Blob([icsFor(ev, window.DehesaShared.getLang())], { type: 'text/calendar;charset=utf-8' }), a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = String(ev.id).replace(/[^\w-]/g, '') + '-' + ev.nextDate + '.ics'; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+  });
   function render() {
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
@@ -419,6 +456,7 @@
           '<p class="di-cal-desc">' + esc(tr.desc) + '</p>' +
           '<div class="di-cal-impact"><strong>' + esc(t.relevance) + '</strong> ' + esc((t.impactLabels || {})[ev.impact] || ev.impact) + '</div>' +
           lastHtml + noDateHtml +
+          (ev.hasDate && !ev.patternDate && ev.id ? '<details class="di-cal-add" style="margin:8px 0 0"><summary style="cursor:pointer;font-size:13px;font-weight:600">📅 ' + esc(ADDCAL[lang][0]) + '</summary><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><button type="button" class="di-location-btn" data-ics="' + esc(ev.id) + '">' + esc(ADDCAL[lang][1]) + '</button><a class="di-location-btn" href="' + esc(gcalUrl(ev, lang)) + '" target="_blank" rel="noopener noreferrer">' + esc(ADDCAL[lang][2]) + '</a></div></details>' : '') +
           '<a class="di-cal-source-link" href="' + esc(ev.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(t.sourceLinkLabel) + ' →</a>' +
         '</div>';
       }).join('') + '</div>';

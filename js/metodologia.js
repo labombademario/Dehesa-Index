@@ -271,5 +271,23 @@
       links: [{ href: 'clima.html', t: 'Clima agricolo' }, { href: 'data/', t: 'Dati aperti' }, { href: 'legal.html', t: 'Note legali e privacy' }, { href: 'informacion.html', t: 'Informazioni' }]
     }
   };
+  // Fuentes por país: se generan del registro de licencias (js/sources-data.js) para que ningún país con datos quede fuera de la lista.
+  (function () {
+    var rows = window.DEHESA_SOURCES || []; if (!rows.length) return;
+    var SKIP = { US: 1, CA: 1, ES: 1, INT: 1, EU: 1 };
+    var FLAG = { UK: 'GB', EL: 'GR' };
+    function flag(c) { c = FLAG[c] || c; return /^[A-Z]{2}$/.test(c) ? String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1)) : ''; }
+    var by = {}; rows.forEach(function (r) { if (!SKIP[r.c] && r.c) (by[r.c] = by[r.c] || []).push(r); });
+    var HEAD = { es: ['Otros países', 'Fuentes oficiales con licencia verificada; lista completa y licencias en Información.'], en: ['Other countries', 'Official sources with a verified licence; full list and licences in About.'], fr: ['Autres pays', 'Sources officielles à licence vérifiée ; liste complète et licences dans À propos.'], it: ['Altri paesi', 'Fonti ufficiali con licenza verificata; elenco completo e licenze in Informazioni.'] };
+    Object.keys(STRINGS).forEach(function (lg) {
+      var dn; try { dn = new Intl.DisplayNames([lg], { type: 'region' }); } catch (e) { dn = null; }
+      var sec = STRINGS[lg].sections.filter(function (x) { return x.ul && /^(Fuentes y frecuencia|Sources and frequency|Sources et fréquence|Fonti e frequenza)$/.test(x.h); })[0]; if (!sec) return;
+      Object.keys(by).sort(function (a, b) { return by[b].length - by[a].length || (a < b ? -1 : 1); }).forEach(function (c) {
+        var nm = dn ? dn.of(FLAG[c] || c) : c;
+        sec.ul.push({ b: flag(c) + ' ' + nm + '.', t: by[c].map(function (r) { return r.n.replace(/^[^—]*—\s*/, '') + (r.l ? ' [' + r.l + ']' : ''); }).join('; ') + '.' });
+      });
+      sec.ul.push({ b: HEAD[lg][0] + '.', t: HEAD[lg][1], u: 'informacion.html', ul: { es: 'Información', en: 'About', fr: 'À propos', it: 'Informazioni' }[lg] });
+    });
+  })();
   window.DehesaTextPage(STRINGS, 'informacion');
 })();
