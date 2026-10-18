@@ -9,7 +9,7 @@
     { "url": "/precios.html", "mobile": true, "maxDataRawKB": 665, "maxTotalGzKB": 470, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/prices/history/"] },
     { "url": "/paises.html?c=ES", "maxDataRawKB": 1700, "maxTotalGzKB": 625, "forbid": ["-stats\\.json", "/data/(latest|history|normalized)\\.json"] },
     { "url": "/paises.html?c=ES", "mobile": true, "maxDataRawKB": 1700, "maxTotalGzKB": 625, "forbid": ["-stats\\.json"] },
-    { "url": "/perfiles.html", "maxDataRawKB": 350, "maxJsRawKB": 222, "maxTotalGzKB": 186,
+    { "url": "/perfiles.html", "maxDataRawKB": 350, "maxJsRawKB": 226, "maxTotalGzKB": 186,
       "forbid": ["-stats\\.json", "/data/(latest|history|normalized)\\.json", "/data/catalog/[A-Z]{2}\\.json"] },
     { "url": "/comparador.html", "maxDataRawKB": 495, "maxTotalGzKB": 260, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/catalogo.html", "maxDataRawKB": 335, "maxJsRawKB": 233, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },

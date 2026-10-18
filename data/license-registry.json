@@ -4445,6 +4445,11 @@
     "usda_fas_psd"
    ]
   },
+  "data/world-production.json": {
+   "sources": [
+    "usda_fas_psd"
+   ]
+  },
   "data/export-sales.json": {
    "sources": [
     "usda_fas_esr"
