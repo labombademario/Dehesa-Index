@@ -3,7 +3,10 @@
    El total nacional es la suma de las regiones solo en los años en que todas tienen dato (nunca se rellena un hueco). España mantiene su pestaña con datos del MAPA. ES5. */
 (function () {
   'use strict';
-  var EA = ['AT', 'BE', 'BG', 'HR', 'FI', 'DE', 'EL', 'IE', 'IT', 'LT', 'NL', 'PT', 'SK', 'SI'];
+  var EA = ['AT', 'BE', 'BG', 'HR', 'FI', 'FR', 'DE', 'EL', 'IE', 'IT', 'LT', 'NL', 'PT', 'SK', 'SI'];
+  // Contornos ya generados (scripts/build-region-maps.py): archivo en vendor/ y variable global; los ids coinciden con las regiones de eu-regions-XX.json. Se cargan al abrir la pestaña.
+  var MAPS = { AT: ['at-laender', 'AT_LAENDER'], BE: ['be-provinces', 'BE_PROVINCES'], BG: ['bg-regions', 'BG_REGIONS'], HR: ['hr-regions', 'HR_REGIONS'], FI: ['fi-regions', 'FI_REGIONS'], FR: ['fr-regions', 'FR_REGIONS'], DE: ['de-laender', 'DE_LAENDER'], EL: ['el-regions', 'EL_REGIONS'], IE: ['ie-regions', 'IE_REGIONS'], IT: ['it-regions', 'IT_REGIONS'], LT: ['lt-regions', 'LT_REGIONS'], NL: ['nl-provinces', 'NL_PROVINCES'], PT: ['pt-regions', 'PT_REGIONS'], SK: ['sk-regions', 'SK_REGIONS'], SI: ['si-regions', 'SI_REGIONS'] };
+  function loadMap(cc) { var m = MAPS[cc]; if (!m || window['DEHESA_' + m[1]]) return Promise.resolve(); return new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'vendor/' + m[0] + '.js'; sc.onload = sc.onerror = function () { ok(); }; document.head.appendChild(sc); }); }
   var ISO = { EL: 'GR' };
   var CROPS = [
     ['C0000', ['Cereales (grano)', 'Cereals (grain)', 'Céréales (grain)', 'Cereali (granella)']], ['C1110', ['Trigo blando', 'Common wheat', 'Blé tendre', 'Frumento tenero']], ['C1120', ['Trigo duro', 'Durum wheat', 'Blé dur', 'Frumento duro']],
@@ -47,8 +50,8 @@
       return out.length ? out : null;
     }
     return window.CAExplorer.create({
-      id: 'rd-eu-' + lc, tabsHost: 'rd-ca-tabs', usBody: 'rd-body', country: cc, tabKey: cc, nat: cc, map: 'DEHESA_NO_MAP', texts: texts(cc), items: items, defaultItem: 'C0000', defaultMeasure: 'prod', cite: 'eurostat',
-      load: function () { if (cache) return cache; return (cache = fetch('data/eu-regions-' + lc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) { if (d) { d.provinces = {}; d.provinces[cc] = 1; Object.keys(d.regions).forEach(function (k) { d.provinces[k] = 1; }); } return d; })); },
+      id: 'rd-eu-' + lc, tabsHost: 'rd-ca-tabs', usBody: 'rd-body', country: cc, tabKey: cc, nat: cc, map: 'DEHESA_' + MAPS[cc][1], texts: texts(cc), items: items, defaultItem: 'C0000', defaultMeasure: 'prod', cite: 'eurostat',
+      load: function () { if (cache) return cache; return (cache = loadMap(cc).then(function () { return fetch('data/eu-regions-' + lc + '.json'); }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) { if (d) { d.provinces = {}; d.provinces[cc] = 1; Object.keys(d.regions).forEach(function (k) { d.provinces[k] = 1; }); } return d; })); },
       pname: names,
       provIds: function (D) { return Object.keys(D.regions); },
       measures: function (D, id) { return ['area', 'prod', 'yield'].filter(function (m) { return series(D, cc, id, m); }); },
