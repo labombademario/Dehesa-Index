@@ -197,7 +197,7 @@
     var BIZ_MENU = ['liquidacion.html', 'monitor-insumos.html']; // el resto (informe, descargas, condiciones) se enlaza desde empresas.html
     var BIZ = ['liquidacion.html', 'monitor-insumos.html', 'informe-cooperativas.html', 'datos-descargables.html', 'condiciones.html'];
     G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: [
-      { label: L('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio'), items: prod.filter(function (i) { return /^(sequia|clima|mapa)\./.test(i.file); }).concat(one('aranceles.html')) },
+      { label: L('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio'), items: prod.filter(function (i) { return /^(sequia|clima|mapa|produccion-mundial)\./.test(i.file); }).concat(one('aranceles.html')) },
       { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items.filter(function (i) { return BIZ.indexOf(i.file) < 0; }) },
       { label: L('Para empresas', 'For business', 'Pour les entreprises', 'Per le aziende'), items: [pd('empresas.html', L('Datos para empresas', 'Data for business', 'Données pour les entreprises', 'Dati per le aziende'), L('Descargas, informe de muestra, condiciones de uso y contacto', 'Downloads, sample report, terms of use and contact', 'Téléchargements, rapport d’exemple, conditions d’usage et contact', 'Download, rapporto di esempio, condizioni d’uso e contatto'))].concat(G.data.items.filter(function (i) { return BIZ_MENU.indexOf(i.file) > -1; })) },
       { label: L('Apps', 'Apps', 'Apps', 'App'), items: [pd('app.html', L('App para iPhone, iPad y Mac', 'App for iPhone, iPad and Mac', 'App pour iPhone, iPad et Mac', 'App per iPhone, iPad e Mac'), L('Estado y descarga de las apps', 'Status and download of the apps', 'État et téléchargement des apps', 'Stato e download delle app'))] }
@@ -209,6 +209,7 @@
       dl('Datos de Canadá', 'Canada data', 'Données du Canada', 'Dati Canada', [one('canada-granos.html')], 'CA'),
       dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES')], 'ES'),
       dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU'),
+      dl('Quién produce qué', 'Who produces what', 'Qui produit quoi', 'Chi produce cosa', [one('produccion-mundial.html')]),
       dl('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura', [one('pesca.html')])
     ]);
   })();
