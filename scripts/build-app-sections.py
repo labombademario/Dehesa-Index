@@ -147,7 +147,8 @@ def clima():
         items_t = sorted(((l['name'], l['months'][-1].get('tempAnomalyC')) for l in ls if l['months'][-1]['period'] == per), key=lambda x: -(x[1] or 0))
         first = ls[0]
         out.append(block('clima-' + cc, cc, 'Clima de las zonas productoras|Weather in producing areas|Météo des zones de production|Clima delle zone produttive', asOf=per,
-            charts=[chart(first['name'] + ': lluvia del mes|' + first['name'] + ': monthly rainfall|' + first['name'] + ' : pluie du mois|' + first['name'] + ': pioggia del mese', 'mm', [('Lluvia|Rainfall|Pluie|Pioggia', [[m['period'], m['precipMm']] for m in first['months']]), ('Normal 2001-2020|Normal 2001-2020|Normale 2001-2020|Normale 2001-2020', [[m['period'], m['precipBaselineMm']] for m in first['months']])])],
+            charts=[chart('Lluvia frente a lo normal, últimos meses (%)|Rainfall vs normal, recent months (%)|Pluie par rapport à la normale, derniers mois (%)|Pioggia rispetto al normale, ultimi mesi (%)', '%', [({l: x['name'] for l in L4}, [[m['period'], m['precipAnomalyPct']] for m in x['months'] if m.get('precipAnomalyPct') is not None]) for x in ls]),
+                    chart('Lluvia del mes (mm)|Monthly rainfall (mm)|Pluie du mois (mm)|Pioggia del mese (mm)', 'mm', [({l: x['name'] for l in L4}, [[m['period'], m['precipMm']] for m in x['months'] if m.get('precipMm') is not None]) for x in ls])],
             bars=[bars('Lluvia frente a lo normal (%) · ' + per + '|Rainfall vs normal (%) · ' + per + '|Pluie par rapport à la normale (%) · ' + per + '|Pioggia rispetto al normale (%) · ' + per, '%', [({l: n for l in L4}, v) for n, v in items_p], 0),
                   bars('Temperatura frente a lo normal (°C) · ' + per + '|Temperature vs normal (°C) · ' + per + '|Température par rapport à la normale (°C) · ' + per + '|Temperatura rispetto al normale (°C) · ' + per, '°C', [({l: n for l in L4}, v) for n, v in items_t], 1)],
             note=t4('Normal = media 2001-2020 del mismo mes en el mismo punto.|Normal = 2001-2020 average for the same month at the same point.|Normale = moyenne 2001-2020 du même mois au même point.|Normale = media 2001-2020 dello stesso mese nello stesso punto.'),
@@ -265,6 +266,7 @@ def insumos():
             bars=[bars('Precio medio de los estados que informan|Average of reporting states|Moyenne des États déclarants|Media degli stati che riportano', 'USD/short ton', items, 0)],
             charts=[{'label': t4('Evolución en el estado con más historia|History in the state with the longest record|Évolution dans l’État avec le plus d’historique|Andamento nello stato con più storico'), 'unit': 'USD/short ton', 'series': [{'label': t4(l), 'points': p} for l, p in chs[:6] if len(p) > 1]}],
             source={'name': 'USDA AMS Market News', 'url': f['source']['url']}))
+    out = out + monitor_insumos()
     return {'id': 'insumos', 'title': t4('Gasóleo, fertilizantes y tierra|Diesel, fertiliser and land|Gazole, engrais et terres|Gasolio, fertilizzanti e terreni'), 'emoji': '⛽', 'blocks': out}
 
 EUK = {'output': 'Producción agraria|Agricultural output|Production agricole|Produzione agricola', 'ic': 'Consumos intermedios|Intermediate consumption|Consommations intermédiaires|Consumi intermedi', 'energy': 'Energía|Energy|Énergie|Energia', 'fert': 'Fertilizantes|Fertilisers|Engrais|Fertilizzanti', 'feed': 'Piensos|Feed|Aliments du bétail|Mangimi', 'ppp': 'Fitosanitarios|Plant protection|Phytosanitaires|Fitosanitari', 'vet': 'Veterinario|Veterinary|Vétérinaire|Veterinario', 'entrep': 'Renta empresarial|Entrepreneurial income|Revenu d’entreprise|Reddito imprenditoriale', 'gva': 'Valor añadido bruto|Gross value added|Valeur ajoutée brute|Valore aggiunto lordo', 'nva': 'Valor añadido neto|Net value added|Valeur ajoutée nette|Valore aggiunto netto', 'factor': 'Renta de los factores|Factor income|Revenu des facteurs|Reddito dei fattori'}
@@ -632,12 +634,123 @@ def relaciones():
             source={'name': 'Dehesa Index, motor de relaciones', 'url': 'https://dehesaindex.com/relaciones.html'}))
     return {'id': 'relaciones', 'title': t4('Relaciones entre precios|Price relationships|Relations entre prix|Relazioni tra prezzi'), 'emoji': '🔗', 'blocks': out}
 
+# ---------------- 17-oct: lo de la web de hoy, para la app ----------------
+EUROZONE = ['AT', 'BE', 'BG', 'HR', 'FI', 'FR', 'DE', 'EL', 'IE', 'IT', 'LT', 'NL', 'PT', 'SK', 'SI']
+EU_CROPS = [('C0000', '🌾', 'Cereales (grano)|Cereals (grain)|Céréales (grain)|Cereali (granella)'), ('C1110', '🌾', 'Trigo blando|Common wheat|Blé tendre|Frumento tenero'), ('C1120', '🌾', 'Trigo duro|Durum wheat|Blé dur|Frumento duro'),
+    ('C1200', '🌾', 'Centeno|Rye|Seigle|Segale'), ('C1300', '🌾', 'Cebada|Barley|Orge|Orzo'), ('C1500', '🌽', 'Maíz grano|Grain maize|Maïs grain|Mais da granella'), ('R1000', '🥔', 'Patata|Potatoes|Pomme de terre|Patata'),
+    ('R2000', '🍬', 'Remolacha azucarera|Sugar beet|Betterave sucrière|Barbabietola da zucchero'), ('I1110', '🌼', 'Colza|Rapeseed|Colza|Colza'), ('I1120', '🌻', 'Girasol|Sunflower|Tournesol|Girasole'), ('I1130', '🫘', 'Soja|Soya|Soja|Soia'),
+    ('P0000', '🫛', 'Leguminosas grano y proteaginosas|Dry pulses and protein crops|Légumineuses à grains et protéagineux|Legumi secchi e proteaginose'), ('G3000', '🌽', 'Maíz forrajero|Green maize|Maïs fourrage|Mais da foraggio'),
+    ('T0000', '🍊', 'Cítricos|Citrus|Agrumes|Agrumi'), ('O1000', '🫒', 'Olivar|Olives|Oliviers|Olivo')]
+def region_names():
+    import re
+    txt = (ROOT / 'js' / 'region-names.js').read_text(encoding='utf-8'); out = {}
+    for m in re.finditer(r"var ([A-Z]{2}) = \{(.*?)\};", txt, re.S):
+        out[m.group(1)] = {k: v for k, v in re.findall(r"([A-Za-z0-9_]+): '([^']*)'", m.group(2))}
+    return out
+def rname(RN, cc, rid):
+    v = RN.get(cc, {}).get(rid)
+    if not v: return {l: rid for l in L4}
+    p = v.split('|'); en = p[0]; es = p[1] if len(p) > 1 else en; fr = p[2] if len(p) > 2 else en; it = p[3] if len(p) > 3 else en
+    return {'es': es, 'en': en, 'fr': fr, 'it': it}
+def rendimientos_eu():
+    RN = region_names(); out = []
+    for cc in EUROZONE:
+        d = j('eu-regions-%s.json' % cc.lower())
+        if not d or not d.get('regions'): continue
+        regs = d['regions']; n = len(regs)
+        for code, emo, name in EU_CROPS:
+            def nat(k):
+                by = {}
+                for r in regs.values():
+                    for y, v in (r.get('crops', {}).get(code, {}).get(k) or []):
+                        if v is None: continue
+                        e = by.setdefault(y, [0.0, 0]); e[0] += v; e[1] += 1
+                return [[str(y), round(by[y][0], 1)] for y in sorted(by) if by[y][1] == n]
+            P, A = [x for x in nat('prod') if x[0] >= '2005'], [x for x in nat('area') if x[0] >= '2005']
+            if len(P) < 2 or len(A) < 2: continue
+            am = dict(A); Y = [[y, round(v / am[y] * 1000)] for y, v in P if am.get(y)]
+            last = P[-1][0]; prevP = dict(P).get(str(int(last) - 1)); prevY = dict(Y).get(str(int(last) - 1))
+            ry, rp = [], []
+            for rid, r in regs.items():
+                c = r.get('crops', {}).get(code, {}); pv = dict((str(a), b) for a, b in (c.get('prod') or [])); av = dict((str(a), b) for a, b in (c.get('area') or []))
+                if pv.get(last) is not None: rp.append((rname(RN, cc, rid), pv[last]))
+                if pv.get(last) is not None and av.get(last): ry.append((rname(RN, cc, rid), round(pv[last] / av[last] * 1000)))
+            ry.sort(key=lambda x: -x[1]); rp.sort(key=lambda x: -x[1])
+            lab = t4(name); title = {l: emo + ' ' + lab[l] for l in L4}
+            out.append(block('rd-%s-%s' % (cc, code), cc, title, asOf=last,
+                stats=[stat('Producción|Production|Production|Produzione', P[-1][1], 'kt', 0, chg(pct(P[-1][1], prevP), str(int(last) - 1))),
+                       stat('Superficie|Area|Surface|Superficie', dict(A).get(last), 'kha', 0),
+                       stat('Rendimiento (calculado)|Yield (calculated)|Rendement (calculé)|Resa (calcolata)', dict(Y).get(last), 'kg/ha', 0, chg(pct(dict(Y).get(last), prevY), str(int(last) - 1)))],
+                charts=[chart('Producción nacional|National production|Production nationale|Produzione nazionale', 'kt', [('Producción|Production|Production|Produzione', P)]),
+                        chart('Rendimiento nacional (calculado)|National yield (calculated)|Rendement national (calculé)|Resa nazionale (calcolata)', 'kg/ha', [('Rendimiento|Yield|Rendement|Resa', Y)])],
+                bars=[bars('Rendimiento por región · ' + last + '|Yield by region · ' + last + '|Rendement par région · ' + last + '|Resa per regione · ' + last, 'kg/ha', ry, 0),
+                      bars('Producción por región · ' + last + '|Production by region · ' + last + '|Production par région · ' + last + '|Produzione per regione · ' + last, 'kt', rp, 0)],
+                note=t4('Eurostat publica superficie (miles de ha) y producción (miles de t) por región; el rendimiento se calcula aquí como producción ÷ superficie. El total nacional suma las regiones solo en los años en que todas tienen dato.|Eurostat publishes area (thousand ha) and production (thousand t) by region; yield is calculated here as production ÷ area. The national total adds up regions only in years when all of them have data.|Eurostat publie la surface (milliers d’ha) et la production (milliers de t) par région ; le rendement est calculé ici comme production ÷ surface. Le total national additionne les régions uniquement les années où toutes ont une donnée.|Eurostat pubblica superficie (migliaia di ha) e produzione (migliaia di t) per regione; la resa è calcolata qui come produzione ÷ superficie. Il totale nazionale somma le regioni solo negli anni in cui tutte hanno il dato.'),
+                source={'name': 'Eurostat (apro_cpshr)', 'url': 'https://ec.europa.eu/eurostat/databrowser/view/apro_cpshr/default/table'}))
+    return {'id': 'rendimientos', 'title': t4('Rendimientos por región (zona euro)|Yields by region (euro area)|Rendements par région (zone euro)|Rese per regione (area euro)'), 'emoji': '🌾', 'blocks': out}
+
+def _months_back(last, n):
+    y, m = int(last[:4]), int(last[5:7]); out = []
+    for i in range(n):
+        out.append('%04d-%02d' % (y, m)); m -= 1
+        if m == 0: y, m = y - 1, 12
+    return out[::-1]
+MON_GROUPS = {'nitrogen': 'Abonos nitrogenados|Nitrogen fertilisers|Engrais azotés|Concimi azotati', 'pk': 'Fósforo y potasio|Phosphorus and potassium|Phosphore et potasse|Fosforo e potassio',
+    'compound': 'Abonos complejos|Compound fertilisers|Engrais composés|Concimi complessi', 'feed': 'Piensos y forrajes|Feed and fodder|Aliments et fourrages|Mangimi e foraggi', 'energy': 'Energía|Energy|Énergie|Energia'}
+def monitor_insumos():
+    d = j('views/input-monitor.json')
+    if not d: return []
+    out = []
+    def pts(x): return [[p, v] for p, v in zip(_months_back(x['last'], len(x['spark'])), x['spark']) if v is not None]
+    if d.get('ratios'):
+        rs = d['ratios']
+        out.append(block('mon-ratio', 'ES', 'Cuánto fertilizante compra el grano|How much fertiliser grain buys|Combien d’engrais achète le grain|Quanto fertilizzante compra il grano', asOf=max(r['last'] for r in rs),
+            charts=[chart('Kg de abono por cada 100 kg de grano|Kg of fertiliser per 100 kg of grain|Kg d’engrais pour 100 kg de grain|Kg di concime per 100 kg di grano', 'kg/100 kg', [({l: r['grainName'][l] + ' → ' + r['fertName'][l] for l in L4}, pts(r)) for r in rs])],
+            bars=[bars('Frente a hace un año (%)|Vs a year earlier (%)|Sur un an (%)|Rispetto a un anno prima (%)', '%', [({l: r['grainName'][l] + ' → ' + r['fertName'][l] for l in L4}, r.get('yoy')) for r in rs], 1)],
+            note=t4('Más kilos = el grano compra más abono (mejor para el agricultor). Precios pagados y percibidos del MAPA.|More kilos = grain buys more fertiliser (better for the farmer). MAPA prices paid and received.|Plus de kilos = le grain achète plus d’engrais (mieux pour l’agriculteur). Prix payés et perçus du MAPA.|Più chili = il grano compra più concime (meglio per l’agricoltore). Prezzi pagati e ricevuti del MAPA.'),
+            source={'name': 'MAPA', 'url': 'https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/economia/precios-pagados-precios-percibidos/'}))
+    for g in d['groups']:
+        its = [x for x in g['items'] if x.get('spark')]
+        if not its: continue
+        out.append(block('mon-' + g['id'], 'ES', MON_GROUPS.get(g['id'], g['id']), asOf=max(x['last'] for x in its),
+            stats=[stat({l: x['name'][l] for l in L4}, x['value'], x['unit'], 2, chg(x.get('yoy'))) for x in its[:4]],
+            charts=[chart('Evolución (precio pagado por el agricultor)|Trend (price paid by the farmer)|Évolution (prix payé par l’agriculteur)|Andamento (prezzo pagato dall’agricoltore)', its[0]['unit'], [({l: x['name'][l] for l in L4}, pts(x)) for x in its])],
+            bars=[bars('Frente a hace un año (%)|Vs a year earlier (%)|Sur un an (%)|Rispetto a un anno prima (%)', '%', [({l: x['name'][l] for l in L4}, x.get('yoy')) for x in its], 1)],
+            source={'name': 'MAPA', 'url': 'https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/economia/precios-pagados-precios-percibidos/'}))
+    return out
+
+FS = {'LIVE': 'Recién publicado|Just released|Tout juste publié|Appena pubblicato', 'FRESH': 'Al día|Up to date|À jour|Aggiornato', 'EXPECTED_DELAY': 'Retraso habitual|Usual delay|Retard habituel|Ritardo abituale',
+    'DELAYED': 'Con retraso|Delayed|En retard|In ritardo', 'STALE': 'Desactualizado|Stale|Obsolète|Obsoleto', 'HISTORICAL': 'Histórica|Historical|Historique|Storica', 'DISCONTINUED': 'Discontinuada|Discontinued|Arrêtée|Interrotta', 'PENDING': 'Pendiente|Pending|En attente|In sospeso'}
+def observatorio():
+    d = j('observatory.json')
+    if not d: return None
+    obs = d['observations']; LB = d['labels']; RG = d['regions']
+    def nm(o): p = LB.get(o['product'], {}); r = RG.get(o['region'], {}); return {l: (p.get(l) or o['product']) + ' · ' + (r.get(l) or o['region'].upper()) for l in L4}
+    new = sorted([o for o in obs if o.get('isNew')], key=lambda o: o.get('publicationDate') or o.get('snapshotDate') or '', reverse=True)
+    mv = sorted([o for o in obs if (o.get('moves') or {}).get('d7')], key=lambda o: -abs(o['moves']['d7']['pct']))
+    late = [o for o in obs if o['freshness'] not in ('LIVE', 'FRESH')]
+    ps = d['pipelines']['summary']; bad = ps.get('error', 0) + ps.get('late', 0)
+    by = {}
+    for o in obs: by[o['freshness']] = by.get(o['freshness'], 0) + 1
+    gen = d['generatedAt'][:10]
+    out = [block('obs-sum', 'WORLD', 'Resumen|Summary|Résumé|Riepilogo', asOf=gen,
+        stats=[stat('Datos nuevos (últimos %d días)|New data (last %d days)|Nouvelles données (%d derniers jours)|Dati nuovi (ultimi %d giorni)' % ((d['newDays'],) * 4), len(new), '', 0),
+               stat('Precios con retraso|Late prices|Prix en retard|Prezzi in ritardo', len(late), '/ %d' % len(obs), 0),
+               stat('Descargas que necesitan atención|Downloads needing attention|Téléchargements à surveiller|Download da controllare', bad, '/ %d' % sum(ps.values()), 0)],
+        bars=[bars('¿Están al día los precios?|Are prices up to date?|Les prix sont-ils à jour ?|I prezzi sono aggiornati?', '', [(FS.get(k, k), by[k]) for k in FS if by.get(k)], 0)],
+        note=t4('Qué se ha actualizado, qué se ha movido y qué llega tarde. Todo sale de fuentes oficiales, con su fecha.|What was updated, what moved and what is late. Everything comes from official sources, with its date.|Ce qui a été mis à jour, ce qui a bougé et ce qui est en retard. Tout provient de sources officielles, avec sa date.|Cosa è stato aggiornato, cosa si è mosso e cosa è in ritardo. Tutto proviene da fonti ufficiali, con la sua data.'),
+        link='https://dehesaindex.com/observatorio')]
+    if new: out.append(block('obs-new', 'WORLD', 'Datos nuevos|New data|Nouvelles données|Dati nuovi', asOf=gen, bars=[bars('Cambio frente al dato anterior (%)|Change vs previous figure (%)|Variation par rapport à la donnée précédente (%)|Variazione rispetto al dato precedente (%)', '%', [(nm(o), o.get('changePct')) for o in new], 2)]))
+    if mv: out.append(block('obs-moves', 'WORLD', 'Lo que más se ha movido (semana)|Biggest moves (week)|Ce qui a le plus bougé (semaine)|Cosa si è mosso di più (settimana)', asOf=gen, bars=[bars('Cambio en la semana (%)|Weekly change (%)|Variation sur la semaine (%)|Variazione settimanale (%)', '%', [(nm(o), o['moves']['d7']['pct']) for o in mv[:30]], 2)]))
+    if late: out.append(block('obs-late', 'WORLD', 'Precios que llegan tarde|Prices running late|Prix en retard|Prezzi in ritardo', asOf=gen, bars=[bars('Días desde el último dato|Days since the latest figure|Jours depuis la dernière donnée|Giorni dall’ultimo dato', 'd', [(nm(o), o.get('ageDays')) for o in late], 0)]))
+    return {'id': 'observatorio', 'title': t4('Observatorio de datos|Data observatory|Observatoire des données|Osservatorio dei dati'), 'emoji': '🔭', 'blocks': out}
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     gen = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     idx = {}
     keep = {'index.json'}
-    for fn in (analisis, relaciones, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, regiones_pl, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
+    for fn in (rendimientos_eu, observatorio, analisis, relaciones, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, regiones_pl, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
         try: doc = fn()
         except Exception as e: print('ERROR en', fn.__name__, repr(e)); raise
         if not doc or not doc['blocks']: print('sin datos:', fn.__name__); continue
