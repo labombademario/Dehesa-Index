@@ -1,0 +1,13 @@
+2026-10-18T14:03:20Z
+enlaces ARC-CO [2022, 2023, 2024, 2025, 2026] PLC [2022, 2023, 2024, 2025, 2026]
+ARC-CO 2022 17882 filas arcco_2022.xlsx
+ARC-CO 2023 18153 filas arcco_2023.xlsx
+ARC-CO 2024 18342 filas arcco_2024.xlsx
+ARC-CO 2025 21699 filas arcco_2025.xlsx
+ARC-CO 2026 18850 filas arcco_2026.xlsx
+PLC 2022 23 cultivos plc_2022.xlsx
+PLC 2023 23 cultivos plc_2023.xlsx
+PLC 2024 23 cultivos plc_2024.xlsx
+PLC 2025 23 cultivos plc_2025.xlsx
+PLC 2026 23 cultivos plc_2026.xlsx
+estados 49
