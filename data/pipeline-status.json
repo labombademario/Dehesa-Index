@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T18:16:00Z",
+ "generatedAt": "2026-10-18T18:37:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 215,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "b5890652",
+   "sha": "20b41fa0",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/6c1ded06-b6d4-424b-acc6-21ea823bfe27",
-   "completedAt": "2026-10-18T18:05:51Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5a0975e3-157a-4bdc-996f-08f13f16d9aa",
+   "completedAt": "2026-10-18T18:31:24Z"
   },
-  "lagHours": null,
-  "prodGeneratedAt": null,
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-18T15:39:29.027825+00:00",
   "repoGeneratedAt": "2026-10-18T15:39:29.027825+00:00",
-  "checkedAt": "2026-10-18T18:16:00Z"
+  "checkedAt": "2026-10-18T18:37:00Z"
  },
  "pipelines": [
   {
@@ -3202,7 +3202,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-18T18:17:00Z",
+   "nextRun": "2026-10-18T21:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -3233,8 +3233,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39141079784"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -3440,7 +3440,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-18T15:36:52Z"
+     "lastChange": "2026-10-18T18:19:21Z"
     },
     {
      "path": "data/data-quality.json",
@@ -3448,7 +3448,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-18T15:37:37Z"
+     "lastChange": "2026-10-18T18:30:35Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3566,8 +3566,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39141039430"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
