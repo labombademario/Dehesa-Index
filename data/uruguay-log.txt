@@ -1,73 +1,73 @@
 URSEA fila 16 descartada: Inicio 2022-12-26 posterior a Fin 2022-12-25 (no se corrige la fecha)
 MGAP tierra sale: anios con pocos departamentos, descartados: [2006]
 MGAP tierra rent: anios con pocos departamentos, descartados: [2007]
-DICOSE se-snig-2016: sin datosanimales.csv utilizable
-DICOSE se-snig-2017: sin datosanimales.csv utilizable
-DICOSE -dicose-snig: sin datosanimales.csv utilizable
-DICOSE se-snig-2019: sin datosanimales.csv utilizable
-DICOSE se-snig-2020: sin datosanimales.csv utilizable
-Grilla ad/inia_gras_pad2000.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2001.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2002.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2003.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2004.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2005.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2006.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2007.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2008.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2009.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2010.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2011.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2012.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2013.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2014.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2015.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2016.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2017.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2018.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2019.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2020.csv: cabecera inesperada
-Grilla ad/inia_gras_pad2022.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2000.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2001.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2002.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2003.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2004.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2005.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2006.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2007.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2008.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2009.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2010.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2011.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2012.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2013.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2014.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2015.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2016.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2017.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2018.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2019.csv: cabecera inesperada
-Grilla ad/inia_gras_ibh2020.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2000.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2001.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2002.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2003.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2004.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2005.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2006.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2007.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2008.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2009.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2010.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2011.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2012.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2013.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2014.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2015.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2016.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2017.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2018.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2019.csv: cabecera inesperada
-Grilla ad/inia_gras_anr2020.csv: cabecera inesperada
+DICOSE se-snig-2016: sin datosanimales.csv utilizable | e/download/datosanimales.csv: faltan ['Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD']; columnas ['ATRIBUTO', 'XML', 'DESCRIPCION ', 'ORIGEN', 'LIMITANTES CONOCIDAS', 'NOTAS']
+DICOSE se-snig-2017: sin datosanimales.csv utilizable | 5/download/datosanimales.csv: faltan ['Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD']; columnas ['ATRIBUTO', 'XML', 'DESCRIPCION ', 'ORIGEN', 'LIMITANTES CONOCIDAS', 'NOTAS']
+DICOSE -dicose-snig: sin datosanimales.csv utilizable | 9/download/datosanimales.csv: faltan ['Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD']; columnas ['ATRIBUTO', 'XML', 'DESCRIPCION ', 'ORIGEN', 'LIMITANTES CONOCIDAS', 'NOTAS']
+DICOSE se-snig-2019: sin datosanimales.csv utilizable | 8/download/datosanimales.csv: faltan ['Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD']; columnas ['ATRIBUTO', 'XML', 'DESCRIPCION ', 'ORIGEN', 'LIMITANTES CONOCIDAS', 'NOTAS']
+DICOSE se-snig-2020: sin datosanimales.csv utilizable | 0/download/datosanimales.csv: faltan ['Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD']; columnas ['ATRIBUTO', 'XML', 'DESCRIPCION ', 'ORIGEN', 'LIMITANTES CONOCIDAS', 'NOTAS']
+Grilla ad/inia_gras_pad2000.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2000_011', '2000_012', '2000_013'])
+Grilla ad/inia_gras_pad2001.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2001_011', '2001_012', '2001_013'])
+Grilla ad/inia_gras_pad2002.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2002_011', '2002_012', '2002_013'])
+Grilla ad/inia_gras_pad2003.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2003_011', '2003_012', '2003_013'])
+Grilla ad/inia_gras_pad2004.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2004_011', '2004_012', '2004_013'])
+Grilla ad/inia_gras_pad2005.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2005_011', '2005_012', '2005_013'])
+Grilla ad/inia_gras_pad2006.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2006_011', '2006_012', '2006_013'])
+Grilla ad/inia_gras_pad2007.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2007_011', '2007_012', '2007_013'])
+Grilla ad/inia_gras_pad2008.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2008_011', '2008_012', '2008_013'])
+Grilla ad/inia_gras_pad2009.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2009_011', '2009_012', '2009_013'])
+Grilla ad/inia_gras_pad2010.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2010_011', '2010_012', '2010_013'])
+Grilla ad/inia_gras_pad2011.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2011_011', '2011_012', '2011_013'])
+Grilla ad/inia_gras_pad2012.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2012_011', '2012_012', '2012_013'])
+Grilla ad/inia_gras_pad2013.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2013_011', '2013_012', '2013_013'])
+Grilla ad/inia_gras_pad2014.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2014_011', '2014_012', '2014_013'])
+Grilla ad/inia_gras_pad2015.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2015_011', '2015_012', '2015_013'])
+Grilla ad/inia_gras_pad2016.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2016_011', '2016_012', '2016_013'])
+Grilla ad/inia_gras_pad2017.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2017_011', '2017_012', '2017_013'])
+Grilla ad/inia_gras_pad2018.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2018_011', '2018_012', '2018_013'])
+Grilla ad/inia_gras_pad2019.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2019_011', '2019_012', '2019_013'])
+Grilla ad/inia_gras_pad2020.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2020_011', '2020_012', '2020_013'])
+Grilla ad/inia_gras_pad2022.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2022_011', '2022_012', '2022_013'])
+Grilla ad/inia_gras_ibh2000.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2000_011', '2000_012', '2000_013'])
+Grilla ad/inia_gras_ibh2001.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2001_011', '2001_012', '2001_013'])
+Grilla ad/inia_gras_ibh2002.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2002_011', '2002_012', '2002_013'])
+Grilla ad/inia_gras_ibh2003.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2003_011', '2003_012', '2003_013'])
+Grilla ad/inia_gras_ibh2004.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2004_011', '2004_012', '2004_013'])
+Grilla ad/inia_gras_ibh2005.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2005_011', '2005_012', '2005_013'])
+Grilla ad/inia_gras_ibh2006.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2006_011', '2006_012', '2006_013'])
+Grilla ad/inia_gras_ibh2007.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2007_011', '2007_012', '2007_013'])
+Grilla ad/inia_gras_ibh2008.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2008_011', '2008_012', '2008_013'])
+Grilla ad/inia_gras_ibh2009.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2009_011', '2009_012', '2009_013'])
+Grilla ad/inia_gras_ibh2010.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2010_011', '2010_012', '2010_013'])
+Grilla ad/inia_gras_ibh2011.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2011_011', '2011_012', '2011_013'])
+Grilla ad/inia_gras_ibh2012.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2012_011', '2012_012', '2012_013'])
+Grilla ad/inia_gras_ibh2013.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2013_011', '2013_012', '2013_013'])
+Grilla ad/inia_gras_ibh2014.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2014_011', '2014_012', '2014_013'])
+Grilla ad/inia_gras_ibh2015.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2015_011', '2015_012', '2015_013'])
+Grilla ad/inia_gras_ibh2016.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2016_011', '2016_012', '2016_013'])
+Grilla ad/inia_gras_ibh2017.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2017_011', '2017_012', '2017_013'])
+Grilla ad/inia_gras_ibh2018.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2018_011', '2018_012', '2018_013'])
+Grilla ad/inia_gras_ibh2019.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2019_011', '2019_012', '2019_013'])
+Grilla ad/inia_gras_ibh2020.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2020_011', '2020_012', '2020_013'])
+Grilla ad/inia_gras_anr2000.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2000_011', '2000_012', '2000_013'])
+Grilla ad/inia_gras_anr2001.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2001_011', '2001_012', '2001_013'])
+Grilla ad/inia_gras_anr2002.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2002_011', '2002_012', '2002_013'])
+Grilla ad/inia_gras_anr2003.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2003_011', '2003_012', '2003_013'])
+Grilla ad/inia_gras_anr2004.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2004_011', '2004_012', '2004_013'])
+Grilla ad/inia_gras_anr2005.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2005_011', '2005_012', '2005_013'])
+Grilla ad/inia_gras_anr2006.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2006_011', '2006_012', '2006_013'])
+Grilla ad/inia_gras_anr2007.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2007_011', '2007_012', '2007_013'])
+Grilla ad/inia_gras_anr2008.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2008_011', '2008_012', '2008_013'])
+Grilla ad/inia_gras_anr2009.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2009_011', '2009_012', '2009_013'])
+Grilla ad/inia_gras_anr2010.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2010_011', '2010_012', '2010_013'])
+Grilla ad/inia_gras_anr2011.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2011_011', '2011_012', '2011_013'])
+Grilla ad/inia_gras_anr2012.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2012_011', '2012_012', '2012_013'])
+Grilla ad/inia_gras_anr2013.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2013_011', '2013_012', '2013_013'])
+Grilla ad/inia_gras_anr2014.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2014_011', '2014_012', '2014_013'])
+Grilla ad/inia_gras_anr2015.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2015_011', '2015_012', '2015_013'])
+Grilla ad/inia_gras_anr2016.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2016_011', '2016_012', '2016_013'])
+Grilla ad/inia_gras_anr2017.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2017_011', '2017_012', '2017_013'])
+Grilla ad/inia_gras_anr2018.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2018_011', '2018_012', '2018_013'])
+Grilla ad/inia_gras_anr2019.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2019_011', '2019_012', '2019_013'])
+Grilla ad/inia_gras_anr2020.csv: cabecera inesperada (primeras columnas: ['Longitud', 'Latitud', '2020_011', '2020_012', '2020_013'])
 series guardadas: 30
