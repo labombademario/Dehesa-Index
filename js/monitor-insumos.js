@@ -135,9 +135,9 @@
   function dec(v, u) { if (u && String(u).indexOf('índice') === 0) return 1; if (u === 'USD/t') return v >= 100 ? 0 : 1; return v < 10 ? 3 : 2; }
 
   // barra de posición: 0 = el más barato de la ventana, 100 = el más caro
-  function bar(p, w, inverse) {
+  function bar(p, w, inverse, sid) {
     var c = inverse ? (p >= 67 ? 'var(--positive)' : p <= 33 ? 'var(--negative)' : '#8f5f12') : (p >= 67 ? 'var(--negative)' : p <= 33 ? 'var(--positive)' : '#8f5f12');
-    return '<div class="mi-pos" title="' + esc(w.pctOf + ' ' + p) + '"><div class="mi-track"><span class="mi-dot" style="left:' + Math.max(0, Math.min(100, p)) + '%;background:' + c + '"></span></div>' +
+    return '<div class="mi-pos"' + (sid ? ' role="button" tabindex="0" data-sp="' + esc(sid) + '" aria-expanded="false" aria-label="' + esc(w.seeChart + ': ' + p) + '" style="cursor:pointer"' : '') + ' title="' + esc((sid ? w.seeChart + ' · ' : '') + w.pctOf + ' ' + p) + '"><div class="mi-track"><span class="mi-dot" style="left:' + Math.max(0, Math.min(100, p)) + '%;background:' + c + '"></span></div>' +
       '<div class="mi-pos-l"><span>' + esc(inverse ? '' : w.cheap) + '</span><strong style="color:' + c + '">' + p + '</strong><span>' + esc(inverse ? '' : w.dear) + '</span></div></div>';
   }
   function spark(vals) {
@@ -148,6 +148,7 @@
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" aria-hidden="true"><path d="' + d + '" fill="none" stroke="var(--text-muted)" stroke-width="1.4"/><circle cx="' + (lx - 1.5) + '" cy="' + ly + '" r="2.6" fill="var(--text)"/></svg>';
   }
 
+  function rid(r) { return 'r|' + r.grain + '|' + r.fert; }
   function ratioBlock(w) {
     var X1 = xt(), I = isIdx(), grains = [], seen = {};
     DOC.ratios.forEach(function (r) { if (!seen[r.grain]) { seen[r.grain] = 1; grains.push(r); } });
@@ -160,8 +161,9 @@
     rows.forEach(function (r) {
       var lab = r.pct <= 20 ? w.rLow : r.pct >= 80 ? w.rHigh : w.rMid;
       h += '<tr><td><strong>' + esc(nm(r.fertName)) + '</strong><div class="mi-m">' + esc(per(r.last)) + '</div></td><td><strong>' + esc(num(r.value, 1)) + esc(u) + '</strong></td>' +
-        '<td>' + bar(r.pct, w, true) + '<div class="mi-m">' + esc(lab) + '</div></td><td>' + esc(num(r.min[1], 1)) + esc(u) + '<div class="mi-m">' + esc(per(r.min[0])) + '</div></td>' +
-        '<td>' + esc(num(r.max[1], 1)) + esc(u) + '<div class="mi-m">' + esc(per(r.max[0])) + '</div></td></tr>';
+        '<td>' + bar(r.pct, w, true, r.spark && r.spark.length > 2 ? rid(r) : '') + '<div class="mi-m">' + esc(lab) + '</div></td><td>' + esc(num(r.min[1], 1)) + esc(u) + '<div class="mi-m">' + esc(per(r.min[0])) + '</div></td>' +
+        '<td>' + esc(num(r.max[1], 1)) + esc(u) + '<div class="mi-m">' + esc(per(r.max[0])) + '</div></td></tr>' +
+        '<tr class="mi-ch" data-ch="' + esc(rid(r)) + '" hidden><td colspan="5" style="padding:4px 6px 14px"></td></tr>';
     });
     return h + '</tbody></table></div></section>';
   }
@@ -173,17 +175,18 @@
       h += '<tr><td><strong>' + esc(nm(x.name)) + '</strong></td>' +
         '<td><strong>' + esc(num(x.value, dec(x.value, x.unit))) + '</strong> <span class="mi-m">' + esc(unitShort(x.unit)) + '</span><div class="mi-m">' + esc(per(x.last)) + (late ? ' · <span style="color:#8f5f12">' + esc(w.late) + '</span>' : '') + '</div></td>' +
         '<td style="color:' + (x.yoy > 0 ? 'var(--negative)' : x.yoy < 0 ? 'var(--positive)' : 'inherit') + ';font-weight:600">' + esc(pct(x.yoy)) + '</td>' +
-        '<td>' + bar(x.pct, w, false) + yr + '</td>' +
+        '<td>' + bar(x.pct, w, false, x.spark && x.spark.length > 2 ? x.id : '') + yr + '</td>' +
         '<td>' + esc(num(x.min[1], dec(x.min[1], x.unit))) + '<div class="mi-m">' + esc(per(x.min[0])) + '</div></td><td>' + esc(num(x.max[1], dec(x.max[1], x.unit))) + '<div class="mi-m">' + esc(per(x.max[0])) + '</div></td>' +
         '<td>' + (x.spark && x.spark.length > 2 ? '<button type="button" class="mi-sp" data-sp="' + esc(x.id) + '" aria-expanded="false" title="' + esc(w.seeChart) + '" aria-label="' + esc(w.seeChart + ': ' + nm(x.name)) + '" style="background:none;border:0;padding:2px;cursor:pointer;font:inherit;color:inherit;text-align:left">' + spark(x.spark) + '<div class="mi-m" style="margin:0">' + esc(w.seeChart) + ' ▾</div></button>' : '') + '</td></tr>' +
         '<tr class="mi-ch" data-ch="' + esc(x.id) + '" hidden><td colspan="7" style="padding:4px 6px 14px"></td></tr>';
     });
     return h + '</tbody></table></div></section>';
   }
-  function findItem(id) { var r = null; [DOC, WORLD].forEach(function (d) { if (d) d.groups.forEach(function (g) { g.items.forEach(function (x) { if (x.id === id) r = x; }); }); }); return r; }
+  function findItem(id) { var r = null; if (id.indexOf('r|') === 0) { (DOC.ratios || []).forEach(function (q) { if (rid(q) === id) r = q; }); if (r) r.name = r.fertName; return r; } [DOC, WORLD].forEach(function (d) { if (d) d.groups.forEach(function (g) { g.items.forEach(function (x) { if (x.id === id) r = x; }); }); }); return r; }
   function toggleChart(id, btn) {
     var row = document.querySelector('tr[data-ch="' + id + '"]'); if (!row) return;
-    var open = row.hasAttribute('hidden'); if (!open) { row.setAttribute('hidden', ''); btn.setAttribute('aria-expanded', 'false'); return; }
+    var open = row.hasAttribute('hidden'); var all = document.querySelectorAll('[data-sp="' + id + '"]'); function ae(v) { Array.prototype.forEach.call(all, function (e) { e.setAttribute('aria-expanded', v); }); }
+    if (!open) { row.setAttribute('hidden', ''); ae('false'); return; }
     var x = findItem(id), w = t(), cell = row.firstChild; if (!x || !x.spark) return;
     var pts = [], n = x.spark.length, y = +x.last.slice(0, 4), qm = /-Q([1-4])$/.exec(x.last), m = qm ? +qm[1] * 3 - 1 : +x.last.slice(5, 7) - 1, step = qm ? 3 : 1, i, d, lab, qq = qm ? +qm[1] : 0;
     for (i = n - 1; i >= 0; i--) {
@@ -192,7 +195,7 @@
       m -= step; if (m < 0) { m += 12; y--; } if (qm) { qq--; if (qq < 1) qq = 4; }
     }
     cell.innerHTML = '<div style="font-weight:600;margin:6px 0">' + esc(nm(x.name)) + ' · ' + esc(unitShort(x.unit)) + '</div>' + (window.DehesaChart && window.DehesaChart.render && pts.length > 2 ? window.DehesaChart.render({ series: [{ name: nm(x.name), color: '#8a2d2d', pts: pts }], xMode: 'time', yTitle: unitShort(x.unit), aria: nm(x.name), zero: false, noLegend: true, vFmt: function (v) { return v == null ? '—' : num(v, dec(v, x.unit)); } }) : '');
-    row.removeAttribute('hidden'); btn.setAttribute('aria-expanded', 'true');
+    row.removeAttribute('hidden'); ae('true');
   }
   function chips() {
     var X1 = xt(), list = [{ cc: 'ES' }].concat((INDEX && INDEX.countries) || []);
@@ -212,7 +215,7 @@
     h += (I ? X1.noteI.map(Y).concat([X1.srcI[CC === 'FR' ? 'FR' : 'EU']]) : w.note).concat(WORLD ? [X1.wNote] : []).map(function (p) { return '<p class="di-movers-hint" style="max-width:820px">' + esc(p) + '</p>'; }).join('');
     h += '<section class="di-card di-emp-cta" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaBtn) + '</a></section>';
     root.innerHTML = h; bindChips(root);
-    Array.prototype.forEach.call(root.querySelectorAll('.mi-sp'), function (b) { b.onclick = function () { toggleChart(b.getAttribute('data-sp'), b); }; });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-sp]'), function (b) { b.onclick = function () { toggleChart(b.getAttribute('data-sp'), b); }; b.onkeydown = function (e) { if (b.getAttribute('role') === 'button' && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggleChart(b.getAttribute('data-sp'), b); } }; });
     var F = S.frame, bh = document.getElementById('mi-bar'), secs = [];
     if (root.querySelector('#mi-ratio')) secs.push(['mi-ratio', w.barShort]);
     DOC.groups.forEach(function (g) { if (g.items.length) secs.push(['mi-g-' + g.id, w.g[g.id] || X1.g[g.id] || g.id]); });
