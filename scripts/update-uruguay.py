@@ -236,6 +236,8 @@ def read_grid(r):
     if b is None: return None
     if b.lstrip().startswith(b'<'): log('Grilla %s: contenido no es CSV' % (r.get('url') or '')[-24:]); return None
     rd = csv.DictReader(io.StringIO(b.decode('utf-8-sig')))
+    fn = rd.fieldnames or []
+    if fn[:2] == ['Longitud', 'Latitud']: rd.fieldnames = ['id'] + fn   # formato 2000-2020: sin columna id; las celdas se identifican por su orden
     if not rd.fieldnames or rd.fieldnames[:3] != ['id', 'Longitud', 'Latitud']: log('Grilla %s: cabecera inesperada (primeras columnas: %s)' % ((r.get('url') or '')[-24:], (rd.fieldnames or [])[:5])); return None
     rows = list(rd)
     return rd.fieldnames, rows
@@ -255,6 +257,7 @@ def inia_grids():
             except Exception as e: log('Grilla %s %s: fallo %s' % (key, m.group(1), e)); continue
             if not g: continue
             cols, rows = g
+            if m.group(1) in ('2000', '2010', '2020') and not any(re.fullmatch(r'\d{4}_\d{2}0', c) for c in cols[3:]): log('Grilla %s %s: sin columnas mensuales (sufijo 0); columnas %s' % (key, m.group(1), cols[3:9]))
             if len(rows) < 150: log('Grilla %s %s: solo %d celdas, se omite' % (key, m.group(1), len(rows))); continue
             for c in cols[3:]:
                 mm = re.fullmatch(r'(\d{4})_(\d{2})0', c)   # sufijo 0 = promedio/acumulado MENSUAL; 1-3 son decadas
@@ -318,7 +321,9 @@ def dicose():
             for sp, dd in sdep.items(): dep[sp][y] = dict(dd)
             births[y] = sb; got = True
             break
-        if not got and not diag: diag.append('recursos: %s' % [(r.get('url') or '')[-34:] for r in pkg['resources']][:8])
+        if not got:
+            diag = diag[:1] + ['recursos: %s' % [(r.get('url') or '')[-40:] for r in pkg['resources']][:10]]
+        if False: diag.append('recursos: %s' % [(r.get('url') or '')[-34:] for r in pkg['resources']][:8])
         if not got: log('DICOSE %s: sin datosanimales.csv utilizable%s' % (name[-12:], (' | ' + ' | '.join(diag)) if diag else ''))
     for sp in SPECIES:
         yrs = sorted(dep[sp])[-10:]
