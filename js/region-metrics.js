@@ -5,6 +5,7 @@
   var L4 = { en: 0, es: 1, fr: 2, it: 3 }, G = ['#e8f1e4', '#bfdcb8', '#8cc08c', '#4f9a62', '#1f6b43'], O = ['#fdecc8', '#f9c97a', '#ef9b4a', '#d4622d', '#a32d1f'], NODATA = '#e4e4e0';
   var cache = {};
   function get(u) { return cache[u] || (cache[u] = fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function rid(a) { return (/[?&]r=([^&]+)/.exec(a.getAttribute('href') || '') || [])[1] || a.getAttribute('data-r'); }   // el id sale del enlace o, si el mapa no enlaza (Uruguay, Chile), de data-r
   function last(a) { for (var i = (a || []).length - 1; i >= 0; i--) if (a[i][1] != null) return a[i]; return null; }
   function at(a, y) { for (var i = 0; i < (a || []).length; i++) if (+a[i][0] === +y && a[i][1] != null) return a[i][1]; return null; }
   var EU_FILE = { ES: 'es', FR: 'fr', IT: 'it', DE: 'de' };
@@ -52,6 +53,9 @@
     if (cc === 'CA' && id === 'drought') return get('data/canada-drought.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { var r = d.provinces[k].v[d.periods.length - 1]; if (r) v[k] = r[1]; }); return { vals: v, period: d.asOf }; });
     if (cc === 'CA' && id === 'receipts') return get('data/canada-provinces.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { if (k === 'CA') return; var o = d.provinces[k].receipts && d.provinces[k].receipts['total-farm-cash-receipts'], p = o && last(o.pts); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }); return { vals: v, period: per }; });
     if (cc === 'AR') return get('data/ar-provinces.json').then(function (d) { if (!d || !d.provinces) return null; var c = d.lastCampaign; Object.keys(d.provinces).forEach(function (k) { var q = d.provinces[k][id] && d.provinces[k][id][c]; if (q && q[2] > 0) v[k] = q[2] / 1000; }); return { vals: v, period: c }; });
+    if (cc === 'UY') return get('data/uruguay-departments.json').then(function (d) { if (!d) return null;
+      var sp = { cattle: 'cattle', sheep: 'sheep', dairy: 'dairy-cattle' }[id], tab = sp ? d.livestock && d.livestock[sp] : d.land && d.land[id === 'landsale' ? 'sale' : 'rent'], ys = tab ? Object.keys(tab).sort() : [], y = ys[ys.length - 1]; if (!y) return null;
+      Object.keys(tab[y]).forEach(function (k) { var x = tab[y][k]; v[k] = sp ? x / 1000 : x.usdHa; }); return { vals: v, period: y }; });
     if (cc === 'AU') return get('data/au-states.json').then(function (d) { if (!d || !d.states) return null; Object.keys(d.states).forEach(function (k) { var p = d.states[k][id] && last(d.states[k][id]); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }); return { vals: v, period: per }; });
     var f = EU_FILE[cc] || cc.toLowerCase();
     return get('data/eu-regions-' + f + '.json').then(function (d) { if (!d || !d.regions) return null;
@@ -68,19 +72,25 @@
   function breaks(vals, n) { var a = vals.slice().sort(function (x, y) { return x - y; }), b = []; for (var i = 1; i < n; i++) b.push(a[Math.min(a.length - 1, Math.floor(a.length * i / n))]); return b; }
   function fmt(v, m, lg) { try { return v.toLocaleString(lg, { minimumFractionDigits: 0, maximumFractionDigits: m.dec }) + m.unit; } catch (e) { return v + m.unit; } }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  M.UY = [
+    { id: 'cattle', sec: 'live', ramp: G, unit: ' k', label: ['Cattle on holdings, DICOSE (thousand head)', 'Bovinos en los establecimientos, DICOSE (miles de cabezas)', 'Bovins dans les exploitations, DICOSE (milliers de têtes)', 'Bovini negli allevamenti, DICOSE (migliaia di capi)'], dec: 0 },
+    { id: 'sheep', sec: 'live', ramp: G, unit: ' k', label: ['Sheep on holdings, DICOSE (thousand head)', 'Ovinos en los establecimientos, DICOSE (miles de cabezas)', 'Ovins dans les exploitations, DICOSE (milliers de têtes)', 'Ovini negli allevamenti, DICOSE (migliaia di capi)'], dec: 0 },
+    { id: 'dairy', sec: 'live', ramp: G, unit: ' k', label: ['Dairy cattle on holdings, DICOSE (thousand head)', 'Bovinos de leche en los establecimientos, DICOSE (miles de cabezas)', 'Bovins laitiers dans les exploitations, DICOSE (milliers de têtes)', 'Bovini da latte negli allevamenti, DICOSE (migliaia di capi)'], dec: 0 },
+    { id: 'landsale', sec: 'agri', ramp: G, unit: ' USD/ha', label: ['Land sales: average price (USD/ha, MGAP)', 'Compraventas de tierra: precio medio (USD/ha, MGAP)', 'Ventes de terres : prix moyen (USD/ha, MGAP)', 'Compravendite di terreni: prezzo medio (USD/ha, MGAP)'], dec: 0 },
+    { id: 'landrent', sec: 'agri', ramp: G, unit: ' USD/ha/yr', label: ['Land rents: average annual rent (USD/ha/year, MGAP)', 'Arrendamientos de tierra: renta anual media (USD/ha/año, MGAP)', 'Locations de terres : loyer annuel moyen (USD/ha/an, MGAP)', 'Affitti di terreni: canone annuo medio (USD/ha/anno, MGAP)'], dec: 0 }];
   var TXT = { es: { none: 'Sin dato', by: 'Colorear por', as: 'dato de', hl: 'Solo resaltar' }, en: { none: 'No data', by: 'Colour by', as: 'data for', hl: 'Highlight only' }, fr: { none: 'Pas de donnée', by: 'Colorier par', as: 'donnée de', hl: 'Surligner seulement' }, it: { none: 'Nessun dato', by: 'Colora per', as: 'dato del', hl: 'Solo evidenzia' } };
   /* pinta los <path> del svg (cada uno dentro de <a href="...r=ID">) y devuelve el HTML de la leyenda */
   function paint(svg, cc, id, lg, selected) {
     var list = M[cc] || [], m = list.filter(function (x) { return x.id === id; })[0], t = TXT[lg] || TXT.es, li = L4[lg] == null ? 1 : L4[lg];
     var paths = svg.querySelectorAll('a path');
-    var clear = function () { [].forEach.call(paths, function (p) { var a = p.parentNode, r = (/[?&]r=([^&]+)/.exec(a.getAttribute('href')) || [])[1], on = r === selected; p.setAttribute('fill', on ? '#2f6b4a' : '#cfd8cc'); p.setAttribute('stroke', '#fff'); p.setAttribute('stroke-width', '1'); }); };
+    var clear = function () { [].forEach.call(paths, function (p) { var a = p.parentNode, r = rid(a), on = r === selected; p.setAttribute('fill', on ? '#2f6b4a' : '#cfd8cc'); p.setAttribute('stroke', '#fff'); p.setAttribute('stroke-width', '1'); }); };
     if (!m) { clear(); return Promise.resolve(''); }
     return compute(cc, id).then(function (res) {
       if (!res || !Object.keys(res.vals).length) { clear(); return ''; }
       var vals = Object.keys(res.vals).map(function (k) { return res.vals[k]; }), n = Math.min(5, Math.max(1, distinct(vals))), br = breaks(vals, n), miss = 0;
       var cls = function (x) { var c = 0; for (var i = 0; i < br.length; i++) if (x >= br[i]) c++; return Math.min(c, n - 1); };
       [].forEach.call(paths, function (p) {
-        var a = p.parentNode, r = (/[?&]r=([^&]+)/.exec(a.getAttribute('href')) || [])[1], x = res.vals[r], ti = p.querySelector('title'), nm = ti ? ti.getAttribute('data-n') || ti.textContent.split(' — ')[0] : '';
+        var a = p.parentNode, r = rid(a), x = res.vals[r], ti = p.querySelector('title'), nm = ti ? ti.getAttribute('data-n') || ti.textContent.split(' — ')[0] : '';
         if (ti) { ti.setAttribute('data-n', nm); ti.textContent = nm + ' — ' + (x == null ? t.none : fmt(x, m, lg)); }
         p.setAttribute('fill', x == null ? NODATA : m.ramp[Math.round(cls(x) * (m.ramp.length - 1) / Math.max(1, n - 1))]);
         var on = r === selected; p.setAttribute('stroke', on ? '#111' : '#fff'); p.setAttribute('stroke-width', on ? '2.5' : '1'); if (on && a.parentNode) a.parentNode.appendChild(a);
