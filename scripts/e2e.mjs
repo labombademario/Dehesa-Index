@@ -50,6 +50,7 @@ const PAGES = [
   { n: 'europa', url: '/europa.html', crit: ['#eu-sel'] },
   { n: 'lonjas', url: '/lonjas.html', crit: ['#lj-body table'] },
   { n: 'sequia', url: '/sequia.html', crit: [] },
+  { n: 'costes-pais', url: '/costes-pais.html?c=ES', crit: ['#cp-map path', '#cp-panel .cp-tile', '#cp-costes .cp-tbl'] },
   { n: 'pesca', url: '/pesca.html?c=ES', crit: ['#fsh-body .fsh-kpis', '#fsh-body .fsh-tbl'] },
   { n: 'ganaderia', url: '/ganaderia.html', crit: [] },
   { n: 'exportaciones', url: '/exportaciones.html', crit: [] },
