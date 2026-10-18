@@ -529,7 +529,7 @@ def country_macro(doc, errs, warns, stats):
         sp = _u.spec_from_file_location("macro_infl", Path(__file__).resolve().parent / "macro_infl.py"); mi = _u.module_from_spec(sp); sp.loader.exec_module(mi)
         r = mi.one(b)
         if not r or abs(r["v"] - i["v"]) > 0.011 or r["m"] != i.get("m"): errs.append("%s infl: %r no coincide con lo que da cpi.json (%r)" % (cc, i, r))
-    RNG = {"gdp": (1e9, 4e13), "gdppc": (500, 3e5), "pop": (3e5, 1.5e9), "unemp": (0, 40), "agri": (0, 40), "debt": (0, 400), "wageh": (0.5, 100)}
+    RNG = {"gdp": (1e9, 4e13), "gdppc": (500, 3e5), "pop": (3e5, 1.5e9), "unemp": (0, 40), "agri": (0, 40), "debt": (0, 400), "wageh": (0.5, 100), "gdpLc": (1e8, 1e17), "gdppcLc": (100, 1e9)}
     cur_ok = re.compile(r"^[A-Z]{3}$"); full = 0
     for cc, c in doc["countries"].items():
         if c.get("currency") is not None and not cur_ok.match(str(c["currency"])): errs.append("%s: moneda %r no es un codigo de 3 letras" % (cc, c.get("currency")))
@@ -539,6 +539,13 @@ def country_macro(doc, errs, warns, stats):
             v, y = e.get("v"), e.get("y")
             if not isinstance(v, (int, float)) or not _m.isfinite(v) or not lo <= v <= hi: errs.append("%s %s: valor %r fuera de rango" % (cc, k, v))
             if not isinstance(y, int) or not 1990 <= y <= int(today[:4]): errs.append("%s %s: ano %r incoherente" % (cc, k, y))
+        for k, kd in (("gdpLc", "gdp"), ("gdppcLc", "gdppc")):   # moneda local: moneda coherente y, si es euro, un cambio creible frente al dolar del mismo ano
+            e = c.get(k)
+            if not e: continue
+            if not cur_ok.match(str(e.get("cur"))) or e.get("cur") != c.get("currency"): errs.append("%s %s: moneda %r distinta de la del pais %r" % (cc, k, e.get("cur"), c.get("currency")))
+            if e.get("src") not in ("world_bank_wdi", "eurostat"): errs.append("%s %s: fuente %r desconocida" % (cc, k, e.get("src")))
+            d = c.get(kd)
+            if e.get("cur") == "EUR" and d and d.get("y") == e.get("y") and isinstance(e.get("v"), (int, float)) and d.get("v") and not 0.6 < e["v"] / d["v"] < 1.4: errs.append("%s %s: %.2f euros por dolar no es creible" % (cc, k, e["v"] / d["v"]))
         if all(c.get(k) for k in ("gdp", "pop", "gdppc")):
             full += 1
             if c["gdp"].get("y") == c["pop"].get("y") == c["gdppc"].get("y") and abs(c["gdp"]["v"] / c["pop"]["v"] / c["gdppc"]["v"] - 1) > 0.15: warns.append("%s: PIB / poblacion (%.0f) no cuadra con el PIB per capita (%.0f); es lo que publica el Banco Mundial" % (cc, c["gdp"]["v"] / c["pop"]["v"], c["gdppc"]["v"]))

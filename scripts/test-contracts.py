@@ -361,6 +361,7 @@ CASES = [
  ("country-macro.json", "inflacion sin fuente del registro", lambda d: d["countries"]["ES"]["infl"].__setitem__("src", "inventada")),
  ("country-macro.json", "inflacion con mes futuro", lambda d: d["countries"]["ES"]["infl"].update(m="2099-01", y=2099)),
  ("country-macro.json", "inflacion en pocos paises", lambda d: [d["countries"][k].pop("infl", None) for k in list(d["countries"])[3:]]),
+ ("country-macro.json", "PIB en euros con cambio absurdo", lambda d: d["countries"]["ES"].__setitem__("gdpLc", {"v": d["countries"]["ES"]["gdp"]["v"] * 5, "y": d["countries"]["ES"]["gdp"]["y"], "cur": "EUR", "src": "eurostat"})),
  ("country-macro.json", "PIB absurdo", lambda d: d["countries"]["ES"]["gdp"].__setitem__("v", 5)),
  ("country-macro.json", "paro fuera de rango", lambda d: d["countries"]["ES"]["unemp"].__setitem__("v", 90)),
  ("country-macro.json", "moneda que no es un codigo", lambda d: d["countries"]["ES"].__setitem__("currency", "euros")),

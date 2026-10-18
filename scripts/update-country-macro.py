@@ -4,7 +4,8 @@ import json, os, sys, time, datetime, urllib.request
 
 WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU',
       'BG': 'BGR', 'CY': 'CYP', 'CZ': 'CZE', 'EE': 'EST', 'EL': 'GRC', 'FI': 'FIN', 'HR': 'HRV', 'HU': 'HUN', 'IE': 'IRL', 'LT': 'LTU', 'LU': 'LUX', 'LV': 'LVA', 'MT': 'MLT', 'PL': 'POL', 'RO': 'ROU', 'SE': 'SWE', 'SI': 'SVN', 'SK': 'SVK', 'UK': 'GBR', 'AR': 'ARG', 'CH': 'CHE', 'CL': 'CHL'}
-IND = {'gdp': 'NY.GDP.MKTP.CD', 'gdppc': 'NY.GDP.PCAP.CD', 'pop': 'SP.POP.TOTL', 'unemp': 'SL.UEM.TOTL.ZS', 'agri': 'NV.AGR.TOTL.ZS'}
+IND = {'gdp': 'NY.GDP.MKTP.CD', 'gdppc': 'NY.GDP.PCAP.CD', 'pop': 'SP.POP.TOTL', 'unemp': 'SL.UEM.TOTL.ZS', 'agri': 'NV.AGR.TOTL.ZS',
+       'gdpLc': 'NY.GDP.MKTP.CN', 'gdppcLc': 'NY.GDP.PCAP.CN'}   # *Lc: PIB y PIB per capita en moneda local corriente (zona euro: euros), el mismo dato del Banco Mundial sin pasar por dolares
 CUR = {'US': 'USD'}
 CUR.update({c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'NL', 'EU', 'BG', 'CY', 'EE', 'EL', 'FI', 'HR', 'IE', 'LT', 'LU', 'LV', 'MT', 'SI', 'SK']})  # Bulgaria usa el euro desde 2026-01-01 (Croacia desde 2023)
 CUR.update({'DK': 'DKK', 'CA': 'CAD', 'AU': 'AUD', 'CZ': 'CZK', 'HU': 'HUF', 'PL': 'PLN', 'RO': 'RON', 'SE': 'SEK', 'UK': 'GBP', 'AR': 'ARS', 'CH': 'CHF', 'CL': 'CLP'})
@@ -31,6 +32,10 @@ for k, code in IND.items():
         for r in d[1]:
             c = inv.get(r['countryiso3code'])
             if c and r.get('value') is not None:
+                if k.endswith('Lc'):
+                    # Bulgaria: el Banco Mundial da 2025 en leva; entra en el euro en 2026, se toma de Eurostat (en euros). Dolares ya estan en gdp/gdppc.
+                    if CUR[c] == 'USD' or c == 'BG': continue
+                    out[c][k] = {'v': r['value'], 'y': int(r['date']), 'cur': CUR[c], 'src': 'world_bank_wdi'}; n += 1; continue
                 out[c][k] = {'v': r['value'], 'y': int(r['date'])}; n += 1
     log('%s: %d paises' % (k, n))
 # deuda pública bruta / PIB: FMI; si falla, Eurostat (UE) y Banco Mundial (gobierno central, Canadá y Australia)
@@ -41,6 +46,25 @@ def get_ua(url):
             return json.load(r)
     except Exception as e:
         log('  error %s: %s' % (url[:90], e)); return None
+# PIB en euros de Eurostat (cuentas nacionales, precios corrientes) para los paises del euro que el Banco Mundial no trae en moneda local (agregado UE, Bulgaria)
+def _eurostat_last(url, geo):
+    d = get_ua(url % geo)
+    try:
+        tpos = d['dimension']['time']['category']['index']; inv_t = {v: k for k, v in tpos.items()}
+        vals = {inv_t[int(i)]: v for i, v in d['value'].items() if v is not None}
+        y = max(vals); return vals[y], int(y)
+    except Exception: return None
+_ne = 0
+for c in WB:
+    if CUR[c] != 'EUR': continue
+    geo = 'EU27_2020' if c == 'EU' else c
+    if 'gdpLc' not in out[c]:
+        r = _eurostat_last('https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_gdp?format=JSON&lang=EN&unit=CP_MEUR&na_item=B1GQ&sinceTimePeriod=2022&geo=%s', geo)
+        if r: out[c]['gdpLc'] = {'v': r[0] * 1e6, 'y': r[1], 'cur': 'EUR', 'src': 'eurostat'}; _ne += 1
+    if 'gdppcLc' not in out[c]:
+        r = _eurostat_last('https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_pc?format=JSON&lang=EN&unit=CP_EUR_HAB&na_item=B1GQ&sinceTimePeriod=2022&geo=%s', geo)
+        if r: out[c]['gdppcLc'] = {'v': r[0], 'y': r[1], 'cur': 'EUR', 'src': 'eurostat'}; _ne += 1
+log('PIB en euros desde Eurostat (huecos del Banco Mundial): %d valores' % _ne)
 inv = {v: c for c, v in WB.items()}
 n = 0
 cy = datetime.date.today().year

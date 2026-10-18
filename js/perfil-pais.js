@@ -70,13 +70,46 @@
     fr: { infl: 'Inflation (sur un an)', inflh: 'Inflation (IPCH, sur un an)', inote: 'Inflation : variation sur un an de l’indice des prix à la consommation ; IPCH harmonisé d’Eurostat dans l’UE et indices officiels des États-Unis (BLS), du Canada (Statistique Canada) et du Royaume-Uni (ONS) et Argentine (INDEC) ; pour l’Australie, la dernière année de la Banque mondiale. Mois de la donnée entre parenthèses. L’IPCH harmonisé peut différer de quelques dixièmes de l’indice national des prix.', wage: 'Salaire médian', wagem: 'Salaire moyen', wageh: 'Salaire horaire médian (UE, harmonisé)', rate: 'Taux directeur', per: { year: 'an', month: 'mois', week: 'semaine', hour: 'heure' }, gross: 'brut', net: 'net', histo: 'voir l’historique', central: '* Dette de l’administration centrale, non de l’ensemble des administrations publiques : pas directement comparable avec l’UE.', gdp: 'PIB', gdppc: 'PIB par habitant', pop: 'Population', unemp: 'Chômage', agri: 'Secteur primaire (% du PIB)', debt: 'Dette publique / PIB', cur: 'Monnaie', bn: ' Md', tn: ' billions', mn: ' M', note: 'Banque mondiale (PIB en USD courants, population, chômage, valeur ajoutée agricole) et Eurostat (dette brute des administrations publiques ; Banque mondiale pour le Canada et l’Australie). Dernière année disponible entre parenthèses.', cn: { EUR: 'Euro (EUR)', DKK: 'Couronne danoise (DKK)', CAD: 'Dollar canadien (CAD)', AUD: 'Dollar australien (AUD)' } },
     it: { infl: 'Inflazione (su base annua)', inflh: 'Inflazione (IPCA, su base annua)', inote: 'Inflazione: variazione annua dell’indice dei prezzi al consumo; IPCA armonizzato di Eurostat nell’UE e indici ufficiali di Stati Uniti (BLS), Canada (Statistics Canada) e Regno Unito (ONS) e Argentina (INDEC); per l’Australia, l’ultimo anno della Banca mondiale. Mese del dato tra parentesi. L’IPCA armonizzato può differire di qualche decimo dall’indice nazionale dei prezzi.', wage: 'Salario mediano', wagem: 'Salario medio', wageh: 'Salario orario mediano (UE, armonizzato)', rate: 'Tasso ufficiale', per: { year: 'anno', month: 'mese', week: 'settimana', hour: 'ora' }, gross: 'lordo', net: 'netto', histo: 'vedi storico', central: '* Debito dell’amministrazione centrale, non di tutte le amministrazioni pubbliche: non direttamente confrontabile con quello UE.', gdp: 'PIL', gdppc: 'PIL pro capite', pop: 'Popolazione', unemp: 'Disoccupazione', agri: 'Settore primario (% del PIL)', debt: 'Debito pubblico / PIL', cur: 'Valuta', bn: ' mld', tn: ' mila mld', mn: ' mln', note: 'Banca mondiale (PIL in USD correnti, popolazione, disoccupazione, valore aggiunto agricolo) ed Eurostat (debito lordo delle amministrazioni pubbliche; Banca mondiale per Canada e Australia). Ultimo anno disponibile tra parentesi.', cn: { EUR: 'Euro (EUR)', DKK: 'Corona danese (DKK)', CAD: 'Dollaro canadese (CAD)', AUD: 'Dollaro australiano (AUD)' } }
   };
+  /* Moneda de las cifras de PIB: la local (en la zona euro, euros) o dolares. Se elige con el selector de la franja y se recuerda en este navegador. */
+  var CT = {
+    es: { showIn: 'Ver en', noteLc: 'PIB en moneda local a precios corrientes (Banco Mundial; Eurostat para el agregado UE y Bulgaria); en USD, a tipo de cambio corriente del Banco Mundial.' },
+    en: { showIn: 'Show in', noteLc: 'GDP in local currency at current prices (World Bank; Eurostat for the EU aggregate and Bulgaria); in USD, at the World Bank current exchange rate.' },
+    fr: { showIn: 'Afficher en', noteLc: 'PIB en monnaie locale aux prix courants (Banque mondiale ; Eurostat pour l’agrégat UE et la Bulgarie) ; en USD, au taux de change courant de la Banque mondiale.' },
+    it: { showIn: 'Mostra in', noteLc: 'PIL in valuta locale a prezzi correnti (Banca mondiale; Eurostat per l’aggregato UE e la Bulgaria); in USD, al cambio corrente della Banca mondiale.' }
+  };
+  var STRIPS = [];
+  function lcOn(m) {
+    if (!m || !(m.gdpLc || m.gdppcLc)) return false;
+    var p = null; try { p = localStorage.getItem('di_macro_cur'); } catch (e) { p = null; }
+    if (p === 'usd') return false; if (p === 'local') return true;
+    return m.currency === 'EUR';   // por defecto: euros en la zona euro, dolares en el resto
+  }
+  function money(v, cur, big, t, nf) {
+    var s = big ? (v >= 1e12 ? nf(v / 1e12, 2) + t.tn : nf(v / 1e9, 0) + t.bn) : nf(v, 0);
+    return cur === 'USD' ? '$' + s : cur === 'GBP' ? '£' + s : cur === 'EUR' ? s + ' €' : s + ' ' + cur;
+  }
   function macroStrip(m, x) {
     if (!m) return '';
+    STRIPS.push({ m: m, x: x });
+    return '<div class="pp-macro" data-mi="' + (STRIPS.length - 1) + '">' + macroInner(m, x) + '</div>';
+  }
+  if (typeof document !== 'undefined' && !window.__diMacroCur) {
+    window.__diMacroCur = 1;
+    document.addEventListener('click', function (e) {
+      var b = e.target && e.target.closest ? e.target.closest('[data-curpick]') : null; if (!b) return;
+      try { localStorage.setItem('di_macro_cur', b.getAttribute('data-curpick')); } catch (er) { /* sin almacenamiento: vale solo para esta vista */ }
+      var els = document.querySelectorAll('.pp-macro[data-mi]');
+      for (var i = 0; i < els.length; i++) { var st = STRIPS[+els[i].getAttribute('data-mi')]; if (st) els[i].innerHTML = macroInner(st.m, st.x, b.getAttribute('data-curpick') === 'local'); }
+    });
+  }
+  function macroInner(m, x, forceLc) {
     var t = M[x.lang] || M.es, nf = x.nf, items = [];
     var yr = function (o) { return o ? ' <span style="font-weight:400;color:var(--text-faint)">(' + o.y + ')</span>' : ''; };
     var add = function (k, val, o) { items.push('<div style="min-width:120px"><div style="font-size:11px;color:var(--text-faint)">' + x.esc(t[k]) + '</div><div style="font-size:15px;font-weight:700;font-variant-numeric:tabular-nums">' + val + yr(o) + '</div></div>'); };
-    if (m.gdp) { var g = m.gdp.v; add('gdp', g >= 1e12 ? '$' + nf(g / 1e12, 2) + t.tn : '$' + nf(g / 1e9, 0) + t.bn, m.gdp); }
-    if (m.gdppc) add('gdppc', '$' + nf(m.gdppc.v, 0), m.gdppc);
+    var lc = forceLc === undefined ? lcOn(m) : forceLc && !!(m.gdpLc || m.gdppcLc), ct = CT[x.lang] || CT.es;
+    var G = lc && m.gdpLc ? m.gdpLc : m.gdp, GP = lc && m.gdppcLc ? m.gdppcLc : m.gdppc;
+    if (G) add('gdp', money(G.v, G === m.gdpLc ? G.cur : 'USD', true, t, nf), G);
+    if (GP) add('gdppc', money(GP.v, GP === m.gdppcLc ? GP.cur : 'USD', false, t, nf), GP);
     if (m.pop) add('pop', nf(m.pop.v / 1e6, m.pop.v >= 1e8 ? 0 : 1) + t.mn, m.pop);
     if (m.unemp) add('unemp', nf(m.unemp.v, 1) + ' %', m.unemp);
     if (m.agri) add('agri', nf(m.agri.v, 1) + ' %', m.agri);
@@ -89,13 +122,19 @@
     var rt = x.rate;
     if (rt) items.push('<button type="button" data-ps="' + x.esc(rt.id) + '" style="text-align:left;background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;min-width:140px"><div style="font-size:11px;color:var(--text-faint)">' + x.esc(t.rate) + '</div><div style="font-size:15px;font-weight:700;font-variant-numeric:tabular-nums">' + nf(rt.latest, 2) + ' % <span style="font-weight:400;font-size:12px;color:var(--text-muted)">(' + x.esc(x.plabel(rt.latestPeriod, rt.frequency)) + ')</span></div><div style="font-size:11px;color:#2f6b4a;font-weight:700">' + x.esc(t.histo) + ' →</div></button>');
     if (m.currency) items.push('<div style="min-width:120px"><div style="font-size:11px;color:var(--text-faint)">' + x.esc(t.cur) + '</div><div style="font-size:15px;font-weight:700">' + x.esc(t.cn[m.currency] || m.currency) + '</div></div>');
-    return '<div style="display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">' + items.join('') + '</div><div style="font-size:11px;color:var(--text-faint);margin-top:6px">' + x.esc(((m.gdp || m.gdppc || m.pop || m.unemp || m.agri || m.debt) ? t.note : '') + (m.infl ? ' ' + t.inote : '')) + (m.debt && m.debt.src === 'wb-central' ? ' ' + x.esc(t.central) : '') + '</div>' + macroCite(m, x);
+    return '<div style="display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">' + items.join('') + '</div><div style="font-size:11px;color:var(--text-faint);margin-top:6px">' + x.esc(((m.gdp || m.gdppc || m.pop || m.unemp || m.agri || m.debt) ? t.note : '') + (m.infl ? ' ' + t.inote : '')) + (m.debt && m.debt.src === 'wb-central' ? ' ' + x.esc(t.central) : '') + ((m.gdpLc || m.gdppcLc) ? ' ' + x.esc(ct.noteLc) : '') + '</div>' + curToggle(m, lc, ct, x) + macroCite(m, x);
+  }
+  function curToggle(m, lc, ct, x) {
+    var L = m.gdpLc || m.gdppcLc; if (!L) return '';
+    var b = function (k, on, label) { return '<button type="button" data-curpick="' + k + '" aria-pressed="' + (on ? 'true' : 'false') + '" style="font:inherit;font-size:12px;cursor:pointer;padding:2px 10px;border-radius:999px;border:1px solid ' + (on ? 'var(--text)' : 'var(--border)') + ';background:none;color:' + (on ? 'var(--text)' : 'var(--text-muted)') + ';font-weight:' + (on ? '700' : '400') + '">' + label + '</button>'; };
+    return '<div style="margin-top:8px;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-faint)"><span>' + x.esc(ct.showIn) + '</span>' + b('local', lc, x.esc(L.cur)) + b('usd', !lc, 'USD') + '</div>';
   }
   /* Citas de la franja macro: cada indicador cita la fuente de la que sale (registro de licencias; los sueldos llevan la suya propia en country-wages.json). */
   function macroCite(m, x) {
     var Q = window.DICite; if (!Q) return '';
     var out = [], yrs = ['gdp', 'gdppc', 'pop', 'unemp', 'agri'].concat(m.debt && m.debt.src === 'wb-central' ? ['debt'] : []).filter(function (k) { return m[k]; }).map(function (k) { return m[k].y; });
     if (yrs.length) out.push(Q.html('world_bank_wdi', { period: String(Math.max.apply(null, yrs)) }));
+    if ((m.gdpLc && m.gdpLc.src === 'eurostat') || (m.gdppcLc && m.gdppcLc.src === 'eurostat')) out.push(Q.html('eurostat', { period: String(Math.max(m.gdpLc && m.gdpLc.src === 'eurostat' ? m.gdpLc.y : 0, m.gdppcLc && m.gdppcLc.src === 'eurostat' ? m.gdppcLc.y : 0)) }));
     if (m.infl && m.infl.src && !(m.infl.src === 'world_bank_wdi' && yrs.length)) out.push(Q.html(m.infl.src, { period: String(m.infl.m || m.infl.y) }));
     if ((m.debt && m.debt.src === 'eurostat') || m.wageh) out.push(Q.html('eurostat', { period: String(Math.max(m.debt && m.debt.src === 'eurostat' ? m.debt.y : 0, m.wageh ? m.wageh.y : 0)) }));
     if (x.wage && x.wage.src) out.push((x.wage.sourceId && Q.html(x.wage.sourceId, { period: x.wage.y, note: x.wage.url })) || Q.custom({ name: x.wage.src, url: x.wage.url, period: x.wage.y }));
