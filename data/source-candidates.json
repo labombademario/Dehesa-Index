@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T03:38:27Z",
+ "generatedAt": "2026-10-18T05:58:03Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2132,8 +2132,9 @@
    },
    "licenseStatus": "VERIFIED",
    "licenseId": "CUSTOM",
-   "commercialReuse": "unclear",
-   "derivatives": "unclear",
+   "commercialReuse": "yes",
+   "derivatives": "conditional",
+   "attribution": "Source: Canada Border Services Agency (CBSA), Customs Tariff, https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html. Rates are reproduced unaltered; calculations are Dehesa Index’s own.",
    "lastChecked": "2026-10-14",
    "verification": "REGISTRY",
    "legalConfidence": "OWNER_ACCEPTED",
@@ -2142,7 +2143,7 @@
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "VERIFIED pero con condiciones no inequivocas: uso comercial unclear, derivados unclear"
+     "VERIFIED pero con condiciones no inequivocas: derivados conditional"
     ]
    },
    "ingestionStatus": "ACTIVE",

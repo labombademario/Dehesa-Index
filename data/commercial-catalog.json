@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T04:06:25Z",
+ "generatedAt": "2026-10-18T05:57:54Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -323,7 +323,7 @@
    "commercialUse": "yes",
    "derivatives": "conditional",
    "redistribution": "yes",
-   "attribution": null,
+   "attribution": "Source: Canada Border Services Agency (CBSA), Customs Tariff, https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html. Rates are reproduced unaltered; calculations are Dehesa Index’s own.",
    "conditions": "Decision del propietario (18-oct-2026): uso comercial aceptado. Condiciones mantenidas: citar CBSA y URL, no alterar los tipos, calculos propios etiquetados. Contexto: las condiciones generales de Canada.ca piden permiso escrito para redistribucion comercial; no hay licencia especifica del arancel ni ficha en open.canada.ca.",
    "ownerDecision": "Mario lo da por valido para el uso comercial. El 18-oct se busco el arancel en open.canada.ca (Open Government Licence - Canada) y no esta publicado alli; la decision es del propietario. Se mantienen las condiciones: citar la CBSA y la URL de origen, no alterar los tipos y etiquetar los calculos propios como de Dehesa Index. (2026-10-18)"
   },
