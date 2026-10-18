@@ -1,16 +1,16 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T22:20:23Z",
+ "generatedAt": "2026-10-18T04:06:25Z",
  "summary": {
   "sources": 141,
   "sourcesApto": 128,
-  "sourcesCondiciones": 8,
-  "sourcesNoApto": 5,
+  "sourcesCondiciones": 9,
+  "sourcesNoApto": 4,
   "datasets": 288,
   "datasets_apto": 165,
-  "datasets_condiciones": 111,
-  "datasets_parcial": 4,
-  "datasets_no-apto": 4,
+  "datasets_condiciones": 113,
+  "datasets_parcial": 3,
+  "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
   "derived": 42
  },
@@ -85,7 +85,7 @@
   },
   "cbsa_tariff": {
    "name": "Canada Border Services Agency — Customs Tariff",
-   "verdict": "no-apto"
+   "verdict": "condiciones"
   },
   "census": {
    "name": "U.S. Census Bureau",

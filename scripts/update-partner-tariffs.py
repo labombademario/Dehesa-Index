@@ -120,7 +120,7 @@ def canada():
             if not cur["u"] and (r["UOM"] or "").strip(): cur["u"] = r["UOM"].strip()
             if not cur["g"] and (r["MFN"] or "").strip(): cur["g"] = r["MFN"].strip()
     out = [l for l in out if l["g"]]
-    write("ca", out, names, {"name": "Canada Border Services Agency — Customs Tariff 2026", "url": "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/menu-eng.html", "license": "Government of Canada (Open Government Licence – Canada, por confirmar)"},
+    write("ca", out, names, {"name": "Canada Border Services Agency — Customs Tariff 2026", "url": "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/menu-eng.html", "license": "Government of Canada (condiciones de Canada.ca; uso aceptado por Dehesa Index, citando la fuente)"},
           {"name": zs[-1][0].rsplit("/", 1)[-1], "title": "Customs Tariff 2026"}, "Arancel NMF; las preferencias (CUSMA, CETA, CPTPP…) están en la columna de preferencias.")
 
 def eu():

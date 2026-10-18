@@ -1016,12 +1016,12 @@
    "licenseId": "CUSTOM",
    "licenseName": "Canada.ca terms apply by default; no explicit licence for the Customs Tariff (published as green by owner decision, cited)",
    "licenseUrl": "https://www.canada.ca/en/transparency/terms.html",
-   "commercialUse": "unclear",
-   "derivatives": "unclear",
-   "redistribution": "unclear",
+   "commercialUse": "yes",
+   "derivatives": "conditional",
+   "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": null,
-   "additionalRestrictions": "Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduction is allowed with source and URL.",
+   "additionalRestrictions": "Decision del propietario (18-oct-2026): uso comercial aceptado. Condiciones mantenidas: citar CBSA y URL, no alterar los tipos, calculos propios etiquetados. Contexto: las condiciones generales de Canada.ca piden permiso escrito para redistribucion comercial; no hay licencia especifica del arancel ni ficha en open.canada.ca.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "Some Canada.ca material is not Crown copyright; not checked for the tariff.",
    "verifiedAt": "2026-10-14",
@@ -1033,7 +1033,11 @@
    "notes": null,
    "short": "CBSA (Canadá)",
    "legalConfidence": "OWNER_ACCEPTED",
-   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence).",
+   "ownerDecision": {
+    "date": "2026-10-18",
+    "text": "Mario lo da por valido para el uso comercial. El 18-oct se busco el arancel en open.canada.ca (Open Government Licence - Canada) y no esta publicado alli; la decision es del propietario. Se mantienen las condiciones: citar la CBSA y la URL de origen, no alterar los tipos y etiquetar los calculos propios como de Dehesa Index."
+   }
   },
   "alberta_ag": {
    "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
