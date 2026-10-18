@@ -25,6 +25,8 @@
   function fv(v) { if (v == null) return '—'; var a = Math.abs(v); return nf(v, a >= 1000 ? 0 : a >= 100 ? 1 : 2); }
   function num(t) { var m = /^Table\s+(\d+)/.exec(t.title); return m ? +m[1] : 0; }
   function xl(k, s) { var l = lang(); return s && window.DIUS && l !== 'en' ? window.DIUS[k](s, l) : s; }
+  var TE = { 1: '🌍', 2: '🇺🇸', 3: '💱', 4: '👥', 5: '🌾', 16: '🍬', 17: '🍎', 18: '🍽️', 19: '🐄', 20: '🐖', 21: '🐔', 22: '🦃', 23: '🥚', 24: '🥛', 25: '🚢', 26: '💵' };
+  function temo(t) { var e = TE[num(t)]; return e ? e + ' ' : ''; }
   function tname(t, P) { var n = num(t); return TN[n] ? TN[n][P] : t.title; }
   function cur() { var i; for (i = 0; i < D.tables.length; i++) if (D.tables[i].id === SEL) return D.tables[i]; return D.tables[0]; }
   function isP(y) { return /[–-]/.test(y) && !/\//.test(y); }
@@ -40,7 +42,7 @@
     var T0 = T[lang()] || T.es, P = LI[lang()] || 0, t = cur(), i;
     if (ROW >= t.rows.length) ROW = 0;
     var r = t.rows[ROW];
-    var sel = '<label class="di-movers-hint" style="display:block;margin:10px 0 4px">' + esc(T0.tbl) + '<select id="nbt-sel" style="display:block;margin-top:4px;font:inherit;max-width:100%">' + D.tables.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === t.id ? ' selected' : '') + '>' + esc(tname(x, P)) + '</option>'; }).join('') + '</select></label>';
+    var sel = '<label class="di-movers-hint" style="display:block;margin:10px 0 4px">' + esc(T0.tbl) + '<select id="nbt-sel" style="display:block;margin-top:4px;font:inherit;max-width:100%">' + D.tables.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === t.id ? ' selected' : '') + '>' + esc(temo(x) + tname(x, P)) + '</option>'; }).join('') + '</select></label>';
     var th = 'padding:7px 6px;font-size:11px;font-weight:700;color:var(--text-faint);text-align:right;white-space:nowrap;position:sticky;top:0;background:var(--bg,#fff);', td = 'padding:6px;border-top:1px solid var(--border);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap;';
     var last = null, body = '';
     t.rows.forEach(function (x, j) {
