@@ -8,8 +8,11 @@ import openpyxl
 
 ROOT = Path(__file__).resolve().parent.parent
 fails = []
+LAST = ['']
 def ok(name, cond):
-    if not cond: fails.append(name); print('FALLA', name)
+    if not cond:
+        fails.append(name); print('FALLA', name)
+        print('::error title=test-uruguay::FALLA %s -- ultimo log: %s' % (name, LAST[0]))   # visible como anotacion en GitHub Actions
 
 def pkg(name, urls, lic='odc-uy'):
     return {'name': name, 'license_id': lic, 'resources': [{'id': 'r%d' % i, 'url': u} for i, u in enumerate(urls)]}
@@ -21,7 +24,9 @@ def run(files, pkgs, extra=()):
     p = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts/update-uruguay.py'), '--local', str(d), '--out', str(out)], capture_output=True, text=True)
     st = out / 'uruguay-stats.json'
     series = {s['id']: s for s in json.loads(st.read_text())['countries']['UY']['series']} if st.exists() else {}
-    return p, series, (out / 'uruguay-log.txt').read_text() if (out / 'uruguay-log.txt').exists() else p.stdout + p.stderr
+    lg = (out / 'uruguay-log.txt').read_text() if (out / 'uruguay-log.txt').exists() else ''
+    LAST[0] = (lg + p.stdout + p.stderr)[-500:].replace(chr(10), ' | ')
+    return p, series, lg + p.stdout + p.stderr
 
 def inia_csv(year, skip_days_in_feb=0):
     import calendar
