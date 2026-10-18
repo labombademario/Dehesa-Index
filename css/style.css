@@ -2850,3 +2850,5 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 .di-tm-body{position:relative;flex:1 1 auto;min-height:0}.di-tm-tile{position:absolute;box-sizing:border-box;border:2px solid var(--bg,#f6f3ea);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px;margin:0;font:inherit;text-align:center;cursor:pointer;overflow:hidden;transition:box-shadow .15s}
 .di-tm-tile:hover{box-shadow:0 3px 12px rgba(0,0,0,.18);z-index:1}.di-tm-tile:focus-visible{outline:3px solid #1d5178;outline-offset:-3px;z-index:1}
 .di-tm-name{font-weight:700;line-height:1.15;max-width:100%;overflow:hidden;text-overflow:ellipsis}.di-tm-chg{font-weight:700;line-height:1.1}.di-tm-tile .di-map-spark{width:70%;height:22%;max-height:34px;margin-top:4px}.di-tm-px{font-size:11px;font-weight:600;margin-top:3px}.di-tm-px small{font-weight:500}
+
+.di-atl-sort{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px;font-size:13.5px;font-weight:600}.di-atl-sort select{min-width:0;width:auto}

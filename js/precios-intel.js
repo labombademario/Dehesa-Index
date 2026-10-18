@@ -965,18 +965,25 @@
     return trust[productId + '-' + region] || null;
   }
 
+  var ATL_SORT = { k: '', dir: 'hi' };
+  function wireAtlanticSort() {
+    var k = document.getElementById('di-atl-key'), d = document.getElementById('di-atl-dir');
+    function redo() { var sec = document.getElementById('di-intel-atlantic'); if (!sec) return; sec.outerHTML = renderAtlanticSpreadHtml(); wireAtlanticSort(); var n = document.getElementById(ATL_SORT.k ? 'di-atl-key' : 'di-atl-key'); if (n) n.focus(); }
+    if (k) k.onchange = function () { ATL_SORT.k = k.value; redo(); };
+    if (d) d.onchange = function () { ATL_SORT.dir = d.value; redo(); };
+  }
   function renderAtlanticSpreadHtml() {
     var L = {
-      es:{title:'EE. UU. frente a Europa',intro:'Cómo se mueve el mismo producto a ambos lados del Atlántico: variación del último mes y de los últimos tres meses en EE. UU. y en Europa, cada una con su propia serie verificada.',
+      es:{title:'EE. UU. frente a Europa',sortBy:'Ordenar por',sortOrig:'Orden original',sortHi:'Mayor a menor',sortLo:'Menor a mayor',intro:'Cómo se mueve el mismo producto a ambos lados del Atlántico: variación del último mes y de los últimos tres meses en EE. UU. y en Europa, cada una con su propia serie verificada.',
         us:'EE. UU.',eu:'Europa',last:'Último dato',m1:'1 mes',m3:'3 meses',same:'Misma dirección',diverge:'Direcciones opuestas',flat:'Sin cambio claro',prod:'Producto',trend:'Lectura',
         note:'Se comparan MOVIMIENTOS, no niveles: los precios no son equivalentes (EE. UU. es precio recibido por el agricultor o referencia nacional; Europa es lonja, precio de mercado o media de la UE, con otra etapa, calidad, unidad, moneda e impuestos), así que no se calcula ningún diferencial de precio entre ambos. Cada dato conserva su fecha.',empty:'Aún no hay productos con dato verificado en EE. UU. y en Europa a la vez.'},
-      en:{title:'US vs Europe',intro:'How the same product moves on both sides of the Atlantic: the last-month and last-three-month change in the U.S. and in Europe, each from its own verified series.',
+      en:{title:'US vs Europe',sortBy:'Sort by',sortOrig:'Original order',sortHi:'High to low',sortLo:'Low to high',intro:'How the same product moves on both sides of the Atlantic: the last-month and last-three-month change in the U.S. and in Europe, each from its own verified series.',
         us:'U.S.',eu:'Europe',last:'Latest',m1:'1 month',m3:'3 months',same:'Same direction',diverge:'Opposite directions',flat:'No clear move',prod:'Product',trend:'Reading',
         note:'MOVES are compared, not levels: prices are not equivalent (the U.S. is a price received by farmers or a national reference; Europe is a market quote or EU average, with a different stage, quality, unit, currency and taxes), so no price differential is computed between them. Each data point keeps its date.',empty:'No products with verified data in both the U.S. and Europe yet.'},
-      fr:{title:'États-Unis face à l’Europe',intro:"Comment un même produit évolue des deux côtés de l'Atlantique : variation du dernier mois et des trois derniers mois aux États-Unis et en Europe, chacune issue de sa propre série vérifiée.",
+      fr:{title:'États-Unis face à l’Europe',sortBy:'Trier par',sortOrig:'Ordre d’origine',sortHi:'Du plus haut au plus bas',sortLo:'Du plus bas au plus haut',intro:"Comment un même produit évolue des deux côtés de l'Atlantique : variation du dernier mois et des trois derniers mois aux États-Unis et en Europe, chacune issue de sa propre série vérifiée.",
         us:'États-Unis',eu:'Europe',last:'Dernière donnée',m1:'1 mois',m3:'3 mois',same:'Même direction',diverge:'Directions opposées',flat:'Pas de mouvement net',prod:'Produit',trend:'Lecture',
         note:"On compare des MOUVEMENTS, pas des niveaux : les prix ne sont pas équivalents (États-Unis : prix reçu par l'agriculteur ou référence nationale ; Europe : cotation de marché ou moyenne UE, avec une autre étape, qualité, unité, monnaie et fiscalité), donc aucun écart de prix n'est calculé. Chaque donnée garde sa date.",empty:'Pas encore de produits avec données vérifiées aux États-Unis et en Europe à la fois.'},
-      it:{title:'Stati Uniti e Europa',intro:"Come si muove lo stesso prodotto ai due lati dell'Atlantico: variazione dell'ultimo mese e degli ultimi tre mesi negli Stati Uniti e in Europa, ciascuna dalla propria serie verificata.",
+      it:{title:'Stati Uniti e Europa',sortBy:'Ordina per',sortOrig:'Ordine originale',sortHi:'Dal più alto al più basso',sortLo:'Dal più basso al più alto',intro:"Come si muove lo stesso prodotto ai due lati dell'Atlantico: variazione dell'ultimo mese e degli ultimi tre mesi negli Stati Uniti e in Europa, ciascuna dalla propria serie verificata.",
         us:'Stati Uniti',eu:'Europa',last:'Ultimo dato',m1:'1 mese',m3:'3 mesi',same:'Stessa direzione',diverge:'Direzioni opposte',flat:'Nessun movimento netto',prod:'Prodotto',trend:'Lettura',
         note:"Si confrontano i MOVIMENTI, non i livelli: i prezzi non sono equivalenti (Stati Uniti: prezzo ricevuto dall'agricoltore o riferimento nazionale; Europa: quotazione di mercato o media UE, con fase, qualità, unità, valuta e imposte diverse), quindi non si calcola alcun differenziale di prezzo. Ogni dato conserva la sua data.",empty:'Ancora nessun prodotto con dati verificati sia negli Stati Uniti sia in Europa.'}
     };
@@ -985,9 +992,9 @@
       var c1 = mapChange(info.pts, 27), c3 = mapChange(info.pts, 88);
       var d = new Date(info.pts[info.pts.length - 1].ts).toISOString().slice(0, 10);
       function f(v) { return v === null ? '<span class="di-atl-na">—</span>' : '<b style="color:' + D.changeColor(v, pl) + ';">' + esc(D.fmtChange(v)) + '</b>'; }
-      return { c1: c1, html: '<td>' + esc(info.price) + ' <small>' + esc(info.unit) + '</small><br><small class="di-atl-date">' + esc(d) + '</small></td><td>' + f(c1) + '</td><td>' + f(c3) + '</td>' };
+      return { c1: c1, c3: c3, html: '<td>' + esc(info.price) + ' <small>' + esc(info.unit) + '</small><br><small class="di-atl-date">' + esc(d) + '</small></td><td>' + f(c1) + '</td><td>' + f(c3) + '</td>' };
     }
-    var rows = [];
+    var rows = [], keyed = [];
     Core.PRODUCTS.forEach(function (e) {
       var k = e.catId + '-' + e.nameKey;
       if (!MAP_GROUP[k] || !Core.mapInfo) return;
@@ -997,10 +1004,20 @@
       if (cu.c1 !== null && ce.c1 !== null && Math.abs(cu.c1) > 0.5 && Math.abs(ce.c1) > 0.5) {
         if ((cu.c1 > 0) === (ce.c1 > 0)) { read = t.same; col = pl.textMuted; } else { read = t.diverge; col = pl.textMuted; }
       }
-      rows.push('<tr><th>' + esc(productName(e.nameKey)) + '</th>' + cu.html + ce.html + '<td><span style="color:' + col + ';font-weight:600;">' + esc(read) + '</span></td></tr>');
+      keyed.push({ v: { u1: cu.c1, u3: cu.c3, e1: ce.c1, e3: ce.c3 }, html: '<tr><th>' + esc(productName(e.nameKey)) + '</th>' + cu.html + ce.html + '<td><span style="color:' + col + ';font-weight:600;">' + esc(read) + '</span></td></tr>' });
     });
+    if (ATL_SORT.k) keyed = keyed.map(function (r, i) { r.i = i; return r; }).sort(function (a, b) {
+      var x = a.v[ATL_SORT.k], y = b.v[ATL_SORT.k];
+      if (x === null || x === undefined) return (y === null || y === undefined) ? a.i - b.i : 1;
+      if (y === null || y === undefined) return -1;
+      return (ATL_SORT.dir === 'lo' ? x - y : y - x) || a.i - b.i;
+    });
+    rows = keyed.map(function (r) { return r.html; });
     if (!rows.length) return intelPendingHtml(t.title, t.empty, 'di-intel-atlantic');
     return '<div class="di-intel-section" id="di-intel-atlantic"><div class="di-intel-head"><h2>' + esc(t.title) + '</h2><p>' + esc(t.intro) + '</p></div>' +
+      '<div class="di-atl-sort"><label for="di-atl-key">' + esc(t.sortBy) + '</label> <select id="di-atl-key" class="di-compare-select">' +
+        [['', t.sortOrig], ['u1', t.us + ' · ' + t.m1], ['u3', t.us + ' · ' + t.m3], ['e1', t.eu + ' · ' + t.m1], ['e3', t.eu + ' · ' + t.m3]].map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === ATL_SORT.k ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select> ' +
+        '<select id="di-atl-dir" class="di-compare-select" aria-label="' + esc(t.sortBy) + '"' + (ATL_SORT.k ? '' : ' disabled') + '><option value="hi"' + (ATL_SORT.dir === 'hi' ? ' selected' : '') + '>↓ ' + esc(t.sortHi) + '</option><option value="lo"' + (ATL_SORT.dir === 'lo' ? ' selected' : '') + '>↑ ' + esc(t.sortLo) + '</option></select></div>' +
       '<div class="di-corr-scroll"><table class="di-atl-table"><thead><tr><th rowspan="2">' + esc(t.prod) + '</th><th colspan="3">' + esc(t.us) + '</th><th colspan="3">' + esc(t.eu) + '</th><th rowspan="2">' + esc(t.trend) + '</th></tr>' +
       '<tr><th>' + esc(t.last) + '</th><th>' + esc(t.m1) + '</th><th>' + esc(t.m3) + '</th><th>' + esc(t.last) + '</th><th>' + esc(t.m1) + '</th><th>' + esc(t.m3) + '</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>' +
       '<div class="di-intel-disclaimer">' + esc(t.note) + '</div></div>';
@@ -1498,6 +1515,7 @@
         renderSpreadsHtml());
     wireOpenTargets(root);
     armTreemapResize();
+    wireAtlanticSort();
     wireCorrSelector(root, corrVolData);
     labelSvgs(root);
     armFull(root);
