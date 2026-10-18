@@ -95,7 +95,7 @@
   var ERS = { maiz: 'maiz', soja_grano: 'soja', trigo: 'trigo', cebada: 'cebada', avena: 'avena' };
   var PREM = { maiz: ['corn-yellow'], soja_grano: ['soybeans'], trigo: ['wheat-hrw', 'wheat-srw'] };
   var KIND_WORDS = {
-    change: 'subido sube subir subida sube bajado baja bajar bajada caido caida cae variacion variaciones cambio cambios evolucion evoluciono tendencia rose rise risen rising rises up down fell fall falling drop dropped change changes changed trend moved movement evolution gain gained loss lost augmente augmenter baisse baisser hausse variation variations tendance evolue evolution monte descendu aumentato aumento aumentare sceso scendere salito salita calo variazione variazioni cambiamento tendenza ano anos year years annee annees anno anni mes meses month months mois mese mesi semana semanas week weeks ytd',
+    change: 'anual anuales annuel annuelle annuels annuale annuali annual yearly yoy interanual subido sube subir subida sube bajado baja bajar bajada caido caida cae variacion variaciones cambio cambios evolucion evoluciono tendencia rose rise risen rising rises up down fell fall falling drop dropped change changes changed trend moved movement evolution gain gained loss lost augmente augmenter baisse baisser hausse variation variations tendance evolue evolution monte descendu aumentato aumento aumentare sceso scendere salito salita calo variazione variazioni cambiamento tendenza ano anos year years annee annees anno anni mes meses month months mois mese mesi semana semanas week weeks ytd',
     premium: 'organico organicos organica organic organique organiques biologico biologici bio premium prima primas',
     cost: 'coste costes costo costos costi costs cout couts',
     calendar: 'cuando sale salen publica publican publicacion publicaciones calendario informe informes wasde release releases publie publient quand uscita esce calendrier calendar report reports'
@@ -106,7 +106,7 @@
     ['milk-production', ['milk production', 'produccion de leche', 'production de lait', 'produzione di latte']], ['hogs-and-pigs', ['hogs and pigs']],
     ['grain-stocks', ['grain stocks', 'existencias de granos', 'existencias de cereales']], ['agricultural-prices', ['agricultural prices', 'precios agricolas']], ['cold-storage', ['cold storage']]
   ];
-  var FILLER = 'ofertas bids bid offres offerte agrarias agrarios agraria agrario agroalimentarias agroalimentarios agrarie agrari vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto when next is quand sort rapport quando prossimo prochain proximo proxima'.split(' ');
+  var FILLER = 'ofertas bids bid offres offerte agrarias agrarios agraria agrario agroalimentarias agroalimentarios agrarie agrari vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s cash spot ha han cotizacion cotizaciones cotiza cotation cotations cours quotazione quotazioni quote quotes esta estan sta stanno est sont has have had one une uno over currently actualmente attualmente actuellement en cours del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto when next is quand sort rapport quando prossimo prochain proximo proxima'.split(' ');
 
   var TRADE_EXP = toSet('exportaciones exportacion exportar exporta exportan exports export exportations exportation exporte exportent esportazioni esportazione esporta esportano destino destinos destination destinations destinazione destinazioni vende venden vender sell sells selling vend vendent vendre vendono');
   var TRADE_IMP = toSet('importaciones importacion importar importa importan imports import importations importation importe importent importazioni importazione importano origen origenes origin origins origine origini compra compran comprar buy buys buying achete achetent acheter comprano');
@@ -130,7 +130,7 @@
     ['MX', { es: 'México', en: 'Mexico', fr: 'Mexique', it: 'Messico' }, ['mexico', 'mexique', 'messico']]
   ];
   var SUPW = {}; addW(SUPW, 'endingStocks', 'existencias stocks stock inventario inventarios reservas reserves scorte'); addW(SUPW, 'consumption', 'consumo consumption consommation consumi'); addW(SUPW, 'area', 'superficie superficies area areas surface superficie'); addW(SUPW, 'generic', 'oferta demanda balance supply demand offre demande offerta domanda psd');
-  var WORLDW = toSet('mundo mundial world global monde mondial mondo');
+  var WORLDW = toSet('mundo mundial mundiales world global worldwide monde mondial mondiale mondiaux mondo');
   var LANDW = toSet('tierra tierras terreno terrenos farmland land lands terre terres terra terreni'), RENTW = toSet('alquiler alquileres arrendamiento arrendamientos rent rents rental pacht loyer loyers fermage affitto affitti');
   var HARVW = toSet('cosecha cosechas harvest harvests recolte recoltes raccolto raccolti rendimiento rendimientos yield yields rendement resa'), ACKERW = toSet('labor labranza arable arables cultivable acker seminativi seminativo cropland'), GRUENW = toSet('pasto pastos prado prados grassland pasture pastures prairie prairies pascoli');
   var LAND_ROWS = [ // el orden importa: los nombres largos antes que los cortos que contienen
@@ -183,24 +183,27 @@
     });
     return { n: n, found: found };
   }
+  var curLang = 'es';
   function bestProduct(pt, env) {
     var best = null;
     (env.products || []).forEach(function (p) {
+      if (!p.slug) return;
       if (!p._w) { p._w = []; LANGS.forEach(function (l) { p._w = p._w.concat(toks(p.names[l])); }); p._w = p._w.concat(toks(p.kw || '')); p._t = {}; LANGS.forEach(function (l) { p._t[l] = toks(p.names[l]).length; }); }
       var tot = 0, ok = true;
       for (var i = 0; i < pt.length; i++) {
-        var b = 0; for (var j = 0; j < p._w.length; j++) { var s = env.tokScore(pt[i], p._w[j]); if (s > b) b = s; if (b === 1) break; }
+        var b = 0; for (var j = 0; j < p._w.length; j++) { var s = pt[i].length < 3 && pt[i] !== p._w[j] ? 0 : env.tokScore(pt[i], p._w[j]); if (s > b) b = s; if (b === 1) break; }
         if (b < 0.6) { ok = false; break; } tot += b;
       }
       if (!ok) return;
       var sc = tot / pt.length - Math.min(p._t.es + p._t.en, 12) / 200;
+      var own = toks(p.names[curLang] || ''); if (pt.every(function (w) { return own.indexOf(w) >= 0; })) sc += 0.1;   // «grano» en italiano es el trigo; en español, un grano cualquiera
       if (!best || sc > best.sc) best = { p: p, sc: sc };
     });
     return best && best.sc >= 0.55 ? best.p : null;
   }
   function firstPos(n, aliases) { var best = -1; aliases.forEach(function (a) { var i = n.indexOf(' ' + a + ' '); if (i >= 0 && (best < 0 || i < best)) best = i; }); return best; }
   function parse(query, lang, env) {
-    var raw = String(query || ''), n = ' ' + norm(raw) + ' ';
+    var raw = String(query || ''), n = ' ' + norm(raw) + ' '; curLang = lang;
     if (n.trim().length < 2) return null;
     var states = [], m;
     var up = raw.match(/\b[A-Z]{2}\b/g) || [];

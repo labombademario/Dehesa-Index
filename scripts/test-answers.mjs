@@ -14,7 +14,7 @@ const idx = JSON.parse(fs.readFileSync(D('search-index.json'), 'utf8')).entries;
 const products = idx.filter(e => e.t === 'product').map(e => ({ slug: decodeURIComponent(e.u.split('product=')[1]).split(':')[1], names: e.n, kw: e.k, u: e.u }));
 const env = { today: '2026-10-01', products, tokScore: globalThis.DehesaSearch._tokScore, href: u => u,
   provider: { json: p => new Promise((res, rej) => { try { res(JSON.parse(fs.readFileSync(D(p), 'utf8'))); } catch (e) { rej(e); } }) } };
-const cases = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/answers-cases.json'), 'utf8'));
+const cases = ['answers-cases.json', 'answers-cases-extra.json'].flatMap(f => JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', f), 'utf8')));   // extra: ~600 consultas generadas por plantillas (precio, variación, región, estado, comercio, balance, calendario, negativas)
 const latest = r => JSON.parse(fs.readFileSync(D('prices/latest/' + r + '.json'), 'utf8')).observations;
 let fail = 0;
 const bad = (c, m) => { fail++; console.log('FALLA', JSON.stringify(c.q), '(' + c.lang + '):', m); };
