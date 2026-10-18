@@ -357,6 +357,7 @@
     'fertilizantes-urea': 'fertilizantes', 'fertilizantes-dap': 'fertilizantes', 'fertilizantes-potasa': 'fertilizantes',
     'azucar-azucar': 'azucar', 'aceite-oliva': 'aceite', 'energia-diesel': 'energia', 'energia-gas_natural': 'energia', 'energia-petroleo_wti': 'energia', 'energia-petroleo_brent': 'energia'
   };
+  var MAP_GROUP_EMOJI = { cereales: '🌾', ganaderia: '🐄', lacteos: '🥛', pienso: '🌽', fertilizantes: '🌱', azucar: '🍬', aceite: '🫒', energia: '⚡' };
   var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
 
   // Variación del último dato frente al de ~1 mes antes, con fechas reales
@@ -422,7 +423,7 @@
           '<span class="di-map-tile-price">' + esc(p.price) + ' <small>' + esc(p.unit) + '</small></span>' +
           '</button>';
       }).join('');
-      return '<div class="di-map-group" style="flex:' + g.products.length + ' 1 ' + (g.products.length * 156) + 'px;"><div class="di-map-group-label">' + esc(g.label) + '</div><div class="di-map-grid">' + tilesHtml + '</div></div>';
+      return '<div class="di-map-group"><div class="di-map-group-label"><span aria-hidden="true">' + (MAP_GROUP_EMOJI[g.id] || '') + '</span> ' + esc(g.label) + '</div><div class="di-map-grid">' + tilesHtml + '</div></div>';
     }).join('');
     return (
       '<div class="di-intel-section" id="di-intel-map">' +
@@ -1333,6 +1334,15 @@
     stories=regional.length?regional:stories.filter(function(n){return n.region==='global';});
     // solo noticias con un canal comprobado (clima, oferta, comercio, costes...): una mención del producto no es un impacto de mercado
     stories=stories.filter(function(n){return (n.marketLinks||[]).some(function(l){return l.channel&&l.channel!=='market_impact';});});
+    // Dentro de la UE: primero las del país elegido y, para completar, las que están en el idioma del usuario.
+    // Los titulares no se traducen (se muestran en su idioma original), así que no se mezclan idiomas ajenos
+    // y las de otros países en otro idioma no se muestran: mejor una lista corta que titulares ilegibles.
+    if(region==='eu'){
+      var euCc=Core.getEuCountry?String(Core.getEuCountry()||'').toUpperCase():null, ul=lang();
+      var mine=stories.filter(function(n){return euCc&&n.country===euCc;});
+      var readable=stories.filter(function(n){return (!euCc||n.country!==euCc)&&n.lang===ul;});
+      stories=mine.concat(readable);
+    }
     stories.sort(function(a,b){return String(a.date)<String(b.date)?1:-1;});
     stories=stories.slice(0,5);
 
@@ -1373,7 +1383,7 @@
         var lag=String(r.lagPeriods)+' '+(r.frequency==='quarterly'?(r.lagPeriods===1?t.q1:t.qn):(r.lagPeriods===1?t.m1:t.mn));
         sig='<div class="di-nw-sig '+(corr>=0?'positive':'negative')+'"><b>'+esc(t.observed)+':</b> '+esc(r.label)+' · '+esc(corr>=0?'Δ +':'Δ −')+' · r '+(corr==null?'—':decSep(corr.toFixed(2)))+' · lag '+esc(lag)+(alert?' · ⚠ '+esc(t.watch):'')+'</div>';
       }
-      var foreign=(lang()!=='en'&&!(n.headline&&n.headline[lang()]))?'<span class="di-nw-lang">EN</span>':'';
+      var foreign=(n.lang&&n.lang!==lang())?'<span class="di-nw-lang" title="Idioma original / Original language">'+esc(String(n.lang||'').toUpperCase())+'</span>':'';
       return '<article class="di-nw-card">'+
         '<a class="di-nw-head" href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+esc(hl)+'</a>'+
         '<div class="di-nw-meta"><span>'+esc(n.source)+' · '+esc(n.date)+'</span>'+foreign+'</div>'+

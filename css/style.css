@@ -464,10 +464,11 @@ img { max-width: 100%; }
 
 /* Market Map */
 /* Dehesa Market Map: familias con cuadrícula de cuadros iguales */
-.di-map-wrap { display: flex; flex-wrap: wrap; gap: 16px 18px; }
-.di-map-group { min-width: 0; max-width: 100%; }
-.di-map-group-label { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--text-muted, #6b6a60); margin: 0 0 6px 2px; }
-.di-map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.di-map-wrap { display: flex; flex-direction: column; gap: 0; }
+.di-map-group { min-width: 0; max-width: 100%; padding: 14px 0 16px; border-top: 3px solid var(--text, #1b1b1b); }
+.di-map-group:first-child { border-top: 0; padding-top: 4px; }
+.di-map-group-label { font-size: 15px; font-weight: 700; letter-spacing: .3px; color: var(--text, #1b1b1b); margin: 0 0 10px 2px; }
+.di-map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 170px)); gap: 8px; }
 .di-map-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-height: 92px; padding: 9px 10px; border: 1px solid rgba(0,0,0,.10); border-radius: 8px; cursor: pointer; text-align: left; font: inherit; overflow: hidden; transition: transform .12s, box-shadow .12s; }
 .di-map-tile:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.16); }
 .di-map-tile-name { font-size: 12.5px; font-weight: 700; line-height: 1.2; max-width: 100%; }
@@ -1221,10 +1222,10 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 /* Atlantic Spread: tabla de movimientos EE. UU. vs Europa */
 .di-atl-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-.di-atl-table th, .di-atl-table td { padding: 6px 8px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; vertical-align: top; }
-.di-atl-table thead th { font-size: 11px; font-weight: 700; color: var(--text-muted, #6b6a60); text-align: center; }
+.di-atl-table th, .di-atl-table td { padding: 8px 8px; text-align: right; border-bottom: 2px solid var(--text, #1b1b1b); white-space: nowrap; vertical-align: top; }
+.di-atl-table thead th { border-bottom-width: 3px; font-size: 11px; font-weight: 700; color: var(--text-muted, #6b6a60); text-align: center; }
 .di-atl-table tbody th { text-align: left; font-weight: 700; }
-.di-atl-table td:nth-child(4), .di-atl-table th:nth-child(4) { border-left: 1px solid var(--border); }
+.di-atl-table td:nth-child(4), .di-atl-table th:nth-child(4) { border-left: 2px solid var(--text, #1b1b1b); }
 .di-atl-table td:last-child { text-align: left; }
 .di-atl-date { color: var(--text-faint, #6b6652); }
 .di-atl-na { color: var(--text-faint, #6b6652); }
