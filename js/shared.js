@@ -119,6 +119,7 @@
       cd('UK', 'Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito'),
       cd('AR', 'Argentina', 'Argentina', 'Argentine', 'Argentina'),
       cd('CL', 'Chile', 'Chile', 'Chili', 'Cile'),
+      cd('UY', 'Uruguay', 'Uruguay', 'Uruguay', 'Uruguay'),
       cd('PL', 'Polonia', 'Poland', 'Pologne', 'Polonia'),
       cd('EL', 'Grecia', 'Greece', 'Grèce', 'Grecia'),
       cd('IE', 'Irlanda', 'Ireland', 'Irlande', 'Irlanda'),
@@ -240,7 +241,7 @@
   }
   var REGIONS = [{ k: 'SA', l: L('Sudamérica', 'South America', 'Amérique du Sud', 'Sud America') }, { k: 'NA', l: L('Norteamérica', 'North America', 'Amérique du Nord', 'Nord America') }, { k: 'EU', l: L('Europa', 'Europe', 'Europe', 'Europa') }, { k: 'OT', l: L('Otros', 'Others', 'Autres', 'Altri') }];
   /* Europa = Unión Europea y países que usan el euro (Bulgaria desde 1-1-2026); «Otros» = europeos fuera del euro (Dinamarca, Reino Unido, Polonia, Suiza, Chequia, Hungría, Rumanía, Suecia) y Australia */
-  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', NL: 'EU', IE: 'EU', EL: 'EU', FI: 'EU', BG: 'EU', HR: 'EU', LT: 'EU', SK: 'EU', EE: 'EU', LV: 'EU', SI: 'EU' };
+  var REG_OF = { AR: 'SA', CL: 'SA', UY: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', NL: 'EU', IE: 'EU', EL: 'EU', FI: 'EU', BG: 'EU', HR: 'EU', LT: 'EU', SK: 'EU', EE: 'EU', LV: 'EU', SI: 'EU' };
   function panelHtml(g) {
     var leaves = g.items.filter(function (i) { return !i.items && !i.chip; }), chips = g.items.filter(function (i) { return i.chip; }), cols = [];
     if (leaves.length) cols.push({ h: g.first, items: leaves });
