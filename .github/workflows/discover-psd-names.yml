@@ -1,0 +1,43 @@
+name: Discover USDA PSD commodity names (one-off)
+# Lista los nombres de materias primas de PSD (fruta, frutos secos, café, algodón...) para ampliar la pagina de produccion mundial.
+# Solo manual. Escribe scripts/ref/psd-commodity-names.json.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  discover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - name: Download and list
+        run: |
+          mkdir -p /tmp/psd scripts/ref
+          ok=""
+          for u in psd_alldata_csv.zip psd_fruits_csv.zip psd_fruit_csv.zip psd_cotton_csv.zip psd_coffee_csv.zip psd_fruits_vegetables_csv.zip psd_tree_nuts_csv.zip; do
+            if curl -fsSL --retry 2 -m 240 -o /tmp/$u "https://apps.fas.usda.gov/psdonline/downloads/$u"; then
+              echo "OK $u"; ok="$ok $u"; mkdir -p /tmp/psd/$u.d; unzip -o -q /tmp/$u -d /tmp/psd/$u.d
+            else echo "NO $u"; fi
+          done
+          python3 - <<'PY'
+          import csv, glob, json, collections
+          out = {}
+          for f in glob.glob('/tmp/psd/*/*.csv'):
+              names = collections.Counter(); latest = {}
+              with open(f, newline='', encoding='utf-8-sig', errors='replace') as fh:
+                  r = csv.reader(fh); h = next(r)
+                  for row in r:
+                      if len(row) > 4:
+                          names[row[1]] += 1
+                          latest[row[1]] = max(latest.get(row[1], 0), int(row[4]) if row[4].isdigit() else 0)
+              out[f.split('/')[-2] + '/' + f.split('/')[-1]] = {'header': h, 'commodities': {k: latest[k] for k in sorted(names)}}
+          json.dump(out, open('scripts/ref/psd-commodity-names.json', 'w'), ensure_ascii=False, indent=1)
+          print({k: len(v['commodities']) for k, v in out.items()})
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/ref/psd-commodity-names.json
+          git commit -m "PSD: nombres de materias primas disponibles" && git pull --rebase -q && git push || echo "sin cambios"
