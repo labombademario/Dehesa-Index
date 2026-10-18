@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-17T21:34:49Z",
+ "generatedAt": "2026-10-18T00:48:56Z",
  "summary": {
-  "files": 73,
+  "files": 76,
   "errors": 0,
-  "warnings": 23
+  "warnings": 24
  },
  "files": [
   {
@@ -887,6 +887,80 @@
     "lines": 0
    },
    "generatedAt": "2026-10-17T21:23:29Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "eu-organic-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 285,
+    "points": 13260,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-17T22:30:01Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "eu-production-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "BG/eu-prod-bg-oilseeds-field-peas-area: salto 18.7 -> 46.6 en 2017 (mediana previa 1.4)",
+    "BG/eu-prod-bg-oilseeds-field-peas-production: salto 47.4 -> 133.25 en 2017 (mediana previa 2.7)",
+    "BG/eu-prod-bg-oilseeds-soybean-area: salto 0.31 -> 34.47 en 2015 (mediana previa 0.1)",
+    "BG/eu-prod-bg-oilseeds-soybean-area: salto 34.47 -> 14.16 en 2016 (mediana previa 0.2)",
+    "BG/eu-prod-bg-oilseeds-soybean-area: salto 14.16 -> 11.53 en 2017 (mediana previa 0.31)",
+    "BG/eu-prod-bg-oilseeds-soybean-production: salto 0.74 -> 40.28 en 2015 (mediana previa 0.6)",
+    "BG/eu-prod-bg-oilseeds-soybean-production: salto 40.28 -> 18.3 en 2016 (mediana previa 0.6)",
+    "BG/eu-prod-bg-oilseeds-soybean-production: salto 18.3 -> 20.0 en 2017 (mediana previa 0.6)",
+    "CY/eu-prod-cy-cereal-soft-wheat-production: salto 9.4 -> 11.14 en 2022 (mediana previa 0.32)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-area: salto 0.4 -> 8.5 en 2011 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-area: salto 0.4 -> 2.6 en 2014 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-area: salto 2.6 -> 9.2 en 2015 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-area: salto 9.2 -> 16.53 en 2016 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-area: salto 16.53 -> 26.76 en 2017 (mediana previa 0.4)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-area: salto 26.76 -> 17.08 en 2018 (mediana previa 0.4)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-production: salto 0.6 -> 5.3 en 2014 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-production: salto 5.3 -> 27.7 en 2015 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-production: salto 27.7 -> 37.11 en 2016 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-production: salto 37.11 -> 25.47 en 2017 (mediana previa 0.1)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-production: salto 25.47 -> 17.25 en 2018 (mediana previa 0.4)",
+    "EE/eu-prod-ee-oilseeds-broad-field-beans-production: salto 17.25 -> 29.18 en 2019 (mediana previa 0.6)",
+    "EL/eu-prod-el-cereal-sorghum-production: salto 1.76 -> 6.63 en 2014 (mediana previa 0.18)",
+    "EL/eu-prod-el-cereal-sorghum-production: salto 6.63 -> 10.27 en 2015 (mediana previa 0.2)",
+    "EL/eu-prod-el-cereal-sorghum-production: salto 10.27 -> 6.9 en 2016 (mediana previa 0.2)",
+    "FI/eu-prod-fi-oilseeds-broad-field-beans-area: salto 2.3 -> 9.43 en 2010 (mediana previa 0.3)"
+   ],
+   "stats": {
+    "series": 1163,
+    "points": 29320,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-17T22:29:57Z",
+   "info": [],
+   "nWarnings": 59,
+   "nErrors": 0
+  },
+  {
+   "file": "eu-food-monitor-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 91,
+    "points": 18005,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-17T22:59:55Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
