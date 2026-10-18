@@ -205,7 +205,7 @@
       }
       if (!ok) return;
       var sc = tot / pt.length - Math.min(p._t.es + p._t.en, 12) / 200;
-      var own = toks(p.names[curLang] || ''); if (pt.every(function (w) { return own.indexOf(w) >= 0; })) sc += 0.1;   // «grano» en italiano es el trigo; en español, un grano cualquiera
+      var own = toks(p.names[curLang] || ''); if (pt.every(function (w) { return own.some(function (o) { return env.tokScore(w, o) >= 0.95; }); })) sc += 0.1;   // «grano» en italiano es el trigo; en español, un grano cualquiera
       if (!best || sc > best.sc) best = { p: p, sc: sc };
     });
     return best && best.sc >= 0.55 ? best.p : null;
@@ -284,6 +284,9 @@
     else if (countries.length && !regions.length) kind = 'country';
     else if (kinds.calendar) kind = 'calendar';
     if (!kind) return null;
+    if ((kind === 'price' || kind === 'country') && (prodW || attrs.length) && !deKind) return null;   // «producción de leche en Francia»: no es una pregunta de precios; mejor la búsqueda normal
+    if (lands.length && !deKind && (kind === 'price' || kind === 'change' || kind === 'country')) return null;   // «leche en Baviera»: hay datos por Land, pero no precios; que decida la búsqueda
+    if (kind === 'local' && (df.land || df.rent)) return null;   // «arrendamiento tierra Iowa»: no hay alquileres por estado en precios locales
     if ((kind === 'price' || kind === 'change') && xcountries.length) return null;   // «petróleo en Rusia»: no hay precio ruso; mejor la búsqueda normal que precios de otros mercados
     if (kind === 'price' && countries.length && !regions.length) kind = 'country';
     return { kind: kind, reports: reports, product: product, pair: pair, regions: regions, states: states, countries: countries, parties: parties.map(function (x) { return x.code; }), tdir: tdir,

@@ -669,5 +669,10 @@
  {"q":"mercado agrario de Chile","lang":"es","expect":{"kind":"country"}},
  {"q":"Chile country page","lang":"en","expect":{"kind":"country"}},
  {"q":"page pays Chili","lang":"fr","expect":{"kind":"country"}},
- {"q":"pagina paese Cile","lang":"it","expect":{"kind":"country"}}
+ {"q":"pagina paese Cile","lang":"it","expect":{"kind":"country"}},
+ {"q":"vacas","lang":"es","expect":{"kind":"price","product":"vaca"}},
+ {"q":"producción de leche en Francia","lang":"es","expect":null},
+ {"q":"arrendamiento tierra Iowa","lang":"es","expect":null},
+ {"q":"precio de la leche en Baviera","lang":"es","expect":null},
+ {"q":"production de lait en France","lang":"fr","expect":null}
 ]
