@@ -816,7 +816,7 @@
     for (var j = 0; j < info.hr.cells.length; j++) {
       var th = info.hr.cells[j], ind = th.querySelector('.di-sort-ind');
       if (!ind) { ind = document.createElement('span'); ind.className = 'di-sort-ind'; ind.setAttribute('aria-hidden', 'true'); th.appendChild(ind); }
-      th.classList.add('di-sortable'); th.setAttribute('tabindex', '0'); th.setAttribute('role', 'button');
+      th.classList.add('di-sortable'); if (!th.querySelector('button')) { th.setAttribute('tabindex', '0'); th.setAttribute('role', 'button'); } /* un boton dentro (p. ej. ayuda) no puede anidarse en otro boton */
       if (!th.getAttribute('title')) th.setAttribute('title', t.tip);
       if (j === col && dir) { ind.textContent = dir === 'asc' ? ' ▲' : ' ▼'; th.setAttribute('aria-sort', dir === 'asc' ? 'ascending' : 'descending'); }
       else { ind.textContent = ' ↕'; th.removeAttribute('aria-sort'); } /* se ve que la columna se puede ordenar */
@@ -838,6 +838,7 @@
   }
   function onSortClick(ev) {
     if (ev.type === 'keydown' && ev.key !== 'Enter' && ev.key !== ' ') return;
+    if (ev.target.closest && ev.target.closest('th button')) return;
     var th = ev.target.closest ? ev.target.closest('th.di-sortable') : null; if (!th) return;
     var tb = th.closest('table'), info = tb && sortableTable(tb); if (!info) return;
     if (ev.type === 'keydown') ev.preventDefault();
