@@ -192,19 +192,22 @@ for (const w of [1280, 390]) {
       const tx1 = await page.innerText('#rl-body');   // el esquema INSUMO > CANAL > MERCADO va en la tarjeta abierta
       for (const must of [/INSUMO|INPUT|INTRANT/, /CANAL|CHANNEL/, /MERCADO|MARKET|MARCH/]) if (!must.test(tx1)) throw new Error('falta el esquema INSUMO>CANAL>MERCADO');
     });
+    // Filtros y bloques del observatorio van plegados (3239fcd): el test los abre como lo haria una persona (clic en el resumen).
+    const openFilt = (page) => page.evaluate(() => { document.querySelectorAll('#ob-body details[data-sec]').forEach((d) => { if (['_f', 'moves'].includes(d.dataset.sec) && !d.open) d.querySelector('summary').click(); }); });
     await flow('observatorio: filtros, ventanas y enlace profundo', w, async (page) => {
       await page.goto(BASE + '/observatorio.html', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
       for (const id of ['new', 'moves', 'revisions', 'freshness', 'upcoming', 'coverage', 'quality', 'pipelines']) if (!(await page.$('#ob-body #' + id))) throw new Error('falta la seccion ' + id);
+      await openFilt(page);
       const total = parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10);
       await page.click('[data-f=c][data-v=us]'); await page.waitForTimeout(150);
       const us = parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10);
       if (!(us > 0 && us < total)) throw new Error('el filtro de pais no filtra (' + us + ' de ' + total + ')');
       if (!/c=us/.test(page.url())) throw new Error('el filtro no queda en la URL');
-      await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
+      await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 }); await openFilt(page);
       if (parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10) !== us) throw new Error('el filtro no se conserva al recargar');
-      await page.click('[data-f=w][data-v=d1]'); await page.waitForTimeout(150);
+      await openFilt(page); await page.click('[data-f=w][data-v=d1]'); await page.waitForTimeout(150);
       if (!/ninguna serie|No series|Aucune série|Nessuna serie/i.test(await page.innerText('#moves'))) throw new Error('la ventana diaria vacia debe decirlo en vez de rellenarse');
-      await page.goto(BASE + '/observatorio.html?c=eu&t=INPUT&w=d30#freshness', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
+      await page.goto(BASE + '/observatorio.html?c=eu&t=INPUT&w=d30#freshness', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 }); await openFilt(page);
       if (!(await page.$('#moves [data-f=w][aria-pressed=true][data-v=d30]'))) throw new Error('?w=d30 no abre la ventana mensual');
       const rows = await page.$$eval('#moves tbody tr', (e) => e.length); if (rows < 1) throw new Error('ventana mensual sin filas con filtros eu+INPUT');
     });

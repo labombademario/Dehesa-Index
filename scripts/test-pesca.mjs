@@ -41,7 +41,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
     if (lang === 'es') ok(tag + ' especie traducida (merluza)', /merluza/i.test(r.t) && !/European hake/.test(r.t));
   }
   // cambiar a EE. UU. desde el selector
-  await page.selectOption('#fsh-cc', 'US').catch(() => {}); await page.waitForTimeout(800);
+  await page.evaluate(() => { const s = document.getElementById('fsh-cc'); s.value = 'US'; s.dispatchEvent(new Event('change', { bubbles: true })); }); await page.waitForTimeout(800);   // el selector de pais es ahora el buscador de paises; el <select> original sigue oculto y recibe el cambio
   r = await page.evaluate(() => { const b = document.getElementById('fsh-body'); return { t: b.innerText, url: location.search, noaa: !!b.querySelector('a[href*="noaa"]') }; });
   ok(tag + ' EE. UU.: URL y fuente NOAA', /c=US/.test(r.url) && r.noaa);
   const us = V('US'), v = last(us.series['ld-total-usd']); ok(tag + ' EE. UU.: ano del total = JSON', r.t.indexOf(v[0]) > -1 && !/undefined|NaN/.test(r.t));
