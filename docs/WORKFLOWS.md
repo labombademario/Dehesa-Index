@@ -273,7 +273,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-switzerland-foag.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-ch-foag.py | ch-chain.json, switzerland-foag-stats.json | finish, validate-files |
 | update-switzerland-meteo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ch-meteo.py | switzerland-meteo-stats.json | finish, validate-files |
 | update-trade-partners.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-trade-partners.py | ca-trade-products.json, cl-trade-products.json, uk-trade-products.json | finish, validate-files |
-| update-uruguay.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-uruguay.py | uruguay-departments.json, uruguay-stats.json | finish, validate-files |
+| update-uruguay.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-uruguay.py | uruguay-departments.json, uruguay-stats.json, uy-ghg-agri.json | finish, validate-files |
 | update-usda-calendar.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-usda-calendar.py | usda-calendar.json | finish, validate-files |
 | update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json, world-production.json | finish, validate-files |
 | update-wine-prices.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-wine-prices.py | wine-prices.json | finish, validate-files |

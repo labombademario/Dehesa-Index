@@ -177,4 +177,31 @@ ok('Mapa: 19 departamentos', len(mp['states']) == 19)
 ok('Mapa: ids del mapa = sufijos ISO del adaptador', sorted(s['id'] for s in mp['states']) == sorted(i for _, _, i in mod.UY_DEPTS))
 ok('Mapa: nombres del mapa = nombres del adaptador', sorted(s['name'] for s in mp['states']) == sorted(n for _, n, _ in mod.UY_DEPTS))
 
+# ---- 9. Inventario de GEI: agricultura sin la categoria Tierra, solo gases directos, factor GWP comprobado
+def ghg_xlsx(years, bad_year=None):
+    wb = openpyxl.Workbook(); ws = wb.active; ws.title = 'Datos'
+    ws.append(['Sector', 'Categoría', 'Subcategoría', 'Año', 'Tipo de GEI', 'GEI', 'Gg Gas', 'Gg CO2 - eq (GWP)', 'Gg CO2 - eq (GTP)', 'Notation Key'])
+    A3 = '3 - Agricultura, Silvicultura y Otros Usos de la Tierra'
+    for y in years:
+        k = 30.0 if y == bad_year else 28.0
+        ws.append([A3, '3.A - Ganado', '3.A.1 - Fermentación entérica', y, 'Directo', 'CH4', 10.0, str(10.0 * k).replace('.', ','), '1', None])
+        ws.append([A3, '3.A - Ganado', '3.A.2 - Gestión del estiércol', y, 'Directo', 'CH4', 1.0, '28,0', '1', None])
+        ws.append([A3, '3.C - Fuentes agregadas', '3.C.4 - Emisiones directas de N2O provenientes de suelos manejados', y, 'Directo', 'N2O', 2.0, '530,0', '1', None])
+        ws.append([A3, '3.B - Tierra', '3.B.3 - Pastizales', y, 'Directo', 'CO2', -100.0, '-100,0', '1', None])
+        ws.append(['1 - Energía', '1.A - Actividades de quema de combustible', '1.A.3 - Transporte', y, 'Directo', 'CO2', 50.0, '50,0', '50,0', None])
+        ws.append(['1 - Energía', '1.A - Actividades de quema de combustible', '1.A.3 - Transporte', y, 'Indirecto', 'NOx', 9.0, None, None, None])
+    b = io.BytesIO(); wb.save(b); return b.getvalue()
+mod.LOG.clear(); d = mod.ghg_parse(ghg_xlsx(range(2010, 2022)))
+ok('GEI: genera datos', d is not None)
+if d:
+    ok('GEI: agricultura = 3.A + 3.C sin 3.B (280+28+530)', abs(d['agriculture'][0] - 838.0) < 1e-6)
+    ok('GEI: total nacional = agricultura + energia, sin la Tierra (838+50)', abs(d['national'][0] - 888.0) < 1e-6)
+    ok('GEI: la Tierra va aparte y negativa', abs(d['landUseNet'][0] + 100.0) < 1e-6)
+    ok('GEI: categorias enteric/manure/soils', d['byCategory']['enteric'][0] == 280.0 and d['byCategory']['manure'][0] == 28.0 and d['byCategory']['soils'][0] == 530.0)
+    ok('GEI: gas indirecto (NOx) no suma', 'NOx' not in d['byGas'])
+mod.LOG.clear(); d = mod.ghg_parse(ghg_xlsx(range(2008, 2022), bad_year=2015))
+ok('GEI: anio con factor de CH4 distinto (30 en vez de 28) se descarta', d is not None and 2015 not in d['years'] and 2014 in d['years'])
+ok('GEI: el anio descartado queda anotado', any('factor' in l for l in mod.LOG))
+mod.LOG.clear(); ok('GEI: menos de 10 anios no se publica', mod.ghg_parse(ghg_xlsx(range(2018, 2022))) is None)
+
 print('test-uruguay:', 'OK' if not fails else '%d fallos' % len(fails)); sys.exit(1 if fails else 0)

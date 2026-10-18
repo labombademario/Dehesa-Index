@@ -4229,16 +4229,16 @@
    "aliases": [],
    "confidence": "high",
    "legalConfidence": "HIGH",
-   "notes": "Conjuntos usados: INIA (5 estaciones: precipitacion y temperaturas extremas), URSEA (ppi_vs_pe_v2) y MGAP (compraventas de tierra). Cada ejecucion de scripts/update-uruguay.py comprueba que license_id sigue siendo odc-uy y se detiene si cambia. odc-uy NO es ODbL.",
-   "name": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA)",
+   "notes": "Conjuntos usados: Ministerio de Ambiente (inventario nacional de gases de efecto invernadero, ambiente_ingei), INIA (5 estaciones: precipitacion y temperaturas extremas), URSEA (ppi_vs_pe_v2) y MGAP (compraventas de tierra). Cada ejecucion de scripts/update-uruguay.py comprueba que license_id sigue siendo odc-uy y se detiene si cambia. odc-uy NO es ODbL.",
+   "name": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA, Ministerio de Ambiente)",
    "url": "https://catalogodatos.gub.uy/",
    "country": "UY",
    "licenseId": "odc-uy",
    "licenseName": "Licencia de Datos Abiertos - Uruguay (version 0.1)",
    "licenseUrl": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/documentos/publicaciones/licencia_de_datos_abiertos_0.pdf",
-   "attributionText": "Fuente: INIA / MGAP / URSEA, Uruguay (catalogodatos.gub.uy), Licencia de Datos Abiertos - Uruguay. Dehesa Index calcula medias mensuales, sumas anuales y promedios ponderados; esas cifras derivadas no cuentan con aval del proveedor.",
+   "attributionText": "Fuente: INIA / MGAP / URSEA / Ministerio de Ambiente, Uruguay (catalogodatos.gub.uy), Licencia de Datos Abiertos - Uruguay. Dehesa Index calcula medias mensuales, sumas anuales y promedios ponderados; esas cifras derivadas no cuentan con aval del proveedor.",
    "additionalRestrictions": "Identificar proveedor, licencia y conjunto; declarar las modificaciones. No extender a logos ni a materiales de terceros.",
-   "evidence": "API CKAN de catalogodatos.gub.uy (package_show, 18-oct-2026): los conjuntos inia-precipitacion-temps-extremas-{le,lb,sg,tyt,tb}, ursea-ppi_vs_pe_v2 y mgap-serie-precio-de-la-tierra-compraventas devuelven license_id=odc-uy; el texto oficial de la licencia permite uso comercial y obras derivadas con nota de origen.",
+   "evidence": "API CKAN de catalogodatos.gub.uy (package_show, 18-oct-2026): los conjuntos inia-precipitacion-temps-extremas-{le,lb,sg,tyt,tb}, ursea-ppi_vs_pe_v2 y mgap-serie-precio-de-la-tierra-compraventas devuelven license_id=odc-uy; el texto oficial de la licencia permite uso comercial y obras derivadas con nota de origen. El paquete ambiente_ingei (inventario de GEI, Ministerio de Ambiente) tambien devuelve license_id=odc-uy (18-oct-2026); el catalogo lo marca como discontinuado.",
    "short": "Uruguay (datos abiertos)",
    "legalConfidenceReason": "Licencia explicita en los metadatos oficiales de cada conjunto."
   },
@@ -6301,6 +6301,12 @@
     "MGAP": "uruguay_datos_abiertos",
     "URSEA": "uruguay_datos_abiertos"
    }
+  },
+  "data/uy-ghg-agri.json": {
+   "sources": [
+    "uruguay_datos_abiertos"
+   ],
+   "notes": "Emisiones de gases de efecto invernadero de la agricultura de Uruguay (sector 3 sin la categoria Tierra) y total nacional, por categoria y gas (inventario nacional del Ministerio de Ambiente, odc-uy). scripts/update-uruguay.py."
   },
   "data/uruguay-departments.json": {
    "bySourceGroupPrefix": {

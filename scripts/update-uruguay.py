@@ -338,10 +338,68 @@ def dicose():
        [(y, v) for y, v in births.items() if v > 0], 'MGAP (Uruguay)', nt + ' El dato de nacimientos solo existe para bovinos.')
 
 
+GHG = {}
+GHG_HEAD = ['Sector', 'Categoría', 'Subcategoría', 'Año', 'Tipo de GEI', 'GEI', 'Gg Gas', 'Gg CO2 - eq (GWP)', 'Gg CO2 - eq (GTP)']
+GHG_FACTOR = {'CO2': 1.0, 'CH4': 28.0, 'N2O': 265.0}   # factores GWP que trae el propio fichero (corresponden a AR5, aunque su metadato diga AR2)
+GHG_CAT = {'3.A.1': 'enteric', '3.A.2': 'manure', '3.C.6': 'manure', '3.C.4': 'soils', '3.C.5': 'soils', '3.C.7': 'rice', '3.C.3': 'urea', '3.C.1': 'burning'}
+
+
+def ghg_parse(b):
+    """Inventario nacional de GEI (Ministerio de Ambiente) -> estructura de data/uy-ghg-agri.json. El CSV oficial tiene la coma decimal sin comillas; se lee solo el XLSX."""
+    import openpyxl
+    wb = openpyxl.load_workbook(io.BytesIO(b), data_only=True, read_only=True)
+    ws = wb['Datos'] if 'Datos' in wb.sheetnames else wb[wb.sheetnames[0]]
+    it = ws.iter_rows(values_only=True)
+    head = [str(c).strip() if c is not None else '' for c in next(it)][:9]
+    if head != GHG_HEAD: log('GEI: cabecera inesperada', head); return None
+    ag = defaultdict(float); nat = defaultdict(float); land = defaultdict(float)
+    cat = defaultdict(lambda: defaultdict(float)); gas = defaultdict(lambda: defaultdict(float)); bad = set(); unk = set()
+    for r in it:
+        if not r or not r[0] or r[4] != 'Directo': continue   # los gases indirectos (CO, NOx, COVDM, SO2) no tienen CO2-eq
+        try: y = int(r[3])
+        except (TypeError, ValueError): continue
+        g, w = num(r[6]), num(r[7])
+        if w is None or g is None: bad.add(y); continue
+        k = str(r[5]).strip()
+        if k in GHG_FACTOR and g and abs(w / g - GHG_FACTOR[k]) > 0.02 * GHG_FACTOR[k]: bad.add(y); log('GEI: factor GWP distinto del esperado', y, k, round(w / g, 3)); continue
+        sec, sub = str(r[0]).strip()[:1], str(r[2]).strip()[:5]
+        if sec == '3' and str(r[1]).strip()[:3] == '3.B': land[y] += w; continue   # uso de la tierra (sumideros): aparte, no es agricultura ni entra en el total
+        nat[y] += w
+        if sec == '3':
+            ag[y] += w; gas[k][y] += w
+            c = GHG_CAT.get(sub)
+            if c: cat[c][y] += w
+            else: unk.add(sub); cat['otherC'][y] += w
+    ys = sorted(y for y in ag if y not in bad)
+    if len(ys) < 10: log('GEI: solo %d anios utilizables' % len(ys)); return None
+    if bad: log('GEI: anios descartados por datos incompletos o factor distinto:', sorted(bad))
+    if unk: log('GEI: subcategorias agricolas sin clasificar (van a "otros"):', sorted(unk))
+    R = lambda d: [round(d.get(y, 0.0), 1) for y in ys]
+    now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    return {'schemaVersion': 1, 'generatedAt': now, 'unit': 'kt CO2-eq', 'country': 'UY', 'sourceKind': 'singei',
+            'source': {'name': 'Ministerio de Ambiente de Uruguay, Inventario Nacional de Gases de Efecto Invernadero (SINGEI; INGEI, directrices IPCC 2006)',
+                       'url': 'https://catalogodatos.gub.uy/dataset/ambiente_ingei', 'license': 'Licencia de Datos Abiertos - Uruguay (odc-uy)', 'licenseShort': 'odc-uy'},
+            'years': ys, 'agriculture': R(ag), 'national': R(nat), 'byCategory': {k: R(v) for k, v in cat.items()}, 'byGas': {k: R(v) for k, v in gas.items()},
+            'landUseNet': R(land),
+            'note': 'Solo gases directos (CO2, CH4, N2O, HFC, PFC, SF6) en CO2-eq con los factores del propio fichero (CH4 28, N2O 265, que son los de AR5; el metadato del fichero dice AR2). Agricultura = sector 3 sin la categoria 3.B Tierra; el total nacional no incluye 3.B (landUseNet, negativo = sumidero). Los anios no son consecutivos (1990, 1994, 1998, 2000, 2002... cada dos anios hasta 2014; anual desde 2016). Recurso senalado como discontinuado en el catalogo.'}
+
+
+def ghg():
+    try: pkg = package('ambiente_ingei')
+    except Exception as e: log('GEI:', e); return
+    res = [r for r in pkg['resources'] if (r.get('url') or '').lower().endswith('ingei.xlsx')]
+    if not res: log('GEI: sin XLSX ingei.xlsx'); return
+    b = resource_bytes(res[0])
+    if b is None: return
+    if b.lstrip().startswith(b'<'): log('GEI: el XLSX es HTML'); return
+    d = ghg_parse(b)
+    if d: GHG['doc'] = d
+
+
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids):
+    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
     if not OUT: log('sin series'); sys.exit(1)
@@ -354,6 +412,7 @@ def main():
             'note': 'Departamentos por sufijo ISO 3166-2 (id del mapa) y codigo numerico alfabetico INE/AGESIC (el de DICOSE y MGAP). Existencias: DICOSE PD_AD por departamento donde esta registrado el tenedor (puede diferir del departamento donde pastan los animales). Tierra: solo departamentos con los dos semestres; USD/ha ponderado.',
             'departments': [{'iso': i, 'code': c, 'name': n} for c, n, i in UY_DEPTS], 'livestock': DEPT['livestock'], 'land': DEPT['land']}
     log('series guardadas:', len(OUT))
+    if GHG.get('doc'): (( Path(sys.argv[sys.argv.index('--out') + 1]) if '--out' in sys.argv else ROOT / 'data') / 'uy-ghg-agri.json').write_text(json.dumps(GHG['doc'], ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     out = Path(sys.argv[sys.argv.index('--out') + 1]) if '--out' in sys.argv else ROOT / 'data'
     (out / 'uruguay-stats.json').write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     (out / 'uruguay-departments.json').write_text(json.dumps(ddoc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
