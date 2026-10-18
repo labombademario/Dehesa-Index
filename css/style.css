@@ -1222,10 +1222,12 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 /* Atlantic Spread: tabla de movimientos EE. UU. vs Europa */
 .di-atl-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-.di-atl-table th, .di-atl-table td { padding: 8px 8px; text-align: right; border-bottom: 2px solid var(--text, #1b1b1b); white-space: nowrap; vertical-align: top; }
-.di-atl-table thead th { border-bottom-width: 3px; font-size: 11px; font-weight: 700; color: var(--text-muted, #6b6a60); text-align: center; }
+.di-atl-table th, .di-atl-table td { padding: 8px 8px; text-align: right; border-bottom: 1px solid var(--border, #d9d4c4); white-space: nowrap; vertical-align: middle; }
+.di-atl-table thead th { border-bottom: 1px solid var(--border-strong, #bdb7a3); font-size: 11px; font-weight: 700; color: var(--text-muted, #6b6a60); text-align: center; vertical-align: bottom; }
+.di-atl-table thead th:not([colspan]) { border-bottom: 2px solid var(--text, #1b1b1b); }
 .di-atl-table tbody th { text-align: left; font-weight: 700; }
-.di-atl-table td:nth-child(4), .di-atl-table th:nth-child(4) { border-left: 2px solid var(--text, #1b1b1b); }
+/* una sola linea vertical, entre EE. UU. y Europa (columna 5 en el cuerpo, 4 en la 2.ª fila de cabecera, 3 en la 1.ª) */
+.di-atl-table tbody td:nth-child(5), .di-atl-table thead tr:last-child th:nth-child(4), .di-atl-table thead tr:first-child th:nth-child(3) { border-left: 1px solid var(--border-strong, #bdb7a3); }
 .di-atl-table td:last-child { text-align: left; }
 .di-atl-date { color: var(--text-faint, #6b6652); }
 .di-atl-na { color: var(--text-faint, #6b6652); }
