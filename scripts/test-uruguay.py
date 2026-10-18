@@ -129,4 +129,29 @@ if c:
     ok('DICOSE: no hay total bovinos+leche', not any('total' in k for k in s))
     ok('DICOSE: nota avisa de no sumar bovinos y leche', 'No se suma con bovinos' in s['uy-dicose-dairy-cattle-head'].get('note', ''))
 
+# ---- 7. Rejillas INIA: solo columna mensual (sufijo 0), media de celdas, mes con celda vacia fuera, ANR identico a PAD descartado
+def grid(year, months, scale=1.0, hole=None):
+    cols = ['id', 'Longitud', 'Latitud']
+    for m in range(1, months + 1): cols += ['%d_%02d1' % (year, m), '%d_%02d0' % (year, m)]
+    b = io.StringIO(); w = csv.writer(b); w.writerow(cols)
+    for i in range(160):
+        row = [i, -56.0, -33.0]
+        for m in range(1, months + 1):
+            mv = '' if hole == (m, i) else (10.0 * m + (i % 2)) * scale   # media mensual de las celdas = 10*m + 0.5
+            row += [9999.0, mv]   # la decada (sufijo 1) trae un valor que NO debe usarse
+        w.writerow(row)
+    return b.getvalue().encode()
+def gpk(name, ids): return {'name': name, 'license_id': 'odc-uy', 'resources': [{'id': i, 'url': 'https://x/inia_gras_%s%s.csv' % (name.split('-')[1], y)} for i, y in ids]}
+files = {'x--p25.csv': grid(2025, 12), 'x--p26.csv': grid(2026, 4, hole=(2, 3)), 'x--a25.csv': grid(2025, 12), 'x--a26.csv': grid(2026, 4, hole=(2, 3))}
+pk = [gpk('inia-pad-por-grilla', [('p25', 2025), ('p26', 2026)]), gpk('inia-anr-por-grilla', [('a25', 2025), ('a26', 2026)])]
+p, s, log = run(files, pk)
+g = s.get('uy-inia-grid-pad-mean')
+ok('Rejilla PAD genera serie', g is not None)
+if g:
+    pts = dict(g['points'])
+    ok('Rejilla: media mensual de las celdas (10*m+0.5), no la decada', abs(pts['2025-03'] - 30.5) < 1e-6)
+    ok('Rejilla: mes con celda vacia no entra (no se rellena con 0)', '2026-02' not in pts and '2026-03' in pts)
+ok('Rejilla ANR identica a PAD: no se publica', 'uy-inia-grid-anr-mean' not in s)
+ok('Rejilla ANR identica: anotado en el log', 'identica a PAD' in log)
+
 print('test-uruguay:', 'OK' if not fails else '%d fallos' % len(fails)); sys.exit(1 if fails else 0)

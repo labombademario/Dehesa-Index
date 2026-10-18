@@ -21,6 +21,11 @@ Conjuntos usados:
         ovinos (2) y bovinos de leche (11), y los nacimientos declarados de bovinos. NO se suma PD_PF (propios dentro + propios fuera) y NO se suman los codigos 1 y 11 en un total:
         la fuente no garantiza que no se solapen. Suinos, caprinos, yeguarizos y aves no se publican: el MGAP advierte que no pasaron controles de calidad. El ejercicio
         es el ejercicio ganadero de la declaracion jurada; no se supone una fecha exacta de referencia.
+  inia-pad-por-grilla / inia-ibh-por-grilla / inia-anr-por-grilla  INIA GRAS, balance hidrico modelado sobre una grilla de ~30x30 km (179 celdas), un CSV por anio con promedios decadiales
+        (sufijos 1-3) y mensuales (sufijo 0) de PAD (% de agua disponible en el suelo), IBH (indice de bienestar hidrico, %) y ANR (agua no retenida, mm acumulados). Se publica SOLO
+        la columna mensual y la media simple de las celdas de la grilla de ese mes (los meses sin las 179 celdas no entran). Es un modelo, no una medicion, y la media de celdas
+        NO es el % de superficie nacional afectada ni un indice oficial de sequia. El recurso 'inia_gras_pad2022.csv' del conjunto ANR lleva nombre de PAD: si su matriz es identica a la
+        del PAD de ese anio se descarta y se anota.
 Sin estimaciones: lo que falta no se rellena; una serie con menos de 3 puntos o sin dato en los ultimos 3 anios se descarta y se anota en el log.
 
 Modo local de prueba: python3 scripts/update-uruguay.py --local DIR [--out DIR_SALIDA]  (DIR con los originales del paquete de investigacion: raw/*.csv, raw/*.xlsx, raw/ckan-*.json)."""
@@ -211,6 +216,53 @@ def land(kind):
     mk(p + '-count', 'prices', 'Uruguay: %s, number of registered %s (MGAP)' % (L['en'], L['cnt']), L['cnt'], 'annual', [(str(y), yr[y][2]) for y in ys], 'MGAP (Uruguay)', nt)
 
 
+# ------------------------------------------------------------------ INIA: balance hidrico en grilla
+GRIDS = [('pad', 'inia-pad-por-grilla', 'Soil available water (PAD)', '%', 'percent of available water in the soil, modelled'),
+         ('ibh', 'inia-ibh-por-grilla', 'Water well-being index (IBH)', '%', 'actual / potential evapotranspiration, modelled'),
+         ('anr', 'inia-anr-por-grilla', 'Water not retained by the soil (ANR)', 'mm', 'surface runoff plus soil water excess, monthly accumulation, modelled')]
+
+
+def read_grid(r):
+    b = resource_bytes(r)
+    if b is None: return None
+    if b.lstrip().startswith(b'<'): log('Grilla %s: contenido no es CSV' % (r.get('url') or '')[-24:]); return None
+    rd = csv.DictReader(io.StringIO(b.decode('utf-8-sig')))
+    if not rd.fieldnames or rd.fieldnames[:3] != ['id', 'Longitud', 'Latitud']: log('Grilla %s: cabecera inesperada' % (r.get('url') or '')[-24:]); return None
+    rows = list(rd)
+    return rd.fieldnames, rows
+
+
+def inia_grids():
+    mats = {}   # (indicador, periodo) -> lista de valores por celda
+    for key, name, label, unit, what in GRIDS:
+        try: pkg = package(name)
+        except Exception as e: log('Grilla %s: %s' % (key, e)); continue
+        series = {}
+        for r in pkg['resources']:
+            u = r.get('url') or ''
+            m = re.search(r'inia_gras_[a-z]+(\d{4})\.csv$', u)
+            if not m or int(m.group(1)) < YEAR0: continue
+            try: g = read_grid(r)
+            except Exception as e: log('Grilla %s %s: fallo %s' % (key, m.group(1), e)); continue
+            if not g: continue
+            cols, rows = g
+            if len(rows) < 150: log('Grilla %s %s: solo %d celdas, se omite' % (key, m.group(1), len(rows))); continue
+            for c in cols[3:]:
+                mm = re.fullmatch(r'(\d{4})_(\d{2})0', c)   # sufijo 0 = promedio/acumulado MENSUAL; 1-3 son decadas
+                if not mm or mm.group(1) != m.group(1): continue
+                vals = [num(x[c]) for x in rows]
+                if any(v is None for v in vals): log('Grilla %s %s: celdas sin dato, mes omitido' % (key, c)); continue   # un dato ausente no es 0
+                mats[(key, '%s-%s' % (mm.group(1), mm.group(2)))] = vals
+                series['%s-%s' % (mm.group(1), mm.group(2))] = sum(vals) / len(vals)
+        nt = ('INIA GRAS, balance hidrico modelado (%s). Media simple de las celdas de una grilla de unos 30x30 km en el mes (sufijo 0 del CSV); modelo, no medicion; no es el %% de superficie nacional '
+              'afectada ni un indice oficial de sequia. Calculo de Dehesa Index. Solo meses completos.' % what)
+        mk('uy-inia-grid-%s-mean' % key, 'climate', 'Uruguay: %s, mean of INIA grid cells, monthly (INIA GRAS, derived)' % label, unit, 'monthly', list(series.items()), 'INIA (Uruguay)', nt, minpts=12, maxage=1)
+    # el recurso ANR con nombre de PAD no puede ser una copia del PAD
+    for (k, p), v in list(mats.items()):
+        if k == 'anr' and ('pad', p) in mats and mats[('pad', p)] == v:
+            log('Grilla anr %s: matriz identica a PAD, recurso mal rotulado: serie ANR no publicada' % p); OUT.pop('uy-inia-grid-anr-mean', None); break
+
+
 # ------------------------------------------------------------------ MGAP: DICOSE existencias
 DICOSE_PKGS = ['mgap-datos-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig-2016', 'mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2017',
                'mgap-datos-2018-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig', 'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2019',
@@ -264,7 +316,7 @@ def dicose():
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose):
+    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
     if not OUT: log('sin series'); sys.exit(1)
