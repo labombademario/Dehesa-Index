@@ -30,7 +30,13 @@
     var al = sel.getAttribute('aria-label'); if (al) b.setAttribute('aria-label', al);
     sel.style.display = 'none'; sel.parentNode.insertBefore(w, sel); w.appendChild(b); w.appendChild(sel);
     function text() { var o = sel.options[sel.selectedIndex]; b.textContent = (o ? lab(o) : '') + ' ▾'; }
-    function close() { if (!open) return; open = false; if (pn) pn.hidden = true; b.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', away, true); document.removeEventListener('keydown', key, true); }
+    /* el panel va en position:fixed para que ninguna tarjeta con overflow:hidden lo recorte (antes no se podia bajar a los demas paises) */
+    function place() {
+      if (!open || !pn) return; var r = b.getBoundingClientRect(), vw = window.innerWidth, vh = window.innerHeight, wd = Math.min(440, vw * 0.92), below = vh - r.bottom - 12, above = r.top - 12, up = below < 260 && above > below, mh = Math.max(160, Math.min(420, up ? above : below));
+      pn.style.position = 'fixed'; pn.style.width = wd + 'px'; pn.style.maxHeight = mh + 'px'; pn.style.left = Math.max(8, Math.min(r.left, vw - wd - 8)) + 'px';
+      if (up) { pn.style.top = 'auto'; pn.style.bottom = (vh - r.top + 4) + 'px'; } else { pn.style.bottom = 'auto'; pn.style.top = (r.bottom + 4) + 'px'; }
+    }
+    function close() { if (!open) return; open = false; window.removeEventListener('resize', place); window.removeEventListener('scroll', place, true); if (pn) pn.hidden = true; b.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', away, true); document.removeEventListener('keydown', key, true); }
     function away(e) { if (!w.contains(e.target)) close(); }
     function key(e) { if (e.key === 'Escape') { close(); b.focus(); } }
     function build() {
@@ -53,7 +59,7 @@
       Array.prototype.forEach.call(pn.querySelectorAll('.cp-o'), function (c) { c.onclick = function () { var i = +c.getAttribute('data-i'); close(); if (sel.selectedIndex !== i) { sel.selectedIndex = i; text(); sel.dispatchEvent(new Event('change', { bubbles: true })); } b.focus(); }; });
       return q;
     }
-    b.onclick = function () { if (open) { close(); return; } var q = build(); pn.hidden = false; open = true; b.setAttribute('aria-expanded', 'true'); document.addEventListener('click', away, true); document.addEventListener('keydown', key, true); if (q) q.focus(); };
+    b.onclick = function () { if (open) { close(); return; } var q = build(); pn.hidden = false; open = true; b.setAttribute('aria-expanded', 'true'); document.addEventListener('click', away, true); document.addEventListener('keydown', key, true); place(); window.addEventListener('resize', place); window.addEventListener('scroll', place, true); if (q) q.focus(); };
     sel.addEventListener('change', text); text();
   }
   function scan(root) { var r = root && root.querySelectorAll ? root : document; Array.prototype.forEach.call(r.querySelectorAll('select[data-cpick]'), enhance); if (r.matches && r.matches('select[data-cpick]')) enhance(r); }
