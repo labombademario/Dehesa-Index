@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T18:40:18Z",
+ "generatedAt": "2026-10-18T21:35:35Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 141,
-  "sourcesApto": 128,
+  "sources": 142,
+  "sourcesApto": 129,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 290,
-  "datasets_apto": 167,
+  "datasets": 291,
+  "datasets_apto": 168,
   "datasets_condiciones": 113,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -1995,6 +1995,23 @@
    "redistribution": "yes",
    "attribution": "Source: U.S. Alcohol and Tobacco Tax and Trade Bureau (TTB), wine statistics",
    "conditions": "La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresas)."
+  },
+  {
+   "id": "uruguay_datos_abiertos",
+   "name": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA)",
+   "url": "https://catalogodatos.gub.uy/",
+   "country": "UY",
+   "licenseId": "odc-uy",
+   "licenseName": "Licencia de Datos Abiertos - Uruguay (version 0.1)",
+   "licenseUrl": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/documentos/publicaciones/licencia_de_datos_abiertos_0.pdf",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: INIA / MGAP / URSEA, Uruguay (catalogodatos.gub.uy), Licencia de Datos Abiertos - Uruguay. Dehesa Index calcula medias mensuales, sumas anuales y promedios ponderados; esas cifras derivadas no cuentan con aval del proveedor.",
+   "conditions": "Identificar proveedor, licencia y conjunto; declarar las modificaciones. No extender a logos ni a materiales de terceros."
   },
   {
    "id": "us_drought_monitor",
@@ -5894,6 +5911,31 @@
     {
      "scope": "pais:UK",
      "sourceId": "hmrc_uktradeinfo",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/uruguay-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "uruguay_datos_abiertos"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:INIA",
+     "sourceId": "uruguay_datos_abiertos",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:MGAP",
+     "sourceId": "uruguay_datos_abiertos",
+     "verdict": "apto"
+    },
+    {
+     "scope": "grupo:URSEA",
+     "sourceId": "uruguay_datos_abiertos",
      "verdict": "apto"
     }
    ]
