@@ -357,6 +357,8 @@
     'fertilizantes-urea': 'fertilizantes', 'fertilizantes-dap': 'fertilizantes', 'fertilizantes-potasa': 'fertilizantes',
     'azucar-azucar': 'azucar', 'aceite-oliva': 'aceite', 'energia-diesel': 'energia', 'energia-gas_natural': 'energia', 'energia-petroleo_wti': 'energia', 'energia-petroleo_brent': 'energia'
   };
+  var PROD_EMO = { maiz:'🌽', trigo:'🌾', arroz:'🍚', cebada:'🍺', avena:'🥣', centeno:'🌾', sorgo:'🌿', colza:'🌼', canola_elevador:'🌼', trigo_pienso_ab:'🌾', cebada_pienso_ab:'🍺', avena_pienso_ab:'🥣', trigo_cwrs_ab:'🌾', lenteja_laird_ab:'🫘', guisante_verde_ab:'🫛', soja_grano:'🫘', lenteja:'🫘', guisante_seco:'🫛', lino:'🌱', leche:'🥛', mantequilla:'🧈', leche_polvo:'🥛', vaca:'🐄', novillo_ab:'🐄', cabra:'🐐', cerdo:'🐖', cerdo_ab:'🐖', cordero:'🐑', huevos:'🥚', pollo:'🐔', pienso:'🌽', harina_soja:'🌱', urea:'🧪', dap:'🧪', potasa:'🧪', azucar:'🍬', oliva:'🫒', diesel:'⛽', gas_natural:'🔥', petroleo_wti:'🛢️', petroleo_brent:'🛢️' };
+  function prodEmo(nameKey) { return PROD_EMO[nameKey] ? PROD_EMO[nameKey] + ' ' : ''; }
   var MAP_GROUP_EMOJI = { cereales: '🌾', ganaderia: '🐄', lacteos: '🥛', pienso: '🌽', fertilizantes: '🌱', azucar: '🍬', aceite: '🫒', energia: '⚡' };
   var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
 
@@ -398,7 +400,7 @@
       return {
         id: g, label: t['mapGroup' + capitalize(g)],
         products: byGroup[g].map(function (it) {
-          var name = productName(it.entry.nameKey);
+          var name = prodEmo(it.entry.nameKey) + productName(it.entry.nameKey);
           var style = it.chg === null ? { bg: P().surfaceAlt, textColor: P().textFaint || '#5b5a52' } : tileStyle(it.chg, maxAbs);
           var changeLabel = it.chg === null ? '—' : D.fmtChange(it.chg);
           return { key: it.key, chg: it.chg, name: name, price: it.info.price, unit: it.info.unit, changeLabel: changeLabel, bg: style.bg, textColor: style.textColor,
@@ -1032,7 +1034,7 @@
       if (cu.c1 !== null && ce.c1 !== null && Math.abs(cu.c1) > 0.5 && Math.abs(ce.c1) > 0.5) {
         if ((cu.c1 > 0) === (ce.c1 > 0)) { read = t.same; col = pl.textMuted; } else { read = t.diverge; col = pl.textMuted; }
       }
-      keyed.push({ v: { u1: cu.c1, u3: cu.c3, e1: ce.c1, e3: ce.c3 }, html: '<tr><th>' + esc(productName(e.nameKey)) + '</th>' + cu.html + ce.html + '<td><span style="color:' + col + ';font-weight:600;">' + esc(read) + '</span></td></tr>' });
+      keyed.push({ v: { u1: cu.c1, u3: cu.c3, e1: ce.c1, e3: ce.c3 }, html: '<tr><th><span aria-hidden="true">' + prodEmo(e.nameKey) + '</span>' + esc(productName(e.nameKey)) + '</th>' + cu.html + ce.html + '<td><span style="color:' + col + ';font-weight:600;">' + esc(read) + '</span></td></tr>' });
     });
     if (ATL_SORT.k) keyed = keyed.map(function (r, i) { r.i = i; return r; }).sort(function (a, b) {
       var x = a.v[ATL_SORT.k], y = b.v[ATL_SORT.k];

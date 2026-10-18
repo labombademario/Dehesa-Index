@@ -2862,3 +2862,19 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 .pl-c-bid{text-align:right;white-space:nowrap}.pl-c-bid strong{font-size:19px;font-family:'Source Serif 4',serif}.pl-c-basis{text-align:right;font-size:12.5px;color:var(--text-faint)}.pl-c-chg{text-align:right;font-size:15px;white-space:nowrap}.pl-c-small{font-size:12.5px;color:var(--text-faint);white-space:nowrap}
 
 .di-tm-range{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 12px}.di-tm-rl{font-weight:700;font-size:14px}.di-tm-range .pl-chips{margin:0}
+
+/* ¿Quién produce qué? (produccion-mundial.html) */
+.pm-chipbox{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;margin-bottom:.6rem}
+.pm-pg{display:flex;flex-direction:column;gap:.25rem}
+.pm-hd{font-size:1.15rem;font-weight:700;margin-bottom:.6rem}
+.pm-emo{font-size:1.5rem}
+.pm-lead{border:2px solid #1b1b1b;border-radius:6px;padding:.7rem .9rem;margin-bottom:.7rem;background:var(--di-surface-alt,#f4f1e6)}
+.pm-lv{font-size:1.5rem;font-weight:800;line-height:1.2;margin:.15rem 0}
+.pm-top{list-style:none;margin:0;padding:0}
+.pm-top li{display:grid;grid-template-columns:minmax(0,9.5rem) 1fr auto auto auto;gap:.5rem;align-items:center;padding:.3rem 0;border-bottom:1px solid #d9d4c4;font-size:.88rem}
+.pm-top li.pm-on{background:rgba(31,107,63,.1)}
+.pm-bar{display:block;height:.6rem;background:#ece8da;border-radius:3px;overflow:hidden}
+.pm-bar i{display:block;height:100%;background:#1f6b3f}
+.pm-grp td{background:#f0ecde;font-weight:700;border-top:3px solid #1b1b1b}
+.pm-leads{margin:.2rem 0 .8rem}
+@media (max-width:560px){.pm-top li{grid-template-columns:minmax(0,1fr) auto auto;}.pm-top .pm-bar,.pm-top li>.cp-m{display:none}}
