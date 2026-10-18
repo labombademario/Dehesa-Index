@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T14:29:44Z",
+ "generatedAt": "2026-10-18T22:43:50Z",
  "sources": {
   "wb": {
    "name": "World Bank Open Data",
@@ -1770,6 +1770,46 @@
    "debt": {
     "v": 13.1456400046218,
     "y": 2000,
+    "src": "wb-central"
+   }
+  },
+  "UY": {
+   "currency": "UYU",
+   "gdp": {
+    "v": 85347696277.6859,
+    "y": 2025
+   },
+   "gdppc": {
+    "v": 25215.8238152781,
+    "y": 2025
+   },
+   "pop": {
+    "v": 3384688,
+    "y": 2025
+   },
+   "unemp": {
+    "v": 7.516,
+    "y": 2025
+   },
+   "agri": {
+    "v": 6.3800077320062,
+    "y": 2025
+   },
+   "gdpLc": {
+    "v": 3515517100000,
+    "y": 2025,
+    "cur": "UYU",
+    "src": "world_bank_wdi"
+   },
+   "gdppcLc": {
+    "v": 1038653.2229854,
+    "y": 2025,
+    "cur": "UYU",
+    "src": "world_bank_wdi"
+   },
+   "debt": {
+    "v": 65.3068312327003,
+    "y": 2024,
     "src": "wb-central"
    }
   }
