@@ -44,7 +44,10 @@ def main():
         code0 = a.get("PRODUITS_IPAGRI_2020", "") or ""
         d0 = len(re.sub(r"^[A-Z]+_", "", code0)) // 2
         # nivel de detalle: IPPAP hasta 5 (sin floricultura), IPAMPA hasta 4; los niveles mas finos son ruido para un panel
-        if (ind == "IPAMPA" and d0 > 4) or (ind != "IPAMPA" and (d0 > 5 or code0.startswith("IPPAP_0101050"))): stats["detail"] = stats.get("detail", 0) + 1; continue
+        if (ind == "IPAMPA" and d0 > 4) or (ind != "IPAMPA" and (d0 > 5 or code0.startswith("IPPAP_0101050"))):
+            stats["detail"] = stats.get("detail", 0) + 1
+            if ind == "IPAMPA": log("omitida", idb, ind, "d%d" % d0, code0, re.sub(r"\s+", " ", a.get("TITLE_EN", "")).strip()[:110], len(pts), pts[-1][0])  # detalle fino que no se publica: queda en el registro para valorarlo
+            continue
         if idb in seen: continue
         seen.add(idb)
         te = re.sub(r"\s+", " ", a.get("TITLE_EN", "")).strip()
