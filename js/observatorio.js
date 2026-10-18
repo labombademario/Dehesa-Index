@@ -53,6 +53,42 @@
     series_n: ['series', 'series', 'séries', 'serie'],
     err404: ['—', '—', '—', '—'], link: ['Ver ficha', 'Open page', 'Voir la fiche', 'Apri scheda']
   };
+  // Lenguaje llano (17-oct): títulos que se entienden sin saber qué es un pipeline; los textos técnicos siguen dentro de cada bloque.
+  var PLAIN = {
+    sub: ['Aquí ves si los datos de Dehesa Index están al día: qué precios acaban de llegar, cuáles se han movido más y qué falta por llegar. Todo sale de fuentes oficiales, con su fecha.', 'See whether Dehesa Index data is up to date: which prices just arrived, which moved the most and what is still to come. Everything comes from official sources, with its date.', 'Voyez si les données de Dehesa Index sont à jour : quels prix viennent d’arriver, lesquels ont le plus bougé et ce qui reste à venir. Tout provient de sources officielles, avec sa date.', 'Qui vedi se i dati di Dehesa Index sono aggiornati: quali prezzi sono appena arrivati, quali si sono mossi di più e cosa deve ancora arrivare. Tutto proviene da fonti ufficiali, con la sua data.'],
+    newObs: ['Datos nuevos', 'New data', 'Nouvelles données', 'Dati nuovi'],
+    moves: ['Lo que más se ha movido', 'Biggest moves', 'Ce qui a le plus bougé', 'Cosa si è mosso di più'],
+    revisions: ['Datos que la fuente ha corregido', 'Data corrected by the source', 'Données corrigées par la source', 'Dati corretti dalla fonte'],
+    freshness: ['¿Están al día los precios?', 'Are prices up to date?', 'Les prix sont-ils à jour ?', 'I prezzi sono aggiornati?'],
+    upcoming: ['Qué datos llegan pronto', 'Data coming soon', 'Données attendues bientôt', 'Dati in arrivo'],
+    coverage: ['Cuántos datos tenemos', 'How much data we have', 'Combien de données nous avons', 'Quanti dati abbiamo'],
+    ctry: ['Qué falta por llegar en cada país', 'What is still to arrive in each country', 'Ce qui reste à arriver dans chaque pays', 'Cosa deve ancora arrivare in ogni paese'],
+    quality: ['Controles de calidad', 'Quality checks', 'Contrôles de qualité', 'Controlli di qualità'],
+    pipelines: ['Descargas automáticas', 'Automatic downloads', 'Téléchargements automatiques', 'Download automatici'],
+    d_new: ['Precios oficiales publicados en los últimos {0} días.', 'Official prices published in the last {0} days.', 'Prix officiels publiés ces {0} derniers jours.', 'Prezzi ufficiali pubblicati negli ultimi {0} giorni.'],
+    d_moves: ['Las subidas y bajadas más grandes frente al dato anterior.', 'The largest rises and falls against the previous figure.', 'Les plus fortes hausses et baisses par rapport à la donnée précédente.', 'I maggiori rialzi e ribassi rispetto al dato precedente.'],
+    d_upcoming: ['Cuándo debería salir el próximo dato de cada precio.', 'When the next figure for each price should come out.', 'Quand la prochaine donnée de chaque prix devrait sortir.', 'Quando dovrebbe uscire il prossimo dato di ogni prezzo.'],
+    d_countries: ['Por país: qué tenemos hoy y qué datos esperamos todavía.', 'By country: what we have today and what is still expected.', 'Par pays : ce que nous avons aujourd’hui et ce qui est encore attendu.', 'Per paese: cosa abbiamo oggi e cosa è ancora atteso.'],
+    d_freshness: ['Qué precios están al día y cuáles llegan tarde.', 'Which prices are up to date and which are late.', 'Quels prix sont à jour et lesquels sont en retard.', 'Quali prezzi sono aggiornati e quali in ritardo.'],
+    d_revisions: ['Cuando una fuente cambia una cifra que ya había publicado, lo anotamos aquí.', 'When a source changes a figure it had already published, we note it here.', 'Quand une source modifie un chiffre déjà publié, nous le notons ici.', 'Quando una fonte cambia un dato già pubblicato, lo annotiamo qui.'],
+    d_coverage: ['Cuántas series hay en el sitio y cómo ha cambiado.', 'How many series the site has and how that changed.', 'Combien de séries compte le site et comment cela a évolué.', 'Quante serie ha il sito e come è cambiato.'],
+    d_quality: ['Las comprobaciones automáticas que pasan los datos antes de publicarse.', 'The automatic checks data passes before being published.', 'Les vérifications automatiques que passent les données avant publication.', 'I controlli automatici che i dati superano prima della pubblicazione.'],
+    d_pipelines: ['Los procesos que descargan cada fuente oficial, y si alguno ha fallado.', 'The processes that download each official source, and whether any failed.', 'Les processus qui téléchargent chaque source officielle, et si l’un a échoué.', 'I processi che scaricano ogni fonte ufficiale, e se qualcuno è fallito.'],
+    gUser: ['Lo principal', 'The essentials', 'L’essentiel', 'L’essenziale'],
+    gTech: ['Para los curiosos: detalles técnicos', 'For the curious: technical details', 'Pour les curieux : détails techniques', 'Per i curiosi: dettagli tecnici'],
+    sumT: ['Resumen', 'Summary', 'Résumé', 'Riepilogo'],
+    kNew: ['Datos nuevos', 'New data', 'Nouvelles données', 'Dati nuovi'], kNewS: ['en los últimos {0} días', 'in the last {0} days', 'ces {0} derniers jours', 'negli ultimi {0} giorni'],
+    kMove: ['Mayor movimiento', 'Biggest move', 'Plus grand mouvement', 'Maggior movimento'], kMoveS: ['en la última semana', 'over the last week', 'sur la dernière semaine', 'nell’ultima settimana'],
+    kLate: ['Precios con retraso', 'Late prices', 'Prix en retard', 'Prezzi in ritardo'], kLateS: ['de {0} precios', 'of {0} prices', 'sur {0} prix', 'su {0} prezzi'],
+    kPipe: ['Descargas automáticas', 'Automatic downloads', 'Téléchargements automatiques', 'Download automatici'], kPipeOk: ['todas en orden', 'all fine', 'toutes en ordre', 'tutti in ordine'], kPipeBad: ['{0} necesitan atención', '{0} need attention', '{0} demandent de l’attention', '{0} richiedono attenzione'],
+    kPipeNR: ['{0} aún sin su primera ejecución', '{0} not yet run for the first time', '{0} pas encore exécutés', '{0} non ancora eseguiti'],
+    see: ['Ver', 'View', 'Voir', 'Vedi'],
+    filt: ['Filtrar por país, tipo, producto o fuente', 'Filter by country, type, product or source', 'Filtrer par pays, type, produit ou source', 'Filtra per paese, tipo, prodotto o fonte'],
+    filtOn: ['filtros activos', 'filters on', 'filtres actifs', 'filtri attivi'],
+    barT: ['En esta página', 'On this page', 'Sur cette page', 'In questa pagina']
+  };
+  Object.keys(PLAIN).forEach(function (k) { TX[k] = PLAIN[k]; });
+  TX.ctryTab = TX.ctry;
   function t(k) { var a = TX[k]; if (!a) return k; var v = a[li()]; return v === undefined ? a[0] : v; }
   function tf(k, x) { return t(k).replace('{0}', x); }
   var STEP = 20, LIM = { new: STEP, moves: STEP, late: STEP, up: STEP, ctry: STEP };  // render perezoso: 20 iniciales + 'Mostrar 20 mas'; los filtros se aplican a TODO el conjunto antes de paginar
@@ -78,13 +114,30 @@
   function prodLink(o) { var pg = PAGE[o.product], n = esc(lab(o.product)); return (pg ? '<a href="producto.html?p=' + pg + '">' + n + '</a>' : n) + identOf(o); }
   function filters() {
     var obs = DOC.observations, regs = uniq(obs.map(function (o) { return o.region; })).sort(), prods = uniq(obs.map(function (o) { return o.product; })).sort(function (a, b) { return lab(a) < lab(b) ? -1 : 1; }), srcs = uniq(obs.map(function (o) { return o.sourceId; })).sort(), tys = uniq(obs.map(function (o) { return o.type; })).sort();
-    var h = '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fC')) + '"><span class="pt-lbl">' + esc(t('fC')) + '</span>' + chip('c', '', t('all'), !F.c) + regs.map(function (r) { return chip('c', r, rg(r), F.c === r); }).join('') + '</div>';
+    var h = '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fC')) + '"><span class="pt-lbl">' + esc(t('fC')) + '</span>' + chip('c', '', t('all'), !F.c) + regs.map(function (r) { return chip('c', r, ({ us: '🇺🇸 ', eu: '🇪🇺 ', uk: '🇬🇧 ', ca: '🇨🇦 ', au: '🇦🇺 ' }[r] || '') + rg(r), F.c === r); }).join('') + '</div>';
     h += '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fT')) + '"><span class="pt-lbl">' + esc(t('fT')) + '</span>' + chip('t', '', t('all'), !F.t) + tys.map(function (x) { return chip('t', x, t('ty_' + x), F.t === x); }).join('') + '</div>';
     function sel(id, label, list, cur, text) { return '<label class="ob-sel"><span class="pt-lbl">' + esc(label) + '</span><select id="' + id + '" data-f="' + id.slice(3) + '"><option value="">' + esc(t('all')) + '</option>' + list.map(function (x) { return '<option value="' + esc(x) + '"' + (cur === x ? ' selected' : '') + '>' + esc(text(x)) + '</option>'; }).join('') + '</select></label>'; }
     h += '<div class="ob-selrow">' + sel('ob-p', t('fP'), prods, F.p, lab) + sel('ob-s', t('fS'), srcs, F.s, srcName) + '</div>';
     return h;
   }
-  function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '" aria-labelledby="' + id + '-h"><div class="di-movers-head-row"><h2 id="' + id + '-h">' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
+  var OPEN = { new: true };
+  function sec(id, title, hint, body) {
+    var d = TX['d_' + id] ? (id === 'new' ? tf('d_new', DOC ? DOC.newDays : 7) : t('d_' + id)) : '';
+    return '<section class="pt-sec ob-sec" id="' + id + '" aria-labelledby="' + id + '-h"><details data-sec="' + id + '"' + (OPEN[id] ? ' open' : '') + '><summary class="ob-sum"><span class="ob-sum-t"><h2 id="' + id + '-h">' + esc(title) + '</h2>' + (d ? '<span class="ob-sum-d">' + esc(d) + '</span>' : '') + '</span><span class="ob-sum-i" aria-hidden="true">▾</span></summary><div class="ob-sec-b">' + (hint ? '<p class="di-movers-hint" style="margin:0 0 10px">' + esc(hint) + '</p>' : '') + body + '</div></details></section>';
+  }
+  function tile(id, k, v, sub, cls) { return '<a class="di-card ob-tile" href="#' + id + '" data-open="' + id + '"><span class="ob-tile-k">' + esc(k) + '</span><span class="ob-tile-v' + (cls ? ' ' + cls : '') + '">' + v + '</span><span class="ob-tile-s">' + esc(sub) + '</span></a>'; }
+  function summary(obs) {
+    var nNew = obs.filter(function (o) { return o.isNew; }).length;
+    var mv = obs.filter(function (o) { return o.moves.d7; }).sort(function (a, b) { return Math.abs(b.moves.d7.pct) - Math.abs(a.moves.d7.pct); })[0];
+    var late = obs.filter(function (o) { return o.freshness !== 'LIVE' && o.freshness !== 'FRESH'; }).length;
+    // Solo cuentan como «atención» los errores y retrasos; un workflow nuevo que aún no ha llegado a su primera fecha no es un fallo.
+    var att = DOC.pipelines.attention.filter(function (x) { return x.status === 'error' || x.status === 'late'; }).length, nr = DOC.pipelines.attention.filter(function (x) { return x.status === 'not_run'; }).length;
+    return '<h2 class="ob-h2">' + esc(t('sumT')) + '</h2><div class="ob-tiles">' +
+      tile('new', t('kNew'), String(nNew), tf('kNewS', DOC.newDays)) +
+      (mv ? tile('moves', t('kMove'), (mv.moves.d7.pct > 0 ? '+' : mv.moves.d7.pct < 0 ? '−' : '') + nf(Math.abs(mv.moves.d7.pct), 1) + ' %', lab(mv.product) + ' · ' + rg(mv.region) + ' · ' + t('kMoveS'), mv.moves.d7.pct > 0 ? 'pt-up' : 'pt-down') : '') +
+      tile('freshness', t('kLate'), String(late), tf('kLateS', obs.length), late ? 'pt-down' : '') +
+      tile('pipelines', t('kPipe'), att ? '⚠️ ' + att : '✓', (att ? tf('kPipeBad', att) : t('kPipeOk')) + (nr ? ' · ' + tf('kPipeNR', nr) : ''), att ? 'pt-down' : 'pt-up') + '</div>';
+  }
   function table(head, rows, cls) { return '<div class="pt-tblwrap"><table class="pt-table rs"><thead><tr>' + head.map(function (h) { return '<th' + (h[1] ? ' class="r"' : '') + '>' + esc(h[0]) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'; }
   function td(label, html, right) { return '<td' + (right ? ' class="r"' : '') + ' data-l="' + esc(label) + '">' + html + '</td>'; }
   function oVal(o) { return nf(o.value, Math.abs(o.value) >= 100 ? 1 : 2) + ' <span class="pt-sub">' + esc(o.currency === 'INDEX' ? 'índice' : o.currency + '/' + o.unit) + '</span>'; }
@@ -193,12 +246,15 @@
     document.getElementById('ob-h1').textContent = t('title'); document.getElementById('ob-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
     if (!DOC) return;
     var obs = DOC.observations.filter(ok), any = F.c || F.p || F.s || F.t;
+    var nAct = [F.c, F.p, F.s, F.t].filter(Boolean).length;
     var h = '<p class="pt-sub">' + esc(t('updated')) + ' ' + esc(DOC.generatedAt.replace('T', ' ').replace('Z', ' UTC')) + '</p>';
-    h += '<div class="rl-filters">' + filters() + '</div><p class="pt-sub" aria-live="polite">' + obs.length + ' ' + esc(t('shown')) + ' ' + DOC.observations.length + ' ' + esc(t('priceLayer')) + (any ? ' · <button type="button" class="pt-chip" data-reset="1">' + esc(t('reset')) + '</button>' : '') + '</p>';
-    h += '<nav class="pt-tabs" aria-label="' + esc(t('title')) + '">' + [['new', 'newObs'], ['moves', 'moves'], ['revisions', 'revisions'], ['freshness', 'freshness'], ['upcoming', 'upcoming'], ['coverage', 'coverage'], ['countries', 'ctryTab'], ['quality', 'quality'], ['pipelines', 'pipelines']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
-    h += secNew(obs) + secMoves(obs) + secRev() + secFresh(obs) + secUp(obs) + secCov() + secCtry() + secQ() + secPipes();
+    h += summary(obs);
+    h += '<details class="ob-filt"' + (nAct || OPEN._f ? ' open' : '') + ' data-sec="_f"><summary>🔎 ' + esc(t('filt')) + (nAct ? ' <span class="pt-badge pt-fs-FRESH">' + nAct + ' ' + esc(t('filtOn')) + '</span>' : '') + '</summary><div class="rl-filters">' + filters() + '</div><p class="pt-sub" aria-live="polite">' + obs.length + ' ' + esc(t('shown')) + ' ' + DOC.observations.length + ' ' + esc(t('priceLayer')) + (any ? ' · <button type="button" class="pt-chip" data-reset="1">' + esc(t('reset')) + '</button>' : '') + '</p></details>';
+    h += '<h2 class="ob-h2">' + esc(t('gUser')) + '</h2>' + secNew(obs) + secMoves(obs) + secUp(obs) + secCtry() + secFresh(obs);
+    h += '<h2 class="ob-h2 ob-h2-tech">' + esc(t('gTech')) + '</h2>' + secRev() + secCov() + secQ() + secPipes();
     body.innerHTML = h;
-    if (!keep && location.hash && /^#[a-z]+$/.test(location.hash)) { var el = document.getElementById(location.hash.slice(1)); if (el && el.scrollIntoView) el.scrollIntoView(); }
+    var S0 = window.DehesaShared, bh = document.getElementById('ob-bar'); if (S0 && S0.frame && bh) S0.frame.bar(bh, t('barT'), [['new', t('newObs')], ['moves', t('moves')], ['upcoming', t('upcoming')], ['countries', t('ctryTab')], ['freshness', t('freshness')], ['revisions', t('revisions')], ['coverage', t('coverage')], ['quality', t('quality')], ['pipelines', t('pipelines')]]);
+    if (!keep && location.hash && /^#[a-z]+$/.test(location.hash)) { var el = document.getElementById(location.hash.slice(1)), dd = el && el.querySelector('details[data-sec]'); if (dd) dd.open = true; if (el && el.scrollIntoView) el.scrollIntoView(); }
   }
   function resetLim() { LIM = { new: STEP, moves: STEP, late: STEP, up: STEP, ctry: STEP }; }
   function onClick(e) {
@@ -217,6 +273,10 @@
   window.DehesaShared.init('informacion');
   readUrl();
   var body = document.getElementById('ob-body'); body.addEventListener('click', onClick); body.addEventListener('change', onChange);
+  body.addEventListener('toggle', function (e) { var d = e.target; if (d && d.getAttribute && d.getAttribute('data-sec')) OPEN[d.getAttribute('data-sec')] = d.open; }, true);
+  function openSec(id) { var el = document.getElementById(id), d = el && el.querySelector('details[data-sec]'); if (d && !d.open) { d.open = true; OPEN[id] = true; } }
+  document.addEventListener('click', function (e) { var a = e.target.closest ? e.target.closest('a[data-open], .di-frame-bar a[data-fr]') : null; if (a) openSec(a.getAttribute('data-open') || a.getAttribute('data-fr')); }, true);
+  window.addEventListener('hashchange', function () { if (/^#[a-z]+$/.test(location.hash)) openSec(location.hash.slice(1)); });
   render();
   window.DIObsDoc = fetch('data/observatory.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   window.DIObsDoc.then(function (d) { DOC = d; return window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null; }).then(function () { render(); })
