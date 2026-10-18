@@ -102,7 +102,7 @@
     if (!seen[GRAIN] && grains.length) GRAIN = grains[0].grain;
     var rows = DOC.ratios.filter(function (r) { return r.grain === GRAIN; });
     var h = '<section class="di-card mi-sec"><h2>' + esc(w.rT) + '</h2><p class="mi-sub">' + esc(w.rS) + '</p>' +
-      '<label class="mi-lab">' + esc(w.grain) + ' <select id="mi-g" class="di-compare-select" style="width:auto">' + grains.map(function (r) { return '<option value="' + r.grain + '"' + (r.grain === GRAIN ? ' selected' : '') + '>' + esc(nm(r.grainName)) + '</option>'; }).join('') + '</select></label>';
+      '<label class="mi-lab">' + esc(w.grain) + ' <select id="mi-g" class="di-compare-select" style="width:auto">' + grains.map(function (r) { return '<option value="' + r.grain + '"' + (r.grain === GRAIN ? ' selected' : '') + '>' + esc(({ 'es-perc-trigo': '🌾 ', 'es-perc-cebada': '🍺 ', 'es-perc-maiz': '🌽 ', 'es-perc-girasol': '🌻 ' }[r.grain] || '') + nm(r.grainName)) + '</option>'; }).join('') + '</select></label>';
     h += '<div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + w.rCols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
     rows.forEach(function (r) {
       var lab = r.pct <= 20 ? w.rLow : r.pct >= 80 ? w.rHigh : w.rMid;
