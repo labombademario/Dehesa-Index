@@ -1,0 +1,2 @@
+URSEA fila 16 descartada: Inicio 2022-12-26 posterior a Fin 2022-12-25 (no se corrige la fecha)
+series guardadas: 20

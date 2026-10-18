@@ -226,6 +226,10 @@
    "class": "BUILD_ONLY",
    "note": "Series de Argentina (SAGyP, INDEC, datos.gob.ar): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/AR.json."
   },
+  "data/uruguay-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Uruguay (INIA, MGAP, URSEA; datos abiertos odc-uy): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/UY.json."
+  },
   "data/us-ers-livestock-stats.json": {
    "class": "RUNTIME",
    "note": "Carne y ganado de EE. UU. (USDA ERS): oferta y utilizacion, pesos, precios, recria y simulador del cebadero. El navegador lo descarga al abrir ganaderia.html (bloque con selector); ademas alimenta el catalogo.",

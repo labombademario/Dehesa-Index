@@ -440,6 +440,16 @@ sources:
     data: [argentina-stats.json]
     log: argentina-log.txt
     message: Datos Argentina (datos abiertos)
+  - id: uruguay
+    name: Update Uruguay (datos abiertos)
+    cron: ['40 18 * * 4']
+    pre: ['pip install openpyxl']
+    script: scripts/update-uruguay.py
+    timeout: 30
+    script_timeout: 20
+    data: [uruguay-stats.json]
+    log: uruguay-log.txt
+    message: Datos Uruguay (INIA, MGAP, URSEA)
   - id: switzerland-foag
     name: Update Switzerland (FOAG market data)
     cron: ['20 6 * * 3']
