@@ -46,6 +46,10 @@
    "supply-demand-map",
    []
   ],
+  "world-production.json": [
+   "supply-demand-map",
+   []
+  ],
   "export-sales.json": [
    "export-sales",
    [

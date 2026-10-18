@@ -274,7 +274,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-switzerland-meteo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ch-meteo.py | switzerland-meteo-stats.json | finish, validate-files |
 | update-trade-partners.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-trade-partners.py | ca-trade-products.json, cl-trade-products.json, uk-trade-products.json | finish, validate-files |
 | update-usda-calendar.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-usda-calendar.py | usda-calendar.json | finish, validate-files |
-| update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json | finish, validate-files |
+| update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json, world-production.json | finish, validate-files |
 | update-wine-prices.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-wine-prices.py | wine-prices.json | finish, validate-files |
 | update-wood-prices-de.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-prices-de.py | wood-prices-de.json | finish, validate-files |
 | update-wood-removals.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-removals.py | wood-removals.json | finish, validate-files |

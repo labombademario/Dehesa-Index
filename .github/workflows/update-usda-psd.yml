@@ -19,7 +19,7 @@ jobs:
       - name: Download official PSD bulk files
         run: |
           mkdir -p /tmp/psd
-          for u in psd_grains_pulses_csv.zip psd_oilseeds_csv.zip psd_livestock_csv.zip psd_dairy_csv.zip psd_sugar_csv.zip; do
+          for u in psd_grains_pulses_csv.zip psd_oilseeds_csv.zip psd_livestock_csv.zip psd_dairy_csv.zip psd_sugar_csv.zip psd_fruits_vegetables_csv.zip psd_tree_nuts_csv.zip psd_coffee_csv.zip psd_cotton_csv.zip; do
             curl -fsSL --retry 3 -m 180 -o /tmp/$u "https://apps.fas.usda.gov/psdonline/downloads/$u"
             unzip -o -q /tmp/$u -d /tmp/psd
           done
@@ -29,12 +29,12 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/supply-demand.json data/supply-demand-map.json
+          files: data/supply-demand.json data/supply-demand-map.json data/world-production.json
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          bash scripts/publish-data.sh "chore: update USDA supply and demand (PSD)" data/supply-demand.json data/supply-demand-map.json
+          bash scripts/publish-data.sh "chore: update USDA supply and demand (PSD)" data/supply-demand.json data/supply-demand-map.json data/world-production.json
       - name: Cierre (rojo si hubo datos invalidos)
         if: always()
         uses: ./.github/actions/finish

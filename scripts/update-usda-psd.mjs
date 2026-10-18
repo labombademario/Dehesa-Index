@@ -14,6 +14,21 @@ const COMMODITIES=[
  {id:'cerdo',file:'livestock',name:'Meat, Swine'},{id:'vacuno',file:'livestock',name:'Meat, Beef and Veal'},{id:'pollo',file:'livestock',name:'Meat, Chicken'},
  {id:'leche',file:'dairy',name:'Dairy, Milk, Fluid'},{id:'azucar',file:'sugar',name:'Sugar, Centrifugal'}
 ];
+
+// Productos adicionales (frutales, frutos secos, cafe, algodon, aceites, cereales menores, lacteos): solo para la pagina de produccion mundial.
+// Se escriben aparte (data/world-production.json) y su falta NO bloquea los datos principales.
+const EXTRA=[
+ {id:'manzana',file:'fruits_vegetables',name:'Apples, Fresh'},{id:'pera',file:'fruits_vegetables',name:'Pears, Fresh'},{id:'melocoton',file:'fruits_vegetables',name:'Peaches & Nectarines, Fresh'},
+ {id:'cereza',file:'fruits_vegetables',name:'Cherries (Sweet&Sour), Fresh'},{id:'uva_mesa',file:'fruits_vegetables',name:'Grapes, Fresh Table'},{id:'naranja',file:'fruits_vegetables',name:'Oranges, Fresh'},
+ {id:'mandarina',file:'fruits_vegetables',name:'Tangerines/Mandarins, Fresh'},{id:'limon',file:'fruits_vegetables',name:'Lemons/Limes, Fresh'},{id:'pomelo',file:'fruits_vegetables',name:'Grapefruit, Fresh'},
+ {id:'almendra',file:'tree_nuts',name:'Almonds, Shelled Basis'},{id:'nuez',file:'tree_nuts',name:'Walnuts, Inshell Basis'},{id:'pistacho',file:'tree_nuts',name:'Pistachios, Inshell Basis'},
+ {id:'cafe',file:'coffee',name:'Coffee, Green'},{id:'algodon',file:'cotton',name:'Cotton'},
+ {id:'girasol',file:'oilseeds',name:'Oilseed, Sunflowerseed'},{id:'cacahuete',file:'oilseeds',name:'Oilseed, Peanut'},{id:'aceite_palma',file:'oilseeds',name:'Oil, Palm'},{id:'aceite_soja',file:'oilseeds',name:'Oil, Soybean'},
+ {id:'aceite_girasol',file:'oilseeds',name:'Oil, Sunflowerseed'},{id:'aceite_colza',file:'oilseeds',name:'Oil, Rapeseed'},
+ {id:'avena',file:'grains_pulses',name:'Oats'},{id:'centeno',file:'grains_pulses',name:'Rye'},{id:'sorgo',file:'grains_pulses',name:'Sorghum'},{id:'mijo',file:'grains_pulses',name:'Millet'},
+ {id:'mantequilla',file:'dairy',name:'Dairy, Butter'},{id:'queso',file:'dairy',name:'Dairy, Cheese'}
+];
+const EXTRA_IDS=new Set(EXTRA.map(c=>c.id));
 const ATTR={'Production':'production','Imports':'imports','Exports':'exports','Domestic Consumption':'consumption','Ending Stocks':'endingStocks','Beginning Stocks':'beginningStocks','Area Harvested':'area','Crush':'crush','Feed Dom. Consumption':'feed','Total Supply':'totalSupply'};
 const EU_MEMBERS=new Set(['Austria','Belgium-Luxembourg','Belgium','Bulgaria','Croatia','Cyprus','Czech Republic','Denmark','Estonia','Finland','France','Germany','Germany, Federal Republic of','German Democratic Republic','Greece','Hungary','Ireland','Italy','Latvia','Lithuania','Luxembourg','Malta','Netherlands','Poland','Portugal','Romania','Slovakia','Slovenia','Spain','Sweden']);
 const FORCE_COUNTRIES=['Argentina','Chile'];
@@ -22,11 +37,12 @@ const ISO={'Afghanistan':'AF','Albania':'AL','Algeria':'DZ','Angola':'AO','Argen
  'Austria':'AT','Bulgaria':'BG','Croatia':'HR','Cyprus':'CY','Czech Republic':'CZ','Denmark':'DK','Estonia':'EE','Finland':'FI','France':'FR','Germany':'DE','Greece':'GR','Hungary':'HU','Ireland':'IE','Italy':'IT','Latvia':'LV','Lithuania':'LT','Malta':'MT','Netherlands':'NL','Poland':'PL','Portugal':'PT','Romania':'RO','Slovakia':'SK','Slovenia':'SI','Spain':'ES','Sweden':'SE','Belgium':'BE','Luxembourg':'LU'};
 function parse(line){const r=[];let cur='',q=false;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"')q=!q;else if(c===','&&!q){r.push(cur);cur=''}else cur+=c}r.push(cur);return r}
 const r2=n=>Math.round(n*100)/100;
-const commodityOut=[],mapOut=[],problems=[];
-const byFile={};for(const c of COMMODITIES)(byFile[c.file]??=[]).push(c);
+const commodityOut=[],mapOut=[],extraOut=[],problems=[];
+const byFile={};for(const c of COMMODITIES.concat(EXTRA))(byFile[c.file]??=[]).push(c);
+const warns=[];
 for(const [file,list] of Object.entries(byFile)){
  const fp=path.join(DIR,'psd_'+file+'.csv');
- if(!fs.existsSync(fp)){problems.push('falta '+fp);continue}
+ if(!fs.existsSync(fp)){(list.every(c=>EXTRA_IDS.has(c.id))?warns:problems).push('falta '+fp);continue}
  const want=new Map(list.map(c=>[c.name,c]));
  // rows[commodityId] = Map key(country|MY|attr) -> {v, cal, month}
  const rows={};for(const c of list)rows[c.id]=new Map();
@@ -44,7 +60,7 @@ for(const [file,list] of Object.entries(byFile)){
   const pub=c[5]+'-'+c[6]; if(my===m.maxMY&&pub>m.pub&&+c[5]>=2000)m.pub=pub;
  }
  for(const com of list){
-  const m=meta[com.id]; if(!m.maxMY){problems.push('sin datos '+com.name);continue}
+  const m=meta[com.id]; if(!m.maxMY){(EXTRA_IDS.has(com.id)?warns:problems).push('sin datos '+com.name);continue}
   const from=m.maxMY-12, years=[];for(let y=from;y<=m.maxMY;y++)years.push(y);
   // valores[country][MY][attr]
   const val={};
@@ -68,7 +84,7 @@ for(const [file,list] of Object.entries(byFile)){
   const series={};
   for(const c of top){const iso=c==='European Union'?'EU':ISO[c];const s={};for(const y of years){const d=val[c][y];if(d)s[y]=Object.fromEntries(Object.entries(d).map(([a,v])=>[a,r2(v)]))}series[c]={iso:iso||null,years:s}}
   const unit=(m.units.get('production')||'(1000 MT)').replace(/[()]/g,'');
-  commodityOut.push({id:com.id,psdName:com.name,unit,latestMarketYear:m.maxMY,publishedMonth:m.pub,marketYears:years,attributes:[...m.units.keys()],world,countries:series});
+  if(!EXTRA_IDS.has(com.id))commodityOut.push({id:com.id,psdName:com.name,unit,latestMarketYear:m.maxMY,publishedMonth:m.pub,marketYears:years,attributes:[...m.units.keys()],world,countries:series});
   // mapa: todos los países, dos últimas campañas, 4 atributos
   const mp={};
   for(const c of countries){
@@ -77,7 +93,7 @@ for(const [file,list] of Object.entries(byFile)){
    if(c!=='European Union'&&EU_MEMBERS.has(c)&&euHas(m.maxMY))continue;
    const o={};for(const y of [m.maxMY-1,m.maxMY]){const d=val[c][y];if(!d)continue;const e={};for(const a of ['production','exports','imports','endingStocks','consumption'])if(d[a]!==undefined)e[a]=r2(d[a]);if(Object.keys(e).length)o[y]=e}
    if(Object.keys(o).length)mp[iso]={name:c,years:o}}
-  mapOut.push({id:com.id,unit,latestMarketYear:m.maxMY,countries:mp});
+  (EXTRA_IDS.has(com.id)?extraOut:mapOut).push({id:com.id,unit,latestMarketYear:m.maxMY,publishedMonth:m.pub,countries:mp});
  }
 }
 if(problems.length||commodityOut.length<COMMODITIES.length){console.error('PSD incompleto: '+problems.join('; ')+' (commodities '+commodityOut.length+'/'+COMMODITIES.length+'); no se sobrescribe nada');process.exit(1)}
@@ -90,4 +106,12 @@ fs.writeFileSync(path.join(OUT,'supply-demand.json'),JSON.stringify({schemaVersi
  methodology:{es:'Balances de oferta y demanda por país y campaña de comercialización, tal como los publica USDA (PSD). La campaña indicada (p. ej. 2025) es la que empieza ese año (2025/26); la más reciente es una PREVISIÓN y las anteriores son estimaciones o cifras finales. Los valores están en las unidades de PSD (miles de toneladas; carne en equivalente canal). "Mundo" es la suma de los países de la base PSD, contando la UE una sola vez (como agregado); no es una cifra publicada por USDA. Las campañas de comercialización no coinciden entre países. Solo se publican los países principales; el resto está en el mapa.',en:'Supply and demand balances by country and marketing year, as published by USDA (PSD). The year shown (e.g. 2025) is the marketing year starting that year (2025/26); the latest one is a FORECAST and earlier ones are estimates or final figures. Values are in PSD units (thousand tonnes; meat in carcass-weight equivalent). "World" is the sum of the countries in the PSD database, counting the EU once (as an aggregate); it is not a figure published by USDA. Marketing years differ between countries. Only the main countries are published here; the rest are on the map.'},
  commodities:commodityOut})+'\n');
 fs.writeFileSync(path.join(OUT,'supply-demand-map.json'),JSON.stringify({schemaVersion:'1.0',generatedAt,source,note:'iso EU = agregado de la Unión Europea (se pinta en los 27 países). Valores en las unidades de cada materia prima (miles de toneladas).',commodities:mapOut})+'\n');
+// Produccion mundial ampliada (frutales, frutos secos, cafe, algodon...): si falta algo se avisa pero no se bloquea.
+if(extraOut.length){
+ const wsum=e=>Object.values(e.countries).reduce((a,c)=>a+((c.years[e.latestMarketYear]||{}).production||0),0);
+ const apples=extraOut.find(e=>e.id==='manzana'),okApples=!apples||(wsum(apples)>30000&&wsum(apples)<130000);
+ if(okApples)fs.writeFileSync(path.join(OUT,'world-production.json'),JSON.stringify({schemaVersion:'1.0',generatedAt,source,note:'Produccion por pais de productos adicionales de USDA PSD. iso EU = agregado de la Union Europea. Unidades de PSD (miles de toneladas; cafe en miles de sacos de 60 kg; algodon en miles de balas de 480 libras).',commodities:extraOut})+'\n');
+ else console.error('Manzana mundial fuera de rango ('+(apples&&wsum(apples))+'); world-production.json no se actualiza');
+}
+if(warns.length)console.warn('PSD extra: '+warns.join('; '));
 console.log('PSD: '+commodityOut.length+' materias primas; trigo mundial MY'+(w.latestMarketYear-1)+': '+wp+' (miles de t)');
