@@ -282,6 +282,8 @@
     Object.keys(STRINGS).forEach(function (lg) {
       var dn; try { dn = new Intl.DisplayNames([lg], { type: 'region' }); } catch (e) { dn = null; }
       var sec = STRINGS[lg].sections.filter(function (x) { return x.ul && /^(Fuentes y frecuencia|Sources and frequency|Sources et fréquence|Fonti e frequenza)$/.test(x.h); })[0]; if (!sec) return;
+      var FL0 = ['🇺🇸', '🇪🇺', '🇬🇧', '🇨🇦', '🇨🇦', '🇩🇰', '🇳🇱🇦🇺', '🇪🇺', '🇪🇺', '🇺🇸', '🇨🇦🇲🇽🇪🇺', '🌍', '🇨🇦', '🇪🇸', '🇪🇸', '🇪🇸', '🇪🇸', '🇪🇸', '🇪🇸', '🇪🇸', '🇪🇸', '🇪🇸', '🇺🇸🇪🇺', '🌍', '🇺🇸', '🇺🇸', '🇪🇺'];
+      if (sec.ul.length === FL0.length) sec.ul.forEach(function (x, i) { if (x.b) x.b = FL0[i] + ' ' + x.b; });
       Object.keys(by).sort(function (a, b) { return by[b].length - by[a].length || (a < b ? -1 : 1); }).forEach(function (c) {
         var nm = dn ? dn.of(FLAG[c] || c) : c;
         sec.ul.push({ b: flag(c) + ' ' + nm + '.', t: by[c].map(function (r) { return r.n.replace(/^[^—]*—\s*/, '') + (r.l ? ' [' + r.l + ']' : ''); }).join('; ') + '.' });
