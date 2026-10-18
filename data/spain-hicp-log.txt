@@ -1,5 +1,5 @@
-CP01152 butter 140 meses; ultimo 2026-08
-CP01145 cheese 140 meses; ultimo 2026-08
+CP01152 butter 141 meses; ultimo 2026-09
+CP01145 cheese 141 meses; ultimo 2026-09
 es-land-price-ara 14 puntos; ultimo 2024 12778.0
 es-land-price-araib 14 puntos; ultimo 2024 26895.0
 es-land-price-araxib 14 puntos; ultimo 2024 8629.0
