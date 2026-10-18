@@ -142,6 +142,31 @@
   function stName(c) { var N = window.DehesaRegionNames && window.DehesaRegionNames.US, v = N && N[c]; return v ? v.split('|')[{ en: 0, es: 1, fr: 2, it: 3 }[lang()] || 1] : c; }
   function lastOf(s) { return s && s.points && s.points.length ? s.points[s.points.length - 1] : null; }
   function fuelRow(name, s) { if (!s) return null; var p = s.points, i = p.length - 1, a = p[i], b = p[i - 1], c = back(p, i, 364); return [esc(name), nf(a[1], 3), chg(pctChg(a[1], b && b[1])), chg(pctChg(a[1], c && c[1])), esc(day(a[0]))]; }
+  /* mapa de EE. UU. con las regiones PADD de la EIA pintadas con su precio del gasóleo */
+  var GEO = null;
+  function geo() { if (window.DEHESA_US_STATES) return Promise.resolve(); if (!GEO) GEO = new Promise(function (ok) { var s = document.createElement('script'); s.src = 'vendor/us-states.js?v=4fe155a8'; s.onload = s.onerror = function () { ok(); }; document.head.appendChild(s); }); return GEO; }
+  var MAPT = { es: { t: 'Mapa: qué estados cubre cada región', leg: 'USD por galón', na: 'sin dato', ca: 'California', nc: 'Resto de la Costa Oeste', pad: 'Las regiones son las de la EIA; California y el resto de la Costa Oeste se publican por separado.' },
+    en: { t: 'Map: which states each region covers', leg: 'USD per gallon', na: 'no data', ca: 'California', nc: 'Rest of West Coast', pad: 'Regions are EIA’s; California and the rest of the West Coast are published separately.' },
+    fr: { t: 'Carte : les États couverts par chaque région', leg: 'USD par gallon', na: 'pas de donnée', ca: 'Californie', nc: 'Reste de la Côte Ouest', pad: 'Les régions sont celles de l’EIA ; la Californie et le reste de la Côte Ouest sont publiés séparément.' },
+    it: { t: 'Mappa: quali Stati copre ogni regione', leg: 'USD per gallone', na: 'nessun dato', ca: 'California', nc: 'Resto della Costa Ovest', pad: 'Le regioni sono quelle dell’EIA; California e resto della Costa Ovest sono pubblicate separatamente.' } };
+  function fuelMap(d) {
+    var ST = window.DEHESA_US_STATES; if (!ST || !d || !d.diesel) return '';
+    var m = MAPT[lang()] || MAPT.es, vals = {}, lo = Infinity, hi = -Infinity;
+    function lastV(k) { var a = lastOf(d.diesel[k]); return a ? a[1] : null; }
+    var key = function (st) { return st === 'CA' ? 'SCA' : PADD[st] === 'R50' ? 'R5XCA' : PADD[st]; };
+    ST.states.forEach(function (s) { var k = key(s.id), v = k ? lastV(k) : null; if (v != null) { vals[s.id] = { k: k, v: v }; if (v < lo) lo = v; if (v > hi) hi = v; } });
+    if (!isFinite(lo)) return '';
+    function col(v) { var u = hi > lo ? (v - lo) / (hi - lo) : 0.5, a = [214, 228, 240], b = [12, 52, 92]; return 'rgb(' + a.map(function (c, i) { return Math.round(c + (b[i] - c) * u); }).join(',') + ')'; }
+    var nm = function (k) { return k === 'SCA' ? m.ca : k === 'R5XCA' ? m.nc : L(AREA[k]); };
+    var paths = ST.states.map(function (s) {
+      var x = vals[s.id], tip = x ? stName(s.id) + ' · ' + nm(x.k) + ': ' + nf(x.v, 3) + ' ' + m.leg : stName(s.id) + ': ' + m.na;
+      return '<path d="' + s.d + '" fill="' + (x ? col(x.v) : '#e6e2d6') + '" stroke="#fff" stroke-width="0.8" stroke-linejoin="round"><title>' + esc(tip) + '</title></path>';
+    }).join('');
+    var seen = {}, list = [];
+    ['R1X', 'R1Y', 'R1Z', 'R20', 'R30', 'R40', 'R5XCA', 'SCA'].forEach(function (k) { var v = lastV(k); if (v == null || seen[k]) return; seen[k] = 1; list.push('<li style="display:flex;align-items:center;gap:8px;margin:3px 0"><span aria-hidden="true" style="width:14px;height:14px;border-radius:3px;flex:none;background:' + col(v) + ';border:1px solid var(--border)"></span><span style="flex:1">' + esc(nm(k)) + '</span><strong style="font-variant-numeric:tabular-nums">' + nf(v, 3) + '</strong></li>'); });
+    var ramp = '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-faint);margin-top:8px"><span>' + nf(lo, 2) + '</span><span aria-hidden="true" style="flex:1;max-width:160px;height:8px;border-radius:4px;background:linear-gradient(90deg,' + col(lo) + ',' + col(hi) + ')"></span><span>' + nf(hi, 2) + '</span><span>' + esc(m.leg) + '</span></div>';
+    return '<h4 class="usm-h4">' + esc(m.t) + '</h4><div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><svg viewBox="' + ST.viewBox + '" style="flex:2 1 320px;min-width:260px;max-width:620px;height:auto;display:block" role="img" aria-label="' + esc(m.t) + '">' + paths + '</svg><div style="flex:1 1 220px;font-size:13.5px"><ul style="list-style:none;margin:0;padding:0">' + list.join('') + '</ul>' + ramp + '</div></div><p class="di-movers-hint" style="margin-top:6px">' + esc(m.pad) + '</p>';
+  }
   function fuelHtml(d) {
     var x = t(); if (!d || !d.diesel) return card('usm-fuel', x.fuel, x.fuelSub, '<p class="di-movers-hint">' + esc(x.none) + '</p>');
     var rows = ORDER.map(function (k) { return fuelRow(L(AREA[k]) || (d.diesel[k] && d.diesel[k].name), d.diesel[k]); }).filter(Boolean);
@@ -155,7 +180,7 @@
       var nm = k === 'NUS' || k === 'R20' ? L(AREA[k]) : stName(k.slice(1));
       return [esc(nm), a ? nf(a[1], 3) : '—', b ? nf(b[1], 3) : '—', esc(day((a || b)[0]))];
     }).filter(Boolean);
-    var body = '<h4 class="usm-h4">' + esc(x.diesel) + ' · ' + esc(x.usd) + '</h4>' + table([x.area, x.now, x.vsW, x.vsY, x.date], rows, 560) + chart(ser, x.usd, x.chartFuel, false, 3) +
+    var body = '<h4 class="usm-h4">' + esc(x.diesel) + ' · ' + esc(x.usd) + '</h4>' + fuelMap(d) + table([x.area, x.now, x.vsW, x.vsY, x.date], rows, 560) + chart(ser, x.usd, x.chartFuel, false, 3) +
       '<h4 class="usm-h4">' + esc(x.prop) + ' · ' + esc(x.usd) + (off ? ' · ' + esc(x.season) + ' ' + esc(day(lp[0])) : '') + '</h4>' + table([x.area, x.res, x.whs, x.date], prow, 460) + cite('eia', us ? day(lastOf(us)[0]) : '');
     return card('usm-fuel', x.fuel, x.fuelSub, body);
   }
@@ -212,7 +237,7 @@
   function render(el, opts) {
     if (!el) return Promise.resolve(); opts = opts || {}; var x = t();
     el.innerHTML = '<p class="di-movers-hint" role="status">…</p>';
-    return Promise.all([get('cot'), get('transport'), get('fuel'), get('ethanol'), get('inspections'), get('lmr')]).then(function (r) {
+    return Promise.all([get('cot'), get('transport'), get('fuel'), get('ethanol'), get('inspections'), get('lmr'), geo()]).then(function (r) {
       if (!r[0] && !r[1] && !r[2]) { el.innerHTML = ''; return; }
       var parts = [['usm-cot', cotHtml(r[0])], ['usm-tr', trHtml(r[1])], ['usm-dem', demHtml(r[3], r[4])], ['usm-lmr', lmrHtml(r[5])], ['usm-fuel', fuelHtml(r[2])]].filter(function (p) { return p[1]; }), SEC = window.DehesaSector, shown = [], folded = [];
       parts.forEach(function (p) { (opts.sector && SEC && !SEC.visible(sectorOf(p[0])) ? folded : shown).push(p[1]); });

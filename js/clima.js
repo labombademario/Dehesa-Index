@@ -73,10 +73,12 @@
   function saveUI() { try { localStorage.setItem(LSKEY, JSON.stringify({ hidden: Object.keys(HIDDEN).filter(function (r) { return HIDDEN[r]; }), kind: MAPKIND })); } catch (e) {} }
   function inClass(v, classes) { for (var i = 0; i < classes.length; i++) if (v >= classes[i][0] && v < classes[i][1]) return classes[i][2]; return classes[classes.length - 1][2]; }
   function regionsPresent() { return REGS.filter(function (r) { return DATA.locations.some(function (l) { return l.region === r; }); }); }
+  var RFLAG = { us: '🇺🇸', eu: '🇪🇺', uk: '🇬🇧', ca: '🇨🇦', au: '🇦🇺' };
+  function rname(t, r) { return (RFLAG[r] ? RFLAG[r] + ' ' : '') + t.regions[r]; }
   function filterHtml(t) {
     var chips = regionsPresent().map(function (r) {
       var n = DATA.locations.filter(function (l) { return l.region === r; }).length;
-      return '<button type="button" class="di-src-tab" data-creg="' + r + '" aria-pressed="' + (!HIDDEN[r]) + '">' + t.regions[r] + ' (' + n + ')</button>';
+      return '<button type="button" class="di-src-tab" data-creg="' + r + '" aria-pressed="' + (!HIDDEN[r]) + '">' + rname(t, r) + ' (' + n + ')</button>';
     }).join('');
     return '<div style="margin:10px 0 14px"><div class="di-movers-hint" style="margin:0 0 6px"><b>' + t.showRegions + '</b> · <button type="button" class="di-link-btn" data-cregall="1">' + t.allR + '</button> · <button type="button" class="di-link-btn" data-cregall="0">' + t.noneR + '</button></div><div class="di-src-tabs" role="group" aria-label="' + t.showRegions + '">' + chips + '</div></div>';
   }
@@ -145,7 +147,7 @@
     var shown = 0;
     REGS.forEach(function (r) {
       var rows = DATA.locations.filter(function (l) { return l.region === r; }); if (!rows.length || HIDDEN[r]) return; shown++;
-      html += '<details class="di-info-section" id="clima-reg-' + r + '" data-reg="' + r + '"' + (COLL[r] ? '' : ' open') + '><summary style="cursor:pointer;margin:0 0 8px"><h2 style="display:inline">' + t.regions[r] + '</h2> <span class="di-movers-hint">(' + rows.length + ')</span></summary><div class="di-card" style="padding:6px 16px;overflow-x:auto">' +
+      html += '<details class="di-info-section" id="clima-reg-' + r + '" data-reg="' + r + '"' + (COLL[r] ? '' : ' open') + '><summary style="cursor:pointer;margin:0 0 8px"><h2 style="display:inline">' + rname(t, r) + '</h2> <span class="di-movers-hint">(' + rows.length + ')</span></summary><div class="di-card" style="padding:6px 16px;overflow-x:auto">' +
         '<div style="display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(170px,1.3fr) minmax(170px,1.3fr) 100px;gap:14px;padding:8px 0;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);border-bottom:1px solid var(--border);min-width:640px"><span></span><span>' + t.precip.toUpperCase() + '</span><span>' + t.temp.toUpperCase() + '</span><span>' + t.trend.toUpperCase() + '</span></div>' +
         rows.map(function (l) {
           var m = last(l);
@@ -226,7 +228,7 @@
     var FL = { us: '🇺🇸', eu: '🇪🇺', uk: '🇬🇧', ca: '🇨🇦', au: '🇦🇺' }, CL = { es: 'País', en: 'Country', fr: 'Pays', it: 'Paese' };
     function regOf(id) { var m = DATA.locations.filter(function (d) { return d.id === id; })[0]; return m ? m.region : id.split('-')[0]; }
     var curReg = regOf(loc.id), seen = {}, cOpt = '';
-    HIST.locations.forEach(function (l) { var r = regOf(l.id); if (seen[r]) return; seen[r] = 1; cOpt += '<option value="' + r + '"' + (r === curReg ? ' selected' : '') + '>' + (FL[r] ? FL[r] + ' ' : '') + (t.regions[r] || r) + '</option>'; });
+    HIST.locations.forEach(function (l) { var r = regOf(l.id); if (seen[r]) return; seen[r] = 1; cOpt += '<option value="' + r + '"' + (r === curReg ? ' selected' : '') + '>' + (FL[r] ? FL[r] + ' ' : '') + (rname(t, r) || r) + '</option>'; });
     var opt = HIST.locations.filter(function (l) { return regOf(l.id) === curReg; }).map(function (l) { var m = DATA.locations.filter(function (d) { return d.id === l.id; })[0]; return '<option value="' + l.id + '"' + (l.id === loc.id ? ' selected' : '') + '>' + (m ? locName(m) : l.id) + '</option>'; }).join('');
     var PPs = periodsFor(loc.id), south = /^au-/.test(loc.id); var per = Object.keys(PPs).map(function (k) { return '<option value="' + k + '"' + (k === SEL.period ? ' selected' : '') + '>' + (south && k === 'season' ? t.periods.seasonS : t.periods[k]) + '</option>'; }).join('');
     var cur = rows[rows.length - 1], N = rows.length;
