@@ -2878,3 +2878,5 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 .pm-grp td{background:#f0ecde;font-weight:700;border-top:3px solid #1b1b1b}
 .pm-leads{margin:.2rem 0 .8rem}
 @media (max-width:560px){.pm-top li{grid-template-columns:minmax(0,1fr) auto auto;}.pm-top .pm-bar,.pm-top li>.cp-m{display:none}}
+
+.nbt-wrap{display:grid;gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}.nbt-mapcol,.nbt-tabcol{min-width:0}@media(max-width:900px){.nbt-wrap{grid-template-columns:minmax(0,1fr)}}

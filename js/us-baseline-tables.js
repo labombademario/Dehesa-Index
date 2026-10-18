@@ -28,6 +28,70 @@
   var TE = { 1: '🌍', 2: '🇺🇸', 3: '💱', 4: '👥', 5: '🌾', 16: '🍬', 17: '🍎', 18: '🍽️', 19: '🐄', 20: '🐖', 21: '🐔', 22: '🦃', 23: '🥚', 24: '🥛', 25: '🚢', 26: '💵' };
   function temo(t) { var e = TE[num(t)]; return e ? e + ' ' : ''; }
   function tname(t, P) { var n = num(t); return TN[n] ? TN[n][P] : t.title; }
+  /* mapa mundial junto a la tabla: solo las tablas con filas por pais (PIB, poblacion, tipo de cambio). Se pintan paises sueltos y la UE-27; las regiones agregadas de ERS no se reparten. */
+  var CCM = { Canada: 'CA', 'United States': 'US', Mexico: 'MX', Argentina: 'AR', Brazil: 'BR', 'United Kingdom': 'GB', Russia: 'RU', Ukraine: 'UA', China: 'CN', 'Hong Kong': 'HK', Japan: 'JP', Korea: 'KR', Taiwan: 'TW', Cambodia: 'KH', Indonesia: 'ID', Malaysia: 'MY', Burma: 'MM', Philippines: 'PH', Thailand: 'TH', Vietnam: 'VN', Bangladesh: 'BD', India: 'IN', Pakistan: 'PK', Australia: 'AU', 'New Zealand': 'NZ', Iran: 'IR', Iraq: 'IQ', 'Saudi Arabia': 'SA', Turkey: 'TR', Egypt: 'EG', Morocco: 'MA', 'South Africa, Republic': 'ZA', Nigeria: 'NG' };
+  var EU27 = 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE'.split(' ');
+  var MT = {
+    es: { yr: 'Año del mapa', hint: 'Pincha un país para ver su evolución.', none: 'Sin dato', eu: 'Unión Europea (27)', note: 'Se pintan los países y la UE-27; las regiones agregadas (América Latina, África…) solo están en la tabla.', alt: 'Mapa mundial coloreado con los valores de la tabla', fail: 'No se ha podido cargar el mapa.' },
+    en: { yr: 'Map year', hint: 'Click a country to see its trend.', none: 'No data', eu: 'European Union (27)', note: 'Countries and the EU-27 are shaded; grouped regions (Latin America, Africa…) appear only in the table.', alt: 'World map shaded with the values of the table', fail: 'The map could not be loaded.' },
+    fr: { yr: 'Année de la carte', hint: 'Cliquez sur un pays pour voir son évolution.', none: 'Pas de donnée', eu: 'Union européenne (27)', note: 'Les pays et l’UE-27 sont colorés ; les régions regroupées (Amérique latine, Afrique…) figurent seulement dans le tableau.', alt: 'Carte du monde colorée avec les valeurs du tableau', fail: 'La carte n’a pas pu être chargée.' },
+    it: { yr: 'Anno della mappa', hint: 'Clicca un paese per vedere il suo andamento.', none: 'Nessun dato', eu: 'Unione europea (27)', note: 'Sono colorati i paesi e l’UE-27; le regioni aggregate (America Latina, Africa…) compaiono solo nella tabella.', alt: 'Mappa del mondo colorata con i valori della tabella', fail: 'Non è stato possibile caricare la mappa.' }
+  };
+  var YI = null, MAP = null, MAPLIB = null;
+  function rowCodes(r) { var l = String(r.label).replace(/\s+\d+\/\s*$/, '').trim(); if (l === 'European Union 27') return EU27; return CCM[l] ? [CCM[l]] : null; }
+  function mapRows(t) { var o = []; t.rows.forEach(function (r, j) { var c = rowCodes(r); if (c) o.push({ j: j, codes: c, r: r }); }); return o.length >= 6 ? o : null; }
+  function loadMapLib(cb) {
+    if (typeof window.jsVectorMap === 'function' && window.jsVectorMap.maps && window.jsVectorMap.maps.world) return cb(true);
+    if (!MAPLIB) MAPLIB = new Promise(function (res) {
+      var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'vendor/jsvectormap/jsvectormap.min.css'; document.head.appendChild(l);
+      function js(src, next) { var sc = document.createElement('script'); sc.src = src; sc.onload = next; sc.onerror = function () { res(false); }; document.head.appendChild(sc); }
+      js('vendor/jsvectormap/jsvectormap.min.js', function () { js('vendor/jsvectormap/world.js', function () { res(true); }); });
+    });
+    MAPLIB.then(cb);
+  }
+  function mix(a, b, k) { return 'rgb(' + [0, 1, 2].map(function (i) { return Math.round(a[i] + (b[i] - a[i]) * k); }).join(',') + ')'; }
+  function mapColor(v, lo, hi, div) {
+    var mid = [241, 239, 230];
+    if (div) { var m = Math.max(Math.abs(lo), Math.abs(hi)) || 1; return v < 0 ? mix(mid, [179, 64, 47], Math.min(1, -v / m)) : mix(mid, [29, 81, 120], Math.min(1, v / m)); }
+    return mix([222, 232, 240], [12, 52, 92], hi > lo ? (v - lo) / (hi - lo) : 0.5);
+  }
+  function cname(cc) { try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(cc) || cc; } catch (e) { return cc; } }
+  function mapHtml(t, MR, M) {
+    var yrs = [], i; for (i = 0; i < t.years.length; i++) if (!isP(t.years[i])) yrs.push(i);
+    var chips = yrs.map(function (k) { return '<button type="button" class="cp-chip nbt-yr" data-y="' + k + '" aria-pressed="' + (k === YI) + '">' + esc(t.years[k]) + '</button>'; }).join('');
+    return '<div class="nbt-mapcol"><div class="di-movers-hint" style="margin:0 0 6px">' + esc(M.yr) + '</div><div class="cp-seg" role="group" aria-label="' + esc(M.yr) + '" style="margin-bottom:8px">' + chips + '</div>' +
+      '<div id="nbt-map" role="img" aria-label="' + esc(M.alt) + '" style="width:100%;height:340px"></div><div id="nbt-leg" class="di-movers-hint" style="margin-top:4px"></div><p class="di-movers-hint" style="margin:6px 0 0">' + esc(M.hint) + ' ' + esc(M.note) + '</p></div>';
+  }
+  function paintMap(t, MR, M) {
+    var host = document.getElementById('nbt-map'); if (!host) return;
+    if (MAP) { try { MAP.destroy(); } catch (e) { /* ya destruido */ } MAP = null; }
+    host.innerHTML = '';
+    var by = {}, vals = [], sel = {};
+    MR.forEach(function (m) { var v = m.r.values[YI]; if (v == null) return; m.codes.forEach(function (c) { by[c] = { v: v, j: m.j, r: m.r }; }); vals.push(v); if (m.j === ROW) m.codes.forEach(function (c) { sel[c] = 1; }); });
+    if (!vals.length) { host.innerHTML = '<p class="di-movers-hint">' + esc(M.none) + '</p>'; return; }
+    var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals), div = lo < 0 && hi > 0, unit = xl('unit', t.rows[0].unit || t.unit || '');
+    loadMapLib(function (ok) {
+      if (!ok || typeof window.jsVectorMap !== 'function' || !document.getElementById('nbt-map')) { host.innerHTML = '<p class="di-movers-hint">' + esc(M.fail) + '</p>'; return; }
+      try {
+        MAP = new window.jsVectorMap({
+          selector: '#nbt-map', map: 'world', backgroundColor: 'transparent', zoomButtons: true, zoomOnScroll: false, showTooltip: true,
+          regionStyle: { initial: { fill: '#e6e1d2', stroke: '#c8c3b4', strokeWidth: 0.4, fillOpacity: 1 }, hover: { fillOpacity: 0.8 } },
+          onRegionTooltipShow: function (e, tip, code) {
+            var b = by[code], h = '<strong>' + esc(EU27.indexOf(code) >= 0 && b && b.r.label === 'European Union 27' ? cname(code) + ' (' + M.eu + ')' : cname(code)) + '</strong>';
+            h += b ? '<br>' + esc(fv(b.v)) + ' · ' + esc(t.years[YI]) + '<br>' + esc(M.hint) : '<br>' + esc(M.none);
+            tip.text(h, true);
+          },
+          onRegionClick: function (e, code) { var b = by[code]; if (b) { ROW = b.j; render(); } }
+        });
+        Object.keys(MAP.regions).forEach(function (code) {
+          var b = by[code], el = MAP.regions[code] && MAP.regions[code].element; if (!el || !b) return;
+          try { el.setStyle('fill', mapColor(b.v, lo, hi, div)); if (sel[code]) { el.setStyle('stroke', '#1b1b1b'); el.setStyle('strokeWidth', 1.4); } } catch (er) { /* sin estilo */ }
+        });
+        var lg = document.getElementById('nbt-leg');
+        if (lg) lg.innerHTML = '<span style="display:inline-block;width:140px;height:10px;vertical-align:middle;border-radius:3px;background:linear-gradient(90deg,' + mapColor(lo, lo, hi, div) + ',' + (div ? mapColor(0, lo, hi, div) + ',' : '') + mapColor(hi, lo, hi, div) + ')"></span> ' + esc(fv(lo)) + ' → ' + esc(fv(hi)) + ' · ' + esc(unit);
+      } catch (er) { MAP = null; host.innerHTML = '<p class="di-movers-hint">' + esc(M.fail) + '</p>'; }
+    });
+  }
   function cur() { var i; for (i = 0; i < D.tables.length; i++) if (D.tables[i].id === SEL) return D.tables[i]; return D.tables[0]; }
   function isP(y) { return /[–-]/.test(y) && !/\//.test(y); }
   function chart(t, r, T, P) {
@@ -49,12 +113,15 @@
       if (x.section && x.section !== last) { body += '<tr><th scope="rowgroup" colspan="' + (t.years.length + 2) + '" style="padding:10px 6px 4px;text-align:left;font-size:12px">' + esc(x.section) + '</th></tr>'; last = x.section; }
       body += '<tr class="nbt-r" data-j="' + j + '" tabindex="0" style="cursor:pointer;' + (j === ROW ? 'background:var(--bg-soft,rgba(0,0,0,.05))' : '') + '"><th scope="row" style="' + td + 'text-align:left;font-weight:400;padding-left:' + (6 + 12 * (x.indent || 0)) + 'px;white-space:normal;min-width:180px">' + esc(xl('row', x.label)) + '</th><td style="' + td + 'text-align:left;color:var(--text-muted)">' + esc(xl('unit', x.unit || t.unit || '')) + '</td>' + x.values.map(function (v) { return '<td style="' + td + '">' + esc(fv(v)) + '</td>'; }).join('') + '</tr>';
     });
+    var MR = mapRows(t), M = MT[lang()] || MT.es;
+    if (MR) { var yi0 = -1, k0; for (k0 = 0; k0 < t.years.length; k0++) if (!isP(t.years[k0]) && (YI === k0 || (YI == null && t.years[k0] === '2026'))) yi0 = k0; if (yi0 < 0) for (k0 = t.years.length - 1; k0 >= 0; k0--) if (!isP(t.years[k0])) { yi0 = k0; break; } YI = yi0; }
     var tab = '<div style="overflow:auto;max-height:520px"><table style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr><th scope="col" style="' + th + 'text-align:left">' + esc(T0.row) + '</th><th scope="col" style="' + th + 'text-align:left">' + esc(T0.unit) + '</th>' + t.years.map(function (y) { return '<th scope="col" style="' + th + '">' + esc(y) + '</th>'; }).join('') + '</tr></thead><tbody>' + body + '</tbody></table></div>';
     var notes = t.notes.length ? '<details class="usm-more"><summary>' + esc(T0.notes) + '</summary>' + t.notes.map(function (n) { return '<p class="di-movers-hint">' + esc(n) + '</p>'; }).join('') + '</details>' : '';
     var cite = window.DICite && window.DICite.html ? '<div class="pp-cites" style="margin-top:10px">' + window.DICite.html('usda_ers', { period: D.edition }) + '</div>' : '';
-    root.innerHTML = '<h2 class="cof-h2">' + esc(T0.h) + '</h2><p class="cof-sub">' + esc(T0.sub) + '</p>' + sel + '<h3 class="cof-h3">' + esc(xl('row', r.label)) + ' · ' + esc(T0.chart) + '</h3>' + chart(t, r, T0, P) + '<h3 class="cof-h3">' + esc(tname(t, P)) + '</h3>' + tab + notes +
+    root.innerHTML = '<h2 class="cof-h2">' + esc(T0.h) + '</h2><p class="cof-sub">' + esc(T0.sub) + '</p>' + sel + '<h3 class="cof-h3">' + esc(xl('row', r.label)) + ' · ' + esc(T0.chart) + '</h3>' + chart(t, r, T0, P) + '<h3 class="cof-h3">' + esc(tname(t, P)) + '</h3>' + (MR ? '<div class="nbt-wrap">' + mapHtml(t, MR, M) + '<div class="nbt-tabcol">' + tab + '</div></div>' : tab) + notes +
       '<p class="cof-note">' + esc(T0.note) + ' ' + esc(f(T0.src, { ed: D.edition })) + ' <a href="' + esc(D.pageUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(T0.open) + '</a></p>' + cite;
-    var s = document.getElementById('nbt-sel'); if (s) s.onchange = function () { SEL = s.value; ROW = 0; render(); };
+    if (MR) { paintMap(t, MR, M); Array.prototype.forEach.call(root.querySelectorAll('.nbt-yr'), function (b) { b.onclick = function () { YI = +b.getAttribute('data-y'); render(); }; }); } else if (MAP) { try { MAP.destroy(); } catch (e) { /* ya destruido */ } MAP = null; }
+    var s = document.getElementById('nbt-sel'); if (s) s.onchange = function () { SEL = s.value; ROW = 0; YI = null; render(); };
     Array.prototype.forEach.call(root.querySelectorAll('.nbt-r'), function (el) { function go() { ROW = +el.getAttribute('data-j'); render(); } el.onclick = go; el.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } }; });
   }
   function boot() {
