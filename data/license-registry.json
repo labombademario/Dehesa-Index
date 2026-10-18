@@ -6301,6 +6301,13 @@
     "MGAP": "uruguay_datos_abiertos",
     "URSEA": "uruguay_datos_abiertos"
    }
+  },
+  "data/uruguay-departments.json": {
+   "bySourceGroupPrefix": {
+    "INIA": "uruguay_datos_abiertos",
+    "MGAP": "uruguay_datos_abiertos",
+    "URSEA": "uruguay_datos_abiertos"
+   }
   }
  },
  "derived": [

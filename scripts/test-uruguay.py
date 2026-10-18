@@ -22,7 +22,7 @@ def run(files, pkgs, extra=()):
     d = Path(tempfile.mkdtemp()); out = Path(tempfile.mkdtemp())
     (d / 'ckan-test.json').write_text(json.dumps({'result': {'results': pkgs}}))
     for n, b in files.items(): (d / n).write_bytes(b)
-    p = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts/update-uruguay.py'), '--local', str(d), '--out', str(out)], capture_output=True, text=True)
+    p = subprocess.run([sys.executable, str(ROOT / 'scripts/update-uruguay.py'), '--local', str(d), '--out', str(out)], capture_output=True, text=True)
     st = out / 'uruguay-stats.json'
     series = {s['id']: s for s in json.loads(st.read_text())['countries']['UY']['series']} if st.exists() else {}
     lg = (out / 'uruguay-log.txt').read_text() if (out / 'uruguay-log.txt').exists() else ''
