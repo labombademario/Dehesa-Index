@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-226 workflows (187 generados desde `sources.yml`, 39 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+227 workflows (188 generados desde `sources.yml`, 39 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -327,6 +327,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-ers.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-us-ers.py | us-ers-stats.json, us-ttb-stats.json | finish, validate-files |
 | update-us-fed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-fed.py | us-fed-stats.json | finish, validate-files |
 | update-us-fmmo.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-us-fmmo.py | us-fmmo-stats.json | finish, validate-files |
+| update-us-fsa-rates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-fsa-rates.py | us-fsa-rates-stats.json | finish, validate-files |
 | update-us-kcfed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-kc-fed-ag-credit.py | us-kcfed-stats.json | finish, validate-files |
 | update-us-lamb.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-lamb.py | us-lamb.json | finish, validate-files |
 | update-us-local-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-local-markets.py | us-local/status.json | finish, validate-files |
