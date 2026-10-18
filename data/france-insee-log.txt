@@ -33,20 +33,20 @@ serie 010777318 IPAMPA d3 IPAMPA_010204 Lubricants 260 2026-08
 serie 010777319 IPAMPA d2 IPAMPA_0103 Fertilisers and soil improvers 260 2026-08
 serie 010777320 IPAMPA d3 IPAMPA_010301 Straight fertilizers 260 2026-08
 serie 010777321 IPAMPA d4 IPAMPA_01030101 Straight nitrogen-based fertilizers 260 2026-08
-omitida 010777322 IPAMPA d5 IPAMPA_0103010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Ammonitrates 260 2026-08
-omitida 010777323 IPAMPA d5 IPAMPA_0103010102 Monthly agricultural means of production purchasing price index (IPAMPA) - Nitrogen solutions 260 2026-08
-omitida 010777324 IPAMPA d5 IPAMPA_0103010103 Monthly agricultural means of production purchasing price index (IPAMPA) - Urea 260 2026-08
-omitida 010777325 IPAMPA d5 IPAMPA_0103010104 Monthly agricultural means of production purchasing price index (IPAMPA) - Ammonium sulphate 260 2026-08
-omitida 010777326 IPAMPA d5 IPAMPA_0103010105 Monthly agricultural means of production purchasing price index (IPAMPA) - Other straight nitrogen fertilisers 260 2026-08
+serie 010777322 IPAMPA d5 IPAMPA_0103010101 Ammonitrates 260 2026-08
+serie 010777323 IPAMPA d5 IPAMPA_0103010102 Nitrogen solutions 260 2026-08
+serie 010777324 IPAMPA d5 IPAMPA_0103010103 Urea 260 2026-08
+serie 010777325 IPAMPA d5 IPAMPA_0103010104 Ammonium sulphate 260 2026-08
+serie 010777326 IPAMPA d5 IPAMPA_0103010105 Other straight nitrogen fertilisers (ammoniac, anhydrous, other ..) 260 2026-08
 serie 010777327 IPAMPA d4 IPAMPA_01030102 Straight phosphate-based fertilizers 260 2026-08
-omitida 010777328 IPAMPA d5 IPAMPA_0103010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Triple superphosphate (P2O5 > 38%) 260 2026-08
+serie 010777328 IPAMPA d5 IPAMPA_0103010201 Triple superphosphate (P2O5 > 38%) 260 2026-08
 serie 010777330 IPAMPA d4 IPAMPA_01030103 Straight potassium-based fertilizers (including muriate of potash and potassium sulfate) 260 2026-08
 serie 010777331 IPAMPA d3 IPAMPA_010302 Compound fertilizers 260 2026-08
 serie 010777332 IPAMPA d4 IPAMPA_01030201 binary fertilisers 260 2026-08
-omitida 010777333 IPAMPA d5 IPAMPA_0103020101 Monthly agricultural means of production purchasing price index (IPAMPA) - NP fertilizers 260 2026-08
-omitida 010777334 IPAMPA d6 IPAMPA_010302010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Ammonium phosphate 260 2026-08
+serie 010777333 IPAMPA d5 IPAMPA_0103020101 NP fertilizers 260 2026-08
+serie 010777334 IPAMPA d6 IPAMPA_010302010101 Ammonium phosphate 260 2026-08
 omitida 010777335 IPAMPA d6 IPAMPA_010302010102 Monthly agricultural means of production purchasing price index (IPAMPA) - Other solid or liquid NP 260 2026-08
-omitida 010777336 IPAMPA d5 IPAMPA_0103020102 Monthly agricultural means of production purchasing price index (IPAMPA) - PK fertilizers 260 2026-08
+serie 010777336 IPAMPA d5 IPAMPA_0103020102 PK fertilizers 260 2026-08
 omitida 010777337 IPAMPA d6 IPAMPA_010302010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Superpotassium 260 2026-08
 serie 010777341 IPAMPA d4 IPAMPA_01030202 Ternary fertilizers 260 2026-08
 omitida 010777343 IPAMPA d5 IPAMPA_0103020202 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 02 (n+p+k 260 2026-08
@@ -57,11 +57,11 @@ omitida 010777352 IPAMPA d5 IPAMPA_0103020211 Monthly agricultural means of prod
 omitida 010777353 IPAMPA d5 IPAMPA_0103020212 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 12 (n+p+k 260 2026-08
 serie 010777354 IPAMPA d3 IPAMPA_010303 Other fertilizers, soil amendments and cultivation media 260 2026-08
 serie 010777355 IPAMPA d4 IPAMPA_01030301 Other fertilizers 260 2026-08
-omitida 010777356 IPAMPA d5 IPAMPA_0103030101 Monthly agricultural means of production purchasing price index (IPAMPA) - Organic or organo-mineral fertilise 260 2026-08
+serie 010777356 IPAMPA d5 IPAMPA_0103030101 Organic or organo-mineral fertilisers 260 2026-08
 serie 010777359 IPAMPA d4 IPAMPA_01030302 Soil amendments 260 2026-08
-omitida 010777360 IPAMPA d5 IPAMPA_0103030201 Monthly agricultural means of production purchasing price index (IPAMPA) - Calciferous soil amendments 260 2026-08
+serie 010777360 IPAMPA d5 IPAMPA_0103030201 Calciferous soil amendments 260 2026-08
 omitida 010777363 IPAMPA d6 IPAMPA_010303020103 Monthly agricultural means of production purchasing price index (IPAMPA) - Basic mineral soil amendments 260 2026-08
-omitida 010777364 IPAMPA d5 IPAMPA_0103030202 Monthly agricultural means of production purchasing price index (IPAMPA) - Organic amendments (manure, compost 260 2026-08
+serie 010777364 IPAMPA d5 IPAMPA_0103030202 Organic amendments (manure, compost, and other organic amendments) 260 2026-08
 serie 010777366 IPAMPA d3 IPAMPA_010304 Bio-stimulant products 260 2026-08
 serie 010777367 IPAMPA d2 IPAMPA_0104 Plant protection products 260 2026-08
 serie 010777368 IPAMPA d3 IPAMPA_010401 Fungicides 260 2026-08
@@ -93,53 +93,53 @@ serie 010777414 IPAMPA d4 IPAMPA_01040502 Bio-control products for perennial cro
 serie 010777417 IPAMPA d2 IPAMPA_0105 Animal feedingstuffs 260 2026-08
 serie 010777418 IPAMPA d3 IPAMPA_010501 straight feedingstuffs in animal nutrition 260 2026-08
 serie 010777419 IPAMPA d4 IPAMPA_01050101 Cereal feedingstuffs and by-products 260 2026-08
-omitida 010777420 IPAMPA d5 IPAMPA_0105010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : Cereals 260 2026-08
+serie 010777420 IPAMPA d5 IPAMPA_0105010101 Feedingstuffs : Cereals 260 2026-08
 omitida 010777421 IPAMPA d6 IPAMPA_010501010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : Maize 260 2026-08
-omitida 010777425 IPAMPA d5 IPAMPA_0105010102 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : by-products derived 260 2026-08
+serie 010777425 IPAMPA d5 IPAMPA_0105010102 Feedingstuffs : by-products derived from cereals (bran and other products excluding wheat) 260 2026-08
 serie 010777426 IPAMPA d4 IPAMPA_01050102 Oil-cakes 260 2026-08
-omitida 010777427 IPAMPA d5 IPAMPA_0105010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Soya cake 260 2026-08
-omitida 010777428 IPAMPA d5 IPAMPA_0105010202 Monthly agricultural means of production purchasing price index (IPAMPA) - Other oil cakes 260 2026-08
+serie 010777427 IPAMPA d5 IPAMPA_0105010201 Soya cake 260 2026-08
+serie 010777428 IPAMPA d5 IPAMPA_0105010202 Other oil cakes 260 2026-08
 serie 010777429 IPAMPA d4 IPAMPA_01050103 Other simple feedingstuffs and nutritional products for animals 260 2026-08
-omitida 010777430 IPAMPA d5 IPAMPA_0105010301 Monthly agricultural means of production purchasing price index (IPAMPA) - Other straight feedingstuffs for an 260 2026-08
+serie 010777430 IPAMPA d5 IPAMPA_0105010301 Other straight feedingstuffs for animals 260 2026-08
 omitida 010777432 IPAMPA d6 IPAMPA_010501030102 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : Beet pulp 260 2026-08
-omitida 010777434 IPAMPA d5 IPAMPA_0105010302 Monthly agricultural means of production purchasing price index (IPAMPA) - Supplements, food additives and nut 260 2026-08
+serie 010777434 IPAMPA d5 IPAMPA_0105010302 Supplements, food additives and nutritional products 260 2026-08
 omitida 010777435 IPAMPA d6 IPAMPA_010501030201 Monthly agricultural means of production purchasing price index (IPAMPA) - Mineral and liquid foods 260 2026-08
 omitida 010777436 IPAMPA d6 IPAMPA_010501030202 Monthly agricultural means of production purchasing price index (IPAMPA) - Nutritional supplements 260 2026-08
 serie 010777437 IPAMPA d3 IPAMPA_010502 Compound feedingstuffs 260 2026-08
 serie 010777438 IPAMPA d4 IPAMPA_01050201 Feedingstuff for calves 260 2026-08
-omitida 010777439 IPAMPA d5 IPAMPA_0105020101 Monthly agricultural means of production purchasing price index (IPAMPA) - Milk replacer feed for calves 260 2026-08
-omitida 010777440 IPAMPA d5 IPAMPA_0105020102 Monthly agricultural means of production purchasing price index (IPAMPA) - Other feedingstuffs for calves 260 2026-08
+serie 010777439 IPAMPA d5 IPAMPA_0105020101 Milk replacer feed for calves 260 2026-08
+serie 010777440 IPAMPA d5 IPAMPA_0105020102 Other feedingstuffs for calves 260 2026-08
 serie 010777441 IPAMPA d4 IPAMPA_01050202 Feedingstuff for adult bovines 260 2026-08
-omitida 010777442 IPAMPA d5 IPAMPA_0105020201 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for fattening cattle TNM <= 20 260 2026-08
-omitida 010777443 IPAMPA d5 IPAMPA_0105020202 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for fattening cattle TNM > 20% 260 2026-08
-omitida 010777444 IPAMPA d5 IPAMPA_0105020203 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for dairy cows TNM <= 20% 260 2026-08
-omitida 010777445 IPAMPA d5 IPAMPA_0105020204 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for dairy cows 20% < TNM < 35% 260 2026-08
-omitida 010777446 IPAMPA d5 IPAMPA_0105020205 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for dairy cows TNM >= 35% 260 2026-08
-omitida 010777447 IPAMPA d5 IPAMPA_0105020206 Monthly agricultural means of production purchasing price index (IPAMPA) – Mash 260 2026-08
+serie 010777442 IPAMPA d5 IPAMPA_0105020201 Feed for fattening cattle TNM <= 20% 260 2026-08
+serie 010777443 IPAMPA d5 IPAMPA_0105020202 Feed for fattening cattle TNM > 20% 260 2026-08
+serie 010777444 IPAMPA d5 IPAMPA_0105020203 Feed for dairy cows TNM <= 20% 260 2026-08
+serie 010777445 IPAMPA d5 IPAMPA_0105020204 Feed for dairy cows 20% < TNM < 35% 260 2026-08
+serie 010777446 IPAMPA d5 IPAMPA_0105020205 Feed for dairy cows TNM >= 35% 260 2026-08
+serie 010777447 IPAMPA d5 IPAMPA_0105020206 Mash 260 2026-08
 serie 010777448 IPAMPA d4 IPAMPA_01050203 Feedingstuff for pigs 260 2026-08
-omitida 010777449 IPAMPA d5 IPAMPA_0105020301 Monthly agricultural means of production purchasing price index (IPAMPA) - Starter feed for piglets 260 2026-08
-omitida 010777450 IPAMPA d5 IPAMPA_0105020302 Monthly agricultural means of production purchasing price index (IPAMPA) - Second-stage feed for piglets 260 2026-08
-omitida 010777451 IPAMPA d5 IPAMPA_0105020303 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for fattening pigs, growth 260 2026-08
-omitida 010777452 IPAMPA d5 IPAMPA_0105020304 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for pigs, finishing fa 260 2026-08
-omitida 010777453 IPAMPA d5 IPAMPA_0105020305 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for fattening pigs, complete 260 2026-08
-omitida 010777454 IPAMPA d5 IPAMPA_0105020306 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for fattening pigs, supplement 260 2026-08
-omitida 010777455 IPAMPA d5 IPAMPA_0105020307 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for awaiting or nuring sowes 260 2026-08
+serie 010777449 IPAMPA d5 IPAMPA_0105020301 Starter feed for piglets 260 2026-08
+serie 010777450 IPAMPA d5 IPAMPA_0105020302 Second-stage feed for piglets 260 2026-08
+serie 010777451 IPAMPA d5 IPAMPA_0105020303 Feed for fattening pigs, growth 260 2026-08
+serie 010777452 IPAMPA d5 IPAMPA_0105020304 Feedingstuff for pigs, finishing fattening 260 2026-08
+serie 010777453 IPAMPA d5 IPAMPA_0105020305 Feed for fattening pigs, complete 260 2026-08
+serie 010777454 IPAMPA d5 IPAMPA_0105020306 Feed for fattening pigs, supplement 260 2026-08
+serie 010777455 IPAMPA d5 IPAMPA_0105020307 Feed for awaiting or nuring sowes 260 2026-08
 serie 010777456 IPAMPA d4 IPAMPA_01050204 Feedingstuff for poultry 260 2026-08
-omitida 010777457 IPAMPA d5 IPAMPA_0105020401 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for rooster 260 2026-08
+serie 010777457 IPAMPA d5 IPAMPA_0105020401 Feedingstuff for rooster 260 2026-08
 omitida 010777458 IPAMPA d6 IPAMPA_010502040101 Monthly agricultural means of production purchasing price index (IPAMPA) - Starter feed for chicks 260 2026-08
-omitida 010777459 IPAMPA d6 IPAMPA_010502040102 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for broilers, growth 260 2026-08
+serie 010777459 IPAMPA d6 IPAMPA_010502040102 Feed for broilers, growth 260 2026-08
 omitida 010777460 IPAMPA d6 IPAMPA_010502040103 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for standard chickens, finishi 260 2026-08
 omitida 010777461 IPAMPA d6 IPAMPA_010502040104 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for quality chickens, finishin 260 2026-08
 omitida 010777462 IPAMPA d6 IPAMPA_010502040105 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for pullets 260 2026-08
-omitida 010777463 IPAMPA d6 IPAMPA_010502040106 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for hens kept on the f 260 2026-08
-omitida 010777464 IPAMPA d6 IPAMPA_010502040107 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for hens kept in batte 260 2026-08
-omitida 010777465 IPAMPA d5 IPAMPA_0105020402 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for other poultry 260 2026-08
+serie 010777463 IPAMPA d6 IPAMPA_010502040106 Feedingstuff for hens kept on the floor 260 2026-08
+serie 010777464 IPAMPA d6 IPAMPA_010502040107 Feedingstuff for hens kept in battery cages 260 2026-08
+serie 010777465 IPAMPA d5 IPAMPA_0105020402 Feedingstuff for other poultry 260 2026-08
 omitida 010777466 IPAMPA d6 IPAMPA_010502040201 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for turkey and turkey poults 260 2026-08
 omitida 010777467 IPAMPA d6 IPAMPA_010502040202 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for other palmipeds 260 2026-08
 omitida 010777468 IPAMPA d6 IPAMPA_010502040203 Monthly agricultural means of production purchasing price index (IPAMPA) - Other feedingstuff for poultry 260 2026-08
 serie 010777469 IPAMPA d4 IPAMPA_01050205 other compound feed 260 2026-08
-omitida 010777470 IPAMPA d5 IPAMPA_0105020501 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for rabbits 260 2026-08
-omitida 010777471 IPAMPA d5 IPAMPA_0105020502 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for ovine and caprine  260 2026-08
+serie 010777470 IPAMPA d5 IPAMPA_0105020501 Feedingstuff for rabbits 260 2026-08
+serie 010777471 IPAMPA d5 IPAMPA_0105020502 Feedingstuff for ovine and caprine animals 260 2026-08
 omitida 010777472 IPAMPA d6 IPAMPA_010502050201 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for lambs 260 2026-08
 omitida 010777473 IPAMPA d6 IPAMPA_010502050202 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for ewes 260 2026-08
 omitida 010777474 IPAMPA d6 IPAMPA_010502050203 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for goats 260 2026-08
@@ -302,4 +302,4 @@ serie 010776763 IPPAP d2 IPPAP_0202 Other fruits and vegetables 260 2026-08
 serie 010776764 IPPAP d3 IPPAP_020201 Fruits and vegetables for processing 260 2026-08
 serie 010776766 IPPAP d4 IPPAP_02020102 Apples for processing 80 2026-08
 serie 010776767 IPPAP d3 IPPAP_020202 Banana 260 2026-08
-resumen {'total': 853, 'arretee': 61, 'no_m': 451, 'no_indice': 0, 'old': 3, 'short': 2, 'detail': 115} guardadas 221
+resumen {'total': 853, 'arretee': 61, 'no_m': 451, 'no_indice': 0, 'old': 3, 'short': 2, 'detail': 75} guardadas 261
