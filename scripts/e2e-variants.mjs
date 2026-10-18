@@ -156,6 +156,7 @@ if (want('obs')) {
     if (st.newN > 20) { await page.click('#new [data-more="new"]'); if (await rows('new') !== Math.min(40, st.newN)) throw new Error('"Mostrar 20 mas" no anade 20'); }
     const region = await page.evaluate(() => DIObservatory.state().doc.observations[0].region);
     const expect = await page.evaluate(r => DIObservatory.state().doc.observations.filter(o => o.region === r && o.isNew).length, region);
+    await page.evaluate(() => { const d = document.querySelector('details.ob-filt'); if (d && !d.open) d.querySelector('summary').click(); });   // filtros plegados (3239fcd)
     await page.click('button[data-f="c"][data-v="' + region + '"]'); await page.waitForTimeout(200);
     if (await rows('new') !== Math.min(20, expect)) throw new Error('el filtro no se aplica a TODO el conjunto: ' + await rows('new') + ' filas, esperadas ' + Math.min(20, expect));
     const h = await page.evaluate(() => document.documentElement.scrollHeight); if (w === 390 && h > 30000) throw new Error('pagina movil de ' + h + ' px');
