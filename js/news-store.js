@@ -23,7 +23,7 @@
       return S._i = get('news-index.json').then(function (d) {
         var st = (d.stories || []).map(function (s) {
           return { id: s.id, date: s.date, region: s.region, source: s.source, url: s.url, products: s.products || [],
-            impactChannel: s.impactChannel, marketLinks: s.marketLinks || [], headline: { es: s.h, en: s.h, fr: s.h, it: s.h } };
+            impactChannel: s.impactChannel, marketLinks: s.marketLinks || [], lang: s.l || null, country: s.c || null, headline: { es: s.h, en: s.h, fr: s.h, it: s.h } };
         });
         var idx = {}; Object.keys(d.keys || {}).forEach(function (k) { idx[k] = d.keys[k].map(function (i) { return st[i]; }); });
         global.DehesaNewsIndex = idx; return idx;

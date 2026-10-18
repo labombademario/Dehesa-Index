@@ -704,7 +704,8 @@ def write_views(rows, now):
         for x in keyed[p]:
             if x["id"] not in pos: pos[x["id"]] = len(used); used.append(x)
     stories = [{"id": x["id"], "date": x["date"], "region": x["region"], "source": x["source"], "h": x["headline"]["en"], "url": x["url"],
-                "products": x["products"], "impactChannel": x.get("impactChannel"), "marketLinks": x.get("marketLinks", [])} for x in used]
+                "products": x["products"], "impactChannel": x.get("impactChannel"), "marketLinks": x.get("marketLinks", []),
+                "l": x.get("lang"), "c": x.get("country")} for x in used]  # idioma del titular y pais del medio: Precios no muestra titulares en idiomas ajenos
     (VIEWS / "news-index.json").write_text(json.dumps({"generatedAt": now, "stories": stories, "keys": {p: [pos[x["id"]] for x in keyed[p]] for p in keyed}},
                                                        ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # lista plana compacta (la usa Noticias y la ficha de producto)
