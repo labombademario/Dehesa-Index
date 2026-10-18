@@ -40,6 +40,8 @@
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); } catch (e) { return v.toFixed(d || 0); } }
   function sg(v, d, u) { return (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), d || 0) + (u || ''); }
   function dfmt(iso, withYear) { var p = iso.split('-'); try { return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: withYear ? 'numeric' : undefined, timeZone: 'UTC' }); } catch (e) { return iso; } }
+  var EMO = { corn: '🌽', soybeans: '🫘', wheat_winter: '🌾', wheat_spring: '🌾', cotton: '☁️', sorghum: '🌿', barley: '🍺', rice: '🍚', oats: '🥣', peanuts: '🥜' };
+  function em(id) { return EMO[id] ? EMO[id] + ' ' : ''; }
   function crop(id) { for (var i = 0; i < DATA.crops.length; i++) if (DATA.crops[i].id === id) return DATA.crops[i]; return null; }
   function isWinter(id) { return id === 'wheat_winter'; }
   function anchor(id, season) { return isWinter(id) ? Date.UTC(season - 1, 8, 1) : Date.UTC(season, 0, 1); }
@@ -102,7 +104,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     var s = SEL.season, cond = c.seasons[s].condition, isLatest = s === ss[ss.length - 1];
     var wk = cond.length - 1, last = cond[wk], prev = wk ? cond[wk - 1] : null, xo = off(c.id, s, last[0]);
     var yo = at(condSeries(c, s - 1), xo), av = avg5(c, s, xo, condSeries);
-    var copts = cropsHave.map(function (id) { return '<option value="' + id + '"' + (id === c.id ? ' selected' : '') + '>' + esc(x.crops[id]) + '</option>'; }).join('');
+    var copts = cropsHave.map(function (id) { return '<option value="' + id + '"' + (id === c.id ? ' selected' : '') + '>' + em(id) + esc(x.crops[id]) + '</option>'; }).join('');
     var sopts = ss.slice().reverse().map(function (y) { return '<option value="' + y + '"' + (y === s ? ' selected' : '') + '>' + y + '</option>'; }).join('');
     var ctr = '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px"><label style="font-size:13px">' + x.crop + '<br><select id="cu-c" class="di-compare-select">' + copts + '</select></label><label style="font-size:13px">' + x.season + '<br><select id="cu-s" class="di-compare-select">' + sopts + '</select></label></div>';
     // titular + distribución
@@ -167,7 +169,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
         if (!r) { pn.innerHTML = '<p class="di-movers-hint">' + esc(x.mapPick) + '</p>'; return; }
         var a = c.states[k], l = a[a.length - 1], cells = CLS.map(function (q, i) { return '<div style="flex:' + Math.max(l[q], 0.5) + ';background:' + CLS_COL[i] + ';min-width:2px" title="' + esc(x.classes[q]) + ' ' + l[q] + ' %"></div>'; }).join('');
         var rowsH = CLS.slice().reverse().map(function (q) { var i = CLS.indexOf(q); return '<div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:3px 0"><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:' + CLS_COL[i] + ';display:inline-block"></span>' + esc(x.classes[q]) + '</span><strong>' + nf(l[q]) + ' %</strong></div>'; }).join('');
-        pn.innerHTML = '<div style="font-family:\'Source Serif 4\',serif;font-size:22px;font-weight:600">' + esc(SN[k] || k) + '</div><div style="font-size:12.5px;color:var(--text-faint);margin-bottom:8px">' + esc(x.crops[c.id]) + ' · ' + esc(x.latestW) + ': ' + esc(dfmt(r.we, true)) + '</div>' +
+        pn.innerHTML = '<div style="font-family:\'Source Serif 4\',serif;font-size:22px;font-weight:600">' + esc(SN[k] || k) + '</div><div style="font-size:12.5px;color:var(--text-faint);margin-bottom:8px">' + em(c.id) + esc(x.crops[c.id]) + ' · ' + esc(x.latestW) + ': ' + esc(dfmt(r.we, true)) + '</div>' +
           '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + esc(x.ge.toUpperCase()) + '</div><div style="font-family:\'Source Serif 4\',serif;font-size:34px;font-weight:600;line-height:1.1">' + nf(r.ge) + ' %</div>' +
           '<div style="font-size:12.5px;color:var(--text-faint);margin-bottom:10px">' + (r.d === null ? '' : '<strong style="color:var(--text)">' + sg(r.d, 0, ' ' + x.pp) + '</strong> ' + esc(x.wow)) + '</div>' +
           '<div style="display:flex;height:18px;border-radius:4px;overflow:hidden;gap:2px;margin:0 0 8px" role="img" aria-label="' + esc(x.dist) + '">' + cells + '</div>' + rowsH;
@@ -189,7 +191,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     var x = t(), cells = '';
     ['corn', 'soybeans', 'wheat_spring', 'cotton'].forEach(function (id) {
       var c = crop(id); if (!c) return; var i = latestInfo(c); if (!i) return;
-      cells += '<div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + esc(x.crops[id].toUpperCase()) + '</div><div style="font-family:\'Source Serif 4\',serif;font-size:26px;font-weight:600;margin:4px 0 2px">' + nf(i.geNow) + ' %</div><div style="font-size:12.5px;color:var(--text-faint)">' + (i.yoy === null ? '' : sg(i.yoy, 0, ' ' + x.pp) + ' ' + esc(x.yoy)) + '<br>' + esc(dfmt(i.last[0])) + '</div></div>';
+      cells += '<div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + em(id) + esc(x.crops[id].toUpperCase()) + '</div><div style="font-family:\'Source Serif 4\',serif;font-size:26px;font-weight:600;margin:4px 0 2px">' + nf(i.geNow) + ' %</div><div style="font-size:12.5px;color:var(--text-faint)">' + (i.yoy === null ? '' : sg(i.yoy, 0, ' ' + x.pp) + ' ' + esc(x.yoy)) + '<br>' + esc(dfmt(i.last[0])) + '</div></div>';
     });
     if (!cells) { el.innerHTML = ''; return; }
     el.innerHTML = '<div class="di-movers-head-row"><h2>' + esc(x.home) + '</h2><span class="di-movers-hint">' + esc(x.homeHint) + '</span></div><div class="di-card" style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px">' + cells + '</div><p class="di-movers-hint" style="margin-top:10px"><a href="cultivos.html">' + esc(x.more) + ' →</a> · <a href="mapa.html">' + esc(x.map) + '</a> · USDA NASS</p>';
