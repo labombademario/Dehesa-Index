@@ -292,8 +292,10 @@ def dicose():
         try: pkg = package(name)
         except Exception as e: log('DICOSE %s: %s' % (name[-12:], e)); continue
         got = False; diag = []
-        for r in pkg['resources']:
-            if not (r.get('url') or '').endswith('datosanimales.csv'): continue
+        # primero el datosanimales.csv de siempre; si en un anio ese fichero es un diccionario de datos, se prueban los demas CSV del paquete (menos los claramente ajenos)
+        cands = sorted([r for r in pkg['resources'] if (r.get('url') or '').lower().endswith('.csv') and not re.search(r'detallad|tenencia|usostierra|generales', r.get('url') or '', re.I)],
+                       key=lambda r: 0 if (r.get('url') or '').endswith('datosanimales.csv') else 1)
+        for r in cands:
             try: b = resource_bytes(r)
             except Exception as e: log('DICOSE %s: fallo %s' % (name[-12:], e)); continue
             if b is None: continue
@@ -322,7 +324,7 @@ def dicose():
             births[y] = sb; got = True
             break
         if not got:
-            diag = diag[:1] + ['recursos: %s' % [(r.get('url') or '')[-40:] for r in pkg['resources']][:10]]
+            diag = diag[:2] + ['recursos: %s' % [((r.get('name') or '')[:40], (r.get('format') or ''), (r.get('url') or '')[-30:]) for r in pkg['resources']][:16]]
         if False: diag.append('recursos: %s' % [(r.get('url') or '')[-34:] for r in pkg['resources']][:8])
         if not got: log('DICOSE %s: sin datosanimales.csv utilizable%s' % (name[-12:], (' | ' + ' | '.join(diag)) if diag else ''))
     for sp in SPECIES:
