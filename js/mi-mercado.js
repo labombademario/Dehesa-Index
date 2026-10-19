@@ -300,6 +300,7 @@
       var on = ST.c === c[0];
       return '<button type="button" role="radio" aria-checked="' + on + '" class="mm-cc-b' + (on ? ' on' : '') + '" data-mm-cc="' + c[0] + '"><span class="mm-cc-f" aria-hidden="true">' + c[1] + '</span><span class="mm-cc-n">' + esc(c[2]) + '</span></button>';
     }).join('') + '</div></div>';
+    h += mapHtml();
     h += '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
     if (ST.c === 'US') {
       h += '<label>' + esc(t.place) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
@@ -326,6 +327,39 @@
     return h + '</div>';
   }
   var ES_CROPS = '';
+
+  /* ---------- Mapa para elegir la zona (18-oct): se pulsa la provincia/estado/región; el desplegable queda como alternativa ---------- */
+  var MAPV = { US: ['us-states', 'DEHESA_US_STATES'], CA: ['ca-provinces', 'DEHESA_CA_PROVINCES'], ES: ['es-provinces', 'DEHESA_ES_PROVINCES'], DE: ['de-laender', 'DEHESA_DE_LAENDER'], UK: ['uk-regions', 'DEHESA_UK_REGIONS'] };
+  /* Reino Unido: el mapa es NUTS 1 (12 regiones); DEFRA publica Londres junto con el Sudeste */
+  var UKMAP = { UKC: 'north-east', UKD: 'north-west-and-merseyside', UKE: 'yorkshire-the-humber', UKF: 'east-midlands', UKG: 'west-midlands', UKH: 'eastern', UKI: 'south-east-and-london', UKJ: 'south-east-and-london', UKK: 'south-west', UKL: 'wales', UKM: 'scotland', UKN: 'northern-ireland' };
+  var MAPT = {
+    es: { US: 'Pulsa tu estado en el mapa o elígelo en la lista.', CA: 'Pulsa tu provincia en el mapa o elígela en la lista.', ES: 'Pulsa tu provincia en el mapa o elígela en la lista.', DE: 'Pulsa tu estado federado en el mapa o elígelo en la lista.', UK: 'Pulsa tu región en el mapa o elígela en la lista.', na: 'sin datos', sel: 'Elegido:', map: 'Mapa para elegir la zona' },
+    en: { US: 'Tap your state on the map or pick it from the list.', CA: 'Tap your province on the map or pick it from the list.', ES: 'Tap your province on the map or pick it from the list.', DE: 'Tap your federal state on the map or pick it from the list.', UK: 'Tap your region on the map or pick it from the list.', na: 'no data', sel: 'Selected:', map: 'Map to choose the area' },
+    fr: { US: 'Touchez votre État sur la carte ou choisissez-le dans la liste.', CA: 'Touchez votre province sur la carte ou choisissez-la dans la liste.', ES: 'Touchez votre province sur la carte ou choisissez-la dans la liste.', DE: 'Touchez votre Land sur la carte ou choisissez-le dans la liste.', UK: 'Touchez votre région sur la carte ou choisissez-la dans la liste.', na: 'pas de données', sel: 'Choisi :', map: 'Carte pour choisir la zone' },
+    it: { US: 'Tocca il tuo stato sulla mappa o sceglilo dall’elenco.', CA: 'Tocca la tua provincia sulla mappa o sceglila dall’elenco.', ES: 'Tocca la tua provincia sulla mappa o sceglila dall’elenco.', DE: 'Tocca il tuo Land sulla mappa o sceglilo dall’elenco.', UK: 'Tocca la tua regione sulla mappa o sceglila dall’elenco.', na: 'nessun dato', sel: 'Scelto:', map: 'Mappa per scegliere la zona' } };
+  var MAPLOAD = {};
+  function mapScript(c) {
+    var v = MAPV[c]; if (!v || window[v[1]]) return Promise.resolve();
+    return MAPLOAD[c] || (MAPLOAD[c] = new Promise(function (ok) { var sc = document.createElement('script'); sc.src = (window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath('vendor/' + v[0] + '.js') : 'vendor/' + v[0] + '.js'); sc.onload = ok; sc.onerror = ok; document.head.appendChild(sc); }));
+  }
+  function mapPlaces(c) {
+    if (c === 'US') return usPlaces(); if (c === 'CA') return caPlaces(); if (c === 'DE') return deLands(); if (c === 'UK') return ukRegions();
+    if (c === 'ES') return ES_PROV ? Object.keys(ES_PROV) : []; return [];
+  }
+  function mapName(c, k) { return c === 'US' ? usName(k) : c === 'CA' ? caName(k) : c === 'DE' ? deName(k) : c === 'UK' ? ukRegName(k) : (ES_PROV && ES_PROV[k]) || k; }
+  function mapHtml() {
+    var v = MAPV[ST.c]; if (!v || COMPACT) return '';
+    var M = window[v[1]], mt = MAPT[lang()] || MAPT.es;
+    if (!M) { mapScript(ST.c).then(function () { if (window[v[1]]) draw(); }); return '<div class="mm-map mm-map-wait" aria-hidden="true"></div>'; }
+    var set = {}; mapPlaces(ST.c).forEach(function (k) { set[k] = 1; });
+    var paths = M.states.map(function (st) {
+      var k = ST.c === 'UK' ? UKMAP[st.id] : st.id, ok = !!(k && set[k]), on = ok && k === ST.r, nm = ok ? mapName(ST.c, k) : (st.name || st.id);
+      return '<path d="' + st.d + '" class="mm-map-p' + (ok ? '' : ' na') + (on ? ' on' : '') + '"' + (ok ? ' data-mm-map="' + esc(k) + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm) + '"' : ' aria-hidden="true"') + '><title>' + esc(nm + (ok ? '' : ' · ' + mt.na)) + '</title></path>';
+    }).join('');
+    return '<div class="mm-map mm-map-' + ST.c.toLowerCase() + '"><p class="mm-map-q">' + esc(mt[ST.c]) + '</p><svg viewBox="' + esc(M.viewBox) + '" role="group" aria-label="' + esc(mt.map) + '" focusable="false">' + paths + '</svg>' +
+      (ST.r && set[ST.r] ? '<p class="mm-map-sel">' + esc(mt.sel) + ' <strong>' + esc(mapName(ST.c, ST.r)) + '</strong></p>' : '') + '</div>';
+  }
+  function mapPick(k) { if (!k || k === ST.r) return; ST.r = k; save(); prepare().then(function () { draw(); refocus('[data-mm-map="' + k + '"]'); }, function () { draw(); }); }
 
   /* ---------- EE. UU.: precio ---------- */
   var LOCST = null;
@@ -689,7 +723,7 @@
   var DE_CROPN = { cereals: 'Cereals (incl. grain maize)|Cereales (con maíz grano)|Céréales (avec maïs grain)|Cereali (con mais da granella)', wheat: 'Wheat|Trigo|Blé|Frumento', rye: 'Rye|Centeno|Seigle|Segale', barley: 'Barley|Cebada|Orge|Orzo', oats: 'Oats|Avena|Avoine|Avena', triticale: 'Triticale|Triticale|Triticale|Triticale', maize: 'Grain maize|Maíz grano|Maïs grain|Mais da granella', rapeseed: 'Rapeseed|Colza|Colza|Colza', sunflower: 'Sunflower|Girasol|Tournesol|Girasole', sugarbeet: 'Sugar beet|Remolacha azucarera|Betterave sucrière|Barbabietola da zucchero', potato: 'Potatoes|Patata|Pommes de terre|Patate', silage: 'Silage maize|Maíz forrajero|Maïs fourrage|Mais da foraggio' };
   var UK_CROPS = ['wheat', 'barley', 'winter-barley', 'spring-barley', 'oats', 'oilseed-rape'];
   var UK_CROPN = { wheat: 'Wheat|Trigo|Blé|Frumento', barley: 'Barley (all)|Cebada (total)|Orge (total)|Orzo (totale)', 'winter-barley': 'Winter barley|Cebada de invierno|Orge d’hiver|Orzo invernale', 'spring-barley': 'Spring barley|Cebada de primavera|Orge de printemps|Orzo primaverile', oats: 'Oats|Avena|Avoine|Avena', 'oilseed-rape': 'Oilseed rape|Colza|Colza|Colza' };
-  var UK_REGN = { england: 'England|Inglaterra|Angleterre|Inghilterra', scotland: 'Scotland|Escocia|Écosse|Scozia', wales: 'Wales|Gales|Pays de Galles|Galles', 'northern-ireland': 'Northern Ireland|Irlanda del Norte|Irlande du Nord|Irlanda del Nord' };
+  var UK_REGN = { 'north-east': 'North East|Nordeste de Inglaterra|Nord-Est de l’Angleterre|Nord-est dell’Inghilterra', 'north-west-and-merseyside': 'North West and Merseyside|Noroeste de Inglaterra y Merseyside|Nord-Ouest de l’Angleterre et Merseyside|Nord-ovest dell’Inghilterra e Merseyside', 'yorkshire-the-humber': 'Yorkshire and the Humber|Yorkshire y Humber|Yorkshire et Humber|Yorkshire e Humber', 'east-midlands': 'East Midlands|Midlands del Este|Midlands de l’Est|Midlands orientali', 'west-midlands': 'West Midlands|Midlands del Oeste|Midlands de l’Ouest|Midlands occidentali', eastern: 'East of England|Este de Inglaterra|Est de l’Angleterre|Inghilterra orientale', 'south-east-and-london': 'South East and London|Sudeste de Inglaterra y Londres|Sud-Est de l’Angleterre et Londres|Sud-est dell’Inghilterra e Londra', 'south-west': 'South West|Sudoeste de Inglaterra|Sud-Ouest de l’Angleterre|Sud-ovest dell’Inghilterra', england: 'England|Inglaterra|Angleterre|Inghilterra', scotland: 'Scotland|Escocia|Écosse|Scozia', wales: 'Wales|Gales|Pays de Galles|Galles', 'northern-ireland': 'Northern Ireland|Irlanda del Norte|Irlande du Nord|Irlanda del Nord' };
   var TEU = {
     es: { de: 'Alemania', uk: 'Reino Unido', land: 'Estado federado', region: 'Región', crop: 'Cultivo', sCropDE: 'Tu estado federado en este cultivo', sLand: 'Precio y alquiler de la tierra en tu estado', sCropUK: 'Tu región en este cultivo', area: 'Superficie', prd: 'Producción', yl: 'Rendimiento', ha: 'ha', t: 't', dtha: 'dt/ha', tha: 't/ha', share: 'del total de Alemania', shareUK: 'de la producción del Reino Unido', rank: 'puesto {r} de {n} por superficie', vs: 'vs.', top: 'Mayores por superficie', unitT: 'Territorio', prov: 'Estimación provisional de la cosecha en curso: puede cambiar.', noData: 'Sin dato publicado de {c} para {p}.', buy: 'Precio de compra', rent: 'Alquiler', deals: 'ventas', natL: 'media nacional', arable: 'Tierra de cultivo', grass: 'Prado y pastizal', eurha: '€/ha', noLand: 'Sin dato publicado de precio de la tierra para este estado (los estados-ciudad no tienen suficientes operaciones).', rentNote: 'El alquiler solo se publica en los años de censo agrario.',
       deNote: 'Fuente: Destatis (GENESIS). Los datos por estado empiezan en 2010. ',landNote: 'Fuente: Destatis (GENESIS). El precio es el medio de las ventas registradas ese año; con pocas ventas conviene tomarlo con cautela.', ukNote: 'Fuente: Defra, estadísticas de cereales y colza. El Reino Unido no publica la superficie total en la misma serie regional; el reparto se calcula solo con la producción.', no_1: 'Precio local de tu producto: no lo tenemos para esta zona; los precios que seguimos son nacionales o europeos.', no_2: 'Seguro agrario y sequía de tu zona: aún no están en esta página.', no_3: 'Costes y margen: usa la calculadora, que trabaja con cifras nacionales.', mCountry: 'Ficha del país', mClima: 'Clima y sequía', mPrices: 'Precios', mCosts: 'Costes e insumos' },
@@ -951,6 +985,7 @@
   function click(e) {
     var cb = e.target.closest ? e.target.closest('[data-mm-cc]') : null;
     if (cb) { var nc = cb.getAttribute('data-mm-cc'); if (nc !== ST.c) { ST.c = nc; ST.r = ''; ST.p = ''; ST.k = ''; save(); prepare().then(function () { draw(); refocus('[data-mm-cc="' + nc + '"]'); }, function () { draw(); }); } return; }
+    var mp = e.target.closest ? e.target.closest('[data-mm-map]') : null; if (mp) { mapPick(mp.getAttribute('data-mm-map')); return; }
     var b = e.target.closest ? e.target.closest('[data-mm-cl],[data-mm-ex],[data-mm-reset],[data-mm-go]') : null; if (!b) return;
     if (b.hasAttribute('data-mm-cl')) { ST.cl = b.getAttribute('data-mm-cl'); draw(); refocus('[data-mm-cl="' + ST.cl + '"]'); }
     else if (b.hasAttribute('data-mm-ex')) { b.setAttribute('aria-busy', 'true'); b.textContent = ({ es: 'Cargando…', en: 'Loading…', fr: 'Chargement…', it: 'Caricamento…' })[lang()] || 'Cargando…'; var x = b.getAttribute('data-mm-ex').split('|'); ST.c = x[0]; ST.r = x[1]; ST.p = x[2]; ST.k = ''; save(); prepare().then(draw, draw); }
@@ -961,6 +996,7 @@
   readSaved();
   if (window.DehesaShared) { if (!COMPACT) window.DehesaShared.init('tools'); var prevL = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevL) prevL.apply(this, arguments); draw(); }; }
   root.addEventListener('change', change); root.addEventListener('click', click);
+  root.addEventListener('keydown', function (e) { var mp = e.target && e.target.getAttribute && e.target.getAttribute('data-mm-map'); if (mp && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); mapPick(mp); } });
   // Listas largas de cultivos: el filtro oculta las opciones que no contienen el texto (sin acentos)
   root.addEventListener('input', function (e) {
     var id = e.target && e.target.getAttribute && e.target.getAttribute('data-mm-filter'); if (!id) return;

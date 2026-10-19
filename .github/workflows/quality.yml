@@ -396,6 +396,8 @@ jobs:
         run: node scripts/test-country-structure.mjs
       - name: Mi explotación, costes vinculados al monitor de insumos (escenario aparte, el importe solo cambia con «Usar», deshacer, solo EUR)
         run: node scripts/test-farm-links.mjs
+      - name: Mi mercado, mapa para elegir la zona (5 paises, zonas sin datos no pulsables, teclado, sincronia con el desplegable)
+        run: node scripts/test-mi-mercado-map.mjs
       - name: Manitoba, ganado en subastas (cifras de Manitoba Agriculture, selectores, atribución OpenMB, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

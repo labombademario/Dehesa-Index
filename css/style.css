@@ -2886,3 +2886,16 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 .fx-lk .pt-sub { margin-top: 4px; line-height: 1.45; }
 .di-page-head p.di-tools-strip { font-size: 13px; margin: 8px 0 0; padding-top: 8px; border-top: 1px solid var(--border); line-height: 1.6; }
 .di-tools-strip .di-tools-what { color: var(--text-faint); }
+/* Mi mercado: mapa para elegir la zona */
+.mm-map{margin:0 0 14px}
+.mm-map-q{font-size:13px;color:var(--text-muted);margin:0 0 6px}
+.mm-map svg{display:block;width:100%;max-width:520px;height:auto;max-height:360px}
+.mm-map-uk svg,.mm-map-de svg{max-width:240px}
+.mm-map-wait{height:240px;max-width:560px;border-radius:12px;background:var(--surface-alt)}
+.mm-map-p{fill:color-mix(in srgb,var(--accent) 14%,var(--surface));stroke:var(--surface);stroke-width:1.2;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .12s}
+.mm-map-p:hover,.mm-map-p:focus{fill:color-mix(in srgb,var(--accent) 45%,var(--surface));outline:none}
+.mm-map-p:focus-visible{stroke:var(--text);stroke-width:2}
+.mm-map-p.on{fill:var(--accent)}
+.mm-map-p.na{fill:var(--border);opacity:.6;cursor:default}
+.mm-map-sel{font-size:13px;margin:6px 0 0}
+@media (prefers-reduced-motion:reduce){.mm-map-p{transition:none}}
