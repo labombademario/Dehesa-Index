@@ -28,7 +28,7 @@
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048",
     "sourceId": "boe_es"
    },
-   "updatedAt": "2026-10-12",
+   "updatedAt": "2026-10-19",
    "components": {
     "strategicPlan": {
      "state": "INGESTED",
@@ -69,7 +69,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "es/watch.json",
-     "checkedAt": "2026-10-12",
+     "checkedAt": "2026-10-19",
      "reviewNeeded": 0
     }
    }
@@ -84,7 +84,7 @@
     "url": "https://www.retsinformation.dk/eli/lta/2025/1363",
     "sourceId": "retsinformation"
    },
-   "updatedAt": "2026-10-12",
+   "updatedAt": "2026-10-19",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -119,7 +119,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "dk/watch.json",
-     "checkedAt": "2026-10-12",
+     "checkedAt": "2026-10-19",
      "reviewNeeded": 0
     }
    }
@@ -134,7 +134,7 @@
     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02021R2115-20260818",
     "sourceId": "eur_lex"
    },
-   "updatedAt": "2026-10-12",
+   "updatedAt": "2026-10-19",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -231,7 +231,7 @@
     "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535",
     "sourceId": "dila_jorf"
    },
-   "updatedAt": "2026-10-14",
+   "updatedAt": "2026-10-19",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -270,7 +270,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "fr/watch.json",
-     "checkedAt": "2026-10-14",
+     "checkedAt": "2026-10-19",
      "reviewNeeded": 0
     }
    }
@@ -285,7 +285,7 @@
     "url": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
     "sourceId": "masaf_it"
    },
-   "updatedAt": "2026-10-14",
+   "updatedAt": "2026-10-19",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -318,7 +318,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "it/watch.json",
-     "checkedAt": "2026-10-14",
+     "checkedAt": "2026-10-19",
      "reviewNeeded": 0
     }
    }
@@ -333,7 +333,7 @@
     "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/412",
     "sourceId": "sejm_eli"
    },
-   "updatedAt": "2026-10-14",
+   "updatedAt": "2026-10-19",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -374,7 +374,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "pl/watch.json",
-     "checkedAt": "2026-10-14",
+     "checkedAt": "2026-10-19",
      "reviewNeeded": 0
     }
    }
