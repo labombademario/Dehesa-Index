@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 143 VERIFIED, 12 PENDING, 7 RESTRICTED, 4 BLOCKED; 31367 series en el catalogo unificado.
+Resumen: 143 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31367 series en el catalogo unificado.
 
 ## VERIFIED (143)
 
@@ -156,7 +156,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
-## PENDING (12)
+## PENDING (14)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
@@ -170,8 +170,10 @@ licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya est
 | `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | no/unclear | si | 0 | Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attri… |
 | `swissimpex_ch` | Switzerland — FOCBS/BAZG, SwissImpex and Tares foreign trade statistics | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | SwissImpex/Tares terms: commercial use requires permission of the data owner. |
 | `uy_bcu` | Banco Central del Uruguay (BCU) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
+| `uy_bcu_pibdep` | Uruguay - PIB por departamento (BCU / OPP) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
 | `uy_inac` | Uruguay - INAC (Instituto Nacional de Carnes) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
 | `uy_inale` | Uruguay - INALE (Instituto Nacional de la Leche) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
+| `uy_ine` | Uruguay - INE (Instituto Nacional de Estadistica): Censo 2023 y estadisticas por departamento | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
 | `uy_uam` | Unidad Agroalimentaria Metropolitana (UAM) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
 | `uy_xxi` | Uruguay XXI (comercio exterior) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |
 
