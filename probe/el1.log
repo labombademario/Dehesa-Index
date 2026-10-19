@@ -1,5 +1,5 @@
-ts01 ERROR [Errno 2] No such file or directory: 'probe/el-out/ts01.xls'
-ts04 ERROR [Errno 2] No such file or directory: 'probe/el-out/ts04.xls'
-ts05 ERROR [Errno 2] No such file or directory: 'probe/el-out/ts05.xls'
-regional ERROR [Errno 2] No such file or directory: 'probe/el-out/regional.xlsx'
-press ERROR [Errno 2] No such file or directory: 'probe/el-out/press.pdf'
+ts01 86528 application/vnd.ms-excel;charset=UTF-8 inline; filename="A0504_DKT30_TS_MM_01_2000_8_2026_01_P_EN.xls" xls
+ts04 280064 application/vnd.ms-excel;charset=UTF-8 inline; filename="A0504_DKT30_TS_MM_01_2000_8_2026_04_P_EN.xls" xls
+ts05 277504 application/vnd.ms-excel;charset=UTF-8 inline; filename="A0504_DKT30_TS_MM_01_2000_8_2026_05_P_EN.xls" xls
+regional 38093 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8 inline; filename="A0703_SEL61_TB_AN_00_2023_01_P_EN.xlsx" xlsx
+press 250974 application/pdf;charset=UTF-8 inline; filename="A0504_DKT30_DT_MM_08_2026_01_P_EN.pdf" pdf
