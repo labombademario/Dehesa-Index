@@ -1,0 +1,9 @@
+{
+  "name": "dehesa-index-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Dehesa Index official agricultural price data (US, EU, UK, Canada)",
+  "type": "module",
+  "bin": { "dehesa-index-mcp": "server.mjs" },
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}

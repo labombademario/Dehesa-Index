@@ -1,0 +1,62 @@
+// Pruebas del conector MCP (mcp/): protocolo JSON-RPC por stdio y por HTTP (worker), herramientas contra los datos reales del repositorio,
+// errores, limites, y que cada respuesta de datos lleve la atribucion.
+import { spawn } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const J = (p) => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'));
+let ok = 0; const check = (n, c) => { if (!c) { console.error('FALLA: ' + n); process.exit(1); } ok++; console.log('OK    ', n); };
+const child = spawn(process.execPath, [path.join(ROOT, 'mcp', 'server.mjs')], { env: { ...process.env, DEHESA_DATA_DIR: ROOT }, stdio: ['pipe', 'pipe', 'inherit'] });
+let buf = ''; const waiters = []; child.stdout.on('data', (d) => { buf += d; let i; while ((i = buf.indexOf('\n')) > -1) { const l = buf.slice(0, i); buf = buf.slice(i + 1); const w = waiters.shift(); if (w) w(JSON.parse(l)); } });
+const rpc = (m) => new Promise((res) => { waiters.push(res); child.stdin.write(JSON.stringify(m) + '\n'); });
+let id = 0; const call = async (name, args) => { const r = await rpc({ jsonrpc: '2.0', id: ++id, method: 'tools/call', params: { name, arguments: args } }); return { r, data: r.result && !r.result.isError ? JSON.parse(r.result.content[0].text) : null, err: r.result && r.result.isError ? r.result.content[0].text : null }; };
+
+const init = await rpc({ jsonrpc: '2.0', id: ++id, method: 'initialize', params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 't', version: '1' } } });
+check('initialize: version de protocolo, nombre y herramientas', init.result.protocolVersion === '2025-06-18' && init.result.serverInfo.name === 'dehesa-index' && !!init.result.capabilities.tools && init.id === id);
+child.stdin.write(JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' }) + '\n');
+const ping = await rpc({ jsonrpc: '2.0', id: ++id, method: 'ping' }); check('una notificacion no genera respuesta y ping responde en orden', ping.id === id && !ping.error);
+const tl = await rpc({ jsonrpc: '2.0', id: ++id, method: 'tools/list' }); const names = tl.result.tools.map((t) => t.name);
+check('tools/list: 7 herramientas con esquema de entrada', names.length === 7 && tl.result.tools.every((t) => t.inputSchema.type === 'object' && t.description.length > 40) && ['search_series', 'get_latest', 'get_series', 'compare_markets', 'price_moves', 'list_baskets', 'get_basket'].every((n) => names.includes(n)));
+
+const S1 = await call('search_series', { query: 'wheat', lang: 'en' });
+check('search_series: "wheat" encuentra eu/trigo con nombre en ingles', S1.data.series.some((s) => s.id === 'eu/trigo' && /wheat/i.test(s.name)));
+check('search_series: filtro de region y limite', (await call('search_series', { region: 'ca', limit: 3 })).data.series.length === 3 && (await call('search_series', { region: 'ca', limit: 3 })).data.series.every((s) => s.region === 'ca'));
+check('search_series: limite superior acotado a 100', (await call('search_series', { limit: 100000 })).data.series.length <= 100);
+const L = J('data/api/v1/latest.json').series.find((s) => s.id === 'eu/trigo'); const G = await call('get_latest', { ids: ['eu/trigo'] });
+check('get_latest: valor, fecha y atribucion = los del fichero', G.data.results[0].value === L.value && G.data.results[0].date === L.date && G.data.results[0].attribution === L.attribution && G.data.terms.includes('condiciones'));
+const U = await call('get_latest', { ids: ['eu/inventado'] }); check('id desconocido: error claro con pista', U.r.result.isError === true && /search_series/.test(U.err));
+check('get_latest sin ids: error', (await call('get_latest', {})).err !== null);
+const TS = await call('get_series', { id: 'eu/trigo', last: 5 }); const F = J('data/api/v1/series/eu/trigo.json');
+check('get_series: ultimos 5 puntos = los del fichero, truncated y nota', TS.data.points.length === 5 && JSON.stringify(TS.data.points) === JSON.stringify(F.points.slice(-5)) && TS.data.truncated === true && TS.data.totalPoints === F.rows && !!TS.data.note && !!TS.data.attribution && !!TS.data.license);
+check('get_series: "from" filtra por fecha', (await call('get_series', { id: 'eu/trigo', from: '2026-09-01' })).data.points.every((p) => p[0] >= '2026-09-01'));
+check('get_series: por defecto 120 puntos como maximo', (await call('get_series', { id: 'us/maiz' })).data.points.length <= 120);
+const CM = await call('compare_markets', { product: 'leche' }); const regs = CM.data.markets.map((m) => m.region).sort();
+check('compare_markets: leche en us, eu, uk y ca con aviso de unidades', JSON.stringify(regs) === '["ca","eu","uk","us"]' && /differ/.test(CM.data.caution));
+const em = CM.data.markets.find((m) => m.id === 'eu/leche'), ef = J('data/api/v1/series/eu/leche.json').points; check('compare_markets: ultimo valor = el del fichero y variacion recalculada', em.value === ef[ef.length - 1][1] && (em.change12mPct === null || Math.abs((em.value / em.yearAgoValue - 1) * 100 - em.change12mPct) < 0.06));
+check('compare_markets: producto inexistente = error', (await call('compare_markets', { product: 'unicornio' })).err !== null);
+const PM = await call('price_moves', { direction: 'up' }); const W = J('data/digest/weekly.json');
+check('price_moves: subidas = weekly.json y sin bajadas', PM.data.up.length === W.topUp.length && PM.data.down === undefined && PM.data.up[0].id === W.topUp[0].series && PM.data.up.every((e) => e.attribution));
+const LB = await call('list_baskets', {}); check('list_baskets: cestas y metodologia', LB.data.baskets.length >= 4 && /index|Cada serie|base/i.test(LB.data.methodology));
+const GB = await call('get_basket', { id: 'eu/cereales', last: 3 }); const BF = J('data/indices/eu/cereales.json');
+check('get_basket: ultimos puntos, miembros con licencia y atribucion', GB.data.points.length === 3 && JSON.stringify(GB.data.points) === JSON.stringify(BF.points.slice(-3)) && GB.data.members.every((m) => m.license && m.attribution) && GB.data.base === 100);
+check('get_basket: id desconocido = error', (await call('get_basket', { id: 'zz/x' })).err !== null);
+const UT = await rpc({ jsonrpc: '2.0', id: ++id, method: 'tools/call', params: { name: 'nada', arguments: {} } }); check('herramienta desconocida: error JSON-RPC -32602', UT.error && UT.error.code === -32602);
+const UM = await rpc({ jsonrpc: '2.0', id: ++id, method: 'foo/bar' }); check('metodo desconocido: -32601', UM.error && UM.error.code === -32601);
+const BAD = await new Promise((res) => { waiters.push(res); child.stdin.write('{no es json\n'); }); check('JSON invalido: -32700 sin caerse', BAD.error && BAD.error.code === -32700);
+const BT = await rpc([{ jsonrpc: '2.0', id: 901, method: 'ping' }, { jsonrpc: '2.0', id: 902, method: 'tools/list' }]); check('lote JSON-RPC: una respuesta por mensaje', Array.isArray(BT) && BT.length === 2 && BT[0].id === 901 && BT[1].id === 902);
+const ALL = [S1, G, TS, CM, PM, LB, GB]; check('toda respuesta de datos lleva aviso y enlace de condiciones', ALL.every((x) => /Cite the attribution/.test(x.data.note) && /condiciones/.test(x.data.terms)));
+child.kill();
+
+// --- worker HTTP ---
+const realFetch = globalThis.fetch; globalThis.fetch = async (u) => { const p = String(u).replace('https://dehesaindex.com/', ''); try { return new Response(readFileSync(path.join(ROOT, p)), { status: 200 }); } catch { return new Response('no', { status: 404 }); } };
+const { default: worker } = await import('../mcp/worker.mjs');
+const post = (b) => worker.fetch(new Request('https://x/', { method: 'POST', body: typeof b === 'string' ? b : JSON.stringify(b) }), {});
+const wi = await (await post({ jsonrpc: '2.0', id: 1, method: 'initialize', params: {} })).json(); check('worker: initialize por HTTP', wi.result.serverInfo.name === 'dehesa-index');
+const wc = await (await post({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'get_latest', arguments: { ids: ['eu/trigo'] } } })).json(); check('worker: get_latest lee la API publica', JSON.parse(wc.result.content[0].text).results[0].value === L.value);
+check('worker: notificacion = 202 sin cuerpo', (await post({ jsonrpc: '2.0', method: 'notifications/initialized' })).status === 202);
+check('worker: JSON invalido = 400', (await post('{mal')).status === 400);
+check('worker: OPTIONS 204 con CORS y GET informativo', (await worker.fetch(new Request('https://x/', { method: 'OPTIONS' }), {})).status === 204 && (await (await worker.fetch(new Request('https://x/'), {})).text()).includes('conector-ia'));
+check('worker: PUT = 405', (await worker.fetch(new Request('https://x/', { method: 'PUT' }), {})).status === 405);
+globalThis.fetch = realFetch;
+console.log(ok + ' comprobaciones OK');

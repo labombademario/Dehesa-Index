@@ -1,0 +1,6 @@
+{
+  "name": "dehesa-index-mcp",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "vars": { "DEHESA_BASE_URL": "https://dehesaindex.com" }
+}
