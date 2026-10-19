@@ -6,6 +6,7 @@
   var S = window.DehesaShared;
   var T = {
     es: {
+      mine: 'Guardar mis compras y compararlas con varios mercados',
       title: 'Comparador de facturas con el mercado', h1: 'Comparador de facturas con el mercado',
       sub: 'Pega tus compras o ventas y mira si pagaste o cobraste más o menos que el mercado en esas mismas fechas, con las mismas cantidades. Sirve para negociar con proveedores, justificar una liquidación o revisar una campaña.',
       privacy: 'Tus facturas no salen de este navegador: no se envían a ningún servidor ni se guardan. Si recargas la página, desaparecen.',
@@ -25,6 +26,7 @@
       M: { us: 'EE. UU.', eu: 'UE', uk: 'Reino Unido', ca: 'Canadá' }, cta: '¿Quieres este análisis con tus datos de cada campaña y por proveedor? Cuéntanos cómo trabajas.', ctaB: 'Escríbenos'
     },
     en: {
+      mine: 'Save my trades and compare them with several markets',
       title: 'Compare your invoices with the market', h1: 'Compare your invoices with the market',
       sub: 'Paste your purchases or sales and see whether you paid or received more or less than the market on those same dates, with the same quantities. Useful for negotiating with suppliers, justifying a settlement or reviewing a season.',
       privacy: 'Your invoices never leave this browser: they are not sent to any server or stored. If you reload the page, they are gone.',
@@ -44,6 +46,7 @@
       M: { us: 'US', eu: 'EU', uk: 'UK', ca: 'Canada' }, cta: 'Want this analysis with your data every season and by supplier? Tell us how you work.', ctaB: 'Contact us'
     },
     fr: {
+      mine: 'Enregistrer mes achats et les comparer à plusieurs marchés',
       title: 'Comparer vos factures au marché', h1: 'Comparer vos factures au marché',
       sub: 'Collez vos achats ou ventes et voyez si vous avez payé ou reçu plus ou moins que le marché aux mêmes dates, avec les mêmes quantités. Utile pour négocier avec les fournisseurs, justifier un décompte ou revoir une campagne.',
       privacy: 'Vos factures ne quittent pas ce navigateur : elles ne sont envoyées à aucun serveur ni conservées. Si vous rechargez la page, elles disparaissent.',
@@ -63,6 +66,7 @@
       M: { us: 'É.-U.', eu: 'UE', uk: 'Royaume-Uni', ca: 'Canada' }, cta: 'Vous voulez cette analyse avec vos données chaque campagne et par fournisseur ? Dites-nous comment vous travaillez.', ctaB: 'Nous écrire'
     },
     it: {
+      mine: 'Salvare i miei acquisti e confrontarli con più mercati',
       title: 'Confronta le tue fatture con il mercato', h1: 'Confronta le tue fatture con il mercato',
       sub: 'Incolla i tuoi acquisti o vendite e vedi se hai pagato o incassato più o meno del mercato nelle stesse date, con le stesse quantità. Utile per negoziare con i fornitori, giustificare un conteggio o rivedere una campagna.',
       privacy: 'Le tue fatture non lasciano questo browser: non vengono inviate a nessun server né salvate. Se ricarichi la pagina, scompaiono.',
@@ -89,24 +93,7 @@
   function nf(n, d) { try { return Number(n).toLocaleString(lang(), { maximumFractionDigits: d == null ? 2 : d }); } catch (e) { return String(n); } }
   function nm(o, k) { return (o && (o[lang()] || o.es)) || k || ''; }
   function fill(s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] == null ? m : o[k]; }); }
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
-  function num(s) { s = String(s).trim().replace(/\s/g, ''); if (/^-?\d{1,3}(\.\d{3})+,\d+$/.test(s)) s = s.replace(/\./g, ''); s = s.replace(',', '.'); return /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : NaN; }
-  function parseDate(s) {
-    var m; s = String(s).trim();
-    if ((m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(s))) return m[1] + '-' + pad(+m[2]) + '-' + pad(+m[3]);
-    if ((m = /^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})$/.exec(s))) return m[3] + '-' + pad(+m[2]) + '-' + pad(+m[1]);
-    return null;
-  }
-  function dayT(d) { var p = d.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); }
-  function pointT(d) { var m; if ((m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d))) return Date.UTC(+m[1], +m[2] - 1, +m[3]); return NaN; }
-  function lookup(s, date) {
-    var pts = s.points, i, y = date.slice(0, 4), mo = +date.slice(5, 7);
-    if (s.frequency === 'monthly') { var k = y + '-' + pad(mo); for (i = 0; i < pts.length; i++) if (pts[i][0] === k) return pts[i]; return null; }
-    if (s.frequency === 'quarterly') { var q = y + '-Q' + Math.ceil(mo / 3); for (i = 0; i < pts.length; i++) if (pts[i][0] === q) return pts[i]; return null; }
-    var tt = dayT(date), tol = (s.frequency === 'daily' ? 7 : 14) * 86400000, best = null;
-    for (i = 0; i < pts.length; i++) { var pt = pointT(pts[i][0]); if (!isNaN(pt) && pt <= tt && tt - pt <= tol) best = pts[i]; }
-    return best;
-  }
+  var DL = window.DehesaLookup, pad = DL.pad, num = DL.num, parseDate = DL.parseDate, dayT = DL.dayT, pointT = DL.pointT, lookup = DL.lookup;
   function parse(text) {
     var rows = [], bad = [], lines = text.split(/\r?\n/), i, p, d, q, pr;
     for (i = 0; i < lines.length; i++) {
@@ -160,7 +147,7 @@
       (r.skipped ? '<p class="di-movers-hint">' + esc(fill(w.skipped, { n: r.skipped })) + '</p>' : '') +
       '<p class="ic-foot"><b>' + esc(w.src) + ':</b> ' + esc(s.sourceName) + ' · <b>' + esc(w.lic) + ':</b> ' + esc(s.license) + '<br><b>' + esc(w.note) + ':</b> ' + esc(nm(s.note) || '') + '<br>' + esc(s.attribution) + '</p></article>' +
       '<div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px"><button id="cf-print" class="di-btn-gold-solid" type="button">' + esc(w.print) + '</button><button id="cf-csv" class="di-btn-sec" type="button">' + esc(w.csv) + '</button><a href="informe-negociacion.html?p=' + encodeURIComponent(s.product) + '" style="align-self:center">' + esc(w.neg) + '</a></div>' +
-      '<h3 style="margin:22px 0 6px;font-size:16px">' + esc(w.how) + '</h3>' + w.howP.map(function (p) { return '<p class="ic-foot" style="font-size:12px">' + esc(p) + '</p>'; }).join('');
+      '<p class="no-print" style="margin-top:14px"><a class="di-btn-sec" href="mis-compras.html">' + esc(w.mine) + '</a></p><h3 style="margin:22px 0 6px;font-size:16px">' + esc(w.how) + '</h3>' + w.howP.map(function (p) { return '<p class="ic-foot" style="font-size:12px">' + esc(p) + '</p>'; }).join('');
     return h;
   }
   function kpi(k, v, sub) { return '<div class="di-card" style="padding:10px 14px"><div style="font-size:12px;color:var(--text-muted)">' + esc(k) + '</div><div style="font-size:20px;font-weight:700">' + esc(v) + '</div>' + (sub ? '<div style="font-size:11.5px;color:var(--text-muted)">' + esc(sub) + '</div>' : '') + '</div>'; }

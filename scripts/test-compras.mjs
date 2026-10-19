@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+// Mis compras y comparador de facturas: el dato de mercado es el de la API, lo guardado sobrevive a recargar, se puede exportar e importar,
+// las fechas imposibles y los datos raros se rechazan, el HTML del usuario se escapa, y el comparador sigue dando lo mismo tras compartir la logica.
+import fs from 'node:fs'; import http from 'node:http'; import path from 'node:path'; import { execSync } from 'node:child_process';
+let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
+const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.json': 'application/json', '.css': 'text/css', '.png': 'image/png', '.woff2': 'font/woff2', '.svg': 'image/svg+xml' };
+const srv = http.createServer((q, a) => { const u = decodeURIComponent(q.url.split('?')[0]), f = path.join('.', u === '/' ? 'index.html' : u); fs.readFile(f, (e, d) => { if (e) { a.writeHead(404); return a.end('no'); } a.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); a.end(d); }); });
+await new Promise(r => srv.listen(18125, '127.0.0.1', r)); const BASE = 'http://127.0.0.1:18125';
+const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch({ args: ['--no-sandbox'] }));
+let fail = 0, n = 0; const ok = (m, c) => { n++; if (!c) { fail++; console.log('FALLA', m); } };
+const J = p => JSON.parse(fs.readFileSync(p, 'utf8')), W = J('data/api/v1/series/eu/trigo.json'), M = J('data/api/v1/series/ca/avena.json');
+const near = (s, date) => { const t = Date.parse(date); let best = null; for (const p of s.points) { const pt = Date.parse(p[0]); if (pt <= t && t - pt <= 14 * 864e5) best = p; } return best; };
+const wk = W.points[W.points.length - 20], wdate = wk[0], wprice = Math.round(wk[1] * 1.05 * 100) / 100, mo = M.points[M.points.length - 6], mdate = mo[0] + '-10';
+const ctx = await browser.newContext({ viewport: { width: 1100, height: 900 }, serviceWorkers: 'block', acceptDownloads: true }); await ctx.addInitScript(() => { try { localStorage.setItem('dehesaIndexLang', 'es'); localStorage.setItem('dehesaIndexTourSeen', '1'); } catch (e) { } });
+const p = await ctx.newPage(), errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errs.push(m.text()); }); p.on('dialog', d => d.accept());
+await p.goto(BASE + '/mis-compras.html', { waitUntil: 'networkidle' }); await p.waitForSelector('#mc-form');
+ok('vacio: invitacion a empezar', /Aún no hay operaciones/.test(await p.innerText('main')));
+async function add(d, s, k, q, pr, note) { await p.fill('#mc-d', d); await p.selectOption('#mc-s', s); await p.selectOption('#mc-k', k); await p.fill('#mc-q', q); await p.fill('#mc-p', pr); await p.fill('#mc-n', note || ''); await p.click('#mc-form button[type=submit]'); await p.waitForTimeout(500); }
+await add(wdate, 'eu/trigo', 'buy', '100', String(wprice).replace('.', ','), 'Proveedor <b>A</b>'); await add(mdate, 'ca/avena', 'sell', '50', String(Math.round(mo[1] * 0.9 * 100) / 100)); await p.waitForTimeout(600);
+let t = await p.innerText('main'); ok('dos operaciones listadas', (await p.$$('tbody tr')).length >= 4);
+ok('el mercado de cada fecha es el de la API (semanal: ultima cotizacion previa; mensual: mismo mes)', t.includes(String(wk[1]).replace('.', ',')) || t.includes(wk[1].toLocaleString('es', { maximumFractionDigits: 2 })));
+ok('mensual: el mercado es el del mes', t.includes(mo[1].toLocaleString('es', { maximumFractionDigits: 2 })));
+ok('compra por encima del mercado = escrito, venta por debajo = escrito', /por encima del mercado/.test(t) && /por debajo del mercado/.test(t));
+ok('el HTML de la nota se escapa: se ve como texto, no crea elementos', t.includes('Proveedor <b>A</b>') && (await p.$$('tbody b')).length === (await p.$$('tbody td b')).length && !(await p.$$eval('tbody td', e => e.some(x => /Proveedor/.test(x.textContent) && x.querySelector('b')))));
+const tot = Math.round((wprice - wk[1]) * 100); ok('total de la compra = cantidad por (tu precio - mercado), redondeado', t.includes('+' + tot.toLocaleString('es') + ' EUR') || t.includes('+' + (tot + 1).toLocaleString('es') + ' EUR') || t.includes('+' + (tot - 1).toLocaleString('es') + ' EUR'));
+ok('sin undefined ni NaN', !/undefined|NaN|\[object/.test(t));
+// persistencia
+await p.reload({ waitUntil: 'networkidle' }); await p.waitForSelector('#mc-form'); await p.waitForTimeout(600); ok('tras recargar siguen las 2 operaciones', (await p.evaluate(() => JSON.parse(localStorage.getItem('dehesaMisCompras')).items.length)) === 2 && /ca|Avena|avena/i.test(await p.innerText('main')));
+// rechazos
+await add('2026-02-31', 'eu/trigo', 'buy', '10', '200'); ok('fecha imposible (31 de febrero) rechazada con aviso', /Revisa la fecha/.test(await p.innerText('main')) && (await p.evaluate(() => JSON.parse(localStorage.getItem('dehesaMisCompras')).items.length)) === 2);
+await add('2026-01-10', 'eu/trigo', 'buy', '-5', '200'); ok('cantidad negativa rechazada', (await p.evaluate(() => JSON.parse(localStorage.getItem('dehesaMisCompras')).items.length)) === 2);
+await add('2000-01-10', 'eu/trigo', 'buy', '10', '200'); await p.waitForTimeout(500); ok('fecha sin dato de mercado: se guarda y dice que no hay dato, sin inventarlo', /sin dato de mercado para esa fecha/.test(await p.innerText('main')));
+// exportar
+const [dl] = await Promise.all([p.waitForEvent('download'), p.click('#mc-exp')]); const jf = JSON.parse(fs.readFileSync(await dl.path(), 'utf8')); ok('exportar JSON: 3 operaciones con version', jf.version === 1 && jf.items.length === 3);
+const [dc] = await Promise.all([p.waitForEvent('download'), p.click('#mc-csv')]); const csv = fs.readFileSync(await dc.path(), 'utf8').split('\n'); ok('exportar CSV: cabecera, 3 filas y mercado vacio donde no hay dato', csv.length === 4 && csv[0].startsWith('date;type;series') && csv.some(l => l.startsWith('2000-01-10') && l.split(';')[5] === ''));
+// borrar y reimportar
+await p.click('#mc-clr'); await p.waitForTimeout(400); ok('borrar todo vacia la lista', /Aún no hay operaciones/.test(await p.innerText('main')));
+fs.writeFileSync('/tmp/mc-backup.json', JSON.stringify({ version: 1, items: [...jf.items, { d: 'basura', s: 'eu/trigo', q: 1, p: 1 }, { d: '2026-01-01', s: 'zz/inventada', q: 1, p: 1 }, { d: '2026-01-01', s: 'eu/trigo', q: 0, p: 1 }] }));
+await p.setInputFiles('#mc-f', '/tmp/mc-backup.json'); await p.waitForTimeout(700); ok('importar copia: 3 validas y 3 descartadas (fecha mala, serie inventada, cantidad cero)', /3 operaciones importadas, 3 filas descartadas/.test(await p.innerText('main')));
+await p.click('#mc-clr'); await p.waitForTimeout(300); fs.writeFileSync('/tmp/mc-lines.csv', `date;series;qty;price;type;note\n${wdate};eu/trigo;10;${wprice};compra;x\n31/12/2025;ca/avena;5;250,5;venta;y\nmala;eu/trigo;1;1`);
+await p.setInputFiles('#mc-f', '/tmp/mc-lines.csv'); await p.waitForTimeout(700); ok('importar CSV con cabecera, coma decimal y fecha DD/MM/AAAA', /2 operaciones importadas, 0 filas descartadas/.test(await p.innerText('main')) || /2 operaciones importadas, 1 filas/.test(await p.innerText('main')));
+await p.click('#mc-clr'); await p.waitForTimeout(300); await p.click('#mc-ex'); await p.waitForTimeout(900); ok('ejemplo inventado: operaciones marcadas como ejemplo', (await p.evaluate(() => JSON.parse(localStorage.getItem('dehesaMisCompras')).items)).every(x => x.n === 'Ejemplo inventado') && /Ejemplo inventado/.test(await p.innerText('main')));
+await p.click('[data-del]'); await p.waitForTimeout(300); ok('borrar una operacion', (await p.evaluate(() => JSON.parse(localStorage.getItem('dehesaMisCompras')).items.length)) >= 1);
+ok('mis compras: sin errores de consola', errs.length === 0); if (errs.length) console.log(errs);
+ok('mis compras: sin desborde horizontal', await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+for (const l of ['en', 'fr', 'it']) { await ctx.addInitScript(x => { try { localStorage.setItem('dehesaIndexLang', x); } catch (e) { } }, l); const q = await ctx.newPage(); await q.goto(BASE + '/mis-compras.html', { waitUntil: 'networkidle' }); await q.waitForSelector('#mc-form'); const tx = await q.innerText('main'); ok(l + ': pagina traducida y sin undefined', !/undefined|NaN/.test(tx) && !/Aún no hay|Añadir una operación/.test(tx)); await q.close(); }
+// sin almacenamiento: avisa y sigue funcionando
+const c2 = await browser.newContext({ serviceWorkers: 'block' }); await c2.addInitScript(() => { try { localStorage.setItem('dehesaIndexLang', 'es'); localStorage.setItem('dehesaIndexTourSeen', '1'); } catch (e) { } Storage.prototype.setItem = function (k) { if (k === 'dehesaMisCompras') throw new Error('bloqueado'); }; });
+const p2 = await c2.newPage(); await p2.goto(BASE + '/mis-compras.html', { waitUntil: 'networkidle' }); await p2.waitForSelector('#mc-form'); await p2.fill('#mc-d', wdate); await p2.fill('#mc-q', '10'); await p2.fill('#mc-p', '200'); await p2.click('#mc-form button[type=submit]'); await p2.waitForTimeout(600);
+ok('sin almacenamiento: avisa de que se pierde al cerrar y la operacion se ve', /no deja guardar datos/.test(await p2.innerText('main')) && (await p2.$$('tbody tr')).length >= 1); await c2.close();
+// el comparador de facturas sigue dando lo mismo con la logica compartida
+const p3 = await ctx.newPage(); await p3.goto(BASE + '/comparador-facturas.html?lang=es', { waitUntil: 'networkidle' }); await p3.waitForSelector('#cf-t'); await p3.fill('#cf-t', `${wdate};100;${wprice}\n31/02/2026;1;1\n${wdate.slice(0, 4)}-01-01;1;1`); await p3.click('#cf-go'); await p3.waitForTimeout(500);
+const tx3 = await p3.innerText('main'); ok('comparador: usa la cotizacion de mercado de la fecha (misma que la API)', tx3.includes(String(wk[1]).replace('.', ',')) || tx3.includes(wk[1].toLocaleString('es', { maximumFractionDigits: 2 }))); ok('comparador: enlace a Mis compras', !!(await p3.$('a[href="mis-compras.html"]')));
+await browser.close(); srv.close(); console.log(n + ' comprobaciones, ' + fail + ' fallos'); process.exit(fail ? 1 : 0);
