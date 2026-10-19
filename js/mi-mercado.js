@@ -5,6 +5,7 @@
    la elección se guarda solo en este navegador (localStorage) y en la dirección de la página; sin cuentas. Los datos se leen de los JSON que ya generan las tuberías; cada tarjeta se carga por separado. */
 (function () {
   'use strict';
+  var GEMO = { cereales: '🌾', leguminosas: '🫘', tuberculos: '🥔', industriales: '🌻', hortalizas: '🥕', citricos: '🍊', frutales: '🍑', olivar: '🫒', vinedo: '🍇', otros_lenosos: '🌰' };
   var LSK = 'di-mi-mercado-v1', GR = 'data/us-cash-bids/', LOC = 'data/us-local/', SC = 'data/spain-crops/';
   var US_PROD = ['cattle', 'hay', 'corn', 'soybeans', 'wheat', 'sorghum', 'barley', 'oats'];
   var ES_GORDER = ['cereales', 'leguminosas', 'tuberculos', 'industriales', 'hortalizas', 'citricos', 'frutales', 'olivar', 'vinedo', 'otros_lenosos'];
@@ -324,7 +325,7 @@
       var provs = ES_PROV ? Object.keys(ES_PROV).sort(function (a, b) { return ES_PROV[a].localeCompare(ES_PROV[b], 'es'); }) : [];
       h += '<label>' + esc(t.placeES) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + provs.map(function (k) { return opt(k, ES_PROV[k], ST.r); }).join('') + '</select></label>';
       var gs = ES_IDX ? ES_GORDER.filter(function (k) { return ES_IDX.groups[k]; }) : [];
-      h += '<label>' + esc(t.group) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + gs.map(function (k) { return opt(k, t.grp[k] || k, ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.group) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + gs.map(function (k) { return opt(k, (GEMO[k] ? GEMO[k] + ' ' : '') + (t.grp[k] || k), ST.p); }).join('') + '</select></label>';
       h += '<label>' + esc(({ es: 'Buscar cultivo', en: 'Find crop', fr: 'Chercher une culture', it: 'Cerca coltura' })[lang()] || 'Buscar cultivo') + '<br><input type="search" class="di-compare-select" data-mm-filter="mm-crop" autocomplete="off" style="min-width:150px"></label>';
       h += '<label>' + esc(t.crop) + '<br><select class="di-compare-select" data-mm="k" id="mm-crop">' + (ES_CROPS ? ES_CROPS : opt('', t.choose, '')) + '</select></label>';
     }
