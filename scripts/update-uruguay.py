@@ -414,21 +414,27 @@ def ghg():
     if d: GHG['doc'] = d
 
 
-SCAN_Q = ['censo agropecuario', 'DIEA', 'precio fertilizantes', 'precios granos', 'cereales oleaginosas', 'arroz', 'soja', 'trigo', 'lecheria', 'carne', 'superficie sembrada', 'estadisticas agropecuarias', 'poblacion departamento', 'producto interno bruto departamento']
+SCAN_ORGS = ['ine', 'bcu', 'opp', 'mef', 'mgap', 'diea']
+SCAN_Q = ['censo 2023', 'poblacion', 'PIB', 'agropecuario', 'fertilizantes', 'granos']
 
 
 def scan():
-    """Rastreo del catalogo (solo lectura): lista en el log los conjuntos abiertos relacionados con los bloques pendientes. No publica datos."""
+    """Rastreo del catalogo (solo lectura): lista en el log los conjuntos abiertos de las organizaciones que interesan, con titulo y licencia. No publica datos."""
     if LOCAL: return
     seen = set(); n = 0
-    for q in SCAN_Q:
-        try: res = json.loads(fetch('https://catalogodatos.gub.uy/api/3/action/package_search?rows=15&q=' + urllib.parse.quote(q), 60))['result']['results']
-        except Exception as e: log('CATALOGO %s: %s' % (q, e)); continue
+    def one(label, url):
+        nonlocal n
+        try: res = json.loads(fetch(url, 60))['result']['results']
+        except Exception as e: log('CATALOGO %s: %s' % (label, e)); return
         for p in res:
-            if p['name'] in seen: continue
+            if p['name'] in seen or str(p['name']).startswith(('mides-indicador', 'mgap-datos-', 'datos-preliminares')): continue
             seen.add(p['name']); n += 1
             fm = sorted({(r.get('format') or '?').upper() for r in p.get('resources', [])})
-            log('CATALOGO [%s] %s | org=%s | lic=%s | %s | mod=%s' % (q, p['name'][:90], (p.get('organization') or {}).get('name'), p.get('license_id'), ','.join(fm), (p.get('metadata_modified') or '')[:10]))
+            log('CATALOGO [%s] %s | %s | org=%s | lic=%s | %s | mod=%s' % (label, p['name'][:70], (p.get('title') or '')[:80], (p.get('organization') or {}).get('name'), p.get('license_id'), ','.join(fm), (p.get('metadata_modified') or '')[:10]))
+    for o in SCAN_ORGS:
+        one('org:' + o, 'https://catalogodatos.gub.uy/api/3/action/package_search?rows=40&fq=organization:' + urllib.parse.quote(o))
+    for q in SCAN_Q:
+        one('q:' + q, 'https://catalogodatos.gub.uy/api/3/action/package_search?rows=15&q=' + urllib.parse.quote(q))
     log('CATALOGO: %d conjuntos distintos' % n)
 
 
