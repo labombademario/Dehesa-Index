@@ -1,4 +1,5 @@
 import urllib.request, os, hashlib
+os.makedirs("probe/el-out", exist_ok=True)
 P = "https://www.statistics.gr/en/statistics?p_p_id=documents_WAR_publicationsportlet_INSTANCE_%s&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=4&p_p_col_pos=%d&_documents_WAR_publicationsportlet_INSTANCE_%s_javax.faces.resource=document&_documents_WAR_publicationsportlet_INSTANCE_%s_ln=downloadResources&_documents_WAR_publicationsportlet_INSTANCE_%s_documentID=%d&_documents_WAR_publicationsportlet_INSTANCE_%s_locale=en"
 def u(inst, pos, doc): return P % (inst, pos, inst, inst, inst, doc, inst)
 T = {"ts01": u("Mr0GiQJSgPHd", 3, 114677), "ts04": u("Mr0GiQJSgPHd", 3, 114681), "ts05": u("Mr0GiQJSgPHd", 3, 114682),
