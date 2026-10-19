@@ -4834,6 +4834,9 @@ def api_series(doc, errs, warns, stats):
     if doc["first"] != ds[0] or doc["last"] != ds[-1]: errs.append("first/last no coinciden con los puntos")
     if any(v != v or abs(v) > 1e9 for _, v in pts): errs.append("valor no finito o imposible")
     if not doc["id"].endswith("/" + doc["product"]) or not doc["id"].startswith(doc["region"] + "/"): errs.append("id no coincide con region/producto")
+    n = doc.get("note")
+    if n and not (isinstance(n, dict) and n.get("es")): errs.append("nota sin texto en espanol")
+    elif n and set(n) != {"es", "en", "fr", "it"}: warns.append("la nota solo esta en: %s (falta traducir; ver scripts/api_notes_i18n.py)" % ", ".join(sorted(n)))
     stats["points"] = len(pts)
 
 
@@ -4906,7 +4909,9 @@ def indices_basket(doc, errs, warns, stats):
     by = [p[1] for p in P if p[0][:4] == doc["basePeriod"]]
     if len(by) == 12 and abs(sum(by) / 12 - 100) > 1.0: errs.append("la media del año base (%.2f) no es 100" % (sum(by) / 12))
     if ks[0][:4] != doc["basePeriod"]: errs.append("la serie debe empezar en el año base")
-    if len(P) > 1 and abs((P[-1][1] / P[-2][1] - 1) * 100 - doc["changeMoMPct"]) > 0.02: errs.append("changeMoMPct no cuadra")
+    _pm = "%d-%02d" % ((int(P[-1][0][:4]) - 1, 12) if P[-1][0][5:] == "01" else (int(P[-1][0][:4]), int(P[-1][0][5:]) - 1)) if P else None
+    if len(P) > 1 and P[-2][0] == _pm and (doc["changeMoMPct"] is None or abs((P[-1][1] / P[-2][1] - 1) * 100 - doc["changeMoMPct"]) > 0.02): errs.append("changeMoMPct no cuadra")
+    if len(P) > 1 and P[-2][0] != _pm and doc["changeMoMPct"] is not None: errs.append("changeMoMPct con un hueco entre los dos ultimos meses debe ser null")
     if doc.get("changeYoYPct") is not None:
         d = dict(P); k = "%d-%s" % (int(ks[-1][:4]) - 1, ks[-1][5:])
         if k not in d or abs((P[-1][1] / d[k] - 1) * 100 - doc["changeYoYPct"]) > 0.02: errs.append("changeYoYPct no cuadra")

@@ -54,11 +54,12 @@
   function save() { try { localStorage.setItem(KEY, JSON.stringify({ version: 1, items: ITEMS })); MEMONLY = false; } catch (e) { MEMONLY = true; } }
   function load() { try { var r = localStorage.getItem(KEY); if (r) { var o = JSON.parse(r); if (o && o.items) ITEMS = clean(o.items).ok; } } catch (e) { MEMONLY = true; } }
   function clean(arr) {
-    var ok = [], bad = 0; (arr || []).forEach(function (x) {
+    var ok = [], bad = 0, amb = ''; (arr || []).forEach(function (x) {
+      if (x) { if (typeof x.q !== 'number' && DL.amb(x.q)) amb = amb || x.q; else if (typeof x.p !== 'number' && DL.amb(x.p)) amb = amb || x.p; }
       var d = x && DL.parseDate(x.d), q = x && (typeof x.q === 'number' ? x.q : DL.num(x.q)), p = x && (typeof x.p === 'number' ? x.p : DL.num(x.p));
       if (!d || !isFinite(q) || q <= 0 || !isFinite(p) || p < 0 || !/^[a-z]{2}\/[a-z0-9_-]+$/.test(x.s || '') || (IDX && !sinfo(x.s))) { bad++; return; }
       ok.push({ i: x.i || (Date.now().toString(36) + Math.random().toString(36).slice(2, 6)), d: d, s: x.s, q: q, p: p, k: x.k === 'sell' ? 'sell' : 'buy', n: String(x.n || '').slice(0, 80) });
-    }); return { ok: ok, bad: bad };
+    }); return { ok: ok, bad: bad, amb: amb };
   }
   function need() {
     var ids = {}; ITEMS.forEach(function (x) { ids[x.s] = 1; });
@@ -132,7 +133,7 @@
     var $ = function (i) { return document.getElementById(i); }, form = $('mc-form');
     function keep() { DRAFT = { d: $('mc-d').value, s: $('mc-s').value, k: $('mc-k').value, q: $('mc-q').value, p: $('mc-p').value, n: $('mc-n').value }; }
     $('mc-s').onchange = function () { keep(); render(); };
-    form.onsubmit = function (e) { e.preventDefault(); keep(); var r = clean([DRAFT]); if (!r.ok.length) { MSG = w.bad; render(); return; } ITEMS = ITEMS.concat(r.ok); save(); DRAFT.d = ''; DRAFT.q = ''; DRAFT.p = ''; DRAFT.n = ''; MSG = ''; render(); };
+    form.onsubmit = function (e) { e.preventDefault(); keep(); var r = clean([DRAFT]); if (!r.ok.length) { MSG = DL.ambMsg(DRAFT.q, lang()) || DL.ambMsg(DRAFT.p, lang()) || w.bad; render(); return; } ITEMS = ITEMS.concat(r.ok); save(); DRAFT.d = ''; DRAFT.q = ''; DRAFT.p = ''; DRAFT.n = ''; MSG = ''; render(); };
     Array.prototype.forEach.call(document.querySelectorAll('[data-del]'), function (b) { b.onclick = function () { var id = b.getAttribute('data-del'); ITEMS = ITEMS.filter(function (x) { return x.i !== id; }); save(); MSG = ''; render(); }; });
     if ($('mc-exp')) $('mc-exp').onclick = function () { download('mis-compras-dehesa-index.json', JSON.stringify({ version: 1, items: ITEMS }, null, 1), 'application/json'); };
     if ($('mc-csv')) $('mc-csv').onclick = function () { download('mis-compras-dehesa-index.csv', csvOut(), 'text/csv'); };
@@ -144,7 +145,7 @@
         ITEMS = ITEMS.concat(clean(arr).ok); save(); render(); }).catch(function () { });
     };
     if ($('mc-f')) $('mc-f').onchange = function (e) { var f = e.target.files && e.target.files[0]; if (!f || !window.FileReader) return; var fr = new FileReader(); fr.onload = function () { var r = fromText(String(fr.result)), key = function (x) { return [x.d, x.s, x.q, x.p, x.k, x.n].join('|'); }, have = {}; ITEMS.forEach(function (x) { have[key(x)] = 1; }); r.ok = r.ok.filter(function (x) { if (have[key(x)]) { r.bad++; return false; } have[key(x)] = 1; return true; });   /* sin duplicados: reimportar la misma copia no multiplica las operaciones */
-      ITEMS = ITEMS.concat(r.ok); save(); MSG = w.imported.replace('{n}', r.ok.length).replace('{b}', r.bad); render(); }; fr.readAsText(f); };
+      ITEMS = ITEMS.concat(r.ok); save(); MSG = w.imported.replace('{n}', r.ok.length).replace('{b}', r.bad) + (r.amb ? ' ' + DL.ambMsg(r.amb, lang()) : ''); render(); }; fr.readAsText(f); };
   }
   S.init('data');
   S.onLangChange = render;

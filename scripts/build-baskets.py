@@ -62,10 +62,12 @@ def make(region, bid, names, members, series, gen):
     months = sorted(set.intersection(*[set(m) for m in ms]))
     pts = [[k, round(sum(m[k] / b * 100 for m, b in zip(ms, bases)) / len(ms), 2)] for k in months if k >= by + '-01']
     if len(pts) < MIN_MONTHS: return None, ('solo %d meses con todos los miembros (minimo %d)' % (len(pts), MIN_MONTHS), 'too_few_months', len(pts))
-    last = pts[-1]; yago = {k: v for k, v in pts}.get('%d-%s' % (int(last[0][:4]) - 1, last[0][5:]))
+    last = pts[-1]; prev_m = '%d-%02d' % ((int(last[0][:4]) - 1, 12) if last[0][5:] == '01' else (int(last[0][:4]), int(last[0][5:]) - 1))
+    mom = round((last[1] / pts[-2][1] - 1) * 100, 2) if len(pts) > 1 and pts[-2][0] == prev_m else None   # solo si el punto anterior es el mes anterior: con huecos no hay comparacion
+    yago = {k: v for k, v in pts}.get('%d-%s' % (int(last[0][:4]) - 1, last[0][5:]))
     verdict = 'condiciones' if any(s['verdict'] == 'condiciones' for s in meta) else 'apto'
     return {'schemaVersion': 1, 'generatedAt': gen, 'id': '%s/%s' % (region, bid), 'region': region, 'basket': bid, 'name': names, 'verdict': verdict, 'basePeriod': by, 'base': 100, 'weighting': 'equal',
-            'first': pts[0][0], 'last': last[0], 'rows': len(pts), 'changeMoMPct': round((last[1] / pts[-2][1] - 1) * 100, 2), 'changeYoYPct': round((last[1] / yago - 1) * 100, 2) if yago else None,
+            'first': pts[0][0], 'last': last[0], 'rows': len(pts), 'changeMoMPct': mom, 'changeYoYPct': round((last[1] / yago - 1) * 100, 2) if yago else None,
             'members': [{'id': s['id'], 'product': s['product'], 'name': s['name'], 'weightPct': round(100 / len(meta), 2), 'unit': s['unit'], 'currency': s['currency'], 'frequency': s['frequency'], 'sourceName': s['sourceName'], 'license': s['license'], 'verdict': s['verdict'], 'attribution': s['attribution']} for s in meta],
             'attribution': ' · '.join(dict.fromkeys(s['attribution'] for s in meta)), 'methodology': METHOD, 'points': pts}, None
 def build():

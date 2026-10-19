@@ -10,6 +10,8 @@ La fecha del fichero es la del paquete (no la hora de ejecucion): sin datos nuev
 Uso: python3 scripts/build-api.py [--check]"""
 import csv, json, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from api_notes_i18n import translate_note
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'data' / 'api' / 'v1'
 BASE = 'https://dehesaindex.com'
@@ -27,6 +29,15 @@ def read_series(f):
     rows.sort(key=lambda p: p[0])
     return rows
 
+def with_translations(note, sid):
+    """La nota nace en espanol; se anaden en/fr/it solo si cada frase esta en la tabla de scripts/api_notes_i18n.py (si no, se queda en espanol y se avisa)."""
+    out = dict(note)
+    if note.get('es'):
+        tr, missing = translate_note(note['es'])
+        out.update(tr)
+        for m in missing: print('AVISO nota sin traducir (%s): %s' % (sid, m[:110]), file=sys.stderr)
+    return out
+
 def build():
     pack = json.loads((ROOT / 'data' / 'pack' / 'index.json').read_text(encoding='utf-8'))
     gen = pack['generatedAt']
@@ -39,7 +50,7 @@ def build():
         meta = {'id': sid, 'product': f['product'], 'region': f['region'], 'name': f['name'], 'place': f['place'], 'unit': f['unit'], 'currency': f['currency'], 'frequency': f['frequency'],
                 'source': f['source'], 'sourceName': f['sourceName'], 'license': f['license'], 'verdict': f['verdict'], 'attribution': f['attribution']}
         n = notes.get((f['product'], f['region']), {})
-        if n.get('note'): meta['note'] = n['note']   # que mide exactamente la serie (mercado, calidad, si es nacional o de un pais)
+        if n.get('note'): meta['note'] = with_translations(n['note'], sid)   # que mide exactamente la serie (mercado, calidad, si es nacional o de un pais)
         if n.get('comparability'): meta['comparability'] = n['comparability']
         last, prev = pts[-1], (pts[-2] if len(pts) > 1 else None)
         chg = round((last[1] / prev[1] - 1) * 100, 2) if prev and prev[1] else None

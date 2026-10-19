@@ -51,15 +51,13 @@
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function nf(n, d) { try { return Number(n).toLocaleString(lang(), { maximumFractionDigits: d == null ? 2 : d }); } catch (e) { return String(n); } }
   function nm(o, k) { return (o && (o[lang()] || o.es)) || k || ''; }
-  function num(s) {
-    s = String(s == null ? '' : s).trim().replace(/\s/g, '');
-    var c = s.lastIndexOf(','), d = s.lastIndexOf('.');
-    if (c > -1 && d > -1) s = c > d ? s.replace(/\./g, '').replace(',', '.') : s.replace(/,/g, '');   /* 1.234,56 (ES/FR/IT) o 1,234.56 (EN): gana el ultimo separador */
-    else if (d > -1 && s.indexOf('.') !== d) s = s.replace(/\./g, '');                              /* 1.234.567 */
-    else if (c > -1 && s.indexOf(',') !== c) s = s.replace(/,/g, '');                                /* 1,234,567 */
-    else s = s.replace(',', '.');                                                                     /* 12,5 = 12.5 (una sola coma es decimal) */
-    return /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : NaN;
+  /* numero ambiguo (1.500 / 1,000): se avisa y se conserva el valor anterior en vez de adivinar */
+  var AMBM = '';
+  function ambOk(e) {
+    AMBM = window.DehesaLookup.ambMsg(e.value, lang()); if (!AMBM) return false;
+    render(); return true;   /* conserva el valor anterior y muestra el aviso */
   }
+  function num(s) { return window.DehesaLookup.num(s); }
   function sinfo(id) { return IDX && IDX.series.filter(function (x) { return x.id === id; })[0]; }
   function usable(s) { return PERT[s.unit] && s.currency !== 'INDEX' && (s.frequency === 'monthly' || s.frequency === 'weekly'); }
   function label(s) { return nm(s.name, s.product) + ' — ' + (nm(s.place) || s.region); }
@@ -123,6 +121,7 @@
     var avail = IDX.series.filter(function (s) { return usable(s) && s.currency === R.cur; }).sort(function (a, b) { return label(a).localeCompare(label(b), lang()); });
     var inp = 'padding:7px;width:100%', h = '';
     if (MEMONLY) h += '<p class="di-movers-hint" style="color:#8f5f12">' + esc(w.mem) + '</p>';
+    if (AMBM) h += '<p class="di-movers-hint" id="mr-amb" role="alert" style="color:#8f5f12">' + esc(AMBM) + '</p>';
     h += '<div class="di-card no-print" style="padding:14px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))"><label style="display:grid;gap:4px;font-size:12.5px">' + esc(w.nm) + '<input id="mr-n" maxlength="60" placeholder="' + esc(w.ph) + '" value="' + esc(R.name) + '" style="' + inp + '"></label>' +
       '<label style="display:grid;gap:4px;font-size:12.5px">' + esc(w.cur) + '<select id="mr-c" style="' + inp + '">' + cl.map(function (c) { return '<option' + (c === R.cur ? ' selected' : '') + '>' + c + '</option>'; }).join('') + '</select></label>' +
       '<label style="display:grid;gap:4px;font-size:12.5px">' + esc(w.oth) + ' (' + esc(R.cur) + ')<input id="mr-o" inputmode="decimal" value="' + esc(R.other) + '" style="' + inp + '"></label></div><p class="di-movers-hint">' + esc(w.mix) + '</p>';
@@ -158,14 +157,14 @@
     var $ = function (i) { return document.getElementById(i); }, q = function (s) { return document.querySelectorAll(s); };
     function each(sel, fn) { Array.prototype.forEach.call(q(sel), fn); }
     $('mr-n').oninput = function (e) { R.name = e.target.value.slice(0, 60); persist(); };
-    $('mr-o').onchange = function (e) { R.other = e.target.value; persist(); render(); };
+    $('mr-o').onchange = function (e) { if (ambOk(e.target)) return; AMBM = ''; R.other = e.target.value; persist(); render(); };
     $('mr-c').onchange = function (e) { var cur = e.target.value; if (R.items.length && !window.confirm(w.curQ)) { e.target.value = R.cur; return; } setR({ name: R.name, cur: cur, other: '', items: [] }); persist(); render(); };
     $('mr-add').onclick = function () { var a = IDX.series.filter(function (s) { return usable(s) && s.currency === R.cur; }); if (a.length) { var pick = a.filter(function (s) { return !R.items.some(function (x) { return x.s === s.id; }); })[0] || a[0]; R.items.push({ s: pick.id, kg: 0 }); persist(); render(); } };
     $('mr-addc').onclick = function () { R.items.push({ c: '', p: 0, kg: 0 }); persist(); render(); };
     each('[data-s]', function (e) { e.onchange = function () { R.items[+e.getAttribute('data-s')].s = e.value; persist(); render(); }; });
-    each('[data-k]', function (e) { e.onchange = function () { var v = num(e.value); R.items[+e.getAttribute('data-k')].kg = isFinite(v) && v >= 0 ? v : 0; persist(); render(); }; });
+    each('[data-k]', function (e) { e.onchange = function () { if (ambOk(e)) return; AMBM = ''; var v = num(e.value); R.items[+e.getAttribute('data-k')].kg = isFinite(v) && v >= 0 ? v : 0; persist(); render(); }; });
     each('[data-cn]', function (e) { e.onchange = function () { R.items[+e.getAttribute('data-cn')].c = e.value.slice(0, 40) || '—'; persist(); render(); }; });
-    each('[data-cp]', function (e) { e.onchange = function () { var v = num(e.value); R.items[+e.getAttribute('data-cp')].p = isFinite(v) && v >= 0 ? v : 0; persist(); render(); }; });
+    each('[data-cp]', function (e) { e.onchange = function () { if (ambOk(e)) return; AMBM = ''; var v = num(e.value); R.items[+e.getAttribute('data-cp')].p = isFinite(v) && v >= 0 ? v : 0; persist(); render(); }; });
     each('[data-rm]', function (e) { e.onclick = function () { R.items.splice(+e.getAttribute('data-rm'), 1); persist(); render(); }; });
     if ($('mr-ex')) $('mr-ex').onclick = function () {
       var a = IDX.series.filter(function (s) { return usable(s) && s.currency === R.cur; }), by = function (p) { return a.filter(function (s) { return s.product === p; })[0]; }, ex = [['maiz', 600], ['harina_soja', 250], ['trigo', 100]].map(function (r) { var s = by(r[0]); return s ? { s: s.id, kg: r[1] } : null; }).filter(Boolean);

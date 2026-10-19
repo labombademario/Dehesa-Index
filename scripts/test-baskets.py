@@ -21,10 +21,10 @@ def ser(p, freq, pts, verdict='apto'):
 a_pts = mon(2020, 2022, lambda y, mo: 100.0 if y == 2020 else 200.0)         # base 2020 = 100 -> 2021+ = 200
 b_pts = mon(2020, 2022, lambda y, mo: 50.0 if y == 2020 else 50.0)           # plana
 c_pts = wk(2020, 2022, lambda y, mo: 10.0) + [['2023-01-07', 99.0], ['2023-01-14', 99.0]]   # enero 2023 semanal incompleto (hasta el 14)
-S = [ser('a', 'monthly', a_pts), ser('b', 'monthly', b_pts, 'condiciones'), ser('c', 'weekly', c_pts), ser('gap', 'monthly', mon(2020, 2022, lambda y, mo: 10.0, gaps=('2021-06',))), ser('short', 'monthly', mon(2022, 2022, lambda y, mo: 10.0))]
+S = [ser('a', 'monthly', a_pts), ser('b', 'monthly', b_pts, 'condiciones'), ser('c', 'weekly', c_pts), ser('gap', 'monthly', mon(2020, 2022, lambda y, mo: 10.0, gaps=('2021-06',))), ser('gend', 'monthly', mon(2020, 2022, lambda y, mo: 10.0, gaps=('2022-11',))), ser('short', 'monthly', mon(2022, 2022, lambda y, mo: 10.0))]
 (tmp / 'index.json').write_text(json.dumps({'generatedAt': '2026-10-19', 'series': S}))
 m.API = tmp
-m.BASKETS = [('eu', 'ab', {'es': 'AB'}, ['a', 'b']), ('eu', 'abg', {'es': 'ABG'}, ['a', 'b', 'gap']), ('eu', 'ash', {'es': 'ASH'}, ['a', 'short']), ('eu', 'one', {'es': 'UNO'}, ['a']), ('eu', 'nox', {'es': 'NOX'}, ['a', 'nox']), ('eu', 'ac', {'es': 'AC'}, ['a', 'c'])]
+m.BASKETS = [('eu', 'ab', {'es': 'AB'}, ['a', 'b']), ('eu', 'abg', {'es': 'ABG'}, ['a', 'b', 'gap']), ('eu', 'agend', {'es': 'AGEND'}, ['a', 'gend']), ('eu', 'ash', {'es': 'ASH'}, ['a', 'short']), ('eu', 'one', {'es': 'UNO'}, ['a']), ('eu', 'nox', {'es': 'NOX'}, ['a', 'nox']), ('eu', 'ac', {'es': 'AC'}, ['a', 'c'])]
 F = m.build(); idx = json.loads(F['index.json']); B = {b['basket']: json.loads(F['eu/%s.json' % b['basket']]) for b in idx['baskets']}
 ex = {e['id']: e['reason'] for e in idx['excluded']}
 ab = B['ab']; d = dict(ab['points'])
@@ -38,5 +38,9 @@ check('una sola serie: excluida', 'eu/one' in ex)
 check('serie que no existe en la API: excluida con motivo', 'eu/nox' in ex and 'nox' in ex['eu/nox'])
 check('variacion anual recalculada', abs(ab['changeYoYPct']) < 0.001 and ab['changeMoMPct'] == 0)
 check('metodologia en 4 idiomas en cada cesta', all(set(b['methodology']) == {'es', 'en', 'fr', 'it'} for b in B.values()))
+def _consec(a, b): return (int(b[:4]) * 12 + int(b[5:])) - (int(a[:4]) * 12 + int(a[5:])) == 1
+check('variacion mensual: solo con el mes anterior; con hueco entre los dos ultimos puntos = null, nunca se compara con un mes lejano',
+      all((b['changeMoMPct'] is None) == (not _consec(b['points'][-2][0], b['points'][-1][0])) for b in B.values()))
+check('hay al menos una cesta de prueba con hueco antes del ultimo mes y su variacion mensual es null', any(not _consec(b['points'][-2][0], b['points'][-1][0]) and b['changeMoMPct'] is None for b in B.values()))
 check('determinista', m.build() == F)
 print('%d comprobaciones OK' % ok)

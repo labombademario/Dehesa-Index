@@ -7,6 +7,8 @@ Cada correo lleva solo los movimientos que NO se habian enviado antes (data/dige
 Uso: python3 scripts/send-digest.py [--lang es|en] [--out fichero.html] [--send]"""
 import argparse, html, json, os, sys, urllib.request
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from unit_labels import unit_label
 ROOT = Path(__file__).resolve().parents[1]
 D = ROOT / 'data' / 'digest'
 BASE = 'https://dehesaindex.com'
@@ -25,7 +27,7 @@ def build(w, l):
     def block(title, items):
         if not items: return ''
         rows = ''.join('<li style="margin:8px 0"><b>%s</b>: %s%s %% → %s %s/%s <span style="color:#666">(%s; %s %s, %s)</span><br><span style="font-size:12px;color:#666">%s · <a href="%s%s">%s</a></span></li>' % (
-            e(label(i, l)), '+' if i['changePct'] > 0 else '', fmt(i['changePct'], l), fmt(i['value'], l), e(i['currency']), e(i['unit']), e(i['date']), t['from'], fmt(i['previous'], l), e(i['previousDate']),
+            e(label(i, l)), '+' if i['changePct'] > 0 else '', fmt(i['changePct'], l), fmt(i['value'], l), e(i['currency']), e(unit_label(i['unit'], l)), e(i['date']), t['from'], fmt(i['previous'], l), e(i['previousDate']),
             e(i['attribution']), BASE, e(i['report']), t['rep']) for i in items)
         return '<h3 style="margin:18px 0 4px">%s</h3><ul style="padding-left:18px;margin:0">%s</ul>' % (e(title), rows)
     body = block(t['up'], w['topUp']) + block(t['dn'], w['topDown'])

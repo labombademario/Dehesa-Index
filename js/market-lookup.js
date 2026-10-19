@@ -4,8 +4,25 @@
 (function () {
   'use strict';
   function pad(n) { return (n < 10 ? '0' : '') + n; }
+  /* «1.500» o «1,000» pueden ser 1,5 o 1500 (decimal o miles): no se adivina, se rechaza y se pide escribirlo sin ambiguedad */
+  function amb(s) {
+    var m = /^(-?)([1-9]\d{0,2})[.,](\d{3})$/.exec(String(s == null ? '' : s).trim().replace(/\s/g, ''));
+    return m ? { raw: m[0], dec: parseFloat(m[1] + m[2] + '.' + m[3]), thou: parseInt(m[1] + m[2] + m[3], 10) } : null;
+  }
+  var AMB = {
+    es: 'Número ambiguo: «{r}» puede ser {a} o {b}. Escríbelo sin separador de miles (por ejemplo {b}) o con coma decimal (por ejemplo {a}).',
+    en: 'Ambiguous number: “{r}” could be {a} or {b}. Write it without a thousands separator (for example {b}) or with a decimal point (for example {a}).',
+    fr: 'Nombre ambigu : « {r} » peut être {a} ou {b}. Écrivez-le sans séparateur de milliers (par exemple {b}) ou avec une virgule décimale (par exemple {a}).',
+    it: 'Numero ambiguo: «{r}» può essere {a} o {b}. Scrivilo senza separatore delle migliaia (ad esempio {b}) o con la virgola decimale (ad esempio {a}).'
+  };
+  function ambMsg(s, l) {
+    var a = amb(s); if (!a) return '';
+    var dot = l === 'en' ? '.' : ',', A = String(a.dec).replace('.', dot);
+    return (AMB[l] || AMB.es).replace(/\{r\}/g, a.raw).replace(/\{a\}/g, A).replace(/\{b\}/g, String(a.thou));
+  }
   function num(s) {
     s = String(s == null ? '' : s).trim().replace(/\s/g, '');
+    if (amb(s)) return NaN;
     var c = s.lastIndexOf(','), d = s.lastIndexOf('.');
     if (c > -1 && d > -1) s = c > d ? s.replace(/\./g, '').replace(',', '.') : s.replace(/,/g, '');   /* 1.234,56 (ES/FR/IT) o 1,234.56 (EN): gana el ultimo separador */
     else if (d > -1 && s.indexOf('.') !== d) s = s.replace(/\./g, '');                              /* 1.234.567 */
@@ -30,5 +47,5 @@
     for (i = 0; i < pts.length; i++) { var pt = pointT(pts[i][0]); if (!isNaN(pt) && pt <= tt && tt - pt <= tol) best = pts[i]; }
     return best;
   }
-  window.DehesaLookup = { pad: pad, num: num, parseDate: parseDate, dayT: dayT, pointT: pointT, lookup: lookup };
+  window.DehesaLookup = { pad: pad, num: num, amb: amb, ambMsg: ambMsg, parseDate: parseDate, dayT: dayT, pointT: pointT, lookup: lookup };
 })();

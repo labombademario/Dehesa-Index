@@ -10,6 +10,8 @@ Uso: python3 scripts/build-digest.py [--check]"""
 import json, sys, datetime
 from pathlib import Path
 from xml.sax.saxutils import escape
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from unit_labels import unit_label
 ROOT = Path(__file__).resolve().parents[1]
 API = ROOT / 'data' / 'api' / 'v1'
 OUT = ROOT / 'data' / 'digest'
@@ -57,8 +59,8 @@ def build():
     for l, fn, ttl in (('es', 'feed.xml', 'Dehesa Index: movimientos de precios'), ('en', 'feed-en.xml', 'Dehesa Index: price moves')):
         ent = []
         for e in events[:40]:
-            t = '%s: %s%s %% hasta %s %s/%s (%s)' % (label(e, l), '+' if e['changePct'] > 0 else '', fmt(e['changePct'], l), fmt(e['value'], l), e['currency'], e['unit'], e['date']) if l == 'es' else \
-                '%s: %s%s%% to %s %s/%s (%s)' % (label(e, l), '+' if e['changePct'] > 0 else '', fmt(e['changePct'], l), fmt(e['value'], l), e['currency'], e['unit'], e['date'])
+            t = '%s: %s%s %% hasta %s %s/%s (%s)' % (label(e, l), '+' if e['changePct'] > 0 else '', fmt(e['changePct'], l), fmt(e['value'], l), e['currency'], unit_label(e['unit'], l), e['date']) if l == 'es' else \
+                '%s: %s%s%% to %s %s/%s (%s)' % (label(e, l), '+' if e['changePct'] > 0 else '', fmt(e['changePct'], l), fmt(e['value'], l), e['currency'], unit_label(e['unit'], l), e['date'])
             body = ('Antes: %s (%s). Fuente: %s. %s' if l == 'es' else 'Before: %s (%s). Source: %s. %s') % (fmt(e['previous'], l), e['previousDate'], e['sourceName'], e['attribution'])
             upd = pt(e['date']).isoformat() + 'T00:00:00Z'
             ent.append('<entry><id>tag:dehesaindex.com,2026:%s</id><title>%s</title><updated>%s</updated><author><name>Dehesa Index</name></author><link href="%s%s"/><summary>%s</summary></entry>' % (escape(e['id']), escape(t), upd, BASE, escape(e['report']), escape(body)))

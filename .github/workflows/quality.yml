@@ -118,6 +118,8 @@ jobs:
         run: python3 scripts/build-api.py --check
       - name: Avisos de precio (umbrales, Atom, correo escapado; no envia sin clave) y al dia con la API
         run: python3 scripts/test-digest.py && python3 scripts/build-digest.py --check
+      - name: Notas de la API en es/en/fr/it (traduccion por frases, sin espanol en las otras tres, guarda ante frases nuevas)
+        run: python3 scripts/test-api-notes.py
       - name: Cestas de precios (base 100, meses incompletos, minimos, sin relleno) y al dia con la API
         run: python3 scripts/test-baskets.py && python3 scripts/build-baskets.py --check
       - name: Conector MCP (protocolo, siete herramientas contra los datos reales, errores, Worker)

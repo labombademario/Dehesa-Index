@@ -28,6 +28,7 @@ ok('licencias de las fuentes listadas', /Fuentes y licencias/.test(t) && /EU-REU
 ok('sin undefined ni NaN', !/undefined|NaN|\[object/.test(t));
 // cambiar cantidad -> recalcula
 const k0 = await p.$('[data-k="0"]'); await k0.fill('600'); await k0.dispatchEvent('change'); await p.waitForTimeout(500);
+{ const kb = await p.$('[data-k="0"]'); await kb.fill('1.500'); await kb.dispatchEvent('change'); await p.waitForTimeout(400); const t = await p.innerText('main'); ok('«1.500» kg es ambiguo: aviso y se conserva el valor anterior (600)', /Número ambiguo/.test(t) && t.includes('1500') && (await (await p.$('[data-k="0"]')).inputValue()) === '600'); const k1 = await p.$('[data-k="0"]'); await k1.fill('600'); await k1.dispatchEvent('change'); await p.waitForTimeout(300); }
 const E2 = expected([{ s: 'eu/trigo', kg: 600 }, ...items.slice(1)], other), l2 = E2[E2.length - 1]; ok('cambiar los kg recalcula (' + l2[1].toFixed(2) + ')', (await p.innerText('main')).includes(fmt(l2[1], 2) + ' EUR/t'));
 ok('la receta se guarda al cambiar', (await p.evaluate(() => JSON.parse(localStorage.getItem('dehesaReceta')).items[0].kg)) === 600);
 // moneda distinta: se vacia, no mezcla

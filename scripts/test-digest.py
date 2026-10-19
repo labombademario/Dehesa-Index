@@ -53,4 +53,12 @@ check('ensayo por defecto: no envia ni guarda estado', p.returncode == 0 and 'EN
 env = {k: v for k, v in os.environ.items() if k != 'DIGEST_API_KEY'}
 p = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'send-digest.py'), '--send'], capture_output=True, text=True, env=env)
 check('--send sin clave: falla y no envia', p.returncode != 0 and 'DIGEST_API_KEY' in (p.stdout + p.stderr) and sent.exists() == before)
+import re as _re
+raw = _re.compile(r'/(tonelada|ton_corta|barril|docena|litro|index_2020_100|gal)\b')
+feeds = [(ROOT / 'data' / 'digest' / f).read_text(encoding='utf-8') for f in ('feed.xml', 'feed-en.xml')]
+raw_es = _re.compile(r'/(tonelada|ton_corta|index_2020_100|mmbtu|100kg)\b')
+check('feeds: ninguna unidad interna (tonelada, ton_corta, 100kg...) llega al lector', not raw_es.search(feeds[0]) and not raw.search(feeds[1]) and not raw_es.search(feeds[1]))
+check('feed en ingles: unidades en ingles (short ton / barrel / dozen / litre)', 'tonelada' not in feeds[1] and ('/t ' in feeds[1] or '/100 kg' in feeds[1]))
+from unit_labels import unit_label
+check('etiquetas de unidad: ES/EN/FR/IT distintas para barril y docena; ids desconocidos tal cual', unit_label('barril', 'en') == 'barrel' and unit_label('docena', 'fr') == 'douzaine' and unit_label('barril', 'it') == 'barile' and unit_label('xyz', 'en') == 'xyz')
 print('%d comprobaciones OK' % ok)

@@ -19,7 +19,7 @@
       sB: 'Con {q} {u0} comparadas, pagaste de media {p} {u}, frente a {m} {u} del mercado en las mismas fechas: {d} {dir} (un {x} %). En total, {tdir} {t}.',
       sS: 'Con {q} {u0} comparadas, cobraste de media {p} {u}, frente a {m} {u} del mercado en las mismas fechas: {d} {dir} (un {x} %). En total, {tdir} {t}.',
       dirBuyUp: 'por encima', dirBuyDn: 'por debajo', dirSellUp: 'por encima', dirSellDn: 'por debajo', tBuyUp: 'pagaste de más', tBuyDn: 'pagaste de menos', tSellUp: 'cobraste de más', tSellDn: 'cobraste de menos', eq: 'igual que el mercado',
-      cols: ['Fecha', 'Cantidad', 'Tu precio', 'Mercado', 'Dato del mercado', 'Diferencia'], skipped: '{n} línea(s) sin dato de mercado en esa fecha: no entran en la comparación.', bad: 'Línea {n} no reconocida: «{x}»',
+      cols: ['Fecha', 'Cantidad', 'Tu precio', 'Mercado', 'Dato del mercado', 'Diferencia'], skipped: '{n} línea(s) sin dato de mercado en esa fecha: no entran en la comparación.', bad: 'Línea {n} no reconocida: «{x}»', comma: 'Se han leído líneas separadas por comas. Si tus decimales llevan coma (240,5), una coma no distingue columna de decimal: separa las columnas con punto y coma o tabulador. Una línea con más de tres campos no se lee.',
       print: 'Imprimir o guardar en PDF', csv: 'Descargar resultado (CSV)', how: 'Cómo se calcula',
       howP: ['Para cada factura se toma el precio de mercado de su mismo mes (series mensuales), trimestre (trimestrales) o la última cotización de los 14 días anteriores (semanales y diarias). Sin dato, la línea no entra.', 'El precio de mercado medio se pondera por tus cantidades, igual que el tuyo, para que la comparación sea justa.', 'Esto no es asesoramiento financiero: la serie es un precio de referencia de una fuente oficial, no tu mercado exacto. Lee qué mide en la nota.'],
       src: 'Fuente', lic: 'Licencia', note: 'Qué mide la serie', report: 'Comparación de facturas', prepared: 'Preparado con Dehesa Index', neg: 'Informe de negociación de este producto',
@@ -39,7 +39,7 @@
       sB: 'Over {q} {u0} compared, you paid {p} {u} on average, against {m} {u} for the market on the same dates: {d} {dir} (by {x}%). In total, {tdir} {t}.',
       sS: 'Over {q} {u0} compared, you received {p} {u} on average, against {m} {u} for the market on the same dates: {d} {dir} (by {x}%). In total, {tdir} {t}.',
       dirBuyUp: 'above', dirBuyDn: 'below', dirSellUp: 'above', dirSellDn: 'below', tBuyUp: 'you overpaid', tBuyDn: 'you paid less', tSellUp: 'you received more', tSellDn: 'you received less', eq: 'the same as the market',
-      cols: ['Date', 'Quantity', 'Your price', 'Market', 'Market data point', 'Difference'], skipped: '{n} line(s) with no market data on that date: left out of the comparison.', bad: 'Line {n} not recognised: “{x}”',
+      cols: ['Date', 'Quantity', 'Your price', 'Market', 'Market data point', 'Difference'], skipped: '{n} line(s) with no market data on that date: left out of the comparison.', bad: 'Line {n} not recognised: “{x}”', comma: 'Some lines were read as comma-separated. If your decimals use a comma (240,5), a comma cannot tell a column from a decimal: separate the columns with a semicolon or a tab. A line with more than three fields is not read.',
       print: 'Print or save as PDF', csv: 'Download result (CSV)', how: 'How it is calculated',
       howP: ['For each invoice we take the market price of the same month (monthly series), quarter (quarterly) or the latest quotation in the previous 14 days (weekly and daily). With no data, the line is left out.', 'The average market price is weighted by your quantities, like yours, so the comparison is fair.', 'This is not financial advice: the series is a reference price from an official source, not your exact market. Read what it measures in the note.'],
       src: 'Source', lic: 'Licence', note: 'What the series measures', report: 'Invoice comparison', prepared: 'Prepared with Dehesa Index', neg: 'Negotiation report for this product',
@@ -59,7 +59,7 @@
       sB: 'Sur {q} {u0} comparées, vous avez payé {p} {u} en moyenne, contre {m} {u} pour le marché aux mêmes dates : {d} {dir} ({x} %). Au total, {tdir} {t}.',
       sS: 'Sur {q} {u0} comparées, vous avez reçu {p} {u} en moyenne, contre {m} {u} pour le marché aux mêmes dates : {d} {dir} ({x} %). Au total, {tdir} {t}.',
       dirBuyUp: 'au-dessus', dirBuyDn: 'en dessous', dirSellUp: 'au-dessus', dirSellDn: 'en dessous', tBuyUp: 'vous avez payé de trop', tBuyDn: 'vous avez payé de moins', tSellUp: 'vous avez reçu de plus', tSellDn: 'vous avez reçu de moins', eq: 'identique au marché',
-      cols: ['Date', 'Quantité', 'Votre prix', 'Marché', 'Donnée du marché', 'Écart'], skipped: '{n} ligne(s) sans donnée de marché à cette date : exclues de la comparaison.', bad: 'Ligne {n} non reconnue : « {x} »',
+      cols: ['Date', 'Quantité', 'Votre prix', 'Marché', 'Donnée du marché', 'Écart'], skipped: '{n} ligne(s) sans donnée de marché à cette date : exclues de la comparaison.', bad: 'Ligne {n} non reconnue : « {x} »', comma: 'Des lignes ont été lues comme séparées par des virgules. Si vos décimales utilisent la virgule (240,5), une virgule ne distingue pas une colonne d’un décimal : séparez les colonnes par un point-virgule ou une tabulation. Une ligne de plus de trois champs n’est pas lue.',
       print: 'Imprimer ou enregistrer en PDF', csv: 'Télécharger le résultat (CSV)', how: 'Comment c’est calculé',
       howP: ['Pour chaque facture on prend le prix de marché du même mois (séries mensuelles), trimestre (trimestrielles) ou la dernière cotation des 14 jours précédents (hebdomadaires et quotidiennes). Sans donnée, la ligne est exclue.', 'Le prix de marché moyen est pondéré par vos quantités, comme le vôtre, pour une comparaison juste.', 'Ceci n’est pas un conseil financier : la série est un prix de référence d’une source officielle, pas votre marché exact. Lisez ce qu’elle mesure dans la note.'],
       src: 'Source', lic: 'Licence', note: 'Ce que mesure la série', report: 'Comparaison de factures', prepared: 'Préparé avec Dehesa Index', neg: 'Rapport de négociation de ce produit',
@@ -79,7 +79,7 @@
       sB: 'Su {q} {u0} confrontate, hai pagato in media {p} {u}, contro {m} {u} del mercato nelle stesse date: {d} {dir} ({x}%). In totale, {tdir} {t}.',
       sS: 'Su {q} {u0} confrontate, hai incassato in media {p} {u}, contro {m} {u} del mercato nelle stesse date: {d} {dir} ({x}%). In totale, {tdir} {t}.',
       dirBuyUp: 'sopra', dirBuyDn: 'sotto', dirSellUp: 'sopra', dirSellDn: 'sotto', tBuyUp: 'hai pagato di più', tBuyDn: 'hai pagato di meno', tSellUp: 'hai incassato di più', tSellDn: 'hai incassato di meno', eq: 'uguale al mercato',
-      cols: ['Data', 'Quantità', 'Il tuo prezzo', 'Mercato', 'Dato di mercato', 'Differenza'], skipped: '{n} riga/righe senza dato di mercato in quella data: escluse dal confronto.', bad: 'Riga {n} non riconosciuta: «{x}»',
+      cols: ['Data', 'Quantità', 'Il tuo prezzo', 'Mercato', 'Dato di mercato', 'Differenza'], skipped: '{n} riga/righe senza dato di mercato in quella data: escluse dal confronto.', bad: 'Riga {n} non riconosciuta: «{x}»', comma: 'Alcune righe sono state lette come separate da virgole. Se i decimali usano la virgola (240,5), una virgola non distingue una colonna da un decimale: separa le colonne con punto e virgola o tabulazione. Una riga con più di tre campi non viene letta.',
       print: 'Stampa o salva in PDF', csv: 'Scarica il risultato (CSV)', how: 'Come si calcola',
       howP: ['Per ogni fattura si prende il prezzo di mercato dello stesso mese (serie mensili), trimestre (trimestrali) o l’ultima quotazione dei 14 giorni precedenti (settimanali e giornaliere). Senza dato, la riga è esclusa.', 'Il prezzo medio di mercato è ponderato per le tue quantità, come il tuo, perché il confronto sia equo.', 'Questa non è consulenza finanziaria: la serie è un prezzo di riferimento di una fonte ufficiale, non il tuo mercato esatto. Leggi cosa misura nella nota.'],
       src: 'Fonte', lic: 'Licenza', note: 'Cosa misura la serie', report: 'Confronto fatture', prepared: 'Preparato con Dehesa Index', neg: 'Rapporto di negoziazione di questo prodotto',
@@ -96,18 +96,21 @@
   function fill(s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] == null ? m : o[k]; }); }
   var DL = window.DehesaLookup, pad = DL.pad, num = DL.num, parseDate = DL.parseDate, dayT = DL.dayT, pointT = DL.pointT, lookup = DL.lookup;
   function parse(text) {
-    var rows = [], bad = [], lines = text.split(/\r?\n/), i, p, d, q, pr;
+    var rows = [], bad = [], comma = false, lines = text.split(/\r?\n/), i, p, d, q, pr;
     for (i = 0; i < lines.length; i++) {
       var ln = lines[i].trim(); if (!ln) continue;
+      var byComma = ln.indexOf('\t') < 0 && ln.indexOf(';') < 0;
       p = ln.indexOf('\t') > -1 ? ln.split('\t') : (ln.indexOf(';') > -1 ? ln.split(';') : ln.split(','));
       p = p.map(function (x) { return x.trim(); });
       d = parseDate(p[0]);
       if (!d && i === 0 && rows.length === 0 && !/\d/.test(p[0])) continue;   // cabecera (solo si no lleva numeros: una fecha imposible en la 1.ª linea se avisa)
       if (p.length === 2) { q = 1; pr = num(p[1]); } else { q = num(p[1]); pr = num(p[2]); }
-      if (!d || isNaN(pr) || isNaN(q) || q <= 0) { bad.push([i + 1, ln]); continue; }
+      if (byComma && d && p.length > 3) { bad.push([i + 1, ln, '']); continue; }   /* 2026-05-31,10,240,50: coma decimal sin separador de columnas -> no se adivina */
+      if (byComma && d) comma = true;
+      if (!d || isNaN(pr) || isNaN(q) || q <= 0) { bad.push([i + 1, ln, DL.amb(p[1]) ? p[1] : (p.length > 2 && DL.amb(p[2]) ? p[2] : '')]); continue; }
       rows.push({ date: d, qty: q, price: pr });
     }
-    return { rows: rows, bad: bad };
+    return { rows: rows, bad: bad, comma: comma };
   }
   function compute(s, parsed) {
     var out = [], skipped = 0, Q = 0, P = 0, M = 0;
@@ -116,7 +119,7 @@
       out.push({ date: r.date, qty: r.qty, price: r.price, mkt: pt[1], md: pt[0] });
       Q += r.qty; P += r.qty * r.price; M += r.qty * pt[1];
     });
-    return { lines: out, skipped: skipped, bad: parsed.bad, q: Q, paid: Q ? P / Q : 0, mkt: Q ? M / Q : 0, tot: P - M };
+    return { lines: out, skipped: skipped, bad: parsed.bad, comma: parsed.comma, q: Q, paid: Q ? P / Q : 0, mkt: Q ? M / Q : 0, tot: P - M };
   }
   function sel() { return IDX && IDX.series.filter(function (x) { return x.id === SID; })[0]; }
   function loadSeries() {
@@ -131,7 +134,8 @@
     var parsed = parse(TEXT);
     if (!parsed.rows.length && !parsed.bad.length) return '<p class="di-movers-hint">' + esc(w.none) + '</p>';
     var r = compute(s, parsed), u = UL(s.unit) + ' ' + s.currency, h = '';
-    if (parsed.bad.length) h += '<p class="di-movers-hint" style="color:#8f5f12">' + parsed.bad.slice(0, 5).map(function (b) { return esc(fill(w.bad, { n: b[0], x: b[1] })); }).join('<br>') + '</p>';
+    if (parsed.bad.length) h += '<p class="di-movers-hint" style="color:#8f5f12">' + parsed.bad.slice(0, 5).map(function (b) { return esc(fill(w.bad, { n: b[0], x: b[1] }) + (b[2] ? ' ' + DL.ambMsg(b[2], lang()) : '')); }).join('<br>') + '</p>';
+    if (parsed.comma) h += '<p class="di-movers-hint" style="color:#8f5f12">' + esc(w.comma) + '</p>';
     if (!r.lines.length) return h + '<p class="di-movers-hint">' + esc(fill(w.skipped, { n: r.skipped })) + '</p>';
     var diff = r.paid - r.mkt, pct = r.mkt ? diff / r.mkt * 100 : 0, up = diff > 0, buy = MODE === 'buy';
     var sentence = Math.abs(diff) < 0.005 ? fill(buy ? w.sB : w.sS, { q: nf(r.q), u0: UL(s.unit), p: nf(r.paid), u: u, m: nf(r.mkt), d: nf(0), dir: w.eq, x: nf(0, 1), t: nf(0), tdir: w.eq })
