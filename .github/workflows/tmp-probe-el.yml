@@ -13,4 +13,4 @@ jobs:
       - run: |
           python3 probe/el1.py > probe/el1.log 2>&1 || true
           git config user.name probe; git config user.email probe@x
-          git add -f probe/el-out probe/el1.log; git commit -qm "probe out" || true; git push || true
+          git add -f probe/el1.log; git add -f probe/el-out/* || true; git commit -qm "probe out" || true; git push || true
