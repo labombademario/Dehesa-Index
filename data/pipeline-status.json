@@ -1,28 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-19T15:02:00Z",
+ "generatedAt": "2026-10-19T15:41:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 219,
+  "ok": 221,
   "late": 1,
   "error": 1,
-  "not_run": 1,
-  "unknown": 1
+  "not_run": 0,
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "54edcf53",
+   "sha": "41452d7c",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/a5ca87bd-040f-4252-975f-f629ceb49d59",
-   "completedAt": "2026-10-19T14:22:59Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/99db37f2-1c9d-497b-9825-59d978ea8438",
+   "completedAt": "2026-10-19T15:18:52Z"
   },
-  "lagHours": null,
-  "prodGeneratedAt": null,
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-19T12:53:49.813208+00:00",
   "repoGeneratedAt": "2026-10-19T12:53:49.813208+00:00",
-  "checkedAt": "2026-10-19T15:02:00Z"
+  "checkedAt": "2026-10-19T15:41:00Z"
  },
  "pipelines": [
   {
@@ -581,7 +581,7 @@
    "crons": [
     "35 15 * * 1,4"
    ],
-   "nextRun": "2026-10-19T15:35:00Z",
+   "nextRun": "2026-10-22T15:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1173,9 +1173,19 @@
    ],
    "nextRun": "2026-10-22T09:20:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-19T15:15:13Z",
+    "durationSec": 34,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39276329100"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 600.0
   },
   {
@@ -1834,9 +1844,19 @@
    ],
    "nextRun": "2026-11-14T09:40:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-19T15:15:11Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39276325200"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
@@ -2656,7 +2676,7 @@
    "crons": [
     "30 15 * * 1,4"
    ],
-   "nextRun": "2026-10-19T15:30:00Z",
+   "nextRun": "2026-10-22T15:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3258,7 +3278,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-19T15:17:00Z",
+   "nextRun": "2026-10-19T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -3289,8 +3309,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39254935125"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -3492,11 +3512,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-19T15:10:00Z",
+   "nextRun": "2026-10-19T18:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-19T14:19:01Z"
+     "lastChange": "2026-10-19T15:08:44Z"
     },
     {
      "path": "data/data-quality.json",
@@ -3504,7 +3524,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-19T12:51:51Z"
+     "lastChange": "2026-10-19T15:08:44Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3551,7 +3571,7 @@
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-19T12:51:51Z"
+     "lastChange": "2026-10-19T15:08:44Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -3622,8 +3642,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39254804306"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4820,7 +4840,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-10-19T15:20:00Z",
+   "nextRun": "2026-10-20T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
