@@ -35,9 +35,12 @@ silvicultura 21 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 5 series
+  todo a cero, se oculta aq2b ('F00',)
+  todo a cero, se oculta aq2b ('F01',)
+  todo a cero, se oculta aq2b ('F07',)
+acuicultura 2 series
 ecologico 12 series
-BE series 76
+BE series 73
 previsiones 7 series
 mensuales 11 series
 ambiente 2 series
@@ -45,9 +48,12 @@ silvicultura 23 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 4 series
+  todo a cero, se oculta aq2b ('F00',)
+  todo a cero, se oculta aq2b ('F01',)
+  todo a cero, se oculta aq2b ('F07',)
+acuicultura 3 series
 ecologico 0 series
-AT series 63
+AT series 62
 previsiones 10 series
 mensuales 11 series
 ambiente 2 series
@@ -55,9 +61,10 @@ silvicultura 23 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 4 series
+  todo a cero, se oculta aq2b ()
+acuicultura 3 series
 ecologico 9 series
-PT series 75
+PT series 74
 previsiones 9 series
 mensuales 14 series
 ambiente 3 series
@@ -85,9 +92,12 @@ silvicultura 21 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 5 series
+  todo a cero, se oculta aq2b ('F00',)
+  todo a cero, se oculta aq2b ('F01',)
+  todo a cero, se oculta aq2b ('F07',)
+acuicultura 2 series
 ecologico 11 series
-NL series 82
+NL series 79
 previsiones 7 series
 mensuales 14 series
 ambiente 6 series
@@ -115,9 +125,10 @@ silvicultura 9 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 4 series
+  todo a cero, se oculta aq2b ()
+acuicultura 3 series
 ecologico 12 series
-IE series 70
+IE series 69
 previsiones 7 series
 mensuales 13 series
 ambiente 4 series
@@ -145,9 +156,10 @@ silvicultura 21 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 5 series
-acuicultura 3 series
+  todo a cero, se oculta aq2b ()
+acuicultura 2 series
 ecologico 10 series
-HR series 79
+HR series 78
 previsiones 7 series
 mensuales 13 series
 ambiente 8 series
@@ -155,9 +167,12 @@ silvicultura 23 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 3 series
+  todo a cero, se oculta aq2b ('F00',)
+  todo a cero, se oculta aq2b ('F01',)
+  todo a cero, se oculta aq2b ('F07',)
+acuicultura 2 series
 ecologico 10 series
-LT series 80
+LT series 79
 previsiones 7 series
 mensuales 12 series
 ambiente 7 series
@@ -165,9 +180,12 @@ silvicultura 23 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 6 series
+  todo a cero, se oculta aq2b ('F00',)
+  todo a cero, se oculta aq2b ('F01',)
+  todo a cero, se oculta aq2b ('F07',)
+acuicultura 3 series
 ecologico 11 series
-SK series 82
+SK series 79
 previsiones 7 series
 mensuales 14 series
 ambiente 8 series
@@ -175,9 +193,12 @@ silvicultura 22 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 6 series
+  todo a cero, se oculta aq2b ('F00',)
+  todo a cero, se oculta aq2b ('F01',)
+  todo a cero, se oculta aq2b ('F07',)
+acuicultura 3 series
 ecologico 12 series
-CZ series 85
+CZ series 82
 previsiones 7 series
 mensuales 13 series
 ambiente 7 series
@@ -205,9 +226,10 @@ silvicultura 23 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 5 series
-acuicultura 3 series
+  todo a cero, se oculta aq2b ()
+acuicultura 2 series
 ecologico 3 series
-LV series 73
+LV series 72
 previsiones 9 series
 mensuales 14 series
 ambiente 7 series
@@ -225,9 +247,12 @@ silvicultura 23 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 6 series
-acuicultura 3 series
+  todo a cero, se oculta aq2b ('F00',)
+  todo a cero, se oculta aq2b ('F01',)
+  todo a cero, se oculta aq2b ('F07',)
+acuicultura 2 series
 ecologico 12 series
-SE series 75
+SE series 74
 previsiones 7 series
 mensuales 12 series
 ambiente 8 series
@@ -235,9 +260,10 @@ silvicultura 23 series
 energia 10 series
   sin unidad, se omite farm ()
 lacteo 3 series
-acuicultura 3 series
+  todo a cero, se oculta aq2b ()
+acuicultura 2 series
 ecologico 11 series
-SI series 77
+SI series 76
 previsiones 9 series
 mensuales 2 series
 ambiente 2 series
