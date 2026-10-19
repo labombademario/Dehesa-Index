@@ -445,8 +445,8 @@ sources:
     cron: ['40 18 * * 4']
     pre: ['pip install openpyxl']
     script: scripts/update-uruguay.py
-    timeout: 30
-    script_timeout: 20
+    timeout: 55
+    script_timeout: 45
     data: [uruguay-stats.json, uruguay-departments.json, uy-ghg-agri.json]
     log: uruguay-log.txt
     message: Datos Uruguay (INIA, MGAP, URSEA)

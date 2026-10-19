@@ -217,4 +217,26 @@ ok('GEI: anio con factor de CH4 distinto (30 en vez de 28) se descarta', d is no
 ok('GEI: el anio descartado queda anotado', any('factor' in l for l in mod.LOG))
 mod.LOG.clear(); ok('GEI: menos de 10 anios no se publica', mod.ghg_parse(ghg_xlsx(range(2018, 2022))) is None)
 
+# --- Bosque plantado (GeoJSON en streaming, suma por departamento) ---
+def fgeo(items):
+    f = ',\n'.join('{ "type": "Feature", "properties": { "Especie": %s, "Area_Has": %s, "DEPTO": %s }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 1.5, 2.5 ], [ 3.5, 4.5 ], [ 1.5, 2.5 ] ] ] } }' % (json.dumps(e, ensure_ascii=False), a, json.dumps(d, ensure_ascii=False)) for e, a, d in items)
+    return '{\n"type": "FeatureCollection", "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32721" } },\n"features": [\n' + f + '\n]\n}'
+FI = [('Eucalyptus grandis (inc. híbridos y clones) y E. saligna', 400000.5, 'RIO NEGRO'), ('Pinus spp.', 300000, 'RIVERA'), ('Eucalyptus globulus', 100000, 'PAYSANDÚ'),
+      ('Otras especies', 50000, 'TREINTA Y TRES'), ('Pinus spp.', 150000.25, 'Rivera'), ('Eucalyptus globulus', 20000, 'DURAZNO')]
+raw = fgeo(FI).encode('utf-8')
+def trozos(b, size):
+    import codecs
+    dec = codecs.getincrementaldecoder('utf-8')('replace')
+    for i in range(0, len(b), size): yield dec.decode(b[i:i + size])
+    yield dec.decode(b'', True)
+for size in (7, 64, 1000, 10 ** 7):   # trozos arbitrarios, incluidos cortes dentro de un caracter multibyte
+    acc, spp, n = mod.forest_sum(trozos(raw, size))
+    ok('bosque: %d poligonos con trozos de %d bytes' % (n, size), n == 6)
+    ok('bosque: suma por departamento y grupo (trozos de %d)' % size, abs(acc[('RIVERA', 'pinus')] - 450000.25) < 1e-6 and abs(acc[('PAYSANDU', 'eucalyptus')] - 100000) < 1e-6 and ('TREINTA Y TRES', 'other') in acc)
+res = mod.forest_result(acc, n)
+ok('bosque: resultado por ISO', res and res['RV']['total'] == 450000 and res['PA']['eucalyptus'] == 100000 and res['TT']['other'] == 50000 and abs(res['RN']['total'] - 400000.5) <= 1)
+ok('bosque: fuera de rango no se publica', mod.forest_result({('RIVERA', 'pinus'): 5000.0}, 1) is None)
+ok('bosque: departamento desconocido con mucha superficie no se publica', mod.forest_result({('RIVERA', 'pinus'): 900000.0, ('ATLANTIDA', 'pinus'): 100000.0}, 2) is None)
+
+
 print('test-uruguay:', 'OK' if not fails else '%d fallos' % len(fails)); sys.exit(1 if fails else 0)

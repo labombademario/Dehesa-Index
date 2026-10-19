@@ -549,16 +549,16 @@
   }
   var UYT = {
     es: { h1: 'Ganado y tierra', sub: 'Existencias de ganado declaradas a DICOSE y precios de la tierra del Ministerio de Ganadería (MGAP) del departamento en el último año publicado, y su peso en el total de Uruguay.', c0: 'Concepto', c1: 'Último año', c2: 'Valor', c3: 'Frente al año anterior', c4: 'Parte de Uruguay', c5: 'Puesto',
-      sp: { cattle: 'Bovinos (cabezas)', sheep: 'Ovinos (cabezas)', 'dairy-cattle': 'Bovinos de leche (cabezas)' }, sale: 'Compraventa de tierra (USD/ha)', rent: 'Arrendamiento de tierra (USD/ha al año)',
+      forest: 'Bosque plantado (ha)', fnote: 'Bosque plantado: superficie de la cartografía forestal nacional del MGAP (imágenes Sentinel-2) sumada por departamento. Es una edición puntual, no una serie anual, y no se compara con otros años.', sp: { cattle: 'Bovinos (cabezas)', sheep: 'Ovinos (cabezas)', 'dairy-cattle': 'Bovinos de leche (cabezas)' }, sale: 'Compraventa de tierra (USD/ha)', rent: 'Arrendamiento de tierra (USD/ha al año)',
       note: 'Existencias DICOSE «propios y ajenos dentro del establecimiento» al departamento donde está registrado el tenedor, que puede diferir de donde pastan los animales; bovinos y bovinos de leche son categorías distintas y no se suman. Tierra: promedio ponderado por hectárea de las operaciones del año; solo se publica con los dos semestres. El puesto ordena los departamentos con dato.' },
     en: { h1: 'Livestock and land', sub: 'Livestock declared to DICOSE and land prices from the Ministry of Livestock (MGAP) for the department in the latest published year, and its share of Uruguay’s total.', c0: 'Item', c1: 'Latest year', c2: 'Value', c3: 'Vs previous year', c4: 'Share of Uruguay', c5: 'Rank',
-      sp: { cattle: 'Cattle (head)', sheep: 'Sheep (head)', 'dairy-cattle': 'Dairy cattle (head)' }, sale: 'Land sales (USD/ha)', rent: 'Land rent (USD/ha per year)',
+      forest: 'Planted forest (ha)', fnote: 'Planted forest: area from the national forest map of the Ministry of Livestock (MGAP, Sentinel-2 imagery) summed by department. It is a single edition, not an annual series, and is not compared with other years.', sp: { cattle: 'Cattle (head)', sheep: 'Sheep (head)', 'dairy-cattle': 'Dairy cattle (head)' }, sale: 'Land sales (USD/ha)', rent: 'Land rent (USD/ha per year)',
       note: 'DICOSE holdings “own and others’ animals inside the holding” are assigned to the department where the holder is registered, which can differ from where the animals graze; cattle and dairy cattle are separate categories and are not added up. Land: hectare-weighted average of the year’s transactions; published only when both half-years exist. Rank orders the departments that have data.' },
     fr: { h1: 'Élevage et terres', sub: 'Cheptel déclaré à la DICOSE et prix des terres du ministère de l’Élevage (MGAP) pour le département lors de la dernière année publiée, et sa part dans le total de l’Uruguay.', c0: 'Poste', c1: 'Dernière année', c2: 'Valeur', c3: 'Par rapport à l’année précédente', c4: 'Part de l’Uruguay', c5: 'Rang',
-      sp: { cattle: 'Bovins (têtes)', sheep: 'Ovins (têtes)', 'dairy-cattle': 'Bovins laitiers (têtes)' }, sale: 'Vente de terres (USD/ha)', rent: 'Fermage des terres (USD/ha par an)',
+      forest: 'Forêt plantée (ha)', fnote: 'Forêt plantée : superficie de la cartographie forestière nationale du MGAP (images Sentinel-2) additionnée par département. C’est une édition ponctuelle, pas une série annuelle, et elle n’est pas comparée à d’autres années.', sp: { cattle: 'Bovins (têtes)', sheep: 'Ovins (têtes)', 'dairy-cattle': 'Bovins laitiers (têtes)' }, sale: 'Vente de terres (USD/ha)', rent: 'Fermage des terres (USD/ha par an)',
       note: 'Effectifs DICOSE « propres et d’autrui dans l’exploitation » rattachés au département où le détenteur est enregistré, qui peut différer de celui où paissent les animaux ; bovins et bovins laitiers sont des catégories distinctes, non additionnées. Terres : moyenne pondérée à l’hectare des transactions de l’année ; publiée seulement avec les deux semestres. Le rang classe les départements disposant de données.' },
     it: { h1: 'Bestiame e terra', sub: 'Capi dichiarati alla DICOSE e prezzi della terra del Ministero dell’Allevamento (MGAP) per il dipartimento nell’ultimo anno pubblicato, e la sua quota sul totale dell’Uruguay.', c0: 'Voce', c1: 'Ultimo anno', c2: 'Valore', c3: 'Rispetto all’anno prima', c4: 'Quota dell’Uruguay', c5: 'Posizione',
-      sp: { cattle: 'Bovini (capi)', sheep: 'Ovini (capi)', 'dairy-cattle': 'Bovini da latte (capi)' }, sale: 'Compravendita di terra (USD/ha)', rent: 'Affitto di terra (USD/ha all’anno)',
+      forest: 'Bosco piantato (ha)', fnote: 'Bosco piantato: superficie della cartografia forestale nazionale del MGAP (immagini Sentinel-2) sommata per dipartimento. È un’edizione puntuale, non una serie annuale, e non è confrontata con altri anni.', sp: { cattle: 'Bovini (capi)', sheep: 'Ovini (capi)', 'dairy-cattle': 'Bovini da latte (capi)' }, sale: 'Compravendita di terra (USD/ha)', rent: 'Affitto di terra (USD/ha all’anno)',
       note: 'Consistenze DICOSE «propri e altrui nello stabilimento» assegnate al dipartimento in cui è registrato il detentore, che può differire da quello dove pascolano gli animali; bovini e bovini da latte sono categorie distinte e non si sommano. Terra: media ponderata per ettaro delle operazioni dell’anno; pubblicata solo con i due semestri. La posizione ordina i dipartimenti con dati.' } };
   function uyDept(x) {
     return get('data/uruguay-departments.json').then(function (d) {
@@ -578,8 +578,13 @@
         var py = String(+y - 1), ks = Object.keys(S[y]), better = 0; ks.forEach(function (k) { if (S[y][k].usdHa > S[y][r].usdHa) better++; });
         line(L[kd], y, S[y][r].usdHa, S[py] && S[py][r] && S[py][r].usdHa, 0, better + 1, ks.length, 0);
       });
+      var F = d.forest && d.forest.byDept;
+      if (F && F[r] && F[r].total > 0) {
+        var fk = Object.keys(F), ft = 0, fb = 0; fk.forEach(function (k) { ft += F[k].total; if (F[k].total > F[r].total) fb++; });
+        line(L.forest, d.forest.year, F[r].total, null, ft, fb + 1, fk.length, 0);
+      }
       if (!rows.length) return null;
-      var body = table([L.c0, L.c1, L.c2, L.c3, L.c4, L.c5], rows, 620) + '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(L.note) + '</p>';
+      var body = table([L.c0, L.c1, L.c2, L.c3, L.c4, L.c5], rows, 620) + '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(L.note + (F && F[r] ? ' ' + L.fnote : '')) + '</p>';
       return card(L.h1, L.sub, body, cite('uruguay_datos_abiertos', last(d.livestock.cattle)));
     });
   }

@@ -438,34 +438,94 @@ def scan():
     log('CATALOGO: %d conjuntos distintos' % n)
 
 
-def probe_forest():
-    """Sonda de solo lectura de la cartografia forestal (MGAP): tamano, cabecera y atributos del primer elemento. No publica datos."""
+FOREST_RES = '99dd17a8-ca56-4cee-8b17-c513dbe1d5ff'   # Cartografia de bosque plantado 2018, capa especies (GeoJSON; cada poligono trae Especie, Area_Has y DEPTO)
+FOREST_YEAR = 2018
+FOREST_RANGE = (700000.0, 1600000.0)   # ha plantadas en todo el pais: fuera de este rango el fichero no es lo esperado y no se publica
+
+
+def _norm(t):
+    import unicodedata
+    return ''.join(c for c in unicodedata.normalize('NFKD', str(t)) if not unicodedata.combining(c)).strip().upper()
+
+
+FOREST_ISO = {_norm(n): i for _, n, i in UY_DEPTS}
+
+
+def forest_group(sp):
+    t = _norm(sp)
+    if t.startswith('EUCALYPTUS') or t.startswith('E.'): return 'eucalyptus'
+    if t.startswith('PINUS') or t.startswith('P.'): return 'pinus'
+    return 'other'
+
+
+def forest_chunks(u, chunk=1 << 22):
+    """GeoJSON grande en streaming (se reanuda con Range si la conexion se corta)."""
+    import codecs
+    dec = codecs.getincrementaldecoder('utf-8')('replace'); off = 0; fails = 0
+    while True:
+        try:
+            h = dict(UA)
+            if off: h['Range'] = 'bytes=%d-' % off
+            with urllib.request.urlopen(urllib.request.Request(u, headers=h), timeout=120) as r:
+                if off and r.status != 206: raise RuntimeError('el servidor no admite Range')
+                while True:
+                    b = r.read(chunk)
+                    if not b: yield dec.decode(b'', True); return
+                    off += len(b); yield dec.decode(b)
+        except Exception as e:
+            fails += 1
+            if fails > 6: raise RuntimeError('descarga forestal cortada en %d bytes: %s' % (off, e))
+            time.sleep(8 * fails)
+
+
+def forest_sum(chunks):
+    """Suma Area_Has por (DEPTO, grupo de especie) leyendo solo los bloques "properties" (planos, sin llaves anidadas)."""
+    pat = re.compile(r'"properties"\s*:\s*(\{[^{}]*\})'); acc = {}; spp = {}; nfeat = 0; buf = ''
+    for ch in chunks:
+        buf += ch; last = 0
+        for m in pat.finditer(buf):
+            last = m.end()
+            try: pr = json.loads(m.group(1))
+            except ValueError: continue
+            a = pr.get('Area_Has'); d = pr.get('DEPTO'); e = pr.get('Especie')
+            if not isinstance(a, (int, float)) or not d or a < 0: continue
+            nfeat += 1; k = (_norm(d), forest_group(e)); acc[k] = acc.get(k, 0.0) + a
+            spp[e] = spp.get(e, 0.0) + a
+        rest = buf[last:]; j = rest.rfind('"properties"')
+        buf = rest[j:] if j >= 0 else rest[-64:]
+    return acc, spp, nfeat
+
+
+def forest_result(acc, nfeat):
+    """De (depto, grupo)->ha a {iso: {total, eucalyptus, pinus, other}}. None si el total no es plausible o hay departamentos sin reconocer."""
+    tot = sum(acc.values())
+    if not (FOREST_RANGE[0] <= tot <= FOREST_RANGE[1]):
+        log('BOSQUE total fuera de rango (%.0f ha, %d poligonos): no se publica' % (tot, nfeat)); return None
+    out = {}; bad = 0.0
+    for (d, g), ha in acc.items():
+        i = FOREST_ISO.get(d)
+        if not i: bad += ha; log('BOSQUE departamento no reconocido: %r (%.0f ha)' % (d, ha)); continue
+        o = out.setdefault(i, {'total': 0.0, 'eucalyptus': 0.0, 'pinus': 0.0, 'other': 0.0}); o[g] += ha; o['total'] += ha
+    if bad > tot * 0.005:
+        log('BOSQUE demasiada superficie sin departamento (%.1f%%): no se publica' % (100 * bad / tot)); return None
+    return {i: {k: round(v) for k, v in o.items()} for i, o in sorted(out.items())}
+
+
+def forest():
     if LOCAL: return
-    for name in ('mgap-bosques-plantados-forestacion', 'mgap-bosque-nativo'):
-        try: pk = package(name)
-        except Exception as e: log('BOSQUE', name, e); continue
-        for r in pk.get('resources', []):
-            u = r.get('url') or ''
-            if not u: continue
-            lab = '%s | %s | %s' % (name[:24], (r.get('format') or '?'), (r.get('name') or '')[:60])
-            try:
-                rq = urllib.request.Request(u, headers=dict(UA, Range='bytes=0-65535'))
-                with urllib.request.urlopen(rq, timeout=60) as resp:
-                    code = resp.status; cr = resp.headers.get('Content-Range'); cl = resp.headers.get('Content-Length'); head = resp.read(65536)
-                log('BOSQUE %s | http=%s range=%s len=%s magic=%r' % (lab, code, cr, cl, head[:8]))
-                t = head.decode('utf-8', 'ignore')
-                if '"features"' in t or 'FeatureCollection' in t:
-                    i = t.find('"features"'); log('BOSQUE   cabecera: ' + t[:min(i if i > 0 else 300, 400)].replace('\n', ' '))
-                    j = t.find('"properties"'); log('BOSQUE   primer elemento: ' + t[j:j + 400].replace('\n', ' '))
-                elif t.lstrip().startswith('<'):
-                    log('BOSQUE   kml: ' + t[:300].replace('\n', ' '))
-            except Exception as e: log('BOSQUE %s | error %s' % (lab, str(e)[:160]))
+    pk = package('mgap-bosques-plantados-forestacion')
+    r = next((x for x in pk.get('resources', []) if x.get('id') == FOREST_RES), None)
+    if not r or not r.get('url'): raise RuntimeError('recurso forestal no encontrado')
+    acc, spp, nfeat = forest_sum(forest_chunks(r['url']))
+    log('BOSQUE %d poligonos, %.0f ha en total; especies: %s' % (nfeat, sum(acc.values()), '; '.join('%s=%.0f' % (k[:40], v) for k, v in sorted(spp.items(), key=lambda t: -t[1])[:12])))
+    res = forest_result(acc, nfeat)
+    if res: DEPT['forest'] = {'year': FOREST_YEAR, 'unit': 'ha', 'byDept': res}; log('BOSQUE publicado: %d departamentos, %d ha' % (len(res), sum(v['total'] for v in res.values())))
 
 
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, scan, probe_forest):
+    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, forest, scan):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
     if not OUT: log('sin series'); sys.exit(1)
@@ -475,8 +535,9 @@ def main():
         'license': 'Licencia de Datos Abiertos - Uruguay (odc-uy); Dehesa Index calcula medias, sumas y ponderaciones sin aval del proveedor'},
         'series': [OUT[k] for k in sorted(OUT)]}}}
     ddoc = {'schemaVersion': 1, 'generatedAt': now, 'source': doc['countries']['UY']['source'],
-            'note': 'Departamentos por sufijo ISO 3166-2 (id del mapa) y codigo numerico alfabetico INE/AGESIC (el de DICOSE y MGAP). Existencias: DICOSE PD_AD por departamento donde esta registrado el tenedor (puede diferir del departamento donde pastan los animales). Tierra: solo departamentos con los dos semestres; USD/ha ponderado.',
+            'note': 'Departamentos por sufijo ISO 3166-2 (id del mapa) y codigo numerico alfabetico INE/AGESIC (el de DICOSE y MGAP). Existencias: DICOSE PD_AD por departamento donde esta registrado el tenedor (puede diferir del departamento donde pastan los animales). Tierra: solo departamentos con los dos semestres; USD/ha ponderado. Bosque plantado: suma de Area_Has por departamento de la cartografia forestal 2018 del MGAP (una edicion, no una serie).',
             'departments': [{'iso': i, 'code': c, 'name': n} for c, n, i in UY_DEPTS], 'livestock': DEPT['livestock'], 'land': DEPT['land']}
+    if DEPT.get('forest'): ddoc['forest'] = DEPT['forest']
     log('series guardadas:', len(OUT))
     if GHG.get('doc'): (( Path(sys.argv[sys.argv.index('--out') + 1]) if '--out' in sys.argv else ROOT / 'data') / 'uy-ghg-agri.json').write_text(json.dumps(GHG['doc'], ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     out = Path(sys.argv[sys.argv.index('--out') + 1]) if '--out' in sys.argv else ROOT / 'data'
