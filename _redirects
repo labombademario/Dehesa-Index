@@ -1,0 +1,2 @@
+# security.txt (RFC 9116): se sirve tambien en /.well-known/ aunque el despliegue no publique las carpetas que empiezan por punto
+/.well-known/security.txt /security.txt 200

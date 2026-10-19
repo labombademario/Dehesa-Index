@@ -68,6 +68,9 @@ for (const [u, h] of pages) ok(/<meta name="referrer" content="strict-origin-whe
 const sec = await readFile(path.join(root, '.well-known/security.txt'), 'utf8').catch(() => '');
 const exp = (sec.match(/^Expires:\s*(\S+)/m) || [])[1];
 ok(/^Contact:\s*mailto:\S+@\S+/m.test(sec), 'security.txt: falta Contact');
+const sec2 = await readFile(path.join(root, 'security.txt'), 'utf8').catch(() => ''); const rd = await readFile(path.join(root, '_redirects'), 'utf8').catch(() => '');
+ok(sec2 === sec && sec !== '', 'security.txt: la copia de la raiz debe ser identica a .well-known/security.txt');
+ok(/^\/\.well-known\/security\.txt\s+\/security\.txt\s+200\b/m.test(rd), '_redirects: falta la regla que sirve /.well-known/security.txt');
 ok(exp && new Date(exp) > new Date(Date.now() + 30 * 864e5), 'security.txt: Expires caduca en menos de 30 dias (renovar)');
 ok(/\.well-known/.test(await readFile(path.join(root, '_config.yml'), 'utf8').catch(() => '')), '_config.yml: no incluye .well-known (GitHub Pages lo ignoraria)');
 console.log('SEO QA: ' + checks + ' comprobaciones, ' + locs.length + ' URLs, ' + gated + ' landings con noindex por pocos datos');
