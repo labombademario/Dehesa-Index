@@ -360,6 +360,8 @@ jobs:
         run: node scripts/test-embed.mjs
       - name: Mis compras y comparador de facturas (mercado de la API, guardado local, importar y exportar, rechazos)
         run: node scripts/test-compras.mjs
+      - name: Coste de una receta (recalculado aparte desde la API, conversion de unidades, monedas, importar y exportar)
+        run: node scripts/test-receta.mjs
       - name: Ficha de producto, barra contextual y marcas dato / lectura / relación (4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
