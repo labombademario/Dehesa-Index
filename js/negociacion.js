@@ -19,7 +19,7 @@
       sT: 'Fuentes y licencias', sCols: ['Mercado', 'Fuente', 'Licencia', 'Uso comercial', 'Qué mide'], v: { apto: 'Apto', condiciones: 'Con condiciones' },
       mtT: 'Cómo se calcula', mt: ['La variación a 12 meses compara el último dato con el más cercano a un año antes (con un margen de tolerancia según la frecuencia). Si no hay dato, no se calcula.', 'La posición frente a 5 años es el porcentaje de datos de los últimos cinco años que son iguales o más baratos que el actual. No es una previsión.', 'Los datos son los de cada fuente, sin estimar ni rellenar huecos. Cita la fuente con el texto de atribución. Esto no es asesoramiento financiero ni jurídico.'],
       M: { us: 'EE. UU.', eu: 'Unión Europea', uk: 'Reino Unido', ca: 'Canadá' }, up: 'sube', down: 'baja', per: { weekly: 'semanal', monthly: 'mensual', daily: 'diaria', quarterly: 'trimestral' },
-      more: 'Más datos de este producto', ctaT: '¿Lo quieres con tus propios datos de compra o venta?', ctaB: 'Escríbenos', cmp: 'Comparar mis facturas con el mercado'
+      more: 'Más datos de este producto', ctaT: '¿Lo quieres con tus propios datos de compra o venta?', ctaB: 'Escríbenos', cmp: 'Comparar mis facturas con el mercado', wid: 'Widget de este precio para tu web'
     },
     en: {
       title: 'Negotiation report', h1: 'Negotiation report for one product',
@@ -35,7 +35,7 @@
       sT: 'Sources and licences', sCols: ['Market', 'Source', 'Licence', 'Commercial use', 'What it measures'], v: { apto: 'Fit', condiciones: 'With conditions' },
       mtT: 'How it is calculated', mt: ['The 12-month change compares the latest data point with the one closest to a year earlier (within a tolerance that depends on frequency). If there is none, it is not calculated.', 'The 5-year position is the share of the last five years’ data that is equal to or cheaper than the current figure. It is not a forecast.', 'Data are each source’s own, with no estimates and no gap filling. Credit the source with its attribution text. This is not financial or legal advice.'],
       M: { us: 'United States', eu: 'European Union', uk: 'United Kingdom', ca: 'Canada' }, up: 'up', down: 'down', per: { weekly: 'weekly', monthly: 'monthly', daily: 'daily', quarterly: 'quarterly' },
-      more: 'More data on this product', ctaT: 'Want it with your own purchase or sales data?', ctaB: 'Contact us', cmp: 'Compare my invoices with the market'
+      more: 'More data on this product', ctaT: 'Want it with your own purchase or sales data?', ctaB: 'Contact us', cmp: 'Compare my invoices with the market', wid: 'Widget of this price for your website'
     },
     fr: {
       title: 'Rapport de négociation', h1: 'Rapport de négociation pour un produit',
@@ -51,7 +51,7 @@
       sT: 'Sources et licences', sCols: ['Marché', 'Source', 'Licence', 'Usage commercial', 'Ce que mesure la série'], v: { apto: 'Apte', condiciones: 'Sous conditions' },
       mtT: 'Comment c’est calculé', mt: ['La variation sur 12 mois compare la dernière donnée à celle la plus proche d’un an plus tôt (avec une tolérance selon la fréquence). Sans donnée, pas de calcul.', 'La position face à 5 ans est la part des données des cinq dernières années égales ou moins chères que le chiffre actuel. Ce n’est pas une prévision.', 'Les données sont celles de chaque source, sans estimation ni comblement des trous. Citez la source avec son texte d’attribution. Ceci n’est pas un conseil financier ni juridique.'],
       M: { us: 'États-Unis', eu: 'Union européenne', uk: 'Royaume-Uni', ca: 'Canada' }, up: 'hausse', down: 'baisse', per: { weekly: 'hebdomadaire', monthly: 'mensuelle', daily: 'quotidienne', quarterly: 'trimestrielle' },
-      more: 'Plus de données sur ce produit', ctaT: 'Vous le voulez avec vos propres données d’achat ou de vente ?', ctaB: 'Nous écrire', cmp: 'Comparer mes factures au marché'
+      more: 'Plus de données sur ce produit', ctaT: 'Vous le voulez avec vos propres données d’achat ou de vente ?', ctaB: 'Nous écrire', cmp: 'Comparer mes factures au marché', wid: 'Widget de ce prix pour votre site'
     },
     it: {
       title: 'Rapporto di negoziazione', h1: 'Rapporto di negoziazione per un prodotto',
@@ -67,7 +67,7 @@
       sT: 'Fonti e licenze', sCols: ['Mercato', 'Fonte', 'Licenza', 'Uso commerciale', 'Cosa misura'], v: { apto: 'Idoneo', condiciones: 'Con condizioni' },
       mtT: 'Come si calcola', mt: ['La variazione a 12 mesi confronta l’ultimo dato con quello più vicino a un anno prima (con una tolleranza secondo la frequenza). Se manca, non si calcola.', 'La posizione rispetto a 5 anni è la quota dei dati degli ultimi cinque anni uguali o più economici della cifra attuale. Non è una previsione.', 'I dati sono quelli di ogni fonte, senza stime né riempimento dei vuoti. Cita la fonte con il suo testo di attribuzione. Questa non è consulenza finanziaria né legale.'],
       M: { us: 'Stati Uniti', eu: 'Unione europea', uk: 'Regno Unito', ca: 'Canada' }, up: 'sale', down: 'scende', per: { weekly: 'settimanale', monthly: 'mensile', daily: 'giornaliera', quarterly: 'trimestrale' },
-      more: 'Altri dati su questo prodotto', ctaT: 'Lo vuoi con i tuoi dati di acquisto o vendita?', ctaB: 'Scrivici', cmp: 'Confronta le mie fatture con il mercato'
+      more: 'Altri dati su questo prodotto', ctaT: 'Lo vuoi con i tuoi dati di acquisto o vendita?', ctaB: 'Scrivici', cmp: 'Confronta le mie fatture con il mercato', wid: 'Widget di questo prezzo per il tuo sito'
     }
   };
   var IDX = null, LAT = null, CLI = null, SER = {}, FAILED = false, PROD = '', COOP = '', LOADING = 0;
@@ -186,7 +186,7 @@
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.wT) + '</h3>' + climateHtml(w);
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.sT) + '</h3>' + table(w.sCols, src);
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.mtT) + '</h3>' + w.mt.map(function (p) { return '<p class="ic-foot" style="font-size:12px">' + esc(p) + '</p>'; }).join('') + '</article>';
-    h += '<p class="di-movers-hint no-print"><a href="producto.html?p=' + encodeURIComponent(PROD) + '">' + esc(w.more) + '</a> · <a href="mi-explotacion.html">' + esc(w.cmp) + '</a></p>';
+    h += '<p class="di-movers-hint no-print"><a href="producto.html?p=' + encodeURIComponent(PROD) + '">' + esc(w.more) + '</a> · <a href="comparador-facturas.html">' + esc(w.cmp) + '</a>' + (ss.length ? ' · <a href="widgets.html?s=' + encodeURIComponent(ss[0].id) + '">' + esc(w.wid) + '</a>' : '') + '</p>';
     h += '<section class="di-card di-emp-cta no-print" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.ctaT) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaB) + '</a></section>';
     root.innerHTML = h; bind();
   }

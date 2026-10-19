@@ -356,6 +356,8 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-home-today.mjs
+      - name: Widget insertable (misma cifra que la API, fuente siempre visible, escapado, cargador desde otra web, cabeceras)
+        run: node scripts/test-embed.mjs
       - name: Ficha de producto, barra contextual y marcas dato / lectura / relación (4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

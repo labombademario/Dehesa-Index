@@ -10,3 +10,16 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
   Cache-Control: public, max-age=300
+
+# Widget insertable: es la unica pagina que se puede enmarcar desde otras webs (el resto sigue en SAMEORIGIN).
+/embed
+  ! X-Frame-Options
+  Content-Security-Policy: frame-ancestors *
+  Cache-Control: public, max-age=300
+/embed.html
+  ! X-Frame-Options
+  Content-Security-Policy: frame-ancestors *
+  Cache-Control: public, max-age=300
+/js/embed.js
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
