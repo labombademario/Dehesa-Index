@@ -1,0 +1,16 @@
+name: tmp-probe-fr
+on:
+  push:
+    branches: [research/probe-fr-agreste]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          python3 probe/fr.py > probe/fr.log 2>&1 || true
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/fr.log probe/fr-out; git commit -qm "probe out" || true; git pull -q --rebase; git push || true
