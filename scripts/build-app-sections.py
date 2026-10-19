@@ -401,7 +401,7 @@ def exportaciones_us():
                    stat('Ya embarcado|Already shipped|Déjà expédié|Già spedito', (tt.get('acc') or 0) / 1000, 'kt', 0),
                    stat('Ventas netas de la semana|Net sales this week|Ventes nettes de la semaine|Vendite nette della settimana', (tt.get('net') or 0) / 1000, 'kt', 1)],
             charts=[chart('Embarques acumulados|Cumulative exports|Exportations cumulées|Esportazioni cumulate', 'kt', [(c['my'], [[w['w'], round((w.get('acc') or 0) / 1000, 1)] for w in c.get('weekly', [])])])],
-            bars=[bars('Principales destinos (comprometido)|Top destinations (committed)|Principales destinations (engagé)|Principali destinazioni (impegnato)', 'kt', [({l: n for l in L4}, v / 1000) for n, v in tops], 0)] if tops else None,
+            bars=[bars('Principales destinos (comprometido)|Top destinations (committed)|Principales destinations (engagé)|Principali destinazioni (impegnato)', 'kt', [(n, v / 1000) for n, v in tops], 0)] if tops else None,
             source={'name': 'USDA FAS, Export Sales', 'url': 'https://apps.fas.usda.gov/export-sales/esrd1.html'}))
     return {'id': 'exportaciones-us', 'title': t4('Exportaciones de EE. UU. (semanales)|US export sales (weekly)|Ventes à l’export des États-Unis|Vendite all’export degli USA'), 'emoji': '📦', 'blocks': out}
 

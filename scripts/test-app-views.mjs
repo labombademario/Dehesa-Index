@@ -131,6 +131,22 @@ if (man.files['summary.json']) {
   if (k.daily) { ok(k.daily.movers.every(m => typeof m.changePct === 'number' && typeof m.value === 'number' && m.label), 'summary: movers'); ok(k.daily.revisions.every(r => typeof r.old === 'number' && typeof r.new === 'number'), 'summary: revisiones'); }
   if (k.weekly) { ok(/^\d{4}-W\d{2}$/.test(k.weekly.week) && k.weekly.items > 0, 'summary: semana'); ok(k.weekly.top.every(x => /^https?:\/\//.test(x.url) && x.h && x.source), 'summary: titulares'); ok(k.weekly.top.every(x => !('text' in x)), 'summary: sin texto'); }
 }
+// Bloques de las secciones y del entorno: todo texto que la app pinta (label, title, note, sub) lleva cuatro cadenas, nunca objetos anidados.
+// Un objeto dentro de <Text> cierra la app: pasó con los destinos de «Exportaciones (EE. UU.)» (label {es:{es:…}}).
+{
+  const bad = [];
+  const T = (v, p) => { if (v == null) return; if (typeof v === 'string') return; if (typeof v !== 'object' || !LANGS.every(l => typeof v[l] === 'string')) bad.push(p); };
+  const walk = (o, p) => {
+    if (Array.isArray(o)) { o.forEach((x, i) => walk(x, p + '[' + i + ']')); return; }
+    if (!o || typeof o !== 'object') return;
+    for (const k of Object.keys(o)) { if (['label', 'title', 'note', 'd'].includes(k) && o[k] && typeof o[k] === 'object' && !Array.isArray(o[k])) T(o[k], p + '/' + k); else walk(o[k], p + '/' + k); }
+  };
+  for (const dir of ['sec', 'env']) {
+    const dp = path.join(DIR, dir); if (!fs.existsSync(dp)) continue;
+    for (const f of fs.readdirSync(dp).filter(x => x.endsWith('.json'))) { const j = JSON.parse(fs.readFileSync(path.join(dp, f), 'utf8')); walk(j.blocks ?? j, f); }
+  }
+  ok(!bad.length, 'bloques: textos anidados o sin los cuatro idiomas en ' + bad.slice(0, 3).join(', ') + ' (' + bad.length + ')');
+}
 const bytes = Object.values(man.files).reduce((a, f) => a + f.bytes, 0);
 ok(bytes < 400 * 1024, 'app views: mas de 400 KB (' + bytes + ')');
 console.log(`app views: ${checks} comprobaciones, ${fails} fallos`);
