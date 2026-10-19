@@ -438,10 +438,34 @@ def scan():
     log('CATALOGO: %d conjuntos distintos' % n)
 
 
+def probe_forest():
+    """Sonda de solo lectura de la cartografia forestal (MGAP): tamano, cabecera y atributos del primer elemento. No publica datos."""
+    if LOCAL: return
+    for name in ('mgap-bosques-plantados-forestacion', 'mgap-bosque-nativo'):
+        try: pk = package(name)
+        except Exception as e: log('BOSQUE', name, e); continue
+        for r in pk.get('resources', []):
+            u = r.get('url') or ''
+            if not u: continue
+            lab = '%s | %s | %s' % (name[:24], (r.get('format') or '?'), (r.get('name') or '')[:60])
+            try:
+                rq = urllib.request.Request(u, headers=dict(UA, Range='bytes=0-65535'))
+                with urllib.request.urlopen(rq, timeout=60) as resp:
+                    code = resp.status; cr = resp.headers.get('Content-Range'); cl = resp.headers.get('Content-Length'); head = resp.read(65536)
+                log('BOSQUE %s | http=%s range=%s len=%s magic=%r' % (lab, code, cr, cl, head[:8]))
+                t = head.decode('utf-8', 'ignore')
+                if '"features"' in t or 'FeatureCollection' in t:
+                    i = t.find('"features"'); log('BOSQUE   cabecera: ' + t[:min(i if i > 0 else 300, 400)].replace('\n', ' '))
+                    j = t.find('"properties"'); log('BOSQUE   primer elemento: ' + t[j:j + 400].replace('\n', ' '))
+                elif t.lstrip().startswith('<'):
+                    log('BOSQUE   kml: ' + t[:300].replace('\n', ' '))
+            except Exception as e: log('BOSQUE %s | error %s' % (lab, str(e)[:160]))
+
+
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, scan):
+    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, scan, probe_forest):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
     if not OUT: log('sin series'); sys.exit(1)
