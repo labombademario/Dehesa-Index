@@ -19,7 +19,7 @@
       sT: 'Fuentes y licencias', sCols: ['Mercado', 'Fuente', 'Licencia', 'Uso comercial', 'Qué mide'], v: { apto: 'Apto', condiciones: 'Con condiciones' },
       mtT: 'Cómo se calcula', mt: ['La variación a 12 meses compara el último dato con el más cercano a un año antes (con un margen de tolerancia según la frecuencia). Si no hay dato, no se calcula.', 'La posición frente a 5 años es el porcentaje de datos de los últimos cinco años que son iguales o más baratos que el actual. No es una previsión.', 'Los datos son los de cada fuente, sin estimar ni rellenar huecos. Cita la fuente con el texto de atribución. Esto no es asesoramiento financiero ni jurídico.'],
       M: { us: 'EE. UU.', eu: 'Unión Europea', uk: 'Reino Unido', ca: 'Canadá' }, up: 'sube', down: 'baja', per: { weekly: 'semanal', monthly: 'mensual', daily: 'diaria', quarterly: 'trimestral' },
-      more: 'Más datos de este producto', ctaT: '¿Lo quieres con tus propios datos de compra o venta?', ctaB: 'Escríbenos', cmp: 'Comparar mis facturas con el mercado', wid: 'Widget de este precio para tu web'
+      tr: ['en el tercio bajo de su histórico', 'en el tercio medio de su histórico', 'en el tercio alto de su histórico'], trN: 'El tercio bajo, medio o alto indica dónde está el precio frente a sus últimos cinco años (hasta el 33 %, entre el 34 % y el 66 %, desde el 67 %). Describe el pasado: no es una previsión ni una señal de compra o venta.', more: 'Más datos de este producto', ctaT: '¿Lo quieres con tus propios datos de compra o venta?', ctaB: 'Escríbenos', cmp: 'Comparar mis facturas con el mercado', wid: 'Widget de este precio para tu web'
     },
     en: {
       title: 'Negotiation report', h1: 'Negotiation report for one product',
@@ -35,7 +35,7 @@
       sT: 'Sources and licences', sCols: ['Market', 'Source', 'Licence', 'Commercial use', 'What it measures'], v: { apto: 'Fit', condiciones: 'With conditions' },
       mtT: 'How it is calculated', mt: ['The 12-month change compares the latest data point with the one closest to a year earlier (within a tolerance that depends on frequency). If there is none, it is not calculated.', 'The 5-year position is the share of the last five years’ data that is equal to or cheaper than the current figure. It is not a forecast.', 'Data are each source’s own, with no estimates and no gap filling. Credit the source with its attribution text. This is not financial or legal advice.'],
       M: { us: 'United States', eu: 'European Union', uk: 'United Kingdom', ca: 'Canada' }, up: 'up', down: 'down', per: { weekly: 'weekly', monthly: 'monthly', daily: 'daily', quarterly: 'quarterly' },
-      more: 'More data on this product', ctaT: 'Want it with your own purchase or sales data?', ctaB: 'Contact us', cmp: 'Compare my invoices with the market', wid: 'Widget of this price for your website'
+      tr: ['in the lower third of its history', 'in the middle third of its history', 'in the upper third of its history'], trN: 'The lower, middle or upper third shows where the price sits against its last five years (up to 33%, between 34% and 66%, from 67%). It describes the past: it is not a forecast or a buy or sell signal.', more: 'More data on this product', ctaT: 'Want it with your own purchase or sales data?', ctaB: 'Contact us', cmp: 'Compare my invoices with the market', wid: 'Widget of this price for your website'
     },
     fr: {
       title: 'Rapport de négociation', h1: 'Rapport de négociation pour un produit',
@@ -51,7 +51,7 @@
       sT: 'Sources et licences', sCols: ['Marché', 'Source', 'Licence', 'Usage commercial', 'Ce que mesure la série'], v: { apto: 'Apte', condiciones: 'Sous conditions' },
       mtT: 'Comment c’est calculé', mt: ['La variation sur 12 mois compare la dernière donnée à celle la plus proche d’un an plus tôt (avec une tolérance selon la fréquence). Sans donnée, pas de calcul.', 'La position face à 5 ans est la part des données des cinq dernières années égales ou moins chères que le chiffre actuel. Ce n’est pas une prévision.', 'Les données sont celles de chaque source, sans estimation ni comblement des trous. Citez la source avec son texte d’attribution. Ceci n’est pas un conseil financier ni juridique.'],
       M: { us: 'États-Unis', eu: 'Union européenne', uk: 'Royaume-Uni', ca: 'Canada' }, up: 'hausse', down: 'baisse', per: { weekly: 'hebdomadaire', monthly: 'mensuelle', daily: 'quotidienne', quarterly: 'trimestrielle' },
-      more: 'Plus de données sur ce produit', ctaT: 'Vous le voulez avec vos propres données d’achat ou de vente ?', ctaB: 'Nous écrire', cmp: 'Comparer mes factures au marché', wid: 'Widget de ce prix pour votre site'
+      tr: ['dans le tiers bas de son historique', 'dans le tiers médian de son historique', 'dans le tiers haut de son historique'], trN: 'Le tiers bas, médian ou haut indique où se situe le prix par rapport à ses cinq dernières années (jusqu’à 33 %, de 34 % à 66 %, à partir de 67 %). Il décrit le passé : ce n’est ni une prévision ni un signal d’achat ou de vente.', more: 'Plus de données sur ce produit', ctaT: 'Vous le voulez avec vos propres données d’achat ou de vente ?', ctaB: 'Nous écrire', cmp: 'Comparer mes factures au marché', wid: 'Widget de ce prix pour votre site'
     },
     it: {
       title: 'Rapporto di negoziazione', h1: 'Rapporto di negoziazione per un prodotto',
@@ -67,9 +67,10 @@
       sT: 'Fonti e licenze', sCols: ['Mercato', 'Fonte', 'Licenza', 'Uso commerciale', 'Cosa misura'], v: { apto: 'Idoneo', condiciones: 'Con condizioni' },
       mtT: 'Come si calcola', mt: ['La variazione a 12 mesi confronta l’ultimo dato con quello più vicino a un anno prima (con una tolleranza secondo la frequenza). Se manca, non si calcola.', 'La posizione rispetto a 5 anni è la quota dei dati degli ultimi cinque anni uguali o più economici della cifra attuale. Non è una previsione.', 'I dati sono quelli di ogni fonte, senza stime né riempimento dei vuoti. Cita la fonte con il suo testo di attribuzione. Questa non è consulenza finanziaria né legale.'],
       M: { us: 'Stati Uniti', eu: 'Unione europea', uk: 'Regno Unito', ca: 'Canada' }, up: 'sale', down: 'scende', per: { weekly: 'settimanale', monthly: 'mensile', daily: 'giornaliera', quarterly: 'trimestrale' },
-      more: 'Altri dati su questo prodotto', ctaT: 'Lo vuoi con i tuoi dati di acquisto o vendita?', ctaB: 'Scrivici', cmp: 'Confronta le mie fatture con il mercato', wid: 'Widget di questo prezzo per il tuo sito'
+      tr: ['nel terzo basso del suo storico', 'nel terzo medio del suo storico', 'nel terzo alto del suo storico'], trN: 'Il terzo basso, medio o alto indica dove si colloca il prezzo rispetto agli ultimi cinque anni (fino al 33%, tra il 34% e il 66%, dal 67%). Descrive il passato: non è una previsione né un segnale di acquisto o vendita.', more: 'Altri dati su questo prodotto', ctaT: 'Lo vuoi con i tuoi dati di acquisto o vendita?', ctaB: 'Scrivici', cmp: 'Confronta le mie fatture con il mercato', wid: 'Widget di questo prezzo per il tuo sito'
     }
   };
+  function tier(p) { return p <= 33 ? 0 : p >= 67 ? 2 : 1; }
   var IDX = null, LAT = null, CLI = null, SER = {}, FAILED = false, PROD = '', COOP = '', LOADING = 0;
   function lang() { return S.getLang ? S.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
@@ -164,10 +165,10 @@
         td(lt.previous != null ? nf(lt.previous) + (lt.changePct != null ? '<div style="font-size:11.5px;color:var(--text-muted)">' + (lt.changePct > 0 ? '+' : '') + nf(lt.changePct) + ' % ' + esc(lt.previousDate || '') + '</div>' : '') : esc(w.na)) +
         td(st.ago ? nf(st.ago[1]) + '<div style="font-size:11.5px;color:var(--text-muted)">' + (st.chg12 > 0 ? '+' : '') + nf(st.chg12, 1) + ' % · ' + esc(st.ago[0]) + '</div>' : esc(w.na)) +
         td(st.range ? esc(fill(w.range, { a: nf(st.range[0]), b: nf(st.range[1]) })) : esc(w.na)) +
-        td(st.pos != null ? esc(fill(w.pos, { x: st.pos })) : esc(w.na)) + '</tr>');
+        td(st.pos != null ? esc(fill(w.pos, { x: st.pos })) + '<br><span style="font-size:11px;color:var(--text-muted)">' + esc(w.tr[tier(st.pos)]) + '</span>' : esc(w.na)) + '</tr>');
       ch += '<div style="margin:10px 0;break-inside:avoid"><div style="font-size:13px;font-weight:600">' + esc(mk(w, s)) + (pl ? ' · ' + esc(pl) : '') + ' — ' + esc(u) + '</div>' + chart(s) + '</div>';
       var c12 = st.chg12 == null ? w.c12no : (Math.abs(st.chg12) < 0.05 ? w.c12eq : fill(st.chg12 > 0 ? w.c12up : w.c12dn, { x: nf(Math.abs(st.chg12), 1) }));
-      pitch.push('<li style="margin:6px 0">' + esc(fill(w.pS, { n: nm(s.name, s.product), p: mk(w, s) + (pl ? ', ' + pl : ''), v: nf(st.last[1]), u: u, d: st.last[0], c12: c12, pos: st.pos != null ? fill(w.posS, { x: st.pos }) : w.posNo })) + '</li>');
+      pitch.push('<li style="margin:6px 0">' + esc(fill(w.pS, { n: nm(s.name, s.product), p: mk(w, s) + (pl ? ', ' + pl : ''), v: nf(st.last[1]), u: u, d: st.last[0], c12: c12, pos: st.pos != null ? fill(w.posS, { x: st.pos }).replace(/\.$/, '') + ', ' + w.tr[tier(st.pos)] + '.' : w.posNo })) + '</li>');
       cmp.push({ s: s, c: st.chg12 });
       src.push('<tr>' + td('<b>' + esc(mk(w, s)) + '</b>') + td(esc(s.sourceName)) + td(esc(s.license)) + td(esc(w.v[s.verdict] || s.verdict)) + td('<div style="font-size:12px">' + esc(nm(s.note) || '') + '</div><div style="font-size:11.5px;color:var(--text-muted);margin-top:3px">' + esc(s.attribution) + '</div>') + '</tr>');
     });
@@ -185,7 +186,7 @@
     }
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.wT) + '</h3>' + climateHtml(w);
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.sT) + '</h3>' + table(w.sCols, src);
-    h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.mtT) + '</h3>' + w.mt.map(function (p) { return '<p class="ic-foot" style="font-size:12px">' + esc(p) + '</p>'; }).join('') + '</article>';
+    h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.mtT) + '</h3>' + w.mt.concat([w.trN]).map(function (p) { return '<p class="ic-foot" style="font-size:12px">' + esc(p) + '</p>'; }).join('') + '</article>';
     h += '<p class="di-movers-hint no-print"><a href="producto.html?p=' + encodeURIComponent(PROD) + '">' + esc(w.more) + '</a> · <a href="comparador-facturas.html">' + esc(w.cmp) + '</a>' + (ss.length ? ' · <a href="widgets.html?s=' + encodeURIComponent(ss[0].id) + '">' + esc(w.wid) + '</a>' : '') + '</p>';
     h += '<section class="di-card di-emp-cta no-print" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.ctaT) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaB) + '</a></section>';
     root.innerHTML = h; bind();
