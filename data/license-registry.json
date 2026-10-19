@@ -1020,7 +1020,7 @@
    "derivatives": "conditional",
    "redistribution": "yes",
    "attributionRequired": true,
-   "attributionText": "Source: Canada Border Services Agency (CBSA), Customs Tariff, https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html. Rates are reproduced unaltered; calculations are Dehesa Index\u2019s own.",
+   "attributionText": "Source: Canada Border Services Agency (CBSA), Customs Tariff, https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html. Rates are reproduced unaltered; calculations are Dehesa Index’s own.",
    "additionalRestrictions": "Decision del propietario (18-oct-2026): uso comercial aceptado. Condiciones mantenidas: citar CBSA y URL, no alterar los tipos, calculos propios etiquetados. Contexto: las condiciones generales de Canada.ca piden permiso escrito para redistribucion comercial; no hay licencia especifica del arancel ni ficha en open.canada.ca.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "Some Canada.ca material is not Crown copyright; not checked for the tariff.",
@@ -4423,6 +4423,32 @@
    "evidence": "Paquete de investigacion del 18-oct-2026: Descarga de IPOM pendiente por TLS; terminos de reutilizacion sin comprobar.",
    "short": "BCU (Uruguay)",
    "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+  },
+  "elstat": {
+   "name": "Greece — ELSTAT (Hellenic Statistical Authority)",
+   "url": "https://www.statistics.gr/",
+   "country": "EL",
+   "licenseId": "OPEN-REUSE-ATTRIBUTION",
+   "licenseName": "Politica de difusion de ELSTAT: reutilizacion libre, comercial y no comercial, sin pago ni licencia escrita, citando la fuente",
+   "licenseUrl": "https://www.statistics.gr/documents/20181/1609796/Dissemination_Policy_of_ELSTAT_en.pdf/8c399d64-9611-4d55-b514-56ea51ac1ecf",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: ELSTAT (Hellenic Statistical Authority), statistics.gr. Elaboracion de dehesaindex.com.",
+   "additionalRestrictions": "Citar la fuente; no deformar el sentido de los datos. Quedan fuera microdatos, datos personales, material de terceros (mapas y limites) y publicaciones impresas. La pagina propia de ELSTAT 'Copyright and reuse of data' no pudo leerse; se apoya en la politica de difusion y en las condiciones de las estadisticas europeas.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-19",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Politica de difusion de ELSTAT (leida 2026-10-19): 'encourages the free reuse of its data, both for non-commercial and commercial purposes'; datos estadisticos, metadatos y publicaciones se reutilizan sin pago ni licencia escrita, con excepciones. Condiciones de las estadisticas europeas de ELSTAT: reutilizacion comercial y no comercial, citando la fuente y sin distorsionar los datos.",
+   "used": true,
+   "aliases": [],
+   "notes": "Series de la publicacion DKT30 (indices de precios agrarios) y SEL61 (cuentas agrarias regionales), ficheros .xls/.xlsx de statistics.gr. Pipeline scripts/update-el-elstat.py.",
+   "short": "ELSTAT",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   }
  },
  "files": {
@@ -6366,6 +6392,12 @@
     "MGAP": "uruguay_datos_abiertos",
     "URSEA": "uruguay_datos_abiertos"
    }
+  },
+  "data/el-elstat/": {
+   "sources": [
+    "elstat"
+   ],
+   "notes": "Indices mensuales de precios agrarios (producto, insumos y productos seleccionados) y cuentas agrarias regionales de Grecia (scripts/update-el-elstat.py), de los ficheros publicos de statistics.gr."
   }
  },
  "derived": [

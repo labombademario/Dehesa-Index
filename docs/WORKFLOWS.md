@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-229 workflows (190 generados desde `sources.yml`, 39 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+230 workflows (191 generados desde `sources.yml`, 39 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -219,6 +219,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-denmark.yml | a mano | semanal (2,5) | update-dst-denmark.py | denmark-prices.json | finish, validate-files |
 | update-drought.yml | a mano | 2 veces/semana | update-drought.mjs | drought.json | finish, validate-files |
 | update-eambrosia.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-eambrosia.py | gi/index.json | finish, validate-files |
+| update-el-elstat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-el-elstat.py | el-elstat/accounts.json, el-elstat/prices.json | finish, validate-files |
 | update-el-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | el-ghg-agri.json | finish, validate-files |
 | update-embalses.yml | generado | semanal (3,4) | detect-revisions.py, gen-workflows.py, update-embalses.py | spain-reservoirs-points.json, spain-reservoirs.json | finish, validate-files |
 | update-energy-markets.yml | a mano | semanal (3,5) | update-eia-energy-markets.mjs, update-worldbank-gas-eu.py | - | finish, price-engine, publish |

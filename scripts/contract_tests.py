@@ -4741,3 +4741,57 @@ def commercial_summary(doc, errs, warns, stats):
     for k, s in doc["sources"].items():
         if k in V and (s.get("verdict") != V[k]["verdict"] or s.get("name") != V[k]["name"]): errs.append("resumen comercial: %s no coincide con el catálogo" % k)
     stats["series"] = len(doc["sources"])
+
+# ---- Grecia (ELSTAT): precios agrarios y cuentas regionales -------------------------------------------------------------
+def el_elstat_prices(doc, errs, warns, stats):
+    """Indices mensuales (base 2020 = 100): meses contiguos y ordenados, series alineadas, indices entre 15 y 700, series principales vivas hasta el ultimo mes; productos con 2020 = 100."""
+    M = doc["months"]
+    if M != sorted(set(M)) or not M: errs.append("meses desordenados, repetidos o vacios"); return
+    def nxt(m): y, mo = int(m[:4]), int(m[5:]); return "%d-%02d" % (y + (mo == 12), mo % 12 + 1)
+    if any(nxt(M[i]) != M[i + 1] for i in range(len(M) - 1)): errs.append("meses con huecos")
+    if doc["last"] != M[-1]: errs.append("last (%s) no es el ultimo mes (%s)" % (doc["last"], M[-1]))
+    n = 0
+    for side, need in (("output", ("140000", "100000", "130000", "060000", "080000")), ("input", ("220000", "202000", "203000", "206000"))):
+        S = doc[side]
+        for c in need:
+            if c not in S: errs.append("%s: falta la serie %s" % (side, c))
+            elif S[c]["v"][-1] is None and S[c]["v"][-2] is None: errs.append("%s %s: sin dato en los dos ultimos meses" % (side, c))
+        for c, e in S.items():
+            n += 1
+            if len(e["v"]) != len(M): errs.append("%s %s: %d valores para %d meses" % (side, c, len(e["v"]), len(M))); continue
+            if any(x is not None and not 15 < x < 700 for x in e["v"]): errs.append("%s %s: indice fuera de 15-700" % (side, c))
+    for p, e in doc["products"].items():
+        n += 1
+        y0 = e["from"]; last = y0 + len(e["annual"]) - 1
+        if not 1990 < y0 < 2030 or last > int(M[-1][:4]): errs.append("producto %s: años %s-%s fuera de rango" % (p, y0, last))
+        if any(x is not None and not 5 < x < 800 for x in e["annual"]): errs.append("producto %s: indice anual fuera de 5-800" % p)
+        if y0 <= 2020 <= last and e["annual"][2020 - y0] is not None and abs(e["annual"][2020 - y0] - 100) > 0.05: errs.append("producto %s: 2020 no es 100" % p)
+        mo = e["monthly"]
+        if mo and (len(mo["v"]) != 12 or any(x is not None and not 5 < x < 800 for x in mo["v"])): errs.append("producto %s: mensual mal formado" % p)
+    stats["series"] = n
+def el_elstat_accounts(doc, errs, warns, stats):
+    """Cuenta regional: una columna por region, produccion = cultivos + ganado (14 = 10 + 13), 16 = 14 + 15, 20 = 18 - 19, NUTS 1 = suma de sus NUTS 2 y Grecia = suma de las 13 regiones."""
+    ids = [r["id"] for r in doc["regions"]]
+    if len(set(ids)) != len(ids) or "EL" not in ids: errs.append("regiones repetidas o sin total nacional EL"); return
+    R = {}
+    for r in doc["rows"]:
+        if len(r["v"]) != len(ids): errs.append("linea %s: %d valores para %d regiones" % (r["c"], len(r["v"]), len(ids))); continue
+        if any(x is not None and not -1e5 < x < 1e6 for x in r["v"]): errs.append("linea %s: valor imposible" % r["c"])
+        if r["c"] in R: errs.append("linea %s repetida" % r["c"])
+        R[r["c"]] = r["v"]
+    for need in ("10", "13", "14", "15", "16", "17", "18", "19", "20"):
+        if need not in R: errs.append("falta la linea " + need); return
+    for k, i in enumerate(ids):
+        for tot, (a, b, sg) in {"14": ("10", "13", 1), "16": ("14", "15", 1), "18": ("16", "17", 1), "20": ("18", "19", -1)}.items():
+            x, y, z = R[a][k], R[b][k], R[tot][k]
+            if None in (x, y, z): continue
+            if abs(x + sg * y - z) > max(0.05, abs(z) * 0.002): errs.append("%s: linea %s no es %s %s %s (%.1f frente a %.1f)" % (i, tot, a, "+" if sg > 0 else "-", b, x + sg * y, z))
+    pos = {x: k for k, x in enumerate(ids)}
+    for n1, kids in {"EL4": ("EL41", "EL42", "EL43"), "EL5": ("EL51", "EL52", "EL53", "EL54"), "EL6": ("EL61", "EL62", "EL63", "EL64", "EL65")}.items():
+        if n1 in pos and all(k in pos for k in kids) and R["14"][pos[n1]] is not None:
+            s = sum(R["14"][pos[k]] or 0 for k in kids)
+            if abs(s - R["14"][pos[n1]]) > max(1.0, 0.01 * s): errs.append("%s: produccion %.1f y la suma de sus regiones %.1f" % (n1, R["14"][pos[n1]], s))
+    n2 = [pos[x["id"]] for x in doc["regions"] if x["level"] == 2]
+    tot = R["14"][pos["EL"]]; s = sum(R["14"][k] or 0 for k in n2)
+    if not tot or abs(s / tot - 1) > 0.03: errs.append("Grecia: produccion %.1f y la suma de las regiones %.1f" % (tot or 0, s))
+    stats["series"] = len(R)

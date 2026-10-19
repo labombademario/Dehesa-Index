@@ -852,6 +852,17 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/italy-istat/crops.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
     data: [italy-istat/crops.json, italy-istat/milk.json, italy-istat/agritourism.json, italy-istat/irrigation.json, italy-istat/comuni.json, italy-istat-2-log.txt]
     message: Cultivos, leche por región, agriturismo y riego de Italia (ISTAT)
+  - id: el-elstat
+    name: Update Greece agricultural price indices and regional farm accounts (ELSTAT)
+    cron: ['20 9 16,22 * *']
+    script: scripts/update-el-elstat.py
+    pre: ['pip install openpyxl xlrd']
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/el-elstat/prices.json data/el-elstat/accounts.json
+    data: [el-elstat/prices.json, el-elstat/accounts.json, el-elstat-log.txt]
+    message: Precios agrarios y cuentas regionales de Grecia (ELSTAT)
   - id: it-ghg-agri
     name: Update Italy agricultural greenhouse gas emissions (Eurostat env_air_gge)
     cron: ['5 8 4 * *']

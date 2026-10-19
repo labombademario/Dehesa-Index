@@ -1,0 +1,6 @@
+output 16 series; 96 promedios comprobados, 0 fuera de rango; 16 de 2020, 0 distintos de 100
+input 20 series; 120 promedios comprobados, 0 fuera de rango; 20 de 2020, 0 distintos de 100
+productos seleccionados: 60
+escrito prices.json 83 KB
+cuenta regional 2023 65 lineas
+escrito accounts.json 11 KB

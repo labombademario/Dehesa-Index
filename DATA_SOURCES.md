@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 143 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31367 series en el catalogo unificado.
+Resumen: 144 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31367 series en el catalogo unificado.
 
-## VERIFIED (143)
+## VERIFIED (144)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -50,6 +50,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eccc_ghg` | Environment and Climate Change Canada — Canada's Official Greenhouse Gas Inventory | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `edo_cdi` | European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS) | EU | CC-BY-4.0 | si/si | si | 0 | Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission… |
 | `eia` | U.S. Energy Information Administration (Open Data API) | US | US-PD | si/conditional | si | 8 | Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API k… |
+| `elstat` | Greece — ELSTAT (Hellenic Statistical Authority) | EL | OPEN-REUSE-ATTRIBUTION | si/si | si | 0 | Citar la fuente; no deformar el sentido de los datos. Quedan fuera microdatos, datos personales, material de terceros (mapas y limites) y pu… |
 | `enesa` | Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario | ES | CUSTOM | si/si | si | 0 | Citar el informe como 'Informe de Contratación del Seguro Agrario nº NN ENESA'. Tablas con 'Fuente Agroseguro. Elaboración ENESA': solo se c… |
 | `epa_ie` | Environmental Protection Agency (EPA) Irlanda — indicadores ambientales EIIA13 y EIIA14, publicados por el CSO | IE | CC-BY-4.0 | si/si | si | 0 |  |
 | `esbirka_cz` | Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb. | CZ | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Sbírka zákonů. El texto se leyó en una copia editorial (epravo.cz), no en e-Sbírka, … |

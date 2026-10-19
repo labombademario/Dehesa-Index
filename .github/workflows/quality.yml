@@ -110,6 +110,8 @@ jobs:
       - name: France and Italy farmland prices (Agreste PDF text and CREA workbook parsers, real fixtures, units, year accumulation, licence gate, contract; no network)
         run: pip install openpyxl && python3 scripts/test-land-fr-it.py
 
+      - name: Grecia (ELSTAT) - lector de indices de precios y cuentas regionales
+        run: pip install openpyxl xlrd && python3 scripts/test-el-elstat.py
       - name: Poland farmland prices (GUS BDL API responses, attribute 91 as gap, broken-data rejection; no network)
         run: python3 scripts/test-land-pl.py
 
