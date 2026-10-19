@@ -1,9 +1,9 @@
 FR regiones 47 precios {'ARA': 44, 'J0000': 44} regadio 27 nacional 5.56 %
-IT regiones 27 precios {'ARA': 25, 'ARAIB': 25, 'ARAXIB': 25, 'J0000': 25} regadio 22 nacional 18.73 %
-PL regiones 32 precios {'ARA': 28, 'ARAIB': 6, 'J0000': 28} regadio 14 nacional 0.26 %
+IT regiones 27 precios {'ARA': 25, 'ARAIB': 25, 'ARAXIB': 25, 'J0000': 25} regadio 22 nacional 18.1 %
+PL regiones 28 precios {'ARA': 28, 'ARAIB': 6, 'J0000': 28} regadio 18 nacional 0.86 %
 PT regiones 12 precios {'ARA': 11, 'J0000': 11} regadio 10 nacional 15.16 %
 DE regiones 35 precios {} regadio 35 nacional 3.36 %
 BE regiones 13 precios {'ARA': 13, 'J0000': 13} regadio 11 nacional 1.73 %
 HR regiones 7 precios {'ARA': 6, 'J0000': 6} regadio 5 nacional 1.58 %
-EL regiones 27 precios {'ARA': 18, 'ARAIB': 18, 'ARAXIB': 18, 'J0000': 18} regadio 14 nacional 20.0 %
+EL regiones 18 precios {'ARA': 18, 'ARAIB': 18, 'ARAXIB': 18, 'J0000': 18} regadio 13 nacional 20.42 %
 escrito land.json 73 KB
