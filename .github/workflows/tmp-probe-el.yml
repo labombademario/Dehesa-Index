@@ -1,0 +1,16 @@
+name: tmp-probe-el
+on:
+  push:
+    branches: [research/probe-el-elstat]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          python3 probe/el1.py > probe/el1.log 2>&1 || true
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/el-out probe/el1.log; git commit -qm "probe out" || true; git push || true
