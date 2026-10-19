@@ -3,7 +3,7 @@
  "country": "FR",
  "source": "dila_jorf",
  "status": "OK",
- "checkedAt": "2026-10-14",
+ "checkedAt": "2026-10-19",
  "baseline": {
   "fingerprints": {},
   "acknowledged": [
@@ -49,7 +49,7 @@
     "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054938477"
    }
   ],
-  "lastScanned": "2026-10-14"
+  "lastScanned": "2026-10-18"
  },
  "reviewNeeded": [],
  "note": "Vigilancia de los boletines diarios del JORF desde el 1 de octubre de 2026 (último día leído a mano). Los textos que aparecen son candidatos: no se interpretan."
