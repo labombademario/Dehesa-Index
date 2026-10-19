@@ -4824,3 +4824,36 @@ def eu_land(doc, errs, warns, stats):
     if C["DE"]["price"]: warns.append("Alemania ya publica precio de tierra: revisar la interfaz")
     stats["regions"] = n
 
+
+
+def api_series(doc, errs, warns, stats):
+    """Serie de la API: puntos ordenados y sin fechas repetidas, rows/first/last coherentes, valores finitos, la unidad y la fuente declaradas y el veredicto comercial permitido."""
+    pts = doc["points"]; ds = [p[0] for p in pts]
+    if ds != sorted(ds) or len(set(ds)) != len(ds): errs.append("fechas desordenadas o repetidas")
+    if doc["rows"] != len(pts): errs.append("rows (%s) no coincide con los puntos (%d)" % (doc["rows"], len(pts)))
+    if doc["first"] != ds[0] or doc["last"] != ds[-1]: errs.append("first/last no coinciden con los puntos")
+    if any(v != v or abs(v) > 1e9 for _, v in pts): errs.append("valor no finito o imposible")
+    if not doc["id"].endswith("/" + doc["product"]) or not doc["id"].startswith(doc["region"] + "/"): errs.append("id no coincide con region/producto")
+    stats["points"] = len(pts)
+
+
+def api_latest(doc, errs, warns, stats):
+    """Ultimos valores: ids unicos, y la variacion cuadra con el valor anterior."""
+    ids = [s["id"] for s in doc["series"]]
+    if len(set(ids)) != len(ids): errs.append("ids repetidos")
+    for s in doc["series"]:
+        p, v, c = s.get("previous"), s["value"], s.get("changePct")
+        if p and c is not None and abs((v / p - 1) * 100 - c) > 0.011: errs.append("%s: changePct %s no cuadra con %s -> %s" % (s["id"], c, p, v))
+        if (p is None) != (c is None): errs.append("%s: anterior y variacion deben ir juntos" % s["id"])
+    stats["series"] = len(ids)
+
+
+def api_index(doc, errs, warns, stats):
+    """Catalogo: ids unicos, enlaces con la forma de la API, y el resumen cuadra con las series."""
+    S = doc["series"]; ids = [s["id"] for s in S]
+    if len(set(ids)) != len(ids): errs.append("ids repetidos")
+    if doc["summary"]["series"] != len(S) or doc["summary"]["rows"] != sum(s["rows"] for s in S): errs.append("resumen no cuadra con las series")
+    for s in S:
+        if s["url"] != "/data/api/v1/series/%s.json" % s["id"]: errs.append("%s: enlace a la serie incorrecto" % s["id"])
+        if not s["csv"].startswith("/data/pack/") or not s["xlsx"].startswith("/data/pack/"): errs.append("%s: enlaces de descarga fuera del paquete" % s["id"])
+    stats["series"] = len(S)

@@ -1,0 +1,48 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "API v1: catalogo (data/api/v1/index.json)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "endpoints",
+  "policy",
+  "summary",
+  "series"
+ ],
+ "properties": {
+  "series": {
+   "type": "array",
+   "minItems": 10,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "product",
+     "region",
+     "unit",
+     "currency",
+     "frequency",
+     "sourceName",
+     "license",
+     "verdict",
+     "attribution",
+     "first",
+     "last",
+     "rows",
+     "url",
+     "csv",
+     "xlsx"
+    ],
+    "properties": {
+     "verdict": {
+      "enum": [
+       "apto",
+       "condiciones"
+      ]
+     }
+    }
+   }
+  }
+ }
+}

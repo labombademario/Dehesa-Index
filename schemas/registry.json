@@ -1479,6 +1479,22 @@
    [
     "eu_land"
    ]
+  ],
+  "api/v1/index.json": [
+   "api-index",
+   [
+    "api_index"
+   ]
+  ],
+  "api/v1/latest.json": [
+   "api-latest",
+   [
+    "api_latest"
+   ]
+  ],
+  "api/v1/openapi.json": [
+   "api-openapi",
+   []
   ]
  },
  "globs": {
@@ -1664,6 +1680,12 @@
    "eu-food-monitor-geo",
    [
     "eu_food_monitor_geo"
+   ]
+  ],
+  "api/v1/series/*/*.json": [
+   "api-series",
+   [
+    "api_series"
    ]
   ]
  },
