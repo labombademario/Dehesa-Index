@@ -303,22 +303,22 @@
     h += mapHtml();
     h += '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
     if (ST.c === 'US') {
-      h += '<label>' + esc(t.place) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.place) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
       h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + US_PROD.map(function (k) { return opt(k, prodName(k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'CA') {
-      h += '<label>' + esc(t.placeES) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + caPlaces().map(function (k) { return opt(k, caName(k), ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.placeES) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + caPlaces().map(function (k) { return opt(k, caName(k), ST.r); }).join('') + '</select></label>';
       h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + caProducts().map(function (k) { return opt(k, caProdName(k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'DE') {
       var e1 = te();
-      h += '<label>' + esc(e1.land) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + deLands().map(function (k) { return opt(k, deName(k), ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(e1.land) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + deLands().map(function (k) { return opt(k, deName(k), ST.r); }).join('') + '</select></label>';
       h += '<label>' + esc(e1.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + DE_CROPS.map(function (k) { return opt(k, pick4(DE_CROPN, k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'UK') {
       var e2 = te();
-      h += '<label>' + esc(e2.region) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + ukRegions().map(function (k) { return opt(k, ukRegName(k), ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(e2.region) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + ukRegions().map(function (k) { return opt(k, ukRegName(k), ST.r); }).join('') + '</select></label>';
       h += '<label>' + esc(e2.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + UK_CROPS.map(function (k) { return opt(k, pick4(UK_CROPN, k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'ES') {
       var provs = ES_PROV ? Object.keys(ES_PROV).sort(function (a, b) { return ES_PROV[a].localeCompare(ES_PROV[b], 'es'); }) : [];
-      h += '<label>' + esc(t.placeES) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + provs.map(function (k) { return opt(k, ES_PROV[k], ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.placeES) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + provs.map(function (k) { return opt(k, ES_PROV[k], ST.r); }).join('') + '</select></label>';
       var gs = ES_IDX ? ES_GORDER.filter(function (k) { return ES_IDX.groups[k]; }) : [];
       h += '<label>' + esc(t.group) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + gs.map(function (k) { return opt(k, t.grp[k] || k, ST.p); }).join('') + '</select></label>';
       h += '<label>' + esc(({ es: 'Buscar cultivo', en: 'Find crop', fr: 'Chercher une culture', it: 'Cerca coltura' })[lang()] || 'Buscar cultivo') + '<br><input type="search" class="di-compare-select" data-mm-filter="mm-crop" autocomplete="off" style="min-width:150px"></label>';
@@ -354,7 +354,7 @@
     var set = {}; mapPlaces(ST.c).forEach(function (k) { set[k] = 1; });
     var paths = M.states.map(function (st) {
       var k = ST.c === 'UK' ? UKMAP[st.id] : st.id, ok = !!(k && set[k]), on = ok && k === ST.r, nm = ok ? mapName(ST.c, k) : (st.name || st.id);
-      return '<path d="' + st.d + '" class="mm-map-p' + (ok ? '' : ' na') + (on ? ' on' : '') + '"' + (ok ? ' data-mm-map="' + esc(k) + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm) + '"' : ' aria-hidden="true"') + '><title>' + esc(nm + (ok ? '' : ' · ' + mt.na)) + '</title></path>';
+      return '<path d="' + st.d + '" class="mm-map-p' + (ok ? '' : ' na') + (on ? ' on' : '') + '"' + (ok ? ' data-mm-map="' + esc(k) + '" data-equiv="mm-r" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm) + '"' : ' aria-hidden="true"') + '><title>' + esc(nm + (ok ? '' : ' · ' + mt.na)) + '</title></path>';
     }).join('');
     return '<div class="mm-map mm-map-' + ST.c.toLowerCase() + '"><p class="mm-map-q">' + esc(mt[ST.c]) + '</p><svg viewBox="' + esc(M.viewBox) + '" role="group" aria-label="' + esc(mt.map) + '" focusable="false">' + paths + '</svg>' +
       (ST.r && set[ST.r] ? '<p class="mm-map-sel">' + esc(mt.sel) + ' <strong>' + esc(mapName(ST.c, ST.r)) + '</strong></p>' : '') + '</div>';

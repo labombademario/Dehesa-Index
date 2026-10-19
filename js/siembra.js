@@ -135,7 +135,7 @@
       '<div class="mm-map"><svg viewBox="' + M.viewBox + '" role="group" aria-label="' + esc(m.h) + '" focusable="false">' + M.states.map(function (st) {
         var code = byId[st.id], ok = !!(code && hasData(c, code)), nm = code ? rname(c, code) : st.name, on = ok && code === ST.r;
         if (!ok) return '<path d="' + st.d + '" class="mm-map-p na" aria-hidden="true"><title>' + esc(nm + ' (' + m.nod + ')') + '</title></path>';
-        return '<path d="' + st.d + '" class="mm-map-p' + (on ? ' on' : '') + '" data-mr="' + esc(code) + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm) + '"><title>' + esc(nm) + '</title></path>';
+        return '<path d="' + st.d + '" class="mm-map-p' + (on ? ' on' : '') + '" data-mr="' + esc(code) + '" data-equiv="sw-r" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(nm) + '"><title>' + esc(nm) + '</title></path>';
       }).join('') + '</svg>' + (ST.r && doc.regions[ST.r] && hasData(c, ST.r) ? '<p class="mm-map-sel">' + esc(m.sel) + ' <strong>' + esc(rname(c, ST.r)) + '</strong></p>' : '') + '</div></section>';
   }
   function priceTxt(x) { var w = t(), cur = x.C.price.current, k = cur.kind === 'avg12m' ? w.avg12 : cur.kind === 'implied' ? w.implied + ' (' + cur.to + ')' : w.ctd; return nf(x.p0, x.p0 < 10 ? 2 : 0) + ' ' + x.C.priceUnit + ' · ' + k; }
