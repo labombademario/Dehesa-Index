@@ -1473,6 +1473,12 @@
    [
     "el_elstat_accounts"
    ]
+  ],
+  "eu-land/land.json": [
+   "eu-land",
+   [
+    "eu_land"
+   ]
   ]
  },
  "globs": {

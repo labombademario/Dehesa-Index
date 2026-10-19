@@ -4795,3 +4795,32 @@ def el_elstat_accounts(doc, errs, warns, stats):
     tot = R["14"][pos["EL"]]; s = sum(R["14"][k] or 0 for k in n2)
     if not tot or abs(s / tot - 1) > 0.03: errs.append("Grecia: produccion %.1f y la suma de las regiones %.1f" % (tot or 0, s))
     stats["series"] = len(R)
+
+
+def eu_land(doc, errs, warns, stats):
+    """Precio de la tierra y regadio por region: % = regadio/SAU, regadio <= SAU, un solo año por pais, Grecia con regadio mas caro que secano, cada region tiene nombre."""
+    C = doc["countries"]; n = 0
+    for c, e in C.items():
+        ir = e["irrigation"]["regions"]
+        if c not in ir: errs.append("%s: falta el regadio nacional" % c); continue
+        yrs = {x["year"] for x in ir.values()}
+        if len(yrs) != 1: errs.append("%s: regiones con varios años de regadio %s" % (c, sorted(yrs)))
+        for g, x in ir.items():
+            if g not in e["regions"]: errs.append("%s %s: region sin nombre" % (c, g))
+            if x["irrigated"] > x["uaa"] * 1.001: errs.append("%s %s: regadio mayor que la SAU" % (c, g))
+            if abs(x["irrigated"] / x["uaa"] * 100 - x["share"]) > 0.02: errs.append("%s %s: porcentaje no cuadra" % (c, g))
+            n += 1
+        for p, G in e["price"].items():
+            for g, pts in G.items():
+                if g not in e["regions"]: errs.append("%s %s: region de precio sin nombre" % (c, g))
+                ys = [y for y, v in pts]
+                if ys != sorted(set(ys)): errs.append("%s %s %s: años desordenados" % (c, p, g))
+                if any(not 100 < v < 2000000 for y, v in pts): errs.append("%s %s %s: precio imposible" % (c, p, g))
+    a, b = C["EL"]["price"].get("ARAIB", {}).get("EL"), C["EL"]["price"].get("ARAXIB", {}).get("EL")
+    if not a or not b: errs.append("Grecia: faltan arable de regadio o de secano")
+    else:
+        yb = dict(b)
+        if any(v <= yb[y] for y, v in a if y in yb): errs.append("Grecia: el regadio no vale mas que el secano")
+    if C["DE"]["price"]: warns.append("Alemania ya publica precio de tierra: revisar la interfaz")
+    stats["regions"] = n
+

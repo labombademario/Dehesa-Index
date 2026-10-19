@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-230 workflows (191 generados desde `sources.yml`, 39 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+231 workflows (192 generados desde `sources.yml`, 39 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -127,6 +127,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-farm-economics.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-farm-economics.py | eu-farm-economics.json | finish, validate-files |
 | update-eu-food-monitor.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-food-monitor.py | eu-food-monitor-stats.json, eu-food-monitor/index.json | finish, validate-files |
 | update-eu-gapfill.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eu-gapfill.py | eu-gapfill-stats.json | finish, validate-files |
+| update-eu-land.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-land.py | eu-land/land.json | finish, validate-files |
 | update-eu-more-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | bg-ghg-agri.json, ch-ghg-agri.json, cy-ghg-agri.json … | finish, validate-files |
 | update-eu-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-nitrates.py | eu-nitrates.json | finish, validate-files |
 | update-eu-organic.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-organic.py | eu-organic-stats.json | finish, validate-files |

@@ -6393,6 +6393,12 @@
     "URSEA": "uruguay_datos_abiertos"
    }
   },
+  "data/eu-land/": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Precio de la tierra agraria (apri_lprc) y superficie regada sobre la SAU (ef_mp_irri, ef_lus_main) de Eurostat para FR, IT, PL, PT, DE, BE, HR y EL (scripts/update-eu-land.py)."
+  },
   "data/el-elstat/": {
    "sources": [
     "elstat"

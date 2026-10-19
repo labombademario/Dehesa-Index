@@ -863,6 +863,16 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/el-elstat/prices.json data/el-elstat/accounts.json
     data: [el-elstat/prices.json, el-elstat/accounts.json, el-elstat-log.txt]
     message: Precios agrarios y cuentas regionales de Grecia (ELSTAT)
+  - id: eu-land
+    name: Update agricultural land prices and irrigated share for FR, IT, PL, PT, DE, BE, HR and EL (Eurostat)
+    cron: ['40 9 14 * *']
+    script: scripts/update-eu-land.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/eu-land/land.json
+    data: [eu-land/land.json, eu-land-log.txt]
+    message: Precio de la tierra y superficie regada por región (Eurostat)
   - id: it-ghg-agri
     name: Update Italy agricultural greenhouse gas emissions (Eurostat env_air_gge)
     cron: ['5 8 4 * *']

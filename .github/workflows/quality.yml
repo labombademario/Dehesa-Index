@@ -112,6 +112,8 @@ jobs:
 
       - name: Grecia (ELSTAT) - lector de indices de precios y cuentas regionales
         run: pip install openpyxl xlrd && python3 scripts/test-el-elstat.py
+      - name: Tierra y regadio de FR, IT, PL, PT, DE, BE, HR y EL (scripts/test-eu-land.py)
+        run: python3 scripts/test-eu-land.py
       - name: Poland farmland prices (GUS BDL API responses, attribute 91 as gap, broken-data rejection; no network)
         run: python3 scripts/test-land-pl.py
 
