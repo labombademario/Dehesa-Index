@@ -2882,3 +2882,5 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 @media (max-width:560px){.pm-top li{grid-template-columns:minmax(0,1fr) auto auto;}.pm-top .pm-bar,.pm-top li>.cp-m{display:none}}
 
 .nbt-wrap{display:grid;gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}.nbt-mapcol,.nbt-tabcol{min-width:0}@media(max-width:900px){.nbt-wrap{grid-template-columns:minmax(0,1fr)}}
+.fx-lk select { max-width: 100%; margin-top: 2px; }
+.fx-lk .pt-sub { margin-top: 4px; line-height: 1.45; }

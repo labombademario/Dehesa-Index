@@ -3,6 +3,8 @@
    más «qué ha cambiado desde tu última visita» para las líneas que usan el precio de referencia de Dehesa.
    Reutiliza el motor de la calculadora (window.DICalc: mismas fórmulas, Unit Engine, BCE, frescura): aquí no se duplica ninguna cuenta.
    Separa siempre el DATO OFICIAL (precio de referencia con fuente, fecha y frescura) del CÁLCULO DEHESA (hecho con tus cifras).
+   Costes vinculados (opcional): fertilizantes, pienso y energía pueden seguir una referencia del monitor de insumos (medias de España, solo líneas en EUR).
+   Se guarda la referencia vigente cuando escribes o confirmas tu importe y se muestra un ESCENARIO aparte; tu importe solo cambia si pulsas «Usar» (y se puede deshacer).
    Privacidad: todo ocurre en el navegador. Guardado opcional en localStorage (di-farm-v1), apagado por defecto. No se rellena ningún dato por ti. */
 (function () {
   'use strict';
@@ -20,8 +22,8 @@
     tagOff: ['Dato oficial', 'Official data', 'Donnée officielle', 'Dato ufficiale'],
     tagCalc: ['Cálculo Dehesa con tus cifras', 'Dehesa calculation with your figures', 'Calcul Dehesa avec vos chiffres', 'Calcolo Dehesa con le tue cifre'],
     chTitle: ['Qué ha cambiado desde tu última visita', 'What has changed since your last visit', 'Ce qui a changé depuis votre dernière visite', 'Che cosa è cambiato dalla tua ultima visita'],
-    chHint: ['solo cultivos con «Precio de Dehesa»', 'only crops using “Dehesa price”', 'uniquement les cultures avec « Prix Dehesa »', 'solo colture con «Prezzo Dehesa»'],
-    chNone: ['Aún no hay nada que comparar. Elige «Precio de Dehesa» en algún cultivo y activa «Recordar»: la próxima vez verás aquí qué ha cambiado.', 'Nothing to compare yet. Choose “Dehesa price” on a crop and enable “Remember”: next time you will see here what has changed.', 'Rien à comparer pour l’instant. Choisissez « Prix Dehesa » sur une culture et activez « Mémoriser » : la prochaine fois, vous verrez ici ce qui a changé.', 'Ancora nulla da confrontare. Scegli «Prezzo Dehesa» su una coltura e attiva «Ricorda»: la prossima volta vedrai qui che cosa è cambiato.'],
+    chHint: ['cultivos con «Precio de Dehesa» y costes vinculados', 'crops using “Dehesa price” and linked costs', 'cultures avec « Prix Dehesa » et coûts liés', 'colture con «Prezzo Dehesa» e costi collegati'],
+    chNone: ['Aún no hay nada que comparar. Elige «Precio de Dehesa» en algún cultivo y activa «Recordar»: la próxima vez verás aquí qué ha cambiado. También puedes vincular fertilizantes, pienso o energía a una referencia en «Costes».', 'Nothing to compare yet. Choose “Dehesa price” on a crop and enable “Remember”: next time you will see here what has changed. You can also link fertiliser, feed or energy to a reference under “Costs”.', 'Rien à comparer pour l’instant. Choisissez « Prix Dehesa » sur une culture et activez « Mémoriser » : la prochaine fois, vous verrez ici ce qui a changé. Vous pouvez aussi lier engrais, aliments ou énergie à une référence dans « Coûts ».', 'Ancora nulla da confrontare. Scegli «Prezzo Dehesa» su una coltura e attiva «Ricorda»: la prossima volta vedrai qui che cosa è cambiato. Puoi anche collegare concimi, mangimi o energia a un riferimento in «Costi».'],
     chNoRem: ['Sin «Recordar» los cambios solo se comparan mientras esta página sigue abierta.', 'Without “Remember”, changes are only compared while this page stays open.', 'Sans « Mémoriser », les changements ne sont comparés que tant que cette page reste ouverte.', 'Senza «Ricorda» le variazioni si confrontano solo finché questa pagina resta aperta.'],
     chSame: ['Sin dato nuevo desde el {0}: el precio de referencia sigue en {1} / t (dato de {2}).', 'No new data since {0}: the reference price is still {1} / t (data for {2}).', 'Pas de nouvelle donnée depuis le {0} : le prix de référence reste à {1} / t (donnée du {2}).', 'Nessun dato nuovo dal {0}: il prezzo di riferimento resta {1} / t (dato del {2}).'],
     chDiff: ['Desde el {0}, el precio de referencia pasó de {1} a {2} por t ({3}; dato de {4}).', 'Since {0}, the reference price went from {1} to {2} per t ({3}; data for {4}).', 'Depuis le {0}, le prix de référence est passé de {1} à {2} par t ({3} ; donnée du {4}).', 'Dal {0}, il prezzo di riferimento è passato da {1} a {2} per t ({3}; dato del {4}).'],
@@ -66,16 +68,56 @@
     notInc: ['No incluido: subvenciones, seguros, intereses, impuestos ni amortización de maquinaria salvo que los añadas en «Otros» o «Maquinaria». Para IVA o impuesto sobre ventas usa la calculadora.', 'Not included: subsidies, insurance, interest, taxes or machinery depreciation unless you add them under “Other” or “Machinery”. For VAT or sales tax use the calculator.', 'Non inclus : subventions, assurances, intérêts, taxes ni amortissement des machines sauf si vous les ajoutez sous « Autres » ou « Machines ». Pour la TVA ou la taxe de vente, utilisez le calculateur.', 'Non inclusi: sussidi, assicurazioni, interessi, imposte né ammortamento dei macchinari salvo che tu li aggiunga in «Altri» o «Macchinari». Per IVA o imposta sulle vendite usa il calcolatore.'],
     toCalc: ['Calculadora completa (impuestos, escenarios A/B/C)', 'Full calculator (taxes, A/B/C cases)', 'Calculateur complet (taxes, scénarios A/B/C)', 'Calcolatore completo (imposte, scenari A/B/C)'],
     toWatch: ['Mi seguimiento (avisos de precio)', 'My watchlist (price alerts)', 'Mon suivi (alertes de prix)', 'Il mio seguito (avvisi di prezzo)'],
-    bad: ['Revisa este valor', 'Check this value', 'Vérifiez cette valeur', 'Controlla questo valore']
+    bad: ['Revisa este valor', 'Check this value', 'Vérifiez cette valeur', 'Controlla questo valore'],
+    lkFollow: ['Seguir una referencia', 'Track a reference', 'Suivre une référence', 'Segui un riferimento'],
+    lkNone: ['— sin vincular —', '— not linked —', '— non liée —', '— non collegata —'],
+    lkEurOnly: ['Las referencias de insumos son medias nacionales de España en euros: solo se pueden vincular costes en líneas en EUR.', 'Input references are national averages for Spain in euros: costs can only be linked on EUR lines.', 'Les références d’intrants sont des moyennes nationales de l’Espagne en euros : les coûts ne peuvent être liés que sur des lignes en EUR.', 'I riferimenti dei mezzi tecnici sono medie nazionali della Spagna in euro: si possono collegare costi solo su righe in EUR.'],
+    lkRef: ['Referencia: {0} · {1} {2} (dato de {3})', 'Reference: {0} · {1} {2} (data for {3})', 'Référence : {0} · {1} {2} (donnée du {3})', 'Riferimento: {0} · {1} {2} (dato del {3})'],
+    lkSame: ['Sin dato nuevo desde que fijaste tu importe (referencia de {0}).', 'No new data since you set your figure (reference for {0}).', 'Pas de nouvelle donnée depuis que vous avez fixé votre montant (référence du {0}).', 'Nessun dato nuovo da quando hai fissato il tuo importo (riferimento del {0}).'],
+    lkScen: ['Escenario: si tu coste se moviera como la referencia, pasaría de {0} a {1} ({2}; referencia de {3} a {4}).', 'Scenario: if your cost moved like the reference, it would go from {0} to {1} ({2}; reference from {3} to {4}).', 'Scénario : si votre coût évoluait comme la référence, il passerait de {0} à {1} ({2} ; référence du {3} au {4}).', 'Scenario: se il tuo costo si muovesse come il riferimento, passerebbe da {0} a {1} ({2}; riferimento dal {3} al {4}).'],
+    lkNeedCost: ['Escribe tu importe para ver el escenario.', 'Enter your figure to see the scenario.', 'Saisissez votre montant pour voir le scénario.', 'Inserisci il tuo importo per vedere lo scenario.'],
+    lkGone: ['Esta referencia ya no está en el monitor de insumos: el vínculo no se usa.', 'This reference is no longer in the input monitor: the link is not used.', 'Cette référence n’est plus dans le moniteur des intrants : le lien n’est pas utilisé.', 'Questo riferimento non è più nel monitor dei mezzi tecnici: il collegamento non viene usato.'],
+    lkApply: ['Usar {0} como mi coste', 'Use {0} as my cost', 'Utiliser {0} comme mon coût', 'Usa {0} come mio costo'],
+    lkUndo: ['Deshacer', 'Undo', 'Annuler', 'Annulla'],
+    lkApplied: ['Has cambiado tu importe de {0} a {1}.', 'You changed your figure from {0} to {1}.', 'Vous avez changé votre montant de {0} à {1}.', 'Hai cambiato il tuo importo da {0} a {1}.'],
+    lkNote: ['Es un escenario, no tu coste real: supone que tu partida se mueve igual que la media nacional de España (precios pagados por los agricultores, Ministerio de Agricultura, sin IVA; el gasóleo es el de automoción en surtidor con impuestos, Boletín Petrolero de la UE, no el gasóleo B). Se compara con la referencia publicada cuando escribiste o confirmaste tu importe. Si ya compraste, tu coste no cambia. Tu importe solo cambia si pulsas «Usar».', 'This is a scenario, not your actual cost: it assumes your cost item moves like the national average for Spain (prices paid by farmers, Ministry of Agriculture, excluding VAT; diesel is road diesel at the pump with taxes, EU Oil Bulletin, not farm diesel). It is compared with the reference published when you entered or confirmed your figure. If you have already bought, your cost does not change. Your figure only changes if you press “Use”.', 'C’est un scénario, pas votre coût réel : il suppose que votre poste évolue comme la moyenne nationale de l’Espagne (prix payés par les agriculteurs, ministère de l’Agriculture, hors TVA ; le gazole est le gazole routier à la pompe, taxes comprises, Bulletin pétrolier de l’UE, pas le gazole agricole). Il est comparé à la référence publiée lorsque vous avez saisi ou confirmé votre montant. Si vous avez déjà acheté, votre coût ne change pas. Votre montant ne change que si vous appuyez sur « Utiliser ».', 'È uno scenario, non il tuo costo reale: suppone che la tua voce si muova come la media nazionale della Spagna (prezzi pagati dagli agricoltori, Ministero dell’Agricoltura, IVA esclusa; il gasolio è quello per autotrazione alla pompa con tasse, Bollettino petrolifero UE, non il gasolio agricolo). Si confronta con il riferimento pubblicato quando hai inserito o confermato il tuo importo. Se hai già acquistato, il tuo costo non cambia. Il tuo importo cambia solo se premi «Usa».'],
+    chCost: ['{0} · {1}: {2} pasó de {3} a {4} ({5}; dato de {6}). Escenario con tu importe: {7} → {8}.', '{0} · {1}: {2} went from {3} to {4} ({5}; data for {6}). Scenario with your figure: {7} → {8}.', '{0} · {1} : {2} est passé de {3} à {4} ({5} ; donnée du {6}). Scénario avec votre montant : {7} → {8}.', '{0} · {1}: {2} è passato da {3} a {4} ({5}; dato del {6}). Scenario con il tuo importo: {7} → {8}.'],
+    chCostM: ['Con todos los costes vinculados de esta línea, el margen por ha pasaría de {0} a {1}.', 'With all linked costs on this line, margin per ha would go from {0} to {1}.', 'Avec tous les coûts liés de cette ligne, la marge par ha passerait de {0} à {1}.', 'Con tutti i costi collegati di questa riga, il margine per ha passerebbe da {0} a {1}.'],
+    chCostHint: ['desde que fijaste el importe', 'since you set the figure', 'depuis que vous avez fixé le montant', 'da quando hai fissato l’importo']
   };
   function t(k) { var a = TX[k]; if (!a) return k; return a[li()] === undefined ? a[0] : a[li()]; }
   function tf(k) { var s = t(k), a = arguments; return s.replace(/\{(\d)\}/g, function (m, i) { return a[+i + 1] === undefined ? m : a[+i + 1]; }); }
   var U = window.DIUnits;
   var S = { lines: [], seen: {}, remember: false, vary: 'price', step: 10, n: 0, justSeen: false }, REF = {};
+  /* Costes que pueden seguir una referencia del monitor de insumos (data/views/input-monitor.json: medias de España en EUR) */
+  var LK = { fert: ['nitrogen', 'pk', 'compound'], feed: ['feed'], energy: ['energy'] }, MON = null, MONP = null;
+  function loadMon() {
+    if (MONP) return MONP;
+    var u = window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath('data/views/input-monitor.json') : 'data/views/input-monitor.json';
+    return MONP = fetch(u).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (d) {
+      var by = {}, gr = {};
+      (d.groups || []).forEach(function (g) { gr[g.id] = []; (g.items || []).forEach(function (it) { if (it && it.id && typeof it.value === 'number' && it.value > 0 && it.last) { by[it.id] = it; gr[g.id].push(it); } }); });
+      MON = { by: by, gr: gr }; return MON;
+    }).catch(function () { MON = { by: {}, gr: {}, err: true }; return MON; });
+  }
+  /* el monitor solo se descarga si hace falta: hay costes vinculados o se abre «Costes» en una línea en EUR */
+  function needMon() { if (!MON) loadMon().then(function () { S.lines.forEach(drawLk); drawAll(); }); }
+  function itName(it) { return (it.name && (it.name[LANGS[li()]] || it.name.es)) || it.id; }
+  function itUnit(it) { return String(it.unit || '').replace(' (sin IVA)', ''); }
+  function lkOf(line, k) { return line.lk && line.lk[k] ? line.lk[k] : null; }
+  function canLink(line) { return line.c.cur === 'EUR'; }
+  function rebase(line, k) { var l = lkOf(line, k), it = l && MON && MON.by[l.id]; if (it) { l.v = it.value; l.period = it.last; l.at = today(); } }
+  /* escenario de una partida vinculada: null si no aplica */
+  function scen(line, k) {
+    var l = lkOf(line, k), it = l && MON && MON.by[l.id]; if (!l || !it || !canLink(line)) return null;
+    var cost = num(line.c.costs[k]); if (cost === null || cost <= 0) return { it: it, l: l, cost: null };
+    return { it: it, l: l, cost: cost, same: it.last === l.period, now: l.v > 0 ? cost * it.value / l.v : null, pct: l.v > 0 ? (it.value / l.v - 1) * 100 : null };
+  }
+  function sgn(p) { return (p > 0 ? '+' : p < 0 ? '−' : '') + nf(Math.abs(p), 1) + ' %'; }
 
   /* ---------- guardado opcional ---------- */
   function newLine(crop) { S.n++; var c = K.blank(crop || 'trigo'); c.pSrc = 'manual'; return { id: 'l' + S.n, c: c }; }
-  function save() { if (!S.remember) return; try { localStorage.setItem(KEY, JSON.stringify({ v: 1, lines: S.lines, seen: S.seen, vary: S.vary, step: S.step, n: S.n })); } catch (e) { /* sin almacenamiento */ } }
+  function save() { if (!S.remember) return; try { localStorage.setItem(KEY, JSON.stringify({ v: 1, lines: S.lines.map(function (l) { return l.lk ? { id: l.id, c: l.c, lk: l.lk } : { id: l.id, c: l.c }; }), seen: S.seen, vary: S.vary, step: S.step, n: S.n })); } catch (e) { /* sin almacenamiento */ } }
   function wipe() { try { localStorage.removeItem(KEY); } catch (e) { /* nada */ } }
   function loadSaved() {
     try {
@@ -84,7 +126,9 @@
         if (!l || !l.c || !K.CROPS[l.c.crop]) return;
         var b = K.blank(l.c.crop); Object.keys(b).forEach(function (f) { if (f !== 'costs' && f !== 'tax' && l.c[f] !== undefined) b[f] = l.c[f]; });
         K.COSTS.forEach(function (f) { if (l.c.costs && l.c.costs[f] !== undefined) b.costs[f] = l.c.costs[f]; });
-        S.lines.push({ id: String(l.id || ('l' + (S.lines.length + 1))).replace(/[^a-z0-9]/gi, ''), c: b });
+        var ln = { id: String(l.id || ('l' + (S.lines.length + 1))).replace(/[^a-z0-9]/gi, ''), c: b };
+        if (l.lk && typeof l.lk === 'object') Object.keys(LK).forEach(function (k) { var x = l.lk[k]; if (x && typeof x.id === 'string' && typeof x.v === 'number' && x.v > 0 && typeof x.period === 'string') { ln.lk = ln.lk || {}; ln.lk[k] = { id: x.id, v: x.v, period: x.period, at: String(x.at || '') }; } });
+        S.lines.push(ln);
       });
       if (d.seen && typeof d.seen === 'object') Object.keys(d.seen).forEach(function (k) { var v = d.seen[k]; if (v && typeof v.perT === 'number' && v.key && v.cur) S.seen[k] = v; });
       if (d.vary === 'yield' || d.vary === 'cost') S.vary = d.vary; if (d.step === 5 || d.step === 20) S.step = d.step;
@@ -161,11 +205,34 @@
     if (c.pSrc === 'manual') h += '<div class="cc-grid">' + field('fx-' + line.id + '-p', t('mine') + ' (' + (K.CURS[c.cur] || c.cur) + ' ' + (c.pUnit === 't' ? t('pt') : t('pbu')) + ')', '<div class="cc-row">' + inp(line, 'p', c.p) + seg(line, 'pUnit', [['t', t('pt')]].concat(kgBu ? [['bu', t('pbu')]] : []), kgBu ? c.pUnit : 't') + '</div>') + '</div>';
     else h += '<div id="fx-ref-' + line.id + '">' + refHtml(line) + '</div>';
     h += '</fieldset>';
-    h += '<details class="cc-fs"><summary>' + esc(t('costs')) + ' (' + esc(K.CURS[c.cur] || c.cur) + '/' + esc(au) + ')</summary><p class="pt-src" style="margin:8px 0">' + esc(t('costsHint')) + '</p><div class="cc-grid">' + K.COSTS.map(function (k2) { return field('fx-' + line.id + '-c-' + k2, t('c_' + k2), inp(line, 'c-' + k2, c.costs[k2])); }).join('') + '</div></details>';
+    h += '<details class="cc-fs fx-costs" data-l="' + line.id + '"' + (line.open ? ' open' : '') + '><summary>' + esc(t('costs')) + ' (' + esc(K.CURS[c.cur] || c.cur) + '/' + esc(au) + ')</summary><p class="pt-src" style="margin:8px 0">' + esc(t('costsHint')) + '</p><div class="cc-grid">' + K.COSTS.map(function (k2) { return field('fx-' + line.id + '-c-' + k2, t('c_' + k2), inp(line, 'c-' + k2, c.costs[k2]) + (LK[k2] ? '<div id="fx-lk-' + line.id + '-' + k2 + '" class="fx-lk">' + lkHtml(line, k2) + '</div>' : '')); }).join('') + '</div>' + (anyLink(line) ? '<p class="pt-src" style="margin:8px 0 0">' + esc(t('lkNote')) + '</p>' : '') + '</details>';
     h += '<div id="fx-r-' + line.id + '" aria-live="polite">' + resultHtml(line) + '</div></section>';
     return h;
   }
+  function anyLink(line) { return !!(line.lk && Object.keys(line.lk).length) && canLink(line); }
+  function lkHtml(line, k) {
+    var c = line.c, l = lkOf(line, k);
+    if (!canLink(line)) return k === 'fert' ? '<p class="pt-src" style="margin:4px 0 0">' + esc(t('lkEurOnly')) + '</p>' : '';
+    if (!MON) return '';
+    var opts = [['', t('lkNone')]]; LK[k].forEach(function (g) { (MON.gr[g] || []).forEach(function (it) { opts.push([it.id, itName(it)]); }); });
+    if (opts.length < 2) return '';
+    var h = '<label class="pt-sub" for="fx-' + line.id + '-lk-' + k + '" style="display:block;margin-top:4px">' + esc(t('lkFollow')) + '</label><select id="fx-' + line.id + '-lk-' + k + '" data-l="' + line.id + '" data-lk="' + k + '">' +
+      opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + ((l ? l.id : '') === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select>';
+    if (!l) return h;
+    var it = MON.by[l.id]; if (!it) return h + '<p class="pt-note">' + esc(t('lkGone')) + '</p>';
+    h += '<div class="pt-sub">' + tag('tagOff', 'off') + ' ' + esc(tf('lkRef', itName(it), nf(it.value, it.value < 10 ? 3 : 2), itUnit(it), dstr(it.last))) + '</div>';
+    var u = line.undo && line.undo.k === k ? line.undo : null;
+    if (u) h += '<div class="pt-sub">' + esc(tf('lkApplied', money(num(u.v) || 0, c.cur, 2), money(num(c.costs[k]) || 0, c.cur, 2))) + ' <button type="button" class="pt-chip" data-l="' + line.id + '" data-act="lkundo">' + esc(t('lkUndo')) + '</button></div>';
+    var x = scen(line, k);
+    if (!x || x.cost === null) return h + (u ? '' : '<div class="pt-sub">' + esc(t('lkNeedCost')) + '</div>');
+    if (x.same) return h + (u ? '' : '<div class="pt-sub">' + esc(tf('lkSame', dstr(l.period))) + '</div>');
+    var nv = r2(x.now);
+    return h + '<div class="pt-sub">' + tag('tagCalc', 'calc') + ' ' + esc(tf('lkScen', money(x.cost, c.cur, 2), money(nv, c.cur, 2), sgn(x.pct), dstr(l.period), dstr(it.last))) + '</div>' +
+      '<div class="pt-bar-ctl"><button type="button" class="pt-chip" data-l="' + line.id + '" data-k="' + k + '" data-act="lkapply">' + esc(tf('lkApply', money(nv, c.cur, 2))) + '</button></div>';
+  }
+  function drawLk(line) { Object.keys(LK).forEach(function (k) { var e = document.getElementById('fx-lk-' + line.id + '-' + k); if (e) e.innerHTML = lkHtml(line, k); }); }
   function drawLine(line) {
+    drawLk(line);
     var r = document.getElementById('fx-r-' + line.id); if (r) r.innerHTML = resultHtml(line);
     var f = document.getElementById('fx-ref-' + line.id); if (f) f.innerHTML = refHtml(line);
   }
@@ -190,6 +257,19 @@
           h += '.';
         }
       }
+      items.push(h + '</li>');
+    });
+    S.lines.forEach(function (line) {
+      if (!anyLink(line)) return; any = true; if (!MON) { wait = true; return; }
+      var c = line.c, sc = cl(c), moved = [];
+      Object.keys(LK).forEach(function (k) {
+        var x = scen(line, k); if (!x || x.cost === null || x.same || x.now === null) return;
+        sc.costs[k] = String(r2(x.now));
+        moved.push(esc(tf('chCost', cname(line), t('c_' + k), itName(x.it), nf(x.l.v, x.l.v < 10 ? 3 : 2), nf(x.it.value, x.it.value < 10 ? 3 : 2) + ' ' + itUnit(x.it), sgn(x.pct), dstr(x.it.last), money(x.cost, c.cur, 2), money(r2(x.now), c.cur, 2))));
+      });
+      if (!moved.length) return;
+      var a = K.calc(c), b = K.calc(sc), h = '<li>' + tag('tagOff', 'off') + ' ' + tag('tagCalc', 'calc') + ' <span class="pt-sub">' + esc(t('chCostHint')) + '</span><br>' + moved.join('<br>');
+      if (a.marginHa !== undefined && b.marginHa !== undefined) h += '<br>' + esc(tf('chCostM', money(a.marginHa, c.cur), money(b.marginHa, c.cur)));
       items.push(h + '</li>');
     });
     var h2 = '';
@@ -237,9 +317,10 @@
     h += sec('fx-sum-sec', t('sumTitle'), t('sumHint'), '<div id="fx-sum" aria-live="polite">' + summaryHtml() + '</div>');
     h += sec('fx-lines-sec', t('lines'), '', S.lines.map(lineHtml).join('') + '<div class="pt-bar-ctl">' + (S.lines.length < MAXL ? '<button type="button" class="pt-chip" data-act="add">+ ' + esc(t('add')) + '</button>' : '<span class="pt-sub">' + esc(tf('maxL', MAXL)) + '</span>') + '</div><p class="pt-src">' + esc(t('notInc')) + '</p>');
     h += '<div class="pt-bar-ctl"><label style="font-size:13px"><input type="checkbox" id="fx-remember"' + (S.remember ? ' checked' : '') + '> ' + esc(t('remember')) + '</label>' + (S.remember ? '<button type="button" class="pt-chip" data-act="forget">' + esc(t('forget')) + '</button>' : '') + '</div>';
-    h += '<p class="pt-src"><a href="calculadora.html">' + esc(t('toCalc')) + ' →</a> · <a href="mi-seguimiento.html">' + esc(t('toWatch')) + ' →</a></p>' + (window.DICite ? window.DICite.derived(['usda_ers', 'ecb'], { what: 'calc' }) : '') + '</div>';
+    h += '<p class="pt-src"><a href="calculadora.html">' + esc(t('toCalc')) + ' →</a> · <a href="mi-seguimiento.html">' + esc(t('toWatch')) + ' →</a></p>' + (window.DICite ? window.DICite.derived(['usda_ers', 'ecb'].concat(S.lines.some(anyLink) ? ['mapa_es', 'eu_oil_bulletin'] : []), { what: 'calc' }) : '') + '</div>';
     document.getElementById('fx-body').innerHTML = h;
     S.lines.forEach(function (line) { if (line.c.pSrc === 'dehesa') ensureRef(line); });
+    if (!MON && S.lines.some(function (l) { return anyLink(l) || (l.open && canLink(l)); })) needMon();
   }
 
   /* ---------- eventos ---------- */
@@ -251,6 +332,11 @@
     if (act === 'rm' && line) { S.lines = S.lines.filter(function (x) { return x !== line; }); delete S.seen[line.id]; delete REF[line.id]; save(); shell(); return; }
     if (act === 'forget') { wipe(); S.remember = false; shell(); return; }
     if (act === 'seen') { S.lines.forEach(function (ln) { var r = REF[ln.id]; if (ln.c.pSrc === 'dehesa' && r && r.state === 'ok') S.seen[ln.id] = snap(ln); }); S.justSeen = true; save(); drawAll(); S.justSeen = false; return; }
+    if (act === 'lkapply' && line) {
+      var k = el.getAttribute('data-k'), x = scen(line, k); if (!x || x.now === null) return;
+      line.undo = { k: k, v: line.c.costs[k], lk: JSON.parse(JSON.stringify(x.l)) }; line.c.costs[k] = String(r2(x.now)); rebase(line, k); save(); shell(); return;
+    }
+    if (act === 'lkundo' && line && line.undo) { var u = line.undo; line.c.costs[u.k] = u.v; line.lk = line.lk || {}; line.lk[u.k] = u.lk; delete line.undo; save(); shell(); return; }
     if (sg === 'vary') { S.vary = v; save(); drawAll(); return; }
     if (sg === 'step') { S.step = +v; save(); drawAll(); return; }
     if (!line) return; var c = line.c;
@@ -260,12 +346,18 @@
   function onInput(e) {
     var el = e.target, f = el.getAttribute && el.getAttribute('data-f'), line = lineOf(el.getAttribute && el.getAttribute('data-l')); if (!f || !line || el.tagName === 'SELECT') return;
     var c = line.c, val = el.value, m = /^c-(.+)$/.exec(f);
-    if (m && c.costs[m[1]] !== undefined) c.costs[m[1]] = val; else if (f === 'area' || f === 'y' || f === 'p') c[f] = val; else return;
+    if (m && c.costs[m[1]] !== undefined) { c.costs[m[1]] = val; if (lkOf(line, m[1])) { rebase(line, m[1]); if (line.undo && line.undo.k === m[1]) delete line.undo; } } else if (f === 'area' || f === 'y' || f === 'p') c[f] = val; else return;
     var bad = val !== '' && (num(val) === null || num(val) < 0); el.setAttribute('aria-invalid', bad ? 'true' : 'false'); el.title = bad ? t('bad') : '';
     drawLine(line); drawAll(); save();
   }
   function onChange(e) {
     var el = e.target; if (el.id === 'fx-remember') { S.remember = el.checked; if (S.remember) save(); else wipe(); shell(); return; }
+    var lk = el.getAttribute && el.getAttribute('data-lk'), lline = lk && lineOf(el.getAttribute('data-l'));
+    if (lk && lline && LK[lk]) {
+      var it = el.value && MON && MON.by[el.value]; lline.lk = lline.lk || {};
+      if (it) lline.lk[lk] = { id: it.id, v: it.value, period: it.last, at: today() }; else delete lline.lk[lk];
+      if (!Object.keys(lline.lk).length) delete lline.lk; if (lline.undo && lline.undo.k === lk) delete lline.undo; save(); shell(); return;
+    }
     var f = el.getAttribute && el.getAttribute('data-f'), line = lineOf(el.getAttribute && el.getAttribute('data-l')); if (!f || !line || el.tagName !== 'SELECT') return; var c = line.c;
     if (f === 'crop') { c.crop = el.value; if (!K.bushelKg(c.crop)) { c.yU = 't_ha'; c.pUnit = 't'; } c.inst = ''; delete S.seen[line.id]; if (c.pSrc === 'dehesa') c.p = ''; save(); shell(); }
     else if (f === 'cur') { c.cur = el.value; delete S.seen[line.id]; if (c.pSrc === 'dehesa') c.p = ''; save(); shell(); }
@@ -277,6 +369,7 @@
   window.DehesaShared.init('informacion');
   loadSaved(); if (!S.lines.length) S.lines.push(newLine());
   var body = document.getElementById('fx-body'); body.addEventListener('click', onClick); body.addEventListener('input', onInput); body.addEventListener('change', onChange);
+  body.addEventListener('toggle', function (e) { var el = e.target; if (el && el.classList && el.classList.contains('fx-costs')) { var ln = lineOf(el.getAttribute('data-l')); if (ln) { ln.open = el.open; if (el.open && canLink(ln)) needMon(); } } }, true);
   var go = function () { shell(); };
   (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
 })();
