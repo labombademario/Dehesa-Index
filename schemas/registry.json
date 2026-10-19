@@ -1495,6 +1495,18 @@
   "api/v1/openapi.json": [
    "api-openapi",
    []
+  ],
+  "digest/events.json": [
+   "digest-events",
+   [
+    "digest_events"
+   ]
+  ],
+  "digest/weekly.json": [
+   "digest-weekly",
+   [
+    "digest_weekly"
+   ]
   ]
  },
  "globs": {

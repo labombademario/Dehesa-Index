@@ -1,0 +1,145 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "title": "Avisos de precio: resumen semanal (data/digest/weekly.json)",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "windowDays",
+  "thresholdsPct",
+  "summary",
+  "topUp",
+  "topDown"
+ ],
+ "properties": {
+  "summary": {
+   "type": "object",
+   "required": [
+    "seriesWithMoves",
+    "events",
+    "up",
+    "down"
+   ]
+  },
+  "topUp": {
+   "type": "array",
+   "maxItems": 5,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "series",
+     "product",
+     "region",
+     "name",
+     "place",
+     "date",
+     "value",
+     "previousDate",
+     "previous",
+     "changePct",
+     "unit",
+     "currency",
+     "sourceName",
+     "attribution",
+     "report"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "@"
+     },
+     "region": {
+      "enum": [
+       "us",
+       "eu",
+       "uk",
+       "ca"
+      ]
+     },
+     "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-(\\d{2}|Q\\d)"
+     },
+     "previousDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-(\\d{2}|Q\\d)"
+     },
+     "value": {
+      "type": "number"
+     },
+     "previous": {
+      "type": "number"
+     },
+     "changePct": {
+      "type": "number"
+     },
+     "attribution": {
+      "type": "string",
+      "minLength": 3
+     }
+    }
+   }
+  },
+  "topDown": {
+   "type": "array",
+   "maxItems": 5,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "series",
+     "product",
+     "region",
+     "name",
+     "place",
+     "date",
+     "value",
+     "previousDate",
+     "previous",
+     "changePct",
+     "unit",
+     "currency",
+     "sourceName",
+     "attribution",
+     "report"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "@"
+     },
+     "region": {
+      "enum": [
+       "us",
+       "eu",
+       "uk",
+       "ca"
+      ]
+     },
+     "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-(\\d{2}|Q\\d)"
+     },
+     "previousDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-(\\d{2}|Q\\d)"
+     },
+     "value": {
+      "type": "number"
+     },
+     "previous": {
+      "type": "number"
+     },
+     "changePct": {
+      "type": "number"
+     },
+     "attribution": {
+      "type": "string",
+      "minLength": 3
+     }
+    }
+   }
+  }
+ }
+}

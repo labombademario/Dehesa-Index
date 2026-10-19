@@ -151,7 +151,7 @@
     var h = '<div class="no-print" style="display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-bottom:14px"><label style="font-size:13px">' + esc(w.product) + '<br><select id="nb-p" class="di-compare-select" style="width:auto;min-width:200px">' +
       prods.map(function (p) { return '<option value="' + esc(p.k) + '"' + (p.k === PROD ? ' selected' : '') + '>' + esc(p.n) + '</option>'; }).join('') + '</select></label>' +
       '<label style="font-size:13px">' + esc(w.coop) + '<br><input id="nb-c" class="di-compare-select" style="min-width:240px;width:auto" value="' + esc(COOP) + '"></label>' +
-      '<button id="nb-print" class="di-btn-gold-solid" type="button">' + esc(w.print) + '</button><button id="nb-copy" class="di-btn-outline" type="button">' + esc(w.copy) + '</button></div>';
+      '<button id="nb-print" class="di-btn-gold-solid" type="button">' + esc(w.print) + '</button><button id="nb-copy" class="di-btn-sec" type="button">' + esc(w.copy) + '</button></div>';
     if (!ready) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(w.loading) + '</p>'; bind(); return; }
     var rows = [], pitch = [], cmp = [], ch = '', src = [], asof = '';
     var L = {}; LAT.series.forEach(function (x) { L[x.id] = x; });

@@ -2899,3 +2899,5 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 .mm-map-p.na{fill:var(--border);opacity:.6;cursor:default}
 .mm-map-sel{font-size:13px;margin:6px 0 0}
 @media (prefers-reduced-motion:reduce){.mm-map-p{transition:none}}
+.di-btn-sec{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.di-btn-sec:hover{border-color:var(--text-muted)}

@@ -4857,3 +4857,35 @@ def api_index(doc, errs, warns, stats):
         if s["url"] != "/data/api/v1/series/%s.json" % s["id"]: errs.append("%s: enlace a la serie incorrecto" % s["id"])
         if not s["csv"].startswith("/data/pack/") or not s["xlsx"].startswith("/data/pack/"): errs.append("%s: enlaces de descarga fuera del paquete" % s["id"])
     stats["series"] = len(S)
+
+
+def _digest_event(e, errs, th):
+    if e["id"] != "%s@%s" % (e["series"], e["date"]): errs.append("%s: id no coincide con serie y fecha" % e["id"])
+    if not e["previous"] or abs((e["value"] / e["previous"] - 1) * 100 - e["changePct"]) > 0.011: errs.append("%s: changePct no cuadra" % e["id"])
+    if (e["changePct"] > 0) != (e.get("direction", "up" if e["changePct"] > 0 else "down") == "up"): errs.append("%s: direccion incoherente" % e["id"])
+    f = e.get("frequency")
+    if f and abs(e["changePct"]) < th[f] - 0.001: errs.append("%s: movimiento por debajo del umbral de su frecuencia" % e["id"])
+
+
+def digest_events(doc, errs, warns, stats):
+    """Avisos: cada evento cuadra (id, variacion, direccion, umbral), sin ids repetidos y ordenados del mas reciente al mas antiguo."""
+    ids = [e["id"] for e in doc["events"]]
+    if len(set(ids)) != len(ids): errs.append("eventos repetidos")
+    keys = [(e["date"], e["id"]) for e in doc["events"]]
+    if keys != sorted(keys, reverse=True): errs.append("eventos desordenados")
+    for e in doc["events"]: _digest_event(e, errs, doc["thresholdsPct"])
+    stats["events"] = len(ids)
+
+
+def digest_weekly(doc, errs, warns, stats):
+    """Resumen semanal: subidas ordenadas de mayor a menor, bajadas de mayor a menor caida, un solo evento por serie, y el resumen cuadra."""
+    U, D = doc["topUp"], doc["topDown"]
+    if [e["changePct"] for e in U] != sorted([e["changePct"] for e in U], reverse=True): errs.append("subidas desordenadas")
+    if [e["changePct"] for e in D] != sorted(e["changePct"] for e in D): errs.append("bajadas desordenadas")
+    if any(e["changePct"] <= 0 for e in U) or any(e["changePct"] >= 0 for e in D): errs.append("signo incoherente en subidas o bajadas")
+    s = [e["series"] for e in U + D]
+    if len(set(s)) != len(s): errs.append("una serie aparece dos veces")
+    if doc["summary"]["up"] + doc["summary"]["down"] != doc["summary"]["seriesWithMoves"]: errs.append("resumen: subidas + bajadas no suman las series con movimiento")
+    if len(U) > doc["summary"]["up"] or len(D) > doc["summary"]["down"]: errs.append("mas destacados que series con movimiento")
+    for e in U + D: _digest_event(e, errs, {"daily": 0, "weekly": 0, "monthly": 0, "quarterly": 0})
+    stats["destacados"] = len(U) + len(D)

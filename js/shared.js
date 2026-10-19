@@ -40,7 +40,7 @@
   var theme = readTheme();
 
   var DENSITY = { 'precios.html': 'compact', 'europa.html': 'compact', 'lonjas.html': 'compact', 'mercados.html': 'compact', 'precios-locales.html': 'compact', 'comparador.html': 'compact', 'catalogo.html': 'compact', 'calendario.html': 'compact', 'noticias.html': 'compact',
-    'metodologia.html': 'expanded', 'observatorio.html': 'expanded', 'condiciones.html': 'expanded', 'datos-descargables.html': 'expanded', 'api.html': 'expanded', 'informe-negociacion.html': 'expanded', 'comparador-facturas.html': 'expanded', 'liquidacion.html': 'expanded', 'monitor-insumos.html': 'expanded', 'informe-cooperativas.html': 'expanded', 'informacion.html': 'expanded', 'status.html': 'expanded', 'legal.html': 'expanded' };
+    'metodologia.html': 'expanded', 'observatorio.html': 'expanded', 'condiciones.html': 'expanded', 'datos-descargables.html': 'expanded', 'api.html': 'expanded', 'informe-negociacion.html': 'expanded', 'comparador-facturas.html': 'expanded', 'avisos.html': 'expanded', 'liquidacion.html': 'expanded', 'monitor-insumos.html': 'expanded', 'informe-cooperativas.html': 'expanded', 'informacion.html': 'expanded', 'status.html': 'expanded', 'legal.html': 'expanded' };
   function applyThemeAttr() {
     try { var f = window.location.pathname.split('/').pop() || 'index.html'; document.documentElement.setAttribute('data-density', DENSITY[f] || 'standard'); } catch (e) { /* sin densidad: estandar */ }
     document.documentElement.setAttribute('data-theme', theme);
@@ -179,6 +179,7 @@
       pd('api.html', L('API de datos', 'Data API', 'API de données', 'API dei dati'), L('Los mismos precios como JSON, gratis y sin clave', 'The same prices as JSON, free and no key', 'Les mêmes prix en JSON, gratuit et sans clé', 'Gli stessi prezzi in JSON, gratis e senza chiave')),
       pd('informe-negociacion.html', L('Informe de negociación', 'Negotiation report', 'Rapport de négociation', 'Rapporto di negoziazione'), L('Un producto, todos sus mercados y el clima, listo para imprimir', 'One product, all its markets and the weather, ready to print', 'Un produit, tous ses marchés et la météo, prêt à imprimer', 'Un prodotto, tutti i suoi mercati e il meteo, pronto da stampare')),
       pd('comparador-facturas.html', L('Comparador de facturas', 'Invoice comparison', 'Comparateur de factures', 'Confronto fatture'), L('¿Pagaste o cobraste más que el mercado? Pega tus facturas, sin subir nada', 'Did you pay or receive more than the market? Paste your invoices, nothing uploaded', 'Avez-vous payé ou reçu plus que le marché ? Collez vos factures, rien n’est envoyé', 'Hai pagato o incassato più del mercato? Incolla le fatture, nulla viene caricato')),
+      pd('avisos.html', L('Avisos de precio', 'Price alerts', 'Alertes de prix', 'Avvisi di prezzo'), L('Qué precios se han movido más: feed y resumen por correo', 'Which prices moved most: feed and email summary', 'Quels prix ont le plus bougé : flux et résumé par e-mail', 'Quali prezzi si sono mossi di più: feed e riepilogo via e-mail')),
       pd('liquidacion.html', L('Justificar la liquidación', 'Settlement price check', 'Justifier la liquidation', 'Giustificare la liquidazione'), L('Vuestro precio de venta frente a las lonjas, en las mismas fechas', 'Your selling price against market quotations, same dates', 'Votre prix de vente face aux cotations, mêmes dates', 'Il vostro prezzo di vendita rispetto alle quotazioni, stesse date')),
       pd('monitor-insumos.html', L('Monitor de insumos', 'Input monitor', 'Moniteur des intrants', 'Monitor dei mezzi tecnici'), L('¿Está caro el abono? Precio de hoy frente a 10 años', 'Is fertiliser expensive? Today’s price against 10 years', 'L’engrais est-il cher ? Prix du jour face à 10 ans', 'Il concime è caro? Prezzo di oggi rispetto a 10 anni')),
       pd('informe-cooperativas.html', L('Informe para cooperativas (muestra)', 'Report for cooperatives (sample)', 'Rapport pour coopératives (exemple)', 'Rapporto per cooperative (esempio)'), L('Qué sube, qué baja, insumos y próximos datos en una hoja', 'Risers, fallers, inputs and upcoming data on one page', 'Hausses, baisses, intrants et prochaines données sur une page', 'Rialzi, ribassi, mezzi tecnici e prossimi dati in una pagina')),
@@ -199,7 +200,7 @@
     var prod = G.production.items.filter(function (i) { return !i.items; }).concat(G.production.items.filter(function (i) { return i.items; })[0].items);
     var all = [].concat(G.countries.items, prod, G.trade.items, G.costs.items), one = function (f, q) { return all.filter(function (x) { return x.file === f && (x.query || '') === (q || ''); })[0]; };
     var BIZ_MENU = ['liquidacion.html', 'monitor-insumos.html']; // el resto (informe, descargas, condiciones) se enlaza desde empresas.html
-    var BIZ = ['liquidacion.html', 'monitor-insumos.html', 'informe-cooperativas.html', 'datos-descargables.html', 'api.html', 'informe-negociacion.html', 'comparador-facturas.html', 'condiciones.html'];
+    var BIZ = ['liquidacion.html', 'monitor-insumos.html', 'informe-cooperativas.html', 'datos-descargables.html', 'api.html', 'informe-negociacion.html', 'comparador-facturas.html', 'avisos.html', 'condiciones.html'];
     G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: [
       { label: L('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio'), items: prod.filter(function (i) { return /^(sequia|clima|mapa|produccion-mundial)\./.test(i.file); }).concat(one('aranceles.html')) },
       { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items.filter(function (i) { return BIZ.indexOf(i.file) < 0; }) },
@@ -932,6 +933,8 @@
   global.DehesaShared = {
     countryLinks: function (cc) { var r = []; NAV_GROUPS.countries.items.forEach(function (b) { if (b.cc === cc) b.items.forEach(function (i) { r.push({ href: sitePath(i.file) + (i.query || ''), file: i.file, label: i.label[lang] || i.label.es, d: i.d ? (i.d[lang] || i.d.es) : '' }); }); }); return r; },
     newsletter: { action: 'https://dehesaindex.substack.com/api/v1/free?nojs=true', provider: 'Substack (Substack Inc., Estados Unidos)' },
+    /* Resumen de precios por correo (pagina avisos.html). Se rellena al crear la cuenta del proveedor; vacio = el formulario no se muestra. Ver docs/avisos-por-correo.md */
+    digest: { action: '', provider: 'Buttondown (Buttondown, Estados Unidos)' },
     LANGS: LANGS,
     getLang: function () { return lang; },
     getTheme: function () { return theme; },

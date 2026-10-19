@@ -114,6 +114,10 @@ jobs:
         run: pip install openpyxl xlrd && python3 scripts/test-el-elstat.py
       - name: Tierra y regadio de FR, IT, PL, PT, DE, BE, HR y EL (scripts/test-eu-land.py)
         run: python3 scripts/test-eu-land.py
+      - name: API de datos al dia con el paquete descargable (scripts/build-api.py --check)
+        run: python3 scripts/build-api.py --check
+      - name: Avisos de precio (umbrales, Atom, correo escapado; no envia sin clave) y al dia con la API
+        run: python3 scripts/test-digest.py && python3 scripts/build-digest.py --check
       - name: Poland farmland prices (GUS BDL API responses, attribute 91 as gap, broken-data rejection; no network)
         run: python3 scripts/test-land-pl.py
 
