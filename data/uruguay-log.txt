@@ -65,4 +65,40 @@ Grilla anr 2017_120: celdas sin dato, mes omitido
 Grilla anr 2018_120: celdas sin dato, mes omitido
 Grilla anr 2019_120: celdas sin dato, mes omitido
 Grilla anr 2020_120: celdas sin dato, mes omitido
+CATALOGO [DIEA] mgap-serie-precio-de-la-tierra-compraventas | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-03-26
+CATALOGO [DIEA] mgap-serie-precio-de-la-tierra-arrendamientos | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-10-13
+CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2025 | org=mgap | lic=odc-uy | CSV | mod=2026-06-17
+CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2021 | org=mgap | lic=odc-uy | CSV | mod=2023-04-20
+CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2019 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
+CATALOGO [lecheria] mgap-datos-2018-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
+CATALOGO [lecheria] mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2017 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
+CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2020 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
+CATALOGO [lecheria] mgap-datos-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig-2016 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
+CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2024 | org=mgap | lic=odc-uy | CSV | mod=2026-06-10
+CATALOGO [lecheria] mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2023 | org=mgap | lic=odc-uy | CSV | mod=2024-04-11
+CATALOGO [lecheria] datos-preliminares-declaracion-jurada-de-existencias-dicose-snig-2022 | org=mgap | lic=odc-uy | CSV | mod=2023-04-20
+CATALOGO [carne] prestaciones-tarjeta-de-gestion-social-credencial-verde-y-carnet-de-derecho-asiento | org=intendencia-montevideo | lic=odc-uy | CSV,TXT | mod=2025-12-29
+CATALOGO [poblacion departamento] mides-indicador-4810 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-9386 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-10779 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-7302 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-4956 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-10777 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-9568 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-10202 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-10783 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-10205 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-11165 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-5219 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-10211 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-3447 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [poblacion departamento] mides-indicador-10463 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [producto interno bruto departamento] mides-indicador-13441 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [producto interno bruto departamento] mides-indicador-11119 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2020-01-22
+CATALOGO [producto interno bruto departamento] mides-indicador-6321 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [producto interno bruto departamento] mides-indicador-11125 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2020-01-22
+CATALOGO [producto interno bruto departamento] mides-indicador-13324 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [producto interno bruto departamento] mides-indicador-12468 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
+CATALOGO [producto interno bruto departamento] mides-indicador-5553 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2020-05-20
+CATALOGO: 35 conjuntos distintos
 series guardadas: 30
