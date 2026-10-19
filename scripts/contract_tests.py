@@ -4871,7 +4871,12 @@ def digest_events(doc, errs, warns, stats):
     """Avisos: cada evento cuadra (id, variacion, direccion, umbral), sin ids repetidos y ordenados del mas reciente al mas antiguo."""
     ids = [e["id"] for e in doc["events"]]
     if len(set(ids)) != len(ids): errs.append("eventos repetidos")
-    keys = [(e["date"], e["id"]) for e in doc["events"]]
+    def _rd(d):   # fecha real: trimestre = dia 15 del segundo mes, mes = dia 15 (igual que build-digest.py)
+        m = re.match(r"^(\d{4})-Q([1-4])$", d)
+        if m: return (int(m.group(1)), (int(m.group(2)) - 1) * 3 + 2, 15)
+        p = d.split("-")
+        return (int(p[0]), int(p[1]), int(p[2]) if len(p) > 2 else 15)
+    keys = [(_rd(e["date"]), e["id"]) for e in doc["events"]]
     if keys != sorted(keys, reverse=True): errs.append("eventos desordenados")
     for e in doc["events"]: _digest_event(e, errs, doc["thresholdsPct"])
     stats["events"] = len(ids)
