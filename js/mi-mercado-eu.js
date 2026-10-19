@@ -1,5 +1,5 @@
-/* Dehesa Index — Mi mercado: precio de mercado cercano (Comisión Europea) y sequía (EDO, JRC) de tu región, para Francia e Italia. ES5.
-   Se descarga solo al elegir Francia o Italia en js/mi-mercado.js (que le pasa sus ayudantes con DIMmEu.init). Nada se estima:
+/* Dehesa Index — Mi mercado: precio de mercado cercano (Comisión Europea) y sequía (EDO, JRC) de tu región, para Francia, Italia, Polonia y Grecia. ES5.
+   Se descarga solo al elegir uno de esos países en js/mi-mercado.js (que le pasa sus ayudantes con DIMmEu.init). Nada se estima:
    cada mercado se asigna a su región administrativa y las zonas de sequía se muestran tal cual las publica el fichero, sin promediar. */
 (function (global) {
   'use strict';
@@ -24,10 +24,11 @@
     es: { sP: 'Precio de mercado cerca de ti', sDr: 'Sequía en tu región', stage: 'Etapa',
       note: 'Precio semanal que la Comisión Europea publica para mercados de {c}. No es la media de tu región ni el precio de tu cooperativa o de tu finca: es una referencia. Cuando el portal indica la etapa de la cadena (en finca, en silo, en puerto…), la tabla la muestra.',
       noMarket: 'La Comisión Europea no publica un mercado de este producto en tu región. Mercados de {c} con precio reciente: {l}.', noAny: 'La Comisión Europea no publica precios de mercado recientes de este producto en {c}.',
-      pick: 'Para «{c}» no tenemos un precio de mercado de referencia. Hay precios para trigo blando, trigo duro, cebada, maíz grano, colza, girasol, soja y olivar.',
+      pick: 'Para «{c}» no tenemos un precio de mercado de referencia. Hay precios para trigo blando, trigo duro, cebada, maíz grano, centeno, colza, girasol, soja y olivar.',
       stages: { farmgate: 'Precio en finca', depfarm: 'Salida de finca o de la zona de producción', firstcust: 'Entregado al primer cliente (silo o planta)', port: 'Entregado en el silo del puerto', fob: 'FOB (franco a bordo)', proc: 'Entregado a la planta de transformación' },
-      pn: { rapeseed: 'Colza', sunflower: 'Girasol alto oleico', soya: 'Soja (haba)' },
-      miss1: 'Precio local: solo para los cultivos con mercado de referencia en tu región (trigo, cebada, maíz, colza, girasol, soja, aceite de oliva). Es una referencia de la Comisión Europea, no el precio de tu cooperativa; para el resto no lo tenemos.',
+      pn: { rapeseed: 'Colza', sunflower: 'Girasol alto oleico', soya: 'Soja (haba)', 'milling-rye': 'Centeno panificable', 'feed-rye': 'Centeno pienso' },
+      natMk: 'Media nacional', natNote: 'La Comisión Europea no publica hoy mercados regionales de {c}: el precio es la media nacional, no el de tu región.',
+      miss1: 'Precio local: solo para los cultivos con mercado de referencia en tu región (trigo, cebada, maíz, centeno, colza, girasol, soja, aceite de oliva). Es una referencia de la Comisión Europea, no el precio de tu cooperativa; para el resto no lo tenemos.',
       miss2: 'Seguro agrario: no tenemos cifras por región. No hemos encontrado una fuente abierta y descargable por región (solo informes en PDF).',
       dInD: 'Superficie en sequía agrícola', dLy: 'Misma década del año pasado', dZone: 'Zona', dBar: 'Reparto por clase', dPp: 'pp', dAll: 'Ver el monitor de sequía completo',
       dCls: ['Vigilancia', 'Aviso', 'Alerta', 'Recuperación', 'Recup. temporal de humedad', 'Recup. temporal de vegetación'],
@@ -36,10 +37,11 @@
     en: { sP: 'Market price near you', sDr: 'Drought in your region', stage: 'Stage',
       note: 'Weekly price the European Commission publishes for {c} markets. It is not your region’s average nor your co-op’s or farm’s price: it is a reference. When the portal states the stage of the chain (farm, silo, port…), the table shows it.',
       noMarket: 'The European Commission publishes no market for this product in your region. {c} markets with a recent price: {l}.', noAny: 'The European Commission publishes no recent market prices for this product in {c}.',
-      pick: 'We have no reference market price for “{c}”. Prices exist for common wheat, durum wheat, barley, grain maize, rapeseed, sunflower, soya and olives.',
+      pick: 'We have no reference market price for “{c}”. Prices exist for common wheat, durum wheat, barley, grain maize, rye, rapeseed, sunflower, soya and olives.',
       stages: { farmgate: 'Farm-gate price', depfarm: 'Departure from farm or production area', firstcust: 'Delivered to the first customer (silo or plant)', port: 'Delivered to a port silo', fob: 'Free on board (FOB)', proc: 'Delivered to the processor' },
-      pn: { rapeseed: 'Rapeseed', sunflower: 'High-oleic sunflower', soya: 'Soya beans' },
-      miss1: 'Local price: only for crops with a reference market in your region (wheat, barley, maize, rapeseed, sunflower, soya, olive oil). It is a European Commission reference, not your co-op’s price; for other crops we do not have it.',
+      pn: { rapeseed: 'Rapeseed', sunflower: 'High-oleic sunflower', soya: 'Soya beans', 'milling-rye': 'Milling rye', 'feed-rye': 'Feed rye' },
+      natMk: 'National average', natNote: 'The European Commission currently publishes no regional markets for {c}: the price is the national average, not your region’s.',
+      miss1: 'Local price: only for crops with a reference market in your region (wheat, barley, maize, rye, rapeseed, sunflower, soya, olive oil). It is a European Commission reference, not your co-op’s price; for other crops we do not have it.',
       miss2: 'Crop insurance: no regional figures. We have not found an open, downloadable source by region (only PDF reports).',
       dInD: 'Area in agricultural drought', dLy: 'Same dekad last year', dZone: 'Zone', dBar: 'Split by class', dPp: 'pp', dAll: 'Open the full drought monitor',
       dCls: ['Watch', 'Warning', 'Alert', 'Recovery', 'Temporary soil-moisture recovery', 'Temporary vegetation recovery'],
@@ -48,10 +50,11 @@
     fr: { sP: 'Prix de marché près de chez vous', sDr: 'Sécheresse dans votre région', stage: 'Stade',
       note: 'Prix hebdomadaire que la Commission européenne publie pour des marchés en {c}. Ce n’est ni la moyenne de votre région ni le prix de votre coopérative ou de votre exploitation : c’est une référence. Quand le portail indique le stade de la chaîne (ferme, silo, port…), le tableau l’affiche.',
       noMarket: 'La Commission européenne ne publie pas de marché de ce produit dans votre région. Marchés en {c} avec un prix récent : {l}.', noAny: 'La Commission européenne ne publie pas de prix de marché récents de ce produit en {c}.',
-      pick: 'Nous n’avons pas de prix de marché de référence pour « {c} ». Il existe des prix pour le blé tendre, le blé dur, l’orge, le maïs grain, le colza, le tournesol, le soja et l’olivier.',
+      pick: 'Nous n’avons pas de prix de marché de référence pour « {c} ». Il existe des prix pour le blé tendre, le blé dur, l’orge, le maïs grain, le seigle, le colza, le tournesol, le soja et l’olivier.',
       stages: { farmgate: 'Prix départ ferme', depfarm: 'Départ ferme ou zone de production', firstcust: 'Livré au premier client (silo ou usine)', port: 'Livré au silo du port', fob: 'FOB (franco à bord)', proc: 'Livré à l’usine de transformation' },
-      pn: { rapeseed: 'Colza', sunflower: 'Tournesol oléique', soya: 'Fèves de soja' },
-      miss1: 'Prix local : seulement pour les cultures avec un marché de référence dans votre région (blé, orge, maïs, colza, tournesol, soja, huile d’olive). C’est une référence de la Commission européenne, pas le prix de votre coopérative ; pour les autres cultures nous ne l’avons pas.',
+      pn: { rapeseed: 'Colza', sunflower: 'Tournesol oléique', soya: 'Fèves de soja', 'milling-rye': 'Seigle meunier', 'feed-rye': 'Seigle fourrager' },
+      natMk: 'Moyenne nationale', natNote: 'La Commission européenne ne publie actuellement aucun marché régional pour {c} : le prix est la moyenne nationale, pas celui de votre région.',
+      miss1: 'Prix local : seulement pour les cultures avec un marché de référence dans votre région (blé, orge, maïs, seigle, colza, tournesol, soja, huile d’olive). C’est une référence de la Commission européenne, pas le prix de votre coopérative ; pour les autres cultures nous ne l’avons pas.',
       miss2: 'Assurance récolte : pas de chiffres par région. Nous n’avons pas trouvé de source ouverte et téléchargeable par région (seulement des rapports PDF).',
       dInD: 'Surface en sécheresse agricole', dLy: 'Même décade l’an dernier', dZone: 'Zone', dBar: 'Répartition par classe', dPp: 'pt', dAll: 'Ouvrir le moniteur de sécheresse complet',
       dCls: ['Vigilance', 'Avertissement', 'Alerte', 'Rétablissement', 'Rétablissement temporaire de l’humidité', 'Rétablissement temporaire de la végétation'],
@@ -60,10 +63,11 @@
     it: { sP: 'Prezzo di mercato vicino a te', sDr: 'Siccità nella tua regione', stage: 'Fase',
       note: 'Prezzo settimanale che la Commissione europea pubblica per mercati in {c}. Non è la media della tua regione né il prezzo della tua cooperativa o azienda: è un riferimento. Quando il portale indica la fase della filiera (azienda, silo, porto…), la tabella la mostra.',
       noMarket: 'La Commissione europea non pubblica un mercato di questo prodotto nella tua regione. Mercati in {c} con un prezzo recente: {l}.', noAny: 'La Commissione europea non pubblica prezzi di mercato recenti di questo prodotto in {c}.',
-      pick: 'Non abbiamo un prezzo di mercato di riferimento per «{c}». Ci sono prezzi per frumento tenero, frumento duro, orzo, mais da granella, colza, girasole, soia e olivo.',
+      pick: 'Non abbiamo un prezzo di mercato di riferimento per «{c}». Ci sono prezzi per frumento tenero, frumento duro, orzo, mais da granella, segale, colza, girasole, soia e olivo.',
       stages: { farmgate: 'Prezzo in azienda', depfarm: 'Partenza da azienda o zona di produzione', firstcust: 'Consegnato al primo cliente (silo o impianto)', port: 'Consegnato al silo del porto', fob: 'FOB (franco a bordo)', proc: 'Consegnato all’impianto di trasformazione' },
-      pn: { rapeseed: 'Colza', sunflower: 'Girasole alto oleico', soya: 'Semi di soia' },
-      miss1: 'Prezzo locale: solo per le colture con un mercato di riferimento nella tua regione (frumento, orzo, mais, colza, girasole, soia, olio d’oliva). È un riferimento della Commissione europea, non il prezzo della tua cooperativa; per le altre colture non lo abbiamo.',
+      pn: { rapeseed: 'Colza', sunflower: 'Girasole alto oleico', soya: 'Semi di soia', 'milling-rye': 'Segale panificabile', 'feed-rye': 'Segale da foraggio' },
+      natMk: 'Media nazionale', natNote: 'La Commissione europea al momento non pubblica mercati regionali per {c}: il prezzo è la media nazionale, non quella della tua regione.',
+      miss1: 'Prezzo locale: solo per le colture con un mercato di riferimento nella tua regione (frumento, orzo, mais, segale, colza, girasole, soia, olio d’oliva). È un riferimento della Commissione europea, non il prezzo della tua cooperativa; per le altre colture non lo abbiamo.',
       miss2: 'Assicurazione dei raccolti: nessuna cifra per regione. Non abbiamo trovato una fonte aperta e scaricabile per regione (solo rapporti in PDF).',
       dInD: 'Superficie in siccità agricola', dLy: 'Stessa decade dell’anno scorso', dZone: 'Zona', dBar: 'Ripartizione per classe', dPp: 'pp', dAll: 'Apri il monitor della siccità completo',
       dCls: ['Attenzione', 'Allerta', 'Allarme', 'Recupero', 'Recupero temporaneo dell’umidità', 'Recupero temporaneo della vegetazione'],
@@ -76,6 +80,7 @@
     C1120: { f: 'cereales', k: [['durum-wheat', /^durum-wheat/]] },
     C1300: { f: 'cereales', k: [['feed-barley', /^feed-barley/], ['malting-barley', /^malting-barley/]] },
     C1500: { f: 'cereales', k: [['feed-maize', /^feed-maize/]] },
+    C1200: { f: 'cereales', k: [['milling-rye', /^milling-rye/], ['feed-rye', /^feed-rye/]] },
     I1110: { f: 'oleaginosas', k: [['rapeseed', /^rapeseed-(?!meal)/]] },
     I1120: { f: 'oleaginosas', k: [['sunflower', /^sunflower-seed-(?!meal)/]] },
     I1130: { f: 'oleaginosas', k: [['soya', /^soya-beans/]] },
@@ -83,17 +88,24 @@
   };
   /* mercado -> región (claves de Mi mercado): geografía administrativa, nada estimado */
   var FR_MK = { 'la pallice': 'NAQ', 'rouen': 'NOR', 'port-la-nouvelle': 'OCC', 'bordeaux': 'NAQ', 'bayonne': 'NAQ', 'dunkerque': 'HDF', 'creil': 'HDF', 'metz': 'GES', 'marne': 'GES', 'eure-et-loir': 'CVL', 'loiret': 'CVL', 'le meriot': 'GES', 'montoir': 'PDL', 'saint nazaire': 'PDL', 'brest': 'BRE', 'lorient': 'BRE', 'sete': 'OCC', 'lezoux': 'ARA' };
+  var PL_MK = {};   // los mercados regionales polacos de la Comisión (macrozonas) están caducados desde 2017-2021: solo hay media nacional
+  var NAT = { PL: 1 };   // países en los que se muestra la media nacional en vez de un mercado de la región
+  var EL_MK = { 'fthiotida': 'CGR', 'boetia': 'CGR', 'leivadia': 'CGR', 'ioannina': 'IPE', 'kozani': 'DMA', 'grevena': 'DMA', 'serres': 'KMA', 'kilkis': 'KMA', 'thessaloniki': 'KMA', 'drama': 'EMT', 'kavala': 'EMT', 'evros-alexandroupoli': 'EMT', 'orestiada': 'EMT', 'karditsa': 'THS', 'larissa': 'THS', 'pyrgos': 'WGR', 'ilia': 'WGR' };
+  var EL_N2 = { GR43: 'KRI', GR25: 'PEL', GR22: 'ION' };   // aceite: el nombre del mercado lleva el código NUTS 3 (p. ej. «Ηράκλειο (GR431)»)
   var IT_MK = { 'bologna': 'EMR', 'milano': 'LOM', 'napoli': 'CAM', 'torino': 'PIE', 'mantova': 'LOM', 'reggio emilia': 'EMR', 'roma': 'LAZ', 'treviso': 'VEN', 'udine': 'FVG', 'verona': 'VEN', 'alessandria': 'PIE', 'firenze': 'TOS', 'grosseto': 'TOS', 'perugia': 'UMB', 'foggia': 'PUG', 'catania': 'SIC', 'gioia tauro': 'CAL' };
   /* región de Mi mercado -> zonas NUTS 2 del fichero de sequía (data/eu-drought-regions) */
   var FR_ID = { IDF: ['FR10'], CVL: ['FRB0'], BFC: ['FRC1', 'FRC2'], NOR: ['FRD1', 'FRD2'], HDF: ['FRE1', 'FRE2'], GES: ['FRF1', 'FRF2', 'FRF3'], PDL: ['FRG0'], BRE: ['FRH0'], NAQ: ['FRI1', 'FRI2', 'FRI3'], OCC: ['FRJ1', 'FRJ2'], ARA: ['FRK1', 'FRK2'], PAC: ['FRL0'], COR: ['FRM0'] };
   var IT_ID = { PIE: ['ITC1'], VDA: ['ITC2'], LIG: ['ITC3'], LOM: ['ITC4'], ABR: ['ITF1'], MOL: ['ITF2'], CAM: ['ITF3'], PUG: ['ITF4'], BAS: ['ITF5'], CAL: ['ITF6'], SIC: ['ITG1'], SAR: ['ITG2'], TAA: ['ITH1', 'ITH2'], VEN: ['ITH3'], FVG: ['ITH4'], EMR: ['ITH5'], TOS: ['ITI1'], UMB: ['ITI2'], MAR: ['ITI3'], LAZ: ['ITI4'] };
+  var PL_ID = { MA: ['PL21'], SL: ['PL22'], WP: ['PL41'], ZP: ['PL42'], LB: ['PL43'], DS: ['PL51'], OP: ['PL52'], KP: ['PL61'], WN: ['PL62'], PM: ['PL63'], LD: ['PL71'], SK: ['PL72'], LU: ['PL81'], PK: ['PL82'], PD: ['PL84'], MZ: ['PL91', 'PL92'] };
+  var EL_ID = { ATT: ['EL30'], NAE: ['EL41'], SAE: ['EL42'], KRI: ['EL43'], EMT: ['EL51'], KMA: ['EL52'], DMA: ['EL53'], IPE: ['EL54'], THS: ['EL61'], ION: ['EL62'], WGR: ['EL63'], CGR: ['EL64'], PEL: ['EL65'] };
   var IT_N2 = {}; Object.keys(IT_ID).forEach(function (k) { IT_ID[k].forEach(function (id) { IT_N2[id] = k; }); });
-  function normK(m) { return String(m || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s*\(it[a-z0-9]{3}\)\s*$/i, '').trim(); }
-  function mkName(m) { return String(m || '').replace(/\s*\(IT[A-Z0-9]{3}\)\s*$/i, '').trim(); }
+  function normK(m) { return String(m || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s*\((it|gr)[a-z0-9]{3}\)\s*$/i, '').trim(); }
+  function mkName(m) { return String(m || '').replace(/\s*\((IT|GR)[A-Z0-9]{3}\)\s*$/i, '').trim(); }
   function mkRegion(c, m) {
-    var code = /\((IT[A-Z0-9]{3})\)/i.exec(String(m));
-    if (c === 'IT' && code && IT_N2[code[1].toUpperCase().slice(0, 4)]) return IT_N2[code[1].toUpperCase().slice(0, 4)];
-    return (c === 'FR' ? FR_MK : IT_MK)[normK(m)] || '';
+    var code = /\(((?:IT|GR)[A-Z0-9]{3})\)/i.exec(String(m)), c4 = code ? code[1].toUpperCase().slice(0, 4) : '';
+    if (c === 'IT' && c4 && IT_N2[c4]) return IT_N2[c4];
+    if (c === 'EL' && c4 && EL_N2[c4]) return EL_N2[c4];
+    return ({ FR: FR_MK, IT: IT_MK, PL: PL_MK, EL: EL_MK }[c] || {})[normK(m)] || '';
   }
   function stageOf(sid) {
     if (/farm-gate/.test(sid)) return 'farmgate'; if (/departure-from-farm|depprod/.test(sid)) return 'depfarm';
@@ -111,21 +123,26 @@
         if (/national-average/.test(s.id)) return;
         var key = null; rule.k.forEach(function (q) { if (!key && q[1].test(s.id)) key = q[0]; });
         if (!key) return;
-        s.regions.forEach(function (r) { if (r.c === C && r.m && r.last && mkRegion(C, r.m)) { cand.push({ k: key, s: s, r: r }); if (r.last[0] > newest) newest = r.last[0]; } });
+        s.regions.forEach(function (r) {
+          if (r.c !== C || !r.last) return;
+          var isNat = !!NAT[C] && (!r.m || /national average/i.test(r.m));
+          if (!isNat && !(r.m && mkRegion(C, r.m))) return;
+          cand.push({ k: key, s: s, r: r, nat: isNat }); if (r.last[0] > newest) newest = r.last[0];
+        });
       });
       var cur = cand.filter(function (q) { return days(q.r.last[0], newest) <= 28; });
-      var rows = cur.filter(function (q) { return mkRegion(C, q.r.m) === R; });
+      var rows = cur.filter(function (q) { return NAT[C] ? q.nat : mkRegion(C, q.r.m) === R; }), mn = function (q) { return q.nat ? x.natMk : mkName(q.r.m); };
       if (!rows.length) {
         var near = {}; cur.forEach(function (q) { near[normK(q.r.m)] = mkName(q.r.m); });
         var l = Object.keys(near).map(function (k) { return near[k]; }).sort();
         putSec(tok, 'price', note(l.length ? fill(x.noMarket, { c: ctry, l: l.join(', ') }) : fill(x.noAny, { c: ctry })) + link(rule.f)); return;
       }
       var order = rule.k.map(function (q) { return q[0]; }), hasSt = rows.some(function (q) { return !!stageOf(q.s.id); });
-      rows.sort(function (a, b) { return order.indexOf(a.k) - order.indexOf(b.k) || mkName(a.r.m).localeCompare(mkName(b.r.m)); });
-      var h = note(fill(x.note, { c: ctry })) + '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(tt.prod) + '</th>' + (hasSt ? '<th scope="col">' + esc(x.stage) + '</th>' : '') + '<th scope="col">' + esc(tt.mk) + '</th><th scope="col" class="r">' + esc(tt.price) + '</th><th scope="col" class="r">' + esc(tt.wk) + '</th><th scope="col" class="r">' + esc(tt.date) + '</th></tr></thead><tbody>' +
+      rows.sort(function (a, b) { return order.indexOf(a.k) - order.indexOf(b.k) || mn(a).localeCompare(mn(b)); });
+      var h = (NAT[C] ? note(fill(x.natNote, { c: ctry })) : note(fill(x.note, { c: ctry }))) + '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(tt.prod) + '</th>' + (hasSt ? '<th scope="col">' + esc(x.stage) + '</th>' : '') + '<th scope="col">' + esc(tt.mk) + '</th><th scope="col" class="r">' + esc(tt.price) + '</th><th scope="col" class="r">' + esc(tt.wk) + '</th><th scope="col" class="r">' + esc(tt.date) + '</th></tr></thead><tbody>' +
         rows.map(function (q) {
           var r = q.r, wk = r.prev && Math.abs(days(r.prev[0], r.last[0]) - 7) <= 1 ? pct(r.last[1], r.prev[1]) : null, st = stageOf(q.s.id);
-          return '<tr><td>' + esc(x.pn[q.k] || tt.names[q.k] || q.k) + '</td>' + (hasSt ? '<td>' + (st ? esc(x.stages[st]) : '—') + '</td>' : '') + '<td>' + esc(mkName(r.m)) + '</td><td class="r">' + nf(r.last[1], q.s.unit === '€/t' ? 1 : 2) + ' ' + esc(q.s.unit) + '</td><td class="r">' + pc(wk) + '</td><td class="r">' + esc(dt(r.last[0])) + '</td></tr>';
+          return '<tr><td>' + esc(x.pn[q.k] || tt.names[q.k] || q.k) + '</td>' + (hasSt ? '<td>' + (st ? esc(x.stages[st]) : '—') + '</td>' : '') + '<td>' + esc(mn(q)) + '</td><td class="r">' + nf(r.last[1], q.s.unit === '€/t' ? 1 : 2) + ' ' + esc(q.s.unit) + '</td><td class="r">' + pc(wk) + '</td><td class="r">' + esc(dt(r.last[0])) + '</td></tr>';
         }).join('') + '</tbody></table></div>';
       putSec(tok, 'price', h + link(rule.f) + cite('eu_agrifood', newest));
     });
@@ -137,7 +154,7 @@
     return '<div role="img" aria-label="' + esc(lbl) + '" style="display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--border);min-width:120px">' + s + '</div>';
   }
   function euDrought(tok) {
-    var C = H.ST().c, R = H.ST().r, x = epr(), ids = (C === 'FR' ? FR_ID : IT_ID)[R];
+    var C = H.ST().c, R = H.ST().r, x = epr(), ids = ({ FR: FR_ID, IT: IT_ID, PL: PL_ID, EL: EL_ID }[C] || {})[R];
     if (!ids) { putSec(tok, 'dr', note(x.dNo)); return Promise.resolve(); }
     return Promise.all([get('data/eu-drought.json'), get('data/eu-drought-regions/' + C + '.json')]).then(function (a) {
       if (tok !== H.TOK()) return;

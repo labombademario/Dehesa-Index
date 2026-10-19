@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Prueba en navegador del mapa para elegir la zona en «Mi mercado» (js/mi-mercado.js, mapHtml).
-   En los 7 países: pulsar una zona elige esa zona en el desplegable y la resalta; las zonas sin datos no se pueden pulsar;
+   En los 9 países: pulsar una zona elige esa zona en el desplegable y la resalta; las zonas sin datos no se pueden pulsar;
    el teclado (Enter) también elige; el desplegable mueve el resaltado; Reino Unido: Londres y Sudeste son una sola zona de DEFRA.
    Necesita un servidor estático en :8123 (python3 -m http.server 8123). Uso: node scripts/test-mi-mercado-map.mjs */
 import { execSync } from 'node:child_process';
@@ -10,7 +10,7 @@ const fails = []; const ok = (n, c) => { if (!c) { fails.push(n); console.log('F
 const b = await pw.chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const p = await b.newPage({ viewport: { width: 1280, height: 1000 } }); const errs = []; p.on('pageerror', e => errs.push(String(e)));
 await p.goto(BASE + '/mi-mercado.html'); await p.evaluate(() => { localStorage.clear(); localStorage.setItem('dehesaIndexLang', 'es'); }); await p.reload(); await p.waitForTimeout(1200);
-const CASES = [['ES', '41', 'Sevilla', 50, 2], ['US', 'IA', 'Iowa', 50, 0], ['CA', 'SK', 'Saskatchewan', 10, 3], ['DE', 'BY', 'Baviera', 16, 0], ['UK', 'south-east-and-london', 'Sudeste de Inglaterra y Londres', 12, 0], ['FR', 'OCC', 'Occitania', 13, 0], ['IT', 'EMR', 'Emilia-Romaña', 20, 0]];
+const CASES = [['ES', '41', 'Sevilla', 50, 2], ['US', 'IA', 'Iowa', 50, 0], ['CA', 'SK', 'Saskatchewan', 10, 3], ['DE', 'BY', 'Baviera', 16, 0], ['UK', 'south-east-and-london', 'Sudeste de Inglaterra y Londres', 12, 0], ['FR', 'OCC', 'Occitania', 13, 0], ['IT', 'EMR', 'Emilia-Romaña', 20, 0], ['PL', 'WP', 'Gran Polonia', 16, 0], ['EL', 'KMA', 'Macedonia Central', 13, 0]];
 for (const [cc, pick, name, minN, na] of CASES) {
   await p.click('[data-mm-cc="' + cc + '"]'); await p.waitForSelector('.mm-map-' + cc.toLowerCase() + ' svg', { timeout: 20000 });
   const n = await p.$$eval('.mm-map-' + cc.toLowerCase() + ' [data-mm-map]', a => a.length), nna = await p.$$eval('.mm-map-p.na', a => a.length);
@@ -30,10 +30,18 @@ const EU_CASES = [
   ['IT', 'EMR', 'C1110', 'Trigo blando', /Bologna|no publica un mercado|no publica precios/, /Emilia-Romagna/],
   ['IT', 'PUG', 'O1000', 'Olivar', /Bari|no publica un mercado|no publica precios/, /Puglia/],
   ['IT', 'TAA', 'C1500', 'Maíz grano', /Mercados de Italia con precio reciente|no publica precios/, /Bolzano[\s\S]*Trento/],
-  ['IT', 'LOM', 'C1500', 'Maíz grano', /Milano|Mantova|no publica un mercado|no publica precios/, /Lombardia/]
+  ['IT', 'LOM', 'C1500', 'Maíz grano', /Milano|Mantova|no publica un mercado|no publica precios/, /Lombardia/],
+  // Polonia: la Comisión no publica mercados regionales vigentes; se muestra la media nacional, rotulada como tal
+  ['PL', 'MZ', 'C1110', 'Trigo blando', /media nacional[\s\S]*Media nacional|no publica precios/, /Warszawski[\s\S]*Mazowiecki/],
+  ['PL', 'SK', 'C1300', 'Cebada', /Media nacional|no publica precios/, /Świętokrzyskie/],
+  ['PL', 'LU', 'R1000', 'Patata', /no tenemos un precio de mercado de referencia/, /Lubelskie/],
+  // Grecia: mercados por prefectura asignados a su región; sin mercado en la región, aviso y lista
+  ['EL', 'KRI', 'O1000', 'Olivar', /Heraklion|Ηράκλειο|Χανιά|no publica un mercado|no publica precios/, /Kriti/],
+  ['EL', 'DMA', 'C1110', 'Trigo blando', /Kozani|Grevena|no publica un mercado|no publica precios/, /Dytiki Makedonia/],
+  ['EL', 'ATT', 'C1110', 'Trigo blando', /Mercados de Grecia con precio reciente|no publica precios/, /Attiki/]
 ];
 for (const [cc, r, crop, txt, rxPrice, rxDr] of EU_CASES) {
-  await p.click('[data-mm-cc="' + cc + '"]'); await p.waitForSelector('[data-mm-map="' + r + '"]'); await p.click('[data-mm-map="' + r + '"]'); await p.waitForTimeout(600);
+  await p.click('[data-mm-cc="' + cc + '"]'); await p.waitForSelector('[data-mm-map="' + r + '"]'); await p.locator('[data-mm-map="' + r + '"]').dispatchEvent('click'); await p.waitForTimeout(600);
   await p.selectOption('select[data-mm="p"]', crop); await p.waitForTimeout(1800);
   const sec = async id => (await p.$eval('[data-mm-sec="' + id + '"]', e => e.innerText).catch(() => ''));
   const body = await p.textContent('#mm-root, body'), price = await sec('price'), dr = await sec('dr'), tag = cc + ' ' + r + ' ' + crop;
