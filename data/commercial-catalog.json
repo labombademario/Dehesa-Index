@@ -1,18 +1,18 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-19T00:52:00Z",
+ "generatedAt": "2026-10-19T15:43:36Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 142,
-  "sourcesApto": 129,
+  "sources": 143,
+  "sourcesApto": 130,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 293,
-  "datasets_apto": 170,
-  "datasets_condiciones": 113,
+  "datasets": 295,
+  "datasets_apto": 171,
+  "datasets_condiciones": 114,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -649,6 +649,23 @@
    "attribution": "Source: U.S. Energy Information Administration",
    "conditions": "Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API key and call limits.",
    "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (no alterar los datos diciendo que son de la EIA, no insinuar su respaldo, sin logo de la EIA, limites de la API). (2026-10-15)"
+  },
+  {
+   "id": "elstat",
+   "name": "Greece — ELSTAT (Hellenic Statistical Authority)",
+   "url": "https://www.statistics.gr/",
+   "country": "EL",
+   "licenseId": "OPEN-REUSE-ATTRIBUTION",
+   "licenseName": "Politica de difusion de ELSTAT: reutilizacion libre citando la fuente",
+   "licenseUrl": "https://www.statistics.gr/en/european-statistics-terms",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: ELSTAT (Hellenic Statistical Authority), statistics.gr. Elaboracion de dehesaindex.com.",
+   "conditions": "Citar la fuente; no deformar el sentido de los datos. Quedan fuera microdatos, datos personales, material de terceros (mapas y limites) y publicaciones impresas. La pagina propia de ELSTAT 'Copyright and reuse of data' no pudo leerse; se apoya en la politica de difusion y en las condiciones de las estadisticas europeas."
   },
   {
    "id": "enesa",
@@ -3156,6 +3173,14 @@
    ]
   },
   {
+   "path": "data/el-elstat/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "elstat"
+   ]
+  },
+  {
    "path": "data/el-ghg-agri.json",
    "scope": "fichero",
    "verdict": "condiciones",
@@ -3310,6 +3335,14 @@
      "sourceId": "eurostat",
      "verdict": "condiciones"
     }
+   ]
+  },
+  {
+   "path": "data/eu-land/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
    ]
   },
   {

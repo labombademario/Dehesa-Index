@@ -1,14 +1,14 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-19T00:52:00Z",
+ "generatedAt": "2026-10-19T15:43:36Z",
  "summary": {
-  "sources": 142,
-  "sourcesApto": 129,
+  "sources": 143,
+  "sourcesApto": 130,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 293,
-  "datasets_apto": 170,
-  "datasets_condiciones": 113,
+  "datasets": 295,
+  "datasets_apto": 171,
+  "datasets_condiciones": 114,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -162,6 +162,10 @@
   "eia": {
    "name": "U.S. Energy Information Administration (Open Data API)",
    "verdict": "condiciones"
+  },
+  "elstat": {
+   "name": "Greece — ELSTAT (Hellenic Statistical Authority)",
+   "verdict": "apto"
   },
   "enesa": {
    "name": "Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario",
