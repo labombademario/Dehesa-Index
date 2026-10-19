@@ -1,20 +1,118 @@
-PROBE herramientas: 7z=True, 7zz=False, unrar=False, bsdtar=False, unar=False
-PROBE mgap-bosques-plantados-forestacion | Cartografía bosque plantado 2021 - Capa especies | 357335089 bytes
-PROBE zip contenido: Especies_2021.cpg(5); Especies_2021.dbf(52923312); Especies_2021.prj(409); Especies_2021.sbn(1691836); Especies_2021.sbx(100268); Especies_2021.shp(558291004); Especies_2021.shx(1331500)
-PROBE Especies_2021.dbf campos: Especie:C254, Area_Has:F19, Departamen:C25, SHAPE_Area:F19
-PROBE Especies_2021.dbf campos candidatos: ['ESPECIE', 'AREA_HAS', 'DEPARTAMEN']
-PROBE Especies_2021.dbf filas=166425 primera={"Especie": "Montes de abrigo y Cortinas", "Area_Has": "6.70000000000e-01", "Departamen": "MALDONADO", "SHAPE_Area": "6.72160509324e+03"}
-PROBE Especies_2021.dbf total por departamento (ha o unidad del campo, solo log): {"RIVERA": 118261, "TACUAREMBO": 101706, "RIO NEGRO": 99163, "PAYSANDU": 95211, "CERRO LARGO": 80846, "DURAZNO": 59449, "LAVALLEJA": 56319, "ROCHA": 40399, "FLORIDA": 39308, "TREINTA Y TRES": 37396, "SORIANO": 27689, "MALDONADO": 27453, "CANELONES": 18994, "FLORES": 16455, "COLONIA": 8388, "SALTO": 5719, "SAN JOSE": 5613, "ARTIGAS": 5590, "MONTEVIDEO": 1069}
-PROBE prj Especies_2021.prj: PROJCS["WGS_1984_UTM_Zone_21S",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_
-PROBE mgap-bosque-nativo | Bosque nativo 2016 | 36723760 bytes
-PROBE 7z rc=0 he drive for archives: | 1 file, 36723760 bytes (36 MiB) |  | Extracting archive: /tmp/tmpaw0fs_bw/071b9956.rar | -- | Path = /tmp/tmpaw0fs_bw/071b9956.rar | Type = Rar | Physical Size = 36723760 | Solid = - | Blocks = 8 | Multivolume = - | Volumes = 1 |  | Everything is Ok |  | Files: 3 | Size:       5733486 | Compressed: 36723760 | 
-PROBE BN_Sentinel2_2016_Uy_final.dbf campos: majority:N21, area_ha:N21, HA:N11, area:N13
-PROBE BN_Sentinel2_2016_Uy_final.dbf campos candidatos: ['AREA_HA', 'AREA']
-PROBE BN_Sentinel2_2016_Uy_final.dbf filas=85566 primera={"majority": "1.00000", "area_ha": "0.75010", "HA": "624.0121", "area": "624.0121"}
-PROBE prj BN_Sentinel2_2016_Uy_final.prj: PROJCS["WGS_1984_UTM_Zone_21S",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Transverse_Me
-PROBE mgap-bosque-nativo | Bosque nativo 2022 | 384608980 bytes
-PROBE 7z rc=0 s: | 1 file, 384608980 bytes (367 MiB) |  | Extracting archive: /tmp/tmpaw0fs_bw/04220c8a.rar | -- | Path = /tmp/tmpaw0fs_bw/04220c8a.rar | Type = Rar5 | Physical Size = 384608980 | Solid = - | Blocks = 6 | Encrypted = - | Multivolume = - | Volumes = 1 |  | Everything is Ok |  | Files: 2 | Size:       47096647 | Compressed: 384608980 | 
-PROBE bosque2021.dbf campos: Id:N10, Shape_Area:N19, Value:N10
-PROBE bosque2021.dbf campos candidatos: []
-PROBE bosque2021.dbf filas=1177403 primera={"Id": "1795313", "Shape_Area": "0.96773476325", "Value": "1"}
-PROBE prj bosque2021.prj: PROJCS["WGS_1984_UTM_Zone_21S",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Transverse_Me
+URSEA fila 16 descartada: Inicio 2022-12-26 posterior a Fin 2022-12-25 (no se corrige la fecha)
+MGAP tierra sale: anios con pocos departamentos, descartados: [2006]
+MGAP tierra rent: anios con pocos departamentos, descartados: [2007]
+Grilla pad 2000_120: celdas sin dato, mes omitido
+Grilla pad 2001_120: celdas sin dato, mes omitido
+Grilla pad 2002_120: celdas sin dato, mes omitido
+Grilla pad 2003_120: celdas sin dato, mes omitido
+Grilla pad 2004_120: celdas sin dato, mes omitido
+Grilla pad 2005_120: celdas sin dato, mes omitido
+Grilla pad 2006_120: celdas sin dato, mes omitido
+Grilla pad 2007_120: celdas sin dato, mes omitido
+Grilla pad 2008_120: celdas sin dato, mes omitido
+Grilla pad 2009_120: celdas sin dato, mes omitido
+Grilla pad 2010_120: celdas sin dato, mes omitido
+Grilla pad 2011_120: celdas sin dato, mes omitido
+Grilla pad 2012_120: celdas sin dato, mes omitido
+Grilla pad 2013_120: celdas sin dato, mes omitido
+Grilla pad 2014_120: celdas sin dato, mes omitido
+Grilla pad 2015_120: celdas sin dato, mes omitido
+Grilla pad 2016_120: celdas sin dato, mes omitido
+Grilla pad 2017_120: celdas sin dato, mes omitido
+Grilla pad 2018_120: celdas sin dato, mes omitido
+Grilla pad 2019_120: celdas sin dato, mes omitido
+Grilla pad 2020_120: celdas sin dato, mes omitido
+Grilla pad 2022_120: celdas sin dato, mes omitido
+Grilla ibh 2000_120: celdas sin dato, mes omitido
+Grilla ibh 2001_120: celdas sin dato, mes omitido
+Grilla ibh 2002_120: celdas sin dato, mes omitido
+Grilla ibh 2003: solo 0 celdas, se omite
+Grilla ibh 2004_120: celdas sin dato, mes omitido
+Grilla ibh 2005_120: celdas sin dato, mes omitido
+Grilla ibh 2006_120: celdas sin dato, mes omitido
+Grilla ibh 2007_120: celdas sin dato, mes omitido
+Grilla ibh 2008_120: celdas sin dato, mes omitido
+Grilla ibh 2009_120: celdas sin dato, mes omitido
+Grilla ibh 2010_120: celdas sin dato, mes omitido
+Grilla ibh 2011_120: celdas sin dato, mes omitido
+Grilla ibh 2012_120: celdas sin dato, mes omitido
+Grilla ibh 2013_120: celdas sin dato, mes omitido
+Grilla ibh 2014_120: celdas sin dato, mes omitido
+Grilla ibh 2015_120: celdas sin dato, mes omitido
+Grilla ibh 2016_120: celdas sin dato, mes omitido
+Grilla ibh 2017_120: celdas sin dato, mes omitido
+Grilla ibh 2018_120: celdas sin dato, mes omitido
+Grilla ibh 2019_120: celdas sin dato, mes omitido
+Grilla ibh 2020_120: celdas sin dato, mes omitido
+Grilla anr 2000_120: celdas sin dato, mes omitido
+Grilla anr 2001_120: celdas sin dato, mes omitido
+Grilla anr 2002_120: celdas sin dato, mes omitido
+Grilla anr 2003_120: celdas sin dato, mes omitido
+Grilla anr 2004_120: celdas sin dato, mes omitido
+Grilla anr 2005_120: celdas sin dato, mes omitido
+Grilla anr 2006_120: celdas sin dato, mes omitido
+Grilla anr 2007_120: celdas sin dato, mes omitido
+Grilla anr 2008_120: celdas sin dato, mes omitido
+Grilla anr 2009_120: celdas sin dato, mes omitido
+Grilla anr 2010_120: celdas sin dato, mes omitido
+Grilla anr 2011_120: celdas sin dato, mes omitido
+Grilla anr 2012_120: celdas sin dato, mes omitido
+Grilla anr 2013_120: celdas sin dato, mes omitido
+Grilla anr 2014_120: celdas sin dato, mes omitido
+Grilla anr 2015_120: celdas sin dato, mes omitido
+Grilla anr 2016_120: celdas sin dato, mes omitido
+Grilla anr 2017_120: celdas sin dato, mes omitido
+Grilla anr 2018_120: celdas sin dato, mes omitido
+Grilla anr 2019_120: celdas sin dato, mes omitido
+Grilla anr 2020_120: celdas sin dato, mes omitido
+BOSQUE 2018: 169725 poligonos, 875431 ha en total; especies: Eucalyptus grandis (inc. híbridos y clon=235617; Eucalyptus dunnii=191016; Pinus elliotti y Pinus taeda=180016; Eucalyptus globulus, E. maidenii y E. bi=149315; Montes de abrigo y Cortinas=81956; Otros Eucalyptus=18776; Mezcla de especies=11814; Pinus pinaster=3790; Salix sp. y Populus sp.=3130
+BOSQUE 2018 publicado: 19 departamentos, 875433 ha
+BOSQUE 2021: 166425 poligonos, 845031 ha en total; especies: Eucalyptus grandis (inc. hÃ­bridos y clo=250964; Eucalyptus dunnii=216581; Pinus elliottii y Pinus taeda=150908; Eucalyptus globulus, E. maidenii y E. bi=103639; Montes de abrigo y Cortinas=81956; Otros Eucalyptus=23356; Mezcla de especies=10699; Pinus pinaster=3790; Salix sp. y Populus sp.=3137
+BOSQUE 2021 publicado: 19 departamentos, 845028 ha
+CATALOGO [org:ine] ine-presupuesto_ine | Presupuesto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-07-06
+CATALOGO [org:ine] ine-compensaciones_remuneraciones_por_concepto | INE - Compensaciones remuneraciones por concepto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-07-04
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-2012 | Encuesta Continua de Hogares 2012 | org=ine | lic=CC0-1.0 | RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2013 | Encuesta Continua de Hogares año 2013 | org=ine | lic=CC0-1.0 | PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2014 | Encuesta Continua de Hogares año 2014 | org=ine | lic=CC0-1.0 | PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2015 | Encuesta Continua de Hogares año 2015 | org=ine | lic=CC0-1.0 | PDF,RAR | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2016 | Encuesta Continua de Hogares año 2016 | org=ine | lic=CC0-1.0 | DOCX,PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2017 | Encuesta Continua de Hogares año 2017 | org=ine | lic=CC0-1.0 | PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-ech2011 | Encuesta Continua de Hogares 2011 | org=ine | lic=notspecified | RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-organigrama_ine | INE - Organigrama | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-marco_juridico_ine | INE - Marco Jurídico | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-autoridades_ine | INE - Autoridades | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-remuneraciones_ine | INE - Remuneraciones | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-datos_contacto_ine | INE - Datos de contacto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-eutic | Encuesta de Usos de las Tecnologías de la Información y Comunicación | org=ine | lic=odc-uy | TSV | mod=2017-04-25
+CATALOGO [org:opp] opp-ingresos-y-egresos-de-los-gobiernos-departamentales-y-egresos-de-l | Ingresos y Egresos de los Gobiernos Departamentales y Egresos de los Gobiernos M | org=opp | lic=odc-uy | CSV,JSON,PDF,XLSX,XML | mod=2024-08-29
+CATALOGO [org:opp] opp-clasificacion-funcional-del-presupuesto-con-indicadores | Clasificación funcional del presupuesto con indicadores | org=opp | lic=odc-uy | CSV | mod=2022-07-11
+CATALOGO [org:opp] opp-credito-presupuestal-detallado-a-partir-de-2011 | Crédito presupuestal a partir de 2011 | org=opp | lic=odc-uy | CSV,XLS | mod=2022-07-11
+CATALOGO [org:opp] opp-organismos-del-presupuesto-nacional | Organismos del Presupuesto Nacional | org=opp | lic=odc-uy | CSV | mod=2022-07-11
+CATALOGO [org:opp] opp-presupuestos-quinquenales | Presupuestos Nacionales Quinquenales | org=opp | lic=odc-uy | CSV | mod=2021-09-06
+CATALOGO [org:opp] opp-productos-de-las-unidades-ejecutoras | Productos de las Unidades Ejecutoras | org=opp | lic=odc-uy | CSV | mod=2021-07-23
+CATALOGO [org:opp] opp-monto-ejecutado-en-proyectos-de-inversi-n | Monto ejecutado en proyectos de inversión | org=opp | lic=odc-uy | CSV,TXT | mod=2021-03-11
+CATALOGO [org:opp] opp-compromisos-de-gestion-de-eepp | Compromisos de Gestión de EEPP | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-sociedades-anonimas-en-que-participan-eepp | Sociedades Anónimas en que participan EEPP | org=opp | lic=odc-uy | CSV,PDF | mod=2021-03-11
+CATALOGO [org:opp] opp-indicadores-financieros-de-eepp | Indicadores financieros de EEPP | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-cantidad-de-rrhh-en-eepp | Cantidad de RRHH en EEPP | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-listado-de-personas-publicas-no-estatales | Listado de Personas Públicas no Estatales | org=opp | lic=odc-uy | CSV,PDF | mod=2021-03-11
+CATALOGO [org:opp] opp-listado-de-empresas-publicas | Listado de Empresas Públicas | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-vinculo-entre-ods-y-planificacion | Vínculo entre ODS y planificación | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-planificacion-estrategica-de-organismos-y-ues | Planificación estratégica de los organismos y sus unidades ejecutoras | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-evaluaciones-de-intervenciones-publicas | Evaluaciones de intervenciones públicas | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-objetivos-de-desarrollo-sostenible-y-sus-metas | Objetivos de Desarrollo Sostenible y sus metas | org=opp | lic=odc-uy | CSV | mod=2021-03-09
+CATALOGO [org:opp] opp-historico-de-credito-presupuestal-ejecutado | Histórico de crédito presupuestal ejecutado de 1961 a 2010 | org=opp | lic=odc-uy | CSV,PDF | mod=2020-12-15
+CATALOGO [org:opp] opp-historico-de-credito-y-ejecucion-presupuestal-por-ue | Histórico de crédito y ejecución presupuestal por UE de 1999 a 2010 | org=opp | lic=odc-uy | CSV,PDF | mod=2020-12-15
+CATALOGO [org:mgap] mgap-serie-precio-de-la-tierra-arrendamientos | Serie precio de la tierra - Arrendamientos | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-10-13
+CATALOGO [org:mgap] mgap-serie-precio-de-la-tierra-compraventas | Serie precio de la tierra - Compraventas | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-03-26
+CATALOGO [org:mgap] mgap-bosques-plantados-forestacion | Bosque plantado | org=mgap | lic=odc-uy | GEOJSON,KML,SHP | mod=2024-10-17
+CATALOGO [org:mgap] mgap-bosque-nativo | Bosque nativo | org=mgap | lic=odc-uy | GEOJSON,JSON,SHP | mod=2023-11-13
+CATALOGO [org:mgap] mgap-fae-sp-diciembre-2020 | Seccionales policiales declaradas en Emergencia agropecuaria Diciembre 2020 | org=mgap | lic=odc-uy | GEOJSON,GEOPACKAGE,JSON,XML | mod=2021-11-01
+CATALOGO [org:mgap] mgap-fae-sp-marzo-2020 | Seccionales policiales declaradas en Emergencia agropecuaria Marzo 2020 | org=mgap | lic=odc-uy | GEOJSON,GEOPACKAGE,JSON,XML | mod=2021-11-01
+CATALOGO [q:censo 2023] intendencia-de-san-jose-mapa-social-de-san-jose | Mapa social de San José | org=intendencia-de-san-jose | lic=odc-uy | CSV | mod=2024-03-20
+CATALOGO [q:poblacion] inau-poblacion_y_proyectos | Población y Proyectos | org=inau | lic=odc-uy | CSV,JSON,XLS,XLSX,XML | mod=2022-03-07
+CATALOGO [q:poblacion] poblacion-por-zona-censal-en-montevideo | Población por zona censal en Montevideo censos 85-96-04 | org=intendencia-montevideo | lic=odc-uy | TXT,ZIP | mod=2025-02-26
+CATALOGO [q:poblacion] poblacion-atendida-por-las-policlinicas-de-las-intendencia-de-montevid | Población atendida por las policlínicas de las Intendencia de Montevideo | org=intendencia-montevideo | lic=odc-uy | CSV,TXT | mod=2026-09-21
+CATALOGO [q:agropecuario] miem-indicadores-de-eficiencia-energetica-por-sector | Indicadores de Eficiencia Energética | org=miem | lic=odc-uy | CSV | mod=2020-07-29
+CATALOGO: 45 conjuntos distintos
+series guardadas: 30
