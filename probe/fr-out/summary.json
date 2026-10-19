@@ -1,0 +1,42 @@
+{
+ "resources": [
+  {
+   "title": "Prix des terres et/ou Valeur Vénale des terres (VVT)",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/methodon/S-Prix%20des%20terres/methodon/",
+   "fmt": "url",
+   "size": null
+  },
+  {
+   "title": "Valeur vénale des terres",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/",
+   "fmt": "url",
+   "size": null
+  }
+ ],
+ "r0": {
+  "url": "https://agreste.agriculture.gouv.fr/agreste-web/methodon/S-Prix%20des%20terres/methodon/",
+  "type": "text/html;charset=UTF-8",
+  "bytes": 6483,
+  "irrig_hits": 0,
+  "secano_hits": 0,
+  "head": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!doctype html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"fr-fr\" xml:lang=\"fr-fr\"><head>\n    <title>erreur|agreste, la statistique agricole\n    </title>\n        <meta name=\"description\" />\n        <meta name=\"viewport\" content=\"width=device-width,user-scalable=yes\" />\n        <meta name=\"theme-color\" content=\"#333333\" />\n\n    <link rel=\"canonical\" href"
+ },
+ "r1": {
+  "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/",
+  "type": "text/html;charset=UTF-8",
+  "bytes": 97237,
+  "irrig_hits": 0,
+  "secano_hits": 0,
+  "head": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!doctype html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"fr-fr\" xml:lang=\"fr-fr\"><head>\n    <title>chiffres et analyses|agreste, la statistique agricole\n    </title>\n        <meta name=\"description\" content=\"retrouver tous les résultats sous forme de publications, tableaux, cartes sur la statistique, l’évaluation et la prospective agricoles\" />\n      "
+ },
+ "disaron": {
+  "bytes": 97237,
+  "type": "text/html;charset=UTF-8",
+  "irrig_hits": 0
+ },
+ "rica_irrig": {
+  "bytes": 94,
+  "type": "application/json",
+  "irrig_hits": 0
+ }
+}
