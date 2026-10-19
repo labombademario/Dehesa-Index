@@ -532,7 +532,7 @@ def forest_2021(url):
                     try: a = float(r[ak].decode('latin-1').strip())
                     except ValueError: continue
                     if a < 0: continue
-                    d = r[dk].decode('latin-1', 'replace').strip(); e = r[ek].decode('latin-1', 'replace').strip()
+                    d = dbf_text(r[dk]); e = dbf_text(r[ek])
                     if not d: continue
                     n += 1; k = (_norm(d), forest_group(e)); acc[k] = acc.get(k, 0.0) + a; spp[e] = spp.get(e, 0.0) + a
         return acc, spp, n
@@ -559,6 +559,11 @@ def forest():
     ys = sorted(eds); y = ys[-1]; doc = {'year': y, 'unit': 'ha', 'byDept': eds[y]}
     if len(ys) > 1: doc['previous'] = {'year': ys[-2], 'byDept': eds[ys[-2]]}
     DEPT['forest'] = doc
+
+def dbf_text(b):
+    try: return b.decode('utf-8').strip()
+    except UnicodeDecodeError: return b.decode('latin-1').strip()
+
 
 def dbf_rows(f):
     """Lector minimo de dBase (.dbf) en streaming: devuelve (campos, generador de dicts). f: objeto binario leible."""
