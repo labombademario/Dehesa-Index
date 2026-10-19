@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Prueba en navegador del mapa para elegir la zona en «Mi mercado» (js/mi-mercado.js, mapHtml).
-   En los 5 países: pulsar una zona elige esa zona en el desplegable y la resalta; las zonas sin datos no se pueden pulsar;
+   En los 7 países: pulsar una zona elige esa zona en el desplegable y la resalta; las zonas sin datos no se pueden pulsar;
    el teclado (Enter) también elige; el desplegable mueve el resaltado; Reino Unido: Londres y Sudeste son una sola zona de DEFRA.
    Necesita un servidor estático en :8123 (python3 -m http.server 8123). Uso: node scripts/test-mi-mercado-map.mjs */
 import { execSync } from 'node:child_process';
@@ -10,7 +10,7 @@ const fails = []; const ok = (n, c) => { if (!c) { fails.push(n); console.log('F
 const b = await pw.chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const p = await b.newPage({ viewport: { width: 1280, height: 1000 } }); const errs = []; p.on('pageerror', e => errs.push(String(e)));
 await p.goto(BASE + '/mi-mercado.html'); await p.evaluate(() => { localStorage.clear(); localStorage.setItem('dehesaIndexLang', 'es'); }); await p.reload(); await p.waitForTimeout(1200);
-const CASES = [['ES', '41', 'Sevilla', 50, 2], ['US', 'IA', 'Iowa', 50, 0], ['CA', 'SK', 'Saskatchewan', 10, 3], ['DE', 'BY', 'Baviera', 16, 0], ['UK', 'south-east-and-london', 'Sudeste de Inglaterra y Londres', 12, 0]];
+const CASES = [['ES', '41', 'Sevilla', 50, 2], ['US', 'IA', 'Iowa', 50, 0], ['CA', 'SK', 'Saskatchewan', 10, 3], ['DE', 'BY', 'Baviera', 16, 0], ['UK', 'south-east-and-london', 'Sudeste de Inglaterra y Londres', 12, 0], ['FR', 'OCC', 'Occitania', 13, 0], ['IT', 'EMR', 'Emilia-Romaña', 20, 0]];
 for (const [cc, pick, name, minN, na] of CASES) {
   await p.click('[data-mm-cc="' + cc + '"]'); await p.waitForSelector('.mm-map-' + cc.toLowerCase() + ' svg', { timeout: 20000 });
   const n = await p.$$eval('.mm-map-' + cc.toLowerCase() + ' [data-mm-map]', a => a.length), nna = await p.$$eval('.mm-map-p.na', a => a.length);
@@ -19,6 +19,13 @@ for (const [cc, pick, name, minN, na] of CASES) {
   ok(cc + ': el mapa elige en el desplegable', (await p.inputValue('select[data-mm="r"]')) === pick);
   ok(cc + ': nombre elegido', ((await p.textContent('.mm-map-sel')) || '').indexOf(name) > -1);
   ok(cc + ': zona resaltada', (await p.$$eval('.mm-map-p.on', a => a.length)) === (cc === 'UK' ? 2 : 1));
+}
+// Francia e Italia: con región y cultivo salen superficie, producción y rendimiento de Eurostat, sin errores
+for (const [cc, r, crop, txt] of [['FR', 'OCC', 'C1110', 'Trigo blando'], ['IT', 'LOM', 'C1500', 'Maíz grano']]) {
+  await p.click('[data-mm-cc="' + cc + '"]'); await p.waitForSelector('[data-mm-map="' + r + '"]'); await p.click('[data-mm-map="' + r + '"]'); await p.waitForTimeout(600);
+  await p.selectOption('select[data-mm="p"]', crop); await p.waitForTimeout(1500);
+  const body = await p.textContent('#mm-root, body'); ok(cc + ': tarjeta del cultivo', body.indexOf(txt) > -1 && /Superficie[\s\S]*ha/.test(body) && /Rendimiento/.test(body) && /Eurostat/.test(body));
+  ok(cc + ': sin «NaN» ni «undefined»', !/NaN|undefined/.test(body));
 }
 await p.click('[data-mm-cc="ES"]'); await p.waitForSelector('[data-mm-map="28"]'); await p.focus('[data-mm-map="28"]'); await p.keyboard.press('Enter'); await p.waitForTimeout(1200);
 ok('teclado: Enter elige Madrid', (await p.inputValue('select[data-mm="r"]')) === '28');

@@ -274,7 +274,7 @@
     try { var raw = window.localStorage.getItem(LSK); if (raw) s = JSON.parse(raw) || {}; } catch (e) { s = {}; }
     try { var u = new URLSearchParams(location.search); ['c', 'r', 'p', 'k'].forEach(function (k) { if (u.get(k)) q[k] = u.get(k); }); } catch (e) { q = {}; }
     var o = q.c ? q : s;
-    ST.c = o.c === 'US' || o.c === 'ES' || o.c === 'CA' || o.c === 'DE' || o.c === 'UK' ? o.c : ''; ST.r = o.r || ''; ST.p = o.p || ''; ST.k = o.k || '';
+    ST.c = o.c === 'US' || o.c === 'ES' || o.c === 'CA' || o.c === 'DE' || o.c === 'UK' || o.c === 'FR' || o.c === 'IT' ? o.c : ''; ST.r = o.r || ''; ST.p = o.p || ''; ST.k = o.k || '';
   }
   function save() {
     try { window.localStorage.setItem(LSK, JSON.stringify({ c: ST.c, r: ST.r, p: ST.p, k: ST.k })); } catch (e) { /* sin almacenamiento: la página funciona igual */ }
@@ -294,7 +294,7 @@
   function selectors() {
     var t = tr(), h = '';
     /* País: tarjetas con bandera (antes un desplegable); debajo, los filtros de ese país */
-    var CC = [['US', '🇺🇸', t.us], ['CA', '🇨🇦', tc().ca], ['ES', '🇪🇸', t.es], ['DE', '🇩🇪', TEU[lang()].de], ['UK', '🇬🇧', TEU[lang()].uk]];
+    var CC = [['US', '🇺🇸', t.us], ['CA', '🇨🇦', tc().ca], ['ES', '🇪🇸', t.es], ['FR', '🇫🇷', EUN.FR[lang()]], ['IT', '🇮🇹', EUN.IT[lang()]], ['DE', '🇩🇪', TEU[lang()].de], ['UK', '🇬🇧', TEU[lang()].uk]];
     var PQ = { es: '¿Dónde está tu explotación?', en: 'Where is your farm?', fr: 'Où se trouve votre exploitation ?', it: 'Dove si trova la tua azienda?' };
     h += '<div class="mm-cc-wrap"><div class="mm-cc-q" id="mm-cc-q">' + esc(PQ[lang()] || PQ.es) + '</div><div class="mm-cc" role="radiogroup" aria-labelledby="mm-cc-q">' + CC.map(function (c) {
       var on = ST.c === c[0];
@@ -312,6 +312,10 @@
       var e1 = te();
       h += '<label>' + esc(e1.land) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + deLands().map(function (k) { return opt(k, deName(k), ST.r); }).join('') + '</select></label>';
       h += '<label>' + esc(e1.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + DE_CROPS.map(function (k) { return opt(k, pick4(DE_CROPN, k), ST.p); }).join('') + '</select></label>';
+    } else if (ST.c === 'FR' || ST.c === 'IT') {
+      var e3 = te();
+      h += '<label>' + esc(e3.region) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + euRegions(ST.c).map(function (k) { return opt(k, euName(ST.c, k), ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(e3.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + euCrops(ST.c).map(function (k) { return opt(k, pick4(EU_CROPN, k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'UK') {
       var e2 = te();
       h += '<label>' + esc(e2.region) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + ukRegions().map(function (k) { return opt(k, ukRegName(k), ST.r); }).join('') + '</select></label>';
@@ -329,24 +333,24 @@
   var ES_CROPS = '';
 
   /* ---------- Mapa para elegir la zona (18-oct): se pulsa la provincia/estado/región; el desplegable queda como alternativa ---------- */
-  var MAPV = { US: ['us-states', 'DEHESA_US_STATES'], CA: ['ca-provinces', 'DEHESA_CA_PROVINCES'], ES: ['es-provinces', 'DEHESA_ES_PROVINCES'], DE: ['de-laender', 'DEHESA_DE_LAENDER'], UK: ['uk-regions', 'DEHESA_UK_REGIONS'] };
+  var MAPV = { US: ['us-states', 'DEHESA_US_STATES'], CA: ['ca-provinces', 'DEHESA_CA_PROVINCES'], ES: ['es-provinces', 'DEHESA_ES_PROVINCES'], DE: ['de-laender', 'DEHESA_DE_LAENDER'], UK: ['uk-regions', 'DEHESA_UK_REGIONS'], FR: ['fr-regions', 'DEHESA_FR_REGIONS'], IT: ['it-regions', 'DEHESA_IT_REGIONS'] };
   /* Reino Unido: el mapa es NUTS 1 (12 regiones); DEFRA publica Londres junto con el Sudeste */
   var UKMAP = { UKC: 'north-east', UKD: 'north-west-and-merseyside', UKE: 'yorkshire-the-humber', UKF: 'east-midlands', UKG: 'west-midlands', UKH: 'eastern', UKI: 'south-east-and-london', UKJ: 'south-east-and-london', UKK: 'south-west', UKL: 'wales', UKM: 'scotland', UKN: 'northern-ireland' };
   var MAPT = {
-    es: { US: 'Pulsa tu estado en el mapa o elígelo en la lista.', CA: 'Pulsa tu provincia en el mapa o elígela en la lista.', ES: 'Pulsa tu provincia en el mapa o elígela en la lista.', DE: 'Pulsa tu estado federado en el mapa o elígelo en la lista.', UK: 'Pulsa tu región en el mapa o elígela en la lista.', na: 'sin datos', sel: 'Elegido:', map: 'Mapa para elegir la zona' },
-    en: { US: 'Tap your state on the map or pick it from the list.', CA: 'Tap your province on the map or pick it from the list.', ES: 'Tap your province on the map or pick it from the list.', DE: 'Tap your federal state on the map or pick it from the list.', UK: 'Tap your region on the map or pick it from the list.', na: 'no data', sel: 'Selected:', map: 'Map to choose the area' },
-    fr: { US: 'Touchez votre État sur la carte ou choisissez-le dans la liste.', CA: 'Touchez votre province sur la carte ou choisissez-la dans la liste.', ES: 'Touchez votre province sur la carte ou choisissez-la dans la liste.', DE: 'Touchez votre Land sur la carte ou choisissez-le dans la liste.', UK: 'Touchez votre région sur la carte ou choisissez-la dans la liste.', na: 'pas de données', sel: 'Choisi :', map: 'Carte pour choisir la zone' },
-    it: { US: 'Tocca il tuo stato sulla mappa o sceglilo dall’elenco.', CA: 'Tocca la tua provincia sulla mappa o sceglila dall’elenco.', ES: 'Tocca la tua provincia sulla mappa o sceglila dall’elenco.', DE: 'Tocca il tuo Land sulla mappa o sceglilo dall’elenco.', UK: 'Tocca la tua regione sulla mappa o sceglila dall’elenco.', na: 'nessun dato', sel: 'Scelto:', map: 'Mappa per scegliere la zona' } };
+    es: { FR: 'Pulsa tu región en el mapa o elígela en la lista.', IT: 'Pulsa tu región en el mapa o elígela en la lista.', US: 'Pulsa tu estado en el mapa o elígelo en la lista.', CA: 'Pulsa tu provincia en el mapa o elígela en la lista.', ES: 'Pulsa tu provincia en el mapa o elígela en la lista.', DE: 'Pulsa tu estado federado en el mapa o elígelo en la lista.', UK: 'Pulsa tu región en el mapa o elígela en la lista.', na: 'sin datos', sel: 'Elegido:', map: 'Mapa para elegir la zona' },
+    en: { FR: 'Tap your region on the map or pick it from the list.', IT: 'Tap your region on the map or pick it from the list.', US: 'Tap your state on the map or pick it from the list.', CA: 'Tap your province on the map or pick it from the list.', ES: 'Tap your province on the map or pick it from the list.', DE: 'Tap your federal state on the map or pick it from the list.', UK: 'Tap your region on the map or pick it from the list.', na: 'no data', sel: 'Selected:', map: 'Map to choose the area' },
+    fr: { FR: 'Touchez votre région sur la carte ou choisissez-la dans la liste.', IT: 'Touchez votre région sur la carte ou choisissez-la dans la liste.', US: 'Touchez votre État sur la carte ou choisissez-le dans la liste.', CA: 'Touchez votre province sur la carte ou choisissez-la dans la liste.', ES: 'Touchez votre province sur la carte ou choisissez-la dans la liste.', DE: 'Touchez votre Land sur la carte ou choisissez-le dans la liste.', UK: 'Touchez votre région sur la carte ou choisissez-la dans la liste.', na: 'pas de données', sel: 'Choisi :', map: 'Carte pour choisir la zone' },
+    it: { FR: 'Tocca la tua regione sulla mappa o sceglila dall’elenco.', IT: 'Tocca la tua regione sulla mappa o sceglila dall’elenco.', US: 'Tocca il tuo stato sulla mappa o sceglilo dall’elenco.', CA: 'Tocca la tua provincia sulla mappa o sceglila dall’elenco.', ES: 'Tocca la tua provincia sulla mappa o sceglila dall’elenco.', DE: 'Tocca il tuo Land sulla mappa o sceglilo dall’elenco.', UK: 'Tocca la tua regione sulla mappa o sceglila dall’elenco.', na: 'nessun dato', sel: 'Scelto:', map: 'Mappa per scegliere la zona' } };
   var MAPLOAD = {};
   function mapScript(c) {
     var v = MAPV[c]; if (!v || window[v[1]]) return Promise.resolve();
     return MAPLOAD[c] || (MAPLOAD[c] = new Promise(function (ok) { var sc = document.createElement('script'); sc.src = (window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath('vendor/' + v[0] + '.js') : 'vendor/' + v[0] + '.js'); sc.onload = ok; sc.onerror = ok; document.head.appendChild(sc); }));
   }
   function mapPlaces(c) {
-    if (c === 'US') return usPlaces(); if (c === 'CA') return caPlaces(); if (c === 'DE') return deLands(); if (c === 'UK') return ukRegions();
+    if (c === 'US') return usPlaces(); if (c === 'CA') return caPlaces(); if (c === 'DE') return deLands(); if (c === 'UK') return ukRegions(); if (c === 'FR' || c === 'IT') return euRegions(c);
     if (c === 'ES') return ES_PROV ? Object.keys(ES_PROV) : []; return [];
   }
-  function mapName(c, k) { return c === 'US' ? usName(k) : c === 'CA' ? caName(k) : c === 'DE' ? deName(k) : c === 'UK' ? ukRegName(k) : (ES_PROV && ES_PROV[k]) || k; }
+  function mapName(c, k) { return c === 'FR' || c === 'IT' ? euName(c, k) : c === 'US' ? usName(k) : c === 'CA' ? caName(k) : c === 'DE' ? deName(k) : c === 'UK' ? ukRegName(k) : (ES_PROV && ES_PROV[k]) || k; }
   function mapHtml() {
     var v = MAPV[ST.c]; if (!v || COMPACT) return '';
     var M = window[v[1]], mt = MAPT[lang()] || MAPT.es;
@@ -781,6 +785,54 @@
     h += '</tbody></table></div>' + (any ? '' : note(t.noLand)) + note(t.rentNote) + note(t.landNote) + cite('destatis', per);
     putSec(tok, 'land', h);
   }
+  /* ---------- Francia e Italia (19-oct): superficie, producción y rendimiento de tu región (Eurostat, NUTS 2) ---------- */
+  var EUN = { FR: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' }, IT: { es: 'Italia', en: 'Italy', fr: 'Italie', it: 'Italia' } };
+  var EU_CROPN = { C1110: 'Common wheat|Trigo blando|Blé tendre|Frumento tenero', C1120: 'Durum wheat|Trigo duro|Blé dur|Frumento duro', C1300: 'Barley|Cebada|Orge|Orzo', C1500: 'Grain maize|Maíz grano|Maïs grain|Mais da granella', C1200: 'Rye|Centeno|Seigle|Segale', C0000: 'Cereals (grain)|Cereales (grano)|Céréales (grain)|Cereali (granella)', I1110: 'Rapeseed|Colza|Colza|Colza', I1120: 'Sunflower|Girasol|Tournesol|Girasole', I1130: 'Soya|Soja|Soja|Soia', R1000: 'Potatoes|Patata|Pomme de terre|Patata', R2000: 'Sugar beet|Remolacha azucarera|Betterave sucrière|Barbabietola da zucchero', P0000: 'Dry pulses and protein crops|Leguminosas grano y proteaginosas|Légumineuses à grains et protéagineux|Legumi secchi e proteaginose', G3000: 'Green maize|Maíz forrajero|Maïs fourrage|Mais da foraggio', W1000: 'Vines (grapes)|Viñedo|Vignes|Vite', O1000: 'Olives|Olivar|Oliviers|Olivo', T0000: 'Citrus|Cítricos|Agrumes|Agrumi', F0000: 'Fruit, berries and nuts|Frutales, bayas y frutos secos|Fruits, baies et fruits à coque|Frutta, bacche e frutta a guscio', J0000: 'Permanent grassland|Prados y pastos permanentes|Prairies permanentes|Prati permanenti' };
+  var EUT = {
+    es: { sCrop: 'Tu región en este cultivo', share: 'del total del país (suma de regiones)', topP: 'Mayores por producción', note: 'Fuente: Eurostat (superficie y producción por región NUTS 2). Las cifras regionales llevan algo más de un año de retraso. No son precios: el precio local de tu producto no está en esta página.', mRegion: 'Ficha de la región', mSow: 'Qué sembrar en tu región' },
+    en: { sCrop: 'Your region in this crop', share: 'of the country total (sum of regions)', topP: 'Largest by production', note: 'Source: Eurostat (area and production by NUTS 2 region). Regional figures run a little over a year behind. These are not prices: the local price of your product is not on this page.', mRegion: 'Region page', mSow: 'What to plant in your region' },
+    fr: { sCrop: 'Votre région pour cette culture', share: 'du total du pays (somme des régions)', topP: 'Plus grandes par production', note: 'Source : Eurostat (surface et production par région NUTS 2). Les chiffres régionaux ont un peu plus d’un an de retard. Ce ne sont pas des prix : le prix local de votre produit n’est pas sur cette page.', mRegion: 'Fiche de la région', mSow: 'Que semer dans votre région' },
+    it: { sCrop: 'La tua regione in questa coltura', share: 'del totale del paese (somma delle regioni)', topP: 'Maggiori per produzione', note: 'Fonte: Eurostat (superficie e produzione per regione NUTS 2). I dati regionali hanno poco più di un anno di ritardo. Non sono prezzi: il prezzo locale del tuo prodotto non è in questa pagina.', mRegion: 'Scheda della regione', mSow: 'Cosa seminare nella tua regione' }
+  };
+  function eut() { return EUT[lang()] || EUT.es; }
+  var FR_SOW = { ARA: '84', BFC: '27', BRE: '53', CVL: '24', COR: '94', GES: '44', HDF: '32', IDF: '11', NOR: '28', NAQ: '75', OCC: '76', PDL: '52', PAC: '93' };   // código de región en data/sowing/fr.json
+  var EUD = {};
+  function euPrep(c) { return EUD[c] ? Promise.resolve() : get('data/eu-regions-' + c.toLowerCase() + '.json').then(function (d) { EUD[c] = d; }); }
+  function euName(c, k) { var N = window.DehesaRegionNames && window.DehesaRegionNames[c]; return N && N[k] ? pick4(N, k) : k; }
+  function euHas(node) { return !!node && ((node.area || []).some(function (p) { return p[1] != null; }) || (node.prod || []).some(function (p) { return p[1] != null; })); }
+  function euCrops(c) {
+    var D = EUD[c]; if (!D) return [];
+    var tot = {}; Object.keys(D.regions).forEach(function (r) { var cr = D.regions[r].crops || {}; Object.keys(EU_CROPN).forEach(function (k) { if (euHas(cr[k])) { var a = (cr[k].area || []).filter(function (p) { return p[1] != null; }); tot[k] = (tot[k] || 0) + (a.length ? a[a.length - 1][1] : 0) + 1e-6; } }); });
+    return Object.keys(tot).sort(function (a, b) { return tot[b] - tot[a]; });
+  }
+  function euRegions(c) {
+    var D = EUD[c]; if (!D) return [];
+    var N = window.DehesaRegionNames && window.DehesaRegionNames[c] || {};
+    return Object.keys(D.regions).filter(function (k) { return N[k] && Object.keys(EU_CROPN).some(function (q) { return euHas((D.regions[k].crops || {})[q]); }); }).sort(function (a, b) { return euName(c, a).localeCompare(euName(c, b), lang()); });
+  }
+  function euCrop(tok) {
+    var t = te(), x = eut(), C = ST.c, c = ST.p, R = ST.r, D = EUD[C], cn = pick4(EU_CROPN, c), rn = euName(C, R), h = '';
+    var rg = D.regions[R] && (D.regions[R].crops || {})[c];
+    var yrs = []; if (rg) ['area', 'prod'].forEach(function (q) { (rg[q] || []).forEach(function (p) { if (p[1] != null) yrs.push(+p[0]); }); });
+    if (!yrs.length) { putSec(tok, 'crop', note(fill(t.noData, { c: cn, p: rn })) + cite('eurostat', '')); return; }
+    var yr = Math.max.apply(null, yrs), k1 = function (v) { return v == null ? null : v * 1000; };
+    var a = k1(atY(rg.area, yr)), p = k1(atY(rg.prod, yr)), a0 = k1(atY(rg.area, yr - 1)), p0 = k1(atY(rg.prod, yr - 1));
+    var y = a > 0 && p != null ? p / a : null, y0 = a0 > 0 && p0 != null ? p0 / a0 : null;
+    var useA = Object.keys(D.regions).some(function (r) { return atY(((D.regions[r].crops || {})[c] || {}).area, yr) != null; });
+    var ranks = Object.keys(D.regions).map(function (r) { var n = (D.regions[r].crops || {})[c] || {}; return { k: r, v: atY(useA ? n.area : n.prod, yr) }; }).filter(function (q) { return q.v > 0; }).sort(function (u, w) { return w.v - u.v; });
+    var tot = ranks.reduce(function (sum, q) { return sum + q.v; }, 0), mine = ranks.filter(function (q) { return q.k === R; })[0];
+    var rk = ranks.map(function (q) { return q.k; }).indexOf(R) + 1, dv = function (u, w) { return u != null && w != null && w > 0 ? esc(t.vs + ' ' + (yr - 1)) + ': ' + pc((u / w - 1) * 100) : ''; };
+    var sh = mine && tot > 0 ? nf(mine.v / tot * 100, mine.v / tot < 0.001 ? 2 : 1) + ' % ' + esc(x.share) : '';
+    h += '<p class="di-movers-hint"><b>' + esc(cn) + '</b> · ' + esc(rn) + ' · ' + yr + '</p><div class="de-tiles">';
+    if (a != null) h += tile(t.area, nf(a, 0) + ' ' + t.ha, (useA ? sh : '') + (rk && useA ? (sh ? '<br>' : '') + esc(fill(t.rank, { r: rk, n: ranks.length })) : '') + (dv(a, a0) ? '<br>' + dv(a, a0) : ''));
+    if (p != null) h += tile(t.prd, big(p, t.t), (!useA ? sh : '') + (rk && !useA ? (sh ? '<br>' : '') + esc(fill(t.rank, { r: rk, n: ranks.length })) : '') + (dv(p, p0) ? ((!useA && (sh || rk)) ? '<br>' : '') + dv(p, p0) : ''));
+    if (y != null) h += tile(t.yl, nf(y, 2) + ' ' + t.tha, dv(y, y0));
+    h += '</div>';
+    var rows = ranks.slice(0, 5); if (rk > 5) rows.push(ranks[rk - 1]);
+    h += '<p class="di-movers-hint" style="margin:8px 0 2px"><b>' + esc(useA ? t.top : x.topP) + ' · ' + yr + '</b></p><div class="de-sc"><table class="de-t" data-no-cards data-no-rows><thead><tr><th scope="col">' + esc(t.region) + '</th><th scope="col" class="r">' + esc(useA ? t.area : t.prd) + '</th></tr></thead><tbody>' + rows.map(function (q) { return '<tr' + (q.k === R ? ' style="font-weight:700"' : '') + '><td>' + esc(euName(C, q.k)) + '</td><td class="r">' + nf(q.v * 1000, 0) + ' ' + esc(useA ? t.ha : t.t) + '</td></tr>'; }).join('') + '</tbody></table></div>';
+    h += note(x.note) + cite('eurostat', yr);
+    putSec(tok, 'crop', h);
+  }
   function ukCrop(tok) {
     var t = te(), c = ST.p, R = ST.r, ix = UKD.ix, cn = pick4(UK_CROPN, c), rn = ukRegName(R), h = '';
     var id = function (k, r) { return 'uk-reg-' + k + '-' + c + '-' + r; };
@@ -862,6 +914,8 @@
       h += link('precios-locales.html?' + (tab === 'grain' ? 's=' + ST.r + '&c=' + ST.p : 't=' + tab + '&s=' + ST.r), t.mPrice) + link('precios.html?tab=seguro', t.mIns) + link('sequia.html?state=' + encodeURIComponent(ST.r), t.mDrought) + link('insumos.html', t.mCosts) + link('clima.html', t.mClima);
     } else if (ST.c === 'CA') {
       var cc = tc(); h += link('paises.html?c=CA', cc.mCa) + (ST.r === 'MB' ? link('paises.html?c=CA#' + (ST.p === 'hogs' ? 'mb-hogs' : ST.p === 'sheep' ? 'mb-sheep-goat' : 'mb-cattle'), cc.mMb) : '') + link('rendimientos.html', cc.mRend) + link('ganaderia.html', cc.mGan) + link('clima.html', t.mClima) + link('insumos.html', t.mCosts);
+    } else if (ST.c === 'FR' || ST.c === 'IT') {
+      var e4 = te(), x4 = eut(); h += link('region.html?c=' + ST.c + '&r=' + encodeURIComponent(ST.r), x4.mRegion) + link('siembra.html?c=' + ST.c + (ST.c === 'FR' ? '&r=' + encodeURIComponent(FR_SOW[ST.r] || '') : '&r=' + encodeURIComponent(ST.r)), x4.mSow) + link('paises.html?c=' + ST.c, e4.mCountry) + link('clima.html', e4.mClima) + link('precios.html', e4.mPrices) + link('insumos.html', e4.mCosts);
     } else if (ST.c === 'DE' || ST.c === 'UK') {
       var ee = te(); h += link('paises.html?c=' + ST.c, ee.mCountry) + link('clima.html', ee.mClima) + link('precios.html', ee.mPrices) + link('insumos.html', ee.mCosts);
     } else h += link('paises.html?c=ES#es-crops', t.mCrops) + link('clima.html', t.mClima) + link('precios.html', t.mPrices) + link('insumos.html', t.mCosts);
@@ -871,10 +925,10 @@
   /* ---------- pintado ---------- */
   // Qué hay en cada país antes de elegir (auditoría 8-oct-2026): prometer solo lo disponible.
   var AV = {
-    es: { h: 'Qué verás según el país', now: 'Disponible ahora', not: 'Todavía no', rows: [['EE. UU.', 'Precio local, margen por cultivo, próximos informes, seguro y sequía', '—'], ['Canadá', 'Precio, producción, seguro y sequía', '—'], ['Alemania', 'Producción por estado federado, precio y renta de la tierra', 'Precio local, seguro'], ['Reino Unido', 'Producción por región', 'Precio local, seguro, sequía'], ['España', 'Producción por provincia', 'Precio provincial, seguro, sequía local']] },
-    en: { h: 'What you will see by country', now: 'Available now', not: 'Not yet', rows: [['US', 'Local price, crop margin, upcoming reports, insurance and drought', '—'], ['Canada', 'Price, production, insurance and drought', '—'], ['Germany', 'Production by federal state, land price and rent', 'Local price, insurance'], ['United Kingdom', 'Production by region', 'Local price, insurance, drought'], ['Spain', 'Production by province', 'Provincial price, insurance, local drought']] },
-    fr: { h: 'Ce que vous verrez selon le pays', now: 'Disponible', not: 'Pas encore', rows: [['États-Unis', 'Prix local, marge par culture, prochains rapports, assurance et sécheresse', '—'], ['Canada', 'Prix, production, assurance et sécheresse', '—'], ['Allemagne', 'Production par Land, prix et fermage des terres', 'Prix local, assurance'], ['Royaume-Uni', 'Production par région', 'Prix local, assurance, sécheresse'], ['Espagne', 'Production par province', 'Prix provincial, assurance, sécheresse locale']] },
-    it: { h: 'Cosa vedrai secondo il paese', now: 'Disponibile', not: 'Non ancora', rows: [['Stati Uniti', 'Prezzo locale, margine per coltura, prossimi rapporti, assicurazione e siccità', '—'], ['Canada', 'Prezzo, produzione, assicurazione e siccità', '—'], ['Germania', 'Produzione per Land, prezzo e affitto dei terreni', 'Prezzo locale, assicurazione'], ['Regno Unito', 'Produzione per regione', 'Prezzo locale, assicurazione, siccità'], ['Spagna', 'Produzione per provincia', 'Prezzo provinciale, assicurazione, siccità locale']] }
+    es: { h: 'Qué verás según el país', now: 'Disponible ahora', not: 'Todavía no', rows: [['EE. UU.', 'Precio local, margen por cultivo, próximos informes, seguro y sequía', '—'], ['Canadá', 'Precio, producción, seguro y sequía', '—'], ['Francia', 'Superficie, producción y rendimiento por región', 'Precio local, seguro, sequía'], ['Italia', 'Superficie, producción y rendimiento por región', 'Precio local, seguro, sequía'], ['Alemania', 'Producción por estado federado, precio y renta de la tierra', 'Precio local, seguro'], ['Reino Unido', 'Producción por región', 'Precio local, seguro, sequía'], ['España', 'Producción por provincia', 'Precio provincial, seguro, sequía local']] },
+    en: { h: 'What you will see by country', now: 'Available now', not: 'Not yet', rows: [['US', 'Local price, crop margin, upcoming reports, insurance and drought', '—'], ['Canada', 'Price, production, insurance and drought', '—'], ['France', 'Area, production and yield by region', 'Local price, insurance, drought'], ['Italy', 'Area, production and yield by region', 'Local price, insurance, drought'], ['Germany', 'Production by federal state, land price and rent', 'Local price, insurance'], ['United Kingdom', 'Production by region', 'Local price, insurance, drought'], ['Spain', 'Production by province', 'Provincial price, insurance, local drought']] },
+    fr: { h: 'Ce que vous verrez selon le pays', now: 'Disponible', not: 'Pas encore', rows: [['États-Unis', 'Prix local, marge par culture, prochains rapports, assurance et sécheresse', '—'], ['Canada', 'Prix, production, assurance et sécheresse', '—'], ['France', 'Surface, production et rendement par région', 'Prix local, assurance, sécheresse'], ['Italie', 'Surface, production et rendement par région', 'Prix local, assurance, sécheresse'], ['Allemagne', 'Production par Land, prix et fermage des terres', 'Prix local, assurance'], ['Royaume-Uni', 'Production par région', 'Prix local, assurance, sécheresse'], ['Espagne', 'Production par province', 'Prix provincial, assurance, sécheresse locale']] },
+    it: { h: 'Cosa vedrai secondo il paese', now: 'Disponibile', not: 'Non ancora', rows: [['Stati Uniti', 'Prezzo locale, margine per coltura, prossimi rapporti, assicurazione e siccità', '—'], ['Canada', 'Prezzo, produzione, assicurazione e siccità', '—'], ['Francia', 'Superficie, produzione e resa per regione', 'Prezzo locale, assicurazione, siccità'], ['Italia', 'Superficie, produzione e resa per regione', 'Prezzo locale, assicurazione, siccità'], ['Germania', 'Produzione per Land, prezzo e affitto dei terreni', 'Prezzo locale, assicurazione'], ['Regno Unito', 'Produzione per regione', 'Prezzo locale, assicurazione, siccità'], ['Spagna', 'Produzione per provincia', 'Prezzo provinciale, assicurazione, siccità locale']] }
   };
   function availability() {
     var a = AV[lang()] || AV.es;
@@ -894,8 +948,8 @@
     fr: { t: 'Votre marché', all: 'Tout voir et changer', margin: 'Calculer la marge', track: 'Suivi et alertes' },
     it: { t: 'Il tuo mercato', all: 'Vedi tutto e cambia', margin: 'Calcola il margine', track: 'Monitoraggio e avvisi' }
   };
-  function placeName() { return ST.c === 'US' ? usName(ST.r) : ST.c === 'CA' ? caName(ST.r) : ST.c === 'DE' ? deName(ST.r) : ST.c === 'UK' ? ukRegName(ST.r) : (ES_PROV && ES_PROV[ST.r]) || ST.r; }
-  function prodTitle() { return ST.c === 'US' ? prodName(ST.p) : ST.c === 'CA' ? caProdName(ST.p) : ST.c === 'DE' ? pick4(DE_CROPN, ST.p) : ST.c === 'UK' ? pick4(UK_CROPN, ST.p) : ST.p; }
+  function placeName() { return ST.c === 'FR' || ST.c === 'IT' ? euName(ST.c, ST.r) : ST.c === 'US' ? usName(ST.r) : ST.c === 'CA' ? caName(ST.r) : ST.c === 'DE' ? deName(ST.r) : ST.c === 'UK' ? ukRegName(ST.r) : (ES_PROV && ES_PROV[ST.r]) || ST.r; }
+  function prodTitle() { return ST.c === 'FR' || ST.c === 'IT' ? pick4(EU_CROPN, ST.p) : ST.c === 'US' ? prodName(ST.p) : ST.c === 'CA' ? caProdName(ST.p) : ST.c === 'DE' ? pick4(DE_CROPN, ST.p) : ST.c === 'UK' ? pick4(UK_CROPN, ST.p) : ST.p; }
   function compactHead() {
     var m = HM[lang()] || HM.es;
     return '<p style="margin:0 0 4px;font-size:15px"><b>' + esc(m.t) + ' · ' + esc(placeName()) + ' · ' + esc(prodTitle()) + '</b> ' +
@@ -920,6 +974,8 @@
       h += sect('price', t.sPrice + ' · ' + caProdName(ST.p)) + sect('crop', tc().sProd) + sect('ins', tc().sIns) + sect('dr', tc().sDr);
     } else if (ST.c === 'DE') {
       h += sect('crop', te().sCropDE) + sect('land', te().sLand);
+    } else if (ST.c === 'FR' || ST.c === 'IT') {
+      h += sect('crop', eut().sCrop);
     } else if (ST.c === 'UK') {
       h += sect('crop', te().sCropUK);
     } else h += sect('price', tesp().title) + sect('crop', t.sCrop);
@@ -937,6 +993,9 @@
       if (!COMPACT) run('missing', function () { return missingCA().then(function (x) { putSec(tok, 'missing', x); }); });
     } else if (ST.c === 'DE') {
       run('crop', function () { return deCrop(tok); }); run('land', function () { return deLand(tok); });
+      if (!COMPACT) run('missing', function () { return missingEU().then(function (x) { putSec(tok, 'missing', x); }); });
+    } else if (ST.c === 'FR' || ST.c === 'IT') {
+      run('crop', function () { return euCrop(tok); });
       if (!COMPACT) run('missing', function () { return missingEU().then(function (x) { putSec(tok, 'missing', x); }); });
     } else if (ST.c === 'UK') {
       run('crop', function () { return ukCrop(tok); });
@@ -956,6 +1015,7 @@
       });
     }
     if (ST.c === 'DE') { return dePrep().then(function () { if (ST.r && deLands().indexOf(ST.r) < 0) ST.r = ''; if (ST.p && DE_CROPS.indexOf(ST.p) < 0) ST.p = ''; }); }
+    if (ST.c === 'FR' || ST.c === 'IT') { return euPrep(ST.c).then(function () { if (ST.r && euRegions(ST.c).indexOf(ST.r) < 0) ST.r = ''; if (ST.p && euCrops(ST.c).indexOf(ST.p) < 0) ST.p = ''; }); }
     if (ST.c === 'UK') { return (UKD ? Promise.resolve() : loadUK()).then(function () { if (ST.r && ukRegions().indexOf(ST.r) < 0) ST.r = ''; if (ST.p && UK_CROPS.indexOf(ST.p) < 0) ST.p = ''; }); }
     // España: hace falta el índice y un grupo cargados para los selectores
     if (ST.c === 'ES') {

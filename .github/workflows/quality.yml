@@ -396,7 +396,7 @@ jobs:
         run: node scripts/test-country-structure.mjs
       - name: Mi explotación, costes vinculados al monitor de insumos (escenario aparte, el importe solo cambia con «Usar», deshacer, solo EUR)
         run: node scripts/test-farm-links.mjs
-      - name: Mi mercado, mapa para elegir la zona (5 paises, zonas sin datos no pulsables, teclado, sincronia con el desplegable)
+      - name: Mi mercado, mapa para elegir la zona (7 paises incl. Francia e Italia, zonas sin datos no pulsables, teclado, sincronia con el desplegable)
         run: node scripts/test-mi-mercado-map.mjs
       - name: Qué sembrar, mapa para elegir la región (21 paises, regiones sin datos en gris y deshabilitadas en la lista, ninguna pulsable queda vacía, teclado y foco)
         run: node scripts/test-siembra-map.mjs
