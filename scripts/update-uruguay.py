@@ -29,7 +29,7 @@ Conjuntos usados:
 Sin estimaciones: lo que falta no se rellena; una serie con menos de 3 puntos o sin dato en los ultimos 3 anios se descarta y se anota en el log.
 
 Modo local de prueba: python3 scripts/update-uruguay.py --local DIR [--out DIR_SALIDA]  (DIR con los originales del paquete de investigacion: raw/*.csv, raw/*.xlsx, raw/ckan-*.json)."""
-import csv, datetime, io, json, re, sys, time, urllib.request, calendar
+import csv, datetime, io, json, re, sys, time, urllib.parse, urllib.request, calendar
 from collections import defaultdict
 from pathlib import Path
 
@@ -414,10 +414,28 @@ def ghg():
     if d: GHG['doc'] = d
 
 
+SCAN_Q = ['censo agropecuario', 'DIEA', 'precio fertilizantes', 'precios granos', 'cereales oleaginosas', 'arroz', 'soja', 'trigo', 'lecheria', 'carne', 'superficie sembrada', 'estadisticas agropecuarias', 'poblacion departamento', 'producto interno bruto departamento']
+
+
+def scan():
+    """Rastreo del catalogo (solo lectura): lista en el log los conjuntos abiertos relacionados con los bloques pendientes. No publica datos."""
+    if LOCAL: return
+    seen = set(); n = 0
+    for q in SCAN_Q:
+        try: res = json.loads(fetch('https://catalogodatos.gub.uy/api/3/action/package_search?rows=15&q=' + urllib.parse.quote(q), 60))['result']['results']
+        except Exception as e: log('CATALOGO %s: %s' % (q, e)); continue
+        for p in res:
+            if p['name'] in seen: continue
+            seen.add(p['name']); n += 1
+            fm = sorted({(r.get('format') or '?').upper() for r in p.get('resources', [])})
+            log('CATALOGO [%s] %s | org=%s | lic=%s | %s | mod=%s' % (q, p['name'][:90], (p.get('organization') or {}).get('name'), p.get('license_id'), ','.join(fm), (p.get('metadata_modified') or '')[:10]))
+    log('CATALOGO: %d conjuntos distintos' % n)
+
+
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg):
+    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, scan):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
     if not OUT: log('sin series'); sys.exit(1)
