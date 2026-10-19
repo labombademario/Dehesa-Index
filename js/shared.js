@@ -939,7 +939,7 @@
     countryLinks: function (cc) { var r = []; NAV_GROUPS.countries.items.forEach(function (b) { if (b.cc === cc) b.items.forEach(function (i) { r.push({ href: sitePath(i.file) + (i.query || ''), file: i.file, label: i.label[lang] || i.label.es, d: i.d ? (i.d[lang] || i.d.es) : '' }); }); }); return r; },
     newsletter: { action: 'https://dehesaindex.substack.com/api/v1/free?nojs=true', provider: 'Substack (Substack Inc., Estados Unidos)' },
     /* Resumen de precios por correo (pagina avisos.html). Se rellena al crear la cuenta del proveedor; vacio = el formulario no se muestra. Ver docs/avisos-por-correo.md */
-    digest: { action: '', provider: 'Buttondown (Buttondown, Estados Unidos)' },
+    digest: { action: 'https://buttondown.com/api/emails/embed-subscribe/dehesa_index', provider: 'Buttondown (Buttondown, Estados Unidos)' },
     /* Unidad de una serie de la API en el idioma de la pagina (la API guarda el identificador interno: 'tonelada', 'ton_corta', 'index_2020_100'…) */
     unitLabel: function (u, l) {
       var T = { es: { tonelada: 't', ton_corta: 'ton corta', barril: 'barril', gal: 'galón', docena: 'docena', litro: 'litro', index_2020_100: 'índice 2020=100', cwt: 'cwt', '100kg': '100 kg', bushel: 'bushel', kg: 'kg', mmbtu: 'MMBtu', lb: 'lb' }, en: { tonelada: 't', ton_corta: 'short ton', barril: 'barrel', gal: 'gallon', docena: 'dozen', litro: 'litre', index_2020_100: 'index 2020=100', cwt: 'cwt', '100kg': '100 kg', bushel: 'bushel', kg: 'kg', mmbtu: 'MMBtu', lb: 'lb' },
