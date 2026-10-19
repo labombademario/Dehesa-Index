@@ -6183,6 +6183,21 @@
    ],
    "notes": "API de datos v1 (scripts/build-api.py): JSON generado desde el paquete descargable (data/pack), sin cambiar valores; hereda exactamente sus fuentes y su filtro de veredicto comercial."
   },
+  "data/indices/": {
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ],
+   "notes": "Cestas de precios (scripts/build-baskets.py): indices por categoria calculados sobre la API v1 (data/api), con pesos iguales y metodologia publicada; hereda sus fuentes y su filtro de veredicto comercial."
+  },
   "data/digest/": {
    "sources": [
     "alberta_ag",

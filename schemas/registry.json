@@ -1507,6 +1507,12 @@
    [
     "digest_weekly"
    ]
+  ],
+  "indices/index.json": [
+   "indices-index",
+   [
+    "indices_index"
+   ]
   ]
  },
  "globs": {
@@ -1698,6 +1704,12 @@
    "api-series",
    [
     "api_series"
+   ]
+  ],
+  "indices/*/*.json": [
+   "indices-basket",
+   [
+    "indices_basket"
    ]
   ]
  },

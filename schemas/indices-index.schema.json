@@ -1,0 +1,48 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "title": "Cestas de precios: catalogo (data/indices/index.json)",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "weighting",
+  "minMembers",
+  "minMonths",
+  "methodology",
+  "baskets",
+  "excluded"
+ ],
+ "properties": {
+  "baskets": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "region",
+     "basket",
+     "name",
+     "verdict",
+     "basePeriod",
+     "first",
+     "last",
+     "rows",
+     "changeMoMPct",
+     "members",
+     "url"
+    ]
+   }
+  },
+  "excluded": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "reason"
+    ]
+   }
+  }
+ }
+}

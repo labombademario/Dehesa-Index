@@ -118,6 +118,8 @@ jobs:
         run: python3 scripts/build-api.py --check
       - name: Avisos de precio (umbrales, Atom, correo escapado; no envia sin clave) y al dia con la API
         run: python3 scripts/test-digest.py && python3 scripts/build-digest.py --check
+      - name: Cestas de precios (base 100, meses incompletos, minimos, sin relleno) y al dia con la API
+        run: python3 scripts/test-baskets.py && python3 scripts/build-baskets.py --check
       - name: Poland farmland prices (GUS BDL API responses, attribute 91 as gap, broken-data rejection; no network)
         run: python3 scripts/test-land-pl.py
 

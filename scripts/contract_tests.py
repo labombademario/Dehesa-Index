@@ -4889,3 +4889,32 @@ def digest_weekly(doc, errs, warns, stats):
     if len(U) > doc["summary"]["up"] or len(D) > doc["summary"]["down"]: errs.append("mas destacados que series con movimiento")
     for e in U + D: _digest_event(e, errs, {"daily": 0, "weekly": 0, "monthly": 0, "quarterly": 0})
     stats["destacados"] = len(U) + len(D)
+
+
+def indices_basket(doc, errs, warns, stats):
+    """Cesta: meses unicos y ordenados, rows/first/last coherentes, pesos que suman 100, la media del año base vale 100, variaciones recalculadas bien y veredicto = el peor de los miembros."""
+    P = doc["points"]; ks = [p[0] for p in P]
+    if ks != sorted(ks) or len(set(ks)) != len(ks): errs.append("meses desordenados o repetidos")
+    if doc["rows"] != len(P) or doc["first"] != ks[0] or doc["last"] != ks[-1]: errs.append("rows/first/last no coinciden con los puntos")
+    if any(not (0 < p[1] < 1e6) for p in P): errs.append("valor de indice imposible")
+    if abs(sum(m["weightPct"] for m in doc["members"]) - 100) > 0.1: errs.append("los pesos no suman 100")
+    by = [p[1] for p in P if p[0][:4] == doc["basePeriod"]]
+    if len(by) == 12 and abs(sum(by) / 12 - 100) > 1.0: errs.append("la media del año base (%.2f) no es 100" % (sum(by) / 12))
+    if ks[0][:4] != doc["basePeriod"]: errs.append("la serie debe empezar en el año base")
+    if len(P) > 1 and abs((P[-1][1] / P[-2][1] - 1) * 100 - doc["changeMoMPct"]) > 0.02: errs.append("changeMoMPct no cuadra")
+    if doc.get("changeYoYPct") is not None:
+        d = dict(P); k = "%d-%s" % (int(ks[-1][:4]) - 1, ks[-1][5:])
+        if k not in d or abs((P[-1][1] / d[k] - 1) * 100 - doc["changeYoYPct"]) > 0.02: errs.append("changeYoYPct no cuadra")
+    worst = "condiciones" if any(m["verdict"] == "condiciones" for m in doc["members"]) else "apto"
+    if doc["verdict"] != worst: errs.append("el veredicto debe ser el peor de los miembros (%s)" % worst)
+    stats["months"] = len(P)
+
+
+def indices_index(doc, errs, warns, stats):
+    """Catalogo de cestas: ids unicos, enlaces con la forma correcta, y una cesta no puede estar a la vez publicada y excluida."""
+    ids = [b["id"] for b in doc["baskets"]]
+    if len(set(ids)) != len(ids): errs.append("cestas repetidas")
+    if set(ids) & {e["id"] for e in doc["excluded"]}: errs.append("una cesta aparece publicada y excluida")
+    for b in doc["baskets"]:
+        if b["url"] != "/data/indices/%s.json" % b["id"]: errs.append("%s: enlace incorrecto" % b["id"])
+    stats["baskets"] = len(ids)
