@@ -2441,7 +2441,7 @@ html[data-theme="dark"] .fv-tbl small.fv-up{color:#6CC08E}html[data-theme="dark"
 }
 @media (prefers-reduced-motion: no-preference) { .um-prod, .um-sec { transition: border-color .15s; } }
 
-.sw-mr{cursor:pointer}.sw-mr:focus{outline:2px solid var(--accent);outline-offset:1px}.sw-mr:hover path{fill:var(--accent);opacity:.75}.sw-mr:focus-visible path{stroke:var(--text);stroke-width:3}
+.sw-map .mm-map{margin:0}.sw-map .mm-map svg{margin:0 auto;max-height:460px}
 /* costes y rentas (RECAN) */
 .rc-sg { margin: 6px 0 0; }
 .rc-sgl { list-style: none; margin: 6px 0 0; padding: 0; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); overflow: hidden; }
