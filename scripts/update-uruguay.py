@@ -284,6 +284,16 @@ DICOSE_PKGS = ['mgap-datos-generados-en-base-a-la-declaracion-jurada-de-existenc
 SPECIES = {'1': 'cattle', '2': 'sheep', '11': 'dairy-cattle'}
 
 
+def xml_rows(b):
+    """Filas de un XML de DICOSE: cada elemento cuyos hijos son todos hojas es una fila {etiqueta sin espacio de nombres: texto}."""
+    import xml.etree.ElementTree as ET
+    for _, el in ET.iterparse(io.BytesIO(b)):
+        if len(el) and all(len(c) == 0 for c in el):
+            row = {c.tag.split('}')[-1].replace('ns1:', ''): (c.text or '') for c in el}
+            el.clear()
+            if any(v.strip() for v in row.values()): yield row
+
+
 def dicose():
     tot = defaultdict(lambda: defaultdict(float))   # (especie) -> ejercicio -> PD_AD
     births = defaultdict(float)
@@ -293,15 +303,21 @@ def dicose():
         except Exception as e: log('DICOSE %s: %s' % (name[-12:], e)); continue
         got = False; diag = []
         # primero el datosanimales.csv de siempre; si en un anio ese fichero es un diccionario de datos, se prueban los demas CSV del paquete (menos los claramente ajenos)
-        cands = sorted([r for r in pkg['resources'] if (r.get('url') or '').lower().endswith('.csv') and not re.search(r'detallad|tenencia|usostierra|generales', r.get('url') or '', re.I)],
-                       key=lambda r: 0 if (r.get('url') or '').endswith('datosanimales.csv') else 1)
+        # en 2016-2020 los CSV son solo los metadatos y los datos estan en el XML de «Datos Animales»
+        cands = sorted([r for r in pkg['resources'] if (r.get('url') or '').lower().endswith(('.csv', 'datosanimales.xml')) and not re.search(r'detallad|tenencia|usostierra|generales|mejoramientos', r.get('url') or '', re.I)],
+                       key=lambda r: 0 if (r.get('url') or '').endswith('datosanimales.csv') else 2 if (r.get('url') or '').lower().endswith('.xml') else 1)
         for r in cands:
             try: b = resource_bytes(r)
             except Exception as e: log('DICOSE %s: fallo %s' % (name[-12:], e)); continue
             if b is None: continue
-            if b.lstrip().startswith(b'<'): log('DICOSE %s: contenido no es CSV' % name[-12:]); continue
-            rd = csv.DictReader(io.StringIO(b.decode('latin-1')), delimiter=';')
-            cols = {(c or '').replace('ns1:', ''): c for c in (rd.fieldnames or [])}
+            isx = (r.get('url') or '').lower().endswith('.xml')
+            if isx:
+                rows = list(xml_rows(b)); rd = rows
+                cols = {k: k for k in (rows[0] if rows else {})}
+            else:
+                if b.lstrip().startswith(b'<'): log('DICOSE %s: contenido no es CSV' % name[-12:]); continue
+                rd = csv.DictReader(io.StringIO(b.decode('latin-1')), delimiter=';')
+                cols = {(c or '').replace('ns1:', ''): c for c in (rd.fieldnames or [])}
             need = ('Ejercicio', 'EspecieCodigo', 'DepartamentoCodigo', 'AnimalesPorEspeciePD_AD', 'AnimalesPorEspecieNacimientosPD_AD')
             if any(n not in cols for n in need):   # otro recurso (p. ej. el detallado por categoria) o formato distinto
                 if len(diag) < 3: diag.append('%s: faltan %s; columnas %s' % ((r.get('url') or '')[-28:], [n for n in need if n not in cols], list(cols)[:6]))

@@ -128,6 +128,17 @@ pk = []; files = {}
 for i, y in enumerate((2023, 2024, 2025)):
     n = ['mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2023', 'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2024', 'mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2025'][i]
     pk.append({'name': n, 'license_id': 'odc-uy', 'resources': [{'id': 'd%d' % i, 'url': 'https://x/datosanimales.csv'}]}); files['x--d%d.csv' % i] = dic(y)
+# 2016-2020: los CSV son solo metadatos (diccionario de datos) y los datos estan en el XML de «Datos Animales»
+def dic_xml(year):
+    parts = ['<?xml version="1.0" encoding="UTF-8"?><root xmlns:ns1="urn:x">']
+    for i in range(1200):
+        dpt = 1 + (i % 2)
+        for sp, ad, nac in ((1, 10, 2), (11, 1, 0), (5, 7, 0)):
+            parts.append('<ns1:fila><Ejercicio>%d</Ejercicio><DepartamentoCodigo>%d</DepartamentoCodigo><EspecieCodigo>%d</EspecieCodigo><AnimalesPorEspeciePD_AD>%d</AnimalesPorEspeciePD_AD><AnimalesPorEspecieNacimientosPD_AD>%d</AnimalesPorEspecieNacimientosPD_AD></ns1:fila>' % (year, dpt, sp, ad, nac))
+    parts.append('</root>'); return ''.join(parts).encode('utf-8')
+old = 'mgap-datos-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig-2016'
+pk.insert(0, {'name': old, 'license_id': 'odc-uy', 'resources': [{'id': 'm0', 'url': 'https://x/datosanimales.csv'}, {'id': 'x0', 'url': 'https://x/datosanimales.xml'}]})
+files['x--m0.csv'] = 'ATRIBUTO;XML;DESCRIPCION ;ORIGEN;LIMITANTES CONOCIDAS;NOTAS\nEjercicio;ns1:Ejercicio;Ano;DICOSE;;\n'.encode('latin-1'); files['x--x0.xml'] = dic_xml(2016)
 p, s, log = run(files, pk)
 c = s.get('uy-dicose-cattle-head')
 ok('DICOSE genera bovinos', c is not None)
@@ -142,6 +153,8 @@ if c:
         cat = dd['livestock']['cattle']['2025']
         ok('Departamentos: ids = sufijo ISO (AR, CA), no codigo numerico', sorted(cat) == ['AR', 'CA'])
         ok('Departamentos: la suma de los departamentos = total nacional (PD_AD)', sum(cat.values()) == c['latest'])
+    ok('DICOSE 2016-2020: sin CSV de datos se lee el XML (2016 entra, bovinos PD_AD = 12000)', dict(c['points']).get('2016') == 12000.0)
+    ok('DICOSE 2016: el CSV de metadatos no cuenta como datos', 'ATRIBUTO' not in log or '2016' in str(dict(c['points'])))
     ok('DICOSE: nota avisa de no sumar bovinos y leche', 'No se suma con bovinos' in s['uy-dicose-dairy-cattle-head'].get('note', ''))
 
 # ---- 7. Rejillas INIA: solo columna mensual (sufijo 0), media de celdas, mes con celda vacia fuera, ANR identico a PAD descartado
