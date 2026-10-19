@@ -389,6 +389,10 @@
   "data/app/v1/sec/rendimientos.json": {
    "class": "DERIVED",
    "note": "Seccion Rendimientos de la app (build-app-sections.py): rendimientos y superficie por region en la zona euro, incluida Francia. La app la baja solo al abrir esa seccion; la web no la descarga."
+  },
+  "data/app/v1/sec/insumos.json": {
+   "class": "DERIVED",
+   "note": "Seccion Insumos de la app (build-app-sections.py): monitor de insumos con el desglose por pais (UE-27, UE, Banco Mundial). La app la baja solo al abrir esa seccion; la web no la descarga."
   }
  },
  "prefixes": {
