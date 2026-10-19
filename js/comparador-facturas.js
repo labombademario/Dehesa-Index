@@ -87,6 +87,7 @@
     }
   };
   var IDX = null, SER = null, SID = '', MODE = 'buy', TEXT = '', LOADING = false, FAILED = false, RES = null;
+  function UL(u) { return S.unitLabel ? S.unitLabel(u, lang()) : u; }
   function lang() { return S.getLang ? S.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -101,7 +102,7 @@
       p = ln.indexOf('\t') > -1 ? ln.split('\t') : (ln.indexOf(';') > -1 ? ln.split(';') : ln.split(','));
       p = p.map(function (x) { return x.trim(); });
       d = parseDate(p[0]);
-      if (!d && i === 0 && rows.length === 0) continue;   // cabecera
+      if (!d && i === 0 && rows.length === 0 && !/\d/.test(p[0])) continue;   // cabecera (solo si no lleva numeros: una fecha imposible en la 1.ª linea se avisa)
       if (p.length === 2) { q = 1; pr = num(p[1]); } else { q = num(p[1]); pr = num(p[2]); }
       if (!d || isNaN(pr) || isNaN(q) || q <= 0) { bad.push([i + 1, ln]); continue; }
       rows.push({ date: d, qty: q, price: pr });
@@ -129,17 +130,17 @@
   function resultHtml(w, s) {
     var parsed = parse(TEXT);
     if (!parsed.rows.length && !parsed.bad.length) return '<p class="di-movers-hint">' + esc(w.none) + '</p>';
-    var r = compute(s, parsed), u = s.unit + ' ' + s.currency, h = '';
+    var r = compute(s, parsed), u = UL(s.unit) + ' ' + s.currency, h = '';
     if (parsed.bad.length) h += '<p class="di-movers-hint" style="color:#8f5f12">' + parsed.bad.slice(0, 5).map(function (b) { return esc(fill(w.bad, { n: b[0], x: b[1] })); }).join('<br>') + '</p>';
     if (!r.lines.length) return h + '<p class="di-movers-hint">' + esc(fill(w.skipped, { n: r.skipped })) + '</p>';
     var diff = r.paid - r.mkt, pct = r.mkt ? diff / r.mkt * 100 : 0, up = diff > 0, buy = MODE === 'buy';
-    var sentence = Math.abs(diff) < 0.005 ? fill(buy ? w.sB : w.sS, { q: nf(r.q), u0: s.unit, p: nf(r.paid), u: u, m: nf(r.mkt), d: nf(0), dir: w.eq, x: nf(0, 1), t: nf(0), tdir: w.eq })
-      : fill(buy ? w.sB : w.sS, { q: nf(r.q), u0: s.unit, p: nf(r.paid), u: u, m: nf(r.mkt), d: nf(Math.abs(diff)) + ' ' + s.currency, dir: buy ? (up ? w.dirBuyUp : w.dirBuyDn) : (up ? w.dirSellUp : w.dirSellDn), x: nf(Math.abs(pct), 1), t: nf(Math.abs(r.tot)) + ' ' + s.currency, tdir: buy ? (up ? w.tBuyUp : w.tBuyDn) : (up ? w.tSellUp : w.tSellDn) });
+    var sentence = Math.abs(diff) < 0.005 ? fill(buy ? w.sB : w.sS, { q: nf(r.q), u0: UL(s.unit), p: nf(r.paid), u: u, m: nf(r.mkt), d: nf(0), dir: w.eq, x: nf(0, 1), t: nf(0), tdir: w.eq })
+      : fill(buy ? w.sB : w.sS, { q: nf(r.q), u0: UL(s.unit), p: nf(r.paid), u: u, m: nf(r.mkt), d: nf(Math.abs(diff)) + ' ' + s.currency, dir: buy ? (up ? w.dirBuyUp : w.dirBuyDn) : (up ? w.dirSellUp : w.dirSellDn), x: nf(Math.abs(pct), 1), t: nf(Math.abs(r.tot)) + ' ' + s.currency, tdir: buy ? (up ? w.tBuyUp : w.tBuyDn) : (up ? w.tSellUp : w.tSellDn) });
     var good = buy ? diff <= 0 : diff >= 0, col = good ? '#17703f' : '#9a3b1a';
     RES = { s: s, r: r };
     h += '<article class="ic-sheet di-card" style="padding:16px"><div style="font-size:12px;color:var(--text-muted)">' + esc(w.report) + '</div><h3 style="margin:2px 0 10px;font-size:20px">' + esc(nm(s.name, s.product)) + ' · ' + esc(w.M[s.region] || s.region) + ' · ' + esc(u) + '</h3>' +
       '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:12px">' +
-      kpi(w.qty, nf(r.q) + ' ' + s.unit) + kpi(buy ? w.paid : w.rcv, nf(r.paid) + ' ' + s.currency, w.weighted) + kpi(w.mkt, nf(r.mkt) + ' ' + s.currency, w.weighted) +
+      kpi(w.qty, nf(r.q) + ' ' + UL(s.unit)) + kpi(buy ? w.paid : w.rcv, nf(r.paid) + ' ' + s.currency, w.weighted) + kpi(w.mkt, nf(r.mkt) + ' ' + s.currency, w.weighted) +
       '<div class="di-card" style="padding:10px 14px;border-color:' + col + '"><div style="font-size:12px;color:var(--text-muted)">' + esc(w.diff) + '</div><div style="font-size:20px;font-weight:700;color:' + col + '">' + sign(diff) + ' ' + esc(s.currency) + ' (' + sign(pct, 1) + ' %)</div><div style="font-size:11.5px;color:var(--text-muted)">' + esc(w.total) + ': ' + sign(r.tot) + ' ' + esc(s.currency) + '</div></div></div>' +
       '<p style="font-size:14px;margin:0 0 12px">' + esc(sentence) + '</p>' +
       '<div style="overflow-x:auto"><table data-no-rows class="ic-t" style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + w.cols.map(th).join('') + '</tr></thead><tbody>' +
@@ -168,7 +169,7 @@
     var h = '<p class="di-movers-hint no-print">' + esc(w.privacy) + '</p><div class="no-print"><h3 style="margin:14px 0 6px;font-size:16px">' + esc(w.s1) + '</h3><div style="display:flex;flex-wrap:wrap;gap:10px"><label style="font-size:13px">' + esc(w.series) + '<br><select id="cf-s" class="di-compare-select" style="width:auto;max-width:100%">' +
       list.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === SID ? ' selected' : '') + '>' + esc(nm(x.name, x.product) + ' — ' + (w.M[x.region] || x.region) + ' (' + x.unit + ' ' + x.currency + ')') + '</option>'; }).join('') + '</select></label>' +
       '<label style="font-size:13px">' + esc(w.mode) + '<br><select id="cf-m" class="di-compare-select" style="width:auto"><option value="buy"' + (MODE === 'buy' ? ' selected' : '') + '>' + esc(w.buy) + '</option><option value="sell"' + (MODE === 'sell' ? ' selected' : '') + '>' + esc(w.sell) + '</option></select></label></div>' +
-      (sel() ? '<p class="di-movers-hint" style="color:#8f5f12">' + esc(fill(w.unitWarn, { u: sel().unit + ' ' + sel().currency })) + '</p>' : '') +
+      (sel() ? '<p class="di-movers-hint" style="color:#8f5f12">' + esc(fill(w.unitWarn, { u: UL(sel().unit) + ' ' + sel().currency })) + '</p>' : '') +
       '<h3 style="margin:14px 0 6px;font-size:16px">' + esc(w.s2) + '</h3><p class="di-movers-hint">' + esc(w.s2h) + '</p><textarea id="cf-t" rows="7" class="di-compare-select" style="width:100%;font-family:monospace;font-size:13px" placeholder="' + esc(w.ph) + '">' + esc(TEXT) + '</textarea>' +
       '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px"><button id="cf-go" class="di-btn-gold-solid" type="button">' + esc(w.btn) + '</button><button id="cf-ex" class="di-btn-sec" type="button">' + esc(w.ex) + '</button><label class="di-btn-sec" style="cursor:pointer">' + esc(w.file) + '<input id="cf-f" type="file" accept=".csv,.txt,text/csv,text/plain" style="display:none"></label><button id="cf-clr" class="di-btn-sec" type="button">' + esc(w.clear) + '</button></div></div>' +
       '<h3 class="no-print" style="margin:18px 0 6px;font-size:16px">' + esc(w.s3) + '</h3>';
@@ -193,7 +194,7 @@
     if ($('cf-print')) $('cf-print').onclick = function () { TEXT = $('cf-t').value; window.print(); };
     if ($('cf-csv')) $('cf-csv').onclick = csvOut;
   }
-  var qp = /[?&]s=([^&]+)/.exec(location.search); if (qp) SID = decodeURIComponent(qp[1]);
+  var qp = /[?&]s=([^&]+)/.exec(location.search); if (qp) { try { SID = decodeURIComponent(qp[1]); } catch (e) { } }
   S.init('data');
   S.onLangChange = render;
   render();

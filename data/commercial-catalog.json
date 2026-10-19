@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-19T15:43:36Z",
+ "generatedAt": "2026-10-19T18:57:33Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,9 +10,9 @@
   "sourcesApto": 130,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 295,
+  "datasets": 298,
   "datasets_apto": 171,
-  "datasets_condiciones": 114,
+  "datasets_condiciones": 117,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -2504,6 +2504,23 @@
    ]
   },
   {
+   "path": "data/api/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ]
+  },
+  {
    "path": "data/app/",
    "scope": "carpeta",
    "verdict": "parcial",
@@ -3143,6 +3160,23 @@
    "verdict": "condiciones",
    "sources": [
     "eu_oil_bulletin"
+   ]
+  },
+  {
+   "path": "data/digest/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
    ]
   },
   {
@@ -5058,6 +5092,23 @@
    "sources": [
     "cso_ie",
     "epa_ie"
+   ]
+  },
+  {
+   "path": "data/indices/",
+   "scope": "carpeta",
+   "verdict": "condiciones",
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
    ]
   },
   {

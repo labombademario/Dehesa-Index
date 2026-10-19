@@ -77,7 +77,8 @@
   function colr(kind, diff) { return Math.abs(diff) < 1e-9 ? '' : 'color:' + (good(kind, diff) ? '#17703f' : '#9a3b1a') + ';'; }
   function th(c) { return '<th style="padding:6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600">' + esc(c) + '</th>'; }
   function td(x, st) { return '<td style="padding:6px;border-top:1px solid var(--border);' + (st || '') + '">' + x + '</td>'; }
-  function unitOf(s) { return s ? s.currency + '/' + s.unit : ''; }
+  function UL(u) { return S.unitLabel ? S.unitLabel(u, lang()) : u; }
+  function unitOf(s) { return s ? s.currency + '/' + UL(s.unit) : ''; }
   function render() {
     var w = t(), root = document.getElementById('mc-body'); if (!root) return;
     document.getElementById('mc-h1').textContent = w.h1; document.getElementById('mc-sub').textContent = w.sub; document.title = w.h1 + ' | Dehesa Index';
@@ -92,7 +93,7 @@
     h += '<form id="mc-form" class="di-card no-print" style="padding:14px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));align-items:end"><h2 style="grid-column:1/-1;margin:0;font-size:16px">' + esc(w.add) + '</h2>' +
       lab(w.d, '<input id="mc-d" required placeholder="2026-10-19" value="' + esc(DRAFT.d) + '" style="' + inp + '">') + lab(w.s, '<select id="mc-s" style="' + inp + '">' + opts + '</select>') +
       lab(w.k, '<select id="mc-k" style="' + inp + '"><option value="buy"' + (DRAFT.k === 'buy' ? ' selected' : '') + '>' + esc(w.buy) + '</option><option value="sell"' + (DRAFT.k === 'sell' ? ' selected' : '') + '>' + esc(w.sell) + '</option></select>') +
-      lab(w.q + (si ? ' (' + si.unit + ')' : ''), '<input id="mc-q" required inputmode="decimal" value="' + esc(DRAFT.q) + '" style="' + inp + '">') + lab(w.p + (si ? ' (' + unitOf(si) + ')' : ''), '<input id="mc-p" required inputmode="decimal" value="' + esc(DRAFT.p) + '" style="' + inp + '">') +
+      lab(w.q + (si ? ' (' + UL(si.unit) + ')' : ''), '<input id="mc-q" required inputmode="decimal" value="' + esc(DRAFT.q) + '" style="' + inp + '">') + lab(w.p + (si ? ' (' + unitOf(si) + ')' : ''), '<input id="mc-p" required inputmode="decimal" value="' + esc(DRAFT.p) + '" style="' + inp + '">') +
       lab(w.n, '<input id="mc-n" maxlength="80" value="' + esc(DRAFT.n) + '" style="' + inp + '">') + '<div><button class="di-btn-gold-solid" type="submit">' + esc(w.addB) + '</button></div></form>';
     if (!ITEMS.length) h += '<p class="di-emp-p" style="margin-top:16px">' + esc(w.empty) + '</p><p class="no-print"><button class="di-btn-sec" id="mc-ex">' + esc(w.ex) + '</button> <label class="di-btn-sec" style="cursor:pointer">' + esc(w.imp) + '<input type="file" id="mc-f" accept=".json,.csv,.txt" style="display:none"></label></p>';
     else {
@@ -101,11 +102,11 @@
       var G = groups();
       if (G.length) h += '<h2 style="margin:22px 0 6px;font-size:18px">' + esc(w.sumT) + '</h2><div class="di-card" style="padding:4px 14px;overflow-x:auto"><table data-no-rows style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + w.sc.map(th).join('') + '</tr></thead><tbody>' +
         G.map(function (g) { var s = SER[g.s], inf = sinfo(g.s), paid = g.P / g.q, mk = g.M / g.q, d = paid - mk, tot = g.P - g.M;
-          return '<tr>' + td('<b>' + esc(label(inf)) + '</b>') + td(esc(g.k === 'buy' ? w.buy : w.sell)) + td(nf(g.q) + ' ' + esc(inf.unit)) + td(nf(paid) + ' ' + esc(unitOf(inf))) + td(nf(mk) + ' ' + esc(unitOf(inf))) +
+          return '<tr>' + td('<b>' + esc(label(inf)) + '</b>') + td(esc(g.k === 'buy' ? w.buy : w.sell)) + td(nf(g.q) + ' ' + esc(UL(inf.unit))) + td(nf(paid) + ' ' + esc(unitOf(inf))) + td(nf(mk) + ' ' + esc(unitOf(inf))) +
             td('<span style="' + colr(g.k, d) + '">' + sgn(d) + ' (' + esc(verdict(w, g.k, d)) + ')</span>') + td('<b style="' + colr(g.k, tot) + '">' + sgn(tot, 0) + ' ' + esc(inf.currency) + '</b>') + '</tr>'; }).join('') + '</tbody></table></div>';
       h += '<h2 style="margin:22px 0 6px;font-size:18px">' + esc(w.lnT) + '</h2><div class="di-card" style="padding:4px 14px;overflow-x:auto"><table data-no-rows style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + w.lc.map(th).join('') + '</tr></thead><tbody>' +
         ITEMS.slice().sort(function (a, b) { return a.d < b.d ? 1 : a.d > b.d ? -1 : 0; }).map(function (x) { var inf = sinfo(x.s), c = ready() ? calc(x) : null, u = unitOf(inf);
-          return '<tr>' + td(esc(x.d)) + td(esc(x.k === 'buy' ? w.buy : w.sell)) + td(esc(label(inf))) + td(nf(x.q) + ' ' + esc(inf.unit)) + td(nf(x.p) + ' ' + esc(u)) +
+          return '<tr>' + td(esc(x.d)) + td(esc(x.k === 'buy' ? w.buy : w.sell)) + td(esc(label(inf))) + td(nf(x.q) + ' ' + esc(UL(inf.unit))) + td(nf(x.p) + ' ' + esc(u)) +
             td(c ? nf(c.mkt) + ' ' + esc(u) + ' <span style="color:var(--text-muted);font-size:11px">(' + esc(c.md) + ')</span>' : '<span style="color:var(--text-muted)">' + esc(ready() ? w.nomk : '…') + '</span>') +
             td(c ? '<span style="' + colr(x.k, c.diff) + '">' + sgn(c.diff) + ' (' + esc(verdict(w, x.k, c.diff)) + ')</span>' : '') + td(esc(x.n)) + td('<button class="di-btn-sec no-print" data-del="' + esc(x.i) + '">' + esc(w.del) + '</button>') + '</tr>'; }).join('') + '</tbody></table></div>';
       h += '<p class="no-print" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px"><button class="di-btn-sec" id="mc-exp">' + esc(w.exp) + '</button><button class="di-btn-sec" id="mc-csv">' + esc(w.csv) + '</button><label class="di-btn-sec" style="cursor:pointer">' + esc(w.imp) + '<input type="file" id="mc-f" accept=".json,.csv,.txt" style="display:none"></label><button class="di-btn-sec" id="mc-print">' + esc(w.print) + '</button><button class="di-btn-sec" id="mc-clr">' + esc(w.clr) + '</button></p>';
@@ -116,15 +117,15 @@
   }
   function download(name, text, type) { try { var b = new Blob([text], { type: type }), a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a); setTimeout(function () { URL.revokeObjectURL(a.href); }, 500); } catch (e) { } }
   function csvOut() {
-    var rows = [['date', 'type', 'series', 'quantity', 'your_price', 'market_price', 'market_date', 'difference', 'note']];
-    ITEMS.forEach(function (x) { var c = calc(x); rows.push([x.d, x.k, x.s, x.q, x.p, c ? c.mkt : '', c ? c.md : '', c ? Math.round(c.diff * 100) / 100 : '', '"' + x.n.replace(/"/g, '""') + '"']); });
+    var rows = [['date', 'series', 'quantity', 'your_price', 'type', 'note', 'market_price', 'market_date', 'difference']];   /* mismo orden de columnas que acepta el importador */
+    ITEMS.forEach(function (x) { var c = calc(x); rows.push([x.d, x.s, x.q, x.p, x.k, '"' + (/^[=+\-@]/.test(x.n) ? "'" : '') + x.n.replace(/"/g, '""') + '"', c ? c.mkt : '', c ? c.md : '', c ? Math.round(c.diff * 100) / 100 : '']);   /* una nota que empieza por = + - @ no se evalua como formula en Excel */ });
     return rows.map(function (r) { return r.join(';'); }).join('\n');
   }
   function fromText(text) {
     var o = null; try { o = JSON.parse(text); } catch (e) { }
     if (o && (o.items || o.length)) return clean(o.items || o);
     var arr = []; text.split(/\r?\n/).forEach(function (ln, i) { ln = ln.trim(); if (!ln) return; var p = ln.indexOf('\t') > -1 ? ln.split('\t') : ln.split(';'); if (p.length < 4) return; if (i === 0 && !DL.parseDate(p[0])) return;
-      var k = /^(sell|venta|vente|vendita|v)$/i.test((p[4] || '').trim()) ? 'sell' : 'buy'; arr.push({ d: p[0], s: p[1].trim(), q: p[2], p: p[3], k: k, n: p[5] || '' }); });
+      var k = /^(sell|venta|vente|vendita|v)$/i.test((p[4] || '').trim()) ? 'sell' : 'buy'; arr.push({ d: p[0], s: p[1].trim(), q: p[2], p: p[3], k: k, n: String(p[5] || '').replace(/^"(.*)"$/, '$1').replace(/""/g, '"') }); });
     var r = clean(arr); r.bad += 0; return r;
   }
   function bind(w) {
@@ -142,7 +143,8 @@
         pts.forEach(function (p, k) { var dt = /^\d{4}-\d{2}-\d{2}$/.test(p[0]) ? p[0] : p[0].slice(0, 7) + '-15'; if (/Q/.test(dt)) return; arr.push({ d: dt, s: id, q: 100 * (k + 1), p: Math.round(p[1] * (k % 2 ? 0.97 : 1.04) * 100) / 100, k: k % 2 ? 'sell' : 'buy', n: w.exN }); });
         ITEMS = ITEMS.concat(clean(arr).ok); save(); render(); }).catch(function () { });
     };
-    if ($('mc-f')) $('mc-f').onchange = function (e) { var f = e.target.files && e.target.files[0]; if (!f || !window.FileReader) return; var fr = new FileReader(); fr.onload = function () { var r = fromText(String(fr.result)); ITEMS = ITEMS.concat(r.ok); save(); MSG = w.imported.replace('{n}', r.ok.length).replace('{b}', r.bad); render(); }; fr.readAsText(f); };
+    if ($('mc-f')) $('mc-f').onchange = function (e) { var f = e.target.files && e.target.files[0]; if (!f || !window.FileReader) return; var fr = new FileReader(); fr.onload = function () { var r = fromText(String(fr.result)), key = function (x) { return [x.d, x.s, x.q, x.p, x.k, x.n].join('|'); }, have = {}; ITEMS.forEach(function (x) { have[key(x)] = 1; }); r.ok = r.ok.filter(function (x) { if (have[key(x)]) { r.bad++; return false; } have[key(x)] = 1; return true; });   /* sin duplicados: reimportar la misma copia no multiplica las operaciones */
+      ITEMS = ITEMS.concat(r.ok); save(); MSG = w.imported.replace('{n}', r.ok.length).replace('{b}', r.bad); render(); }; fr.readAsText(f); };
   }
   S.init('data');
   S.onLangChange = render;

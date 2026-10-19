@@ -75,7 +75,7 @@
     return '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(title) + '</h3><div class="di-card" style="padding:4px 14px"><ul style="list-style:none;margin:0;padding:0">' + items.map(function (e) {
       var pl = nm(e.place), col = e.changePct > 0 ? '#17703f' : '#9a3b1a';
       return '<li style="padding:10px 0;border-top:1px solid var(--border)"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b>' + esc(nm(e.name, e.product)) + '</b><b style="color:' + col + '">' + (e.changePct > 0 ? '+' : '') + nf(e.changePct) + ' %</b></div>' +
-        '<div style="font-size:13px">' + nf(e.value) + ' ' + esc(e.currency) + '/' + esc(e.unit) + ' · ' + esc(e.date) + ' <span style="color:var(--text-muted)">(' + esc(w.from) + ' ' + nf(e.previous) + ', ' + esc(e.previousDate) + ')</span></div>' +
+        '<div style="font-size:13px">' + nf(e.value) + ' ' + esc(e.currency) + '/' + esc(S.unitLabel ? S.unitLabel(e.unit, lang()) : e.unit) + ' · ' + esc(e.date) + ' <span style="color:var(--text-muted)">(' + esc(w.from) + ' ' + nf(e.previous) + ', ' + esc(e.previousDate) + ')</span></div>' +
         '<div style="font-size:12px;color:var(--text-muted)">' + esc(w.M[e.region] || e.region) + (pl && pl !== nm(e.name) && pl !== (w.M[e.region] || '') ? ' · ' + esc(pl) : '') + ' · ' + esc(e.attribution) + ' · <a href="informe-negociacion.html?p=' + encodeURIComponent(e.product) + '">' + esc(w.rep) + '</a></div></li>';
     }).join('') + '</ul></div>';
   }

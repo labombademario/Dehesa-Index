@@ -52,7 +52,7 @@ export function makeApi(load) {
       inputSchema: { type: 'object', required: ['id'], properties: { id: { type: 'string', description: 'Series id such as "eu/trigo"' }, from: { type: 'string', description: 'First date to include (YYYY-MM or YYYY-MM-DD)' }, last: { type: 'integer', minimum: 1, maximum: 1000, description: 'Return only the last N points (default 120)' }, lang: { type: 'string', enum: LANGS } } },
       async run(a) {
         const s = await series(a.id), l = lang(a); let P = s.points;
-        if (a.from) P = P.filter((p) => p[0] >= String(a.from));
+        if (a.from) { const key = (d) => { const m = /^(\d{4})-Q(\d)$/.exec(d); return m ? `${m[1]}-${String((m[2] - 1) * 3 + 1).padStart(2, '0')}` : d; }, f = key(String(a.from)); P = P.filter((p) => key(p[0]) >= f); }   // trimestres: Q1 = enero
         const lim = clamp(a.last, 1, 1000, 120), cut = P.length > lim; P = P.slice(-lim);
         return out({ ...brief(s, l), note: nm(s.note, l) || undefined, comparability: s.comparability, ...cite(s), totalPoints: s.rows, returnedPoints: P.length, truncated: cut, points: P });
       } },

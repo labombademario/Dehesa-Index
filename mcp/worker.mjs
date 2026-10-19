@@ -5,7 +5,8 @@ const CORS = { 'access-control-allow-origin': '*', 'access-control-allow-methods
 export default {
   async fetch(req, env) {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
-    if (req.method === 'GET') return new Response('Dehesa Index MCP server. POST JSON-RPC here. Docs: https://dehesaindex.com/conector-ia', { headers: { ...CORS, 'content-type': 'text/plain; charset=utf-8' } });
+    /* Transporte HTTP «Streamable»: un GET debe abrir un flujo SSE o responder 405. Este servidor no tiene flujo, asi que 405 (con el texto de ayuda) */
+    if (req.method === 'GET') return new Response('Dehesa Index MCP server. Send JSON-RPC with POST. Docs: https://dehesaindex.com/conector-ia', { status: 405, headers: { ...CORS, allow: 'POST, OPTIONS', 'content-type': 'text/plain; charset=utf-8' } });
     if (req.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: CORS });
     const base = ((env && env.DEHESA_BASE_URL) || 'https://dehesaindex.com').replace(/\/$/, '');
     const api = makeApi(async (p) => { const r = await fetch(`${base}/${p}`, { cf: { cacheTtl: 300 } }); if (!r.ok) throw new Error(`HTTP ${r.status} al leer ${p}`); return r.json(); });

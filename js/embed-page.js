@@ -12,6 +12,7 @@
     it: { prev: 'Periodo precedente', yr: '12 mesi fa', rep: 'Rapporto di negoziazione', src: 'Fonte', lic: 'Licenza', data: 'Dati di Dehesa Index', err: 'Impossibile caricare questo prezzo.', bad: 'Serie sconosciuta.', as: 'Dato del', nb: 'Nessun dato', tr: ['Terzo basso degli ultimi 5 anni', 'Terzo medio degli ultimi 5 anni', 'Terzo alto degli ultimi 5 anni'] }
   }[L];
   var UNIT = { tonelada: { es: 't', en: 't', fr: 't', it: 't' } };
+  var UNITS = { tonelada: 't', ton_corta: { es: 'ton corta', en: 'short ton', fr: 'tonne courte', it: 'tonnellata corta' }[L], barril: { es: 'barril', en: 'barrel', fr: 'baril', it: 'barile' }[L], gal: { es: 'galón', en: 'gallon', fr: 'gallon', it: 'gallone' }[L], docena: { es: 'docena', en: 'dozen', fr: 'douzaine', it: 'dozzina' }[L], litro: { es: 'litro', en: 'litre', fr: 'litre', it: 'litro' }[L] };
   var root = document.documentElement, w = document.getElementById('w');
   root.lang = L;
   var theme = Q.t === 'dark' || Q.t === 'light' ? Q.t : ((window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
@@ -23,7 +24,7 @@
   function height() { try { parent.postMessage({ type: 'dehesa-embed-height', h: Math.ceil(document.documentElement.getBoundingClientRect().height) + 2, s: Q.s || '' }, '*'); } catch (e) { } }
   function yearAgo(pts, freq) {
     var last = pts[pts.length - 1][0], y = parseInt(last.slice(0, 4), 10), want = (y - 1) + last.slice(4), i;
-    for (i = 0; i < pts.length; i++) if (pts[i][0] === want) return pts[i];
+    for (i = 0; i < pts.length; i++) if (pts[i][0] === want || (freq === 'monthly' && pts[i][0].slice(0, 7) === want.slice(0, 7))) return pts[i];   /* mensual: cuenta el mes, no el dia (series con fin de mes) */
     if (freq === 'monthly' || freq === 'quarterly' || last.length !== 10) return null;
     var t = new Date(want + 'T00:00:00Z').getTime(), best = null, bd = 1e12;
     pts.forEach(function (p) { var d = Math.abs(new Date(p[0] + 'T00:00:00Z').getTime() - t); if (d < bd) { bd = d; best = p; } });
@@ -64,7 +65,7 @@
     fetch('data/api/v1/series/' + id + '.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (s) {
       var pts = s.points || []; if (!pts.length) throw new Error('vacio');
       var last = pts[pts.length - 1], prev = pts.length > 1 ? pts[pts.length - 2] : null, ya = yearAgo(pts, s.frequency);
-      var name = (s.name && (s.name[L] || s.name.es)) || s.product, place = (s.place && (s.place[L] || s.place.es)) || '', unit = s.currency + '/' + (s.unit === 'tonelada' ? 't' : s.unit);
+      var name = (s.name && (s.name[L] || s.name.es)) || s.product, place = (s.place && (s.place[L] || s.place.es)) || '', unit = s.currency + '/' + (UNITS[s.unit] || s.unit);
       Q._n = name; var cP = prev ? pct(last[1], prev[1]) : null, cY = ya ? pct(last[1], ya[1]) : null;
       function chg(c) { return c == null ? '<span class="mut">' + esc(T.nb) + '</span>' : '<b class="' + (c >= 0 ? 'up' : 'dn') + '">' + (c >= 0 ? '+' : '−') + nf(Math.abs(c), 1) + ' %</b>'; }
       var org = (Q.org || '').slice(0, 60), rep = 'informe-negociacion.html?p=' + encodeURIComponent(s.product);

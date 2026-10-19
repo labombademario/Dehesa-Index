@@ -46,6 +46,8 @@ const UM = await rpc({ jsonrpc: '2.0', id: ++id, method: 'foo/bar' }); check('me
 const BAD = await new Promise((res) => { waiters.push(res); child.stdin.write('{no es json\n'); }); check('JSON invalido: -32700 sin caerse', BAD.error && BAD.error.code === -32700);
 const BT = await rpc([{ jsonrpc: '2.0', id: 901, method: 'ping' }, { jsonrpc: '2.0', id: 902, method: 'tools/list' }]); check('lote JSON-RPC: una respuesta por mensaje', Array.isArray(BT) && BT.length === 2 && BT[0].id === 901 && BT[1].id === 902);
 const ALL = [S1, G, TS, CM, PM, LB, GB]; check('toda respuesta de datos lleva aviso y enlace de condiciones', ALL.every((x) => /Cite the attribution/.test(x.data.note) && /condiciones/.test(x.data.terms)));
+const qid = J('data/api/v1/index.json').series.find((s) => s.frequency === 'quarterly').id, qs = J('data/api/v1/series/' + qid + '.json'), yq = qs.points[qs.points.length - 1][0], Q1 = await call('get_series', { id: qid, from: yq.slice(0, 4) + '-' + String((+yq.slice(6) - 1) * 3 + 1).padStart(2, '0') }), Q2 = await call('get_series', { id: qid, from: (+yq.slice(0, 4) + 1) + '-01' });
+check('get_series: «from» con trimestres (Q1 = enero) incluye el trimestre pedido y excluye anteriores; futuro = vacío', Q1.data.points.some((p) => p[0] === yq) && Q1.data.points.every((p) => p[0].slice(0, 4) >= yq.slice(0, 4)) && Q2.data.points.length === 0);
 child.kill();
 
 // --- worker HTTP ---
@@ -56,7 +58,7 @@ const wi = await (await post({ jsonrpc: '2.0', id: 1, method: 'initialize', para
 const wc = await (await post({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'get_latest', arguments: { ids: ['eu/trigo'] } } })).json(); check('worker: get_latest lee la API publica', JSON.parse(wc.result.content[0].text).results[0].value === L.value);
 check('worker: notificacion = 202 sin cuerpo', (await post({ jsonrpc: '2.0', method: 'notifications/initialized' })).status === 202);
 check('worker: JSON invalido = 400', (await post('{mal')).status === 400);
-check('worker: OPTIONS 204 con CORS y GET informativo', (await worker.fetch(new Request('https://x/', { method: 'OPTIONS' }), {})).status === 204 && (await (await worker.fetch(new Request('https://x/'), {})).text()).includes('conector-ia'));
+const wg = await worker.fetch(new Request('https://x/'), {}); check('worker: OPTIONS 204 con CORS; GET = 405 con Allow (transporte Streamable) y texto de ayuda', (await worker.fetch(new Request('https://x/', { method: 'OPTIONS' }), {})).status === 204 && wg.status === 405 && /POST/.test(wg.headers.get('allow')) && (await wg.text()).includes('conector-ia'));
 check('worker: PUT = 405', (await worker.fetch(new Request('https://x/', { method: 'PUT' }), {})).status === 405);
 globalThis.fetch = realFetch;
 console.log(ok + ' comprobaciones OK');

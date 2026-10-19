@@ -4,7 +4,15 @@
 (function () {
   'use strict';
   function pad(n) { return (n < 10 ? '0' : '') + n; }
-  function num(s) { s = String(s).trim().replace(/\s/g, ''); if (/^-?\d{1,3}(\.\d{3})+,\d+$/.test(s)) s = s.replace(/\./g, ''); s = s.replace(',', '.'); return /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : NaN; }
+  function num(s) {
+    s = String(s == null ? '' : s).trim().replace(/\s/g, '');
+    var c = s.lastIndexOf(','), d = s.lastIndexOf('.');
+    if (c > -1 && d > -1) s = c > d ? s.replace(/\./g, '').replace(',', '.') : s.replace(/,/g, '');   /* 1.234,56 (ES/FR/IT) o 1,234.56 (EN): gana el ultimo separador */
+    else if (d > -1 && s.indexOf('.') !== d) s = s.replace(/\./g, '');                              /* 1.234.567 */
+    else if (c > -1 && s.indexOf(',') !== c) s = s.replace(/,/g, '');                                /* 1,234,567 */
+    else s = s.replace(',', '.');                                                                     /* 12,5 = 12.5 (una sola coma es decimal) */
+    return /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : NaN;
+  }
   function parseDate(s) {
     var m; s = String(s).trim();
     if ((m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(s))) return valid(m[1] + '-' + pad(+m[2]) + '-' + pad(+m[3]));

@@ -71,7 +71,8 @@
     }
   };
   function tier(p) { return p <= 33 ? 0 : p >= 67 ? 2 : 1; }
-  var IDX = null, LAT = null, CLI = null, SER = {}, FAILED = false, PROD = '', COOP = '', LOADING = 0;
+  var BAD = {}, IDX = null, LAT = null, CLI = null, SER = {}, FAILED = false, PROD = '', COOP = '', LOADING = 0;
+  function UL(u) { return S.unitLabel ? S.unitLabel(u, lang()) : u; }
   function lang() { return S.getLang ? S.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -122,10 +123,10 @@
     return out;
   }
   function need() {
-    IDX.series.filter(function (s) { return s.product === PROD && !SER[s.id]; }).forEach(function (s) {
+    IDX.series.filter(function (s) { return s.product === PROD && !SER[s.id] && !BAD[s.id]; }).forEach(function (s) {
       SER[s.id] = 'loading'; LOADING++;
       fetch(S.sitePath('data/api/v1/series/' + s.id + '.json')).then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-        .then(function (d) { SER[s.id] = d; }).catch(function () { delete SER[s.id]; FAILED = true; }).then(function () { LOADING--; render(); });
+        .then(function (d) { SER[s.id] = d; }).catch(function () { delete SER[s.id]; BAD[s.id] = 1; FAILED = true; })   /* BAD: no se vuelve a pedir en bucle */.then(function () { LOADING--; render(); });
     });
   }
   function th(c) { return '<th style="padding:6px 6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600">' + esc(c) + '</th>'; }
@@ -157,7 +158,7 @@
     var rows = [], pitch = [], cmp = [], ch = '', src = [], asof = '';
     var L = {}; LAT.series.forEach(function (x) { L[x.id] = x; });
     data.forEach(function (s) {
-      var st = stats(s), lt = L[s.id] || {}, u = s.unit + ' ' + s.currency, pl = place(s);
+      var st = stats(s), lt = L[s.id] || {}, u = UL(s.unit) + ' ' + s.currency, pl = place(s);
       if (!asof || st.last[0] > asof) asof = st.last[0];
       s._st = st;
       rows.push('<tr>' + td('<b>' + esc(mk(w, s)) + '</b>' + (pl ? '<div style="font-size:11.5px;color:var(--text-muted)">' + esc(pl) + '</div>' : '') + '<div style="font-size:11.5px;color:var(--text-muted)">' + esc(w.per[s.frequency] || s.frequency) + '</div>') +

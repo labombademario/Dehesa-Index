@@ -42,7 +42,7 @@ def build():
             events.append({'id': '%s@%s' % (s['id'], d), 'series': s['id'], 'product': s['product'], 'region': s['region'], 'name': s['name'], 'place': s['place'], 'date': d, 'value': v, 'previousDate': P[i - 1][0], 'previous': pv,
                            'changePct': c, 'direction': 'up' if c > 0 else 'down', 'unit': s['unit'], 'currency': s['currency'], 'frequency': s['frequency'], 'sourceName': s['sourceName'], 'attribution': s['attribution'],
                            'report': '/informe-negociacion.html?p=' + s['product']})
-    events.sort(key=lambda e: (e['date'], e['id']), reverse=True)
+    events.sort(key=lambda e: (pt(e['date']), e['id']), reverse=True)   # por fecha real, no por texto ('2026-Q2' > '2026-10-16')
     latest = {}
     for e in events:
         if e['series'] not in latest: latest[e['series']] = e
@@ -61,8 +61,8 @@ def build():
                 '%s: %s%s%% to %s %s/%s (%s)' % (label(e, l), '+' if e['changePct'] > 0 else '', fmt(e['changePct'], l), fmt(e['value'], l), e['currency'], e['unit'], e['date'])
             body = ('Antes: %s (%s). Fuente: %s. %s' if l == 'es' else 'Before: %s (%s). Source: %s. %s') % (fmt(e['previous'], l), e['previousDate'], e['sourceName'], e['attribution'])
             upd = pt(e['date']).isoformat() + 'T00:00:00Z'
-            ent.append('<entry><id>tag:dehesaindex.com,2026:%s</id><title>%s</title><updated>%s</updated><link href="%s%s"/><summary>%s</summary></entry>' % (escape(e['id']), escape(t), upd, BASE, escape(e['report']), escape(body)))
-        files[fn] = '<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="%s"><id>tag:dehesaindex.com,2026:digest-%s</id><title>%s</title><updated>%sT00:00:00Z</updated><link rel="self" href="%s/data/digest/%s"/><link href="%s/avisos.html"/>%s</feed>\n' % (l, l, ttl, gen[:10], BASE, fn, BASE, ''.join(ent))
+            ent.append('<entry><id>tag:dehesaindex.com,2026:%s</id><title>%s</title><updated>%s</updated><author><name>Dehesa Index</name></author><link href="%s%s"/><summary>%s</summary></entry>' % (escape(e['id']), escape(t), upd, BASE, escape(e['report']), escape(body)))
+        files[fn] = '<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="%s"><id>tag:dehesaindex.com,2026:digest-%s</id><title>%s</title><updated>%sT00:00:00Z</updated><author><name>Dehesa Index</name></author><link rel="self" href="%s/data/digest/%s"/><link href="%s/avisos.html"/>%s</feed>\n' % (l, l, ttl, gen[:10], BASE, fn, BASE, ''.join(ent))
     return files
 def main():
     files = build()

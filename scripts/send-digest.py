@@ -36,14 +36,17 @@ def pick(events, done):
     """Un movimiento por serie (el mas reciente aun no enviado); 5 mayores subidas y 5 mayores bajadas."""
     seen, L = set(), []
     for e in events:   # ya vienen del mas reciente al mas antiguo
-        if e['id'] in done or e['series'] in seen: continue
-        seen.add(e['series']); L.append(e)
+        if e['series'] in seen: continue
+        seen.add(e['series'])          # solo cuenta el ULTIMO movimiento de cada serie: si ya se envio, la serie no vuelve hasta que haya otro nuevo
+        if e['id'] in done: continue
+        L.append(e)
     return sorted([e for e in L if e['changePct'] > 0], key=lambda e: -e['changePct'])[:5], sorted([e for e in L if e['changePct'] < 0], key=lambda e: e['changePct'])[:5]
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--lang', default='es', choices=['es', 'en']); ap.add_argument('--out', default=''); ap.add_argument('--send', action='store_true'); a = ap.parse_args()
     ev = json.loads((D / 'events.json').read_text(encoding='utf-8'))
     sentp = D / 'sent.json'; sent = json.loads(sentp.read_text(encoding='utf-8')) if sentp.exists() else {'sent': [], 'events': []}
-    up, dn = pick(ev['events'], set(sent.get('events', [])))
+    ek = 'events' if a.lang == 'es' else 'events-' + a.lang   # cada idioma recuerda lo que ya envio
+    up, dn = pick(ev['events'], set(sent.get(ek, [])))
     w = {'generatedAt': ev['generatedAt'], 'topUp': up, 'topDown': dn}; subj, h = build(w, a.lang)
     sid = '%s-%s' % (w['generatedAt'][:10], a.lang)
     if a.out: Path(a.out).write_text(h, encoding='utf-8')
@@ -56,5 +59,5 @@ def main():
     req = urllib.request.Request('https://api.buttondown.email/v1/emails', data=json.dumps({'subject': subj, 'body': h, 'status': 'about_to_send'}).encode('utf-8'),
                                  headers={'Authorization': 'Token ' + key, 'Content-Type': 'application/json'}, method='POST')
     with urllib.request.urlopen(req, timeout=60) as r: print('Enviado (%s): HTTP %s' % (sid, r.status))
-    sent['sent'].append(sid); sent.setdefault('events', []).extend(e['id'] for e in up + dn); sentp.write_text(json.dumps(sent, indent=1) + '\n', encoding='utf-8')
+    sent['sent'].append(sid); sent.setdefault(ek, []).extend(e['id'] for e in up + dn); sentp.write_text(json.dumps(sent, indent=1) + '\n', encoding='utf-8')
 if __name__ == "__main__": main()
