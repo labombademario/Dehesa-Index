@@ -207,6 +207,17 @@ def region_metrics():
             a1 = _last(e.get('AM110000')); a2 = a1 and _at(e.get('AM120000'), a1[0])
             if a1 and a2 is not None and a1[1] + a2 > 0: va[k] = a1[1] + a2; pa = max(pa, str(a1[0]))
         put(cc, 'output', vo, po, f); put(cc, 'uaa', vu, pu, f); put(cc, 'perha', vp, pp, f); put(cc, 'mgr65', vm, pm, f); put(cc, 'crop', vc, pc, f); put(cc, 'animal', va, pa, f)
+    # Uruguay (data/uruguay-departments.json, scripts/update-uruguay.py): mismo calculo que la rama UY de compute() en js/region-metrics.js
+    d = load('uruguay-departments.json')
+    if d:
+        for mid, sp in (('cattle', 'cattle'), ('sheep', 'sheep'), ('dairy', 'dairy-cattle')):
+            tab = (d.get('livestock') or {}).get(sp) or {}; ys = sorted(tab)
+            if ys: put('UY', mid, {k: x / 1000 for k, x in tab[ys[-1]].items()}, ys[-1], 'uruguay-departments.json')
+        for mid, key in (('landsale', 'sale'), ('landrent', 'rent')):
+            tab = (d.get('land') or {}).get(key) or {}; ys = sorted(tab)
+            if ys: put('UY', mid, {k: x['usdHa'] for k, x in tab[ys[-1]].items() if isinstance(x, dict) and x.get('usdHa') is not None}, ys[-1], 'uruguay-departments.json')
+        fo = d.get('forest') or {}
+        if fo.get('byDept'): put('UY', 'forest', {k: x['total'] / 1000 for k, x in fo['byDept'].items() if x.get('total') is not None}, fo.get('year'), 'uruguay-departments.json')
     return {'schemaVersion': 1, 'generatedAt': now(), 'note': 'Valor por region para colorear los mapas de las fichas de pais; derivado de los ficheros de data/ indicados en source.', 'countries': C}
 # Lonjas (mercados) de cereales por pais del Agri-food Data Portal (precio salida de silo, EUR/t): para elegir otra lonja en la tarjeta de Precios.
 # Solo mercados con dato en las ultimas 10 semanas respecto al ultimo dato del producto (los parados no se ofrecen). Ultimos 26 puntos semanales para el minigrafico.

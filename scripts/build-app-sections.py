@@ -266,7 +266,7 @@ def insumos():
             bars=[bars('Precio medio de los estados que informan|Average of reporting states|Moyenne des États déclarants|Media degli stati che riportano', 'USD/short ton', items, 0)],
             charts=[{'label': t4('Evolución en el estado con más historia|History in the state with the longest record|Évolution dans l’État avec le plus d’historique|Andamento nello stato con più storico'), 'unit': 'USD/short ton', 'series': [{'label': t4(l), 'points': p} for l, p in chs[:6] if len(p) > 1]}],
             source={'name': 'USDA AMS Market News', 'url': f['source']['url']}))
-    out = out + monitor_insumos()
+    out = out + monitor_insumos() + monitor_insumos_paises()
     return {'id': 'insumos', 'title': t4('Gasóleo, fertilizantes y tierra|Diesel, fertiliser and land|Gazole, engrais et terres|Gasolio, fertilizzanti e terreni'), 'emoji': '⛽', 'blocks': out}
 
 EUK = {'output': 'Producción agraria|Agricultural output|Production agricole|Produzione agricola', 'ic': 'Consumos intermedios|Intermediate consumption|Consommations intermédiaires|Consumi intermedi', 'energy': 'Energía|Energy|Énergie|Energia', 'fert': 'Fertilizantes|Fertilisers|Engrais|Fertilizzanti', 'feed': 'Piensos|Feed|Aliments du bétail|Mangimi', 'ppp': 'Fitosanitarios|Plant protection|Phytosanitaires|Fitosanitari', 'vet': 'Veterinario|Veterinary|Vétérinaire|Veterinario', 'entrep': 'Renta empresarial|Entrepreneurial income|Revenu d’entreprise|Reddito imprenditoriale', 'gva': 'Valor añadido bruto|Gross value added|Valeur ajoutée brute|Valore aggiunto lordo', 'nva': 'Valor añadido neto|Net value added|Valeur ajoutée nette|Valore aggiunto netto', 'factor': 'Renta de los factores|Factor income|Revenu des facteurs|Reddito dei fattori'}
@@ -721,6 +721,49 @@ def monitor_insumos():
             charts=[chart('Evolución (precio pagado por el agricultor)|Trend (price paid by the farmer)|Évolution (prix payé par l’agriculteur)|Andamento (prezzo pagato dall’agricoltore)', its[0]['unit'], [({l: x['name'][l] for l in L4}, pts(x)) for x in its])],
             bars=[bars('Frente a hace un año (%)|Vs a year earlier (%)|Sur un an (%)|Rispetto a un anno prima (%)', '%', [({l: x['name'][l] for l in L4}, x.get('yoy')) for x in its], 1)],
             source={'name': 'MAPA', 'url': 'https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/economia/precios-pagados-precios-percibidos/'}))
+    return out
+
+MONP_GROUPS = {'fert': 'Fertilizantes|Fertilisers|Engrais|Concimi', 'feed': 'Piensos y forrajes|Feed and fodder|Aliments et fourrages|Mangimi e foraggi', 'energy': 'Energía y combustibles|Energy and fuels|Énergie et carburants|Energia e carburanti',
+    'general': 'Índices generales de insumos|Overall input indices|Indices généraux des intrants|Indici generali dei mezzi di produzione', 'world': 'Fertilizantes en el mercado mundial|Fertilisers on the world market|Engrais sur le marché mondial|Fertilizzanti sul mercato mondiale'}
+def _periods_back(last, n, freq):
+    """Etiquetas AAAA-MM de los n puntos que terminan en `last` (mensual AAAA-MM o trimestral AAAA-Qn; el trimestre se marca con su primer mes)."""
+    if freq == 'q':
+        y, q = int(last[:4]), int(last[-1]); out = []
+        for i in range(n):
+            out.append('%04d-%02d' % (y, 3 * (q - 1) + 1)); q -= 1
+            if q == 0: y, q = y - 1, 4
+        return out[::-1]
+    return _months_back(last, n)
+def monitor_insumos_paises():
+    """Monitor de insumos de cada pais de la UE (Eurostat, y INSEE en Francia), de la UE en conjunto y de los fertilizantes en el mercado mundial (Banco Mundial): data/views/input-monitor-countries/*.json. Espana ya va en monitor_insumos()."""
+    import glob, os
+    out = []
+    def pts(x, freq): return [[p, v] for p, v in zip(_periods_back(x['last'], len(x['spark']), freq), x['spark']) if v is not None]
+    for fp in sorted(glob.glob(str(D / 'views' / 'input-monitor-countries' / '*.json'))):
+        cc = os.path.basename(fp)[:-5]
+        if cc == 'index': continue
+        d = json.loads(open(fp, encoding='utf-8').read())
+        code = 'WORLD' if cc == 'world' else cc
+        src = d.get('source') or {}; source = {'name': src.get('name', ''), 'url': src.get('url', '')} if src.get('url') else None
+        groups = list(d.get('groups') or [])
+        if d.get('ratios'):
+            rs = [r for r in d['ratios'] if r.get('spark')][:4]
+            if rs:
+                fr = rs[0].get('freq', 'm')
+                out.append(block('mon-%s-ratio' % cc.lower(), code, 'Cuánto fertilizante compra el grano|How much fertiliser grain buys|Combien d’engrais achète le grain|Quanto fertilizzante compra il grano', asOf=max(r['last'] for r in rs),
+                    charts=[chart('Precio del grano frente al del abono (índice; más alto = el grano compra más abono)|Grain price vs fertiliser price (index; higher = grain buys more fertiliser)|Prix du grain par rapport à l’engrais (indice ; plus haut = le grain achète plus d’engrais)|Prezzo del grano rispetto al concime (indice; più alto = il grano compra più concime)', 'índice|index|indice|indice',
+                        [({l: r['grainName'][l] + ' → ' + r['fertName'][l] for l in L4}, pts(r, fr)) for r in rs])],
+                    bars=[bars('Frente a hace un año (%)|Vs a year earlier (%)|Sur un an (%)|Rispetto a un anno prima (%)', '%', [({l: r['grainName'][l] + ' → ' + r['fertName'][l] for l in L4}, r.get('yoy')) for r in rs], 1)],
+                    note=t4('Es una relación entre dos índices de precios (base 2020 = 100): sube cuando el grano se encarece más que el abono.|It is a ratio of two price indices (2020 = 100): it rises when grain gets dearer faster than fertiliser.|C’est un rapport entre deux indices de prix (2020 = 100) : il monte quand le grain renchérit plus que l’engrais.|È un rapporto tra due indici di prezzo (2020 = 100): sale quando il grano rincara più del concime.'), source=source))
+        for g in groups:
+            its = [x for x in g['items'] if x.get('spark') and x.get('last')]
+            if not its: continue
+            fr = its[0].get('freq', 'm')
+            out.append(block('mon-%s-%s' % (cc.lower(), g['id']), code, MONP_GROUPS.get(g['id'], g['id']), asOf=max(x['last'] for x in its),
+                stats=[stat({l: x['name'][l] for l in L4}, x['value'], x['unit'], 1, chg(x.get('yoy'))) for x in its[:4]],
+                charts=[chart('Evolución|Trend|Évolution|Andamento', its[0]['unit'], [({l: x['name'][l] for l in L4}, pts(x, fr)) for x in its[:5]])],
+                bars=[bars('Frente a hace un año (%)|Vs a year earlier (%)|Sur un an (%)|Rispetto a un anno prima (%)', '%', [({l: x['name'][l] for l in L4}, x.get('yoy')) for x in its[:10]], 1)],
+                source=source))
     return out
 
 FS = {'LIVE': 'Recién publicado|Just released|Tout juste publié|Appena pubblicato', 'FRESH': 'Al día|Up to date|À jour|Aggiornato', 'EXPECTED_DELAY': 'Retraso habitual|Usual delay|Retard habituel|Ritardo abituale',
