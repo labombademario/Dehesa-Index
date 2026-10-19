@@ -20,5 +20,6 @@
   "observationId": "Stable identifiers are derived from product + region in Data Trust v2.",
   "dataStatus": "Observations expose status=pending|verified and verifiedAt when status=verified.",
   "license": "See repository terms before commercial redistribution.",
-  "status": "pilot"
+  "status": "pilot",
+  "note": "Descriptor del piloto antiguo. La API actual y documentada es /data/api/v1/ (ver /api y /data/api/v1/openapi.json)."
 }
