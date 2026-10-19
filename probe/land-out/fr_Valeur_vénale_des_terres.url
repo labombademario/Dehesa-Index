@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR" xml:lang="fr-FR"><head>
+    <title>Chiffres et analyses|Agreste, la statistique agricole
+    </title>
+        <meta name="description" content="Retrouver tous les résultats sous forme de publications, tableaux, cartes sur la statistique, l’évaluation et la prospective agricoles" />
+        <meta name="viewport" content="width=device-width,user-scalable=yes" />
+        <meta name="theme-color" content="#333333" />
+
+    <link rel="canonical" href="/agreste-web/" />
+    <link rel="shortcut icon" type="image/png" href="/agreste-web/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/agreste-web/resources/img/apple-touch-icon.png" />
+    <!-- Gestion des CSS -->
+    <link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/bootstrap.css.xhtml?ln=disar" />
+    <link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/fontawesome.css.xhtml?ln=disar" />
+    <link type="text/css" rel="stylesheet" href="/agreste-web/css/static-agreste.min.css" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-page.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-form.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-menu.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-header.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-splitPanel.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-box.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><script type="text/javascript" src="/agreste-web/javax.faces.resource/jsf.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=javax.faces"></script><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-pager.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-table.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-loader.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /><link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/orion-messages.css.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=disar" /></head><body>
+    <a href="#h1" class="skip">Accéder directement au contenu</a>
+<form id="mainform" name="mainform" method="post" action="/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="mainform" value="mainform" />
+
+
+    <div class="navbar navbar-fixed-top o-header-fixed" data-o-role="fixed-header">
+        <div class="o-header" role="banner">
+            <header id="orion-default-header o-header">
+                <div class="header-buttons">
+                    <a href="/agreste-web/servicon/A/listeTypeServicon/" title="Accéder à la section dédiée de l'aide du site" data-toggle="tooltip" data-placement="bottom">
+                        <i class="fa fa-question-circle-o fa-2x" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="container-fluid px-0">
+                    <div>
+                        <div role="img" aria-describedby="headerDesc">
+                            <p id="headerDesc" class="invisible" aria-hidden="false">
+                                Agreste: La statistique, l'évaluation et la prospective agricole du ministère de
+                                l'Agriculture et de la Souveraineté alimentaire
+                            </p><div role="" id="mainform:j_idt18">
+                                <div class="imageBanner">
+                                    <img src="/agreste-web/files/e1f6fc8c-0b92-4344-9d22-d3238c10adbe/20250926_Bandeau_Agreste_2025-v4.svg" alt="banner" usemap="#banner" width="1024" height="170" />
+
+                                    <map name="banner">
+                                        <area shape="rect" coords="0,0,150,170" alt="Site public du ministère agriculture.gouv.fr" href="https://agriculture.gouv.fr/" target="_blank" />
+                                        <area shape="rect" coords="151,0,1024,170" alt="Accueil Agreste" href="/agreste-web/" />
+                                    </map>
+                                </div></div>
+                        </div>
+                    </div> <!-- row header picture -->
+                </div>
+            </header>
+
+            <!-- Section de navigation au sein de l'application.
+            Cette section est toujours affich&amp;eacute;e.
+            C'est elle qui contient les principaux liens de navigations dans l'appli :
+            - les modules principaux affich&amp;eacute;s dans le menu horizontal,
+            - le fil d'Arianne. -->
+            <!-- Le menu horizontal, qui contient les principaux modules de l'application.
+            Les actions sur ce menu d&amp;eacute;clenchent la mise &amp;agrave; jour de la section &amp;quot;body&amp;quot;, qui englobe :
+            - le menu vertical, &amp;agrave; gauche,
+            - le contenu, &amp;agrave; droite. -->
+
+    <!-- 
+        Le menu horizontal. Contient une zone d'insertion dont le contenu devrait &ecirc;tre remplac&eacute; par un composant...
+    -->
+    <nav class="navbar navbar-default o-header-navbar o-horizontal-menu" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#orion-navbar-collapse" data-o-role="toggle-menu-btn" aria-expanded="false">
+                    <span class="fa fa-bars"></span>
+                </button><a id="mainform:title-link-menu-act-wrp-cmd" href="#" title="Cliquer pour accéder à la page d'accueil" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:title-link-menu-act-wrp-cmd':'mainform:title-link-menu-act-wrp-cmd'},'');return false" class="navbar-brand hidden-sm hidden-md hidden-lg">
+                        Mon Application
+                    </a>
+            </div>
+
+            <div class="collapse navbar-collapse o-horizontal-menu-entries" id="orion-navbar-collapse">
+
+    <nav id="navigation-menu" role="navigation"><ul class="nav navbar-nav menubar-disar d-flex flex-fill w-100" id="mainform:main-menu" role="menubar" data-o-level="1">
+            <div class="nav navbar-nav menubar-disar"><li class="menuitem-disar noMarginTop noMarginBottom h-100 d-flex justify-content-center align-items-center active" id="mainform:accueil-menu" role="menuitem"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt26-act-wrp-cmd':'mainform:j_idt26-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurAccueil h-100 d-flex justify-content-center align-items-center">
+                        <i class="fa fa-home menu-home-disar" aria-hidden="true"></i></a></li>
+            </div><li class="menuitem-disar flex-fill" id="mainform:stat-agricole" role="menuitem"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt29-act-wrp-cmd':'mainform:j_idt29-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurChiffresAnalyses h-100 d-flex justify-content-center align-items-center"><img id="mainform:imageChiffresEtAnalyses" src="/agreste-web/javax.faces.resource/img/stat-rond-blanc.png.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="60" width="80" class="glyphicon-menu-disar" />
+                    <span class="menuitem-disar-title-text">
+                        Chiffres et analyses
+                    </span>
+                    <span class="menu-volant-symbol menu-volant-dropdown-disaron"></span></a></li>
+
+            <!-- disaron-en-validation -->
+       <!-- disaron-en-validation -->
+
+            <!--&lt;o:button label=&quot;Valider&quot; actionRef=&quot;validerAbonnementAction&quot;
+                      outcome=&quot;accueil&quot; styleClass=&quot;disar-abonnement-btn-validate&quot;/&gt;--><li class="menuitem-disar flex-fill" id="mainform:methodon" role="menuitem"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt35-act-wrp-cmd':'mainform:j_idt35-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurMenuItemMethodon h-100 d-flex justify-content-center align-items-center"><img src="/agreste-web/javax.faces.resource/img/livre-blanc.png.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="60" width="80" class="glyphicon-menu-disar" />
+                    <span class="menuitem-disar-title-text">
+                        Sources, Définitions, Méthodes
+                    </span></a></li><li class="menuitem-disar flex-fill" id="mainform:servicon" role="menuitem"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt38-act-wrp-cmd':'mainform:j_idt38-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurMenuItemServicon h-100 d-flex justify-content-center align-items-center"><img src="/agreste-web/javax.faces.resource/img/main-rouage.png.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="60" width="80" class="glyphicon-menu-disar" />
+                    <span class="menuitem-disar-title-text">
+                        Services
+                    </span>
+                    <span class="menu-volant-symbol menu-volant-dropdown-servicon"></span></a></li><li class="menuitem-disar flex-fill" id="mainform:statisticons" role="menuitem"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt41-act-wrp-cmd':'mainform:j_idt41-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurStatistiqueAgricole h-100 d-flex justify-content-center align-items-center"><img src="/agreste-web/javax.faces.resource/img/stat-blanc.png.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="60" width="80" class="glyphicon-menu-disar" />
+                    <span class="menuitem-disar-title-text">
+                        Nous connaître
+                    </span>
+                    <span class="menu-volant-symbol menu-volant-dropdown-statisticon"></span></a></li></ul>
+    </nav>
+
+    <script type="text/javascript">
+        document.addEventListener('readystatechange', event => {
+           if (event.target.readyState === "complete") {
+                let descriptionContent = document.getElementById('mainform:disaron-en-validation');
+                if (descriptionContent) {
+                   let result= descriptionContent.getAttribute('class').includes("active");
+                    if(result==true) {
+                        document.getElementById('mainform:stat-agricole').setAttribute('class', 'menuitem-disar flex-fill');
+                    }
+                }
+            }
+        });
+    </script>
+            </div>
+        </div>
+
+    </nav>
+
+            <!-- Le fil d'Arianne, qui commence toujours par &amp;quot;Accueil&amp;quot;. -->
+
+    <!-- Le fil d'Arianne, qui commence toujours par &amp;quot;Accueil&amp;quot;. --><div id="mainform:j_idt48">
+
+    <ul class="breadcrumb breadcrumb-disar fa-ul my-3">
+                <li class="breadcrumb-li">
+                        <span class="fa-li"><em class="fa fa-chevron-right"></em></span>
+                        <a href="/agreste-web/">Accueil</a>
+                </li>
+                <li class="breadcrumb-li">
+                        <span class="fa-li"><em class="fa fa-chevron-right"></em></span>
+                        <a href="/agreste-web/disaron/!searchurl/searchUiid/search/">Chiffres et analyses</a>
+                </li>
+    </ul></div>
+        </div>
+
+    <div id="mainform:messages" class="o-message" data-o-role="messages" style="display:none;">
+        <div class="o-alert o-header-message-alert">
+            <!-- Zone Liste des messages --><div id="mainform:messages:j_idt59" class="row">
+                <!-- Composant MessagesListeMessages --><div id="mainform:messages:orion-messages-list" class="col-md-12 o-header-message-indent" data-o-pagesize="5" data-o-role="messages-list" data-o-todisplay="false"></div></div>
+
+            <!-- Zone Pager de la liste des messages --><div id="mainform:messages:j_idt62" class="row"><div class="o-messages-pager pull-right" id="mainform:messages:orion-messages-pager" data-o-role="messages-pager"></div></div>
+        </div><!-- alert -->
+    </div><!-- o-messages -->
+
+        <script type="text/javascript" src="/agreste-web/resources/js/VersionJquery11.min.js"></script>
+        <script type="text/javascript" src="/agreste-web/resources/js/js.cookie-2.2.1.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+
+              $('[data-toggle="tooltip"]').tooltip({ trigger: 'hover focus' });
+            });
+        </script>
+    </div>
+
+            <div class="container-fluid" role="main">
+        <h1 id="h1" class="sr-only">Chiffres et analyses</h1><div id="mainform:left-splitPanel" class="row disar-collapsible-menu-button disar-collapsible-menu-button-icon"><div id="mainform:left-splitPanel-foldSplitPane" class="foldSplitPane pull-left" title="Afficher/Masquer le menu vertical"><i class="fa fa-chevron-left" title="Afficher/Masquer le menu vertical"><span class="o-invisible">Afficher/Masquer le menu vertical</span></i></div><div data-o-role="left-panel" id="mainform:leftPanel" class="col-md-4 disar-split-panel"><article id="mainform:nuxeoQueryFormBox22" data-o-role="box" data-o-remember="false" data-o-folded="false" data-o-active-folded="false"><div class="panel box-sans-fermeture box-disar-sans-bordure box-sans-ombre panel-orion"><div class="panel-heading mx-4 pl-0 disar-split-panel-header" data-o-role="box-header" id="mainform:j_idt67"><div class="row"><div class="pull-left" data-o-role="box-header-text">
+                            <div class="criteria-title d-flex flex-row">
+                                <p class="disar-split-panel-header-title flex-fill">
+                                    Ma recherche</p><a id="mainform:j_idt69" href="#" onclick="mojarra.ab(this,event,'action',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax});return false" class="disar-split-panel-delete-all fa fa-large fa-trash-o my-auto mr-2"></a>
+                            </div></div></div></div><div class="panel-body" data-o-role="box-body" id="mainform:j_idt71"><div class="show" data-o-role="box-content">
+                            <!-- Affichage du champ de recherche et du bouton r&eacute;initialiser --><article id="mainform:nuxeoQueryFormBoxsearchdisaron" data-o-role="box" data-o-remember="false" data-o-folded="false" data-o-active-folded="false"><div class="panel disar-box box-sans-fermeture box-disar-sans-bordure box-sans-ombre mb-3 panel-orion"><div role="" id="mainform:queryForm"><div id="mainform:j_idt73" class="container-fluid"><div data-o-role="expression" class="row d-flex" id="mainform:inputRecherche"><div id="mainform:textInput" class=" form-input disar-form-input-left search-police search-disaron col-xs-12 col-md-12" title="caractères spéciaux interdits" data-o-role="control"><a id="mainform:textInput-out-a" class="o-anchor-top" aria-hidden="true">Lien vers le champ mainform:textInput-out-a</a><input pattern="[.A-Za-z0-9éèàùûêâôëçîï _\-']+" placeholder="Rechercher" id="mainform:textInput-out" type="text" name="mainform:textInput-out" value="venale" class="form-control" onkeypress="if (event.keyCode === 13) { document.getElementById('mainform:searchQueryButton-act-wrp-cmd').click(); }" title="caractères spéciaux interdits" /><span id="mainform:textInput-msg" data-o-role="input-tooltip" class="o-inflow hide "><i class="fa fa-exclamation-triangle o-icon-error-form" title="Indique qu'il y a des messages associés à ce champ. Cliquer ici pour les afficher."><span class="o-invisible">Indique qu'il y a des messages associés à ce champ. Cliquer ici pour les afficher.</span></i></span></div><button id="mainform:searchQueryButton-act-wrp-cmd" name="mainform:searchQueryButton-act-wrp-cmd" title="Rechercher à partir des critères de recherche saisis" class="btn btn-primary btn btn-accueil-search mr-2 backgroundChiffresAnalyses"><i class="fa fa-search"></i></button><button id="mainform:cancelQueryButton-act-wrp-cmd" name="mainform:cancelQueryButton-act-wrp-cmd" title="Réinitialiser" class="btn btn-default btn btn-accueil-search backgroundChiffresAnalyses"><i class="fa fa-refresh"></i></button></div><div id="mainform:recherche-textuelle-message" class="row mt-3"></div></div></div></div></article>
+                            <!-- Affichage des crit&egrave;res N024 s&eacute;lectionn&eacute;s -->
+                            <!-- Affichage des crit&egrave;res N020 s&eacute;lectionn&eacute;s -->
+                            <!-- Affichage des crit&egrave;res N021 s&eacute;lectionn&eacute;s -->
+                <ul class="px-0 d-block">
+                    <li class="nuxeo-critere-select-n1">
+                        <div class="label label-tag"><span class="label-text">Collections</span>
+						</div><span class="flex-fill my-auto ml-2">Collection nationale</span><a id="mainform:j_idt113:0:j_idt120" href="#" onclick="jsf.util.chain(this,event,'renduCritereSelectionImmediat(this.id, true)','mojarra.ab(this,event,\'action\',0,\'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22\',{\'onevent\':refreshFilterAjax})');return false" class="fa fa-remove my-auto mr-1"></a>
+                    </li>
+                            <li class="nuxeo-critere-select-n2"><span class="flex-fill my-auto">Chiffres et données (9)</span><a id="mainform:j_idt113:0:j_idt122:10:j_idt127" href="#" onclick="jsf.util.chain(this,event,'renduCritereSelectionImmediat(this.id, true)','mojarra.ab(this,event,\'action\',0,\'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22\',{\'onevent\':refreshFilterAjax})');return false" class="fa fa-remove my-auto mr-1"></a>
+                            </li>
+                </ul>
+                            <!-- Affichage des crit&egrave;res N060 s&eacute;lectionn&eacute;s -->
+                            <!-- S&eacute;lection des filtres -->
+                            <!-- N024 (Th&egrave;mes) --><fieldset id="mainform:fieldsetN024" data-o-folded="false"><legend class="o-fieldset-legend disar-affinage-block-header mt-2" id="mainform:j_idt151"><span class="pull-left" title="disar-affinage-block-header">Thèmes</span><span class="pull-right o-fieldset-icon" data-o-role="legend-icon"><i class="fa fa-chevron-up" title="Afficher/Masquer le contenu du groupe"><span class="o-invisible">Afficher/Masquer le contenu du groupe</span></i></span></legend><div data-o-role="fieldset-body">
+    <ul class="tree-list ajust-align-search-crit my-0">
+                <li class="tree-list-item"><a id="mainform:j_idt154:0:j_idt157" href="#" onclick="mojarra.ab(this,event,'action',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax});return false" class="tree-list-item-label">Environnement et ressources naturelles</a>
+
+                </li>
+                <li class="tree-list-item"><a id="mainform:j_idt154:7:j_idt157" href="#" onclick="mojarra.ab(this,event,'action',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax});return false" class="tree-list-item-label">Économie agricole et agroalimentaire</a>
+
+                </li>
+    </ul></div></fieldset>
+                            <!-- N020 (Cat&eacute;gories) --><fieldset id="mainform:fieldsetN020" data-o-folded="false"><legend class="o-fieldset-legend disar-affinage-block-header mt-2" id="mainform:j_idt168"><span class="pull-left" title="disar-affinage-block-header">Catégories</span><span class="pull-right o-fieldset-icon" data-o-role="legend-icon"><i class="fa fa-chevron-up" title="Afficher/Masquer le contenu du groupe"><span class="o-invisible">Afficher/Masquer le contenu du groupe</span></i></span></legend><div data-o-role="fieldset-body">
+    <ul class="tree-list ajust-align-search-crit my-0">
+                <li class="tree-list-item"><a id="mainform:j_idt171:0:j_idt174" href="#" onclick="mojarra.ab(this,event,'action',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax});return false" class="tree-list-item-label">Publications</a>
+
+                </li>
+    </ul></div></fieldset>
+                            <!-- N021 (Collections) --><fieldset id="mainform:fieldsetN021" data-o-folded="false"><legend class="o-fieldset-legend disar-affinage-block-header mt-2" id="mainform:j_idt185"><span class="pull-left" title="disar-affinage-block-header">Collections</span><span class="pull-right o-fieldset-icon" data-o-role="legend-icon"><i class="fa fa-chevron-up" title="Afficher/Masquer le contenu du groupe"><span class="o-invisible">Afficher/Masquer le contenu du groupe</span></i></span></legend><div data-o-role="fieldset-body">
+    <ul class="tree-list ajust-align-search-crit my-0">
+                <li class="tree-list-item"><a id="mainform:j_idt188:0:j_idt191" href="#" onclick="mojarra.ab(this,event,'action',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax});return false" class="tree-list-item-label">Collection nationale</a>
+                        <ul class="tree-list ajust-align-search-crit">
+                                    <li class="tree-list-item" style="margin-left:20px;"><input id="mainform:j_idt188:0:j_idt194:8:filterCheckbox" type="checkbox" name="mainform:j_idt188:0:j_idt194:8:filterCheckbox" class="tree-list-item-checkbox" title="selectFilterCheckbox" onclick="mojarra.ab(this,event,'valueChange',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax})" /><a id="mainform:j_idt188:0:j_idt194:8:filter" href="#" onclick="jsf.util.chain(this,event,'renduCritereImmediat(this.id, true)','mojarra.jsfcljs(document.getElementById(\'mainform\'),{\'mainform:j_idt188:0:j_idt194:8:filter\':\'mainform:j_idt188:0:j_idt194:8:filter\'},\'\')');return false" class="tree-list-item-label">Primeur</a>
+                                        (2)
+                                    </li>
+                                    <li class="tree-list-item" style="margin-left:20px;"><input id="mainform:j_idt188:0:j_idt194:10:filterCheckbox" type="checkbox" name="mainform:j_idt188:0:j_idt194:10:filterCheckbox" checked="checked" class="tree-list-item-checkbox" title="selectFilterCheckbox" onclick="mojarra.ab(this,event,'valueChange',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax})" /><a id="mainform:j_idt188:0:j_idt194:10:filter" href="#" onclick="jsf.util.chain(this,event,'renduCritereImmediat(this.id, true)','mojarra.jsfcljs(document.getElementById(\'mainform\'),{\'mainform:j_idt188:0:j_idt194:10:filter\':\'mainform:j_idt188:0:j_idt194:10:filter\'},\'\')');return false" class="tree-list-item-label">Chiffres et données</a>
+                                        (9)
+                                    </li>
+                                    <li class="tree-list-item" style="margin-left:20px;"><input id="mainform:j_idt188:0:j_idt194:11:filterCheckbox" type="checkbox" name="mainform:j_idt188:0:j_idt194:11:filterCheckbox" class="tree-list-item-checkbox" title="selectFilterCheckbox" onclick="mojarra.ab(this,event,'valueChange',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax})" /><a id="mainform:j_idt188:0:j_idt194:11:filter" href="#" onclick="jsf.util.chain(this,event,'renduCritereImmediat(this.id, true)','mojarra.jsfcljs(document.getElementById(\'mainform\'),{\'mainform:j_idt188:0:j_idt194:11:filter\':\'mainform:j_idt188:0:j_idt194:11:filter\'},\'\')');return false" class="tree-list-item-label">Veille</a>
+                                        (2)
+                                    </li>
+                                    <li class="tree-list-item" style="margin-left:20px;"><input id="mainform:j_idt188:0:j_idt194:15:filterCheckbox" type="checkbox" name="mainform:j_idt188:0:j_idt194:15:filterCheckbox" class="tree-list-item-checkbox" title="selectFilterCheckbox" onclick="mojarra.ab(this,event,'valueChange',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax})" /><a id="mainform:j_idt188:0:j_idt194:15:filter" href="#" onclick="jsf.util.chain(this,event,'renduCritereImmediat(this.id, true)','mojarra.jsfcljs(document.getElementById(\'mainform\'),{\'mainform:j_idt188:0:j_idt194:15:filter\':\'mainform:j_idt188:0:j_idt194:15:filter\'},\'\')');return false" class="tree-list-item-label">Notes et études socio-économiques</a>
+                                        (1)
+                                    </li>
+                                    <li class="tree-list-item" style="margin-left:20px;"><input id="mainform:j_idt188:0:j_idt194:19:filterCheckbox" type="checkbox" name="mainform:j_idt188:0:j_idt194:19:filterCheckbox" class="tree-list-item-checkbox" title="selectFilterCheckbox" onclick="mojarra.ab(this,event,'valueChange',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax})" /><a id="mainform:j_idt188:0:j_idt194:19:filter" href="#" onclick="jsf.util.chain(this,event,'renduCritereImmediat(this.id, true)','mojarra.jsfcljs(document.getElementById(\'mainform\'),{\'mainform:j_idt188:0:j_idt194:19:filter\':\'mainform:j_idt188:0:j_idt194:19:filter\'},\'\')');return false" class="tree-list-item-label">Autres Collections - Statistique Publique</a>
+                                        (3)
+                                    </li>
+                        </ul>
+
+                </li>
+                <li class="tree-list-item"><a id="mainform:j_idt188:1:j_idt191" href="#" onclick="mojarra.ab(this,event,'action',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax});return false" class="tree-list-item-label">Collection régionale</a>
+
+                </li>
+    </ul></div></fieldset>
+                            <!-- N060 (Niveau g&eacute;ographique) --><fieldset id="mainform:fieldsetN060" data-o-folded="false"><legend class="o-fieldset-legend disar-affinage-block-header mt-2" id="mainform:j_idt202"><span class="pull-left" title="disar-affinage-block-header">Niveau géographique</span><span class="pull-right o-fieldset-icon" data-o-role="legend-icon"><i class="fa fa-chevron-up" title="Afficher/Masquer le contenu du groupe"><span class="o-invisible">Afficher/Masquer le contenu du groupe</span></i></span></legend><div data-o-role="fieldset-body">
+    <ul class="tree-list ajust-align-search-crit my-0">
+                <li class="tree-list-item"><a id="mainform:j_idt205:0:j_idt208" href="#" onclick="mojarra.ab(this,event,'action',0,'mainform:resultNuxeoSearch mainform:nuxeoQueryFormBox22',{'onevent':refreshFilterAjax});return false" class="tree-list-item-label">Géographie administrative</a>
+
+                </li>
+    </ul></div></fieldset></div></div></div></article></div><div data-o-role="right-panel" id="mainform:rightPanel" class="col-md-8 disar-split-panel-right">
+                        <div class="boxSearchDisaron mx-5" role="search" aria-labelledby="Recherche parmi les résultats de la page">
+                        </div>
+                        <div id="comboBox" class="affichageSmartphone"><div id="mainform:j_idt219" class="form-group" data-o-role="form-group"><div id="mainform:selecttri" class=" col-xs-5 col-md-5" title="Tri" data-o-role="control"><a id="mainform:selecttri-out-a" class="o-anchor-top" aria-hidden="true">Lien vers le champ mainform:selecttri-out-a</a><select id="mainform:selecttri-out" name="mainform:selecttri-out" class="form-control" size="1" title="Tri" onchange="jsf.util.chain(this,event,'orion.form.submitParentForm(\'selecttri-out\');','mojarra.ab(this,event,\'change\',\'@this\',\'mainform:resultNuxeoSearch\')')">	<option value="0" selected="selected">Tri par date</option>
+	<option value="1">Tri par pertinence</option>
+</select><span id="mainform:selecttri-msg" data-o-role="input-tooltip" class=" hide "><i class="fa fa-exclamation-triangle o-icon-error-form" title="Indique qu'il y a des messages associés à ce champ. Cliquer ici pour les afficher."><span class="o-invisible">Indique qu'il y a des messages associés à ce champ. Cliquer ici pour les afficher.</span></i></span></div></div>
+                        </div>
+
+                        <!-- Affichage des r&eacute;sultats de la recherche --><article id="mainform:resultNuxeoSearch" data-o-role="box" data-o-remember="false" data-o-folded="false" data-o-active-folded="false"><div class="panel box-sans-fermeture box-disar-sans-bordure box-sans-ombre panel-orion"><div class="panel-body p-0" data-o-role="box-body" id="mainform:j_idt221"><div class="show" data-o-role="box-content"><div id="mainform:j_idt222" class="row align-pager-with-rows-per-page-content"><div id="mainform:j_idt223" class="col-md-7"><div role="rowsperpage">
+    <div class="pull-left disar-split-panel-right-results py-1">
+        9 résultat(s)
+    </div>
+	<br /><div id="mainform:j_idt226" class="row mx-0 py-0 margins-buttons-sort"><a id="mainform:j_idt228:0:j_idt230" href="#" onclick="mojarra.ab(this,event,'action','@this','mainform:resultNuxeoSearch',{'onevent':refreshFilterAjax});return false" class="btn searchSortTri searchSort-0">Tri par date</a><a id="mainform:j_idt228:1:j_idt230" href="#" onclick="mojarra.ab(this,event,'action','@this','mainform:resultNuxeoSearch',{'onevent':refreshFilterAjax});return false" class="btn searchSortTri searchSort-1 searchSort-active">Tri par pertinence</a></div>
+    <div class="o-rows-per-page o-rows-per-page-buttons mt-4">
+        <strong>Nombre d'éléments présentés :
+        </strong>
+        <button data-toggle="dropdown" class="btn dropdown-toggle" title="Nombre d'éléments par page : 10">
+            10 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+                    <li><button name="mainform:j_idt235:0:j_idt238-act-wrp-cmd" title="Nombre d'éléments par page : 5" class="btn btn-default">5</button>
+                    </li>
+                    <li><button name="mainform:j_idt235:1:j_idt238-act-wrp-cmd" title="Nombre d'éléments par page : 9" class="btn btn-default">9</button>
+                    </li>
+        </ul>
+    </div></div></div><div id="mainform:j_idt241" class="col-md-5"><div class="pull-right" data-o-role="pager">
+
+
+    <div id="pager" class="btn-toolbar btn-group pager o-pager"><button name="mainform:j_idt244-act-wrp-cmd" title="Première page" disabled="disabled" class="btn btn-default disabled"><i class="fa fa-backward"></i></button><button name="mainform:j_idt245-act-wrp-cmd" title="Précédent" disabled="disabled" class="btn btn-default disabled"><i class="fa fa-step-backward"></i></button>                                        
+        <button data-toggle="dropdown" class="btn dropdown-toggle" style="margin-left:0px;" title="Page sélectionnée :1">1 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">                                
+                    <li><button name="mainform:j_idt247:0:j_idt250-act-wrp-cmd" title="Aller à la page1" class="btn btn-default">1</button>
+                    </li>  
+
+        </ul><button name="mainform:j_idt253-act-wrp-cmd" title="Suivant" disabled="disabled" class="btn btn-default disabled"><i class="fa fa-step-forward"></i></button><button name="mainform:j_idt254-act-wrp-cmd" title="Dernière page" disabled="disabled" class="btn btn-default disabled"><i class="fa fa-forward"></i></button>                    
+    </div></div></div></div><table class="table o-table-hover table-condensed table-hover disar-split-panel-right-table table-resultats-recherche" id="mainform:nuxeoTable" role="grid" title="Résultat de la recherche"><thead id="mainform:j_idt256" role="rowgroup"><tr id="mainform:j_idt257" role="row" data-o-row="true"><th role="columnheader" id="documentIcone" data-o-sortable="false" data-o-moveable="false" data-o-filterable="true"></th><th role="columnheader" id="documentInfos" data-o-sortable="false" data-o-moveable="false" data-o-filterable="true"></th></tr></thead><tbody id="mainform:j_idt258" role="rowgroup" data-o-grouprowsby="0" data-o-size="0"><tr id="mainform:j_idt259:0:j_idt261" role="row" data-o-ri="0" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:0:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres en 2022" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:0:j_idt263-act-wrp-cmd':'mainform:j_idt259:0:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:0:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2023-11 | Publications nationales | Paru le 06/07/2023
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres en 2022" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:0:j_idt272-act-wrp-cmd':'mainform:j_idt259:0:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres en 2022</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Le Service de la statistique et de la prospective (SSP) publie annuellement, et conjointement avec la Fédération nationale des sociétés d’aménagement foncier et d’établissement rural (FNSAFER), le prix des terres et prés libres et loués, et le prix des vignes (en euros courants à l’hectare) sur le champ de la France métropolitaine. Des prix des terres libres (en euros couran...</td></tr><tr id="mainform:j_idt259:1:j_idt261" role="row" data-o-ri="1" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:1:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:1:j_idt263-act-wrp-cmd':'mainform:j_idt259:1:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:1:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2019-19 | Publications nationales | Paru le 08/01/2020
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:1:j_idt272-act-wrp-cmd':'mainform:j_idt259:1:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Prix des terres agricoles (terres et prés, et vignes), évolutions, principaux résultats.</td></tr><tr id="mainform:j_idt259:2:j_idt261" role="row" data-o-ri="2" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:2:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres en 2019" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:2:j_idt263-act-wrp-cmd':'mainform:j_idt259:2:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:2:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2020-5 | Publications nationales | Paru le 28/07/2020
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres en 2019" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:2:j_idt272-act-wrp-cmd':'mainform:j_idt259:2:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres en 2019</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Prix des terres agricoles (terres et prés, et vignes), évolutions, principaux résultats.</td></tr><tr id="mainform:j_idt259:3:j_idt261" role="row" data-o-ri="3" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:3:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres en 2020  (Version modifiée)" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:3:j_idt263-act-wrp-cmd':'mainform:j_idt259:3:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:3:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2021-10 | Publications nationales | Paru le 03/08/2021
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres en 2020  (Version modifiée)" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:3:j_idt272-act-wrp-cmd':'mainform:j_idt259:3:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres en 2020  (Version modifiée)</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Prix des terres agricoles (terres et prés, et vignes), évolutions, principaux résultats.</td></tr><tr id="mainform:j_idt259:4:j_idt261" role="row" data-o-ri="4" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:4:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres en 2021 (Version modifiée)" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:4:j_idt263-act-wrp-cmd':'mainform:j_idt259:4:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:4:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2022-7 | Publications nationales | Paru le 13/07/2022
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres en 2021 (Version modifiée)" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:4:j_idt272-act-wrp-cmd':'mainform:j_idt259:4:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres en 2021 (Version modifiée)</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Le Service de la statistique et de la prospective (SSP) du ministère de l’Agriculture et de la Souveraineté Alimentaire publie annuellement, et conjointement avec la Fédération nationale des sociétés d’aménagement foncier et d’établissement rural (FNSAFER), le prix des terres et prés libres et loués, et le prix des vignes (en euros courants à l’hectare) sur le champ de la...</td></tr><tr id="mainform:j_idt259:5:j_idt261" role="row" data-o-ri="5" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:5:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres en 2025" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:5:j_idt263-act-wrp-cmd':'mainform:j_idt259:5:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:5:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2026-9 | Publications nationales | Paru le 30/06/2026
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres en 2025" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:5:j_idt272-act-wrp-cmd':'mainform:j_idt259:5:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres en 2025</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Le Service de la statistique et de la prospective (SSP) du ministère de l’Agriculture, de l’Agro-alimentaire et de la Souveraineté alimentaire publie annuellement, et conjointement avec la Fédération nationale des sociétés d’aménagement foncier et d’établissement rural (FNSafer), le prix des terres et prés libres et loués, ainsi que le prix des vignes, sur le champ de la...</td></tr><tr id="mainform:j_idt259:6:j_idt261" role="row" data-o-ri="6" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:6:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres en 2024" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:6:j_idt263-act-wrp-cmd':'mainform:j_idt259:6:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:6:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2025-13 | Publications nationales | Paru le 24/07/2025
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres en 2024" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:6:j_idt272-act-wrp-cmd':'mainform:j_idt259:6:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres en 2024</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Les prix des terres agricoles en 2024 en métropole et dans les DOM détaillés dans cette publication ont été établis par le Service de la statistique et de la prospective du ministère de l’Agriculture et par la Fédération nationale des sociétés d’aménagement foncier et d’établissement rural (FNSAFER).</td></tr><tr id="mainform:j_idt259:7:j_idt261" role="row" data-o-ri="7" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:7:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Valeur vénale des terres en 2023" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:7:j_idt263-act-wrp-cmd':'mainform:j_idt259:7:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:7:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 2024-12 | Publications nationales | Paru le 27/09/2024
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Valeur vénale des terres en 2023" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:7:j_idt272-act-wrp-cmd':'mainform:j_idt259:7:j_idt272-act-wrp-cmd'},'');return false">Valeur vénale des terres en 2023</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Les prix des terres agricoles en 2023 en métropole et dans les DOM détaillés dans cette publication ont été établis par le Service de la statistique et de la prospective du ministère de l’Agriculture et par la Fédération nationale des sociétés d’aménagement foncier et d’établissement rural (FNSAFER).</td></tr><tr id="mainform:j_idt259:8:j_idt261" role="row" data-o-ri="8" data-o-row="true" data-o-inspected="false"><td id="mainform:j_idt259:8:j_idt262" class="pl-0" role="gridcell" headers="documentIcone"><a href="#" title="Le prix des terres agricoles en 2006" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:8:j_idt263-act-wrp-cmd':'mainform:j_idt259:8:j_idt263-act-wrp-cmd'},'');return false"><img src="/agreste-web/files/c734d2e4-b132-4f7a-94f4-bd362df6e7f1/Publication.svg;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" alt="" height="48" width="48" /></a></td><td id="mainform:j_idt259:8:j_idt265" role="gridcell" headers="documentInfos">
+                                                        <div class="disar-split-panel-right-table-cell-content-info">Chiffres et données n° 197 | Publications nationales | Paru le 01/04/2008
+                                                        </div>
+
+                                                        <!-- Modif ici -->
+                                                        <h4 class="titreSearch my-1"><a href="#" title="Le prix des terres agricoles en 2006" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt259:8:j_idt272-act-wrp-cmd':'mainform:j_idt259:8:j_idt272-act-wrp-cmd'},'');return false">Le prix des terres agricoles en 2006</a>
+                                                        </h4>
+                                                        <!-- Affichage de la source signature pour un Disaron Tableau, du chapeau pour un autre Disaron -->Chiffres et Données présentent les résultats détaillés des enquêtes et travaux réalisés par les services de statistique agricole sur l’agriculture et les industries agroalimentaires</td></tr></tbody></table></div></div></div></article></div></div>
+            </div>
+
+            <footer>
+                <hr style="border:1px solid black;" /><div class="margin-bottom-15px footer-p1-p3-mobile" role="" id="mainform:footer-p1-form"><div id="mainform:j_idt277" class="row footer-p1-non-mobile noMarginLeft noMarginRight">
+
+            <!--     Chiffres et analyse --><div id="mainform:j_idt279" class="col-md-3">
+
+                <strong><a href="#" title="CHIFFRES ET ANALYSES" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt281-act-wrp-cmd':'mainform:j_idt281-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurChiffresAnalyses">Chiffres et analyses</a></strong></div>
+
+            <!--     	Methodons --><div id="mainform:j_idt284" class="col-md-3">
+
+                <strong><a href="#" title="SOURCES, DÉFINITIONS, MÉTHODES" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt286-act-wrp-cmd':'mainform:j_idt286-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurMenuItemMethodon">Sources, Définitions, Méthodes</a></strong><br /><a href="/agreste-web/methodon/P/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Sources</a>
+                        <br /><a href="/agreste-web/methodon/N/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Nomenclatures</a>
+                        <br /><a href="/agreste-web/methodon/Z/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Zonages</a>
+                        <br /><a href="/agreste-web/methodon/G/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Définitions</a>
+                        <br /><a href="/agreste-web/methodon/E/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Méthodes, modèles</a>
+                        <br /></div>
+
+            <!-- 	   	Servicons --><div id="mainform:j_idt296" class="col-md-3">
+
+                <strong><a href="#" title="SERVICES" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt298-act-wrp-cmd':'mainform:j_idt298-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurMenuItemServicon">Services</a>
+                </strong>
+                <br /><a href="/agreste-web/servicon/E/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Voir les enquêtes en cours</a>
+                        <br /><a href="/agreste-web/servicon/I/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Accéder aux données individuelles</a>
+                        <br /><a href="/agreste-web/servicon/S/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">S'abonner</a>
+                        <br /><a href="/agreste-web/nouscontacter/DemandeContact/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">FAQ - Nous contacter</a>
+                        <br /><a href="/agreste-web/servicon/HA/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Acheter nos publications Commander un produit sur mesure</a>
+                        <br /><a href="/agreste-web/servicon/A/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Aide</a>
+                        <br /></div>
+
+            <!-- 	   	Statisticons --><div id="mainform:j_idt308" class="col-md-3">
+                <strong><a href="#" title="LA STATISTIQUE AGRICOLE" onclick="mojarra.jsfcljs(document.getElementById('mainform'),{'mainform:j_idt310-act-wrp-cmd':'mainform:j_idt310-act-wrp-cmd'},'');return false" class="menuitem-disar-clickable couleurMenuItemStatisticon">Nous connaître</a></strong><br />
+
+                <div><a href="/agreste-web/statisticons/MISSIONS/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Le Service statistique ministériel de l'agriculture</a>
+
+                            <br /><a href="/agreste-web/statisticons/ACTIVITES/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Nos activités</a>
+
+                            <br /><a href="/agreste-web/statisticons/PUBLI/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" style="color:black;">Nos publications</a>
+
+                            <br />
+                </div></div></div></div><div id="mainform:j_idt318" class="row footerLinksBox footer-p2-mobile mx-0"><div id="mainform:j_idt319" class="col-md-2">
+            <a href="/agreste-web/plansite/plansite/" target="_blank" rel="noopener">
+                Plan du site <span class="sr-only ">nouvel onglet</span>
+            </a></div><div id="mainform:j_idt321" class="col-md-2">
+            <a href="/agreste-web/common/help/">Aide</a></div><div id="mainform:j_idt323" class="col-md-2">
+            <a href="/agreste-web/nouscontacter/DemandeContact/">Contact</a></div><div id="mainform:j_idt325" class="col-md-2">
+            <a href="https://www.data.gouv.fr/fr/" target="_blank" rel="noopener">Data.gouv.fr</a></div><div id="mainform:j_idt327" class="col-md-2">
+            <a href="/agreste-web/common/accessibilite/">Accessibilité</a></div><div id="mainform:j_idt329" class="col-md-2">
+            <a href="/agreste-web/mentions/mentions/">Mentions légales</a></div></div><div id="mainform:j_idt331" class="row m-3"><div class="footer-p3-parent" role="" id="mainform:formulaireLogoFooter">
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" title="Site du service public (nouvelle fen&ecirc;tre)" href="https://www.service-public.fr/" target="_blank" rel="noopener">Service-public</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" title="Site Legifrance (nouvelle fen&ecirc;tre)" href="https://www.legifrance.gouv.fr/" target="_blank" rel="noopener">Legifrance</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" title="Site France.fr (nouvelle fen&ecirc;tre)" href="https://www.france.fr/fr" target="_blank" rel="noopener">france.fr</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" title="Site Gouvernement.fr (nouvelle fen&ecirc;tre)" href="https://www.gouvernement.fr/" target="_blank" rel="noopener">gouvernement.fr</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" title="Site insee.fr (nouvelle fen&ecirc;tre)" href="https://www.insee.fr/" target="_blank" rel="noopener">insee.fr</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" href="http://quetelet.progedo.fr/" target="_blank" rel="noopener">Progedo</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" href="https://www.comite-du-secret.fr/" target="_blank" rel="noopener">CSS</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" href="https://www.casd.eu/" target="_blank" rel="noopener">CASD</a></p></span>
+                </div>
+                <div class="footer-p3-content"><span class="imgPageFooter-p3"><p><a style="font-weight: bold;" href="https://www.bnsp.insee.fr/bnsp/" target="_blank" rel="noopener">BNSP</a></p></span>
+                </div></div></div>
+            </footer>
+            <span class="o-footer-text invisible">Version 3.4.0
+                (prod)</span>
+            <span class="o-footer-text invisible">Timeout 3600</span><input type="hidden" name="orion.navigation.pageSeq" value="1" /><input type="hidden" name="orion.navigation.context" value="fr.gouv.agriculture.orion.navigation.NavigationContext0" /><input type="hidden" name="orion.navigation.immediateRender" value="" /><script type="text/javascript">var ORION_SESSION_TIMEOUT = 3600;</script><div data-o-role="page-loader" class="o-page-loader" data-o-delaytime="1000"></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="9096280395586333355:-176648206513218816" autocomplete="off" />
+</form><span id="homePageURL" class="invisible">/agreste-web</span>
+    <!-- Gestion du JS --><script type="text/javascript" src="/agreste-web/javax.faces.resource/jquery-1.8.3.min.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="RES_NOT_FOUND"></script>
+    <script type="text/javascript" src="/agreste-web/js/static-agreste.min.js"></script>
+    <script type="text/javascript" src="/agreste-web/resources/js/jquery.countdown360.min.js"></script>
+        <script type="text/javascript">
+            $("#comboBox").change(function () {
+                if (!$("#pager button:first").is(":disabled")) {
+                    $("#pager button:first").click();
+                }
+            });
+
+                function refreshFilterAjax(event) {
+                if (event.status === "success") {
+                    // Do your job here.
+                    // console.log(orion);
+                    orion.form.initializeFieldsets();
+
+                    if (event.source.classList.contains("searchSort")) {
+                        $.each($(".searchSort"), removeActiveSortStyle);
+
+                        // Peut mieux faire
+                        if (event.source.classList.contains("searchSort-0")) {
+                            $("#mainform\\:selecttri-out").val("0");
+                            $(".searchSort-0").addClass("searchSort-active");
+                        }
+                        if (event.source.classList.contains("searchSort-1")) {
+                            $("#mainform\\:selecttri-out").val("1");
+                            $(".searchSort-1").addClass("searchSort-active");
+                        }
+                    }
+                }
+            }
+
+            function removeActiveSortStyle(index, objet) {
+                objet.classList.remove("searchSort-active");
+            }
+        </script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-core.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-ajax.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-page.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-core_fr_FR.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/js/tooltip.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=bootstrap"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/js/popover.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=bootstrap"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-form.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-form_fr_FR.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-messages_fr_FR.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-messages.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-splitPanel.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-box.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-box_fr_FR.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/js/dropdown.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=bootstrap"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/tablesorter.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/powertable.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-table.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-table_fr_FR.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-scroll.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-scroll_fr_FR.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/spin.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-loader.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-header.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/disar-beta-header.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/js/transition.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=bootstrap"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/js/collapse.js.xhtml;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=bootstrap"></script></body><div role="" id="menu-volant-form">
+        <div class="menu-volant-pere">
+            <!-- Menu deroulant pour les Disarons -->
+            <div class="menu-volant menu-volant-disaron menu-volant-2col-2tiers" id="menuDeroulantDisaron">
+                <div class="menu-volant-2col">
+                    <span class="menu-volant-symbol menu-volant-dropdown-disaron"></span>
+                            <div class="menu-volant-section">
+                                <div class="menu-volant-section-title">Thèmes
+                                </div>
+                                <div class="menu-volant-section-filters"><span class="menu-volant-item"><p>&nbsp;</p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/8d517a14-6c6e-49f5-9829-3fbbff82bfc6!b3897bca-ab2a-4c66-a76a-e5b846576c3d!2bf16bd1-1f71-47ef-b888-4d05c26c9313!ba91ba72-d219-4df1-b20e-bbf656608b86!13b249b4-4192-4bef-80ef-54a1234d4bde!bf8dcdb8-7e49-48e1-ab1f-6241590fb683!f5a46a98-cc2a-473c-827b-b546feb2bdc7!4a2293db-99f7-4e6a-bc72-1707897f0e7a!99c4aa71-5859-4d97-809b-36ae3bbcc195!d8a9fc95-1ca4-4579-9df8-9545ea5dd478/search/">Exploitations agricoles,<br />population agricole</a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/4545f1a9-afe6-4c86-a141-693f2c72d550!1b69a349-ca8f-4353-82bb-4c00c502412c!729f399f-53c3-4952-9971-4753794a7c1b!c6be0c43-70a0-4666-853f-80de38a08ec7!0c593aed-b1d0-476e-9359-12d6347d8243!b125c6dc-13b7-4260-9abd-6e9321b2b963!fec0e278-6655-4c48-ac47-aab6d8847e15/search/">Cultures, productions v&eacute;g&eacute;tales</a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/961638df-7b0d-4ce0-a22a-d4140d44ab5c!0420d88e-651f-4ebf-bae6-0631e4b2cb88!f52469ec-e175-45a3-bbd1-471f32864511!4e942e5e-c34a-4522-8293-07dbc2f67f50!3ac06176-b358-4504-b58c-edcecee4a712!f3570d57-780c-4b99-a2e4-c7ff67720e73!0acb9300-666d-4b84-a847-cacddb02b210/search/">Animaux, productions animales</a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/searchUiid/search/?init=true&amp;fields=N024&amp;items=N024"><em>Voir plus de Th&egrave;mes...</em></a></p></span>
+                                </div>
+                            </div>
+                            <div class="menu-volant-section">
+                                <div class="menu-volant-section-title">Tableaux et cartes
+                                </div>
+                                <div class="menu-volant-section-filters"><span class="menu-volant-item"><p>&nbsp;</p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/4b54e171-2bf3-4c8b-93b9-06e41472066c!cda8b080-3e9e-4368-b41d-7a29c1da0be6/search/">Tableaux interactifs</a></p>
+<p><a title="S&eacute;ries longues de la SAA, du RICA, des Comptes r&eacute;gionaux de l'agriculture, TERUTI, Exploitations foresti&egrave;res et Scieries, etc." href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/26127c00-fa22-4254-a2e3-8c7e24bcebae/search/" target="_blank" rel="noopener noreferrer">S&eacute;ries longues</a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/">Chiffres et Donn&eacute;es</a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/BulConj/detail/">Bulletin mensuel de conjoncture </a></p>
+<p><a title="Liste des indicateurs cartographiques disponibles et des vues cartographiques associ&eacute;es dans Geoclip" href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/342eb85c-de0f-4544-8bf5-862129a19ba6/search/">Cartes</a></p>
+<p><a title="Liste des datavisualisations disponibles sous Viz'Agreste" href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/visualisation+viz+chiffres+cles+decouvrez/searchUiid/search/" target="_blank" rel="noopener noreferrer">Datavisualisation</a></p>
+<p><em><strong>&gt;&gt; Entre deux consultations d'un raccourci, r&eacute;initialiser le moteur de recherche sous CHIFFRES ET ANALYSES</strong></em></p></span>
+                                </div>
+                            </div>
+                            <div class="menu-volant-section">
+                                <div class="menu-volant-section-title">Publications
+                                </div>
+                                <div class="menu-volant-section-filters"><span class="menu-volant-item"><p>&nbsp;</p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/93378747-cae6-48dc-9ad6-534cdcd4347a/search/">Publications nationales</a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/726ea740-4389-43ae-83dc-4e2077ca9767!339d1fa5-32f1-4094-8441-65e76180daa9!68656779-4dbb-4073-a99e-e9e527b0f5dd!98de5ba2-977f-4dea-85c3-1ba33d0cc066!2a98814b-c841-49bc-bf19-b86d126dd5e3!05553779-59d9-4074-b7bd-bf341440dd18/search/">Publications <span style="font-size: 10.0pt;">r&eacute;gionales</span></a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/7224528b-f182-495a-b616-503f1847d846/search/">Publications in English</a></p>
+<p><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/searchUiid/search/?init=true&amp;fields=N021,N020&amp;items=N021,N020"><em>Voir plus de Cat&eacute;gories, de Collections...</em></a></p></span>
+                                </div>
+                            </div>
+                </div>
+                <div class="menu-volant-mostCommon px-5 py-3">
+                    <div class="menu-volant-section-title-center">LES PLUS FRÉQUENTS</div>
+                    <div class="menu-volant-section-content"><ul>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/6ae57cf9-22ec-464c-83cb-2ac0b526c0f3!f8fd8db8-9770-4f55-8f28-bb439ccf7454/search/" target="_blank" rel="noopener">Graph&rsquo;Agri, M&eacute;mento</a></li>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/">Valeur v&eacute;nale des terres</a></li>
+</ul>
+<p>&nbsp;</p>
+<p title="Statistique agricole annuelle (SAA)"><strong>Statistique agricole annuelle (SAA)</strong></p>
+<ul>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/saa/92845a68-040b-4e92-825e-c7121375cc9b!745fcc0d-4e89-4a99-b151-835d2a9be2df!fec0e278-6655-4c48-ac47-aab6d8847e15!0acb9300-666d-4b84-a847-cacddb02b210/search/">Publications</a> &ndash; <a title="S&eacute;ries longues de la SAA depuis 2010" href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/SAA-SeriesLongues/detail/" target="_blank" rel="noopener noreferrer">S&eacute;ries longues</a> &ndash; <a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/saa/cda8b080-3e9e-4368-b41d-7a29c1da0be6/search/">Tableaux interactifs</a></li>
+</ul>
+<p title="R&eacute;seau d'information comptable agricole (RICA)"><strong>R&eacute;sultats &eacute;conomiques des exploitations (RICA)</strong></p>
+<ul>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/c30eeefc-0294-40b5-a2d1-4351d361c182!93378747-cae6-48dc-9ad6-534cdcd4347a/search/">Publications</a> &ndash; <a title="S&eacute;ries longues du R&eacute;seau d'information comptable agricole (RICA) depuis 1988" href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/RICA-SeriesLongues/detail/" target="_blank" rel="noopener noreferrer">S&eacute;ries longues</a> &ndash; <a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/rica/cda8b080-3e9e-4368-b41d-7a29c1da0be6/search/">Tableaux interactifs</a>&nbsp;&ndash; <a href="https://agreste.agriculture.gouv.fr/agreste-web/servicon/I.2/listeTypeServicon/">Microdonn&eacute;es</a></li>
+</ul>
+<p><a title="Acc&egrave;s aux produits de diffusion du recensement agricole 2020 depuis la page d'accueil d'Agreste" href="https://agreste.agriculture.gouv.fr/agreste-web/"><img src="/agreste-web/files/15797af2-cfc2-4d77-9384-84b43d068741/bandeau_RA2020.png" width="218" height="40" /></a></p>
+<ul>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/Pri2210/detail/">&Acirc;ge des exploitants, devenir des exploitations</a></li>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/Pri2211/detail/">Main-d&rsquo;&oelig;uvre et externalisation</a></li>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/Pri2212/detail/">Signes de qualit&eacute; ou d'origine</a></li>
+<li><a title="Vente en circuits courts" href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/Pri2305/detail/">Circuits courts</a></li>
+<li><a href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/Pri2213/detail/">Principaux r&eacute;sultats</a> &ndash; <a title="Definitive data December 2022" href="https://agreste.agriculture.gouv.fr/agreste-web/disaron/Pri2215-en/detail/">Main indicators</a></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu deroulant pour les Methodons -->
+            <div class="menu-volant menu-volant-methodon" id="menuDeroulantMethodon">
+                <span class="menu-volant-symbol menu-volant-dropdown-methodon"></span>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/methodon/P/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemMethodon">Sources</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/methodon/N/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemMethodon">Nomenclatures</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/methodon/N.3/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Production brute standard (PBS)</a>
+                                            </li>
+                                            <li><a href="/agreste-web/methodon/N.2/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Classe de dimension économique (Cdex)</a>
+                                            </li>
+                                            <li><a href="/agreste-web/methodon/N.1/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Orientation technico économique des exploitations (Otex)</a>
+                                            </li>
+                                            <li><a href="/agreste-web/methodon/N.4/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Nomenclature d'activités française (NAF)</a>
+                                            </li>
+                                            <li><a href="/agreste-web/methodon/N.5/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Classification des produits française (CPF)</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/methodon/Z/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemMethodon">Zonages</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/methodon/Z.1/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Régions agricoles / Petites régions agricoles.</a>
+                                            </li>
+                                            <li><a href="/agreste-web/methodon/Z.2/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Régions fourragères</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/methodon/G/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemMethodon">Définitions</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/methodon/E/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemMethodon">Méthodes, modèles</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/methodon/E.1/!searchurl/listeTypeMethodon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemMethodon">Démarches et méthodes de veille, de prospective et d'évaluation</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+
+            <!-- Menu deroulant pour les Servicons -->
+            <div class="menu-volant menu-volant-servicon" id="menuDeroulantServicon">
+                <span class="menu-volant-symbol menu-volant-dropdown-servicon"></span>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/servicon/E/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemServicon">Voir les enquêtes en cours</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/servicon/E.2/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Accéder aux questionnaires des enquêtes en cours</a>
+                                            </li>
+                                            <li><a href="/agreste-web/servicon/E.1/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Répondre aux enquêtes sur le site Mes démarches</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/servicon/I/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemServicon">Accéder aux données individuelles</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/servicon/I.1/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Données individuelles anonymisées et non anonymisées</a>
+                                            </li>
+                                            <li><a href="/agreste-web/servicon/I.2/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Données du RICA</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/servicon/S/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemServicon">S'abonner</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/abonnement/DemandeAbonnement/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Abonnements</a>
+                                            </li>
+                                            <li><a href="/agreste-web/servicon/S.2/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Protection des données personnelles</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/nouscontacter/DemandeContact/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemServicon">FAQ - Nous contacter</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/servicon/HA/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemServicon">Acheter nos publications Commander un produit sur mesure</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/servicon/HA.1/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Acheter nos publications</a>
+                                            </li>
+                                            <li><a href="/agreste-web/servicon/HA.2/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Commander un produit sur mesure</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/servicon/A/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemServicon">Aide</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/servicon/A.1/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Trouver une information sur le site</a>
+                                            </li>
+                                            <li><a href="/agreste-web/servicon/A.2/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Utiliser les tableaux interactifs</a>
+                                            </li>
+                                            <li><a href="/agreste-web/servicon/A.3/listeTypeServicon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemServicon">Utiliser les cartes interactives</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+
+            <!-- Menu deroulant pour les Statisticons -->
+            <div class="menu-volant menu-volant-statisticon" id="menuDeroulantStatisticon">
+                <span class="menu-volant-symbol menu-volant-dropdown-statisticon"></span>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/statisticons/MISSIONS/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemStatisticon">Le Service statistique ministériel de l'agriculture</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/statisticons/MISSIONS-SSP/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Missions </a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/ORGA-SSP/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Organisation centrale</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/MISSIONS-REGIONS/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Organisation en région</a>
+
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/statisticons/ACTIVITES/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemStatisticon">Nos activités</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/statisticons/ACTIVITES-ENQUETES/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Les enquêtes et opérations de synthèse</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/ACTIVITES-PROSPECTIVE/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">La veille, la prospective et l'évaluation</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/ACTIVITES-PAT/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Le programme annuel de travail</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/ACTIVITES-RGPD/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">La politique de protection des données</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/ACTIVITES-QUAL/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Qualité</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/ACTIVITES-STATPHYTO-PROPHYL/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Stat'Phyto-Prophyl</a>
+
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-volant-section">
+                            <div class="menu-volant-section-title"><a href="/agreste-web/statisticons/PUBLI/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menuitem-disar-clickable couleurMenuItemStatisticon">Nos publications</a>
+                            </div>
+                            <div class="menu-volant-section-filters">
+                                <ul>
+                                            <li><a href="/agreste-web/statisticons/PUBLI-NAT/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Les publications nationales</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/REGLES-DIFFUSION/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Les règles de diffusion de l'information statistique</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/CALENDRIER-INDIC-CONJ/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Le calendrier des indicateurs conjoncturels</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/PUBLI-RECURR/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Le calendrier des publications récurrentes</a>
+
+                                            </li>
+                                            <li><a href="/agreste-web/statisticons/PUBLI-REG/listeTypeStatisticon/;jsessionid=3tD81aacW9MN4EqGGj6H8Gg-B4FkYwuSJuI-46DG.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" class="menu-volant-item couleurMenuItemStatisticon">Les publications régionales</a>
+
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+        </div></div>
+</html>

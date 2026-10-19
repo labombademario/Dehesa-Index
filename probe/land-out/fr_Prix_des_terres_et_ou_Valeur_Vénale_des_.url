@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR" xml:lang="fr-FR"><head>
+    <title>Erreur|Agreste, la statistique agricole
+    </title>
+        <meta name="description" />
+        <meta name="viewport" content="width=device-width,user-scalable=yes" />
+        <meta name="theme-color" content="#333333" />
+
+    <link rel="canonical" href="/agreste-web/" />
+    <link rel="shortcut icon" type="image/png" href="/agreste-web/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/agreste-web/resources/img/apple-touch-icon.png" />
+    <!-- Gestion des CSS -->
+    <link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/bootstrap.css.xhtml?ln=disar" />
+    <link type="text/css" rel="stylesheet" href="/agreste-web/javax.faces.resource/css/fontawesome.css.xhtml?ln=disar" />
+    <link type="text/css" rel="stylesheet" href="/agreste-web/css/static-agreste.min.css" />
+    <!-- Gestion du JS --><script type="text/javascript" src="/agreste-web/javax.faces.resource/jquery-1.8.3.min.js.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script></head><body>
+<form id="mainform" name="mainform" method="post" action="/agreste-web/common/error.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="mainform" value="mainform" />
+
+
+    <div class="navbar navbar-fixed-top o-header-fixed" data-o-role="fixed-header">
+        <div class="o-header" role="banner">
+            <header id="orion-default-header o-header">
+                <div class="container-fluid px-0">
+                    <div role="img" aria-describedby="headerDesc">
+                        <p id="headerDesc" class="invisible" aria-hidden="false">
+                            Agreste: La statistique, l'évaluation et la prospective agricole du ministère de
+                            l'Agriculture et de la Souveraineté alimentaire
+                        </p>
+                        <div class="affichageDesktop">
+                            <img src="/agreste-web/resources/img/banner.jpg" alt="banner" usemap="#banner" width="1024" height="170" />
+
+                            <map name="banner">
+                                <area shape="rect" coords="0,0,150,170" alt="Site public du ministère" href="https://agriculture.gouv.fr/" target="_blank" />
+                                <area shape="rect" coords="151,0,1024,170" alt="Agreste" href="/agreste-web/" />
+                            </map>
+                        </div>
+                        <div class="affichageSmartphone">
+                            <img src="/agreste-web/resources/img/banner.jpg" alt="" usemap="#logos" />
+                            <map name="logos">
+                                <area shape="rect" coords="0,0,150,175" href="http://agriculture.gouv.fr/" target="_blank" title="Site public du ministère" alt="Site public du ministère" />
+                                <area shape="rect" coords="150,0,2048,175" href="/agreste-web/" title="Agreste" alt="Agreste" />
+                            </map>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+    <div id="mainform:messages" class="o-message" data-o-role="messages" style="display:none;">
+        <div class="o-alert o-header-message-alert">
+            <!-- Zone Liste des messages --><div id="mainform:messages:j_idt14" class="row">
+                <!-- Composant MessagesListeMessages --><div id="mainform:messages:orion-messages-list" class="col-md-12 o-header-message-indent" data-o-pagesize="5" data-o-role="messages-list" data-o-todisplay="false"></div></div>
+
+            <!-- Zone Pager de la liste des messages --><div id="mainform:messages:j_idt17" class="row"><div class="o-messages-pager pull-right" id="mainform:messages:orion-messages-pager" data-o-role="messages-pager"></div></div>
+        </div><!-- alert -->
+    </div><!-- o-messages -->
+    </div>
+                <h1 class="titleErrorPage">L'application a rencontré un problème</h1>
+                <a href="/agreste-web/" aria-hidden="true">
+                    <img class="imgErrorPage" src="/agreste-web/resources/img/Image_erreur.png" alt="L’application a rencontré un problème." />
+                </a>
+                <br />
+                <h2 class="titleLinkErrorPage">
+                    <a href="/agreste-web/" title="Cliquer pour accéder à la page d'accueil">Cliquer pour accéder à la page
+                        d'accueil</a>
+                </h2>
+            <br />
+            <br /><input type="hidden" name="orion.navigation.pageSeq" value="1" /><input type="hidden" name="orion.navigation.context" value="fr.gouv.agriculture.orion.navigation.NavigationContext0" /><input type="hidden" name="orion.navigation.immediateRender" value="" /><script type="text/javascript">var ORION_SESSION_TIMEOUT = 3600;</script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-8896256319591510045:-6741525631645340850" autocomplete="off" />
+</form><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-core.js.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-ajax.js.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-page.js.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-core_fr_FR.js.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-messages_fr_FR.js.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script><script type="text/javascript" src="/agreste-web/javax.faces.resource/orion-messages.js.xhtml;jsessionid=yLWS651A2kY7VioDjneOryvziC-NPt9KK-eoUO4v.stats-prod-wildfly-6-zsg-cdpagri-fr-20200?ln=js"></script></body>
+</html>
