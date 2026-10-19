@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-18T22:34:15Z",
+ "generatedAt": "2026-10-19T00:52:00Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -6505,7 +6505,7 @@
    "registryId": "uruguay_datos_abiertos",
    "country": "UY",
    "scope": "integrated",
-   "institution": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA)",
+   "institution": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA, Ministerio de Ambiente)",
    "dataset": "Ya integrada (30 series en el catalogo unificado)",
    "products": [
     "cattle",
@@ -6529,7 +6529,7 @@
    "licenseId": "odc-uy",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "Fuente: INIA / MGAP / URSEA, Uruguay (catalogodatos.gub.uy), Licencia de Datos Abiertos - Uruguay. Dehesa Index calcula medias mensuales, sumas anuales y promedios ponderados; esas cifras derivadas no cuentan con aval del proveedor.",
+   "attribution": "Fuente: INIA / MGAP / URSEA / Ministerio de Ambiente, Uruguay (catalogodatos.gub.uy), Licencia de Datos Abiertos - Uruguay. Dehesa Index calcula medias mensuales, sumas anuales y promedios ponderados; esas cifras derivadas no cuentan con aval del proveedor.",
    "lastChecked": "2026-10-18",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
