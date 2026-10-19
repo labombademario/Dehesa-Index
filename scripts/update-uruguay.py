@@ -511,16 +511,54 @@ def forest_result(acc, nfeat):
     return {i: {k: round(v) for k, v in o.items()} for i, o in sorted(out.items())}
 
 
+FOREST_RES21 = '72a34aa2-b876-45d6-a531-487262458654'   # Cartografia de bosque plantado 2021, capa especies (zip con shapefile; la tabla .dbf trae Especie, Area_Has y Departamen)
+
+
+def forest_2021(url):
+    """Edicion 2021: lee solo la tabla de atributos (.dbf) del shapefile comprimido, sin geometria."""
+    import tempfile, zipfile
+    tmp = Path(tempfile.mkdtemp()); zp = tmp / 'e2021.zip'
+    try:
+        download_to(url, zp)
+        with zipfile.ZipFile(zp) as z:
+            nm = next((i for i in z.infolist() if i.filename.lower().endswith('.dbf')), None)
+            if not nm: raise RuntimeError('el zip no contiene .dbf')
+            with z.open(nm) as f:
+                fields, rows = dbf_rows(f); names = {x[0].upper(): x[0] for x in fields}
+                ak = names.get('AREA_HAS'); dk = next((names[k] for k in names if k.startswith('DEPART')), None); ek = names.get('ESPECIE')
+                if not (ak and dk and ek): raise RuntimeError('campos inesperados en el .dbf: %s' % [x[0] for x in fields])
+                acc = {}; spp = {}; n = 0
+                for r in rows:
+                    try: a = float(r[ak].decode('latin-1').strip())
+                    except ValueError: continue
+                    if a < 0: continue
+                    d = r[dk].decode('latin-1', 'replace').strip(); e = r[ek].decode('latin-1', 'replace').strip()
+                    if not d: continue
+                    n += 1; k = (_norm(d), forest_group(e)); acc[k] = acc.get(k, 0.0) + a; spp[e] = spp.get(e, 0.0) + a
+        return acc, spp, n
+    finally:
+        zp.unlink(missing_ok=True)
+
+
 def forest():
     if LOCAL: return
     pk = package('mgap-bosques-plantados-forestacion')
-    r = next((x for x in pk.get('resources', []) if x.get('id') == FOREST_RES), None)
-    if not r or not r.get('url'): raise RuntimeError('recurso forestal no encontrado')
-    acc, spp, nfeat = forest_sum(forest_chunks(r['url']))
-    log('BOSQUE %d poligonos, %.0f ha en total; especies: %s' % (nfeat, sum(acc.values()), '; '.join('%s=%.0f' % (k[:40], v) for k, v in sorted(spp.items(), key=lambda t: -t[1])[:12])))
-    res = forest_result(acc, nfeat)
-    if res: DEPT['forest'] = {'year': FOREST_YEAR, 'unit': 'ha', 'byDept': res}; log('BOSQUE publicado: %d departamentos, %d ha' % (len(res), sum(v['total'] for v in res.values())))
-
+    def res(rid):
+        r = next((x for x in pk.get('resources', []) if x.get('id') == rid), None)
+        if not r or not r.get('url'): raise RuntimeError('recurso forestal no encontrado: ' + rid)
+        return r['url']
+    eds = {}
+    for yr, fn in ((FOREST_YEAR, lambda: forest_sum(forest_chunks(res(FOREST_RES)))), (2021, lambda: forest_2021(res(FOREST_RES21)))):
+        try:
+            acc, spp, nfeat = fn()
+            log('BOSQUE %d: %d poligonos, %.0f ha en total; especies: %s' % (yr, nfeat, sum(acc.values()), '; '.join('%s=%.0f' % (k[:40], v) for k, v in sorted(spp.items(), key=lambda t: -t[1])[:12])))
+            r = forest_result(acc, nfeat)
+            if r: eds[yr] = r; log('BOSQUE %d publicado: %d departamentos, %d ha' % (yr, len(r), sum(v['total'] for v in r.values())))
+        except Exception as e: log('BOSQUE %d: fallo %s' % (yr, str(e)[:300]))
+    if not eds: return
+    ys = sorted(eds); y = ys[-1]; doc = {'year': y, 'unit': 'ha', 'byDept': eds[y]}
+    if len(ys) > 1: doc['previous'] = {'year': ys[-2], 'byDept': eds[ys[-2]]}
+    DEPT['forest'] = doc
 
 def dbf_rows(f):
     """Lector minimo de dBase (.dbf) en streaming: devuelve (campos, generador de dicts). f: objeto binario leible."""
@@ -563,64 +601,9 @@ def download_to(u, path, chunk=1 << 22):
                 time.sleep(8 * fails)
 
 
-def probe_dbf(label, f):
-    fields, rows = dbf_rows(f)
-    log('PROBE %s campos: %s' % (label, ', '.join('%s:%s%d' % x for x in fields)))
-    names = {x[0].upper(): x[0] for x in fields}
-    keys = [k for k in names if 'DEP' in k or k.startswith('AREA') or k.startswith('SUP') or 'ESPEC' in k or k in ('CAMBIO', 'CLASE', 'CATEGORIA', 'TIPO')]
-    log('PROBE %s campos candidatos: %s' % (label, keys))
-    agg = {}; n = 0; first = None
-    for r in rows:
-        n += 1
-        if first is None: first = {k: r[k].decode('latin-1', 'replace').strip() for k in r}
-        dk = next((names[k] for k in names if 'DEP' in k), None); ak = next((names[k] for k in names if k.startswith('AREA') or k.startswith('SUP')), None)
-        if dk and ak:
-            try: v = float(r[ak].decode('latin-1').strip() or 0)
-            except ValueError: continue
-            k2 = _norm(r[dk].decode('latin-1', 'replace')); agg[k2] = agg.get(k2, 0.0) + v
-    log('PROBE %s filas=%d primera=%s' % (label, n, json.dumps(first, ensure_ascii=False)[:500]))
-    if agg: log('PROBE %s total por departamento (ha o unidad del campo, solo log): %s' % (label, json.dumps({k: round(v) for k, v in sorted(agg.items(), key=lambda t: -t[1])}, ensure_ascii=False)))
-
-
-def probe_forest2():
-    """Sonda de solo lectura (no publica): tabla de atributos del bosque plantado 2021 (zip con shapefile) y del bosque nativo (RAR)."""
-    if LOCAL: return
-    import shutil, subprocess, tempfile, zipfile
-    tmp = Path(tempfile.mkdtemp())
-    log('PROBE herramientas: ' + ', '.join('%s=%s' % (t, bool(shutil.which(t))) for t in ('7z', '7zz', 'unrar', 'bsdtar', 'unar')))
-    for name, rid in (('mgap-bosques-plantados-forestacion', '72a34aa2-b876-45d6-a531-487262458654'), ('mgap-bosque-nativo', '071b9956-1632-4701-b662-0bbe85aaf2de'), ('mgap-bosque-nativo', '04220c8a-5373-4f95-8453-257e825150c7')):
-        try:
-            pk = package(name); r = next(x for x in pk['resources'] if x['id'] == rid)
-            ext = '.zip' if r['url'].lower().endswith('.zip') else '.rar'; dst = tmp / (rid[:8] + ext)
-            nb = download_to(r['url'], dst); log('PROBE %s | %s | %d bytes' % (name, r.get('name'), nb))
-            if ext == '.zip':
-                with zipfile.ZipFile(dst) as z:
-                    log('PROBE zip contenido: ' + '; '.join('%s(%d)' % (i.filename, i.file_size) for i in z.infolist())[:900])
-                    for i in z.infolist():
-                        if i.filename.lower().endswith('.dbf'):
-                            with z.open(i) as f: probe_dbf(i.filename, f)
-                        if i.filename.lower().endswith('.prj'): log('PROBE prj %s: %s' % (i.filename, z.read(i)[:200].decode('latin-1', 'replace')))
-            else:
-                tool = next((t for t in ('7z', '7zz', 'unrar', 'bsdtar', 'unar') if shutil.which(t)), None)
-                if not tool: log('PROBE sin herramienta para RAR'); continue
-                od = tmp / ('x' + rid[:8]); od.mkdir()
-                cmd = {'7z': ['7z', 'x', '-y', '-o' + str(od), str(dst), '*.dbf', '*.prj', '*.cpg'], '7zz': ['7zz', 'x', '-y', '-o' + str(od), str(dst), '*.dbf', '*.prj', '*.cpg'],
-                       'unrar': ['unrar', 'x', '-y', str(dst), '*.dbf', '*.prj', str(od) + '/'], 'bsdtar': ['bsdtar', '-xf', str(dst), '-C', str(od), '--include=*.dbf', '--include=*.prj'], 'unar': ['unar', '-o', str(od), str(dst)]}[tool]
-                pr = subprocess.run(cmd, capture_output=True, text=True, timeout=1500); log('PROBE %s rc=%d %s' % (tool, pr.returncode, (pr.stdout + pr.stderr)[-300:].replace('\n', ' | ')))
-                for fp in sorted(od.rglob('*')):
-                    if fp.suffix.lower() == '.dbf':
-                        with open(fp, 'rb') as f: probe_dbf(fp.name, f)
-                    elif fp.suffix.lower() == '.prj': log('PROBE prj %s: %s' % (fp.name, fp.read_text(errors='replace')[:200]))
-        except Exception as e: log('PROBE %s %s: error %s' % (name, rid[:8], str(e)[:300]))
-        finally:
-            for q in tmp.glob(rid[:8] + '.*'): q.unlink(missing_ok=True)
-
-
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    if (ROOT / 'scripts/uy-probe-only.flag').exists() and not LOCAL:
-        probe_forest2(); (ROOT / 'data/uruguay-log.txt').write_text('\n'.join(LOG) + '\n', encoding='utf-8'); return
     for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, forest, scan):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
@@ -631,7 +614,7 @@ def main():
         'license': 'Licencia de Datos Abiertos - Uruguay (odc-uy); Dehesa Index calcula medias, sumas y ponderaciones sin aval del proveedor'},
         'series': [OUT[k] for k in sorted(OUT)]}}}
     ddoc = {'schemaVersion': 1, 'generatedAt': now, 'source': doc['countries']['UY']['source'],
-            'note': 'Departamentos por sufijo ISO 3166-2 (id del mapa) y codigo numerico alfabetico INE/AGESIC (el de DICOSE y MGAP). Existencias: DICOSE PD_AD por departamento donde esta registrado el tenedor (puede diferir del departamento donde pastan los animales). Tierra: solo departamentos con los dos semestres; USD/ha ponderado. Bosque plantado: suma de Area_Has por departamento de la cartografia forestal 2018 del MGAP (una edicion, no una serie).',
+            'note': 'Departamentos por sufijo ISO 3166-2 (id del mapa) y codigo numerico alfabetico INE/AGESIC (el de DICOSE y MGAP). Existencias: DICOSE PD_AD por departamento donde esta registrado el tenedor (puede diferir del departamento donde pastan los animales). Tierra: solo departamentos con los dos semestres; USD/ha ponderado. Bosque plantado: suma de Area_Has por departamento de las ediciones 2018 y 2021 de la cartografia forestal del MGAP (ediciones puntuales, no una serie anual; pueden diferir en metodo).',
             'departments': [{'iso': i, 'code': c, 'name': n} for c, n, i in UY_DEPTS], 'livestock': DEPT['livestock'], 'land': DEPT['land']}
     if DEPT.get('forest'): ddoc['forest'] = DEPT['forest']
     log('series guardadas:', len(OUT))

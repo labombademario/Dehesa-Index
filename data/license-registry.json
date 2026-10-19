@@ -4229,7 +4229,7 @@
    "aliases": [],
    "confidence": "high",
    "legalConfidence": "HIGH",
-   "notes": "Conjuntos usados: Ministerio de Ambiente (inventario nacional de gases de efecto invernadero, ambiente_ingei), INIA (5 estaciones: precipitacion y temperaturas extremas), URSEA (ppi_vs_pe_v2) y MGAP (compraventas y arrendamientos de tierra, DICOSE y cartografia de bosque plantado 2018). Cada ejecucion de scripts/update-uruguay.py comprueba que license_id sigue siendo odc-uy y se detiene si cambia. odc-uy NO es ODbL.",
+   "notes": "Conjuntos usados: Ministerio de Ambiente (inventario nacional de gases de efecto invernadero, ambiente_ingei), INIA (5 estaciones: precipitacion y temperaturas extremas), URSEA (ppi_vs_pe_v2) y MGAP (compraventas y arrendamientos de tierra, DICOSE y cartografia de bosque plantado 2018 y 2021). Cada ejecucion de scripts/update-uruguay.py comprueba que license_id sigue siendo odc-uy y se detiene si cambia. odc-uy NO es ODbL.",
    "name": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA, Ministerio de Ambiente)",
    "url": "https://catalogodatos.gub.uy/",
    "country": "UY",

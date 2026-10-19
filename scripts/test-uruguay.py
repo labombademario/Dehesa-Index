@@ -239,4 +239,35 @@ ok('bosque: fuera de rango no se publica', mod.forest_result({('RIVERA', 'pinus'
 ok('bosque: departamento desconocido con mucha superficie no se publica', mod.forest_result({('RIVERA', 'pinus'): 900000.0, ('ATLANTIDA', 'pinus'): 100000.0}, 2) is None)
 
 
+# --- Bosque plantado 2021: tabla .dbf dentro de un zip (sin geometria) ---
+import struct, zipfile, shutil
+def dbf_bytes(fields, rows):
+    rl = 1 + sum(f[2] for f in fields); hl = 32 + 32 * len(fields) + 1
+    h = struct.pack('<BBBBIHH20x', 3, 26, 10, 18, len(rows), hl, rl)
+    d = b''.join(n.encode().ljust(11, b'\0') + t_.encode() + b'\0\0\0\0' + bytes([l]) + b'\0' * 15 for n, t_, l in fields)
+    body = b''.join(b' ' + b''.join(v.encode('latin-1').ljust(f[2]) for v, f in zip(r, fields)) for r in rows)
+    return h + d + b'\r' + body + b'\x1a'
+FD = [('Especie', 'C', 60), ('Area_Has', 'F', 19), ('Departamen', 'C', 25), ('SHAPE_Area', 'F', 19)]
+rows21 = [('Pinus elliotti y Pinus taeda', '4.00000000000e+05', 'RIVERA', '1.0'), ('Eucalyptus dunnii', '3.5E+05', 'PAYSANDÚ', '1.0'), ('Montes de abrigo y Cortinas', '1000.5', 'MONTEVIDEO', '1.0'), ('Eucalyptus globulus', '50000', 'Treinta y Tres', '1.0')]
+zp0 = Path(tempfile.mkdtemp()) / 'z.zip'
+with zipfile.ZipFile(zp0, 'w', zipfile.ZIP_DEFLATED) as z:
+    z.writestr('Especies_2021.dbf', dbf_bytes(FD, rows21)); z.writestr('Especies_2021.shp', b'x' * 100)
+mod.download_to = lambda u, path, chunk=0: (shutil.copy(zp0, path), 1)[1]
+acc, spp, n = mod.forest_2021('http://x/z.zip')
+ok('bosque 2021: filas leidas', n == 4)
+ok('bosque 2021: notacion cientifica y tilde', abs(acc[('RIVERA', 'pinus')] - 400000) < 1e-6 and abs(acc[('PAYSANDU', 'eucalyptus')] - 350000) < 1e-6 and ('MONTEVIDEO', 'other') in acc)
+r21 = mod.forest_result(acc, n)
+ok('bosque 2021: resultado por ISO', r21 and r21['RV']['pinus'] == 400000 and r21['TT']['total'] == 50000 and r21['MO']['other'] in (1000, 1001))
+mod.LOG.clear(); mod.DEPT.pop('forest', None)
+mod.package = lambda name: {'resources': [{'id': mod.FOREST_RES, 'url': 'u18'}, {'id': mod.FOREST_RES21, 'url': 'u21'}]}
+mod.forest_chunks = lambda u: trozos(raw, 300)
+mod.LOCAL = None; mod.forest()
+F = mod.DEPT.get('forest')
+ok('bosque: dos ediciones, la reciente como actual y la anterior como previa', F and F['year'] == 2021 and F['previous']['year'] == 2018 and F['previous']['byDept']['RV']['total'] == 450000 and F['byDept']['RV']['total'] == 400000)
+def _boom(u, path, chunk=0): raise RuntimeError('sin red')
+mod.download_to = _boom; mod.DEPT.pop('forest', None); mod.LOG.clear(); mod.forest()
+F = mod.DEPT.get('forest')
+ok('bosque: si falla 2021 se publica solo 2018 y queda anotado', F and F['year'] == 2018 and 'previous' not in F and any('fallo' in l for l in mod.LOG))
+
+
 print('test-uruguay:', 'OK' if not fails else '%d fallos' % len(fails)); sys.exit(1 if fails else 0)
