@@ -20,12 +20,27 @@ for (const [cc, pick, name, minN, na] of CASES) {
   ok(cc + ': nombre elegido', ((await p.textContent('.mm-map-sel')) || '').indexOf(name) > -1);
   ok(cc + ': zona resaltada', (await p.$$eval('.mm-map-p.on', a => a.length)) === (cc === 'UK' ? 2 : 1));
 }
-// Francia e Italia: con región y cultivo salen superficie, producción y rendimiento de Eurostat, sin errores
-for (const [cc, r, crop, txt] of [['FR', 'OCC', 'C1110', 'Trigo blando'], ['IT', 'LOM', 'C1500', 'Maíz grano']]) {
+// Francia e Italia: con región y cultivo salen superficie, producción y rendimiento (Eurostat), precio de mercado de la Comisión
+// (o el aviso de que no hay mercado en la región) y sequía de las zonas NUTS 2 de tu región (EDO), sin errores ni NaN.
+// El precio depende de que el mercado haya publicado en las últimas 4 semanas: se acepta la fila o el aviso, nunca una sección vacía.
+const EU_CASES = [
+  ['FR', 'NOR', 'C1110', 'Trigo blando', /Rouen|no publica un mercado|no publica precios/, /Basse-Normandie[\s\S]*Haute-Normandie/],
+  ['FR', 'BFC', 'C1110', 'Trigo blando', /Mercados de Francia con precio reciente|no publica precios/, /Bourgogne[\s\S]*Franche-Comté/],
+  ['FR', 'OCC', 'R1000', 'Patata', /no tenemos un precio de mercado de referencia/, /Languedoc-Roussillon[\s\S]*Midi-Pyrénées/],
+  ['IT', 'EMR', 'C1110', 'Trigo blando', /Bologna|no publica un mercado|no publica precios/, /Emilia-Romagna/],
+  ['IT', 'PUG', 'O1000', 'Olivar', /Bari|no publica un mercado|no publica precios/, /Puglia/],
+  ['IT', 'TAA', 'C1500', 'Maíz grano', /Mercados de Italia con precio reciente|no publica precios/, /Bolzano[\s\S]*Trento/],
+  ['IT', 'LOM', 'C1500', 'Maíz grano', /Milano|Mantova|no publica un mercado|no publica precios/, /Lombardia/]
+];
+for (const [cc, r, crop, txt, rxPrice, rxDr] of EU_CASES) {
   await p.click('[data-mm-cc="' + cc + '"]'); await p.waitForSelector('[data-mm-map="' + r + '"]'); await p.click('[data-mm-map="' + r + '"]'); await p.waitForTimeout(600);
-  await p.selectOption('select[data-mm="p"]', crop); await p.waitForTimeout(1500);
-  const body = await p.textContent('#mm-root, body'); ok(cc + ': tarjeta del cultivo', body.indexOf(txt) > -1 && /Superficie[\s\S]*ha/.test(body) && /Rendimiento/.test(body) && /Eurostat/.test(body));
-  ok(cc + ': sin «NaN» ni «undefined»', !/NaN|undefined/.test(body));
+  await p.selectOption('select[data-mm="p"]', crop); await p.waitForTimeout(1800);
+  const sec = async id => (await p.$eval('[data-mm-sec="' + id + '"]', e => e.innerText).catch(() => ''));
+  const body = await p.textContent('#mm-root, body'), price = await sec('price'), dr = await sec('dr'), tag = cc + ' ' + r + ' ' + crop;
+  ok(tag + ': tarjeta del cultivo', body.indexOf(txt) > -1 && (crop === 'R1000' || /Superficie[\s\S]*ha/.test(body)) && /Eurostat/.test(body));
+  ok(tag + ': sección de precio con fila o aviso', rxPrice.test(price));
+  ok(tag + ': sequía con las zonas de la región y porcentajes', rxDr.test(dr) && /\d+,\d %/.test(dr) && /Observatorio Europeo de la Sequía/.test(dr));
+  ok(tag + ': sin «NaN» ni «undefined»', !/NaN|undefined/.test(body));
 }
 await p.click('[data-mm-cc="ES"]'); await p.waitForSelector('[data-mm-map="28"]'); await p.focus('[data-mm-map="28"]'); await p.keyboard.press('Enter'); await p.waitForTimeout(1200);
 ok('teclado: Enter elige Madrid', (await p.inputValue('select[data-mm="r"]')) === '28');
