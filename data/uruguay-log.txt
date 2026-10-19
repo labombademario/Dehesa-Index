@@ -65,40 +65,50 @@ Grilla anr 2017_120: celdas sin dato, mes omitido
 Grilla anr 2018_120: celdas sin dato, mes omitido
 Grilla anr 2019_120: celdas sin dato, mes omitido
 Grilla anr 2020_120: celdas sin dato, mes omitido
-CATALOGO [DIEA] mgap-serie-precio-de-la-tierra-compraventas | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-03-26
-CATALOGO [DIEA] mgap-serie-precio-de-la-tierra-arrendamientos | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-10-13
-CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2025 | org=mgap | lic=odc-uy | CSV | mod=2026-06-17
-CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2021 | org=mgap | lic=odc-uy | CSV | mod=2023-04-20
-CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2019 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
-CATALOGO [lecheria] mgap-datos-2018-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
-CATALOGO [lecheria] mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2017 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
-CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2020 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
-CATALOGO [lecheria] mgap-datos-generados-en-base-a-la-declaracion-jurada-de-existencias-dicose-snig-2016 | org=mgap | lic=odc-uy | CSV,XML | mod=2023-04-20
-CATALOGO [lecheria] mgap-datos-preliminares-basados-en-la-declaracion-jurada-de-existencias-dicose-snig-2024 | org=mgap | lic=odc-uy | CSV | mod=2026-06-10
-CATALOGO [lecheria] mgap-datos-actualizados-de-la-declaracion-jurada-de-existencias-dicose-snig-2023 | org=mgap | lic=odc-uy | CSV | mod=2024-04-11
-CATALOGO [lecheria] datos-preliminares-declaracion-jurada-de-existencias-dicose-snig-2022 | org=mgap | lic=odc-uy | CSV | mod=2023-04-20
-CATALOGO [carne] prestaciones-tarjeta-de-gestion-social-credencial-verde-y-carnet-de-derecho-asiento | org=intendencia-montevideo | lic=odc-uy | CSV,TXT | mod=2025-12-29
-CATALOGO [poblacion departamento] mides-indicador-4810 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-9386 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-10779 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-7302 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-4956 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-10777 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-9568 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-10202 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-10783 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-10205 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-11165 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-5219 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-10211 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-3447 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [poblacion departamento] mides-indicador-10463 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [producto interno bruto departamento] mides-indicador-13441 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [producto interno bruto departamento] mides-indicador-11119 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2020-01-22
-CATALOGO [producto interno bruto departamento] mides-indicador-6321 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [producto interno bruto departamento] mides-indicador-11125 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2020-01-22
-CATALOGO [producto interno bruto departamento] mides-indicador-13324 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [producto interno bruto departamento] mides-indicador-12468 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2019-03-01
-CATALOGO [producto interno bruto departamento] mides-indicador-5553 | org=mides | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2020-05-20
-CATALOGO: 35 conjuntos distintos
+CATALOGO [org:ine] ine-presupuesto_ine | Presupuesto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-07-06
+CATALOGO [org:ine] ine-compensaciones_remuneraciones_por_concepto | INE - Compensaciones remuneraciones por concepto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-07-04
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-2012 | Encuesta Continua de Hogares 2012 | org=ine | lic=CC0-1.0 | RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2013 | Encuesta Continua de Hogares año 2013 | org=ine | lic=CC0-1.0 | PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2014 | Encuesta Continua de Hogares año 2014 | org=ine | lic=CC0-1.0 | PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2015 | Encuesta Continua de Hogares año 2015 | org=ine | lic=CC0-1.0 | PDF,RAR | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2016 | Encuesta Continua de Hogares año 2016 | org=ine | lic=CC0-1.0 | DOCX,PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-encuesta-continua-de-hogares-ano-2017 | Encuesta Continua de Hogares año 2017 | org=ine | lic=CC0-1.0 | PDF,RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-ech2011 | Encuesta Continua de Hogares 2011 | org=ine | lic=notspecified | RAR,XLS | mod=2018-07-02
+CATALOGO [org:ine] ine-organigrama_ine | INE - Organigrama | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-marco_juridico_ine | INE - Marco Jurídico | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-autoridades_ine | INE - Autoridades | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-remuneraciones_ine | INE - Remuneraciones | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-datos_contacto_ine | INE - Datos de contacto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-06-29
+CATALOGO [org:ine] ine-eutic | Encuesta de Usos de las Tecnologías de la Información y Comunicación | org=ine | lic=odc-uy | TSV | mod=2017-04-25
+CATALOGO [org:opp] opp-ingresos-y-egresos-de-los-gobiernos-departamentales-y-egresos-de-l | Ingresos y Egresos de los Gobiernos Departamentales y Egresos de los Gobiernos M | org=opp | lic=odc-uy | CSV,JSON,PDF,XLSX,XML | mod=2024-08-29
+CATALOGO [org:opp] opp-clasificacion-funcional-del-presupuesto-con-indicadores | Clasificación funcional del presupuesto con indicadores | org=opp | lic=odc-uy | CSV | mod=2022-07-11
+CATALOGO [org:opp] opp-credito-presupuestal-detallado-a-partir-de-2011 | Crédito presupuestal a partir de 2011 | org=opp | lic=odc-uy | CSV,XLS | mod=2022-07-11
+CATALOGO [org:opp] opp-organismos-del-presupuesto-nacional | Organismos del Presupuesto Nacional | org=opp | lic=odc-uy | CSV | mod=2022-07-11
+CATALOGO [org:opp] opp-presupuestos-quinquenales | Presupuestos Nacionales Quinquenales | org=opp | lic=odc-uy | CSV | mod=2021-09-06
+CATALOGO [org:opp] opp-productos-de-las-unidades-ejecutoras | Productos de las Unidades Ejecutoras | org=opp | lic=odc-uy | CSV | mod=2021-07-23
+CATALOGO [org:opp] opp-monto-ejecutado-en-proyectos-de-inversi-n | Monto ejecutado en proyectos de inversión | org=opp | lic=odc-uy | CSV,TXT | mod=2021-03-11
+CATALOGO [org:opp] opp-compromisos-de-gestion-de-eepp | Compromisos de Gestión de EEPP | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-sociedades-anonimas-en-que-participan-eepp | Sociedades Anónimas en que participan EEPP | org=opp | lic=odc-uy | CSV,PDF | mod=2021-03-11
+CATALOGO [org:opp] opp-indicadores-financieros-de-eepp | Indicadores financieros de EEPP | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-cantidad-de-rrhh-en-eepp | Cantidad de RRHH en EEPP | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-listado-de-personas-publicas-no-estatales | Listado de Personas Públicas no Estatales | org=opp | lic=odc-uy | CSV,PDF | mod=2021-03-11
+CATALOGO [org:opp] opp-listado-de-empresas-publicas | Listado de Empresas Públicas | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-vinculo-entre-ods-y-planificacion | Vínculo entre ODS y planificación | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-planificacion-estrategica-de-organismos-y-ues | Planificación estratégica de los organismos y sus unidades ejecutoras | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-evaluaciones-de-intervenciones-publicas | Evaluaciones de intervenciones públicas | org=opp | lic=odc-uy | CSV | mod=2021-03-11
+CATALOGO [org:opp] opp-objetivos-de-desarrollo-sostenible-y-sus-metas | Objetivos de Desarrollo Sostenible y sus metas | org=opp | lic=odc-uy | CSV | mod=2021-03-09
+CATALOGO [org:opp] opp-historico-de-credito-presupuestal-ejecutado | Histórico de crédito presupuestal ejecutado de 1961 a 2010 | org=opp | lic=odc-uy | CSV,PDF | mod=2020-12-15
+CATALOGO [org:opp] opp-historico-de-credito-y-ejecucion-presupuestal-por-ue | Histórico de crédito y ejecución presupuestal por UE de 1999 a 2010 | org=opp | lic=odc-uy | CSV,PDF | mod=2020-12-15
+CATALOGO [org:mgap] mgap-serie-precio-de-la-tierra-arrendamientos | Serie precio de la tierra - Arrendamientos | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-10-13
+CATALOGO [org:mgap] mgap-serie-precio-de-la-tierra-compraventas | Serie precio de la tierra - Compraventas | org=mgap | lic=odc-uy | CSV,JSON,XLSX,XML | mod=2026-03-26
+CATALOGO [org:mgap] mgap-bosques-plantados-forestacion | Bosque plantado | org=mgap | lic=odc-uy | GEOJSON,KML,SHP | mod=2024-10-17
+CATALOGO [org:mgap] mgap-bosque-nativo | Bosque nativo | org=mgap | lic=odc-uy | GEOJSON,JSON,SHP | mod=2023-11-13
+CATALOGO [org:mgap] mgap-fae-sp-diciembre-2020 | Seccionales policiales declaradas en Emergencia agropecuaria Diciembre 2020 | org=mgap | lic=odc-uy | GEOJSON,GEOPACKAGE,JSON,XML | mod=2021-11-01
+CATALOGO [org:mgap] mgap-fae-sp-marzo-2020 | Seccionales policiales declaradas en Emergencia agropecuaria Marzo 2020 | org=mgap | lic=odc-uy | GEOJSON,GEOPACKAGE,JSON,XML | mod=2021-11-01
+CATALOGO [q:censo 2023] intendencia-de-san-jose-mapa-social-de-san-jose | Mapa social de San José | org=intendencia-de-san-jose | lic=odc-uy | CSV | mod=2024-03-20
+CATALOGO [q:poblacion] inau-poblacion_y_proyectos | Población y Proyectos | org=inau | lic=odc-uy | CSV,JSON,XLS,XLSX,XML | mod=2022-03-07
+CATALOGO [q:poblacion] poblacion-por-zona-censal-en-montevideo | Población por zona censal en Montevideo censos 85-96-04 | org=intendencia-montevideo | lic=odc-uy | TXT,ZIP | mod=2025-02-26
+CATALOGO [q:poblacion] poblacion-atendida-por-las-policlinicas-de-las-intendencia-de-montevid | Población atendida por las policlínicas de las Intendencia de Montevideo | org=intendencia-montevideo | lic=odc-uy | CSV,TXT | mod=2026-09-21
+CATALOGO [q:agropecuario] miem-indicadores-de-eficiencia-energetica-por-sector | Indicadores de Eficiencia Energética | org=miem | lic=odc-uy | CSV | mod=2020-07-29
+CATALOGO: 45 conjuntos distintos
 series guardadas: 30
