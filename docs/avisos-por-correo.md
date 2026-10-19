@@ -22,3 +22,13 @@ Añadir un workflow manual o programado que ejecute `python3 scripts/send-digest
 python3 scripts/send-digest.py --out /tmp/correo.html
 python3 scripts/test-digest.py
 ```
+
+## Envío semanal automático (`.github/workflows/send-digest.yml`)
+
+- Se ejecuta los lunes a las 07:30 UTC y **siempre en ensayo**: no envía nada real mientras la variable del repositorio `DIGEST_LIVE` no valga `true` (Settings → Secrets and variables → Actions → Variables).
+- Manual: Actions → «Resumen semanal por correo» → Run workflow. Sin marcar `send` es ensayo. Marcando `send` envía de verdad (no necesita `DIGEST_LIVE`).
+- Necesita el secreto `DIGEST_API_KEY` (clave de Buttondown).
+- Cada suscriptor recibe solo el correo de su idioma: el formulario lo etiqueta `es` (español) o `en` (inglés, también para francés e italiano) y el envío filtra por esa etiqueta usando el id que Buttondown le da. Si no existe la etiqueta de un idioma, ese idioma no se envía.
+- Lo enviado se guarda en `data/digest/sent.json` para que un movimiento no se repita.
+- Primer envío recomendado: un Run workflow manual en ensayo, revisar el resumen del job, y después uno con `send`. Para activar el envío programado, crear la variable `DIGEST_LIVE = true`.
+- No comprobado contra la API real de Buttondown (solo con una API simulada en `scripts/test-digest.py`): vigilar el primer envío.

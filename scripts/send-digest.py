@@ -43,6 +43,26 @@ def pick(events, done):
         if e['id'] in done: continue
         L.append(e)
     return sorted([e for e in L if e['changePct'] > 0], key=lambda e: -e['changePct'])[:5], sorted([e for e in L if e['changePct'] < 0], key=lambda e: e['changePct'])[:5]
+def api(method, path, key, body=None):
+    """Llamada a la API de Buttondown; devuelve (estado, json)."""
+    req = urllib.request.Request('https://api.buttondown.email/v1' + path, data=json.dumps(body).encode('utf-8') if body is not None else None,
+                                 headers={'Authorization': 'Token ' + key, 'Content-Type': 'application/json'}, method=method)
+    with urllib.request.urlopen(req, timeout=60) as r: return r.status, json.loads(r.read().decode('utf-8') or 'null')
+def audience(key, lang):
+    """Filtro de Buttondown con la etiqueta del idioma (el formulario etiqueta a cada suscriptor con es/en). Sin etiqueta = nadie recibe: None."""
+    path = '/tags'
+    while path:
+        _, d = api('GET', path, key)
+        for t in d.get('results', []):
+            if t.get('name') == lang: return {'filters': [{'field': 'subscriber.tags', 'operator': 'contains', 'value': t['id']}], 'groups': [], 'predicate': 'and'}
+        nxt = d.get('next'); path = nxt.split('/v1', 1)[1] if nxt and '/v1' in nxt else None
+    return None
+def deliver(key, lang, subj, html_body):
+    """Envia solo a los suscriptores de ese idioma. None si no hay etiqueta (no se envia nada)."""
+    flt = audience(key, lang)
+    if flt is None: return None
+    st, _ = api('POST', '/emails', key, {'subject': subj, 'body': html_body, 'status': 'about_to_send', 'filters': flt})
+    return st
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--lang', default='es', choices=['es', 'en']); ap.add_argument('--out', default=''); ap.add_argument('--send', action='store_true'); a = ap.parse_args()
     ev = json.loads((D / 'events.json').read_text(encoding='utf-8'))
@@ -58,8 +78,8 @@ def main():
     if not key: sys.exit('Falta DIGEST_API_KEY: no se envia nada.')
     if sid in sent['sent']: print('Ya enviado (%s): no se repite.' % sid); return
     if not up and not dn: print('Nada nuevo que enviar.'); return
-    req = urllib.request.Request('https://api.buttondown.email/v1/emails', data=json.dumps({'subject': subj, 'body': h, 'status': 'about_to_send'}).encode('utf-8'),
-                                 headers={'Authorization': 'Token ' + key, 'Content-Type': 'application/json'}, method='POST')
-    with urllib.request.urlopen(req, timeout=60) as r: print('Enviado (%s): HTTP %s' % (sid, r.status))
+    r = deliver(key, a.lang, subj, h)
+    if r is None: print('Nadie esta apuntado con la etiqueta "%s": no se envia.' % a.lang); return
+    print('Enviado (%s): HTTP %s' % (sid, r))
     sent['sent'].append(sid); sent.setdefault(ek, []).extend(e['id'] for e in up + dn); sentp.write_text(json.dumps(sent, indent=1) + '\n', encoding='utf-8')
 if __name__ == "__main__": main()

@@ -53,6 +53,17 @@ check('ensayo por defecto: no envia ni guarda estado', p.returncode == 0 and 'EN
 env = {k: v for k, v in os.environ.items() if k != 'DIGEST_API_KEY'}
 p = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'send-digest.py'), '--send'], capture_output=True, text=True, env=env)
 check('--send sin clave: falla y no envia', p.returncode != 0 and 'DIGEST_API_KEY' in (p.stdout + p.stderr) and sent.exists() == before)
+calls = []
+def fake(method, path, key, body=None):
+    calls.append((method, path, body))
+    if method == 'GET' and path == '/tags': return 200, {'results': [{'id': 'tag_1', 'name': 'en'}], 'next': 'https://api.buttondown.email/v1/tags?page=2'}
+    if method == 'GET': return 200, {'results': [{'id': 'tag_es', 'name': 'es'}], 'next': None}
+    return 201, {'id': 'e1'}
+sd.api = fake
+r = sd.deliver('k', 'es', 'S', '<p>x</p>'); post = [c for c in calls if c[0] == 'POST'][0][2]
+check('envio: solo a la etiqueta del idioma (busca la etiqueta en varias paginas y filtra por su id)', r == 201 and post['filters']['filters'][0]['value'] == 'tag_es' and post['filters']['filters'][0]['field'] == 'subscriber.tags' and post['status'] == 'about_to_send')
+calls.clear(); r = sd.deliver('k', 'fr', 'S', 'x')
+check('envio: si no existe la etiqueta del idioma no se envia nada', r is None and not [c for c in calls if c[0] == 'POST'])
 import re as _re
 raw = _re.compile(r'/(tonelada|ton_corta|barril|docena|litro|index_2020_100|gal)\b')
 feeds = [(ROOT / 'data' / 'digest' / f).read_text(encoding='utf-8') for f in ('feed.xml', 'feed-en.xml')]

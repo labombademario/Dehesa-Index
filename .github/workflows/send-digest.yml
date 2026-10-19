@@ -1,0 +1,49 @@
+name: Resumen semanal por correo
+# ENSAYO POR DEFECTO: no envia nada real mientras la variable del repositorio DIGEST_LIVE no valga 'true'.
+# - Programado (lunes): ensayo; envia de verdad solo si DIGEST_LIVE = 'true'.
+# - Manual (Run workflow): ensayo, salvo que marques «send». Un envio manual real no necesita DIGEST_LIVE.
+# Envia a cada suscriptor solo el correo de su idioma (etiqueta es / en que pone el formulario) y guarda en data/digest/sent.json
+# lo ya enviado para no repetir movimientos. Necesita el secreto DIGEST_API_KEY (clave de Buttondown).
+on:
+  schedule:
+    - cron: '30 7 * * 1'
+  workflow_dispatch:
+    inputs:
+      send:
+        description: 'Enviar de verdad (si no, ensayo: no se envia nada)'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  digest:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      LIVE: ${{ (github.event_name == 'workflow_dispatch' && inputs.send) || (github.event_name == 'schedule' && vars.DIGEST_LIVE == 'true') }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Avisos al dia con la API (si no, no se envia)
+        run: python3 scripts/build-digest.py --check
+      - name: Ensayo (no envia nada)
+        if: env.LIVE != 'true'
+        run: |
+          python3 scripts/send-digest.py --lang es --out /tmp/resumen-es.html
+          python3 scripts/send-digest.py --lang en --out /tmp/resumen-en.html
+          echo "Ensayo terminado: no se ha enviado nada." >> "$GITHUB_STEP_SUMMARY"
+      - name: Envio real (solo suscriptores de cada idioma)
+        id: send
+        if: env.LIVE == 'true'
+        env:
+          DIGEST_API_KEY: ${{ secrets.DIGEST_API_KEY }}
+        run: |
+          python3 scripts/send-digest.py --lang es --send
+          python3 scripts/send-digest.py --lang en --send
+      - name: Guardar lo enviado (data/digest/sent.json)
+        if: always() && steps.send.outcome != 'skipped'
+        run: bash scripts/publish-data.sh "Resumen semanal enviado - registro de movimientos" data/digest/sent.json
