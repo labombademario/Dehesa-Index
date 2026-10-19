@@ -1,0 +1,16 @@
+name: tmp-probe-land
+on:
+  push:
+    branches: [research/probe-land]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          python3 probe/land1.py > probe/land1.log 2>&1 || true
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/land1.log; git add -f probe/land-out/* || true; git commit -qm "probe out" || true; git push || true
