@@ -161,13 +161,13 @@
       pd('insumos.html', L('Insumos (EE. UU., Canadá, España)', 'Inputs (US, Canada, Spain)', 'Intrants (É.-U., Canada, Espagne)', 'Input (USA, Canada, Spagna)'), L('Fertilizantes, piensos y gasóleo agrícola por provincia en España', 'Fertiliser, feed and farm diesel by Spanish province', 'Engrais, aliments et gazole agricole par province en Espagne', 'Fertilizzanti, mangimi e gasolio agricolo per provincia in Spagna')),
       pd('costes.html', L('Costes por cultivo (EE. UU.)', 'Crop costs (US)', 'Coûts par culture (É.-U.)', 'Costi per coltura (USA)'), L('EE. UU. · costes por cultivo y renta agraria (ERS)', 'US · costs by crop and farm income (ERS)', 'États-Unis · coûts par culture et revenu agricole (ERS)', 'USA · costi per coltura e reddito agricolo (ERS)')),
       pd('recan.html', L('Costes y rentas en España (RECAN)', 'Spanish farm costs and incomes (RECAN)', 'Coûts et revenus en Espagne (RECAN)', 'Costi e redditi in Spagna (RECAN)'), L('España · por comunidad, tipo y tamaño de explotación', 'Spain · by region, farm type and size', 'Espagne · par région, type et taille d’exploitation', 'Spagna · per regione, tipo e dimensione aziendale')),
-      pd('calculadora.html', L('Calculadora de margen', 'Margin calculator', 'Calculateur de marge', 'Calcolatore di margine'), L('Coste por hectárea y tonelada, precio de equilibrio y margen', 'Cost per hectare and tonne, break-even price and margin', 'Coût par hectare et tonne, prix d’équilibre et marge', 'Costo per ettaro e tonnellata, prezzo di pareggio e margine'))
+      pd('calculadora.html', L('Calculadora de margen', 'Margin calculator', 'Calculateur de marge', 'Calcolatore di margine'), L('Una cuenta rápida de un cultivo: margen, equilibrio, impuestos y escenarios', 'A quick sum for one crop: margin, break-even, taxes and scenarios', 'Un calcul rapide pour une culture : marge, équilibre, taxes et scénarios', 'Un calcolo rapido per una coltura: margine, pareggio, imposte e scenari'))
     ] },
     mine: { label: L('Mi espacio', 'My space', 'Mon espace', 'Il mio spazio'), items: [
-      pd('mi-mercado.html', L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), L('Tu zona y tu producto: precio local, seguro, sequía y más', 'Your area and product: local price, insurance, drought and more', 'Votre zone et votre produit : prix local, assurance, sécheresse…', 'La tua zona e il tuo prodotto: prezzo locale, assicurazione, siccità…')),
+      pd('mi-mercado.html', L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), L('¿Qué pasa en mi zona? Precio local, seguro, sequía y producción', 'What is happening in my area? Local price, insurance, drought and output', 'Que se passe-t-il dans ma zone ? Prix local, assurance, sécheresse et production', 'Cosa succede nella mia zona? Prezzo locale, assicurazione, siccità e produzione')),
       pd('siembra.html', L('Qué sembrar', 'What to plant', 'Quoi semer', 'Cosa seminare'), L('Compara cultivos de tu región y reparte tu superficie', 'Compare crops in your area and split your land', 'Comparez les cultures de votre région et répartissez votre surface', 'Confronta le colture della tua zona e ripartisci la superficie')),
-      pd('mi-explotacion.html', L('Mi explotación', 'My farm', 'Mon exploitation', 'La mia azienda'), L('Tus cultivos y costes: margen, equilibrio y qué ha cambiado', 'Your crops and costs: margin, break-even and what changed', 'Vos cultures et coûts : marge, équilibre et ce qui a changé', 'Le tue colture e costi: margine, pareggio e cosa è cambiato')),
-      pd('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito'), L('Sigue productos y series con avisos, sin cuenta', 'Follow products and series with alerts, no account', 'Suivez produits et séries avec alertes, sans compte', 'Segui prodotti e serie con avvisi, senza account'))
+      pd('mi-explotacion.html', L('Mi explotación', 'My farm', 'Mon exploitation', 'La mia azienda'), L('¿Cuánto gano con mis cultivos? Varios cultivos, se recuerda y sigue el mercado', 'How much do my crops earn? Several crops, remembered, follows the market', 'Combien me rapportent mes cultures ? Plusieurs cultures, mémorisées, suivent le marché', 'Quanto guadagno con le mie colture? Più colture, memorizzate, seguono il mercato')),
+      pd('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito'), L('Avísame si un precio se mueve: tus productos y series, sin cuenta', 'Alert me when a price moves: your products and series, no account', 'Prévenez-moi si un prix bouge : vos produits et séries, sans compte', 'Avvisami se un prezzo si muove: i tuoi prodotti e serie, senza account'))
     ] },
     data: { label: L('Datos', 'Data', 'Données', 'Dati'), items: [
       pd('catalogo.html', L('Catálogo de datos', 'Data catalogue', 'Catalogue de données', 'Catalogo dei dati'), L('Más de 5.800 series por país, métrica y producto', 'Over 5,800 series by country, metric and product', 'Plus de 5 800 séries par pays, mesure et produit', 'Oltre 5.800 serie per paese, metrica e prodotto')),
@@ -187,8 +187,8 @@
     var G = NAV_GROUPS, pick = function (g, files) { return G[g].items.filter(function (i) { return !i.items && files.indexOf(i.file) > -1; }); };
     G.prices.label = L('Buscar precios', 'Find prices', 'Trouver un prix', 'Trova prezzi');
     G.today.label = L('Noticias y calendario', 'News and calendar', 'Actualités et calendrier', 'Notizie e calendario');
-    G.mine.label = L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato');
-    G.mine.items = G.mine.items.concat(pick('costs', ['calculadora.html']));
+    /* 18-oct: el grupo vuelve a llamarse «Mi espacio» («Mi mercado» es solo la página y el botón destacado) y la calculadora va junto a «Mi explotación» */
+    G.mine.items = (function (it) { var by = {}; it.forEach(function (i) { by[i.file] = i; }); return ['mi-mercado.html', 'mi-explotacion.html', 'calculadora.html', 'mi-seguimiento.html', 'siembra.html'].map(function (f) { return by[f]; }).filter(Boolean); })(G.mine.items.concat(pick('costs', ['calculadora.html'])));
     G.compare = { label: L('Comparar', 'Compare', 'Comparer', 'Confrontare'), items: pick('prices', ['comparador.html']).concat(pick('countries', ['perfiles.html']), pick('production', ['oferta-demanda.html']), G.prices.items.filter(function (i) { return i.items; })[0].items.filter(function (i) { return i.file === 'relaciones.html'; })) };
     /* 15-oct: el comparador y las relaciones viven en «Comparar»; se quitan de «Buscar precios» para no repetirlos */
     var noCmp = function (i) { return i.file !== 'comparador.html' && i.file !== 'relaciones.html'; };
@@ -722,6 +722,7 @@
     if (opts && opts.skipReload) {
       renderNav(global.DehesaShared.activePage);
       renderFooter();
+      renderToolsStrip();
       var rel = document.getElementById('di-related'); if (rel) rel.parentNode.removeChild(rel); renderRelated(); frAuto();
       if (typeof global.DehesaShared.onLangChange === 'function') global.DehesaShared.onLangChange(code);
       return;
@@ -860,11 +861,26 @@
     ensureSortable();
   }
 
+  /* Franja bajo el título de las cuatro herramientas personales: qué hace cada una, para no confundirlas */
+  var TOOLS = [['mi-mercado.html', L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), L('lo que pasa en tu zona', 'what is happening in your area', 'ce qui se passe dans votre zone', 'cosa succede nella tua zona')],
+    ['mi-explotacion.html', L('Mi explotación', 'My farm', 'Mon exploitation', 'La mia azienda'), L('el margen de varios cultivos, se recuerda', 'margin for several crops, remembered', 'la marge de plusieurs cultures, mémorisée', 'il margine di più colture, memorizzato')],
+    ['calculadora.html', L('Calculadora', 'Calculator', 'Calculateur', 'Calcolatore'), L('una cuenta rápida con impuestos', 'a quick sum with taxes', 'un calcul rapide avec taxes', 'un calcolo rapido con imposte')],
+    ['mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito'), L('avisos cuando un precio se mueve', 'alerts when a price moves', 'alertes quand un prix bouge', 'avvisi quando un prezzo si muove')]];
+  var TOOLS_LEAD = L('Otras herramientas para tu explotación:', 'Other tools for your farm:', 'Autres outils pour votre exploitation :', 'Altri strumenti per la tua azienda:');
+  function renderToolsStrip() {
+    var f = currentFile().replace(/\.html$/, '') + '.html', me = TOOLS.filter(function (x) { return x[0] === f; })[0]; if (!me) return;
+    var h1 = document.querySelector('main h1') || document.querySelector('h1'); if (!h1) return;
+    var el = document.getElementById('di-tools-strip');
+    if (!el) { el = document.createElement('p'); el.id = 'di-tools-strip'; el.className = 'di-tools-strip'; var sub = h1.nextElementSibling && h1.nextElementSibling.tagName === 'P' ? h1.nextElementSibling : h1; sub.parentNode.insertBefore(el, sub.nextSibling); }
+    var l = lang;
+    el.innerHTML = esc(TOOLS_LEAD[l] || TOOLS_LEAD.es) + ' ' + TOOLS.filter(function (x) { return x !== me; }).map(function (x) { return '<a href="' + esc(sitePath(x[0])) + '">' + esc(x[1][l] || x[1].es) + '</a> <span class="di-tools-what">(' + esc(x[2][l] || x[2].es) + ')</span>'; }).join(' · ');
+  }
   function init(activePage) {
     global.DehesaShared.activePage = activePage;
     renderNav(activePage);
     renderContextBar(activePage);
     renderFooter();
+    renderToolsStrip();
     initTableSort();
     frAuto();
     renderRelatedStable();
