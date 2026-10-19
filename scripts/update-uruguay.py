@@ -522,9 +522,105 @@ def forest():
     if res: DEPT['forest'] = {'year': FOREST_YEAR, 'unit': 'ha', 'byDept': res}; log('BOSQUE publicado: %d departamentos, %d ha' % (len(res), sum(v['total'] for v in res.values())))
 
 
+def dbf_rows(f):
+    """Lector minimo de dBase (.dbf) en streaming: devuelve (campos, generador de dicts). f: objeto binario leible."""
+    import struct
+    h = f.read(32); n, hl, rl = struct.unpack('<xxxxIHH', h[:12]); fields = []
+    while True:
+        b0 = f.read(1)
+        if not b0 or b0 == b'\r': break
+        d = b0 + f.read(31)
+        if len(d) < 32: break
+        fields.append((d[:11].split(b'\0')[0].decode('latin-1'), chr(d[11]), d[16]))
+    f.read(max(0, hl - 32 - 32 * len(fields) - 1))   # relleno hasta el inicio de los datos, si lo hay
+    def gen():
+        for _ in range(n):
+            r = f.read(rl)
+            if len(r) < rl: return
+            if r[:1] == b'*': continue
+            o = {}; p = 1
+            for nm, ty, ln in fields:
+                o[nm] = r[p:p + ln]; p += ln
+            yield o
+    return fields, gen()
+
+
+def download_to(u, path, chunk=1 << 22):
+    off = 0; fails = 0
+    with open(path, 'wb') as out:
+        while True:
+            try:
+                h = dict(UA)
+                if off: h['Range'] = 'bytes=%d-' % off
+                with urllib.request.urlopen(urllib.request.Request(u, headers=h), timeout=120) as r:
+                    while True:
+                        b = r.read(chunk)
+                        if not b: return off
+                        out.write(b); off += len(b)
+            except Exception as e:
+                fails += 1
+                if fails > 6: raise RuntimeError('descarga cortada en %d bytes: %s' % (off, e))
+                time.sleep(8 * fails)
+
+
+def probe_dbf(label, f):
+    fields, rows = dbf_rows(f)
+    log('PROBE %s campos: %s' % (label, ', '.join('%s:%s%d' % x for x in fields)))
+    names = {x[0].upper(): x[0] for x in fields}
+    keys = [k for k in names if 'DEP' in k or k.startswith('AREA') or k.startswith('SUP') or 'ESPEC' in k or k in ('CAMBIO', 'CLASE', 'CATEGORIA', 'TIPO')]
+    log('PROBE %s campos candidatos: %s' % (label, keys))
+    agg = {}; n = 0; first = None
+    for r in rows:
+        n += 1
+        if first is None: first = {k: r[k].decode('latin-1', 'replace').strip() for k in r}
+        dk = next((names[k] for k in names if 'DEP' in k), None); ak = next((names[k] for k in names if k.startswith('AREA') or k.startswith('SUP')), None)
+        if dk and ak:
+            try: v = float(r[ak].decode('latin-1').strip() or 0)
+            except ValueError: continue
+            k2 = _norm(r[dk].decode('latin-1', 'replace')); agg[k2] = agg.get(k2, 0.0) + v
+    log('PROBE %s filas=%d primera=%s' % (label, n, json.dumps(first, ensure_ascii=False)[:500]))
+    if agg: log('PROBE %s total por departamento (ha o unidad del campo, solo log): %s' % (label, json.dumps({k: round(v) for k, v in sorted(agg.items(), key=lambda t: -t[1])}, ensure_ascii=False)))
+
+
+def probe_forest2():
+    """Sonda de solo lectura (no publica): tabla de atributos del bosque plantado 2021 (zip con shapefile) y del bosque nativo (RAR)."""
+    if LOCAL: return
+    import shutil, subprocess, tempfile, zipfile
+    tmp = Path(tempfile.mkdtemp())
+    log('PROBE herramientas: ' + ', '.join('%s=%s' % (t, bool(shutil.which(t))) for t in ('7z', '7zz', 'unrar', 'bsdtar', 'unar')))
+    for name, rid in (('mgap-bosques-plantados-forestacion', '72a34aa2-b876-45d6-a531-487262458654'), ('mgap-bosque-nativo', '071b9956-1632-4701-b662-0bbe85aaf2de'), ('mgap-bosque-nativo', '04220c8a-5373-4f95-8453-257e825150c7')):
+        try:
+            pk = package(name); r = next(x for x in pk['resources'] if x['id'] == rid)
+            ext = '.zip' if r['url'].lower().endswith('.zip') else '.rar'; dst = tmp / (rid[:8] + ext)
+            nb = download_to(r['url'], dst); log('PROBE %s | %s | %d bytes' % (name, r.get('name'), nb))
+            if ext == '.zip':
+                with zipfile.ZipFile(dst) as z:
+                    log('PROBE zip contenido: ' + '; '.join('%s(%d)' % (i.filename, i.file_size) for i in z.infolist())[:900])
+                    for i in z.infolist():
+                        if i.filename.lower().endswith('.dbf'):
+                            with z.open(i) as f: probe_dbf(i.filename, f)
+                        if i.filename.lower().endswith('.prj'): log('PROBE prj %s: %s' % (i.filename, z.read(i)[:200].decode('latin-1', 'replace')))
+            else:
+                tool = next((t for t in ('7z', '7zz', 'unrar', 'bsdtar', 'unar') if shutil.which(t)), None)
+                if not tool: log('PROBE sin herramienta para RAR'); continue
+                od = tmp / ('x' + rid[:8]); od.mkdir()
+                cmd = {'7z': ['7z', 'x', '-y', '-o' + str(od), str(dst), '*.dbf', '*.prj', '*.cpg'], '7zz': ['7zz', 'x', '-y', '-o' + str(od), str(dst), '*.dbf', '*.prj', '*.cpg'],
+                       'unrar': ['unrar', 'x', '-y', str(dst), '*.dbf', '*.prj', str(od) + '/'], 'bsdtar': ['bsdtar', '-xf', str(dst), '-C', str(od), '--include=*.dbf', '--include=*.prj'], 'unar': ['unar', '-o', str(od), str(dst)]}[tool]
+                pr = subprocess.run(cmd, capture_output=True, text=True, timeout=1500); log('PROBE %s rc=%d %s' % (tool, pr.returncode, (pr.stdout + pr.stderr)[-300:].replace('\n', ' | ')))
+                for fp in sorted(od.rglob('*')):
+                    if fp.suffix.lower() == '.dbf':
+                        with open(fp, 'rb') as f: probe_dbf(fp.name, f)
+                    elif fp.suffix.lower() == '.prj': log('PROBE prj %s: %s' % (fp.name, fp.read_text(errors='replace')[:200]))
+        except Exception as e: log('PROBE %s %s: error %s' % (name, rid[:8], str(e)[:300]))
+        finally:
+            for q in tmp.glob(rid[:8] + '.*'): q.unlink(missing_ok=True)
+
+
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
+    if (ROOT / 'scripts/uy-probe-only.flag').exists() and not LOCAL:
+        probe_forest2(); (ROOT / 'data/uruguay-log.txt').write_text('\n'.join(LOG) + '\n', encoding='utf-8'); return
     for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, forest, scan):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
