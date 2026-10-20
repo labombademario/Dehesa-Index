@@ -1214,6 +1214,15 @@ sources:
     continue: true
     data: [es-climate-provinces.json]
     message: Lluvia y temperatura mensual por provincia de Espana (NASA POWER)
+  - id: es-jcyl-prices
+    name: Update Castilla y Leon farm-gate prices by province (Junta de Castilla y Leon open data)
+    cron: ['25 7 * * 3']
+    script: scripts/update-jcyl-prices.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [es-jcyl-prices.json]
+    message: Precios en origen por provincia de Castilla y Leon (Junta de Castilla y Leon, datos abiertos)
   - id: eu-regions
     name: Update regional farm data (Eurostat NUTS 2)
     cron: ['40 6 * * 4']

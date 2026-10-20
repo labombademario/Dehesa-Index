@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-20T20:52:42Z",
+ "generatedAt": "2026-10-20T22:41:57Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 144,
-  "sourcesApto": 131,
+  "sources": 145,
+  "sourcesApto": 132,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 307,
-  "datasets_apto": 178,
+  "datasets": 308,
+  "datasets_apto": 179,
   "datasets_condiciones": 119,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -1265,6 +1265,23 @@
    "redistribution": "yes",
    "attribution": "Regione Umbria, Regione Puglia, Regione Toscana (CC BY 4.0); Provincia autonoma di Trento, Provincia autonoma di Bolzano, Regione Lombardia (CC0).",
    "conditions": "Logos y marcas excluidos."
+  },
+  {
+   "id": "jcyl_open_data",
+   "name": "Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos)",
+   "url": "https://datosabiertos.jcyl.es/web/jcyl/set/es/medio-rural-pesca/observatorio-precios-agrarios/1284987653873",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Reconocimiento 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es_ES",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Junta de Castilla y León, Observatorio de precios de los productos agrícolas y ganaderos (datos abiertos), licencia CC BY 4.0. Datos agregados y presentados por dehesaindex.com.",
+   "conditions": "Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robots.txt y NO se usan."
   },
   {
    "id": "kansas_city_fed",
@@ -3335,6 +3352,14 @@
    "verdict": "apto",
    "sources": [
     "miteco_inventario_gei"
+   ]
+  },
+  {
+   "path": "data/es-jcyl-prices.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "jcyl_open_data"
    ]
   },
   {

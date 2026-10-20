@@ -150,6 +150,23 @@ def es_climate_provinces(doc, errs, warns, stats):
     if len(ids) < 40: errs.append("solo %d provincias" % len(ids))
     stats["provinces"] = len(ids)
 
+def es_jcyl_prices(doc, errs, warns, stats):
+    ids = set(); n = 0
+    for p in doc["products"]:
+        if p["id"] in ids: errs.append("producto repetido %s" % p["id"])
+        ids.add(p["id"])
+        for sc, pts in p["series"].items():
+            if sc not in doc["scopes"]: errs.append("%s: ambito %s desconocido" % (p["id"], sc)); continue
+            ks = [x[0] for x in pts]
+            if ks != sorted(set(ks)): errs.append("%s %s: periodos no estrictamente crecientes" % (p["id"], sc))
+            for k, v in pts:
+                if not (1 <= k % 100 <= 12 and 2000 <= k // 100 <= 2100): errs.append("%s %s: periodo %s no valido" % (p["id"], sc, k)); break
+                if not v > 0: errs.append("%s %s %s: precio no positivo" % (p["id"], sc, k)); break
+            n += len(pts)
+    if len(ids) < 30: errs.append("solo %d productos" % len(ids))
+    if doc["lastPeriod"] < "2026-01": errs.append("lastPeriod %s muy antiguo" % doc["lastPeriod"])
+    stats["products"] = len(ids); stats["points"] = n
+
 def climate_history(doc, errs, warns, stats):
     sy, sm = _ym(doc["start"]); n = None; last_nn = -1
     for l in doc["locations"]:

@@ -109,6 +109,13 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   if (fs.existsSync(clf)) { const cj = J(clf), cp = cj.provinces.find(x => x.id === '47'), cm = cp && cp.months[cp.months.length - 1];
     ok(tag + ': ES clima de Valladolid = JSON (' + (cm && cm.period) + ')', !!cm && cl.includes(cm.period) && nrm(cl).includes(nrm(f(cm.precipMm, 0))) && /nasa/i.test(await page.evaluate(() => document.querySelector('[data-mm-body="clim"]').parentNode.innerHTML))); }
   else ok(tag + ': ES clima sin fichero todavia: aviso claro, nada inventado', cl.length > 10 && !/\d\d\d mm/.test(cl));
+
+  { const jc = JSON.parse(fs.readFileSync('data/es-jcyl-prices.json', 'utf8')); await ready('jcyl'); const jt = await sec('jcyl');
+    const pw = jc.products.find(p => p.id === 'TRIGO BLANDO'), last = pw.series['47'][pw.series['47'].length - 1];
+    ok(tag + ': Valladolid (CyL) muestra precios en origen de la Junta con trigo blando = JSON', jt.includes('Trigo blando') && nrm(jt).includes(nrm(f(last[1], 2))) && /Junta de Castilla/.test(jt));
+    await page.goto(BASE + '/mi-mercado.html?c=ES&r=10&p=cereales&k=CE0000', { waitUntil: 'networkidle' });
+    ok(tag + ': Cáceres (fuera de CyL) no muestra el bloque de la Junta', (await page.$$('[data-mm-body="jcyl"]')).length === 0);
+    await page.goto(BASE + '/mi-mercado.html?c=ES&r=47&p=cereales&k=CE0000', { waitUntil: 'networkidle' }); }
   ok(tag + ': ES no inventa seguro ni sequía', (await page.$$('[data-mm-body="ins"], [data-mm-body="dr"]')).length === 0);
   // «TOTAL CEREALES» agrupa productos con precios distintos: la sección de precio pide un cultivo concreto y no muestra ninguna cifra
   await page.waitForFunction(() => { const e = document.querySelector('[data-mm-body="price"]'); return e && !e.querySelector('.di-loading') && e.textContent.trim().length > 20; }, null, { timeout: 15000 }).catch(() => {});

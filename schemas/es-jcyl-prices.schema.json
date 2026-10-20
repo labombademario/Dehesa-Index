@@ -1,0 +1,78 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Castilla y León farm-gate prices by province (Junta de Castilla y León open data)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "lastPeriod",
+  "source",
+  "scopes",
+  "products"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "lastPeriod": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}$"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {}
+  },
+  "note": {
+   "type": "string"
+  },
+  "scopes": {
+   "type": "object"
+  },
+  "products": {
+   "type": "array",
+   "minItems": 10,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "name",
+     "unit",
+     "series"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "minLength": 1
+     },
+     "name": {
+      "type": "string",
+      "minLength": 1
+     },
+     "unit": {
+      "type": "string",
+      "minLength": 1
+     },
+     "unitNote": {
+      "type": "string"
+     },
+     "series": {
+      "type": "object",
+      "properties": {}
+     }
+    }
+   }
+  }
+ }
+}

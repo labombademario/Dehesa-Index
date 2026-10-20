@@ -4475,6 +4475,32 @@
    "short": "MITECO",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Decisión del responsable del sitio (Mario, 12-oct-2026): los datos del MITECO son de uso libre y se usan con confianza alta. Base: reutilización libre de la información del sector público (Ley 37/2007) citando al MITECO."
+  },
+  "jcyl_open_data": {
+   "name": "Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos)",
+   "url": "https://datosabiertos.jcyl.es/web/jcyl/set/es/medio-rural-pesca/observatorio-precios-agrarios/1284987653873",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Reconocimiento 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es_ES",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Junta de Castilla y León, Observatorio de precios de los productos agrícolas y ganaderos (datos abiertos), licencia CC BY 4.0. Datos agregados y presentados por dehesaindex.com.",
+   "additionalRestrictions": "Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robots.txt y NO se usan.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "Los precios los aportan agentes informantes (lonjas, cooperativas, mayoristas, industrias) a la Junta, que los publica agregados bajo la licencia del conjunto.",
+   "verifiedAt": "2026-10-20",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "La ficha del conjunto de datos en datosabiertos.jcyl.es (leída por el sondeo probe-jcyl el 2026-10-20) declara «Licencia: Creative Commons Reconocimiento 4.0» y enlaza creativecommons.org/licenses/by/4.0/deed.es_ES; datos.gob.es lista la misma licencia. Confianza media: la licencia se lee en la ficha, sin carta escrita.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "Junta de Castilla y León",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   }
  },
  "files": {
@@ -6530,6 +6556,12 @@
    "sources": [
     "eurostat"
    ]
+  },
+  "data/es-jcyl-prices.json": {
+   "sources": [
+    "jcyl_open_data"
+   ],
+   "notes": "Precios mensuales en origen por provincia de Castilla y León desde 2015 (update-jcyl-prices.py); CSV del Observatorio de precios, CC BY 4.0."
   }
  },
  "derived": [

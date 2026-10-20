@@ -1519,6 +1519,12 @@
    [
     "es_climate_provinces"
    ]
+  ],
+  "es-jcyl-prices.json": [
+   "es-jcyl-prices",
+   [
+    "es_jcyl_prices"
+   ]
   ]
  },
  "globs": {

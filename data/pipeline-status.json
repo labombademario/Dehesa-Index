@@ -1,28 +1,28 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-20T21:39:00Z",
+ "generatedAt": "2026-10-20T22:44:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 222,
+  "ok": 221,
   "late": 1,
-  "error": 3,
+  "error": 4,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "196c8a01",
+   "sha": "cf858756",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/879831fd-b3a7-44f4-a9ae-4fc110130362",
-   "completedAt": "2026-10-20T21:21:56Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/2027c84b-e72c-4a7f-b78c-0911fee276e6",
+   "completedAt": "2026-10-20T22:19:41Z"
   },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-20T18:48:29.067262+00:00",
-  "repoGeneratedAt": "2026-10-20T18:48:29.067262+00:00",
-  "checkedAt": "2026-10-20T21:39:00Z"
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-20T21:43:43.286071+00:00",
+  "checkedAt": "2026-10-20T22:44:00Z"
  },
  "pipelines": [
   {
@@ -1359,15 +1359,15 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-20T11:09:48Z",
-    "durationSec": 50,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39412990777"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-20T22:09:00Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39505944826"
    },
    "recent": {
-    "runs": 4,
-    "success": 2,
-    "failed": 2
+    "runs": 7,
+    "success": 4,
+    "failed": 3
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -1601,6 +1601,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-es-jcyl-prices.yml",
+   "name": "Update Castilla y Leon farm-gate prices by province (Junta de Castilla y Leon open data)",
+   "crons": [
+    "25 7 * * 3"
+   ],
+   "nextRun": "2026-10-21T07:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-es-prices.yml",
@@ -3324,14 +3337,14 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-20T21:47:00Z",
+   "nextRun": "2026-10-21T00:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-20T19:17:40Z",
-    "durationSec": 99,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39482211522"
+    "startedAt": "2026-10-20T22:10:30Z",
+    "durationSec": 247,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39506135968"
    },
    "recent": {
     "runs": 10,
@@ -3351,35 +3364,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-20T18:48:31Z"
+     "lastChange": "2026-10-20T21:43:44Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-20T18:48:31Z"
+     "lastChange": "2026-10-20T21:43:44Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-20T18:48:31Z"
+     "lastChange": "2026-10-20T21:43:44Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-20T18:48:31Z"
+     "lastChange": "2026-10-20T21:43:44Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-20T18:48:31Z"
+     "lastChange": "2026-10-20T21:43:44Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-20T18:43:10Z",
-    "durationSec": 325,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39477197528"
+    "startedAt": "2026-10-20T21:38:46Z",
+    "durationSec": 301,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39502034588"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -3585,15 +3598,15 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-20T18:45:42Z"
+     "lastChange": "2026-10-20T21:41:31Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-20T20:31:00Z"
+     "lastChange": "2026-10-20T21:41:31Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-20T18:46:35Z"
+     "lastChange": "2026-10-20T21:41:31Z"
     },
     {
      "path": "data/us-weekly-stats.json",
@@ -3717,18 +3730,18 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-20T18:42:11Z",
-    "durationSec": 271,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39477057247"
+    "startedAt": "2026-10-20T22:07:08Z",
+    "durationSec": 349,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39501961007"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 6,
-    "failed": 3
+    "failed": 4
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 3.0
   },
   {
@@ -4945,14 +4958,14 @@
    "crons": [
     "10 22 * * 1-5"
    ],
-   "nextRun": "2026-10-20T22:10:00Z",
+   "nextRun": "2026-10-21T22:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-19T22:35:35Z",
-    "durationSec": 246,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39336036723"
+    "startedAt": "2026-10-20T22:35:10Z",
+    "durationSec": 181,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39509191074"
    },
    "recent": {
     "runs": 10,
@@ -4960,7 +4973,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-nass-extra.yml",
@@ -5106,22 +5119,22 @@
    "crons": [
     "45 21 * * 1-5"
    ],
-   "nextRun": "2026-10-20T21:45:00Z",
+   "nextRun": "2026-10-21T21:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-19T22:09:36Z",
-    "durationSec": 25,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39332936586"
+    "startedAt": "2026-10-20T22:10:32Z",
+    "durationSec": 23,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39506140123"
    },
    "recent": {
-    "runs": 7,
-    "success": 6,
+    "runs": 8,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-snotel.yml",

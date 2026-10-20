@@ -393,6 +393,14 @@
   "data/app/v1/sec/insumos.json": {
    "class": "DERIVED",
    "note": "Seccion Insumos de la app (build-app-sections.py): monitor de insumos con el desglose por pais (UE-27, UE, Banco Mundial). La app la baja solo al abrir esa seccion; la web no la descarga."
+  },
+  "data/eu-crops-map.json": {
+   "class": "RUNTIME",
+   "note": "Produccion de cultivos por pais de Eurostat (apro_cpsh1) para «Quien produce que»; la descarga produccion-mundial.js una vez cuando el producto es de Eurostat.",
+   "via": {
+    "file": "js/produccion-mundial.js",
+    "pattern": "data/eu-crops-map.json"
+   }
   }
  },
  "prefixes": {

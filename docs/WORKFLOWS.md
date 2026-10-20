@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-235 workflows (195 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+236 workflows (196 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -112,6 +112,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-es-health.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-es-rasve.py | spain-health/focos.json | finish, validate-files |
 | update-es-income.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-cea.py | spain-income/cea.json | finish, validate-files |
 | update-es-inputs.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-inputs.py | spain-inputs/fertilizers.json, spain-inputs/pesticides.json | finish, validate-files |
+| update-es-jcyl-prices.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-jcyl-prices.py | es-jcyl-prices.json | finish, validate-files |
 | update-es-prices.yml | generado | semanal (2,4) | detect-revisions.py, gen-workflows.py, update-es-pmn.py | spain-prices/obs.json, spain-prices/pmn.json | finish, validate-files |
 
 ## EU

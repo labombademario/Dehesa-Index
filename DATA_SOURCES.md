@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 145 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31803 series en el catalogo unificado.
+Resumen: 146 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31803 series en el catalogo unificado.
 
-## VERIFIED (145)
+## VERIFIED (146)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -87,6 +87,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ispra` | ISPRA — Stato di severità idrica a scala nazionale | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `istat` | Italy — Istituto Nazionale di Statistica (ISTAT) | IT | CC-BY-4.0 | si/si | si | 0 | Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen. |
 | `it_regioni_dop` | Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana) | IT | CC-BY-4.0/CC0 | si/si | si | 0 | Logos y marcas excluidos. |
+| `jcyl_open_data` | Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robo… |
 | `knmi_daggegevens` | KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación) | NL | CC-BY-4.0 | si/si | si | 0 | Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI. |
 | `ksh_hu` | Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables | HU | CC-BY-4.0 | si/si | si | 196 | La licencia cubre el contenido publicado en el sitio (tablas, graficos). Quedan fuera los ficheros consultados a peticion a las bases intern… |
 | `magyarkozlony_hu` | Magyar Közlöny / Nemzeti Jogszabálytár — 15-21/2024. (IV. 9.) AM rendeletek | HU | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Magyar Közlöny. La exclusión se leyó en la versión de 2015 de la ley (PDF de la ofic… |

@@ -44,7 +44,7 @@
       no_us3: 'Seguro: solo el total del estado (todos los cultivos juntos), no por cultivo y estado.',
       no_us4: 'Sequía: porcentaje del estado, no de tu condado.',
       no_us5: 'Costes (fertilizante, diésel, pienso) y clima: solo cifras nacionales o mundiales, no por estado.',
-      no_es1: 'Precios de lonjas provinciales independientes: no los incorporamos. Sí mostramos, cuando existen, los mercados identificados por provincia que publica la Comisión Europea (arriba); el resto de precios que seguimos son nacionales, europeos o mundiales.',
+      no_es1: 'Precios de lonjas provinciales independientes: no los incorporamos. Sí mostramos, cuando existen, los mercados identificados por provincia que publica la Comisión Europea (arriba), y en Castilla y León los precios en origen por provincia de la Junta; el resto de precios que seguimos son nacionales, europeos o mundiales.',
       no_es2: 'Seguro agrario (Agroseguro): solo cifras nacionales y pendientes de contraste; no por provincia.',
       no_es3: 'Sequía por provincia: no hay una cifra oficial por provincia; solo la sequía por cuenca hidrográfica, en la página de sequía.',
       no_es5: 'Campaña 2025: solo los grupos que el MAPA ya ha publicado (hortalizas, cítricos, frutales, olivar, viñedo y otros leñosos); el resto está en la campaña 2024.',
@@ -82,7 +82,7 @@
       no_us3: 'Insurance: only the state total (all crops together), not by crop and state.',
       no_us4: 'Drought: share of the state, not of your county.',
       no_us5: 'Costs (fertiliser, diesel, feed) and weather: national or world figures only, not by state.',
-      no_es1: 'Prices from independent provincial auction halls: not included. Where they exist we do show the province-level markets the European Commission publishes (above); the other prices we follow are national, European or world.',
+      no_es1: 'Prices from independent provincial auction halls: not included. Where they exist we do show the province-level markets the European Commission publishes (above), and for Castilla y León the Junta’s farm-gate prices by province; the other prices we follow are national, European or world.',
       no_es2: 'Crop insurance (Agroseguro): national figures only, still pending verification; not by province.',
       no_es3: 'Drought by province: there is no official figure by province; only drought by river basin, on the drought page.',
       no_es5: 'Campaign 2025: only the groups MAPA has already published (vegetables, citrus, fruit trees, olive groves, vineyards and other woody crops); the rest is campaign 2024.',
@@ -120,7 +120,7 @@
       no_us3: 'Assurance : seulement le total de l\'État (toutes cultures réunies), pas par culture et par État.',
       no_us4: 'Sécheresse : part de l\'État, pas de votre comté.',
       no_us5: 'Coûts (engrais, diesel, aliments) et météo : chiffres nationaux ou mondiaux seulement, pas par État.',
-      no_es1: 'Prix de lonjas provinciales indépendantes : non inclus. Quand ils existent, nous montrons les marchés par province publiés par la Commission européenne (ci-dessus) ; les autres prix suivis sont nationaux, européens ou mondiaux.',
+      no_es1: 'Prix de lonjas provinciales indépendantes : non inclus. Quand ils existent, nous montrons les marchés par province publiés par la Commission européenne (ci-dessus) et, pour la Castille-et-León, les prix à la production par province de la Junta ; les autres prix suivis sont nationaux, européens ou mondiaux.',
       no_es2: 'Assurance agricole (Agroseguro) : chiffres nationaux seulement, encore à vérifier ; pas par province.',
       no_es3: 'Sécheresse par province : il n’existe pas de chiffre officiel par province ; seulement la sécheresse par bassin hydrographique, sur la page sécheresse.',
       no_es5: 'Campagne 2025 : seulement les groupes déjà publiés par le MAPA (légumes, agrumes, arbres fruitiers, oliveraies, vignobles et autres ligneux) ; le reste est en campagne 2024.',
@@ -158,7 +158,7 @@
       no_us3: 'Assicurazione: solo il totale dello Stato (tutte le colture insieme), non per coltura e Stato.',
       no_us4: 'Siccità: quota dello Stato, non della tua contea.',
       no_us5: 'Costi (fertilizzanti, gasolio, mangimi) e meteo: solo cifre nazionali o mondiali, non per Stato.',
-      no_es1: 'Prezzi delle borse merci provinciali indipendenti: non inclusi. Dove esistono mostriamo i mercati per provincia pubblicati dalla Commissione europea (sopra); gli altri prezzi che seguiamo sono nazionali, europei o mondiali.',
+      no_es1: 'Prezzi delle borse merci provinciali indipendenti: non inclusi. Dove esistono mostriamo i mercati per provincia pubblicati dalla Commissione europea (sopra) e, per Castilla y León, i prezzi alla produzione per provincia della Junta; gli altri prezzi che seguiamo sono nazionali, europei o mondiali.',
       no_es2: 'Assicurazione agraria (Agroseguro): solo cifre nazionali, ancora da verificare; non per provincia.',
       no_es3: 'Siccità per provincia: non esiste un dato ufficiale per provincia; solo la siccità per bacino idrografico, nella pagina siccità.',
       no_es5: 'Campagna 2025: solo i gruppi già pubblicati dal MAPA (ortaggi, agrumi, frutta da albero, oliveti, vigneti e altre legnose); il resto è nella campagna 2024.',
@@ -706,6 +706,38 @@
     }
     return out;
   }
+  /* ---------- Castilla y León: precios en origen por provincia (Junta de Castilla y León, datos abiertos, CC BY 4.0; data/es-jcyl-prices.json) ---------- */
+  var CYL = { '05': 1, '09': 1, '24': 1, '34': 1, '37': 1, '40': 1, '42': 1, '47': 1, '49': 1 };
+  var TJC = {
+    es: { s: 'Precios en origen en tu provincia (Junta de Castilla y León)', prod: 'Producto', last: 'Último dato', price: 'Precio', mom: 'Frente al mes anterior', yoy: 'Frente a hace un año', no: 'La Junta de Castilla y León no publica ahora precios para esta provincia.', note: 'Precio mensual en origen que publica la Junta de Castilla y León para la provincia (sin transporte, subvenciones ni impuestos indirectos), con la metodología del MAPA. Es una referencia provincial agregada: no es el precio de una lonja concreta ni el que cobras tú. Solo salen los productos con un dato de los últimos 12 meses; los cambios se calculan solo si el mes comparado existe.' },
+    en: { s: 'Farm-gate prices in your province (Junta de Castilla y León)', prod: 'Product', last: 'Latest', price: 'Price', mom: 'Vs. previous month', yoy: 'Vs. a year ago', no: 'The Junta de Castilla y León does not currently publish prices for this province.', note: 'Monthly farm-gate price published by the Junta de Castilla y León for the province (excluding transport, subsidies and indirect taxes), following the Spanish Ministry’s methodology. It is an aggregated provincial reference: not the price of a specific auction hall and not what you receive. Only products with a data point in the last 12 months are shown; changes are computed only if the compared month exists. Product names are in Spanish, as published.' },
+    fr: { s: 'Prix à la production dans votre province (Junta de Castilla y León)', prod: 'Produit', last: 'Dernier', price: 'Prix', mom: 'Vs mois précédent', yoy: 'Vs il y a un an', no: 'La Junta de Castilla y León ne publie pas actuellement de prix pour cette province.', note: 'Prix mensuel à la production publié par la Junta de Castilla y León pour la province (hors transport, subventions et impôts indirects), selon la méthodologie du ministère espagnol. C’est une référence provinciale agrégée : pas le prix d’une lonja précise ni celui que vous touchez. Seuls les produits avec une donnée sur les 12 derniers mois sont affichés ; les variations ne sont calculées que si le mois comparé existe. Noms de produits en espagnol, tels que publiés.' },
+    it: { s: 'Prezzi alla produzione nella tua provincia (Junta de Castilla y León)', prod: 'Prodotto', last: 'Ultimo', price: 'Prezzo', mom: 'Vs mese precedente', yoy: 'Vs un anno fa', no: 'La Junta de Castilla y León non pubblica al momento prezzi per questa provincia.', note: 'Prezzo mensile alla produzione pubblicato dalla Junta de Castilla y León per la provincia (esclusi trasporto, sussidi e imposte indirette), secondo la metodologia del ministero spagnolo. È un riferimento provinciale aggregato: non il prezzo di una lonja specifica né quello che incassi. Compaiono solo i prodotti con un dato negli ultimi 12 mesi; le variazioni sono calcolate solo se il mese confrontato esiste. Nomi dei prodotti in spagnolo, come pubblicati.' }
+  };
+  function jcNice(n) { var x = String(n).toLowerCase(); x = x.charAt(0).toUpperCase() + x.slice(1); return x.replace(/\bigp\b/i, 'IGP').replace(/^m\.g\./i, 'M.G.').replace(/\bc\.c\./i, 'C.C.'); }
+  function jcPrev(k, back) { var y = Math.floor(k / 100), m = k % 100 - back; while (m < 1) { m += 12; y--; } return y * 100 + m; }
+  function jcMonths(k) { return Math.floor(k / 100) * 12 + k % 100; }
+  function spainJcyl(tok) {
+    var t = TJC[lang()] || TJC.es;
+    return get('data/es-jcyl-prices.json').then(function (d) {
+      if (tok !== TOK) return;
+      var lastK = +String(d.lastPeriod).replace('-', ''), rows = [];
+      (d.products || []).forEach(function (p) {
+        var S = p.series && p.series[ST.r]; if (!S || !S.length) return;
+        var l = S[S.length - 1]; if (jcMonths(lastK) - jcMonths(l[0]) > 12) return;
+        var m = {}; S.forEach(function (x) { m[x[0]] = x[1]; });
+        var pm = m[jcPrev(l[0], 1)], py = m[jcPrev(l[0], 12)];
+        rows.push({ n: jcNice(p.name), u: p.unit, k: l[0], v: l[1], mom: pm ? 100 * (l[1] / pm - 1) : null, yoy: py ? 100 * (l[1] / py - 1) : null });
+      });
+      if (!rows.length) { putSec(tok, 'jcyl', note(t.no)); return; }
+      rows.sort(function (a, b) { return a.n.localeCompare(b.n, lang()); });
+      var sg = function (v) { return v == null ? '—' : (v > 0 ? '+' : '') + nf(v, 1) + ' %'; }, per = function (k) { return Math.floor(k / 100) + '-' + (k % 100 < 10 ? '0' : '') + (k % 100); };
+      putSec(tok, 'jcyl', '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.prod) + '</th><th scope="col">' + esc(t.last) + '</th><th scope="col" class="r">' + esc(t.price) + '</th><th scope="col" class="r">' + esc(t.mom) + '</th><th scope="col" class="r">' + esc(t.yoy) + '</th></tr></thead><tbody>'
+        + rows.map(function (r) { return '<tr><td>' + esc(r.n) + '</td><td>' + esc(per(r.k)) + '</td><td class="r">' + nf(r.v, 2) + ' ' + esc(r.u) + '</td><td class="r">' + sg(r.mom) + '</td><td class="r">' + sg(r.yoy) + '</td></tr>'; }).join('') + '</tbody></table></div>'
+        + note(t.note) + cite('jcyl_open_data', d.lastPeriod) + citeCalc(['jcyl_open_data'], 'monthly and yearly change (computed from the published monthly prices)'));
+    }).catch(function () { if (tok === TOK) putSec(tok, 'jcyl', note(t.no)); });
+  }
+
   function spainClimate(tok) {
     var t = TCL[lang()] || TCL.es;
     return get('data/es-climate-provinces.json').then(function (d) {
@@ -1106,7 +1138,7 @@
       h += sect('price', epr().sP + ' · ' + pick4(EU_CROPN, ST.p)) + sect('crop', eut().sCrop) + sect('dr', epr().sDr);
     } else if (ST.c === 'UK') {
       h += sect('crop', te().sCropUK);
-    } else h += sect('price', tesp().title) + sect('crop', t.sCrop) + (ST.r ? sect('live', (TLV[lang()] || TLV.es).s) + sect('clim', (TCL[lang()] || TCL.es).s) : '');
+    } else h += sect('price', tesp().title) + (CYL[ST.r] ? sect('jcyl', (TJC[lang()] || TJC.es).s) : '') + sect('crop', t.sCrop) + (ST.r ? sect('live', (TLV[lang()] || TLV.es).s) + sect('clim', (TCL[lang()] || TCL.es).s) : '');
     if (!COMPACT) h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
     root.innerHTML = h;
     var run = function (id, fn) { Promise.resolve().then(fn).catch(function () { failSec(tok, id); }); };
@@ -1129,7 +1161,7 @@
       run('crop', function () { return ukCrop(tok); });
       if (!COMPACT) run('missing', function () { return missingEU().then(function (x) { putSec(tok, 'missing', x); }); });
     } else {
-      run('price', function () { return spainPrice(tok).then(function (x) { if (x != null) putSec(tok, 'price', x); }); }); run('crop', function () { return spainCrop(tok); }); if (ST.r) { run('live', function () { return spainLive(tok); }); run('clim', function () { return spainClimate(tok); }); }
+      run('price', function () { return spainPrice(tok).then(function (x) { if (x != null) putSec(tok, 'price', x); }); }); run('crop', function () { return spainCrop(tok); }); if (CYL[ST.r]) run('jcyl', function () { return spainJcyl(tok); }); if (ST.r) { run('live', function () { return spainLive(tok); }); run('clim', function () { return spainClimate(tok); }); }
       if (!COMPACT) run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
     }
   }
