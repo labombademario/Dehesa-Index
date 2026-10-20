@@ -74,6 +74,7 @@ HAY YIELD NATIONAL filas 96 usadas 33
 HAY YIELD STATE filas 2831 usadas 1482
 HAY AREA HARVESTED NATIONAL filas 139 usadas 33
 HAY AREA HARVESTED STATE filas 5177 usadas 1559
+ERROR {"commodity_desc":"HAY","statisticcat_desc":"AREA PLANTED","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
 HAY AREA PLANTED NATIONAL filas 0 usadas 0
 HAY AREA PLANTED STATE filas 0 usadas 0
 HAY PRODUCTION NATIONAL filas 126 usadas 63
