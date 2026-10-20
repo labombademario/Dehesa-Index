@@ -324,6 +324,55 @@ def nit_PT():
         [chart(L('Nitrato en aguas subterráneas (media nacional)', 'Nitrate in groundwater (national mean)', 'Nitrate dans les eaux souterraines (moyenne nationale)', 'Nitrato nelle acque sotterranee (media nazionale)'), 'mg/l', [(same('mg/l'), [[str(q[0]), q[1]] for q in G])]),
          chart(L('Balance bruto de nitrógeno', 'Gross nitrogen balance', 'Bilan brut d’azote', 'Bilancio lordo dell’azoto'), 'kg N/ha', [(same('kg N/ha'), [[str(q[0]), q[1]] for q in B])])], [],
         L('Solo medias nacionales de Eurostat: Portugal no tiene datos de nitratos por región con licencia abierta. 50 mg/l es el límite de la Directiva de Nitratos.', 'National means from Eurostat only: Portugal has no regional nitrate data under an open licence. 50 mg/l is the Nitrates Directive limit.', 'Moyennes nationales d’Eurostat seulement : le Portugal n’a pas de données régionales sur les nitrates sous licence ouverte. 50 mg/l est la limite de la directive.', 'Solo medie nazionali di Eurostat: il Portogallo non ha dati regionali sui nitrati con licenza aperta. 50 mg/l è il limite della direttiva.'), src(d, 'Eurostat'))
+
+# ---------------- Unión Europea (ficha de la UE de la web: economía agraria, aranceles en vigor, sequía; 20-oct-2026) ----------------
+def eu_economy():
+    d = J('eu-farm-economics')
+    if not d: return None
+    g = d['geos']['EU27_2020']; Y = d['years']; n = max(i for i, v in enumerate(g['output']) if v is not None)
+    bn = lambda k, i=n: None if g[k][i] is None else g[k][i] / 1000
+    yoy = lambda k: None if g[k][n] is None or not g[k][n - 1] else (g[k][n] / g[k][n - 1] - 1) * 100
+    yr = str(Y[n])
+    B = lambda a, b, c, e: L(a, b, c, e)
+    stats = [
+        stat(B('Producción agraria', 'Agricultural output', 'Production agricole', 'Produzione agricola'), bn('output'), 'mm €', 1),
+        stat(B('Variación de la producción frente al año anterior', 'Output change on the previous year', 'Variation de la production sur un an', 'Variazione della produzione sull’anno precedente'), yoy('output'), '%', 1),
+        stat(B('Renta empresarial', 'Entrepreneurial income', 'Revenu entrepreneurial', 'Reddito imprenditoriale'), bn('entrep'), 'mm €', 1),
+        stat(B('Variación de la renta frente al año anterior', 'Income change on the previous year', 'Variation du revenu sur un an', 'Variazione del reddito sull’anno precedente'), yoy('entrep'), '%', 1),
+        stat(B('Piensos', 'Feed', 'Aliments pour animaux', 'Mangimi'), bn('feed'), 'mm €', 1),
+        stat(B('Fertilizantes', 'Fertilisers', 'Engrais', 'Fertilizzanti'), bn('fert'), 'mm €', 1),
+        stat(B('Energía', 'Energy', 'Énergie', 'Energia'), bn('energy'), 'mm €', 1),
+    ]
+    pts = lambda k: [[str(Y[i]), g[k][i] / 1000] for i in range(len(Y)) if g[k][i] is not None]
+    charts = [chart(B('Producción y renta empresarial (miles de millones de €)', 'Output and entrepreneurial income (€ billion)', 'Production et revenu entrepreneurial (milliards d’€)', 'Produzione e reddito imprenditoriale (miliardi di €)'), 'mm €',
+                    [(B('Producción', 'Output', 'Production', 'Produzione'), pts('output')), (B('Renta empresarial', 'Entrepreneurial income', 'Revenu entrepreneurial', 'Reddito imprenditoriale'), pts('entrep'))])]
+    return block('economy', B('Economía agraria de la UE', 'EU farm economics', 'Économie agricole de l’UE', 'Economia agricola dell’UE'), yr, stats, charts, [],
+        B('Cuentas económicas de la agricultura, miles de millones de € a precios corrientes. Los porcentajes los calcula Dehesa Index; Eurostat no es responsable de ese cálculo.', 'Economic accounts for agriculture, € billion at current prices. Percentages are calculated by Dehesa Index; Eurostat is not responsible for that calculation.', 'Comptes économiques de l’agriculture, milliards d’€ aux prix courants. Les pourcentages sont calculés par Dehesa Index ; Eurostat n’en est pas responsable.', 'Conti economici dell’agricoltura, miliardi di € a prezzi correnti. Le percentuali sono calcolate da Dehesa Index; Eurostat non ne è responsabile.'),
+        src(d, 'Eurostat (aact_eaa01, aact_eaa06, aact_ali01)'))
+
+def eu_tariffs():
+    d = J('eu-tariff-measures')
+    if not d or not d.get('items'): return None
+    act = [m for m in d['items'] if m.get('status') == 'active']
+    if not act: return None
+    note = {l: '\n\n'.join('• ' + (m['title'].get(l) or m['title']['es']) + (' (' + m['from'] + ')' if m.get('from') else '') + '\n' + (m.get('text', {}).get(l) or m.get('text', {}).get('es') or '') for m in act) for l in LG}
+    return {'id': 'tariffs', 'title': L('Aranceles en vigor', 'Tariff measures in force', 'Mesures tarifaires en vigueur', 'Misure tariffarie in vigore'), 'asOf': d.get('asOf'), 'stats': [], 'charts': [], 'bars': [], 'note': note,
+            'source': {'name': 'Dehesa Index (capa manual con fecha)', 'url': 'https://dehesaindex.com/aranceles.html'}}
+
+EUN = {"GB": ["Reino Unido", "United Kingdom", "Royaume-Uni", "Regno Unito"], "UA": ["Ucrania", "Ukraine", "Ukraine", "Ucraina"], "TR": ["Turquía", "Türkiye", "Turquie", "Turchia"], "CH": ["Suiza", "Switzerland", "Suisse", "Svizzera"], "SE": ["Suecia", "Sweden", "Suède", "Svezia"], "ES": ["España", "Spain", "Espagne", "Spagna"], "SK": ["Eslovaquia", "Slovakia", "Slovaquie", "Slovacchia"], "SI": ["Eslovenia", "Slovenia", "Slovénie", "Slovenia"], "RS": ["Serbia", "Serbia", "Serbie", "Serbia"], "RO": ["Rumanía", "Romania", "Roumanie", "Romania"], "PT": ["Portugal", "Portugal", "Portugal", "Portogallo"], "PL": ["Polonia", "Poland", "Pologne", "Polonia"], "NO": ["Noruega", "Norway", "Norvège", "Norvegia"], "NL": ["Países Bajos", "Netherlands", "Pays-Bas", "Paesi Bassi"], "ME": ["Montenegro", "Montenegro", "Monténégro", "Montenegro"], "MD": ["Moldavia", "Moldova", "Moldavie", "Moldavia"], "MT": ["Malta", "Malta", "Malte", "Malta"], "MK": ["Macedonia del Norte", "North Macedonia", "Macédoine du Nord", "Macedonia del Nord"], "LU": ["Luxemburgo", "Luxembourg", "Luxembourg", "Lussemburgo"], "LT": ["Lituania", "Lithuania", "Lituanie", "Lituania"], "LV": ["Letonia", "Latvia", "Lettonie", "Lettonia"], "XK": ["Kosovo", "Kosovo", "Kosovo", "Kosovo"], "IT": ["Italia", "Italy", "Italie", "Italia"], "IE": ["Irlanda", "Ireland", "Irlande", "Irlanda"], "IS": ["Islandia", "Iceland", "Islande", "Islanda"], "HU": ["Hungría", "Hungary", "Hongrie", "Ungheria"], "GR": ["Grecia", "Greece", "Grèce", "Grecia"], "DE": ["Alemania", "Germany", "Allemagne", "Germania"], "FR": ["Francia", "France", "France", "Francia"], "FI": ["Finlandia", "Finland", "Finlande", "Finlandia"], "EE": ["Estonia", "Estonia", "Estonie", "Estonia"], "DK": ["Dinamarca", "Denmark", "Danemark", "Danimarca"], "CZ": ["Chequia", "Czechia", "Tchéquie", "Cechia"], "CY": ["Chipre", "Cyprus", "Chypre", "Cipro"], "HR": ["Croacia", "Croatia", "Croatie", "Croazia"], "BG": ["Bulgaria", "Bulgaria", "Bulgarie", "Bulgaria"], "BA": ["Bosnia y Herzegovina", "Bosnia & Herzegovina", "Bosnie-Herzégovine", "Bosnia ed Erzegovina"], "BE": ["Bélgica", "Belgium", "Belgique", "Belgio"], "BY": ["Bielorrusia", "Belarus", "Biélorussie", "Bielorussia"], "AT": ["Austria", "Austria", "Autriche", "Austria"], "AL": ["Albania", "Albania", "Albanie", "Albania"]}  # nombre de país en es, en, fr, it (Intl.DisplayNames)
+EU27C = {'AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','EL','HR','HU','IE','IT','LT','LU','LV','MT','NL','PL','PT','RO','SE','SK','SI'}
+def eu_drought():
+    d = J('eu-drought')
+    if not d: return None
+    P = d['periods']; C = d['countries']; n = len(P) - 1
+    wa = lambda v: v[1] + v[2]
+    eu = C['EU27']
+    stats = [stat(L('Superficie de la UE en aviso o alerta, {d}', 'EU area under warning or alert, {d}', 'Surface de l’UE en avertissement ou alerte, {d}', 'Superficie UE in allerta o allarme, {d}'), wa(eu['v'][n]), '%', 1, sub={'d': P[n]})]
+    charts = [chart(L('Superficie de la UE en aviso o alerta (cada 10 días)', 'EU area under warning or alert (every 10 days)', 'Surface de l’UE en avertissement ou alerte (tous les 10 jours)', 'Superficie UE in allerta o allarme (ogni 10 giorni)'), '%', [(same('%'), [[P[i], wa(eu['v'][i])] for i in range(len(P))])])]
+    items = sorted([(c, wa(v['v'][n])) for c, v in C.items() if c in EU27C and v['v'][n]], key=lambda z: -z[1])
+    return block('drought', T_DRY, P[n], stats, charts, [bars(L('Superficie en aviso o alerta por país', 'Area under warning or alert by country', 'Surface en avertissement ou alerte par pays', 'Superficie in allerta o allarme per paese'), '%', 0, [(L(*EUN[c]) if c in EUN else same(C[c]['name']), v, None) for c, v in items])],
+        L('Indicador combinado de sequía del Observatorio Europeo de la Sequía: aviso = falta humedad en el suelo; alerta = además la vegetación sufre. Es superficie total del país, no solo tierra cultivada.', 'European Drought Observatory combined drought indicator: warning = soil moisture deficit; alert = vegetation also stressed. It is the whole country area, not only farmland.', 'Indicateur combiné de sécheresse de l’Observatoire européen de la sécheresse : avertissement = manque d’humidité du sol ; alerte = la végétation souffre aussi. Il s’agit de la surface totale du pays, pas seulement des terres cultivées.', 'Indicatore combinato di siccità dell’Osservatorio europeo della siccità: allerta = carenza di umidità del suolo; allarme = anche la vegetazione soffre. È la superficie totale del paese, non solo i terreni coltivati.'), src(d, 'European Drought Observatory (EDO), JRC'))
+
 def missing(id_, title):
     return {'id': id_, 'title': title, 'missing': True, 'note': L('No hay datos abiertos de este tema para este país en Dehesa Index.', 'Dehesa Index has no open data on this topic for this country.', 'Dehesa Index n’a pas de données ouvertes sur ce sujet pour ce pays.', 'Dehesa Index non ha dati aperti su questo tema per questo paese.')}
 
@@ -350,5 +399,12 @@ def main():
         (OUT / (cc + '.json')).write_text(body, encoding='utf-8')
         idx[cc] = {'hash': hashlib.sha1(json.dumps(blocks, sort_keys=True).encode()).hexdigest()[:12], 'blocks': [b['id'] for b in blocks if not b.get('missing')]}
         print(cc, len(body) // 1024, 'KB', [b['id'] + ('-' if b.get('missing') else '') for b in blocks])
+    # Unión Europea: solo los bloques que tienen datos agregados de la UE (economía agraria, aranceles, sequía)
+    blocks = [b for b in (eu_economy(), eu_tariffs(), eu_drought()) if b]
+    if blocks:
+        doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'country': 'EU', 'blocks': blocks}
+        body = json.dumps(doc, ensure_ascii=False, separators=(',', ':')); (OUT / 'EU.json').write_text(body, encoding='utf-8')
+        idx['EU'] = {'hash': hashlib.sha1(json.dumps(blocks, sort_keys=True).encode()).hexdigest()[:12], 'blocks': [b['id'] for b in blocks]}
+        print('EU', len(body) // 1024, 'KB', [b['id'] for b in blocks])
     (OUT / 'index.json').write_text(json.dumps({'schemaVersion': 1, 'countries': idx}, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 if __name__ == '__main__': main()
