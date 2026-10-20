@@ -152,6 +152,7 @@
   function links() {
     var tt = t(); return '<p class="di-movers-hint" style="margin:14px 0 0">' + esc(tt.rel) + ' ' + tt.relL.map(function (r) { return '<a href="' + esc(r[1]) + '">' + esc(r[0]) + '</a>'; }).join(' · ') + '</p>';
   }
+  var FIRST = false;
   function open() { var o = {}; var ds = document.querySelectorAll('#dh-body details'); for (var i = 0; i < ds.length; i++) o[ds[i].id] = ds[i].open; return o; }
   function render() {
     var tt = t(), body = document.getElementById('dh-body'); if (!body) return;
@@ -160,8 +161,10 @@
     if (!DOC) { body.innerHTML = '<p class="di-movers-hint">' + esc(tt.loading) + '</p>'; return; }
     var was = open();
     body.innerHTML = sec('dh-pigs', tt.pigH, tt.pigS, pigs()) + sec('dh-past', tt.pastH, tt.pastS, pasture()) + sec('dh-cork', tt.corkH, tt.corkS, cork()) + sec('dh-st', tt.stH, tt.stS, status()) + links();
+    if (!FIRST) { FIRST = true; was = { 'dh-pigs': true }; }
     for (var k in was) if (was[k]) { var d = document.getElementById(k); if (d) d.open = true; }
   }
+  if (S && S.init) S.init('informacion');
   if (S) { var prev = S.onLangChange; S.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); }; }
   render();
   fetch('data/dehesa.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { DOC = d; render(); }).catch(function () { ERR = true; render(); });
