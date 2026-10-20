@@ -9328,5 +9328,1847 @@
   "es": "Previsión de producción indígena bruta (porcino) (Miles de cabezas, Eurostat)",
   "fr": "Prévision de production indigène brute (porcins) (Milliers de têtes, Eurostat)",
   "it": "Previsione di produzione indigena lorda (suini) (Migliaia di capi, Eurostat)"
+ },
+ "Ag land, cropland: asset value": {
+  "en": "Ag land, cropland: asset value",
+  "es": "Tierra agrícola, tierra de cultivo: valor de los activos",
+  "fr": "Terres agricoles, terres cultivées : valeur des actifs",
+  "it": "Terreni agricoli, seminativi: valore delle attività"
+ },
+ "Agricultural price index, Ireland: Agricultural input price index (2020=100, CSO)": {
+  "en": "Agricultural price index, Ireland: Agricultural input price index (2020=100, CSO)",
+  "es": "Índice de precios agrarios, Irlanda: Índice de precios de los insumos agrarios (2020=100, CSO)",
+  "fr": "Indice des prix agricoles, Irlande : Indice des prix des intrants agricoles (2020=100, CSO)",
+  "it": "Indice dei prezzi agricoli, Irlanda: Indice dei prezzi dei mezzi di produzione agricoli (2020=100, CSO)"
+ },
+ "Agricultural price index, Ireland: Agricultural output price index (2020=100, CSO)": {
+  "en": "Agricultural price index, Ireland: Agricultural output price index (2020=100, CSO)",
+  "es": "Índice de precios agrarios, Irlanda: Índice de precios de la producción agraria (2020=100, CSO)",
+  "fr": "Indice des prix agricoles, Irlande : Indice des prix de la production agricole (2020=100, CSO)",
+  "it": "Indice dei prezzi agricoli, Irlanda: Indice dei prezzi della produzione agricola (2020=100, CSO)"
+ },
+ "Agricultural price index, Ireland: Animal output (2020=100, CSO)": {
+  "en": "Agricultural price index, Ireland: Animal output (2020=100, CSO)",
+  "es": "Índice de precios agrarios, Irlanda: Producción animal (2020=100, CSO)",
+  "fr": "Indice des prix agricoles, Irlande : Production animale (2020=100, CSO)",
+  "it": "Indice dei prezzi agricoli, Irlanda: Produzione animale (2020=100, CSO)"
+ },
+ "Agricultural price index, Ireland: Animal products (2020=100, CSO)": {
+  "en": "Agricultural price index, Ireland: Animal products (2020=100, CSO)",
+  "es": "Índice de precios agrarios, Irlanda: Productos animales (2020=100, CSO)",
+  "fr": "Indice des prix agricoles, Irlande : Produits animaux (2020=100, CSO)",
+  "it": "Indice dei prezzi agricoli, Irlanda: Prodotti animali (2020=100, CSO)"
+ },
+ "Agricultural price index, Ireland: Animals (2020=100, CSO)": {
+  "en": "Agricultural price index, Ireland: Animals (2020=100, CSO)",
+  "es": "Índice de precios agrarios, Irlanda: Animales (2020=100, CSO)",
+  "fr": "Indice des prix agricoles, Irlande : Animaux (2020=100, CSO)",
+  "it": "Indice dei prezzi agricoli, Irlanda: Animali (2020=100, CSO)"
+ },
+ "Agriculture summary: Agricultural terms of trade compared to the previous year (index (previous year = 100), KSH)": {
+  "en": "Agriculture summary: Agricultural terms of trade compared to the previous year (index (previous year = 100), KSH)",
+  "es": "Resumen agrario: relación de intercambio agrario respecto al año anterior (índice, año anterior = 100, KSH)",
+  "fr": "Résumé agricole : termes de l’échange agricoles par rapport à l’année précédente (indice, année précédente = 100, KSH)",
+  "it": "Sintesi agricola: ragione di scambio agricola rispetto all’anno precedente (indice, anno precedente = 100, KSH)"
+ },
+ "Agriculture summary: Share of agriculture, forestry and fishing of gross value added (%, KSH)": {
+  "en": "Agriculture summary: Share of agriculture, forestry and fishing of gross value added (%, KSH)",
+  "es": "Resumen agrario: peso de la agricultura, la silvicultura y la pesca en el valor añadido bruto (%, KSH)",
+  "fr": "Résumé agricole : part de l’agriculture, de la sylviculture et de la pêche dans la valeur ajoutée brute (%, KSH)",
+  "it": "Sintesi agricola: quota di agricoltura, silvicoltura e pesca nel valore aggiunto lordo (%, KSH)"
+ },
+ "Alabama: Palmer Drought Severity Index (NOAA)": {
+  "en": "Alabama: Palmer Drought Severity Index (NOAA)",
+  "es": "Alabama: índice de severidad de sequía de Palmer (NOAA)",
+  "fr": "Alabama : indice de sévérité de la sécheresse de Palmer (NOAA)",
+  "it": "Alabama: indice di gravità della siccità di Palmer (NOAA)"
+ },
+ "Alabama: mean temperature (NOAA)": {
+  "en": "Alabama: mean temperature (NOAA)",
+  "es": "Alabama: temperatura media (NOAA)",
+  "fr": "Alabama : température moyenne (NOAA)",
+  "it": "Alabama: temperatura media (NOAA)"
+ },
+ "Alabama: precipitation (NOAA)": {
+  "en": "Alabama: precipitation (NOAA)",
+  "es": "Alabama: precipitación (NOAA)",
+  "fr": "Alabama : précipitations (NOAA)",
+  "it": "Alabama: precipitazioni (NOAA)"
+ },
+ "Almonds: area bearing": {
+  "en": "Almonds: area bearing",
+  "es": "Almendras: superficie en producción",
+  "fr": "Amandes : superficie en production",
+  "it": "Mandorle: superficie in produzione"
+ },
+ "Apples – Elstar (origin: Germany)": {
+  "en": "Apples – Elstar (origin: Germany)",
+  "es": "Manzanas – Elstar (origen: Alemania)",
+  "fr": "Pommes – Elstar (origine: Allemagne)",
+  "it": "Mele – Elstar (origine: Germania)"
+ },
+ "Apples – Golden Delicious, size 75/80 (origin: Italy)": {
+  "en": "Apples – Golden Delicious, size 75/80 (origin: Italy)",
+  "es": "Manzanas – Golden Delicious, calibre 75/80 (origen: Italia)",
+  "fr": "Pommes – Golden Delicious, calibre 75/80 (origine: Italie)",
+  "it": "Mele – Golden Delicious, calibro 75/80 (origine: Italia)"
+ },
+ "Apples – Jonagold (origin: Germany)": {
+  "en": "Apples – Jonagold (origin: Germany)",
+  "es": "Manzanas – Jonagold (origen: Alemania)",
+  "fr": "Pommes – Jonagold (origine: Allemagne)",
+  "it": "Mele – Jonagold (origine: Germania)"
+ },
+ "Arizona: Palmer Drought Severity Index (NOAA)": {
+  "en": "Arizona: Palmer Drought Severity Index (NOAA)",
+  "es": "Arizona: índice de severidad de sequía de Palmer (NOAA)",
+  "fr": "Arizona : indice de sévérité de la sécheresse de Palmer (NOAA)",
+  "it": "Arizona: indice di gravità della siccità di Palmer (NOAA)"
+ },
+ "Arizona: mean temperature (NOAA)": {
+  "en": "Arizona: mean temperature (NOAA)",
+  "es": "Arizona: temperatura media (NOAA)",
+  "fr": "Arizona : température moyenne (NOAA)",
+  "it": "Arizona: temperatura media (NOAA)"
+ },
+ "Arizona: precipitation (NOAA)": {
+  "en": "Arizona: precipitation (NOAA)",
+  "es": "Arizona: precipitación (NOAA)",
+  "fr": "Arizona : précipitations (NOAA)",
+  "it": "Arizona: precipitazioni (NOAA)"
+ },
+ "Arkansas: mean temperature (NOAA)": {
+  "en": "Arkansas: mean temperature (NOAA)",
+  "es": "Arkansas: temperatura media (NOAA)",
+  "fr": "Arkansas : température moyenne (NOAA)",
+  "it": "Arkansas: temperatura media (NOAA)"
+ },
+ "Arkansas: precipitation (NOAA)": {
+  "en": "Arkansas: precipitation (NOAA)",
+  "es": "Arkansas: precipitación (NOAA)",
+  "fr": "Arkansas : précipitations (NOAA)",
+  "it": "Arkansas: precipitazioni (NOAA)"
+ },
+ "Aubergines (origin: Turkey)": {
+  "en": "Aubergines (origin: Turkey)",
+  "es": "Berenjenas (origen: Turquía)",
+  "fr": "Aubergines (origine: Turquie)",
+  "it": "Melanzane (origine: Turchia)"
+ },
+ "Average yield: Barley total (kg/ha, KSH)": {
+  "en": "Average yield: Barley total (kg/ha, KSH)",
+  "es": "Rendimiento medio: cebada (total) (kg/ha, KSH)",
+  "fr": "Rendement moyen : orge (total) (kg/ha, KSH)",
+  "it": "Resa media: orzo (totale) (kg/ha, KSH)"
+ },
+ "Average yield: Oats (kg/ha, KSH)": {
+  "en": "Average yield: Oats (kg/ha, KSH)",
+  "es": "Rendimiento medio: avena (kg/ha, KSH)",
+  "fr": "Rendement moyen : avoine (kg/ha, KSH)",
+  "it": "Resa media: avena (kg/ha, KSH)"
+ },
+ "Average yield: Rye (kg/ha, KSH)": {
+  "en": "Average yield: Rye (kg/ha, KSH)",
+  "es": "Rendimiento medio: centeno (kg/ha, KSH)",
+  "fr": "Rendement moyen : seigle (kg/ha, KSH)",
+  "it": "Resa media: segale (kg/ha, KSH)"
+ },
+ "Average yield: Wheat (kg/ha, KSH)": {
+  "en": "Average yield: Wheat (kg/ha, KSH)",
+  "es": "Rendimiento medio: trigo (kg/ha, KSH)",
+  "fr": "Rendement moyen : blé (kg/ha, KSH)",
+  "it": "Resa media: frumento (kg/ha, KSH)"
+ },
+ "Bananas – Erstmarke (origin: /)": {
+  "en": "Bananas – Erstmarke (origin: /)",
+  "es": "Plátanos – Erstmarke (origen: sin indicar)",
+  "fr": "Bananes – Erstmarke (origine : non précisée)",
+  "it": "Banane – Erstmarke (origine: non indicata)"
+ },
+ "Bank prime loan rate (monthly average)": {
+  "en": "Bank prime loan rate (monthly average)",
+  "es": "Tipo preferencial de préstamos bancarios (media mensual)",
+  "fr": "Taux préférentiel des prêts bancaires (moyenne mensuelle)",
+  "it": "Tasso primario dei prestiti bancari (media mensile)"
+ },
+ "Barley, oats and grain maize (combined): ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)": {
+  "en": "Barley, oats and grain maize (combined): ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)",
+  "es": "Cebada, avena y maíz grano (conjunto): existencias finales a 30 de junio (fin de la campaña julio-junio), Austria (balance de oferta de Statistik Austria)",
+  "fr": "Orge, avoine et maïs grain (ensemble) : stocks de clôture au 30 juin (fin de la campagne juillet-juin), Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Orzo, avena e mais da granella (insieme): scorte finali al 30 giugno (fine della campagna luglio-giugno), Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Barley: stocks at trade companies, end of half-year (KORN2)": {
+  "en": "Barley: stocks at trade companies, end of half-year (KORN2)",
+  "es": "Cebada: existencias en empresas comerciales, a fin de semestre (KORN2)",
+  "fr": "Orge : stocks dans les entreprises commerciales, fin de semestre (KORN2)",
+  "it": "Orzo: scorte presso le imprese commerciali, a fine semestre (KORN2)"
+ },
+ "Barley: stocks at year end (KORN)": {
+  "en": "Barley: stocks at year end (KORN)",
+  "es": "Cebada: existencias a fin de año (KORN)",
+  "fr": "Orge : stocks en fin d’année (KORN)",
+  "it": "Orzo: scorte a fine anno (KORN)"
+ },
+ "Beef and veal: Cows, comparison price (Cows) (EU Agri-food)": {
+  "en": "Beef and veal: Cows, comparison price (Cows) (EU Agri-food)",
+  "es": "Vacuno y ternera: vacas (ecológico), precio de comparación (vacas) (EU Agri-food)",
+  "fr": "Viande bovine et veau : vaches (bio), prix de comparaison (vaches) (EU Agri-food)",
+  "it": "Carne bovina e vitello: vacche (biologico), prezzo di confronto (vacche) (EU Agri-food)"
+ },
+ "Beef and veal: Cows, organic premium over comparison (EU Agri-food)": {
+  "en": "Beef and veal: Cows, organic premium over comparison (EU Agri-food)",
+  "es": "Vacuno y ternera: vacas (ecológico), prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Viande bovine et veau : vaches (bio), prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Carne bovina e vitello: vacche (biologico), premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Beef and veal: Cows, organic price (EU Agri-food)": {
+  "en": "Beef and veal: Cows, organic price (EU Agri-food)",
+  "es": "Vacuno y ternera: vacas (ecológico), precio ecológico (EU Agri-food)",
+  "fr": "Viande bovine et veau : vaches (bio), prix bio (EU Agri-food)",
+  "it": "Carne bovina e vitello: vacche (biologico), prezzo biologico (EU Agri-food)"
+ },
+ "Beef and veal: Heifers, comparison price (Heifers) (EU Agri-food)": {
+  "en": "Beef and veal: Heifers, comparison price (Heifers) (EU Agri-food)",
+  "es": "Vacuno y ternera: novillas (ecológico), precio de comparación (novillas) (EU Agri-food)",
+  "fr": "Viande bovine et veau : génisses (bio), prix de comparaison (génisses) (EU Agri-food)",
+  "it": "Carne bovina e vitello: giovenche (biologico), prezzo di confronto (giovenche) (EU Agri-food)"
+ },
+ "Beef and veal: Heifers, organic premium over comparison (EU Agri-food)": {
+  "en": "Beef and veal: Heifers, organic premium over comparison (EU Agri-food)",
+  "es": "Vacuno y ternera: novillas (ecológico), prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Viande bovine et veau : génisses (bio), prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Carne bovina e vitello: giovenche (biologico), premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Beef and veal: Heifers, organic price (EU Agri-food)": {
+  "en": "Beef and veal: Heifers, organic price (EU Agri-food)",
+  "es": "Vacuno y ternera: novillas (ecológico), precio ecológico (EU Agri-food)",
+  "fr": "Viande bovine et veau : génisses (bio), prix bio (EU Agri-food)",
+  "it": "Carne bovina e vitello: giovenche (biologico), prezzo biologico (EU Agri-food)"
+ },
+ "Beef: cold storage (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Beef: cold storage (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Vacuno: existencias en cámaras frigoríficas (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Bœuf : stocks en entrepôts frigorifiques (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Carne bovina: scorte nei magazzini frigoriferi (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Broilers: federally inspected average live weight (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Broilers: federally inspected average live weight (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Pollos de carne: peso vivo medio en matadero con inspección federal (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Poulets de chair : poids vif moyen sous inspection fédérale (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Polli da carne: peso vivo medio sotto ispezione federale (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Bulls and stags: federally inspected average dressed weight (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Bulls and stags: federally inspected average dressed weight (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Toros y toretes: peso medio en canal con inspección federal (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Taureaux et bouvillons : poids moyen en carcasse sous inspection fédérale (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Tori e torelli: peso medio a carcassa sotto ispezione federale (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Butter: ending stocks at 31 December, Austria (Statistik Austria supply balance)": {
+  "en": "Butter: ending stocks at 31 December, Austria (Statistik Austria supply balance)",
+  "es": "Mantequilla: existencias finales a 31 de diciembre, Austria (balance de oferta de Statistik Austria)",
+  "fr": "Beurre : stocks de clôture au 31 décembre, Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Burro: scorte finali al 31 dicembre, Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Butter: production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Butter: production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Mantequilla: producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Beurre : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Burro: produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Butter: stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Butter: stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Mantequilla: existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Beurre : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Burro: scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Calves: commercial average live weight (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Calves: commercial average live weight (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Terneros: peso vivo medio comercial (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Veaux : poids vif moyen commercial (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Vitelli: peso vivo medio commerciale (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Carrots – lose (origin: Belgium)": {
+  "en": "Carrots – lose (origin: Belgium)",
+  "es": "Zanahorias – a granel (origen: Bélgica)",
+  "fr": "Carottes – en vrac (origine: Belgique)",
+  "it": "Carote – sfuse (origine: Belgio)"
+ },
+ "Carrots – lose (origin: Germany)": {
+  "en": "Carrots – lose (origin: Germany)",
+  "es": "Zanahorias – a granel (origen: Alemania)",
+  "fr": "Carottes – en vrac (origine: Allemagne)",
+  "it": "Carote – sfuse (origine: Germania)"
+ },
+ "Cattle (excluding calves), live weight: production (BFS)": {
+  "en": "Cattle (excluding calves), live weight: production (BFS)",
+  "es": "Bovinos (sin terneros), peso vivo: producción (BFS)",
+  "fr": "Bovins (hors veaux), poids vif : production (OFS)",
+  "it": "Bovini (esclusi i vitelli), peso vivo: produzione (UST)"
+ },
+ "Cattle for slaughter (excluding calves) (live weight): procurement price, monthly (GUS)": {
+  "en": "Cattle for slaughter (excluding calves) (live weight): procurement price, monthly (GUS)",
+  "es": "Bovinos para sacrificio (sin terneros) (peso vivo): precio de compra, mensual (GUS)",
+  "fr": "Bovins pour l’abattage (hors veaux) (poids vif) : prix d’achat, mensuel (GUS)",
+  "it": "Bovini da macello (esclusi i vitelli) (peso vivo): prezzo di acquisto, mensile (GUS)"
+ },
+ "Cattle: births declared, head, Uruguay (MGAP DICOSE)": {
+  "en": "Cattle: births declared, head, Uruguay (MGAP DICOSE)",
+  "es": "Bovinos: nacimientos declarados, cabezas, Uruguay (MGAP DICOSE)",
+  "fr": "Bovins : naissances déclarées, têtes, Uruguay (MGAP DICOSE)",
+  "it": "Bovini: nascite dichiarate, capi, Uruguay (MGAP DICOSE)"
+ },
+ "Cattle: inventory on holdings, head, Uruguay (MGAP DICOSE, PD_AD)": {
+  "en": "Cattle: inventory on holdings, head, Uruguay (MGAP DICOSE, PD_AD)",
+  "es": "Bovinos: existencias en las explotaciones, cabezas, Uruguay (MGAP DICOSE, PD_AD)",
+  "fr": "Bovins : effectif dans les exploitations, têtes, Uruguay (MGAP DICOSE, PD_AD)",
+  "it": "Bovini: consistenza nelle aziende, capi, Uruguay (MGAP DICOSE, PD_AD)"
+ },
+ "Cereal grain (excluding sowing seed): barley: procurement price, monthly (GUS)": {
+  "en": "Cereal grain (excluding sowing seed): barley: procurement price, monthly (GUS)",
+  "es": "Grano de cereal (sin semilla de siembra): cebada: precio de compra, mensual (GUS)",
+  "fr": "Grains de céréales (hors semences) : orge : prix d’achat, mensuel (GUS)",
+  "it": "Granella di cereali (escluse sementi): orzo: prezzo di acquisto, mensile (GUS)"
+ },
+ "Cereal grain (excluding sowing seed): corn: procurement price, monthly (GUS)": {
+  "en": "Cereal grain (excluding sowing seed): corn: procurement price, monthly (GUS)",
+  "es": "Grano de cereal (sin semilla de siembra): maíz: precio de compra, mensual (GUS)",
+  "fr": "Grains de céréales (hors semences) : maïs : prix d’achat, mensuel (GUS)",
+  "it": "Granella di cereali (escluse sementi): mais: prezzo di acquisto, mensile (GUS)"
+ },
+ "Cereal grain (excluding sowing seed): oat: procurement price, monthly (GUS)": {
+  "en": "Cereal grain (excluding sowing seed): oat: procurement price, monthly (GUS)",
+  "es": "Grano de cereal (sin semilla de siembra): avena: precio de compra, mensual (GUS)",
+  "fr": "Grains de céréales (hors semences) : avoine : prix d’achat, mensuel (GUS)",
+  "it": "Granella di cereali (escluse sementi): avena: prezzo di acquisto, mensile (GUS)"
+ },
+ "Cereal grain (excluding sowing seed): rye: procurement price, monthly (GUS)": {
+  "en": "Cereal grain (excluding sowing seed): rye: procurement price, monthly (GUS)",
+  "es": "Grano de cereal (sin semilla de siembra): centeno: precio de compra, mensual (GUS)",
+  "fr": "Grains de céréales (hors semences) : seigle : prix d’achat, mensuel (GUS)",
+  "it": "Granella di cereali (escluse sementi): segale: prezzo di acquisto, mensile (GUS)"
+ },
+ "Cereal grain (excluding sowing seed): triticale: procurement price, monthly (GUS)": {
+  "en": "Cereal grain (excluding sowing seed): triticale: procurement price, monthly (GUS)",
+  "es": "Grano de cereal (sin semilla de siembra): triticale: precio de compra, mensual (GUS)",
+  "fr": "Grains de céréales (hors semences) : triticale : prix d’achat, mensuel (GUS)",
+  "it": "Granella di cereali (escluse sementi): triticale: prezzo di acquisto, mensile (GUS)"
+ },
+ "Cereals, total: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)": {
+  "en": "Cereals, total: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)",
+  "es": "Cereales (total): existencias finales a 30 de junio (fin de la campaña julio-junio), Austria (balance de oferta de Statistik Austria)",
+  "fr": "Céréales (total) : stocks de clôture au 30 juin (fin de la campagne juillet-juin), Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Cereali (totale): scorte finali al 30 giugno (fine della campagna luglio-giugno), Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Cereals: organic rye vs Feed rye, comparison price (Feed rye) (EU Agri-food)": {
+  "en": "Cereals: organic rye vs Feed rye, comparison price (Feed rye) (EU Agri-food)",
+  "es": "Cereales: centeno ecológico frente a centeno forrajero, precio de comparación (centeno forrajero) (EU Agri-food)",
+  "fr": "Céréales : seigle bio contre seigle fourrager, prix de comparaison (seigle fourrager) (EU Agri-food)",
+  "it": "Cereali: segale biologica rispetto a segale da foraggio, prezzo di confronto (segale da foraggio) (EU Agri-food)"
+ },
+ "Cereals: organic rye vs Feed rye, organic premium over comparison (EU Agri-food)": {
+  "en": "Cereals: organic rye vs Feed rye, organic premium over comparison (EU Agri-food)",
+  "es": "Cereales: centeno ecológico frente a centeno forrajero, prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Céréales : seigle bio contre seigle fourrager, prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Cereali: segale biologica rispetto a segale da foraggio, premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Cereals: organic rye vs Feed rye, organic price (EU Agri-food)": {
+  "en": "Cereals: organic rye vs Feed rye, organic price (EU Agri-food)",
+  "es": "Cereales: centeno ecológico frente a centeno forrajero, precio ecológico (EU Agri-food)",
+  "fr": "Céréales : seigle bio contre seigle fourrager, prix bio (EU Agri-food)",
+  "it": "Cereali: segale biologica rispetto a segale da foraggio, prezzo biologico (EU Agri-food)"
+ },
+ "Cereals: producer price index (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Cereals: producer price index (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Cereales: índice de precios de producción (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Céréales : indice des prix à la production (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Cereali: indice dei prezzi alla produzione (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Certified organic agricultural area (GUS)": {
+  "en": "Certified organic agricultural area (GUS)",
+  "es": "Superficie agrícola ecológica certificada (GUS)",
+  "fr": "Surface agricole bio certifiée (GUS)",
+  "it": "Superficie agricola biologica certificata (GUS)"
+ },
+ "Certified organic farms (GUS)": {
+  "en": "Certified organic farms (GUS)",
+  "es": "Explotaciones ecológicas certificadas (GUS)",
+  "fr": "Exploitations bio certifiées (GUS)",
+  "it": "Aziende biologiche certificate (GUS)"
+ },
+ "Cheese (all types): production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Cheese (all types): production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Queso (todos los tipos): producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Fromage (tous types) : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Formaggio (tutti i tipi): produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Cheese (all types): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Cheese (all types): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Queso (todos los tipos): existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Fromage (tous types) : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Formaggio (tutti i tipi): scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Cheese, hard (low moisture): production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Cheese, hard (low moisture): production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Queso duro (baja humedad): producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Fromage à pâte dure (faible humidité) : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Formaggio a pasta dura (bassa umidità): produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Cheese, hard (low moisture): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Cheese, hard (low moisture): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Queso duro (baja humedad): existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Fromage à pâte dure (faible humidité) : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Formaggio a pasta dura (bassa umidità): scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Cheese, hard: exports, Argentina (quantity; INDEC via SAGyP Lecheria)": {
+  "en": "Cheese, hard: exports, Argentina (quantity; INDEC via SAGyP Lecheria)",
+  "es": "Queso duro: exportaciones, Argentina (cantidad; INDEC a través de SAGyP Lechería)",
+  "fr": "Fromage à pâte dure : exportations, Argentine (quantité; INDEC via SAGyP Lechería)",
+  "it": "Formaggio a pasta dura: esportazioni, Argentina (quantità; INDEC tramite SAGyP Lechería)"
+ },
+ "Cheese, hard: exports, Argentina (value; INDEC via SAGyP Lecheria)": {
+  "en": "Cheese, hard: exports, Argentina (value; INDEC via SAGyP Lecheria)",
+  "es": "Queso duro: exportaciones, Argentina (valor; INDEC a través de SAGyP Lechería)",
+  "fr": "Fromage à pâte dure : exportations, Argentine (valeur; INDEC via SAGyP Lechería)",
+  "it": "Formaggio a pasta dura: esportazioni, Argentina (valore; INDEC tramite SAGyP Lechería)"
+ },
+ "Cheese, semi-hard (medium moisture): production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Cheese, semi-hard (medium moisture): production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Queso semiduro (humedad media): producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Fromage à pâte demi-dure (humidité moyenne) : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Formaggio a pasta semidura (umidità media): produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Cheese, semi-hard (medium moisture): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Cheese, semi-hard (medium moisture): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Queso semiduro (humedad media): existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Fromage à pâte demi-dure (humidité moyenne) : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Formaggio a pasta semidura (umidità media): scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Cheese, semi-hard: exports, Argentina (quantity; INDEC via SAGyP Lecheria)": {
+  "en": "Cheese, semi-hard: exports, Argentina (quantity; INDEC via SAGyP Lecheria)",
+  "es": "Queso semiduro: exportaciones, Argentina (cantidad; INDEC a través de SAGyP Lechería)",
+  "fr": "Fromage à pâte demi-dure : exportations, Argentine (quantité; INDEC via SAGyP Lechería)",
+  "it": "Formaggio a pasta semidura: esportazioni, Argentina (quantità; INDEC tramite SAGyP Lechería)"
+ },
+ "Cheese, semi-hard: exports, Argentina (value; INDEC via SAGyP Lecheria)": {
+  "en": "Cheese, semi-hard: exports, Argentina (value; INDEC via SAGyP Lecheria)",
+  "es": "Queso semiduro: exportaciones, Argentina (valor; INDEC a través de SAGyP Lechería)",
+  "fr": "Fromage à pâte demi-dure : exportations, Argentine (valeur; INDEC via SAGyP Lechería)",
+  "it": "Formaggio a pasta semidura: esportazioni, Argentina (valore; INDEC tramite SAGyP Lechería)"
+ },
+ "Cheese, soft (high moisture): production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Cheese, soft (high moisture): production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Queso blando (alta humedad): producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Fromage à pâte molle (forte humidité) : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Formaggio a pasta molle (alta umidità): produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Cheese, soft (high moisture): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Cheese, soft (high moisture): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Queso blando (alta humedad): existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Fromage à pâte molle (forte humidité) : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Formaggio a pasta molle (alta umidità): scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Cheese, soft: exports, Argentina (quantity; INDEC via SAGyP Lecheria)": {
+  "en": "Cheese, soft: exports, Argentina (quantity; INDEC via SAGyP Lecheria)",
+  "es": "Queso blando: exportaciones, Argentina (cantidad; INDEC a través de SAGyP Lechería)",
+  "fr": "Fromage à pâte molle : exportations, Argentine (quantité; INDEC via SAGyP Lechería)",
+  "it": "Formaggio a pasta molle: esportazioni, Argentina (quantità; INDEC tramite SAGyP Lechería)"
+ },
+ "Cheese, soft: exports, Argentina (value; INDEC via SAGyP Lecheria)": {
+  "en": "Cheese, soft: exports, Argentina (value; INDEC via SAGyP Lecheria)",
+  "es": "Queso blando: exportaciones, Argentina (valor; INDEC a través de SAGyP Lechería)",
+  "fr": "Fromage à pâte molle : exportations, Argentine (valeur; INDEC via SAGyP Lechería)",
+  "it": "Formaggio a pasta molle: esportazioni, Argentina (valore; INDEC tramite SAGyP Lechería)"
+ },
+ "Cheese: ending stocks at 31 December, Austria (Statistik Austria supply balance)": {
+  "en": "Cheese: ending stocks at 31 December, Austria (Statistik Austria supply balance)",
+  "es": "Queso: existencias finales a 31 de diciembre, Austria (balance de oferta de Statistik Austria)",
+  "fr": "Fromage : stocks de clôture au 31 décembre, Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Formaggio: scorte finali al 31 dicembre, Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Consumer potatoes, France, washed class I 50-75 mm, 10 kg net bag, shipping point (latest quotation)": {
+  "en": "Consumer potatoes, France, washed class I 50-75 mm, 10 kg net bag, shipping point (latest quotation)",
+  "es": "Patatas de consumo, Francia, lavadas, categoría I, 50-75 mm, saco de 10 kg netos, punto de expedición (última cotización)",
+  "fr": "Pommes de terre de consommation, France, lavées, catégorie I, 50-75 mm, sac de 10 kg net, départ (dernière cotation)",
+  "it": "Patate da consumo, Francia, lavate, categoria I, 50-75 mm, sacco da 10 kg netti, franco partenza (ultima quotazione)"
+ },
+ "Consumer price index (HICP, 2025=100): butter and other fats derived from milk, France (Eurostat prc_hicp_minr CP01152)": {
+  "en": "Consumer price index (HICP, 2025=100): butter and other fats derived from milk, France (Eurostat prc_hicp_minr CP01152)",
+  "es": "Índice de precios al consumo (IPCA, 2025=100): mantequilla y otras grasas lácteas, Francia (Eurostat prc_hicp_minr CP01152)",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : beurre et autres matières grasses issues du lait, France (Eurostat prc_hicp_minr CP01152)",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): burro e altri grassi derivati dal latte, Francia (Eurostat prc_hicp_minr CP01152)"
+ },
+ "Consumer price index (HICP, 2025=100): butter and other fats derived from milk, Spain (Eurostat prc_hicp_minr CP01152)": {
+  "en": "Consumer price index (HICP, 2025=100): butter and other fats derived from milk, Spain (Eurostat prc_hicp_minr CP01152)",
+  "es": "Índice de precios al consumo (IPCA, 2025=100): mantequilla y otras grasas lácteas, España (Eurostat prc_hicp_minr CP01152)",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : beurre et autres matières grasses issues du lait, Espagne (Eurostat prc_hicp_minr CP01152)",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): burro e altri grassi derivati dal latte, Spagna (Eurostat prc_hicp_minr CP01152)"
+ },
+ "Consumer price index (HICP, 2025=100): cheese, France (Eurostat prc_hicp_minr CP01145)": {
+  "en": "Consumer price index (HICP, 2025=100): cheese, France (Eurostat prc_hicp_minr CP01145)",
+  "es": "Índice de precios al consumo (IPCA, 2025=100): queso, Francia (Eurostat prc_hicp_minr CP01145)",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : fromage, France (Eurostat prc_hicp_minr CP01145)",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): formaggio, Francia (Eurostat prc_hicp_minr CP01145)"
+ },
+ "Consumer price index (HICP, 2025=100): cheese, Spain (Eurostat prc_hicp_minr CP01145)": {
+  "en": "Consumer price index (HICP, 2025=100): cheese, Spain (Eurostat prc_hicp_minr CP01145)",
+  "es": "Índice de precios al consumo (IPCA, 2025=100): queso, España (Eurostat prc_hicp_minr CP01145)",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : fromage, Espagne (Eurostat prc_hicp_minr CP01145)",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): formaggio, Spagna (Eurostat prc_hicp_minr CP01145)"
+ },
+ "Dairy cattle (DICOSE species 11): inventory on holdings, head, Uruguay (MGAP DICOSE, PD_AD)": {
+  "en": "Dairy cattle (DICOSE species 11): inventory on holdings, head, Uruguay (MGAP DICOSE, PD_AD)",
+  "es": "Ganado lechero (especie 11 de DICOSE): existencias en las explotaciones, cabezas, Uruguay (MGAP DICOSE, PD_AD)",
+  "fr": "Bovins laitiers (espèce 11 de DICOSE) : effectif dans les exploitations, têtes, Uruguay (MGAP DICOSE, PD_AD)",
+  "it": "Bovini da latte (specie 11 di DICOSE): consistenza nelle aziende, capi, Uruguay (MGAP DICOSE, PD_AD)"
+ },
+ "Dairy milk price index (Molkereimilchpreisindex, FOAG)": {
+  "en": "Dairy milk price index (Molkereimilchpreisindex, FOAG)",
+  "es": "Índice de precios de la leche de industria (Molkereimilchpreisindex, FOAG)",
+  "fr": "Indice du prix du lait de laiterie (Molkereimilchpreisindex, OFAG)",
+  "it": "Indice del prezzo del latte per caseificio (Molkereimilchpreisindex, UFAG)"
+ },
+ "Dairy-breed calves, 14 days to 4 weeks, 45-50 kg": {
+  "en": "Dairy-breed calves, 14 days to 4 weeks, 45-50 kg",
+  "es": "Terneros de raza lechera, de 14 días a 4 semanas, 45-50 kg",
+  "fr": "Veaux de race laitière, de 14 jours à 4 semaines, 45-50 kg",
+  "it": "Vitelli di razza da latte, da 14 giorni a 4 settimane, 45-50 kg"
+ },
+ "Diesel (gas oil grade 2): wholesale price to the agricultural channel, excluding taxes, Argentina (Secretaria de Energia, Res. 1104/04)": {
+  "en": "Diesel (gas oil grade 2): wholesale price to the agricultural channel, excluding taxes, Argentina (Secretaria de Energia, Res. 1104/04)",
+  "es": "Gasóleo (gasoil grado 2): precio mayorista al canal agrícola, sin impuestos, Argentina (Secretaría de Energía, Res. 1104/04)",
+  "fr": "Gazole (gasoil grade 2) : prix de gros pour le canal agricole, hors taxes, Argentine (Secrétariat à l’Énergie, Res. 1104/04)",
+  "it": "Gasolio (gasoil grado 2): prezzo all’ingrosso per il canale agricolo, al netto delle imposte, Argentina (Segreteria dell’Energia, Res. 1104/04)"
+ },
+ "Diesel (gas oil grade 2): wholesale price to the agricultural channel, including taxes, Argentina (Secretaria de Energia, Res. 1104/04)": {
+  "en": "Diesel (gas oil grade 2): wholesale price to the agricultural channel, including taxes, Argentina (Secretaria de Energia, Res. 1104/04)",
+  "es": "Gasóleo (gasoil grado 2): precio mayorista al canal agrícola, con impuestos, Argentina (Secretaría de Energía, Res. 1104/04)",
+  "fr": "Gazole (gasoil grade 2) : prix de gros pour le canal agricole, taxes comprises, Argentine (Secrétariat à l’Énergie, Res. 1104/04)",
+  "it": "Gasolio (gasoil grado 2): prezzo all’ingrosso per il canale agricolo, comprese le imposte, Argentina (Segreteria dell’Energia, Res. 1104/04)"
+ },
+ "Domestic land use in the EU by product (Hectare, Eurostat)": {
+  "en": "Domestic land use in the EU by product (Hectare, Eurostat)",
+  "es": "Uso de la tierra en la UE por producto (hectáreas, Eurostat)",
+  "fr": "Utilisation des terres dans l’UE par produit (hectares, Eurostat)",
+  "it": "Uso del suolo nell’UE per prodotto (ettari, Eurostat)"
+ },
+ "East Germany, organic milk: farm-gate price, standardised": {
+  "en": "East Germany, organic milk: farm-gate price, standardised",
+  "es": "Alemania oriental, leche ecológica: precio en explotación, normalizado",
+  "fr": "Allemagne de l’Est, lait bio : prix à la ferme, standardisé",
+  "it": "Germania orientale, latte biologico: prezzo alla stalla, standardizzato"
+ },
+ "Eggs for processing: imports, allocated/imported quantity (FOAG)": {
+  "en": "Eggs for processing: imports, allocated/imported quantity (FOAG)",
+  "es": "Huevos para transformación: importaciones, cantidad asignada/importada (FOAG)",
+  "fr": "Œufs destinés à la transformation : importations, quantité attribuée/importée (FOAG)",
+  "it": "Uova destinate alla trasformazione: importazioni, quantità assegnata/importata (UFAG)"
+ },
+ "Eggs: Organic eggs vs Free-range, comparison price (Free-range) (EU Agri-food)": {
+  "en": "Eggs: Organic eggs vs Free-range, comparison price (Free-range) (EU Agri-food)",
+  "es": "Huevos: huevos ecológicos frente a huevos camperos, precio de comparación (huevos camperos) (EU Agri-food)",
+  "fr": "Œufs : œufs bio contre œufs de poules élevées en plein air, prix de comparaison (œufs de poules élevées en plein air) (EU Agri-food)",
+  "it": "Uova: uova biologiche rispetto a uova da allevamento all’aperto, prezzo di confronto (uova da allevamento all’aperto) (EU Agri-food)"
+ },
+ "Eggs: Organic eggs vs Free-range, organic premium over comparison (EU Agri-food)": {
+  "en": "Eggs: Organic eggs vs Free-range, organic premium over comparison (EU Agri-food)",
+  "es": "Huevos: huevos ecológicos frente a huevos camperos, prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Œufs : œufs bio contre œufs de poules élevées en plein air, prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Uova: uova biologiche rispetto a uova da allevamento all’aperto, premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Eggs: Organic eggs vs Free-range, organic price (EU Agri-food)": {
+  "en": "Eggs: Organic eggs vs Free-range, organic price (EU Agri-food)",
+  "es": "Huevos: huevos ecológicos frente a huevos camperos, precio ecológico (EU Agri-food)",
+  "fr": "Œufs : œufs bio contre œufs de poules élevées en plein air, prix bio (EU Agri-food)",
+  "it": "Uova: uova biologiche rispetto a uova da allevamento all’aperto, prezzo biologico (EU Agri-food)"
+ },
+ "Eggs: producer price index (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Eggs: producer price index (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Huevos: índice de precios de producción (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Œufs : indice des prix à la production (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Uova: indice dei prezzi alla produzione (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Electricity price for business, 20 500 mwh, excl. taxes, Germany": {
+  "en": "Electricity price for business, 20 500 mwh, excl. taxes, Germany",
+  "es": "Precio de la electricidad para empresas, 20 500 MWh, sin impuestos, Alemania",
+  "fr": "Prix de l’électricité pour les entreprises, 20 500 MWh, hors taxes, Allemagne",
+  "it": "Prezzo dell’elettricità per le imprese, 20 500 MWh, al netto delle imposte, Germania"
+ },
+ "Electricity price for business, 20 500 mwh, incl. taxes, Germany": {
+  "en": "Electricity price for business, 20 500 mwh, incl. taxes, Germany",
+  "es": "Precio de la electricidad para empresas, 20 500 MWh, con impuestos, Alemania",
+  "fr": "Prix de l’électricité pour les entreprises, 20 500 MWh, taxes comprises, Allemagne",
+  "it": "Prezzo dell’elettricità per le imprese, 20 500 MWh, comprese le imposte, Germania"
+ },
+ "Electricity price for business, all, excl. taxes, Germany": {
+  "en": "Electricity price for business, all, excl. taxes, Germany",
+  "es": "Precio de la electricidad para empresas, todos los tramos, sin impuestos, Alemania",
+  "fr": "Prix de l’électricité pour les entreprises, toutes les tranches, hors taxes, Allemagne",
+  "it": "Prezzo dell’elettricità per le imprese, tutte le fasce, al netto delle imposte, Germania"
+ },
+ "Electricity price for business, all, incl. taxes, Germany": {
+  "en": "Electricity price for business, all, incl. taxes, Germany",
+  "es": "Precio de la electricidad para empresas, todos los tramos, con impuestos, Alemania",
+  "fr": "Prix de l’électricité pour les entreprises, toutes les tranches, taxes comprises, Allemagne",
+  "it": "Prezzo dell’elettricità per le imprese, tutte le fasce, comprese le imposte, Germania"
+ },
+ "Exchange rate: Australia (USD per AUD, monthly average)": {
+  "en": "Exchange rate: Australia (USD per AUD, monthly average)",
+  "es": "Tipo de cambio: Australia (USD por AUD, media mensual)",
+  "fr": "Taux de change : Australie (USD par AUD, moyenne mensuelle)",
+  "it": "Tasso di cambio: Australia (USD per AUD, media mensile)"
+ },
+ "Exchange rate: Canada (CAD per USD, monthly average)": {
+  "en": "Exchange rate: Canada (CAD per USD, monthly average)",
+  "es": "Tipo de cambio: Canadá (CAD por USD, media mensual)",
+  "fr": "Taux de change : Canada (CAD par USD, moyenne mensuelle)",
+  "it": "Tasso di cambio: Canada (CAD per USD, media mensile)"
+ },
+ "Exchange rate: Denmark (DKK per USD, monthly average)": {
+  "en": "Exchange rate: Denmark (DKK per USD, monthly average)",
+  "es": "Tipo de cambio: Dinamarca (DKK por USD, media mensual)",
+  "fr": "Taux de change : Danemark (DKK par USD, moyenne mensuelle)",
+  "it": "Tasso di cambio: Danimarca (DKK per USD, media mensile)"
+ },
+ "Exchange rate: Sweden (SEK per USD, monthly average)": {
+  "en": "Exchange rate: Sweden (SEK per USD, monthly average)",
+  "es": "Tipo de cambio: Suecia (SEK por USD, media mensual)",
+  "fr": "Taux de change : Suède (SEK par USD, moyenne mensuelle)",
+  "it": "Tasso di cambio: Svezia (SEK per USD, media mensile)"
+ },
+ "Exchange rate: Switzerland (CHF per USD, monthly average)": {
+  "en": "Exchange rate: Switzerland (CHF per USD, monthly average)",
+  "es": "Tipo de cambio: Suiza (CHF por USD, media mensual)",
+  "fr": "Taux de change : Suisse (CHF par USD, moyenne mensuelle)",
+  "it": "Tasso di cambio: Svizzera (CHF per USD, media mensile)"
+ },
+ "Exchange rate: United Kingdom (USD per GBP, monthly average)": {
+  "en": "Exchange rate: United Kingdom (USD per GBP, monthly average)",
+  "es": "Tipo de cambio: Reino Unido (USD por GBP, media mensual)",
+  "fr": "Taux de change : Royaume-Uni (USD par GBP, moyenne mensuelle)",
+  "it": "Tasso di cambio: Regno Unito (USD per GBP, media mensile)"
+ },
+ "Exports to Brazil: selected agri-food products (annual)": {
+  "en": "Exports to Brazil: selected agri-food products (annual)",
+  "es": "Exportaciones a Brasil: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers le Brésil : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso il Brasile: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Exports to China: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to China: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a China: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers la Chine : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso la Cina: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to China: selected agri-food products (annual)": {
+  "en": "Exports to China: selected agri-food products (annual)",
+  "es": "Exportaciones a China: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers la Chine : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso la Cina: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Exports to Germany: selected agri-food products (annual)": {
+  "en": "Exports to Germany: selected agri-food products (annual)",
+  "es": "Exportaciones a Alemania: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers l’Allemagne : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso la Germania: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Exports to Italy: selected agri-food products (annual)": {
+  "en": "Exports to Italy: selected agri-food products (annual)",
+  "es": "Exportaciones a Italia: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers l’Italie : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso l’Italia: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Exports to Japan: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to Japan: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a Japón: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers le Japon : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso il Giappone: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to Netherlands: selected agri-food products (annual)": {
+  "en": "Exports to Netherlands: selected agri-food products (annual)",
+  "es": "Exportaciones a Países Bajos: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers les Pays-Bas : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso i Paesi Bassi: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Exports to Norway: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to Norway: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a Noruega: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers la Norvège : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso la Norvegia: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to Russian Federation: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to Russian Federation: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a Rusia: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers la Russie : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso la Russia: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to South Korea: selected agri-food products (annual)": {
+  "en": "Exports to South Korea: selected agri-food products (annual)",
+  "es": "Exportaciones a Corea del Sur: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers la Corée du Sud : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso la Corea del Sud: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Exports to Switzerland: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to Switzerland: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a Suiza: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers la Suisse : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso la Svizzera: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to Türkiye: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to Türkiye: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a Turquía: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers la Turquie : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso la Turchia: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to United Kingdom: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to United Kingdom: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a Reino Unido: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers le Royaume-Uni : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso il Regno Unito: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to United Kingdom: selected agri-food products (annual)": {
+  "en": "Exports to United Kingdom: selected agri-food products (annual)",
+  "es": "Exportaciones a Reino Unido: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers le Royaume-Uni : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso il Regno Unito: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Exports to United States: extra-EU agri-food, HS 01-24 (annual)": {
+  "en": "Exports to United States: extra-EU agri-food, HS 01-24 (annual)",
+  "es": "Exportaciones a Estados Unidos: productos agroalimentarios extracomunitarios, SA 01-24 (anual)",
+  "fr": "Exportations vers les États-Unis : produits agroalimentaires extra-UE, SH 01-24 (annuel)",
+  "it": "Esportazioni verso gli Stati Uniti: prodotti agroalimentari extra-UE, SA 01-24 (annuale)"
+ },
+ "Exports to United States: selected agri-food products (annual)": {
+  "en": "Exports to United States: selected agri-food products (annual)",
+  "es": "Exportaciones a Estados Unidos: productos agroalimentarios seleccionados (anual)",
+  "fr": "Exportations vers les États-Unis : produits agroalimentaires sélectionnés (annuel)",
+  "it": "Esportazioni verso gli Stati Uniti: prodotti agroalimentari selezionati (annuale)"
+ },
+ "Farmland bird index (Index, 2000=100, Eurostat)": {
+  "en": "Farmland bird index (Index, 2000=100, Eurostat)",
+  "es": "Índice de aves de zonas agrícolas (índice, 2000=100, Eurostat)",
+  "fr": "Indice des oiseaux des terres agricoles (indice, 2000=100, Eurostat)",
+  "it": "Indice degli uccelli delle aree agricole (indice, 2000=100, Eurostat)"
+ },
+ "Fattening pig holdings, Germany": {
+  "en": "Fattening pig holdings, Germany",
+  "es": "Explotaciones de cebo de porcino, Alemania",
+  "fr": "Exploitations d’engraissement de porcs, Allemagne",
+  "it": "Aziende di ingrasso suini, Germania"
+ },
+ "Federal funds rate (effective, monthly; Federal Reserve Board)": {
+  "en": "Federal funds rate (effective, monthly; Federal Reserve Board)",
+  "es": "Tipo de los fondos federales (efectivo, mensual; Junta de la Reserva Federal)",
+  "fr": "Taux des fonds fédéraux (effectif, mensuel ; Réserve fédérale)",
+  "it": "Tasso dei fondi federali (effettivo, mensile; Federal Reserve Board)"
+ },
+ "Feeder bull: Charolais U male, 12-24 months, 450 kg": {
+  "en": "Feeder bull: Charolais U male, 12-24 months, 450 kg",
+  "es": "Toro de recría: Charolais, macho U, 12-24 meses, 450 kg",
+  "fr": "Taurillon d’engraissement : Charolais, mâle U, 12-24 mois, 450 kg",
+  "it": "Torello da ingrasso: Charolais, maschio U, 12-24 mesi, 450 kg"
+ },
+ "Feeder calf: Charolais U male, 6-12 months, 350 kg": {
+  "en": "Feeder calf: Charolais U male, 6-12 months, 350 kg",
+  "es": "Ternero de recría: Charolais, macho U, 6-12 meses, 350 kg",
+  "fr": "Veau d’élevage : Charolais, mâle U, 6-12 mois, 350 kg",
+  "it": "Vitello da ristallo: Charolais, maschio U, 6-12 mesi, 350 kg"
+ },
+ "Feeder calf: Limousin U male, 6-12 months, 300 kg": {
+  "en": "Feeder calf: Limousin U male, 6-12 months, 300 kg",
+  "es": "Ternero de recría: Limousin, macho U, 6-12 meses, 300 kg",
+  "fr": "Veau d’élevage : Limousin, mâle U, 6-12 mois, 300 kg",
+  "it": "Vitello da ristallo: Limousin, maschio U, 6-12 mesi, 300 kg"
+ },
+ "Feeder calf: crossbred R male, 6-12 months, 300 kg": {
+  "en": "Feeder calf: crossbred R male, 6-12 months, 300 kg",
+  "es": "Ternero de recría: cruzado, macho R, 6-12 meses, 300 kg",
+  "fr": "Veau d’élevage : croisé, mâle R, 6-12 mois, 300 kg",
+  "it": "Vitello da ristallo: incrocio, maschio R, 6-12 mesi, 300 kg"
+ },
+ "Fluid milk products (refrigerated and shelf-stable): production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Fluid milk products (refrigerated and shelf-stable): production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Leches fluidas (refrigeradas y de larga duración): producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Laits liquides (réfrigérés et de longue conservation) : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Latte fluido (refrigerato e a lunga conservazione): produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Fluid milk products (refrigerated and shelf-stable): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Fluid milk products (refrigerated and shelf-stable): stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Leches fluidas (refrigeradas y de larga duración): existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Laits liquides (réfrigérés et de longue conservation) : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Latte fluido (refrigerato e a lunga conservazione): scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Food price monitor: Fish and other seafood (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Fish and other seafood (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Pescado y otros productos del mar, Índice armonizado de precios de consumo (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Poissons et autres produits de la mer, Indice harmonisé des prix à la consommation (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Pesce e altri prodotti ittici, Indice armonizzato dei prezzi al consumo (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food price monitor: Food, Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Food, Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Alimentos, Índice armonizado de precios de consumo (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Produits alimentaires, Indice harmonisé des prix à la consommation (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Prodotti alimentari, Indice armonizzato dei prezzi al consumo (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food price monitor: Fruit and vegetable juices (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Fruit and vegetable juices (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Zumos de frutas y hortalizas, Índice armonizado de precios de consumo (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Jus de fruits et de légumes, Indice harmonisé des prix à la consommation (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Succhi di frutta e di ortaggi, Indice armonizzato dei prezzi al consumo (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food price monitor: Fruits and nuts (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Fruits and nuts (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Frutas y frutos secos, Índice armonizado de precios de consumo (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Fruits et fruits à coque, Indice harmonisé des prix à la consommation (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Frutta e frutta a guscio, Indice armonizzato dei prezzi al consumo (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food price monitor: Milk, other dairy products and eggs (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Milk, other dairy products and eggs (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Leche, otros productos lácteos y huevos, Índice armonizado de precios de consumo (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Lait, autres produits laitiers et œufs, Indice harmonisé des prix à la consommation (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Latte, altri prodotti lattiero-caseari e uova, Indice armonizzato dei prezzi al consumo (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food price monitor: Oils and fats (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Oils and fats (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Aceites y grasas, Índice armonizado de precios de consumo (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Huiles et graisses, Indice harmonisé des prix à la consommation (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Oli e grassi, Indice armonizzato dei prezzi al consumo (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food price monitor: Tobacco, Producer price index (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Tobacco, Producer price index (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Tabaco, Índice de precios de producción (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Tabac, Indice des prix à la production (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Tabacco, Indice dei prezzi alla produzione (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food price monitor: Vegetables, tubers, plantains, cooking bananas and pulses (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)": {
+  "en": "Food price monitor: Vegetables, tubers, plantains, cooking bananas and pulses (ND), Harmonised index of consumer prices (Eurostat prc_fpmt_m, index 2025=100)",
+  "es": "Monitor de precios de alimentos: Hortalizas, tubérculos, plátanos, bananas para cocinar y legumbres, Índice armonizado de precios de consumo (Eurostat prc_fpmt_m, índice 2025=100)",
+  "fr": "Observatoire des prix alimentaires : Légumes, tubercules, plantains, bananes à cuire et légumineuses, Indice harmonisé des prix à la consommation (Eurostat prc_fpmt_m, indice 2025=100)",
+  "it": "Monitor dei prezzi alimentari: Ortaggi, tuberi, platani, banane da cucina e legumi, Indice armonizzato dei prezzi al consumo (Eurostat prc_fpmt_m, indice 2025=100)"
+ },
+ "Food waste: Primary production of food, agriculture, fishing and aquaculture (Kilograms per capita, Eurostat)": {
+  "en": "Food waste: Primary production of food, agriculture, fishing and aquaculture (Kilograms per capita, Eurostat)",
+  "es": "Desperdicio de alimentos: producción primaria de alimentos, agricultura, pesca y acuicultura (kg por habitante, Eurostat)",
+  "fr": "Gaspillage alimentaire : production primaire d’aliments, agriculture, pêche et aquaculture (kg par habitant, Eurostat)",
+  "it": "Spreco alimentare: produzione primaria di alimenti, agricoltura, pesca e acquacoltura (kg per abitante, Eurostat)"
+ },
+ "Forest area, total (GUS)": {
+  "en": "Forest area, total (GUS)",
+  "es": "Superficie forestal, total (GUS)",
+  "fr": "Surface forestière, total (GUS)",
+  "it": "Superficie forestale, totale (GUS)"
+ },
+ "Forest stands, age class I (1-20 years) (GUS)": {
+  "en": "Forest stands, age class I (1-20 years) (GUS)",
+  "es": "Masas forestales, clase de edad I (1-20 años) (GUS)",
+  "fr": "Peuplements forestiers, classe d’âge I (1-20 ans) (GUS)",
+  "it": "Popolamenti forestali, classe di età I (1-20 anni) (GUS)"
+ },
+ "Forest stands, age class II (21-40) (GUS)": {
+  "en": "Forest stands, age class II (21-40) (GUS)",
+  "es": "Masas forestales, clase de edad II (21-40 años) (GUS)",
+  "fr": "Peuplements forestiers, classe d’âge II (21-40 ans) (GUS)",
+  "it": "Popolamenti forestali, classe di età II (21-40 anni) (GUS)"
+ },
+ "Forest stands, age class III (41-60) (GUS)": {
+  "en": "Forest stands, age class III (41-60) (GUS)",
+  "es": "Masas forestales, clase de edad III (41-60 años) (GUS)",
+  "fr": "Peuplements forestiers, classe d’âge III (41-60 ans) (GUS)",
+  "it": "Popolamenti forestali, classe di età III (41-60 anni) (GUS)"
+ },
+ "Forest stands, age class IV (61-80) (GUS)": {
+  "en": "Forest stands, age class IV (61-80) (GUS)",
+  "es": "Masas forestales, clase de edad IV (61-80 años) (GUS)",
+  "fr": "Peuplements forestiers, classe d’âge IV (61-80 ans) (GUS)",
+  "it": "Popolamenti forestali, classe di età IV (61-80 anni) (GUS)"
+ },
+ "Forest stands, age class V (81-100) (GUS)": {
+  "en": "Forest stands, age class V (81-100) (GUS)",
+  "es": "Masas forestales, clase de edad V (81-100 años) (GUS)",
+  "fr": "Peuplements forestiers, classe d’âge V (81-100 ans) (GUS)",
+  "it": "Popolamenti forestali, classe di età V (81-100 anni) (GUS)"
+ },
+ "Forest stands, age class VI (101-120) (GUS)": {
+  "en": "Forest stands, age class VI (101-120) (GUS)",
+  "es": "Masas forestales, clase de edad VI (101-120 años) (GUS)",
+  "fr": "Peuplements forestiers, classe d’âge VI (101-120 ans) (GUS)",
+  "it": "Popolamenti forestali, classe di età VI (101-120 anni) (GUS)"
+ },
+ "Forest stands, age class VII (121+) (GUS)": {
+  "en": "Forest stands, age class VII (121+) (GUS)",
+  "es": "Masas forestales, clase de edad VII (121+ años) (GUS)",
+  "fr": "Peuplements forestiers, classe d’âge VII (121+ ans) (GUS)",
+  "it": "Popolamenti forestali, classe di età VII (121+ anni) (GUS)"
+ },
+ "Freshwater abstraction (Million cubic metres, Eurostat)": {
+  "en": "Freshwater abstraction (Million cubic metres, Eurostat)",
+  "es": "Extracción de agua dulce (millones de metros cúbicos, Eurostat)",
+  "fr": "Prélèvements d’eau douce (millions de mètres cubes, Eurostat)",
+  "it": "Prelievo di acqua dolce (milioni di metri cubi, Eurostat)"
+ },
+ "Frozen eggs: cold storage (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Frozen eggs: cold storage (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Huevos congelados: existencias en cámaras frigoríficas (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Œufs congelés : stocks en entrepôts frigorifiques (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Uova congelate: scorte nei magazzini frigoriferi (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Fruit and vegetables: Organic-Apples - Golden delicious vs Apples - Golden delicious, comparison price (Apples - Golden delicious) (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Apples - Golden delicious vs Apples - Golden delicious, comparison price (Apples - Golden delicious) (EU Agri-food)",
+  "es": "Frutas y hortalizas: manzanas Golden Delicious ecológicas frente a manzanas Golden Delicious, precio de comparación (manzanas Golden Delicious) (EU Agri-food)",
+  "fr": "Fruits et légumes : pommes Golden Delicious bio contre pommes Golden Delicious, prix de comparaison (pommes Golden Delicious) (EU Agri-food)",
+  "it": "Frutta e ortaggi: mele Golden Delicious biologiche rispetto a mele Golden Delicious, prezzo di confronto (mele Golden Delicious) (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Apples - Golden delicious vs Apples - Golden delicious, organic premium over comparison (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Apples - Golden delicious vs Apples - Golden delicious, organic premium over comparison (EU Agri-food)",
+  "es": "Frutas y hortalizas: manzanas Golden Delicious ecológicas frente a manzanas Golden Delicious, prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Fruits et légumes : pommes Golden Delicious bio contre pommes Golden Delicious, prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Frutta e ortaggi: mele Golden Delicious biologiche rispetto a mele Golden Delicious, premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Apples - Golden delicious vs Apples - Golden delicious, organic price (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Apples - Golden delicious vs Apples - Golden delicious, organic price (EU Agri-food)",
+  "es": "Frutas y hortalizas: manzanas Golden Delicious ecológicas frente a manzanas Golden Delicious, precio ecológico (EU Agri-food)",
+  "fr": "Fruits et légumes : pommes Golden Delicious bio contre pommes Golden Delicious, prix bio (EU Agri-food)",
+  "it": "Frutta e ortaggi: mele Golden Delicious biologiche rispetto a mele Golden Delicious, prezzo biologico (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Apples - Red delicious and other red varieties vs Apples - Red delicious and other red varieties, comparison price (Apples - Red delicious and other red varieties) (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Apples - Red delicious and other red varieties vs Apples - Red delicious and other red varieties, comparison price (Apples - Red delicious and other red varieties) (EU Agri-food)",
+  "es": "Frutas y hortalizas: manzanas Red Delicious y otras variedades rojas ecológicas frente a manzanas Red Delicious y otras variedades rojas, precio de comparación (manzanas Red Delicious y otras variedades rojas) (EU Agri-food)",
+  "fr": "Fruits et légumes : pommes Red Delicious et autres variétés rouges bio contre pommes Red Delicious et autres variétés rouges, prix de comparaison (pommes Red Delicious et autres variétés rouges) (EU Agri-food)",
+  "it": "Frutta e ortaggi: mele Red Delicious e altre varietà rosse biologiche rispetto a mele Red Delicious e altre varietà rosse, prezzo di confronto (mele Red Delicious e altre varietà rosse) (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Apples - Red delicious and other red varieties vs Apples - Red delicious and other red varieties, organic price (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Apples - Red delicious and other red varieties vs Apples - Red delicious and other red varieties, organic price (EU Agri-food)",
+  "es": "Frutas y hortalizas: manzanas Red Delicious y otras variedades rojas ecológicas frente a manzanas Red Delicious y otras variedades rojas, precio ecológico (EU Agri-food)",
+  "fr": "Fruits et légumes : pommes Red Delicious et autres variétés rouges bio contre pommes Red Delicious et autres variétés rouges, prix bio (EU Agri-food)",
+  "it": "Frutta e ortaggi: mele Red Delicious e altre varietà rosse biologiche rispetto a mele Red Delicious e altre varietà rosse, prezzo biologico (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification vs Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification, comparison price (Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification) (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification vs Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification, comparison price (Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification) (EU Agri-food)",
+  "es": "Frutas y hortalizas: naranjas ecológicas (media nacional ponderada de las principales variedades, que cubren al menos el 70 % del mercado representativo en el período de referencia de la notificación) frente a naranjas (media nacional ponderada de las principales variedades, que cubren al menos el 70 % del mercado representativo en el período de referencia de la notificación), precio de comparación (naranjas (media nacional ponderada de las principales variedades, que cubren al menos el 70 % del mercado representativo en el período de referencia de la notificación)) (EU Agri-food)",
+  "fr": "Fruits et légumes : oranges bio (moyenne nationale pondérée des principales variétés couvrant au moins 70 % du marché représentatif pendant la période de référence de la notification) contre oranges (moyenne nationale pondérée des principales variétés couvrant au moins 70 % du marché représentatif pendant la période de référence de la notification), prix de comparaison (oranges (moyenne nationale pondérée des principales variétés couvrant au moins 70 % du marché représentatif pendant la période de référence de la notification)) (EU Agri-food)",
+  "it": "Frutta e ortaggi: arance biologiche (media nazionale ponderata delle principali varietà che coprono almeno il 70 % del mercato rappresentativo nel periodo di riferimento della notifica) rispetto a arance (media nazionale ponderata delle principali varietà che coprono almeno il 70 % del mercato rappresentativo nel periodo di riferimento della notifica), prezzo di confronto (arance (media nazionale ponderata delle principali varietà che coprono almeno il 70 % del mercato rappresentativo nel periodo di riferimento della notifica)) (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification vs Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification, organic premium over comparison (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification vs Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification, organic premium over comparison (EU Agri-food)",
+  "es": "Frutas y hortalizas: naranjas ecológicas (media nacional ponderada de las principales variedades, que cubren al menos el 70 % del mercado representativo en el período de referencia de la notificación) frente a naranjas (media nacional ponderada de las principales variedades, que cubren al menos el 70 % del mercado representativo en el período de referencia de la notificación), prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Fruits et légumes : oranges bio (moyenne nationale pondérée des principales variétés couvrant au moins 70 % du marché représentatif pendant la période de référence de la notification) contre oranges (moyenne nationale pondérée des principales variétés couvrant au moins 70 % du marché représentatif pendant la période de référence de la notification), prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Frutta e ortaggi: arance biologiche (media nazionale ponderata delle principali varietà che coprono almeno il 70 % del mercato rappresentativo nel periodo di riferimento della notifica) rispetto a arance (media nazionale ponderata delle principali varietà che coprono almeno il 70 % del mercato rappresentativo nel periodo di riferimento della notifica), premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification vs Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification, organic price (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification vs Oranges - National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification, organic price (EU Agri-food)",
+  "es": "Frutas y hortalizas: naranjas ecológicas (media nacional ponderada de las principales variedades, que cubren al menos el 70 % del mercado representativo en el período de referencia de la notificación) frente a naranjas (media nacional ponderada de las principales variedades, que cubren al menos el 70 % del mercado representativo en el período de referencia de la notificación), precio ecológico (EU Agri-food)",
+  "fr": "Fruits et légumes : oranges bio (moyenne nationale pondérée des principales variétés couvrant au moins 70 % du marché représentatif pendant la période de référence de la notification) contre oranges (moyenne nationale pondérée des principales variétés couvrant au moins 70 % du marché représentatif pendant la période de référence de la notification), prix bio (EU Agri-food)",
+  "it": "Frutta e ortaggi: arance biologiche (media nazionale ponderata delle principali varietà che coprono almeno il 70 % del mercato rappresentativo nel periodo di riferimento della notifica) rispetto a arance (media nazionale ponderata delle principali varietà che coprono almeno il 70 % del mercato rappresentativo nel periodo di riferimento della notifica), prezzo biologico (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Tomatoes - Trusses=Vine/\"Grappes\" vs Tomatoes - Trusses=Vine/\"Grappes\", comparison price (Tomatoes - Trusses=Vine/\"Grappes\") (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Tomatoes - Trusses=Vine/\"Grappes\" vs Tomatoes - Trusses=Vine/\"Grappes\", comparison price (Tomatoes - Trusses=Vine/\"Grappes\") (EU Agri-food)",
+  "es": "Frutas y hortalizas: tomates en racimo ecológicos frente a tomates en racimo, precio de comparación (tomates en racimo) (EU Agri-food)",
+  "fr": "Fruits et légumes : tomates en grappes bio contre tomates en grappes, prix de comparaison (tomates en grappes) (EU Agri-food)",
+  "it": "Frutta e ortaggi: pomodori a grappolo biologici rispetto a pomodori a grappolo, prezzo di confronto (pomodori a grappolo) (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Tomatoes - Trusses=Vine/\"Grappes\" vs Tomatoes - Trusses=Vine/\"Grappes\", organic premium over comparison (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Tomatoes - Trusses=Vine/\"Grappes\" vs Tomatoes - Trusses=Vine/\"Grappes\", organic premium over comparison (EU Agri-food)",
+  "es": "Frutas y hortalizas: tomates en racimo ecológicos frente a tomates en racimo, prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Fruits et légumes : tomates en grappes bio contre tomates en grappes, prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Frutta e ortaggi: pomodori a grappolo biologici rispetto a pomodori a grappolo, premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Fruit and vegetables: Organic-Tomatoes - Trusses=Vine/\"Grappes\" vs Tomatoes - Trusses=Vine/\"Grappes\", organic price (EU Agri-food)": {
+  "en": "Fruit and vegetables: Organic-Tomatoes - Trusses=Vine/\"Grappes\" vs Tomatoes - Trusses=Vine/\"Grappes\", organic price (EU Agri-food)",
+  "es": "Frutas y hortalizas: tomates en racimo ecológicos frente a tomates en racimo, precio ecológico (EU Agri-food)",
+  "fr": "Fruits et légumes : tomates en grappes bio contre tomates en grappes, prix bio (EU Agri-food)",
+  "it": "Frutta e ortaggi: pomodori a grappolo biologici rispetto a pomodori a grappolo, prezzo biologico (EU Agri-food)"
+ },
+ "Fruit: producer price index (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Fruit: producer price index (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Fruta: índice de precios de producción (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Fruits : indice des prix à la production (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Frutta: indice dei prezzi alla produzione (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Goats, slaughter, commercial: slaughtered (monthly)": {
+  "en": "Goats, slaughter, commercial: slaughtered (monthly)",
+  "es": "Caprino, sacrificio comercial: sacrificados (mensual)",
+  "fr": "Caprins, abattage commercial : abattus (mensuel)",
+  "it": "Caprini, macellazione commerciale: macellati (mensile)"
+ },
+ "Grapefruit, phd equiv: production value": {
+  "en": "Grapefruit, phd equiv: production value",
+  "es": "Pomelo, equivalente en puerta del almacén (PHD): valor de la producción",
+  "fr": "Pamplemousse, équivalent à la porte de l’entrepôt (PHD) : valeur de la production",
+  "it": "Pompelmo, equivalente al cancello del magazzino (PHD): valore della produzione"
+ },
+ "Grapefruit: area bearing": {
+  "en": "Grapefruit: area bearing",
+  "es": "Pomelo: superficie en producción",
+  "fr": "Pamplemousse : superficie en production",
+  "it": "Pompelmo: superficie in produzione"
+ },
+ "Grapefruit: yield": {
+  "en": "Grapefruit: yield",
+  "es": "Pomelo: rendimiento",
+  "fr": "Pamplemousse : rendement",
+  "it": "Pompelmo: resa"
+ },
+ "Harvested area: Oats (thousand ha, KSH)": {
+  "en": "Harvested area: Oats (thousand ha, KSH)",
+  "es": "Superficie cosechada: avena (miles de ha, KSH)",
+  "fr": "Superficie récoltée : avoine (milliers d’ha, KSH)",
+  "it": "Superficie raccolta: avena (migliaia di ha, KSH)"
+ },
+ "Harvested area: Rye (thousand ha, KSH)": {
+  "en": "Harvested area: Rye (thousand ha, KSH)",
+  "es": "Superficie cosechada: centeno (miles de ha, KSH)",
+  "fr": "Superficie récoltée : seigle (milliers d’ha, KSH)",
+  "it": "Superficie raccolta: segale (migliaia di ha, KSH)"
+ },
+ "Harvested area: Wheat (thousand ha, KSH)": {
+  "en": "Harvested area: Wheat (thousand ha, KSH)",
+  "es": "Superficie cosechada: trigo (miles de ha, KSH)",
+  "fr": "Superficie récoltée : blé (milliers d’ha, KSH)",
+  "it": "Superficie raccolta: frumento (migliaia di ha, KSH)"
+ },
+ "Input price index (prices paid by farmers): Agricultural inputs, total (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Agricultural inputs, total (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): insumos agrarios, total (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : intrants agricoles, total (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): mezzi di produzione agricoli, totale (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input price index (prices paid by farmers): Animal feedingstuffs (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Animal feedingstuffs (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): piensos (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : aliments pour animaux (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): mangimi (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input price index (prices paid by farmers): Buildings (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Buildings (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): edificios (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : bâtiments (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): fabbricati (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input price index (prices paid by farmers): Capital goods (machinery, equipment, vehicles) (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Capital goods (machinery, equipment, vehicles) (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): bienes de capital (maquinaria, equipos, vehículos) (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : biens d’équipement (machines, équipements, véhicules) (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): beni strumentali (macchinari, attrezzature, veicoli) (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input price index (prices paid by farmers): Fertilisers and soil improvers (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Fertilisers and soil improvers (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): fertilizantes y enmiendas del suelo (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : engrais et amendements du sol (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): fertilizzanti e ammendanti (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input price index (prices paid by farmers): Maintenance of buildings (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Maintenance of buildings (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): mantenimiento de edificios (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : entretien des bâtiments (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): manutenzione dei fabbricati (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input price index (prices paid by farmers): Plant protection products (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Plant protection products (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): productos fitosanitarios (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : produits phytosanitaires (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): prodotti fitosanitari (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input price index (prices paid by farmers): Seeds and planting stock (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Input price index (prices paid by farmers): Seeds and planting stock (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Índice de precios de los insumos (precios pagados por los agricultores): semillas y material de plantación (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Indice des prix des intrants (prix payés par les agriculteurs) : semences et plants (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Indice dei prezzi dei mezzi di produzione (prezzi pagati dagli agricoltori): sementi e materiale di piantagione (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Input to capture-based aquaculture (from 2008 onwards) (Tonnes live weight, Eurostat)": {
+  "en": "Input to capture-based aquaculture (from 2008 onwards) (Tonnes live weight, Eurostat)",
+  "es": "Aporte a la acuicultura basada en capturas (desde 2008) (toneladas de peso vivo, Eurostat)",
+  "fr": "Apport à l’aquaculture fondée sur la capture (à partir de 2008) (tonnes de poids vif, Eurostat)",
+  "it": "Apporto all’acquacoltura basata sulla cattura (dal 2008) (tonnellate di peso vivo, Eurostat)"
+ },
+ "Lamb and mutton: cold storage (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Lamb and mutton: cold storage (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Cordero y carnero: existencias en cámaras frigoríficas (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Agneau et mouton : stocks en entrepôts frigorifiques (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Agnello e montone: scorte nei magazzini frigoriferi (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Lambs at slaughterhouse gate: weighted avg price": {
+  "en": "Lambs at slaughterhouse gate: weighted avg price",
+  "es": "Corderos a puerta de matadero: precio medio ponderado",
+  "fr": "Agneaux à la porte de l’abattoir : prix moyen pondéré",
+  "it": "Agnelli al cancello del macello: prezzo medio ponderato"
+ },
+ "Land use embodied in EU exports by product (HS 2022): Fish (Hectare, Eurostat)": {
+  "en": "Land use embodied in EU exports by product (HS 2022): Fish (Hectare, Eurostat)",
+  "es": "Uso de la tierra incorporado en las exportaciones de la UE por producto (SA 2022): pescado (hectáreas, Eurostat)",
+  "fr": "Utilisation des terres incorporée dans les exportations de l’UE par produit (SH 2022) : poisson (hectares, Eurostat)",
+  "it": "Uso del suolo incorporato nelle esportazioni dell’UE per prodotto (SA 2022): pesce (ettari, Eurostat)"
+ },
+ "Land use embodied in EU exports by product (HS 2022): Plant (Hectare, Eurostat)": {
+  "en": "Land use embodied in EU exports by product (HS 2022): Plant (Hectare, Eurostat)",
+  "es": "Uso de la tierra incorporado en las exportaciones de la UE por producto (SA 2022): vegetales (hectáreas, Eurostat)",
+  "fr": "Utilisation des terres incorporée dans les exportations de l’UE par produit (SH 2022) : végétaux (hectares, Eurostat)",
+  "it": "Uso del suolo incorporato nelle esportazioni dell’UE per prodotto (SA 2022): vegetali (ettari, Eurostat)"
+ },
+ "Land use embodied in EU exports by product (HS 2022): Primary crops (Hectare, Eurostat)": {
+  "en": "Land use embodied in EU exports by product (HS 2022): Primary crops (Hectare, Eurostat)",
+  "es": "Uso de la tierra incorporado en las exportaciones de la UE por producto (SA 2022): cultivos primarios (hectáreas, Eurostat)",
+  "fr": "Utilisation des terres incorporée dans les exportations de l’UE par produit (SH 2022) : cultures primaires (hectares, Eurostat)",
+  "it": "Uso del suolo incorporato nelle esportazioni dell’UE per prodotto (SA 2022): colture primarie (ettari, Eurostat)"
+ },
+ "Land use embodied in EU exports by product (HS 2022): Primary livestock (Hectare, Eurostat)": {
+  "en": "Land use embodied in EU exports by product (HS 2022): Primary livestock (Hectare, Eurostat)",
+  "es": "Uso de la tierra incorporado en las exportaciones de la UE por producto (SA 2022): ganadería primaria (hectáreas, Eurostat)",
+  "fr": "Utilisation des terres incorporée dans les exportations de l’UE par produit (SH 2022) : élevage primaire (hectares, Eurostat)",
+  "it": "Uso del suolo incorporato nelle esportazioni dell’UE per prodotto (SA 2022): zootecnia primaria (ettari, Eurostat)"
+ },
+ "Land use embodied in EU exports by product (HS 2022): Processed livestock (Hectare, Eurostat)": {
+  "en": "Land use embodied in EU exports by product (HS 2022): Processed livestock (Hectare, Eurostat)",
+  "es": "Uso de la tierra incorporado en las exportaciones de la UE por producto (SA 2022): ganadería transformada (hectáreas, Eurostat)",
+  "fr": "Utilisation des terres incorporée dans les exportations de l’UE par produit (SH 2022) : élevage transformé (hectares, Eurostat)",
+  "it": "Uso del suolo incorporato nelle esportazioni dell’UE per prodotto (SA 2022): zootecnia trasformata (ettari, Eurostat)"
+ },
+ "Land use embodied in EU exports by product (HS 2022): Total (Hectare, Eurostat)": {
+  "en": "Land use embodied in EU exports by product (HS 2022): Total (Hectare, Eurostat)",
+  "es": "Uso de la tierra incorporado en las exportaciones de la UE por producto (SA 2022): total (hectáreas, Eurostat)",
+  "fr": "Utilisation des terres incorporée dans les exportations de l’UE par produit (SH 2022) : total (hectares, Eurostat)",
+  "it": "Uso del suolo incorporato nelle esportazioni dell’UE per prodotto (SA 2022): totale (ettari, Eurostat)"
+ },
+ "Lemons, phd equiv: production value": {
+  "en": "Lemons, phd equiv: production value",
+  "es": "Limones, equivalente en puerta del almacén (PHD): valor de la producción",
+  "fr": "Citrons, équivalent à la porte de l’entrepôt (PHD) : valeur de la production",
+  "it": "Limoni, equivalente al cancello del magazzino (PHD): valore della produzione"
+ },
+ "Lemons, size 3/4 (origin: Spain)": {
+  "en": "Lemons, size 3/4 (origin: Spain)",
+  "es": "Limones, calibre 3/4 (origen: España)",
+  "fr": "Citrons, calibre 3/4 (origine: Espagne)",
+  "it": "Limoni, calibro 3/4 (origine: Spagna)"
+ },
+ "Lemons: area bearing": {
+  "en": "Lemons: area bearing",
+  "es": "Limones: superficie en producción",
+  "fr": "Citrons : superficie en production",
+  "it": "Limoni: superficie in produzione"
+ },
+ "Maize: Fob Atlantic": {
+  "en": "Maize: Fob Atlantic",
+  "es": "Maíz: FOB Atlántico",
+  "fr": "Maïs : FOB Atlantique",
+  "it": "Mais: FOB Atlantico"
+ },
+ "Maize: Fob Atlantic July basis": {
+  "en": "Maize: Fob Atlantic July basis",
+  "es": "Maíz: FOB Atlántico, base julio",
+  "fr": "Maïs : FOB Atlantique, base juillet",
+  "it": "Mais: FOB Atlantico, base luglio"
+ },
+ "Maize: stocks at trade companies, end of half-year (KORN2)": {
+  "en": "Maize: stocks at trade companies, end of half-year (KORN2)",
+  "es": "Maíz: existencias en empresas comerciales, a fin de semestre (KORN2)",
+  "fr": "Maïs : stocks dans les entreprises commerciales, fin de semestre (KORN2)",
+  "it": "Mais: scorte presso le imprese commerciali, a fine semestre (KORN2)"
+ },
+ "Meat, monthly: Meat of sheep and goats (Thousand tonnes, Eurostat)": {
+  "en": "Meat, monthly: Meat of sheep and goats (Thousand tonnes, Eurostat)",
+  "es": "Carne, mensual: carne de ovino y caprino (miles de toneladas, Eurostat)",
+  "fr": "Viande, mensuel : viande ovine et caprine (milliers de tonnes, Eurostat)",
+  "it": "Carne, mensile: carne ovina e caprina (migliaia di tonnellate, Eurostat)"
+ },
+ "Milk and milk products: Organic Raw milk Product vs Raw milk, comparison price (Raw milk) (EU Agri-food)": {
+  "en": "Milk and milk products: Organic Raw milk Product vs Raw milk, comparison price (Raw milk) (EU Agri-food)",
+  "es": "Leche y productos lácteos: leche cruda ecológica frente a leche cruda, precio de comparación (leche cruda) (EU Agri-food)",
+  "fr": "Lait et produits laitiers : lait cru bio contre lait cru, prix de comparaison (lait cru) (EU Agri-food)",
+  "it": "Latte e prodotti lattiero-caseari: latte crudo biologico rispetto a latte crudo, prezzo di confronto (latte crudo) (EU Agri-food)"
+ },
+ "Milk and milk products: Organic Raw milk Product vs Raw milk, organic premium over comparison (EU Agri-food)": {
+  "en": "Milk and milk products: Organic Raw milk Product vs Raw milk, organic premium over comparison (EU Agri-food)",
+  "es": "Leche y productos lácteos: leche cruda ecológica frente a leche cruda, prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Lait et produits laitiers : lait cru bio contre lait cru, prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Latte e prodotti lattiero-caseari: latte crudo biologico rispetto a latte crudo, premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Milk and milk products: Organic Raw milk Product vs Raw milk, organic price (EU Agri-food)": {
+  "en": "Milk and milk products: Organic Raw milk Product vs Raw milk, organic price (EU Agri-food)",
+  "es": "Leche y productos lácteos: leche cruda ecológica frente a leche cruda, precio ecológico (EU Agri-food)",
+  "fr": "Lait et produits laitiers : lait cru bio contre lait cru, prix bio (EU Agri-food)",
+  "it": "Latte e prodotti lattiero-caseari: latte crudo biologico rispetto a latte crudo, prezzo biologico (EU Agri-food)"
+ },
+ "Monthly stocks: barley, grain equivalent (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: barley, grain equivalent (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: cebada, equivalente en grano (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : orge, équivalent grain (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: orzo, equivalente in granella (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Monthly stocks: maize, grain equivalent (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: maize, grain equivalent (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: maíz, equivalente en grano (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : maïs, équivalent grain (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: mais, equivalente in granella (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Monthly stocks: rapeseed, meal and cake (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: rapeseed, meal and cake (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: colza, harina y torta (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : colza, farine et tourteau (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: colza, farina e panello (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Monthly stocks: rapeseed, seed (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: rapeseed, seed (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: colza, semilla (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : colza, graines (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: colza, semi (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Monthly stocks: soybean meal and cake (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: soybean meal and cake (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: soja, harina y torta (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : soja, farine et tourteau (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: soia, farina e panello (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Monthly stocks: soybeans, seed (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: soybeans, seed (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: soja, semilla (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : soja, graines (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: soia, semi (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Monthly stocks: sunflower meal and cake (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: sunflower meal and cake (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: girasol, harina y torta (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : tournesol, farine et tourteau (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: girasole, farina e panello (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Monthly stocks: sunflower seed (MAPA SIEGA operator declarations)": {
+  "en": "Monthly stocks: sunflower seed (MAPA SIEGA operator declarations)",
+  "es": "Existencias mensuales: girasol, semilla (declaraciones de operadores, MAPA SIEGA)",
+  "fr": "Stocks mensuels : tournesol, graines (déclarations des opérateurs, MAPA SIEGA)",
+  "it": "Scorte mensili: girasole, semi (dichiarazioni degli operatori, MAPA SIEGA)"
+ },
+ "Oats (incl. cereal mixtures): stocks at trade companies, end of half-year (KORN2)": {
+  "en": "Oats (incl. cereal mixtures): stocks at trade companies, end of half-year (KORN2)",
+  "es": "Avena (incl. mezclas de cereales): existencias en empresas comerciales, a fin de semestre (KORN2)",
+  "fr": "Avoine (y compris mélanges de céréales) : stocks dans les entreprises commerciales, fin de semestre (KORN2)",
+  "it": "Avena (incl. miscele di cereali): scorte presso le imprese commerciali, a fine semestre (KORN2)"
+ },
+ "Oilseeds and protein crops: Broad/field beans area (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Broad/field beans area (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Habas y haboncillos, superficie (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Fèves et féveroles, superficie (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Fave e favino, superficie (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Broad/field beans production (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Broad/field beans production (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Habas y haboncillos, producción (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Fèves et féveroles, production (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Fave e favino, produzione (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Broad/field beans yield (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Broad/field beans yield (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Habas y haboncillos, rendimiento (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Fèves et féveroles, rendement (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Fave e favino, resa (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Field peas area (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Field peas area (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Guisantes secos, superficie (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Pois protéagineux, superficie (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Piselli proteici, superficie (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Field peas production (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Field peas production (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Guisantes secos, producción (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Pois protéagineux, production (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Piselli proteici, produzione (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Field peas yield (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Field peas yield (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Guisantes secos, rendimiento (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Pois protéagineux, rendement (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Piselli proteici, resa (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Organic soya beans vs Soya beans - N.A., comparison price (Soya beans - N.A.) (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Organic soya beans vs Soya beans - N.A., comparison price (Soya beans - N.A.) (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: soja ecológica frente a soja (sin más especificación), precio de comparación (soja (sin más especificación)) (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : soja bio contre soja (non précisé), prix de comparaison (soja (non précisé)) (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: soia biologica rispetto a soia (non specificata), prezzo di confronto (soia (non specificata)) (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Organic soya beans vs Soya beans - N.A., organic premium over comparison (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Organic soya beans vs Soya beans - N.A., organic premium over comparison (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: soja ecológica frente a soja (sin más especificación), prima ecológica sobre el precio de comparación (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : soja bio contre soja (non précisé), prime bio par rapport au prix de comparaison (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: soia biologica rispetto a soia (non specificata), premio biologico rispetto al prezzo di confronto (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Organic soya beans vs Soya beans - N.A., organic price (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Organic soya beans vs Soya beans - N.A., organic price (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: soja ecológica frente a soja (sin más especificación), precio ecológico (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : soja bio contre soja (non précisé), prix bio (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: soia biologica rispetto a soia (non specificata), prezzo biologico (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Rapeseed area (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Rapeseed area (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Colza, superficie (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Colza, superficie (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Colza, superficie (EU Agri-food)"
+ },
+ "Oilseeds and protein crops: Rapeseed production (EU Agri-food)": {
+  "en": "Oilseeds and protein crops: Rapeseed production (EU Agri-food)",
+  "es": "Oleaginosas y proteaginosas: Colza, producción (EU Agri-food)",
+  "fr": "Oléagineux et protéagineux : Colza, production (EU Agri-food)",
+  "it": "Semi oleosi e proteaginose: Colza, produzione (EU Agri-food)"
+ },
+ "Oilseeds, total: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)": {
+  "en": "Oilseeds, total: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)",
+  "es": "Oleaginosas (total): existencias finales a 30 de junio (fin de la campaña julio-junio), Austria (balance de oferta de Statistik Austria)",
+  "fr": "Oléagineux (total) : stocks de clôture au 30 juin (fin de la campagne juillet-juin), Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Semi oleosi (totale): scorte finali al 30 giugno (fine della campagna luglio-giugno), Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Organic agricultural area under conversion (GUS)": {
+  "en": "Organic agricultural area under conversion (GUS)",
+  "es": "Superficie agrícola ecológica en conversión (GUS)",
+  "fr": "Surface agricole bio en conversion (GUS)",
+  "it": "Superficie agricola biologica in conversione (GUS)"
+ },
+ "Organic agricultural area, total (GUS)": {
+  "en": "Organic agricultural area, total (GUS)",
+  "es": "Superficie agrícola ecológica, total (GUS)",
+  "fr": "Surface agricole bio, total (GUS)",
+  "it": "Superficie agricola biologica, totale (GUS)"
+ },
+ "Organic farms under conversion (GUS)": {
+  "en": "Organic farms under conversion (GUS)",
+  "es": "Explotaciones ecológicas en conversión (GUS)",
+  "fr": "Exploitations bio en conversion (GUS)",
+  "it": "Aziende biologiche in conversione (GUS)"
+ },
+ "Organic livestock: bovine animals, Spain (Eurostat apro_mt_lsorg)": {
+  "en": "Organic livestock: bovine animals, Spain (Eurostat apro_mt_lsorg)",
+  "es": "Ganadería ecológica: bovinos, España (Eurostat apro_mt_lsorg)",
+  "fr": "Élevage bio : bovins, Espagne (Eurostat apro_mt_lsorg)",
+  "it": "Zootecnia biologica: bovini, Spagna (Eurostat apro_mt_lsorg)"
+ },
+ "Organic livestock: dairy cows, Spain (Eurostat apro_mt_lsorg)": {
+  "en": "Organic livestock: dairy cows, Spain (Eurostat apro_mt_lsorg)",
+  "es": "Ganadería ecológica: vacas lecheras, España (Eurostat apro_mt_lsorg)",
+  "fr": "Élevage bio : vaches laitières, Espagne (Eurostat apro_mt_lsorg)",
+  "it": "Zootecnia biologica: vacche da latte, Spagna (Eurostat apro_mt_lsorg)"
+ },
+ "Organic livestock: goats, Spain (Eurostat apro_mt_lsorg)": {
+  "en": "Organic livestock: goats, Spain (Eurostat apro_mt_lsorg)",
+  "es": "Ganadería ecológica: caprino, España (Eurostat apro_mt_lsorg)",
+  "fr": "Élevage bio : caprins, Espagne (Eurostat apro_mt_lsorg)",
+  "it": "Zootecnia biologica: caprini, Spagna (Eurostat apro_mt_lsorg)"
+ },
+ "Organic livestock: pigs, Spain (Eurostat apro_mt_lsorg)": {
+  "en": "Organic livestock: pigs, Spain (Eurostat apro_mt_lsorg)",
+  "es": "Ganadería ecológica: porcino, España (Eurostat apro_mt_lsorg)",
+  "fr": "Élevage bio : porcins, Espagne (Eurostat apro_mt_lsorg)",
+  "it": "Zootecnia biologica: suini, Spagna (Eurostat apro_mt_lsorg)"
+ },
+ "Organic livestock: sheep, Spain (Eurostat apro_mt_lsorg)": {
+  "en": "Organic livestock: sheep, Spain (Eurostat apro_mt_lsorg)",
+  "es": "Ganadería ecológica: ovino, España (Eurostat apro_mt_lsorg)",
+  "fr": "Élevage bio : ovins, Espagne (Eurostat apro_mt_lsorg)",
+  "it": "Zootecnia biologica: ovini, Spagna (Eurostat apro_mt_lsorg)"
+ },
+ "Organic milk: farm-gate price, actual composition": {
+  "en": "Organic milk: farm-gate price, actual composition",
+  "es": "Leche ecológica: precio en explotación, composición real",
+  "fr": "Lait bio : prix à la ferme, composition réelle",
+  "it": "Latte biologico: prezzo alla stalla, composizione effettiva"
+ },
+ "Organic milk: farm-gate price, standardised": {
+  "en": "Organic milk: farm-gate price, standardised",
+  "es": "Leche ecológica: precio en explotación, normalizado",
+  "fr": "Lait bio : prix à la ferme, standardisé",
+  "it": "Latte biologico: prezzo alla stalla, standardizzato"
+ },
+ "Organic milk: fat content": {
+  "en": "Organic milk: fat content",
+  "es": "Leche ecológica: contenido de grasa",
+  "fr": "Lait bio : teneur en matière grasse",
+  "it": "Latte biologico: contenuto di grasso"
+ },
+ "Organic milk: milk delivered": {
+  "en": "Organic milk: milk delivered",
+  "es": "Leche ecológica: leche entregada",
+  "fr": "Lait bio : lait livré",
+  "it": "Latte biologico: latte consegnato"
+ },
+ "Organic milk: price delivered to dairy, standardised": {
+  "en": "Organic milk: price delivered to dairy, standardised",
+  "es": "Leche ecológica: precio entregada en la industria láctea, normalizado",
+  "fr": "Lait bio : prix rendu laiterie, standardisé",
+  "it": "Latte biologico: prezzo consegnato al caseificio, standardizzato"
+ },
+ "Organic processors: Manufacture of grain mill products, starches and starch products (Number, Eurostat)": {
+  "en": "Organic processors: Manufacture of grain mill products, starches and starch products (Number, Eurostat)",
+  "es": "Transformadores ecológicos: fabricación de productos de molinería, almidones y productos amiláceos (número, Eurostat)",
+  "fr": "Transformateurs bio : fabrication de produits du travail des grains, d’amidon et de produits amylacés (nombre, Eurostat)",
+  "it": "Trasformatori biologici: fabbricazione di prodotti della macinazione, amidi e prodotti amidacei (numero, Eurostat)"
+ },
+ "Other chicken: cold storage (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Other chicken: cold storage (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Otro pollo: existencias en cámaras frigoríficas (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Autre poulet : stocks en entrepôts frigorifiques (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Altro pollo: scorte nei magazzini frigoriferi (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Pigs for slaughter (live weight): procurement price, monthly (GUS)": {
+  "en": "Pigs for slaughter (live weight): procurement price, monthly (GUS)",
+  "es": "Porcino para sacrificio (peso vivo): precio de compra, mensual (GUS)",
+  "fr": "Porcins pour l’abattage (poids vif) : prix d’achat, mensuel (GUS)",
+  "it": "Suini da macello (peso vivo): prezzo di acquisto, mensile (GUS)"
+ },
+ "Pigs, class E: Brandenburg, Mecklenburg-Western Pomerania, Saxony, Saxony-Anhalt, Thuringia and Schleswig-Holstein": {
+  "en": "Pigs, class E: Brandenburg, Mecklenburg-Western Pomerania, Saxony, Saxony-Anhalt, Thuringia and Schleswig-Holstein",
+  "es": "Cerdos, clase E: Brandeburgo, Mecklemburgo-Pomerania Occidental, Sajonia, Sajonia-Anhalt, Turingia y Schleswig-Holstein",
+  "fr": "Porcs, classe E : Brandebourg, Mecklembourg-Poméranie-Occidentale, Saxe, Saxe-Anhalt, Thuringe et Schleswig-Holstein",
+  "it": "Suini, classe E: Brandeburgo, Meclemburgo-Pomerania Anteriore, Sassonia, Sassonia-Anhalt, Turingia e Schleswig-Holstein"
+ },
+ "Pigs, class M (Germany, carcass)": {
+  "en": "Pigs, class M (Germany, carcass)",
+  "es": "Cerdos, clase M (Alemania, en canal)",
+  "fr": "Porcs, classe M (Allemagne, carcasse)",
+  "it": "Suini, classe M (Germania, carcassa)"
+ },
+ "Pigs: producer price index (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Pigs: producer price index (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Porcino: índice de precios de producción (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Porcins : indice des prix à la production (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Suini: indice dei prezzi alla produzione (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Pork: cold storage (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Pork: cold storage (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Cerdo: existencias en cámaras frigoríficas (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Porc : stocks en entrepôts frigorifiques (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Carne suina: scorte nei magazzini frigoriferi (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Potatoes: producer price index (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Potatoes: producer price index (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Patatas: índice de precios de producción (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Pommes de terre : indice des prix à la production (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Patate: indice dei prezzi alla produzione (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Poultry for slaughter (live weight): procurement price, monthly (GUS)": {
+  "en": "Poultry for slaughter (live weight): procurement price, monthly (GUS)",
+  "es": "Aves para sacrificio (peso vivo): precio de compra, mensual (GUS)",
+  "fr": "Volailles pour l’abattage (poids vif) : prix d’achat, mensuel (GUS)",
+  "it": "Pollame da macello (peso vivo): prezzo di acquisto, mensile (GUS)"
+ },
+ "Poultry, monthly: Chicks of laying hen breeds (laying) (Thousand, Eurostat)": {
+  "en": "Poultry, monthly: Chicks of laying hen breeds (laying) (Thousand, Eurostat)",
+  "es": "Aves, mensual: pollitos de razas ponedoras (puesta) (miles, Eurostat)",
+  "fr": "Volailles, mensuel : poussins de races pondeuses (ponte) (milliers, Eurostat)",
+  "it": "Pollame, mensile: pulcini di razze ovaiole (deposizione) (migliaia, Eurostat)"
+ },
+ "Poultry, monthly: Chicks of laying hen breeds (selection) (Thousand, Eurostat)": {
+  "en": "Poultry, monthly: Chicks of laying hen breeds (selection) (Thousand, Eurostat)",
+  "es": "Aves, mensual: pollitos de razas ponedoras (selección) (miles, Eurostat)",
+  "fr": "Volailles, mensuel : poussins de races pondeuses (sélection) (milliers, Eurostat)",
+  "it": "Pollame, mensile: pulcini di razze ovaiole (selezione) (migliaia, Eurostat)"
+ },
+ "Poultrymeat: Class A Chicken, comparison price (Class A Chicken) (EU Agri-food)": {
+  "en": "Poultrymeat: Class A Chicken, comparison price (Class A Chicken) (EU Agri-food)",
+  "es": "Carne de aves: pollo de clase A, precio de comparación (pollo de clase A) (EU Agri-food)",
+  "fr": "Viande de volaille : poulet de classe A, prix de comparaison (poulet de classe A) (EU Agri-food)",
+  "it": "Carne di pollame: pollo di classe A, prezzo di confronto (pollo di classe A) (EU Agri-food)"
+ },
+ "Poultrymeat: Class A Chicken, organic price (EU Agri-food)": {
+  "en": "Poultrymeat: Class A Chicken, organic price (EU Agri-food)",
+  "es": "Carne de aves: pollo de clase A, precio ecológico (EU Agri-food)",
+  "fr": "Viande de volaille : poulet de classe A, prix bio (EU Agri-food)",
+  "it": "Carne di pollame: pollo di classe A, prezzo biologico (EU Agri-food)"
+ },
+ "Price index of cream for butter-making (Rahmpreisindex fuer Butterherstellung, FOAG)": {
+  "en": "Price index of cream for butter-making (Rahmpreisindex fuer Butterherstellung, FOAG)",
+  "es": "Índice de precios de la nata para fabricar mantequilla (Rahmpreisindex für Butterherstellung, FOAG)",
+  "fr": "Indice du prix de la crème pour la fabrication du beurre (Rahmpreisindex für Butterherstellung, OFAG)",
+  "it": "Indice del prezzo della panna per la produzione di burro (Rahmpreisindex für Butterherstellung, UFAG)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): agricultural products (total) (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): agricultural products (total) (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): productos agrícolas (total) (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : produits agricoles (total) (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): prodotti agricoli (totale) (dic. 2015 = 100)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): cattle and milk (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): cattle and milk (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): ganado vacuno y leche (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : bovins et lait (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): bovini e latte (dic. 2015 = 100)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): cereals and oilseeds (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): cereals and oilseeds (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): cereales y oleaginosas (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : céréales et oléagineux (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): cereali e semi oleosi (dic. 2015 = 100)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): dairy products (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): dairy products (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): productos lácteos (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : produits laitiers (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): prodotti lattiero-caseari (dic. 2015 = 100)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): fruit (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): fruit (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): fruta (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : fruits (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): frutta (dic. 2015 = 100)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): meat products (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): meat products (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): productos cárnicos (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : produits carnés (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): prodotti a base di carne (dic. 2015 = 100)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): pigs and farm products (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): pigs and farm products (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): porcino y productos de granja (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : porcins et produits de ferme (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): suini e prodotti di allevamento (dic. 2015 = 100)"
+ },
+ "Producer price index (INDEC IPP, basic prices, domestic products): sugar (Dec 2015 = 100)": {
+  "en": "Producer price index (INDEC IPP, basic prices, domestic products): sugar (Dec 2015 = 100)",
+  "es": "Índice de precios de producción (INDEC IPP, precios básicos, productos nacionales): azúcar (dic. 2015 = 100)",
+  "fr": "Indice des prix à la production (INDEC IPP, prix de base, produits nationaux) : sucre (déc. 2015 = 100)",
+  "it": "Indice dei prezzi alla produzione (INDEC IPP, prezzi base, prodotti nazionali): zucchero (dic. 2015 = 100)"
+ },
+ "Production of fish eggs for human consumption from aquaculture (from 2008 onwards): TOTAL FISHERY PRODUCTS (Tonnes live weight, Eurostat)": {
+  "en": "Production of fish eggs for human consumption from aquaculture (from 2008 onwards): TOTAL FISHERY PRODUCTS (Tonnes live weight, Eurostat)",
+  "es": "Producción de huevas de pescado para consumo humano procedentes de la acuicultura (desde 2008): total de productos de la pesca (toneladas de peso vivo, Eurostat)",
+  "fr": "Production d’œufs de poisson destinés à la consommation humaine issus de l’aquaculture (à partir de 2008) : total des produits de la pêche (tonnes de poids vif, Eurostat)",
+  "it": "Produzione di uova di pesce per il consumo umano da acquacoltura (dal 2008): totale dei prodotti della pesca (tonnellate di peso vivo, Eurostat)"
+ },
+ "Production of hatcheries and nurseries at eggs stage in life cycle (from 2008 onwards) (Million, Eurostat)": {
+  "en": "Production of hatcheries and nurseries at eggs stage in life cycle (from 2008 onwards) (Million, Eurostat)",
+  "es": "Producción de criaderos y viveros en fase de huevo (desde 2008) (millones, Eurostat)",
+  "fr": "Production des écloseries et nurseries au stade œuf (à partir de 2008) (millions, Eurostat)",
+  "it": "Produzione di avannotterie e vivai allo stadio di uovo (dal 2008) (milioni, Eurostat)"
+ },
+ "Production of hatcheries and nurseries at juveniles stage in life cycle (from 2008 onwards) (Million, Eurostat)": {
+  "en": "Production of hatcheries and nurseries at juveniles stage in life cycle (from 2008 onwards) (Million, Eurostat)",
+  "es": "Producción de criaderos y viveros en fase de juveniles (desde 2008) (millones, Eurostat)",
+  "fr": "Production des écloseries et nurseries au stade juvénile (à partir de 2008) (millions, Eurostat)",
+  "it": "Produzione di avannotterie e vivai allo stadio di giovanili (dal 2008) (milioni, Eurostat)"
+ },
+ "Proportion of fish stocks sustainably exploited: Atlantic, Northeast, Assessed fish stocks (Number, Eurostat)": {
+  "en": "Proportion of fish stocks sustainably exploited: Atlantic, Northeast, Assessed fish stocks (Number, Eurostat)",
+  "es": "Proporción de poblaciones de peces explotadas de forma sostenible: Atlántico nororiental, poblaciones de peces evaluadas (número, Eurostat)",
+  "fr": "Proportion de stocks de poissons exploités durablement : Atlantique Nord-Est, stocks de poissons évalués (nombre, Eurostat)",
+  "it": "Quota di stock ittici sfruttati in modo sostenibile: Atlantico nord-orientale, stock ittici valutati (numero, Eurostat)"
+ },
+ "Proportion of fish stocks sustainably exploited: Atlantic, Northeast, Sustainably exploited fish stocks (Number, Eurostat)": {
+  "en": "Proportion of fish stocks sustainably exploited: Atlantic, Northeast, Sustainably exploited fish stocks (Number, Eurostat)",
+  "es": "Proporción de poblaciones de peces explotadas de forma sostenible: Atlántico nororiental, poblaciones de peces explotadas de forma sostenible (número, Eurostat)",
+  "fr": "Proportion de stocks de poissons exploités durablement : Atlantique Nord-Est, stocks de poissons exploités durablement (nombre, Eurostat)",
+  "it": "Quota di stock ittici sfruttati in modo sostenibile: Atlantico nord-orientale, stock ittici sfruttati in modo sostenibile (numero, Eurostat)"
+ },
+ "Proportion of fish stocks sustainably exploited: Atlantic, Northeast, Sustainably exploited fish stocks (Percentage, Eurostat)": {
+  "en": "Proportion of fish stocks sustainably exploited: Atlantic, Northeast, Sustainably exploited fish stocks (Percentage, Eurostat)",
+  "es": "Proporción de poblaciones de peces explotadas de forma sostenible: Atlántico nororiental, poblaciones de peces explotadas de forma sostenible (porcentaje, Eurostat)",
+  "fr": "Proportion de stocks de poissons exploités durablement : Atlantique Nord-Est, stocks de poissons exploités durablement (pourcentage, Eurostat)",
+  "it": "Quota di stock ittici sfruttati in modo sostenibile: Atlantico nord-orientale, stock ittici sfruttati in modo sostenibile (percentuale, Eurostat)"
+ },
+ "Proportion of fish stocks sustainably exploited: EU total marine areas, Assessed fish stocks (Number, Eurostat)": {
+  "en": "Proportion of fish stocks sustainably exploited: EU total marine areas, Assessed fish stocks (Number, Eurostat)",
+  "es": "Proporción de poblaciones de peces explotadas de forma sostenible: total de zonas marinas de la UE, poblaciones de peces evaluadas (número, Eurostat)",
+  "fr": "Proportion de stocks de poissons exploités durablement : ensemble des zones marines de l’UE, stocks de poissons évalués (nombre, Eurostat)",
+  "it": "Quota di stock ittici sfruttati in modo sostenibile: totale delle zone marine dell’UE, stock ittici valutati (numero, Eurostat)"
+ },
+ "Rapeseed and turnip rape: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)": {
+  "en": "Rapeseed and turnip rape: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)",
+  "es": "Colza y nabina: existencias finales a 30 de junio (fin de la campaña julio-junio), Austria (balance de oferta de Statistik Austria)",
+  "fr": "Colza et navette : stocks de clôture au 30 juin (fin de la campagne juillet-juin), Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Colza e ravizzone: scorte finali al 30 giugno (fine della campagna luglio-giugno), Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Raw milk: producer price index (Dec 2020=100, annual mean; Agristat/BFS)": {
+  "en": "Raw milk: producer price index (Dec 2020=100, annual mean; Agristat/BFS)",
+  "es": "Leche cruda: índice de precios de producción (dic. 2020=100, media anual; Agristat/BFS)",
+  "fr": "Lait cru : indice des prix à la production (déc. 2020=100, moyenne annuelle; Agristat/BFS)",
+  "it": "Latte crudo: indice dei prezzi alla produzione (dic. 2020=100, media annuale; Agristat/BFS)"
+ },
+ "Rye: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)": {
+  "en": "Rye: ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)",
+  "es": "Centeno: existencias finales a 30 de junio (fin de la campaña julio-junio), Austria (balance de oferta de Statistik Austria)",
+  "fr": "Seigle : stocks de clôture au 30 juin (fin de la campagne juillet-juin), Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Segale: scorte finali al 30 giugno (fine della campagna luglio-giugno), Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Rye: stocks at trade companies, end of half-year (KORN2)": {
+  "en": "Rye: stocks at trade companies, end of half-year (KORN2)",
+  "es": "Centeno: existencias en empresas comerciales, a fin de semestre (KORN2)",
+  "fr": "Seigle : stocks dans les entreprises commerciales, fin de semestre (KORN2)",
+  "it": "Segale: scorte presso le imprese commerciali, a fine semestre (KORN2)"
+ },
+ "Sheep: inventory on holdings, head, Uruguay (MGAP DICOSE, PD_AD)": {
+  "en": "Sheep: inventory on holdings, head, Uruguay (MGAP DICOSE, PD_AD)",
+  "es": "Ovinos: existencias en las explotaciones, cabezas, Uruguay (MGAP DICOSE, PD_AD)",
+  "fr": "Ovins : effectif dans les exploitations, têtes, Uruguay (MGAP DICOSE, PD_AD)",
+  "it": "Ovini: consistenza nelle aziende, capi, Uruguay (MGAP DICOSE, PD_AD)"
+ },
+ "Skimmed milk powder: exports, Argentina (quantity; INDEC via SAGyP Lecheria)": {
+  "en": "Skimmed milk powder: exports, Argentina (quantity; INDEC via SAGyP Lecheria)",
+  "es": "Leche desnatada en polvo: exportaciones, Argentina (cantidad; INDEC a través de SAGyP Lechería)",
+  "fr": "Lait écrémé en poudre : exportations, Argentine (quantité; INDEC via SAGyP Lechería)",
+  "it": "Latte scremato in polvere: esportazioni, Argentina (quantità; INDEC tramite SAGyP Lechería)"
+ },
+ "Skimmed milk powder: exports, Argentina (value; INDEC via SAGyP Lecheria)": {
+  "en": "Skimmed milk powder: exports, Argentina (value; INDEC via SAGyP Lecheria)",
+  "es": "Leche desnatada en polvo: exportaciones, Argentina (valor; INDEC a través de SAGyP Lechería)",
+  "fr": "Lait écrémé en poudre : exportations, Argentine (valeur; INDEC via SAGyP Lechería)",
+  "it": "Latte scremato in polvere: esportazioni, Argentina (valore; INDEC tramite SAGyP Lechería)"
+ },
+ "Skimmed milk powder: production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Skimmed milk powder: production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Leche desnatada en polvo: producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Lait écrémé en poudre : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Latte scremato in polvere: produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Skimmed milk powder: stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Skimmed milk powder: stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Leche desnatada en polvo: existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Lait écrémé en poudre : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Latte scremato in polvere: scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Soybean oil (bulk): official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Soybean oil (bulk): official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Aceite de soja (a granel): precio FOB oficial, Argentina (SSPM/Ministerio de Economía)",
+  "fr": "Huile de soja (en vrac) : prix FOB officiel, Argentine (SSPM/Ministère de l’Économie)",
+  "it": "Olio di soia (sfuso): prezzo FOB ufficiale, Argentina (SSPM/Ministero dell’Economia)"
+ },
+ "Sugar beet: Region 1 area by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 1 area by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 1, superficie por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 1, superficie par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 1, superficie per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sugar beet: Region 1 production by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 1 production by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 1, producción por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 1, production par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 1, produzione per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sugar beet: Region 1 yield by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 1 yield by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 1, rendimiento por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 1, rendement par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 1, resa per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sugar beet: Region 2 area by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 2 area by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 2, superficie por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 2, superficie par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 2, superficie per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sugar beet: Region 2 production by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 2 production by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 2, producción por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 2, production par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 2, produzione per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sugar beet: Region 2 yield by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 2 yield by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 2, rendimiento por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 2, rendement par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 2, resa per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sugar beet: Region 3 area by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 3 area by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 3, superficie por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 3, superficie par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 3, superficie per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sugar beet: Region 3 production by marketing year, period = starting year (EU Agri-food)": {
+  "en": "Sugar beet: Region 3 production by marketing year, period = starting year (EU Agri-food)",
+  "es": "Remolacha azucarera: región 3, producción por campaña de comercialización (período = año de inicio) (EU Agri-food)",
+  "fr": "Betterave sucrière : région 3, production par campagne de commercialisation (période = année de début) (EU Agri-food)",
+  "it": "Barbabietola da zucchero: regione 3, produzione per campagna di commercializzazione (periodo = anno di inizio) (EU Agri-food)"
+ },
+ "Sunflower oil (bulk): official FOB price, Argentina (SSPM/Ministerio de Economia)": {
+  "en": "Sunflower oil (bulk): official FOB price, Argentina (SSPM/Ministerio de Economia)",
+  "es": "Aceite de girasol (a granel): precio FOB oficial, Argentina (SSPM/Ministerio de Economía)",
+  "fr": "Huile de tournesol (en vrac) : prix FOB officiel, Argentine (SSPM/Ministère de l’Économie)",
+  "it": "Olio di girasole (sfuso): prezzo FOB ufficiale, Argentina (SSPM/Ministero dell’Economia)"
+ },
+ "Table apples (fruit): production (BFS)": {
+  "en": "Table apples (fruit): production (BFS)",
+  "es": "Manzanas de mesa (fruta): producción (BFS)",
+  "fr": "Pommes de table (fruits) : production (OFS)",
+  "it": "Mele da tavola (frutta): produzione (UST)"
+ },
+ "Table eggs: imports, allocated/imported quantity (FOAG)": {
+  "en": "Table eggs: imports, allocated/imported quantity (FOAG)",
+  "es": "Huevos de mesa: importaciones, cantidad asignada/importada (FOAG)",
+  "fr": "Œufs de table : importations, quantité attribuée/importée (FOAG)",
+  "it": "Uova da tavola: importazioni, quantità assegnata/importata (UFAG)"
+ },
+ "Turkey: cold storage (ERS Livestock & Meat Domestic Data, monthly)": {
+  "en": "Turkey: cold storage (ERS Livestock & Meat Domestic Data, monthly)",
+  "es": "Pavo: existencias en cámaras frigoríficas (ERS, datos nacionales de ganadería y carne, mensual)",
+  "fr": "Dinde : stocks en entrepôts frigorifiques (ERS, données nationales élevage et viande, mensuel)",
+  "it": "Tacchino: scorte nei magazzini frigoriferi (ERS, dati nazionali zootecnia e carne, mensile)"
+ },
+ "Uruguay, 50S gas oil import-parity price (PPI), ex-plant, excluding taxes (URSEA)": {
+  "en": "Uruguay, 50S gas oil import-parity price (PPI), ex-plant, excluding taxes (URSEA)",
+  "es": "Uruguay, gasoil 50S: precio de paridad de importación (PPI), en planta, sin impuestos (URSEA)",
+  "fr": "Uruguay, gazole 50S : prix de parité import (PPI), départ usine, hors taxes (URSEA)",
+  "it": "Uruguay, gasolio 50S: prezzo di parità all’importazione (PPI), franco impianto, al netto delle imposte (URSEA)"
+ },
+ "Uruguay, 50S gas oil import-parity price (PPI), ex-plant, including taxes (URSEA)": {
+  "en": "Uruguay, 50S gas oil import-parity price (PPI), ex-plant, including taxes (URSEA)",
+  "es": "Uruguay, gasoil 50S: precio de paridad de importación (PPI), en planta, con impuestos (URSEA)",
+  "fr": "Uruguay, gazole 50S : prix de parité import (PPI), départ usine, taxes comprises (URSEA)",
+  "it": "Uruguay, gasolio 50S: prezzo di parità all’importazione (PPI), franco impianto, comprese le imposte (URSEA)"
+ },
+ "Uruguay, La Estanzuela station: monthly mean daily maximum temperature (INIA, derived from daily records)": {
+  "en": "Uruguay, La Estanzuela station: monthly mean daily maximum temperature (INIA, derived from daily records)",
+  "es": "Uruguay, estación La Estanzuela: media mensual de la temperatura máxima diaria (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station La Estanzuela : moyenne mensuelle de la température maximale quotidienne (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione La Estanzuela: media mensile della temperatura massima giornaliera (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay, La Estanzuela station: monthly mean daily minimum temperature (INIA, derived from daily records)": {
+  "en": "Uruguay, La Estanzuela station: monthly mean daily minimum temperature (INIA, derived from daily records)",
+  "es": "Uruguay, estación La Estanzuela: media mensual de la temperatura mínima diaria (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station La Estanzuela : moyenne mensuelle de la température minimale quotidienne (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione La Estanzuela: media mensile della temperatura minima giornaliera (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay, La Estanzuela station: monthly total rainfall (INIA, derived from daily records)": {
+  "en": "Uruguay, La Estanzuela station: monthly total rainfall (INIA, derived from daily records)",
+  "es": "Uruguay, estación La Estanzuela: precipitación total mensual (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station La Estanzuela : précipitations totales mensuelles (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione La Estanzuela: precipitazioni totali mensili (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay, Las Brujas station: monthly mean daily maximum temperature (INIA, derived from daily records)": {
+  "en": "Uruguay, Las Brujas station: monthly mean daily maximum temperature (INIA, derived from daily records)",
+  "es": "Uruguay, estación Las Brujas: media mensual de la temperatura máxima diaria (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station Las Brujas : moyenne mensuelle de la température maximale quotidienne (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione Las Brujas: media mensile della temperatura massima giornaliera (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay, Las Brujas station: monthly mean daily minimum temperature (INIA, derived from daily records)": {
+  "en": "Uruguay, Las Brujas station: monthly mean daily minimum temperature (INIA, derived from daily records)",
+  "es": "Uruguay, estación Las Brujas: media mensual de la temperatura mínima diaria (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station Las Brujas : moyenne mensuelle de la température minimale quotidienne (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione Las Brujas: media mensile della temperatura minima giornaliera (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay, Las Brujas station: monthly total rainfall (INIA, derived from daily records)": {
+  "en": "Uruguay, Las Brujas station: monthly total rainfall (INIA, derived from daily records)",
+  "es": "Uruguay, estación Las Brujas: precipitación total mensual (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station Las Brujas : précipitations totales mensuelles (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione Las Brujas: precipitazioni totali mensili (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay, Salto Grande station: monthly mean daily maximum temperature (INIA, derived from daily records)": {
+  "en": "Uruguay, Salto Grande station: monthly mean daily maximum temperature (INIA, derived from daily records)",
+  "es": "Uruguay, estación Salto Grande: media mensual de la temperatura máxima diaria (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station Salto Grande : moyenne mensuelle de la température maximale quotidienne (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione Salto Grande: media mensile della temperatura massima giornaliera (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay, Salto Grande station: monthly total rainfall (INIA, derived from daily records)": {
+  "en": "Uruguay, Salto Grande station: monthly total rainfall (INIA, derived from daily records)",
+  "es": "Uruguay, estación Salto Grande: precipitación total mensual (INIA, calculado a partir de registros diarios)",
+  "fr": "Uruguay, station Salto Grande : précipitations totales mensuelles (INIA, calculé à partir des relevés quotidiens)",
+  "it": "Uruguay, stazione Salto Grande: precipitazioni totali mensili (INIA, calcolato dai registri giornalieri)"
+ },
+ "Uruguay: land rents, area in registered operations (MGAP)": {
+  "en": "Uruguay: land rents, area in registered operations (MGAP)",
+  "es": "Uruguay: arrendamientos de tierra, superficie en operaciones registradas (MGAP)",
+  "fr": "Uruguay : locations de terres, superficie dans les opérations enregistrées (MGAP)",
+  "it": "Uruguay: affitti di terreni, superficie nelle operazioni registrate (MGAP)"
+ },
+ "Uruguay: land rents, average price per hectare (MGAP, derived, weighted)": {
+  "en": "Uruguay: land rents, average price per hectare (MGAP, derived, weighted)",
+  "es": "Uruguay: arrendamientos de tierra, precio medio por hectárea (MGAP, calculado y ponderado)",
+  "fr": "Uruguay : locations de terres, prix moyen par hectare (MGAP, calculé et pondéré)",
+  "it": "Uruguay: affitti di terreni, prezzo medio per ettaro (MGAP, calcolato e ponderato)"
+ },
+ "Uruguay: land rents, number of registered contracts (MGAP)": {
+  "en": "Uruguay: land rents, number of registered contracts (MGAP)",
+  "es": "Uruguay: arrendamientos de tierra, número de contratos registrados (MGAP)",
+  "fr": "Uruguay : locations de terres, nombre de contrats enregistrés (MGAP)",
+  "it": "Uruguay: affitti di terreni, numero di contratti registrati (MGAP)"
+ },
+ "Uruguay: land sales, area in registered operations (MGAP)": {
+  "en": "Uruguay: land sales, area in registered operations (MGAP)",
+  "es": "Uruguay: compraventas de tierra, superficie en operaciones registradas (MGAP)",
+  "fr": "Uruguay : ventes de terres, superficie dans les opérations enregistrées (MGAP)",
+  "it": "Uruguay: vendite di terreni, superficie nelle operazioni registrate (MGAP)"
+ },
+ "Uruguay: land sales, average price per hectare (MGAP, derived, weighted)": {
+  "en": "Uruguay: land sales, average price per hectare (MGAP, derived, weighted)",
+  "es": "Uruguay: compraventas de tierra, precio medio por hectárea (MGAP, calculado y ponderado)",
+  "fr": "Uruguay : ventes de terres, prix moyen par hectare (MGAP, calculé et pondéré)",
+  "it": "Uruguay: vendite di terreni, prezzo medio per ettaro (MGAP, calcolato e ponderato)"
+ },
+ "Uruguay: land sales, number of registered operations (MGAP)": {
+  "en": "Uruguay: land sales, number of registered operations (MGAP)",
+  "es": "Uruguay: compraventas de tierra, número de operaciones registradas (MGAP)",
+  "fr": "Uruguay : ventes de terres, nombre d’opérations enregistrées (MGAP)",
+  "it": "Uruguay: vendite di terreni, numero di operazioni registrate (MGAP)"
+ },
+ "Veal calves at slaughterhouse gate: weighted avg price": {
+  "en": "Veal calves at slaughterhouse gate: weighted avg price",
+  "es": "Terneros de carne a puerta de matadero: precio medio ponderado",
+  "fr": "Veaux de boucherie à la porte de l’abattoir : prix moyen pondéré",
+  "it": "Vitelli da macello al cancello del macello: prezzo medio ponderato"
+ },
+ "Wheat (common and durum): ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)": {
+  "en": "Wheat (common and durum): ending stocks at 30 June (end of the July-June marketing year), Austria (Statistik Austria supply balance)",
+  "es": "Trigo (blando y duro): existencias finales a 30 de junio (fin de la campaña julio-junio), Austria (balance de oferta de Statistik Austria)",
+  "fr": "Blé (tendre et dur) : stocks de clôture au 30 juin (fin de la campagne juillet-juin), Autriche (bilan d’approvisionnement de Statistik Austria)",
+  "it": "Frumento (tenero e duro): scorte finali al 30 giugno (fine della campagna luglio-giugno), Austria (bilancio di approvvigionamento di Statistik Austria)"
+ },
+ "Wheat price, average cash bid: no. 1 hard red winter (ordinary protein), Kansas City, MO (ERS wheat data, monthly)": {
+  "en": "Wheat price, average cash bid: no. 1 hard red winter (ordinary protein), Kansas City, MO (ERS wheat data, monthly)",
+  "es": "Precio del trigo, oferta media al contado: n.º 1 duro rojo de invierno (proteína ordinaria), Kansas City, MO (datos de trigo del ERS, mensual)",
+  "fr": "Prix du blé, offre moyenne au comptant : n° 1 dur rouge d’hiver (protéine ordinaire), Kansas City, MO (données blé de l’ERS, mensuel)",
+  "it": "Prezzo del frumento, offerta media a pronti: n. 1 duro rosso invernale (proteine ordinarie), Kansas City, MO (dati frumento ERS, mensile)"
+ },
+ "Wheat: stocks at trade companies, end of half-year (KORN2)": {
+  "en": "Wheat: stocks at trade companies, end of half-year (KORN2)",
+  "es": "Trigo: existencias en empresas comerciales, a fin de semestre (KORN2)",
+  "fr": "Blé : stocks dans les entreprises commerciales, fin de semestre (KORN2)",
+  "it": "Frumento: scorte presso le imprese commerciali, a fine semestre (KORN2)"
+ },
+ "Wheat: stocks at year end (KORN)": {
+  "en": "Wheat: stocks at year end (KORN)",
+  "es": "Trigo: existencias a fin de año (KORN)",
+  "fr": "Blé : stocks en fin d’année (KORN)",
+  "it": "Frumento: scorte a fine anno (KORN)"
+ },
+ "Wheat: stocks on farms at 30 June (annual survey, KORN2)": {
+  "en": "Wheat: stocks on farms at 30 June (annual survey, KORN2)",
+  "es": "Trigo: existencias en las explotaciones a 30 de junio (encuesta anual, KORN2)",
+  "fr": "Blé : stocks dans les exploitations au 30 juin (enquête annuelle, KORN2)",
+  "it": "Frumento: scorte nelle aziende al 30 giugno (indagine annuale, KORN2)"
+ },
+ "Whole and semi-skimmed milk powder: production by dairy plants, Argentina (SAGyP Lecheria)": {
+  "en": "Whole and semi-skimmed milk powder: production by dairy plants, Argentina (SAGyP Lecheria)",
+  "es": "Leche entera y semidesnatada en polvo: producción de las plantas lácteas, Argentina (SAGyP Lechería)",
+  "fr": "Lait entier et demi-écrémé en poudre : production des laiteries, Argentine (SAGyP Lechería)",
+  "it": "Latte intero e parzialmente scremato in polvere: produzione degli stabilimenti lattiero-caseari, Argentina (SAGyP Lechería)"
+ },
+ "Whole and semi-skimmed milk powder: stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)": {
+  "en": "Whole and semi-skimmed milk powder: stocks at dairy plants (end of month), Argentina (SAGyP Lecheria)",
+  "es": "Leche entera y semidesnatada en polvo: existencias en las plantas lácteas (fin de mes), Argentina (SAGyP Lechería)",
+  "fr": "Lait entier et demi-écrémé en poudre : stocks dans les laiteries (fin de mois), Argentine (SAGyP Lechería)",
+  "it": "Latte intero e parzialmente scremato in polvere: scorte negli stabilimenti lattiero-caseari (fine mese), Argentina (SAGyP Lechería)"
+ },
+ "Wholesale price index (INDEC IPIM, domestic and imported products): electric energy (Dec 2015 = 100)": {
+  "en": "Wholesale price index (INDEC IPIM, domestic and imported products): electric energy (Dec 2015 = 100)",
+  "es": "Índice de precios mayoristas (INDEC IPIM, productos nacionales e importados): energía eléctrica (dic. 2015 = 100)",
+  "fr": "Indice des prix de gros (INDEC IPIM, produits nationaux et importés) : énergie électrique (déc. 2015 = 100)",
+  "it": "Indice dei prezzi all’ingrosso (INDEC IPIM, prodotti nazionali e importati): energia elettrica (dic. 2015 = 100)"
+ },
+ "Wholesale price index (INDEC IPIM, domestic and imported products): fertilisers (Dec 2015 = 100)": {
+  "en": "Wholesale price index (INDEC IPIM, domestic and imported products): fertilisers (Dec 2015 = 100)",
+  "es": "Índice de precios mayoristas (INDEC IPIM, productos nacionales e importados): fertilizantes (dic. 2015 = 100)",
+  "fr": "Indice des prix de gros (INDEC IPIM, produits nationaux et importés) : engrais (déc. 2015 = 100)",
+  "it": "Indice dei prezzi all’ingrosso (INDEC IPIM, prodotti nazionali e importati): fertilizzanti (dic. 2015 = 100)"
+ },
+ "Wholesale price index (INDEC IPIM, domestic and imported products): refined petroleum products (fuels) (Dec 2015 = 100)": {
+  "en": "Wholesale price index (INDEC IPIM, domestic and imported products): refined petroleum products (fuels) (Dec 2015 = 100)",
+  "es": "Índice de precios mayoristas (INDEC IPIM, productos nacionales e importados): productos petrolíferos refinados (combustibles) (dic. 2015 = 100)",
+  "fr": "Indice des prix de gros (INDEC IPIM, produits nationaux et importés) : produits pétroliers raffinés (carburants) (déc. 2015 = 100)",
+  "it": "Indice dei prezzi all’ingrosso (INDEC IPIM, prodotti nazionali e importati): prodotti petroliferi raffinati (carburanti) (dic. 2015 = 100)"
+ },
+ "Harvested area: Barley, total (thousand ha, KSH)": {
+  "en": "Harvested area: Barley, total (thousand ha, KSH)",
+  "es": "Superficie cosechada: cebada (total) (miles de ha, KSH)",
+  "fr": "Superficie récoltée : orge (total) (milliers d’ha, KSH)",
+  "it": "Superficie raccolta: orzo (totale) (migliaia di ha, KSH)"
+ },
+ "Rye: yield": {
+  "en": "Rye: yield",
+  "es": "Centeno: rendimiento",
+  "fr": "Seigle : rendement",
+  "it": "Segale: resa"
  }
 }
