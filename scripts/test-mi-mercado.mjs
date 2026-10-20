@@ -101,7 +101,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': ES rendimiento = producción ÷ cosechada', nrm(t).includes(nrm(f(v47[4] / v47[3], 2))));
   ok(tag + ': ES media de España = JSON', nrm(t).includes(nrm(f(vc.t[4] / vc.t[3], 2))));
   ok(tag + ': ES datos provisionales y fuente MAPA', /(provisional|provisoire|provvisori)/i.test(t) && (await page.evaluate(() => document.querySelector('[data-mm-body="crop"]').parentNode.innerHTML)).includes('mapa_es'));
-  ok(tag + ': ES lista de lo que falta (4 puntos)', (await page.$$('[data-mm-body="missing"] li')).length === 4);
+  ok(tag + ': ES lista de lo que falta (3 o 4 puntos)', [3, 4].includes((await page.$$('[data-mm-body="missing"] li')).length));
   await ready('live'); const lv = await sec('live'); const lvj = J('data/spain-livestock/livestock-ovino.json'); const lva = lvj.v['47']['01']; const lvl = lva[lva.length - 1];
   ok(tag + ': ES ganaderia de Valladolid = JSON del MAPA (ovino ' + lvl + ')', nrm(lv).includes(nrm(f(lvl, 0))) && lv.split('\n').length >= 4);
   ok(tag + ': ES ganaderia con fuente MAPA', (await page.evaluate(() => document.querySelector('[data-mm-body="live"]').parentNode.innerHTML)).includes('mapa_es'));

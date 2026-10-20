@@ -966,7 +966,32 @@
     });
   }
   function missingCA() { var c = tc(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [c.no_ca1, c.no_ca2, c.no_ca3, c.no_ca4].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
-  function missingES() { var t = tr(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [t.no_es1, t.no_es2, t.no_es3, t.no_es5].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
+  var ESG = {
+    es: { t: 'Campaña {y}: solo los grupos que el MAPA ya ha publicado ({g}); el resto está en la campaña {p}.', g: { cereales: 'cereales', leguminosas: 'leguminosas', tuberculos: 'tubérculos', industriales: 'cultivos industriales', hortalizas: 'hortalizas', citricos: 'cítricos', frutales: 'frutales', olivar: 'olivar', vinedo: 'viñedo', otros_lenosos: 'otros leñosos' } },
+    en: { t: 'Campaign {y}: only the groups MAPA has already published ({g}); the rest is in campaign {p}.', g: { cereales: 'cereals', leguminosas: 'pulses', tuberculos: 'tubers', industriales: 'industrial crops', hortalizas: 'vegetables', citricos: 'citrus', frutales: 'fruit trees', olivar: 'olive groves', vinedo: 'vineyards', otros_lenosos: 'other woody crops' } },
+    fr: { t: 'Campagne {y} : seulement les groupes déjà publiés par le MAPA ({g}) ; le reste est dans la campagne {p}.', g: { cereales: 'céréales', leguminosas: 'légumineuses', tuberculos: 'tubercules', industriales: 'cultures industrielles', hortalizas: 'légumes', citricos: 'agrumes', frutales: 'arbres fruitiers', olivar: 'oliveraies', vinedo: 'vignobles', otros_lenosos: 'autres ligneux' } },
+    it: { t: 'Campagna {y}: solo i gruppi già pubblicati dal MAPA ({g}); il resto è nella campagna {p}.', g: { cereales: 'cereali', leguminosas: 'leguminose', tuberculos: 'tuberi', industriales: 'colture industriali', hortalizas: 'ortaggi', citricos: 'agrumi', frutales: 'frutta da albero', olivar: 'oliveti', vinedo: 'vigneti', otros_lenosos: 'altre legnose' } }
+  };
+  /* la linea de la campaña se calcula con data/spain-crops/index.json: cuando el MAPA publique mas grupos, cambia sola y desaparece cuando estan todos */
+  var ESL = { es: ['Ver lonjas y mercados', 'Ver el seguro agrario', 'Ver la sequía'], en: ['See auction halls and markets', 'See crop insurance', 'See drought'], fr: ['Voir les lonjas et marchés', 'Voir l’assurance agricole', 'Voir la sécheresse'], it: ['Vedi lonjas e mercati', 'Vedi l’assicurazione agraria', 'Vedi la siccità'] };
+  function esCampaignLine(t) {
+    return get('data/spain-crops/index.json').then(function (ix) {
+      var G = ix.groups || {}, keys = Object.keys(G), mx = 0, i;
+      keys.forEach(function (k) { (G[k].campaigns || []).forEach(function (c) { if (c > mx) mx = c; }); });
+      if (!mx) return t.no_es5;
+      var have = keys.filter(function (k) { return (G[k].campaigns || []).indexOf(mx) > -1; });
+      if (have.length === keys.length) return null;
+      var prev = 0; keys.forEach(function (k) { (G[k].campaigns || []).forEach(function (c) { if (c < mx && c > prev) prev = c; }); });
+      var e = ESG[lang()] || ESG.es;
+      return e.t.replace('{y}', mx).replace('{p}', prev || mx - 1).replace('{g}', have.map(function (k) { return e.g[k] || k; }).join(', '));
+    }).catch(function () { return t.no_es5; });
+  }
+  function missingES() {
+    var t = tr();
+    return esCampaignLine(t).then(function (c5) {
+      return '<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [[t.no_es1, 'lonjas.html', 0], [t.no_es2, 'precios.html?tab=seguro', 1], [t.no_es3, 'sequia.html', 2], [c5]].filter(function (x) { return x[0]; }).map(function (x) { return '<li>' + esc(x[0]) + (x[1] ? ' <a href="' + x[1] + '">' + esc((ESL[lang()] || ESL.es)[x[2]]) + '</a>' : '') + '</li>'; }).join('') + '</ul>';
+    });
+  }
   /* ---------- EE. UU.: proximos informes USDA y margen de referencia ERS ---------- */
   var TN = {
     es: { sNext: 'Próximos informes de USDA para este producto', nextNone: 'No hay fechas cargadas de los informes de este producto después de hoy (el calendario cargado llega hasta {d}).', nextNote: 'Fechas del calendario oficial de USDA NASS y del WASDE (hora del este de EE. UU.). USDA puede cambiar una fecha.', cal: 'Calendario completo',
