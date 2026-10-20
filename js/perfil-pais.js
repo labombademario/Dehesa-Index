@@ -362,11 +362,12 @@
           body + (/selected agri-food/.test(l[0].label) ? '<div class="di-movers-hint" style="margin:6px 0 0">' + esc((SELN[x.lang] || SELN.es).trim() + (/12-month/.test(l[0].label) ? (SEL12[x.lang] || SEL12.es) : '')) + '</div>' : '') + CITE(l[0]) + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
-      if (cc === 'EU' && (a || b)) {   // la UE: panel propio (cifras clave, 10 destinos y orígenes, gráfico del socio elegido)
-        h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:16px 18px;margin-bottom:20px"><div id="pp-eutrade"></div><div id="pp-trade-prod"></div></div>';
+      if (a || b) {   // panel de comercio común a todos los países (js/eu-trade-panel.js): cifras clave, 10 destinos y orígenes, gráfico del socio elegido
+        h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:16px 18px;margin-bottom:20px"><div id="pp-eutrade">' + a.replace(/<div id="pp-trade-prod">.*/, '') + '</div><div id="pp-trade-prod"></div></div>';
         setTimeout(function () {
           var box = document.getElementById('pp-eutrade'); if (!box) return;
-          var go = function () { if (window.DIEuTrade) window.DIEuTrade.mount(box, x.lang); };
+          var fb = box.innerHTML, opts = { cc: cc, series: S, plabel: x.plabel, head: ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade'), cite: CITE, note: function (s0) { return s0 && /selected agri-food/.test(s0.label) ? '<div class="di-movers-hint" style="margin:6px 0 0">' + esc((SELN[x.lang] || SELN.es).trim() + (/12-month/.test(s0.label) ? (SEL12[x.lang] || SEL12.es) : '')) + '</div>' : ''; } };
+          var go = function () { if (window.DIEuTrade) window.DIEuTrade.mount(box, x.lang, opts).then(function (ok) { if (!ok) box.innerHTML = fb; }); };
           if (window.DIEuTrade) go(); else { var sc = document.createElement('script'); sc.src = 'js/eu-trade-panel.js?v=20261020'; sc.onload = go; document.head.appendChild(sc); }
         }, 0);
       } else if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div>' + '<div id="pp-trade-prod"></div>' + '</div>';
