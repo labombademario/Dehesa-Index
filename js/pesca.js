@@ -47,7 +47,8 @@
     spUS: L('Especies con más valor desembarcado (todos los estados)', 'Species with the highest landed value (all states)', 'Espèces à plus forte valeur débarquée (tous les États)', 'Specie con il maggior valore sbarcato (tutti gli stati)'),
     stUS: L('Estados con más valor desembarcado', 'States with the highest landed value', 'États à plus forte valeur débarquée', 'Stati con il maggior valore sbarcato'),
     hSp: L('Especie', 'Species', 'Espèce', 'Specie'), hSt: L('Estado', 'State', 'État', 'Stato'), hVal: L('Valor', 'Value', 'Valeur', 'Valore'), hQty: L('Cantidad', 'Quantity', 'Quantité', 'Quantità'),
-    hPrice: L('Precio (€/t)', 'Price (€/t)', 'Prix (€/t)', 'Prezzo (€/t)'), hChg: L('Precio vs año anterior', 'Price vs previous year', 'Prix vs année précédente', 'Prezzo vs anno precedente'), hYear: L('Año', 'Year', 'Année', 'Anno'),
+    hPrice: L('Precio (€/t)', 'Price (€/t)', 'Prix (€/t)', 'Prezzo (€/t)'), hChg: L('Precio vs año anterior', 'Price vs previous year', 'Prix vs année précédente', 'Prezzo vs anno precedente'), hYear: L('Año', 'Year', 'Année', 'Anno'), latest: L('Último disponible', 'Latest available', 'Dernière disponible', 'Ultimo disponibile'),
+    yrNote: L('Año elegido: las cifras son las de ese año; donde un dato no existe ese año aparece «—». Las especies listadas son las principales del último año, ordenadas aquí por el valor del año elegido. Las gráficas muestran siempre toda la serie.', 'Chosen year: figures are those of that year; “—” where no data exists for it. The species listed are the latest year’s main ones, ranked here by the chosen year’s value. Charts always show the full series.', 'Année choisie : chiffres de cette année ; « — » si la donnée n’existe pas. Les espèces listées sont les principales de la dernière année, classées ici selon la valeur de l’année choisie. Les graphiques montrent toujours toute la série.', 'Anno scelto: cifre di quell’anno; «—» dove il dato non esiste. Le specie elencate sono le principali dell’ultimo anno, ordinate qui per il valore dell’anno scelto. I grafici mostrano sempre tutta la serie.'),
     zT: L('Capturas por zona de pesca', 'Catches by fishing area', 'Captures par zone de pêche', 'Catture per zona di pesca'),
     zS: L('Toneladas de peso vivo del último año. El porcentaje sobre el total es un cálculo de Dehesa Index.', 'Tonnes live weight in the latest year. The share of the total is a Dehesa Index calculation.', 'Tonnes de poids vif de la dernière année. La part du total est un calcul de Dehesa Index.', 'Tonnellate di peso vivo dell’ultimo anno. La quota sul totale è un calcolo di Dehesa Index.'),
     hZone: L('Zona (FAO)', 'Area (FAO)', 'Zone (FAO)', 'Zona (FAO)'), hShare: L('% del total', '% of total', '% du total', '% del totale'),
@@ -81,6 +82,21 @@
   function nf(v, d) { return v == null || isNaN(v) ? '—' : (+v).toLocaleString(LOC[lg()], { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
   function sp(path) { return S.sitePath ? S.sitePath(path) : path; }
   function last(a) { if (!a) return null; for (var i = a.length - 1; i >= 0; i--) if (a[i] && a[i][1] != null) return a[i]; return null; }
+  /* Filtro por año: YEAR=null => último dato disponible de cada serie; YEAR=2012 => solo el dato de ese año (si no existe, '—'). */
+  var YEAR = null;
+  function pick(a) { if (YEAR == null) return last(a); if (!a) return null; for (var i = a.length - 1; i >= 0; i--) if (a[i] && +a[i][0] === YEAR && a[i][1] != null) return a[i]; return null; }
+  function yearsOf(d) {
+    var m = {}, add = function (a) { (a || []).forEach(function (r) { if (r && r[1] != null) m[r[0]] = 1; }); };
+    Object.keys(d.series || {}).forEach(function (k) { add(d.series[k]); });
+    ['landings', 'catches', 'aquaculture', 'areas', 'states'].forEach(function (g) { (d[g] || []).forEach(function (o) { add(o.qty); add(o.value); }); });
+    return Object.keys(m).map(Number).sort(function (a, b) { return b - a; });
+  }
+  function yearSel(d, id) {
+    var ys = yearsOf(d); if (ys.length < 2) return '';
+    if (YEAR != null && ys.indexOf(YEAR) < 0) YEAR = null;
+    return '<span class="fsh-yr"><label for="' + id + '">' + esc(tx(T.hYear)) + '</label> <select id="' + id + '" class="di-compare-select"><option value="">' + esc(tx(T.latest)) + '</option>' +
+      ys.map(function (y) { return '<option value="' + y + '"' + (y === YEAR ? ' selected' : '') + '>' + y + '</option>'; }).join('') + '</select></span>';
+  }
   function prevOf(a, p) { if (!a || !p) return null; for (var i = a.length - 1; i >= 0; i--) if (+a[i][0] === +p[0] - 1) return a[i]; return null; }
   function pct(a, b) { return a != null && b ? (a / b - 1) * 100 : null; }
   function chg(v) { if (v == null) return '<span class="fsh-m">—</span>'; var s = (v > 0 ? '+' : '') + nf(v, 1) + ' %'; return '<span class="fsh-chg ' + (v > 0 ? 'up' : v < 0 ? 'dn' : '') + '">' + esc(s) + '</span>'; }
@@ -126,11 +142,11 @@
   function kpis(d) {
     var s = d.series, h = '', a, b;
     if (d.cc === 'US') {
-      a = last(s['ld-total-usd']); b = prevOf(s['ld-total-usd'], a); if (a) h += kpi(tx(T.k.usValue), money(a[1], 'USD'), '', a[0], pct(a[1], b && b[1]));
-      a = last(s['ld-total-lb']); b = prevOf(s['ld-total-lb'], a); if (a) h += kpi(tx(T.k.usLb), nf(a[1] / 1e6, 0), tx(T.u.mlb), a[0], pct(a[1], b && b[1]));
+      a = pick(s['ld-total-usd']); b = prevOf(s['ld-total-usd'], a); if (a) h += kpi(tx(T.k.usValue), money(a[1], 'USD'), '', a[0], pct(a[1], b && b[1]));
+      a = pick(s['ld-total-lb']); b = prevOf(s['ld-total-lb'], a); if (a) h += kpi(tx(T.k.usLb), nf(a[1] / 1e6, 0), tx(T.u.mlb), a[0], pct(a[1], b && b[1]));
       return h;
     }
-    var row = function (key, lab, fmt, unit) { var x = last(s[key]), y = prevOf(s[key], x); if (x) h += kpi(lab, fmt(x[1]), unit, x[0], pct(x[1], y && y[1])); };
+    var row = function (key, lab, fmt, unit) { var x = pick(s[key]), y = prevOf(s[key], x); if (x) h += kpi(lab, fmt(x[1]), unit, x[0], pct(x[1], y && y[1])); };
     row('ca-total', tx(T.k.catches), function (v) { return nf(v, 0); }, tx(T.u.t));
     row('ld-total-eur', tx(T.k.landValue), function (v) { return money(v, 'EUR'); }, '');
     row('ld-total-tpw', tx(T.k.landQty), function (v) { return nf(v, 0); }, tx(T.u.tp));
@@ -138,7 +154,7 @@
     row('aq-total-tlw', tx(T.k.aqQty), function (v) { return nf(v, 0); }, tx(T.u.t));
     row('aq-total-eur', tx(T.k.aqValue), function (v) { return money(v, 'EUR'); }, '');
     row('fleet-nr', tx(T.k.fleet), function (v) { return nf(v, 0); }, tx(T.u.ves));
-    var nr = last(s['fleet-nr']), o = last(s['fleet-age-y_ge25']);
+    var nr = pick(s['fleet-nr']), o = pick(s['fleet-age-y_ge25']);
     if (nr && o && nr[0] === o[0] && nr[1]) h += kpi(tx(T.k.fleetOld), nf(o[1] / nr[1] * 100, 0) + ' %', '', nr[0] + ' · ' + tx(T.u.pctFleet), null);
     return h;
   }
@@ -147,10 +163,11 @@
   function speciesBlock(d) {
     if (!d.landings || !d.landings.length) return '';
     var us = d.cc === 'US';
-    var rows = d.landings.map(function (o) {
-      var v = last(o.value), q = last(o.qty);
+    var lst = d.landings.slice(); if (YEAR != null) lst.sort(function (a, b) { var x = pick(a.value), y = pick(b.value); return (y ? y[1] : -1) - (x ? x[1] : -1); });
+    var rows = lst.map(function (o) {
+      var v = pick(o.value), q = pick(o.qty);
       if (us) return '<tr>' + td(esc(spName(o.name))) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>';
-      var p = last(o.price), pp = prevOf(o.price, p);
+      var p = pick(o.price), pp = prevOf(o.price, p);
       return '<tr>' + td(esc(spName(o.name))) + td(money(v && v[1], 'EUR'), 1) + td(q ? nf(q[1], 0) + ' t' : '—', 1) + td(p ? nf(p[1], 0) : '—', 1) + td(chg(p && pp ? pct(p[1], pp[1]) : null), 1) + td(esc(v ? v[0] : ''), 1) + '</tr>';
     });
     var head = us ? [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hYear)] : [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hPrice), tx(T.hChg), tx(T.hYear)];
@@ -158,7 +175,7 @@
   }
   function statesBlock(d) {
     if (!d.states || !d.states.length) return '';
-    var rows = d.states.map(function (o) { var v = last(o.value), q = last(o.qty); return '<tr>' + td(esc(o.name)) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>'; });
+    var rows = d.states.map(function (o) { var v = pick(o.value), q = pick(o.qty); return '<tr>' + td(esc(o.name)) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>'; });
     return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.stUS)) + '</h2>' + table([tx(T.hSt), tx(T.hVal), tx(T.hQty), tx(T.hYear)], rows) + '</section>';
   }
   /* Mapa de zonas FAO (vendor/fao-areas.js: FAO 2024, CC BY 4.0): se colorean las zonas donde el pais capturo, por su peso en el total */
@@ -180,21 +197,21 @@
     if (global.DEHESA_FAO_AREAS) draw(); else { var sc = document.createElement('script'); sc.src = sp('vendor/fao-areas.js'); sc.onload = draw; document.head.appendChild(sc); }
   }
   function zonesBlock(d) {
-    var tot = last(d.series['ca-total']); if (!d.areas || !d.areas.length || !tot) return '';
+    var tot = pick(d.series['ca-total']); if (!d.areas || !d.areas.length || !tot) return '';
     var zmap = {};
-    var rows = d.areas.map(function (o) { var q = last(o.qty); if (!q || q[0] !== tot[0]) return ''; var sh = q[1] / tot[1] * 100; if (FAOC[o.name]) zmap[FAOC[o.name]] = [spName(o.name), q[1], sh];
+    var rows = d.areas.map(function (o) { var q = pick(o.qty); if (!q || q[0] !== tot[0]) return ''; var sh = q[1] / tot[1] * 100; if (FAOC[o.name]) zmap[FAOC[o.name]] = [spName(o.name), q[1], sh];
       return '<tr>' + td(esc(spName(o.name))) + td(nf(q[1], 0) + ' t', 1) + td('<span class="fsh-bar"><i style="width:' + Math.max(1, Math.min(100, sh)).toFixed(1) + '%"></i></span> ' + nf(sh, 1) + ' %', 1) + '</tr>'; }).filter(Boolean);
     if (!rows.length) return '';
     return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.zT)) + ' · ' + esc(tot[0]) + '</h2><p class="di-movers-hint">' + esc(tx(T.zS)) + '</p>' + (Object.keys(zmap).length ? '<div class="fsh-fmap" data-z="' + esc(JSON.stringify(zmap)) + '"></div>' : '') + table([tx(T.hZone), tx(T.hQty), tx(T.hShare)], rows) + '</section>';
   }
   function listBlock(title, list, withPrice) {
     if (!list || !list.length) return '';
-    var rows = list.map(function (o) { var q = last(o.qty), p = withPrice ? last(o.price) : null; return '<tr>' + td(esc(spName(o.name))) + td(q ? nf(q[1], 0) + ' t' : '—', 1) + (withPrice ? td(p ? nf(p[1], 0) : '—', 1) : '') + td(esc(q ? q[0] : ''), 1) + '</tr>'; });
+    var rows = list.map(function (o) { var q = pick(o.qty), p = withPrice ? pick(o.price) : null; return '<tr>' + td(esc(spName(o.name))) + td(q ? nf(q[1], 0) + ' t' : '—', 1) + (withPrice ? td(p ? nf(p[1], 0) : '—', 1) : '') + td(esc(q ? q[0] : ''), 1) + '</tr>'; });
     return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(title) + '</h2>' + table(withPrice ? [tx(T.hSp), tx(T.hQty), tx(T.hPrice), tx(T.hYear)] : [tx(T.hSp), tx(T.hQty), tx(T.hYear)], rows) + '</section>';
   }
   function fleetBlock(d) {
-    var keys = ['y_lt5', 'y5-9', 'y10-14', 'y15-19', 'y20-24', 'y_ge25'], s = d.series, nr = last(s['fleet-nr']); if (!nr || !d.fleetAge) return '';
-    var vals = keys.map(function (k) { var x = last(d.fleetAge[k]); return x && x[0] === nr[0] ? x[1] : null; }); if (vals.every(function (v) { return v == null; })) return '';
+    var keys = ['y_lt5', 'y5-9', 'y10-14', 'y15-19', 'y20-24', 'y_ge25'], s = d.series, nr = pick(s['fleet-nr']); if (!nr || !d.fleetAge) return '';
+    var vals = keys.map(function (k) { var x = pick(d.fleetAge[k]); return x && x[0] === nr[0] ? x[1] : null; }); if (vals.every(function (v) { return v == null; })) return '';
     var mx = Math.max.apply(null, vals.map(function (v) { return v || 0; })) || 1;
     return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.fT)) + ' · ' + esc(nr[0]) + '</h2><p class="di-movers-hint">' + esc(tx(T.fS)) + '</p><div class="fsh-age">' + keys.map(function (k, i) {
       return '<div class="fsh-age-r"><span>' + esc(tx(T.age[k])) + '</span><span class="fsh-bar wide"><i style="width:' + ((vals[i] || 0) / mx * 100).toFixed(1) + '%"></i></span><b>' + nf(vals[i], 0) + '</b></div>'; }).join('') + '</div></section>';
@@ -242,7 +259,7 @@
         var d = r[0]; if (!d) { root.innerHTML = '<p>' + esc(tx(T.fail)) + '</p>'; return; }
         var opts = ccs.slice().sort(function (a, b) { return tx(N[a] || [a, a, a, a]).localeCompare(tx(N[b] || [b, b, b, b]), LOC[lg()]); }).map(function (c) { return '<option value="' + c + '"' + (c === CUR ? ' selected' : '') + '>' + esc(tx(N[c] || [c, c, c, c])) + '</option>'; }).join('');
         var ch = charts(d), noSea = d.cc !== 'US' && !d.series['ca-total'] && !d.series['ld-total-eur'];
-        var h = '<div class="fsh-pick"><label for="fsh-cc">' + esc(tx(T.country)) + '</label> <select data-cpick="1" id="fsh-cc" class="di-compare-select">' + opts + '</select>' + (noSea ? ' <span class="di-movers-hint">' + esc(tx(T.land)) + '</span>' : '') + '</div>' +
+        var h = '<div class="fsh-pick"><label for="fsh-cc">' + esc(tx(T.country)) + '</label> <select data-cpick="1" id="fsh-cc" class="di-compare-select">' + opts + '</select> ' + yearSel(d, 'fsh-yr') + (YEAR != null ? ' <span class="di-movers-hint">' + esc(tx(T.yrNote)) + '</span>' : '') + (noSea ? ' <span class="di-movers-hint">' + esc(tx(T.land)) + '</span>' : '') + '</div>' +
           '<div class="fsh-kpis">' + kpis(d) + '</div>' +
           (ch.length ? '<section class="di-card fsh-sec wp-card">' + ch.map(function (c) { return c.html; }).join('') + '</section>' : '') +
           speciesBlock(d) + statesBlock(d) + zonesBlock(d) + listBlock(tx(T.cT), d.catches, false) + listBlock(tx(T.aT), d.aquaculture, true) + fleetBlock(d) +
@@ -252,6 +269,7 @@
         root.innerHTML = h;
         ch.forEach(function (c) { bindChart(root, c); }); mountFaoMaps(root);
         var sel = document.getElementById('fsh-cc'); if (sel) sel.onchange = function () { go(sel.value); };
+        var ysel = document.getElementById('fsh-yr'); if (ysel) ysel.onchange = function () { YEAR = ysel.value ? +ysel.value : null; pageRender(); };
         [].forEach.call(root.querySelectorAll('.fsh-row'), function (tr) {
           tr.onclick = function (e) { if (e.target.closest && e.target.closest('a')) { e.preventDefault(); } go(tr.getAttribute('data-cc')); };
           tr.onkeydown = function (e) { if (e.key === 'Enter') go(tr.getAttribute('data-cc')); };
@@ -272,13 +290,15 @@
         var d = r[0]; if (!d) return false;
         var ch = charts(d).slice(0, 1);
         var top = (d.landings || []).slice(0, 3).map(function (o) { return esc(spName(o.name)); }).join(', ');
-        var inner = '<section class="di-card ps-rm wp-card gb-card" id="ps-fish" style="max-width:none"><h2 class="ps-rm-h">' + esc(tx(T.cardH)) + '</h2><div class="fsh-kpis">' + kpis(d) + '</div>' +
+        var inner = '<section class="di-card ps-rm wp-card gb-card" id="ps-fish" style="max-width:none"><h2 class="ps-rm-h">' + esc(tx(T.cardH)) + '</h2><div class="fsh-pick" style="margin:0 0 8px">' + yearSel(d, 'fsh-yr-' + cc) + '</div><div class="fsh-kpis" id="fsh-k-' + cc + '">' + kpis(d) + '</div>' +
           (top ? '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(tx(d.cc === 'US' ? T.spUS : T.spT)) + ': ' + top + '</p>' : '') +
           ch.map(function (c) { return c.html; }).join('') +
           '<p style="margin:10px 0 0"><a href="' + esc(sp('pesca.html') + '?c=' + cc) + '">' + esc(tx(T.more)) + '</a></p>' + sources(d) + '</section>';
         var SEC = global.DehesaSector;
         el.innerHTML = folded && SEC ? SEC.foldHtml(1, inner) : inner;
         ch.forEach(function (c) { bindChart(el, c); });
+        var ys = el.querySelector('#fsh-yr-' + cc);
+        if (ys) ys.onchange = function () { YEAR = ys.value ? +ys.value : null; var k = el.querySelector('#fsh-k-' + cc); if (k) k.innerHTML = kpis(d); };
         return true;
       });
     });
