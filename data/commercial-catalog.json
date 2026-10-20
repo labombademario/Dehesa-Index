@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-20T18:46:09Z",
+ "generatedAt": "2026-10-20T20:52:42Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,9 +10,9 @@
   "sourcesApto": 131,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 305,
-  "datasets_apto": 177,
-  "datasets_condiciones": 118,
+  "datasets": 307,
+  "datasets_apto": 178,
+  "datasets_condiciones": 119,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -3314,6 +3314,14 @@
    ]
   },
   {
+   "path": "data/es-forest-products-anuario2021.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_estadistica_forestal"
+   ]
+  },
+  {
    "path": "data/es-gasoleo-b.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -3335,6 +3343,14 @@
    "verdict": "apto",
    "sources": [
     "nasa_power"
+   ]
+  },
+  {
+   "path": "data/eu-crops-map.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
    ]
   },
   {

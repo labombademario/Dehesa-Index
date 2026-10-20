@@ -356,6 +356,15 @@ sources:
     data: [eurostat-census-stats.json]
     log: eurostat-census-log.txt
     message: Censo agrario de Eurostat por region NUTS 2 y precios de insumos 2025
+  - id: eu-crops-map
+    name: Update EU crop production by country (Eurostat apro_cpsh1, for the Europe producer map)
+    cron: ['20 6 14 * *']
+    script: scripts/update-eu-crops-map.py
+    timeout: 30
+    script_timeout: 20
+    data: [eu-crops-map.json]
+    log: eu-crops-map-log.txt
+    message: Produccion de cultivos por pais de la UE (Eurostat) para el mapa de productores
   - id: us-noaa-fish
     name: Update U.S. commercial fish landings (NOAA Fisheries FOSS)
     cron: ['35 6 11 * *']

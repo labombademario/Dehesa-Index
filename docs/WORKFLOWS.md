@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-234 workflows (194 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+235 workflows (195 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -123,6 +123,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-cap.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-eu-cap.py | cap/eu/allocations.json | finish, validate-files |
 | update-eu-catalog.yml | a mano | semanal (4) | update-eu-catalog.mjs | eu | - |
 | update-eu-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-climate.py | eu-climate.json | finish, validate-files |
+| update-eu-crops-map.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-crops-map.py | eu-crops-map.json | finish, validate-files |
 | update-eu-diesel-more.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-eu-diesel-more.py | diesel-eu-more.json | finish, validate-files |
 | update-eu-drought-ind.yml | generado | semanal (2) | gen-workflows.py, update-eu-drought-indicators.py | - | finish |
 | update-eu-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-eu-drought.py | eu-drought.json | finish, validate-files |

@@ -6525,6 +6525,11 @@
     "miteco_estadistica_forestal"
    ],
    "notes": "Cifras de 2024 copiadas tal cual de la tabla E.1 del Anuario de Estadistica Forestal 2024 (PDF)."
+  },
+  "data/eu-crops-map.json": {
+   "sources": [
+    "eurostat"
+   ]
   }
  },
  "derived": [
