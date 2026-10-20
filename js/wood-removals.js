@@ -13,6 +13,12 @@
     it: { h: 'Tagli di legname tondo', badge: 'DATI UFFICIALI REALI', country: 'Paese', total: 'Totale', conif: 'Conifere', broad: 'Latifoglie', last: 'Ultimo anno', yoy: 'Variazione annua', ind: 'Industriale (tronchi, triturazione e altro)', fw: 'Legna da ardere', shareFw: 'Quota destinata a legna da ardere', logs: 'Tronchi da sega e da trancia', pulp: 'Legname da triturazione', unit: 'migliaia di m³ senza corteccia', hover: 'Passa il cursore o tocca il grafico per leggere ogni anno.', est: 'Stimato dalla fonte', since: 'Storico dal', note: 'È il volume tagliato ogni anno, non un prezzo. I paesi dichiarano a Eurostat con tempi diversi: l’ultimo anno di ciascuno può essere provvisorio e un anno può mancare.', src: 'Fonte:', chart: 'Tagli annui di legname tondo', names: { DE: 'Germania', IT: 'Italia', ES: 'Spagna', FR: 'Francia' },
       mk: 'Tagli annui di legname tondo dichiarati da ciascun paese a Eurostat (questionario congiunto del settore forestale con FAO, UNECE e ITTO), in migliaia di m³ senza corteccia', ty: 'Volume annuo (non un prezzo)', ob: 'Un anno per riga; un vuoto è un anno non dichiarato', me: 'Dehesa Index scarica il set for_remov di Eurostat e conserva totale, conifere, latifoglie, uso industriale e legna da ardere. Le variazioni sono calcolate da Dehesa Index. L’aggregato UE-27 di questo set arriva solo al 2016, quindi non è mostrato.' }
   };
+  var ES = {
+    es: { eh: 'España: cortas y valor según el MITECO (2001-2021)', en: 'Dato puntual del Anuario de Estadística Forestal 2021, no una serie que se actualice. El volumen es con corteza, por eso no coincide con el de Eurostat (sin corteza). El valor es el que calcula el MITECO en cargadero con un precio medio estimado; no es un precio de mercado.', ey: 'Año', ec: 'Cortas (miles de m³ con corteza)', ev: 'Valor en cargadero (miles de €)', el: 'Leñas (miles de t)', elv: 'Valor de la leña (miles de €)', ee: '* valor estimado por el MITECO', },
+    en: { eh: 'Spain: removals and value per MITECO (2001-2021)', en: 'One-off figures from the 2021 Forestry Statistics Yearbook, not a series that gets updated. Volume is over bark, so it differs from Eurostat (under bark). Value is MITECO’s roadside estimate from an estimated average price; it is not a market price.', ey: 'Year', ec: 'Removals (thousand m³ over bark)', ev: 'Roadside value (€ thousand)', el: 'Fuelwood (thousand t)', elv: 'Fuelwood value (€ thousand)', ee: '* value estimated by MITECO', },
+    fr: { eh: 'Espagne : récoltes et valeur selon le MITECO (2001-2021)', en: 'Chiffres ponctuels de l’annuaire de statistique forestière 2021, pas une série mise à jour. Le volume est avec écorce, il diffère donc d’Eurostat (sans écorce). La valeur est l’estimation du MITECO départ route à partir d’un prix moyen estimé ; ce n’est pas un prix de marché.', ey: 'Année', ec: 'Récoltes (milliers de m³ avec écorce)', ev: 'Valeur départ route (milliers d’€)', el: 'Bois de feu (milliers de t)', elv: 'Valeur du bois de feu (milliers d’€)', ee: '* valeur estimée par le MITECO', },
+    it: { eh: 'Spagna: tagli e valore secondo il MITECO (2001-2021)', en: 'Dati puntuali dell’Annuario di statistica forestale 2021, non una serie aggiornata. Il volume è con corteccia, perciò differisce da Eurostat (senza corteccia). Il valore è la stima del MITECO a bordo strada da un prezzo medio stimato; non è un prezzo di mercato.', ey: 'Anno', ec: 'Tagli (migliaia di m³ con corteccia)', ev: 'Valore a bordo strada (migliaia di €)', el: 'Legna (migliaia di t)', elv: 'Valore della legna (migliaia di €)', ee: '* valore stimato dal MITECO', },
+  };
   var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' };
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function lang() { var l = S && S.getLang ? S.getLang() : 'es'; return T[l] ? l : 'es'; }
@@ -62,6 +68,15 @@
   }
   var CACHE = null;
   function load() { return CACHE || (CACHE = fetch('data/wood-removals.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  var ESC_ = null;
+  function esLoad() { return ESC_ || (ESC_ = fetch('data/es-forest-products-anuario2021.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function esBlock(f, lg) {
+    var n0 = function (v) { return v == null ? '—' : Math.round(v).toLocaleString(LOC[lg], { useGrouping: 'always' }); };
+    var t = ES[lg], fw = {}, th = function (x) { return '<th style="text-align:right;padding:4px 8px">' + esc(x) + '</th>'; }, td = function (x) { return '<td style="text-align:right;padding:4px 8px">' + x + '</td>'; };
+    f.firewood.forEach(function (r) { fw[r.year] = r; });
+    var rows = f.wood.slice().reverse().map(function (r) { var l = fw[r.year] || {}; return '<tr>' + td('<b>' + r.year + '</b>') + td(n0(r.total)) + td(n0(r.valor) + (r.est ? ' *' : '')) + td(n0(l.production)) + td(n0(l.value) + (l.est ? ' *' : '')) + '</tr>'; }).join('');
+    return '<details class="di-card di-info-card" style="margin-top:12px"><summary style="cursor:pointer"><b>' + esc(t.eh) + '</b></summary><p class="di-field-hint" style="margin:8px 0">' + esc(t.en) + '</p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%"><thead><tr>' + th(t.ey) + th(t.ec) + th(t.ev) + th(t.el) + th(t.elv) + '</tr></thead><tbody>' + rows + '</tbody></table></div><p class="di-field-hint" style="margin:6px 0 0">' + esc(t.ee) + ' · <a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.name) + '</a></p></details>';
+  }
   function render(el) {
     if (!el) return;
     load().then(function (d) {
@@ -71,6 +86,7 @@
         var b = build(d, code, lg);
         el.innerHTML = '<div class="di-badge di-badge-green di-info-badge">' + esc(t.badge) + '</div>' + b.html + '<div class="di-info-scope-note">' + esc(t.note) + '</div><div class="di-field-hint di-info-sources">' + esc(t.src) + ' <a href="' + esc(d.source.url) + '" target="_blank" rel="noopener noreferrer">Eurostat (for_remov)</a></div>';
         bind(el, b, lg);
+        if (code === 'ES') esLoad().then(function (f) { if (f && f.wood && el.querySelector('.wr-card')) el.insertAdjacentHTML('beforeend', esBlock(f, lg)); });
       }
       draw(cc);
       el.addEventListener('change', function (ev) { if (ev.target && ev.target.className.indexOf('wr-cc') >= 0) { draw(ev.target.value); var s2 = el.querySelector('.wr-cc'); if (s2) s2.focus(); } });
