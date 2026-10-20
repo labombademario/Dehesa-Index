@@ -135,6 +135,8 @@ jobs:
         run: python3 scripts/build-app-env.py
       - name: Comercio por producto de cada pais para la app (data/app/v1/trade)
         run: node scripts/build-app-trade.mjs
+      - name: Provincias de Espana para la app (clima y ganaderia, data/app/v1/prov)
+        run: node scripts/build-app-prov.mjs
       - name: Comprobar coherencia de lo construido (catalogo estricto, contratos de los derivados)
         run: |
           python3 scripts/check-catalog.py --strict

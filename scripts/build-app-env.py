@@ -373,6 +373,44 @@ def eu_drought():
     return block('drought', T_DRY, P[n], stats, charts, [bars(L('Superficie en aviso o alerta por país', 'Area under warning or alert by country', 'Surface en avertissement ou alerte par pays', 'Superficie in allerta o allarme per paese'), '%', 0, [(L(*EUN[c]) if c in EUN else same(C[c]['name']), v, None) for c, v in items])],
         L('Indicador combinado de sequía del Observatorio Europeo de la Sequía: aviso = falta humedad en el suelo; alerta = además la vegetación sufre. Es superficie total del país, no solo tierra cultivada.', 'European Drought Observatory combined drought indicator: warning = soil moisture deficit; alert = vegetation also stressed. It is the whole country area, not only farmland.', 'Indicateur combiné de sécheresse de l’Observatoire européen de la sécheresse : avertissement = manque d’humidité du sol ; alerte = la végétation souffre aussi. Il s’agit de la surface totale du pays, pas seulement des terres cultivées.', 'Indicatore combinato di siccità dell’Osservatorio europeo della siccità: allerta = carenza di umidità del suolo; allarme = anche la vegetazione soffre. È la superficie totale del paese, non solo i terreni coltivati.'), src(d, 'European Drought Observatory (EDO), JRC'))
 
+# ---------------- Tierra y regadío (Eurostat apri_lprc, ef_mp_irri; bloque «Tierra y regadío» de «Más datos» en la web, js/eu-land.js) ----------------
+T_LAND = L('Tierra y regadío', 'Land and irrigation', 'Terres et irrigation', 'Terra e irrigazione')
+def land(cc):
+    d = J('eu-land/land')
+    c = d and d['countries'].get(cc)
+    if not c: return None
+    R = c['regions']; P = c['price']; I = (c.get('irrigation') or {}).get('regions') or {}
+    last = lambda pts: pts[-1] if pts else None
+    stats, charts, bs = [], [], []
+    names = {'ARA': L('Precio de la tierra de cultivo', 'Arable land price', 'Prix des terres arables', 'Prezzo dei seminativi'), 'J0000': L('Precio de los pastos permanentes', 'Permanent grassland price', 'Prix des prairies permanentes', 'Prezzo dei prati permanenti')}
+    series = []
+    same_price = bool((P.get('ARA') or {}).get(cc)) and (P.get('ARA') or {}).get(cc) == (P.get('J0000') or {}).get(cc)
+    for code in ('ARA', 'J0000'):
+        pts = (P.get(code) or {}).get(cc)
+        if code == 'J0000' and same_price: continue
+        if pts:
+            y, v = last(pts); stats.append(stat(fill(L('{n} ({y})', '{n} ({y})', '{n} ({y})', '{n} ({y})'), n=names[code]['es'], y=y) if False else L(names[code]['es'] + ' (' + str(y) + ')', names[code]['en'] + ' (' + str(y) + ')', names[code]['fr'] + ' (' + str(y) + ')', names[code]['it'] + ' (' + str(y) + ')'), v, '€/ha', 0))
+            series.append((names[code], [[str(a) + '-01-01', b] for a, b in pts]))
+    n = I.get(cc)
+    if n and n.get('share') is not None:
+        stats.append(stat(L('Superficie regada sobre la SAU (%d)' % n['year'], 'Irrigated share of the utilised agricultural area (%d)' % n['year'], 'Part irriguée de la SAU (%d)' % n['year'], 'Quota irrigata della SAU (%d)' % n['year']), n['share'], '%', 1))
+    if series: charts.append(chart(L('Precio de la tierra (€/ha)', 'Land price (€/ha)', 'Prix des terres (€/ha)', 'Prezzo della terra (€/ha)'), '€/ha', series))
+    lv = 2; ara = (P.get('ARA') or {})
+    rows = []
+    for g, r in R.items():
+        if r.get('level') != lv: continue
+        pts = ara.get(g)
+        if pts and pts[-1][0] >= (last(ara[cc])[0] if ara.get(cc) else 0) - 1: rows.append((same(r['name']), pts[-1][1], None))
+    rows.sort(key=lambda z: -z[1])
+    if rows: bs.append(bars(L('Precio de la tierra de cultivo por región (€/ha)', 'Arable land price by region (€/ha)', 'Prix des terres arables par région (€/ha)', 'Prezzo dei seminativi per regione (€/ha)'), '€/ha', 0, rows))
+    yy = n['year'] if n else None
+    irr = sorted([(same(R[g]['name']), x['share'], None) for g, x in I.items() if g in R and R[g].get('level') == lv and x.get('year') == yy and x.get('share') is not None], key=lambda z: -z[1])
+    if irr: bs.append(bars(L('Superficie regada sobre la SAU por región (%)', 'Irrigated share of the UAA by region (%)', 'Part irriguée de la SAU par région (%)', 'Quota irrigata della SAU per regione (%)'), '%', 1, irr))
+    if not (stats or charts or bs): return None
+    return block('land', T_LAND, str(yy or (last(ara[cc])[0] if ara.get(cc) else '')), stats, charts, bs,
+        L('Solo lo que Eurostat publica para cada territorio; los precios son de transacciones y pueden no existir para todas las regiones. La SAU es la superficie agraria utilizada.' + (' Eurostat publica la misma cifra para tierra de cultivo y pasto permanente.' if same_price else ''), 'Only what Eurostat publishes for each territory; prices are transaction prices and may not exist for every region. UAA is the utilised agricultural area.' + (' Eurostat publishes the same figure for arable land and permanent grassland.' if same_price else ''), 'Uniquement ce qu’Eurostat publie pour chaque territoire ; les prix sont des prix de transaction et peuvent manquer pour certaines régions. La SAU est la surface agricole utilisée.' + (' Eurostat publie le même chiffre pour les terres arables et les prairies permanentes.' if same_price else ''), 'Solo ciò che Eurostat pubblica per ogni territorio; i prezzi sono di transazione e possono mancare per alcune regioni. La SAU è la superficie agricola utilizzata.' + (' Eurostat pubblica la stessa cifra per seminativi e prati permanenti.' if same_price else '')),
+        {'name': 'Eurostat (apri_lprc, ef_mp_irri)', 'url': 'https://ec.europa.eu/eurostat/databrowser/view/apri_lprc/default/table'})
+
 def missing(id_, title):
     return {'id': id_, 'title': title, 'missing': True, 'note': L('No hay datos abiertos de este tema para este país en Dehesa Index.', 'Dehesa Index has no open data on this topic for this country.', 'Dehesa Index n’a pas de données ouvertes sur ce sujet pour ce pays.', 'Dehesa Index non ha dati aperti su questo tema per questo paese.')}
 
@@ -394,11 +432,22 @@ def main():
                 try: b = fn()
                 except Exception as e: print('AVISO', cc, bid, repr(e))
             blocks.append(b or missing(bid, tt))
+        try:
+            lb = land(cc)
+            if lb: blocks.append(lb)
+        except Exception as e: print('AVISO', cc, 'land', repr(e))
         doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'country': cc, 'blocks': blocks}
         body = json.dumps(doc, ensure_ascii=False, separators=(',', ':'))
         (OUT / (cc + '.json')).write_text(body, encoding='utf-8')
         idx[cc] = {'hash': hashlib.sha1(json.dumps(blocks, sort_keys=True).encode()).hexdigest()[:12], 'blocks': [b['id'] for b in blocks if not b.get('missing')]}
         print(cc, len(body) // 1024, 'KB', [b['id'] + ('-' if b.get('missing') else '') for b in blocks])
+    # Grecia no tiene el paquete de 4 bloques, pero sí tierra y regadío
+    for cc in ('EL',):
+        lb = land(cc)
+        if lb:
+            doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'country': cc, 'blocks': [lb]}
+            body = json.dumps(doc, ensure_ascii=False, separators=(',', ':')); (OUT / (cc + '.json')).write_text(body, encoding='utf-8')
+            idx[cc] = {'hash': hashlib.sha1(json.dumps([lb], sort_keys=True).encode()).hexdigest()[:12], 'blocks': ['land']}; print(cc, len(body) // 1024, 'KB', ['land'])
     # Unión Europea: solo los bloques que tienen datos agregados de la UE (economía agraria, aranceles, sequía)
     blocks = [b for b in (eu_economy(), eu_tariffs(), eu_drought()) if b]
     if blocks:
