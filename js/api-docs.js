@@ -73,8 +73,16 @@
     js: 'fetch("https://dehesaindex.com/data/api/v1/series/eu/trigo.json")\n  .then(function (r) { return r.json(); })\n  .then(function (s) {\n    var last = s.points[s.points.length - 1];\n    console.log(s.sourceName, last[0], last[1], s.unit);\n    console.log(s.attribution);\n  });',
     py: 'import json, urllib.request\nu = "https://dehesaindex.com/data/api/v1/series/eu/trigo.json"\ns = json.load(urllib.request.urlopen(u))\nprint(s["sourceName"], s["points"][-1], s["unit"])\nprint(s["attribution"])',
   };
-  var PQ = 'let\n    Origen = Json.Document(Web.Contents("https://dehesaindex.com/data/api/v1/series/eu/trigo.json")),\n    Tabla = Table.FromList(Origen[points], Splitter.SplitByNothing(), {"par"}),\n    Fecha = Table.AddColumn(Tabla, "Fecha", each [par]{0}, type text),\n    Precio = Table.AddColumn(Fecha, "Precio", each [par]{1}, type number)\nin\n    Table.SelectColumns(Precio, {"Fecha", "Precio"})';
-  var PQ2 = 'let\n    Origen = Json.Document(Web.Contents("https://dehesaindex.com/data/api/v1/series/eu/trigo.json"))\nin\n    #table({"Fuente", "Licencia", "Atribución", "Unidad"}, {{Origen[sourceName], Origen[license], Origen[attribution], Origen[currency] & "/" & Origen[unit]}})';
+  var PQN = { es: ['Origen', 'Tabla', 'Fecha', 'Precio', 'Fuente', 'Licencia', 'Atribución', 'Unidad'], en: ['Source', 'Rows', 'Date', 'Price', 'Source', 'Licence', 'Attribution', 'Unit'],
+    fr: ['Source', 'Lignes', 'Date', 'Prix', 'Source', 'Licence', 'Attribution', 'Unité'], it: ['Origine', 'Righe', 'Data', 'Prezzo', 'Fonte', 'Licenza', 'Attribuzione', 'Unità'] };
+  function pq1(l) {
+    var n = PQN[l] || PQN.es;
+    return 'let\n    ' + n[0] + ' = Json.Document(Web.Contents("https://dehesaindex.com/data/api/v1/series/eu/trigo.json")),\n    ' + n[1] + ' = Table.FromList(' + n[0] + '[points], Splitter.SplitByNothing(), {"par"}),\n    ' + n[2] + ' = Table.AddColumn(' + n[1] + ', "' + n[2] + '", each [par]{0}, type text),\n    ' + n[3] + ' = Table.AddColumn(' + n[2] + ', "' + n[3] + '", each [par]{1}, type number)\nin\n    Table.SelectColumns(' + n[3] + ', {"' + n[2] + '", "' + n[3] + '"})';
+  }
+  function pq2(l) {
+    var n = PQN[l] || PQN.es;
+    return 'let\n    ' + n[0] + ' = Json.Document(Web.Contents("https://dehesaindex.com/data/api/v1/series/eu/trigo.json"))\nin\n    #table({"' + n[4] + '", "' + n[5] + '", "' + n[6] + '", "' + n[7] + '"}, {{' + n[0] + '[sourceName], ' + n[0] + '[license], ' + n[0] + '[attribution], ' + n[0] + '[currency] & "/" & ' + n[0] + '[unit]}})';
+  }
   function render() {
     var w = t(), root = document.getElementById('ap-body'); if (!root) return;
     document.getElementById('ap-h1').textContent = w.h1; document.getElementById('ap-sub').textContent = w.sub; document.title = w.title + ' | Dehesa Index';
@@ -84,7 +92,7 @@
       w.eH.map(function (c) { return '<th style="padding:8px 6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
       w.eR.map(function (r) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(r[0]) + '</td><td style="padding:8px 6px;white-space:nowrap"><code>' + esc(r[1]) + '</code></td></tr>'; }).join('') + '</tbody></table></div>';
     h += '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(w.xT) + '</h2><p class="di-emp-p">' + esc(w.xN) + '</p>' + code(EX.curl) + code(EX.js) + code(EX.py);
-    h += '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(w.pqT) + '</h2>' + w.pqP.slice(0, 2).map(function (p) { return '<p class="di-emp-p">' + esc(p) + '</p>'; }).join('') + code(PQ) + code(PQ2) + '<p class="di-emp-p">' + esc(w.pqP[2]) + '</p><p class="di-movers-hint">' + esc(w.pqN) + '</p>';
+    h += '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(w.pqT) + '</h2>' + w.pqP.slice(0, 2).map(function (p) { return '<p class="di-emp-p">' + esc(p) + '</p>'; }).join('') + code(pq1(lang())) + code(pq2(lang())) + '<p class="di-emp-p">' + esc(w.pqP[2]) + '</p><p class="di-movers-hint">' + esc(w.pqN) + '</p>';
     h += '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(w.fT) + '</h2>' + w.fP.map(function (p) { return '<p class="di-emp-p">' + esc(p) + '</p>'; }).join('');
     h += '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(w.rT) + '</h2>' + w.rP.map(function (p) { return '<p class="di-emp-p">' + esc(p) + '</p>'; }).join('');
     h += '<p class="di-movers-hint">' + esc(w.links) + ': <a href="datos-descargables.html">' + esc(w.ld) + '</a> · <a href="condiciones.html">' + esc(w.lc) + '</a> · <a href="' + esc(S.sitePath('data/api/v1/openapi.json')) + '">OpenAPI</a></p>';
