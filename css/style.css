@@ -2928,3 +2928,8 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .pt-sec.fx-empty .di-movers-hint{display:none}
 .pt-sec.fx-empty{opacity:.85}
 @media (max-width:640px){.fx-line .di-movers-head-row{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* Calculadora: dos columnas con resultados siempre a la vista */
+.cc-fs legend .fx-n{margin-right:6px;vertical-align:middle}
+.cc-two{display:block}
+@media (min-width:1000px){.cc-two{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,1fr);gap:28px;align-items:start}.cc-right{position:sticky;top:calc(var(--di-hdr,60px) + 16px)}.cc-right .pt-sec{margin-top:0}}

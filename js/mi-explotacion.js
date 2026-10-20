@@ -169,6 +169,7 @@
   /* ---------- helpers de cálculo ---------- */
   function ovr(f) { var x = {}; x[S.vary === 'price' ? 'price' : S.vary === 'yield' ? 'yld' : 'cost'] = f; return x; }
   function cname(line) { return K.CROPS[line.c.crop][li()]; }
+  function cnameE(line) { return (K.CEMO[line.c.crop] || '') + ' ' + cname(line); }
   function cl(c) { return JSON.parse(JSON.stringify(c)); }
   function pnum(v, cur) { return money(v, cur, 2); }
 
@@ -203,8 +204,8 @@
   }
   function lineHtml(line, idx) {
     var c = line.c, kgBu = K.bushelKg(c.crop), au = c.areaU === 'ha' ? t('ha') : t('ac');
-    var h = '<section class="fx-line" id="fx-sec-' + line.id + '" aria-label="' + esc(cname(line)) + '"><div class="di-movers-head-row"><h3>' + esc(cname(line)) + '</h3>' + '<span class="fx-acts">' + (S.lines.length < MAXL ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="dup">' + esc(t('dup')) + '</button>' : '') + (S.lines.length > 1 ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="rm">' + esc(t('rm')) + '</button>' : '') + '</span></div>';
-    h += '<div class="cc-grid">' + field('fx-' + line.id + '-crop', t('crop'), sel(line, 'crop', K.CORDER.map(function (k2) { return [k2, K.CROPS[k2][li()]]; }), c.crop));
+    var h = '<section class="fx-line" id="fx-sec-' + line.id + '" aria-label="' + esc(cname(line)) + '"><div class="di-movers-head-row"><h3>' + esc(cnameE(line)) + '</h3>' + '<span class="fx-acts">' + (S.lines.length < MAXL ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="dup">' + esc(t('dup')) + '</button>' : '') + (S.lines.length > 1 ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="rm">' + esc(t('rm')) + '</button>' : '') + '</span></div>';
+    h += '<div class="cc-grid">' + field('fx-' + line.id + '-crop', t('crop'), sel(line, 'crop', K.CORDER.map(function (k2) { return [k2, (K.CEMO[k2] || '') + ' ' + K.CROPS[k2][li()]]; }), c.crop));
     h += field('fx-' + line.id + '-area', t('area') + ' (' + au + ')', '<div class="cc-row">' + inp(line, 'area', c.area) + seg(line, 'areaU', [['ha', t('ha')], ['ac', t('ac')]], c.areaU) + '</div>');
     h += field('fx-' + line.id + '-y', t('yield') + ' (' + (c.yU === 't_ha' ? t('tha') : t('buac')) + ')', '<div class="cc-row">' + inp(line, 'y', c.y) + seg(line, 'yU', [['t_ha', t('tha')]].concat(kgBu ? [['bu_ac', t('buac')]] : []), kgBu ? c.yU : 't_ha') + '</div>');
     h += field('fx-' + line.id + '-cur', t('currency'), sel(line, 'cur', Object.keys(K.CURS).map(function (k2) { return [k2, k2]; }), c.cur)) + '</div>';
@@ -318,7 +319,7 @@
   function flagEmpty() { ['fx-changes-sec', 'fx-sum-sec'].forEach(function (id) { var e = document.getElementById(id); if (e) e.className = 'pt-sec' + (e.querySelector('.pt-card, table, .fx-ch') ? '' : ' fx-empty'); }); }
   function drawAll() { var a = document.getElementById('fx-changes'), b = document.getElementById('fx-sum'); if (a) a.innerHTML = changesHtml(); if (b) b.innerHTML = summaryHtml(); flagEmpty(); }
   function stepsHtml() { var a = TX[['steps', 'stepsEn', 'stepsFr', 'stepsIt'][li()]]; return '<ol class="fx-steps">' + a.map(function (x) { return '<li><span class="fx-n">' + x[0] + '</span><span><strong>' + esc(x[1]) + '</strong> ' + esc(x[2]) + '</span></li>'; }).join('') + '</ol>'; }
-  function quickHtml() { if (S.lines.length >= MAXL) return '<span class="pt-sub">' + esc(tf('maxL', MAXL)) + '</span>'; return '<div class="fx-quick"><span class="pt-sub">' + esc(t('quick')) + '</span>' + K.CORDER.map(function (k2) { return '<button type="button" class="pt-chip" data-act="addc" data-crop="' + k2 + '">+ ' + esc(K.CROPS[k2][li()]) + '</button>'; }).join('') + '</div>'; }
+  function quickHtml() { if (S.lines.length >= MAXL) return '<span class="pt-sub">' + esc(tf('maxL', MAXL)) + '</span>'; return '<div class="fx-quick"><span class="pt-sub">' + esc(t('quick')) + '</span>' + K.CORDER.map(function (k2) { return '<button type="button" class="pt-chip" data-act="addc" data-crop="' + k2 + '">+ ' + esc((K.CEMO[k2] || '') + ' ' + K.CROPS[k2][li()]) + '</button>'; }).join('') + '</div>'; }
   function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
   function shell() {
     document.getElementById('fx-h1').textContent = t('title'); document.getElementById('fx-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';

@@ -116,6 +116,7 @@
   function tf(k) { var s = t(k), a = arguments; return s.replace(/\{(\d)\}/g, function (m, i) { return a[+i + 1] === undefined ? m : a[+i + 1]; }); }
   var CROPS = { trigo: ['Trigo', 'Wheat', 'Blé', 'Frumento'], maiz: ['Maíz', 'Maize (corn)', 'Maïs', 'Mais'], cebada: ['Cebada', 'Barley', 'Orge', 'Orzo'], avena: ['Avena', 'Oats', 'Avoine', 'Avena'], arroz: ['Arroz', 'Rice', 'Riz', 'Riso'], soja: ['Soja (grano)', 'Soybeans', 'Soja (grain)', 'Soia (semi)'], colza: ['Colza', 'Rapeseed / canola', 'Colza', 'Colza'] };
   var CORDER = ['trigo', 'maiz', 'cebada', 'avena', 'arroz', 'soja', 'colza'];
+  var CEMO = { trigo: '🌾', maiz: '🌽', cebada: '🍺', avena: '🥣', arroz: '🍚', soja: '🫘', colza: '🌼' };
   var COSTS = ['fert', 'seed', 'prot', 'feed', 'energy', 'mach', 'labour', 'rent', 'other'];
   var CURS = { EUR: '€', USD: 'USD', CAD: 'CAD', GBP: 'GBP' };
   var REG = { eu: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], us: ['EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'], ca: ['Canadá', 'Canada', 'Canada', 'Canada'], uk: ['Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito'] };
@@ -223,19 +224,21 @@
     return '<div class="pt-bar-ctl cc-adv"><span class="pt-lbl">' + esc(t('case')) + '</span><span role="radiogroup" aria-label="' + esc(t('case')) + '" style="display:contents">' + ['A', 'B', 'C'].map(function (k) { return '<button type="button" class="pt-chip" role="radio" aria-checked="' + (S.cur === k) + '" data-case="' + k + '">' + esc(t('case')) + ' ' + k + '</button>'; }).join('') + '</span>' +
       ['A', 'B', 'C'].filter(function (k) { return k !== S.cur; }).map(function (k) { return '<button type="button" class="pt-chip" data-copy="' + k + '" title="' + esc(t('copyTo') + ' ' + k) + '">' + esc(t('copyTo')) + ' ' + k + '</button>'; }).join('') + '</div>';
   }
+  var STEPS = { es: [['1', 'Tu cultivo', 'cultivo, superficie y rendimiento'], ['2', 'El precio', 'el tuyo o el de referencia de Dehesa'], ['3', 'Tus costes', 'opcional: sin ellos solo verás el precio']], en: [['1', 'Your crop', 'crop, area and yield'], ['2', 'The price', 'yours or the Dehesa reference'], ['3', 'Your costs', 'optional: without them you only see the price']], fr: [['1', 'Votre culture', 'culture, surface et rendement'], ['2', 'Le prix', 'le vôtre ou la référence Dehesa'], ['3', 'Vos coûts', 'facultatif : sans eux, seul le prix apparaît']], it: [['1', 'La tua coltura', 'coltura, superficie e resa'], ['2', 'Il prezzo', 'il tuo o il riferimento Dehesa'], ['3', 'I tuoi costi', 'facoltativo: senza, vedi solo il prezzo']] };
+  function stepsHtml() { return '<ol class="fx-steps">' + (STEPS[LANGS[li()]] || STEPS.es).map(function (x) { return '<li><span class="fx-n">' + x[0] + '</span><span><strong>' + esc(x[1]) + '</strong> ' + esc(x[2]) + '</span></li>'; }).join('') + '</ol>'; }
   function inputsHtml() {
     var c = C(), kgBu = bushelKg(c.crop), au = c.areaU === 'ha' ? t('ha') : t('ac');
-    var h = '<div class="cc-grid">';
-    h += field('cc-crop', t('crop'), selectHtml('cc-crop', CORDER.map(function (k) { return [k, CROPS[k][li()]]; }), c.crop));
+    var h = '<fieldset class="cc-fs"><legend><span class="fx-n">1</span> ' + esc((STEPS[LANGS[li()]] || STEPS.es)[0][1]) + '</legend><div class="cc-grid">';
+    h += field('cc-crop', t('crop'), selectHtml('cc-crop', CORDER.map(function (k) { return [k, (CEMO[k] || '') + ' ' + CROPS[k][li()]]; }), c.crop));
     h += field('cc-area', t('area') + ' (' + au + ')', '<div class="cc-row">' + inputHtml('cc-area', c.area, '0') + seg('areaU', [['ha', t('ha')], ['ac', t('ac')]], c.areaU) + '</div>');
     h += field('cc-y', t('yield') + ' (' + (c.yU === 't_ha' ? t('tha') : t('buac')) + ')', '<div class="cc-row">' + inputHtml('cc-y', c.y, '0') + seg('yU', [['t_ha', t('tha')]].concat(kgBu ? [['bu_ac', t('buac')]] : []), kgBu ? c.yU : 't_ha') + '</div>');
     h += field('cc-cur', t('currency'), selectHtml('cc-cur', Object.keys(CURS).map(function (k) { return [k, k]; }), c.cur));
-    h += '</div>';
-    h += '<fieldset class="cc-fs"><legend>' + esc(t('price')) + '</legend>' + seg('pSrc', [['manual', t('manual')], ['dehesa', t('dehesa')]], c.pSrc);
+    h += '</div></fieldset>';
+    h += '<fieldset class="cc-fs"><legend><span class="fx-n">2</span> ' + esc(t('price')) + '</legend>' + seg('pSrc', [['manual', t('manual')], ['dehesa', t('dehesa')]], c.pSrc);
     if (c.pSrc === 'manual') h += '<div class="cc-grid">' + field('cc-p', t('price') + ' (' + CURS[c.cur] + ' ' + (c.pUnit === 't' ? t('pt') : t('pbu')) + ')', '<div class="cc-row">' + inputHtml('cc-p', c.p, '0') + seg('pUnit', [['t', t('pt')]].concat(kgBu ? [['bu', t('pbu')]] : []), kgBu ? c.pUnit : 't') + '</div>') + '</div>';
     else h += '<div id="cc-ref" class="pt-skel">' + esc(t('loading')) + '</div>';
     h += '</fieldset>';
-    h += '<fieldset class="cc-fs"><legend>' + esc(t('costs')) + ' (' + esc(CURS[c.cur]) + '/' + esc(au) + ')</legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('costsHint')) + '</p><div id="cc-ers"></div><div id="cc-es"></div><div class="cc-grid">' + COSTS.map(function (k) { return field('cc-c-' + k, t('c_' + k), inputHtml('cc-c-' + k, c.costs[k], '0')); }).join('') + '</div></fieldset>';
+    h += '<fieldset class="cc-fs"><legend><span class="fx-n">3</span> ' + esc(t('costs')) + ' (' + esc(CURS[c.cur]) + '/' + esc(au) + ') <span class="fx-opt">· ' + esc({ es: 'opcional', en: 'optional', fr: 'facultatif', it: 'facoltativo' }[LANGS[li()]] || 'opcional') + '</span></legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('costsHint')) + '</p><div id="cc-ers"></div><div id="cc-es"></div><div class="cc-grid">' + COSTS.map(function (k) { return field('cc-c-' + k, t('c_' + k), inputHtml('cc-c-' + k, c.costs[k], '0')); }).join('') + '</div></fieldset>';
     h += taxHtml(c);
     h += '<p class="pt-src">' + esc(t('notInc')) + '</p>';
     h += '<div class="pt-bar-ctl"><label style="font-size:13px"><input type="checkbox" id="cc-remember"' + (S.remember ? ' checked' : '') + '> ' + esc(t('remember')) + '</label>' + (S.remember ? '<button type="button" class="pt-chip" data-forget="1">' + esc(t('forget')) + '</button>' : '') + '</div>';
@@ -303,8 +306,8 @@
     var MD = { es: ['Modo básico', 'Opciones avanzadas (escenarios, impuestos, sensibilidad)'], en: ['Basic mode', 'Advanced options (scenarios, taxes, sensitivity)'], fr: ['Mode simple', 'Options avancées (scénarios, taxes, sensibilité)'], it: ['Modalità base', 'Opzioni avanzate (scenari, imposte, sensibilità)'] }[LANGS[li()]] || ['Modo básico', 'Opciones avanzadas'];
     var adv = false; try { adv = window.localStorage.getItem('dehesaCalcAdv') === '1'; } catch (e) {}
     // Modo basico por defecto (auditoria 8-oct-2026): cultivo, superficie, rendimiento, precio y costes -> margen. Lo avanzado, a un clic.
-    document.getElementById('cc-body').innerHTML = '<div class="pt-wrap' + (adv ? '' : ' cc-basic') + '"><div class="pt-bar-ctl" role="radiogroup"><button type="button" class="pt-chip" role="radio" data-ccmode="0" aria-checked="' + !adv + '">' + esc(MD[0]) + '</button><button type="button" class="pt-chip" role="radio" data-ccmode="1" aria-checked="' + adv + '">' + esc(MD[1]) + '</button></div><div class="pt-note">' + esc(t('privacy')) + '</div>' + caseTabs() + '<div id="cc-inputs">' + inputsHtml() + '</div>' +
-      sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p>' + (window.DICite ? window.DICite.derived(['usda_ers','ecb'].concat((jur(C().tax.j) || {}).ids || []),{what:'calc'}) : '') + '<p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') +
+    document.getElementById('cc-body').innerHTML = '<div class="pt-wrap' + (adv ? '' : ' cc-basic') + '"><div class="pt-bar-ctl" role="radiogroup"><button type="button" class="pt-chip" role="radio" data-ccmode="0" aria-checked="' + !adv + '">' + esc(MD[0]) + '</button><button type="button" class="pt-chip" role="radio" data-ccmode="1" aria-checked="' + adv + '">' + esc(MD[1]) + '</button></div>' + stepsHtml() + '<div class="pt-note">' + esc(t('privacy')) + '</div>' + caseTabs() + '<div class="cc-two"><div class="cc-left"><div id="cc-inputs">' + inputsHtml() + '</div></div><aside class="cc-right">' +
+      sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p>' + (window.DICite ? window.DICite.derived(['usda_ers','ecb'].concat((jur(C().tax.j) || {}).ids || []),{what:'calc'}) : '') + '<p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') + '</aside></div>' +
       sec('cc-sens-sec', t('sens'), t('sensHint'), '<div id="cc-sens">' + sensHtml() + '</div>', 1) +
       sec('cc-cmp-sec', t('compare'), '', '<div id="cc-cmp">' + compareHtml() + '</div>', 1) + '</div>';
     if (C().pSrc === 'dehesa') drawRef();
@@ -488,7 +491,7 @@
 
   // API reutilizable (Mi explotación): el mismo motor de cálculo y de precio de referencia, sin duplicar lógica.
   window.DICalc = { calc: function (c, o) { return calc(c, o); }, blank: blank, canon: canon, state: function () { return S; },
-    loadRef: loadRef, refPerT: refPerT, instruments: instruments, CROPS: CROPS, CORDER: CORDER, COSTS: COSTS, REG: REG, SRC: SRC, UL: UL, CURS: CURS,
+    loadRef: loadRef, refPerT: refPerT, instruments: instruments, CROPS: CROPS, CEMO: CEMO, CORDER: CORDER, COSTS: COSTS, REG: REG, SRC: SRC, UL: UL, CURS: CURS,
     fmt: { esc: esc, num: num, nf: nf, money: money, r2: r2, dstr: dstr }, bushelKg: bushelKg, convertCase: convertCase };
   if (!document.getElementById('cc-body')) return; // cargado como librería: no pinta la calculadora
 
