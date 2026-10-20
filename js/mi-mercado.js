@@ -293,11 +293,12 @@
     /* País: tarjetas con bandera (antes un desplegable); debajo, los filtros de ese país */
     var CC = [['US', '🇺🇸', t.us], ['CA', '🇨🇦', tc().ca], ['ES', '🇪🇸', t.es], ['FR', '🇫🇷', EUN.FR[lang()]], ['IT', '🇮🇹', EUN.IT[lang()]], ['PL', '🇵🇱', EUN.PL[lang()]], ['EL', '🇬🇷', EUN.EL[lang()]], ['DE', '🇩🇪', TEU[lang()].de], ['UK', '🇬🇧', TEU[lang()].uk]];
     var PQ = { es: '¿Dónde está tu explotación?', en: 'Where is your farm?', fr: 'Où se trouve votre exploitation ?', it: 'Dove si trova la tua azienda?' };
-    h += '<div class="mm-cc-wrap"><div class="mm-cc-q" id="mm-cc-q">' + esc(PQ[lang()] || PQ.es) + '</div><div class="mm-cc" role="radiogroup" aria-labelledby="mm-cc-q">' + CC.map(function (c) {
+    h += '<div class="mm-cc-wrap"><div class="mm-cc-q" id="mm-cc-q"><span class="fx-n">1</span> ' + esc(PQ[lang()] || PQ.es) + '</div><div class="mm-cc" role="radiogroup" aria-labelledby="mm-cc-q">' + CC.map(function (c) {
       var on = ST.c === c[0];
       return '<button type="button" role="radio" aria-checked="' + on + '" class="mm-cc-b' + (on ? ' on' : '') + '" data-mm-cc="' + c[0] + '"><span class="mm-cc-f" aria-hidden="true">' + c[1] + '</span><span class="mm-cc-n">' + esc(c[2]) + '</span></button>';
     }).join('') + '</div></div>';
-    h += mapHtml();
+    var mh = mapHtml(), H2 = { es: 'Elige tu zona y tu producto', en: 'Pick your area and product', fr: 'Choisissez votre zone et votre produit', it: 'Scegli la tua zona e il tuo prodotto' };
+    h += '<div class="mm-pick' + (mh ? ' has-map' : '') + '">' + (mh ? '<div class="mm-pick-map">' + mh + '</div>' : '') + '<div class="mm-pick-ctl"><div class="mm-pick-h"><span class="fx-n">2</span> ' + esc(H2[lang()] || H2.es) + '</div>';
     h += '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
     if (ST.c === 'US') {
       h += '<label>' + esc(t.place) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
@@ -325,7 +326,7 @@
       h += '<label>' + esc(({ es: 'Buscar cultivo', en: 'Find crop', fr: 'Chercher une culture', it: 'Cerca coltura' })[lang()] || 'Buscar cultivo') + '<br><input type="search" class="di-compare-select" data-mm-filter="mm-crop" autocomplete="off" style="min-width:150px"></label>';
       h += '<label>' + esc(t.crop) + '<br><select class="di-compare-select" data-mm="k" id="mm-crop">' + (ES_CROPS ? ES_CROPS : opt('', t.choose, '')) + '</select></label>';
     }
-    return h + '</div>';
+    return h + '</div></div></div>';
   }
   var ES_CROPS = '';
 

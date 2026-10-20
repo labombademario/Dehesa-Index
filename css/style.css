@@ -2933,3 +2933,11 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .cc-fs legend .fx-n{margin-right:6px;vertical-align:middle}
 .cc-two{display:block}
 @media (min-width:1000px){.cc-two{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,1fr);gap:28px;align-items:start}.cc-right{position:sticky;top:calc(var(--di-hdr,60px) + 16px)}.cc-right .pt-sec{margin-top:0}}
+
+/* Mi mercado: mapa a la izquierda, selección a la derecha */
+.mm-pick-h{font-weight:700;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.mm-cc-q .fx-n{margin-right:6px;vertical-align:middle}
+.mm-pick-ctl .de-ctl{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.mm-pick-ctl .de-ctl label{display:block;font-size:13px;color:var(--text-muted)}
+.mm-pick-ctl .de-ctl select,.mm-pick-ctl .de-ctl input{width:100%;box-sizing:border-box;margin-top:4px;font-size:15px;min-height:42px}
+@media (min-width:900px){.mm-pick.has-map{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,1fr);gap:28px;align-items:start}.mm-pick.has-map .mm-map svg{max-width:100%;max-height:400px}}
