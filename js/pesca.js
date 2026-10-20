@@ -104,7 +104,7 @@
   function money(v, cur) { if (v == null) return '—'; var m = v / 1e6; return nf(m, m < 100 ? 1 : 0) + ' ' + tx(cur === 'USD' ? T.u.musd : T.u.meur); }
   /* ---- gráfica de líneas (mismo patrón que js/farm-headlines.js) ---- */
   function niceStep(max) { var raw = max / 4, p = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), n = raw / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p; }
-  var CL = ['t', 'r'];
+  var CL = ['t', 'b'];
   function chart(list, title, cls) {
     var W = 560, H = 220, Lm = 64, Rr = 8, Tp = 10, B = 24, y0 = 1e9, y1 = 0, hi = 0, k, j;
     list.forEach(function (o) { o.pts.forEach(function (r) { y0 = Math.min(y0, +r[0]); y1 = Math.max(y1, +r[0]); hi = Math.max(hi, r[1]); }); });
@@ -159,6 +159,7 @@
     return h;
   }
   function table(head, rows) { return '<div class="di-table-wrap"><table class="di-table fsh-tbl"><thead><tr>' + head.map(function (x, i) { return '<th' + (i ? ' class="num"' : '') + '>' + esc(x) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'; }
+  function flag(cc) { cc = String(cc || '').toUpperCase(); var iso = { EL: 'GR', UK: 'GB' }[cc] || cc; return /^[A-Z]{2}$/.test(iso) ? '<span aria-hidden="true">' + String.fromCodePoint(127397 + iso.charCodeAt(0), 127397 + iso.charCodeAt(1)) + '</span> ' : ''; }
   function td(v, num) { return '<td' + (num ? ' class="num"' : '') + '>' + v + '</td>'; }
   function speciesBlock(d) {
     if (!d.landings || !d.landings.length) return '';
@@ -220,7 +221,7 @@
     var rows = idx.countries.filter(function (r) { return r.cc !== 'US'; }).sort(function (a, b) { return ((b.landValue || [0, 0])[1] - (a.landValue || [0, 0])[1]) || ((b.aqQty || [0, 0])[1] - (a.aqQty || [0, 0])[1]); });
     var v = function (p, f) { return p ? f(p[1]) + ' <span class="fsh-m">' + esc(p[0]) + '</span>' : '—'; };
     var tr = rows.map(function (r) {
-      return '<tr class="fsh-row' + (r.cc === cur ? ' on' : '') + '" data-cc="' + esc(r.cc) + '" tabindex="0">' + td('<a href="' + esc(sp('pesca.html') + '?c=' + r.cc) + '">' + esc(tx(N[r.cc] || [r.cc, r.cc, r.cc, r.cc])) + '</a>') +
+      return '<tr class="fsh-row' + (r.cc === cur ? ' on' : '') + '" data-cc="' + esc(r.cc) + '" tabindex="0">' + td(flag(r.cc) + '<a href="' + esc(sp('pesca.html') + '?c=' + r.cc) + '">' + esc(tx(N[r.cc] || [r.cc, r.cc, r.cc, r.cc])) + '</a>') +
         td(v(r.catches, function (x) { return nf(x, 0); }), 1) + td(v(r.landValue, function (x) { return money(x, 'EUR'); }), 1) + td(v(r.landPrice, function (x) { return nf(x, 0); }), 1) +
         td(v(r.aqQty, function (x) { return nf(x, 0); }), 1) + td(v(r.fleet, function (x) { return nf(x, 0); }), 1) + td(r.fleetOld ? nf(r.fleetOld[1], 0) + ' %' : '—', 1) + '</tr>';
     });

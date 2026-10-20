@@ -2909,3 +2909,6 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 .eutm-b{flex:none;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:var(--border);color:var(--text-muted,inherit)}
 .eutm-b.on{background:rgba(31,90,59,.14);color:#1F5A3B}
 @media (prefers-color-scheme:dark){.eutm-b.on{background:rgba(120,200,150,.18);color:#8fd3a8}}
+/* Pesca: la segunda serie (acuicultura) en azul; antes granate y apenas se distinguia del negro de capturas */
+.wp-line-b{stroke:#1f6fa8}.wp-dot-b{fill:#1f6fa8;stroke:var(--surface);stroke-width:2}.wp-sw-b{background:#1f6fa8}
+html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-dot-b{fill:#6fb3e0}html[data-theme="dark"] .wp-sw-b{background:#6fb3e0}
