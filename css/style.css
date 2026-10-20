@@ -2533,6 +2533,8 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .ex-chip, .ex-tab { font: inherit; font-size: 13px; min-height: 36px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 18px; background: transparent; color: var(--text-primary); cursor: pointer; }
 .ex-chip-s { min-height: 30px; font-size: 12.5px; padding: 2px 10px; }
 .ex-th { font-size: 12.5px; }
+/* Línea fina entre Productos, Temas y Qué mirar, para separar a simple vista cada grupo de opciones */
+.ex-row:has(> .ex-th), .ex-row.ex-meas { border-top: 1px solid var(--border-strong, var(--border)); padding-top: 12px; margin-top: 12px; }
 .ex-more { border-style: dashed; color: var(--text-tertiary); }
 .ex-tab { border-radius: 8px; }
 .ex-chip[aria-pressed="true"], .ex-tab[aria-pressed="true"] { background: var(--accent, #2f6f4f); border-color: var(--accent, #2f6f4f); color: #fff; font-weight: 600; }
