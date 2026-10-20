@@ -154,6 +154,8 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
     return '<span class="di-news-country" title="' + esc((TT[lang] || TT.es)) + '">' + fl + esc(lbl) + '</span>';
   }
   var TT = { es: 'País del medio de comunicación', en: 'Country of the news outlet', fr: 'Pays du média', it: 'Paese della testata' };
+  var REGION_EMO = { all: '\uD83C\uDF10 ', us: '\uD83C\uDDFA\uD83C\uDDF8 ', eu: '\uD83C\uDDEA\uD83C\uDDFA ', uk: '\uD83C\uDDEC\uD83C\uDDE7 ', ca: '\uD83C\uDDE8\uD83C\uDDE6 ', global: '\uD83C\uDF0D ' };
+  function flagOf(cc) { return /^[A-Z]{2}$/.test(cc) ? String.fromCodePoint(cc.charCodeAt(0) + 127397, cc.charCodeAt(1) + 127397) + ' ' : ''; }
   var REGION_LABELS = {
     es: { all: 'Todas', us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', ca: 'Canadá', global: 'Global' },
     en: { all: 'All', us: 'U.S.', eu: 'Europe', uk: 'United Kingdom', ca: 'Canada', global: 'Global' },
@@ -461,9 +463,9 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
     products.sort(function(a,b){ return (productLabels[a] || a).localeCompare(productLabels[b] || b); });
     topics.sort(function(a,b){ return (topicLabels[a] || a).localeCompare(topicLabels[b] || b); });
 
-    document.getElementById('nw-region-filter').innerHTML = regions.map(function(v){ return optionHtml(v, regionLabels[v], state.region === v, v === 'all' ? undefined : coverageCount('region', v)); }).join('');
+    document.getElementById('nw-region-filter').innerHTML = regions.map(function(v){ return optionHtml(v, (REGION_EMO[v] || '') + regionLabels[v], state.region === v, v === 'all' ? undefined : coverageCount('region', v)); }).join('');
     document.getElementById('nw-country-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.country === 'all') +
-      countries.map(function(v){ return optionHtml(v, cname(v), state.country === v, coverageCount('country', v)); }).join('');
+      countries.map(function(v){ return optionHtml(v, flagOf(v) + cname(v), state.country === v, coverageCount('country', v)); }).join('');
     document.getElementById('nw-product-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.product === 'all') +
       products.map(function(v){ return optionHtml(v, productLabels[v], state.product === v, coverageCount('product', v)); }).join('');
     document.getElementById('nw-topic-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.topic === 'all') +
