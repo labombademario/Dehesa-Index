@@ -36,18 +36,26 @@ for(const [code,city,lat,lon] of P){
  const sp=Array(12).fill(0),st=Array(12).fill(0),n=Array(12).fill(0);
  for(let y=2001;y<=2020;y++)for(let mi=0;mi<12;mi++){const k=y+String(mi+1).padStart(2,'0');if(ok(Pr[k],Tm[k])){sp[mi]+=Pr[k];st[mi]+=Tm[k];n[mi]++}}
  if(n.some(v=>v<15)){missing.push({id:code,reason:'menos de 15 años válidos para la media 2001-2020'});continue}
+ // medias por mes calendario con las cifras que se publican (mm/dia a 6 decimales, grados a 3): la pagina recalcula con ellas el historico y coincide con lo que se publica
+ const bp=sp.map((v,i)=>round(v/n[i],6)),bt=st.map((v,i)=>round(v/n[i],3));
  const months=[];
  for(const k of Object.keys(Pr).sort()){
   if(!/^\d{6}$/.test(k)||k.endsWith('13'))continue;
   const y=+k.slice(0,4),mi=+k.slice(4)-1;
   if(y<year-2||!ok(Pr[k],Tm[k]))continue;
-  const cp=sp[mi]/n[mi],ct=st[mi]/n[mi]; if(!(cp>0))continue;
+  const cp=bp[mi],ct=bt[mi]; if(!(cp>0))continue;
   const days=new Date(Date.UTC(y,mi+1,0)).getUTCDate(),p=Pr[k],t=Tm[k];
   const rp=round(p*days),rb=round(cp*days),rt=round(t),rbt=round(ct); if(!(rb>0))continue;  // las anomalías se calculan con las cifras ya redondeadas, para que cuadren con lo que se publica
   months.push({period:y+'-'+String(mi+1).padStart(2,'0'),precipMm:rp,precipBaselineMm:rb,precipAnomalyPct:round(100*(rp/rb-1)),tempC:rt,tempBaselineC:rbt,tempAnomalyC:round(rt-rbt)});
  }
+ // historico completo desde 2001: lluvia (mm/mes) y temperatura (°C) mes a mes, null = sin dato valido; las medias 2001-2020 van aparte, una por mes del año
+ const hk=Object.keys(Pr).filter(k=>/^\d{6}$/.test(k)&&!k.endsWith('13')&&+k.slice(0,4)>=2001).sort();
+ const hp=[],ht=[];
+ for(const k of hk){const y=+k.slice(0,4),mi=+k.slice(4)-1,days=new Date(Date.UTC(y,mi+1,0)).getUTCDate();
+  if(ok(Pr[k],Tm[k])){hp.push(round(Pr[k]*days));ht.push(round(Tm[k]))}else{hp.push(null);ht.push(null)}}
+ const history={from:'2001-01',p:hp,t:ht,baseMmDay:bp,baseTempC:bt};
  if(months.length<3){missing.push({id:code,reason:'menos de 3 meses válidos'});continue}
- provinces.push({id:code,city,lat,lon,months:months.slice(-12)});
+ provinces.push({id:code,city,lat,lon,months:months.slice(-12),history});
 }
 if(provinces.length<40){console.error('Demasiadas provincias sin datos ('+missing.length+'); no se sobrescribe data/es-climate-provinces.json');process.exit(1)}
 const lastPeriod=provinces.map(v=>v.months[v.months.length-1].period).sort().pop();

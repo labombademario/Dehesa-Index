@@ -689,6 +689,23 @@
     fr: { s: 'Pluie et température dans votre province', month: 'Mois', rain: 'Pluie (mm)', avg: 'Moyenne 2001-2020 (mm)', vs: 'Par rapport à la moyenne', temp: 'Température (°C)', dt: 'Écart (°C)', last: 'Dernier mois clos', point: 'Point de la capitale', no: 'Pas encore de données climatiques pour cette province.', note: 'Réanalyse MERRA-2 de NASA POWER dans la maille d’environ 50 km qui contient la capitale de la province (pas des stations ni la moyenne de toute la province ; sur les îles et les côtes la maille mêle terre et mer). La moyenne 2001-2020 est celle du même mois. Elle mesure l’écart climatique, sans prédire récoltes ni prix.' },
     it: { s: 'Pioggia e temperatura nella tua provincia', month: 'Mese', rain: 'Pioggia (mm)', avg: 'Media 2001-2020 (mm)', vs: 'Rispetto alla media', temp: 'Temperatura (°C)', dt: 'Differenza (°C)', last: 'Ultimo mese chiuso', point: 'Punto del capoluogo', no: 'Non ci sono ancora dati climatici per questa provincia.', note: 'Rianalisi MERRA-2 di NASA POWER nella cella di circa 50 km che contiene il capoluogo della provincia (non stazioni né la media di tutta la provincia; su isole e coste la cella mescola terra e mare). La media 2001-2020 è dello stesso mese. Misura la deviazione climatica, non prevede raccolti né prezzi.' }
   };
+  var TCY = {
+    es: { pick: 'Ver', last12: 'Últimos 12 meses', yr: 'Año', tot: 'Total del año', mean: 'Media del año', nod: 'sin dato', hist: 'Histórico desde {y} (NASA POWER). El año actual muestra solo los meses cerrados; los totales de año se calculan solo con los 12 meses.' },
+    en: { pick: 'View', last12: 'Last 12 months', yr: 'Year', tot: 'Year total', mean: 'Year average', nod: 'no data', hist: 'History since {y} (NASA POWER). The current year shows only closed months; year totals are computed only with all 12 months.' },
+    fr: { pick: 'Afficher', last12: '12 derniers mois', yr: 'Année', tot: 'Total de l’année', mean: 'Moyenne de l’année', nod: 'pas de donnée', hist: 'Historique depuis {y} (NASA POWER). L’année en cours n’affiche que les mois clos ; les totaux annuels ne sont calculés qu’avec les 12 mois.' },
+    it: { pick: 'Mostra', last12: 'Ultimi 12 mesi', yr: 'Anno', tot: 'Totale dell’anno', mean: 'Media dell’anno', nod: 'nessun dato', hist: 'Storico dal {y} (NASA POWER). L’anno in corso mostra solo i mesi chiusi; i totali annui sono calcolati solo con tutti i 12 mesi.' }
+  };
+  function r1(v) { return Math.round(v * 10) / 10; }
+  /* meses de un año a partir del historico compacto (mismo calculo que el script: media mm/dia x dias del mes, y diferencia con la media redondeada) */
+  function climYear(H, y) {
+    var y0 = +String(H.from).slice(0, 4), out = [], mi;
+    for (mi = 0; mi < 12; mi++) {
+      var i = (y - y0) * 12 + mi - (+String(H.from).slice(5, 7) - 1); if (i < 0 || i >= H.p.length) continue;
+      var days = new Date(Date.UTC(y, mi + 1, 0)).getUTCDate(), rb = r1(H.baseMmDay[mi] * days), rbt = r1(H.baseTempC[mi]), p = H.p[i], tt = H.t[i];
+      out.push({ period: y + '-' + (mi < 9 ? '0' : '') + (mi + 1), precipMm: p, precipBaselineMm: rb, precipAnomalyPct: p == null || !(rb > 0) ? null : r1(100 * (p / rb - 1)), tempC: tt, tempBaselineC: rbt, tempAnomalyC: tt == null ? null : r1(tt - rbt) });
+    }
+    return out;
+  }
   function spainClimate(tok) {
     var t = TCL[lang()] || TCL.es;
     return get('data/es-climate-provinces.json').then(function (d) {
@@ -696,12 +713,25 @@
       var pr = (d.provinces || []).filter(function (x) { return x.id === ST.r; })[0];
       if (!pr || !pr.months || !pr.months.length) { putSec(tok, 'clim', note(t.no)); return; }
       var ms = pr.months, l = ms[ms.length - 1], sg = function (v, dd) { return (v > 0 ? '+' : '') + nf(v, dd); };
+      var t2 = TCY[lang()] || TCY.es, H = pr.history && pr.history.p && pr.history.p.length ? pr.history : null, yrs = [];
+      if (H) { var y0 = +String(H.from).slice(0, 4), y1 = y0 + Math.floor((H.p.length - 1 + (+String(H.from).slice(5, 7) - 1)) / 12); for (var yy = y1; yy >= y0; yy--) yrs.push(yy); }
+      var cell = function (v, dd, suf) { return v == null ? '<span style="color:var(--text-muted)">—</span>' : (suf === 's' ? sg(v, dd) + ' %' : suf === 'd' ? sg(v, dd) : nf(v, dd)); };
+      var climTable = function (rows, total) {
+        var tr = rows.map(function (m) { return '<tr><td>' + esc(m.period) + '</td><td class="r">' + cell(m.precipMm, 0) + '</td><td class="r">' + cell(m.precipAnomalyPct, 0, 's') + '</td><td class="r">' + cell(m.tempC, 1) + '</td><td class="r">' + cell(m.tempAnomalyC, 1, 'd') + '</td></tr>'; }).join('');
+        if (total && rows.length === 12 && rows.every(function (m) { return m.precipMm != null && m.tempC != null; })) {
+          var sp = 0, sb = 0, st = 0, sbt = 0; rows.forEach(function (m) { sp += m.precipMm; sb += m.precipBaselineMm; st += m.tempC; sbt += m.tempBaselineC; });
+          tr += '<tr style="font-weight:700;border-top:2px solid var(--border)"><td>' + esc(t2.tot) + ' / ' + esc(t2.mean.toLowerCase()) + '</td><td class="r">' + nf(sp, 0) + '</td><td class="r">' + sg(r1(100 * (sp / sb - 1)), 0) + ' %</td><td class="r">' + nf(st / 12, 1) + '</td><td class="r">' + sg(r1(st / 12 - sbt / 12), 1) + '</td></tr>';
+        }
+        return '<table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.month) + '</th><th scope="col" class="r">' + esc(t.rain) + '</th><th scope="col" class="r">' + esc(t.vs) + '</th><th scope="col" class="r">' + esc(t.temp) + '</th><th scope="col" class="r">' + esc(t.dt) + '</th></tr></thead><tbody>' + tr + '</tbody></table>';
+      };
       var h = '<div class="de-tiles">' + tile(t.rain, nf(l.precipMm, 0) + ' mm', esc(t.avg) + ': ' + nf(l.precipBaselineMm, 0) + '<br>' + esc(t.vs) + ': ' + sg(l.precipAnomalyPct, 0) + ' %')
         + tile(t.temp, nf(l.tempC, 1) + ' °C', esc(t.dt) + ': ' + sg(l.tempAnomalyC, 1)) + '</div>'
         + '<p class="di-movers-hint" style="margin:8px 0 2px"><b>' + esc(t.last) + ': ' + esc(l.period) + '</b> · ' + esc(t.point) + ': ' + esc(pr.city) + '</p>'
-        + '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.month) + '</th><th scope="col" class="r">' + esc(t.rain) + '</th><th scope="col" class="r">' + esc(t.vs) + '</th><th scope="col" class="r">' + esc(t.temp) + '</th><th scope="col" class="r">' + esc(t.dt) + '</th></tr></thead><tbody>'
-        + ms.slice().reverse().map(function (m) { return '<tr><td>' + esc(m.period) + '</td><td class="r">' + nf(m.precipMm, 0) + '</td><td class="r">' + sg(m.precipAnomalyPct, 0) + ' %</td><td class="r">' + nf(m.tempC, 1) + '</td><td class="r">' + sg(m.tempAnomalyC, 1) + '</td></tr>'; }).join('') + '</tbody></table></div>';
-      putSec(tok, 'clim', h + note(t.note) + cite('nasa_power', l.period) + citeCalc(['nasa_power'], 'monthly mean 2001-2020 and deviation (computed from NASA POWER monthly data)'));
+        + (H ? '<p style="margin:10px 0 6px"><label class="de-yr">' + esc(t2.pick) + ' <select id="clim-yr" class="di-compare-select"><option value="last">' + esc(t2.last12) + '</option>' + yrs.map(function (y) { return '<option value="' + y + '">' + esc(t2.yr) + ' ' + y + '</option>'; }).join('') + '</select></label></p>' : '')
+        + '<div class="de-sc" id="clim-tab">' + climTable(ms.slice().reverse(), false) + '</div>';
+      putSec(tok, 'clim', h + note(t.note + (H ? ' ' + t2.hist.replace('{y}', String(H.from).slice(0, 4)) : '')) + cite('nasa_power', l.period) + citeCalc(['nasa_power'], 'monthly mean 2001-2020 and deviation (computed from NASA POWER monthly data)'));
+      var sel = document.getElementById('clim-yr'), box = document.getElementById('clim-tab');
+      if (sel && box) sel.addEventListener('change', function () { box.innerHTML = sel.value === 'last' ? climTable(ms.slice().reverse(), false) : climTable(climYear(H, +sel.value), true); });
     }).catch(function () { if (tok === TOK) putSec(tok, 'clim', note(t.no)); });
   }
 
