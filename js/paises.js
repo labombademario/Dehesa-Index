@@ -305,14 +305,14 @@
     var DIESEL = ['pp-fr-gnr', 'pp-de-diesel', 'pp-it-fuel', 'pp-pl-diesel', 'pp-be-diesel', 'pp-at-diesel', 'pp-hr-diesel', 'pp-ie-diesel', 'pp-nl-diesel', 'pp-pt-diesel', 'pp-eu-diesel'];
     var hasC = function (id) { var e = document.getElementById(id); return !!(e && e.firstElementChild && e.offsetHeight > 2); };
     var diesel = null; DIESEL.forEach(function (id) { if (!diesel && hasC(id)) diesel = id; });
-    var MORE = ['pp-forecast', 'pp-eu-nit', 'pp-land-es', 'pp-gi'], extra = [];
+    var MORE = ['pp-forecast', 'pp-eu-nit', 'pp-land-es', 'pp-gi', 'pp-eu-tariff'], extra = [];
     if (hasId('pp-eu-land') && !document.getElementById('pp-eu-land').hidden) extra.push('pp-eu-land'); if (diesel) extra.push(diesel);
-    if (hasId('pp-census') || hasId('pp-managers')) MORE.concat(extra).forEach(function (id) { if (!more && (hasId(id) || extra.indexOf(id) >= 0)) more = id; });
+    if (hasId('pp-census') || hasId('pp-managers') || hasId('pp-eu-tariff')) MORE.concat(extra).forEach(function (id) { if (!more && (hasId(id) || extra.indexOf(id) >= 0)) more = id; });
     /* lo que cuelga de «Comercio» en el orden de la página: cada bloque largo con su propio apartado (pesca, edad de los jefes, censo agrario, resto) */
-    var ML = { es: { 'pp-forecast': 'Previsiones de producción de carne', 'pp-eu-nit': 'Nitratos en el agua', 'pp-land-es': 'Precio de la tierra y cánones', 'pp-gi': 'Denominaciones de origen' }, en: { 'pp-forecast': 'Meat production forecasts', 'pp-eu-nit': 'Nitrates in water', 'pp-land-es': 'Land prices and rents', 'pp-gi': 'Protected designations of origin' }, fr: { 'pp-forecast': 'Prévisions de production de viande', 'pp-eu-nit': 'Nitrates dans l’eau', 'pp-land-es': 'Prix des terres et fermages', 'pp-gi': 'Appellations d’origine' }, it: { 'pp-forecast': 'Previsioni di produzione di carne', 'pp-eu-nit': 'Nitrati nell’acqua', 'pp-land-es': 'Prezzo della terra e canoni', 'pp-gi': 'Denominazioni di origine' } }[lang()] || {};
+    var ML = { es: { 'pp-forecast': 'Previsiones de producción de carne', 'pp-eu-nit': 'Nitratos en el agua', 'pp-land-es': 'Precio de la tierra y cánones', 'pp-gi': 'Denominaciones de origen', 'pp-eu-tariff': 'Aranceles en vigor' }, en: { 'pp-forecast': 'Meat production forecasts', 'pp-eu-nit': 'Nitrates in water', 'pp-land-es': 'Land prices and rents', 'pp-gi': 'Protected designations of origin', 'pp-eu-tariff': 'Tariff measures in force' }, fr: { 'pp-forecast': 'Prévisions de production de viande', 'pp-eu-nit': 'Nitrates dans l’eau', 'pp-land-es': 'Prix des terres et fermages', 'pp-gi': 'Appellations d’origine', 'pp-eu-tariff': 'Mesures tarifaires en vigueur' }, it: { 'pp-forecast': 'Previsioni di produzione di carne', 'pp-eu-nit': 'Nitrati nell’acqua', 'pp-land-es': 'Prezzo della terra e canoni', 'pp-gi': 'Denominazioni di origine', 'pp-eu-tariff': 'Misure tariffarie in vigore' } }[lang()] || {};
     var XL = { es: ['Tierra y regadío', 'Gasóleo agrícola'], en: ['Land and irrigation', 'Agricultural diesel'], fr: ['Terres et irrigation', 'Gazole agricole'], it: ['Terra e irrigazione', 'Gasolio agricolo'] }[lang()] || ['Tierra y regadío', 'Gasóleo agrícola'];
     var moreSubs = function () { var r = MORE.filter(hasId).map(function (id) { return [id, ML[id] || id]; }); if (extra.indexOf('pp-eu-land') >= 0) r.push(['pp-eu-land', XL[0]]); if (diesel) r.push([diesel, XL[1]]); return r; };
-    F.bar(document.getElementById('pa-bar'), nm, [['ps-regmap', L[8]], ['pp-kpi', L[0]], ['pp-trade', L[1]], ['pp-fish', L[11]], ['pp-managers', L[12]], ['pp-census', L[13]], [more || 'pp-more-none', L[14], moreSubs()], ['pp-ask', L[7]], ['ps-explorer', L[2]], ['ps-detail', L[3]], ['ps-drought', L[9]], ['ps-ghg', L[10]], ['ps-sources', L[4]]]); /* misma barra, mismo orden en todos los paises */
+    F.bar(document.getElementById('pa-bar'), nm, [['ps-regmap', L[8]], ['pp-kpi', L[0]], ['pp-trade', L[1]], ['pp-eu-econ', ({ es: 'Economía agraria', en: 'Farm economics', fr: 'Économie agricole', it: 'Economia agricola' })[lang()]], ['pp-fish', L[11]], ['pp-managers', L[12]], ['pp-census', L[13]], [more || 'pp-more-none', L[14], moreSubs()], ['pp-ask', L[7]], ['ps-explorer', L[2]], ['ps-detail', L[3]], ['ps-drought', L[9]], ['ps-ghg', L[10]], ['ps-sources', L[4]]]); /* misma barra, mismo orden en todos los paises */
   }
   /* Denominaciones de origen (vinos y quesos, eAmbrosia): bloque propio que se carga solo si el pais tiene fichero (js/denominaciones.js) */
   /* Sequia del pais (js/country-drought.js): solo ese pais; la pagina completa sigue en sequia.html. Se carga a peticion y, si hay datos, se anade a la barra. */
@@ -321,7 +321,21 @@
     var s = document.getElementById('ps-sources'); if (!s || !s.parentNode) return null;
     var el = document.createElement('div'); el.id = id; var ref = after && after.parentNode === s.parentNode ? after.nextSibling : s; s.parentNode.insertBefore(el, ref); return el;
   }
+  /* Ficha de la UE: economía agraria y aranceles entre Comercio y Preguntas; sequía y clima en su sitio habitual (módulos de costes.html, sequia.html y aranceles) */
+  function euPageUp() {
+    var tr = document.getElementById('pp-trade'), lg = lang(); if (!tr || !tr.parentNode) return;
+    var js = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+    var eco = document.createElement('div'); eco.id = 'pp-eu-econ'; eco.innerHTML = '<section id="eucs" class="cof" aria-live="polite" style="margin-top:28px"></section>'; tr.parentNode.insertBefore(eco, tr.nextSibling);
+    var tar = document.createElement('div'); tar.id = 'pp-eu-tariff'; tar.style.minHeight = '1px'; eco.parentNode.insertBefore(tar, eco.nextSibling);
+    nearView(eco, function () { if (!window.DICite) js('js/cite.js?v=0', function () { js('js/eu-farm-economics.js?v=20261020', function () { frameUp(PAGE_C); }); }); else js('js/eu-farm-economics.js?v=20261020', function () { frameUp(PAGE_C); }); });
+    nearView(tar, function () { var go = function () { window.DIEuTariffs.mount(tar, lg).then(function () { frameUp(PAGE_C); }); }; if (window.DIEuTariffs) go(); else js('js/eu-tariffs-panel.js?v=20261020', go); });
+    var dr = lateBox('ps-drought'); if (!dr) return;
+    dr.innerHTML = '<section id="eusq" class="cof" aria-live="polite" style="margin-top:28px"></section><section id="eucl" class="cof" aria-live="polite"></section>';
+    nearView(dr, function () { js('js/eu-drought.js?v=20261020', function () { js('js/eu-climate.js?v=20261020', function () { frameUp(PAGE_C); }); }); });
+  }
+  var PAGE_C = null;
   function droughtUp(c) {
+    if (ST.c === 'EU') { PAGE_C = c; return euPageUp(); }
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-drought-slot'; tr.parentNode.insertBefore(el, tr.nextSibling);
     el = lateBox('pp-drought-box') || el;
