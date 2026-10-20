@@ -68,10 +68,12 @@
         var g = '', d = '', st = Math.max(1, Math.ceil(n / 7));
         for (i = 0; i <= nt; i++) { var yv = ns * i, yy = Y(yv); g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + yy.toFixed(1) + '" y2="' + yy.toFixed(1) + '" stroke="currentColor" stroke-opacity=".14"/><text x="' + (L - 6) + '" y="' + (yy + 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="currentColor" fill-opacity=".7">' + nf(yv, 0) + '</text>'; }
         for (i = 0; i < n; i++) { d += (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(p[i][1]).toFixed(1); if ((n - 1 - i) % st === 0) g += '<text x="' + X(i).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity=".7">' + esc(monthly ? p[i][0].slice(0, 7) : p[i][0]) + '</text>'; }
-        var dots = p.map(function (q, k) { return '<circle cx="' + X(k).toFixed(1) + '" cy="' + Y(q[1]).toFixed(1) + '" r="9" fill="transparent"><title>' + esc(q[0] + ': ' + nf(q[1], 0) + ' ' + (s.unit || unit)) + '</title></circle>'; }).join('');
+        var C = global.DehesaChart, dh = '';
+        if (C && C.attr) dh = C.attr({ L: L, R: W - R, T: T0, B: H - B, s: [{ n: nm(s), c: color, p: p.map(function (q, k) { return [+X(k).toFixed(1), +Y(q[1]).toFixed(1), nf(q[1], 0) + ' ' + (s.unit || unit), monthly ? q[0].slice(0, 7) : q[0], q[1]]; }) }] }).replace(/ style="[^"]*"$/, '');
+        var dots = '';
         var title = (f.kind === 'exp' ? t.toE : t.fromE).replace('{c}', nm(s)), a = p[0], b = p[n - 1];
         return '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline;margin-bottom:6px"><div style="font-size:16px;font-weight:700">' + esc(title) + '</div><div style="font-size:12.5px;color:var(--text-muted)">' + esc(s.unit || unit) + ' · ' + esc(t.of.replace('{a}', nf(a[1], 0)).replace('{y0}', a[0]).replace('{b}', nf(b[1], 0)).replace('{y1}', b[0])) + '</div></div>' +
-          '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(title) + '" style="width:100%;height:auto;display:block">' + g + '<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="2.6" stroke-linejoin="round"/>' + dots + '<circle cx="' + X(n - 1).toFixed(1) + '" cy="' + Y(b[1]).toFixed(1) + '" r="5" fill="' + color + '"/></svg>';
+          '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(title) + '"' + dh + ' style="width:100%;height:auto;display:block;touch-action:pan-y">' + g + '<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="2.6" stroke-linejoin="round"/>' + dots + '<circle cx="' + X(n - 1).toFixed(1) + '" cy="' + Y(b[1]).toFixed(1) + '" r="5" fill="' + color + '"/></svg>';
       }
       function draw() {
         var kp = kpi(t.exp, K.exp, '#2f6b4a', false) + kpi(t.imp, K.imp, '#a8481f', false) + kpi(t.bal, K.bal, 'inherit', true);

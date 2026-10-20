@@ -31,28 +31,11 @@
     function X(i) { return L + i * (W - L - R) / (n - 1); } function Y(v) { return Tp + (mx - v) * (H - Tp - B) / mx; }
     var g = [0, 1, 2, 3, 4].map(function (j) { var v = mx * j / 4; return '<g><line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v).toFixed(1) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (Y(v) + 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + nf(v, 0) + '</text></g>'; }).join('');
     var lines = ks.map(function (k) { var p = '', go = false; for (var i = 0; i < n; i++) { var s = share(d, k, i); if (s == null) { go = false; continue; } p += (go ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(s).toFixed(1) + ' '; go = true; } return '<path d="' + p + '" fill="none" stroke="' + COL[k] + '" stroke-width="2"/>'; }).join('');
+    var CH = window.DehesaChart, dh = '';
+    if (CH && CH.attr) dh = CH.attr({ L: L, R: W - R, T: Tp, B: H - B, s: ks.map(function (k) { var pp = [], i; for (i = 0; i < n; i++) { var v = share(d, k, i); if (v != null) pp.push([+X(i).toFixed(1), +Y(v).toFixed(1), nf(v, 1) + ' %', String(ys[i]), v]); } return { n: t[k], c: COL[k], p: pp }; }) }).replace(/ style="[^"]*"$/, '');
     var li = lastIdx(d), alt = t.histAlt.replace('{n}', cname(code)).replace('{a}', nf(share(d, 'feed', li) || 0, 1)).replace('{b}', nf(share(d, 'fert', li) || 0, 1)).replace('{y}', ys[li]);
     var lg = ks.map(function (k) { return '<span style="margin-right:12px;white-space:nowrap"><span style="color:' + COL[k] + '">■</span> ' + esc(t[k]) + '</span>'; }).join(' ');
-    return '<h3 class="cof-h3">' + esc(cname(code)) + ' · ' + esc(t.hist) + ' (%)</h3><div class="eucs-ch" data-g="' + [W, H, L, R, Tp, B, mx, n].join(',') + '" style="position:relative;max-width:720px"><svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(alt) + '" style="width:100%;height:auto;display:block;touch-action:pan-y">' + g + lines + '<text x="' + L + '" y="' + (H - 6) + '" font-size="11" fill="var(--text-faint)">' + ys[0] + '</text><text x="' + (W - R) + '" y="' + (H - 6) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + ys[n - 1] + '</text><line class="eucs-x" y1="' + Tp + '" y2="' + (H - B) + '" stroke="var(--text-muted)" stroke-width="1" visibility="hidden"/><circle class="eucs-dot" r="5" fill="#fff" stroke-width="2.5" visibility="hidden"/></svg><div class="eucs-tip" role="status" hidden style="position:absolute;pointer-events:none;z-index:2;padding:6px 10px;border-radius:8px;font-size:12.5px;line-height:1.35;white-space:nowrap;background:var(--surface,#fff);color:var(--text);border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.15)"></div></div><p class="cof-note">' + lg + '</p>';
-  }
-  /* Al pasar el ratón (o tocar) sobre el gráfico: línea más cercana, año y valor */
-  function bindChart(root) {
-    var box = root.querySelector('.eucs-ch'); if (!box) return;
-    var G = box.getAttribute('data-g').split(',').map(Number), W = G[0], H = G[1], L = G[2], R = G[3], Tp = G[4], B = G[5], mx = G[6], n = G[7];
-    var svg = box.querySelector('svg'), tip = box.querySelector('.eucs-tip'), vx = svg.querySelector('.eucs-x'), dot = svg.querySelector('.eucs-dot'), d = D.geos[SEL], ks = ['feed', 'fert', 'energy', 'ppp', 'vet'], t = T[lang()] || T.es;
-    function hide() { tip.hidden = true; vx.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); }
-    function move(e) {
-      var r = svg.getBoundingClientRect(), k = W / r.width, px = (e.clientX - r.left) * k, py = (e.clientY - r.top) * k;
-      var i = Math.round((px - L) * (n - 1) / (W - L - R)); if (i < 0) i = 0; if (i > n - 1) i = n - 1;
-      var best = null, bd = 1e9; ks.forEach(function (key) { var v = share(d, key, i); if (v == null) return; var y = Tp + (mx - v) * (H - Tp - B) / mx, dd = Math.abs(y - py); if (dd < bd) { bd = dd; best = { k: key, v: v, y: y }; } });
-      if (!best) { hide(); return; }
-      var x = L + i * (W - L - R) / (n - 1);
-      vx.setAttribute('x1', x); vx.setAttribute('x2', x); vx.setAttribute('visibility', 'visible');
-      dot.setAttribute('cx', x); dot.setAttribute('cy', best.y); dot.setAttribute('stroke', COL[best.k]); dot.setAttribute('visibility', 'visible');
-      tip.innerHTML = '<b style="color:' + COL[best.k] + '">■</b> <b>' + esc(t[best.k]) + '</b><br>' + D.years[i] + ' · ' + nf(best.v, 1) + ' %';
-      tip.hidden = false; var bw = box.getBoundingClientRect().width, tx = x / k + 12; if (tx + tip.offsetWidth > bw) tx = x / k - tip.offsetWidth - 12; tip.style.left = Math.max(0, tx) + 'px'; tip.style.top = Math.max(0, best.y / k - 44) + 'px';
-    }
-    svg.addEventListener('pointermove', move); svg.addEventListener('pointerdown', move); svg.addEventListener('pointerleave', hide);
+    return '<h3 class="cof-h3">' + esc(cname(code)) + ' · ' + esc(t.hist) + ' (%)</h3><div class="eucs-ch" style="max-width:720px"><svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(alt) + '"' + dh + ' style="width:100%;height:auto;display:block;touch-action:pan-y">' + g + lines + '<text x="' + L + '" y="' + (H - 6) + '" font-size="11" fill="var(--text-faint)">' + ys[0] + '</text><text x="' + (W - R) + '" y="' + (H - 6) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + ys[n - 1] + '</text></svg></div><p class="cof-note">' + lg + '</p>';
   }
   function render() {
     var root = document.getElementById('eucs'); if (!root || !D || !D.geos) return;
@@ -66,7 +49,6 @@
       return '<tr' + (c === SEL ? ' style="background:rgba(29,81,120,.06)"' : '') + '><th scope="row"><button type="button" class="eucs-b" data-c="' + c + '" style="all:unset;cursor:pointer;font-weight:' + (c === 'EU27_2020' ? 700 : 600) + '">' + esc(cname(c)) + '</button> <span class="cof-lbl">' + D.years[k] + '</span></th><td class="cof-n">' + esc(mm(g.output[k], t)) + '</td>' + s('ic') + s('feed') + s('fert') + s('energy') + '<td class="cof-n">' + (pu == null ? '—' : esc(nf(pu, 1))) + '</td></tr>'; }).join('');
     var tbl = '<h3 class="cof-h3">' + esc(t.sh) + ' (%)</h3><div class="di-card" style="padding:6px 14px;overflow-x:auto"><table class="cof-tbl" style="min-width:640px"><thead><tr>' + th(t.ctry) + th(t.out, 1) + th(t.ic, 1) + th(t.feed, 1) + th(t.fert, 1) + th(t.energy, 1) + th(t.pua, 1) + '</tr></thead><tbody>' + rows + '</tbody></table></div><p class="cof-note">' + esc(t.pick) + '</p>';
     root.innerHTML = '<h2 class="cof-h2">' + esc(t.h) + '</h2><p class="cof-sub">' + esc(t.sub) + '</p><h3 class="cof-h3">' + esc(cname(SEL)) + '</h3>' + cards + chart(SEL, t) + tbl + '<p class="cof-note">' + esc(t.note) + '</p><p class="cof-note">' + esc(t.src) + '</p>' + (window.DICite ? window.DICite.html('eurostat', {}) : '');
-    bindChart(root);
     Array.prototype.forEach.call(root.querySelectorAll('.eucs-b'), function (b) { b.onclick = function () { SEL = b.getAttribute('data-c'); render(); var h = root.querySelector('h3'); if (h && h.scrollIntoView) h.scrollIntoView({ block: 'start' }); }; });
   }
   function boot() {
