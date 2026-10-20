@@ -14,7 +14,7 @@
     noAlerts: ['Ninguna alerta activa. Cuando una de tus reglas se cumpla, aparecerá aquí.', 'No active alerts. When one of your rules is met, it will show up here.', 'Aucune alerte active. Quand une de vos règles sera remplie, elle apparaîtra ici.', 'Nessun avviso attivo. Quando una tua regola sarà soddisfatta, comparirà qui.'],
     markSeen: ['Marcar como visto', 'Mark as seen', 'Marquer comme vu', 'Segna come visto'], markAll: ['Marcar todo como visto', 'Mark all as seen', 'Tout marquer comme vu', 'Segna tutto come visto'], revised: ['revisado', 'revised', 'révisé', 'rivisto'], prev: ['visto antes', 'seen before', 'vu avant', 'visto prima'],
     mine: ['Mis series y productos', 'My series and products', 'Mes séries et produits', 'Le mie serie e prodotti'], mineHint: ['edita las reglas de cada una; con varias puedes elegir si basta una o deben cumplirse todas', 'edit each one’s rules; with several you can choose whether one is enough or all must hold', 'modifiez les règles de chacune ; avec plusieurs, choisissez si une suffit ou si toutes doivent être remplies', 'modifica le regole di ognuna; con più regole puoi scegliere se basta una o devono valere tutte'],
-    empty: ['Aún no sigues nada. Usa el buscador de abajo, o pulsa «Seguir» en una ficha de producto o de país.', 'You are not following anything yet. Use the search below, or press “Follow” on a product or country page.', 'Vous ne suivez encore rien. Utilisez la recherche ci-dessous ou appuyez sur « Suivre » sur une fiche produit ou pays.', 'Non segui ancora nulla. Usa la ricerca qui sotto, o premi “Segui” in una scheda prodotto o paese.'],
+    empty: ['Aún no sigues nada. Usa el buscador de arriba, o pulsa «Seguir» en una ficha de producto o de país.', 'You are not following anything yet. Use the search above, or press “Follow” on a product or country page.', 'Vous ne suivez encore rien. Utilisez la recherche ci-dessus ou appuyez sur « Suivre » sur une fiche produit ou pays.', 'Non segui ancora nulla. Usa la ricerca qui sopra, o premi “Segui” in una scheda prodotto o paese.'],
     latest: ['Último dato', 'Latest', 'Dernière donnée', 'Ultimo dato'], noData: ['sin dato en el índice actual', 'not in the current index', 'absent de l’index actuel', 'non nell’indice attuale'], rules: ['Reglas', 'Rules', 'Règles', 'Regole'], noRules: ['sin reglas: solo se sigue, no avisa', 'no rules: followed only, it will not alert', 'sans règle : suivi seulement, aucune alerte', 'nessuna regola: solo seguito, non avvisa'],
     remove: ['Dejar de seguir', 'Unfollow', 'Ne plus suivre', 'Smetti di seguire'], edit: ['Reglas', 'Rules', 'Règles', 'Regole'], open: ['Abrir', 'Open', 'Ouvrir', 'Apri'], approx: ['aprox.', 'approx.', 'approx.', 'appross.'],
     add: ['Añadir una serie', 'Add a series', 'Ajouter une série', 'Aggiungi una serie'], addPh: ['Busca una serie: trigo, leche, urea, ganado…', 'Search a series: wheat, milk, urea, cattle…', 'Cherchez une série : blé, lait, urée, bétail…', 'Cerca una serie: grano, latte, urea, bestiame…'], follow: ['Seguir', 'Follow', 'Suivre', 'Segui'], followed: ['Siguiendo', 'Following', 'Suivi', 'Seguito'], limit: ['Máximo 60 elementos.', 'Maximum 60 items.', 'Maximum 60 éléments.', 'Massimo 60 elementi.'],
@@ -93,6 +93,13 @@
     if (l.length >= 60) h += '<p class="pt-sub">' + esc(t('limit')) + '</p>';
     return sec('anadir', t('add'), '', h);
   }
+  var SG = { es: ['trigo', 'leche', 'urea', 'vacuno', 'maíz'], en: ['wheat', 'milk', 'urea', 'cattle', 'corn'], fr: ['blé', 'lait', 'urée', 'bovins', 'maïs'], it: ['grano', 'latte', 'urea', 'bovini', 'mais'] };
+  var ST1 = { es: [['1', 'Busca una serie', 'un precio, un país o un producto'], ['2', 'Pulsa «Seguir»', 'queda guardada en este navegador'], ['3', 'Ponle un aviso', 'opcional: te avisamos si se mueve']], en: [['1', 'Search a series', 'a price, a country or a product'], ['2', 'Press “Follow”', 'it is saved in this browser'], ['3', 'Add an alert', 'optional: we flag it when it moves']], fr: [['1', 'Cherchez une série', 'un prix, un pays ou un produit'], ['2', 'Appuyez sur « Suivre »', 'elle reste dans ce navigateur'], ['3', 'Ajoutez une alerte', 'facultatif : nous signalons le mouvement']], it: [['1', 'Cerca una serie', 'un prezzo, un paese o un prodotto'], ['2', 'Premi «Segui»', 'resta salvata in questo browser'], ['3', 'Aggiungi un avviso', 'facoltativo: ti segnaliamo il movimento']] };
+  function starter(l) {
+    var L = lang(), steps = '<ol class="fx-steps">' + (ST1[L] || ST1.es).map(function (x) { return '<li><span class="fx-n">' + x[0] + '</span><span><strong>' + esc(x[1]) + '</strong> ' + esc(x[2]) + '</span></li>'; }).join('') + '</ol>';
+    var chips = '<div class="pt-bar-ctl"><span class="pt-sub">' + esc(({ es: 'Prueba con:', en: 'Try:', fr: 'Essayez :', it: 'Prova con:' })[L] || 'Prueba con:') + '</span>' + (SG[L] || SG.es).map(function (w) { return '<button type="button" class="pt-chip" data-sg="' + esc(w) + '">' + esc(w) + '</button>'; }).join('') + '</div>';
+    return steps + secAdd(l).replace('</section>', chips + '</section>');
+  }
   function secHist(l) {
     var all = []; l.forEach(function (it) { (it.hist || []).forEach(function (e) { all.push({ it: it, e: e }); }); });
     all.sort(function (a, b) { return a.e.at < b.e.at ? 1 : -1; });
@@ -131,9 +138,16 @@
     if (!W) { body.innerHTML = '<p class="pt-err">watchlist.js</p>'; return; }
     var l = W.list(), nR = 0, nP = 0; l.forEach(function (it) { nR += (it.r || []).length; if (it.c === 'P') nP++; });
     var m = W.meta();
-    var h = '<div class="pt-cards ms-cards">' + card(l.length, t('cItems')) + card(nP, t('cProducts')) + card(l.length - nP, t('cSeries')) + card(nR, t('cRules')) + card(EV.length, t('cAlerts')) + card(m && m.lastEval ? esc(when(m.lastEval)) : esc(t('never')), t('cEval')) + '</div>';
-    h += '<nav class="pt-tabs">' + [['alertas', 'alerts'], ['series', 'mine'], ['anadir', 'add'], ['historial', 'hist'], ['feed', 'feed'], ['datos', 'data']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
-    h += secAlerts() + secMine(l) + secAdd(l) + secHist(l) + secFeed(l) + secData();
+    var h = '';
+    if (!l.length) {
+      var MORE = { es: 'Más opciones: historial, feed y copia de seguridad', en: 'More options: history, feed and backup', fr: 'Plus d’options : historique, flux et sauvegarde', it: 'Altre opzioni: storico, feed e copia di sicurezza' }[lang()] || 'Más opciones';
+      h += starter(l) + secMine(l).replace(/<button type="button" class="di-btn-gold"[\s\S]*?<\/button>/, '') ;
+      h += '<details class="ms-more"><summary>' + esc(MORE) + '</summary>' + secAlerts() + secHist(l) + secFeed(l) + secData() + '</details>';
+    } else {
+      h += '<div class="pt-cards ms-cards">' + card(l.length, t('cItems')) + card(nP, t('cProducts')) + card(l.length - nP, t('cSeries')) + card(nR, t('cRules')) + card(EV.length, t('cAlerts')) + card(m && m.lastEval ? esc(when(m.lastEval)) : esc(t('never')), t('cEval')) + '</div>';
+      h += '<nav class="pt-tabs">' + [['alertas', 'alerts'], ['series', 'mine'], ['anadir', 'add'], ['historial', 'hist'], ['feed', 'feed'], ['datos', 'data']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
+      h += secAlerts() + secMine(l) + secAdd(l) + secHist(l) + secFeed(l) + secData();
+    }
     var keepQ = document.activeElement && document.activeElement.id === 'ms-q', open = {};
     Array.prototype.forEach.call(body.querySelectorAll('.ms-item'), function (a) { var d = a.querySelector('details'); if (d && d.open) open[a.getAttribute('data-k')] = 1; });
     body.innerHTML = h;
@@ -149,6 +163,7 @@
   function onClick(e) {
     var b = e.target.closest ? e.target.closest('button') : null; if (!b) return;
     var l = W.list();
+    if (b.hasAttribute('data-sg')) { ST.q = b.getAttribute('data-sg'); render(); if (window.DIWatch && window.DIWatch.loadAll) window.DIWatch.loadAll().then(function () { render(); }); return; }
     if (b.hasAttribute('data-seen')) { W.markSeen(EV[+b.getAttribute('data-seen')]); evaluate(); return; }
     if (b.hasAttribute('data-markall')) { EV.slice().forEach(function (x) { W.markSeen(x); }); evaluate(); return; }
     if (b.hasAttribute('data-unfollow')) { var it = l[+b.getAttribute('data-unfollow')]; if (it) { W.remove(it.c, it.s); W.resetContext(); evaluate(); } return; }

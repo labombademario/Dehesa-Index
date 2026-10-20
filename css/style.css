@@ -2941,3 +2941,6 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .mm-pick-ctl .de-ctl label{display:block;font-size:13px;color:var(--text-muted)}
 .mm-pick-ctl .de-ctl select,.mm-pick-ctl .de-ctl input{width:100%;box-sizing:border-box;margin-top:4px;font-size:15px;min-height:42px}
 @media (min-width:900px){.mm-pick.has-map{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,1fr);gap:28px;align-items:start}.mm-pick.has-map .mm-map svg{max-width:100%;max-height:400px}}
+
+/* Mi seguimiento: estado vacío guiado */
+.ms-more{margin:22px 0}.ms-more>summary{cursor:pointer;font-weight:700;min-height:36px;display:flex;align-items:center}
