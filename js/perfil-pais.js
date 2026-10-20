@@ -362,7 +362,14 @@
           body + (/selected agri-food/.test(l[0].label) ? '<div class="di-movers-hint" style="margin:6px 0 0">' + esc((SELN[x.lang] || SELN.es).trim() + (/12-month/.test(l[0].label) ? (SEL12[x.lang] || SEL12.es) : '')) + '</div>' : '') + CITE(l[0]) + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
-      if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div>' + '<div id="pp-trade-prod"></div>' + '</div>';
+      if (cc === 'EU' && (a || b)) {   // la UE: panel propio (cifras clave, 10 destinos y orígenes, gráfico del socio elegido)
+        h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:16px 18px;margin-bottom:20px"><div id="pp-eutrade"></div><div id="pp-trade-prod"></div></div>';
+        setTimeout(function () {
+          var box = document.getElementById('pp-eutrade'); if (!box) return;
+          var go = function () { if (window.DIEuTrade) window.DIEuTrade.mount(box, x.lang); };
+          if (window.DIEuTrade) go(); else { var sc = document.createElement('script'); sc.src = 'js/eu-trade-panel.js?v=20261020'; sc.onload = go; document.head.appendChild(sc); }
+        }, 0);
+      } else if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div>' + '<div id="pp-trade-prod"></div>' + '</div>';
     }
     if (h.indexOf('id="pp-trade"') < 0) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:6px">' + esc(t.trade.toUpperCase()) + '</div><div id="pp-notrade" class="di-movers-hint" style="margin:0">' + esc(NOTRADE[x.lang] || NOTRADE.es) + '</div><div id="pp-trade-prod"></div></div>';
     // categorías
