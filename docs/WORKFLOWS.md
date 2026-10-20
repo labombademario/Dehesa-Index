@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-233 workflows (193 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+234 workflows (194 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -102,6 +102,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | update-es-avances.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-es-avances.py | spain-avances/avances.json | finish, validate-files |
 | update-es-climate-provinces.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-es-climate.mjs | es-climate-provinces.json | finish, validate-files |
+| update-es-cork.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-cork.py | es-cork.json | finish, validate-files |
 | update-es-drought-ute.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-drought-ute.py | es-drought-ute.json | finish, validate-files |
 | update-es-esyrce-extra.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-esyrce-extra.py | spain-esyrce/extra-index.json | finish, validate-files |
 | update-es-esyrce.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-esyrce.py | spain-esyrce/index.json | finish, validate-files |
