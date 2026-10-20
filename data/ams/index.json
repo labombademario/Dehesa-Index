@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0",
- "generatedAt": "2026-10-17T15:47:44.209Z",
+ "generatedAt": "2026-10-20T00:09:35.013Z",
  "source": "USDA AMS Market News (MARS API)",
  "reports": [
   {
@@ -422,7 +422,7 @@
    "title": "National Weekly Rice Summary",
    "fam": "rice",
    "freq": "w",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-23",
    "series": 23,
    "kb": 53
   },
@@ -449,7 +449,7 @@
    "title": "Wolgemuth Hay Auction - New Holland, PA (Monday)",
    "fam": "hay",
    "freq": "w",
-   "lastDate": "2026-10-12",
+   "lastDate": "2026-10-19",
    "series": 72,
    "kb": 59
   },
@@ -512,9 +512,9 @@
    "title": "Montana Weekly Livestock Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 656,
-   "kb": 309
+   "lastDate": "2026-10-17",
+   "series": 648,
+   "kb": 310
   },
   {
    "id": 1781,
@@ -548,9 +548,9 @@
    "title": "New Mexico Weekly Cattle Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 896,
-   "kb": 500
+   "lastDate": "2026-10-17",
+   "series": 894,
+   "kb": 505
   },
   {
    "id": 1785,
@@ -558,7 +558,7 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-17",
-   "series": 143,
+   "series": 142,
    "kb": 71
   },
   {
@@ -746,9 +746,9 @@
    "title": "Missouri Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 769,
-   "kb": 459
+   "lastDate": "2026-10-17",
+   "series": 766,
+   "kb": 462
   },
   {
    "id": 1823,
@@ -828,8 +828,8 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-17",
-   "series": 469,
-   "kb": 342
+   "series": 464,
+   "kb": 341
   },
   {
    "id": 1832,
@@ -845,8 +845,8 @@
    "title": "Missouri Weekly Sheep/Goat Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 258,
+   "lastDate": "2026-10-17",
+   "series": 255,
    "kb": 86
   },
   {
@@ -855,17 +855,17 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-17",
-   "series": 189,
-   "kb": 86
+   "series": 186,
+   "kb": 85
   },
   {
    "id": 1838,
    "title": "Missouri (Northeast) Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 257,
-   "kb": 146
+   "lastDate": "2026-10-17",
+   "series": 261,
+   "kb": 148
   },
   {
    "id": 1841,
@@ -882,7 +882,7 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-17",
-   "series": 102,
+   "series": 99,
    "kb": 69
   },
   {
@@ -899,9 +899,9 @@
    "title": "Missouri (Southwest) Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 487,
-   "kb": 251
+   "lastDate": "2026-10-17",
+   "series": 484,
+   "kb": 253
   },
   {
    "id": 1847,
@@ -909,7 +909,7 @@
    "fam": "auction",
    "freq": "w",
    "lastDate": "2026-10-17",
-   "series": 274,
+   "series": 273,
    "kb": 121
   },
   {
@@ -989,9 +989,9 @@
    "title": "Nebraska Weekly Livestock Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 149,
-   "kb": 53
+   "lastDate": "2026-10-17",
+   "series": 151,
+   "kb": 54
   },
   {
    "id": 1865,
@@ -1124,9 +1124,9 @@
    "title": "Colorado Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 217,
-   "kb": 127
+   "lastDate": "2026-10-17",
+   "series": 218,
+   "kb": 129
   },
   {
    "id": 1908,
@@ -1178,9 +1178,9 @@
    "title": "Pennsylvania Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 130,
-   "kb": 157
+   "lastDate": "2026-10-17",
+   "series": 131,
+   "kb": 159
   },
   {
    "id": 1927,
@@ -1655,9 +1655,9 @@
    "title": "New York Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 135,
-   "kb": 132
+   "lastDate": "2026-10-17",
+   "series": 123,
+   "kb": 131
   },
   {
    "id": 2014,
@@ -1808,8 +1808,8 @@
    "title": "Utah Weekly Livestock Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 345,
+   "lastDate": "2026-10-17",
+   "series": 342,
    "kb": 136
   },
   {
@@ -1817,9 +1817,9 @@
    "title": "Illinois Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 317,
-   "kb": 178
+   "lastDate": "2026-10-17",
+   "series": 319,
+   "kb": 179
   },
   {
    "id": 2046,
@@ -1907,9 +1907,9 @@
    "title": "Arkansas Weekly Livestock Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 355,
-   "kb": 245
+   "lastDate": "2026-10-17",
+   "series": 358,
+   "kb": 247
   },
   {
    "id": 2057,
@@ -2087,9 +2087,9 @@
    "title": "Tennessee Daily Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-14",
-   "series": 528,
-   "kb": 323
+   "lastDate": "2026-10-17",
+   "series": 525,
+   "kb": 322
   },
   {
    "id": 2084,
@@ -2141,9 +2141,9 @@
    "title": "North Carolina Weekly Livestock Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 428,
-   "kb": 214
+   "lastDate": "2026-10-17",
+   "series": 424,
+   "kb": 215
   },
   {
    "id": 2092,
@@ -2222,8 +2222,8 @@
    "title": "Wyoming Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 110,
+   "lastDate": "2026-10-17",
+   "series": 109,
    "kb": 65
   },
   {
@@ -2537,9 +2537,9 @@
    "title": "Iowa Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 173,
-   "kb": 141
+   "lastDate": "2026-10-17",
+   "series": 172,
+   "kb": 142
   },
   {
    "id": 2169,
@@ -2645,8 +2645,8 @@
    "title": "Virginia Weekly Cattle Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 74,
+   "lastDate": "2026-10-17",
+   "series": 76,
    "kb": 25
   },
   {
@@ -2699,9 +2699,9 @@
    "title": "Kentucky Weekly Livestock Auction Summary",
    "fam": "auction",
    "freq": "w",
-   "lastDate": "2026-10-10",
-   "series": 741,
-   "kb": 471
+   "lastDate": "2026-10-17",
+   "series": 750,
+   "kb": 475
   },
   {
    "id": 2194,
@@ -2951,9 +2951,9 @@
    "title": "Rock Valley Hay Auction (Thur) - Rock Valley, IA",
    "fam": "hay",
    "freq": "w",
-   "lastDate": "2026-10-08",
-   "series": 252,
-   "kb": 83
+   "lastDate": "2026-10-15",
+   "series": 258,
+   "kb": 84
   },
   {
    "id": 2245,
@@ -2978,26 +2978,26 @@
    "title": "Atlanta Terminal Market Fruit Prices (AJ_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 319,
-   "kb": 231
+   "lastDate": "2026-10-19",
+   "series": 328,
+   "kb": 230
   },
   {
    "id": 2278,
    "title": "Atlanta Terminal Market Vegetables Prices (AJ_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 510,
-   "kb": 392
+   "lastDate": "2026-10-19",
+   "series": 528,
+   "kb": 388
   },
   {
    "id": 2279,
    "title": "Atlanta Terminal Market Onions and Potatoes Prices (AJ_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 137,
+   "lastDate": "2026-10-19",
+   "series": 138,
    "kb": 99
   },
   {
@@ -3005,17 +3005,17 @@
    "title": "Atlanta Terminal Market Nuts Prices (AJ_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 15,
-   "kb": 13
+   "kb": 12
   },
   {
    "id": 2281,
    "title": "Baltimore Terminal Market Fruit Prices (BP_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 154,
+   "lastDate": "2026-10-19",
+   "series": 156,
    "kb": 114
   },
   {
@@ -3023,8 +3023,8 @@
    "title": "Baltimore Terminal Market Vegetables Prices (BP_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 273,
+   "lastDate": "2026-10-19",
+   "series": 278,
    "kb": 201
   },
   {
@@ -3032,7 +3032,7 @@
    "title": "Baltimore Terminal Market Onions and Potatoes Prices (BP_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 51,
    "kb": 41
   },
@@ -3041,79 +3041,79 @@
    "title": "Baltimore Terminal Market Nuts Prices (BP_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 5,
-   "kb": 5
+   "kb": 4
   },
   {
    "id": 2285,
    "title": "Boston Terminal Market Fruit Prices (BH_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 260,
-   "kb": 181
+   "lastDate": "2026-10-19",
+   "series": 271,
+   "kb": 182
   },
   {
    "id": 2286,
    "title": "Boston Terminal Market Vegetables Prices (BH_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 399,
-   "kb": 316
+   "kb": 308
   },
   {
    "id": 2287,
    "title": "Boston Terminal Market Onions and Potatoes Prices (BH_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 81,
-   "kb": 60
+   "lastDate": "2026-10-19",
+   "series": 82,
+   "kb": 59
   },
   {
    "id": 2288,
    "title": "Boston Terminal Market Nuts Prices (BH_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 11,
-   "kb": 10
+   "kb": 9
   },
   {
    "id": 2290,
    "title": "Chicago Terminal Market Fruit Prices (HX_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 346,
-   "kb": 217
+   "lastDate": "2026-10-19",
+   "series": 373,
+   "kb": 221
   },
   {
    "id": 2291,
    "title": "Chicago Terminal Market Vegetables Prices (HX_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 514,
-   "kb": 405
+   "lastDate": "2026-10-19",
+   "series": 537,
+   "kb": 404
   },
   {
    "id": 2292,
    "title": "Chicago Terminal Market Onions and Potatoes Prices (HX_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 107,
-   "kb": 83
+   "lastDate": "2026-10-19",
+   "series": 110,
+   "kb": 81
   },
   {
    "id": 2293,
    "title": "Chicago Terminal Market Nuts Prices (HX_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 11,
    "kb": 10
   },
@@ -3122,25 +3122,25 @@
    "title": "Columbia Terminal Market Fruit Prices (CA_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 162,
-   "kb": 98
+   "lastDate": "2026-10-19",
+   "series": 165,
+   "kb": 97
   },
   {
    "id": 2295,
    "title": "Columbia Terminal Market Vegetables Prices (CA_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 291,
-   "kb": 194
+   "lastDate": "2026-10-19",
+   "series": 281,
+   "kb": 187
   },
   {
    "id": 2296,
    "title": "Columbia Terminal Market Onions and Potatoes Prices (CA_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 57,
    "kb": 37
   },
@@ -3149,7 +3149,7 @@
    "title": "Columbia Terminal Market Nuts Prices (CA_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 10,
    "kb": 7
   },
@@ -3158,34 +3158,34 @@
    "title": "Detroit Terminal Market Fruit Prices (DU_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 273,
-   "kb": 213
+   "lastDate": "2026-10-19",
+   "series": 277,
+   "kb": 211
   },
   {
    "id": 2303,
    "title": "Detroit Terminal Market Vegetables Prices (DU_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 497,
-   "kb": 409
+   "lastDate": "2026-10-19",
+   "series": 504,
+   "kb": 402
   },
   {
    "id": 2304,
    "title": "Detroit Terminal Market Onions and Potatoes Prices (DU_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 73,
-   "kb": 64
+   "kb": 63
   },
   {
    "id": 2305,
    "title": "Detroit Terminal Market Nuts Prices (DU_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 4,
    "kb": 4
   },
@@ -3194,34 +3194,34 @@
    "title": "Los Angeles Terminal Market Fruit Prices (HC_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 237,
-   "kb": 172
+   "lastDate": "2026-10-19",
+   "series": 239,
+   "kb": 170
   },
   {
    "id": 2307,
    "title": "Los Angeles Terminal Market Vegetables Prices (HC_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 324,
-   "kb": 240
+   "lastDate": "2026-10-19",
+   "series": 330,
+   "kb": 237
   },
   {
    "id": 2308,
    "title": "Los Angeles Terminal Market Onions and Potatoes Prices (HC_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 50,
-   "kb": 39
+   "lastDate": "2026-10-19",
+   "series": 51,
+   "kb": 38
   },
   {
    "id": 2309,
    "title": "Los Angeles Terminal Market Nuts Prices (HC_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 3,
    "kb": 3
   },
@@ -3230,25 +3230,25 @@
    "title": "Miami Terminal Market Fruit Prices (MH_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 114,
-   "kb": 80
+   "kb": 79
   },
   {
    "id": 2311,
    "title": "Miami Terminal Market Vegetables Prices (MH_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 230,
-   "kb": 175
+   "lastDate": "2026-10-19",
+   "series": 235,
+   "kb": 174
   },
   {
    "id": 2312,
    "title": "Miami Terminal Market Onions and Potatoes Prices (MH_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 24,
    "kb": 19
   },
@@ -3257,7 +3257,7 @@
    "title": "Miami Terminal Market Nuts Prices (MH_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 1,
    "kb": 1
   },
@@ -3266,70 +3266,70 @@
    "title": "New York Terminal Market Fruit Prices (NX_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 580,
-   "kb": 289
+   "lastDate": "2026-10-19",
+   "series": 621,
+   "kb": 307
   },
   {
    "id": 2315,
    "title": "New York Terminal Market Vegetables Prices (NX_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 391,
-   "kb": 275
+   "lastDate": "2026-10-19",
+   "series": 405,
+   "kb": 277
   },
   {
    "id": 2316,
    "title": "New York Terminal Market Onions and Potatoes Prices (NX_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 93,
-   "kb": 55
+   "lastDate": "2026-10-19",
+   "series": 95,
+   "kb": 56
   },
   {
    "id": 2317,
    "title": "New York Terminal Market Nuts Prices (NX_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 20,
-   "kb": 16
+   "kb": 15
   },
   {
    "id": 2318,
    "title": "Philadelphia Terminal Market Fruit Prices (NA_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 392,
-   "kb": 199
+   "lastDate": "2026-10-19",
+   "series": 415,
+   "kb": 208
   },
   {
    "id": 2319,
    "title": "Philadelphia Terminal Market Vegetables Prices (NA_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 382,
-   "kb": 252
+   "lastDate": "2026-10-19",
+   "series": 412,
+   "kb": 262
   },
   {
    "id": 2320,
    "title": "Philadelphia Terminal Market Onions and Potatoes Prices (NA_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 83,
-   "kb": 61
+   "kb": 60
   },
   {
    "id": 2321,
    "title": "Philadelphia Terminal Market Nuts Prices (NA_FV040)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 6,
    "kb": 4
   },
@@ -3347,7 +3347,7 @@
    "title": "Benton Harbor Shipping Point Fruit Prices (BR_FV110)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 10,
    "kb": 5
   },
@@ -3356,7 +3356,7 @@
    "title": "Benton Harbor Shipping Point Vegetables Prices (BR_FV120)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 6,
    "kb": 4
   },
@@ -3365,7 +3365,7 @@
    "title": "Benton Harbor Shipping Point Onions and Potatoes Prices (BR_FV130)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 1,
    "kb": 0
   },
@@ -3383,16 +3383,16 @@
    "title": "Fresno Shipping Point Fruit Prices (FR_FV110)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 24,
-   "kb": 15
+   "lastDate": "2026-10-19",
+   "series": 29,
+   "kb": 17
   },
   {
    "id": 2391,
    "title": "Fresno Shipping Point Vegetables Prices (FR_FV120)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-15",
+   "lastDate": "2026-10-19",
    "series": 4,
    "kb": 2
   },
@@ -3401,25 +3401,25 @@
    "title": "Idaho Falls Shipping Point Fruit Prices (IF_FV110)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 14,
-   "kb": 5
+   "kb": 6
   },
   {
    "id": 2393,
    "title": "Idaho Falls Shipping Point Onions and Potatoes Prices (IF_FV130)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 76,
-   "kb": 41
+   "lastDate": "2026-10-19",
+   "series": 79,
+   "kb": 42
   },
   {
    "id": 2394,
    "title": "Inwood Shipping Point Fruit Prices (MB_FV110)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 12,
    "kb": 6
   },
@@ -3428,18 +3428,18 @@
    "title": "Miami Shipping Point Fruit Prices (MH_FV111)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 53,
-   "kb": 30
+   "lastDate": "2026-10-19",
+   "series": 71,
+   "kb": 37
   },
   {
    "id": 2396,
    "title": "Miami Shipping Point Vegetables Prices (MH_FV121)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 35,
-   "kb": 19
+   "lastDate": "2026-10-19",
+   "series": 36,
+   "kb": 20
   },
   {
    "id": 2399,
@@ -3455,43 +3455,43 @@
    "title": "Orlando Shipping Point Vegetables Prices (OR_FV120)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 11,
-   "kb": 10
+   "kb": 9
   },
   {
    "id": 2401,
    "title": "Orlando Shipping Point Fruit Imports Prices (OR_FV111)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 16,
-   "kb": 11
+   "lastDate": "2026-10-19",
+   "series": 22,
+   "kb": 13
   },
   {
    "id": 2402,
    "title": "Phoenix Shipping Point Fruit Prices (IX_FV110)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 80,
-   "kb": 52
+   "lastDate": "2026-10-19",
+   "series": 81,
+   "kb": 53
   },
   {
    "id": 2403,
    "title": "Phoenix Shipping Point Vegetables Prices (IX_FV120)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 143,
-   "kb": 99
+   "lastDate": "2026-10-19",
+   "series": 159,
+   "kb": 104
   },
   {
    "id": 2405,
    "title": "Raleigh Shipping Point Vegetables Prices (RA_FV120)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-13",
+   "lastDate": "2026-10-19",
    "series": 3,
    "kb": 1
   },
@@ -3500,16 +3500,16 @@
    "title": "Thomasville Shipping Point Vegetables Prices (TV_FV120)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 16,
-   "kb": 7
+   "lastDate": "2026-10-19",
+   "series": 18,
+   "kb": 8
   },
   {
    "id": 2411,
    "title": "Thomasville Shipping Point Vegetables Prices (TH_FV120)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-13",
+   "lastDate": "2026-10-19",
    "series": 3,
    "kb": 1
   },
@@ -3518,9 +3518,9 @@
    "title": "YAKIMA Shipping Point Fruit Prices (YA_FV110)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 115,
-   "kb": 91
+   "kb": 89
   },
   {
    "id": 2528,
@@ -3546,7 +3546,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 110,
+   "series": 107,
    "kb": 20
   },
   {
@@ -3555,7 +3555,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 324,
+   "series": 317,
    "kb": 39
   },
   {
@@ -3564,17 +3564,17 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 1162,
-   "kb": 212
+   "series": 1143,
+   "kb": 209
   },
   {
    "id": 2711,
    "title": "Texas Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 11,
-   "kb": 34
+   "kb": 33
   },
   {
    "id": 2713,
@@ -3592,14 +3592,14 @@
    "freq": "d",
    "lastDate": "2026-06-23",
    "series": 25,
-   "kb": 6
+   "kb": 5
   },
   {
    "id": 2734,
    "title": "Daily New York Shell Egg",
    "fam": "poultry",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 3,
    "kb": 7
   },
@@ -3609,8 +3609,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 1600,
-   "kb": 1646
+   "series": 1596,
+   "kb": 1645
   },
   {
    "id": 2757,
@@ -3618,7 +3618,7 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 404,
+   "series": 400,
    "kb": 223
   },
   {
@@ -3644,18 +3644,18 @@
    "title": "Montana Daily Elevator Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 52,
-   "kb": 155
+   "kb": 152
   },
   {
    "id": 2787,
    "title": "South Carolina Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 66,
-   "kb": 85
+   "kb": 83
   },
   {
    "id": 2807,
@@ -3663,8 +3663,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 121,
-   "kb": 30
+   "series": 110,
+   "kb": 28
   },
   {
    "id": 2808,
@@ -3689,9 +3689,9 @@
    "title": "By-Product Drop Value (Steers) (Cattle) (NW_LS441 / 447)",
    "fam": "meat",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 32,
-   "kb": 89
+   "kb": 87
   },
   {
    "id": 2830,
@@ -3699,7 +3699,7 @@
    "fam": "meat",
    "freq": "d",
    "lastDate": "2026-10-15",
-   "series": 12,
+   "series": 11,
    "kb": 3
   },
   {
@@ -3743,7 +3743,7 @@
    "title": "Weekly Pork & Beef Variety Meat Report (NW_LS905)",
    "fam": "meat",
    "freq": "w",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-16",
    "series": 56,
    "kb": 60
   },
@@ -3752,8 +3752,8 @@
    "title": "Weekly Tallow & Protein Report (NW_LS906)",
    "fam": "meat",
    "freq": "w",
-   "lastDate": "2026-10-09",
-   "series": 16,
+   "lastDate": "2026-10-16",
+   "series": 15,
    "kb": 15
   },
   {
@@ -3770,7 +3770,7 @@
    "title": "Daily National Shell Egg Index Report (5-day rolling average)",
    "fam": "poultry",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 36,
    "kb": 38
   },
@@ -3797,18 +3797,18 @@
    "title": "Iowa Daily Cash Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 15,
-   "kb": 49
+   "kb": 48
   },
   {
    "id": 2851,
    "title": "Ohio Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 50,
-   "kb": 94
+   "kb": 92
   },
   {
    "id": 2863,
@@ -3825,8 +3825,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 707,
-   "kb": 608
+   "series": 702,
+   "kb": 607
   },
   {
    "id": 2868,
@@ -3834,8 +3834,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 1858,
-   "kb": 2021
+   "series": 1852,
+   "kb": 2020
   },
   {
    "id": 2885,
@@ -3851,27 +3851,27 @@
    "title": "Kansas Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 50,
-   "kb": 149
+   "kb": 146
   },
   {
    "id": 2887,
    "title": "National Daily Sunflower, Canola, Millet, and Flaxseed Report",
    "fam": "oilseed",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 94,
-   "kb": 142
+   "kb": 141
   },
   {
    "id": 2892,
    "title": "Kentucky Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 90,
-   "kb": 160
+   "kb": 156
   },
   {
    "id": 2895,
@@ -3906,8 +3906,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 514,
-   "kb": 109
+   "series": 489,
+   "kb": 104
   },
   {
    "id": 2905,
@@ -3915,8 +3915,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 345,
-   "kb": 75
+   "series": 333,
+   "kb": 72
   },
   {
    "id": 2906,
@@ -3924,8 +3924,8 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 328,
-   "kb": 51
+   "series": 321,
+   "kb": 50
   },
   {
    "id": 2911,
@@ -3941,16 +3941,16 @@
    "title": "Colorado Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 50,
-   "kb": 91
+   "kb": 89
   },
   {
    "id": 2914,
    "title": "Weekly Bean, Pea, and Lentil Market Review",
    "fam": "pulse",
    "freq": "w",
-   "lastDate": "2026-10-05",
+   "lastDate": "2026-10-19",
    "series": 20,
    "kb": 35
   },
@@ -3959,7 +3959,7 @@
    "title": "Dry Edible Beans Daily Grower Bids (ND/MN and NE-CO/WY/W-NE)",
    "fam": "pulse",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 5,
    "kb": 9
   },
@@ -3986,9 +3986,9 @@
    "title": "Mississippi Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-15",
+   "lastDate": "2026-10-16",
    "series": 31,
-   "kb": 42
+   "kb": 41
   },
   {
    "id": 2929,
@@ -4004,9 +4004,9 @@
    "title": "Missouri Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 33,
-   "kb": 100
+   "kb": 98
   },
   {
    "id": 2935,
@@ -4014,8 +4014,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 179,
-   "kb": 53
+   "series": 175,
+   "kb": 52
   },
   {
    "id": 2939,
@@ -4032,42 +4032,42 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 56,
-   "kb": 10
+   "series": 55,
+   "kb": 9
   },
   {
    "id": 2960,
    "title": "Arkansas Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 82,
-   "kb": 114
+   "kb": 112
   },
   {
    "id": 3043,
    "title": "Iowa-Southern Minnesota Barge Terminal Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 18,
-   "kb": 44
+   "kb": 43
   },
   {
    "id": 3046,
    "title": "Minneapolis Daily Grain Report",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 54,
-   "kb": 57
+   "kb": 56
   },
   {
    "id": 3049,
    "title": "Southern Minnesota Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 6,
    "kb": 13
   },
@@ -4095,8 +4095,8 @@
    "fam": "hay",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 194,
-   "kb": 42
+   "series": 190,
+   "kb": 41
   },
   {
    "id": 3058,
@@ -4113,7 +4113,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-09",
-   "series": 113,
+   "series": 111,
    "kb": 17
   },
   {
@@ -4130,9 +4130,9 @@
    "title": "Tennessee Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 111,
-   "kb": 149
+   "kb": 147
   },
   {
    "id": 3090,
@@ -4150,7 +4150,7 @@
    "freq": "d",
    "lastDate": "2026-10-13",
    "series": 25,
-   "kb": 15
+   "kb": 14
   },
   {
    "id": 3095,
@@ -4167,7 +4167,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 107,
+   "series": 106,
    "kb": 17
   },
   {
@@ -4176,8 +4176,8 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 374,
-   "kb": 60
+   "series": 370,
+   "kb": 59
   },
   {
    "id": 3098,
@@ -4185,17 +4185,17 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 318,
-   "kb": 49
+   "series": 313,
+   "kb": 48
   },
   {
    "id": 3100,
    "title": "Oklahoma Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 63,
-   "kb": 160
+   "kb": 157
   },
   {
    "id": 3102,
@@ -4220,18 +4220,18 @@
    "title": "Louisiana and Texas Export Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 58,
-   "kb": 69
+   "kb": 68
   },
   {
    "id": 3148,
    "title": "Portland Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 41,
-   "kb": 77
+   "kb": 76
   },
   {
    "id": 3156,
@@ -4239,8 +4239,8 @@
    "fam": "grain",
    "freq": "d",
    "lastDate": "2026-10-16",
-   "series": 159,
-   "kb": 223
+   "series": 155,
+   "kb": 215
   },
   {
    "id": 3159,
@@ -4265,9 +4265,9 @@
    "title": "Virginia Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 49,
-   "kb": 92
+   "lastDate": "2026-10-19",
+   "series": 47,
+   "kb": 90
   },
   {
    "id": 3183,
@@ -4284,7 +4284,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 12,
+   "series": 11,
    "kb": 1
   },
   {
@@ -4292,18 +4292,18 @@
    "title": "South Dakota Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 23,
-   "kb": 65
+   "kb": 63
   },
   {
    "id": 3192,
    "title": "Illinois Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 97,
-   "kb": 168
+   "kb": 165
   },
   {
    "id": 3195,
@@ -4319,18 +4319,18 @@
    "title": "Kansas City Board of Trade Daily Wheat Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 17,
-   "kb": 51
+   "kb": 50
   },
   {
    "id": 3225,
    "title": "Nebraska Daily Elevator Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 24,
-   "kb": 73
+   "kb": 71
   },
   {
    "id": 3228,
@@ -4338,8 +4338,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 3755,
-   "kb": 2874
+   "series": 3733,
+   "kb": 2869
   },
   {
    "id": 3229,
@@ -4365,7 +4365,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 63,
+   "series": 62,
    "kb": 10
   },
   {
@@ -4373,9 +4373,9 @@
    "title": "Wyoming Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 7,
-   "kb": 13
+   "kb": 12
   },
   {
    "id": 3241,
@@ -4482,7 +4482,7 @@
    "fam": "cattle",
    "freq": "w",
    "lastDate": "2026-09-25",
-   "series": 29,
+   "series": 27,
    "kb": 3
   },
   {
@@ -4499,9 +4499,9 @@
    "title": "Indiana Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 103,
-   "kb": 191
+   "kb": 187
   },
   {
    "id": 3484,
@@ -4562,9 +4562,9 @@
    "title": "National Daily Ethanol Report",
    "fam": "bio",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 12,
-   "kb": 37
+   "kb": 36
   },
   {
    "id": 3618,
@@ -4643,7 +4643,7 @@
    "title": "Weekly Major Packer Hide Report",
    "fam": "meat",
    "freq": "w",
-   "lastDate": "2026-10-09",
+   "lastDate": "2026-10-16",
    "series": 18,
    "kb": 15
   },
@@ -4671,7 +4671,7 @@
    "fam": "poultry",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 110,
+   "series": 109,
    "kb": 81
   },
   {
@@ -4706,7 +4706,7 @@
    "title": "Arthur Sale Barn Hay Auction - Arthur, IL (Monday)",
    "fam": "hay",
    "freq": "w",
-   "lastDate": "2026-10-12",
+   "lastDate": "2026-10-19",
    "series": 118,
    "kb": 36
   },
@@ -4850,9 +4850,9 @@
    "title": "Arizona Direct Hay Report",
    "fam": "hay",
    "freq": "w",
-   "lastDate": "2026-10-02",
-   "series": 131,
-   "kb": 49
+   "lastDate": "2026-10-16",
+   "series": 126,
+   "kb": 48
   },
   {
    "id": 3785,
@@ -4923,8 +4923,8 @@
    "fam": "retail",
    "freq": "w",
    "lastDate": "2026-10-16",
-   "series": 28,
-   "kb": 18
+   "series": 26,
+   "kb": 17
   },
   {
    "id": 3797,
@@ -4949,9 +4949,9 @@
    "title": "North Dakota Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 17,
-   "kb": 48
+   "kb": 47
   },
   {
    "id": 3879,
@@ -4976,7 +4976,7 @@
    "title": "Daily National Breaking Stock",
    "fam": "poultry",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 1,
    "kb": 2
   },
@@ -5066,8 +5066,8 @@
    "title": "Asheville, NC Terminal Market Fruit Prices (AS_FV010)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 63,
+   "lastDate": "2026-10-19",
+   "series": 64,
    "kb": 29
   },
   {
@@ -5075,16 +5075,16 @@
    "title": "Asheville, NC Terminal Market Vegetables Prices (AS_FV020)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
-   "series": 75,
-   "kb": 32
+   "lastDate": "2026-10-19",
+   "series": 76,
+   "kb": 33
   },
   {
    "id": 3915,
    "title": "Asheville, NC Terminal Market Onions and Potatoes Prices (AS_FV030)",
    "fam": "fv",
    "freq": "d",
-   "lastDate": "2026-10-16",
+   "lastDate": "2026-10-19",
    "series": 16,
    "kb": 7
   },
