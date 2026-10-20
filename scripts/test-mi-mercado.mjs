@@ -105,6 +105,10 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await ready('live'); const lv = await sec('live'); const lvj = J('data/spain-livestock/livestock-ovino.json'); const lva = lvj.v['47']['01']; const lvl = lva[lva.length - 1];
   ok(tag + ': ES ganaderia de Valladolid = JSON del MAPA (ovino ' + lvl + ')', nrm(lv).includes(nrm(f(lvl, 0))) && lv.split('\n').length >= 4);
   ok(tag + ': ES ganaderia con fuente MAPA', (await page.evaluate(() => document.querySelector('[data-mm-body="live"]').parentNode.innerHTML)).includes('mapa_es'));
+  await ready('clim'); const cl = await sec('clim'); const clf = 'data/es-climate-provinces.json';
+  if (fs.existsSync(clf)) { const cj = J(clf), cp = cj.provinces.find(x => x.id === '47'), cm = cp && cp.months[cp.months.length - 1];
+    ok(tag + ': ES clima de Valladolid = JSON (' + (cm && cm.period) + ')', !!cm && cl.includes(cm.period) && nrm(cl).includes(nrm(f(cm.precipMm, 0))) && /nasa/i.test(await page.evaluate(() => document.querySelector('[data-mm-body="clim"]').parentNode.innerHTML))); }
+  else ok(tag + ': ES clima sin fichero todavia: aviso claro, nada inventado', cl.length > 10 && !/\d\d\d mm/.test(cl));
   ok(tag + ': ES no inventa seguro ni sequía', (await page.$$('[data-mm-body="ins"], [data-mm-body="dr"]')).length === 0);
   // «TOTAL CEREALES» agrupa productos con precios distintos: la sección de precio pide un cultivo concreto y no muestra ninguna cifra
   await page.waitForFunction(() => { const e = document.querySelector('[data-mm-body="price"]'); return e && !e.querySelector('.di-loading') && e.textContent.trim().length > 20; }, null, { timeout: 15000 }).catch(() => {});

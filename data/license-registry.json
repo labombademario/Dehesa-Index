@@ -5629,6 +5629,12 @@
    ],
    "notes": "Temperatura y lluvia mensual por pais frente a 1991-2020 (update-eu-climate.py): rejilla MERRA-2 de NASA POWER promediada por pais."
   },
+  "data/es-climate-provinces.json": {
+   "sources": [
+    "nasa_power"
+   ],
+   "notes": "Lluvia y temperatura mensual por provincia de España frente a la media 2001-2020 (update-es-climate.mjs): celda de la rejilla MERRA-2 de NASA POWER que contiene la capital."
+  },
   "data/gi/": {
    "sources": [
     "ec_eambrosia",

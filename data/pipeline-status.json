@@ -7,7 +7,7 @@
   "late": 1,
   "error": 2,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -5402,6 +5402,27 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-es-climate-provinces.yml",
+   "name": "Update Spain monthly rainfall and temperature by province (NASA POWER)",
+   "crons": [
+    "40 10 * * 2"
+   ],
+   "nextRun": "2026-10-20T10:40:00Z",
+   "files": [
+    {
+     "path": "data/es-climate-provinces.json"
+    }
+   ],
+   "last": null,
+   "recent": {
+    "runs": 0,
+    "success": 0,
+    "failed": 0
+   },
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   }
  ]
 }

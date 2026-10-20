@@ -46,7 +46,7 @@
       no_us5: 'Costes (fertilizante, diésel, pienso) y clima: solo cifras nacionales o mundiales, no por estado.',
       no_es1: 'Precios de lonjas provinciales independientes: no los incorporamos. Sí mostramos, cuando existen, los mercados identificados por provincia que publica la Comisión Europea (arriba); el resto de precios que seguimos son nacionales, europeos o mundiales.',
       no_es2: 'Seguro agrario (Agroseguro): solo cifras nacionales y pendientes de contraste; no por provincia.',
-      no_es3: 'Sequía y clima por provincia: solo las páginas generales de clima y sequía; no una vista por provincia.',
+      no_es3: 'Sequía por provincia: no hay una cifra oficial por provincia; solo la sequía por cuenca hidrográfica, en la página de sequía.',
       no_es5: 'Campaña 2025: solo los grupos que el MAPA ya ha publicado (hortalizas, cítricos, frutales, olivar, viñedo y otros leñosos); el resto está en la campaña 2024.',
       mPrice: 'Precios locales detallados', mIns: 'Seguro agrario (EE. UU.)', mDrought: 'Sequía por estado', mCrops: 'Cultivos de España por provincia', mClima: 'Clima', mPrices: 'Precios de referencia', mCosts: 'Costes e insumos'
     },
@@ -84,7 +84,7 @@
       no_us5: 'Costs (fertiliser, diesel, feed) and weather: national or world figures only, not by state.',
       no_es1: 'Prices from independent provincial auction halls: not included. Where they exist we do show the province-level markets the European Commission publishes (above); the other prices we follow are national, European or world.',
       no_es2: 'Crop insurance (Agroseguro): national figures only, still pending verification; not by province.',
-      no_es3: 'Drought and weather by province: only the general weather and drought pages; no per-province view.',
+      no_es3: 'Drought by province: there is no official figure by province; only drought by river basin, on the drought page.',
       no_es5: 'Campaign 2025: only the groups MAPA has already published (vegetables, citrus, fruit trees, olive groves, vineyards and other woody crops); the rest is campaign 2024.',
       mPrice: 'Detailed local prices', mIns: 'Crop insurance (US)', mDrought: 'Drought by state', mCrops: 'Spain crops by province', mClima: 'Weather', mPrices: 'Reference prices', mCosts: 'Costs and inputs'
     },
@@ -122,7 +122,7 @@
       no_us5: 'Coûts (engrais, diesel, aliments) et météo : chiffres nationaux ou mondiaux seulement, pas par État.',
       no_es1: 'Prix de lonjas provinciales indépendantes : non inclus. Quand ils existent, nous montrons les marchés par province publiés par la Commission européenne (ci-dessus) ; les autres prix suivis sont nationaux, européens ou mondiaux.',
       no_es2: 'Assurance agricole (Agroseguro) : chiffres nationaux seulement, encore à vérifier ; pas par province.',
-      no_es3: 'Sécheresse et météo par province : seulement les pages générales météo et sécheresse ; pas de vue par province.',
+      no_es3: 'Sécheresse par province : il n’existe pas de chiffre officiel par province ; seulement la sécheresse par bassin hydrographique, sur la page sécheresse.',
       no_es5: 'Campagne 2025 : seulement les groupes déjà publiés par le MAPA (légumes, agrumes, arbres fruitiers, oliveraies, vignobles et autres ligneux) ; le reste est en campagne 2024.',
       mPrice: 'Prix locaux détaillés', mIns: 'Assurance récolte (É.-U.)', mDrought: 'Sécheresse par État', mCrops: 'Cultures d\'Espagne par province', mClima: 'Météo', mPrices: 'Prix de référence', mCosts: 'Coûts et intrants'
     },
@@ -160,7 +160,7 @@
       no_us5: 'Costi (fertilizzanti, gasolio, mangimi) e meteo: solo cifre nazionali o mondiali, non per Stato.',
       no_es1: 'Prezzi delle borse merci provinciali indipendenti: non inclusi. Dove esistono mostriamo i mercati per provincia pubblicati dalla Commissione europea (sopra); gli altri prezzi che seguiamo sono nazionali, europei o mondiali.',
       no_es2: 'Assicurazione agraria (Agroseguro): solo cifre nazionali, ancora da verificare; non per provincia.',
-      no_es3: 'Siccità e meteo per provincia: solo le pagine generali su meteo e siccità; nessuna vista per provincia.',
+      no_es3: 'Siccità per provincia: non esiste un dato ufficiale per provincia; solo la siccità per bacino idrografico, nella pagina siccità.',
       no_es5: 'Campagna 2025: solo i gruppi già pubblicati dal MAPA (ortaggi, agrumi, frutta da albero, oliveti, vigneti e altre legnose); il resto è nella campagna 2024.',
       mPrice: 'Prezzi locali dettagliati', mIns: 'Assicurazione dei raccolti (USA)', mDrought: 'Siccità per Stato', mCrops: 'Colture della Spagna per provincia', mClima: 'Meteo', mPrices: 'Prezzi di riferimento', mCosts: 'Costi e input'
     }
@@ -669,6 +669,29 @@
     });
   }
 
+  /* ---------- España: clima en tu provincia (NASA POWER en el punto de la capital; data/es-climate-provinces.json) ---------- */
+  var TCL = {
+    es: { s: 'Lluvia y temperatura en tu provincia', month: 'Mes', rain: 'Lluvia (mm)', avg: 'Media 2001-2020 (mm)', vs: 'Frente a la media', temp: 'Temperatura (°C)', dt: 'Diferencia (°C)', last: 'Último mes cerrado', point: 'Punto de la capital', no: 'Todavía no hay datos de clima de esta provincia.', note: 'Reanálisis MERRA-2 de NASA POWER en la celda de unos 50 km que contiene la capital de la provincia (no son estaciones ni la media de toda la provincia; en islas y costas la celda mezcla tierra y mar). La media 2001-2020 es del mismo mes. Mide desviación climática, no predice cosechas ni precios.' },
+    en: { s: 'Rainfall and temperature in your province', month: 'Month', rain: 'Rainfall (mm)', avg: '2001-2020 mean (mm)', vs: 'Vs. the mean', temp: 'Temperature (°C)', dt: 'Difference (°C)', last: 'Latest closed month', point: 'Capital-city point', no: 'There is no climate data for this province yet.', note: 'NASA POWER MERRA-2 reanalysis in the ~50 km grid cell containing the province capital (not station data and not a whole-province average; on islands and coasts the cell mixes land and sea). The 2001-2020 mean is for the same month. It measures climatic deviation and does not forecast crops or prices.' },
+    fr: { s: 'Pluie et température dans votre province', month: 'Mois', rain: 'Pluie (mm)', avg: 'Moyenne 2001-2020 (mm)', vs: 'Par rapport à la moyenne', temp: 'Température (°C)', dt: 'Écart (°C)', last: 'Dernier mois clos', point: 'Point de la capitale', no: 'Pas encore de données climatiques pour cette province.', note: 'Réanalyse MERRA-2 de NASA POWER dans la maille d’environ 50 km qui contient la capitale de la province (pas des stations ni la moyenne de toute la province ; sur les îles et les côtes la maille mêle terre et mer). La moyenne 2001-2020 est celle du même mois. Elle mesure l’écart climatique, sans prédire récoltes ni prix.' },
+    it: { s: 'Pioggia e temperatura nella tua provincia', month: 'Mese', rain: 'Pioggia (mm)', avg: 'Media 2001-2020 (mm)', vs: 'Rispetto alla media', temp: 'Temperatura (°C)', dt: 'Differenza (°C)', last: 'Ultimo mese chiuso', point: 'Punto del capoluogo', no: 'Non ci sono ancora dati climatici per questa provincia.', note: 'Rianalisi MERRA-2 di NASA POWER nella cella di circa 50 km che contiene il capoluogo della provincia (non stazioni né la media di tutta la provincia; su isole e coste la cella mescola terra e mare). La media 2001-2020 è dello stesso mese. Misura la deviazione climatica, non prevede raccolti né prezzi.' }
+  };
+  function spainClimate(tok) {
+    var t = TCL[lang()] || TCL.es;
+    return get('data/es-climate-provinces.json').then(function (d) {
+      if (tok !== TOK) return;
+      var pr = (d.provinces || []).filter(function (x) { return x.id === ST.r; })[0];
+      if (!pr || !pr.months || !pr.months.length) { putSec(tok, 'clim', note(t.no)); return; }
+      var ms = pr.months, l = ms[ms.length - 1], sg = function (v, dd) { return (v > 0 ? '+' : '') + nf(v, dd); };
+      var h = '<div class="de-tiles">' + tile(t.rain, nf(l.precipMm, 0) + ' mm', esc(t.avg) + ': ' + nf(l.precipBaselineMm, 0) + '<br>' + esc(t.vs) + ': ' + sg(l.precipAnomalyPct, 0) + ' %')
+        + tile(t.temp, nf(l.tempC, 1) + ' °C', esc(t.dt) + ': ' + sg(l.tempAnomalyC, 1)) + '</div>'
+        + '<p class="di-movers-hint" style="margin:8px 0 2px"><b>' + esc(t.last) + ': ' + esc(l.period) + '</b> · ' + esc(t.point) + ': ' + esc(pr.city) + '</p>'
+        + '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.month) + '</th><th scope="col" class="r">' + esc(t.rain) + '</th><th scope="col" class="r">' + esc(t.vs) + '</th><th scope="col" class="r">' + esc(t.temp) + '</th><th scope="col" class="r">' + esc(t.dt) + '</th></tr></thead><tbody>'
+        + ms.slice().reverse().map(function (m) { return '<tr><td>' + esc(m.period) + '</td><td class="r">' + nf(m.precipMm, 0) + '</td><td class="r">' + sg(m.precipAnomalyPct, 0) + ' %</td><td class="r">' + nf(m.tempC, 1) + '</td><td class="r">' + sg(m.tempAnomalyC, 1) + '</td></tr>'; }).join('') + '</tbody></table></div>';
+      putSec(tok, 'clim', h + note(t.note) + cite('nasa_power', l.period) + citeCalc(['nasa_power'], 'monthly mean 2001-2020 and deviation (computed from NASA POWER monthly data)'));
+    }).catch(function () { if (tok === TOK) putSec(tok, 'clim', note(t.no)); });
+  }
+
   /* ---------- España: precio de mercado en tu provincia (portal agroalimentario de la Comisión Europea) ---------- */
   var TESP = {
     es: { title: 'Precio de mercado en tu provincia', prod: 'Producto', mk: 'Mercado', price: 'Precio', wk: '1 sem.', date: 'Fecha', all: 'Ver todos los mercados',
@@ -1015,7 +1038,7 @@
       h += sect('price', epr().sP + ' · ' + pick4(EU_CROPN, ST.p)) + sect('crop', eut().sCrop) + sect('dr', epr().sDr);
     } else if (ST.c === 'UK') {
       h += sect('crop', te().sCropUK);
-    } else h += sect('price', tesp().title) + sect('crop', t.sCrop) + (ST.r ? sect('live', (TLV[lang()] || TLV.es).s) : '');
+    } else h += sect('price', tesp().title) + sect('crop', t.sCrop) + (ST.r ? sect('live', (TLV[lang()] || TLV.es).s) + sect('clim', (TCL[lang()] || TCL.es).s) : '');
     if (!COMPACT) h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
     root.innerHTML = h;
     var run = function (id, fn) { Promise.resolve().then(fn).catch(function () { failSec(tok, id); }); };
@@ -1038,7 +1061,7 @@
       run('crop', function () { return ukCrop(tok); });
       if (!COMPACT) run('missing', function () { return missingEU().then(function (x) { putSec(tok, 'missing', x); }); });
     } else {
-      run('price', function () { return spainPrice(tok).then(function (x) { if (x != null) putSec(tok, 'price', x); }); }); run('crop', function () { return spainCrop(tok); }); if (ST.r) run('live', function () { return spainLive(tok); });
+      run('price', function () { return spainPrice(tok).then(function (x) { if (x != null) putSec(tok, 'price', x); }); }); run('crop', function () { return spainCrop(tok); }); if (ST.r) { run('live', function () { return spainLive(tok); }); run('clim', function () { return spainClimate(tok); }); }
       if (!COMPACT) run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
     }
   }

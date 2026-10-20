@@ -1,0 +1,37 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Spain monthly rainfall and temperature by province (NASA POWER)
+on:
+  schedule:
+    - cron: '40 10 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-es-climate-provinces
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh node scripts/update-es-climate.mjs
+        timeout-minutes: 15
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/es-climate-provinces.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/es-climate-provinces.json
+      - name: Publicar
+        if: always()
+        run: bash scripts/publish-data.sh "Lluvia y temperatura mensual por provincia de Espana (NASA POWER)" data/es-climate-provinces.json data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

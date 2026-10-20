@@ -1,0 +1,127 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Spain monthly climate by province (NASA POWER)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "lastPeriod",
+  "baseline",
+  "source",
+  "methodology",
+  "provinces"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "lastPeriod": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}$"
+  },
+  "baseline": {
+   "type": "string",
+   "minLength": 1
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {}
+  },
+  "methodology": {
+   "type": "object",
+   "required": [
+    "es",
+    "en"
+   ],
+   "properties": {}
+  },
+  "missing": {
+   "type": "array"
+  },
+  "provinces": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "city",
+     "lat",
+     "lon",
+     "months"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^\\d{2}$"
+     },
+     "city": {
+      "type": "string",
+      "minLength": 1
+     },
+     "lat": {
+      "type": "number"
+     },
+     "lon": {
+      "type": "number"
+     },
+     "months": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 12,
+      "items": {
+       "type": "object",
+       "required": [
+        "period",
+        "precipMm",
+        "precipBaselineMm",
+        "precipAnomalyPct",
+        "tempC",
+        "tempBaselineC",
+        "tempAnomalyC"
+       ],
+       "properties": {
+        "period": {
+         "type": "string",
+         "pattern": "^\\d{4}-\\d{2}$"
+        },
+        "precipMm": {
+         "type": "number",
+         "minimum": 0
+        },
+        "precipBaselineMm": {
+         "type": "number",
+         "minimum": 0
+        },
+        "precipAnomalyPct": {
+         "type": "number"
+        },
+        "tempC": {
+         "type": "number"
+        },
+        "tempBaselineC": {
+         "type": "number"
+        },
+        "tempAnomalyC": {
+         "type": "number"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

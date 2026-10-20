@@ -1195,6 +1195,16 @@ sources:
     continue: true
     data: [es-drought-ute.json]
     message: Sequia y escasez en Espana por unidad territorial (MITECO)
+  - id: es-climate-provinces
+    name: Update Spain monthly rainfall and temperature by province (NASA POWER)
+    cron: ['40 10 * * 2']
+    runner: node
+    script: scripts/update-es-climate.mjs
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [es-climate-provinces.json]
+    message: Lluvia y temperatura mensual por provincia de Espana (NASA POWER)
   - id: eu-regions
     name: Update regional farm data (Eurostat NUTS 2)
     cron: ['40 6 * * 4']

@@ -134,6 +134,22 @@ def climate(doc, errs, warns, stats):
             if m["tempC"] is not None and not -60 <= m["tempC"] <= 60: errs.append("%s %s: temperatura %s fuera de rango" % (l["id"], m["period"], m["tempC"])); break
             if m["precipMm"] is not None and not 0 <= m["precipMm"] <= 3000: errs.append("%s %s: precipitacion %s fuera de rango" % (l["id"], m["period"], m["precipMm"])); break
     stats["locations"] = len(ids)
+def es_climate_provinces(doc, errs, warns, stats):
+    ids = set()
+    for l in doc["provinces"]:
+        if l["id"] in ids: errs.append("provincia repetida %s" % l["id"])
+        ids.add(l["id"])
+        ps = [m["period"] for m in l["months"]]
+        _asc(ps, l["id"], errs)
+        if ps and ps[-1] != doc["lastPeriod"] and ps[-1] > doc["lastPeriod"]: errs.append("%s: ultimo mes %s posterior a lastPeriod %s" % (l["id"], ps[-1], doc["lastPeriod"]))
+        for m in l["months"]:
+            if not -40 <= m["tempC"] <= 50: errs.append("%s %s: temperatura %s fuera de rango" % (l["id"], m["period"], m["tempC"])); break
+            if not 0 <= m["precipMm"] <= 1500: errs.append("%s %s: precipitacion %s fuera de rango" % (l["id"], m["period"], m["precipMm"])); break
+            if abs(round(m["tempC"] - m["tempBaselineC"], 1) - m["tempAnomalyC"]) > 0.11: errs.append("%s %s: anomalia termica no casa" % (l["id"], m["period"])); break
+            if m["precipBaselineMm"] > 0 and abs(round(100 * (m["precipMm"] / m["precipBaselineMm"] - 1), 1) - m["precipAnomalyPct"]) > 0.6: errs.append("%s %s: anomalia de lluvia no casa" % (l["id"], m["period"])); break
+    if len(ids) < 40: errs.append("solo %d provincias" % len(ids))
+    stats["provinces"] = len(ids)
+
 def climate_history(doc, errs, warns, stats):
     sy, sm = _ym(doc["start"]); n = None; last_nn = -1
     for l in doc["locations"]:

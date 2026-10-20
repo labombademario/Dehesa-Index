@@ -1513,6 +1513,12 @@
    [
     "indices_index"
    ]
+  ],
+  "es-climate-provinces.json": [
+   "es-climate-provinces",
+   [
+    "es_climate_provinces"
+   ]
   ]
  },
  "globs": {
@@ -1760,6 +1766,7 @@
   "watch/[A-Z]*.json"
  ],
  "optional": [
-  "italy-land/land.json"
+  "italy-land/land.json",
+  "es-climate-provinces.json"
  ]
 }
