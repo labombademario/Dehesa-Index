@@ -43,7 +43,8 @@ for(const [code,city,lat,lon] of P){
   if(y<year-2||!ok(Pr[k],Tm[k]))continue;
   const cp=sp[mi]/n[mi],ct=st[mi]/n[mi]; if(!(cp>0))continue;
   const days=new Date(Date.UTC(y,mi+1,0)).getUTCDate(),p=Pr[k],t=Tm[k];
-  months.push({period:y+'-'+String(mi+1).padStart(2,'0'),precipMm:round(p*days),precipBaselineMm:round(cp*days),precipAnomalyPct:round(100*(p/cp-1)),tempC:round(t),tempBaselineC:round(ct),tempAnomalyC:round(t-ct)});
+  const rp=round(p*days),rb=round(cp*days),rt=round(t),rbt=round(ct); if(!(rb>0))continue;  // las anomalías se calculan con las cifras ya redondeadas, para que cuadren con lo que se publica
+  months.push({period:y+'-'+String(mi+1).padStart(2,'0'),precipMm:rp,precipBaselineMm:rb,precipAnomalyPct:round(100*(rp/rb-1)),tempC:rt,tempBaselineC:rbt,tempAnomalyC:round(rt-rbt)});
  }
  if(months.length<3){missing.push({id:code,reason:'menos de 3 meses válidos'});continue}
  provinces.push({id:code,city,lat,lon,months:months.slice(-12)});
