@@ -29,9 +29,10 @@ jobs:
         run: |
           set +e
           python3 scripts/validate-data.py; VALIDATE_RC=$?
+          [ "$VALIDATE_RC" = 0 ] || echo "::error::validate-data.py termino con codigo $VALIDATE_RC"
           set -e
-          python3 scripts/build-pipeline-status.py
-          python3 scripts/build-observatory.py   # el observatorio se regenera justo despues del estado, en el mismo commit: aunque la validacion falle, nunca queda desfasado respecto a pipeline-status.json
+          python3 scripts/build-pipeline-status.py || { echo "::error::build-pipeline-status.py fallo"; exit 1; }
+          python3 scripts/build-observatory.py || { echo "::error::build-observatory.py fallo"; exit 1; }   # el observatorio se regenera justo despues del estado, en el mismo commit: aunque la validacion falle, nunca queda desfasado respecto a pipeline-status.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/pipeline-status.json data/data-quality.json data/observatory.json
@@ -39,7 +40,7 @@ jobs:
             git commit -qm "Estado de pipelines y calidad de datos"
             ok=0
             for i in 1 2 3 4 5 6; do git pull -q --rebase --autostash && git push && ok=1 && break; sleep $((i * 5 + RANDOM % 10)); done
-            [ "$ok" = 1 ] || { echo "no se pudo publicar el estado"; exit 1; }
+            [ "$ok" = 1 ] || { echo "::error::no se pudo publicar el estado (pull --rebase o push fallaron 6 veces)"; exit 1; }
           fi
           exit $VALIDATE_RC
 
