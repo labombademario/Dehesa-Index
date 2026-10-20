@@ -1,0 +1,2270 @@
+                                            AV
+                                              AN
+                                                CE
+                                           22
+                                           20
+
+
+
+            VICEPRESIDENCIA
+            TERCERA DEL GOBIERNO
+GOBIERNO
+DE ESPAÑA   MINISTERIO
+            PARA LA TRANSICIÓN ECOLÓGICA
+            Y EL RETO DEMOGRÁFICO
+INDICE
+A. INVENTARIO FORESTAL NACIONAL. MAPA FORESTAL DE ESPAÑA. ............................. 3
+     A.1.       Superficie forestal total .................................................................................................. 3
+     A.2.       Distribución de las existencias por clases diamétricas ................................................. 4
+     A.3.       Existencias .................................................................................................................... 5
+     A.4.    Superficie forestal arbolada según características de la vegetación y especies
+     principales ................................................................................................................................. 8
+B.      ESTADÍSTICA ANUAL DE PROYECTOS Y ACTUACIONES FORESTALES................... 11
+     B.1.       Serie histórica de repoblaciones forestales ................................................................ 11
+     B.2.       Repoblaciones forestales en 2022 .............................................................................. 12
+C.      GESTIÓN FORESTAL SOSTENIBLE................................................................................. 14
+     C.1.       Superficie forestal sujeta a instrumentos de ordenación en 2022 .............................. 14
+     C.2.       Certificación forestal .................................................................................................... 15
+     C.3.       Espacios naturales protegidos y Red Natura 2000 ..................................................... 17
+D.      CORTAS DE MADERA Y APROVECHAMIENTO DE LEÑAS ........................................... 21
+     D.1.       Cortas de madera ........................................................................................................ 21
+     D.2.       Extracción de leñas ..................................................................................................... 25
+E.      OTROS APROVECHAMIENTOS FORESTALES ............................................................... 28
+     E.1.       Serie histórica de producción de otros productos forestales no madereros ............... 28
+     E.1.   Producción de otros productos forestales no madereros por CC.AA. y tipo de
+     propiedad................................................................................................................................. 29
+F.      ESTADÍSTICA ANUAL DE CAZA ....................................................................................... 30
+     F.1.       Licencias de caza ........................................................................................................ 30
+     F.2.       Capturas de especies cinegéticas ............................................................................... 31
+     F.3.       Sueltas de especies cinegéticas ................................................................................. 32
+     F.4.       Producción de granjas cinegéticas para repoblación .................................................. 33
+     F.5.       Terrenos cinegéticos ................................................................................................... 34
+G.      ESTADÍSTICA ANUAL DE PESCA FLUVIAL ..................................................................... 35
+     G.1.       Licencias de pesca fluvial ............................................................................................ 35
+     G.2.       Capturas de especies piscícolas ................................................................................. 36
+     G.3.       Sueltas de especies piscícolas ................................................................................... 37
+     G.4.       Masas de aprovechamiento piscícola ......................................................................... 38
+H.      BALANCE DE LA MADERA ................................................................................................ 39
+     H.1.       Producción nacional y comercio exterior .................................................................... 39
+     H.2.       Balance de la madera ................................................................................................. 40
+I.      Índice de tablas ................................................................................................................... 41
+J.      Índice de gráficos ................................................................................................................ 42
+                 AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+Avance
+Estadística Forestal 2022
+
+
+La elaboración del Anuario de Estadística Forestal sigue un proceso de recogida de
+datos facilitados por las comunidades autónomas a través de la plataforma PIENSA y
+otras fuentes y posterior análisis y depuración. El documento de Avance de la
+Estadística Forestal española presenta los primeros resultados con el objetivo de acortar
+este proceso y poner a disposición una primera colección de datos antes de la
+publicación del Anuario de Estadística Forestal de cada año.
+Estos resultados son, principalmente, fruto del esfuerzo conjunto de las comunidades
+autónomas que recogen los datos y los facilitan al Ministerio de Transición Ecológica y
+Lucha contra la Desertificación como Unidad responsable de las operaciones
+estadísticas forestales nacionales en el marco del Plan Estadístico Nacional (PEN).
+
+
+Simbología:
+       - Valores en cursiva: Valores estimados
+       - “…”: No hay datos disponibles
+       - “0”: Valor cero confirmado.
+
+
+
+
+Para consultas o ampliar la información:
+estadisticasforestales@miteco.es
+
+
+Versión junio de 2024
+
+
+
+
+                                           2
+Inventario Forestal Nacional
+                AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                                                                                                                                      A
+Mapa forestal de España
+
+
+
+
+     A. INVENTARIO FORESTAL NACIONAL. MAPA FORESTAL DE ESPAÑA.
+
+         A.1. Superficie forestal total
+                                                                                                                   % de superficie
+                                       Total                    Total                      Total
+                                                                                                                 forestal respecto
+     CC.AA.                          Arbolado                Desarbolado                  Forestal
+                                                                                                                        superficie
+                                       (ha)                      (ha)                       (ha)
+                                                                                                                 autonómica total
+     Andalucía                             3.008.535                    1.415.775               4.424.310                       50%
+
+     Aragón                                1.563.464                    1.041.749               2.605.213                       55%
+
+     Canarias                                137.468                     439.666                  577.135                       78%
+
+     Cantabria                               211.357                     152.893                  364.251                       69%
+
+     Castilla - La Mancha                  2.970.765                     836.748                3.807.513                       48%
+
+     Castilla y León                       3.286.234                    1.849.560               5.135.793                       55%
+
+     Cataluña                              1.582.057                     417.715                1.999.772                       62%
+
+     Ciudad de Ceuta                              677                        433                     1110                       56%
+
+     Ciudad de Melilla                            107                        259                       366                      27%
+     Comunidad de
+                                             267.370                     166.243                  433.613                       54%
+     Madrid
+     Comunidad Foral de
+                                             436.252                     156.399                  592.651                       57%
+     Navarra
+     Comunidad
+                                             791.470                     471.424                1.262.894                       54%
+     Valenciana
+     Extremadura                           1.985.329                     878.068                2.863.397                       69%
+
+     Galicia                               1.467.943                     558.225                2.026.168                       68%
+
+     Islas Baleares                          186.925                      34.672                  221.597                       44%
+
+     La Rioja                                179.287                     129.629                  308.916                       61%
+
+     País Vasco                              396.464                      92.750                  489.214                       68%
+     Principado de
+                                             457.186                     312.321                  769.507                       72%
+     Asturias
+     Región de Murcia                        311.084                     197.275                  508.360                       45%
+
+     TOTAL                                19.239.973                 9.151.881*               28.391.780                        56%
+
+                         Tabla A.1: Superficie forestal arbolada y desarbolada por comunidad autónoma
+
+
+      *Nota: En este dato se incorpora al total la superficie forestal desarbolada de los terrenos no asociados a ninguna autonomía
+      (77,78 ha).
+
+
+
+
+                                                                    3
+                          AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+           Gráfico A.1: Porcentaje de superficie arbolada y desarbolada respecto de la superficie autonómica total
+
+
+     A.2. Distribución de las existencias por clases diamétricas
+CC.AA.                     millones          10            20          30           40         50        60     >=70
+                           Nº pies            418.07        147.39       56.27       22.01      8.64      2.69       2.38
+Andalucía
+                           m3 c.c.             12.92          20.75       17.3       11.04      6.36      2.71       3.89
+                           Nº pies            522.25          156.6       43.4        9.88      2.03      0.46       0.36
+Aragón
+                           m3 c.c.                17          25.99      18.69        8.17      2.72        0.8      0.98
+                           Nº pies             51.79         13.26        6.32         2.5      1.02      0.45       0.52
+Canarias
+                           m3 c.c.              2.09           2.69       3.38        2.55      1.69      1.07       2.52
+                           Nº pies             98.87         26.61        8.84        3.56      1.68      0.65       0.76
+Cantabria
+                           m3 c.c.              7.21           6.55       4.59        3.23      2.38      1.25       2.36
+Castilla - La              Nº pies             823.4        199.56       80.69       24.13      6.14      1.54       0.95
+Mancha                     m3 c.c.             22.02         32.28       34.08       18.97      7.13      2.34       2.02
+                           Nº pies          1.055.47        282.78      115.13       42.53     13.91      4.65       4.64
+Castilla y León
+                           m3 c.c.             37.66         52.79          56        37.3     18.18      7.12     10.18
+                           Nº pies            810.51         245.2       80.23       18.43      3.86          1      0.58
+Cataluña
+                           m3 c.c.             44.52         46.08       35.59       15.48        5.6     2.12       2.09
+                           Nº pies             64.06         19.48        7.89        2.82      1.04      0.34       0.31
+C. de Madrid
+                           m3 c.c.              2.94           3.62       3.37         2.2      1.22      0.52       0.73
+                           Nº pies            156.09         61.18       27.24        9.95        3.4     1.19        1.3
+C. Foral de Navarra
+                           m3 c.c.              9.19         13.68        14.8       10.01      5.47        2.6      4.49
+                           Nº pies             160.9          54.33      13.44        2.48      0.41      0.09       0.04
+C. Valenciana
+                           m3 c.c.              4.98           8.12       4.74        1.61      0.41      0.12       0.09
+                           Nº pies            187.81         56.61       30.54       16.22        7.8     2.83       3.11
+Extremadura
+                           m3 c.c.              9.04           8.15       8.66        6.47      4.22      2.05       3.71
+                           Nº pies            583.56        197.05       71.83       26.32      9.46      2.84       2.87
+Galicia
+                           m3 c.c.             38.96         49.72       42.56       28.19     16.15      6.79     10.54
+                           Nº pies             42.95         14.56        6.62        2.08      0.76      0.22       0.18
+Islas Baleares
+                           m3 c.c.              1.82            2.2       2.25        1.32      0.73        0.3      0.34
+                           Nº pies             88.54         29.64        9.93        2.83      0.81      0.25       0.21
+La Rioja
+                           m3 c.c.              4.68            6.1       5.14        2.74      1.15      0.46       0.58
+                           Nº pies            152.95         55.35       25.34       10.63      4.22      1.44       1.02
+País Vasco
+                           m3 c.c.              6.29         12.72       15.64       12.78        8.3     3.87       3.02
+                           Nº pies            218.14         69.62       22.54        8.02      3.03      1.21       1.97
+Principado de Asturias
+                           m3 c.c.             15.46         15.98       10.98        6.84      3.98      2.11       5.63
+                           Nº pies             59.03         24.47        6.23         1.1      0.19      0.02       0.01
+Región de Murcia
+                           m3 c.c.               2.9           3.55       1.86        0.58      0.17      0.03       0.03
+                             m3 c.c.        5.494.39      1.653.69      612.48      205.49     68.40     21.87     21.21
+TOTAL
+                           Nº pies            239.68        310.97      279.63      169.48     85.86     36.26       53.2
+             Tabla A.2: Existencias en millones de pies y de m3 cc por clase diamétrica y comunidad autónoma
+
+
+                                                             4
+                        AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                            Gráfico A.2: Distribución de volumen (m3 cc) por clase diamétrica
+
+
+
+
+                      Gráfico A.3: Distribución del número de pies mayores (nº) por clase diamétrica
+
+
+
+
+    A.3. Existencias
+
+CC.AA.                   ÚLTIMO INVENTARIO REALIZADO:                    INVENTARIO INMEDIATAMENTE ANTERIOR:
+                                   IFN4 - IFN3                                             IFN3 - IFN2
+                        Volumen                                              Volumen
+               Año                    Cantidad de  Cantidad de        Año                    Cantidad de      Cantidad de
+                        maderable                                            maderable
+               IFN                   pies mayores pies menores        IFN                   pies mayores     pies menores
+                         (m3 c.c.)                                            (m3 c.c.)
+Andalucía      2008      74.970.838     657.441.659     767.908.378   1996    40.794.501      402.855.610      513.480.154
+
+Aragón         2005      74.338.313     734.991.219   1.352.197.973   1994    44.575.286      489.142.878      932.225.755
+
+Canarias       2018      16.002.891      75.856.672     117.423.579   2002    13.543.532        63.241.562     119.908.071
+
+Cantabria      2010      27.573.875     140.966.346     202.684.831   2000    25.206.929      139.995.412      183.575.264
+Castilla-La
+               2021     118.837.964   1.136.408.441   1.609.221.849   2004    83.734.225      858.701.263    1.539.020.381
+Mancha
+Castilla y
+               2020     219.237.182   1.519.116.079   1.837.732.156   2004   153.771.658     1.210.642.112   1.987.334.660
+León
+Cataluña       2015     151.492.338   1.159.818.109   1.535.144.475   2001   118.157.125     1.035.407.888   1.638.995.489
+
+C. de Madrid   2013      14.599.980      95.935.719     108.775.257   2000    10.895.345        83.508.240     115.452.507
+
+
+
+                                                            5
+                          AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+CC.AA.                     ÚLTIMO INVENTARIO REALIZADO:                  INVENTARIO INMEDIATAMENTE ANTERIOR:
+                                     IFN4 - IFN3                                           IFN3 - IFN2
+                          Volumen                                            Volumen
+                  Año                   Cantidad de  Cantidad de      Año                    Cantidad de      Cantidad de
+                          maderable                                          maderable
+                  IFN                  pies mayores pies menores      IFN                   pies mayores     pies menores
+                           (m3 c.c.)                                          (m3 c.c.)
+C. Foral de
+                  2008     60.242.643    260.349.299    286.061.312   1999    54.651.039      266.606.811      441.259.193
+Navarra
+
+C. Valenciana     2006     20.065.059    231.693.591    425.079.613   1994    10.946.124      151.430.435      235.627.475
+
+Extremadura       2017     42.296.292    304.911.433    417.176.649   2002    33.255.502      246.854.913      345.455.952
+
+Galicia           2009    192.914.041    893.924.503    878.980.922   1998   133.092.754      688.061.951      937.470.406
+
+Islas Baleares    2010      8.971.487     67.371.747    122.469.948   1999     7.525.457        62.796.997     103.509.384
+
+La Rioja          2012     20.850.856    132.211.918    131.612.501   1999    15.516.950      117.714.161      124.166.834
+
+País Vasco        2011     62.607.092    250.941.110    323.788.388   2005    54.816.506      226.980.023      323.524.187
+
+P. de Asturias    2010     60.972.283    324.540.532    419.008.752   1998    47.300.541      262.047.945      385.021.574
+Región de
+                  2010      9.116.196     91.048.093     90.154.504   1999     6.919.544        84.597.294      87.127.120
+Murcia
+
+           Tabla A.3: Evolución de las existencias entre los dos últimos inventarios de cada comunidad autónoma
+
+
+
+
+                         Gráfico A.4: Comparación de existencias en volumen maderable con corteza
+
+
+
+
+                                                            6
+                         AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                          Gráfico A.5: Comparación de existencias en número de pies mayores
+
+
+     COMUNIDAD             V c.c. maderable m3    V.s.c. maderable m3       Crecimiento         Volumen de leñas m3
+     AUTÓNOMA                      c.c.                   s.c.              anual m3 c.c.              c.c.
+Andalucía                            74.970.838             57.473.948              3.074.753             16.337.100
+Aragón                               74.338.313             57.213.857              2.760.375              6.355.450
+Canarias                             16.002.891             12.516.962                338.357              1.274.759
+Cantabria                            27.573.875             23.033.678              1.215.315              2.316.610
+Castilla - La Mancha                118.837.964             86.029.821              3.250.369             13.171.744
+Castilla y León                     219.237.182            167.149.152              8.077.369             22.306.821
+Cataluña                            151.492.338            116.208.935              3.960.932             12.656.595
+Comunidad de Madrid                  14.599.980             11.494.587                471.599              1.533.565
+Comunidad Foral de
+                                     60.242.643             51.866.801              1.487.511              4.857.333
+Navarra
+Comunidad Valenciana                 20.065.059             14.788.455                755.533              2.045.237
+Extremadura                          42.296.292             32.815.999              1.037.680             13.524.159
+Galicia                             192.914.041            149.659.403             13.056.945             12.667.299
+Islas Baleares                        8.971.487               7.234.441               222.464              1.087.005
+La Rioja                             20.850.856             17.098.078                735.568              1.683.972
+País Vasco                           62.607.092             51.739.388              3.423.351              4.379.680
+Principado de Asturias               60.972.283             51.153.529              2.809.981              5.761.497
+Región de Murcia                      9.116.196               6.464.076               237.129                  795.206
+TOTAL                             1.175.089.330            913.941.110             46.915.231            122.754.032
+
+           Tabla A.4: Existencias en metros cúbicos, crecimientos y volumen de leñas por comunidad autónoma.
+
+
+Nota: Se sombrean en negrita las 14 CC.AA. con cifras del IFN4
+
+
+
+
+                                                          7
+                        AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+                                                                                                % respecto al total de
+Especie forestal                                                  Existencias (m3 c.c.)
+                                                                                                     existencias
+  Pinus sylvestris                                                              173.254.420                              15%
+  Pinus pinaster                                                                166.497.875                              14%
+  Pinus halepensis                                                               89.752.651                              8%
+  Pinus nigra                                                                    91.440.078                              8%
+  Quercus ilex                                                                   86.159.851                              7%
+  Fagus sylvatica                                                                79.847.864                              7%
+  Eucalyptus globulus                                                            79.724.090                              7%
+  Quercus pyrenaica                                                              57.864.759                              5%
+  Pinus radiata                                                                  54.750.960                              5%
+  Quercus robur y Quercus petraea                                                49.017.594                              4%
+  Castanea sativa                                                                30.603.712                              3%
+  Pinus pinea                                                                    27.903.522                              2%
+  Resto de especies                                                             188.271.954                              15%
+TOTAL                                                                         1.175.089.330                          100%
+
+                        Tabla A.5: Existencias en volumen con corteza de las especies principales
+
+
+     A.4. Superficie forestal arbolada según características de la vegetación y
+          especies principales
+
+                                       Coníferas          Frondosas            Mixtas     Sin este dato   Total arbolado
+ CC.AA.
+                                            (ha)                (ha)             (ha)              (ha)              (ha)
+ Andalucía                                  780.579         1.929.663         127.309           170.983         3.008.535
+
+ Aragón                                     946.125             422.633       163.139            31.567         1.563.464
+
+ Canarias                                    85.773              45.088          6.177              431           137.468
+
+ Cantabria                                   16.526             186.299          2.908            5.623           211.357
+
+ Castilla - La Mancha                     1.222.610         1.489.064         247.702            11.389         2.970.765
+
+ Castilla y León                          1.090.257         1.999.055         170.061            26.861         3.286.234
+
+ Cataluña                                   807.905             566.788       196.475            10.888         1.582.057
+
+ Comunidad de Madrid                         71.340             171.365        19.584             5.081           267.370
+
+ Comunidad Foral de Navarra                 144.362             260.157        25.826             5.908           436.252
+
+ Comunidad Valenciana                       557.268              90.642        66.133            77.427           791.470
+
+ Extremadura                                122.188         1.826.272          21.333            15.535         1.985.329
+
+ Galicia                                    378.407             724.093       268.798            96.646         1.467.943
+
+ Islas Baleares                              87.955              60.833        35.870             2.267           186.925
+
+ La Rioja                                    63.710             104.567          8.608            2.402           179.287
+
+ País Vasco                                 164.897             195.089        16.616            19.861           396.464
+
+ Principado de Asturias                      47.923             380.830        17.032            11.401           457.186
+
+ Región de Murcia                           282.162              10.969        12.198             5.669           311.084
+
+ TOTAL                                    6.869.987        10.463.408       1.405.857           499.939        19.239.190
+
+                              Tabla A.6: Superficie arbolada por tipo de vegetación principal
+Nota: Se sombrean en negrita las comunidades autónomas con cifras del MFE25
+
+
+                                                            8
+                    AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+                                                                                       Superficie      Porcentaje
+                 Formación arbolada
+                                                                                               (ha)            (%)
+                 Pinar de pino carrasco (P. halepensis)                                 2.070.959               11
+                 Pinar de pino albar (P. sylvestris)                                    1.056.203                5
+                 Pinar de pino pinaster región mediterránea                                 814.882              4
+                 Pinar de pino salgareño (P. nigra)                                         742.335              4
+Coníferas
+                 Mezclas de coníferas autóctonas                                            659.875              3
+                 Pinar de pino piñonero (P. pinea)                                          438.622              2
+                 Enebrales y sabinares                                                      380.157              2
+                 Otros pinares y abetales                                                   193.335              1
+Mixtas           Mezclas coníferas y frondosas autóctonas                               1.190.911                6
+                 Dehesas                                                                2.828.868               15
+                 Encinares (Q. ilex)                                                    2.785.315               14
+                 Mezclas de frondosas autóctonas                                        1.237.555                6
+                 Melojares (Q. pyrenaica)                                                   850.218              4
+                 Otras frondosas dominantes                                                 509.509              3
+Frondosas
+                 Hayedos (Fagus sylvatica)                                                  389.622              2
+                 Quejigares (Q. faginea)                                                    333.576              2
+                 Alcornocales (Q. suber)                                                    269.446              1
+                 Bosque ribereño                                                            268.229              1
+                 Robledales de Q. robur y/o Q. petraea                                      247.332              1
+                 Repoblaciones productoras, que incluye:                                1.352.532                7
+                   Eucaliptales (Eucalyptus spp.)                                           569.677             42
+                   Pinares de Pinus radiata                                                 248.155             18
+                   Pinares de Pinus pinaster en la región
+                                                                                            223.828             17
+                 biogeográfica atlántica
+Otras
+                   Especies de producción en mezcla                                         179.192             13
+                   Choperas y plataneras de producción                                       97.434              7
+                   Otras repoblaciones productoras                                           34.246              3
+                 Otras alóctonas y mezcla de autóctonas con
+                                                                                            118.329              3
+                 alóctonas
+
+                           Tabla A.7: Superficie de las principales formaciones arboladas
+
+
+FORMACIÓN                                   DESCRIPCIÓN DE LAS AGRUPACIONES EMPLEADAS
+
+                                           Bosques dominados por una especie como Pinus uncinata, Pinus
+Otros pinares y abetales                   canariensis, o por Abies alba o Abies pinsapo.
+
+                                           Formaciones dominadas por Juniperus phoenicea L. (sabina negral), por
+Enebrales y sabinares                      Juniperus communis (enebro común) y/o Juniperus oxycedrus (enebro de
+                                           la miera), o por Juniperus thurifera L. (sabina albar).
+
+                                           Mezcla de dos o más grupos de coníferas, sin que ninguno de ellos tenga
+                                           presencia suficiente como para constituir una formación dominante. Se
+Mixtas coníferas autóctonas                incluyen las de las 4 regiones biogeográficas: alpina, atlántica,
+                                           mediterránea y macaronésica.
+
+                                           Comprende las siguientes formaciones: Robledales de Quercus humilis,
+                                           Abedulares (Betula spp.), Acebedas (Ilex aquifolium), Avellanedas
+                                           (Corylus avellana), Castañares (Castanea sativa), Fresnedas (Fraxinus
+Otras frondosas dominantes
+                                           spp.), Acebuchales (Olea europaea var. sylvestris), Madroñales (Arbutus
+                                           unedo), Quejigares de Quercus canariensis y algarrobales (Ceratonia
+                                           siliqua).
+
+
+
+                                                          9
+                    AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+FORMACIÓN                                DESCRIPCIÓN DE LAS AGRUPACIONES EMPLEADAS
+
+                                        Formación mixta formada por la mezcla de coníferas y frondosas, sin que
+                                        ninguna de ellas tenga presencia suficiente como para constituir una
+Mixta coníferas y frondosas             formación dominante. La mezcla más habitual son las diferentes
+autóctonas                              combinaciones de pinos y especies del género Quercus. Se incluyen las
+                                        mezclas en las cuatro regiones biogeográficas.
+
+                                        De frondosas en la región biogeográfica atlántica y alpina: mezcla de
+                                        frondosas principalmente planocaducifolias (quercíneas, hayas, fresnos,
+                                        chopos, alisos, castaños, avellanos...), caracterizada por ausencia de
+                                        sequía estival. De frondosas de la región mediterránea y macaronésica:
+                                        quercíneas y mezcla de ellas, destacando encina, quejigo, alcornoque y
+Mixtas frondosas autóctonas
+                                        melojo, pero aparecen otras muchas como roble pubescente, acebuche,
+                                        fresnos, arces, madroños y castaños. También se incluye el fayal-brezal, y
+                                        las laurisilvas macaronésicas. En esta categoría se han incluido también
+                                        los bosques dominados por palmito (Chamaerops humilis,) y palmera
+                                        canaria (Phoenix canariensis).
+                                        Pinares de producción de P. radiata y de P. pinaster en la región atlántica
+                                        y otras coníferas alóctonas de producción (Pseudotsuga menziesii, Larix
+                                        spp., entre otras) y de gestión.
+Repoblaciones productoras               Eucaliptales (Eucalyptus spp.), roble americano, choperas y plataneras de
+                                        producción. Se incluyen también en esta categoría las mezclas de
+                                        especies productoras.
+
+
+Autóctonas con alóctonas y otras        Se recogen las formaciones de mezclas de especies autóctonas con
+alóctonas                               alóctonas, y la formación de especies alóctonas invasoras.
+
+                                        Dominan, dependiendo de los distintos condicionantes (localización
+                                        geográfica y proximidad al cauce), sauces, alisos, chopos, fresnos y olmos,
+Bosque ribereño                         fundamentalmente. En el sotobosque predominan las rosáceas espinosas.
+                                        Las trepadoras también ocupan un papel importante.
+
+                                        Formación creada y mantenida por el ser humano, definida por su uso
+                                        múltiple. Su estrato arbolado está compuesto principalmente por encinas,
+                                        alcornoques, quejigos, rebollos, acebuches o fresnos, y ocasionalmente
+              Dehesas                   por otro arbolado. Su estructura permite el desarrollo de un estrato
+                                        esencialmente herbáceo (pasto), para utilización del ganado o de las
+                                        especies cinegéticas, con aprovechamiento no solo de los pastos
+                                        herbáceos, sino también del ramón y los frutos.
+
+                        Tabla A.8: Descripción de las agrupaciones arboladas empleadas
+
+
+
+
+                                                      10
+Estadística Anual de DE ESTADÍSTICA FORESTAL 2022
+               AVANCE
+
+
+
+
+                                                                                                                     B
+Proyectos y Actuaciones
+Forestales
+
+        B. ESTADÍSTICA ANUAL DE PROYECTOS Y ACTUACIONES FORESTALES
+
+          B.1. Serie histórica de repoblaciones forestales
+
+              Forestación         Repoblaciones protectoras (ha)                    Repoblaciones productoras (ha)
+                tierras
+ Año                             1ª             2ª                               1ª                  2ª
+               agrícolas                                           TOTAL                                         TOTAL
+                  (ha)       Repoblación    Repoblación                      Repoblación         Repoblación
+
+ 2001               37.230         24.948           3.202           28.150           13.591              732         14.323
+ 2002               21.739         32.685           5.248           37.933           16.211            1.665         17.876
+ 2005               20.682         14.919           9.918           24.837               2.040         2.474          4.514
+ 2006               22.077         16.520         22.635            39.155               2.302         9.098         11.400
+ 2007               16.966          7.160         17.204            24.364               8.862         3.816         12.678
+ 2008               16.087         10.391         13.614            24.005               2.492         1.088          3.580
+ 2009               13.623          6.469         10.739            17.208                768          1.330          2.098
+ 2010               11.338          4.488           2.552            7.040                284          1.885          2.169
+ 2011               10.787          4.938           2.612            7.550               1.545         1.514          3.059
+ 2012                9.277          2.083           1.229            3.312                519          2.219          2.738
+ 2013                3.728          4.002           1.208            5.210               2.810         1.761          4.571
+ 2014                  252          1.486             864            2.350               5.414         1.492          6.906
+ 2015                  140            622           2.243            2.865               4.506         1.339          5.845
+ 2016                   53          1.194           1.265            2.459               2.801         1.409          4.210
+ 2017                1.839            477           1.700            2.177               2.888         5.172          8.060
+ 2018                  856            776           2.986            3.762               1.817         3.741          5.558
+ 2019                2.859            940           2.374            3.314               2.676         4.629          7.305
+ 2020                2.678          1.291           8.004            9.296               3.481         4.320          7.801
+ 2021                2.913          1.035           3.568            4.604               3.945         4.314          8.259
+ 2022                1.668            676           3.164            3.839               2.263         3.900          6.163
+
+                                Tabla B.1: Serie histórica de repoblaciones forestales
+
+
+
+
+                                                         11
+                       AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                   Gráfico B.1: Superficies repobladas por tipo de repoblación en los últimos 20 años
+
+
+    B.2. Repoblaciones forestales en 2022
+
+                                                                                               TOTAL
+                                                         Forestación                                        Reposición
+                        Protectora     Productora                         (productoras +protectoras
+CC.AA.                                                        Tierras                                        de marras
+                              (ha)           (ha)                           +forestación t. agrícolas)
+                                                        Agrarias (ha)                                             (ha)
+                                                                                                  (ha)
+
+Andalucía                        …               …                  …                               …               …
+
+Aragón                           …               …                  …                             288               …
+Canarias                        16               …                  …                               16              …
+Cantabria                        …              89                  …                               89             25
+Castilla-La
+                                  9              …                198                             207               …
+Mancha
+Castilla y León              1.089             542              1.390                           3.022            4.134
+Cataluña                        29              32                  …                               61              …
+Comunidad de
+                               359               …                  …                             360              27
+Madrid
+Comunidad Foral
+                                20             100                  …                             119               …
+de Navarra
+Comunidad
+                               584               …                  …                             584               …
+Valenciana
+Extremadura                    899               …                  …                             899             711
+Galicia                          …           1.965                  …                           1.965               …
+Islas Baleares                   …               …                  …                               …               …
+La Rioja                       275                6                76                             357               …
+País Vasco                     539           2.802                                              3.341             540
+Principado de
+                                18             627                   4                            649              39
+Asturias
+Región de Murcia                 …               …                  …                                   1           …
+ESPAÑA                       3.839           6.163              1.668                          11.670            5.475
+
+                          Tabla B.2: Superficie repoblada por comunidad autónoma en 2022
+
+
+
+
+                                                          12
+   AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+Gráfico B.2: Superficie repoblada total por comunidad autónoma en el año 2022
+
+
+
+
+                                    13
+                              AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                                                                                                                             C
+Gestión Forestal Sostenible
+
+
+
+    C. GESTIÓN FORESTAL SOSTENIBLE
+
+         C.1. Superficie forestal sujeta a instrumentos de ordenación en 2022
+
+                                             Superficie forestal
+                                                                     % Sup. ordenada respecto       Superficie forestal
+     COMUNIDAD AUTÓNOMA                         ordenada
+                                                                         del total forestal             total (ha)
+                                                    (ha)
+     Andalucía                                          1.333.000                           30,1%              4.424.310
+     Aragón                                               237.993                            9,1%              2.605.213
+     Canarias                                                8.829                           1,5%                  577.135
+     Cantabria                                             52.189                           14,3%                  364.251
+     Castilla-La Mancha                                 1.356.807                           35,6%              3.807.513
+     Castilla y León                                    1.010.492                           19,7%              5.135.793
+     Cataluña                                             652.688                           32,6%              1.999.772
+     Comunidad de Madrid                                   43.768                           10,1%                  433.613
+     Comunidad Foral de Navarra                           346.923                           58,5%                  592.651
+     Comunidad Valenciana                                 237.955                           18,8%              1.262.894
+     Extremadura                                          414.579                           14,5%              2.863.397
+     Galicia                                              417.783                           20,6%              2.026.168
+     Islas Baleares                                        24.095                           10,9%                  221.597
+     La Rioja                                              85.179                           27,6%                  308.916
+     País Vasco                                           105.878                           21,6%                  489.214
+     Principado de Asturias                               196.958                           25,6%                  769.507
+     Región de Murcia                                     176.299                           34,7%                  508.360
+     ESPAÑA                                             6.701.415                            23,6             28.390.302
+
+                                  Tabla C.1: Superficie forestal ordenada por comunidad autónoma
+
+
+                                                           Superficie pública           Superficie privada
+                    COMUNIDAD AUTÓNOMA
+                                                             ordenada (ha)                ordenada (ha)
+                Andalucía                                                 746.041                      586.959
+                Aragón                                                    237.993                             …
+                Canarias                                                     8.829                            …
+                Cantabria                                                  51.800                            389
+                Castilla-La Mancha                                        630.754                      726.053
+                Castilla y León                                           827.993                      182.499
+                Cataluña                                                  284.945                      367.742
+                Comunidad de Madrid                                        22.340                       21.428
+                Comunidad Foral de Navarra                                327.048                       19.875
+                Comunidad Valenciana                                      145.553                       92.402
+                Extremadura                                                94.507                      320.072
+                Galicia                                                    20.279                      397.504
+                Islas Baleares                                               1.213                      22.882
+                La Rioja                                                   84.852                            327
+                País Vasco                                                 54.704                       51.174
+
+
+
+                                                               14
+                    AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+                                                    Superficie pública                  Superficie privada
+           COMUNIDAD AUTÓNOMA
+                                                      ordenada (ha)                       ordenada (ha)
+
+    Principado de Asturias                                             144.232                          52.726
+    Región de Murcia                                                   155.909                          20.390
+    ESPAÑA                                                            3.838.993                      2.862.423
+
+               Tabla C.2: Superficie forestal ordenada por comunidad autónoma según titularidad
+
+
+
+
+                    Andalucía                                              30%
+                      Aragón                 9%
+                     Canarias         2%
+                    Cantabria                       14%
+          Castilla - La Mancha                                                   36%
+               Castilla y León                            20%
+                     Cataluña                                               33%
+                 C. de Madrid                 10%
+              C. F. de Navarra                                                                           59%
+                C. Valenciana                             19%
+                Extremadura                         14%
+                       Galicia                                21%
+                Islas Baleares                   11%
+                      La Rioja                                        28%
+                   País Vasco                                  22%
+                P. de Asturias                                       26%
+                 R. de Murcia                                                    35%
+
+                                 0%        10%          20%          30%          40%        50%       60%        70%
+
+     Gráfico C.1: Porcentaje de la superficie forestal ordenada en cada comunidad autónoma en 2022
+
+
+C.2. Certificación forestal
+
+    C.2.1. Certificación forestal en el año 2022
+
+                                      SUPERFICIE CERTIFICADA FSC                 SUPERFICIE CERTIFICADA PEFC
+  COMUNIDAD AUTÓNOMA
+                                      ha arboladas % sup arbolada                ha arboladas  % sup arbolada
+Andalucía                                   160.924                    5,3%             284.311                9,4%
+Aragón                                        1.466                    0,1%             142.397                9,0%
+Canarias                                     17.031                   11,7%                  …                    …
+Cantabria                                     2.214                    1,0%              37.531              17,7%
+Castilla-La Mancha                          114.950                    3,6%              51.445                1,6%
+Castilla y León                              44.514                    1,2%             804.664              22,4%
+Cataluña                                         …                        …             280.420              16,8%
+Comunidad de Madrid                                …                       …                 2                 0,0%
+Comunidad Foral de Navarra                   29.854                    6,8%             311.062              70,8%
+Comunidad Valenciana                          2.506                    0,3%               1.212                0,2%
+Extremadura                                   7.137                    0,3%             114.389                5,5%
+Galicia                                     186.872                   12,7%             409.989              27,9%
+Islas Baleares                                   …                        …                  …                   …
+La Rioja                                          220                  0,1%              72.801              40,6%
+
+
+                                                          15
+                        AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+                                         SUPERFICIE CERTIFICADA FSC             SUPERFICIE CERTIFICADA PEFC
+       COMUNIDAD AUTÓNOMA
+                                         ha arboladas % sup arbolada            ha arboladas  % sup arbolada
+     País Vasco                                  3.817                1,0%           106.043               26,6%
+     Principado de Asturias                     24.286                5,3%            45.813               10,0%
+     Región de Murcia                               …                    …            27.193                8,6%
+     ESPAÑA                                    595.790               2,98%         2.689.271             13,45%
+
+                   Tabla C.3: Superficie certificada por comunidad autónoma y sistema de certificación
+
+
+                                                 FSC                                   PEFC
+                                         Nº de titulares con                               Nº de instalaciones
+     COMUNIDAD AUTÓNOMA                                             Nº de certificados de
+                                      certificado de cadena de                              con certificado de
+                                                                    cadena de custodia
+                                               custodia                                    cadena de custodia
+    Andalucía                                                  82                         69                     93
+    Aragón                                                     27                         26                     42
+    Canarias                                                    6                         2                       4
+    Cantabria                                                  21                         22                     26
+    Castilla-La Mancha                                         57                         49                     62
+    Castilla y León                                            45                         49                    104
+    Cataluña                                                 390                       205                      271
+    Comunidad de Madrid                                      205                       110                      138
+    Comunidad Foral de Navarra                                 31                         55                     75
+    Comunidad Valenciana                                     240                          93                    120
+    Extremadura                                                13                         9                      12
+    Galicia                                                  226                       232                      456
+    Islas Baleares                                              5                         2                       4
+    La Rioja                                                   19                         24                     33
+    País Vasco                                                 63                         65                    140
+    Principado de Asturias                                     21                         15                     52
+    Región de Murcia                                           29                         26                     43
+    Varias CC.AA.                                              …                          …                       0
+    TOTAL                                                  1.480                     1.053                  1.675
+
+      Tabla C.4: Certificados de cadena de custodia emitidos por comunidad autónoma y sistema de certificación
+
+
+                                                                                   PEFC
+                                                                                                     Nº Instalaciones
+  Caracterización Instalaciones certificadas                 Nº de certificados de CdC
+                                                                                                     con certificado
+Madera y construcción                                                    385                               519
+Aserraderos y rematantes                                                 246                               565
+Gráficas                                                                 212                               251
+Pasta y papel                                                            110                               166
+Almacenistas                                                             68                                86
+Astillas, pellets y energía                                              41                                67
+Tejido no tejido                                                          6                                 6
+Productos no madereros                                                    4                                 5
+Corcho                                                                    5                                 5
+Resinas                                                                   5                                 5
+TOTAL                                                                   1.082                             1.675
+Tabla C.5: Número de certificados CdC PEFC y de instalaciones con certificado CdC PEFC por categoría de instalación
+
+
+
+
+                                                          16
+                        AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+Producto                                                                   Nº de titulares con certificado CdC FSC
+
+Artes gráficas, materiales impresos y papelería                                                 171
+Pulpa, papel y cartón                                                                           416
+Tableros y otros productos procesados de madera                                                 126
+Envases y embalajes                                                                             304
+Aprovechamientos forestales, madera en rollo y biomasa                                          172
+Productos de madera para mobiliario y/o construcción                                            226
+Carbón de leña y otros productos de madera                                                       13
+Otros productos forestales                                                                       43
+Corcho y productos derivados                                                                     9
+TOTAL                                                                                           1.480
+                     Tabla C.6: Número de titulares con certificado CdC FSC por tipo de producto
+
+
+   C.3. Espacios naturales protegidos y Red Natura 2000
+
+        C.3.1. Superficie protegida total
+
+                                                                                          Porcentaje de la superficie
+                                        Superficie terrestre          Superficie total           terrestre protegida
+Figura de protección
+                                            protegida (ha)             protegida (ha)             respecto del total
+                                                                                                      protegido (%)
+Superficie protegida
+ENP                                                  7.481.556              12.765.386                              59%
+Red Natura 2000                                   13.868.492                22.327.328                              62%
+Superficie protegida (ENP / RN2000)               14.223.948                27.119.033                              52%
+                             Áreas protegidas por otros instrumentos internacionales
+MAB (Reservas de la Biosfera)                        6.583.355               7.553.952                              87%
+RAMSAR (Humedales de Importancia
+                                                      283.856                  316.605                              90%
+internacional)
+ZEPIM (Zonas Especialmente
+Protegidas de Importancia para el                      51.941                4.798.442                              1%
+Mediterráneo)
+Geoparques                                           2.469.311               2.692.434                              92%
+Sitios naturales de la lista de
+                                                       76.718                   76.718                          100%
+Patrimonio Mundial
+SUPERFICIE PROTEGIDA TOTAL                        18.566.741                31.773.125                              58%
+
+                               Tabla C.7: Superficie protegida por figura de protección
+
+
+        C.3.2. Superficie forestal protegida
+
+                                Superficie forestal protegida por Red Natura 2000, ENP y/o ambos
+   Comunidad Autónoma                                                          Total forestal          % Forestal
+                                      Arbolado ha      Desarbolado ha
+                                                                           protegido ha          protegido
+   Andalucía                            1.651.982                617.234           2.269.215                 51%
+   Aragón                                 666.142                406.856           1.072.998                 41%
+   Canarias                               112.702                237.477             350.180                 61%
+   Cantabria                               61.183                 67.058             128.240                 35%
+   Castilla y León                      1.050.270                709.234           1.759.504                 34%
+   Castilla - La Mancha                 1.261.791                287.701           1.549.492                 41%
+   Cataluña                               654.947                237.034             891.981                 45%
+   Ciudad de Ceuta                             449                  113                   562                51%
+
+
+
+                                                          17
+                       AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+                                Superficie forestal protegida por Red Natura 2000, ENP y/o ambos
+   Comunidad Autónoma                                                        Total forestal         % Forestal
+                                     Arbolado ha      Desarbolado ha
+                                                                         protegido ha         protegido
+   Ciudad de Melilla                           28                   17                  45                12%
+   Comunidad de Madrid                    167.066              64.320              231.386                53%
+   C. Foral de Navarra                    163.839              66.835              230.674                39%
+   Comunidad Valenciana                   492.574             245.759              738.333                58%
+   Extremadura                            638.123             357.424              995.547                35%
+   Galicia                                138.893             174.754              313.648                15%
+   Islas Baleares                          85.828              30.078              115.906                52%
+   La Rioja                               113.793              59.869              173.661                56%
+   País Vasco                             114.759              40.054              154.813                32%
+   Principado de Asturias                 134.163             136.735              270.898                35%
+   Región de Murcia                       154.704              65.267              219.972                43%
+   TOTAL                                7.663.234            3.803.819          11.467.053                40%
+
+             Tabla C.8: Superficie forestal protegida por RN2000, ENP y/o ambos por comunidad autónoma
+
+
+
+
+     Gráfico C.2: Porcentaje de superficie forestal protegida (arbolada y desarbolada) por comuidad autónoma
+
+
+Superficies
+forestales          RN2000 (exclusivamente)           ENP (exclusivamente)              TOTAL PROTEGIDO
+(ha)
+                             ha               %               ha               %               ha                %
+Monte
+                       3.386.588            18%         204.936               1%        7.663.234              40%
+arbolado
+Monte
+                       1.544.218            17%           89.679              1%        3.803.819              42%
+desarbolado
+Total forestal         4.930.806            17%         294.615               1%      11.467.053               40%
+
+                         Tabla C.9: Superficie forestal protegida por RN2000, ENP y/o ambos
+
+
+                                                        18
+             AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+             Gráfico C.3: Porcentaje de superficie forestal protegida por RN2000 y ENP
+
+
+                                            Superficie forestal protegida (ha)
+Comunidad
+Autónoma                          ENP y/o      Protegido, resto      Total forestal      % Forestal
+                                Red Natura           de figuras         protegido         protegido
+Andalucía                         2.269.215            236.996           2.506.211             57%
+Aragón                            1.072.998            249.467           1.322.465             51%
+Canarias                            350.180            146.858             497.038             86%
+Cantabria                           128.240                    0           128.240             35%
+Castilla y León                   1.759.504            397.132           2.156.636             42%
+Castilla - La Mancha              1.549.492            263.742           1.813.233             48%
+Cataluña                            891.981            226.733           1.118.713             56%
+Ciudad de Ceuta                         562                    0                 562           51%
+Ciudad de Melilla                         45                   0                 45            12%
+Comunidad de Madrid                 231.386              23.098            254.484             59%
+C. Foral de Navarra                 230.674                    0           230.674             39%
+Comunidad
+                                    738.333              20.063            758.396             60%
+Valenciana
+Extremadura                         995.547            335.669           1.331.216             46%
+Galicia                             313.648            531.927             845.575             42%
+Islas Baleares                      115.906              17.689            133.595             60%
+La Rioja                            173.661              78.606            252.268             82%
+País Vasco                          154.813               4.203            159.015             33%
+Principado de Asturias              270.898              38.391            309.289             40%
+Región de Murcia                    219.972                  34            220.005             43%
+TOTAL                       11.467.053,30       2.570.623,20       14.037.676,50               49%
+
+              Tabla C.10: Superficie forestal protegida total por comunidad autónoma
+
+
+
+
+                                               19
+          AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+C.3.3. Relevancia de la parte forestal en la superficie terrestre protegida
+
+                                                                                Total
+                                     Red Natura 2000      ENP              protegido
+        Uso forestal
+                                          % forestal % forestal             terrestre
+                                                                           % forestal
+        Arbolado                       50%                      58%              54%
+        Desarbolado                    23%                      25%               27%
+        Total forestal                 73%                      83%               81%
+
+      Tabla C.11: Porcentaje de superficie protegida forestal por cada tipo de protección
+
+
+
+
+                                             20
+              AVANCE
+Cortas de Madera y   DE ESTADÍSTICA FORESTAL 2022
+
+
+Aprovechamiento de Leña
+
+
+    D. CORTAS DE MADERA Y APROVECHAMIENTO DE LEÑAS
+                                                                                                                     D
+        D.1. Cortas de madera
+
+             D.1.1. Serie histórica de cortas de madera
+
+                                                 CORTAS DE MADERA
+                                                                                                        Valor en
+                         Coníferas       Frondosas       Sin clasificar  TOTAL
+                                                                                         Variación     cargadero
+           AÑO          (miles de m3    (miles de m3     (miles de m3 (miles de m3
+                                                                                         anual (%)     (miles de
+                        con corteza)    con corteza)     con corteza) con corteza)
+                                                                                                         euros)
+           2001                 6.148            5.407          2.546          14.101           0,1%     623.529
+           2002                 5.525            5.382          3.806          14.713           4,3%     666.321
+           2003                 6.631            5.582          3.396          15.609           6,1%     750.391
+           2004                 6.037            5.409          3.353          14.799          -5,2%     718.811
+           2005                 7.804            5.578          2.466          15.848           7,1%     675.407 *
+           2006                 8.270            5.260          3.523          17.053           7,6%     722.461 *
+           2007                 7.406            5.408          1.281          14.095         -17,3%     630.518 *
+           2008                 6.501            5.788          4.761          17.050          21,0%     733.350 *
+           2009                 5.318            5.038          3.754          14.110         -17,2%     583.954 *
+           2010                 6.164            5.788          1.288          13.239          -6,2%     531.847 *
+           2011                 7.115            6.978               -         14.093           6,4%     547.905 *
+           2012                 7.598            6.521               -         14.119           0,2%     530.275 *
+           2013                 8.378            6.681               -         15.060           6,7%     538.156 *
+           2014                 8.779            6.982               -         15.762           4,7%     604.847 *
+           2015                 9.218            7.411               -         16.630           5,5%     644.718 *
+           2016                 8.135            8.713               -         16.848           1,3%     649.216 *
+           2017                 9.589            8.091               -         17.680           4,9%     735.604 *
+           2018                10.644            9.104               -         19.747          11,7%     852.825 *
+           2019                 9.902            8.085               -         17.987          -8,9%     672.906 *
+           2020                 8.392            7.545               -         15.937         -11,4%     588.422 *
+           2021                10.194            7.824               -         18.018          13,1%     751.901
+           2022                11.666            8.661               -         20.327          12,8%   1.036.023
+
+                         Tabla D.1: Serie histórica de cortas de madera y valor económico asociado
+
+
+
+    *: Valor en cargadero estimado
+
+
+
+
+                                                           21
+                     AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+              Evolución de la madera cortada según grupo de especies
+                              (miles de metros cúbicos)
+20.000
+
+
+18.000
+
+
+16.000
+
+
+14.000
+
+
+12.000
+
+
+10.000
+
+
+ 8.000
+
+
+ 6.000
+
+
+ 4.000
+
+
+ 2.000               Sin clasificar (miles de m3 con
+                     corteza)
+
+    0
+
+
+
+
+                               Gráfico D.1: Serie histórica de cortas de madera
+
+
+
+
+    D.1.2. Cortas madera en 2022
+
+         COMUNIDAD                        CONÍFERAS           FRONDOSAS           TOTAL (m3 con
+         AUTÓNOMA                             (m3 cc)             (m3 cc)              corteza)
+         Andalucía                               98.967              39.611             138.578
+         Aragón                                273.049               18.624             291.673
+         Canarias                                 3.780                   …               3.780
+         Cantabria                             199.290              378.464             577.754
+         Castilla-La Mancha                    301.661               26.367             328.028
+         Castilla y León                      2.260.729             325.845           2.586.573
+         Cataluña                              720.692              105.794             826.486
+         Comunidad de Madrid                     18.800               3.836              22.636
+         Comunidad Foral de
+                                               670.238              220.779             891.017
+         Navarra
+         Comunidad Valenciana                    30.868               1.293              32.161
+         Extremadura                             83.198              42.528             125.726
+         Galicia                              4.441.818           6.553.388          10.995.206
+         Islas Baleares                           5.074                   …               5.074
+
+
+                                                     22
+                          AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+            COMUNIDAD                           CONÍFERAS               FRONDOSAS           TOTAL (m3 con
+            AUTÓNOMA                                (m3 cc)                 (m3 cc)              corteza)
+            La Rioja                                    135.449              38.121                 173.570
+            País Vasco                             1.901.204                224.285               2.125.489
+            Principado de Asturias                      521.285             682.120               1.203.404
+            Región de Murcia                                83                      …                     83
+            ESPAÑA                                11.666.184               8.661.055             20.327.239
+
+                       Tabla D.2: Cortas de coníferas, frondosas y totales por comunidad autónoma
+
+
+         D.1.3. Cortas de madera por propiedad del territorio
+
+                                              CONÍFERAS                     FRONDOSAS                     TOTAL
+                                                    3                           3                     3
+                                                  m c.c.           %          m c.c.        %       m c.c.          %
+PROPIEDAD PÚBLICA
+Montes de Utilidad Pública de las
+                                                 326.310          3%           65.214     0,8%      391.524        2%
+CC.AA. o del Estado
+CC.AA. o del Estado no de Utilidad
+                                                  51.605      0,4%                  922   0,0%       52.527       0,3%
+Pública
+Montes de Utilidad Pública de las
+                                               2.279.434          20%        334.917       4%     2.614.351       13%
+Entidades Locales
+De las Entidades Locales.
+                                                 181.442          2%            3.675     0,0%      185.117        1%
+Consorciados o conveniados
+Entidades Locales de libre
+                                                 182.779          2%           64.500     0,7%      247.279        1%
+disposición
+Pública sin especificar                                                             130   0,0%            130     0,0%
+TOTAL PÚBLICA                                  3.021.569          26%        469.359       5%     3.490.928       17%
+PROPIEDAD PRIVADA
+Privada. Consorciados o                                                              …      …
+                                                  69.850      0,6%                                   69.850       0,3%
+conveniados
+Privada. No consorciados                       6.579.573          56%       7.100.277     82%    13.679.850       67%
+Montes Vecinales en Mano
+                                                 919.033          8%         615.900       7%     1.534.933        8%
+Común
+Privada sin especificar                        1.076.180          9%         475.519       5%     1.551.699        8%
+TOTAL PRIVADA                                  8.644.636          74%       8.191.696     95%    16.836.332       83%
+TOTAL                                         11.666.205                    8.661.055            20.327.260
+
+                                     Tabla D.3: Cortas por tipo de propiedad en 2022
+
+
+
+
+                                                            23
+              AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+                Distribución de cortas de madera por tipo de propiedad.
+                                        Año 2022
+
+
+                 De las CC.AA. o del      De las CC.AA. o del
+                Estado y Catalogados      Estado y No M.U.P.
+                 de Utilidad Pública             0,3%
+                                                                                     De las entidades
+                         1,9%
+       Privada sin                                    De entidades locales        locales. Consorciados
+       especificar                                     y Catalogados de               o conveniados
+          7,6%                                          Utilidad Pública                   0,9%
+                                                              12,9%
+
+Montes vecinales en
+                                                                                 De entidades locales.
+   mano común
+                                                                                  De libre disposición
+       7,6%
+                                                                                          1,2%
+
+
+
+
+                                                                                Privada.
+                                                                             Consorciados o
+                                        Privada. No                           conveniados
+                                       consorciados                              0,3%
+                                           67,3%
+
+
+                         Gráfico D.2: Cortas por tipo de propiedad en 2022
+
+
+
+
+  D.1.4. Cortas de madera por especie
+
+                                                                             Volumen cortado
+     CONÍFERAS                               Especies principales
+                                                                                      (m3 c.c.)
+                                             Pinus radiata                           4.663.534
+     Indicadores:
+                                             Pinus pinaster                          3.578.223
+                                             Pinus sylvestris                        1.847.715
+                                             Pinus nigra                               784.852
+
+     % respecto del total de cortas:         Pinus halepensis                          321.045
+                                             Pinus pinea                               130.348
+                                     57% Otros pinos                                    35.080
+                                          Otras coníferas alóctonas
+     % coníferas alóctonas respecto total
+                                          (Chamaecyparis, Larix,                       176.151
+     de coníferas:
+                                          Picea, Pseudotsuga, etc.)
+                                     41% Otras coníferas                               129.257
+
+                        Tabla D.4: Cortas de especies de coníferas en 2022
+
+
+
+
+                                                24
+                      AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+                                                                                       Volumen cortado
+            FRONDOSAS                                Especies principales
+                                                                                              (m3 c.c.)
+                                                     Eucalyptus spp.                         7.545.238
+            Indicadores:
+                                                     Populus spp.                              498.569
+            % respecto del total de cortas:          Fagus sylvatica                           173.582
+                                                     Quercus robur                             150.449
+                                                     Castanea sativa                            92.555
+                                               43% Quercus rubra                                36.417
+                                               Otros Quercus                                    14.132
+            % frondosas alóctonas respecto
+            total de frondosas:                Otras frondosas
+                                                                                                18.739
+                                               alóctonas
+                                           92% Resto de frondosas                              131.374
+
+                                 Tabla D.5: Cortas por especies de frondosas en 2022
+
+
+    D.2. Extracción de leñas
+
+         D.2.1. Serie histórica de extracción de leña y valor económico asociado
+
+                                              EXTRACCIÓN DE LEÑAS
+                     Producción (miles
+     AÑO                                      Variación anual (%)       Valor en cargadero (miles de euros)
+                     de toneladas)
+              2001                     955                    -36,0%                                 21.052
+              2002                   1.024                     7,2%                                  27.969
+              2003                   1.151                    12,4%                                  32.301
+              2004                   1.106                     -3,9%                                 10.515
+              2005                     848                    -23,3%                                 20.868 *
+              2006                   1.189                    40,2%                                  30.289 *
+              2007                   1.451                    22,0%                                  32.569 *
+              2008                     988                    -31,9%                                 33.532 *
+              2009                   1.175                    19,0%                                  41.569 *
+              2010                   2.445                    108,0%                                 74.119 *
+              2011                   1.972                    -19,4%                                 74.816 *
+              2012                   1.542                    -21,8%                                 43.495 *
+              2013                   1.716                    11,3%                                  53.308 *
+              2014                   1.854                     8,0%                                  56.561 *
+              2015                   1.840                     -0,8%                                 55.246 *
+              2016                   1.201                    -34,7%                                 40.218 *
+              2017                   1.222                     1,7%                                  38.811 *
+              2018                   1.317                     7,8%                                  49.650 *
+              2019                   1.171                    -11,1%                                 43.513 *
+              2020                   1.450                    23,8%                                  56.460 *
+              2021                   1.484                     2.3%                                  63.181
+              2022                   1.433                     -3,4%                                 48.174
+
+                 Tabla D.6: Serie histórica de aprovechamienos de leñas y valor económico asociado
+
+
+*: Valor en cargadero estimado
+
+
+
+
+                                                         25
+                 AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+                                 Evolución de la extracción de leña
+                                       (miles de toneladas)
+3.000
+
+2.500
+
+2.000
+
+1.500
+
+1.000
+
+ 500
+
+   0
+
+
+
+
+                          Gráfico D.3: Serie histórica de aprovechamiento de leñas
+
+
+        D.2.2. Aprovechamiento de leñas en 2022
+
+                                             Coníferas          Frondosas       Leñas Total
+              Comunidad Autónoma
+                                           (Toneladas)         (Toneladas)      (Toneladas)
+              Andalucía                           2.958              96.090            99.048
+              Aragón                              5.293              26.862            32.155
+              Canarias                            2.493               1.915             4.408
+              Cantabria                              …                2.851             2.851
+              Castilla-La Mancha                 53.580              48.892           102.472
+              Castilla y León                   105.558             268.651           374.209
+              Cataluña                           36.879             252.825           289.704
+              Comunidad de Madrid                 5.323              13.234            18.557
+              Comunidad Foral de
+                                                182.219              92.617           274.836
+              Navarra
+              Comunidad Valenciana               16.295               3.987            20.282
+              Extremadura                        18.387              93.433           111.820
+              Galicia                                …               29.922            29.922
+              Islas Baleares                      4.124                 815             4.938
+              La Rioja                               …                5.051             5.051
+              País Vasco                          1.984               7.346             9.330
+              Principado de Asturias             15.842              21.371            37.213
+              Región de Murcia                   16.679                   …            16.679
+              ESPAÑA                            467.615             965.861          1.433.475
+
+               Tabla D.7: Leñas de coníferas, frondosas y totales por comunidad autónoma
+
+
+
+
+                                                    26
+                          AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+         D.2.3. Extracción de leña por propiedad del territorio
+
+                                                  FRONDOSAS                 CONÍFERAS                    TOTAL
+
+                                             Toneladas              % Toneladas            % Toneladas              %
+PROPIEDAD PÚBLICA
+MUP de las CC.AA. o del Estado                  123.167          12,8%      27.789      5,9%         150.956     10,5%
+CC.AA. o del Estado no de Utilidad Pública         1.171         0,1%       81.430     17,4%          82.600     5,8%
+MUP de las Entidades Locales                    111.060          11,5%      76.475     16,4%         187.535     13,1%
+De las Entidades Locales consorciados                   …        0,0%        1.595      0,3%           1.595     0,1%
+Entidades Locales de libre disposición            23.013         2,4%       51.680     11,1%          74.693     5,2%
+Pública sin especificar                              300         0,0%       12.459      2,7%          12.759     0,9%
+TOTAL PÚBLICA                                   258.711          26,8%     251.428     53,8%         510.139     35,6%
+PROPIEDAD PRIVADA
+Privada consorciados                               6.109         0,6%        3.544      0,8%           9.653     0,7%
+Privada sin consorcio                           397.665          41,2%     129.747     27,7%         527.412     36,8%
+Montes Vecinales en Mano Común                          …        0,0%           …       0,0%              …      0,0%
+Privada sin especificar                         303.306          31,4%      82.730     17,7%         386.037     26,9%
+Propiedad desconocida                                 70         0,0%         166       0,0%            236      0,0%
+TOTAL PRIVADA                                   707.150          73,2%     216.187     46,2%         923.337     64,4%
+TOTAL                                           965.861                    467.615              1.433.475
+
+                                  Tabla D.8: Leñas por tipo de propiedad en 2022
+
+
+         D.2.4. Aprovechamientos de leña por especie
+
+                                                                                       Porcentaje
+                     Leñas extraídas por especie                         Toneladas   respecto del
+                                                                                         total (%)
+                     FRONDOSAS Quercus spp.                                225.151           16%
+                                     Quercus ilex                          226.700           16%
+                     67%             Quercus pyrenaica                     109.936             8%
+                                     Fagus sylvatica                        87.456             6%
+                                     Populus spp.                           68.726             5%
+                                     Eucalyptus spp.                        24.637             2%
+                                     Otros Quercus                          31.270             2%
+                                     Sin especificar y resto
+                                                                           191.986           13%
+                                     de frondosas
+                     CONÍFERAS       Pinus spp.                             12.860             1%
+                                     Pinus halepensis                      159.755           11%
+                     33%             Pinus nigra                           107.667             8%
+                                     Pinus pinaster                         66.416             5%
+                                     Coníferas sin
+                                                                            39.837             3%
+                                     especificar
+                                     Pinus radiata                          57.895             4%
+                                     Pinus sylvestris                       18.243             1%
+                                     Resto de coníferas                      4.943             0%
+
+                                         Tabla D.9: Leñas por especie en 2022
+
+
+
+
+                                                            27
+                             AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                                                                                                                                   E
+Otros aprovechamientos forestales
+
+
+
+    E. OTROS APROVECHAMIENTOS FORESTALES
+
+         E.1. Serie histórica de producción de otros productos forestales no
+              madereros
+
+     producto                            Corcho         castaña         piñón        resina          otros hongos     trufas
+     unidades                          (toneladas) (toneladas) (toneladas)        (toneladas)             kg           kg
+     1990                                    73.802                                     10.623
+     1991                                    72.146                                       1.759
+     1992                                    72.090                                       1.771
+     1993                                    89.938                                       1.662
+     1994                                    62.797                                       2.149
+     1995                                    57.509                                       2.226
+     1996                                    90.025                                       3.411
+     1997                                    71.930                                       3.575
+     1998                                  122.257                                        4.943
+     1999                                    62.361         10.580        1.184           4.173         9.361.394       14.234
+     2000                                    59.158          9.230        6.303           2.909         9.366.764        3.462
+     2001                                    57.581          9.510        6.722           2.663         2.968.846        4.202
+     2002                                    58.099          9.362        5.404           2.623         2.188.829       10.807
+     2003                                    67.486         11.237       11.156           1.804        28.314.698       14.998
+     2004                                      S.D.            S.D.        S.D.            S.D.                S.D.         S.D.
+     2005                                    20.973             823       1.977           1.636        17.269.976       12.940
+     2006                                    61.504         59.086       11.345           1.705         3.722.615       18.124
+     2007                                    60.728         57.280       13.535           1.560         4.371.065       10.298
+     2008                                    62.393         44.575        7.304           1.443        10.597.899       12.726
+     2009                                    50.164         48.909        2.657           1.402         1.030.283        8.645
+     2010                                    60.736         55.164        4.485           1.821        10.368.845        6.149
+     2011                                    55.905         28.143        8.009           3.959         9.850.009        2.463
+     2012                                    49.133         19.071        6.878           6.968        14.599.241        2.067
+     2013                                    69.866         21.465       12.481           9.817         6.983.944        4.458
+     2014                                    54.828         16.852        1.454         10.630         25.596.130       10.013
+     2015                                    55.033         31.137        1.080         12.183         11.765.981        4.128
+     2016                                    60.432         19.263        1.921         12.232         14.457.761        7.417
+     2017                                    53.376         10.517        2.075         13.001         10.416.380        6.832
+     2018                                    46.223         10.505          861         11.314         21.969.866       12.056
+     2019                                    44.475         11.065        1.401         10.769         11.134.553        8.055
+     2020                                    39.166         12.411          431         11.506         11.013.165        9.064
+     2021                                    45.186         10.654          648         10.191         11.942.404        9.115
+     2022                                   53.405*         10.128        1.990           8.758       10.528.661**
+                       Tabla E.1: Serie histórica de producción de otros productos forestales no madereros
+
+    *: Valor de corcho en Andalucía es estimado por criterio experto.
+
+    **: Valor estimados en base a la superficie productora aportada por las comunidades autónomas.
+
+
+                                                                   28
+                         AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+     E.1. Producción de otros productos forestales no madereros por CC.AA. y
+          tipo de propiedad
+
+                                           Corcho                        Piñón con         Resina   Hongos Otros    Trufas
+       CC.AA.             Propiedad                     Castaña (t)
+                                             (t)                         cáscara (t)         (t)        (kg)         (kg)
+ Andalucía               Pública               1.861                30                        120
+                         Privada
+ Total Andalucía                             35.000                 30                        120
+ Aragón
+ Total Aragón                                                                                           2.205.312
+ Castilla-La             Pública                 381                                          943
+ Mancha
+                         Privada                 461                                          205
+ Total Castilla-La
+ Mancha                                          842                                        1.148        604.724
+                         Pública                    5               3          1.278        5.727         91.334
+ Castilla y León
+                         Privada                 587                             558        1.361
+ Total Castilla y
+ León                                            592                3          1.836        7.088       2.803.073
+                         Pública               1.100                                   4                1.116.715
+ Cataluña
+                         Privada               3.300                              13                    3.350.144
+ Total Cataluña                                4.400                              17                    4.466.859
+ C. de Madrid
+ Total C. Madrid                                                                                           2.251
+ C. Foral de
+ Navarra
+ Total C. Foral de
+ Navarra                                                                                                 416.306
+                         Pública
+ C. Valenciana
+                         Privada                 362
+ Total C.
+ Valenciana                                      362
+                         Pública                 186                             136          390
+ Extremadura
+                         Privada             12.163                                            13
+ Total Extremadura                           12.349                              136          403
+ Galicia                 Privada                             10.095
+ Total Galicia                                               10.095
+ La Rioja                Pública                                                                          30.135
+ Total La Rioja                                                                                           30.135
+ TOTAL                                      55.405*          10.128            1.990        8.758    10.528.661**
+
+       Tabla E.2: Producción de otros productos forestales por comunidad autónoma y tipo de propiedad en 2022
+
+
+*: Valor de corcho en Andalucía es estimado por criterio experto.
+
+**: Valor estimados en base a la superficie productora aportada por las comunidades autónomas.
+
+
+
+
+                                                               29
+                          AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                                                                                                                  F
+Estadística Anual de Caza
+
+
+
+
+    F. ESTADÍSTICA ANUAL DE CAZA
+
+        F.1. Licencias de caza
+
+             F.1.1. Serie histórica de licencias expedidas de caza
+
+                                                     Número de licencias
+                       Año                                               Variación interanual
+                                                                 de caza
+                       2002                                   1.036.340                     -6%
+                       2003                                       1.157.969                        12%
+                       2004                                              …                          …
+                       2005                                       1.069.804                        -8%
+                       2006                                         924.524                       -14%
+                       2007                                        946.965*                        -4%
+                       2008                                        969.298*                        2%
+                       2009                                       1.032.242*                       6%
+                       2010                                       1.078.852*                       5%
+                       2011                                        957.191*                       -11%
+                       2012                                         906.437                        -5%
+                       2013                                         848.243                        -6%
+                       2014                                         851.894                        0%
+                       2015                                         825.373                        -3%
+                       2016                                         826.777                        0%
+                       2017                                         827.776                        0%
+                       2018                                         769.551                        -7%
+                       2019                                         743.650                        -3%
+                       2020                                         678.483                        -9%
+                       2021                                         681.023                        0%
+                       2022                                    1.568.915 *                     130%
+
+                               Tabla F.1: Número de licencias de caza en los últimos 20 años
+
+
+    *: A fecha de elaboración del Avance no hay disponibilidad del número de licencias interautonómicas de caza
+
+
+             F.1.2. Número de licencias expedidas y vigentes y valor económico
+
+                                                                          CAZA
+                     TOTAL 2022
+                                                        Expedidas                     Vigentes
+                     nº de licencias                    1.568.915 *                  1.684.922 *
+                     Valor económico (€)                15.940.065                   10.482.414
+
+                                 Tabla F.2: Licencias de caza expedidas y vigentes en 2022
+
+
+    *: A fecha de elaboración del Avance no hay disponibilidad del número de licencias interautonómicas de caza
+
+
+
+
+                                                             30
+                      AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+          F.1.3. Licencias expedidas por comunidad autónoma
+
+                                     Comunidades                   Licencias
+                                     Autónomas                 autonómicas (Nº)
+                                     Andalucía                          129.714
+                                     Aragón                              30.093
+                                     Canarias                               172
+                                     Cantabria                             9.901
+                                     Castilla La Mancha                  94.784
+                                     Castilla y León                     85.429
+                                     Cataluña                            34.201
+                                     Ceuta y Melilla                   1.000.200
+                                     Comunidad de
+                                                                           9.718
+                                     Madrid
+                                     Comunidad Foral de
+                                                                         19.246
+                                     Navarra
+                                     Comunidad
+                                                                         34.274
+                                     Valenciana
+                                     Extremadura                         23.599
+                                     Galicia                             34.708
+                                     Islas Baleares                      10.616
+                                     La Rioja                              5.237
+                                     País Vasco                          31.383
+                                     Principado de
+                                                                           6.024
+                                     Asturias
+                                     Región de Murcia                      9.616
+                                     ESPAÑA                           1.568.915*
+
+                          Tabla F.3: Licencias expedidas por comunidad autónoma en 2022
+
+
+*: A fecha de elaboración del Avance no hay disponibilidad del número de licencias interautonómicas de caza
+
+
+    F.2. Capturas de especies cinegéticas
+
+                                                                                                             Valor
+                            Número de            Peso medio
+Especie                                                          Peso total (kg)   Precio medio         económico
+                              capturas               (kg/ud)
+                                                                                                               (€)
+Caza mayor
+Arruí                             2.059                31,07             63.980               …                    …
+Cabra asilvestrada                7.157                   …                  …                …                    …
+Cabra Montés                     11.452                 7,71             88.319            61,71              706.669
+Ciervo                          131.219                25,75          3.378.340            56,78          7.450.615
+Corzo                            88.481                 3,47            307.099            11,03              976.222
+Gamo                             31.542                15,54            490.136            26,73              843.059
+Jabalí                          450.150                12,34          5.556.728            22,19          9.986.983
+Lobo                                 …
+Muflón                           17.235                10,28            177.150            28,74              495.388
+Rebeco                            2.149                 4,43              9.510               …                    …
+Total caza mayor                741.444                              10.071.262                          20.458.936
+Caza Menor de
+Mamíferos
+Conejo                        5.766.125                 0,32          1.819.838             0,09          9.221.334
+Liebre                          248.085                 0,58            144.402             0,43              528.128
+Zorro                           172.120                 1,50            257.324               …               105.702
+
+
+
+                                                          31
+                       AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+                                                                                                             Valor
+                           Número de         Peso medio
+Especie                                                        Peso total (kg)   Precio medio           económico
+                             capturas            (kg/ud)
+                                                                                                               (€)
+Total caza menor de
+                            6.186.330                                2.221.564                           9.855.164
+mamíferos
+Caza Menor de Aves
+Acuáticas y anátidas          175.210                 0,15             26.029              4,58            802.318
+Avefría                          4.554                0,04                162              0,39              1.776
+Becada                        111.707                 0,03              3.284              1,16            129.727
+Codorniz                      684.345                 0,02             12.486              0,30            203.627
+Córvidos                      290.795                 0,29             85.235              0,55            158.612
+Estornino                     184.175                 0,00                545              0,26             48.482
+Faisán                         47.548                 0,42             20.088              0,58             27.650
+Paloma                      3.349.969                 0,13            433.965              0,83          2.795.448
+Caza Menor de Aves
+Perdiz                      2.205.825                 0,18            388.118              3,20          7.053.858
+Tórtola común                  16.625                 0,04                599              0,01               160
+Otras especies de
+                               70.958                 0,25             17.777              0,37             26.376
+caza volátil
+Zorzal                      5.041.910                 0,01             69.470              0,47          2.373.336
+Total caza menor de
+                           12.183.621                                1.057.758                          13.621.369
+aves
+TOTAL                      19.111.395                               13.350.585                          43.935.469
+
+                  Tabla F.4: Capturas de especies cinegéticas, junto con el peso y valor asociado
+
+
+    F.3. Sueltas de especies cinegéticas
+Comunidad                                                          Caza Menor        Caza Menor
+                           Procedencia          Caza Mayor                                              Total 2022
+Autónoma                                                            Mamíferos              Aves
+                                   Otras                751            38.341             267.303          306.395
+Andalucía
+                          Administración                  …                 …                   …               …
+
+                                   Otras                488             4.970              13.968           19.426
+Aragón
+                          Administración                  …                 …                   …               …
+
+                                   Otras                  …                 …                   …               …
+Canarias
+                          Administración                  …                 …                   …               …
+
+                                   Otras                  …                 …                   …               …
+Cantabria
+                          Administración                  …                 …                   …               …
+
+Castilla-La                        Otras                598               270           2.323.389        2.324.257
+Mancha                    Administración                110                 …                   …             110
+                                   Otras                  …                 …                   …               …
+Castilla y León
+                          Administración                  …                 …                   …               …
+
+                                   Otras                  …                 …                   …               …
+Cataluña
+                          Administración                  …            15.397             157.717          173.114
+                                   Otras                  …             7.423             312.300          319.723
+Comunidad de
+Madrid                    Administración                  …                 …                   …               …
+
+Comunidad Foral                    Otras …                     …                 …                  …
+de Navarra                Administración …                     …                 …                  …
+
+Comunidad                          Otras                  18            1.100              54.136           55.254
+Valenciana                Administración                  …                 …                   …               …
+
+                                   Otras                  …                 …                   …               …
+Extremadura
+                          Administración                  …                 …                   …               …
+
+
+                                                       32
+                       AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+Comunidad                                                         Caza Menor          Caza Menor
+                             Procedencia          Caza Mayor                                            Total 2022
+Autónoma                                                           Mamíferos                Aves
+                                      Otras                …            75.780                71.689         147.469
+Galicia
+                           Administración                  …                …                     …               …
+
+                                      Otras                …             1.137               131.659         132.796
+Islas Baleares
+                           Administración                  …               125                                  125
+                                      Otras                …                …                     …               …
+La Rioja
+                           Administración                  …                …                     …               …
+
+                                      Otras                …               500                15.000              …
+Murcia
+                           Administración                  …                …                     …               …
+
+                                      Otras                …                …                 15.345          15.345
+País Vasco
+                           Administración                  …               100                  490             590
+
+Principado de                         Otras                                                   12.150          12.150
+Asturias                   Administración                  …                …                     …               …
+                                      Otras                …                …                     …               …
+Ceuta y Melilla
+                           Administración                  …                …                     …               …
+
+       Tabla F.5: Sueltas de especies cinegéticas, por comunidad autónoma, procedencia y modalidad de caza
+
+
+* Valor estimado repitiendo el dato de capturas de caza menor de aves en 2021
+
+
+    F.4. Producción de granjas cinegéticas para repoblación
+                                                                                Número de
+                           Especie
+                                                                                individuos
+                           Caza mayor
+                           Ciervo                                                    1.254
+                           Jabalí                                                     467
+                           Muflón                                                     149
+                           Gamo                                                        71
+                           Caza menor de mamíferos
+                           Conejo                                                   34.758
+                           Liebre                                                     185
+                           Caza menor de aves
+                           Codorniz                                                 17.535
+                           Faisán                                                    7.539
+                           Perdiz                                                1.730.410
+                           Paloma                                                  323.297
+                           Acuáticas y anátidas                                      1.190
+                           Total                                                 2.116.855
+
+           Tabla F.6: Producción de granjas cinegéticas para repoblación por modalidad de caza por especie
+
+
+
+
+                                                        33
+               AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+F.5. Terrenos cinegéticos
+                                                                                               Comunidad
+ Categoría del terreno                                  Nº     Superficie (ha)
+                                                                                                autónoma
+                                                                                  Andalucía, Aragón, Asturias,
+                                                                                     Baleares, C. Valenciana,
+ RESERVA DE CAZA                                       150           1.647.870      Cantabria, Castilla y León,
+                                                                                   Cataluña, Extremadura, La
+                                                                                                 Rioja, Madrid
+                                                                                       Asturias, Extremadura,
+ COTO REGIONAL                                         50             661.075                          Navarra
+                                                                                  Aragón, Castilla-La Mancha,
+ COTO SOCIAL                                           779           2.525.715    Extremadura, La Rioja, País
+                                                                                                         Vasco
+                                                                                      Andalucía, Baleares, C.
+                                                                                        Valenciana, Cataluña,
+ ZONA DE CAZA CONTROLADA                               118            398.235          Extremadura, La Rioja,
+                                                                                          Madrid, País Vasco
+
+ TOTAL OFERTA PÚBLICA
+                                                                                      Aragón, Galicia, La Rioja,
+ COTO LOCAL / COTO MUNICIPAL                           686           2.528.938                          Navarra
+                                                                                  Andalucía, Aragón, Asturias,
+                                                                                 Baleares, Cantabria, Castilla y
+                                                                                     León, Castilla-La Mancha,
+ COTO PRIVADO DE CAZA                             26.259           27.653.841          Cataluña, Extremadura,
+                                                                                      Galicia, La Rioja, Madrid,
+                                                                                  Murcia, Navarra, País Vasco
+                                                                                         Andalucía, Aragón, C.
+ COTO DEPORTIVO                                    2.493             6.685.599       Valenciana, Cantabria, La
+                                                                                                   Rioja, Murcia
+                                                                                  Andalucía, Aragón, Baleares,
+                                                                                    C. Valenciana, Castilla La-
+ COTO INTENSIVO DE CAZA                                764            530.548           Mancha, Extremadura,
+                                                                                      Galicia, La Rioja, Madrid,
+                                                                                  Murcia, Navarra, País Vasco
+
+ TOTAL OFERTA PRIVADA
+                                                                                        Asturias, Extremadura,
+ REFUGIO DE CAZA / FAUNA                               35               40.855             Murcia, País Vasco
+
+ TERRENOS NO CINEGÉTICOS
+                                                                                     Asturias, Extremadura, La
+ (incluye: Vedados de Caza, Zonas de                   22               34.131                          Rioja,
+ Seguridad y Terrenos cercados)
+ TOTAL                                            31.356           42.706.807
+
+           Tabla F.7: Número y superficie de terrenos cinegéticos por tipo de terreno en 2022
+
+
+
+
+                                                  34
+                           AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                                                                                                                           G
+Estadística Anual Pesca Fluvial
+
+
+
+    G. ESTADÍSTICA ANUAL DE PESCA FLUVIAL
+
+         G.1. Licencias de pesca fluvial
+
+              G.1.1. Serie histórica de licencias expedidas de pesca fluvial
+
+                                                      Número de licencias
+                        Año                                                      Variación interanual
+                                                                de pesca
+                        2002                                       724.800                       -12%
+                        2003                                       667.655                        -8%
+                        2004                                            …                           …
+                        2005                                       699.078                         5%
+                        2006                                       512.378                       -27%
+                        2007                                       668.685                        31%
+                        2008                                       751.937                        12%
+                        2009                                       849.102                        13%
+                        2010                                       836.767                        -1%
+                        2011                                       758.018                        -9%
+                        2012                                       874.802                        15%
+                        2013                                       631.643                       -28%
+                        2014                                       641.819                         2%
+                        2015                                       578.244                       -10%
+                        2016                                       572.495                        -1%
+                        2017                                       532.805                        -7%
+                        2018                                       490.868                        -8%
+                        2019                                       465.632                        -5%
+                        2020                                       453.014                        -3%
+                        2021                                       417.218                        -8%
+                        2022                                      398.872*                        -4%
+
+                               Tabla G.1: Número de licencias de pesca en los últimos 20 años
+
+
+    *: A fecha de elaboración del Avance no hay disponibilidad del número de licencias interautonómicas de pesca fluvial
+
+
+
+
+              G.1.2. Número de licencias expedidas y vigentes y valor económico
+
+                                                                          PESCA
+                        TOTAL 2022
+                                                             Expedidas                       Vigentes
+                        nº de licencias                        398.872*                       283.743*
+                        Valor
+                                                              4.815.441                     2.338.947
+                        económico (€)
+
+                                 Tabla G.2: Licencias expedidas y vigentes de pesca en 2022
+
+
+    *: A fecha de elaboración del Avance no hay disponibilidad del número de licencias interautonómicas de pesca fluvial
+
+
+
+
+                                                             35
+                       AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+          G.1.3. Licencias expedidas por comunidad autónoma
+
+                                   Comunidades                          Licencias
+                                   Autónomas                      autonómicas (nº)
+                                   Andalucía                               25.779
+                                   Aragón                                    39.727
+                                   Canarias                                        0
+                                   Cantabria                                  5.633
+                                   Castilla-La Mancha                        77.162
+                                   Castilla y León                           74.696
+                                   Cataluña                                  54.829
+                                   Comunidad de Madrid                        8.464
+                                   Comunidad Foral de
+                                                                             14.805
+                                   Navarra
+                                   Comunidad Valenciana                      13.770
+                                   Extremadura                               21.713
+                                   Galicia                                   31.006
+                                   Islas Baleares                               948
+                                   La Rioja                                   5.166
+                                   País Vasco                                13.483
+                                   Principado de Asturias                     8.789
+                                   Región de Murcia                           2.902
+                                   ESPAÑA                                  398.872*
+
+                          Tabla G.3: Licencias expedidas por comunidad autónoma en 2022
+
+
+*: A fecha de elaboración del Avance no hay disponibilidad del número de licencias interautonómicas de pesca fluvial
+
+
+     G.2. Capturas de especies piscícolas
+
+                           Especie                                               Capturas
+                           Cangrejos sin especificar                                       0
+                           Salmón                                                        493
+                           Trucha común                                            440.946
+                           Carpa                                                        6.569
+                           Trucha arco-iris                                        147.020
+                           Anguila                                                         0
+                           Barbo                                                         388
+                           Black-bass                                                    225
+                           Lucio                                                         181
+                           Otros                                                        2.640
+                           Cangrejo de rio americano                                10.451
+                           Ciprínidos sin especificar                               29.044
+                           Cangrejo señal                                          112.392
+                           Trucha sin especificar                                       5.296
+                           Total                                                   755.645
+
+                                   Tabla G.4: Capturas de especies piscícolas en 2022
+
+
+
+
+                                                            36
+                    AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+G.3. Sueltas de especies piscícolas
+
+ Especie                             Administración        Otras procedencias Total nº de ejemplares
+ Anguila                                        39.468                    4173                   43.641
+ Barbo                                          26.076                       9                   26.085
+ Cangrejo autóctono                             38.193                      …                    38.193
+ Ciprínidos (varias                                                         …
+                                                31.266                                           31.266
+ especies)
+ Salmón                                       1.010.879                     …                  1.010.879
+ Tenca                                        1.203.833                     …                  1.203.833
+ Trucha arco-iris                               16.040                 245.939                  261.979
+ Trucha común                                 2.568.958                 29.129                 2.598.087
+ Huevos y alevines de
+                                               480.000                      …                   480.000
+ trucha común
+ Otras especies                               1.898.627                     31                 1.898.658
+ TOTAL                                        7.313.340                279.281                 7.592.621
+
+                    Tabla G.5: Sueltas por especie y procedencia en número de ejemplares
+
+
+                             Piscifactorías    propias     Otras procedencias
+ Comunidad Autónoma                                                                        TOTAL (nº)
+                             (nº)                                         (nº)
+ Andalucía                                      43.410                     …                     43.410
+ Aragón                                       2.194.451                 33.209                 2.227.660
+ Canarias                                            …                      …                         …
+ Cantabria                                     405.978                      …                   405.978
+ Castilla - La Mancha                           67.121                 187.507                  254.628
+ Castilla y León                                    …                       …                        …
+ Cataluña                                      553.537                      …                   553.537
+ Comunidad de Madrid                                …                   22.000                   22.000
+ Comunidad Foral de                                                         …
+                                                85.602                                           85.602
+ Navarra
+ Comunidad Valenciana                           47.575                      …                    47.575
+ Extremadura                                  1.303.675                 25.550                 1.329.225
+ Galicia                                       388.800                      …                   388.800
+ Islas Baleares                                     …                       …                        …
+ La Rioja                                       54.500                  25.000                   79.500
+ País Vasco                                     82.718                  10.479                   93.197
+ Principado de Asturias                       2.085.973                     …                  2.085.973
+ Región de Murcia                                    …                  20.000                   20.000
+ ESPAÑA                                       7.313.340                323.745                 7.637.085
+
+             Tabla G.6: Sueltas por comunidad autónoma y procedencia en número de ejemplares
+
+
+
+
+                                                      37
+                 AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+G.4. Masas de aprovechamiento piscícola
+ Tipo de masa de
+ aprovechamiento                           Número       Longitud tramo (km)             Superficie (ha)
+ piscícola
+ Cotos Deportivos /
+                                               163                      1.803                    14.753
+ Escenarios Deportivos
+ Cotos Intensivos                                68                     6.998                       342
+ Cotos Salmoneros                              147                         …                         66
+ Cotos Trucheros                               401                        709                     2.620
+ Otros Cotos                                   973                   169.092                      1.777
+ Régimen Especial en
+                                               122                        127                     8.304
+ Embalses
+ Tramos / Cotos de                                                                                   …
+                                                 10                       166
+ Cangrejo
+ Tramos en Aguas de                                                                                  …
+                                                 43                        63
+ Alta Montaña
+ Tramos de Pesca sin
+                                               504                      5.651                     8.502
+ Muerte
+ Aguas Libres para la
+                                            83.380                     32.116                   110.988
+ Pesca
+ Refugios de Pesca                             155                        164                        …
+
+ Vedados                                      1650                      6.386                     4.775
+ TOTAL                                      87.616                     51.103                   152.127
+
+ Tabla G.7: Número, longitud de tramo y superficie por tipo de masa de aprovechamiento piscícola en 2022
+
+
+
+
+                                                  38
+                             AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+
+
+                                                                                                                            H
+Balance de la Madera
+
+
+
+    H. BALANCE DE LA MADERA
+
+        H.1. Producción nacional y comercio exterior
+
+                                                                        Importaciones              Exportaciones
+                                                    Extracciones
+                 Productos               Unidad           y                       Valor                      Valor
+                                                     Producción     Cantidad    (miles de     Cantidad     (miles de
+                                                                                 euros)                     euros)
+    LEÑAS                               1000 m3            4.861          64         7.106         153         14.863
+    MADERA EN ROLLO
+    INDUSTRIAL (TROZAS PARA
+                                        1000 m3           15.032       1.026       92.604        2.265        162.728
+    TRITURACIÓN, ASERRÍO Y
+    CHAPA)
+    Coníferas                           1000 m3            9.069         514       36.262        1.285         73.045
+    Frondosas                           1000 m3            5.963         512       56.342          980         89.683
+    CARBÓN VEGETAL                      1000 m3                97         56       32.521           84         26.722
+    ASTILLAS Y PARTÍCULAS               1000 m3            2.755         226       35.499          237         13.706
+    RESIDUOS DE MADERA (incluye                                …
+                                        1000 m3                           72         1.736         151             9.119
+    madera para aglomerados)
+    MADERA RECUPERADA                   1000 m3                …          52         1.316          77             6.630
+    PELETS Y OTROS
+                                        1000 m3            1.047         193       45.723          377        109.148
+    AGLOMERADOS
+    MADERA ASERRADA                     1000 m3            3.308       1.341      470.960          196        104.316
+    Coníferas                           1000 m3            3.006       1.166      336.635          143         63.245
+    Frondosas                           1000 m3              302         175      134.325           53         41.071
+    HOJAS DE CHAPA                      1000 m3                40        127      189.074           45        120.450
+    TABLEROS DE MADERA                  1000 m3            4.712       1.255      600.708        2.086      1.152.321
+    Tableros contrachapados             1000 m3              482         132      116.525          301        396.250
+    Tableros de partículas, incluidos
+                                        1000 m3            2.800         661      236.492          812        294.021
+    OSB
+    Tableros de fibras                  1000 m3            1.430         462      247.691          972        462.050
+    PASTA DE PAPEL (DE MADERA)            1000 t           1.120       1.176    1.003.488          775        476.289
+    Mecánicas y semiquímicas              1000t              103          30       18.885           29         16.161
+    Químicas                              1000t            1.017       1.126      958.280          745        458.576
+    Solubles                              1000t                 0         20       26.323            1             1.552
+    OTROS TIPOS DE PASTA                  1000 t           4.451           9       13.824           19         36.272
+    Pastas de otras fibras                1000 t                0          7       13.044           19         36.214
+    Pasta de fibra recuperada             1000 t           4.451           2            780          0                 57
+    PAPEL RECUPERADO                      1000 t           4.347       1.490      269.102          778        164.952
+    PAPEL Y CARTÓN                        1000 t           6.355       2.997    3.191.097        2.291      2.876.777
+    Papel con fines gráficos              1000t              747         880    1.006.625          825      1.005.684
+    Papel doméstico y sanitario           1000t              849          52       96.034          102        178.540
+    Material para empaquetar              1000t            4.281       1.936    1.942.404        1.314      1.432.647
+    Otros papeles y cartones              1000t              478         128      146.034           50        259.905
+
+    Tabla H.1: Producción nacional y comercio exterior de los grandes grupos de productos procedentes de la madera en
+                                                            2022
+
+
+
+                                                          39
+            AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+H.2. Balance de la madera
+
+
+
+
+                      Gráfico H.1: Balance de la madera 2022
+
+
+                                       40
+                                AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+
+I.     Índice de tablas
+Tabla A.1: Superficie forestal arbolada y desarbolada por comunidad autónoma ........................................ 3
+Tabla A.2: Existencias en millones de pies y de m3 cc por clase diamétrica y comunidad autónoma .......... 4
+Tabla A.3: Evolución de las existencias entre los dos últimos inventarios de cada comunidad autónoma ... 6
+Tabla A.4: Existencias en metros cúbicos, crecimientos y volumen de leñas por comunidad autónoma. .... 7
+Tabla A.5: Existencias en volumen con corteza de las especies principales ................................................ 8
+Tabla A.6: Superficie arbolada por tipo de vegetación principal ................................................................... 8
+Tabla A.7: Superficie de las principales formaciones arboladas ................................................................... 9
+Tabla A.8: Descripción de las agrupaciones arboladas empleadas ............................................................ 10
+Tabla B.1: Serie histórica de repoblaciones forestales ............................................................................... 11
+Tabla B.2: Superficie repoblada por comunidad autónoma en 2022 .......................................................... 12
+Tabla C.1: Superficie forestal ordenada por comunidad ............................................................................. 14
+Tabla C.2: Superficie forestal ordenada por comunidad autónoma según titularidad ................................. 15
+Tabla C.3: Superficie certificada por comunidad autónoma y sistema de certificación ............................... 16
+Tabla C.4: Certificados de cadena de custodia emitidos por comunidad autónoma y sistema de
+certificación ................................................................................................................................................. 16
+Tabla C.5: Número de certificados CdC PEFC y de instalaciones con certificado CdC PEFC por categoría
+de instalación .............................................................................................................................................. 16
+Tabla C.6: Número de titulares con certificado CdC FSC por tipo de producto .......................................... 17
+Tabla C.7: Superficie protegida por figura de protección ............................................................................ 17
+Tabla C.8: Superficie forestal protegida por RN2000, ENP y/o ambos por comunidad autónoma ............. 18
+Tabla C.9: Superficie forestal protegida por RN2000, ENP y/o ambos ....................................................... 18
+Tabla C.10: Superficie forestal protegida total por comunidad autónoma ................................................... 19
+Tabla C.11: Porcentaje de superficie protegida forestal por cada tipo de protección ................................. 20
+Tabla D.1: Serie histórica de cortas de madera y valor económico asociado ............................................. 21
+Tabla D.2: Cortas de coníferas, frondosas y totales por comunidad autónoma .......................................... 23
+Tabla D.3: Cortas por tipo de propiedad en 2022 ....................................................................................... 23
+Tabla D.4: Cortas de especies de coníferas en 2022 ................................................................................. 24
+Tabla D.5: Cortas por especies de frondosas en 2022 ............................................................................... 25
+Tabla D.6: Serie histórica de aprovechamienos de leñas y valor económico asociado .............................. 25
+Tabla D.7: Leñas de coníferas, frondosas y totales por comunidad autónoma .......................................... 26
+Tabla D.8: Leñas por tipo de propiedad en 2022 ........................................................................................ 27
+Tabla D.9: Leñas por especie en 2022 ....................................................................................................... 27
+Tabla E.1: Serie histórica de producción de otros productos forestales no madereros .............................. 28
+Tabla E.2: Producción de otros productos forestales por comunidad autónoma y tipo de propiedad en
+2022 ............................................................................................................................................................ 29
+Tabla F.1: Número de licencias de caza en los últimos 20 años ................................................................ 30
+Tabla F.2: Licencias de caza expedidas y vigentes en 2022 ...................................................................... 30
+Tabla F.3: Licencias expedidas por comunidad autónoma en 2022 ........................................................... 31
+Tabla F.4: Capturas de especies cinegéticas, junto con el peso y valor asociado ..................................... 32
+Tabla F.5: Sueltas de especies cinegéticas, por comunidad autónoma, procedencia y modalidad de caza
+.................................................................................................................................................................... 33
+Tabla F.6: Producción de granjas cinegéticas para repoblación por modalidad de caza y especie ........... 33
+Tabla F.7: Número y superficie de terrenos cinegéticos por tipo de terreno en 2022 ................................. 34
+Tabla G.1: Número de licencias de pesca en los últimos 20 años .............................................................. 35
+Tabla G.2: Licencias expedidas y vigentes de pesca en 2022 ................................................................... 35
+Tabla G.3: Licencias expedidas por comunidad autónoma en 2022........................................................... 36
+Tabla G.4: Capturas de especies piscícolas en 2022 ................................................................................. 36
+Tabla G.5: Sueltas por especie y procedencia en número de ejemplares .................................................. 37
+Tabla G.6: Sueltas por comunidad autónoma y procedencia en número de ejemplares ............................ 37
+Tabla G.7: Número, longitud de tramo y superficie por tipo de masa de aprovechamiento piscícola en
+2022 ............................................................................................................................................................ 38
+Tabla H.1: Producción nacional y comercio exterior de los grandes grupos de productos procedentes de la
+madera en 2022 .......................................................................................................................................... 39
+
+
+
+
+                                                                                 41
+                                AVANCE DE ESTADÍSTICA FORESTAL 2022
+
+J.     Índice de gráficos
+
+Gráfico A.1: Porcentaje de superficie arbolada y desarbolada respecto de la superficie autonómica total .. 4
+Gráfico A.2: Distribución de volumen (m3 cc) por clase diamétrica............................................................... 5
+Gráfico A.3: Distribución del número de pies mayores (nº) por clase diamétrica .......................................... 5
+Gráfico A.4: Comparación de existencias en volumen maderable con corteza ............................................ 6
+Gráfico A.5: Comparación de existencias en número de pies mayores ........................................................ 7
+Gráfico B.1: Superficies repobladas por tipo de repoblación en los últimos 20 años .................................. 12
+Gráfico B.2: Superficie repoblada total por comunidad autónoma en el año 2022 ..................................... 13
+Gráfico C.1: Porcentaje de la superficie forestal ordenada en cada comunidad autónoma en 2022 .......... 15
+Gráfico C.2: Porcentaje de superficie forestal protegida (arbolada y desarbolada) por comuidad autónoma
+.................................................................................................................................................................... 18
+Gráfico C.3: Porcentaje de superficie forestal protegida por RN2000 y ENP ............................................. 19
+Gráfico D.1: Serie histórica de cortas de madera ....................................................................................... 22
+ráfico D.2: Cortas por tipo de propiedad en 2022 ....................................................................................... 24
+Gráfico D.3: Serie histórica de aprovechamiento de leñas ......................................................................... 26
+Gráfico H.1: Balance de la madera 2022 .................................................................................................... 40
+
+
+
+
+                                                                                 42
+

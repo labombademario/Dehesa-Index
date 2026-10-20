@@ -1,0 +1,2233 @@
+                   ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+INDICE
+
+A. INVENTARIO FORESTAL NACIONAL. MAPA FORESTAL DE ESPAÑA. ............................. 3
+     A.1.       Superficie forestal total .................................................................................................. 3
+     A.2.       Distribución de las existencias por clases diamétricas ................................................. 5
+     A.3.       Existencias .................................................................................................................... 6
+B.      ESTADÍSTICA ANUAL DE PROYECTOS Y ACTUACIONES FORESTALES..................... 9
+     B.1.       Serie histórica de repoblaciones forestales .................................................................. 9
+     B.2.       Repoblaciones forestales ............................................................................................ 10
+     B.3.       Repoblaciones forestales por tipo de propiedad ......................................................... 11
+C.      GESTIÓN FORESTAL SOSTENIBLE................................................................................. 12
+     C.1.       Superficie forestal sujeta a instrumentos de ordenación ............................................ 12
+     C.2.       Certificación forestal .................................................................................................... 14
+     C.3.       Espacios naturales protegidos y Red Natura 2000 ..................................................... 15
+D.      CORTAS DE MADERA Y APROVECHAMIENTO DE LEÑAS ........................................... 19
+     D.1.       Cortas de madera ........................................................................................................ 19
+     D.2.       Extracción de leñas ..................................................................................................... 23
+E.      OTROS APROVECHAMIENTOS FORESTALES ............................................................... 27
+     E.1.   Producción de otros productos forestales no madereros por CC.AA. y tipo de
+     propiedad................................................................................................................................. 27
+F.      ESTADÍSTICA ANUAL DE CAZA ....................................................................................... 28
+     F.1.       Licencias de caza ........................................................................................................ 28
+     F.2.       Capturas de especies cinegéticas ............................................................................... 29
+     F.3.       Sueltas de especies cinegéticas ................................................................................. 30
+     F.4.       Producción de granjas cinegéticas para repoblación .................................................. 31
+     F.5.       Terrenos cinegéticos ................................................................................................... 31
+G.      ESTADÍSTICA ANUAL DE PESCA FLUVIAL ..................................................................... 32
+     G.1.       Licencias de pesca fluvial ............................................................................................ 32
+     G.2.       Capturas de especies piscícolas ................................................................................. 33
+     G.3.       Sueltas de especies piscícolas ................................................................................... 33
+     G.4.       Masas de aprovechamiento piscícola ......................................................................... 34
+H.      BALANCE DE LA MADERA ................................................................................................ 35
+     H.1.       Producción nacional y comercio exterior .................................................................... 35
+I.      Índice de tablas ................................................................................................................... 40
+J.      Índice de gráficos ................................................................................................................ 42
+
+
+
+
+                                                                        1
+           ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+Datos
+Estadística Forestal 2024
+
+
+La elaboración del Anuario de Estadística Forestal sigue un proceso de recogida de
+datos facilitados por las comunidades autónomas a través de la plataforma PIENSA y
+otras fuentes y posterior análisis y depuración. El documento de Avance de la
+Estadística Forestal española presenta los primeros resultados con el objetivo de acortar
+este proceso y poner a disposición una primera colección de datos antes de la
+publicación del Anuario de Estadística Forestal de cada año.
+Estos resultados son, principalmente, fruto del esfuerzo conjunto de las comunidades
+autónomas que recogen los datos y los facilitan al Ministerio de Transición Ecológica y
+Lucha contra la Desertificación como Unidad responsable de las operaciones
+estadísticas forestales nacionales en el marco del Plan Estadístico Nacional (PEN).
+
+
+Simbología:
+       - Valores en cursiva: Valores estimados
+       - “…”: No hay datos disponibles
+       - “0”: Valor cero confirmado.
+
+
+
+
+Para consultas o ampliar la información:
+estadisticasforestales@miteco.es
+
+
+Versión junio de 2026
+
+
+
+
+                                           2
+            ANUARIONacional
+Inventario Forestal DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                                                         A
+Mapa forestal de España
+
+
+
+
+          A. INVENTARIO FORESTAL NACIONAL. MAPA FORESTAL DE ESPAÑA.
+
+          A.1. Superficie forestal total
+                                                                                                          % de superficie
+                                    Superficie               Superficie                                          forestal
+                                                                                   Total Superficie
+                                 Forestal arbolada            Forestal                                          respecto
+      CC.AA.                                                                          Forestal
+                                       (ha)               desarbolada (ha)                                     superficie
+                                                                                         (ha)
+                                    FCC≥10%                  FCC<10%                                         autonómica
+                                                                                                                    total
+      Andalucía                             2.998.420               1.471.671              4.470.091                 51%
+      Aragón                                1.677.465               1.034.911              2.712.376                    57%
+      Canarias                                137.472                  440.513               577.984                    78%
+      Cantabria                               211.282                  152.918               364.200                    69%
+      Castilla - La Mancha                  2.976.210                  830.435             3.806.646                    48%
+      Castilla y León                       3.285.882               1.846.141              5.132.023                    54%
+      Cataluña                              1.580.510                  416.391             1.996.901                    62%
+      Ciudad de Ceuta                              677                     433                  1.110                   56%
+      Ciudad de Melilla                            107                     259                    365                   27%
+      Comunidad de
+                                              267.437                  165.943               433.380                    54%
+      Madrid
+      Comunidad Foral de
+                                              436.025                  156.566               592.590                    57%
+      Navarra
+      Comunidad
+                                              883.650                  437.846             1.321.496                    57%
+      Valenciana
+      Extremadura                           1.983.960                  865.489             2.849.449                    68%
+      Galicia                               1.472.758                  551.640             2.024.398                    68%
+      Islas Baleares                          186.662                   34.596               221.257                    44%
+      La Rioja                                179.538                  129.327               308.865                    61%
+      País Vasco                              396.908                   92.453               489.361                    68%
+      Principado de
+                                              457.252                  312.054               769.306                    72%
+      Asturias
+      Región de Murcia                        311.074                  197.169               508.243                    45%
+      TOTAL                               19.443.287               9.136.834*           28.580.121*                     56%
+                          Tabla A.1: Superficie forestal arbolada y desarbolada por comunidad autónoma
+
+     Nota: Mapa Forestal de España con base en la Foto Fija 2023.
+
+     Nota: * En el dato de superficie forestal desarbolada se incorpora al total la superficie forestal desarbolada de los terrenos no
+     asociados a ninguna autonomía (77,78 ha).
+
+
+
+
+                                                                       3
+        ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+Gráfico A.1: Porcentaje de superficie arbolada y desarbolada respecto de la superficie autonómica total
+
+
+
+
+                                                  4
+                          ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+      A.2. Distribución de las existencias por clases diamétricas
+
+ CC.AA                                           Millones      C.D. (cm):        10         20       30           40        50     60    >=70
+                                                 Nº pies                     418,07     147,39     56,27     22,01         8,64   2,69    2,38
+ Andalucía
+                                                 m c.c.
+                                                   3                           12,92     20,75      17,3     11,04         6,36   2,71    3,89
+                                                 Nº pies                      644,43    206,36     68,58     16,33         3,53   0,75    0,58
+ Aragón
+                                                 m3 c.c.                       21,29     36,27     30,08      13,6         4,86   1,36    1,74
+                                                 Nº pies                       51,79     13,26      6,32       2,5         1,02   0,45    0,52
+ Canarias
+                                                 m3 c.c.                        2,09      2,69      3,38      2,55         1,69   1,07    2,52
+                                                 Nº pies                       98,87     26,61      8,84      3,56         1,68   0,65    0,76
+ Cantabria
+                                                 m3 c.c.                        7,21      6,55      4,59      3,23         2,38   1,25    2,36
+ Castilla - La                                   Nº pies                       823,4    199,56     80,69     24,13         6,14   1,54    0,95
+ Mancha                                          m3 c.c.                       22,02     32,28     34,08     18,97         7,13   2,34    2,02
+                                                 Nº pies                    1.055,47    282,78    115,13     42,53        13,91   4,65    4,64
+ Castilla y León
+                                                 m3 c.c.                       37,66     52,79        56      37,3        18,18   7,12   10,18
+                                                 Nº pies                      810,51     245,2     80,23     18,43         3,86      1    0,58
+ Cataluña
+                                                 m3 c.c.                       44,52     46,08     35,59     15,48          5,6   2,12    2,09
+                                                 Nº pies                       64,06     19,48      7,89      2,82         1,04   0,34    0,31
+ C. de Madrid
+                                                 m3 c.c.                        2,94      3,62      3,37       2,2         1,22   0,52    0,73
+                                                 Nº pies                      156,09     61,18     27,24      9,95          3,4   1,19     1,3
+ C. Foral de Navarra
+                                                 m3 c.c.                        9,19     13,68      14,8     10,01         5,47    2,6    4,49
+                                                 Nº pies                      231,22     73,69     25,52      5,94          1,1   0,22    0,09
+ C. Valenciana
+                                                 m3 c.c.                        7,26     11,77      9,63      4,18          1,2   0,35    0,22
+                                                 Nº pies                      187,81     56,61     30,54     16,22          7,8   2,83    3,11
+ Extremadura
+                                                 m3 c.c.                        9,04      8,15      8,66      6,47         4,22   2,05    3,71
+                                                 Nº pies                      583,56    197,05     71,83     26,32         9,46   2,84    2,87
+ Galicia
+                                                 m3 c.c.                       38,96     49,72     42,56     28,19        16,15   6,79   10,54
+                                                 Nº pies                       42,95     14,56      6,62      2,08         0,76   0,22    0,18
+ Islas Baleares
+                                                 m3 c.c.                        1,82        2,2     2,25      1,32         0,73    0,3    0,34
+                                                 Nº pies                       88,54     29,64      9,93      2,83         0,81   0,25    0,21
+ La Rioja
+                                                 m3 c.c.                        4,68        6,1     5,14      2,74         1,15   0,46    0,58
+                                                 Nº pies                      152,95     55,35     25,34     10,63         4,22   1,44    1,02
+ País Vasco
+                                                 m3 c.c.                        6,29     12,72     15,64     12,78          8,3   3,87    3,02
+                                                 Nº pies                      218,14     69,62     22,54      8,02         3,03   1,21    1,97
+ Principado de Asturias
+                                                 m3 c.c.                       15,46     15,98     10,98      6,84         3,98   2,11    5,63
+                                                 Nº pies                       59,03     24,47      6,23       1,1         0,19   0,02    0,01
+ Región de Murcia
+                                                 m3 c.c.                          2,9     3,55      1,86      0,58         0,17   0,03    0,03
+                                                 Nº pies                       5.687     1.723       650       215           71     22      21
+ TOTAL
+                                                 m3 c.c.                         246       325       296       177           89     37      54
+            Tabla A.2: Existencias en millones de pies y de m3 cc por clase diamétrica y comunidad autónoma
+
+Nota: Se sombrea en negrita la comunidad autónoma sin cifras del IFN4.
+
+
+
+                                                  Volumen (m3 c.c.) por clase diamétrica
+                                    35
+
+                                    30
+
+                                    25
+                 Millones m3 c.c.
+
+
+
+
+                                    20
+
+                                    15
+
+                                    10
+
+                                    5
+
+                                    0
+                                           10          20          30             40        50         60          >=70
+                                                                    Clase diamétrica (cm)
+
+                                         Gráfico A.2: Distribución de volumen (m3 cc) por clase diamétrica (cm)
+
+
+
+
+                                                                             5
+                        ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+                                                Nº pies mayores por clase diamétrica
+                                  60
+
+                                  50
+               Millones nº pies
+                                  40
+
+                                  30
+
+                                  20
+
+                                  10
+
+                                   0
+                                           10          20              30            40            50            60          >=70
+                                                                       Clase diamétrica (cm)
+
+                                  Gráfico A.3: Distribución del número de pies mayores (nº) por clase diamétrica (cm)
+
+
+    A.3. Existencias
+
+                                         ÚLTIMO INVENTARIO REALIZADO:                         INVENTARIO INMEDIATAMENTE ANTERIOR:
+                                                   IFN4 - IFN3                                              IFN3 - IFN2
+CC.AA.
+                                          Volumen                                                       Volumen                       Cantidad de
+                    Año                                 Cantidad de          Cantidad de    Año                        Cantidad de
+                                         maderable                                                      maderable                        pies
+                    IFN                                pies mayores         pies menores    IFN                       pies mayores
+                                           (m3 c.c.)                                                     (m3 c.c.)                     menores
+Andalucía           2008                 74.970.838     657.441.659          767.908.378    1996         40.794.501    402.855.610     513.480.154
+
+Aragón              2023                109.193.464     940.564.198         1.259.436.536   2005         74.338.313    734.991.219    1.352.197.973
+
+Canarias            2018                 16.002.891      75.856.672          117.423.579    2002         13.543.532     63.241.562     119.908.071
+
+Cantabria           2010                 27.573.875     140.966.346          202.684.831    2000         25.206.929    139.995.412     183.575.264
+Castilla-La
+                    2021                118.837.964    1.136.408.441        1.609.221.849   2004         83.734.225    858.701.263    1.539.020.381
+Mancha
+Castilla y
+                    2020                219.237.182    1.519.116.079        1.837.732.156   2004        153.771.658   1.210.642.112   1.987.334.660
+León
+Cataluña            2015                151.492.338    1.159.818.109        1.535.144.475   2001        118.157.125   1.035.407.888   1.638.995.489
+
+C. de Madrid        2013                 14.599.980      95.935.719          108.775.257    2000         10.895.345     83.508.240     115.452.507
+
+C. Foral de
+                    2008                 60.242.643     260.349.299          286.061.312    1999         54.651.039    266.606.811     441.259.193
+Navarra
+C.
+                    2022                 34.612.845     337.778.334          593.708.496    2006         20.065.059    231.693.591     425.079.613
+Valenciana
+Extremadura         2017                 42.296.292     304.911.433          417.176.649    2002         33.255.502    246.854.913     345.455.952
+
+Galicia             2009                192.914.042     893.924.503          878.980.922    1998        133.092.754    688.061.951     937.470.406
+Islas
+                    2010                  8.971.487      67.371.747          122.469.948    1999          7.525.457     62.796.997     103.509.384
+Baleares
+La Rioja            2012                 20.850.856     132.211.918          131.612.501    1999         15.516.950    117.714.161     124.166.834
+
+País Vasco          2011                 62.607.092     250.941.110          323.788.388    2005         54.816.506    226.980.023     323.524.187
+P. de
+                    2010                 60.972.283     324.540.532          419.008.752    1998         47.300.541    262.047.945     385.021.574
+Asturias
+Región de
+                    2010                  9.116.196      91.048.093           90.154.504    1999          6.919.544     84.597.294      87.127.120
+Murcia
+          Tabla A.3: Evolución de las existencias entre los dos últimos inventarios de cada comunidad autónoma
+
+
+
+
+                                                                                6
+ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+  Gráfico A.4: Comparación de existencias en volumen maderable con corteza
+
+
+
+
+     Gráfico A.5: Comparación de existencias en número de pies mayores
+
+
+
+
+                                     7
+                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+        COMUNIDAD               V c.c. maderable        V.s.c. maderable     Crecimiento anual m3         Volumen de leñas
+        AUTÓNOMA                      m3 c.c.                 m3 s.c.                c.c.                      m c.c.
+                                                                                                                3
+
+
+
+   Andalucía                       74.970.838                  57.473.948                3.074.753               16.337.100
+   Aragón                         109.193.464                 84.596.698                    2.900.708                9.292.587
+   Canarias                         16.002.891                12.516.962                     338.357                 1.274.759
+   Cantabria                        27.573.875                23.033.678                    1.215.315                2.316.610
+   Castilla - La Mancha           118.837.964                 86.029.821                    3.250.369               13.171.744
+   Castilla y León                219.237.182                167.149.152                    8.077.369               22.306.821
+   Cataluña                       151.492.338                116.208.935                    3.960.932               12.656.595
+   Comunidad de Madrid              14.599.980                11.494.587                     471.599                 1.533.565
+   Comunidad Foral de
+                                    60.242.643                51.866.801                    1.487.511                4.857.333
+   Navarra
+   Comunidad Valenciana             34.612.845                25.815.935                    1.179.197                3.326.250
+   Extremadura                      42.296.292                32.815.999                    1.037.680               13.524.159
+   Galicia                        192.914.042                149.659.403                  13.056.945                12.667.299
+   Islas Baleares                     8.971.487                7.234.441                     222.464                 1.087.005
+   La Rioja                         20.850.856                17.098.078                     735.568                 1.683.972
+   País Vasco                       62.607.092                51.739.388                    3.423.351                4.379.680
+   Principado de Asturias           60.972.283                51.153.529                    2.809.981                5.761.497
+   Región de Murcia                   9.116.196                6.464.076                     237.129                  795.206
+   ESPAÑA                       1.224.492.268                952.351.431                  47.479.228            126.972.182
+                 Tabla A.4: Existencias en metros cúbicos y volumen de leñas por comunidad autónoma
+
+Nota: Se sombrea en negrita la comunidad autónoma sin cifras del IFN4
+Nota: El Inventario Forestal Nacional incluye en existencias aquellos árboles cuyo diametro a la altura del pecho es
+mayor o igual de 7,5 cm. Esto es diferente en otros reportes europeos o internacionales.
+
+
+                                                                                               % respecto al
+                                                                            Existencias
+                                         Especie forestal                                         total de
+                                                                              m3 c.c.
+                                                                                                existencias
+                      Pinus sylvestris                                       186.621.343                  15%
+                      Pinus pinaster                                         167.636.535                 14%
+                      Pinus halepensis                                        93.333.256                  8%
+                      Pinus nigra                                             98.309.011                  8%
+                      Quercus ilex                                            88.565.718                  7%
+                      Fagus sylvatica                                         80.911.676                  7%
+                      Eucalyptus globulus                                     79.724.090                  7%
+                      Quercus pyrenaica                                       58.071.584                  5%
+                      Pinus radiata                                           54.750.960                  5%
+                      Quercus robur y Quercus petraea                         49.060.448                  4%
+                      Castanea sativa                                         30.603.712                  3%
+                      Pinus pinea                                             28.113.743                  2%
+                      Resto de especies                                      194.242.406                 16%
+                      TOTAL                                                 1.209.944.482               100%
+                          Tabla A.5: Existencias en volumen con corteza de las especies principales
+
+
+
+
+                                                                 8
+Estadística ANUARIO
+            Anual deDE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+                                                                                                                             B
+Proyectos y Actuaciones
+Forestales
+
+        B. ESTADÍSTICA ANUAL DE PROYECTOS Y ACTUACIONES FORESTALES
+
+             B.1. Serie histórica de repoblaciones forestales
+
+                    Forestación            Repoblaciones protectoras (ha)                   Repoblaciones productoras (ha)
+                      tierras
+ Año                                     1ª              2ª                               1ª                  2ª
+                     agrícolas                                              TOTAL                                        TOTAL
+                        (ha)         Repoblación     Repoblación                      Repoblación         Repoblación
+
+ 2001                       37.230          24.948           3.202          28.150           13.591               732        14.323
+ 2002                       21.739          32.685           5.248          37.933           16.211             1.665        17.876
+ 2005                       20.682          14.919           9.918          24.837                2.040         2.474         4.514
+ 2006                       22.077          16.520          22.635          39.155                2.302         9.098        11.400
+ 2007                       16.966           7.160          17.204          24.364                8.862         3.816        12.678
+ 2008                       16.087          10.391          13.614          24.005                2.492         1.088         3.580
+ 2009                       13.623           6.469          10.739          17.208                 768          1.330         2.098
+ 2010                       11.338           4.488           2.552            7.040                284          1.885         2.169
+ 2011                       10.787           4.938           2.612            7.550               1.545         1.514         3.059
+ 2012                        9.277           2.083           1.229            3.312                519          2.219         2.738
+ 2013                        3.728           4.002           1.208            5.210               2.810         1.761         4.571
+ 2014                          252           1.486             864            2.350               5.414         1.492         6.906
+ 2015                          140             622           2.243            2.865               4.506         1.339         5.845
+ 2016                           53           1.194           1.265            2.459               2.801         1.409         4.210
+ 2017                        1.839             477           1.700            2.177               2.888         5.172         8.060
+ 2018                          856             776           2.986            3.762               1.817         3.741         5.558
+ 2019                        2.859             940           2.374            3.314               2.676         4.629         7.305
+ 2020                        2.678           1.291           8.004            9.296               3.481         4.320         7.801
+ 2021                        2.913           1.035           3.568            4.604               3.945         4.314         8.259
+ 2022                        1.668             676           3.164            3.839               2.263         3.900         6.163
+ 2023                        1.880           1.947           3.617            5.564               3.949         2.366         6.315
+ 2024                        1.814           2.641           3.953           6.916*               4.111           670        6.576*
+                                         Tabla B.1: Serie histórica de repoblaciones forestales
+
+        Nota 1: No se incluye la superficie de reposición de marras.
+
+        Nota: * Incluye datos agregados de Pais Vasco debido a que no se dispone del desglose de esta autonomía según 1ª y
+        2ª repoblación. Por este motivo, el sumatorio del desglose no coincide con el total.
+
+
+
+
+                                                                     9
+                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                  Gráfico B.1: Superficies repobladas por tipo de repoblación en los últimos 20 años
+
+
+    B.2. Repoblaciones forestales
+                                                                                              TOTAL
+                                                        Forestación                                     Reposición
+                       Protectora     Productora                         (productoras +protectoras
+CC.AA.                                                       Tierras                                     de marras
+                             (ha)           (ha)                           +forestación t. agrícolas)
+                                                       Agrarias (ha)                                          (ha)
+                                                                                                 (ha)
+Andalucía                      417              …                 …                               417           …
+Aragón                          61              …                 …                               61            …
+
+Canarias                        29              …                 …                               29            …
+
+Cantabria                       …             115                 …                              115            …
+Castilla-La                                                       …                                             …
+                                 2              …                                                  2
+Mancha
+Castilla y León              2.037            490              1.708                           4.235         3.587
+Cataluña                        …               28                …                               28            …
+Comunidad de                                                      …
+                                66              …                                                 66           22
+Madrid
+Comunidad Foral                                                   …                                             …
+                                 2            105                                                107
+de Navarra
+Comunidad                                       …                 …                                             …
+                               166                                                               166
+Valenciana
+Extremadura                  2.039              …                 …                            2.039          554
+Galicia                         …            1.483                …                            1.483            …
+Islas Baleares                  …               …                 …                               …             …
+
+La Rioja                       331              20               106                             456          128
+País Vasco                     321           1.794                …                            2.115            …
+Principado de                                                     …
+                             1.443           2.542                                             3.984          194
+Asturias
+Región de Murcia                 3              …                 …                                3            …
+ESPAÑA                       6.916           6.576             1.814                          15.306         4.485
+                          Tabla B.2: Superficie repoblada por comunidad autónoma en 2024
+
+
+
+
+                                                         10
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+    B.3. Repoblaciones forestales por tipo de propiedad
+                                                                                                 Forestación de
+                                                                                                                       Total
+                                           Protectora (ha)              Productora (ha)          tierras agrarias
+                                                                                                                       2024
+            Propiedad                                                                                  (ha)
+                                      1ª Rep.   2ª Rep. Total        1ª Rep. 2ª Rep.   Total     1ª Rep.   Total       (ha)
+
+CC.AA. o Estado. MUP                       92      238        331        …        …         …         …       …           331
+
+CC.AA. o Estado. No MUP                    29         2         31       …        …         …         …       …                31
+
+Entidades Locales. MUP                    599    2.593       3.193       23      161      185         …       …          3.377
+
+Entidades Locales. Con consorcio           83       80        163        …        …         …         …       …           163
+
+Entidades Locales. Sin consorcio           74       13          87       33      440      473       106      106          666
+
+Pública sin especificar                   247      170       486*        …        …        89*        …       …           575*
+
+SUBTOTAL PÚBLICA                        1.124    3.097    4.291*         56      602      747*      106      106         5.144
+
+Privada: sin consorcio                  1.268      854       2.122      138       20      158       388      388         2.667
+
+Privada: con consorcio                      6         3          9       …        …         …         …       …                9
+Montes Vecinales en Mano
+                                          140        …        140        …        …         …         …       …           140
+Común
+Privada sin especificar                   102        …       354*     3.917       49   5.671*     1.320    1.320        7.346*
+
+SUBTOTAL PRIVADA                        1.517      856    2.625*      4.055       69   5.829*     1.708    1.708       10.162*
+
+TOTAL REPOBLADO                         2.641    3.953    6.916*      4.111      670   6.576*     1.814    1.814       15.306*
+                          Tabla B.3: Superficie repoblada por tipo de propiedad en el año 2024
+
+Nota: * Los datos de País Vasco están añadidos a los totales de repoblaciones protectoras y productoras ya que no se
+dispone de desglose en 1ª y 2ª repoblación. Por este motivo, el sumatorio del desglose no coincide con el total.
+
+
+
+
+                                                          11
+                  ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                                    C
+Gestión Forestal Sostenible
+
+
+
+
+    C. GESTIÓN FORESTAL SOSTENIBLE
+
+        C.1. Superficie forestal sujeta a instrumentos de ordenación
+
+                                        Superficie forestal
+                                                                % Sup. ordenada respecto      Superficie forestal
+    COMUNIDAD AUTÓNOMA                     ordenada
+                                                                    del total forestal            total (ha)
+                                               (ha)
+    Andalucía                                       1.282.442                         28,7%             4.470.091
+    Aragón                                           308.737                          11,4%             2.712.376
+    Canarias                                            8.829                          1,5%               577.984
+    Cantabria                                          59.818                         16,4%               364.200
+    Castilla-La Mancha                              1.358.147                         35,7%             3.806.646
+    Castilla y León                                 1.067.094                         20,8%             5.132.023
+    Cataluña                                        1.699.932                         85,1%             1.996.901
+    Comunidad de Madrid                                41.004                          9,5%               433.380
+    Comunidad Foral de Navarra                       352.026                          59,4%               592.590
+    Comunidad Valenciana                             240.419                          18,2%             1.321.496
+    Extremadura                                      440.064                          15,4%             2.849.449
+    Galicia                                          478.452                          23,6%             2.024.398
+    Islas Baleares                                     24.385                         11,0%               221.257
+    La Rioja                                           85.179                         27,6%               308.865
+    País Vasco                                       114.660                          23,4%               489.361
+    Principado de Asturias                           214.042                          27,8%               769.306
+    Región de Murcia                                 176.299                          34,7%               508.243
+    ESPAÑA                                          7.951.529                         27,8%            28.578.566
+                         Tabla C.1: Superficie forestal ordenada por comunidad autónoma en 2024
+
+
+
+
+                                                          12
+               ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                        Superficie pública      Superficie privada
+    COMUNIDAD AUTÓNOMA                                                                             Total
+                                          ordenada (ha)           ordenada (ha)
+ Andalucía                                           768.351                 514.091                       1.282.442
+ Aragón                                              308.737                       ...                      308.737
+ Canarias                                              8.829                        ...                       8.829
+ Cantabria                                            56.465                    3.353                        59.818
+ Castilla-La Mancha                                  775.029                  583.118                      1.358.147
+ Castilla y León                                     881.748                  185.346                      1.067.094
+ Cataluña                                             96.598                1.603.334                      1.699.932
+ Comunidad de Madrid                                  14.434                   26.570                        41.004
+ Comunidad Foral de Navarra                          332.021                   20.005                       352.026
+ Comunidad Valenciana                                138.195                  102.224                       240.419
+ Extremadura                                         102.771                  337.293                       440.064
+ Galicia                                              21.307                  457.145                       478.452
+ Islas Baleares                                        1.621                   22.764                        24.385
+ La Rioja                                             84.852                      327                        85.179
+ País Vasco                                           55.282                   59.378                       114.660
+ Principado de Asturias                              155.628                   58.414                       214.042
+ Región de Murcia                                    155.909                   20.390                       176.299
+ ESPAÑA                                            3.957.776               3.993.753*                      7.951.529
+                   Tabla C.2: Superficie forestal ordenada por comunidad autónoma según titularidad
+
+Nota: * Los datos de 2024 de superficie ordenada de Aragón no está disponible el desglose por tipo de propiedad, se
+asignan el total a superficie pública como en años anteriores.
+
+
+
+
+Gráfico C.1: Porcentaje de la superficie forestal ordenada respecto de la superficie forestal total en cada comunidad
+                                                   autónoma en 2024
+
+
+
+
+                                                         13
+                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+    C.2. Certificación forestal
+
+     C.2.1.       Certificación forestal en el año 2024
+
+                                       SUPERFICIE CERTIFICADA                  SUPERFICIE CERTIFICADA
+      COMUNIDAD AUTÓNOMA                         FSC                                    PEFC
+                                     ha arboladas % sup arbolada           ha arboladas   % sup arbolada
+     Andalucía                             164.876                 5,5%        236.388                   7,9%
+     Aragón                                   2.228                0,1%        159.738                   9,5%
+     Canarias                               17.031                 12,4%             0                     0%
+     Cantabria                                2.777                1,3%         53.105                  25,1%
+     Castilla-La Mancha                    216.101                 7,3%         51.956                   1,7%
+     Castilla y León                        58.159                 1,8%        837.954                  25,5%
+     Cataluña                                     0                  0%        278.516                  17,6%
+     Comunidad de Madrid                          0                  0%          1.807                   0,7%
+     Comunidad Foral de Navarra             30.210                 6,9%        326.137                  74,8%
+     Comunidad Valenciana                     1.372                0,2%          1.216                   0,1%
+     Extremadura                              9.236                0,5%        108.958                   5,5%
+     Galicia                               254.620                 17,3%       482.996                  32,8%
+     Islas Baleares                               0                  0%              0                     0%
+     La Rioja                                  293                 0,2%         72.848                  40,6%
+     País Vasco                               5.379                1,4%        113.672                  28,6%
+     Principado de Asturias                 22.298                 4,9%         55.423                  12,1%
+     Región de Murcia                             0                  0%         30.020                   9,7%
+     ESPAÑA                                784.581                   4%       2.810.734                 14,5%
+                 Tabla C.3: Superficie certificada por comunidad autónoma y sistema de certificación
+
+Nota: Las superficies certificadas por PEFC y FSC no son sumables ya que no hay datos de las superficies que tienen
+doble certificación. Por tanto no se puede dar un total de superfice certificada en España.
+
+                                                FSC                                    PEFC
+     COMUNIDAD AUTÓNOMA                 Nº de titulares con                                Nº de instalaciones
+                                                                    Nº de certificados de
+                                     certificado de Cadena de                               con certificado de
+                                                                    Cadena de Custodia
+                                              Custodia                                     Cadena de Custodia
+    Andalucía                                               106                         80                  112
+    Aragón                                                    32                      32                     47
+    Canarias                                                   5                          3                   6
+    Cantabria                                                 18                      20                     25
+    Castilla-La Mancha                                        77                      53                     70
+    Castilla y León                                           48                      65                   125
+    Cataluña                                               451                       220                   292
+    Comunidad de Madrid                                    217                       120                   169
+    Comunidad Foral de Navarra                                38                      48                     71
+    Comunidad Valenciana                                   296                       107                   141
+    Extremadura                                               13                          8                  13
+    Galicia                                                234                       222                   457
+    Islas Baleares                                             7                          2                   5
+    La Rioja                                                  19                      21                     29
+    País Vasco                                                70                      62                   144
+    Principado de Asturias                                    28                      18                     52
+    Región de Murcia                                          39                      24                     42
+    Certificaciones pluriCC.AA.                               0*                      35                      0
+    TOTAL                                                1.698                     1.140                  1.800
+    Tabla C.4: Certificados de Cadena de Custodia emitidos por comunidad autónoma y sistema de certificación
+
+Nota: * El sistema FSC no contempla las certificaciones que afectan a varias comunidades autónomas (pluriCC.AA.).
+
+
+
+
+                                                         14
+                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+                                                                                 PEFC
+                                                                                                       Nº Instalaciones
+ Caracterización Instalaciones certificadas        Nº de certificados de Cadena de Custodia
+                                                                                                       con certificado
+Madera y construcción                                                  423                                    578
+Aserraderos y rematantes                                               244                                    570
+Gráficas                                                               212                                    268
+Pasta y papel                                                          132                                    199
+Almacenistas                                                            70                                     88
+Astillas, pellets y energía                                             39                                     75
+Tejido no tejido                                                        7                                       7
+Productos no madereros                                                  4                                       5
+Corcho                                                                  3                                       3
+Resinas                                                                 6                                       7
+TOTAL                                                                 1.140                                  1.800
+Tabla C.5: Número de certificados Cadena de Custodia PEFC y de instalaciones con certificado Cadena de Custodia
+                                       PEFC por categoría de instalación
+
+                                                                                               FSC
+Producto                                                                     Nº de titulares con certificado Cadena
+                                                                                           de Custodia
+Artes gráficas, materiales impresos y papelería                                                 181
+Pulpa, papel y cartón                                                                           501
+Tableros y otros productos procesados de madera                                                 147
+Envases y embalajes                                                                             337
+Aprovechamientos forestales, madera en rollo y biomasa                                          171
+Productos de madera para mobiliario y/o construcción                                            270
+Carbón de leña y otros productos de madera                                                      11
+Otros productos forestales                                                                      66
+Corcho y productos derivados                                                                    14
+TOTAL                                                                                        1.698
+              Tabla C.6: Número de titulares con certificado Cadena de Custodia FSC por tipo de producto
+
+
+    C.3. Espacios naturales protegidos y Red Natura 2000
+
+     C.3.1.        Superficie protegida total
+
+                                                                                                        Porcentaje de la
+                                                                             Porcentaje de la
+                                      Superficie                                                     superficie terrestre
+                                                   Superficie total      superficie terrestre
+Figura de protección                   terrestre                                                     protegida respecto
+                                                    protegida (ha)       protegida respecto
+                                  protegida (ha)                                                       del total terrestre
+                                                                      del total protegido (%)
+                                                                                                                       (%)
+Superficie protegida
+ENP                                    8.455.781        13.745.802                        62%                        17%
+Red Natura 2000                    13.870.813       31.922.651                            43%                        27%
+Superficie protegida (ENP /
+                                   14.227.005       36.456.122                            39%                        28%
+RN2000)
+Áreas protegidas por otros instrumentos internacionales
+MAB (Reservas de la
+                                    6.700.138         7.670.736                           87%                        13%
+Biosfera)
+RAMSAR (Humedales de
+                                      283.856           316.605                           90%                         1%
+Importancia internacional)
+ZEPIM (Zonas Especialmente
+Protegidas de Importancia para         51.941         4.798.442                            1%                         0%
+el Mediterráneo)
+Geoparques                          2.532.666         2.755.788                           92%                         5%
+SUPERFICIE PROTEGIDA
+                                   18.681.438       41.211.280                            45%                        37%
+TOTAL
+                               Tabla C.7: Superficie protegida por figura de protección
+
+
+
+
+                                                         15
+                 ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+      C.3.2.       Superficie forestal protegida
+
+                                  Superficie forestal protegida por Red Natura 2000, ENP y/o ambos
+     Comunidad Autónoma                                                       Total forestal      % Forestal
+                                      Arbolado ha       Desarbolado ha
+                                                                              protegido ha         protegido
+     Andalucía                            1.653.742              632.835          2.286.577             51%
+     Aragón                                 708.876               387.121            1.095.997                   40%
+     Canarias                               112.744               237.450                350.194                 61%
+     Cantabria                               61.171                67.069                128.240                 35%
+     Castilla y León                      1.050.512               708.466            1.758.978                   34%
+     Castilla - La Mancha                 1.265.326               284.047            1.549.373                   41%
+     Cataluña                               654.873               237.085                891.959                 45%
+     Comunidad de Madrid                    167.120                64.246                231.366                 53%
+     C. Foral de Navarra                    163.672                66.982                230.654                 39%
+     Comunidad Valenciana                   538.015               220.139                758.154                 57%
+     Extremadura                            638.653               353.248                991.900                 35%
+     Galicia                                139.597               174.207                313.804                 16%
+     Islas Baleares                          85.748                30.038                115.786                 52%
+     La Rioja                               113.823                59.829                173.652                 56%
+     País Vasco                             117.150                40.387                157.537                 32%
+     Principado de Asturias                 134.186               136.708                270.894                 35%
+     Región de Murcia                       154.740                65.269                220.008                 43%
+     Ciudad de Ceuta                             449                  113                   562                  51%
+     Ciudad de Melilla                            28                     17                  45                  12%
+     TOTAL                                7.760.424             3.765.254*         11.525.678*                   40%
+           Tabla C.8: Superficie forestal protegida por RN2000, ENP y/o ambos por comunidad autónoma
+
+Nota: *En el dato de superficie forestal protegida desarbolada se incorpora la superficie forestal protegida perteneciente
+a la AGE (16 ha).
+
+
+                  Forestal arbolado             Forestal desarbolado               Sin protección
+
+                Andalucía
+                   Aragón
+                 Canarias
+                Cantabria
+          Castilla y León
+    Castilla - La Mancha
+                 Cataluña
+        Ciudad de Ceuta
+       Ciudad de Melilla
+ Comunidad de Madrid
+     C. Foral de Navarra
+ Comunidad Valenciana
+            Extremadura
+                   Galicia
+           Islas Baleares
+                  La Rioja
+               País Vasco
+ Principado de Asturias
+      Región de Murcia
+                    TOTAL
+                              0    10      20      30      40       50        60    70      80      90     100
+                                                        % superficie protegida
+
+
+    Gráfico C.2: Porcentaje de superficie forestal protegida (arbolada y desarbolada) por comunidad autónoma
+
+
+
+
+                                                           16
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+Superficies         RN2000 (exclusivamente)               ENP (exclusivamente)                TOTAL PROTEGIDO
+forestales
+(ha)                            ha             %                   ha             %                  ha              %
+Monte
+                      3.010.098                15           204.994                  1        7.760.424              40
+arbolado
+Monte
+                      1.239.622                14            91.382                  1        3.765.254              41
+desarbolado
+Total forestal        4.249.720                15           296.376                  1       11.525.678              40
+                          Tabla C.9: Superficie forestal protegida por RN2000, ENP y/o ambos
+
+
+                                      Monte arbolado             Monte desarbolado          Total forestal
+
+                           45
+                           40
+                           35
+                           30
+                           25
+                      %
+
+
+
+
+                           20
+                           15
+                           10
+                           5
+                           0
+                          RN2000 (exclusivamente)                ENP (exclusivamente)         RN2000 y ENP (ambos)
+
+                 Gráfico C.3: Porcentaje de superficie forestal protegida por RN2000, ENP y/o ambos
+
+
+    C.3.3.         Porcentaje de superficie forestal protegida por RN2000 y ENP
+
+                                                    Superficie forestal protegida (ha)
+         Comunidad
+         Autónoma                           ENP y/o Protegido, resto         Total forestal          % Forestal
+                                          Red Natura        de figuras          protegido             protegido
+         Andalucía                         2.286.577           237.652           2.524.229                 56%
+         Aragón                             1.095.997                256.307             1.352.304           50%
+         Canarias                             350.194                147.694              497.887            86%
+         Cantabria                            128.240                       …             128.240            35%
+         Castilla y León                    1.758.978                396.768             2.155.745           42%
+         Castilla - La Mancha               1.549.373                263.740             1.813.113           48%
+         Cataluña                             891.959                250.604             1.142.562           57%
+         Comunidad de Madrid                  231.366                   23.098            254.464            59%
+         C. Foral de Navarra                  230.654                   24.739            255.393            43%
+         Comunidad
+                                              758.154                   21.408            779.562            59%
+         Valenciana
+         Extremadura                          991.900                333.988             1.325.888           47%
+         Galicia                              313.804                570.902              884.706            44%
+         Islas Baleares                       115.786                   17.606            133.392            60%
+         La Rioja                             173.652                   78.591            252.242            82%
+         País Vasco                           157.537                    4.210            161.746            33%
+         Principado de Asturias               270.894                   38.372            309.266            40%
+         Región de Murcia                     220.008                      34             220.042            43%
+         Ciudad de Ceuta                      270.898                   38.391            309.289            51%
+         Ciudad de Melilla                          562                     …                 562            12%
+         AGE                                         …                     16                  16            20%
+         TOTAL                             11.525.678              2.665.728         14.191.405              50%
+                      Tabla C.10: Superficie forestal protegida total por comunidad autónoma
+
+
+
+
+                                                            17
+         ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+C.3.4.    Relevancia de la parte forestal en la superficie terrestre protegida
+
+                                                                         Total protegido
+                            Red Natura 2000                   ENP
+           Uso forestal                                                         terrestre
+                                 % forestal              % forestal
+                                                                              % forestal
+           Arbolado                      52%                   58%                  55%
+           Desarbolado                   21%                   26%                  26%
+           Total forestal                74%                   83%                  81%
+                   Tabla C.11: Porcentaje de superficie protegida que es forestal
+
+
+
+
+                                                18
+                   ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+Cortas de Madera y
+
+Aprovechamiento de Leña
+
+
+    D. CORTAS DE MADERA Y APROVECHAMIENTO DE LEÑAS
+                                                                                                                                 D
+         D.1. Cortas de madera
+
+          D.1.1.      Serie histórica de cortas de madera
+
+                          CORTAS DE MADERA (volumen en autorizaciones y comunicaciones)
+                                                              Sin                                                Valor en
+                          Coníferas       Frondosas                             TOTAL          Variación
+                                                          clasificar**                                          cargadero
+           AÑO            (miles de      (miles de m3                        (miles de m3      interanual
+                                                           (miles de                                            (miles de
+                           m3 c.c.)          c.c.)                               c.c.)             (%)
+                                                            m3 c.c.)                                              euros)
+           2001                 6.148             5.407          2.546              14.101            0,1%        623.529
+           2002                 5.525             5.382          3.806              14.713            4,3%        666.321
+           2003                 6.631             5.582          3.396              15.609            6,1%        750.391
+           2004                 6.037             5.409          3.353              14.799           -5,2%        718.811
+           2005                 7.804             5.578          2.466              15.848            7,1%        675.407 *
+           2006                 8.270             5.260          3.523              17.053            7,6%        722.461 *
+           2007                 7.406             5.408          1.281              14.095          -17,3%        630.518 *
+           2008                 6.501             5.788          4.761              17.050           21,0%        733.350 *
+           2009                 5.318             5.038          3.754              14.110          -17,2%        583.954 *
+           2010                 6.164             5.788          1.288              13.239           -6,2%        531.847 *
+           2011                 7.115             6.978                  -          14.093            6,4%        547.905 *
+           2012                 7.598             6.521                  -          14.119            0,2%        530.275 *
+           2013                 8.378             6.681                  -          15.060            6,7%        538.156 *
+           2014                 8.779             6.982                  -          15.762            4,7%        604.847 *
+           2015                 9.218             7.411                  -          16.630            5,5%        644.718 *
+           2016                 8.135             8.713                  -          16.848            1,3%        649.216 *
+           2017                 9.589             8.091                  -          17.680            4,9%        735.604 *
+           2018                10.644             9.104                  -          19.747           11,7%        852.825 *
+           2019                 9.902             8.085                  -          17.987           -8,9%        672.906 *
+           2020                 8.392             7.545                  -          15.937          -11,4%        588.422 *
+           2021                10.194             7.824                  -          18.018           13,1%        751.901
+           2022                11.666             8.661                  -          20.327           12,8%      1.036.023
+           2023                 9.072             7.679                  -          16.751          -17,6%        886.841
+           2024                10.131             7.235                  -          17.366            3,7%        863.930
+                          Tabla D.1: Serie histórica de cortas de madera y valor económico asociado
+
+    Nota: Los datos se refieren a las autorizaciones y comunicaciones de cortas (metros cúbicos con corteza) registradas
+    cada año y reportadas por las comunidades autónomas.
+
+    Nota: * Valor en cargadero estimado.
+
+
+    Nota: ** Madera sin clasificar: aquella que, aunque no haya sido recogida y reportada por las CC.AA., se estima que se
+    ha producido a partir de los datos de uso industrial. Se incluye en los datos de cortas totales. No se incluye el desglose
+    en coníferas y frondosas de la madera sin clasificar por mayor agilidad en la presentación de los datos.
+
+
+
+
+                                                               19
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                     Gráfico D.1: Serie histórica de cortas de madera
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de cortas (metros cúbicos con corteza) registradas
+cada año y reportadas por las comunidades autónomas.
+
+
+     D.1.2.      Cortas de madera en 2024
+
+            COMUNIDAD                           CONÍFERAS           FRONDOSAS                    TOTAL
+            AUTÓNOMA                                (m3 cc)             (m3 cc)         (m3 con corteza)
+            Andalucía                                167.868              106.066                273.934
+            Aragón                                   227.735                  650                228.385
+            Canarias                                    5.914                  60                   5.974
+            Cantabria                                  87.466             405.363                492.829
+            Castilla-La Mancha                       404.610               20.686                425.296
+            Castilla y León                         1.896.747             283.009              2.179.756
+            Cataluña                                 752.664               75.250                827.914
+            Comunidad de Madrid                        37.100                 609                  37.710
+            Comunidad Foral de
+                                                     197.796              119.211                317.007
+            Navarra
+            Comunidad Valenciana                       42.645                 853                  43.498
+            Extremadura                              121.373               65.026                186.398
+            Galicia                                 3.793.056           5.205.504              8.998.560
+            Islas Baleares                              2.035                  …                    2.035
+            La Rioja                                 139.461               46.065                185.526
+            País Vasco                              1.652.754             247.556              1.900.310
+            Principado de Asturias                   601.927              655.069              1.256.997
+            Región de Murcia                               …                3.925                   3.925
+            ESPAÑA                                10.131.153            7.234.901             17.366.054
+                      Tabla D.2: Cortas de coníferas, frondosas y totales por comunidad autónoma
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de cortas (metros cúbicos con corteza) registradas
+cada año y reportadas por las comunidades autónomas.
+
+
+
+
+                                                           20
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+     D.1.3.      Cortas de madera por propiedad del territorio
+
+                                            CONÍFERAS                   FRONDOSAS                       TOTAL
+                                                   3                        3                       3
+                                                 m c.c.        %          m c.c.         %        m c.c.           %
+PROPIEDAD PÚBLICA
+Montes de Utilidad Pública de las
+                                                311.373        3%          21.037     0,3%       332.410          2%
+CC.AA. o del Estado
+CC.AA. o del Estado no de Utilidad
+                                                  3.300    0,0%                 494   0,0%          3.794       0,0%
+Pública
+Montes de Utilidad Pública de las
+                                              1.813.116     18%          251.380        3%     2.064.495         12%
+Entidades Locales
+De las Entidades Locales.
+                                                218.528        2%           4.557     0,1%       223.086          1%
+Consorciados o conveniados
+Entidades Locales de libre
+                                                 78.818        1%          61.259     0,8%       140.077          1%
+disposición
+Pública sin especificar                         394.973    3,9%          137.673      1,9%       532.646        3,1%
+TOTAL PÚBLICA                                 2.820.108     28%          476.400        7%     3.296.508         19%
+PROPIEDAD PRIVADA
+Privada. Consorciados o
+                                                 38.772    0,4%             2.586     0,0%        41.358        0,2%
+conveniados
+Privada. No consorciados                      5.344.972     53%         6.102.878      84%    11.447.849         66%
+Montes Vecinales en Mano
+                                              1.002.421     10%          243.733        3%     1.246.154          7%
+Común
+Privada sin especificar                         924.879        9%        409.305        6%     1.334.184          8%
+TOTAL PRIVADA                                 7.311.044     72%         6.758.501      93%    14.069.546         81%
+TOTAL                                        10.131.153                 7.234.901             17.366.054
+                                  Tabla D.3: Cortas por tipo de propiedad en 2024
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de cortas (metros cúbicos con corteza) registradas
+cada año y reportadas por las comunidades autónomas.
+
+
+
+
+                                 Gráfico D.2: Cortas por tipo de propiedad en 2024
+
+
+
+
+                                                          21
+                 ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+      D.1.4.        Cortas de madera por especie
+
+                                                                   Volumen cortado       Porcentaje respecto
+Cortas de madera por especie
+                                                                          (m3 c.c.)             del total (%)
+CONÍFERAS              Pinus radiata                                     3.885.208                      22%
+58%                    Pinus pinaster                                     3.189.686                     18%
+                       Pinus sylvestris                                   1.390.907                      8%
+                       Pinus nigra                                         582.516                       3%
+                       Pinus halepensis                                    267.928                       2%
+                       Pinus pinea                                         222.405                       1%
+                       Otros pinos                                         160.002                       1%
+                       Otras coníferas alóctonas                           162.694                       1%
+                       (Chamaecyparis, Larix, Picea,
+                       Pseudotsuga, etc.)
+                       Otras coníferas                                     269.806                       2%
+FRONDOSAS              Eucalyptus spp.                                    6.412.712                     37%
+42%
+                       Populus spp.                                        354.872                       2%
+                       Fagus sylvatica                                     121.426                       1%
+                       Castanea sativa                                       84.102                     0,5%
+                       Quercus robur                                         11.336                     0,1%
+                       Otros Quercus                                        20.105                      0,1%
+                       Otras frondosas alóctonas                           114.661                        1%
+                       Resto de frondosas                                    16.794                     0,1%
+TOTAL (CONÍFERAS + FRONDOSAS)                                            17.366.054                    100%
+                                       Tabla D.4: Cortas de madera por especie en 2024
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de cortas (metros cúbicos con corteza) registradas
+cada año y reportadas por las comunidades autónomas.
+
+
+      D.1.5.        Destino y precios estimados de las cortas de madera
+
+                                               Propiedad                  TOTAL             Precio CC.AA. €/m3 cc
+ ESPECIE
+                                            Pública           Privada      m3 cc         En pie       En cargadero
+ Pinus radiata                              282.418         3.602.790      3.885.208      27,3             56,9
+ Pinus pinaster                             980.688         2.208.999      3.189.686      22,9             47,4
+ Pinus sylvestris                           875.301          515.606       1.390.907      35,1             59,8
+ Pinus nigra                                294.492          288.024        582.516       25,0             41,8
+ Pinus halepensis                             56.266         211.662        267.928       24,9             44,1
+ Pinus pinea                                152.891           69.514        222.405       15,7             42,8
+ Otros pinos                                102.613           57.389        160.002       10,9             56,0
+ Otras coníferas alóctonas                    40.427         122.267        162.694       35,2             50,2
+ Otras coníferas                              35.011         234.795        269.806       23,4             39,0
+ TOTAL CONÍFERAS                           2.820.108        7.311.044     10.131.153      26,9             52,5
+ Eucalyptus spp.                            217.772         6.194.939      6.412.712      29,9             42,1
+ Populus spp.                                 97.807         257.065        354.872       79,3             102,9
+ Fagus sylvatica                            102.253           19.174        121.426       31,4             43,7
+ Quercus robur                                 5.683           5.653         11.336       57,8             82,1
+ Castanea sativa                               2.299          81.803         84.102       41,4             63,2
+ Quercus rubra                                 7.160          12.945         20.105       53,4              …
+ Otros Quercus                                39.950          74.711        114.661        …                …
+ Otras frondosas alóctonas                       …            16.794         16.794       24,0             42,2
+ Otras frondosas                               3.476          95.417         98.893        …               64,3
+ TOTAL FRONDOSAS                             476.400        6.758.501      7.234.901      39,4             55,0
+ TOTAL CORTAS                              3.296.508       14.069.546     17.366.054
+                  Tabla D.5: Cortas totales por especie, propiedad y precios unitarios asociados en 2024
+
+
+
+
+                                                              22
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+    D.2. Extracción de leñas
+
+     D.2.1.      Serie histórica de extracción de leña y valor económico asociado
+
+                                              EXTRACCIÓN DE LEÑAS
+                     Producción (miles        Variación interanual
+     AÑO                                                               Valor en cargadero (miles de euros)
+                     de toneladas)            (%)
+     2001                              955                    -36,0%                                 21.052
+     2002                             1.024                     7,2%                                 27.969
+     2003                             1.151                   12,4%                                  32.301
+     2004                             1.106                    -3,9%                                 10.515
+     2005                              848                    -23,3%                                 20.868 *
+     2006                             1.189                   40,2%                                  30.289 *
+     2007                             1.451                   22,0%                                  32.569 *
+     2008                              988                    -31,9%                                 33.532 *
+     2009                             1.175                   19,0%                                  41.569 *
+     2010                             2.445                   108,0%                                 74.119 *
+     2011                             1.972                   -19,4%                                 74.816 *
+     2012                             1.542                   -21,8%                                 43.495 *
+     2013                             1.716                   11,3%                                  53.308 *
+     2014                             1.854                     8,0%                                 56.561 *
+     2015                             1.840                    -0,8%                                 55.246 *
+     2016                             1.201                   -34,7%                                 40.218 *
+     2017                             1.222                     1,7%                                 38.811 *
+     2018                             1.317                     7,8%                                 49.650 *
+     2019                             1.171                   -11,1%                                 43.513 *
+     2020                             1.450                   23,8%                                  56.460 *
+     2021                             1.484                     2.3%                                 63.181
+     2022                             1.433                    -3,4%                                 48.174
+     2023                             1.239                   -13,5%                                 44.005
+     2024                             1.209                    -2,5%                                 52.681
+                Tabla D.6: Serie histórica de aprovechamientos de leñas y valor económico asociado
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de aprovechamiento (toneladas) cada año y
+reportadas por las comunidades autónomas.
+
+Nota: * Valor en cargadero estimado
+
+
+
+
+                                                         23
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                               Gráfico D.3: Serie histórica de aprovechamiento de leñas
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de aprovechamiento (toneladas) cada año y
+reportadas por las comunidades autónomas.
+
+
+     D.2.2.      Aprovechamiento de leñas en 2024
+
+                                                   Coníferas         Frondosas       Leñas Total
+                   Comunidad Autónoma
+                                                 (Toneladas)        (Toneladas)      (Toneladas)
+                   Andalucía                         139.495               4.660           144.155
+                   Aragón                              7.467              22.786            30.253
+                   Canarias                            4.020               9.177            13.198
+                   Cantabria                              …                  961               961
+                   Castilla-La Mancha                 28.030              27.294            55.325
+                   Castilla y León                    62.903             239.068           301.971
+                   Cataluña                           54.228             206.033           260.261
+                   Comunidad de Madrid                10.914              12.144            23.058
+                   Comunidad Foral de
+                                                      34.244              97.112           131.356
+                   Navarra
+                   Comunidad Valenciana               56.657                 657            57.314
+                   Extremadura                        14.134              68.392            82.527
+                   Galicia                                …               51.472            51.472
+                   Islas Baleares                      1.589                 646             2.234
+                   La Rioja                               …                8.630             8.630
+                   País Vasco                          4.589               7.771            12.360
+                   Principado de Asturias              7.893              19.520            27.413
+                   Región de Murcia                    6.024                  …              6.024
+                   ESPAÑA                            432.189             776.322          1.208.511
+                    Tabla D.7: Leñas de coníferas, frondosas y totales por comunidad autónoma
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de aprovechamiento (toneladas) cada año y
+reportadas por las comunidades autónomas.
+
+
+
+
+                                                         24
+               ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+     D.2.3.      Extracción de leña por propiedad del territorio
+
+                                               FRONDOSAS                 CONÍFERAS                 TOTAL
+                                            Toneladas    %             Toneladas           % Toneladas            %
+PROPIEDAD PÚBLICA
+MUP de las CC.AA. o del Estado                     638           0%       23.844          6%       24.483        2%
+CC.AA. o del Estado no de Utilidad
+                                                   958           0%             102       0%        1.061        0%
+Pública
+MUP de las Entidades Locales                   173.543           22%      97.341         23%      270.884       22%
+De las Entidades Locales consorciados              218        0,03%        1.621        0,38%       1.839      0,15%
+Entidades Locales de libre disposición          40.209           5%       17.860          4%       58.069        5%
+Pública sin especificar                         10.135           1%      140.412         32%      150.547       12%
+TOTAL PÚBLICA                                  225.701           29%     281.181         65%      506.882       42%
+PROPIEDAD PRIVADA
+Privada consorciados                                   …         0%             762       0%          762        0%
+Privada sin consorcio                          301.282           39%      74.666         17%      375.947       31%
+Montes Vecinales en Mano Común                   6.719        0,87%              …        0%        6.719      0,56%
+Privada sin especificar                        242.616           31%      75.540         17%      318.156       26%
+Propiedad desconocida                                   4        0%             40      0,01%          44        0%
+TOTAL PRIVADA                                  550.621           71%     151.007         35%      701.629       58%
+TOTAL                                          776.322                   432.189                1.208.511
+                                  Tabla D.8: Leñas por tipo de propiedad en 2024
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de aprovechamiento (toneladas) cada año y
+reportadas por las comunidades autónomas.
+
+
+
+     D.2.4.      Aprovechamientos de leña por especie
+
+                                                                                        Porcentaje respecto
+         Leñas extraídas por especie                                    Toneladas
+                                                                                               del total (%)
+         FRONDOSAS                       Quercus spp.                      178.519                     15%
+                                         Quercus ilex                      179.764                     15%
+         64%                             Quercus pyrenaica                 100.708                      8%
+                                         Otros Quercus                      78.624                      7%
+                                         Fagus sylvatica                    60.254                      5%
+                                         Populus spp.                       59.714                      5%
+                                         Eucalyptus spp.                    10.728                      1%
+                                         Sin especificar y resto de
+                                                                           108.010                      9%
+                                         frondosas
+                                         Pinus spp.                        155.062                     13%
+         CONÍFERAS
+                                         Pinus halepensis                   97.069                      8%
+         36%                             Pinus pinaster                     46.846                      4%
+                                         Pinus nigra                        27.269                      2%
+                                         Pinus sylvestris                   29.397                      2%
+                                         Pinus radiata                      15.577                      1%
+                                         Coníferas sin especificar          54.229                      4%
+                                         Resto de coníferas                     6.738                  0,6%
+         TOTAL (CONÍFERAS + FRONDOSAS)                                   1.208.511                    100%
+                                         Tabla D.9: Leñas por especie en 2024
+
+Nota: Los datos se refieren a las autorizaciones y comunicaciones de aprovechamiento (toneladas) cada año y
+reportadas por las comunidades autónomas.
+
+
+
+
+                                                            25
+                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+     D.2.5.        Destino y precios estimados de las leñas
+
+                                  Propiedad (toneladas)                                     Precio CC.AA. €/t
+ESPECIE                                                         TOTAL (toneladas)
+                                  Pública        Privada                                  En pie     En cargadero
+Pinus spp.                           146.788         8.275                   155.062           9,3              34,2
+Pinus halepensis                      70.639        26.430                    97.069          10,4              29,7
+Pinus nigra                           16.309        10.960                    27.269          13,5              33,4
+Pinus pinaster                        20.005        26.841                    46.846          17,2              31,6
+Pinus radiata                          3.909        11.669                    15.577          10,9              22,5
+Pinus sylvestris                      14.975        14.422                    29.397          10,7              29,6
+Coníferas sin especificar              5.183        49.046                    54.229          25,5              45,5
+Resto de coníferas                     3.374         3.365                     6.738          19,0              34,0
+TOTAL CONÍFERAS                      281.181       151.007                   432.189          13,0              33,5
+Quercus spp.                          10.828       167.691                    178.519         48,1              68,2
+Quercus ilex                          44.621       135.144                    179.764         13,8              79,3
+Quercus pyrenaica                     44.989        55.719                    100.708         15,1              35,0
+Fagus sylvatica                       55.516         4.738                     60.254         13,4              29,0
+Populus spp.                          12.031        47.683                     59.714         14,1              29,2
+Eucalyptus spp.                          359        10.369                     10.728         15,9               …
+Otros Quercus                         45.680        32.944                     78.624         14,5               …
+Frondosas sin especificar                126        47.182                     47.308         28,5              47,1
+Resto de frondosas                    11.551        49.151                     60.702         10,7              27,9
+TOTAL FRONDOSAS                      225.701       550.621                    776.322         20,7              49,2
+TOTAL LEÑAS                          506.882       701.629                  1.208.511
+             Tabla D.10: Leñas extraídas por especie y propiedad, y precios asociados por especie en 2024
+
+
+
+
+                                                           26
+                    ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                                         E
+Otros aprovechamientos forestales
+
+
+
+    E. OTROS APROVECHAMIENTOS FORESTALES
+
+        E.1. Producción de otros productos forestales no madereros por CC.AA. y
+             tipo de propiedad
+                                                            Piñón con
+                                    Corcho     Castaña                    Resina
+   CC.AA.           Propiedad                                 cáscara             Hongos Otros (kg)      Trufas (kg)
+                                (toneladas) (toneladas)               (toneladas)
+                                                          (toneladas)
+                    Pública             …             1         1.087      1.000                …                  …
+   Andalucía
+                    Privada         27.986           …             …           …                    …              …
+   Total Andalucía                  27.986            1        1.087         1.000
+   Aragón                               …            …             …           …             1.474.557           2.709
+   Total Aragón                                                                              1.474.557           2.709
+   Canarias         Pública             …            …             …           …                    …              …
+   Total Canarias
+   Castilla-La    Pública               92           …           111          549             502.983            1.045
+   Mancha
+                  Privada              373           …             …          205                   …              …
+   Total Castilla-La Mancha            465                       111          753              502.983           1.045
+   Castilla y      Pública                            9            …        9.953              127.114            247
+   León
+                   Privada           1.269           …             …        1.207                   …              …
+   Total Castilla y León             1.269            9                    11.160              127.114            247
+   Cataluña         Pública             …            …             1           …                    …            1.500
+                    Privada          3.891           …             4           …                    …            4.500
+   Total Cataluña                    3.891                         5                                             6.000
+   C. de Madrid                         …            …             …           …               22.080              …
+   Total C. Madrid                                                                             22.080
+   C. Foral de
+                                        …            …             …            …              416.306             …
+   Navarra
+   Total C. Foral de Navarra                                                                  416.306
+   C.              Pública              …            …             …           …                    …              95
+   Valenciana
+                   Privada              38           …             …           …                    …              …
+   Total C. Valenciana                  38                                                                         95
+   Extremadura Pública                  …            …            36          505                   …              …
+               Privada               6.489           …             …            …                   …              …
+   Total Extremadura                 6.489                        36          505
+   Galicia          Privada             …            …             …           …                    …              …
+   Total Galicia
+   La Rioja         Pública             …            …             …           …                29.731             …
+   Total La
+                                                                                                29.731
+   Rioja
+        Tabla E.1: Producción de otros productos forestales por comunidad autónoma y tipo de propiedad en 2024
+
+    Nota: Las cifras en cursiva han sido estimadas en base a la superficie productora aportada por las comunidades
+    autónomas.
+
+    Nota:
+    - No se dispone de datos de castaña en Galicia.
+    - No se dispone de datos completos de piñón en Castilla y León.
+    - Se dispone de datos aportados por otras comunidades autónomas de piñón y hongos en proceso de verificación por
+    inconsistencias.
+
+
+
+
+                                                          27
+                  ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                          F
+Estadística Anual de Caza
+
+
+
+
+    F. ESTADÍSTICA ANUAL DE CAZA
+
+        F.1. Licencias de caza
+
+         F.1.1.       Licencias expedidas por comunidad autónoma
+
+    Comunidades                      Licencias                Licencias           LICENCIAS TOTAES
+    Autónomas                    autonómicas (Nº)       interautonómicas (Nº)            (Nº)
+    Andalucía                                110.483                       …                  110.483
+    Aragón                                     29.367                     3.303                  32.670
+    Canarias                                   11.419                        …                   11.419
+    Cantabria                                   8.342                        …                    8.342
+    Castilla La Mancha                         95.293                        …                   95.293
+    Castilla y León                                …                      8.935                  36.086
+    Cataluña                                   30.425                        …                   30.425
+    Ceuta y Melilla                                …                         …                       …
+    Comunidad de Madrid                         9.563                     3.495                  13.058
+    Comunidad Foral de
+                                               19.304                        …                   19.304
+    Navarra
+    Comunidad Valenciana                       32.335                       631                  32.966
+    Extremadura                                22.962                       325                  23.287
+    Galicia                                    38.689                       450                  39.139
+    Islas Baleares                              9.304                        …                    9.304
+    La Rioja                                    4.821                        …                    4.821
+    País Vasco                                     …                         …                    7.404
+    Principado de Asturias                      6.605                       881                   7.486
+    Región de Murcia                            9.761                        …                    9.761
+                         Tabla F.1: Licencias de caza expedidas por comunidad autónoma en 2024
+
+    Nota: No se dispone de datos completos de Castilla y León ni de País Vasco.
+
+
+
+
+                                                            28
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+    F.2. Capturas de especies cinegéticas
+                                                                                                            Valor
+                            Número de         Peso medio                           Precio medio
+Especie                                                         Peso total (kg)                        económico
+                              capturas            (kg/ud)                             (€/ud)
+                                                                                                              (€)
+Caza mayor
+Arruí                             2.409              25,53              61.495                  …              …
+Cabra asilvestrada                   …                   …                   …                  …              …
+Cabra Montés                     10.591              23,55             249.425              102,53      1.085.937
+Ciervo                         167.692               55,76           9.350.371               94,87     15.909.348
+Corzo                          100.776                 3,47            349.771               10,49      1.056.936
+Gamo                             40.019              33,62           1.345.301               48,81      1.953.415
+Jabalí                         483.110               21,76          10.510.175               19,55      9.444.635
+Muflón                           20.323              24,49             497.767               39,55        803.842
+Rebeco                            1.926                6,43             12.390                  …              …
+Total caza mayor               826.846                              22.376.696                         30.254.114
+Caza Menor de
+Mamíferos
+Conejo                       5.593.152                 0,59          3.316.229                1,76      9.848.112
+Liebre                         248.211                 1,42            351.681                4,43      1.098.713
+Zorro                          196.943                 3,43            675.035                0,65        127.406
+Total caza menor
+                             6.038.306                               4.342.945                         11.074.231
+de mamíferos
+Caza Menor de
+Aves
+Acuáticas y
+                               200.884                 0,36             72.648                7,85      1.576.995
+anátidas
+Avefría                           8.742                0,16              1.377                0,96          8.409
+Becada                         115.927                 0,05              5.464                0,93        108.252
+Codorniz                       847.272                 0,10             82.604                0,34        285.815
+Córvidos                       336.978                 0,47            157.332                0,58        194.437
+Estornino                      195.365                 0,04              8.292                0,47         91.432
+Faisán                           50.415                0,44             22.064                0,77         38.777
+Paloma                       2.804.556                 0,35            973.964                1,59      4.446.598
+Perdiz                       2.764.900                 0,28            774.370                3,06      8.463.711
+Tórtola común                       382                0,10                 37                0,98           376
+Otras especies de
+                                 53.356                0,30             16.018                0,96         51.047
+caza volátil
+Zorzal                       4.340.103                 0,13            565.934                0,80      3.463.565
+Total caza menor
+                            11.718.880                               2.680.103                         18.729.414
+de aves
+                     Tabla F.2: Capturas de especies cinegéticas, junto con el peso y valor asociado
+
+Nota: No se dispone de datos de Canarias ni datos completos de País Vasco.
+
+
+
+
+                                                          29
+              ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+     F.3. Sueltas de especies cinegéticas
+Comunidad                                                      Caza Menor       Caza Menor
+                        Procedencia        Caza Mayor                                                  Total 2024
+Autónoma                                                        Mamíferos             Aves
+                               Otras                540            24.758            293.148             318.446
+Andalucía
+                       Administración                …                  …                  …                  …
+
+                               Otras                 80              3.215            10.350              13.645
+Aragón
+                       Administración                …                  …                  …                  …
+
+                               Otras                 …                  …                  …                  …
+Canarias
+                       Administración                …                  …                  …                  …
+
+                               Otras                 …                  …                  …                  …
+Cantabria
+                       Administración                …                  …                  …                  …
+
+Castilla-La                    Otras                663              1.015         2.342.377           2.344.055
+Mancha                 Administración                80                 …                  …                  80
+                               Otras                 …                  …                  …                  …
+Castilla y León
+                       Administración                …                  …                  …                  …
+
+                               Otras                 …                  …                  …                  …
+Cataluña
+                       Administración                …               1.355            61.621              62.976
+
+Comunidad de                   Otras                110              5.844           319.800             325.754
+Madrid                 Administración                …                  …                  …                  …
+Comunidad                      Otras                 …                  …                  …                  …
+Foral de
+Navarra                Administración                …                  …                  …                  …
+
+Comunidad                      Otras                104              1.320            71.947              73.371
+Valenciana             Administración                …                  …                  …                  …
+
+                               Otras                 …                  …                  …                  …
+Extremadura
+                       Administración               148              1.125            92.630              93.903
+                               Otras                 …                  …                  …                  …
+Galicia
+                       Administración                …            111.067             94.650             205.717
+                               Otras                 …                  …                  …                  …
+Islas Baleares
+                       Administración                …               6.691           124.324             131.015
+                               Otras                 …                  …                  …                  …
+La Rioja
+                       Administración                …                  …                  …                  …
+
+                               Otras                 …                200             16.500              16.700
+Murcia
+                       Administración                …                  …                  …                  …
+
+                               Otras                 …                  …                  21                 21
+País Vasco
+                       Administración                …                  …              2.514                2.514
+                               Otras                 …                  …                  …                  …
+Principado de
+Asturias               Administración                …                  …              7.525                7.525
+                               Otras                 …                  …                  …                  …
+Ceuta y Melilla
+                       Administración                …                  …                  …                  …
+
+Total Administración                                228               228              9.171             288.614
+Total otras procedencias                          1.417              1.497           147.419           3.148.793
+      Tabla F.3: Sueltas de especies cinegéticas, por comunidad autónoma, procedencia y modalidad de caza
+
+Nota: No se dispone de datos de Sueltas de Canarias, Cantabria, Castilla y León, La Rioja y Navarra.
+
+
+
+
+                                                          30
+               ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+     F.4. Producción de granjas cinegéticas para repoblación
+
+                           Especie                                  Número de individuos
+                           Caza mayor
+                           Cabra Montés                                                  …
+                           Ciervo                                                       525
+                           Gamo                                                         14
+                           Jabalí                                                       36
+                           Muflón                                                         9
+                           Caza menor de mamíferos
+                           Conejo                                                   13.463
+                           Liebre                                                       123
+                           Caza menor de aves
+                           Codorniz                                                  1.570
+                           Faisán                                                    1.715
+                           Paloma                                                       20
+                           Perdiz                                                1.154.737
+         Tabla F.4: Producción de granjas cinegéticas para repoblación por modalidad de caza por especie
+
+Nota: No se dispone de datos de Sueltas de Asturias, Baleares, Canarias, Castilla y León, Cataluña, La Rioja, Madrid,
+País Vasco y Navarra.
+
+
+     F.5. Terrenos cinegéticos
+                                                                                                       Comunidad
+       Categoría del terreno                                   Nº     Superficie (ha)
+                                                                                                        autónoma
+                                                                                          Andalucía, Aragón, Asturias,
+                                                                                              C. Valenciana, Cantabria,
+       Reserva de caza                                        46            1.961.564         Castilla y León, Cataluña,
+                                                                                         Extremadura, La Rioja, Madrid
+                                                                                                 Asturias, Extremadura,
+       Coto regional                                          58              752.655                           Navarra
+                                                                                           Aragón, Castilla-La Mancha,
+       Coto social                                            792           2.515.370            Extremadura, La Rioja
+                                                                                                 Andalucía, Valenciana,
+       Zona de caza controlada                                90              212.713        Cataluña, Extremadura, La
+                                                                                                           Rioja, Madrid
+
+       TOTAL OFERTA PÚBLICA                                   986           5.472.302
+                                                                                              Aragón, Galicia, La Rioja,
+       Coto local / Coto municipal                            684           2.527.672                           Navarra
+                                                                                          Andalucía, Aragón, Asturias,
+                                                                                         Baleares, Cantabria, Castilla y
+                                                                                             León, Castilla-La Mancha,
+       Coto privado de caza                               26.161           27.404.337          Cataluña, Extremadura,
+                                                                                              Galicia, La Rioja, Madrid,
+                                                                                          Murcia, Navarra, País Vasco
+                                                                                                 Andalucía, Aragón, C.
+       Coto deportivo                                      2.519            6.723.375        Valenciana, Cantabria, La
+                                                                                                           Rioja, Murcia
+                                                                                          Andalucía, Aragón, Baleares,
+                                                                                            C. Valenciana, Castilla La-
+       Coto intensivo de caza                                 824             555.767           Mancha, Extremadura,
+                                                                                              Galicia, La Rioja, Madrid,
+                                                                                          Murcia, Navarra, País Vasco
+
+       TOTAL OFERTA PRIVADA                               30.188           37.211.151
+                                                                                                   Asturias, Baleares,
+       Refugio de caza / fauna                                160              48.095             Extremadura, Murcia
+
+       Terrenos no cinegéticos
+                                                                                          Asturias, Castilla La-Mancha,
+       (incluye: Vedados de Caza, Zonas de                    804              86.656            Extremadura, La Rioja
+       Seguridad y Terrenos cercados)
+       TOTAL                                              32.138           42.818.204
+                 Tabla F.5: Número y superficie de terrenos cinegéticos por tipo de terreno en 2024
+
+
+
+
+                                                         31
+                     ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                                  G
+Estadística Anual Pesca Fluvial
+
+
+
+    G. ESTADÍSTICA ANUAL DE PESCA FLUVIAL
+
+        G.1. Licencias de pesca fluvial
+
+         G.1.1.        Licencias expedidas por comunidad autónoma
+
+           Comunidades                          Licencias                 Licencias    LICENCIAS TOTAES
+           Autónomas                      autonómicas (nº)     interautonómicas (nº)                  (Nº)
+           Andalucía                               33.936                        …                 33.936
+           Aragón                                   39.588                    2.972                  42.560
+           Canarias                                      …                       …                        …
+
+           Cantabria                                 3.630                       …                     3.630
+           Castilla-La Mancha                       86.725                       …                   86.725
+           Castilla y León                               …                   10.066                  66.527
+           Cataluña                                 57.991                       …                   57.991
+           Comunidad de Madrid                       9.524                   10.536                  20.060
+           Comunidad Foral de
+                                                    14.681                       …                   14.681
+           Navarra
+           Comunidad Valenciana                     13.958                      637                  14.595
+           Extremadura                              24.350                      133                  24.483
+           Galicia                                  38.689                    1.729                  40.418
+           Islas Baleares                              934                       …                      934
+           La Rioja                                  5.161                       …                     5.161
+           País Vasco                                    …                       …                     7.117
+           Principado de Asturias                    8.318                    1.974                  10.292
+           Región de Murcia                          1.146                       …                     1.146
+                         Tabla G.1: Licencias de pesca expedidas por comunidad autónoma en 2024
+
+    Nota: No se dispone de datos completos de Castilla y León ni de País Vasco. En Canarias no se practica de manera
+    oficial la pesca fluvial, por lo que no se consideran cifras al respecto.
+
+
+
+
+                                                          32
+                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+    G.2. Capturas de especies piscícolas
+
+                             Especie                                               Capturas
+                             Barbo                                                    50.672
+                             Black-bass                                                    296
+                             Cangrejo de rio americano                                    5.000
+                             Cangrejos sin especificar                                      85
+                             Carpa                                                    10.269
+                             Ciprínidos sin especificar                               10.866
+                             Lucio                                                         522
+                             Otros                                                         149
+                             Salmón                                                        428
+                             Trucha arco-iris                                        139.037
+                             Trucha común*                                            37.420
+                             Trucha sin especificar                                   15.037
+                             Varios sin especificar                                       2.915
+                                     Tabla G.2: Capturas de especies piscícolas en 2024
+
+Nota: No se dispone de datos de Capturas de pesca de Andalucía, Aragón, Baleares, Castilla y León, Cataluña,
+Madrid, Navarra ni completos de País Vasco.
+
+Nota: * No se dispone de datos de trucha común de Asturias y de Comunidad Valenciana para el ejercicio de 2024.
+
+
+    G.3. Sueltas de especies piscícolas
+
+      Especie                                Administración        Otras procedencias Total nº de ejemplares
+      Anguila                                          17.271                    5.126                 22.397
+      Barbo                                           110.703                    1.200               111.903
+      Cangrejo autóctono                               53.820                        …                 53.820
+      Ciprínidos (varias especies)                     82.819                        …                 82.103
+      Salmón                                          758.913                        …               758.913
+      Tenca                                           744.992                    1.920               746.912
+      Trucha arco-iris                                 72.972                  224.754               297.726
+      Trucha común                                 1.532.772                         …              1.532.772
+      Trucha sin especificar                                 …                  18.000                 18.000
+      Huevos y alevines de
+                                                   1.816.211                         …              1.261.927
+      trucha común
+      Otras especies                                      1.460                      …                  1.460
+                         Tabla G.3: Sueltas por especie y procedencia en número de ejemplares
+
+Nota: No se dispone de datos de Sueltas de Baleares, Castilla y León y País Vasco.
+
+
+
+
+                                                              33
+                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+      Comunidad Autónoma             Piscifactorías propias (nº)   Otras procedencias (nº)       TOTAL (nº)
+      Andalucía                                           72.617                         …            72.617
+      Aragón                                           1.159.899                     31.145        1.191.044
+      Canarias                                                …                          …                …
+      Cantabria                                         443.675                          …           443.675
+      Castilla - La Mancha                                55.320                   141.464           196.784
+      Castilla y León                                         …                         …                 …
+      Cataluña                                          805.173                          …           805.173
+      Comunidad de Madrid                                    470                      7.925            8.395
+      Comunidad Foral de Navarra                          94.062                         …            94.062
+      Comunidad Valenciana                                22.280                      5.126           27.406
+      Extremadura                                       946.827                      22.340          969.167
+      Galicia                                             96.985                         …            96.985
+      Islas Baleares                                          …                          …                …
+      La Rioja                                            66.150                     18.000           84.150
+      País Vasco                                              …                          …                …
+      Principado de Asturias                           1.428.475                         …         1.428.475
+      Región de Murcia                                        …                      25.000           25.000
+                 Tabla G.4: Sueltas por comunidad autónoma y procedencia en número de ejemplares
+
+Nota: No se dispone de datos de País Vasco y de Castilla y León.
+
+
+    G.4. Masas de aprovechamiento piscícola
+      Tipo de masa de aprovechamiento
+                                                        Número      Longitud tramo (km)       Superficie (ha)
+      piscícola
+      Cotos Deportivos / Escenarios Deportivos               157                    1.778             14.809
+      Cotos Intensivos                                        63                      350              1.202
+      Cotos Salmoneros                                       140                       66                  …
+      Cotos Trucheros                                        387                    2.382                136
+      Otros Cotos*                                           968                    1.844             11.155
+      Régimen Especial en Embalses                           110                      127              7.946
+      Tramos / Cotos de Cangrejo                              10                      166                  …
+
+      Tramos en Aguas de Alta Montaña                         25                      180                  …
+
+      Tramos de Pesca sin Muerte*                            638                    7.093                892
+      Aguas Libres para la Pesca                          83.460                   31.361            109.945
+      Refugios de Pesca                                      189                       80              3.475
+      Vedados                                              1.653                    6.009              4.779
+    Tabla G.5: Número, longitud de tramo y superficie por tipo de masa de aprovechamiento piscícola en 2024
+
+Nota: * No se dispone de datos de País Vasco y Baleares en el tipo de masa “Otros Cotos” ni de datos de País Vasco
+en “Tramos de Pesca sin Muerte”.
+
+
+
+
+                                                        34
+                  ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+Balance de la Madera
+
+
+
+    H. BALANCE DE LA MADERA
+                                                                                                                           H
+        H.1. Producción nacional y comercio exterior
+                                                                        Importaciones             Exportaciones
+                                                   Extracciones
+                                                                                  Valor                     Valor
+                 Productos              Unidad           y
+                                                                   Cantidad     (miles de    Cantidad     (miles de
+                                                    Producción
+                                                                                  euros)                    euros)
+    LEÑAS                               1000 m3           2.961          94          7.234        127         12.192
+    MADERA EN ROLLO
+    INDUSTRIAL (TROZAS PARA
+                                        1000 m3          13.672       1.109       108.880       2.692        182.097
+    TRITURACIÓN, ASERRÍO Y
+    CHAPA)
+    Coníferas                           1000 m3           8.184         371        30.337       1.586         85.505
+    Frondosas                           1000 m3           5.488         738        78.543       1.106         96.592
+    CARBÓN VEGETAL                      1000 m3             108          53        27.100          35         20.537
+    ASTILLAS Y PARTÍCULAS               1000 m3           2.283         607        46.284         350         19.069
+    RESIDUOS DE MADERA (incluye
+                                        1000 m3                          80          2.455        123           8.044
+    madera para aglomerados)
+    MADERA RECUPERADA                   1000 m3                          56          2.322         57           5.161
+    PELETS Y OTROS
+                                        1000 m3             927         120        17.783         196         42.919
+    AGLOMERADOS
+    MADERA ASERRADA                     1000 m3           2.606       1.274       383.277         183         75.990
+    Coníferas                           1000 m3           2.338       1.093       253.227         154         46.289
+    Frondosas                           1000 m3             267         180       130.050          29         29.701
+    HOJAS DE CHAPA                      1000 m3               31        115       163.955          36         98.996
+    TABLEROS DE MADERA                  1000 m3           3.916       1.238       532.248       2.127        918.640
+    Tableros contrachapados             1000 m3             337         119       101.674         199        255.487
+    Tableros de partículas, incluidos
+                                        1000 m3           2.211         689       232.226       1.043        292.207
+    OSB
+    Tableros de fibras                  1000 m3           1.368         431       198.348         885        370.946
+    PASTA DE PAPEL (DE MADERA)           1000 t           1.246       1.239       871.442         972        554.579
+    Mecánicas y semiquímicas             1000t                73         23        14.328          17           9.201
+    Químicas                             1000t            1.173       1.199       833.614         955        545.344
+    Solubles                             1000t                 0         18        23.499           0                 34
+    OTROS TIPOS DE PASTA                 1000 t           5.449            8       13.913           0            671
+    Pastas de otras fibras               1000 t             873            7       12.784           0            347
+    Pasta de fibra recuperada            1000 t           4.576            1         1.129          0            324
+    PAPEL RECUPERADO                     1000 t           4.456       1.555       202.781         810        133.876
+    PAPEL Y CARTÓN                       1000 t           6.561       2.852     2.692.099       2.635      2.505.063
+    Papel con fines gráficos             1000t              723         752       820.424         894        840.731
+    Papel doméstico y sanitario          1000t              926          65        97.867         106        164.221
+    Material para empaquetar             1000t            4.502       1.905     1.620.293       1.591      1.237.479
+    Otros papeles y cartones             1000t              411         130       153.516          44        262.632
+    Tabla H.1: Producción nacional y comercio exterior de los grandes grupos de productos procedentes de la madera
+                                                        en 2024
+
+
+
+
+                                                         35
+      ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+H.2. Balance de la madera
+
+
+
+
+        Gráfico H.1: Resumen del Balance de la madera de 2024 (miles m3 equivalentes)
+
+
+
+
+                                             36
+                                                                                                                                                                                                                              Destino Biomasa primaria
+                                                                                                                 EXTRACCIONES DEMADERA EN MONTEY COMERCIOCON                                        Extracciones y comercio
+                                                                                                                                                                                                                                  forestal para uso                     Con Origen: Madera en rollo, ram as y copas de árbol y leña
+                                                                                                                                  DESTINOA                                                                 TOTALES                   energético
+
+
+                                                                                                                                                               Coníferas                                   10.290.383                            742.209                                         742.209
+                                                                                                                                           Con corteza (c.c.) Frondosas                                    9.067.569                            2.631.470                                        2.631.470
+                                                                                                                                                               Madera total                                19.357.952                         3.373.679                                         3.373.679
+                                                                                                                       Extracciones                            Coníferas                                   8.830.184                             645.722                                         645.722
+                                                                                                                                           Sin corteza (s.c.) Frondosas                                    7.803.569                            2.315.693                                        2.315.693
+                                                                                                                                                               Madera total                                16.633.753                         2.961.416                                         2.961.416
+                                                                                                                                                    Corteza (destino uso energético)                       2.724.199                            412.264                                          412.264
+                                                                                                                                                               Coníferas                                                                               …
+                                                                                                                      Importaciones        s.c.                Frondosas                                                                               …
+                                                                                                                                                               Madera total                                1.181.330                             93.922
+                                                                                                                                                               Coníferas                                                                               …
+                                                                                                                      Exportaciones        s.c.                Frondosas                                                                               …
+                                                                                                                                                               Madera total                                2.822.656                            127.032
+
+
+                                                                                                                                                                                                                                                                            Coproductos de                                        Aserrín,
+                                                                                                                  PRODUCTOS RECICLADOS +PRODUCTOS SECUNDARIOS                                                                                                                 la industria                                     desperdicios y
+                                                                                                                                                                                                     Productos secundarios    Empleados como biomasa        Madera post-
+                                                                                                                   (producidos en actividad industrial como subproductos o                                                                                                      forestal         Corteza           Otros        desechos, de
+
+
+
+
+37
+                                                                                                                                                                                                           TOTALES              para uso energético          consum o
+                                                                                                                                                                                                                                                                              em pleados                                         m adera, sin
+                                                                                                                                         coproductos)
+                                                                                                                                                                                                                                                                            com o biom asa                                       aglom erar
+
+
+
+
+                                                 Destino Biomasa
+                                                                                                                                           Madera total. Nacional                                          6.095.391                   24.226                  24.226
+                                                                                                                        Reciclados         Madera total. Importaciones                                     2.116.696
+                                                                                                                                           Madera total. Exportaciones                                      810.400
+                                                                                                                                           Madera total. Nacional                                          4.003.421                 2.569.457                                 2.569.457          493.375        2.076.082
+                                                                                                                     Subproductos y
+                                                                                                                                           Madera total. Importaciones                                      687.514                    80.123                                                                                         80.123
+                                                                                                                      coproductos
+                                                                                                                                           Madera total. Exportaciones                                      123.069                   123.069                                                                                         123.069
+
+
+
+                                                                                                                                                                                                       Consumo aparente
+                                                                                                                                         CONSUMOAPARENTE                                                                                                      Biomasa primaria forestal para uso energético
+                                                                                                                                                                                                           TOTALES
+
+                                                                                                                     Extracciones +                           Coníferas
+                                                                                                                                                  s.c.        Frondosas
+                                                                                                                  Importaciones + Prod.
+                                                                                                                                                                                                                                                                                                                                                ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                                     secundarios -
+                                                                                                                                              (excepto uso Reciclado + Secundarios                                                                                                2.550.737
+                                                                                                                                             energético c.c.)
+                                                                                                                     Exportaciones                            Madera total                              29.686.178                                                              8.203.241
+
+
+
+
+     Gráfico H.2: Resumen del Balance de la madera de 2024 (miles m3 equivalentes) – Extracciones y comercio y
+                                                                                                                 Consum o aparente= Extracciones + Reciclados + Subproductos + im portaciones - Exportaciones                 ... Sin datos                                cc Con corteza                    sc Sin corteza
+                                                                                                            EXTRACCIONES DEMADERA EN MONTEY COMERCIOCON                                           Destino Trituración (tablero
+                                                                                                                                                                                                                                                    Tablero                                      Pasta
+                                                                                                                                                                                                              + pasta)
+                                                                                                                             DESTINOA
+                                                                                                                                                                Coníferas                                    4.081.647                              2.450.052                                  1.631.595
+                                                                                                                                            Con corteza (c.c.) Frondosas                                     5.863.060                              1.121.192                                  4.741.868
+                                                                                                                                                                Madera total                                9.944.706                              3.571.244                                6.373.463
+                                                                                                                    Extracciones                                Coníferas                                    3.428.583                              2.058.044                                  1.370.540
+                                                                                                                                            Sin corteza (s.c.) Frondosas                                     4.983.601                               953.013                                   4.030.588
+                                                                                                                                                                Madera total                                8.412.184                              3.011.057                                5.401.128
+                                                                                                                                                   Corteza (destino uso energético)                         1.532.522                               560.187                                  972.335
+                                                                                                                                                                Coníferas                                     106.320                                   0                                      106.320
+                                                                                                                   Importaciones            s.c.                Frondosas                                     354.326                                 1.869                                    352.457
+                                                                                                                                                                Madera total                                 460.646                                 1.869                                     458.777
+                                                                                                                                                                Coníferas                                     687.665
+                                                                                                                   Exportaciones            s.c.                Frondosas                                    1.053.560
+                                                                                                                                                                Madera total                                1.741.225
+
+                                                                                                                                                                                                                                                  Subproductos
+                                                                                                                                                                                                                                                    de sierra y    Reem pleo y
+                                                                                                                                                                                                                                  Reciclado de
+                                                                                                              PRODUCTOS RECICLADOS +PRODUCTOS SECUNDARIOS                                                                                        chapa a tablero: subproductos
+                                                                                                                                                                                                                                    pallets y                                      Madera en
+                                                                                                                                                                                                   Empleados en industria                               1ª               2ª                                 Papel
+                                                                                                               (producidos en actividad industrial como subproductos o                                                           em balajes para                                   plaquitas o
+
+
+
+
+38
+                                                                                                                                                                                                        trituración                              transform ación transform ación                         recuperado
+                                                                                                                                                                                                                                 elaboración de                                    partículas
+                                                                                                                                     coproductos)                                                                                                   (serrines,      (recortes,
+                                                                                                                                                                                                                                     tablero
+                                                                                                                                                                                                                                                     astillas,     virutas; etc)
+                                                                                                                                                                                                                                                    costeros)
+                                                                                                                                       Madera total. Nacional                                               6.071.165               1.614.865                                                             4.456.300
+                                                                                                                     Reciclados        Madera total. Importaciones                                          2.116.696                562.296                                                              1.554.400
+                                                                                                                                       Madera total. Exportaciones                                           810.400                                                                                       810.400
+                                                                                                                                       Madera total. Nacional                                               1.433.964                                988.261          45.127         400.576
+                                                                                                            Subproductos y coproductos Madera total. Importaciones                                           607.390                                    0                            607.390
+                                                                                                                                       Madera total. Exportaciones
+
+
+
+                                                                                                                                    CONSUMOAPARENTE                                                       Tablero y Pasta                           Tablero                                      Pasta
+
+
+
+                                                                                                                                                                Coníferas                                    2.847.238                              1.714.211                                  1.133.027
+                                                                                                           Extracciones + Importaciones           s.c.          Frondosas                                    4.284.367                               428.102                                   3.856.265
+                                                                                                                                                                                                                                                                                                                      ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                               + Prod. secundarios -          (excepto uso      Reciclado + Secundarios                                                                                                        6.208.266
+                                                                                                                                                                                                             9.418.815                              3.210.549
+                                                                                                                  Exportaciones              energético c.c.)
+                                                                                                                                                                Madera total                               16.550.420                              5.352.862                              11.197.558
+
+
+
+
+     Gráfico H.3: Resumen del Balance de la madera de 2024 (miles m3 equivalentes) – Destino trituración
+                                                                                                           Consum o aparente= Extracciones + Reciclados + Subproductos + im portaciones - Exportaciones                          ... Sin datos                  cc Con corteza                      sc Sin corteza
+                                                                                                               EXTRACCIONES DEMADERA EN MONTEY COMERCIOCON                                        Destino Sierra, chapa y                                         Destino Otros productos
+                                                                                                                                                                                                                                  Sierra     Chapa-desenrollo
+                                                                                                                                                                                                        desenrollo                                                (postes, apeas, vallas, etc.)
+                                                                                                                                DESTINOA
+                                                                                                                                                                Coníferas                                5.101.485               5.038.183         63.302                   365.042
+                                                                                                                                            Con corteza (c.c.) Frondosas                                  339.421                 362.113          -22.692                  233.619
+                                                                                                                                                                Madera total                            5.440.906               5.400.296         40.610                  598.661
+                                                                                                                      Extracciones                              Coníferas                                4.438.292               4.383.220         55.073                   317.586
+                                                                                                                                            Sin corteza (s.c.) Frondosas                                  298.690                 318.659          -19.969                  205.585
+                                                                                                                                                                Madera total                            4.736.982               4.701.879         35.104                  523.171
+                                                                                                                                                   Corteza (destino uso energético)                      703.924                 698.417           5.506                   75.490
+                                                                                                                                                                Coníferas                                 222.876
+                                                                                                                      Importaciones         s.c.                Frondosas                                 328.026
+                                                                                                                                                                Madera total                             550.902                                                           75.860
+                                                                                                                                                                Coníferas                                 663.174
+                                                                                                                      Exportaciones         s.c.                Frondosas                                 51.923
+                                                                                                                                                                Madera total                             715.097                                                          239.301
+
+
+
+
+39
+                                                                                                                PRODUCTOS RECICLADOS +PRODUCTOS SECUNDARIOS                                                                                                        Empleados para otros
+                                                                                                                                                                                                 Empleados para sierra,
+                                                                                                                 (producidos en actividad industrial como subproductos o                                                          Sierra     Chapa-desenrollo     productos (postes, apeas,
+                                                                                                                                                                                                   chapa y desenrollo
+                                                                                                                                       coproductos)                                                                                                                       vallas, etc.)
+
+
+
+
+                                          desenrollo y Otros productos
+                                                                                                                                            Madera total. Nacional
+                                                                                                                       Reciclados           Madera total. Importaciones
+                                                                                                                                            Madera total. Exportaciones
+                                                                                                                                            Madera total. Nacional
+                                                                                                                     Subproductos y
+                                                                                                                                            Madera total. Importaciones
+                                                                                                                      coproductos
+                                                                                                                                            Madera total. Exportaciones
+
+
+                                                                                                                                                                                                                                                                  Otros productos (postes,
+                                                                                                                                       CONSUMOAPARENTE                                          Sierra, chapa y desenrollo        Sierra     Chapa y desenrollo
+                                                                                                                                                                                                                                                                     apeas, vallas, etc.)
+                                                                                                                                                                                                                                                                                                  ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                                                                                                                    Extracciones +                               Coníferas                               3.997.994               3.938.464         59.530                   348.689
+                                                                                                                                                   s.c.          Frondosas                                574.793                 486.513          88.280                   250.342
+                                                                                                                 Importaciones + Prod.
+                                                                                                                                               (excepto uso
+
+
+
+
+     Gráfico H.4: Resumen del Balance de la madera de 2024 (miles m3 equivalentes) – Destino sierra, chapa y
+                                                                                                                    secundarios -                                Reciclado + Secundarios
+                                                                                                                                              energético c.c.)
+                                                                                                                    Exportaciones                                Madera total                          4.572.787                4.424.978        147.810                  359.730
+
+
+                                                                                                               Consum o aparente= Extracciones + Reciclados + Subproductos + im portaciones - Exportaciones                  ... Sin datos       cc Con corteza              sc Sin corteza
+                   ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+Índice de tablas
+
+Tabla A.1: Superficie forestal arbolada y desarbolada por comunidad autónoma ...................... 3
+Tabla A.2: Existencias en millones de pies y de m3 cc por clase diamétrica y comunidad
+autónoma ...................................................................................................................................... 5
+Tabla A.3: Evolución de las existencias entre los dos últimos inventarios de cada comunidad
+autónoma ...................................................................................................................................... 6
+Tabla A.4: Existencias en metros cúbicos y volumen de leñas por comunidad autónoma .......... 8
+Tabla A.5: Existencias en volumen con corteza de las especies principales ................................. 8
+Tabla B.1: Serie histórica de repoblaciones forestales ................................................................. 9
+Tabla B.2: Superficie repoblada por comunidad autónoma en 2024 ............................... 10
+Tabla B.3: Superficie repoblada por tipo de propiedad en el año 2024 ..................................... 11
+Tabla C.1: Superficie forestal ordenada por comunidad autónoma en 2024 ............................. 12
+Tabla C.2: Superficie forestal ordenada por comunidad autónoma según titularidad .............. 13
+Tabla C.3: Superficie certificada por comunidad autónoma y sistema de certificación ............. 14
+Tabla C.4: Certificados de Cadena de Custodia emitidos por comunidad autónoma y sistema de
+certificación ................................................................................................................................. 14
+Tabla C.5: Número de certificados Cadena de Custodia PEFC y de instalaciones con certificado
+Cadena de Custodia PEFC por categoría de instalación .............................................................. 15
+Tabla C.6: Número de titulares con certificado Cadena de Custodia FSC por tipo de
+producto ..................................................................................................................................... 15
+Tabla C.7: Superficie protegida por figura de protección ........................................................... 15
+Tabla C.8: Superficie forestal protegida por RN2000, ENP y/o ambos por comunidad autónoma
+..................................................................................................................................................... 16
+Tabla C.9: Superficie forestal protegida por RN2000, ENP y/o ambos ....................................... 17
+Tabla C.10: Superficie forestal protegida total por comunidad autónoma ................................ 17
+Tabla C.11: Porcentaje de superficie protegida que es forestal ................................................. 18
+Tabla D.1: Serie histórica de cortas de madera y valor económico asociado ............................. 19
+Tabla D.2: Cortas de coníferas, frondosas y totales por comunidad autónoma......................... 20
+Tabla D.3: Cortas por tipo de propiedad en 2024 ....................................................................... 21
+Tabla D.4: Cortas de madera por especie en 2024 ..................................................................... 22
+Tabla D.5: Cortas totales por especie, propiedad y precios unitarios asociados en 2024 .......... 22
+Tabla D.6: Serie histórica de aprovechamientos de leñas y valor económico asociado ............. 23
+Tabla D.7: Leñas de coníferas, frondosas y totales por comunidad autónoma .......................... 24
+Tabla D.8: Leñas por tipo de propiedad en 2024 ........................................................................ 25
+Tabla D.9: Leñas por especie en 2024 ......................................................................................... 25
+Tabla D.10: Leñas extraídas por especie y propiedad, y precios asociados por especie en 2024
+..................................................................................................................................................... 26
+Tabla E.1: Producción de otros productos forestales por comunidad autónoma y tipo de
+propiedad en 2024 ...................................................................................................................... 27
+Tabla F.1: Licencias de caza expedidas por comunidad autónoma en 2024 .............................. 28
+Tabla F.2: Capturas de especies cinegéticas, junto con el peso y valor asociado ....................... 29
+Tabla F.3: Sueltas de especies cinegéticas, por comunidad autónoma, procedencia y modalidad
+de caza......................................................................................................................................... 30
+Tabla F.4: Producción de granjas cinegéticas para repoblación por modalidad de caza por
+especie ........................................................................................................................................ 31
+Tabla F.5: Número y superficie de terrenos cinegéticos por tipo de terreno en 2024 ............... 31
+Tabla G.1: Licencias de pesca expedidas por comunidad autónoma en 2024............................ 32
+Tabla G.2: Capturas de especies piscícolas en 2024 ................................................................... 33
+
+
+
+
+                                                                          40
+                 ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+Tabla G.3: Sueltas por especie y procedencia en número de ejemplares .................................. 33
+Tabla G.4: Sueltas por comunidad autónoma y procedencia en número de ejemplares........... 34
+Tabla G.5: Número, longitud de tramo y superficie por tipo de masa de aprovechamiento
+piscícola en 2024 ......................................................................................................................... 34
+Tabla H.1: Producción nacional y comercio exterior de los grandes grupos de productos
+procedentes de la madera en 2024 ............................................................................................ 35
+
+
+
+
+                                                                     41
+                  ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+Índice de gráficos
+
+Gráfico A.1: Porcentaje de superficie arbolada y desarbolada respecto de la superficie
+autonómica total ........................................................................................................................... 4
+Gráfico A.2: Distribución de volumen (m3 cc) por clase diamétrica (cm) ..................................... 5
+Gráfico A.3: Distribución del número de pies mayores (nº) por clase diamétrica (cm) ............... 6
+Gráfico A.4: Comparación de existencias en volumen maderable con corteza............................ 7
+Gráfico A.5: Comparación de existencias en número de pies mayores ........................................ 7
+Gráfico B.1: Superficies repobladas por tipo de repoblación en los últimos 20 años ................ 10
+Gráfico C.1: Porcentaje de la superficie forestal ordenada respecto de la superficie forestal
+total en cada comunidad autónoma en 2024 ............................................................................. 13
+Gráfico C.2: Porcentaje de superficie forestal protegida (arbolada y desarbolada) por
+comunidad autónoma ................................................................................................................. 16
+Gráfico C.3: Porcentaje de superficie forestal protegida por RN2000, ENP y/o ambos ............. 17
+Gráfico D.1: Serie histórica de cortas de madera ................................................................. 20
+Gráfico D.2: Cortas por tipo de propiedad en 2024 .................................................................... 21
+Gráfico D.3: Serie histórica de aprovechamiento de leñas ......................................................... 24
+Gráfico H.1: Resumen del Balance de la madera de 2024 (miles m3 equivalentes)................... 36
+Gráfico H.2: Resumen del Balance de la madera de 2024 (miles m3 equivalentes) –
+Extracciones y comercio y Destino Biomasa ............................................................................... 37
+Gráfico H.3: Resumen del Balance de la madera de 2024 (miles m3 equivalentes) – Destino
+trituración.................................................................................................................................... 38
+Gráfico H.4: Resumen del Balance de la madera de 2024 (miles m3 equivalentes) – Destino
+sierra, chapa y desenrollo y Otros productos ............................................................................. 39
+
+
+
+
+                                                                       42
+ANUARIO DE ESTADÍSTICA FORESTAL 2024 - DATOS
+
+
+
+
+                     43
+

@@ -1,15 +1,8 @@
-1 200 46788 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/aef2022/Anuario%20Estadistica%20Forestal%202022.pdf
-f1.pdf: HTML document, Unicode text, UTF-8 text, with very long lines (4804), with CRLF, LF line terminators
-wc: f1.grep: No such file or directory
-2 200 8884045 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/aef2021/Anuario%20Estadistica%20Forestal%202021.pdf
-f2.pdf: PDF document, version 1.5, 197 page(s)
-37 f2.grep
-3 200 678226 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/otros-aprovecha-forestales/Otros-Aprovechamientos-Forestales-IME.pdf
-f3.pdf: PDF document, version 1.5, 11 page(s)
-2 f3.grep
-4 200 46788 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/aef2023/Anuario%20Estadistica%20Forestal%202023.pdf
-f4.pdf: HTML document, Unicode text, UTF-8 text, with very long lines (4804), with CRLF, LF line terminators
-wc: f4.grep: No such file or directory
-5 200 46788 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/aef2024/Anuario%20Estadistica%20Forestal%202024.pdf
-f5.pdf: HTML document, Unicode text, UTF-8 text, with very long lines (4804), with CRLF, LF line terminators
-wc: f5.grep: No such file or directory
+1 200 94005 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/otros-aprovecha-forestales/OTROS-APROVECHAMIENTOS-FORESTALES-Tablas-resumen-2005-2022.xlsx
+g1.xlsx: Microsoft Excel 2007+
+2 200 1295802 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/otros-aprovecha-forestales/OTROS-APROVECHAMIENTOS-FORESTALES-Datos-desglosados-2022.xlsx
+g2.xlsx: Microsoft Excel 2007+
+3 200 4386794 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/aef/aef2024/anuario-estadistica-forestal-2024-datos.pdf
+g3.pdf: PDF document, version 1.4, 44 page(s)
+4 200 8518617 https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/anuario-estadistica-forestal-2022-avance.pdf
+g4.pdf: PDF document, version 1.6, 3 page(s)
