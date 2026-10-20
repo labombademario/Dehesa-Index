@@ -1,0 +1,18 @@
+name: probe-ast
+on:
+  push:
+    branches: [research/probe-ast]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/probe/probe-ast.sh
+      - if: always()
+        run: |
+          git config user.name "dehesa-probe"; git config user.email "probe@users.noreply.github.com"
+          git add -f probe-ast-out; git commit -m "probe-ast: resultados" || true
+          for i in 1 2 3; do git fetch origin research/probe-ast && git rebase origin/research/probe-ast && git push origin HEAD:research/probe-ast && break; sleep 5; done
