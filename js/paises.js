@@ -289,6 +289,13 @@
     var el = document.getElementById(id); if (!el || el.firstElementChild) return; var X = RMX[lang()] || RMX.es;
     el.innerHTML = '<section class="di-card ps-rm"><h2 class="ps-rm-h">' + esc(X.title.replace('{c}', tt().countries[ST.c] || ST.c)) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(SLOT[key][lang()] || SLOT[key].es) + '</p></section>';
   }
+  /* lleva al gráfico completo (explorador) y lo mantiene a la vista mientras los bloques de más arriba terminan de cargarse y mueven la página */
+  function goExplorer() {
+    var stop = false, off = function () { stop = true; ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.removeEventListener(ev, off, true); }); };
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, off, true); });
+    var align = function () { var e = document.getElementById('ps-explorer'); if (!e || stop) return; var h = (window.DehesaShared && DehesaShared.frHdr) ? 0 : 0, r = e.getBoundingClientRect(); window.scrollTo(0, window.pageYOffset + r.top - 120 - h); };
+    align(); [250, 700, 1500, 2800].forEach(function (ms) { setTimeout(function () { align(); if (ms === 2800) off(); }, ms); });
+  }
   function frameUp(c) {
     var F = window.DehesaShared && window.DehesaShared.frame, L = FRL[lang()] || FRL.es; if (!F) return;
     var nm = tt().countries[ST.c] || c.name || ST.c;
@@ -806,7 +813,7 @@
       det.appendChild(sm); var box = document.createElement('div'); box.style.marginTop = '6px'; box.innerHTML = DIWatch.editor(ST.c, cur.id, lang()); det.appendChild(box);
       var after = wb.parentNode; after.parentNode.insertBefore(det, after.nextSibling); DIWatch.bindEditor(box, build);
     }
-    Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } build(); var e = document.getElementById('ps-explorer'); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } build(); goExplorer(); }; });
         try { var qq = new URLSearchParams(window.location.search); qq.set('c', ST.c); ['g', 's', 'r'].forEach(function (k) { var v = ST[k]; if (v && v !== 'all' && !(k === 'r' && v === 'max')) qq.set(k, v); else qq.delete(k); }); if (ST.cmp) qq.set('cmp', ST.cmp.cc + ':' + ST.cmp.id); else qq.delete('cmp'); history.replaceState(null, '', '?' + qq.toString() + window.location.hash); } catch (e) {} bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
   }
   /* Al cambiar un desplegable la ficha se repinta y los bloques de arriba se recargan: se mantiene el control en el mismo sitio de la pantalla
