@@ -73,7 +73,7 @@ def cork_production():
     if not f.exists(): return None
     d = load("es-cork.json"); ys = sorted(d["years"], key=int)
     return {"unit": "t", "years": [int(y) for y in ys], "total": [d["years"][y]["total"] for y in ys], "ccaa": {c: [d["years"][y]["ccaa"].get(c) for y in ys] for c in d["names"]},
-            "names": d["names"], "estimatedAN": d.get("estimated", {}).get("AN", []), "totalIsSum": [int(y) for y in ys if d["years"][y].get("totalIsSum")],
+            "names": d["names"], "unallocated": {y: d["years"][y]["unallocated"] for y in ys if "unallocated" in d["years"][y]}, "yearNotes": {y: d["years"][y]["note"] for y in ys if "note" in d["years"][y]}, "estimatedAN": d.get("estimated", {}).get("AN", []), "totalIsSum": [int(y) for y in ys if d["years"][y].get("totalIsSum")],
             "publishedTotal": {y: d["years"][y]["publishedTotal"] for y in ys if "publishedTotal" in d["years"][y]}, "source": d["source"]}
 
 def main():
