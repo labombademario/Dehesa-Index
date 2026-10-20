@@ -1,0 +1,17 @@
+name: tmp-probe-corcho
+on:
+  push:
+    branches: [research/probe-corcho]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          sudo apt-get install -y poppler-utils >/dev/null 2>&1 || true
+          bash probe/corcho.sh > probe/corcho.log 2>&1 || true
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/corcho.log probe/corcho-out/* || true; git commit -qm "probe out" || true; git push || true
