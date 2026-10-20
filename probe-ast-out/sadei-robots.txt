@@ -1,0 +1,21 @@
+Sitemap: https://www.sadei.es/sitemap.xml
+
+User-agent: *
+Disallow: /system/
+Disallow: /datos/
+Disallow: /tematico/
+Disallow: /v_portal/comercio/
+Disallow: /v_portal/usuarios/
+Disallow: /v_portal/personal/
+Disallow: /v_portal/inc/
+Disallow: /v_portal/apartados/valoracionintro.asp
+Disallow: /v_portal/apartados/enviaramigo.asp
+Disallow: /v_portal/apartados/enviaramigointro.asp
+Disallow: /v_portal/apartados/enviarmail.asp
+Disallow: /v_portal/apartados/comentariointro.asp
+Disallow: /v_portal/entradahtml/entradahtmlcomenintro.asp
+Disallow: /v_portal/forum/mensajeintro.asp
+Disallow: /maps
+Allow: /v_portal/inc/imagen.asp
+Allow: /v_portal/inc/longdesc.asp
+Allow: /system/estilos/fonts/font-awesome.css

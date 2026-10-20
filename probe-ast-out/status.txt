@@ -1,16 +1,22 @@
-curl: (28) Connection timed out after 90002 milliseconds
-dataset-precio-tierras-agrario.xlsx 000 0 
-dataset-precio-tierras-agrario.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precio-tierras-agrario.xlsx
-curl: (28) Connection timed out after 90001 milliseconds
-dataset-precio-medio-vacuno.xlsx 000 0 
-dataset-precio-medio-vacuno.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precio-medio-vacuno.xlsx
-curl: (28) Connection timed out after 90001 milliseconds
-dataset-precios-vacuno-historico.xlsx 000 0 
-dataset-precios-vacuno-historico.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precios-vacuno-historico.xlsx
-curl: (28) Connection timed out after 90002 milliseconds
+curl: (28) Connection timed out after 40001 milliseconds
 dataset-precios-percibidos.xlsx 000 0 
-dataset-precios-percibidos.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precios-percibidos.xlsx
-curl: (28) Connection timed out after 90002 milliseconds
+dataset-precios-percibidos.xlsx intento 1 FALLO
+curl: (28) Connection timed out after 40003 milliseconds
+dataset-precios-percibidos.xlsx 000 0 
+dataset-precios-percibidos.xlsx intento 2 FALLO
+curl: (28) Connection timed out after 40002 milliseconds
+dataset-precio-medio-vacuno.xlsx 000 0 
+dataset-precio-medio-vacuno.xlsx intento 1 FALLO
+curl: (28) Connection timed out after 40002 milliseconds
+dataset-precio-medio-vacuno.xlsx 000 0 
+dataset-precio-medio-vacuno.xlsx intento 2 FALLO
+curl: (28) Connection timed out after 40002 milliseconds
 robots-descargas.txt 000 0 
-robots-descargas.txt FALLO https://descargas.asturias.es/robots.txt
-dp.html 200 218598 text/html; charset=utf-8
+robots-descargas.txt intento 1 FALLO
+curl: (28) Connection timed out after 40002 milliseconds
+robots-descargas.txt 000 0 
+robots-descargas.txt intento 2 FALLO
+sadei-99040214.html 200 114862 text/html;charset=utf-8
+sadei-robots.txt 200 720 text/plain;charset=utf-8
+sadei-api-root.json 200 20653 text/html;charset=iso-8859-1
+sadei-api-root2.json 200 20653 text/html;charset=iso-8859-1

@@ -1,0 +1,355 @@
+<html><head><script type="text/javascript">    
+	setTimeout(function(){
+	   window.location.replace("/");
+	}, 2000);
+</script><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<title>P&aacute;gina de error SADEI - Sociedad Asturiana de Estudios Econ&oacute;micos e Industriales</title><meta name="title" content="P&aacute;gina de error SADEI - Sociedad Asturiana de Estudios Econ&oacute;micos e Industriales"><meta name="description" content="SADEI - Sociedad Asturiana de Estudios Econ&oacute;micos e Industriales"><meta name="keywords" content="sadei"><meta name="language" content="es"><meta http-equiv="X-UA-Compatible" content="IE=100"><meta name="robots" content="noindex"><meta name="robots" content="nofollow"><meta name="rating" content="general"><meta http-equiv="pragma" content="no-cache"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link id="favicon" rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><script type="text/javascript">    
+  var gb_carpeta_url = '';  
+  var gb_v = 'v_portal';  
+  var gb_p = 'personal'; 
+  var gb_tx_caberruta = 'Introduzca una direcci&oacute;n de inicio de la ruta';  
+  
+  // <![CDATA[
+  // Using document.write to load JavaScript dependencies to bypass O2 network inlining of JavaScript.
+  function loadJS(file){document.write("<" + "script type='text/javascript' src='" + file + "'></" + "script>");}
+  loadJS("https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js");
+  // ]]>
+</script><script type="text/javascript" src="/v_portal/javascript/slick/slick.min.js"></script><script type="text/javascript" src="/v_portal/javascript/mensajes.js"></script><script type="text/javascript" src="/v_portal/javascript/tooltipster.js"></script><link rel="stylesheet" href="/v_portal/javascript/fancybox-master/dist/jquery.fancybox.min.css"><script src="/v_portal/javascript/fancybox-master/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/v_portal/javascript/dynoGraphs.js"></script><script type="text/javascript" src="/v_portal/javascript/verflash.js"></script><link rel="stylesheet" type="text/css" href="/v_portal/flash/flowplayer/skin/functional.css"><script type="text/javascript" src="/v_portal/flash/flowplayer/flowplayer.min.js"></script><script type="text/javascript">
+  loadJS("/v_portal/javascript/esencia.js");
+  loadJS("/v_portal/javascript/esencia-load.js?hrotar=-1");
+</script><!--[if lt IE 9]>
+  <script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]--><script type="text/javascript">
+/**
+   ** Variables globales para la pol&iacute;tica de cookies
+  **/
+  var gb_te_cookie='432'; // apartado con referencia especial cookies, al que redirecciona el enlace "Pol&iacute;tica de Cookies"
+  var gb_nom_cookie='Pol&iacute;tica de cookies';
+  
+  /* Mensaje principal que se muestra en el banner. 
+   * Por defecto: Utilizamos cookies propias y de terceros para mejorar la experiencia de navegaci&oacute;n, y ofrecer contenidos de su inter&eacute;s.
+   */
+  var gb_mensj_cookie='Sociedad Asturiana de Estudios Econ&oacute;micos e Industriales (SADEI) utiliza cookies propias y de terceros para fines anal&iacute;ticos.';
+  
+  /* Mensaje por si se quiere indicar las cookies externas que se usan ej: Usamos Google Analytics , twitter
+   * Por defecto: vac&iacute;o
+   */
+  var gb_mensj_cookie_ext=''; //Para indicar las cookies externas que se usan ej: Usamos Google Analytics , twitter
+  
+  /* Mensaje final. 
+   * Por defecto: 
+   *  si hcookie=1 (menos estricta, se muestra el aviso pero se cargan las cookies siempre) --> Al continuar la navegaci&oacute;n entendemos que acepta nuestra
+   *  si hcookie=2 (m&aacute;s estricta, no se cargan cookies hasta no aceptar la pol&iacute;tica) --> Todos los componentes externos ser&aacute;n bloqueados hasta que acepte nuestra
+   */
+  var gb_txcookie1 = "Sociedad Asturiana de Estudios Econ&oacute;micos e Industriales (SADEI) utiliza cookies propias y de terceros para fines anal&iacute;ticos.";// Utilizamos cookies propias, de terceros y anal&iacute;ticas para mejorar la experiencia de navegaci&oacute;n, y ofrecer contenidos de su inter&eacute;s.
+  var gb_txcookie2 = "Pulsa AQU&Iacute; para m&aacute;s informaci&oacute;n.";// Clica aqu&iacute; para m&aacute;s informaci&oacute;n
+  var gb_txcookie3 = "Puedes aceptar todas las cookies pulsando el bot&oacute;n &#147;Aceptar&#148; o configurarlas o rechazar su uso pulsando el bot&oacute;n &#147;Configurar&#148;.";// Puedes aceptar todas las cookies pulsando el bot&oacute;n 'Aceptar' o configurarlas o rechazar su uso pulsando el bot&oacute;n 'Configurar'.
+  var gb_txcookie4 = "Pol&iacute;tica de Cookies";// Pol&iacute;tica de Cookies
+  var gb_txcookie5 = "Aceptar";// Aceptar
+  var gb_txcookie6 = "Configurar cookies";// Configurar cookies
+  var gb_color_enlace='#D0021B'; //Color de texto del enlace
+</script><script type="text/javascript" src="/v_portal/javascript/cookiesdirective.js"></script><script type="text/javascript" src="/v_portal/javascript/cookies-load.js"></script><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" type="text/css" href="/system/estilos/fonts/font-awesome.css"><link rel="stylesheet" type="text/css" href="/v_portal/estilos_sadei/estilos_sadei.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,90" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&amp;display=swap" rel="stylesheet"><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-D8VSBP9WVH"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D8VSBP9WVH');
+  gtag('config', 'G-Z3LBH17L9R');
+  gtag('config', 'UA-150215-1');
+</script><link rel="stylesheet" type="text/css" href="/v_portal/estilos/estilos.css" media="screen,print"><link rel="stylesheet" type="text/css" href="/v_portal/estilos/heditor.css" media="screen,print"><link rel="stylesheet" type="text/css" href="/v_portal/estilos.asp" media="screen,print"><link rel="stylesheet" type="text/css" href="/v_portal/estilos/estilosprint.css" media="print"></head><body>
+
+<div id="cab_sup">
+
+  <div id="cabecera" class="blq">
+
+    <div id="ic-bars" class="bl_izq mart4"><i class="cr_p fa fa-bars colovrbot fs_20 pad8 va_m">&nbsp;</i></div>
+		<div class="menubars bg_ng2">
+					
+		<ul class="mbars mbars_a blq martb32 padlr5p t90">
+<li class="blq lty_n"><a href="/inicio" class="bl_izq padtb8 t90 padlr5p fs_15 colgen" title="Ir a&nbsp;INICIO"><span class="nomteact">Inicio</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="#" onclick="return false;" class="bl_izq padtb8 t90 padlr5p fs_15 colgen mdesp" title="Ir a&nbsp;QUI&Eacute;NES SOMOS">
+    				<i class="bl_der fs_20 fa fa-angle-down colovrbot padr4 padl4 va_s">&nbsp;</i>
+<span class="nomteact">Qui&eacute;nes somos</span>
+
+    </a>
+					
+		<ul class="mbars_a blq padtb16 padlr5p t90">
+<li class="blq lty_n"><a href="/sadei/quienes-somos/presentacion_259_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;PRESENTACI&Oacute;N"><span class="nomteact">Presentaci&oacute;n</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/quienes-somos/normativa-estadistica_6_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;NORMATIVA ESTAD&Iacute;STICA"><span class="nomteact">Normativa estad&iacute;stica</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/quienes-somos/transparencia_118_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;TRANSPARENCIA"><span class="nomteact">Transparencia</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/quienes-somos/perfil-del-contratante_116_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;PERFIL DEL CONTRATANTE"><span class="nomteact">Perfil del contratante</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/bolsa" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;PROCESOS DE SELECCI&Oacute;N DE PERSONAL"><span class="nomteact">Procesos de selecci&oacute;n de personal</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/quienes-somos/enlaces-de-interes_278_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;ENLACES DE INTER&Eacute;S"><span class="nomteact">Enlaces de inter&eacute;s</span>
+
+    </a>
+
+  </li>
+
+</ul>
+
+  </li>
+<li class="blq lty_n"><a href="#" onclick="return false;" class="bl_izq padtb8 t90 padlr5p fs_15 colgen mdesp" title="Ir a&nbsp;INFORMACI&Oacute;N ESTAD&Iacute;STICA">
+    				<i class="bl_der fs_20 fa fa-angle-down colovrbot padr4 padl4 va_s">&nbsp;</i>
+<span class="nomteact">Informaci&oacute;n estad&iacute;stica</span>
+
+    </a>
+					
+		<ul class="mbars_a blq padtb16 padlr5p t90">
+<li class="blq lty_n"><a href="/sadei/informacion-estadistica/noticias_258_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;NOTICIAS"><span class="nomteact">Noticias</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/informacion-estadistica/informacion-tematica_408_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;INFORMACI&Oacute;N TEM&Aacute;TICA"><span class="nomteact">Informaci&oacute;n tem&aacute;tica</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/informacion-estadistica/indicadores-de-coyuntura_266_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;INDICADORES DE COYUNTURA"><span class="nomteact">Indicadores de coyuntura</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/informacion-estadistica/banco-de-datos_263_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;BANCO DE DATOS"><span class="nomteact">Banco de datos</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/informacion-estadistica/banco-de-datos-municipal_572_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;BANCO DE DATOS MUNICIPAL"><span class="nomteact">Banco de datos municipal</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/informacion-estadistica/catalogo-de-publicaciones_122_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;CAT&Aacute;LOGO DE PUBLICACIONES"><span class="nomteact">Cat&aacute;logo de publicaciones</span>
+
+    </a>
+
+  </li>
+
+</ul>
+
+  </li>
+<li class="blq lty_n"><a href="#" onclick="return false;" class="bl_izq padtb8 t90 padlr5p fs_15 colgen mdesp" title="Ir a&nbsp;M&Eacute;TODOS Y DOCUMENTACI&Oacute;N">
+    				<i class="bl_der fs_20 fa fa-angle-down colovrbot padr4 padl4 va_s">&nbsp;</i>
+<span class="nomteact">M&eacute;todos y documentaci&oacute;n</span>
+
+    </a>
+					
+		<ul class="mbars_a blq padtb16 padlr5p t90">
+<li class="blq lty_n"><a href="/sadei/metodos-y-documentacion/metodos_124_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;M&Eacute;TODOS"><span class="nomteact">M&eacute;todos</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/metodos-y-documentacion/clasificaciones-y-estandares_277_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;CLASIFICACIONES Y EST&Aacute;NDARES"><span class="nomteact">Clasificaciones y est&aacute;ndares</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/metodos-y-documentacion/mapas_125_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;MAPAS"><span class="nomteact">Mapas</span>
+
+    </a>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/metodos-y-documentacion/cuestionarios_126_1_ap.html" class="bl_izq t90 padtb8 padlr5p fs_15 colgen" title="Ir a&nbsp;CUESTIONARIOS"><span class="nomteact">Cuestionarios</span>
+
+    </a>
+
+  </li>
+
+</ul>
+
+  </li>
+<li class="blq lty_n"><a href="/sadei/sadei.es/contacto_113_1_ap.html" class="bl_izq padtb8 t90 padlr5p fs_15 colgen" title="Ir a&nbsp;CONTACTO"><span class="nomteact">Contacto</span>
+
+    </a>
+
+  </li>
+
+</ul>
+
+    </div>
+    <div id="logotipo" class="bl_izq mart4 ohid"><a href="/sadei/sadei---sociedad-asturiana-de-estudios-economicos-e-industriales/sadei---sociedad-asturiana-de-estudios-economicos-e-industriales_0_1_ap.html" title="Ir al inicio de la web"><img src="/imgslogo/logo_sadei.png" alt="SADEI - Sociedad Asturiana de Estudios Econ&oacute;micos e Industriales"></a></div>
+    <div id="eslogan" class="bl_izq"><span class="colgen">SOCIEDAD ASTURIANA DE</span>&nbsp;ESTUDIOS ECON&Oacute;MICOS E INDUSTRIALES</div>
+      
+    <span class="bl_der oculto cr_p btn_busc_movil"><i class="fa fa-search"></i></span>
+   
+    <div id="bl-cab" class="bl_der padl16 mart4">        
+<div id="busqueda" class="bl_der mart8">
+  <script type="text/javascript">
+    function cabvalidacion (formulario)
+    {
+      // 07/01/2020: se pide no validar el texto.
+//      if ((formulario.textobusc.value =="")||(formulario.textobusc.value ==" ")
+//          || (formulario.textobusc.value=="en esta secci&oacute;n"))
+//      {
+//        //alert("Introduzca texto a buscar, por favor.");
+//        alert("Introduzca texto a buscar, por favor.");
+//        formulario.textobusc.focus();
+//        return false;
+//      }
+//  
+//      texto=formulario.textobusc.value
+//      longitud=texto.length
+//  
+//      if (longitud<3)
+//      {
+//        //alert("El texto a buscar ha de tener un m&iacute;nimo de 3 caracteres.");
+//        alert("El texto a buscar ha de tener un m&iacute;nimo de 3 caracteres.");
+//        formulario.textobusc.focus();
+//        return false;
+//      }
+  
+      return true;
+    }
+  </script>
+
+ <form id="cabform2" class="bl_izq t100" name="cabform2" action="/v_portal/busqueda/index.asp" onsubmit="return cabvalidacion(this)" method="get">
+    <fieldset class="fsetoculto"><legend class="oculto"><!--B&uacute;squeda en los contenidos de la web-->B&uacute;squeda en los contenidos de la web</legend>
+      <p class="blq">
+        <label for="txtbuscar" class="oculto"><!--Buscar:-->buscar</label>
+        <span class="bl_izq padtb8 marr8 colgen fw_500 v_norm txt_c span_bs">buscar:</span>
+        
+        <input id="txtbuscar" class="bl_izq cajaf wauto padtb8 v_colsec primero cr_p" tabindex="4" type="text" title="EN TODO EL SITIO" name="textobusc" size="12" maxlength="30" value="" placeholder="en todo el sitio" onfocus="entrarelem(this,'en todo el sitio')" onblur="dejarelem(this,'en todo el sitio')">
+        
+        <button type="submit" tabindex="5" class="bl_izq btn_buscar" name="enviar" value="" title="en todo el sitio"><i class="fa fa-search"></i></button>
+
+        <input tabindex="" class="bl_der oculto boton_fnd cr_p mart8" type="submit" name="enviar" value="BUSCAR" title="Comenzar la b&uacute;squeda">
+      </p>
+      <p class="oculto"><input type="hidden" name="pri" value="1"></p>
+      <p class="oculto"><input type="hidden" name="chkcur" value="1"></p>
+
+      <p class="oculto"><input type="hidden" name="chknov" value="1"></p>
+      <p class="oculto"><input type="hidden" name="chknot" value="1"></p>
+      <p class="oculto"><input type="hidden" name="chkinf" value="1"></p>
+
+    </fieldset>
+  </form>
+</div>    
+    </div>
+    <style>
+      .logo_principado {
+        width: 10%;
+        min-width: 75px;
+        max-width: 120px;
+        display: flex;
+        align-items: center;
+        height: calc(100% - 2rem);
+        padding-bottom: 1rem;
+      }
+
+      @media screen and (max-width: 800px) {
+        .logo_principado {
+          margin-top: 10px;
+        }
+      }
+    </style>
+    <div class="bl_der marr16 logo_principado" style="">
+      <img class="t100" src="/v_portal/imgs/logoprincipado.png">
+    </div>
+	</div>
+</div>
+  <div id="medio" class="blq">
+
+      <div class="centrado">
+
+        <div id="contenido"> 
+          <div class="blq">
+            
+          </div>
+<h1 class="titulo">P&aacute;gina de error</h1>
+  <p class="blq mart16 padl2 txt_b brd_e3">
+    <i class="fa fa-caret-right col_ng5 padr4 marb6 fs_1_25">&nbsp;</i><span class="v_norm">ERROR</span>
+  </p>
+  
+  <div class="blq t95_8 marb10 pad2p z21 caja">
+
+<div class="blq">
+    <div class="blq v_norm">Contenido no encontrado. El contenido al que intenta acceder no existe o ya no est&aacute; publicado.</div>
+    <div class="blq txa_c padt32">
+
+      <a class="bt_form" href="/v_portal/apartados/apartado.asp" onclick="history.back();return false;">Aceptar</a>
+  
+    </div>
+</div>
+
+  </div>
+
+     </div>   
+    </div>
+  </div>  
+<div id="foot" class="blq padtb32">
+  <div class="centrado">
+					
+		<ul class="menupie bl_izq t70">
+<li class="bl_izq padr32"><a href="/sadei/sadei.es/quienes-somos_110_1_ap.html" class="blq padt16 psr colgen fw_500 fs_15" title="Ir a&nbsp;QUI&Eacute;NES SOMOS"><span class="nomteact">Qui&eacute;nes somos</span>
+
+    </a>
+
+  </li>
+<li class="bl_izq padr32"><a href="/sadei/sadei.es/informacion-estadistica_111_1_ap.html" class="blq padt16 psr colgen fw_500 fs_15" title="Ir a&nbsp;INFORMACI&Oacute;N ESTAD&Iacute;STICA"><span class="nomteact">Informaci&oacute;n estad&iacute;stica</span>
+
+    </a>
+
+  </li>
+<li class="bl_izq padr32"><a href="/sadei/sadei.es/metodos-y-documentacion_7_1_ap.html" class="blq padt16 psr colgen fw_500 fs_15" title="Ir a&nbsp;M&Eacute;TODOS Y DOCUMENTACI&Oacute;N"><span class="nomteact">M&eacute;todos y documentaci&oacute;n</span>
+
+    </a>
+
+  </li>
+<li class="bl_izq padr32"><a href="/sadei/sadei.es/contacto_113_1_ap.html" class="blq padt16 psr colgen fw_500 fs_15" title="Ir a&nbsp;CONTACTO"><span class="nomteact">Contacto</span>
+
+    </a>
+
+  </li>
+
+</ul>
+
+		<div id="redes_sociales_pie" class="bl_der padt16">
+			<a class="bl_izq fs_24" href="https://bsky.app/profile/sadei.es" target="_blank">
+				<svg viewbox="0 0 1000 727" width="1.6em" style="fill:currentColor;margin-top:0.1em;" xmlns="http://www.w3.org/2000/svg">
+					<path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z" fill="#1185fe"></path>
+				</svg>
+			</a>
+			<a class="bl_izq fs_24" href="https://twitter.com/sadeiasturias" target="_blank">
+				<svg viewbox="0 0 1200 1227" width="0.8em" style="fill:currentColor;margin-top:0.1em;" xmlns="http://www.w3.org/2000/svg">
+					<path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"></path> 
+				</svg>
+			</a>
+			<a class="bl_izq fs_24 marl12" href="https://www.facebook.com/sadeiAsturias/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</div>
+
+<div id="postfoot" class="blq bg_ng1 padtb16">
+	<div class="centrado"> 	
+<div class="grid_ac bl_izq"><span>C/ Quintana, 11B - 1&ordm; &middot; 33009 &middot; Oviedo Asturias</span></div>
+<div class="grid_ac bl_izq"><img class="marauto dbl" src="/v_portal/imgs/logo_gob.jpg" alt="Gobierno Principado de Asturias"></div>
+<div class="grid_ac bl_izq"><ul class="blq menu txa_c"><li class="primero"><a class="blq fs_15 psr colgen" href="/sadei/sadei.es/aviso-legal_135_1_ap.html" title="Ver&nbsp;AVISO LEGAL">Aviso Legal</a></li><li><a class="blq fs_15 psr colgen" href="/sadei/sadei.es/politica-de-privacidad_137_1_ap.html" title="Ver&nbsp;POL&Iacute;TICA DE PRIVACIDAD">Pol&iacute;tica de Privacidad</a></li><li><a href="#" onclick="configCookies(); return false;" class="blq fs_15 psr colgen">Configurar Cookies</a></li></ul></div>
+  </div>
+</div>
+
+</body></html>

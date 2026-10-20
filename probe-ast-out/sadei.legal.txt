@@ -1,0 +1,18 @@
+
+--- LINKS
+#pxcontent
+/sadei/Resources/Styles/jQuery/redmond/jquery-ui.css?v=20.2.0
+/sadei/Resources/Styles/jQuery/tablesorter/style.css?v=20.2.0
+/sadei/Resources/Styles/main-common.css?v=20.2.0
+/sadei/Resources/Styles/main-custom.css?v=20.2.0
+/sadei/Resources/Styles/main-pxweb.css?v=20.2.0
+/sadei/Resources/Styles/reset.css?v=20.2.0
+/sadei/pxweb/en/
+/sadei/pxweb/en/01/
+/sadei/pxweb/en/01/99__04/
+/sadei/pxweb/en/01/99__04__02/
+/sadei/pxweb/es/01/99__04__02/99040214.px/
+https://fonts.googleapis.com/icon?family=Material+Icons
+javascript:__doPostBack('ctl00$ContentPlaceHolderMain$VariableSelector1$VariableSelector1$VariableSelectorValueSelectRepeater$ctl01$VariableValueSelect$VariableValueSelect$SearchValuesButton','')
+javascript:__doPostBack('ctl00$ContentPlaceHolderMain$VariableSelector1$VariableSelector1$VariableSelectorValueSelectRepeater$ctl02$VariableValueSelect$VariableValueSelect$SearchValuesButton','')
+javascript:__doPostBack('ctl00$ToTheTopButton','')
