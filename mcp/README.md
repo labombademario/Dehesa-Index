@@ -29,6 +29,10 @@ En la configuración del cliente:
 
 Sin variables, lee `https://dehesaindex.com`. Con `DEHESA_DATA_DIR=/ruta/a/Dehesa-Index` lee los ficheros del clon. Requiere Node 18 o superior. Pruebas: `node scripts/test-mcp.mjs`.
 
-## Servidor remoto (preparado, NO desplegado)
+## Servidor remoto (desplegado)
 
-`worker.mjs` es un Cloudflare Worker sin estado (un POST = un mensaje JSON-RPC). Para publicarlo hace falta una cuenta de Cloudflare: `cd mcp && npx wrangler deploy`. Hasta entonces la página `conector-ia` solo ofrece la vía local.
+`worker.mjs` es un Cloudflare Worker sin estado (un POST = un mensaje JSON-RPC), publicado en `https://dehesa-index-mcp.dehesaindex.workers.dev` (un GET devuelve 405; solo admite POST). Es de solo lectura, sin autenticación, y lee los datos de `https://dehesaindex.com`. Está probado con peticiones directas (`initialize`, `tools/list` y las siete herramientas), no con todos los clientes de IA.
+
+Para volver a publicarlo hace falta una cuenta de Cloudflare: `cd mcp && npx wrangler deploy`. La versión desplegada hoy se pegó a mano desde el editor del panel de Cloudflare con el código empaquetado de `worker.mjs` y `core.mjs`; si cambias el código aquí, hay que volver a desplegar.
+
+Límites del plan gratuito de Cloudflare: 100.000 peticiones al día. Al no tener autenticación conviene una regla de límite de peticiones en el panel.
