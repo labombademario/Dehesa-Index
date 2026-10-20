@@ -2944,3 +2944,18 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 
 /* Mi seguimiento: estado vacío guiado */
 .ms-more{margin:22px 0}.ms-more>summary{cursor:pointer;font-weight:700;min-height:36px;display:flex;align-items:center}
+/* Avisos: tres vias de seguimiento y subidas/bajadas en dos columnas */
+.av-ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:6px}
+.av-way{padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.av-way .di-emp-p{margin:6px 0 4px}
+.av-tag{font-size:12px;color:var(--text-muted)}
+.av-two{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;align-items:start}
+@media(max-width:860px){.av-two{grid-template-columns:1fr}}
+/* Cestas: selector de cesta en chips y frase resumen */
+.ce-chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 10px}
+.ce-chip{font:inherit;font-size:14px;padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:var(--surface,#fff);color:inherit;cursor:pointer}
+.ce-chip[aria-pressed="true"]{background:var(--text,#1c2a22);color:var(--bg,#fff);border-color:transparent}
+.ce-chip:focus-visible{outline:2px solid var(--gold,#b8892f);outline-offset:2px}
+.ce-sent{font-size:16px;margin:6px 0 0}
+/* Coste de receta: invitacion a cargar el ejemplo cuando esta vacio */
+.mc-first{padding:10px 2px 4px}.mc-first .di-emp-p{margin:4px 0 10px}

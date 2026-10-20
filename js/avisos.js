@@ -7,6 +7,7 @@
   var DIGEST = S.digest || { action: '', provider: '' };   /* se configura en js/shared.js */
   var T = {
     es: {
+      wT: 'Elige cómo seguirlos', wF: 'En un lector de feeds', wM: 'En tu correo', wB: 'En este navegador', wFa: 'Sin dar datos',  wMa: 'Un resumen con lo nuevo', wBa: 'Para tus productos',
       title: 'Avisos de precio', h1: 'Avisos de precio',
       sub: 'Qué precios se han movido más, con su fuente y su fecha. Puedes seguirlos en un lector de feeds sin dar tu correo, recibir el resumen en tu bandeja o activar avisos en este navegador para tus propios productos.',
       loading: 'Cargando…', fail: 'No se pudo cargar el resumen. Vuelve a intentarlo en unos minutos.',
@@ -21,6 +22,7 @@
       fin: 'Información de fuentes oficiales, no asesoramiento financiero.', M: { us: 'EE. UU.', eu: 'UE', uk: 'Reino Unido', ca: 'Canadá' }
     },
     en: {
+      wT: 'Choose how to follow them', wF: 'In a feed reader', wM: 'In your inbox', wB: 'In this browser', wFa: 'No personal data', wMa: 'A summary of what is new', wBa: 'For your own products',
       title: 'Price alerts', h1: 'Price alerts',
       sub: 'Which prices moved most, with their source and date. Follow them in a feed reader without giving your email, get the summary in your inbox, or turn on alerts in this browser for your own products.',
       loading: 'Loading…', fail: 'Could not load the summary. Please try again in a few minutes.',
@@ -35,6 +37,7 @@
       fin: 'Information from official sources, not financial advice.', M: { us: 'US', eu: 'EU', uk: 'UK', ca: 'Canada' }
     },
     fr: {
+      wT: 'Choisissez comment les suivre', wF: 'Dans un lecteur de flux', wM: 'Dans votre boîte mail', wB: 'Dans ce navigateur', wFa: 'Sans donnée personnelle', wMa: 'Un résumé des nouveautés', wBa: 'Pour vos produits',
       title: 'Alertes de prix', h1: 'Alertes de prix',
       sub: 'Quels prix ont le plus bougé, avec leur source et leur date. Suivez-les dans un lecteur de flux sans donner votre e-mail, recevez le résumé dans votre boîte ou activez des alertes dans ce navigateur pour vos propres produits.',
       loading: 'Chargement…', fail: 'Impossible de charger le résumé. Réessayez dans quelques minutes.',
@@ -49,6 +52,7 @@
       fin: 'Information issue de sources officielles, pas un conseil financier.', M: { us: 'É.-U.', eu: 'UE', uk: 'Royaume-Uni', ca: 'Canada' }
     },
     it: {
+      wT: 'Scegli come seguirli', wF: 'In un lettore di feed', wM: 'Nella tua casella', wB: 'In questo browser', wFa: 'Senza dati personali', wMa: 'Un riepilogo delle novità', wBa: 'Per i tuoi prodotti',
       title: 'Avvisi di prezzo', h1: 'Avvisi di prezzo',
       sub: 'Quali prezzi si sono mossi di più, con fonte e data. Puoi seguirli in un lettore di feed senza dare la tua e-mail, ricevere il riepilogo nella tua casella o attivare avvisi in questo browser per i tuoi prodotti.',
       loading: 'Caricamento…', fail: 'Impossibile caricare il riepilogo. Riprova tra qualche minuto.',
@@ -69,6 +73,7 @@
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function nf(n, d) { try { return Number(n).toLocaleString(lang(), { maximumFractionDigits: d == null ? 2 : d }); } catch (e) { return String(n); } }
   function nm(o, k) { return (o && (o[lang()] || o.es)) || k || ''; }
+  function cleanAttr(a) { return String(a == null ? '' : a).replace(/\s*\([^)]*<[^>]*>[^)]*\)/g, '').replace(/,\s*<[^>]+>/g, '').replace(/\s*<[^>]+>/g, '').replace(/\s+([.,])/g, '$1'); }
   function card(k, v) { return '<div class="di-card" style="padding:12px 16px"><div style="font-size:12px;color:var(--text-muted)">' + esc(k) + '</div><div style="font-size:22px;font-weight:700;margin-top:2px">' + esc(v) + '</div></div>'; }
   function list(w, title, items) {
     if (!items.length) return '';
@@ -76,7 +81,7 @@
       var pl = nm(e.place), col = e.changePct > 0 ? '#17703f' : '#9a3b1a';
       return '<li style="padding:10px 0;border-top:1px solid var(--border)"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b>' + esc(nm(e.name, e.product)) + '</b><b style="color:' + col + '">' + (e.changePct > 0 ? '+' : '') + nf(e.changePct) + ' %</b></div>' +
         '<div style="font-size:13px">' + nf(e.value) + ' ' + esc(e.currency) + '/' + esc(S.unitLabel ? S.unitLabel(e.unit, lang()) : e.unit) + ' · ' + esc(e.date) + ' <span style="color:var(--text-muted)">(' + esc(w.from) + ' ' + nf(e.previous) + ', ' + esc(e.previousDate) + ')</span></div>' +
-        '<div style="font-size:12px;color:var(--text-muted)">' + esc(w.M[e.region] || e.region) + (pl && pl !== nm(e.name) && pl !== (w.M[e.region] || '') ? ' · ' + esc(pl) : '') + ' · ' + esc(e.attribution) + ' · <a href="informe-negociacion.html?p=' + encodeURIComponent(e.product) + '">' + esc(w.rep) + '</a></div></li>';
+        '<div style="font-size:12px;color:var(--text-muted)">' + esc(w.M[e.region] || e.region) + (pl && pl !== nm(e.name) && pl !== (w.M[e.region] || '') ? ' · ' + esc(pl) : '') + ' · ' + esc(cleanAttr(e.attribution)) + ' · <a href="informe-negociacion.html?p=' + encodeURIComponent(e.product) + '">' + esc(w.rep) + '</a></div></li>';
     }).join('') + '</ul></div>';
   }
   function render() {
@@ -85,14 +90,17 @@
     if (FAILED) { root.innerHTML = '<p>' + esc(w.fail) + '</p>'; return; }
     if (!W) { root.innerHTML = '<p class="di-movers-hint">' + esc(w.loading) + '</p>'; return; }
     var h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:8px">' + card(w.kM, nf(W.summary.seriesWithMoves)) + card(w.kE, nf(W.summary.events)) + card(w.kD, S.fmtDate ? S.fmtDate(W.generatedAt) : W.generatedAt) + '</div>';
-    h += (W.topUp.length || W.topDown.length) ? list(w, w.up, W.topUp) + list(w, w.dn, W.topDown) : '<p class="di-movers-hint">' + esc(w.none) + '</p>';
-    h += '<p class="di-movers-hint">' + esc(w.note) + ' ' + esc(w.fin) + '</p>';
-    h += '<h2 style="margin:26px 0 6px;font-size:18px">' + esc(w.fT) + '</h2><p class="di-emp-p">' + esc(w.fP) + '</p><p><a href="' + esc(S.sitePath('data/digest/feed.xml')) + '">' + esc(w.fL) + '</a> · <a href="' + esc(S.sitePath('data/digest/feed-en.xml')) + '">' + esc(w.fE) + '</a></p>';
-    h += '<h2 style="margin:26px 0 6px;font-size:18px">' + esc(w.mT) + '</h2><p class="di-emp-p">' + esc(w.mP) + '</p>';
-    if (DIGEST.action) h += '<form class="di-card" style="padding:14px;display:grid;gap:10px;max-width:460px" action="' + esc(DIGEST.action) + '" method="post" target="_blank"><label style="font-size:13px">' + esc(w.email) + '<br><input type="email" name="email" required autocomplete="email" class="di-compare-select" style="width:100%"></label>' +
+    h += (W.topUp.length || W.topDown.length) ? '<div class="av-two"><div>' + list(w, w.up, W.topUp) + '</div><div>' + list(w, w.dn, W.topDown) + '</div></div>' : '<p class="di-movers-hint">' + esc(w.none) + '</p>';
+    h += '<p class="di-movers-hint">' + esc(w.note) + ' ' + esc(w.fin) + '</p>@@WAYS@@';
+    var mail;
+    if (DIGEST.action) mail = '<form style="display:grid;gap:8px;margin-top:8px" action="' + esc(DIGEST.action) + '" method="post" target="_blank"><label style="font-size:13px">' + esc(w.email) + '<br><input type="email" name="email" required autocomplete="email" class="di-compare-select" style="width:100%"></label>' +
       '<label style="font-size:12.5px;display:flex;gap:8px;align-items:flex-start"><input type="checkbox" required style="margin-top:3px"><span>' + esc(w.consent.replace('{p}', DIGEST.provider)) + '</span></label><input type="hidden" name="tag" value="' + (lang() === 'es' ? 'es' : 'en') + '"><button class="di-btn-gold-solid" type="submit">' + esc(w.go) + '</button></form>';
-    else h += '<p class="di-movers-hint">' + esc(w.mOff) + '</p>';
-    h += '<h2 style="margin:26px 0 6px;font-size:18px">' + esc(w.bT) + '</h2><p class="di-emp-p">' + esc(w.bP) + '</p><p><a class="di-btn-sec" href="mi-seguimiento.html">' + esc(w.bL) + '</a></p>';
+    else mail = '<p class="di-movers-hint">' + esc(w.mOff) + '</p>';
+    var ways = '<h2 style="margin:22px 0 8px;font-size:18px">' + esc(w.wT) + '</h2><div class="av-ways">' +
+      '<div class="di-card av-way"><b>' + esc(w.wF) + '</b><span class="av-tag">' + esc(w.wFa) + '</span><p class="di-emp-p">' + esc(w.fP) + '</p><p><a href="' + esc(S.sitePath('data/digest/feed.xml')) + '">' + esc(w.fL) + '</a> · <a href="' + esc(S.sitePath('data/digest/feed-en.xml')) + '">' + esc(w.fE) + '</a></p></div>' +
+      '<div class="di-card av-way"><b>' + esc(w.wM) + '</b><span class="av-tag">' + esc(w.wMa) + '</span><p class="di-emp-p">' + esc(w.mP) + '</p>' + mail + '</div>' +
+      '<div class="di-card av-way"><b>' + esc(w.wB) + '</b><span class="av-tag">' + esc(w.wBa) + '</span><p class="di-emp-p">' + esc(w.bP) + '</p><p><a class="di-btn-sec" href="mi-seguimiento.html">' + esc(w.bL) + '</a></p></div></div>';
+    h = h.replace('@@WAYS@@', ways);
     h += '<h2 style="margin:26px 0 6px;font-size:18px">' + esc(w.lg) + '</h2><p class="di-emp-p">' + esc(w.lgP) + ' <a href="legal.html">' + esc(w.lgL) + '</a></p>';
     root.innerHTML = h;
   }

@@ -5,6 +5,7 @@
   var S = window.DehesaShared;
   var T = {
     es: {
+      sent: 'En una frase: esta cesta marca {a} frente al año base {y} y {b} frente a hace un año.', sentA: 'En una frase: esta cesta marca {a} frente al año base {y}.',
       title: 'Cestas de precios', h1: 'Cestas de precios',
       sub: 'Índices por categoría (cereales, pienso, lácteos) que resumen cómo se han movido varios precios a la vez. Base 100, pesos iguales y metodología publicada. Cada serie que entra lleva su fuente y su licencia.',
       loading: 'Cargando…', fail: 'No se pudieron cargar las cestas. Vuelve a intentarlo en unos minutos.', basket: 'Cesta',
@@ -16,6 +17,7 @@
       M: { us: 'EE. UU.', eu: 'UE', uk: 'Reino Unido', ca: 'Canadá' }, chartLbl: 'Evolución de la cesta, base 100', attr: 'Atribución', cta: '¿Necesitas otra cesta o pesos propios (tu ración, tu cartera de cultivos)? Cuéntanos qué te hace falta.', ctaB: 'Escríbenos', csvHead: 'mes;indice_base_100'
     },
     en: {
+      sent: 'In one line: this basket stands at {a} against the base year {y} and at {b} against a year ago.', sentA: 'In one line: this basket stands at {a} against the base year {y}.',
       title: 'Price baskets', h1: 'Price baskets',
       sub: 'Category indices (cereals, feed, dairy) that summarise how several prices moved together. Base 100, equal weights and published methodology. Every series included carries its source and licence.',
       loading: 'Loading…', fail: 'Could not load the baskets. Please try again in a few minutes.', basket: 'Basket',
@@ -27,6 +29,7 @@
       M: { us: 'US', eu: 'EU', uk: 'UK', ca: 'Canada' }, chartLbl: 'Basket trend, base 100', attr: 'Attribution', cta: 'Need another basket or your own weights (your ration, your crop mix)? Tell us what you need.', ctaB: 'Contact us', csvHead: 'month;index_base_100'
     },
     fr: {
+      sent: 'En une phrase : ce panier marque {a} par rapport à l’année de base {y} et {b} par rapport à il y a un an.', sentA: 'En une phrase : ce panier marque {a} par rapport à l’année de base {y}.',
       title: 'Paniers de prix', h1: 'Paniers de prix',
       sub: 'Indices par catégorie (céréales, aliments du bétail, produits laitiers) qui résument l’évolution de plusieurs prix à la fois. Base 100, poids égaux et méthodologie publiée. Chaque série incluse porte sa source et sa licence.',
       loading: 'Chargement…', fail: 'Impossible de charger les paniers. Réessayez dans quelques minutes.', basket: 'Panier',
@@ -38,6 +41,7 @@
       M: { us: 'É.-U.', eu: 'UE', uk: 'Royaume-Uni', ca: 'Canada' }, chartLbl: 'Évolution du panier, base 100', attr: 'Attribution', cta: 'Besoin d’un autre panier ou de vos propres poids (votre ration, votre assolement) ? Dites-nous ce qu’il vous faut.', ctaB: 'Nous écrire', csvHead: 'mois;indice_base_100'
     },
     it: {
+      sent: 'In una frase: questo paniere segna {a} rispetto all’anno base {y} e {b} rispetto a un anno fa.', sentA: 'In una frase: questo paniere segna {a} rispetto all’anno base {y}.',
       title: 'Panieri di prezzi', h1: 'Panieri di prezzi',
       sub: 'Indici per categoria (cereali, mangimi, latticini) che riassumono come si sono mossi più prezzi insieme. Base 100, pesi uguali e metodologia pubblicata. Ogni serie inclusa riporta fonte e licenza.',
       loading: 'Caricamento…', fail: 'Impossibile caricare i panieri. Riprova tra qualche minuto.', basket: 'Paniere',
@@ -55,6 +59,7 @@
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function nf(n, d) { try { return Number(n).toLocaleString(lang(), { maximumFractionDigits: d == null ? 2 : d }); } catch (e) { return String(n); } }
   function nm(o, k) { return (o && (o[lang()] || o.es)) || k || ''; }
+  function cleanAttr(a) { return String(a == null ? '' : a).replace(/\s*\([^)]*<[^>]*>[^)]*\)/g, '').replace(/,\s*<[^>]+>/g, '').replace(/\s*<[^>]+>/g, '').replace(/\s+([.,])/g, '$1'); }
   function sg(n, d) { return (n > 0 ? '+' : '') + nf(n, d) + ' %'; }
   function card(k, v, sub) { return '<div class="di-card" style="padding:12px 16px"><div style="font-size:12px;color:var(--text-muted)">' + esc(k) + '</div><div style="font-size:22px;font-weight:700;margin-top:2px">' + esc(v) + '</div>' + (sub ? '<div style="font-size:11.5px;color:var(--text-muted)">' + esc(sub) + '</div>' : '') + '</div>'; }
   function chart(w, b) {
@@ -82,21 +87,23 @@
     if (!IDX) { root.innerHTML = '<p class="di-movers-hint">' + esc(w.loading) + '</p>'; return; }
     if (!SEL || !IDX.baskets.some(function (b) { return b.id === SEL; })) SEL = IDX.baskets[0].id;
     load(SEL); var b = DOC[SEL];
-    var h = '<label style="font-size:13px">' + esc(w.basket) + '<br><select id="ce-s" class="di-compare-select" style="width:auto;min-width:240px">' + IDX.baskets.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === SEL ? ' selected' : '') + '>' + esc(nm(x.name)) + '</option>'; }).join('') + '</select></label>';
+    var h = '<div class="ce-chips" role="group" aria-label="' + esc(w.basket) + '">' + IDX.baskets.map(function (x) { return '<button type="button" class="ce-chip" data-c="' + esc(x.id) + '" aria-pressed="' + (x.id === SEL ? 'true' : 'false') + '">' + esc(nm(x.name)) + '</button>'; }).join('') + '</div>';
     if (!b || b === 'loading') root.innerHTML = h + '<p class="di-movers-hint">' + esc(FAILED ? w.fail : w.loading) + '</p>';
     else {
       var last = b.points[b.points.length - 1];
+      var dv = last[1] - 100, sa = (dv > 0 ? '+' : '') + nf(dv, 1) + ' %';
+      h += '<p class="ce-sent">' + esc((b.changeYoYPct == null ? w.sentA : w.sent).replace('{a}', sa).replace('{y}', b.basePeriod).replace('{b}', b.changeYoYPct == null ? '' : sg(b.changeYoYPct, 1))) + '</p>';
       h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0">' + card(w.last, nf(last[1]), last[0]) + card(w.mom, b.changeMoMPct == null ? '—' : sg(b.changeMoMPct)) + card(w.yoy, b.changeYoYPct == null ? '—' : sg(b.changeYoYPct)) + card(w.base, String(b.basePeriod), w.range + ' ' + b.first + ' · ' + b.rows + ' ' + w.rows) + '</div>';
       h += '<div class="di-card" style="padding:10px 12px">' + chart(w, b) + '</div><p class="di-movers-hint">' + esc(w.net) + '</p>';
-      h += '<h2 style="margin:22px 0 8px;font-size:18px">' + esc(w.mT) + '</h2><div class="di-card" style="padding:4px 14px;overflow-x:auto"><table data-no-rows style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + w.mCols.map(function (c) { return '<th style="padding:8px 6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
-        b.members.map(function (m) { var vc = m.verdict === 'apto' ? '#17703f' : '#8f5f12'; return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px;font-weight:600">' + esc(nm(m.name, m.product)) + '</td><td style="padding:8px 6px">' + nf(m.weightPct, 1) + ' %</td><td style="padding:8px 6px">' + esc(m.unit + ' ' + m.currency) + '</td><td style="padding:8px 6px;font-size:12.5px">' + esc(m.sourceName) + '<div style="font-size:11.5px;color:var(--text-muted)">' + esc(m.attribution) + '</div></td><td style="padding:8px 6px">' + esc(m.license) + '</td><td style="padding:8px 6px"><span class="di-badge" style="background:' + vc + '1a;color:' + vc + '">' + esc(w.v[m.verdict] || m.verdict) + '</span></td></tr>'; }).join('') + '</tbody></table></div>';
+      h += '<details class="ms-more" open><summary>' + esc(w.mT) + ' (' + b.members.length + ')</summary><div class="di-card" style="padding:4px 14px;overflow-x:auto;margin-top:8px"><table data-no-rows style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + w.mCols.map(function (c) { return '<th style="padding:8px 6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+        b.members.map(function (m) { var vc = m.verdict === 'apto' ? '#17703f' : '#8f5f12'; return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px;font-weight:600">' + esc(nm(m.name, m.product)) + '</td><td style="padding:8px 6px">' + nf(m.weightPct, 1) + ' %</td><td style="padding:8px 6px">' + esc(m.unit + ' ' + m.currency) + '</td><td style="padding:8px 6px;font-size:12.5px">' + esc(m.sourceName) + '<div style="font-size:11.5px;color:var(--text-muted)">' + esc(cleanAttr(m.attribution)) + '</div></td><td style="padding:8px 6px">' + esc(m.license) + '</td><td style="padding:8px 6px"><span class="di-badge" style="background:' + vc + '1a;color:' + vc + '">' + esc(w.v[m.verdict] || m.verdict) + '</span></td></tr>'; }).join('') + '</tbody></table></div></details>';
       h += '<h2 style="margin:22px 0 8px;font-size:18px">' + esc(w.meT) + '</h2><p class="di-emp-p">' + esc(nm(b.methodology)) + '</p>';
       h += '<h2 style="margin:22px 0 8px;font-size:18px">' + esc(w.dT) + '</h2><p><a href="' + csvHref(w, b) + '" download="cesta-' + esc(b.id.replace('/', '-')) + '.csv">' + esc(w.dCsv) + '</a> · <a href="' + esc(S.sitePath('data/indices/' + b.id + '.json')) + '">' + esc(w.dJson) + '</a> · <a href="' + esc(S.sitePath('data/indices/index.json')) + '">' + esc(w.dAll) + '</a></p>';
       if (IDX.excluded.length) h += '<h2 style="margin:22px 0 8px;font-size:18px">' + esc(w.xT) + '</h2><p class="di-emp-p">' + esc(w.xP) + '</p><ul class="di-emp-p" style="margin:0;padding-left:18px">' + IDX.excluded.map(function (e) { return '<li>' + esc(nm(e.name)) + ': ' + esc((w.why[e.code] || e.reason).replace('{n}', e.n == null ? '' : e.n)) + '</li>'; }).join('') + '</ul>';
       h += '<section class="di-card di-emp-cta" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaB) + '</a></section>';
       root.innerHTML = h;
     }
-    var s = document.getElementById('ce-s'); if (s) s.onchange = function (e) { SEL = e.target.value; try { history.replaceState(null, '', '?c=' + SEL); } catch (x) {} render(); };
+    Array.prototype.forEach.call(root.querySelectorAll('.ce-chip'), function (c) { c.onclick = function () { SEL = c.getAttribute('data-c'); try { history.replaceState(null, '', '?c=' + SEL); } catch (x) {} render(); }; });
   }
   var qp = /[?&]c=([^&]+)/.exec(location.search); if (qp) SEL = decodeURIComponent(qp[1]);
   S.init('data');
