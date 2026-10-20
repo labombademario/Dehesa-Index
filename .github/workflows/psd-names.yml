@@ -1,15 +1,20 @@
 name: PSD commodity names (one-off)
 on: workflow_dispatch
 permissions:
-  contents: read
+  contents: write
 jobs:
   names:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: List names
         run: |
+          : > /tmp/names.txt
           for f in tree_nuts fruits_vegetables oilseeds dairy livestock grains_pulses sugar coffee cotton; do
             curl -fsSL --retry 3 -m 180 -o /tmp/p.zip "https://apps.fas.usda.gov/psdonline/downloads/psd_${f}_csv.zip" && unzip -oq /tmp/p.zip -d /tmp/p
-            echo "== $f"
-            python3 -c "import csv,glob; s={}; [s.__setitem__(r[1], s.get(r[1],0)+1) for fp in glob.glob('/tmp/p/psd_${f}.csv') for r in csv.reader(open(fp,encoding='utf-8-sig')) if r and r[0]!='Commodity_Code']; [print(' ',k,v) for k,v in sorted(s.items())]"
+            echo "== $f" >> /tmp/names.txt
+            python3 -c "import csv,glob; s={}; [s.__setitem__(r[1], s.get(r[1],0)+1) for fp in glob.glob('/tmp/p/psd_${f}.csv') for r in csv.reader(open(fp,encoding='utf-8-sig')) if r and r[0]!='Commodity_Code']; [print(' ',k,v) for k,v in sorted(s.items())]" >> /tmp/names.txt
           done
+          mkdir -p tmp && cp /tmp/names.txt tmp/psd-names.txt
+          git config user.name github-actions && git config user.email actions@github.com
+          git add tmp/psd-names.txt && git commit -m "PSD names (temporal)" && git pull --rebase -q && git push
