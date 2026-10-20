@@ -526,7 +526,7 @@
       var l = (inp.partners || []).filter(function (s) { return s.id.indexOf('-' + tag + '-') > -1; }), an = l.filter(function (s) { return s.frequency === 'annual'; }); if (an.length) l = an;
       l = l.filter(function (s) { return s.latest != null; }).sort(function (a, b) { return b.latest - a.latest; });
       if (!l.length) return null; var s = l[0], raw = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, '');
-      var cn = country(raw, lang) || raw; items.push({ k: 'kpi', title: lab, src: null, value: cn, when: inp.plabel(s.latestPeriod, s.frequency), delta: unitTxt(s.latest, s.unit, lang), dir: 0, note: null });
+      var cn = country(raw, lang) || raw; items.push({ k: 'kpi', title: lab, src: null, value: (flagOf(raw) ? flagOf(raw) + ' ' : '') + cn, when: inp.plabel(s.latestPeriod, s.frequency), delta: unitTxt(s.latest, s.unit, lang), dir: 0, note: null });
       return lab + ': ' + cn + ', ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ').';
     };
     var d = side('exp', t.dst), o = side('imp', t.org); if (d) out.push(d); if (o) out.push(o);
