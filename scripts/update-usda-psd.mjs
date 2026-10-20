@@ -26,7 +26,10 @@ const EXTRA=[
  {id:'girasol',file:'oilseeds',name:'Oilseed, Sunflowerseed'},{id:'cacahuete',file:'oilseeds',name:'Oilseed, Peanut'},{id:'aceite_palma',file:'oilseeds',name:'Oil, Palm'},{id:'aceite_soja',file:'oilseeds',name:'Oil, Soybean'},
  {id:'aceite_girasol',file:'oilseeds',name:'Oil, Sunflowerseed'},{id:'aceite_colza',file:'oilseeds',name:'Oil, Rapeseed'},
  {id:'avena',file:'grains_pulses',name:'Oats'},{id:'centeno',file:'grains_pulses',name:'Rye'},{id:'sorgo',file:'grains_pulses',name:'Sorghum'},{id:'mijo',file:'grains_pulses',name:'Millet'},
- {id:'mantequilla',file:'dairy',name:'Dairy, Butter'},{id:'queso',file:'dairy',name:'Dairy, Cheese'}
+ {id:'mantequilla',file:'dairy',name:'Dairy, Butter'},{id:'queso',file:'dairy',name:'Dairy, Cheese'},
+ {id:'leche_polvo_desnatada',file:'dairy',name:'Dairy, Milk, Nonfat Dry'},{id:'leche_polvo_entera',file:'dairy',name:'Dairy, Dry Whole Milk Powder'},
+ {id:'aceite_coco',file:'oilseeds',name:'Oil, Coconut'},{id:'aceite_algodon',file:'oilseeds',name:'Oil, Cottonseed'},{id:'aceite_cacahuete',file:'oilseeds',name:'Oil, Peanut'},{id:'aceite_palmiste',file:'oilseeds',name:'Oil, Palm Kernel'},
+ {id:'harina_colza',file:'oilseeds',name:'Meal, Rapeseed'},{id:'harina_girasol',file:'oilseeds',name:'Meal, Sunflowerseed'},{id:'semilla_algodon',file:'oilseeds',name:'Oilseed, Cottonseed'}
 ];
 const EXTRA_IDS=new Set(EXTRA.map(c=>c.id));
 const ATTR={'Production':'production','Imports':'imports','Exports':'exports','Domestic Consumption':'consumption','Ending Stocks':'endingStocks','Beginning Stocks':'beginningStocks','Area Harvested':'area','Crush':'crush','Feed Dom. Consumption':'feed','Total Supply':'totalSupply'};

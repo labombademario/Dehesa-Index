@@ -2914,3 +2914,17 @@ details[open] > .ob-sum .ob-sum-i { transform: rotate(180deg); }
 /* Pesca: la segunda serie (acuicultura) en azul; antes granate y apenas se distinguia del negro de capturas */
 .wp-line-b{stroke:#1f6fa8}.wp-dot-b{fill:#1f6fa8;stroke:var(--surface);stroke-width:2}.wp-sw-b{background:#1f6fa8}
 html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-dot-b{fill:#6fb3e0}html[data-theme="dark"] .wp-sw-b{background:#6fb3e0}
+
+/* Mi explotación: pasos, atajos y bloques vacíos compactos */
+.fx-steps{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:0 0 14px;padding:0}
+.fx-steps li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--border);border-radius:12px;font-size:14px;line-height:1.4}
+.fx-n{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--accent,#1f5f3a);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.fx-quick{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.fx-line .di-movers-head-row{align-items:center}
+.fx-acts{display:flex;gap:6px;flex-wrap:wrap}
+.fx-opt{font-weight:400;color:var(--text-faint);margin-left:4px}
+.fx-line .fx-costs>summary{padding:6px 0}
+.pt-sec.fx-empty h2{font-size:15px;margin:0}
+.pt-sec.fx-empty .di-movers-hint{display:none}
+.pt-sec.fx-empty{opacity:.85}
+@media (max-width:640px){.fx-line .di-movers-head-row{flex-direction:column;align-items:flex-start;gap:6px}}

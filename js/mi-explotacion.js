@@ -37,6 +37,13 @@
     sumHint: ['no se suman monedas distintas', 'different currencies are never added', 'les devises différentes ne sont jamais additionnées', 'valute diverse non vengono mai sommate'],
     sumNeed: ['Rellena superficie, rendimiento, costes y precio de al menos un cultivo para ver el resumen.', 'Fill in area, yield, costs and price for at least one crop to see the summary.', 'Renseignez surface, rendement, coûts et prix d’au moins une culture pour voir le résumé.', 'Compila superficie, resa, costi e prezzo di almeno una coltura per vedere il riepilogo.'],
     lines: ['Tus cultivos', 'Your crops', 'Vos cultures', 'Le tue colture'],
+    steps: [['1', 'Elige tu cultivo', 'y escribe superficie y rendimiento'], ['2', 'Pon el precio', 'el tuyo, o el de referencia de Dehesa'], ['3', 'Añade tus costes', 'opcional, mejora el margen']],
+    stepsEn: [['1', 'Pick your crop', 'and enter area and yield'], ['2', 'Set the price', 'yours, or the Dehesa reference'], ['3', 'Add your costs', 'optional, sharpens the margin']],
+    stepsFr: [['1', 'Choisissez la culture', 'et indiquez surface et rendement'], ['2', 'Fixez le prix', 'le vôtre ou la référence Dehesa'], ['3', 'Ajoutez vos coûts', 'facultatif, affine la marge']],
+    stepsIt: [['1', 'Scegli la coltura', 'e inserisci superficie e resa'], ['2', 'Imposta il prezzo', 'il tuo o il riferimento Dehesa'], ['3', 'Aggiungi i costi', 'facoltativo, affina il margine']],
+    quick: ['Añadir otro cultivo:', 'Add another crop:', 'Ajouter une culture :', 'Aggiungi un’altra coltura:'],
+    dup: ['Duplicar', 'Duplicate', 'Dupliquer', 'Duplica'],
+    optional: ['opcional', 'optional', 'facultatif', 'facoltativo'],
     add: ['Añadir cultivo', 'Add crop', 'Ajouter une culture', 'Aggiungi coltura'],
     rm: ['Quitar este cultivo', 'Remove this crop', 'Retirer cette culture', 'Rimuovi questa coltura'],
     maxL: ['Máximo {0} cultivos en esta versión.', 'Up to {0} crops in this version.', 'Maximum {0} cultures dans cette version.', 'Massimo {0} colture in questa versione.'],
@@ -196,7 +203,7 @@
   }
   function lineHtml(line, idx) {
     var c = line.c, kgBu = K.bushelKg(c.crop), au = c.areaU === 'ha' ? t('ha') : t('ac');
-    var h = '<section class="fx-line" id="fx-sec-' + line.id + '" aria-label="' + esc(cname(line)) + '"><div class="di-movers-head-row"><h3>' + esc(cname(line)) + '</h3>' + (S.lines.length > 1 ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="rm">' + esc(t('rm')) + '</button>' : '') + '</div>';
+    var h = '<section class="fx-line" id="fx-sec-' + line.id + '" aria-label="' + esc(cname(line)) + '"><div class="di-movers-head-row"><h3>' + esc(cname(line)) + '</h3>' + '<span class="fx-acts">' + (S.lines.length < MAXL ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="dup">' + esc(t('dup')) + '</button>' : '') + (S.lines.length > 1 ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="rm">' + esc(t('rm')) + '</button>' : '') + '</span></div>';
     h += '<div class="cc-grid">' + field('fx-' + line.id + '-crop', t('crop'), sel(line, 'crop', K.CORDER.map(function (k2) { return [k2, K.CROPS[k2][li()]]; }), c.crop));
     h += field('fx-' + line.id + '-area', t('area') + ' (' + au + ')', '<div class="cc-row">' + inp(line, 'area', c.area) + seg(line, 'areaU', [['ha', t('ha')], ['ac', t('ac')]], c.areaU) + '</div>');
     h += field('fx-' + line.id + '-y', t('yield') + ' (' + (c.yU === 't_ha' ? t('tha') : t('buac')) + ')', '<div class="cc-row">' + inp(line, 'y', c.y) + seg(line, 'yU', [['t_ha', t('tha')]].concat(kgBu ? [['bu_ac', t('buac')]] : []), kgBu ? c.yU : 't_ha') + '</div>');
@@ -205,7 +212,7 @@
     if (c.pSrc === 'manual') h += '<div class="cc-grid">' + field('fx-' + line.id + '-p', t('mine') + ' (' + (K.CURS[c.cur] || c.cur) + ' ' + (c.pUnit === 't' ? t('pt') : t('pbu')) + ')', '<div class="cc-row">' + inp(line, 'p', c.p) + seg(line, 'pUnit', [['t', t('pt')]].concat(kgBu ? [['bu', t('pbu')]] : []), kgBu ? c.pUnit : 't') + '</div>') + '</div>';
     else h += '<div id="fx-ref-' + line.id + '">' + refHtml(line) + '</div>';
     h += '</fieldset>';
-    h += '<details class="cc-fs fx-costs" data-l="' + line.id + '"' + (line.open ? ' open' : '') + '><summary>' + esc(t('costs')) + ' (' + esc(K.CURS[c.cur] || c.cur) + '/' + esc(au) + ')</summary><p class="pt-src" style="margin:8px 0">' + esc(t('costsHint')) + '</p><div class="cc-grid">' + K.COSTS.map(function (k2) { return field('fx-' + line.id + '-c-' + k2, t('c_' + k2), inp(line, 'c-' + k2, c.costs[k2]) + (LK[k2] ? '<div id="fx-lk-' + line.id + '-' + k2 + '" class="fx-lk">' + lkHtml(line, k2) + '</div>' : '')); }).join('') + '</div>' + (anyLink(line) ? '<p class="pt-src" style="margin:8px 0 0">' + esc(t('lkNote')) + '</p>' : '') + '</details>';
+    h += '<details class="cc-fs fx-costs" data-l="' + line.id + '"' + (line.open ? ' open' : '') + '><summary>' + esc(t('costs')) + ' (' + esc(K.CURS[c.cur] || c.cur) + '/' + esc(au) + ') <span class="fx-opt">· ' + esc(t('optional')) + '</span></summary><p class="pt-src" style="margin:8px 0">' + esc(t('costsHint')) + '</p><div class="cc-grid">' + K.COSTS.map(function (k2) { return field('fx-' + line.id + '-c-' + k2, t('c_' + k2), inp(line, 'c-' + k2, c.costs[k2]) + (LK[k2] ? '<div id="fx-lk-' + line.id + '-' + k2 + '" class="fx-lk">' + lkHtml(line, k2) + '</div>' : '')); }).join('') + '</div>' + (anyLink(line) ? '<p class="pt-src" style="margin:8px 0 0">' + esc(t('lkNote')) + '</p>' : '') + '</details>';
     h += '<div id="fx-r-' + line.id + '" aria-live="polite">' + resultHtml(line) + '</div></section>';
     return h;
   }
@@ -308,17 +315,19 @@
     }
     return h;
   }
-  function drawAll() { var a = document.getElementById('fx-changes'), b = document.getElementById('fx-sum'); if (a) a.innerHTML = changesHtml(); if (b) b.innerHTML = summaryHtml(); }
+  function flagEmpty() { ['fx-changes-sec', 'fx-sum-sec'].forEach(function (id) { var e = document.getElementById(id); if (e) e.className = 'pt-sec' + (e.querySelector('.pt-card, table, .fx-ch') ? '' : ' fx-empty'); }); }
+  function drawAll() { var a = document.getElementById('fx-changes'), b = document.getElementById('fx-sum'); if (a) a.innerHTML = changesHtml(); if (b) b.innerHTML = summaryHtml(); flagEmpty(); }
+  function stepsHtml() { var a = TX[['steps', 'stepsEn', 'stepsFr', 'stepsIt'][li()]]; return '<ol class="fx-steps">' + a.map(function (x) { return '<li><span class="fx-n">' + x[0] + '</span><span><strong>' + esc(x[1]) + '</strong> ' + esc(x[2]) + '</span></li>'; }).join('') + '</ol>'; }
+  function quickHtml() { if (S.lines.length >= MAXL) return '<span class="pt-sub">' + esc(tf('maxL', MAXL)) + '</span>'; return '<div class="fx-quick"><span class="pt-sub">' + esc(t('quick')) + '</span>' + K.CORDER.map(function (k2) { return '<button type="button" class="pt-chip" data-act="addc" data-crop="' + k2 + '">+ ' + esc(K.CROPS[k2][li()]) + '</button>'; }).join('') + '</div>'; }
   function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
   function shell() {
     document.getElementById('fx-h1').textContent = t('title'); document.getElementById('fx-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
-    var h = '<div class="pt-wrap"><div class="pt-note">' + esc(t('privacy')) + '</div>';
-    h += sec('fx-changes-sec', t('chTitle'), t('chHint'), '<div id="fx-changes" aria-live="polite">' + changesHtml() + '</div>');
+    var h = '<div class="pt-wrap">' + stepsHtml() + '<div class="pt-note fx-priv">' + esc(t('privacy')) + '<div class="pt-bar-ctl" style="margin-top:8px"><label style="font-size:13px"><input type="checkbox" id="fx-remember"' + (S.remember ? ' checked' : '') + '> ' + esc(t('remember')) + '</label>' + (S.remember ? '<button type="button" class="pt-chip" data-act="forget">' + esc(t('forget')) + '</button>' : '') + '</div></div>';
+    h += sec('fx-lines-sec', t('lines'), '', S.lines.map(lineHtml).join('') + '<div class="pt-bar-ctl">' + quickHtml() + '</div><p class="pt-src">' + esc(t('notInc')) + '</p>');
     h += sec('fx-sum-sec', t('sumTitle'), t('sumHint'), '<div id="fx-sum" aria-live="polite">' + summaryHtml() + '</div>');
-    h += sec('fx-lines-sec', t('lines'), '', S.lines.map(lineHtml).join('') + '<div class="pt-bar-ctl">' + (S.lines.length < MAXL ? '<button type="button" class="pt-chip" data-act="add">+ ' + esc(t('add')) + '</button>' : '<span class="pt-sub">' + esc(tf('maxL', MAXL)) + '</span>') + '</div><p class="pt-src">' + esc(t('notInc')) + '</p>');
-    h += '<div class="pt-bar-ctl"><label style="font-size:13px"><input type="checkbox" id="fx-remember"' + (S.remember ? ' checked' : '') + '> ' + esc(t('remember')) + '</label>' + (S.remember ? '<button type="button" class="pt-chip" data-act="forget">' + esc(t('forget')) + '</button>' : '') + '</div>';
+    h += sec('fx-changes-sec', t('chTitle'), t('chHint'), '<div id="fx-changes" aria-live="polite">' + changesHtml() + '</div>');
     h += '<p class="pt-src"><a href="calculadora.html">' + esc(t('toCalc')) + ' →</a> · <a href="mi-seguimiento.html">' + esc(t('toWatch')) + ' →</a></p>' + (window.DICite ? window.DICite.derived(['usda_ers', 'ecb'].concat(S.lines.some(anyLink) ? ['mapa_es', 'eu_oil_bulletin'] : []), { what: 'calc' }) : '') + '</div>';
-    document.getElementById('fx-body').innerHTML = h;
+    document.getElementById('fx-body').innerHTML = h; flagEmpty();
     S.lines.forEach(function (line) { if (line.c.pSrc === 'dehesa') ensureRef(line); });
     if (!MON && S.lines.some(function (l) { return anyLink(l) || (l.open && canLink(l)); })) needMon();
   }
@@ -329,6 +338,8 @@
     if (!el || el === document) return;
     var act = el.getAttribute('data-act'), sg = el.getAttribute('data-seg'), v = el.getAttribute('data-v'), line = lineOf(el.getAttribute('data-l'));
     if (act === 'add') { if (S.lines.length < MAXL) { S.lines.push(newLine(S.lines.length ? S.lines[S.lines.length - 1].c.crop : 'trigo')); save(); shell(); } return; }
+    if (act === 'addc') { if (S.lines.length < MAXL) { S.lines.push(newLine(el.getAttribute('data-crop'))); save(); shell(); var nl = S.lines[S.lines.length - 1], f = document.getElementById('fx-' + nl.id + '-area'); if (f) { try { f.scrollIntoView({ block: 'center' }); f.focus(); } catch (er) { /* nada */ } } } return; }
+    if (act === 'dup' && line) { if (S.lines.length < MAXL) { var d = newLine(line.c.crop); d.c = cl(line.c); if (line.lk) d.lk = cl(line.lk); S.lines.splice(S.lines.indexOf(line) + 1, 0, d); save(); shell(); } return; }
     if (act === 'rm' && line) { S.lines = S.lines.filter(function (x) { return x !== line; }); delete S.seen[line.id]; delete REF[line.id]; save(); shell(); return; }
     if (act === 'forget') { wipe(); S.remember = false; shell(); return; }
     if (act === 'seen') { S.lines.forEach(function (ln) { var r = REF[ln.id]; if (ln.c.pSrc === 'dehesa' && r && r.state === 'ok') S.seen[ln.id] = snap(ln); }); S.justSeen = true; save(); drawAll(); S.justSeen = false; return; }
