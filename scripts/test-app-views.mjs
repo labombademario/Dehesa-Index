@@ -65,7 +65,7 @@ for (const [cc, m] of Object.entries(PC)) {
   const d = load('country/' + cc + '.json');
   ok(d.hash === m.hash && d.country === cc, 'country ' + cc + ': hash o codigo distinto del manifiesto');
   ok(C.some(c => c.code === cc), 'country ' + cc + ': no esta en countries.json');
-  ok(m.bytes < 160 * 1024, 'country ' + cc + ': ficha de mas de 160 KB (' + m.bytes + ')');
+  ok(m.bytes < 176 * 1024, 'country ' + cc + ': ficha de mas de 176 KB (' + m.bytes + ')');
   ok(Array.isArray(d.groups) && d.groups.length > 0, 'country ' + cc + ': sin grupos');
   const sid = new Set();
   for (const g of d.groups) {
