@@ -301,22 +301,22 @@
     h += '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
     if (ST.c === 'US') {
       h += '<label>' + esc(t.place) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
-      h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + US_PROD.map(function (k) { return opt(k, prodName(k), ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + US_PROD.map(function (k) { return opt(k, pe(k) + prodName(k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'CA') {
       h += '<label>' + esc(t.placeES) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + caPlaces().map(function (k) { return opt(k, caName(k), ST.r); }).join('') + '</select></label>';
-      h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + caProducts().map(function (k) { return opt(k, caProdName(k), ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + caProducts().map(function (k) { return opt(k, pe(k) + caProdName(k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'DE') {
       var e1 = te();
       h += '<label>' + esc(e1.land) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + deLands().map(function (k) { return opt(k, deName(k), ST.r); }).join('') + '</select></label>';
-      h += '<label>' + esc(e1.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + DE_CROPS.map(function (k) { return opt(k, pick4(DE_CROPN, k), ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(e1.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + DE_CROPS.map(function (k) { return opt(k, pe(k) + pick4(DE_CROPN, k), ST.p); }).join('') + '</select></label>';
     } else if (isEU(ST.c)) {
       var e3 = te();
       h += '<label>' + esc(e3.region) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + euRegions(ST.c).map(function (k) { return opt(k, euName(ST.c, k), ST.r); }).join('') + '</select></label>';
-      h += '<label>' + esc(e3.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + euCrops(ST.c).map(function (k) { return opt(k, pick4(EU_CROPN, k), ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(e3.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + euCrops(ST.c).map(function (k) { return opt(k, pe(k) + pick4(EU_CROPN, k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'UK') {
       var e2 = te();
       h += '<label>' + esc(e2.region) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + ukRegions().map(function (k) { return opt(k, ukRegName(k), ST.r); }).join('') + '</select></label>';
-      h += '<label>' + esc(e2.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + UK_CROPS.map(function (k) { return opt(k, pick4(UK_CROPN, k), ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(e2.crop) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + UK_CROPS.map(function (k) { return opt(k, pe(k) + pick4(UK_CROPN, k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'ES') {
       var provs = ES_PROV ? Object.keys(ES_PROV).sort(function (a, b) { return ES_PROV[a].localeCompare(ES_PROV[b], 'es'); }) : [];
       h += '<label>' + esc(t.placeES) + '<br><select id="mm-r" class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + provs.map(function (k) { return opt(k, ES_PROV[k], ST.r); }).join('') + '</select></label>';
@@ -650,6 +650,8 @@
     fr: { s: 'Élevage dans votre province', sp: ['Bovins', 'Ovins', 'Caprins', 'Porcins'], pick: 'Recensement', noCensus: 'Pas de recensement ce mois', species: 'Cheptel', heads: 'Têtes', yoy: 'Par rapport au recensement un an plus tôt', share: 'Part de l’Espagne', census: 'Recensement', no: 'Le MAPA ne publie pas de chiffres d’élevage pour cette province.', note: 'Le recensement choisi est affiché (le dernier par défaut ; depuis 2010). Ovins et caprins sont recensés en novembre ; bovins et porcins en mai et novembre. Les derniers recensements peuvent être provisoires. Ce n’est ni la production ni les prix.' },
     it: { s: 'Zootecnia nella tua provincia', sp: ['Bovini', 'Ovini', 'Caprini', 'Suini'], pick: 'Censimento', noCensus: 'Nessun censimento questo mese', species: 'Bestiame', heads: 'Capi', yoy: 'Rispetto al censimento di un anno prima', share: 'Peso sulla Spagna', census: 'Censimento', no: 'Il MAPA non pubblica dati zootecnici per questa provincia.', note: 'Si mostra il censimento scelto (l’ultimo per impostazione predefinita; dal 2010). Ovini e caprini sono censiti a novembre; bovini e suini a maggio e novembre. Gli ultimi censimenti possono essere provvisori. Non è produzione né prezzi.' }
   };
+  var PEMO = { cattle: '🐄', hogs: '🐖', sheep: '🐑', hay: '🌿', corn: '🌽', 'corn-for-grain': '🌽', maize: '🌽', silage: '🌽', G3000: '🌽', C1500: '🌽', soybeans: '🫘', 'peas-dry': '🫘', lentils: '🫘', 'chick-peas': '🫘', I1130: '🫘', P0000: '🫘', wheat: '🌾', 'wheat-all': '🌾', 'wheat-durum': '🌾', barley: '🌾', oats: '🌾', rye: '🌾', 'rye-all': '🌾', sorghum: '🌾', triticale: '🌾', cereals: '🌾', 'canary-seed': '🌾', C1110: '🌾', C1120: '🌾', C1300: '🌾', C1200: '🌾', C0000: '🌾', rapeseed: '🌼', 'canola-rapeseed': '🌼', I1110: '🌼', sunflower: '🌻', 'sunflower-seed': '🌻', I1120: '🌻', flaxseed: '🌱', 'mustard-seed': '🌱', sugarbeet: '🌱', R2000: '🌱', 'winter-barley': '🌾', 'spring-barley': '🌾', 'oilseed-rape': '🌼', potato: '🥔', R1000: '🥔', W1000: '🍇', O1000: '🫒', T0000: '🍊', F0000: '🍑', J0000: '🌿' };
+  function pe(k) { return PEMO[k] ? PEMO[k] + ' ' : ''; }
   var LIVE_EMO = ['🐄', '🐑', '🐐', '🐖'], LIVE_P = '';
   function perLabel(P) { try { return new Date(P + '-01T00:00:00Z').toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return P; } }
   function liveHtml(t, sp, fs, per) {
