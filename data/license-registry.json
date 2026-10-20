@@ -5393,6 +5393,13 @@
    "sources": [],
    "notes": "Glosario propio de Dehesa Index para traducir etiquetas de series (es/fr/it); escrito a mano, sin datos de terceros (auditoria 8-oct-2026)."
   },
+  "data/dehesa.json": {
+   "sources": [
+    "mapa_es",
+    "eurostat"
+   ],
+   "notes": "Mercados Dehesa (build-dehesa.py): derivado de las Encuestas ganaderas del MAPA (cerdo iberico por provincia), la encuesta de precios de la tierra del MAPA (pastizal) y el comercio exterior de Eurostat Comext (capitulo 45, corcho), ya publicados. Las sumas anuales son calculo de Dehesa Index."
+  },
   "data/sowing/": {
    "sources": [
     "usda_nass",

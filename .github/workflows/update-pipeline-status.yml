@@ -120,6 +120,8 @@ jobs:
         run: python3 scripts/build-ers-cost-reference.py
       - name: Comparador de siembra (Que sembrar, data/sowing)
         run: python3 scripts/build-sowing.py
+      - name: Mercados Dehesa (cerdo iberico, pastos y corcho, data/dehesa.json)
+        run: python3 scripts/build-dehesa.py
       - name: Frutas, hortalizas y frutos secos (pestaña de precios y fichas, data/fv-products.json)
         run: python3 scripts/build-fv-products.py
       - name: Lo que cobra el agricultor fuera de España (INSEE y Eurostat; data/fv-farm.json)
@@ -149,7 +151,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/us-weekly-stats.json data/series-registry.json data/watch data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/freshness.json data/products data/relationships.json data/observatory.json data/source-candidates.json data/commercial-catalog.json data/commercial-summary.json data/pack data/api data/digest data/indices data/coverage-gaps.json data/country-pending.json data/premium-tracker.json data/ers-cost-reference.json data/sowing data/fv-products.json data/fv-farm.json data/home-tape.json data/home-explore.json data/cap/index.json data/blog/posts.json data/app data/snapshots README.md DATA_SOURCES.md
+          git add data/us-weekly-stats.json data/series-registry.json data/watch data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/freshness.json data/products data/relationships.json data/observatory.json data/source-candidates.json data/commercial-catalog.json data/commercial-summary.json data/pack data/api data/digest data/indices data/coverage-gaps.json data/country-pending.json data/premium-tracker.json data/ers-cost-reference.json data/sowing data/dehesa.json data/fv-products.json data/fv-farm.json data/home-tape.json data/home-explore.json data/cap/index.json data/blog/posts.json data/app data/snapshots README.md DATA_SOURCES.md
           git diff --cached --quiet && exit 0
           git commit -qm "Datos derivados: catalogo, registro, watchlist, comparador y brief"
           for i in 1 2 3 4 5 6; do git pull -q --rebase --autostash && git push && exit 0; sleep $((i * 5 + RANDOM % 10)); done
