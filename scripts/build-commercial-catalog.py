@@ -14,6 +14,8 @@ Escribe data/commercial-catalog.json (completo) y data/commercial-summary.json (
 Uso: python3 scripts/build-commercial-catalog.py [--check]  (--check falla si el fichero publicado esta desfasado)"""
 import datetime, json, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib_attr import resolve
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / "data"
 OUT = D / "commercial-catalog.json"; OUT_SUM = D / "commercial-summary.json"
 reg = json.loads((D / "license-registry.json").read_text(encoding="utf-8"))
@@ -78,7 +80,7 @@ def build():
         v = S[k]; vd = verdict(v)
         e = {"id": k, "name": v["name"], "url": v["url"], "country": v["country"], "licenseId": v["licenseId"], "licenseName": v["licenseName"], "licenseUrl": v["licenseUrl"],
              "verdict": vd, "status": v["status"], "legalConfidence": v["legalConfidence"], "commercialUse": v["commercialUse"], "derivatives": v["derivatives"],
-             "redistribution": v["redistribution"], "attribution": v["attributionText"]}
+             "redistribution": v["redistribution"], "attribution": resolve(v["attributionText"])}
         if v.get("additionalRestrictions"): e["conditions"] = v["additionalRestrictions"]
         if vd == "no-apto": e["why"] = reason(v)
         if v.get("ownerDecision"): e["ownerDecision"] = v["ownerDecision"]["text"] + " (" + v["ownerDecision"]["date"] + ")"

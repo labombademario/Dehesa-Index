@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-20T22:41:57Z",
+ "generatedAt": "2026-10-20T23:42:09Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -544,7 +544,7 @@
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
-   "attribution": "Source: Statistics Denmark – StatBank.dk/<table code>. For modified data: 'Own calculations based on data from Statistics Denmark.'",
+   "attribution": "Source: Statistics Denmark – StatBank.dk. For modified data: 'Own calculations based on data from Statistics Denmark.'",
    "conditions": "Disclose modifications; the Statistics Denmark logo cannot be used."
   },
   {
@@ -819,7 +819,7 @@
    "commercialUse": "conditional",
    "derivatives": "yes",
    "redistribution": "yes",
-   "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "attribution": "Source: Eurostat. Adapted by dehesaindex.com where data are modified.",
    "conditions": "Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded.",
    "ownerDecision": "Mario lo da por valido para el uso comercial; las condiciones de atribucion y de marcar los datos modificados se mantienen. (2026-10-15)"
   },
@@ -1637,7 +1637,7 @@
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
-   "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
+   "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project from https://power.larc.nasa.gov",
    "conditions": "Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees."
   },
   {
@@ -1772,7 +1772,7 @@
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
-   "attribution": "Source: Reserve Bank of Australia <year>",
+   "attribution": "Source: Reserve Bank of Australia",
    "conditions": "No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images."
   },
   {
@@ -1890,7 +1890,7 @@
    "commercialUse": "no",
    "derivatives": "unclear",
    "redistribution": "unclear",
-   "attribution": null,
+   "attribution": "",
    "conditions": "Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attribution, but that is unconfirmed. Written confirmation from SNICE / Secretaría de Economía is required.",
    "why": "licencia PENDING en el registro"
   },
@@ -1959,7 +1959,7 @@
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada. This does not constitute an endorsement by Statistics Canada of this product.",
    "conditions": "No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP)."
   },
   {
@@ -2468,7 +2468,7 @@
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
-   "attribution": "The World Bank: <indicator name> (World Development Indicators)",
+   "attribution": "The World Bank (World Development Indicators)",
    "conditions": "No endorsement; no World Bank names or logos without written consent."
   },
   {

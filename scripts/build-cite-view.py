@@ -3,11 +3,13 @@
 para que las paginas no bajen el registro completo (~64 KB) solo para mostrar «Fuente · periodo». Uso: python3 scripts/build-cite-view.py [--check]"""
 import json, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib_attr import resolve
 R = Path(__file__).resolve().parents[1]
 F = ["name", "short", "url", "licenseUrl", "licenseName", "licenseId", "attributionText", "verifiedAt", "status", "aliases"]
 def build():
     reg = json.loads((R / "data/license-registry.json").read_text(encoding="utf-8"))
-    src = {k: {f: s[f] for f in F if s.get(f) not in (None, "", [])} for k, s in reg["sources"].items() if s.get("used")}
+    src = {k: {f: (resolve(s[f]) if f == "attributionText" else s[f]) for f in F if s.get(f) not in (None, "", [])} for k, s in reg["sources"].items() if s.get("used")}
     return json.dumps({"sources": src}, ensure_ascii=False, separators=(",", ":")) + "\n"
 if __name__ == "__main__":
     out = R / "data/views/license-cite.json"; new = build()

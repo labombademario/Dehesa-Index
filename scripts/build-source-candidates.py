@@ -6,6 +6,7 @@ import collections, datetime, json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import coverage_model as CM, source_gate as G
+from lib_attr import resolve
 ROOT = CM.ROOT; D = CM.D
 NOW = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 reg = CM.J('license-registry.json'); S = reg['sources']
@@ -36,7 +37,7 @@ def entry_from_seed(c):
     e = {'sourceId': c['sourceId'], 'registryId': c.get('registryId'), 'country': c['country'], 'scope': c['scope'], 'institution': c['institution'], 'dataset': c['dataset'],
          'products': sorted(c['products']), 'productsConfirmed': bool(c['productsConfirmed']), 'metrics': sorted(c['metrics']), 'frequency': c['frequency'], 'access': c['access'],
          'licenseStatus': G.license_view(r), 'licenseId': r['licenseId'] if r else None, 'licenseClaim': c.get('licenseClaim'),
-         'commercialReuse': r['commercialUse'] if r else 'unknown', 'derivatives': r['derivatives'] if r else 'unknown', 'attribution': (r or {}).get('attributionText'),
+         'commercialReuse': r['commercialUse'] if r else 'unknown', 'derivatives': r['derivatives'] if r else 'unknown', 'attribution': resolve((r or {}).get('attributionText')),
          'lastChecked': (r or {}).get('verifiedAt') or seed['lastCheckedDefault'], 'verification': 'NOT_REVERIFIED',
          'datasetIdentified': bool(c['datasetIdentified']), 'gate': {'result': gr, 'reasons': why}, 'ingestionStatus': st,
          'technicalBlockers': c['technicalBlockers'], 'canStart': st == 'READY' and not c['technicalBlockers'],
@@ -70,7 +71,7 @@ def active_entries():
                     'dataset': 'Ya integrada (%d series en el catalogo unificado)' % a['n'] if a else 'Ya integrada (ficheros propios fuera del catalogo unificado)',
                     'products': sorted(a['tags']) if a else [], 'productsConfirmed': bool(a), 'metrics': sorted(a['metrics']) if a else [], 'frequency': freq,
                     'access': {'api': None, 'csv': None, 'json': None}, 'licenseStatus': r['status'], 'licenseId': r['licenseId'], 'licenseClaim': None,
-                    'commercialReuse': r['commercialUse'], 'derivatives': r['derivatives'], 'attribution': r.get('attributionText'), 'lastChecked': r['verifiedAt'],
+                    'commercialReuse': r['commercialUse'], 'derivatives': r['derivatives'], 'attribution': resolve(r.get('attributionText')), 'lastChecked': r['verifiedAt'],
                     'verification': 'REGISTRY', 'legalConfidence': r['legalConfidence'], 'registryAlignment': 'ALIGNED', 'datasetIdentified': True, 'gate': {'result': gr, 'reasons': why}, 'ingestionStatus': 'ACTIVE', 'technicalBlockers': [], 'canStart': False,
                     'evidence': ['data/license-registry.json'], 'notes': 'ACTIVE por used=true en el registro; la licencia se muestra tal cual (%s).' % r['status'] if r['status'] != 'VERIFIED' else None})
     return out

@@ -1306,7 +1306,7 @@
    "sourceName": "Eurostat",
    "license": "EU-REUSE-2011-833",
    "verdict": "condiciones",
-   "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "attribution": "Source: Eurostat. Adapted by dehesaindex.com where data are modified.",
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "quarterly",
@@ -1315,8 +1315,8 @@
    "last": "2026-Q2",
    "csv": "data/pack/eu/eurostat_energy_input_index.csv",
    "xlsx": "data/pack/eu/eurostat_energy_input_index.xlsx",
-   "csvBytes": 6062,
-   "xlsxBytes": 7914
+   "csvBytes": 5414,
+   "xlsxBytes": 7875
   },
   {
    "product": "eurostat_fertiliser_input_index",
@@ -1332,7 +1332,7 @@
    "sourceName": "Eurostat",
    "license": "EU-REUSE-2011-833",
    "verdict": "condiciones",
-   "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "attribution": "Source: Eurostat. Adapted by dehesaindex.com where data are modified.",
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "quarterly",
@@ -1341,8 +1341,8 @@
    "last": "2026-Q2",
    "csv": "data/pack/eu/eurostat_fertiliser_input_index.csv",
    "xlsx": "data/pack/eu/eurostat_fertiliser_input_index.xlsx",
-   "csvBytes": 6280,
-   "xlsxBytes": 7918
+   "csvBytes": 5632,
+   "xlsxBytes": 7880
   },
   {
    "product": "eurostat_cereals_output_index",
@@ -1358,7 +1358,7 @@
    "sourceName": "Eurostat",
    "license": "EU-REUSE-2011-833",
    "verdict": "condiciones",
-   "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "attribution": "Source: Eurostat. Adapted by dehesaindex.com where data are modified.",
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "quarterly",
@@ -1367,8 +1367,8 @@
    "last": "2026-Q2",
    "csv": "data/pack/eu/eurostat_cereals_output_index.csv",
    "xlsx": "data/pack/eu/eurostat_cereals_output_index.xlsx",
-   "csvBytes": 6185,
-   "xlsxBytes": 7920
+   "csvBytes": 5537,
+   "xlsxBytes": 7881
   },
   {
    "product": "eurostat_milk_output_index",
@@ -1384,7 +1384,7 @@
    "sourceName": "Eurostat",
    "license": "EU-REUSE-2011-833",
    "verdict": "condiciones",
-   "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "attribution": "Source: Eurostat. Adapted by dehesaindex.com where data are modified.",
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "quarterly",
@@ -1393,8 +1393,8 @@
    "last": "2026-Q2",
    "csv": "data/pack/eu/eurostat_milk_output_index.csv",
    "xlsx": "data/pack/eu/eurostat_milk_output_index.xlsx",
-   "csvBytes": 6041,
-   "xlsxBytes": 7906
+   "csvBytes": 5393,
+   "xlsxBytes": 7866
   },
   {
    "product": "leche",
@@ -1732,7 +1732,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -1741,8 +1741,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/avena.csv",
    "xlsx": "data/pack/ca/avena.xlsx",
-   "csvBytes": 113396,
-   "xlsxBytes": 29904
+   "csvBytes": 98396,
+   "xlsxBytes": 29812
   },
   {
    "product": "avena_pienso_ab",
@@ -1825,7 +1825,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -1834,8 +1834,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/cebada.csv",
    "xlsx": "data/pack/ca/cebada.xlsx",
-   "csvBytes": 114384,
-   "xlsxBytes": 29818
+   "csvBytes": 99384,
+   "xlsxBytes": 29741
   },
   {
    "product": "cebada_pienso_ab",
@@ -1887,7 +1887,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "cwt",
    "currency": "CAD",
    "frequency": "monthly",
@@ -1896,8 +1896,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/cerdo.csv",
    "xlsx": "data/pack/ca/cerdo.xlsx",
-   "csvBytes": 110599,
-   "xlsxBytes": 29615
+   "csvBytes": 95599,
+   "xlsxBytes": 29523
   },
   {
    "product": "cerdo_ab",
@@ -1949,7 +1949,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -1958,8 +1958,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/colza.csv",
    "xlsx": "data/pack/ca/colza.xlsx",
-   "csvBytes": 113547,
-   "xlsxBytes": 29845
+   "csvBytes": 98547,
+   "xlsxBytes": 29755
   },
   {
    "product": "cordero",
@@ -1980,7 +1980,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "cwt",
    "currency": "CAD",
    "frequency": "monthly",
@@ -1989,8 +1989,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/cordero.csv",
    "xlsx": "data/pack/ca/cordero.xlsx",
-   "csvBytes": 112863,
-   "xlsxBytes": 29757
+   "csvBytes": 97863,
+   "xlsxBytes": 29665
   },
   {
    "product": "guisante_verde_ab",
@@ -2042,7 +2042,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2051,8 +2051,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/guisante_seco.csv",
    "xlsx": "data/pack/ca/guisante_seco.xlsx",
-   "csvBytes": 115297,
-   "xlsxBytes": 27954
+   "csvBytes": 101077,
+   "xlsxBytes": 27883
   },
   {
    "product": "huevos",
@@ -2073,7 +2073,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "docena",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2082,8 +2082,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/huevos.csv",
    "xlsx": "data/pack/ca/huevos.xlsx",
-   "csvBytes": 112515,
-   "xlsxBytes": 27784
+   "csvBytes": 97515,
+   "xlsxBytes": 27699
   },
   {
    "product": "leche",
@@ -2104,7 +2104,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "100kg",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2113,8 +2113,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/leche.csv",
    "xlsx": "data/pack/ca/leche.xlsx",
-   "csvBytes": 81265,
-   "xlsxBytes": 23709
+   "csvBytes": 70435,
+   "xlsxBytes": 23621
   },
   {
    "product": "lenteja_laird_ab",
@@ -2166,7 +2166,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2175,8 +2175,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/lenteja.csv",
    "xlsx": "data/pack/ca/lenteja.xlsx",
-   "csvBytes": 109702,
-   "xlsxBytes": 27910
+   "csvBytes": 95422,
+   "xlsxBytes": 27844
   },
   {
    "product": "lino",
@@ -2197,7 +2197,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2206,8 +2206,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/lino.csv",
    "xlsx": "data/pack/ca/lino.xlsx",
-   "csvBytes": 117043,
-   "xlsxBytes": 30176
+   "csvBytes": 102043,
+   "xlsxBytes": 30106
   },
   {
    "product": "maiz",
@@ -2228,7 +2228,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2237,8 +2237,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/maiz.csv",
    "xlsx": "data/pack/ca/maiz.xlsx",
-   "csvBytes": 112996,
-   "xlsxBytes": 30063
+   "csvBytes": 97996,
+   "xlsxBytes": 29977
   },
   {
    "product": "novillo_ab",
@@ -2290,7 +2290,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "kg",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2299,8 +2299,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/pollo.csv",
    "xlsx": "data/pack/ca/pollo.xlsx",
-   "csvBytes": 109519,
-   "xlsxBytes": 28240
+   "csvBytes": 94519,
+   "xlsxBytes": 28145
   },
   {
    "product": "soja_grano",
@@ -2321,7 +2321,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2330,8 +2330,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/soja_grano.csv",
    "xlsx": "data/pack/ca/soja_grano.xlsx",
-   "csvBytes": 99882,
-   "xlsxBytes": 26389
+   "csvBytes": 87402,
+   "xlsxBytes": 26313
   },
   {
    "product": "trigo",
@@ -2352,7 +2352,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2361,8 +2361,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/trigo.csv",
    "xlsx": "data/pack/ca/trigo.xlsx",
-   "csvBytes": 38433,
-   "xlsxBytes": 14715
+   "csvBytes": 33363,
+   "xlsxBytes": 14628
   },
   {
    "product": "trigo_cwrs_ab",
@@ -2445,7 +2445,7 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "cwt",
    "currency": "CAD",
    "frequency": "monthly",
@@ -2454,8 +2454,8 @@
    "last": "2026-08",
    "csv": "data/pack/ca/vaca.csv",
    "xlsx": "data/pack/ca/vaca.xlsx",
-   "csvBytes": 95094,
-   "xlsxBytes": 25983
+   "csvBytes": 82614,
+   "xlsxBytes": 25914
   }
  ],
  "excluded": []

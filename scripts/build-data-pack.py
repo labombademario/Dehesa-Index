@@ -13,6 +13,7 @@ from openpyxl.styles import Font, Alignment
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from price_names import index_name
+from lib_attr import resolve
 OUT = ROOT / 'data' / 'pack'
 REGIONS = ['us', 'eu', 'uk', 'ca']
 MONTHS = {m: i + 1 for i, m in enumerate(['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'])}
@@ -69,7 +70,7 @@ def main():
             src = (r.get('name') or c.get('name') or sid)
             lic = r.get('licenseName') or c.get('licenseName') or ''
             lic_id = r.get('licenseId') or c.get('licenseId') or ''
-            attr = r.get('attributionText') or c.get('attributionText') or src
+            attr0 = r.get('attributionText') or c.get('attributionText') or src
             rows = []
             for e in h['history']:
                 dt = period_iso(e['year'], e['period'])
@@ -77,6 +78,7 @@ def main():
                 rows.append((dt, e['value']))
             if not rows: continue
             rows.sort(key=lambda t: t[0])
+            attr = resolve(attr0, rows[-1][0][:7])   # sin marcas <...> sin rellenar (ver scripts/lib_attr.py)
             unit = h.get('unit') or o.get('unit'); cur = h.get('currency') or o.get('currency'); freq = h.get('frequency') or o.get('frequency')
             market = region.upper()
             base = OUT / region

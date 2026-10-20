@@ -135,6 +135,19 @@ print("Licencias: %d fuentes %s; %d series de catalogo revisadas; %d PENDING en 
 if "--report" in sys.argv:
     tot = sum(per_src.values()) or 1
     for k, n in sorted(per_src.items(), key=lambda x: -x[1]): print("  %-18s %5d series  %-9s %s" % (k, n, S[k]["status"], S[k]["licenseId"]))
+# Las salidas publicadas no deben llevar marcas de plantilla sin rellenar (<code>, <table name/number>…) en la atribucion (ver scripts/lib_attr.py)
+_PH = re.compile(r"<[A-Za-z][A-Za-z /]*>")
+for _f in ("data/views/license-cite.json", "data/commercial-catalog.json", "data/source-candidates.json", "data/api/v1/index.json"):
+    _p = Path(__file__).resolve().parents[1] / _f
+    if not _p.exists(): continue
+    def _walk(o, path=""):
+        if isinstance(o, dict):
+            for k, v in o.items(): yield from _walk(v, path + "/" + str(k))
+        elif isinstance(o, list):
+            for i, v in enumerate(o): yield from _walk(v, path + "/" + str(i))
+        elif isinstance(o, str) and re.search(r"attribution", path, re.I) and _PH.search(o): yield path, o
+    for _pp, _v in _walk(json.loads(_p.read_text(encoding="utf-8"))):
+        errs.append("%s: atribucion con marca sin rellenar en %s: %s" % (_f, _pp, _v[:80]))
 if "--tiers" in sys.argv:  # VERIFIED+HIGH por separado de VERIFIED+MEDIUM/OWNER_ACCEPTED (antes de cualquier monetizacion)
     print("\nConfianza juridica de las fuentes EN USO (series de catalogo por nivel):")
     for tier in ("HIGH", "MEDIUM", "OWNER_ACCEPTED", "PENDING"):
