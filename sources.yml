@@ -1635,6 +1635,17 @@ sources:
     data: [spain-esyrce/extra-index.json, spain-esyrce-extra-log.txt]
     extra: ['!data/spain-esyrce']
     message: Rendimientos, riego, plantaciones leñosas y suelo de ESYRCE por provincia (MAPA)
+  - id: es-cork
+    name: Update Spain cork production by region (MITECO)
+    cron: ['25 8 12 * *']
+    pre: ['pip install openpyxl']
+    script: scripts/update-es-cork.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/es-cork.json
+    data: [es-cork.json]
+    message: Producción de corcho por comunidad autónoma de España (MITECO)
   - id: es-ganaderia
     name: Update Spain eggs, dairy industry and livestock production forecasts (MAPA)
     cron: ['20 8 14 * *']

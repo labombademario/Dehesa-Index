@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 144 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31803 series en el catalogo unificado.
+Resumen: 145 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31803 series en el catalogo unificado.
 
-## VERIFIED (144)
+## VERIFIED (145)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -100,6 +100,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `mimit_carburanti` | Ministero delle Imprese e del Made in Italy — Osservaprezzi carburanti (open data) | IT | IODL-2.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `miteco_carburantes` | MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |
 | `miteco_embalses` | MITECO — Boletín Hidrológico (BD-Embalses) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha de actualización. Datos provisionales sin valid… |
+| `miteco_estadistica_forestal` | MITECO — Estadística Forestal (otros aprovechamientos: corcho) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización. Las cifras las aportan las comunidades autónomas; Andalucía estima… |
 | `miteco_inventario_gei` | MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |
 | `miteco_rbd` | MITECO — Demarcaciones hidrográficas (límites reportados a la UE; capa WISE WFD 2022 de la Agencia Europea de Medio Ambiente) | ES | CC-BY-4.0 | si/si | si | 0 | Se usa solo como fondo cartográfico (vendor/es-basins.js), simplificado y recortado con la costa. El servidor de descargas del MITECO falla … |
 | `miteco_sequia` | MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe. |

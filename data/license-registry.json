@@ -4449,6 +4449,32 @@
    "short": "ELSTAT",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+  },
+  "miteco_estadistica_forestal": {
+   "name": "MITECO — Estadística Forestal (otros aprovechamientos: corcho)",
+   "url": "https://www.miteco.gob.es/es/biodiversidad/estadisticas/forestal_anual_otros_aprovechamientos.html",
+   "country": "ES",
+   "licenseId": "ES-LEY-37-2007",
+   "licenseName": "MITECO legal notice (free reuse with attribution, Spanish Law 37/2007)",
+   "licenseUrl": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), Estadística Anual de Otros Aprovechamientos Forestales y Anuario de Estadística Forestal",
+   "additionalRestrictions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización. Las cifras las aportan las comunidades autónomas; Andalucía estima el monte privado.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-12",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Aviso legal de la web del MITECO (apartado de reutilización), leído desde Actions el 11 oct 2026; tabla T_Datos Embalses 1988-2026 de BD-Embalses.mdb.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "MITECO",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Decisión del responsable del sitio (Mario, 12-oct-2026): los datos del MITECO son de uso libre y se usan con confianza alta. Base: reutilización libre de la información del sector público (Ley 37/2007) citando al MITECO."
   }
  },
  "files": {
@@ -5396,7 +5422,8 @@
   "data/dehesa.json": {
    "sources": [
     "mapa_es",
-    "eurostat"
+    "eurostat",
+    "miteco_estadistica_forestal"
    ],
    "notes": "Mercados Dehesa (build-dehesa.py): derivado de las Encuestas ganaderas del MAPA (cerdo iberico por provincia), la encuesta de precios de la tierra del MAPA (pastizal) y el comercio exterior de Eurostat Comext (capitulo 45, corcho), ya publicados. Las sumas anuales son calculo de Dehesa Index."
   },
@@ -6474,6 +6501,18 @@
     "elstat"
    ],
    "notes": "Indices mensuales de precios agrarios (producto, insumos y productos seleccionados) y cuentas agrarias regionales de Grecia (scripts/update-el-elstat.py), de los ficheros publicos de statistics.gr."
+  },
+  "data/es-cork.json": {
+   "sources": [
+    "miteco_estadistica_forestal"
+   ],
+   "notes": "Produccion de corcho por comunidad autonoma (t): libro «Tablas resumen 2005-2022» del MITECO (2014-2022, scripts/update-es-cork.py) mas 2024 copiado del Anuario forestal. Sin interpolar; 2023 no publicado."
+  },
+  "data/es-cork-manual.json": {
+   "sources": [
+    "miteco_estadistica_forestal"
+   ],
+   "notes": "Cifras de 2024 copiadas tal cual de la tabla E.1 del Anuario de Estadistica Forestal 2024 (PDF)."
   }
  },
  "derived": [

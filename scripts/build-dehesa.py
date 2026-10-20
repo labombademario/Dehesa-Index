@@ -67,8 +67,18 @@ def cork():
     return {"unit": "EUR million", "countries": out,
             "source": {"name": "Eurostat (Comext), capitulo 45 (corcho y sus manufacturas); suma anual calculada por Dehesa Index", "url": "https://ec.europa.eu/eurostat/web/international-trade-in-goods/data/database", "licence": "Eurostat reuse policy (CC BY 4.0); cite source"}}
 
+def cork_production():
+    """Produccion de corcho por CCAA (data/es-cork.json, MITECO). Si el fichero aun no existe, None."""
+    f = D / "es-cork.json"
+    if not f.exists(): return None
+    d = load("es-cork.json"); ys = sorted(d["years"], key=int)
+    return {"unit": "t", "years": [int(y) for y in ys], "total": [d["years"][y]["total"] for y in ys], "ccaa": {c: [d["years"][y]["ccaa"].get(c) for y in ys] for c in d["names"]},
+            "names": d["names"], "estimatedAN": d.get("estimated", {}).get("AN", []), "totalIsSum": [int(y) for y in ys if d["years"][y].get("totalIsSum")],
+            "publishedTotal": {y: d["years"][y]["publishedTotal"] for y in ys if "publishedTotal" in d["years"][y]}, "source": d["source"]}
+
 def main():
-    doc = {"schemaVersion": 1, "generatedAt": NOW, "pigs": pigs(), "pasture": pasture(), "cork": cork()}
+    ck = cork(); ck["production"] = cork_production()
+    doc = {"schemaVersion": 1, "generatedAt": NOW, "pigs": pigs(), "pasture": pasture(), "cork": ck}
     (D / "dehesa.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print("dehesa.json: %d provincias de iberico, %d zonas de pasto, corcho %s" % (len(doc["pigs"]["provinces"]), len(doc["pasture"]["areas"]), sorted(doc["cork"]["countries"])))
 if __name__ == "__main__": sys.exit(main())

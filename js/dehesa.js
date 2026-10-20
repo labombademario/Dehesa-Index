@@ -11,15 +11,16 @@
       prov: 'Provincia', iber: 'Ibéricos', tot: 'Todos los cerdos', share: 'Ibérico sobre el total', pigNote: 'Encuesta ganadera del MAPA (mayo y noviembre). «Ibérico» es la clasificación de la propia encuesta; no distingue bellota, cebo de campo y cebo.',
       pastH: 'Pastos', pastS: 'Precio de la tierra de pastizal y canon de arrendamiento (MAPA).', pastPrice: 'Precio del pastizal (€/ha)', pastRent: 'Canon del pastizal (€/ha y año)', area: 'Zona', chg: 'Frente al año anterior',
       pastProv: 'Precio del pastizal en provincias de dehesa', pastEvo: 'Precio del pastizal por zona (€/ha)', pastNote: 'Medias de la encuesta del MAPA, no un registro de ventas. El pastizal no es lo mismo que la dehesa arbolada: el MAPA no publica un precio de «dehesa» como tipo propio.',
-      corkH: 'Corcho', corkS: 'Comercio exterior de corcho y manufacturas de España y Portugal (Eurostat).', corkExp: 'Exportaciones', corkImp: 'Importaciones', corkEvo: 'Exportaciones de corcho y manufacturas (millones de €)', corkYear: 'Último año completo', corkNote: 'Capítulo 45 del arancel (corcho y sus manufacturas), valor en euros; la suma anual es un cálculo de Dehesa Index y solo usa años completos. No incluye toneladas ni precio.', corkNoES: 'España aparecerá cuando termine la primera carga de datos.',
+      corkPH: 'Producción de corcho por comunidad (toneladas)', corkPEvo: 'Producción de corcho en España (toneladas)', corkPYear: 'Año', corkPTot: 'Total', corkPNote: 'Fuente: comunidades autónomas, recopilado por el MITECO. Andalucía no aporta el monte privado: 35.000 t (2020-2022) son una estimación del propio ministerio. 2023 no está publicado. El total de 2024 es la suma de las comunidades con dato (no hay total nacional) y no puede compararse sin más con los años anteriores. En 2022 el total que publica el MITECO (55.405 t) es 1.860,55 t mayor que la suma de las comunidades; aquí se usa la suma.', corkPNoAN: 'Andalucía (estimado)', corkH: 'Corcho', corkS: 'Producción por comunidad (MITECO) y comercio exterior de corcho y manufacturas (Eurostat).', corkExp: 'Exportaciones', corkImp: 'Importaciones', corkEvo: 'Exportaciones de corcho y manufacturas (millones de €)', corkYear: 'Último año completo', corkNote: 'Capítulo 45 del arancel (corcho y sus manufacturas), valor en euros; la suma anual es un cálculo de Dehesa Index y solo usa años completos. No incluye toneladas ni precio.', corkNoES: 'España aparecerá cuando termine la primera carga de datos.',
       stH: 'Qué precios existen y cuáles no', stS: 'Estado de cada mercado de la dehesa.', mkt: 'Mercado', st: 'Estado', why: 'Por qué',
       real: 'REAL', pend: 'PENDIENTE', rows: [
         ['Cerdo ibérico (censo)', 'REAL', 'Encuesta ganadera del MAPA, por provincia.'],
         ['Pastizal (precio y canon)', 'REAL', 'Encuesta de precios de la tierra del MAPA, por comunidad y provincia.'],
+        ['Corcho (producción)', 'REAL', 'MITECO, toneladas por comunidad (2014-2022 y 2024); Andalucía es estimación del ministerio.'],
         ['Corcho (comercio exterior)', 'REAL', 'Eurostat Comext, en valor. Es comercio, no precio.'],
         ['Cerdo ibérico (precio)', 'PENDIENTE', 'Las lonjas que lo cotizan (Extremadura, Salamanca, Mercolleida) no publican datos abiertos con permiso de reutilización.'],
         ['Bellota / montanera (precio)', 'PENDIENTE', 'Sin serie oficial abierta; solo cotizaciones de lonja de pago o de acceso restringido.'],
-        ['Corcho (precio en plancha)', 'PENDIENTE', 'No hay serie oficial de precio abierta. La producción anual la publica el MITECO y se añadirá cuando se pueda leer de forma automática.']],
+        ['Corcho (precio en plancha)', 'PENDIENTE', 'No hay serie oficial de precio abierta. El Anuario forestal de 2021 trae el precio medio por comunidad de ese año, pero no hay serie continua.']],
       src: 'Fuente:', cite: 'Sumas, cuotas y variaciones: cálculo de Dehesa Index.', rel: 'Relacionado:', relL: [['Ganadería de España por provincia', 'ganaderia'], ['Precio de la tierra en España', 'insumos'], ['Comercio exterior', 'comercio']] },
     en: { yAn: 'animals', yMe: 'EUR million', title: 'Dehesa markets', sub: 'Iberian pigs, pastures and cork: what official sources publish, and what still has no public price.',
       loading: 'Loading…', fail: 'The data could not be loaded. Please try again in a few minutes.',
@@ -28,15 +29,16 @@
       prov: 'Province', iber: 'Iberian', tot: 'All pigs', share: 'Iberian share', pigNote: 'MAPA livestock survey (May and November). “Iberian” is the survey’s own classification; it does not separate acorn-fed, free-range fattened and feed-fattened.',
       pastH: 'Pastures', pastS: 'Pasture land price and rental rate (MAPA).', pastPrice: 'Pasture price (€/ha)', pastRent: 'Pasture rent (€/ha per year)', area: 'Area', chg: 'Versus previous year',
       pastProv: 'Pasture price in dehesa provinces', pastEvo: 'Pasture price by area (€/ha)', pastNote: 'Survey averages from MAPA, not a register of sales. Pasture is not the same as wooded dehesa: MAPA does not publish a separate “dehesa” land price.',
-      corkH: 'Cork', corkS: 'Spanish and Portuguese foreign trade in cork and cork goods (Eurostat).', corkExp: 'Exports', corkImp: 'Imports', corkEvo: 'Exports of cork and cork goods (EUR million)', corkYear: 'Last full year', corkNote: 'Tariff chapter 45 (cork and articles of cork), value in euros; the annual sum is calculated by Dehesa Index and uses full years only. No tonnes and no price.', corkNoES: 'Spain will appear once the first data load finishes.',
+      corkPH: 'Cork production by region (tonnes)', corkPEvo: 'Cork production in Spain (tonnes)', corkPYear: 'Year', corkPTot: 'Total', corkPNote: 'Source: regional governments, compiled by MITECO. Andalusia does not report private forest: 35,000 t (2020-2022) is the ministry’s own estimate. 2023 is not published. The 2024 total is the sum of the regions with data (there is no national total) and is not directly comparable with earlier years. For 2022 the total published by MITECO (55,405 t) is 1,860.55 t above the sum of the regions; the sum is used here.', corkPNoAN: 'Andalusia (estimate)', corkH: 'Cork', corkS: 'Production by region (MITECO) and foreign trade in cork and cork goods (Eurostat).', corkExp: 'Exports', corkImp: 'Imports', corkEvo: 'Exports of cork and cork goods (EUR million)', corkYear: 'Last full year', corkNote: 'Tariff chapter 45 (cork and articles of cork), value in euros; the annual sum is calculated by Dehesa Index and uses full years only. No tonnes and no price.', corkNoES: 'Spain will appear once the first data load finishes.',
       stH: 'Which prices exist and which do not', stS: 'Status of each dehesa market.', mkt: 'Market', st: 'Status', why: 'Why',
       real: 'REAL', pend: 'PENDING', rows: [
         ['Iberian pigs (census)', 'REAL', 'MAPA livestock survey, by province.'],
         ['Pasture (price and rent)', 'REAL', 'MAPA land price survey, by region and province.'],
+        ['Cork (production)', 'REAL', 'MITECO, tonnes by region (2014-2022 and 2024); Andalusia is the ministry’s estimate.'],
         ['Cork (foreign trade)', 'REAL', 'Eurostat Comext, in value. It is trade, not price.'],
         ['Iberian pig (price)', 'PENDING', 'The exchanges that quote it (Extremadura, Salamanca, Mercolleida) do not publish open data with a reuse permit.'],
         ['Acorn / montanera (price)', 'PENDING', 'No open official series; only paid or restricted exchange quotes.'],
-        ['Cork (price per slab)', 'PENDING', 'No open official price series. Annual production is published by MITECO and will be added once it can be read automatically.']],
+        ['Cork (price per slab)', 'PENDING', 'No open official price series. The 2021 forestry yearbook has the average price by region for that year only; there is no continuous series.']],
       src: 'Source:', cite: 'Sums, shares and changes: calculated by Dehesa Index.', rel: 'Related:', relL: [['Spain livestock by province', 'ganaderia'], ['Land prices in Spain', 'insumos'], ['Foreign trade', 'comercio']] },
     fr: { yAn: 'animaux', yMe: 'millions d’€', title: 'Marchés de la dehesa', sub: 'Porc ibérique, pâturages et liège : ce que publient les sources officielles et ce qui n’a pas encore de prix public.',
       loading: 'Chargement…', fail: 'Impossible de charger les données. Réessayez dans quelques minutes.',
@@ -45,15 +47,16 @@
       prov: 'Province', iber: 'Ibériques', tot: 'Tous les porcs', share: 'Part ibérique', pigNote: 'Enquête d’élevage du MAPA (mai et novembre). « Ibérique » est la classification de l’enquête ; elle ne distingue pas gland, engraissement en plein air et engraissement à l’aliment.',
       pastH: 'Pâturages', pastS: 'Prix des terres de pâturage et fermage (MAPA).', pastPrice: 'Prix du pâturage (€/ha)', pastRent: 'Fermage du pâturage (€/ha par an)', area: 'Zone', chg: 'Par rapport à l’année précédente',
       pastProv: 'Prix du pâturage dans les provinces de dehesa', pastEvo: 'Prix du pâturage par zone (€/ha)', pastNote: 'Moyennes d’enquête du MAPA, pas un registre de ventes. Le pâturage n’est pas la dehesa arborée : le MAPA ne publie pas de prix « dehesa » à part.',
-      corkH: 'Liège', corkS: 'Commerce extérieur de liège et d’ouvrages en liège, Espagne et Portugal (Eurostat).', corkExp: 'Exportations', corkImp: 'Importations', corkEvo: 'Exportations de liège et ouvrages en liège (millions d’€)', corkYear: 'Dernière année complète', corkNote: 'Chapitre 45 du tarif (liège et ouvrages en liège), valeur en euros ; la somme annuelle est un calcul de Dehesa Index sur années complètes. Ni tonnes ni prix.', corkNoES: 'L’Espagne apparaîtra à la fin du premier chargement de données.',
+      corkPH: 'Production de liège par région (tonnes)', corkPEvo: 'Production de liège en Espagne (tonnes)', corkPYear: 'Année', corkPTot: 'Total', corkPNote: 'Source : communautés autonomes, compilé par le MITECO. L’Andalousie ne déclare pas les forêts privées : 35 000 t (2020-2022) est une estimation du ministère. 2023 n’est pas publié. Le total 2024 est la somme des régions disposant de données (pas de total national) et n’est pas directement comparable aux années précédentes. En 2022, le total publié par le MITECO (55 405 t) dépasse de 1 860,55 t la somme des régions ; la somme est utilisée ici.', corkPNoAN: 'Andalousie (estimation)', corkH: 'Liège', corkS: 'Production par région (MITECO) et commerce extérieur de liège et ouvrages en liège (Eurostat).', corkExp: 'Exportations', corkImp: 'Importations', corkEvo: 'Exportations de liège et ouvrages en liège (millions d’€)', corkYear: 'Dernière année complète', corkNote: 'Chapitre 45 du tarif (liège et ouvrages en liège), valeur en euros ; la somme annuelle est un calcul de Dehesa Index sur années complètes. Ni tonnes ni prix.', corkNoES: 'L’Espagne apparaîtra à la fin du premier chargement de données.',
       stH: 'Quels prix existent et lesquels non', stS: 'État de chaque marché de la dehesa.', mkt: 'Marché', st: 'État', why: 'Pourquoi',
       real: 'RÉEL', pend: 'EN ATTENTE', rows: [
         ['Porc ibérique (recensement)', 'RÉEL', 'Enquête d’élevage du MAPA, par province.'],
         ['Pâturage (prix et fermage)', 'RÉEL', 'Enquête du MAPA sur le prix des terres, par région et province.'],
+        ['Liège (production)', 'RÉEL', 'MITECO, tonnes par région (2014-2022 et 2024) ; l’Andalousie est une estimation du ministère.'],
         ['Liège (commerce extérieur)', 'RÉEL', 'Eurostat Comext, en valeur. C’est du commerce, pas un prix.'],
         ['Porc ibérique (prix)', 'EN ATTENTE', 'Les bourses qui le cotent (Estrémadure, Salamanque, Mercolleida) ne publient pas de données ouvertes avec permis de réutilisation.'],
         ['Gland / montanera (prix)', 'EN ATTENTE', 'Pas de série officielle ouverte ; seulement des cotations payantes ou à accès restreint.'],
-        ['Liège (prix de la planche)', 'EN ATTENTE', 'Pas de série de prix officielle ouverte. La production annuelle est publiée par le MITECO et sera ajoutée dès qu’elle pourra être lue automatiquement.']],
+        ['Liège (prix de la planche)', 'EN ATTENTE', 'Pas de série de prix officielle ouverte. L’annuaire forestier 2021 donne le prix moyen par région pour cette seule année ; il n’y a pas de série continue.']],
       src: 'Source :', cite: 'Sommes, parts et variations : calcul de Dehesa Index.', rel: 'À voir aussi :', relL: [['Élevage espagnol par province', 'ganaderia'], ['Prix des terres en Espagne', 'insumos'], ['Commerce extérieur', 'comercio']] },
     it: { yAn: 'capi', yMe: 'milioni di €', title: 'Mercati della dehesa', sub: 'Suino iberico, pascoli e sughero: cosa pubblicano le fonti ufficiali e cosa non ha ancora un prezzo pubblico.',
       loading: 'Caricamento…', fail: 'Impossibile caricare i dati. Riprova tra qualche minuto.',
@@ -62,21 +65,22 @@
       prov: 'Provincia', iber: 'Iberici', tot: 'Tutti i suini', share: 'Quota iberica', pigNote: 'Indagine zootecnica del MAPA (maggio e novembre). «Iberico» è la classificazione dell’indagine; non distingue ghianda, ingrasso all’aperto e ingrasso a mangime.',
       pastH: 'Pascoli', pastS: 'Prezzo dei terreni a pascolo e canone d’affitto (MAPA).', pastPrice: 'Prezzo del pascolo (€/ha)', pastRent: 'Canone del pascolo (€/ha all’anno)', area: 'Zona', chg: 'Rispetto all’anno precedente',
       pastProv: 'Prezzo del pascolo nelle province di dehesa', pastEvo: 'Prezzo del pascolo per zona (€/ha)', pastNote: 'Medie d’indagine del MAPA, non un registro di compravendite. Il pascolo non è la dehesa alberata: il MAPA non pubblica un prezzo «dehesa» a parte.',
-      corkH: 'Sughero', corkS: 'Commercio estero di sughero e manufatti, Spagna e Portogallo (Eurostat).', corkExp: 'Esportazioni', corkImp: 'Importazioni', corkEvo: 'Esportazioni di sughero e manufatti (milioni di €)', corkYear: 'Ultimo anno completo', corkNote: 'Capitolo 45 della tariffa (sughero e lavori di sughero), valore in euro; la somma annua è un calcolo di Dehesa Index su anni completi. Né tonnellate né prezzo.', corkNoES: 'La Spagna comparirà al termine del primo caricamento dei dati.',
+      corkPH: 'Produzione di sughero per regione (tonnellate)', corkPEvo: 'Produzione di sughero in Spagna (tonnellate)', corkPYear: 'Anno', corkPTot: 'Totale', corkPNote: 'Fonte: comunità autonome, raccolto dal MITECO. L’Andalusia non comunica i boschi privati: 35.000 t (2020-2022) è una stima del ministero. Il 2023 non è pubblicato. Il totale 2024 è la somma delle regioni con dato (non c’è un totale nazionale) e non è direttamente confrontabile con gli anni precedenti. Nel 2022 il totale pubblicato dal MITECO (55.405 t) supera di 1.860,55 t la somma delle regioni; qui si usa la somma.', corkPNoAN: 'Andalusia (stima)', corkH: 'Sughero', corkS: 'Produzione per regione (MITECO) e commercio estero di sughero e manufatti (Eurostat).', corkExp: 'Esportazioni', corkImp: 'Importazioni', corkEvo: 'Esportazioni di sughero e manufatti (milioni di €)', corkYear: 'Ultimo anno completo', corkNote: 'Capitolo 45 della tariffa (sughero e lavori di sughero), valore in euro; la somma annua è un calcolo di Dehesa Index su anni completi. Né tonnellate né prezzo.', corkNoES: 'La Spagna comparirà al termine del primo caricamento dei dati.',
       stH: 'Quali prezzi esistono e quali no', stS: 'Stato di ogni mercato della dehesa.', mkt: 'Mercato', st: 'Stato', why: 'Perché',
       real: 'REALE', pend: 'IN SOSPESO', rows: [
         ['Suino iberico (censimento)', 'REALE', 'Indagine zootecnica del MAPA, per provincia.'],
         ['Pascolo (prezzo e canone)', 'REALE', 'Indagine del MAPA sui prezzi dei terreni, per regione e provincia.'],
+        ['Sughero (produzione)', 'REALE', 'MITECO, tonnellate per regione (2014-2022 e 2024); l’Andalusia è una stima del ministero.'],
         ['Sughero (commercio estero)', 'REALE', 'Eurostat Comext, in valore. È commercio, non prezzo.'],
         ['Suino iberico (prezzo)', 'IN SOSPESO', 'Le borse che lo quotano (Estremadura, Salamanca, Mercolleida) non pubblicano dati aperti con permesso di riuso.'],
         ['Ghianda / montanera (prezzo)', 'IN SOSPESO', 'Nessuna serie ufficiale aperta; solo quotazioni a pagamento o ad accesso limitato.'],
-        ['Sughero (prezzo della tavola)', 'IN SOSPESO', 'Nessuna serie ufficiale di prezzo aperta. La produzione annua è pubblicata dal MITECO e sarà aggiunta quando potrà essere letta in automatico.']],
+        ['Sughero (prezzo della tavola)', 'IN SOSPESO', 'Nessuna serie ufficiale di prezzo aperta. L’annuario forestale 2021 riporta il prezzo medio per regione solo per quell’anno; non c’è una serie continua.']],
       src: 'Fonte:', cite: 'Somme, quote e variazioni: calcolo di Dehesa Index.', rel: 'Vedi anche:', relL: [['Zootecnia spagnola per provincia', 'ganaderia'], ['Prezzi dei terreni in Spagna', 'insumos'], ['Commercio estero', 'comercio']] }
   };
   function lang() { var l = S && S.getLang ? S.getLang() : 'es'; return T[l] ? l : 'es'; }
   function t() { return T[lang()]; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-  function nf(v, d) { if (v === null || v === undefined || !isFinite(v)) return '—'; try { return Number(v).toLocaleString(lang(), { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); } catch (e) { return String(v); } }
+  function nf(v, d) { if (v === null || v === undefined || !isFinite(v)) return '—'; try { return Number(v).toLocaleString(lang(), { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0, useGrouping: 'always' }); } catch (e) { return String(v); } }
   function pct(a, b) { if (!a || !b) return null; return (a / b - 1) * 100; }
   function chgHtml(c) { if (c === null) return '<span class="di-movers-hint">—</span>'; var up = c >= 0; return '<span style="color:var(--' + (up ? 'up' : 'down') + ',' + (up ? '#1e6b3a' : '#9b2c2c') + ')">' + (up ? '▲ +' : '▼ −') + nf(Math.abs(c), 1) + ' %</span>'; }
   function perTs(p) { var y = +p.slice(0, 4), m = +p.slice(5, 7); return Date.UTC(y, m - 1, 1); }
@@ -115,6 +119,18 @@
     h += '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(tt.pastNote) + '</p>' + srcLine({ name: Pa.source.name, url: Pa.source.url, licence: Pa.source.licence });
     return h;
   }
+  function corkProd() {
+    var tt = t(), Q = DOC.cork.production; if (!Q) return '';
+    var ys = Q.years, n = ys.length, L = lang(), order = Object.keys(Q.ccaa).sort(function (a, b) { var x = Q.ccaa[a][n - 3], y = Q.ccaa[b][n - 3]; return (y || 0) - (x || 0); });
+    var cols = [n - 2, n - 1], i22 = ys.indexOf(2022), i24 = ys.indexOf(2024); cols = [i22, i24].filter(function (k) { return k >= 0; });
+    function nm(c) { return esc(Q.names[c]) + (c === 'AN' ? ' *' : ''); }
+    var rows = order.filter(function (c) { return cols.some(function (k) { return Q.ccaa[c][k] !== null; }); }).map(function (c) { return '<tr>' + td('<b>' + nm(c) + '</b>') + cols.map(function (k) { var v = Q.ccaa[c][k]; return td(v === null ? '—' : nf(v, 0), 1); }).join('') + '</tr>'; });
+    rows.push('<tr>' + td('<b>' + esc(tt.corkPTot) + '</b>') + cols.map(function (k) { return td('<b>' + nf(Q.total[k], 0) + '</b>', 1); }).join('') + '</tr>');
+    var h = '<h3 style="font-size:14px;margin:0 0 6px">' + esc(tt.corkPH) + '</h3>' + table([th(tt.area)].concat(cols.map(function (k) { return th(String(ys[k]), 1); })), rows);
+    function ser(name, arr, c) { var pts = []; for (var j = 0; j < arr.length; j++) if (arr[j] !== null) pts.push({ x: Date.UTC(ys[j], 0, 1), y: arr[j], l: String(ys[j]) }); return { name: name, color: c, pts: pts }; }
+    h += chart([ser(tt.corkPTot, Q.total, COL[3]), ser(Q.names.AN + ' *', Q.ccaa.AN, COL[2]), ser(Q.names.EX, Q.ccaa.EX, COL[1]), ser(Q.names.CT, Q.ccaa.CT, COL[0])], { xMode: 'time', yTitle: 't', aria: tt.corkPEvo, vFmt: function (v) { return nf(v, 0); }, xFmt: function (x) { return Math.round(1970 + x / 31556952000); } });
+    return h + '<p class="di-movers-hint" style="margin:8px 0 0">* ' + esc(tt.corkPNote) + '</p>' + srcLine(Q.source) + '<div style="height:14px"></div>';
+  }
   function cork() {
     var tt = t(), C = DOC.cork, cs = Object.keys(C.countries), names = { ES: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, PT: { es: 'Portugal', en: 'Portugal', fr: 'Portugal', it: 'Portogallo' } }, L = lang();
     if (!cs.length) return '<p class="di-movers-hint">—</p>';
@@ -122,7 +138,7 @@
       var e = C.countries[cc].exports || [], i = C.countries[cc].imports || [], le = e[e.length - 1], li = i[i.length - 1];
       return '<tr>' + td('<b>' + esc(names[cc][L]) + '</b>') + td(le ? le[0] : '—', 1) + td(le ? nf(le[1], 1) : '—', 1) + td(le && e.length > 1 ? chgHtml(pct(le[1], e[e.length - 2][1])) : '—', 1) + td(li ? nf(li[1], 1) : '—', 1) + '</tr>';
     });
-    var h = table([th(tt.area), th(tt.corkYear, 1), th(tt.corkExp + ' (M€)', 1), th(tt.chg, 1), th(tt.corkImp + ' (M€)', 1)], rows);
+    var h = corkProd() + table([th(tt.area), th(tt.corkYear, 1), th(tt.corkExp + ' (M€)', 1), th(tt.chg, 1), th(tt.corkImp + ' (M€)', 1)], rows);
     h += chart(cs.filter(function (cc) { return C.countries[cc].exports; }).map(function (cc, i) { return { name: names[cc][L], color: COL[i], pts: C.countries[cc].exports.map(function (p) { return { x: Date.UTC(p[0], 0, 1), y: p[1], l: String(p[0]) }; }) }; }), { xMode: 'time', yTitle: tt.yMe, aria: tt.corkEvo, vFmt: function (v) { return nf(v, 0); }, xFmt: function (x) { return new Date(x).getUTCFullYear(); } });
     h += '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(tt.corkNote) + (cs.indexOf('ES') < 0 ? ' ' + esc(tt.corkNoES) : '') + '</p>' + srcLine(C.source);
     return h;
