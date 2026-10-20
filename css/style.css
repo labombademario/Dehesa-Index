@@ -2177,10 +2177,10 @@ html[data-theme="dark"] .ute-chip.ute-normal{color:var(--ute-n)}html[data-theme=
 .pl-wlist{margin:6px 0 8px;padding-left:18px;max-width:760px;font-size:13px}
 .pl-wlist li{margin:0 0 8px}
 /* Barras por ano (js/fr-onde.js, js/fr-nitrates.js) */
-.on-bars{display:flex;align-items:flex-end;gap:5px;overflow-x:auto;min-height:118px;max-width:640px;padding-top:4px}
-.on-bars span{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:24px}
+.on-bars{display:flex;align-items:flex-end;gap:5px;overflow:hidden;min-height:118px;max-width:640px;padding-top:4px}
+.on-bars span{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1 1 0;min-width:0}
 .on-bars b{font-size:10.5px;font-weight:600;color:var(--text-muted)}
-.on-bars i{display:block;width:16px;background:var(--gb2);border-radius:2px 2px 0 0}
+.on-bars i{display:block;width:min(16px,80%);background:var(--gb2);border-radius:2px 2px 0 0}
 .on-bars i.on-cur{background:var(--gb4)}
 .on-bars small{font-size:10.5px;color:var(--text-muted)}
 /* Gasoleo B por provincia (js/es-gasoleo-b.js): rampa de un solo tono, de claro a oscuro */
