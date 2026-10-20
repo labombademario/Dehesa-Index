@@ -79,6 +79,7 @@ def monthly(cc):
         a, b = _M[(cc, "exp")].get(c), _M[(cc, "imp")].get(c)
         if a and b: put(cc, "eu-%s-trade-bal-%s" % (cc.lower(), slug(nm)), "trade", "Trade balance: %s (monthly)" % nm, "EUR million", "monthly", [(p, v - b[p]) for p, v in a.items() if p in b], "Eurostat Comext", ch=False); n += 1
     return n
+EUMEMBERS = {"AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GR", "EL", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO", "SE", "SI", "SK"}
 def partners(cc):
     n = 0; yr = datetime.date.today().year - 1
     for flow, tag, word in (("2", "exp", "Exports to"), ("1", "imp", "Imports from")):
@@ -88,6 +89,8 @@ def partners(cc):
             if len(r["partner"]) == 2 and r["partner"] != cc: tot[r["partner"]] = tot.get(r["partner"], 0) + v
         if not tot: log(cc, tag, "sin socios para", yr); continue
         top = sorted(tot, key=lambda k: -tot[k])[:10]
+        # ademas, los 10 principales socios de fuera de la UE (para poder filtrar «fuera de la UE» sin quedarse en 3 o 4 filas)
+        top += [k for k in sorted((k for k in tot if k not in EUMEMBERS), key=lambda k: -tot[k])[:10] if k not in top]
         j = get({"reporter": cc, "partner": top, "product": CH, "flow": flow, "freq": "A", "sinceTimePeriod": "2002"})
         ser = {}
         for r, v in cells(j): ser.setdefault(r["partner"], {}); ser[r["partner"]][r["time"]] = ser[r["partner"]].get(r["time"], 0) + v
