@@ -15,10 +15,10 @@
 
   var T = {
     title: L('¿Quién produce qué en el mundo?', 'Who produces what in the world?', 'Qui produit quoi dans le monde ?', 'Chi produce cosa nel mondo?'),
-    sub: L('Elige un producto y mira qué país lidera su producción; pulsa un país en el mapa para ver todo lo que produce. Datos oficiales del USDA, con la campaña más reciente publicada.',
-           'Pick a product to see which country leads its production; click a country on the map to see everything it produces. Official USDA data, latest published marketing year.',
-           'Choisissez un produit pour voir quel pays en domine la production ; cliquez sur un pays de la carte pour voir tout ce qu’il produit. Données officielles de l’USDA, dernière campagne publiée.',
-           'Scegli un prodotto per vedere quale paese ne guida la produzione; clicca un paese sulla mappa per vedere tutto ciò che produce. Dati ufficiali USDA, ultima campagna pubblicata.'),
+    sub: L('Elige un producto y mira qué país lidera su producción; pulsa un país en el mapa para ver todo lo que produce. Datos oficiales del USDA y, para hortalizas y otros cultivos europeos, de Eurostat; siempre el último año publicado.',
+           'Pick a product to see which country leads its production; click a country on the map to see everything it produces. Official data from the USDA and, for vegetables and other European crops, Eurostat; always the latest published year.',
+           'Choisissez un produit pour voir quel pays en domine la production ; cliquez sur un pays de la carte pour voir tout ce qu’il produit. Données officielles de l’USDA et, pour les légumes et autres cultures européennes, d’Eurostat ; toujours la dernière année publiée.',
+           'Scegli un prodotto per vedere quale paese ne guida la produzione; clicca un paese sulla mappa per vedere tutto ciò che produce. Dati ufficiali USDA e, per ortaggi e altre colture europee, Eurostat; sempre l’ultimo anno pubblicato.'),
     loading: L('Cargando…', 'Loading…', 'Chargement…', 'Caricamento…'), fail: L('No se han podido cargar los datos. Vuelve a intentarlo más tarde.', 'The data could not be loaded. Please try again later.', 'Les données n’ont pas pu être chargées. Réessayez plus tard.', 'Impossibile caricare i dati. Riprova più tardi.'),
     bar: L('En esta página', 'On this page', 'Sur cette page', 'In questa pagina'),
     bars: { mapa: L('🗺️ Mapa', '🗺️ Map', '🗺️ Carte', '🗺️ Mappa'), lideres: L('🥇 Líderes', '🥇 Leaders', '🥇 Leaders', '🥇 Leader'), pais: L('🌍 País', '🌍 Country', '🌍 Pays', '🌍 Paese'), fuente: L('ℹ️ Fuente', 'ℹ️ Source', 'ℹ️ Source', 'ℹ️ Fonte') },
@@ -39,6 +39,7 @@
       aceite_coco: L('Aceite de coco', 'Coconut oil', 'Huile de coco', 'Olio di cocco'), aceite_algodon: L('Aceite de algodón', 'Cottonseed oil', 'Huile de coton', 'Olio di semi di cotone'), aceite_cacahuete: L('Aceite de cacahuete', 'Peanut oil', 'Huile d’arachide', 'Olio di arachidi'), aceite_palmiste: L('Aceite de palmiste', 'Palm kernel oil', 'Huile de palmiste', 'Olio di palmisto'),
       harina_colza: L('Harina de colza', 'Rapeseed meal', 'Tourteau de colza', 'Farina di colza'), harina_girasol: L('Harina de girasol', 'Sunflower meal', 'Tourteau de tournesol', 'Farina di girasole'), semilla_algodon: L('Semilla de algodón', 'Cottonseed', 'Graine de coton', 'Semi di cotone')
     },
+    euNote: L('Los productos de las secciones de hortalizas, leguminosas y los marcados como europeos (p. ej. avellana, castaña, patata) vienen de Eurostat (apro_cpsh1, producción cosechada) y cubren solo los países europeos que publican dato, no todo el mundo: el puesto y la cuota son sobre ese conjunto. Cada producto usa el último año en que publican los grandes productores.', 'Products in the vegetables and pulses sections and those marked as European (e.g. hazelnuts, chestnuts, potatoes) come from Eurostat (apro_cpsh1, harvested production) and cover only the European countries that publish data, not the whole world: rank and share are within that set. Each product uses the latest year in which the large producers publish.', 'Les produits des sections légumes et légumineuses et ceux marqués comme européens (p. ex. noisettes, châtaignes, pommes de terre) viennent d’Eurostat (apro_cpsh1, production récoltée) et ne couvrent que les pays européens qui publient, pas le monde entier : le rang et la part portent sur cet ensemble. Chaque produit utilise la dernière année où les grands producteurs publient.', 'I prodotti delle sezioni ortaggi e legumi e quelli indicati come europei (p. es. nocciole, castagne, patate) provengono da Eurostat (apro_cpsh1, produzione raccolta) e coprono solo i paesi europei che pubblicano dati, non il mondo intero: posizione e quota riguardano questo insieme. Ogni prodotto usa l’ultimo anno in cui pubblicano i grandi produttori.'),
     leader: L('Líder mundial', 'World leader', 'Leader mondial', 'Leader mondiale'), share: L('del total mundial', 'of the world total', 'du total mondial', 'del totale mondiale'),
     leaderEu: L('Líder en Europa', 'European leader', 'Leader européen', 'Leader europeo'), shareEu: L('del total europeo', 'of the European total', 'du total européen', 'del totale europeo'),
     worldEu: L('Total de los países europeos publicados', 'Total of the European countries published', 'Total des pays européens publiés', 'Totale dei paesi europei pubblicati'),
@@ -65,6 +66,47 @@
   };
   var ORDER = [['cer', ['trigo', 'maiz', 'arroz', 'cebada', 'avena', 'centeno', 'sorgo', 'mijo']], ['fruit', ['manzana', 'pera', 'melocoton', 'cereza', 'uva_mesa', 'naranja', 'mandarina', 'limon', 'pomelo']], ['nuts', ['almendra', 'nuez', 'pistacho']], ['oil', ['soja', 'harina_soja', 'colza', 'girasol', 'cacahuete', 'oliva', 'aceite_palma', 'aceite_soja', 'aceite_girasol', 'aceite_colza', 'aceite_coco', 'aceite_algodon', 'aceite_cacahuete', 'aceite_palmiste', 'harina_colza', 'harina_girasol', 'semilla_algodon']], ['meat', ['vacuno', 'cerdo', 'pollo']], ['dairy', ['leche', 'mantequilla', 'queso', 'leche_polvo_desnatada', 'leche_polvo_entera']], ['sugar', ['azucar']], ['other', ['cafe', 'algodon']]];
   var EMO = { trigo: '🌾', maiz: '🌽', arroz: '🍚', cebada: '🍺', soja: '🫘', harina_soja: '🌱', colza: '🌼', oliva: '🫒', avena: '🥣', centeno: '🌾', sorgo: '🌿', mijo: '🌾', girasol: '🌻', cacahuete: '🥜', aceite_palma: '🌴', aceite_soja: '🫘', aceite_girasol: '🌻', aceite_colza: '🌼', manzana: '🍎', pera: '🍐', melocoton: '🍑', cereza: '🍒', uva_mesa: '🍇', naranja: '🍊', mandarina: '🍊', limon: '🍋', pomelo: '🍊', almendra: '🌰', nuez: '🌰', pistacho: '🥜', cafe: '☕', algodon: '☁️', mantequilla: '🧈', leche_polvo_desnatada: '🥛', leche_polvo_entera: '🥛', aceite_coco: '🥥', aceite_algodon: '☁️', aceite_cacahuete: '🥜', aceite_palmiste: '🌴', harina_colza: '🌼', harina_girasol: '🌻', semilla_algodon: '☁️', queso: '🧀', vacuno: '🐄', cerdo: '🐖', pollo: '🐔', leche: '🥛', azucar: '🍬' };
+
+  /* Productos de Eurostat (apro_cpsh1, producción cosechada por país europeo): los que el USDA no publica. [es, en, fr, it, emoji, grupo] */
+  var EUP = {
+    F4200: ['Avellana', 'Hazelnuts', 'Noisettes', 'Nocciole', '🌰', 'nuts'], F4400: ['Castaña', 'Chestnuts', 'Châtaignes', 'Castagne', '🌰', 'nuts'],
+    F1230: ['Albaricoque', 'Apricots', 'Abricots', 'Albicocche', '🍑', 'fruit'], F1250: ['Ciruela', 'Plums', 'Prunes', 'Prugne', '🟣', 'fruit'], F2100: ['Higo', 'Figs', 'Figues', 'Fichi', '🟣', 'fruit'],
+    F2200: ['Kiwi', 'Kiwis', 'Kiwis', 'Kiwi', '🥝', 'fruit'], F2300: ['Aguacate', 'Avocados', 'Avocats', 'Avocado', '🥑', 'fruit'], F2400: ['Plátano', 'Bananas', 'Bananes', 'Banane', '🍌', 'fruit'],
+    F3200: ['Frambuesa', 'Raspberries', 'Framboises', 'Lamponi', '🍓', 'fruit'], F3300: ['Arándano', 'Blueberries', 'Myrtilles', 'Mirtilli', '🫐', 'fruit'],
+    W1000: ['Uva (total)', 'Grapes (total)', 'Raisin (total)', 'Uva (totale)', '🍇', 'fruit'], W1100: ['Uva para vino', 'Wine grapes', 'Raisin de cuve', 'Uva da vino', '🍷', 'fruit'],
+    O1100: ['Aceituna de mesa', 'Table olives', 'Olives de table', 'Olive da tavola', '🫒', 'oil'], O1910: ['Aceituna para aceite', 'Olives for oil', 'Olives à huile', 'Olive da olio', '🫒', 'oil'],
+    V3100: ['Tomate', 'Tomatoes', 'Tomates', 'Pomodori', '🍅', 'veg'], V3600: ['Pimiento', 'Peppers', 'Poivrons', 'Peperoni', '🫑', 'veg'], V3200_V3300: ['Pepino', 'Cucumbers', 'Concombres', 'Cetrioli', '🥒', 'veg'],
+    V3410: ['Berenjena', 'Eggplants', 'Aubergines', 'Melanzane', '🍆', 'veg'], V3420: ['Calabacín', 'Courgettes', 'Courgettes', 'Zucchine', '🥒', 'veg'], V3520: ['Sandía', 'Watermelons', 'Pastèques', 'Angurie', '🍉', 'veg'],
+    V3510: ['Melón', 'Melons', 'Melons', 'Meloni', '🍈', 'veg'], V4100: ['Zanahoria', 'Carrots', 'Carottes', 'Carote', '🥕', 'veg'], V4200: ['Cebolla y chalota', 'Onions and shallots', 'Oignons et échalotes', 'Cipolle e scalogni', '🧅', 'veg'],
+    V4600: ['Ajo', 'Garlic', 'Ail', 'Aglio', '🧄', 'veg'], V2300: ['Lechuga', 'Lettuces', 'Laitues', 'Lattughe', '🥬', 'veg'], V2500: ['Espinaca', 'Spinach', 'Épinards', 'Spinaci', '🥬', 'veg'],
+    V2600: ['Espárrago', 'Asparagus', 'Asperges', 'Asparagi', '🌿', 'veg'], V2800: ['Alcachofa', 'Artichokes', 'Artichauts', 'Carciofi', '🌿', 'veg'], V1100: ['Coliflor y brócoli', 'Cauliflower and broccoli', 'Chou-fleur et brocoli', 'Cavolfiore e broccoli', '🥦', 'veg'],
+    V1300: ['Col', 'Cabbages', 'Choux', 'Cavoli', '🥬', 'veg'], V2100: ['Puerro', 'Leeks', 'Poireaux', 'Porri', '🌿', 'veg'], V4300: ['Remolacha roja', 'Beetroot', 'Betteraves rouges', 'Barbabietole rosse', '🟣', 'veg'],
+    V5100: ['Guisante fresco', 'Fresh peas', 'Petits pois', 'Piselli freschi', '🫛', 'veg'], V5200: ['Judía verde', 'Fresh beans', 'Haricots verts', 'Fagiolini', '🫛', 'veg'], U1100: ['Champiñón', 'Mushrooms', 'Champignons', 'Funghi coltivati', '🍄', 'veg'],
+    R1000: ['Patata', 'Potatoes', 'Pommes de terre', 'Patate', '🥔', 'veg'], R2000: ['Remolacha azucarera', 'Sugar beet', 'Betterave sucrière', 'Barbabietola da zucchero', '🍬', 'veg'],
+    P1100: ['Guisante seco', 'Field peas', 'Pois protéagineux', 'Pisello proteico', '🫛', 'pulse'], P1200: ['Haba', 'Broad beans', 'Fèves', 'Fave', '🫘', 'pulse'], P1300: ['Altramuz dulce', 'Sweet lupins', 'Lupins doux', 'Lupini dolci', '🫘', 'pulse'],
+    P9100: ['Lenteja', 'Lentils', 'Lentilles', 'Lenticchie', '🫘', 'pulse'], P9200: ['Garbanzo', 'Chickpeas', 'Pois chiches', 'Ceci', '🫘', 'pulse'], P9400: ['Veza', 'Vetches', 'Vesces', 'Vecce', '🫘', 'pulse'],
+    C1120: ['Trigo duro', 'Durum wheat', 'Blé dur', 'Grano duro', '🌾', 'cer'], C1600: ['Triticale', 'Triticale', 'Triticale', 'Triticale', '🌾', 'cer'], G2100: ['Alfalfa', 'Lucerne', 'Luzerne', 'Erba medica', '🌿', 'pulse'],
+    G3000: ['Maíz forrajero', 'Green maize', 'Maïs fourrage', 'Mais da foraggio', '🌽', 'cer'], I1140: ['Lino (linaza)', 'Linseed', 'Lin oléagineux', 'Lino da olio', '🌾', 'oil'],
+    I2100: ['Lino textil', 'Fibre flax', 'Lin textile', 'Lino tessile', '🌾', 'other'], I2200: ['Cáñamo', 'Hemp', 'Chanvre', 'Canapa', '🌿', 'other'], I4000: ['Lúpulo', 'Hops', 'Houblon', 'Luppolo', '🍺', 'other'], I3000: ['Tabaco', 'Tobacco', 'Tabac', 'Tabacco', '🌿', 'other']
+  };
+  var EUG = { veg: L('🥕 Hortalizas y patata (Europa)', '🥕 Vegetables and potatoes (Europe)', '🥕 Légumes et pommes de terre (Europe)', '🥕 Ortaggi e patate (Europa)'), pulse: L('🫘 Leguminosas y forrajes (Europa)', '🫘 Pulses and fodder (Europe)', '🫘 Légumineuses et fourrages (Europe)', '🫘 Legumi e foraggi (Europa)') };
+  function eurostat(doc) {
+    var out = [];
+    (doc.crops || []).forEach(function (c) {
+      var m = EUP[c.code]; if (!m) return; var cs = {};
+      Object.keys(c.countries).forEach(function (k) {
+        if (k === 'EU') return; var ys = {}, any = false;
+        Object.keys(c.countries[k]).forEach(function (y) { var v = c.countries[k][y]; if (v != null) { ys[y] = { production: v / 1000 }; any = true; } });
+        if (any) cs[k === 'EL' ? 'GR' : k] = { name: k, years: ys };
+      });
+      out.push({ id: 'eu_' + c.code, unit: '1000 MT', latestMarketYear: +c.latestYear, countries: cs, euOnly: true });
+      T.p['eu_' + c.code] = L(m[0], m[1], m[2], m[3]); EMO['eu_' + c.code] = m[4];
+      var g = ORDER.filter(function (o) { return o[0] === m[5]; })[0];
+      if (!g) { T.grp[m[5]] = EUG[m[5]]; g = [m[5], []]; ORDER.splice(ORDER.length - 2, 0, g); }
+      g[1].push('eu_' + c.code);
+    });
+    return out;
+  }
   var EU27 = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE'];
   var SEQ = ['#e9efdf', '#c6dbb4', '#93bd86', '#549362', '#1f6b3f'], NONE = '#e6e2d6';
   var D = null, SEL = { p: 'trigo', c: 'US', v: 'world' }, MAP = null, STATS = {}, CUTS = [];
@@ -74,7 +116,7 @@
   /* Factor para llevar la unidad de PSD a miles de toneladas: '1000 MT' = 1; 'MT' = 0,001; sacos de 60 kg y balas de 480 lb, por su peso. */
   function kt(unit) { var u = String(unit || ''); if (/60 KG/i.test(u)) return 0.06; if (/480/.test(u)) return 0.21772; return /^1000/.test(u) ? 1 : 0.001; }
   var CAL = { vacuno: 1, cerdo: 1, pollo: 1, leche: 1, mantequilla: 1, queso: 1 };
-  function myLabel(id, y) { return CAL[id] ? String(y) : y + '/' + String((+y + 1) % 100 + 100).slice(1); }
+  function myLabel(id, y) { return CAL[id] || /^eu_/.test(id) ? String(y) : y + '/' + String((+y + 1) % 100 + 100).slice(1); }
   function yrs(c) { var ys = {}; Object.keys(c.countries).forEach(function (k) { Object.keys(c.countries[k].years || {}).forEach(function (y) { ys[y] = 1; }); }); return Object.keys(ys).sort(); }
   /* Ranking de un producto: cada país con su producción en el último año con dato y la del año anterior. */
   function stats(id) {
@@ -90,14 +132,14 @@
       if (a != null && a > 0) { rows.push({ k: k, v: a * f, pv: b == null ? null : b * f, name: c.countries[k].name }); tot += a * f; }
     });
     rows.sort(function (x, y) { return y.v - x.v; }); rows.forEach(function (r, i) { r.rank = i + 1; r.share = tot ? 100 * r.v / tot : null; });
-    return STATS[id] = { id: id, unit: c.unit, last: last, fc: +last >= +c.latestMarketYear,  rows: rows, tot: tot, by: rows.reduce(function (m, r) { m[r.k] = r; return m; }, {}) };
+    return STATS[id] = { id: id, unit: c.unit, last: last, fc: !c.euOnly && +last >= +c.latestMarketYear,  rows: rows, tot: tot, by: rows.reduce(function (m, r) { m[r.k] = r; return m; }, {}) };
   }
   /* Vista Europa: solo países europeos (la UE cuenta como un bloque, como publica el USDA), con su propio ranking y cuota. */
   var EUROPE = ['EU', 'UK', 'UA', 'RU', 'RS', 'BY', 'MD', 'AL', 'BA', 'MK', 'ME', 'NO', 'CH', 'XK', 'IS'];
   function vstats(id) {
     var st = stats(id); if (!st || SEL.v !== 'eu') return st;
     var key = id + '|eu'; if (STATS[key]) return STATS[key];
-    var rows = st.rows.filter(function (r) { return EUROPE.indexOf(r.k) >= 0; }).map(function (r) { return { k: r.k, v: r.v, pv: r.pv, name: r.name }; }), tot = 0;
+    var eo = comm(id) && comm(id).euOnly, rows = st.rows.filter(function (r) { return eo || EUROPE.indexOf(r.k) >= 0; }).map(function (r) { return { k: r.k, v: r.v, pv: r.pv, name: r.name }; }), tot = 0;
     rows.forEach(function (r) { tot += r.v; }); rows.forEach(function (r, i) { r.rank = i + 1; r.share = tot ? 100 * r.v / tot : null; });
     return STATS[key] = { id: st.id, unit: st.unit, last: st.last, fc: st.fc, rows: rows, tot: tot, by: rows.reduce(function (m, r) { m[r.k] = r; return m; }, {}) };
   }
@@ -111,6 +153,7 @@
   function mt(v) { return v >= 1000 ? nf(v / 1000, v >= 10000 ? 0 : 1) + ' Mt' : nf(v, v >= 100 ? 0 : 1) + ' ' + tx(L('mil t', 'k t', 'kt', 'mila t')); }
   function chg(v) { if (v == null) return '<span class="cp-m">—</span>'; var up = v > 0.049, dn = v < -0.049; return '<span class="cp-chg ' + (up ? 'up' : dn ? 'dn' : '') + '">' + (up ? '▲ +' : dn ? '▼ −' : '■ ') + nf(Math.abs(v), 1) + ' %</span>'; }
   function medal(n) { return n === 1 ? '🥇' : n === 2 ? '🥈' : n === 3 ? '🥉' : n + '.'; }
+  function eoOnly(id) { var c = comm(id); return !!(c && c.euOnly); }
   function pname(id) { return tx(T.p[id]); }
 
   function classify() {
@@ -168,8 +211,8 @@
     }).join('') + '</ol>';
     var unit = /CWE/.test(st.unit) ? ' · ' + tx(T.unitCarcass) : '';
     return '<div class="pm-hd"><span class="pm-emo" aria-hidden="true">' + EMO[SEL.p] + '</span> ' + esc(pname(SEL.p)) + '<span class="cp-m"> · ' + esc(tx(T.my)) + ' ' + esc(myLabel(SEL.p, st.last)) + esc(st.fc ? ' · ' + tx(T.fcst) : '') + esc(unit) + '</span></div>' +
-      '<div class="pm-lead"><div class="cp-tl">' + esc(tx(SEL.v === 'eu' ? T.leaderEu : T.leader)) + '</div><div class="pm-lv">🥇 ' + esc(flag(ld.k) + cname(ld.k, ld.name)) + '</div><div class="cp-ts"><b>' + nf(ld.share, 1) + ' %</b> ' + esc(tx(SEL.v === 'eu' ? T.shareEu : T.share)) + ' · ' + esc(mt(ld.v)) + ' ' + chg(pc(ld.v, ld.pv)) + ' <span class="cp-m">' + esc(tx(T.vs)) + '</span></div></div>' +
-      '<div class="cp-pk">' + esc(tx(SEL.v === 'eu' ? T.worldEu : T.world)) + ': <b>' + esc(mt(st.tot)) + '</b></div><h3 class="cp-h3">' + esc(tx(T.top10)) + '</h3>' + list;
+      '<div class="pm-lead"><div class="cp-tl">' + esc(tx((SEL.v === 'eu' || eoOnly(SEL.p)) ? T.leaderEu : T.leader)) + '</div><div class="pm-lv">🥇 ' + esc(flag(ld.k) + cname(ld.k, ld.name)) + '</div><div class="cp-ts"><b>' + nf(ld.share, 1) + ' %</b> ' + esc(tx((SEL.v === 'eu' || eoOnly(SEL.p)) ? T.shareEu : T.share)) + ' · ' + esc(mt(ld.v)) + ' ' + chg(pc(ld.v, ld.pv)) + ' <span class="cp-m">' + esc(tx(T.vs)) + '</span></div></div>' +
+      '<div class="cp-pk">' + esc(tx((SEL.v === 'eu' || eoOnly(SEL.p)) ? T.worldEu : T.world)) + ': <b>' + esc(mt(st.tot)) + '</b></div><h3 class="cp-h3">' + esc(tx(T.top10)) + '</h3>' + list;
   }
   function leadersTable() {
     var rows = '';
@@ -196,7 +239,7 @@
       '<div class="cp-links">' + ln.map(function (l) { return '<a class="cp-link" href="' + esc(l[0]) + '"><span aria-hidden="true">' + l[1] + '</span> ' + esc(l[2]) + '</a>'; }).join('') + '</div></section>';
   }
   function sourceSection() {
-    return '<section id="pm-fuente" class="di-card cp-sec"><h2 class="cp-h2">' + esc(tx(T.fruitT)) + '</h2><p class="di-movers-hint">' + esc(tx(T.fruitN)) + '</p><p class="di-movers-hint">' + esc(tx(T.note)) + '</p><div id="pm-cites"></div></section>';
+    return '<section id="pm-fuente" class="di-card cp-sec"><h2 class="cp-h2">' + esc(tx(T.fruitT)) + '</h2><p class="di-movers-hint">' + esc(tx(T.fruitN)) + '</p><p class="di-movers-hint">' + esc(tx(T.note)) + '</p>' + (D.commodities.some(function (c) { return c.euOnly; }) ? '<p class="di-movers-hint">' + esc(tx(T.euNote)) + '</p>' : '') + '<div id="pm-cites"></div></section>';
   }
   function cites() { var el = document.getElementById('pm-cites'), Q = global.DICite; if (!el || !Q || !Q.html) return; var h = Q.html('usda_fas_psd', { period: String(stats(SEL.p).last) }); if (h) el.innerHTML = '<div class="pp-cites">' + h + '</div>'; }
   function barUp() { var F = S.frame; if (!F || !F.bar) return; F.bar(document.getElementById('pa-bar'), tx(T.bar), ['mapa', 'lideres', 'pais', 'fuente'].map(function (k) { return ['pm-' + k, tx(T.bars[k])]; })); }
@@ -227,9 +270,9 @@
     if (S.init) S.init('production');
     try { var q = new URLSearchParams(global.location.search), p = q.get('p'), c = (q.get('c') || '').toUpperCase(); if (p && T.p[p]) SEL.p = p; if (c) SEL.c = c === 'GB' ? 'UK' : c; } catch (e) { /* sin parámetros */ }
     root.innerHTML = '<p class="di-movers-hint">' + esc(tx(T.loading)) + '</p>';
-    Promise.all([getJSON('data/supply-demand-map.json'), getJSON('data/world-production.json'), global.DICite && global.DICite.load ? global.DICite.load().catch(function () { return null; }) : null]).then(function (r) {
+    Promise.all([getJSON('data/supply-demand-map.json'), getJSON('data/world-production.json'), global.DICite && global.DICite.load ? global.DICite.load().catch(function () { return null; }) : null, getJSON('data/eu-crops-map.json')]).then(function (r) {
       if (!r[0] || !r[0].commodities) { root.innerHTML = '<p>' + esc(tx(T.fail)) + '</p>'; return; }
-      D = r[0]; if (r[1] && r[1].commodities) D.commodities = D.commodities.concat(r[1].commodities); if (!comm(SEL.p)) SEL.p = 'trigo';
+      D = r[0]; if (r[1] && r[1].commodities) D.commodities = D.commodities.concat(r[1].commodities); if (r[3] && r[3].crops) D.commodities = D.commodities.concat(eurostat(r[3])); try { var pp = new URLSearchParams(global.location.search).get('p'); if (pp && T.p[pp] && comm(pp)) SEL.p = pp; } catch (e) { /* sin parámetros */ } if (!comm(SEL.p)) SEL.p = 'trigo';
       var any = false; D.commodities.forEach(function (c) { if (c.countries[SEL.c]) any = true; }); if (!any) SEL.c = 'US';
       render();
     });

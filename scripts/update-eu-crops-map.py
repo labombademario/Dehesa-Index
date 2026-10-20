@@ -36,7 +36,7 @@ def main():
         k = int(k); rec = {}
         for d, n in reversed(list(zip(ids, size))): rec[d] = cats[d][k % n]; k //= n
         geo = rec['geo']
-        if not re.fullmatch(r'[A-Z]{2}', geo) or v is None: continue
+        if not re.fullmatch(r'[A-Z]{2}', geo) or geo == 'EU' or v is None: continue   # «EU» es el agregado, no un pais
         data.setdefault(rec['crops'], {}).setdefault(geo, {})[rec['time']] = round(v * 1000, 1)
     out = []
     for code, ctry in sorted(data.items()):
