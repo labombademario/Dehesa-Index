@@ -48,6 +48,9 @@ jobs:
       - name: Contract tests bite (corrupted real data must be rejected)
         run: python3 scripts/test-contracts.py
 
+      - name: Security headers (CSP, HSTS) and inline-script hashes match _headers
+        run: python3 scripts/test-csp.py
+
       - name: CPI pipeline parsers and integrity checks (no network)
         run: python3 scripts/test-cpi.py
 

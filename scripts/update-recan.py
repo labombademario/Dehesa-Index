@@ -5,7 +5,7 @@ Las celdas "Confidencial" quedan como null.
 Historico acumulado: desde el 9-oct-2026 el recurso CKAN del MAPA solo trae el ultimo ejercicio publicado (2024); los ejercicios ya leidos
 que el recurso deja de traer se CONSERVAN tal cual de data/recan.json (son cifras ya publicadas por el MAPA, no se recalculan).
 Si el MAPA trae un ejercicio que ya teniamos, gana lo nuevo (revision)."""
-import collections, csv, io, json, re, time, urllib.request, datetime, sys
+import os, collections, csv, io, json, re, time, urllib.request, datetime, sys
 
 RID = '687a7bb1-ddf2-4cdd-8525-05cec40c6734'
 KEEP = ['SE010','SE025','SE080','SE131','SE135','SE136','SE206','SE207','SE270','SE275','SE281','SE282','SE283','SE336','SE345','SE360','SE370','SE375','SE380','SE410','SE415','SE420','SE425','SE436','SE485','SE600','SE630']
@@ -44,7 +44,13 @@ def main():
         rec['v'][vid] = num(r['valor'])
     fresh = collections.Counter(k[0] for k in recs)
     for y, n in sorted(fresh.items()):
-        if n < 150: sys.exit('pocas filas en el ejercicio %d: %d' % (y, n))
+        if n < 150:
+            # ejercicio a medias o descarga recortada: se ignora ese ejercicio (se conserva lo que ya hubiera) y se sigue con los demas
+            print('::warning::RECAN: ejercicio %d con solo %d filas; se ignora esta vez' % (y, n))
+            for k in [k for k in recs if k[0] == y]: del recs[k]
+            years.pop(y, None)
+    fresh = collections.Counter(k[0] for k in recs)
+    if not fresh: sys.exit('RECAN: ningun ejercicio con filas suficientes')
     try: old = json.load(open('data/recan.json', encoding='utf-8'))
     except Exception: old = None
     kept = []
@@ -74,7 +80,10 @@ def main():
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
            'source': {'name': 'MAPA — RECAN, Red Contable Agraria Nacional', 'url': 'https://servicio.mapa.gob.es/ckan/dataset/esmaparecanredcontable', 'license': 'CC BY 4.0'},
            'years': Y, 'ccaa': C, 'types': [list(types[t]) for t in T], 'dims': D, 'vars': [[v] + vars_[v] for v in V], 'rows': out}
-    if len(out) < 2000: sys.exit('pocas filas: %d' % len(out))
+    if len(out) < 2000:
+        # Descarga recortada del MAPA (pasa a ratos): si ya hay un recan.json bueno se conserva tal cual y la ejecucion no se pone en rojo; sin historico, si falla.
+        if old and len(old.get('rows', [])) >= 2000: print('::warning::RECAN: el MAPA devolvio solo %d filas; se conserva el fichero anterior (%d filas)' % (len(out), len(old['rows']))); sys.exit(0)
+        sys.exit('pocas filas: %d' % len(out))
     json.dump(doc, open('data/recan.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     open('data/recan-log.txt', 'w').write('%d filas, %d variables, %d comunidades, %d tipos, años %s-%s (leidos ahora: %s; conservados del historico: %s)\n' % (len(out), len(V), len(C), len(T), Y[0], Y[-1], ','.join(map(str, sorted(fresh))), ','.join(map(str, sorted(set(kept)))) or '-'))
     print(len(out), 'filas')

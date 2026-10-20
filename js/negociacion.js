@@ -132,6 +132,9 @@
   function th(c) { return '<th style="padding:6px 6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600">' + esc(c) + '</th>'; }
   function table(cols, rows) { return '<div style="overflow-x:auto"><table data-no-rows class="ic-t" style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + cols.map(th).join('') + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'; }
   function td(x, st) { return '<td style="padding:6px;border-top:1px solid var(--border);vertical-align:top;' + (st || '') + '">' + x + '</td>'; }
+  /* La licencia viene del dato en espanol; la frase conocida de NASA se traduce, otra cualquiera se deja tal cual. */
+  var NASA_LIC = { 'Datos de NASA de uso libre; se cita la fuente.': { en: 'NASA data are free to use; cite the source.', fr: 'Données NASA en usage libre ; citer la source.', it: 'Dati NASA di uso libero; citare la fonte.' } };
+  function licTxt(l) { var m = l && NASA_LIC[l]; return (m && m[lang()]) || l || ''; }
   function climateHtml(w) {
     var locs = CLI ? CLI.locations.filter(function (l) { return l.crops.indexOf(PROD) > -1 && l.months && l.months.length; }) : [];
     if (!locs.length) return '<p class="di-movers-hint">' + esc(w.wNone) + '</p>';
@@ -139,7 +142,7 @@
       var m = l.months[l.months.length - 1], pa = m.precipAnomalyPct, ta = m.tempAnomalyC;
       return '<tr>' + td('<b>' + esc(l.name) + '</b>') + td(esc(m.period)) + td(pa == null ? esc(w.na) : (pa > 0 ? '+' : '') + nf(pa, 0) + ' %') + td(ta == null ? esc(w.na) : (ta > 0 ? '+' : '') + nf(ta, 1) + ' °C') + '</tr>';
     });
-    return '<p class="di-movers-hint">' + esc(w.wN) + '</p>' + table(w.wCols, rows) + '<p class="di-movers-hint">NASA POWER (MERRA-2). ' + esc(CLI.source && CLI.source.license || '') + '</p>';
+    return '<p class="di-movers-hint">' + esc(w.wN) + '</p>' + table(w.wCols, rows) + '<p class="di-movers-hint">NASA POWER (MERRA-2). ' + esc(licTxt(CLI.source && CLI.source.license)) + '</p>';
   }
   function render() {
     var w = t(), root = document.getElementById('nb-body'); if (!root) return;

@@ -5,7 +5,7 @@ Para cada informe de hoy o de ayer con hora, y cada intento de OFFSETS (p. ej. +
 lanza los workflows de MAP si ya paso ese momento y no hay ninguna ejecucion suya creada despues de el (ni en curso).
 Ademas FOLLOW: cuando un workflow "lider" termina bien, lanza los que construyen a partir de sus ficheros (us-stats tras NASS).
 Uso: GH_TOKEN=... python3 scripts/release-dispatch.py [--dry-run]   (repo por GITHUB_REPOSITORY)"""
-import datetime, json, os, subprocess, sys
+import time, datetime, json, os, subprocess, sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]; NY = ZoneInfo("America/New_York"); UTC = datetime.timezone.utc
@@ -57,7 +57,12 @@ def decide(releases, runs, now):
         if max(ok) > last_f: seen.add(f); todo.append((f, "tras " + "/".join(leaders)))
     return todo[:MAX_PER_RUN]
 def gh(*a):
-    r = subprocess.run(["gh", "api", *a], capture_output=True, text=True); return r.returncode, r.stdout, r.stderr
+    # la API de GitHub devuelve a ratos una respuesta vacia o 5xx: hasta 3 intentos con espera antes de dar el error
+    for i in range(3):
+        r = subprocess.run(["gh", "api", *a], capture_output=True, text=True)
+        if r.returncode == 0 and r.stdout.strip(): break
+        if i < 2: time.sleep(5 * (i + 1))
+    return r.returncode if r.stdout.strip() or r.returncode else 1, r.stdout, r.stderr
 def main():
     repo = os.environ["GITHUB_REPOSITORY"]; dry = "--dry-run" in sys.argv; now = datetime.datetime.now(UTC)
     cal = json.loads((ROOT / "data" / "usda-calendar.json").read_text(encoding="utf-8"))

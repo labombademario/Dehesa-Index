@@ -1,0 +1,7 @@
+{
+  "2026-05": {"us-fsa-rate-operating-direct": 4.75, "us-fsa-rate-ownership-direct": 5.75, "us-fsa-rate-ownership-joint": 3.75, "us-fsa-rate-ownership-down-payment": 1.75, "us-fsa-rate-emergency": 3.75},
+  "2026-06": {"us-fsa-rate-operating-direct": 5.0, "us-fsa-rate-ownership-direct": 5.875, "us-fsa-rate-ownership-joint": 3.875, "us-fsa-rate-ownership-down-payment": 1.875, "us-fsa-rate-emergency": 3.75},
+  "2026-07": {"us-fsa-rate-operating-direct": 5.125, "us-fsa-rate-ownership-direct": 6.0, "us-fsa-rate-ownership-joint": 4.0, "us-fsa-rate-ownership-down-payment": 2.0, "us-fsa-rate-emergency": 3.75},
+  "2026-09": {"us-fsa-rate-operating-direct": 5.25, "us-fsa-rate-ownership-direct": 6.0, "us-fsa-rate-ownership-joint": 4.0, "us-fsa-rate-ownership-down-payment": 2.0, "us-fsa-rate-emergency": 3.75},
+  "2026-10": {"us-fsa-rate-operating-direct": 5.375, "us-fsa-rate-ownership-direct": 6.25, "us-fsa-rate-ownership-joint": 4.25, "us-fsa-rate-ownership-down-payment": 2.25, "us-fsa-rate-emergency": 3.75}
+}

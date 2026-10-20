@@ -33,7 +33,8 @@ def stale_problems():
     except Exception as e: print("freshness no legible:", repr(e)[:80])
     try:
         D = json.loads((ROOT / "data" / "eu-drought.json").read_text()); a = datetime.date.fromisoformat(D["asOf"]); n = (datetime.datetime.utcnow().date() - a).days
-        if n > 24: out.append("- **Sequia europea (EDO)**: la ultima decada que ofrece la fuente es del %s, hace %d dias" % (a.isoformat(), n))
+        # asOf es el INICIO de la decada y la fuente publica cada decada ~3 semanas despues de cerrarla (09-11 hasta el 17-oct, 09-21 desde entonces): 36 dias = una decada sin llegar.
+        if n > 36: out.append("- **Sequia europea (EDO)**: la ultima decada que ofrece la fuente es del %s, hace %d dias" % (a.isoformat(), n))
     except Exception as e: print("eu-drought no legible:", repr(e)[:80])
     return out
 def handle(label, probs, title, intro, now):

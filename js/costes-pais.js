@@ -387,7 +387,11 @@
     }
     var base = sectionRenta() + sectionCostes();
     host.innerHTML = base + '<p class="di-movers-hint">' + esc(tx(T.loading)) + '</p>'; barUp();
-    getJSON('data/eu-food-monitor/' + cc + '.json').then(function (D) { fin((base || '<p class="di-movers-hint">' + esc(tx(T.noEaa)) + '</p>') + sectionPrecios(D)); });
+    /* index.json lista las zonas que existen: sin esa zona (p. ej. UK) no se pide su fichero y no hay 404. */
+    getJSON('data/eu-food-monitor/index.json').then(function (ix) {
+      var has = !ix || !ix.geos || ix.geos.some(function (g) { return g.code === cc; });
+      return has ? getJSON('data/eu-food-monitor/' + cc + '.json') : null;
+    }).then(function (D) { fin((base || '<p class="di-movers-hint">' + esc(tx(T.noEaa)) + '</p>') + sectionPrecios(D)); });
   }
   function pick(cc) { SEL.cc = cc; setUrl(); render(); }
   function wire(root) {

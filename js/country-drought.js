@@ -43,7 +43,11 @@
   }
   function europe(el, cc, name, lg, t) {
     var k = EU_ALIAS[cc] || cc;
-    return Promise.all([get('data/eu-drought.json'), get('data/eu-drought-regions/' + cc + '.json'), cc === 'ES' ? get('data/spain-reservoirs.json') : Promise.resolve(null)]).then(function (a) {
+    /* Solo se pide el fichero regional si el pais esta en el EDO: evita un 404 con paises de fuera de Europa (p. ej. UY). */
+    return get('data/eu-drought.json').then(function (D0) {
+      if (!D0 || !D0.countries || !D0.countries[k]) return [D0, null, null];
+      return Promise.all([D0, get('data/eu-drought-regions/' + cc + '.json'), cc === 'ES' ? get('data/spain-reservoirs.json') : Promise.resolve(null)]);
+    }).then(function (a) {
       var D = a[0], R = a[1], E = a[2], c = D && D.countries && D.countries[k]; if (!c || !c.v || !c.v.length) return false;
       var v = c.v, n = v.length, last = v[n - 1], prev = n > 36 ? v[n - 37] : null, labels = D.periods.slice(-n);
       var h = '<section class="di-card ps-rm" id="ps-drought"><h2 class="ps-rm-h">' + esc(t.h.replace('{c}', name)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.note) + ' ' + esc(t.dec.replace('{d}', day(D.asOf, lg))) + '.</p>' +

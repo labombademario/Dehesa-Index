@@ -1,9 +1,13 @@
 # Cabeceras de seguridad para todo el sitio (Cloudflare Workers static assets lee este fichero; no se publica).
+# CSP: los dos hashes son los de los unicos scripts en linea (index.html y offline.html); scripts/test-csp.py comprueba que siguen valiendo.
+# Sin frame-ancestors a proposito: /embed lo abre a cualquier web con su propia CSP y las dos politicas se suman.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), payment=(), usb=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-IsZVoFHiB7XoBMi6vb0QAtc3d8wppfG+9Wv41K+10L0=' 'sha256-0yRQb6F+6VZVsJCA0qbJGWmAFsZ4jMjXxh7VZgCkaAk='; script-src-attr 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://dehesaindex.substack.com https://substack.com https://buttondown.com
 
 # API de datos publica (JSON estatico): se puede leer desde cualquier web. Cache corta para que los cambios lleguen pronto.
 /data/api/*

@@ -6,7 +6,7 @@ esa ejecucion nunca llega a arrancar y el dato se queda sin actualizar. Este scr
 termino cancelada SIN haber ejecutado ni un job (cancelacion por cola, no un fallo ni una cancelacion a mitad) y la vuelve a lanzar.
 Salvaguardas: maximo MAX_PER_RUN relanzamientos por pasada, maximo MAX_PER_DAY por workflow y dia, y nada si ya hay una ejecucion suya en curso.
 Uso: GH_TOKEN=... python3 scripts/rerun-cancelled.py [--dry-run]   (repo por GITHUB_REPOSITORY)"""
-import datetime, json, os, subprocess, sys
+import time, datetime, json, os, subprocess, sys
 MAX_PER_RUN, MAX_PER_DAY, WINDOW_H, RETRY_H = 4, 3, 30, 6
 def parse(ts): return datetime.datetime.strptime(ts, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
 def decide(runs, jobs_of, now):
@@ -31,8 +31,12 @@ def decide(runs, jobs_of, now):
         out.append(("dispatch", path, last["id"]))
     return out[:MAX_PER_RUN]
 def gh(*a):
-    r = subprocess.run(["gh", "api", *a], capture_output=True, text=True)
-    return r.returncode, r.stdout, r.stderr
+    # la API de GitHub devuelve a ratos una respuesta vacia o 5xx: hasta 3 intentos con espera antes de dar el error
+    for i in range(3):
+        r = subprocess.run(["gh", "api", *a], capture_output=True, text=True)
+        if r.returncode == 0 and r.stdout.strip(): break
+        if i < 2: time.sleep(5 * (i + 1))
+    return r.returncode if r.stdout.strip() or r.returncode else 1, r.stdout, r.stderr
 def main():
     repo = os.environ["GITHUB_REPOSITORY"]; dry = "--dry-run" in sys.argv
     runs = []

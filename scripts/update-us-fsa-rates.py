@@ -129,31 +129,35 @@ def main():
     pts = load()
     for sid, _, _ in SERIES: pts.setdefault(sid, {})
     manual(pts)
-    try:
-        period, vals = parse_current()
-        if len(vals) < 4: raise SystemExit('la pagina de tipos vigentes no trae los tipos esperados: %s' % vals)
-        for k, v in vals.items(): pts[k][period] = v
-        cy, cm = int(period[:4]), int(period[5:])
-    except Blocked as e:
-        log('pagina de tipos vigentes no disponible:', e, '- se intenta el historico')
-        d = datetime.date.today(); cy, cm = d.year, d.month
-    have = set(pts['us-fsa-rate-operating-direct'])
-    todo = [(y, m) for y, m in months(START, (cy, cm)) if '%d-%02d' % (y, m) not in have]
-    log('meses sin dato desde %d-%02d:' % START, len(todo))
-    blocked = 0; got = 0; miss = []
-    for y, m in reversed(todo):
-        try:
-            u, v = release(y, m)
-        except Blocked as e:
-            blocked += 1; log('bloqueado', e)
-            if blocked >= 3: log('demasiados 403 seguidos: se para el relleno y se sigue en la proxima ejecucion'); break
-            time.sleep(30); continue
-        blocked = 0
-        p = '%d-%02d' % (y, m)
-        if not v: miss.append(p); continue
-        for k, x in v.items(): pts[k][p] = x
-        got += 1; log(p, u.rsplit('/', 2)[-2], v)
-    log('relleno: %d meses nuevos; sin nota o sin tipos: %s' % (got, ', '.join(sorted(miss)) or '-'))
+    if '--manual-only' in sys.argv:
+        # Sin red: solo el historico guardado + data/us-fsa-rates-manual.json (la FSA y Archive.org bloquean a los runners de GitHub).
+        todo = []; blocked = got = 0; miss = []; log('modo --manual-only: sin peticiones a la FSA')
+    else:
+      try:
+          period, vals = parse_current()
+          if len(vals) < 4: raise SystemExit('la pagina de tipos vigentes no trae los tipos esperados: %s' % vals)
+          for k, v in vals.items(): pts[k][period] = v
+          cy, cm = int(period[:4]), int(period[5:])
+      except Blocked as e:
+          log('pagina de tipos vigentes no disponible:', e, '- se intenta el historico')
+          d = datetime.date.today(); cy, cm = d.year, d.month
+      have = set(pts['us-fsa-rate-operating-direct'])
+      todo = [(y, m) for y, m in months(START, (cy, cm)) if '%d-%02d' % (y, m) not in have]
+      log('meses sin dato desde %d-%02d:' % START, len(todo))
+      blocked = 0; got = 0; miss = []
+      for y, m in reversed(todo):
+          try:
+              u, v = release(y, m)
+          except Blocked as e:
+              blocked += 1; log('bloqueado', e)
+              if blocked >= 3: log('demasiados 403 seguidos: se para el relleno y se sigue en la proxima ejecucion'); break
+              time.sleep(30); continue
+          blocked = 0
+          p = '%d-%02d' % (y, m)
+          if not v: miss.append(p); continue
+          for k, x in v.items(): pts[k][p] = x
+          got += 1; log(p, u.rsplit('/', 2)[-2], v)
+      log('relleno: %d meses nuevos; sin nota o sin tipos: %s' % (got, ', '.join(sorted(miss)) or '-'))
     series = []
     for sid, label, _ in SERIES:
         p = sorted(pts[sid].items())
