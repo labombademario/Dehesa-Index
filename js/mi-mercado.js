@@ -645,27 +645,37 @@
 
   /* ---------- España: ganadería en tu provincia (MAPA, censos de ganado de mayo y noviembre) ---------- */
   var TLV = {
-    es: { s: 'Ganadería en tu provincia', sp: ['Vacuno', 'Ovino', 'Caprino', 'Porcino'], species: 'Ganado', heads: 'Cabezas', yoy: 'Frente al censo del año anterior', share: 'Peso en España', census: 'Censo', no: 'El MAPA no publica cifras de ganado para esta provincia.', note: 'Censos de ganado del MAPA (cabezas, total de animales). Ovino y caprino se censan en noviembre; vacuno y porcino, en mayo y noviembre: se muestra el último censo de cada especie. Los últimos censos pueden ser provisionales. No es producción ni precios.' },
-    en: { s: 'Livestock in your province', sp: ['Cattle', 'Sheep', 'Goats', 'Pigs'], species: 'Livestock', heads: 'Head', yoy: 'Vs. census a year earlier', share: 'Share of Spain', census: 'Census', no: 'MAPA does not publish livestock figures for this province.', note: 'MAPA livestock censuses (head, all animals). Sheep and goats are counted in November; cattle and pigs in May and November: the latest census of each species is shown. The latest censuses may be provisional. This is neither output nor prices.' },
-    fr: { s: 'Élevage dans votre province', sp: ['Bovins', 'Ovins', 'Caprins', 'Porcins'], species: 'Cheptel', heads: 'Têtes', yoy: 'Par rapport au recensement un an plus tôt', share: 'Part de l’Espagne', census: 'Recensement', no: 'Le MAPA ne publie pas de chiffres d’élevage pour cette province.', note: 'Recensements du cheptel du MAPA (têtes, total des animaux). Ovins et caprins sont recensés en novembre ; bovins et porcins en mai et novembre : on montre le dernier recensement de chaque espèce. Les derniers recensements peuvent être provisoires. Ce n’est ni la production ni les prix.' },
-    it: { s: 'Zootecnia nella tua provincia', sp: ['Bovini', 'Ovini', 'Caprini', 'Suini'], species: 'Bestiame', heads: 'Capi', yoy: 'Rispetto al censimento di un anno prima', share: 'Peso sulla Spagna', census: 'Censimento', no: 'Il MAPA non pubblica dati zootecnici per questa provincia.', note: 'Censimenti del bestiame del MAPA (capi, totale degli animali). Ovini e caprini sono censiti a novembre; bovini e suini a maggio e novembre: si mostra l’ultimo censimento di ogni specie. Gli ultimi censimenti possono essere provvisori. Non è produzione né prezzi.' }
+    es: { s: 'Ganadería en tu provincia', sp: ['Vacuno', 'Ovino', 'Caprino', 'Porcino'], pick: 'Censo', noCensus: 'Sin censo este mes', species: 'Ganado', heads: 'Cabezas', yoy: 'Frente al censo del año anterior', share: 'Peso en España', census: 'Censo', no: 'El MAPA no publica cifras de ganado para esta provincia.', note: 'Se muestra el censo elegido (por defecto el último; desde 2010). Ovino y caprino se censan en noviembre; vacuno y porcino, en mayo y noviembre. Los últimos censos pueden ser provisionales. No es producción ni precios.' },
+    en: { s: 'Livestock in your province', sp: ['Cattle', 'Sheep', 'Goats', 'Pigs'], pick: 'Census', noCensus: 'No census this month', species: 'Livestock', heads: 'Head', yoy: 'Vs. census a year earlier', share: 'Share of Spain', census: 'Census', no: 'MAPA does not publish livestock figures for this province.', note: 'The census you pick is shown (latest by default; since 2010). Sheep and goats are counted in November; cattle and pigs in May and November. The latest censuses may be provisional. This is neither output nor prices.' },
+    fr: { s: 'Élevage dans votre province', sp: ['Bovins', 'Ovins', 'Caprins', 'Porcins'], pick: 'Recensement', noCensus: 'Pas de recensement ce mois', species: 'Cheptel', heads: 'Têtes', yoy: 'Par rapport au recensement un an plus tôt', share: 'Part de l’Espagne', census: 'Recensement', no: 'Le MAPA ne publie pas de chiffres d’élevage pour cette province.', note: 'Le recensement choisi est affiché (le dernier par défaut ; depuis 2010). Ovins et caprins sont recensés en novembre ; bovins et porcins en mai et novembre. Les derniers recensements peuvent être provisoires. Ce n’est ni la production ni les prix.' },
+    it: { s: 'Zootecnia nella tua provincia', sp: ['Bovini', 'Ovini', 'Caprini', 'Suini'], pick: 'Censimento', noCensus: 'Nessun censimento questo mese', species: 'Bestiame', heads: 'Capi', yoy: 'Rispetto al censimento di un anno prima', share: 'Peso sulla Spagna', census: 'Censimento', no: 'Il MAPA non pubblica dati zootecnici per questa provincia.', note: 'Si mostra il censimento scelto (l’ultimo per impostazione predefinita; dal 2010). Ovini e caprini sono censiti a novembre; bovini e suini a maggio e novembre. Gli ultimi censimenti possono essere provvisori. Non è produzione né prezzi.' }
   };
+  var LIVE_EMO = ['🐄', '🐑', '🐐', '🐖'], LIVE_P = '';
+  function perLabel(P) { try { return new Date(P + '-01T00:00:00Z').toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return P; } }
+  function liveHtml(t, sp, fs, per) {
+    var rows = '';
+    fs.forEach(function (f, i) {
+      var a = f && f.v && f.v[ST.r] && f.v[ST.r]['01'], j = f && f.periods ? f.periods.indexOf(per) : -1;
+      if (!a || j < 0 || a[j] == null) { rows += '<tr><td>' + LIVE_EMO[i] + ' ' + esc(t.sp[i]) + '</td><td class="r">—</td><td colspan="3">' + esc(t.noCensus) + '</td></tr>'; return; }
+      var prev = String(+per.slice(0, 4) - 1) + per.slice(4), jp = f.periods.indexOf(prev), v0 = jp >= 0 ? a[jp] : null, es = f.v.ES && f.v.ES['01'] && f.v.ES['01'][j];
+      var ch = v0 != null && v0 > 0 ? (a[j] / v0 - 1) * 100 : null;
+      rows += '<tr><td>' + LIVE_EMO[i] + ' ' + esc(t.sp[i]) + '</td><td class="r">' + nf(a[j], 0) + '</td><td>' + esc(perLabel(per)) + '</td><td class="r">' + (ch == null ? '—' : (ch > 0 ? '+' : '') + nf(ch, 1) + ' %') + '</td><td class="r">' + (es > 0 ? nf(a[j] / es * 100, 1) + ' %' : '—') + '</td></tr>';
+    });
+    return '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.species) + '</th><th scope="col" class="r">' + esc(t.heads) + '</th><th scope="col">' + esc(t.census) + '</th><th scope="col" class="r">' + esc(t.yoy) + '</th><th scope="col" class="r">' + esc(t.share) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+  }
   function spainLive(tok) {
     var t = TLV[lang()] || TLV.es, sp = ['bovino', 'ovino', 'caprino', 'porcino'];
     return Promise.all(sp.map(function (k) { return get('data/spain-livestock/livestock-' + k + '.json').catch(function () { return null; }); })).then(function (fs) {
       if (tok !== TOK) return;
-      var rows = '', per = '';
-      fs.forEach(function (f, i) {
-        var a = f && f.v && f.v[ST.r] && f.v[ST.r]['01']; if (!a) return;
-        var j = a.length - 1; while (j >= 0 && a[j] == null) j--; if (j < 0) return;
-        var P = f.periods[j], prev = String(+P.slice(0, 4) - 1) + P.slice(4), jp = f.periods.indexOf(prev);
-        var v0 = jp >= 0 ? a[jp] : null, es = f.v.ES && f.v.ES['01'] && f.v.ES['01'][j];
-        var ch = v0 != null && v0 > 0 ? (a[j] / v0 - 1) * 100 : null;
-        per = per > P ? per : P;
-        rows += '<tr><td>' + esc(t.sp[i]) + '</td><td class="r">' + nf(a[j], 0) + '</td><td>' + esc(P) + '</td><td class="r">' + (ch == null ? '—' : (ch > 0 ? '+' : '') + nf(ch, 1) + ' %') + '</td><td class="r">' + (es > 0 ? nf(a[j] / es * 100, 1) + ' %' : '—') + '</td></tr>';
-      });
-      if (!rows) { putSec(tok, 'live', note(t.no)); return; }
-      putSec(tok, 'live', '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.species) + '</th><th scope="col" class="r">' + esc(t.heads) + '</th><th scope="col">' + esc(t.census) + '</th><th scope="col" class="r">' + esc(t.yoy) + '</th><th scope="col" class="r">' + esc(t.share) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>' + note(t.note) + cite('mapa_es', per) + citeCalc(['mapa_es'], 'change vs. census a year earlier and share of Spain (MAPA)'));
+      var pers = {};
+      fs.forEach(function (f) { var a = f && f.v && f.v[ST.r] && f.v[ST.r]['01']; if (a) f.periods.forEach(function (P, j) { if (a[j] != null) pers[P] = 1; }); });
+      var all = Object.keys(pers).sort().reverse();
+      if (!all.length) { putSec(tok, 'live', note(t.no)); return; }
+      if (all.indexOf(LIVE_P) < 0) LIVE_P = all[0];
+      var sel = '<label style="display:inline-block;margin:0 0 8px">' + esc(t.pick) + ' <select class="di-compare-select" data-mm-live="1">' + all.map(function (P) { return '<option value="' + P + '"' + (P === LIVE_P ? ' selected' : '') + '>' + esc(perLabel(P)) + '</option>'; }).join('') + '</select></label>';
+      putSec(tok, 'live', sel + '<div data-mm-livebody="1">' + liveHtml(t, sp, fs, LIVE_P) + '</div>' + note(t.note) + cite('mapa_es', all[0]) + citeCalc(['mapa_es'], 'change vs. census a year earlier and share of Spain (MAPA)'));
+      var b = secBody('live'), s2 = b && b.querySelector('select[data-mm-live]');
+      if (s2) s2.addEventListener('change', function () { LIVE_P = s2.value; var tb = b.querySelector('[data-mm-livebody]'); if (tb) tb.innerHTML = liveHtml(t, sp, fs, LIVE_P); });
     });
   }
 
