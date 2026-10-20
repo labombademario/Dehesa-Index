@@ -78,6 +78,7 @@
   function euTitle(lang) { return EUSW.title[lang] || EUSW.title.es; }
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
+  var BIZ_ITEMS = [];   // paginas para empresas: las pinta empresas.js (no caben todas en el menu)
   var NAV_ORDER = ['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:today', 'g:more'];
   function pd(file, label, d, query) { var o = pg(file, label, query); o.d = d; return o; }
   function cd(c, es, en, fr, it) { var o = ctry(c, es, en, fr, it); o.chip = 1; return o; }
@@ -142,6 +143,7 @@
       pd('rendimientos.html', L('Rendimientos (EE. UU.)', 'Yields (US)', 'Rendements (É.-U.)', 'Rese (USA)'), L('EE. UU. · rendimiento, superficie y producción por estado', 'US · yield, acreage and output by state', 'États-Unis · rendement, surface et production par État', 'USA · resa, superficie e produzione per stato')),
       pd('ganaderia.html', L('Ganadería (EE. UU.)', 'Livestock (US)', 'Élevage (É.-U.)', 'Zootecnia (USA)'), L('EE. UU. · censos, leche por estado y existencias en frío', 'US · inventories, milk by state and cold storage', 'États-Unis · cheptels, lait par État et stocks frigorifiques', 'USA · consistenze, latte per stato e scorte in frigo')),
       pd('pesca.html', L('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura'), L('Capturas, desembarques, precios y flota por país', 'Catches, landings, prices and fleet by country', 'Captures, débarquements, prix et flotte par pays', 'Catture, sbarchi, prezzi e flotta per paese')),
+      pd('semana.html', L('La semana en cada país', 'The week in each country', 'La semaine dans chaque pays', 'La settimana in ogni paese'), L('Datos publicados esta semana y titulares de los medios agrarios', 'Data published this week and farm-media headlines', 'Données publiées cette semaine et titres de la presse agricole', 'Dati pubblicati questa settimana e titoli dei media agricoli')),
       pd('dehesa.html', L('Mercados Dehesa', 'Dehesa markets', 'Marchés de la dehesa', 'Mercati della dehesa'), L('Cerdo ibérico, pastos y corcho: datos oficiales y precios pendientes', 'Iberian pigs, pastures and cork: official data and pending prices', 'Porc ibérique, pâturages et liège : données officielles et prix en attente', 'Suino iberico, pascoli e sughero: dati ufficiali e prezzi in sospeso')),
       pd('produccion-mundial.html', L('¿Quién produce qué en el mundo?', 'Who produces what in the world?', 'Qui produit quoi dans le monde ?', 'Chi produce cosa nel mondo?'), L('Mundo · líder productor de cada alimento', 'World · leading producer of each food', 'Monde · premier producteur de chaque aliment', 'Mondo · primo produttore di ogni alimento')),
       pd('oferta-demanda.html', L('Oferta y demanda mundial', 'World supply and demand', 'Offre et demande mondiales', 'Offerta e domanda mondiale'), L('Mundo · producción, consumo y existencias por país', 'World · production, use and stocks by country', 'Monde · production, consommation et stocks par pays', 'Mondo · produzione, consumi e scorte per paese')),
@@ -207,6 +209,7 @@
     var all = [].concat(G.countries.items, prod, G.trade.items, G.costs.items), one = function (f, q) { return all.filter(function (x) { return x.file === f && (x.query || '') === (q || ''); })[0]; };
     var BIZ_MENU = ['liquidacion.html', 'monitor-insumos.html']; // el resto (informe, descargas, condiciones) se enlaza desde empresas.html
     var BIZ = ['liquidacion.html', 'monitor-insumos.html', 'informe-cooperativas.html', 'datos-descargables.html', 'api.html', 'informe-negociacion.html', 'comparador-facturas.html', 'mis-compras.html', 'modelo-costes.html', 'avisos.html', 'conector-ia.html', 'widgets.html', 'cestas.html', 'condiciones.html'];
+    BIZ_ITEMS = BIZ.map(function (f) { return G.data.items.filter(function (i) { return i.file === f; })[0]; }).filter(Boolean);
     G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: [
       { label: L('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio'), items: prod.filter(function (i) { return /^(sequia|clima|mapa|produccion-mundial)\./.test(i.file); }).concat(one('aranceles.html')) },
       { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items.filter(function (i) { return BIZ.indexOf(i.file) < 0; }) },
@@ -220,6 +223,7 @@
       dl('Datos de Canadá', 'Canada data', 'Données du Canada', 'Dati Canada', [one('canada-granos.html')], 'CA'),
       dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES'), one('dehesa.html')], 'ES'),
       dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU'),
+      dl('La semana por país', 'The week by country', 'La semaine par pays', 'La settimana per paese', [one('semana.html')]),
       dl('Quién produce qué', 'Who produces what', 'Qui produit quoi', 'Chi produce cosa', [one('produccion-mundial.html')]),
       dl('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura', [one('pesca.html')])
     ]);
@@ -937,6 +941,7 @@
   }
 
   global.DehesaShared = {
+    bizItems: function () { return BIZ_ITEMS; },
     countryLinks: function (cc) { var r = []; NAV_GROUPS.countries.items.forEach(function (b) { if (b.cc === cc) b.items.forEach(function (i) { r.push({ href: sitePath(i.file) + (i.query || ''), file: i.file, label: i.label[lang] || i.label.es, d: i.d ? (i.d[lang] || i.d.es) : '' }); }); }); return r; },
     newsletter: { action: 'https://dehesaindex.substack.com/api/v1/free?nojs=true', provider: 'Substack (Substack Inc., Estados Unidos)' },
     /* Resumen de precios por correo (pagina avisos.html). Se rellena al crear la cuenta del proveedor; vacio = el formulario no se muestra. Ver docs/avisos-por-correo.md */

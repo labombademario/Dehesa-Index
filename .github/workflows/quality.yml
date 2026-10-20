@@ -357,6 +357,10 @@ jobs:
         run: node scripts/test-eu-depth.mjs
       - name: Punto de estado del dato (colores, etiquetas, 4 idiomas)
         run: node scripts/test-fresh-dots.mjs
+      - name: Toda pagina tiene cabecera, menu y pie, y se llega a ella desde la portada (es/en, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-page-chrome.mjs
       - name: Portada, bloque «Hoy» (resumen diario, calendario USDA, seguimiento local; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

@@ -1,0 +1,21 @@
+{
+ "api.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "avisos.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "cestas.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "comparador-facturas.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "conector-ia.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "informe-cooperativas.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "informe-negociacion.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "mis-compras.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "modelo-costes.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "widgets.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "datos-descargables.html": "Para empresas: se enlaza desde empresas.html (bloque «Todo para empresas», lo pinta empresas.js con DehesaShared.bizItems).",
+ "condiciones.html": "Se enlaza desde empresas.html, api.html, datos-descargables.html y el pie.",
+ "contacto.html": "Se enlaza desde el pie de todas las paginas.",
+ "legal.html": "Se enlaza desde el pie de todas las paginas.",
+ "comercio-pais.html": "Ficha con parametro ?c=: se llega desde exportaciones.html, aranceles.html y canada-granos.html.",
+ "costes-pais.html": "Ficha con parametro ?c=: se llega desde costes.html, insumos.html, recan.html y calculadora.html.",
+ "region.html": "Ficha con parametro: se llega desde paises.html.",
+ "lonjas.html": "Se llega desde empresas.html y europa.html.",
+ "precios-locales.html": "Se llega desde brief.html y producto.html."
+}
