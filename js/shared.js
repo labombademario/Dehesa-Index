@@ -218,7 +218,7 @@
     G.countries.items = G.countries.items.filter(function (i) { return i.chip; }).concat([
       dl('Datos de EE. UU.', 'US data', 'Données des É.-U.', 'Dati USA', [one('exportaciones.html'), one('insumos.html'), one('costes.html'), one('cultivos.html'), one('rendimientos.html'), one('ganaderia.html')], 'US'),
       dl('Datos de Canadá', 'Canada data', 'Données du Canada', 'Dati Canada', [one('canada-granos.html')], 'CA'),
-      dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES')], 'ES'),
+      dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES'), one('dehesa.html')], 'ES'),
       dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU'),
       dl('Quién produce qué', 'Who produces what', 'Qui produit quoi', 'Chi produce cosa', [one('produccion-mundial.html')]),
       dl('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura', [one('pesca.html')])
