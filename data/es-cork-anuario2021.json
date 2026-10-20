@@ -1,0 +1,201 @@
+{
+ "schemaVersion": 1,
+ "kind": "manual",
+ "unit": {
+  "production": "t",
+  "value": "miles de euros",
+  "price": "EUR/t"
+ },
+ "source": {
+  "name": "MITECO, Anuario de Estadistica Forestal 2021, tablas 9.1 a 9.3 (capitulo 9.2 Extraccion de corcho, pp. 126-128)",
+  "url": "https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/aef2021/Anuario%20Estadistica%20Forestal%202021.pdf"
+ },
+ "series": [
+  {
+   "year": 2002,
+   "production": 58099,
+   "value": 146160,
+   "flag": ""
+  },
+  {
+   "year": 2003,
+   "production": 67486,
+   "value": 208477,
+   "flag": ""
+  },
+  {
+   "year": 2004,
+   "production": null,
+   "value": null,
+   "flag": "S.D."
+  },
+  {
+   "year": 2005,
+   "production": 20973,
+   "value": 66690.69,
+   "flag": ""
+  },
+  {
+   "year": 2006,
+   "production": 61504,
+   "value": 110828.02,
+   "flag": ""
+  },
+  {
+   "year": 2007,
+   "production": 60728,
+   "value": 99853.06,
+   "flag": "**"
+  },
+  {
+   "year": 2008,
+   "production": 62393,
+   "value": 89596,
+   "flag": "***"
+  },
+  {
+   "year": 2009,
+   "production": 50164,
+   "value": 42955,
+   "flag": "***"
+  },
+  {
+   "year": 2010,
+   "production": 60736,
+   "value": 43797,
+   "flag": "***"
+  },
+  {
+   "year": 2011,
+   "production": 55905,
+   "value": 51242.39,
+   "flag": ""
+  },
+  {
+   "year": 2012,
+   "production": 49133,
+   "value": 46421.24,
+   "flag": ""
+  },
+  {
+   "year": 2013,
+   "production": 69866,
+   "value": 81931.67,
+   "flag": ""
+  },
+  {
+   "year": 2014,
+   "production": 54828,
+   "value": 65004.28,
+   "flag": ""
+  },
+  {
+   "year": 2015,
+   "production": 55033,
+   "value": 64917.35,
+   "flag": ""
+  },
+  {
+   "year": 2016,
+   "production": 60432,
+   "value": 58382.88,
+   "flag": ""
+  },
+  {
+   "year": 2017,
+   "production": 49188,
+   "value": 48455.04,
+   "flag": "****"
+  },
+  {
+   "year": 2018,
+   "production": 56025,
+   "value": 88954.17,
+   "flag": "***"
+  },
+  {
+   "year": 2019,
+   "production": 48798,
+   "value": 92126.47,
+   "flag": "**"
+  },
+  {
+   "year": 2020,
+   "production": 51349,
+   "value": 83582.64,
+   "flag": "**"
+  },
+  {
+   "year": 2021,
+   "production": 53997,
+   "value": 97773.25,
+   "flag": "**"
+  }
+ ],
+ "flags": {
+  "*": "valor economico estimado a nivel estatal por el MITECO (no hay dato de valor en todas las provincias)",
+  "**": "incluye produccion estimada de montes privados de Andalucia",
+  "***": "sin cifras de Extremadura de 2008-2010; el MITECO usa un valor medio",
+  "****": "Andalucia no facilito 2017; estimado por el MITECO",
+  "S.D.": "sin dato"
+ },
+ "valueEstimated": true,
+ "prices2021": {
+  "year": 2021,
+  "type": "corcho de reproduccion",
+  "unit": "EUR/t",
+  "ccaa": [
+   {
+    "code": "AN",
+    "name": "Andalucía",
+    "production": 35000,
+    "value": 68425000,
+    "price": 1955
+   },
+   {
+    "code": "CM",
+    "name": "Castilla-La Mancha",
+    "production": 1958,
+    "value": 5444513,
+    "price": 2781
+   },
+   {
+    "code": "CT",
+    "name": "Cataluña",
+    "production": 2321,
+    "value": 3151918,
+    "price": 1358
+   },
+   {
+    "code": "EX",
+    "name": "Extremadura",
+    "production": 10981,
+    "value": 20128173,
+    "price": 1833
+   }
+  ],
+  "total": {
+   "production": 52288,
+   "value": 97149604,
+   "price": 1982
+  },
+  "bornizo": {
+   "CT": {
+    "production": 1029,
+    "value": 437325,
+    "price": 425
+   },
+   "EX": {
+    "production": 680,
+    "value": 186320,
+    "price": 274
+   },
+   "total": {
+    "production": 1708,
+    "value": 623645,
+    "price": 350
+   }
+  },
+  "note": "Precios facilitados por las comunidades; el precio medio total del corcho de reproduccion lo estima el MITECO a partir de ellos y de otras fuentes. Castilla y Leon y Comunidad Valenciana no tienen valor publicado."
+ }
+}

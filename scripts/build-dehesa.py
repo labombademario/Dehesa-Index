@@ -77,7 +77,7 @@ def cork_production():
             "publishedTotal": {y: d["years"][y]["publishedTotal"] for y in ys if "publishedTotal" in d["years"][y]}, "source": d["source"]}
 
 def main():
-    ck = cork(); ck["production"] = cork_production()
+    ck = cork(); ck["production"] = cork_production(); ck["anuario2021"] = load("es-cork-anuario2021.json")
     doc = {"schemaVersion": 1, "generatedAt": NOW, "pigs": pigs(), "pasture": pasture(), "cork": ck}
     (D / "dehesa.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print("dehesa.json: %d provincias de iberico, %d zonas de pasto, corcho %s" % (len(doc["pigs"]["provinces"]), len(doc["pasture"]["areas"]), sorted(doc["cork"]["countries"])))

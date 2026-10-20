@@ -6506,7 +6506,13 @@
    "sources": [
     "miteco_estadistica_forestal"
    ],
-   "notes": "Produccion de corcho por comunidad autonoma (t): libro «Tablas resumen 2005-2022» del MITECO (2014-2022, scripts/update-es-cork.py) mas 2024 copiado del Anuario forestal. Sin interpolar; 2023 no publicado."
+   "notes": "Produccion de corcho por comunidad autonoma (t): libro «Tablas resumen 2005-2022» del MITECO (2005-2022, scripts/update-es-cork.py) mas 2024 copiado del Anuario forestal. Sin interpolar; 2023 no publicado."
+  },
+  "data/es-cork-anuario2021.json": {
+   "sources": [
+    "miteco_estadistica_forestal"
+   ],
+   "notes": "Dato puntual copiado de las tablas 9.1 a 9.3 del Anuario de Estadistica Forestal 2021 (produccion y valor 2002-2021; precios por comunidad de 2021). No es una serie viva."
   },
   "data/es-cork-manual.json": {
    "sources": [
