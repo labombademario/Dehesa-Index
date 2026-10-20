@@ -1,0 +1,71 @@
+== tree_nuts
+  Almonds, Shelled Basis 11352
+  Pistachios, Inshell Basis 6520
+  Walnuts, Inshell Basis 8600
+== fruits_vegetables
+  Apples, Fresh 31545
+  Cherries (Sweet&Sour), Fresh 9567
+  Grapefruit, Fresh 6972
+  Grapes, Fresh Table 11862
+  Lemons/Limes, Fresh 7994
+  Oranges, Fresh 11522
+  Peaches & Nectarines, Fresh 11394
+  Pears, Fresh 15570
+  Tangerines/Mandarins, Fresh 9128
+== oilseeds
+  Meal, Copra 21854
+  Meal, Cottonseed 39284
+  Meal, Fish 29484
+  Meal, Palm Kernel 23912
+  Meal, Peanut 26656
+  Meal, Rapeseed 28840
+  Meal, Soybean 66780
+  Meal, Soybean (Local) 1764
+  Meal, Sunflowerseed 27608
+  Oil, Coconut 28821
+  Oil, Cottonseed 36297
+  Oil, Olive 15488
+  Oil, Palm 53976
+  Oil, Palm Kernel 28665
+  Oil, Peanut 25597
+  Oil, Rapeseed 31083
+  Oil, Soybean 61867
+  Oil, Soybean (Local) 1638
+  Oil, Sunflowerseed 34658
+  Oilseed, Copra 22224
+  Oilseed, Cottonseed 32774
+  Oilseed, Palm Kernel 21024
+  Oilseed, Peanut 39455
+  Oilseed, Rapeseed 25103
+  Oilseed, Soybean 49504
+  Oilseed, Soybean (Local) 1638
+  Oilseed, Sunflowerseed 25675
+== dairy
+  Dairy, Butter 16137
+  Dairy, Cheese 16335
+  Dairy, Dry Whole Milk Powder 8271
+  Dairy, Milk, Fluid 23004
+  Dairy, Milk, Nonfat Dry 17127
+== livestock
+  Animal Numbers, Cattle 34723
+  Animal Numbers, Swine 24112
+  Meat, Beef and Veal 28608
+  Meat, Chicken 11997
+  Meat, Swine 26881
+  Poultry, Meat, Broiler 23198
+== grains_pulses
+  Barley 63135
+  Corn 113790
+  Millet 47415
+  Mixed Grain 6465
+  Oats 32730
+  Rice, Milled 114240
+  Rye 23475
+  Sorghum 63975
+  Wheat 116310
+== sugar
+  Sugar, Centrifugal 152016
+== coffee
+  Coffee, Green 87704
+== cotton
+  Cotton 93324
