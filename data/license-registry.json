@@ -5486,6 +5486,18 @@
    },
    "notes": "Temperatura media, precipitacion e indice de sequia de Palmer mensuales por estado (NOAA NCEI nClimDiv), sin conversiones."
   },
+  "data/us-fsa-rates-stats.json": {
+   "byCountry": {
+    "US": "usda_fsa"
+   },
+   "notes": "Tipos de interes mensuales de los prestamos directos de la FSA (explotacion, compra de tierra, financiacion conjunta, entrada y emergencia), tal como los publica cada mes la nota oficial 'USDA Announces <mes> Lending Rates for Agricultural Producers' (scripts/update-us-fsa-rates.py). Los meses sin nota localizada quedan sin dato. Cita: \"U. S. Department of Agriculture, Farm Service Agency.\""
+  },
+  "data/us-fsa-rates-manual.json": {
+   "sources": [
+    "usda_fsa"
+   ],
+   "notes": "Entrada manual mensual de los tipos de la FSA, copiados tal cual de las notas oficiales cuando el cortafuegos de la FSA bloquea al servidor de GitHub. No se interpola ningun mes."
+  },
   "data/us-kcfed-stats.json": {
    "byCountry": {
     "US": "kansas_city_fed"
