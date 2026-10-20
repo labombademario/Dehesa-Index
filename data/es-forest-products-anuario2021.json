@@ -1,0 +1,813 @@
+{
+ "schemaVersion": 1,
+ "kind": "manual",
+ "source": {
+  "name": "MITECO, Anuario de Estadistica Forestal 2021 (tablas 8.7, 8.11, 9.4, 9.6, 9.8 y 9.10)",
+  "url": "https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/estadisticas/aef2021/Anuario%20Estadistica%20Forestal%202021.pdf"
+ },
+ "notes": {
+  "est": "Valor economico calculado por el MITECO a partir de un precio medio estimado (asterisco en el Anuario), no un precio de mercado.",
+  "s.d.": "sin dato publicado"
+ },
+ "wood": [
+  {
+   "year": 2001,
+   "coniferas": 6148,
+   "frondosas": 5407,
+   "sinClasificar": 2546,
+   "total": 14101,
+   "valor": 623529,
+   "est": false
+  },
+  {
+   "year": 2002,
+   "coniferas": 5525,
+   "frondosas": 5382,
+   "sinClasificar": 3806,
+   "total": 14713,
+   "valor": 666321,
+   "est": false
+  },
+  {
+   "year": 2003,
+   "coniferas": 6631,
+   "frondosas": 5582,
+   "sinClasificar": 3396,
+   "total": 15609,
+   "valor": 750391,
+   "est": false
+  },
+  {
+   "year": 2004,
+   "coniferas": 6037,
+   "frondosas": 5409,
+   "sinClasificar": 3353,
+   "total": 14799,
+   "valor": 718811,
+   "est": false
+  },
+  {
+   "year": 2005,
+   "coniferas": 7804,
+   "frondosas": 5578,
+   "sinClasificar": 2466,
+   "total": 15848,
+   "valor": 675407,
+   "est": true
+  },
+  {
+   "year": 2006,
+   "coniferas": 8270,
+   "frondosas": 5260,
+   "sinClasificar": 3523,
+   "total": 17053,
+   "valor": 722461,
+   "est": true
+  },
+  {
+   "year": 2007,
+   "coniferas": 7406,
+   "frondosas": 5408,
+   "sinClasificar": 1281,
+   "total": 14095,
+   "valor": 630518,
+   "est": true
+  },
+  {
+   "year": 2008,
+   "coniferas": 6501,
+   "frondosas": 5788,
+   "sinClasificar": 4761,
+   "total": 17050,
+   "valor": 733350,
+   "est": true
+  },
+  {
+   "year": 2009,
+   "coniferas": 5318,
+   "frondosas": 5038,
+   "sinClasificar": 3754,
+   "total": 14110,
+   "valor": 583954,
+   "est": true
+  },
+  {
+   "year": 2010,
+   "coniferas": 6164,
+   "frondosas": 5788,
+   "sinClasificar": 1288,
+   "total": 13239,
+   "valor": 531847,
+   "est": true
+  },
+  {
+   "year": 2011,
+   "coniferas": 7115,
+   "frondosas": 6978,
+   "sinClasificar": null,
+   "total": 14093,
+   "valor": 547905,
+   "est": true
+  },
+  {
+   "year": 2012,
+   "coniferas": 7598,
+   "frondosas": 6521,
+   "sinClasificar": null,
+   "total": 14119,
+   "valor": 530275,
+   "est": true
+  },
+  {
+   "year": 2013,
+   "coniferas": 8378,
+   "frondosas": 6681,
+   "sinClasificar": null,
+   "total": 15060,
+   "valor": 538156,
+   "est": true
+  },
+  {
+   "year": 2014,
+   "coniferas": 8779,
+   "frondosas": 6982,
+   "sinClasificar": null,
+   "total": 15762,
+   "valor": 604847,
+   "est": true
+  },
+  {
+   "year": 2015,
+   "coniferas": 9218,
+   "frondosas": 7411,
+   "sinClasificar": null,
+   "total": 16630,
+   "valor": 644718,
+   "est": true
+  },
+  {
+   "year": 2016,
+   "coniferas": 8135,
+   "frondosas": 8713,
+   "sinClasificar": null,
+   "total": 16848,
+   "valor": 649216,
+   "est": true
+  },
+  {
+   "year": 2017,
+   "coniferas": 9589,
+   "frondosas": 8091,
+   "sinClasificar": null,
+   "total": 17680,
+   "valor": 735604,
+   "est": true
+  },
+  {
+   "year": 2018,
+   "coniferas": 10644,
+   "frondosas": 9104,
+   "sinClasificar": null,
+   "total": 19747,
+   "valor": 852825,
+   "est": true
+  },
+  {
+   "year": 2019,
+   "coniferas": 9902,
+   "frondosas": 8085,
+   "sinClasificar": null,
+   "total": 17987,
+   "valor": 672906,
+   "est": true
+  },
+  {
+   "year": 2020,
+   "coniferas": 8392,
+   "frondosas": 7545,
+   "sinClasificar": null,
+   "total": 15937,
+   "valor": 588422,
+   "est": true
+  },
+  {
+   "year": 2021,
+   "coniferas": 10194,
+   "frondosas": 7824,
+   "sinClasificar": null,
+   "total": 18018,
+   "valor": 751901,
+   "est": false
+  }
+ ],
+ "firewood": [
+  {
+   "year": 2001,
+   "production": 955,
+   "value": 21052,
+   "est": false
+  },
+  {
+   "year": 2002,
+   "production": 1024,
+   "value": 27969,
+   "est": false
+  },
+  {
+   "year": 2003,
+   "production": 1151,
+   "value": 32301,
+   "est": false
+  },
+  {
+   "year": 2004,
+   "production": 1106,
+   "value": 10515,
+   "est": false
+  },
+  {
+   "year": 2005,
+   "production": 848,
+   "value": 20868,
+   "est": false
+  },
+  {
+   "year": 2006,
+   "production": 1189,
+   "value": 30289,
+   "est": true
+  },
+  {
+   "year": 2007,
+   "production": 1451,
+   "value": 32569,
+   "est": true
+  },
+  {
+   "year": 2008,
+   "production": 988,
+   "value": 33532,
+   "est": true
+  },
+  {
+   "year": 2009,
+   "production": 1175,
+   "value": 41569,
+   "est": true
+  },
+  {
+   "year": 2010,
+   "production": 2445,
+   "value": 74119,
+   "est": true
+  },
+  {
+   "year": 2011,
+   "production": 1972,
+   "value": 74816,
+   "est": true
+  },
+  {
+   "year": 2012,
+   "production": 1542,
+   "value": 43495,
+   "est": true
+  },
+  {
+   "year": 2013,
+   "production": 1716,
+   "value": 53308,
+   "est": true
+  },
+  {
+   "year": 2014,
+   "production": 1854,
+   "value": 56561,
+   "est": true
+  },
+  {
+   "year": 2015,
+   "production": 1840,
+   "value": 55246,
+   "est": true
+  },
+  {
+   "year": 2016,
+   "production": 1201,
+   "value": 40218,
+   "est": true
+  },
+  {
+   "year": 2017,
+   "production": 1222,
+   "value": 38811,
+   "est": true
+  },
+  {
+   "year": 2018,
+   "production": 1317,
+   "value": 49650,
+   "est": true
+  },
+  {
+   "year": 2019,
+   "production": 1171,
+   "value": 43513,
+   "est": true
+  },
+  {
+   "year": 2020,
+   "production": 1450,
+   "value": 56460,
+   "est": true
+  },
+  {
+   "year": 2021,
+   "production": 1484,
+   "value": 63181,
+   "est": false
+  }
+ ],
+ "resin": [
+  {
+   "year": 2002,
+   "production": 2623,
+   "value": 1806.95,
+   "est": false
+  },
+  {
+   "year": 2003,
+   "production": 1804,
+   "value": 1287.81,
+   "est": false
+  },
+  {
+   "year": 2004,
+   "production": null,
+   "value": null,
+   "est": false
+  },
+  {
+   "year": 2005,
+   "production": 1636,
+   "value": 1129.78,
+   "est": true
+  },
+  {
+   "year": 2006,
+   "production": 1705,
+   "value": 903.66,
+   "est": true
+  },
+  {
+   "year": 2007,
+   "production": 1560,
+   "value": 826.57,
+   "est": true
+  },
+  {
+   "year": 2008,
+   "production": 1443,
+   "value": 765,
+   "est": true
+  },
+  {
+   "year": 2009,
+   "production": 1402,
+   "value": 743,
+   "est": true
+  },
+  {
+   "year": 2010,
+   "production": 1821,
+   "value": 1093,
+   "est": true
+  },
+  {
+   "year": 2011,
+   "production": 3959,
+   "value": 4157.19,
+   "est": true
+  },
+  {
+   "year": 2012,
+   "production": 6968,
+   "value": 7316.13,
+   "est": true
+  },
+  {
+   "year": 2013,
+   "production": 9817,
+   "value": 10308.03,
+   "est": true
+  },
+  {
+   "year": 2014,
+   "production": 10630,
+   "value": 11161.3,
+   "est": true
+  },
+  {
+   "year": 2015,
+   "production": 12183,
+   "value": 12792.32,
+   "est": true
+  },
+  {
+   "year": 2016,
+   "production": 12232,
+   "value": 12843.25,
+   "est": true
+  },
+  {
+   "year": 2017,
+   "production": 13001,
+   "value": 13780.69,
+   "est": true
+  },
+  {
+   "year": 2018,
+   "production": 12246,
+   "value": 12980.59,
+   "est": true
+  },
+  {
+   "year": 2019,
+   "production": 10769,
+   "value": 11629.99,
+   "est": true
+  },
+  {
+   "year": 2020,
+   "production": 11506,
+   "value": 10355.14,
+   "est": true
+  },
+  {
+   "year": 2021,
+   "production": 10191,
+   "value": 9885.27,
+   "est": true
+  }
+ ],
+ "chestnut": [
+  {
+   "year": 2006,
+   "production": 59086,
+   "value": 35451.61,
+   "est": true
+  },
+  {
+   "year": 2007,
+   "production": 57280,
+   "value": 34368.47,
+   "est": true
+  },
+  {
+   "year": 2008,
+   "production": 44575,
+   "value": 31195.59,
+   "est": true
+  },
+  {
+   "year": 2009,
+   "production": 48908,
+   "value": 48908.88,
+   "est": true
+  },
+  {
+   "year": 2010,
+   "production": 55164,
+   "value": 55164.16,
+   "est": true
+  },
+  {
+   "year": 2011,
+   "production": 28143,
+   "value": 33771.54,
+   "est": true
+  },
+  {
+   "year": 2012,
+   "production": 19071,
+   "value": 19071.15,
+   "est": true
+  },
+  {
+   "year": 2013,
+   "production": 21465,
+   "value": 23611.09,
+   "est": true
+  },
+  {
+   "year": 2014,
+   "production": 16852,
+   "value": 25277.25,
+   "est": true
+  },
+  {
+   "year": 2015,
+   "production": 31137,
+   "value": 29580.34,
+   "est": true
+  },
+  {
+   "year": 2016,
+   "production": 19263,
+   "value": 26967.85,
+   "est": true
+  },
+  {
+   "year": 2017,
+   "production": 10517,
+   "value": 13146.81,
+   "est": true
+  },
+  {
+   "year": 2018,
+   "production": 10505,
+   "value": 14706.9,
+   "est": true
+  },
+  {
+   "year": 2019,
+   "production": 11065,
+   "value": 13831.25,
+   "est": true
+  },
+  {
+   "year": 2020,
+   "production": 12411,
+   "value": 17995.81,
+   "est": true
+  },
+  {
+   "year": 2021,
+   "production": 10654,
+   "value": 19177.2,
+   "est": true
+  }
+ ],
+ "pineNut": [
+  {
+   "year": 2006,
+   "production": 11345,
+   "value": 24333.35,
+   "est": true
+  },
+  {
+   "year": 2007,
+   "production": 13535,
+   "value": 31495.77,
+   "est": true
+  },
+  {
+   "year": 2008,
+   "production": 7304,
+   "value": 18538.01,
+   "est": true
+  },
+  {
+   "year": 2009,
+   "production": 2657,
+   "value": 5000.34,
+   "est": true
+  },
+  {
+   "year": 2010,
+   "production": 4485,
+   "value": 11344.81,
+   "est": true
+  },
+  {
+   "year": 2011,
+   "production": 8009,
+   "value": 20463.09,
+   "est": true
+  },
+  {
+   "year": 2012,
+   "production": 6878,
+   "value": 21144.06,
+   "est": true
+  },
+  {
+   "year": 2013,
+   "production": 12481,
+   "value": 34946.2,
+   "est": true
+  },
+  {
+   "year": 2014,
+   "production": 1454,
+   "value": 6327.84,
+   "est": true
+  },
+  {
+   "year": 2015,
+   "production": 1080,
+   "value": 4471.31,
+   "est": true
+  },
+  {
+   "year": 2016,
+   "production": 1921,
+   "value": 6296.62,
+   "est": true
+  },
+  {
+   "year": 2017,
+   "production": 2075,
+   "value": 7230.4,
+   "est": true
+  },
+  {
+   "year": 2018,
+   "production": 861,
+   "value": 3486.0,
+   "est": true
+  },
+  {
+   "year": 2019,
+   "production": 1401,
+   "value": 7004.8,
+   "est": true
+  },
+  {
+   "year": 2020,
+   "production": 431,
+   "value": 2595.93,
+   "est": true
+  },
+  {
+   "year": 2021,
+   "production": 648,
+   "value": 3888.0,
+   "est": true
+  }
+ ],
+ "truffle": [
+  {
+   "year": 2006,
+   "production": 18124,
+   "value": 5263.59
+  },
+  {
+   "year": 2007,
+   "production": 10298,
+   "value": 3405.46
+  },
+  {
+   "year": 2008,
+   "production": 12726,
+   "value": 3073.91
+  },
+  {
+   "year": 2009,
+   "production": 8645,
+   "value": 2960.85
+  },
+  {
+   "year": 2010,
+   "production": 6149,
+   "value": 2423.14
+  },
+  {
+   "year": 2011,
+   "production": 2463,
+   "value": 1108.35
+  },
+  {
+   "year": 2012,
+   "production": 2067,
+   "value": 930.15
+  },
+  {
+   "year": 2013,
+   "production": 4458,
+   "value": 1783.16
+  },
+  {
+   "year": 2014,
+   "production": 10013,
+   "value": 4005.28
+  },
+  {
+   "year": 2015,
+   "production": 4128,
+   "value": 1857.44
+  },
+  {
+   "year": 2016,
+   "production": 7417,
+   "value": 3337.62
+  },
+  {
+   "year": 2017,
+   "production": 6832,
+   "value": 3074.62
+  },
+  {
+   "year": 2018,
+   "production": 12056,
+   "value": 4219.76
+  },
+  {
+   "year": 2019,
+   "production": 8055,
+   "value": 2819.24
+  },
+  {
+   "year": 2020,
+   "production": 9064,
+   "value": 2094.86
+  },
+  {
+   "year": 2021,
+   "production": 9115,
+   "value": 2096.45
+  }
+ ],
+ "mushrooms": [
+  {
+   "year": 2006,
+   "production": 3722615,
+   "value": 36909.97
+  },
+  {
+   "year": 2007,
+   "production": 4371065,
+   "value": 38245.33
+  },
+  {
+   "year": 2008,
+   "production": 10597899,
+   "value": 146671.61
+  },
+  {
+   "year": 2009,
+   "production": 1030283,
+   "value": 11333.12
+  },
+  {
+   "year": 2010,
+   "production": 10368845,
+   "value": 114057.29
+  },
+  {
+   "year": 2011,
+   "production": 9850009,
+   "value": 108350.1
+  },
+  {
+   "year": 2012,
+   "production": 14599241,
+   "value": 160591.66
+  },
+  {
+   "year": 2013,
+   "production": 6983944,
+   "value": 73418.71
+  },
+  {
+   "year": 2014,
+   "production": 25596130,
+   "value": 249306.3
+  },
+  {
+   "year": 2015,
+   "production": 11767303,
+   "value": 148444.52
+  },
+  {
+   "year": 2016,
+   "production": 14457761,
+   "value": 173493.13
+  },
+  {
+   "year": 2017,
+   "production": 10416380,
+   "value": 124996.56
+  },
+  {
+   "year": 2018,
+   "production": 21969866,
+   "value": 219698.66
+  },
+  {
+   "year": 2019,
+   "production": 11134553,
+   "value": 111345.53
+  },
+  {
+   "year": 2020,
+   "production": 11013165,
+   "value": 104514.94
+  },
+  {
+   "year": 2021,
+   "production": 11942404,
+   "value": 116319.01
+  }
+ ]
+}

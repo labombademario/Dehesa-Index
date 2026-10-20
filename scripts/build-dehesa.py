@@ -78,7 +78,8 @@ def cork_production():
 
 def main():
     ck = cork(); ck["production"] = cork_production(); ck["anuario2021"] = load("es-cork-anuario2021.json")
-    doc = {"schemaVersion": 1, "generatedAt": NOW, "pigs": pigs(), "pasture": pasture(), "cork": ck}
+    doc_products = load("es-forest-products-anuario2021.json")
+    doc = {"schemaVersion": 1, "generatedAt": NOW, "pigs": pigs(), "pasture": pasture(), "cork": ck, "forest": {k: doc_products[k] for k in ("pineNut", "chestnut", "truffle", "mushrooms", "resin")} | {"source": doc_products["source"]}}
     (D / "dehesa.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print("dehesa.json: %d provincias de iberico, %d zonas de pasto, corcho %s" % (len(doc["pigs"]["provinces"]), len(doc["pasture"]["areas"]), sorted(doc["cork"]["countries"])))
 if __name__ == "__main__": sys.exit(main())
