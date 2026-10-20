@@ -13,7 +13,7 @@
       s1: '1. Elige con qué comparar', country: 'País', product: 'Producto', refs: 'Lonjas o mercados de referencia (hasta 3)', last: 'último dato',
       s2: '2. Tus ventas', s2h: 'Una línea por venta o por liquidación parcial: fecha, toneladas y precio en {u}. Puedes pegarlas desde Excel (columnas fecha, toneladas, precio).',
       date: 'Fecha', qty: 'Toneladas', price: 'Precio', add: 'Añadir venta', del: 'Quitar', paste: 'Pegar desde Excel o CSV', pasteBtn: 'Usar estas líneas', file: 'Cargar fichero CSV',
-      example: 'Cargar un ejemplo', exampleNote: 'Ejemplo con cifras inventadas, solo para ver cómo funciona.', clear: 'Vaciar', coop: 'Nombre de la cooperativa (opcional, solo para el informe)', campaign: 'Campaña (opcional)',
+      example: 'Cargar un ejemplo', emT: '¿Sin ventas a mano? Prueba con un ejemplo', emP: 'Carga seis ventas de ejemplo (volúmenes y precios inventados, fechas reales de la referencia elegida) y verás cómo sale el informe para el Consejo Rector.', more: 'Ver más lonjas ({n})', exampleNote: 'Ejemplo con cifras inventadas, solo para ver cómo funciona.', clear: 'Vaciar', coop: 'Nombre de la cooperativa (opcional, solo para el informe)', campaign: 'Campaña (opcional)',
       s3: '3. Resultado', none: 'Añade al menos una venta con fecha, toneladas y precio.', noref: 'Elige al menos una referencia.', loadingRef: 'Cargando cotizaciones…',
       sold: 'Volumen vendido', yours: 'Vuestro precio medio', weighted: 'ponderado por toneladas', refAt: 'Referencia en las mismas fechas', diff: 'Diferencia', total: 'Equivale en total a',
       above: 'por encima', below: 'por debajo', equal: 'igual que', sent: 'En la campaña {c}vendimos {q} t a un precio medio de {p}. En las mismas fechas y con los mismos volúmenes, {r} marcaba {rv}: {d} {dir} de la referencia ({dp}).',
@@ -33,7 +33,7 @@
       s1: '1. Choose what to compare with', country: 'Country', product: 'Product', refs: 'Reference markets (up to 3)', last: 'latest data',
       s2: '2. Your sales', s2h: 'One line per sale or partial settlement: date, tonnes and price in {u}. You can paste them from Excel (columns date, tonnes, price).',
       date: 'Date', qty: 'Tonnes', price: 'Price', add: 'Add sale', del: 'Remove', paste: 'Paste from Excel or CSV', pasteBtn: 'Use these lines', file: 'Load CSV file',
-      example: 'Load an example', exampleNote: 'Example with made-up figures, only to see how it works.', clear: 'Clear', coop: 'Cooperative name (optional, report only)', campaign: 'Season (optional)',
+      example: 'Load an example', emT: 'No sales to hand? Try an example', emP: 'Load six example sales (made-up volumes and prices, real dates from the chosen reference) to see what the report for the board looks like.', more: 'Show more markets ({n})', exampleNote: 'Example with made-up figures, only to see how it works.', clear: 'Clear', coop: 'Cooperative name (optional, report only)', campaign: 'Season (optional)',
       s3: '3. Result', none: 'Add at least one sale with date, tonnes and price.', noref: 'Choose at least one reference.', loadingRef: 'Loading quotations…',
       sold: 'Volume sold', yours: 'Your average price', weighted: 'weighted by tonnes', refAt: 'Reference on the same dates', diff: 'Difference', total: 'Equivalent in total to',
       above: 'above', below: 'below', equal: 'equal to', sent: 'In the {c}season we sold {q} t at an average price of {p}. On the same dates and with the same volumes, {r} quoted {rv}: {d} {dir} the reference ({dp}).',
@@ -53,7 +53,7 @@
       s1: '1. Choisissez la référence', country: 'Pays', product: 'Produit', refs: 'Marchés de référence (3 maximum)', last: 'dernière donnée',
       s2: '2. Vos ventes', s2h: 'Une ligne par vente ou par liquidation partielle : date, tonnes et prix en {u}. Vous pouvez les coller depuis Excel (colonnes date, tonnes, prix).',
       date: 'Date', qty: 'Tonnes', price: 'Prix', add: 'Ajouter une vente', del: 'Retirer', paste: 'Coller depuis Excel ou CSV', pasteBtn: 'Utiliser ces lignes', file: 'Charger un fichier CSV',
-      example: 'Charger un exemple', exampleNote: 'Exemple avec des chiffres inventés, seulement pour voir le fonctionnement.', clear: 'Vider', coop: 'Nom de la coopérative (facultatif, pour le rapport)', campaign: 'Campagne (facultatif)',
+      example: 'Charger un exemple', emT: 'Pas de ventes sous la main ? Essayez un exemple', emP: 'Chargez six ventes d’exemple (volumes et prix inventés, dates réelles de la référence choisie) pour voir le rapport destiné au conseil.', more: 'Voir plus de marchés ({n})', exampleNote: 'Exemple avec des chiffres inventés, seulement pour voir le fonctionnement.', clear: 'Vider', coop: 'Nom de la coopérative (facultatif, pour le rapport)', campaign: 'Campagne (facultatif)',
       s3: '3. Résultat', none: 'Ajoutez au moins une vente avec date, tonnes et prix.', noref: 'Choisissez au moins une référence.', loadingRef: 'Chargement des cotations…',
       sold: 'Volume vendu', yours: 'Votre prix moyen', weighted: 'pondéré par les tonnes', refAt: 'Référence aux mêmes dates', diff: 'Écart', total: 'Soit au total',
       above: 'au-dessus', below: 'en dessous', equal: 'égal à', sent: 'Pendant la campagne {c}nous avons vendu {q} t à un prix moyen de {p}. Aux mêmes dates et avec les mêmes volumes, {r} cotait {rv} : {d} {dir} de la référence ({dp}).',
@@ -73,7 +73,7 @@
       s1: '1. Scegli il riferimento', country: 'Paese', product: 'Prodotto', refs: 'Mercati di riferimento (massimo 3)', last: 'ultimo dato',
       s2: '2. Le tue vendite', s2h: 'Una riga per vendita o liquidazione parziale: data, tonnellate e prezzo in {u}. Puoi incollarle da Excel (colonne data, tonnellate, prezzo).',
       date: 'Data', qty: 'Tonnellate', price: 'Prezzo', add: 'Aggiungi vendita', del: 'Togli', paste: 'Incolla da Excel o CSV', pasteBtn: 'Usa queste righe', file: 'Carica file CSV',
-      example: 'Carica un esempio', exampleNote: 'Esempio con cifre inventate, solo per vedere come funziona.', clear: 'Svuota', coop: 'Nome della cooperativa (facoltativo, solo per il rapporto)', campaign: 'Campagna (facoltativo)',
+      example: 'Carica un esempio', emT: 'Nessuna vendita a portata di mano? Prova un esempio', emP: 'Carica sei vendite di esempio (volumi e prezzi inventati, date reali del riferimento scelto) per vedere il rapporto per il consiglio.', more: 'Mostra altri mercati ({n})', exampleNote: 'Esempio con cifre inventate, solo per vedere come funziona.', clear: 'Svuota', coop: 'Nome della cooperativa (facoltativo, solo per il rapporto)', campaign: 'Campagna (facoltativo)',
       s3: '3. Risultato', none: 'Aggiungi almeno una vendita con data, tonnellate e prezzo.', noref: 'Scegli almeno un riferimento.', loadingRef: 'Caricamento delle quotazioni…',
       sold: 'Volume venduto', yours: 'Il vostro prezzo medio', weighted: 'ponderato per tonnellate', refAt: 'Riferimento nelle stesse date', diff: 'Differenza', total: 'Equivale in totale a',
       above: 'sopra', below: 'sotto', equal: 'uguale a', sent: 'Nella campagna {c}abbiamo venduto {q} t a un prezzo medio di {p}. Nelle stesse date e con gli stessi volumi, {r} quotava {rv}: {d} {dir} il riferimento ({dp}).',
@@ -227,11 +227,14 @@
     if (REFS) h += '<label>' + esc(w.product) + ' <select id="lq-p" class="di-compare-select">' + products().map(function (o) { return '<option value="' + esc(o.k) + '"' + (o.k === PROD ? ' selected' : '') + '>' + esc(nm(o.r.product)) + ' (' + o.n + ')</option>'; }).join('') + '</select></label>';
     h += '</div>';
     if (REFS) {
-      h += '<div class="lq-lab">' + esc(w.refs) + '</div><div class="lq-refs">' + prodRefs().map(function (r) {
+      var refHtml = function (r) {
         var k = refKey(r), on = SEL.indexOf(k) > -1, ci = SEL.indexOf(k);
         return '<label class="lq-ref' + (on ? ' on' : '') + '"><input type="checkbox" data-ref="' + esc(k) + '"' + (on ? ' checked' : '') + (!on && SEL.length >= 3 ? ' disabled' : '') + '>' + (on ? '<i style="background:' + COLORS[ci] + '"></i>' : '') +
           '<span>' + esc(refLabel(r) || nm(r.product)) + '<small>' + esc(r.unit + ' · ' + w.last + ' ' + fdate(r.last)) + '</small></span></label>';
-      }).join('') + '</div>';
+      }, all = prodRefs(), shown = all.filter(function (r, i) { return i < 4 || SEL.indexOf(refKey(r)) > -1; }), rest = all.filter(function (r) { return shown.indexOf(r) < 0; });
+      /* lista larga (hasta 11 lonjas): las 4 primeras y las elegidas a la vista; el resto, plegado */
+      h += '<div class="lq-lab">' + esc(w.refs) + '</div><div class="lq-refs">' + shown.map(refHtml).join('') + '</div>' +
+        (rest.length ? '<details class="ms-more"><summary>' + esc(fill(w.more, { n: rest.length })) + '</summary><div class="lq-refs">' + rest.map(refHtml).join('') + '</div></details>' : '');
     } else if (!FAILED) h += '<p class="lq-m">…</p>';
     h += '</section>';
     h += '<section class="di-card lq-sec no-print"><h2>' + esc(w.s2) + '</h2><p class="lq-m">' + esc(fill(w.s2h, { u: u })) + '</p>';
@@ -249,7 +252,7 @@
     var h = '<section class="di-card lq-sec lq-report"><div class="lq-rhead"><div><div class="lq-kicker">' + esc(w.reportT) + (CAMP ? ' · ' + esc(CAMP) : '') + '</div><div class="lq-title">' + esc(COOP || w.s3) + '</div>' + (EXAMPLE ? '<div class="lq-ex-badge">' + esc(w.exampleNote) + '</div>' : '') + '</div><div class="lq-m">' + esc(w.prepared) + ' · ' + esc(fdate(iso(Date.now()))) + '</div></div>';
     if (!SEL.length) return h + '<p>' + esc(w.noref) + '</p></section>';
     var res = compute();
-    if (!res) return h + '<p class="lq-m">' + esc(w.none) + '</p></section>';
+    if (!res) return h + '<p class="lq-m">' + esc(w.none) + '</p><div class="mc-first no-print"><b>' + esc(w.emT) + '</b><p class="di-emp-p">' + esc(w.emP) + '</p><button type="button" class="di-btn-gold-solid" id="lq-ex2">' + esc(w.example) + '</button></div></section>';
     h += '<div class="lq-cards"><div><span>' + esc(w.sold) + '</span><strong>' + esc(num(res.q, 0)) + ' t</strong><small>' + esc(fdate(res.from) + ' → ' + fdate(res.to)) + '</small></div><div><span>' + esc(w.yours) + '</span><strong>' + esc(num(res.p, 2)) + ' ' + esc(u) + '</strong><small>' + esc(w.weighted) + '</small></div></div>';
     var camp = CAMP ? CAMP + ' ' : '';
     res.refs.forEach(function (x) {
@@ -294,6 +297,7 @@
     if ($('lq-add')) $('lq-add').onclick = function () { var last = ROWS[ROWS.length - 1]; ROWS.push({ d: null, q: null, p: null }); render(); var ins = root.querySelectorAll('[data-f="d"]'); if (ins.length) ins[ins.length - 1].focus(); void last; };
     if ($('lq-clr')) $('lq-clr').onclick = function () { ROWS = []; EXAMPLE = false; MSG = ''; render(); };
     if ($('lq-ex')) $('lq-ex').onclick = example;
+    if ($('lq-ex2')) $('lq-ex2').onclick = function () { example(); var r = document.querySelector('.lq-report'); if (r && r.scrollIntoView) { try { r.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) { r.scrollIntoView(); } } };
     if ($('lq-coop')) $('lq-coop').oninput = function (e) { COOP = e.target.value; var ti = root.querySelector('.lq-title'); if (ti) ti.textContent = COOP || t().s3; };
     if ($('lq-camp')) $('lq-camp').onchange = function (e) { CAMP = e.target.value; render(); };
     if ($('lq-use')) $('lq-use').onclick = function () { useText($('lq-txt').value); };

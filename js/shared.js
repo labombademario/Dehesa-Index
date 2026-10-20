@@ -370,7 +370,7 @@
         if (!hr) continue;
         t.setAttribute('data-a11y', '1');
         var ths = hr.children;
-        for (var j = 0; j < ths.length; j++) { heads.push((ths[j].textContent || '').replace(/\s+/g, ' ').trim()); if (ths[j].tagName === 'TH' && !ths[j].getAttribute('scope')) ths[j].setAttribute('scope', 'col'); }
+        for (var j = 0; j < ths.length; j++) { heads.push((ths[j].textContent || '').replace(/\s*[↕▲▼]\s*$/, '').replace(/\s+/g, ' ').trim());   /* sin la flecha de ordenar: la etiqueta de la tarjeta móvil es solo el nombre de la columna */ if (ths[j].tagName === 'TH' && !ths[j].getAttribute('scope')) ths[j].setAttribute('scope', 'col'); }
         var rows = t.querySelectorAll('tbody tr'); if (!rows.length) { rows = t.querySelectorAll('tr'); }
         for (var r = 0; r < rows.length; r++) {
           if (rows[r] === hr) continue; var cs = rows[r].children;

@@ -370,7 +370,7 @@
     var dEl = document.getElementById('cal-disclaimer'), dSum = ({ es: 'Cómo se obtienen las fechas', en: 'How the dates are obtained', fr: 'D’où viennent les dates', it: 'Come si ottengono le date' })[lang] || 'How the dates are obtained';
     dEl.textContent = ''; var dd = document.createElement('details'), ds = document.createElement('summary'), dp = document.createElement('p');
     ds.textContent = dSum; ds.style.cssText = 'cursor:pointer;font-weight:600;min-height:32px'; dp.textContent = t.disclaimer; dp.style.margin = '8px 0 0';
-    dd.appendChild(ds);   // metodologia plegada: primero los proximos eventos dd.appendChild(dp); dEl.appendChild(dd);
+    dd.appendChild(ds); dd.appendChild(dp); dEl.appendChild(dd);   // metodologia plegada: primero los proximos eventos
 
     var FILTER_OPTIONS = [
       { id: 'all', label: t.filterAll },

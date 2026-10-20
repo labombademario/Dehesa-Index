@@ -179,8 +179,8 @@
     var today = new Date().toISOString().slice(0, 10);
     h += '<article class="ic-sheet di-card" style="padding:18px"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><div><div style="font-size:12px;color:var(--text-muted)">' + esc(w.rep) + '</div><h2 style="margin:2px 0;font-size:24px">' + esc(nm(ss[0].name, PROD)) + '</h2>' +
       (COOP ? '<div style="font-size:13px">' + esc(w.by) + ': <b>' + esc(COOP) + '</b></div>' : '') + '</div><div style="font-size:12px;color:var(--text-muted);text-align:right">' + esc(w.prepared) + ' ' + esc(today) + '<br>' + esc(w.dataAsOf) + ' ' + esc(asof) + '<br>dehesaindex.com</div></div>';
-    h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.kT) + '</h3>' + table(w.cols, rows);
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.pT) + '</h3><ul style="margin:0;padding-left:18px;font-size:14px">' + pitch.join('') + '</ul>';
+    h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.kT) + '</h3>' + table(w.cols, rows);
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.cT) + '</h3>' + ch;
     h += '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(w.mT) + '</h3>';
     if (cmp.length < 2) h += '<p class="di-movers-hint">' + esc(w.mOne) + '</p>';

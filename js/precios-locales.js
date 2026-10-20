@@ -149,6 +149,9 @@
     if (s.deliveryPeriod) p.push(t.delivery + ' ' + periodTxt(s.deliveryPeriod)); if (s.freight) p.push(s.freight); if (s.saleType && s.saleType !== 'Bid') p.push(s.saleType); if (s.transMode) p.push(s.transMode);
     return p.join(' · ') || cname(s.commodity);
   }
+  /* tipo de lugar de USDA (REGION, TERMINAL…) en palabras de cada idioma, no el código interno */
+  var LT = { es: { REGION: 'Región', TERMINAL: 'Terminal', EXPORT_MARKET: 'Puerto o silo de exportación', STATE: 'Estado', CITY: 'Ciudad', ELEVATOR: 'Elevador (silo)', UNKNOWN: 'Lugar sin identificar' }, en: { REGION: 'Region', TERMINAL: 'Terminal', EXPORT_MARKET: 'Export port or elevator', STATE: 'State', CITY: 'City', ELEVATOR: 'Elevator', UNKNOWN: 'Unidentified place' }, fr: { REGION: 'Région', TERMINAL: 'Terminal', EXPORT_MARKET: 'Port ou silo d’exportation', STATE: 'État', CITY: 'Ville', ELEVATOR: 'Silo', UNKNOWN: 'Lieu non identifié' }, it: { REGION: 'Regione', TERMINAL: 'Terminal', EXPORT_MARKET: 'Porto o elevatore di esportazione', STATE: 'Stato', CITY: 'Città', ELEVATOR: 'Elevatore', UNKNOWN: 'Luogo non identificato' } };
+  function ltl(k) { return ((LT[lang()] || LT.es)[k]) || k || ''; }
   function represents(s) {
     var t = tt(), k = 'repr_' + (s.locationType || 'UNKNOWN'), txt = (t[k] || t.repr_UNKNOWN).replace('{loc}', s.locationName || '—');
     return txt + (s.deliveryPoint ? ' ' + t.buyerLine + ': ' + s.deliveryPoint + '.' : '');
@@ -284,7 +287,7 @@
     var best = null; same.forEach(function (s) { var v = head(s); if (v != null && (best === null || v > best.v)) best = { v: v, id: s.id }; });
     var trs = rows.map(function (s) {
       var f = fresh(s), url = VIEW + s.reportId, top = same.length > 1 && best && best.id === s.id && s.date === maxD;
-      return '<tr data-id="' + esc(s.id) + '" class="pl-row' + (ST.id === s.id ? ' pl-sel' : '') + '"><td class="pl-c-m"><button type="button" class="di-link-btn" data-sel="' + esc(s.id) + '" style="text-align:left">' + esc(s.locationName || '—') + '</button><div class="di-movers-hint">' + esc(s.locationType) + '</div></td>' +
+      return '<tr data-id="' + esc(s.id) + '" class="pl-row' + (ST.id === s.id ? ' pl-sel' : '') + '"><td class="pl-c-m"><button type="button" class="di-link-btn" data-sel="' + esc(s.id) + '" style="text-align:left">' + esc(s.locationName || '—') + '</button><div class="di-movers-hint">' + esc(ltl(s.locationType)) + '</div></td>' +
         '<td class="pl-c-bid">' + bidHtml(s) + '</td><td class="pl-c-basis">' + basisHtml(s) + '</td><td class="pl-c-chg">' + changeHtml(s) + '</td>' +
         '<td class="pl-c-small">' + esc(dtxt(s.date)) + '</td><td class="pl-c-small">' + badge(f, s.date) + '</td><td class="pl-c-small"><a href="' + url + '" target="_blank" rel="noopener">USDA AMS</a><div class="di-movers-hint">#' + s.reportId + '</div></td></tr>';
     }).join('');
@@ -364,7 +367,7 @@
     h += '<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start"><div style="flex:1;min-width:260px"><h4 style="font-size:13px;margin:0 0 6px">' + esc(t.trust) + '</h4><dl style="margin:0">' +
       dl(t.tSource, 'USDA AMS Market News (MARS)') + dl(t.tReport, esc(rep.reportName || '#' + s.reportId) + ' · <a href="' + VIEW + s.reportId + '" target="_blank" rel="noopener">' + esc(t.tOpen) + ' →</a>') +
       dl(t.tPub, s.pub ? esc(dtxt(s.pub)) : '<span style="color:var(--text-faint)">' + esc(t.tNotCaptured) + '</span>') + dl(t.tObs, esc(dtxt(s.date)) + ' ' + badge(f, s.date)) +
-      dl(t.tMarket, esc(s.locationName || '—') + ' (' + esc(s.locationType) + ')') + dl(t.tSpec, esc(cname(s.commodity)) + ' · ' + esc(specLabel(s))) + dl(t.tUnit, esc(s.currency || '') + ' ' + esc(s.unit) + (s.currency ? ' ' + esc(s.currency === 'USD' ? '($)' : '') : '')) +
+      dl(t.tMarket, esc(s.locationName || '—') + ' (' + esc(ltl(s.locationType)) + ')') + dl(t.tSpec, esc(cname(s.commodity)) + ' · ' + esc(specLabel(s))) + dl(t.tUnit, esc(s.currency || '') + ' ' + esc(s.unit) + (s.currency ? ' ' + esc(s.currency === 'USD' ? '($)' : '') : '')) +
       dl(t.tFreq, esc(s.frequency === 'weekly' ? t.weekly : t.daily)) + dl(t.tMethod, esc(t.tMethodText)) + '</dl></div>' +
       '<div style="flex:1;min-width:260px"><h4 style="font-size:13px;margin:0 0 6px">' + esc(t.history) + '</h4><div class="di-range-btns" id="pl-ranges">' + RANGES.map(function (r) { return '<button type="button" class="di-range-btn' + (ST.range === r[0] ? ' active' : '') + '" data-r="' + r[0] + '">' + esc(t['r' + r[0]]) + '</button>'; }).join('') + '</div><div id="pl-chart" aria-live="polite"></div><div id="pl-breaks"></div></div></div>';
     if (W) h += '<div style="margin-top:12px"><h4 style="font-size:13px;margin:0 0 6px">' + esc(t.alerts) + '</h4><div id="pl-alerts">' + (fol ? W.editor('CB', key, lang(), { full: true }) : '') + '</div></div>';
