@@ -1,4 +1,4 @@
-/* Dehesa Index — Exportaciones de EE. UU. Ventas semanales (USDA FAS ESR) y comercio mensual por país (USDA FAS GATS). */
+/* Dehesa Index — Exportaciones (EE. UU., Canadá y España; esta parte, EE. UU.) Ventas semanales (USDA FAS ESR) y comercio mensual por país (USDA FAS GATS). */
 (function () {
   'use strict';
   var ESR = null, GATS = null;
@@ -17,7 +17,7 @@
     it: { 107: 'Grano (tutte le classi)', 101: 'Grano duro rosso invernale (HRW)', 102: 'Grano tenero rosso invernale (SRW)', 103: 'Grano duro rosso primaverile (HRS)', 104: 'Grano bianco', 105: 'Grano duro (durum)', 401: 'Mais', 701: 'Sorgo', 301: 'Orzo', 801: 'Soia (semi)', 901: 'Farina di soia', 902: 'Olio di soia', 1404: 'Cotone upland', 1505: 'Riso (tutti)', 1701: 'Manzo (tagli muscolari)', 1702: 'Maiale (tagli muscolari)' }
   };
   var T = {
-    es: { title: 'Exportaciones de EE. UU.', sub: 'Quién compra la cosecha y la carne de EE. UU.: ventas de exportación semanales (USDA FAS) y comercio mensual por país (USDA FAS, datos del Census Bureau). Cifras oficiales en su unidad original.',
+    es: { title: 'Exportaciones: EE. UU., Canadá y España', sub: 'Exportaciones de EE. UU., Canadá y España. EE. UU.: ventas de exportación semanales (USDA FAS) y comercio mensual por país (USDA FAS, datos del Census Bureau). Cifras oficiales en su unidad original.',
       tabEsr: 'Ventas semanales', tabGats: 'Comercio mensual', product: 'Producto', flow: 'Flujo', ex: 'Exportaciones de EE. UU.', im: 'Importaciones de EE. UU.', period: 'Periodo', p12: 'Últimos 12 meses', p1: 'Último mes',
       weekEnd: 'Semana al', my: 'Campaña', acc: 'Exportado en la campaña', out: 'Ventas pendientes de embarcar', com: 'Compromiso total', net: 'Ventas netas de la semana', vsPrev: 'frente a la misma semana de la campaña anterior',
       chartAcc: 'Exportaciones acumuladas por semana de campaña', cur: 'Campaña actual', prev: 'Campaña anterior', weekN: 'semana de campaña',
@@ -26,7 +26,7 @@
       esrNote: 'Fuente: USDA FAS, Export Sales Reporting (informe semanal de ventas de exportación, se publica los jueves). Toneladas métricas salvo el algodón (balas). Las ventas pendientes son ventas ya cerradas y aún no embarcadas. Los totales suman los destinos publicados; el agregado de la UE cuenta como un solo destino. Son cifras que las empresas declaran a USDA y pueden revisarse.',
       gatsNote: 'Fuente: USDA FAS GATS, con datos de comercio del Census Bureau de EE. UU. Solo comercio de EE. UU. con cada país (no los flujos entre terceros). Valor en dólares corrientes; la cantidad solo se muestra cuando el Census la mide en kilos. Los dos últimos meses pueden revisarse. Los códigos arancelarios (HS) agrupan productos de forma aproximada, por ejemplo «Lácteos» reúne los capítulos 0401-0406.',
       src: 'Fuente: USDA FAS (datos públicos del Gobierno de EE. UU.)' },
-    en: { title: 'U.S. exports', sub: 'Who buys U.S. crops and meat: weekly export sales (USDA FAS) and monthly trade by country (USDA FAS, U.S. Census Bureau data). Official figures in their original units.',
+    en: { title: 'Exports: US, Canada and Spain', sub: 'Exports from the US, Canada and Spain. US: weekly export sales (USDA FAS) and monthly trade by country (USDA FAS, U.S. Census Bureau data). Official figures in their original units.',
       tabEsr: 'Weekly sales', tabGats: 'Monthly trade', product: 'Product', flow: 'Flow', ex: 'U.S. exports', im: 'U.S. imports', period: 'Period', p12: 'Last 12 months', p1: 'Latest month',
       weekEnd: 'Week ending', my: 'Marketing year', acc: 'Exported this marketing year', out: 'Outstanding sales (not yet shipped)', com: 'Total commitment', net: 'Net sales this week', vsPrev: 'vs. same week last marketing year',
       chartAcc: 'Accumulated exports by marketing-year week', cur: 'Current year', prev: 'Previous year', weekN: 'marketing-year week',
@@ -35,7 +35,7 @@
       esrNote: 'Source: USDA FAS, Export Sales Reporting (weekly export sales report, released on Thursdays). Metric tons except cotton (bales). Outstanding sales are sales already made but not yet shipped. Totals add up the published destinations; the EU aggregate counts as one destination. Figures are reported by companies to USDA and may be revised.',
       gatsNote: 'Source: USDA FAS GATS, using U.S. Census Bureau trade data. U.S. trade with each country only (not flows between third countries). Current-dollar values; quantity is shown only when the Census measures it in kilograms. The last two months may be revised. Tariff (HS) codes group products approximately; for example “Dairy” combines chapters 0401-0406.',
       src: 'Source: USDA FAS (public U.S. Government data)' },
-    fr: { title: 'Exportations américaines', sub: 'Qui achète les récoltes et la viande des États-Unis : ventes à l’exportation hebdomadaires (USDA FAS) et commerce mensuel par pays (USDA FAS, données du Census Bureau). Chiffres officiels dans leur unité d’origine.',
+    fr: { title: 'Exportations : États-Unis, Canada et Espagne', sub: 'Exportations des États-Unis, du Canada et de l’Espagne. États-Unis : ventes à l’exportation hebdomadaires (USDA FAS) et commerce mensuel par pays (USDA FAS, données du Census Bureau). Chiffres officiels dans leur unité d’origine.',
       tabEsr: 'Ventes hebdomadaires', tabGats: 'Commerce mensuel', product: 'Produit', flow: 'Flux', ex: 'Exportations des États-Unis', im: 'Importations des États-Unis', period: 'Période', p12: '12 derniers mois', p1: 'Dernier mois',
       weekEnd: 'Semaine au', my: 'Campagne', acc: 'Exporté sur la campagne', out: 'Ventes en attente d’expédition', com: 'Engagement total', net: 'Ventes nettes de la semaine', vsPrev: 'par rapport à la même semaine de la campagne précédente',
       chartAcc: 'Exportations cumulées par semaine de campagne', cur: 'Campagne en cours', prev: 'Campagne précédente', weekN: 'semaine de campagne',
@@ -44,7 +44,7 @@
       esrNote: 'Source : USDA FAS, Export Sales Reporting (rapport hebdomadaire, publié le jeudi). Tonnes métriques sauf le coton (balles). Les ventes en attente sont des ventes conclues mais pas encore expédiées. Les totaux additionnent les destinations publiées ; l’agrégat UE compte comme une seule destination. Chiffres déclarés par les entreprises à l’USDA, susceptibles de révision.',
       gatsNote: 'Source : USDA FAS GATS, à partir des données commerciales du Census Bureau. Commerce des États-Unis avec chaque pays uniquement (pas les flux entre pays tiers). Valeurs en dollars courants ; la quantité n’apparaît que lorsque le Census la mesure en kilos. Les deux derniers mois peuvent être révisés. Les codes tarifaires (SH) regroupent les produits de façon approximative ; par exemple « Produits laitiers » réunit les chapitres 0401-0406.',
       src: 'Source : USDA FAS (données publiques du gouvernement américain)' },
-    it: { title: 'Esportazioni USA', sub: 'Chi compra i raccolti e la carne degli Stati Uniti: vendite all’esportazione settimanali (USDA FAS) e commercio mensile per paese (USDA FAS, dati del Census Bureau). Cifre ufficiali nell’unità originale.',
+    it: { title: 'Esportazioni: USA, Canada e Spagna', sub: 'Esportazioni di Stati Uniti, Canada e Spagna. USA: vendite all’esportazione settimanali (USDA FAS) e commercio mensile per paese (USDA FAS, dati del Census Bureau). Cifre ufficiali nell’unità originale.',
       tabEsr: 'Vendite settimanali', tabGats: 'Commercio mensile', product: 'Prodotto', flow: 'Flusso', ex: 'Esportazioni USA', im: 'Importazioni USA', period: 'Periodo', p12: 'Ultimi 12 mesi', p1: 'Ultimo mese',
       weekEnd: 'Settimana al', my: 'Campagna', acc: 'Esportato nella campagna', out: 'Vendite in attesa di spedizione', com: 'Impegno totale', net: 'Vendite nette della settimana', vsPrev: 'rispetto alla stessa settimana della campagna precedente',
       chartAcc: 'Esportazioni cumulate per settimana di campagna', cur: 'Campagna in corso', prev: 'Campagna precedente', weekN: 'settimana di campagna',

@@ -155,7 +155,7 @@
     ] },
     trade: { label: L('Comercio', 'Trade', 'Commerce', 'Commercio'), items: [
       pd('comercio-pais.html', L('Comercio exterior por país', 'Foreign trade by country', 'Commerce extérieur par pays', 'Commercio estero per paese'), L('Más de 30 países · a quién venden y de quién compran', '30+ countries · who they sell to and buy from', 'Plus de 30 pays · à qui ils vendent et de qui ils achètent', 'Oltre 30 paesi · a chi vendono e da chi comprano')),
-      pd('exportaciones.html', L('Exportaciones de EE. UU.', 'US exports', 'Exportations des États-Unis', 'Esportazioni USA'), L('EE. UU. · ventas semanales y comercio por país comprador', 'US · weekly sales and trade by buyer country', 'États-Unis · ventes hebdomadaires et commerce par pays acheteur', 'USA · vendite settimanali e commercio per paese acquirente')),
+      pd('exportaciones.html', L('Exportaciones', 'Exports', 'Exportations', 'Esportazioni'), L('EE. UU., Canadá y España · ventas semanales y comercio por país comprador', 'US, Canada and Spain · weekly sales and trade by buyer country', 'États-Unis, Canada et Espagne · ventes hebdomadaires et commerce par pays acheteur', 'USA, Canada e Spagna · vendite settimanali e commercio per paese acquirente')),
       pd('aranceles.html', L('Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'), L('EE. UU., UE, Canadá y México · por producto', 'US, EU, Canada and Mexico · by product', 'États-Unis, UE, Canada et Mexique · par produit', 'USA, UE, Canada e Messico · per prodotto')),
       pd('canada-granos.html', L('Granos de Canadá', 'Canadian grain', 'Grains du Canada', 'Cereali del Canada'), L('Canadá · exportaciones, entregas y existencias semanales', 'Canada · weekly exports, deliveries and stocks', 'Canada · exportations, livraisons et stocks hebdomadaires', 'Canada · esportazioni, consegne e scorte settimanali'))
     ] },
@@ -219,11 +219,12 @@
     var dl = function (es, en, fr, it, items, cc) { return { label: L(es, en, fr, it), items: items, cc: cc }; };
     G.countries.chipsFirst = 1;
     G.countries.items = G.countries.items.filter(function (i) { return i.chip; }).concat([
-      dl('Datos de EE. UU.', 'US data', 'Données des É.-U.', 'Dati USA', [one('exportaciones.html'), one('insumos.html'), one('costes.html'), one('cultivos.html'), one('rendimientos.html'), one('ganaderia.html')], 'US'),
+      dl('Datos de EE. UU.', 'US data', 'Données des É.-U.', 'Dati USA', [one('costes.html'), one('cultivos.html'), one('rendimientos.html'), one('ganaderia.html')], 'US'),
       dl('Datos de Canadá', 'Canada data', 'Données du Canada', 'Dati Canada', [one('canada-granos.html')], 'CA'),
       dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES'), one('dehesa.html')], 'ES'),
       dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU'),
-      dl('La semana por país', 'The week by country', 'La semaine par pays', 'La settimana per paese', [one('semana.html')]),
+      dl('Exportaciones', 'Exports', 'Exportations', 'Esportazioni', [one('exportaciones.html')]),
+      dl('Insumos', 'Inputs', 'Intrants', 'Input agricoli', [one('insumos.html')]),
       dl('Quién produce qué', 'Who produces what', 'Qui produit quoi', 'Chi produce cosa', [one('produccion-mundial.html')]),
       dl('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura', [one('pesca.html')])
     ]);

@@ -327,7 +327,8 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
     product: initialParams.get('product') || 'all',
     topic: initialParams.get('topic') || 'all',
     country: initialParams.get('country') || 'all',
-    limit: PAGE
+    limit: PAGE,
+    view: (function () { try { return window.localStorage.getItem('di-news-view') === 'orig' ? 'orig' : 'tr'; } catch (e) { return 'tr'; } })()
   };
   function syncUrl() {
     var params = [];
@@ -485,6 +486,7 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
       var shown = filteredItems.slice(0, state.limit);
       itemsHtml = '<div class="di-news-list">' + shown.map(function(item) {
         var tr = item[lang] || item.es;
+        if (state.view === 'orig' && tr.mt) tr = tr.orig;
         var marketTags = item.products.map(function(p){ return '<span class="di-news-tag product">' + esc((PRODUCT_LABELS[lang] || PRODUCT_LABELS.es)[p] || p) + '</span>'; }).join('');
         var topicTags = item.topics.map(function(topic){ return '<span class="di-news-tag topic">' + esc((TOPIC_LABELS[lang] || TOPIC_LABELS.es)[topic] || topic) + '</span>'; }).join('');
         var langBadge = item.lang && item.lang !== lang ? '<span class="di-news-lang" title="' + esc(tr.mt ? t.mtBadgeTitle.replace('{l}', item.lang.toUpperCase()) : t.origLang) + '">' + esc(item.lang.toUpperCase()) + (tr.mt ? ' → ' + esc(t.mtShort) : '') + '</span>' : '';
@@ -505,6 +507,14 @@ window.DINews.feed().then(function () { return window.DINews.tr(window.DehesaSha
       itemsHtml = '<div class="di-news-empty">' + esc(emptyMsg) + ' <button type="button" class="di-news-reset" id="nw-reset">' + esc(t.resetFilters) + '</button></div>';
     }
     document.getElementById('nw-items').innerHTML = itemsHtml;
+    (function () {
+      var host = document.getElementById('nw-view'), box = document.getElementById('nw-items');
+      if (!host) { host = document.createElement('div'); host.id = 'nw-view'; host.style.cssText = 'display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px'; box.parentNode.insertBefore(host, box); }
+      var L = { es: ['Idioma de los titulares', 'Traducidos', 'Original'], en: ['Headline language', 'Translated', 'Original'], fr: ['Langue des titres', 'Traduits', 'Original'], it: ['Lingua dei titoli', 'Tradotti', 'Originale'] }[lang] || ['Headline language', 'Translated', 'Original'];
+      function b(v, txt) { var on = state.view === v; return '<button type="button" data-v="' + v + '" aria-pressed="' + on + '" style="font:inherit;font-size:13px;padding:5px 12px;border:1px solid var(--border);border-radius:999px;cursor:pointer;' + (on ? 'background:var(--text,#222);color:var(--bg,#fff)' : 'background:var(--surface,#fff);color:inherit') + '">' + esc(txt) + '</button>'; }
+      host.innerHTML = '<span class="di-movers-hint" style="margin:0">' + esc(L[0]) + ':</span>' + b('tr', L[1]) + b('orig', L[2]);
+      Array.prototype.forEach.call(host.querySelectorAll('button'), function (x) { x.onclick = function () { state.view = x.getAttribute('data-v'); try { window.localStorage.setItem('di-news-view', state.view); } catch (e) {} render(); }; });
+    })();
     var moreBtn = document.getElementById('nw-more');
     if (moreBtn) moreBtn.onclick = function() { state.limit += PAGE; render(); };
     var resetBtn = document.getElementById('nw-reset');

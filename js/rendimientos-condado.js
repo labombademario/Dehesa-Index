@@ -60,6 +60,7 @@
     var svg = '';
     if (g && rows.length) {
       svg = '<svg viewBox="' + g.vb.join(' ') + '" style="width:100%;height:auto;max-height:560px;display:block" role="img" aria-label="' + esc((ctx.cropName || '') + ' · ' + t[m] + ' · ' + (ST[SEL.state] || SEL.state) + ' · ' + SEL.year) + '">' +
+        '<g aria-hidden="true">' + g.c.map(function (c) { return '<path d="' + c[2] + '" fill="#3f4a43" stroke="#3f4a43" stroke-width="1.1" stroke-linejoin="round"></path>'; }).join('') + '</g>' +
         g.c.map(function (c) { var r = byF[c[0]]; return '<path data-f="' + c[0] + '" d="' + c[2] + '" fill="' + (r ? SEQ[cls(r.v)] : NONE) + '" stroke="#fff" stroke-width="0.5" stroke-linejoin="round"></path>'; }).join('') + '</svg>';
     }
     var lg = rows.length >= 5 ? SEQ.map(function (c, i) { return '<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:' + c + ';display:inline-block;border:1px solid rgba(0,0,0,.15)"></span>' + esc(i === 0 ? '< ' + fmt(doc, m, cuts[0]) : i === 4 ? '≥ ' + fmt(doc, m, cuts[3]) : fmt(doc, m, cuts[i - 1]) + '–' + fmt(doc, m, cuts[i])) + '</span>'; }).join('') : '';

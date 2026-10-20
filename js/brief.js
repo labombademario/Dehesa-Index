@@ -137,7 +137,7 @@
     var hd = document.getElementById('br-h1'), sb = document.getElementById('br-sub'); if (hd) hd.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     var h = '';
     if (window.DIWatch && IDX) h += sec('watch', '🔔 ' + t.my, mine(t));
-    if (!B) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(t.nobrief) + '</p>'; bind(root); return; }
+    if (!B) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(t.nobrief) + '</p>'; toc(root); bind(root); return; }
     h = zoneSec(t) + h;
     var c = B.counts;
     h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:0 0 18px">' + card(c.datasetsUpdated, t.cDs) + card(c.newPeriods, t.cNew) + card(c.revisions, t.cRev) + card(c.stale, t.cStale) + card(c.upcoming, t.cUp) + (c.newDatasets ? card(c.newDatasets, t.cNewDs) : '') + '</div>';
@@ -153,7 +153,14 @@
     h += sec('up', t.up, list('up', B.upcoming || [], function (u) { return '<div style="display:flex;gap:10px;border-top:1px solid var(--border);padding:6px 0"><span style="min-width:120px;color:var(--text-faint);font-size:12.5px">' + esc(when(u.nextRun)) + '</span><span>' + esc(u.name) + '</span></div>'; }, 10));
     if (B.newDatasets && B.newDatasets.length) h += sec('nds', t.newDs, list('nds', B.newDatasets, function (d) { return '<div style="border-top:1px solid var(--border);padding:6px 0">' + esc(dn(d.name)) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(d.file.replace('data/', '')) + ' · ' + d.series + ' ' + esc(t.changed.split(' ')[0]) + '</span></div>'; }, 6));
     h += '<p class="di-movers-hint">' + esc(t.gen) + ': ' + esc(when(B.generatedAt)) + ' · ' + esc(t.win) + ': ' + B.windowHours + ' ' + esc(t.hrs) + '. ' + esc(t.note) + '</p>';
-    root.innerHTML = h; bind(root);
+    root.innerHTML = h; toc(root); bind(root);
+  }
+  function toc(root) {
+    var secs = root.querySelectorAll('section[id]'), items = [];
+    Array.prototype.forEach.call(secs, function (e) { var h = e.querySelector('h2'); if (h) items.push('<a href="#' + e.id + '" style="flex:0 0 auto;white-space:nowrap;padding:6px 12px;border:1px solid var(--border);border-radius:999px;font-size:13px;text-decoration:none;color:inherit;background:var(--surface,#fff)">' + esc(h.textContent) + '</a>'); });
+    if (items.length < 3) return;
+    var tl = ({ es: 'Contenido de la página', en: 'On this page', fr: 'Sur cette page', it: 'In questa pagina' })[lang()] || 'On this page';
+    root.insertAdjacentHTML('afterbegin', '<nav aria-label="' + esc(tl) + '" style="display:flex;gap:8px;overflow-x:auto;margin:0 0 16px;padding:2px 0 6px;-webkit-overflow-scrolling:touch">' + items.join('') + '</nav>');
   }
   function bind(root) {
     var W = window.DIWatch, t = tt();

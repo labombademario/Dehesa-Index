@@ -131,7 +131,20 @@
       h += '<a class="di-card" href="paises.html?c=' + cc + '" style="display:block;padding:14px 16px;text-decoration:none;color:inherit"><div style="display:flex;align-items:center;gap:10px"><span style="font-size:28px" aria-hidden="true">' + window.DIProfile.flag(cc) + '</span><b style="font-size:15px;flex:1">' + esc(l.countries[cc]) + '</b>' + covChip(c) + '</div><div style="font-size:12.5px;color:var(--text-muted);margin-top:8px">' + s.n + ' ' + t.series + ' · ' + s.nc + ' ' + t.cats + '<br>' + t.upto + ': ' + esc(pl(s.mx)) + '</div><div style="font-size:12px;font-weight:700;color:#2f6b4a;margin-top:8px">' + t.open + ' →</div></a>';
     });
     h += '</div><h2 id="comparar" style="margin:0 0 8px;font-size:18px">' + t.compare + '</h2>';
-    var opts = function (sel) { return ORDER.filter(function (cc) { return D.countries[cc]; }).map(function (cc) { return '<option value="' + cc + '"' + (cc === sel ? ' selected' : '') + '>' + window.DIProfile.flag(cc) + ' ' + esc(l.countries[cc]) + '</option>'; }).join(''); };
+    var GRP = [
+      [{ es: 'Zona euro', en: 'Euro area', fr: 'Zone euro', it: 'Area euro' }, ['ES', 'FR', 'DE', 'IT', 'PT', 'BE', 'NL', 'AT', 'IE', 'FI', 'EL', 'SK', 'SI', 'LT', 'LV', 'EE', 'HR', 'BG']],
+      [{ es: 'Europa, fuera del euro', en: 'Europe, outside the euro', fr: 'Europe, hors zone euro', it: 'Europa, fuori dall’euro' }, ['UK', 'CH', 'DK', 'SE', 'PL', 'CZ', 'HU', 'RO']],
+      [{ es: 'América', en: 'Americas', fr: 'Amériques', it: 'Americhe' }, ['US', 'CA', 'AR', 'CL']],
+      [{ es: 'Otros', en: 'Other', fr: 'Autres', it: 'Altri' }, ['AU', 'EU']]];
+    var opt1 = function (cc, sel) { return '<option value="' + cc + '"' + (cc === sel ? ' selected' : '') + '>' + window.DIProfile.flag(cc) + ' ' + esc(l.countries[cc]) + '</option>'; };
+    var opts = function (sel) {
+      var seen = {}, out = GRP.map(function (g) {
+        var in_ = g[1].filter(function (cc) { seen[cc] = 1; return D.countries[cc]; }); if (!in_.length) return '';
+        return '<optgroup label="' + esc(g[0][lang()] || g[0].es) + '">' + in_.map(function (cc) { return opt1(cc, sel); }).join('') + '</optgroup>';
+      }).join('');
+      var rest = ORDER.filter(function (cc) { return !seen[cc] && D.countries[cc]; }); if (rest.length) out += '<optgroup label="' + esc(({ es: 'Otros', en: 'Other', fr: 'Autres', it: 'Altri' })[lang()] || 'Otros') + '">' + rest.map(function (cc) { return opt1(cc, sel); }).join('') + '</optgroup>';
+      return out;
+    };
     h += '<div style="display:flex;gap:12px;flex-wrap:wrap"><label style="font-size:13px;flex:1;min-width:160px">' + t.a + '<br><select id="pf-a" class="di-compare-select">' + opts(ST.a) + '</select></label><label style="font-size:13px;flex:1;min-width:160px">' + t.b + '<br><select id="pf-b" class="di-compare-select">' + opts(ST.b) + '</select></label></div><div id="pf-cmp"></div>';
     root.innerHTML = h; lazyCompare();
     Array.prototype.forEach.call(root.querySelectorAll('[data-unwatch]'), function (b) { b.onclick = function () { var a = b.getAttribute('data-unwatch').split('|'); DIWatch.remove(a[0], a[1]); build(); }; });

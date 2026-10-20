@@ -17,5 +17,6 @@
  "costes-pais.html": "Ficha con parametro ?c=: se llega desde costes.html, insumos.html, recan.html y calculadora.html.",
  "region.html": "Ficha con parametro: se llega desde paises.html.",
  "lonjas.html": "Se llega desde empresas.html y europa.html.",
- "precios-locales.html": "Se llega desde brief.html y producto.html."
+ "precios-locales.html": "Se llega desde brief.html y producto.html.",
+ "semana.html": "Se quitó del menú Países para no duplicar el resumen semanal de Noticias; se enlaza desde el bloque «Resumen semanal» del blog (blog-weekly.js)."
 }

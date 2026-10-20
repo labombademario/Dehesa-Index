@@ -37,6 +37,8 @@
       cafe: L('Café', 'Coffee', 'Café', 'Caffè'), algodon: L('Algodón', 'Cotton', 'Coton', 'Cotone'), mantequilla: L('Mantequilla', 'Butter', 'Beurre', 'Burro'), queso: L('Queso', 'Cheese', 'Fromage', 'Formaggio')
     },
     leader: L('Líder mundial', 'World leader', 'Leader mondial', 'Leader mondiale'), share: L('del total mundial', 'of the world total', 'du total mondial', 'del totale mondiale'),
+    leaderEu: L('Líder en Europa', 'European leader', 'Leader européen', 'Leader europeo'), shareEu: L('del total europeo', 'of the European total', 'du total européen', 'del totale europeo'),
+    worldEu: L('Total de los países europeos publicados', 'Total of the European countries published', 'Total des pays européens publiés', 'Totale dei paesi europei pubblicati'),
     fcst: L('previsión USDA', 'USDA forecast', 'prévision USDA', 'previsione USDA'),
     world: L('Total de los países publicados', 'Total of the countries published', 'Total des pays publiés', 'Totale dei paesi pubblicati'), my: L('Campaña', 'Marketing year', 'Campagne', 'Campagna'),
     top10: L('🏆 Los 10 mayores productores', '🏆 The 10 largest producers', '🏆 Les 10 plus grands producteurs', '🏆 I 10 maggiori produttori'), vs: L('vs campaña anterior', 'vs previous year', 'vs campagne précédente', 'vs campagna precedente'),
@@ -87,6 +89,15 @@
     rows.sort(function (x, y) { return y.v - x.v; }); rows.forEach(function (r, i) { r.rank = i + 1; r.share = tot ? 100 * r.v / tot : null; });
     return STATS[id] = { id: id, unit: c.unit, last: last, fc: +last >= +c.latestMarketYear,  rows: rows, tot: tot, by: rows.reduce(function (m, r) { m[r.k] = r; return m; }, {}) };
   }
+  /* Vista Europa: solo países europeos (la UE cuenta como un bloque, como publica el USDA), con su propio ranking y cuota. */
+  var EUROPE = ['EU', 'UK', 'UA', 'RU', 'RS', 'BY', 'MD', 'AL', 'BA', 'MK', 'ME', 'NO', 'CH', 'XK', 'IS'];
+  function vstats(id) {
+    var st = stats(id); if (!st || SEL.v !== 'eu') return st;
+    var key = id + '|eu'; if (STATS[key]) return STATS[key];
+    var rows = st.rows.filter(function (r) { return EUROPE.indexOf(r.k) >= 0; }).map(function (r) { return { k: r.k, v: r.v, pv: r.pv, name: r.name }; }), tot = 0;
+    rows.forEach(function (r) { tot += r.v; }); rows.forEach(function (r, i) { r.rank = i + 1; r.share = tot ? 100 * r.v / tot : null; });
+    return STATS[key] = { id: st.id, unit: st.unit, last: st.last, fc: st.fc, rows: rows, tot: tot, by: rows.reduce(function (m, r) { m[r.k] = r; return m; }, {}) };
+  }
   function iso(k) { return k === 'UK' ? 'GB' : k; }
   function flag(k) { var c = iso(k); return /^[A-Z]{2}$/.test(c) ? String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1)) + ' ' : '🏳️ '; }
   function cname(k, fb) {
@@ -100,7 +111,7 @@
   function pname(id) { return tx(T.p[id]); }
 
   function classify() {
-    var st = stats(SEL.p), arr = st.rows.map(function (r) { return r.v; }).sort(function (a, b) { return a - b; });
+    var st = vstats(SEL.p), arr = st.rows.map(function (r) { return r.v; }).sort(function (a, b) { return a - b; });
     CUTS = [0.4, 0.65, 0.85, 0.95].map(function (q) { return arr.length ? arr[Math.min(arr.length - 1, Math.floor(q * arr.length))] : 0; });
   }
   function colorOf(v) { var k = 0; while (k < CUTS.length && v >= CUTS[k]) k++; return SEQ[k]; }
@@ -110,7 +121,7 @@
     if (MAP) { try { MAP.destroy(); } catch (e) { /* ya destruido */ } MAP = null; }
     host.innerHTML = '';
     if (typeof global.jsVectorMap !== 'function') { host.innerHTML = '<p class="di-movers-hint">' + esc(tx(T.fail)) + '</p>'; return; }
-    var st = stats(SEL.p);
+    var st = vstats(SEL.p);
     function key(code) { return EU27.indexOf(code) >= 0 && st.by.EU ? 'EU' : (code === 'GB' ? 'UK' : code); }
     try {
       MAP = new global.jsVectorMap({
@@ -129,7 +140,7 @@
   }
   function paint() {
     if (!MAP || !MAP.regions) return;
-    var st = stats(SEL.p);
+    var st = vstats(SEL.p);
     Object.keys(MAP.regions).forEach(function (code) {
       var k = EU27.indexOf(code) >= 0 && st.by.EU ? 'EU' : (code === 'GB' ? 'UK' : code), r = st.by[k], el = MAP.regions[code] && MAP.regions[code].element; if (!el) return;
       var sel = k === SEL.c;
@@ -147,15 +158,15 @@
     }).join('');
   }
   function leaderPanel() {
-    var st = stats(SEL.p), ld = st.rows[0]; if (!ld) return '';
+    var st = vstats(SEL.p), ld = st.rows[0]; if (!ld) return '';
     var top = st.rows.slice(0, 10), max = top[0].v;
     var list = '<ol class="pm-top">' + top.map(function (r) {
       return '<li class="' + (r.k === SEL.c ? 'pm-on' : '') + '"><button type="button" class="cp-lk" data-cc="' + r.k + '">' + medal(r.rank) + ' ' + esc(flag(r.k) + cname(r.k, r.name)) + '</button><span class="pm-bar"><i style="width:' + (100 * r.v / max).toFixed(1) + '%"></i></span><b>' + esc(mt(r.v)) + '</b><span class="cp-m">' + nf(r.share, 1) + ' %</span>' + chg(pc(r.v, r.pv)) + '</li>';
     }).join('') + '</ol>';
     var unit = /CWE/.test(st.unit) ? ' · ' + tx(T.unitCarcass) : '';
     return '<div class="pm-hd"><span class="pm-emo" aria-hidden="true">' + EMO[SEL.p] + '</span> ' + esc(pname(SEL.p)) + '<span class="cp-m"> · ' + esc(tx(T.my)) + ' ' + esc(myLabel(SEL.p, st.last)) + esc(st.fc ? ' · ' + tx(T.fcst) : '') + esc(unit) + '</span></div>' +
-      '<div class="pm-lead"><div class="cp-tl">' + esc(tx(T.leader)) + '</div><div class="pm-lv">🥇 ' + esc(flag(ld.k) + cname(ld.k, ld.name)) + '</div><div class="cp-ts"><b>' + nf(ld.share, 1) + ' %</b> ' + esc(tx(T.share)) + ' · ' + esc(mt(ld.v)) + ' ' + chg(pc(ld.v, ld.pv)) + ' <span class="cp-m">' + esc(tx(T.vs)) + '</span></div></div>' +
-      '<div class="cp-pk">' + esc(tx(T.world)) + ': <b>' + esc(mt(st.tot)) + '</b></div><h3 class="cp-h3">' + esc(tx(T.top10)) + '</h3>' + list;
+      '<div class="pm-lead"><div class="cp-tl">' + esc(tx(SEL.v === 'eu' ? T.leaderEu : T.leader)) + '</div><div class="pm-lv">🥇 ' + esc(flag(ld.k) + cname(ld.k, ld.name)) + '</div><div class="cp-ts"><b>' + nf(ld.share, 1) + ' %</b> ' + esc(tx(SEL.v === 'eu' ? T.shareEu : T.share)) + ' · ' + esc(mt(ld.v)) + ' ' + chg(pc(ld.v, ld.pv)) + ' <span class="cp-m">' + esc(tx(T.vs)) + '</span></div></div>' +
+      '<div class="cp-pk">' + esc(tx(SEL.v === 'eu' ? T.worldEu : T.world)) + ': <b>' + esc(mt(st.tot)) + '</b></div><h3 class="cp-h3">' + esc(tx(T.top10)) + '</h3>' + list;
   }
   function leadersTable() {
     var rows = '';
