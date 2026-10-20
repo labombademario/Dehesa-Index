@@ -1,14 +1,14 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-20T06:05:40Z",
+ "generatedAt": "2026-10-20T15:29:22Z",
  "summary": {
-  "sources": 143,
-  "sourcesApto": 130,
+  "sources": 144,
+  "sourcesApto": 131,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 299,
-  "datasets_apto": 172,
-  "datasets_condiciones": 117,
+  "datasets": 304,
+  "datasets_apto": 176,
+  "datasets_condiciones": 118,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -361,6 +361,10 @@
   },
   "miteco_embalses": {
    "name": "MITECO — Boletín Hidrológico (BD-Embalses)",
+   "verdict": "apto"
+  },
+  "miteco_estadistica_forestal": {
+   "name": "MITECO — Estadística Forestal (otros aprovechamientos: corcho)",
    "verdict": "apto"
   },
   "miteco_inventario_gei": {

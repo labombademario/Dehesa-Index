@@ -1,18 +1,18 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-20T06:05:40Z",
+ "generatedAt": "2026-10-20T15:29:22Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 143,
-  "sourcesApto": 130,
+  "sources": 144,
+  "sourcesApto": 131,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 299,
-  "datasets_apto": 172,
-  "datasets_condiciones": 117,
+  "datasets": 304,
+  "datasets_apto": 176,
+  "datasets_condiciones": 118,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -1503,6 +1503,23 @@
    "redistribution": "yes",
    "attribution": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), Boletín Hidrológico",
    "conditions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha de actualización. Datos provisionales sin validar."
+  },
+  {
+   "id": "miteco_estadistica_forestal",
+   "name": "MITECO — Estadística Forestal (otros aprovechamientos: corcho)",
+   "url": "https://www.miteco.gob.es/es/biodiversidad/estadisticas/forestal_anual_otros_aprovechamientos.html",
+   "country": "ES",
+   "licenseId": "ES-LEY-37-2007",
+   "licenseName": "MITECO legal notice (free reuse with attribution, Spanish Law 37/2007)",
+   "licenseUrl": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO), Estadística Anual de Otros Aprovechamientos Forestales y Anuario de Estadística Forestal",
+   "conditions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización. Las cifras las aportan las comunidades autónomas; Andalucía estima el monte privado."
   },
   {
    "id": "miteco_inventario_gei",
@@ -3131,6 +3148,16 @@
    ]
   },
   {
+   "path": "data/dehesa.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat",
+    "mapa_es",
+    "miteco_estadistica_forestal"
+   ]
+  },
+  {
    "path": "data/denmark-depth.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -3252,6 +3279,22 @@
    "verdict": "apto",
    "sources": [
     "nasa_power"
+   ]
+  },
+  {
+   "path": "data/es-cork-manual.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_estadistica_forestal"
+   ]
+  },
+  {
+   "path": "data/es-cork.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "miteco_estadistica_forestal"
    ]
   },
   {
@@ -6184,6 +6227,29 @@
     {
      "scope": "pais:US",
      "sourceId": "usda_ams_fmmo",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-fsa-rates-manual.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fsa"
+   ]
+  },
+  {
+   "path": "data/us-fsa-rates-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_fsa"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_fsa",
      "verdict": "apto"
     }
    ]
