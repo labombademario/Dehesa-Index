@@ -1,0 +1,18 @@
+name: probe-jcyl
+on:
+  push:
+    branches: [research/probe-jcyl]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/probe/probe-jcyl.sh
+      - if: always()
+        run: |
+          git config user.name "dehesa-probe"; git config user.email "probe@users.noreply.github.com"
+          git add -f probe-jcyl-out; git commit -m "probe-jcyl: resultados" || true
+          for i in 1 2 3; do git fetch origin research/probe-jcyl && git rebase origin/research/probe-jcyl && git push origin HEAD:research/probe-jcyl && break; sleep 5; done
