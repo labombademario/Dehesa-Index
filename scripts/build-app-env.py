@@ -411,6 +411,23 @@ def land(cc):
         L('Solo lo que Eurostat publica para cada territorio; los precios son de transacciones y pueden no existir para todas las regiones. La SAU es la superficie agraria utilizada.' + (' Eurostat publica la misma cifra para tierra de cultivo y pasto permanente.' if same_price else ''), 'Only what Eurostat publishes for each territory; prices are transaction prices and may not exist for every region. UAA is the utilised agricultural area.' + (' Eurostat publishes the same figure for arable land and permanent grassland.' if same_price else ''), 'Uniquement ce qu’Eurostat publie pour chaque territoire ; les prix sont des prix de transaction et peuvent manquer pour certaines régions. La SAU est la surface agricole utilisée.' + (' Eurostat publie le même chiffre pour les terres arables et les prairies permanentes.' if same_price else ''), 'Solo ciò che Eurostat pubblica per ogni territorio; i prezzi sono di transazione e possono mancare per alcune regioni. La SAU è la superficie agricola utilizzata.' + (' Eurostat pubblica la stessa cifra per seminativi e prati permanenti.' if same_price else '')),
         {'name': 'Eurostat (apri_lprc, ef_mp_irri)', 'url': 'https://ec.europa.eu/eurostat/databrowser/view/apri_lprc/default/table'})
 
+
+# Gasóleo de los 16 Estados miembros sin paquete propio: Boletín Petrolero de la Comisión (data/diesel-eu-more.json), gasóleo de automoción con y sin impuestos
+MORE = ['EL', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'HU', 'LT', 'LU', 'LV', 'MT', 'RO', 'SE', 'SI', 'SK']
+def diesel_more(cc):
+    d = J('diesel-eu-more'); w = d and d['countries'].get(cc)
+    if not w: return None
+    x = w[-1]; y = next((q for q in reversed(w) if q[0] <= str(int(x[0][:4]) - 1) + x[0][4:]), None)
+    cut = str(int(x[0][:4]) - 10)
+    pts = [q for q in w if q[0] >= cut]
+    return block('diesel', L('Gasóleo (surtidor)', 'Diesel (pump price)', 'Gazole (prix à la pompe)', 'Gasolio (alla pompa)'), x[0],
+        [stat(L('Gasóleo en surtidor, semana del {d}', 'Pump diesel, week of {d}', 'Gazole à la pompe, semaine du {d}', 'Gasolio alla pompa, settimana del {d}'), x[1], EUR_L, 3, sub={'d': x[0]}),
+         stat(L('Sin impuestos', 'Before taxes', 'Hors taxes', 'Senza tasse'), x[2], EUR_L, 3),
+         stat(L('Hace un año', 'A year ago', 'Il y a un an', 'Un anno fa'), y[1] if y else None, EUR_L, 3)],
+        [chart(WB, EUR_L, [(WT, [[q[0], q[1]] for q in pts]), (WN, [[q[0], q[2]] for q in pts])])], [],
+        L('Gasóleo de automoción (no el agrícola), precio medio que comunica cada Estado miembro a la Comisión. Las comparaciones entre países tienen validez limitada por diferencias de calidad y de mercado. Este país no tiene todavía en Dehesa Index el resto del paquete (emisiones, sequía, nitratos).', 'Road diesel (not farm diesel), average price each member state reports to the Commission. Comparisons between countries have limited validity because of differences in quality and market. This country does not yet have the rest of the package (emissions, drought, nitrates) in Dehesa Index.', 'Gazole routier (pas agricole), prix moyen que chaque État membre communique à la Commission. Les comparaisons entre pays ont une validité limitée. Ce pays n’a pas encore le reste du paquet (émissions, sécheresse, nitrates) dans Dehesa Index.', 'Gasolio per autotrazione (non agricolo), prezzo medio comunicato da ogni Stato membro alla Commissione. I confronti tra paesi hanno validità limitata. Questo paese non ha ancora il resto del pacchetto (emissioni, siccità, nitrati) in Dehesa Index.'),
+        {'name': 'European Commission, Weekly Oil Bulletin', 'url': 'https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en'})
+
 def missing(id_, title):
     return {'id': id_, 'title': title, 'missing': True, 'note': L('No hay datos abiertos de este tema para este país en Dehesa Index.', 'Dehesa Index has no open data on this topic for this country.', 'Dehesa Index n’a pas de données ouvertes sur ce sujet pour ce pays.', 'Dehesa Index non ha dati aperti su questo tema per questo paese.')}
 
@@ -441,13 +458,18 @@ def main():
         (OUT / (cc + '.json')).write_text(body, encoding='utf-8')
         idx[cc] = {'hash': hashlib.sha1(json.dumps(blocks, sort_keys=True).encode()).hexdigest()[:12], 'blocks': [b['id'] for b in blocks if not b.get('missing')]}
         print(cc, len(body) // 1024, 'KB', [b['id'] + ('-' if b.get('missing') else '') for b in blocks])
-    # Grecia no tiene el paquete de 4 bloques, pero sí tierra y regadío
-    for cc in ('EL',):
-        lb = land(cc)
-        if lb:
-            doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'country': cc, 'blocks': [lb]}
+    # Los 16 países sin paquete de 4 bloques: gasóleo del Boletín Petrolero (todos) y tierra y regadío (los que lo tienen)
+    for cc in MORE:
+        bl = []
+        for fn in (lambda: diesel_more(cc), lambda: land(cc)):
+            try:
+                b = fn()
+                if b: bl.append(b)
+            except Exception as e: print('AVISO', cc, repr(e))
+        if bl:
+            doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'country': cc, 'blocks': bl}
             body = json.dumps(doc, ensure_ascii=False, separators=(',', ':')); (OUT / (cc + '.json')).write_text(body, encoding='utf-8')
-            idx[cc] = {'hash': hashlib.sha1(json.dumps([lb], sort_keys=True).encode()).hexdigest()[:12], 'blocks': ['land']}; print(cc, len(body) // 1024, 'KB', ['land'])
+            idx[cc] = {'hash': hashlib.sha1(json.dumps(bl, sort_keys=True).encode()).hexdigest()[:12], 'blocks': [b['id'] for b in bl]}; print(cc, len(body) // 1024, 'KB', [b['id'] for b in bl])
     # Unión Europea: solo los bloques que tienen datos agregados de la UE (economía agraria, aranceles, sequía)
     blocks = [b for b in (eu_economy(), eu_tariffs(), eu_drought()) if b]
     if blocks:
