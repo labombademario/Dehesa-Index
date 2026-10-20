@@ -47,7 +47,6 @@
       no_es1: 'Precios de lonjas provinciales independientes: no los incorporamos. Sí mostramos, cuando existen, los mercados identificados por provincia que publica la Comisión Europea (arriba); el resto de precios que seguimos son nacionales, europeos o mundiales.',
       no_es2: 'Seguro agrario (Agroseguro): solo cifras nacionales y pendientes de contraste; no por provincia.',
       no_es3: 'Sequía y clima por provincia: solo las páginas generales de clima y sequía; no una vista por provincia.',
-      no_es4: 'Ganadería por provincia: no hay datos de censos ni de producción ganadera por provincia en esta página.',
       no_es5: 'Campaña 2025: solo los grupos que el MAPA ya ha publicado (hortalizas, cítricos, frutales, olivar, viñedo y otros leñosos); el resto está en la campaña 2024.',
       mPrice: 'Precios locales detallados', mIns: 'Seguro agrario (EE. UU.)', mDrought: 'Sequía por estado', mCrops: 'Cultivos de España por provincia', mClima: 'Clima', mPrices: 'Precios de referencia', mCosts: 'Costes e insumos'
     },
@@ -86,7 +85,6 @@
       no_es1: 'Prices from independent provincial auction halls: not included. Where they exist we do show the province-level markets the European Commission publishes (above); the other prices we follow are national, European or world.',
       no_es2: 'Crop insurance (Agroseguro): national figures only, still pending verification; not by province.',
       no_es3: 'Drought and weather by province: only the general weather and drought pages; no per-province view.',
-      no_es4: 'Livestock by province: no census or livestock production data by province on this page.',
       no_es5: 'Campaign 2025: only the groups MAPA has already published (vegetables, citrus, fruit trees, olive groves, vineyards and other woody crops); the rest is campaign 2024.',
       mPrice: 'Detailed local prices', mIns: 'Crop insurance (US)', mDrought: 'Drought by state', mCrops: 'Spain crops by province', mClima: 'Weather', mPrices: 'Reference prices', mCosts: 'Costs and inputs'
     },
@@ -125,7 +123,6 @@
       no_es1: 'Prix de lonjas provinciales indépendantes : non inclus. Quand ils existent, nous montrons les marchés par province publiés par la Commission européenne (ci-dessus) ; les autres prix suivis sont nationaux, européens ou mondiaux.',
       no_es2: 'Assurance agricole (Agroseguro) : chiffres nationaux seulement, encore à vérifier ; pas par province.',
       no_es3: 'Sécheresse et météo par province : seulement les pages générales météo et sécheresse ; pas de vue par province.',
-      no_es4: 'Élevage par province : pas de recensement ni de production animale par province sur cette page.',
       no_es5: 'Campagne 2025 : seulement les groupes déjà publiés par le MAPA (légumes, agrumes, arbres fruitiers, oliveraies, vignobles et autres ligneux) ; le reste est en campagne 2024.',
       mPrice: 'Prix locaux détaillés', mIns: 'Assurance récolte (É.-U.)', mDrought: 'Sécheresse par État', mCrops: 'Cultures d\'Espagne par province', mClima: 'Météo', mPrices: 'Prix de référence', mCosts: 'Coûts et intrants'
     },
@@ -164,7 +161,6 @@
       no_es1: 'Prezzi delle borse merci provinciali indipendenti: non inclusi. Dove esistono mostriamo i mercati per provincia pubblicati dalla Commissione europea (sopra); gli altri prezzi che seguiamo sono nazionali, europei o mondiali.',
       no_es2: 'Assicurazione agraria (Agroseguro): solo cifre nazionali, ancora da verificare; non per provincia.',
       no_es3: 'Siccità e meteo per provincia: solo le pagine generali su meteo e siccità; nessuna vista per provincia.',
-      no_es4: 'Zootecnia per provincia: nessun censimento né produzione zootecnica per provincia in questa pagina.',
       no_es5: 'Campagna 2025: solo i gruppi già pubblicati dal MAPA (ortaggi, agrumi, frutta da albero, oliveti, vigneti e altre legnose); il resto è nella campagna 2024.',
       mPrice: 'Prezzi locali dettagliati', mIns: 'Assicurazione dei raccolti (USA)', mDrought: 'Siccità per Stato', mCrops: 'Colture della Spagna per provincia', mClima: 'Meteo', mPrices: 'Prezzi di riferimento', mCosts: 'Costi e input'
     }
@@ -647,6 +643,32 @@
   }
 
 
+  /* ---------- España: ganadería en tu provincia (MAPA, censos de ganado de mayo y noviembre) ---------- */
+  var TLV = {
+    es: { s: 'Ganadería en tu provincia', sp: ['Vacuno', 'Ovino', 'Caprino', 'Porcino'], species: 'Ganado', heads: 'Cabezas', yoy: 'Frente al censo del año anterior', share: 'Peso en España', census: 'Censo', no: 'El MAPA no publica cifras de ganado para esta provincia.', note: 'Censos de ganado del MAPA (cabezas, total de animales). Ovino y caprino se censan en noviembre; vacuno y porcino, en mayo y noviembre: se muestra el último censo de cada especie. Los últimos censos pueden ser provisionales. No es producción ni precios.' },
+    en: { s: 'Livestock in your province', sp: ['Cattle', 'Sheep', 'Goats', 'Pigs'], species: 'Livestock', heads: 'Head', yoy: 'Vs. census a year earlier', share: 'Share of Spain', census: 'Census', no: 'MAPA does not publish livestock figures for this province.', note: 'MAPA livestock censuses (head, all animals). Sheep and goats are counted in November; cattle and pigs in May and November: the latest census of each species is shown. The latest censuses may be provisional. This is neither output nor prices.' },
+    fr: { s: 'Élevage dans votre province', sp: ['Bovins', 'Ovins', 'Caprins', 'Porcins'], species: 'Cheptel', heads: 'Têtes', yoy: 'Par rapport au recensement un an plus tôt', share: 'Part de l’Espagne', census: 'Recensement', no: 'Le MAPA ne publie pas de chiffres d’élevage pour cette province.', note: 'Recensements du cheptel du MAPA (têtes, total des animaux). Ovins et caprins sont recensés en novembre ; bovins et porcins en mai et novembre : on montre le dernier recensement de chaque espèce. Les derniers recensements peuvent être provisoires. Ce n’est ni la production ni les prix.' },
+    it: { s: 'Zootecnia nella tua provincia', sp: ['Bovini', 'Ovini', 'Caprini', 'Suini'], species: 'Bestiame', heads: 'Capi', yoy: 'Rispetto al censimento di un anno prima', share: 'Peso sulla Spagna', census: 'Censimento', no: 'Il MAPA non pubblica dati zootecnici per questa provincia.', note: 'Censimenti del bestiame del MAPA (capi, totale degli animali). Ovini e caprini sono censiti a novembre; bovini e suini a maggio e novembre: si mostra l’ultimo censimento di ogni specie. Gli ultimi censimenti possono essere provvisori. Non è produzione né prezzi.' }
+  };
+  function spainLive(tok) {
+    var t = TLV[lang()] || TLV.es, sp = ['bovino', 'ovino', 'caprino', 'porcino'];
+    return Promise.all(sp.map(function (k) { return get('data/spain-livestock/livestock-' + k + '.json').catch(function () { return null; }); })).then(function (fs) {
+      if (tok !== TOK) return;
+      var rows = '', per = '';
+      fs.forEach(function (f, i) {
+        var a = f && f.v && f.v[ST.r] && f.v[ST.r]['01']; if (!a) return;
+        var j = a.length - 1; while (j >= 0 && a[j] == null) j--; if (j < 0) return;
+        var P = f.periods[j], prev = String(+P.slice(0, 4) - 1) + P.slice(4), jp = f.periods.indexOf(prev);
+        var v0 = jp >= 0 ? a[jp] : null, es = f.v.ES && f.v.ES['01'] && f.v.ES['01'][j];
+        var ch = v0 != null && v0 > 0 ? (a[j] / v0 - 1) * 100 : null;
+        per = per > P ? per : P;
+        rows += '<tr><td>' + esc(t.sp[i]) + '</td><td class="r">' + nf(a[j], 0) + '</td><td>' + esc(P) + '</td><td class="r">' + (ch == null ? '—' : (ch > 0 ? '+' : '') + nf(ch, 1) + ' %') + '</td><td class="r">' + (es > 0 ? nf(a[j] / es * 100, 1) + ' %' : '—') + '</td></tr>';
+      });
+      if (!rows) { putSec(tok, 'live', note(t.no)); return; }
+      putSec(tok, 'live', '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.species) + '</th><th scope="col" class="r">' + esc(t.heads) + '</th><th scope="col">' + esc(t.census) + '</th><th scope="col" class="r">' + esc(t.yoy) + '</th><th scope="col" class="r">' + esc(t.share) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>' + note(t.note) + cite('mapa_es', per) + citeCalc(['mapa_es'], 'change vs. census a year earlier and share of Spain (MAPA)'));
+    });
+  }
+
   /* ---------- España: precio de mercado en tu provincia (portal agroalimentario de la Comisión Europea) ---------- */
   var TESP = {
     es: { title: 'Precio de mercado en tu provincia', prod: 'Producto', mk: 'Mercado', price: 'Precio', wk: '1 sem.', date: 'Fecha', all: 'Ver todos los mercados',
@@ -878,7 +900,7 @@
     });
   }
   function missingCA() { var c = tc(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [c.no_ca1, c.no_ca2, c.no_ca3, c.no_ca4].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
-  function missingES() { var t = tr(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [t.no_es1, t.no_es2, t.no_es3, t.no_es4, t.no_es5].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
+  function missingES() { var t = tr(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [t.no_es1, t.no_es2, t.no_es3, t.no_es5].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
   /* ---------- EE. UU.: proximos informes USDA y margen de referencia ERS ---------- */
   var TN = {
     es: { sNext: 'Próximos informes de USDA para este producto', nextNone: 'No hay fechas cargadas de los informes de este producto después de hoy (el calendario cargado llega hasta {d}).', nextNote: 'Fechas del calendario oficial de USDA NASS y del WASDE (hora del este de EE. UU.). USDA puede cambiar una fecha.', cal: 'Calendario completo',
@@ -993,7 +1015,7 @@
       h += sect('price', epr().sP + ' · ' + pick4(EU_CROPN, ST.p)) + sect('crop', eut().sCrop) + sect('dr', epr().sDr);
     } else if (ST.c === 'UK') {
       h += sect('crop', te().sCropUK);
-    } else h += sect('price', tesp().title) + sect('crop', t.sCrop);
+    } else h += sect('price', tesp().title) + sect('crop', t.sCrop) + (ST.r ? sect('live', (TLV[lang()] || TLV.es).s) : '');
     if (!COMPACT) h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
     root.innerHTML = h;
     var run = function (id, fn) { Promise.resolve().then(fn).catch(function () { failSec(tok, id); }); };
@@ -1016,7 +1038,7 @@
       run('crop', function () { return ukCrop(tok); });
       if (!COMPACT) run('missing', function () { return missingEU().then(function (x) { putSec(tok, 'missing', x); }); });
     } else {
-      run('price', function () { return spainPrice(tok).then(function (x) { if (x != null) putSec(tok, 'price', x); }); }); run('crop', function () { return spainCrop(tok); });
+      run('price', function () { return spainPrice(tok).then(function (x) { if (x != null) putSec(tok, 'price', x); }); }); run('crop', function () { return spainCrop(tok); }); if (ST.r) run('live', function () { return spainLive(tok); });
       if (!COMPACT) run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
     }
   }
