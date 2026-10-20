@@ -7,7 +7,7 @@
     es: { h: 'Tierra agraria y regadío', m: { irr: '% de superficie regada', ara: 'Precio de la tierra arable', gra: 'Precio del pasto permanente', aib: 'Arable de regadio posible', axb: 'Arable de secano' },
       metric: 'Mostrar', reg: 'Región', nat: 'Total nacional', irrC: 'Superficie regada', of: 'de la superficie agraria útil ({y})', araC: 'Tierra arable', graC: 'Pasto permanente', perHa: '€/ha',
       cmpH: 'Regadío frente a secano (tierra arable)', cmpIr: 'Regadío posible', cmpDry: 'Secano', prem: 'El regadío vale {p} % más', less: 'El regadío figura {p} % por debajo del secano',
-      byReg: 'Por región · {m} · {y}', none: 'Sin dato publicado para esta región.', ha: 'ha regadas',
+      mapHint:'Pasa el ratón o pulsa una zona para ver su cifra.', mapNone:'sin cifra comparable', nAgg:'Donde una zona del mapa une varias regiones de Eurostat, el % regado lo calcula Dehesa Index con las hectáreas publicadas; los precios no se combinan y esa zona queda sin color.', byReg: 'Por región · {m} · {y}', none: 'Sin dato publicado para esta región.', ha: 'ha regadas',
       nIrr: 'Superficie regada en los últimos 12 meses sobre la superficie agraria útil, según la encuesta de estructura de las explotaciones de Eurostat. Año {y}: es el último que Eurostat publica para este país.',
       nPrice: 'Precios medios de venta de la tierra agraria libre de arrendamiento (Eurostat), en euros por hectárea. En cada vista se comparan regiones del mismo año.',
       nDE: 'Alemania no publica precio de la tierra en Eurostat: aquí solo se muestra el regadío.',
@@ -17,7 +17,7 @@
     en: { h: 'Farmland and irrigation', m: { irr: 'Irrigated share of land', ara: 'Arable land price', gra: 'Permanent grassland price', aib: 'Irrigable arable land', axb: 'Non-irrigable arable land' },
       metric: 'Show', reg: 'Region', nat: 'National total', irrC: 'Irrigated area', of: 'of utilised agricultural area ({y})', araC: 'Arable land', graC: 'Permanent grassland', perHa: '€/ha',
       cmpH: 'Irrigable vs non-irrigable (arable land)', cmpIr: 'Irrigable', cmpDry: 'Non-irrigable', prem: 'Irrigable land costs {p} % more', less: 'Irrigable land is listed {p} % below non-irrigable',
-      byReg: 'By region · {m} · {y}', none: 'No published figure for this region.', ha: 'ha irrigated',
+      mapHint:'Hover or tap an area to see its figure.', mapNone:'no comparable figure', nAgg:'Where a map area joins several Eurostat regions, Dehesa Index calculates the irrigated share from the published hectares; prices are not combined and that area stays uncoloured.', byReg: 'By region · {m} · {y}', none: 'No published figure for this region.', ha: 'ha irrigated',
       nIrr: 'Area irrigated in the last 12 months over utilised agricultural area, from Eurostat’s farm structure survey. Year {y}: the latest Eurostat publishes for this country.',
       nPrice: 'Average selling prices of agricultural land free of lease (Eurostat), euro per hectare. Each view compares regions of the same year.',
       nDE: 'Germany does not publish land prices in Eurostat: only irrigation is shown here.',
@@ -27,7 +27,7 @@
     fr: { h: 'Terres agricoles et irrigation', m: { irr: 'Part de surface irriguée', ara: 'Prix des terres arables', gra: 'Prix des prairies permanentes', aib: 'Terres arables irrigables', axb: 'Terres arables non irrigables' },
       metric: 'Afficher', reg: 'Région', nat: 'Total national', irrC: 'Surface irriguée', of: 'de la surface agricole utile ({y})', araC: 'Terres arables', graC: 'Prairies permanentes', perHa: '€/ha',
       cmpH: 'Irrigable et non irrigable (terres arables)', cmpIr: 'Irrigable', cmpDry: 'Non irrigable', prem: 'Le terrain irrigable vaut {p} % de plus', less: 'Le terrain irrigable est {p} % sous le non irrigable',
-      byReg: 'Par région · {m} · {y}', none: 'Pas de chiffre publié pour cette région.', ha: 'ha irrigués',
+      mapHint:'Survolez ou touchez une zone pour voir son chiffre.', mapNone:'pas de chiffre comparable', nAgg:'Quand une zone de la carte regroupe plusieurs régions d’Eurostat, Dehesa Index calcule la part irriguée à partir des hectares publiés ; les prix ne sont pas combinés et cette zone reste sans couleur.', byReg: 'Par région · {m} · {y}', none: 'Pas de chiffre publié pour cette région.', ha: 'ha irrigués',
       nIrr: 'Surface irriguée sur les 12 derniers mois rapportée à la surface agricole utile, d’après l’enquête sur la structure des exploitations d’Eurostat. Année {y} : la dernière publiée par Eurostat pour ce pays.',
       nPrice: 'Prix moyens de vente des terres agricoles libres de bail (Eurostat), en euros par hectare. Chaque vue compare des régions de la même année.',
       nDE: 'L’Allemagne ne publie pas de prix des terres dans Eurostat : seule l’irrigation est affichée ici.',
@@ -37,7 +37,7 @@
     it: { h: 'Terreni agricoli e irrigazione', m: { irr: 'Quota di superficie irrigata', ara: 'Prezzo dei seminativi', gra: 'Prezzo dei prati permanenti', aib: 'Seminativi irrigabili', axb: 'Seminativi non irrigabili' },
       metric: 'Mostra', reg: 'Regione', nat: 'Totale nazionale', irrC: 'Superficie irrigata', of: 'della superficie agricola utilizzata ({y})', araC: 'Seminativi', graC: 'Prati permanenti', perHa: '€/ha',
       cmpH: 'Irrigabile e non irrigabile (seminativi)', cmpIr: 'Irrigabile', cmpDry: 'Non irrigabile', prem: 'Il terreno irrigabile vale il {p} % in più', less: 'Il terreno irrigabile risulta il {p} % sotto il non irrigabile',
-      byReg: 'Per regione · {m} · {y}', none: 'Nessun dato pubblicato per questa regione.', ha: 'ha irrigati',
+      mapHint:'Passa il mouse o tocca una zona per vedere il suo dato.', mapNone:'nessun dato confrontabile', nAgg:'Dove una zona della mappa unisce più regioni di Eurostat, Dehesa Index calcola la quota irrigata dagli ettari pubblicati; i prezzi non vengono combinati e quella zona resta senza colore.', byReg: 'Per regione · {m} · {y}', none: 'Nessun dato pubblicato per questa regione.', ha: 'ha irrigati',
       nIrr: 'Superficie irrigata negli ultimi 12 mesi sulla superficie agricola utilizzata, dall’indagine Eurostat sulla struttura delle aziende. Anno {y}: l’ultimo che Eurostat pubblica per questo paese.',
       nPrice: 'Prezzi medi di vendita dei terreni agricoli liberi da affitto (Eurostat), euro per ettaro. Ogni vista confronta regioni dello stesso anno.',
       nDE: 'La Germania non pubblica prezzi dei terreni su Eurostat: qui si mostra solo l’irrigazione.',
@@ -55,6 +55,44 @@
     return l.filter(function (m, i) { return l.indexOf(m) === i; });
   }
   function card(t, v, s) { return '<div class="cof-card"><div class="cof-ct">' + t + '</div><div class="cof-cv">' + v + '</div>' + (s ? '<div class="cof-cs">' + s + '</div>' : '') + '</div>'; }
+  var MAPS = {
+    FR: ['DEHESA_FR_REGIONS', 'vendor/fr-regions.js', { IDF: ['FR10'], CVL: ['FRB0'], BFC: ['FRC1', 'FRC2'], NOR: ['FRD1', 'FRD2'], HDF: ['FRE1', 'FRE2'], GES: ['FRF1', 'FRF2', 'FRF3'], PDL: ['FRG0'], BRE: ['FRH0'], NAQ: ['FRI1', 'FRI2', 'FRI3'], OCC: ['FRJ1', 'FRJ2'], ARA: ['FRK1', 'FRK2'], PAC: ['FRL0'], COR: ['FRM0'] }],
+    IT: ['DEHESA_IT_REGIONS', 'vendor/it-regions.js', { ABR: ['ITF1'], BAS: ['ITF5'], CAL: ['ITF6'], CAM: ['ITF3'], EMR: ['ITH5'], FVG: ['ITH4'], LAZ: ['ITI4'], LIG: ['ITC3'], LOM: ['ITC4'], MAR: ['ITI3'], MOL: ['ITF2'], PIE: ['ITC1'], PUG: ['ITF4'], SAR: ['ITG2'], SIC: ['ITG1'], TAA: ['ITH1', 'ITH2'], TOS: ['ITI1'], UMB: ['ITI2'], VDA: ['ITC2'], VEN: ['ITH3'] }],
+    DE: ['DEHESA_DE_LAENDER', 'vendor/de-laender.js', { BB: ['DE40'], HH: ['DE60'], MV: ['DE80'], SL: ['DEC0'], SH: ['DEF0'], TH: ['DEG0'], BW: ['DE11', 'DE12', 'DE13', 'DE14'], BY: ['DE21', 'DE22', 'DE23', 'DE24', 'DE25', 'DE26', 'DE27'], HE: ['DE71', 'DE72', 'DE73'], NI: ['DE91', 'DE92', 'DE93', 'DE94'], NW: ['DEA1', 'DEA2', 'DEA3', 'DEA4', 'DEA5'], SN: ['DED2', 'DED4', 'DED5'] }],
+    PT: ['DEHESA_PT_REGIONS', 'vendor/pt-regions.js', { NOR: ['PT11'], ALG: ['PT15'], AZO: ['PT20'], MAD: ['PT30'] }],
+    PL: ['DEHESA_PL_VOIVODESHIPS', 'vendor/pl-voivodeships.js', { DS: ['PL51'], KP: ['PL61'], LB: ['PL43'], LD: ['PL71'], LU: ['PL81'], MA: ['PL21'], MZ: ['PL91', 'PL92'], OP: ['PL52'], PD: ['PL84'], PK: ['PL82'], PM: ['PL63'], SK: ['PL72'], SL: ['PL22'], WN: ['PL62'], WP: ['PL41'], ZP: ['PL42'] }],
+    BE: ['DEHESA_BE_PROVINCES', 'vendor/be-provinces.js', { VAN: ['BE21'], VLI: ['BE22'], VOV: ['BE23'], VBR: ['BE24'], VWV: ['BE25'], WBR: ['BE31'], WHT: ['BE32'], WLG: ['BE33'], WLX: ['BE34'], WNA: ['BE35'] }],
+    HR: ['DEHESA_HR_REGIONS', 'vendor/hr-regions.js', { HR02: ['HR02'], HR03: ['HR03'], HR05: ['HR05'], HR06: ['HR06'] }],
+    EL: ['DEHESA_EL_REGIONS', 'vendor/el-regions.js', { ATT: ['EL30'], CGR: ['EL64'], DMA: ['EL53'], EMT: ['EL51'], ION: ['EL62'], IPE: ['EL54'], KMA: ['EL52'], KRI: ['EL43'], NAE: ['EL41'], PEL: ['EL65'], SAE: ['EL42'], THS: ['EL61'], WGR: ['EL63'] }]
+  };
+  /* valor de cada zona del mapa para la vista actual; null = sin cifra comparable. agg = alguna zona une varias regiones de Eurostat */
+  function mapValues(cc, E) {
+    var U2 = MAPS[cc][2], vals = {}, agg = false, nat = E.irrigation.regions[cc], id;
+    var yy = ST.m === 'irr' ? (nat ? nat.year : 0) : yearOf(E, PM[ST.m]);
+    for (id in U2) if (U2.hasOwnProperty(id)) {
+      var ks = U2[id], v = null;
+      if (ST.m === 'irr') {
+        var ir = 0, ar = 0, ok = true; ks.forEach(function (k) { var x = E.irrigation.regions[k]; if (!x || x.year !== yy || !x.share) { ok = false; return; } ir += x.irrigated; ar += x.irrigated * 100 / x.share; });
+        if (ok && ar) { v = ir * 100 / ar; if (ks.length > 1) agg = true; }
+      } else if (ks.length === 1) v = val(E, PM[ST.m], ks[0], yy);
+      vals[id] = v;
+    }
+    return { values: vals, year: yy, agg: agg };
+  }
+  function loadJs(src) { return new Promise(function (ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = function () { ok(true); }; sc.onerror = function () { ok(false); }; document.head.appendChild(sc); }); }
+  function drawMap(el, cc, E, lg, t) {
+    var host = el.querySelector('[data-cof-map]'), spec = MAPS[cc]; if (!host || !spec) return Promise.resolve();
+    var ready = global.DIFrDeptMap ? Promise.resolve(true) : loadJs('js/fr-dept-map.js?v=20261015');
+    return ready.then(function () { return global.DIFrDeptMap ? global.DIFrDeptMap.load(spec[0], spec[1]) : null; }).then(function (MP) {
+      if (!MP || !host.parentNode) return;
+      var mv = mapValues(cc, E), M = global.DIFrDeptMap, irr = ST.m === 'irr', fmt = function (v, short) { return irr ? U.nf(v, 1) + ' %' : U.nf(v, 0) + (short ? '' : ' ' + t.perHa); };
+      var any = false, k; for (k in mv.values) if (mv.values[k] != null) any = true;
+      if (!any) { host.innerHTML = ''; return; }
+      var r = M.html(MP, { values: mv.values, fmt: fmt, label: t.byReg.replace('{m}', t.m[ST.m]).replace('{y}', mv.year), none: t.mapNone });
+      host.innerHTML = '<div class="wp-readout cof-tip" aria-live="polite">' + U.esc(t.mapHint) + '</div>' + r.html + (mv.agg ? '<p class="cof-note">' + U.esc(t.nAgg) + '</p>' : '');
+      M.bind(host, host.querySelector('.cof-tip'), t.mapHint, function (id) { var v = mv.values[id]; return '<b>' + U.esc(r.names[id] || id) + '</b> · ' + (v == null ? U.esc(t.mapNone) : U.esc(fmt(v))); });
+    });
+  }
   function view(cc, E, lg, t) {
     var ms = metrics(cc, E), out = '', nat = E.irrigation.regions[cc], mL = t.m;
     if (ms.indexOf(ST.m) < 0) ST.m = ms[0];
@@ -68,7 +106,7 @@
         out += '<h3 class="cof-h3">' + U.esc(t.cmpH + ' · ' + y) + '</h3><div class="cof-cards">' + card(U.esc(t.cmpIr), U.nf(a, 0) + ' ' + t.perHa) + card(U.esc(t.cmpDry), U.nf(b, 0) + ' ' + t.perHa, U.esc((p >= 0 ? t.prem : t.less).replace('{p}', U.nf(Math.abs(p), 0)))) + '</div>'; }
     }
     out += U.sel('eul-m', t.metric, ms.map(function (m) { return U.opt(m, mL[m], ST.m); }).join(''), ST.m);
-    var lv = cc === 'DE' ? 1 : 2, rows = [], yy;
+    var lv = 2, rows = [], yy;
     if (ST.m === 'irr') {
       yy = nat ? nat.year : 0;
       Object.keys(E.irrigation.regions).forEach(function (g) { var r = E.regions[g], x = E.irrigation.regions[g]; if (r && r.level === lv && x.year === yy) rows.push([r.name, x.share, U.nf(x.irrigated, 0) + ' ' + t.ha]); });
@@ -77,8 +115,8 @@
       Object.keys(E.regions).forEach(function (g) { var r = E.regions[g]; if (r.level !== lv) return; var v = val(E, PM[ST.m], g, yy); if (v != null) rows.push([r.name, v, '']); });
     }
     rows.sort(function (p, q) { return q[1] - p[1]; });
-    if (rows.length) out += '<h3 class="cof-h3">' + U.esc(t.byReg.replace('{m}', mL[ST.m]).replace('{y}', yy)) + '</h3>' + U.bars(rows, rows[0][1] || 1, ST.m === 'irr' ? 1 : 0, ST.m === 'irr' ? '%' : t.perHa);
-    else out += '<p class="cof-note">' + U.esc(t.none) + '</p>';
+    var bl = rows.length ? '<h3 class="cof-h3">' + U.esc(t.byReg.replace('{m}', mL[ST.m]).replace('{y}', yy)) + '</h3>' + U.bars(rows, rows[0][1] || 1, ST.m === 'irr' ? 1 : 0, ST.m === 'irr' ? '%' : t.perHa) : '<p class="cof-note">' + U.esc(t.none) + '</p>';
+    out += MAPS[cc] ? '<div class="cof-grid"><div class="cof-mapbox" data-cof-map></div><div class="cof-list">' + bl + '</div></div>' : bl;
     var n = (nat ? '<p class="cof-note">' + U.esc(t.nIrr.replace('{y}', nat.year)) + '</p>' : '');
     if (cc !== 'DE') n += '<p class="cof-note">' + U.esc(t.nPrice) + '</p>'; else n += '<p class="cof-note">' + U.esc(t.nDE) + '</p>';
     n += '<p class="cof-note">' + U.esc(cc === 'IT' ? t.nIT : cc === 'EL' ? t.nEL : t.nSplit) + '</p>';
@@ -95,6 +133,7 @@
         el.hidden = false; var body; try { body = view(cc, E, lg, t); } catch (e) { body = '<p class="cof-note">' + U.esc(t.none) + '</p>'; }
         el.innerHTML = '<section class="di-card cof" id="ps-eu-land" style="max-width:none"><h2 class="cof-h2">' + U.esc(t.h) + '</h2>' + body + U.cite('eurostat') + '</section>';
         if (focus) { var f = el.querySelector(focus); if (f) f.focus(); }
+        drawMap(el, cc, E, lg, t);
         return true;
       });
     }

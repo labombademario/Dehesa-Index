@@ -294,10 +294,17 @@
     var nm = tt().countries[ST.c] || c.name || ST.c;
     F.crumbs(document.getElementById('pa-crumbs'), [[L[5], 'index.html'], [L[6], 'paises.html'], [nm, null]]);
     var hasId = function (id) { return !!document.getElementById(id); }, more = null;
-    if (hasId('pp-census') || hasId('pp-managers')) ['pp-forecast', 'pp-eu-nit', 'pp-land-es', 'pp-gi'].forEach(function (id) { if (!more && hasId(id)) more = id; });
+    /* tierra/regadío y gasóleo agrícola: solo cuentan si el hueco ya tiene contenido (el hueco vacío se crea siempre) */
+    var DIESEL = ['pp-fr-gnr', 'pp-de-diesel', 'pp-it-fuel', 'pp-pl-diesel', 'pp-be-diesel', 'pp-at-diesel', 'pp-hr-diesel', 'pp-ie-diesel', 'pp-nl-diesel', 'pp-pt-diesel', 'pp-eu-diesel'];
+    var hasC = function (id) { var e = document.getElementById(id); return !!(e && e.firstElementChild && e.offsetHeight > 2); };
+    var diesel = null; DIESEL.forEach(function (id) { if (!diesel && hasC(id)) diesel = id; });
+    var MORE = ['pp-forecast', 'pp-eu-nit', 'pp-land-es', 'pp-gi'], extra = [];
+    if (hasId('pp-eu-land') && !document.getElementById('pp-eu-land').hidden) extra.push('pp-eu-land'); if (diesel) extra.push(diesel);
+    if (hasId('pp-census') || hasId('pp-managers')) MORE.concat(extra).forEach(function (id) { if (!more && (hasId(id) || extra.indexOf(id) >= 0)) more = id; });
     /* lo que cuelga de «Comercio» en el orden de la página: cada bloque largo con su propio apartado (pesca, edad de los jefes, censo agrario, resto) */
     var ML = { es: { 'pp-forecast': 'Previsiones de producción de carne', 'pp-eu-nit': 'Nitratos en el agua', 'pp-land-es': 'Precio de la tierra y cánones', 'pp-gi': 'Denominaciones de origen' }, en: { 'pp-forecast': 'Meat production forecasts', 'pp-eu-nit': 'Nitrates in water', 'pp-land-es': 'Land prices and rents', 'pp-gi': 'Protected designations of origin' }, fr: { 'pp-forecast': 'Prévisions de production de viande', 'pp-eu-nit': 'Nitrates dans l’eau', 'pp-land-es': 'Prix des terres et fermages', 'pp-gi': 'Appellations d’origine' }, it: { 'pp-forecast': 'Previsioni di produzione di carne', 'pp-eu-nit': 'Nitrati nell’acqua', 'pp-land-es': 'Prezzo della terra e canoni', 'pp-gi': 'Denominazioni di origine' } }[lang()] || {};
-    var moreSubs = function () { return ['pp-forecast', 'pp-eu-nit', 'pp-land-es', 'pp-gi'].filter(hasId).map(function (id) { return [id, ML[id] || id]; }); };
+    var XL = { es: ['Tierra y regadío', 'Gasóleo agrícola'], en: ['Land and irrigation', 'Agricultural diesel'], fr: ['Terres et irrigation', 'Gazole agricole'], it: ['Terra e irrigazione', 'Gasolio agricolo'] }[lang()] || ['Tierra y regadío', 'Gasóleo agrícola'];
+    var moreSubs = function () { var r = MORE.filter(hasId).map(function (id) { return [id, ML[id] || id]; }); if (extra.indexOf('pp-eu-land') >= 0) r.push(['pp-eu-land', XL[0]]); if (diesel) r.push([diesel, XL[1]]); return r; };
     F.bar(document.getElementById('pa-bar'), nm, [['ps-regmap', L[8]], ['pp-kpi', L[0]], ['pp-trade', L[1]], ['pp-fish', L[11]], ['pp-managers', L[12]], ['pp-census', L[13]], [more || 'pp-more-none', L[14], moreSubs()], ['pp-ask', L[7]], ['ps-explorer', L[2]], ['ps-detail', L[3]], ['ps-drought', L[9]], ['ps-ghg', L[10]], ['ps-sources', L[4]]]); /* misma barra, mismo orden en todos los paises */
   }
   /* Denominaciones de origen (vinos y quesos, eAmbrosia): bloque propio que se carga solo si el pais tiene fichero (js/denominaciones.js) */
@@ -562,7 +569,7 @@
     var el = document.createElement('div'); el.id = 'pp-eu-land'; el.style.minHeight = '1px'; after.parentNode.insertBefore(el, after.nextSibling);
     function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
     var go = function () { if (window.DIEuLand && ST.c === cc) window.DIEuLand.mount(el, lang(), cc); };
-    var mod = function () { if (window.DIEuLand) go(); else js('js/eu-land.js?v=20261019', go); };
+    var mod = function () { if (window.DIEuLand) go(); else js('js/eu-land.js?v=20261020', go); };
     nearView(el, function () { if (window.ESUI) mod(); else js('js/es-ui.js?v=20261015', mod); });
   }
   var EUNIT = ['ES', 'DE', 'IT', 'PL', 'AT', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'LT', 'LV', 'RO', 'SE', 'SI', 'SK'];

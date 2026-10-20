@@ -128,7 +128,7 @@
         var fbox = document.createElement('div'); fbox.style.marginTop = '14px'; el.appendChild(fbox);
         var fgo = function () { if (global.DIFrOnde) global.DIFrOnde.mount(fbox, lg.slice(0, 2)); };
         var fjs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
-        var fmod = function () { if (global.DIFrOnde) fgo(); else fjs('js/fr-onde.js?v=20261012', fgo); };
+        var fmod = function () { if (global.DIFrOnde) fgo(); else fjs('js/fr-onde.js?v=20261020', fgo); };
         if (global.DIFrDeptMap) fmod(); else fjs('js/fr-dept-map.js?v=20261015', fmod);
       }
       if (cc === 'ES') {   // escasez y sequia prolongada por unidad territorial (js/es-drought-ute.js, se carga a peticion)
