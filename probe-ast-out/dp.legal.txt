@@ -1,0 +1,12 @@
+Aviso legal
+a href="https://creativecommons.org/licenses/by/4.0/deed.es_ES" target="_blank"
+https://creativecommons.org/licenses/by/4.0/deed.es_ES
+la información de diferentes maneras y descargarla en los formatos PC-Axis, XLSX y CSV.
+",
+    "keywords": "None",
+    "license": "https://creativecommons.org/licenses/by/4.0/deed.es_ES",
+    "creator": 
+    {
+      "@type": "Organization",
+      "name": "Principado de Asturias"
+    }

@@ -1,0 +1,16 @@
+curl: (28) Connection timed out after 90002 milliseconds
+dataset-precio-tierras-agrario.xlsx 000 0 
+dataset-precio-tierras-agrario.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precio-tierras-agrario.xlsx
+curl: (28) Connection timed out after 90001 milliseconds
+dataset-precio-medio-vacuno.xlsx 000 0 
+dataset-precio-medio-vacuno.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precio-medio-vacuno.xlsx
+curl: (28) Connection timed out after 90001 milliseconds
+dataset-precios-vacuno-historico.xlsx 000 0 
+dataset-precios-vacuno-historico.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precios-vacuno-historico.xlsx
+curl: (28) Connection timed out after 90002 milliseconds
+dataset-precios-percibidos.xlsx 000 0 
+dataset-precios-percibidos.xlsx FALLO https://descargas.asturias.es/asturias/opendata/MedioRural/precios_sector/dataset-precios-percibidos.xlsx
+curl: (28) Connection timed out after 90002 milliseconds
+robots-descargas.txt 000 0 
+robots-descargas.txt FALLO https://descargas.asturias.es/robots.txt
+dp.html 200 218598 text/html; charset=utf-8
