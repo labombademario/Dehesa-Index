@@ -1,0 +1,5 @@
+observatorio.csv 200 1577142 application/octet-stream
+dataset.html 200 29582 text/html;charset=UTF-8
+robots.txt 200 1899 text/plain
+lonjas2026.html 200 69737 text/html;charset=UTF-8
+robots-agri.txt 200 1899 text/plain

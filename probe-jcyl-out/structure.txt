@@ -1,0 +1,9 @@
+delim ;
+rows 27791
+header ['MES', 'AÑO', 'PRODUCTO', 'AMBITO', 'PRECIO', 'UNIDAD']
+COL 0 MES: 12 distintos; ejemplos [('7', 2424), ('8', 2554), ('9', 2763), ('10', 2727), ('6', 1923), ('1', 2422), ('5', 1803), ('11', 2641), ('12', 2465), ('2', 2209), ('3', 2038), ('4', 1822)]
+COL 1 AÑO: 12 distintos; ejemplos [('2015', 2084), ('2016', 2117), ('2017', 2122), ('2018', 2247), ('2019', 2242), ('2020', 2602), ('2021', 2600), ('2022', 2605), ('2023', 2593), ('2024', 2442), ('2025', 2460), ('2026', 1677)]
+COL 2 PRODUCTO: 37 distintos; ejemplos [('AJO SECO', 153), ('ALFALFA HENO', 550), ('AÑOJO (TORO)', 1350), ('AVENA', 538), ('CABRITO LECHAL', 1110), ('CEBADA 2 C.C.', 949), ('CENTENO', 720), ('CERDO CEBO IBÉRICO', 969), ('CERDO CEBO OTRAS RAZAS', 1410), ('COCHINILLO', 756), ('COLZA', 35), ('CORDERO LECHAL', 1410)]
+COL 3 AMBITO: 10 distintos; ejemplos [('CYL', 3613), ('40-SEGOVIA', 2830), ('47-VALLADOLID', 3062), ('49-ZAMORA', 2928), ('24-LEÓN', 2630), ('34-PALENCIA', 2569), ('5-ÁVILA', 2621), ('9-BURGOS', 2900), ('37-SALAMANCA', 2694), ('42-SORIA', 1944)]
+COL 4 PRECIO: 10026 distintos; ejemplos [('80.61', 1), ('85.14', 1), ('85.27', 1), ('80', 62), ('137.84', 2), ('137.07', 1), ('138.55', 1), ('85', 68), ('79.69', 1), ('91.4', 6), ('90.66', 2), ('76.25', 4)]
+COL 5 UNIDAD: 7 distintos; ejemplos [('euros/100 kg', 8397), ('euros/100 kg vivo', 12863), ('Cabeza', 756), ('EUROS/100 DOC', 1149), ('euros/cabeza vivo. Para convertir esta unidad en euros/100 kg vivo debe considerarse un peso vivo que oscila entre 10,5 y 12,0 kg por cabeza.', 900), ('euros/100 l', 3693), ('euros/Cabeza en vivo', 33)]
