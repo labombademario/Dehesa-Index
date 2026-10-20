@@ -6,6 +6,7 @@
   var S = window.DehesaShared;
   var T = {
     es: {
+      flt: 'Buscar en la lista…', addT: 'O añade una factura a mano', addD: 'Fecha', addQ: 'Cantidad', addP: 'Precio', addB: 'Añadir línea', addBad: 'Pon una fecha y un precio para añadir la línea.', emT: '¿Sin facturas a mano? Prueba con un ejemplo', emP: 'Carga unas líneas de ejemplo (cantidades inventadas, precios de mercado reales) y mira cómo sale la comparación.',
       mine: 'Guardar mis compras y compararlas con varios mercados',
       title: 'Comparador de facturas con el mercado', h1: 'Comparador de facturas con el mercado',
       sub: 'Pega tus compras o ventas y mira si pagaste o cobraste más o menos que el mercado en esas mismas fechas, con las mismas cantidades. Sirve para negociar con proveedores, justificar una liquidación o revisar una campaña.',
@@ -26,6 +27,7 @@
       M: { us: 'EE. UU.', eu: 'UE', uk: 'Reino Unido', ca: 'Canadá' }, cta: '¿Quieres este análisis con tus datos de cada campaña y por proveedor? Cuéntanos cómo trabajas.', ctaB: 'Escríbenos'
     },
     en: {
+      flt: 'Search the list…', addT: 'Or add an invoice by hand', addD: 'Date', addQ: 'Quantity', addP: 'Price', addB: 'Add line', addBad: 'Enter a date and a price to add the line.', emT: 'No invoices at hand? Try an example', emP: 'Load a few example lines (made-up quantities, real market prices) and see how the comparison looks.',
       mine: 'Save my trades and compare them with several markets',
       title: 'Compare your invoices with the market', h1: 'Compare your invoices with the market',
       sub: 'Paste your purchases or sales and see whether you paid or received more or less than the market on those same dates, with the same quantities. Useful for negotiating with suppliers, justifying a settlement or reviewing a season.',
@@ -46,6 +48,7 @@
       M: { us: 'US', eu: 'EU', uk: 'UK', ca: 'Canada' }, cta: 'Want this analysis with your data every season and by supplier? Tell us how you work.', ctaB: 'Contact us'
     },
     fr: {
+      flt: 'Chercher dans la liste…', addT: 'Ou ajoutez une facture à la main', addD: 'Date', addQ: 'Quantité', addP: 'Prix', addB: 'Ajouter la ligne', addBad: 'Indiquez une date et un prix pour ajouter la ligne.', emT: 'Pas de factures sous la main ? Essayez un exemple', emP: 'Chargez quelques lignes d’exemple (quantités fictives, prix de marché réels) et voyez à quoi ressemble la comparaison.',
       mine: 'Enregistrer mes achats et les comparer à plusieurs marchés',
       title: 'Comparer vos factures au marché', h1: 'Comparer vos factures au marché',
       sub: 'Collez vos achats ou ventes et voyez si vous avez payé ou reçu plus ou moins que le marché aux mêmes dates, avec les mêmes quantités. Utile pour négocier avec les fournisseurs, justifier un décompte ou revoir une campagne.',
@@ -66,6 +69,7 @@
       M: { us: 'É.-U.', eu: 'UE', uk: 'Royaume-Uni', ca: 'Canada' }, cta: 'Vous voulez cette analyse avec vos données chaque campagne et par fournisseur ? Dites-nous comment vous travaillez.', ctaB: 'Nous écrire'
     },
     it: {
+      flt: 'Cerca nell’elenco…', addT: 'Oppure aggiungi una fattura a mano', addD: 'Data', addQ: 'Quantità', addP: 'Prezzo', addB: 'Aggiungi riga', addBad: 'Inserisci una data e un prezzo per aggiungere la riga.', emT: 'Nessuna fattura a portata di mano? Prova un esempio', emP: 'Carica alcune righe di esempio (quantità inventate, prezzi di mercato reali) e guarda come appare il confronto.',
       mine: 'Salvare i miei acquisti e confrontarli con più mercati',
       title: 'Confronta le tue fatture con il mercato', h1: 'Confronta le tue fatture con il mercato',
       sub: 'Incolla i tuoi acquisti o vendite e vedi se hai pagato o incassato più o meno del mercato nelle stesse date, con le stesse quantità. Utile per negoziare con i fornitori, giustificare un conteggio o rivedere una campagna.',
@@ -132,7 +136,7 @@
   function sign(n, d) { return (n > 0 ? '+' : '') + nf(n, d); }
   function resultHtml(w, s) {
     var parsed = parse(TEXT);
-    if (!parsed.rows.length && !parsed.bad.length) return '<p class="di-movers-hint">' + esc(w.none) + '</p>';
+    if (!parsed.rows.length && !parsed.bad.length) return '<p class="di-movers-hint">' + esc(w.none) + '</p><div class="mc-first no-print"><b>' + esc(w.emT) + '</b><p class="di-emp-p">' + esc(w.emP) + '</p><button class="di-btn-gold-solid" id="cf-ex2" type="button">' + esc(w.ex) + '</button></div>';
     var r = compute(s, parsed), u = UL(s.unit) + ' ' + s.currency, h = '';
     if (parsed.bad.length) h += '<p class="di-movers-hint" style="color:#8f5f12">' + parsed.bad.slice(0, 5).map(function (b) { return esc(fill(w.bad, { n: b[0], x: b[1] }) + (b[2] ? ' ' + DL.ambMsg(b[2], lang()) : '')); }).join('<br>') + '</p>';
     if (parsed.comma) h += '<p class="di-movers-hint" style="color:#8f5f12">' + esc(w.comma) + '</p>';
@@ -163,6 +167,14 @@
     for (i = 0; i < pts.length; i++) { var d = pts[i][0]; if (/^\d{4}-\d{2}$/.test(d)) d += '-10'; else if (/^\d{4}-Q/.test(d)) continue; out.push(d + ';' + (10 + i * 7) + ';' + String(Math.round(pts[i][1] * (1 + (i % 2 ? 0.03 : -0.02)) * 100) / 100).replace('.', lang() === 'en' ? '.' : ',')); }
     return out.join('\n');
   }
+  var FLT = '', ADDOPEN = false;
+  function fold(x) { return String(x || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim(); }
+  function filt(list, w) { var q = fold(FLT); return q ? list.filter(function (x) { return fold(nm(x.name, x.product) + ' ' + (w.M[x.region] || x.region)).indexOf(q) > -1; }) : list; }
+  function optsHtml(list, w) {
+    var g = {}, order = [];
+    list.forEach(function (x) { var r = w.M[x.region] || x.region; if (!g[r]) { g[r] = []; order.push(r); } g[r].push(x); });
+    return order.map(function (r) { return '<optgroup label="' + esc(r) + '">' + g[r].map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === SID ? ' selected' : '') + '>' + esc(nm(x.name, x.product) + ' (' + x.unit + ' ' + x.currency + ')') + '</option>'; }).join('') + '</optgroup>'; }).join('');
+  }
   function render() {
     var w = t(), root = document.getElementById('cf-body'); if (!root) return;
     document.getElementById('cf-h1').textContent = w.h1; document.getElementById('cf-sub').textContent = w.sub; document.title = w.title + ' | Dehesa Index';
@@ -170,13 +182,12 @@
     if (!SID) SID = IDX.series.some(function (x) { return x.id === 'eu/trigo'; }) ? 'eu/trigo' : IDX.series[0].id;
     if (!SER && !LOADING && !FAILED) loadSeries();
     var s = SER || sel(), list = IDX.series.slice().sort(function (a, b) { return (nm(a.name, a.product) + a.region).localeCompare(nm(b.name, b.product) + b.region, lang()); });
-    var h = '<p class="di-movers-hint no-print">' + esc(w.privacy) + '</p><div class="no-print"><h3 style="margin:14px 0 6px;font-size:16px">' + esc(w.s1) + '</h3><div style="display:flex;flex-wrap:wrap;gap:10px"><label style="font-size:13px">' + esc(w.series) + '<br><select id="cf-s" class="di-compare-select" style="width:auto;max-width:100%">' +
-      list.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === SID ? ' selected' : '') + '>' + esc(nm(x.name, x.product) + ' — ' + (w.M[x.region] || x.region) + ' (' + x.unit + ' ' + x.currency + ')') + '</option>'; }).join('') + '</select></label>' +
+    var h = '<p class="di-movers-hint no-print">' + esc(w.privacy) + '</p><div class="no-print"><h3 style="margin:14px 0 6px;font-size:16px">' + esc(w.s1) + '</h3><div style="display:flex;flex-wrap:wrap;gap:10px"><label style="font-size:13px">' + esc(w.series) + '<br><input id="cf-flt" type="search" class="di-compare-select" style="width:100%;margin-bottom:4px" placeholder="' + esc(w.flt) + '" autocomplete="off" value="' + esc(FLT) + '"><select id="cf-s" class="di-compare-select" style="width:auto;max-width:100%">' + (filt(list, w).length ? optsHtml(filt(list, w), w) : '<option disabled selected>—</option>') + '</select></label>' +
       '<label style="font-size:13px">' + esc(w.mode) + '<br><select id="cf-m" class="di-compare-select" style="width:auto"><option value="buy"' + (MODE === 'buy' ? ' selected' : '') + '>' + esc(w.buy) + '</option><option value="sell"' + (MODE === 'sell' ? ' selected' : '') + '>' + esc(w.sell) + '</option></select></label></div>' +
       (sel() ? '<p class="di-movers-hint" style="color:#8f5f12">' + esc(fill(w.unitWarn, { u: UL(sel().unit) + ' ' + sel().currency })) + '</p>' : '') +
       '<h3 style="margin:14px 0 6px;font-size:16px">' + esc(w.s2) + '</h3><p class="di-movers-hint">' + esc(w.s2h) + '</p><textarea id="cf-t" rows="7" class="di-compare-select" style="width:100%;font-family:monospace;font-size:13px" placeholder="' + esc(w.ph) + '">' + esc(TEXT) + '</textarea>' +
-      '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px"><button id="cf-go" class="di-btn-gold-solid" type="button">' + esc(w.btn) + '</button><button id="cf-ex" class="di-btn-sec" type="button">' + esc(w.ex) + '</button><label class="di-btn-sec" style="cursor:pointer">' + esc(w.file) + '<input id="cf-f" type="file" accept=".csv,.txt,text/csv,text/plain" style="display:none"></label><button id="cf-clr" class="di-btn-sec" type="button">' + esc(w.clear) + '</button></div></div>' +
-      '<h3 class="no-print" style="margin:18px 0 6px;font-size:16px">' + esc(w.s3) + '</h3>';
+      '<details class="ms-more" style="margin:10px 0 0"' + (TEXT && !ADDOPEN ? '' : ' open') + '><summary>' + esc(w.addT) + '</summary><div style="display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-top:8px"><label style="font-size:12.5px">' + esc(w.addD) + '<br><input id="cf-ad" type="date" class="di-compare-select" style="width:auto"></label><label style="font-size:12.5px">' + esc(w.addQ) + (sel() ? ' (' + esc(UL(sel().unit)) + ')' : '') + '<br><input id="cf-aq" inputmode="decimal" class="di-compare-select" style="width:110px"></label><label style="font-size:12.5px">' + esc(w.addP) + (sel() ? ' (' + esc(UL(sel().unit) + ' ' + sel().currency) + ')' : '') + '<br><input id="cf-ap" inputmode="decimal" class="di-compare-select" style="width:130px"></label><button id="cf-add" class="di-btn-sec" type="button">' + esc(w.addB) + '</button></div><p id="cf-addm" class="di-movers-hint" role="status" style="color:#8f5f12"></p></details>' + '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px"><button id="cf-go" class="di-btn-gold-solid" type="button">' + esc(w.btn) + '</button><button id="cf-ex" class="di-btn-sec" type="button">' + esc(w.ex) + '</button><label class="di-btn-sec" style="cursor:pointer">' + esc(w.file) + '<input id="cf-f" type="file" accept=".csv,.txt,text/csv,text/plain" style="display:none"></label><button id="cf-clr" class="di-btn-sec" type="button">' + esc(w.clear) + '</button></div></div>' +
+      '<h3 id="cf-res" class="no-print" style="margin:18px 0 6px;font-size:16px">' + esc(w.s3) + '</h3>';
     if (FAILED) h += '<p>' + esc(w.fail) + '</p>'; else if (!SER) h += '<p class="di-movers-hint">' + esc(w.loadingS) + '</p>'; else h += resultHtml(w, SER);
     h += '<section class="di-card di-emp-cta no-print" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaB) + '</a></section>';
     root.innerHTML = h; bind(w);
@@ -195,6 +206,22 @@
     $('cf-clr').onclick = function () { TEXT = ''; RES = null; render(); };
     $('cf-ex').onclick = function () { TEXT = exampleText(); render(); if (TEXT) { var n = document.createElement('p'); n.className = 'di-movers-hint'; n.textContent = w.exNote; $('cf-t').parentNode.insertBefore(n, $('cf-t').nextSibling); } };
     $('cf-f').onchange = function (e) { var f = e.target.files && e.target.files[0]; if (!f || !window.FileReader) return; var fr = new FileReader(); fr.onload = function () { TEXT = String(fr.result); render(); }; fr.readAsText(f); };
+    var goRes = function () { var r = $('cf-res'); if (r && r.scrollIntoView) { try { r.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) { r.scrollIntoView(); } } };
+    $('cf-ex').onclick = (function (f) { return function () { f(); goRes(); }; })($('cf-ex').onclick);
+    if ($('cf-ex2')) $('cf-ex2').onclick = $('cf-ex').onclick;
+    $('cf-go').onclick = (function (f) { return function () { f(); goRes(); }; })($('cf-go').onclick);
+    $('cf-flt').oninput = function (e) {
+      FLT = e.target.value; TEXT = $('cf-t').value; var f = filt(IDX.series, w);
+      if (f.length && !f.some(function (x) { return x.id === SID; })) { SID = f[0].id; SER = null; FAILED = false; loadSeries(); }
+      render(); var i = $('cf-flt'); if (i) { i.focus(); try { i.setSelectionRange(FLT.length, FLT.length); } catch (x) { } }
+    };
+    $('cf-add').onclick = function () {
+      var d = $('cf-ad').value, q = String($('cf-aq').value).replace(',', '.').trim(), p = String($('cf-ap').value).replace(',', '.').trim();
+      if (!d || !isFinite(parseFloat(p)) || (q && !isFinite(parseFloat(q)))) { $('cf-addm').textContent = w.addBad; return; }
+      var dec = function (v) { return lang() === 'en' ? v : v.replace('.', ','); };
+      var line = d + ';' + dec(q || '1') + ';' + dec(p), cur = $('cf-t').value.replace(/\s+$/, '');
+      TEXT = (cur ? cur + '\n' : '') + line; ADDOPEN = true; render(); goRes();
+    };
     if ($('cf-print')) $('cf-print').onclick = function () { TEXT = $('cf-t').value; window.print(); };
     if ($('cf-csv')) $('cf-csv').onclick = csvOut;
   }
