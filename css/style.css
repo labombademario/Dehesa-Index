@@ -3083,3 +3083,18 @@ html:not([data-theme="dark"]) .esp-row.on{--up:#14663b;--down:#9a2019}
 .ex-sent .ex-sel { font-family: 'Public Sans', system-ui, sans-serif; font-size: 15px; min-height: 40px; padding: 4px 8px; }
 .ex-q .um-input { font-size: 15.5px; min-height: 44px; padding: 8px 14px; }
 @media (max-width: 699px) { .ex-sent .ex-sel, .ex-q .um-input { font-size: 16px; } }   /* 16 px en móvil: con menos, el iPhone amplía la página al tocar el campo */
+
+/* Botones de seleccion (norma data-chips, js/chip-select.js); tambien los usan bloques que pintan sus propios botones (madera de EE. UU. y Canada) */
+.dch{margin:6px 0 4px;min-width:0;max-width:100%}
+.dch-l{display:block;font-size:12.5px;color:var(--text-tertiary,#666);margin:0 0 4px}
+.dch-row{display:flex;flex-wrap:wrap;gap:6px}
+.dch-b{font:inherit;font-size:14px;min-height:38px;padding:0 12px;border-radius:999px;border:1px solid var(--border,#d6cfbb);background:var(--surface,#fffdf7);color:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;line-height:1.2;text-align:left}
+.dch-b[aria-pressed="true"]{background:var(--text,#1d2a22);color:var(--bg,#fffdf7);border-color:var(--text,#1d2a22);font-weight:600}
+.dch-b:focus-visible{outline:2px solid var(--focus,#2b5f9e);outline-offset:2px}
+.dch-x{display:none}
+.dch.dch-all .dch-x{display:inline-flex}
+.dch-m{border-style:dashed;color:var(--text-tertiary,#555)}
+.dch-g{flex-basis:100%;font-size:12px;color:var(--text-tertiary,#666);margin:4px 0 0}
+.de-ctl .dch{flex:1 1 100%}
+.dch-hide{display:none!important}
+

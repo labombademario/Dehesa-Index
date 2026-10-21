@@ -625,7 +625,7 @@
     if ((state.location === 'uk' || state.location === 'ca') && disp.ukGap) return false;
     return ver;
   }
-  var EU_ONLY = { hortalizas: true, vino: true, madera: true }; // solo hay datos de países europeos: con ubicación EE. UU., Reino Unido o Canadá no se enseñan
+  var EU_ONLY = { hortalizas: true, vino: true };   // madera: UE y Reino Unido (Forest Research), EE. UU. (BLS) y Canada (StatCan) desde el 21-oct-2026 // solo hay datos de países europeos: con ubicación EE. UU., Reino Unido o Canadá no se enseñan
   function catHasData(catId) {
     if (EU_ONLY[catId]) return state.location === 'eu';
     if (INFO_CATS[catId]) return true;
@@ -968,7 +968,7 @@
     var loc = state.location || 'us', cn = state.euCountry || 'es';
     // Solo Reino Unido (Forest Research, OGL v3). EE. UU. (futuro del CME) tiene licencia que prohíbe redistribuir; Francia (France Bois
     // Forêt/ONF) no tiene licencia de reutilización verificada y el License Gate no deja publicarla. Ver data/license-registry.json.
-    var own = loc === 'uk';
+    var own = loc === 'uk', na = loc === 'us' || loc === 'ca';
     var cards = { uk: infoStatsCardHtml(mad.ukTitle, mad.ukStats, 'madera-uk') };
     var order = ['uk'];
     var PL = { us: ['EE. UU.', 'The US', 'les États-Unis', 'gli Stati Uniti'], ca: ['Canadá', 'Canada', 'le Canada', 'il Canada'], es: ['España', 'Spain', 'l’Espagne', 'la Spagna'], de: ['Alemania', 'Germany', 'l’Allemagne', 'la Germania'], it: ['Italia', 'Italy', 'l’Italie', 'l’Italia'], fr: ['Francia', 'France', 'la France', 'la Francia'] }[loc === 'eu' ? cn : loc] || ['Tu país', 'Your country', 'votre pays', 'il tuo paese'];
@@ -982,8 +982,9 @@
     };
     var NL = { es: 'Ver por qué faltan otros países', en: 'See why other countries are missing', fr: 'Voir pourquoi d’autres pays manquent', it: 'Perché mancano altri paesi' };
     var notice = '';
-    if (!own) { notice = '<div class="di-info-scope-note" style="margin-bottom:10px">' + esc(NT[lang()](place, nearest)) + ' <a href="#pr-madera-note">' + esc(NL[lang()]) + '</a></div>'; }
+    if (!own) { notice = '<div class="di-info-scope-note" id="pr-wood-gap" style="margin-bottom:10px"' + (na ? ' hidden' : '') + '>' + esc(NT[lang()](place, nearest)) + ' <a href="#pr-madera-note">' + esc(NL[lang()]) + '</a></div>'; }
     return (
+      (na ? '<div id="pr-wood-na" class="wr-wrap" data-cc="' + loc.toUpperCase() + '"></div>' : '') +
       '<div class="di-badge di-badge-green di-info-badge">' + esc(mad.badge) + '</div>' + notice +
       '<div class="di-info-grid">' + order.map(function (k) { return cards[k]; }).join('') + '</div>' +
       '<div id="pr-wood-de" class="wr-wrap"></div>' +
@@ -1197,6 +1198,7 @@
         return;
       }
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
+      if (state.activeTab === 'madera' && global.DehesaWoodNA) { var wn = document.getElementById('pr-wood-na'); if (wn) { var wcc = wn.getAttribute('data-cc'); global.DehesaWoodNA.render(wn, wcc); global.DehesaWoodNA.has(wcc).then(function (ok) { var g = document.getElementById('pr-wood-gap'); if (g) g.hidden = ok; }); } }
       if (state.activeTab === 'madera' && global.DehesaWoodDE) global.DehesaWoodDE.render(document.getElementById('pr-wood-de'));
       if (state.activeTab === 'madera' && global.DehesaWood) global.DehesaWood.render(document.getElementById('pr-wood'));
       if (state.activeTab === 'vino' && global.DehesaWine) { root.innerHTML = '<div id="pr-vino">' + root.innerHTML + '</div>'; global.DehesaWine.render(document.getElementById('pr-vino')); }
