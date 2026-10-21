@@ -1,25 +1,27 @@
-import json, os, urllib.parse, urllib.request
-H = {"User-Agent": "Mozilla/5.0 dehesaindex"}
-key = os.environ.get("NASS_API_KEY", "")
+import csv, io, json, re, urllib.request
+H = {"User-Agent": "Dehesa-Index-data-bot/1.0"}
 def out(*a): print(*a, flush=True)
-def qs(path, **p):
-    p["key"] = key; p["format"] = "JSON"
-    u = "https://quickstats.nass.usda.gov/api/%s?%s" % (path, urllib.parse.urlencode(p))
-    try: return json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=120).read())
+def get(u, acc):
+    return urllib.request.urlopen(urllib.request.Request(u, headers=dict(H, Accept=acc)), timeout=180).read().decode("utf-8-sig")
+try:
+    j = json.loads(get("https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allcompletestubs", "application/vnd.sdmx.structure+json"))
+    fl = j["data"]["dataflows"]; out("dataflows", len(fl))
+    for f in fl:
+        nm = f.get("name") or (f.get("names") or {}).get("en", "")
+        if re.search(r"population|state|labour|gross|product|employment|age|regional", nm, re.I): out("FLOW", f["id"], f.get("version"), nm)
+except Exception as e: out("FLOWS FALLO", repr(e)[:200])
+def peek(path, n=6):
+    try:
+        rows = list(csv.DictReader(io.StringIO(get("https://data.api.abs.gov.au/rest/data/" + path, "application/vnd.sdmx.data+csv"))))
+        out("PEEK", path, len(rows), "cols", list(rows[0].keys()) if rows else None)
+        for r in rows[:n]: out("   ", json.dumps(r)[:400])
+        return rows
     except Exception as e:
-        try: return {"error": repr(e), "body": e.read()[:200].decode()}
-        except Exception: return {"error": repr(e)}
-for com in ("FERTILIZER", "FERTILIZER TOTALS", "FERTILIZER & CHEMICAL TOTALS"):
-    j = qs("get_param_values", param="short_desc", source_desc="CENSUS", commodity_desc=com)
-    out("CENSUS", com, j.get("short_desc"), j.get("error"))
-    j = qs("api_GET", source_desc="CENSUS", agg_level_desc="STATE", state_alpha="IA", commodity_desc=com, year="2022")
-    for r in j.get("data", [])[:12]: out("  IA", r["short_desc"], r["domain_desc"], r["Value"], r["unit_desc"])
-    out("  err", j.get("error"), j.get("body"))
-for src, sec in (("SURVEY", "ECONOMICS"), ("SURVEY", "ENVIRONMENTAL"), ("SURVEY", "CROPS")):
-    j = qs("get_param_values", param="group_desc", source_desc=src, sector_desc=sec)
-    out(src, sec, "groups", [g for g in j.get("group_desc", []) if "FERT" in g.upper() or "CHEM" in g.upper()], j.get("error"))
-j = qs("get_param_values", param="sector_desc", source_desc="SURVEY"); out("sectors", j.get("sector_desc"))
-j = qs("get_param_values", param="short_desc", source_desc="SURVEY", commodity_desc="FERTILIZER TOTALS"); out("SURVEY FERT TOTALS short_desc", j.get("short_desc"), j.get("error"))
-for yr in ("2023","2024","2025"):
-    j = qs("api_GET", source_desc="SURVEY", commodity_desc="CORN", group_desc="FERTILIZER", year=yr, agg_level_desc="STATE")
-    out("SURVEY corn FERT group", yr, len(j.get("data", [])), j.get("error"), [ (r["state_alpha"], r["short_desc"], r["Value"]) for r in j.get("data", [])[:4]])
+        out("PEEK FALLO", path, repr(e)[:150]); return []
+for p in ("ERP_Q/all?lastNObservations=1&format=csvfilewithlabels", "ABS_ANNUAL_ERP_ASGS2021/all?lastNObservations=1&format=csvfilewithlabels", "LF/all?lastNObservations=1&format=csvfilewithlabels", "ANA_AGG/all?lastNObservations=1&format=csvfilewithlabels", "RT/all?lastNObservations=1&format=csvfilewithlabels"):
+    rows = peek(p, 4)
+    if rows:
+        for col in rows[0]:
+            if col in ("OBS_VALUE", "TIME_PERIOD", "OBS_STATUS"): continue
+            vals = sorted({r[col] for r in rows})
+            out("   dim", col, len(vals), vals[:12])
