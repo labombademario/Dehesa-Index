@@ -7,16 +7,19 @@
   var SRC = {
     farmprogress: 'https://www.farmprogress.com/marketing/usda-forecasts-smallest-us-winter-wheat-crop-since-1965-as-drought-devastates-key-growing-regions-in-the-plains',
     riotimes: 'https://www.riotimesonline.com/grains-soy-corn-latam-monday-september-21-2026/',
-    moncloa: 'https://www.moncloa.com/2026/09/26/contratos-leche-vacuno-revision-alza-precios-3438213/'
+    moncloa: 'https://www.moncloa.com/2026/09/26/contratos-leche-vacuno-revision-alza-precios-3438213/',
+    eiasteo: 'https://www.eia.gov/outlooks/steo/',
+    dtnfert: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/10/14/uan32-leads-fertilizer-prices-higher',
+    spglobal: 'https://press.spglobal.com/2026-10-19-Out-of-Hormuz-Energy-Shocks,-the-Ingredients-for-a-Global-Food-Crisis'
   };
 
   // Categorías: mismas etiquetas que el resto del sitio para el mismo grupo
   // de producto (Precios, Dehesa Market Map).
   var CAT = {
-    es: { cereales: 'Cereales', fertilizantes: 'Fertilizantes', lacteos: 'Lácteos' },
-    en: { cereales: 'Grains', fertilizantes: 'Fertilizer', lacteos: 'Dairy' },
-    fr: { cereales: 'Céréales', fertilizantes: 'Engrais', lacteos: 'Produits laitiers' },
-    it: { cereales: 'Cereali', fertilizantes: 'Fertilizzanti', lacteos: 'Lattiero-caseario' }
+    es: { cereales: 'Cereales', fertilizantes: 'Fertilizantes', lacteos: 'Lácteos', energia: 'Energía' },
+    en: { cereales: 'Grains', fertilizantes: 'Fertilizer', lacteos: 'Dairy', energia: 'Energy' },
+    fr: { cereales: 'Céréales', fertilizantes: 'Engrais', lacteos: 'Produits laitiers', energia: 'Énergie' },
+    it: { cereales: 'Cereali', fertilizantes: 'Fertilizzanti', lacteos: 'Lattiero-caseario', energia: 'Energia' }
   };
 
   function buildStrings() {
@@ -25,11 +28,18 @@
     Object.keys(CAT).forEach(function (lg) { langCat[lg] = CAT[lg]; });
 
     STRINGS.es = {
-      title: 'Blog | Dehesa Index', badge: 'NOTAS REALES', updated: 'Actualizado 28 sep 2026',
+      title: 'Blog | Dehesa Index', badge: 'NOTAS REALES', updated: 'Actualizado 21 oct 2026',
       h1: 'Blog',
       sub: 'Contexto corto sobre qué mueve estos mercados esta semana, con cifras y fuentes reales — no un resumen de titulares, sino la lectura de Dehesa Index sobre lo que hay detrás.',
       disclaimer: 'Cada nota cita datos y fechas reales, verificables en las fuentes enlazadas al pie. Cuando un dato concreto no está disponible (por ejemplo, un precio objetivo aún no publicado), se dice explícitamente en vez de estimarlo.',
       posts: [
+        {
+          category: CAT.es.energia, date: '2026-10-21', dateLabel: '21 oct 2026',
+          title: 'Del petróleo al abono: la factura energética llega al campo',
+          para1: 'El precio spot del Brent que publica la EIA cerró el 9 de octubre en 127,43 $/barril, un 28,6% más que cinco semanas antes; el WTI estadounidense subió mucho menos (96,88 $, +6,3%). Detrás está el conflicto en Oriente Medio: en su previsión del 6 de octubre, la EIA espera que los flujos de crudo de la región sigan limitados durante el cuarto trimestre y sitúa el Brent en una media de 105 $/barril en ese periodo. El gasóleo es el eslabón más tenso: en EE. UU. el precio minorista medio fue de 6,29 $/galón en septiembre, con los inventarios de destilados de la Costa Este un 32% por debajo de su media de cinco años. En la UE la subida va, por ahora, más despacio: el Boletín Petrolero sitúa el gasóleo en 2,14 €/litro el 12 de octubre, un 1,3% más en cinco semanas.',
+          para2: 'Al agricultor la energía le llega también por el abono nitrogenado, que se fabrica con gas. Según el S&P Global Institute, por el estrecho de Ormuz pasa normalmente cerca del 29% del comercio mundial de urea y alrededor del 21% del amoníaco que se comercia. En la encuesta de DTN de la primera semana de octubre, la urea minorista en EE. UU. costaba 672 $/tonelada (un 12% más que hace un año) y el amoníaco anhidro 977 $ (+20%); en los datos del Banco Mundial que sigue Dehesa Index, la urea marcó 407,5 $/t en septiembre (+4,5% en el mes) y el gas natural en Europa subió un 20% ese mismo mes. Como recuerda S&P, los agricultores compran semilla, abono y combustible meses antes de vender la cosecha, así que el golpe se nota primero en los márgenes: sus autores creen que podría no llegar con fuerza a los precios de los alimentos hasta 2027, una lectura suya y no una previsión de Dehesa Index.',
+          sources: [{ label: 'EIA (6 oct 2026)', url: SRC.eiasteo }, { label: 'DTN (14 oct 2026)', url: SRC.dtnfert }, { label: 'S&P Global (19 oct 2026)', url: SRC.spglobal }]
+        },
         {
           category: CAT.es.cereales, date: '2026-09-28', dateLabel: '28 sep 2026',
           title: 'Por qué el trigo llega caro a esta campaña',
@@ -47,11 +57,18 @@
       ]
     };
     STRINGS.en = {
-      title: 'Blog | Dehesa Index', badge: 'REAL NOTES', updated: 'Updated Sep 28, 2026',
+      title: 'Blog | Dehesa Index', badge: 'REAL NOTES', updated: 'Updated Oct 21, 2026',
       h1: 'Blog',
       sub: "Short context on what's moving these markets this week, with real figures and sources — not a headline roundup, but Dehesa Index's own read on what's behind them.",
       disclaimer: 'Each note cites real, dated facts, verifiable at the sources linked below. When a specific figure isn’t available (a target price not yet published, say), that’s stated outright rather than estimated.',
       posts: [
+        {
+          category: CAT.en.energia, date: '2026-10-21', dateLabel: 'Oct 21, 2026',
+          title: 'From oil to fertilizer: the energy bill reaches the farm',
+          para1: 'The Brent spot price published by the EIA closed at $127.43/barrel on October 9, up 28.6% from five weeks earlier; U.S. WTI rose far less ($96.88, +6.3%). Behind it is the conflict in the Middle East: in its October 6 outlook, the EIA expects the region\'s crude flows to stay constrained through the fourth quarter and puts Brent at an average of $105/barrel for that period. Diesel is the tightest link: the U.S. average retail price was $6.29/gallon in September, with East Coast distillate inventories 32% below their five-year average. In the EU the rise is slower for now: the Oil Bulletin puts diesel at €2.14/litre on October 12, up 1.3% in five weeks.',
+          para2: 'Energy also reaches farmers through nitrogen fertilizer, which is made from gas. According to the S&P Global Institute, about 29% of global urea trade and around 21% of traded ammonia normally pass through the Strait of Hormuz. In DTN\'s survey for the first week of October, U.S. retail urea cost $672/ton (12% more than a year ago) and anhydrous ammonia $977 (+20%); in the World Bank data Dehesa Index tracks, urea stood at $407.5/t in September (+4.5% on the month) and natural gas in Europe rose 20% that same month. As S&P points out, farmers buy seed, fertilizer and fuel months before they sell a crop, so the hit shows up in margins first: the authors think it may not reach food prices in force until 2027 — their reading, not a Dehesa Index forecast.',
+          sources: [{ label: 'EIA (Oct 6, 2026)', url: SRC.eiasteo }, { label: 'DTN (Oct 14, 2026)', url: SRC.dtnfert }, { label: 'S&P Global (Oct 19, 2026)', url: SRC.spglobal }]
+        },
         {
           category: CAT.en.cereales, date: '2026-09-28', dateLabel: 'Sep 28, 2026',
           title: 'Why wheat is expensive this marketing year',
@@ -69,11 +86,18 @@
       ]
     };
     STRINGS.fr = {
-      title: 'Blog | Dehesa Index', badge: 'NOTES RÉELLES', updated: 'Mis à jour le 28 sept. 2026',
+      title: 'Blog | Dehesa Index', badge: 'NOTES RÉELLES', updated: 'Mis à jour le 21 oct. 2026',
       h1: 'Blog',
       sub: "Un contexte court sur ce qui fait bouger ces marchés cette semaine, avec des chiffres et des sources réels — pas un résumé de titres, mais la lecture de Dehesa Index sur ce qu'il y a derrière.",
       disclaimer: "Chaque note cite des faits réels et datés, vérifiables sur les sources indiquées ci-dessous. Quand un chiffre précis n'est pas disponible (un prix cible pas encore publié, par exemple), cela est dit explicitement plutôt qu'estimé.",
       posts: [
+        {
+          category: CAT.fr.energia, date: '2026-10-21', dateLabel: '21 oct. 2026',
+          title: 'Du pétrole aux engrais : la facture énergétique arrive à la ferme',
+          para1: 'Le prix spot du Brent publié par l\'EIA a clôturé à 127,43 $/baril le 9 octobre, soit 28,6 % de plus que cinq semaines plus tôt ; le WTI américain a bien moins progressé (96,88 $, +6,3 %). En toile de fond, le conflit au Moyen-Orient : dans ses prévisions du 6 octobre, l\'EIA s\'attend à ce que les flux de brut de la région restent limités au quatrième trimestre et situe le Brent à 105 $/baril en moyenne sur cette période. Le gazole est le maillon le plus tendu : aux États-Unis, le prix moyen à la pompe a atteint 6,29 $/gallon en septembre, avec des stocks de distillats de la côte Est inférieurs de 32 % à leur moyenne sur cinq ans. Dans l\'UE, la hausse est pour l\'instant plus lente : le Bulletin pétrolier situe le gazole à 2,14 €/litre le 12 octobre, en hausse de 1,3 % en cinq semaines.',
+          para2: 'L\'énergie arrive aussi chez l\'agriculteur par les engrais azotés, fabriqués à partir de gaz. Selon le S&P Global Institute, environ 29 % du commerce mondial d\'urée et quelque 21 % de l\'ammoniac échangé transitent normalement par le détroit d\'Ormuz. Dans l\'enquête DTN de la première semaine d\'octobre, l\'urée au détail coûtait 672 $/tonne aux États-Unis (12 % de plus qu\'il y a un an) et l\'ammoniac anhydre 977 $ (+20 %) ; dans les données de la Banque mondiale suivies par Dehesa Index, l\'urée s\'établissait à 407,5 $/t en septembre (+4,5 % sur le mois) et le gaz naturel en Europe a augmenté de 20 % le même mois. Comme le rappelle S&P, les agriculteurs achètent semences, engrais et carburant des mois avant de vendre leur récolte : le choc se voit d\'abord dans les marges, et les auteurs estiment qu\'il pourrait ne toucher pleinement les prix alimentaires qu\'en 2027 — leur lecture, pas une prévision de Dehesa Index.',
+          sources: [{ label: 'EIA (6 oct. 2026)', url: SRC.eiasteo }, { label: 'DTN (14 oct. 2026)', url: SRC.dtnfert }, { label: 'S&P Global (19 oct. 2026)', url: SRC.spglobal }]
+        },
         {
           category: CAT.fr.cereales, date: '2026-09-28', dateLabel: '28 sept. 2026',
           title: 'Pourquoi le blé coûte cher cette campagne',
@@ -91,11 +115,18 @@
       ]
     };
     STRINGS.it = {
-      title: 'Blog | Dehesa Index', badge: 'NOTE REALI', updated: 'Aggiornato 28 set 2026',
+      title: 'Blog | Dehesa Index', badge: 'NOTE REALI', updated: 'Aggiornato 21 ott 2026',
       h1: 'Blog',
       sub: 'Un contesto breve su cosa muove questi mercati questa settimana, con cifre e fonti reali — non un riassunto di titoli, ma la lettura di Dehesa Index su cosa c’è dietro.',
       disclaimer: 'Ogni nota cita fatti reali e datati, verificabili nelle fonti collegate in fondo. Quando un dato preciso non è disponibile (un prezzo obiettivo non ancora pubblicato, ad esempio), questo viene dichiarato esplicitamente invece di essere stimato.',
       posts: [
+        {
+          category: CAT.it.energia, date: '2026-10-21', dateLabel: '21 ott 2026',
+          title: 'Dal petrolio ai concimi: la bolletta energetica arriva nei campi',
+          para1: 'Il prezzo spot del Brent pubblicato dall\'EIA ha chiuso il 9 ottobre a 127,43 $/barile, il 28,6% in più rispetto a cinque settimane prima; il WTI statunitense è salito molto meno (96,88 $, +6,3%). Dietro c\'è il conflitto in Medio Oriente: nelle previsioni del 6 ottobre, l\'EIA si aspetta che i flussi di greggio della regione restino limitati nel quarto trimestre e colloca il Brent a una media di 105 $/barile in quel periodo. Il gasolio è l\'anello più teso: negli Stati Uniti il prezzo medio al dettaglio è stato di 6,29 $/gallone a settembre, con le scorte di distillati della costa orientale del 32% sotto la media quinquennale. Nell\'UE il rialzo per ora è più lento: il Bollettino petrolifero indica il gasolio a 2,14 €/litro il 12 ottobre, +1,3% in cinque settimane.',
+          para2: 'L\'energia arriva all\'agricoltore anche attraverso i concimi azotati, prodotti dal gas. Secondo lo S&P Global Institute, dallo stretto di Hormuz passa normalmente circa il 29% del commercio mondiale di urea e intorno al 21% dell\'ammoniaca scambiata. Nell\'indagine DTN della prima settimana di ottobre, l\'urea al dettaglio negli Stati Uniti costava 672 $/tonnellata (il 12% in più di un anno fa) e l\'ammoniaca anidra 977 $ (+20%); nei dati della Banca Mondiale seguiti da Dehesa Index, l\'urea era a 407,5 $/t a settembre (+4,5% sul mese) e il gas naturale in Europa è salito del 20% nello stesso mese. Come ricorda S&P, gli agricoltori comprano sementi, concimi e carburante mesi prima di vendere il raccolto, quindi il colpo si vede prima nei margini: secondo gli autori potrebbe non arrivare con forza ai prezzi alimentari prima del 2027 — una loro lettura, non una previsione di Dehesa Index.',
+          sources: [{ label: 'EIA (6 ott 2026)', url: SRC.eiasteo }, { label: 'DTN (14 ott 2026)', url: SRC.dtnfert }, { label: 'S&P Global (19 ott 2026)', url: SRC.spglobal }]
+        },
         {
           category: CAT.it.cereales, date: '2026-09-28', dateLabel: '28 set 2026',
           title: 'Perché il grano costa caro in questa campagna',
