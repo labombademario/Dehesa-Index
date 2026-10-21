@@ -1,0 +1,66 @@
+{
+ "seeds": [
+  {
+   "seed": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+   "status": 0,
+   "final": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+   "type": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain ",
+   "bytes": 0,
+   "links": []
+  },
+  {
+   "seed": "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/",
+   "status": 0,
+   "final": "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/",
+   "type": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain ",
+   "bytes": 0,
+   "links": []
+  },
+  {
+   "seed": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/",
+   "status": 0,
+   "final": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/",
+   "type": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain ",
+   "bytes": 0,
+   "links": []
+  },
+  {
+   "seed": "https://www.sadei.es/",
+   "status": 200,
+   "final": "https://www.sadei.es/inicio",
+   "type": "text/html;charset=iso-8859-1",
+   "bytes": 46102,
+   "links": [
+    [
+     "https://www.sadei.es/sadei/de-interes/anuario-estadistico-de-asturias-2024_2602_5_4145_0_1_in.html",
+     ""
+    ]
+   ]
+  },
+  {
+   "seed": "https://www.asturias.es/",
+   "status": 200,
+   "final": "https://www.asturias.es/",
+   "type": "text/html;charset=UTF-8",
+   "bytes": 237938,
+   "links": []
+  },
+  {
+   "seed": "https://datos.gob.es/es/catalogo?q=manzana+sidra+asturias",
+   "status": 200,
+   "final": "https://datos.gob.es/es/catalogo?q=manzana+sidra+asturias",
+   "type": "text/html",
+   "bytes": 212,
+   "links": []
+  },
+  {
+   "seed": "https://datos.gob.es/es/catalogo?q=superficie+producci%C3%B3n+cultivos+comunidades+aut%C3%B3nomas+serie",
+   "status": 200,
+   "final": "https://datos.gob.es/es/catalogo?q=superficie+producci%C3%B3n+cultivos+comunidades+aut%C3%B3nomas+serie",
+   "type": "text/html",
+   "bytes": 212,
+   "links": []
+  }
+ ],
+ "followed": []
+}
