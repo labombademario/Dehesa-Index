@@ -59,6 +59,8 @@ def acs():
     out_e, out_a = {}, {}
     key = os.environ.get("CENSUS_API_KEY", "").strip()
     if not key: raise RuntimeError("falta el secreto CENSUS_API_KEY (la API del Census exige clave gratuita)")
+    import re
+    log("ACS clave: %d caracteres, formato %s (una clave valida del Census tiene 40 caracteres hexadecimales)" % (len(key), "correcto" if re.fullmatch(r"[0-9a-f]{40}", key) else "NO valido"))
     now = datetime.date.today().year
     for y in range(2015, now):
         raw = b""
