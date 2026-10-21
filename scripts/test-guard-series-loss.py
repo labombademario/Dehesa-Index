@@ -29,6 +29,16 @@ try:
     _, br, _ = G.guard(a, b, T); ok("caso real 21-oct: repone las 9 series de azucar", sorted(x[1] for x in br) == sorted("eu-prod-eu-sugar-region-%d-%s" % (r, m) for r in (1, 2, 3) for m in ("area", "production", "yield")))
 except subprocess.CalledProcessError:
     print("aviso: sin historial git suficiente para el caso real (checkout superficial)")
+# renombrados: mismo pais, mismos datos (o casi, por revisiones) con id nuevo -> no es una perdida
+o2 = {"countries": {"US": {"series": [{"id": "x-area", "points": [["2022", 1.0], ["2023", 2.0], ["2024", 3.0], ["2025", 4.0], ["2026", 5.0]]}, {"id": "y", "points": [["2024", 9.0], ["2025", 9.0], ["2026", 9.0]]}]}}}
+n2 = {"countries": {"US": {"series": [{"id": "x-area-acres", "points": [["2022", 1.0], ["2023", 2.0], ["2024", 3.0], ["2025", 4.0], ["2026", 5.5]]}, {"id": "z", "points": [["2024", 1.0], ["2025", 2.0], ["2026", 3.0]]}]}}}
+ok("renombrado detectado aunque se revise el ultimo dato", G.find_renames(o2, n2) == {"x-area": "x-area-acres"})
+ok("una serie distinta no se toma por renombrado", "y" not in G.find_renames(o2, n2))
+try:
+    a = json.loads(subprocess.check_output(["git", "show", "47dd7f838^:data/us-nass-extra-stats.json"], cwd=H.parent, stderr=subprocess.DEVNULL)); b = json.loads(subprocess.check_output(["git", "show", "47dd7f838:data/us-nass-extra-stats.json"], cwd=H.parent, stderr=subprocess.DEVNULL))
+    r = G.find_renames(a, b); ok("caso real 9-oct (NASS): 41 renombrados con sufijo -acres", len(r) == 41 and all(v == k + "-acres" for k, v in r.items()))
+except subprocess.CalledProcessError:
+    print("aviso: sin historial git suficiente para el caso NASS")
 # de punta a punta en un repo temporal: fichero preparado, reposicion, re-stage y lista de retiradas
 import tempfile, os
 with tempfile.TemporaryDirectory() as d:

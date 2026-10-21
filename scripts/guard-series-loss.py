@@ -62,6 +62,44 @@ def guard(old, new, today=None):
             new["log"] = (new["log"] + ["REPUESTA %s (dato al dia hasta %s): no llego en esta ejecucion; se conserva lo publicado" % (sid, p) for _, sid, p in back])[-60:]
     return new, back, gone_old
 
+def pts(s):
+    return {str(p[0]): p[1] for p in (s.get("points") or s.get("data") or []) if isinstance(p, (list, tuple)) and len(p) > 1}
+
+def find_renames(old, new):
+    """Series que no desaparecen sino que cambian de id: la nueva no existia antes y comparte al menos 3 periodos con los mismos valores
+    en el 80 % o mas de los periodos comunes (las revisiones de la fuente cambian alguno). Devuelve {id_viejo: id_nuevo}."""
+    o, n = series_by_id(old), series_by_id(new)
+    gone = [k for k in o if k not in n]; born = [k for k in n if k not in o]
+    out = {}
+    for g in gone:
+        pg, best = pts(o[g][1]), None
+        for b in born:
+            if o[g][0] != n[b][0] or b in out.values(): continue
+            pb = pts(n[b][1]); com = [k for k in pg if k in pb]
+            if len(com) < 3: continue
+            eq = sum(1 for k in com if pg[k] is not None and pb[k] is not None and abs(pg[k] - pb[k]) <= 1e-9 * max(1, abs(pg[k])))
+            sc = eq / float(len(com))
+            if sc >= 0.8 and (best is None or sc > best[0] or sc == best[0] and len(com) > best[2] or (sc == best[0] and len(com) == best[2] and b.startswith(g))): best = (sc, b, len(com))
+        if best: out[g] = best[1]
+    return out
+
+def record_renames(ren, path, today=None):
+    """Anade los renombrados a data/series-renames.json ({"renames": {viejo: nuevo}, "log": [...]}), encadenando a->b->c."""
+    if not ren: return False
+    f = os.path.join(ROOT, "data/series-renames.json")
+    try: d = json.load(open(f, encoding="utf-8"))
+    except Exception: d = {"note": "Series que cambiaron de id con los mismos datos. La lista de seguimiento migra sola las entradas guardadas con el id viejo. Lo escribe scripts/guard-series-loss.py al publicar.", "renames": {}, "log": []}
+    R = d.setdefault("renames", {})
+    for a, b in ren.items():
+        for k, v in list(R.items()):
+            if v == a: R[k] = b
+        R[a] = b
+    d.setdefault("log", []).append("%s %s: %d renombradas" % ((today or datetime.date.today()).isoformat(), path, len(ren)))
+    d["log"] = d["log"][-100:]
+    with open(f, "w", encoding="utf-8") as h: json.dump(d, h, ensure_ascii=False, indent=1, sort_keys=True); h.write("\n")
+    subprocess.run(["git", "add", "--", "data/series-renames.json"], cwd=ROOT)
+    return True
+
 def retired():
     """Ids que se retiran a proposito (renombrados o fuentes dadas de baja): scripts/series-retired.json {"ids": [...], "prefixes": [...]}."""
     try: d = json.load(open(os.path.join(ROOT, "scripts/series-retired.json"), encoding="utf-8"))
@@ -94,6 +132,11 @@ def main(argv):
         except Exception:
             continue
         if not isinstance(old, dict) or "countries" not in old: continue
+        ren = find_renames(old, new)
+        if ren:
+            record_renames(ren, f)
+            print("::notice::%s: %d series cambian de id con los mismos datos (anotadas en data/series-renames.json): %s" % (f, len(ren), ", ".join("%s -> %s" % kv for kv in list(ren.items())[:6])))
+            for c in (old.get("countries") or {}).values(): c["series"] = [x for x in c.get("series") or [] if x.get("id") not in ren]
         ids, pre = retired()
         o = series_by_id(old)
         for sid in [k for k in o if k in ids or (pre and k.startswith(pre))]: del o[sid]   # retiradas a proposito: no se reponen

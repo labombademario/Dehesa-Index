@@ -115,5 +115,18 @@ eq('CB: la regla de basis sobrevive a exportar/importar', W.cleanRule({ t: 'basi
 eq('CB: basis invalido descartado', [W.cleanRule({ t: 'basis', v: 'x', d: 'below' }), W.cleanRule({ t: 'basis', v: 1, d: 'sideways' })], [null, null]);
 eq('CB: item valido importable', W.cleanItem({ c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.1, d: 'above' }], seen: { p: '2026-09-30', v: 4.5, b: -0.2 } }), { c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.1, d: 'above' }], seen: { p: '2026-09-30', v: 4.5, b: -0.2 } });
 eq('CB: texto de la regla', W.ruleText({ t: 'basis', v: -0.2, d: 'below' }, 'en'), 'Basis falls below -0.2');
+// --- series renombradas (data/series-renames.json): lo guardado con el id viejo pasa al nuevo, con sus reglas, sin duplicar
+{ const RN = { renames: { 'us-old-a': 'us-new-a', 'us-old-b': 'us-new-b' } }, SH = { series: { 'US/us-new-a': ['A', 'acres', 'annual', 'x', '2026', 1, 0], 'US/us-new-b': ['B', 'acres', 'annual', 'x', '2026', 2, 0] } };
+  const st2 = {}, sb2 = { window: {}, document: {}, console, fetch: (u) => Promise.resolve({ ok: true, json: () => Promise.resolve(/series-renames/.test(u) ? RN : /watch\/US/.test(u) ? SH : {}) }) };   // contexto limpio
+  sb2.window.localStorage = { getItem: (k) => (k in st2 ? st2[k] : null), setItem: (k, v) => { st2[k] = String(v); }, removeItem: (k) => { delete st2[k]; } }; sb2.window.DehesaShared = {}; sb2.window.location = { pathname: '/' };
+  vm.createContext(sb2); sb2.window.window = sb2.window; Object.assign(sb2, { localStorage: sb2.window.localStorage, location: sb2.window.location });
+  vm.runInContext(readFileSync(new URL('../js/watchlist.js', import.meta.url), 'utf8'), sb2); const W = sb2.window.DIWatch, set = (items) => { st2['di-watchlist-v1'] = JSON.stringify(items); }, store = st2;
+  set([{ c: 'US', s: 'us-old-a', r: [{ t: 'pct', v: 5 }] }, { c: 'US', s: 'us-old-b', r: [{ t: 'pct', v: 7 }] }, { c: 'US', s: 'us-new-b', r: [{ t: 'pct', v: 3 }] }, { c: 'P', s: 'us-old-a' }]);
+  const ix = await W.loadIndex();
+  const l = JSON.parse(store['di-watchlist-v1']);
+  eq('renombrada: el id viejo pasa al nuevo con su regla', l.filter(x => x.c === 'US').map(x => x.s + ':' + (x.r || []).map(r => r.v).join('|')), ['us-new-a:5', 'us-new-b:3|7']);
+  eq('renombrada: los productos (P) no se tocan', l.filter(x => x.c === 'P').map(x => x.s), ['us-old-a']);
+  eq('renombrada: la serie nueva tiene su dato en el indice', !!(ix && ix['US/us-new-a']), true);
+}
 console.log(bad ? 'Watchlist: ' + bad + ' fallos de ' + n : 'Watchlist: ' + n + ' comprobaciones OK');
 process.exit(bad ? 1 : 0);

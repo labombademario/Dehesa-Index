@@ -45,7 +45,28 @@
       return d;
     });
   }
+  // series que cambiaron de id con los mismos datos (data/series-renames.json, lo escribe la guarda al publicar): lo guardado con el id viejo se pasa al nuevo, reglas incluidas
+  var RN = null, RNF = 0;
+  function migrate(map) {
+    var l = read(), ch = false, out = [];
+    l.forEach(function (it) {
+      var to = it && it.c !== 'P' && it.c !== 'CB' && map[it.s];
+      if (!to) { out.push(it); return; }
+      ch = true; var dup = find(out, it.c, to) || find(l, it.c, to);
+      if (dup && dup !== it) { if (it.r && it.r.length) { dup.r = (dup.r || []).concat(it.r).slice(0, MAXRULES); } return; }   // ya seguias la nueva: se juntan las reglas, sin duplicar la serie
+      it.s = to; out.push(it);
+    });
+    if (ch) write(out);
+  }
+  function renames() {
+    return RN || (RN = fetch(sp('data/series-renames.json')).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (d) { if (d && d.renames) migrate(d.renames); })
+      .catch(function () { if (++RNF < 3) RN = null; }));   // sin red: se reintenta en la siguiente carga (maximo 3 veces); nada se borra mientras
+  }
   function load(need) {
+    if (!RN && read().length) return renames().then(function () { return load2(need); });   // una vez por carga; si falla, se reintenta en la siguiente
+    return load2(need);
+  }
+  function load2(need) {
     IDX = IDX || {};
     var ps = {}; read().forEach(function (i) { if (i.c !== 'CB') ps[i.c] = 1; }); (need || []).forEach(function (c) { if (c !== 'CB') ps[c] = 1; });
     var all = Object.keys(ps).map(shard);
