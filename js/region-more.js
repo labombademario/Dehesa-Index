@@ -152,6 +152,7 @@
   Object.keys(T2).forEach(function (l) { var x = T[l]; if (!x) return; Object.keys(T2[l]).forEach(function (k) { x[k] = T2[l][k]; }); });
   Object.keys(T).forEach(function (l) { var x = T[l]; x.usprices = x.usPr; x.usstocks = x.usSt; x.usslaughter = x.usSl; x.usdairy = x.usDa; x.usland = x.usLand; x.usincome = x.usIn; x.uscensus = x.usCe; });
   (function () { var N = { es: 'Estado de los cultivos', en: 'Crop condition', fr: 'État des cultures', it: 'Stato delle colture' }, R = { es: 'Ingresos por producto', en: 'Cash receipts by commodity', fr: 'Recettes par produit', it: 'Ricavi per prodotto' }; Object.keys(N).forEach(function (l) { if (T[l]) { T[l].uscprog = N[l]; T[l].usrecv = R[l]; } }); })();   // títulos de los bloques para el índice
+  (function () { var N = { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' }; Object.keys(N).forEach(function (l) { if (T[l]) T[l].eudr = N[l]; }); })();
   window.DehesaRegionMore = function (H) {
     var get = H.get, card = H.card, cite = H.cite, table = H.table, nf = H.nf, esc = H.esc, tt = H.tt, day = H.day, pct = H.pct, dec = H.dec;
     function L(s) { var p = String(s).split('|'), i = IX[H.lang()]; return p[i == null ? 0 : i] || p[0]; }
@@ -163,9 +164,41 @@
     function link(href, txt) { return '<p class="di-movers-hint" style="margin:10px 0 0"><a href="' + href + '">' + esc(txt) + ' →</a></p>'; }
     function mon(p) { return H.plabel ? H.plabel(p) : p; }
 
+    /* ---- sequía por región de Bélgica, Austria, Grecia, Italia y Alemania (Observatorio Europeo de la Sequía, JRC; data/eu-drought-regions/<PAIS>.json) ----
+       Una región que reúne varias unidades NUTS 2 (Länder alemanes, Trentino-Alto Adigio) muestra una fila por unidad: no se promedian porcentajes de superficie. */
+    function eudr(x) {
+      if (['BE', 'AT', 'EL', 'IT', 'DE'].indexOf(x.c) < 0) return Promise.resolve(null);
+      return Promise.all([get('data/eu-regions-macro.json'), get('data/eu-drought-regions/' + x.c + '.json'), get('data/eu-drought.json')]).then(function (a) {
+        var M = a[0] && a[0].regions && a[0].regions[x.c] && a[0].regions[x.c][x.r], R = a[1] && a[1].regions, P = a[2] && a[2].periods;
+        if (!M || !M.nuts || !R || !P || !P.length) return null;
+        var seen = {}, ids = M.nuts.filter(function (n) { if (seen[n] || !R[n]) return false; seen[n] = 1; return true; });
+        var inD = function (r) { return r ? r[0] + r[1] + r[2] : null; }, rows = [];
+        ids.forEach(function (n) {
+          var v = R[n].v; if (!v || !v.length || v.length !== P.length) return; var l = v[v.length - 1], p = v.length > 36 ? v[v.length - 37] : null; if (!l) return;
+          var d = inD(l), dp = p ? inD(p) : null, dd = dp == null ? null : d - dp;
+          rows.push([esc(R[n].name.split('/').pop().replace(/^\s*Prov\.\s*/, '').trim()), nf(d, 1) + ' %', dp == null ? '—' : nf(dp, 1) + ' %', dd == null ? '—' : (dd > 0 ? '+' : dd < 0 ? '−' : '') + nf(Math.abs(dd), 1) + ' pp', nf(l[0], 1) + ' · ' + nf(l[1], 1) + ' · ' + nf(l[2], 1)]);
+        });
+        if (!rows.length) return null;
+        return card(L('Sequía|Drought|Sécheresse|Siccità'),
+          L('Superficie de la región en sequía agrícola (vigilancia, aviso o alerta) según el Indicador Combinado de Sequía del Observatorio Europeo de la Sequía (JRC), última década frente a la misma década del año pasado. Si la región reúne varias unidades NUTS 2 se muestra una fila por unidad; Dehesa Index no promedia porcentajes de superficie.|Share of the region’s area in agricultural drought (watch, warning or alert) according to the Combined Drought Indicator of the European Drought Observatory (JRC), latest dekad against the same dekad last year. If the region groups several NUTS 2 units, one row per unit is shown; Dehesa Index does not average area percentages.|Part de la superficie de la région en sécheresse agricole (vigilance, avertissement ou alerte) selon l’indicateur combiné de sécheresse de l’Observatoire européen de la sécheresse (JRC), dernière décade comparée à la même décade de l’an dernier. Si la région regroupe plusieurs unités NUTS 2, une ligne par unité est affichée ; Dehesa Index ne fait pas de moyenne de pourcentages de surface.|Quota della superficie della regione in siccità agricola (attenzione, allerta o allarme) secondo l’indicatore combinato di siccità dell’Osservatorio europeo sulla siccità (JRC), ultima decade rispetto alla stessa decade dell’anno scorso. Se la regione riunisce più unità NUTS 2, si mostra una riga per unità; Dehesa Index non fa la media di percentuali di superficie.')
+          + ' ' + L('Decena|Dekad|Décade|Decade') + ' ' + day(P[P.length - 1]) + '.',
+          table([L('Unidad|Unit|Unité|Unità'), L('En sequía|In drought|En sécheresse|In siccità'), L('Año pasado|Last year|An dernier|Anno scorso'), L('Cambio|Change|Variation|Variazione'), L('Vigilancia · aviso · alerta (%)|Watch · warning · alert (%)|Vigilance · avertissement · alerte (%)|Attenzione · allerta · allarme (%)')], rows, 560)
+          + link('sequia.html', L('Ver el monitor de sequía completo|Open the full drought monitor|Ouvrir le moniteur de sécheresse complet|Apri il monitor della siccità completo')), cite('edo_cdi', P[P.length - 1].slice(0, 7)));
+      });
+    }
+    /* clima de las regiones sin punto en data/climate.json: ciudad principal de la región (NASA POWER; data/eu-region-climate.json, scripts/update-eu-region-climate.mjs) */
+    function regClim(x) {
+      return get('data/eu-region-climate.json').then(function (d) {
+        var l = d && d.countries && d.countries[x.c] && d.countries[x.c][x.r]; if (!l || !l.months || !l.months.length) return null;
+        var t = tt(), rows = l.months.slice(-6).reverse().map(function (m) { return [esc(mon(m.period)), nf(m.precipMm, 1), (m.precipAnomalyPct > 0 ? '+' : m.precipAnomalyPct < 0 ? '−' : '') + nf(Math.abs(m.precipAnomalyPct), 0) + ' %', nf(m.tempC, 1), (m.tempAnomalyC > 0 ? '+' : m.tempAnomalyC < 0 ? '−' : '') + nf(Math.abs(m.tempAnomalyC), 1) + ' °C']; });
+        var body = '<h3 style="margin:10px 0 4px;font-size:14px">' + esc(t.climPt) + ': ' + esc(l.city) + ' ' + faint(nf(l.lat, 1) + '°, ' + nf(l.lon, 1) + '°') + '</h3>' + table([t.mMonth, t.precip, t.precipA, t.temp, t.tempA], rows, 480);
+        return card(t.clim, t.climSub, body + link('clima.html', t.climMore), cite('nasa_power', d.lastPeriod || ''));
+      });
+    }
+
     /* ---- clima (todos los países) ---- */
     function clim(x) {
-      var ids = CLIM[x.c] && CLIM[x.c][x.r]; if (!ids) return Promise.resolve(null); if (typeof ids === 'string') ids = [ids];
+      var ids = CLIM[x.c] && CLIM[x.c][x.r]; if (!ids) return regClim(x); if (typeof ids === 'string') ids = [ids];
       return get('data/climate.json').then(function (d) {
         var t = tt(), locs = (d && d.locations || []).filter(function (l) { return ids.indexOf(l.id) >= 0 && l.months && l.months.length; }); if (!locs.length) return null;
         var body = locs.map(function (l) {
@@ -590,12 +623,12 @@
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', clim)],
-        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('clim', clim)],
+        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('eudr', eudr), C('clim', clim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
-        AT: [C('clim', clim)], IT: [C('eslonjas', esLonjas), C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]
+        AT: [C('eudr', eudr), C('clim', clim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', clim)], AU: [C('clim', clim)], BE: [C('eudr', eudr), C('clim', clim)], DK: [C('clim', clim)], EL: [C('eudr', eudr), C('clim', clim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
-      optional: { eslonjas: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1, uscprog: 1 }
+      optional: { eslonjas: 1, eudr: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1, uscprog: 1 }
     };
   };
 })();

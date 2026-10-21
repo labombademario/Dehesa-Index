@@ -1525,6 +1525,12 @@
    [
     "es_jcyl_prices"
    ]
+  ],
+  "eu-region-climate.json": [
+   "eu-region-climate",
+   [
+    "eu_region_climate"
+   ]
   ]
  },
  "globs": {
@@ -1773,6 +1779,7 @@
  ],
  "optional": [
   "italy-land/land.json",
-  "es-climate-provinces.json"
+  "es-climate-provinces.json",
+  "eu-region-climate.json"
  ]
 }
