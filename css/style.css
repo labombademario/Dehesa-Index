@@ -1334,6 +1334,8 @@ html[data-theme="dark"] .pt-fs-DELAYED, html[data-theme="dark"] .pt-cp-not_compa
 .cc-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .cc-field label { font-size: 12px; font-weight: 700; color: var(--text-faint); }
 .cc-field input, .cc-field select { font: inherit; font-size: 15px; min-height: 44px; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-input); color: var(--text); width: 100%; box-sizing: border-box; }
+.cc-refsel { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px 12px; margin-bottom: 10px; }
+.cc-refsel .pt-note { grid-column: 1 / -1; margin: 0; }
 .cc-field input[aria-invalid="true"] { border-color: var(--negative); }
 .cc-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .cc-row input { flex: 1 1 100px; min-width: 0; }

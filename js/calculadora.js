@@ -422,7 +422,7 @@
   // La referencia «Unión Europea» ya no es un único precio: se elige país y mercado; sin dato del país se avisa, no se sustituye.
   var LJV = { trigo: 'pan', maiz: 'pienso', cebada: 'pienso', avena: 'pienso' }, LJP = null;
   var EUN = { AT: ['Austria', 'Austria', 'Autriche', 'Austria'], BE: ['Bélgica', 'Belgium', 'Belgique', 'Belgio'], BG: ['Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'], HR: ['Croacia', 'Croatia', 'Croatie', 'Croazia'], CY: ['Chipre', 'Cyprus', 'Chypre', 'Cipro'], CZ: ['Chequia', 'Czechia', 'Tchéquie', 'Cechia'], DK: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], EE: ['Estonia', 'Estonia', 'Estonie', 'Estonia'], FI: ['Finlandia', 'Finland', 'Finlande', 'Finlandia'], FR: ['Francia', 'France', 'France', 'Francia'], DE: ['Alemania', 'Germany', 'Allemagne', 'Germania'], EL: ['Grecia', 'Greece', 'Grèce', 'Grecia'], HU: ['Hungría', 'Hungary', 'Hongrie', 'Ungheria'], IE: ['Irlanda', 'Ireland', 'Irlande', 'Irlanda'], IT: ['Italia', 'Italy', 'Italie', 'Italia'], LV: ['Letonia', 'Latvia', 'Lettonie', 'Lettonia'], LT: ['Lituania', 'Lithuania', 'Lituanie', 'Lituania'], LU: ['Luxemburgo', 'Luxembourg', 'Luxembourg', 'Lussemburgo'], MT: ['Malta', 'Malta', 'Malte', 'Malta'], NL: ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'], PL: ['Polonia', 'Poland', 'Pologne', 'Polonia'], PT: ['Portugal', 'Portugal', 'Portugal', 'Portogallo'], RO: ['Rumanía', 'Romania', 'Roumanie', 'Romania'], SK: ['Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia'], SI: ['Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'], ES: ['España', 'Spain', 'Espagne', 'Spagna'], SE: ['Suecia', 'Sweden', 'Suède', 'Svezia'] };
-  var LJT = { none: ['sin precio', 'no price', 'pas de prix', 'nessun prezzo'] };
+  var LJT = { none: ['Sin precio publicado para este cultivo', 'No published price for this crop', 'Pas de prix publié pour cette culture', 'Nessun prezzo pubblicato per questa coltura'], has: ['Con precio publicado', 'With a published price', 'Avec prix publié', 'Con prezzo pubblicato'] };
   function loadLj() { return LJP || (LJP = (typeof fetch === 'function' ? fetch('data/views/lonjas.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }) : Promise.resolve(null))); }
   function ljKey(x) { return x.m + '|' + (x['var'] || '') + '|' + (x.st || ''); }
   function ljLabel(D, x) { var i = li(), LB = D.labels || { 'var': {}, st: {} }; return [x.m, LB['var'][x['var']] ? LB['var'][x['var']][i] : '', LB.st[x.st] ? LB.st[x.st][i] : ''].filter(Boolean).join(' · '); }
@@ -450,8 +450,7 @@
         var tj = String((c.tax && c.tax.j) || ''), cc = c.euCC || (/^EU:[A-Z]{2}$/.test(tj) && EUN[tj.slice(3)] ? tj.slice(3) : 'ES');
         if (!EUN[cc]) cc = 'ES';
         var mks = ljMarkets(LJD, cc, c.crop), ok2 = mks.length > 0;
-        if (cc === 'ES' && !c.euCC && !c.euMk) { /* España sin elegir nada: la lonja de siempre (Zaragoza; Lleida en cebada) */ }
-        else if (ok2) {
+        if (ok2) {
           var m = null; mks.forEach(function (x) { if (ljKey(x) === c.euMk) m = x; });
           if (!m && cc === 'ES') { var dn = c.crop === 'cebada' ? 'Lleida' : 'Zaragoza'; mks.forEach(function (x) { if (!m && x.m === dn && x.st === 'silo') m = x; }); }
           if (!m) { var top2 = mks.reduce(function (a, x) { var d = x.p[x.p.length - 1][0]; return d > a ? d : a; }, ''); m = mks.filter(function (x) { return x.p[x.p.length - 1][0] >= top2; })[0]; }
@@ -460,7 +459,9 @@
           var r3 = refPerT(o2, c.crop, c.cur);
           if (r3.value !== null) { cur = { o: o2, r: r3, key: cur.key }; ljMk = EUN[cc][li()] + ' · ' + ljLabel(LJD, m); }
         } else ljNone = tf('euNoData', EUN[cc][li()], CROPS[c.crop][li()]);
-        var csel = field('cc-eucc', t('euCountry'), '<select id="cc-eucc" data-f="eucc">' + ccs.map(function (k) { var has = ljMarkets(LJD, k, c.crop).length > 0; return '<option value="' + k + '"' + (k === cc ? ' selected' : '') + '>' + esc(EUN[k][li()] + (has ? '' : ' (' + LJT.none[li()] + ')')) + '</option>'; }).join('') + '</select>');
+        var wp = ccs.filter(function (k) { return ljMarkets(LJD, k, c.crop).length > 0; }), np = ccs.filter(function (k) { return wp.indexOf(k) < 0; });
+        var opt = function (k) { return '<option value="' + k + '"' + (k === cc ? ' selected' : '') + '>' + esc(EUN[k][li()]) + '</option>'; };
+        var csel = field('cc-eucc', t('euCountry'), '<select id="cc-eucc" data-f="eucc">' + (np.length ? '<optgroup label="' + esc(LJT.has[li()]) + '">' : '') + wp.map(opt).join('') + (np.length ? '</optgroup><optgroup label="' + esc(LJT.none[li()]) + '">' + np.map(opt).join('') + '</optgroup>' : '') + '</select>');
         var msel = ok2 && mks.length > 1 ? field('cc-eumk', t('euMarket'), '<select id="cc-eumk" data-f="eumk">' + mks.map(function (x) { return '<option value="' + esc(ljKey(x)) + '"' + (ljKey(x) === ljSel ? ' selected' : '') + '>' + esc(ljLabel(LJD, x)) + '</option>'; }).join('') + '</select>') : '';
         ljHtml = csel + msel + (ljNone ? '<div class="pt-note">' + esc(ljNone) + '</div>' : '');
         if (ljNone) { c.p = ''; c.euNone = 1; } else c.euNone = 0;
@@ -472,8 +473,8 @@
       var Sh = window.DehesaShared, mk = ljMk || (Sh && Sh.marketLabel ? Sh.marketLabel(cur.o, LANGS[li()]) : ''), farm = /productor|farmer|producteur|produttor/i.test(mk);
       var FG = { es: 'No es un precio a pie de finca: es una cotización de mercado ({0}). Descuenta transporte y márgenes hasta tu explotación.', en: 'This is not a farm-gate price: it is a market quote ({0}). Deduct transport and margins back to your farm.', fr: 'Ce n’est pas un prix départ exploitation : c’est une cotation de marché ({0}). Déduisez transport et marges jusqu’à votre exploitation.', it: 'Non è un prezzo franco azienda: è una quotazione di mercato ({0}). Togli trasporto e margini fino alla tua azienda.' }[LANGS[li()]];
       var CPL = { not_comparable: ['no comparable', 'not comparable', 'non comparable', 'non comparabile'], directional: ['orientativa', 'directional', 'indicative', 'indicativa'] };
-      if (ljNone) { el.innerHTML = sel + ljHtml; update(); return; }
-      el.innerHTML = sel + ljHtml + '<div class="di-card pt-card" style="margin-top:8px"><div class="pt-k">' + esc(t('refTitle')) + ' · ' + esc(mk || REG[cur.o.region][li()]) + '</div><div class="pt-v">' + esc(money(cur.r.value, c.cur, 2)) + ' <small>/ t</small></div>' +
+      if (ljNone) { el.innerHTML = '<div class="cc-refsel">' + sel + ljHtml + '</div>'; update(); return; }
+      el.innerHTML = '<div class="cc-refsel">' + sel + ljHtml + '</div><div class="di-card pt-card" style="margin-top:8px"><div class="pt-k">' + esc(t('refTitle')) + ' · ' + esc(mk || REG[cur.o.region][li()]) + '</div><div class="pt-v">' + esc(money(cur.r.value, c.cur, 2)) + ' <small>/ t</small></div>' +
         '<div class="pt-sub">' + esc(t('original')) + ': ' + esc(nf(cur.o.value, 2) + ' ' + cur.o.currency + '/' + (UL[cur.o.unit] || cur.o.unit)) + ' · ' + esc(t('asOf')) + ' ' + esc(dstr(cur.o.observationDate)) + '</div>' +
         '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(SRC[cur.o.sourceId] || cur.o.sourceId) + '</div>' +
         '<div><span class="pt-badge pt-fs-' + st + '">' + esc(lab) + '</span><span class="pt-badge pt-cp-' + (cur.o.comparability || 'directional') + '">' + esc((cur.o.comparability === 'not_comparable' ? CPL.not_comparable : CPL.directional)[li()]) + '</span></div>' + (mk && !farm ? '<div class="pt-note">' + esc(FG.replace('{0}', mk)) + '</div>' : '') +
