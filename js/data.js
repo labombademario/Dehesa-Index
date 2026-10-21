@@ -346,20 +346,25 @@
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
           quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (canola)' }, eu: { type: 'referencia', market: 'Comisión Europea (colza, España, media nacional)' } } },
         { nameKey: 'centeno', imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 25.401 },
           eu: { price: 160.03, changePct: 3.9021, history: [146.59, 149.53, 145.82, 145.12, 152.79, 161.63, 153.58, 160.53, 153.9, 152.65, 154.02, 160.03], currency: 'EUR', kgPerUnit: 1000 },
-          quoteTypes: { eu: { type: 'referencia', market: 'Comisión Europea (centeno panificable, agregado UE)' } } },
-        { nameKey: 'soja_grano', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido por el agricultor)' }, eu: { type: 'referencia', market: 'Comisión Europea (centeno panificable, agregado UE)' } } },
+        { nameKey: 'soja_grano', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'bushel', imperialKgPerUnit: 27.2155, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 27.2155 },
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
-          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
-        { nameKey: 'lenteja', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido por el agricultor)' }, ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
+        { nameKey: 'lenteja', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 45.359 },
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
-          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
-        { nameKey: 'guisante_seco', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido por el agricultor)' }, ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
+        { nameKey: 'guisante_seco', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 45.359 },
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
-          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
-        { nameKey: 'lino', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido por el agricultor)' }, ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
+        { nameKey: 'lino', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 25.401 },
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
-          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido por el agricultor)' }, ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
         // Sorgo: solo hay dato en EE. UU. (USDA NASS). El portal de la Comisión Europea no publica precio de sorgo, así que no hay región `eu`
         { nameKey: 'sorgo', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 7.7, changePct: -3.99, history: [6.46, 6.94, 6.73, 7.5, 7.95, 8.02, 7.7], currency: 'USD', kgPerUnit: 45.359 },
@@ -447,13 +452,13 @@
       id: 'ovino', nameKey: 'ovino',
       products: [
         { nameKey: 'cordero', caUnitKey: 'cwt', caKgPerUnit: 45.359, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
-          us: { price: 232, changePct: 0.5, history: [218, 222, 225, 228, 230, 231, 232], currency: 'USD', kgPerUnit: 45.359 },
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 1061.6, changePct: 0.8646, history: [932.7, 933, 951.2, 956.8, 970.5, 1007.3, 1008, 1003.1, 1011.8, 1031.8, 1052.5, 1061.6], currency: 'EUR', kgPerUnit: 100 },
           uk: { price: 724.00, changePct: 1.5, history: [705, 710, 714, 717, 719, 721, 724], currency: 'GBP', kgPerUnit: 100 },
           footnoteKey: 'cordero',
           countryFactors: { es: 1, de: 0.986, fr: 0.867, it: 0.779 },
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 45.359 },
-          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA AMS (cordero)' }, eu: { type: 'referencia', market: 'Comisión Europea (ovino, España, cordero pesado)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, cordero NSL)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, corderos, peso vivo)' }, ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, eu: { type: 'referencia', market: 'Comisión Europea (ovino, España, cordero pesado)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, cordero NSL)' } } }
       ]
     },
     {
@@ -514,10 +519,10 @@
       id: 'azucar', nameKey: 'azucar',
       products: [
         { nameKey: 'azucar', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 0.41, changePct: 0.2, history: [0.39, 0.395, 0.40, 0.405, 0.408, 0.41, 0.41], currency: 'USD', kgPerUnit: 0.453592 },
+          us: { price: 0.51, changePct: 6.81, history: [0.42, 0.42, 0.42, 0.4425, 0.45, 0.4775, 0.51], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 501.4009, changePct: -0.687, history: [537.8029, 535.8926, 528.9824, 531.6697, 525.4319, 518.3146, 516.2968, 512.9793, 510.1677, 502.1113, 504.8693, 501.4009], currency: 'EUR', kgPerUnit: 1000 },
           footnoteKey: 'azucar',
-          quoteTypes: { us: { type: 'referencia', market: 'USDA ERS' }, eu: { type: 'referencia', market: 'Comisión Europea (azúcar blanco, media UE)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA ERS (azúcar refinado de remolacha, Medio Oeste, a granel)' }, eu: { type: 'referencia', market: 'Comisión Europea (azúcar blanco, media UE)' } } }
       ]
     },
     {
@@ -865,6 +870,41 @@
       sourceId: 'statcan', frequency: 'monthly',
       methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-soja_grano-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for soybeans; USD/bushel. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-lenteja-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for lentils; USD/cwt. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-guisante_seco-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for dry edible peas; USD/cwt. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-lino-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for flaxseed; USD/bushel. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-centeno-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for rye; USD/bushel. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'ovino-cordero-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for lambs, live weight; USD/cwt. Not comparable with the EU heavy-lamb carcass price. Pendiente de la primera ejecución automática.',
+      comparability: 'not_comparable', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'azucar-azucar-us': {
+      sourceId: 'usda_ers', frequency: 'monthly',
+      methodology: 'USDA ERS, Sugar and Sweeteners Yearbook, table 5: wholesale refined beet sugar price, Midwest markets, bulk, monthly average; USD/lb (ERS publishes cents/lb). Wholesale, not retail; the EU figure is the average ex-factory white sugar price.',
+      comparability: 'directional', observationDate: '2026-09', publicationDate: null, status: 'verified', verifiedAt: '2026-10-21T17:19:54.000Z'
     },
     'cereales-soja_grano-ca': {
       sourceId: 'statcan', frequency: 'monthly',

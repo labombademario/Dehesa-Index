@@ -211,6 +211,16 @@ sources:
     continue: true
     data: [wood-prices-de.json]
     message: Indice de precios de la madera alemana (Destatis)
+  - id: wood-prices-na
+    name: Update US and Canada timber price indices (BLS PPI, Statistics Canada IPPI)
+    cron: ['35 15 18 * *']   # BLS publica el PPI a mitad de mes; StatCan el IPPI a final de mes: el 18 recoge el primero y el mes anterior del segundo
+    script: scripts/update-wood-prices-na.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [wood-prices-na.json]
+    log: wood-prices-na-log.txt
+    message: Indices de precios de la madera de EE. UU. (BLS) y Canada (StatCan)
   - id: us-reservoirs
     name: Update western US reservoirs (Bureau of Reclamation RISE)
     cron: ['15 14 * * 1,4']

@@ -98,6 +98,19 @@ const PRODUCTS = {
     obsUnit: 'docena',
     trustMethodology: 'National USDA NASS PRICE RECEIVED for table eggs (producer price, not retail); USD/dozen.'
   },
+  // 21-oct-2026: productos que NASS publica en el mismo informe y que faltaban en el panel de EE. UU.
+  soja_grano: { label: 'Soja', commodity: 'SOYBEANS', shortDesc: 'SOYBEANS - PRICE RECEIVED, MEASURED IN $ / BU', kgPerUnit: '27\\.2155', obsUnit: 'bushel',
+    market: 'USDA NASS (precio recibido por el agricultor)', trustMethodology: 'National USDA NASS PRICE RECEIVED for soybeans; USD/bushel.' },
+  lenteja: { label: 'Lenteja', commodity: 'LENTILS', shortDesc: 'LENTILS - PRICE RECEIVED, MEASURED IN $ / CWT', kgPerUnit: '45\\.359', obsUnit: 'cwt',
+    market: 'USDA NASS (precio recibido por el agricultor)', trustMethodology: 'National USDA NASS PRICE RECEIVED for lentils; USD/cwt.' },
+  guisante_seco: { label: 'Guisante seco', commodity: 'PEAS', shortDesc: 'PEAS, DRY EDIBLE - PRICE RECEIVED, MEASURED IN $ / CWT', kgPerUnit: '45\\.359', obsUnit: 'cwt',
+    market: 'USDA NASS (precio recibido por el agricultor)', trustMethodology: 'National USDA NASS PRICE RECEIVED for dry edible peas; USD/cwt.' },
+  lino: { label: 'Lino', commodity: 'FLAXSEED', shortDesc: 'FLAXSEED - PRICE RECEIVED, MEASURED IN $ / BU', kgPerUnit: '25\\.401', obsUnit: 'bushel',
+    market: 'USDA NASS (precio recibido por el agricultor)', trustMethodology: 'National USDA NASS PRICE RECEIVED for flaxseed; USD/bushel.' },
+  centeno: { label: 'Centeno', commodity: 'RYE', shortDesc: 'RYE - PRICE RECEIVED, MEASURED IN $ / BU', kgPerUnit: '25\\.401', obsUnit: 'bushel',
+    market: 'USDA NASS (precio recibido por el agricultor)', trustMethodology: 'National USDA NASS PRICE RECEIVED for rye; USD/bushel.' },
+  cordero: { label: 'Cordero', commodity: 'SHEEP', shortDesc: 'SHEEP, LAMBS - PRICE RECEIVED, MEASURED IN $ / CWT', kgPerUnit: '45\\.359', trustKey: 'ovino-cordero-us', obsUnit: 'cwt', comparability: 'not_comparable',
+    market: 'USDA NASS (precio recibido, corderos, peso vivo)', trustMethodology: 'National USDA NASS PRICE RECEIVED for lambs, live weight; USD/cwt. Not comparable with the EU heavy-lamb carcass price.' },
   // Precios al productor en PESO VIVO: reales pero NO equivalentes a la canal (UE) -> NO COMPARABLE
   cerdo: {
     label: 'Cerdo', commodity: 'HOGS', shortDesc: 'HOGS - PRICE RECEIVED, MEASURED IN $ / CWT',
@@ -168,7 +181,7 @@ async function fetchSeries() {
     var avail = Array.from(new Set(rows.map(function (r) { return r.short_desc; }))).slice(0, 25).join(' ; ');
     console.error('short_desc disponibles para ' + cfg.commodity + ': ' + avail);
     throw new Error(
-      'Ningún registro con short_desc="' + cfg.shortDesc + '". NASS puede haber cambiado su nomenclatura -- ' +
+      'Ningún registro con short_desc="' + cfg.shortDesc + '" (disponibles: ' + avail.slice(0, 600) + '). NASS puede haber cambiado su nomenclatura -- ' +
       'revisar a mano la respuesta de ' + url.replace(API_KEY, 'XXXX') + ' y ajustar shortDesc en este script.'
     );
   }

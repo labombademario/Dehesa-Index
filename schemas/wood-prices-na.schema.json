@@ -1,0 +1,110 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Indices de precios de la madera de EE. UU. (BLS PPI) y Canada (StatCan IPPI)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "unit",
+  "countries"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "unit": {
+   "enum": [
+    "INDEX"
+   ]
+  },
+  "countries": {
+   "type": "object",
+   "minProperties": 1,
+   "additionalProperties": false,
+   "properties": {
+    "US": {
+     "type": "object",
+     "required": [
+      "source",
+      "months",
+      "series"
+     ],
+     "properties": {
+      "source": {
+       "type": "object",
+       "required": [
+        "name",
+        "url",
+        "license"
+       ]
+      },
+      "months": {
+       "type": "array",
+       "minItems": 24,
+       "items": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}$"
+       }
+      },
+      "series": {
+       "type": "object",
+       "minProperties": 1,
+       "additionalProperties": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     }
+    },
+    "CA": {
+     "type": "object",
+     "required": [
+      "source",
+      "months",
+      "series"
+     ],
+     "properties": {
+      "source": {
+       "type": "object",
+       "required": [
+        "name",
+        "url",
+        "license"
+       ]
+      },
+      "months": {
+       "type": "array",
+       "minItems": 24,
+       "items": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}$"
+       }
+      },
+      "series": {
+       "type": "object",
+       "minProperties": 1,
+       "additionalProperties": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

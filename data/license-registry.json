@@ -6574,6 +6574,13 @@
     "nasa_power"
    ],
    "notes": "Lluvia y temperatura mensual en la ciudad principal de cada region de Belgica, Austria, Grecia, Italia y Alemania (NASA POWER, reanalisis MERRA-2); son datos de un punto, no de toda la region."
+  },
+  "data/wood-prices-na.json": {
+   "sources": [
+    "bls",
+    "statcan"
+   ],
+   "notes": "Indices de precios de la madera: EE. UU. = BLS Producer Price Index (WPU081 madera aserrada, WPU0811 coniferas, WPU0812 frondosas, WPU083 contrachapado, WPU085 trozas y madera para pasta; 1982=100; dominio publico). Canada = Statistics Canada, tabla 18-10-0266-01 (IPPI, productos de madera aserrada y en rollo; Open Government Licence - Canada). Son indices, no precios en dolares."
   }
  },
  "derived": [

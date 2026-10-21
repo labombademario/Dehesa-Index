@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-239 workflows (198 generados desde `sources.yml`, 41 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+240 workflows (199 generados desde `sources.yml`, 41 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -288,6 +288,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json, world-production.json | finish, validate-files |
 | update-wine-prices.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-wine-prices.py | wine-prices.json | finish, validate-files |
 | update-wood-prices-de.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-prices-de.py | wood-prices-de.json | finish, validate-files |
+| update-wood-prices-na.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-wood-prices-na.py | wood-prices-na.json | finish, validate-files |
 | update-wood-removals.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-removals.py | wood-removals.json | finish, validate-files |
 | update-worldbank-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-agri.py | worldbank-agri.json | finish, validate-files |
 | update-worldbank-fertilizers.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-fertilizers.py | worldbank-fertilizers.json | finish, validate-files |
@@ -326,7 +327,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-ams.yml | a mano | 2 veces/semana | build-ams-daily.py, build-search-index.mjs, build-us-fertilizers.py | ams-grain-daily.json, search-index.json, us-fertilizers.json | finish, publish, validate-files |
 | update-ers-baseline.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ers-baseline.py | us-markets/baseline-tables.json, us-markets/baseline.json | finish, validate-files |
 | update-ers.yml | a mano | semanal (1) | update-ers.mjs | ers.json | finish, validate-files |
-| update-nass-data.yml | a mano | semanal (1) | update-nass-us.mjs | - | price-engine, publish |
+| update-nass-data.yml | a mano | semanal (1) | bridge-panel-stats.py, update-nass-us.mjs | - | price-engine, publish |
 | update-nass.yml | a mano | semanal (1) | update-nass.mjs | nass-crops.json, nass-livestock.json, nass-prices.json … | finish, validate-files |
 | update-us-arcplc.yml | generado | mensual | detect-revisions.py, gen-workflows.py, source-status.py | us-arcplc/index.json, us-arcplc/national.json | finish, publish, validate-files |
 | update-us-cash-bids.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-cash-bids.py | us-cash-bids/ingestion-status.json, us-cash-bids/manifest.json, us-cash-bids/reports.json … | finish, validate-files |

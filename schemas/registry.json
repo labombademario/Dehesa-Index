@@ -1535,6 +1535,12 @@
   "australia-states-macro.json": [
    "australia-states-macro",
    []
+  ],
+  "wood-prices-na.json": [
+   "wood-prices-na",
+   [
+    "wood_prices_na"
+   ]
   ]
  },
  "globs": {
