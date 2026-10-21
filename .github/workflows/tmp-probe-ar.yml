@@ -1,0 +1,16 @@
+name: tmp probe AR sources
+on:
+  push:
+    branches: ['research/probe-ar']
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 scripts/probe-ar-sources.py
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b probe-ar-out && git add -f data/probe-ar.txt && git commit -qm "probe" && git push -f origin probe-ar-out
