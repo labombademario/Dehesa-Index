@@ -20,6 +20,28 @@ def log(*a):
 def own_series(t, key, own, ymin=2000):
     s = t.get((key, own)) if own else None
     return [[y, round(v, 3)] for y, v in sorted((s or {}).items()) if y >= ymin]
+# Portugal: desde la division NUTS 2024 Eurostat publica el PIB (y la poblacion reciente) de Centro, Lisboa y Alentejo solo con codigos nuevos.
+# Las regiones de la web siguen siendo las NUTS 2021; se reconstruyen EXACTAMENTE sumando las mismas unidades NUTS 3 (comunidades intermunicipais) que las componian.
+PT_N3 = {"CEN": ["PT1D1", "PT191", "PT192", "PT193", "PT194", "PT195", "PT196", "PT1D2"],   # Oeste, Aveiro, Coimbra, Leiria, Viseu Dao Lafoes, Beira Baixa, Beiras e Serra da Estrela, Medio Tejo
+         "LIS": ["PT1A0", "PT1B0"],                                                            # Area Metropolitana de Lisboa = Grande Lisboa + Peninsula de Setubal
+         "ALE": ["PT1C1", "PT1C2", "PT1C3", "PT1C4", "PT1D3"]}                                 # Alentejo Litoral, Baixo, Alto, Central y Leziria do Tejo
+def pt_nuts3(out):
+    G = sorted({g for v in PT_N3.values() for g in v})
+    tg = ER.collect(ER.fetch("nama_10r_3gdp", unit="MIO_EUR", geo=G), lambda c: "gdp")
+    tp = ER.collect(ER.fetch("demo_r_pjanaggr3", sex="T", age="TOTAL", unit="NR", geo=G), lambda c: "pop")
+    for r, kids in PT_N3.items():
+        for key, t, rnd in (("gdp", tg, lambda v: round(v, 3)), ("pop", tp, round)):
+            ser = [t.get((key, k)) for k in kids]
+            if not all(ser): log("pt", r, key, "NUTS 3 incompleto: no se usa"); continue
+            years = sorted(set.intersection(*[set(x) for x in ser]))
+            tot = {y: sum(x[y] for x in ser) for y in years if y >= 2000}
+            cur = {y: v for y, v in out[r].get(key, [])}
+            # control: donde ya hay dato oficial de la region (NUTS 2021), la suma debe coincidir (0,5 %)
+            bad = [y for y in tot if y in cur and abs(tot[y] / cur[y] - 1) > 0.005]
+            if bad: log("pt", r, key, "la suma NUTS 3 no coincide con el dato oficial en", bad, "-> no se usa"); continue
+            for y, v in tot.items(): cur.setdefault(y, v)
+            out[r][key] = [[y, rnd(v)] for y, v in sorted(cur.items())]
+            out[r].setdefault("via", {})[key] = "NUTS3"
 def build(cc, reg):
     G = ER.geos(reg)
     out = {r: {"nuts": ([s[0]] if s[0] else []) + s[1]} for r, s in reg.items()}
@@ -35,6 +57,9 @@ def build(cc, reg):
     for r, s in reg.items():
         p = own_series(t, "unemp", s[0]) or (own_series(t, "unemp", s[1][0]) if len(s[1]) == 1 else [])
         if p: out[r]["unemp"] = p
+    if cc == "pt":
+        try: pt_nuts3(out)
+        except Exception as e: log("pt NUTS 3 no disponible:", repr(e))
     for r, o in out.items():
         if o.get("gdp") and o.get("pop"):
             pop = {y: v for y, v in o["pop"]}
@@ -70,7 +95,7 @@ def main():
             for k, v in old.items(): res.setdefault(k, v)
         except Exception: pass
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "source": {"name": "Eurostat (nama_10r_2gdp, demo_r_d2jan, lfst_r_lfu3rt)", "url": "https://ec.europa.eu/eurostat/", "license": "Eurostat reuse policy (Commission Decision 2011/833/EU)"},
+           "source": {"name": "Eurostat (nama_10r_2gdp, nama_10r_3gdp, demo_r_d2jan, demo_r_pjanaggr3, lfst_r_lfu3rt)", "url": "https://ec.europa.eu/eurostat/", "license": "Eurostat reuse policy (Commission Decision 2011/833/EU)"},
            "units": {"gdp": "EUR million, current prices", "pop": "persons on 1 January", "unemp": "% of the labour force, 15-74", "gdppc": "EUR per inhabitant (GDP / population, calculated by Dehesa Index)"},
            "regions": dict(sorted(res.items()))}
     p.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); log("escrito", p.name, p.stat().st_size // 1024, "KB")
