@@ -10,7 +10,7 @@
 
   var T = {
     es: {
-      title: 'PAC España: ayudas por hectárea, calendario y reglas', sub: 'Lo que fija el Real Decreto 1048/2022 para las ayudas directas de la PAC (2023-2027): importes planificados, mínimos y máximos por región y ecorrégimen, reglas, plazos y los cambios del BOE. Con una calculadora de estimación con tus hectáreas y tus costes.',
+      title: 'PAC España: ayudas por hectárea y calendario', sub: 'Lo que fija el Real Decreto 1048/2022 para las ayudas directas de la PAC (2023-2027): importes planificados, mínimos y máximos por región y ecorrégimen, reglas, plazos y los cambios del BOE. Con una calculadora de estimación con tus hectáreas y tus costes.',
       notice: 'Los importes de esta página son los del real decreto (planificado, mínimo y máximo). No son los importes unitarios de cada campaña que publica el FEGA (provisionales, revisados y definitivos), que todavía no incorporamos. Lo que aparece como «estimación» lo calcula Dehesa Index con tus datos: no es lo que vas a cobrar.',
       boeLine: 'Basado en datos de la Agencia Estatal Boletín Oficial del Estado. Texto consolidado de carácter meramente informativo, no oficial: solo son auténticos los textos del diario oficial. Consolidación del BOE actualizada el {u}; datos extraídos y revisados por Dehesa Index el {v}.',
       nav: 'En esta página', n1: 'Tu estimación', n2: 'Ecorregímenes', n3: 'Calendario', n4: 'Reglas', n5: 'Ayudas asociadas', n6: 'Cambios en el BOE', n7: 'Lo que falta',
@@ -57,7 +57,7 @@
       ecoN: { a: 'Pastos húmedos', b: 'Pastos mediterráneos', c: 'Tierras de cultivo de secano', d: 'Tierras de cultivo de secano húmedo', e: 'Tierras de cultivo de regadío', f: 'Leñosos en terrenos llanos', g: 'Leñosos en pendiente media', h: 'Leñosos en elevada pendiente y bancales', i: 'Espacios de biodiversidad' }
     },
     en: {
-      title: 'Spain CAP: payments per hectare, calendar and rules', sub: 'What Royal Decree 1048/2022 sets for CAP direct payments in Spain (2023-2027): planned, minimum and maximum amounts by region and eco-scheme, rules, deadlines and changes in the official gazette. With an estimate calculator using your hectares and your costs.',
+      title: 'Spain CAP: payments per hectare and calendar', sub: 'What Royal Decree 1048/2022 sets for CAP direct payments in Spain (2023-2027): planned, minimum and maximum amounts by region and eco-scheme, rules, deadlines and changes in the official gazette. With an estimate calculator using your hectares and your costs.',
       notice: 'The amounts on this page are those of the royal decree (planned, minimum and maximum). They are not the per-campaign unit amounts the FEGA publishes (provisional, revised and final), which we do not include yet. Anything labelled "estimate" is calculated by Dehesa Index from your inputs: it is not what you will be paid.',
       boeLine: 'Basado en datos de la Agencia Estatal Boletín Oficial del Estado. Consolidated text of a merely informative nature, not official: only the texts of the official gazette are authentic. BOE consolidation updated on {u}; data extracted and reviewed by Dehesa Index on {v}.',
       nav: 'On this page', n1: 'Your estimate', n2: 'Eco-schemes', n3: 'Calendar', n4: 'Rules', n5: 'Coupled support', n6: 'BOE changes', n7: 'What is missing',
@@ -104,7 +104,7 @@
       ecoN: { a: 'Humid pastures', b: 'Mediterranean pastures', c: 'Rainfed cropland', d: 'Humid rainfed cropland', e: 'Irrigated cropland', f: 'Woody crops on flat land', g: 'Woody crops on medium slope', h: 'Woody crops on steep slope and terraces', i: 'Biodiversity spaces' }
     },
     fr: {
-      title: 'PAC Espagne : aides par hectare, calendrier et règles', sub: 'Ce que fixe le décret royal 1048/2022 pour les paiements directs de la PAC en Espagne (2023-2027) : montants planifiés, minimaux et maximaux par région et par écorégime, règles, échéances et changements au journal officiel. Avec un calculateur d\'estimation selon vos hectares et vos coûts.',
+      title: 'PAC Espagne : aides par hectare et calendrier', sub: 'Ce que fixe le décret royal 1048/2022 pour les paiements directs de la PAC en Espagne (2023-2027) : montants planifiés, minimaux et maximaux par région et par écorégime, règles, échéances et changements au journal officiel. Avec un calculateur d\'estimation selon vos hectares et vos coûts.',
       notice: 'Les montants de cette page sont ceux du décret royal (planifié, minimal et maximal). Ce ne sont pas les montants unitaires de chaque campagne publiés par le FEGA (provisoires, révisés et définitifs), que nous n\'incluons pas encore. Ce qui est marqué « estimation » est calculé par Dehesa Index avec vos données : ce n\'est pas ce que vous toucherez.',
       boeLine: 'Basado en datos de la Agencia Estatal Boletín Oficial del Estado. Texte consolidé à titre purement informatif, non officiel : seuls les textes du journal officiel font foi. Consolidation du BOE mise à jour le {u} ; données extraites et vérifiées par Dehesa Index le {v}.',
       nav: 'Sur cette page', n1: 'Votre estimation', n2: 'Écorégimes', n3: 'Calendrier', n4: 'Règles', n5: 'Aides couplées', n6: 'Changements au BOE', n7: 'Ce qui manque',
@@ -151,7 +151,7 @@
       ecoN: { a: 'Pâturages humides', b: 'Pâturages méditerranéens', c: 'Terres de culture en sec', d: 'Terres de culture en sec humide', e: 'Terres de culture irriguées', f: 'Ligneux en terrain plat', g: 'Ligneux en pente moyenne', h: 'Ligneux en forte pente et terrasses', i: 'Espaces de biodiversité' }
     },
     it: {
-      title: 'PAC Spagna: aiuti per ettaro, calendario e regole', sub: 'Cosa stabilisce il Real Decreto 1048/2022 per i pagamenti diretti della PAC in Spagna (2023-2027): importi pianificati, minimi e massimi per regione ed ecoschema, regole, scadenze e modifiche della gazzetta ufficiale. Con un calcolatore di stima con i tuoi ettari e i tuoi costi.',
+      title: 'PAC Spagna: aiuti per ettaro e calendario', sub: 'Cosa stabilisce il Real Decreto 1048/2022 per i pagamenti diretti della PAC in Spagna (2023-2027): importi pianificati, minimi e massimi per regione ed ecoschema, regole, scadenze e modifiche della gazzetta ufficiale. Con un calcolatore di stima con i tuoi ettari e i tuoi costi.',
       notice: 'Gli importi di questa pagina sono quelli del real decreto (pianificato, minimo e massimo). Non sono gli importi unitari di ogni campagna pubblicati dal FEGA (provvisori, rivisti e definitivi), che non includiamo ancora. Ciò che appare come «stima» è calcolato da Dehesa Index con i tuoi dati: non è ciò che riceverai.',
       boeLine: 'Basado en datos de la Agencia Estatal Boletín Oficial del Estado. Testo consolidato a mero titolo informativo, non ufficiale: fanno fede solo i testi della gazzetta ufficiale. Consolidamento del BOE aggiornato il {u}; dati estratti e verificati da Dehesa Index il {v}.',
       nav: 'In questa pagina', n1: 'La tua stima', n2: 'Ecoschemi', n3: 'Calendario', n4: 'Regole', n5: 'Aiuti accoppiati', n6: 'Modifiche al BOE', n7: 'Cosa manca',

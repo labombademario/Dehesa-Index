@@ -4,7 +4,7 @@
 
   var STRINGS = {
     "es": {
-      "title": "Apps | Dehesa Index",
+      "title": "Apps para iPhone, iPad y Mac | Dehesa Index",
       "h1": "Dehesa Index en tu móvil y en tu Mac",
       "sub": "Las mismas cifras de la web, con su fuente y su fecha, en una app para iPhone y iPad y en otra para Mac.",
       "iosH": "iPhone y iPad",
@@ -16,7 +16,7 @@
       "note": "Mientras tanto, la web funciona igual en el navegador de cualquier móvil u ordenador."
     },
     "en": {
-      "title": "Apps | Dehesa Index",
+      "title": "Apps for iPhone, iPad and Mac | Dehesa Index",
       "h1": "Dehesa Index on your phone and your Mac",
       "sub": "The same figures as the website, with their source and date, in an app for iPhone and iPad and another for Mac.",
       "iosH": "iPhone and iPad",
@@ -28,7 +28,7 @@
       "note": "In the meantime, the website works the same in the browser of any phone or computer."
     },
     "fr": {
-      "title": "Apps | Dehesa Index",
+      "title": "Apps pour iPhone, iPad et Mac | Dehesa Index",
       "h1": "Dehesa Index sur votre mobile et votre Mac",
       "sub": "Les mêmes chiffres que le site, avec leur source et leur date, dans une app pour iPhone et iPad et une autre pour Mac.",
       "iosH": "iPhone et iPad",

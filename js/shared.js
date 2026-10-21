@@ -355,6 +355,8 @@
 
   var SELF_PREFIX = (function () { try { var s = document.currentScript || document.querySelector('script[src*="js/shared.js"]'), m = s && /^(.*?)js\/shared\.js/.exec(s.getAttribute('src') || ''); return m ? m[1] : null; } catch (e) { return null; } })();
   function sitePrefix() {
+    // En dehesaindex.com los enlaces del menu y del pie van desde la raiz: Google rastreo 150 URLs inexistentes (legal.html bajo /regiones/<pais>/<region>/...) por enlaces relativos.
+    try { if (/(^|\.)dehesaindex\.com$/i.test(window.location.hostname)) return '/'; } catch (e) { }
     if (SELF_PREFIX !== null) return SELF_PREFIX;
     var path = (window.location && window.location.pathname) || '';
     if (/\/datos\/en\/[^/]+\/?$/.test(path)) return '../../../';

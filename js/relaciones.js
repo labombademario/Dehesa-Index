@@ -16,7 +16,7 @@
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function li() { var i = LANGS.indexOf(lang()); return i < 0 ? 0 : i; }
   var TX = {
-    title: ['Relaciones entre mercados', 'Cross-market relationships', 'Relations entre marchés', 'Relazioni tra mercati'],
+    title: ['Relaciones entre insumos y precios agrarios', 'Cross-market relationships', 'Relations entre marchés', 'Relazioni tra mercati'],
     sub: ['Cómo se han movido juntos, en el pasado, los insumos (fertilizantes, energía, pienso), el clima, las existencias y los precios agrarios. Cada relación indica su correlación, rezago, muestra, periodo y estabilidad.', 'How inputs (fertiliser, energy, feed), weather, stocks and farm prices have moved together in the past. Each relationship shows its correlation, lag, sample, period and stability.', 'Comment les intrants (engrais, énergie, aliments), la météo, les stocks et les prix agricoles ont évolué ensemble par le passé. Chaque relation indique sa corrélation, son décalage, son échantillon, sa période et sa stabilité.', 'Come input (fertilizzanti, energia, mangimi), meteo, scorte e prezzi agricoli si sono mossi insieme in passato. Ogni relazione indica correlazione, ritardo, campione, periodo e stabilità.'],
     discl: ['Descriptivo, no predictivo.', 'Descriptive, not predictive.', 'Descriptif, pas prédictif.', 'Descrittivo, non predittivo.'],
     method: ['Cómo se calcula', 'How it is computed', 'Comment c’est calculé', 'Come si calcola'],

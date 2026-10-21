@@ -16,7 +16,7 @@
     US: L('Estados Unidos', 'United States', 'États-Unis', 'Stati Uniti')
   };
   var T = {
-    title: L('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura'),
+    title: L('Pesca y acuicultura por país', 'Fishing and aquaculture by country', 'Pêche et aquaculture par pays', 'Pesca e acquacoltura per paese'),
     sub: L('Capturas, desembarques y precio en primera venta, acuicultura y flota pesquera por país: 24 países de la UE (Eurostat) y Estados Unidos (NOAA Fisheries). Cifras oficiales anuales.',
            'Catches, landings and first-sale prices, aquaculture and fishing fleet by country: 24 EU countries (Eurostat) and the United States (NOAA Fisheries). Official annual figures.',
            'Captures, débarquements et prix de première vente, aquaculture et flotte de pêche par pays : 24 pays de l’UE (Eurostat) et les États-Unis (NOAA Fisheries). Chiffres officiels annuels.',
