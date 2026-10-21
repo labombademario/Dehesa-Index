@@ -54,7 +54,7 @@
     return p;
   }
   function chartFor(s) {
-    var t = tt(), years = { '6m': 0.5, '1': 1, '3': 3, '5': 5, '10': 10, '20': 20 }[ST.r], pts = s.points.slice();
+    var t = tt(), years = { '1m': 1 / 12, '6m': 0.5, '1': 1, '3': 3, '5': 5, '10': 10, '20': 20 }[ST.r], pts = s.points.slice();
     if (years) { var last = ts(pts[pts.length - 1][0]), from = last - years * 365.25 * 864e5; pts = pts.filter(function (p) { return ts(p[0]) >= from; }); }
     var series = [{ name: s.label, color: '#2f6b4a', pts: pts.map(function (p) { return { x: ts(p[0]), y: p[1], l: plabel(p[0], s.frequency) }; }) }];
     var d = dec(s.latest);
@@ -731,7 +731,7 @@
       cmpCountries: CCODES.filter(function (k) { return AVAIL[k] && k !== ST.c; }), groupLabel: t.group, groupOpts: groupOpts(groups, t),
       countryOpts: opt(countries, ST.c, function (k) { return flagE(k) + (t.countries[k] || k); }), rangeOpts: opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; }),
       oldPicker: seriesPicker(list, t, true), collapse: collapse, filterSeries: filterSeries, TL: TL, shortLab: shortLab, plabel: plabel, nf: nf, dec: dec, ts: ts, cut: cutPts,
-      r: ST.r, fx: ST.fx, real: ST.real, firstId: function () { return window.DIExplorer.first({ list: list, collapse: collapse, t: t, lang: lang() }); },
+      r: ST.r, setR: function (v) { ST.r = v; }, srcName: function (id) { var s = id && lreg(id); return s ? s.name : ''; }, loadPts: function (s) { return s.points ? Promise.resolve(s) : pt(s).then(function () { return s; }); }, fx: ST.fx, real: ST.real, firstId: function () { return window.DIExplorer.first({ list: list, collapse: collapse, t: t, lang: lang() }); },
       setS: function (id) { ST.s = id; }, setG: function (g) { ST.g = g; },
       resetAll: function () { ST.g = 'all'; ST.s = null; ST.r = 'max'; ST.fx = false; ST.real = false; ST.cmp = null; ST.q = ''; } };
   }
@@ -767,7 +767,7 @@
     /* selector de series: pinta solo la opción activa y completa la lista al tocarlo (mismo contenido, ~1.000 <option> menos al abrir la ficha) */
     var optS = (list.length > 60 && ST.s) ? list.filter(function (x) { return x.id === ST.s; }).map(optLabS).join('') : list.map(optLabS).join('');
     var sel = function (id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
-    var rng = ['6m', '1', '3', '5', '10', '20', 'max'];
+    var rng = ['1m', '6m', '1', '3', '5', '10', '20', 'max'];
     var TH = { es: ['Datos de {c} por tema', 'series', 'Cada tema abre las series de ese país en el explorador.'], en: ['{c} data by topic', 'series', 'Each topic opens that country’s series in the explorer.'], fr: ['Données de {c} par thème', 'séries', 'Chaque thème ouvre les séries du pays dans l’explorateur.'], it: ['Dati di {c} per tema', 'serie', 'Ogni tema apre le serie del paese nell’esploratore.'] }[lang()] || [];
     var TEMO = { production: '🥩', crops: '🌾', livestock: '🐄', fish: '🐟', trade: '🚢', quotes: '📈', prices: '🏷️', prices_paid: '🧾', milk: '🥛', milk_regions: '🥛', crops_regions: '🗺️', prices_lv: '🐂', meat_regions: '🥩', prices_fv: '🍎', inputs: '🛒', inputs_f: '🧪', inputs_a: '🌽', costs: '🧮', environment: '♻️', organic: '🌿', climate: '⛅', stocks: '📦', income: '💰', partners: '🤝' };
     var cnt = {}; c.series.forEach(function (x) { cnt[x.group] = (cnt[x.group] || 0) + 1; });
@@ -780,7 +780,7 @@
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + seriesPicker(list, t) + '</div>');
     if (cur) {
       var ch = cur.changePct;
-      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + (EXC ? '<span class="ps-hd-r"><select id="ps-r" class="di-compare-select ps-per" aria-label="' + esc((window.DIExplorer.perLabel && window.DIExplorer.perLabel(EXC)) || t.range) + '">' + EXC.rangeOpts + '</select>' + watchBtn(cur).replace('float:right;margin:-4px 0 0 8px;', 'margin:0;') + '</span>' : watchBtn(cur)) + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + (window.DehesaShared && window.DehesaShared.reportLink ? ' <span style="font-weight:400;letter-spacing:0">' + window.DehesaShared.reportLink({ id: ST.c + '/' + cur0.id, label: cur0.label, period: cur0.latestPeriod, value: cur0.latest, unit: cur0.unit }) + '</span>' : '') + '</div>' + fxBox(cur0, cur) + realBox(cur0, cur) + (EXC ? (window.DIExplorer.answer ? window.DIExplorer.answer(EXC, cur, cur0) : window.DIExplorer.sentence(EXC, cur, cur0)) : '') + ((EXC && ST.cmp && window.DIExplorer.cmpChart(EXC, cur0)) || chartFor(cur)) +
+      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + (EXC ? '<span class="ps-hd-r">' + (window.DIExplorer.rangeBtns ? window.DIExplorer.rangeBtns(EXC, cur) : '') + watchBtn(cur).replace('float:right;margin:-4px 0 0 8px;', 'margin:0;') + '</span>' : watchBtn(cur)) + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + (window.DehesaShared && window.DehesaShared.reportLink ? ' <span style="font-weight:400;letter-spacing:0">' + window.DehesaShared.reportLink({ id: ST.c + '/' + cur0.id, label: cur0.label, period: cur0.latestPeriod, value: cur0.latest, unit: cur0.unit }) + '</span>' : '') + '</div>' + fxBox(cur0, cur) + realBox(cur0, cur) + (EXC ? (window.DIExplorer.answer ? window.DIExplorer.answer(EXC, cur, cur0) : window.DIExplorer.sentence(EXC, cur, cur0)) : '') + ((EXC && ST.cmp && window.DIExplorer.cmpChart(EXC, cur0)) || chartFor(cur)) +
         '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null || EXC ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + localBox(cur, c) + revBox(cur) + (EXC ? window.DIExplorer.variantsWrap(EXC, variantsHtml(list, cur0)) + window.DIExplorer.cmpPanel(EXC) : '') + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     var allTbl = function () { return '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +

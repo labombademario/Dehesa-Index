@@ -2974,3 +2974,9 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .ex-sent .ex-sel { font: inherit; font-size: 17px; min-height: 44px; max-width: 100%; color: var(--accent, #2f6f4f); border: 1.5px solid var(--accent, #2f6f4f); border-radius: 8px; background: var(--surface, #fffdf7); padding: 4px 10px; }
 .ex-sent b { font-weight: 700; }
 .ex-sent select.ex-sel.di-compare-select { width: auto; flex: 0 1 auto; min-width: 0; }
+
+.ex-rg { display: inline-flex; flex-wrap: wrap; gap: 4px; margin-right: 8px; vertical-align: middle; }
+.ex-rgb[disabled] { opacity: .4; cursor: not-allowed; }
+.ex-opt { position: relative; padding-right: 92px; }
+.ex-sp { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--accent, #2f6f4f); line-height: 0; }
+.ex-os { font-size: 12px; }
