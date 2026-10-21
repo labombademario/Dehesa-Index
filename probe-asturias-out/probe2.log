@@ -1,0 +1,13 @@
+candidatos 8
+Traceback (most recent call last):
+  File "/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/probe/probe-asturias2.py", line 16, in <module>
+    import openpyxl
+ModuleNotFoundError: No module named 'openpyxl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/probe/probe-asturias2.py", line 18, in <module>
+    os.system('pip install -q openpyxl --break-system-packages'); import openpyxl
+                                                                  ^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'openpyxl'
