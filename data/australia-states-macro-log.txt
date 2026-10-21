@@ -1,0 +1,6 @@
+unemp estados: 6
+FALLO unemp ValueError('solo 6 estados')
+epop estados: 6
+FALLO epop ValueError('solo 6 estados')
+pop/age estados: 8 8
+escrito australia-states-macro.json 2 KB
