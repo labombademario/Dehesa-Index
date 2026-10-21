@@ -55,6 +55,8 @@ jobs:
         run: python3 scripts/build-us-trade-partners.py
       - name: Socios comerciales de Chile (derivado de ODEPA, sin red)
         run: python3 scripts/build-cl-trade-partners.py
+      - name: Socios comerciales de Argentina (derivado del CSV de datos.gob.ar, actualizacion manual, sin red)
+        run: python3 scripts/build-ar-trade-partners.py
       - name: Registro de series
         run: python3 scripts/build-series-registry.py
       - name: Indice de series para la lista de seguimiento

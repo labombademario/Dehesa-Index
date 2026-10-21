@@ -4501,6 +4501,32 @@
    "short": "Junta de Castilla y León",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+  },
+  "datos_gob_ar_exportaciones": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-21",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "high",
+   "legalConfidence": "HIGH",
+   "notes": "Ficha de datos.gob.ar del conjunto «Exportaciones por provincia y por pais de destino»: licencia Creative Commons Attribution 4.0 (indicada en la ficha, verificada por el usuario el 21-oct-2026). Descarga manual del CSV: datos.gob.ar no responde desde los servidores de GitHub.",
+   "name": "Argentina - Ministerio de Economia / INDEC, Exportaciones por provincia y por pais de destino (datos.gob.ar)",
+   "url": "https://datos.gob.ar/dataset/exportaciones-por-provincia-y-por-pais-de-destino",
+   "country": "AR",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "attributionText": "Fuente: Ministerio de Economia de Argentina / INDEC, Exportaciones por provincia y por pais de destino, datos.gob.ar, licencia Creative Commons Attribution 4.0. Suma de los destinos principales de cada provincia, calculada por Dehesa Index.",
+   "additionalRestrictions": "Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas.",
+   "evidence": "La API CKAN del portal (https://datos.odepa.gob.cl/api/3/action/package_show, leida el 2026-10-06 desde GitHub Actions) devuelve license_id 'cc-by' / 'Creative Commons Attribution' en los seis conjuntos; la pagina del conjunto indica 'Creative Commons Attribution' y 'Open Definition'.",
+   "short": "ODEPA",
+   "legalConfidenceReason": "Licencia explicita en los metadatos oficiales de cada conjunto."
   }
  },
  "files": {
@@ -6581,6 +6607,18 @@
     "statcan"
    ],
    "notes": "Indices de precios de la madera: EE. UU. = BLS Producer Price Index (WPU081 madera aserrada, WPU0811 coniferas, WPU0812 frondosas, WPU083 contrachapado, WPU085 trozas y madera para pasta; 1982=100; dominio publico). Canada = Statistics Canada, tabla 18-10-0266-01 (IPPI, productos de madera aserrada y en rollo; Open Government Licence - Canada). Son indices, no precios en dolares."
+  },
+  "data/ar-exports-province-destination.json": {
+   "byCountry": {
+    "AR": "datos_gob_ar_exportaciones"
+   },
+   "notes": "CSV oficial de exportaciones por provincia y pais de destino (millones de USD, todas las mercancias), actualizacion manual (scripts/import-ar-exports-csv.py)."
+  },
+  "data/ar-trade-partners-stats.json": {
+   "byCountry": {
+    "AR": "datos_gob_ar_exportaciones"
+   },
+   "notes": "Derivado de data/ar-exports-province-destination.json: suma de los 10 destinos principales de cada provincia (un minimo, no hay total nacional por pais); solo exportaciones; los 5 primeros destinos."
   }
  },
  "derived": [
