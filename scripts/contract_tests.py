@@ -1416,6 +1416,12 @@ def relationships(doc, errs, warns, stats):
     ids = [r["id"] for r in doc["relationships"]]
     if len(ids) != len(set(ids)): errs.append("ids de relacion repetidos")
     stats["series"] = len(ids); recomputed = 0
+    by = {r["id"]: r for r in doc["relationships"]}
+    for ch in doc.get("chains") or []:   # cada eslabon de una cadena es una relacion observada de confianza alta o media, y los nodos encajan
+        a, b = by.get(ch["links"][0]), by.get(ch["links"][1])
+        if not a or not b: errs.append("cadena %s: eslabon inexistente" % ch["id"]); continue
+        if any(x["status"] != "OBSERVED_RELATIONSHIP" or x["confidence"] not in ("HIGH", "MEDIUM") for x in (a, b)): errs.append("cadena %s: eslabon no solido" % ch["id"])
+        if a["market"]["key"] != b["input"]["key"] or [n["key"] for n in ch["nodes"]] != [a["input"]["key"], a["market"]["key"], b["market"]["key"]]: errs.append("cadena %s: nodos que no encajan" % ch["id"])
     for r in doc["relationships"]:
         s = r["stat"]; f = r["frequency"]; rid = r["id"]; c = s["correlation"]
         if r["family"] not in doc["families"]: errs.append("%s: familia desconocida" % rid); continue

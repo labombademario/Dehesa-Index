@@ -25,7 +25,10 @@
     mCur: ['Si las dos series tienen moneda distinta, ambas se pasan a EUR con el tipo mensual del BCE (mes exacto o el anterior, máximo 2 meses). Sin causalidad: la hipótesis económica es una explicación plausible escrita a mano que estos datos no prueban.', 'If the two series have different currencies both are converted to EUR with the ECB monthly rate (exact month or previous, at most 2 months). No causality: the economic hypothesis is a plausible hand-written explanation that these data do not prove.', 'Si les deux séries ont des devises différentes, toutes deux sont converties en EUR au taux mensuel de la BCE (mois exact ou précédent, 2 mois maximum). Pas de causalité : l’hypothèse économique est une explication plausible rédigée à la main que ces données ne prouvent pas.', 'Se le due serie hanno valuta diversa, entrambe sono convertite in EUR con il cambio mensile della BCE (mese esatto o precedente, al massimo 2 mesi). Nessuna causalità: l’ipotesi economica è una spiegazione plausibile scritta a mano che questi dati non dimostrano.'],
     fCh: ['Canal', 'Channel', 'Canal', 'Canale'], fReg: ['Mercado', 'Market', 'Marché', 'Mercato'], fSt: ['Estado', 'Status', 'Statut', 'Stato'], fProd: ['Producto', 'Product', 'Produit', 'Prodotto'], fConf: ['Confianza', 'Confidence', 'Confiance', 'Confidenza'],
     all: ['Todos', 'All', 'Tous', 'Tutti'],
-    ch_fertilizer: ['Fertilizante', 'Fertiliser', 'Engrais', 'Fertilizzante'], ch_energy: ['Energía', 'Energy', 'Énergie', 'Energia'], ch_feed: ['Pienso', 'Feed', 'Aliments', 'Mangimi'], ch_feedstock: ['Materia prima', 'Feedstock', 'Matière première', 'Materia prima'], ch_weather: ['Clima', 'Weather', 'Météo', 'Meteo'], ch_stocks: ['Existencias', 'Stocks', 'Stocks', 'Scorte'],
+    ch_fertilizer: ['Fertilizante', 'Fertiliser', 'Engrais', 'Fertilizzante'], ch_energy: ['Energía', 'Energy', 'Énergie', 'Energia'], ch_feed: ['Pienso', 'Feed', 'Aliments', 'Mangimi'], ch_feedstock: ['Materia prima', 'Feedstock', 'Matière première', 'Materia prima'], ch_weather: ['Clima', 'Weather', 'Météo', 'Meteo'], ch_stocks: ['Existencias', 'Stocks', 'Stocks', 'Scorte'], ch_crude: ['Petróleo', 'Crude oil', 'Pétrole', 'Petrolio'], ch_substitute: ['Productos sustitutivos', 'Substitutes', 'Produits de substitution', 'Prodotti sostitutivi'], ch_trade: ['Comercio mundial', 'World trade', 'Commerce mondial', 'Commercio mondiale'], ch_processing: ['Industria láctea', 'Dairy processing', 'Industrie laitière', 'Industria lattiero-casearia'], ch_biofuel: ['Biocombustibles', 'Biofuels', 'Biocarburants', 'Biocarburanti'],
+    chH: ['⛓️ Efectos en cadena', '⛓️ Knock-on effects', '⛓️ Effets en chaîne', '⛓️ Effetti a catena'],
+    chN: ['Qué precios han seguido a otros, paso a paso: cuando se movió el primero, el segundo tendió a acompañarlo, y después el tercero. Cada paso es una relación medida por separado (pulsa para verla); no sumamos ni multiplicamos efectos.', 'Which prices have followed others, step by step: when the first moved, the second tended to go along, and then the third. Each step is a separately measured relationship (tap to see it); we do not add up or multiply effects.', 'Quels prix en ont suivi d’autres, étape par étape : quand le premier a bougé, le deuxième a eu tendance à suivre, puis le troisième. Chaque étape est une relation mesurée séparément (touchez pour la voir) ; nous n’additionnons ni ne multiplions les effets.', 'Quali prezzi ne hanno seguiti altri, passo dopo passo: quando il primo si è mosso, il secondo ha teso ad accompagnarlo, e poi il terzo. Ogni passo è una relazione misurata a parte (tocca per vederla); non sommiamo né moltiplichiamo gli effetti.'],
+    chMore: ['Ver todas las cadenas', 'Show all chains', 'Voir toutes les chaînes', 'Vedi tutte le catene'],
     st_OBSERVED_RELATIONSHIP: ['OBSERVED RELATIONSHIP', 'OBSERVED RELATIONSHIP', 'OBSERVED RELATIONSHIP', 'OBSERVED RELATIONSHIP'],
     st_WEAK_OR_UNSTABLE: ['WEAK OR UNSTABLE', 'WEAK OR UNSTABLE', 'WEAK OR UNSTABLE', 'WEAK OR UNSTABLE'],
     st_INSUFFICIENT_DATA: ['INSUFFICIENT DATA', 'INSUFFICIENT DATA', 'INSUFFICIENT DATA', 'INSUFFICIENT DATA'],
@@ -39,7 +42,7 @@
     s_negligible: ['insignificante', 'negligible', 'négligeable', 'trascurabile'], s_weak: ['débil', 'weak', 'faible', 'debole'], s_moderate: ['moderada', 'moderate', 'modérée', 'moderata'], s_strong: ['fuerte', 'strong', 'forte', 'forte'],
     sameP: ['mismo periodo', 'same period', 'même période', 'stesso periodo'], mon: ['m', 'mo', 'm', 'm'], qtr: ['T', 'Q', 'T', 'T'], yr: ['a', 'y', 'a', 'a'],
     q: ['¿Qué precio quieres entender?', 'Which price do you want to understand?', 'Quel prix voulez-vous comprendre ?', 'Quale prezzo vuoi capire?'],
-    qsub: ['Elige un producto y verás qué lo ha acompañado en el pasado: fertilizantes, energía, pienso, clima o existencias.', 'Pick a product to see what has moved with it in the past: fertiliser, energy, feed, weather or stocks.', 'Choisissez un produit pour voir ce qui a évolué avec lui par le passé : engrais, énergie, aliments, météo ou stocks.', 'Scegli un prodotto per vedere cosa si è mosso con lui in passato: fertilizzanti, energia, mangimi, meteo o scorte.'],
+    qsub: ['Elige un producto y verás qué lo ha acompañado en el pasado: fertilizantes, energía, pienso, clima, existencias, comercio mundial o productos parecidos.', 'Pick a product to see what has moved with it in the past: fertiliser, energy, feed, weather or stocks.', 'Choisissez un produit pour voir ce qui a évolué avec lui par le passé : engrais, énergie, aliments, météo ou stocks.', 'Scegli un prodotto per vedere cosa si è mosso con lui in passato: fertilizzanti, energia, mangimi, meteo o scorte.'],
     ph: ['Prueba con «cebada», «diésel» o «Canadá»', 'Try “barley”, “diesel” or “Canada”', 'Essayez « orge », « diesel » ou « Canada »', 'Prova con «orzo», «gasolio» o «Canada»'],
     go: ['Buscar', 'Search', 'Rechercher', 'Cerca'], prods: ['O elige un producto', 'Or pick a product', 'Ou choisissez un produit', 'Oppure scegli un prodotto'],
     moreF: ['Más filtros', 'More filters', 'Plus de filtres', 'Altri filtri'],
@@ -62,11 +65,11 @@
   function esc(s) { return String(s === null || s === undefined ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function L(o) { return o ? (o[lang()] || o.en || '') : ''; }
-  var PAGE = { trigo: 'trigo', maiz: 'maiz', leche: 'leche', vaca: 'vacuno', urea: 'urea', diesel: 'diesel', harina_soja: 'soja', cerdo: 'cerdo', cebada: 'cebada' };
+  var PAGE = { trigo: 'trigo', maiz: 'maiz', leche: 'leche', vaca: 'vacuno', urea: 'urea', diesel: 'diesel', harina_soja: 'soja', cerdo: 'cerdo', cebada: 'cebada', avena: 'avena', colza: 'colza', pollo: 'pollo', huevos: 'huevos', azucar: 'azucar', dap: 'fertilizantes', potasa: 'fertilizantes' };
   var DOC = null, F = { ch: '', r: '', st: '', c: '', p: '', id: '', g: '', q: '' }, weakOpen = false;
   // temas del mercado (lado «precio» de cada relación): cada botón agrupa los productos equivalentes
-  var GRP = [['wheat', '🌾', ['trigo', 'defra_wheat_output_index', 'eurostat_cereals_output_index']], ['maize', '🌽', ['maiz']], ['milk', '🥛', ['leche', 'defra_milk_output_index']], ['cattle', '🐄', ['vaca', 'defra_cattle_output_index']], ['barley', '🌱', ['cebada', 'defra_barley_output_index', 'avena']], ['oilseed', '🌼', ['colza', 'defra_oilseed_rape_output_index']], ['pigs', '🐖', ['defra_pigs_output_index']], ['fert', '🧪', ['urea', 'eurostat_fertiliser_input_index']]];
-  var GN = { wheat: ['Trigo y cereales', 'Wheat and cereals', 'Blé et céréales', 'Grano e cereali'], maize: ['Maíz', 'Maize', 'Maïs', 'Mais'], milk: ['Leche', 'Milk', 'Lait', 'Latte'], cattle: ['Vacuno', 'Cattle', 'Bovins', 'Bovini'], barley: ['Cebada y avena', 'Barley and oats', 'Orge et avoine', 'Orzo e avena'], oilseed: ['Colza', 'Rapeseed and canola', 'Colza', 'Colza'], pigs: ['Cerdo', 'Pigs', 'Porc', 'Suini'], fert: ['Fertilizantes', 'Fertiliser', 'Engrais', 'Fertilizzanti'] };
+  var GRP = [['wheat', '🌾', ['trigo', 'defra_wheat_output_index', 'eurostat_cereals_output_index']], ['maize', '🌽', ['maiz', 'sorgo']], ['milk', '🥛', ['leche', 'leche_polvo', 'defra_milk_output_index']], ['cattle', '🐄', ['vaca', 'cordero', 'defra_cattle_output_index']], ['barley', '🌱', ['cebada', 'defra_barley_output_index', 'avena']], ['oilseed', '🌼', ['colza', 'defra_oilseed_rape_output_index']], ['pigs', '🐖', ['cerdo', 'defra_pigs_output_index']], ['poultry', '🐔', ['pollo', 'huevos']], ['fert', '🧪', ['urea', 'dap', 'potasa', 'eurostat_fertiliser_input_index']], ['energy', '⛽', ['diesel', 'gas_natural']]];
+  var GN = { wheat: ['Trigo y cereales', 'Wheat and cereals', 'Blé et céréales', 'Grano e cereali'], maize: ['Maíz y sorgo', 'Maize and sorghum', 'Maïs et sorgho', 'Mais e sorgo'], milk: ['Leche', 'Milk', 'Lait', 'Latte'], cattle: ['Vacuno y cordero', 'Cattle and lamb', 'Bovins et agneau', 'Bovini e agnello'], barley: ['Cebada y avena', 'Barley and oats', 'Orge et avoine', 'Orzo e avena'], oilseed: ['Colza', 'Rapeseed and canola', 'Colza', 'Colza'], pigs: ['Cerdo', 'Pigs', 'Porc', 'Suini'], poultry: ['Pollo y huevos', 'Chicken and eggs', 'Poulet et œufs', 'Pollo e uova'], energy: ['Gasóleo y gas', 'Diesel and gas', 'Gazole et gaz', 'Gasolio e gas'], fert: ['Fertilizantes', 'Fertiliser', 'Engrais', 'Fertilizzanti'] };
   var LU = { month: [['mes', 'meses'], ['month', 'months'], ['mois', 'mois'], ['mese', 'mesi']], quarter: [['trimestre', 'trimestres'], ['quarter', 'quarters'], ['trimestre', 'trimestres'], ['trimestre', 'trimestri']], year: [['año', 'años'], ['year', 'years'], ['an', 'ans'], ['anno', 'anni']] };
   var SN = {
     rel: ['{a} y {b} se han movido {d}{lag}: correlación {r} ({s}), de {p0} a {p1}.', '{a} and {b} have moved {d}{lag}: correlation {r} ({s}), {p0} to {p1}.', '{a} et {b} ont évolué {d}{lag} : corrélation {r} ({s}), de {p0} à {p1}.', '{a} e {b} si sono mossi {d}{lag}: correlazione {r} ({s}), da {p0} a {p1}.'],
@@ -192,13 +195,30 @@
     h += '<details class="rl-det rl-method"><summary>' + esc(t('method')) + '</summary><p>' + esc(t('mSummary')) + '</p><p>' + esc(t('mRules')) + '</p><p>' + esc(t('mCur')) + '</p></details>';
     body.innerHTML = h; SHELL = lang();
   }
-  var SHELL = '';
+  var SHELL = '', chainsAll = false;
+  // Efectos en cadena: A -> B -> C con los dos eslabones observados (confianza alta o media). Se muestran las cadenas que tocan lo filtrado.
+  function chainsHtml(list) {
+    var ids = {}; list.forEach(function (x) { ids[x.id] = 1; });
+    var byId = {}; DOC.relationships.forEach(function (x) { byId[x.id] = x; });
+    var any = F.g || F.q || nFilters() || F.p;
+    var cs = (DOC.chains || []).filter(function (c) { return !F.id && (!any || ids[c.links[0]] || ids[c.links[1]]); });
+    if (!cs.length) return '';
+    var shown = chainsAll ? cs : cs.slice(0, 6);
+    var node = function (n) { return '<span class="rl-cn"><span aria-hidden="true">' + esc(flagName(n.region).split(' ')[0]) + '</span> ' + esc(L(n.label)) + '</span>'; };
+    var link = function (id) { var x = byId[id], s = x.stat; return '<a class="rl-cl" href="#r-' + esc(id) + '" data-copy="' + esc(id) + '" title="' + esc(L(x.explanation)) + '">→ <span class="pt-sub">r ' + nf(s.correlation, 2) + (s.lag ? ' · ' + esc(lagUnit(x, s.lag)) : '') + '</span></a>'; };
+    var h = '<h3 class="um-h2">' + esc(t('chH')) + ' (' + cs.length + ')</h3><p class="um-hint">' + esc(t('chN')) + '</p><ul class="rl-chains">';
+    shown.forEach(function (c) { h += '<li>' + node(c.nodes[0]) + ' ' + link(c.links[0]) + ' ' + node(c.nodes[1]) + ' ' + link(c.links[1]) + ' ' + node(c.nodes[2]) + '</li>'; });
+    h += '</ul>';
+    if (cs.length > shown.length) h += '<button type="button" class="pt-chip" data-chains="1">' + esc(t('chMore')) + ' (' + cs.length + ')</button>';
+    return h;
+  }
   function res() {
     var list = DOC.relationships.filter(matches).sort(function (a, b) { return rank(a) - rank(b); });
     var solid = list.filter(function (x) { return (x.confidence === 'HIGH' || x.confidence === 'MEDIUM') && x.status === 'OBSERVED_RELATIONSHIP'; }), weak = list.filter(function (x) { return solid.indexOf(x) < 0; });
     var any = F.g || F.q || nFilters() || F.id;
     var h = '<p class="um-sum" aria-live="polite" role="status">' + esc(fm(t('sumF'), { n: list.length, tot: DOC.relationships.length, s: solid.length, w: weak.length })) + ' · ' + esc(t('gen')) + ' ' + esc(DOC.generatedAt.slice(0, 10)) + (any ? ' <button type="button" class="pt-chip" data-reset="1">' + esc(t('reset')) + '</button>' : '') + '</p>';
     if (!list.length) return h + '<p class="pt-note">' + esc(t('none')) + '</p>';
+    h += chainsHtml(list);
     h += '<h3 class="um-h2">' + esc(t('solidH')) + ' (' + solid.length + ')</h3>' + (solid.length ? '<div class="rl-list">' + solid.map(card).join('') + '</div>' : '<p class="um-hint">' + esc(t('nsol')) + '</p>');
     if (weak.length) h += '<details class="rl-det rl-weak" id="rl-weak"' + (weakOpen || !solid.length || F.id || F.st || F.c ? ' open' : '') + '><summary><b>' + esc(t('weakH')) + ' (' + weak.length + ')</b></summary><p class="um-hint">' + esc(t('weakN')) + '</p><div class="rl-list">' + weak.map(card).join('') + '</div></details>';
     return h;
@@ -220,7 +240,8 @@
     if (F.id) { var el = document.getElementById('r-' + F.id); if (el && el.scrollIntoView) el.scrollIntoView(); }
   }
   function onClick(e) {
-    var b = e.target.closest ? e.target.closest('button[data-f],button[data-reset],button[data-g],a[data-copy]') : null; if (!b) return;
+    var b = e.target.closest ? e.target.closest('button[data-f],button[data-reset],button[data-g],a[data-copy],button[data-chains]') : null; if (!b) return;
+    if (b.getAttribute('data-chains')) { chainsAll = true; document.getElementById('rl-res').innerHTML = res(); return; }
     if (b.getAttribute('data-reset')) { for (var k in F) F[k] = ''; var inp = document.getElementById('rl-s'); if (inp) inp.value = ''; }
     else if (b.getAttribute('data-copy')) { e.preventDefault(); F = { ch: '', r: '', st: '', c: '', p: '', id: b.getAttribute('data-copy'), g: '', q: '' }; }
     else if (b.getAttribute('data-g')) { var gv = b.getAttribute('data-g'); F.g = F.g === gv ? '' : gv; F.id = ''; }

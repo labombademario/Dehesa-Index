@@ -19,7 +19,7 @@
     { "url": "/pac.html", "maxDataRawKB": 175, "maxTotalGzKB": 204, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/dehesa.html", "maxDataRawKB": 40, "maxTotalGzKB": 122, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "eu-trade-stats\\.json"] },
     { "url": "/observatorio.html", "maxDataRawKB": 280, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
-    { "url": "/relaciones.html", "maxDataRawKB": 290, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
+    { "url": "/relaciones.html", "maxDataRawKB": 600, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/calculadora.html", "maxDataRawKB": 95, "maxTotalGzKB": 150, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/mi-explotacion.html", "maxDataRawKB": 80, "maxTotalGzKB": 162, "wait": 2500, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "input-monitor\\.json"] },
     { "url": "/brief.html", "maxDataRawKB": 275, "maxTotalGzKB": 193, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },

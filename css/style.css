@@ -3070,3 +3070,9 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .lj-c.on{background:var(--text,#1d2a22);border-color:var(--text,#1d2a22);color:#fffdf7}
 .lj-c:focus-visible{outline:2px solid #2f6b3a;outline-offset:2px}
 @media (max-width:699px){.lj-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}}
+/* Relaciones: efectos en cadena (A -> B -> C) */
+.rl-chains{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
+.rl-chains li{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:10px 12px;border:1px solid var(--border,#d6cfbb);border-radius:10px;background:var(--surface,#fffdf7);line-height:1.35}
+.rl-cn{font-weight:600}
+.rl-cl{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:0 6px;border-radius:8px;text-decoration:none;white-space:nowrap}
+.rl-cl:hover,.rl-cl:focus-visible{background:var(--hover,rgba(0,0,0,.05))}

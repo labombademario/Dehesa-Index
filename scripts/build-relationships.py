@@ -20,6 +20,11 @@ for r in ('eu', 'us', 'ca', 'uk'):
     for o in json.loads((D / 'prices' / 'latest' / (r + '.json')).read_text())['observations']: LATEST[r + '/' + o['product']] = o
 
 NAMES = {'defra_oilseed_rape_output_index': L4('Colza · índice de producción', 'Oilseed rape · output index', 'Colza · indice de production', 'Colza · indice di produzione'), 'cebada': META['cebada']['name'], 'colza': META['colza']['name'], 'avena': META['avena']['name'], 'urea': META['urea']['name'], 'diesel': META['diesel']['name'], 'trigo': META['trigo']['name'], 'maiz': META['maiz']['name'], 'leche': META['leche']['name'], 'vaca': META['vacuno']['name'],
+         'petroleo_brent': L4('Petróleo Brent', 'Brent crude oil', 'Pétrole Brent', 'Petrolio Brent'), 'petroleo_wti': L4('Petróleo WTI', 'WTI crude oil', 'Pétrole WTI', 'Petrolio WTI'),
+         'dap': L4('Fosfato diamónico (DAP)', 'Diammonium phosphate (DAP)', 'Phosphate diammonique (DAP)', 'Fosfato biammonico (DAP)'), 'potasa': L4('Potasa', 'Potash', 'Potasse', 'Potassa'),
+         'cerdo': META['cerdo']['name'], 'pollo': META['pollo']['name'], 'huevos': META['huevos']['name'], 'sorgo': L4('Sorgo', 'Sorghum', 'Sorgho', 'Sorgo'),
+         'mantequilla': L4('Mantequilla', 'Butter', 'Beurre', 'Burro'), 'leche_polvo': L4('Leche desnatada en polvo', 'Skimmed milk powder', 'Lait écrémé en poudre', 'Latte scremato in polvere'),
+         'cordero': L4('Cordero', 'Lamb', 'Agneau', 'Agnello'),
          'harina_soja': L4('Harina de soja', 'Soybean meal', 'Tourteau de soja', 'Farina di soia'), 'gas_natural': L4('Gas natural', 'Natural gas', 'Gaz naturel', 'Gas naturale'),
          'eurostat_energy_input_index': L4('Energía · índice de compra', 'Energy · purchase index', 'Énergie · indice d’achat', 'Energia · indice di acquisto'),
          'eurostat_fertiliser_input_index': L4('Fertilizantes · índice de compra', 'Fertiliser · purchase index', 'Engrais · indice d’achat', 'Fertilizzanti · indice di acquisto'),
@@ -48,6 +53,9 @@ STOCKS = {x['id']: x for f in sorted((D / 'series' / 'CA').glob('stocks*.json'))
 
 CH = {'fertilizer': L4('coste del fertilizante', 'fertiliser cost', 'coût des engrais', 'costo dei fertilizzanti'), 'energy': L4('coste de la energía', 'energy cost', 'coût de l’énergie', 'costo dell’energia'),
       'feed': L4('coste del pienso', 'feed cost', 'coût de l’alimentation animale', 'costo dei mangimi'), 'weather': L4('clima del mes', 'monthly weather', 'météo du mois', 'meteo del mese'), 'stocks': L4('existencias finales de la campaña', 'end-of-crop-year stocks', 'stocks de fin de campagne', 'scorte di fine campagna'),
+      'crude': L4('precio del crudo', 'crude oil price', 'prix du pétrole brut', 'prezzo del greggio'), 'substitute': L4('sustitución entre productos parecidos', 'substitution between similar products', 'substitution entre produits proches', 'sostituzione tra prodotti simili'),
+      'trade': L4('comercio mundial entre mercados', 'world trade between markets', 'commerce mondial entre marchés', 'commercio mondiale tra mercati'), 'processing': L4('transformación (lácteos industriales)', 'processing (dairy commodities)', 'transformation (produits laitiers industriels)', 'trasformazione (prodotti lattiero-caseari industriali)'),
+      'biofuel': L4('biocombustibles', 'biofuels', 'biocarburants', 'biocarburanti'),
       'feedstock': L4('materia prima de la fabricación de fertilizantes', 'feedstock for fertiliser manufacturing', 'matière première de la fabrication d’engrais', 'materia prima per la produzione di fertilizzanti')}
 # familia -> canal, hipotesis (4 idiomas), rezagos probados (en periodos de la frecuencia de la serie) y pares (entrada, mercado)
 FAMILIES = {
@@ -103,6 +111,55 @@ FAMILIES = {
                     'Des stocks finaux élevés signalent généralement une offre abondante et pèsent sur le prix ; des stocks bas, l’inverse. Le lien peut aussi jouer en sens inverse (des prix bas freinent les ventes et accumulent des stocks) et se mesure sur la même campagne ou la suivante. De plus, le prix reflète aussi la demande, le change, les marchés voisins et la qualité de chaque récolte, et les bilans récents sont des estimations révisées.',
                     'Scorte finali elevate indicano di solito un’offerta abbondante e pesano sul prezzo; scorte basse, il contrario. Il legame può anche andare in senso inverso (prezzi bassi frenano le vendite e accumulano scorte) e si misura nella stessa campagna o nella successiva. Inoltre, il prezzo riflette anche domanda, cambio, mercati vicini e qualità di ogni raccolto, e i bilanci recenti sono stime che vengono riviste.'),
    'pairs': [(('ca', 'stock:ca-gb-canola-ending-stocks'), ('ca', 'colza')), (('ca', 'stock:ca-gb-barley-ending-stocks'), ('ca', 'cebada')), (('ca', 'stock:ca-gb-oats-ending-stocks'), ('ca', 'avena'))]},
+ 'oil_to_energy': {'channel': 'crude', 'freq': 'monthly', 'lags': [0, 1, 2, 3],
+   'hypothesis': L4('El gasóleo se refina del crudo, así que su precio sigue al petróleo casi sin retraso; el gas natural se negocia en su propio mercado y en Europa, desde 2021, ha ido por libre.',
+                    'Diesel is refined from crude, so its price tracks oil almost without delay; natural gas trades in its own market and in Europe, since 2021, has moved on its own.',
+                    'Le gazole est raffiné à partir du brut : son prix suit le pétrole presque sans délai ; le gaz naturel a son propre marché et, en Europe depuis 2021, évolue à part.',
+                    'Il gasolio si raffina dal greggio, quindi il suo prezzo segue il petrolio quasi senza ritardo; il gas naturale ha un mercato proprio e in Europa, dal 2021, è andato per conto suo.'),
+   'pairs': [(('eu', 'petroleo_brent'), ('eu', 'diesel')), (('us', 'petroleo_wti'), ('us', 'diesel')), (('eu', 'petroleo_brent'), ('eu', 'gas_natural')), (('us', 'petroleo_wti'), ('us', 'gas_natural'))]},
+ 'fertiliser_complex': {'channel': 'feedstock', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 4, 6],
+   'hypothesis': L4('El DAP lleva amoniaco (hecho con gas) además de fósforo, por eso se mueve en parte con la urea y el gas; la potasa es un mineral de mina con otra oferta, y su relación con el gas es más indirecta (costes de energía y demanda común de abonos).',
+                    'DAP contains ammonia (made from gas) as well as phosphorus, so it partly moves with urea and gas; potash is a mined mineral with a different supply, and its link to gas is more indirect (energy costs and shared fertiliser demand).',
+                    'Le DAP contient de l’ammoniac (fabriqué à partir de gaz) en plus du phosphore : il évolue donc en partie avec l’urée et le gaz ; la potasse est un minerai extrait, à l’offre différente, et son lien avec le gaz est plus indirect (coûts de l’énergie et demande commune d’engrais).',
+                    'Il DAP contiene ammoniaca (prodotta dal gas) oltre al fosforo, quindi si muove in parte con urea e gas; la potassa è un minerale di miniera con un’offerta diversa e il legame col gas è più indiretto (costi energetici e domanda comune di fertilizzanti).'),
+   'pairs': [(('eu', 'urea'), ('eu', 'dap')), (('eu', 'gas_natural'), ('eu', 'dap')), (('eu', 'gas_natural'), ('eu', 'potasa')), (('eu', 'urea'), ('eu', 'potasa'))]},
+ 'feed_to_monogastric': {'channel': 'feed', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 4, 6],
+   'hypothesis': L4('El pienso (cereal y soja) es el mayor coste del cerdo, el pollo y el huevo; un pienso caro aprieta márgenes y, con el tiempo, puede recortar la producción y sostener el precio. A corto plazo mandan otros factores: demanda, exportaciones, enfermedades y el ciclo de cada especie.',
+                    'Feed (grain and soy) is the largest cost of pork, chicken and eggs; dear feed squeezes margins and, over time, can cut output and support prices. In the short run other factors dominate: demand, exports, disease and each species’ cycle.',
+                    'L’aliment (céréales et soja) est le premier coût du porc, du poulet et des œufs ; un aliment cher comprime les marges et, avec le temps, peut réduire la production et soutenir les prix. À court terme, d’autres facteurs dominent : demande, exportations, maladies et cycle de chaque espèce.',
+                    'Il mangime (cereali e soia) è il primo costo di suini, polli e uova; un mangime caro comprime i margini e, col tempo, può ridurre la produzione e sostenere i prezzi. Nel breve periodo contano altri fattori: domanda, export, malattie e ciclo di ogni specie.'),
+   'pairs': [((r, f), (r, m)) for r, fs in (('eu', ('maiz', 'harina_soja', 'cebada')), ('us', ('maiz',)), ('ca', ('maiz', 'cebada'))) for f in fs for m in ('cerdo', 'pollo', 'huevos')]},
+ 'grain_substitution': {'channel': 'substitute', 'freq': 'monthly', 'lags': [0, 1, 2, 3],
+   'hypothesis': L4('Trigo, maíz, cebada, avena y sorgo se sustituyen en parte en el pienso y compiten por la misma tierra, así que cuando uno se encarece los demás suelen acompañarle. El grado depende de cada mercado: en la UE van muy juntos; en EE. UU. la cebada y la avena tienen mercados más propios.',
+                    'Wheat, maize, barley, oats and sorghum partly substitute for each other in feed and compete for the same land, so when one gets dearer the others tend to follow. How much depends on the market: in the EU they move closely together; in the US barley and oats have more separate markets.',
+                    'Blé, maïs, orge, avoine et sorgho se substituent en partie dans l’alimentation animale et se disputent les mêmes terres : quand l’un renchérit, les autres suivent souvent. L’ampleur dépend du marché : dans l’UE ils vont très ensemble ; aux États-Unis l’orge et l’avoine ont des marchés plus distincts.',
+                    'Frumento, mais, orzo, avena e sorgo si sostituiscono in parte nei mangimi e competono per la stessa terra, quindi quando uno rincara gli altri tendono a seguirlo. Quanto dipende dal mercato: nell’UE vanno molto insieme; negli USA orzo e avena hanno mercati più separati.'),
+   'pairs': [(('eu', 'trigo'), ('eu', 'maiz')), (('eu', 'trigo'), ('eu', 'cebada')), (('eu', 'maiz'), ('eu', 'cebada')), (('us', 'trigo'), ('us', 'maiz')), (('us', 'maiz'), ('us', 'sorgo')), (('us', 'maiz'), ('us', 'avena')),
+             (('us', 'trigo'), ('us', 'avena')), (('us', 'maiz'), ('us', 'cebada')), (('ca', 'trigo'), ('ca', 'maiz')), (('ca', 'trigo'), ('ca', 'cebada')), (('ca', 'trigo'), ('ca', 'avena')), (('ca', 'cebada'), ('ca', 'avena'))]},
+ 'world_transmission': {'channel': 'trade', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 4],
+   'hypothesis': L4('Los grandes mercados exportadores están conectados por el comercio: un cambio de precio en EE. UU. (donde están los mercados de futuros de referencia) suele llegar a la UE y a Canadá, convertido a la misma moneda. Aranceles, transporte, calidad y políticas propias (cuotas lácteas en Canadá, por ejemplo) frenan esa transmisión.',
+                    'The big exporting markets are linked by trade: a price change in the US (home of the benchmark futures markets) usually reaches the EU and Canada, once converted to the same currency. Tariffs, freight, quality and domestic policies (Canada’s dairy quotas, for instance) slow that transmission.',
+                    'Les grands marchés exportateurs sont reliés par le commerce : une variation de prix aux États-Unis (siège des marchés à terme de référence) se transmet souvent à l’UE et au Canada, une fois convertie dans la même monnaie. Droits de douane, fret, qualité et politiques nationales (quotas laitiers au Canada, par exemple) freinent cette transmission.',
+                    'I grandi mercati esportatori sono collegati dal commercio: una variazione di prezzo negli USA (sede dei mercati futures di riferimento) di solito arriva a UE e Canada, convertita nella stessa valuta. Dazi, noli, qualità e politiche interne (le quote del latte in Canada, per esempio) frenano questa trasmissione.'),
+   'pairs': [(('us', p), (r, p)) for p in ('trigo', 'maiz', 'colza', 'cerdo', 'vaca', 'leche', 'pollo', 'cebada') for r in ('eu', 'ca')] + [(('eu', p), ('ca', p)) for p in ('trigo', 'maiz', 'colza', 'cerdo')]},
+ 'dairy_processing': {'channel': 'processing', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 4, 6],
+   'hypothesis': L4('La mantequilla y la leche en polvo son los productos industriales donde se fija el valor de la leche; las industrias revisan lo que pagan al ganadero con unos meses de retraso, así que esos precios suelen ir por delante del precio de la leche en origen.',
+                    'Butter and milk powder are the commodities where the value of milk is set; processors revise what they pay farmers a few months later, so those prices tend to lead the farm-gate milk price.',
+                    'Le beurre et la poudre de lait sont les produits industriels où se fixe la valeur du lait ; les laiteries révisent le prix payé aux éleveurs avec quelques mois de retard, donc ces prix ont tendance à précéder le prix du lait à la ferme.',
+                    'Burro e latte in polvere sono i prodotti industriali dove si fissa il valore del latte; le industrie rivedono quanto pagano agli allevatori con qualche mese di ritardo, quindi quei prezzi tendono ad anticipare il prezzo del latte alla stalla.'),
+   'pairs': [(('eu', 'mantequilla'), ('eu', 'leche')), (('eu', 'leche_polvo'), ('eu', 'leche')), (('us', 'leche_polvo'), ('us', 'leche')), (('us', 'leche_polvo'), ('eu', 'leche_polvo'))]},
+ 'biofuel_link': {'channel': 'biofuel', 'freq': 'monthly', 'lags': [0, 1, 2, 3],
+   'hypothesis': L4('Parte del maíz se convierte en etanol y parte de la colza en biodiésel, así que un petróleo caro puede tirar de su demanda. Es un vínculo parcial: la mayor parte del grano va a pienso y alimentación, y las cuotas obligatorias de mezcla amortiguan el efecto.',
+                    'Part of the maize becomes ethanol and part of the rapeseed biodiesel, so dear oil can pull on their demand. It is a partial link: most grain goes to feed and food, and blending mandates dampen the effect.',
+                    'Une partie du maïs devient de l’éthanol et une partie du colza du biodiesel : un pétrole cher peut donc tirer leur demande. C’est un lien partiel : l’essentiel des grains va à l’alimentation animale et humaine, et les obligations d’incorporation amortissent l’effet.',
+                    'Parte del mais diventa etanolo e parte della colza biodiesel, quindi un petrolio caro può spingerne la domanda. È un legame parziale: la maggior parte dei cereali va a mangimi e alimentazione, e gli obblighi di miscelazione attenuano l’effetto.'),
+   'pairs': [(('eu', 'petroleo_brent'), ('eu', 'colza')), (('eu', 'petroleo_brent'), ('eu', 'maiz')), (('us', 'petroleo_wti'), ('us', 'maiz')), (('us', 'petroleo_wti'), ('us', 'colza'))]},
+ 'meat_substitution': {'channel': 'substitute', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 4, 6],
+   'hypothesis': L4('Las carnes compiten en el plato: si una se encarece, parte del consumo pasa a otra y su precio puede subir. Pero cada especie tiene su propio ciclo productivo y sus enfermedades, así que la relación suele ser débil.',
+                    'Meats compete on the plate: if one gets dearer, some consumption shifts to another and its price may rise. But each species has its own production cycle and diseases, so the link is usually weak.',
+                    'Les viandes se concurrencent dans l’assiette : si l’une renchérit, une partie de la consommation se reporte sur une autre et son prix peut monter. Mais chaque espèce a son propre cycle de production et ses maladies, donc le lien est souvent faible.',
+                    'Le carni competono nel piatto: se una rincara, parte del consumo passa a un’altra e il suo prezzo può salire. Ma ogni specie ha il proprio ciclo produttivo e le proprie malattie, quindi il legame è di solito debole.'),
+   'pairs': [(('eu', 'cerdo'), ('eu', 'pollo')), (('eu', 'vaca'), ('eu', 'cerdo')), (('eu', 'vaca'), ('eu', 'cordero')), (('us', 'cerdo'), ('us', 'pollo')), (('us', 'vaca'), ('us', 'cerdo'))]},
  'index_eu': {'channel': 'energy', 'freq': 'quarterly', 'lags': [0, 1, 2, 4],
    'hypothesis': L4('Los índices oficiales de precios de insumos (energía, fertilizantes) y de producción (cereales) de Eurostat recogen la misma cadena de costes y precios a escala de la UE; con pocos datos trimestrales la lectura es frágil.',
                     'Eurostat’s official input (energy, fertiliser) and output (cereals) price indices capture the same cost-and-price chain at EU level; with few quarterly observations the reading is fragile.',
@@ -207,7 +264,7 @@ def main():
             if not res: print('SIN PARES', ia, ib); continue
             n = res['n']; r = res['r']; stab = res['stability']; st = RE.status_of(n, r, stab, freq)
             conf = RE.confidence(n, r, stab, res['coverage'], freq)
-            rel = {'id': ('%s__%s-%s__%s-%s' % (fam, ia[1], ia[0], ib[1], ib[0])).replace(':', '-'), 'family': fam, 'status': st, 'channel': spec['channel'] if sp_a else CHANNEL_OF[ia[1]], 'frequency': freq,
+            rel = {'id': ('%s__%s-%s__%s-%s' % (fam, ia[1], ia[0], ib[1], ib[0])).replace(':', '-'), 'family': fam, 'status': st, 'channel': CHANNEL_OF[ia[1]] if (fam in ('index_eu', 'index_uk') and not sp_a) else spec['channel'], 'frequency': freq,
                    'input': sp_a['side'] if sp_a else side(*ia), 'market': side(*ib),
                    'stat': {'correlation': r, 'direction': 'none' if r is None or abs(r) < 0.1 else ('positive' if r > 0 else 'negative'), 'strength': RE.strength(r) if r is not None else 'negligible',
                             'lag': res['lag'], 'lagUnit': {'monthly': 'month', 'quarterly': 'quarter', 'annual': 'year'}[freq], 'inputTransform': 'anomaly' if xmode == 'level' else 'change', 'n': n, 'periodStart': RE.ym_of(res['first'], freq), 'periodEnd': RE.ym_of(res['last'], freq),
@@ -224,6 +281,18 @@ def main():
             rels.append(rel)
     order = {'OBSERVED_RELATIONSHIP': 0, 'WEAK_OR_UNSTABLE': 1, 'INSUFFICIENT_DATA': 2}; crank = {'HIGH': 0, 'MEDIUM': 1, 'LOW': 2}
     rels.sort(key=lambda x: (order[x['status']], crank[x['confidence']], -abs(x['stat']['correlation'] or 0), x['id']))
+    # Cadenas (consecuencias de segundo paso): A -> B observada y B -> C observada, las dos con confianza alta o media. Cada eslabon se mide por separado;
+    # NO se multiplican correlaciones ni se calcula un efecto total (seria inventar una cifra que los datos no dan).
+    solid = [x for x in rels if x['status'] == 'OBSERVED_RELATIONSHIP' and x['confidence'] in ('HIGH', 'MEDIUM')]
+    chains = []
+    for a in solid:
+        for b in solid:
+            if a is b or b['input']['key'] != a['market']['key'] or b['market']['key'] == a['input']['key']: continue
+            # solo cadenas que cambian de canal (p. ej. crudo -> gasoleo -> cereal; cereal -> pienso -> carne); dos eslabones de comercio/sustitucion repiten lo mismo
+            if a['channel'] == b['channel'] or {a['channel'], b['channel']} <= {'trade', 'substitute'}: continue
+            chains.append({'id': a['id'] + '>>' + b['id'], 'links': [a['id'], b['id']], 'nodes': [a['input'], a['market'], b['market']],
+                           'confidence': 'HIGH' if a['confidence'] == b['confidence'] == 'HIGH' else 'MEDIUM'})
+    chains.sort(key=lambda c: (c['confidence'] != 'HIGH', c['id']))
     fams = {k: {'channel': v['channel'], 'frequency': v['freq'], 'lagsTested': v['lags'], 'hypothesis': v['hypothesis']} for k, v in FAMILIES.items()}
     doc = {'schemaVersion': 1, 'generatedAt': NOW,
            'disclaimer': L4('Descriptivo, no predictivo: describe cómo se han movido juntos los precios en el pasado; no anticipa lo que harán ni demuestra causas.', 'Descriptive, not predictive: it describes how prices moved together in the past; it does not anticipate what they will do nor prove causes.',
@@ -233,10 +302,10 @@ def main():
                            'confidence': 'HIGH: n>=60 (24 quarterly), |r|>=0.4, sign stability>=0.75, coverage>=0.8. MEDIUM: n>=36 (16), |r|>=0.25, stability>=0.6. Otherwise LOW. It rates how well the statistical association holds, not the economic hypothesis.',
                            'status': 'OBSERVED_RELATIONSHIP: enough data, |r|>=0.2 and sign stability>=0.5. WEAK_OR_UNSTABLE otherwise. INSUFFICIENT_DATA: fewer pairs than the minimum.',
                            'currency': 'If the two series have different currencies both are converted to EUR with the ECB monthly rate (exact month or previous, at most 2 months); otherwise original currency. Index series are unitless.',
-                           'causality': 'No causal inference. The economic hypothesis (families.*.hypothesis) is a plausible explanation written by hand; the data do not prove it.',
+                           'chains': 'A chain links two observed relationships (A->B and B->C, both HIGH or MEDIUM confidence) through the same series B. Each link keeps its own statistics; no total effect is computed and correlations are not multiplied.', 'causality': 'No causal inference. The economic hypothesis (families.*.hypothesis) is a plausible explanation written by hand; the data do not prove it.',
                            'catalogue': 'Only economically justifiable relationships (product-metadata related + Eurostat/DEFRA index families + monthly weather anomalies of the main growing regions + Canadian end-of-crop-year stocks); pairs are not mined at random.',
                            'anomalies': 'Weather input = monthly anomaly vs the 2001-2020 climatology of the same calendar month (NASA POWER): precipitation in % of the climatological value, temperature in degrees C. The anomaly is a level, not a change, so it is correlated as is with the market change. Stocks input = year-on-year change in AAFC/Statistics Canada ending stocks (crop year Aug-Jul) against the change in the crop-year average price (annual frequency, minimum 20 pairs); recent balances are estimates and get revised.'},
-           'families': fams, 'channels': CH, 'regions': REGN, 'relationships': rels}
+           'families': fams, 'channels': CH, 'regions': REGN, 'relationships': rels, 'chains': chains}
     path = D / 'relationships.json'
     new = json.dumps(doc, ensure_ascii=False, separators=(',', ':'))
     try:

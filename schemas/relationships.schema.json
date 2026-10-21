@@ -160,7 +160,12 @@
        "feed",
        "feedstock",
        "weather",
-       "stocks"
+       "stocks",
+       "crude",
+       "substitute",
+       "trade",
+       "processing",
+       "biofuel"
       ]
      },
      "frequency": {
@@ -544,6 +549,51 @@
         "minLength": 1
        }
       }
+     }
+    }
+   }
+  },
+  "chains": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "links",
+     "nodes",
+     "confidence"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "links": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+       "type": "string"
+      }
+     },
+     "nodes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+       "type": "object",
+       "required": [
+        "key",
+        "product",
+        "region",
+        "label"
+       ]
+      }
+     },
+     "confidence": {
+      "enum": [
+       "HIGH",
+       "MEDIUM"
+      ]
      }
     }
    }
