@@ -70,10 +70,10 @@ mk_cow STATE 2199 filas, 1920 puntos
 mk_cow NATIONAL 112 filas, 80 puntos
 mk_cows STATE 314 filas, 312 puntos
 mk_cows NATIONAL 13 filas, 13 puntos
-eg_prod STATE 2464 filas, 2177 puntos
-eg_prod NATIONAL 86 filas, 80 puntos
+eg_prod STATE 2490 filas, 2202 puntos
+eg_prod NATIONAL 87 filas, 81 puntos
 eg_layers STATE 207 filas, 201 puntos
-eg_layers NATIONAL 81 filas, 81 puntos
+eg_layers NATIONAL 82 filas, 82 puntos
 pr_corn STATE 1974 filas, 1440 puntos
 pr_corn NATIONAL 92 filas, 80 puntos
 pr_soy STATE 1618 filas, 1388 puntos
@@ -136,5 +136,5 @@ rentas condado rt_pasture 7503 filas, 7325 valores
 ERS ultima publicacion 2026-09-03 https://www.ers.usda.gov/media/29517/september-3-2026-release.zip
 ERS ficheros ['FarmIncome_WealthStatisticsData_September2026.csv']
 ERS columnas FarmIncome_WealthStatisticsData_September2026.csv ['Year', 'State', 'artificialKey', 'VariableDescriptionTotal', 'VariableDescriptionPart1', 'VariableDescriptionPart2', 'Amount', 'unit_desc', 'PublicationDate', 'Source', 'ChainType_GDP_Deflator']
-ERS valores 35137 por variable: {'cash_receipts': 51, 'cr_crops': 51, 'cr_animals': 51, 'govt': 51, 'expenses': 51, 'gross_income': 51, 'net_cash': 51, 'net_income': 51}
+ERS valores 39082 por variable: {'cash_receipts': 51, 'cr_crops': 51, 'cr_animals': 51, 'govt': 51, 'expenses': 51, 'gross_income': 51, 'net_cash': 51, 'net_income': 51, 'fert_expense': 51}
 ERS descripciones de totales disponibles: ['average net cash income, $1,000,000 or more gross sales', 'average net cash income, $100,000 - 249,999 gross sales', 'average net cash income, $250,000 - 499,999 gross sales', 'average net cash income, $5000,000 - 999,999 gross sales', 'average net cash income, all farms', 'average net cash income, basin and range', 'average net cash income, cattle and calves', 'average net cash income, commercial farms', 'average net cash income, corn', 'average net cash income, cotton', 'average net cash income, dairy', 'average net cash income, eastern uplands', 'average net cash income, family farms', 'average net cash income, farm businesses', 'average net cash income, fruitful rim', 'average net cash income, heartland', 'average net cash income, hogs', 'average net cash income, intermediate farms', 'average net cash income, less than $100,000 gross sales', 'average net cash income, mississippi portal', 'average net cash income, northern cresent', 'average net cash income, northern great plains', 'average net cash income, other crops', 'average net cash income, other livestock', 'average net cash income, poultry', 'average net cash income, praire gateway', 'average net cash income, residence farms', 'average net cash income, southern seaboard', 'average net cash income, soybeans', 'average net cash income, specialty crops', 'average net cash income, wheat', 'dec. 31 value of purchased inputs inventory, production expenses', 'gross cash income', 'gross farm income', 'gross noncash income, returns to operators', 'net cash income', 'net farm income', 'net farm income ratio', 'net government transactions', 'production expenses, all, excl. operator dwellings', 'production expenses, all, incl. operator dwellings', 'production expenses, cash production expenses, excl. operator dwellings', 'production expenses, cash production expenses, net rent, nonoperator landlords', 'production expenses, operating expenses, excl. operator dwellings', 'production expenses, operating expenses, incl. operator dwellings', 'value of government payments, total']
