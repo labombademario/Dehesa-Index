@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-21T17:10:17Z",
+ "generatedAt": "2026-10-21T18:47:19Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 132,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 310,
-  "datasets_apto": 181,
+  "datasets": 311,
+  "datasets_apto": 182,
   "datasets_condiciones": 119,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -5107,6 +5107,7 @@
     "eurostat",
     "statcan",
     "usda_ams_mars",
+    "usda_ers",
     "usda_nass",
     "world_bank"
    ]
@@ -5335,6 +5336,7 @@
     "eurostat",
     "statcan",
     "usda_ams_mars",
+    "usda_ers",
     "usda_nass",
     "world_bank"
    ]
@@ -5483,6 +5485,7 @@
     "eurostat",
     "statcan",
     "usda_ams_mars",
+    "usda_ers",
     "usda_nass",
     "world_bank"
    ]
@@ -6650,6 +6653,15 @@
    "verdict": "apto",
    "sources": [
     "destatis"
+   ]
+  },
+  {
+   "path": "data/wood-prices-na.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "bls",
+    "statcan"
    ]
   },
   {

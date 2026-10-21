@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-21T17:10:16Z",
+ "generatedAt": "2026-10-21T18:47:18Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -7034,7 +7034,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
-   "dataset": "Ya integrada (504 series en el catalogo unificado)",
+   "dataset": "Ya integrada (505 series en el catalogo unificado)",
    "products": [
     "butter",
     "cattle",
@@ -7261,7 +7261,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "dataset": "Ya integrada (597 series en el catalogo unificado)",
+   "dataset": "Ya integrada (602 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
