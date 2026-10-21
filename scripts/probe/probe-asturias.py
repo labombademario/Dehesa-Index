@@ -1,6 +1,8 @@
 """Sondeo (no se fusiona): ¿publican MAPA o el Principado de Asturias series de varios años por comunidad para manzana de sidra y judia seca?
 Solo lee paginas publicas y guarda enlaces y cabeceras, no contenidos."""
-import re, json, sys, urllib.request, urllib.parse, os
+import re, json, sys, urllib.request, urllib.parse, os, ssl
+# mapa.gob.es sirve una cadena de certificados incompleta: solo para este sondeo de lectura de paginas publicas se reintenta sin verificar
+CTX = ssl._create_unverified_context()
 OUT = 'probe-asturias-out'; os.makedirs(OUT, exist_ok=True)
 SEEDS = [
  'https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/',
@@ -15,7 +17,7 @@ KW = re.compile(r'sidra|manzan|jud[ií]a|fabes|faba|serie|hist[oó]ric|anuario|\
 def get(u, n=400000, head=False):
     rq = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (compatible; DehesaIndex-probe)'})
     try:
-        with urllib.request.urlopen(rq, timeout=40) as r:
+        with urllib.request.urlopen(rq, timeout=40, context=CTX if 'mapa.gob.es' in u else None) as r:
             b = r.read(n); return r.status, r.geturl(), r.headers.get('content-type', ''), r.headers.get('content-length'), b
     except Exception as e:
         return 0, u, str(e)[:120], None, b''
