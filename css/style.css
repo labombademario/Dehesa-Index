@@ -2958,3 +2958,14 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .ce-sent{font-size:16px;margin:6px 0 0}
 /* Coste de receta: invitacion a cargar el ejemplo cuando esta vacio */
 .mc-first{padding:10px 2px 4px}.mc-first .di-emp-p{margin:4px 0 10px}
+
+/* Explorar datos: ficha de respuesta encima del gráfico */
+.ex-ans { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin: 6px 0 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface, #fffdf7); }
+.ex-at { padding: 12px 14px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 0 -1px -1px 0; }
+.ex-atl { font-size: 12.5px; color: var(--text-tertiary); }
+.ex-atv { font-family: var(--font-serif, 'Source Serif 4', Georgia, serif); font-size: 26px; font-weight: 700; color: var(--accent, #2f6f4f); line-height: 1.2; margin-top: 2px; }
+.ex-ats { font-size: 13px; color: var(--text-secondary, var(--text-tertiary)); line-height: 1.5; margin-top: 2px; }
+.ex-opt .ex-om b { color: var(--text-primary); }
+
+.ex-rsrow { display: flex; justify-content: flex-end; margin: 0 0 2px; }
+.ex-rst { color: var(--text-tertiary); }

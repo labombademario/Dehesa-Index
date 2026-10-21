@@ -7,19 +7,19 @@
   var S = { allt: false, q: '', pf: null, allp: false, cq: '', act: -1, cact: -1 };
   var CP = {}; /* series de comparación ya descargadas */
   var X = {
-    es: { q: 'Busca lo que quieres ver', ph: 'Prueba: trigo producción, precio leche, rendimiento cebada', start: 'Para empezar', prods: 'Productos', themes: 'Temas', moreT: 'Más temas', lessT: 'Menos temas', more: 'Más productos', less: 'Menos productos', ser: 'Serie', noRes: 'Sin resultados: prueba con menos palabras o elige un producto abajo.', moreRes: '{n} resultados más: sigue escribiendo para afinar.',
+    es: { rst: 'Restablecer', rstT: 'Quitar filtros y volver al inicio', vsPrev: 'frente al periodo anterior', aLast: 'Último dato', aYoy: 'Frente a {q}', a5: 'Frente a la media de 5 años', aRange: 'Máximo y mínimo del periodo mostrado', aMax: 'Máx.', aMin: 'Mín.', q: 'Busca lo que quieres ver', ph: 'Prueba: trigo producción, precio leche, rendimiento cebada', start: 'Para empezar', prods: 'Productos', themes: 'Temas', moreT: 'Más temas', lessT: 'Menos temas', more: 'Más productos', less: 'Menos productos', ser: 'Serie', noRes: 'Sin resultados: prueba con menos palabras o elige un producto abajo.', moreRes: '{n} resultados más: sigue escribiendo para afinar.',
       adv: 'Vista avanzada: todas las categorías y series', scope: 'Mostrando solo el tema', clear: 'Ver todo', v1: 'Hay {n} variantes de esta serie (por método o fuente).', v2: 'Verlas', cmp: 'Comparar con otra serie de este país', cmpS: 'Otra serie de este país', cmpSph: 'Busca la serie con la que comparar', cmpC: 'El mismo dato en otro país', cmpNone: 'Elegir país…', cmpNo: 'Este país no publica esta serie con el mismo nombre y la misma unidad.', cmpOn: 'Comparando con', cmpRm: 'Quitar comparación', cmpIdx: 'Las unidades son distintas: se comparan en índice (100 = primer periodo común).', cmpLoad: 'Cargando…', last: 'último dato',
       sen: '{n} ({c}): {v} {u} ({p}){d}.', up: ', un {x} % más que {q}', dn: ', un {x} % menos que {q}', eq: ', igual que {q}', ctry: 'País', per: 'Periodo', meas: 'Qué mirar', prodLab: 'Producto o tema',
       M: { price: 'Precio', index: 'Índices', yield: 'Rendimiento', value: 'Valor', area: 'Superficie', production: 'Producción', trade: 'Comercio', stocks: 'Existencias', animals: 'Censo y ganado', income: 'Rentas y costes', other: 'Otros datos' } },
-    en: { q: 'Search what you want to see', ph: 'Try: wheat production, milk price, barley yield', start: 'Get started', prods: 'Products', themes: 'Topics', moreT: 'More topics', lessT: 'Fewer topics', more: 'More products', less: 'Fewer products', ser: 'Series', noRes: 'No results: try fewer words or pick a product below.', moreRes: '{n} more results: keep typing to narrow down.',
+    en: { rst: 'Reset', rstT: 'Clear filters and go back to the start', vsPrev: 'vs previous period', aLast: 'Latest', aYoy: 'Versus {q}', a5: 'Versus the 5-year average', aRange: 'High and low of the period shown', aMax: 'High', aMin: 'Low', q: 'Search what you want to see', ph: 'Try: wheat production, milk price, barley yield', start: 'Get started', prods: 'Products', themes: 'Topics', moreT: 'More topics', lessT: 'Fewer topics', more: 'More products', less: 'Fewer products', ser: 'Series', noRes: 'No results: try fewer words or pick a product below.', moreRes: '{n} more results: keep typing to narrow down.',
       adv: 'Advanced view: all categories and series', scope: 'Showing only the topic', clear: 'Show all', v1: 'This series has {n} variants (by method or source).', v2: 'Show them', cmp: 'Compare with another series from this country', cmpS: 'Another series from this country', cmpSph: 'Search the series to compare with', cmpC: 'The same data in another country', cmpNone: 'Choose a country…', cmpNo: 'This country does not publish this series under the same name and unit.', cmpOn: 'Comparing with', cmpRm: 'Remove comparison', cmpIdx: 'The units differ: shown as an index (100 = first common period).', cmpLoad: 'Loading…', last: 'latest',
       sen: '{n} ({c}): {v} {u} ({p}){d}.', up: ', {x}% higher than {q}', dn: ', {x}% lower than {q}', eq: ', unchanged from {q}', ctry: 'Country', per: 'Period', meas: 'What to look at', prodLab: 'Product or topic',
       M: { price: 'Price', index: 'Indices', yield: 'Yield', value: 'Value', area: 'Area', production: 'Production', trade: 'Trade', stocks: 'Stocks', animals: 'Livestock numbers', income: 'Income and costs', other: 'Other data' } },
-    fr: { q: 'Cherchez ce que vous voulez voir', ph: 'Essayez : blé production, prix lait, rendement orge', start: 'Pour commencer', prods: 'Produits', themes: 'Thèmes', moreT: 'Plus de thèmes', lessT: 'Moins de thèmes', more: 'Plus de produits', less: 'Moins de produits', ser: 'Série', noRes: 'Aucun résultat : essayez moins de mots ou choisissez un produit ci-dessous.', moreRes: '{n} résultats de plus : continuez à taper pour affiner.',
+    fr: { rst: 'Réinitialiser', rstT: 'Effacer les filtres et revenir au départ', vsPrev: 'par rapport à la période précédente', aLast: 'Dernière donnée', aYoy: 'Par rapport à {q}', a5: 'Par rapport à la moyenne sur 5 ans', aRange: 'Maximum et minimum de la période affichée', aMax: 'Max.', aMin: 'Min.', q: 'Cherchez ce que vous voulez voir', ph: 'Essayez : blé production, prix lait, rendement orge', start: 'Pour commencer', prods: 'Produits', themes: 'Thèmes', moreT: 'Plus de thèmes', lessT: 'Moins de thèmes', more: 'Plus de produits', less: 'Moins de produits', ser: 'Série', noRes: 'Aucun résultat : essayez moins de mots ou choisissez un produit ci-dessous.', moreRes: '{n} résultats de plus : continuez à taper pour affiner.',
       adv: 'Vue avancée : toutes les catégories et séries', scope: 'Affichage limité au thème', clear: 'Tout afficher', v1: 'Cette série a {n} variantes (par méthode ou source).', v2: 'Les voir', cmp: 'Comparer avec une autre série de ce pays', cmpS: 'Une autre série de ce pays', cmpSph: 'Cherchez la série à comparer', cmpC: 'La même donnée dans un autre pays', cmpNone: 'Choisir un pays…', cmpNo: 'Ce pays ne publie pas cette série avec le même nom et la même unité.', cmpOn: 'Comparaison avec', cmpRm: 'Retirer la comparaison', cmpIdx: 'Les unités diffèrent : comparaison en indice (100 = première période commune).', cmpLoad: 'Chargement…', last: 'dernière donnée',
       sen: '{n} ({c}) : {v} {u} ({p}){d}.', up: ', en hausse de {x} % par rapport à {q}', dn: ', en baisse de {x} % par rapport à {q}', eq: ', stable par rapport à {q}', ctry: 'Pays', per: 'Période', meas: 'Que regarder', prodLab: 'Produit ou thème',
       M: { price: 'Prix', index: 'Indices', yield: 'Rendement', value: 'Valeur', area: 'Surface', production: 'Production', trade: 'Commerce', stocks: 'Stocks', animals: 'Cheptel', income: 'Revenus et coûts', other: 'Autres données' } },
-    it: { q: 'Cerca ciò che vuoi vedere', ph: 'Prova: frumento produzione, prezzo latte, resa orzo', start: 'Per iniziare', prods: 'Prodotti', themes: 'Temi', moreT: 'Più temi', lessT: 'Meno temi', more: 'Più prodotti', less: 'Meno prodotti', ser: 'Serie', noRes: 'Nessun risultato: prova con meno parole o scegli un prodotto qui sotto.', moreRes: '{n} risultati in più: continua a scrivere per restringere.',
+    it: { rst: 'Reimposta', rstT: 'Rimuovi i filtri e torna all’inizio', vsPrev: 'rispetto al periodo precedente', aLast: 'Ultimo dato', aYoy: 'Rispetto a {q}', a5: 'Rispetto alla media di 5 anni', aRange: 'Massimo e minimo del periodo mostrato', aMax: 'Max.', aMin: 'Min.', q: 'Cerca ciò che vuoi vedere', ph: 'Prova: frumento produzione, prezzo latte, resa orzo', start: 'Per iniziare', prods: 'Prodotti', themes: 'Temi', moreT: 'Più temi', lessT: 'Meno temi', more: 'Più prodotti', less: 'Meno prodotti', ser: 'Serie', noRes: 'Nessun risultato: prova con meno parole o scegli un prodotto qui sotto.', moreRes: '{n} risultati in più: continua a scrivere per restringere.',
       adv: 'Vista avanzata: tutte le categorie e serie', scope: 'Mostro solo il tema', clear: 'Mostra tutto', v1: 'Questa serie ha {n} varianti (per metodo o fonte).', v2: 'Mostrale', cmp: 'Confronta con un’altra serie di questo paese', cmpS: 'Un’altra serie di questo paese', cmpSph: 'Cerca la serie da confrontare', cmpC: 'Lo stesso dato in un altro paese', cmpNone: 'Scegli un paese…', cmpNo: 'Questo paese non pubblica questa serie con lo stesso nome e la stessa unità.', cmpOn: 'Confronto con', cmpRm: 'Rimuovi il confronto', cmpIdx: 'Le unità sono diverse: confronto in indice (100 = primo periodo comune).', cmpLoad: 'Caricamento…', last: 'ultimo dato',
       sen: '{n} ({c}): {v} {u} ({p}){d}.', up: ', {x} % in più rispetto a {q}', dn: ', {x} % in meno rispetto a {q}', eq: ', invariato rispetto a {q}', ctry: 'Paese', per: 'Periodo', meas: 'Cosa guardare', prodLab: 'Prodotto o tema',
       M: { price: 'Prezzo', index: 'Indici', yield: 'Resa', value: 'Valore', area: 'Superficie', production: 'Produzione', trade: 'Commercio', stocks: 'Scorte', animals: 'Consistenza', income: 'Redditi e costi', other: 'Altri dati' } }
@@ -85,23 +85,26 @@
 
   function chip(cls, attrs, inner, on) { return '<button type="button" class="' + cls + '"' + attrs + ' aria-pressed="' + (on ? 'true' : 'false') + '">' + inner + '</button>'; }
   function trimPrefix(labs) { /* si todas empiezan por lo mismo («Trigo: ») se quita */
-    var pre = null, ok = labs.length > 1; labs.forEach(function (l) { var i = l.indexOf(': '), p = i > 2 && i < 70 ? l.slice(0, i + 2) : null; if (pre === null) pre = p; else if (pre !== p) ok = false; });
-    return ok && pre ? labs.map(function (l) { return l.slice(pre.length); }) : labs;
+    var pre, ok = labs.length > 1; labs.forEach(function (l, k) { var i = l.indexOf(': '), p = i > 2 && i < 70 ? l.slice(0, i + 2) : null; if (k === 0) pre = p; else if (pre !== p) ok = false; }); /* sin prefijo en una sola etiqueta = no se recorta ninguna */
+    return ok && pre && labs.every(function (l) { return l.length > pre.length; }) ? labs.map(function (l) { return l.slice(pre.length); }) : labs;
   }
   function html(cx) {
     var w = X[lg(cx)], md = model(cx), cur = cx.cur0, it = cur ? md.by[cur.id] : null, fk = it ? fichaOf(md, it) : null, h = '';
-    h += '<div class="ex" id="ex-top"><div class="ex-q"><label for="ex-q" class="ex-ql">' + esc(w.q) + '</label>' +
-      '<input id="ex-q" type="search" class="um-input" role="combobox" aria-expanded="false" aria-controls="ex-res" aria-autocomplete="list" autocomplete="off" placeholder="' + esc(w.ph) + '" value="">' +
-      '<div id="ex-res" class="ex-res" role="listbox" aria-label="' + esc(w.q) + '" hidden></div></div>';
+    h += '<div class="ex" id="ex-top">';
     var hl = highlights(cx, md);
     // «Para empezar» retirado: duplicaba Productos + Qué mirar
     if (cx.g !== 'all' && cx.t[cx.g]) h += '<div class="ex-row"><span class="ex-lab">' + esc(w.scope) + ' <b>' + esc(cx.t[cx.g]) + '</b></span>' + chip('ex-chip', ' data-ex="g0"', esc(w.clear), false) + '</div>';
+    var dirty = S.pf || S.allp || S.allt || cx.g !== 'all' || cx.cmp || cx.r !== 'max' || cx.fx || cx.real || (cur && cx.firstId && cur.id !== cx.firstId());
+    if (dirty) h += '<div class="ex-rsrow"><button type="button" class="ex-chip ex-chip-s ex-rst" data-ex="rst" title="' + esc(w.rstT) + '">↺ ' + esc(w.rst) + '</button></div>';
     var pk = pkeys(md);
     if (pk.length) {
       var lim = 10, sh = S.allp || pk.length <= lim + 2 ? pk : pk.slice(0, lim); if (fk && fk.charAt(0) === 'p' && sh.indexOf(fk.slice(2)) < 0) sh = sh.concat([fk.slice(2)]);
       h += '<div class="ex-row" role="group" aria-label="' + esc(w.prods) + '"><span class="ex-lab">' + esc(w.prods) + '</span>' + sh.map(function (k) { return chip('ex-chip', ' data-ex="f" data-v="p:' + k + '"', PN[k][4] + ' ' + esc(pname(k, cx)), fk === 'p:' + k); }).join('') +
         (pk.length > lim + 2 ? '<button type="button" class="ex-chip ex-more" data-ex="allp">' + esc(S.allp ? w.less : w.more + ' (' + pk.length + ')') + '</button>' : '') + '</div>';
     }
+    h += '<div class="ex-q"><label for="ex-q" class="ex-ql">' + esc(w.q) + '</label>' +
+      '<input id="ex-q" type="search" class="um-input" role="combobox" aria-expanded="false" aria-controls="ex-res" aria-autocomplete="list" autocomplete="off" placeholder="' + esc(w.ph) + '" value="">' +
+      '<div id="ex-res" class="ex-res" role="listbox" aria-label="' + esc(w.q) + '" hidden></div></div>';
     var gk = Object.keys(md.G).filter(function (g) { return cx.t[g]; }).sort(function (a, b) { return md.G[b].length - md.G[a].length; });
     if (gk.length > 1) {
       var gl = 6, gs = S.allt || gk.length <= gl + 1 ? gk : gk.slice(0, gl); if (fk && fk.charAt(0) === 'g' && gs.indexOf(fk.slice(2)) < 0) gs = gs.concat([fk.slice(2)]);
@@ -115,7 +118,7 @@
       var sx = its.filter(function (x) { return x.m === it.m; }).map(function (x) { return x.x; }), cl = cx.collapse(sx, cx.list, cur.id);
       if (cl.length > 1) {
         cl.sort(function (a, b) { return String(b.latestPeriod || '').slice(0, 4).localeCompare(String(a.latestPeriod || '').slice(0, 4)) || (b.n || 0) - (a.n || 0); });
-        var labs = trimPrefix(cl.map(function (c) { return c._lab || cx.shortLab(c); }));
+        var labs = trimPrefix(cl.map(function (c) { return String(c._lab || cx.shortLab(c)).replace(/:\s*\(/, ' ('); }));
         if (cl.length <= 6) h += '<div class="ex-row" role="group" aria-label="' + esc(w.ser) + '"><span class="ex-lab">' + esc(w.ser) + '</span>' + cl.map(function (c, i) { return chip('ex-chip ex-ser', ' data-ex="s" data-v="' + esc(c.id) + '" title="' + esc(cx.TL(c.label)) + '"', esc(labs[i]), c.id === cur.id); }).join('') + '</div>';
         else h += '<div class="ex-row"><label class="ex-lab" for="ex-sel">' + esc(w.ser) + ' (' + cl.length + ')</label><select id="ex-sel" class="di-compare-select ex-sel" data-ex="ssel">' + cl.map(function (c, i) { return '<option value="' + esc(c.id) + '"' + (c.id === cur.id ? ' selected' : '') + '>' + esc(labs[i]) + '</option>'; }).join('') + '</select></div>';
       }
@@ -135,6 +138,27 @@
     }
     var name = cx.shortLab(s0).replace(/\s*\([^()]*\)\s*$/, '');
     return '<p class="ex-sen">' + esc(w.sen.replace('{n}', name).replace('{c}', cx.country).replace('{v}', cx.nf(last[1], cx.dec(last[1]))).replace('{u}', s.unit).replace('{p}', cx.plabel(per, s.frequency)).replace('{d}', d)) + '</p>';
+  }
+  /* Ficha de respuesta: lo que se ve de un vistazo, todo calculado de la propia serie (nada estimado) */
+  function answer(cx, s, s0) {
+    var w = X[lg(cx)], p = s.points; if (!p || !p.length) return ''; var last = p[p.length - 1]; if (last[1] == null) return '';
+    var m = /^(\d{4})(.*)$/.exec(String(last[0])), yoy = null, ql = '', i, tiles = '';
+    var pct = function (v) { return (v > 0 ? '▲ +' : v < 0 ? '▼ −' : '') + cx.nf(Math.abs(v), Math.abs(v) < 10 ? 1 : 0) + ' %'; };
+    var tile = function (lab, big, small) { return '<div class="ex-at"><div class="ex-atl">' + esc(lab) + '</div><div class="ex-atv">' + big + '</div>' + (small ? '<div class="ex-ats">' + small + '</div>' : '') + '</div>'; };
+    tiles += tile(cx.shortLab(s0).replace(/\s*\([^()]*\)\s*$/, '') + ' · ' + cx.plabel(last[0], s.frequency), esc(cx.nf(last[1], cx.dec(last[1]))), esc(s.unit || ''));
+    if (m) {
+      for (i = p.length - 2; i >= 0; i--) if (p[i][0] === (+m[1] - 1) + m[2]) { yoy = p[i]; break; }
+      if (yoy && yoy[1] > 0 && last[1] >= 0) tiles += tile(w.aYoy.replace('{q}', cx.plabel(yoy[0], s.frequency)), esc(pct((last[1] / yoy[1] - 1) * 100)), '');
+      var vals = [], by = {}; p.forEach(function (q) { by[q[0]] = q[1]; });
+      for (i = 1; i <= 5; i++) { var v = by[(+m[1] - i) + m[2]]; if (v != null) vals.push(v); }
+      if (vals.length >= 3) { var av = vals.reduce(function (a, b) { return a + b; }, 0) / vals.length; if (av > 0) tiles += tile(w.a5, esc(pct((last[1] / av - 1) * 100)), ''); }
+    }
+    var vis = cutRange(cx, p.slice()).filter(function (q) { return q[1] != null; });
+    if (vis.length > 2) {
+      var mx = vis[0], mn = vis[0]; vis.forEach(function (q) { if (q[1] > mx[1]) mx = q; if (q[1] < mn[1]) mn = q; });
+      tiles += tile(w.aRange, '', esc(w.aMax) + ' ' + esc(cx.nf(mx[1], cx.dec(mx[1]))) + ' · ' + esc(cx.plabel(mx[0], s.frequency)) + '<br>' + esc(w.aMin) + ' ' + esc(cx.nf(mn[1], cx.dec(mn[1]))) + ' · ' + esc(cx.plabel(mn[0], s.frequency)));
+    }
+    return '<div class="ex-ans" role="group" aria-label="' + esc(w.aLast) + '">' + tiles + '</div>';
   }
   function variantsWrap(cx, vh) {
     if (!vh) return ''; var n = (vh.match(/data-s=/g) || []).length; if (n < 2) return ''; var w = X[lg(cx)];
@@ -173,7 +197,7 @@
   }
   function resHtml(cx, r, pre) {
     if (!r.list.length) return '<div class="ex-nores">' + esc(r.w.noRes) + '</div>';
-    return r.list.map(function (c, i) { return '<button type="button" role="option" aria-selected="false" class="ex-opt" id="' + pre + i + '" data-id="' + esc(c.id) + '"><span class="ex-ol">' + esc(c._lab || cx.shortLab(c)) + '</span><span class="ex-om">' + esc(r.w.M[meas(c)]) + ' · ' + esc(cx.plabel(c.latestPeriod, c.frequency)) + '</span></button>'; }).join('') + (r.tot > r.list.length ? '<div class="ex-nores">' + esc(r.w.moreRes.replace('{n}', r.tot - r.list.length)) + '</div>' : '');
+    return r.list.map(function (c, i) { return '<button type="button" role="option" aria-selected="false" class="ex-opt" id="' + pre + i + '" data-id="' + esc(c.id) + '"><span class="ex-ol">' + esc(c._lab || cx.shortLab(c)) + '</span><span class="ex-om">' + esc(r.w.M[meas(c)]) + ' · ' + esc(cx.plabel(c.latestPeriod, c.frequency)) + (c.latest != null ? ' · <b>' + esc(cx.nf(c.latest, cx.dec(c.latest))) + ' ' + esc(c.unit || '') + '</b>' : '') + (c.changePct != null ? ' · <span title="' + esc(r.w.vsPrev) + '">' + (c.changePct > 0 ? '▲ +' : c.changePct < 0 ? '▼ −' : '') + esc(cx.nf(Math.abs(c.changePct), 1)) + ' %</span>' : '') + '</span></button>'; }).join('') + (r.tot > r.list.length ? '<div class="ex-nores">' + esc(r.w.moreRes.replace('{n}', r.tot - r.list.length)) + '</div>' : '');
   }
   /* api: { act(fn) repinta manteniendo el sitio, build(), pick(id), setCmp(obj|null), loadCountry(cc), pts(cc,id) } */
   function bind(root, cx, api) {
@@ -189,6 +213,7 @@
     var top = $('ex-top');
     if (top) top.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('[data-ex]') : null; if (!b || b.tagName !== 'BUTTON') return; var a = b.getAttribute('data-ex'), v = b.getAttribute('data-v');
+      if (a === 'rst') { api.act(function () { S.pf = null; S.allp = false; S.allt = false; cx.resetAll(); }); return; }
       if (a === 'allp') { S.allp = !S.allp; api.act(function () {}); return; }
       if (a === 'allt') { S.allt = !S.allt; api.act(function () {}); return; }
       if (a === 'h') { api.act(function () { S.pf = null; cx.setS(v); }); return; }
@@ -212,5 +237,5 @@
   }
   function loadCmp(cc, id, pts) { var k = cc + '/' + id; if (CP[k] && CP[k].points) return Promise.resolve(CP[k]); return pts(cc, id).then(function (s) { CP[k] = s; return s; }); }
   function setCmpSeries(cc, id, s) { CP[cc + '/' + id] = s; }
-  window.DIExplorer = { perLabel: function (cx) { return X[lg(cx)].per; }, html: html, bind: bind, first: first, sentence: sentence, variantsWrap: variantsWrap, cmpPanel: cmpPanel, cmpChart: cmpChart, loadCmp: loadCmp, setCmpSeries: setCmpSeries, meas: meas, reset: function () { S.pf = null; S.allp = false; S.allt = false; } };
+  window.DIExplorer = { perLabel: function (cx) { return X[lg(cx)].per; }, html: html, bind: bind, first: first, sentence: sentence, answer: answer, variantsWrap: variantsWrap, cmpPanel: cmpPanel, cmpChart: cmpChart, loadCmp: loadCmp, setCmpSeries: setCmpSeries, meas: meas, reset: function () { S.pf = null; S.allp = false; S.allt = false; } };
 })();
