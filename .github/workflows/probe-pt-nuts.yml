@@ -1,32 +1,35 @@
-name: Probe PT NUTS (temporal)
+name: Probe NASS (temporal)
 on:
   push:
     branches: [research/pt-nuts]
-  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   probe:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    env:
+      NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
     steps:
       - uses: actions/checkout@v6
-      - name: Listar codigos y anios de Portugal en Eurostat
+      - name: Cultivos y estados con informe semanal de NASS (2026)
         run: |
           python3 - <<'PY'
-          import json, urllib.request
-          B = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
-          for ds, q in (("nama_10r_3gdp", "unit=MIO_EUR"), ("demo_r_pjanaggr3", "sex=T&age=TOTAL&unit=NR"), ("demo_r_d3avg", "unit=NR")):
-              try:
-                  j = json.load(urllib.request.urlopen(B + ds + "?format=JSON&lang=EN&" + q + "&sinceTimePeriod=2018", timeout=170))
-              except Exception as e:
-                  print("::notice::" + ds + " ERROR " + str(e)[:200]); continue
-              gi = j["dimension"]["geo"]["category"]["index"]; ti = j["dimension"]["time"]["category"]["index"]
-              lab = j["dimension"]["geo"]["category"].get("label", {})
-              nt = len(ti); out = []
-              for g, gx in gi.items():
-                  if not g.startswith("PT"): continue
-                  yrs = [t for t, tx in ti.items() if str(gx * nt + tx) in j["value"]]
-                  out.append(g + " " + str(lab.get(g, ""))[:28] + " " + (yrs[0] + ".." + yrs[-1] if yrs else "sin datos"))
-              print("::notice::" + ds + " %0A" + "%0A".join(out))
+          import json, os, urllib.request, urllib.parse, collections
+          K = os.environ.get("NASS_API_KEY", "")
+          if not K: print("::notice::sin clave"); raise SystemExit
+          def q(**p):
+              u = "https://quickstats.nass.usda.gov/api/api_GET/?" + urllib.parse.urlencode(dict(key=K, format="JSON", source_desc="SURVEY", freq_desc="WEEKLY", year="2026", **p))
+              try: return json.load(urllib.request.urlopen(u, timeout=120)).get("data", [])
+              except Exception as e: print("::notice::ERR " + str(e)[:120]); return []
+          out = collections.defaultdict(set); lvl = collections.defaultdict(set)
+          for sec in ("CROPS",):
+              rows = q(sector_desc=sec, agg_level_desc="STATE", statisticcat_desc="CONDITION")
+              rows += q(sector_desc=sec, agg_level_desc="STATE", statisticcat_desc="PROGRESS")
+              for r in rows: out[r["commodity_desc"] + "|" + r["statisticcat_desc"]].add(r["state_alpha"])
+          lines = [k + " " + str(len(v)) for k, v in sorted(out.items())]
+          print("::notice::ESTADOS por cultivo (NASS, estado, 2026) %0A" + "%0A".join(lines))
+          rows = q(agg_level_desc="NATIONAL", statisticcat_desc="CONDITION") + q(agg_level_desc="NATIONAL", statisticcat_desc="PROGRESS")
+          nat = sorted({r["commodity_desc"] for r in rows})
+          print("::notice::NACIONAL commodities " + ", ".join(nat))
           PY
