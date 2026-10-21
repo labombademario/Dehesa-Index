@@ -17,8 +17,16 @@ check('initialize: version de protocolo, nombre y herramientas', init.result.pro
 child.stdin.write(JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' }) + '\n');
 const ping = await rpc({ jsonrpc: '2.0', id: ++id, method: 'ping' }); check('una notificacion no genera respuesta y ping responde en orden', ping.id === id && !ping.error);
 const tl = await rpc({ jsonrpc: '2.0', id: ++id, method: 'tools/list' }); const names = tl.result.tools.map((t) => t.name);
-check('tools/list: 7 herramientas con esquema de entrada', names.length === 7 && tl.result.tools.every((t) => t.inputSchema.type === 'object' && t.description.length > 40) && ['search_series', 'get_latest', 'get_series', 'compare_markets', 'price_moves', 'list_baskets', 'get_basket'].every((n) => names.includes(n)));
+check('tools/list: 10 herramientas con esquema de entrada', names.length === 10 && tl.result.tools.every((t) => t.inputSchema.type === 'object' && t.description.length > 40) && ['search_series', 'get_latest', 'get_series', 'compare_markets', 'price_moves', 'list_baskets', 'get_basket'].every((n) => names.includes(n)));
 
+const LC = await call('list_countries', {}); const MAN = J('data/catalog/manifest.json');
+check('list_countries: todos los paises del catalogo, con Argentina y Uruguay y su nº de series', LC.data.countries.length === Object.keys(MAN.countries).length && ['AR', 'UY', 'CL', 'CH', 'ES'].every((c) => LC.data.countries.some((x) => x.code === c && x.series === MAN.countries[c].n)) && LC.data.seriesTotal === MAN.seriesTotal);
+const SC = await call('search_catalog', { country: 'AR', query: 'barley harvested', limit: 5 }); const ARC = J('data/catalog/AR.json');
+check('search_catalog: encuentra series de Argentina con su id real, fuente y licencia', SC.data.count > 0 && SC.data.series.every((s) => ARC.series.some((r) => r.id === s.id) && s.license && s.unit));
+check('search_catalog: pais desconocido -> error con pista', /list_countries/.test((await call('search_catalog', { country: 'ZZ', query: 'x' })).err || ''));
+const GC = await call('get_catalog_series', { country: 'AR', id: SC.data.series[0].id, last: 3 }); const ARR = J('data/series/AR/crops.json').series.find((s) => s.id === SC.data.series[0].id);
+check('get_catalog_series: ultimos 3 puntos = los del fichero, con atribucion', GC.data.points.length === 3 && JSON.stringify(GC.data.points) === JSON.stringify(ARR.points.slice(-3)) && GC.data.attribution && GC.data.source);
+check('get_catalog_series: id desconocido -> error', (await call('get_catalog_series', { country: 'AR', id: 'no-existe' })).err !== null);
 const S1 = await call('search_series', { query: 'wheat', lang: 'en' });
 check('search_series: "wheat" encuentra eu/trigo con nombre en ingles', S1.data.series.some((s) => s.id === 'eu/trigo' && /wheat/i.test(s.name)));
 check('search_series: filtro de region y limite', (await call('search_series', { region: 'ca', limit: 3 })).data.series.length === 3 && (await call('search_series', { region: 'ca', limit: 3 })).data.series.every((s) => s.region === 'ca'));

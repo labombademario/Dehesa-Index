@@ -75,7 +75,7 @@
       total += best;
     }
     if (needAll ? hit < qs.length : hit === 0) return 0;
-    var s = total / qs.length + (BOOST[e.t] || 0) + (hit === qs.length ? 0.15 : 0);
+    var s = total / qs.length + (BOOST[e.t] || 0) + (e.b || 0) + (hit === qs.length ? 0.15 : 0);
     var title = e.n[lang] || ''; s -= Math.min(title.length, 80) / 1500;
     // frase completa dentro del título
     if (qs.length > 1 && norm(title).indexOf(qs.join(' ')) >= 0) s += 0.2;

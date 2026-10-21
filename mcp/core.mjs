@@ -26,7 +26,8 @@ const brief = (m, l) => ({ id: m.id, name: nm(m.name, l), place: nm(m.place, l),
 const cite = (m) => ({ source: m.sourceName, license: m.license, attribution: m.attribution });
 
 export function makeApi(load) {
-  let idx = null;
+  let idx = null, man = null;
+  const manifest = async () => man || (man = await load('data/catalog/manifest.json'));
   const index = async () => idx || (idx = await load('data/api/v1/index.json'));
   const find = async (id) => { const m = (await index()).series.find((s) => s.id === id); if (!m) throw new Error(`Unknown series "${id}". Use search_series to find valid ids (format region/product, e.g. eu/trigo).`); return m; };
   const series = async (id) => { await find(id); return load(`data/api/v1/series/${id}.json`); };
@@ -82,6 +83,33 @@ export function makeApi(load) {
         const b = await load(`data/indices/${a.id}.json`), l = lang(a), P = b.points.slice(-clamp(a.last, 1, 1000, 120));
         return out({ id: b.id, name: nm(b.name, l), basePeriod: b.basePeriod, base: 100, weighting: b.weighting, usage: b.verdict, first: b.first, last: b.last, members: b.members.map((m) => ({ id: m.id, weightPct: m.weightPct, source: m.sourceName, license: m.license, attribution: m.attribution })), attribution: b.attribution, methodology: b.methodology[l] || b.methodology.en, returnedPoints: P.length, points: P });
       } },
+
+    // ---- Catalogo completo (data/catalog): todos los paises, no solo las series de precios de la API
+    { name: 'list_countries', description: 'All countries and aggregates in the full Dehesa Index catalog (about 31,800 official series: crops, production, prices, trade, climate, land, inputs...) with how many series each has, per topic group, and the latest period. Use it first to see what exists for a country (e.g. Argentina, Uruguay, Chile, Switzerland) and which group to search.',
+      inputSchema: { type: 'object', properties: { lang: { type: 'string', enum: LANGS } } },
+      async run(a) {
+        const M = await manifest();
+        return out({ generatedAt: M.generatedAt, seriesTotal: M.seriesTotal, countries: Object.entries(M.countries).map(([cc, c]) => ({ code: cc, name: c.displayName || c.name, type: c.entityType, series: c.n, groups: Object.fromEntries(Object.entries(c.metrics || {}).map(([g, v]) => [g, { series: v.n, latest: v.latestPeriod, topics: v.tags }])) })),
+          howTo: 'Then call search_catalog with country (code) and a query, and get_catalog_series with the series id. Absence from the catalog means we do not have that data yet, never that it does not exist.' });
+      } },
+    { name: 'search_catalog', description: 'Search the full catalog of one country by words in the series name (English labels; try "wheat", "milk", "exports", "drought", "price"). Returns series ids, unit, frequency, latest value and period, source and licence. Needs a country code from list_countries (AR, UY, CL, ES, FR, US, EU...).',
+      inputSchema: { type: 'object', required: ['country'], properties: { country: { type: 'string', description: 'Country or aggregate code, e.g. "AR", "UY", "EU"' }, query: { type: 'string', description: 'Words to match in the series label, e.g. "barley harvested"' }, group: { type: 'string', description: 'Topic group from list_countries, e.g. "crops", "prices", "trade"' }, limit: { type: 'integer', minimum: 1, maximum: 100 } } },
+      async run(a) {
+        const cc = String(a.country || '').toUpperCase(), M = await manifest(); if (!M.countries[cc]) throw new Error(`Unknown country code ${cc}. Call list_countries.`);
+        const C = await load(`data/catalog/${cc}.json`), q = String(a.query || '').toLowerCase().split(/\s+/).filter(Boolean), lim = clamp(a.limit, 1, 100, 25);
+        const hit = C.series.filter((r) => (!a.group || r.group === a.group) && q.every((w) => (r.label + ' ' + (r.tags || []).join(' ')).toLowerCase().includes(w)));
+        return out({ country: cc, count: hit.length, series: hit.slice(0, lim).map((r) => ({ id: r.id, label: r.label, unit: r.unit, frequency: r.freq, group: r.group, first: r.first, latestPeriod: r.latestPeriod, latest: r.latest, changePct: r.changePct, sourceId: r.sourceId, license: r.licenseId, freshness: r.fs })), next: 'Call get_catalog_series with country and id for the history and the attribution.' });
+      } },
+    { name: 'get_catalog_series', description: 'History of one catalog series as [period, value] pairs (oldest first) with its unit, source, licence and attribution text. Use ids from search_catalog. Always cite the attribution.',
+      inputSchema: { type: 'object', required: ['country', 'id'], properties: { country: { type: 'string' }, id: { type: 'string' }, last: { type: 'integer', minimum: 1, maximum: 1000, description: 'Only the last N points' } } },
+      async run(a) {
+        const cc = String(a.country || '').toUpperCase(), C = await load(`data/catalog/${cc}.json`), r = C.series.find((x) => x.id === a.id); if (!r) throw new Error(`Series ${a.id} not found in ${cc}. Use search_catalog.`);
+        const files = [r.file, r.file.replace(/\.json$/, '-2.json')]; let s = null;
+        for (const f of files) { try { const d = await load('data/' + f); s = (d.series || []).find((x) => x.id === r.id); if (s) break; } catch (e) { /* trozo siguiente */ } }
+        if (!s) throw new Error(`Points for ${a.id} not found.`);
+        const M = await manifest(), src = (M.provenance && M.provenance.sources && M.provenance.sources[r.sourceId]) || {}, pts = a.last ? s.points.slice(-clamp(a.last, 1, 1000, 100)) : s.points;
+        return out({ country: cc, id: r.id, label: r.label, unit: r.unit, frequency: r.freq, points: pts, source: src.name || r.sourceId, sourceUrl: src.officialUrl, license: src.licenseId || r.licenseId, attribution: src.attribution, freshness: r.fs });
+      } },
   ];
   async function call(name, args) {
     const t = TOOLS.find((x) => x.name === name); if (!t) throw Object.assign(new Error(`Unknown tool: ${name}`), { code: -32602 });
@@ -98,7 +126,7 @@ export async function handle(api, msg) {
   if (msg.id === undefined) return null;   // notificacion (initialized, cancelled...): sin respuesta
   try {
     switch (msg.method) {
-      case 'initialize': return reply({ protocolVersion: PROTOCOL, capabilities: { tools: { listChanged: false } }, serverInfo: SERVER, instructions: 'Official agricultural price data (US, EU, UK, Canada) from Dehesa Index. Start with search_series, then get_latest / get_series / compare_markets. Always cite the attribution field of what you report.' });
+      case 'initialize': return reply({ protocolVersion: PROTOCOL, capabilities: { tools: { listChanged: false } }, serverInfo: SERVER, instructions: 'Official agricultural data from Dehesa Index (dehesaindex.com), no estimates. Two layers. (1) Market prices for US, EU, UK and Canada: search_series, get_latest, get_series, compare_markets, price_moves, list_baskets, get_basket. (2) The full catalog of about 31,800 series for 35 countries (including Argentina, Uruguay, Chile, Switzerland and every EU member): start with list_countries to see what exists, then search_catalog (country + words) and get_catalog_series. If something is not in the catalog we do not have it yet; say so instead of guessing. Cite the attribution field of everything you report. Information only, not financial advice.' });
       case 'ping': return reply({});
       case 'tools/list': return reply({ tools: api.list() });
       case 'tools/call': return reply(await api.call(msg.params && msg.params.name, msg.params && msg.params.arguments));

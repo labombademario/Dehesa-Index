@@ -12,6 +12,9 @@ Deja que Claude, ChatGPT, Copilot u otro cliente compatible con MCP consulte los
 | `compare_markets` | Un producto en todos los mercados que lo publican (las unidades pueden diferir) |
 | `price_moves` | Mayores subidas y bajadas recientes |
 | `list_baskets` / `get_basket` | Cestas de precios (base 100) con su metodología |
+| `list_countries` | Todos los países del catálogo completo (≈31.800 series) y qué grupos de datos tiene cada uno |
+| `search_catalog` | Buscar series de un país por palabras (cultivos, producción, comercio, clima…) |
+| `get_catalog_series` | Historial de una serie del catálogo con fuente, licencia y atribución |
 
 Cada respuesta incluye fuente, licencia, atribución y el enlace a las condiciones de uso. Quien use los datos debe citar la atribución. Nada se estima.
 

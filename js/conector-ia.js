@@ -9,7 +9,10 @@
     ['compare_markets', 'Un producto en varios mercados', 'One product across markets', 'Un produit sur plusieurs marchés', 'Un prodotto su più mercati'],
     ['price_moves', 'Mayores subidas y bajadas', 'Biggest rises and falls', 'Plus fortes hausses et baisses', 'Maggiori rialzi e ribassi'],
     ['list_baskets', 'Cestas disponibles', 'Available baskets', 'Paniers disponibles', 'Panieri disponibili'],
-    ['get_basket', 'Una cesta con su metodología', 'A basket with its methodology', 'Un panier et sa méthodologie', 'Un paniere e la sua metodologia']
+    ['get_basket', 'Una cesta con su metodología', 'A basket with its methodology', 'Un panier et sa méthodologie', 'Un paniere e la sua metodologia'],
+    ['list_countries', 'Países y qué datos tiene cada uno', 'Countries and what data each has', 'Pays et données disponibles', 'Paesi e dati disponibili'],
+    ['search_catalog', 'Buscar en el catálogo de un país', 'Search one country’s catalog', 'Chercher dans le catalogue d’un pays', 'Cercare nel catalogo di un paese'],
+    ['get_catalog_series', 'Historial de una serie del catálogo', 'History of a catalog series', 'Historique d’une série du catalogue', 'Storico di una serie del catalogo']
   ];
   var T = {
     es: { h1: 'Conector para IA', sub: 'Pregunta por los precios desde tu asistente de IA y recibe cada dato con su fuente, su licencia y su fecha.',

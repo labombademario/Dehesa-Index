@@ -255,7 +255,18 @@ const PAGES = [
 [['EL', 'Grecia', 'Greece', 'Grèce', 'Grecia'], ['BG', 'Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'], ['CY', 'Chipre', 'Cyprus', 'Chypre', 'Cipro'], ['CZ', 'Chequia', 'Czechia', 'Tchéquie', 'Cechia'], ['DK', 'Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], ['EE', 'Estonia', 'Estonia', 'Estonie', 'Estonia'], ['FI', 'Finlandia', 'Finland', 'Finlande', 'Finlandia'], ['HU', 'Hungría', 'Hungary', 'Hongrie', 'Ungheria'], ['LT', 'Lituania', 'Lithuania', 'Lituanie', 'Lituania'], ['LU', 'Luxemburgo', 'Luxembourg', 'Luxembourg', 'Lussemburgo'], ['LV', 'Letonia', 'Latvia', 'Lettonie', 'Lettonia'], ['MT', 'Malta', 'Malta', 'Malte', 'Malta'], ['RO', 'Rumanía', 'Romania', 'Roumanie', 'Romania'], ['SE', 'Suecia', 'Sweden', 'Suède', 'Svezia'], ['SI', 'Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'], ['SK', 'Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia']].forEach(function (k) {
   PAGES.push(['paises.html?c=' + k[0] + '#ps-eu-diesel', tri('Gasóleo en ' + k[1] + ': precio semanal en surtidor con y sin impuestos', 'Diesel in ' + k[2] + ': weekly pump price with and without taxes', 'Gazole en ' + k[3] + ' : prix hebdomadaire à la pompe TTC et hors taxes', 'Gasolio in ' + k[4] + ': prezzo settimanale alla pompa con e senza tasse'), 'gasoleo diesel gasolio gazole surtidor pump precio price boletin petrolero oil bulletin ' + k[1].toLowerCase() + ' ' + k[2].toLowerCase()]);
 });
-for (const [u, n, k] of PAGES) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });
+/* Una ficha por cada pais del directorio del sitio (js/shared.js, cd('XX', es, en, fr, it)): asi «Uruguay», «Argentina» o «Suiza» siempre abren su pagina. */
+{
+  const have = new Set(PAGES.map(p => p[0]));
+  const dir = [...read('js/shared.js').matchAll(/cd\('([A-Z]{2})', '([^']*)', '([^']*)', '([^']*)', '([^']*)'/g)];
+  for (const m of dir) {
+    const u = 'paises.html?c=' + m[1]; if (have.has(u)) continue;
+    const nm = { es: m[2], en: m[3], fr: m[4], it: m[5] };
+    const eu = m[1] === 'EU';
+    PAGES.push([u, tri((eu ? 'Datos de la ' : 'Datos de ') + nm.es, 'Data for ' + nm.en, 'Données : ' + nm.fr, 'Dati per ' + nm.it), [nm.es, nm.en, nm.fr, nm.it, m[1], 'pais pays country paese paises countries perfil profile ficha datos data precios prices comercio trade clima sequia drought'].join(' ')]);
+  }
+}
+for (const [u, n, k] of PAGES) add(Object.assign({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k }, /^paises\.html\?c=[A-Z]{2}$/.test(u) ? { b: 0.25 } : {}));   // ficha del pais: sube por encima de clima, noticias y regiones
 function sections(file, page, pageName) {
   const src = read(file), re = /\{ h: '((?:[^'\\]|\\.)*)', id: '([a-z0-9-]+)'/g, by = {}; let m;
   while ((m = re.exec(src))) (by[m[2]] = by[m[2]] || []).push(m[1].replace(/\\'/g, '’'));
