@@ -470,14 +470,17 @@
       return get('data/us-cash-receipts.json').then(function (D) {
         var S = D && D.states && D.states[x.r]; if (!S || !S.items || !S.items.length || !D.years) return null;
         var ys = D.years.slice(-4), off = D.years.length - 4, tot = S.total && S.total[S.total.length - 1], rows = [];
-        S.items.forEach(function (it) {
+        var rk = H.ranks(S.items.map(function (it) { return it[1][it[1].length - 1]; }));   /* oro, plata y bronce por ingresos del último año; el resto lleva su número */
+        var ord = S.items.map(function (it, i) { return i; }).sort(function (p, q) { var a = S.items[p][1][S.items[p][1].length - 1], b = S.items[q][1][S.items[q][1].length - 1]; return (b == null ? -Infinity : b) - (a == null ? -Infinity : a) || p - q; }), pos = {};
+        ord.forEach(function (i, n) { pos[i] = n + 1; });
+        S.items.forEach(function (it, ix) {
           var last = it[1][it[1].length - 1], nm = it[0].charAt(0).toUpperCase() + it[0].slice(1);
-          rows.push([esc(nm)].concat(ys.map(function (y, i) { var v = it[1][off + i]; return v == null ? '—' : nf(v / 1e3, v >= 1e5 ? 0 : 1) + ' M'; }), [tot && last != null ? nf(last / tot * 100, 1) + ' %' : '—']));
+          rows.push([(last == null ? '' : rk[ix] >= 0 ? H.medal(rk[ix]) : H.numTag(pos[ix])) + esc(nm)].concat(ys.map(function (y, i) { var v = it[1][off + i]; return v == null ? '—' : nf(v / 1e3, v >= 1e5 ? 0 : 1) + ' M'; }), [tot && last != null ? nf(last / tot * 100, 1) + ' %' : '—']));
         });
         var hd = [L('Producto|Commodity|Produit|Prodotto')].concat(ys.map(function (y) { return String(y); }), [L('Cuota del total|Share of total|Part du total|Quota sul totale')]);
         return card(L('Ingresos por producto|Cash receipts by commodity|Recettes par produit|Ricavi per prodotto'),
           L('Los 12 productos con más ingresos en efectivo en el estado (USDA ERS, Farm Income and Wealth Statistics), millones de dólares corrientes. Los nombres son los de ERS, en inglés. El último año puede ser una previsión de ERS. La cuota es un cálculo de Dehesa Index: ingresos del producto entre los ingresos en efectivo de todos los productos del estado.|The 12 commodities with the highest cash receipts in the state (USDA ERS, Farm Income and Wealth Statistics), million current dollars. Names are ERS’s own. The latest year may be an ERS forecast. The share is a Dehesa Index calculation: commodity receipts divided by the state’s cash receipts for all commodities.|Les 12 produits aux recettes en espèces les plus élevées de l’État (USDA ERS, Farm Income and Wealth Statistics), millions de dollars courants. Les noms sont ceux d’ERS, en anglais. La dernière année peut être une prévision d’ERS. La part est un calcul de Dehesa Index : recettes du produit divisées par les recettes en espèces de tous les produits de l’État.|I 12 prodotti con i maggiori ricavi in contanti nello Stato (USDA ERS, Farm Income and Wealth Statistics), milioni di dollari correnti. I nomi sono quelli di ERS, in inglese. L’ultimo anno può essere una previsione dell’ERS. La quota è un calcolo di Dehesa Index: ricavi del prodotto divisi per i ricavi in contanti di tutti i prodotti dello Stato.'),
-          table(hd, rows, 620), cite('usda_ers', D.years[D.years.length - 1]));
+          table(hd, rows, 620) + H.medalNote('value'), cite('usda_ers', D.years[D.years.length - 1]));
       });
     }
     /* Gasóleo por región PADD y propano del estado (js/us-market.js se baja solo aquí) */

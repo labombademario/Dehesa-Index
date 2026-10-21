@@ -157,7 +157,7 @@
       }).filter(function (r) { return r.yr >= 2020; }).sort(function (a, b) { return a.cells[0] < b.cells[0] ? -1 : 1; });
       if (!rows.length) return null;
       var soU = medalSort(rows, rows.map(function (r) { return r.a; })); rows = soU.items; var rkU = soU.rk;
-      return card(t.crops, t.cropsSub, table([t.crop, t.area, t.yield, t.prod, t.year], rows.map(function (r, i) { var c0 = r.cells.slice(); c0[0] = medal(rkU[i]) + c0[0]; return c0; }), 560) + medalNote('area'), cite('usda_nass'));
+      return card(t.crops, t.cropsSub, table([t.crop, t.area, t.yield, t.prod, t.year], rows.map(function (r, i) { var c0 = r.cells.slice(); c0[0] = rankTag(rkU[i], i + 1) + c0[0]; return c0; }), 560) + medalNote('area'), cite('usda_nass'));
     });
   }
   function usCattle(x) {
@@ -253,7 +253,7 @@
       });
       if (!rows.length) return null; rows.sort(function (a, b) { return b.v - a.v; });
       var soC = medalSort(rows, rows.map(function (q) { return q.v; }), function (i) { return rows[i].k !== 'wheat-durum' && !/^total/.test(rows[i].k || ''); }); rows = soC.items; var rkC = soC.rk;
-      return card(t.cacrops, t.cacropsSub, table([t.crop, t.seeded + ' (' + t.kha + ')', t.yield + ' (' + t.kgha + ')', t.prod + ' (' + t.kt + ')', t.shareCa, t.year], rows.map(function (q, i) { var c0 = q.cells.slice(); c0[0] = medal(rkC[i]) + c0[0]; return c0; }), 560) + medalNote('prod'), cite('statcan'));
+      return card(t.cacrops, t.cacropsSub, table([t.crop, t.seeded + ' (' + t.kha + ')', t.yield + ' (' + t.kgha + ')', t.prod + ' (' + t.kt + ')', t.shareCa, t.year], rows.map(function (q, i) { var c0 = q.cells.slice(); c0[0] = rankTag(rkC[i], i + 1) + c0[0]; return c0; }), 560) + medalNote('prod'), cite('statcan'));
     });
   }
   function caLivestock(x) {
@@ -282,7 +282,7 @@
       var P = d && d.provinces[x.r]; if (!P || !P.receipts) return null; var t = tt(), R = P.receipts, ks = Object.keys(R), tot = R['total-farm-cash-receipts'];
       var rows = ks.filter(function (k) { return !/^total-/.test(k); }).map(function (k) { var s = R[k], l = lastOf(s.pts), pv = s.pts.length > 1 ? s.pts[s.pts.length - 2][1] : null; return { v: l[1], l: l, pv: pv, name: s.name }; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 12);
       if (!rows.length) return null; var tl = tot ? lastOf(tot.pts) : null;
-      var soR = medalSort(rows, rows.map(function (q) { return q.v; })); rows = soR.items; var rkR = soR.rk; var body = table([t.item, t.cad, t.share, t.prevY, t.vs], rows.map(function (q, i) { return [medal(rkR[i]) + esc(q.name), nf(q.v, dec(q.v)), tl ? nf(q.v / tl[1] * 100, 1) + ' %' : '', q.pv == null ? '' : nf(q.pv, dec(q.pv)), q.pv ? esc(pct((q.v / q.pv - 1) * 100)) : '']; }), 560) + medalNote('value');
+      var soR = medalSort(rows, rows.map(function (q) { return q.v; })); rows = soR.items; var rkR = soR.rk; var body = table([t.item, t.cad, t.share, t.prevY, t.vs], rows.map(function (q, i) { return [rankTag(rkR[i], i + 1) + esc(q.name), nf(q.v, dec(q.v)), tl ? nf(q.v / tl[1] * 100, 1) + ' %' : '', q.pv == null ? '' : nf(q.pv, dec(q.pv)), q.pv ? esc(pct((q.v / q.pv - 1) * 100)) : '']; }), 560) + medalNote('value');
       return card(t.rec + (tl ? ' · ' + tl[0] : ''), t.recSub, (tl ? '<p style="margin:0 0 8px"><b>' + nf(tl[1], 0) + ' ' + esc(t.cad) + '</b>' + [['total-crop-receipts', t.recCrop], ['total-livestock-and-livestock-product-receipts', t.recLv]].map(function (z) { var e = R[z[0]], l2 = e && lastOf(e.pts); return l2 ? ' · ' + esc(z[1]) + ': ' + nf(l2[1], 0) : ''; }).join('') + '</p>' : '') + body, cite('statcan'));
     });
   }
@@ -365,6 +365,7 @@
   var MEDI = ['\uD83E\uDD47', '\uD83E\uDD48', '\uD83E\uDD49'];
   function medal(i) { if (i == null || i < 0 || i > 2) return ''; var w = (MEDW[lang()] || MEDW.es)[i]; return '<span role="img" title="' + esc(w[0] + ': ' + w[1]) + '" aria-label="' + esc(w[0]) + '" style="margin-right:5px;cursor:help">' + MEDI[i] + '</span>'; }
   function numTag(n) { return '<span style="display:inline-block;min-width:21px;margin-right:5px;text-align:center;font-size:12px;font-weight:700;color:var(--text-faint)">' + n + '</span>'; }
+  function rankTag(rk, n) { return rk >= 0 ? medal(rk) : numTag(n); }
   function medalNote(crit) { var l = lang(), pre = { es: 'Medallas: las tres partidas de la lista con más ', en: 'Medals: the three items on the list with the highest ', fr: 'Médailles : les trois postes de la liste avec le plus ', it: 'Medaglie: le tre voci della lista con più ' }[l] || ''; var mc = (MEDC[crit] || MEDC.value)[l] || ''; return '<p class="di-movers-hint" style="margin:6px 0 0">' + MEDI.join('') + ' ' + esc(pre + mc) + '.</p>'; }
   function ranks(vals, ok) { /* devuelve, para cada posición, 0/1/2 si está entre las tres mayores (entre las que cumplen ok), o -1 */ var ix = vals.map(function (v, i) { return i; }).filter(function (i) { return vals[i] != null && vals[i] > 0 && (!ok || ok(i)); }).sort(function (a, b) { return vals[b] - vals[a]; }), r = vals.map(function () { return -1; }); ix.slice(0, 3).forEach(function (i, k) { r[i] = k; }); return r; }
   function medalSort(items, vals, ok) { /* campeones primero (oro, plata, bronce) y el resto de mayor a menor; devuelve la lista reordenada y su ranking */ var rk = ranks(vals, ok), idx = items.map(function (x, i) { return i; }); idx.sort(function (a, b) { var ra = rk[a] >= 0 ? rk[a] : 99, rb = rk[b] >= 0 ? rk[b] : 99; return ra !== rb ? ra - rb : (vals[b] || 0) - (vals[a] || 0); }); return { items: idx.map(function (i) { return items[i]; }), rk: idx.map(function (i) { return rk[i]; }) }; }
@@ -456,7 +457,7 @@
       var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(t.yearL) + ' ' + y + '</p><div style="display:flex;gap:10px;flex-wrap:wrap">' + tile(t.holdings, nf(f.HLD, 0), '', chg) + (f.HA ? tile(t.uaaH, nf(f.HA / 1000, dec(f.HA / 1000)), t.kha2, '') + tile(t.avgSize, nf(f.HA / f.HLD, 1), t.haH, '') : '') + (f.AWU ? tile(t.awuH, nf(f.AWU, 0), '', '') : '') + (f.EUR ? tile(t.soH, nf(f.EUR / 1e6, 0), t.mEur, '') : '') + '</div>';
       var types = Object.keys(EFT).map(function (k) { var e = F[k] && F[k][y]; return e && e.HLD ? { k: k, e: e } : null; }).filter(Boolean).sort(function (p, q) { return q.e.HLD - p.e.HLD; });
       var soF = medalSort(types, types.map(function (r) { return r.e.EUR || 0; })); types = soF.items; var rkF = soF.rk;
-      if (types.length) body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(t.typeH) + '</h3>' + table([t.typeH, t.holdings, '%', t.uaaH + ' (' + t.haH + ')', t.soH + ' (' + t.mEur + ')'], types.map(function (r, ri) { return [medal(rkF[ri]) + esc(EFT[r.k][li()]), nf(r.e.HLD, 0), nf(r.e.HLD / f.HLD * 100, 0) + ' %', r.e.HA ? nf(r.e.HA, 0) : '', r.e.EUR ? nf(r.e.EUR / 1e6, 0) : '']; }), 560) + (rkF.some(function (q) { return q >= 0; }) ? medalNote('farm') : '') + '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.stdOut) + '</p>';
+      if (types.length) body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(t.typeH) + '</h3>' + table([t.typeH, t.holdings, '%', t.uaaH + ' (' + t.haH + ')', t.soH + ' (' + t.mEur + ')'], types.map(function (r, ri) { return [rankTag(rkF[ri], ri + 1) + esc(EFT[r.k][li()]), nf(r.e.HLD, 0), nf(r.e.HLD / f.HLD * 100, 0) + ' %', r.e.HA ? nf(r.e.HA, 0) : '', r.e.EUR ? nf(r.e.EUR / 1e6, 0) : '']; }), 560) + (rkF.some(function (q) { return q >= 0; }) ? medalNote('farm') : '') + '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.stdOut) + '</p>';
       if (types.length > 1) {
         var DC = window.DehesaChart, serF = types.slice(0, 5).map(function (r, i) { var arr = ys.map(function (yy) { var e = F[r.k][yy]; return e && e.HLD ? [+yy, e.HLD] : null; }).filter(Boolean); return yrSeries(arr, EFT[r.k][li()], PCOL[i % PCOL.length]); }).filter(Boolean);
         var pieF = DC.pie({ items: types.map(function (r) { return { name: EFT[r.k][li()], v: r.e.HLD }; }), unit: t.holdings.toLowerCase(), aria: t.typeH + ' ' + nm(C[x.c], x.r), center: nf(f.HLD, 0), centerLabel: t.holdings + ' ' + y });
@@ -684,7 +685,7 @@
   (function () {
     if (!window.DehesaRegionMore) return;
     var mon = function (p) { if (!/^\d{4}-\d{2}$/.test(String(p))) return String(p); var q = String(p).split('-'); try { return new Date(Date.UTC(+q[0], +q[1] - 1, 1)).toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return String(p); } };
-    var M = window.DehesaRegionMore({ get: get, card: card, cite: cite, table: table, nf: nf, esc: esc, tt: tt, day: day, pct: pct, dec: dec, lang: lang, plabel: mon,
+    var M = window.DehesaRegionMore({ get: get, card: card, cite: cite, table: table, medal: medal, numTag: numTag, ranks: ranks, medalNote: medalNote, nf: nf, esc: esc, tt: tt, day: day, pct: pct, dec: dec, lang: lang, plabel: mon,
       nameFr: function (r) { var s = C.FR.names[r]; return s ? s.split('|')[2] : r; }, yearWord: function () { return tt().yearL || ''; } });
     Object.keys(M.T).forEach(function (l) { if (!T[l]) return; Object.keys(M.T[l]).forEach(function (k) { if (T[l][k] == null) T[l][k] = M.T[l][k]; }); });
     Object.keys(M.mods).forEach(function (c) { if (!MODS[c]) MODS[c] = []; M.mods[c].forEach(function (m) { MODS[c].push(m); MOD_NAME[m[0]] = m[0]; }); });
