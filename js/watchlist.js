@@ -45,25 +45,11 @@
       return d;
     });
   }
-  // series que cambiaron de id con los mismos datos (data/series-renames.json, lo escribe la guarda al publicar): lo guardado con el id viejo se pasa al nuevo, reglas incluidas
+  // ids renombrados: data/series-renames.json
   var RN = null, RNF = 0;
-  function migrate(map) {
-    var l = read(), ch = false, out = [];
-    l.forEach(function (it) {
-      var to = it && it.c !== 'P' && it.c !== 'CB' && map[it.s];
-      if (!to) { out.push(it); return; }
-      ch = true; var dup = find(out, it.c, to) || find(l, it.c, to);
-      if (dup && dup !== it) { if (it.r && it.r.length) { dup.r = (dup.r || []).concat(it.r).slice(0, MAXRULES); } return; }   // ya seguias la nueva: se juntan las reglas, sin duplicar la serie
-      it.s = to; out.push(it);
-    });
-    if (ch) write(out);
-  }
-  function renames() {
-    return RN || (RN = fetch(sp('data/series-renames.json')).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (d) { if (d && d.renames) migrate(d.renames); })
-      .catch(function () { if (++RNF < 3) RN = null; }));   // sin red: se reintenta en la siguiente carga (maximo 3 veces); nada se borra mientras
-  }
+  function migrate(m) { var l = read(), c = 0, o = []; l.forEach(function (i) { var t = i.c != 'P' && i.c != 'CB' && m[i.s], d; if (!t) return o.push(i); c = 1; d = find(o, i.c, t) || find(l, i.c, t); if (d && d != i) { if (i.r) d.r = (d.r || []).concat(i.r).slice(0, MAXRULES); return; } i.s = t; o.push(i); }); if (c) write(o); }
   function load(need) {
-    if (!RN && read().length) return renames().then(function () { return load2(need); });   // una vez por carga; si falla, se reintenta en la siguiente
+    if (!RN && read().length) return (RN = fetch(sp('data/series-renames.json')).then(function (r) { return r.json(); }).then(function (d) { migrate(d.renames || {}); }).catch(function () { if (++RNF < 3) RN = null; })).then(function () { return load2(need); });
     return load2(need);
   }
   function load2(need) {
