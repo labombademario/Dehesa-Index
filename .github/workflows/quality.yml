@@ -264,6 +264,9 @@ jobs:
       - name: Repo growth budget (tamano de ficheros, data/ e historial)
         run: python3 scripts/check-repo-growth.py
 
+      - name: Glosario al dia (data/glosario-*.json desde scripts/glosario_entries.py)
+        run: python3 scripts/build-glosario.py --check
+
       - name: Ficheros de datos grandes clasificados (RUNTIME / BUILD_ONLY / DERIVED / ARCHIVE) frente a sus consumidores reales
         run: python3 scripts/check-data-classes.py
 
