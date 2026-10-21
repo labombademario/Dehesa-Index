@@ -5,7 +5,7 @@
   "maxDataTreeMB": 400,
   "warnDataTreeMB": 360,
   "maxPackMB": 900,
-  "warnPackMB": 600,
+  "warnPackMB": 700,
   "dirBudgets": {
     "data/us-cash-bids/": {
       "warnMB": 20,
