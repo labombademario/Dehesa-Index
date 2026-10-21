@@ -36,7 +36,9 @@ ok('liquidacion: sin undefined ni NaN ni errores de pagina', !/undefined|NaN/.te
     const q = await ctx.newPage(); await q.goto(BASE + '/informe-negociacion.html?p=trigo', { waitUntil: 'networkidle' }); await q.waitForSelector('#nb-part', { timeout: 15000 }).catch(() => { });
     let tq = await q.innerText('main');
     ok('negociacion: dice cuantas series no cargaron (1 de ' + ids.length + ')', new RegExp('1 de ' + ids.length + ' series').test(tq)); ok('negociacion: el informe sale con el resto (no se queda cargando)', !!(await q.$('.ic-sheet')));
-    await ctx.unroute(PAT); await q.click('#nb-retry'); await q.waitForFunction(() => !document.getElementById('nb-part'), null, { timeout: 15000 }).catch(() => { });
-    ok('negociacion: tras reintentar desaparece el aviso', !(await q.$('#nb-part')) && !!(await q.$('.ic-sheet'))); tq = await q.innerText('main'); ok('negociacion: sin undefined ni NaN', !/undefined|NaN/.test(tq)); await q.close(); }
+    const seen = []; q.on('requestfinished', r => { if (/api\/v1\/series/.test(r.url())) seen.push('ok ' + r.url().split('/').pop()); }); q.on('requestfailed', r => { if (/api\/v1\/series/.test(r.url())) seen.push('FAIL ' + r.url().split('/').pop() + ' ' + (r.failure() || {}).errorText); });
+    await ctx.unroute(PAT); await q.waitForTimeout(300); await q.click('#nb-retry'); await q.waitForFunction(() => !document.getElementById('nb-part'), null, { timeout: 30000 }).catch(() => { });
+    const still = await q.$('#nb-part');
+    ok('negociacion: tras reintentar desaparece el aviso' + (still ? ' [visto: ' + (await still.innerText()).slice(0, 80) + ' | peticiones: ' + seen.join(', ').slice(0, 300) + ']' : ''), !still && !!(await q.$('.ic-sheet'))); tq = await q.innerText('main'); ok('negociacion: sin undefined ni NaN', !/undefined|NaN/.test(tq)); await q.close(); }
   else ok('negociacion: hay al menos 2 series de trigo para probar', false); }
 await browser.close(); srv.close(); console.log('estados incompletos (reintentar): ' + n + ' comprobaciones, ' + fail + ' fallos'); process.exit(fail ? 1 : 0);
