@@ -113,7 +113,7 @@ def main():
                'anomalies': [dict({'series': a['series'], 'status': a['status'], 'detected': a['detected'][:220], 'since': a.get('since')}, **_anom_i18n(a)) for a in an],
                'unexplained': sum(1 for a in an if a['status'] == 'UNEXPLAINED_ANOMALY'), 'verified': sum(1 for a in an if a['status'] == 'KNOWN_VERIFIED_ANOMALY')}
     # ---- pipelines
-    ps = J('pipeline-status.json'); bad = [{'workflow': p['workflow'], 'name': p['name'].replace('Dehesa Data — ', ''), 'status': p['status'], 'last': (p.get('last') or {}).get('conclusion'), 'lastAt': (p.get('last') or {}).get('startedAt'), 'url': (p.get('last') or {}).get('url')}
+    ps = J('pipeline-status.json'); bad = [{'workflow': p['workflow'], 'name': p['name'].replace('Dehesa Data — ', ''), 'status': p['status'], 'last': (p.get('last') or {}).get('conclusion'), 'lastAt': (p.get('last') or {}).get('startedAt'), 'url': (p.get('last') or {}).get('url'), 'reason': (p.get('last') or {}).get('reason') or (p.get('sourceUnavailable') or {}).get('reason') or p.get('paused')}
                                        for p in ps['pipelines'] if p['status'] != 'ok']
     pipelines = {'summary': ps['summary'], 'global': ps['global'], 'total': len(ps['pipelines']), 'attention': bad, 'generatedAt': ps['generatedAt'],
                  'next': sorted([{'workflow': p['workflow'], 'name': p['name'].replace('Dehesa Data — ', ''), 'nextRun': p['nextRun']} for p in ps['pipelines'] if p.get('nextRun')], key=lambda x: x['nextRun'])[:12]}

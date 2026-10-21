@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-238 workflows (198 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+239 workflows (198 generados desde `sources.yml`, 41 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -210,6 +210,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | e2e-full.yml | a mano | semanal (1) | e2e-variants.mjs | - | - |
 | fetch-fao-areas.yml | a mano | manual / por evento | - | - | - |
+| refresh-observatory.yml | a mano | manual / por evento | build-observatory.py, build-pipeline-status.py, validate-data.py | - | - |
 | release-dispatch.yml | a mano | 2 veces al dia | release-dispatch.py | - | - |
 | send-digest.yml | a mano | semanal (1) | build-digest.py, send-digest.py | - | - |
 | update-baltics-national.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-np-baltic.py | baltics-national-stats.json | finish, validate-files |

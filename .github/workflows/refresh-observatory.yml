@@ -1,0 +1,39 @@
+name: Observatorio al momento (tras cada publicacion de datos)
+# Cada vez que un workflow de datos publica algo, scripts/publish-data.sh envia un repository_dispatch «data-published».
+# Este workflow espera 10 minutos (asi agrupa varias publicaciones seguidas en una sola pasada: la cola de concurrencia deja
+# como maximo una ejecucion pendiente, la mas reciente) y rehace data/pipeline-status.json y data/observatory.json.
+# No construye los demas derivados (catalogo, vistas, relaciones): eso sigue en update-pipeline-status.yml cada 3 horas.
+# Su propia publicacion NO avisa (PUBLISH_NO_NOTIFY=1), para no entrar en bucle. Solo lee datos ya validados; no descarga nada de fuentes externas.
+on:
+  repository_dispatch:
+    types: [data-published]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: dehesa-observatory
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Esperar a que terminen las publicaciones en curso
+        if: github.event_name == 'repository_dispatch'
+        run: sleep 600
+      - uses: actions/checkout@v6
+      - name: Estado de los pipelines y observatorio
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/build-pipeline-status.py
+          python3 scripts/build-observatory.py
+          python3 scripts/validate-data.py --no-report --files data/pipeline-status.json data/observatory.json
+      - name: Publicar (sin volver a avisar)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_NO_NOTIFY: '1'
+          PUBLISH_DERIVED: data/pipeline-status.json data/observatory.json
+          PUBLISH_REGEN: python3 scripts/build-pipeline-status.py && python3 scripts/build-observatory.py
+        run: bash scripts/publish-data.sh "Observatorio y estado de pipelines (tras una publicacion de datos)" data/pipeline-status.json data/observatory.json

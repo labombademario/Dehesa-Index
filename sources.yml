@@ -769,8 +769,8 @@ sources:
     cron: ['25 12 * * 1,3,5']
     pre: ['pip install openpyxl']
     script: scripts/update-fr-gnr.py
-    timeout: 15
-    script_timeout: 10
+    timeout: 30   # 21-oct-2026: la ejecucion del dia 21 agoto los 10 min del script; el portal de carburantes va lento a ratos
+    script_timeout: 22
     continue: true
     data: [fr-gnr.json]
     message: Gazole non routier y carburantes en Francia (DGEC)

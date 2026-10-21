@@ -104,6 +104,26 @@ def check_deploy():
     return out
 def iso(d): return d.strftime("%Y-%m-%dT%H:%M:%SZ") if d else None
 def pdate(s): return datetime.datetime.strptime(s[:19], "%Y-%m-%dT%H:%M:%S") if s else None
+def paused_sources():
+    """{workflow: motivo} de las fuentes con «cron: []   # PAUSADO ...» en sources.yml (lo genera gen-workflows.py como update-<id>.yml)."""
+    out = {}
+    try: txt = (ROOT / "sources.yml").read_text(encoding="utf-8")
+    except Exception: return out
+    for m in re.finditer(r"-\s+id:\s*(\S+)[^\n]*\n(?:[^\n]*\n){0,3}?\s+cron:\s*\[\]\s*#\s*(PAUSADO[^\n]*)", txt):
+        out["update-%s.yml" % m.group(1)] = m.group(2).strip()[:240]
+    return out
+PAUSED = paused_sources()
+def failure_reason(run_id):
+    """Motivo del fallo segun las anotaciones de GitHub del job (p. ej. «no se pudo publicar tras 6 intentos» o un timeout). None si no hay."""
+    if not run_id: return None
+    jobs = api("actions/runs/%s/jobs" % run_id) or {}
+    msgs = []
+    for j in jobs.get("jobs") or []:
+        if j.get("conclusion") != "failure": continue
+        for a in api("check-runs/%s/annotations" % j["id"]) or []:
+            m = (a.get("message") or "").strip().splitlines()[0] if a.get("message") else ""
+            if m and not m.startswith("Process completed with exit code") and m not in msgs: msgs.append(m)
+    return " · ".join(msgs)[:300] or None
 def main():
     dq = {}
     try: dq = {f["file"]: f for f in json.loads((ROOT / "data" / "data-quality.json").read_text())["files"]}
@@ -144,7 +164,10 @@ def main():
                 # Una ejecucion cancelada (la cola de concurrencia descarta la pendiente cuando entra otra) NO es un exito: el retraso se mide desde
                 # la ultima ejecucion que si termino bien; si no hay ninguna reciente, queda en retraso y se ve.
                 good = [x for x in rr if x.get("conclusion") == "success"]; gst = pdate(good[0].get("run_started_at")) if good else None
-                if r.get("conclusion") == "failure": item["status"] = "error"
+                if r.get("conclusion") == "failure":
+                    item["status"] = "error"
+                    why = failure_reason(r.get("id"))
+                    if why: item["last"]["reason"] = why
                 elif r.get("conclusion") == "cancelled" and (not gst or (crons and is_late(crons, gst))): item["status"] = "late"; item["last"]["note"] = "cancelled"
                 elif crons and st and is_late(crons, gst or st): item["status"] = "late"
                 else: item["status"] = "ok"
@@ -154,6 +177,10 @@ def main():
         # Corte del PROVEEDOR (la fuente no respondio): el ultimo dato valido se conserva; es un retraso explicito, no un error de Dehesa Index ni un exito inventado.
         if wf.name in ss and item["status"] in ("ok", "late", "not_run", "unknown"):
             item["status"] = "late"; item["sourceUnavailable"] = {k: ss[wf.name].get(k) for k in ("since", "lastAttempt", "reason", "consecutive")}
+        # Fuente PAUSADA a proposito en sources.yml (cron: [] con comentario «PAUSADO»): no es un fallo de la automatizacion; se ve como retraso con su motivo.
+        if wf.name in PAUSED and not crons:
+            item["paused"] = PAUSED[wf.name]
+            if item["status"] in ("error", "not_run", "unknown"): item["status"] = "late"
         out.append(item)
     cnt = {k: sum(1 for i in out if i["status"] == k) for k in ("ok", "late", "error", "not_run", "unknown")}
     dep = check_deploy()

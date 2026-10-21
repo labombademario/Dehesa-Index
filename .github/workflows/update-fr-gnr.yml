@@ -12,13 +12,13 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
       - run: pip install openpyxl
       - id: fetch
         run: bash scripts/annotate-failure.sh python3 scripts/update-fr-gnr.py
-        timeout-minutes: 10
+        timeout-minutes: 22
         continue-on-error: true
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         if: always()
