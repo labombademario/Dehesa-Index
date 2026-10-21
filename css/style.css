@@ -2926,7 +2926,6 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .fx-line .fx-costs>summary{padding:6px 0}
 .pt-sec.fx-empty h2{font-size:15px;margin:0}
 .pt-sec.fx-empty .di-movers-hint{display:none}
-.pt-sec.fx-empty{opacity:.85}
 @media (max-width:640px){.fx-line .di-movers-head-row{flex-direction:column;align-items:flex-start;gap:6px}}
 
 /* Calculadora: dos columnas con resultados siempre a la vista */
