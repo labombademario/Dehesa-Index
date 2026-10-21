@@ -204,7 +204,7 @@ jobs:
       - name: Derived builders run end-to-end on the committed data (the same chain update-pipeline-status.yml runs; a crash here would turn that pipeline red)
         run: |
           set -e
-          for s in build-us-trade-partners build-cl-trade-partners build-ar-trade-partners build-series-registry build-watch-index build-data-catalog build-us-trade-products build-trade-sections build-freshness build-views build-product-compare build-product-profiles build-relationships build-daily-brief build-observatory build-source-candidates build-commercial-catalog build-coverage-gaps build-country-pending build-premium-tracker build-ers-cost-reference build-sowing build-home-tape build-home-explore build-cap-index build-dehesa; do
+          for s in build-us-trade-partners build-cl-trade-partners build-series-registry build-watch-index build-data-catalog build-us-trade-products build-trade-sections build-freshness build-views build-product-compare build-product-profiles build-relationships build-daily-brief build-observatory build-source-candidates build-commercial-catalog build-coverage-gaps build-country-pending build-premium-tracker build-ers-cost-reference build-sowing build-home-tape build-home-explore build-cap-index build-dehesa; do
             python3 scripts/$s.py > /dev/null
           done
 

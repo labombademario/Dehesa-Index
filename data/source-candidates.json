@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-21T19:57:29Z",
+ "generatedAt": "2026-10-21T18:47:18Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 176,
+  "total": 175,
   "byStatus": {
-   "ACTIVE": 146,
+   "ACTIVE": 145,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2486,49 +2486,6 @@
    "derivatives": "yes",
    "attribution": "Source: Czech Statistical Office (CSU), open data DataStat.",
    "lastChecked": "2026-10-10",
-   "verification": "REGISTRY",
-   "legalConfidence": "HIGH",
-   "registryAlignment": "ALIGNED",
-   "datasetIdentified": true,
-   "gate": {
-    "result": "READY",
-    "reasons": [
-     "Registro: VERIFIED, uso comercial y derivados permitidos"
-    ]
-   },
-   "ingestionStatus": "ACTIVE",
-   "technicalBlockers": [],
-   "canStart": false,
-   "evidence": [
-    "data/license-registry.json"
-   ]
-  },
-  {
-   "sourceId": "datos_gob_ar_exportaciones",
-   "registryId": "datos_gob_ar_exportaciones",
-   "country": "AR",
-   "scope": "integrated",
-   "institution": "Argentina - Ministerio de Economia / INDEC, Exportaciones por provincia y por pais de destino (datos.gob.ar)",
-   "dataset": "Ya integrada (5 series en el catalogo unificado)",
-   "products": [
-    "sheep"
-   ],
-   "productsConfirmed": true,
-   "metrics": [
-    "trade"
-   ],
-   "frequency": "annual",
-   "access": {
-    "api": null,
-    "csv": null,
-    "json": null
-   },
-   "licenseStatus": "VERIFIED",
-   "licenseId": "CC-BY-4.0",
-   "commercialReuse": "yes",
-   "derivatives": "yes",
-   "attribution": "Fuente: Ministerio de Economia de Argentina / INDEC, Exportaciones por provincia y por pais de destino, datos.gob.ar, licencia Creative Commons Attribution 4.0. Suma de los destinos principales de cada provincia, calculada por Dehesa Index.",
-   "lastChecked": "2026-10-21",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
