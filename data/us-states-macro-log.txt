@@ -1,20 +1,9 @@
-ACS 2015 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2016 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2017 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2018 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2019 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2020 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2021 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2022 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2023 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2024 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
-ACS 2025 no disponible JSONDecodeError('Expecting value: line 1 column 1 (char 0)') b'<html style="font-size: 14px;">\n\n<head>\n    <title>Invalid Key</title>\n    <link rel="icon" type="image/x-icon" href="fa'
+ACS clave: 40 caracteres, formato correcto (una clave valida del Census tiene 40 caracteres hexadecimales)
+ACS 2025 HTTP 404 b'<!doctype html><html lang="en"><head><title>HTTP Status 404 ? Not Found</title><style type="text/css">body {font-family:'
 pop estados: 51
 gdp estados: 51
 unemp estados: 51
 epop estados: 51
-edu estados: 0
-FALLO edu ValueError('solo 0 estados')
-age estados: 0
-FALLO age ValueError('solo 0 estados')
-escrito us-states-macro.json 215 KB
+edu estados: 51
+age estados: 51
+escrito us-states-macro.json 227 KB
