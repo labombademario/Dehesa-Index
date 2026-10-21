@@ -46,4 +46,16 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': sin errores', !errs.length); if (errs.length) console.log(errs[0]);
   await ctx.close();
 }
+// el bloque es de España: no debe verse con otro pais elegido
+{ const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, serviceWorkers: 'block' }); await ctx.addInitScript(() => { try { localStorage.setItem('dehesaIndexLang', 'es'); localStorage.setItem('dehesaIndexTourSeen', '1'); } catch (e) { } });
+  const p = await ctx.newPage(); await p.goto(BASE + '/lonjas.html?c=ES', { waitUntil: 'networkidle' }); await p.waitForSelector('#esp .esp-row', { timeout: 15000 }).catch(() => { });
+  const vis = () => p.evaluate(() => { const e = document.getElementById('esp'); return !!e && e.getBoundingClientRect().height > 50; });
+  ok('lonjas: con España elegida se ven los precios semanales', await vis());
+  await p.evaluate(() => { const s = document.getElementById('lj-c'); s.value = 'AT'; s.dispatchEvent(new Event('change', { bubbles: true })); }); await p.waitForTimeout(1200);
+  ok('lonjas: con Austria elegida NO se ven los precios semanales de España', !(await vis()));
+  await p.evaluate(() => { const s = document.getElementById('lj-c'); s.value = 'ES'; s.dispatchEvent(new Event('change', { bubbles: true })); }); await p.waitForTimeout(1200);
+  ok('lonjas: al volver a España vuelven a verse', await vis());
+  await p.goto(BASE + '/lonjas.html?c=AT', { waitUntil: 'networkidle' }); await p.waitForTimeout(1200);
+  ok('lonjas: abrir directamente con Austria no los muestra', !(await vis()));
+  await ctx.close(); }
 await browser.close(); srv.close(); console.log('precios semanales: ' + n + ' comprobaciones, ' + fail + ' fallos'); process.exit(fail ? 1 : 0);

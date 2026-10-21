@@ -37,6 +37,23 @@ for (const w of [1280, 390]) {
   ok('insumos Espana @' + w + ': al abrir el gasoleo se ve su grafica', await e.evaluate(() => { const s = document.querySelector('#in-es-gb svg'); return !!s && s.getBoundingClientRect().width > 200; }));
   ok('insumos Espana @' + w + ': sin errores', !e._errs.length);
 }
+// 2c) exportaciones EE. UU. e insumos EE. UU.: chips con emoticono, destinos y tablas compactos en movil, indices primero
+for (const w of [1280, 390]) {
+  const e = await page(w); await e.goto(BASE + '/exportaciones.html', { waitUntil: 'networkidle' }); await e.waitForSelector('#ex-body .ex-c', { timeout: 15000 }).catch(() => { });
+  const r = await e.evaluate(() => ({ sel: document.querySelectorAll('#ex-body select').length, sect: document.querySelectorAll('#ex-body .ex-chips:not(.ex-chips2) [data-xg]').length, emo: [...document.querySelectorAll('#ex-body [data-xg]')].every(b => /[^\x00-\x7F]/.test(b.textContent)), rows: document.querySelectorAll('#ex-body .ex-tbl tbody tr, #ex-body .ex-tbl tr').length, more: !!document.querySelector('#ex-body [data-more]'), screens: document.documentElement.scrollHeight / innerHeight }));
+  ok('exportaciones @' + w + ': sin desplegables; sectores con emoticono (' + r.sect + ')', r.sel === 0 && r.sect >= 4 && r.emo);
+  ok('exportaciones @' + w + ': destinos recortados con «Ver todos»', r.more && r.rows < 16);
+  if (w < 500) ok('exportaciones @' + w + ': lista compacta de destinos en movil (' + r.screens.toFixed(1) + ' pantallas)', r.screens < 5.5 && await e.evaluate(() => getComputedStyle(document.querySelector('#ex-body .ex-ml')).display !== 'none' && getComputedStyle(document.querySelector('#ex-body .ex-tbl')).display === 'none'));
+  await e.click('#ex-body [data-more]'); await e.waitForTimeout(300); ok('exportaciones @' + w + ': «Ver todos» muestra mas destinos', await e.evaluate(() => document.querySelectorAll('#ex-body .ex-ml li').length > 15 || document.querySelectorAll('#ex-body .ex-tbl tr').length > 16));
+  await e.click('#ex-body [data-tab="gats"]'); await e.waitForTimeout(500); ok('exportaciones @' + w + ': comercio mensual tambien con chips y sin desplegables', await e.evaluate(() => document.querySelectorAll('#ex-body select').length === 0 && document.querySelectorAll('#ex-body [data-xg]').length >= 5 && document.querySelectorAll('#ex-body [data-seg]').length === 4));
+  ok('exportaciones @' + w + ': sin errores', !e._errs.length);
+  const u = await page(w); await u.goto(BASE + '/insumos.html', { waitUntil: 'networkidle' }); await u.waitForTimeout(2500);
+  const q = await u.evaluate(() => { const idx = [...document.querySelectorAll('#in-body h2')].find(h => /📈/.test(h.textContent)), fert = document.querySelector('#in-body .in-fert'); return { first: !!idx && !idx.closest('.df-closed') && (!fert || idx.compareDocumentPosition(fert) & 4), fertClosed: !!fert && fert.classList.contains('df-closed'), sel: document.querySelectorAll('#in-body table:not([data-no-cards])').length }; });
+  ok('insumos EE. UU. @' + w + ': los indices van primero y abiertos', q.first);
+  ok('insumos EE. UU. @' + w + ': fertilizantes por estado plegado debajo', q.fertClosed);
+  if (w < 500) { await u.click('#in-body .in-fert .df-bar'); await u.waitForTimeout(300); ok('insumos EE. UU. @' + w + ': filas de estado en una sola linea de datos (lista compacta)', await u.evaluate(() => { const li = document.querySelector('#in-body .in-fert .ex-ml li:not(.ex-grp)'); return !!li && li.getBoundingClientRect().height < 80 && getComputedStyle(document.querySelector('#in-body .in-fert .ex-tbl')).display === 'none'; })); }
+  ok('insumos EE. UU. @' + w + ': sin errores', !u._errs.length);
+}
 // el enlace de «En esta pagina» (#ancla) abre un bloque plegado
 await p.goto(BASE + '/pac.html', { waitUntil: 'networkidle' }); await p.waitForTimeout(800);
 const href = await p.evaluate(() => { const a = [...document.querySelectorAll('a[href^="#pac-"]')].find(a => { const t = document.getElementById(a.getAttribute('href').slice(1)); return t && t.classList.contains('df-closed'); }); return a ? a.getAttribute('href') : null; });

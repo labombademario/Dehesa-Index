@@ -3044,3 +3044,29 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
  .esp-grid>.esp-row.on{background:#f1ede0}
  .esp-grid>.esp-det{grid-column:2;grid-row:1/span 200;align-self:start;position:sticky;top:76px;border:1px solid var(--border);border-radius:12px}
 }
+
+/* Exportaciones (js/exportaciones.js): sector y producto en chips, destinos en lista compacta en movil */
+.ex-pk{margin:6px 0 10px}.ex-opts{display:flex;flex-wrap:wrap;gap:4px 22px;margin:2px 0 8px}
+.ex-chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.ex-chips2 .ex-c{min-height:36px;font-size:13px}
+.ex-c{font:inherit;font-size:14px;cursor:pointer;min-height:40px;padding:0 14px;border:1px solid var(--border);border-radius:999px;background:var(--surface,#fffdf7);color:inherit;white-space:nowrap}
+.ex-c.on{background:var(--text,#1d2a22);border-color:var(--text,#1d2a22);color:#fffdf7}
+.ex-c:focus-visible{outline:2px solid #2f6b3a;outline-offset:2px}
+.ex-moreb{margin:10px 0 0}
+.ex-ml{display:none;list-style:none;margin:14px 0 0;padding:4px 14px}
+.ex-ml li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:10px 0;border-top:1px solid var(--border)}
+.ex-ml li:first-child{border-top:0}
+.ex-ml .ex-n{font-weight:600}.ex-ml b{text-align:right;font-variant-numeric:tabular-nums}
+.ex-ml small{grid-column:1/-1;font-size:12.5px;color:var(--text-faint,#55645a)}
+.ex-ml .ex-tot{border-top:2px solid var(--border)}.ex-ml .ex-tot .ex-n{font-weight:700}
+@media (max-width:699px){.ex-tbl{display:none}.ex-ml{display:block}.ex-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}.ex-moreb .ex-c{width:100%}}
+.ex-ml .ex-grp{display:block;border-top:2px solid var(--border);padding:12px 0 4px;font-size:13px;font-weight:700}.ex-ml .ex-grp:first-child{border-top:0}
+.ex-ml li[data-k]:active{background:rgba(29,81,120,.1)}
+
+/* Lonjas: producto y fase en botones con emoticono (js/lonjas.js) */
+.lj-chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px}
+.lj-chips2 .lj-c{min-height:36px;font-size:13px}
+.lj-c{font:inherit;font-size:14px;cursor:pointer;min-height:40px;padding:0 14px;border:1px solid var(--border);border-radius:999px;background:var(--surface,#fffdf7);color:inherit;white-space:nowrap}
+.lj-c.on{background:var(--text,#1d2a22);border-color:var(--text,#1d2a22);color:#fffdf7}
+.lj-c:focus-visible{outline:2px solid #2f6b3a;outline-offset:2px}
+@media (max-width:699px){.lj-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}}

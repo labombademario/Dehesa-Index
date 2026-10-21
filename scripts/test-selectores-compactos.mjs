@@ -26,9 +26,9 @@ for (const w of [390, 1280]) {
   ok(w + ' monitor: el enlace de Recientes vuelve a España', !/c=FR/.test(p.url()));
   // lonjas
   await p.goto(BASE + '/lonjas.html', { waitUntil: 'networkidle' }); await p.waitForSelector('#lj-body table', { timeout: 15000 }).catch(() => { });
-  ok(w + ' lonjas: producto en un desplegable (sin pared de botones)', !!(await p.$('#lj-s')) && (await p.$$('#lj-body [data-s]')).length === 0);
-  const opts = await p.$$eval('#lj-s option', o => o.map(x => x.value)), before = await p.innerText('#lj-body table');
-  if (opts.length > 1) { await p.selectOption('#lj-s', opts[1]); await p.waitForTimeout(400); ok(w + ' lonjas: cambiar de producto cambia la tabla', (await p.innerText('#lj-body table')) !== before && new URL(p.url()).searchParams.get('s') === opts[1]); }
+  ok(w + ' lonjas: producto en botones con emoticono (sin desplegable gigante)', !(await p.$('#lj-s')) && (await p.$$('#lj-body .lj-chips:not(.lj-chips2) [data-lp]')).length >= 3 && await p.evaluate(() => [...document.querySelectorAll('#lj-body .lj-chips:not(.lj-chips2) [data-lp]')].every(b => /[^\x00-\x7F]/.test(b.querySelector('span').textContent))));
+  const ids = await p.$$eval('#lj-body .lj-chips:not(.lj-chips2) [data-lp]', o => o.map(x => x.getAttribute('data-lp'))), before = await p.innerText('#lj-body table');
+  if (ids.length > 1) { await p.click('#lj-body .lj-chips:not(.lj-chips2) [data-lp="' + ids[1] + '"]'); await p.waitForTimeout(400); ok(w + ' lonjas: cambiar de producto cambia la tabla', (await p.innerText('#lj-body table')) !== before && new URL(p.url()).searchParams.get('s') === ids[1]); }
   ok(w + ' lonjas: la tabla entra en la primera o segunda pantalla', await p.evaluate(() => { const e = document.querySelector('#lj-body table'); return !!e && e.getBoundingClientRect().top < innerHeight * 1.6; }));
   ok(w + ' sin errores', !errs.length);
   await ctx.close();

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var ESR = null, GATS = null;
-  var SEL = { tab: 'esr', code: 401, flow: 'ex', group: 'maiz', period: '12', top: 15 };
+  var SEL = { tab: 'esr', code: 401, flow: 'ex', group: 'maiz', period: '12', top: 8, all: false };
   var C1 = '#1d5178', C2 = '#b8a98a';
   var GN = {
     es: { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', sorgo: 'Sorgo', cebada: 'Cebada', soja: 'Soja (grano)', harina_soja: 'Harina de soja', aceite_soja: 'Aceite de soja', ddgs: 'DDGS y residuos de destilería', etanol: 'Etanol', vacuno: 'Vacuno', cerdo: 'Cerdo', pollo: 'Pollo y aves', lacteos: 'Lácteos', huevos: 'Huevos', algodon: 'Algodón', fertilizantes: 'Fertilizantes', ganado_vivo: 'Ganado vivo (vacuno)', avena: 'Avena', centeno: 'Centeno', colza: 'Colza', patata: 'Patata', azucar: 'Azúcar', mantequilla: 'Mantequilla', queso: 'Queso', ovino: 'Ovino (vivo y carne)', fruta: 'Fruta (cítricos, uva, manzana, pera, otras)', aceite_oliva: 'Aceite de oliva', vino: 'Vino' },
@@ -54,10 +54,39 @@
       gatsNote: 'Fonte: USDA FAS GATS, con dati commerciali del Census Bureau. Solo il commercio degli Stati Uniti con ciascun paese (non i flussi tra paesi terzi). Valori in dollari correnti; la quantità compare solo quando il Census la misura in chilogrammi. Gli ultimi due mesi possono essere rivisti. I codici tariffari (SA) raggruppano i prodotti in modo approssimativo; ad esempio «Latticini» riunisce i capitoli 0401-0406.',
       src: 'Fonte: USDA FAS (dati pubblici del governo USA)' }
   };
+  var X = {
+    es: { pend: 'Pendiente', tot: 'Total', wkS: 'Semana', shr: 'del total', all: 'Ver los {n} destinos', less: 'Ver menos', sector: 'Sector', product: 'Producto' },
+    en: { pend: 'Pending', tot: 'Total', wkS: 'Week', shr: 'of total', all: 'Show all {n} destinations', less: 'Show less', sector: 'Sector', product: 'Product' },
+    fr: { pend: 'En attente', tot: 'Total', wkS: 'Semaine', shr: 'du total', all: 'Voir les {n} destinations', less: 'Voir moins', sector: 'Secteur', product: 'Produit' },
+    it: { pend: 'In attesa', tot: 'Totale', wkS: 'Settimana', shr: 'del totale', all: 'Vedi le {n} destinazioni', less: 'Mostra meno', sector: 'Settore', product: 'Prodotto' }
+  };
+  var SG = {
+    es: { w: 'Trigo', f: 'Maíz, sorgo y cebada', soy: 'Soja y aceites', ar: 'Algodón y arroz', car: 'Carnes y ganado', cer: 'Cereales', lac: 'Lácteos y huevos', fru: 'Fruta, vino y azúcar', ind: 'Algodón, etanol y fertilizantes' },
+    en: { w: 'Wheat', f: 'Corn, sorghum and barley', soy: 'Soy and oils', ar: 'Cotton and rice', car: 'Meat and livestock', cer: 'Grains', lac: 'Dairy and eggs', fru: 'Fruit, wine and sugar', ind: 'Cotton, ethanol and fertiliser' },
+    fr: { w: 'Blé', f: 'Maïs, sorgho et orge', soy: 'Soja et huiles', ar: 'Coton et riz', car: 'Viandes et bétail', cer: 'Céréales', lac: 'Produits laitiers et œufs', fru: 'Fruits, vin et sucre', ind: 'Coton, éthanol et engrais' },
+    it: { w: 'Grano', f: 'Mais, sorgo e orzo', soy: 'Soia e oli', ar: 'Cotone e riso', car: 'Carni e bestiame', cer: 'Cereali', lac: 'Latticini e uova', fru: 'Frutta, vino e zucchero', ind: 'Cotone, etanolo e fertilizzanti' }
+  };
+  var EMO = { w: '🌾', f: '🌽', soy: '🫘', ar: '🌸', car: '🥩', cer: '🌾', lac: '🥛', fru: '🍎', ind: '🏭' };
+  var DEF_ESR = [['w', [107, 101, 102, 103, 104, 105]], ['f', [401, 701, 301]], ['soy', [801, 901, 902]], ['ar', [1404, 1505]], ['car', [1701, 1702]]];
+  var DEF_GATS = [['cer', ['trigo', 'maiz', 'arroz', 'sorgo', 'cebada', 'avena', 'centeno']], ['soy', ['soja', 'harina_soja', 'aceite_soja', 'colza', 'aceite_oliva']], ['car', ['vacuno', 'cerdo', 'pollo', 'ovino', 'ganado_vivo']], ['lac', ['lacteos', 'queso', 'mantequilla', 'huevos']], ['fru', ['fruta', 'vino', 'azucar', 'patata']], ['ind', ['algodon', 'etanol', 'ddgs', 'fertilizantes']]];
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tr() { return T[lang()] || T.es; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { maximumFractionDigits: d === undefined ? 0 : d, minimumFractionDigits: d || 0 }); } catch (e) { return String(Math.round(v)); } }
+  function xx() { return X[lang()] || X.es; }
+  function narrow() { return (window.innerWidth || 1280) < 600; }
+  function chipX(on, attrs, label, emo) { return '<button type="button" class="ex-c' + (on ? ' on' : '') + '" ' + attrs + ' aria-pressed="' + on + '">' + (emo ? '<span aria-hidden="true">' + emo + '</span> ' : '') + esc(label) + '</button>'; }
+  function seg(name, opts, cur, label) { return '<div class="ex-chips" role="group" aria-label="' + esc(label || '') + '">' + opts.map(function (o) { return chipX(o[0] === cur, 'data-seg="' + name + '" data-v="' + esc(o[0]) + '"', o[1]); }).join('') + '</div>'; }
+  function picker(defs, avail, cur, nameOf) {
+    var gs = lang(), lab = SG[gs] || SG.es, ds = defs.map(function (d) { return [d[0], d[1].filter(function (i) { return avail.indexOf(i) > -1; })]; }), taken = [];
+    ds.forEach(function (d) { taken = taken.concat(d[1]); });
+    avail.forEach(function (i) { if (taken.indexOf(i) < 0) ds[ds.length - 1][1].push(i); });
+    ds = ds.filter(function (d) { return d[1].length; });
+    var gi = 0; ds.forEach(function (d, i) { if (d[1].indexOf(cur) > -1) gi = i; });
+    return '<div class="ex-pk"><div class="ex-chips" role="group" aria-label="' + esc(xx().sector) + '">' + ds.map(function (d, i) { return chipX(i === gi, 'data-xg="' + i + '" data-xf="' + esc(String(d[1][0])) + '"', lab[d[0]] || d[0], EMO[d[0]]); }).join('') + '</div>' +
+      (ds[gi][1].length > 1 ? '<div class="ex-chips ex-chips2" role="group" aria-label="' + esc(xx().product) + '">' + ds[gi][1].map(function (i) { return chipX(i === cur, 'data-xp="' + esc(String(i)) + '"', nameOf(i)); }).join('') + '</div>' : '') + '</div>';
+  }
+  function moreBtn(total, shown) { var x = xx(); if (total <= 8) return ''; return '<p class="ex-moreb"><button type="button" class="ex-c" data-more="1">' + esc(SEL.all ? x.less : x.all.replace('{n}', total)) + '</button></p>'; }
   function tons(v, t) { var a = Math.abs(v); return a >= 1e6 ? nf(v / 1e6, 2) + ' ' + t.mtt : a >= 1e3 ? nf(v / 1e3, 1) + ' ' + t.kt : nf(v) + ' ' + t.mt; }
   function usd(v) { var a = Math.abs(v); return a >= 1e9 ? nf(v / 1e9, 2) + ' Md $' : a >= 1e6 ? nf(v / 1e6, 1) + ' M$' : nf(v / 1e3, 0) + ' k$'; }
   function cname(i2, fallback) { if (!i2) return fallback; if (i2 === 'EU') return { es: 'Unión Europea', en: 'European Union', fr: 'Union européenne', it: 'Unione europea' }[lang()]; try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(i2) || fallback; } catch (e) { return fallback; } }
@@ -69,7 +98,7 @@
   function td(s, right, b) { return '<td style="padding:9px 6px;text-align:' + (right ? 'right' : 'left') + (b ? ';font-weight:600' : '') + '">' + s + '</td>'; }
 
   function lineChart(series, labels, fmt, o) {
-    o = o || {}; var W = 720, H = 240, L = o.yT ? 68 : 54, R = 12, Tp = 12, Bt = o.xT ? 48 : 28, max = 0, n = 0;
+    o = o || {}; var W = narrow() ? 360 : 720, H = narrow() ? 230 : 240, L = o.yT ? (narrow() ? 58 : 68) : 54, R = 12, Tp = 12, Bt = o.xT ? 48 : 28, max = 0, n = 0;
     series.forEach(function (s) { s.v.forEach(function (v) { if (v > max) max = v; }); if (s.v.length > n) n = s.v.length; });
     if (!n || !max) return '';
     var step = Math.pow(10, Math.floor(Math.log10(max))), nice = Math.ceil(max / step) * step; if (nice / step > 5) nice = Math.ceil(max / (step * 2)) * step * 2;
@@ -84,7 +113,7 @@
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img"' + (window.DehesaChart ? window.DehesaChart.attr(spec) : '') + ' style="width:100%;height:auto;display:block' + (window.DehesaChart ? ';touch-action:pan-y' : '') + '">' + g + paths + xl + '</svg>';
   }
   function barChart(vals, labels, fmt, color) {
-    var W = 720, H = 220, L = 54, R = 8, Tp = 10, Bt = 26, max = Math.max.apply(null, vals.concat([1])), n = vals.length;
+    var W = narrow() ? 360 : 720, H = 220, L = narrow() ? 46 : 54, R = 8, Tp = 10, Bt = 26, max = Math.max.apply(null, vals.concat([1])), n = vals.length;
     var step = Math.pow(10, Math.floor(Math.log10(max))), nice = Math.ceil(max / step) * step; if (nice / step > 5) nice = Math.ceil(max / (step * 2)) * step * 2;
     var bw = (W - L - R) / n, y = function (v) { return Tp + (H - Tp - Bt) * (1 - v / nice); }, g = '';
     for (var k = 0; k <= 4; k++) { var vv = nice * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv) + '" y2="' + y(vv) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + esc(fmt(vv)) + '</text>'; }
@@ -98,7 +127,7 @@
     if (!ESR) return '<p class="di-movers-hint">' + t.noData + '</p>';
     var cs = ESR.commodities, c = cs.filter(function (x) { return x.code === SEL.code; })[0] || cs[0]; SEL.code = c.code;
     var names = CN[lang()] || CN.es;
-    var opts = cs.map(function (x) { return '<option value="' + x.code + '"' + (x.code === c.code ? ' selected' : '') + '>' + esc(names[x.code] || x.name) + '</option>'; }).join('');
+    var pk = picker(DEF_ESR, cs.map(function (x) { return x.code; }), c.code, function (i) { return names[i] || String(i); });
     var tot = c.totals, ps = c.prevSameWeek, com = tot.acc + tot.out;
     var cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' +
       card(t.acc, qty(tot.acc, c, t), ps ? chgHtml(pct(tot.acc, ps.acc)) + ' <span style="color:var(--text-faint)">' + esc(t.vsPrev) + '</span>' : '') +
@@ -111,15 +140,18 @@
     var chart = '<div class="di-card" style="padding:14px 16px"><div style="font-weight:600;margin-bottom:6px">' + esc(t.chartAcc) + '</div>' +
       '<div style="display:flex;gap:16px;font-size:12.5px;margin-bottom:6px"><span><span style="display:inline-block;width:14px;height:3px;background:' + C1 + ';vertical-align:middle;margin-right:6px"></span>' + esc(t.cur) + ' (' + esc(c.my) + ')</span><span><span style="display:inline-block;width:14px;height:3px;background:' + C2 + ';vertical-align:middle;margin-right:6px"></span>' + esc(t.prev) + '</span></div>' +
       lineChart([{ v: pr, color: C2, n: t.prev, l: c.weeklyPrev.map(wl) }, { v: cur, color: C1, n: t.cur + ' (' + c.my + ')', l: c.weekly.map(wl) }], (cur.length >= pr.length ? cur : pr).map(function (w, i) { return '#' + (i + 1); }), fmt, { xT: t.weekN.charAt(0).toUpperCase() + t.weekN.slice(1), yT: isB ? t.bales.charAt(0).toUpperCase() + t.bales.slice(1) : t.yTons, vf: function (v) { return qty(v, c, t); } }) + '</div>';
-    var rows = c.countries.slice(), tail = null;
-    var top = rows.filter(function (r) { return r.i2 || r.c !== 9990; }).slice(0, SEL.top);
+    var x = xx(), rows = c.countries.slice();
+    var all = rows.filter(function (r) { return r.i2 || r.c !== 9990; }), top = SEL.all ? all : all.slice(0, SEL.top);
     var unk = rows.filter(function (r) { return r.c === 9990; })[0];
-    var table = '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><tr>' + th(t.country) + th(t.acc, 1) + th(t.out, 1) + th(t.com, 1) + th(t.net, 1) + '</tr>' +
+    var table = '<div class="di-card ex-tbl" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table data-no-cards style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><tr>' + th(t.country) + th(t.acc, 1) + th(t.out, 1) + th(t.com, 1) + th(t.net, 1) + '</tr>' +
       top.map(function (r) { return '<tr style="border-top:1px solid var(--border)">' + td(esc(cname(r.i2, r.n)), 0, 1) + td(qty(r.acc, c, t), 1) + td(qty(r.out, c, t), 1) + td(qty(r.acc + r.out, c, t), 1) + td(qty(r.net, c, t), 1) + '</tr>'; }).join('') +
       (unk ? '<tr style="border-top:1px solid var(--border)">' + td('<span style="color:var(--text-faint)">' + esc(t.unknown) + '</span>', 0) + td(qty(unk.acc, c, t), 1) + td(qty(unk.out, c, t), 1) + td(qty(unk.acc + unk.out, c, t), 1) + td(qty(unk.net, c, t), 1) + '</tr>' : '') +
       '<tr style="border-top:2px solid var(--border);font-weight:700">' + td(esc(t.total), 0, 1) + td(qty(tot.acc, c, t), 1, 1) + td(qty(tot.out, c, t), 1, 1) + td(qty(com, c, t), 1, 1) + td(qty(tot.net, c, t), 1, 1) + '</tr></table></div>';
-    return '<label style="font-size:13px">' + esc(t.product) + '<br><select id="ex-sel-code" class="di-compare-select">' + opts + '</select></label>' +
-      '<div style="margin-top:8px;font-size:13px;color:var(--text-faint)">' + esc(t.weekEnd) + ' ' + esc(c.weekEnding) + ' · ' + esc(t.my) + ' ' + esc(c.my) + '</div>' + cards + chart + table +
+    var li = function (name, r, muted, bold) { return '<li' + (bold ? ' class="ex-tot"' : '') + '><span class="ex-n"' + (muted ? ' style="color:var(--text-faint)"' : '') + '>' + name + '</span><b>' + qty(r.acc, c, t) + '</b><small>' + esc(x.pend) + ' ' + qty(r.out, c, t) + ' · ' + esc(x.tot) + ' ' + qty(r.acc + r.out, c, t) + ' · ' + esc(x.wkS) + ' ' + qty(r.net, c, t) + '</small></li>'; };
+    var list = '<ul class="di-card ex-ml">' + top.map(function (r) { return li(esc(cname(r.i2, r.n)), r); }).join('') + (unk ? li(esc(t.unknown), unk, true) : '') + li(esc(t.total), { acc: tot.acc, out: tot.out, net: tot.net }, false, true) + '</ul>' + moreBtn(all.length, top.length);
+    table += '';
+    return pk +
+      '<div style="margin-top:8px;font-size:13px;color:var(--text-faint)">' + esc(t.weekEnd) + ' ' + esc(c.weekEnding) + ' · ' + esc(t.my) + ' ' + esc(c.my) + '</div>' + cards + chart + table + list +
       '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.esrNote) + '</p><p class="di-movers-hint"><a href="mapa.html?layer=buyers&code=' + c.code + '">' + esc(t.mapLink) + ' →</a></p>';
   }
 
@@ -132,10 +164,9 @@
     if (!GATS) return '<p class="di-movers-hint">' + t.noData + '</p>';
     var groups = GATS.groups, gn = GN[lang()] || GN.es;
     if (groups.indexOf(SEL.group) < 0) SEL.group = groups[0];
-    var opts = groups.map(function (g) { return '<option value="' + g + '"' + (g === SEL.group ? ' selected' : '') + '>' + esc(gn[g] || g) + '</option>'; }).join('');
+    var pk = picker(DEF_GATS, groups, SEL.group, function (g) { return gn[g] || g; });
     var months = GATS.months, n = months.length, last = months[n - 1];
-    var fopts = ['ex', 'im'].map(function (f) { return '<option value="' + f + '"' + (f === SEL.flow ? ' selected' : '') + '>' + esc(t[f]) + '</option>'; }).join('');
-    var popts = ['12', '1'].map(function (p) { return '<option value="' + p + '"' + (p === SEL.period ? ' selected' : '') + '>' + esc(t['p' + p]) + '</option>'; }).join('');
+    var fseg = seg('flow', [['ex', t.ex], ['im', t.im]], SEL.flow, t.flow), pseg = seg('period', [['12', t.p12], ['1', t.p1]], SEL.period, t.period);
     var series = gatsSeries(SEL.flow, SEL.group);
     var lab = months.map(function (m) { return m.slice(0, 4) + '-' + m.slice(4); });
     var cur = SEL.period === '12' ? months.slice(-12) : [last];
@@ -151,11 +182,13 @@
     var total = rows.reduce(function (s, r) { return s + r.v; }, 0), ptotal = rows.reduce(function (s, r) { return s + r.pv; }, 0), hasQ = rows.some(function (r) { return r.q !== null; });
     var chart = '<div class="di-card" style="padding:14px 16px;margin-top:14px"><div style="font-weight:600;margin-bottom:6px">' + esc(t.monthly) + '</div>' + barChart(series.map(function (v) { return v / 1e6; }), lab, function (v) { return nf(v, v < 10 ? 1 : 0); }, SEL.flow === 'ex' ? C1 : '#a05a2c') + '</div>';
     var vs = SEL.period === '12' ? t.vsYear : t.vsYear1;
-    var table = rows.length ? '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:14px"><tr>' + th(t.country) + th(t.value, 1) + (hasQ ? th(t.qty, 1) : '') + th('%', 1) + th(t.chg + ' ' + vs, 1) + '</tr>' +
-      rows.slice(0, SEL.top).map(function (r) { return '<tr style="border-top:1px solid var(--border)">' + td(esc(cname(r.i2, r.n)), 0, 1) + td(usd(r.v), 1) + (hasQ ? td(r.q !== null ? tons(r.q, t) : '—', 1) : '') + td(nf(r.v / total * 100, 1) + ' %', 1) + td(r.prevOk ? chgHtml(pct(r.v, r.pv)) : '—', 1) + '</tr>'; }).join('') +
+    var gx = xx(), shownG = SEL.all ? rows : rows.slice(0, SEL.top);
+    var table = rows.length ? '<div class="di-card ex-tbl" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table data-no-cards style="border-collapse:collapse;width:100%;min-width:520px;font-size:14px"><tr>' + th(t.country) + th(t.value, 1) + (hasQ ? th(t.qty, 1) : '') + th('%', 1) + th(t.chg + ' ' + vs, 1) + '</tr>' +
+      shownG.map(function (r) { return '<tr style="border-top:1px solid var(--border)">' + td(esc(cname(r.i2, r.n)), 0, 1) + td(usd(r.v), 1) + (hasQ ? td(r.q !== null ? tons(r.q, t) : '—', 1) : '') + td(nf(r.v / total * 100, 1) + ' %', 1) + td(r.prevOk ? chgHtml(pct(r.v, r.pv)) : '—', 1) + '</tr>'; }).join('') +
       '<tr style="border-top:2px solid var(--border);font-weight:700">' + td(esc(t.total), 0, 1) + td(usd(total), 1, 1) + (hasQ ? td('', 1) : '') + td('100 %', 1, 1) + td(chgHtml(pct(total, ptotal)), 1) + '</tr></table></div>' : '<p class="di-movers-hint">' + t.noData + '</p>';
-    return '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.flow) + '<br><select id="ex-sel-flow" class="di-compare-select">' + fopts + '</select></label><label style="font-size:13px">' + esc(t.product) + '<br><select id="ex-sel-group" class="di-compare-select">' + opts + '</select></label><label style="font-size:13px">' + esc(t.period) + '<br><select id="ex-sel-period" class="di-compare-select">' + popts + '</select></label></div>' +
-      '<div style="margin-top:8px;font-size:13px;color:var(--text-faint)">' + esc(t.month) + ': ' + esc(last.slice(0, 4) + '-' + last.slice(4)) + '</div>' + chart + table +
+    var glist = rows.length ? '<ul class="di-card ex-ml">' + shownG.map(function (r) { return '<li><span class="ex-n">' + esc(cname(r.i2, r.n)) + '</span><b>' + usd(r.v) + '</b><small>' + nf(r.v / total * 100, 1) + ' % ' + esc(gx.shr) + (r.prevOk ? ' · ' + chgHtml(pct(r.v, r.pv)) : '') + (hasQ && r.q !== null ? ' · ' + tons(r.q, t) : '') + '</small></li>'; }).join('') + '<li class="ex-tot"><span class="ex-n">' + esc(t.total) + '</span><b>' + usd(total) + '</b><small>' + chgHtml(pct(total, ptotal)) + '</small></li></ul>' + moreBtn(rows.length, shownG.length) : '';
+    return pk + '<div class="ex-opts">' + fseg + pseg + '</div>' +
+      '<div style="margin-top:8px;font-size:13px;color:var(--text-faint)">' + esc(t.month) + ': ' + esc(last.slice(0, 4) + '-' + last.slice(4)) + '</div>' + chart + table + glist +
       '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.gatsNote) + '</p><p class="di-movers-hint"><a href="mapa.html?layer=trade&flow=' + SEL.flow + '&group=' + SEL.group + '">' + esc(t.mapLink) + ' →</a></p>';
   }
 
@@ -171,12 +204,13 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     document.getElementById('ex-body').innerHTML = '<div style="margin-bottom:14px">' + (ESR ? tab('esr', t.tabEsr) : '') + (GATS ? tab('gats', t.tabGats) : '') + '</div>' + (SEL.tab === 'esr' ? renderEsr(t) : renderGats(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>' + (SEL.tab === 'esr' ? ci('usda_fas_esr') : ci('usda_fas_gats'));
     var q = function (s) { return document.getElementById('ex-body').querySelectorAll(s); };
     Array.prototype.forEach.call(q('[data-tab]'), function (b) { b.onclick = function () { SEL.tab = b.getAttribute('data-tab'); render(); }; });
-    var e = document.getElementById('ex-sel-code'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.code = parseInt(el.value, 10); render(); };
-    e = document.getElementById('ex-sel-flow'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.flow = el.value; render(); };
-    e = document.getElementById('ex-sel-group'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.group = el.value; render(); };
-    e = document.getElementById('ex-sel-period'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.period = el.value; render(); };
+    Array.prototype.forEach.call(q('[data-xg]'), function (b) { b.onclick = function () { var v = b.getAttribute('data-xf'); if (SEL.tab === 'esr') SEL.code = parseInt(v, 10); else SEL.group = v; SEL.all = false; render(); }; });
+    Array.prototype.forEach.call(q('[data-xp]'), function (b) { b.onclick = function () { var v = b.getAttribute('data-xp'); if (SEL.tab === 'esr') SEL.code = parseInt(v, 10); else SEL.group = v; SEL.all = false; render(); }; });
+    Array.prototype.forEach.call(q('[data-seg]'), function (b) { b.onclick = function () { SEL[b.getAttribute('data-seg')] = b.getAttribute('data-v'); SEL.all = false; render(); }; });
+    Array.prototype.forEach.call(q('[data-more]'), function (b) { b.onclick = function () { SEL.all = !SEL.all; render(); }; });
   }
   window.__exUsRender = function () { render(); };
+  var wasN = narrow(); window.addEventListener('resize', function () { if (narrow() !== wasN) { wasN = narrow(); render(); } });
   window.DehesaShared.init('informacion');
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };

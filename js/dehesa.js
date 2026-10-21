@@ -88,8 +88,9 @@
   function th(s, right) { return '<th style="text-align:' + (right ? 'right' : 'left') + ';padding:6px 8px;font-weight:600;font-size:12.5px;color:var(--text-faint)">' + esc(s) + '</th>'; }
   function td(s, right) { return '<td style="text-align:' + (right ? 'right' : 'left') + ';padding:6px 8px;border-top:1px solid var(--border);font-variant-numeric:tabular-nums">' + s + '</td>'; }
   function table(head, rows) { return '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;max-width:760px"><thead><tr>' + head.join('') + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'; }
+  var EMO = { 'dh-pigs': '🐖', 'dh-past': '🌿', 'dh-cork': '🌳', 'dh-cork1': '💶', 'dh-forest': '🍄', 'dh-st': '🔎' };
   function sec(id, h, sub, inner) {
-    return '<details class="di-card" id="' + id + '" style="margin:0 0 12px;padding:0"><summary style="cursor:pointer;padding:14px 16px;list-style-position:inside"><b style="font-size:16px">' + esc(h) + '</b><span class="di-movers-hint" style="display:block;margin:2px 0 0 18px">' + esc(sub) + '</span></summary><div style="padding:0 16px 16px">' + inner + '</div></details>';
+    return '<details class="di-card" id="' + id + '" style="margin:0 0 12px;padding:0"><summary style="cursor:pointer;padding:14px 16px;list-style-position:inside"><b style="font-size:16px">' + (EMO[id] ? '<span aria-hidden="true">' + EMO[id] + '</span> ' : '') + esc(h) + '</b><span class="di-movers-hint" style="display:block;margin:2px 0 0 18px">' + esc(sub) + '</span></summary><div style="padding:0 16px 16px">' + inner + '</div></details>';
   }
   function srcLine(src) { var tt = t(); return '<p class="di-field-hint" style="margin:10px 0 0">' + esc(tt.src) + ' ' + (src.url ? '<a href="' + esc(src.url) + '" target="_blank" rel="noopener">' + esc(src.name) + '</a>' : esc(src.name)) + (src.licence ? ' · ' + esc(src.licence) : '') + '. ' + esc(tt.cite) + '</p>'; }
   function chart(series, o) {
