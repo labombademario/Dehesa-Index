@@ -970,24 +970,24 @@
     // Forêt/ONF) no tiene licencia de reutilización verificada y el License Gate no deja publicarla. Ver data/license-registry.json.
     var own = loc === 'uk', na = loc === 'us' || loc === 'ca';
     var cards = { uk: infoStatsCardHtml(mad.ukTitle, mad.ukStats, 'madera-uk') };
-    var order = ['uk'];
+    var order = own ? ['uk'] : [];   // la tarjeta del Reino Unido solo sale en el Reino Unido
+    var isDe = loc === 'eu' && cn === 'de';
     var PL = { us: ['EE. UU.', 'The US', 'les États-Unis', 'gli Stati Uniti'], ca: ['Canadá', 'Canada', 'le Canada', 'il Canada'], es: ['España', 'Spain', 'l’Espagne', 'la Spagna'], de: ['Alemania', 'Germany', 'l’Allemagne', 'la Germania'], it: ['Italia', 'Italy', 'l’Italie', 'l’Italia'], fr: ['Francia', 'France', 'la France', 'la Francia'] }[loc === 'eu' ? cn : loc] || ['Tu país', 'Your country', 'votre pays', 'il tuo paese'];
     var place = { es: PL[0], en: PL[1], fr: PL[2], it: PL[3] };
-    var nearest = { es: 'Reino Unido', en: 'the UK', fr: 'le Royaume-Uni', it: 'il Regno Unito' };
     var NT = {
-      es: function (p, n) { return p.es + ' no tiene un precio nacional de madera que podamos publicar; por eso se muestra ' + n.es + ', el mercado con dato oficial de licencia abierta.'; },
-      en: function (p, n) { return p.en + ' has no national timber price we can publish, so ' + n.en + ', the market with an open-licence official figure, is shown.'; },
-      fr: function (p, n) { return 'Il n’existe pas pour ' + p.fr + ' de prix national du bois que nous puissions publier ; nous montrons donc ' + n.fr + ', le marché disposant d’un chiffre officiel sous licence ouverte.'; },
-      it: function (p, n) { return 'Per ' + p.it + ' non c’è un prezzo nazionale del legno pubblicabile; per questo si mostra ' + n.it + ', il mercato con un dato ufficiale a licenza aperta.'; }
+      es: function (p) { return p.es + ' no tiene un precio nacional de madera que podamos publicar (no tenemos una fuente oficial con licencia abierta).'; },
+      en: function (p) { return p.en + ' has no national timber price we can publish (no official open-licence source).'; },
+      fr: function (p) { return 'Il n’existe pas pour ' + p.fr + ' de prix national du bois que nous puissions publier (pas de source officielle sous licence ouverte).'; },
+      it: function (p) { return 'Per ' + p.it + ' non c’è un prezzo nazionale del legno pubblicabile (nessuna fonte ufficiale a licenza aperta).'; }
     };
     var NL = { es: 'Ver por qué faltan otros países', en: 'See why other countries are missing', fr: 'Voir pourquoi d’autres pays manquent', it: 'Perché mancano altri paesi' };
     var notice = '';
-    if (!own) { notice = '<div class="di-info-scope-note" id="pr-wood-gap" style="margin-bottom:10px"' + (na ? ' hidden' : '') + '>' + esc(NT[lang()](place, nearest)) + ' <a href="#pr-madera-note">' + esc(NL[lang()]) + '</a></div>'; }
+    if (!own && !isDe) { notice = '<div class="di-info-scope-note" id="pr-wood-gap" style="margin-bottom:10px"' + (na ? ' hidden' : '') + '>' + esc(NT[lang()](place)) + ' <a href="#pr-madera-note">' + esc(NL[lang()]) + '</a></div>'; }
     return (
       (na ? '<div id="pr-wood-na" class="wr-wrap" data-cc="' + loc.toUpperCase() + '"></div>' : '') +
       '<div class="di-badge di-badge-green di-info-badge">' + esc(mad.badge) + '</div>' + notice +
       '<div class="di-info-grid">' + order.map(function (k) { return cards[k]; }).join('') + '</div>' +
-      '<div id="pr-wood-de" class="wr-wrap"></div>' +
+      (isDe ? '<div id="pr-wood-de" class="wr-wrap"></div>' : '') +
       '<div id="pr-wood" class="wr-wrap"></div>' +
       '<div class="di-info-scope-note" id="pr-madera-note">' + esc(mad.scopeNote) + '</div>' +
       infoSourcesHtml('madera')
@@ -1199,7 +1199,7 @@
       }
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
       if (state.activeTab === 'madera' && global.DehesaWoodNA) { var wn = document.getElementById('pr-wood-na'); if (wn) { var wcc = wn.getAttribute('data-cc'); global.DehesaWoodNA.render(wn, wcc); global.DehesaWoodNA.has(wcc).then(function (ok) { var g = document.getElementById('pr-wood-gap'); if (g) g.hidden = ok; }); } }
-      if (state.activeTab === 'madera' && global.DehesaWoodDE) global.DehesaWoodDE.render(document.getElementById('pr-wood-de'));
+      if (state.activeTab === 'madera' && global.DehesaWoodDE && document.getElementById('pr-wood-de')) global.DehesaWoodDE.render(document.getElementById('pr-wood-de'));
       if (state.activeTab === 'madera' && global.DehesaWood) global.DehesaWood.render(document.getElementById('pr-wood'));
       if (state.activeTab === 'vino' && global.DehesaWine) { root.innerHTML = '<div id="pr-vino">' + root.innerHTML + '</div>'; global.DehesaWine.render(document.getElementById('pr-vino')); }
       return;
