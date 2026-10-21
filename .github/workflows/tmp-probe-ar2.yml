@@ -1,0 +1,15 @@
+name: tmp probe ar2
+on:
+  push:
+    branches: [research/probe-ar2]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: mkdir -p data && python3 scripts/probe-ar2.py
+      - run: |
+          git config user.name probe; git config user.email probe@x
+          git checkout -B probe-ar2-out; git add -f data/probe-ar2.txt; git commit -qm probe; git push -f origin probe-ar2-out
