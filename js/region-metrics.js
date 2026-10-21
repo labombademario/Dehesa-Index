@@ -2,6 +2,11 @@
    Solo colorea lo que la fuente publica: las regiones sin dato quedan en gris y se dice. Lo usan paises.js y region.js. */
 (function () {
   'use strict';
+  // Argentina: por qué hay provincias en gris (Mario, 21-oct-2026: «nos faltan datos de muchas regiones de Argentina, ¿por qué?»)
+  var AR_NOTE = { es: 'En gris: la provincia no figura con este cultivo en las Estimaciones agrícolas del Ministerio de Agricultura argentino (MAGyP), que solo recogen los cultivos extensivos. En la Patagonia, Cuyo y la Ciudad de Buenos Aires apenas se siembran; allí pesan más la fruta, la vid y el ganado.',
+    en: 'Grey: the province does not appear with this crop in the crop estimates of Argentina’s Ministry of Agriculture (MAGyP), which only cover field crops. Patagonia, Cuyo and the City of Buenos Aires grow very little of them; fruit, vines and livestock matter more there.',
+    fr: 'En gris : la province ne figure pas avec cette culture dans les estimations agricoles du ministère argentin de l’Agriculture (MAGyP), qui ne couvrent que les grandes cultures. La Patagonie, le Cuyo et la ville de Buenos Aires en sèment très peu ; les fruits, la vigne et l’élevage y pèsent davantage.',
+    it: 'In grigio: la provincia non compare con questa coltura nelle stime agricole del Ministero dell’Agricoltura argentino (MAGyP), che coprono solo i seminativi. In Patagonia, nel Cuyo e nella Città di Buenos Aires se ne seminano pochissimi; lì contano di più frutta, vite e allevamento.' };
   var L4 = { en: 0, es: 1, fr: 2, it: 3 }, G = ['#e8f1e4', '#bfdcb8', '#8cc08c', '#4f9a62', '#1f6b43'], O = ['#fdecc8', '#f9c97a', '#ef9b4a', '#d4622d', '#a32d1f'], NODATA = '#e4e4e0';
   var cache = {};
   function get(u) { return cache[u] || (cache[u] = fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
@@ -42,7 +47,7 @@
     { id: 'trigo', sec: 'agri', ramp: G, unit: ' kt', label: ['Wheat production, latest season (thousand t)', 'Producción de trigo, última campaña (miles de t)', 'Production de blé, dernière campagne (milliers de t)', 'Produzione di frumento, ultima campagna (migliaia di t)'], dec: 0 }];
   // vista precalculada (scripts/build-views.py -> data/views/region-metrics.json, ~7 KB): el mapa no baja el fichero regional entero; si falta, se calcula aquí
   function compute(cc, id) {
-    return get('data/views/region-metrics.json').then(function (V) { var m = V && V.countries && V.countries[cc] && V.countries[cc][id]; return m && m.vals ? { vals: m.vals, period: m.period } : computeFull(cc, id); });
+    return get('data/views/region-metrics.json').then(function (V) { var m = V && V.countries && V.countries[cc] && V.countries[cc][id]; return m && m.vals ? { vals: m.vals, period: m.period, note: cc === 'AR' ? AR_NOTE : null } : computeFull(cc, id); });
   }
   function computeFull(cc, id) {
     var v = {}, per = '';
@@ -52,7 +57,7 @@
     if (cc === 'US' && id === 'tax') return get('data/other-tax.json').then(function (d) { var S = d && d.us && d.us.states; if (!S) return null; Object.keys(S).forEach(function (k) { v[k] = S[k].noStateSalesTax ? 0 : S[k].rate; }); return { vals: v, period: d.reviewedAt || '' }; });
     if (cc === 'CA' && id === 'drought') return get('data/canada-drought.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { var r = d.provinces[k].v[d.periods.length - 1]; if (r) v[k] = r[1]; }); return { vals: v, period: d.asOf }; });
     if (cc === 'CA' && id === 'receipts') return get('data/canada-provinces.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { if (k === 'CA') return; var o = d.provinces[k].receipts && d.provinces[k].receipts['total-farm-cash-receipts'], p = o && last(o.pts); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }); return { vals: v, period: per }; });
-    if (cc === 'AR') return get('data/ar-provinces.json').then(function (d) { if (!d || !d.provinces) return null; var c = d.lastCampaign; Object.keys(d.provinces).forEach(function (k) { var q = d.provinces[k][id] && d.provinces[k][id][c]; if (q && q[2] > 0) v[k] = q[2] / 1000; }); return { vals: v, period: c }; });
+    if (cc === 'AR') return get('data/ar-provinces.json').then(function (d) { if (!d || !d.provinces) return null; var c = d.lastCampaign; Object.keys(d.provinces).forEach(function (k) { var q = d.provinces[k][id] && d.provinces[k][id][c]; if (q && q[2] > 0) v[k] = q[2] / 1000; }); return { vals: v, period: c, note: AR_NOTE }; });
     if (cc === 'UY') return get('data/uruguay-departments.json').then(function (d) { if (!d) return null;
       if (id === 'forest') { var fo = d.forest; if (!fo || !fo.byDept) return null; Object.keys(fo.byDept).forEach(function (k) { if (fo.byDept[k].total != null) v[k] = fo.byDept[k].total / 1000; }); return { vals: v, period: String(fo.year) }; }
       var sp = { cattle: 'cattle', sheep: 'sheep', dairy: 'dairy-cattle' }[id], tab = sp ? d.livestock && d.livestock[sp] : d.land && d.land[id === 'landsale' ? 'sale' : 'rent'], ys = tab ? Object.keys(tab).sort() : [], y = ys[ys.length - 1]; if (!y) return null;
@@ -101,7 +106,7 @@
       var sw = []; for (var i = 0; i < n; i++) { var lo = i === 0 ? Math.min.apply(null, vals) : br[i - 1], hi = i === n - 1 ? Math.max.apply(null, vals) : br[i];
         sw.push('<span style="display:inline-flex;align-items:center;gap:4px;margin-right:10px"><i style="width:14px;height:14px;border-radius:3px;background:' + m.ramp[Math.round(i * (m.ramp.length - 1) / Math.max(1, n - 1))] + ';display:inline-block;border:1px solid rgba(0,0,0,.15)"></i>' + esc(fmt(lo, m, lg).replace(m.unit, '')) + ' – ' + esc(fmt(hi, m, lg)) + '</span>'); }
       if (miss) sw.push('<span style="display:inline-flex;align-items:center;gap:4px"><i style="width:14px;height:14px;border-radius:3px;background:' + NODATA + ';display:inline-block;border:1px solid rgba(0,0,0,.15)"></i>' + esc(t.none) + '</span>');
-      return '<div class="di-movers-hint" style="margin:8px 0 0;font-size:12px">' + esc(m.label[li]) + (res.period ? ' · ' + esc(t.as + ' ' + String(res.period).slice(0, 10)) : '') + '<div style="margin-top:4px">' + sw.join('') + '</div></div>';
+      return '<div class="di-movers-hint" style="margin:8px 0 0;font-size:12px">' + esc(m.label[li]) + (res.period ? ' · ' + esc(t.as + ' ' + String(res.period).slice(0, 10)) : '') + '<div style="margin-top:4px">' + sw.join('') + '</div>' + (miss && res.note ? '<div style="margin-top:4px">' + esc(res.note[lg] || res.note.es) + '</div>' : '') + '</div>';
     });
   }
   function selectHtml(cc, lg, idAttr, current, only) {

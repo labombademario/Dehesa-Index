@@ -230,7 +230,7 @@
         '<nav class="ps-rm-list" aria-label="' + esc(X.list) + '"><div class="ps-rm-lh">' + esc(X.list) + ' <span>(' + ids.length + ')</span></div><ul>' + ids.map(function (s) { return '<li><a' + hr(s) + ' data-r="' + s.id + '"><span class="n">' + esc(rmName(cc, s)) + '</span><span class="v"></span></a></li>'; }).join('') + '</ul></nav></div>' + hubLink(cc) + '</section>';
       bindHover(el, NL); paintReg(cc, el); };
     var loadJs = function (src, then) { var x = document.createElement('script'); x.src = src; x.onload = then; x.onerror = then; document.head.appendChild(x); };
-    var go = function () { var step = function () { if (window.DehesaRegionNames) draw(); else loadJs('js/region-names.js', draw); }; if (window.DehesaRegionMetrics) step(); else loadJs('js/region-metrics.js', step); };
+    var go = function () { var step = function () { if (window.DehesaRegionNames) draw(); else loadJs('js/region-names.js', draw); }; if (window.DehesaRegionMetrics) step(); else loadJs('js/region-metrics.js?v=20261021', step); };
     if (window[key]) go(); else { var sc = document.createElement('script'); sc.src = src; sc.onload = go; document.head.appendChild(sc); }
   }
   function build() {
