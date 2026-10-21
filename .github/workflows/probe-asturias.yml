@@ -10,6 +10,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - run: pip install -q openpyxl xlrd
       - run: python3 scripts/probe/probe-asturias2.py 2>&1 | tee probe2.log
       - if: always()
         run: |
