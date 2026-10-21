@@ -1,13 +1,11 @@
+/home/runner/.local/lib/python3.12/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Data Validation extension is not supported and will be removed
+  warn(msg)
 candidatos 8
-Traceback (most recent call last):
-  File "/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/probe/probe-asturias2.py", line 16, in <module>
-    import openpyxl
-ModuleNotFoundError: No module named 'openpyxl'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/probe/probe-asturias2.py", line 18, in <module>
-    os.system('pip install -q openpyxl --break-system-packages'); import openpyxl
-                                                                  ^^^^^^^^^^^^^^^
-ModuleNotFoundError: No module named 'openpyxl'
+OK re1_frutales_no_citricos_formato_tabla_global-0.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 1, 'TABLA GLOBAL NACIONAL CULTIVOS': 1, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 1}
+OK re1_otros_lenosos_formato_tabla_global-0.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 1, 'TABLA GLOBAL NACIONAL CULTIVOS': 0, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 0}
+OK re1_frutales_no_citricos_formato_tabla_global.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 3, 'TABLA GLOBAL NACIONAL CULTIVOS': 1, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 1}
+OK re1_otros_lenosos_formato_tabla_global.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 1, 'TABLA GLOBAL NACIONAL CULTIVOS': 0, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 0}
+OK re1_leguminosas_formato_tabla_global-0.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 3, 'TABLA GLOBAL NACIONAL': 3, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 3}
+OK re1_frutales_no_citricos_formato_tabla_global.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 3, 'TABLA GLOBAL NACIONAL CULTIVOS': 1, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 1}
+OK re1_otros_lenosos_formato_tabla_global.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 1, 'TABLA GLOBAL NACIONAL CULTIVOS': 0, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 0}
+OK re1_leguminosas_formato_tabla_global-0.xlsx {'TABLA GLOBAL SALIDAS ANUARIO': 3, 'TABLA GLOBAL NACIONAL': 3, 'BD_HORTALIZAS-NO': 25, 'TABLA GLOBAL ': 1, 'LISTA': 3}

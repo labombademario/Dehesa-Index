@@ -1,0 +1,5107 @@
+[
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_frutales_no_citricos_formato_tabla_global-0.xlsx",
+  "title": "FRUTALES NO CITRICOS DATOS PROVISIONALES CAMPAÑA 2025",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 162,
+    "head": [
+     [
+      "NC0000",
+      "TOTAL FRUTALES",
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [],
+     [
+      " ",
+      "TOTAL FRUTALES",
+      ": Análisis provincial detallado , 2025"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN CULTIVO ÚNICO",
+      "SUPERFICIE EN CULTIVO ASOCIADO",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año "
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "SUPERFICIE EN PRODUCCION (ÚNICO + ASOCIADO)",
+      "SUPERFICIE RECOLECTADA (ÚNICO + ASOCIADO)",
+      "RECOLECTADA EN CULTIVO ÚNICO"
+     ]
+    ],
+    "hits": [
+     [
+      33,
+      " P. DE ASTURIAS",
+      1450,
+      610,
+      2060,
+      1419,
+      538,
+      1957,
+      1419,
+      538,
+      1957,
+      2865,
+      0,
+      2865
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL CULTIVOS": {
+    "rows": 136,
+    "head": [
+     [
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [],
+     [
+      " ",
+      "FRUTALES NO CITRICOS",
+      ": Análisis provincial detallado , 2025"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN CULTIVO ÚNICO",
+      "SUPERFICIE EN CULTIVO ASOCIADO",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año "
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "SUPERFICIE EN PRODUCCION (ÚNICO + ASOCIADO)",
+      "SUPERFICIE RECOLECTADA (ÚNICO + ASOCIADO)",
+      "RECOLECTADA EN CULTIVO ÚNICO"
+     ]
+    ],
+    "hits": [
+     [
+      "DE PEPITA",
+      "NC1110",
+      " - Manzano para sidra",
+      2900,
+      233,
+      3133,
+      2884,
+      223,
+      3107,
+      2884,
+      192,
+      3076,
+      4667,
+      451
+     ]
+    ]
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 143751,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STSU",
+      "Superficie en cultivo único, superficier total, Secano",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STRU",
+      "Superficie en cultivo único, superficier total, Regadío",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STTU",
+      "Superficie en cultivo único, superficier total, Total",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPSU",
+      "Superficie en cultivo único,  en producción, Secano",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPRU",
+      "Superficie en cultivo único,  en producción, Regadío",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPTU",
+      "Superficie en cultivo único,  en producción, Total",
+      16
+     ]
+    ],
+    "hits": [
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STSU",
+      "Superficie en cultivo único, superficier total, Secano",
+      16,
+      "01NC1110STSU",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STRU",
+      "Superficie en cultivo único, superficier total, Regadío",
+      0,
+      "01NC1110STRU",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STTU",
+      "Superficie en cultivo único, superficier total, Total",
+      16,
+      "01NC1110STTU",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPSU",
+      "Superficie en cultivo único,  en producción, Secano",
+      16,
+      "01NC1110SPSU",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPRU",
+      "Superficie en cultivo único,  en producción, Regadío",
+      0,
+      "01NC1110SPRU",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPTU",
+      "Superficie en cultivo único,  en producción, Total",
+      16,
+      "01NC1110SPTU",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SRSU",
+      "Superficie en cultivo único, recolectada, Secano",
+      16,
+      "01NC1110SRSU",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SRRU",
+      "Superficie en cultivo único, recolectada, Regadío",
+      0,
+      "01NC1110SRRU",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SRTU",
+      "Superficie en cultivo único, recolectada, Total",
+      16,
+      "01NC1110SRTU",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STSA",
+      "Superfici en cultivo asociado, superficie total, secano",
+      0,
+      "01NC1110STSA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STRA",
+      "Superficie en cultivo asociado, superficier total, Regadío",
+      0,
+      "01NC1110STRA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STTA",
+      "Superficie en cultivo asociado, superficier total, Total",
+      0,
+      "01NC1110STTA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPSA",
+      "Superficie en cultivo asociado,  en producción, Secano",
+      0,
+      "01NC1110SPSA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPRA",
+      "Superficie en cultivo asociado,  en producción, Regadío",
+      0,
+      "01NC1110SPRA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPTA",
+      "Superficie en cultivo asociado,  en producción, Total",
+      0,
+      "01NC1110SPTA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SRSA",
+      "Superficie en cultivo asociado, recolectada, Secano",
+      0,
+      "01NC1110SRSA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SRRA",
+      "Superficie en cultivo asociado, recolectada, Regadío",
+      0,
+      "01NC1110SRRA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SRTA",
+      "Superficie en cultivo asociado, recolectada, Total",
+      0,
+      "01NC1110SRTA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STST",
+      "Superficie total (único + asociado) superficie Total, secano",
+      16,
+      "01NC1110STST",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STRT",
+      "Superficie total (único + asociado) superficie Total, regadío",
+      0,
+      "01NC1110STRT",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "STTT",
+      "Superficie total (único + asociado) superficie Total, total",
+      16,
+      "01NC1110STTT",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPST",
+      "Superficie total (único + asociado) en producción, secano",
+      16,
+      "01NC1110SPST",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPRT",
+      "Superficie total (único + asociado) en producción, regadío",
+      0,
+      "01NC1110SPRT",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SPTT",
+      "Superficie total (único + asociado) en producción, total",
+      16,
+      "01NC1110SPTT",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      10,
+      "Frutales No Cítricos",
+      3,
+      "NC1110",
+      " - Manzano para sidra",
+      "SUAS",
+      "Superficie recolectada (unico + asociado) secano",
+      16,
+      "01NC1110SUAS",
+      16
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 59,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": [
+     [
+      " - Manzano para sidra",
+      "NC1110",
+      " - Manzano para sidra"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_otros_lenosos_formato_tabla_global-0.xlsx",
+  "title": "OTROS CULTIVOS LEÑOSOS DATOS PROVISIONALES CAMPAÑA 2025",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 109,
+    "head": [
+     [
+      "XL1100",
+      "Alcaparra",
+      "OTROS CULTIVOS LEÑOSOS"
+     ],
+     [],
+     [
+      " ",
+      "Alcaparra",
+      ": Análisis provincial detallado , 2025"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN PLANTACION REGULAR",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año ",
+      "Plantaciones nuevas en el año ",
+      "Abandonados (>5 años)"
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "RECOLECTADA",
+      "EN ÁRBOLES DISEMINADOS",
+      "PRODUCCIÓN BIOLOGICA",
+      "PRODUCCIÓN NO RECOLECTADA",
+      "PRODUCCIÓN RECOLECTADA",
+      "Reserva para consumo propio",
+      "Venta fuera de las explotaciones"
+     ]
+    ],
+    "hits": [
+     [
+      33,
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL CULTIVOS": {
+    "rows": 68,
+    "head": [
+     [
+      "OTROS CULTIVOS LEÑOSOS"
+     ],
+     [],
+     [
+      " ",
+      "                        OTROS CULTIVOS LEÑOSOS: ",
+      ": Análisis provincial detallado , 2025"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN PLANTACION REGULAR",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año ",
+      "Plantaciones nuevas en el año ",
+      "Abandonados (>5 años)"
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "RECOLECTADA",
+      "EN ÁRBOLES DISEMINADOS",
+      "PRODUCCIÓN BIOLOGICA",
+      "PRODUCCIÓN NO RECOLECTADA",
+      "PRODUCCIÓN RECOLECTADA",
+      "Reserva para consumo propio",
+      "Venta fuera de las explotaciones"
+     ]
+    ],
+    "hits": []
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 23201,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRTS",
+      "Superficie en plantación regular, superficie total, secano",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRTR",
+      "Superficie en plantación regular, superficie total, regadío",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRTT",
+      "Superficie en plantación regular, superficie total, total",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRPS",
+      "Superficie en plantación regular en producción, seca no",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRPR",
+      "Superficie en plantación regular en producción, regadío",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRPT",
+      "Superficie en plantación regular en producción total",
+      0
+     ]
+    ],
+    "hits": [
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRTS",
+      "Superficie en plantación regular, superficie total, secano",
+      0,
+      "33XL1100SRTS",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRTR",
+      "Superficie en plantación regular, superficie total, regadío",
+      0,
+      "33XL1100SRTR",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRTT",
+      "Superficie en plantación regular, superficie total, total",
+      0,
+      "33XL1100SRTT",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRPS",
+      "Superficie en plantación regular en producción, seca no",
+      0,
+      "33XL1100SRPS",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRPR",
+      "Superficie en plantación regular en producción, regadío",
+      0,
+      "33XL1100SRPR",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRPT",
+      "Superficie en plantación regular en producción total",
+      0,
+      "33XL1100SRPT",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRRS",
+      "Superficie en plantación regular recolectada secano",
+      0,
+      "33XL1100SRRS",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRRR",
+      "Superficie en plantación regular, recolectada regadío",
+      0,
+      "33XL1100SRRR",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "SRRT",
+      "Superficie en plantación regular, recolectada total",
+      0,
+      "33XL1100SRRT",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "ADIS",
+      "Arboles diseminado",
+      0,
+      "33XL1100ADIS",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "RSRS",
+      "Rendimiento superficie recolectada secano",
+      0,
+      "33XL1100RSRS",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "RSRR",
+      "Rendimiento superficie recolectada regadío",
+      0,
+      "33XL1100RSRR",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "RADI",
+      "Rendimiento superficie recolectada, árboles diseminados",
+      0,
+      "33XL1100RADI",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "PTBI",
+      "Producción biológica total",
+      0,
+      "33XL1100PTBI",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "PRNR",
+      "Producción no recolectada",
+      0,
+      "33XL1100PRNR",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "PRES",
+      "Producción recolectada secano",
+      0,
+      "33XL1100PRES",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "PRER",
+      "Producción recolectada regadío",
+      0,
+      "33XL1100PRER",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "PRAD",
+      "Producción recolectada, árboles diseminados",
+      0,
+      "33XL1100PRAD",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "PRTR",
+      "Producción recolectada total",
+      0,
+      "33XL1100PRTR",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      0,
+      "33XL1100CPAA",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "CPAH",
+      "Destino de la producción de grano, consumo propio, alimentación humana",
+      0,
+      "33XL1100CPAH",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "VFCF",
+      "Destino de la producción, ventas fuera de la explotación, consumo en fresco",
+      0,
+      "33XL1100VFCF",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "VFEE",
+      "Destino de la producción, ventas fuera de la explotación, exportación",
+      0,
+      "33XL1100VFEE",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "VFTR",
+      "Destino de la producción, ventas fuera de la explotación, transformación",
+      0,
+      "33XL1100VFTR",
+      0
+     ],
+     [
+      33,
+      "Asturias",
+      13,
+      "Otros Leñosos",
+      1,
+      "XL1100",
+      "Alcaparra",
+      "DPMA",
+      "Destino de la producción, pérdidas y mermas",
+      0,
+      "33XL1100DPMA",
+      0
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 25,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": []
+   }
+  }
+ },
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_frutales_no_citricos_formato_tabla_global.xlsx",
+  "title": "FRUTALES NO CITRICOS DATOS PROVISIONALES CAMPAÑA 2024",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 162,
+    "head": [
+     [
+      "NC1110",
+      " - Manzano para sidra",
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [],
+     [
+      " ",
+      " - Manzano para sidra",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN CULTIVO ÚNICO",
+      "SUPERFICIE EN CULTIVO ASOCIADO",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año "
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "SUPERFICIE EN PRODUCCION (ÚNICO + ASOCIADO)",
+      "SUPERFICIE RECOLECTADA (ÚNICO + ASOCIADO)",
+      "RECOLECTADA EN CULTIVO ÚNICO"
+     ]
+    ],
+    "hits": [
+     [
+      "NC1110",
+      " - Manzano para sidra",
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [
+      " ",
+      " - Manzano para sidra",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [
+      33,
+      " P. DE ASTURIAS",
+      1100,
+      65,
+      1165,
+      1100,
+      65,
+      1165,
+      1100,
+      65,
+      1165,
+      2865,
+      0,
+      2865
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL CULTIVOS": {
+    "rows": 136,
+    "head": [
+     [
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [],
+     [
+      " ",
+      "FRUTALES NO CITRICOS",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "CULTIVOS ",
+      "SUPERFICIE EN CULTIVO ÚNICO",
+      "SUPERFICIE EN CULTIVO ASOCIADO",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año "
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "SUPERFICIE EN PRODUCCION (ÚNICO + ASOCIADO)",
+      "SUPERFICIE RECOLECTADA (ÚNICO + ASOCIADO)",
+      "RECOLECTADA EN CULTIVO ÚNICO"
+     ]
+    ],
+    "hits": [
+     [
+      "DE PEPITA",
+      "NC1110",
+      " - Manzano para sidra",
+      2887,
+      279,
+      3166,
+      2872,
+      202,
+      3074,
+      2872,
+      202,
+      3074,
+      4664,
+      451
+     ]
+    ]
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 862551,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PCBC",
+      "Producción cosechada, biocombustibla",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "SCUS",
+      "Superficie cultivada de secano",
+      38819
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PRNC",
+      "Producción no cosechada",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "HURG",
+      "Humedad recogida del grano",
+      12.4
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      765
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      3316
+     ]
+    ],
+    "hits": [
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "TSUT",
+      "Total semilla utilizada",
+      44,
+      "01LG9100TSUT",
+      44
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRT",
+      "Area principal total",
+      295,
+      "01LG9100APRT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSRE",
+      "Superficie sembrada de regadío",
+      271,
+      "01LG9100SSRE",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSTO",
+      "Superficie sembrada total",
+      295,
+      "01LG9100SSTO",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUS",
+      "Superficie cultivada de secano",
+      24,
+      "01LG9100SCUS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUR",
+      "Superficie cultivada de regadío",
+      271,
+      "01LG9100SCUR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUT",
+      "Superficie cultivada de total",
+      295,
+      "01LG9100SCUT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOS",
+      "Superficie cosechada de secano",
+      24,
+      "01LG9100SCOS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOR",
+      "Superficie cosechada de regadío",
+      271,
+      "01LG9100SCOR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOT",
+      "Superficie cosechada de total",
+      295,
+      "01LG9100SCOT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCS",
+      "Rendimiento de la superficie cosechada secano",
+      1676,
+      "01LG9100RSCS",
+      1676
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCR",
+      "Rendimiento de la superficie cosechada regadío",
+      1300,
+      "01LG9100RSCR",
+      1300
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PTBG",
+      "Producción biológica total grano",
+      393,
+      "01LG9100PTBG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCOG",
+      "Producción cosechada, grano",
+      393,
+      "01LG9100PCOG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCPC",
+      "Producción cosechada, paja cosechada",
+      0,
+      "01LG9100PCPC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PRNC",
+      "Producción no cosechada",
+      0,
+      "01LG9100PRNC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "HURG",
+      "Humedad recogida del grano",
+      16,
+      "01LG9100HURG",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      1,
+      "01LG9100CPSE",
+      1
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      0,
+      "01LG9100CPAA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAH",
+      "Destino de la producción de grano, consumo propio, alimentación humana",
+      71,
+      "01LG9100CPAH",
+      71
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "VFEX",
+      "Ventas fuera de la explotación",
+      321,
+      "01LG9100VFEX",
+      321
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PEEX",
+      "Pérdidas de explotación",
+      0,
+      "01LG9100PEEX",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRS",
+      "Area principal secano",
+      24,
+      "01LG9100APRS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRR",
+      "Area principal regadío",
+      271,
+      "01LG9100APRR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSSE",
+      "Superficie sembrada de secano",
+      24,
+      "01LG9100SSSE",
+      24
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 59,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": [
+     [
+      " - Manzano para sidra",
+      "NC1110",
+      " - Manzano para sidra"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_otros_lenosos_formato_tabla_global.xlsx",
+  "title": "OTROS CULTIVOS LEÑOSOS DATOS PROVISIONALES CAMPAÑA 2024",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 109,
+    "head": [
+     [
+      "XL1100",
+      "Alcaparra",
+      "OTROS CULTIVOS LEÑOSOS"
+     ],
+     [],
+     [
+      " ",
+      "Alcaparra",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN PLANTACION REGULAR",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año ",
+      "Plantaciones nuevas en el año ",
+      "Abandonados (>5 años)"
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "RECOLECTADA",
+      "EN ÁRBOLES DISEMINADOS",
+      "PRODUCCIÓN BIOLOGICA",
+      "PRODUCCIÓN NO RECOLECTADA",
+      "PRODUCCIÓN RECOLECTADA",
+      "Reserva para consumo propio",
+      "Venta fuera de las explotaciones"
+     ]
+    ],
+    "hits": [
+     [
+      33,
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL CULTIVOS": {
+    "rows": 68,
+    "head": [
+     [
+      "OTROS CULTIVOS LEÑOSOS "
+     ],
+     [],
+     [
+      " ",
+      "OTROS CULTIVOS LEÑOSOS",
+      ": Resumen nacional, 2024"
+     ],
+     [],
+     [
+      "Cultivos",
+      "SUPERFICIE EN PLANTACION REGULAR",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año ",
+      "Plantaciones nuevas en el año ",
+      "Abandonados (>5 años)"
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "RECOLECTADA",
+      "EN ÁRBOLES DISEMINADOS",
+      "PRODUCCIÓN BIOLOGICA",
+      "PRODUCCIÓN NO RECOLECTADA",
+      "PRODUCCIÓN RECOLECTADA",
+      "Reserva para consumo propio",
+      "Venta fuera de las explotaciones"
+     ]
+    ],
+    "hits": []
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 862551,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PCBC",
+      "Producción cosechada, biocombustibla",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "SCUS",
+      "Superficie cultivada de secano",
+      38819
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PRNC",
+      "Producción no cosechada",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "HURG",
+      "Humedad recogida del grano",
+      12.4
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      765
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      3316
+     ]
+    ],
+    "hits": [
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "TSUT",
+      "Total semilla utilizada",
+      44,
+      "01LG9100TSUT",
+      44
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRT",
+      "Area principal total",
+      295,
+      "01LG9100APRT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSRE",
+      "Superficie sembrada de regadío",
+      271,
+      "01LG9100SSRE",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSTO",
+      "Superficie sembrada total",
+      295,
+      "01LG9100SSTO",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUS",
+      "Superficie cultivada de secano",
+      24,
+      "01LG9100SCUS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUR",
+      "Superficie cultivada de regadío",
+      271,
+      "01LG9100SCUR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUT",
+      "Superficie cultivada de total",
+      295,
+      "01LG9100SCUT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOS",
+      "Superficie cosechada de secano",
+      24,
+      "01LG9100SCOS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOR",
+      "Superficie cosechada de regadío",
+      271,
+      "01LG9100SCOR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOT",
+      "Superficie cosechada de total",
+      295,
+      "01LG9100SCOT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCS",
+      "Rendimiento de la superficie cosechada secano",
+      1676,
+      "01LG9100RSCS",
+      1676
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCR",
+      "Rendimiento de la superficie cosechada regadío",
+      1300,
+      "01LG9100RSCR",
+      1300
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PTBG",
+      "Producción biológica total grano",
+      393,
+      "01LG9100PTBG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCOG",
+      "Producción cosechada, grano",
+      393,
+      "01LG9100PCOG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCPC",
+      "Producción cosechada, paja cosechada",
+      0,
+      "01LG9100PCPC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PRNC",
+      "Producción no cosechada",
+      0,
+      "01LG9100PRNC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "HURG",
+      "Humedad recogida del grano",
+      16,
+      "01LG9100HURG",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      1,
+      "01LG9100CPSE",
+      1
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      0,
+      "01LG9100CPAA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAH",
+      "Destino de la producción de grano, consumo propio, alimentación humana",
+      71,
+      "01LG9100CPAH",
+      71
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "VFEX",
+      "Ventas fuera de la explotación",
+      321,
+      "01LG9100VFEX",
+      321
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PEEX",
+      "Pérdidas de explotación",
+      0,
+      "01LG9100PEEX",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRS",
+      "Area principal secano",
+      24,
+      "01LG9100APRS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRR",
+      "Area principal regadío",
+      271,
+      "01LG9100APRR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSSE",
+      "Superficie sembrada de secano",
+      24,
+      "01LG9100SSSE",
+      24
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 25,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": []
+   }
+  }
+ },
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_leguminosas_formato_tabla_global-0.xlsx",
+  "title": "LEGUMINOSAS DATOS PROVISIONALES CAMPAÑA 2024",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 162,
+    "head": [
+     [
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      "LEGUMINOSAS"
+     ],
+     [],
+     [
+      " -  Judías secas no asociadas a maíz",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      "LEGUMINOSAS"
+     ],
+     [
+      " -  Judías secas no asociadas a maíz",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [
+      33,
+      " P. DE ASTURIAS",
+      775,
+      24,
+      799,
+      775,
+      24,
+      799,
+      775,
+      24,
+      799,
+      500,
+      1300,
+      419
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL": {
+    "rows": 103,
+    "head": [
+     [
+      "LEGUMINOSAS"
+     ],
+     [],
+     [
+      "CEREALES GRANO",
+      ": Resumen nacional , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      2653,
+      7002,
+      9655,
+      2653,
+      7000,
+      9653,
+      2636,
+      6987,
+      9623,
+      "-",
+      "-",
+      17113
+     ],
+     [
+      "LG9120",
+      " - Judías secas asociadas a maíz",
+      905,
+      59,
+      964,
+      905,
+      59,
+      964,
+      905,
+      59,
+      964,
+      "-",
+      "-",
+      1270
+     ],
+     [
+      "LG9100",
+      " Judías secas. Resumen general",
+      3558,
+      7061,
+      10619,
+      3558,
+      7059,
+      10617,
+      3541,
+      7046,
+      10587,
+      "-",
+      "-",
+      18383
+     ]
+    ]
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 862551,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PCBC",
+      "Producción cosechada, biocombustibla",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "SCUS",
+      "Superficie cultivada de secano",
+      38819
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PRNC",
+      "Producción no cosechada",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "HURG",
+      "Humedad recogida del grano",
+      12.4
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      765
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      3316
+     ]
+    ],
+    "hits": [
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "TSUT",
+      "Total semilla utilizada",
+      44,
+      "01LG9100TSUT",
+      44
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRT",
+      "Area principal total",
+      295,
+      "01LG9100APRT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSRE",
+      "Superficie sembrada de regadío",
+      271,
+      "01LG9100SSRE",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSTO",
+      "Superficie sembrada total",
+      295,
+      "01LG9100SSTO",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUS",
+      "Superficie cultivada de secano",
+      24,
+      "01LG9100SCUS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUR",
+      "Superficie cultivada de regadío",
+      271,
+      "01LG9100SCUR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUT",
+      "Superficie cultivada de total",
+      295,
+      "01LG9100SCUT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOS",
+      "Superficie cosechada de secano",
+      24,
+      "01LG9100SCOS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOR",
+      "Superficie cosechada de regadío",
+      271,
+      "01LG9100SCOR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOT",
+      "Superficie cosechada de total",
+      295,
+      "01LG9100SCOT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCS",
+      "Rendimiento de la superficie cosechada secano",
+      1676,
+      "01LG9100RSCS",
+      1676
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCR",
+      "Rendimiento de la superficie cosechada regadío",
+      1300,
+      "01LG9100RSCR",
+      1300
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PTBG",
+      "Producción biológica total grano",
+      393,
+      "01LG9100PTBG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCOG",
+      "Producción cosechada, grano",
+      393,
+      "01LG9100PCOG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCPC",
+      "Producción cosechada, paja cosechada",
+      0,
+      "01LG9100PCPC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PRNC",
+      "Producción no cosechada",
+      0,
+      "01LG9100PRNC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "HURG",
+      "Humedad recogida del grano",
+      16,
+      "01LG9100HURG",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      1,
+      "01LG9100CPSE",
+      1
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      0,
+      "01LG9100CPAA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAH",
+      "Destino de la producción de grano, consumo propio, alimentación humana",
+      71,
+      "01LG9100CPAH",
+      71
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "VFEX",
+      "Ventas fuera de la explotación",
+      321,
+      "01LG9100VFEX",
+      321
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PEEX",
+      "Pérdidas de explotación",
+      0,
+      "01LG9100PEEX",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRS",
+      "Area principal secano",
+      24,
+      "01LG9100APRS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRR",
+      "Area principal regadío",
+      271,
+      "01LG9100APRR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSSE",
+      "Superficie sembrada de secano",
+      24,
+      "01LG9100SSSE",
+      24
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 28,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO",
+      "CLAVE"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": [
+     [
+      " -  Judías secas no asociadas a maíz",
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      "LG9110"
+     ],
+     [
+      " - Judías secas asociadas a maíz",
+      "LG9120",
+      " - Judías secas asociadas a maíz",
+      "LG9120"
+     ],
+     [
+      " Judías secas. Resumen general",
+      "LG9100",
+      " Judías secas. Resumen general",
+      "LG9100"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_frutales_no_citricos_formato_tabla_global.xlsx",
+  "title": "FRUTALES NO CITRICOS DATOS PROVISIONALES CAMPAÑA 2024",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 162,
+    "head": [
+     [
+      "NC1110",
+      " - Manzano para sidra",
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [],
+     [
+      " ",
+      " - Manzano para sidra",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN CULTIVO ÚNICO",
+      "SUPERFICIE EN CULTIVO ASOCIADO",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año "
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "SUPERFICIE EN PRODUCCION (ÚNICO + ASOCIADO)",
+      "SUPERFICIE RECOLECTADA (ÚNICO + ASOCIADO)",
+      "RECOLECTADA EN CULTIVO ÚNICO"
+     ]
+    ],
+    "hits": [
+     [
+      "NC1110",
+      " - Manzano para sidra",
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [
+      " ",
+      " - Manzano para sidra",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [
+      33,
+      " P. DE ASTURIAS",
+      1100,
+      65,
+      1165,
+      1100,
+      65,
+      1165,
+      1100,
+      65,
+      1165,
+      2865,
+      0,
+      2865
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL CULTIVOS": {
+    "rows": 136,
+    "head": [
+     [
+      "FRUTALES NO CÍTRICOS"
+     ],
+     [],
+     [
+      " ",
+      "FRUTALES NO CITRICOS",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "CULTIVOS ",
+      "SUPERFICIE EN CULTIVO ÚNICO",
+      "SUPERFICIE EN CULTIVO ASOCIADO",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año "
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "SUPERFICIE TOTAL (ÚNICO + ASOCIADO)",
+      "SUPERFICIE EN PRODUCCION (ÚNICO + ASOCIADO)",
+      "SUPERFICIE RECOLECTADA (ÚNICO + ASOCIADO)",
+      "RECOLECTADA EN CULTIVO ÚNICO"
+     ]
+    ],
+    "hits": [
+     [
+      "DE PEPITA",
+      "NC1110",
+      " - Manzano para sidra",
+      2887,
+      279,
+      3166,
+      2872,
+      202,
+      3074,
+      2872,
+      202,
+      3074,
+      4664,
+      451
+     ]
+    ]
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 862551,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PCBC",
+      "Producción cosechada, biocombustibla",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "SCUS",
+      "Superficie cultivada de secano",
+      38819
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PRNC",
+      "Producción no cosechada",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "HURG",
+      "Humedad recogida del grano",
+      12.4
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      765
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      3316
+     ]
+    ],
+    "hits": [
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "TSUT",
+      "Total semilla utilizada",
+      44,
+      "01LG9100TSUT",
+      44
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRT",
+      "Area principal total",
+      295,
+      "01LG9100APRT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSRE",
+      "Superficie sembrada de regadío",
+      271,
+      "01LG9100SSRE",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSTO",
+      "Superficie sembrada total",
+      295,
+      "01LG9100SSTO",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUS",
+      "Superficie cultivada de secano",
+      24,
+      "01LG9100SCUS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUR",
+      "Superficie cultivada de regadío",
+      271,
+      "01LG9100SCUR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUT",
+      "Superficie cultivada de total",
+      295,
+      "01LG9100SCUT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOS",
+      "Superficie cosechada de secano",
+      24,
+      "01LG9100SCOS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOR",
+      "Superficie cosechada de regadío",
+      271,
+      "01LG9100SCOR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOT",
+      "Superficie cosechada de total",
+      295,
+      "01LG9100SCOT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCS",
+      "Rendimiento de la superficie cosechada secano",
+      1676,
+      "01LG9100RSCS",
+      1676
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCR",
+      "Rendimiento de la superficie cosechada regadío",
+      1300,
+      "01LG9100RSCR",
+      1300
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PTBG",
+      "Producción biológica total grano",
+      393,
+      "01LG9100PTBG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCOG",
+      "Producción cosechada, grano",
+      393,
+      "01LG9100PCOG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCPC",
+      "Producción cosechada, paja cosechada",
+      0,
+      "01LG9100PCPC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PRNC",
+      "Producción no cosechada",
+      0,
+      "01LG9100PRNC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "HURG",
+      "Humedad recogida del grano",
+      16,
+      "01LG9100HURG",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      1,
+      "01LG9100CPSE",
+      1
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      0,
+      "01LG9100CPAA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAH",
+      "Destino de la producción de grano, consumo propio, alimentación humana",
+      71,
+      "01LG9100CPAH",
+      71
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "VFEX",
+      "Ventas fuera de la explotación",
+      321,
+      "01LG9100VFEX",
+      321
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PEEX",
+      "Pérdidas de explotación",
+      0,
+      "01LG9100PEEX",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRS",
+      "Area principal secano",
+      24,
+      "01LG9100APRS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRR",
+      "Area principal regadío",
+      271,
+      "01LG9100APRR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSSE",
+      "Superficie sembrada de secano",
+      24,
+      "01LG9100SSSE",
+      24
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 59,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": [
+     [
+      " - Manzano para sidra",
+      "NC1110",
+      " - Manzano para sidra"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_otros_lenosos_formato_tabla_global.xlsx",
+  "title": "OTROS CULTIVOS LEÑOSOS DATOS PROVISIONALES CAMPAÑA 2024",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 109,
+    "head": [
+     [
+      "XL1100",
+      "Alcaparra",
+      "OTROS CULTIVOS LEÑOSOS"
+     ],
+     [],
+     [
+      " ",
+      "Alcaparra",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "SUPERFICIE EN PLANTACION REGULAR",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año ",
+      "Plantaciones nuevas en el año ",
+      "Abandonados (>5 años)"
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "RECOLECTADA",
+      "EN ÁRBOLES DISEMINADOS",
+      "PRODUCCIÓN BIOLOGICA",
+      "PRODUCCIÓN NO RECOLECTADA",
+      "PRODUCCIÓN RECOLECTADA",
+      "Reserva para consumo propio",
+      "Venta fuera de las explotaciones"
+     ]
+    ],
+    "hits": [
+     [
+      33,
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL CULTIVOS": {
+    "rows": 68,
+    "head": [
+     [
+      "OTROS CULTIVOS LEÑOSOS "
+     ],
+     [],
+     [
+      " ",
+      "OTROS CULTIVOS LEÑOSOS",
+      ": Resumen nacional, 2024"
+     ],
+     [],
+     [
+      "Cultivos",
+      "SUPERFICIE EN PLANTACION REGULAR",
+      "ÁRBOLES DISEMINADOS (en producción)",
+      "RENDIMIENTO ",
+      "PRODUCCIÓN",
+      "DESTINO DE LA PRODUCCION RECOLECTADA",
+      "ÁREA PRINCIPAL",
+      "Arranques en el año ",
+      "Plantaciones nuevas en el año ",
+      "Abandonados (>5 años)"
+     ],
+     [],
+     [
+      "SUPERFICIE TOTAL",
+      "SUPERFICIE EN PRODUCCION ",
+      "SUPERFICIE RECOLECTADA",
+      "RECOLECTADA",
+      "EN ÁRBOLES DISEMINADOS",
+      "PRODUCCIÓN BIOLOGICA",
+      "PRODUCCIÓN NO RECOLECTADA",
+      "PRODUCCIÓN RECOLECTADA",
+      "Reserva para consumo propio",
+      "Venta fuera de las explotaciones"
+     ]
+    ],
+    "hits": []
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 862551,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PCBC",
+      "Producción cosechada, biocombustibla",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "SCUS",
+      "Superficie cultivada de secano",
+      38819
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PRNC",
+      "Producción no cosechada",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "HURG",
+      "Humedad recogida del grano",
+      12.4
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      765
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      3316
+     ]
+    ],
+    "hits": [
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "TSUT",
+      "Total semilla utilizada",
+      44,
+      "01LG9100TSUT",
+      44
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRT",
+      "Area principal total",
+      295,
+      "01LG9100APRT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSRE",
+      "Superficie sembrada de regadío",
+      271,
+      "01LG9100SSRE",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSTO",
+      "Superficie sembrada total",
+      295,
+      "01LG9100SSTO",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUS",
+      "Superficie cultivada de secano",
+      24,
+      "01LG9100SCUS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUR",
+      "Superficie cultivada de regadío",
+      271,
+      "01LG9100SCUR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUT",
+      "Superficie cultivada de total",
+      295,
+      "01LG9100SCUT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOS",
+      "Superficie cosechada de secano",
+      24,
+      "01LG9100SCOS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOR",
+      "Superficie cosechada de regadío",
+      271,
+      "01LG9100SCOR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOT",
+      "Superficie cosechada de total",
+      295,
+      "01LG9100SCOT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCS",
+      "Rendimiento de la superficie cosechada secano",
+      1676,
+      "01LG9100RSCS",
+      1676
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCR",
+      "Rendimiento de la superficie cosechada regadío",
+      1300,
+      "01LG9100RSCR",
+      1300
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PTBG",
+      "Producción biológica total grano",
+      393,
+      "01LG9100PTBG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCOG",
+      "Producción cosechada, grano",
+      393,
+      "01LG9100PCOG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCPC",
+      "Producción cosechada, paja cosechada",
+      0,
+      "01LG9100PCPC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PRNC",
+      "Producción no cosechada",
+      0,
+      "01LG9100PRNC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "HURG",
+      "Humedad recogida del grano",
+      16,
+      "01LG9100HURG",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      1,
+      "01LG9100CPSE",
+      1
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      0,
+      "01LG9100CPAA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAH",
+      "Destino de la producción de grano, consumo propio, alimentación humana",
+      71,
+      "01LG9100CPAH",
+      71
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "VFEX",
+      "Ventas fuera de la explotación",
+      321,
+      "01LG9100VFEX",
+      321
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PEEX",
+      "Pérdidas de explotación",
+      0,
+      "01LG9100PEEX",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRS",
+      "Area principal secano",
+      24,
+      "01LG9100APRS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRR",
+      "Area principal regadío",
+      271,
+      "01LG9100APRR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSSE",
+      "Superficie sembrada de secano",
+      24,
+      "01LG9100SSSE",
+      24
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 25,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": []
+   }
+  }
+ },
+ {
+  "url": "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_leguminosas_formato_tabla_global-0.xlsx",
+  "title": "LEGUMINOSAS DATOS PROVISIONALES CAMPAÑA 2024",
+  "sheets": {
+   "TABLA GLOBAL SALIDAS ANUARIO": {
+    "rows": 162,
+    "head": [
+     [
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      "LEGUMINOSAS"
+     ],
+     [],
+     [
+      " -  Judías secas no asociadas a maíz",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      "LEGUMINOSAS"
+     ],
+     [
+      " -  Judías secas no asociadas a maíz",
+      ": Análisis provincial detallado , 2024"
+     ],
+     [
+      33,
+      " P. DE ASTURIAS",
+      775,
+      24,
+      799,
+      775,
+      24,
+      799,
+      775,
+      24,
+      799,
+      500,
+      1300,
+      419
+     ]
+    ]
+   },
+   "TABLA GLOBAL NACIONAL": {
+    "rows": 103,
+    "head": [
+     [
+      "LEGUMINOSAS"
+     ],
+     [],
+     [
+      "CEREALES GRANO",
+      ": Resumen nacional , 2024"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      2653,
+      7002,
+      9655,
+      2653,
+      7000,
+      9653,
+      2636,
+      6987,
+      9623,
+      "-",
+      "-",
+      17113
+     ],
+     [
+      "LG9120",
+      " - Judías secas asociadas a maíz",
+      905,
+      59,
+      964,
+      905,
+      59,
+      964,
+      905,
+      59,
+      964,
+      "-",
+      "-",
+      1270
+     ],
+     [
+      "LG9100",
+      " Judías secas. Resumen general",
+      3558,
+      7061,
+      10619,
+      3558,
+      7059,
+      10617,
+      3541,
+      7046,
+      10587,
+      "-",
+      "-",
+      18383
+     ]
+    ]
+   },
+   "BD_HORTALIZAS-NO": {
+    "rows": 862551,
+    "head": [
+     [
+      "PRO_ID",
+      "PRO_DESCRIPCION",
+      "CSP_PST_ID",
+      "CSP_PST_TXTCORTO",
+      "CSP_DCW_VERSION",
+      "CSP_DCW_AB1234",
+      "CSP_CLV_TXT_FORMULARIO",
+      "CSP_DCW_TXYZ",
+      "CSP_CVR_DESCRIPCION",
+      "CSP_DCW_VALOR"
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PCBC",
+      "Producción cosechada, biocombustibla",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "SCUS",
+      "Superficie cultivada de secano",
+      38819
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "PRNC",
+      "Producción no cosechada",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "HURG",
+      "Humedad recogida del grano",
+      12.4
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      765
+     ],
+     [
+      1,
+      "Araba/Álava",
+      1,
+      "Cereales",
+      1,
+      "CE0000",
+      "TOTAL CEREALES GRANO",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      3316
+     ]
+    ],
+    "hits": [
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "TSUT",
+      "Total semilla utilizada",
+      44,
+      "01LG9100TSUT",
+      44
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRT",
+      "Area principal total",
+      295,
+      "01LG9100APRT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSRE",
+      "Superficie sembrada de regadío",
+      271,
+      "01LG9100SSRE",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSTO",
+      "Superficie sembrada total",
+      295,
+      "01LG9100SSTO",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUS",
+      "Superficie cultivada de secano",
+      24,
+      "01LG9100SCUS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUR",
+      "Superficie cultivada de regadío",
+      271,
+      "01LG9100SCUR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCUT",
+      "Superficie cultivada de total",
+      295,
+      "01LG9100SCUT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOS",
+      "Superficie cosechada de secano",
+      24,
+      "01LG9100SCOS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOR",
+      "Superficie cosechada de regadío",
+      271,
+      "01LG9100SCOR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SCOT",
+      "Superficie cosechada de total",
+      295,
+      "01LG9100SCOT",
+      295
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCS",
+      "Rendimiento de la superficie cosechada secano",
+      1676,
+      "01LG9100RSCS",
+      1676
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "RSCR",
+      "Rendimiento de la superficie cosechada regadío",
+      1300,
+      "01LG9100RSCR",
+      1300
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PTBG",
+      "Producción biológica total grano",
+      393,
+      "01LG9100PTBG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCOG",
+      "Producción cosechada, grano",
+      393,
+      "01LG9100PCOG",
+      393
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PCPC",
+      "Producción cosechada, paja cosechada",
+      0,
+      "01LG9100PCPC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PRNC",
+      "Producción no cosechada",
+      0,
+      "01LG9100PRNC",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "HURG",
+      "Humedad recogida del grano",
+      16,
+      "01LG9100HURG",
+      16
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPSE",
+      "Destino de la producción de grano, consumo propio, semilla",
+      1,
+      "01LG9100CPSE",
+      1
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAA",
+      "Destino de la producción de grano, consumo propio, alimentación animal",
+      0,
+      "01LG9100CPAA",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "CPAH",
+      "Destino de la producción de grano, consumo propio, alimentación humana",
+      71,
+      "01LG9100CPAH",
+      71
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "VFEX",
+      "Ventas fuera de la explotación",
+      321,
+      "01LG9100VFEX",
+      321
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "PEEX",
+      "Pérdidas de explotación",
+      0,
+      "01LG9100PEEX",
+      0
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRS",
+      "Area principal secano",
+      24,
+      "01LG9100APRS",
+      24
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "APRR",
+      "Area principal regadío",
+      271,
+      "01LG9100APRR",
+      271
+     ],
+     [
+      1,
+      "Araba/Álava",
+      2,
+      "Leguminosas",
+      1,
+      "LG9100",
+      " Judías secas. Resumen general",
+      "SSSE",
+      "Superficie sembrada de secano",
+      24,
+      "01LG9100SSSE",
+      24
+     ]
+    ]
+   },
+   "TABLA GLOBAL ": {
+    "rows": 161,
+    "head": [
+     [
+      "CEREALES"
+     ],
+     [],
+     [
+      "\"XXXXX(CULTIVO)\": Análisis provincial detallado , 202X"
+     ],
+     [],
+     [
+      "Provincias y Comunidades Autónomas",
+      "Superficie",
+      "Rendimiento superficie cosechada",
+      "Producción",
+      "Humedad",
+      "Destino de la producción de grano en las explotaciones productoras",
+      "Área principal",
+      "Total semilla utilizada"
+     ],
+     [],
+     [
+      "Superficie sembrada",
+      "Superficie cultivada",
+      "Superficie cosechada",
+      "Producción biológica",
+      "Producción cosechada",
+      "Producción no cosechada",
+      "Humedad recogida (Grano)",
+      "Reserva para consumo propio",
+      "Ventas fuera de las explotaciones",
+      "Pérdida en explotacion "
+     ]
+    ],
+    "hits": [
+     [
+      " P. DE ASTURIAS",
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "LISTA": {
+    "rows": 28,
+    "head": [
+     [],
+     [],
+     [
+      "CULTIVO",
+      "CLAVE",
+      "CULTIVO",
+      "CLAVE"
+     ],
+     [],
+     [],
+     [],
+     []
+    ],
+    "hits": [
+     [
+      " -  Judías secas no asociadas a maíz",
+      "LG9110",
+      " -  Judías secas no asociadas a maíz",
+      "LG9110"
+     ],
+     [
+      " - Judías secas asociadas a maíz",
+      "LG9120",
+      " - Judías secas asociadas a maíz",
+      "LG9120"
+     ],
+     [
+      " Judías secas. Resumen general",
+      "LG9100",
+      " Judías secas. Resumen general",
+      "LG9100"
+     ]
+    ]
+   }
+  }
+ }
+]
