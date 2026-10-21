@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-21T17:37:37.384Z",
+  "generatedAt": "2026-10-21T17:39:09.661Z",
   "status": "informational",
   "rules": [
     {
@@ -99,6 +99,24 @@
       "sourceId": "statcan",
       "severity": "watch",
       "changePct": -8.56,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "lenteja",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "changePct": -7.47,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "guisante_seco",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "high",
+      "changePct": -16.04,
       "observationDate": "2026-08-01"
     },
     {
