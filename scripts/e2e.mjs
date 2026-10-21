@@ -53,7 +53,7 @@ const PAGES = [
   { n: 'produccion-mundial', url: '/produccion-mundial.html?p=trigo&c=US', crit: ['#pm-panel .pm-top li', '#pm-lideres .pm-lt'] },
   { n: 'comercio-pais', url: '/comercio-pais.html?c=ES', crit: ['#ct-panel .pm-top li', '#ct-productos .pm-lt'] },
   { n: 'monitor-insumos', url: '/monitor-insumos.html', crit: ['#mi-ratio', '#mi-g-nitrogen'] },
-  { n: 'monitor-insumos-fr', url: '/monitor-insumos.html?c=FR', crit: ['#mi-ratio', '#mi-g-fert', '.cp-chips'] },
+  { n: 'monitor-insumos-fr', url: '/monitor-insumos.html?c=FR', crit: ['#mi-ratio', '#mi-g-fert', '.cp-b'] },
   { n: 'costes-pais', url: '/costes-pais.html?c=ES', crit: ['#cp-panel .cp-tile', '#cp-costes .cp-tbl'] },
   { n: 'pesca', url: '/pesca.html?c=ES', crit: ['#fsh-body .fsh-kpis', '#fsh-body .fsh-tbl'] },
   { n: 'ganaderia', url: '/ganaderia.html', crit: [] },

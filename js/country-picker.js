@@ -8,10 +8,10 @@
   var EU = set('AL AD AM BA BY CH CZ DK GB UK GE HU IS LI MC MD ME MK NO PL RO RS RU SE SM TR UA VA XK');
   var AM = set('US CA MX AR BR CL CO PE UY PY BO EC VE CR PA GT HN NI SV DO CU JM HT BS BB BZ GY SR TT');
   var T = {
-    es: { ez: 'Zona euro', eu: 'Resto de Europa', am: 'América', ow: 'Resto del mundo', ot: 'Otras opciones', q: 'Buscar país…', none: 'Sin resultados' },
-    en: { ez: 'Euro area', eu: 'Rest of Europe', am: 'Americas', ow: 'Rest of the world', ot: 'Other options', q: 'Search country…', none: 'No results' },
-    fr: { ez: 'Zone euro', eu: 'Reste de l’Europe', am: 'Amériques', ow: 'Reste du monde', ot: 'Autres options', q: 'Rechercher un pays…', none: 'Aucun résultat' },
-    it: { ez: 'Area euro', eu: 'Resto d’Europa', am: 'Americhe', ow: 'Resto del mondo', ot: 'Altre opzioni', q: 'Cerca paese…', none: 'Nessun risultato' }
+    es: { rec: 'Recientes', ez: 'Zona euro', eu: 'Resto de Europa', am: 'América', ow: 'Resto del mundo', ot: 'Otras opciones', q: 'Buscar país…', none: 'Sin resultados' },
+    en: { rec: 'Recent', ez: 'Euro area', eu: 'Rest of Europe', am: 'Americas', ow: 'Rest of the world', ot: 'Other options', q: 'Search country…', none: 'No results' },
+    fr: { rec: 'Récents', ez: 'Zone euro', eu: 'Reste de l’Europe', am: 'Amériques', ow: 'Reste du monde', ot: 'Autres options', q: 'Rechercher un pays…', none: 'Aucun résultat' },
+    it: { rec: 'Recenti', ez: 'Area euro', eu: 'Resto d’Europa', am: 'Americhe', ow: 'Resto del mondo', ot: 'Altre opzioni', q: 'Cerca paese…', none: 'Nessun risultato' }
   };
   function lg() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return T[l] ? l : 'es'; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -61,6 +61,21 @@
     }
     b.onclick = function () { if (open) { close(); return; } var q = build(); pn.hidden = false; open = true; b.setAttribute('aria-expanded', 'true'); document.addEventListener('click', away, true); document.addEventListener('keydown', key, true); place(); window.addEventListener('resize', place); window.addEventListener('scroll', place, true); if (q) q.focus(); };
     sel.addEventListener('change', text); text();
+    /* data-cprecent="clave": linea «Recientes» con los ultimos paises elegidos en esa pagina (solo en este navegador) */
+    var rk = sel.getAttribute('data-cprecent');
+    if (rk) {
+      rk = 'di-cp-recent-' + rk; var rl = function () { try { var v = JSON.parse(localStorage.getItem(rk) || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; } };
+      var rs = document.createElement('span'); rs.className = 'cp-rec';
+      var draw = function () {
+        var cur = sel.value, idx = {}; Array.prototype.forEach.call(sel.options, function (o) { idx[o.value] = o; });
+        var l = rl().filter(function (v) { return v !== cur && idx[v]; }).slice(0, 3);
+        rs.hidden = !l.length; rs.innerHTML = l.length ? esc(T[lg()].rec) + ': ' + l.map(function (v) { return '<button type="button" class="cp-rl" data-v="' + esc(v) + '">' + esc(strip(idx[v].textContent.trim()).replace(/^[\uD83C][\uDDE6-\uDDFF][\uD83C][\uDDE6-\uDDFF]\s*/, '')) + '</button>'; }).join(' · ') : '';
+        Array.prototype.forEach.call(rs.querySelectorAll('.cp-rl'), function (x) { x.onclick = function () { sel.value = x.getAttribute('data-v'); text(); sel.dispatchEvent(new Event('change', { bubbles: true })); }; });
+      };
+      var push = function () { var l = rl().filter(function (v) { return v !== sel.value; }); l.unshift(sel.value); try { localStorage.setItem(rk, JSON.stringify(l.slice(0, 4))); } catch (e) { } };
+      sel.addEventListener('change', function () { push(); draw(); });
+      push(); w.parentNode.insertBefore(rs, w.nextSibling); draw();   // el pais con el que se abre tambien cuenta: asi se puede volver a el
+    }
   }
   function scan(root) { var r = root && root.querySelectorAll ? root : document; Array.prototype.forEach.call(r.querySelectorAll('select[data-cpick]'), enhance); if (r.matches && r.matches('select[data-cpick]')) enhance(r); }
   scan(document);

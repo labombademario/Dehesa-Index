@@ -2980,3 +2980,5 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .ex-opt { position: relative; padding-right: 92px; }
 .ex-sp { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--accent, #2f6f4f); line-height: 0; }
 .ex-os { font-size: 12px; }
+
+.cp-rec{font-size:13px;color:var(--text-muted,#55645a)}.cp-rec .cp-rl{font:inherit;border:0;background:none;padding:6px 2px;color:var(--accent,#1f4d3a);text-decoration:underline;cursor:pointer;min-height:32px}

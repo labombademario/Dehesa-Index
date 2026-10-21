@@ -197,10 +197,10 @@
     cell.innerHTML = '<div style="font-weight:600;margin:6px 0">' + esc(nm(x.name)) + ' · ' + esc(unitShort(x.unit)) + '</div>' + (window.DehesaChart && window.DehesaChart.render && pts.length > 2 ? window.DehesaChart.render({ series: [{ name: nm(x.name), color: '#8a2d2d', pts: pts }], xMode: 'time', yTitle: unitShort(x.unit), aria: nm(x.name), zero: false, noLegend: true, vFmt: function (v) { return v == null ? '—' : num(v, dec(v, x.unit)); } }) : '');
     row.removeAttribute('hidden'); ae('true');
   }
-  function chips() {
+  function chips() {   // selector compacto de la web (js/country-picker.js): boton con buscador y grupos, en vez de una pared de botones
     var X1 = xt(), list = [{ cc: 'ES' }].concat((INDEX && INDEX.countries) || []);
-    return '<div class="mi-how" style="display:block;margin-bottom:14px"><div class="mi-m" style="margin:0 0 6px;font-weight:600">' + esc(X1.country) + '</div><div class="cp-chips" role="group" aria-label="' + esc(X1.country) + '" style="display:flex;flex-wrap:wrap;gap:6px">' +
-      list.map(function (c) { return '<button type="button" class="cp-chip" data-cc="' + c.cc + '" aria-pressed="' + (c.cc === CC) + '">' + flag(c.cc) + ' ' + esc(cname(c.cc)) + '</button>'; }).join('') + '</div></div>';
+    return '<div class="mi-how cp-pick" style="display:flex;margin-bottom:14px"><label class="cp-lab" for="mi-cc">' + esc(X1.country) + '</label><select id="mi-cc" data-cpick data-cprecent="insumos" class="di-compare-select">' +
+      list.map(function (c) { return '<option value="' + c.cc + '"' + (c.cc === CC ? ' selected' : '') + '>' + flag(c.cc) + ' ' + esc(cname(c.cc)) + '</option>'; }).join('') + '</select></div>';
   }
   function render() {
     var w = t(), X1 = xt(), root = document.getElementById('mi-body'); if (!root) return;
@@ -223,7 +223,7 @@
     if (F && bh) F.bar(bh, w.barT, secs);
     var sel = document.getElementById('mi-g'); if (sel) sel.onchange = function (e) { GRAIN = e.target.value; render(); };
   }
-  function bindChips(root) { Array.prototype.forEach.call(root.querySelectorAll('[data-cc]'), function (b) { b.onclick = function () { setCountry(b.getAttribute('data-cc')); }; }); }
+  function bindChips(root) { var s = root.querySelector('#mi-cc'); if (!s) return; s.onchange = function () { setCountry(s.value); }; if (window.DehesaCountryPicker) window.DehesaCountryPicker.scan(root); }
   function getJ(u) { return fetch(S.sitePath(u), { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }); }
   function setCountry(cc, noPush) {
     CC = cc; FAILED = false; DOC = null;
