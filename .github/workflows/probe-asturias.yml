@@ -10,10 +10,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/probe/probe-asturias.py 2>&1 | tee probe.log
+      - run: python3 scripts/probe/probe-asturias2.py 2>&1 | tee probe2.log
       - if: always()
         run: |
-          mkdir -p probe-asturias-out; cp probe.log probe-asturias-out/ 2>/dev/null || true
+          mkdir -p probe-asturias-out; cp probe2.log probe-asturias-out/ 2>/dev/null || true
           git config user.name "dehesa-probe"; git config user.email "probe@users.noreply.github.com"
           git add -f probe-asturias-out; git commit -m "probe-asturias: resultados" || true
           for i in 1 2 3; do git fetch origin research/probe-asturias && git rebase origin/research/probe-asturias && git push origin HEAD:research/probe-asturias && break; sleep 5; done
