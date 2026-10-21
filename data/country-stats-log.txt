@@ -58,8 +58,8 @@ Series: {'DK': 59, 'NL': 67, 'AU': 89}
   dk-stock-maize-farms | Maize: stocks on farms at 30 June (annual survey, KORN2) | 2025 20.4 | n= 12 | first 2014
   dk-stock-wheat-yearend | Wheat: stocks at year end (KORN) | 2025 2751.0 | n= 31 | first 1995
   dk-stock-barley-yearend | Barley: stocks at year end (KORN) | 2025 3076.0 | n= 31 | first 1995
-  nl-milk-supply | Milk supply to dairy factories | 2026-07 1194774.0 | n= 379 | first 1995-01
-  nl-cheese-prod | Cheese production (dairy factories) | 2026-07 78431.0 | n= 379 | first 1995-01
+  nl-milk-supply | Milk supply to dairy factories | 2026-08 1169011.0 | n= 380 | first 1995-01
+  nl-cheese-prod | Cheese production (dairy factories) | 2026-08 81706.0 | n= 380 | first 1995-01
   nl-wheat-prod | Wheat: production | 2026 1069291.0 | n= 33 | first 1994
   nl-wheat-area | Wheat: area under cultivation | 2026 114214.0 | n= 33 | first 1994
   nl-wheat-yield | Wheat: gross yield per ha | 2026 9.4 | n= 33 | first 1994
@@ -78,46 +78,46 @@ Series: {'DK': 59, 'NL': 67, 'AU': 89}
   nl-grain-maize-prod | Grain maize: production | 2025 97158.0 | n= 31 | first 1994
   nl-grain-maize-area | Grain maize: area under cultivation | 2026 7904.0 | n= 33 | first 1994
   nl-grain-maize-yield | Grain maize: gross yield per ha | 2025 11.4 | n= 31 | first 1994
-  nl-animals-A028972 | Livestock on holdings: Cattle (total) | 2025-12 3549.0 | n= 16 | first 2018-04
+  nl-animals-A028972 | Livestock on holdings: Cattle (total) | 2026-04 3551.0 | n= 17 | first 2018-04
   nl-animals-A028977 | Livestock on holdings: Young cattle for milk (total) | 2026-04 884.0 | n= 17 | first 2018-04
   nl-animals-A043973 | Livestock on holdings: Young cattle for milk, < 1 year, female | 2026-04 414.0 | n= 17 | first 2018-04
   nl-animals-A043974 | Livestock on holdings: Young cattle for milk, < 1 year, male | 2026-04 39.0 | n= 17 | first 2018-04
   nl-animals-A043975 | Livestock on holdings: Young cattle for milk, 1-2 years, female | 2026-04 360.0 | n= 17 | first 2018-04
   nl-animals-A043976 | Livestock on holdings: Young cattle for milk, 1-2 years, male | 2026-04 7.0 | n= 17 | first 2018-04
   nl-animals-A043977 | Livestock on holdings: Young cattle for milk, >= 2 years, fem. | 2026-04 63.0 | n= 17 | first 2018-04
-  nl-animals-A028975 | Livestock on holdings: Dairy cows (>= 2 years) | 2026-04 1512.0 | n= 17 | first 2018-04
-  nl-animals-A028979 | Livestock on holdings: Veal calves (total) | 2026-04 873.0 | n= 17 | first 2018-04
+  nl-animals-A028975 | Livestock on holdings: Dairy cows (>= 2 years) | 2026-04 1511.0 | n= 17 | first 2018-04
+  nl-animals-A028979 | Livestock on holdings: Veal calves (total) | 2026-04 874.0 | n= 17 | first 2018-04
   nl-animals-A043978 | Livestock on holdings: Calves for rosé meat (< 1 year) | 2026-04 316.0 | n= 17 | first 2018-04
-  nl-animals-A043979 | Livestock on holdings: Calves for white meat (< 1 year) | 2026-04 557.0 | n= 17 | first 2018-04
-  nl-animals-A043980 | Livestock on holdings: Young cattle for meat (total) | 2025-12 186.0 | n= 16 | first 2018-04
-  nl-animals-A043981 | Livestock on holdings: Young cattle for meat < 1 year, female | 2025-12 40.0 | n= 16 | first 2018-04
-  nl-animals-A043982 | Livestock on holdings: Young cattle for meat < 1 year, male | 2025-12 43.0 | n= 16 | first 2018-04
-  nl-animals-A043983 | Livestock on holdings: Young cattle for meat 1-2 years, female | 2025-12 42.0 | n= 16 | first 2018-04
-  nl-animals-A043984 | Livestock on holdings: Young cattle for meat 1-2 years, male | 2025-12 36.0 | n= 16 | first 2018-04
-  nl-animals-A043985 | Livestock on holdings: Young cattle for meat >= 2 years, female | 2025-12 25.0 | n= 16 | first 2018-04
+  nl-animals-A043979 | Livestock on holdings: Calves for white meat (< 1 year) | 2026-04 558.0 | n= 17 | first 2018-04
+  nl-animals-A043980 | Livestock on holdings: Young cattle for meat (total) | 2026-04 221.0 | n= 17 | first 2018-04
+  nl-animals-A043981 | Livestock on holdings: Young cattle for meat < 1 year, female | 2026-04 59.0 | n= 17 | first 2018-04
+  nl-animals-A043982 | Livestock on holdings: Young cattle for meat < 1 year, male | 2026-04 52.0 | n= 17 | first 2018-04
+  nl-animals-A043983 | Livestock on holdings: Young cattle for meat 1-2 years, female | 2026-04 48.0 | n= 17 | first 2018-04
+  nl-animals-A043984 | Livestock on holdings: Young cattle for meat 1-2 years, male | 2026-04 36.0 | n= 17 | first 2018-04
+  nl-animals-A043985 | Livestock on holdings: Young cattle for meat >= 2 years, female | 2026-04 27.0 | n= 17 | first 2018-04
   nl-animals-A028976 | Livestock on holdings: Other cattle (total) | 2026-04 48.0 | n= 17 | first 2018-04
   nl-animals-A028982 | Livestock on holdings: Bulls (>= 2 years) (total) | 2026-04 14.0 | n= 17 | first 2018-04
-  nl-animals-A028984 | Livestock on holdings: Sheep (total) | 2025-12 602.0 | n= 16 | first 2018-04
-  nl-animals-A047792 | Livestock on holdings: Sheep 0 to 7 months | 2025-12 86.0 | n= 16 | first 2018-04
+  nl-animals-A028984 | Livestock on holdings: Sheep (total) | 2026-04 699.0 | n= 17 | first 2018-04
+  nl-animals-A047792 | Livestock on holdings: Sheep 0 to 7 months | 2026-04 231.0 | n= 17 | first 2018-04
   nl-animals-A047790 | Livestock on holdings: Sheep for milking 7 months to 1 year | 2026-04 1.0 | n= 17 | first 2018-04
   nl-animals-A047791 | Livestock on holdings: Sheep for milking older than 1 year | 2026-04 9.0 | n= 17 | first 2018-04
   nl-animals-A047785 | Livestock on holdings: Other sheep 7 months to 1 year | 2026-04 83.0 | n= 17 | first 2018-04
   nl-animals-A047786 | Livestock on holdings: Other sheep older than 1 year | 2026-04 356.0 | n= 17 | first 2018-04
   nl-animals-A047787 | Livestock on holdings: Rams >= 7 months | 2026-04 20.0 | n= 17 | first 2018-04
-  nl-animals-A028985 | Livestock on holdings: Goats (total) | 2025-12 553.0 | n= 16 | first 2018-04
-  nl-animals-A047772 | Livestock on holdings: Goats 0 to 7 months | 2025-12 33.0 | n= 16 | first 2018-04
+  nl-animals-A028985 | Livestock on holdings: Goats (total) | 2026-04 620.0 | n= 17 | first 2018-04
+  nl-animals-A047772 | Livestock on holdings: Goats 0 to 7 months | 2026-04 137.0 | n= 17 | first 2018-04
   nl-animals-A047777 | Livestock on holdings: Dairy goats 7 months to 1 year | 2026-04 30.0 | n= 17 | first 2018-04
-  nl-animals-A043995 | Livestock on holdings: Dairy goats 1 year or older | 2026-04 432.0 | n= 17 | first 2018-04
+  nl-animals-A043995 | Livestock on holdings: Dairy goats 1 year or older | 2026-04 431.0 | n= 17 | first 2018-04
   nl-animals-A047784 | Livestock on holdings: Other goats 7 months to 1 year | 2026-04 1.0 | n= 17 | first 2018-04
   nl-animals-A043997 | Livestock on holdings: Other goats 1 year or older | 2026-04 10.0 | n= 17 | first 2018-04
   nl-animals-A047767 | Livestock on holdings: Male goats 7 months or older | 2026-04 10.0 | n= 17 | first 2018-04
-  nl-animals-A028996 | Livestock on holdings: Chickens (total) | 2025-12 81379.0 | n= 16 | first 2018-04
-  nl-animals-A028997 | Livestock on holdings: Laying hens (total) | 2025-12 37560.0 | n= 16 | first 2018-04
-  nl-animals-A044003 | Livestock on holdings: Laying hens for rearing | 2025-12 7469.0 | n= 16 | first 2018-04
-  nl-animals-A044004 | Livestock on holdings: Laying hens for production (< 20 months) | 2025-12 25434.0 | n= 16 | first 2018-04
-  nl-animals-A044005 | Livestock on holdings: Laying hens for production (>=20 months) | 2025-12 4658.0 | n= 16 | first 2018-04
-  nl-animals-A044006 | Livestock on holdings: Breeding stock for laying hens (total) | 2025-12 1433.0 | n= 16 | first 2018-04
-  nl-animals-A047778 | Livestock on holdings: Breeding stock for laying hens, rearing | 2025-12 422.0 | n= 16 | first 2018-04
+  nl-animals-A028996 | Livestock on holdings: Chickens (total) | 2026-04 82510.0 | n= 17 | first 2018-04
+  nl-animals-A028997 | Livestock on holdings: Laying hens (total) | 2026-04 38385.0 | n= 17 | first 2018-04
+  nl-animals-A044003 | Livestock on holdings: Laying hens for rearing | 2026-04 8936.0 | n= 17 | first 2018-04
+  nl-animals-A044004 | Livestock on holdings: Laying hens for production (< 20 months) | 2026-04 23183.0 | n= 17 | first 2018-04
+  nl-animals-A044005 | Livestock on holdings: Laying hens for production (>=20 months) | 2026-04 6266.0 | n= 17 | first 2018-04
+  nl-animals-A044006 | Livestock on holdings: Breeding stock for laying hens (total) | 2026-04 1586.0 | n= 17 | first 2018-04
+  nl-animals-A047778 | Livestock on holdings: Breeding stock for laying hens, rearing | 2026-04 394.0 | n= 17 | first 2018-04
   nl-manure-totalexcretion-T001263 | Livestock manure (Total manure types): total excretion | 2025 74130.0 | n= 48 | first 1950
   nl-manure-totalexcretion-A028942 | Livestock manure (Nitrogen (N)): total excretion | 2025 440.0 | n= 41 | first 1980
   nl-manure-totalexcretion-A028943 | Livestock manure (Phosphate (P205)): total excretion | 2025 142.0 | n= 48 | first 1950
