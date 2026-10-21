@@ -1,0 +1,531 @@
+== sspm-exportaciones-por-provincia-por-pais-destino ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+== agroindustria-producciones-sostenibles---emisiones-gei-provenientes-agricultura-ganaderia-otros ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+## 'importaciones pais origen' ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+## 'exportaciones pais destino' ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+## 'intercambio comercial' ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+## 'emisiones gases efecto invernadero' ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+## 'inventario gei' ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+## 'sequia' ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+## 'reservas agua suelo' ERROR Expecting value: line 1 column 1 (char 0) ERROR TimeoutError('The read operation timed out')
+>> https://drought.emergency.copernicus.eu/data/Drought_Observatories_datasets/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Under maintenance | Drought Observatories</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!--
+        Static maintenance page for the European & Global Drought Observatories.
+        Fully self-contained (inline CSS, inline logos) so it renders even when
+        Laravel, PHP or the /css and /images assets are unavailable.
+        Header, title bar, content card and footer reproduce the live site's CCL
+        "emergency" theme (resources/views/components/{layout,header,footer}.blade.php,
+        public/css/{template,styles,colors,adapter,product,footer}.css) without the menu.
+    -->
+    <style>
+        :root {
+            --amber: #faa73e;
+            --text: #212529;
+            --link: #ac4800;
+            --footer-bottom: #31409d;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { font-size: 18px; }
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text);
+            background: #fff;
+        }
+
+        a { color: var(--link); text-decoration: none; }
+
+        a:hover { text-decoration: underline; }
+
+        .ccl-container {
+            max-width: 1400px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Header (.ccl-header) — amber tools strip + white logos bar, menu omitted */
+        .ccl-header-tools {
+            background: var(--amber);
+            height: 12px;
+        }
+
+        .ccl-header-nav { background: #fff; padding: 0 1.1111111111rem; }
+
+        .ccl-header-logos-container {
+            display: flex;
+            align-items: center;
+            margin: 1.0555555556rem 0;
+        }
+
+        .ccl-header-logo-container {
+            position: relative;
+            display: flex;
+            height: 2.7777777778rem;
+            margin: 0 1.1111111111rem 0 0;
+        }
+
+        .ccl-header-logo { height: 2.7777777778rem; width: auto; display: block; }
+
+        .ccl-header-logo-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 38.2%;
+            height: 100%;
+        }
+
+        .ccl-service-button {
+            display: flex;
+            align-items: center;
+            height: 2.7777777778rem;
+            padding: 0.3rem;
+            border-radius: 0.5555555556rem;
+            text-decoration: none;
+            transition: background-color .2s ease-in-out;
+        }
+
+        .ccl-service-button:hover { background: var(--amber); text-decoration: none; }
+
+        .ccl-service-button:hover path { fill: #fff; }
+
+        .ccl-service-button:hover .ccl-service-button-label { color: #fff; }
+
+        .ccl-service-button-icon { width: 2.7777777778rem; height: 100%; flex: none; }
+
+        .ccl-service-button-label {
+            color: var(--amber);
+            font-family: Arial, sans-serif;
+            font-size: 1.1111111111rem;
+            font-weight: 700;
+            line-height: 1.2777777778rem;
+            letter-spacing: -0.01rem;
+            text-align: left;
+        }
+
+        .ccl-drought-icon { width: 64px; height: 64px; margin-left: 5px; display: block; }
+
+        /* Title bar (.ccl-banner-top-bar) */
+        .ccl-banner-top-bar {
+            background: var(--amber);
+            color: #fff;
+            padding: 0 1.1111111111rem;
+        }
+
+        .ccl-banner-top-bar h1 {
+            margin: 0;
+            padding: 0.6666666667rem 0;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Content card (.main-content) */
+        main { flex: 1; padding: 0 1.1111111111rem; }
+
+        .main-content {
+            border: 2px solid var(--amber);
+            border-radius: 10px;
+            margin: 20px auto 3rem;
+            padding: 20px;
+        }
+
+        .main-content p { margin: 0 0 1rem; }
+
+        .main-content p:last-child { margin-bottom: 0; }
+
+        .main-content h2 {
+            margin: 0 0 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Footer (.ccl-footer) */
+        .ccl-footer-main {
+            background: var(--amber);
+            color: #fff;
+            padding: 2rem;
+        }
+
+        .ccl-footer-logo { text-align: center; margin-bottom: 3rem; }
+
+        .ccl-footer-logo svg { width: 18.3333333333rem; height: auto; }
+
+        .ccl-footer-cols {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+
+        .ccl-footer-col { width: 28%; }
+
+        .ccl-footer-col-title { font-weight: 700; margin-bottom: 0.5rem; }
+
+        .ccl-footer-col p { margin: 0 0 0.5rem; color: #fff; }
+
+        .ccl-footer-bottom {
+            background: var(--footer-bottom);
+            color: #fff;
+            padding: 0.8rem 1.1111111111rem;
+            font-size: 0.8888888889rem;
+            text-align: center;
+        }
+
+        @media (max-width: 1400px) {
+            .ccl-header-logos-container { margin: 2rem 0; }
+        }
+
+        @media (max-width: 900px) {
+            .ccl-footer-col { width: 100%; }
+            .ccl-footer-logo { margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 640px) {
+            .ccl-header-logos-container { flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1rem 0; }
+            .ccl-header-logo-container { margin: 0; }
+            .ccl-banner-top-bar h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+<header class="ccl-header">
+    <div class="ccl-header-tools"></div>
+    <div class="ccl-header-nav">
+        <div class="ccl-container">
+            <div class="ccl-header-logos-container">
+                
+>> https://drought.emergency.copernicus.eu/data/Drought_Observatories_datasets/GDO_Risk_of_Drought_Impact_for_Agriculture/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Under maintenance | Drought Observatories</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!--
+        Static maintenance page for the European & Global Drought Observatories.
+        Fully self-contained (inline CSS, inline logos) so it renders even when
+        Laravel, PHP or the /css and /images assets are unavailable.
+        Header, title bar, content card and footer reproduce the live site's CCL
+        "emergency" theme (resources/views/components/{layout,header,footer}.blade.php,
+        public/css/{template,styles,colors,adapter,product,footer}.css) without the menu.
+    -->
+    <style>
+        :root {
+            --amber: #faa73e;
+            --text: #212529;
+            --link: #ac4800;
+            --footer-bottom: #31409d;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { font-size: 18px; }
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text);
+            background: #fff;
+        }
+
+        a { color: var(--link); text-decoration: none; }
+
+        a:hover { text-decoration: underline; }
+
+        .ccl-container {
+            max-width: 1400px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Header (.ccl-header) — amber tools strip + white logos bar, menu omitted */
+        .ccl-header-tools {
+            background: var(--amber);
+            height: 12px;
+        }
+
+        .ccl-header-nav { background: #fff; padding: 0 1.1111111111rem; }
+
+        .ccl-header-logos-container {
+            display: flex;
+            align-items: center;
+            margin: 1.0555555556rem 0;
+        }
+
+        .ccl-header-logo-container {
+            position: relative;
+            display: flex;
+            height: 2.7777777778rem;
+            margin: 0 1.1111111111rem 0 0;
+        }
+
+        .ccl-header-logo { height: 2.7777777778rem; width: auto; display: block; }
+
+        .ccl-header-logo-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 38.2%;
+            height: 100%;
+        }
+
+        .ccl-service-button {
+            display: flex;
+            align-items: center;
+            height: 2.7777777778rem;
+            padding: 0.3rem;
+            border-radius: 0.5555555556rem;
+            text-decoration: none;
+            transition: background-color .2s ease-in-out;
+        }
+
+        .ccl-service-button:hover { background: var(--amber); text-decoration: none; }
+
+        .ccl-service-button:hover path { fill: #fff; }
+
+        .ccl-service-button:hover .ccl-service-button-label { color: #fff; }
+
+        .ccl-service-button-icon { width: 2.7777777778rem; height: 100%; flex: none; }
+
+        .ccl-service-button-label {
+            color: var(--amber);
+            font-family: Arial, sans-serif;
+            font-size: 1.1111111111rem;
+            font-weight: 700;
+            line-height: 1.2777777778rem;
+            letter-spacing: -0.01rem;
+            text-align: left;
+        }
+
+        .ccl-drought-icon { width: 64px; height: 64px; margin-left: 5px; display: block; }
+
+        /* Title bar (.ccl-banner-top-bar) */
+        .ccl-banner-top-bar {
+            background: var(--amber);
+            color: #fff;
+            padding: 0 1.1111111111rem;
+        }
+
+        .ccl-banner-top-bar h1 {
+            margin: 0;
+            padding: 0.6666666667rem 0;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Content card (.main-content) */
+        main { flex: 1; padding: 0 1.1111111111rem; }
+
+        .main-content {
+            border: 2px solid var(--amber);
+            border-radius: 10px;
+            margin: 20px auto 3rem;
+            padding: 20px;
+        }
+
+        .main-content p { margin: 0 0 1rem; }
+
+        .main-content p:last-child { margin-bottom: 0; }
+
+        .main-content h2 {
+            margin: 0 0 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Footer (.ccl-footer) */
+        .ccl-footer-main {
+            background: var(--amber);
+            color: #fff;
+            padding: 2rem;
+        }
+
+        .ccl-footer-logo { text-align: center; margin-bottom: 3rem; }
+
+        .ccl-footer-logo svg { width: 18.3333333333rem; height: auto; }
+
+        .ccl-footer-cols {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+
+        .ccl-footer-col { width: 28%; }
+
+        .ccl-footer-col-title { font-weight: 700; margin-bottom: 0.5rem; }
+
+        .ccl-footer-col p { margin: 0 0 0.5rem; color: #fff; }
+
+        .ccl-footer-bottom {
+            background: var(--footer-bottom);
+            color: #fff;
+            padding: 0.8rem 1.1111111111rem;
+            font-size: 0.8888888889rem;
+            text-align: center;
+        }
+
+        @media (max-width: 1400px) {
+            .ccl-header-logos-container { margin: 2rem 0; }
+        }
+
+        @media (max-width: 900px) {
+            .ccl-footer-col { width: 100%; }
+            .ccl-footer-logo { margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 640px) {
+            .ccl-header-logos-container { flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1rem 0; }
+            .ccl-header-logo-container { margin: 0; }
+            .ccl-banner-top-bar h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+<header class="ccl-header">
+    <div class="ccl-header-tools"></div>
+    <div class="ccl-header-nav">
+        <div class="ccl-container">
+            <div class="ccl-header-logos-container">
+                
+>> https://inventariogei.ambiente.gob.ar/
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Inventario Nacional de Gases de Efecto Invernadero y Monitoreo de Medidas de Mitigación</title>
+    <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+<meta http-equiv="X-UA-Compatible" content="IE&#x3D;edge">
+<meta name="description" content="El&#x20;Inventario&#x20;Nacional&#x20;de&#x20;Gases&#x20;de&#x20;Efecto&#x20;Invernadero&#x20;estima&#x20;anualmente&#x20;los&#x20;gases&#x20;emitidos&#x20;y&#x20;absorbidos&#x20;de&#x20;la&#x20;atm&#xF3;sfera&#x20;para&#x20;el&#x20;territorio&#x20;argentino.">
+    <!-- Le styles -->
+    <link href="&#x2F;img&#x2F;favicon-ambiente.png" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">
+<link href="&#x2F;bower_components&#x2F;c3&#x2F;c3.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;css&#x2F;styles.css&#x3F;ver&#x3D;7" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;css&#x2F;psd3.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <script>
+        var chart = '';
+    </script>
+
+    <!-- Scripts -->
+
+    <script type="text&#x2F;javascript" src="&#x2F;bower_components&#x2F;d3&#x2F;d3.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;bower_components&#x2F;chart.js&#x2F;dist&#x2F;Chart.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;bower_components&#x2F;d3-plugins-sankey&#x2F;sankey.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;bower_components&#x2F;d3.chart&#x2F;d3.chart.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;bower_components&#x2F;d3.chart.sankey.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;bower_components&#x2F;c3&#x2F;c3.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;js&#x2F;psd3.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;bower_components&#x2F;jquery&#x2F;dist&#x2F;jquery.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;js&#x2F;distribucion.js&#x3F;ver&#x3D;49"></script></head>
+
+<body class="home">
+    <header>
+        <a href="./" title="Inventario Nacional de Gases de Efecto Invernadero y Monitoreo de Medidas de Mitigación"><img src="/img/logo-ministerio-new-resized.png" alt="" class="logo" /></a>
+
+        <div class="inventario">
+            Inventario Nacional de Gases de Efecto Invernadero<br />y Monitoreo de Medidas de Mitigación
+
+        </div>
+
+        <nav>
+        <ul class="menu">
+            <li><a href="./">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#">Inventario</a>
+                <ul class="submenu">
+                    <li><a href="resultados">Plataforma Interactiva</a></li>
+                    <li><a href="files/Booklet_INGEI_2024.pdf" target="_blank">Booklet</a></li>
+                    <li><a href="files/Fichas 2024_Castellano.pdf" target="_blank">Fichas</a></li>
+                    <li><a href="files/Factores_de_Emision_SNIGEIAR_para_HC_2025.pdf" target="_blank">Factores de emisión</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Monitoreo</a>
+                <ul class="submenu">
+                    <li><a href="resultados#monitor" onclick="parseURL(url)">Plataforma Interactiva</a></li>
+                    <li><a href="https://www.argentina.gob.ar/sites/default/files/pnaymcc_2022_-_vf_resol.pdf" target="_blank">Plan Nacional</a></li>
+                    <li><a href="files/Desarrollo del indicador de seguimiento de la segunda NDC en base al INGEI 2022.pdf" target="_blank">Indicador NDC</a></li>
+                </ul>
+            </li>
+            <li><a href="reportes">Reportes</a></li>
+        </ul>
+    </nav>
+
+    <div class="redes">
+            <a href="https://youtube.com/channel/UC_Swjr_SoDptDSv6TYsWAvw" target="_blank" class="youtube"></a>
+    </div>
+    </header>
+
+    <div id="home-content-wrapper">
+        <div class="content">
+
+    
+        <div class="logo">
+            <img src="/img/iconos-home-nuevo.png" />
+        </div>
+        <div class="content50 home50">
+
+        <h1>
+         
+         Inventario Nacional de Gases de Efecto Invernadero (INGEI)
+        </h1>
+
+        <h2>
+            <br />
+            El Inventario Nacional de Gases de Efecto Invernadero (INGEI) contabiliza los gases emitidos y absorbidos de la atmósfera durante un año calendario en el total del territorio nacional. Incluye únicamente las fuentes de emisión y absorción para las cuales se cuenta con la información disponible para realizar la estimación, siguiendo los lineamientos del Grupo Intergubernamental de Expertos sobre el Cambio Climático (IPCC). El INGEI permite identificar aquellos sectores del país con mayor potencial de reducción de emisiones.
+        </h2>
+
+        <h2>
+            <br />
+            Por otro lado, el conjunto de medidas a través de las cuales se reducen emisiones de gases de efecto invernadero forma partes de distintos planes nacionales. En el marco del Plan Nacional de Adaptación y Mitigación al Cambio Climático (PNAyMCC) se establecen una serie de indicadores de seguimiento del grado de avance.
+            <br />
+            <br />
+            <br />
+
+        </h2>
+        <!-- <div class="guion">
+            <img src="/img/home-guion.png" />
+        </div> -->
+
+        <!-- <div class="page1 page">
+
+            <h2>El Inventario Nacional de Gases de Efecto Invernadero permite identificar aquellos sectores del país con mayor potencial de reducción de
+                emisiones a través de la implementación de Medidas de Mitigación.</h2>
+
+             <div class="buttons">
+                <button onclick="mostrarDiv('.inventarioGases','.home50')">INVENTARIO NACIONAL DE GASES<br>DE EFECTO INVERNADERO</button>
+                <button onclick="mostrarDiv('.medidasMitigacion','.home50')">MONITOREO DE MEDIDAS<br>DE MITIGACIÓN</button>
+                <button onclick="mostrarDiv('.reportesInternacionales','.home50')">REPORTES INTERNACION
+>> https://apis.datos.gob.ar/series/api/search/?q=exportaciones%20china&limit=10
+{"data": [{"field": {"id": "357.1_JUJUY_CHININA__11", "description": "Datos exportaciones Jujuy China", "title": "jujuy_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_CHACO_CHININA__11", "description": "Datos exportaciones Chaco China", "title": "chaco_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_PBA_CHINAINA__9", "description": "Datos exportaciones pba China", "title": "pba_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_SALTA_CHININA__11", "description": "Datos exportaciones Salta China", "title": "salta_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_FORMOSA_CHINA__13", "description": "Datos exportaciones Formosa China", "title": "formosa_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_INDETERMININA__19", "description": "Datos exportaciones Indeterminado China", "title": "indeterminado_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_CORDOBA_CHINA__13", "description": "Datos exportaciones Cordoba China", "title": "cordoba_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_NEUQUEN_CHINA__13", "description": "Datos exportaciones Neuquen China", "title": "neuquen_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_EXPORTACIOINA__27", "description": "Datos Exportaciones totales China", "title": "exportaciones_totales_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_TUCUMAN_CHINA__13", "description": "Datos exportaciones Tucuman China", "title": "tucuman_china", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}], "count": 860, "limit": 10, "start": 0}
+>> https://apis.datos.gob.ar/series/api/search/?q=importaciones%20brasil&limit=10
+{"data": [{"field": {"id": "308.1_PIB_IMPORTNES_0_T_17", "description": "De Importaciones de Brasil", "title": "pib_importaciones", "frequency": "R/P3M", "time_index_start": "1995-01-01", "time_index_end": "2025-01-01", "units": "Variaci\u00f3n porcentual", "hits_90_days": "0"}, "dataset": {"title": "Brasil PIB Oferta y demanda global", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Banco Central de Brasil", "theme": "Econom\u00eda Internacional"}}, {"field": {"id": "78.3_IIB_0_A_24", "description": "Importaciones a Brasil . En  d\u00f3lares FOB", "title": "ica_importaciones_brasil", "frequency": "R/P1M", "time_index_start": "1990-01-01", "time_index_end": "2026-08-01", "units": "D\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Importaciones CIF por region y pa\u00eds", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "78.2_IIB_0_A_24", "description": "Importaciones a Brasil . En  d\u00f3lares FOB", "title": "ica_importaciones_brasil", "frequency": "R/P3M", "time_index_start": "1990-01-01", "time_index_end": "2026-04-01", "units": "D\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Importaciones CIF por region y pa\u00eds", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "78.1_IIB_0_A_24", "description": "Importaciones a Brasil . En  d\u00f3lares FOB", "title": "ica_importaciones_brasil", "frequency": "R/P1Y", "time_index_start": "1990-01-01", "time_index_end": "2025-01-01", "units": "D\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Importaciones CIF por region y pa\u00eds", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "79.3_ISCB_0_A_26", "description": "Saldo comercial con Brasil . En  d\u00f3lares (Exportaciones FOB-Importaciones CIF)", "title": "ica_saldo_comercial_brasil", "frequency": "R/P1M", "time_index_start": "1990-01-01", "time_index_end": "2026-08-01", "units": "D\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Saldo Comercial por Pa\u00edses y Regiones (FOB-CIF)", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "79.2_ISCB_0_A_26", "description": "Saldo comercial con Brasil . En  d\u00f3lares (Exportaciones FOB-Importaciones CIF)", "title": "ica_saldo_comercial_brasil", "frequency": "R/P3M", "time_index_start": "1990-01-01", "time_index_end": "2026-04-01", "units": "D\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Saldo Comercial por Pa\u00edses y Regiones (FOB-CIF)", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "79.1_ISCB_0_A_26", "description": "Saldo comercial con Brasil . En  d\u00f3lares (Exportaciones FOB-Importaciones CIF)", "title": "ica_saldo_comercial_brasil", "frequency": "R/P1Y", "time_index_start": "1990-01-01", "time_index_end": "2025-01-01", "units": "D\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Saldo Comercial por Pa\u00edses y Regiones (FOB-CIF)", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "322.2_TURISMO_EMSIL__22_77", "description": "Turismo emisivo Brasil", "title": "turismo_emisivo_brasil", "frequency": "R/P3M", "time_index_start": "2006-01-01", "time_index_end": "2026-04-01", "units": "Miles de pasajeros", "hits_90_days": "0"}, "dataset": {"title": "Encuesta de Turismo Internacional", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "322.1_TURISMO_RESIL__24_78", "description": "Turismo receptivo brasil", "title": "turismo_receptivo_brasil", "frequency": "R/P1Y", "time_index_start": "2006-01-01", "time_index_end": "2025-01-01", "units": "Miles de pasajeros", "hits_90_days": "0"}, "dataset": {"title": "Encuesta de Turismo Internacional", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "357.1_MISIONES_BSIL__15", "description": "Datos exportaciones Misiones Brasil", "title": "misiones_brasil", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de dolares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y por pa\u00eds de destino", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}], "count": 791, "limit": 10, "start": 0}
+>> https://apis.datos.gob.ar/series/api/search/?q=exportaciones%20union%20europea&limit=10
+{"data": [{"field": {"id": "350.1_TOTAL_EXPONES__39", "description": "Exportaciones total exportaciones total exportaciones", "title": "total_exportaciones_total_exportaciones", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de d\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y rubro", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "350.1_TOTAL_EXPOCYE__23", "description": "Exportaciones total exportaciones cye", "title": "total_exportaciones_cye", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de d\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y rubro", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "350.1_TOTAL_EXPOMOA__23", "description": "Exportaciones total exportaciones moa", "title": "total_exportaciones_moa", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de d\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y rubro", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "350.1_TOTAL_EXPOMOI__23", "description": "Exportaciones total exportaciones moi", "title": "total_exportaciones_moi", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de d\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y rubro", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "350.1_TOTAL_EXPO_PP__22", "description": "Exportaciones total exportaciones pp", "title": "total_exportaciones_pp", "frequency": "R/P1Y", "time_index_start": "1993-01-01", "time_index_end": "2024-01-01", "units": "Millones de d\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones por provincia y rubro", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Sector Externo"}}, {"field": {"id": "368.3_BIODISEL_ENES__22", "description": "Biodisel exportaciones", "title": "biodisel_exportaciones", "frequency": "R/P1M", "time_index_start": "2008-01-01", "time_index_end": "2026-08-01", "units": "Toneladas", "hits_90_days": "0"}, "dataset": {"title": "Producci\u00f3n y ventas de biocombustibles", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Secretar\u00eda de Energ\u00eda, Ministerio de Econom\u00eda", "theme": "Actividad"}}, {"field": {"id": "368.1_BIODISEL_ENES__22", "description": "Biodisel exportaciones", "title": "biodisel_exportaciones", "frequency": "R/P1Y", "time_index_start": "2008-01-01", "time_index_end": "2025-01-01", "units": "Toneladas", "hits_90_days": "0"}, "dataset": {"title": "Producci\u00f3n y ventas de biocombustibles", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Secretar\u00eda de Energ\u00eda, Ministerio de Econom\u00eda", "theme": "Actividad"}}, {"field": {"id": "368.2_BIODISEL_ENES__22", "description": "Biodisel exportaciones", "title": "biodisel_exportaciones", "frequency": "R/P3M", "time_index_start": "2008-01-01", "time_index_end": "2026-04-01", "units": "Toneladas", "hits_90_days": "0"}, "dataset": {"title": "Producci\u00f3n y ventas de biocombustibles", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Secretar\u00eda de Energ\u00eda, Ministerio de Econom\u00eda", "theme": "Actividad"}}, {"field": {"id": "234.1_PEXPORTTAL_0_0_23", "description": "PIB Exportaciones Total", "title": "pib_exportaciones_total", "frequency": "R/P3M", "time_index_start": "1970-01-01", "time_index_end": "1980-10-01", "units": "Millones de pesos", "hits_90_days": "0"}, "dataset": {"title": "Cuentas Nacionales 1970-1980. Base 1970", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Banco Central de la Rep\u00fablica Argentina (BCRA)", "theme": "Actividad"}}, {"field": {"id": "181.1_UNCTAD_TOTNES_0_A_26", "description": "UNCTAD Total Exportaciones", "title": "unctad_total_exportaciones", "frequency": "R/P1Y", "time_index_start": "1995-01-01", "time_index_end": "2016-01-01", "units": "Millones de d\u00f3lares", "hits_90_days": "0"}, "dataset": {"title": "Exportaciones e importaciones por Intensidad tecnol\u00f3gica", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "UNCTAD", "theme": "Sector Externo"}}], "count": 833, "limit": 10, "start": 0}
+>> https://apis.datos.gob.ar/series/api/search/?q=emisiones%20gei%20agricultura&limit=10
+{"data": [{"field": {"id": "170.1_EIONES_MES_0_0_26", "description": "Cantidad total de emisiones. Cantidades mensuales", "title": "emisiones_totales_ge_pymes", "frequency": "R/P1M", "time_index_start": "2007-01-01", "time_index_end": "2022-06-01", "units": "Unidades", "hits_90_days": "0"}, "dataset": {"title": "Financiamiento privado en mercado de capitales", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Argentino de Mercado de Capitales (IAMC)", "theme": "Mercados Financieros"}}, {"field": {"id": "440.1_TOTAL_AGRIURA_2004_0_17_3", "description": "Total agricultura", "title": "total_agricultura", "frequency": "R/P1Y", "time_index_start": "2004-01-01", "time_index_end": "2025-01-01", "units": "Millones de pesos", "hits_90_days": "0"}, "dataset": {"title": "Valor Bruto de Producci\u00f3n a precios b\u00e1sicos por rama de actividad econ\u00f3mica", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Actividad"}}, {"field": {"id": "441.1_TOTAL_AGRIURA_0_0_17_27", "description": "Total agricultura", "title": "total_agricultura", "frequency": "R/P1Y", "time_index_start": "2004-01-01", "time_index_end": "2025-01-01", "units": "Millones de pesos", "hits_90_days": "0"}, "dataset": {"title": "Valor Bruto de Producci\u00f3n a precios b\u00e1sicos por rama de actividad econ\u00f3mica", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Actividad"}}, {"field": {"id": "170.1_EIONES_TAL_0_0_21", "description": "Cantidad total de emisiones de PyMEs. Cantidades mensuales", "title": "emisiones_pymes_total", "frequency": "R/P1M", "time_index_start": "2007-01-01", "time_index_end": "2022-06-01", "units": "Unidades", "hits_90_days": "0"}, "dataset": {"title": "Financiamiento privado en mercado de capitales", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Argentino de Mercado de Capitales (IAMC)", "theme": "Mercados Financieros"}}, {"field": {"id": "170.1_EIONES_PAG_0_0_19", "description": "Cantidad de emisiones de PyMEs de pagar\u00e9s. Cantidades mensuales.", "title": "emisiones_pymes_pag", "frequency": "R/P1M", "time_index_start": "2014-02-01", "time_index_end": "2018-10-01", "units": "Unidades", "hits_90_days": "0"}, "dataset": {"title": "Financiamiento privado en mercado de capitales", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Argentino de Mercado de Capitales (IAMC)", "theme": "Mercados Financieros"}}, {"field": {"id": "170.1_EIONES_ACC_0_0_19", "description": "Cantidad de emisiones de PyMEs de acciones. Cantidades mensuales.", "title": "emisiones_pymes_acc", "frequency": "R/P1M", "time_index_start": "2011-08-01", "time_index_end": "2012-12-01", "units": "Unidades", "hits_90_days": "0"}, "dataset": {"title": "Financiamiento privado en mercado de capitales", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Argentino de Mercado de Capitales (IAMC)", "theme": "Mercados Financieros"}}, {"field": {"id": "170.1_EIONES_TAL_0_0_18", "description": "Cantidad total de emisiones de grandes empresas. Mensual", "title": "emisiones_ge_total", "frequency": "R/P1M", "time_index_start": "2007-01-01", "time_index_end": "2022-06-01", "units": "Unidades", "hits_90_days": "0"}, "dataset": {"title": "Financiamiento privado en mercado de capitales", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Argentino de Mercado de Capitales (IAMC)", "theme": "Mercados Financieros"}}, {"field": {"id": "170.1_EIONES_ACC_0_0_16", "description": "Cantidad de emisiones de grandes empresas de acciones. Cantidades mensuales.", "title": "emisiones_ge_acc", "frequency": "R/P1M", "time_index_start": "2007-01-01", "time_index_end": "2021-03-01", "units": "Unidades", "hits_90_days": "0"}, "dataset": {"title": "Financiamiento privado en mercado de capitales", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Argentino de Mercado de Capitales (IAMC)", "theme": "Mercados Financieros"}}, {"field": {"id": "328.2_AGRI_GANADURA__32", "description": "agricultura, ganader\u00eda, caza y silvicultura", "title": "agri_ganaderia_caza_silvicultura", "frequency": "R/P3M", "time_index_start": "2004-01-01", "time_index_end": "2016-10-01", "units": "Pesos", "hits_90_days": "0"}, "dataset": {"title": "Remuneraci\u00f3n neta por sector de actividad econ\u00f3mica en el sector privado", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Actividad"}}, {"field": {"id": "305.1_AGRI_GANADTAL_0_A_27", "description": "Agricultura, ganaderia, caza. Total", "title": "agri_ganad_caza_silvi_total", "frequency": "R/P1Y", "time_index_start": "2004-01-01", "time_index_end": "2025-01-01", "units": "Millones de pesos corrientes", "hits_90_days": "0"}, "dataset": {"title": "Valor Agregado Bruto a precios b\u00e1sicos por rama de actividad econ\u00f3mica", "publisher": {"name": "Subsecretar\u00eda de Programaci\u00f3n Macroecon\u00f3mica"}, "source": "Instituto Nacional de Estad\u00edstica y Censos (INDEC)", "theme": "Actividad"}}], "count": 195, "limit": 10, "start": 0}
