@@ -30,7 +30,7 @@
     dehesa: ['Precio de Dehesa', 'Dehesa price', 'Prix Dehesa', 'Prezzo Dehesa'],
     euCountry: ['País (UE)', 'Country (EU)', 'Pays (UE)', 'Paese (UE)'],
     euMarket: ['Mercado del país', 'Country market', 'Marché du pays', 'Mercato del paese'],
-    euNoData: ['La Comisión Europea no publica ahora un precio de {1} para {0}. No lo sustituimos por el de otro país: elige otro país o escribe tu precio a mano.', 'The European Commission does not currently publish a {1} price for {0}. We do not substitute another country’s: pick another country or type your own price.', 'La Commission européenne ne publie pas actuellement de prix de {1} pour {0}. Nous ne le remplaçons pas par celui d’un autre pays : choisissez un autre pays ou saisissez votre prix.', 'La Commissione europea non pubblica al momento un prezzo di {1} per {0}. Non lo sostituiamo con quello di un altro paese: scegli un altro paese o inserisci il tuo prezzo.'],
+    euNoData: ['La Comisión Europea no publica ahora ningún precio de «{1}» para {0}. No lo sustituimos por el de otro país: elige otro país o escribe tu precio a mano.', 'The European Commission does not currently publish any price for “{1}” in {0}. We do not substitute another country’s: pick another country or type your own price.', 'La Commission européenne ne publie actuellement aucun prix pour « {1} » pour {0}. Nous ne le remplaçons pas par celui d’un autre pays : choisissez un autre pays ou saisissez votre prix.', 'La Commissione europea non pubblica al momento alcun prezzo per «{1}» per {0}. Non lo sostituiamo con quello di un altro paese: scegli un altro paese o inserisci il tuo prezzo.'],
     market: ['Mercado de referencia', 'Reference market', 'Marché de référence', 'Mercato di riferimento'],
     costs: ['Costes', 'Costs', 'Coûts', 'Costi'],
     costsHint: ['por unidad de superficie; lo que dejes en blanco cuenta como 0', 'per area unit; anything left blank counts as 0', 'par unité de surface ; ce qui reste vide compte pour 0', 'per unità di superficie; ciò che lasci vuoto vale 0'],
@@ -459,7 +459,7 @@
           var o2 = { region: 'eu', product: cur.o.product, value: lp[1], currency: 'EUR', unit: 'tonelada', observationDate: lp[0], frequency: cur.o.frequency, sourceId: cur.o.sourceId, comparability: 'directional' };
           var r3 = refPerT(o2, c.crop, c.cur);
           if (r3.value !== null) { cur = { o: o2, r: r3, key: cur.key }; ljMk = EUN[cc][li()] + ' · ' + ljLabel(LJD, m); }
-        } else ljNone = tf('euNoData', EUN[cc][li()], CROPS[c.crop][li()].toLowerCase());
+        } else ljNone = tf('euNoData', EUN[cc][li()], CROPS[c.crop][li()]);
         var csel = field('cc-eucc', t('euCountry'), '<select id="cc-eucc" data-f="eucc">' + ccs.map(function (k) { var has = ljMarkets(LJD, k, c.crop).length > 0; return '<option value="' + k + '"' + (k === cc ? ' selected' : '') + '>' + esc(EUN[k][li()] + (has ? '' : ' (' + LJT.none[li()] + ')')) + '</option>'; }).join('') + '</select>');
         var msel = ok2 && mks.length > 1 ? field('cc-eumk', t('euMarket'), '<select id="cc-eumk" data-f="eumk">' + mks.map(function (x) { return '<option value="' + esc(ljKey(x)) + '"' + (ljKey(x) === ljSel ? ' selected' : '') + '>' + esc(ljLabel(LJD, x)) + '</option>'; }).join('') + '</select>') : '';
         ljHtml = csel + msel + (ljNone ? '<div class="pt-note">' + esc(ljNone) + '</div>' : '');
