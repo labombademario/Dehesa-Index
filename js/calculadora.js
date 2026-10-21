@@ -28,6 +28,9 @@
     priceUnit: ['Unidad del precio', 'Price unit', 'Unité du prix', 'Unità del prezzo'],
     manual: ['Manual', 'Manual', 'Manuel', 'Manuale'],
     dehesa: ['Precio de Dehesa', 'Dehesa price', 'Prix Dehesa', 'Prezzo Dehesa'],
+    euCountry: ['País (UE)', 'Country (EU)', 'Pays (UE)', 'Paese (UE)'],
+    euMarket: ['Mercado del país', 'Country market', 'Marché du pays', 'Mercato del paese'],
+    euNoData: ['La Comisión Europea no publica ahora un precio de {1} para {0}. No lo sustituimos por el de otro país: elige otro país o escribe tu precio a mano.', 'The European Commission does not currently publish a {1} price for {0}. We do not substitute another country’s: pick another country or type your own price.', 'La Commission européenne ne publie pas actuellement de prix de {1} pour {0}. Nous ne le remplaçons pas par celui d’un autre pays : choisissez un autre pays ou saisissez votre prix.', 'La Commissione europea non pubblica al momento un prezzo di {1} per {0}. Non lo sostituiamo con quello di un altro paese: scegli un altro paese o inserisci il tuo prezzo.'],
     market: ['Mercado de referencia', 'Reference market', 'Marché de référence', 'Mercato di riferimento'],
     costs: ['Costes', 'Costs', 'Coûts', 'Costi'],
     costsHint: ['por unidad de superficie; lo que dejes en blanco cuenta como 0', 'per area unit; anything left blank counts as 0', 'par unité de surface ; ce qui reste vide compte pour 0', 'per unità di superficie; ciò che lasci vuoto vale 0'],
@@ -414,22 +417,63 @@
       save(); shell();
     });
   }
+
+  // Mercados de cereales de cada país de la UE (data/views/lonjas.json, Comisión Europea, salida de silo/puerto, EUR/t).
+  // La referencia «Unión Europea» ya no es un único precio: se elige país y mercado; sin dato del país se avisa, no se sustituye.
+  var LJV = { trigo: 'pan', maiz: 'pienso', cebada: 'pienso', avena: 'pienso' }, LJP = null;
+  var EUN = { AT: ['Austria', 'Austria', 'Autriche', 'Austria'], BE: ['Bélgica', 'Belgium', 'Belgique', 'Belgio'], BG: ['Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'], HR: ['Croacia', 'Croatia', 'Croatie', 'Croazia'], CY: ['Chipre', 'Cyprus', 'Chypre', 'Cipro'], CZ: ['Chequia', 'Czechia', 'Tchéquie', 'Cechia'], DK: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], EE: ['Estonia', 'Estonia', 'Estonie', 'Estonia'], FI: ['Finlandia', 'Finland', 'Finlande', 'Finlandia'], FR: ['Francia', 'France', 'France', 'Francia'], DE: ['Alemania', 'Germany', 'Allemagne', 'Germania'], EL: ['Grecia', 'Greece', 'Grèce', 'Grecia'], HU: ['Hungría', 'Hungary', 'Hongrie', 'Ungheria'], IE: ['Irlanda', 'Ireland', 'Irlande', 'Irlanda'], IT: ['Italia', 'Italy', 'Italie', 'Italia'], LV: ['Letonia', 'Latvia', 'Lettonie', 'Lettonia'], LT: ['Lituania', 'Lithuania', 'Lituanie', 'Lituania'], LU: ['Luxemburgo', 'Luxembourg', 'Luxembourg', 'Lussemburgo'], MT: ['Malta', 'Malta', 'Malte', 'Malta'], NL: ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'], PL: ['Polonia', 'Poland', 'Pologne', 'Polonia'], PT: ['Portugal', 'Portugal', 'Portugal', 'Portogallo'], RO: ['Rumanía', 'Romania', 'Roumanie', 'Romania'], SK: ['Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia'], SI: ['Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'], ES: ['España', 'Spain', 'Espagne', 'Spagna'], SE: ['Suecia', 'Sweden', 'Suède', 'Svezia'] };
+  var LJT = { none: ['sin precio', 'no price', 'pas de prix', 'nessun prezzo'] };
+  function loadLj() { return LJP || (LJP = (typeof fetch === 'function' ? fetch('data/views/lonjas.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }) : Promise.resolve(null))); }
+  function ljKey(x) { return x.m + '|' + (x['var'] || '') + '|' + (x.st || ''); }
+  function ljLabel(D, x) { var i = li(), LB = D.labels || { 'var': {}, st: {} }; return [x.m, LB['var'][x['var']] ? LB['var'][x['var']][i] : '', LB.st[x.st] ? LB.st[x.st][i] : ''].filter(Boolean).join(' · '); }
+  // mercados activos (último dato de menos de 60 días respecto al más reciente) del país para el cultivo; la variedad habitual primero
+  function ljMarkets(D, cc, crop) {
+    var L = D && D.countries && D.countries[cc] && D.countries[cc][crop]; if (!L) return [];
+    var top = ''; L.forEach(function (x) { var d = x.p[x.p.length - 1][0]; if (d > top) top = d; });
+    var lim = new Date(Date.parse(top) - 60 * 864e5).toISOString().slice(0, 10);
+    var act = L.filter(function (x) { return x.p[x.p.length - 1][0] >= lim; });
+    var pref = act.filter(function (x) { return x['var'] === LJV[crop]; });
+    return pref.length ? pref : act;
+  }
   function drawRef() {
     var c = C(), el = document.getElementById('cc-ref'); if (!el) return;
     var lm = window.DehesaShared && window.DehesaShared.loadMarkets ? window.DehesaShared.loadMarkets() : Promise.resolve();
-    Promise.all([loadRef(c.crop), lm]).then(function (pr) { var obs = pr[0];
+    Promise.all([loadRef(c.crop), lm, loadLj()]).then(function (pr) { var obs = pr[0], LJD = pr[2];
       el = document.getElementById('cc-ref'); if (!el || C() !== c) return;
       var rows = obs.map(function (o) { var r = refPerT(o, c.crop, c.cur); return { o: o, r: r, key: o.region + '/' + o.product }; });
       var ok = rows.filter(function (x) { return x.r.value !== null; });
       if (!ok.length) { el.className = ''; el.innerHTML = '<div class="pt-note">' + esc(t('noRef')) + (rows[0] ? ' ' + esc(t(rows[0].r.reason)) : '') + '</div>'; c.p = ''; update(); return; }
-      var cur = null; ok.forEach(function (x) { if (x.key === c.inst) cur = x; }); cur = cur || ok[0]; c.inst = cur.key; c.pUnit = 't'; c.p = String(r2(cur.r.value));
+      var cur = null; ok.forEach(function (x) { if (x.key === c.inst) cur = x; }); cur = cur || ok[0]; c.inst = cur.key; c.pUnit = 't';
+      var ljHtml = '', ljMk = '', ljNone = '', ljSel = '';
+      if (cur.o.region === 'eu' && LJV[c.crop] && LJD && LJD.countries) {
+        var ccs = Object.keys(EUN).sort(function (a, b) { return EUN[a][li()].localeCompare(EUN[b][li()], LANGS[li()]); });
+        var tj = String((c.tax && c.tax.j) || ''), cc = c.euCC || (/^EU:[A-Z]{2}$/.test(tj) && EUN[tj.slice(3)] ? tj.slice(3) : 'ES');
+        if (!EUN[cc]) cc = 'ES';
+        var mks = ljMarkets(LJD, cc, c.crop), ok2 = mks.length > 0;
+        if (cc === 'ES' && !c.euCC && !c.euMk) { /* España sin elegir nada: la lonja de siempre (Zaragoza; Lleida en cebada) */ }
+        else if (ok2) {
+          var m = null; mks.forEach(function (x) { if (ljKey(x) === c.euMk) m = x; });
+          if (!m && cc === 'ES') { var dn = c.crop === 'cebada' ? 'Lleida' : 'Zaragoza'; mks.forEach(function (x) { if (!m && x.m === dn && x.st === 'silo') m = x; }); }
+          if (!m) { var top2 = mks.reduce(function (a, x) { var d = x.p[x.p.length - 1][0]; return d > a ? d : a; }, ''); m = mks.filter(function (x) { return x.p[x.p.length - 1][0] >= top2; })[0]; }
+          var lp = m.p[m.p.length - 1]; ljSel = ljKey(m);
+          var o2 = { region: 'eu', product: cur.o.product, value: lp[1], currency: 'EUR', unit: 'tonelada', observationDate: lp[0], frequency: cur.o.frequency, sourceId: cur.o.sourceId, comparability: 'directional' };
+          var r3 = refPerT(o2, c.crop, c.cur);
+          if (r3.value !== null) { cur = { o: o2, r: r3, key: cur.key }; ljMk = EUN[cc][li()] + ' · ' + ljLabel(LJD, m); }
+        } else ljNone = tf('euNoData', EUN[cc][li()], CROPS[c.crop][li()].toLowerCase());
+        var csel = field('cc-eucc', t('euCountry'), '<select id="cc-eucc" data-f="eucc">' + ccs.map(function (k) { var has = ljMarkets(LJD, k, c.crop).length > 0; return '<option value="' + k + '"' + (k === cc ? ' selected' : '') + '>' + esc(EUN[k][li()] + (has ? '' : ' (' + LJT.none[li()] + ')')) + '</option>'; }).join('') + '</select>');
+        var msel = ok2 && mks.length > 1 ? field('cc-eumk', t('euMarket'), '<select id="cc-eumk" data-f="eumk">' + mks.map(function (x) { return '<option value="' + esc(ljKey(x)) + '"' + (ljKey(x) === ljSel ? ' selected' : '') + '>' + esc(ljLabel(LJD, x)) + '</option>'; }).join('') + '</select>') : '';
+        ljHtml = csel + msel + (ljNone ? '<div class="pt-note">' + esc(ljNone) + '</div>' : '');
+        if (ljNone) { c.p = ''; c.euNone = 1; } else c.euNone = 0;
+      }
+      if (!ljNone) c.p = String(r2(cur.r.value));
       var f = window.DIFreshness.evaluate(cur.o.observationDate, cur.o.frequency, cur.o.sourceId), st = f.state, lab = (window.DIFreshness.label[st] || {})[LANGS[li()]] || st;
       var sel = ok.length > 1 ? field('cc-inst', t('market'), '<select id="cc-inst" data-f="inst">' + ok.map(function (x) { return '<option value="' + esc(x.key) + '"' + (x.key === cur.key ? ' selected' : '') + '>' + esc(REG[x.o.region][li()]) + '</option>'; }).join('') + '</select>') : '';
       el.className = '';
-      var Sh = window.DehesaShared, mk = Sh && Sh.marketLabel ? Sh.marketLabel(cur.o, LANGS[li()]) : '', farm = /productor|farmer|producteur|produttor/i.test(mk);
+      var Sh = window.DehesaShared, mk = ljMk || (Sh && Sh.marketLabel ? Sh.marketLabel(cur.o, LANGS[li()]) : ''), farm = /productor|farmer|producteur|produttor/i.test(mk);
       var FG = { es: 'No es un precio a pie de finca: es una cotización de mercado ({0}). Descuenta transporte y márgenes hasta tu explotación.', en: 'This is not a farm-gate price: it is a market quote ({0}). Deduct transport and margins back to your farm.', fr: 'Ce n’est pas un prix départ exploitation : c’est une cotation de marché ({0}). Déduisez transport et marges jusqu’à votre exploitation.', it: 'Non è un prezzo franco azienda: è una quotazione di mercato ({0}). Togli trasporto e margini fino alla tua azienda.' }[LANGS[li()]];
       var CPL = { not_comparable: ['no comparable', 'not comparable', 'non comparable', 'non comparabile'], directional: ['orientativa', 'directional', 'indicative', 'indicativa'] };
-      el.innerHTML = sel + '<div class="di-card pt-card" style="margin-top:8px"><div class="pt-k">' + esc(t('refTitle')) + ' · ' + esc(mk || REG[cur.o.region][li()]) + '</div><div class="pt-v">' + esc(money(cur.r.value, c.cur, 2)) + ' <small>/ t</small></div>' +
+      if (ljNone) { el.innerHTML = sel + ljHtml; update(); return; }
+      el.innerHTML = sel + ljHtml + '<div class="di-card pt-card" style="margin-top:8px"><div class="pt-k">' + esc(t('refTitle')) + ' · ' + esc(mk || REG[cur.o.region][li()]) + '</div><div class="pt-v">' + esc(money(cur.r.value, c.cur, 2)) + ' <small>/ t</small></div>' +
         '<div class="pt-sub">' + esc(t('original')) + ': ' + esc(nf(cur.o.value, 2) + ' ' + cur.o.currency + '/' + (UL[cur.o.unit] || cur.o.unit)) + ' · ' + esc(t('asOf')) + ' ' + esc(dstr(cur.o.observationDate)) + '</div>' +
         '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(SRC[cur.o.sourceId] || cur.o.sourceId) + '</div>' +
         '<div><span class="pt-badge pt-fs-' + st + '">' + esc(lab) + '</span><span class="pt-badge pt-cp-' + (cur.o.comparability || 'directional') + '">' + esc((cur.o.comparability === 'not_comparable' ? CPL.not_comparable : CPL.directional)[li()]) + '</span></div>' + (mk && !farm ? '<div class="pt-note">' + esc(FG.replace('{0}', mk)) + '</div>' : '') +
@@ -486,7 +530,9 @@
     if (f === 'tax-incl') { c.tax.incl = el.checked; save(); update(); return; }
     if (f === 'crop') { c.crop = el.value; if (!bushelKg(c.crop)) { c.yU = 't_ha'; c.pUnit = 't'; } c.inst = ''; if (c.tax.j && c.tax.j.indexOf('EU:') === 0) taxDefaults(c); save(); shell(); }
     else if (f === 'cur') { c.cur = el.value; save(); shell(); }
-    else if (f === 'inst') { c.inst = el.value; drawRef(); }
+    else if (f === 'inst') { c.inst = el.value; c.euCC = ''; c.euMk = ''; drawRef(); }
+    else if (f === 'eucc') { c.euCC = el.value; c.euMk = ''; save(); drawRef(); }
+    else if (f === 'eumk') { c.euMk = el.value; save(); drawRef(); }
   }
 
   // API reutilizable (Mi explotación): el mismo motor de cálculo y de precio de referencia, sin duplicar lógica.
