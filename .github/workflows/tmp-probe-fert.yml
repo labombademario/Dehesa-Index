@@ -10,9 +10,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
-      - env:
-          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
-        run: |
-          python3 probe/fert_probe.py > probe/fert_probe.log 2>&1 || true
+      - run: |
+          node scripts/update-eu-region-climate.mjs > probe/clim.log 2>&1 || true
+          python3 scripts/validate-data.py --no-report --files data/eu-region-climate.json >> probe/clim.log 2>&1 || true
           git config user.name probe; git config user.email probe@x
-          git add -f probe/fert_probe.log; git commit -qm "probe fert out" || true; git push || true
+          git add -f probe/clim.log data/eu-region-climate.json; git commit -qm "probe clim out" || true; git push || true

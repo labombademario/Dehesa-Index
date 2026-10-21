@@ -1,0 +1,102 @@
+ok   desktop /                         axe 0 avisos menores
+ok   desktop /precios.html             axe 0 avisos menores
+ok   desktop /producto.html            axe 0 avisos menores
+ok   desktop /paises.html?c=ES         axe 0 avisos menores
+ok   desktop /perfiles.html            axe 0 avisos menores
+ok   desktop /semana.html?c=ES         axe 0 avisos menores
+ok   desktop /comparador.html          axe 0 avisos menores
+ok   desktop /calculadora.html         axe 0 avisos menores
+ok   desktop /mi-explotacion.html      axe 0 avisos menores
+ok   desktop /relaciones.html          axe 0 avisos menores
+ok   desktop /observatorio.html        axe 0 avisos menores
+ok   desktop /mi-seguimiento.html      axe 0 avisos menores
+ok   desktop /catalogo.html            axe 0 avisos menores
+ok   desktop /brief.html               axe 0 avisos menores
+ok   desktop /precios-locales.html     axe 0 avisos menores
+ok   desktop /mi-mercado.html?c=US&r=KS&p=cattleaxe 0 avisos menores
+ok   desktop /siembra.html?c=FR&r=24   axe 0 avisos menores
+ok   desktop /pac.html                 axe 0 avisos menores
+ok   desktop /noticias.html            axe 0 avisos menores
+ok   desktop /mapa.html                axe 0 avisos menores
+ok   desktop /calendario.html          axe 0 avisos menores
+ok   desktop /cultivos.html            axe 0 avisos menores
+ok   desktop /oferta-demanda.html      axe 0 avisos menores
+ok   desktop /clima.html               axe 0 avisos menores
+ok   desktop /mercados.html            axe 0 avisos menores
+ok   desktop /status.html              axe 0 avisos menores
+ok   desktop /metodologia.html         axe 0 avisos menores
+ok   desktop /europa.html              axe 0 avisos menores
+ok   desktop /lonjas.html              axe 0 avisos menores
+ok   desktop /sequia.html              axe 0 avisos menores
+ok   desktop /ganaderia.html           axe 0 avisos menores
+ok   desktop /exportaciones.html       axe 0 avisos menores
+ok   desktop /insumos.html             axe 0 avisos menores
+ok   desktop /costes.html              axe 0 avisos menores
+ok   desktop /rendimientos.html        axe 0 avisos menores
+ok   desktop /legal.html               axe 0 avisos menores
+ok   desktop /region.html?c=NL&r=GR    axe 0 avisos menores
+ok   desktop /regiones/espana/andalucia/axe 0 avisos menores
+ok   mobile /                          axe 0 avisos menores
+ok   mobile /precios.html              axe 0 avisos menores
+ok   mobile /producto.html             axe 0 avisos menores
+ok   mobile /paises.html?c=ES          axe 0 avisos menores
+ok   mobile /perfiles.html             axe 0 avisos menores
+ok   mobile /semana.html?c=ES          axe 0 avisos menores
+ok   mobile /comparador.html           axe 0 avisos menores
+ok   mobile /calculadora.html          axe 0 avisos menores
+ok   mobile /mi-explotacion.html       axe 0 avisos menores
+ok   mobile /relaciones.html           axe 0 avisos menores
+ok   mobile /observatorio.html         axe 0 avisos menores
+ok   mobile /mi-seguimiento.html       axe 0 avisos menores
+ok   mobile /catalogo.html             axe 0 avisos menores
+ok   mobile /brief.html                axe 0 avisos menores
+ok   mobile /precios-locales.html      axe 0 avisos menores
+ok   mobile /mi-mercado.html?c=US&r=KS&p=cattleaxe 0 avisos menores
+ok   mobile /siembra.html?c=FR&r=24    axe 0 avisos menores
+ok   mobile /pac.html                  axe 0 avisos menores
+ok   mobile /noticias.html             axe 0 avisos menores
+ok   mobile /mapa.html                 axe 0 avisos menores
+ok   mobile /calendario.html           axe 0 avisos menores
+ok   mobile /cultivos.html             axe 0 avisos menores
+ok   mobile /oferta-demanda.html       axe 0 avisos menores
+ok   mobile /clima.html                axe 0 avisos menores
+ok   mobile /mercados.html             axe 0 avisos menores
+ok   mobile /status.html               axe 0 avisos menores
+ok   mobile /metodologia.html          axe 0 avisos menores
+ok   mobile /europa.html               axe 0 avisos menores
+ok   mobile /lonjas.html               axe 0 avisos menores
+ok   mobile /sequia.html               axe 0 avisos menores
+ok   mobile /ganaderia.html            axe 0 avisos menores
+ok   mobile /exportaciones.html        axe 0 avisos menores
+ok   mobile /insumos.html              axe 0 avisos menores
+ok   mobile /costes.html               axe 0 avisos menores
+ok   mobile /rendimientos.html         axe 0 avisos menores
+ok   mobile /legal.html                axe 0 avisos menores
+ok   mobile /region.html?c=NL&r=GR     axe 0 avisos menores
+ok   mobile /regiones/espana/andalucia/axe 0 avisos menores
+ok   flow home->precios->producto @1280
+ok   flow producto 3.0: bloques, unidad y seguimiento @1280
+ok   flow calculadora: margen y unidades @1280
+FAIL flow relaciones: filtros, descargo y enlace profundo @1280
+       - flujo: falta el esquema INSUMO>CANAL>MERCADO
+ok   flow observatorio: filtros, ventanas y enlace profundo @1280
+ok   flow mi-seguimiento: reglas, alertas, historial, exportar e importar @1280
+ok   flow paises: cambiar de pais @1280
+ok   flow comparador: producto y unidad @1280
+ok   flow catalogo: buscar @1280       
+ok   flow idioma: en/fr/it @1280       
+ok   flow offline.html y 404 @1280     
+ok   flow home->precios->producto @390 
+ok   flow producto 3.0: bloques, unidad y seguimiento @390
+ok   flow calculadora: margen y unidades @390
+FAIL flow relaciones: filtros, descargo y enlace profundo @390
+       - flujo: falta el esquema INSUMO>CANAL>MERCADO
+ok   flow observatorio: filtros, ventanas y enlace profundo @390
+ok   flow mi-seguimiento: reglas, alertas, historial, exportar e importar @390
+ok   flow paises: cambiar de pais @390 
+ok   flow comparador: producto y unidad @390
+ok   flow catalogo: buscar @390        
+ok   flow idioma: en/fr/it @390        
+ok   flow offline.html y 404 @390      
+
+E2E FALLA: 2 problema(s)
