@@ -383,6 +383,8 @@ jobs:
         run: node scripts/test-interfaz-movil.mjs
       - name: Selectores compactos (monitor de insumos con selector de pais comun y Recientes; Lonjas con producto en desplegable; datos en la primera pantalla; 390 y 1280)
         run: node scripts/test-selectores-compactos.mjs
+      - name: Botones en vez de desplegables (data-chips, js/chip-select.js; ficha de Dinamarca, 4 idiomas, 1280/390)
+        run: node scripts/test-chip-select.mjs
       - name: Precios semanales en Espana (lista con buscador, sectores con emoticono, filas desplegables, sin dato reciente aparte, panel de grafica, CSV; 4 idiomas, 1280/390)
         run: node scripts/test-precios-semanales.mjs
       - name: Estados incompletos accionables (liquidacion, cestas, informe de negociacion; fallo de red distinto de sin dato, Reintentar, sin bucles)

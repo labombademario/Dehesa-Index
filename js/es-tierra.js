@@ -116,7 +116,7 @@
     var t = T[lg], Y = d.years, pts = [], i, v;
     for (i = 0; i < Y.length; i++) { v = val(d, st.reg, st.type, i); if (v != null) pts.push([Y[i], v]); }
     var regs = ['ES'].concat(Object.keys(d.price.ccaa).filter(function (k) { return k !== 'ES'; }).sort(function (a, b) { return ccaaName(a, lg).localeCompare(ccaaName(b, lg), LOC[lg]); }));
-    var sel = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select gb-reg" aria-label="' + esc(t.evoIn) + '">' + regs.map(function (k) { return '<option value="' + k + '"' + (k === st.reg ? ' selected' : '') + '>' + esc(ccaaName(k, lg)) + '</option>'; }).join('') + '</select></label>';
+    var sel = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select gb-reg" data-chips aria-label="' + esc(t.evoIn) + '">' + regs.map(function (k) { return '<option value="' + k + '"' + (k === st.reg ? ' selected' : '') + '>' + esc(ccaaName(k, lg)) + '</option>'; }).join('') + '</select></label>';
     var head = '<div class="di-info-card-title gb-sub">' + esc(t.evo) + ' · ' + esc(tl(st.type, lg)) + '</div><div class="wd-sels">' + sel + '</div>';
     if (pts.length < 2) return { html: head + '<div class="wp-hist">' + esc(t.noData) + '</div>' };
     var W = 560, H = 200, L = 52, R = 14, Tp = 16, B = 24, lo = 1e18, hi = 0;
@@ -185,7 +185,7 @@
   }
   function names() { return script('js/region-names.js', function () { return !!global.DehesaRegionNames; }); }
   function opts(arr, cur) { return arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join(''); }
-  function sel(label, cls, arr, cur) { return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" aria-label="' + esc(label) + '">' + opts(arr, cur) + '</select></label>'; }
+  function sel(label, cls, arr, cur) { return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" data-chips aria-label="' + esc(label) + '">' + opts(arr, cur) + '</select></label>'; }
   function render(el) {
     Promise.all([load(), script('vendor/es-ccaa.js', function () { return !!global.DEHESA_ES_CCAA; }), script('vendor/es-provinces.js', function () { return !!global.DEHESA_ES_PROVINCES; }), names()]).then(function (res) {
       var d = res[0]; if (!d || !d.years || !d.price || !d.rent) { el.hidden = true; return; }
@@ -205,7 +205,7 @@
         var c = chart(d, lg);
         var typeSel = '', grp = [], oth = [];
         for (i = 0; i < tys.length; i++) (tys[i][1] ? oth : grp).push([tys[i][0], tl(tys[i][0], lg)]);
-        typeSel = '<label class="wp-sel"><span>' + esc(t.type) + '</span><select class="di-compare-select gb-type" aria-label="' + esc(t.type) + '">' + opts(grp, st.type) + (oth.length ? '<optgroup label="' + esc(t.other.replace('{y}', d.rent.other.year)) + '">' + opts(oth, st.type) + '</optgroup>' : '') + '</select></label>';
+        typeSel = '<label class="wp-sel"><span>' + esc(t.type) + '</span><select class="di-compare-select gb-type" data-chips aria-label="' + esc(t.type) + '">' + opts(grp, st.type) + (oth.length ? '<optgroup label="' + esc(t.other.replace('{y}', d.rent.other.year)) + '">' + opts(oth, st.type) + '</optgroup>' : '') + '</select></label>';
         var sels = '<div class="wd-sels">' + sel(t.meas, 'gb-m', [['price', t.price], ['rent', t.rent]], st.m) + typeSel +
           (st.m === 'price' ? sel(t.level, 'gb-lvl', [['ccaa', t.lccaa], ['prov', t.lprov]], st.lvl) : '') +
           (!provMode && !other ? sel(t.year, 'gb-year', d.years.slice().reverse().map(function (y) { return [y, ylabel(d, y, lg)]; }), st.year) : '') + '</div>';

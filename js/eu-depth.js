@@ -81,7 +81,7 @@
   var PAL = ['#2f6b4a', '#b7791f', '#2b5f9e', '#a23b3b', '#6b4fa1', '#3a8f8f', '#8a8a8a', '#c2670b', '#5a7d2a'];
   function chart(series, o) { var C = window.DehesaChart; if (!C) return ''; series = series.map(function (x, i) { return { name: x.name, pts: x.pts, color: x.color || PAL[i % PAL.length], dash: x.dash }; }); return C.render({ series: series, xMode: o.xMode === 'num' ? undefined : 'time', yTitle: o.unit, aria: o.aria, noLegend: series.length < 2, yMin: o.yMin, yMax: o.yMax, vFmt: o.vFmt, yFmt: function (v) { return nf(v, Math.abs(v) >= 100 ? 0 : Math.abs(v) >= 10 ? 1 : 2, o.lang); }, xFmt: o.xFmt }); }
   function cite(id, period) { var Q = window.DICite; if (!Q) return ''; var c = Q.html(id, { period: String(period || '') }); return c ? '<div class="pp-cites">' + c + '</div>' : ''; }
-  function sel(k, label, opts, cur) { return '<label>' + esc(label) + '<br><select data-k="' + k + '">' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === cur ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>'; }
+  function sel(k, label, opts, cur) { var yrs = opts.length > 6 && opts.every(function (o) { return /^\d{4}(\/\d{2,4})?$/.test(String(o[1])); }); return '<label>' + esc(label) + '<br><select data-k="' + k + '"' + (yrs ? '' : ' data-chips') + '>' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === cur ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>'; }
   function tiles(a) { return '<div class="de-tiles">' + a.map(function (x) { return '<div class="de-tile"><div class="de-tl">' + esc(x[0]) + '</div><div class="de-tv">' + x[1] + '</div>' + (x[2] ? '<div class="de-tl">' + x[2] + '</div>' : '') + '</div>'; }).join('') + '</div>'; }
   function tbl(head, rows, nr) { return '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr>' + head.map(function (h, i) { return '<th scope="col"' + (i && !nr ? ' class="r"' : '') + '>' + esc(h) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows.map(function (r) { return '<tr>' + r.map(function (c, i) { return (i ? '<td class="r">' : '<td>') + c + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>'; }
   function note(s) { return '<p class="di-movers-hint">' + esc(s) + '</p>'; }
@@ -90,7 +90,9 @@
   /* --------- cosecha por region (DK y NL): misma maquina, distintos ficheros --------- */
   function harvest(body, lang, cfg) {
     var D = cfg.d, H = cfg.h, st = cfg.st, keys = Object.keys(H.data).filter(function (c) { var n = H.data[c][cfg.nat]; return n && n.prod; });
-    keys.sort(function (a, b) { return pk(CROPS, a, lang).localeCompare(pk(CROPS, b, lang), lang); });
+    // de mas a menos produccion en el ultimo año: los botones visibles son los cultivos que mas pesan (antes, orden alfabetico)
+    var big = function (c) { var q = lastP(H.data[c][cfg.nat].prod); return q ? q[1] : 0; };
+    keys.sort(function (a, b) { return big(b) - big(a) || pk(CROPS, a, lang).localeCompare(pk(CROPS, b, lang), lang); });
     if (!st.crop || keys.indexOf(st.crop) < 0) st.crop = keys.indexOf(cfg.def) >= 0 ? cfg.def : keys[0];
     var cd = H.data[st.crop], nat = cd[cfg.nat], m = st.m || 'yield', unit = m === 'yield' ? tx('th', lang) : m === 'area' ? tx('ha', lang) : cfg.prodUnit(lang), ser = nat[m] || [], lp = lastP(ser);
     var h = '<div class="de-ctl">' + sel('crop', tx('crop', lang), keys.map(function (c) { return [c, pk(CROPS, c, lang)]; }), st.crop) + sel('m', tx('meas', lang), [['yield', tx('yld', lang)], ['prod', tx('prod', lang)], ['area', tx('area', lang)]], m) + '</div>';

@@ -71,9 +71,9 @@
     st.series.forEach(function (s) { if (catOf(b, s, T0) === st.cat) list.push(s); });
     if (!st.sid || !list.some(function (s) { return s.id === st.sid; })) st.sid = list[0].id;
     var s = list.filter(function (x) { return x.id === st.sid; })[0];
-    var sel = '<div style="display:flex;flex-wrap:wrap;gap:10px 18px;margin:10px 0 4px"><label class="di-movers-hint">' + esc(T0.cat) + '<select id="' + id + '-cat" style="display:block;margin-top:4px;font:inherit;max-width:100%">' +
+    var sel = '<div style="display:flex;flex-wrap:wrap;gap:10px 18px;margin:10px 0 4px"><label class="di-movers-hint">' + esc(T0.cat) + '<select data-chips id="' + id + '-cat" style="display:block;margin-top:4px;font:inherit;max-width:100%">' +
       cats.map(function (c) { return '<option value="' + esc(c) + '"' + (c === st.cat ? ' selected' : '') + '>' + esc((window.DIUS && window.DIUS.emo(c) ? window.DIUS.emo(c) + ' ' : '') + catName(b, c, T0)) + '</option>'; }).join('') + '</select></label>' +
-      '<label class="di-movers-hint" style="flex:1 1 280px">' + esc(T0.ser) + '<select id="' + id + '-ser" style="display:block;margin-top:4px;font:inherit;max-width:100%;width:100%">' +
+      '<label class="di-movers-hint" style="flex:1 1 280px">' + esc(T0.ser) + '<select data-chips id="' + id + '-ser" style="display:block;margin-top:4px;font:inherit;max-width:100%;width:100%">' +
       list.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === st.sid ? ' selected' : '') + '>' + esc(clean(x.label)) + '</option>'; }).join('') + '</select></label></div>';
     var rows = s.points.slice(-12).reverse(), body = '';
     var th = 'padding:7px 6px;font-size:11px;font-weight:700;color:var(--text-faint);text-align:right;', td = 'padding:6px;border-top:1px solid var(--border);font-variant-numeric:tabular-nums;text-align:right;';

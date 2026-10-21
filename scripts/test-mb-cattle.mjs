@@ -7,6 +7,8 @@ import { execSync } from 'node:child_process';
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
+// los desplegables con data-chips quedan ocultos tras sus botones (js/chip-select.js): se elige en el <select> y se lanza «change», como hace el boton
+async function selectHidden(pg, sel, val) { await pg.waitForSelector(sel, { state: 'attached' }); await pg.$eval(sel, (e, v) => { e.value = v; e.dispatchEvent(new Event('change', { bubbles: true })); }, val); }
 const D = JSON.parse(fs.readFileSync('data/mb-markets/cattle.json', 'utf8'));
 const wk = Object.keys(D.weeks).sort(), W = D.weeks[wk[wk.length - 1]], P = D.weeks[wk[wk.length - 2]];
 const ci = D.classes.indexOf('steer701'), sum = W.summary[ci], psum = P.summary[ci];
@@ -23,7 +25,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/ERR_|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 120)); });
   await page.goto(BASE + '/paises.html?c=CA', { waitUntil: 'networkidle' }); await page.waitForSelector('#ps-mb details', { timeout: 8000 });
   ok(tag + ': cerrado no carga el modulo', !(await page.evaluate(() => !!window.MBCattle)));
-  await page.click('#ps-mb details > summary'); await page.waitForSelector('#ps-mb [data-mb="cls"]', { timeout: 8000 });
+  await page.click('#ps-mb details > summary'); await page.waitForSelector('#ps-mb [data-mb="cls"]', { state: 'attached', timeout: 8000 });
   const txt = async () => await page.evaluate(() => document.querySelector('#ps-mb .es-body').innerText);
   let t = await txt();
   ok(tag + ': media de novillos 701-800 en C$/cwt', nrm(t).includes(nrm(f2(sum[2]))));
@@ -35,7 +37,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': atribucion OpenMB', /OpenMB/.test(t));
   ok(tag + ': grafico de la serie', (await page.$$('#ps-mb svg')).length >= 1);
   ok(tag + ': sin undefined/NaN', !/undefined|NaN|\[object|Infinity/.test(t));
-  await page.selectOption('#ps-mb [data-mb="cls"]', 'cowD12'); await page.selectOption('#ps-mb [data-mb="mart"]', mart); t = await txt();
+  await selectHidden(page, '#ps-mb [data-mb="cls"]', 'cowD12'); await selectHidden(page, '#ps-mb [data-mb="mart"]', mart); t = await txt();
   ok(tag + ': ' + mart + ' vacas D1,2 media', nrm(t).includes(nrm(f2(mrow[2]))) && t.includes(W.marts[mart].date));
   ok(tag + ': cabezas de ' + mart, nrm(t).includes(String(W.head[mart])));
   const empty = Object.keys(P.marts).find(m => !P.marts[m].date);

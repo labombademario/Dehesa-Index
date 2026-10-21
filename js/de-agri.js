@@ -94,7 +94,7 @@
     var ys = yearsFor(st.crop, st.v); if (!ys.length) { body.innerHTML = '<p class="di-movers-hint">' + esc(t.noLand) + '</p>'; return; }
     if (ys.indexOf(st.year) < 0) st.year = ys[ys.length - 1];
     var y = st.year, nat = A.production.nat[st.crop][st.v], L = A.production.land[st.crop] || {};
-    var h = '<div class="de-ctl"><label>' + esc(t.crop) + ' <select class="di-compare-select" data-dc="crop">' + A.crops.map(function (c) { return '<option value="' + c.k + '"' + (c.k === st.crop ? ' selected' : '') + '>' + esc(pick(CROP, c.k, lang)) + '</option>'; }).join('') + '</select></label> ' +
+    var h = '<div class="de-ctl"><label>' + esc(t.crop) + ' <select class="di-compare-select" data-dc="crop" data-chips>' + A.crops.map(function (c) { return '<option value="' + c.k + '"' + (c.k === st.crop ? ' selected' : '') + '>' + esc(pick(CROP, c.k, lang)) + '</option>'; }).join('') + '</select></label> ' +
       '<label>' + esc(t.year) + ' <select class="di-compare-select" data-dc="year">' + ys.slice().reverse().map(function (x) { return '<option value="' + x + '"' + (x === y ? ' selected' : '') + '>' + x + '</option>'; }).join('') + '</select></label></div>';
     h += '<div class="di-src-tabs" role="group">' + ['prod', 'area', 'yield'].map(function (v) { return '<button type="button" class="di-src-tab" data-dv="' + v + '" aria-pressed="' + (v === st.v) + '">' + esc(t.vars[v]) + '</button>'; }).join('') + '</div>';
     var rows = [], tot = get(nat, y);
@@ -217,7 +217,7 @@
     var nmOf = function (s) { var k = s.id.replace(/^de-(out-m|in-q)-/, ''); return pick(s.id.indexOf('de-out') === 0 ? OUTN : INN, k, lang); };
     var opt = function (list, cur) { return list.slice().sort(function (a, b) { return a.id.length - b.id.length || (a.id < b.id ? -1 : 1); }).map(function (s) { var k = s.id.replace(/^de-(out-m|in-q)-/, ''); return '<option value="' + k + '"' + (k === cur ? ' selected' : '') + '>' + esc(nmOf(s)) + '</option>'; }).join(''); };
     var h = '<p class="di-movers-hint" style="margin:0 0 6px"><b>' + esc(t.mTitle) + '</b></p><div class="di-src-tabs" role="group" aria-label="' + esc(t.pre) + '">' + Object.keys(PAIRS).map(function (k) { return '<button type="button" class="di-src-tab" data-dpair="' + k + '" aria-pressed="' + (st.out === PAIRS[k][0] && st.inp === PAIRS[k][1]) + '">' + esc(t.presets[k]) + '</button>'; }).join('') + '</div>';
-    h += '<div class="de-ctl"><label>' + esc(t.outL) + '<br><select class="di-compare-select" data-dm="out">' + opt(outs, st.out) + '</select></label> <label>' + esc(t.inL) + '<br><select class="di-compare-select" data-dm="inp">' + opt(ins, st.inp) + '</select></label></div>';
+    h += '<div class="de-ctl"><label>' + esc(t.outL) + '<br><select class="di-compare-select" data-dm="out" data-chips>' + opt(outs, st.out) + '</select></label> <label>' + esc(t.inL) + '<br><select class="di-compare-select" data-dm="inp" data-chips>' + opt(ins, st.inp) + '</select></label></div>';
     if (!so || !si) { body.innerHTML = h + '<p class="di-movers-hint">' + esc(t.mnone) + '</p>'; return; }
     var qo = quarterlyOut(so), qi = {}; si.points.forEach(function (p) { qi[p[0]] = p[1]; });
     var per = Object.keys(qo).filter(function (k) { return qi[k] != null; }).sort();

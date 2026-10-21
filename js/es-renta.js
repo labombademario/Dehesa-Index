@@ -24,7 +24,7 @@
   function render(el) {
     var t = T[lang()] || T.es, N = D.national, Y = D.years, row = null, i;
     for (i = 0; i < N.length; i++) if (N[i].label === ROW) row = N[i]; if (!row) { row = rowOf(N, 'G') || N[0]; ROW = row.label; }
-    var sel = '<label class="di-movers-hint" style="display:block;margin:8px 0 4px">' + esc(t.item) + '<select id="esr-sel" style="display:block;margin-top:4px;font:inherit;max-width:100%">' + N.map(function (x) { return '<option value="' + esc(x.label) + '"' + (x.label === ROW ? ' selected' : '') + '>' + (x.level ? '  ' : '') + esc(lbl(x.label)) + '</option>'; }).join('') + '</select></label>';
+    var sel = '<label class="di-movers-hint" style="display:block;margin:8px 0 4px">' + esc(t.item) + '<select data-chips id="esr-sel" style="display:block;margin-top:4px;font:inherit;max-width:100%">' + N.map(function (x) { return '<option value="' + esc(x.label) + '"' + (x.label === ROW ? ' selected' : '') + '>' + (x.level ? '  ' : '') + esc(lbl(x.label)) + '</option>'; }).join('') + '</select></label>';
     var li = row.v.length - 1; while (li >= 0 && row.v[li] == null) li--;
     var p = li > 0 ? pct(row.v[li - 1], row.v[li]) : null;
     var cards = '<div class="cof-cards"><div class="di-card cof-card"><div class="cof-n">' + esc(t.last) + ' · ' + esc(Y[li]) + '</div><div class="cof-v">' + esc(nf(row.v[li], 0)) + ' <small>' + esc(t.mu) + '</small></div></div><div class="di-card cof-card"><div class="cof-n">' + esc(t.chg) + '</div><div class="cof-v" style="color:' + pcc(p) + '">' + esc(pcs(p)) + '</div><div class="di-movers-hint">' + esc(t.calc) + '</div></div></div>';

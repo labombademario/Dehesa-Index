@@ -76,7 +76,7 @@
     for (i = 0; i < Y.length; i++) if (s[i] != null) pts.push([Y[i], s[i]]);
     var ids = Object.keys(d.classes[ST.c]).filter(function (k) { return k !== 'PL'; }).sort(function (a, b) { return rname(a, lg, MAP).localeCompare(rname(b, lg, MAP), LOC[lg]); });
     var opts = [['PL', t.poland]].concat(ids.map(function (k) { return [k, rname(k, lg, MAP)]; }));
-    var sel = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select ll-reg" aria-label="' + esc(t.evoIn) + '">' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.reg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+    var sel = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select ll-reg" data-chips aria-label="' + esc(t.evoIn) + '">' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.reg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
     var head = '<div class="di-info-card-title gb-sub">' + esc(t.evo) + '</div><div class="wd-sels">' + sel + '</div>';
     if (pts.length < 2) return { html: head + '<div class="wp-hist">' + esc(t.noData) + '</div>' };
     var W = 560, H = 200, L = 56, R = 14, Tp = 16, B = 24, lo = 1e18, hi = 0;
@@ -125,7 +125,7 @@
     ro.textContent = t.hover + ' ' + HP;
   }
   function sel(label, cls, arr, cur) {
-    return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" aria-label="' + esc(label) + '">' + arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+    return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" data-chips aria-label="' + esc(label) + '">' + arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
   }
   function mount(el, lg) {
     if (!el) return Promise.resolve(false);

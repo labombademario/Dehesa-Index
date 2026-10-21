@@ -78,7 +78,7 @@
     var y = SEL.y, py = String(+y - 1), hp = !!d.campaigns[py], p = SEL.p, prod = d.products.filter(function (q) { return q.id === p; })[0];
     var popts = d.products.map(function (q) { return '<option value="' + esc(q.id) + '"' + (q.id === p ? ' selected' : '') + '>' + esc(name(q)) + '</option>'; }).join('');
     var yopts = Y.slice().reverse().map(function (k) { return '<option value="' + k + '"' + (k === y ? ' selected' : '') + '>' + esc(d.campaigns[k].label) + '</option>'; }).join('');
-    var ctr = '<div class="di-card" style="padding:14px 18px;margin:14px 0;display:flex;gap:16px;flex-wrap:wrap;align-items:center"><label style="font-size:13px">' + x.product + ' <select id="od-cc-p" class="di-compare-select">' + popts + '</select></label><label style="font-size:13px">' + x.year + ' <select id="od-cc-y" class="di-compare-select">' + yopts + '</select></label></div>';
+    var ctr = '<div class="di-card" style="padding:14px 18px;margin:14px 0;display:flex;gap:16px;flex-wrap:wrap;align-items:center"><label style="font-size:13px">' + x.product + ' <select data-chips id="od-cc-p" class="di-compare-select">' + popts + '</select></label><label style="font-size:13px">' + x.year + ' <select id="od-cc-y" class="di-compare-select">' + yopts + '</select></label></div>';
     var meta = '<p class="di-movers-hint">' + esc(d.source.name) + (d.source.table ? ' · ' + x.table + ' ' + esc(d.source.table) : '') + (url(d.source.url) ? ' · <a href="' + esc(url(d.source.url)) + '" rel="noopener">' + x.src + '</a>' : '') + '</p>';
     var foot = '<p class="di-info-api-notice" style="margin:14px 0">' + esc(d.note[L()]) + '</p><p class="di-movers-hint">' + esc(x.blank) + '</p>' + ci(d.sourceId, d.campaigns[ys()[ys().length - 1]].label);
     var body;

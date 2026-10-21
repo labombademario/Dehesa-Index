@@ -4,6 +4,8 @@ import { execSync } from 'node:child_process'; import { readFileSync } from 'nod
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
+// los desplegables con data-chips quedan ocultos tras sus botones (js/chip-select.js): se elige en el <select> y se lanza «change», como hace el boton
+async function selectHidden(pg, sel, val) { await pg.waitForSelector(sel, { state: 'attached' }); await pg.$eval(sel, (e, v) => { e.value = v; e.dispatchEvent(new Event('change', { bubbles: true })); }, val); }
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
 const J = JSON.parse(readFileSync('data/spain-slaughter/slaughter.json', 'utf8')), L = J.periods.length - 1;
@@ -27,11 +29,11 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ' cita MAPA', /MAPA|Ministerio|Ministry|ministère|Ministero/.test(m.txt));
   ok(tag + ' sin desborde', !m.over);
   if (w === 1280) {
-    await page.selectOption('#gn-ess-item', 'porcino'); m = await get();
+    await selectHidden(page, '#gn-ess-item', 'porcino'); m = await get();
     ok(tag + ' porcino: peso canal en kt = JSON', new RegExp(kt(PIG)).test(m.txt) || /\d/.test(m.txt));
-    await page.selectOption('#gn-ess-met', 'carcass'); m = await get();
+    await selectHidden(page, '#gn-ess-met', 'carcass'); m = await get();
     ok(tag + ' porcino peso canal = JSON y comunidades', new RegExp(kt(PIG)).test(m.txt) && m.rows >= 10);
-    await page.selectOption('#gn-ess-item', 'bovino'); await page.selectOption('#gn-ess-met', 'weight'); m = await get();
+    await selectHidden(page, '#gn-ess-item', 'bovino'); await selectHidden(page, '#gn-ess-met', 'weight'); m = await get();
     ok(tag + ' peso medio del vacuno calculado = ' + WT.toFixed(1), new RegExp(ex(WT.toFixed(1))).test(m.txt));
     ok(tag + ' serie nacional desde 2022 y antes de 2025 sin comunidades (hueco)', J.periods[0] === '2022-01' && J.ccaa.galicia.bovino.heads[0] === null);
   }

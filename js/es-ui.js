@@ -8,7 +8,7 @@
     nf: function (v, d) { if (v == null) return '–'; try { return v.toLocaleString(U.lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } },
     f: function (s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] == null ? m : o[k]; }); },
     chip: function (on, cls, data, label) { return '<button type="button" class="' + cls + '" ' + data + ' aria-pressed="' + on + '" style="font:inherit;cursor:pointer;padding:6px 11px;margin:0 6px 6px 0;border:1px solid var(--border);border-radius:16px;background:' + (on ? 'var(--accent)' : 'transparent') + ';color:' + (on ? '#fff' : 'inherit') + '">' + U.esc(label) + '</button>'; },
-    sel: function (id, label, opts, cur) { return '<label class="di-movers-hint" style="display:inline-block;margin:0 14px 8px 0">' + U.esc(label) + '<select id="' + id + '" style="display:block;margin-top:4px;font:inherit;max-width:100%">' + opts + '</select></label>'; },
+    sel: function (id, label, opts, cur) { return '<label class="di-movers-hint" style="display:inline-block;margin:0 14px 8px 0">' + U.esc(label) + '<select data-chips id="' + id + '" style="display:block;margin-top:4px;font:inherit;max-width:100%">' + opts + '</select></label>'; },
     opt: function (v, label, cur) { return '<option value="' + U.esc(v) + '"' + (String(v) === String(cur) ? ' selected' : '') + '>' + U.esc(label) + '</option>'; },
     td: 'padding:7px 6px;border-top:1px solid var(--border);font-variant-numeric:tabular-nums;text-align:right;',
     th: 'padding:8px 6px;font-size:11px;font-weight:700;color:var(--text-faint);',

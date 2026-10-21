@@ -94,7 +94,7 @@
   function yearSel(d, id) {
     var ys = yearsOf(d); if (ys.length < 2) return '';
     if (YEAR != null && ys.indexOf(YEAR) < 0) YEAR = null;
-    return '<span class="fsh-yr"><label for="' + id + '">' + esc(tx(T.hYear)) + '</label> <select id="' + id + '" class="di-compare-select"><option value="">' + esc(tx(T.latest)) + '</option>' +
+    return '<span class="fsh-yr"><label for="' + id + '">' + esc(tx(T.hYear)) + '</label> <select data-chips id="' + id + '" class="di-compare-select"><option value="">' + esc(tx(T.latest)) + '</option>' +
       ys.map(function (y) { return '<option value="' + y + '"' + (y === YEAR ? ' selected' : '') + '>' + y + '</option>'; }).join('') + '</select></span>';
   }
   function prevOf(a, p) { if (!a || !p) return null; for (var i = a.length - 1; i >= 0; i--) if (+a[i][0] === +p[0] - 1) return a[i]; return null; }

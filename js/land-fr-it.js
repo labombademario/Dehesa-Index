@@ -111,7 +111,7 @@
       for (i = 0; i < rs.length; i++) opts.push([rs[i], zoneName(cc, rs[i], lg, mapObj)]);
       var mc = Object.keys(d.macro); for (i = 0; i < mc.length; i++) opts.push([mc[i], t.macro[mc[i]]]);
     }
-    var sel = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select ll-reg" aria-label="' + esc(t.evoIn) + '">' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === cur ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+    var sel = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select ll-reg" data-chips aria-label="' + esc(t.evoIn) + '">' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === cur ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
     var head = '<div class="di-info-card-title gb-sub">' + esc(t.evo) + '</div><div class="wd-sels">' + sel + '</div>';
     if (pts.length < 2) return { html: head + '<div class="wp-hist">' + esc(t.noData) + '</div>' };
     var W = 560, H = 200, L = 56, R = 14, Tp = 16, B = 24, lo = 1e18, hi = 0;
@@ -163,7 +163,7 @@
     ro.textContent = t.hover + ' ' + HP;
   }
   function opts(arr, cur) { return arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join(''); }
-  function sel(label, cls, arr, cur) { return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" aria-label="' + esc(label) + '">' + opts(arr, cur) + '</select></label>'; }
+  function sel(label, cls, arr, cur) { return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" data-chips aria-label="' + esc(label) + '">' + opts(arr, cur) + '</select></label>'; }
   function mount(el, lg, cc) {
     if (!el || (cc !== 'FR' && cc !== 'IT')) return Promise.resolve(false);
     lg = T[lg] ? lg : 'es';

@@ -34,7 +34,7 @@ for (const f of files) {
     ok(tag + ' sin desbordamiento horizontal', !m.over);
     ok(tag + ' sin errores de consola', errs.length === 0);
     if (w === 1280 && lang === 'es') {
-      if (noData) { await page.selectOption('#od-cc-p', noData.id); await page.waitForTimeout(200); const t = await page.evaluate(() => document.getElementById('od-cc').innerText); ok(tag + ' producto sin dato: lo dice y no inventa tabla', /no publica/.test(t) && !/Balance ·/.test(t)); }
+      if (noData) { await page.$eval('#od-cc-p', (e, v) => { e.value = v; e.dispatchEvent(new Event('change', { bubbles: true })); }, noData.id); await page.waitForTimeout(200); const t = await page.evaluate(() => document.getElementById('od-cc').innerText); ok(tag + ' producto sin dato: lo dice y no inventa tabla', /no publica/.test(t) && !/Balance ·/.test(t)); }
       await page.click('[data-odtab=es]'); await page.waitForTimeout(500);
       const a = await page.evaluate(() => ({ cc: document.getElementById('od-cc').hidden, es: document.getElementById('od-es').hidden, q: location.search }));
       ok(tag + ' al ir a España se oculta el pais y la URL cambia', a.cc && !a.es && /c=ES/.test(a.q));

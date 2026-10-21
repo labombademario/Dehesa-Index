@@ -39,7 +39,7 @@
   function load() { return CACHE || (CACHE = fetch('data/poland-farm-shop.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
   function nm(s, lg) { var n = NM[s.id]; return n ? (n[lg] || n.en) : s.label; }
   function sel(label, cls, arr, cur) {
-    return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" aria-label="' + esc(label) + '">' + arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+    return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" data-chips aria-label="' + esc(label) + '">' + arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
   }
   function chart(p, farm, ret, lg) {
     var t = T[lg], Y = p.years, i, lo = 1e18, hi = 0, W = 560, H = 210, L = 44, R = 14, Tp = 16, B = 24;

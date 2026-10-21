@@ -45,7 +45,7 @@
     var ci = D.classes.indexOf(st.cls); if (ci < 0) ci = 3;
     var opts = D.classes.map(function (k) { return '<option value="' + k + '"' + (k === D.classes[ci] ? ' selected' : '') + '>' + esc(label(k, t)) + '</option>'; }).join('');
     var mopts = '<option value="all"' + (st.mart === 'all' ? ' selected' : '') + '>' + esc(t.all) + '</option>' + D.marts.map(function (m) { return '<option value="' + esc(m) + '"' + (st.mart === m ? ' selected' : '') + '>' + esc(m) + '</option>'; }).join('');
-    var h = '<div class="de-ctl"><label>' + esc(t.cls) + '<br><select class="di-compare-select" data-mb="cls">' + opts + '</select></label><label>' + esc(t.mart) + '<br><select class="di-compare-select" data-mb="mart">' + mopts + '</select></label></div>';
+    var h = '<div class="de-ctl"><label>' + esc(t.cls) + '<br><select class="di-compare-select" data-mb="cls" data-chips>' + opts + '</select></label><label>' + esc(t.mart) + '<br><select class="di-compare-select" data-mb="mart" data-chips>' + mopts + '</select></label></div>';
     var cur = trio(w, st.mart, ci), prev = pw ? trio(pw, st.mart, ci) : null, tl = '';
     if (cur) {
       tl += tile(t.avg + ' · ' + t.cwt, nf(cur[2], 2, lang), esc(t.low) + ' ' + nf(cur[0], 2, lang) + ' · ' + esc(t.high) + ' ' + nf(cur[1], 2, lang));

@@ -48,7 +48,7 @@
     var ss = D.sales[st.mart] || {}, ks = Object.keys(ss).sort(), have = ks.filter(function (k) { return ss[k][ci]; }), last = ks[ks.length - 1];
     var opts = D.classes.map(function (k) { return '<option value="' + k + '"' + (k === D.classes[ci] ? ' selected' : '') + '>' + esc(t[k]) + '</option>'; }).join('');
     var mopts = D.marts.map(function (m) { return '<option value="' + esc(m) + '"' + (st.mart === m ? ' selected' : '') + '>' + esc(m) + '</option>'; }).join('');
-    var h = '<div class="de-ctl"><label>' + esc(t.cls) + '<br><select class="di-compare-select" data-mbs="cls">' + opts + '</select></label><label>' + esc(t.mart) + '<br><select class="di-compare-select" data-mbs="mart">' + mopts + '</select></label></div>';
+    var h = '<div class="de-ctl"><label>' + esc(t.cls) + '<br><select class="di-compare-select" data-mbs="cls" data-chips>' + opts + '</select></label><label>' + esc(t.mart) + '<br><select class="di-compare-select" data-mbs="mart" data-chips>' + mopts + '</select></label></div>';
     var lk = have[have.length - 1], pk = have[have.length - 2], cur = lk ? ss[lk][ci] : null, prev = pk ? ss[pk][ci] : null, tl = '';
     if (cur) {
       tl += tile(t.avg + ' · C$/cwt', nf(cur[2], 2, lang), esc(t.low) + ' ' + nf(cur[0], 2, lang) + ' · ' + esc(t.high) + ' ' + nf(cur[1], 2, lang));
@@ -68,7 +68,7 @@
     var t = T[lang], mi = D.fields.indexOf(st.metric); if (mi < 0) mi = 0; var m = D.fields[mi];
     var ks = Object.keys(D.weeks).sort(), have = ks.filter(function (k) { return D.weeks[k][mi] != null; }), lk = have[have.length - 1], pk = have[have.length - 2];
     var opts = D.fields.map(function (k) { return '<option value="' + k + '"' + (k === m ? ' selected' : '') + '>' + esc(t[k]) + '</option>'; }).join('');
-    var h = '<div class="de-ctl"><label>' + esc(t.metric) + '<br><select class="di-compare-select" data-mbh="metric">' + opts + '</select></label></div>', tl = '';
+    var h = '<div class="de-ctl"><label>' + esc(t.metric) + '<br><select class="di-compare-select" data-mbh="metric" data-chips>' + opts + '</select></label></div>', tl = '';
     if (lk) {
       var v = D.weeks[lk][mi], p = pk && (Date.parse(lk) - Date.parse(pk)) <= 7.5 * 864e5 ? D.weeks[pk][mi] : null;
       var yk = new Date(Date.parse(lk + 'T00:00:00Z') - 364 * 864e5).toISOString().slice(0, 10), y = D.weeks[yk] ? D.weeks[yk][mi] : null;

@@ -62,7 +62,7 @@
       var sorted = rows.map(function (r) { return r.v; }).sort(function (a, b) { return a - b; }), cuts = [1, 2, 3, 4].map(function (q) { return sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * q / 5))]; });
       var cls = function (v) { var i = 0; while (i < 4 && v >= cuts[i]) i++; return i; }, byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
       var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
-      var sel = function (id, label, inner) { return '<label style="font-size:13px">' + esc(label) + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
+      var sel = function (id, label, inner) { return '<label style="font-size:13px">' + esc(label) + '<br><select data-chips id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
       var cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' + card(t.ca + ' · ' + SEL.per, nv == null ? '—' : esc(cfg.fmt(m, nv)), chg(nv == null ? null : pct(nv, np)) + ' ' + esc(t.vsPrev)) +
         (SEL.prov && byId[SEL.prov] ? card(pnm(SEL.prov) + ' · ' + SEL.per, esc(cfg.fmt(m, byId[SEL.prov].v)), chg(byId[SEL.prov].y) + ' ' + esc(t.vsPrev)) : '') + '</div>';
       var map = window[cfg.map || 'DEHESA_CA_PROVINCES'], svg = '';

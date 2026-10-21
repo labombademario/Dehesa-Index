@@ -56,7 +56,7 @@
         var opts = big.slice().reverse().map(function (m) { return '<option value="' + m.month + '"' + (m === main ? ' selected' : '') + '>' + esc(mon(m.month, lg)) + '</option>'; }).join('');
         var nm = function (id) { return id ? ((D.deptNames && D.deptNames[id]) || (mp && mp.names[id]) || id) : t.allFr; };
         el.innerHTML = '<section class="di-card ps-rm gb-card on-card" id="fr-onde" style="max-width:none"><h2 class="ps-rm-h">' + esc(t.h) + '</h2>' +
-          '<label class="di-movers-hint" style="display:block;margin:0 0 10px">' + esc(t.pick) + ' <select class="di-compare-select" data-on="m">' + opts + '</select></label>' +
+          '<label class="di-movers-hint" style="display:block;margin:0 0 10px">' + esc(t.pick) + ' <select class="di-compare-select" data-on="m" data-chips>' + opts + '</select></label>' +
           '<p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.at.replace('{m}', mon(main.month, lg))) + '</p>' +
           '<div class="di-info-stat-list" style="max-width:640px">' + row(t.pts, '<b>' + n.toLocaleString(LOC[lg]) + '</b>') + row(t.dry, '<b>' + p1(100 * tot[2] / n, lg) + '</b> (' + tot[2] + ')') + row(t.nof, p1(100 * tot[1] / n, lg) + ' (' + tot[1] + ')') + row(t.flow, p1(100 * tot[0] / n, lg) + ' (' + tot[0] + ')') +
           (avg != null ? row(t.avg.replace('{m}', mon(main.month, lg, false)).replace('{a}', prev[0].month.slice(0, 4)).replace('{b}', prev[prev.length - 1].month.slice(0, 4)), p1(avg, lg)) : '') + '</div>' +

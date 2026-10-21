@@ -68,7 +68,7 @@
       }
       function draw(focus) {
         var c1 = chart(D, [[1, 't', t.lF], [3, 'r', t.lR]], lg, t, 'bd-day', t.c1, '');
-        var fsel = '<label class="wp-sel"><span>' + esc(t.from) + '</span><select class="di-compare-select bf-from" aria-label="' + esc(t.from) + '">' + [[2005, t.all], [2015, '2015'], [2019, '2019'], [2023, '2023']].map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === st.from ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+        var fsel = '<label class="wp-sel"><span>' + esc(t.from) + '</span><select class="di-compare-select bf-from" data-chips aria-label="' + esc(t.from) + '">' + [[2005, t.all], [2015, '2015'], [2019, '2019'], [2023, '2023']].map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === st.from ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
         var c2 = chart((d.weekly || []).filter(function (r) { return parseInt(r[0].slice(0, 4), 10) >= st.from; }), [[1, 't', t.lD], [2, 'r', t.lN], [3, 'w', t.lH]], lg, t, 'bd-week', t.c2, fsel);
         el.innerHTML = '<section class="di-card ps-rm wp-card gb-card" id="ps-be-diesel" style="max-width:none"><h2 class="ps-rm-h">' + esc(t.h) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.last.replace('{d}', day(x[0], lg))) + ' · ' + esc(t.vat) + '</p><div class="di-info-stat-list" style="max-width:640px">' +
           row(t.big, '<b>' + eur(x[1], lg) + '</b>') + row(t.small, eur(x[2], lg)) + row(t.novat, eur(d.farmNoVat, lg)) + row(t.road, eur(x[3], lg)) +

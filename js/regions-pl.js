@@ -94,7 +94,7 @@
     for (i = 0; i < Y.length; i++) if (s[i] != null) pts.push([Y[i], s[i]]);
     var ids = Object.keys(x.regions).sort(function (a, b) { return rname(a, lg, MAP).localeCompare(rname(b, lg, MAP), LOC[lg]); });
     var opts = [['PL', t.poland]].concat(ids.map(function (k) { return [k, rname(k, lg, MAP)]; }));
-    var selr = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select ll-reg" aria-label="' + esc(t.evoIn) + '">' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.reg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+    var selr = '<label class="wp-sel"><span>' + esc(t.evoIn) + '</span><select class="di-compare-select ll-reg" data-chips aria-label="' + esc(t.evoIn) + '">' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.reg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
     var head = '<div class="di-info-card-title gb-sub">' + esc(t.evo) + '</div><div class="wd-sels">' + selr + '</div>';
     if (pts.length < 2) return { html: '' };   // censo / encuesta de una sola foto: no hay serie que dibujar
     var W = 560, H = 200, L = 62, R = 14, Tp = 16, B = 24, lo = 1e18, hi = 0, dec = x.unit === 't/ha' ? 1 : 0;
@@ -125,7 +125,7 @@
     svg.addEventListener('mouseleave', function () { cr.style.display = 'none'; ro.textContent = t.hover; });
   }
   function sel(label, cls, arr, cur) {
-    return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" aria-label="' + esc(label) + '">' + arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
+    return '<label class="wp-sel"><span>' + esc(label) + '</span><select class="di-compare-select ' + cls + '" data-chips aria-label="' + esc(label) + '">' + arr.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
   }
   function mount(el, lg) {
     if (!el) return Promise.resolve(false);
@@ -152,7 +152,7 @@
             var items = d.indicators.filter(function (z) { return z.group === g; }); if (!items.length) return;
             opts += '<optgroup label="' + esc(t.g[g]) + '">' + items.map(function (z) { return '<option value="' + esc(z.id) + '"' + (z.id === ST.c ? ' selected' : '') + '>' + esc(label(z, lg)) + '</option>'; }).join('') + '</optgroup>';
           });
-          var head = '<label class="wp-sel"><span>' + esc(t.meas) + '</span><select class="di-compare-select ll-m" aria-label="' + esc(t.meas) + '">' + opts + '</select></label>' + sel(t.year, 'll-year', Y.slice().reverse().map(function (y) { return [y, String(y)]; }), ST.year);
+          var head = '<label class="wp-sel"><span>' + esc(t.meas) + '</span><select class="di-compare-select ll-m" data-chips aria-label="' + esc(t.meas) + '">' + opts + '</select></label>' + sel(t.year, 'll-year', Y.slice().reverse().map(function (y) { return [y, String(y)]; }), ST.year);
           var mp = '';
           if (MAP && list.length) {
             var m = M.html(MAP, { values: vals, fmt: function (v, short) { return short ? fmt(v, lg, x.unit === 't/ha' ? 1 : 0) : val(v, x, lg); }, label: t.map + ' · ' + ST.year, none: t.noData });

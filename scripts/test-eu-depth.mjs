@@ -7,6 +7,8 @@ import { execSync } from 'node:child_process';
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
+// los desplegables con data-chips quedan ocultos tras sus botones (js/chip-select.js): se elige en el <select> y se lanza «change», como hace el boton
+async function selectHidden(pg, sel, val) { await pg.waitForSelector(sel, { state: 'attached' }); await pg.$eval(sel, (e, v) => { e.value = v; e.dispatchEvent(new Event('change', { bubbles: true })); }, val); }
 const J = f => JSON.parse(fs.readFileSync('data/' + f, 'utf8'));
 const DK = J('denmark-depth.json'), NF = J('netherlands-farm.json'), NM = J('netherlands-markets.json'), FV = J('france-vigieau.json'), FC = J('france-cereobs.json'), CAP = J('cap/dk/amounts.json');
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
@@ -29,27 +31,27 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await open('DK', 'dk-harvest'); let t = await txt('dk-harvest');
   ok(tag + ' DK: rendimiento nacional del trigo de invierno', dig(t).includes(d2(dkw[1], 2)) && t.includes(dkw[0]));
   ok(tag + ' DK: tabla de regiones (>=12 filas)', (await page.$$('#eu-dk-harvest tbody tr')).length >= 12);
-  await page.selectOption('#eu-dk-harvest select[data-k="m"]', 'prod'); t = await txt('dk-harvest');
+  await selectHidden(page, '#eu-dk-harvest select[data-k="m"]', 'prod'); t = await txt('dk-harvest');
   ok(tag + ' DK: producción nacional', dig(t).includes(d2(dkp[1], dkp[1] >= 100 ? 0 : 1)) && !BAD.test(t));
-  await page.selectOption('#eu-dk-harvest select[data-k="crop"]', 'rapeseed'); t = await txt('dk-harvest'); ok(tag + ' DK: colza y nota de cambio de clasificación', !BAD.test(t) && /2025/.test(t));
+  await selectHidden(page, '#eu-dk-harvest select[data-k="crop"]', 'rapeseed'); t = await txt('dk-harvest'); ok(tag + ' DK: colza y nota de cambio de clasificación', !BAD.test(t) && /2025/.test(t));
   // Dinamarca: ganado
   await page.click('#eu-dk-live > summary'); await page.waitForSelector('#eu-dk-live .de-tiles'); t = await txt('dk-live'); ok(tag + ' DK: sacrificios sin undefined', !BAD.test(t) && (await page.$$('#eu-dk-live svg')).length >= 1);
-  for (const v of ['milk', 'herd', 'sub']) { await page.selectOption('#eu-dk-live select[data-k="v"]', v); t = await txt('dk-live'); ok(tag + ' DK: vista ' + v, !BAD.test(t) && t.length > 80); }
+  for (const v of ['milk', 'herd', 'sub']) { await selectHidden(page, '#eu-dk-live select[data-k="v"]', v); t = await txt('dk-live'); ok(tag + ' DK: vista ' + v, !BAD.test(t) && t.length > 80); }
   // Dinamarca: PAC
   await page.click('#eu-dk-cap > summary'); await page.waitForSelector('#eu-dk-cap .de-t'); t = await txt('dk-cap'); ok(tag + ' DK: importe de la ayuda básica', dig(t).includes(d2(cap0, 2)) && !BAD.test(t));
   ok(tag + ' DK: PAC con dos decretos', /1363/.test(t) && /1381/.test(t));
   // Países Bajos
   await open('NL', 'nl-crops'); t = await txt('nl-crops'); ok(tag + ' NL: rendimiento nacional de trigo', dig(t).includes(d2(nlw[1], 2)) && (await page.$$('#eu-nl-crops tbody tr')).length >= 17);
-  await page.selectOption('#eu-nl-crops select[data-k="m"]', 'area'); t = await txt('nl-crops'); ok(tag + ' NL: superficie', !BAD.test(t));
+  await selectHidden(page, '#eu-nl-crops select[data-k="m"]', 'area'); t = await txt('nl-crops'); ok(tag + ' NL: superficie', !BAD.test(t));
   await page.click('#eu-nl-farms > summary'); await page.waitForSelector('#eu-nl-farms .de-tiles'); t = await txt('nl-farms'); ok(tag + ' NL: vacas lecheras', dig(t).includes(d2(dairy[1], 0)) && (await page.$$('#eu-nl-farms tbody tr')).length >= 12);
   await page.click('#eu-nl-markets > summary'); await page.waitForSelector('#eu-nl-markets .de-tiles'); t = await txt('nl-markets'); ok(tag + ' NL: precio del cerdo, última semana', t.includes(pig[0]) && dig(t).includes(d2(pig[1], 2)));
-  for (const v of ['cattle', 'sl', 'cbs', 'idx']) { await page.selectOption('#eu-nl-markets select[data-k="v"]', v); t = await txt('nl-markets'); ok(tag + ' NL: vista ' + v, !BAD.test(t) && (await page.$$('#eu-nl-markets svg')).length >= 1); }
+  for (const v of ['cattle', 'sl', 'cbs', 'idx']) { await selectHidden(page, '#eu-nl-markets select[data-k="v"]', v); t = await txt('nl-markets'); ok(tag + ' NL: vista ' + v, !BAD.test(t) && (await page.$$('#eu-nl-markets svg')).length >= 1); }
   // Francia
   await open('FR', 'fr-water'); t = await txt('fr-water'); ok(tag + ' FR: departamentos en crisis', t.includes(String(crise)) && (await frRows()) === FV.departments.length);
   if (FV.farm) { const ths = await page.evaluate(() => [].map.call(document.querySelectorAll('#eu-fr-water table')[0].tHead.rows[0].cells, c => c.textContent)); ok(tag + ' FR: columnas de riego y abrevado', ths.length === 8); const gd = await page.$$('#eu-fr-water h4'); ok(tag + ' FR: guia de niveles para la explotacion', FV.farm.guide.length > 0 && gd.length >= 2); }
-  await page.selectOption('#eu-fr-water select[data-k="f"]', '4'); ok(tag + ' FR: filtro de crisis', (await frRows()) === crise);
+  await selectHidden(page, '#eu-fr-water select[data-k="f"]', '4'); ok(tag + ' FR: filtro de crisis', (await frRows()) === crise);
   await page.click('#eu-fr-maize > summary'); await page.waitForSelector('#eu-fr-maize .de-t'); t = await txt('fr-maize'); ok(tag + ' FR: maíz', !BAD.test(t) && (await page.$$('#eu-fr-maize svg')).length >= 1 && /2026/.test(t));
-  await page.selectOption('#eu-fr-maize select[data-k="r"]', Object.keys(FC.regions)[0]); t = await txt('fr-maize'); ok(tag + ' FR: región', !BAD.test(t));
+  await selectHidden(page, '#eu-fr-maize select[data-k="r"]', Object.keys(FC.regions)[0]); t = await txt('fr-maize'); ok(tag + ' FR: región', !BAD.test(t));
   await page.click('#eu-fr-cereals > summary'); await page.waitForSelector('#eu-fr-cereals .de-t, #eu-fr-cereals svg'); t = await txt('fr-cereals'); ok(tag + ' FR: Cere\'Obs trigo y cebada', !BAD.test(t) && (await page.$$('#eu-fr-cereals svg')).length >= 1 && /20(25|26)/.test(t));
   ok(tag + ': sin desborde horizontal', !(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)));
   ok(tag + ': sin errores de consola (' + errs.join(' | ') + ')', errs.length === 0);

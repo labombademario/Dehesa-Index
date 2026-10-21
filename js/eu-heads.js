@@ -16,7 +16,7 @@
   window.EUHeads.mount = function (box, c, lang) {
     box.innerHTML = EUMODS[c].map(function (m) { var H = window.EUHeads[m], tt = H[lang] || H.es; return '<details class="pa-card di-card" data-eu="' + m + '" id="eu-' + m + '"><summary>' + esc(tt[0]) + ' · <span>' + esc(tt[1]) + '</span></summary><div class="es-body"></div></details>'; }).join('');
     Array.prototype.forEach.call(box.querySelectorAll('details'), function (d) {
-      var mod = d.getAttribute('data-eu'), go = function () { window.EUDepth.mount(d.lastChild, mod, lang); }, load = function () { if (window.EUDepth) go(); else { var sc = document.createElement('script'); sc.src = 'js/eu-depth.js?v=20261003'; sc.onload = go; document.head.appendChild(sc); } };
+      var mod = d.getAttribute('data-eu'), go = function () { window.EUDepth.mount(d.lastChild, mod, lang); }, load = function () { if (window.EUDepth) go(); else { var sc = document.createElement('script'); sc.src = 'js/eu-depth.js?v=20261021'; sc.onload = go; document.head.appendChild(sc); } };
       d.addEventListener('toggle', function () { if (d.open && !d.getAttribute('data-ld')) { d.setAttribute('data-ld', '1'); load(); } }); if (location.hash === '#eu-' + mod) d.open = true;
     });
   };

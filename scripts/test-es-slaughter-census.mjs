@@ -4,6 +4,8 @@ import { execSync } from 'node:child_process'; import { readFileSync } from 'nod
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
+// los desplegables con data-chips quedan ocultos tras sus botones (js/chip-select.js): se elige en el <select> y se lanza «change», como hace el boton
+async function selectHidden(pg, sel, val) { await pg.waitForSelector(sel, { state: 'attached' }); await pg.$eval(sel, (e, v) => { e.value = v; e.dispatchEvent(new Event('change', { bubbles: true })); }, val); }
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
 const J = JSON.parse(readFileSync('data/spain-slaughter/census.json', 'utf8')), L = J.years.length - 1;
@@ -29,14 +31,14 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ' cita MAPA', /MAPA|Ministerio|Ministry|ministère|Ministero/.test(m.txt));
   ok(tag + ' sin desborde', !m.over);
   if (w === 1280) {
-    await page.selectOption('#gn-esc-item', 'porcino'); await page.selectOption('#gn-esc-met', 'carcass'); m = await get();
+    await selectHidden(page, '#gn-esc-item', 'porcino'); await selectHidden(page, '#gn-esc-met', 'carcass'); m = await get();
     ok(tag + ' porcino peso canal de España = JSON', new RegExp(kt(PIG)).test(m.txt) && m.rows >= 10);
-    await page.selectOption('#gn-esc-item', 'bovino'); await page.selectOption('#gn-esc-met', 'weight'); m = await get();
+    await selectHidden(page, '#gn-esc-item', 'bovino'); await selectHidden(page, '#gn-esc-met', 'weight'); m = await get();
     ok(tag + ' peso medio del vacuno en A Coruña calculado = ' + WT.toFixed(1), new RegExp(ex(WT.toFixed(1))).test(m.txt));
-    await page.selectOption('#gn-esc-met', 'heads'); await page.selectOption('#gn-esc-per', '2007'); m = await get();
+    await selectHidden(page, '#gn-esc-met', 'heads'); await selectHidden(page, '#gn-esc-per', '2007'); m = await get();
     ok(tag + ' 2007: aviso de «sin elevar» y 50 provincias sin DC', m.rows >= 49 && /elevar|unraised|élevées|elevati/.test(m.dc));
     const i07 = J.years.indexOf(2007); ok(tag + ' 2007: vacuno de España = JSON', new RegExp(mm(J.v.ES.bovino.heads[i07])).test(m.txt));
-    await page.selectOption('#gn-esc-per', '2004'); m = await get(); ok(tag + ' 2004: la tabla sigue con provincias', m.rows >= 49);
+    await selectHidden(page, '#gn-esc-per', '2004'); m = await get(); ok(tag + ' 2004: la tabla sigue con provincias', m.rows >= 49);
   }
   ok(tag + ' sin errores de consola', errs.length === 0); if (errs.length) console.log(errs);
   await ctx.close();
