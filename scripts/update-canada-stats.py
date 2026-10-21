@@ -2,7 +2,7 @@
 """Canadá: producción, existencias, ganadería, lácteos, huevos, aves, ingresos y costes de Statistics Canada
 (tablas WDS, Open Government Licence - Canada). Escribe data/canada-stats.json (esquema de paises.html) y data/canada-stats-log.txt.
 Los precios mensuales de las tarjetas siguen en update-statcan-canada.py (tabla 32-10-0077)."""
-import csv, io, json, re, sys, time, urllib.request, zipfile, datetime
+import csv, io, json, re, sys, time, urllib.request, urllib.error, zipfile, datetime
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WDS = "https://www150.statcan.gc.ca/t1/wds/rest/"
@@ -30,19 +30,27 @@ def fetch_resume(url, tries=8):
         except Exception as e:
             log("corte en", len(buf) // 1024, "KB", repr(e)[:80]); time.sleep(3)
     raise RuntimeError("descarga incompleta")
+def wds_info(pid):
+    """Enlace de descarga de la tabla (API WDS). Si StatCan no contesta JSON (mantenimiento, bloqueo), el error dice que contesto: codigo y primeros bytes."""
+    req = urllib.request.Request(WDS + "getFullTableDownloadCSV/%d/en" % pid, headers=UA)
+    try:
+        resp = urllib.request.urlopen(req, timeout=60); body = resp.read(); code = resp.status
+    except urllib.error.HTTPError as e:
+        raise RuntimeError("WDS HTTP %s: %r" % (e.code, e.read(200)))
+    try: return json.loads(body)
+    except ValueError: raise RuntimeError("WDS no devolvio JSON (HTTP %s, %d bytes): %r" % (code, len(body), body[:160]))
 def load(pid):
     if pid in _cache: return _cache[pid]
     last = None
-    for i in range(2):
+    for i in range(4):
         try:
-            req = urllib.request.Request(WDS + "getFullTableDownloadCSV/%d/en" % pid, headers=UA)
-            info = json.loads(urllib.request.urlopen(req, timeout=60).read())
+            info = wds_info(pid)
             raw = fetch_resume(info["object"])
             z = zipfile.ZipFile(io.BytesIO(raw)); name = [n for n in z.namelist() if n.endswith(".csv") and "MetaData" not in n][0]
             log("descargada", pid, len(raw) // 1024, "KB")
             rows = list(csv.DictReader(io.TextIOWrapper(z.open(name), encoding="utf-8-sig")))
             _cache[pid] = rows; log("tabla", pid, len(rows), "filas"); return rows
-        except Exception as e: last = e; time.sleep(5)
+        except Exception as e: last = e; log("intento", i + 1, "tabla", pid, repr(e)[:160]); time.sleep(10 * (i + 1))
     raise RuntimeError("%s: %s" % (pid, last))
 def num(r):
     v = r.get("VALUE", "")
@@ -312,14 +320,14 @@ def trade():
 def load_filtered(pid, pred):
     """Descarga el CSV completo pero solo guarda las filas que cumplen pred (tablas enormes)."""
     last = None
-    for i in range(2):
+    for i in range(4):
         try:
-            info = json.loads(urllib.request.urlopen(urllib.request.Request(WDS + "getFullTableDownloadCSV/%d/en" % pid, headers=UA), timeout=60).read())
+            info = wds_info(pid)
             raw = fetch_resume(info["object"]); log("descargada", pid, len(raw) // 1024, "KB")
             z = zipfile.ZipFile(io.BytesIO(raw)); name = [n for n in z.namelist() if n.endswith(".csv") and "MetaData" not in n][0]
             rows = [r for r in csv.DictReader(io.TextIOWrapper(z.open(name), encoding="utf-8-sig")) if pred(r)]
             log("tabla", pid, len(rows), "filas filtradas"); return rows
-        except Exception as e: last = e; time.sleep(5)
+        except Exception as e: last = e; log("intento", i + 1, "tabla", pid, repr(e)[:160]); time.sleep(10 * (i + 1))
     raise RuntimeError("%s: %s" % (pid, last))
 def partners():
     n = 0
