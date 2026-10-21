@@ -33,15 +33,12 @@ jobs:
           set -e
           python3 scripts/build-pipeline-status.py || { echo "::error::build-pipeline-status.py fallo"; exit 1; }
           python3 scripts/build-observatory.py || { echo "::error::build-observatory.py fallo"; exit 1; }   # el observatorio se regenera justo despues del estado, en el mismo commit: aunque la validacion falle, nunca queda desfasado respecto a pipeline-status.json
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pipeline-status.json data/data-quality.json data/observatory.json
-          if ! git diff --cached --quiet; then
-            git commit -qm "Estado de pipelines y calidad de datos"
-            ok=0
-            for i in 1 2 3 4 5 6; do git pull -q --rebase --autostash && git push && ok=1 && break; sleep $((i * 5 + RANDOM % 10)); done
-            [ "$ok" = 1 ] || { echo "::error::no se pudo publicar el estado (pull --rebase o push fallaron 6 veces)"; exit 1; }
-          fi
+          # mismo publicador que el resto (10 reintentos); si choca con refresh-observatory.yml, que escribe los mismos dos ficheros,
+          # se toma la version de main y se regeneran sobre el arbol ya unido. Sin aviso: este workflow ya es el que rehace el observatorio.
+          PUBLISH_NO_NOTIFY=1 PUBLISH_DERIVED="data/pipeline-status.json data/observatory.json" \
+          PUBLISH_REGEN="python3 scripts/build-pipeline-status.py && python3 scripts/build-observatory.py" \
+          bash scripts/publish-data.sh "Estado de pipelines y calidad de datos" data/pipeline-status.json data/data-quality.json data/observatory.json \
+            || { echo "::error::no se pudo publicar el estado"; exit 1; }
           exit $VALIDATE_RC
 
       # 1b) Alerta: si el estado global esta en rojo (pipeline con error o despliegue roto) abre o actualiza un issue; al volver a verde lo cierra. GitHub avisa por correo.
