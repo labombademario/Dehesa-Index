@@ -7,7 +7,7 @@
     es: { h1: 'Mis compras', sub: 'Guarda tus compras y ventas en este navegador y compáralas con varios precios de mercado a la vez. Nada se sube a ningún servidor.',
       add: 'Añadir una operación', d: 'Fecha', s: 'Precio de mercado de referencia', k: 'Tipo', buy: 'Compra', sell: 'Venta', q: 'Cantidad', p: 'Tu precio', n: 'Nota (opcional)', addB: 'Guardar', bad: 'Revisa la fecha (AAAA-MM-DD o DD/MM/AAAA), la cantidad y el precio.',
       sumT: 'Resumen por precio de mercado', sc: ['Mercado', 'Tipo', 'Cantidad', 'Tu precio medio', 'Mercado medio', 'Diferencia', 'Total'], lnT: 'Tus operaciones', lc: ['Fecha', 'Tipo', 'Mercado', 'Cantidad', 'Tu precio', 'Mercado ese día', 'Diferencia', 'Nota', ''],
-      nomk: 'sin dato de mercado para esa fecha', del: 'Borrar', empty: 'Aún no hay operaciones. Añade la primera arriba, importa un fichero o carga un ejemplo.', ex: 'Cargar un ejemplo inventado', exN: 'Ejemplo inventado', 
+      nomk: 'sin dato de mercado para esa fecha', nof: 'no se pudo cargar el dato de mercado', retry: 'Reintentar', cov: 'El resumen usa {a} de {b} operaciones. {c} quedan fuera de los totales porque no tienen dato de mercado; siguen guardadas.', rej: '{n} operación(es) guardadas no se pueden usar ahora (fecha, cantidad o serie no válidas). No se han borrado: van en la copia JSON.', retrying: 'Reintentando…', del: 'Borrar', empty: 'Aún no hay operaciones. Añade la primera arriba, importa un fichero o carga un ejemplo.', ex: 'Cargar un ejemplo inventado', exN: 'Ejemplo inventado', 
       exp: 'Descargar copia (JSON)', csv: 'Descargar CSV', imp: 'Importar copia o CSV', print: 'Imprimir', clr: 'Borrar todo', clrQ: '¿Borrar todas las operaciones de este navegador? No se puede deshacer.', 
       mem: 'Este navegador no deja guardar datos: lo que añadas se pierde al cerrar la pestaña. Descarga la copia para no perderlo.', imported: '{n} operaciones importadas, {b} filas descartadas.', load: 'Cargando…', fail: 'No se pudo cargar la lista de precios de mercado.',
       higher: 'por encima del mercado', lower: 'por debajo del mercado', same: 'igual que el mercado', bT: 'Cómo leerlo', 
@@ -16,7 +16,7 @@
     en: { h1: 'My trades', sub: 'Save your purchases and sales in this browser and compare them with several market prices at once. Nothing is uploaded to any server.',
       add: 'Add a trade', d: 'Date', s: 'Reference market price', k: 'Type', buy: 'Purchase', sell: 'Sale', q: 'Quantity', p: 'Your price', n: 'Note (optional)', addB: 'Save', bad: 'Check the date (YYYY-MM-DD or DD/MM/YYYY), quantity and price.',
       sumT: 'Summary by market price', sc: ['Market', 'Type', 'Quantity', 'Your average price', 'Market average', 'Difference', 'Total'], lnT: 'Your trades', lc: ['Date', 'Type', 'Market', 'Quantity', 'Your price', 'Market that day', 'Difference', 'Note', ''],
-      nomk: 'no market data for that date', del: 'Delete', empty: 'No trades yet. Add the first one above, import a file or load an example.', ex: 'Load a made-up example', exN: 'Made-up example',
+      nomk: 'no market data for that date', nof: 'market data could not be loaded', retry: 'Retry', cov: 'The summary uses {a} of {b} trades. {c} are left out of the totals because they have no market data; they are still saved.', rej: '{n} saved trade(s) cannot be used right now (invalid date, quantity or series). They have not been deleted: they are kept in the JSON backup.', retrying: 'Retrying…', del: 'Delete', empty: 'No trades yet. Add the first one above, import a file or load an example.', ex: 'Load a made-up example', exN: 'Made-up example',
       exp: 'Download backup (JSON)', csv: 'Download CSV', imp: 'Import backup or CSV', print: 'Print', clr: 'Delete all', clrQ: 'Delete all trades in this browser? This cannot be undone.',
       mem: 'This browser does not allow saving data: what you add is lost when the tab closes. Download the backup to keep it.', imported: '{n} trades imported, {b} rows discarded.', load: 'Loading…', fail: 'Could not load the market price list.',
       higher: 'above market', lower: 'below market', same: 'same as market', bT: 'How to read it',
@@ -25,7 +25,7 @@
     fr: { h1: 'Mes achats', sub: 'Enregistrez vos achats et ventes dans ce navigateur et comparez-les à plusieurs prix de marché à la fois. Rien n’est envoyé à un serveur.',
       add: 'Ajouter une opération', d: 'Date', s: 'Prix de marché de référence', k: 'Type', buy: 'Achat', sell: 'Vente', q: 'Quantité', p: 'Votre prix', n: 'Note (facultatif)', addB: 'Enregistrer', bad: 'Vérifiez la date (AAAA-MM-JJ ou JJ/MM/AAAA), la quantité et le prix.',
       sumT: 'Résumé par prix de marché', sc: ['Marché', 'Type', 'Quantité', 'Votre prix moyen', 'Marché moyen', 'Écart', 'Total'], lnT: 'Vos opérations', lc: ['Date', 'Type', 'Marché', 'Quantité', 'Votre prix', 'Marché ce jour-là', 'Écart', 'Note', ''],
-      nomk: 'pas de donnée de marché pour cette date', del: 'Supprimer', empty: 'Aucune opération pour l’instant. Ajoutez la première ci-dessus, importez un fichier ou chargez un exemple.', ex: 'Charger un exemple fictif', exN: 'Exemple fictif',
+      nomk: 'pas de donnée de marché pour cette date', nof: 'la donnée de marché n’a pas pu être chargée', retry: 'Réessayer', cov: 'Le résumé utilise {a} opérations sur {b}. {c} restent hors des totaux faute de donnée de marché ; elles sont toujours enregistrées.', rej: '{n} opération(s) enregistrée(s) ne peuvent pas être utilisées pour l’instant (date, quantité ou série non valides). Elles n’ont pas été supprimées : elles figurent dans la copie JSON.', retrying: 'Nouvel essai…', del: 'Supprimer', empty: 'Aucune opération pour l’instant. Ajoutez la première ci-dessus, importez un fichier ou chargez un exemple.', ex: 'Charger un exemple fictif', exN: 'Exemple fictif',
       exp: 'Télécharger la copie (JSON)', csv: 'Télécharger le CSV', imp: 'Importer une copie ou un CSV', print: 'Imprimer', clr: 'Tout supprimer', clrQ: 'Supprimer toutes les opérations de ce navigateur ? Action irréversible.',
       mem: 'Ce navigateur ne permet pas d’enregistrer : ce que vous ajoutez se perd à la fermeture de l’onglet. Téléchargez la copie pour le conserver.', imported: '{n} opérations importées, {b} lignes écartées.', load: 'Chargement…', fail: 'Impossible de charger la liste des prix de marché.',
       higher: 'au-dessus du marché', lower: 'au-dessous du marché', same: 'égal au marché', bT: 'Comment le lire',
@@ -34,14 +34,14 @@
     it: { h1: 'I miei acquisti', sub: 'Salva acquisti e vendite in questo browser e confrontali con più prezzi di mercato insieme. Nulla viene caricato su un server.',
       add: 'Aggiungi un’operazione', d: 'Data', s: 'Prezzo di mercato di riferimento', k: 'Tipo', buy: 'Acquisto', sell: 'Vendita', q: 'Quantità', p: 'Il tuo prezzo', n: 'Nota (facoltativa)', addB: 'Salva', bad: 'Controlla la data (AAAA-MM-GG o GG/MM/AAAA), la quantità e il prezzo.',
       sumT: 'Riepilogo per prezzo di mercato', sc: ['Mercato', 'Tipo', 'Quantità', 'Tuo prezzo medio', 'Mercato medio', 'Differenza', 'Totale'], lnT: 'Le tue operazioni', lc: ['Data', 'Tipo', 'Mercato', 'Quantità', 'Tuo prezzo', 'Mercato quel giorno', 'Differenza', 'Nota', ''],
-      nomk: 'nessun dato di mercato per quella data', del: 'Elimina', empty: 'Ancora nessuna operazione. Aggiungi la prima qui sopra, importa un file o carica un esempio.', ex: 'Carica un esempio inventato', exN: 'Esempio inventato',
+      nomk: 'nessun dato di mercato per quella data', nof: 'impossibile caricare il dato di mercato', retry: 'Riprova', cov: 'Il riepilogo usa {a} operazioni su {b}. {c} restano fuori dai totali perché senza dato di mercato; sono comunque salvate.', rej: '{n} operazione/i salvata/e non si possono usare ora (data, quantità o serie non valide). Non sono state eliminate: restano nella copia JSON.', retrying: 'Nuovo tentativo…', del: 'Elimina', empty: 'Ancora nessuna operazione. Aggiungi la prima qui sopra, importa un file o carica un esempio.', ex: 'Carica un esempio inventato', exN: 'Esempio inventato',
       exp: 'Scarica copia (JSON)', csv: 'Scarica CSV', imp: 'Importa copia o CSV', print: 'Stampa', clr: 'Elimina tutto', clrQ: 'Eliminare tutte le operazioni di questo browser? Non si può annullare.',
       mem: 'Questo browser non permette di salvare dati: ciò che aggiungi si perde alla chiusura della scheda. Scarica la copia per conservarlo.', imported: '{n} operazioni importate, {b} righe scartate.', load: 'Caricamento…', fail: 'Impossibile caricare l’elenco dei prezzi di mercato.',
       higher: 'sopra il mercato', lower: 'sotto il mercato', same: 'pari al mercato', bT: 'Come leggerlo',
       b: ['Acquisti: pagare meno del mercato è meglio. Vendite: incassare più del mercato è meglio. Le parole «sopra» o «sotto» sono sempre scritte; il colore aiuta soltanto.', 'Il prezzo di mercato è un riferimento regionale di una fonte ufficiale, non il prezzo esatto del tuo prodotto, qualità o consegna. Leggilo come orientamento.', 'Mensile: lo stesso mese. Trimestrale: lo stesso trimestre. Settimanale: l’ultima quotazione dei 14 giorni precedenti. Giornaliero: dei 7 giorni precedenti. Se manca, non si confronta e nulla viene stimato.', 'I totali sommano solo operazioni nella stessa valuta e unità. Tutto è salvato in questo browser: se lo cancelli o cambi dispositivo, scarica prima la copia.'],
       fin: 'Informazioni da fonti ufficiali, non consulenza finanziaria.', cmpL: 'Confronta fatture in blocco', repL: 'Rapporto di negoziazione', M: { us: 'USA', eu: 'UE', uk: 'Regno Unito', ca: 'Canada' } }
   };
-  var IDX = null, FAILED = false, SER = {}, PENDING = {}, ITEMS = [], MEMONLY = false, MSG = '', DRAFT = { d: '', s: '', k: 'buy', q: '', p: '', n: '' };
+  var IDX = null, FAILED = false, SER = {}, PENDING = {}, ITEMS = [], REJ = [], MEMONLY = false, MSG = '', DRAFT = { d: '', s: '', k: 'buy', q: '', p: '', n: '' };
   function lang() { return S.getLang ? S.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -51,15 +51,15 @@
   function sinfo(id) { return IDX && IDX.series.filter(function (x) { return x.id === id; })[0]; }
   function label(s) { var w = t(); return nm(s.name, s.product) + ' — ' + (nm(s.place) || w.M[s.region] || s.region); }
   /* ---- almacenamiento ---- */
-  function save() { try { localStorage.setItem(KEY, JSON.stringify({ version: 1, items: ITEMS })); MEMONLY = false; } catch (e) { MEMONLY = true; } }
-  function load() { try { var r = localStorage.getItem(KEY); if (r) { var o = JSON.parse(r); if (o && o.items) ITEMS = clean(o.items).ok; } } catch (e) { MEMONLY = true; } }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify({ version: 1, items: ITEMS, rejected: REJ })); MEMONLY = false; } catch (e) { MEMONLY = true; } }
+  function load() { try { var r = localStorage.getItem(KEY); if (r) { var o = JSON.parse(r); if (o && o.items) { var cl = clean(o.items); var re = clean(o.rejected || []); ITEMS = cl.ok.concat(re.ok); REJ = re.rej.concat(cl.rej).slice(-200); } }   /* lo que no valida no se borra: se guarda aparte y se reintenta en cada carga */ } catch (e) { MEMONLY = true; } }
   function clean(arr) {
-    var ok = [], bad = 0, amb = ''; (arr || []).forEach(function (x) {
+    var ok = [], bad = 0, amb = '', rej = []; (arr || []).forEach(function (x) {
       if (x) { if (typeof x.q !== 'number' && DL.amb(x.q)) amb = amb || x.q; else if (typeof x.p !== 'number' && DL.amb(x.p)) amb = amb || x.p; }
       var d = x && DL.parseDate(x.d), q = x && (typeof x.q === 'number' ? x.q : DL.num(x.q)), p = x && (typeof x.p === 'number' ? x.p : DL.num(x.p));
-      if (!d || !isFinite(q) || q <= 0 || !isFinite(p) || p < 0 || !/^[a-z]{2}\/[a-z0-9_-]+$/.test(x.s || '') || (IDX && !sinfo(x.s))) { bad++; return; }
+      if (!d || !isFinite(q) || q <= 0 || !isFinite(p) || p < 0 || !/^[a-z]{2}\/[a-z0-9_-]+$/.test(x.s || '') || (IDX && !sinfo(x.s))) { bad++; if (x) rej.push(x); return; }
       ok.push({ i: x.i || (Date.now().toString(36) + Math.random().toString(36).slice(2, 6)), d: d, s: x.s, q: q, p: p, k: x.k === 'sell' ? 'sell' : 'buy', n: String(x.n || '').slice(0, 80) });
-    }); return { ok: ok, bad: bad, amb: amb };
+    }); return { ok: ok, bad: bad, amb: amb, rej: rej };
   }
   function need() {
     var ids = {}; ITEMS.forEach(function (x) { ids[x.s] = 1; });
@@ -100,7 +100,10 @@
     else {
       need();
       if (!ready()) h += '<p class="di-movers-hint">' + esc(w.load) + '</p>';
-      var G = groups();
+      var G = groups(), used = 0, failN = 0;
+      if (ready()) { ITEMS.forEach(function (x) { if (calc(x)) used++; else if (SER[x.s] && SER[x.s].failed) failN++; }); }
+      if (ready() && used < ITEMS.length) h += '<p class="di-movers-hint" id="mc-cov" style="color:#8f5f12">' + esc(w.cov.replace('{a}', used).replace('{b}', ITEMS.length).replace('{c}', ITEMS.length - used)) + (failN ? ' <button class="di-btn-sec no-print" id="mc-retry">' + esc(w.retry) + '</button>' : '') + '</p>';
+      if (REJ.length) h += '<p class="di-movers-hint" id="mc-rej" style="color:#8f5f12">' + esc(w.rej.replace('{n}', REJ.length)) + '</p>';
       if (G.length) h += '<h2 style="margin:22px 0 6px;font-size:18px">' + esc(w.sumT) + '</h2><div class="di-card" style="padding:4px 14px;overflow-x:auto"><table data-no-rows style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + w.sc.map(th).join('') + '</tr></thead><tbody>' +
         G.map(function (g) { var s = SER[g.s], inf = sinfo(g.s), paid = g.P / g.q, mk = g.M / g.q, d = paid - mk, tot = g.P - g.M;
           return '<tr>' + td('<b>' + esc(label(inf)) + '</b>') + td(esc(g.k === 'buy' ? w.buy : w.sell)) + td(nf(g.q) + ' ' + esc(UL(inf.unit))) + td(nf(paid) + ' ' + esc(unitOf(inf))) + td(nf(mk) + ' ' + esc(unitOf(inf))) +
@@ -108,7 +111,7 @@
       h += '<h2 style="margin:22px 0 6px;font-size:18px">' + esc(w.lnT) + '</h2><div class="di-card" style="padding:4px 14px;overflow-x:auto"><table data-no-rows style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' + w.lc.map(th).join('') + '</tr></thead><tbody>' +
         ITEMS.slice().sort(function (a, b) { return a.d < b.d ? 1 : a.d > b.d ? -1 : 0; }).map(function (x) { var inf = sinfo(x.s), c = ready() ? calc(x) : null, u = unitOf(inf);
           return '<tr>' + td(esc(x.d)) + td(esc(x.k === 'buy' ? w.buy : w.sell)) + td(esc(label(inf))) + td(nf(x.q) + ' ' + esc(UL(inf.unit))) + td(nf(x.p) + ' ' + esc(u)) +
-            td(c ? nf(c.mkt) + ' ' + esc(u) + ' <span style="color:var(--text-muted);font-size:11px">(' + esc(c.md) + ')</span>' : '<span style="color:var(--text-muted)">' + esc(ready() ? w.nomk : '…') + '</span>') +
+            td(c ? nf(c.mkt) + ' ' + esc(u) + ' <span style="color:var(--text-muted);font-size:11px">(' + esc(c.md) + ')</span>' : '<span style="color:var(--text-muted)">' + esc(ready() ? (SER[x.s] && SER[x.s].failed ? w.nof : w.nomk) : '…') + '</span>') +
             td(c ? '<span style="' + colr(x.k, c.diff) + '">' + sgn(c.diff) + ' (' + esc(verdict(w, x.k, c.diff)) + ')</span>' : '') + td(esc(x.n)) + td('<button class="di-btn-sec no-print" data-del="' + esc(x.i) + '">' + esc(w.del) + '</button>') + '</tr>'; }).join('') + '</tbody></table></div>';
       h += '<p class="no-print" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px"><button class="di-btn-sec" id="mc-exp">' + esc(w.exp) + '</button><button class="di-btn-sec" id="mc-csv">' + esc(w.csv) + '</button><label class="di-btn-sec" style="cursor:pointer">' + esc(w.imp) + '<input type="file" id="mc-f" accept=".json,.csv,.txt" style="display:none"></label><button class="di-btn-sec" id="mc-print">' + esc(w.print) + '</button><button class="di-btn-sec" id="mc-clr">' + esc(w.clr) + '</button></p>';
     }
@@ -135,10 +138,11 @@
     $('mc-s').onchange = function () { keep(); render(); };
     form.onsubmit = function (e) { e.preventDefault(); keep(); var r = clean([DRAFT]); if (!r.ok.length) { MSG = DL.ambMsg(DRAFT.q, lang()) || DL.ambMsg(DRAFT.p, lang()) || w.bad; render(); return; } ITEMS = ITEMS.concat(r.ok); save(); DRAFT.d = ''; DRAFT.q = ''; DRAFT.p = ''; DRAFT.n = ''; MSG = ''; render(); };
     Array.prototype.forEach.call(document.querySelectorAll('[data-del]'), function (b) { b.onclick = function () { var id = b.getAttribute('data-del'); ITEMS = ITEMS.filter(function (x) { return x.i !== id; }); save(); MSG = ''; render(); }; });
-    if ($('mc-exp')) $('mc-exp').onclick = function () { download('mis-compras-dehesa-index.json', JSON.stringify({ version: 1, items: ITEMS }, null, 1), 'application/json'); };
+    if ($('mc-exp')) $('mc-exp').onclick = function () { download('mis-compras-dehesa-index.json', JSON.stringify({ version: 1, items: ITEMS, rejected: REJ }, null, 1), 'application/json'); };
     if ($('mc-csv')) $('mc-csv').onclick = function () { download('mis-compras-dehesa-index.csv', csvOut(), 'text/csv'); };
+    if ($('mc-retry')) $('mc-retry').onclick = function () { Object.keys(SER).forEach(function (id) { if (SER[id] && SER[id].failed) delete SER[id]; }); this.disabled = true; this.textContent = w.retrying; need(); };
     if ($('mc-print')) $('mc-print').onclick = function () { window.print(); };
-    if ($('mc-clr')) $('mc-clr').onclick = function () { if (window.confirm(w.clrQ)) { ITEMS = []; save(); MSG = ''; render(); } };
+    if ($('mc-clr')) $('mc-clr').onclick = function () { if (window.confirm(w.clrQ)) { ITEMS = []; REJ = []; save(); MSG = ''; render(); } };
     if ($('mc-ex')) $('mc-ex').onclick = function () {
       var id = sinfo('eu/trigo') ? 'eu/trigo' : IDX.series[0].id; fetch(S.sitePath('data/api/v1/series/' + id + '.json')).then(function (r) { return r.json(); }).then(function (d) { SER[id] = d; var pts = d.points.slice(-60).filter(function (p, k) { return k % 12 === 0; }).slice(-3), arr = [];
         pts.forEach(function (p, k) { var dt = /^\d{4}-\d{2}-\d{2}$/.test(p[0]) ? p[0] : p[0].slice(0, 7) + '-15'; if (/Q/.test(dt)) return; arr.push({ d: dt, s: id, q: 100 * (k + 1), p: Math.round(p[1] * (k % 2 ? 0.97 : 1.04) * 100) / 100, k: k % 2 ? 'sell' : 'buy', n: w.exN }); });

@@ -15,7 +15,7 @@
       unitWarn: 'Escribe tus precios en {u}. Si tu factura está en otra unidad o moneda, conviértela antes: aquí no se convierte nada por ti.',
       s2: '2. Tus facturas', s2h: 'Una línea por factura: fecha, cantidad y precio unitario, separados por tabulador, punto y coma o coma. Puedes pegarlas desde Excel. Fechas: AAAA-MM-DD o DD/MM/AAAA. La cantidad es opcional (si falta, cuenta 1).',
       ph: '2026-03-12;24;268,5\n2026-04-02;30;271\n15/05/2026;18;262', btn: 'Comparar', ex: 'Cargar un ejemplo', exNote: 'Ejemplo con cifras inventadas, solo para ver cómo funciona.', file: 'Cargar fichero CSV', clear: 'Vaciar',
-      s3: '3. Resultado', none: 'Pega al menos una factura con fecha y precio.', loadingS: 'Cargando la serie…', fail: 'No se pudo cargar la serie de mercado. Vuelve a intentarlo en unos minutos.',
+      s3: '3. Resultado', none: 'Pega al menos una factura con fecha y precio.', loadingS: 'Cargando la serie…', fail: 'No se pudo cargar la serie de mercado. Vuelve a intentarlo en unos minutos.', retry: 'Reintentar',
       qty: 'Cantidad total', paid: 'Tu precio medio', rcv: 'Tu precio medio', mkt: 'Mercado en las mismas fechas', diff: 'Diferencia', total: 'En total', weighted: 'ponderado por cantidad',
       sB: 'Con {q} {u0} comparadas, pagaste de media {p} {u}, frente a {m} {u} del mercado en las mismas fechas: {d} {dir} (un {x} %). En total, {tdir} {t}.',
       sS: 'Con {q} {u0} comparadas, cobraste de media {p} {u}, frente a {m} {u} del mercado en las mismas fechas: {d} {dir} (un {x} %). En total, {tdir} {t}.',
@@ -36,7 +36,7 @@
       unitWarn: 'Enter your prices in {u}. If your invoice uses another unit or currency, convert it first: nothing is converted for you here.',
       s2: '2. Your invoices', s2h: 'One line per invoice: date, quantity and unit price, separated by tab, semicolon or comma. You can paste from Excel. Dates: YYYY-MM-DD or DD/MM/YYYY. Quantity is optional (if missing it counts as 1).',
       ph: '2026-03-12;24;268.5\n2026-04-02;30;271\n15/05/2026;18;262', btn: 'Compare', ex: 'Load an example', exNote: 'Example with made-up figures, only to see how it works.', file: 'Load CSV file', clear: 'Clear',
-      s3: '3. Result', none: 'Paste at least one invoice with a date and a price.', loadingS: 'Loading the series…', fail: 'Could not load the market series. Please try again in a few minutes.',
+      s3: '3. Result', none: 'Paste at least one invoice with a date and a price.', loadingS: 'Loading the series…', fail: 'Could not load the market series. Please try again in a few minutes.', retry: 'Retry',
       qty: 'Total quantity', paid: 'Your average price', rcv: 'Your average price', mkt: 'Market on the same dates', diff: 'Difference', total: 'In total', weighted: 'weighted by quantity',
       sB: 'Over {q} {u0} compared, you paid {p} {u} on average, against {m} {u} for the market on the same dates: {d} {dir} (by {x}%). In total, {tdir} {t}.',
       sS: 'Over {q} {u0} compared, you received {p} {u} on average, against {m} {u} for the market on the same dates: {d} {dir} (by {x}%). In total, {tdir} {t}.',
@@ -57,7 +57,7 @@
       unitWarn: 'Saisissez vos prix en {u}. Si votre facture utilise une autre unité ou monnaie, convertissez-la d’abord : rien n’est converti pour vous ici.',
       s2: '2. Vos factures', s2h: 'Une ligne par facture : date, quantité et prix unitaire, séparés par tabulation, point-virgule ou virgule. Vous pouvez coller depuis Excel. Dates : AAAA-MM-JJ ou JJ/MM/AAAA. La quantité est facultative (à défaut, elle compte pour 1).',
       ph: '2026-03-12;24;268,5\n2026-04-02;30;271\n15/05/2026;18;262', btn: 'Comparer', ex: 'Charger un exemple', exNote: 'Exemple avec des chiffres inventés, juste pour voir comment ça marche.', file: 'Charger un fichier CSV', clear: 'Vider',
-      s3: '3. Résultat', none: 'Collez au moins une facture avec une date et un prix.', loadingS: 'Chargement de la série…', fail: 'Impossible de charger la série de marché. Réessayez dans quelques minutes.',
+      s3: '3. Résultat', none: 'Collez au moins une facture avec une date et un prix.', loadingS: 'Chargement de la série…', fail: 'Impossible de charger la série de marché. Réessayez dans quelques minutes.', retry: 'Réessayer',
       qty: 'Quantité totale', paid: 'Votre prix moyen', rcv: 'Votre prix moyen', mkt: 'Marché aux mêmes dates', diff: 'Écart', total: 'Au total', weighted: 'pondéré par la quantité',
       sB: 'Sur {q} {u0} comparées, vous avez payé {p} {u} en moyenne, contre {m} {u} pour le marché aux mêmes dates : {d} {dir} ({x} %). Au total, {tdir} {t}.',
       sS: 'Sur {q} {u0} comparées, vous avez reçu {p} {u} en moyenne, contre {m} {u} pour le marché aux mêmes dates : {d} {dir} ({x} %). Au total, {tdir} {t}.',
@@ -78,7 +78,7 @@
       unitWarn: 'Scrivi i tuoi prezzi in {u}. Se la fattura usa un’altra unità o valuta, convertila prima: qui non si converte nulla per te.',
       s2: '2. Le tue fatture', s2h: 'Una riga per fattura: data, quantità e prezzo unitario, separati da tabulazione, punto e virgola o virgola. Puoi incollare da Excel. Date: AAAA-MM-GG o GG/MM/AAAA. La quantità è facoltativa (se manca vale 1).',
       ph: '2026-03-12;24;268,5\n2026-04-02;30;271\n15/05/2026;18;262', btn: 'Confronta', ex: 'Carica un esempio', exNote: 'Esempio con cifre inventate, solo per vedere come funziona.', file: 'Carica file CSV', clear: 'Svuota',
-      s3: '3. Risultato', none: 'Incolla almeno una fattura con data e prezzo.', loadingS: 'Caricamento della serie…', fail: 'Impossibile caricare la serie di mercato. Riprova tra qualche minuto.',
+      s3: '3. Risultato', none: 'Incolla almeno una fattura con data e prezzo.', loadingS: 'Caricamento della serie…', fail: 'Impossibile caricare la serie di mercato. Riprova tra qualche minuto.', retry: 'Riprova',
       qty: 'Quantità totale', paid: 'Il tuo prezzo medio', rcv: 'Il tuo prezzo medio', mkt: 'Mercato nelle stesse date', diff: 'Differenza', total: 'In totale', weighted: 'ponderato per quantità',
       sB: 'Su {q} {u0} confrontate, hai pagato in media {p} {u}, contro {m} {u} del mercato nelle stesse date: {d} {dir} ({x}%). In totale, {tdir} {t}.',
       sS: 'Su {q} {u0} confrontate, hai incassato in media {p} {u}, contro {m} {u} del mercato nelle stesse date: {d} {dir} ({x}%). In totale, {tdir} {t}.',
@@ -188,7 +188,7 @@
       '<h3 style="margin:14px 0 6px;font-size:16px">' + esc(w.s2) + '</h3><p class="di-movers-hint">' + esc(w.s2h) + '</p><textarea id="cf-t" rows="7" class="di-compare-select" style="width:100%;font-family:monospace;font-size:13px" placeholder="' + esc(w.ph) + '">' + esc(TEXT) + '</textarea>' +
       '<details class="ms-more" style="margin:10px 0 0"' + (TEXT && !ADDOPEN ? '' : ' open') + '><summary>' + esc(w.addT) + '</summary><div style="display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-top:8px"><label style="font-size:12.5px">' + esc(w.addD) + '<br><input id="cf-ad" type="date" class="di-compare-select" style="width:auto"></label><label style="font-size:12.5px">' + esc(w.addQ) + (sel() ? ' (' + esc(UL(sel().unit)) + ')' : '') + '<br><input id="cf-aq" inputmode="decimal" class="di-compare-select" style="width:110px"></label><label style="font-size:12.5px">' + esc(w.addP) + (sel() ? ' (' + esc(UL(sel().unit) + ' ' + sel().currency) + ')' : '') + '<br><input id="cf-ap" inputmode="decimal" class="di-compare-select" style="width:130px"></label><button id="cf-add" class="di-btn-sec" type="button">' + esc(w.addB) + '</button></div><p id="cf-addm" class="di-movers-hint" role="status" style="color:#8f5f12"></p></details>' + '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px"><button id="cf-go" class="di-btn-gold-solid" type="button">' + esc(w.btn) + '</button><button id="cf-ex" class="di-btn-sec" type="button">' + esc(w.ex) + '</button><label class="di-btn-sec" style="cursor:pointer">' + esc(w.file) + '<input id="cf-f" type="file" accept=".csv,.txt,text/csv,text/plain" style="display:none"></label><button id="cf-clr" class="di-btn-sec" type="button">' + esc(w.clear) + '</button></div></div>' +
       '<h3 id="cf-res" class="no-print" style="margin:18px 0 6px;font-size:16px">' + esc(w.s3) + '</h3>';
-    if (FAILED) h += '<p>' + esc(w.fail) + '</p>'; else if (!SER) h += '<p class="di-movers-hint">' + esc(w.loadingS) + '</p>'; else h += resultHtml(w, SER);
+    if (FAILED) h += '<p>' + esc(w.fail) + ' <button class="di-btn-sec no-print" id="cf-retry" type="button">' + esc(w.retry) + '</button></p>'; else if (!SER) h += '<p class="di-movers-hint">' + esc(w.loadingS) + '</p>'; else h += resultHtml(w, SER);
     h += '<section class="di-card di-emp-cta no-print" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaB) + '</a></section>';
     root.innerHTML = h; bind(w);
   }
@@ -201,6 +201,7 @@
   function bind(w) {
     var $ = function (i) { return document.getElementById(i); };
     $('cf-s').onchange = function (e) { SID = e.target.value; SER = null; FAILED = false; TEXT = $('cf-t').value; loadSeries(); render(); };
+    if ($('cf-retry')) $('cf-retry').onclick = function () { TEXT = $('cf-t').value; FAILED = false; SER = null; loadSeries(); render(); };   /* conserva lo pegado */
     $('cf-m').onchange = function (e) { MODE = e.target.value; TEXT = $('cf-t').value; render(); };
     $('cf-go').onclick = function () { TEXT = $('cf-t').value; render(); };
     $('cf-clr').onclick = function () { TEXT = ''; RES = null; render(); };
