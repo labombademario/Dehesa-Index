@@ -233,11 +233,13 @@
     var slug = CA_SLUG[x.r]; if (!slug) return Promise.resolve(null);
     return get('data/catalog/CA.json').then(function (d) {   // catalogo del pais (220 KB): mismos id, etiqueta, ultimo valor y periodo que el monolito canada-stats.json (1,5 MB)
       var S = d && d.series; if (!S) return null; var t = tt(), tot = null, rows = [], per = null;
+      var cv = [];
       S.forEach(function (s) { if (s.id.indexOf('ca-exp-' + slug + '-') !== 0) return; var k = s.id.slice(('ca-exp-' + slug + '-').length); if (k === 'total-expenses') { tot = s; per = s.latestPeriod; } });
       if (!tot) return null;
-      S.forEach(function (s) { if (s.id.indexOf('ca-exp-' + slug + '-') !== 0) return; var k = s.id.slice(('ca-exp-' + slug + '-').length); if (k === 'total-expenses' || !EXP_L[k]) return; rows.push([esc(EXP_L[k][li()]), nf(s.latest, 0), nf(s.latest / tot.latest * 100, 1) + ' %', esc(s.latestPeriod)]); });
-      rows.unshift(['<b>' + esc(t.total) + '</b>', '<b>' + nf(tot.latest, 0) + '</b>', '', esc(per)]);
-      return card(t.costs, t.costsSub, table([t.item, t.cad, t.share, t.year], rows, 460), cite('statcan', per));
+      S.forEach(function (s) { if (s.id.indexOf('ca-exp-' + slug + '-') !== 0) return; var k = s.id.slice(('ca-exp-' + slug + '-').length); if (k === 'total-expenses' || !EXP_L[k]) return; rows.push([esc(EXP_L[k][li()]), nf(s.latest, 0), nf(s.latest / tot.latest * 100, 1) + ' %', esc(s.latestPeriod)]); cv.push(s.latest); });
+      rows.unshift(['<b>' + esc(t.total) + '</b>', '<b>' + nf(tot.latest, 0) + '</b>', '', esc(per)]); cv.unshift(null);
+      var rkC = rankRows(rows, cv, 'value', function (i) { return i === 0; });
+      return card(t.costs, t.costsSub, table([t.item, t.cad, t.share, t.year], rkC.rows, 460) + rkC.note, cite('statcan', per));
     });
   }
   function caPrices(x) {
@@ -275,13 +277,14 @@
   }
   function caLivestock(x) {
     return caProv().then(function (d) {
-      var P = d && d.provinces[x.r]; if (!P) return null; var t = tt(), rows = [];
+      var P = d && d.provinces[x.r]; if (!P) return null; var t = tt(), rows = [], lv = [];
       [['cattle', t.cattleN], ['hogs', t.hogsN], ['sheep', t.sheepN]].forEach(function (g) {
         var B = P[g[0]]; if (!B) return;
-        Object.keys(B).forEach(function (k) { var s = B[k], l = lastOf(s.pts); if (!l) return; var py = (+l[0].slice(0, 4) - 1) + l[0].slice(4), ya = ptAt(s.pts, py); rows.push([esc(g[1] + ': ' + (LBL.calv[k] ? LBL.calv[k][li()] : s.name)), nf(l[1], dec(l[1])), esc(day(l[0])), ya == null ? '' : esc(pct((l[1] / ya - 1) * 100))]); });
+        Object.keys(B).forEach(function (k) { var s = B[k], l = lastOf(s.pts); if (!l) return; var py = (+l[0].slice(0, 4) - 1) + l[0].slice(4), ya = ptAt(s.pts, py); rows.push([esc(g[1] + ': ' + (LBL.calv[k] ? LBL.calv[k][li()] : s.name)), nf(l[1], dec(l[1])), esc(day(l[0])), ya == null ? '' : esc(pct((l[1] / ya - 1) * 100))]); lv.push(l[1]); });
       });
       if (!rows.length) return null;
-      return card(t.lvst, t.lvstSub, table([t.item, t.head, t.per, t.yoyc], rows, 520), cite('statcan'));
+      var rkL = rankRows(rows, lv, 'heads');
+      return card(t.lvst, t.lvstSub, table([t.item, t.head, t.per, t.yoyc], rkL.rows, 520) + rkL.note, cite('statcan'));
     });
   }
   function caIncome(x) {
@@ -386,6 +389,12 @@
   function medalNote(crit) { var l = lang(), pre = { es: 'Medallas: las tres partidas de la lista con más ', en: 'Medals: the three items on the list with the highest ', fr: 'Médailles : les trois postes de la liste avec le plus ', it: 'Medaglie: le tre voci della lista con più ' }[l] || ''; var mc = (MEDC[crit] || MEDC.value)[l] || ''; return '<p class="di-movers-hint" style="margin:6px 0 0">' + MEDI.join('') + ' ' + esc(pre + mc) + '.</p>'; }
   function ranks(vals, ok) { /* devuelve, para cada posición, 0/1/2 si está entre las tres mayores (entre las que cumplen ok), o -1 */ var ix = vals.map(function (v, i) { return i; }).filter(function (i) { return vals[i] != null && vals[i] > 0 && (!ok || ok(i)); }).sort(function (a, b) { return vals[b] - vals[a]; }), r = vals.map(function () { return -1; }); ix.slice(0, 3).forEach(function (i, k) { r[i] = k; }); return r; }
   function medalSort(items, vals, ok) { /* campeones primero (oro, plata, bronce) y el resto de mayor a menor; devuelve la lista reordenada y su ranking */ var rk = ranks(vals, ok), idx = items.map(function (x, i) { return i; }); idx.sort(function (a, b) { var ra = rk[a] >= 0 ? rk[a] : 99, rb = rk[b] >= 0 ? rk[b] : 99; return ra !== rb ? ra - rb : (vals[b] || 0) - (vals[a] || 0); }); return { items: idx.map(function (i) { return items[i]; }), rk: idx.map(function (i) { return rk[i]; }) }; }
+  function rankRows(rows, vals, crit, skip) { /* medallas y números en una tabla de partidas; con menos de 4 filas no se ordena ni se añade nada. skip(i) deja fuera filas como los totales */
+    var keep = [], fixed = []; rows.forEach(function (r, i) { (skip && skip(i) ? fixed : keep).push({ r: r, v: vals[i] }); });
+    if (keep.length < 4) return { rows: rows, note: '' };
+    var so = medalSort(keep, keep.map(function (k) { return k.v; }));
+    return { rows: fixed.map(function (f) { return f.r; }).concat(so.items.map(function (k, i) { var c = k.r.slice(); c[0] = rankTag(so.rk[i], i + 1) + c[0]; return c; })), note: medalNote(crit) };
+  }
   var PCOL = ['#2f6b4a', '#e08a3a', '#3a5f8a', '#b03a2e', '#7b5ea7', '#8a6d3b'];
   function yrSeries(arr, name, color) { return arr && arr.length > 1 ? { name: name, color: color, pts: arr.map(function (p) { return { x: Date.UTC(p[0], 0, 1), y: p[1], l: String(p[0]) }; }) } : null; }
   function twoViews(ser, pieHtml, unit, aria) { // líneas (evolución) + tarta (reparto del último año), con selector
@@ -531,11 +540,12 @@
   var AU_P = [['agrifood', 'auAll'], ['beef', 'auBeef'], ['sheepmeat', 'auSheep'], ['wheat', 'auWheat'], ['barley', 'auBarley'], ['maize', 'auMaize'], ['oilseeds', 'auOil'], ['cotton', 'auCotton'], ['wool', 'auWool'], ['wine', 'auWine'], ['sugar', 'auSugar'], ['milk', 'auMilk'], ['cheese', 'auCheese'], ['live', 'auLive']];
   function auExports(x) {
     return get('data/au-states.json').then(function (d) {
-      var S = d && d.states, b = S && S[x.r]; if (!b || !b.agrifood) return null; var t = tt(), y = b.agrifood[b.agrifood.length - 1][0], rows = [];
+      var S = d && d.states, b = S && S[x.r]; if (!b || !b.agrifood) return null; var t = tt(), y = b.agrifood[b.agrifood.length - 1][0], rows = [], av = [], ak = [];
       var tot = function (k, yy) { var s = 0; Object.keys(S).forEach(function (st) { s += (S[st][k] ? ycell(S[st][k], yy) : 0) || 0; }); return s; };
       AU_P.forEach(function (z) { var p = b[z[0]], v = p ? ycell(p, y) : null; if (v == null || v <= 0) return; var pv = ycell(p, y - 1), all = tot(z[0], y);
-        rows.push([esc(t[z[1]]), nf(v, dec(v)), pv ? esc(pct((v / pv - 1) * 100)) : '', all ? sharePct(v, all) : '']); });
-      var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(t.yearL) + ' ' + y + '</p>' + table([t.auProd, 'A$ M', t.eaYoy, t.auShare], rows, 460);
+        rows.push([esc(t[z[1]]), nf(v, dec(v)), pv ? esc(pct((v / pv - 1) * 100)) : '', all ? sharePct(v, all) : '']); av.push(v); ak.push(z[0]); });
+      var rkA = rankRows(rows, av, 'value', function (i) { return ak[i] === 'agrifood'; });
+      var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(t.yearL) + ' ' + y + '</p>' + table([t.auProd, 'A$ M', t.eaYoy, t.auShare], rkA.rows, 460) + rkA.note;
       body += window.DehesaChart.render({ series: [{ name: t.auAll, color: '#2f6b4a', pts: b.agrifood.map(function (p) { return { x: Date.UTC(p[0], 0, 1), y: p[1], l: String(p[0]) }; }) }], xMode: 'time', yMin: 0, yTitle: 'A$ M', noLegend: true, aria: t.auex + ' ' + nm(C.AU, x.r), vFmt: function (v) { return nf(v, dec(v)) + ' A$ M'; }, yFmt: function (v) { return nf(v, 0); }, xFmt: function (v) { return new Date(v).getUTCFullYear(); } });
       body += '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.auNote) + '</p>';
       return card(t.auex, t.auexSub, body, cite('abs'));
@@ -703,7 +713,7 @@
   (function () {
     if (!window.DehesaRegionMore) return;
     var mon = function (p) { if (!/^\d{4}-\d{2}$/.test(String(p))) return String(p); var q = String(p).split('-'); try { return new Date(Date.UTC(+q[0], +q[1] - 1, 1)).toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return String(p); } };
-    var M = window.DehesaRegionMore({ get: get, card: card, cite: cite, table: table, medal: medal, numTag: numTag, ranks: ranks, medalNote: medalNote, nf: nf, esc: esc, tt: tt, day: day, pct: pct, dec: dec, lang: lang, plabel: mon,
+    var M = window.DehesaRegionMore({ get: get, card: card, cite: cite, table: table, medal: medal, numTag: numTag, ranks: ranks, medalNote: medalNote, rankRows: rankRows, nf: nf, esc: esc, tt: tt, day: day, pct: pct, dec: dec, lang: lang, plabel: mon,
       nameFr: function (r) { var s = C.FR.names[r]; return s ? s.split('|')[2] : r; }, yearWord: function () { return tt().yearL || ''; } });
     Object.keys(M.T).forEach(function (l) { if (!T[l]) return; Object.keys(M.T[l]).forEach(function (k) { if (T[l][k] == null) T[l][k] = M.T[l][k]; }); });
     Object.keys(M.mods).forEach(function (c) { if (!MODS[c]) MODS[c] = []; M.mods[c].forEach(function (m) { MODS[c].push(m); MOD_NAME[m[0]] = m[0]; }); });

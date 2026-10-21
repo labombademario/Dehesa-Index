@@ -43,7 +43,7 @@
   "regions": {
    "type": "object",
    "minProperties": 8,
-   "additionalProperties": {
+   "additionalSchema": {
     "type": "object",
     "minProperties": 2,
     "properties": {

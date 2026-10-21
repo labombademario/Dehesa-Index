@@ -53,10 +53,10 @@
   "countries": {
    "type": "object",
    "minProperties": 1,
-   "additionalProperties": {
+   "additionalSchema": {
     "type": "object",
     "minProperties": 1,
-    "additionalProperties": {
+    "additionalSchema": {
      "type": "object",
      "required": [
       "city",
