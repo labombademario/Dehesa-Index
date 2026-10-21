@@ -102,9 +102,9 @@ pl PD {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pl MZ {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pt NOR {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 pt ALG {'gdp': 25, 'pop': 26, 'unemp': 24, 'gdppc': 25}
-pt CEN {'pop': 24, 'unemp': 19}
-pt LIS {'pop': 24, 'unemp': 19}
-pt ALE {'pop': 24, 'unemp': 19}
+pt CEN {'pop': 26, 'unemp': 19, 'gdp': 25, 'via': 2, 'gdppc': 25}
+pt LIS {'pop': 26, 'unemp': 19, 'gdp': 25, 'via': 2, 'gdppc': 25}
+pt ALE {'pop': 26, 'unemp': 19, 'gdp': 25, 'via': 2, 'gdppc': 25}
 pt AZO {'gdp': 25, 'pop': 26, 'unemp': 19, 'gdppc': 25}
 pt MAD {'gdp': 25, 'pop': 26, 'unemp': 21, 'gdppc': 25}
 ie NW {'gdp': 25, 'pop': 14, 'unemp': 14, 'gdppc': 13}
@@ -197,4 +197,4 @@ uk UKK {'pop': 20, 'unemp': 20}
 uk UKL {'pop': 20, 'unemp': 20}
 uk UKM {'pop': 20, 'unemp': 20}
 uk UKN {'pop': 19, 'unemp': 20}
-escrito eu-regions-macro.json 280 KB
+escrito eu-regions-macro.json 283 KB
