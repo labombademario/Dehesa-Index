@@ -240,6 +240,7 @@
   }
   function selectedList(c) {
     var list = c.series.filter(function (s) { return ST.g === 'all' || s.group === ST.g; });
+    if (REQS && ST.s === REQS && ST.g === 'all' && !list.some(function (s) { return s.id === ST.s; })) { SNOTE = { k: 'gone', id: REQS }; REQS = ''; }
     if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? ((window.DIExplorer && window.DIExplorer.first({ list: list, collapse: collapse, t: tt(), lang: lang() })) || list[0].id) : null;
     return list;
   }
@@ -775,7 +776,13 @@
     var themeHtml = themes.length > 1 ? '<section id="ps-themes" class="pp-anchor"><h2 style="margin:14px 0 4px;font-size:19px">' + esc(TH[0].replace('{c}', t.countries[ST.c] || ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(TH[2]) + '</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px">' + themes.map(function (g) { return '<a class="di-card" href="paises.html?c=' + ST.c + '&amp;g=' + g + '#ps-explorer" style="display:block;padding:10px 12px;text-decoration:none;color:inherit">' + (TEMO[g] ? '<span aria-hidden="true" style="display:block;font-size:24px;line-height:1.1;margin-bottom:4px">' + TEMO[g] + '</span>' : '') + '<b>' + esc(t[g]) + '</b><div class="di-movers-hint" style="margin:2px 0 0">' + nf(cnt[g], 0) + ' ' + esc(TH[1]) + '</div></a>'; }).join('') + '</div></section>' : '';
     var prof = window.DIProfile ? window.DIProfile.html(ST.c, c, { lang: lang(), t: t, groups: groups, esc: esc, nf: nf, dec: dec, plabel: plabel, macro: MACRO && MACRO.countries[ST.c], wage: WAGES && WAGES.countries[ST.c], rate: window.DIProfile.rateOf(c), afterHero: themeHtml + '<div class="ps-secgrp">' + (window.DehesaSector ? '<div id="ps-sector"></div>' : '') + '<div id="ps-regmap" class="pp-anchor"></div></div>' }) : '';
     var EXC = window.DIExplorer ? xctx(c, list, cur0, cur, t, countries, opt, groups, rng) : null;
-    var html = prof + (EXC ? window.DIExplorer.html(EXC) : '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
+    if (SNOTE && SNOTE.s && SNOTE.s !== ST.s) SNOTE = null; if (SNOTE && !SNOTE.s) SNOTE.s = ST.s;
+    var SN = { es: ['Esta serie cambió de identificador: te mostramos la misma con su nombre actual.', 'La serie del enlace ({id}) ya no se publica en este país; te mostramos otra. Busca arriba la que quieres.'],
+      en: ['This series changed its identifier: we show you the same one under its current name.', 'The linked series ({id}) is no longer published for this country; we show you another. Search above for the one you want.'],
+      fr: ['Cette série a changé d’identifiant : nous vous montrons la même sous son nom actuel.', 'La série du lien ({id}) n’est plus publiée pour ce pays ; nous vous en montrons une autre. Cherchez ci-dessus celle que vous voulez.'],
+      it: ['Questa serie ha cambiato identificativo: ti mostriamo la stessa con il nome attuale.', 'La serie del link ({id}) non è più pubblicata per questo paese; te ne mostriamo un’altra. Cerca qui sopra quella che vuoi.'] }[lang()] || [];
+    var snote = SNOTE ? '<p class="di-movers-hint" id="ps-snote" style="color:#8f5f12">' + esc((SNOTE.k === 'ren' ? SN[0] : SN[1] || '').replace('{id}', SNOTE.id || '')) + '</p>' : '';
+    var html = snote + prof + (EXC ? window.DIExplorer.html(EXC) : '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
       sel('ps-g', t.group, groupOpts(groups, t)) +
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + seriesPicker(list, t) + '</div>');
     if (cur) {
@@ -854,7 +861,7 @@
   var LABELS_ON = true;
   if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } });
   shell();
-  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('cmp')) { var cm = q.get('cmp').split(':'); if (cm.length > 1 && cm[0].toUpperCase() === ST.c) ST.cmp = { cc: cm[0].toUpperCase(), id: cm.slice(1).join(':') }; } if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
+  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); var REQS = q.get('s') || '', SNOTE = null;   /* enlace a una serie concreta: si cambio de id o ya no existe, se dice (no se cambia de serie en silencio) */ if (q.get('r')) ST.r = q.get('r'); if (q.get('cmp')) { var cm = q.get('cmp').split(':'); if (cm.length > 1 && cm[0].toUpperCase() === ST.c) ST.cmp = { cc: cm[0].toUpperCase(), id: cm.slice(1).join(':') }; } if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
   /* Carga por catalogo (capa de datos unificada): manifiesto -> catalogo del pais -> trozo de la serie. Nunca se piden los *-stats.json. */
   var GROUPS = ['production', 'crops', 'livestock', 'fish', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'crops_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'climate', 'stocks', 'income', 'partners', 'rates'];
   function flagE(k) { if (k === 'EU') return '\uD83C\uDDEA\uD83C\uDDFA '; var i = k === 'EL' ? 'GR' : k === 'UK' ? 'GB' : k; return /^[A-Z]{2}$/.test(i) ? String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)) + ' ' : ''; }
@@ -890,6 +897,10 @@
     CCODES.forEach(function (k) { var e = m.countries[k]; AVAIL[k] = !!(e && e.metrics && Object.keys(e.metrics).some(function (g) { return g !== 'product' && g.indexOf('eu_') !== 0; })); });
     if (!AVAIL[ST.c]) ST.c = 'ES';
     return Promise.all([fetch('data/country-macro.json'), fetch('data/country-wages.json')].map(function (f) { return f.then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }));
-  }).then(function (m) { MACRO = m[0]; WAGES = m[1]; build(); })
+  }).then(function (m) { MACRO = m[0]; WAGES = m[1];
+    if (!REQS) return build();
+    return fetch('data/series-renames.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
+      var to = d && d.renames && d.renames[REQS]; if (to) { ST.s = to; REQS = to; SNOTE = { k: 'ren', id: to, s: to }; } build(); });
+  })
     .catch(function () { var b = document.getElementById('paises-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
 })();
