@@ -142,7 +142,6 @@
     'lenteja:us': { key: 'cereales:lenteja', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'guisante_seco:us': { key: 'cereales:guisante_seco', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'lino:us': { key: 'cereales:lino', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
-    'centeno:us': { key: 'cereales:centeno', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
     'cordero:us': { key: 'ovino:cordero', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'azucar:us': { key: 'azucar:azucar', sourceId: 'usda_ers', currency: 'USD', unit: 'lb', frequency: 'monthly' },
     'leche:us': { key: 'lacteos:leche', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },

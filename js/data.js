@@ -346,9 +346,8 @@
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
           quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (canola)' }, eu: { type: 'referencia', market: 'Comisión Europea (colza, España, media nacional)' } } },
         { nameKey: 'centeno', imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 25.401 },
           eu: { price: 160.03, changePct: 3.9021, history: [146.59, 149.53, 145.82, 145.12, 152.79, 161.63, 153.58, 160.53, 153.9, 152.65, 154.02, 160.03], currency: 'EUR', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido por el agricultor)' }, eu: { type: 'referencia', market: 'Comisión Europea (centeno panificable, agregado UE)' } } },
+          quoteTypes: { eu: { type: 'referencia', market: 'Comisión Europea (centeno panificable, agregado UE)' } } },
         { nameKey: 'soja_grano', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'bushel', imperialKgPerUnit: 27.2155, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 27.2155 },
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
@@ -889,11 +888,6 @@
     'cereales-lino-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for flaxseed; USD/bushel. Pendiente de la primera ejecución automática.',
-      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
-    },
-    'cereales-centeno-us': {
-      sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED for rye; USD/bushel. Pendiente de la primera ejecución automática.',
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'ovino-cordero-us': {

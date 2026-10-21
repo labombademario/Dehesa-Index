@@ -12,3 +12,4 @@ node scripts/build-cross-market.mjs && node scripts/build-dehesa-index.mjs
 node scripts/build-alert-signals.mjs
 python3 scripts/build-price-views.py
 python3 scripts/build-freshness.py
+python3 scripts/build-watch-index.py

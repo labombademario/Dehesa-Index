@@ -30,7 +30,7 @@ jobs:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         run: |
           ok=0; bad=""
-          for product in trigo maiz arroz cebada avena colza sorgo leche huevos cerdo vaca pollo soja_grano lenteja guisante_seco lino centeno cordero; do
+          for product in trigo maiz arroz cebada avena colza sorgo leche huevos cerdo vaca pollo soja_grano lenteja guisante_seco lino cordero; do
             if bash scripts/annotate-failure.sh node scripts/update-nass-us.mjs "$product"; then ok=$((ok+1)); else bad="$bad $product"; fi
           done
           # un producto que falla no impide actualizar los demas; si fallan todos, el paso falla

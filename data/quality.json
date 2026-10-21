@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-21T15:50:59.958Z",
+  "generatedAt": "2026-10-21T17:37:36.707Z",
   "scope": {
-    "latestObservations": 81,
-    "historyObservations": 21977,
-    "verified": 81,
+    "latestObservations": 82,
+    "historyObservations": 22774,
+    "verified": 82,
     "pending": 0,
     "stale": 1,
     "freshness": {
-      "LIVE": 52,
+      "LIVE": 53,
       "FRESH": 28,
       "DELAYED": 1
     },
@@ -187,6 +187,22 @@
       "ageDays": 113,
       "freshness": "DELAYED",
       "stale": true
+    },
+    {
+      "id": "di_azucar_us",
+      "product": "azucar",
+      "region": "us",
+      "sourceId": "usda_ers",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09",
+      "publicationDate": null,
+      "verifiedAt": "2026-10-21T17:19:54.000Z",
+      "frequency": "monthly",
+      "historyPoints": 797,
+      "ageDays": 21,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_cereales_canola_elevador_ca",

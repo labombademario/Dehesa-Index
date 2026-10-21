@@ -38,6 +38,9 @@ runs:
     - name: Recalcular la frescura (el estado depende de la fecha de hoy; la validacion de consistencia compara con quality.json)
       shell: bash
       run: python3 scripts/build-freshness.py
+    - name: Indice de la lista de seguimiento (data/watch; un producto nuevo en el panel no debe romper la comprobacion «watch-index = latest»)
+      shell: bash
+      run: python3 scripts/build-watch-index.py
     - name: Validar contratos y consistencia (antes de cualquier commit)
       shell: bash
       run: |
