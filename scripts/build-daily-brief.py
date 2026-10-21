@@ -85,6 +85,13 @@ def main():
                     nm = ((s0.get('name') if isinstance(s0, dict) else str(s0)) or '') + (' — ' + c0['name'] if c0.get('name') else '')
                 except Exception: nm = ''
             updated.append({'file': f, 'name': nm or f.rsplit('/', 1)[-1].replace('.json', ''), 'changed': changed, 'kinds': sorted(ckinds)})
+    # Series duplicadas (el registro elige una y deja la otra como «alternate», fuera del catalogo): no se citan en el brief, porque su enlace
+    # no lleva a ninguna ficha (21-oct-2026: la leche del ERS, alternativa de la de NASS, rompia la validacion y paraba todos los derivados).
+    try:
+        reg = json.loads((ROOT / 'data/series-registry.json').read_text())
+        alts = {'%s/%s' % (x.get('country'), a) for x in (reg.get('series') if isinstance(reg, dict) else reg) for a in (x.get('alternates') or [])}
+    except Exception: alts = set()
+    new_data = [x for x in new_data if x['k'] not in alts]
     fresh = [x for x in new_data if not x.get('new')]
     # --- cobertura completa: cada dataset de DATASETS (y los *-stats.json ya leidos serie a serie) con su tipo y si cambio de CONTENIDO en la ventana
     unknown = sorted(p['workflow'] for p in ps.get('pipelines', []) if p['workflow'] not in WORKFLOW_KINDS)
