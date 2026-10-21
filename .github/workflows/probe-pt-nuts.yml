@@ -16,16 +16,17 @@ jobs:
           python3 - <<'PY'
           import json, urllib.request
           B = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
-          for ds, q in (("nama_10r_2gdp", "unit=MIO_EUR"), ("demo_r_d2jan", "unit=NR&sex=T&age=TOTAL"), ("lfst_r_lfu3rt", "unit=PC&sex=T&age=Y15-74")):
-              geos = "&".join("geo=" + g for g in ["PT11","PT15","PT16","PT17","PT18","PT19","PT1A","PT1B","PT1C","PT1D","PT20","PT30","PT1","PT"])
+          for ds, q in (("nama_10r_3gdp", "unit=MIO_EUR"), ("demo_r_pjanaggr3", "sex=T&age=TOTAL&unit=NR"), ("demo_r_d3avg", "unit=NR")):
               try:
-                  j = json.load(urllib.request.urlopen(B + ds + "?format=JSON&lang=EN&" + q + "&" + geos + "&sinceTimePeriod=2017", timeout=60))
+                  j = json.load(urllib.request.urlopen(B + ds + "?format=JSON&lang=EN&" + q + "&sinceTimePeriod=2018", timeout=170))
               except Exception as e:
-                  print("::notice::" + ds + " ERROR " + str(e)[:150]); continue
+                  print("::notice::" + ds + " ERROR " + str(e)[:200]); continue
               gi = j["dimension"]["geo"]["category"]["index"]; ti = j["dimension"]["time"]["category"]["index"]
               lab = j["dimension"]["geo"]["category"].get("label", {})
-              sizes = j["size"]; nt = len(ti); ng = len(gi)
+              nt = len(ti); out = []
               for g, gx in gi.items():
+                  if not g.startswith("PT"): continue
                   yrs = [t for t, tx in ti.items() if str(gx * nt + tx) in j["value"]]
-                  print("::notice::" + ds + " " + g + " (" + str(lab.get(g, ""))[:30] + ") " + (yrs[0] + ".." + yrs[-1] if yrs else "sin datos"))
+                  out.append(g + " " + str(lab.get(g, ""))[:28] + " " + (yrs[0] + ".." + yrs[-1] if yrs else "sin datos"))
+              print("::notice::" + ds + " %0A" + "%0A".join(out))
           PY
