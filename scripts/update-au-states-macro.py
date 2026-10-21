@@ -31,13 +31,21 @@ def state_of(r):
 def num(x):
     try: return float(x)
     except Exception: return None
-def labour(measure):
-    rows = abs_csv("LF/%s.3.1599.20.1+2+3+4+5+6+7+8.M?startPeriod=%d-01&format=csvfilewithlabels" % (measure, datetime.date.today().year - 9))
+TREND = set()   # estados para los que el ABS solo publica la serie de tendencia (NT y ACT no tienen serie desestacionalizada)
+def labour_adj(measure, tsest):
+    rows = abs_csv("LF/%s.3.1599.%s.1+2+3+4+5+6+7+8.M?startPeriod=%d-01&format=csvfilewithlabels" % (measure, tsest, datetime.date.today().year - 9))
     out = {}
     for r in rows:
         st = state_of(r); v = num(r.get("OBS_VALUE"))
         if st and v is not None and r["TIME_PERIOD"][4:5] == "-": out.setdefault(st, []).append([r["TIME_PERIOD"], round(v, 1)])
     return {k: sorted(v) for k, v in out.items()}
+def labour(measure):
+    sa = labour_adj(measure, "20")
+    if len(sa) < 8:
+        tr = labour_adj(measure, "30")
+        for st, pts in tr.items():
+            if st not in sa: sa[st] = pts; TREND.add(st)   # nunca se mezclan los dos tipos dentro de una misma serie
+    return sa
 def population():
     """ERP por edad simple a 30 de junio: poblacion total y edad mediana (interpolada dentro del anio de edad)."""
     y0 = datetime.date.today().year - 6
@@ -86,12 +94,13 @@ def main():
     regions = {}
     for st in sorted(STATES.values()):
         o = {k: res[k][st] for k in ("pop", "age", "unemp", "epop") if res.get(k, {}).get(st)}
+        if o and st in TREND: o["adj"] = "trend"
         if o: regions[st] = o
     if len(regions) < 8:
         log("FALLO: faltan estados"); (outdir / "australia-states-macro-log.txt").write_text("\n".join(LOG) + "\n", encoding="utf-8"); return 1
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "source": {"name": "Australian Bureau of Statistics (ABS Data API): Labour Force (LF) and Quarterly Population Estimates (ERP_Q)", "url": "https://www.abs.gov.au/", "license": "CC BY 4.0"},
-           "units": {"pop": "persons, estimated resident population at 30 June", "age": "median age, years, calculated by Dehesa Index from single-year ERP at 30 June", "unemp": "% of the labour force aged 15+, seasonally adjusted, monthly", "epop": "employment to population ratio, % of the civilian population aged 15+, seasonally adjusted, monthly"},
+           "units": {"pop": "persons, estimated resident population at 30 June", "age": "median age, years, calculated by Dehesa Index from single-year ERP at 30 June", "unemp": "% of the labour force aged 15+, seasonally adjusted, monthly (trend series for NT and ACT, the only one the ABS publishes there)", "epop": "employment to population ratio, % of the civilian population aged 15+, seasonally adjusted, monthly"},
            "regions": regions}
     p.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); log("escrito", p.name, p.stat().st_size // 1024, "KB")
     (outdir / "australia-states-macro-log.txt").write_text("\n".join(LOG) + "\n", encoding="utf-8")

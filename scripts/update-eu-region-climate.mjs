@@ -18,7 +18,7 @@ const round=(n,d=1)=>Number(n.toFixed(d));
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function getJson(url){for(let i=0;i<3;i++){try{const r=await fetch(url);if(r.ok)return await r.json();console.error('HTTP',r.status,url)}catch(e){console.error(e.message)}await wait(2000*(i+1))}return null}
 const year=new Date().getUTCFullYear();
-const countries={},missing=[];
+const countries={},missing=[],bad=[];
 for(const cc of Object.keys(C)){ const regs={};
 for(const [code,city,lat,lon] of C[cc]){
  const q=`parameters=PRECTOTCORR,T2M&community=AG&longitude=${lon}&latitude=${lat}&format=JSON`;
@@ -26,7 +26,8 @@ for(const [code,city,lat,lon] of C[cc]){
  if(!m){missing.push({id:cc+'/'+code,reason:'fuente no disponible'});continue}
  let Pr,Tm;
  try{Pr=m.properties.parameter.PRECTOTCORR;Tm=m.properties.parameter.T2M}catch(e){missing.push({id:cc+'/'+code,reason:'respuesta inesperada'});continue}
- const ok=(p,t)=>typeof p==='number'&&p>-990&&typeof t==='number'&&t>-990;
+ // valores imposibles de la fuente (p. ej. >48 mm/dia = mas de 1500 mm al mes, como los de ene-mar 2026 en el sur de Italia y Cerdena): se descartan y se listan, nunca se corrigen
+ const ok=(p,t)=>{const v=typeof p==='number'&&p>-990&&typeof t==='number'&&t>-990;if(v&&p>48){bad.push({id:cc+'/'+code,reason:'precipitacion imposible en la fuente ('+p+' mm/dia)'});return false}return v};
  // media 2001-2020 de cada mes calendario (mm/dia y grados), calculada aqui con los mismos datos mensuales: hacen falta 15 anos validos
  const sp=Array(12).fill(0),st=Array(12).fill(0),n=Array(12).fill(0);
  for(let y=2001;y<=2020;y++)for(let mi=0;mi<12;mi++){const k=y+String(mi+1).padStart(2,'0');if(ok(Pr[k],Tm[k])){sp[mi]+=Pr[k];st[mi]+=Tm[k];n[mi]++}}
@@ -52,6 +53,7 @@ for(const [code,city,lat,lon] of C[cc]){
  if(months.length<3){missing.push({id:cc+'/'+code,reason:'menos de 3 meses válidos'});continue}
  regs[code]={city,lat,lon,months:months.slice(-12),history};
 }
+missing.push(...[...new Map(bad.map(x=>[x.id,x])).values()]);bad.length=0;
 countries[cc]=regs; }
 const total=Object.values(countries).reduce((a,r)=>a+Object.keys(r).length,0);
 if(total<55){console.error('Demasiadas regiones sin datos ('+missing.length+'); no se sobrescribe data/eu-region-climate.json');process.exit(1)}
