@@ -3098,3 +3098,8 @@ html:not([data-theme="dark"]) .esp-row.on{--up:#14663b;--down:#9a2019}
 .de-ctl .dch{flex:1 1 100%}
 .dch-hide{display:none!important}
 
+/* Mapa de sequía por región en la ficha de país (js/country-drought.js): rampa de amarillo (poca sequía) a granate (mucha) */
+.cd-mapbox{--gb0:#EFEDE3;--gb1:#F2D78A;--gb2:#E6A24A;--gb3:#C5602E;--gb4:#86291B;--gbx:#E9E6E1}
+html[data-theme="dark"] .cd-mapbox{--gb0:#2E312C;--gb1:#6B5A2A;--gb2:#9C6A2C;--gb3:#C9703F;--gb4:#F09A7A;--gbx:#2A2D2B}
+@media (prefers-color-scheme: dark){html:not([data-theme="light"]) .cd-mapbox{--gb0:#2E312C;--gb1:#6B5A2A;--gb2:#9C6A2C;--gb3:#C9703F;--gb4:#F09A7A;--gbx:#2A2D2B}}
+.cd-map svg{width:100%;height:auto;max-height:520px}

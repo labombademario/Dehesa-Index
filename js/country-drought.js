@@ -41,6 +41,53 @@
     svg.addEventListener('mousemove', at); svg.addEventListener('touchstart', at, { passive: true });
     svg.addEventListener('mouseleave', function () { cr.style.display = 'none'; ro.textContent = t.hover; });
   }
+  /* Mapa de «sequía por región» (21-oct-2026, norma: todos los países con regiones llevan mapa). Las regiones del EDO son NUTS 2; los mapas del sitio
+     usan sus propios códigos: XW traduce. Donde varias regiones NUTS 2 caen en una región del mapa (Länder alemanes, regiones francesas, Reino Unido,
+     Mazovia, Trentino-Alto Adigio) se colorea la que está peor (máximo) y se dice. Tramos fijos (% de superficie en sequía): 0–5, 5–15, 15–30, 30–50, 50–100. */
+  var MAPS = { AT: ['DEHESA_AT_LAENDER', 'vendor/at-laender.js'], BE: ['DEHESA_BE_PROVINCES', 'vendor/be-provinces.js'], BG: ['DEHESA_BG_REGIONS', 'vendor/bg-regions.js'], CH: ['DEHESA_CH_REGIONS', 'vendor/ch-regions.js'],
+    CZ: ['DEHESA_CZ_REGIONS', 'vendor/cz-regions.js'], DE: ['DEHESA_DE_LAENDER', 'vendor/de-laender.js'], DK: ['DEHESA_DK_REGIONS', 'vendor/dk-regions.js'], EL: ['DEHESA_EL_REGIONS', 'vendor/el-regions.js'], ES: ['DEHESA_ES_CCAA', 'vendor/es-ccaa.js'],
+    FI: ['DEHESA_FI_REGIONS', 'vendor/fi-regions.js'], FR: ['DEHESA_FR_REGIONS', 'vendor/fr-regions.js'], HR: ['DEHESA_HR_REGIONS', 'vendor/hr-regions.js'], HU: ['DEHESA_HU_REGIONS', 'vendor/hu-regions.js'], IE: ['DEHESA_IE_REGIONS', 'vendor/ie-regions.js'],
+    IT: ['DEHESA_IT_REGIONS', 'vendor/it-regions.js'], LT: ['DEHESA_LT_REGIONS', 'vendor/lt-regions.js'], NL: ['DEHESA_NL_PROVINCES', 'vendor/nl-provinces.js'], PL: ['DEHESA_PL_VOIVODESHIPS', 'vendor/pl-voivodeships.js'], PT: ['DEHESA_PT_REGIONS', 'vendor/pt-regions.js'],
+    RO: ['DEHESA_RO_REGIONS', 'vendor/ro-regions.js'], SE: ['DEHESA_SE_REGIONS', 'vendor/se-regions.js'], SI: ['DEHESA_SI_REGIONS', 'vendor/si-regions.js'], SK: ['DEHESA_SK_REGIONS', 'vendor/sk-regions.js'], UK: ['DEHESA_UK_REGIONS', 'vendor/uk-regions.js'] };
+  function xw(s) { var o = {}; s.split(' ').forEach(function (p) { var a = p.split(':'); o[a[0]] = a[1]; }); return o; }
+  var XW = {
+    DK: xw('DK01:HOV DK02:SJA DK03:SYD DK04:MID DK05:NJY'), AT: xw('AT11:B AT12:NO AT13:W AT21:K AT22:ST AT31:OO AT32:S AT33:T AT34:V'),
+    ES: xw('ES11:GA ES12:AS ES13:CB ES21:PV ES22:NC ES23:RI ES24:AR ES30:MD ES41:CL ES42:CM ES43:EX ES51:CT ES52:VC ES53:IB ES61:AN ES62:MC ES70:CN'),
+    IT: xw('ITC1:PIE ITC2:VDA ITC3:LIG ITC4:LOM ITF1:ABR ITF2:MOL ITF3:CAM ITF4:PUG ITF5:BAS ITF6:CAL ITG1:SIC ITG2:SAR ITH1:TAA ITH2:TAA ITH3:VEN ITH4:FVG ITH5:EMR ITI1:TOS ITI2:UMB ITI3:MAR ITI4:LAZ'),
+    NL: xw('NL11:GR NL12:FR NL13:DR NL21:OV NL22:GE NL23:FL NL31:UT NL32:NH NL33:ZH NL34:ZE NL41:NB NL42:LI'),
+    BE: xw('BE10:BRU BE21:VAN BE22:VLI BE23:VOV BE24:VBR BE25:VWV BE31:WBR BE32:WHT BE33:WLG BE34:WLX BE35:WNA'),
+    PL: xw('PL21:MA PL22:SL PL41:WP PL42:ZP PL43:LB PL51:DS PL52:OP PL61:KP PL62:WN PL63:PM PL71:LD PL72:SK PL81:LU PL82:PK PL84:PD PL91:MZ PL92:MZ'),
+    DE: xw('DE1:BW DE2:BY DE3:BE DE4:BB DE5:HB DE6:HH DE7:HE DE8:MV DE9:NI DEA:NW DEB:RP DEC:SL DED:SN DEE:ST DEF:SH DEG:TH'),
+    FR: xw('FR1:IDF FRB:CVL FRC:BFC FRD:NOR FRE:HDF FRF:GES FRG:PDL FRH:BRE FRI:NAQ FRJ:OCC FRK:ARA FRL:PAC FRM:COR') };
+  var MT = { es: ['Mapa: superficie en sequía agrícola por región', 'Pasa el cursor o toca una región.', 'sin dato', 'Donde una región del mapa reúne varias regiones europeas (NUTS 2), se colorea la que está peor.'],
+    en: ['Map: area in agricultural drought by region', 'Hover or tap a region.', 'no data', 'Where a map region groups several European (NUTS 2) regions, the worst one sets the colour.'],
+    fr: ['Carte : surface en sécheresse agricole par région', 'Survolez ou touchez une région.', 'pas de donnée', 'Quand une région de la carte réunit plusieurs régions européennes (NUTS 2), la plus touchée donne la couleur.'],
+    it: ['Mappa: superficie in siccità agricola per regione', 'Passa il cursore o tocca una regione.', 'nessun dato', 'Dove una regione della mappa riunisce più regioni europee (NUTS 2), il colore è quello della più colpita.'] };
+  function droughtMap(box, cc, R, lg) {
+    if ({ HR: 1, IE: 1, NL: 1, PT: 1 }[cc]) return;   // ya tienen mapa del mismo indicador con regiones mas finas (js/hr-, ie-, nl-, pt-drought.js)
+    var mp = MAPS[cc]; if (!mp || !box) return;
+    var go = function () {
+      global.DIFrDeptMap.load(mp[0], mp[1]).then(function (M) {
+        if (!M || !M.states) return;
+        var ids = {}, byName = {}; M.states.forEach(function (s) { ids[s.id] = 1; byName[s.name] = s.id; });
+        var X = XW[cc], vals = {}, parts = {}, grouped = false;
+        Object.keys(R.regions).forEach(function (nuts) {
+          var x = R.regions[nuts], l = x.v[x.v.length - 1]; if (!l) return;
+          var id = ids[nuts] ? nuts : byName[nuts] ? byName[nuts] : X ? (X[nuts] || X[nuts.slice(0, 3)]) : cc === 'UK' && ids[nuts.slice(0, 3)] ? nuts.slice(0, 3) : null;
+          if (!id || !ids[id]) return;
+          var d = inD(l); (parts[id] = parts[id] || []).push(x.name + ' ' + nf(d, 1, lg) + ' %');
+          if (vals[id] != null) grouped = true;
+          vals[id] = vals[id] == null ? d : Math.max(vals[id], d);
+        });
+        if (Object.keys(vals).length < 2) return;
+        var m = MT[lg] || MT.es, fmt = function (v) { return nf(v, v < 10 ? 1 : 0, lg) + ' %'; };
+        var r = global.DIFrDeptMap.html(M, { values: vals, cuts: [5, 15, 30, 50], fmt: fmt, label: m[0], none: m[2], labels: ['0–5 %', '5–15 %', '15–30 %', '30–50 %', '50–100 %'] });
+        box.innerHTML = '<h3 style="margin:14px 0 6px;font-size:15px">' + esc(m[0]) + '</h3><div class="cd-map" style="max-width:560px">' + r.html + '</div><p class="di-movers-hint cd-tip" style="margin:4px 0 0">' + esc(m[1]) + '</p>' + (grouped ? '<p class="di-movers-hint" style="margin:2px 0 0">' + esc(m[3]) + '</p>' : '');
+        global.DIFrDeptMap.bind(box, box.querySelector('.cd-tip'), m[1], function (id) { return '<b>' + esc(r.names[id] || id) + '</b>: ' + (vals[id] == null ? esc(m[2]) : '<b>' + fmt(vals[id]) + '</b>' + (parts[id] && parts[id].length > 1 ? ' · ' + esc(parts[id].join(' · ')) : '')); });
+      });
+    };
+    if (global.DIFrDeptMap) go(); else { var sc = document.createElement('script'); sc.src = 'js/fr-dept-map.js?v=20261015'; sc.onload = go; document.head.appendChild(sc); }
+  }
   function europe(el, cc, name, lg, t) {
     var k = EU_ALIAS[cc] || cc;
     /* Solo se pide el fichero regional si el pais esta en el EDO: evita un 404 con paises de fuera de Europa (p. ej. UY). */
@@ -56,6 +103,7 @@
         chart(v.map(inD), labels, lg, t);
       if (R && R.regions && Object.keys(R.regions).length > 1) {
         var rs = Object.keys(R.regions).map(function (id) { var x = R.regions[id], l = x.v[x.v.length - 1], p = x.v.length > 36 ? x.v[x.v.length - 37] : null; return { n: x.name, l: l, d: inD(l), p: p ? inD(p) : null }; }).filter(function (x) { return x.l; }).sort(function (a, b) { return b.d - a.d; });
+        h += '<div class="cd-mapbox"></div>';
         h += '<h3 style="margin:14px 0 6px;font-size:15px">' + esc(t.reg) + '</h3><div style="overflow-x:auto"><table class="cof-tbl" style="min-width:420px"><thead><tr><th scope="col">' + esc(t.regC) + '</th><th scope="col" class="cof-n">' + esc(t.inD) + '</th><th scope="col"></th><th scope="col" class="cof-n">' + esc(t.ly) + '</th></tr></thead><tbody>' +
           rs.map(function (x) { return '<tr><th scope="row">' + esc(x.n) + '</th><td class="cof-n"><b>' + nf(x.d, 1, lg) + ' %</b></td><td style="width:40%">' + bar(x.l, t) + '</td><td class="cof-n">' + (x.p == null ? '—' : nf(x.p, 1, lg) + ' %') + '</td></tr>'; }).join('') + '</tbody></table></div>';
       }
@@ -65,6 +113,7 @@
       }
       h += '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + ' ' + esc(t.edo) + (cc === 'ES' ? ' · MITECO, Boletín Hidrológico' : '') + ' · <a href="sequia.html?zona=eu">' + esc(t.all) + '</a></p></section>';
       el.innerHTML = h; bindChart(el, v.map(inD), labels, lg, t);
+      if (R && R.regions && Object.keys(R.regions).length > 1) droughtMap(el.querySelector('.cd-mapbox'), cc, R, lg);
       if (cc === 'PL') {   // avisos de sequia hidrologica del IMGW (js/pl-drought.js), a peticion
         var pbox = document.createElement('div'); pbox.style.marginTop = '14px'; el.appendChild(pbox);
         var pgo = function () { if (global.DIPlDrought) global.DIPlDrought.mount(pbox, lg.slice(0, 2)); };
