@@ -401,6 +401,14 @@
     "file": "js/produccion-mundial.js",
     "pattern": "data/eu-crops-map.json"
    }
+  },
+  "data/worldbank-agri.json": {
+   "class": "RUNTIME",
+   "note": "Perfil agrario por pais (Banco Mundial WDI). El navegador lo descarga una sola vez, solo al abrir el desplegable del perfil (perfil-agrario.js).",
+   "via": {
+    "file": "js/perfil-agrario.js",
+    "pattern": "data/worldbank-agri.json"
+   }
   }
  },
  "prefixes": {
