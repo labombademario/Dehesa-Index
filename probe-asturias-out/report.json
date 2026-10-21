@@ -2,27 +2,522 @@
  "seeds": [
   {
    "seed": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
-   "status": 0,
+   "status": 200,
    "final": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
-   "type": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain ",
-   "bytes": 0,
-   "links": []
+   "type": "text/html;charset=UTF-8",
+   "bytes": 98392,
+   "links": [
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+     "Castellano"
+    ],
+    [
+     "https://www.mapa.gob.es/en/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+     "English"
+    ],
+    [
+     "https://www.mapa.gob.es/fr/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+     "Français"
+    ],
+    [
+     "https://www.mapa.gob.es/ca/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+     "Català"
+    ],
+    [
+     "https://www.mapa.gob.es/gl/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+     "Galego"
+    ],
+    [
+     "https://www.mapa.gob.es/eu/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+     "Euskara"
+    ],
+    [
+     "https://www.mapa.gob.es/va/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/",
+     "Valencià"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/esyrce",
+     "ESYRCE (Encuesta de superficies y rendimientos de cultivos)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/esyrce-tendencias-mensuales-rendimientos-cultivos",
+     "ESYRCE: Tendencias mensuales de rendimientos de cultivos"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/avances-superficies-producciones-agricolas",
+     "Avances mensuales de superficies y producciones agrícolas"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos",
+     "Superficies y producciones anuales de cultivos"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/glosario",
+     "Glosario de nomenclatura de cultivos y variables agrarias"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/01135_estadistica-superficies-y-producciones.pdf",
+     "IME-Estadistica anual de superficies y producciones de cultivos"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/01021_estadisticas-terminos-municipales.pdf",
+     "IME-Estadisticas de superficies de cultivos por terminos municipales"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/notas--metodologicas-superficies-y-producciones-anuales-de-cultivos.pdf",
+     "Notas Metodológicas: Superficies y producciones anuales de cultivos"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1__citricos_formato_tabla_global-0.xlsx",
+     "CITRICOS DATOS PROVISIONALES CAMPAÑA 2025"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_frutales_no_citricos_formato_tabla_global-0.xlsx",
+     "FRUTALES NO CITRICOS DATOS PROVISIONALES CAMPAÑA 2025"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_hortalizas_formato_tabla_global-0.xlsx",
+     "HORTALIZAS DATOS PROVISIONALES CAMPAÑA 2025"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_olivar_formato_tabla_global-0.xlsx",
+     "OLIVAR DATOS PROVISIONALES CAMPAÑA 2025"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_otros_lenosos_formato_tabla_global-0.xlsx",
+     "OTROS CULTIVOS LEÑOSOS DATOS PROVISIONALES CAMPAÑA 2025"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_vinedo_formato_tabla_global-0.xlsx",
+     "VIÑEDO DATOS PROVISIONALES CAMPAÑA 2025"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_vinedo_formato_tabla_global.xlsx",
+     "VIÑEDO DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_hortalizas_formato_tabla_global.xlsx",
+     "HORTALIZAS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_frutales_no_citricos_formato_tabla_global.xlsx",
+     "FRUTALES NO CITRICOS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1__citricos_formato_tabla_global.xlsx",
+     "CITRICOS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_otros_lenosos_formato_tabla_global.xlsx",
+     "OTROS CULTIVOS LEÑOSOS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_olivar_formato_tabla_global.xlsx",
+     "OLIVAR DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_aprovechamientos_forrajeros_formato_tabla_global_24.xlsx",
+     "APROVECHAMIENTOS FORRAJEROS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_cereales_formato_tabla_global-0.xlsx",
+     "CEREALES DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_energeticos_formato_tabla_global-1.xlsx",
+     "ENERGETICOS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_flores_formato_tabla_global-0.xlsx",
+     "FLORES DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_forrajeros_formato_tabla_global-0.xlsx",
+     "FORRAJEROS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_ind_aromaticas_formato_tabla_global-0.xlsx",
+     "INDUSTRIALES ARÓMATICAS, CONDIMENTOS, OTROS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_ind_azucareras_formato_tabla_global-0.xlsx",
+     "INDUSTRIALES AZUCARERAS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_ind_grupo-varios_formato_tabla_global_24.xlsx",
+     "INDUSTRIALES GRUPOS VARIOS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_ind_oleaginosas_formato_tabla_global-0.xlsx",
+     "INDUSTRIALES OLEAGINOSAS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_ind_textiles_formato_tabla_global-0.xlsx",
+     "INDUSTRIALES TEXTILES DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_leguminosas_formato_tabla_global-0.xlsx",
+     "LEGUMINOSAS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_ornamentales_formato_tabla_global-0.xlsx",
+     "PLANTAS ORNAMENTALES DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_plantones_formato_tabla_global-0.xlsx",
+     "PLANTONES Y PLANTULAS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_semillas_formato_tabla_global-0.xlsx",
+     "SEMILLAS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_tuberculos_formato_tabla_global-0.xlsx",
+     "TUBERCULOS CONSUMO HUMANO DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/2.agricultura/3.-superficies-y-producciones-anuales/reglamento-n--543-2009/re1_viveros_formato_tabla_global-0.xlsx",
+     "VIVEROS LEÑOSOS DATOS PROVISIONALES CAMPAÑA 2024"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2024",
+     "Consulta del Anuario 2024 (datos 2023 y 2024)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/1999",
+     "Cultivos y producciones 2009"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2010",
+     "Cultivos y producciones 2010"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2011",
+     "Cultivos y producciones 2011"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2012",
+     "Cultivos y producciones 2012"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2013",
+     "Cultivos y producciones 2013"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2014",
+     "Cultivos y producciones 2014"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2015",
+     "Cultivos y producciones 2015"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2016",
+     "Cultivos y producciones 2016"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2017",
+     "Cultivos y producciones 2017"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2018",
+     "Cultivos y producciones 2018"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2019",
+     "Cultivos y producciones 2019"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2020",
+     "Cultivos y producciones 2020"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2021",
+     "Cultivos y producciones 2021"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2022",
+     "Cultivos y producciones 2022"
+    ]
+   ]
   },
   {
    "seed": "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/",
-   "status": 0,
+   "status": 200,
    "final": "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/",
-   "type": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain ",
-   "bytes": 0,
-   "links": []
+   "type": "text/html;charset=UTF-8",
+   "bytes": 53152,
+   "links": [
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/",
+     "Castellano"
+    ],
+    [
+     "https://www.mapa.gob.es/en/estadistica/temas/publicaciones/anuario-de-estadistica/",
+     "English"
+    ],
+    [
+     "https://www.mapa.gob.es/fr/estadistica/temas/publicaciones/anuario-de-estadistica/",
+     "Français"
+    ],
+    [
+     "https://www.mapa.gob.es/ca/estadistica/temas/publicaciones/anuario-de-estadistica/",
+     "Català"
+    ],
+    [
+     "https://www.mapa.gob.es/gl/estadistica/temas/publicaciones/anuario-de-estadistica/",
+     "Galego"
+    ],
+    [
+     "https://www.mapa.gob.es/eu/estadistica/temas/publicaciones/anuario-de-estadistica/",
+     "Euskara"
+    ],
+    [
+     "https://www.mapa.gob.es/va/estadistica/temas/publicaciones/anuario-de-estadistica/",
+     "Valencià"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica",
+     "Anuario de Estadística"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadistica-digital",
+     "Anuario Digital"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2025",
+     "Consulta del Anuario 2025"
+    ],
+    [
+     "https://www.mapa.gob.es/estadistica/pags/anuario/2025/GLOBAL%2025/AE_25.pdf",
+     "Descarga del Anuario de Estadísticas 2025 en PDF (19 MB - 810 páginas)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2024",
+     "Anuario 2024 (Datos 2023 y 2024)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2023",
+     "Anuario 2023 (Datos 2022 y 2023)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2022",
+     "Anuario 2022 (Datos 2021 y 2022)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2021",
+     "Anuario 2021 (Datos 2020 y 2021)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2020",
+     "Anuario 2020 (Datos 2019 y 2020)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2019",
+     "Anuario 2019 (Datos 2018 y 2019)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2018",
+     "Anuario 2018 (Datos 2017 y 2018)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2017",
+     "Anuario 2017 (Datos 2016 y 2017)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2016",
+     "Anuario 2016 (Datos 2015 y 2016)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2015",
+     "Anuario 2015 (Datos 2014 y 2015)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2014",
+     "Anuario 2014 (Datos 2013 y 2014)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2013",
+     "Anuario 2013 (Datos 2012 y 2013)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2012",
+     "Anuario 2012 (Datos 2011 y 2012)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2011",
+     "Anuario 2011 (Datos 2010 y 2011)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2010",
+     "Anuario 2010 (Datos 2009 y 2010)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2009",
+     "Anuario 2009 (Datos 2008 y 2009)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2008",
+     "Anuario 2008 (Datos 2007 y 2008)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2007",
+     "Anuario 2007 (Datos 2006 y 2007)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2006",
+     "Anuario 2006 (Datos 2005 y 2006)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2004",
+     "Anuario 2004 (Datos 2003 y 2004)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2003",
+     "Anuario 2003 (Datos 2002 y 2003)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2002",
+     "Anuario 2002 (Datos 2001 y 2002)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2001",
+     "Anuario 2001 (Datos 1999, 2000 y 2001)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2001/anexo",
+     "Anexo 2001 (Resultados provinciales 2000)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2000",
+     "Anuario 2000 (Datos 1998, 1999 y 2000)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/2000/anexo",
+     "Anexo 2000 (Resultados provinciales 1997)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/1999",
+     "Anuario 1999 (Datos 1996, 1997 y 1998)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/anuario-estadistica-agraria",
+     "Anuario-Estadistica"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/exec_1341.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/pdfc_1341.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/exec_134191.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/pdfc_134191.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/exec_134192.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/pdfc_134192.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2012/ae_2012_13_04_02.xls",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2019/pdfc_741.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2019/exec_74191.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2019/pdfc_74191.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2019/exec_74192.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2019/pdfc_74192.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/exec14_321.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/pdfc14_321.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/exec14_322.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/pdfc14_322.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/exec14_323.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/pdfc14_323.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/exec14_324.xlsx",
+     "Excel"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2016/pdfc14_324.pdf",
+     "Pdf"
+    ],
+    [
+     "https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/publicaciones/anuario-de-estadistica/2015/exceluvaspasas.xlsx",
+     "Excel"
+    ]
+   ]
   },
   {
    "seed": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/",
-   "status": 0,
+   "status": 200,
    "final": "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/",
-   "type": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain ",
-   "bytes": 0,
-   "links": []
+   "type": "text/html;charset=UTF-8",
+   "bytes": 44795,
+   "links": [
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/esyrce",
+     "ESYRCE (Encuesta de superficies y rendimientos de cultivos)"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/esyrce-tendencias-mensuales-rendimientos-cultivos",
+     "ESYRCE: Tendencias mensuales de rendimientos de cultivos"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/avances-superficies-producciones-agricolas",
+     "Avances mensuales de superficies y producciones agrícolas"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos",
+     "Superficies y producciones anuales de cultivos"
+    ],
+    [
+     "https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/glosario",
+     "Glosario de nomenclatura de cultivos y variables agrarias"
+    ]
+   ]
   },
   {
    "seed": "https://www.sadei.es/",

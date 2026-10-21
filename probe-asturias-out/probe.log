@@ -1,6 +1,6 @@
-https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/ 0 <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain  0 0
-https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/ 0 <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain  0 0
-https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/ 0 <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain  0 0
+https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/ 200 text/html;charset=UTF-8 98392 58
+https://www.mapa.gob.es/es/estadistica/temas/publicaciones/anuario-de-estadistica/ 200 text/html;charset=UTF-8 53152 83
+https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/ 200 text/html;charset=UTF-8 44795 5
 https://www.sadei.es/ 200 text/html;charset=iso-8859-1 46102 1
 https://www.asturias.es/ 200 text/html;charset=UTF-8 237938 0
 https://datos.gob.es/es/catalogo?q=manzana+sidra+asturias 200 text/html 212 0
