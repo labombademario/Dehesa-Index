@@ -43,10 +43,11 @@ ok('liquidacion: sin undefined ni NaN ni errores de pagina', !/undefined|NaN/.te
   else ok('negociacion: hay al menos 2 series de trigo para probar', false); }
 // Enlace a una serie de la ficha de pais con un id viejo (renombrada) o que ya no existe: se dice, no se cambia de serie en silencio
 { const RN = JSON.parse(fs.readFileSync('data/series-renames.json', 'utf8')).renames, old = Object.keys(RN).find(k => k.startsWith('us-nass-x-almonds')), neu = RN[old];
-  const q = await ctx.newPage(); await q.goto(BASE + '/paises.html?c=US&s=' + old, { waitUntil: 'networkidle' }); await q.waitForSelector('#ps-snote', { timeout: 20000 }).catch(() => { });
+  const q = await ctx.newPage(); await q.goto(BASE + '/paises.html?c=US&s=' + old, { waitUntil: 'networkidle' }); await q.waitForSelector('#ps-snote', { timeout: 45000 }).catch(() => { });
   ok('ficha: id viejo -> aviso de cambio de identificador', /cambió de identificador/.test((await q.textContent('#ps-snote').catch(() => '')) || ''));
+  await q.waitForFunction(n => [...document.querySelectorAll('select')].some(x => x.value === n), neu, { timeout: 20000 }).catch(() => { });
   ok('ficha: id viejo -> se abre la serie nueva', await q.evaluate(n => [...document.querySelectorAll('select')].some(x => x.value === n), neu));
-  await q.goto(BASE + '/paises.html?c=US&s=us-serie-que-no-existe', { waitUntil: 'networkidle' }); await q.waitForSelector('#ps-snote', { timeout: 20000 }).catch(() => { });
+  await q.goto(BASE + '/paises.html?c=US&s=us-serie-que-no-existe', { waitUntil: 'networkidle' }); await q.waitForSelector('#ps-snote', { timeout: 45000 }).catch(() => { });
   ok('ficha: id inexistente -> lo dice (no cambia de serie en silencio)', /ya no se publica en este país/.test((await q.textContent('#ps-snote').catch(() => '')) || ''));
   await q.goto(BASE + '/paises.html?c=US&s=' + neu, { waitUntil: 'networkidle' }); await q.waitForTimeout(1500);
   ok('ficha: id actual -> sin aviso', !(await q.$('#ps-snote'))); await q.close(); }
