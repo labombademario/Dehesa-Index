@@ -9,7 +9,7 @@ if (!KEY) { console.error('Falta NASS_API_KEY'); process.exit(1); }
 const DIR = path.join(process.cwd(), 'data', 'us-crop-progress');
 const YEAR = new Date().getUTCFullYear(), FROM = YEAR - 1;
 const CROPS = { 'CORN': 'corn', 'CORN, GRAIN': 'corn', 'SOYBEANS': 'soybeans', 'WHEAT, WINTER': 'wheat_winter', 'WHEAT, SPRING, (EXCL DURUM)': 'wheat_spring', 'COTTON, UPLAND': 'cotton',
-  'SORGHUM': 'sorghum', 'SORGHUM, GRAIN': 'sorghum', 'BARLEY': 'barley', 'RICE': 'rice', 'OATS': 'oats', 'PEANUTS': 'peanuts' };
+  'SORGHUM': 'sorghum', 'SORGHUM, GRAIN': 'sorghum', 'BARLEY': 'barley', 'RICE': 'rice', 'OATS': 'oats', 'PEANUTS': 'peanuts', 'PASTURELAND': 'pasture', 'SUGARBEETS': 'sugarbeets', 'SUNFLOWER': 'sunflower' };
 const CLASSES = { 'PCT VERY POOR': 0, 'PCT POOR': 1, 'PCT FAIR': 2, 'PCT GOOD': 3, 'PCT EXCELLENT': 4 };
 async function q(params) {
   const u = 'https://quickstats.nass.usda.gov/api/api_GET/?' + new URLSearchParams({ key: KEY, format: 'JSON', source_desc: 'SURVEY', freq_desc: 'WEEKLY', agg_level_desc: 'STATE', ...params });
@@ -25,7 +25,7 @@ const num = v => { const n = Number(String(v).replace(/,/g, '')); return String(
 const parse = sd => { const m = /^(.*?) - (CONDITION|PROGRESS)(, 5 YEAR AVG)?, MEASURED IN (.*)$/.exec(sd); return m ? { crop: CROPS[m[1]] || null, cat: m[2], avg: !!m[3], meas: m[4] } : null; };
 const S = {};   // estado -> cultivo -> {condition:{ano:{semana:[5]}}, progress:{ano:{etapa:{semana:v}}}, avg:{etapa:{semana:v}}}
 const slot = (st, crop) => ((S[st] = S[st] || {})[crop] = S[st][crop] || { condition: {}, progress: {}, avg: {} });
-for (const commodity of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARLEY', 'RICE', 'OATS', 'PEANUTS']) {
+for (const commodity of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARLEY', 'RICE', 'OATS', 'PEANUTS', 'PASTURELAND', 'SUGARBEETS', 'SUNFLOWER']) {
   for (const cat of ['CONDITION', 'PROGRESS', 'PROGRESS, 5 YEAR AVG']) {
     const rows = await q({ commodity_desc: commodity, statisticcat_desc: cat, year__GE: String(FROM) });
     for (const r of rows) {

@@ -82,7 +82,7 @@ def seguro():
             source={'name': 'Statistics Canada', 'url': ca['source']['url']}))
     return {'id': 'seguro', 'title': t4('Seguro agrario|Crop insurance|Assurance agricole|Assicurazione agricola'), 'emoji': '🛡️', 'blocks': out}
 
-CROPS_US = {'barley': 'Cebada|Barley|Orge|Orzo', 'corn': 'Maíz|Corn|Maïs|Mais', 'cotton': 'Algodón|Cotton|Coton|Cotone', 'oats': 'Avena|Oats|Avoine|Avena', 'peanuts': 'Cacahuete|Peanuts|Arachide|Arachidi', 'rice': 'Arroz|Rice|Riz|Riso', 'sorghum': 'Sorgo|Sorghum|Sorgho|Sorgo', 'soybeans': 'Soja|Soybeans|Soja|Soia', 'wheat_spring': 'Trigo de primavera|Spring wheat|Blé de printemps|Frumento primaverile', 'wheat_winter': 'Trigo de invierno|Winter wheat|Blé d’hiver|Frumento invernale'}
+CROPS_US = {'barley': 'Cebada|Barley|Orge|Orzo', 'corn': 'Maíz|Corn|Maïs|Mais', 'cotton': 'Algodón|Cotton|Coton|Cotone', 'oats': 'Avena|Oats|Avoine|Avena', 'peanuts': 'Cacahuete|Peanuts|Arachide|Arachidi', 'pasture': 'Pastos y praderas|Pasture and range|Pâturages et prairies|Pascoli e prati', 'sugarbeets': 'Remolacha azucarera|Sugar beets|Betterave sucrière|Barbabietola da zucchero', 'sunflower': 'Girasol|Sunflower|Tournesol|Girasole', 'rice': 'Arroz|Rice|Riz|Riso', 'sorghum': 'Sorgo|Sorghum|Sorgho|Sorgo', 'soybeans': 'Soja|Soybeans|Soja|Soia', 'wheat_spring': 'Trigo de primavera|Spring wheat|Blé de printemps|Frumento primaverile', 'wheat_winter': 'Trigo de invierno|Winter wheat|Blé d’hiver|Frumento invernale'}
 def cultivos():
     cp = j('crop-progress.json'); out = []
     if not cp: return None
