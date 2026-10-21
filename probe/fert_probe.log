@@ -1,0 +1,12 @@
+ERS release 2026-09-03 https://www.ers.usda.gov/media/29517/september-3-2026-release.zip
+files ['FarmIncome_WealthStatisticsData_September2026.csv']
+ERS VAR Intermediate product expenses, fertilizer, lime, & soil conditioner filas 3945 estados 51 anios ['2024', '2025', '2026'] ej [('IA', '1950', '27638'), ('IA', '1949', '24813')]
+ERS VAR Intermediate product expenses, pesticide filas 3945 estados 51 anios ['2024', '2025', '2026'] ej [('IA', '1950', '2547'), ('IA', '1949', '1978')]
+cols ['Year', 'State', 'artificialKey', 'VariableDescriptionTotal', 'VariableDescriptionPart1', 'VariableDescriptionPart2', 'Amount', 'unit_desc', 'PublicationDate', 'Source', 'ChainType_GDP_Deflator']
+NASS statisticcat_desc {'statisticcat_desc': []}
+NASS census fert total: 0 {'error': "<HTTPError 400: 'Bad Request'>", 'body': '{"error":["bad request - invalid query"]}'}
+NASS census commodity list with FERT: ['FERTILIZER', 'FERTILIZER & CHEMICAL TOTALS', 'FERTILIZER TOTALS', 'LEMONS & LIMES', 'LIMES'] None
+NASS survey fert short_desc: 0 [] None
+NASS survey ECONOMICS ['FERTILIZER TOTALS', 'FERTILIZER, MIXED', 'FERTILIZER, OTHER'] None
+NASS survey ENVIRONMENTAL [] None
+NASS survey CROPS [] None
