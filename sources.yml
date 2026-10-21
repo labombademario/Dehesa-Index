@@ -1248,6 +1248,7 @@ sources:
     timeout: 20
     script_timeout: 15
     continue: true
+    env: {CENSUS_API_KEY: '${{ secrets.CENSUS_API_KEY }}'}
     data: [us-states-macro.json, us-states-macro-log.txt]
     message: PIB, poblacion, paro, tasa de empleo, estudios y edad mediana por estado de EE. UU. (BEA, Census, BLS)
   - id: canada-provinces-macro
