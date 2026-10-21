@@ -1826,7 +1826,7 @@ def worldbank_agri(doc, errs, warns, stats):
     ind = doc["indicators"]
     for k, i in ind.items():
         if i.get("license") != "CC BY-4.0": errs.append("worldbank-agri %s: licencia %r, solo se admite CC BY-4.0" % (k, i.get("license")))
-    euro = {"ES": 1999, "FR": 1999, "DE": 1999, "BE": 1999, "AT": 1999, "PT": 1999, "IT": 1999, "NL": 1999, "EL": 2001}
+    euro = {"ES": 1999, "FR": 1999, "DE": 1999, "BE": 1999, "AT": 1999, "PT": 1999, "IT": 1999, "NL": 1999, "EL": 2001, "IE": 1999, "FI": 1999, "SI": 2007, "SK": 2009, "EE": 2011, "LV": 2014, "LT": 2015, "HR": 2023, "BG": 2026}
     n = 0
     for c, ser in doc["countries"].items():
         for k, s in ser.items():

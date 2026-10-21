@@ -4,8 +4,11 @@ Cada indicador se comprueba contra sus metadatos oficiales (License_Type): solo 
 Si un indicador falla en una ejecucion, se conserva el valor anterior (nunca se rellena ni se estima)."""
 import json, os, sys, time, datetime, urllib.request
 
-WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'EL': 'GRC', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
-EURO_FROM = {'ES': 1999, 'FR': 1999, 'DE': 1999, 'BE': 1999, 'AT': 1999, 'PT': 1999, 'IT': 1999, 'NL': 1999, 'EL': 2001}   # año desde el que el Banco Mundial deja de dar la moneda nacional anterior
+# 21-oct-2026: los 33 paises con ficha en el sitio (antes 14; Uruguay, Argentina, Chile, Reino Unido... salian «Sin datos»)
+WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'EL': 'GRC', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU',
+      'UK': 'GBR', 'AR': 'ARG', 'CL': 'CHL', 'UY': 'URY', 'PL': 'POL', 'CH': 'CHE', 'IE': 'IRL', 'FI': 'FIN', 'BG': 'BGR', 'HR': 'HRV', 'LT': 'LTU', 'SK': 'SVK',
+      'CZ': 'CZE', 'EE': 'EST', 'HU': 'HUN', 'LV': 'LVA', 'RO': 'ROU', 'SE': 'SWE', 'SI': 'SVN'}
+EURO_FROM = {'ES': 1999, 'FR': 1999, 'DE': 1999, 'BE': 1999, 'AT': 1999, 'PT': 1999, 'IT': 1999, 'NL': 1999, 'EL': 2001, 'IE': 1999, 'FI': 1999, 'SI': 2007, 'SK': 2009, 'EE': 2011, 'LV': 2014, 'LT': 2015, 'HR': 2023, 'BG': 2026}   # año desde el que el Banco Mundial deja de dar la moneda nacional anterior
 EURO = set(EURO_FROM)
 FIRST = 1990
 # clave -> (codigo WDI, grupo)

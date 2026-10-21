@@ -86,6 +86,8 @@
     it: { US: 'Stati Uniti', EU: 'Unione europea', ES: 'Spagna', FR: 'Francia', DE: 'Germania', BE: 'Belgio', AT: 'Austria', PT: 'Portogallo', IT: 'Italia', DK: 'Danimarca', NL: 'Paesi Bassi', CA: 'Canada', AU: 'Australia' }
   };
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
+  // Nombre de cualquier pais (los que no estan en CN salen del navegador; UK y EL son los codigos del sitio para GB y GR)
+  function nm(c, lang) { var n = (CN[lang] || CN.es)[c]; if (n) return n; try { return new Intl.DisplayNames([lang], { type: 'region' }).of(c === 'UK' ? 'GB' : c === 'EL' ? 'GR' : c); } catch (e) { return c; } }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d, lang) { try { return v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function unit(k, lang) { var u = UNITS[IND[k][4]]; return typeof u === 'string' ? u : u[lang]; }
@@ -124,7 +126,7 @@
       if (!c || !DATA.countries[c] || !DATA.countries[c][k]) return;
       var s = DATA.countries[c][k], pts = [];
       s.v.forEach(function (v, j) { if (v != null) pts.push({ x: Date.UTC(s.y0 + j, 0, 1), y: v, l: String(s.y0 + j) }); });
-      if (pts.length > 1) ser.push({ name: names[c] || c, color: cols[i], pts: pts });
+      if (pts.length > 1) ser.push({ name: nm(c, lang), color: cols[i], pts: pts });
     });
     if (!ser.length) return '';
     var d = IND[k][4] === 'haPc' ? 2 : 1;
@@ -145,8 +147,8 @@
       var sel = st.k === k;
       h += '<tr class="pa-r' + (sel ? ' on' : '') + '" data-pak="' + k + '" tabindex="0" role="button" aria-expanded="' + sel + '"><td>' + esc(IND[k][li]) + '</td><td class="r"><b>' + esc(fmt(k, l.v, lang, t)) + '</b> <span class="pa-y">(' + l.y + ')</span></td><td class="r">' + esc(chgOf(k, s, lang, t)) + '</td><td class="pa-tr">' + spark(s) + '</td></tr>';
       if (sel) {
-        var opts = '<option value="">' + esc(t.none) + '</option>' + Object.keys(names).filter(function (c) { return c !== cc && DATA.countries[c] && DATA.countries[c][k]; }).map(function (c) { return '<option value="' + c + '"' + (st.o === c ? ' selected' : '') + '>' + esc(names[c]) + '</option>'; }).join('');
-        h += '<tr class="pa-ch"><td colspan="4"><div class="pa-cmp"><b>' + esc(IND[k][li]) + '</b> · ' + esc(unit(k, lang)) + '<label>' + esc(t.cmp) + ' <select class="di-compare-select" data-pao="1">' + opts + '</select></label></div>' + chart(k, cc, st.o, lang, t) + '</td></tr>';
+        var opts = '<option value="">' + esc(t.none) + '</option>' + Object.keys(DATA.countries).filter(function (c) { return c !== cc && DATA.countries[c][k]; }).sort(function (a, b) { return nm(a, lang).localeCompare(nm(b, lang), lang); }).map(function (c) { return '<option value="' + c + '"' + (st.o === c ? ' selected' : '') + '>' + esc(nm(c, lang)) + '</option>'; }).join('');
+        h += '<tr class="pa-ch"><td colspan="4"><div class="pa-cmp"><b>' + esc(IND[k][li]) + '</b> · ' + esc(unit(k, lang)) + '<label>' + esc(t.cmp) + ' <select class="di-compare-select" data-pao="1" data-cpick aria-label="' + esc(t.cmp) + '">' + opts + '</select></label></div>' + chart(k, cc, st.o, lang, t) + '</td></tr>';
       }
     });
     h += '</tbody></table></div><p class="di-movers-hint">' + esc(t.click) + '</p>' + (t.notes[st.b] && !(st.b === 'structure' && cc !== 'US') ? '<p class="di-movers-hint">' + esc(t.notes[st.b]) + '</p>' : '');
