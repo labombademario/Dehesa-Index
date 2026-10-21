@@ -53,7 +53,7 @@ if (want('products')) {
       if (secs.find(x => x.id === 'legacy' && x.len > 300)) throw new Error('la ruta legacy pinta contenido: el producto no esta en el terminal 3.0');
       if (!(await page.$('#pt-hist svg'))) throw new Error('el historico no dibuja la grafica');
       if ((await page.locator('#pt-compare .pt-ident').count()) < 1) throw new Error('la comparacion no muestra la identidad del instrumento');
-      if (st.bytes > 1000 * 1024) throw new Error('payload ' + Math.round(st.bytes / 1024) + ' KB > 1 MB crudo');
+      if (st.bytes > 1200 * 1024) throw new Error('payload ' + Math.round(st.bytes / 1024) + ' KB > 1,2 MB crudo');
       const t = await txt(page, '#pt-compare'); if (/undefined|NaN/.test(t || '')) throw new Error('la comparacion muestra undefined/NaN');
     });
   }

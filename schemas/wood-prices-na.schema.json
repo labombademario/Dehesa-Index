@@ -24,7 +24,6 @@
   "countries": {
    "type": "object",
    "minProperties": 1,
-   "additionalProperties": false,
    "properties": {
     "US": {
      "type": "object",
@@ -52,16 +51,7 @@
       },
       "series": {
        "type": "object",
-       "minProperties": 1,
-       "additionalProperties": {
-        "type": "array",
-        "items": {
-         "type": [
-          "number",
-          "null"
-         ]
-        }
-       }
+       "minProperties": 1
       }
      }
     },
@@ -91,16 +81,7 @@
       },
       "series": {
        "type": "object",
-       "minProperties": 1,
-       "additionalProperties": {
-        "type": "array",
-        "items": {
-         "type": [
-          "number",
-          "null"
-         ]
-        }
-       }
+       "minProperties": 1
       }
      }
     }

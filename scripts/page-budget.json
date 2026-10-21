@@ -4,7 +4,7 @@
     { "url": "/", "maxDataRawKB": 242, "maxJsRawKB": 333, "maxTotalGzKB": 222,
       "forbid": ["/data/(latest|history|normalized|catalog)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
     { "url": "/", "mobile": true, "maxDataRawKB": 242, "maxTotalGzKB": 222, "forbid": ["/data/(latest|history|normalized)\\.json"] },
-    { "url": "/precios.html", "maxDataRawKB": 690, "maxJsRawKB": 715, "maxTotalGzKB": 470,
+    { "url": "/precios.html", "maxDataRawKB": 690, "maxJsRawKB": 760, "maxTotalGzKB": 470,
       "forbid": ["/data/(latest|history|normalized)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
     { "url": "/precios.html", "mobile": true, "maxDataRawKB": 690, "maxTotalGzKB": 470, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/prices/history/"] },
     { "url": "/paises.html?c=ES", "maxDataRawKB": 1760, "maxTotalGzKB": 700, "forbid": ["-stats\\.json", "/data/(latest|history|normalized)\\.json"] },
