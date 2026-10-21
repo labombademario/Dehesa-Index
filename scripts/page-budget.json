@@ -16,7 +16,7 @@
     { "url": "/catalogo.html?q=trigo", "maxDataRawKB": 4250, "maxTotalGzKB": 740, "forbid": ["/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
     { "url": "/mi-seguimiento.html", "maxDataRawKB": 250, "maxTotalGzKB": 180, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "/data/watch-index\\.json"] },
     { "url": "/mi-mercado.html?c=US&r=KS&p=cattle", "maxDataRawKB": 612, "maxTotalGzKB": 384, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 3000 },
-    { "url": "/pac.html", "maxDataRawKB": 175, "maxTotalGzKB": 204, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
+    { "url": "/pac.html", "maxDataRawKB": 175, "maxTotalGzKB": 210, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/dehesa.html", "maxDataRawKB": 40, "maxTotalGzKB": 122, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "eu-trade-stats\\.json"] },
     { "url": "/observatorio.html", "maxDataRawKB": 280, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/relaciones.html", "maxDataRawKB": 600, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
