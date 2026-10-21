@@ -74,13 +74,14 @@ HAY YIELD NATIONAL filas 96 usadas 33
 HAY YIELD STATE filas 2831 usadas 1482
 HAY AREA HARVESTED NATIONAL filas 139 usadas 33
 HAY AREA HARVESTED STATE filas 5177 usadas 1559
-ERROR {"commodity_desc":"HAY","statisticcat_desc":"AREA PLANTED","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
 HAY AREA PLANTED NATIONAL filas 0 usadas 0
 HAY AREA PLANTED STATE filas 0 usadas 0
 HAY PRODUCTION NATIONAL filas 126 usadas 63
 HAY PRODUCTION STATE filas 4230 usadas 2880
-OATS STOCKS NATIONAL filas 129 usadas 129
-RYE - PRODUCTION, MEASURED IN BU filas 11 usadas 11
+ERROR {"commodity_desc":"OATS","statisticcat_desc":"STOCKS","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+OATS STOCKS NATIONAL filas 0 usadas 0
+ERROR {"commodity_desc":"RYE","short_desc":"RYE - PRODUCTION, MEASURED IN BU","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+RYE - PRODUCTION, MEASURED IN BU filas 0 usadas 0
 RYE - YIELD, MEASURED IN BU / ACRE filas 11 usadas 11
 RYE - ACRES HARVESTED filas 22 usadas 11
 POTATOES - PRODUCTION, MEASURED IN CWT filas 20 usadas 10
@@ -152,10 +153,7 @@ RYE STOCKS NATIONAL filas 11 usadas 11
  • OATS - ACRES PLANTED | ACRES | nac 11 2026 | estados 30
  • OATS - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 30
  • OATS - PRODUCTION, MEASURED IN BU | BU | nac 11 2026 | estados 30
- • OATS - STOCKS, MEASURED IN BU | BU | nac 43 2026-09 | estados 0
  • OATS - YIELD, MEASURED IN BU / ACRE | BU / ACRE | nac 11 2026 | estados 30
- • OATS, OFF FARM - STOCKS, MEASURED IN BU | BU | nac 43 2026-09 | estados 0
- • OATS, ON FARM - STOCKS, MEASURED IN BU | BU | nac 43 2026-09 | estados 0
  • OLIVES - PRODUCTION, MEASURED IN TONS | TONS | nac 10 2025 | estados 0
  • OLIVES - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 10 2025 | estados 0
  • PEANUTS - ACRES HARVESTED | ACRES | nac 11 2026 | estados 13
@@ -184,7 +182,6 @@ RYE STOCKS NATIONAL filas 11 usadas 11
  • RICE, SHORT GRAIN - PRODUCTION, MEASURED IN CWT | CWT | nac 11 2026 | estados 6
  • RICE, SHORT GRAIN - YIELD, MEASURED IN LB / ACRE | LB / ACRE | nac 10 2025 | estados 2
  • RYE - ACRES HARVESTED | ACRES | nac 11 2026 | estados 0
- • RYE - PRODUCTION, MEASURED IN BU | BU | nac 11 2026 | estados 0
  • RYE - STOCKS, MEASURED IN BU | BU | nac 11 2026-06 | estados 0
  • RYE - YIELD, MEASURED IN BU / ACRE | BU / ACRE | nac 11 2026 | estados 0
  • SORGHUM - ACRES PLANTED | ACRES | nac 11 2026 | estados 15
@@ -241,4 +238,4 @@ RYE STOCKS NATIONAL filas 11 usadas 11
  • WHEAT, WINTER, WHITE, HARD - PRODUCTION, MEASURED IN PCT BY TYPE | PCT BY TYPE | nac 0  | estados 21
  • WHEAT, WINTER, WHITE, SOFT - PRODUCTION, MEASURED IN BU | BU | nac 11 2026 | estados 0
  • WHEAT, WINTER, WHITE, SOFT - PRODUCTION, MEASURED IN PCT BY TYPE | PCT BY TYPE | nac 0  | estados 21
-series: 142
+series: 138
