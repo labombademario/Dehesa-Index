@@ -6626,7 +6626,11 @@
   "source-status.json",
   "commercial-catalog.json",
   "commercial-summary.json",
-  "series-renames.json"
+  "series-renames.json",
+  "glosario-en.json",
+  "glosario-es.json",
+  "glosario-fr.json",
+  "glosario-it.json"
  ],
  "pendingBaseline": {
   "note": "Fuentes PENDING que ya se publicaban antes del License Gate estricto. check-licenses.py --strict falla si una fuente PENDING en uso NO figura aqui (ninguna fuente nueva puede publicarse sin verificar) y avisa por cada una de las listadas. Quitar una fuente de esta lista al resolverla; --strict-all falla mientras la lista no este vacia.",
