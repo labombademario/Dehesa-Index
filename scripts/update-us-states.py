@@ -144,7 +144,8 @@ def nass(key, years, out, county):
 ERS_VARS = [  # (id, patron sobre la descripcion normalizada -espacios antes de coma quitados, minusculas-), tal como la publica ERS en Farm Income and Wealth Statistics
     ("cash_receipts", r"^cash receipts value, all commodities, all$"), ("cr_crops", r"^cash receipts value, crops, all$"), ("cr_animals", r"^cash receipts value, livestock and products, all$"),
     ("govt", r"^value of government payments, total$"), ("expenses", r"^production expenses, all, incl\. operator dwellings$"), ("gross_income", r"^gross farm income$"),
-    ("net_cash", r"^net cash income$"), ("net_income", r"^net farm income$")]
+    ("net_cash", r"^net cash income$"), ("net_income", r"^net farm income$"),
+    ("fert_expense", r"^intermediate product expenses, fertilizer, lime, & soil conditioner$")]
 def ers_norm(d): return re.sub(r"\s+", " ", re.sub(r"\s+,", ",", d or "")).strip().lower()
 ERS_UNIT = {}
 def ers(out):
