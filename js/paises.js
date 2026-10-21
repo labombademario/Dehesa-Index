@@ -235,7 +235,7 @@
   }
   function build() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;
-    var tok = ++TOK;
+    var tok = ++TOK; setTab();
     loadCountry(ST.c).then(function () { return prep(); }).then(function () { if (tok === TOK) render(); }).catch(function () { if (tok === TOK) root.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
   }
   function selectedList(c) {
@@ -853,7 +853,11 @@
     var fix = function () { if (stop) return; var e = document.getElementById(id); if (e) { var d = e.getBoundingClientRect().top - top; if (Math.abs(d) > 1) window.scrollBy(0, d); } if (Date.now() < end) (window.requestAnimationFrame || setTimeout)(fix); };
     fix();
   }
-  function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
+  function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = tabTitle(t); }
+  // Pestaña del navegador (y título que ve Google): país + qué ofrece la página. El H1 de la página no cambia.
+  var TAB = { es: ': datos agrarios, precios y comercio', en: ': farm data, prices and trade', fr: ' : données agricoles, prix et commerce', it: ': dati agricoli, prezzi e commercio' };
+  function tabTitle(t) { var n = ST && ST.c && t.countries ? t.countries[ST.c] : ''; return n ? n + (TAB[lang()] || TAB.es) + ' | Dehesa Index' : t.title + ' | Dehesa Index'; }
+  function setTab() { document.title = tabTitle(tt()); }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); if (LABELS_ON && window.DILabelTl && !window.DILabelTl.ready(lang())) window.DILabelTl.load(lang()).then(function (ok) { if (ok) { shell(); build(); } }); };
