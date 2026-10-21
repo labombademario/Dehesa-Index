@@ -328,7 +328,8 @@
     }
     return h + '</div></div></div>';
   }
-  var ES_CROPS = '';
+  var ES_CROPS = '', ES_CURN = '';
+  function capName(n) { n = String(n || '').replace(/\s+/g, ' ').trim(); return n && n === n.toUpperCase() ? n.charAt(0) + n.slice(1).toLowerCase() : n; }   // los nombres del MAPA vienen en mayusculas
 
   /* ---------- Mapa para elegir la zona (18-oct): se pulsa la provincia/estado/región; el desplegable queda como alternativa ---------- */
   var MAPV = { US: ['us-states', 'DEHESA_US_STATES'], CA: ['ca-provinces', 'DEHESA_CA_PROVINCES'], ES: ['es-provinces', 'DEHESA_ES_PROVINCES'], DE: ['de-laender', 'DEHESA_DE_LAENDER'], UK: ['uk-regions', 'DEHESA_UK_REGIONS'], FR: ['fr-regions', 'DEHESA_FR_REGIONS'], IT: ['it-regions', 'DEHESA_IT_REGIONS'], PL: ['pl-voivodeships', 'DEHESA_PL_VOIVODESHIPS'], EL: ['el-regions', 'DEHESA_EL_REGIONS'] };
@@ -610,6 +611,7 @@
     var camps = Object.keys(g.campaigns).sort(), camp = camps[camps.length - 1], crops = g.campaigns[camp].crops;
     var cur = crops.filter(function (x) { return x.c === ST.k; })[0];
     if (!cur) { cur = crops.filter(function (x) { return x.v && x.v[ST.r]; })[0] || crops[0]; ST.k = cur.c; }
+    ES_CURN = cur.n;
     ES_CROPS = opt('', tr().choose, '') + crops.map(function (x) { var pad = ''; for (var i = 0; i < x.l; i++) pad += '  '; return '<option value="' + esc(x.c) + '"' + (x.c === ST.k ? ' selected' : '') + '>' + pad + esc(x.n) + '</option>'; }).join('');
     return { camps: camps, camp: camp, crops: crops, cur: cur };
   }
@@ -771,22 +773,22 @@
   var TESP = {
     es: { title: 'Precio de mercado en tu provincia', prod: 'Producto', mk: 'Mercado', price: 'Precio', wk: '1 sem.', date: 'Fecha', all: 'Ver todos los mercados',
       note: 'Precio semanal que la Comisión Europea publica para el mercado de {p}. No es una media de la provincia ni una lonja independiente: es una referencia cercana, en la etapa que indica el portal (salida de silo, almacén…).',
-      pickCrop: 'Elige un cultivo concreto (trigo, cebada, maíz, aceite…) para ver una referencia de mercado. «{c}» agrupa varios productos con precios distintos y no le asignamos uno.',
+      pickCrop: 'No tenemos un precio de mercado de referencia para «{c}»: en España seguimos las lonjas de cereales, aceite de oliva y girasol. Elige uno de esos cultivos para verlo.', thisCrop: 'este grupo',
       noMarket: 'La Comisión Europea no publica un mercado de {p} para este producto. Mercados con precio reciente: {l}.', noAny: 'La Comisión Europea no publica precios de mercado para este cultivo en España.', sun: 'Para el girasol el portal publica tres zonas (Centro, Norte, Sur), no provincias; consúltalas en la página de mercados.',
       names: { 'milling-wheat': 'Trigo blando panificable', 'feed-wheat': 'Trigo pienso', 'durum-wheat': 'Trigo duro', 'feed-barley': 'Cebada pienso', 'malting-barley': 'Cebada cervecera', 'feed-maize': 'Maíz pienso', 'extra-virgin': 'Aceite de oliva virgen extra', 'virgin-olive': 'Aceite de oliva virgen', 'lampante': 'Aceite de oliva lampante' } },
     en: { title: 'Market price in your province', prod: 'Product', mk: 'Market', price: 'Price', wk: '1 wk', date: 'Date', all: 'See all markets',
       note: 'Weekly price the European Commission publishes for the {p} market. It is not a provincial average or an independent auction hall: it is a nearby reference, at the stage the portal states (ex-silo, warehouse…).',
-      pickCrop: 'Pick a specific crop (wheat, barley, maize, olive oil…) to see a market reference. “{c}” groups several products with different prices and we do not assign one.',
+      pickCrop: 'We have no reference market price for “{c}”: in Spain we follow the exchanges for cereals, olive oil and sunflower. Pick one of those crops to see it.', thisCrop: 'this group',
       noMarket: 'The European Commission does not publish a {p} market for this product. Markets with a recent price: {l}.', noAny: 'The European Commission publishes no market prices for this crop in Spain.', sun: 'For sunflower the portal publishes three zones (Centre, North, South), not provinces; see them on the markets page.',
       names: { 'milling-wheat': 'Milling wheat', 'feed-wheat': 'Feed wheat', 'durum-wheat': 'Durum wheat', 'feed-barley': 'Feed barley', 'malting-barley': 'Malting barley', 'feed-maize': 'Feed maize', 'extra-virgin': 'Extra virgin olive oil', 'virgin-olive': 'Virgin olive oil', 'lampante': 'Lampante olive oil' } },
     fr: { title: 'Prix de marché dans votre province', prod: 'Produit', mk: 'Marché', price: 'Prix', wk: '1 sem.', date: 'Date', all: 'Voir tous les marchés',
       note: 'Prix hebdomadaire que la Commission européenne publie pour le marché de {p}. Ce n’est ni une moyenne provinciale ni une lonja indépendante : c’est une référence proche, au stade indiqué par le portail (départ silo, entrepôt…).',
-      pickCrop: 'Choisissez une culture précise (blé, orge, maïs, huile d’olive…) pour voir une référence de marché. « {c} » regroupe plusieurs produits à prix différents et nous n’en attribuons aucun.',
+      pickCrop: 'Nous n’avons pas de prix de marché de référence pour « {c} » : en Espagne, nous suivons les bourses des céréales, de l’huile d’olive et du tournesol. Choisissez l’une de ces cultures pour le voir.', thisCrop: 'ce groupe',
       noMarket: 'La Commission européenne ne publie pas de marché de {p} pour ce produit. Marchés avec un prix récent : {l}.', noAny: 'La Commission européenne ne publie pas de prix de marché pour cette culture en Espagne.', sun: 'Pour le tournesol le portail publie trois zones (Centre, Nord, Sud), pas des provinces ; voyez-les sur la page des marchés.',
       names: { 'milling-wheat': 'Blé meunier', 'feed-wheat': 'Blé fourrager', 'durum-wheat': 'Blé dur', 'feed-barley': 'Orge fourragère', 'malting-barley': 'Orge de brasserie', 'feed-maize': 'Maïs fourrager', 'extra-virgin': 'Huile d’olive vierge extra', 'virgin-olive': 'Huile d’olive vierge', 'lampante': 'Huile d’olive lampante' } },
     it: { title: 'Prezzo di mercato nella tua provincia', prod: 'Prodotto', mk: 'Mercato', price: 'Prezzo', wk: '1 sett.', date: 'Data', all: 'Vedi tutti i mercati',
       note: 'Prezzo settimanale che la Commissione europea pubblica per il mercato di {p}. Non è una media provinciale né una borsa merci indipendente: è un riferimento vicino, nella fase indicata dal portale (franco silo, magazzino…).',
-      pickCrop: 'Scegli una coltura precisa (frumento, orzo, mais, olio d’oliva…) per vedere un riferimento di mercato. «{c}» raggruppa più prodotti con prezzi diversi e non ne assegniamo uno.',
+      pickCrop: 'Non abbiamo un prezzo di mercato di riferimento per «{c}»: in Spagna seguiamo le borse di cereali, olio d’oliva e girasole. Scegli una di queste colture per vederlo.', thisCrop: 'questo gruppo',
       noMarket: 'La Commissione europea non pubblica un mercato di {p} per questo prodotto. Mercati con un prezzo recente: {l}.', noAny: 'La Commissione europea non pubblica prezzi di mercato per questa coltura in Spagna.', sun: 'Per il girasole il portale pubblica tre zone (Centro, Nord, Sud), non province; vedile nella pagina dei mercati.',
       names: { 'milling-wheat': 'Frumento tenero', 'feed-wheat': 'Frumento da foraggio', 'durum-wheat': 'Frumento duro', 'feed-barley': 'Orzo da foraggio', 'malting-barley': 'Orzo da birra', 'feed-maize': 'Mais da foraggio', 'extra-virgin': 'Olio extra vergine di oliva', 'virgin-olive': 'Olio vergine di oliva', 'lampante': 'Olio di oliva lampante' } }
   };
@@ -811,7 +813,7 @@
     var crops = document.getElementById('mm-crop'); if (crops && crops.selectedOptions && crops.selectedOptions[0]) cname = crops.selectedOptions[0].textContent.trim();
     var link = function (f) { return '<p class="di-movers-hint"><a href="lonjas.html?c=ES' + (f ? '&amp;f=' + f : '') + '">' + esc(t.all) + '</a></p>'; };
     if (!ST.r || !code) return Promise.resolve(link('cereales'));
-    if (!rule) return Promise.resolve(note(fill(t.pickCrop, { c: cname || code })) + link('cereales'));
+    if (!rule) return Promise.resolve(note(fill(t.pickCrop, { c: capName(cname || ES_CURN) || t.thisCrop })) + link('cereales'));   // nunca el codigo interno del MAPA
     if (rule.sun) return Promise.resolve(note(t.sun) + link('oleaginosas'));
     return get('data/eu/' + rule.f + '.json').then(function (d) {
       if (tok !== TOK) return;
@@ -1109,7 +1111,11 @@
     it: { t: 'Il tuo mercato', all: 'Vedi tutto e cambia', margin: 'Calcola il margine', track: 'Monitoraggio e avvisi' }
   };
   function placeName() { return isEU(ST.c) ? euName(ST.c, ST.r) : ST.c === 'US' ? usName(ST.r) : ST.c === 'CA' ? caName(ST.r) : ST.c === 'DE' ? deName(ST.r) : ST.c === 'UK' ? ukRegName(ST.r) : (ES_PROV && ES_PROV[ST.r]) || ST.r; }
-  function prodTitle() { return isEU(ST.c) ? pick4(EU_CROPN, ST.p) : ST.c === 'US' ? prodName(ST.p) : ST.c === 'CA' ? caProdName(ST.p) : ST.c === 'DE' ? pick4(DE_CROPN, ST.p) : ST.c === 'UK' ? pick4(UK_CROPN, ST.p) : ST.p; }
+  function prodTitle() { return isEU(ST.c) ? pick4(EU_CROPN, ST.p) : ST.c === 'US' ? prodName(ST.p) : ST.c === 'CA' ? caProdName(ST.p) : ST.c === 'DE' ? pick4(DE_CROPN, ST.p) : ST.c === 'UK' ? pick4(UK_CROPN, ST.p) : ST.c === 'ES' ? esTitle() : ST.p; }
+  function esTitle() {
+    var g = ES_IDX && ES_IDX.groups && ES_IDX.groups[ST.p], gn = g ? g.name : capName(ST.p), cn = capName(ES_CURN), base = function (x) { return String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
+    return !cn || base(cn) === 'total ' + base(gn) ? gn : gn + ' · ' + cn;
+  }
   function compactHead() {
     var m = HM[lang()] || HM.es;
     return '<p style="margin:0 0 4px;font-size:15px"><b>' + esc(m.t) + ' · ' + esc(placeName()) + ' · ' + esc(prodTitle()) + '</b> ' +

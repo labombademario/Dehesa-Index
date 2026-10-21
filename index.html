@@ -40,7 +40,6 @@
   <div class="di-app-strip" id="home-app-strip"></div>
 
   <main class="di-main">
-    <section class="di-home-section" id="home-mi-mercado"><div id="home-mm"></div></section>
     <section class="di-home-section" id="home-today"></section>
     <section class="di-home-section" id="home-dehesa-index"></section>
     <!-- Market Movers -->
@@ -98,8 +97,6 @@
 <script src="js/label-tl.js?v=299fda1f"></script>
 <script src="js/label-i18n.js?v=d83ebd6f"></script>
 <script src="js/home-today.js?v=e1b65798"></script>
-<script type="text/plain" id="home-mm-deps" src="js/region-names.js?v=ece45027"></script>
-<script type="text/plain" id="home-mm-src" src="js/mi-mercado.js?v=ba7d8317"></script>
 <script src="js/home.js?v=e4013a72"></script>
 <script src="js/chart.js?v=6972ad34"></script>
 <script src="js/dehesa-index.js?v=157da23d"></script>
@@ -110,6 +107,5 @@
 <script type="text/plain" class="home-more-lazy" src="js/clima.js?v=53c12de5"></script>
 <script>/* «Más datos» (cultivos, mercados, oferta y clima) baja sus scripts solo al abrirse (16-oct-2026: -150 KB de JS en la portada) */
 (function(){var d=document.getElementById('home-more');if(!d)return;var done=false;function go(){if(done)return;done=true;var L=[].slice.call(document.querySelectorAll('script.home-more-lazy'));(function next(i){if(i>=L.length)return;var s=document.createElement('script');s.src=L[i].getAttribute('src');s.onload=s.onerror=function(){next(i+1)};document.body.appendChild(s)})(0)}if(d.open)go();d.addEventListener('toggle',function(){if(d.open)go()})})();</script>
-<script src="js/home-mi-mercado.js?v=14e53d14"></script>
 </body>
 </html>
