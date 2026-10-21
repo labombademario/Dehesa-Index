@@ -376,6 +376,8 @@ jobs:
       - name: Mis compras y comparador de facturas (mercado de la API, guardado local, importar y exportar, rechazos)
         run: node scripts/test-compras.mjs
 
+      - name: Interfaz movil (tablas sin tarjeta de cabecera vacia, bloques plegados en sequia/insumos/ficha de pais/PAC, lista compacta de datos descargables)
+        run: node scripts/test-interfaz-movil.mjs
       - name: Selectores compactos (monitor de insumos con selector de pais comun y Recientes; Lonjas con producto en desplegable; datos en la primera pantalla; 390 y 1280)
         run: node scripts/test-selectores-compactos.mjs
       - name: Estados incompletos accionables (liquidacion, cestas, informe de negociacion; fallo de red distinto de sin dato, Reintentar, sin bucles)

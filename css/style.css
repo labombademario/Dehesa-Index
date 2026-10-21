@@ -1260,6 +1260,12 @@ svg[data-dh]:focus-visible{outline:2px solid #2f6b3a;outline-offset:3px}
   table.di-cards-m tr{border:1px solid var(--border,#ddd);border-radius:10px;padding:6px 10px;margin:0 0 10px;background:var(--surface,#fff)}
   table.di-cards-m td,table.di-cards-m th[scope=row]{display:flex;justify-content:flex-end;align-items:baseline;gap:4px;text-align:right;border:0!important;padding:4px 0!important;width:auto}
   table.di-cards-m td::before{content:attr(data-label);font-size:11px;font-weight:700;color:var(--text-faint,#7a7466);text-align:left;flex:0 0 40%;margin-right:auto;padding-right:8px}
+  /* tablas sin <thead>: su fila de cabecera (solo th de columna) no es una tarjeta; las filas de grupo (una celda que ocupa toda la fila) son un subtitulo */
+  table.di-cards-m tr:has(>th[scope=col]):not(:has(>td)){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);border:0;padding:0;margin:0}
+  table.di-cards-m tr:has(>td[colspan]:only-child),table.di-cards-m tr:has(>th[colspan]:only-child){border:0;background:none;padding:10px 2px 2px;margin:0}
+  table.di-cards-m tr>td[colspan]:only-child,table.di-cards-m tr>th[colspan]:only-child{justify-content:flex-start;text-align:left;font-weight:700;font-size:15px}
+  table.di-cards-m tr>td[colspan]:only-child::before{content:none}
+  table.di-cards-m td:empty{display:none}
   .di-table-wrap,.di-history-table,.di-data-table,.di-breakdown-table{overflow-x:visible}
 }
 
@@ -2982,3 +2988,22 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .ex-os { font-size: 12px; }
 
 .cp-rec{font-size:13px;color:var(--text-muted,#55645a)}.cp-rec .cp-rl{font:inherit;border:0;background:none;padding:6px 2px;color:var(--accent,#1f4d3a);text-decoration:underline;cursor:pointer;min-height:32px}
+/* ---------- Bloques plegados (js/fold.js): titulo + una linea, se abren al tocar ---------- */
+.df{position:relative}
+.df>.df-bar{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;column-gap:12px;width:100%;text-align:left;font:inherit;color:inherit;background:var(--surface,#fffdf7);border:1px solid var(--border,#d6cfbb);border-radius:12px;padding:14px 16px;margin:0 0 12px;cursor:pointer;min-height:56px}
+.df>.df-bar:hover{border-color:var(--text-faint,#8a8576)}
+.df>.df-bar:focus-visible{outline:2px solid #2f6b3a;outline-offset:2px}
+.df-bar .df-t{grid-column:1;font-family:'Source Serif 4',Georgia,serif;font-size:19px;font-weight:700;line-height:1.25}
+.df-bar .df-s{grid-column:1;font-size:13.5px;color:var(--text-muted,#55645a);margin-top:3px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.df-bar .df-i{grid-column:2;grid-row:1/3;align-self:center;width:12px;height:12px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+.df:not(.df-closed)>.df-bar .df-i{transform:rotate(45deg)}
+.df:not(.df-closed)>.df-bar .df-s{display:none}
+.df-closed>*:not(.df-bar){display:none!important}
+.df .df-h{display:none}
+@media (prefers-reduced-motion:reduce){.df-bar .df-i{transition:none}}
+.di-card.df>.df-bar{border:0;background:none;padding:0;margin:0 0 4px;min-height:44px}.di-card.df.df-closed>.df-bar{margin:0}
+.dd-list{display:none;list-style:none;margin:0;padding:0}
+@media (max-width:560px){.dd-tbl{display:none}#dd-body .di-card:has(>.dd-tbl){display:none}.dd-list{display:block;border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:0 12px}
+.dd-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;padding:10px 0;border-top:1px solid var(--border)}.dd-list li:first-child{border-top:0}
+.dd-l1{font-size:14.5px;line-height:1.3}.dd-l1 span{color:var(--text-muted)}.dd-l2{grid-column:1/-1;font-size:12.5px;color:var(--text-muted);margin-top:3px}
+.dd-dl{grid-row:1;grid-column:2;display:flex;gap:6px;align-self:start}.dd-dl a{display:inline-flex;align-items:center;min-height:36px;padding:0 10px;border:1px solid var(--border);border-radius:8px;font-weight:600;font-size:13px;text-decoration:none}}

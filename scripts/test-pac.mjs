@@ -37,7 +37,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await ctx.addInitScript(l => { try { if (!localStorage.getItem('dehesaIndexLang')) localStorage.setItem('dehesaIndexLang', l); localStorage.setItem('dehesaIndexTourSeen', '1'); } catch (e) {} }, lang);
   const page = await ctx.newPage(), errs = [], tag = lang + '@' + w;
   page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/ERR_|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 120)); });
-  const txt = async sel => await page.evaluate(s => { const n = document.querySelector(s); return n ? n.innerText : ''; }, sel);
+  const txt = async sel => await page.evaluate(s => { const n = document.querySelector(s); if (n && n.classList.contains('df-closed')) n.querySelector(':scope > .df-bar').click(); return n ? n.innerText : ''; }, sel);   // los bloques plegados (js/fold.js) se abren como lo haria la persona
 
   await page.goto(BASE + '/pac.html', { waitUntil: 'networkidle' }); await page.waitForSelector('#pac-est');
   let body = await txt('#pac-body');

@@ -86,7 +86,7 @@
     });
     if (!rows.length) return '<p class="di-movers-hint">' + esc(w.none) + '</p>';
     var th = 'padding:8px 6px;text-align:left;font-size:12px;color:var(--text-muted);font-weight:600';
-    var h = '<div class="di-card" style="padding:4px 14px;overflow-x:auto"><table data-no-rows style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' +
+    var h = '<div class="di-card" style="padding:4px 14px;overflow-x:auto"><table class="dd-tbl" data-no-rows data-no-cards style="border-collapse:collapse;width:100%;font-size:13px"><thead><tr>' +
       w.cols.map(function (c) { return '<th style="' + th + '">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
     rows.forEach(function (f) {
       var vc = f.verdict === 'apto' ? '#17703f' : '#8f5f12';
@@ -98,7 +98,14 @@
         '<td style="padding:8px 6px;font-size:12.5px;white-space:nowrap">' + esc(f.first) + ' → ' + esc(f.last) + '<div style="font-size:11.5px;color:var(--text-muted)">' + nf(f.rows) + ' ' + esc(w.rows) + '</div></td>' +
         '<td style="padding:8px 6px;white-space:nowrap"><a href="' + esc(S.sitePath(f.csv)) + '" download style="font-weight:600;margin-right:12px">CSV · ' + kb(f.csvBytes) + '</a><a href="' + esc(S.sitePath(f.xlsx)) + '" download style="font-weight:600">Excel · ' + kb(f.xlsxBytes) + '</a></td></tr>';
     });
-    return h + '</tbody></table></div>';
+    // movil: lista compacta (dos lineas por fichero) en lugar de una tarjeta alta por fichero
+    h += '</tbody></table></div><ul class="dd-list">' + rows.map(function (f) {
+      var vc = f.verdict === 'apto' ? '#17703f' : '#8f5f12', pl = nm(f.place), mk = w.M[f.region] || f.region;
+      return '<li><div class="dd-l1"><b>' + esc(nm(f.name, f.product)) + '</b> <span>· ' + esc(pl && pl !== mk && pl !== 'EE. UU.' && pl !== 'UE' ? mk + ' · ' + pl : mk) + '</span></div>' +
+        '<div class="dd-dl"><a href="' + esc(S.sitePath(f.csv)) + '" download aria-label="CSV ' + esc(nm(f.name, f.product)) + ' · ' + kb(f.csvBytes) + '">CSV</a><a href="' + esc(S.sitePath(f.xlsx)) + '" download aria-label="Excel ' + esc(nm(f.name, f.product)) + ' · ' + kb(f.xlsxBytes) + '">Excel</a></div>' +
+        '<div class="dd-l2">' + esc(f.sourceName) + ' · ' + esc(String(f.first).slice(0, 4)) + '–' + esc(String(f.last).slice(0, 4)) + ' · <span style="color:' + vc + ';font-weight:600">' + esc(w.v[f.verdict] || f.verdict) + '</span></div></li>';
+    }).join('') + '</ul>';
+    return h;
   }
   function render() {
     var w = t(), root = document.getElementById('dd-body'); if (!root) return;
