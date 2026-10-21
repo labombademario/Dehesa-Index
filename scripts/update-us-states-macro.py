@@ -10,7 +10,7 @@ Fuentes oficiales del gobierno federal (dominio publico, se cita la fuente):
   gdppc = gdp / pop calculado por Dehesa Index, solo los anios con ambos datos.
 Nunca se rellena un hueco. Si una fuente falla se conserva lo que ya habia de esa metrica.
 Uso: python3 scripts/update-us-states-macro.py [--outdir data]"""
-import csv, datetime, io, json, sys, urllib.request, zipfile
+import csv, datetime, io, json, sys, urllib.error, urllib.request, zipfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 UA = {"User-Agent": "DehesaIndex (github.com/labombademario/Dehesa-Index)"}
@@ -59,10 +59,14 @@ def acs():
     out_e, out_a = {}, {}
     now = datetime.date.today().year
     for y in range(2015, now):
+        raw = b""
         try:
-            j = json.loads(http("https://api.census.gov/data/%d/acs/acs5?get=NAME,B01002_001E,B15003_001E,B15003_022E,B15003_023E,B15003_024E,B15003_025E&for=state:*" % y, timeout=60))
+            raw = http("https://api.census.gov/data/%d/acs/acs5?get=NAME,B01002_001E,B15003_001E,B15003_022E,B15003_023E,B15003_024E,B15003_025E&for=state:%%2A" % y, timeout=60)
+            j = json.loads(raw)
+        except urllib.error.HTTPError as e:
+            log("ACS", y, "HTTP", e.code, e.read()[:120]); continue
         except Exception as e:
-            log("ACS", y, "no disponible", repr(e)[:80]); continue
+            log("ACS", y, "no disponible", repr(e)[:60], raw[:120]); continue
         h = j[0]
         for r in j[1:]:
             d = dict(zip(h, r)); st = FIPS.get(d.get("state"))
