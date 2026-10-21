@@ -16,6 +16,14 @@ def split_sentences(t):
 
 # ---- frases repetidas
 S = {
+ 'USDA ERS, Sugar and Sweeteners Yearbook, table 5: wholesale refined beet sugar price, Midwest markets, bulk, monthly average; USD/lb (ERS publishes cents/lb).': (
+  'USDA ERS, Sugar and Sweeteners Yearbook, table 5: wholesale refined beet sugar price, Midwest markets, bulk, monthly average; USD/lb (ERS publishes cents/lb).',
+  "USDA ERS, Sugar and Sweeteners Yearbook, tableau 5 : prix de gros du sucre de betterave raffiné, marchés du Midwest, en vrac, moyenne mensuelle ; USD/lb (l'ERS publie en cents/lb).",
+  "USDA ERS, Sugar and Sweeteners Yearbook, tabella 5: prezzo all'ingrosso dello zucchero di barbabietola raffinato, mercati del Midwest, sfuso, media mensile; USD/lb (l'ERS pubblica in centesimi/lb)."),
+ 'Wholesale, not retail; the EU figure is the average ex-factory white sugar price.': (
+  'Wholesale, not retail; the EU figure is the average ex-factory white sugar price.',
+  "Prix de gros, pas de détail ; le chiffre de l'UE est le prix moyen départ usine du sucre blanc.",
+  "Prezzo all'ingrosso, non al dettaglio; il dato UE è il prezzo medio franco fabbrica dello zucchero bianco."),
  'La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.': (
   'The API does not publish a release date: the day the figure was first retrieved is recorded.',
   "L'API ne publie pas de date de publication : on enregistre le jour où la donnée a été récupérée pour la première fois.",
