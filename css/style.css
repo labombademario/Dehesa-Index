@@ -3105,3 +3105,10 @@ html:not([data-theme="dark"]) .esp-row.on{--up:#14663b;--down:#9a2019}
 html[data-theme="dark"] .cd-mapbox{--gb0:#2E312C;--gb1:#6B5A2A;--gb2:#9C6A2C;--gb3:#C9703F;--gb4:#F09A7A;--gbx:#2A2D2B}
 @media (prefers-color-scheme: dark){html:not([data-theme="light"]) .cd-mapbox{--gb0:#2E312C;--gb1:#6B5A2A;--gb2:#9C6A2C;--gb3:#C9703F;--gb4:#F09A7A;--gbx:#2A2D2B}}
 .cd-map svg{width:100%;height:auto;max-height:520px}
+abbr.gl { text-decoration: underline dotted; text-decoration-thickness: 1px; text-underline-offset: 3px; cursor: help; border-radius: 3px; }
+abbr.gl:focus-visible { outline: 2px solid var(--accent, #2f6f4e); outline-offset: 1px; }
+.gl-pop { position: absolute; z-index: 9999; display: none; max-width: min(320px, calc(100vw - 16px)); padding: 10px 12px; background: var(--surface, #fff); color: var(--text, #1d2a22); border: 1px solid var(--border-strong, #cfd6cc); border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.18); font-size: 13.5px; line-height: 1.45; text-align: left; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.gl-pop strong { display: block; margin-bottom: 3px; font-size: 14px; }
+.gl-pop span { display: block; }
+.gl-pop a { display: inline-block; margin-top: 6px; font-size: 12.5px; color: var(--accent, #2f6f4e); }
+.di-howto { margin: 10px 0 14px; padding: 9px 12px; border-left: 3px solid var(--accent, #2f6f4e); background: var(--surface-muted, rgba(47,111,78,.07)); border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.5; color: var(--text, #1d2a22); max-width: 760px; }

@@ -1,6 +1,10 @@
 /* Dehesa Index — Rendimientos y superficie por estado de EE. UU. (USDA NASS Quick Stats, encuestas Crop Production y Acreage). */
 (function () {
   'use strict';
+  var FWM = { es: ['previsión', 'Año en curso: es una previsión de USDA NASS, no la cosecha final. Cambia cada mes hasta el informe definitivo.'], en: ['forecast', 'Current year: a USDA NASS forecast, not the final harvest. It changes every month until the final report.'], fr: ['prévision', 'Année en cours : prévision de l’USDA NASS, pas la récolte finale. Elle change chaque mois jusqu’au rapport définitif.'], it: ['previsione', 'Anno in corso: una previsione dell’USDA NASS, non il raccolto finale. Cambia ogni mese fino al rapporto definitivo.'] };
+  function FW() { var l = (window.DehesaShared && window.DehesaShared.getLang) ? window.DehesaShared.getLang() : 'es'; return (FWM[l] || FWM.es)[0]; }
+  function FWX() { var l = (window.DehesaShared && window.DehesaShared.getLang) ? window.DehesaShared.getLang() : 'es'; return (FWM[l] || FWM.es)[1]; }
+  function FWL() { var l = (window.DehesaShared && window.DehesaShared.getLang) ? window.DehesaShared.getLang() : 'es'; return '(' + (FWM[l] || FWM.es)[0] + ')'; }
   var D = null, SEL = { crop: 'CORN, GRAIN', metric: 'yield', year: null, state: null };
   var C1 = '#1d5178', C2 = '#b8a98a', SEQ = ['#eef2f5', '#c6d5e0', '#8fb0c8', '#4f82a6', '#1d5178'];
   var LI = { es: 0, en: 1, fr: 2, it: 3 }, P = 0;
@@ -83,8 +87,8 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     var cls = function (v) { var i = 0; while (i < 4 && v >= cuts[i]) i++; return i; };
     var copts = crops.map(function (c) { return '<option value="' + esc(c) + '"' + (c === SEL.crop ? ' selected' : '') + '>' + esc(CROPS[c][P]) + '</option>'; }).join('');
     var mopts = mets.map(function (m) { return '<option value="' + m + '"' + (m === SEL.metric ? ' selected' : '') + '>' + esc(t[m]) + '</option>'; }).join('');
-    var yopts = years.map(function (y) { return '<option value="' + y + '"' + (y === SEL.year ? ' selected' : '') + '>' + y + (y === years[0] ? ' *' : '') + '</option>'; }).join('');
-    var cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' + card(t.us + ' · ' + SEL.year + (isLast ? ' *' : ''), nv === null ? '—' : esc(fmt(u, nv)), '<span style="color:var(--text-faint)">' + esc(unitLabel(u)) + '</span>') + card(t.vsPrev, nv !== null && np !== null ? chg(pct(nv, np)) : '—', np !== null ? '<span style="color:var(--text-faint)">' + esc(yp + ': ' + fmt(u, np)) + '</span>' : '') + '</div>';
+    var yopts = years.map(function (y) { return '<option value="' + y + '"' + (y === SEL.year ? ' selected' : '') + '>' + y + (y === years[0] ? ' (' + FW() + ')' : '') + '</option>'; }).join('');
+    var cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' + card(t.us + ' · ' + SEL.year + (isLast ? ' (' + FW() + ')' : ''), nv === null ? '—' : esc(fmt(u, nv)), '<span style="color:var(--text-faint)">' + esc(unitLabel(u)) + '</span>') + card(t.vsPrev, nv !== null && np !== null ? chg(pct(nv, np)) : '—', np !== null ? '<span style="color:var(--text-faint)">' + esc(yp + ': ' + fmt(u, np)) + '</span>' : '') + '</div>';
     var chartYears = s.n.map(function (x) { return x[0]; }), natVals = s.n.map(function (x) { return x[1]; });
     var stSel = SEL.state && s.s[SEL.state] ? SEL.state : null;
     var stVals = stSel ? chartYears.map(function (y) { return val(s.s[stSel], y); }) : null;

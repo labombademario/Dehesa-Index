@@ -292,4 +292,29 @@
     });
   })();
   window.DehesaTextPage(STRINGS, 'informacion');
+  // Glosario: siglas, términos de precio y términos de Dehesa (data/glosario-<idioma>.json, generado por scripts/build-glosario.py)
+  (function () {
+    var GT = { es: ['Glosario', 'Qué significan las siglas y los términos técnicos que aparecen en las páginas. En las páginas, tócalos o pasa el cursor por encima para verlos.', 'Buscar un término…', 'Ningún término coincide.'], en: ['Glossary', 'What the acronyms and technical terms used across the pages mean. On the pages, tap or hover over them to see them.', 'Search a term…', 'No term matches.'], fr: ['Glossaire', 'Ce que signifient les sigles et termes techniques des pages. Sur les pages, touchez-les ou survolez-les pour les voir.', 'Chercher un terme…', 'Aucun terme ne correspond.'], it: ['Glossario', 'Cosa significano le sigle e i termini tecnici delle pagine. Nelle pagine, toccali o passaci sopra per vederli.', 'Cerca un termine…', 'Nessun termine corrisponde.'] };
+    var CAT = { es: { inf: 'Informes y bases de datos', org: 'Organismos', ind: 'Índices', pol: 'Políticas', pre: 'Precios y mercados', con: 'Conceptos', uni: 'Unidades', dehesa: 'Términos de Dehesa' }, en: { inf: 'Reports and databases', org: 'Agencies', ind: 'Indices', pol: 'Policies', pre: 'Prices and markets', con: 'Concepts', uni: 'Units', dehesa: 'Dehesa terms' }, fr: { inf: 'Rapports et bases de données', org: 'Organismes', ind: 'Indices', pol: 'Politiques', pre: 'Prix et marchés', con: 'Concepts', uni: 'Unités', dehesa: 'Termes de Dehesa' }, it: { inf: 'Rapporti e banche dati', org: 'Enti', ind: 'Indici', pol: 'Politiche', pre: 'Prezzi e mercati', con: 'Concetti', uni: 'Unità', dehesa: 'Termini di Dehesa' } };
+    var ORDER = ['dehesa', 'pre', 'inf', 'org', 'ind', 'con', 'uni', 'pol'], CACHE = {}, prev = window.DehesaShared.onLangChange;
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+    function draw(d, lg) {
+      var body = document.getElementById('pg-body'); if (!body || document.getElementById('glosario')) return;
+      var g = GT[lg] || GT.es, C = CAT[lg] || CAT.es, h = '<section class="di-info-section" id="glosario"><h2>' + esc(g[0]) + '</h2><p>' + esc(g[1]) + '</p><input type="search" id="gl-q" class="di-compare-select" style="width:100%;max-width:360px;margin:0 0 10px" placeholder="' + esc(g[2]) + '" aria-label="' + esc(g[2]) + '"><div id="gl-list">';
+      ORDER.forEach(function (c) {
+        var rows = d.entries.filter(function (e) { return e.c === c; }); if (!rows.length) return;
+        h += '<h3 style="font-size:15px;margin:14px 0 4px" data-c="' + c + '">' + esc(C[c]) + '</h3><dl class="gl-dl">' + rows.map(function (e) { return '<div class="gl-row" data-k="' + esc(norm(e.t.join(' ') + ' ' + e.d)) + '" style="margin:0 0 8px"><dt style="font-weight:700;display:inline">' + esc(e.t.join(' · ')) + '.</dt> <dd style="display:inline;margin:0">' + esc(e.d) + '</dd></div>'; }).join('') + '</dl>';
+      });
+      h += '<p id="gl-none" style="display:none">' + esc(g[3]) + '</p></div></section>';
+      var first = body.querySelector('section'), second = first && first.nextElementSibling ? first.nextElementSibling.nextElementSibling : null;
+      var tmp = document.createElement('div'); tmp.innerHTML = h; var node = tmp.firstChild;
+      if (second) body.insertBefore(node, second); else body.appendChild(node);
+      var q = document.getElementById('gl-q'); q.oninput = function () { var v = norm(q.value.trim()), any = false; [].forEach.call(document.querySelectorAll('#gl-list .gl-row'), function (r) { var ok = !v || r.getAttribute('data-k').indexOf(v) >= 0; r.style.display = ok ? '' : 'none'; if (ok) any = true; }); [].forEach.call(document.querySelectorAll('#gl-list h3'), function (t) { var n = t.nextElementSibling, vis = n && [].some.call(n.children, function (r) { return r.style.display !== 'none'; }); t.style.display = vis ? '' : 'none'; }); document.getElementById('gl-none').style.display = any ? 'none' : ''; };
+      if (location.hash === '#glosario') node.scrollIntoView();
+    }
+    function go() { var lg = window.DehesaShared.getLang(); if (!/^(es|en|fr|it)$/.test(lg)) lg = 'es'; if (CACHE[lg]) return draw(CACHE[lg], lg); var x = new XMLHttpRequest(); x.open('GET', 'data/glosario-' + lg + '.json', true); x.onload = function () { if (x.status === 200) { try { CACHE[lg] = JSON.parse(x.responseText); draw(CACHE[lg], lg); } catch (e) { } } }; x.send(); }
+    window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); go(); };
+    go();
+  })();
 })();
