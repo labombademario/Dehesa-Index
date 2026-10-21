@@ -114,9 +114,9 @@
   };
   function t(k) { var a = TX[k]; if (!a) return k; return a[li()] === undefined ? a[0] : a[li()]; }
   function tf(k) { var s = t(k), a = arguments; return s.replace(/\{(\d)\}/g, function (m, i) { return a[+i + 1] === undefined ? m : a[+i + 1]; }); }
-  var CROPS = { trigo: ['Trigo', 'Wheat', 'Blé', 'Frumento'], maiz: ['Maíz', 'Maize (corn)', 'Maïs', 'Mais'], cebada: ['Cebada', 'Barley', 'Orge', 'Orzo'], avena: ['Avena', 'Oats', 'Avoine', 'Avena'], arroz: ['Arroz', 'Rice', 'Riz', 'Riso'], soja: ['Soja (grano)', 'Soybeans', 'Soja (grain)', 'Soia (semi)'], colza: ['Colza', 'Rapeseed / canola', 'Colza', 'Colza'] };
+  var CROPS = { trigo: ['Trigo', 'Wheat', 'Blé', 'Frumento'], maiz: ['Maíz', 'Maize (corn)', 'Maïs', 'Mais'], cebada: ['Cebada', 'Barley', 'Orge', 'Orzo'], avena: ['Avena', 'Oats', 'Avoine', 'Avena'], arroz: ['Arroz', 'Rice', 'Riz', 'Riso'], soja: ['Soja (grano)', 'Soybeans', 'Soja (grain)', 'Soia (semi)'], colza: ['Colza', 'Rapeseed / canola', 'Colza', 'Colza'] , otro: ['Otro cultivo', 'Other crop', 'Autre culture', 'Altra coltura']};
   var CORDER = ['trigo', 'maiz', 'cebada', 'avena', 'arroz', 'soja', 'colza'];
-  var CEMO = { trigo: '🌾', maiz: '🌽', cebada: '🍺', avena: '🥣', arroz: '🍚', soja: '🫘', colza: '🌼' };
+  var CEMO = { trigo: '🌾', maiz: '🌽', cebada: '🍺', avena: '🥣', arroz: '🍚', soja: '🫘', colza: '🌼', otro: '🌱' };
   var COSTS = ['fert', 'seed', 'prot', 'feed', 'energy', 'mach', 'labour', 'rent', 'other'];
   var CURS = { EUR: '€', USD: 'USD', CAD: 'CAD', GBP: 'GBP' };
   var REG = { eu: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], us: ['EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'], ca: ['Canadá', 'Canada', 'Canada', 'Canada'], uk: ['Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito'] };
@@ -125,7 +125,7 @@
   var KEY = 'di-calc-v1';
   var U = window.DIUnits, HA_AC = U.area.HA_PER_ACRE;
 
-  function blank(crop) { var c = {}; COSTS.forEach(function (k) { c[k] = ''; }); return { crop: crop || 'trigo', areaU: 'ha', area: '', yU: 't_ha', y: '', cur: 'EUR', pSrc: 'manual', pUnit: 't', p: '', inst: '', costs: c, vary: 'price', step: 10, tax: { j: '', mode: 'recover', incl: false, rs: '', ri: '', ro: '', comp: '' } }; }
+  function blank(crop) { var c = {}; COSTS.forEach(function (k) { c[k] = ''; }); return { name: '', crop: crop || 'trigo', areaU: 'ha', area: '', yU: 't_ha', y: '', cur: 'EUR', pSrc: 'manual', pUnit: 't', p: '', inst: '', costs: c, vary: 'price', step: 10, tax: { j: '', mode: 'recover', incl: false, rs: '', ri: '', ro: '', comp: '' } }; }
   var S = { cases: { A: blank(), B: blank(), C: blank() }, cur: 'A', remember: false }, REFC = {}, META = null, FXLOADED = null;
 
   /* ---------- utilidades ---------- */

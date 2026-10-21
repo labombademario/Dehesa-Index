@@ -41,6 +41,8 @@
     stepsEn: [['1', 'Pick your crop', 'and enter area and yield'], ['2', 'Set the price', 'yours, or the Dehesa reference'], ['3', 'Add your costs', 'optional, sharpens the margin']],
     stepsFr: [['1', 'Choisissez la culture', 'et indiquez surface et rendement'], ['2', 'Fixez le prix', 'le vôtre ou la référence Dehesa'], ['3', 'Ajoutez vos coûts', 'facultatif, affine la marge']],
     stepsIt: [['1', 'Scegli la coltura', 'e inserisci superficie e resa'], ['2', 'Imposta il prezzo', 'il tuo o il riferimento Dehesa'], ['3', 'Aggiungi i costi', 'facoltativo, affina il margine']],
+    cname: ['Nombre del cultivo', 'Crop name', 'Nom de la culture', 'Nome della coltura'], cnameEx: ['p. ej. girasol', 'e.g. sunflower', 'p. ex. tournesol', 'es. girasole'],
+    noRefOtro: ['Para este cultivo no hay precio de referencia en la web: escribe el tuyo (por tonelada).', 'There is no reference price for this crop on the site: enter your own (per tonne).', 'Pas de prix de référence pour cette culture sur le site : saisissez le vôtre (par tonne).', 'Per questa coltura il sito non ha un prezzo di riferimento: inserisci il tuo (a tonnellata).'],
     quick: ['Añadir otro cultivo:', 'Add another crop:', 'Ajouter une culture :', 'Aggiungi un’altra coltura:'],
     dup: ['Duplicar', 'Duplicate', 'Dupliquer', 'Duplica'],
     optional: ['opcional', 'optional', 'facultatif', 'facoltativo'],
@@ -168,7 +170,8 @@
 
   /* ---------- helpers de cálculo ---------- */
   function ovr(f) { var x = {}; x[S.vary === 'price' ? 'price' : S.vary === 'yield' ? 'yld' : 'cost'] = f; return x; }
-  function cname(line) { return K.CROPS[line.c.crop][li()]; }
+  var CORD = K.CORDER.concat(['otro']);
+  function cname(line) { return line.c.crop === 'otro' && line.c.name ? line.c.name : K.CROPS[line.c.crop][li()]; }
   function cnameE(line) { return (K.CEMO[line.c.crop] || '') + ' ' + cname(line); }
   function cl(c) { return JSON.parse(JSON.stringify(c)); }
   function pnum(v, cur) { return money(v, cur, 2); }
@@ -203,14 +206,15 @@
     return h;
   }
   function lineHtml(line, idx) {
-    var c = line.c, kgBu = K.bushelKg(c.crop), au = c.areaU === 'ha' ? t('ha') : t('ac');
+    var c = line.c; if (c.crop === 'otro') c.pSrc = 'manual'; var kgBu = K.bushelKg(c.crop), au = c.areaU === 'ha' ? t('ha') : t('ac');
     var h = '<section class="fx-line" id="fx-sec-' + line.id + '" aria-label="' + esc(cname(line)) + '"><div class="di-movers-head-row"><h3>' + esc(cnameE(line)) + '</h3>' + '<span class="fx-acts">' + (S.lines.length < MAXL ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="dup">' + esc(t('dup')) + '</button>' : '') + (S.lines.length > 1 ? '<button type="button" class="pt-chip" data-l="' + line.id + '" data-act="rm">' + esc(t('rm')) + '</button>' : '') + '</span></div>';
-    h += '<div class="cc-grid">' + field('fx-' + line.id + '-crop', t('crop'), sel(line, 'crop', K.CORDER.map(function (k2) { return [k2, (K.CEMO[k2] || '') + ' ' + K.CROPS[k2][li()]]; }), c.crop));
+    h += '<div class="cc-grid">' + field('fx-' + line.id + '-crop', t('crop'), sel(line, 'crop', CORD.map(function (k2) { return [k2, (K.CEMO[k2] || '') + ' ' + K.CROPS[k2][li()]]; }), c.crop));
+    if (c.crop === 'otro') h += field('fx-' + line.id + '-name', t('cname'), '<input id="fx-' + line.id + '-name" data-l="' + line.id + '" data-f="name" type="text" maxlength="40" autocomplete="off" value="' + esc(c.name) + '" placeholder="' + esc(t('cnameEx')) + '">');
     h += field('fx-' + line.id + '-area', t('area') + ' (' + au + ')', '<div class="cc-row">' + inp(line, 'area', c.area) + seg(line, 'areaU', [['ha', t('ha')], ['ac', t('ac')]], c.areaU) + '</div>');
     h += field('fx-' + line.id + '-y', t('yield') + ' (' + (c.yU === 't_ha' ? t('tha') : t('buac')) + ')', '<div class="cc-row">' + inp(line, 'y', c.y) + seg(line, 'yU', [['t_ha', t('tha')]].concat(kgBu ? [['bu_ac', t('buac')]] : []), kgBu ? c.yU : 't_ha') + '</div>');
     h += field('fx-' + line.id + '-cur', t('currency'), sel(line, 'cur', Object.keys(K.CURS).map(function (k2) { return [k2, k2]; }), c.cur)) + '</div>';
-    h += '<fieldset class="cc-fs"><legend>' + esc(t('price')) + '</legend>' + seg(line, 'pSrc', [['manual', t('mine')], ['dehesa', t('dehesa')]], c.pSrc);
-    if (c.pSrc === 'manual') h += '<div class="cc-grid">' + field('fx-' + line.id + '-p', t('mine') + ' (' + (K.CURS[c.cur] || c.cur) + ' ' + (c.pUnit === 't' ? t('pt') : t('pbu')) + ')', '<div class="cc-row">' + inp(line, 'p', c.p) + seg(line, 'pUnit', [['t', t('pt')]].concat(kgBu ? [['bu', t('pbu')]] : []), kgBu ? c.pUnit : 't') + '</div>') + '</div>';
+    h += '<fieldset class="cc-fs"><legend>' + esc(t('price')) + '</legend>' + (c.crop === 'otro' ? '<p class="pt-src" style="margin:4px 0">' + esc(t('noRefOtro')) + '</p>' : seg(line, 'pSrc', [['manual', t('mine')], ['dehesa', t('dehesa')]], c.pSrc));
+    if (c.pSrc === 'manual' || c.crop === 'otro') h += '<div class="cc-grid">' + field('fx-' + line.id + '-p', t('mine') + ' (' + (K.CURS[c.cur] || c.cur) + ' ' + (c.pUnit === 't' ? t('pt') : t('pbu')) + ')', '<div class="cc-row">' + inp(line, 'p', c.p) + seg(line, 'pUnit', [['t', t('pt')]].concat(kgBu ? [['bu', t('pbu')]] : []), kgBu ? c.pUnit : 't') + '</div>') + '</div>';
     else h += '<div id="fx-ref-' + line.id + '">' + refHtml(line) + '</div>';
     h += '</fieldset>';
     h += '<details class="cc-fs fx-costs" data-l="' + line.id + '"' + (line.open ? ' open' : '') + '><summary>' + esc(t('costs')) + ' (' + esc(K.CURS[c.cur] || c.cur) + '/' + esc(au) + ') <span class="fx-opt">· ' + esc(t('optional')) + '</span></summary><p class="pt-src" style="margin:8px 0">' + esc(t('costsHint')) + '</p><div class="cc-grid">' + K.COSTS.map(function (k2) { return field('fx-' + line.id + '-c-' + k2, t('c_' + k2), inp(line, 'c-' + k2, c.costs[k2]) + (LK[k2] ? '<div id="fx-lk-' + line.id + '-' + k2 + '" class="fx-lk">' + lkHtml(line, k2) + '</div>' : '')); }).join('') + '</div>' + (anyLink(line) ? '<p class="pt-src" style="margin:8px 0 0">' + esc(t('lkNote')) + '</p>' : '') + '</details>';
@@ -319,7 +323,7 @@
   function flagEmpty() { ['fx-changes-sec', 'fx-sum-sec'].forEach(function (id) { var e = document.getElementById(id); if (e) e.className = 'pt-sec' + (e.querySelector('.pt-card, table, .fx-ch') ? '' : ' fx-empty'); }); }
   function drawAll() { var a = document.getElementById('fx-changes'), b = document.getElementById('fx-sum'); if (a) a.innerHTML = changesHtml(); if (b) b.innerHTML = summaryHtml(); flagEmpty(); }
   function stepsHtml() { var a = TX[['steps', 'stepsEn', 'stepsFr', 'stepsIt'][li()]]; return '<ol class="fx-steps">' + a.map(function (x) { return '<li><span class="fx-n">' + x[0] + '</span><span><strong>' + esc(x[1]) + '</strong> ' + esc(x[2]) + '</span></li>'; }).join('') + '</ol>'; }
-  function quickHtml() { if (S.lines.length >= MAXL) return '<span class="pt-sub">' + esc(tf('maxL', MAXL)) + '</span>'; return '<div class="fx-quick"><span class="pt-sub">' + esc(t('quick')) + '</span>' + K.CORDER.map(function (k2) { return '<button type="button" class="pt-chip" data-act="addc" data-crop="' + k2 + '">+ ' + esc((K.CEMO[k2] || '') + ' ' + K.CROPS[k2][li()]) + '</button>'; }).join('') + '</div>'; }
+  function quickHtml() { if (S.lines.length >= MAXL) return '<span class="pt-sub">' + esc(tf('maxL', MAXL)) + '</span>'; return '<div class="fx-quick"><span class="pt-sub">' + esc(t('quick')) + '</span>' + CORD.map(function (k2) { return '<button type="button" class="pt-chip" data-act="addc" data-crop="' + k2 + '">+ ' + esc((K.CEMO[k2] || '') + ' ' + K.CROPS[k2][li()]) + '</button>'; }).join('') + '</div>'; }
   function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
   function shell() {
     document.getElementById('fx-h1').textContent = t('title'); document.getElementById('fx-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
@@ -358,7 +362,7 @@
   function onInput(e) {
     var el = e.target, f = el.getAttribute && el.getAttribute('data-f'), line = lineOf(el.getAttribute && el.getAttribute('data-l')); if (!f || !line || el.tagName === 'SELECT') return;
     var c = line.c, val = el.value, m = /^c-(.+)$/.exec(f);
-    if (m && c.costs[m[1]] !== undefined) { c.costs[m[1]] = val; if (lkOf(line, m[1])) { rebase(line, m[1]); if (line.undo && line.undo.k === m[1]) delete line.undo; } } else if (f === 'area' || f === 'y' || f === 'p') c[f] = val; else return;
+    if (m && c.costs[m[1]] !== undefined) { c.costs[m[1]] = val; if (lkOf(line, m[1])) { rebase(line, m[1]); if (line.undo && line.undo.k === m[1]) delete line.undo; } } else if (f === 'name') { c.name = val.slice(0, 40); var hh = document.querySelector('#fx-sec-' + line.id + ' h3'); if (hh) hh.textContent = cnameE(line); save(); drawAll(); return; } else if (f === 'area' || f === 'y' || f === 'p') c[f] = val; else return;
     var bad = val !== '' && (num(val) === null || num(val) < 0); el.setAttribute('aria-invalid', bad ? 'true' : 'false'); el.title = bad ? t('bad') : '';
     drawLine(line); drawAll(); save();
   }
@@ -371,7 +375,7 @@
       if (!Object.keys(lline.lk).length) delete lline.lk; if (lline.undo && lline.undo.k === lk) delete lline.undo; save(); shell(); return;
     }
     var f = el.getAttribute && el.getAttribute('data-f'), line = lineOf(el.getAttribute && el.getAttribute('data-l')); if (!f || !line || el.tagName !== 'SELECT') return; var c = line.c;
-    if (f === 'crop') { c.crop = el.value; if (!K.bushelKg(c.crop)) { c.yU = 't_ha'; c.pUnit = 't'; } c.inst = ''; delete S.seen[line.id]; if (c.pSrc === 'dehesa') c.p = ''; save(); shell(); }
+    if (f === 'crop') { c.crop = el.value; if (c.crop === 'otro') c.pSrc = 'manual'; if (!K.bushelKg(c.crop)) { c.yU = 't_ha'; c.pUnit = 't'; } c.inst = ''; delete S.seen[line.id]; if (c.pSrc === 'dehesa') c.p = ''; save(); shell(); }
     else if (f === 'cur') { c.cur = el.value; delete S.seen[line.id]; if (c.pSrc === 'dehesa') c.p = ''; save(); shell(); }
     else if (f === 'inst') { c.inst = el.value; delete S.seen[line.id]; save(); ensureRef(line); }
   }
