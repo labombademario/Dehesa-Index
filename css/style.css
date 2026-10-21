@@ -3078,3 +3078,8 @@ html[data-theme="dark"] .wp-line-b{stroke:#6fb3e0}html[data-theme="dark"] .wp-do
 .rl-cl:hover,.rl-cl:focus-visible{background:var(--hover,rgba(0,0,0,.05))}
 /* contraste AA de la cifra de cambio sobre la fila abierta (fondo #f1ede0) */
 html:not([data-theme="dark"]) .esp-row.on{--up:#14663b;--down:#9a2019}
+/* 21-oct-2026 (Mario: «las letras están demasiado grandes»): la frase «Quiero ver … de …» y el buscador del explorador al tamaño del resto de la página */
+.ex-sent { font-size: 16px; gap: 6px 8px; }
+.ex-sent .ex-sel { font-family: 'Public Sans', system-ui, sans-serif; font-size: 15px; min-height: 40px; padding: 4px 8px; }
+.ex-q .um-input { font-size: 15.5px; min-height: 44px; padding: 8px 14px; }
+@media (max-width: 699px) { .ex-sent .ex-sel, .ex-q .um-input { font-size: 16px; } }   /* 16 px en móvil: con menos, el iPhone amplía la página al tocar el campo */

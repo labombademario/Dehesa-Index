@@ -13,6 +13,7 @@
     fr: { rec: 'Récents', ez: 'Zone euro', eu: 'Reste de l’Europe', am: 'Amériques', ow: 'Reste du monde', ot: 'Autres options', q: 'Rechercher un pays…', none: 'Aucun résultat' },
     it: { rec: 'Recenti', ez: 'Area euro', eu: 'Resto d’Europa', am: 'Americhe', ow: 'Resto del mondo', ot: 'Altre opzioni', q: 'Cerca paese…', none: 'Nessun risultato' }
   };
+  var NOEURO = { es: 'Fuera del euro', en: 'Outside the euro', fr: 'Hors zone euro', it: 'Fuori dall’euro' };
   function lg() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return T[l] ? l : 'es'; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function flagCode(txt) { var cp = []; for (var i = 0; i < txt.length && cp.length < 2; i++) { var c = txt.codePointAt(i); if (c > 0xFFFF) i++; if (c >= 127462 && c <= 127487) cp.push(String.fromCharCode(c - 127397)); else break; } return cp.length === 2 ? cp.join('') : ''; }
@@ -45,7 +46,8 @@
       var many = sel.options.length > 8, h = many ? '<input type="search" class="di-compare-select cp-q" autocomplete="off" placeholder="' + esc(t.q) + '" style="width:100%;margin:0 0 8px">' : '';
       ['ot', 'ez', 'eu', 'am', 'ow'].forEach(function (g) {
         if (!G[g].length) return;
-        h += '<div class="cp-g"><div class="cp-t">' + esc(t[g]) + '</div><div class="cp-c">' + G[g].map(function (o) {
+        var gt = g === 'eu' && sel.getAttribute('data-cpick') === 'euro' ? NOEURO[lg()] : t[g];   // data-cpick="euro": lista solo europea, los dos grupos son «zona euro» y «fuera del euro»
+        h += '<div class="cp-g"><div class="cp-t">' + esc(gt) + '</div><div class="cp-c">' + G[g].map(function (o) {
           var tx = lab(o), short = strip(tx);
           return '<button type="button" role="option" class="pt-chip cp-o" data-i="' + o.index + '" data-n="' + esc(short.toLowerCase()) + '" aria-selected="' + (o.index === sel.selectedIndex) + '" title="' + esc(tx) + '">' + esc(short) + '</button>';
         }).join('') + '</div></div>';

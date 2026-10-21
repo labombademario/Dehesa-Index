@@ -338,7 +338,7 @@
     tar.parentNode.insertBefore(lk, tar.nextSibling);
     var dr = lateBox('ps-drought'); if (!dr) return;
     dr.innerHTML = '<section id="eusq" class="cof" aria-live="polite" style="margin-top:28px"></section><section id="eucl" class="cof" aria-live="polite"></section>';
-    nearView(dr, function () { js('js/eu-drought.js?v=20261020', function () { js('js/eu-climate.js?v=20261020', function () { frameUp(PAGE_C); }); }); });
+    nearView(dr, function () { js('js/eu-drought.js?v=20261020', function () { js('js/eu-climate.js?v=20261021', function () { frameUp(PAGE_C); }); }); });
   }
   var PAGE_C = null;
   function droughtUp(c) {
