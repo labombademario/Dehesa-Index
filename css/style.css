@@ -3112,3 +3112,14 @@ abbr.gl:focus-visible { outline: 2px solid var(--accent, #2f6f4e); outline-offse
 .gl-pop span { display: block; }
 .gl-pop a { display: inline-block; margin-top: 6px; font-size: 12.5px; color: var(--accent, #2f6f4e); }
 .di-howto { margin: 10px 0 14px; padding: 9px 12px; border-left: 3px solid var(--accent, #2f6f4e); background: var(--surface-muted, rgba(47,111,78,.07)); border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.5; color: var(--text, #1d2a22); max-width: 760px; }
+
+/* Glosario de Metodología: término a la izquierda, definición a la derecha */
+.gl-h { font-size: 16px; margin: 26px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border, #dfe5dc); }
+.gl-dl { margin: 0; padding: 0; }
+.gl-row { display: grid; grid-template-columns: minmax(130px, 220px) 1fr; gap: 4px 20px; padding: 10px 0; border-bottom: 1px solid var(--border, #e8ece5); }
+.gl-row:last-child { border-bottom: 0; }
+.gl-row dt { margin: 0; font-weight: 700; font-size: 15px; line-height: 1.35; overflow-wrap: anywhere; }
+.gl-row dt span { display: block; }
+.gl-row dt span + span { font-weight: 400; font-size: 13px; color: var(--muted, #5b6a60); }
+.gl-row dd { margin: 0; font-size: 15px; line-height: 1.55; max-width: 70ch; }
+@media (max-width: 640px) { .gl-row { grid-template-columns: 1fr; gap: 2px; } }

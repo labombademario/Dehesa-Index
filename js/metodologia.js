@@ -304,7 +304,7 @@
       var g = GT[lg] || GT.es, C = CAT[lg] || CAT.es, h = '<section class="di-info-section" id="glosario"><h2>' + esc(g[0]) + '</h2><p>' + esc(g[1]) + '</p><input type="search" id="gl-q" class="di-compare-select" style="width:100%;max-width:360px;margin:0 0 10px" placeholder="' + esc(g[2]) + '" aria-label="' + esc(g[2]) + '"><div id="gl-list">';
       ORDER.forEach(function (c) {
         var rows = d.entries.filter(function (e) { return e.c === c; }); if (!rows.length) return;
-        h += '<h3 style="font-size:15px;margin:14px 0 4px" data-c="' + c + '">' + esc(C[c]) + '</h3><dl class="gl-dl">' + rows.map(function (e) { return '<div class="gl-row" data-k="' + esc(norm(e.t.join(' ') + ' ' + e.d)) + '" style="margin:0 0 8px"><dt style="font-weight:700;display:inline">' + esc(e.t.join(' · ')) + '.</dt> <dd style="display:inline;margin:0">' + esc(e.d) + '</dd></div>'; }).join('') + '</dl>';
+        h += '<h3 class="gl-h" data-c="' + c + '">' + esc(C[c]) + '</h3><dl class="gl-dl">' + rows.map(function (e) { var seen = {}, ts = e.t.filter(function (x) { var k = x.toLowerCase(); if (seen[k]) return false; seen[k] = 1; return true; }); return '<div class="gl-row" data-k="' + esc(norm(e.t.join(' ') + ' ' + e.d)) + '"><dt>' + ts.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</dt><dd>' + esc(e.d) + '</dd></div>'; }).join('') + '</dl>';
       });
       h += '<p id="gl-none" style="display:none">' + esc(g[3]) + '</p></div></section>';
       var first = body.querySelector('section'), second = first && first.nextElementSibling ? first.nextElementSibling.nextElementSibling : null;
