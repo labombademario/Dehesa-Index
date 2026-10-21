@@ -27,6 +27,16 @@ for (const [u, min] of [['/sequia.html', 10], ['/insumos.html', 1], ['/paises.ht
   ok(u + ': sin errores', !p._errs.length);
   if (u.startsWith('/paises')) ok(u + ': el selector de sector (Agricultura/Ganaderia/Pesca) sigue visible', await p.evaluate(() => { const e = document.querySelector('#ps-sector [data-sec]'); return !e || e.getBoundingClientRect().height > 0; }));
 }
+// 2b) insumos, pestana Espana: gasoleo, tierra y fertilizantes plegados (en ordenador y en movil)
+for (const w of [1280, 390]) {
+  const e = await page(w); await e.goto(BASE + '/insumos.html', { waitUntil: 'networkidle' }); await e.click('#in-ca-tabs >> text=España'); await e.waitForTimeout(2500);
+  const r = await e.evaluate(() => ({ closed: ['#in-es-gb', '#in-es-land', '#in-es-mapa'].filter(s => { const x = document.querySelector(s); return x && x.classList.contains('df') && x.classList.contains('df-closed'); }).length, screens: document.documentElement.scrollHeight / innerHeight }));
+  ok('insumos Espana @' + w + ': gasoleo, tierra y fertilizantes plegados (' + r.closed + '/3)', r.closed === 3);
+  ok('insumos Espana @' + w + ': pestana mas corta (' + r.screens.toFixed(1) + ' pantallas)', r.screens < (w < 500 ? 9 : 5.5));
+  await e.click('#in-es-gb .df-bar'); await e.waitForTimeout(600);
+  ok('insumos Espana @' + w + ': al abrir el gasoleo se ve su grafica', await e.evaluate(() => { const s = document.querySelector('#in-es-gb svg'); return !!s && s.getBoundingClientRect().width > 200; }));
+  ok('insumos Espana @' + w + ': sin errores', !e._errs.length);
+}
 // el enlace de «En esta pagina» (#ancla) abre un bloque plegado
 await p.goto(BASE + '/pac.html', { waitUntil: 'networkidle' }); await p.waitForTimeout(800);
 const href = await p.evaluate(() => { const a = [...document.querySelectorAll('a[href^="#pac-"]')].find(a => { const t = document.getElementById(a.getAttribute('href').slice(1)); return t && t.classList.contains('df-closed'); }); return a ? a.getAttribute('href') : null; });

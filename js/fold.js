@@ -9,9 +9,9 @@
   'use strict';
   var OPEN = {}, BUSY = false;
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-  function head(el) { var h = el.querySelector('h2'); if (!h || !h.textContent.trim()) h = el.querySelector('h3'); return h && h.textContent.trim() ? h : null; }
+  function head(el) { var h = el.querySelector('h2'); if (!h || !h.textContent.trim()) h = el.querySelector('h3'); if (!h || !h.textContent.trim()) h = el.querySelector('.di-info-card-title'); return h && h.textContent.trim() ? h : null; }
   function firstLine(el, h) {
-    var ps = el.querySelectorAll('p'); for (var i = 0; i < ps.length; i++) { var t = (ps[i].textContent || '').replace(/\s+/g, ' ').trim(); if (t.length > 20 && !(h.compareDocumentPosition(ps[i]) & 2)) return t.length > 140 ? t.slice(0, 137) + '…' : t; }
+    var ps = el.querySelectorAll('p, .di-info-scope-note'); for (var i = 0; i < ps.length; i++) { var t = (ps[i].textContent || '').replace(/\s+/g, ' ').trim(); if (t.length > 20 && !(h.compareDocumentPosition(ps[i]) & 2)) return t.length > 140 ? t.slice(0, 137) + '…' : t; }
     return '';
   }
   function setOpen(el, o) {
