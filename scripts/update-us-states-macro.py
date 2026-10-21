@@ -5,6 +5,8 @@ Fuentes oficiales del gobierno federal (dominio publico, se cita la fuente):
   U.S. Bureau of Economic Analysis (BEA), SAGDP1 linea 3: PIB a precios corrientes, millones de USD, anual   -> gdp
   U.S. Census Bureau, Population Estimates Program (NST-EST): poblacion a 1 de julio, personas, anual        -> pop
   U.S. Bureau of Labor Statistics (BLS), LAUS (API publica v1): tasa de paro, % desestacionalizada, mensual   -> unemp
+  U.S. Census Bureau, American Community Survey 5-year (tablas B15003 y B01002): % de adultos de 25+ con grado universitario (bachelor o superior) y edad mediana  -> edu, age
+  U.S. BLS, LAUS (medida 07): tasa de empleo (empleados / poblacion de 16+), % desestacionalizada, mensual   -> epop
   gdppc = gdp / pop calculado por Dehesa Index, solo los anios con ambos datos.
 Nunca se rellena un hueco. Si una fuente falla se conserva lo que ya habia de esa metrica.
 Uso: python3 scripts/update-us-states-macro.py [--outdir data]"""
@@ -52,8 +54,27 @@ def bea():
         pts = [[y, round(num(r[i]), 1)] for i, y in yrs if y >= 2010 and num(r[i]) is not None]
         if pts: out[FIPS[fips]] = pts
     return out
-def bls():
-    ids = {"LASST%s%s03" % (f, "0" * 11): FIPS[f] for f in FIPS}
+def acs():
+    """ACS 5 anos (API publica del Census, sin clave). Una serie por estado con un punto por edicion (anio final de los 5)."""
+    out_e, out_a = {}, {}
+    now = datetime.date.today().year
+    for y in range(2015, now):
+        try:
+            j = json.loads(http("https://api.census.gov/data/%d/acs/acs5?get=NAME,B01002_001E,B15003_001E,B15003_022E,B15003_023E,B15003_024E,B15003_025E&for=state:*" % y, timeout=60))
+        except Exception as e:
+            log("ACS", y, "no disponible", repr(e)[:80]); continue
+        h = j[0]
+        for r in j[1:]:
+            d = dict(zip(h, r)); st = FIPS.get(d.get("state"))
+            if not st: continue
+            tot = num(d["B15003_001E"]); ba = [num(d[k]) for k in ("B15003_022E", "B15003_023E", "B15003_024E", "B15003_025E")]
+            if tot and tot > 0 and all(v is not None and v >= 0 for v in ba):
+                out_e.setdefault(st, []).append([y, round(100.0 * sum(ba) / tot, 1)])
+            a = num(d["B01002_001E"])
+            if a is not None and 10 < a < 80: out_a.setdefault(st, []).append([y, round(a, 1)])
+    return out_e, out_a
+def bls(measure="03"):
+    ids = {"LASST%s%s%s" % (f, "0" * 11, measure): FIPS[f] for f in FIPS}
     now = datetime.date.today().year; keys = sorted(ids); out = {}
     for i in range(0, len(keys), 25):
         chunk = keys[i:i + 25]
@@ -74,7 +95,10 @@ def main():
     try: old = json.loads(p.read_text(encoding="utf-8"))["regions"]
     except Exception: old = {}
     res = {}; rc = 0
-    for key, fn in (("pop", census), ("gdp", bea), ("unemp", bls)):
+    try: ae, aa = acs()
+    except Exception as e: log("FALLO acs", repr(e)); ae, aa = {}, {}
+    jobs = (("pop", census), ("gdp", bea), ("unemp", bls), ("epop", lambda: bls("07")), ("edu", lambda: ae), ("age", lambda: aa))
+    for key, fn in jobs:
         try:
             d = fn(); log(key, "estados:", len(d))
             if len(d) < 45: raise ValueError("solo %d estados" % len(d))
@@ -84,7 +108,7 @@ def main():
             res[key] = {st: o[key] for st, o in old.items() if o.get(key)}
     regions = {}
     for st in sorted(set(FIPS.values())):
-        o = {k: res[k][st] for k in ("gdp", "pop", "unemp") if res.get(k, {}).get(st)}
+        o = {k: res[k][st] for k in ("gdp", "pop", "unemp", "epop", "edu", "age") if res.get(k, {}).get(st)}
         if o.get("gdp") and o.get("pop"):
             pop = {y: v for y, v in o["pop"]}
             pc = [[y, round(v * 1e6 / pop[y])] for y, v in o["gdp"] if pop.get(y)]
@@ -93,8 +117,8 @@ def main():
     if len(regions) < 45:
         log("FALLO: pocos estados"); (outdir / "us-states-macro-log.txt").write_text("\n".join(LOG[-100:]) + "\n", encoding="utf-8"); return 1
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "source": {"name": "U.S. BEA (SAGDP1), U.S. Census Bureau (PEP NST-EST), U.S. BLS (LAUS)", "url": "https://www.bea.gov/data/gdp/gdp-state", "license": "US Government works (public domain); cite BEA, Census Bureau and BLS"},
-           "units": {"gdp": "USD million, current prices, annual", "pop": "persons, 1 July estimate", "unemp": "% of the labour force, seasonally adjusted, monthly", "gdppc": "USD per inhabitant (GDP / population, calculated by Dehesa Index)"},
+           "source": {"name": "U.S. BEA (SAGDP1), U.S. Census Bureau (PEP NST-EST), U.S. BLS (LAUS), U.S. Census Bureau (ACS 5-year)", "url": "https://www.bea.gov/data/gdp/gdp-state", "license": "US Government works (public domain); cite BEA, Census Bureau and BLS"},
+           "units": {"gdp": "USD million, current prices, annual", "pop": "persons, 1 July estimate", "unemp": "% of the labour force, seasonally adjusted, monthly", "epop": "employment-population ratio, % of people aged 16+, seasonally adjusted, monthly (BLS LAUS)", "edu": "% of adults 25+ with a bachelor's degree or higher (ACS 5-year, year = last year of the 5)", "age": "median age, years (ACS 5-year, year = last year of the 5)", "gdppc": "USD per inhabitant (GDP / population, calculated by Dehesa Index)"},
            "regions": regions}
     p.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); log("escrito", p.name, p.stat().st_size // 1024, "KB")
     (outdir / "us-states-macro-log.txt").write_text("\n".join(LOG[-100:]) + "\n", encoding="utf-8")

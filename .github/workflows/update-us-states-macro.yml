@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update US state GDP, population and unemployment (BEA, Census, BLS)
+name: Update US state GDP, population, unemployment, employment rate, education and median age (BEA, Census, BLS)
 on:
   schedule:
     - cron: '40 7 * * 4'
@@ -29,7 +29,7 @@ jobs:
         run: python3 scripts/detect-revisions.py data/us-states-macro.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "PIB, poblacion y paro por estado de EE. UU. (BEA, Census, BLS)" data/us-states-macro.json data/us-states-macro-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "PIB, poblacion, paro, tasa de empleo, estudios y edad mediana por estado de EE. UU. (BEA, Census, BLS)" data/us-states-macro.json data/us-states-macro-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
