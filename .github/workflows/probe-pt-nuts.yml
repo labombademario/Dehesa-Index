@@ -1,5 +1,7 @@
 name: Probe PT NUTS (temporal)
 on:
+  push:
+    branches: [research/pt-nuts]
   workflow_dispatch:
 permissions:
   contents: read
