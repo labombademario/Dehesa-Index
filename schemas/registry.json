@@ -1531,6 +1531,10 @@
    [
     "eu_region_climate"
    ]
+  ],
+  "australia-states-macro.json": [
+   "australia-states-macro",
+   []
   ]
  },
  "globs": {

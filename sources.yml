@@ -1270,6 +1270,15 @@ sources:
     continue: true
     data: [canada-provinces-macro.json, canada-provinces-macro-log.txt]
     message: PIB, poblacion y paro por provincia de Canada (Statistics Canada)
+  - id: au-states-macro
+    name: Update Australia state population, median age, unemployment and employment rate (ABS)
+    cron: ['55 7 * * 4']
+    script: scripts/update-au-states-macro.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    data: [australia-states-macro.json, australia-states-macro-log.txt]
+    message: Poblacion, edad mediana, paro y tasa de empleo por estado de Australia (ABS)
   - id: canada-provinces
     name: Update Canada by province (Statistics Canada)
     cron: ['50 15 * * 3']
