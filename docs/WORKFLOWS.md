@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-236 workflows (196 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+238 workflows (198 generados desde `sources.yml`, 40 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -33,6 +33,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-au-states-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-au-states-macro.py | australia-states-macro.json | finish, validate-files |
 | update-au-states.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-au-states.py | au-states.json | finish, validate-files |
 | update-au-trade.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-au-trade.py | au-trade-products.json, australia-trade-stats.json | finish, validate-files |
 | update-austria-balances.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-austria-balances.py | austria-balances-stats.json | finish, validate-files |
@@ -136,6 +137,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-nitrates.py | eu-nitrates.json | finish, validate-files |
 | update-eu-organic.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-organic.py | eu-organic-stats.json | finish, validate-files |
 | update-eu-production.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-production.py | eu-production-stats.json | finish, validate-files |
+| update-eu-region-climate.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-eu-region-climate.mjs | eu-region-climate.json | finish, validate-files |
 | update-eu-regions-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eurostat-regions-macro.py | eu-regions-macro.json | finish, validate-files |
 | update-eu-regions.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eurostat-regions.py | eu-regions-at.json, eu-regions-be.json, eu-regions-bg.json … | finish, validate-files |
 | update-eu-stocks.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-stocks.py | eu-stocks-stats.json | finish, validate-files |
