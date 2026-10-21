@@ -46,3 +46,4 @@ FALLO sugar: https://api.tech.ec.europa.eu/agrifood/api/sugar/production: <HTTPE
 descartada eu-prod-cy-olive-oil-monthly: 65 puntos, ultimo 2020-12
 descartada eu-prod-mt-olive-oil-monthly: 18 puntos, ultimo 2015-11
 olive: 667 filas, +7 series
+MANTENIDO sugar: 9 series del fichero anterior (la fuente fallo; se reintenta en la proxima ejecucion)

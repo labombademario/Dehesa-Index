@@ -21,6 +21,7 @@ SUGAR_CC = {"Austria": "AT", "Belgium": "BE", "Croatia": "HR", "Czechia": "CZ", 
 MONTHS = {m: i + 1 for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])}
 CURRENT = "The latest year is the current campaign; the portal does not say whether it is final, so treat it as provisional."
 OUT = {}
+BLOCK = {"cereal": "-cereal-", "oilseeds": "-oilseeds-", "rice": "-rice-", "sugar": "-sugar-", "olive": "-olive-oil-"}   # trozo del id que identifica cada bloque
 
 def fetch(k):
     path, fx = EP[k]
@@ -87,8 +88,23 @@ def olive(rows):
         add(cc, U.mk_series("eu-prod-%s-olive-oil-monthly" % cc.lower(), "production", "Olive oil: production by month (EU Agri-food)", "thousand t", "monthly", sorted(pts.items()), "EU Agri-food olive oil production", min_points=12, max_age_years=2,
                               note="Months with no production are not listed by the portal. " + CURRENT))
 
+def carry(prev_path, failed):
+    """Un bloque que falla (p. ej. 404 del portal) no borra lo publicado: se conservan sus series del fichero anterior tal cual,
+    sin tocar sus puntos, y queda escrito en el log y como aviso del workflow. Asi no bajan ni la cobertura ni los totales por un fallo pasajero."""
+    if not failed: return
+    try: prev = json.loads(Path(prev_path).read_text(encoding="utf-8"))
+    except Exception: U.log("sin fichero anterior: los bloques %s quedan sin datos esta vez" % ",".join(failed)); return
+    have = {s["id"] for v in OUT.values() for s in v}
+    for k in failed:
+        n = 0
+        for cc, c in (prev.get("countries") or {}).items():
+            for s in c.get("series") or []:
+                if BLOCK.get(k, "-%s-" % k) in s.get("id", "") and s["id"] not in have: OUT.setdefault(cc, []).append(s); n += 1
+        U.log("MANTENIDO %s: %d series del fichero anterior (la fuente fallo; se reintenta en la proxima ejecucion)" % (k, n))
+        print("::warning::eu-production: bloque %s fallo; se mantienen %d series publicadas" % (k, n))
+
 def main():
-    local, out = U.parse_args(); out = out or (U.ROOT / "data")
+    local, out = U.parse_args(); out = out or (U.ROOT / "data"); failed = []
     for k, fn, arg in (("cereal", crops, ("cereal", "Cereals")), ("oilseeds", crops, ("oilseeds", "Oilseeds and protein crops")), ("rice", rice, None), ("sugar", sugar, None), ("olive", olive, None)):
         try:
             rows = fetch(k)
@@ -96,7 +112,8 @@ def main():
             n0 = sum(len(v) for v in OUT.values()); fn(rows, *arg) if arg else fn(rows)
             U.log("%s: %d filas, +%d series" % (k, len(rows), sum(len(v) for v in OUT.values()) - n0))
         except Exception as e:
-            U.log("FALLO %s: %s" % (k, e))
+            U.log("FALLO %s: %s" % (k, e)); failed.append(k)
+    carry(out / "eu-production-stats.json", failed)
     n = sum(len(v) for v in OUT.values())
     if n < 400 or "cereal" not in " ".join(s["id"] for v in OUT.values() for s in v): raise SystemExit("solo %d series (se esperaban mas de 400 con cereales): no se escribe" % n)
     src = {"name": "European Commission, Agri-food Data Portal (crop, sugar, rice and olive oil production)", "url": "https://agridata.ec.europa.eu/extensions/DashboardCereals/CerealsProduction.html", "license": "EU Commission reuse policy (Decision 2011/833/EU), CC BY 4.0"}

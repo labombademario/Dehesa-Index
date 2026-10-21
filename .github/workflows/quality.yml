@@ -59,6 +59,9 @@ jobs:
           pip install openpyxl
           python3 scripts/test-us-arcplc-failsafe.py
 
+      - name: EU production keeps a failed block's published series instead of deleting them (no network)
+        run: python3 scripts/test-eu-production-carry.py
+
       - name: Real prices arithmetic (CPI deflation in chart.js)
         run: node scripts/test-real-prices.mjs
 
