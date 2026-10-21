@@ -17,7 +17,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) for (c
   ok(tag + ' cada enlace apunta a un bloque', (await Promise.all(ids.map(id => page.$('#' + id)))).every(Boolean));
   ok(tag + ' fuentes es la ultima seccion', ids[ids.length - 1] === 'ps-sources');
   ok(tag + ' migas con 3 niveles', (await page.$$eval('#pa-crumbs li', e => e.length)) === 3);
-  const order = await page.evaluate(ids => ids.map(id => document.getElementById(id).getBoundingClientRect().top + scrollY), ids);
+  const order = await page.evaluate(ids => ids.map(id => { let e = document.getElementById(id); if (getComputedStyle(e).display === 'none') e = e.closest('.df') || e; return e.getBoundingClientRect().top + scrollY; }), ids);
   ok(tag + ' orden de la barra = orden del documento', order.every((v, i) => i === 0 || v >= order[i - 1]));
   if (ids.length) { await page.click('#pa-bar a[data-fr="ps-sources"]'); await page.waitForTimeout(600); const cur = await page.$eval('#pa-bar a[aria-current]', a => a.getAttribute('data-fr')).catch(() => null); ok(tag + ' el bloque activo se marca', cur === 'ps-sources' || cur === ids[ids.length - 1]); }
   ok(tag + ' sin errores JS', !errs.length); if (errs.length) console.log(errs.join('\n'));
