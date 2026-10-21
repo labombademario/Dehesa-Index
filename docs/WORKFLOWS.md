@@ -79,7 +79,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | qa-navigation.yml | a mano | manual / por evento | qa-navigation.mjs | - | - |
 | qa-site.yml | a mano | manual / por evento | qa-site.mjs, validate-snapshots.mjs | - | - |
-| quality.yml | a mano | diaria | build-api.py, build-baskets.py, build-csv.mjs | - | - |
+| quality.yml | a mano | diaria | build-api.py, build-baskets.py, build-blog-posts.mjs | - | - |
 | verify-anomalies.yml | a mano | semanal (1) | test-verify-anomalies.py, verify-anomalies.py | data-anomalies.json | finish, validate-files |
 
 ## DE
