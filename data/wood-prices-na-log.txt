@@ -1,0 +1,6 @@
+17:23:17 BLS lumber (WPU081): 441 meses, ultimo 2026-09
+17:23:17 BLS softwood (WPU0811): 441 meses, ultimo 2026-09
+17:23:17 BLS hardwood (WPU0812): 441 meses, ultimo 2026-09
+17:23:17 BLS plywood (WPU083): 441 meses, ultimo 2026-09
+17:23:17 BLS logs (WPU085): 441 meses, ultimo 2026-09
+17:23:18 FALLO Canada: JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
