@@ -1,0 +1,5 @@
+Clima por región: 69 regiones, último mes 2026-09
+/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/validate-data.py:174: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  if g > datetime.datetime.utcnow() + datetime.timedelta(hours=26): errs.append("generatedAt en el futuro")
+ERROR    eu-region-climate.json             IT/MOL 2026-02: precipitacion 3823.7 fuera de rango; IT/CAM 2026-02: precipitacion 7942.2 fuera de rango; IT/BAS 2026-02: precipitacion 8379.6 fuera de rango
+Resumen: 1 archivos, 1 con errores, 0 con avisos
