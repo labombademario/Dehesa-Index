@@ -6562,6 +6562,18 @@
     "jcyl_open_data"
    ],
    "notes": "Precios mensuales en origen por provincia de Castilla y León desde 2015 (update-jcyl-prices.py); CSV del Observatorio de precios, CC BY 4.0."
+  },
+  "data/australia-states-macro.json": {
+   "sources": [
+    "abs"
+   ],
+   "notes": "Poblacion (ERP trimestral), edad mediana (calculada por Dehesa Index por interpolacion de edades simples), paro y tasa de empleo por estado y territorio (ABS, Labour Force y Estimated Resident Population)."
+  },
+  "data/eu-region-climate.json": {
+   "sources": [
+    "nasa_power"
+   ],
+   "notes": "Lluvia y temperatura mensual en la ciudad principal de cada region de Belgica, Austria, Grecia, Italia y Alemania (NASA POWER, reanalisis MERRA-2); son datos de un punto, no de toda la region."
   }
  },
  "derived": [
