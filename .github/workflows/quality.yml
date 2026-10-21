@@ -62,6 +62,9 @@ jobs:
       - name: EU production keeps a failed block's published series instead of deleting them (no network)
         run: python3 scripts/test-eu-production-carry.py
 
+      - name: Publish guard keeps up-to-date series when the source fails (scripts/guard-series-loss.py; no network)
+        run: python3 scripts/test-guard-series-loss.py
+
       - name: Real prices arithmetic (CPI deflation in chart.js)
         run: node scripts/test-real-prices.mjs
 

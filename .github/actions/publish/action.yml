@@ -40,4 +40,6 @@ runs:
         esac
         git add -- $PATHS
         for p in $OPTIONAL; do [ -e "$p" ] && git add -- "$p"; done
+        # una caida de la fuente no borra series al dia: se reponen si el log de esta ejecucion registra el fallo; si no, se avisa (scripts/guard-series-loss.py)
+        python3 scripts/guard-series-loss.py || echo "::warning::guard-series-loss no pudo ejecutarse; se publica sin la guarda"
         PUBLISH_AUTHOR="$AUTHOR" bash scripts/publish-data.sh "$MESSAGE"
