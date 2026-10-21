@@ -1214,6 +1214,16 @@ sources:
     continue: true
     data: [es-climate-provinces.json]
     message: Lluvia y temperatura mensual por provincia de Espana (NASA POWER)
+  - id: eu-region-climate
+    name: Update monthly rainfall and temperature for regions of BE, AT, EL, IT and DE (NASA POWER)
+    cron: ['50 10 * * 2']
+    runner: node
+    script: scripts/update-eu-region-climate.mjs
+    timeout: 30
+    script_timeout: 25
+    continue: true
+    data: [eu-region-climate.json]
+    message: Lluvia y temperatura mensual por region de Belgica, Austria, Grecia, Italia y Alemania (NASA POWER)
   - id: es-jcyl-prices
     name: Update Castilla y Leon farm-gate prices by province (Junta de Castilla y Leon open data)
     cron: ['25 7 * * 3']

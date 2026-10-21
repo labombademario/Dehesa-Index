@@ -185,12 +185,29 @@
       });
     });
   }
+  /* Fertilizantes del estado: precios al por menor de USDA AMS (solo donde AMS publica un informe estatal) y, para los 50 estados, el gasto de las explotaciones en fertilizantes, cal y enmiendas (USDA ERS, Farm Income and Wealth Statistics; es gasto en dólares, no precio ni toneladas). */
+  var FERTX = {
+    es: { h: 'Gasto en fertilizantes', s: 'Lo que gastan las explotaciones del estado en fertilizantes, cal y enmiendas del suelo (USDA ERS, Farm Income and Wealth Statistics), millones de dólares corrientes. Es gasto, no precio ni cantidad. El último año puede ser una previsión de ERS. La cuota sobre los gastos de producción la calcula Dehesa Index.', yr: 'Año', sp: 'Gasto (M USD)', sh: 'Cuota de los gastos de producción', yy: 'Frente al año anterior', fc: 'previsión' },
+    en: { h: 'Fertilizer spending', s: 'What the state’s farms spend on fertilizer, lime and soil conditioners (USDA ERS, Farm Income and Wealth Statistics), million current dollars. It is spending, not price or quantity. The latest year may be an ERS forecast. The share of production expenses is calculated by Dehesa Index.', yr: 'Year', sp: 'Spending (USD M)', sh: 'Share of production expenses', yy: 'Vs previous year', fc: 'forecast' },
+    fr: { h: 'Dépenses en engrais', s: 'Ce que les exploitations de l’État dépensent en engrais, chaux et amendements (USDA ERS, Farm Income and Wealth Statistics), millions de dollars courants. Ce sont des dépenses, pas un prix ni une quantité. La dernière année peut être une prévision de l’ERS. La part des dépenses de production est calculée par Dehesa Index.', yr: 'Année', sp: 'Dépenses (M USD)', sh: 'Part des dépenses de production', yy: 'Par rapport à l’année précédente', fc: 'prévision' },
+    it: { h: 'Spesa per fertilizzanti', s: 'Ciò che le aziende dello Stato spendono in fertilizzanti, calce e ammendanti (USDA ERS, Farm Income and Wealth Statistics), milioni di dollari correnti. È spesa, non prezzo né quantità. L’ultimo anno può essere una previsione dell’ERS. La quota sulle spese di produzione è calcolata da Dehesa Index.', yr: 'Anno', sp: 'Spesa (M USD)', sh: 'Quota delle spese di produzione', yy: 'Rispetto all’anno precedente', fc: 'previsione' }
+  };
   function usFert(x) {
-    return get('data/us-fertilizers.json').then(function (d) {
-      if (!d || !d.products) return null; var en = nameEn(C.US, x.r), t = tt(), rows = [];
-      d.products.forEach(function (p) { p.states.forEach(function (s) { if (s.state === en) rows.push([esc((LBL.fert[p.id] || [p.id, p.id, p.id, p.id])[li()]) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(s.spec) + '</span>', nf(s.avg, 0), s.yoy != null ? nf(s.yoy, 0) : '—', esc(day(s.date))]); }); });
-      if (!rows.length) return null;
-      return card(t.fert, t.fertSub + ' ' + t.usdt + '.', table([t.product, t.price, t.yoyl, t.date], rows, 520), cite('usda_ams_mars'));
+    return Promise.all([get('data/us-fertilizers.json'), get('data/us-states/' + x.r + '.json')]).then(function (a) {
+      var d = a[0], S = a[1] && a[1].series, en = nameEn(C.US, x.r), t = tt(), f = FERTX[lang()] || FERTX.es, rows = [], body = '', src = '';
+      if (d && d.products) d.products.forEach(function (p) { p.states.forEach(function (s) { if (s.state === en) rows.push([esc((LBL.fert[p.id] || [p.id, p.id, p.id, p.id])[li()]) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(s.spec) + '</span>', nf(s.avg, 0), s.yoy != null ? nf(s.yoy, 0) : '—', esc(day(s.date))]); }); });
+      if (rows.length) { body += table([t.product, t.price, t.yoyl, t.date], rows, 520); src = cite('usda_ams_mars'); }
+      var F = S && S.ers_fert_expense, E = S && S.ers_expenses;
+      if (F && F.points && F.points.length > 1) {
+        var pts = F.points.slice(-6).reverse(), ex = {}; ((E && E.points) || []).forEach(function (p) { ex[p[0]] = p[1]; });
+        var prev = {}; F.points.forEach(function (p) { prev[p[0]] = p[1]; });
+        var last = F.points[F.points.length - 1][0], now = new Date().getFullYear();
+        var fr = pts.map(function (p) { var v = p[1], b = prev[String(+p[0] - 1)], e = ex[p[0]]; return [esc(p[0]) + (+p[0] >= now ? ' <span style="color:var(--text-faint);font-size:12px">(' + esc(f.fc) + ')</span>' : ''), nf(v / 1e3, v >= 1e5 ? 0 : 1), e ? nf(v / e * 100, 1) + ' %' : '—', b ? esc(pct((v / b - 1) * 100)) : '—']; });
+        body += (rows.length ? '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(f.h) + '</h3><p class="di-movers-hint" style="margin:0 0 6px">' + esc(f.s) + '</p>' : '') + table([f.yr, f.sp, f.sh, f.yy], fr, 480);
+        src += ' ' + cite('usda_ers', String(last));
+      }
+      if (!body) return null;
+      return card(t.fert, rows.length ? t.fertSub + ' ' + t.usdt + '.' : f.s, body, src);
     });
   }
   function usTax(x) {
@@ -708,7 +725,7 @@
     /* Orden unico en todos los paises: resumen, precios y mercado, costes, produccion (cuentas, cultivos, ganado, explotaciones), PAC y seguros, clima y comercio. Estable: dentro de cada grupo se respeta el orden de cada pais. */
     var RANK = { macro: 0, usprices: 10, prices: 10, bids: 11, local: 12, deprices: 13, mb: 14, fert: 20, fuel: 21, usfuel: 21, costs: 22, tax: 23, usland: 24, deland: 24,
       eaa: 30, recan: 31, inc: 32, rec: 33, usincome: 34, usrecv: 35, crops: 40, cacrops: 40, ercrops: 40, escrops: 40, vig: 80, cere: 41, deprod: 41, nlcrops: 41, usstocks: 42,
-      cattle: 50, lvst: 50, erlive: 50, eslv: 51, essl: 52, esmilk: 53, usslaughter: 54, usdairy: 55, delive: 56, erfarms: 60, census: 62, uscensus: 61, usarc: 70, ins: 71, insca: 71, drought: 80, clim: 81, auex: 90 };
+      cattle: 50, lvst: 50, erlive: 50, eslv: 51, essl: 52, esmilk: 53, usslaughter: 54, usdairy: 55, delive: 56, erfarms: 60, census: 62, uscensus: 61, usarc: 70, ins: 71, insca: 71, drought: 80, eudr: 80, clim: 81, auex: 90 };
     Object.keys(MODS).forEach(function (c) { var L = MODS[c].map(function (m, i) { return [m, i, RANK[m[0]] == null ? 65 : RANK[m[0]]]; }); L.sort(function (a, b) { return a[2] - b[2] || a[1] - b[1]; }); MODS[c] = L.map(function (e) { return e[0]; }); });
   })();
   /* ---------- mapa y página ---------- */

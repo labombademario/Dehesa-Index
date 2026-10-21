@@ -150,6 +150,22 @@ def es_climate_provinces(doc, errs, warns, stats):
     if len(ids) < 40: errs.append("solo %d provincias" % len(ids))
     stats["provinces"] = len(ids)
 
+def eu_region_climate(doc, errs, warns, stats):
+    n = 0
+    for cc, regs in doc["countries"].items():
+        for rid, l in regs.items():
+            n += 1; k = "%s/%s" % (cc, rid)
+            ps = [m["period"] for m in l["months"]]
+            _asc(ps, k, errs)
+            if ps and ps[-1] > doc["lastPeriod"]: errs.append("%s: ultimo mes %s posterior a lastPeriod %s" % (k, ps[-1], doc["lastPeriod"]))
+            for m in l["months"]:
+                if not -40 <= m["tempC"] <= 50: errs.append("%s %s: temperatura %s fuera de rango" % (k, m["period"], m["tempC"])); break
+                if not 0 <= m["precipMm"] <= 1500: errs.append("%s %s: precipitacion %s fuera de rango" % (k, m["period"], m["precipMm"])); break
+                if abs(round(m["tempC"] - m["tempBaselineC"], 1) - m["tempAnomalyC"]) > 0.11: errs.append("%s %s: anomalia termica no casa" % (k, m["period"])); break
+                if m["precipBaselineMm"] > 0 and abs(round(100 * (m["precipMm"] / m["precipBaselineMm"] - 1), 1) - m["precipAnomalyPct"]) > 0.6: errs.append("%s %s: anomalia de lluvia no casa" % (k, m["period"])); break
+    if n < 55: errs.append("solo %d regiones" % n)
+    stats["regions"] = n
+
 def es_jcyl_prices(doc, errs, warns, stats):
     ids = set(); n = 0
     for p in doc["products"]:
