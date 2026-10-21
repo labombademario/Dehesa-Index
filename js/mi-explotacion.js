@@ -85,6 +85,8 @@
     lkSame: ['Sin dato nuevo desde que fijaste tu importe (referencia de {0}).', 'No new data since you set your figure (reference for {0}).', 'Pas de nouvelle donnée depuis que vous avez fixé votre montant (référence du {0}).', 'Nessun dato nuovo da quando hai fissato il tuo importo (riferimento del {0}).'],
     lkScen: ['Escenario: si tu coste se moviera como la referencia, pasaría de {0} a {1} ({2}; referencia de {3} a {4}).', 'Scenario: if your cost moved like the reference, it would go from {0} to {1} ({2}; reference from {3} to {4}).', 'Scénario : si votre coût évoluait comme la référence, il passerait de {0} à {1} ({2} ; référence du {3} au {4}).', 'Scenario: se il tuo costo si muovesse come il riferimento, passerebbe da {0} a {1} ({2}; riferimento dal {3} al {4}).'],
     lkNeedCost: ['Escribe tu importe para ver el escenario.', 'Enter your figure to see the scenario.', 'Saisissez votre montant pour voir le scénario.', 'Inserisci il tuo importo per vedere lo scenario.'],
+    lkFail: ['No se pudo cargar el monitor de insumos: tu vínculo se conserva, pero ahora no se puede actualizar.', 'The input monitor could not be loaded: your link is kept, but it cannot be updated right now.', 'Le moniteur des intrants n’a pas pu être chargé : votre lien est conservé, mais il ne peut pas être mis à jour pour l’instant.', 'Impossibile caricare il monitor dei fattori produttivi: il tuo collegamento resta, ma ora non si può aggiornare.'],
+    lkRetry: ['Reintentar', 'Retry', 'Réessayer', 'Riprova'],
     lkGone: ['Esta referencia ya no está en el monitor de insumos: el vínculo no se usa.', 'This reference is no longer in the input monitor: the link is not used.', 'Cette référence n’est plus dans le moniteur des intrants : le lien n’est pas utilisé.', 'Questo riferimento non è più nel monitor dei mezzi tecnici: il collegamento non viene usato.'],
     lkApply: ['Usar {0} como mi coste', 'Use {0} as my cost', 'Utiliser {0} comme mon coût', 'Usa {0} come mio costo'],
     lkUndo: ['Deshacer', 'Undo', 'Annuler', 'Annulla'],
@@ -226,6 +228,7 @@
     var c = line.c, l = lkOf(line, k);
     if (!canLink(line)) return k === 'fert' ? '<p class="pt-src" style="margin:4px 0 0">' + esc(t('lkEurOnly')) + '</p>' : '';
     if (!MON) return '';
+    if (MON.err) return l ? '<p class="pt-note" style="color:#8f5f12">' + esc(t('lkFail')) + ' <button type="button" class="pt-chip" data-act="monretry">' + esc(t('lkRetry')) + '</button></p>' : '';   /* fallo de red != referencia retirada */
     var opts = [['', t('lkNone')]]; LK[k].forEach(function (g) { (MON.gr[g] || []).forEach(function (it) { opts.push([it.id, itName(it)]); }); });
     if (opts.length < 2) return '';
     var h = '<label class="pt-sub" for="fx-' + line.id + '-lk-' + k + '" style="display:block;margin-top:4px">' + esc(t('lkFollow')) + '</label><select id="fx-' + line.id + '-lk-' + k + '" data-l="' + line.id + '" data-lk="' + k + '">' +
@@ -348,6 +351,7 @@
     if (act === 'rm' && line) { S.lines = S.lines.filter(function (x) { return x !== line; }); delete S.seen[line.id]; delete REF[line.id]; save(); shell(); return; }
     if (act === 'forget') { wipe(); S.remember = false; shell(); return; }
     if (act === 'seen') { S.lines.forEach(function (ln) { var r = REF[ln.id]; if (ln.c.pSrc === 'dehesa' && r && r.state === 'ok') S.seen[ln.id] = snap(ln); }); S.justSeen = true; save(); drawAll(); S.justSeen = false; return; }
+    if (act === 'monretry') { MON = null; MONP = null; needMon(); drawAll(); return; }
     if (act === 'lkapply' && line) {
       var k = el.getAttribute('data-k'), x = scen(line, k); if (!x || x.now === null) return;
       line.undo = { k: k, v: line.c.costs[k], lk: JSON.parse(JSON.stringify(x.l)) }; line.c.costs[k] = String(r2(x.now)); rebase(line, k); save(); shell(); return;

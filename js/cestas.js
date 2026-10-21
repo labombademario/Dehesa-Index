@@ -8,7 +8,7 @@
       sent: 'En una frase: esta cesta marca {a} frente al año base {y} y {b} frente a hace un año.', sentA: 'En una frase: esta cesta marca {a} frente al año base {y}.',
       title: 'Cestas de precios', h1: 'Cestas de precios',
       sub: 'Índices por categoría (cereales, pienso, lácteos) que resumen cómo se han movido varios precios a la vez. Base 100, pesos iguales y metodología publicada. Cada serie que entra lleva su fuente y su licencia.',
-      loading: 'Cargando…', fail: 'No se pudieron cargar las cestas. Vuelve a intentarlo en unos minutos.', basket: 'Cesta',
+      loading: 'Cargando…', fail: 'No se pudieron cargar las cestas. Vuelve a intentarlo en unos minutos.', retry: 'Reintentar', basket: 'Cesta',
       last: 'Último mes', mom: 'Frente al mes anterior', yoy: 'Frente a hace un año', base: 'Año base (=100)', range: 'Desde', rows: 'meses',
       mT: 'Qué series entran', mCols: ['Serie', 'Peso', 'Unidad', 'Fuente', 'Licencia', 'Uso comercial'], v: { apto: 'Apto', condiciones: 'Con condiciones' },
       meT: 'Metodología', dT: 'Descargar', dCsv: 'CSV de la cesta', dJson: 'JSON de la cesta', dAll: 'Catálogo de cestas (JSON)',
@@ -20,7 +20,7 @@
       sent: 'In one line: this basket stands at {a} against the base year {y} and at {b} against a year ago.', sentA: 'In one line: this basket stands at {a} against the base year {y}.',
       title: 'Price baskets', h1: 'Price baskets',
       sub: 'Category indices (cereals, feed, dairy) that summarise how several prices moved together. Base 100, equal weights and published methodology. Every series included carries its source and licence.',
-      loading: 'Loading…', fail: 'Could not load the baskets. Please try again in a few minutes.', basket: 'Basket',
+      loading: 'Loading…', fail: 'Could not load the baskets. Please try again in a few minutes.', retry: 'Retry', basket: 'Basket',
       last: 'Latest month', mom: 'Against the previous month', yoy: 'Against a year ago', base: 'Base year (=100)', range: 'From', rows: 'months',
       mT: 'Which series are included', mCols: ['Series', 'Weight', 'Unit', 'Source', 'Licence', 'Commercial use'], v: { apto: 'Fit', condiciones: 'With conditions' },
       meT: 'Methodology', dT: 'Download', dCsv: 'Basket CSV', dJson: 'Basket JSON', dAll: 'Basket catalogue (JSON)',
@@ -32,7 +32,7 @@
       sent: 'En une phrase : ce panier marque {a} par rapport à l’année de base {y} et {b} par rapport à il y a un an.', sentA: 'En une phrase : ce panier marque {a} par rapport à l’année de base {y}.',
       title: 'Paniers de prix', h1: 'Paniers de prix',
       sub: 'Indices par catégorie (céréales, aliments du bétail, produits laitiers) qui résument l’évolution de plusieurs prix à la fois. Base 100, poids égaux et méthodologie publiée. Chaque série incluse porte sa source et sa licence.',
-      loading: 'Chargement…', fail: 'Impossible de charger les paniers. Réessayez dans quelques minutes.', basket: 'Panier',
+      loading: 'Chargement…', fail: 'Impossible de charger les paniers. Réessayez dans quelques minutes.', retry: 'Réessayer', basket: 'Panier',
       last: 'Dernier mois', mom: 'Par rapport au mois précédent', yoy: 'Par rapport à il y a un an', base: 'Année de base (=100)', range: 'Depuis', rows: 'mois',
       mT: 'Quelles séries entrent', mCols: ['Série', 'Poids', 'Unité', 'Source', 'Licence', 'Usage commercial'], v: { apto: 'Apte', condiciones: 'Sous conditions' },
       meT: 'Méthodologie', dT: 'Télécharger', dCsv: 'CSV du panier', dJson: 'JSON du panier', dAll: 'Catalogue des paniers (JSON)',
@@ -44,7 +44,7 @@
       sent: 'In una frase: questo paniere segna {a} rispetto all’anno base {y} e {b} rispetto a un anno fa.', sentA: 'In una frase: questo paniere segna {a} rispetto all’anno base {y}.',
       title: 'Panieri di prezzi', h1: 'Panieri di prezzi',
       sub: 'Indici per categoria (cereali, mangimi, latticini) che riassumono come si sono mossi più prezzi insieme. Base 100, pesi uguali e metodologia pubblicata. Ogni serie inclusa riporta fonte e licenza.',
-      loading: 'Caricamento…', fail: 'Impossibile caricare i panieri. Riprova tra qualche minuto.', basket: 'Paniere',
+      loading: 'Caricamento…', fail: 'Impossibile caricare i panieri. Riprova tra qualche minuto.', retry: 'Riprova', basket: 'Paniere',
       last: 'Ultimo mese', mom: 'Rispetto al mese precedente', yoy: 'Rispetto a un anno fa', base: 'Anno base (=100)', range: 'Da', rows: 'mesi',
       mT: 'Quali serie entrano', mCols: ['Serie', 'Peso', 'Unità', 'Fonte', 'Licenza', 'Uso commerciale'], v: { apto: 'Idoneo', condiciones: 'Con condizioni' },
       meT: 'Metodologia', dT: 'Scarica', dCsv: 'CSV del paniere', dJson: 'JSON del paniere', dAll: 'Catalogo dei panieri (JSON)',
@@ -74,7 +74,7 @@
   }
   function load(id) {
     if (DOC[id]) return; DOC[id] = 'loading';
-    fetch(S.sitePath('data/indices/' + id + '.json')).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (d) { DOC[id] = d; }).catch(function () { delete DOC[id]; FAILED = true; }).then(render);
+    fetch(S.sitePath('data/indices/' + id + '.json')).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (d) { DOC[id] = d; }).catch(function () { DOC[id] = 'failed'; }).then(render);   /* antes se borraba y render() la volvia a pedir: bucle de peticiones con la red caida */
   }
   function csvHref(w, b) {
     var rows = [w.csvHead].concat(b.points.map(function (p) { return p[0] + ';' + p[1]; }), ['', nm(b.name) + ';' + b.attribution]);
@@ -88,7 +88,8 @@
     if (!SEL || !IDX.baskets.some(function (b) { return b.id === SEL; })) SEL = IDX.baskets[0].id;
     load(SEL); var b = DOC[SEL];
     var h = '<div class="ce-chips" role="group" aria-label="' + esc(w.basket) + '">' + IDX.baskets.map(function (x) { return '<button type="button" class="ce-chip" data-c="' + esc(x.id) + '" aria-pressed="' + (x.id === SEL ? 'true' : 'false') + '">' + esc(nm(x.name)) + '</button>'; }).join('') + '</div>';
-    if (!b || b === 'loading') root.innerHTML = h + '<p class="di-movers-hint">' + esc(FAILED ? w.fail : w.loading) + '</p>';
+    if (b === 'failed') root.innerHTML = h + '<p class="di-movers-hint" style="color:#8f5f12">' + esc(w.fail) + ' <button type="button" class="di-btn-sec" id="ce-retry">' + esc(w.retry) + '</button></p>';
+    else if (!b || b === 'loading') root.innerHTML = h + '<p class="di-movers-hint">' + esc(w.loading) + '</p>';
     else {
       var last = b.points[b.points.length - 1];
       var dv = last[1] - 100, sa = (dv > 0 ? '+' : '') + nf(dv, 1) + ' %';
@@ -103,6 +104,7 @@
       h += '<section class="di-card di-emp-cta" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaB) + '</a></section>';
       root.innerHTML = h;
     }
+    var rt = document.getElementById('ce-retry'); if (rt) rt.onclick = function () { delete DOC[SEL]; render(); };
     Array.prototype.forEach.call(root.querySelectorAll('.ce-chip'), function (c) { c.onclick = function () { SEL = c.getAttribute('data-c'); try { history.replaceState(null, '', '?c=' + SEL); } catch (x) {} render(); }; });
   }
   var qp = /[?&]c=([^&]+)/.exec(location.search); if (qp) SEL = decodeURIComponent(qp[1]);

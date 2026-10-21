@@ -46,6 +46,17 @@ ok('vincular no muestra escenario', /Sin dato nuevo/.test(await page.textContent
 // 5) linea en USD: sin selector
 await open(line(undefined, 'USD'));
 ok('línea en USD: sin selector de referencia', (await page.$('#fx-l1-lk-fert')) === null && /solo se pueden vincular/.test(await page.textContent('#fx-sec-l1')));
+// 6) monitor caido: se dice que es un fallo (no «referencia retirada»), el vinculo se conserva y Reintentar lo recupera
+await page.route('**/data/views/input-monitor.json', r => r.abort());
+await page.goto(BASE + '/mi-explotacion.html'); await page.evaluate(s => { localStorage.setItem('di-farm-v1', s); localStorage.setItem('dehesaIndexLang', 'es'); }, line({ fert: { id: urea.id, v: urea.value / 1.25, period: '2020-01', at: '2020-02-01' } })); await page.reload();
+await page.waitForSelector('[data-act="monretry"]', { timeout: 15000 }).catch(() => null); await page.locator('#fx-sec-l1 details').first().evaluate(d => { d.open = true; }).catch(() => null);
+const t6 = await page.textContent('#fx-sec-l1');
+ok('monitor caido: aviso de fallo con Reintentar', /No se pudo cargar el monitor de insumos/.test(t6 || '') && !!(await page.$('[data-act="monretry"]')));
+ok('monitor caido: no dice que la referencia ya no existe', !/ya no está en el monitor/.test(t6 || ''));
+ok('monitor caido: el vinculo se conserva guardado', JSON.parse(await page.evaluate(() => localStorage.getItem('di-farm-v1'))).lines[0].lk.fert.id === urea.id);
+await page.unroute('**/data/views/input-monitor.json'); await page.click('[data-act="monretry"]'); await page.waitForSelector('#fx-l1-lk-fert', { timeout: 15000 }).catch(() => null);
+await page.locator('#fx-sec-l1 details').first().evaluate(d => { d.open = true; }).catch(() => null);
+ok('tras reintentar vuelve el escenario del vinculo', /Escenario/.test((await page.textContent('#fx-lk-l1-fert').catch(() => '')) || ''));
 ok('sin errores de JavaScript', !errs.length);
 if (errs.length) console.log(errs.join('\n'));
 await browser.close();

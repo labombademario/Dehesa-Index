@@ -8,7 +8,7 @@
     es: {
       title: 'Informe de negociación', h1: 'Informe de negociación de un producto',
       sub: 'Elige un producto y obtén en un clic su precio actual, cómo ha cambiado, cómo se compara con otros mercados y con los últimos cinco años, y el clima de las zonas productoras. Cada cifra lleva su fuente y licencia. Se imprime o se guarda en PDF.',
-      loading: 'Cargando…', fail: 'No se pudieron cargar los datos. Vuelve a intentarlo en unos minutos.', product: 'Producto', coop: 'Tu nombre o empresa (opcional, solo en el informe)', print: 'Imprimir o guardar en PDF', copy: 'Copiar enlace', copied: 'Enlace copiado',
+      loading: 'Cargando…', fail: 'No se pudieron cargar los datos. Vuelve a intentarlo en unos minutos.', partFail: '{n} de {t} series de este producto no se pudieron cargar: el informe sale sin ellas y lo dice. No es que falten datos.', retry: 'Reintentar', product: 'Producto', coop: 'Tu nombre o empresa (opcional, solo en el informe)', print: 'Imprimir o guardar en PDF', copy: 'Copiar enlace', copied: 'Enlace copiado',
       rep: 'Informe de negociación', prepared: 'Preparado el', dataAsOf: 'Datos a fecha de', by: 'Preparado por',
       kT: 'Precio y variación por mercado', cols: ['Mercado', 'Último precio', 'Semana o periodo anterior', 'Hace un año', 'Rango 12 meses', 'Frente a 5 años'],
       pos: 'más caro que el {x} % de los datos', prev: 'periodo anterior', na: 'sin dato', range: '{a} – {b}',
@@ -24,7 +24,7 @@
     en: {
       title: 'Negotiation report', h1: 'Negotiation report for one product',
       sub: 'Pick a product and get, in one click, its current price, how it has changed, how it compares with other markets and with the last five years, and the weather in the growing areas. Every figure carries its source and licence. Print it or save it as a PDF.',
-      loading: 'Loading…', fail: 'Could not load the data. Please try again in a few minutes.', product: 'Product', coop: 'Your name or company (optional, report only)', print: 'Print or save as PDF', copy: 'Copy link', copied: 'Link copied',
+      loading: 'Loading…', fail: 'Could not load the data. Please try again in a few minutes.', partFail: '{n} of {t} series for this product could not be loaded: the report leaves them out and says so. Data is not missing.', retry: 'Retry', product: 'Product', coop: 'Your name or company (optional, report only)', print: 'Print or save as PDF', copy: 'Copy link', copied: 'Link copied',
       rep: 'Negotiation report', prepared: 'Prepared on', dataAsOf: 'Data as of', by: 'Prepared by',
       kT: 'Price and change by market', cols: ['Market', 'Latest price', 'Previous period', 'A year ago', '12-month range', 'Against 5 years'],
       pos: 'higher than {x}% of the data', prev: 'previous period', na: 'no data', range: '{a} – {b}',
@@ -40,7 +40,7 @@
     fr: {
       title: 'Rapport de négociation', h1: 'Rapport de négociation pour un produit',
       sub: 'Choisissez un produit et obtenez en un clic son prix actuel, son évolution, sa comparaison avec d’autres marchés et avec les cinq dernières années, et la météo des zones de production. Chaque chiffre porte sa source et sa licence. À imprimer ou à enregistrer en PDF.',
-      loading: 'Chargement…', fail: 'Impossible de charger les données. Réessayez dans quelques minutes.', product: 'Produit', coop: 'Votre nom ou entreprise (facultatif, rapport seulement)', print: 'Imprimer ou enregistrer en PDF', copy: 'Copier le lien', copied: 'Lien copié',
+      loading: 'Chargement…', fail: 'Impossible de charger les données. Réessayez dans quelques minutes.', partFail: '{n} séries sur {t} de ce produit n’ont pas pu être chargées : le rapport sort sans elles et le signale. Ce n’est pas un manque de données.', retry: 'Réessayer', product: 'Produit', coop: 'Votre nom ou entreprise (facultatif, rapport seulement)', print: 'Imprimer ou enregistrer en PDF', copy: 'Copier le lien', copied: 'Lien copié',
       rep: 'Rapport de négociation', prepared: 'Préparé le', dataAsOf: 'Données au', by: 'Préparé par',
       kT: 'Prix et évolution par marché', cols: ['Marché', 'Dernier prix', 'Période précédente', 'Il y a un an', 'Fourchette 12 mois', 'Face à 5 ans'],
       pos: 'plus cher que {x} % des données', prev: 'période précédente', na: 'pas de donnée', range: '{a} – {b}',
@@ -56,7 +56,7 @@
     it: {
       title: 'Rapporto di negoziazione', h1: 'Rapporto di negoziazione per un prodotto',
       sub: 'Scegli un prodotto e ottieni in un clic il prezzo attuale, come è cambiato, il confronto con altri mercati e con gli ultimi cinque anni, e il meteo delle zone produttive. Ogni cifra riporta fonte e licenza. Si stampa o si salva in PDF.',
-      loading: 'Caricamento…', fail: 'Impossibile caricare i dati. Riprova tra qualche minuto.', product: 'Prodotto', coop: 'Il tuo nome o azienda (facoltativo, solo nel rapporto)', print: 'Stampa o salva in PDF', copy: 'Copia il link', copied: 'Link copiato',
+      loading: 'Caricamento…', fail: 'Impossibile caricare i dati. Riprova tra qualche minuto.', partFail: '{n} serie su {t} di questo prodotto non si sono potute caricare: il rapporto esce senza e lo dice. Non mancano i dati.', retry: 'Riprova', product: 'Prodotto', coop: 'Il tuo nome o azienda (facoltativo, solo nel rapporto)', print: 'Stampa o salva in PDF', copy: 'Copia il link', copied: 'Link copiato',
       rep: 'Rapporto di negoziazione', prepared: 'Preparato il', dataAsOf: 'Dati al', by: 'Preparato da',
       kT: 'Prezzo e variazione per mercato', cols: ['Mercato', 'Ultimo prezzo', 'Periodo precedente', 'Un anno fa', 'Intervallo 12 mesi', 'Rispetto a 5 anni'],
       pos: 'più caro del {x}% dei dati', prev: 'periodo precedente', na: 'nessun dato', range: '{a} – {b}',
@@ -151,13 +151,16 @@
     if (!IDX || !LAT) { root.innerHTML = '<p class="di-movers-hint">' + esc(w.loading) + '</p>'; return; }
     var prods = products(); if (!PROD || !prods.some(function (p) { return p.k === PROD; })) PROD = prods.some(function (p) { return p.k === 'trigo'; }) ? 'trigo' : prods[0].k;
     need();
-    var ss = IDX.series.filter(function (s) { return s.product === PROD; }), data = ss.map(function (s) { return SER[s.id]; });
+    var all = IDX.series.filter(function (s) { return s.product === PROD; }), bad = all.filter(function (s) { return BAD[s.id]; }).length;
+    var ss = all.filter(function (s) { return !BAD[s.id]; }), data = ss.map(function (s) { return SER[s.id]; });   /* una serie que no carga sale del informe, pero se dice (antes se quedaba en «Cargando…» para siempre) */
     var ready = data.every(function (d) { return d && d !== 'loading'; });
     var h = '<div class="no-print" style="display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-bottom:14px"><label style="font-size:13px">' + esc(w.product) + '<br><select id="nb-p" class="di-compare-select" style="width:auto;min-width:200px">' +
       prods.map(function (p) { return '<option value="' + esc(p.k) + '"' + (p.k === PROD ? ' selected' : '') + '>' + esc(p.n) + '</option>'; }).join('') + '</select></label>' +
       '<label style="font-size:13px">' + esc(w.coop) + '<br><input id="nb-c" class="di-compare-select" style="min-width:240px;width:auto" value="' + esc(COOP) + '"></label>' +
       '<button id="nb-print" class="di-btn-gold-solid" type="button">' + esc(w.print) + '</button><button id="nb-copy" class="di-btn-sec" type="button">' + esc(w.copy) + '</button></div>';
+    if (bad) h += '<p class="di-movers-hint" id="nb-part" style="color:#8f5f12">' + esc(fill(w.partFail, { n: bad, t: all.length })) + ' <button type="button" class="di-btn-sec no-print" id="nb-retry">' + esc(w.retry) + '</button></p>';
     if (!ready) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(w.loading) + '</p>'; bind(); return; }
+    if (!data.length) { root.innerHTML = h; bind(); return; }
     var rows = [], pitch = [], cmp = [], ch = '', src = [], asof = '';
     var L = {}; LAT.series.forEach(function (x) { L[x.id] = x; });
     data.forEach(function (s) {
@@ -197,6 +200,7 @@
   }
   function bind() {
     var w = t(), p = document.getElementById('nb-p'), c = document.getElementById('nb-c');
+    var rt = document.getElementById('nb-retry'); if (rt) rt.onclick = function () { Object.keys(BAD).forEach(function (k) { delete BAD[k]; }); FAILED = false; need(); render(); };
     if (p) p.onchange = function (e) { PROD = e.target.value; try { history.replaceState(null, '', '?p=' + encodeURIComponent(PROD)); } catch (x) {} render(); };
     if (c) c.onchange = function (e) { COOP = e.target.value; render(); };
     var pr = document.getElementById('nb-print'); if (pr) pr.onclick = function () { window.print(); };

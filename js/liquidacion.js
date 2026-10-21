@@ -18,7 +18,7 @@
       sold: 'Volumen vendido', yours: 'Vuestro precio medio', weighted: 'ponderado por toneladas', refAt: 'Referencia en las mismas fechas', diff: 'Diferencia', total: 'Equivale en total a',
       above: 'por encima', below: 'por debajo', equal: 'igual que', sent: 'En la campaña {c}vendimos {q} t a un precio medio de {p}. En las mismas fechas y con los mismos volúmenes, {r} marcaba {rv}: {d} {dir} de la referencia ({dp}).',
       sentEq: 'En la campaña {c}vendimos {q} t a un precio medio de {p}, el mismo que marcaba {r} en las mismas fechas y con los mismos volúmenes.',
-      range: 'En ese periodo la referencia osciló entre {lo} y {hi}; su media simple fue {avg}.', missing: '{n} venta(s) sin dato de referencia en los 14 días anteriores: no entran en la comparación con {r}.',
+      range: 'En ese periodo la referencia osciló entre {lo} y {hi}; su media simple fue {avg}.', missing: '{n} venta(s) sin dato de referencia en los 14 días anteriores: no entran en la comparación con {r}.', failRef: 'No se pudo cargar la referencia {r}: no es que falten datos. Tus ventas siguen aquí.', retry: 'Reintentar',
       chartT: 'Vuestras ventas frente a la referencia', dotNote: 'Cada punto es una venta; su tamaño, el volumen.', yourSales: 'Vuestras ventas',
       tCols: ['Fecha', 'Toneladas', 'Vuestro precio'], refDate: 'dato del', print: 'Imprimir o guardar en PDF', csv: 'Descargar resultado (CSV)',
       method: 'Cómo se calcula: para cada venta se toma la última cotización publicada de la lonja en la fecha de la venta o en los 14 días anteriores. El precio de referencia es la media de esas cotizaciones ponderada por vuestras toneladas, igual que vuestro precio medio. Así se compara lo mismo: mismas fechas, mismos volúmenes. Las cotizaciones son las que publica la Comisión Europea (Agri-food Data Portal) para cada lonja; pueden diferir en calidad, portes y condiciones de vuestras ventas.',
@@ -38,7 +38,7 @@
       sold: 'Volume sold', yours: 'Your average price', weighted: 'weighted by tonnes', refAt: 'Reference on the same dates', diff: 'Difference', total: 'Equivalent in total to',
       above: 'above', below: 'below', equal: 'equal to', sent: 'In the {c}season we sold {q} t at an average price of {p}. On the same dates and with the same volumes, {r} quoted {rv}: {d} {dir} the reference ({dp}).',
       sentEq: 'In the {c}season we sold {q} t at an average price of {p}, the same as {r} quoted on the same dates and with the same volumes.',
-      range: 'Over that period the reference ranged from {lo} to {hi}; its simple average was {avg}.', missing: '{n} sale(s) without a reference quotation in the previous 14 days: left out of the comparison with {r}.',
+      range: 'Over that period the reference ranged from {lo} to {hi}; its simple average was {avg}.', missing: '{n} sale(s) without a reference quotation in the previous 14 days: left out of the comparison with {r}.', failRef: 'The reference {r} could not be loaded: data is not missing. Your sales are still here.', retry: 'Retry',
       chartT: 'Your sales against the reference', dotNote: 'Each dot is a sale; its size is the volume.', yourSales: 'Your sales',
       tCols: ['Date', 'Tonnes', 'Your price'], refDate: 'data of', print: 'Print or save as PDF', csv: 'Download result (CSV)',
       method: 'How it is computed: for each sale we take the latest quotation published for the market on the sale date or in the previous 14 days. The reference price is the average of those quotations weighted by your tonnes, like your average price. So like is compared with like: same dates, same volumes. Quotations are those published by the European Commission (Agri-food Data Portal) for each market; they may differ from your sales in quality, freight and terms.',
@@ -58,7 +58,7 @@
       sold: 'Volume vendu', yours: 'Votre prix moyen', weighted: 'pondéré par les tonnes', refAt: 'Référence aux mêmes dates', diff: 'Écart', total: 'Soit au total',
       above: 'au-dessus', below: 'en dessous', equal: 'égal à', sent: 'Pendant la campagne {c}nous avons vendu {q} t à un prix moyen de {p}. Aux mêmes dates et avec les mêmes volumes, {r} cotait {rv} : {d} {dir} de la référence ({dp}).',
       sentEq: 'Pendant la campagne {c}nous avons vendu {q} t à un prix moyen de {p}, le même que la cotation de {r} aux mêmes dates et avec les mêmes volumes.',
-      range: 'Sur cette période, la référence a varié entre {lo} et {hi} ; sa moyenne simple a été de {avg}.', missing: '{n} vente(s) sans cotation de référence dans les 14 jours précédents : exclue(s) de la comparaison avec {r}.',
+      range: 'Sur cette période, la référence a varié entre {lo} et {hi} ; sa moyenne simple a été de {avg}.', missing: '{n} vente(s) sans cotation de référence dans les 14 jours précédents : exclue(s) de la comparaison avec {r}.', failRef: 'La référence {r} n’a pas pu être chargée : ce n’est pas un manque de données. Vos ventes sont toujours là.', retry: 'Réessayer',
       chartT: 'Vos ventes face à la référence', dotNote: 'Chaque point est une vente ; sa taille, le volume.', yourSales: 'Vos ventes',
       tCols: ['Date', 'Tonnes', 'Votre prix'], refDate: 'donnée du', print: 'Imprimer ou enregistrer en PDF', csv: 'Télécharger le résultat (CSV)',
       method: 'Calcul : pour chaque vente, on prend la dernière cotation publiée pour le marché à la date de la vente ou dans les 14 jours précédents. Le prix de référence est la moyenne de ces cotations pondérée par vos tonnes, comme votre prix moyen. On compare donc la même chose : mêmes dates, mêmes volumes. Les cotations sont celles publiées par la Commission européenne (Agri-food Data Portal) ; elles peuvent différer de vos ventes en qualité, transport et conditions.',
@@ -78,7 +78,7 @@
       sold: 'Volume venduto', yours: 'Il vostro prezzo medio', weighted: 'ponderato per tonnellate', refAt: 'Riferimento nelle stesse date', diff: 'Differenza', total: 'Equivale in totale a',
       above: 'sopra', below: 'sotto', equal: 'uguale a', sent: 'Nella campagna {c}abbiamo venduto {q} t a un prezzo medio di {p}. Nelle stesse date e con gli stessi volumi, {r} quotava {rv}: {d} {dir} il riferimento ({dp}).',
       sentEq: 'Nella campagna {c}abbiamo venduto {q} t a un prezzo medio di {p}, lo stesso quotato da {r} nelle stesse date e con gli stessi volumi.',
-      range: 'In quel periodo il riferimento è oscillato tra {lo} e {hi}; la media semplice è stata {avg}.', missing: '{n} vendita/e senza quotazione di riferimento nei 14 giorni precedenti: escluse dal confronto con {r}.',
+      range: 'In quel periodo il riferimento è oscillato tra {lo} e {hi}; la media semplice è stata {avg}.', missing: '{n} vendita/e senza quotazione di riferimento nei 14 giorni precedenti: escluse dal confronto con {r}.', failRef: 'Impossibile caricare il riferimento {r}: non mancano i dati. Le tue vendite sono ancora qui.', retry: 'Riprova',
       chartT: 'Le vostre vendite rispetto al riferimento', dotNote: 'Ogni punto è una vendita; la dimensione è il volume.', yourSales: 'Le vostre vendite',
       tCols: ['Data', 'Tonnellate', 'Il vostro prezzo'], refDate: 'dato del', print: 'Stampa o salva in PDF', csv: 'Scarica il risultato (CSV)',
       method: 'Come si calcola: per ogni vendita si prende l’ultima quotazione pubblicata per il mercato alla data della vendita o nei 14 giorni precedenti. Il prezzo di riferimento è la media di quelle quotazioni ponderata per le vostre tonnellate, come il vostro prezzo medio. Così si confronta la stessa cosa: stesse date, stessi volumi. Le quotazioni sono quelle pubblicate dalla Commissione europea (Agri-food Data Portal); possono differire dalle vostre vendite per qualità, trasporto e condizioni.',
@@ -161,7 +161,7 @@
         var reg = (d.regions || []).filter(function (x) { return x.c === CC && (x.m || '') === (r.mRaw || ''); })[0];
         PTS[k] = reg ? reg.d.map(function (dd, i) { return [EPOCH + dd * DAY, reg.v[i]]; }).filter(function (p) { return p[1] != null; }) : [];
         render();
-      }).catch(function () { PTS[k] = []; render(); });
+      }).catch(function () { PTS[k] = 'failed'; render(); });   /* fallo de red != sin dato: se dice y se puede reintentar */
     });
   }
   function get(u) { return fetch(S.sitePath(u), { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }); }
@@ -179,6 +179,7 @@
     var res = { rows: rows, q: Q, p: PQ / Q, from: rows[0].d, to: rows[rows.length - 1].d, refs: [] };
     SEL.forEach(function (k, i) {
       var pts = PTS[k], r = REFS.filter(function (x) { return refKey(x) === k; })[0];
+      if (pts === 'failed') { res.refs.push({ k: k, r: r, failed: true, color: COLORS[i] }); return; }
       if (!r || !pts || pts === 'loading') { res.refs.push({ k: k, r: r, loading: true, color: COLORS[i] }); return; }
       var q = 0, rq = 0, pq = 0, miss = 0, per = [];
       rows.forEach(function (s) {
@@ -256,6 +257,7 @@
     h += '<div class="lq-cards"><div><span>' + esc(w.sold) + '</span><strong>' + esc(num(res.q, 0)) + ' t</strong><small>' + esc(fdate(res.from) + ' → ' + fdate(res.to)) + '</small></div><div><span>' + esc(w.yours) + '</span><strong>' + esc(num(res.p, 2)) + ' ' + esc(u) + '</strong><small>' + esc(w.weighted) + '</small></div></div>';
     var camp = CAMP ? CAMP + ' ' : '';
     res.refs.forEach(function (x) {
+      if (x.failed) { h += '<p class="lq-m" style="color:#8f5f12">' + esc(fill(w.failRef, { r: refShort(x.r) })) + ' <button type="button" class="di-btn-sec no-print" data-lqretry="' + esc(x.k) + '">' + esc(w.retry) + '</button></p>'; return; }
       if (x.loading) { h += '<p class="lq-m">' + esc(w.loadingRef) + '</p>'; return; }
       if (!x.q) { h += '<p class="lq-m">' + esc(fill(w.missing, { n: res.rows.length, r: refShort(x.r) })) + '</p>'; return; }
       var d = x.own - x.ref, dp = d / x.ref * 100, dir = Math.abs(d) < 0.005 ? 'eq' : d > 0 ? 'up' : 'down', col = dir === 'up' ? 'var(--positive)' : dir === 'down' ? 'var(--negative)' : 'var(--text-muted)';
@@ -293,6 +295,7 @@
     if ($('lq-p')) $('lq-p').onchange = function (e) { PROD = e.target.value; autoSel(); render(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-ref]'), function (cb) { cb.onchange = function () { var k = cb.getAttribute('data-ref'), i = SEL.indexOf(k); if (cb.checked && i < 0 && SEL.length < 3) SEL.push(k); if (!cb.checked && i > -1) SEL.splice(i, 1); ensurePts(); render(); }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-i]'), function (inp) { inp.onchange = function () { var r = ROWS[+inp.getAttribute('data-i')], f = inp.getAttribute('data-f'); r[f] = f === 'd' ? (inp.value || null) : pnum(inp.value); EXAMPLE = false; render(); }; });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-lqretry]'), function (b) { b.onclick = function () { delete PTS[b.getAttribute('data-lqretry')]; ensurePts(); render(); }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-del]'), function (b) { b.onclick = function () { ROWS.splice(+b.getAttribute('data-del'), 1); render(); }; });
     if ($('lq-add')) $('lq-add').onclick = function () { var last = ROWS[ROWS.length - 1]; ROWS.push({ d: null, q: null, p: null }); render(); var ins = root.querySelectorAll('[data-f="d"]'); if (ins.length) ins[ins.length - 1].focus(); void last; };
     if ($('lq-clr')) $('lq-clr').onclick = function () { ROWS = []; EXAMPLE = false; MSG = ''; render(); };
