@@ -31,18 +31,18 @@
       disclaimer: 'Cada nota cita datos y fechas reales, verificables en las fuentes enlazadas al pie. Cuando un dato concreto no está disponible (por ejemplo, un precio objetivo aún no publicado), se dice explícitamente en vez de estimarlo.',
       posts: [
         {
-          category: CAT.es.cereales, dateLabel: '22 may 2026 · 21 sep 2026',
+          category: CAT.es.cereales, date: '2026-09-28', dateLabel: '28 sep 2026',
           title: 'Por qué el trigo llega caro a esta campaña',
           para1: 'La cosecha de trigo de invierno de EE. UU. para 2026-27 se quedó en 1.048 millones de bushels — un 25% menos que el año anterior y la más pequeña desde 1965, según el USDA. La sequía golpeó con fuerza el oeste de Kansas, el este de Colorado y el Panhandle: en Kansas el rendimiento cayó a 37 bushels por acre, desde 51 en 2025, y la variedad más afectada (trigo duro rojo de invierno) bajó un 36%. El USDA proyecta que el precio medio en origen suba a 6,50 $/bushel en la campaña 2026-27, 1,50 $ más que el año anterior — aunque las exportaciones estadounidenses se prevén un 15% más bajas, porque el propio encarecimiento resta competitividad frente a otros exportadores.',
           para2: 'En el día a día, sin embargo, el mercado no sube en línea recta: el 18 de septiembre trigo, maíz y soja cerraron a la baja (trigo -1,45%, maíz -0,66%, soja -1,04%) después de que el USDA recortara la previsión de maíz en Kansas en 39 millones de bushels sin que China saliera a comprar para compensar — un recordatorio de que en cereales el fundamental de largo plazo (una cosecha corta) y el movimiento del día (falta de demanda puntual) pueden tirar en direcciones distintas.',
-          sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
+          sources: [{ label: 'Farm Progress (22 may 2026)', url: SRC.farmprogress }, { label: 'Rio Times (21 sep 2026)', url: SRC.riotimes }]
         },
         {
-          category: CAT.es.lacteos, dateLabel: '26 sep 2026',
+          category: CAT.es.lacteos, date: '2026-09-28', dateLabel: '28 sep 2026',
           title: 'España: los ganaderos piden subir el precio de la leche antes de octubre',
           para1: 'Unión de Uniones, una de las principales organizaciones agrarias españolas, ha pedido a los ganaderos de vacuno de leche que exijan una subida de precio al renovar sus contratos, con la mayoría de las renovaciones concentradas en los primeros días de octubre — el momento clave de negociación del año para el sector. La petición se apoya en la Ley de la Cadena Alimentaria, que prohíbe vender por debajo del coste de producción; la organización pide que el precio en origen cubra ese coste, que incluye desde el pienso hasta la energía y la mano de obra.',
           para2: 'La presión es mayor en Galicia, Asturias, Cantabria y Castilla y León, donde la ganadería de leche sostiene buena parte de la economía rural: cobrar por debajo de coste, explican, reduce el margen, frena la inversión y, a la larga, empuja al abandono de explotaciones. El artículo no da una cifra concreta de precio objetivo, y Dehesa Index tampoco tiene un dato de precio pagado verificado para esta fecha — así que aquí se recoge la petición, no una cifra de precio confirmada.',
-          sources: [{ label: 'Moncloa.com', url: SRC.moncloa }]
+          sources: [{ label: 'Moncloa.com (26 sep 2026)', url: SRC.moncloa }]
         }
       ]
     };
@@ -53,18 +53,18 @@
       disclaimer: 'Each note cites real, dated facts, verifiable at the sources linked below. When a specific figure isn’t available (a target price not yet published, say), that’s stated outright rather than estimated.',
       posts: [
         {
-          category: CAT.en.cereales, dateLabel: 'May 22, 2026 · Sep 21, 2026',
+          category: CAT.en.cereales, date: '2026-09-28', dateLabel: 'Sep 28, 2026',
           title: 'Why wheat is expensive this marketing year',
           para1: 'The U.S. winter wheat harvest for 2026-27 came in at 1.048 billion bushels — 25% below the previous year and the smallest since 1965, according to the USDA. Drought hit western Kansas, eastern Colorado and the Panhandle hard: Kansas yields fell to 37 bushels per acre, down from 51 in 2025, and the hardest-hit variety (hard red winter wheat) dropped 36%. The USDA projects the average farm price will rise to $6.50/bushel in 2026-27, up $1.50 from the year before — though U.S. exports are expected to fall 15%, since the higher price itself makes American wheat less competitive against other exporters.',
           para2: "Day to day, though, the market doesn't move in a straight line: on September 18, wheat, corn and soybeans all closed lower (wheat -1.45%, corn -0.66%, soybeans -1.04%) after the USDA cut its Kansas corn forecast by 39 million bushels with no fresh Chinese buying to offset it — a reminder that in grains, the long-run fundamental (a short crop) and the day's move (a lack of buyers) can pull in opposite directions.",
-          sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
+          sources: [{ label: 'Farm Progress (May 22, 2026)', url: SRC.farmprogress }, { label: 'Rio Times (Sep 21, 2026)', url: SRC.riotimes }]
         },
         {
-          category: CAT.en.lacteos, dateLabel: 'Sep 26, 2026',
+          category: CAT.en.lacteos, date: '2026-09-28', dateLabel: 'Sep 28, 2026',
           title: 'Spain: dairy farmers push for higher milk prices ahead of October',
           para1: "Unión de Uniones, one of Spain's main farming associations, has urged dairy cattle farmers to demand higher prices when renewing their contracts, most of which come up in the first days of October — the sector's key negotiating moment of the year. The request leans on Spain's Food Chain Law, which bans selling below production cost; the group is asking that the farm-gate price cover that cost, from feed to energy to labor.",
           para2: "The pressure is greatest in Galicia, Asturias, Cantabria and Castilla y León, where dairy farming underpins much of the rural economy: selling below cost, the group argues, squeezes margins, discourages investment and, over time, pushes farms to close. The article doesn't give a specific target price, and Dehesa Index doesn't have a verified paid price for this date either — so what's recorded here is the request itself, not a confirmed price figure.",
-          sources: [{ label: 'Moncloa.com', url: SRC.moncloa }]
+          sources: [{ label: 'Moncloa.com (Sep 26, 2026)', url: SRC.moncloa }]
         }
       ]
     };
@@ -75,18 +75,18 @@
       disclaimer: "Chaque note cite des faits réels et datés, vérifiables sur les sources indiquées ci-dessous. Quand un chiffre précis n'est pas disponible (un prix cible pas encore publié, par exemple), cela est dit explicitement plutôt qu'estimé.",
       posts: [
         {
-          category: CAT.fr.cereales, dateLabel: '22 mai 2026 · 21 sept. 2026',
+          category: CAT.fr.cereales, date: '2026-09-28', dateLabel: '28 sept. 2026',
           title: 'Pourquoi le blé coûte cher cette campagne',
           para1: "La récolte de blé d'hiver américaine 2026-27 s'est établie à 1,048 milliard de boisseaux — 25 % de moins que l'année précédente et la plus faible depuis 1965, selon l'USDA. La sécheresse a durement touché l'ouest du Kansas, l'est du Colorado et le Panhandle : au Kansas, le rendement est tombé à 37 boisseaux par acre, contre 51 en 2025, et la variété la plus touchée (blé roux d'hiver dur) a chuté de 36 %. L'USDA prévoit que le prix moyen à la production grimpe à 6,50 $/boisseau en 2026-27, soit 1,50 $ de plus que l'année précédente — même si les exportations américaines devraient reculer de 15 %, la hausse des prix rendant le blé américain moins compétitif face aux autres exportateurs.",
           para2: "Au jour le jour, pourtant, le marché ne monte pas en ligne droite : le 18 septembre, blé, maïs et soja ont tous clôturé en baisse (blé -1,45 %, maïs -0,66 %, soja -1,04 %) après que l'USDA a réduit sa prévision de maïs au Kansas de 39 millions de boisseaux, sans achats chinois pour compenser — un rappel que, sur les céréales, le fondamental de long terme (une récolte courte) et le mouvement du jour (un manque d'acheteurs) peuvent tirer en sens opposés.",
-          sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
+          sources: [{ label: 'Farm Progress (22 mai 2026)', url: SRC.farmprogress }, { label: 'Rio Times (21 sept. 2026)', url: SRC.riotimes }]
         },
         {
-          category: CAT.fr.lacteos, dateLabel: '26 sept. 2026',
+          category: CAT.fr.lacteos, date: '2026-09-28', dateLabel: '28 sept. 2026',
           title: 'Espagne : les éleveurs laitiers réclament une hausse du prix du lait avant octobre',
           para1: "Unión de Uniones, l'une des principales organisations agricoles espagnoles, a appelé les éleveurs laitiers à exiger une hausse de prix lors du renouvellement de leurs contrats, dont la plupart arrivent à échéance dans les premiers jours d'octobre — le moment de négociation clé de l'année pour la filière. La demande s'appuie sur la loi espagnole de la chaîne alimentaire, qui interdit de vendre en dessous du coût de production ; l'organisation demande que le prix départ ferme couvre ce coût, de l'alimentation animale à l'énergie en passant par la main-d'œuvre.",
           para2: "La pression est la plus forte en Galice, dans les Asturies, en Cantabrie et à Castille-et-León, où l'élevage laitier fait vivre une bonne partie de l'économie rurale : vendre en dessous du coût, selon l'organisation, réduit les marges, freine l'investissement et pousse, à terme, à l'abandon des exploitations. L'article ne donne pas de prix cible précis, et Dehesa Index ne dispose pas non plus d'un prix payé vérifié à cette date — ce qui est rapporté ici est donc la demande elle-même, pas un chiffre de prix confirmé.",
-          sources: [{ label: 'Moncloa.com', url: SRC.moncloa }]
+          sources: [{ label: 'Moncloa.com (26 sept. 2026)', url: SRC.moncloa }]
         }
       ]
     };
@@ -97,18 +97,18 @@
       disclaimer: 'Ogni nota cita fatti reali e datati, verificabili nelle fonti collegate in fondo. Quando un dato preciso non è disponibile (un prezzo obiettivo non ancora pubblicato, ad esempio), questo viene dichiarato esplicitamente invece di essere stimato.',
       posts: [
         {
-          category: CAT.it.cereales, dateLabel: '22 mag 2026 · 21 set 2026',
+          category: CAT.it.cereales, date: '2026-09-28', dateLabel: '28 set 2026',
           title: 'Perché il grano costa caro in questa campagna',
           para1: "Il raccolto di grano invernale statunitense 2026-27 si è fermato a 1,048 miliardi di bushel — il 25% in meno rispetto all'anno precedente e il più basso dal 1965, secondo l'USDA. La siccità ha colpito duramente il Kansas occidentale, il Colorado orientale e il Panhandle: in Kansas la resa è scesa a 37 bushel per acro, da 51 nel 2025, e la varietà più colpita (grano rosso invernale duro) è calata del 36%. L'USDA prevede che il prezzo medio all'origine salga a 6,50 $/bushel nella campagna 2026-27, 1,50 $ in più rispetto all'anno precedente — anche se le esportazioni statunitensi dovrebbero calare del 15%, perché il rincaro stesso rende il grano americano meno competitivo rispetto agli altri paesi esportatori.",
           para2: "Nel breve termine, però, il mercato non sale in linea retta: il 18 settembre grano, mais e soia hanno chiuso tutti in ribasso (grano -1,45%, mais -0,66%, soia -1,04%) dopo che l'USDA ha tagliato la previsione sul mais del Kansas di 39 milioni di bushel senza nuovi acquisti cinesi a compensare — un promemoria che, nei cereali, il fondamentale di lungo periodo (un raccolto scarso) e il movimento del giorno (la mancanza di acquirenti) possono tirare in direzioni opposte.",
-          sources: [{ label: 'Farm Progress', url: SRC.farmprogress }, { label: 'Rio Times', url: SRC.riotimes }]
+          sources: [{ label: 'Farm Progress (22 mag 2026)', url: SRC.farmprogress }, { label: 'Rio Times (21 set 2026)', url: SRC.riotimes }]
         },
         {
-          category: CAT.it.lacteos, dateLabel: '26 set 2026',
+          category: CAT.it.lacteos, date: '2026-09-28', dateLabel: '28 set 2026',
           title: 'Spagna: gli allevatori chiedono un aumento del prezzo del latte prima di ottobre',
           para1: "Unión de Uniones, una delle principali associazioni agricole spagnole, ha invitato gli allevatori da latte a chiedere prezzi più alti nel rinnovo dei contratti, la maggior parte dei quali scade nei primi giorni di ottobre — il momento chiave di trattativa dell'anno per il settore. La richiesta si basa sulla legge spagnola della filiera alimentare, che vieta di vendere sotto il costo di produzione; l'organizzazione chiede che il prezzo all'origine copra quel costo, dal mangime all'energia fino alla manodopera.",
           para2: "La pressione è maggiore in Galizia, Asturie, Cantabria e Castiglia e León, dove l'allevamento da latte sostiene buona parte dell'economia rurale: vendere sotto costo, sostiene l'organizzazione, riduce i margini, scoraggia gli investimenti e, nel tempo, spinge alla chiusura delle aziende. L'articolo non fornisce una cifra di prezzo obiettivo precisa, e nemmeno Dehesa Index dispone di un prezzo pagato verificato per questa data — quindi qui si riporta la richiesta in sé, non una cifra di prezzo confermata.",
-          sources: [{ label: 'Moncloa.com', url: SRC.moncloa }]
+          sources: [{ label: 'Moncloa.com (26 set 2026)', url: SRC.moncloa }]
         }
       ]
     };

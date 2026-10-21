@@ -39,6 +39,9 @@ jobs:
           pip install pyyaml
           python3 scripts/gen-workflows.py --check
 
+      - name: Blog notes have one publication date, ISO date, newest first (scripts/build-blog-posts.mjs)
+        run: node scripts/build-blog-posts.mjs && git diff --exit-code data/blog/posts.json
+
       - name: Workflow hygiene (fail closed, explicit paths)
         run: python3 scripts/check-workflows.py
 
