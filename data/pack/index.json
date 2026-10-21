@@ -84,6 +84,37 @@
    "xlsxBytes": 31065
   },
   {
+   "product": "azucar",
+   "name": {
+    "es": "Azúcar",
+    "en": "Sugar",
+    "fr": "Sucre",
+    "it": "Zucchero"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ers",
+   "sourceName": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
+   "unit": "lb",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 797,
+   "first": "1960-01",
+   "last": "2026-09",
+   "csv": "data/pack/us/azucar.csv",
+   "xlsx": "data/pack/us/azucar.xlsx",
+   "csvBytes": 157970,
+   "xlsxBytes": 41291
+  },
+  {
    "product": "cebada",
    "name": {
     "es": "Cebada",
@@ -177,6 +208,37 @@
    "xlsxBytes": 16629
   },
   {
+   "product": "cordero",
+   "name": {
+    "es": "Cordero",
+    "en": "Lamb",
+    "fr": "Agneau",
+    "it": "Agnello"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_nass",
+   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 333,
+   "first": "1984-01",
+   "last": "2011-09",
+   "csv": "data/pack/us/cordero.csv",
+   "xlsx": "data/pack/us/cordero.xlsx",
+   "csvBytes": 63243,
+   "xlsxBytes": 21435
+  },
+  {
    "product": "gas_natural",
    "name": {
     "es": "Gas natural (Henry Hub)",
@@ -237,6 +299,37 @@
    "xlsx": "data/pack/us/diesel.xlsx",
    "csvBytes": 314421,
    "xlsxBytes": 82194
+  },
+  {
+   "product": "guisante_seco",
+   "name": {
+    "es": "Guisantes secos",
+    "en": "Dry peas",
+    "fr": "Pois secs",
+    "it": "Piselli secchi"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_nass",
+   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 284,
+   "first": "2003-01",
+   "last": "2026-08",
+   "csv": "data/pack/us/guisante_seco.csv",
+   "xlsx": "data/pack/us/guisante_seco.xlsx",
+   "csvBytes": 57993,
+   "xlsxBytes": 19437
   },
   {
    "product": "harina_soja",
@@ -363,6 +456,68 @@
    "xlsxBytes": 11682
   },
   {
+   "product": "lenteja",
+   "name": {
+    "es": "Lentejas",
+    "en": "Lentils",
+    "fr": "Lentilles",
+    "it": "Lenticchie"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_nass",
+   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 283,
+   "first": "2002-12",
+   "last": "2026-08",
+   "csv": "data/pack/us/lenteja.csv",
+   "xlsx": "data/pack/us/lenteja.xlsx",
+   "csvBytes": 54076,
+   "xlsxBytes": 19190
+  },
+  {
+   "product": "lino",
+   "name": {
+    "es": "Lino (linaza)",
+    "en": "Flaxseed",
+    "fr": "Lin (graines)",
+    "it": "Lino (semi)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_nass",
+   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "unit": "bushel",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 560,
+   "first": "1980-01",
+   "last": "2026-08",
+   "csv": "data/pack/us/lino.csv",
+   "xlsx": "data/pack/us/lino.xlsx",
+   "csvBytes": 109762,
+   "xlsxBytes": 31608
+  },
+  {
    "product": "maiz",
    "name": {
     "es": "Maíz",
@@ -456,6 +611,37 @@
    "xlsxBytes": 24776
   },
   {
+   "product": "soja_grano",
+   "name": {
+    "es": "Soja en grano",
+    "en": "Soybeans",
+    "fr": "Soja (grain)",
+    "it": "Soia in grani"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_nass",
+   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "unit": "bushel",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 560,
+   "first": "1980-01",
+   "last": "2026-08",
+   "csv": "data/pack/us/soja_grano.csv",
+   "xlsx": "data/pack/us/soja_grano.xlsx",
+   "csvBytes": 113139,
+   "xlsxBytes": 31907
+  },
+  {
    "product": "sorgo",
    "name": {
     "es": "Sorgo",
@@ -547,162 +733,6 @@
    "xlsx": "data/pack/us/vaca.xlsx",
    "csvBytes": 107902,
    "xlsxBytes": 31382
-  },
-  {
-   "product": "azucar",
-   "name": {
-    "es": "azucar",
-    "en": "azucar",
-    "fr": "azucar",
-    "it": "azucar"
-   },
-   "region": "us",
-   "place": {},
-   "source": "usda_ers",
-   "sourceName": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
-   "license": "US-PD",
-   "verdict": "apto",
-   "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
-   "unit": "lb",
-   "currency": "USD",
-   "frequency": "monthly",
-   "rows": 797,
-   "first": "1960-01",
-   "last": "2026-09",
-   "csv": "data/pack/us/azucar.csv",
-   "xlsx": "data/pack/us/azucar.xlsx",
-   "csvBytes": 157173,
-   "xlsxBytes": 40289
-  },
-  {
-   "product": "cordero",
-   "name": {
-    "es": "cordero",
-    "en": "cordero",
-    "fr": "cordero",
-    "it": "cordero"
-   },
-   "region": "us",
-   "place": {},
-   "source": "usda_nass",
-   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "license": "US-PD",
-   "verdict": "apto",
-   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
-   "unit": "cwt",
-   "currency": "USD",
-   "frequency": "monthly",
-   "rows": 333,
-   "first": "1984-01",
-   "last": "2011-09",
-   "csv": "data/pack/us/cordero.csv",
-   "xlsx": "data/pack/us/cordero.xlsx",
-   "csvBytes": 63243,
-   "xlsxBytes": 21101
-  },
-  {
-   "product": "guisante_seco",
-   "name": {
-    "es": "guisante_seco",
-    "en": "guisante_seco",
-    "fr": "guisante_seco",
-    "it": "guisante_seco"
-   },
-   "region": "us",
-   "place": {},
-   "source": "usda_nass",
-   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "license": "US-PD",
-   "verdict": "apto",
-   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
-   "unit": "cwt",
-   "currency": "USD",
-   "frequency": "monthly",
-   "rows": 284,
-   "first": "2003-01",
-   "last": "2026-08",
-   "csv": "data/pack/us/guisante_seco.csv",
-   "xlsx": "data/pack/us/guisante_seco.xlsx",
-   "csvBytes": 57425,
-   "xlsxBytes": 19004
-  },
-  {
-   "product": "lenteja",
-   "name": {
-    "es": "lenteja",
-    "en": "lenteja",
-    "fr": "lenteja",
-    "it": "lenteja"
-   },
-   "region": "us",
-   "place": {},
-   "source": "usda_nass",
-   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "license": "US-PD",
-   "verdict": "apto",
-   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
-   "unit": "cwt",
-   "currency": "USD",
-   "frequency": "monthly",
-   "rows": 283,
-   "first": "2002-12",
-   "last": "2026-08",
-   "csv": "data/pack/us/lenteja.csv",
-   "xlsx": "data/pack/us/lenteja.xlsx",
-   "csvBytes": 53793,
-   "xlsxBytes": 18909
-  },
-  {
-   "product": "lino",
-   "name": {
-    "es": "lino",
-    "en": "lino",
-    "fr": "lino",
-    "it": "lino"
-   },
-   "region": "us",
-   "place": {},
-   "source": "usda_nass",
-   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "license": "US-PD",
-   "verdict": "apto",
-   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
-   "unit": "bushel",
-   "currency": "USD",
-   "frequency": "monthly",
-   "rows": 560,
-   "first": "1980-01",
-   "last": "2026-08",
-   "csv": "data/pack/us/lino.csv",
-   "xlsx": "data/pack/us/lino.xlsx",
-   "csvBytes": 104722,
-   "xlsxBytes": 30567
-  },
-  {
-   "product": "soja_grano",
-   "name": {
-    "es": "soja_grano",
-    "en": "soja_grano",
-    "fr": "soja_grano",
-    "it": "soja_grano"
-   },
-   "region": "us",
-   "place": {},
-   "source": "usda_nass",
-   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "license": "US-PD",
-   "verdict": "apto",
-   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
-   "unit": "bushel",
-   "currency": "USD",
-   "frequency": "monthly",
-   "rows": 560,
-   "first": "1980-01",
-   "last": "2026-08",
-   "csv": "data/pack/us/soja_grano.csv",
-   "xlsx": "data/pack/us/soja_grano.xlsx",
-   "csvBytes": 111459,
-   "xlsxBytes": 30738
   },
   {
    "product": "dap",
