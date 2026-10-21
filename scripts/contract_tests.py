@@ -1802,7 +1802,9 @@ def home_explore(doc, errs, warns, stats):
 
 
 WBA_PCT = {"forestPct", "permCropPct", "ruralPopPct", "agriEmpFemalePct", "agriEmpMalePct", "agriLandPct", "arableLandPct", "irrigatedPct", "agriEmploymentPct", "agriVaPct", "agriRawExpPct", "agriRawImpPct", "foodExpPct", "foodImpPct", "waterAgriPct"}
-WBA_RANGE = {"cropIdx": (0, 400), "livestockIdx": (0, 400), "foodIdx": (0, 400), "cerealYield": (0, 20000), "fertKgHa": (0, 3000), "inflation": (-50, 500), "gdpGrowth": (-50, 100), "cpi": (0, 100000), "fxUsd": (0, 100000)}
+WBA_RANGE = {"cropIdx": (0, 400), "livestockIdx": (0, 400), "foodIdx": (0, 400), "cerealYield": (0, 20000), "fertKgHa": (0, 3000), "inflation": (-50, 10000), "gdpGrowth": (-50, 100), "cpi": (0, 1e8), "fxUsd": (0, 100000)}
+# 21-oct-2026: con los 33 paises entran hiperinflaciones reales de la serie desde 1990 (Argentina 1990 ~2.300 %, Croacia 1993 ~1.500 %, Bulgaria 1997 ~1.060 %):
+# el limite de inflacion sube a 10.000 % y el del IPC (base 2010 = 100) a 1e8 para no rechazar datos oficiales; siguen fuera los valores absurdos.
 WBA_NONNEG = {"agriLandKm2", "arablePerCap", "agriVaPerWorker", "agriVaUsd", "cerealArea", "cerealProd", "ch4Agri", "n2oAgri"}
 
 
