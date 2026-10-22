@@ -53,7 +53,7 @@
   function renderWH(box, lg, loc) {
     if (!box) return; loc = loc || 'us'; var CAN = loc === 'ca', t = (CAN ? WHC : WH)[lg], L = LOC[lg], sym = CAN ? 'C$' : '$', wk = 'wh' + loc;
     function n(v, d) { return v == null || !isFinite(v) ? '—' : v.toLocaleString(L, { minimumFractionDigits: d, maximumFractionDigits: d }); }
-    function rng(a, b) { return a == null && b == null ? '—' : a === b || b == null ? sym + n(a, a < 10 ? 2 : 0) : sym + n(a, a < 10 ? 2 : 0) + ' – ' + sym + n(b, b < 10 ? 2 : 0); }
+    function rng(a, b) { var d = CAN ? 2 : null, da = d == null ? (a < 10 ? 2 : 0) : d, db = d == null ? (b < 10 ? 2 : 0) : d; return a == null && b == null ? '—' : b == null || a === b || (a != null && n(a, da) === n(b, db)) ? sym + n(a == null ? b : a, da) : sym + n(a, da) + ' – ' + sym + n(b, db); }
     (WHIDX[loc] || (WHIDX[loc] = fetch(CAN ? 'data/ca/wholesale-index.json' : 'data/views/fv-us-wh-index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }))).then(function (I) {
       if (!I || !I.cities || !I.cities.length) { box.style.display = 'none'; return; }
       if (!ST[wk] || !I.cities.some(function (c) { return c.code === ST[wk]; })) ST[wk] = I.cities[0].code;

@@ -65,7 +65,7 @@ def main():
         for (com, var), (sc, k, pts) in sorted(best.items()):
             d, lo, hi = pts[-1]; pv = pts[-2] if len(pts) > 1 else None
             cat = 'nut' if com in NUT_NAMES else 'fruit' if com in FRUIT_NAMES else 'veg'
-            grade = ' · '.join(z for z in (k[5] if k[5] != 'N/A' else '', ('n.º ' + k[6]) if k[6] and k[6] != 'N/A' else '') if z)
+            grade = k[5] if k[5] != 'N/A' else ''
             out.append([cat, com, var if var not in ('Unspecified', 'N/A') else '', k[3], k[4], grade, lo, hi, pv[1] if pv else None, pv[2] if pv else None, d, meta[k]['kg'], meta[k]['fr']])
         doc = {'schemaVersion': 1, 'generatedAt': now(), 'code': code, 'city': city, 'date': latest, 'ccy': 'CAD',
                'cols': ['cat', 'commodity', 'variety', 'origin', 'package', 'grade', 'low', 'high', 'prevLow', 'prevHigh', 'date', 'kg', 'commodityFr'], 'source': SRC, 'rows': out}
