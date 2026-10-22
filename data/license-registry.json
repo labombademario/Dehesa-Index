@@ -4553,6 +4553,32 @@
    "short": "Met Office (Reino Unido)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "OGL por defecto del sitio y declarada para HadUK-Grid; la pagina de descarga no la repite."
+  },
+  "bank_of_england": {
+   "name": "Bank of England — Statistical Interactive Database (Bank Rate)",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.bankofengland.co.uk/legal",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Bank of England.",
+   "additionalRestrictions": "La página legal excluye algunos datos de tipos de cambio de terceros; solo se usa Bank Rate (IUDBEDR), que es dato propio del Banco.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Algunas series de tipos de cambio son de terceros; no se usan.",
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "La página legal del Banco de Inglaterra dice que la reproducción de datos de su base de datos está sujeta a la Open Government Licence (informe de fuentes del Reino Unido, 22 oct 2026).",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "Banco de Inglaterra",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explícito que remite a la OGL."
   }
  },
  "files": {
@@ -4688,7 +4714,8 @@
     "US": "fed_board",
     "EU": "ecb",
     "CA": "bank_of_canada",
-    "AU": "rba"
+    "AU": "rba",
+    "UK": "bank_of_england"
    }
   },
   "data/country-macro.json": {

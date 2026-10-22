@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T09:45:08Z",
+ "generatedAt": "2026-10-22T10:46:19Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 177,
+  "total": 178,
   "byStatus": {
-   "ACTIVE": 147,
+   "ACTIVE": 148,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1791,6 +1791,45 @@
     "result": "NOT_READY",
     "reasons": [
      "VERIFIED pero con condiciones no inequivocas: uso comercial conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "bank_of_england",
+   "registryId": "bank_of_england",
+   "country": "UK",
+   "scope": "integrated",
+   "institution": "Bank of England — Statistical Interactive Database (Bank Rate)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-UK-3.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Bank of England.",
+   "lastChecked": "2026-10-22",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tipos de interés oficiales (EE. UU., UE/BCE, Canadá, Australia). Fuentes primarias de cada banco central (sin BIS: su licencia impide cobrar extra por sus datos). Salida en formato de estadísticas por país."""
+"""Tipos de interés oficiales (EE. UU., UE/BCE, Canadá, Australia, Reino Unido). Fuentes primarias de cada banco central (sin BIS: su licencia impide cobrar extra por sus datos). Salida en formato de estadísticas por país."""
 import csv, io, json, os, re, sys, time, datetime, urllib.request
 
 LOG = []
@@ -65,18 +65,31 @@ def us_fed():
         except ValueError: continue  # 'ND' = sin dato ese dia
     return monthly(daily) if daily else None
 
+def uk_boe():
+    """Bank Rate oficial del Banco de Inglaterra (serie diaria IUDBEDR de su base de datos estadistica, Open Government Licence); ultimo valor de cada mes."""
+    t = fetch('https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1990&Dateto=now&SeriesCodes=IUDBEDR&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N')
+    if not t: return None
+    daily = []
+    for r in csv.reader(io.StringIO(t)):
+        if len(r) < 2: continue
+        try: daily.append((datetime.datetime.strptime(r[0].strip(), '%d %b %Y').strftime('%Y-%m-%d'), float(r[1])))
+        except ValueError: continue
+    return monthly(daily) if daily else None
+
 SRC = {
     'US': ('Federal Reserve Board (H.15 Selected Interest Rates)', 'https://www.federalreserve.gov/releases/h15/', 'Public domain (Federal Reserve Board; cite the Board as the source)'),
     'EU': ('European Central Bank (ECB Data Portal)', 'https://data.ecb.europa.eu/', 'ECB reuse policy (attribution)'),
     'CA': ('Bank of Canada (Valet API)', 'https://www.bankofcanada.ca/valet/', 'Bank of Canada terms of use (attribution)'),
-    'AU': ('Reserve Bank of Australia (F1.1)', 'https://www.rba.gov.au/statistics/tables/', 'RBA copyright notice (attribution)')
+    'AU': ('Reserve Bank of Australia (F1.1)', 'https://www.rba.gov.au/statistics/tables/', 'RBA copyright notice (attribution)'),
+    'UK': ('Bank of England (Statistical Interactive Database, IUDBEDR)', 'https://www.bankofengland.co.uk/boeapps/database/', 'Open Government Licence v3.0 (Bank of England)')
 }
 LABEL = {
     'US': [('us-policy-rate', 'Federal funds rate (effective, monthly; Federal Reserve Board)', us_fed, 'US')],
     'EU': [('eu-policy-rate', 'ECB main refinancing operations rate (monthly)', lambda: eu_ecb('MRR_FR'), 'MRR'),
            ('eu-deposit-rate', 'ECB deposit facility rate (monthly)', lambda: eu_ecb('DFR'), 'DFR')],
     'CA': [('ca-policy-rate', 'Bank of Canada target overnight rate (monthly)', ca_boc, 'CA')],
-    'AU': [('au-policy-rate', 'RBA cash rate target (monthly)', au_rba, 'AU')]
+    'AU': [('au-policy-rate', 'RBA cash rate target (monthly)', au_rba, 'AU')],
+    'UK': [('uk-policy-rate', 'Bank of England Bank Rate (monthly, end of month)', uk_boe, 'UK')]
 }
 countries = {}
 for cc, lst in LABEL.items():
@@ -93,8 +106,8 @@ for cc, lst in LABEL.items():
                        'latest': pts[-1][1], 'changePct': None, 'points': pts, 'sourceGroup': 'rates'})
     if series:
         n, u, l = SRC[cc]
-        countries[cc] = {'name': cc, 'source': {'name': n, 'url': u, 'license': l}, 'extend': cc in ('CA', 'AU'), 'series': series}
-        if cc in ('CA', 'AU'): countries[cc]['source']['name'] = n
+        countries[cc] = {'name': cc, 'source': {'name': n, 'url': u, 'license': l}, 'extend': cc in ('CA', 'AU', 'UK'), 'series': series}
+        if cc in ('CA', 'AU', 'UK'): countries[cc]['source']['name'] = n
 os.makedirs('data', exist_ok=True)
 open('data/interest-rates-log.txt', 'w').write('\n'.join(LOG) + '\n')
 if len(countries) < 3:

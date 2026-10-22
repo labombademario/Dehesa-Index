@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T05:12:32Z",
+ "generatedAt": "2026-10-22T10:45:18Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 147,
-  "sourcesApto": 134,
+  "sources": 148,
+  "sourcesApto": 135,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
   "datasets": 318,
@@ -188,6 +188,23 @@
    "attribution": "Source: Bank of Canada",
    "conditions": "Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank website; exchange rates are indicative only; the Valet API may be rate-limited; no logos or banknote images.",
    "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (atribuir, indicar cambios, avisar a compradores de que el contenido es gratuito en la web del Banco, tipos de cambio solo indicativos, limites de la API Valet, sin logos). (2026-10-15)"
+  },
+  {
+   "id": "bank_of_england",
+   "name": "Bank of England — Statistical Interactive Database (Bank Rate)",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.bankofengland.co.uk/legal",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Bank of England.",
+   "conditions": "La página legal excluye algunos datos de tipos de cambio de terceros; solo se usa Bank Rate (IUDBEDR), que es dato propio del Banco."
   },
   {
    "id": "bea",
@@ -5292,6 +5309,7 @@
    "verdict": "condiciones",
    "sources": [
     "bank_of_canada",
+    "bank_of_england",
     "ecb",
     "fed_board",
     "rba"
@@ -5311,6 +5329,11 @@
      "scope": "pais:EU",
      "sourceId": "ecb",
      "verdict": "condiciones"
+    },
+    {
+     "scope": "pais:UK",
+     "sourceId": "bank_of_england",
+     "verdict": "apto"
     },
     {
      "scope": "pais:US",
