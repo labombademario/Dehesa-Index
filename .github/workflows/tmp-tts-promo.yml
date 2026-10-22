@@ -1,0 +1,24 @@
+name: tmp-tts-promo
+on:
+  push:
+    branches: [research/tts-promo-1022]
+permissions:
+  contents: write
+jobs:
+  t:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          pip install -q piper-tts
+          cd probe/tts
+          for v in en_US-joe-medium en_US-ryan-high en_GB-alan-medium; do python3 -m piper.download_voices $v || true; done
+          ls -la
+          for v in en_US-joe-medium en_US-ryan-high; do
+            mkdir -p out/$v; i=0
+            while IFS= read -r l; do i=$((i+1)); echo "$l" | python3 -m piper -m $v.onnx -f out/$v/$i.wav --length-scale 1.05 --sentence-silence 0.25 || echo "$l" | python3 -m piper -m $v.onnx -f out/$v/$i.wav; done < lines.txt
+          done
+          ls -R out | head -40
+          rm -f *.onnx *.json
+          cd ../..; git config user.name tts; git config user.email tts@x
+          git add -f probe/tts/out; git commit -qm "tts out"; git push
