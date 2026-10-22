@@ -115,6 +115,16 @@
     if (!DS.eu) return;
     var q = ''; try { q = new URLSearchParams(location.search).get('ix') || ''; } catch (e) {}
     REG = DS[q] ? q : 'eu'; DATA = DS[REG]; render();
+    /* Desde otra página el enlace (#home-dehesa-index) llega antes de que la portada termine de montarse: las secciones de arriba crecen y el bloque se queda fuera de pantalla.
+       Se vuelve a colocar durante unos segundos, salvo que la persona ya haya movido la página. */
+    if (location.hash === '#home-dehesa-index') {
+      var moved = false, stop = function () { moved = true; };
+      ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, stop, { passive: true, once: true }); });
+      var n = 0, iv = setInterval(function () {
+        n++; if (moved || n > 24) { clearInterval(iv); return; }
+        var r = box.getBoundingClientRect(); if (Math.abs(r.top) > 6) box.scrollIntoView({ block: 'start' });
+      }, 250);
+    }
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
   });
