@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T12:00:00Z",
+ "generatedAt": "2026-10-22T12:16:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 231,
+  "ok": 235,
   "late": 2,
   "error": 5,
   "not_run": 0,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "e5130e93",
+   "sha": "77cf84ee",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e5e00b00-3c06-49d7-b26a-9bb2e642e9fe",
-   "completedAt": "2026-10-22T11:50:48Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/55a4e6a1-78eb-45f1-b23f-f937bcea83de",
+   "completedAt": "2026-10-22T12:16:16Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T09:47:46.988837+00:00",
   "repoGeneratedAt": "2026-10-22T09:47:46.988837+00:00",
-  "checkedAt": "2026-10-22T12:00:00Z"
+  "checkedAt": "2026-10-22T12:16:00Z"
  },
  "pipelines": [
   {
@@ -3707,7 +3707,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-22T12:10:00Z",
+   "nextRun": "2026-10-22T15:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -3754,19 +3754,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T11:15:02Z"
+     "lastChange": "2026-10-22T12:02:30Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-22T11:03:15Z"
+     "lastChange": "2026-10-22T12:11:13Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-22T10:49:40Z"
+     "lastChange": "2026-10-22T12:11:13Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-22T10:49:40Z"
+     "lastChange": "2026-10-22T12:11:13Z"
     },
     {
      "path": "data/pack"
@@ -3842,8 +3842,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39766914085"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "ok",
@@ -4748,6 +4748,52 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-uk-fv-wholesale.yml",
+   "name": "Update England and Wales wholesale fruit and vegetable prices (Defra)",
+   "crons": [
+    "25 13 * * 2,5"
+   ],
+   "nextRun": "2026-10-23T13:25:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T12:08:46Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39775972085"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-uk-ni-market.yml",
+   "name": "Update Northern Ireland weekly livestock prices (DAERA Agricultural Market Report)",
+   "crons": [
+    "10 14 * * 5"
+   ],
+   "nextRun": "2026-10-23T14:10:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T12:08:47Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39775975745"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-uk-regions-macro.yml",
    "name": "Update UK regions population, unemployment and gross value added (ONS via NOMIS)",
    "crons": [
@@ -4771,6 +4817,29 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-uk-scotland.yml",
+   "name": "Update Scotland June agricultural census (Scottish Government)",
+   "crons": [
+    "45 9 * * 1"
+   ],
+   "nextRun": "2026-10-26T09:45:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T12:08:49Z",
+    "durationSec": 29,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39775978777"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-uk-structure.yml",
    "name": "Update England farm structure by county (Defra June survey)",
    "crons": [
@@ -4789,6 +4858,29 @@
     "runs": 2,
     "success": 2,
     "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-uk-tiff-regions.yml",
+   "name": "Update England regional farm income (Defra TIFF, ITL1 and ITL3)",
+   "crons": [
+    "50 9 * * 3"
+   ],
+   "nextRun": "2026-10-28T09:50:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T12:15:17Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39776830815"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 2,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 168.0
