@@ -367,3 +367,26 @@ if sec == 'wds':
     st, h, b = get('https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=3210007701&latestN=0&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B%5D%5D', timeout=100, tries=1); p('DLACTION', st, h.get('Content-Type'), len(b), b[:80])
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
+if sec in ('all', 'rates'):
+    p('=== RATES')
+    for u in ['https://api.bcra.gob.ar/estadisticas/v3.0/monetarias', 'https://api.bcra.gob.ar/estadisticas/v4.0/monetarias']:
+        st, h, b = head(u)
+        try:
+            L = json.loads(b); L = L.get('results') or L
+            for r in L:
+                t = json.dumps(r, ensure_ascii=False)
+                if re.search(r'(?i)pol[ií]tica|tasa de pol|leliq|pases|badlar|referencia|TAMAR', t): p('BCRA', t[:260])
+        except Exception as e: p('ERR', e, b[:200])
+    for u in ['https://www.bcentral.cl/web/banco-central/areas/estadisticas/tasa-de-politica-monetaria',
+              'https://si3.bcentral.cl/SieteRestWS/SieteRestWS.ashx?function=GetSeries&timeseries=F022.TPM.TIN.D001.NO.Z.D',
+              'https://mindicador.cl/api/tpm', 'https://www.bcentral.cl/es/web/banco-central/politica-monetaria/tasa-de-politica-monetaria',
+              'https://www.bcentral.cl/documents/33528/133323/tpm.xlsx']:
+        st, h, b = head(u); p(b[:300].decode('utf8', 'ignore').replace('\n', ' '))
+    for u in ['https://www.bcu.gub.uy/Politica-Economica-y-Mercados/Paginas/Tasa-de-Politica-Monetaria.aspx',
+              'https://www.bcu.gub.uy/Politica-Economica-y-Mercados/Paginas/Instancia-de-Politica-Monetaria.aspx',
+              'https://www.bcu.gub.uy/Estadisticas-e-Indicadores/Paginas/Default.aspx', 'https://www.bcu.gub.uy/Politica-Economica-y-Mercados/Paginas/Tasa-de-Politica-Monetaria-Historico.aspx']:
+        st, h, b = head(u); t = b.decode('utf8', 'ignore')
+        for m in re.findall(r'href="([^"]+\.(?:xls|xlsx|csv|json)[^"]*)"', t)[:15]: p('  LINK', m)
+        p(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', t))[:300])
+    for u in ['https://www.bcu.gub.uy/', 'https://www.bcu.gub.uy/Paginas/Terminos-y-Condiciones.aspx', 'https://api.bcra.gob.ar/', 'https://www.bcentral.cl/web/banco-central/terminos-de-uso']:
+        st, h, b = head(u); p(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', b.decode('utf8', 'ignore')))[:400])
