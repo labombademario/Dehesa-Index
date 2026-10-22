@@ -1,0 +1,155 @@
+GET https://datos.odepa.gob.cl/api/3/action/package_search?q=precios+frutas+hortalizas&rows=15 -> 200 application/json;charset=utf-8 192631
+DS 33f10516-acbe-4446-b633-68244b9b6b26 | Precios mayoristas de frutas y hortalizas | cc-by | ODEPA | 2026-10-16T23:01:13.956961
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/580beca0-e87e-4dd4-9e8a-0bd92773f4a6/download/precio_mayorista_fruta-hortaliza_2026.csv | Precios mayoristas de fruta y hortaliza año 2026
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/92353fad-463e-4e85-a3ff-accb0286d0c5/download/precio_mayorista_fruta-hortaliza_2025.csv | Precios mayoristas de fruta y hortaliza año 2025
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/11b8b84f-f409-4fa8-9764-2c874e703cc3/download/precio_mayorista_fruta-hortaliza_2024.csv | Precios mayoristas de fruta y hortaliza año 2024
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/10a871e2-3b41-49d3-97b7-4802ee9904d2/download/precio_mayorista_fruta-hortaliza_2023.csv | Precios mayoristas de fruta y hortaliza año 2023
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/e218e12f-8064-4521-b4be-20015a57893b/download/precio_mayorista_fruta-hortaliza_2022.csv | Precios mayoristas de fruta y hortaliza año 2022
+DS d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3 | Precios al Consumidor | cc-by | ODEPA | 2026-10-16T12:47:08.247662
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/9f885df4-afeb-4b75-8bab-9334f79db00f/download/precio_consumidor_2026.csv | Detalle de Precios Consumidor año 2026
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/eab239c4-e338-4cde-a9e0-7c4f27826030/download/precio_consumidor_2025.csv | Detalle de Precios Consumidor año 2025
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/5f773b96-6c3a-4017-b871-6340d779ea96/download/precio_consumidor_2024.csv | Detalle de Precios Consumidor año 2024
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/1a73ae5d-f4e2-4706-b2c3-e1e05a23fcb6/download/precio_consumidor_2023.csv | Detalle de Precios Consumidor año 2023
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/e9c3f2fc-9bb7-4f5f-a529-d1d60d7a61a5/download/precio_consumidor_2022.csv | Detalle de Precios Consumidor año 2022
+GET https://datos.odepa.gob.cl/api/3/action/package_search?q=precio+mayorista&rows=15 -> 200 application/json;charset=utf-8 210362
+DS 33f10516-acbe-4446-b633-68244b9b6b26 | Precios mayoristas de frutas y hortalizas | cc-by | ODEPA | 2026-10-16T23:01:13.956961
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/580beca0-e87e-4dd4-9e8a-0bd92773f4a6/download/precio_mayorista_fruta-hortaliza_2026.csv | Precios mayoristas de fruta y hortaliza año 2026
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/92353fad-463e-4e85-a3ff-accb0286d0c5/download/precio_mayorista_fruta-hortaliza_2025.csv | Precios mayoristas de fruta y hortaliza año 2025
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/11b8b84f-f409-4fa8-9764-2c874e703cc3/download/precio_mayorista_fruta-hortaliza_2024.csv | Precios mayoristas de fruta y hortaliza año 2024
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/10a871e2-3b41-49d3-97b7-4802ee9904d2/download/precio_mayorista_fruta-hortaliza_2023.csv | Precios mayoristas de fruta y hortaliza año 2023
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/e218e12f-8064-4521-b4be-20015a57893b/download/precio_mayorista_fruta-hortaliza_2022.csv | Precios mayoristas de fruta y hortaliza año 2022
+DS afa91d43-827d-4352-b0e9-9671b1427eea | Precios mayoristas de flores y follajes | cc-by | ODEPA | 2026-10-16T23:00:13.847493
+    RES CSV https://datos.odepa.gob.cl/dataset/afa91d43-827d-4352-b0e9-9671b1427eea/resource/f4551357-41a4-48ba-8bef-e10c89310ff3/download/precio_mayorista_flor-follaje_2026.csv | Precios mayoristas de flor y follaje año 2026
+    RES CSV https://datos.odepa.gob.cl/dataset/afa91d43-827d-4352-b0e9-9671b1427eea/resource/a9cfb969-ee81-402f-bb6f-bde8d746dcfb/download/precio_mayorista_flor-follaje_2025.csv | Precios mayoristas de flor y follaje año 2025
+    RES CSV https://datos.odepa.gob.cl/dataset/afa91d43-827d-4352-b0e9-9671b1427eea/resource/9b3b023c-5e99-45c4-bf89-32210b114593/download/precio_mayorista_flor-follaje_2024.csv | Precios mayoristas de flor y follaje año 2024
+    RES CSV https://datos.odepa.gob.cl/dataset/afa91d43-827d-4352-b0e9-9671b1427eea/resource/75339343-1451-4457-8d54-360e23238493/download/precio_mayorista_flor-follaje_2023.csv | Precios mayoristas de flor y follaje año 2023
+    RES CSV https://datos.odepa.gob.cl/dataset/afa91d43-827d-4352-b0e9-9671b1427eea/resource/9833c11c-6cdb-4190-ae35-bd6bc15133f0/download/precio_mayorista_flor-follaje_2022.csv | Precios mayoristas de flor y follaje año 2022
+GET https://datos.odepa.gob.cl/api/3/action/package_search?q=vega+central&rows=15 -> 200 application/json;charset=utf-8 218
+GET https://datos.odepa.gob.cl/api/3/action/package_search?q=precios+consumidor+frutas&rows=15 -> 200 application/json;charset=utf-8 192631
+DS d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3 | Precios al Consumidor | cc-by | ODEPA | 2026-10-16T12:47:08.247662
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/9f885df4-afeb-4b75-8bab-9334f79db00f/download/precio_consumidor_2026.csv | Detalle de Precios Consumidor año 2026
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/eab239c4-e338-4cde-a9e0-7c4f27826030/download/precio_consumidor_2025.csv | Detalle de Precios Consumidor año 2025
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/5f773b96-6c3a-4017-b871-6340d779ea96/download/precio_consumidor_2024.csv | Detalle de Precios Consumidor año 2024
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/1a73ae5d-f4e2-4706-b2c3-e1e05a23fcb6/download/precio_consumidor_2023.csv | Detalle de Precios Consumidor año 2023
+    RES CSV https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/e9c3f2fc-9bb7-4f5f-a529-d1d60d7a61a5/download/precio_consumidor_2022.csv | Detalle de Precios Consumidor año 2022
+DS 33f10516-acbe-4446-b633-68244b9b6b26 | Precios mayoristas de frutas y hortalizas | cc-by | ODEPA | 2026-10-16T23:01:13.956961
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/580beca0-e87e-4dd4-9e8a-0bd92773f4a6/download/precio_mayorista_fruta-hortaliza_2026.csv | Precios mayoristas de fruta y hortaliza año 2026
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/92353fad-463e-4e85-a3ff-accb0286d0c5/download/precio_mayorista_fruta-hortaliza_2025.csv | Precios mayoristas de fruta y hortaliza año 2025
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/11b8b84f-f409-4fa8-9764-2c874e703cc3/download/precio_mayorista_fruta-hortaliza_2024.csv | Precios mayoristas de fruta y hortaliza año 2024
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/10a871e2-3b41-49d3-97b7-4802ee9904d2/download/precio_mayorista_fruta-hortaliza_2023.csv | Precios mayoristas de fruta y hortaliza año 2023
+    RES CSV https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/e218e12f-8064-4521-b4be-20015a57893b/download/precio_mayorista_fruta-hortaliza_2022.csv | Precios mayoristas de fruta y hortaliza año 2022
+GET https://catalogodatos.gub.uy/api/3/action/package_search?q=frutas+hortalizas&rows=10 -> 200 None 220
+GET https://catalogodatos.gub.uy/api/3/action/package_search?q=UAM+precios&rows=10 -> 200 None 220
+GET https://catalogodatos.gub.uy/api/3/action/package_search?q=precios+mayoristas&rows=10 -> 200 None 220
+GET https://catalogodatos.gub.uy/api/3/action/package_search?q=mercado+modelo&rows=10 -> 200 None 32592
+DS b187d83f-b452-4f31-abd0-cbb9b752c286 | Distribución porcentual de los hogares biparentales según tipo de pareja. Total país | odc-uy | MIDES | 2019-03-01T16:24:22.202941
+    RES JSON https://catalogodatos.gub.uy/dataset/b187d83f-b452-4f31-abd0-cbb9b752c286/resource/7fb27a18-d145-4536-9c4f-d360da33cc18/download/metadatos_indicador-11439.json | Metadatos de Distribución porcentual de los hogares biparent
+    RES CSV https://catalogodatos.gub.uy/dataset/b187d83f-b452-4f31-abd0-cbb9b752c286/resource/778ca20c-5956-42da-97ea-13e44b691753/download/11439_distribucion_porcentual_de_los_hogares_biparentales_segun_tipo_de_pareja-_total_pais.csv | Datos de Distribución porcentual de los hogares biparentales
+    RES XLSX https://catalogodatos.gub.uy/dataset/b187d83f-b452-4f31-abd0-cbb9b752c286/resource/df595b8d-c5d4-4cf0-af37-04199f5e593f/download/11439_distribucion_porcentual_de_los_hogares_biparentales_segun_tipo_de_pareja-_total_pais.xlsx | Datos de Distribución porcentual de los hogares biparentales
+    RES XML https://catalogodatos.gub.uy/dataset/b187d83f-b452-4f31-abd0-cbb9b752c286/resource/efff8e23-ab41-44bc-b539-297953abe5ed/download/11439_distribucion_porcentual_de_los_hogares_biparentales_segun_tipo_de_pareja-_total_pais.xml | Datos de Distribución porcentual de los hogares biparentales
+DS af74758a-2175-4b93-9847-4386a17aee00 | Combustibles líquidos: Precios de Paridad de Importación | odc-uy | URSEA | 2026-10-14T17:45:17.563062
+    RES JSON https://catalogodatos.gub.uy/dataset/af74758a-2175-4b93-9847-4386a17aee00/resource/667b1c7c-a595-4afe-9755-48ac52b83207/download/metadatos_ppi_pe.json | Metadatos de ppi al consumidor final
+    RES CSV https://catalogodatos.gub.uy/dataset/af74758a-2175-4b93-9847-4386a17aee00/resource/7fb4c8d9-8db4-41bf-aac0-254368269d24/download/ppi_pe.csv | PPI al consumidor final
+    RES XLSX https://catalogodatos.gub.uy/dataset/af74758a-2175-4b93-9847-4386a17aee00/resource/e31b3957-ca94-41d9-82f4-28a85c96bf2c/download/ppi_pe.xlsx | PPI al consumidor final
+    RES JSON https://catalogodatos.gub.uy/dataset/af74758a-2175-4b93-9847-4386a17aee00/resource/937a1f7b-68d1-4b51-bff6-539a4fbd5694/download/metadatos_ursea-ppi_vs_pe_v2.json | Metadatos de Precios hasta planta de distribución (con FO ba
+    RES XML https://catalogodatos.gub.uy/dataset/af74758a-2175-4b93-9847-4386a17aee00/resource/f7399694-efbd-4a46-babd-1a89d3dba748/download/precios-hasta-planta-de-distribucin_n.xml | Precios hasta planta de distribución (con FO bajo S)
+GET https://datos.gob.ar/api/3/action/package_search?q=mercado+central&rows=10 -> 200 application/json;charset=utf-8 73689
+DS 812e4610-c792-589d-8ce0-6cf5a19b42b3 | Relevamiento de Expectativas de Mercado (REM) | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:15.174766
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/430/distribution/430.1/download/relevamiento-expectativas-mercado-rem.csv | Relevamiento de Expectativas de Mercado (REM). Datos mensual
+DS b87b5d57-5850-53a5-9cf1-ff258d5d71ed | Datos de la Compañía Administradora del Mercado Mayorista Eléctrico S.A. (CAMMESA) | CC-BY-4.0 | Secretaría de Energía | 2026-09-28T09:03:21.986524
+    RES HTML http://portalweb.cammesa.com/Memnet1/default.aspx | Publicaciones MEMnet
+    RES HTML https://cammesaweb.cammesa.com/operacion/ | Operaciones del Mercado Eléctrico Mayorista 
+    RES CSV http://datos.energia.gob.ar/dataset/2b4dfee6-6fca-4e4d-9611-a12d65cd4aa8/resource/863d7b10-4df9-4dad-8418-5e8a6cc730da/download/balance.csv | Balance
+    RES CSV http://datos.energia.gob.ar/dataset/2b4dfee6-6fca-4e4d-9611-a12d65cd4aa8/resource/ac27b401-3800-4a98-9535-3fc715228d84/download/agentes-mem.csv | Agentes del MEM
+    RES CSV http://datos.energia.gob.ar/dataset/2b4dfee6-6fca-4e4d-9611-a12d65cd4aa8/resource/0bcec125-0673-41c0-8f76-9e9ddc5c8248/download/combustibles.csv | Consumo de Combustibles
+DS c1b304d5-1fec-558f-bb71-e5bc51b86a58 | Activos y pasivos del Banco Central de la Republica Argentina | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:03.477514
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/300/distribution/300.2/download/activos-pasivos-bcra-anual.csv | Estado Resumido de Activos y Pasivos del BCRA. Valores anual
+DS 29952933-752d-5824-b798-0f9adc3b87d0 | Frutas y hortalizas - Precios mayoristas | CC-BY-4.0 | Secretaría de Agricultura, Ganadería y Pesca | 2026-08-03T15:53:59.920606
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/6dce1e87-7988-4eaf-b0e1-b3abbb3964da/download/precios-fyh-mercadocentral-bsas-arg-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Centra
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/f6393c63-6664-4340-ad25-915098a02aa3/download/precios-fyh-mercado-sanpablo-brasil-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado de San
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/812813d9-d2c2-465d-a0ab-2b3e2c3ffb9f/download/precios-fyh-mercado-asuncion-paraguay-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Centra
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/42e2bf41-2d45-411b-9e09-56f9f07958a9/download/precios-fyh-mercado-santiago-chile-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Lo Val
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/72067f03-0eb7-4e15-bba3-20df6b0e0b76/download/precios-fyh-mercado-uruguay-2017-2c2018-2.csv | Precios mayoristas de frutas y hortalizas del Mercado Modelo
+DS 23a81762-d15e-5b40-be16-e535e2687f5c | Tipos de Cambio Históricos | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:03.176879
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/175/distribution/175.1/download/tipos-de-cambio-historicos.csv | Tipos de Cambio Históricos, Banco Central
+DS 6c02c22a-a45d-53ba-adad-37efb3e32ab7 | Producto Interno Bruto 1950-1964 | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-10-04T09:01:15.411642
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/386/distribution/386.1/download/pib-precios-mercado-costo-factores-precios-constantes-1960-anual.csv | Producto Interno Bruto a precios de mercado y a costo de fac
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/386/distribution/386.2/download/pib-precios-mercado-costo-factores-precios-corrientes-anual.csv | Producto Interno Bruto a precios de mercado y a costo de fac
+DS 73a19ae8-8076-5105-b519-f00d1a464982 | Tipo de Cambio $-USD - Futuro Dólar | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:54:46.840555
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/168/distribution/168.1/download/datos-tipo-cambio-usd-futuro-dolar-frecuencia-diaria.csv | Tipo de cambio $-USD - futuro dólar. Valores diarios
+DS 92710475-34f7-51e3-8efd-9959a6eff4b4 | Balance Cambiario | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:54:38.510293
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/182/distribution/182.1/download/balance-cambiario.csv | Balance Cambiario. Valores mensuales
+DS 119a9cca-9528-5ff6-abd1-3b59dfb579f5 | Balance Cambiario del SIACAM | Creative Commons Attribution 4.0 | Secretaría de Minería | 2026-10-18T09:12:57.528028
+    RES XLSX https://www.mecon.gob.ar/dataset/Balance_cambiario_argentina.xlsx | Balance cambiario del SIACAM
+    RES PDF https://www.mecon.gob.ar/dataset/Metodologia-balance-cambiario.pdf | Metodología del Balance Cambiario del SIACAM
+DS dc893ac4-6e98-5686-8d51-8b91e7955a0b | Brasil Salario medio real | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:54:58.157766
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/310/distribution/310.1/download/brasil-salario-medio-real.csv | Salario medio real. Valores mensuales
+GET https://datos.gob.ar/api/3/action/package_search?q=frutas+hortalizas+precios&rows=10 -> 200 application/json;charset=utf-8 40661
+DS 29952933-752d-5824-b798-0f9adc3b87d0 | Frutas y hortalizas - Precios mayoristas | CC-BY-4.0 | Secretaría de Agricultura, Ganadería y Pesca | 2026-08-03T15:53:59.920606
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/6dce1e87-7988-4eaf-b0e1-b3abbb3964da/download/precios-fyh-mercadocentral-bsas-arg-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Centra
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/f6393c63-6664-4340-ad25-915098a02aa3/download/precios-fyh-mercado-sanpablo-brasil-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado de San
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/812813d9-d2c2-465d-a0ab-2b3e2c3ffb9f/download/precios-fyh-mercado-asuncion-paraguay-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Centra
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/42e2bf41-2d45-411b-9e09-56f9f07958a9/download/precios-fyh-mercado-santiago-chile-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Lo Val
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/72067f03-0eb7-4e15-bba3-20df6b0e0b76/download/precios-fyh-mercado-uruguay-2017-2c2018-2.csv | Precios mayoristas de frutas y hortalizas del Mercado Modelo
+DS a66deffa-b332-5c33-9932-c9fd1128ff40 | Frutas - Anuario de importaciones | CC-BY-4.0 | Secretaría de Agricultura, Ganadería y Pesca | 2026-08-03T15:54:07.102297
+    RES CSV https://datos.agroindustria.gob.ar/dataset/a4ae0c7f-b62f-4690-b37a-8a7a61052b9a/resource/555a7c22-05c5-40a0-ba0f-8b1702455b00/download/anuarioimpo-frutas-2013-2017-.csv | Importaciones de frutas del año 2013 al 2017
+    RES CSV https://datos.agroindustria.gob.ar/dataset/a4ae0c7f-b62f-4690-b37a-8a7a61052b9a/resource/04d6bbdf-44cf-4d0e-af11-a672484e725a/download/anuarioimpo-frutas-2013-2017-en-toneladas-.csv | Importaciones de frutas desde el año 2013 al 2017 en tonelad
+    RES CSV https://datos.magyp.gob.ar/dataset/a4ae0c7f-b62f-4690-b37a-8a7a61052b9a/resource/24d2f5d3-33ed-4aa4-b418-c932a3320c9f/download/anuarioimpo-frutas-2013-2017-en-usd-.csv | Importaciones de frutas por precios
+DS 757bafff-8c66-59bd-af82-321df371d599 | Frutas - Anuario de exportaciones | CC-BY-4.0 | Secretaría de Agricultura, Ganadería y Pesca | 2026-08-03T15:54:13.938536
+    RES CSV https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/8540cc11-24da-4fd6-9bf7-bd29430b3937/download/exportaciones-de-frutas-del-anio-2013-al-2017.csv | Exportaciones de frutas del año 2013 al 2017
+    RES CSV https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/d6a47033-1f54-43d8-a001-0e5ad43b2eef/download/exportaciones-de-frutas-desde-el-anio-2013-al-2017-en-toneladas.csv | Exportaciones de frutas desde el año 2013 al 2017 en tonelad
+    RES CSV https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/13a7d3b6-2326-4da0-8600-06c56fd6c436/download/exportaciones-de-frutas-del-anio-2013-al-2017-expresadas-en-usd.csv | Exportaciones de frutas desde el año 2013 al 2017 expresadas
+GET https://datos.gob.ar/api/3/action/package_search?q=precios+mayoristas+frutas&rows=10 -> 200 application/json;charset=utf-8 99141
+DS 29952933-752d-5824-b798-0f9adc3b87d0 | Frutas y hortalizas - Precios mayoristas | CC-BY-4.0 | Secretaría de Agricultura, Ganadería y Pesca | 2026-08-03T15:53:59.920606
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/6dce1e87-7988-4eaf-b0e1-b3abbb3964da/download/precios-fyh-mercadocentral-bsas-arg-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Centra
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/f6393c63-6664-4340-ad25-915098a02aa3/download/precios-fyh-mercado-sanpablo-brasil-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado de San
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/812813d9-d2c2-465d-a0ab-2b3e2c3ffb9f/download/precios-fyh-mercado-asuncion-paraguay-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Centra
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/42e2bf41-2d45-411b-9e09-56f9f07958a9/download/precios-fyh-mercado-santiago-chile-2017-2c2018-.csv | Precios mayoristas de frutas y hortalizas del Mercado Lo Val
+    RES CSV https://datos.magyp.gob.ar/dataset/8b4d6a1f-753d-4707-9085-bdcbbc47f00b/resource/72067f03-0eb7-4e15-bba3-20df6b0e0b76/download/precios-fyh-mercado-uruguay-2017-2c2018-2.csv | Precios mayoristas de frutas y hortalizas del Mercado Modelo
+DS 94887b02-a2bf-5126-bb45-39b2bde85c75 | Precios Claros - SEPA Mayorista | Creative Commons Attribution 4.0 | Secretaría de Industria y Comercio | 2026-08-03T17:32:52.004772
+    RES ZIP https://datos.produccion.gob.ar/dataset/e9ffbef0-c8a3-4d7d-9c50-ae55a2a8f98e/resource/64feff09-3166-4cd6-a79d-86bf0629b1e5/download/sepa_domingo.zip | Domingo
+    RES ZIP https://datos.produccion.gob.ar/dataset/e9ffbef0-c8a3-4d7d-9c50-ae55a2a8f98e/resource/14694559-88b5-4e4a-af83-a57527267828/download/sepa_lunes.zip | Lunes
+    RES ZIP https://datos.produccion.gob.ar/dataset/e9ffbef0-c8a3-4d7d-9c50-ae55a2a8f98e/resource/92af1942-0135-45b4-a2da-e2c378156b8a/download/sepa_martes.zip | Martes
+    RES ZIP https://datos.produccion.gob.ar/dataset/e9ffbef0-c8a3-4d7d-9c50-ae55a2a8f98e/resource/b32aca87-3089-40b1-ac27-f1923edb2169/download/sepa_miercoles.zip | Miércoles
+    RES ZIP https://datos.produccion.gob.ar/dataset/e9ffbef0-c8a3-4d7d-9c50-ae55a2a8f98e/resource/28087a16-f71f-4b67-bddc-a64a988a4753/download/sepa_jueves.zip | Jueves
+DS a66deffa-b332-5c33-9932-c9fd1128ff40 | Frutas - Anuario de importaciones | CC-BY-4.0 | Secretaría de Agricultura, Ganadería y Pesca | 2026-08-03T15:54:07.102297
+    RES CSV https://datos.agroindustria.gob.ar/dataset/a4ae0c7f-b62f-4690-b37a-8a7a61052b9a/resource/555a7c22-05c5-40a0-ba0f-8b1702455b00/download/anuarioimpo-frutas-2013-2017-.csv | Importaciones de frutas del año 2013 al 2017
+    RES CSV https://datos.agroindustria.gob.ar/dataset/a4ae0c7f-b62f-4690-b37a-8a7a61052b9a/resource/04d6bbdf-44cf-4d0e-af11-a672484e725a/download/anuarioimpo-frutas-2013-2017-en-toneladas-.csv | Importaciones de frutas desde el año 2013 al 2017 en tonelad
+    RES CSV https://datos.magyp.gob.ar/dataset/a4ae0c7f-b62f-4690-b37a-8a7a61052b9a/resource/24d2f5d3-33ed-4aa4-b418-c932a3320c9f/download/anuarioimpo-frutas-2013-2017-en-usd-.csv | Importaciones de frutas por precios
+DS 4d3e2041-a3ff-5632-a649-f070bf831dfd | Precios Mayoristas - Resolución 1104/04 | CC-BY-4.0 | Secretaría de Energía | 2026-09-26T09:04:08.585858
+    RES CSV http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/1259e17f-aee6-4858-9811-ba8efb7f4b9f/download/precios-mayoristas-res-1104-desde-diciembre-2024.csv | Precios Mayoristas Res 1104 desde Diciembre 2024
+    RES CSV http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/6872e948-43e8-42a7-820d-03f315831e35/download/precios-mayoristas-res-1104.csv | Precios Mayoristas Res 1104
+    RES CSV http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/1db7f27f-c23a-4873-8da2-cfe6be72f7e2/download/distribuidores-mayoristas-de-combustibles-lquidos-res-110404-.csv | Distribuidores mayoristas de combustibles líquidos (Res. 110
+    RES SHP http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/87da78b8-a814-4c30-93e5-25963be79864/download/distribuidores-mayoristas-de-combustibles-lquidos-res-110404-.zip | Distribuidores mayoristas de combustibles líquidos (Res. 110
+DS 757bafff-8c66-59bd-af82-321df371d599 | Frutas - Anuario de exportaciones | CC-BY-4.0 | Secretaría de Agricultura, Ganadería y Pesca | 2026-08-03T15:54:13.938536
+    RES CSV https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/8540cc11-24da-4fd6-9bf7-bd29430b3937/download/exportaciones-de-frutas-del-anio-2013-al-2017.csv | Exportaciones de frutas del año 2013 al 2017
+    RES CSV https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/d6a47033-1f54-43d8-a001-0e5ad43b2eef/download/exportaciones-de-frutas-desde-el-anio-2013-al-2017-en-toneladas.csv | Exportaciones de frutas desde el año 2013 al 2017 en tonelad
+    RES CSV https://datos.magyp.gob.ar/dataset/d08e3793-27a8-4318-ad3c-926c3e4d0264/resource/13a7d3b6-2326-4da0-8600-06c56fd6c436/download/exportaciones-de-frutas-del-anio-2013-al-2017-expresadas-en-usd.csv | Exportaciones de frutas desde el año 2013 al 2017 expresadas
+DS 98675244-b15c-5616-ba57-eb80d5b654dc | Tasas trimestrales de variación de precios | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:01.808632
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/95/distribution/95.1/download/tasas-variacion-acumulada-trimestral-indices-precios.csv | Tasas de variación acumuladas de los meses del trimestre
+DS 2d657003-9f68-522a-bd62-45b6407ee089 | Índice de Precios Internos Básicos del Productor. SERIE DISCONTINUADA | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:08.321656
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/108/distribution/108.1/download/indice-precios-internos-basicos-productor-base-1993-anual.csv | Índice de Precios Internos Básicos del Productor. Base 1993.
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/108/distribution/108.2/download/indice-precios-internos-basicos-productor-base-1993-trimestral.csv | Índice de Precios Internos Básicos del Productor. Base 1993.
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/108/distribution/108.3/download/indice-precios-internos-basicos-productor-base-1993-mensual.csv | Índice de Precios Internos Básicos del Productor. Base 1993.
+DS c68cb710-413f-5cb4-8d25-fa146719e9e8 | Índice de Precios Internos Básicos del Productor. Dic-2015 = 100 | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:16.357506
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/450/distribution/450.1/download/indice-precios-internos-basicos-del-productor.csv | Índice de Precios Internos Básicos del Productor. Dic-2015 =
+DS f5363263-2dd6-5f95-bc84-5a75ed334ccf | Índice de Precios Internos Básicos al por Mayor. SERIE DISCONTINUADA | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:07.824681
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/107/distribution/107.1/download/indice-precios-internos-basicos-al-por-mayor-base-1993-anual.csv | Índice de Precios Internos Básicos al por Mayor. SERIE DISCO
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/107/distribution/107.2/download/indice-precios-internos-basicos-al-por-mayor-base-1993-trimestral.csv | Índice de Precios Internos Básicos al por Mayor. SERIE DISCO
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/107/distribution/107.3/download/indice-precios-internos-basicos-al-por-mayor-base-1993-mensual.csv | Índice de Precios Internos Básicos al por Mayor. Base 1993. 
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/107/distribution/107.4/download/indice-precios-internos-basicos-al-por-mayor-desagregado-base-1993-anual.csv | Índice de Precios Internos Básicos al por Mayor IProducto In
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/107/distribution/107.5/download/indice-precios-internos-basicos-al-por-mayor-desagregado-base-1993-mensual.csv | Índice de Precios Internos Básicos al por Mayor IProducto In
+DS 175f53cc-dd16-5450-b9cc-82f32d1deb72 | Índice de Precios Internos al por Mayor (IPIM). SERIE DISCONTINUADA | Creative Commons Attribution 4.0 | Subsecretaría de Programación Macroeconómica | 2026-08-06T01:55:07.420222
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/106/distribution/106.1/download/indice-precios-internos-al-por-mayor-base-1993-anual.csv | Índice de Precios Internos al por Mayor. Base 1993. SERIE DI
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/106/distribution/106.2/download/indice-precios-internos-al-por-mayor-base-1993-trimestral.csv | Índice de Precios Internos al por Mayor. Base 1993. SERIE DI
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/106/distribution/106.3/download/indice-precios-internos-al-por-mayor-base-1993-mensual.csv | Índice de Precios Internos al por Mayor. Base 1993. SERIE DI
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/106/distribution/106.4/download/indice-precios-internos-basicos-al-por-mayor-desagregado-base-1993-anual.csv | Índice de Precios Internos al por Mayor IPIM desagregado has
+    RES CSV https://infra.datos.gob.ar/catalog/sspm/dataset/106/distribution/106.5/download/indice-precios-internos-basicos-al-por-mayor-desagregado-base-1993-mensual.csv | Índice de Precios Internos al por Mayor IPIM desagregado has
+GET https://www.odepa.gob.cl/precios/frutas-y-hortalizas -> 200 text/html; charset=UTF-8 159371
+<!DOCTYPE html> <!--[if (gt IE 9)|!(IE)]><!--><html class="not-ie no-js" lang="es"><!--<![endif]--> <head> <meta charset="UTF-8" /> <meta name="format-detection" content="telephone=no"> <meta 
+GET https://www.mercadocentral.gob.ar/ -> 200 None 38681
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+RDFa 1.1//EN"> <html class="no-js" lang="en"> <head profile="http://www.w3.org/1999/xhtml/vocab"> <meta charset="utf-8" /> <link rel="shortcut icon" href
+GET https://www.mercadocentral.gob.ar/informaciones/precios-mayoristas -> 404 None 400
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+RDFa 1.1//EN"> <html class="no-js" lang="en"> <head profile="http://www.w3.org/1999/xhtml/vocab"> <meta charset="utf-8" /> <link rel="shortcut icon" href
+GET https://www.uam.com.uy/ -> 200 text/html; charset=UTF-8 196312
+<!DOCTYPE HTML> <html lang="es"> <head> <meta charset="UTF-8"> <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /> <!-- This site is o
