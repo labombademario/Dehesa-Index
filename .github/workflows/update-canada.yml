@@ -28,7 +28,7 @@ jobs:
         with:
           paths: >-
             data/canada-coverage.json
-            data/canada-provinces.json
+            data/canada-farm-prices-prov.json
           preset: price-engine
           message: "data: Canadá (Statistics Canada, precios agrícolas)"
           user: "Dehesa Index Bot"

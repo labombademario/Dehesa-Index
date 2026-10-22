@@ -134,7 +134,7 @@ for key, (sc_prod, provs, uom, unit, conv) in SPEC.items():
 
 (ROOT / "data").mkdir(exist_ok=True)
 (ROOT / "data" / "canada-coverage.json").write_text(json.dumps({"generatedAt": verified_at, "table": PID, "tableMax": table_max, "publicationDate": pub_date, "products": coverage}, indent=1, ensure_ascii=False) + "\n")
-(ROOT / "data" / "canada-provinces.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": verified_at, "table": PID, "tableMax": table_max, "publicationDate": pub_date, "source": {"name": "Statistics Canada, table 32-10-0077-01", "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701", "license": "Open Government Licence - Canada"}, "products": provs_out}, ensure_ascii=False, separators=(",", ":")) + "\n")
+(ROOT / "data" / "canada-farm-prices-prov.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": verified_at, "table": PID, "tableMax": table_max, "publicationDate": pub_date, "source": {"name": "Statistics Canada, table 32-10-0077-01", "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701", "license": "Open Government Licence - Canada"}, "products": provs_out}, ensure_ascii=False, separators=(",", ":")) + "\n")
 if not observations:
     sys.exit("Sin observaciones de Canadá")
 SNAP_DIR.mkdir(parents=True, exist_ok=True)

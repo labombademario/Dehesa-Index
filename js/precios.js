@@ -854,6 +854,54 @@
     var el = ev.target; if (!el || !el.classList || !el.classList.contains('di-lonja-ccy')) return;
     writeLS('dehesaIndexPlCcy', el.value); applyPlMode(); renderAll();
   });
+  // Canadá: StatCan publica el precio al productor por provincia (data/canada-farm-prices-prov.json); la tarjeta enseña la provincia de referencia y se puede cambiar, como las lonjas en España.
+  var PROVS = null;
+  var provSel = (function () { try { return JSON.parse(readLS('dehesaCaProv') || '{}') || {}; } catch (e) { return {}; } })();
+  var PROV_N = { es: { Alberta: 'Alberta', Manitoba: 'Manitoba', Saskatchewan: 'Saskatchewan', Ontario: 'Ontario', Quebec: 'Quebec' }, en: { Alberta: 'Alberta', Manitoba: 'Manitoba', Saskatchewan: 'Saskatchewan', Ontario: 'Ontario', Quebec: 'Quebec' }, fr: { Alberta: 'Alberta', Manitoba: 'Manitoba', Saskatchewan: 'Saskatchewan', Ontario: 'Ontario', Quebec: 'Québec' }, it: { Alberta: 'Alberta', Manitoba: 'Manitoba', Saskatchewan: 'Saskatchewan', Ontario: 'Ontario', Quebec: 'Quebec' } };
+  var PROV_T = { es: ['Provincia', 'por defecto', 'precio pagado al productor', 'Serie mensual publicada por Statistics Canada (tabla 32-10-0077-01), en dólares canadienses, sin convertir.'], en: ['Province', 'default', 'price paid to producers', 'Monthly series published by Statistics Canada (table 32-10-0077-01), in Canadian dollars, not converted.'], fr: ['Province', 'par défaut', 'prix payé aux producteurs', 'Série mensuelle publiée par Statistique Canada (tableau 32-10-0077-01), en dollars canadiens, sans conversion.'], it: ['Provincia', 'predefinita', 'prezzo pagato ai produttori', 'Serie mensile pubblicata da Statistics Canada (tabella 32-10-0077-01), in dollari canadesi, senza conversione.'] };
+  function loadProvs() {
+    if (PROVS || typeof global.fetch !== 'function') return;
+    PROVS = {};
+    global.fetch('data/canada-farm-prices-prov.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.products) { PROVS = d; if (state.location === 'ca') renderAll(); } }).catch(function () {});
+  }
+  function provName(n) { return (PROV_N[lang()] || PROV_N.es)[n] || n; }
+  function provList(entry) {
+    if (state.location !== 'ca') return null;
+    var P = PROVS && PROVS.products && PROVS.products[entry.nameKey];
+    return P && P.provinces && P.provinces.length > 1 ? P : null;
+  }
+  // provincia elegida distinta de la de referencia (null = el dato de siempre)
+  function provPick(entry) {
+    var P = provList(entry); if (!P) return null;
+    var sel = provSel[entry.nameKey] || P.default; if (sel === P.default) return null;
+    for (var i = 0; i < P.provinces.length; i++) if (P.provinces[i].province === sel) return P.provinces[i];
+    return null;
+  }
+  function provRegion(x, base) { var pt = x.points; return { price: x.value, changePct: x.changePct || 0, history: pt.slice(-12).map(function (q) { return q[1]; }), currency: 'CAD', kgPerUnit: base && base.kgPerUnit }; }
+  function provSelectHtml(entry) {
+    var P = provList(entry); if (!P) return '';
+    var X = PROV_T[lang()] || PROV_T.es, cur = provPick(entry), curName = cur ? cur.province : P.default;
+    var opts = P.provinces.map(function (x) { return '<option value="' + esc(x.province) + '"' + (x.province === curName ? ' selected' : '') + '>' + esc(provName(x.province)) + (x.province === P.default ? ' (' + esc(X[1]) + ')' : '') + '</option>'; }).join('');
+    return '<label class="di-lonja" style="display:inline-flex;gap:6px;align-items:center;font-size:12.5px;margin:4px 0 2px;color:var(--text-muted);max-width:100%">' + esc(X[0]) + ' <select class="di-prov-sel di-compare-select" data-prov="' + esc(entry.nameKey) + '" style="padding:2px 6px;font-size:12.5px;width:auto;max-width:100%">' + opts + '</select></label>';
+  }
+  if (global.document) global.document.addEventListener('change', function (ev) {
+    var el = ev.target; if (!el || !el.classList || !el.classList.contains('di-prov-sel')) return;
+    provSel[el.getAttribute('data-prov')] = el.value; writeLS('dehesaCaProv', JSON.stringify(provSel)); renderAll();
+  });
+  function openProvHistory(key) {
+    var entry = PRODUCT_BY_KEY[key]; if (!entry) return;
+    var x = provPick(entry); if (!x || !x.points || x.points.length < 2 || !window.DehesaChart) return;
+    var X = PROV_T[lang()] || PROV_T.es, pts = x.points.map(function (q) { return { x: Date.parse(q[0] + '-01T00:00:00Z'), y: q[1], l: monthTxt(q[0] + '-01') }; });
+    var vals = x.points.map(function (q) { return q[1]; }), mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), last = x.points[x.points.length - 1];
+    var f = function (v) { return D.fmtNumber(v) + ' CAD'; }, nm = productName(entry.nameKey) + ' · ' + provName(x.province);
+    lockProductModal();
+    var chart = window.DehesaChart.render({ series: [{ name: productName(entry.nameKey), color: '#2f6b4a', pts: pts }], xMode: 'time', yTitle: 'CAD', aria: nm, noLegend: true, vFmt: function (v) { return D.fmtNumber(v); } });
+    var LH = LH_T[lang()] || LH_T.es;
+    document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(nm) + ' · ' + esc(LH[0]) + '</h2><button type="button" class="di-modal-close" id="di-history-close" aria-label="' + esc(LH[4]) + '">×</button></div>' + chart +
+      '<p class="di-field-hint" style="margin:10px 0 2px">' + esc(LH[1]) + ': <strong>' + esc(f(last[1])) + '</strong> (' + esc(monthTxt(last[0] + '-01')) + ') · ' + esc(LH[2]) + ': ' + esc(f(mn)) + ' · ' + esc(LH[3]) + ': ' + esc(f(mx)) + '</p><p class="di-field-hint">' + esc(X[3]) + '</p></div></div>';
+    var ov = document.getElementById('di-history-overlay'); ov.addEventListener('mousedown', function (e) { if (e.target === ov) closeLonjaHistory(); });
+    document.getElementById('di-history-close').addEventListener('click', closeLonjaHistory); bindModalKeyboard(closeLonjaHistory);
+  }
   function lonjaRegion(x) {
     var p = x.p, last = p[p.length - 1][1], prev = p.length > 1 ? p[p.length - 2][1] : null;
     return { price: last, changePct: prev ? Math.round((last / prev - 1) * 1e6) / 1e4 : 0, history: p.slice(-12).map(function (q) { return q[1]; }), currency: x.c || 'EUR', kgPerUnit: 1000 };
@@ -890,6 +938,11 @@
       // país sin media nacional (o parada): el mercado es una observación oficial de la Comisión, con su propia fecha
       { var b0 = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-eu']; observation0 = {}; if (b0) for (var k0 in b0) observation0[k0] = b0[k0]; observation0.status = 'verified'; observation0.value = lonja.p[lonja.p.length - 1][1]; observation0.observationDate = lonja.p[lonja.p.length - 1][0]; }
     }
+    var prv = lonja ? null : provPick(entry);
+    if (prv && disp.region) {
+      var d3 = {}; for (var k3 in disp) d3[k3] = disp[k3]; d3.region = provRegion(prv, disp.region); disp = d3;
+      { var b3 = observation0 || {}, o3 = {}; for (var k4 in b3) o3[k4] = b3[k4]; o3.status = 'verified'; o3.value = prv.value; o3.observationDate = prv.last; observation0 = o3; }
+    }
     var built = disp.region ? D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T()) : { price: '—', unit: '', changeLabel: '', changeColor: 'var(--text-faint)', sparkPath: '', sparkColor: 'var(--text-faint)' };
     var observation = disp.region ? observation0 : null;
     var dataState = productDataState(observation, disp);
@@ -915,6 +968,7 @@
     var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
     var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
     if (disp.cty && showValue && observation && observation.ctyLabel) mk = (observation.ctyLabel[lang()] || observation.ctyLabel.es) + ' · ' + (({ es: 'media nacional', en: 'national average', fr: 'moyenne nationale', it: 'media nazionale' })[lang()]);
+    if (prv && showValue) { mk = provName(prv.province) + ' · ' + (PROV_T[lang()] || PROV_T.es)[2]; od = S.fmtDate(prv.last, lang()); origTxt = ''; }
     if (lonja && showValue) { mk = (lonjaCC() === 'ES' ? (LONJA_T[lang()] || LONJA_T.es)[2] : (ccName(lonjaCC().toLowerCase()) || lonjaCC())) + ' · ' + lonjaLabel(lonja); od = lonja.f === 'm' ? monthTxt(lonja.p[lonja.p.length - 1][0]) : S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); if (lonja.o && lonja.c !== 'PLN') origTxt = ({ es: 'Precio original en ', en: 'Original price in ', fr: 'Prix d’origine en ', it: 'Prezzo originale in ' })[lang()] + lonja.o + ({ es: ', convertido con la media mensual del BCE de cada mes', en: ', converted with the ECB monthly average of each month', fr: ', converti avec la moyenne mensuelle de la BCE de chaque mois', it: ', convertito con la media mensile della BCE di ogni mese' })[lang()]; }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
     var meta = [est, mk, od ? (/^\d/.test(od) ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') : (({ es: 'dato de ', en: 'as of ', fr: 'donnée de ', it: 'dato di ' })[lang()] || '')) + od : ''].filter(Boolean).join(' · ');
@@ -922,7 +976,7 @@
     return (
       '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +
-          '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + (showValue ? lonjaSelectHtml(entry) + lonjaCcyHtml(entry) : '') + '</div>' +
+          '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + (showValue ? lonjaSelectHtml(entry) + lonjaCcyHtml(entry) + provSelectHtml(entry) : '') + '</div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮 <span class="di-ib-l">' + esc(IBL[0]) + '</span></button>' : '') +
@@ -1262,13 +1316,13 @@
     });
     var historyBtns = root.querySelectorAll('[data-action="history"]');
     Array.prototype.forEach.call(historyBtns, function (btn) {
-      btn.addEventListener('click', function () { var k = btn.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else openHistory(k); });
+      btn.addEventListener('click', function () { var k = btn.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else if (provPick(PRODUCT_BY_KEY[k] || {})) openProvHistory(k); else openHistory(k); });
     });
     // El minigrafico de la tarjeta tambien abre el historico ampliado (como el boton 📈): raton, teclado (Intro/Espacio) y tactil
     var sparks = root.querySelectorAll('[data-action="spark-history"]');
     Array.prototype.forEach.call(sparks, function (sp) {
-      sp.addEventListener('click', function (ev) { ev.stopPropagation(); var k = sp.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else openHistory(k); });
-      sp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); ev.stopPropagation(); var k = sp.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else openHistory(k); } });
+      sp.addEventListener('click', function (ev) { ev.stopPropagation(); var k = sp.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else if (provPick(PRODUCT_BY_KEY[k] || {})) openProvHistory(k); else openHistory(k); });
+      sp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); ev.stopPropagation(); var k = sp.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else if (provPick(PRODUCT_BY_KEY[k] || {})) openProvHistory(k); else openHistory(k); } });
     });
     var alertBtns = root.querySelectorAll('[data-action="alert"]');
     Array.prototype.forEach.call(alertBtns, function (btn) {
@@ -1340,6 +1394,7 @@
   function regionObjFor(entry, regionCode, country) {
     var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
     if (regionCode === 'lonja') { var lj = lonjaPick(entry); if (lj) return { region: lonjaRegion(lj), ccy: lj.c || 'EUR', kg: 1000, unit: UL[entry.product.metricUnitKey] }; }
+    if (regionCode === 'prov') { var pv = provPick(entry); if (pv && entry.product.ca) return { region: provRegion(pv, entry.product.ca), ccy: 'CAD', kg: entry.product.caKgPerUnit || entry.product.metricKgPerUnit, unit: UL[entry.product.caUnitKey || entry.product.metricUnitKey] }; }
     if (regionCode === 'us') return { region: entry.product.us, ccy: 'USD', kg: entry.product.imperialKgPerUnit, unit: UL[entry.product.imperialUnitKey] };
     if (regionCode === 'eu') {
       var disp = resolveDisplay(entry, 'eu', country || state.euCountry);
@@ -1531,8 +1586,8 @@
   function openCalc(key) {
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
-    var lj = lonjaPick(entry);
-    state.calc = { key: key, region: lj ? 'lonja' : defaultRegionFor(entry), mode: 'directa' };
+    var lj = lonjaPick(entry), pj = provPick(entry);
+    state.calc = { key: key, region: lj ? 'lonja' : pj ? 'prov' : defaultRegionFor(entry), mode: 'directa' };
     lockProductModal();
     renderCalcModal();
   }
@@ -1551,7 +1606,7 @@
     var entry = PRODUCT_BY_KEY[c.key];
     var avail = availableRegions(entry);
     var up = calcUnitPrice(entry, c.region);
-    var regionBtns = c.region === 'lonja' ? '' : avail.map(function (r) {
+    var regionBtns = c.region === 'lonja' || c.region === 'prov' ? '' : avail.map(function (r) {
       return '<button type="button" class="di-region-btn' + (r === c.region ? ' active' : '') + '" data-cregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
     }).join('');
     var html =
@@ -1621,8 +1676,8 @@
   function openAlert(key) {
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
-    var lj = lonjaPick(entry);
-    state.alert = { key: key, region: lj ? 'lonja' : defaultRegionFor(entry), direction: 'up', attempted: false, confirmed: false };
+    var lj = lonjaPick(entry), pj = provPick(entry);
+    state.alert = { key: key, region: lj ? 'lonja' : pj ? 'prov' : defaultRegionFor(entry), direction: 'up', attempted: false, confirmed: false };
     lockProductModal();
     renderAlertModal();
   }
@@ -1634,7 +1689,7 @@
     var t = ui();
     var entry = PRODUCT_BY_KEY[a.key];
     var avail = availableRegions(entry);
-    var regionBtns = a.region === 'lonja' ? '' : avail.map(function (r) {
+    var regionBtns = a.region === 'lonja' || a.region === 'prov' ? '' : avail.map(function (r) {
       return '<button type="button" class="di-region-btn' + (r === a.region ? ' active' : '') + '" data-aregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
     }).join('');
 
@@ -1903,6 +1958,7 @@
 
   function renderAll() {
     if (state.location === 'eu') loadLonjas();
+    if (state.location === 'ca') loadProvs();
     renderHead();
     var healthEl = document.getElementById('pr-data-health');
     if (healthEl && global.DehesaDataTrust) healthEl.innerHTML = global.DehesaDataTrust.renderHealth();

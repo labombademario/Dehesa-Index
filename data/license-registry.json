@@ -4858,7 +4858,7 @@
     "statcan"
    ]
   },
-  "data/canada-provinces.json": {
+  "data/canada-farm-prices-prov.json": {
    "sources": [
     "statcan"
    ]
