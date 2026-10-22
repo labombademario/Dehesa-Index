@@ -246,6 +246,17 @@ sources:
     data: [france-bulconj/index.json, france-bulconj-stats.json, france-bulconj-log.txt]
     extra: ['!data/france-bulconj']
     message: Boletin mensual de coyuntura agraria de Francia, precios y cotizaciones por sector (Agreste)
+  - id: fr-agreste-more
+    name: Update France farm employment, land use (TERUTI), input price indices by region (IPAMPA) and wine harvest of Agreste
+    cron: ['50 9 * * 2']
+    script: scripts/update-fr-agreste-more.py
+    timeout: 45
+    script_timeout: 35
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/france-agreste-more) data/france-agreste-more-stats.json
+    data: [france-agreste-more/index.json, france-agreste-more-stats.json, france-agreste-more-log.txt]
+    extra: ['!data/france-agreste-more']
+    message: Empleo agricola, uso del suelo TERUTI, indices IPAMPA por region y vendimia de Francia (Agreste)
   - id: fr-comex
     name: Update France foreign trade of cereals, dairy, eggs and food products by country (Agreste, customs data)
     cron: ['0 9 * * 2']

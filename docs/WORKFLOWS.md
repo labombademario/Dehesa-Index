@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-259 workflows (216 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+260 workflows (217 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -161,6 +161,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-fr-agreste-more.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-agreste-more.py | france-agreste-more-stats.json, france-agreste-more/index.json | finish, validate-files |
 | update-fr-bulconj.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-bulconj.py | france-bulconj-stats.json, france-bulconj/index.json | finish, validate-files |
 | update-fr-cereobs.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-cereobs.py | france-cereobs.json | finish, validate-files |
 | update-fr-comex.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-comex.py | france-comex-stats.json, france-comex/index.json | finish, validate-files |

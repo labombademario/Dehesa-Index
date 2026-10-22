@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T22:33:56Z",
+ "generatedAt": "2026-10-22T23:28:45Z",
  "summary": {
-  "sources": 157,
-  "sourcesApto": 144,
+  "sources": 158,
+  "sourcesApto": 145,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 342,
-  "datasets_apto": 211,
+  "datasets": 345,
+  "datasets_apto": 214,
   "datasets_condiciones": 121,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -45,6 +45,10 @@
   },
   "agreste_infosrapides": {
    "name": "France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur)",
+   "verdict": "apto"
+  },
+  "agreste_more": {
+   "name": "France — Agreste / SSP, empleo agrícola, TERUTI, IPAMPA y coyuntura vitivinícola",
    "verdict": "apto"
   },
   "agreste_rica": {

@@ -1,0 +1,5 @@
+empleo: leido (Dos2602)
+teruti: leido (TERUTI)
+vinconj: leido (VINCONJ)
+ipampa: leido (IPAMPA)
+escrito: 5 ficheros, 29 series en las estadisticas

@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 158 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36564 series en el catalogo unificado.
+Resumen: 159 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36593 series en el catalogo unificado.
 
-## VERIFIED (158)
+## VERIFIED (159)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -20,6 +20,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `agreste_bulconj` | France — Agreste / SSP, Bulletin de conjoncture mensuel (BulConj) | FR | etalab-1.0 | si/si | si | 69 | Citar Agreste/SSP; el boletín recoge cotizaciones y datos de terceros (FranceAgriMer, Eurostat, INSEE, bolsas), que se publican tal cual los… |
 | `agreste_comex` | France — Agreste / SSP con datos de la DGDDI (aduanas), Échanges extérieurs de céréales, produits laitiers, œufs et produits des IAA | FR | etalab-1.0 | si/si | si | 152 | Citar Agreste/SSP y la DGDDI; las cifras de aduanas se revisan, por eso cada edición sustituye a la anterior. |
 | `agreste_infosrapides` | France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur) | FR | etalab-1.0 | si/si | si | 63 | Citar Agreste/SSP; la leche procede de la encuesta mensual lechera FranceAgriMer/SSP y el comercio exterior de aduanas, que Agreste publica … |
+| `agreste_more` | France — Agreste / SSP, empleo agrícola, TERUTI, IPAMPA y coyuntura vitivinícola | FR | etalab-1.0 | si/si | si | 29 | Citar Agreste/SSP. |
 | `agreste_rica` | France — Agreste / SSP (ministère de l'Agriculture), Réseau d'information comptable agricole (RICA), séries longues 1988-2024 | FR | etalab-1.0 | si/si | si | 133 | Citar Agreste/SSP y la edición; los cruces con menos de 20 explotaciones en la muestra no se difunden y quedan vacíos. |
 | `agreste_saa` | France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département | FR | etalab-1.0 | si/si | si | 4100 | Citar Agreste/SSP y la edición; el último año es provisional y se marca como tal. |
 | `agreste_ssp` | France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer) | FR | etalab-1.0 | si/si | si | 0 | Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer. |

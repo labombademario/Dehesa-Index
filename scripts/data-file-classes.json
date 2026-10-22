@@ -463,6 +463,10 @@
   "data/france-bulconj/": {
    "class": "BUILD_ONLY",
    "note": "Boletin mensual de coyuntura de Francia, una hoja por fichero (Agreste BulConj): solo lo leen la pipeline y las pruebas; el navegador usa el catalogo (data/catalog) y aun no hay pagina que lo cargue."
+  },
+  "data/france-agreste-more/": {
+   "class": "BUILD_ONLY",
+   "note": "Empleo agricola, TERUTI, vendimia e IPAMPA de Francia (Agreste): solo lo leen la pipeline y las pruebas hasta que la pagina de Francia cargue estos ficheros bajo demanda; el navegador usa el catalogo."
   }
  }
 }

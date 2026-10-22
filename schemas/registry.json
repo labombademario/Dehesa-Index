@@ -1669,6 +1669,12 @@
    [
     "france_infosrapides_series"
    ]
+  ],
+  "france-agreste-more/index.json": [
+   "france-agreste-more-index",
+   [
+    "france_agreste_more_index"
+   ]
   ]
  },
  "globs": {
@@ -1884,6 +1890,12 @@
    "france-bulconj",
    [
     "france_bulconj"
+   ]
+  ],
+  "france-agreste-more/*.json": [
+   "france-agreste-more",
+   [
+    "france_agreste_more"
    ]
   ]
  },

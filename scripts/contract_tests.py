@@ -5222,3 +5222,28 @@ def france_infosrapides_cultivos(doc, errs, warns, stats):
                     if ed not in eds or not isinstance(t, list) or len(t) != 3 or any(v is not None and (isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or v < 0) for v in t): errs.append("france-infosrapides cultivos %s/%s/%s/%s: %r" % (y, rg, c, ed, t)); return
                     n += 1
     stats["estimaciones"] = n
+
+
+# Conjuntos adicionales de Agreste (empleo, TERUTI, vendimia, IPAMPA)
+def france_agreste_more_index(doc, errs, warns, stats):
+    for f in doc["files"]:
+        if not f.get("file", "").endswith(".json") or f.get("series", 0) < 1: errs.append("france-agreste-more index: %s sin fichero o sin series" % f.get("file")); return
+    stats["ficheros"] = len(doc["files"])
+
+
+def france_agreste_more(doc, errs, warns, stats):
+    """Periodos AAAA o AAAA-MM ordenados y sin repetir, valores numericos finitos, ids unicos en el fichero y ninguna tabla vacia."""
+    import re as _re
+    ids = set(); n = 0
+    for t in doc["tables"]:
+        if not t["series"]: errs.append("france-agreste-more %s: tabla vacia" % t["id"]); return
+        for s in t["series"]:
+            if s["id"] in ids: errs.append("france-agreste-more %s: id repetido" % s["id"]); return
+            ids.add(s["id"]); last = ""
+            for p, v in s["points"]:
+                if not isinstance(p, str) or not _re.fullmatch(r"\d{4}(-(0[1-9]|1[0-2]))?", p) or not 1950 <= int(p[:4]) <= 2100: errs.append("france-agreste-more %s: periodo %r" % (s["id"], p)); return
+                if p <= last: errs.append("france-agreste-more %s: periodos desordenados o repetidos en %s" % (s["id"], p)); return
+                last = p
+                if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or abs(v) > 1e12: errs.append("france-agreste-more %s %s: valor %r" % (s["id"], p, v)); return
+                n += 1
+    stats["tablas"] = len(doc["tables"]); stats["puntos"] = n
