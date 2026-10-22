@@ -223,6 +223,17 @@ sources:
     data: [france-rica/index.json, france-rica-stats.json, france-rica-log.txt]
     extra: ['!data/france-rica']
     message: Cuentas de las explotaciones de Francia por orientacion, tamano y region (Agreste RICA)
+  - id: fr-comex
+    name: Update France foreign trade of cereals, dairy, eggs and food products by country (Agreste, customs data)
+    cron: ['0 9 * * 2']
+    script: scripts/update-fr-comex.py
+    timeout: 45
+    script_timeout: 35
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/france-comex) data/france-comex-stats.json
+    data: [france-comex/index.json, france-comex-stats.json, france-comex-log.txt]
+    extra: ['!data/france-comex']
+    message: Comercio exterior de Francia de cereales, lacteos, huevos y alimentos por producto y pais (Agreste, aduanas)
   - id: eu-fv-farm
     name: Update EU fruit, vegetable and potato farm-gate prices (Eurostat apri_ap_crpouta)
     cron: ['35 7 * * 3']

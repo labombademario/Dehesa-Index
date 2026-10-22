@@ -1,0 +1,42 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update France foreign trade of cereals, dairy, eggs and food products by country (Agreste, customs data)
+on:
+  schedule:
+    - cron: '0 9 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-fr-comex
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-fr-comex.py
+        timeout-minutes: 35
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/france-comex/index.json data/france-comex-stats.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/france-comex/index.json data/france-comex-stats.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/france-comex) data/france-comex-stats.json
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Comercio exterior de Francia de cereales, lacteos, huevos y alimentos por producto y pais (Agreste, aduanas)" data/france-comex/index.json data/france-comex-stats.json data/france-comex-log.txt data/france-comex data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

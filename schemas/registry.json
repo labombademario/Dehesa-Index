@@ -1603,6 +1603,36 @@
    [
     "france_rica_regional"
    ]
+  ],
+  "france-comex/index.json": [
+   "france-comex-index",
+   [
+    "france_comex_index"
+   ]
+  ],
+  "france-comex/cop.json": [
+   "france-comex",
+   [
+    "france_comex"
+   ]
+  ],
+  "france-comex/lait.json": [
+   "france-comex",
+   [
+    "france_comex"
+   ]
+  ],
+  "france-comex/oeufs.json": [
+   "france-comex",
+   [
+    "france_comex"
+   ]
+  ],
+  "france-comex/iaa.json": [
+   "france-comex",
+   [
+    "france_comex"
+   ]
   ]
  },
  "globs": {

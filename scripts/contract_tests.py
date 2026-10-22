@@ -3799,6 +3799,46 @@ def france_rica_regional(doc, errs, warns, stats):
                 k += 1
     if "France hors DROM" not in doc["data"]: errs.append("france-rica: falta Francia metropolitana"); return
     stats["series"] = k
+# Comercio exterior de Francia (Agreste, aduanas)
+def france_comex_index(doc, errs, warns, stats):
+    for k, d in doc["datasets"].items():
+        if d["file"] != k + ".json": errs.append("france-comex index: %s apunta a %s" % (k, d["file"])); return
+        if d["years"][0] > d["years"][1]: errs.append("france-comex index: %s con años invertidos" % k); return
+    stats["conjuntos"] = len(doc["datasets"])
+
+
+def france_comex(doc, errs, warns, stats):
+    """Los indices de cada serie caen en sus diccionarios, los periodos son del formato esperado y de un año listado, los valores son numeros finitos (negativos solo en saldos),
+    y donde la fuente publica saldo, saldo = exportaciones - importaciones (tolerancia 1 %) para el total mundial del producto de mayor nivel."""
+    import re as _re
+    ni, np_, ng = len(doc["indicators"]), len(doc["products"]), len(doc["partners"]); ys = set(str(y) for y in doc["years"]); n = 0
+    pat = {"A": _re.compile(r"^\d{4}$"), "M": _re.compile(r"^\d{4}-(0[1-9]|1[0-2])$"), "Q": _re.compile(r"^\d{4}-Q[1-4]$")}
+    for key, s in doc["series"].items():
+        i, p, g = (int(x) for x in key.split("|"))
+        if not (0 <= i < ni and 0 <= p < np_ and 0 <= g < ng): errs.append("france-comex %s: indice fuera de rango en %s" % (doc["dataset"], key)); return
+        bal = doc["indicators"][i]["flow"] == "balance"
+        for fr, d in s.items():
+            if fr not in pat: errs.append("france-comex %s: frecuencia %r" % (doc["dataset"], fr)); return
+            for per, v in d.items():
+                if not pat[fr].match(per) or per[:4] not in ys: errs.append("france-comex %s %s: periodo %r" % (doc["dataset"], key, per)); return
+                if not isinstance(v, (int, float)) or v != v or (v < 0 and not bal): errs.append("france-comex %s %s %s: valor %r" % (doc["dataset"], key, per, v)); return
+        n += 1
+    world = [k for k, p in enumerate(doc["partners"]) if p["fr"].lower() == "monde"]
+    if doc["dataset"] != "oeufs" and not world: errs.append("france-comex %s: falta el socio Monde" % doc["dataset"]); return
+    ix = {x["id"]: k for k, x in enumerate(doc["indicators"])}
+    if world and "balance-eur" in ix and "export-eur" in ix and "import-eur" in ix:
+        w = world[0]; bad = 0; tot = 0
+        for key, s in doc["series"].items():
+            i, p, g = (int(x) for x in key.split("|"))
+            if g != w or i != ix["balance-eur"]: continue
+            e = doc["series"].get("%d|%d|%d" % (ix["export-eur"], p, w), {}).get("A", {}); m = doc["series"].get("%d|%d|%d" % (ix["import-eur"], p, w), {}).get("A", {})
+            for y, b in s.get("A", {}).items():
+                if y in e and y in m:
+                    tot += 1
+                    if abs((e[y] - m[y]) - b) > 0.01 * max(abs(b), abs(e[y]), 1): bad += 1
+        if tot and bad > 0.02 * tot: errs.append("france-comex %s: saldo distinto de exportaciones - importaciones en %d de %d casos" % (doc["dataset"], bad, tot)); return
+        stats["saldos comprobados"] = stats.get("saldos comprobados", 0) + tot
+    stats["france-comex series"] = stats.get("france-comex series", 0) + n
 # Precios agricolas de fruta, hortaliza y patata de la UE-27 (Eurostat apri_ap_crpouta)
 def eu_fv_farm(doc, errs, warns, stats):
     import datetime as _dt

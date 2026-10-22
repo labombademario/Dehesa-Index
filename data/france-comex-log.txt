@@ -1,0 +1,9 @@
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/COMEXCOP/FDS_COMEXCOP.zip
+ok cop 2004 series 2024 - 2026 parcial 2026-08
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/COMEXLAIT/FDS_COMEXLAIT.zip
+ok lait 1296 series 2024 - 2026 parcial 2026-08
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/COMEXOEUFS/FDS_COMEXOEUFS.zip
+ok oeufs 1341 series 1999 - 2026 parcial 2026-08
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/COMEXIAA/FDS_COMEXIAA.zip
+ok iaa 2176 series 2024 - 2026 parcial 2026-08
+series de catalogo: 152

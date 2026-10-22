@@ -4737,6 +4737,32 @@
    "notes": "Libro de séries longues del RICA: indicadores económicos y contables por orientación técnico-económica, clase de dimensión económica y antigua región.",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr para los conjuntos Agreste; mentions légales del dominio no leídas por completo."
+  },
+  "agreste_comex": {
+   "name": "France — Agreste / SSP con datos de la DGDDI (aduanas), Échanges extérieurs de céréales, produits laitiers, œufs et produits des IAA",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/COMEXCOP/detail/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Agreste (SSP) – Direction générale des douanes et droits indirects (DGDDI), sous Licence Ouverte",
+   "short": "Agreste · douanes",
+   "additionalRestrictions": "Citar Agreste/SSP y la DGDDI; las cifras de aduanas se revisan, por eso cada edición sustituye a la anterior.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Los conjuntos «Agreste - …» de data.gouv.fr (organización: ministère de l'Agriculture) declaran «Licence Ouverte / Open Licence» (fr-lo); las fichas COMEX* citan «Agreste, Direction générale des douanes et droits indirects (DGDDI)» como fuente y ofrecen los CSV para descargar. No se ha leído el texto íntegro de las mentions légales del sitio, por eso la confianza es media.",
+   "used": true,
+   "aliases": [],
+   "notes": "Cuatro conjuntos de CSV anuales (COMEXCOP, COMEXLAIT, COMEXOEUFS, COMEXIAA) por indicador, producto, periodo y socio comercial.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr para los conjuntos Agreste; mentions légales del dominio no leídas por completo; los datos de origen son de aduanas."
   }
  },
  "files": {
@@ -6950,6 +6976,24 @@
     "agreste_rica"
    ],
    "notes": "Registro de la última ejecución de update-fr-rica.py."
+  },
+  "data/france-comex/": {
+   "sources": [
+    "agreste_comex"
+   ],
+   "notes": "Comercio exterior de Francia (scripts/update-fr-comex.py): cereales y oleoproteaginosas (miles de toneladas), lácteos, huevos (desde 1999) e industria agroalimentaria, por producto y socio comercial, con meses y años, de los CSV COMEX* de Agreste (SSP, datos de aduanas). Se conservan los años que la fuente ya no publica."
+  },
+  "data/france-comex-stats.json": {
+   "byCountry": {
+    "FR": "agreste_comex"
+   },
+   "notes": "Series de comercio exterior seleccionadas de los conjuntos COMEX* de Agreste (scripts/update-fr-comex.py), para el catálogo."
+  },
+  "data/france-comex-log.txt": {
+   "sources": [
+    "agreste_comex"
+   ],
+   "notes": "Registro de la última ejecución de update-fr-comex.py."
   }
  },
  "derived": [
