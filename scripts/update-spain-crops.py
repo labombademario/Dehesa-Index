@@ -51,19 +51,26 @@ def page_files(html):
     for h, t in re.findall(r'<a[^>]+href="([^"]+reglamento-n--543-2009/[^"]+\.xlsx)"[^>]*>(.*?)</a>', html, re.S):
         label = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", t)).strip()
         m = re.search(r"CAMPA[ÑN]A\s+(\d{4})", label, re.I)
-        if not m: log("enlace sin campaña, se ignora:", h.split("/")[-1], "|", label[:80]); continue
+        camp = int(m.group(1)) if m else None
+        if camp is None:
+            # oct-2026: el MAPA dejo de poner «CAMPAÑA aaaa» en el texto del enlace; el libro se nombra «..._FORMATO_TABLA_GLOBAL_25» (campaña 2025)
+            m2 = re.search(r"_(\d{2})$", label) or re.search(r"_(\d{2})(?:-\d+)?\.xlsx$", h)
+            y = 2000 + int(m2.group(1)) if m2 else None
+            if y and 2015 <= y <= datetime.date.today().year: camp = y; log("campaña tomada del nombre del libro:", h.split("/")[-1], "->", y)
+        if camp is None: log("enlace sin campaña, se ignora:", h.split("/")[-1], "|", label[:80]); continue
         url = h if h.startswith("http") else SITE + h
-        out.append((url, h.split("/")[-1], label, int(m.group(1))))
+        out.append((url, h.split("/")[-1], label, camp))
     return out
 
 def pick_files(items):
     """campana -> lista de ficheros a leer. Campana con BD compartida (muchos grupos): se lee un solo libro (preferencia: cereales). Campana con BD propia: todos."""
-    by = {}
-    for it in items: by.setdefault(it[3], []).append(it)
+    by = {}; skip = re.compile(r"(flores|ornament|plantones|semillas|viveros|energ|forrajeros|aprovech)")
+    for it in items:
+        if not skip.search(it[1]) and it not in by.get(it[3], []): by.setdefault(it[3], []).append(it)
     plan = {}
     for c, lst in by.items():
         big = [x for x in lst if "cereales" in x[1]]
-        plan[c] = {"shared": big[:1], "own": [] if big else lst}
+        plan[c] = {"shared": big[:1], "own": [x for x in lst if x not in big[:1]]}   # se leen todos: si la BD del de cereales trae todos los grupos, los repetidos se descartan
     return plan
 
 def clean_name(s):
@@ -225,7 +232,9 @@ def main():
         provs_all.update(p)
         for gname, cfg in GROUPS.items():
             if cfg["key"] in g:
-                if cfg["key"] in camps.get(c, {}): log("  grupo repetido en la campaña", c, cfg["key"], "-> se conserva el primero"); continue
+                if cfg["key"] in camps.get(c, {}):   # el grupo ya vino de otro libro (p. ej. industriales en varios libros): se añaden solo los cultivos que faltan
+                    have = {x["c"] for x in camps[c][cfg["key"]][1]}; add = [x for x in build_group(gname, g[cfg["key"]], p) if x["c"] not in have]
+                    camps[c][cfg["key"]][1].extend(add); log("  grupo ya leido en la campaña", c, cfg["key"], "-> cultivos nuevos:", len(add)); continue
                 camps.setdefault(c, {})[cfg["key"]] = (gname, build_group(gname, g[cfg["key"]], p))
         meta_files.append({"campaign": c, "file": fname, "label": label, "mode": mode, "lastModified": meta.get("lastModified"), "contentLength": meta.get("contentLength"),
                            "groups": sorted(k for k in g if k in {x["key"] for x in GROUPS.values()}), "bdRows": st["rows"], "bdUsed": st["used"], "bdNegativeIgnored": st["negative"]})
@@ -233,12 +242,19 @@ def main():
     idx_groups = {}
     for gname, cfg in GROUPS.items():
         k = cfg["key"]; byc = {c: camps[c][k] for c in sorted(camps) if k in camps[c]}
+        kept = {}
+        try:   # campañas publicadas antes que el MAPA ya no enlaza: se conservan tal cual (nunca se mezclan con las nuevas)
+            old = json.loads((out / ("crops-" + k + ".json")).read_text(encoding="utf-8"))
+            kept = {int(c): v for c, v in old.get("campaigns", {}).items() if int(c) not in byc}
+            for pid, pv in old.get("provinces", {}).items(): provs_all.setdefault(pid, pv)
+        except Exception: pass
+        if kept: log("grupo", k, "campañas conservadas de la publicacion anterior:", sorted(kept))
         if not byc: continue
         doc = {"schemaVersion": 1, "generatedAt": now, "group": k, "groupName": gname, "source": {"id": "mapa_es", "name": "MAPA, Superficies y producciones anuales de cultivos", "url": PAGE},
                "measures": MEASURES, "units": {"area": "ha", "production": "t"}, "provinces": {pid: provs_all[pid] for pid in sorted(provs_all)},
-               "campaigns": {str(c): {"status": "provisional", "crops": v[1]} for c, v in byc.items()}}
+               "campaigns": dict(sorted([(str(c), v) for c, v in kept.items()] + [(str(c), {"status": "provisional", "crops": v[1]}) for c, v in byc.items()]))}
         write_json(out / ("crops-" + k + ".json"), doc)
-        idx_groups[k] = {"name": gname, "file": "crops-" + k + ".json", "campaigns": [int(c) for c in byc], "crops": {str(c): len(v[1]) for c, v in byc.items()}}
+        idx_groups[k] = {"name": gname, "file": "crops-" + k + ".json", "campaigns": sorted([int(c) for c in byc] + list(kept)), "crops": dict(sorted([(str(c), len(v.get("crops", {}))) for c, v in kept.items()] + [(str(c), len(v[1])) for c, v in byc.items()]))}
         log("grupo", k, {str(c): len(v[1]) for c, v in byc.items()})
     write_json(out / "index.json", {"schemaVersion": 1, "generatedAt": now, "checkedAt": now, "source": {"id": "mapa_es", "url": PAGE}, "files": meta_files, "groups": idx_groups,
                                    "note": "Datos provisionales del MAPA tal como los publica; la campana se toma del titulo de cada enlace de la pagina."})
