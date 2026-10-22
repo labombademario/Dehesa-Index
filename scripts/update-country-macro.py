@@ -4,7 +4,7 @@ import json, os, sys, time, datetime, urllib.request
 
 WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU',
       'BG': 'BGR', 'CY': 'CYP', 'CZ': 'CZE', 'EE': 'EST', 'EL': 'GRC', 'FI': 'FIN', 'HR': 'HRV', 'HU': 'HUN', 'IE': 'IRL', 'LT': 'LTU', 'LU': 'LUX', 'LV': 'LVA', 'MT': 'MLT', 'PL': 'POL', 'RO': 'ROU', 'SE': 'SWE', 'SI': 'SVN', 'SK': 'SVK', 'UK': 'GBR', 'AR': 'ARG', 'CH': 'CHE', 'CL': 'CHL', 'UY': 'URY'}
-IND = {'gdp': 'NY.GDP.MKTP.CD', 'gdppc': 'NY.GDP.PCAP.CD', 'pop': 'SP.POP.TOTL', 'unemp': 'SL.UEM.TOTL.ZS', 'agri': 'NV.AGR.TOTL.ZS',
+IND = {'gdp': 'NY.GDP.MKTP.CD', 'gdppc': 'NY.GDP.PCAP.CD', 'pop': 'SP.POP.TOTL', 'unemp': 'SL.UEM.TOTL.ZS', 'agri': 'NV.AGR.TOTL.ZS', 'cons': 'NE.CON.PRVT.ZS',
        'gdpLc': 'NY.GDP.MKTP.CN', 'gdppcLc': 'NY.GDP.PCAP.CN'}   # *Lc: PIB y PIB per capita en moneda local corriente (zona euro: euros), el mismo dato del Banco Mundial sin pasar por dolares
 CUR = {'US': 'USD'}
 CUR.update({c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'NL', 'EU', 'BG', 'CY', 'EE', 'EL', 'FI', 'HR', 'IE', 'LT', 'LU', 'LV', 'MT', 'SI', 'SK']})  # Bulgaria usa el euro desde 2026-01-01 (Croacia desde 2023)
