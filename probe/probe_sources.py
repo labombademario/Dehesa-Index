@@ -164,5 +164,17 @@ if sec == 'aafc2':
     p('PKGUNITS', collections.Counter((r['PkgWtUnitEn_PqtPoidsUniteAn'] if 'PkgWtUnitEn_PqtPoidsUniteAn' in r else '') for r in R).most_common(8))
     ex = [r for r in R if r['Date'] == last and r['CentreEn_CentreAn'] == 'Wholesale-Toronto' and r['CmdtyEn_PrdtAn'] in ('Potatoes', 'Apples', 'Tomatoes')]
     for r in ex[:8]: p('EX', json.dumps(r, ensure_ascii=False)[:600])
+if sec == 'ssn':
+    B = 'https://datosabiertos.ssn.gob.ar/dataset/'
+    for u in [B + 'aff081fd-65fc-45b9-99cc-fd67e25e9848/resource/d5ea6e2a-0e86-40df-b31e-92c7ed4006ad/download/indicadores-mercado-asegurador-actualizado.csv', B + 'd4c669c5-4962-43c4-9f78-9b4e9298c559/resource/637bc6e4-4a8a-453b-b85c-cb52e5c475c1/download/resultado_tecnico.csv']:
+        st, h, b = head(u, timeout=120)
+        t = b.decode('utf-8', 'ignore').splitlines(); p('LINES', len(t))
+        for l in t[:4]: p('  ', l[:400])
+        ag = [l for l in t if re.search(r'(?i)agro|granizo|cosecha|rural|ganad', l)]
+        p('AGRO LINES', len(ag))
+        for l in ag[:8]: p('  A', l[:400])
+    st, h, b = head('https://datosabiertos.ssn.gob.ar/api/3/action/package_show?id=aff081fd-65fc-45b9-99cc-fd67e25e9848', timeout=60)
+    try: r = json.loads(b)['result']; p('NOTES', str(r.get('notes'))[:800], '| LIC', r.get('license_id'))
+    except Exception as e: p('ERR', e)
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
