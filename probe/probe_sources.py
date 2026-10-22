@@ -204,5 +204,16 @@ if sec == 'odepa':
         for k in list(R[0].keys())[:20]:
             vals = collections.Counter(r[k] for r in R)
             p('COL', k, 'distinct', len(vals), list(vals.most_common(6)))
+if sec == 'wds':
+    W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
+    body = json.dumps([{"productId": 32100077}]).encode()
+    for nm, ua in (('script', 'Dehesa-Index-data-bot/1.0'), ('moz', UA['User-Agent']), ('curl', 'curl/8.5.0'), ('py', 'Python-urllib/3.12')):
+        for acc in ('application/json', '*/*'):
+            st, h, b = get(W + 'getCubeMetadata', headers={'User-Agent': ua, 'Content-Type': 'application/json', 'Accept': acc}, data=body, tries=1)
+            p('META', nm, acc, st, h.get('Content-Type'), b[:120])
+    for nm, ua in (('script', 'Dehesa-Index-data-bot/1.0'), ('moz', UA['User-Agent'])):
+        st, h, b = get(W + 'getFullTableDownloadCSV/32100077/en', headers={'User-Agent': ua, 'Accept': 'application/json'}, tries=1); p('CSVINFO', nm, st, b[:200])
+    st, h, b = get('https://www150.statcan.gc.ca/n1/tbl/csv/32100077-eng.zip', timeout=200, tries=1); p('DIRECTZIP', st, h.get('Content-Type'), len(b), b[:60])
+    st, h, b = get('https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=3210007701&latestN=0&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B%5D%5D', timeout=100, tries=1); p('DLACTION', st, h.get('Content-Type'), len(b), b[:80])
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
