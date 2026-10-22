@@ -1,0 +1,42 @@
+=== UK5
+GET https://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json?search=*gva* -> 200 application/json 4526
+DS NM_2400_1 UK small area gross value added estimates ['Pounds million', 'gvasa', '2025-10-16 16:00:00']
+GET https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.data.csv?geography=TYPE480&cell=402720257,402719233&date=latest&measures=20100&select=date_name,geography_name,cell_name,obs_value -> 200 text/csv 2503
+"DATE_NAME","GEOGRAPHY_NAME","CELL_NAME","OBS_VALUE"
+"Jul 2025-Jun 2026","North East","T01:16 (All aged 16 & over - Unemployed : All People )",64100
+"Jul 2025-Jun 2026","North East","T01:4 (All aged 16 & over - Economically active : All People )",1292200
+"Jul 2025-Jun 2026","North West","T01:16 (All aged 16 & over - Unemployed : All People )",158500
+"Jul 2025-Jun 2026","North West","T01:4 (All aged 16 & over - Economically active : All People )",3691700
+"Jul 2025-Jun 2026","Yorkshire and The Humber","T01:16 (All aged 16 & over - Unemployed : All People )",127000
+"Jul 2025-Jun 2026","Yorkshire and The Humber","T01:4 (All aged 16 & over - Economically active : All People )",2781000
+"Jul 2025-Jun 2026","East Midlands","T01:16 (All aged 16 & over - Unemployed : All People )",114400
+"Jul 2025-Jun 2026","East Midlands","T01:4 (All aged 16 & over - Economically active : All People )",2515100
+"Jul 2025-Jun 2026","West Midlands","T01:16 (All aged 16 & over - Unemployed : All People )",166300
+"Jul 2025-Jun 2026","West Midlands","T01:4 (All aged 16 & over - Economically active : All People )",3004200
+"Jul 2025-Jun 2026","East","T01:16 (All aged 16 & over - Unemployed : All People )",130000
+"Jul 2025-Jun 2026","East","T01:4 (All aged 16 & over - Economically active : All People )",3330000
+"Jul 2025-Jun 2026","London","T01:16 (All aged 16 & over - Unemployed : All People )",313100
+"Jul 2025-Jun 2026","London","T01:4 (All aged 16 & over - Economically active : All People )",5175000
+"Jul 20
+GET https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.data.csv?geography=2013265921&cell=402720257&date=latest-12,latest-8,latest-4,latest&measures=20100&select=date_name,geography_name,obs_value -> 200 text/csv 10334
+"DATE_NAME","GEOGRAPHY_NAME","OBS_VALUE"
+"Jan 2004-Dec 2004","North East",69000
+"Apr 2004-Mar 2005","North East",69800
+"Jul 2004-Jun 2005","North East",69500
+"Oct 2004-Sep 2005","North East",68500
+"Jan 2005-Dec 2005","North East",68100
+"Apr 2005-Mar 2006","North East",73900
+"Jul 2005-Jun 2006","North East",74100
+"Oct 2005-Sep 2006","North East",80300
+"Jan 2006-Dec 2006","North East",84200
+"Apr 2006-Mar 2007","North East",82000
+"Jul 2006-Jun 2007","North East",82600
+"Oct 2006-Sep 2007","North East",79000
+"Jan 2007-Dec 2007","North East",75800
+"Apr 2007-Mar 2008","North East",79100
+"Jul 2007-Jun
+GET https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1/date.def.sdmx.json -> 200 application/json 568
+{
+
+"structure" :{"codelists" :null,"header" :{"id" :"NM_1_1","prepared" :"2026-10-22T05:21:50Z","sender" :{"contact" :{"email" :"support@nomisweb.co.uk","name" :"Nomis","uri" :"https://www.nomisweb.co.uk"},"id" :"NOMIS"},"test" :"false"},"xmlns" :"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message","common" :"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/common","structure" :"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/structure","xsi" :"http://www.w3.org/2001/XMLSchema-instance","schemalocation" :"http://sdmx.org/docs/2_0/SDMXMessage.xsd"}
+}
