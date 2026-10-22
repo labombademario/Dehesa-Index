@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T14:11:00Z",
+ "generatedAt": "2026-10-22T14:26:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 235,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "ee04f406",
+   "sha": "4d5d4b5e",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/0d43a568-bc9a-4484-8efe-4caeefcb9f3c",
-   "completedAt": "2026-10-22T14:02:51Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/f521ba3d-0f0e-4266-811f-6ece10767cb6",
+   "completedAt": "2026-10-22T14:22:20Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T12:53:44.472438+00:00",
   "repoGeneratedAt": "2026-10-22T12:53:44.472438+00:00",
-  "checkedAt": "2026-10-22T14:11:00Z"
+  "checkedAt": "2026-10-22T14:26:00Z"
  },
  "pipelines": [
   {
@@ -660,10 +660,10 @@
    "files": [],
    "last": {
     "conclusion": "failure",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T03:45:45Z",
-    "durationSec": 71,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39718621005",
+    "event": "schedule",
+    "startedAt": "2026-10-22T14:14:50Z",
+    "durationSec": 278,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39794030065",
     "reason": "ERROR: StatCan WDS getCubeMetadata sin respuesta util tras 4 intentos: HTTPError: HTTP Error 406: Not Acceptable"
    },
    "recent": {
@@ -1803,7 +1803,7 @@
    "crons": [
     "20 14 * * 4"
    ],
-   "nextRun": "2026-10-22T14:20:00Z",
+   "nextRun": "2026-10-29T14:20:00Z",
    "files": [
     {
      "path": "data/eu"
@@ -2705,7 +2705,7 @@
    "crons": [
     "20 14 * * 4,5"
    ],
-   "nextRun": "2026-10-22T14:20:00Z",
+   "nextRun": "2026-10-23T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3754,7 +3754,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T13:49:50Z"
+     "lastChange": "2026-10-22T14:13:19Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4204,16 +4204,16 @@
    "files": [],
    "last": {
     "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-22T08:16:06Z",
-    "durationSec": 28,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39740711744",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · enlace sin campaña, se ignora: re1_ind_aromaticas_formato_tabla_global_25.xlsx | RE1_IND_AROMATICAS_FORMATO_TABLA_GLOBAL_25"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T14:00:35Z",
+    "durationSec": 934,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39791975990",
+    "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/spain-crops/index.json · ERROR    spain-crops/index.json             spain-crops index: cereales tiene campanas que ningun libro leido respalda"
    },
    "recent": {
-    "runs": 5,
+    "runs": 6,
     "success": 4,
-    "failed": 1
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 168.0
@@ -4972,7 +4972,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-10-22T14:15:00Z",
+   "nextRun": "2026-10-22T23:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5089,7 +5089,7 @@
     "20 20 * * 3",
     "20 14 * * 4"
    ],
-   "nextRun": "2026-10-22T14:20:00Z",
+   "nextRun": "2026-10-28T20:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5388,7 +5388,7 @@
    "crons": [
     "20 14 * * 4"
    ],
-   "nextRun": "2026-10-22T14:20:00Z",
+   "nextRun": "2026-10-29T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5411,7 +5411,7 @@
    "crons": [
     "15 14 * * 1,4"
    ],
-   "nextRun": "2026-10-22T14:15:00Z",
+   "nextRun": "2026-10-26T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
