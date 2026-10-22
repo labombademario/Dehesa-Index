@@ -58,6 +58,7 @@ def main():
             for j in range(i + 1, len(l)):
                 a, b = l[i], l[j]
                 if a["file"] == b["file"]: continue
+                if {a["id"][:7], b["id"][:7]} == {"uk-reg-", "uk-sco-"}: continue   # Defra (regiones, lo que lee Mi mercado) y Gobierno de Escocia (censo y cosecha) publican la misma cifra de Escocia: se conservan las dos
                 u = len(a["_tk"] | b["_tk"])
                 if a["canonicalSeriesId"] == b["canonicalSeriesId"] or (u and len(a["_tk"] & b["_tk"]) / u >= 0.75):
                     a["alternates"].append(b["id"]); b["alternates"].append(a["id"]); dups += 1
