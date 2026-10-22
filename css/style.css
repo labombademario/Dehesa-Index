@@ -3156,3 +3156,4 @@ abbr.gl:focus-visible { outline: 2px solid var(--accent, #2f6f4e); outline-offse
 
 /* Una sola etiqueta de estado: la pastilla de estado y, a su lado, el tipo de cotizacion como texto (no como segunda pastilla). */
 .di-product-grid:not(.di-rows) .di-product-card > .di-quote-badge { grid-column: 4 / -1; justify-self: start; align-self: center; background: none; padding: 0; border: 0; border-radius: 0; font-size: 12.5px; font-weight: 600; color: var(--text-muted); margin-top: 6px; }
+.di-product-grid .di-lonja-sel { min-height: 36px; }
