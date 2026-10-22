@@ -57,7 +57,7 @@
     var prev = window.DehesaShared && window.DehesaShared.onLangChange;
     if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
     /* En costes.html el bloque de la UE es una pestaña propia (junto a EE. UU., Canadá y España): ya no cuelga debajo de los datos de EE. UU. */
-    if (document.getElementById('cs-eu') && window.CASeries && window.CASeries.custom) window.CASeries.custom({ id: 'cs-eu', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: 'EU', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], onShow: function () { render(); } });
+    if (document.getElementById('cs-eu') && window.CASeries && window.CASeries.custom) window.CASeries.custom({ id: 'cs-eu', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: 'EU', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], onShow: function () { var t = T[lang()] || T.es, h = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h) h.textContent = t.h; if (sb) sb.textContent = t.sub; document.title = t.h + ' | Dehesa Index'; render(); } });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
