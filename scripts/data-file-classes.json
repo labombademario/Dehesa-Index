@@ -465,8 +465,12 @@
    "note": "Boletin mensual de coyuntura de Francia, una hoja por fichero (Agreste BulConj): solo lo leen la pipeline y las pruebas; el navegador usa el catalogo (data/catalog) y aun no hay pagina que lo cargue."
   },
   "data/france-agreste-more/": {
-   "class": "BUILD_ONLY",
-   "note": "Empleo agricola, TERUTI, vendimia e IPAMPA de Francia (Agreste): solo lo leen la pipeline y las pruebas hasta que la pagina de Francia cargue estos ficheros bajo demanda; el navegador usa el catalogo."
+   "class": "RUNTIME",
+   "via": {
+    "file": "js/agreste.js",
+    "pattern": "data/france-agreste-more/"
+   },
+   "note": "Empleo agricola, TERUTI, vendimia e IPAMPA de Francia (Agreste): la pagina agreste.html descarga cada fichero solo al abrir su pestaña (los IPAMPA, de 0,9 y 1,1 MB, el de regiones solo despues del nacional)."
   }
  }
 }

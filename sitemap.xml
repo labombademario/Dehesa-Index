@@ -12,6 +12,7 @@
   <url><loc>https://dehesaindex.com/exportaciones</loc></url>
   <url><loc>https://dehesaindex.com/sequia</loc></url>
   <url><loc>https://dehesaindex.com/costes-pais</loc></url>
+  <url><loc>https://dehesaindex.com/agreste</loc></url>
   <url><loc>https://dehesaindex.com/comercio-pais</loc></url>
   <url><loc>https://dehesaindex.com/produccion-mundial</loc></url>
   <url><loc>https://dehesaindex.com/pesca</loc></url>
@@ -285,6 +286,7 @@
   <url><loc>https://dehesaindex.com/datos/en/eu-prices/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/eu-production/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/eu-trade/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/en/fr-crops-regions/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-crops/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-environment/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-idx-pag/</loc><lastmod>2026-10-22</lastmod></url>
@@ -294,6 +296,7 @@
   <url><loc>https://dehesaindex.com/datos/en/fr-inputs-f/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-inputs/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-livestock/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/en/fr-milk-regions/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-milk/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-organic/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/en/fr-partners/</loc><lastmod>2026-10-22</lastmod></url>
@@ -376,6 +379,7 @@
   <url><loc>https://dehesaindex.com/datos/eu-prices/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/eu-production/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/eu-trade/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/fr-crops-regions/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-crops/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-environment/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-idx-pag/</loc><lastmod>2026-10-22</lastmod></url>
@@ -385,6 +389,7 @@
   <url><loc>https://dehesaindex.com/datos/fr-inputs-f/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-inputs/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-livestock/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://dehesaindex.com/datos/fr-milk-regions/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-milk/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-organic/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dehesaindex.com/datos/fr-partners/</loc><lastmod>2026-10-22</lastmod></url>

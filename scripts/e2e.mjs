@@ -54,6 +54,7 @@ const PAGES = [
   { n: 'comercio-pais', url: '/comercio-pais.html?c=ES', crit: ['#ct-panel .pm-top li', '#ct-productos .pm-lt'] },
   { n: 'monitor-insumos', url: '/monitor-insumos.html', crit: ['#mi-ratio', '#mi-g-nitrogen'] },
   { n: 'monitor-insumos-fr', url: '/monitor-insumos.html?c=FR', crit: ['#mi-ratio', '#mi-g-fert', '.cp-w'] },
+  { n: 'agreste', url: '/agreste.html', crit: ['#ag-body .ag-chart svg', '#ag-body .ag-tbl'] },
   { n: 'costes-pais', url: '/costes-pais.html?c=ES', crit: ['#cp-panel .cp-tile', '#cp-costes .cp-tbl'] },
   { n: 'pesca', url: '/pesca.html?c=ES', crit: ['#fsh-body .fsh-kpis', '#fsh-body .fsh-tbl'] },
   { n: 'ganaderia', url: '/ganaderia.html', crit: [] },
