@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T22:33:55Z",
+ "generatedAt": "2026-10-22T22:52:53Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1692,11 +1692,17 @@
    "country": "FR",
    "scope": "integrated",
    "institution": "France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur)",
-   "dataset": "Ya integrada (26 series en el catalogo unificado)",
+   "dataset": "Ya integrada (50 series en el catalogo unificado)",
    "products": [
+    "barley",
     "cattle",
+    "maize",
     "milk",
-    "sheep"
+    "potato",
+    "rapeseed",
+    "sheep",
+    "sugar",
+    "wheat"
    ],
    "productsConfirmed": true,
    "metrics": [
