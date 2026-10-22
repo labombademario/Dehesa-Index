@@ -832,6 +832,7 @@
     var d = lonjaDefault(entry, L);
     return cc === 'ES' ? null : d;
   }
+  function monthTxt(d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateString({ es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }[lang()] || 'es-ES', { month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return d.slice(0, 7); } }
   function lonjaRegion(x) {
     var p = x.p, last = p[p.length - 1][1], prev = p.length > 1 ? p[p.length - 2][1] : null;
     return { price: last, changePct: prev ? Math.round((last / prev - 1) * 1e6) / 1e4 : 0, history: p.slice(-12).map(function (q) { return q[1]; }), currency: 'EUR', kgPerUnit: 1000 };
@@ -893,7 +894,7 @@
     var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
     var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
     if (disp.cty && showValue && observation && observation.ctyLabel) mk = (observation.ctyLabel[lang()] || observation.ctyLabel.es) + ' · ' + (({ es: 'media nacional', en: 'national average', fr: 'moyenne nationale', it: 'media nazionale' })[lang()]);
-    if (lonja && showValue) { mk = (lonjaCC() === 'ES' ? (LONJA_T[lang()] || LONJA_T.es)[2] : (ccName(lonjaCC().toLowerCase()) || lonjaCC())) + ' · ' + lonjaLabel(lonja); od = S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); }
+    if (lonja && showValue) { mk = (lonjaCC() === 'ES' ? (LONJA_T[lang()] || LONJA_T.es)[2] : (ccName(lonjaCC().toLowerCase()) || lonjaCC())) + ' · ' + lonjaLabel(lonja); od = lonja.f === 'm' ? monthTxt(lonja.p[lonja.p.length - 1][0]) : S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); if (lonja.o) origTxt = ({ es: 'Precio original en ', en: 'Original price in ', fr: 'Prix d’origine en ', it: 'Prezzo originale in ' })[lang()] + lonja.o + ({ es: ', convertido con la media mensual del BCE de cada mes', en: ', converted with the ECB monthly average of each month', fr: ', converti avec la moyenne mensuelle de la BCE de chaque mois', it: ', convertito con la media mensile della BCE di ogni mese' })[lang()]; }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
     var meta = [est, mk, od ? (/^\d/.test(od) ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') : (({ es: 'dato de ', en: 'as of ', fr: 'donnée de ', it: 'dato di ' })[lang()] || '')) + od : ''].filter(Boolean).join(' · ');
     var IBL = ({ es: ['Calcular', 'Gráfico', 'Aviso'], en: ['Calculate', 'Chart', 'Alert'], fr: ['Calculer', 'Graphique', 'Alerte'], it: ['Calcola', 'Grafico', 'Avviso'] })[lang()] || ['Calcular', 'Gráfico', 'Aviso'];
@@ -1303,13 +1304,13 @@
   function openLonjaHistory(key) {
     var entry = PRODUCT_BY_KEY[key]; if (!entry) return;
     var l = lonjaPick(entry); if (!l || !l.p || l.p.length < 2 || !window.DehesaChart) return;
-    var X = LH_T[lang()] || LH_T.es, pts = l.p.map(function (q) { return { x: Date.parse(q[0] + 'T00:00:00Z'), y: q[1], l: S.fmtDate(q[0], lang()) }; });
+    var X = LH_T[lang()] || LH_T.es, pts = l.p.map(function (q) { return { x: Date.parse(q[0] + 'T00:00:00Z'), y: q[1], l: l.f === 'm' ? monthTxt(q[0]) : S.fmtDate(q[0], lang()) }; });
     var vals = l.p.map(function (q) { return q[1]; }), mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), last = l.p[l.p.length - 1];
     var f = function (v) { return D.fmtNumber(v) + ' EUR/t'; };
     lockProductModal();
     var chart = window.DehesaChart.render({ series: [{ name: productName(entry.nameKey), color: '#2f6b4a', pts: pts }], xMode: 'time', yTitle: 'EUR/t', aria: productName(entry.nameKey) + ' · ' + lonjaLabel(l), noLegend: true, vFmt: function (v) { return D.fmtNumber(v); } });
     document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(lonjaLabel(l)) + ' · ' + esc(X[0]) + '</h2><button type="button" class="di-modal-close" id="di-history-close" aria-label="' + esc(X[4]) + '">✕</button></div>' + chart +
-      '<p class="di-field-hint" style="margin:10px 0 2px">' + esc(X[1]) + ': <strong>' + esc(f(last[1])) + '</strong> (' + esc(S.fmtDate(last[0], lang())) + ') · ' + esc(X[2]) + ': ' + esc(f(mn)) + ' · ' + esc(X[3]) + ': ' + esc(f(mx)) + '</p><p class="di-field-hint" style="margin:2px 0 0">' + esc(X[5]) + '</p></div></div>';
+      '<p class="di-field-hint" style="margin:10px 0 2px">' + esc(X[1]) + ': <strong>' + esc(f(last[1])) + '</strong> (' + esc(l.f === 'm' ? monthTxt(last[0]) : S.fmtDate(last[0], lang())) + ') · ' + esc(X[2]) + ': ' + esc(f(mn)) + ' · ' + esc(X[3]) + ': ' + esc(f(mx)) + '</p><p class="di-field-hint" style="margin:2px 0 0">' + esc(l.o ? ({ es: 'Serie mensual de GUS (Statistics Poland, BDL) en ' + l.o + ', convertida a euros con la media mensual del BCE de cada mes.', en: 'Monthly series from GUS (Statistics Poland, BDL) in ' + l.o + ', converted to euros with the ECB monthly average of each month.', fr: 'Série mensuelle de GUS (Statistics Poland, BDL) en ' + l.o + ', convertie en euros avec la moyenne mensuelle de la BCE de chaque mois.', it: 'Serie mensile di GUS (Statistics Poland, BDL) in ' + l.o + ', convertita in euro con la media mensile della BCE di ogni mese.' })[lang()] : X[5]) + '</p></div></div>';
     var ov = document.getElementById('di-history-overlay'); ov.addEventListener('mousedown', function (e) { if (e.target === ov) closeLonjaHistory(); });
     document.getElementById('di-history-close').addEventListener('click', closeLonjaHistory); bindModalKeyboard(closeLonjaHistory);
   }

@@ -268,6 +268,23 @@ def lonjas():
             if keep: out[cc][prod] = sorted(keep, key=lambda x: (x['m'], x['var'], x['st']))
             else: del out[cc][prod]
         if not out[cc]: del out[cc]
+    # Polonia: GUS (BDL) no esta en el Agri-food Data Portal. Precios mensuales en PLN/t convertidos a EUR con la media MENSUAL del BCE del mismo mes
+    # (data/fx-history.json); si el BCE aun no trae el zloty o falta el mes, ese punto no se publica (nada se estima). 'o' = moneda original, 'f' = periodicidad mensual.
+    try:
+        fx = {m: v for m, v in (load('fx-history.json').get('currencies', {}).get('PLN') or [])}
+        gus = {s['id']: s for s in load('poland-stats.json')['countries']['PL']['series']}
+    except Exception: fx, gus = {}, {}
+    PLG = [('trigo', 'wheat'), ('cebada', 'barley'), ('avena', 'oats'), ('centeno', 'rye')]
+    PLM = [('gus_buy', 'pl-gus-procm-cereal-grain-excluding-sowing-seed-%s', {'avena': 'oat'}), ('gus_mkt', 'pl-gus-mkt-cereal-grain-%s', {})]
+    for prod, en in PLG + [('maiz', 'corn')]:
+        for stc, pat, alt in PLM:
+            sr = gus.get(pat % alt.get(prod, en))
+            if not sr: continue
+            pts = [[m + '-15', round(v / fx[m], 1)] for m, v in sr.get('points', []) if v is not None and m in fx][-26:]
+            if len(pts) < 2: continue
+            out.setdefault('PL', {}).setdefault(prod, []).append({'m': 'GUS', 'src': 'GUS', 'var': '', 'st': stc, 'p': pts, 'o': 'PLN', 'f': 'm'})
+    LONJA_T['st']['gus_buy'] = ['precio de compra (skup)', 'procurement price (skup)', 'prix d’achat (skup)', 'prezzo di acquisto (skup)']
+    LONJA_T['st']['gus_mkt'] = ['precio en mercados locales', 'local-market price', 'prix sur les marchés locaux', 'prezzo nei mercati locali']
     return {'schemaVersion': 2, 'generatedAt': now(), 'unit': 'EUR/t', 'labels': LONJA_T,
             'source': {'name': 'Comisión Europea, Agri-food Data Portal', 'url': 'https://agridata.ec.europa.eu/', 'license': 'Commission Decision 2011/833/EU'}, 'countries': out}
 def price_revisions():
