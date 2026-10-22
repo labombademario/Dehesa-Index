@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T05:19:00Z",
+ "generatedAt": "2026-10-22T05:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 231,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "5a246ee7",
+   "sha": "48079750",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/a3be4841-1217-4d55-990e-a9f9688e1662",
-   "completedAt": "2026-10-22T05:18:58Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/4b5e2307-be25-4b0f-9ef5-be4e9715fa2c",
+   "completedAt": "2026-10-22T05:23:13Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T03:44:22.655717+00:00",
   "repoGeneratedAt": "2026-10-22T03:44:22.655717+00:00",
-  "checkedAt": "2026-10-22T05:19:00Z"
+  "checkedAt": "2026-10-22T05:25:00Z"
  },
  "pipelines": [
   {
@@ -3725,7 +3725,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/product-compare.json",
@@ -3742,7 +3742,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/products"
@@ -3753,11 +3753,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T05:08:07Z"
+     "lastChange": "2026-10-22T05:20:48Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-22T05:18:02Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -3781,7 +3781,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/country-pending.json",
@@ -3789,22 +3789,22 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -3812,7 +3812,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:21:55Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3836,13 +3836,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T04:50:52Z",
-    "durationSec": 441,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39724648566"
+    "startedAt": "2026-10-22T05:18:05Z",
+    "durationSec": 234,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39727229076"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",
