@@ -1,1 +1,500 @@
-semilla desde la ejecucion de prueba; la pipeline la sustituye en su primera ejecucion
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/BulConj/2610_Bulletin.zip
+ok Grandes cultures-Production 57 series 1704 puntos
+ok Céréales 35 series 2102 puntos
+ok Oléoprotéagineux 17 series 1031 puntos
+ok Pommes de terre 8 series 480 puntos
+ok Sucre 12 series 1385 puntos
+ok Légumes-Quantités 20 series 918 puntos
+ok Légumes-Indices et Prix 11 series 700 puntos
+ok Fruits-Quantités 20 series 907 puntos
+ok Fruits-Indices et Prix 9 series 380 puntos
+ok Vins-Production 5 series 135 puntos
+ok Vins-ChaisConsoTaxéePrix 12 series 750 puntos
+ok Vins-CommExtPrix 31 series 1728 puntos
+ok Gros bovins 116 series 8492 puntos
+ok Veaux 51 series 3559 puntos
+ok Porcins 51 series 3637 puntos
+ok OvinsCaprinsEquidés 36 series 2572 puntos
+ok VolaillesOeufsLapins 79 series 5665 puntos
+ok Lait 58 series 4193 puntos
+ok IAA-Indices 144 series 11002 puntos
+ok Autres IAA Grain 15 series 1042 puntos
+ok Autres IAA Alimentaires 13 series 530 puntos
+ok Autres IAA Boissons 15 series 1068 puntos
+ok Climatologie 16 series 1088 puntos
+ok Matériel agricole 3 series 195 puntos
+ok Energie 5 series 367 puntos
+ok Engrais 90 series 3593 puntos
+ok Ipampa 30 series 2370 puntos
+ok Alimentation animale 43 series 3154 puntos
+ok Données de cadrage 4 series 280 puntos
+ok Exportations NC 50 series 3600 puntos
+ok Importations NC 50 series 3600 puntos
+ok Exportations CPF 26 series 2028 puntos
+ok Importations CPF 26 series 2028 puntos
+ok Exportations CPF rev2 26 series 1768 puntos
+ok Importations CPF rev2 26 series 1768 puntos
+ok Exportations CPF rev21 26 series 1872 puntos
+ok Importations CPF rev21 26 series 1872 puntos
+ok IPPAPBruts 42 series 3253 puntos
+ok PrixConsommation (IPC) 58 series 4234 puntos
+ok PrixVenteDetail 25 series 1533 puntos
+series de catalogo: 69
+candidatas de precio/indice con datos mensuales: 457
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|1|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|2|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|3|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|4|euro-tonne | Euro / tonne | 2026-09 | 42
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|5|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|6|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|7|euro-tonne | Euro / tonne | 2026-09 | 52
+  CAND Céréales | cotations-des-cereales-marche-france-metropolitaine-base-juillet|8|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Céréales | cotations-des-cereales-cours-a-la-bourse-de-chicago|10|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Céréales | cotations-des-cereales-cours-a-la-bourse-de-chicago|12|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Oléoprotéagineux | cotations-des-oleoproteagineux-marche-france-metropolitaine-base-juillet|1|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Oléoprotéagineux | cotations-des-oleoproteagineux-marche-france-metropolitaine-base-juillet|2|euro-tonne | Euro / tonne | 2026-09 | 51
+  CAND Oléoprotéagineux | cotations-des-oleoproteagineux-marche-france-metropolitaine-base-juillet|3|euro-tonne | Euro / tonne | 2026-09 | 48
+  CAND Oléoprotéagineux | cotations-des-oleoproteagineux-cours-a-la-bourse-de-chicago|4|euro-tonne | Euro / tonne | 2026-09 | 55
+  CAND Pommes de terre | cours-a-l-expedition-nord-picardie-des-pommes-de-terre|1|euro-tonne | Euro / tonne | 2026-09 | 45
+  CAND Pommes de terre | cours-a-l-expedition-nord-picardie-des-pommes-de-terre|2|euro-tonne | Euro / tonne | 2026-09 | 45
+  CAND Sucre | cours-du-sucre-sucre-blanc|1|euro-tonne | Euro / Tonne | 2006-06 | 74
+  CAND Sucre | cours-du-sucre-sucre-blanc|2|euro-tonne | Euro / Tonne | 2026-09 | 78
+  CAND Sucre | cours-du-sucre-sucre-brut|3|euro-tonne | Euro / Tonne | 2026-09 | 78
+  CAND Sucre | cours-du-sucre-sucre-brut|4|euro-tonne | Euro / Tonne | 2011-06 | 74
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-igp-et-sans-ig|1|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-igp-et-sans-ig|2|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-igp-et-sans-ig|3|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-sans-ig|4|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-sans-ig|5|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-sans-ig|6|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-igp|7|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-igp|8|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-avant-2000-2001-vin-igp|9|euro-hl | Euro / ° hl | 2000-08 | 39
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-igp-et-sans-ig|1|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-igp-et-sans-ig|2|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-igp-et-sans-ig|3|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-sans-ig|4|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-sans-ig|5|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-sans-ig|6|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-sans-ig|7|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-sans-ig|8|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-sans-ig|9|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-igp|10|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-igp|11|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Vins-CommExtPrix | prix-moyen-des-contrats-de-vente-soumis-au-visa-de-viniflhor-onivins-campagnes-a-partir-de-2000-2001-vin-igp|12|euro-hl | Euro / ° hl | 2026-08 | 66
+  CAND Gros bovins | cotations|1|euro-kg-vif | Euro / kg vif | 2012-03 | 68
+  CAND Gros bovins | cotations|2|euro-kg-carcasse-entree-abattoir | Euro / kg carcasse - Entrée abattoir | 2026-08 | 73
+  CAND Gros bovins | cotations|3|euro-kg-carcasse-entree-abattoir | Euro / kg carcasse - Entrée abattoir | 2026-08 | 73
+  CAND Gros bovins | cotations|4|euro-kg-carcasse-entree-abattoir | Euro / kg carcasse - Entrée abattoir | 2026-08 | 73
+  CAND Gros bovins | cotations|5|euro-kg-carcasse-entree-abattoir | Euro / kg carcasse - Entrée abattoir | 2026-08 | 73
+  CAND Gros bovins | cotations|6|euro-kg-carcasse-entree-abattoir | Euro / kg carcasse - Entrée abattoir | 2026-08 | 73
+  CAND Gros bovins | cotations|7|euro-kg-vif | Euro / kg vif | 2026-08 | 73
+  CAND Gros bovins | cotations|8|euro-kg-vif | Euro / kg vif | 2026-08 | 73
+  CAND Gros bovins | prix-1-cotation-des-gros-bovins|1|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-05 | 70
+  CAND Gros bovins | prix-1-cotation-des-gros-bovins|2|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-01 | 66
+  CAND Gros bovins | prix-1-cotation-des-gros-bovins|3|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2020-08 | 34
+  CAND Gros bovins | prix-1-cotation-des-gros-bovins|4|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-01 | 66
+  CAND Gros bovins | prix-1-cotation-des-gros-bovins|5|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-05 | 70
+  CAND Veaux | cotations|1|euro-kg-carcasse | Euro / kg carcasse | 2026-08 | 73
+  CAND Veaux | cotations|2|euro-tete | Euro / tête | 2012-04 | 69
+  CAND Veaux | cotations|3|euro-tete | Euro / tête | 2026-08 | 73
+  CAND Veaux | prix-cotation-des-veaux|1|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Veaux | prix-cotation-des-veaux|2|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-07 | 72
+  CAND Veaux | prix-cotation-des-veaux|3|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | cotations-moyennes-nationales|1|euro-kg-carcasse | Euro / kg carcasse | 2022-12 | 78
+  CAND Porcins | cotations-moyennes-nationales|2|euro-kg-vif | Euro / kg vif | 2009-04 | 68
+  CAND Porcins | cotations-moyennes-nationales|3|euro-kg-vif | Euro / kg vif | 2007-12 | 61
+  CAND Porcins | cotations-moyennes-nationales|4|euro-kg-vif | Euro / kg vif | 2016-05 | 71
+  CAND Porcins | cotations-moyennes-nationales|5|euro-kg-vif | Euro / kg vif | 2015-10 | 74
+  CAND Porcins | cotations-moyennes-nationales|6|euro-kg-vif | Euro / kg vif | 2016-04 | 69
+  CAND Porcins | cotations-a-rungis-cotation-du-porc|1|euro-kg | Euro / kg | 2026-08 | 73
+  CAND Porcins | cotations-a-rungis-cotation-du-porc|2|euro-kg | Euro / kg | 2026-08 | 73
+  CAND Porcins | cotations-a-rungis-cotation-du-porc|3|euro-kg | Euro / kg | 2026-08 | 73
+  CAND Porcins | prix-classe-e-s-1|1|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2013-12 | 78
+  CAND Porcins | prix-classe-e-s-1|2|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2013-12 | 78
+  CAND Porcins | prix-classe-e-s-1|3|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2013-12 | 78
+  CAND Porcins | prix-classe-e-s-1|4|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2013-12 | 78
+  CAND Porcins | prix-classe-e-s-1|5|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2013-12 | 78
+  CAND Porcins | prix-classe-e-s-1|6|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2013-12 | 78
+  CAND Porcins | prix-classe-e-2|7|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-e-2|8|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-e-2|9|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-e-2|10|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-e-2|11|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-e-2|12|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-s-2|13|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-s-2|14|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-s-2|15|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-s-2|16|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-s-2|17|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND Porcins | prix-classe-s-2|18|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND OvinsCaprinsEquidés | cotations-des-agneaux-et-brebis|1|euro-kg-carcasse | Euro / kg carcasse | 2026-02 | 67
+  CAND OvinsCaprinsEquidés | cotations-des-agneaux-et-brebis|2|euro-kg-carcasse | Euro / kg carcasse | 2026-02 | 67
+  CAND OvinsCaprinsEquidés | cotations-des-agneaux-et-brebis|3|euro-kg-carcasse | Euro / kg carcasse | 2005-12 | 78
+  CAND OvinsCaprinsEquidés | cotations-des-agneaux-et-brebis|4|euro-kg-carcasse | Euro / kg carcasse | 2010-12 | 78
+  CAND OvinsCaprinsEquidés | cotations-des-agneaux-et-brebis|5|euro-kg-carcasse | Euro / kg carcasse | 2019-08 | 73
+  CAND OvinsCaprinsEquidés | prix-des-ovins-cotation-des-ovins|1|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND OvinsCaprinsEquidés | prix-des-ovins-cotation-des-ovins|2|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND OvinsCaprinsEquidés | prix-des-ovins-cotation-des-ovins|3|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2020-12 | 39
+  CAND OvinsCaprinsEquidés | prix-des-ovins-cotation-des-ovins|4|euro-100-kg-carcasse | Euro / 100 kg carcasse | 2026-08 | 73
+  CAND VolaillesOeufsLapins | cours-moyen-a-la-production-volailles-1|1|euro-kg-vif | Euro / kg vif | 2026-08 | 73
+  CAND VolaillesOeufsLapins | cours-moyen-a-la-production-volailles-1|2|euro-kg-vif | Euro / kg vif | 2026-08 | 73
+  CAND VolaillesOeufsLapins | cours-moyen-a-la-production-volailles-1|3|euro-kg-vif | Euro / kg vif | 2026-08 | 73
+  CAND VolaillesOeufsLapins | cours-moyen-a-la-production-volailles-1|4|euro-kg-vif | Euro / kg vif | 2026-08 | 73
+  CAND VolaillesOeufsLapins | cotations-a-rungis-volailles|1|euro-kg-carcasse | Euro / kg carcasse | 2026-09 | 74
+  CAND VolaillesOeufsLapins | cotations-a-rungis-volailles|2|euro-kg-carcasse | Euro / kg carcasse | 2022-11 | 38
+  CAND VolaillesOeufsLapins | cotations-a-rungis-volailles|3|euro-kg-carcasse | Euro / kg carcasse | 2007-12 | 65
+  CAND VolaillesOeufsLapins | ufs-cours-moyen-a-la-production|1|euro-cent | Euro / cent | 2026-08 | 73
+  CAND VolaillesOeufsLapins | ufs-cotations-a-rungis|1|euro-cent | Euro / cent | 2026-08 | 73
+  CAND Lait | prix-standard-et-reel-du-lait-de-vache-1|1|euro-litre | Euro / litre | 2026-07 | 73
+  CAND Lait | prix-standard-et-reel-du-lait-de-vache-1|2|euro-litre | Euro / litre | 2026-07 | 73
+  CAND Lait | autres-cotations-donnees-avant-2014-1|1|euro-kg | Euro / kg | 2013-12 | 77
+  CAND Lait | autres-cotations-donnees-avant-2014-1|2|euro-kg | Euro / kg | 2010-06 | 71
+  CAND Lait | autres-cotations-donnees-avant-2014-1|3|euro-kg | Euro / kg | 2009-12 | 68
+  CAND Lait | autres-cotations-donnees-avant-2014-1|4|euro-kg | Euro / kg | 2013-04 | 67
+  CAND Lait | autres-cotations-donnees-avant-2014-1|5|euro-kg | Euro / kg | 2013-04 | 46
+  CAND Lait | autres-cotations-donnees-avant-2014-1|6|euro-kg | Euro / kg | 2013-04 | 66
+  CAND Lait | autres-cotations-donnees-avant-2014-1|7|euro-kg | Euro / kg | 2013-04 | 69
+  CAND Lait | autres-cotations-donnees-avant-2014-1|8|euro-kg | Euro / kg | 2010-07 | 72
+  CAND Lait | autres-cotations-donnees-a-partir-de-2014|1|euro-kg | Euro / kg | 2026-07 | 71
+  CAND Lait | autres-cotations-donnees-a-partir-de-2014|2|euro-kg | Euro / kg | 2026-07 | 73
+  CAND Lait | autres-cotations-donnees-a-partir-de-2014|3|euro-kg | Euro / kg | 2026-07 | 73
+  CAND Lait | autres-cotations-donnees-a-partir-de-2014|4|euro-kg | Euro / kg | 2026-07 | 73
+  CAND Energie | cours-des-monnaies-a-la-bourse-de-paris|1|euro | Euro | 2026-09 | 74
+  CAND Energie | cours-des-monnaies-a-la-bourse-de-paris|2|euro | Euro | 2026-09 | 74
+  CAND Energie | prix-des-produits-energetiques|1|euro-hl | Euro / hl | 2026-09 | 74
+  CAND Energie | prix-des-produits-energetiques|3|euro-100-kwh-pci | Euro / 100 kwh PCI | 2021-06 | 72
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|1|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|2|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|3|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|4|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|5|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-12 | 72
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|6|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|7|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-engrais-simples-azotes|8|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|9|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|10|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|11|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|12|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|13|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|14|100kg-d-elements-fertilisants | € / 100kg d'éléments fertilisants | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|15|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|16|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|17|100kg | € / 100kg | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|18|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|19|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|20|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|21|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|22|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|23|100kg | € / 100kg | 2017-12 | 60
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|24|100kg | € / 100kg | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|25|100kg | € / 100kg | 2009-02 | 62
+  CAND Engrais | prix-d-achat-des-engrais-autres-engrais-simples|26|100kg | € / 100kg | 2009-02 | 62
+  CAND Alimentation animale | prix-des-matieres-premieres|1|euro-par-100-kg | Euro par 100 kg | 2026-09 | 73
+  CAND Alimentation animale | prix-des-matieres-premieres|2|euro-par-100-kg | Euro par 100 kg | 2026-07 | 65
+  CAND Alimentation animale | prix-des-matieres-premieres|3|euro-par-100-kg | Euro par 100 kg | 2026-09 | 73
+  CAND Alimentation animale | prix-des-matieres-premieres|4|euro-par-100-kg | Euro par 100 kg | 2018-02 | 66
+  CAND Alimentation animale | prix-des-matieres-premieres|5|euro-par-100-kg | Euro par 100 kg | 2026-09 | 60
+  CAND Alimentation animale | prix-des-matieres-premieres|6|euro-par-100-kg | Euro par 100 kg | 2026-09 | 74
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|1|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|2|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|3|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|4|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|5|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|6|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|7|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|8|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|9|euro-par-100-kg | Euro par 100 kg | 2011-12 | 52
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|10|euro-par-100-kg | Euro par 100 kg | 2011-12 | 52
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|11|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|12|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|13|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|14|euro-par-100-kg | Euro par 100 kg | 2017-12 | 78
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|15|euro-par-100-kg | Euro par 100 kg | 2009-02 | 67
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|16|euro-par-100-kg | Euro par 100 kg | 2009-02 | 67
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|17|euro-par-100-kg | Euro par 100 kg | 2009-02 | 67
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|18|euro-par-100-kg | Euro par 100 kg | 2009-02 | 67
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|19|euro-par-100-kg | Euro par 100 kg | 2009-02 | 67
+  CAND Alimentation animale | prix-des-aliments-pour-animaux|20|euro-par-100-kg | Euro par 100 kg | 2009-02 | 67
+  CAND Données de cadrage | salaire-minimum-interprofessionnel-de-croissance-smic|1|euro-par-heure | Euro par heure | 2026-08 | 73
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|1|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|2|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|3|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|4|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|5|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|6|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|7|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|8|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|9|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|10|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|11|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|12|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|13|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|14|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|15|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|16|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|17|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|18|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|19|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|20|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|21|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|22|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|23|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|24|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|25|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|26|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|27|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|28|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|29|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|30|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|31|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|32|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|33|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|34|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|35|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|36|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|37|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|38|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|39|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|40|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|41|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|42|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|43|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|44|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|45|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|46|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|47|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|48|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|49|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations NC | exportations-24-premiers-chapitres-de-la-nc-valeur-fab-1|50|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|1|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|2|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|3|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|4|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|5|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|6|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|7|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|8|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|9|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|10|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|11|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|12|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|13|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|14|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|15|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|16|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|17|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|18|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|19|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|20|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|21|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|22|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|23|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|24|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|25|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|26|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|27|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|28|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|29|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|30|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|31|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|32|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|33|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|34|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|35|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|36|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|37|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|38|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|39|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|40|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|41|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|42|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|43|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|44|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|45|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|46|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|47|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|48|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|49|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations NC | importations-24-premiers-chapitres-de-la-nc-valeur-caf-1|50|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|1|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|2|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|3|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|4|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|5|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|6|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|7|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|8|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|9|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|10|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|11|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|12|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|13|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|14|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|15|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|16|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|17|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|18|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|19|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|20|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|21|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|22|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|23|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|24|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|25|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-1|26|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|1|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|2|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|3|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|4|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|5|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|6|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|7|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|8|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|9|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|10|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|11|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|12|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|13|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|14|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|15|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|16|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|17|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|18|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|19|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|20|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|21|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|22|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|23|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|24|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|25|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Importations CPF | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-1|26|million-d-euros | Million d'euros | 2008-12 | 78
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|1|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|2|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|3|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|4|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|5|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|6|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|7|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|8|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|9|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|10|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|11|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|12|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|13|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|14|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|15|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|16|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|17|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|18|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|19|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|20|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|21|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|22|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|23|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|24|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|25|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev2 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-2-1|26|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|1|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|2|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|3|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|4|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|5|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|6|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|7|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|8|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|9|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|10|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|11|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|12|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|13|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|14|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|15|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|16|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|17|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|18|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|19|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|20|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|21|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|22|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|23|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|24|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|25|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Importations CPF rev2 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-2-1|26|million-d-euros | Million d'euros | 2020-02 | 68
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|1|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|2|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|3|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|4|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|5|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|6|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|7|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|8|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|9|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|10|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|11|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|12|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|13|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|14|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|15|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|16|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|17|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|18|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|19|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|20|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|21|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|22|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|23|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|24|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|25|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Exportations CPF rev21 | exportations-principaux-regroupements-utiles-valeur-fab-nomenclature-cpf-rev-21-1|26|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|1|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|2|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|3|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|4|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|5|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|6|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|7|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|8|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|9|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|10|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|11|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|12|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|13|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|14|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|15|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|16|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|17|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|18|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|19|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|20|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|21|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|22|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|23|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|24|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|25|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND Importations CPF rev21 | importations-principaux-regroupements-utiles-valeur-caf-nomenclature-cpf-rev-21-1|26|million-d-euros | Million d'euros | 2026-07 | 72
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-pains-et-cereales|1|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-buf|3|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-veau|5|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-porc|9|euro-kg | Euro / kg | 2026-01 | 65
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-porc|10|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-porc|11|euro-kg | Euro / kg | 2026-01 | 65
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-lapins|12|euro-kg | Euro / kg | 2026-01 | 46
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-poissons|13|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|20|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|21|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|22|euro-kg-3 | Euro / kg(3) | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|24|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|25|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|26|euro-kg | Euro / kg | 2026-01 | 57
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|28|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|29|euro-kg | Euro / kg | 2026-01 | 52
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|30|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|31|euro-kg | Euro / kg | 2026-01 | 28
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-legumes-frais|32|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-fruits-frais|34|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-fruits-frais|36|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-fruits-frais|39|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-fruits-frais|40|euro-kg | Euro / kg | 2026-01 | 66
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-fruits-frais|41|euro-kg | Euro / kg | 2026-01 | 32
+  CAND PrixVenteDetail | prix-moyens-de-vente-au-detail-en-metropole-1-viandes-fruits-frais|43|euro-kg-3 | Euro / kg(3) | 2026-01 | 66
