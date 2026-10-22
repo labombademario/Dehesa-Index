@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-251 workflows (208 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+252 workflows (209 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -328,6 +328,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-uk-regions-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-uk-regions-macro.py | uk-regions-macro.json | finish, validate-files |
 | update-uk-scotland.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-uk-scotland.py | uk-scotland-stats.json | finish, validate-files |
 | update-uk-structure.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-uk-structure.py | uk-structure.json | finish, validate-files |
+| update-uk-tiff-regions.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-uk-tiff-regions.py | uk-tiff-regions.json | finish, validate-files |
 | update-uk-trade.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-uk-trade.py | uk-trade-stats.json | finish, validate-files |
 
 ## US

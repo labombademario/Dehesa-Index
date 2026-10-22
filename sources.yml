@@ -1325,6 +1325,15 @@ sources:
     continue: true
     data: [uk-structure.json, uk-structure-log.txt]
     message: Estructura agraria de Inglaterra por condado (Defra, encuesta de junio)
+  - id: uk-tiff-regions
+    name: Update England regional farm income (Defra TIFF, ITL1 and ITL3)
+    cron: ['50 9 * * 3']
+    script: scripts/update-uk-tiff-regions.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [uk-tiff-regions.json, uk-tiff-regions-log.txt]
+    message: Renta agraria por region y territorio de Inglaterra (Defra)
   - id: uk-farmers-age
     name: Update England farm holders by age and sex (Defra)
     cron: ['40 8 * * 5']

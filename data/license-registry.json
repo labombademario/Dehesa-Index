@@ -6815,6 +6815,12 @@
     "UK": "scottish_government"
    },
    "notes": "Censo agrario de junio de Escocia: cultivos, ganado y mano de obra desde 2016 (Gobierno de Escocia, OGL v3.0)."
+  },
+  "data/uk-tiff-regions.json": {
+   "sources": [
+    "defra"
+   ],
+   "notes": "Total income from farming for the regions of England: 9 regiones ITL1 (cuenta completa y por hectarea) y 133 territorios ITL3; millones de libras a precios corrientes (OGL v3.0). Reparto oficial de Defra, no recalculado."
   }
  },
  "derived": [
