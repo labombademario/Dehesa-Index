@@ -66,7 +66,8 @@ def main():
         c['summary'].setdefault(key, [None] * len(cy))[cy.index(r['survey_year'])] = num(r['value'])
         c['n'][r['survey_year']] = num(r['sample_size'])
     for r in rows(z, r'fae_table5c_'):
-        if r['sda_status'] != 'All Farms' or not r['fbs_variable'].startswith('agriculture.') or r['farm_type'] not in costs: continue
+        # costes de la actividad agraria: todo menos los de pagos agroambientales, pago basico y diversificacion (que son otros centros de coste)
+        if r['sda_status'] != 'All Farms' or r['farm_type'] not in costs or re.match(r'(agri\.environment|bps|diversification|basic\.payment)', r['fbs_variable']) or re.match(r'(?i)(agri-environment|bps|diversification|costs of)', r['measure']): continue
         costs[r['farm_type']]['detail'].setdefault(r['measure'], [None] * len(cy))[cy.index(r['survey_year'])] = num(r['value'])
     if len(years) < 5 or 'All Types' not in income or len(costs) < 5: raise SystemExit('estructura inesperada: %s %s %s' % (years, list(income)[:3], list(costs)))
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'), 'scope': 'England', 'unit': 'GBP per farm',
