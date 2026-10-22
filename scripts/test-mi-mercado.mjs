@@ -25,7 +25,8 @@ const L = ins.latestCompleteYear, ia = ins.states.KS[String(L)], ratio = ia[3] /
 const dRows = dr.states.KS, dLast = dRows[dRows.length - 1];
 const hayRows = hay.latest.rows.filter(r => r[3] === 'Per Ton').sort((a, b) => (b[11] || 0) - (a[11] || 0));
 const cs = corn.series.filter(s => ['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED'].includes(s.freshness));
-const vc = es.campaigns['2024'].crops.find(c => c.c === 'CE0000'), v47 = vc.v['47'];
+const ESC = Object.keys(es.campaigns).sort().pop();   // la pagina usa la ultima campaña del grupo
+const vc = es.campaigns[ESC].crops.find(c => c.c === 'CE0000'), v47 = vc.v['47'];
 const eucer = J('data/eu/cereales.json'), vB = (eucer.series.filter(x => /^feed-barley/.test(x.id)).map(x => x.regions.find(r => /Valladolid/.test(r.m))).filter(Boolean)[0] || { last: [0, 0] }).last[1];
 const rank = Object.keys(vc.v).map(p => vc.v[p][0]).filter(x => x > 0).sort((a, b) => b - a).indexOf(v47[0]) + 1;
 const cattleStates = status.reports.filter(r => r.kind === 'cattle' && r.latest).length;
@@ -127,7 +128,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const pB = nrm(await page.evaluate(() => { const e = document.querySelector('[data-mm-body="price"]'); return e ? e.innerText : ''; }));
   ok(tag + ': ES cebada Valladolid = JSON (' + vB + ')', pB.includes('Valladolid') && pB.includes(nrm(f(vB, 1))));
   await page.selectOption('[data-mm="k"]', 'CE1100'); await page.waitForTimeout(300);
-  const wh = es.campaigns['2024'].crops.find(c => c.c === 'CE1100').v['47'];
+  const wh = es.campaigns[ESC].crops.find(c => c.c === 'CE1100').v['47'];
   ok(tag + ': ES cambiar de cultivo (trigo) = JSON', nrm(await sec('crop')).includes(String(wh[0])));
   await page.selectOption('[data-mm="p"]', 'hortalizas'); await page.waitForFunction(() => /2025/.test((document.querySelector('[data-mm-body="crop"]') || {}).innerText || ''), null, { timeout: 12000 }).catch(() => {});
   ok(tag + ': ES grupo con campaña 2025 la usa', /2025/.test(await sec('crop')));
