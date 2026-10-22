@@ -1,0 +1,4 @@
+pop regiones: 12 {'UKC': [2025, 2762746], 'UKD': [2025, 7772854]}
+unemp regiones: 12 {'UKC': ['2026-06', 5.0], 'UKD': ['2026-06', 4.3]}
+gva regiones: 0 {}
+FALLO gva ValueError('solo 0 regiones')
