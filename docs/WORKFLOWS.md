@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-240 workflows (199 generados desde `sources.yml`, 41 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+241 workflows (199 generados desde `sources.yml`, 42 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -59,6 +59,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-canada-provinces-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-canada-provinces-macro.py | canada-provinces-macro.json | finish, validate-files |
 | update-canada-provinces.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-canada-provinces.py | canada-provinces.json | finish, validate-files |
 | update-canada-stats.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-canada-stats.py | canada-stats.json, supply-balances/ca.json | finish, validate-files |
+| update-canada-wholesale.yml | a mano | semanal (1-5) | update-canada-wholesale.py | - | publish |
 | update-canada.yml | a mano | semanal (1,4) | update-statcan-canada.py | - | price-engine, publish |
 | update-cap-dk.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-dk.py | cap/dk/amounts.json, cap/dk/watch.json | finish, validate-files |
 | update-cap-es.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-es.py | cap/es/amounts.json, cap/es/watch.json | finish, validate-files |

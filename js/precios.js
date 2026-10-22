@@ -628,7 +628,7 @@
   var EU_ONLY = { vino: true };   // madera: UE y Reino Unido (Forest Research), EE. UU. (BLS) y Canada (StatCan) desde el 21-oct-2026 // solo hay datos de países europeos: con ubicación EE. UU., Reino Unido o Canadá no se enseñan
   function catHasData(catId) {
     if (EU_ONLY[catId]) return state.location === 'eu';
-    if (catId === 'hortalizas') return state.location === 'eu' || state.location === 'us';   // EE. UU.: USDA NASS (data/views/fv-us.json); Canadá y Reino Unido, aún sin fuente
+    if (catId === 'hortalizas') return state.location === 'eu' || state.location === 'us' || state.location === 'ca';   // EE. UU.: USDA NASS y AMS; Canadá: AAFC mayoristas (data/ca/); Reino Unido, aún sin fuente
     if (INFO_CATS[catId]) return true;
     if (ukIdxList(catId).length) return true;
     var list = productsInCat(catId);

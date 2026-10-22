@@ -1,0 +1,27 @@
+name: Dehesa Data — Canadá mayoristas de fruta y hortaliza (AAFC)
+on:
+  schedule:
+    - cron: '40 23 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Precios mayoristas de Canadá (AAFC, Open Government Licence - Canada)
+        run: python scripts/update-canada-wholesale.py
+      - name: Publicar
+        uses: ./.github/actions/publish
+        with:
+          optional: data/ca
+          message: "data: Canadá mayoristas fruta y hortaliza (AAFC)"
+          user: "Dehesa Index Bot"
