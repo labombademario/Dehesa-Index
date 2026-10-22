@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T02:24:00Z",
+ "generatedAt": "2026-10-22T02:39:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 226,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T00:54:04.376277+00:00",
   "repoGeneratedAt": "2026-10-22T00:54:04.376277+00:00",
-  "checkedAt": "2026-10-22T02:24:00Z"
+  "checkedAt": "2026-10-22T02:39:00Z"
  },
  "pipelines": [
   {
@@ -3709,7 +3709,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-22T00:52:04Z"
+     "lastChange": "2026-10-22T02:37:22Z"
     },
     {
      "path": "data/products"
@@ -3720,19 +3720,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T02:23:52Z"
+     "lastChange": "2026-10-22T02:26:46Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-22T02:17:39Z"
+     "lastChange": "2026-10-22T02:37:22Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-22T00:52:04Z"
+     "lastChange": "2026-10-22T02:37:22Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-22T00:52:04Z"
+     "lastChange": "2026-10-22T02:37:22Z"
     },
     {
      "path": "data/pack"
@@ -3748,7 +3748,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-22T02:17:39Z"
+     "lastChange": "2026-10-22T02:37:22Z"
     },
     {
      "path": "data/country-pending.json",
@@ -5284,7 +5284,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-10-22T02:30:00Z",
+   "nextRun": "2026-10-23T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
