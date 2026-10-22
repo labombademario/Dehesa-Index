@@ -903,9 +903,9 @@
           '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + (showValue ? lonjaSelectHtml(entry) : '') + '</div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
-            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮 <span class="di-ib-l">' + esc(IBL[0]) + '</span></button>' : '') +
+            (showValue ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮 <span class="di-ib-l">' + esc(IBL[0]) + '</span></button>' : '') +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈 <span class="di-ib-l">' + esc(IBL[1]) + '</span></button>' : '') +
-            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔 <span class="di-ib-l">' + esc(IBL[2]) + '</span></button>' : '') +
+            (showValue ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔 <span class="di-ib-l">' + esc(IBL[2]) + '</span></button>' : '') +
             '<button type="button" class="di-fav-star' + (fav ? ' active' : '') + '" data-action="fav" data-key="' + key + '" title="' + esc(fav ? t.favRemoveTitle : t.favAddTitle) + '">★</button>' +
           '</div>' +
         '</div>' +
@@ -1317,6 +1317,7 @@
 
   function regionObjFor(entry, regionCode, country) {
     var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
+    if (regionCode === 'lonja') { var lj = lonjaPick(entry); if (lj) return { region: lonjaRegion(lj), ccy: 'EUR', kg: 1000, unit: UL[entry.product.metricUnitKey] }; }
     if (regionCode === 'us') return { region: entry.product.us, ccy: 'USD', kg: entry.product.imperialKgPerUnit, unit: UL[entry.product.imperialUnitKey] };
     if (regionCode === 'eu') {
       var disp = resolveDisplay(entry, 'eu', country || state.euCountry);
@@ -1508,7 +1509,8 @@
   function openCalc(key) {
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
-    state.calc = { key: key, region: defaultRegionFor(entry), mode: 'directa' };
+    var lj = lonjaPick(entry);
+    state.calc = { key: key, region: lj ? 'lonja' : defaultRegionFor(entry), mode: 'directa' };
     lockProductModal();
     renderCalcModal();
   }
@@ -1527,7 +1529,7 @@
     var entry = PRODUCT_BY_KEY[c.key];
     var avail = availableRegions(entry);
     var up = calcUnitPrice(entry, c.region);
-    var regionBtns = avail.map(function (r) {
+    var regionBtns = c.region === 'lonja' ? '' : avail.map(function (r) {
       return '<button type="button" class="di-region-btn' + (r === c.region ? ' active' : '') + '" data-cregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
     }).join('');
     var html =
@@ -1597,7 +1599,8 @@
   function openAlert(key) {
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
-    state.alert = { key: key, region: defaultRegionFor(entry), direction: 'up', attempted: false, confirmed: false };
+    var lj = lonjaPick(entry);
+    state.alert = { key: key, region: lj ? 'lonja' : defaultRegionFor(entry), direction: 'up', attempted: false, confirmed: false };
     lockProductModal();
     renderAlertModal();
   }
@@ -1609,7 +1612,7 @@
     var t = ui();
     var entry = PRODUCT_BY_KEY[a.key];
     var avail = availableRegions(entry);
-    var regionBtns = avail.map(function (r) {
+    var regionBtns = a.region === 'lonja' ? '' : avail.map(function (r) {
       return '<button type="button" class="di-region-btn' + (r === a.region ? ' active' : '') + '" data-aregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
     }).join('');
 
