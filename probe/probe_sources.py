@@ -259,6 +259,28 @@ if sec == 'ersreg':
         for m in sorted(set(re.findall(r'href="([^"]*(?:egion|county|county-to)[^"]*\.(?:xlsx?|csv|zip|pdf))"', t, re.I)))[:20]: p('LINK', m)
         p(t[:300].replace('\n', ' '))
 
+if sec == 'uk3':
+    p('=== UK3')
+    N = 'https://www.nomisweb.co.uk/api/v01/dataset/'
+    st, h, b = head(N + 'NM_17_1.def.sdmx.json', timeout=90); p(b[:3100].decode('utf-8', 'replace'))
+    for ds in ('NM_17_1', 'NM_2002_1'):
+        st, h, b = head(N + ds + '/variable.def.sdmx.json', timeout=60); p(b[:1500].decode('utf-8', 'replace'))
+    st, h, b = head(N + 'NM_17_1/geography/TYPE480.def.sdmx.json', timeout=60); p(b[:600].decode('utf-8', 'replace'))
+    st, h, b = head(N + 'NM_17_1.data.csv?geography=2013265921...2013265932&date=latest&variable=83&measures=20599&select=date_name,geography_name,variable_name,obs_value', timeout=60); p(b[:900].decode('utf-8', 'replace'))
+    st, h, b = head('https://www.gov.uk/api/content/government/statistics/agricultural-workforce-in-england-at-1-june', timeout=90)
+    try:
+        j = json.loads(b)
+        for a in j['details'].get('attachments', [])[:30]: p('ATT', a.get('title'), a.get('url'))
+        for d in (j.get('links', {}).get('documents') or [])[:12]: p('DOC', d.get('title'), d.get('base_path'))
+    except Exception as e: p('ERR', e, b[:300])
+    st, h, b = head('https://www.gov.uk/api/search.json?q=agricultural+workforce+england+at+1+june&count=10&fields=title&fields=link', timeout=60); p(b[:1500].decode('utf-8', 'replace'))
+    for u in ['https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/documentation', 'https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/']:
+        st, h, b = head(u, timeout=90); t = b.decode('utf-8', 'replace')
+        for m in sorted(set(re.findall(r'href="([^"]*)"', t))):
+            if re.search(r'(?i)region|webdocs|county', m): p('HREF', m)
+    st, h, b = head('https://www.ers.usda.gov/webdocs/DataFiles/Farm_Resource_Regions/Farm_Resource_Regions.xlsx', timeout=60)
+    st, h, b = head('https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/documentation/', timeout=60)
+
 if sec == 'wds':
     W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
     body = json.dumps([{"productId": 32100077}]).encode()
