@@ -78,6 +78,39 @@
     var rows = f.wood.slice().reverse().map(function (r) { var l = fw[r.year] || {}; return '<tr>' + td('<b>' + r.year + '</b>') + td(n0(r.total)) + td(n0(r.valor) + (r.est ? ' *' : '')) + td(n0(l.production)) + td(n0(l.value) + (l.est ? ' *' : '')) + '</tr>'; }).join('');
     return '<details class="di-card di-info-card" style="margin-top:12px"><summary style="cursor:pointer"><b>' + esc(t.eh) + '</b></summary><p class="di-field-hint" style="margin:8px 0">' + esc(t.en) + '</p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%"><thead><tr>' + th(t.ey) + th(t.ec) + th(t.ev) + th(t.el) + th(t.elv) + '</tr></thead><tbody>' + rows + '</tbody></table></div><p class="di-field-hint" style="margin:6px 0 0">' + esc(t.ee) + ' · <a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.name) + '</a></p></details>';
   }
+  /* Precios (22-oct-2026): índice de precios de la industria de la madera (Eurostat, 21 países) y madera en rollo de Suecia (Skogsstyrelsen). data/eu-wood-prices.json */
+  var PB = {
+    es: { h: 'Precios de la madera', ppi: 'Industria de la madera (índice 2021 = 100)', saw: 'Aserrado (índice 2021 = 100)', y12: 'frente a hace 12 meses', month: 'mes', sawlog: 'Madera para sierra, Suecia (kr por m³ sin corteza)', pulp: 'Madera para pasta, Suecia (kr por m³ sin corteza)', q: 'trimestre', yq: 'frente al mismo trimestre del año anterior',
+      note: 'El índice es el precio al que vende la industria de la madera (Eurostat, datos de cada instituto nacional de estadística): no es el precio de la madera en rollo del monte ni se expresa en euros por m³. Los precios de Suecia son los de liquidación de la madera entregada (Skogsstyrelsen).', none: 'Eurostat no publica el índice de precios de la industria de la madera de {c}, y no hemos encontrado otra fuente oficial abierta.', mk: 'Índice mensual de precios de productor de la industria de la madera (Eurostat) y precios de liquidación de la madera en rollo en Suecia', ty: 'Índice (2021 = 100) y kr por m³; no es el precio del monte', ob: 'Un mes (o trimestre) por punto; los países que no lo publican no aparecen', me: 'Dehesa Index descarga sts_inpp_m de Eurostat (C16 y C161) y la tabla JO0303 de Skogsstyrelsen y los muestra tal cual, sin recalcular.' },
+    en: { h: 'Timber prices', ppi: 'Wood industry (index 2021 = 100)', saw: 'Sawmilling (index 2021 = 100)', y12: 'vs 12 months ago', month: 'month', sawlog: 'Sawlogs, Sweden (SEK per m³ under bark)', pulp: 'Pulpwood, Sweden (SEK per m³ under bark)', q: 'quarter', yq: 'vs the same quarter a year earlier',
+      note: 'The index is the price at which the wood industry sells (Eurostat, data from each national statistics office): it is not the price of standing or roundwood timber and is not in euros per m³. Swedish prices are the settlement prices of delivered roundwood (Skogsstyrelsen).', none: 'Eurostat does not publish a wood-industry price index for {c}, and we have not found another open official source.', mk: 'Monthly producer price index of the wood industry (Eurostat) and settlement prices of roundwood in Sweden', ty: 'Index (2021 = 100) and SEK per m³; not a stumpage price', ob: 'One month (or quarter) per point; countries that do not publish it are not shown', me: 'Dehesa Index downloads sts_inpp_m from Eurostat (C16 and C161) and table JO0303 from Skogsstyrelsen and shows them as published, without recalculation.' },
+    fr: { h: 'Prix du bois', ppi: 'Industrie du bois (indice 2021 = 100)', saw: 'Sciage (indice 2021 = 100)', y12: 'sur 12 mois', month: 'mois', sawlog: 'Bois de sciage, Suède (SEK par m³ sans écorce)', pulp: 'Bois de trituration, Suède (SEK par m³ sans écorce)', q: 'trimestre', yq: 'sur un an (même trimestre)',
+      note: 'L’indice est le prix auquel vend l’industrie du bois (Eurostat, données de chaque institut national de statistique) : ce n’est pas le prix du bois rond en forêt et il n’est pas exprimé en euros par m³. Les prix suédois sont les prix de règlement du bois livré (Skogsstyrelsen).', none: 'Eurostat ne publie pas d’indice des prix de l’industrie du bois pour {c}, et nous n’avons pas trouvé d’autre source officielle ouverte.', mk: 'Indice mensuel des prix à la production de l’industrie du bois (Eurostat) et prix de règlement du bois rond en Suède', ty: 'Indice (2021 = 100) et SEK par m³ ; pas un prix sur pied', ob: 'Un mois (ou trimestre) par point ; les pays qui ne le publient pas n’apparaissent pas', me: 'Dehesa Index télécharge sts_inpp_m d’Eurostat (C16 et C161) et le tableau JO0303 de Skogsstyrelsen et les affiche tels quels, sans recalcul.' },
+    it: { h: 'Prezzi del legno', ppi: 'Industria del legno (indice 2021 = 100)', saw: 'Segagione (indice 2021 = 100)', y12: 'su 12 mesi', month: 'mese', sawlog: 'Legname da sega, Svezia (SEK per m³ senza corteccia)', pulp: 'Legname da cellulosa, Svezia (SEK per m³ senza corteccia)', q: 'trimestre', yq: 'sullo stesso trimestre dell’anno prima',
+      note: 'L’indice è il prezzo a cui vende l’industria del legno (Eurostat, dati di ciascun istituto nazionale di statistica): non è il prezzo del legname tondo in bosco e non è in euro per m³. I prezzi svedesi sono i prezzi di liquidazione del legname consegnato (Skogsstyrelsen).', none: 'Eurostat non pubblica un indice dei prezzi dell’industria del legno per {c}, e non abbiamo trovato un’altra fonte ufficiale aperta.', mk: 'Indice mensile dei prezzi alla produzione dell’industria del legno (Eurostat) e prezzi di liquidazione del legname tondo in Svezia', ty: 'Indice (2021 = 100) e SEK per m³; non è un prezzo in piedi', ob: 'Un mese (o trimestre) per punto; i paesi che non lo pubblicano non compaiono', me: 'Dehesa Index scarica sts_inpp_m da Eurostat (C16 e C161) e la tabella JO0303 di Skogsstyrelsen e li mostra così come pubblicati, senza ricalcolo.' }
+  };
+  var PCACHE = null;
+  function loadP() { return PCACHE || (PCACHE = fetch('data/eu-wood-prices.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function f1(v, lg) { return v == null ? '—' : v.toLocaleString(LOC[lg], { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
+  function ym(m, lg) { var a = m.split('-'); try { return new Date(Date.UTC(+a[0], +a[1] - 1, 1)).toLocaleDateString(LOC[lg], { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return m; } }
+  function priceBlock(pw, cc, lg) {
+    var t = PB[lg], ppi = pw && pw.ppi && pw.ppi.countries && pw.ppi.countries[cc], se = cc === 'SE' && pw && pw.national && pw.national.SE, h = '';
+    if (!ppi && !se) return '<div class="di-info-scope-note" style="margin-top:12px">' + esc(t.none.replace('{c}', nm(cc, lg))) + '</div>';
+    function mrow(label, pts) {
+      if (!pts || !pts.length) return '';
+      var a = pts[pts.length - 1], b = null, i; for (i = pts.length - 1; i >= 0; i--) if (pts[i][0] === (+a[0].slice(0, 4) - 1) + a[0].slice(4)) { b = pts[i]; break; }
+      return row(label + ' · ' + ym(a[0], lg), '<b>' + f1(a[1], lg) + '</b>' + (b && b[1] ? ' · ' + pct((a[1] / b[1] - 1) * 100, lg, 1) + ' ' + esc(t.y12) : ''));
+    }
+    function qrow(label, pts) {
+      if (!pts || !pts.length) return '';
+      var a = pts[pts.length - 1], b = null, i; for (i = pts.length - 1; i >= 0; i--) if (pts[i][0] === (+a[0].slice(0, 4) - 1) + a[0].slice(4)) { b = pts[i]; break; }
+      return row(label + ' · ' + a[0].replace('K', ' T'), '<b>' + n0(a[1], lg) + '</b>' + (b && b[1] ? ' · ' + pct((a[1] / b[1] - 1) * 100, lg, 1) + ' ' + esc(t.yq) : ''));
+    }
+    if (ppi) h += mrow(t.ppi, ppi.C16) + mrow(t.saw, ppi.C161);
+    if (se) { var by = {}; se.series.forEach(function (x) { by[x.id] = x.pts; }); h += qrow(t.sawlog, by['se-roundwood-sawlogs-pine-and-spruce']) + qrow(t.pulp, by['se-roundwood-pulpwood-total']); }
+    return '<div class="di-card di-info-card" style="margin-top:12px"><div class="di-info-card-title">' + esc(t.h + ' — ' + nm(cc, lg)) + '</div><div class="di-info-stat-list">' + h + '</div><div class="di-info-scope-note" style="margin-top:8px">' + esc(t.note) + '</div>' +
+      (global.DehesaDataTrust && pw.ppi ? global.DehesaDataTrust.info({ src: pw.ppi.source.name, url: pw.ppi.source.url, fq: 'monthly', mk: t.mk, ty: t.ty, ob: t.ob, me: t.me, st: 'official' }, lg) : '') + '</div>';
+  }
   function render(el) {
     if (!el) return;
     load().then(function (d) {
@@ -87,6 +120,7 @@
         var b = build(d, code, lg);
         el.innerHTML = '<div class="di-badge di-badge-green di-info-badge">' + esc(t.badge) + '</div>' + b.html + '<div class="di-info-scope-note">' + esc(t.note) + '</div><div class="di-field-hint di-info-sources">' + esc(t.src) + ' <a href="' + esc(d.source.url) + '" target="_blank" rel="noopener noreferrer">Eurostat (for_remov)</a></div>';
         bind(el, b, lg);
+        loadP().then(function (pw) { if (pw && el.querySelector('.wr-card')) el.insertAdjacentHTML('beforeend', priceBlock(pw, code, lg)); });
         if (code === 'ES') esLoad().then(function (f) { if (f && f.wood && el.querySelector('.wr-card')) el.insertAdjacentHTML('beforeend', esBlock(f, lg)); });
       }
       if (!d.countries[cc]) {
