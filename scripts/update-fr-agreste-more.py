@@ -8,7 +8,7 @@
 
 Los cuatro se leen del contenido real de los ficheros; una celda vacia o ilegible no existe, nada se estima. Cada conjunto es independiente: si uno falla (Agreste es intermitente) se conserva lo
 publicado de ese conjunto y se sigue con los demas. Formato comun: {schemaVersion, generatedAt, source, edition, tables:[{id, label, unit, note, series:[{id, label, points:[[periodo, valor]], provisional?}]}]}."""
-import csv, datetime, io, json, re, sys, unicodedata, zipfile
+import csv, datetime, io, json, re, sys, time, unicodedata, zipfile
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib_agreste import XL, detail_files, fetch, num, pick, quote_url
@@ -196,14 +196,19 @@ def read_ipampa(blob):
 
 # ---- orquestacion -------------------------------------------------------------------------------------------------------------------------------------
 def first_pub(ids, pat):
+    """Primera ficha de la lista con un fichero que case con pat. La ficha a veces llega sin la lista de descargas (200 con la pagina a medias): se pide de nuevo hasta 4 veces."""
     for pid in ids:
-        try:
-            urls, _ = detail_files(pid, log=log)
-            u = pick(urls, pat)
-            if u:
-                return pid, quote_url(u)
-        except Exception as e:
-            log("%s: %s" % (pid, str(e)[:120]))
+        for k in range(4):
+            try:
+                urls, _ = detail_files(pid, log=log)
+                u = pick(urls, pat)
+                if u:
+                    return pid, quote_url(u)
+                log("%s: %d enlaces de descarga, ninguno casa con %s (intento %d/4)" % (pid, len(urls), pat, k + 1))
+            except Exception as e:
+                log("%s: %s" % (pid, str(e)[:120]))
+                break
+            time.sleep(20)
     return None, None
 
 
