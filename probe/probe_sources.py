@@ -120,5 +120,34 @@ if sec == 'ckan':
         except Exception as e: p('ERR', e, b[:200])
     for u in ['https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite', 'https://www150.statcan.gc.ca/n1/en/catalogue/32100364']:
         st, h, b = head(u); p(re.sub(r'\s+', ' ', b[:160].decode('utf8', 'ignore')))
+if sec == 'aafc':
+    for u in ['https://od-do.agr.gc.ca/WeeklyWholesalePrices_PrixDeGrossistesHebdomadaires55.csv', 'https://od-do.agr.gc.ca/DailyWholesalePrices_PrixDeGrossistesQuotidiens.csv']:
+        st, h, b = head(u, timeout=120)
+        t = b.decode('utf-8', 'ignore').splitlines()
+        p('LINES', len(t), 'LAST-MODIFIED', h.get('Last-Modified'))
+        for l in t[:8]: p('  ', l[:300])
+        p('  ...'); 
+        for l in t[-3:]: p('  ', l[:300])
+    st, h, b = head('https://od-do.agr.gc.ca/WeeklyWholesalePrices_PrixDeGrossistesHebdomadaires.csv', timeout=180)
+    t = b.decode('utf-8', 'ignore').splitlines(); p('FULL LINES', len(t), t[0][:300] if t else '', t[1][:300] if len(t) > 1 else '')
+    rows = [l.split(',') for l in t[1:]]
+    p('SAMPLE LAST', t[-1][:300])
+    for u in ['https://open.canada.ca/data/api/action/package_show?id=b52424ca-ebb8-4847-808e-d525120b55df', 'https://open.canada.ca/data/api/action/package_show?id=920bc8e2-de26-4bf6-ac41-ed47962d0ff6']:
+        st, h, b = head(u, timeout=90)
+        try:
+            r = json.loads(b)['result']; p('LIC', r.get('license_title'), '|', r.get('frequency') if 'frequency' in r else '', '|', str(r.get('notes') or r.get('notes_translated'))[:700])
+        except Exception as e: p('ERR', e)
+    for q in ['agropecuario', 'cosecha', 'siniestros', 'primas', 'seguros ramo']:
+        st, h, b = head('https://datos.gob.ar/api/3/action/package_search?q=%s&rows=10' % q, timeout=90)
+        try:
+            for r in json.loads(b)['result']['results']:
+                if re.search(r'(?i)segur|ssn', json.dumps(r)[:3000]): p('DS', r.get('id'), '|', str(r.get('title'))[:100], '|', r.get('license_title') or r.get('license_id'), '|', r.get('organization', {}).get('title') if r.get('organization') else '')
+        except Exception as e: p('ERR', e)
+    for q in ['seguros', 'produccion']:
+        st, h, b = head('https://datosabiertos.ssn.gob.ar/api/3/action/package_search?q=%s&rows=40' % q, timeout=90)
+        try:
+            for r in json.loads(b)['result']['results']:
+                p('SSN', r.get('id'), '|', str(r.get('title'))[:100], '|', r.get('license_id'), '|', [x.get('url') for x in r.get('resources', [])][:2])
+        except Exception as e: p('ERR', e, b[:150])
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
