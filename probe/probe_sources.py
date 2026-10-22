@@ -204,6 +204,29 @@ if sec == 'odepa':
         for k in list(R[0].keys())[:20]:
             vals = collections.Counter(r[k] for r in R)
             p('COL', k, 'distinct', len(vals), list(vals.most_common(6)))
+
+if sec == 'ukmacro':
+    p('=== UKMACRO')
+    N = 'https://www.nomisweb.co.uk/api/v01/dataset/'
+    st, h, b = head(N + 'NM_2002_1.data.csv?geography=TYPE480&date=latest&gender=0&c_age=200&measures=20100&select=date_name,geography_name,geography_code,obs_value')
+    p(b[:1500].decode('utf-8', 'replace'))
+    st, h, b = head(N + 'NM_2002_1.data.csv?geography=2092957699&date=2010,latest&gender=0&c_age=200&measures=20100&select=date_name,geography_name,obs_value')
+    p(b[:600].decode('utf-8', 'replace'))
+    st, h, b = head(N + 'NM_17_1.data.csv?geography=TYPE480&date=latest&variable=83,84,45&measures=20599&select=date_name,geography_name,variable_name,obs_value')
+    p(b[:2500].decode('utf-8', 'replace'))
+    st, h, b = head(N + 'NM_17_1.data.csv?geography=TYPE480&date=latest-5,latest&variable=84&measures=20599&select=date_name,geography_name,variable_name,obs_value')
+    p(b[:800].decode('utf-8', 'replace'))
+    st, h, b = head('https://api.beta.ons.gov.uk/v1/datasets?limit=200', timeout=90)
+    try:
+        for d in json.loads(b).get('items', []):
+            t = (d.get('title') or '') + ' ' + (d.get('description') or '')
+            if re.search(r'(?i)region|gdp|gva|earnings|nuts|itl', t): p('DS', d['id'], d.get('title'))
+    except Exception as e: p('ERR', e)
+    for u in ['https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/regionalgrossdomesticproductallitlregions/current/data',
+              'https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/regionalgrossdomesticproductallnutslevelregions/current/data',
+              'https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/regionaleconomicactivitybygrossdomesticproductuk/1998to2023/data']:
+        st, h, b = head(u, timeout=90); p(b[:1200].decode('utf-8', 'replace'))
+
 if sec == 'wds':
     W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
     body = json.dumps([{"productId": 32100077}]).encode()
