@@ -1,0 +1,22 @@
+ITL1 https://assets.publishing.service.gov.uk/media/6aad017af1f8d2a39605f9c3/ITL1_Regional_Accounts_Current_Prices-20260924.ods
+ITL3 https://assets.publishing.service.gov.uk/media/6aad019ece3f006bd4346c7d/ITL3_Regional_Accounts_Current_Prices-20260924.ods
+per ha https://assets.publishing.service.gov.uk/media/6aad01b32f29b388848186bd/ITL1_Regional_Accounts_Per_Ha-20260924.ods
+hoja Cover_Sheet 0
+hoja Contents 0
+hoja Metadata 0
+hoja Notes 0
+hoja North_East 7
+hoja North_West 20
+hoja Yorkshire_And_The_Humber 11
+tabla no ITL3 en East_Midlands ('East Midlands', 'TLF')
+hoja East_Midlands 11
+hoja West_Midlands 14
+hoja East_Of_England 16
+tabla no ITL3 en London_And_The_South_East ('Greater London', 'TLI')
+hoja London_And_The_South_East 22
+hoja South_West 12
+ITL1 codigos ['TLC', 'TLD', 'TLE', 'TLF', 'TLG', 'TLH', 'TLIJ', 'TLK']
+ITL3 por region {'TLC': 7, 'TLD': 20, 'TLE': 11, 'TLF': 10, 'TLG': 14, 'TLH': 16, 'TLJ': 21, 'TLK': 12}
+partidas ITL1 ['1 Output of cereals', 'Wheat', 'Barley', '2 Output of industrial crops', 'Oilseed rape', 'Protein crops', 'Sugar beet', '3 Output of forage plants', '4 Output of vegetables and horticultural products', 'Fresh vegetables', 'Plants and flowers', '5 Output of potatoes (including seeds)', '6 Output of fruit', '7 Output of other crop products incl. seeds', 'Total crop output (sum 1-7)', '8 Output of livestock', 'Primarily for meat:', 'Beef', 'Pigmeat', 'Mutton and lamb', 'Poultry', 'Gross fixed capital formation', 'Cattle', 'Pigs', 'Sheep', '9 Output of livestock products', 'Milk', 'Eggs', 'Total livestock output (8+9)', '10 Other agricultural activities', '11 Diversification', '12 Output (at market prices) (sum 1 to 11)', '13 Total subsidies (less taxes) on product', '14 Gross output at basic prices (12+13)', '15 Seeds', '16 Energy', '17 Fertilisers', '18 Plant protection products', '19 Veterinary expenses', '20 Animal feed', '21 Total maintenance', '22 Agricultural services', '23 Bank Charges', '24 Other goods and services', '25 Total intermediate consumption (sum 15 to 24)', '26 Gross value added at market prices (12-25)', '27 Gross value added at basic prices (14-25)', '28 Total consumption of Fixed Capital', 'Equipment', 'Buildings', 'Livestock', '29 Net value added at market prices (26-28)', '30 Net value added at basic prices (27-28)', '31 Other subsidies less tax', '32 Net value added at factor cost (30+31)', '33 Compensation of employees', '34 Rent', '35 Interest', '36 Total Income from Farming (32-33-34-35)']
+partidas ITL3 ['Total crop output', 'Total livestock output', 'Output at market prices', 'Total intermediate consumption', 'Gross value added at market prices', 'Total income from farming']
+anos 2010 - 2025 | ITL1 8 | ITL3 111
