@@ -1,7 +1,15 @@
-empleo: NO se pudo leer (empleo: sin enlace); se conserva lo publicado
-teruti: NO se pudo leer (TERUTI: sin enlace); se conserva lo publicado
+Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 1/4)
+Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 2/4)
+Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 3/4)
+Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 4/4)
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Dos2602/Dossiers2026-2_EEA2024-Donn%C3%A9es.zip
+empleo: leido (Dos2602)
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/TERUTI-SeriesLongues/Series_longues_Teruti_depuis1982-v2.xlsx
+teruti: leido (TERUTI)
+VINCONJ: 0 enlaces de descarga, ninguno casa con \.zip$ (intento 1/4)
 descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/VINCONJ/FDS_VINCONJ.zip
 vinconj: leido (VINCONJ)
+IPAMPA: 0 enlaces de descarga, ninguno casa con \.zip$ (intento 1/4)
 descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/IPAMPA/FDS_IPAMPA.zip
 ipampa: leido (IPAMPA)
 escrito: 5 ficheros, 29 series en las estadisticas
