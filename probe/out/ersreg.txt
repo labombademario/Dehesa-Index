@@ -1,0 +1,9 @@
+=== ERSREG
+GET https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/documentation -> 200 text/html; charset=utf-8 152040
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head>   <meta charset="utf-8" /> <noscript><style>form.antibot > * { display: none !important; } form.antibot noscript { display: block !important; }</style> </noscript><meta name="description" content="Documentation for the Agricultural Resource Managemen
+GET https://www.ers.usda.gov/webdocs/publications/42298/32489_aib760_002.pdf -> 404 text/html; charset=utf-8 400
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head>   <meta charset="utf-8" /> <noscript><style>form.antibot > * { display: none !important; } form.antibot noscript { display: block !important; }</style> </noscript><meta name="description" content="The requested page could not be found." /> <link rel=
+GET https://www.ers.usda.gov/topics/farm-economy/farm-structure-and-organization/farm-resource-regions -> 404 text/html; charset=utf-8 400
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head>   <meta charset="utf-8" /> <noscript><style>form.antibot > * { display: none !important; } form.antibot noscript { display: block !important; }</style> </noscript><meta name="description" content="The requested page could not be found." /> <link rel=
+GET https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/ -> 200 text/html; charset=utf-8 41921
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head>   <meta charset="utf-8" /> <noscript><style>form.antibot > * { display: none !important; } form.antibot noscript { display: block !important; }</style> </noscript><meta name="description" content="USDA&#039;s Agricultural Resource Management Survey (
