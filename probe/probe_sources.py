@@ -94,5 +94,20 @@ if sec == 'third':
         st, h, b = get(u); t = b.decode('utf8', 'ignore'); p(u, st, len(t))
         for m in re.findall(r'href="([^"]+)"[^>]*>([^<]{3,140})<', t):
             if re.search(r'(?i)agro|forest|riesgos|xls|estadist|seguros-', m[0] + m[1]): p('  A', m[0], '|', m[1].strip())
+if sec == 'keys':
+    key = os.environ.get('MARS_API_KEY', '')
+    auth = {'Authorization': 'Basic ' + base64.b64encode((key + ':').encode()).decode()}
+    for sid in (2314, 2315, 2316, 2390, 2412):
+        st, h, b = get('https://marsapi.ams.usda.gov/services/v1.2/reports/%d?q=report_begin_date=10/21/2026&allSections=true' % sid, headers=auth, timeout=120)
+        try:
+            d = json.loads(b)
+            for sec_ in (d if isinstance(d, list) else [d]):
+                rs = sec_.get('results') or []
+                if sec_.get('reportSection') == 'Report Details' and rs:
+                    p('REPORT', sid, 'rows', len(rs)); p(' KEYS', json.dumps(rs[0]))
+                    import collections
+                    for k in ('commodity',): p(' commodities', sorted(collections.Counter(r.get(k) for r in rs).items(), key=lambda x: -x[1])[:80])
+                    p(' packages', sorted(set(r.get('package') for r in rs))[:40])
+        except Exception as e: p('ERR', sid, e, b[:200])
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
