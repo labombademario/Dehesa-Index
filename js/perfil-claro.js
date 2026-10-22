@@ -134,12 +134,12 @@
     try {
       var dn = new Intl.DisplayNames(['en'], { type: 'region' }), A = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', i, j, c, n;
       for (i = 0; i < 26; i++) for (j = 0; j < 26; j++) { c = A.charAt(i) + A.charAt(j); try { n = dn.of(c); } catch (e) { n = null; } if (n && n !== c) REG[n.toLowerCase()] = c; }
-      REG['united states'] = 'US'; REG['united kingdom'] = 'GB'; REG['czech republic'] = 'CZ'; REG['türkiye'] = 'TR'; REG['turkey'] = 'TR'; REG['south korea'] = 'KR'; REG['korea, south'] = 'KR'; REG['russia'] = 'RU';
+      REG['united states'] = 'US'; REG['united kingdom'] = 'GB'; REG['czech republic'] = 'CZ'; REG['türkiye'] = 'TR'; REG['turkey'] = 'TR'; REG['south korea'] = 'KR'; REG['korea, south'] = 'KR'; REG['russia'] = 'RU'; REG['united states of america'] = 'US'; REG['korea, republic of'] = 'KR'; REG['republic of korea'] = 'KR'; REG['china'] = 'CN'; REG['people\'s republic of china'] = 'CN'; REG['china (excludes sars and taiwan)'] = 'CN'; REG['hong kong (sar)'] = 'HK'; REG['viet nam'] = 'VN';
     } catch (e) { REG = {}; }
     return REG;
   }
   function flagOf(name) { // bandera (emoji) de un país por su nombre en inglés; '' si no es un país
-    var c = regionMap()[String(name || '').toLowerCase().trim()];
+    var nm = String(name || '').toLowerCase().trim(), c = regionMap()[nm] || regionMap()[nm.replace(/\s*\(.*\)\s*$/, '')];
     if (c === 'FX') c = 'FR'; // «France» también corresponde al código obsoleto FX (Francia metropolitana)
     if (!c || c.length !== 2) return '';
     return String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1));
