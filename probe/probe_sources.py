@@ -189,5 +189,20 @@ if sec == 'fvsa':
     for q in ['mercado+central', 'frutas+hortalizas+precios', 'precios+mayoristas+frutas']: ck('https://datos.gob.ar', q, 10)
     for u in ['https://www.odepa.gob.cl/precios/frutas-y-hortalizas', 'https://www.mercadocentral.gob.ar/', 'https://www.mercadocentral.gob.ar/informaciones/precios-mayoristas', 'https://www.uam.com.uy/']:
         st, h, b = head(u, timeout=60); p(re.sub(r'\s+', ' ', b[:200].decode('utf8', 'ignore')))
+if sec == 'odepa':
+    import csv, io, collections
+    B = 'https://datos.odepa.gob.cl/dataset/'
+    for nm, u in [('MAYORISTA', B + '33f10516-acbe-4446-b633-68244b9b6b26/resource/580beca0-e87e-4dd4-9e8a-0bd92773f4a6/download/precio_mayorista_fruta-hortaliza_2026.csv'), ('CONSUMIDOR', B + 'd4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/9f885df4-afeb-4b75-8bab-9334f79db00f/download/precio_consumidor_2026.csv')]:
+        st, h, b = head(u, timeout=180); p(nm, 'LAST-MOD', h.get('Last-Modified'))
+        txt = b.decode('utf-8-sig', 'replace'); t = txt.splitlines(); p('LINES', len(t))
+        for l in t[:4]: p('  ', l[:500])
+        for l in t[-2:]: p('  ', l[:500])
+        try:
+            dl = csv.Sniffer().sniff(t[0], delimiters=',;|\t').delimiter
+        except Exception: dl = ','
+        R = list(csv.DictReader(io.StringIO(txt), delimiter=dl)); p('DELIM', repr(dl), 'ROWS', len(R), 'COLS', list(R[0].keys()) if R else '')
+        for k in list(R[0].keys())[:20]:
+            vals = collections.Counter(r[k] for r in R)
+            p('COL', k, 'distinct', len(vals), list(vals.most_common(6)))
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
