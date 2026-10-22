@@ -256,6 +256,9 @@ def main():
         write_json(out / ("crops-" + k + ".json"), doc)
         idx_groups[k] = {"name": gname, "file": "crops-" + k + ".json", "campaigns": sorted([int(c) for c in byc] + list(kept)), "crops": dict(sorted([(str(c), len(v.get("crops", {}))) for c, v in kept.items()] + [(str(c), len(v[1])) for c, v in byc.items()]))}
         log("grupo", k, {str(c): len(v[1]) for c, v in byc.items()})
+    have_c = {x["campaign"] for x in meta_files}   # los libros de campañas conservadas siguen figurando (el validador exige un libro leido por campaña)
+    for x in (prev.get("files", []) if isinstance(prev, dict) else []):
+        if x.get("campaign") not in have_c: meta_files.append(x)
     write_json(out / "index.json", {"schemaVersion": 1, "generatedAt": now, "checkedAt": now, "source": {"id": "mapa_es", "url": PAGE}, "files": meta_files, "groups": idx_groups,
                                    "note": "Datos provisionales del MAPA tal como los publica; la campana se toma del titulo de cada enlace de la pagina."})
     return 0
