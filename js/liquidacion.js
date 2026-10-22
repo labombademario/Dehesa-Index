@@ -89,6 +89,18 @@
   };
   var COLORS = ['#1f6f8b', '#b5622a', '#6b4fa0'];
   var EPOCH = Date.UTC(2000, 0, 1), DAY = 864e5, MAXGAP = 14;
+  /* Zona de mercado: se elige primero y nunca se mezclan referencias de zonas distintas. Europa = cotizaciones de lonja de la Comisión Europea por país;
+     Reino Unido, Canadá y EE. UU. = series de precio oficiales del catálogo (Defra/Comisión, Statistics Canada y gobiernos provinciales, USDA). */
+  var ZONES = [['eu', ['Europa (UE)', 'Europe (EU)', 'Europe (UE)', 'Europa (UE)']], ['uk', ['Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito']], ['ca', ['Canadá', 'Canada', 'Canada', 'Canada']], ['us', ['EE. UU.', 'United States', 'États-Unis', 'Stati Uniti']]];
+  var ZONECC = { uk: 'EU-UK', ca: 'CA', us: 'US' }, ZONE = 'eu';
+  var ZT = { es: ['Zona', 'Las referencias de cada zona no se mezclan con las de otra.', 'Fuente: series de precio oficiales publicadas por {s} (sus unidades y moneda originales). Para las mensuales se toma el dato del mes de la venta o, si aún no se ha publicado, el del mes anterior. Cálculo hecho por Dehesa Index con las ventas introducidas por el usuario.'],
+    en: ['Market area', 'References from one area are never mixed with another.', 'Source: official price series published by {s} (original units and currency). For monthly series the value of the month of the sale is used or, if not yet published, the previous month. Calculation by Dehesa Index with the sales entered by the user.'],
+    fr: ['Zone', 'Les références d’une zone ne sont jamais mélangées avec celles d’une autre.', 'Source : séries de prix officielles publiées par {s} (unités et devise d’origine). Pour les séries mensuelles, on retient la valeur du mois de la vente ou, si elle n’est pas encore publiée, celle du mois précédent. Calcul de Dehesa Index avec les ventes saisies par l’utilisateur.'],
+    it: ['Area', 'I riferimenti di un’area non si mescolano mai con quelli di un’altra.', 'Fonte: serie di prezzi ufficiali pubblicate da {s} (unità e valuta originali). Per le serie mensili si usa il valore del mese della vendita o, se non ancora pubblicato, quello del mese precedente. Calcolo di Dehesa Index con le vendite inserite dall’utente.'] };
+  var ZSRC = { us: 'USDA (NASS, AMS, ERS)', ca: 'Statistics Canada · Alberta Agriculture', uk: 'Defra · European Commission' };
+  function zt() { return ZT[lang()] || ZT.es; }
+  function gapOf(r) { return r && r.sid ? (r.freq === 'monthly' ? 62 : r.freq === 'weekly' ? 14 : 7) : MAXGAP; }
+  function pms(p) { var m = String(p).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/); return m ? Date.UTC(+m[1], +m[2] - 1, m[3] ? +m[3] : 1) : null; }
   var IDX = null, REFS = null, CC = 'ES', PROD = '', SEL = [], PTS = {}, ROWS = [], FAILED = false, MSG = '', COOP = '', CAMP = '', EXAMPLE = false;
   function lang() { return S.getLang ? S.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
@@ -157,6 +169,14 @@
       if (PTS[k]) return;
       var r = REFS.filter(function (x) { return refKey(x) === k; })[0]; if (!r) return;
       PTS[k] = 'loading';
+      if (r.sid) {
+        get(r.file).then(function (d) {
+          var se = (d.series || []).filter(function (x) { return x.id === r.sid; })[0];
+          PTS[k] = se && se.points ? se.points.map(function (p) { return [pms(p[0]), p[1]]; }).filter(function (p) { return p[0] != null && p[1] != null; }).sort(function (x, y) { return x[0] - y[0]; }) : [];
+          render();
+        }).catch(function () { PTS[k] = 'failed'; render(); });
+        return;
+      }
       get(r.file).then(function (d) {
         var reg = (d.regions || []).filter(function (x) { return x.c === CC && (x.m || '') === (r.mRaw || ''); })[0];
         PTS[k] = reg ? reg.d.map(function (dd, i) { return [EPOCH + dd * DAY, reg.v[i]]; }).filter(function (p) { return p[1] != null; }) : [];
@@ -166,10 +186,10 @@
   }
   function get(u) { return fetch(S.sitePath(u), { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }); }
   // ---- cálculo ----
-  function refAt(pts, ms) {
+  function refAt(pts, ms, gap) {
     var lo = 0, hi = pts.length - 1, best = -1;
     while (lo <= hi) { var mid = (lo + hi) >> 1; if (pts[mid][0] <= ms) { best = mid; lo = mid + 1; } else hi = mid - 1; }
-    if (best < 0 || (ms - pts[best][0]) / DAY > MAXGAP) return null;
+    if (best < 0 || (ms - pts[best][0]) / DAY > (gap || MAXGAP)) return null;
     return pts[best];
   }
   function compute() {
@@ -183,12 +203,12 @@
       if (!r || !pts || pts === 'loading') { res.refs.push({ k: k, r: r, loading: true, color: COLORS[i] }); return; }
       var q = 0, rq = 0, pq = 0, miss = 0, per = [];
       rows.forEach(function (s) {
-        var hit = refAt(pts, Date.UTC(+s.d.slice(0, 4), +s.d.slice(5, 7) - 1, +s.d.slice(8, 10)));
+        var hit = refAt(pts, Date.UTC(+s.d.slice(0, 4), +s.d.slice(5, 7) - 1, +s.d.slice(8, 10)), gapOf(r));
         per.push(hit);
         if (!hit) { miss++; return; }
         q += s.q; rq += hit[1] * s.q; pq += s.p * s.q;
       });
-      var f0 = Date.UTC(+res.from.slice(0, 4), +res.from.slice(5, 7) - 1, +res.from.slice(8, 10)) - MAXGAP * DAY, t0 = Date.UTC(+res.to.slice(0, 4), +res.to.slice(5, 7) - 1, +res.to.slice(8, 10));
+      var f0 = Date.UTC(+res.from.slice(0, 4), +res.from.slice(5, 7) - 1, +res.from.slice(8, 10)) - gapOf(r) * DAY, t0 = Date.UTC(+res.to.slice(0, 4), +res.to.slice(5, 7) - 1, +res.to.slice(8, 10));
       var win = pts.filter(function (p) { return p[0] >= f0 && p[0] <= t0; });
       var vals = win.map(function (p) { return p[1]; });
       res.refs.push({ k: k, r: r, color: COLORS[i], q: q, ref: q ? rq / q : null, own: q ? pq / q : null, miss: miss, per: per, win: win,
@@ -224,7 +244,8 @@
   function inputsHtml(w) {
     var u = unitOf();
     var h = '<section class="di-card lq-sec no-print"><h2>' + esc(w.s1) + '</h2><div class="lq-row">';
-    h += '<label>' + esc(w.country) + ' <select data-cpick="1" id="lq-c" class="di-compare-select">' + (IDX ? IDX.countries : [{ c: 'ES' }]).map(function (c) { return { c: c.c, n: cname(c.c) }; }).sort(function (a, b) { return a.c === 'ES' ? -1 : b.c === 'ES' ? 1 : a.n < b.n ? -1 : 1; }).map(function (c) { return '<option value="' + c.c + '"' + (c.c === CC ? ' selected' : '') + '>' + esc(c.n) + '</option>'; }).join('') + '</select></label>';
+    h += '<div class="lq-zone" role="group" aria-label="' + esc(zt()[0]) + '" style="flex-basis:100%"><span style="display:block;font-size:13px;margin-bottom:4px">' + esc(zt()[0]) + '</span>' + ZONES.map(function (z) { var on = z[0] === ZONE; return '<button type="button" data-zone="' + z[0] + '" aria-pressed="' + on + '" style="font:inherit;font-size:13.5px;cursor:pointer;padding:5px 14px;margin:0 6px 6px 0;border-radius:999px;border:1px solid ' + (on ? 'var(--text)' : 'var(--border)') + ';background:' + (on ? 'var(--text);color:var(--bg,#fff)' : 'none;color:inherit') + ';font-weight:' + (on ? 700 : 400) + '">' + esc(z[1][{ es: 0, en: 1, fr: 2, it: 3 }[lang()] || 0]) + '</button>'; }).join('') + '<small style="display:block;color:var(--text-faint)">' + esc(zt()[1]) + '</small></div>';
+    if (ZONE === 'eu') h += '<label>' + esc(w.country) + ' <select data-cpick="1" id="lq-c" class="di-compare-select">' + (IDX ? IDX.countries.filter(function (c) { return !ZONECC[c.c] && c.c !== 'EU-UK' && c.c !== 'US' && c.c !== 'CA'; }) : [{ c: 'ES' }]).map(function (c) { return { c: c.c, n: cname(c.c) }; }).sort(function (a, b) { return a.c === 'ES' ? -1 : b.c === 'ES' ? 1 : a.n < b.n ? -1 : 1; }).map(function (c) { return '<option value="' + c.c + '"' + (c.c === CC ? ' selected' : '') + '>' + esc(c.n) + '</option>'; }).join('') + '</select></label>';
     if (REFS) h += '<label>' + esc(w.product) + ' <select id="lq-p" class="di-compare-select">' + products().map(function (o) { return '<option value="' + esc(o.k) + '"' + (o.k === PROD ? ' selected' : '') + '>' + esc(nm(o.r.product)) + ' (' + o.n + ')</option>'; }).join('') + '</select></label>';
     h += '</div>';
     if (REFS) {
@@ -276,7 +297,7 @@
     var ready = res.refs.filter(function (x) { return x.per; });
     h += '<div style="overflow-x:auto"><table class="lq-t lq-tr" data-no-rows><thead><tr>' + w.tCols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + ready.map(function (x) { return '<th style="color:' + x.color + '">' + esc(refShort(x.r)) + '</th>'; }).join('') + '</tr></thead><tbody>' +
       res.rows.map(function (r, i) { return '<tr><td>' + esc(fdate(r.d)) + '</td><td>' + esc(num(r.q, r.q % 1 ? 2 : 0)) + '</td><td>' + esc(num(r.p, 2)) + '</td>' + ready.map(function (x) { var hit = x.per[i]; if (!hit) return '<td class="lq-m">—</td>'; var dd = r.p - hit[1]; return '<td>' + esc(num(hit[1], 2)) + ' <span style="color:' + (dd > 0 ? 'var(--positive)' : dd < 0 ? 'var(--negative)' : 'inherit') + '">(' + (dd > 0 ? '+' : dd < 0 ? '−' : '') + esc(num(Math.abs(dd), 2)) + ')</span><div class="lq-m">' + esc(w.refDate + ' ' + fdate(iso(hit[0]))) + '</div></td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
-    h += '<p class="lq-m">' + esc(w.method) + '</p><p class="lq-m">' + esc(w.src) + '</p>';
+    h += '<p class="lq-m">' + esc(w.method) + '</p><p class="lq-m">' + esc(ZONE === 'eu' ? w.src : fill(zt()[2], { s: ZSRC[ZONE] })) + '</p>';
     h += '<div class="lq-row no-print"><button type="button" class="di-btn-gold-solid" id="lq-print">' + esc(w.print) + '</button><button type="button" class="di-link-btn" id="lq-csv">' + esc(w.csv) + '</button></div>';
     return h + '</section>';
   }
@@ -292,6 +313,7 @@
   function wire() {
     var root = document.getElementById('lq-body'), $ = function (id) { return document.getElementById(id); };
     if ($('lq-c')) $('lq-c').onchange = function (e) { loadCountry(e.target.value); };
+    Array.prototype.forEach.call(root.querySelectorAll('[data-zone]'), function (bt) { bt.onclick = function () { var z = bt.getAttribute('data-zone'); if (z === ZONE) return; ZONE = z; ROWS = ROWS.slice(); loadCountry(z === 'eu' ? 'ES' : ZONECC[z]); }; });
     if ($('lq-p')) $('lq-p').onchange = function (e) { PROD = e.target.value; autoSel(); render(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-ref]'), function (cb) { cb.onchange = function () { var k = cb.getAttribute('data-ref'), i = SEL.indexOf(k); if (cb.checked && i < 0 && SEL.length < 3) SEL.push(k); if (!cb.checked && i > -1) SEL.splice(i, 1); ensurePts(); render(); }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-i]'), function (inp) { inp.onchange = function () { var r = ROWS[+inp.getAttribute('data-i')], f = inp.getAttribute('data-f'); r[f] = f === 'd' ? (inp.value || null) : pnum(inp.value); EXAMPLE = false; render(); }; });
@@ -322,7 +344,7 @@
     var ready = res.refs.filter(function (x) { return x.per; });
     var lines = [['date', 'tonnes', 'price_' + u].concat(ready.reduce(function (a, x) { var n = refShort(x.r); return a.concat([n + ' (' + u + ')', n + ' date', n + ' diff']); }, []))];
     res.rows.forEach(function (r, i) { lines.push([r.d, r.q, r.p].concat(ready.reduce(function (a, x) { var hit = x.per[i]; return a.concat(hit ? [hit[1], iso(hit[0]), Math.round((r.p - hit[1]) * 100) / 100] : ['', '', '']); }, []))); });
-    lines.push([]); lines.push(['# ' + w.src]);
+    lines.push([]); lines.push(['# ' + (ZONE === 'eu' ? w.src : fill(zt()[2], { s: ZSRC[ZONE] }))]);
     var csv = '﻿' + lines.map(function (l) { return l.map(function (c) { c = String(c == null ? '' : c); return /[",;\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c; }).join(','); }).join('\n');
     var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' })); a.download = 'liquidacion-dehesa-index.csv'; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   }
