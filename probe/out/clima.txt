@@ -1,0 +1,184 @@
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/UK.txt 200 text/plain 25028
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual total precipitation amount for UK
+Areal series, starting in 1836
+Last updated 01-Oct-2026 11:54
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1836  101.5   69.8  123.0   75.1   13.8   76.5  109.2   63.1  113.2  120.8  150.0  108.7     ---   211.9   248.8   384.1  1124.7
+1837   79.5  104.7   36.3   54.1   39.9   57.9   87.5   90.7   67.5   97.0   97.8   96.0   292.9   130.4   236.1   262.3   909.0
+...
+2024  123.3  144.0  108.0  109.5   83.4   55.2   84.7  104.3  116.8  105.7   88.1  146.0   461.8   300.8   244.1   310.6  1268.9
+2025   98.6   72.5   36.6   40.3   50.7   81.9   74.0   59.1  120.9  123.9  164.6  138.4   317.1   127.6   214.9   409.4  1061.3
+2026  142.6  118.6   86.6   55.0   55.1   90.6   28.9   75.8   94.7                        399.6   196.6   195.4                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/UK.txt 200 text/plain 18830
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual mean air temperature for UK
+Areal series, starting in 1884
+Last updated 01-Oct-2026 11:54
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1884    5.0    4.2    5.1    6.2    9.7   12.5   14.5   15.3   13.0    8.3    4.6    3.3     ---    6.98   14.11    8.62    8.48
+1885    2.0    4.2    3.5    6.6    7.6   12.3   14.5   12.4   10.9    6.2    4.8    3.0    3.14    5.92   13.09    7.28    7.36
+...
+2024    3.8    6.3    6.7    8.3   13.1   12.9   14.8   15.4   12.7   10.5    6.7    6.2    5.30    9.38   14.38    9.93    9.79
+2025    3.0    4.6    7.0    9.6   12.0   15.2   16.8   16.3   12.8   10.4    7.2    5.8    4.62    9.53   16.12   10.15   10.10
+2026    3.4    5.6    7.0    9.0   12.0   15.6   17.4   16.5   14.6                         4.94    9.33   16.51                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/England.txt 200 text/plain 25033
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual total precipitation amount for England
+Areal series, starting in 1836
+Last updated 01-Oct-2026 11:54
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1836   65.1   57.5  106.7   66.3   13.6   68.5   79.1   48.7   83.3   96.2  130.8   70.0     ---   186.6   196.3   310.3   885.9
+1837   79.9   82.6   29.8   46.1   31.1   49.1   68.0   83.1   56.7   74.9   67.7   77.9   232.6   107.0   200.1   199.3   746.8
+...
+2024   87.7  131.7   94.9   85.5   85.5   33.9   80.5   46.5  137.3   92.7   77.7   82.7   367.6   265.9   160.8   307.7  1036.5
+2025   95.5   52.0   14.6   28.4   32.7   52.3   58.6   31.4  102.7   82.2  139.8  107.5   230.2    75.6   142.3   324.7   797.7
+2026  124.2  112.5   48.5   21.3   42.3   67.8    6.5   58.5   44.8                        344.3   112.0   132.9                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/England.txt 200 text/plain 18835
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual mean air temperature for England
+Areal series, starting in 1884
+Last updated 01-Oct-2026 11:54
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1884    5.7    4.8    5.8    6.5   10.7   13.4   15.7   16.6   14.1    8.8    5.1    3.9     ---    7.68   15.22    9.30    9.26
+1885    2.3    5.3    4.1    7.2    8.4   13.5   15.7   13.4   11.8    7.0    5.4    3.1    3.78    6.55   14.21    8.08    8.11
+...
+2024    4.4    7.5    7.8    9.3   13.6   14.0   16.1   16.8   13.8   11.3    7.2    6.8    6.24   10.21   15.67   10.78   10.73
+2025    3.3    5.0    7.5   10.3   12.9   16.9   18.0   17.4   13.8   11.2    8.2    6.5    5.01   10.24   17.44   11.06   10.95
+2026    4.0    6.7    7.9   10.0   13.4   17.1   19.2   18.2   16.0                         5.69   10.41   18.21                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/Wales.txt 200 text/plain 25031
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual total precipitation amount for Wales
+Areal series, starting in 1836
+Last updated 01-Oct-2026 11:55
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1836  120.7   76.5  180.9   94.1    6.8  106.0  124.2   69.7  132.7  143.4  225.2  156.8     ---   281.7   299.8   501.3  1436.9
+1837  125.2  143.9   47.4   57.0   50.4   69.3   74.6  119.2  106.3  156.6  155.6  121.6   425.9   154.8   263.1   418.4  1227.0
+...
+2024  167.0  215.4  161.6  138.7   96.7   49.6   92.7  103.4  161.1  131.1  138.4  191.5   648.6   397.0   245.7   430.6  1647.3
+2025  150.1   92.4   24.3   72.1   51.2  114.7   59.9   69.9  197.7  145.9  261.4  206.8   434.0   147.6   244.5   605.0  1446.3
+2026  175.6  162.6   95.1   55.5   69.9   97.8    9.3   72.4  112.5                        545.0   220.5   179.5                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/Wales.txt 200 text/plain 18833
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual mean air temperature for Wales
+Areal series, starting in 1884
+Last updated 01-Oct-2026 11:54
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1884    5.8    4.3    5.1    6.0    9.7   12.3   14.3   15.2   13.3    8.8    5.4    4.1     ---    6.97   13.95    9.16    8.71
+1885    2.6    4.9    3.7    6.3    7.5   12.4   14.4   12.7   11.2    6.6    5.3    3.0    3.87    5.86   13.18    7.66    7.57
+...
+2024    4.3    6.9    7.0    8.5   12.7   12.8   14.7   15.3   12.8   10.7    7.3    6.6    6.05    9.44   14.27   10.28    9.99
+2025    3.5    4.8    7.0   10.0   12.2   15.3   16.6   16.3   12.7   10.6    7.9    6.3    4.98    9.72   16.09   10.42   10.31
+2026    4.1    6.2    7.5    9.3   12.4   15.9   17.8   16.8   14.6                         5.52    9.73   16.85                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/Scotland.txt 200 text/plain 25034
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual total precipitation amount for Scotland
+Areal series, starting in 1836
+Last updated 01-Oct-2026 11:55
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1836  163.5   96.3  147.5   92.1   16.4   87.8  150.0   90.1  157.6  156.2  169.8  175.4     ---   256.1   327.9   483.6  1502.8
+1837   70.0  136.5   48.6   68.7   51.3   74.1  120.0  103.8   79.4  129.7  137.2  114.7   381.9   168.6   298.0   346.3  1134.1
+...
+2024  177.1  155.8  113.4  142.8   82.3   91.5   91.1  196.7   79.9  124.4   92.7  249.5   588.6   338.5   379.3   297.1  1597.3
+2025   94.0  102.0   78.4   44.7   79.4  118.5  103.0  101.2  125.9  181.9  183.7  177.9   445.5   202.5   322.7   491.6  1390.7
+2026  155.2  116.5  148.6  108.8   69.6  118.7   72.0  104.3  169.0                        449.7   327.0   295.0                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/Scotland.txt 200 text/plain 18836
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual mean air temperature for Scotland
+Areal series, starting in 1884
+Last updated 01-Oct-2026 11:54
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1884    3.5    3.0    3.8    5.5    7.9   11.0   12.7   13.4   11.2    7.2    3.4    1.9     ---    5.74   12.35    7.27    7.05
+1885    1.0    2.2    2.5    5.7    6.3   10.5   12.5   10.6    9.3    4.5    3.5    2.7    1.68    4.83   11.21    5.76    5.96
+...
+2024    2.5    4.2    5.0    6.6   12.3   11.2   12.8   13.1   10.7    9.0    5.4    5.1    3.44    7.99   12.39    8.38    8.19
+2025    2.3    3.8    6.1    8.3   10.3   12.7   14.9   14.6   11.3    9.0    5.4    4.6    3.74    8.25   14.06    8.57    8.64
+2026    2.2    3.7    5.4    7.4    9.6   13.0   14.5   13.8   12.3                         3.49    7.46   13.77                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/Northern_Ireland.txt 200 text/plain 25042
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual total precipitation amount for Northern Ireland
+Areal series, starting in 1836
+Last updated 01-Oct-2026 11:55
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1836   66.1   25.7   52.0   34.5   11.0   43.3  139.1   34.4  115.3  120.9  109.4   24.4     ---    97.5   216.9   345.6   776.3
+1837   60.7   74.7   12.6   43.1   43.2   32.6  103.9   46.0   45.3   31.1   73.0  121.8   159.8    98.8   182.5   149.4   687.8
+...
+2024   88.8   87.5  118.9  101.5   48.4   59.3   76.2  127.4   65.9   83.0   84.0   90.6   354.3   268.8   262.9   232.9  1031.5
+2025   75.9   68.8   26.5   81.9   57.9  103.9   76.6   66.5  147.2  156.5  143.3  100.6   235.4   166.3   246.9   447.1  1105.7
+2026  195.6  119.4   81.9   68.0   71.5  135.6   26.9   84.3  118.4                        415.5   221.4   246.8                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/Northern_Ireland.txt 200 text/plain 18844
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual mean air temperature for Northern Ireland
+Areal series, starting in 1884
+Last updated 01-Oct-2026 11:55
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1884    5.6    4.6    5.6    6.7    9.6   12.5   14.3   14.5   12.5    8.7    5.7    3.8     ---    7.33   13.76    8.99    8.70
+1885    3.8    4.7    4.1    6.8    7.7   11.7   14.2   12.9   10.8    6.6    5.9    4.4    4.09    6.19   12.96    7.72    7.81
+...
+2024    4.2    6.4    6.6    8.3   12.9   12.4   14.0   14.4   12.1   10.5    7.5    6.5    5.68    9.27   13.61   10.04    9.65
+2025    4.0    5.6    7.5    9.8   12.0   14.1   15.9   15.9   12.2   10.5    7.2    5.9    5.34    9.75   15.32    9.98   10.07
+2026    4.1    5.5    6.8    8.6   11.7   14.6   16.4   15.2   14.0                         5.15    9.06   15.43                
+ERR https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/England_SE_and_central_S.txt HTTP Error 404: Not Found
+ERR https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/England_SE_and_central_S.txt HTTP Error 404: Not Found
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/East_Anglia.txt 200 text/plain 25037
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual total precipitation amount for East Anglia
+Areal series, starting in 1836
+Last updated 01-Oct-2026 11:55
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1836   44.1   47.0   85.2   55.2   16.9   58.7   46.5   29.6   82.6   94.0   80.4   42.4     ---   157.3   134.8   257.0   682.7
+1837   64.8   54.3   20.7   43.4   33.9   37.0   46.9   96.2   39.1   49.0   52.1   47.1   161.5    98.0   180.2   140.2   584.6
+...
+2024   55.7  112.8   47.1   58.6   79.7   23.6   77.8   19.1   95.5   56.8   50.9   52.0   254.3   185.5   120.5   203.3   729.6
+2025   55.7   39.8    6.0   21.8   22.4   28.0   55.5   21.4   48.2   58.6   95.4   48.0   147.5    50.1   104.8   202.2   500.6
+2026   81.4   72.1   24.2    4.0   16.7   56.3    2.0   42.7   30.2                        201.4    44.8   101.0                
+GET https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/East_Anglia.txt 200 text/plain 18839
+Areal values from HadUK-Grid 1km gridded climate data from land surface network
+Source: Met Office National Climate Information Centre
+Monthly, seasonal and annual mean air temperature for East Anglia
+Areal series, starting in 1884
+Last updated 01-Oct-2026 11:55
+year    jan    feb    mar    apr    may    jun    jul    aug    sep    oct    nov    dec     win     spr     sum     aut     ann
+1884    5.8    5.1    6.2    6.8   11.4   13.6   16.7   17.7   14.8    9.1    5.1    4.2     ---    8.17   16.04    9.64    9.73
+1885    2.1    5.7    4.3    7.9    8.9   14.2   16.3   14.1   12.5    7.4    5.6    3.0    3.94    7.06   14.86    8.47    8.51
+...
+2024    4.7    8.2    8.6   10.0   14.0   14.7   17.1   18.4   15.2   11.9    7.5    6.8    6.67   10.87   16.76   11.55   11.44
+2025    3.4    5.0    7.7   10.5   13.3   18.2   18.9   18.2   14.9   11.7    8.7    6.7    5.10   10.54   18.44   11.77   11.49
+2026    4.1    7.2    8.0   10.6   14.2   18.3   20.2   19.2   17.2                         5.96   10.93   19.25                
+GET https://www.metoffice.gov.uk/climate/uk/summaries/datasets 200 text/html; charset=utf-8 143900
+CTX sulting Insights Advertising About the Met Office Who we are Commercial Press Office Careers Partnerships Contact us Subscribe to email alerts Policies Accessibility Cookies Legal Privacy RSS © Crown Copyright 
+GET https://www.metoffice.gov.uk/hadobs/hadukp/data/monthly/HadEWP_monthly_totals.txt 200 text/plain; charset=UTF-8 26195
+Monthly England & Wales precipitation (mm). Daily automated values used after 1996.
+Wigley & Jones (J.Climatol.,1987), Gregory et al. (Int.J.Clim.,1991)
+Jones & Conway (Int.J.Climatol.,1997), Alexander & Jones (ASL,2001). Values may change after QC.
+
+
+  Year    Jan    Feb    Mar    Apr    May    Jun    Jul    Aug    Sep    Oct    Nov    Dec  Annual
+  1766    4.4   66.7   48.2   60.9  108.1  1
+GET https://data-melbournewater.opendata.arcgis.com/api/download/v1/items/7db00ccb52134f53991257edfe37cade/csv?layers=0 200 application/octet-stream 10860920
+MW rows 218427
+﻿recorddate,dam,volume_ML,volume_percentfull,ObjectId
+1/24/2020 1:00:00 PM,Cardinia,233973,81.54,1
+1/24/2020 1:00:00 PM,Greenvale,23041,85.84,2
+1/24/2020 1:00:00 PM,O'Shannassy,263,8.42,3
+1/24/2020 1:00:00 PM,Silvan,35652,88.14,4
+1/24/2020 1:00:00 PM,Yan Yean,20927,69.14,5
+12/31/1939 1:00:00 PM,Maroondah,22121,99.73,218423
+12/31/1939 1:00:00 PM,O'Shannassy,1552,49.69,218424
+12/31/1939 1:00:00 PM,Silvan,33747,83.43,218425
+12/31/1939 1:00:00 PM,Yan Yean,28780,95.09,218426
+GET https://services5.arcgis.com/ZSYwjtv8RKVhkXIL/arcgis/rest/services/MWC_Daily_StorageVolume_CompleteRecord/FeatureServer/0/query?where=1%3D1&outFields=*&orderByFields=OBJECTID+DESC&resultRecordCount=5&f=json 200 application/json; charset=utf-8 1474
+{"objectIdFieldName":"ObjectId","uniqueIdField":{"name":"ObjectId","isSystemMaintained":true},"globalIdFieldName":"","fields":[{"name":"recorddate","type":"esriFieldTypeDate","alias":"recorddate","sqlType":"sqlTypeTimestamp2","length":8,"domain":null,"defaultValue":null},{"name":"dam","type":"esriFieldTypeString","alias":"dam","sqlType":"sqlTypeNVarchar","length":256,"domain":null,"defaultValue":null},{"name":"volume_ML","type":"esriFieldTypeInteger","alias":"volume_ML","sqlType":"sqlTypeInteger","domain":null,"defaultValue":null},{"name":"volume_percentfull","type":"esriFieldTypeDouble","alias":"volume_percentfull","sqlType":"sqlTypeFloat","domain":null,"defaultValue":null},{"name":"ObjectId","type":"esriFieldTypeOID","alias":"ObjectId","sqlType":"sqlTypeInteger","domain":null,"defaultValue":null}],"exceededTransferLimit":true,"features":[{"attributes":{"recorddate":-946810800000,"dam":"Yan Yean","volume_ML":28780,"volume_percentfull":95.09,"ObjectId":218426}},{"attributes":{"recorddate":-946810800000,"dam":"Silvan","volume_ML":33747,"volume_percentfull":83.43,"ObjectId":218425}},{"attributes":{"recorddate":-946810800000,"dam":"O'Shannassy","volume_ML":1552,"volume_percentfull":49.69,"ObjectId":218424}},{"attributes":{"recorddate":-946810800000,"dam":"Maroondah","volume_ML":22121,"volume_percentfull":99.73,"ObjectId":218423}},{"attributes":{"recorddate":-946724400000,"dam":"Yan Yean","volume_ML":28748,"volume_percentfull":94.98,"ObjectId":218422}}]}
+GET https://services5.arcgis.com/ZSYwjtv8RKVhkXIL/arcgis/rest/services/MWC_Daily_StorageVolume_CompleteRecord/FeatureServer/0?f=json 200 application/json; charset=utf-8 6451
+{"currentVersion":12,"id":0,"name":"MWC_Daily_StorageVolume_CompleteRecord","type":"Table","serviceItemId":"7db00ccb52134f53991257edfe37cade","cacheMaxAge":30,"displayField":"","description":"","copyrightText":"","defaultVisibility":true,"editingInfo":{"lastEditDate":1584583844837,"schemaLastEditDate":1584583844837,"dataLastEditDate":1584583844837},"relationships":[],"isDataVersioned":false,"hasContingentValuesDefinition":false,"supportsAppend":true,"supportsCalculate":true,"supportsASyncCalculate":true,"supportsTruncate":true,"supportsAttachmentsByUploadId":true,"supportsAttachmentsResizing":true,"supportsRollbackOnFailureParameter":true,"supportsStatistics":true,"supportsExceedsLimitStatistics":true,"supportsAdvancedQueries":true,"supportsValidateSql":true,"supportsCoordinatesQuantization":true,"supportsLayerOverrides":true,"supportsTilesAndBasicQueriesMode":true,"supportsFieldDescriptionProperty":true,"supportsQuantizationEditMode":true,"supportsColumnStoreIndex":true,"supportsApplyEditsWithGlobalIds":false,"advancedQueryCapabilities":{"supportsPagination":true,"supportsPaginationOnAggregatedQueries":true,"supportsQueryRelatedPagination":true,"supportsQueryWithDistance":true,"supportsReturningQueryExtent":false,"supportsStatistics":true,"supportsOrderBy":true,"supportsDistinct":true,"supportsQueryWithResultType":true,"supportsSqlExpression":true,"supportsTimeRelation":true,"supportsAdvancedQueryRelated":true,"supportsCountDistinct":true,"supportsPercentileStatistics":true,
