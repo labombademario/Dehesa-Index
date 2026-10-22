@@ -1,12 +1,15 @@
 """Ayudas comunes de los pipelines del Reino Unido que publican series en formato de estadisticas por pais (countries.UK, extend=True)."""
 import datetime, json, time, urllib.request
 UA = {'User-Agent': 'Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)'}
-def get(u, tries=3, timeout=120):
+def get(u, tries=4, timeout=120):
     last = None
     for i in range(tries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=timeout) as r: return r.read()
-        except Exception as e: last = e; time.sleep(4 * (i + 1))
+            with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=timeout) as r:
+                b = r.read()
+                if r.status == 202 or not b: raise IOError('respuesta vacia (HTTP %s; la web a veces responde 202 sin contenido)' % r.status)
+                return b
+        except Exception as e: last = e; time.sleep(10 * (i + 1))
     raise SystemExit('descarga fallida %s: %s' % (u, last))
 def series(sid, group, label, unit, freq, pts, src):
     pts = sorted(pts)
