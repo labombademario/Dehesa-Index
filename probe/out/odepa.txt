@@ -1,0 +1,49 @@
+GET https://datos.odepa.gob.cl/dataset/33f10516-acbe-4446-b633-68244b9b6b26/resource/580beca0-e87e-4dd4-9e8a-0bd92773f4a6/download/precio_mayorista_fruta-hortaliza_2026.csv -> 200 text/csv 33034317
+MAYORISTA LAST-MOD Fri, 16 Oct 2026 23:00:11 GMT
+LINES 148287
+   "Fecha","ID region","Region","Mercado","Subsector","Producto","Variedad / Tipo","Calidad","Unidad de comercializacion","Origen","Volumen","Precio minimo","Precio maximo","Precio promedio"
+   "2026-01-02","5","Región de Valparaíso","Femacal de La Calera","Hortalizas y tubérculos","Acelga","Sin especificar","Primera","$/docena de atados (6 kilos)","Provincia de Quillota","65","4000,0000","4000,0000","4000,0000"
+   "2026-01-02","4","Región de Coquimbo","Terminal La Palmera de La Serena","Hortalizas y tubérculos","Acelga","Sin especificar","Primera","$/atado 1,5 a 2 kilos","Provincia del Elquí","840","500,0000","600,0000","550,0000"
+   "2026-01-02","13","Región Metropolitana de Santiago","Mercado Mayorista Lo Valledor de Santiago","Hortalizas y tubérculos","Acelga","Sin especificar","Primera","$/docena de atados","Región Metropolitana","150","17000,0000","18000,0000","17666,6666"
+   "2026-10-16","15","Región de Arica y Parinacota","Agrícola del Norte S.A. de Arica","Frutas","Guayaba","Sin especificar","Primera","$/caja 10 kilos","Región de Arica y Parinacota","100","16000,0000","17000,0000","16500,0000"
+   "2026-10-16","15","Región de Arica y Parinacota","Agrícola del Norte S.A. de Arica","Frutas","Guayaba","Sin especificar","Segunda","$/caja 10 kilos","Región de Arica y Parinacota","140","13000,0000","14000,0000","13500,0000"
+DELIM ',' ROWS 148286 COLS ['Fecha', 'ID region', 'Region', 'Mercado', 'Subsector', 'Producto', 'Variedad / Tipo', 'Calidad', 'Unidad de comercializacion', 'Origen', 'Volumen', 'Precio minimo', 'Precio maximo', 'Precio promedio']
+COL Fecha distinct 199 [('2026-02-05', 908), ('2026-01-13', 902), ('2026-01-15', 887), ('2026-03-12', 887), ('2026-02-10', 882), ('2026-01-20', 879)]
+COL ID region distinct 9 [('13', 56990), ('4', 17967), ('9', 17327), ('5', 17049), ('16', 9442), ('7', 9390)]
+COL Region distinct 9 [('Región Metropolitana de Santiago', 56990), ('Región de Coquimbo', 17967), ('Región de La Araucanía', 17327), ('Región de Valparaíso', 17049), ('Región de Ñuble', 9442), ('Región del Maule', 9390)]
+COL Mercado distinct 12 [('Mercado Mayorista Lo Valledor de Santiago', 34603), ('Vega Central Mapocho de Santiago', 21394), ('Vega Modelo de Temuco', 17327), ('Femacal de La Calera', 17049), ('Terminal La Palmera de La Serena', 14004), ('Terminal Hortofrutícola Agro Chillán', 9442)]
+COL Subsector distinct 2 [('Hortalizas y tubérculos', 82238), ('Frutas', 66048)]
+COL Producto distinct 81 [('Palta', 10713), ('Manzana', 9484), ('Lechuga', 8427), ('Tomate', 8287), ('Limón', 8030), ('Pimiento', 6693)]
+COL Variedad / Tipo distinct 201 [('Sin especificar', 53806), ('Hass', 7582), ('Larga vida', 6437), ('Granny Smith', 3588), ('Caramelo', 3220), ('Fuji royal', 3050)]
+COL Calidad distinct 55 [('Primera', 72652), ('Segunda', 25745), ('Especial', 11889), ('Tercera', 6348), ('1a (cosecha)', 4030), ('1a (guarda)', 3872)]
+COL Unidad de comercializacion distinct 147 [('$/unidad', 13181), ('$/bandeja 18 kilos', 11543), ('$/bandeja 10 kilos', 6849), ('$/malla 18 kilos', 6384), ('$/kilo (en caja de 17 kilos)', 6102), ('$/saco 25 kilos', 6030)]
+COL Origen distinct 59 [("Región de O'Higgins", 27035), ('Región Metropolitana', 20874), ('Región de Arica y Parinacota', 14496), ('Provincia de Limarí', 12914), ('Provincia de Quillota', 11428), ('Región del Maule', 9202)]
+COL Volumen distinct 1078 [('100', 7563), ('200', 5899), ('50', 5273), ('250', 5176), ('500', 5111), ('300', 5100)]
+COL Precio minimo distinct 380 [('10000,0000', 7552), ('12000,0000', 7483), ('15000,0000', 5682), ('8000,0000', 5682), ('14000,0000', 5587), ('18000,0000', 4902)]
+COL Precio maximo distinct 379 [('10000,0000', 7982), ('12000,0000', 7610), ('15000,0000', 5999), ('14000,0000', 5511), ('8000,0000', 5288), ('18000,0000', 5168)]
+COL Precio promedio distinct 13218 [('12000,0000', 5653), ('10000,0000', 5471), ('15000,0000', 4195), ('14000,0000', 4009), ('18000,0000', 3550), ('20000,0000', 3426)]
+GET https://datos.odepa.gob.cl/dataset/d4646b7f-0d2e-4567-b6fa-932b1a6bb3f3/resource/9f885df4-afeb-4b75-8bab-9334f79db00f/download/precio_consumidor_2026.csv -> 200 text/csv 46833420
+CONSUMIDOR LAST-MOD Fri, 16 Oct 2026 12:45:16 GMT
+LINES 258243
+   "Anio","Mes","Semana","Fecha inicio","Fecha termino","ID region","Region","Sector","Tipo de punto monitoreo","Grupo","Producto","Unidad","Precio minimo","Precio maximo","Precio promedio"
+   "2026","1","1","2025-12-29","2026-01-02","4","Región de Coquimbo","La Serena","Carnicería","Carne bovina","Abastero","$/kilo","11890","11890","11890,000000"
+   "2026","1","1","2025-12-29","2026-01-02","4","Región de Coquimbo","La Serena","Carnicería","Carne bovina","Asado Carnicero","$/kilo","11890","11890","11890,000000"
+   "2026","1","1","2025-12-29","2026-01-02","4","Región de Coquimbo","La Serena","Carnicería","Carne bovina","Asado de tira","$/kilo","12490","12490","12490,000000"
+   "2026","10","42","2026-10-12","2026-10-16","16","Región de Ñuble","Punilla","Supermercado","Pan","Marraqueta","$/kilo","1998","2190","2094,000000"
+   "2026","10","42","2026-10-12","2026-10-16","16","Región de Ñuble","Punilla","Supermercado","Pan","Pan amasado","$/kilo","3450","3450","3450,000000"
+DELIM ',' ROWS 258242 COLS ['Anio', 'Mes', 'Semana', 'Fecha inicio', 'Fecha termino', 'ID region', 'Region', 'Sector', 'Tipo de punto monitoreo', 'Grupo', 'Producto', 'Unidad', 'Precio minimo', 'Precio maximo', 'Precio promedio']
+COL Anio distinct 1 [('2026', 258242)]
+COL Mes distinct 10 [('9', 31291), ('4', 30233), ('7', 30214), ('1', 29983), ('6', 26445), ('8', 26328)]
+COL Semana distinct 42 [('3', 6970), ('24', 6776), ('32', 6710), ('2', 6695), ('28', 6685), ('25', 6624)]
+COL Fecha inicio distinct 42 [('2026-01-12', 6970), ('2026-06-08', 6776), ('2026-08-03', 6710), ('2026-01-05', 6695), ('2026-07-06', 6685), ('2026-06-15', 6624)]
+COL Fecha termino distinct 42 [('2026-01-16', 6970), ('2026-06-12', 6776), ('2026-08-07', 6710), ('2026-01-09', 6695), ('2026-07-10', 6685), ('2026-06-19', 6624)]
+COL ID region distinct 9 [('13', 54378), ('5', 47548), ('9', 44200), ('8', 22606), ('4', 21834), ('7', 21232)]
+COL Region distinct 9 [('Región Metropolitana de Santiago', 54378), ('Región de Valparaíso', 47548), ('Región de La Araucanía', 44200), ('Región del Biobío', 22606), ('Región de Coquimbo', 21834), ('Región del Maule', 21232)]
+COL Sector distinct 41 [('Arica', 12365), ('Poniente', 10189), ('Oriente', 9998), ('Sur', 9951), ('Centro', 9836), ('Viña del Mar', 9448)]
+COL Tipo de punto monitoreo distinct 7 [('Supermercado', 127369), ('Feria libre', 72353), ('Carnicería', 38041), ('Mercado Minorista', 7815), ('Panadería', 5966), ('Supermercado en Línea', 4277)]
+COL Grupo distinct 7 [('Hortalizas', 68997), ('Carne bovina', 52827), ('Frutas', 47726), ('Abarrotes y otros', 30811), ('Carne de Cerdo - Ave - Cordero', 23258), ('Lácteos - Huevos - Margarinas', 22623)]
+COL Producto distinct 267 [('Marraqueta', 2609), ('Hallulla corriente', 2606), ('Posta Negra', 2581), ('Sobrecostilla', 2581), ('Posta Rosada', 2555), ('Abastero', 2552)]
+COL Unidad distinct 19 [('$/kilo', 180207), ('$/unidad', 45116), ('$/envase 1 kilo', 6469), ('$/bandeja 12 unidades', 4072), ('$/bandeja 30 unidades', 2960), ('$/Caja de 1 Litro', 2705)]
+COL Precio minimo distinct 2605 [('1000', 13464), ('1500', 6995), ('2000', 5205), ('800', 4885), ('500', 4785), ('3000', 4232)]
+COL Precio maximo distinct 2717 [('1000', 8736), ('1500', 8365), ('800', 5545), ('2990', 5320), ('2000', 5164), ('3000', 4401)]
+COL Precio promedio distinct 44595 [('1000,000000', 5463), ('1500,000000', 4203), ('2000,000000', 2744), ('3000,000000', 2375), ('800,000000', 2292), ('500,000000', 2149)]
