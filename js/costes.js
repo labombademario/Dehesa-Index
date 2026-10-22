@@ -84,6 +84,23 @@
   }
   // ---- Costes
   function crow(rows, reg, cat, item, y) { for (var i = 0; i < rows.length; i++) { var r = rows[i]; if (r[3] === reg && r[0] === cat && r[1] === item && r[4] === y) return r; } return null; }
+  /* Mapa de las 9 regiones agrícolas del USDA ERS (Farm Resource Regions): se elige la región tocándola. En gris, las que ERS no publica para este producto. */
+  var RMT = { es: ['Elige una región tocando el mapa', 'Sin datos de ERS para este producto', 'Toda la nación', 'Región elegida'], en: ['Tap the map to pick a region', 'No ERS data for this product', 'Whole nation', 'Selected region'], fr: ['Touchez la carte pour choisir une région', 'Pas de données ERS pour ce produit', 'Tout le pays', 'Région choisie'], it: ['Tocca la mappa per scegliere una regione', 'Nessun dato ERS per questo prodotto', 'Tutto il Paese', 'Regione scelta'] };
+  var RMLOAD = false;
+  function regionMap(regs) {
+    var R = window.DEHESA_US_RESOURCE_REGIONS;
+    if (!R) { if (!RMLOAD) { RMLOAD = true; var sc = document.createElement('script'); sc.src = 'vendor/us-resource-regions.js'; sc.onload = function () { render(); }; document.head.appendChild(sc); } return ''; }
+    var m = RMT[P === 0 ? 'es' : P === 1 ? 'en' : P === 2 ? 'fr' : 'it'] || RMT.en;
+    var paths = R.regions.map(function (r) {
+      var has = regs.indexOf(r.name) > -1, on = r.name === SEL.region;
+      var fill = on ? '#1d5178' : has ? '#8fb0c8' : '#e6e2d6';
+      return '<path d="' + r.d + '" fill="' + fill + '" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"' + (has ? ' class="cs-rm" data-reg="' + esc(r.name) + '" tabindex="0" role="button" style="cursor:pointer"' : '') + ' aria-label="' + esc(r.name + (has ? '' : ' · ' + m[1])) + '" aria-pressed="' + on + '"><title>' + esc(r.name + (has ? '' : ' · ' + m[1])) + '</title></path>';
+    }).join('');
+    var chips = ['U.S. total'].concat(R.regions.map(function (r) { return r.name; }).filter(function (n) { return regs.indexOf(n) > -1; })).map(function (n) {
+      return '<button type="button" class="cs-rm" data-reg="' + esc(n) + '" aria-pressed="' + (n === SEL.region) + '" style="margin:2px 6px 2px 0;padding:3px 10px;border-radius:14px;border:1px solid var(--border);font-size:12.5px;cursor:pointer;background:' + (n === SEL.region ? '#1d5178;color:#fff' : 'var(--surface,#fff);color:inherit') + '">' + esc(n === 'U.S. total' ? m[2] : n) + '</button>';
+    }).join('');
+    return '<div style="margin:14px 0 2px"><div style="font-size:12.5px;color:var(--text-faint)">' + esc(m[0]) + '</div><svg viewBox="' + R.viewBox + '" role="group" aria-label="' + esc(m[0]) + '" style="width:100%;max-width:560px;height:auto;display:block;margin:6px 0">' + paths + '</svg><div>' + chips + '</div><div style="font-size:12px;color:var(--text-faint);margin-top:4px"><span style="display:inline-block;width:10px;height:10px;background:#1d5178;border-radius:2px"></span> ' + esc(m[3]) + ' &nbsp; <span style="display:inline-block;width:10px;height:10px;background:#8fb0c8;border-radius:2px"></span> ERS &nbsp; <span style="display:inline-block;width:10px;height:10px;background:#e6e2d6;border-radius:2px"></span> ' + esc(m[1]) + '</div></div>';
+  }
   function renderCosts(t) {
     var rows = D.costs && D.costs[SEL.prod]; if (!rows) return '<p class="di-movers-hint">' + esc(t.noData) + '</p>';
     var years = []; rows.forEach(function (r) { if (years.indexOf(r[4]) < 0) years.push(r[4]); }); years.sort(function (a, b) { return b - a; });
@@ -123,7 +140,7 @@
     var popts = Object.keys(PRODS).filter(function (k) { return D.costs[k]; }).map(function (k) { return '<option value="' + k + '"' + (k === SEL.prod ? ' selected' : '') + '>' + esc((PEMO[k] ? PEMO[k] + ' ' : '') + PRODS[k][P]) + '</option>'; }).join('');
     var ropts = regs.map(function (r) { return '<option value="' + esc(r) + '"' + (r === SEL.region ? ' selected' : '') + '>' + esc(r === 'U.S. total' ? t.us : r) + '</option>'; }).join('');
     var yopts = years.map(function (y) { return '<option value="' + y + '"' + (y === SEL.year ? ' selected' : '') + '>' + y + '</option>'; }).join('');
-    return '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.product) + '<br><select id="cs-prod" class="di-compare-select">' + popts + '</select></label><label style="font-size:13px">' + esc(t.region) + '<br><select id="cs-reg" class="di-compare-select">' + ropts + '</select></label><label style="font-size:13px">' + esc(t.year) + '<br><select id="cs-year" class="di-compare-select">' + yopts + '</select></label></div>' + be +
+    return '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.product) + '<br><select id="cs-prod" class="di-compare-select">' + popts + '</select></label><label style="font-size:13px">' + esc(t.region) + '<br><select id="cs-reg" class="di-compare-select">' + ropts + '</select></label><label style="font-size:13px">' + esc(t.year) + '<br><select id="cs-year" class="di-compare-select">' + yopts + '</select></label></div>' + regionMap(regs) + be +
       '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><div style="font-size:12.5px;color:var(--text-faint);padding:8px 0 0">' + esc(t.unit) + ': ' + esc(unit) + '</div><table style="border-collapse:collapse;width:100%;min-width:360px;font-size:14px">' + tbl + '</table></div>' + chart + fc + '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.cnote) + '</p>';
   }
   // ---- Renta agraria
@@ -151,6 +168,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     Array.prototype.forEach.call(root.querySelectorAll('[data-fpo]'), function (b) { b.onclick = function () { SEL.fpo = b.getAttribute('data-fpo'); render(); }; });
     var e = document.getElementById('cs-prod'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.prod = el.value; SEL.year = null; SEL.region = 'U.S. total'; render(); };
     e = document.getElementById('cs-reg'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.region = el.value; render(); };
+    Array.prototype.forEach.call(root.querySelectorAll('.cs-rm'), function (n) { var pick = function () { SEL.region = n.getAttribute('data-reg'); render(); }; n.onclick = pick; n.onkeydown = function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); pick(); } }; });
     e = document.getElementById('cs-year'); if (e) e.onchange = function (ev) { var el = ev.target; SEL.year = parseInt(el.value, 10); render(); };
   }
   window.__csUsRender = function () { render(); };

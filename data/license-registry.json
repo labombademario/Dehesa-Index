@@ -5533,6 +5533,12 @@
     "SE": "eurostat"
    }
   },
+  "data/us-resource-regions.json": {
+   "byCountry": {
+    "US": "usda_ers"
+   },
+   "notes": "Asignacion de condados a las 9 regiones agricolas del USDA ERS (Farm Resource Regions, fichero reglink.xls), sin cambiar valores; sirve para colorear el mapa de regiones de costes."
+  },
   "data/us-ers-stats.json": {
    "byCountry": {
     "US": "usda_ers"
