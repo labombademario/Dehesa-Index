@@ -35,7 +35,7 @@
     return load().then(function (D) {
       if (!D || !D.products) return false;
       var ccs = D.countries.slice().sort(function (a, b) { return (CN[a] || [a])[LI[lg]].localeCompare((CN[b] || [b])[LI[lg]], L); });
-      if (!ST.cc) { var pref = opt.location === 'eu' && opt.euCountry ? String(opt.euCountry).toUpperCase() : 'ES'; ST.cc = ccs.indexOf(pref) >= 0 ? pref : 'ES'; }
+      var pref = opt.location === 'eu' && opt.euCountry ? String(opt.euCountry).toUpperCase() : 'ES'; if (!ST.cc || ST.pref !== pref) { ST.pref = pref; ST.cc = ccs.indexOf(pref) >= 0 ? pref : 'ES'; }
       var cc = ST.cc, isES = cc === 'ES', now = Date.now();
       var grp = [['all', t.all], ['veg', t.veg], ['fruit', t.fruit], ['nut', t.nut]];
       var head = '<p class="fv-intro">' + esc(t.intro.replace('{n}', D.products.length)) + '</p><div class="fv-ctl"><label><span>' + esc(t.ctry) + '</span><select class="di-compare-select fv-cc">' + ccs.map(function (c) { return '<option value="' + c + '"' + (c === cc ? ' selected' : '') + '>' + esc((CN[c] || [c])[LI[lg]]) + '</option>'; }).join('') + '</select></label>' +

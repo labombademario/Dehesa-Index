@@ -142,15 +142,15 @@
   }
   // Mensajes por ubicacion: cada vista muestra SOLO el seguro de su zona (EE. UU. -> RMA; Canada -> StatCan; Europa -> Espana; Reino Unido -> sin datos)
   var TR = {
-    es: { uk: 'No tenemos datos del seguro agrario del Reino Unido. Hay cifras oficiales de Estados Unidos y de Canadá, y de España en la vista de Europa.', euOnly: 'En la Unión Europea solo tenemos datos del seguro agrario de España.', none: 'No se han podido cargar los datos del seguro agrario de esta zona.' },
-    en: { uk: 'We have no crop insurance data for the United Kingdom. There are official figures for the United States and Canada, and for Spain in the Europe view.', euOnly: 'In the European Union we only have crop insurance data for Spain.', none: 'The crop insurance data for this area could not be loaded.' },
-    fr: { uk: 'Nous n’avons pas de données d’assurance agricole pour le Royaume-Uni. Il y a des chiffres officiels pour les États-Unis et le Canada, et pour l’Espagne dans la vue Europe.', euOnly: 'Dans l’Union européenne, nous n’avons des données d’assurance agricole que pour l’Espagne.', none: 'Les données d’assurance agricole de cette zone n’ont pas pu être chargées.' },
-    it: { uk: 'Non abbiamo dati sull’assicurazione agricola del Regno Unito. Ci sono cifre ufficiali per gli Stati Uniti e il Canada, e per la Spagna nella vista Europa.', euOnly: 'Nell’Unione europea abbiamo dati sull’assicurazione agricola solo per la Spagna.', none: 'Non è stato possibile caricare i dati sull’assicurazione agricola di questa zona.' }
+    es: { uk: 'No tenemos datos del seguro agrario del Reino Unido. Hay cifras oficiales de Estados Unidos y de Canadá, y de España en la vista de Europa.', noCty: 'No tenemos datos de seguro agrario de {c}. En Europa solo hay datos de España (ENESA).', seeEs: 'Ver los datos de España', euOnly: 'En la Unión Europea solo tenemos datos del seguro agrario de España.', none: 'No se han podido cargar los datos del seguro agrario de esta zona.' },
+    en: { uk: 'We have no crop insurance data for the United Kingdom. There are official figures for the United States and Canada, and for Spain in the Europe view.', noCty: 'We have no crop insurance data for {c}. In Europe we only have data for Spain (ENESA).', seeEs: 'See the Spain data', euOnly: 'In the European Union we only have crop insurance data for Spain.', none: 'The crop insurance data for this area could not be loaded.' },
+    fr: { uk: 'Nous n’avons pas de données d’assurance agricole pour le Royaume-Uni. Il y a des chiffres officiels pour les États-Unis et le Canada, et pour l’Espagne dans la vue Europe.', noCty: 'Nous n’avons pas de données d’assurance agricole pour {c}. En Europe, seule l’Espagne est couverte (ENESA).', seeEs: 'Voir les données de l’Espagne', euOnly: 'Dans l’Union européenne, nous n’avons des données d’assurance agricole que pour l’Espagne.', none: 'Les données d’assurance agricole de cette zone n’ont pas pu être chargées.' },
+    it: { uk: 'Non abbiamo dati sull’assicurazione agricola del Regno Unito. Ci sono cifre ufficiali per gli Stati Uniti e il Canada, e per la Spagna nella vista Europa.', noCty: 'Non abbiamo dati sull’assicurazione agricola per {c}. In Europa abbiamo solo la Spagna (ENESA).', seeEs: 'Vedi i dati della Spagna', euOnly: 'Nell’Unione europea abbiamo dati sull’assicurazione agricola solo per la Spagna.', none: 'Non è stato possibile caricare i dati sull’assicurazione agricola di questa zona.' }
   };
   function tr() { return TR[lang()] || TR.es; }
   function note(msg) { return '<div class="di-info-scope-note">' + esc(msg) + '</div>'; }
   function render(el, opts) {
-    var t = tx(), D = null, C = null, N = null, reg = (opts && opts.region) || 'us', euc = (opts && opts.euCountry) || 'es';
+    var t = tx(), D = null, C = null, N = null, reg = (opts && opts.region) || 'us', euc = (opts && opts.euCountry) || 'es', cname = (opts && opts.euCountryName) || String(euc).toUpperCase(), showEs = false;
     if (reg === 'uk') { el.innerHTML = note(tr().uk); return; }
     el.innerHTML = '<div class="di-info-scope-note">…</div>';
     function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
@@ -175,9 +175,11 @@
           '<div style="margin:0 0 16px"><label class="di-field-hint" for="sg-ca-year">' + esc(c.yearL) + ' </label><select id="sg-ca-year" class="di-eu-country-select">' + copts + '</select></div>' +
           '<div class="di-info-grid">' + caKpi(C, cy) + '</div>' + caDetails(C, cy) + '<div class="di-info-scope-note" style="margin-top:14px">' + esc(c.note) + '</div>';
       } else {
-        h = (euc !== 'es' ? note(tr().euOnly) : '') + (N ? enesaHist(N) : '');
+        if (euc !== 'es' && !showEs) { h = note(tr().noCty.replace('{c}', cname)) + '<p style="margin:10px 0 0"><button type="button" class="di-btn-sec" id="sg-see-es">' + esc(tr().seeEs) + '</button></p>'; }
+        else h = (euc !== 'es' ? note(tr().euOnly) : '') + (N ? enesaHist(N) : '');
       }
       el.innerHTML = h;
+      var se = document.getElementById('sg-see-es'); if (se) se.onclick = function () { showEs = true; paint(null, null); };
       var sel = el.querySelector('#sg-year'); if (sel) sel.addEventListener('change', function () { paint(sel.value, cy); });
       var csel = el.querySelector('#sg-ca-year'); if (csel) csel.addEventListener('change', function () { paint(y, csel.value); });
     }
