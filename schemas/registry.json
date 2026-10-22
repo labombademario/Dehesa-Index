@@ -1536,6 +1536,10 @@
    "australia-states-macro",
    []
   ],
+  "uk-climate.json": [
+   "uk-climate",
+   []
+  ],
   "uk-farmers-age.json": [
    "uk-farmers-age",
    []

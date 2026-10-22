@@ -4527,6 +4527,32 @@
    "short": "AAFC Wholesale Prices",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia OGL-Canada indicada en el catálogo oficial para estos conjuntos."
+  },
+  "met_office": {
+   "name": "Met Office (UK) — HadUK-Grid UK and regional climate series",
+   "url": "https://www.metoffice.gov.uk/climate/uk/summaries/datasets",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.metoffice.gov.uk/policies/legal",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Met Office.",
+   "additionalRestrictions": "Solo las series areales mensuales publicadas en abierto (lluvia y temperatura media). Los productos de pago, los de registro y DataPoint tienen otras condiciones y no se usan.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Las condiciones de uso del sitio del Met Office aplican por defecto la Open Government Licence v3.0 al material publicado salvo que se indique otra licencia; la ficha de HadUK-Grid (de la que salen estas series) declara la OGL. Leído el 22 oct 2026.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "Met Office (Reino Unido)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "OGL por defecto del sitio y declarada para HadUK-Grid; la pagina de descarga no la repite."
   }
  },
  "files": {
@@ -6642,6 +6668,12 @@
     "defra"
    ],
    "notes": "Proporciones de titulares de explotacion de Inglaterra por tramo de edad y sexo (Defra, Agricultural workforce in England at 1 June, OGL v3.0). Solo Inglaterra."
+  },
+  "data/uk-climate.json": {
+   "sources": [
+    "met_office"
+   ],
+   "notes": "Lluvia y temperatura media mensual por nacion y region climatica del Reino Unido (Met Office, HadUK-Grid, OGL v3.0). Normales 1991-2020 calculadas por Dehesa Index."
   }
  },
  "derived": [

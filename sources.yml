@@ -1298,6 +1298,15 @@ sources:
     continue: true
     data: [uk-regions-macro.json, uk-regions-macro-log.txt]
     message: Poblacion, paro y valor anadido bruto por region del Reino Unido (ONS via NOMIS)
+  - id: uk-climate
+    name: Update UK monthly rainfall and temperature by nation and region (Met Office)
+    cron: ['50 9 3,12 * *']
+    script: scripts/update-uk-climate.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [uk-climate.json, uk-climate-log.txt]
+    message: Lluvia y temperatura mensual del Reino Unido por region (Met Office)
   - id: uk-farmers-age
     name: Update England farm holders by age and sex (Defra)
     cron: ['40 8 * * 5']
