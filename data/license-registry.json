@@ -6636,6 +6636,12 @@
     "odepa_chile"
    ],
    "notes": "Chile: precios mayoristas y de consumidor de fruta y hortaliza (scripts/update-chile-fv.py)"
+  },
+  "data/uk-farmers-age.json": {
+   "sources": [
+    "defra"
+   ],
+   "notes": "Proporciones de titulares de explotacion de Inglaterra por tramo de edad y sexo (Defra, Agricultural workforce in England at 1 June, OGL v3.0). Solo Inglaterra."
   }
  },
  "derived": [

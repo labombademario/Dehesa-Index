@@ -1298,6 +1298,15 @@ sources:
     continue: true
     data: [uk-regions-macro.json, uk-regions-macro-log.txt]
     message: Poblacion, paro y valor anadido bruto por region del Reino Unido (ONS via NOMIS)
+  - id: uk-farmers-age
+    name: Update England farm holders by age and sex (Defra)
+    cron: ['40 8 * * 5']
+    script: scripts/update-uk-farmers-age.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [uk-farmers-age.json, uk-farmers-age-log.txt]
+    message: Edad y sexo de los titulares de explotacion de Inglaterra (Defra)
   - id: canada-provinces
     name: Update Canada by province (Statistics Canada)
     cron: ['50 15 * * 3']
