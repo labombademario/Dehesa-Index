@@ -1,0 +1,4 @@
+=== ERSREG2
+GET https://www.ers.usda.gov/sites/default/files/images/reglink.xls -> 200 application/vnd.ms-excel 171520
+SAVED 171520 b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1'
+ERR xls No module named 'xlrd'
